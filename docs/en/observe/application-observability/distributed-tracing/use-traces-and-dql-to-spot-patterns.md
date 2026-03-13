@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:12:23.534272
 * 14-min read
 * Published Nov 20, 2025
 
-Identify abnormal patterns in traces and logs using [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app "Discover the functionalities of the new Distributed Tracing app.") and [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.").
+Identify abnormal patterns in traces and logs using [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](distributed-tracing-app.md "Discover the functionalities of the new Distributed Tracing app.") and [Dynatrace Query Language (DQL)](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.").
 
 ## Introduction
 
@@ -47,7 +47,7 @@ Alternatively, use our [Dynatrace Playgroundï»¿](https://wkf10640.apps.dynatr
 
 * Familiarity with latest Dynatrace
 * At least basic knowledge of DQL
-* Understanding of what [Distributed Tracing](/docs/observe/application-observability/distributed-tracing "Trace and analyze in real time highly distributed systems with Grail.") is
+* Understanding of what [Distributed Tracing](../distributed-tracing.md "Trace and analyze in real time highly distributed systems with Grail.") is
 
   For an overview, check out [Unleash the Power of Distributed Tracingï»¿](https://youtu.be/8QuBqPsqZlg?si=RKrl7MW6kODQgFDA) on YouTube.
 
@@ -106,7 +106,7 @@ In the **Type to filter** text field, enter a query. For instance, enter `"Db qu
 
 ### Spot unusual patterns with DQL
 
-After utilizing ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**, let's learn how to use DQL to reveal atypical patterns in your traces and logs. We recommend using [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") to run all the DQL query examples in this tutorial.
+After utilizing ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**, let's learn how to use DQL to reveal atypical patterns in your traces and logs. We recommend using [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") to run all the DQL query examples in this tutorial.
 
 1. Go to ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**.
 2. Select  **Notebook** in the app header to create a new notebook.
@@ -385,7 +385,7 @@ Such a DQL query comes in handy when you need to understand which services produ
 
 Finally, let's find out how many logs are created per service endpoint.
 
-By default, logs don't contain endpoint information. However, by [enriching logs with the trace ID](/docs/analyze-explore-automate/logs/lma-log-enrichment "Connect your incoming log data to traces for more precise Dynatrace analysis."), we can `join` logs and traces based on their common field.
+By default, logs don't contain endpoint information. However, by [enriching logs with the trace ID](../../../analyze-explore-automate/logs/lma-log-enrichment.md "Connect your incoming log data to traces for more precise Dynatrace analysis."), we can `join` logs and traces based on their common field.
 
 Explain this DQL query
 
@@ -451,15 +451,15 @@ We hope this tutorial has given you some additional tips and tricks on how to be
 
 You learned how to use ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing** to detect database query patterns. Furthermore, you grasped numerous examples on how to utilize DQL to find services with the most exceptions, identify hotspot methods, and even join logs and traces to calculate the number of logs created per service endpoint.
 
-If you believe that you need to have certain information at hand, [add the DQL query result to the dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#edit-section-edit-controls "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."). You might also consider [creating a metric](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-create-log-metric "Explore the Log Management and Analytics use case for creating a log metric.") that you can extract from the logs as they come into Dynatrace.
+If you believe that you need to have certain information at hand, [add the DQL query result to the dashboard](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md#edit-section-edit-controls "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."). You might also consider [creating a metric](../../../analyze-explore-automate/logs/lma-use-cases/lma-e2e-create-log-metric.md "Explore the Log Management and Analytics use case for creating a log metric.") that you can extract from the logs as they come into Dynatrace.
 
 ## Next steps
 
 * Check out this [dedicated notebookï»¿](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.notebooks/notebook/94d1e2b0-0d81-4803-8b5e-5b9614598d86) created in our Dynatrace Playground environment, where we share some of the tips and tricks on leveraging traces, logs, and DQL to highlight unusual patterns in your environment.
-* Dive deeper into the world of DQL: visit [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") and [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.").
+* Dive deeper into the world of DQL: visit [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") and [DQL best practices](../../../platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.").
 * Explore the following Dynatrace apps:
 
-  + [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app "Discover the functionalities of the new Distributed Tracing app.")
-  + [![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**](/docs/analyze-explore-automate/logs/lma-logs-app "Search, filter, and analyze logs with Dynatrace Logs app to quickly investigate and share insights.")
-  + [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
-  + [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")
+  + [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](distributed-tracing-app.md "Discover the functionalities of the new Distributed Tracing app.")
+  + [![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**](../../../analyze-explore-automate/logs/lma-logs-app.md "Search, filter, and analyze logs with Dynatrace Logs app to quickly investigate and share insights.")
+  + [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+  + [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")

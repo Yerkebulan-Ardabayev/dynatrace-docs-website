@@ -15,9 +15,9 @@ scraped: 2026-03-03T21:27:46.123119
 
 Recommended syslog ingestion
 
-Stream syslog via Fluentd if you already collect logs with it or if a specific use case requires an additional component, for example, forwarding logs to different targets. If you want to benefit from a secure, trusted edge component with enterprise support and life-cycle management, see [Syslog ingestion with ActiveGate](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog "Ingest syslog log data to Dynatrace using ActiveGate and have Dynatrace transform it into meaningful log messages.").
+Stream syslog via Fluentd if you already collect logs with it or if a specific use case requires an additional component, for example, forwarding logs to different targets. If you want to benefit from a secure, trusted edge component with enterprise support and life-cycle management, see [Syslog ingestion with ActiveGate](lma-log-ingestion-syslog.md "Ingest syslog log data to Dynatrace using ActiveGate and have Dynatrace transform it into meaningful log messages.").
 
-In the case where Linux system syslog observability is the main focus, we recommend deploying OneAgent, which [autodiscovers host syslog data](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-autodiscovery#oneagent-log-configuration-flow "Dynatrace automatically discovers all new log files that meet specific requirements."), preserves topology context, and requires minimal configuration and maintenance.
+In the case where Linux system syslog observability is the main focus, we recommend deploying OneAgent, which [autodiscovers host syslog data](lma-log-ingestion-via-oa/lma-autodiscovery.md#oneagent-log-configuration-flow "Dynatrace automatically discovers all new log files that meet specific requirements."), preserves topology context, and requires minimal configuration and maintenance.
 
 You can send Syslog to Dynatrace using Fluentd. Configure Fluentd to send Syslog to Dynatrace Log ingestion API.
 
@@ -32,14 +32,14 @@ You can send Syslog to Dynatrace using Fluentd. Configure Fluentd to send Syslog
 
 Set up the flow from Syslog producer over Fluentd to Dynatrace with the following steps:
 
-1. Get a [Dynatrace API token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") with the `logs.ingest` (Ingest Logs) scope.
+1. Get a [Dynatrace API token](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") with the `logs.ingest` (Ingest Logs) scope.
 2. Deploy Fluentd according to your preferences.
 
    * [Deploy Fluentdï»¿](https://dt-url.net/o9034h3). Fluentd can also run as a [DaemonSet in a Kubernetes clusterï»¿](https://dt-url.net/t2234xz). Built-in resiliency ensures data completeness and consistency even if Fluentd or an endpoint service temporarily goes down.
 3. Enable Fluentd to accept incoming Syslog messages.
 
    * The [in\_syslogï»¿](https://dt-url.net/t00343n) input plugin enables Fluentd to retrieve records via the Syslog protocol on UDP or TCP. It is included in Fluentd's core so no additional installation is needed in this step.
-4. Use the Dynatrace [Fluentd pluginï»¿](https://dt-url.net/gb23475) to stream logs to the Dynatrace cluster. The open-source Dynatrace Fluentd plugin uses [Log ingestion API](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.") to send logs to Dynatrace.
+4. Use the Dynatrace [Fluentd pluginï»¿](https://dt-url.net/gb23475) to stream logs to the Dynatrace cluster. The open-source Dynatrace Fluentd plugin uses [Log ingestion API](lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.") to send logs to Dynatrace.
 5. Point your devices to send syslogs to Fluentd.
 
 ## Send syslogs to a remote endpoint
@@ -69,7 +69,7 @@ Refer to the [F5 BIG-IP documentationï»¿](https://dt-url.net/080348q) for pro
 
 ## Add attributes to syslogs in Fluentd
 
-The Dynatrace software intelligence platform and Dynatrace Intelligence depend on context-rich, quality data. You can provide the context for your data ingested via Log ingestion API that supports a set of [keys and semantic attributes](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs#parameters "Push custom logs to Dynatrace via the Log Monitoring API v2."). You can also provide custom attributes that don't require indexing in [Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.").
+The Dynatrace software intelligence platform and Dynatrace Intelligence depend on context-rich, quality data. You can provide the context for your data ingested via Log ingestion API that supports a set of [keys and semantic attributes](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md#parameters "Push custom logs to Dynatrace via the Log Monitoring API v2."). You can also provide custom attributes that don't require indexing in [Grail](../../../platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.").
 
 ### Example 1
 

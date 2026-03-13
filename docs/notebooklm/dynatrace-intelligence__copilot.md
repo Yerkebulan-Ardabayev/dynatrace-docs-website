@@ -27,8 +27,8 @@ Dynatrace applications like ![Kubernetes (new)](https://dt-cdn.net/images/kubern
 
 To access the application integrations, ensure the following:
 
-* Dynatrace Intelligence generative AI has been enabled on the environment level. For details, see [Enable Dynatrace Intelligence generative AI on your environment](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
-* You have permissions to access the conversational recommender skill. For details, see [User permissions](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+* Dynatrace Intelligence generative AI has been enabled on the environment level. For details, see [Enable Dynatrace Intelligence generative AI on your environment](../ru/dynatrace-intelligence/copilot/copilot-getting-started.md#enable-davis-copilot "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+* You have permissions to access the conversational recommender skill. For details, see [User permissions](../ru/dynatrace-intelligence/copilot/copilot-getting-started.md#davis-copilot-user-permissions "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
 ## Dynatrace Assist in Kubernetes
 
@@ -51,7 +51,7 @@ Dynatrace Intelligence generative AI provides explanations of vulnerabilities to
 
 To access the functionality
 
-1. In [![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**](/docs/secure/vulnerabilities "Prioritize and efficiently manage vulnerabilities in your monitored environments."), select a vulnerability.
+1. In [![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**](../ru/secure/vulnerabilities.md "Prioritize and efficiently manage vulnerabilities in your monitored environments."), select a vulnerability.
 2. In the upper-right corner of the vulnerability details pane, select  **Explain vulnerability**.
 
 Generative AI will provide a response that details:
@@ -70,7 +70,7 @@ Dynatrace Intelligence generative AI can provide contextual, plain-language expl
 
 To access the functionality
 
-1. In [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts."), select a finding.
+1. In [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](../ru/secure/threats-and-exploits.md "Understand, triage, and investigate detection findings and alerts."), select a finding.
 2. In the upper-right corner of the finding details pane, select  **Explain finding**.
 
 Generative AI will provide a response that details:
@@ -89,7 +89,7 @@ Dynatrace Intelligence generative AI provides explanations of configuration asse
 
 To access the functionality
 
-1. In [![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**](/docs/secure/xspm "Detect, manage, and take action on security and compliance findings."), on the **Assessment results** page, select a rule.
+1. In [![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**](../ru/secure/xspm.md "Detect, manage, and take action on security and compliance findings."), on the **Assessment results** page, select a rule.
 2. On the **Assessed resources** tab, select  **Explain assessment**.
 
 Generative AI will provide a response that details:
@@ -148,7 +148,7 @@ To explain multiple problems with Generative AI
 
 
 
-You can use the power of DQL to integrate  **Dynatrace Assist** into your [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") tiles.
+You can use the power of DQL to integrate  **Dynatrace Assist** into your [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") tiles.
 
 By adding `| fieldsAdd prompt` and `| fieldsAdd execute` commands, you can predefine and auto-execute prompts in  **Dynatrace Assist**, allowing you to quickly get an explanation about the query results, or receive suggestions on how to improve the query or resolve a problem.
 
@@ -172,9 +172,9 @@ While the supplementary context is hidden in the chat UI, it can help Generative
 | parse supplementaryContext , "LD JSON_ARRAY:contexts"
 ```
 
-To integrate  **Dynatrace Assist** into your [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") tiles
+To integrate  **Dynatrace Assist** into your [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") tiles
 
-1. Go to [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and open a dashboard you can edit.
+1. Go to [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and open a dashboard you can edit.
 2. Select a dashboard tile that contains a DQL query.
 3. Select  **Edit** to open the edit menu on the right.
 4. In the  **DQL** section of the edit menu, add the following to your standard query:
@@ -199,7 +199,7 @@ If you've added `| fieldsAdd execute = true` to your query, the predefined promp
 
 ## Dynatrace Assist in Notebooks
 
-You can use the power of DQL to integrate  **Dynatrace Assist** into your [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
+You can use the power of DQL to integrate  **Dynatrace Assist** into your [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
 
 By adding `| fieldsAdd prompt` and `| fieldsAdd execute` commands, you can predefine and auto-execute prompts in  **Dynatrace Assist**, allowing you to quickly get an explanation about the query results, or receive suggestions on how to improve the query or resolve a problem.
 
@@ -223,9 +223,9 @@ While the supplementary context is hidden in the chat UI, it can help Generative
 | parse supplementaryContext , "LD JSON_ARRAY:contexts"
 ```
 
-To integrate  **Dynatrace Assist** into your [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+To integrate  **Dynatrace Assist** into your [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
 
-1. Go to [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and open a notebook you can edit.
+1. Go to [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and open a notebook you can edit.
 2. Select a notebook section that contains a DQL query.
 3. Select the query field and add the following to your standard query:
 
@@ -249,12 +249,12 @@ If you've added `| fieldsAdd execute = true` to your query, the predefined promp
 
 ## Feedback
 
-If you have any feedback, you can provide it directly in the chat window. For more information, see [Give feedback](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot#feedback "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.").
+If you have any feedback, you can provide it directly in the chat window. For more information, see [Give feedback](../ru/dynatrace-intelligence/copilot/chat-with-davis-copilot.md#feedback "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.").
 
 ## Related topics
 
-* [Get started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
-* [Dynatrace Intelligence agentic and generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
+* [Get started with Dynatrace Intelligence agentic and generative AI](../ru/dynatrace-intelligence/copilot/copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
+* [Dynatrace Intelligence agentic and generative AI FAQ](../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")
 
 ---
 
@@ -329,9 +329,9 @@ To use  **Dynatrace Assist** in the generative AI mode, you only need the follow
 * `davis-copilot:conversations:execute`
 * `hub:catalog:read`
 
-You require the remaining permissions in the table only if you want to use the full extent of agentic Dynatrace Assist capabilities. For more information, see [Dynatrace Assist agentic permissions](/docs/dynatrace-intelligence/copilot/copilot-getting-started#assist-agentic "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+You require the remaining permissions in the table only if you want to use the full extent of agentic Dynatrace Assist capabilities. For more information, see [Dynatrace Assist agentic permissions](../ru/dynatrace-intelligence/copilot/copilot-getting-started.md#assist-agentic "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
-For more information, see [Getting started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+For more information, see [Getting started with Dynatrace Intelligence agentic and generative AI](../ru/dynatrace-intelligence/copilot/copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
 ## Get started
 
@@ -345,7 +345,7 @@ After enabling Dynatrace Intelligence generative AI on your environment and sett
 
 1. In Dynatrace, select  **Dynatrace Assist**.
 2. A new window opens with the chat interface.
-3. Type your question. See [examples](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts "Learn what kind of prompts work well in Dynatrace Assist.") for inspiration.
+3. Type your question. See [examples](dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts.md "Learn what kind of prompts work well in Dynatrace Assist.") for inspiration.
 4. Select **Run** ![Run](https://dt-cdn.net/images/run-c2f8c2f63c.svg "Run") and wait for the response to be generated.
 
    * You can ask follow-up questions.
@@ -360,9 +360,9 @@ Answers are generated based on Dynatrace-related resources. If the model is unab
 
 ### Use Dynatrace Assist agentic capabilities
 
-With agentic AI enabled, you can ask  **Dynatrace Assist** to analyze and provide insights on the data and security of your environment. For examples, see [Ask about the data in your environment](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts#assist-ask-about-the-data "Learn what kind of prompts work well in Dynatrace Assist.").
+With agentic AI enabled, you can ask  **Dynatrace Assist** to analyze and provide insights on the data and security of your environment. For examples, see [Ask about the data in your environment](dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts.md#assist-ask-about-the-data "Learn what kind of prompts work well in Dynatrace Assist.").
 
-For more information about getting started with agentic  **Dynatrace Assist**, see [Enable agentic AI for Dynatrace Assist](/docs/dynatrace-intelligence/copilot/copilot-getting-started#assist-agentic "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+For more information about getting started with agentic  **Dynatrace Assist**, see [Enable agentic AI for Dynatrace Assist](../ru/dynatrace-intelligence/copilot/copilot-getting-started.md#assist-agentic "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
 ### Give feedback
 
@@ -392,10 +392,10 @@ Go through the following process to learn using  **Dynatrace Assist**
 [01Embedded conversation starters
 
 * Reference
-* Learn how to trigger predefined prompts in various Dynatrace applications.](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters)[02Dynatrace Assist prompt examples
+* Learn how to trigger predefined prompts in various Dynatrace applications.](../ru/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters.md)[02Dynatrace Assist prompt examples
 
 * Reference
-* Learn what kind of prompts work well in Dynatrace Assist.](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts)
+* Learn what kind of prompts work well in Dynatrace Assist.](dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts.md)
 
 ## Use cases
 
@@ -409,10 +409,10 @@ You can use agentic  **Dynatrace Assist** to:
 
 ## Related topics
 
-* [Get started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
-* [Embedded conversation starters](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters "Learn how to trigger predefined prompts in various Dynatrace applications.")
-* [Dynatrace Intelligence agentic and generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
-* [Dynatrace MCP server](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp "Learn about the Dynatrace MCP server and how you can connect to it.")
+* [Get started with Dynatrace Intelligence agentic and generative AI](../ru/dynatrace-intelligence/copilot/copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
+* [Embedded conversation starters](../ru/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters.md "Learn how to trigger predefined prompts in various Dynatrace applications.")
+* [Dynatrace Intelligence agentic and generative AI FAQ](../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")
+* [Dynatrace MCP server](../common/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp.md "Learn about the Dynatrace MCP server and how you can connect to it.")
 
 ---
 
@@ -445,7 +445,7 @@ Each data request is sent to the LLM individually, over an SSL-encrypted service
 
 Dynatrace may store the prompts submitted to Dynatrace Intelligence agentic and generative AI and the responses provided by the LLMs to understand the use cases, contextualize the feedback on the responses, and identify additional user expectations.
 
-Learn more about the [Dynatrace Intelligence agentic and generative AI architecture and data flow](/docs/dynatrace-intelligence/copilot/copilot-overview#copilot-data-flow "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.").
+Learn more about the [Dynatrace Intelligence agentic and generative AI architecture and data flow](../ru/dynatrace-intelligence/copilot/copilot-overview.md#copilot-data-flow "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.").
 
 ## PII masking
 
@@ -472,9 +472,9 @@ Agentic  **Dynatrace Assist** doesn't provide any PII masking. In order to prote
 
 ## Related topics
 
-* [Dynatrace Intelligence agentic and generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
-* [Get started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
-* [Dynatrace Intelligence agentic and generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
+* [Dynatrace Intelligence agentic and generative AI overview](../ru/dynatrace-intelligence/copilot/copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
+* [Get started with Dynatrace Intelligence agentic and generative AI](../ru/dynatrace-intelligence/copilot/copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
+* [Dynatrace Intelligence agentic and generative AI FAQ](../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")
 
 ---
 
@@ -511,20 +511,20 @@ In this article, you'll learn how Dynatrace Intelligence agentic and generative 
 Dynatrace Intelligence agentic and generative AI periodically indexes notebooks and dashboards that have been labeled as troubleshooting guides and shared within the environment.
 
 * By default, semantic vector indexing of the guides occurs every 6 hours.
-* In order for Dynatrace Intelligence agentic and generative AI to index and suggest your document, you have to share it with all users in your environment. Dynatrace Intelligence agentic and generative AI won't index or suggest any private documents or documents shared only with specific users. To learn more about sharing documents, see [Share documents](/docs/discover-dynatrace/get-started/dynatrace-ui/share "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
+* In order for Dynatrace Intelligence agentic and generative AI to index and suggest your document, you have to share it with all users in your environment. Dynatrace Intelligence agentic and generative AI won't index or suggest any private documents or documents shared only with specific users. To learn more about sharing documents, see [Share documents](../ru/discover-dynatrace/get-started/dynatrace-ui/share.md "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
 
 ### Prior knowledge
 
-* [Dynatrace Intelligence agentic and generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
-* [Getting started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
-* [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* [Dynatrace Intelligence agentic and generative AI overview](../ru/dynatrace-intelligence/copilot/copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
+* [Getting started with Dynatrace Intelligence agentic and generative AI](../ru/dynatrace-intelligence/copilot/copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
+* [Problems app](../ru/dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.")
 
 ### Prerequisites
 
 * Dynatrace SaaS environment.
-* You have completed the Dynatrace Intelligence agentic and generative AI setup described in [Getting started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
-* You have document suggestions enabled in your environment. Document indexing enablement is a part of the [Enable Dynatrace Intelligence agentic and generative AI on your environment](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Learn how to set up Dynatrace Intelligence agentic and generative AI.") guide.
-* You have the `ALLOW davis-copilot:document-search:execute;` permission. To learn how to set up the permissions, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
+* You have completed the Dynatrace Intelligence agentic and generative AI setup described in [Getting started with Dynatrace Intelligence agentic and generative AI](../ru/dynatrace-intelligence/copilot/copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+* You have document suggestions enabled in your environment. Document indexing enablement is a part of the [Enable Dynatrace Intelligence agentic and generative AI on your environment](../ru/dynatrace-intelligence/copilot/copilot-getting-started.md#enable-davis-copilot "Learn how to set up Dynatrace Intelligence agentic and generative AI.") guide.
+* You have the `ALLOW davis-copilot:document-search:execute;` permission. To learn how to set up the permissions, see [Permissions in Grail](../ru/platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
 
 ## Get document suggestions to remediate problems
 
@@ -762,9 +762,9 @@ Once the newly created notebook is attached to the AI-detected problem, you'll b
 
 
 
-* [Dynatrace Intelligence agentic and generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
-* [Get started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
-* [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* [Dynatrace Intelligence agentic and generative AI overview](../ru/dynatrace-intelligence/copilot/copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
+* [Get started with Dynatrace Intelligence agentic and generative AI](../ru/dynatrace-intelligence/copilot/copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
+* [Problems app](../ru/dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.")
 
 ---
 
@@ -796,7 +796,7 @@ To enable Dynatrace Intelligence generative AI on your environment
 
 ![Enable generative AI in your settings](https://dt-cdn.net/images/generative-ai-settings-1913-24ab3b085b.png)
 
-If you can't see the settings page, make sure you have `Setting Reader` and `Setting Writer` policies assigned. For more information, see [read and write permission](/docs/manage/identity-access-management/use-cases/access-settings#example-read-and-write-permissions "Grant access to Settings").
+If you can't see the settings page, make sure you have `Setting Reader` and `Setting Writer` policies assigned. For more information, see [read and write permission](manage/identity-access-management/use-cases/access-settings.md#example-read-and-write-permissions "Grant access to Settings").
 
 ### User permissions
 
@@ -806,13 +806,13 @@ After enabling Dynatrace Intelligence generative AI on the environment level, yo
 * **DQL translation to natural language** (`ALLOW davis-copilot:dql2nl:execute;`)
 * **Conversational recommender** (`ALLOW davis-copilot:conversations:execute;`)
 
-For more information on managing your policies, see [Manage IAM policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.").
+For more information on managing your policies, see [Manage IAM policies](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt.md "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.").
 
 ## Enable agentic AI for Dynatrace Assist
 
-**Dynatrace Assist** allows you to use Dynatrace agentic AI and [MCP tools and capabilities](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server "Learn about the Dynatrace MCP server and how you can connect to it.") to access and analyze your environment data and use it to perform tasks (such as listing problems or generating and executing DQL queries) in addition to answering general questions about Dynatrace.
+**Dynatrace Assist** allows you to use Dynatrace agentic AI and [MCP tools and capabilities](../common/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp.md#server "Learn about the Dynatrace MCP server and how you can connect to it.") to access and analyze your environment data and use it to perform tasks (such as listing problems or generating and executing DQL queries) in addition to answering general questions about Dynatrace.
 
-Agentic  **Dynatrace Assist** shares some additional information, such as tool call results, with enterprise vendors hosting the LLMs that Dynatrace agentic and generative AI are based on. For more information about third parties, see [Is my data used to train Dynatrace Intelligence generative AI?](/docs/dynatrace-intelligence/copilot/copilot-faq#copilot-training-on-data "Learn about frequently asked questions and find your answers.").
+Agentic  **Dynatrace Assist** shares some additional information, such as tool call results, with enterprise vendors hosting the LLMs that Dynatrace agentic and generative AI are based on. For more information about third parties, see [Is my data used to train Dynatrace Intelligence generative AI?](../common/dynatrace-intelligence/copilot/copilot-faq.md#copilot-training-on-data "Learn about frequently asked questions and find your answers.").
 
 To use the agentic  **Dynatrace Assist**, you need to
 
@@ -823,11 +823,11 @@ To use the agentic  **Dynatrace Assist**, you need to
   2. Ensure that **Enable generative AI** is turned on.
   3. Turn on **Enable agentic AI**.
 
-Agentic  **Dynatrace Assist** might not be available for you if you don't meet the prerequisites mentioned above or if you access  **Dynatrace Assist** from the [Embedded conversation starters](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters "Learn how to trigger predefined prompts in various Dynatrace applications.").
+Agentic  **Dynatrace Assist** might not be available for you if you don't meet the prerequisites mentioned above or if you access  **Dynatrace Assist** from the [Embedded conversation starters](../ru/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters.md "Learn how to trigger predefined prompts in various Dynatrace applications.").
 
 ### **Dynatrace Assist** agentic permissions
 
-You will also need additional permissions for calling the agentic AI tools. For the list of tools and permissions they require, see [MCP tools](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server "Learn about the Dynatrace MCP server and how you can connect to it.").
+You will also need additional permissions for calling the agentic AI tools. For the list of tools and permissions they require, see [MCP tools](../common/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp.md#server "Learn about the Dynatrace MCP server and how you can connect to it.").
 
 ### PII masking
 
@@ -850,7 +850,7 @@ Document suggestion is a Dynatrace Intelligence agentic and generative AI skill 
 
 If you want Dynatrace Intelligence agentic and generative AI to suggest troubleshooting guides for similar or repeatedly occurring problem, you'll need to allow it to search through and index documents created in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** and shared with all users in your environment. To ensure you have full control over the security of your data, this functionality is opt-in and is turned off by default.
 
-In order for Dynatrace Intelligence agentic and generative AI to index and suggest your document, it has to be shared with all users in your environment. Dynatrace Intelligence agentic and generative AI won't index or suggest any private documents or documents shared only with specific users. To learn more about sharing documents, see [Share documents](/docs/discover-dynatrace/get-started/dynatrace-ui/share "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
+In order for Dynatrace Intelligence agentic and generative AI to index and suggest your document, it has to be shared with all users in your environment. Dynatrace Intelligence agentic and generative AI won't index or suggest any private documents or documents shared only with specific users. To learn more about sharing documents, see [Share documents](../ru/discover-dynatrace/get-started/dynatrace-ui/share.md "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
 
 To enable document suggestion
 
@@ -880,7 +880,7 @@ To enable environment-aware queries
 
 It can take up to 24 hours for Dynatrace Intelligence agentic and generative AI to build or amend the semantic index after changes are made. If environment-aware queries are disabled and the semantic index already exists, Dynatrace Intelligence agentic and generative AI purges all environment-specific data within 24 hours, and returns to using publicly available sources for building DQL queries. The semantic index is stored only on your Dynatrace tenant.
 
-To learn more about semantic indexing and environment-aware queries, see [Environment-aware queries](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql#environment-aware-queries "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries").
+To learn more about semantic indexing and environment-aware queries, see [Environment-aware queries](../ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql.md#environment-aware-queries "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries").
 
 ### Configure your data access
 
@@ -896,9 +896,9 @@ To configure your data access
 
 ## Related topics
 
-* [Dynatrace Intelligence agentic and generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
-* [Query with natural language](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
-* [Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips "Learn best practices for writing more accurate prompts.")
+* [Dynatrace Intelligence agentic and generative AI FAQ](../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")
+* [Query with natural language](../ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql.md "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
+* [Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts](../ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips.md "Learn best practices for writing more accurate prompts.")
 
 ---
 
@@ -933,22 +933,22 @@ We recommend that you carefully evaluate the responses you get back from Dynatra
 
 Dynatrace Intelligence agentic and generative AI service offers distinct and specialized skills. Currently, generative AI offers four skills:
 
-* NL2DQL: this skill powers the **Prompt** quick analysis functionality available in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**. NL2DQL translates your natural language prompts into DQL queries. For details, see [Query with natural language](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries").
-* DQL2NL: this skill powers the **Explain query** functionality in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**. DQL2NL provides a summary and an explanation of existing DQL queries to help you better understand DQL. For details, see [Summarize and explain queries](/docs/dynatrace-intelligence/copilot/explain-queries-with-davis-copilot "Learn how to summarize and explain queries using Dynatrace Intelligence agentic and generative AI DQL2NL skill.").
-* Conversational recommender: this skill powers  **Dynatrace Assist**, our global conversational interface. The conversational recommender is capable of answering your Dynatrace help, onboarding, and usage questions. For details, see [Dynatrace Assist](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.").
+* NL2DQL: this skill powers the **Prompt** quick analysis functionality available in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**. NL2DQL translates your natural language prompts into DQL queries. For details, see [Query with natural language](../ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql.md "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries").
+* DQL2NL: this skill powers the **Explain query** functionality in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**. DQL2NL provides a summary and an explanation of existing DQL queries to help you better understand DQL. For details, see [Summarize and explain queries](../common/dynatrace-intelligence/copilot/explain-queries-with-davis-copilot.md "Learn how to summarize and explain queries using Dynatrace Intelligence agentic and generative AI DQL2NL skill.").
+* Conversational recommender: this skill powers  **Dynatrace Assist**, our global conversational interface. The conversational recommender is capable of answering your Dynatrace help, onboarding, and usage questions. For details, see [Dynatrace Assist](../ru/dynatrace-intelligence/copilot/chat-with-davis-copilot.md "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.").
 
-  + **Dynatrace Assist** also offers context-aware conversations in the apps such as ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**, ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**, or ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**. Context-aware conversations trigger predefined, contextual prompts and provide you with contextual explanation, remediation steps, and summaries. For details, see [Dynatrace Assist context-aware conversations](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters "Learn how to trigger predefined prompts in various Dynatrace applications.").
-* Document suggestions: this skill powers the relevant **Troubleshooting Guide** suggestion functionality in ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**. Troubleshooting guide recommendation improves problem resolution by automatically surfacing relevant troubleshooting guides, such as notebooks or dashboards created by your team. For details, see [Discover relevant troubleshooting guides with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides "Learn how Dynatrace Intelligence agentic and generative AI can suggest troubleshooting guides for problem remediation.").
+  + **Dynatrace Assist** also offers context-aware conversations in the apps such as ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**, ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**, or ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**. Context-aware conversations trigger predefined, contextual prompts and provide you with contextual explanation, remediation steps, and summaries. For details, see [Dynatrace Assist context-aware conversations](../ru/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters.md "Learn how to trigger predefined prompts in various Dynatrace applications.").
+* Document suggestions: this skill powers the relevant **Troubleshooting Guide** suggestion functionality in ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**. Troubleshooting guide recommendation improves problem resolution by automatically surfacing relevant troubleshooting guides, such as notebooks or dashboards created by your team. For details, see [Discover relevant troubleshooting guides with Dynatrace Intelligence agentic and generative AI](../ru/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides.md "Learn how Dynatrace Intelligence agentic and generative AI can suggest troubleshooting guides for problem remediation.").
 
 Since the skills offered by Dynatrace Intelligence generative AI are highly specialized, Quick Analysis in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** cannot answer general questions, and  **Dynatrace Assist** might produce inaccurate DQL queries.
 
-Dynatrace Intelligence agentic AI is capable of both since it calls agentic tools and can combine their output. For more information, see [Enable agentic AI for Dynatrace Assist](/docs/dynatrace-intelligence/copilot/copilot-getting-started#assist-agentic "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+Dynatrace Intelligence agentic AI is capable of both since it calls agentic tools and can combine their output. For more information, see [Enable agentic AI for Dynatrace Assist](../ru/dynatrace-intelligence/copilot/copilot-getting-started.md#assist-agentic "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
 ## Dynatrace Intelligence agentic and generative AI architecture and data flow
 
 Dynatrace Intelligence agentic and generative AI uses the Retrieval Augmented Generation (RAG) approach to provide a foundational LLM with the proper context to transform natural language into a DQL query (in-context learning). This means that Dynatrace Intelligence agentic and generative AI will enrich your prompt with relevant additional content or context that is sent to the foundational LLM in order to generate an appropriate response. The content or context that is used to enrich your prompt depends on which underlying skill is queried.
 
-The data and additional context is used only to enrich prompts; the model does not learn from this. Customer data isn't used to automatically fine-tune, train, or improve any models or services. For more information, see [How are NL2DQL responses generated?](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql#nl2dql-answers-generation "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
+The data and additional context is used only to enrich prompts; the model does not learn from this. Customer data isn't used to automatically fine-tune, train, or improve any models or services. For more information, see [How are NL2DQL responses generated?](../ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql.md#nl2dql-answers-generation "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
 
 ## Dynatrace Intelligence agentic and generative AI usage limits
 
@@ -960,11 +960,11 @@ If you have exceeded any of the limits, you'll see an error message: "I'm sorry,
 
 ## FAQ
 
-If you would like to learn more about Dynatrace Intelligence agentic and generative AI, visit our [FAQ page](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.").
+If you would like to learn more about Dynatrace Intelligence agentic and generative AI, visit our [FAQ page](../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.").
 
 ## Related topics
 
-* [Get started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
+* [Get started with Dynatrace Intelligence agentic and generative AI](../ru/dynatrace-intelligence/copilot/copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
 
 ---
 
@@ -1062,7 +1062,7 @@ Using keywords from the DQL syntax keywords in your prompts will often generate 
 
 ## Tip 6: Follow the DQL hierarchy in your prompt
 
-We recommend that you get familiar with the [DQL documentation](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."). The more you can reflect the DQL syntax hierarchy in your prompt, including command order, the more effective your prompts will be. For example:
+We recommend that you get familiar with the [DQL documentation](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."). The more you can reflect the DQL syntax hierarchy in your prompt, including command order, the more effective your prompts will be. For example:
 
 * Mention filters at the beginning of your prompt
 * Mention sort orders at the end of your prompt
@@ -1077,9 +1077,9 @@ We are actively working on improving and extending the Dynatrace Intelligence ag
 
 ## Related topics
 
-* [Dynatrace Intelligence agentic and generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
-* [Query with natural language](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
-* [Generative AI quick analysis examples](/docs/dynatrace-intelligence/use-cases/copilot-examples "Learn more about what kind of prompts work well in Dynatrace Intelligence agentic and generative AI.")
+* [Dynatrace Intelligence agentic and generative AI FAQ](../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")
+* [Query with natural language](../ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql.md "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
+* [Generative AI quick analysis examples](../ru/dynatrace-intelligence/use-cases/copilot-examples.md "Learn more about what kind of prompts work well in Dynatrace Intelligence agentic and generative AI.")
 
 ---
 
@@ -1104,7 +1104,7 @@ You can use Dynatrace Intelligence generative AI in Dashboards and Notebooks to 
 
 ## Prerequisites
 
-We assume that you have completed the setup described in [Getting started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+We assume that you have completed the setup described in [Getting started with Dynatrace Intelligence agentic and generative AI](../ru/dynatrace-intelligence/copilot/copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
 ## Use generative AI in Notebooks
 
@@ -1127,7 +1127,7 @@ We assume that you have completed the setup described in [Getting started with D
 
      + If a prompt has been edited, the DQL will first be regenerated and then run.
      + If no prompts have been edited, the existing generated DQL will simply be run.
-7. Optional Select the  **Options** in the section header to change the visualization (refer to the [visualization-specific documentation](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
+7. Optional Select the  **Options** in the section header to change the visualization (refer to the [visualization-specific documentation](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
 
    Automatically select visualization
 
@@ -1138,7 +1138,7 @@ We assume that you have completed the setup described in [Getting started with D
 
 ## Use generative AI in Dashboards
 
-1. Go to [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and open or create a dashboard you can edit.
+1. Go to [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and open or create a dashboard you can edit.
 2. Open the  **Add** menu and select  **Prompt**.
 
    * A new Dynatrace Intelligence generative AI dashboard tile is created
@@ -1163,13 +1163,13 @@ We assume that you have completed the setup described in [Getting started with D
 
      + If a prompt has been edited, the DQL will first be regenerated and then run.
      + If no prompts have been edited, the existing generated DQL will simply be run.
-8. Optional Select the **Visual** tab to change the visualization (refer to the [visualization-specific documentation](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
+8. Optional Select the **Visual** tab to change the visualization (refer to the [visualization-specific documentation](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
 
 Even though Dynatrace Intelligence generative AI is not charged for, all queries that are executed by generative AI are subject to licensing consumption according to your existing licensing agreement.
 
 ## Environment-aware queries
 
-Environment-aware queries enrich Dynatrace Intelligence generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. You can also run more complex data analyses by asking Dynatrace Intelligence generative AI about the specifics of your data. To learn more about how to control and manage which data Dynatrace Intelligence generative AI has access to and how to enable environment-aware queries, see [Enable environment-aware queries](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-environment-aware-queries "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+Environment-aware queries enrich Dynatrace Intelligence generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. You can also run more complex data analyses by asking Dynatrace Intelligence generative AI about the specifics of your data. To learn more about how to control and manage which data Dynatrace Intelligence generative AI has access to and how to enable environment-aware queries, see [Enable environment-aware queries](../ru/dynatrace-intelligence/copilot/copilot-getting-started.md#enable-environment-aware-queries "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
 ### Dynatrace Intelligence generative AI semantic index
 
@@ -1238,7 +1238,7 @@ Since Dynatrace Intelligence generative AI respects user privileges, it may prov
 Dynatrace Intelligence generative AI NL2DQL response process can be summarized in 4 steps.
 
 1. Dynatrace Intelligence generative AI receives a request from a user.
-2. If the request is well-formulated and recognized (see [Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips "Learn best practices for writing more accurate prompts.") for more information), Dynatrace Intelligence generative AI matches the user request with the Dynatrace-owned content, such as documentation and curated query examples, and passes the prompt to LLM.
+2. If the request is well-formulated and recognized (see [Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts](../ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips.md "Learn best practices for writing more accurate prompts.") for more information), Dynatrace Intelligence generative AI matches the user request with the Dynatrace-owned content, such as documentation and curated query examples, and passes the prompt to LLM.
 
    If you have enabled environment-aware queries, the relevant data fragments will be used enrich the prompt alongside Dynatrace-owned content.
 3. The LLM generates a response and checks if the DQL is valid.
@@ -1255,11 +1255,11 @@ Do not share personal or confidential information in your feedback.
 
 ## Related topics
 
-* [Dynatrace Intelligence agentic and generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
-* [Get started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
-* [Dynatrace Intelligence agentic and generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
-* [Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips "Learn best practices for writing more accurate prompts.")
-* [Generative AI quick analysis examples](/docs/dynatrace-intelligence/use-cases/copilot-examples "Learn more about what kind of prompts work well in Dynatrace Intelligence agentic and generative AI.")
+* [Dynatrace Intelligence agentic and generative AI overview](../ru/dynatrace-intelligence/copilot/copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
+* [Get started with Dynatrace Intelligence agentic and generative AI](../ru/dynatrace-intelligence/copilot/copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
+* [Dynatrace Intelligence agentic and generative AI FAQ](../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")
+* [Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts](../ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips.md "Learn best practices for writing more accurate prompts.")
+* [Generative AI quick analysis examples](../ru/dynatrace-intelligence/use-cases/copilot-examples.md "Learn more about what kind of prompts work well in Dynatrace Intelligence agentic and generative AI.")
 
 ---
 
@@ -1303,13 +1303,13 @@ scraped: 2026-03-06T21:14:58.711515
 
 * Объяснение
 
-Прочитайте это объяснение](/docs/dynatrace-intelligence/copilot/copilot-overview)[#### Начало работы с интеллектом Dynatrace агентного и генеративного ИИ
+Прочитайте это объяснение](../ru/dynatrace-intelligence/copilot/copilot-overview.md)[#### Начало работы с интеллектом Dynatrace агентного и генеративного ИИ
 
 Узнайте, как настроить интеллект Dynatrace агентного и генеративного ИИ.
 
 * Руководство по началу работы
 
-Прочитайте это руководство](/docs/dynatrace-intelligence/copilot/copilot-getting-started)
+Прочитайте это руководство](../ru/dynatrace-intelligence/copilot/copilot-getting-started.md)
 
 ## Анализ данных с помощью генеративного ИИ
 
@@ -1319,25 +1319,25 @@ scraped: 2026-03-06T21:14:58.711515
 
 * Обзор
 
-Прочитайте обзор](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql)[#### Советы по написанию лучших запросов для интеллекта Dynatrace агентного и генеративного ИИ
+Прочитайте обзор](../ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql.md)[#### Советы по написанию лучших запросов для интеллекта Dynatrace агентного и генеративного ИИ
 
 Узнайте лучшие практики для написания более точных запросов.
 
 * Справочник
 
-Прочитайте этот справочник](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips)[#### Примеры быстрого анализа с помощью генеративного ИИ
+Прочитайте этот справочник](../ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips.md)[#### Примеры быстрого анализа с помощью генеративного ИИ
 
 Узнайте больше о том, какие запросы работают хорошо в интеллекте Dynatrace агентного и генеративного ИИ.
 
 * Справочник
 
-Прочитайте этот справочник](/docs/dynatrace-intelligence/use-cases/copilot-examples)[#### Суммирование и объяснение запросов
+Прочитайте этот справочник](../ru/dynatrace-intelligence/use-cases/copilot-examples.md)[#### Суммирование и объяснение запросов
 
 Узнайте, как суммировать и объяснять запросы с помощью навыка DQL2NL интеллекта Dynatrace агентного и генеративного ИИ.
 
 * Учебник
 
-Прочитайте этот учебник](/docs/dynatrace-intelligence/copilot/explain-queries-with-davis-copilot)
+Прочитайте этот учебник](../common/dynatrace-intelligence/copilot/explain-queries-with-davis-copilot.md)
 
 ## Задайте вопрос Dynatrace Assist
 
@@ -1347,15 +1347,15 @@ scraped: 2026-03-06T21:14:58.711515
 
 * Приложение
 
-Изучите это приложение](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot)[#### Встроенные стартовые разговоры
+Изучите это приложение](../ru/dynatrace-intelligence/copilot/chat-with-davis-copilot.md)[#### Встроенные стартовые разговоры
 
 Узнайте, как запустить предопределенные запросы в различных приложениях Dynatrace.
 
 * Справочник
 
-Прочитайте этот справочник](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters)
+Прочитайте этот справочник](../ru/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters.md)
 
-Для получения дополнительной информации о том, какие запросы работают хорошо в **Dynatrace Assist**, см. [примеры запросов](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts "Узнайте, какие запросы работают хорошо в Dynatrace Assist.").
+Для получения дополнительной информации о том, какие запросы работают хорошо в **Dynatrace Assist**, см. [примеры запросов](dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts.md "Узнайте, какие запросы работают хорошо в Dynatrace Assist.").
 
 ## Векторное сопоставление документов
 
@@ -1365,7 +1365,7 @@ scraped: 2026-03-06T21:14:58.711515
 
 * Учебник
 
-Прочитайте этот учебник](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides)
+Прочитайте этот учебник](../ru/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides.md)
 
 ## Узнайте больше
 
@@ -1375,12 +1375,12 @@ scraped: 2026-03-06T21:14:58.711515
 
 * Объяснение
 
-Прочитайте это объяснение](/docs/dynatrace-intelligence/copilot/copilot-data-privacy)[#### Часто задаваемые вопросы об интеллекте Dynatrace агентного и генеративного ИИ
+Прочитайте это объяснение](../ru/dynatrace-intelligence/copilot/copilot-data-privacy.md)[#### Часто задаваемые вопросы об интеллекте Dynatrace агентного и генеративного ИИ
 
 Узнайте о часто задаваемых вопросах и найдите ответы.
 
 * Руководство по устранению неполадок
 
-Прочитайте это руководство](/docs/dynatrace-intelligence/copilot/copilot-faq)
+Прочитайте это руководство](../common/dynatrace-intelligence/copilot/copilot-faq.md)
 
 ---

@@ -12,15 +12,15 @@ scraped: 2026-03-06T21:15:52.450536
 * Tutorial
 * Updated on Mar 05, 2026
 
-OpenPipeline позволяет извлекать пользовательские метрики из [пользовательских сессий](/docs/observe/digital-experience/new-rum-experience/concepts/data-model#user-sessions "Ознакомьтесь с моделью данных, лежащей в основе New RUM Experience."), что обеспечивает долгосрочный анализ в ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** и ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, который выходит далеко за рамки стандартного мониторинга производительности. Комбинируя эти метрики со [свойствами пользовательских сессий](/docs/observe/digital-experience/new-rum-experience/concepts/data-model#event-and-session-properties "Ознакомьтесь с моделью данных, лежащей в основе New RUM Experience."), вы получаете гибкость для выявления инсайтов, максимально адаптированных к вашим бизнес-целям.
+OpenPipeline позволяет извлекать пользовательские метрики из [пользовательских сессий](../concepts/data-model.md#user-sessions "Ознакомьтесь с моделью данных, лежащей в основе New RUM Experience."), что обеспечивает долгосрочный анализ в ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** и ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, который выходит далеко за рамки стандартного мониторинга производительности. Комбинируя эти метрики со [свойствами пользовательских сессий](../concepts/data-model.md#event-and-session-properties "Ознакомьтесь с моделью данных, лежащей в основе New RUM Experience."), вы получаете гибкость для выявления инсайтов, максимально адаптированных к вашим бизнес-целям.
 
 Для иллюстрации этого процесса данное руководство проведёт вас через извлечение метрики конверсии клиентов из пользовательских сессий, показывая количество сессий, завершившихся конверсией клиента, в сравнении с теми, которые не завершились конверсией.
 
 ## Пример сценария
 
-В этом руководстве мы будем использовать интернет-магазин в качестве примера. Магазин инструментирован с помощью RUM JavaScript, а собранные данные привязаны к [фронтенду](/docs/observe/digital-experience/new-rum-experience/concepts/frontends "Узнайте о концепции фронтенда в New RUM Experience.") с именем `webshop`.
+В этом руководстве мы будем использовать интернет-магазин в качестве примера. Магазин инструментирован с помощью RUM JavaScript, а собранные данные привязаны к [фронтенду](../concepts/frontends.md "Узнайте о концепции фронтенда в New RUM Experience.") с именем `webshop`.
 
-Инструментация была настроена для отправки свойства пользовательской сессии `successful_checkout` каждый раз, когда клиент успешно завершает процесс оформления заказа. Свойство было сконфигурировано, как описано в [Захват свойств событий и сессий для веб-фронтендов](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/event-and-session-properties "Узнайте, как захватывать свойства событий и сессий для веб-фронтендов."), а затем отправлено через JavaScript API с помощью [`sendSessionPropertyEvent`](https://docs.dynatrace.com/javascriptapi/doc-latest/functions/Types.dynatrace.sendSessionPropertyEvent.html):
+Инструментация была настроена для отправки свойства пользовательской сессии `successful_checkout` каждый раз, когда клиент успешно завершает процесс оформления заказа. Свойство было сконфигурировано, как описано в [Захват свойств событий и сессий для веб-фронтендов](../web-frontends/additional-configuration/event-and-session-properties.md "Узнайте, как захватывать свойства событий и сессий для веб-фронтендов."), а затем отправлено через JavaScript API с помощью [`sendSessionPropertyEvent`](https://docs.dynatrace.com/javascriptapi/doc-latest/functions/Types.dynatrace.sendSessionPropertyEvent.html):
 
 ```
 dynatrace.sendSessionPropertyEvent({
@@ -50,12 +50,12 @@ fetch user.sessions
 
 Необходимые знания
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")
-* [Обработка в OpenPipeline](/docs/platform/openpipeline/concepts/processing "Изучите основные концепции обработки в Dynatrace OpenPipeline.")
+* [Dynatrace Query Language](../../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
+* [Обработка в OpenPipeline](../../../../platform/openpipeline/concepts/processing.md "Изучите основные концепции обработки в Dynatrace OpenPipeline.")
 
 Предварительные требования
 
-Убедитесь, что у вас есть разрешения, описанные в [Разрешения New RUM Experience](/docs/observe/digital-experience/new-rum-experience/permissions "Узнайте, какие разрешения необходимы для настройки New RUM Experience.").
+Убедитесь, что у вас есть разрешения, описанные в [Разрешения New RUM Experience](../permissions.md "Узнайте, какие разрешения необходимы для настройки New RUM Experience.").
 
 ## Инструкция
 
@@ -107,7 +107,7 @@ timeseries sum(easytravel.checkout_statistics), by: { successful_checkout }, int
 
 ## Связанные темы
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")
-* [Обработка в OpenPipeline](/docs/platform/openpipeline/concepts/processing "Изучите основные концепции обработки в Dynatrace OpenPipeline.")
-* [Захват свойств событий и сессий для веб-фронтендов](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/event-and-session-properties "Узнайте, как захватывать свойства событий и сессий для веб-фронтендов.")
-* [Захват свойств событий и сессий для мобильных фронтендов](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/additional-configuration/event-and-session-properties "Узнайте, как захватывать свойства событий и сессий для мобильных фронтендов.")
+* [Dynatrace Query Language](../../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
+* [Обработка в OpenPipeline](../../../../platform/openpipeline/concepts/processing.md "Изучите основные концепции обработки в Dynatrace OpenPipeline.")
+* [Захват свойств событий и сессий для веб-фронтендов](../web-frontends/additional-configuration/event-and-session-properties.md "Узнайте, как захватывать свойства событий и сессий для веб-фронтендов.")
+* [Захват свойств событий и сессий для мобильных фронтендов](../mobile-frontends/additional-configuration/event-and-session-properties.md "Узнайте, как захватывать свойства событий и сессий для мобильных фронтендов.")

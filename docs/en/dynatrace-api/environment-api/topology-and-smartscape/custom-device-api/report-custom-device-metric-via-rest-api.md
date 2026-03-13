@@ -16,7 +16,7 @@ The **Custom device** endpoint of the **Topology and Smartscape** API enables yo
 
 The metric you're reporting must already exist in Dynatrace.
 
-See [Create custom device via the Dynatrace API](/docs/dynatrace-api/environment-api/topology-and-smartscape/custom-device-api/create-custom-device-via-dynatrace-api "Learn how you can use the Dynatrace API to create a custom device.") to learn how to create a custom device without sending data to it.
+See [Create custom device via the Dynatrace API](create-custom-device-via-dynatrace-api.md "Learn how you can use the Dynatrace API to create a custom device.") to learn how to create a custom device without sending data to it.
 
 You can send data to the custom device retrospectivelyâthe **custom device** endpoint supports the reporting of data up to one hour in the past. However, to ensure the proper functioning of AI root-cause analysis and metric-based alerting, we recommend that data be sent in real time.
 
@@ -33,7 +33,7 @@ The request consumes and produces an `application/json` payload.
 
 To execute this request, you need an access token with `DataExport` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Parameters
 

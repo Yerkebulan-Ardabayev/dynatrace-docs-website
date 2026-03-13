@@ -17,7 +17,7 @@ scraped: 2026-03-06T21:17:39.229286
 
 Это руководство посвящено мониторингу инфраструктуры сервисов Azure, в частности мониторингу облачных сервисов Azure через Azure Monitor. См. раздел [Что дальше](#next) для получения информации о полном мониторинге стека и мониторинге логов ваших сервисов Azure.
 
-В качестве альтернативы вы можете настроить среду Dynatrace SaaS с помощью [Azure Marketplace](/docs/ingest-from/microsoft-azure-services/azure-platform/azure-native-integration "Настройка и конфигурация среды Dynatrace SaaS с помощью Azure Marketplace.").
+В качестве альтернативы вы можете настроить среду Dynatrace SaaS с помощью [Azure Marketplace](../azure-platform/azure-native-integration.md "Настройка и конфигурация среды Dynatrace SaaS с помощью Azure Marketplace.").
 
 После установления начального мониторинга вы можете добавлять, удалять или изменять мониторинг сервисов через веб-интерфейс Dynatrace или, в масштабе, с помощью Dynatrace API.
 
@@ -25,8 +25,8 @@ scraped: 2026-03-06T21:17:39.229286
 
 Чтобы узнать, какие измерения собираются для каждого из сервисов Azure, см.:
 
-* [Облачные сервисы Azure, включённые по умолчанию, и метрики](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/default-azure-metrics "Список классических метрик, которые Dynatrace собирает по умолчанию для мониторинга Azure.")
-* [Облачные сервисы Azure](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics "Мониторинг сервисов Azure с помощью Dynatrace и просмотр доступных метрик.")
+* [Облачные сервисы Azure, включённые по умолчанию, и метрики](azure-monitoring-guide/default-azure-metrics.md "Список классических метрик, которые Dynatrace собирает по умолчанию для мониторинга Azure.")
+* [Облачные сервисы Azure](azure-cloud-services-metrics.md "Мониторинг сервисов Azure с помощью Dynatrace и просмотр доступных метрик.")
 
 Мониторинг инфраструктуры сервисов Azure предоставляет метрики из Azure Monitor и данные инфраструктуры, доступные через публичный Azure API. Данные собираются с интервалом в пять минут.
 
@@ -34,9 +34,9 @@ scraped: 2026-03-06T21:17:39.229286
 
 Факторы, влияющие на стоимость мониторинга Azure с помощью Dynatrace через Azure Monitor:
 
-* Каждый сервис, отслеживаемый Dynatrace через Azure Monitor, а также обработка и анализ логов, приводят к потреблению [единиц данных Davis](/docs/license/monitoring-consumption-classic/davis-data-units "Узнайте, как рассчитывается потребление мониторинга Dynatrace на основе единиц данных Davis (DDU).").
+* Каждый сервис, отслеживаемый Dynatrace через Azure Monitor, а также обработка и анализ логов, приводят к потреблению [единиц данных Davis](../../../license/monitoring-consumption-classic/davis-data-units.md "Узнайте, как рассчитывается потребление мониторинга Dynatrace на основе единиц данных Davis (DDU).").
 * Microsoft может взимать дополнительную плату за запросы метрик Azure Monitor, если вы превысите 1 миллион вызовов API в месяц. Подробнее о дополнительных расходах см. в [документации Microsoft](https://dt-url.net/ie03w85).
-* Подробнее о стоимости сбора метрик см. [Обзор метрик на основе Grail (DPS)](/docs/license/capabilities/metrics "Узнайте, как рассчитывается потребление метрик Dynatrace на основе Grail в модели подписки Dynatrace Platform.").
+* Подробнее о стоимости сбора метрик см. [Обзор метрик на основе Grail (DPS)](../../../license/capabilities/metrics.md "Узнайте, как рассчитывается потребление метрик Dynatrace на основе Grail в модели подписки Dynatrace Platform.").
 
 ## Предварительные требования для мониторинга
 
@@ -44,7 +44,7 @@ scraped: 2026-03-06T21:17:39.229286
 
 Права администратора Dynatrace
 
-Для управления конфигурацией мониторинга Azure необходимо разрешение **Изменение настроек мониторинга** в Dynatrace. Вы можете настроить разрешение **Изменение настроек мониторинга** на уровне [разрешений](/docs/manage/identity-access-management/permission-management/role-based-permissions "Разрешения на основе ролей") среды или зоны управления.
+Для управления конфигурацией мониторинга Azure необходимо разрешение **Изменение настроек мониторинга** в Dynatrace. Вы можете настроить разрешение **Изменение настроек мониторинга** на уровне [разрешений](../../../manage/identity-access-management/permission-management/role-based-permissions.md "Разрешения на основе ролей") среды или зоны управления.
 
 ActiveGate с поддержкой мониторинга Azure
 
@@ -58,7 +58,7 @@ ActiveGate с поддержкой мониторинга Azure
    * Если результирующий список пуст, необходимо добавить хотя бы один ActiveGate с включённым модулем облачного мониторинга.
    * Если список не пуст, вы готовы к активации мониторинга Azure.
 
-Чтобы добавить ActiveGate с поддержкой облачного мониторинга, следуйте [руководству по установке ActiveGate](/docs/ingest-from/dynatrace-activegate/installation "Узнайте, как настроить ActiveGate") и вернитесь к этому руководству после завершения.
+Чтобы добавить ActiveGate с поддержкой облачного мониторинга, следуйте [руководству по установке ActiveGate](../../dynatrace-activegate/installation.md "Узнайте, как настроить ActiveGate") и вернитесь к этому руководству после завершения.
 
 #### Разрешение доступа ActiveGate к URL-адресам Azure
 
@@ -81,9 +81,9 @@ https://management.core.windows.net/
 Наиболее частой причиной проблем с сертификатами при использовании прокси с перехватом TLS является отсутствие сертификата CA прокси в хранилище доверенных сертификатов ActiveGate.
 Если проблемы с прокси сохраняются, см.:
 
-* [Прокси для ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate "Узнайте, как настроить свойства ActiveGate для использования прокси.")
-* [Доверенные корневые сертификаты для ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-trusted-root-certificates-on-activegate "Узнайте, как указать пользовательское хранилище доверенных сертификатов, которое объединяется с корневыми сертификатами Java и используется по умолчанию для всех подключений.")
-* [Пользовательский SSL-сертификат для ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate "Узнайте, как настроить SSL-сертификат на ActiveGate.")
+* [Прокси для ActiveGate](../../dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate.md "Узнайте, как настроить свойства ActiveGate для использования прокси.")
+* [Доверенные корневые сертификаты для ActiveGate](../../dynatrace-activegate/configuration/configure-trusted-root-certificates-on-activegate.md "Узнайте, как указать пользовательское хранилище доверенных сертификатов, которое объединяется с корневыми сертификатами Java и используется по умолчанию для всех подключений.")
+* [Пользовательский SSL-сертификат для ActiveGate](../../dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate.md "Узнайте, как настроить SSL-сертификат на ActiveGate.")
 
 «Ошибка связи.»
 
@@ -98,7 +98,7 @@ https://management.core.windows.net/
 * Достаточные разрешения для регистрации приложения в вашем клиенте Azure AD и назначения приложению роли в вашей подписке Azure.
 * [Субъект-служба](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals) Azure для доступа к Azure API.
 
-Для мониторинга сервисов Dynatrace необходимы как минимум разрешения на чтение. Приведённые ниже шаги описывают добавление разрешений на чтение для субъекта-службы и относятся к распространённому подходу с одним клиентом. Перед этим мы рекомендуем ознакомиться с нашими рекомендациями по [настройке субъекта-службы Azure для предотвращения ограничения Azure](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/limit-api-calls-to-azure#service-principal "Руководство по ограничению вызовов Azure API для предотвращения троттлинга").
+Для мониторинга сервисов Dynatrace необходимы как минимум разрешения на чтение. Приведённые ниже шаги описывают добавление разрешений на чтение для субъекта-службы и относятся к распространённому подходу с одним клиентом. Перед этим мы рекомендуем ознакомиться с нашими рекомендациями по [настройке субъекта-службы Azure для предотвращения ограничения Azure](azure-monitoring-guide/limit-api-calls-to-azure.md#service-principal "Руководство по ограничению вызовов Azure API для предотвращения троттлинга").
 
 Интеграция Dynatrace для Azure поддерживает **Azure Lighthouse**, что позволяет Dynatrace иметь мультитенантный доступ к Azure.
 
@@ -507,7 +507,7 @@ https://management.core.windows.net/
 Чтобы зарегистрировать приложение
 
 1. Перейдите в портал управления Azure и выберите **Microsoft Entra ID**.
-2. Скопируйте значение **Tenant ID** и сохраните его как `Tenant ID` для последующего использования. Это необходимо для [настройки подключения Dynatrace к вашей учётной записи Azure](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide#azureconfig-connect "Настройка и конфигурация мониторинга Azure в Dynatrace.").
+2. Скопируйте значение **Tenant ID** и сохраните его как `Tenant ID` для последующего использования. Это необходимо для [настройки подключения Dynatrace к вашей учётной записи Azure](azure-monitoring-guide.md#azureconfig-connect "Настройка и конфигурация мониторинга Azure в Dynatrace.").
 3. Выберите **Регистрация приложений** на панели навигации выбранного Active Directory.
 4. Нажмите **Новая регистрация** в верхней части панели регистрации приложений и введите имя вашего приложения.
 5. Оставьте все остальные настройки со значениями по умолчанию и нажмите **Зарегистрировать**.
@@ -968,7 +968,7 @@ https://management.core.windows.net/
 
 Сервисы Azure, отслеживаемые по умолчанию
 
-После подключения Dynatrace к вашей среде Azure он немедленно начинает мониторинг встроенных сервисов Azure для определённого субъекта-службы. [Классические (ранее «встроенные») метрики Azure](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/default-azure-metrics "Список классических метрик, которые Dynatrace собирает по умолчанию для мониторинга Azure.") содержат список метрик облачных сервисов Azure, отслеживаемых по умолчанию.
+После подключения Dynatrace к вашей среде Azure он немедленно начинает мониторинг встроенных сервисов Azure для определённого субъекта-службы. [Классические (ранее «встроенные») метрики Azure](azure-monitoring-guide/default-azure-metrics.md "Список классических метрик, которые Dynatrace собирает по умолчанию для мониторинга Azure.") содержат список метрик облачных сервисов Azure, отслеживаемых по умолчанию.
 
 Другие сервисы Azure
 
@@ -1000,7 +1000,7 @@ https://management.core.windows.net/
 
 Список облачных сервисов Azure и собираемых метрик
 
-Чтобы увидеть полный список облачных сервисов Azure и узнать о метриках, собираемых для каждого из них, см. [Все облачные сервисы Azure](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics "Мониторинг сервисов Azure с помощью Dynatrace и просмотр доступных метрик.").
+Чтобы увидеть полный список облачных сервисов Azure и узнать о метриках, собираемых для каждого из них, см. [Все облачные сервисы Azure](azure-cloud-services-metrics.md "Мониторинг сервисов Azure с помощью Dynatrace и просмотр доступных метрик.").
 
 Вы можете проверить список поддерживаемых сервисов Azure в [Dynatrace Hub](https://www.dynatrace.com/hub/?query=azure). Вы также можете получить доступ к Dynatrace Hub из вашей среды мониторинга и выполнить поиск по запросу «Azure».
 
@@ -1026,19 +1026,19 @@ https://management.core.windows.net/
 1. Перейдите в ![Azure](https://dt-cdn.net/images/azure-512-a93a37d351.png "Azure") **Azure (классический вид)**.
 2. Выберите подключение, для которого хотите увидеть обзор инфраструктуры Azure.
 
-Вы также можете создать собственный дашборд из метрик, собранных для ваших экземпляров Azure. Подробнее о создании дашбордов см. [Дашборды (классический вид)](/docs/analyze-explore-automate/dashboards-classic "Узнайте, как создавать, управлять и использовать классические дашборды Dynatrace.").
+Вы также можете создать собственный дашборд из метрик, собранных для ваших экземпляров Azure. Подробнее о создании дашбордов см. [Дашборды (классический вид)](../../../analyze-explore-automate/dashboards-classic.md "Узнайте, как создавать, управлять и использовать классические дашборды Dynatrace.").
 
 Виртуальные машины, контейнеры и глубокий мониторинг кода с помощью Dynatrace OneAgent
 
-Dynatrace OneAgent обеспечивает непревзойдённую глубину анализа хостов, контейнеров и кода. Подробнее см. [Интеграции Microsoft Azure](/docs/ingest-from/microsoft-azure-services/azure-integrations "Настройка глубокого мониторинга кода Dynatrace в Azure с помощью OneAgent или OpenTelemetry.").
+Dynatrace OneAgent обеспечивает непревзойдённую глубину анализа хостов, контейнеров и кода. Подробнее см. [Интеграции Microsoft Azure](../azure-integrations.md "Настройка глубокого мониторинга кода Dynatrace в Azure с помощью OneAgent или OpenTelemetry.").
 
 Дополнительная настройка уведомлений и оповещений
 
 После настройки мониторинга Azure вы можете:
 
-* [Настроить уведомления мониторинга с помощью Azure Alerts](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/set-up-monitoring-with-azure-alerts "Интеграция с оповещениями Azure Monitor и поддерживаемые типы оповещений Azure Monitor"). Это позволяет применять оповещения и автоматически преобразовывать их в события, которые используются Dynatrace Intelligence для более глубокого анализа.
-* [Настроить события метрик для оповещений](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/set-up-metric-events-for-alerting "Настройка и конфигурация событий метрик для оповещений."). Это позволяет создавать, включать/отключать и настраивать рекомендуемые правила оповещений.
+* [Настроить уведомления мониторинга с помощью Azure Alerts](azure-monitoring-guide/set-up-monitoring-with-azure-alerts.md "Интеграция с оповещениями Azure Monitor и поддерживаемые типы оповещений Azure Monitor"). Это позволяет применять оповещения и автоматически преобразовывать их в события, которые используются Dynatrace Intelligence для более глубокого анализа.
+* [Настроить события метрик для оповещений](azure-monitoring-guide/set-up-metric-events-for-alerting.md "Настройка и конфигурация событий метрик для оповещений."). Это позволяет создавать, включать/отключать и настраивать рекомендуемые правила оповещений.
 
 Мониторинг логов Azure
 
-Вы также можете мониторить логи Azure. Подробнее см. [Логи Azure](/docs/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Используйте пересылку логов Azure для сбора логов Azure.").
+Вы также можете мониторить логи Azure. Подробнее см. [Логи Azure](set-up-log-forwarder-azure.md "Используйте пересылку логов Azure для сбора логов Azure.").

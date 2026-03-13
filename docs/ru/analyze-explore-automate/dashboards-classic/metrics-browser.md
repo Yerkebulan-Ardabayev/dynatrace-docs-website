@@ -17,7 +17,7 @@ Early Adopter
 
 Перейдите в **Metrics**, чтобы открыть браузер **Metrics** — удобный инструмент для просмотра всех метрик, доступных в вашей среде мониторинга, и быстрой визуализации конкретной метрики.
 
-* [Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards."): вы можете закрепить визуализацию на классической панели мониторинга.
+* [Dashboards Classic](charts-and-tiles/pin-tiles-to-your-dashboard.md "Learn to pin tiles to your dashboards."): вы можете закрепить визуализацию на классической панели мониторинга.
 
 ## Фильтрация и сортировка таблицы
 
@@ -54,17 +54,17 @@ Early Adopter
 
 Примеры нотации порядков величин в Dynatrace:
 
-Подробнее см. в разделе [Нотация порядков величин](/docs/discover-dynatrace/get-started/dynatrace-ui/order-of-magnitude-notation "Dynatrace order-of-magnitude notation for displaying metric values").
+Подробнее см. в разделе [Нотация порядков величин](../../discover-dynatrace/get-started/dynatrace-ui/order-of-magnitude-notation.md "Dynatrace order-of-magnitude notation for displaying metric values").
 
 ## Добавление метрики на панель мониторинга
 
-[Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+[Dashboards Classic](../dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
 
 Чтобы добавить метрику на классическую панель мониторинга
 
 1. Нажмите ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") в столбце **Details** для отображения деталей метрики.
-2. Нажмите **Create chart**, чтобы открыть метрику в [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
-3. Настройте параметры запроса и визуализации по необходимости. Подробнее см. [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") или [Быстрый старт Data Explorer](/docs/analyze-explore-automate/explorer/explorer-quick-start "Using Data Explorer, create your first query, select a visualization, and pin the results to a dashboard.").
+2. Нажмите **Create chart**, чтобы открыть метрику в [Data Explorer](../explorer.md "Query for metrics and transform results to gain desired insights.").
+3. Настройте параметры запроса и визуализации по необходимости. Подробнее см. [Data Explorer](../explorer.md "Query for metrics and transform results to gain desired insights.") или [Быстрый старт Data Explorer](../explorer/explorer-quick-start.md "Using Data Explorer, create your first query, select a visualization, and pin the results to a dashboard.").
 4. Нажмите **Pin to dashboard**.
 5. Укажите целевую панель мониторинга и заголовок метрики.
 6. Нажмите **Pin**.
@@ -80,7 +80,7 @@ Early Adopter
 
 ### Настройка через API
 
-Метаданные метрик полностью настраиваются через API. Подробнее см. [Метаданные пользовательских метрик](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata "Provide metadata for your custom metric.").
+Метаданные метрик полностью настраиваются через API. Подробнее см. [Метаданные пользовательских метрик](../../ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata.md "Provide metadata for your custom metric.").
 
 ### Настройка через веб-интерфейс
 

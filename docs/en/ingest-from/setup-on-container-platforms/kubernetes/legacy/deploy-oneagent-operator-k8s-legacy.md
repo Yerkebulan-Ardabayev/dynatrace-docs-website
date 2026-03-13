@@ -14,8 +14,8 @@ scraped: 2026-03-06T21:29:44.845264
 
 This procedure is deprecated.
 
-* If you are making a fresh installation, you should [set up Kubernetes monitoring using Dynatrace Operator](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes").
-* If you already have OneAgent installed using OneAgent Operator, please see the [instructions for migrating to Dynatrace Operator](/docs/ingest-from/setup-on-k8s/guides/migration/migrate-to-dto "Detailed instructions how to migrate from deprecated OneAgent Operator to Dynatrace Operator using kubectl/oc").
+* If you are making a fresh installation, you should [set up Kubernetes monitoring using Dynatrace Operator](../../../setup-on-k8s/deployment.md "Deploy Dynatrace Operator on Kubernetes").
+* If you already have OneAgent installed using OneAgent Operator, please see the [instructions for migrating to Dynatrace Operator](../../../setup-on-k8s/guides/migration/migrate-to-dto.md "Detailed instructions how to migrate from deprecated OneAgent Operator to Dynatrace Operator using kubectl/oc").
 
 ## Installation
 
@@ -27,11 +27,11 @@ Deploy with Helm
 
 Prerequisites
 
-* Generate an [API token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") and a [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.") in your Dynatrace environment.
+* Generate an [API token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.") and a [PaaS token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.") in your Dynatrace environment.
 
   Make sure you have the **Access problem and event feed, metrics, and topology** setting enabled for the API token.
 * Pods must allow egress to your Dynatrace environment or to your Environment ActiveGate in order for metric routing to work properly.
-* See [Support lifecycle](/docs/ingest-from/technology-support/support-model-and-issues "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues") for supported Kubernetes versions.
+* See [Support lifecycle](../../../technology-support/support-model-and-issues.md "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues") for supported Kubernetes versions.
 
 1. Create the necessary objects for OneAgent Operator.
 
@@ -80,11 +80,11 @@ Prerequisites
    | **Parameter** | **Description** | **Default value** |
    | --- | --- | --- |
    | `apiUrl` | Required For **Dynatrace SaaS**, where OneAgent can connect to the internet, replace the Dynatrace `ENVIRONMENTID` in `https://ENVIRONMENTID.live.dynatrace.com/api`. For **Environment ActiveGates** (SaaS or Managed), use the following to download the OneAgent, as well as to communicate OneAgent traffic through the ActiveGate: `https://YourActiveGateIP` or `FQDN:9999/e/<ENVIRONMENTID>/api`. |  |
-   | `useUnprivilegedMode` | Optional Set to `false` if you want to mark the pod as privileged. Defaults to using [Linux capabilities for the OneAgent pod](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Find out when Dynatrace OneAgent requires root privileges on Linux.") | `true` |
+   | `useUnprivilegedMode` | Optional Set to `false` if you want to mark the pod as privileged. Defaults to using [Linux capabilities for the OneAgent pod](../../../dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged.md "Find out when Dynatrace OneAgent requires root privileges on Linux.") | `true` |
    | `tokens` | Optional Name of the secret that holds the API and PaaS tokens from above. | Name of custom resource (`.metadata.name`) if unset |
    | `useImmutableImage` | Optional Set to `true` if you want to pull a OneAgent Docker image from your Dynatrace environment. Use this parameter together with the `agentVersion` parameter to control the version of OneAgent. | `false` |
    | `agentVersion` | Optional Set this value to the OneAgent version using semantic versioning (`major.minor.patch`). Example: `1.203.0` | latest version |
-   | `args` | Optional Parameters to be passed to the OneAgent installer. All the [command line parameters of the installer](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.") are supported, with the exception of `INSTALL_PATH`. |  |
+   | `args` | Optional Parameters to be passed to the OneAgent installer. All the [command line parameters of the installer](../../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters.") are supported, with the exception of `INSTALL_PATH`. |  |
    | `env` | Optional Environment variables for OneAgent container. |  |
    | `skipCertCheck` | Optional Disable certificate validation checks for installer download and API communication. Set to `true` if you want to skip any certification validation checks. | `false` |
    | `nodeSelector` | Optional Keep empty default value. If you want to roll out OneAgent to specific nodes only, provide the `nodeSelectors` here. Refer to [Kubernetes docsï»¿](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector) for details. |  |
@@ -336,15 +336,15 @@ Prerequisites
    - --set-network-zone=<your.network.zone>
    ```
 
-   See [network zones](/docs/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
+   See [network zones](../../../../manage/network-zones.md "Find out how network zones work in Dynatrace.") for more information.
 
 Prerequisites
 
-* Generate an [API token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") and a [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.") in your Dynatrace environment.
+* Generate an [API token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.") and a [PaaS token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.") in your Dynatrace environment.
 
   Make sure you have the **Access problem and event feed, metrics, and topology** setting enabled for the API token.
 * Pods must allow egress to your Dynatrace environment or to your Environment ActiveGate in order for metric routing to work properly.
-* See [Support lifecycle](/docs/ingest-from/technology-support/support-model-and-issues "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues") for supported Kubernetes versions.
+* See [Support lifecycle](../../../technology-support/support-model-and-issues.md "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues") for supported Kubernetes versions.
 * [Install Helm version 3ï»¿](https://helm.sh/docs/intro/install/).
 
 1. Add the Dynatrace OneAgent Helm repository.
@@ -546,7 +546,7 @@ kubectl apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releas
    - --set-network-zone=<your.network.zone>
    ```
 
-   See [network zones](/docs/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
+   See [network zones](../../../../manage/network-zones.md "Find out how network zones work in Dynatrace.") for more information.
 6. To apply the YAML parameters, run the following command:
 
    ```
@@ -576,16 +576,16 @@ The following table shows the permissions needed for OneAgent Operator.
 
 ## Limitations
 
-See [Docker limitations](/docs/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container.") for details.
+See [Docker limitations](../../docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container.") for details.
 
 ## Troubleshooting
 
-Find out how to [troubleshoot issues](/docs/ingest-from/setup-on-k8s/deployment/troubleshooting#deploy "This page will assist you in navigating any challenges you may encounter while working with the Dynatrace Operator and its various components.") that you may encounter when deploying OneAgent on Kubernetes.
+Find out how to [troubleshoot issues](../../../setup-on-k8s/deployment/troubleshooting.md#deploy "This page will assist you in navigating any challenges you may encounter while working with the Dynatrace Operator and its various components.") that you may encounter when deploying OneAgent on Kubernetes.
 
 ## Deploy an ActiveGate and connect your Kubernetes API to Dynatrace
 
 Now that you have OneAgent running on your Kubernetes nodes, you're able to monitor those nodes, and the applications running in Kubernetes. The next step is to deploy an ActiveGate and connect your Kubernetes API to Dynatrace in order to get native Kubernetes metrics, like request limits, and differences in pods requested vs. running pods.  
-For further instructions see [Deploy ActiveGate in Kubernetes as a StatefulSet](/docs/ingest-from/setup-on-k8s/deployment/other/ag-statefulset "Install and configure ActiveGate in Kubernetes as a StatefulSet.").
+For further instructions see [Deploy ActiveGate in Kubernetes as a StatefulSet](../../../setup-on-k8s/deployment/other/ag-statefulset.md "Install and configure ActiveGate in Kubernetes as a StatefulSet.").
 
 ## Update OneAgent Operator with kubectl
 
@@ -654,7 +654,7 @@ To uninstall OneAgent Operator from Kubernetes version 1.9+
    kubectl delete -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/latest/download/kubernetes.yaml
    ```
 2. Optional After deleting OneAgent Operator, the OneAgent binary remains on the node in an inactive state. To uninstall it completely, run the `uninstall.sh` script and delete logs and configuration files.  
-   See [Linux related information](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux "Learn how you can remove OneAgent from your Linux-based system.").
+   See [Linux related information](../../../dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux.md "Learn how you can remove OneAgent from your Linux-based system.").
 
 Remove OneAgent custom resources and clean up all remaining OneAgent Operatorâspecific objects:
 
@@ -664,6 +664,6 @@ helm uninstall dynatrace-oneagent-operator -n dynatrace
 
 ## Related topics
 
-* [Kubernetes Classic](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring "Monitor Kubernetes/OpenShift with Dynatrace.")
-* [Store Dynatrace images in private registries](/docs/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry "Store Dynatrace images in private registries")
-* [Migrate Dynatrace Operator to a new environment](/docs/ingest-from/setup-on-k8s/guides/migration/migrate-dto-to-tenant "Migrate monitoring to a new Dynatrace environment on Kubernetes clusters.")
+* [Kubernetes Classic](../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring.md "Monitor Kubernetes/OpenShift with Dynatrace.")
+* [Store Dynatrace images in private registries](../../../setup-on-k8s/guides/container-registries/prepare-private-registry.md "Store Dynatrace images in private registries")
+* [Migrate Dynatrace Operator to a new environment](../../../setup-on-k8s/guides/migration/migrate-dto-to-tenant.md "Migrate monitoring to a new Dynatrace environment on Kubernetes clusters.")

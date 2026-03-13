@@ -16,8 +16,8 @@ Log Monitoring Classic
 
 Dynatrace отслеживает паттерны ротации лог-файлов. Эта функциональность обеспечивает полноту процесса чтения файлов, даже если OneAgent временно отключён или приложение аварийно завершило работу. Процесс мониторинга имеет два измерения:
 
-* [Отслеживание ротации по имени файла](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-rotation-patterns#filenametracking "Узнайте о поддерживаемых паттернах ротации логов")
-* [Отслеживание ротации по типу генерации лога](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-rotation-patterns#gennametracking "Узнайте о поддерживаемых паттернах ротации логов")
+* [Отслеживание ротации по имени файла](log-rotation-patterns.md#filenametracking "Узнайте о поддерживаемых паттернах ротации логов")
+* [Отслеживание ротации по типу генерации лога](log-rotation-patterns.md#gennametracking "Узнайте о поддерживаемых паттернах ротации логов")
 
 ## Отслеживание ротации по имени файла
 

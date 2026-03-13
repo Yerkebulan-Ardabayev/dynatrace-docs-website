@@ -31,13 +31,13 @@ scraped: 2026-03-06T21:18:15.453486
 
 Перед началом работы необходимо выполнить следующее:
 
-* Получите **токен доступа** для загрузки Dynatrace OneAgent с областью действия `InstallerDownload`. Подробнее о токенах доступа см. [Dynatrace API — Токены и аутентификация](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+* Получите **токен доступа** для загрузки Dynatrace OneAgent с областью действия `InstallerDownload`. Подробнее о токенах доступа см. [Dynatrace API — Токены и аутентификация](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
 
   В приведённых ниже процедурах замените `<DT_TOKEN>` вашим реальным токеном доступа.
-* Получите **идентификатор среды**. Подробнее об идентификаторах сред см. [Что такое среда мониторинга?](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+* Получите **идентификатор среды**. Подробнее об идентификаторах сред см. [Что такое среда мониторинга?](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
 
   В приведённых ниже процедурах замените `<DT_ENV_ID>` вашим реальным идентификатором среды.
-* Получите конечную точку Dynatrace API, определённую вашим [URL среды](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") или альтернативно [адресом ActiveGate](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
+* Получите конечную точку Dynatrace API, определённую вашим [URL среды](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") или альтернативно [адресом ActiveGate](../../dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.").
 
   В приведённых ниже процедурах замените `<DT_ENV_FQDN>` реальной конечной точкой Dynatrace API.
 * Установите [gcloud CLI](https://cloud.google.com/sdk/docs/install)
@@ -54,11 +54,11 @@ Jib
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Добавление установщика OneAgent**](/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun#add-oneagent-installer-option-1 "Monitor Java application deployed on Google Cloud Run managed.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Добавление установщика OneAgent**](cloudrun.md#add-oneagent-installer-option-1 "Monitor Java application deployed on Google Cloud Run managed.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Настройка Cloud Build**](/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun#configure-cloud-build-option-1 "Monitor Java application deployed on Google Cloud Run managed.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Настройка Cloud Build**](cloudrun.md#configure-cloud-build-option-1 "Monitor Java application deployed on Google Cloud Run managed.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Сборка и развёртывание**](/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun#build-and-deploy-option-1 "Monitor Java application deployed on Google Cloud Run managed.")
+**Сборка и развёртывание**](cloudrun.md#build-and-deploy-option-1 "Monitor Java application deployed on Google Cloud Run managed.")
 
 #### Шаг 1 Добавление установщика OneAgent в Docker-образ
 
@@ -431,9 +431,9 @@ _GCP_REGION=<GCP_REGION>,\" \
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Добавление установщика OneAgent**](/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun#add-oneagent-installer-option-2 "Monitor Java application deployed on Google Cloud Run managed.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Добавление установщика OneAgent**](cloudrun.md#add-oneagent-installer-option-2 "Monitor Java application deployed on Google Cloud Run managed.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Сборка и развёртывание**](/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun#build-and-deploy-option-2 "Monitor Java application deployed on Google Cloud Run managed.")
+**Сборка и развёртывание**](cloudrun.md#build-and-deploy-option-2 "Monitor Java application deployed on Google Cloud Run managed.")
 
 #### Шаг 1 Добавление установщика OneAgent в Docker-образ
 
@@ -671,15 +671,15 @@ gcloud run deploy <YOUR_SERVICE_NAME> --image gcr.io/<GCP_PROJECT_ID>/<YOUR_IMAG
 | Имя | Описание |
 | --- | --- |
 | **Сеть** |  |
-| `DT_NETWORK_ZONE` | Указывает использование сетевой зоны. Подробнее см. [Сетевые зоны](/docs/manage/network-zones "Find out how network zones work in Dynatrace."). |
-| `DT_PROXY` | При использовании прокси-сервера используйте эту переменную окружения для передачи учётных данных прокси. Подробнее см. [Настройка OneAgent на контейнерах для мониторинга только приложений](/docs/ingest-from/setup-on-container-platforms/docker/set-up-oneagent-on-containers-for-application-only-monitoring "Install, update, and uninstall OneAgent on containers for application-only monitoring.") |
+| `DT_NETWORK_ZONE` | Указывает использование сетевой зоны. Подробнее см. [Сетевые зоны](../../../manage/network-zones.md "Find out how network zones work in Dynatrace."). |
+| `DT_PROXY` | При использовании прокси-сервера используйте эту переменную окружения для передачи учётных данных прокси. Подробнее см. [Настройка OneAgent на контейнерах для мониторинга только приложений](../../setup-on-container-platforms/docker/set-up-oneagent-on-containers-for-application-only-monitoring.md "Install, update, and uninstall OneAgent on containers for application-only monitoring.") |
 | **Дополнительные метаданные для группировки процессов / обнаружения сервисов** |  |
-| `DT_LOCALTOVIRTUALHOSTNAME` | Несколько контейнеров иногда определяются как один экземпляр (localhost), что приводит к различным проблемам, например, в обнаружении сервисов или оповещениях о доступности. Используйте эту переменную окружения для определения уникального имени экземпляра контейнера. Подробнее см. [Обнаружение сервисов v1](/docs/observe/application-observability/services/service-detection/service-detection-v1#adjusting-service-detection "Find out how Dynatrace Service Detection v1 detects and names different types of services.") |
-| `DT_APPLICATIONID` | Некоторые технологии не предоставляют уникальных имён приложений. В таких случаях используйте эту переменную окружения для указания уникального имени. Подробнее см. [Обнаружение сервисов v1](/docs/observe/application-observability/services/service-detection/service-detection-v1#web-server-naming-issues "Find out how Dynatrace Service Detection v1 detects and names different types of services.") |
-| `DT_TAGS` | Применяет [пользовательские теги](/docs/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables.") к вашей группе процессов |
-| `DT_CUSTOM_PROP` | Применяет [пользовательские метаданные](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata "Configure your own process-related metadata based on the unique needs of your organization or environment.") к вашей группе процессов |
-| `DT_CLUSTER_ID` | Если [правила обнаружения групп процессов](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection") не подходят для вашего случая использования, используйте эту переменную окружения для **объединения всех процессов с одинаковым значением**. |
-| `DT_NODE_ID` | Если [правила обнаружения групп процессов](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection") не подходят для вашего случая использования, используйте эту переменную окружения для **разделения экземпляров групп процессов** |
+| `DT_LOCALTOVIRTUALHOSTNAME` | Несколько контейнеров иногда определяются как один экземпляр (localhost), что приводит к различным проблемам, например, в обнаружении сервисов или оповещениях о доступности. Используйте эту переменную окружения для определения уникального имени экземпляра контейнера. Подробнее см. [Обнаружение сервисов v1](../../../observe/application-observability/services/service-detection/service-detection-v1.md#adjusting-service-detection "Find out how Dynatrace Service Detection v1 detects and names different types of services.") |
+| `DT_APPLICATIONID` | Некоторые технологии не предоставляют уникальных имён приложений. В таких случаях используйте эту переменную окружения для указания уникального имени. Подробнее см. [Обнаружение сервисов v1](../../../observe/application-observability/services/service-detection/service-detection-v1.md#web-server-naming-issues "Find out how Dynatrace Service Detection v1 detects and names different types of services.") |
+| `DT_TAGS` | Применяет [пользовательские теги](../../../manage/tags-and-metadata/setup/define-tags-based-on-environment-variables.md "Find out how Dynatrace enables you to define tags based on environment variables.") к вашей группе процессов |
+| `DT_CUSTOM_PROP` | Применяет [пользовательские метаданные](../../../observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata.md "Configure your own process-related metadata based on the unique needs of your organization or environment.") к вашей группе процессов |
+| `DT_CLUSTER_ID` | Если [правила обнаружения групп процессов](../../../observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection") не подходят для вашего случая использования, используйте эту переменную окружения для **объединения всех процессов с одинаковым значением**. |
+| `DT_NODE_ID` | Если [правила обнаружения групп процессов](../../../observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection") не подходят для вашего случая использования, используйте эту переменную окружения для **разделения экземпляров групп процессов** |
 | **Устранение неполадок** |  |
 | `DT_LOGSTREAM` | Установите эту переменную со значением `stdout`, чтобы настроить агент на вывод ошибок в консоль. Для просмотра дополнительных логов агента установите уровень логирования с помощью DT\_LOGLEVELCON, как описано ниже. |
 | `DT_LOGLEVELCON` | Используйте эту переменную окружения для определения уровня логирования консоли. Допустимые варианты: `NONE`, `INFO`, `WARNING`, `SEVERE` в порядке увеличения уровня логирования. |
@@ -706,7 +706,7 @@ gcloud run deploy <YOUR_SERVICE_NAME> --image gcr.io/<GCP_PROJECT_ID>/<YOUR_IMAG
   Первое поколение среды выполнения GCR, также называемое Gen1, имеет намеренно повышенные ограничения безопасности. В результате некоторые функции OneAgent не могут работать в этой среде выполнения и недоступны. Например, метрики на странице **Хосты**, такие как `CPU Usage` и `Memory Usage`, недоступны.
 * **Экземпляры GCR определяются как хосты**
 
-  Среды выполнения GCR в настоящее время отображаются на странице **Хосты** с правильным определением свойств GCP и ограничения памяти каждого из этих экземпляров среды выполнения (контейнера), а не на странице [**Группы контейнеров**](/docs/observe/infrastructure-observability/container-platform-monitoring/container-groups "Overview on container groups monitoring"). Метрики контейнеров недоступны.
+  Среды выполнения GCR в настоящее время отображаются на странице **Хосты** с правильным определением свойств GCP и ограничения памяти каждого из этих экземпляров среды выполнения (контейнера), а не на странице [**Группы контейнеров**](../../../observe/infrastructure-observability/container-platform-monitoring/container-groups.md "Overview on container groups monitoring"). Метрики контейнеров недоступны.
 * **Возможные задержки при запуске**
 
   Поскольку каждая ревизия Google Cloud Run автоматически масштабируется до количества экземпляров контейнеров, необходимого для обработки входящих запросов, такие холодные запуски могут происходить чаще, чем в других средах, что увеличивает общие задержки при запуске.
@@ -715,7 +715,7 @@ gcloud run deploy <YOUR_SERVICE_NAME> --image gcr.io/<GCP_PROJECT_ID>/<YOUR_IMAG
 
 Каждый раз, когда вы хотите использовать новую версию Dynatrace OneAgent, необходимо выполнить повторную сборку и развёртывание.
 
-Если вы указали версию OneAgent по умолчанию для установки на новых хостах и в приложениях с помощью [настроек обновления OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux "Learn about the different ways to update OneAgent on Linux."), ваше приложение будет автоматически мониториться определённой версией OneAgent по умолчанию.
+Если вы указали версию OneAgent по умолчанию для установки на новых хостах и в приложениях с помощью [настроек обновления OneAgent](../../dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux.md "Learn about the different ways to update OneAgent on Linux."), ваше приложение будет автоматически мониториться определённой версией OneAgent по умолчанию.
 
 ## Удаление OneAgent
 
@@ -723,5 +723,5 @@ gcloud run deploy <YOUR_SERVICE_NAME> --image gcr.io/<GCP_PROJECT_ID>/<YOUR_IMAG
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Google Cloud](/docs/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
-* [Матрица поддержки платформ и возможностей OneAgent](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* [Настройка Dynatrace в Google Cloud](../../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
+* [Матрица поддержки платформ и возможностей OneAgent](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

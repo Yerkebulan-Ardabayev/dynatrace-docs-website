@@ -15,11 +15,11 @@ scraped: 2026-03-06T21:16:13.984280
 
 Log Monitoring Classic
 
-For the newest Dynatrace version, see [Log ingestion API](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.").
+For the newest Dynatrace version, see [Log ingestion API](../../logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.").
 
 Dynatrace automatically collects log and event data from a vast array of technologies. With the Log ingestion API, you can stream log records to a system, and have Dynatrace transform the stream into meaningful log messages.
 
-The Log ingestion API allows you to stream log records to the system. It is available via [Ingest JSON and TXT logs (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api/log-classic-ingest-json-txt-logs "Understand how JSON and TXT logs are processed.") or via [Ingest OTLP logs](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
+The Log ingestion API allows you to stream log records to the system. It is available via [Ingest JSON and TXT logs (Logs Classic)](logs-classic-ingestion-api/log-classic-ingest-json-txt-logs.md "Understand how JSON and TXT logs are processed.") or via [Ingest OTLP logs](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
 
 * For Dynatrace SaaS, the Log ingestion endpoint is available in your environment.
 
@@ -41,7 +41,7 @@ The Log ingestion API v2 is automatically enabled on ActiveGate. ActiveGate is r
 
 ## Log data queue on Environment ActiveGate
 
-You can customize the log data queue properties by editing the `custom.properties` file (see [Configuration properties and parameters of ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#generic-ingest "Learn which ActiveGate properties you can configure based on your needs and requirements.")) on your ActiveGate to set the following values:
+You can customize the log data queue properties by editing the `custom.properties` file (see [Configuration properties and parameters of ActiveGate](../../../ingest-from/dynatrace-activegate/configuration/configure-activegate.md#generic-ingest "Learn which ActiveGate properties you can configure based on your needs and requirements.")) on your ActiveGate to set the following values:
 
 ```
 [generic_ingest]
@@ -135,11 +135,11 @@ Success
 
 ## Troubleshooting
 
-Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Monitoring (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/lmc-troubleshooting "Fix issues related to the setup and configuration of Log Monitoring Classic.").
+Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Monitoring (Logs Classic)](../lmc-troubleshooting.md "Fix issues related to the setup and configuration of Log Monitoring Classic.").
 
 * [Troubleshooting log Ingestion via API - POST ingest logsï»¿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608)
 
 ## Related topics
 
-* [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.")
-* [Ingest OTLP logs](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")
+* [Log Monitoring API v2 - POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.")
+* [Ingest OTLP logs](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")

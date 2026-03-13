@@ -32,12 +32,12 @@ To configure detection sensitivity on the global level
 2. Expand **Anomaly detection**.
 3. Select the required entity type. For specific instructions, see one of the topics below.
 
-* [Applications](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications "Learn how to adapt the sensitivity of problem detection for applications.")
-* [Services](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services "Learn how to adapt the sensitivity of problem detection for services.")
-* [Database services](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database "Learn how to adapt the sensitivity of problem detection for database services.")
-* [Infrastructure](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure "Adjust problem detection sensitivity for infrastructure.")
-* [Extension events](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-extension "Learn how to adapt the sensitivity of problem detection for extension events.")
+* [Applications](adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications.md "Learn how to adapt the sensitivity of problem detection for applications.")
+* [Services](adjust-sensitivity-anomaly-detection/adjust-sensitivity-services.md "Learn how to adapt the sensitivity of problem detection for services.")
+* [Database services](adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database.md "Learn how to adapt the sensitivity of problem detection for database services.")
+* [Infrastructure](adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure.md "Adjust problem detection sensitivity for infrastructure.")
+* [Extension events](adjust-sensitivity-anomaly-detection/adjust-sensitivity-extension.md "Learn how to adapt the sensitivity of problem detection for extension events.")
 
 ## Related topics
 
-* [Anomaly detection API](/docs/dynatrace-api/configuration-api/anomaly-detection-api "Learn what the Dynatrace anomaly detection API offers.")
+* [Anomaly detection API](../../dynatrace-api/configuration-api/anomaly-detection-api.md "Learn what the Dynatrace anomaly detection API offers.")

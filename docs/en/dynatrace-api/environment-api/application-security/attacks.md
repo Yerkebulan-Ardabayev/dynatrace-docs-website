@@ -11,10 +11,10 @@ scraped: 2026-03-03T21:23:37.224696
 * Reference
 * Published Aug 30, 2023
 
-[### List attacks](/docs/dynatrace-api/environment-api/application-security/attacks/get-attacks "View the list of attacks via Dynatrace API.")[### View attack details](/docs/dynatrace-api/environment-api/application-security/attacks/get-attack-details "View details of an attack via Dynatrace API.")
+[### List attacks](attacks/get-attacks.md "View the list of attacks via Dynatrace API.")[### View attack details](attacks/get-attack-details.md "View details of an attack via Dynatrace API.")
 
 ## Related topics
 
-* [Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.")
-* [Davis Security Advisor API](/docs/dynatrace-api/environment-api/application-security/davis-security-advice "View the Davis Security Advisor recommendations via Dynatrace API.")
-* [Threats & Exploits](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts.")
+* [Application Security](../../../secure/application-security.md "Access the Dynatrace Application Security functionalities.")
+* [Davis Security Advisor API](davis-security-advice.md "View the Davis Security Advisor recommendations via Dynatrace API.")
+* [Threats & Exploits](../../../secure/threats-and-exploits.md "Understand, triage, and investigate detection findings and alerts.")

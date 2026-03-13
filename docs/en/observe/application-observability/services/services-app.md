@@ -23,7 +23,7 @@ scraped: 2026-03-06T21:09:35.629907
 
 * Your users should have the necessary permission to use ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**.
 * ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** is installed in your environment.
-* Dynatrace collects data on your services through [OneAgent or OpenTelemetry](/docs/observe/application-observability/services#add "Learn how to monitor and analyze your services, define and use request attributes, and more.").
+* Dynatrace collects data on your services through [OneAgent or OpenTelemetry](../services.md#add "Learn how to monitor and analyze your services, define and use request attributes, and more.").
 
 ## Get started
 
@@ -37,11 +37,11 @@ scraped: 2026-03-06T21:09:35.629907
 
 Overlay current failure patterns against baseline periods to immediately identify regressions. The visualization distinguishes between different failure types and severities, helping teams prioritize based on user impact.
 
-Also, refer to the [Failure Analysis](/docs/observe/application-observability/services/failure-analysis "Failure Analysis helps you quickly detect, investigate, and resolve service failures in Dynatrace.") use case.
+Also, refer to the [Failure Analysis](failure-analysis.md "Failure Analysis helps you quickly detect, investigate, and resolve service failures in Dynatrace.") use case.
 
 ![Failure analysis comparing timeframes](https://dt-cdn.net/images/failure-analysis-comparing-timeframes-1174-f966ba23d7.png)
 
-[![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") maps the entire impact chain from an initial failure through dependent services, infrastructure, and affected users.
+[![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](../../../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.") maps the entire impact chain from an initial failure through dependent services, infrastructure, and affected users.
 
 Navigating from ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** to ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** Failure Analysis takes a single click, allowing for seamless investigation from high-level problem detection to granular service-specific error details, including timeframe comparisons and logs.
 
@@ -57,7 +57,7 @@ Filter service views across releases and dozens of facets, including Kubernetes 
 
 Track response time to understand typical behavior versus worst-case scenarios. Analyze performance trends across different periods to identify exactly when a degradation began and what was the reason for it. Correlate latency changes with deployment events or traffic pattern shifts to quickly pinpoint the cause of performance regressions.
 
-For details, see [Response time analysis](/docs/observe/application-observability/services/response-time-analysis "Response time analysis helps you quickly the key contributors to slow service performance in Dynatrace.").
+For details, see [Response time analysis](response-time-analysis.md "Response time analysis helps you quickly the key contributors to slow service performance in Dynatrace.").
 
 ![Response time analysis comparisons](https://dt-cdn.net/images/response-time-analysis-comparisons-with-p-50-p-90-1062-916cc69f80.png)
 
@@ -82,7 +82,7 @@ Both options provide query performance information, with a default view that sho
 
 ![Database queries - Services app](https://dt-cdn.net/images/database-query-list-1783-1cedf6af87.png)
 
-Redis statements often include unique identifiers or values, which results in thousands of distinct entries shown in the **Database queries** view. For tips on how to reduce cardinality for such database statements, refer to [Database queries: Normalize Redis commands](/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality#database-queries "Leverage three different views in the Services app to normalize span and metric data, ensuring aggregations and analysis remain reliable and usable.").
+Redis statements often include unique identifiers or values, which results in thousands of distinct entries shown in the **Database queries** view. For tips on how to reduce cardinality for such database statements, refer to [Database queries: Normalize Redis commands](../../../platform/openpipeline/use-cases/reduce-span-metric-cardinality.md#database-queries "Leverage three different views in the Services app to normalize span and metric data, ensuring aggregations and analysis remain reliable and usable.").
 
 #### Use cases
 
@@ -124,11 +124,11 @@ Remember that a query executing thousands of times with a modest duration can im
 
 ![Outbound calls tab](https://dt-cdn.net/images/scr-20260204-oxkt-1998-bc116aaf86.png)
 
-URLs with variables in the path name still result in unusable data aggregations. For guidance on reducing cardinality in outbound calls, refer to the processing examples in [Reduce span-based and metric-based cardinality](/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality "Leverage three different views in the Services app to normalize span and metric data, ensuring aggregations and analysis remain reliable and usable.").
+URLs with variables in the path name still result in unusable data aggregations. For guidance on reducing cardinality in outbound calls, refer to the processing examples in [Reduce span-based and metric-based cardinality](../../../platform/openpipeline/use-cases/reduce-span-metric-cardinality.md "Leverage three different views in the Services app to normalize span and metric data, ensuring aggregations and analysis remain reliable and usable.").
 
 ## Concepts
 
-Service-related concepts, including distributed traces and spans, are central concepts in Dynatrace observability. Understanding these concepts enables effective monitoring and analysis of distributed systems. See [Service-related concepts](/docs/observe/application-observability/services/services-concepts "Understand application observability, services, and distributed tracing concepts.").
+Service-related concepts, including distributed traces and spans, are central concepts in Dynatrace observability. Understanding these concepts enables effective monitoring and analysis of distributed systems. See [Service-related concepts](services-concepts.md "Understand application observability, services, and distributed tracing concepts.").
 
 ## Tutorials
 
@@ -144,6 +144,6 @@ Get a hands-on experience with ![Services](https://dt-cdn.net/hub/logos/services
 
 ## Related topics
 
-* [Services](/docs/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.")
-* [Distributed Tracing](/docs/observe/application-observability/distributed-tracing "Trace and analyze in real time highly distributed systems with Grail.")
-* [Failure Analysis](/docs/observe/application-observability/services/failure-analysis "Failure Analysis helps you quickly detect, investigate, and resolve service failures in Dynatrace.")
+* [Services](../services.md "Learn how to monitor and analyze your services, define and use request attributes, and more.")
+* [Distributed Tracing](../distributed-tracing.md "Trace and analyze in real time highly distributed systems with Grail.")
+* [Failure Analysis](failure-analysis.md "Failure Analysis helps you quickly detect, investigate, and resolve service failures in Dynatrace.")

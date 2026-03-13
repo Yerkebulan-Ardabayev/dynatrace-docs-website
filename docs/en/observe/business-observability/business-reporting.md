@@ -45,9 +45,9 @@ You can use Dynatrace real user monitoring (RUM) to capture business events from
 
 Processing rules help you filter, parse, and transform business data. You can add new calculated fields, mask or drop sensitive data, define retention policies through bucket assignment, and much more.
 
-Build and share your [dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
+Build and share your [dashboard](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
 
-Once stored in Grail, you can query your business event data interactively and analyze it using [DQL](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."). DQL is the starting point for analysis, whether you use Notebooks, Dashboards, or the DQL Query API. You can use query results interactively or pin them to a dashboard as charts, tiles, or tables.
+Once stored in Grail, you can query your business event data interactively and analyze it using [DQL](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."). DQL is the starting point for analysis, whether you use Notebooks, Dashboards, or the DQL Query API. You can use query results interactively or pin them to a dashboard as charts, tiles, or tables.
 
 ### Measure and optimize the business value of aggregator sales channels
 

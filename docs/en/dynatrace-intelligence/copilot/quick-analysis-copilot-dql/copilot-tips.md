@@ -90,7 +90,7 @@ Using keywords from the DQL syntax keywords in your prompts will often generate 
 
 ## Tip 6: Follow the DQL hierarchy in your prompt
 
-We recommend that you get familiar with the [DQL documentation](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."). The more you can reflect the DQL syntax hierarchy in your prompt, including command order, the more effective your prompts will be. For example:
+We recommend that you get familiar with the [DQL documentation](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."). The more you can reflect the DQL syntax hierarchy in your prompt, including command order, the more effective your prompts will be. For example:
 
 * Mention filters at the beginning of your prompt
 * Mention sort orders at the end of your prompt
@@ -105,6 +105,6 @@ We are actively working on improving and extending the Dynatrace Intelligence ag
 
 ## Related topics
 
-* [Dynatrace Intelligence agentic and generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
-* [Query with natural language](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
-* [Generative AI quick analysis examples](/docs/dynatrace-intelligence/use-cases/copilot-examples "Learn more about what kind of prompts work well in Dynatrace Intelligence agentic and generative AI.")
+* [Dynatrace Intelligence agentic and generative AI FAQ](../../../../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")
+* [Query with natural language](../quick-analysis-copilot-dql.md "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
+* [Generative AI quick analysis examples](../../use-cases/copilot-examples.md "Learn more about what kind of prompts work well in Dynatrace Intelligence agentic and generative AI.")

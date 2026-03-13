@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:35:30.359364
 
 Dynatrace version 1.230+
 
-The new version of the Google Cloud integration (v.1.0) uses [Extensions 2.0](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") and introduces [custom topology](/docs/ingest-from/extend-dynatrace/extend-topology/custom-topology "Learn how to create a custom topology model that's suited to your telemetry data.") for a number of Google Cloud services.
+The new version of the Google Cloud integration (v.1.0) uses [Extensions 2.0](../../../extensions.md "Learn how to create and manage Dynatrace Extensions.") and introduces [custom topology](../../../extend-dynatrace/extend-topology/custom-topology.md "Learn how to create a custom topology model that's suited to your telemetry data.") for a number of Google Cloud services.
 
 List of services with custom topology
 
@@ -42,13 +42,13 @@ Upgrading existing `dynatrace-gcp-monitor` installations from earlier versions i
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Delete existing deployment**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function#delete-deployment "Migrate from Google Cloud integration version 0.1 to version 1.0 on Kubernetes and as a Google Cloud Function.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Delete existing deployment**](migrate-gcp-function.md#delete-deployment "Migrate from Google Cloud integration version 0.1 to version 1.0 on Kubernetes and as a Google Cloud Function.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Remove dashboards and/or alerts**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function#remove-dashboards "Migrate from Google Cloud integration version 0.1 to version 1.0 on Kubernetes and as a Google Cloud Function.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Remove dashboards and/or alerts**](migrate-gcp-function.md#remove-dashboards "Migrate from Google Cloud integration version 0.1 to version 1.0 on Kubernetes and as a Google Cloud Function.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Install new Google Cloud deployment**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function#install-deployment "Migrate from Google Cloud integration version 0.1 to version 1.0 on Kubernetes and as a Google Cloud Function.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**Install new Google Cloud deployment**](migrate-gcp-function.md#install-deployment "Migrate from Google Cloud integration version 0.1 to version 1.0 on Kubernetes and as a Google Cloud Function.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**Update dimensions**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function#update-dimensions "Migrate from Google Cloud integration version 0.1 to version 1.0 on Kubernetes and as a Google Cloud Function.")
+**Update dimensions**](migrate-gcp-function.md#update-dimensions "Migrate from Google Cloud integration version 0.1 to version 1.0 on Kubernetes and as a Google Cloud Function.")
 
 ## Step 1 Delete existing deployment
 
@@ -83,7 +83,7 @@ You need to manually remove any dashboards or alerts created manually during the
 
 ## Step 3 Install new Google Cloud deployment
 
-To install the new Google Cloud deployment, see [Set up the Dynatrace Google Cloud metric and log integration (v.1.0) on a new GKE Autopilot cluster](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
+To install the new Google Cloud deployment, see [Set up the Dynatrace Google Cloud metric and log integration (v.1.0) on a new GKE Autopilot cluster](deploy-k8.md "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
 
 ## Step 4 Update dimensions
 
@@ -177,4 +177,4 @@ Alternatively, you can replace the dimensions by configuring each dashboard tile
 
 ## Related topics
 
-* [Set up Dynatrace on Google Cloud](/docs/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
+* [Set up Dynatrace on Google Cloud](../../../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")

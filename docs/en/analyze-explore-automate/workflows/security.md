@@ -29,7 +29,7 @@ If the required permission for a workflow task is missing, an attempt to execute
 
 Always make sure:
 
-* You have the required permissions granted in [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.").
+* You have the required permissions granted in [Account Management](../../manage/account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health.").
 * You granted all required permissions for the workflows to run in the authorization settings.
 
 To enable or edit the AutomationEngine authorization settings
@@ -88,7 +88,7 @@ The initial owner of a workflow is the user who creates it. Right after a workfl
 To let others access a workflow, the owner has the following options:
 
 * Make the workflow public. A public workflow is visible to every user with `automation:workflows:*` permissions.
-* Transfer ownership to another user. For details, see [Change ownership of a workflow](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-change-owner "Change ownership of your workflow.").
+* Transfer ownership to another user. For details, see [Change ownership of a workflow](manage-workflows/workflows-change-owner.md "Change ownership of your workflow.").
 * Transfer ownership to a group, in which case all members of the group can access the workflow, depending on their permissions.
 
 ### Execution access and ownership
@@ -137,7 +137,7 @@ By default, the workflow actor is the user who created the workflow. However, th
 
 We highly recommend using service users as actors for all workflows that are worked on collaboratively and serve a production grade use case.
 
-Service users and their permissions are managed by admins through [Identity and Access Management](/docs/manage/identity-access-management/user-and-group-management/access-service-users "Service users"). We highly recommend granting a service user only the permissions that are required for the intended usage scenario.
+Service users and their permissions are managed by admins through [Identity and Access Management](../../manage/identity-access-management/user-and-group-management/access-service-users.md "Service users"). We highly recommend granting a service user only the permissions that are required for the intended usage scenario.
 
 To set the workflow actor to a service user
 
@@ -156,4 +156,4 @@ ALLOW iam:service-users:use
 WHERE iam:service-user-email IN ("<SERVICE_USER_1_EMAIL>", "<SERVICE_USER_2_EMAIL>");
 ```
 
-For more information, see [Service users](/docs/manage/identity-access-management/user-and-group-management/access-service-users "Service users")
+For more information, see [Service users](../../manage/identity-access-management/user-and-group-management/access-service-users.md "Service users")

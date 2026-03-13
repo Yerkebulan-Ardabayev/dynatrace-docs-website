@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:18:30.847920
 
 To fully automate the monitoring of your operating systems, processes, and network interfaces, Dynatrace requires privileged access to your operating system during both installation and operation.
 
-OneAgent is tested extensively to ensure that it has minimal performance impact on your system and [conforms to the highest security standards](/docs/manage/data-privacy-and-security "Learn how Dynatrace applies various security measures required to protect private data.").
+OneAgent is tested extensively to ensure that it has minimal performance impact on your system and [conforms to the highest security standards](../../../../../../common/manage/data-privacy-and-security.md "Learn how Dynatrace applies various security measures required to protect private data.").
 
 ## Permissions
 
@@ -52,7 +52,7 @@ The OneAgent requires admin privileges to:
 
 The OneAgents installer adds the following files to your system:
 
-* OneAgent binaries and configuration files are saved in `/opt/dynatrace/oneagent`. Note that you can change the location using [INSTALL\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix#installation-path "Learn how you can use AIX installer with command line parameters.") parameter.
+* OneAgent binaries and configuration files are saved in `/opt/dynatrace/oneagent`. Note that you can change the location using [INSTALL\_PATH](customize-oneagent-installation-on-aix.md#installation-path "Learn how you can use AIX installer with command line parameters.") parameter.
 
 ### Operation
 
@@ -60,7 +60,7 @@ OneAgent adds the following files to your system:
 
 * OneAgent temporary files and runtime configuration are saved in `/var/lib/dynatrace/oneagent/runtime`.
 * OneAgent persistent configuration is saved in `/var/lib/dynatrace/oneagent/config`.
-* Large runtime data, such as memory dumps, is saved in `/var/lib/dynatrace/oneagent/datastorage`. Note that you can change the location of large runtime data using the [DATA\_STORAGE](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix#data-storage "Learn how you can use AIX installer with command line parameters.") parameter.
+* Large runtime data, such as memory dumps, is saved in `/var/lib/dynatrace/oneagent/datastorage`. Note that you can change the location of large runtime data using the [DATA\_STORAGE](customize-oneagent-installation-on-aix.md#data-storage "Learn how you can use AIX installer with command line parameters.") parameter.
 
 ## System logs downloaded by OneAgent
 
@@ -75,7 +75,7 @@ System logs downloaded by OneAgent on AIX are:
 Revoking access to system logs
 
 To revoke access to system logs, use the `oneagentctl` command with the `--set-system-logs-access-enabled` parameter set to `false`.  
-For more information, see [OneAgent configuration via command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
+For more information, see [OneAgent configuration via command-line interface](../../../oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
 
 ## Globally writable directories
 

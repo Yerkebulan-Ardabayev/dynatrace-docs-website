@@ -37,7 +37,7 @@ scraped: 2026-03-06T21:34:48.320869
 * Баллу DSS (выберите **Dynatrace Security Score** и введите балл)
 * Уровню риска (выберите **Dynatrace Risk Level** и выберите серьёзность)
 
-Подробности см. в разделе [Выражения фильтров](/docs/secure/vulnerabilities/manage-results#expressions "Filter, format, and sort to find relevant vulnerability information.").
+Подробности см. в разделе [Выражения фильтров](manage-results.md#expressions "Filter, format, and sort to find relevant vulnerability information.").
 
 ### Подробности расчёта DSS
 
@@ -48,15 +48,15 @@ scraped: 2026-03-06T21:34:48.320869
 
 ### FAQ
 
-* [Почему у моей уязвимости другая оценка риска и Dynatrace Security Score, чем у её затронутых сущностей?](/docs/secure/faq#risk-assessment-affected-entities "Frequently asked questions about Dynatrace Application Security.")
+* [Почему у моей уязвимости другая оценка риска и Dynatrace Security Score, чем у её затронутых сущностей?](../faq.md#risk-assessment-affected-entities "Frequently asked questions about Dynatrace Application Security.")
 
 ### Дополнительные материалы
 
-Подробнее о DSS см. в разделе [Концепции: Dynatrace Security Score](/docs/secure/vulnerabilities/concepts#dss "Concepts that are specific to the Dynatrace Vulnerabilities app.").
+Подробнее о DSS см. в разделе [Концепции: Dynatrace Security Score](concepts.md#dss "Concepts that are specific to the Dynatrace Vulnerabilities app.").
 
 ## Приоритизация по оценке Dynatrace
 
-Приоритизируйте уязвимости, анализируя [факторы риска и режимы оценки, учитываемые при определении Dynatrace Security Score](/docs/secure/vulnerabilities/concepts#assessment "Concepts that are specific to the Dynatrace Vulnerabilities app."). Понимание режимов оценки, лежащих в основе Dynatrace Security Score, позволяет принимать более обоснованные решения по устранению уязвимостей, адаптировать реагирование к бизнес-воздействию и опережать возникающие угрозы. Ниже описаны доступные варианты.
+Приоритизируйте уязвимости, анализируя [факторы риска и режимы оценки, учитываемые при определении Dynatrace Security Score](concepts.md#assessment "Concepts that are specific to the Dynatrace Vulnerabilities app."). Понимание режимов оценки, лежащих в основе Dynatrace Security Score, позволяет принимать более обоснованные решения по устранению уязвимостей, адаптировать реагирование к бизнес-воздействию и опережать возникающие угрозы. Ниже описаны доступные варианты.
 
 ### Фильтрация по факторам риска и режимам оценки
 
@@ -65,7 +65,7 @@ scraped: 2026-03-06T21:34:48.320869
 1. На странице **Prioritization** в поле фильтра выберите **Dynatrace Assessment**.
 2. Выберите интересующие вас параметры.
 
-Подробности см. в разделе [Выражения фильтров](/docs/secure/vulnerabilities/manage-results#expressions "Filter, format, and sort to find relevant vulnerability information.").
+Подробности см. в разделе [Выражения фильтров](manage-results.md#expressions "Filter, format, and sort to find relevant vulnerability information.").
 
 ### Просмотр доступных активов данных
 
@@ -85,7 +85,7 @@ scraped: 2026-03-06T21:34:48.320869
 
 ### Дополнительные материалы
 
-Подробнее о факторах риска см. в разделе [Концепции: Факторы риска](/docs/secure/vulnerabilities/concepts#assessment "Concepts that are specific to the Dynatrace Vulnerabilities app.").
+Подробнее о факторах риска см. в разделе [Концепции: Факторы риска](concepts.md#assessment "Concepts that are specific to the Dynatrace Vulnerabilities app.").
 
 ## Приоритизация по связанным и затронутым сущностям
 
@@ -107,18 +107,18 @@ scraped: 2026-03-06T21:34:48.320869
 
 ### Дополнительные материалы
 
-Подробнее о затронутых и связанных сущностях см. в разделе [Концепции: Затронутые и связанные сущности](/docs/secure/vulnerabilities/concepts#entities "Concepts that are specific to the Dynatrace Vulnerabilities app.").
+Подробнее о затронутых и связанных сущностях см. в разделе [Концепции: Затронутые и связанные сущности](concepts.md#entities "Concepts that are specific to the Dynatrace Vulnerabilities app.").
 
 ## Приоритизация по попыткам эксплуатации
 
 Уязвимости уровня кода
 
-Приоритизируйте уязвимости на основе наблюдаемой активности эксплуатации, чтобы лучше понимать воздействие и паттерны реагирования. Просматривайте, как часто уязвимость подвергалась атакам, какие действия были предприняты в ответ, и ключевые детали недавних попыток для руководства вашими усилиями по устранению. Настраивайте [временной диапазон](/docs/secure/vulnerabilities/manage-results#timeframe "Filter, format, and sort to find relevant vulnerability information.") и [сегменты](/docs/secure/vulnerabilities/manage-results#segments "Filter, format, and sort to find relevant vulnerability information."), а также открывайте эксплойты в [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts.") для получения дополнительной информации.
+Приоритизируйте уязвимости на основе наблюдаемой активности эксплуатации, чтобы лучше понимать воздействие и паттерны реагирования. Просматривайте, как часто уязвимость подвергалась атакам, какие действия были предприняты в ответ, и ключевые детали недавних попыток для руководства вашими усилиями по устранению. Настраивайте [временной диапазон](manage-results.md#timeframe "Filter, format, and sort to find relevant vulnerability information.") и [сегменты](manage-results.md#segments "Filter, format, and sort to find relevant vulnerability information."), а также открывайте эксплойты в [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](../threats-and-exploits.md "Understand, triage, and investigate detection findings and alerts.") для получения дополнительной информации.
 
 1. На странице **Prioritization** выберите уязвимость.
 2. На боковой панели перейдите в раздел **Exploit attempts**.
 
-Для обнаружения попыток эксплуатации необходимо [настроить Runtime Application Protection](/docs/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.").
+Для обнаружения попыток эксплуатации необходимо [настроить Runtime Application Protection](../application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.").
 
 ## Приоритизация по эволюции уязвимости
 
@@ -139,7 +139,7 @@ scraped: 2026-03-06T21:34:48.320869
 
 ### Фильтрация по CISA KEV
 
-На странице **Prioritization** используйте поле [фильтра](/docs/secure/vulnerabilities/manage-results#filter "Filter, format, and sort to find relevant vulnerability information.") для
+На странице **Prioritization** используйте поле [фильтра](manage-results.md#filter "Filter, format, and sort to find relevant vulnerability information.") для
 
 * Отображения наличия уязвимости в каталоге CISA KEV (`CISA KEV` > `CISA KEV - In catalog` > `Yes`/`No`)
 * Просмотра срока устранения уязвимости из списка CISA KEV (`CISA KEV` > `CISA KEV - Due date`, затем введите целевую дату в формате `YYYY-MM-DD`)
@@ -159,4 +159,4 @@ scraped: 2026-03-06T21:34:48.320869
 
 Покрытие библиотечных уязвимостей показывает, насколько хорошо процессы и хосты вашей среды мониторятся с помощью Runtime Vulnerability Analytics (RVA). Анализируя покрытие, вы можете выявить пробелы в мониторинге, понять, какие сущности наиболее затронуты во время выполнения, и отслеживать тенденции воздействия с течением времени. Этот контекст помогает приоритизировать устранение уязвимостей там, где это наиболее важно.
 
-Подробности см. в разделе [Оценка покрытия](/docs/secure/vulnerabilities/assess-coverage "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").
+Подробности см. в разделе [Оценка покрытия](assess-coverage.md "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").

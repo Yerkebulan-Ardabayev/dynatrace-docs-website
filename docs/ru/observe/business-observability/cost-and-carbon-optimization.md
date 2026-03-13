@@ -69,7 +69,7 @@ storage:bizevents:read
 
 ### Предоставление разрешений рабочим процессам
 
-Убедитесь, что [Workflows](/docs/analyze-explore-automate/workflows "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.") имеет необходимые разрешения для запуска автоматизации: откройте ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, выберите **Settings** > **Authorization settings** в правом верхнем углу и убедитесь, что включены следующие настройки.
+Убедитесь, что [Workflows](../../analyze-explore-automate/workflows.md "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.") имеет необходимые разрешения для запуска автоматизации: откройте ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, выберите **Settings** > **Authorization settings** в правом верхнем углу и убедитесь, что включены следующие настройки.
 
 * `app-engine:apps:run`
 * `app-engine:functions:run`
@@ -88,11 +88,11 @@ storage:bizevents:read
 * `storage:events:write`
 * `storage:metrics:read`
 
-Подробнее см. [Управление разрешениями пользователей с помощью политик IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Работа с политиками") и [Настройки авторизации рабочих процессов](/docs/analyze-explore-automate/workflows/running "Запуск и мониторинг рабочих процессов, созданных в Dynatrace Workflows.").
+Подробнее см. [Управление разрешениями пользователей с помощью политик IAM](../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Работа с политиками") и [Настройки авторизации рабочих процессов](../../analyze-explore-automate/workflows/running.md "Запуск и мониторинг рабочих процессов, созданных в Dynatrace Workflows.").
 
 ### Установка
 
-Убедитесь, что приложение [установлено в вашей среде](/docs/manage/hub#install "Ознакомьтесь с информацией о Dynatrace Hub.").
+Убедитесь, что приложение [установлено в вашей среде](../../manage/hub.md#install "Ознакомьтесь с информацией о Dynatrace Hub.").
 
 Для расчёта выбросов углерода
 
@@ -105,7 +105,7 @@ storage:bizevents:read
 
 * Для генерации стоимости облака по публичным прайс-листам необходимо активировать генерацию данных о выбросах углерода. Вы можете активировать её в настройках приложения.
 * Вам нужны инструментированные хосты с OneAgent и настроенным мониторингом облачного поставщика.
-  Расчёт стоимости по публичному прайс-листу требует сбора метаданных с хоста: облачного поставщика, облачного региона и типа экземпляра, настроенного у облачного поставщика. Эта информация предоставляется путём настройки мониторинга облачного поставщика для хостов, отслеживаемых с помощью OneAgent. Подробнее см. [Приём данных](/docs/ingest-from "Узнайте, как установить и настроить ActiveGate и OneAgent на различных платформах.").
+  Расчёт стоимости по публичному прайс-листу требует сбора метаданных с хоста: облачного поставщика, облачного региона и типа экземпляра, настроенного у облачного поставщика. Эта информация предоставляется путём настройки мониторинга облачного поставщика для хостов, отслеживаемых с помощью OneAgent. Подробнее см. [Приём данных](../../ingest-from.md "Узнайте, как установить и настроить ActiveGate и OneAgent на различных платформах.").
 * Включите **External requests** к облачным поставщикам, на которых работают ваши хосты, для сбора публичных прайс-листов в Grail.
 
   Внешние запросы разрешают исходящие сетевые соединения из вашей среды Dynatrace с внешними сервисами. Они позволяют контролировать доступ к публичным конечным точкам из AppEngine с функциями приложений, а также функциями в дашбордах, блокнотах и автоматизациях.
@@ -244,10 +244,10 @@ Kubernetes — это динамическая среда, и количеств
 [01 Настройка Cost & Carbon Optimization
 
 * Практическое руководство
-* Установите и настройте Cost & Carbon Optimization.](/docs/observe/business-observability/cost-and-carbon-optimization/install-cost-and-carbon-optimization)[02 Расширенная аналитика с блокнотами
+* Установите и настройте Cost & Carbon Optimization.](cost-and-carbon-optimization/install-cost-and-carbon-optimization.md)[02 Расширенная аналитика с блокнотами
 
 * Справочник
-* Используйте блокноты для анализа данных об углеродном следе.](/docs/observe/business-observability/cost-and-carbon-optimization/advanced-analytics-with-notebooks)
+* Используйте блокноты для анализа данных об углеродном следе.](cost-and-carbon-optimization/advanced-analytics-with-notebooks.md)
 
 ### Методология оценки потребления электроэнергии
 
@@ -340,15 +340,15 @@ Kubernetes — это динамическая среда, и количеств
 
 Вкладка **Hosts** детализирует затраты, энергию и потребление CO2e по хостам. Вы можете сузить поиск с помощью фильтров. Например, можно просматривать недостаточно используемые хосты в определённом центре обработки данных или ведущих эмитентов CO2e.
 
-Разверните имя хоста, чтобы просмотреть ключевые метрики инфраструктуры: **CPU in use**, **Memory in use** и **Receiving network traffic**. Выберите имя хоста для просмотра страницы сведений о хосте в [![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**](/docs/observe/infrastructure-observability/infrastructure-and-operations "Мониторинг хостов, виртуальных машин, процессов и сетей для обнаружения проблем и повышения производительности инфраструктуры.").
+Разверните имя хоста, чтобы просмотреть ключевые метрики инфраструктуры: **CPU in use**, **Memory in use** и **Receiving network traffic**. Выберите имя хоста для просмотра страницы сведений о хосте в [![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**](../infrastructure-observability/infrastructure-and-operations.md "Мониторинг хостов, виртуальных машин, процессов и сетей для обнаружения проблем и повышения производительности инфраструктуры.").
 
-![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization") **Cost & Carbon Optimization** автоматически подключён к модели топологии Dynatrace Smartscape®, поэтому легко просматривать сведения о хосте или использовать [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь результатами из ваших данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.") для специального анализа с DQL.
+![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization") **Cost & Carbon Optimization** автоматически подключён к модели топологии Dynatrace Smartscape®, поэтому легко просматривать сведения о хосте или использовать [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь результатами из ваших данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.") для специального анализа с DQL.
 
 ### Измерение энергии мониторинга платформы Dynatrace Kubernetes
 
 Используйте ![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization") **Cost & Carbon Optimization** для измерения энергии и выбросов углерода вашей инфраструктуры Kubernetes.
 
-![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization") **Cost & Carbon Optimization** рассчитывает потреблённую энергию (в ватт-часах) и выбросы углерода (в граммах эквивалентов углекислого газа) кластеров, пространств имён и узлов Kubernetes, отслеживаемых Dynatrace. Поддерживаются все режимы мониторинга Dynatrace Kubernetes, данные рассчитываются ежечасно и сохраняются как [события углерода Kubernetes](/docs/semantic-dictionary/model/business-analytics#carbon-kubernetes-cluster-events "Ознакомьтесь с моделями семантического словаря, связанными с Business Observability.").
+![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization") **Cost & Carbon Optimization** рассчитывает потреблённую энергию (в ватт-часах) и выбросы углерода (в граммах эквивалентов углекислого газа) кластеров, пространств имён и узлов Kubernetes, отслеживаемых Dynatrace. Поддерживаются все режимы мониторинга Dynatrace Kubernetes, данные рассчитываются ежечасно и сохраняются как [события углерода Kubernetes](../../semantic-dictionary/model/business-analytics.md#carbon-kubernetes-cluster-events "Ознакомьтесь с моделями семантического словаря, связанными с Business Observability.").
 
 Организации, использующие Kubernetes сегодня или планирующие перенести рабочие нагрузки в Kubernetes, должны рассмотреть возможность использования ![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization") **Cost & Carbon Optimization** совместно с мониторингом Dynatrace Kubernetes по следующим причинам:
 

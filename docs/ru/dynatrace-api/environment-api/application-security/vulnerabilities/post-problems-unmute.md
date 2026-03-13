@@ -24,7 +24,7 @@ scraped: 2026-03-04T21:30:54.459729
 
 Для выполнения этого запроса необходим токен доступа с областью `securityProblems.write`.
 
-Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 
@@ -367,5 +367,5 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/unmute
 
 ## Связанные темы
 
-* [Application Security](/docs/secure/application-security "Доступ к функциям Dynatrace Application Security.")
-* [Davis Security Advisor API](/docs/dynatrace-api/environment-api/application-security/davis-security-advice "Просмотр рекомендаций Davis Security Advisor через Dynatrace API.")
+* [Application Security](../../../../secure/application-security.md "Доступ к функциям Dynatrace Application Security.")
+* [Davis Security Advisor API](../davis-security-advice.md "Просмотр рекомендаций Davis Security Advisor через Dynatrace API.")

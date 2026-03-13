@@ -159,7 +159,7 @@ Java Runtime stack
 
 For apps running on the Java Runtime stack in Azure App Service, this installation method may not work as expected in some cases. For example, customers have reported issues with Alpine-based images, where the above command was interpreted as a single string rather than executed as a shell command. This caused the `&&` operator to be treated as part of the `wget` input instead of chaining commands.
 
-If you encounter this behavior, consider using an alternative approach to execute the script (such as a custom startup script or modifying a [custom image](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers#install--custom-image "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.")).
+If you encounter this behavior, consider using an alternative approach to execute the script (such as a custom startup script or modifying a [custom image](integrate-oneagent-on-web-app-for-containers.md#install--custom-image "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.")).
 
 Alternatively, you can use the calling-only script below, which works for all Linux images.
 
@@ -219,9 +219,9 @@ DT_ENDPOINT=$DT_ENDPOINT DT_API_TOKEN=$DT_API_TOKEN DT_INCLUDE=$DT_INCLUDE START
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Configure the startup command**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers#step-1 "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Configure the startup command**](integrate-oneagent-on-web-app-for-containers.md#step-1 "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Restart the web application twice**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers#step-2 "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.")
+**Restart the web application twice**](integrate-oneagent-on-web-app-for-containers.md#step-2 "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.")
 
 #### Step 1 Configure the startup command
 
@@ -362,7 +362,7 @@ When an update is available, restart your application to update OneAgent.
 
 Each time you want to leverage a new version of Dynatrace OneAgent, you need to rebuild your local OneAgent code modules and application image. Any newly started pods from this application image will be monitored with the latest version of OneAgent.
 
-If you've specified a default OneAgent installation version for new hosts and applications using [OneAgent update settings](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux "Learn about the different ways to update OneAgent on Linux."), your web apps will be automatically monitored by the defined default version of OneAgent.
+If you've specified a default OneAgent installation version for new hosts and applications using [OneAgent update settings](../../../dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux.md "Learn about the different ways to update OneAgent on Linux."), your web apps will be automatically monitored by the defined default version of OneAgent.
 
 ## Uninstall OneAgent
 
@@ -384,5 +384,5 @@ OneAgent may conflict with Azure Application Insights agents already instrumenti
 
 ## Related topics
 
-* [Set up Dynatrace on Microsoft Azure](/docs/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
-* [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* [Set up Dynatrace on Microsoft Azure](../../../microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")
+* [OneAgent platform and capability support matrix](../../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

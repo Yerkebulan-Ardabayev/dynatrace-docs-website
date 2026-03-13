@@ -77,7 +77,7 @@ To review code
 ## Example 1: Simple request and response to Table
 
 In this simple example, we leverage the [dummyjson.comï»¿](https://dummyjson.com/docs/products) API to retrieve sample product data.
-The result of this API call is multiple sample products in JSON format. By adding `.products` to the result, we can pass it directly to a [table](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-table "Create and edit table visualizations on your Dynatrace dashboards and notebooks.") visualization.
+The result of this API call is multiple sample products in JSON format. By adding `.products` to the result, we can pass it directly to a [table](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-table.md "Create and edit table visualizations on your Dynatrace dashboards and notebooks.") visualization.
 
 ![Add code - example 1](https://dt-cdn.net/images/screenshot-2023-04-28-at-10-09-03-3352-8ebe772088.png)
 
@@ -107,7 +107,7 @@ return result.products;
 
 ## Example 2: Simple request and response to Single value
 
-In this example, we build on example 1 by calculating the average price for all sample products and pass it to a [single value](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value "Create and edit single value visualizations on your Dynatrace dashboards and notebooks.") visualization.
+In this example, we build on example 1 by calculating the average price for all sample products and pass it to a [single value](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value.md "Create and edit single value visualizations on your Dynatrace dashboards and notebooks.") visualization.
 
 ![Add code - example 2](https://dt-cdn.net/images/screenshot-2023-04-28-at-11-38-07-3356-ca95b247f3.png)
 
@@ -157,7 +157,7 @@ return avgPrice;
 
 ## Example 3: Advanced request and response to Record list
 
-In this example, we use the Dynatrace [Environment API](/docs/dynatrace-api/environment-api "Find out what you need to use the environment section of the Dynatrace API.") to retrieve events and create a table visualization.
+In this example, we use the Dynatrace [Environment API](../ru/dynatrace-api/environment-api.md "Find out what you need to use the environment section of the Dynatrace API.") to retrieve events and create a table visualization.
 
 ![Add code - example 3](https://dt-cdn.net/images/screenshot-2023-04-28-at-14-02-51-3358-99746f6f57.webp)
 
@@ -240,7 +240,7 @@ scraped: 2026-03-06T21:11:21.483222
 
 This page describes how to add data with a Grail query, and how to specify a custom timeframe and a segment.
 
-The fastest and easiest way to explore your data is with our new [Explore](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data "Explore your data with our point-and-click interface.") tiles and sections. In a few seconds, you can find and analyze your logs, metrics, or business events. No DQL required!
+The fastest and easiest way to explore your data is with our new [Explore](../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md "Explore your data with our point-and-click interface.") tiles and sections. In a few seconds, you can find and analyze your logs, metrics, or business events. No DQL required!
 
 Deprecated: `dt.entity.*` fields
 
@@ -266,9 +266,9 @@ To Query Grail
 
    * **Data**
    * **Visual**
-2. On the **Data** tab, use the [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") to define your query.
+2. On the **Data** tab, use the [Dynatrace Query Language (DQL)](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") to define your query.
 3. Select **Run** to execute the query.
-4. On the **Visual** tab, choose a [visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") format for your results.
+4. On the **Visual** tab, choose a [visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") format for your results.
 
    * means the visualization type is unavailable for your query.
 5. Under the **Visualization** selector, expand the options sections to adjust visualization settings as needed.
@@ -298,7 +298,7 @@ fetch [recordtype], from:now() - 2h
 | ....
 ```
 
-For details on specifying a timeframe in DQL, see [Specify timeframe](/docs/platform/grail/dynatrace-query-language/dql-guide#specifytimeframe "Find out how DQL works and what are DQL key concepts.") in the DQL documentation.
+For details on specifying a timeframe in DQL, see [Specify timeframe](../ru/platform/grail/dynatrace-query-language/dql-guide.md#specifytimeframe "Find out how DQL works and what are DQL key concepts.") in the DQL documentation.
 
 ## Select segments
 
@@ -317,8 +317,8 @@ If you need more control over how a filter is applied, however, you might want t
 * Variables allow you to fully control the underlying query or within your Explore section or tile, determining where and how they are applied. For example, you can specify how they connect with other filters applied (**AND**, **OR**) and you can control which operator is used for your filter (such as `equals`, `contains`, `startsWith`, and `endsWith`).
 * Additionally, use variables when you need fine-grained control over how filters are interdependent.
 
-* For details on segments, see [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.")
-* For a ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**-specific segments use case, see [Analyze monitoring data with segments](/docs/manage/segments/getting-started/segments-getting-started-analyze-monitoring-data "Learn how to analyze monitoring data more efficiently by using segments in Dashboards.")
+* For details on segments, see [Segments](../ru/manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.")
+* For a ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**-specific segments use case, see [Analyze monitoring data with segments](../ru/manage/segments/getting-started/segments-getting-started-analyze-monitoring-data.md "Learn how to analyze monitoring data more efficiently by using segments in Dashboards.")
 
 To select tile-level segments
 
@@ -348,7 +348,7 @@ fetch logs
 
 ### Create two variables
 
-In case you haven't created a variable yet, first see [Add a variable to a dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable#add-a-variable "Add variables to your Dynatrace dashboards.").
+In case you haven't created a variable yet, first see [Add a variable to a dashboard](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable.md#add-a-variable "Add variables to your Dynatrace dashboards.").
 
 1. Select **Add variable** and define the first variable.
 
@@ -582,7 +582,7 @@ Here are some of the people who started [Dynatrace](https://www.dynatrace.com).
 
 ### Variables
 
-To reference a [variable](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable "Add variables to your Dynatrace dashboards.") in an annotation, use the variable name prefixed by a `$` character. For example:
+To reference a [variable](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable.md "Add variables to your Dynatrace dashboards.") in an annotation, use the variable name prefixed by a `$` character. For example:
 
 ```
 The status is $Status.
@@ -590,7 +590,7 @@ The status is $Status.
 
 If the dashboard has a variable named `Status` and the current value of `Status` is `Good`, the above example would appear in your tile as "The status is Good." and it would be updated when the value of `Status` changes.
 
-For details on variables, see [Add a variable to a dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable "Add variables to your Dynatrace dashboards.").
+For details on variables, see [Add a variable to a dashboard](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable.md "Add variables to your Dynatrace dashboards.").
 
 ---
 
@@ -854,7 +854,7 @@ For example:
 
 ### Use with an Explore tile
 
-To use a variable in an [Explore data](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data "Explore your data with our point-and-click interface.") tile
+To use a variable in an [Explore data](../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md "Explore your data with our point-and-click interface.") tile
 
 1. Open the  menu and select **Logs**.
 2. Select  and then select **host.name** from the **Available filters**.
@@ -953,7 +953,7 @@ To define a DQL variable
    * It will be displayed at the top of the dashboard, listed on the **Variables** panel, and referred to in code.
    * It can contain only letters (uppercase or lowercase) and numbers (for example, `status`, `myHosts`, or `Variable01`) and it can't start with `dt_`.
 2. Set **Type** to `DQL`.
-3. In **Data**, enter a query. Be sure to use [`summarize`](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#summarize "DQL aggregation commands") and [`collectDistinct`](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#collectDistinct "A list of DQL aggregation functions.") to get distinct values from data sources such as logs.
+3. In **Data**, enter a query. Be sure to use [`summarize`](platform/grail/dynatrace-query-language/commands/aggregation-commands.md#summarize "DQL aggregation commands") and [`collectDistinct`](platform/grail/dynatrace-query-language/functions/aggregation-functions.md#collectDistinct "A list of DQL aggregation functions.") to get distinct values from data sources such as logs.
 4. Select **Run** and inspect the results in the **Preview** section to make sure it works as expected.
 5. If you want to be able to select more than one value at a time, turn on **Multi-select**.
 
@@ -1140,7 +1140,7 @@ To define a Free Text variable
 
 ## Limitations when using variables in tiles
 
-* Variables in your tiles can be of string or numeric type. Cases requiring a different data type (for example, [duration](/docs/platform/grail/dynatrace-query-language/data-types#duration "A list of DQL data types.")) lead to failed queries. Below are some examples of how to work around such situations.
+* Variables in your tiles can be of string or numeric type. Cases requiring a different data type (for example, [duration](../ru/platform/grail/dynatrace-query-language/data-types.md#duration "A list of DQL data types.")) lead to failed queries. Below are some examples of how to work around such situations.
 * For security reasons, when using variables in code tiles, you can only access them within the default function.
 
 ### Resolution in DQL command
@@ -1159,7 +1159,7 @@ fetch logs
 | summarize count(), by: {loglevel, bin(timestamp, $resolution)}
 ```
 
-As a workaround, you can use the [duration](/docs/platform/grail/dynatrace-query-language/functions/time-functions#duration "A list of DQL time functions.") function together with a DQL [conversion](/docs/platform/grail/dynatrace-query-language/functions#conversion-and-casting-functions "A list of DQL functions.") function. This provides the required output based on your `$resolution` value.
+As a workaround, you can use the [duration](platform/grail/dynatrace-query-language/functions/time-functions.md#duration "A list of DQL time functions.") function together with a DQL [conversion](../ru/platform/grail/dynatrace-query-language/functions.md#conversion-and-casting-functions "A list of DQL functions.") function. This provides the required output based on your `$resolution` value.
 
 ```
 fetch logs
@@ -1175,7 +1175,7 @@ fetch logs
 
 ### Convert your variable values to other data types
 
-If you want to filter a numeric value but compare it with a string representation, you can use a native DQL [conversion](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#conversion-and-casting-functions "A list of DQL conversion and casting functions.") function such as [toString](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toString "A list of DQL conversion and casting functions.").
+If you want to filter a numeric value but compare it with a string representation, you can use a native DQL [conversion](platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions.md#conversion-and-casting-functions "A list of DQL conversion and casting functions.") function such as [toString](platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions.md#toString "A list of DQL conversion and casting functions.").
 
 ```
 fetch logs
@@ -1221,8 +1221,8 @@ In this example, we selected `Variable1` to display the variable definition and 
 
 ## Related topics
 
-* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [DQL functions](/docs/platform/grail/dynatrace-query-language/functions "A list of DQL functions.")
+* [DQL commands](../ru/platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.")
+* [DQL functions](../ru/platform/grail/dynatrace-query-language/functions.md "A list of DQL functions.")
 
 ---
 
@@ -1314,11 +1314,11 @@ In ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashbo
 
 You can use the Explore options to explore your logs, metrics, business events, and more with our point-and-click interface. With zero knowledge of DQL or coding, you can create and start using dashboard tiles in minutes.
 
-For more information, we have a whole [Explore data](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data "Explore your data with our point-and-click interface.") page that shows you how to create Explore tiles.
+For more information, we have a whole [Explore data](../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md "Explore your data with our point-and-click interface.") page that shows you how to create Explore tiles.
 
 ### Query tile
 
-The query tiles allow you to easily query data from Grail and [visualize](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") the result in different ways.
+The query tiles allow you to easily query data from Grail and [visualize](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") the result in different ways.
 
 A query tile consists of a query input where you can write a DQL query. In the query input, use **Ctrl**+**Space** to trigger autocompletion at any time.
 
@@ -1574,7 +1574,7 @@ To review or change settings that apply to an entire dashboard
       The **Settings** panel is displayed.
    3. Select **Variables**.
 
-   For details about dashboard variables, see [Add a variable to a dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable "Add variables to your Dynatrace dashboards.").
+   For details about dashboard variables, see [Add a variable to a dashboard](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable.md "Add variables to your Dynatrace dashboards.").
 
 The timeframe describes the *when* of the data on the dashboard.
 
@@ -1636,7 +1636,7 @@ fetch [recordtype], from:now() - 2h
 | ....
 ```
 
-For details on specifying a timeframe in DQL, see [Specify timeframe](/docs/platform/grail/dynatrace-query-language/dql-guide#specifytimeframe "Find out how DQL works and what are DQL key concepts.") in the DQL documentation.
+For details on specifying a timeframe in DQL, see [Specify timeframe](../ru/platform/grail/dynatrace-query-language/dql-guide.md#specifytimeframe "Find out how DQL works and what are DQL key concepts.") in the DQL documentation.
 
 ### Select segments
 
@@ -1655,8 +1655,8 @@ If you need more control over how a filter is applied, however, you might want t
 * Variables allow you to fully control the underlying query or within your Explore section or tile, determining where and how they are applied. For example, you can specify how they connect with other filters applied (**AND**, **OR**) and you can control which operator is used for your filter (such as `equals`, `contains`, `startsWith`, and `endsWith`).
 * Additionally, use variables when you need fine-grained control over how filters are interdependent.
 
-* For details on segments, see [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.")
-* For a ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**-specific segments use case, see [Analyze monitoring data with segments](/docs/manage/segments/getting-started/segments-getting-started-analyze-monitoring-data "Learn how to analyze monitoring data more efficiently by using segments in Dashboards.")
+* For details on segments, see [Segments](../ru/manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.")
+* For a ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**-specific segments use case, see [Analyze monitoring data with segments](../ru/manage/segments/getting-started/segments-getting-started-analyze-monitoring-data.md "Learn how to analyze monitoring data more efficiently by using segments in Dashboards.")
 
 #### Dashboard-level segments
 
@@ -1736,7 +1736,7 @@ To review or change settings that apply to an entire dashboard
       The **Settings** panel is displayed.
    3. Select **Variables**.
 
-   For details about dashboard variables, see [Add a variable to a dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable "Add variables to your Dynatrace dashboards.").
+   For details about dashboard variables, see [Add a variable to a dashboard](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable.md "Add variables to your Dynatrace dashboards.").
 
 ### Run a code tile
 
@@ -1835,7 +1835,7 @@ These methods are not mutually exclusive. For example, you can maintain a focuse
 
 In any case, you control whether people can edit the document or only view it.
 
-For details on sharing documents, see [Share documents](/docs/discover-dynatrace/get-started/dynatrace-ui/share "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
+For details on sharing documents, see [Share documents](../ru/discover-dynatrace/get-started/dynatrace-ui/share.md "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
 
 ### Manage dashboard versions
 
@@ -1864,7 +1864,7 @@ To view and manage dashboard versions
    * **Delete this version** deletes the selected version.
 4. To list and manage all versions of the dashboard in a separate window, go to the bottom of the **Versions** menu and select **Show all**.
 
-For details, see [Manage document versions](/docs/analyze-explore-automate/dashboards-and-notebooks/document-version "View and manage versions of documents created in Dynatrace Notebooks and Dashboards.").
+For details, see [Manage document versions](../ru/analyze-explore-automate/dashboards-and-notebooks/document-version.md "View and manage versions of documents created in Dynatrace Notebooks and Dashboards.").
 
 ### Change dashboard owner
 
@@ -1918,7 +1918,7 @@ An uploaded dashboard is:
 
 * Opened in Dynatrace.
 
-  If you see a message about running custom code when you upload a dashboard, see [Run code warnings](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code#run-code-warnings "Add code to your Dynatrace dashboards.") for more information.
+  If you see a message about running custom code when you upload a dashboard, see [Run code warnings](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code.md#run-code-warnings "Add code to your Dynatrace dashboards.") for more information.
 * Added to your **Last opened by you** list.
 * Added to the **Dashboards** page with **Last modified** set to the upload date and time.
 
@@ -1946,7 +1946,7 @@ When creating or managing dashboards via API, these best practices can make your
 
 ### Create a dashboard
 
-The fastest and easiest way to explore your data is with our new [Explore](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data "Explore your data with our point-and-click interface.") tiles and sections. In a few seconds, you can find and analyze your logs, metrics, or business events. No DQL required!
+The fastest and easiest way to explore your data is with our new [Explore](../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md "Explore your data with our point-and-click interface.") tiles and sections. In a few seconds, you can find and analyze your logs, metrics, or business events. No DQL required!
 
 To create a new dashboard
 
@@ -1975,9 +1975,9 @@ To Query Grail
 
    * **Data**
    * **Visual**
-2. On the **Data** tab, use the [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") to define your query.
+2. On the **Data** tab, use the [Dynatrace Query Language (DQL)](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") to define your query.
 3. Select **Run** to execute the query.
-4. On the **Visual** tab, choose a [visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") format for your results.
+4. On the **Visual** tab, choose a [visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") format for your results.
 
    * means the visualization type is unavailable for your query.
 5. Under the **Visualization** selector, expand the options sections to adjust visualization settings as needed.
@@ -1985,7 +1985,7 @@ To Query Grail
 
    If you want to return to these settings, select your tile to display them.
 
-For details, see [Add data to a dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-data "Add data to your Dynatrace dashboards.").
+For details, see [Add data to a dashboard](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-data.md "Add data to your Dynatrace dashboards.").
 
 ### Add code
 
@@ -2014,7 +2014,7 @@ To add code to a dashboard
 
    Don't include the address prefix. For example, if the address is `https://some.service.org`, just add `some.service.org`.
 
-For details, see [Add code to a dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code "Add code to your Dynatrace dashboards.").
+For details, see [Add code to a dashboard](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code.md "Add code to your Dynatrace dashboards.").
 
 ### Add markdown
 
@@ -2034,7 +2034,7 @@ To add a markdown tile to a dashboard
    * While you're editing text, press Ctrl+Space to see options.
 3. Close the **Options** side panel when you're done.
 
-For details, see [Add Markdown to dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-markdown "Add Markdown-formatted annotations to your Dynatrace dashboards.").
+For details, see [Add Markdown to dashboard](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-markdown.md "Add Markdown-formatted annotations to your Dynatrace dashboards.").
 
 ### Add variable
 
@@ -2089,7 +2089,7 @@ Variables in dashboards can be defined to depend on other variables.
 
   For example, if the value of variable A depends on the value of variable B, the value of variable B can't depend on the value of variable A.
 
-For details, see [Add a variable to a dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable "Add variables to your Dynatrace dashboards.").
+For details, see [Add a variable to a dashboard](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable.md "Add variables to your Dynatrace dashboards.").
 
 ### Add snippet
 
@@ -2110,7 +2110,7 @@ To get started based on a snippet
 5. Select **Run** to see results.
 6. Close the side panel when you're done.
 
-For details, see [Add a snippet to a dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-snippet "Start with a snippet").
+For details, see [Add a snippet to a dashboard](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-snippet.md "Start with a snippet").
 
 ### Analyze data with AI
 
@@ -2148,24 +2148,24 @@ To analyze data using Dynatrace Intelligence Data Analyzers
    ![The initial panel for the Analyze and alert settings in the Dashboards app.](https://dt-cdn.net/images/dashboards-analyze-and-alert-details-746-8d503491c8.png)
 4. On the **Davis AI** panel, set **Analyzers** to the analyzer you want to use, and then configure the analyzer.
 
-   * For an overview of anomaly detection, see [Anomaly detection](/docs/dynatrace-intelligence/anomaly-detection "How Dynatrace detects anomalies in your environment.")
-   * For details on anomaly detection settings, see [Anomaly detection configuration](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "How to set up an alert for missing measurements.")
+   * For an overview of anomaly detection, see [Anomaly detection](../ru/dynatrace-intelligence/anomaly-detection.md "How Dynatrace detects anomalies in your environment.")
+   * For details on anomaly detection settings, see [Anomaly detection configuration](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#analyzer "How to set up an alert for missing measurements.")
 
-   * For details on forecast analyzer settings, [Dynatrace Intelligence predictive AI analysis](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis "Learn how Dynatrace Intelligence predictive AI generates forecasts.")
+   * For details on forecast analyzer settings, [Dynatrace Intelligence predictive AI analysis](../ru/dynatrace-intelligence/reference/ai-models/forecast-analysis.md "Learn how Dynatrace Intelligence predictive AI generates forecasts.")
 
    Anomaly Detection: Auto adaptive threshold anomaly detection
 
    * **Number of signal fluctuations**âhow many times the signal fluctuation is added to the baseline to produce the actual threshold for alerting.
    * **Alert condition**âyour selection depends on whether you want to know when the metric is above, below, or outside (above or below) the normal range.
 
-   For details, see [Anomaly detection configuration](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "How to set up an alert for missing measurements.").
+   For details, see [Anomaly detection configuration](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#analyzer "How to set up an alert for missing measurements.").
 
    Anomaly Detection: Seasonal baseline anomaly detection
 
    * **Tolerance**âthe higher the tolerance, the broader the confidence band, leading to fewer triggered events.
    * **Alert condition**âyour selection depends on whether you want to know when the metric is above, below, or outside (above or below) the normal range.
 
-   For details, see [Anomaly detection configuration](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "How to set up an alert for missing measurements.").
+   For details, see [Anomaly detection configuration](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#analyzer "How to set up an alert for missing measurements.").
 
    Anomaly Detection: Static threshold anomaly detection
 
@@ -2174,14 +2174,14 @@ To analyze data using Dynatrace Intelligence Data Analyzers
    * **Alert condition**âyour selection depends on whether you want to know when the metric is above or below the threshold value.
    * **Suggest threshold**âDavis AI can help you to find the right threshold based on historical data.
 
-   For details, see [Anomaly detection configuration](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "How to set up an alert for missing measurements.").
+   For details, see [Anomaly detection configuration](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#analyzer "How to set up an alert for missing measurements.").
 
    Prediction: Forecast
 
    * **Data points to predict**âthe total steps the time series is forecasted. More steps generally results in less reliable forecasts and longer analyzer runtimes.
    * **Forecast offset**âan offset for the start of the forecast. For example, if the offset is set to `2`, the last two data points are ignored and a forecast for these points is returned as well.
 
-   For details, see [Dynatrace Intelligence predictive AI analysis](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis "Learn how Dynatrace Intelligence predictive AI generates forecasts.").
+   For details, see [Dynatrace Intelligence predictive AI analysis](../ru/dynatrace-intelligence/reference/ai-models/forecast-analysis.md "Learn how Dynatrace Intelligence predictive AI generates forecasts.").
 
    Advanced settings (for anomaly detection)
 
@@ -2297,7 +2297,7 @@ To copy a dashboard tile to a notebook (as a notebook section)
 
 To copy a dashboard tile to a different app (not ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**), open the  menu and select  **Open with**, and then select the target app.
 
-For details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+For details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ### Edit a tile
 
@@ -2327,7 +2327,7 @@ Regardless of the title setting, a title bar is automatically created as needed 
 
    **Example:**
 
-   1. In your dashboard, define [variables](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable "Add variables to your Dynatrace dashboards.") called `Status` and `Emoji`.
+   1. In your dashboard, define [variables](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable.md "Add variables to your Dynatrace dashboards.") called `Status` and `Emoji`.
    2. Set the title to `Current $Emoji status is $Status`.
    3. Set variable `Status` to `Good`.
    4. Set variable `Emoji` to `ð`.
@@ -2340,7 +2340,7 @@ To remove a tile title, select the tile and  edit it, and then clear the title b
 
 Each visualization has visualization-specific settings.
 
-To edit a tile visualization, see the [visualization instructions](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.").
+To edit a tile visualization, see the [visualization instructions](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.").
 
 ## Layout
 
@@ -2756,7 +2756,7 @@ To copy a dashboard tile to a different app (not ![Notebooks](https://dt-cdn.net
 
 Dashboard Grail query to workflow
 
-To copy a Grail query from a dashboard to [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") as a task in a workflow
+To copy a Grail query from a dashboard to [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") as a task in a workflow
 
 1. In the dashboard, select the query tile that you want to copy to a workflow.
 2. Select  >  **Open with**.
@@ -2887,10 +2887,10 @@ fetch logs
   + Links are visible for each column, enabling interaction with individual data points while leveraging others. For example, selecting a link in the `Status` column might use another field's value when navigating.
 * **Unsupported visualizations**
 
-  + Map visualizations such as [Choropleth](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-choropleth "Create and edit choropleth map visualizations on your Dynatrace dashboards and notebooks."), [Dot](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-dot "Create and edit dot map visualizations on your Dynatrace dashboards and notebooks."), [Connection](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-connection "Create and edit connection map visualizations on your Dynatrace dashboards and notebooks."), and [Bubble](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-bubble "Create and edit bubble map visualizations on your Dynatrace dashboards and notebooks.")
-  + [Single value](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value "Create and edit single value visualizations on your Dynatrace dashboards and notebooks.")
-  + [Gauge chart](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-gauge "Create and edit gauge visualizations on your Dynatrace dashboards and notebooks.")
-  + [Meter bar chart](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-meterbar "Create and edit meter bar visualizations on your Dynatrace dashboards and notebooks.")
+  + Map visualizations such as [Choropleth](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-choropleth.md "Create and edit choropleth map visualizations on your Dynatrace dashboards and notebooks."), [Dot](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-dot.md "Create and edit dot map visualizations on your Dynatrace dashboards and notebooks."), [Connection](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-connection.md "Create and edit connection map visualizations on your Dynatrace dashboards and notebooks."), and [Bubble](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-bubble.md "Create and edit bubble map visualizations on your Dynatrace dashboards and notebooks.")
+  + [Single value](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value.md "Create and edit single value visualizations on your Dynatrace dashboards and notebooks.")
+  + [Gauge chart](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-gauge.md "Create and edit gauge visualizations on your Dynatrace dashboards and notebooks.")
+  + [Meter bar chart](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-meterbar.md "Create and edit meter bar visualizations on your Dynatrace dashboards and notebooks.")
 * **All other visualizations**
 
   + For visualizations with data splits (for example, line charts by host), links dynamically adjust based on the data series. For example, using the placeholder `{{:name}}` in a line chart segmented by host will replace the placeholder with the respective host name for each series (line).
@@ -3127,7 +3127,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -3147,7 +3147,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## Data mapping
 
@@ -3204,7 +3204,7 @@ After applying these changes, the data mapping will correctly allow suitable fie
 
 An area chart graphs one or more values over time, so the mapping needs to include the following:
 
-* **Time**: the column of your result that is used for the X-axis ([timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "A list of DQL data types.") or [timeframe](/docs/platform/grail/dynatrace-query-language/data-types#timeframe "A list of DQL data types.")).
+* **Time**: the column of your result that is used for the X-axis ([timestamp](../ru/platform/grail/dynatrace-query-language/data-types.md#timestamp "A list of DQL data types.") or [timeframe](../ru/platform/grail/dynatrace-query-language/data-types.md#timeframe "A list of DQL data types.")).
 * **Interval**: this value is automatically mapped and canât be changed. It lets you know which fields are mapped for timeseries-based results. It takes the first available interval field from the result set whenever a timeseries is used (also includes any makeTimeseries-based data).
 * **Values**: a selection of one or more values that your chart graphs over time.
 * **Names**: the elements displayed, for example, in the legend and series names.
@@ -3511,7 +3511,7 @@ by:dt.entity.host
 | limit 1
 ```
 
-In general, to create a band chart similar to the one above, use [timeseries](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands") to specify a DQL query that has the following:
+In general, to create a band chart similar to the one above, use [timeseries](platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries "DQL metric commands") to specify a DQL query that has the following:
 
 * `max` (or `upper`) to define the upper limit of the band
 * `min` (or `lower`) to define the lower limit of the band
@@ -3538,7 +3538,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -3558,7 +3558,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## Data mapping
 
@@ -3587,7 +3587,7 @@ Expand the  **Data mapping** section of your visualization settings to see how d
 
 A band chart graphs a value over time, with upper and lower limits of the band.
 
-In general, use [timeseries](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands") to specify a DQL query that has the following:
+In general, use [timeseries](platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries "DQL metric commands") to specify a DQL query that has the following:
 
 * `max` (or `upper`) to define the upper limit of the band.
 * `min` (or `lower`) to define the lower limit of the band.
@@ -3595,7 +3595,7 @@ In general, use [timeseries](/docs/platform/grail/dynatrace-query-language/comma
 
 So the mapping needs to include the following:
 
-* **Time**: the column of your result that is used for the X-axis ([timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "A list of DQL data types.") or [timeframe](/docs/platform/grail/dynatrace-query-language/data-types#timeframe "A list of DQL data types.")).
+* **Time**: the column of your result that is used for the X-axis ([timestamp](../ru/platform/grail/dynatrace-query-language/data-types.md#timestamp "A list of DQL data types.") or [timeframe](../ru/platform/grail/dynatrace-query-language/data-types.md#timeframe "A list of DQL data types.")).
 * **Interval**: this value is automatically mapped and canât be changed. It lets you know which fields are mapped for timeseries-based results. It takes the first available interval field from the result set whenever a timeseries is used (also includes any makeTimeseries-based data).
 * **Band min values**: the upper limit of the band.
 * **Band max values**: the lower limit of the band.
@@ -3891,7 +3891,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -3911,7 +3911,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## Data mapping
 
@@ -4237,7 +4237,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -4257,7 +4257,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## Data mapping
 
@@ -4314,7 +4314,7 @@ After applying these changes, the data mapping will correctly allow suitable fie
 
 A bar chart graphs one or more values over time, so the mapping needs to include the following:
 
-* **Time**: the column of your result that is used for the X-axis ([timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "A list of DQL data types.") or [timeframe](/docs/platform/grail/dynatrace-query-language/data-types#timeframe "A list of DQL data types.")).
+* **Time**: the column of your result that is used for the X-axis ([timestamp](../ru/platform/grail/dynatrace-query-language/data-types.md#timestamp "A list of DQL data types.") or [timeframe](../ru/platform/grail/dynatrace-query-language/data-types.md#timeframe "A list of DQL data types.")).
 * **Interval**: this value is automatically mapped and canât be changed. It lets you know which fields are mapped for timeseries-based results. It takes the first available interval field from the result set whenever a timeseries is used (also includes any makeTimeseries-based data).
 * **Values**: a selection of one or more values that your chart graphs over time.
 * **Names**: the elements displayed, for example, in the legend and series names.
@@ -4632,7 +4632,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -4652,7 +4652,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## Data mapping
 
@@ -5143,7 +5143,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -5163,7 +5163,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## Data mapping
 
@@ -5222,7 +5222,7 @@ After applying these changes, the data mapping will correctly allow suitable fie
 
 A line chart graphs one or more values over time, so the mapping needs to include the following:
 
-* **Time**: the column of your result that is used for the X-axis ([timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "A list of DQL data types.") or [timeframe](/docs/platform/grail/dynatrace-query-language/data-types#timeframe "A list of DQL data types.")).
+* **Time**: the column of your result that is used for the X-axis ([timestamp](../ru/platform/grail/dynatrace-query-language/data-types.md#timestamp "A list of DQL data types.") or [timeframe](../ru/platform/grail/dynatrace-query-language/data-types.md#timeframe "A list of DQL data types.")).
 * **Interval**: this value is automatically mapped and canât be changed. It lets you know which fields are mapped for timeseries-based results. It takes the first available interval field from the result set whenever a timeseries is used (also includes any makeTimeseries-based data).
 * **Values**: a selection of one or more values that your chart graphs over time.
 * **Names**: the elements displayed, for example, in the legend and series names.
@@ -5537,7 +5537,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -5557,7 +5557,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## Data mapping
 
@@ -6140,7 +6140,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -6160,7 +6160,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## Data mapping
 
@@ -6206,7 +6206,7 @@ Advantages:
 * Improves transparency and prevents potentially misleading interpretations.
 * No need for multiple visualizations of related results. All data is displayed in a consistent format on a single grid.
 
-If you prefer the previous behavior (without the grid), you can apply a DQL [limit](/docs/platform/grail/dynatrace-query-language/commands/ordering-commands#limit "DQL ordering commands") and a [sort](/docs/platform/grail/dynatrace-query-language/commands/ordering-commands#sort "DQL ordering commands") command using [DQL](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.") or the [Explore interface](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data "Explore your data with our point-and-click interface.").
+If you prefer the previous behavior (without the grid), you can apply a DQL [limit](platform/grail/dynatrace-query-language/commands/ordering-commands.md#limit "DQL ordering commands") and a [sort](platform/grail/dynatrace-query-language/commands/ordering-commands.md#sort "DQL ordering commands") command using [DQL](../ru/platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.") or the [Explore interface](../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md "Explore your data with our point-and-click interface.").
 
 ## Single value options
 
@@ -6515,7 +6515,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## Data mapping
 
@@ -6694,7 +6694,7 @@ timeseries response_time = avg(dt.service.request.response_time), by: { dt.entit
 
 The heatmap visualization above is based on the following query.
 
-The query below has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](/docs/secure/threat-observability/migration "Understand the changes in the new Grail security table and learn how to migrate to it.").
+The query below has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../ru/secure/threat-observability/migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
 
 ```
 fetch security.events
@@ -6725,7 +6725,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -6745,7 +6745,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 To learn about options quickly and decide what works best for you, turn options on and off and see the effect immediately on your chart. For example, does it look best with a label or without? Turn that option on and off and see for yourself.
 
@@ -6971,7 +6971,7 @@ fetch bizevents
 
 The histogram visualization above is based on the following query. This shows the distribution of risk scores for open security events.
 
-The query below has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](/docs/secure/threat-observability/migration "Understand the changes in the new Grail security table and learn how to migrate to it.").
+The query below has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../ru/secure/threat-observability/migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
 
 ```
 fetch security.events
@@ -6991,7 +6991,7 @@ fetch security.events
 
 The histogram visualization above is based on the following query. This is a variation on the previous example that shows an additional split by the security event status.
 
-The query below has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](/docs/secure/threat-observability/migration "Understand the changes in the new Grail security table and learn how to migrate to it.").
+The query below has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../ru/secure/threat-observability/migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
 
 ```
 fetch security.events
@@ -7022,7 +7022,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -7042,7 +7042,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## Data mapping
 
@@ -7380,7 +7380,7 @@ fetch dt.davis.problems
 
 The honeycomb visualization above is based on the following query.
 
-The query below has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](/docs/secure/threat-observability/migration "Understand the changes in the new Grail security table and learn how to migrate to it.").
+The query below has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../ru/secure/threat-observability/migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
 
 ```
 fetch security.events
@@ -7415,7 +7415,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -7435,7 +7435,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## Data mapping
 
@@ -7707,7 +7707,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -7727,7 +7727,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## View
 
@@ -8100,7 +8100,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -8120,7 +8120,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## View
 
@@ -8432,7 +8432,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -8452,7 +8452,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## View
 
@@ -8924,7 +8924,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -8944,7 +8944,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## View
 
@@ -9260,7 +9260,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -9280,7 +9280,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## Data mapping
 
@@ -9476,7 +9476,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## Query limits
 
@@ -9648,7 +9648,7 @@ Select a value to display a menu of value-specific options. The available option
   + **Extract fields**
   + **Add entity names** adds a lookup (result is added in a separate field called `dt.entity.<entity>.name`) of the actual entity name associated to a given entity ID.
   + **Expand**
-  + **Reduce to single value** makes your results suitable for certain visualizations such as [Single value](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value "Create and edit single value visualizations on your Dynatrace dashboards and notebooks."), [Table](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-table "Create and edit table visualizations on your Dynatrace dashboards and notebooks."), or [Categorical bar chart](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar-categorical "Create and edit categorical chart visualizations on your Dynatrace dashboards and notebooks.").
+  + **Reduce to single value** makes your results suitable for certain visualizations such as [Single value](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value.md "Create and edit single value visualizations on your Dynatrace dashboards and notebooks."), [Table](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-table.md "Create and edit table visualizations on your Dynatrace dashboards and notebooks."), or [Categorical bar chart](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar-categorical.md "Create and edit categorical chart visualizations on your Dynatrace dashboards and notebooks.").
 
 * A recommended appâfor example, ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **View Kubernetes workload**âmay be listed for quick access.
 * **Open with** passes the whole record to the **Open with** dialog, not taking into account which value you selected.
@@ -9671,7 +9671,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## Query limits
 
@@ -9873,7 +9873,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -9893,7 +9893,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 To learn about options quickly and decide what works best for you, turn options on and off and see the effect immediately on your chart. For example, does it look best with a label or without? Turn that option on and off and see for yourself.
 
@@ -10183,7 +10183,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 To learn about options quickly and decide what works best for you, turn options on and off and see the effect immediately on your chart. For example, does it look best with a label or without? Turn that option on and off and see for yourself.
 
@@ -10414,7 +10414,7 @@ scraped: 2026-03-06T21:11:17.997326
 * 1-min read
 * Updated on Oct 23, 2025
 
-When you add a query from the  **Add** menu of the Dashboards or Notebooks app, you can choose how to visualize the results. Dynatrace offers several visualization types for your [dashboard tiles](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and [notebook sections](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
+When you add a query from the  **Add** menu of the Dashboards or Notebooks app, you can choose how to visualize the results. Dynatrace offers several visualization types for your [dashboard tiles](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and [notebook sections](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
 
 ## Select a visualization
 
@@ -10437,31 +10437,31 @@ Dynatrace offers several visualization types for your documents.
 
 ![Line chart example](https://dt-cdn.net/images/line-chart-789-a56080c3c4.png)
 
-For details, see [Line chart visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-line "Create and edit line chart visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Line chart visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-line.md "Create and edit line chart visualizations on your Dynatrace dashboards and notebooks.").
 
 ### Area chart example
 
 ![Area chart example](https://dt-cdn.net/images/area-chart-773-85df352b18.png)
 
-For details, see [Area chart visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-area "Create and edit area chart visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Area chart visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-area.md "Create and edit area chart visualizations on your Dynatrace dashboards and notebooks.").
 
 ### Bar chart example
 
 ![Bar chart example](https://dt-cdn.net/images/bar-chart-777-54ca33eff5.png)
 
-For details, see [Bar chart visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar "Create and edit bar chart visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Bar chart visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar.md "Create and edit bar chart visualizations on your Dynatrace dashboards and notebooks.").
 
 ### Table example
 
 ![Example table visualization](https://dt-cdn.net/images/table-example-01a-776-2528f83012.png)
 
-For details, see [Table visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-table "Create and edit table visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Table visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-table.md "Create and edit table visualizations on your Dynatrace dashboards and notebooks.").
 
 ### Single value chart example
 
 ![Single value chart example](https://dt-cdn.net/images/single-value-example-01-519-29fd55a191.png)
 
-For details, see [Single value visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value "Create and edit single value visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Single value visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value.md "Create and edit single value visualizations on your Dynatrace dashboards and notebooks.").
 
 ### Raw example
 
@@ -10469,7 +10469,7 @@ For details, see [Single value visualization](/docs/analyze-explore-automate/das
 
 Displays the raw results of the query. Some data has been obfuscated in the example.
 
-For details, see [Raw visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-raw "Create and edit raw visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Raw visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-raw.md "Create and edit raw visualizations on your Dynatrace dashboards and notebooks.").
 
 ### Record list example
 
@@ -10477,91 +10477,91 @@ For details, see [Raw visualization](/docs/analyze-explore-automate/dashboards-a
 
 Lists the records returned from the query. Some data has been obfuscated in the example.
 
-For details, see [Record list](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-record-list "View a query record list on your Dynatrace dashboards and notebooks.").
+For details, see [Record list](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-record-list.md "View a query record list on your Dynatrace dashboards and notebooks.").
 
 ### Band chart example
 
 ![Band chart example](https://dt-cdn.net/images/band-chart-686-aeeec95104.png)
 
-For details, see [Band chart visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-band "Create and edit band chart visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Band chart visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-band.md "Create and edit band chart visualizations on your Dynatrace dashboards and notebooks.").
 
 ### Categorical chart example
 
 ![Categorical bar chart example](https://dt-cdn.net/images/categorical-bar-chart-841-fb2d9e3530.png)
 
-For details, see [Categorical chart visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar-categorical "Create and edit categorical chart visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Categorical chart visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar-categorical.md "Create and edit categorical chart visualizations on your Dynatrace dashboards and notebooks.").
 
 ### Pie chart example
 
 ![Pie chart example](https://dt-cdn.net/images/pie-chart-642-aa7d7a76a4.png)
 
-For details, see [Pie visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-pie "Create and edit pie visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Pie visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-pie.md "Create and edit pie visualizations on your Dynatrace dashboards and notebooks.").
 
 ### Donut chart example
 
 ![Donut chart example](https://dt-cdn.net/images/donut-chart-652-a27c8f767b.png)
 
-For details, see [Donut visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-donut "Create and edit donut visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Donut visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-donut.md "Create and edit donut visualizations on your Dynatrace dashboards and notebooks.").
 
 ### Histogram example
 
 ![Histogram example](https://dt-cdn.net/images/histogram-example-03-dark-713-d663a7e1b9.png)
 
-For details, see [Histogram visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-histogram "Create and edit histogram visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Histogram visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-histogram.md "Create and edit histogram visualizations on your Dynatrace dashboards and notebooks.").
 
 ### Honeycomb example
 
 ![Honeycomb example](https://dt-cdn.net/images/visualization-example-honeycomb-01-859-230a172dea.png)
 
-For details, see [Honeycomb visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-honeycomb "Create and edit honeycomb visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Honeycomb visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-honeycomb.md "Create and edit honeycomb visualizations on your Dynatrace dashboards and notebooks.").
 
 ### Meter bar example
 
 ![Meter Bar visualization: example 1](https://dt-cdn.net/images/meter-bar-example-01-478-739cd09225.png)
 
-For details, see [Meter bar chart](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-meterbar "Create and edit meter bar visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Meter bar chart](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-meterbar.md "Create and edit meter bar visualizations on your Dynatrace dashboards and notebooks.").
 
 ### Gauge example
 
 ![Gauge visualization: example 1](https://dt-cdn.net/images/gauge-example-01-479-24a2a01700.png)
 
-For details, see [Gauge chart](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-gauge "Create and edit gauge visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Gauge chart](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-gauge.md "Create and edit gauge visualizations on your Dynatrace dashboards and notebooks.").
 
 ### Choropleth map example
 
 ![Choropleth example: users by country](https://dt-cdn.net/images/map-choropleth-example-01b-1355-e7eff1aa58.png)
 
-For details, see [Choropleth map visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-choropleth "Create and edit choropleth map visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Choropleth map visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-choropleth.md "Create and edit choropleth map visualizations on your Dynatrace dashboards and notebooks.").
 
 ### Dot map example
 
 ![Dot map example: basic](https://dt-cdn.net/images/dot-01-964-dc5a30507f.png)
 
-For details, see [Dot map visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-dot "Create and edit dot map visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Dot map visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-dot.md "Create and edit dot map visualizations on your Dynatrace dashboards and notebooks.").
 
 ### Connection map example
 
 ![Connection map example](https://dt-cdn.net/images/map-connection-example-01b-656-7b7590dcc9.png)
 
-For details, see [Connection map visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-connection "Create and edit connection map visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Connection map visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-connection.md "Create and edit connection map visualizations on your Dynatrace dashboards and notebooks.").
 
 ### Bubble map example
 
 ![Bubble map example](https://dt-cdn.net/images/map-bubble-example-01c-665-52c2ff17ed.png)
 
-For details, see [Bubble map visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-bubble "Create and edit bubble map visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Bubble map visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-bubble.md "Create and edit bubble map visualizations on your Dynatrace dashboards and notebooks.").
 
 ### Heatmap example
 
 ![Heatmap example 1: Heatmap (Response time by service)](https://dt-cdn.net/images/heatmap-example-01-resp-705-31ffafba81.png)
 
-For details, see [Heatmap visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-heatmap "Create and edit heatmap visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Heatmap visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-heatmap.md "Create and edit heatmap visualizations on your Dynatrace dashboards and notebooks.").
 
 ### Scatterplot example
 
 ![Scatterplot example: "Scatterplot (CPU and memory usage)"](https://dt-cdn.net/images/scatterplot-example-01-813-d8505fceb4.png)
 
-For details, see [Scatterplot visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-scatterplot "Create and edit scatterplot visualizations on your Dynatrace dashboards and notebooks.").
+For details, see [Scatterplot visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-scatterplot.md "Create and edit scatterplot visualizations on your Dynatrace dashboards and notebooks.").
 
 ---
 
@@ -10582,7 +10582,7 @@ scraped: 2026-03-06T21:10:58.587097
 * 15-min read
 * Updated on Feb 17, 2026
 
-Dynatrace [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") offer the following options for exploring your data:
+Dynatrace [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") offer the following options for exploring your data:
 
 * Use [Dynatrace Intelligence agentic and generative AI](#copilot) and natural language to access data stored in Grail.
 * Get started with our Explore interface for data types such as [logs](#explore-logs), [metrics](#explore-metrics), and [business events](#explore-business-events).
@@ -10623,14 +10623,14 @@ To explore data such as logs, metrics, or business events with our point-and-cli
    * Add an operator and a search string right after.
 
      + Only operators relevant to the data type are suggested.
-     + Read more on [how the filter field works](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.") in the dedicated documentation.
+     + Read more on [how the filter field works](../ru/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.") in the dedicated documentation.
 
      Note: Combining `=` with a wildcard in before `*`, after, or both, before your search term will resolve to a starts with, ends with, or contains filter respectively.
    * The  on the bottom of the definition opens a menu of additional commands you can add.
    * Select any ![remove filter](https://dt-cdn.net/images/remove-filter-9fadf8ea2a.svg "remove filter") in the definition to remove the element that comes before the ![remove filter](https://dt-cdn.net/images/remove-filter-9fadf8ea2a.svg "remove filter"). If you remove an element and then change your mind, you can use  to select it from the menu and add it back to your definition.
 3. Select **Run** to test it and see your results.
 
-When you need to cover more complex use cases, you can [create a DQL query](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#create-a-dql-query "Explore your data with our point-and-click interface.") from it.
+When you need to cover more complex use cases, you can [create a DQL query](../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md#create-a-dql-query "Explore your data with our point-and-click interface.") from it.
 
 The result of this step is equivalent to opening the  menu, selecting  **DQL**, and writing a DQL query without this web UI assistance.
 Then you can edit the DQL directly as needed, and you're free to delete the exploration version if you no longer need it.
@@ -10659,17 +10659,17 @@ this indicates that the `dt.entity.*` fields will eventually be removed.
 
 ### Learn more
 
-For more information about the benefits of Smartscape nodes and how they work, see [Smartscape on Grail](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
+For more information about the benefits of Smartscape nodes and how they work, see [Smartscape on Grail](../ru/platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
 
 ## Prompt
 
-You can create a notebook section or dashboard tile using [Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.") to translate your natural language questions into DQL queries.
+You can create a notebook section or dashboard tile using [Dynatrace Intelligence agentic and generative AI](../ru/dynatrace-intelligence/copilot/copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.") to translate your natural language questions into DQL queries.
 
 ### Generative AI in your dashboard
 
 To create a dashboard tile using Dynatrace Intelligence agentic and generative AI
 
-1. Go to [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and open or create a dashboard you can edit.
+1. Go to [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and open or create a dashboard you can edit.
 2. Open the  **Add** menu and select  **Prompt**.
 
    * A new Dynatrace Intelligence generative AI dashboard tile is created
@@ -10694,7 +10694,7 @@ To create a dashboard tile using Dynatrace Intelligence agentic and generative A
 
      + If a prompt has been edited, the DQL will first be regenerated and then run.
      + If no prompts have been edited, the existing generated DQL will simply be run.
-8. Optional Select the **Visual** tab to change the visualization (refer to the [visualization-specific documentation](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
+8. Optional Select the **Visual** tab to change the visualization (refer to the [visualization-specific documentation](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
 
 ### Generative AI in your notebook
 
@@ -10721,7 +10721,7 @@ To create a notebook section using Dynatrace Intelligence agentic and generative
 
      + If a prompt has been edited, the DQL will first be regenerated and then run.
      + If no prompts have been edited, the existing generated DQL will simply be run.
-7. Optional Select the  **Options** in the section header to change the visualization (refer to the [visualization-specific documentation](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
+7. Optional Select the  **Options** in the section header to change the visualization (refer to the [visualization-specific documentation](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
 
    Automatically select visualization
 
@@ -10972,7 +10972,7 @@ To visualize the rate at which a metric is changing
 
 ### Reduce to single value
 
-To make your results suitable for certain visualizations such as [Single value](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value "Create and edit single value visualizations on your Dynatrace dashboards and notebooks."), [Table](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-table "Create and edit table visualizations on your Dynatrace dashboards and notebooks."), or [Categorical bar chart](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar-categorical "Create and edit categorical chart visualizations on your Dynatrace dashboards and notebooks.")
+To make your results suitable for certain visualizations such as [Single value](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value.md "Create and edit single value visualizations on your Dynatrace dashboards and notebooks."), [Table](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-table.md "Create and edit table visualizations on your Dynatrace dashboards and notebooks."), or [Categorical bar chart](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar-categorical.md "Create and edit categorical chart visualizations on your Dynatrace dashboards and notebooks.")
 
 1. Select the metric-specific  menu and then select **Reduce to single value**.
 2. Use the **Reduce to single value** menu to select the value.
@@ -11020,7 +11020,7 @@ Add expressions to apply arithmetic based on your selected metrics.
 3. Define your expression by combining references from
 
    * Defined metrics such as `A`, `B`, and `C`
-   * Supported mathematical and logical [operators](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.") such as `+`, `-`, `/`, `*`, `(`, and `)`
+   * Supported mathematical and logical [operators](../ru/platform/grail/dynatrace-query-language/operators.md "A list of DQL Operators.") such as `+`, `-`, `/`, `*`, `(`, and `)`
 
    For example, to calculate the total disk capacity, we simply add both metrics together using `A+B`
 4. Select **Run** and inspect the results.
@@ -11055,7 +11055,7 @@ If you add multiple metrics to your query, the interval applies to all of them, 
 1. Select  **Interval** to add an **Interval** selector to your query.
 2. Select an interval.
 
-For details on how an interval is used in DQL, see [timeseries](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands").
+For details on how an interval is used in DQL, see [timeseries](platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries "DQL metric commands").
 
 ## Business events
 
@@ -11169,7 +11169,7 @@ From that point, you can apply what you've learned from the previous examples to
 
 ## Query Grail
 
-When you're exploring data, you're automatically creating a [DQL](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") query that you can view, copy, and use as the basis of more complex queries.
+When you're exploring data, you're automatically creating a [DQL](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") query that you can view, copy, and use as the basis of more complex queries.
 
 ### Show DQL
 
@@ -11284,11 +11284,11 @@ A notebook can consist of multiple sections:
 
 You can use the Explore options to explore your logs, metrics, business events, and more with our point-and-click interface. With zero knowledge of DQL or coding, you can create and start using notebook sections in minutes.
 
-For more information, we have a whole [Explore data](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data "Explore your data with our point-and-click interface.") page that shows you how to create Explore sections.
+For more information, we have a whole [Explore data](../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md "Explore your data with our point-and-click interface.") page that shows you how to create Explore sections.
 
 ### Query section
 
-The query sections allow you to easily query data from Grail and [visualize](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") the result in different ways.
+The query sections allow you to easily query data from Grail and [visualize](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") the result in different ways.
 
 ![Query section](https://dt-cdn.net/images/notebooks-query-section-select-685-01cd3782b4.png)
 
@@ -11459,11 +11459,11 @@ To list all ready-made notebooks
 
    ![Notebooks: Select "Ready-made" tab](https://dt-cdn.net/images/notebooks-select-ready-made-tab-466-f52a4b69b3.png)
 
-For more about ready-made documents, see [Ready-made documents](/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents "Use ready-made documents right out of the box.").
+For more about ready-made documents, see [Ready-made documents](../ru/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents.md "Use ready-made documents right out of the box.").
 
 ### Find a notebook
 
-The easiest way to search for a notebook is through the [global search](/docs/discover-dynatrace/get-started/dynatrace-ui#search "Navigate the latest Dynatrace").
+The easiest way to search for a notebook is through the [global search](../ru/discover-dynatrace/get-started/dynatrace-ui.md#search "Navigate the latest Dynatrace").
 
 The search can be triggered from any context using the **Ctrl**/**Cmd**+**K** keyboard shortcut. Notebooks with matching titles will show up in the results.
 
@@ -11519,7 +11519,7 @@ Every notebook needs one or more sections.
 
 ### Create a Prompt section
 
-To create a notebook section using [Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.") to translate your natural language questions into DQL queries
+To create a notebook section using [Dynatrace Intelligence agentic and generative AI](../ru/dynatrace-intelligence/copilot/copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.") to translate your natural language questions into DQL queries
 
 1. Go to ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and open or create a notebook you can edit.
 2. Open the  **Add** menu and select  **Prompt**. A new Generative AI notebook section is created with an empty prompt box.
@@ -11540,7 +11540,7 @@ To create a notebook section using [Dynatrace Intelligence agentic and generativ
 
      + If a prompt has been edited, the DQL will first be regenerated and then run.
      + If no prompts have been edited, the existing generated DQL will simply be run.
-7. Optional Select the  **Options** in the section header to change the visualization (refer to the [visualization-specific documentation](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
+7. Optional Select the  **Options** in the section header to change the visualization (refer to the [visualization-specific documentation](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
 
    Automatically select visualization
 
@@ -11553,7 +11553,7 @@ To create a notebook section using [Dynatrace Intelligence agentic and generativ
 
 The Explore sections offer the easiest way to get started.
 
-* To learn more about Explore sections first, see [Explore data](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data "Explore your data with our point-and-click interface.").
+* To learn more about Explore sections first, see [Explore data](../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md "Explore your data with our point-and-click interface.").
 * To dive right in, just display a notebook, open the  **Add** menu, and select an Explore option such as **Logs**, **Metrics**, **Events**, **Problems**, or **Business Events**.
 
 ### Create a Grail query section
@@ -11584,7 +11584,7 @@ To add data to a notebook
 
    ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** automatically visualizes the result.
 4. Select **Add title** to add the title header to this notebook section.
-5. Select a [visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to display your results in your preferred format. Adjust visualization settings as needed.
+5. Select a [visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to display your results in your preferred format. Adjust visualization settings as needed.
 
    Automatically select visualization
 
@@ -11612,7 +11612,7 @@ To add code fetching data for your notebook using Dynatrace functions
 3. Edit the section as needed.
 
    * To change the code, edit it directly in the edit box above the result. For details, see [App functionsï»¿](https://dt-url.net/functions-help).
-   * To configure the visualization, select  **Options**. For details, see [Edit visualizations for Notebooks and Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.").
+   * To configure the visualization, select  **Options**. For details, see [Edit visualizations for Notebooks and Dashboards](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.").
 
 To try an example code section
 
@@ -11767,12 +11767,12 @@ To see the edit commands for a section, select the section. If you have edit per
 * displays timeframe options.
 * and  decrement and increment the timeframe.
 * and  hide and show the input.
-* opens the options panel, where you can select and adjust the [visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.").
+* opens the options panel, where you can select and adjust the [visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.").
 * opens a menu of further options:
 
   + **Copy section** copies the selected section to the clipboard.
   + **Duplicate section** creates a copy of the selected section.
-  + **Create DQL section** creates a DQL section from the selected [Explore](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data "Explore your data with our point-and-click interface.") section.
+  + **Create DQL section** creates a DQL section from the selected [Explore](../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md "Explore your data with our point-and-click interface.") section.
   + **Move section up** and  **Move section down** move the section up or down one row.  
     Alternative: use  to drag the section into a new position.
   + **Clear result** clears the result. Select  **Run** (or Ctrl+Enter) again to get new results.
@@ -11782,7 +11782,7 @@ To see the edit commands for a section, select the section. If you have edit per
   + **Copy query link** copies a link to the clipboard. If you open the link in a browser, the query will be opened in a new or existing notebook.
   + **Download result** downloads (exports) the result of the current notebook section.
   + ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Add to dashboard** opens the selected section in a dashboard.
-  + **Open with** opens the section in another document. For details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+  + **Open with** opens the section in another document. For details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 You can select multiple sections and then apply the same command to all of them at once. For details, see [Manage multiple sections](#edit-manage-multiple-sections).
 
@@ -11793,7 +11793,7 @@ The available edit options will vary depending on the type of section you're edi
 * Prompt section: type a plain-text prompt in the edit box and select  **Run** (or Ctrl+Enter) to get an answer.
 
   ![Editing the generative AI prompt section in the Notebooks app.](https://dt-cdn.net/images/notebooks-dynatrace-intelligence-prompt-edit-2262-06425469c6.png)
-* Explore data section: These sections are a great shortcut to results. To learn more about Explore sections, see [Explore data](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data "Explore your data with our point-and-click interface.").
+* Explore data section: These sections are a great shortcut to results. To learn more about Explore sections, see [Explore data](../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md "Explore your data with our point-and-click interface.").
 * DQL section
 
   ![Example: Notebooks: edit DQL section](https://dt-cdn.net/images/notebooks-dql-edit-1156-a4d71cda36.png)
@@ -11808,7 +11808,7 @@ The available edit options will vary depending on the type of section you're edi
 
 
 
-To filter data for a section, you can specify [segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") for a section.
+To filter data for a section, you can specify [segments](../ru/manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") for a section.
 
 1. In the action bar for that section, select  and, in **Filter by segments**, select a segment.
 2. If the segment requires an additional value selection, select it now.
@@ -11821,7 +11821,7 @@ To filter data for a section, you can specify [segments](/docs/manage/segments "
 
 ### Set section options
 
-To open the **Options** panel (where you can select and customize a [visualization](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for your section)
+To open the **Options** panel (where you can select and customize a [visualization](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for your section)
 
 1. Select the section.
 2. Select **Options**.
@@ -11972,7 +11972,7 @@ When you select multiple sections, the available commands include:
   + **Clear results** clears the results of the selected sections. Select  **Run** again to get new results.
   + **Delete sections** removes the selected sections from the notebook.
   + ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Add to dashboard** opens the selected sections in a dashboard.
-  + **Open with** opens the selected sections in another document. For details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+  + **Open with** opens the selected sections in another document. For details, see [Drilldowns and navigation](../ru/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Run a section
 
@@ -12038,7 +12038,7 @@ These methods are not mutually exclusive. For example, you can maintain a focuse
 
 In any case, you control whether people can edit the document or only view it.
 
-For details on sharing documents, see [Share documents](/docs/discover-dynatrace/get-started/dynatrace-ui/share "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
+For details on sharing documents, see [Share documents](../ru/discover-dynatrace/get-started/dynatrace-ui/share.md "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
 
 You can also export a notebook as a JSON file and send the JSON to others, and then they can import the JSON.
 
@@ -12088,7 +12088,7 @@ To print a notebook or export it to PDF
 
    * Select **Run** to get the latest result before printing
    * Select **Hide input** to hide a section query and display only the result
-   * Set [visualization options](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks."), such as hiding sensitive or irrelevant table columns that you don't want to print and distribute
+   * Set [visualization options](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks."), such as hiding sensitive or irrelevant table columns that you don't want to print and distribute
 3. From the notebook menu, select **Print view**.
 
    ![Open notebook menu from current notebook](https://dt-cdn.net/images/notebook-menu-from-notebook-411-119580207f.png)
@@ -12142,24 +12142,24 @@ To analyze data using Dynatrace Intelligence Data Analyzers
    ![The initial panel for the Analyze and alert settings in the Dashboards app.](https://dt-cdn.net/images/dashboards-analyze-and-alert-details-746-8d503491c8.png)
 4. On the **Davis AI** panel, set **Analyzers** to the analyzer you want to use, and then configure the analyzer.
 
-   * For an overview of anomaly detection, see [Anomaly detection](/docs/dynatrace-intelligence/anomaly-detection "How Dynatrace detects anomalies in your environment.")
-   * For details on anomaly detection settings, see [Anomaly detection configuration](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "How to set up an alert for missing measurements.")
+   * For an overview of anomaly detection, see [Anomaly detection](../ru/dynatrace-intelligence/anomaly-detection.md "How Dynatrace detects anomalies in your environment.")
+   * For details on anomaly detection settings, see [Anomaly detection configuration](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#analyzer "How to set up an alert for missing measurements.")
 
-   * For details on forecast analyzer settings, [Dynatrace Intelligence predictive AI analysis](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis "Learn how Dynatrace Intelligence predictive AI generates forecasts.")
+   * For details on forecast analyzer settings, [Dynatrace Intelligence predictive AI analysis](../ru/dynatrace-intelligence/reference/ai-models/forecast-analysis.md "Learn how Dynatrace Intelligence predictive AI generates forecasts.")
 
    Anomaly Detection: Auto adaptive threshold anomaly detection
 
    * **Number of signal fluctuations**âhow many times the signal fluctuation is added to the baseline to produce the actual threshold for alerting.
    * **Alert condition**âyour selection depends on whether you want to know when the metric is above, below, or outside (above or below) the normal range.
 
-   For details, see [Anomaly detection configuration](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "How to set up an alert for missing measurements.").
+   For details, see [Anomaly detection configuration](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#analyzer "How to set up an alert for missing measurements.").
 
    Anomaly Detection: Seasonal baseline anomaly detection
 
    * **Tolerance**âthe higher the tolerance, the broader the confidence band, leading to fewer triggered events.
    * **Alert condition**âyour selection depends on whether you want to know when the metric is above, below, or outside (above or below) the normal range.
 
-   For details, see [Anomaly detection configuration](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "How to set up an alert for missing measurements.").
+   For details, see [Anomaly detection configuration](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#analyzer "How to set up an alert for missing measurements.").
 
    Anomaly Detection: Static threshold anomaly detection
 
@@ -12168,14 +12168,14 @@ To analyze data using Dynatrace Intelligence Data Analyzers
    * **Alert condition**âyour selection depends on whether you want to know when the metric is above or below the threshold value.
    * **Suggest threshold**âDavis AI can help you to find the right threshold based on historical data.
 
-   For details, see [Anomaly detection configuration](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "How to set up an alert for missing measurements.").
+   For details, see [Anomaly detection configuration](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#analyzer "How to set up an alert for missing measurements.").
 
    Prediction: Forecast
 
    * **Data points to predict**âthe total steps the time series is forecasted. More steps generally results in less reliable forecasts and longer analyzer runtimes.
    * **Forecast offset**âan offset for the start of the forecast. For example, if the offset is set to `2`, the last two data points are ignored and a forecast for these points is returned as well.
 
-   For details, see [Dynatrace Intelligence predictive AI analysis](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis "Learn how Dynatrace Intelligence predictive AI generates forecasts.").
+   For details, see [Dynatrace Intelligence predictive AI analysis](../ru/dynatrace-intelligence/reference/ai-models/forecast-analysis.md "Learn how Dynatrace Intelligence predictive AI generates forecasts.").
 
    Advanced settings (for anomaly detection)
 
@@ -12279,7 +12279,7 @@ and then run a forecast for a time series selected in the results.
 
    ![Filter and forecast: results](https://dt-cdn.net/images/filter-and-forecase-results-1117-910a185d8a.png)
 
-For details, see [Dynatrace Intelligence predictive AI analysis](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis "Learn how Dynatrace Intelligence predictive AI generates forecasts.").
+For details, see [Dynatrace Intelligence predictive AI analysis](../ru/dynatrace-intelligence/reference/ai-models/forecast-analysis.md "Learn how Dynatrace Intelligence predictive AI generates forecasts.").
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -12410,7 +12410,7 @@ To copy a dashboard tile to a different app (not ![Notebooks](https://dt-cdn.net
 
 Dashboard Grail query to workflow
 
-To copy a Grail query from a dashboard to [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") as a task in a workflow
+To copy a Grail query from a dashboard to [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") as a task in a workflow
 
 1. In the dashboard, select the query tile that you want to copy to a workflow.
 2. Select  >  **Open with**.
@@ -12541,10 +12541,10 @@ fetch logs
   + Links are visible for each column, enabling interaction with individual data points while leveraging others. For example, selecting a link in the `Status` column might use another field's value when navigating.
 * **Unsupported visualizations**
 
-  + Map visualizations such as [Choropleth](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-choropleth "Create and edit choropleth map visualizations on your Dynatrace dashboards and notebooks."), [Dot](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-dot "Create and edit dot map visualizations on your Dynatrace dashboards and notebooks."), [Connection](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-connection "Create and edit connection map visualizations on your Dynatrace dashboards and notebooks."), and [Bubble](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-bubble "Create and edit bubble map visualizations on your Dynatrace dashboards and notebooks.")
-  + [Single value](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value "Create and edit single value visualizations on your Dynatrace dashboards and notebooks.")
-  + [Gauge chart](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-gauge "Create and edit gauge visualizations on your Dynatrace dashboards and notebooks.")
-  + [Meter bar chart](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-meterbar "Create and edit meter bar visualizations on your Dynatrace dashboards and notebooks.")
+  + Map visualizations such as [Choropleth](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-choropleth.md "Create and edit choropleth map visualizations on your Dynatrace dashboards and notebooks."), [Dot](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-dot.md "Create and edit dot map visualizations on your Dynatrace dashboards and notebooks."), [Connection](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-connection.md "Create and edit connection map visualizations on your Dynatrace dashboards and notebooks."), and [Bubble](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-bubble.md "Create and edit bubble map visualizations on your Dynatrace dashboards and notebooks.")
+  + [Single value](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value.md "Create and edit single value visualizations on your Dynatrace dashboards and notebooks.")
+  + [Gauge chart](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-gauge.md "Create and edit gauge visualizations on your Dynatrace dashboards and notebooks.")
+  + [Meter bar chart](../ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-meterbar.md "Create and edit meter bar visualizations on your Dynatrace dashboards and notebooks.")
 * **All other visualizations**
 
   + For visualizations with data splits (for example, line charts by host), links dynamically adjust based on the data series. For example, using the placeholder `{{:name}}` in a line chart segmented by host will replace the placeholder with the respective host name for each series (line).
@@ -12763,7 +12763,7 @@ Offers a filterable diagnostic overview of ActiveGate with sections for:
 
 [Explore in Playgroundï»¿](https://dt-url.net/q143wbn).
 
-Related Dynatrace app:  [Dynatrace ActiveGate](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.")
+Related Dynatrace app:  [Dynatrace ActiveGate](../ru/ingest-from/dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.")
 
 ![Ready-made dashboard example: ActiveGate diagnostic overview](https://dt-cdn.net/images/activegate-diagnostic-overview-1433-31dccc87de.png)
 
@@ -12773,7 +12773,7 @@ Get broad visibility into the status of your monitored AWS Environments.
 
 [Explore in Playgroundï»¿](https://dt-url.net/qz2336h).
 
-Related Dynatrace app: ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") [Clouds](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app "Monitor all cloud platforms at once.")
+Related Dynatrace app: ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") [Clouds](../ru/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md "Monitor all cloud platforms at once.")
 
 ![Ready-made dashboard example: AWS Overview](https://dt-cdn.net/images/ready-made-aws-overview-3834-c36f9921b4.png)
 
@@ -12783,7 +12783,7 @@ Get broad visibility into the status of your monitored Azure Environments.
 
 [Explore in Playgroundï»¿](https://dt-url.net/dp433oi).
 
-Related Dynatrace app: [![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app "Monitor all cloud platforms at once.")
+Related Dynatrace app: [![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**](../ru/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md "Monitor all cloud platforms at once.")
 
 ![Ready-made dashboard example: Azure Overview](https://dt-cdn.net/images/ready-made-azure-overview-3834-391f0bda19.png)
 
@@ -12793,7 +12793,7 @@ Display select key metrics for Cisco SNMP monitoring (health, interfaces, and BG
 
 [Explore in Playgroundï»¿](https://dt-url.net/vu6333f)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
 
 ![Ready-made dashboard example: Cisco Device Overview](https://dt-cdn.net/images/ready-made-cisco-device-overview-1920-58959b879f.png)
 
@@ -12803,7 +12803,7 @@ Summary of vulnerability scan events from container image scans reported by vari
 
 [Explore in Playgroundï»¿](https://dt-url.net/9163wft).
 
-Related documentation: [Security integrations](/docs/secure/threat-observability/security-events-ingest "Ingest external security data into Grail.")
+Related documentation: [Security integrations](../ru/secure/threat-observability/security-events-ingest.md "Ingest external security data into Grail.")
 
 ![Ready-made dashboard example: Container Scan Events Coverage](https://dt-cdn.net/images/container-scan-events-coverage-1438-2014fa781a.png)
 
@@ -12813,7 +12813,7 @@ Overview of the vulnerability findings in the artifact registries of your contai
 
 [Explore in Playgroundï»¿](https://dt-url.net/u083wwj)
 
-Related documentation: [Security integrations](/docs/secure/threat-observability/security-events-ingest "Ingest external security data into Grail.")
+Related documentation: [Security integrations](../ru/secure/threat-observability/security-events-ingest.md "Ingest external security data into Grail.")
 
 ![Ready-made dashboard example: Container Vulnerability Findings](https://dt-cdn.net/images/container-vulnerability-findings-1438-e6133afd13.png)
 
@@ -12823,7 +12823,7 @@ Gives you a starting point with Dashboards and guides you to further resources.
 
 [Explore in Playgroundï»¿](https://dt-url.net/lx8337c)
 
-Related Dynatrace app: [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")
+Related Dynatrace app: [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")
 
 ![Ready-made dashboard example: Dashboards - Getting started](https://dt-cdn.net/images/ready-made-dashboards-getting-started-dark-1405-a077c12d3d.png)
 
@@ -12833,7 +12833,7 @@ A database overview by database type, database status, and, for Oracle databases
 
 [Explore in Playgroundï»¿](https://dt-url.net/x4a3wdv).
 
-Related Dynatrace app: ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases") [Databases app](/docs/observe/infrastructure-observability/databases/database-app "The Databases app gives you an overview of all your Extensions Framework 2.0-monitored databases.")
+Related Dynatrace app: ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases") [Databases app](../ru/observe/infrastructure-observability/databases/database-app.md "The Databases app gives you an overview of all your Extensions Framework 2.0-monitored databases.")
 
 ![Ready-made dashboard example: Databases Overview](https://dt-cdn.net/images/databases-overview-1320-e01a99a799.png)
 
@@ -12843,7 +12843,7 @@ Control datapoints consumed by particular extensions.
 
 [Explore in Playgroundï»¿](https://dt-url.net/mja33bw)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
 
 ![Ready-made dashboard example: Extension Data Consumption](https://dt-cdn.net/images/ready-made-extension-data-consumption-dark-1387-ab1f25ac38.png)
 
@@ -12853,7 +12853,7 @@ Display select metrics for IBM MQ queue managers, queues, channels, topics, and 
 
 [Explore in Playgroundï»¿](https://dt-url.net/ogc335g)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
 
 ![Ready-made dashboard example: IBM MQ Monitoring Overview](https://dt-cdn.net/images/ready-made-ibm-mq-monitoring-overview-1920-56883c156c.png)
 
@@ -12863,7 +12863,7 @@ Offers an overview of host observability, with a breakdown by environment, impac
 
 [Explore in Playgroundï»¿](https://dt-url.net/gpc3wam).
 
-Related Dynatrace app: ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") [Infrastructure & Operations](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
+Related Dynatrace app: ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") [Infrastructure & Operations](../ru/observe/infrastructure-observability/infrastructure-and-operations.md "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
 
 ![Ready-made dashboard example: Infrastructure Observability Dashboard](https://dt-cdn.net/images/infrastructure-observability-dashboard-1432-35f83ede4a.png)
 
@@ -12873,7 +12873,7 @@ Display the most important metrics of the extension and as an entry point for th
 
 [Explore in Playgroundï»¿](https://dt-url.net/yie333z)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
 
 ![Ready-made dashboard example: Kafka Overview](https://dt-cdn.net/images/ready-made-kafka-overview-3840-9bbd89d659.png)
 
@@ -12883,7 +12883,7 @@ Get broad visibility into the scale, status, and resource usage of your Kubernet
 
 [Explore in Playgroundï»¿](https://dt-url.net/0vg33tv)
 
-Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](/docs/observe/infrastructure-observability/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
+Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](../ru/observe/infrastructure-observability/kubernetes-app.md "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
 
 ![Ready-made dashboard example: Kubernetes Cluster](https://dt-cdn.net/images/ready-made-kubernetes-cluster-7680-ca562f4f97.png)
 
@@ -12895,7 +12895,7 @@ Analyze resource allocation of all pods within a namespace.
 
 [Explore in Playgroundï»¿](https://dt-url.net/zvi339y)
 
-Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](/docs/observe/infrastructure-observability/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
+Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](../ru/observe/infrastructure-observability/kubernetes-app.md "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
 
 ![Ready-made dashboard example: Kubernetes Namespace - Pods](https://dt-cdn.net/images/ready-made-kubernetes-namespace-pods-7680-84c7c1f4ba.png)
 
@@ -12905,7 +12905,7 @@ Explore the resource utilization distribution across workloads in your namespace
 
 [Explore in Playgroundï»¿](https://dt-url.net/f4m33vt)
 
-Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](/docs/observe/infrastructure-observability/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
+Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](../ru/observe/infrastructure-observability/kubernetes-app.md "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
 
 ![Ready-made dashboard example: Kubernetes Namespace - Workloads](https://dt-cdn.net/images/ready-made-kubernetes-namespace-workloads-7680-e811f53769.png)
 
@@ -12915,7 +12915,7 @@ Understand pod resource consumption on your Kubernetes nodes.
 
 [Explore in Playgroundï»¿](https://dt-url.net/1jo33ba)
 
-Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](/docs/observe/infrastructure-observability/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
+Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](../ru/observe/infrastructure-observability/kubernetes-app.md "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
 
 ![Ready-made dashboard example: Kubernetes Node - Pods](https://dt-cdn.net/images/ready-made-kubernetes-node-pods-7680-2fba73c7e9.png)
 
@@ -12925,7 +12925,7 @@ Inspect the utilization and size of your persistent volume claims.
 
 [Explore in Playgroundï»¿](https://dt-url.net/0vq330he)
 
-Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](/docs/observe/infrastructure-observability/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
+Related Dynatrace app: ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") [Kubernetes](../ru/observe/infrastructure-observability/kubernetes-app.md "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.")
 
 ![Ready-made dashboard example: Kubernetes Persistent Volumes](https://dt-cdn.net/images/ready-made-kubernetes-persistent-volumes-7680-a524779929.png)
 
@@ -12935,7 +12935,7 @@ Get an overview of the log ingest volume and status of the log ingest pipeline. 
 
 [Explore in Playgroundï»¿](https://dt-url.net/f6s33ic)
 
-Related Dynatrace app: ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") [Logs](/docs/analyze-explore-automate/logs "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")
+Related Dynatrace app: ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") [Logs](../ru/analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")
 
 ![Ready-made dashboard example: Log ingest overview](https://dt-cdn.net/images/ready-made-log-ingest-overview-7680-9aa180d1c0.png)
 
@@ -12945,7 +12945,7 @@ Get an overview of log query usage across the Dynatrace Platform and optimizatio
 
 [Explore in Playgroundï»¿](https://dt-url.net/kbu33w5)
 
-Related Dynatrace app: ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") [Logs](/docs/analyze-explore-automate/logs "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")
+Related Dynatrace app: ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") [Logs](../ru/analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")
 
 ![Ready-made dashboard example: Log query usage and costs](https://dt-cdn.net/images/ready-made-log-query-usage-and-costs-3840-27b2be0372.png)
 
@@ -12955,7 +12955,7 @@ Gain insights from synthetic monitoring using network availability monitors, whi
 
 [Explore in Playgroundï»¿](https://dt-url.net/rxw33oy)
 
-Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") [Synthetic](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.")
+Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") [Synthetic](../ru/observe/digital-experience/synthetic-on-grail/synthetic-app.md "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.")
 
 ![Ready-made dashboard example: Network availability monitoring](https://dt-cdn.net/images/network-availability-monitoring-1920-7e5215d39f.png)
 
@@ -12963,7 +12963,7 @@ Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-
 
 [Explore in Playgroundï»¿](https://dt-url.net/uyy33hp)
 
-Related Dynatrace app: ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") [Infrastructure & Operations](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
+Related Dynatrace app: ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") [Infrastructure & Operations](../ru/observe/infrastructure-observability/infrastructure-and-operations.md "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
 
 ![Ready-made dashboard example: Network devices](https://dt-cdn.net/images/network-devices-3654-e5556c192b.png)
 
@@ -12973,7 +12973,7 @@ Check the status of your Nutanix infrastructure, including performance, usage, a
 
 [Explore in Playgroundï»¿](https://dt-url.net/3b10337b)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
 
 ![Ready-made dashboard example: Nutanix Overview](https://dt-cdn.net/images/ready-made-nutanix-overview-7680-bd44577062.png)
 
@@ -12987,7 +12987,7 @@ Offers an overview of your current usage of OpenPipeline (logs, metrics, spans, 
 
 [Explore in Playgroundï»¿](https://dt-url.net/ooe3w1m).
 
-Related Dynatrace app: ![OpenPipeline](https://dt-cdn.net/images/openpipeline-configurations-highresolution-1025-8c07f4c78c.webp "OpenPipeline") [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
+Related Dynatrace app: ![OpenPipeline](https://dt-cdn.net/images/openpipeline-configurations-highresolution-1025-8c07f4c78c.webp "OpenPipeline") [OpenPipeline](../ru/platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
 
 ![Ready-made dashboard example: OpenPipeline usage overview](https://dt-cdn.net/images/openpipeline-usage-overview-1441-d00df250d4.png)
 
@@ -12997,7 +12997,7 @@ Browse the most important Oracle DB extension metrics and drill down into additi
 
 [Explore in Playgroundï»¿](https://dt-url.net/tw1233r9)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
 
 ![Ready-made dashboard example: Oracle DB Overview](https://dt-cdn.net/images/ready-made-oracle-db-overview-dark-1401-ef84afea7b.png)
 
@@ -13007,7 +13007,7 @@ Use this dashboard to reduce noise from container vulnerability findings using r
 
 [Explore in Playgroundï»¿](https://dt-url.net/lig3w5p).
 
-Related documentation: [Security integrations](/docs/secure/threat-observability/security-events-ingest "Ingest external security data into Grail.")
+Related documentation: [Security integrations](../ru/secure/threat-observability/security-events-ingest.md "Ingest external security data into Grail.")
 
 ![Ready-made dashboard example: Runtime contextualization of container findings for alert reduction](https://dt-cdn.net/images/runtime-contextualization-of-container-findings-for-alert-reduction-1434-66d158782e.png)
 
@@ -13017,13 +13017,13 @@ Display basic information about ingest volume and available event types, with fi
 
 [Explore in Playgroundï»¿](https://dt-url.net/ab1433kh)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
 
 This dashboard has been removed from ready-made dashboards. To use it in your environment.
 
 1. Go to the dashboard using the **Explore in Playground** link above.
-2. [Download the dashboard JSON](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-download "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") from Playground.
-3. [Upload the dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-upload "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") in your environment.
+2. [Download the dashboard JSON](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-download "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") from Playground.
+3. [Upload the dashboard](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-upload "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") in your environment.
 
 In upcoming releases, the extension-distributed dashboards will automatically appear among ready-made dashboards after you install the extensions in your environment.
 
@@ -13037,13 +13037,13 @@ Use this dashboard to help identify potential salesforce outages.
 
 [Explore in Playgroundï»¿](https://dt-url.net/3i1633rp)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
 
 This dashboard has been removed from ready-made dashboards. To use it in your environment.
 
 1. Go to the dashboard using the **Explore in Playground** link above.
-2. [Download the dashboard JSON](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-download "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") from Playground.
-3. [Upload the dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-upload "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") in your environment.
+2. [Download the dashboard JSON](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-download "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") from Playground.
+3. [Upload the dashboard](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-upload "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") in your environment.
 
 In upcoming releases, the extension-distributed dashboards will automatically appear among ready-made dashboards after you install the extensions in your environment.
 
@@ -13055,13 +13055,13 @@ Get an overview of Salesforce Event Streaming performance and adoption metrics .
 
 [Explore in Playgroundï»¿](https://dt-url.net/lj1833fp)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
 
 This dashboard has been removed from ready-made dashboards. To use it in your environment.
 
 1. Go to the dashboard using the **Explore in Playground** link above.
-2. [Download the dashboard JSON](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-download "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") from Playground.
-3. [Upload the dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-upload "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") in your environment.
+2. [Download the dashboard JSON](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-download "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") from Playground.
+3. [Upload the dashboard](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-upload "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") in your environment.
 
 In upcoming releases, the extension-distributed dashboards will automatically appear among ready-made dashboards after you install the extensions in your environment.
 
@@ -13073,13 +13073,13 @@ Use this dashboard to perform detailed analysis on pages with a load time of mor
 
 [Explore in Playgroundï»¿](https://dt-url.net/oo1a33ut)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
 
 This dashboard has been removed from ready-made dashboards. To use it in your environment.
 
 1. Go to the dashboard using the **Explore in Playground** link above.
-2. [Download the dashboard JSON](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-download "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") from Playground.
-3. [Upload the dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-upload "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") in your environment.
+2. [Download the dashboard JSON](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-download "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") from Playground.
+3. [Upload the dashboard](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-upload "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") in your environment.
 
 In upcoming releases, the extension-distributed dashboards will automatically appear among ready-made dashboards after you install the extensions in your environment.
 
@@ -13091,13 +13091,13 @@ Details for performance and actions of a specific user for the Salesforce Event 
 
 [Explore in Playgroundï»¿](https://dt-url.net/gq1c33t8)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
 
 This dashboard has been removed from ready-made dashboards. To use it in your environment.
 
 1. Go to the dashboard using the **Explore in Playground** link above.
-2. [Download the dashboard JSON](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-download "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") from Playground.
-3. [Upload the dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-upload "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") in your environment.
+2. [Download the dashboard JSON](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-download "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") from Playground.
+3. [Upload the dashboard](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-upload "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") in your environment.
 
 In upcoming releases, the extension-distributed dashboards will automatically appear among ready-made dashboards after you install the extensions in your environment.
 
@@ -13109,7 +13109,7 @@ Browse the most important SQL Server extension metrics and drill down into addit
 
 [Explore in Playgroundï»¿](https://dt-url.net/lz1e33cx)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
 
 ![Ready-made dashboard example: SQL Server Overview](https://dt-cdn.net/images/ready-made-sql-server-overview-7680-636e4461f1.png)
 
@@ -13119,7 +13119,7 @@ Displays overview information about your VMware vCenter, including entity metric
 
 [Explore in Playgroundï»¿](https://dt-url.net/t51g33g2)
 
-Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+Related Dynatrace app: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
 
 ![Ready-made dashboard example: VMware Extension Overview](https://dt-cdn.net/images/ready-made-vmware-extension-overview-7680-b839d5c59d.png)
 
@@ -13129,7 +13129,7 @@ Gain insights into the health of critical APIs and front-ends to ensure seamless
 
 [Explore in Playgroundï»¿](https://dt-url.net/wv1i33mz)
 
-Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") [Synthetic](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.")
+Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") [Synthetic](../ru/observe/digital-experience/synthetic-on-grail/synthetic-app.md "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.")
 
 ![Ready-made dashboard example: Web availability and performance](https://dt-cdn.net/images/web-availability-and-performance-1920-da66ea8453.png)
 
@@ -13162,9 +13162,9 @@ What's special about ready-made documents
 
 [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards")
 
-## Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards "Use ready-made dashboards to visualize your data right out of the box.")[![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks")
+## Dashboards](../ru/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards.md "Use ready-made dashboards to visualize your data right out of the box.")[![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks")
 
-## Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-notebooks "Use ready-made notebooks right out of the box.")
+## Notebooks](analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-notebooks.md "Use ready-made notebooks right out of the box.")
 
 ## Using read-only documents
 
@@ -13222,7 +13222,7 @@ scraped: 2026-03-03T21:23:07.840378
 * 9-min read
 * Updated on Dec 02, 2024
 
-With [code tiles](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code "Add code to your Dynatrace dashboards.") (in Dashboards) and [code sections](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#code "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (in Notebooks), you can consolidate data from multiple Dynatrace environments.
+With [code tiles](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code.md "Add code to your Dynatrace dashboards.") (in Dashboards) and [code sections](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md#code "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (in Notebooks), you can consolidate data from multiple Dynatrace environments.
 
 There are two authentication mechanisms available for fetching data from remote environments:
 
@@ -13249,8 +13249,8 @@ The example JavaScript code described below uses the credential vault for secure
 
 Before you create the code for your dashboard tile or notebook section:
 
-* Create a Dynatrace platform token on the environment you want to fetch the data from. For details, see [Platform tokens](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
-* Create a Dynatrace credential vault entry on the primary environment to store the platform token that is later used in the code tile or section for authentication. For details, see [Credential vault](/docs/manage/credential-vault "Store and manage credentials in the credential vault.").
+* Create a Dynatrace platform token on the environment you want to fetch the data from. For details, see [Platform tokens](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+* Create a Dynatrace credential vault entry on the primary environment to store the platform token that is later used in the code tile or section for authentication. For details, see [Credential vault](../common/manage/credential-vault.md "Store and manage credentials in the credential vault.").
 * Allow external requests
 
   External requests enable outbound network connections from your Dynatrace environment to external services. They allow you to control access to public endpoints from the AppEngine with app functions and functions in Dashboards, Notebooks, and Automations.
@@ -13264,7 +13264,7 @@ Before you create the code for your dashboard tile or notebook section:
 
   For example, you could add `myenv8132.apps.dynatrace.com` to allow just that environment, or use a wildcard like `*.apps.dynatrace.com` to allow all your Dynatrace environments at once.
 
-For more about allowlisting, see [Allow IP ranges that can access your environment](/docs/manage/account-management/settings/ip-allowlist "Allow IP ranges that can access your environment using the CIDR notation.")
+For more about allowlisting, see [Allow IP ranges that can access your environment](manage/account-management/settings/ip-allowlist.md "Allow IP ranges that can access your environment using the CIDR notation.")
 
 ### Code
 
@@ -13287,7 +13287,7 @@ Now that you have completed the [prerequisites](#prerequisites) and reviewed the
 * Replace `CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX` with your own credential ID.
 * Replace `https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute?enrich:metric-metadata` with your own URL.
 * Customize the `"fetch logs | limit 1"` query according to your needs.
-* Run your code in a [code tile](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code "Add code to your Dynatrace dashboards.") (Dashboards) or [code section](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#code "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (Notebooks).
+* Run your code in a [code tile](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code.md "Add code to your Dynatrace dashboards.") (Dashboards) or [code section](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md#code "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (Notebooks).
 
   If you encounter errors when you run your code, they will be caught and logged with the prefixes `[DynatraceAuthError]`, `[CredentialVaultError]`, or `[ExecutionError]` for easier debugging.
 
@@ -13559,8 +13559,8 @@ The example JavaScript code described below uses the credential vault for secure
 
 Before you create the code for your dashboard tile or notebook section:
 
-* Create an OAuth client. For details, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
-* Create a Dynatrace credential vault entry on the primary environment to store the OAuth token that is later used in the code tile or section for authentication. For details, see [Credential vault](/docs/manage/credential-vault "Store and manage credentials in the credential vault.").
+* Create an OAuth client. For details, see [OAuth clients](manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
+* Create a Dynatrace credential vault entry on the primary environment to store the OAuth token that is later used in the code tile or section for authentication. For details, see [Credential vault](../common/manage/credential-vault.md "Store and manage credentials in the credential vault.").
 * Allow external requests
 
   External requests enable outbound network connections from your Dynatrace environment to external services. They allow you to control access to public endpoints from the AppEngine with app functions and functions in Dashboards, Notebooks, and Automations.
@@ -13574,7 +13574,7 @@ Before you create the code for your dashboard tile or notebook section:
 
   For example, you could add `myenv8132.apps.dynatrace.com` to allow just that environment, or use a wildcard like `*.apps.dynatrace.com` to allow all your Dynatrace environments at once.
 
-For more about allowlisting, see [Allow IP ranges that can access your environment](/docs/manage/account-management/settings/ip-allowlist "Allow IP ranges that can access your environment using the CIDR notation.")
+For more about allowlisting, see [Allow IP ranges that can access your environment](manage/account-management/settings/ip-allowlist.md "Allow IP ranges that can access your environment using the CIDR notation.")
 
 ### Code
 
@@ -13605,7 +13605,7 @@ Now that you have completed the [prerequisites](#prerequisites) and reviewed the
 * Replace `CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX` with your own credential ID.
 * Replace `https://remote-environment-id.apps.dynatrace.com/platform/storage/query/v1/query:execute?enrich:metric-metadata` with your own URL.
 * Customize the `"fetch logs | limit 1"` query according to your needs.
-* Run your code in a [code tile](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code "Add code to your Dynatrace dashboards.") (Dashboards) or [code section](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#code "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (Notebooks).
+* Run your code in a [code tile](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code.md "Add code to your Dynatrace dashboards.") (Dashboards) or [code section](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md#code "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (Notebooks).
 
   If you encounter errors when you run your code, they will be caught and logged with the prefixes `[DynatraceAuthError]`, `[CredentialVaultError]`, or `[ExecutionError]` for easier debugging.
 
@@ -14052,7 +14052,7 @@ Application Security
 
 In this use case, you use snippets to visualize exposure to vulnerabilities, prioritize remediation efforts, and communicate findings to owning teams.
 
-* [Built-in security query snippets](/docs/secure/use-cases#snippets "Use case scenarios for Application Security and Threat Observability.")
+* [Built-in security query snippets](../ru/secure/use-cases.md#snippets "Use case scenarios for Application Security and Threat Observability.")
 
 ### Determine threat exposure with security templates
 
@@ -14060,6 +14060,6 @@ Application Security
 
 In this use case, you use the Threat exposure template to visualize the risk and impact of vulnerabilities (Dashboards) or analyze the impact of vulnerabilities and prioritize remediation efforts (Notebooks).
 
-* [Out-of-the-box templates](/docs/secure/use-cases#templates "Use case scenarios for Application Security and Threat Observability.")
+* [Out-of-the-box templates](../ru/secure/use-cases.md#templates "Use case scenarios for Application Security and Threat Observability.")
 
 ---

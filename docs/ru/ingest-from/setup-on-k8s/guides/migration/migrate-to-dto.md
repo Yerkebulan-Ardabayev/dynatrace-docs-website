@@ -56,7 +56,7 @@ scraped: 2026-03-06T21:29:22.920771
 1
 
 Ранее это было `disableAgentUpdate` в CR OneAgent.
-Поле `autoUpdate` было удалено. [Закрепите версию OneAgent на вашем тенанте для настройки автообновления](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Настройте автообновления для компонентов, управляемых Dynatrace Operator (OneAgent, ActiveGate и EdgeConnect).").
+Поле `autoUpdate` было удалено. [Закрепите версию OneAgent на вашем тенанте для настройки автообновления](../deployment-and-configuration/updates-and-maintenance/auto-update-components.md#configure-oneagent-auto-update "Настройте автообновления для компонентов, управляемых Dynatrace Operator (OneAgent, ActiveGate и EdgeConnect).").
 Автообновление отключается, если установлены поля `version` или `image`.
 
 2
@@ -132,7 +132,7 @@ OpenShift
 
    kubectl delete namespace dynatrace
    ```
-2. [Настройте мониторинг с помощью Dynatrace Operator](/docs/ingest-from/setup-on-k8s/deployment "Разверните Dynatrace Operator в Kubernetes").
+2. [Настройте мониторинг с помощью Dynatrace Operator](../../deployment.md "Разверните Dynatrace Operator в Kubernetes").
 
 1. Удалите OneAgent Operator и пространство имён/проект `dynatrace`.
 
@@ -143,7 +143,7 @@ OpenShift
 
    oc delete project dynatrace
    ```
-2. [Настройте мониторинг с помощью Dynatrace Operator](/docs/ingest-from/setup-on-k8s/deployment "Разверните Dynatrace Operator в Kubernetes").
+2. [Настройте мониторинг с помощью Dynatrace Operator](../../deployment.md "Разверните Dynatrace Operator в Kubernetes").
 
 ### Миграция с Helm
 
@@ -172,7 +172,7 @@ OpenShift
 
    kubectl delete namespace dynatrace
    ```
-2. [Настройте мониторинг с помощью Dynatrace Operator](/docs/ingest-from/setup-on-k8s/deployment "Разверните Dynatrace Operator в Kubernetes").
+2. [Настройте мониторинг с помощью Dynatrace Operator](../../deployment.md "Разверните Dynatrace Operator в Kubernetes").
 
 1. Удалите OneAgent Operator, репозиторий Helm и пространство имён/проект `dynatrace`.
 
@@ -195,4 +195,4 @@ OpenShift
 
    oc delete project dynatrace
    ```
-2. [Настройте мониторинг с помощью Dynatrace Operator](/docs/ingest-from/setup-on-k8s/deployment "Разверните Dynatrace Operator в Kubernetes").
+2. [Настройте мониторинг с помощью Dynatrace Operator](../../deployment.md "Разверните Dynatrace Operator в Kubernetes").

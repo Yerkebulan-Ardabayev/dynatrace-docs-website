@@ -13,7 +13,7 @@ scraped: 2026-03-04T21:30:20.410674
 * 1-min read
 * Published Aug 30, 2021
 
-This topic is about the classic AWS Lambda integration. Check out [Trace Lambda functions](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/trace-lambda-functions "Monitor AWS Lambda functions.") for the latest experience.
+This topic is about the classic AWS Lambda integration. Check out [Trace Lambda functions](../../trace-lambda-functions.md "Monitor AWS Lambda functions.") for the latest experience.
 
 To address the issues regarding Dynatrace AWS Lambda extension integration, start with the logs and error messages.
 
@@ -67,7 +67,7 @@ OneAgent will not enable OpenTelemetry interoperability when it detects that the
 [Dynatrace] 2022-07-27 08:55:01.852 UTC [9-dfaf4836] INFO    [dynatrace.inject.agent] opentelemetry-api version (1.10.0) is not compatible with Dynatrace SDK (1.9.1).
 ```
 
-It is possible to override the compatibility check via configuration. For instance, when you configure OneAgent using the [environment variables](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension#lambda-cfg-method "Monitor Lambda functions written in Python, Node.js, and Java."), add:
+It is possible to override the compatibility check via configuration. For instance, when you configure OneAgent using the [environment variables](../aws-lambda-extension.md#lambda-cfg-method "Monitor Lambda functions written in Python, Node.js, and Java."), add:
 
 `DT_OPEN_TELEMETRY_OVERRIDE_MAX_API_VERSION=1.11.1`
 

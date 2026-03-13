@@ -30,13 +30,13 @@ To maintain good data quality, we recommend that you
 * Use network error patterns to identify the source of a problem.
 
   For example, if all requests of a specific service have network-related errors, the cause may be a short-living process that isn't sending data to Dynatrace.
-* Reduce the number of [request attributes](/docs/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") or change the definitions of [custom services](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/custom-services "Define entry points (a method, class, or interface) for custom services that don't use standard protocols.") to reduce the number of requests.
+* Reduce the number of [request attributes](../../services/request-attributes.md "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") or change the definitions of [custom services](../../services/service-detection/service-detection-v1/service-types/custom-services.md "Define entry points (a method, class, or interface) for custom services that don't use standard protocols.") to reduce the number of requests.
 
 ## Truncation of trace data
 
 A trace can be truncated because data isn't fully acquired, correlated, or visualized. This typically occurs when limits established to protect your environment's resources are exceeded. When trace data is truncated, you get a specific diagnostic message.
 
-If you've configured [cross-environment tracing](/docs/observe/application-observability/distributed-traces/analysis/connect-environments "Analyze requests across environment boundaries."), data fetched from remote environments isn't truncated but aggregated.
+If you've configured [cross-environment tracing](connect-environments.md "Analyze requests across environment boundaries."), data fetched from remote environments isn't truncated but aggregated.
 
 While limits that protect your environment's resources can't usually be removed, you might influence truncation by intervening at the source of the problem. The following list includes some suggestions to help reduce the truncation of trace data.
 

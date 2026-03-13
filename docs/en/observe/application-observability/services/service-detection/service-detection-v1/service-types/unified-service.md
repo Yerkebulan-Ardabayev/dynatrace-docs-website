@@ -29,9 +29,9 @@ Key capabilities:
 
 The term "unified services" was introduced before SDv2 existed. The underlying service, endpoint, failure, and splitting detection rules were introduced at the same time, but were hardcoded. SDv2 now makes these rules configurable. While properties still display **Unified service**, SDv2 focuses on detection rules rather than service types.
 
-The Grail metrics `dt.service.request.response_time`, `dt.service.request.failure_count`, and `dt.service.request.count` are billable. To learn more, see [Metrics powered by Grail (DPS)](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+The Grail metrics `dt.service.request.response_time`, `dt.service.request.failure_count`, and `dt.service.request.count` are billable. To learn more, see [Metrics powered by Grail (DPS)](../../../../../../license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 
-For current detection rules and customization options, see the [Service Detection v2](/docs/observe/application-observability/services/service-detection/service-detection-v2 "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.").
+For current detection rules and customization options, see the [Service Detection v2](../../service-detection-v2.md "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.").
 
 ## Legacy span:service
 

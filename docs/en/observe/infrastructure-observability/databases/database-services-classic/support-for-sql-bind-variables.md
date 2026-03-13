@@ -59,7 +59,7 @@ A sample result of this feature is distributed tracing. The following webpage il
 
 ![Purepath example](https://dt-cdn.net/images/purepath-example-1413-383ad7b07c.png)
 
-Bind variables are considered confidential as they can contain IDs and other sensitive values. [Learn how to ensure the data privacy of your customers](/docs/manage/data-privacy-and-security "Learn how Dynatrace applies various security measures required to protect private data.").
+Bind variables are considered confidential as they can contain IDs and other sensitive values. [Learn how to ensure the data privacy of your customers](../../../../../common/manage/data-privacy-and-security.md "Learn how Dynatrace applies various security measures required to protect private data.").
 
 Only users who have permission to view a specific entity or management zone can view the bind variables within that entity or zone.
 
@@ -69,14 +69,14 @@ Only users who have permission to view a specific entity or management zone can 
 
 Bind variables are not available in my Dynatrace environment. How do I get this feature?
 
-This feature is available in Dynatrace environments that are licensed via [Dynatrace Platform Subscription (DPS)](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities."). If you have a Dynatrace classic license, change your subscription plan to a Dynatrace Platform Subscription (DPS) license to use bind variables.
+This feature is available in Dynatrace environments that are licensed via [Dynatrace Platform Subscription (DPS)](../../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities."). If you have a Dynatrace classic license, change your subscription plan to a Dynatrace Platform Subscription (DPS) license to use bind variables.
 
 Does capturing bind variables have negative consequences?
 
 This feature can capture a lot of sensitive data, so you should consider its usage carefully.
-You might also choose to mask or drop parts of the captured data via [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.").
+You might also choose to mask or drop parts of the captured data via [OpenPipeline](../../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.").
 
 Additionally, this feature can capture a lot of data in the absolute sense.
 Heavy usage of this feature means that you will run out of the included trace volume for your Full-Stack monitored applications faster.
 In other words, heavy usage can lower your trace capture rate.
-To mitigate this, you should either use this feature for troubleshooting only or you can opt into [Extended trace ingest](/docs/license/capabilities/app-infra-observability/full-stack-monitoring#extend-trace-ingest "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") to accommodate the increased data volume.
+To mitigate this, you should either use this feature for troubleshooting only or you can opt into [Extended trace ingest](../../../../license/capabilities/app-infra-observability/full-stack-monitoring.md#extend-trace-ingest "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") to accommodate the increased data volume.

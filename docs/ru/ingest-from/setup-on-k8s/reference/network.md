@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:30:57.484657
 
 Для корректной работы компонентов Dynatrace Operator в кластере Kubernetes они должны иметь возможность взаимодействовать как с кластером Dynatrace, так и с кластером Kubernetes.
 
-Компоненты Dynatrace Operator доступны через определённые порты и обращаются к различным ресурсам внутри и за пределами кластера Kubernetes. Для получения подробной информации о том, к каким ресурсам осуществляется доступ внутри кластера Kubernetes, см. справочную страницу [RBAC-разрешения оператора](/docs/ingest-from/setup-on-k8s/reference/security "На этой странице представлен обзор компонентов Dynatrace, их конфигурации по умолчанию и требуемых разрешений").
+Компоненты Dynatrace Operator доступны через определённые порты и обращаются к различным ресурсам внутри и за пределами кластера Kubernetes. Для получения подробной информации о том, к каким ресурсам осуществляется доступ внутри кластера Kubernetes, см. справочную страницу [RBAC-разрешения оператора](security.md "На этой странице представлен обзор компонентов Dynatrace, их конфигурации по умолчанию и требуемых разрешений").
 
 ## Входящий трафик
 
@@ -40,7 +40,7 @@ scraped: 2026-03-06T21:30:57.484657
 
 2
 
-Взаимодействие с хостами должно быть разрешено согласно конфигурации в [DynaKube](/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters "Список доступных параметров для настройки Dynatrace Operator в Kubernetes.") (`apiUrl`) или [EdgeConnect](/docs/ingest-from/setup-on-k8s/reference/edgeconnect-parameters "Список параметров конфигурации для EdgeConnect.") (`apiServer`). Для обеспечения надёжного соединения могут использоваться различные конечные точки связи в качестве резервных.
+Взаимодействие с хостами должно быть разрешено согласно конфигурации в [DynaKube](dynakube-parameters.md "Список доступных параметров для настройки Dynatrace Operator в Kubernetes.") (`apiUrl`) или [EdgeConnect](edgeconnect-parameters.md "Список параметров конфигурации для EdgeConnect.") (`apiServer`). Для обеспечения надёжного соединения могут использоваться различные конечные точки связи в качестве резервных.
 
 3
 
@@ -48,7 +48,7 @@ scraped: 2026-03-06T21:30:57.484657
 
 4
 
-[Поддерживаемые схемы подключения ActiveGate](/docs/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates "Узнайте о приоритетах соединения между типами ActiveGate, а также между ActiveGate и OneAgent.")
+[Поддерживаемые схемы подключения ActiveGate](../../dynatrace-activegate/supported-connectivity-schemes-for-activegates.md "Узнайте о приоритетах соединения между типами ActiveGate, а также между ActiveGate и OneAgent.")
 
 5
 

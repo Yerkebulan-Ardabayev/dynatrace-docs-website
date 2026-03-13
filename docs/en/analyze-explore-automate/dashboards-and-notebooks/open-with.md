@@ -117,7 +117,7 @@ To copy a dashboard tile to a different app (not ![Notebooks](https://dt-cdn.net
 
 Dashboard Grail query to workflow
 
-To copy a Grail query from a dashboard to [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") as a task in a workflow
+To copy a Grail query from a dashboard to [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](../workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") as a task in a workflow
 
 1. In the dashboard, select the query tile that you want to copy to a workflow.
 2. Select  >  **Open with**.
@@ -246,10 +246,10 @@ fetch logs
   + Links are visible for each column, enabling interaction with individual data points while leveraging others. For example, selecting a link in the `Status` column might use another field's value when navigating.
 * **Unsupported visualizations**
 
-  + Map visualizations such as [Choropleth](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-choropleth "Create and edit choropleth map visualizations on your Dynatrace dashboards and notebooks."), [Dot](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-dot "Create and edit dot map visualizations on your Dynatrace dashboards and notebooks."), [Connection](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-connection "Create and edit connection map visualizations on your Dynatrace dashboards and notebooks."), and [Bubble](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-bubble "Create and edit bubble map visualizations on your Dynatrace dashboards and notebooks.")
-  + [Single value](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value "Create and edit single value visualizations on your Dynatrace dashboards and notebooks.")
-  + [Gauge chart](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-gauge "Create and edit gauge visualizations on your Dynatrace dashboards and notebooks.")
-  + [Meter bar chart](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-meterbar "Create and edit meter bar visualizations on your Dynatrace dashboards and notebooks.")
+  + Map visualizations such as [Choropleth](edit-visualizations/visualization-map-choropleth.md "Create and edit choropleth map visualizations on your Dynatrace dashboards and notebooks."), [Dot](edit-visualizations/visualization-map-dot.md "Create and edit dot map visualizations on your Dynatrace dashboards and notebooks."), [Connection](edit-visualizations/visualization-map-connection.md "Create and edit connection map visualizations on your Dynatrace dashboards and notebooks."), and [Bubble](edit-visualizations/visualization-map-bubble.md "Create and edit bubble map visualizations on your Dynatrace dashboards and notebooks.")
+  + [Single value](edit-visualizations/visualization-chart-single-value.md "Create and edit single value visualizations on your Dynatrace dashboards and notebooks.")
+  + [Gauge chart](edit-visualizations/visualization-gauge.md "Create and edit gauge visualizations on your Dynatrace dashboards and notebooks.")
+  + [Meter bar chart](edit-visualizations/visualization-meterbar.md "Create and edit meter bar visualizations on your Dynatrace dashboards and notebooks.")
 * **All other visualizations**
 
   + For visualizations with data splits (for example, line charts by host), links dynamically adjust based on the data series. For example, using the placeholder `{{:name}}` in a line chart segmented by host will replace the placeholder with the respective host name for each series (line).

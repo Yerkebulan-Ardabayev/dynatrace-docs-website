@@ -32,12 +32,12 @@ System for Cross-domain Identity Management (SCIM) is an open standard for autom
 * Groups of type `SCIM` are managed by SCIM only and cannot be removed or modified through Account Management
 * Permissions to SCIM groups still have to be assigned manually in Dynatrace
 
-  + It is possible to use [Account Management API](/docs/dynatrace-api/account-management-api "Explore endpoints of the Account Management API.") to manage the permissions programmatically
+  + It is possible to use [Account Management API](../../../dynatrace-api/account-management-api.md "Explore endpoints of the Account Management API.") to manage the permissions programmatically
 * If your SCIM client does not support dynamic external id changes, email/login change will cause SCIM integration to stop working for such users. Requests will be rejected due to invalid username (in SCIM it is email)
 * The scope of users and groups synchronized into Dynatrace with SCIM can be narrowed within the SCIM application in your IdP
 * Users in SCIM groups are not listed in the web UI for sharing a document (dashboard or notebook) to specific users or groups unless you add those users to local Dynatrace groups.
-* A user cannot be assigned to an account if the account has already reached its [maximum number of assigned users](/docs/manage/identity-access-management/iam-limits "IAM limits for Dynatrace SaaS").
-* A user cannot be added to a group if they have already reached the [maximum number of groups they can be assigned to](/docs/manage/identity-access-management/iam-limits "IAM limits for Dynatrace SaaS").
+* A user cannot be assigned to an account if the account has already reached its [maximum number of assigned users](../iam-limits.md "IAM limits for Dynatrace SaaS").
+* A user cannot be added to a group if they have already reached the [maximum number of groups they can be assigned to](../iam-limits.md "IAM limits for Dynatrace SaaS").
 
 ## SCIM requirements and supported features
 
@@ -101,8 +101,8 @@ The SCIM endpoint required for SCIM configuration in your application is added t
 
 To continue integrating Dynatrace SCIM with your IdP, select the procedure appropriate for your IdP:
 
-* [Azure](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure "Learn how to configure Dynatrace SCIM in Azure.")
-* [Okta](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-okta "Learn how to configure Dynatrace SCIM in Okta.")
+* [Azure](access-scim/scim-azure.md "Learn how to configure Dynatrace SCIM in Azure.")
+* [Okta](access-scim/scim-okta.md "Learn how to configure Dynatrace SCIM in Okta.")
 
 ## FAQ
 

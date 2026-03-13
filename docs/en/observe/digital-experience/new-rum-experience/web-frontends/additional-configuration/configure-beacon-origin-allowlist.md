@@ -16,19 +16,19 @@ To prevent untrusted origins from sending RUM data, Dynatrace provides a beacon 
 
 ## Understanding sameâorigin and crossâorigin RUM beacons
 
-The RUM JavaScript reports captured data to Dynatrace by sending beacons to a [beacon endpoint](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-beacon-endpoint "Learn how to configure the beacon endpoint for web frontends to meet your specific requirements."). These beacons can be either sameâorigin or crossâorigin, depending on the instrumentation method and any additional configuration.
+The RUM JavaScript reports captured data to Dynatrace by sending beacons to a [beacon endpoint](../initial-setup/configure-beacon-endpoint.md "Learn how to configure the beacon endpoint for web frontends to meet your specific requirements."). These beacons can be either sameâorigin or crossâorigin, depending on the instrumentation method and any additional configuration.
 
 The term [originï»¿](https://developer.mozilla.org/en-US/docs/Glossary/Origin) refers to the protocol, host, and port of the URL. A request is considered sameâorigin when the protocol, host, and port of the page sending the request are exactly the same as those of the requested resource.
 
 ### Agentless frontends
 
-When [agentless monitoring](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-agentless-monitoring "Learn how to set up agentless RUM for your web frontends in the New RUM Experience.") is used, RUM beacons are sent to a Cluster ActiveGate that is part of the Dynatrace SaaS infrastructure. These beacons are cross-origin.
+When [agentless monitoring](../initial-setup/set-up-agentless-monitoring.md "Learn how to set up agentless RUM for your web frontends in the New RUM Experience.") is used, RUM beacons are sent to a Cluster ActiveGate that is part of the Dynatrace SaaS infrastructure. These beacons are cross-origin.
 
 ### Auto-injected frontends
 
-When the RUM JavaScript is [injected automatically](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-auto-injected-frontend "Learn how to set up an auto-injected web frontend in the New RUM Experience."), RUM beacons are, by default, sent back to the web or application server that hosts the frontend, where OneAgent provides a beacon endpoint. These are same-origin beacons.
+When the RUM JavaScript is [injected automatically](../initial-setup/set-up-auto-injected-frontend.md "Learn how to set up an auto-injected web frontend in the New RUM Experience."), RUM beacons are, by default, sent back to the web or application server that hosts the frontend, where OneAgent provides a beacon endpoint. These are same-origin beacons.
 
-You can configure alternative beacon endpoint setups where beacons are [sent to a Cluster ActiveGate](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-beacon-endpoint#auto-injected-to-saas-infrastructure "Learn how to configure the beacon endpoint for web frontends to meet your specific requirements.") or [to another instrumented web server on a different domain](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-beacon-endpoint#auto-injected-to-different-server "Learn how to configure the beacon endpoint for web frontends to meet your specific requirements."). Since these endpoints use a different domain, the beacons are cross-origin.
+You can configure alternative beacon endpoint setups where beacons are [sent to a Cluster ActiveGate](../initial-setup/configure-beacon-endpoint.md#auto-injected-to-saas-infrastructure "Learn how to configure the beacon endpoint for web frontends to meet your specific requirements.") or [to another instrumented web server on a different domain](../initial-setup/configure-beacon-endpoint.md#auto-injected-to-different-server "Learn how to configure the beacon endpoint for web frontends to meet your specific requirements."). Since these endpoints use a different domain, the beacons are cross-origin.
 
 ## Default CORS handling for beacon requests
 
@@ -36,7 +36,7 @@ Browsers enforce the same-origin policy, which by default allows scripts to send
 
 In its default CORS handling, the beacon endpoint accepts all origins by adding an `Access-Control-Allow-Origin` header to the response. The header echoes the origin provided in the `Origin` request header. The endpoint then forwards the beacon payload to Dynatrace.
 
-If you send cross-origin beacons to OneAgent, you must turn on the setting **Send beacon data via CORS** for the `Access-Control-Allow-Origin` header to be added; see [Send beacons to a different web server](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-beacon-endpoint#auto-injected-to-different-server "Learn how to configure the beacon endpoint for web frontends to meet your specific requirements.").
+If you send cross-origin beacons to OneAgent, you must turn on the setting **Send beacon data via CORS** for the `Access-Control-Allow-Origin` header to be added; see [Send beacons to a different web server](../initial-setup/configure-beacon-endpoint.md#auto-injected-to-different-server "Learn how to configure the beacon endpoint for web frontends to meet your specific requirements.").
 
 If the permissive default doesnât align with your requirements, use the beacon origin allowlist to specify which origins are accepted.
 

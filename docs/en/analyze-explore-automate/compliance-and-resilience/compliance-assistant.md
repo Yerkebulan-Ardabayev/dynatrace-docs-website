@@ -24,14 +24,14 @@ Prerequisites
 
 ## Set up sources and applications
 
-* To take full advantage of ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**, see [Prerequisites](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management#prereq "Configure and enable Security Posture Management in Kubernetes.") and how to [Get started](/docs/secure/xspm#start "Detect, manage, and take action on security and compliance findings.").
-* Set up [Dynatrace Runtime Vulnerability Analytics](/docs/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
-* Set up [Dynatrace Runtime Application Protection](/docs/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
-* [Install](/docs/manage/hub#install "See the information about Dynatrace Hub.") ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**
+* To take full advantage of ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**, see [Prerequisites](../../ingest-from/setup-on-k8s/deployment/security-posture-management.md#prereq "Configure and enable Security Posture Management in Kubernetes.") and how to [Get started](../../secure/xspm.md#start "Detect, manage, and take action on security and compliance findings.").
+* Set up [Dynatrace Runtime Vulnerability Analytics](../../secure/application-security/vulnerability-analytics.md "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
+* Set up [Dynatrace Runtime Application Protection](../../secure/application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
+* [Install](../../manage/hub.md#install "See the information about Dynatrace Hub.") ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**
 
 ## Installation
 
-Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Make sure the app is [installed in your environment](../../manage/hub.md#install "See the information about Dynatrace Hub.").
 
 Get started
 
@@ -52,7 +52,7 @@ Use cases
 * Open reporting template
   Select  **ICT incident reporting notebook** in the upper-right corner of the page to access an incident reporting template in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**.
 
-  Note that this is a [ready-made document](/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents "Use ready-made documents right out of the box.").
+  Note that this is a [ready-made document](../dashboards-and-notebooks/ready-made-documents.md "Use ready-made documents right out of the box.").
 * Open DORA regulation
 
   Within each widget, you can find a chapter from DORA regulation to which it refers.
@@ -89,7 +89,7 @@ Incidents ICT critical services widget gathers information from:
 
 * **Attacks** ![Attacks](https://dt-cdn.net/images/attacks-512-b922840b12.png "Attacks")âif there's a security incident, helps detect and classify an attack on your environment in real time.
 * **Problems** ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new")âif there's a resilience incident, analyzes abnormal system behavior and performance problems detected by Dynatrace Intelligence.
-* Use [segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") to conveniently filter observability and security incidents impacting a critical service under DORA.
+* Use [segments](../../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") to conveniently filter observability and security incidents impacting a critical service under DORA.
 
 **ICT vulnerabilities** widget shows you most recent resilience and security incidents, but you can view all ICT Observability in **Problems** ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") and view all ICT Security incidents in **Attacks** ![Attacks](https://dt-cdn.net/images/attacks-512-b922840b12.png "Attacks").
 

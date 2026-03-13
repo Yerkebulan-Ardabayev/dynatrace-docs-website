@@ -18,7 +18,7 @@ scraped: 2026-03-06T21:37:55.780096
 
 Dynatrace может автоматически обнаруживать и собирать логи из отслеживаемых регионов IBM CICS и подсистем IBM IMS. Все собранные логи обогащаются метаданными для их сопоставления с моделью сущностей хостов z/OS (логических разделов) и процессов z/OS (регионов и подсистем). Это позволяет расширить анализ основных причин для любой проблемы, выявленной каузальным ИИ Dynatrace Intelligence, с помощью логов, автоматически связанных с вашими приложениями.
 
-Чтобы узнать больше о связанных сценариях использования, см. [Log Management and Analytics](/docs/analyze-explore-automate/logs/lma-use-cases "Explore common Log Management and Analytics use cases in Dynatrace deployments.").
+Чтобы узнать больше о связанных сценариях использования, см. [Log Management and Analytics](../../../../../analyze-explore-automate/logs/lma-use-cases.md "Explore common Log Management and Analytics use cases in Dynatrace deployments.").
 
 Поддерживаются следующие источники логов:
 
@@ -27,20 +27,20 @@ Dynatrace может автоматически обнаруживать и со
 
 Log Management and Analytics требует лицензию:
 
-* Для Dynatrace Platform Subscription — возможность [Log Management and Analytics](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.").
-* Для классического лицензирования Dynatrace — [единицы данных Davis](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
+* Для Dynatrace Platform Subscription — возможность [Log Management and Analytics](../../../../../license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.").
+* Для классического лицензирования Dynatrace — [единицы данных Davis](../../../../../license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
 
 ## Начало работы
 
-Сбор логов из z/OS требует [правила приёма логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis."). Вы можете начать, используя одно из существующих встроенных правил.
+Сбор логов из z/OS требует [правила приёма логов](../../../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis."). Вы можете начать, используя одно из существующих встроенных правил.
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Активация правила приёма логов**](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs#ingest-rules "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")[![Шаг 2 (необязательный)](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Step 2 optional")
+**Активация правила приёма логов**](monitor-zos-logs.md#ingest-rules "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")[![Шаг 2 (необязательный)](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Step 2 optional")
 
-**Маскирование конфиденциальных данных в логах**](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs#mask-data "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Маскирование конфиденциальных данных в логах**](monitor-zos-logs.md#mask-data "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Анализ данных логов**](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs#analyze-logs "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")
+**Анализ данных логов**](monitor-zos-logs.md#analyze-logs "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")
 
 ### Шаг 1. Активация правила приёма логов
 
@@ -54,21 +54,21 @@ Log Management and Analytics требует лицензию:
 
 При необходимости вы можете ограничить область действия правила приёма логов определённой группой LPAR (группой хостов) или конкретным LPAR (хостом), чтобы логи принимались только для них.
 
-Для этого определите [правило приёма логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis.") с необходимой [областью действия](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration#scopes "Include and exclude specific log sources already known to OneAgent for storage and analysis.") (группа хостов или хост).
+Для этого определите [правило приёма логов](../../../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.") с необходимой [областью действия](../../../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md#scopes "Include and exclude specific log sources already known to OneAgent for storage and analysis.") (группа хостов или хост).
 
 #### Управление приёмом логов
 
 При необходимости вы можете использовать атрибуты для точного управления тем, какие логи принимаются.
 
-Для этого определите [правило приёма логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis.") с конкретными атрибутами, чтобы принимались только логи, соответствующие этим атрибутам. Например, вы можете использовать следующие атрибуты.
+Для этого определите [правило приёма логов](../../../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.") с конкретными атрибутами, чтобы принимались только логи, соответствующие этим атрибутам. Например, вы можете использовать следующие атрибуты.
 
 1
 
-Атрибут уровня записи лога, преобразованный OneAgent, отличается от атрибута `status` лога, преобразованного сервером Dynatrace. Подробнее см. на странице [Автоматическое обогащение логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.").
+Атрибут уровня записи лога, преобразованный OneAgent, отличается от атрибута `status` лога, преобразованного сервером Dynatrace. Подробнее см. на странице [Автоматическое обогащение логов](../../../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.").
 
 ### Шаг 2 (необязательный). Маскирование конфиденциальных данных в логах
 
-Настройте маскирование конфиденциальных данных, как описано в разделе [Маскирование конфиденциальных данных в OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking "Mask sensitive information in your log data using Log Management and Analytics.").
+Настройте маскирование конфиденциальных данных, как описано в разделе [Маскирование конфиденциальных данных в OneAgent](../../../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking.md "Mask sensitive information in your log data using Log Management and Analytics.").
 
 ### Шаг 3. Анализ данных логов
 

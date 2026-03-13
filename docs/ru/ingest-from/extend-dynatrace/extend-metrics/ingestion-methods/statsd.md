@@ -32,7 +32,7 @@ OpenTelemetry Collector
 
 Если OneAgent не может быть установлен на хосте, используйте ActiveGate в качестве удалённого слушателя для сбора метрик StatsD. Подробнее см. [Удалённый StatsD](#remote-statsd).
 
-Для распределённых сред или при использовании Kubernetes OpenTelemetry Collector предоставляет решение для загрузки метрик StatsD в Dynatrace. Подробнее см. [Ingest data from StatsD](/docs/ingest-from/opentelemetry/collector/use-cases/statsd "Configure the OpenTelemetry Collector to ingest StatsD data.").
+Для распределённых сред или при использовании Kubernetes OpenTelemetry Collector предоставляет решение для загрузки метрик StatsD в Dynatrace. Подробнее см. [Ingest data from StatsD](../../../opentelemetry/collector/use-cases/statsd.md "Configure the OpenTelemetry Collector to ingest StatsD data.").
 
 ## Включение DynatraceStatsD
 
@@ -132,7 +132,7 @@ ActiveGate версии 1.227+
 
 ### Слушатель OneAgent
 
-Порт UDP-прослушивания DynatraceStatsD для слушателя OneAgent по умолчанию — `18125`. При необходимости вы можете использовать команду [oneagentctl](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") для проверки или изменения порта загрузки метрик. Изменение порта требует перезапуска OneAgent. Добавьте [`--restart-service`](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") к команде для автоматического перезапуска OneAgent.
+Порт UDP-прослушивания DynatraceStatsD для слушателя OneAgent по умолчанию — `18125`. При необходимости вы можете использовать команду [oneagentctl](../../../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") для проверки или изменения порта загрузки метрик. Изменение порта требует перезапуска OneAgent. Добавьте [`--restart-service`](../../../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") к команде для автоматического перезапуска OneAgent.
 
 #### Проверка порта загрузки
 
@@ -169,7 +169,7 @@ StatsdPort=18126
 
 ## Топологическая осведомлённость
 
-При использовании DynatraceStatsD с OneAgent идентификатор хоста и имя хоста автоматически добавляются в качестве измерений к каждой метрике. Подробнее см. [Metric ingestion](/docs/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace."). Обратите внимание, что мы уже работаем над дополнительным автоматическим обогащением метрик. При удалённой загрузке дополнительное обогащение не добавляется. Если вы хотите добавить контекст к вашим метрикам, вам нужно будет самостоятельно добавить измерения к вашим метрикам StatsD.
+При использовании DynatraceStatsD с OneAgent идентификатор хоста и имя хоста автоматически добавляются в качестве измерений к каждой метрике. Подробнее см. [Metric ingestion](../../extend-metrics.md "Learn how to extend metric observability in Dynatrace."). Обратите внимание, что мы уже работаем над дополнительным автоматическим обогащением метрик. При удалённой загрузке дополнительное обогащение не добавляется. Если вы хотите добавить контекст к вашим метрикам, вам нужно будет самостоятельно добавить измерения к вашим метрикам StatsD.
 
 ## Безопасность
 

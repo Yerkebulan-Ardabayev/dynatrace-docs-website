@@ -16,9 +16,9 @@ The Semantic Dictionary defines standardized field names that are used across al
 
 In Grail, data is organized into records, each comprising a list of fields. Fields in Grail are categorized into two main types: global and domain-specific.
 
-Global fields maintain consistent semantics across the entire Grail product, offering standardized data references. The [Global field reference](/docs/semantic-dictionary/fields "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") contains this list.
+Global fields maintain consistent semantics across the entire Grail product, offering standardized data references. The [Global field reference](semantic-dictionary/fields.md "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") contains this list.
 
-Data models represent a group of fields that are tailored to distinct use cases and domains. The [Data models](/docs/semantic-dictionary/model "Overview of Semantic Dictionary giving context to individual fields.") section contains a list of all data models that are used in Grail.
+Data models represent a group of fields that are tailored to distinct use cases and domains. The [Data models](semantic-dictionary/model.md "Overview of Semantic Dictionary giving context to individual fields.") section contains a list of all data models that are used in Grail.
 
 Data models can require additional fields that are unique to specific data models or problem domains and cannot be defined globally. These fields are not part of the Global field reference. Instead, they are only defined within the data model reference.
 

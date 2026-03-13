@@ -53,7 +53,7 @@ To disable auto-injection after OneAgent is installed
 ./oneagentctl --set-monitoring-mode=infra-only --set-auto-injection-enabled=false --restart-service
 ```
 
-For more information, see [OneAgent configuration via command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
+For more information, see [OneAgent configuration via command-line interface](../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
 
 #### Dynatrace web UI
 
@@ -450,7 +450,7 @@ If certain user actions are not captured afterwards, use the JavaScript API to t
 ## Real User Monitoring, Salesforce
 
 **Issue:**
-When [injecting RUM](/docs/observe/digital-experience/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications") into Salesforce, you may experience the application stuck in "loading" when viewing records from a search result. When this happens, browser debugging displays the JavaScript error: `Wrong number of arguments or invalid property assignment on b.b.open,arguments,b.b`.
+When [injecting RUM](../../observe/digital-experience/web-applications/initial-setup/rum-injection.md "Configure automatic injection of the RUM JavaScript into the pages of your applications") into Salesforce, you may experience the application stuck in "loading" when viewing records from a search result. When this happens, browser debugging displays the JavaScript error: `Wrong number of arguments or invalid property assignment on b.b.open,arguments,b.b`.
 
 This occurs when the RUM JavaScript is not the first JavaScript loaded on the page. There can be JavaScript code loading in the heading that has a negative impact on the RUM JavaScript.
 
@@ -460,7 +460,7 @@ Shifting the RUM JavaScript to load before any JavaScript resolves this issue.
 **Issue:**
 Dynatrace RUM isn't working for Salesforce applications based on the [Lightning Component Frameworkï»¿](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/intro_framework.htm).
 
-The reason for this is that many Salesforce applications and offerings are based on [Lightning Component Frameworkï»¿](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/intro_framework.htm). This framework has a security architecture called [Lightning Lockerï»¿](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/security_code.htm), which restricts access to DOM elements and therefore influences the Dynatrace RUM JavaScript. Whenever the Locker code is loaded and executed before the Dynatrace RUM JavaScript, monitoring won't work, independently of whether you add the [RUM JavaScript](/docs/observe/digital-experience/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications").
+The reason for this is that many Salesforce applications and offerings are based on [Lightning Component Frameworkï»¿](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/intro_framework.htm). This framework has a security architecture called [Lightning Lockerï»¿](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/security_code.htm), which restricts access to DOM elements and therefore influences the Dynatrace RUM JavaScript. Whenever the Locker code is loaded and executed before the Dynatrace RUM JavaScript, monitoring won't work, independently of whether you add the [RUM JavaScript](../../observe/digital-experience/web-applications/initial-setup/rum-injection.md "Configure automatic injection of the RUM JavaScript into the pages of your applications").
 
 **Solution:**
 There is currently no solution from the Dynatrace side. Please contact Salesforce support. Perhaps there is a way to allow the Dynatrace RUM JavaScript.
@@ -479,7 +479,7 @@ Replace `#` with `${'#'}` in the Dynatrace RUM JavaScript.
 
 **Issue:**
 
-Enabling the [**Visually complete**](/docs/observe/digital-experience/web-applications/analyze-and-use/how-to-use-visually-complete-and-speed-index-metrics "Learn how to use 'Visually complete' and 'Speed index' metrics.") application setting while using Dynatrace with Internet Explorer 11 can lead to a complete page crash or hanging in cases where heavy `<table>` or table-like (using the style attribute `display:table`) DOM mutations occur. This tends to be more common with single-page applications. Simply monitoring mutations with the MutationObserver, as is done for Visually complete, can crash the page once it's loaded. Here is a [simple reproduction of the issueï»¿](https://jsfiddle.net/gd88q1n3/2/) with a table-like element mutation crash.
+Enabling the [**Visually complete**](../../observe/digital-experience/web-applications/analyze-and-use/how-to-use-visually-complete-and-speed-index-metrics.md "Learn how to use 'Visually complete' and 'Speed index' metrics.") application setting while using Dynatrace with Internet Explorer 11 can lead to a complete page crash or hanging in cases where heavy `<table>` or table-like (using the style attribute `display:table`) DOM mutations occur. This tends to be more common with single-page applications. Simply monitoring mutations with the MutationObserver, as is done for Visually complete, can crash the page once it's loaded. Here is a [simple reproduction of the issueï»¿](https://jsfiddle.net/gd88q1n3/2/) with a table-like element mutation crash.
 
 #### More information on Visually complete and Speed index
 

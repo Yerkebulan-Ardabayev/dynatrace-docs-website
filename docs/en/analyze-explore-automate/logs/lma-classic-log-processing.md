@@ -17,15 +17,15 @@ Dynatrace can transform your incoming log lines for improved clarity, analysis, 
 
 Switch to log processing with OpenPipeline
 
-Even thought the classic log processing pipeline is still available for some environments, we recommend switching to [log processing with OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.") as a powerful solution to manage, process, and analyze logs. Log processing with the classic pipeline will be deprecated at some point in the future.
+Even thought the classic log processing pipeline is still available for some environments, we recommend switching to [log processing with OpenPipeline](lma-log-processing/lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.") as a powerful solution to manage, process, and analyze logs. Log processing with the classic pipeline will be deprecated at some point in the future.
 
-Log processing occurs as log data arrives in the Dynatrace SaaS environment and before it is written to disk (stored). By setting log processing rules, you can process the log data as soon as it reaches Dynatrace. After the log data is processed, it's sent to storage and is available for further analysis. This method allows to process log data from all [log ingest](/docs/analyze-explore-automate/logs/lma-log-ingestion "Stream log data to Dynatrace.") channels.
+Log processing occurs as log data arrives in the Dynatrace SaaS environment and before it is written to disk (stored). By setting log processing rules, you can process the log data as soon as it reaches Dynatrace. After the log data is processed, it's sent to storage and is available for further analysis. This method allows to process log data from all [log ingest](lma-log-ingestion.md "Stream log data to Dynatrace.") channels.
 
 For example, you can extract numerical values from log lines using the classic log processing pipeline, turn these into metrics on the Dynatrace Platform, and include them in dashboards and problem detection.
 
 DDU consumption
 
-Log processing does not affect [DDU](/docs/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.") consumption of log ingest.
+Log processing does not affect [DDU](../../license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics.md "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.") consumption of log ingest.
 
 Log processing with the classic pipeline is based on rules that contain a matcher and a processing rule definition.
 
@@ -38,7 +38,7 @@ The classic log processing pipeline includes the following steps:
 
 1. Automatic log processing on ingest
 
-2. [Log processing with the classic pipeline](/docs/analyze-explore-automate/logs/lma-classic-log-processing "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.")
+2. [Log processing with the classic pipeline](lma-classic-log-processing.md "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.")
 
 ![Diagram - Steps of log processing with classic pipeline](https://dt-cdn.net/images/lma-log-processing-with-classic-pipeline-2500-3154c0acd9.png)
 
@@ -70,7 +70,7 @@ To create a log processing rule
 2. Select **Add rule**.
 3. Provide the name for the log processing rule.
 4. Provide a log query in the **Matcher** section.  
-   A log search query narrows down the available log data for executing this specific rule. Add a **Matcher** to your rule by pasting your [matcher-specific DQL query](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher "Examine specific DQL functions and logical operators for log processing.").
+   A log search query narrows down the available log data for executing this specific rule. Add a **Matcher** to your rule by pasting your [matcher-specific DQL query](lma-classic-log-processing/lma-log-processing-matcher.md "Examine specific DQL functions and logical operators for log processing.").
 
    Matching based on previous rules is not supported
 
@@ -78,7 +78,7 @@ To create a log processing rule
 5. Provide the processing rule definition.  
    The processing rule definition is a log processing instruction about how Dynatrace should transform or modify your log data.
 
-   The rule definition is created using log processing [commands](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-commands "Explore scenarios of how to use log processing commands in Dynatrace powered by Grail."), [functions](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-functions "Explore scenarios of how to use log processing functions in Dynatrace powered by Grail."), and pattern matching ([Dynatrace Pattern Language](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.")) that allows you to add, transform, or remove incoming log records. This gives you total control over how your log data is presented to Dynatrace log monitoring.
+   The rule definition is created using log processing [commands](lma-classic-log-processing/lma-log-processing-commands.md "Explore scenarios of how to use log processing commands in Dynatrace powered by Grail."), [functions](lma-classic-log-processing/lma-log-processing-functions.md "Explore scenarios of how to use log processing functions in Dynatrace powered by Grail."), and pattern matching ([Dynatrace Pattern Language](../../platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.")) that allows you to add, transform, or remove incoming log records. This gives you total control over how your log data is presented to Dynatrace log monitoring.
 6. Test the log processing rule.
 
    1. Provide a log sample.
@@ -91,5 +91,5 @@ To create a log processing rule
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [DQL matcher in logs](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher "Examine specific DQL functions and logical operators for log processing.")
+* [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [DQL matcher in logs](lma-classic-log-processing/lma-log-processing-matcher.md "Examine specific DQL functions and logical operators for log processing.")

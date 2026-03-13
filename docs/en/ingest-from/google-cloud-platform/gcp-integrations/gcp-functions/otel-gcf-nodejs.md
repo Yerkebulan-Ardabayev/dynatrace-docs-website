@@ -13,7 +13,7 @@ scraped: 2026-03-04T21:27:45.484805
 * 8-min read
 * Updated on Nov 13, 2023
 
-This guide shows how to instrument Google Cloud Functions with [OpenTelemetry JSï»¿](https://github.com/open-telemetry/opentelemetry-js) and export the traces to Dynatrace. To learn more about how Dynatrace works with OpenTelemetry, see [OpenTelemetry and Dynatrace](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
+This guide shows how to instrument Google Cloud Functions with [OpenTelemetry JSï»¿](https://github.com/open-telemetry/opentelemetry-js) and export the traces to Dynatrace. To learn more about how Dynatrace works with OpenTelemetry, see [OpenTelemetry and Dynatrace](../../../opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
 
 ## Prerequisites
 
@@ -33,13 +33,13 @@ To instrument your Google Cloud Functions
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Add OpenTelemetry dependencies**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-nodejs#otel-dependencies "Learn how to instrument Google Cloud Functions with OpenTelemetry JS and export the traces to Dynatrace.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Add OpenTelemetry dependencies**](otel-gcf-nodejs.md#otel-dependencies "Learn how to instrument Google Cloud Functions with OpenTelemetry JS and export the traces to Dynatrace.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Set up OpenTelemetry**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-nodejs#otel-setup "Learn how to instrument Google Cloud Functions with OpenTelemetry JS and export the traces to Dynatrace.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Set up OpenTelemetry**](otel-gcf-nodejs.md#otel-setup "Learn how to instrument Google Cloud Functions with OpenTelemetry JS and export the traces to Dynatrace.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Instrument the function entry point**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-nodejs#instrument-handler "Learn how to instrument Google Cloud Functions with OpenTelemetry JS and export the traces to Dynatrace.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**Instrument the function entry point**](otel-gcf-nodejs.md#instrument-handler "Learn how to instrument Google Cloud Functions with OpenTelemetry JS and export the traces to Dynatrace.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**Instrument outgoing requests**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-nodejs#outgoing-instrument "Learn how to instrument Google Cloud Functions with OpenTelemetry JS and export the traces to Dynatrace.")
+**Instrument outgoing requests**](otel-gcf-nodejs.md#outgoing-instrument "Learn how to instrument Google Cloud Functions with OpenTelemetry JS and export the traces to Dynatrace.")
 
 ### Step 1 Add OpenTelemetry dependencies
 
@@ -881,4 +881,4 @@ A few minutes after invoking your Google Cloud Functions, look for your spans:
 
 While Dynatrace automatically captures all OpenTelemetry attributes, only attribute values specified in the allowlist are stored and displayed in the Dynatrace web UI. This prevents accidental storage of personal data, so you can meet your privacy requirements and control the amount of monitoring data stored.
 
-To view your custom attributes, you need to allow them in the Dynatrace web UI first. To learn how to configure attribute storage and masking, see [Attribute redaction](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration#attribute-redaction "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.").
+To view your custom attributes, you need to allow them in the Dynatrace web UI first. To learn how to configure attribute storage and masking, see [Attribute redaction](../../../dynatrace-oneagent/oneagent-and-opentelemetry/configuration.md#attribute-redaction "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.").

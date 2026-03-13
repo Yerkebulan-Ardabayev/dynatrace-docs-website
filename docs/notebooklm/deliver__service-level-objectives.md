@@ -22,7 +22,7 @@ scraped: 2026-03-05T21:31:21.874741
 * Published Nov 05, 2024
 
 With ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**, you can configure new service-level objectives (SLO)s from templates provided by Dynatrace.
-You can also define your SLOs based on a custom [DQL](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") query.
+You can also define your SLOs based on a custom [DQL](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") query.
 
 ## Steps
 
@@ -47,7 +47,7 @@ To create a new SLO with a predefined template
 
    ![Add segments filter to the SLO](https://dt-cdn.net/images/slo-level-segments-1313-399767711c.png)
 
-   This is only an additional filter for the required entities. It does not apply to the SLO evaluation. To add the segment filter to the SLO evaluation, use step 5 in the [Create a custom SLO](/docs/deliver/service-level-objectives/create-slo#create-a-custom-slo "Create and configure service-level objectives (SLOs).") section.
+   This is only an additional filter for the required entities. It does not apply to the SLO evaluation. To add the segment filter to the SLO evaluation, use step 5 in the [Create a custom SLO](../ru/deliver/service-level-objectives/create-slo.md#create-a-custom-slo "Create and configure service-level objectives (SLOs).") section.
 7. Select **Next**.
 8. Define the criteria of your SLO. Fill in the **Target** field and select the timeframe for the evaluation period by using the dropdown in the **Over the evaluation period** field.
 9. Optional Turn on **Show warning** and enter the numeric percent in **Show warning at** field.
@@ -62,7 +62,7 @@ To create a new SLO with a predefined template
 1. In **Dynatrace**, search for ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**.
 2. In the overview of **Service-Level Objectives**, select  **Service-level objective**.
 3. Select  **Custom SLO**.
-4. Provide your DQL query. Your query has to include an "sli" field like in the following example, to ensure consistent visualization, transformation, and aggregation across your SLOs. The "sli" field needs to return an array of `double` type. The DQL query can be based on any data type in Grail, such as events or logs. Using the [makeTimeseries](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#makeTimeseries "DQL aggregation commands") provides the possibility to create an sli time series that can be used for calculating the SLO status.
+4. Provide your DQL query. Your query has to include an "sli" field like in the following example, to ensure consistent visualization, transformation, and aggregation across your SLOs. The "sli" field needs to return an array of `double` type. The DQL query can be based on any data type in Grail, such as events or logs. Using the [makeTimeseries](platform/grail/dynatrace-query-language/commands/aggregation-commands.md#makeTimeseries "DQL aggregation commands") provides the possibility to create an sli time series that can be used for calculating the SLO status.
 
 ```
 timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.request.failure_count) }
@@ -97,11 +97,11 @@ timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.reques
 You can create, edit, list, delete, and evaluate your SLOs via API.
 
 1. Go to Dynatrace.
-2. In the [platform search](/docs/discover-dynatrace/get-started/dynatrace-ui#search "Navigate the latest Dynatrace"), type `API`. In the search results, see **Support resources** section and **Dynatrace API** below it.
+2. In the [platform search](../ru/discover-dynatrace/get-started/dynatrace-ui.md#search "Navigate the latest Dynatrace"), type `API`. In the search results, see **Support resources** section and **Dynatrace API** below it.
 3. Select **Dynatrace API** to access the Dynatrace API documentation. A new page opens with the Dynatrace API definitions.
 4. In the upper right corner, go to **Select a definition**.
 5. From the drop-down list, choose the endpoint.
-6. Authenticate with your API token. For more details, see [Authentication](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+6. Authenticate with your API token. For more details, see [Authentication](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
 
 ---
 
@@ -127,15 +127,15 @@ For **Edit**
 
 * `slo:slos:read` ârequired for reading all SLOs to show them in the dropdown selector
 * `slo:slos:write` ârequired for showing the  **Service-level objective** button
-* `slo:slos:write`, `slo:slos:read`, and the Grail permissions you need for your specific query. For more information, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
+* `slo:slos:write`, `slo:slos:read`, and the Grail permissions you need for your specific query. For more information, see [Permissions in Grail](../ru/platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
 
 For SLO tile evaluation
 
-* `slo:slos:read` and the Grail permissions you need for your specific query. For more information, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
+* `slo:slos:read` and the Grail permissions you need for your specific query. For more information, see [Permissions in Grail](../ru/platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
 
 For the SLO details view
 
-* `slo:slos:read`, `slo:objective-templates:read`, and the Grail permissions you need for your specific query. For more information, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
+* `slo:slos:read`, `slo:objective-templates:read`, and the Grail permissions you need for your specific query. For more information, see [Permissions in Grail](../ru/platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
 
 ---
 
@@ -176,7 +176,7 @@ An SLO tile showing the SLO status, error budget, and target is available on you
 
 Add and edit your SLO directly from ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
 
-1. Go to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** and create a [new dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#create-dashboard "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or select an [existing dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboard-display "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
+1. Go to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** and create a [new dashboard](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#create-dashboard "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or select an [existing dashboard](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboard-display "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
 2. You can add an SLO using the Shift+S keyboard shortcut, or in the upper-right corner of the dashboard, select the plus sign .
 
    ![Add an SLO tile from your dashboard](https://dt-cdn.net/images/chrome-ftp3kxoqkt-736-3ea4751a06.png)
@@ -194,7 +194,7 @@ The SLO name is used as the title of your dashboard tile. You can edit the tile 
 
    ![Screenshot of Service-level objective panel with the Visual tab](https://dt-cdn.net/images/wtp95711-dev-apps-dynatracelabs-com-ui-apps-dynatrace-dashboards-dashboard-f8f0ee42-e4a3-4b63-a3af-ca753060d7f7-3-2400-a36ac46dc8.png)
 
-The tile won't be functional until you select an SLO. For more information, see [Edit a service-level objective (SLO) tile in a dashboard](/docs/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard "Edit your service-level objective tiles directly in your dashboard.").
+The tile won't be functional until you select an SLO. For more information, see [Edit a service-level objective (SLO) tile in a dashboard](../ru/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard.md "Edit your service-level objective tiles directly in your dashboard.").
 
 You added your new SLO tile to your dashboard.
 
@@ -202,7 +202,7 @@ Changing the dashboard's timeframe does not affect the SLO evaluation timeframe;
 
 ### Add segment filter to SLO in Dashboards
 
-1. Add an SLO to the Dashboard according to the [Add an SLO from your dashboard](/docs/deliver/service-level-objectives/service-level-objective-tile-add-to-dashboard#tiles-add-from-dashboard "Visualize your service-level objectives by adding them to a dashboard.") section.
+1. Add an SLO to the Dashboard according to the [Add an SLO from your dashboard](../ru/deliver/service-level-objectives/service-level-objective-tile-add-to-dashboard.md#tiles-add-from-dashboard "Visualize your service-level objectives by adding them to a dashboard.") section.
 2. Select segments , choose the required segment(s), and select **Apply**.
 
    ![Add segments filter to Dashboard-level SLO](https://dt-cdn.net/images/dashboard-level-slo-segments-1971-8ef61073f5.png)
@@ -390,8 +390,8 @@ Dynatrace offers an improved ![SLOs](https://dt-cdn.net/images/service-level-obj
 
 Dynatrace provides two Service-Level Objectives application types:
 
-* [![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**](/docs/deliver/service-level-objectives "Discover the functionalities of the new Service-Level Objectives powered by Grail.") is our latest, Grail-powered application offering enhanced flexibility and customization options.
-* [![SLOs Classic](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs Classic") **Service-Level Objectives Classic**](/docs/deliver/service-level-objectives-classic "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic.") is the previous application with limited capabilities.
+* [![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**](../ru/deliver/service-level-objectives.md "Discover the functionalities of the new Service-Level Objectives powered by Grail.") is our latest, Grail-powered application offering enhanced flexibility and customization options.
+* [![SLOs Classic](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs Classic") **Service-Level Objectives Classic**](../ru/deliver/service-level-objectives-classic.md "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic.") is the previous application with limited capabilities.
 
 The following examples show an SLO in ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives** and multiple SLOs in ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
 
@@ -406,9 +406,9 @@ The table below highlights the new functionality and shows the many reasons you 
 | Capability | SLOs Classic **Service-Level Objectives Classic** | SLOs **Service-Level Objectives** | Business impact |
 | --- | --- | --- | --- |
 | Supported input for SLI definition | Limited to built-in or custom-calculated metrics | Supporting all data types in Grail, incl. biz-events, logs, spans, and time series | SLOs allow a finer granular configuration and tailored definition of the SLI. |
-| Segmenting, data filtering for SLO evaluation | ManagementZones | [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") | [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") allow detailed filtering of the dataset used for the SLO evaluation. |
+| Segmenting, data filtering for SLO evaluation | ManagementZones | [Segments](../ru/manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") | [Segments](../ru/manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") allow detailed filtering of the dataset used for the SLO evaluation. |
 | Adding SLO tags | â | SLO tags | Add SLO tags (key-value pairs) and then use them to filter SLOs when querying them via the API. |
-| Customized dashboard tiles | Classic dashboard tile | New [dashboard SLO tiles](/docs/deliver/service-level-objectives/service-level-objective-tile-view "View your service-level objective (SLO) tile details directly in your dashboard.") | New [dashboard SLO tiles](/docs/deliver/service-level-objectives/service-level-objective-tile-view "View your service-level objective (SLO) tile details directly in your dashboard.") allow more visual customization options, including what data should be shown and colorized. An additional SLO wizard overview allows for creating and editing SLOs in Dashboards **Dashboards**. |
+| Customized dashboard tiles | Classic dashboard tile | New [dashboard SLO tiles](../ru/deliver/service-level-objectives/service-level-objective-tile-view.md "View your service-level objective (SLO) tile details directly in your dashboard.") | New [dashboard SLO tiles](../ru/deliver/service-level-objectives/service-level-objective-tile-view.md "View your service-level objective (SLO) tile details directly in your dashboard.") allow more visual customization options, including what data should be shown and colorized. An additional SLO wizard overview allows for creating and editing SLOs in Dashboards **Dashboards**. |
 | Integration with other Dynatrace apps | Integrated with classic Dynatrace Apps | Integrated with latest Dynatrace Apps |  |
 
 ### Difference between SLO and Classic SLO
@@ -418,8 +418,8 @@ The DQL query allows extensive customization possibilities, unlike metric and en
 
 The benefits of DQL-based SLOs are as follows:
 
-* Use any telemetry data in Grail. For more information, see [Upgrading Metrics](/docs/analyze-explore-automate/metrics/upgrade "Upgrade classic metrics to metrics powered by Grail to continue using your data retrieved with metric selectors, but with the added power of Grail and DQL.").
-* Apply custom filters and advanced options [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.").
+* Use any telemetry data in Grail. For more information, see [Upgrading Metrics](analyze-explore-automate/metrics/upgrade.md "Upgrade classic metrics to metrics powered by Grail to continue using your data retrieved with metric selectors, but with the added power of Grail and DQL.").
+* Apply custom filters and advanced options [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.").
 * Benefit from simplified ratio calculations for SLI.
 
 #### How core SLO components are defined in SLO and Classic SLO
@@ -443,7 +443,7 @@ It's possible to set the following parameters:
 * Evaluation period
 * SLO target (threshold)
 
-In ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**, the SLI is represented as a [DQL (Dynatrace Query Language)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") query.
+In ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**, the SLI is represented as a [DQL (Dynatrace Query Language)](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") query.
 It's flexible and uses contextual data to represent the objectives.
 
 ### SLO Classic example using Metrics selectors
@@ -501,15 +501,15 @@ To upgrade a Classic SLO to SLO
 
 1. Map your Classic SLO metric expression to Grail.
 
-   1. Check the comprehensive list in [Upgrading Metrics](/docs/analyze-explore-automate/metrics/upgrade "Upgrade classic metrics to metrics powered by Grail to continue using your data retrieved with metric selectors, but with the added power of Grail and DQL.").
-   2. Use the [Metric selector conversion guide](/docs/analyze-explore-automate/metrics/upgrade/metric-selector-conversion "Learn about the various metrics that Dynatrace offers.").
+   1. Check the comprehensive list in [Upgrading Metrics](analyze-explore-automate/metrics/upgrade.md "Upgrade classic metrics to metrics powered by Grail to continue using your data retrieved with metric selectors, but with the added power of Grail and DQL.").
+   2. Use the [Metric selector conversion guide](analyze-explore-automate/metrics/upgrade/metric-selector-conversion.md "Learn about the various metrics that Dynatrace offers.").
 
    For complex metric expressions, you might need to adapt the DQL queries manually.
-2. Convert the entity selectors to the corresponding [DQL statement](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."). For more information, see [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.").
+2. Convert the entity selectors to the corresponding [DQL statement](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."). For more information, see [DQL best practices](../ru/platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.").
 
    The following table shows the typical entity selectors for Classic SLOs and their equivalent in DQL.
 
-   If you use management zones for permissions and access control, see [Grant access to entities with security context](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context").
+   If you use management zones for permissions and access control, see [Grant access to entities with security context](../ru/manage/identity-access-management/use-cases/access-security-context.md "Grant access to entities with security context").
 3. Enhance your SLI definition.
 
    While you can upgrade most Classic SLOs to a one-to-one match in Grail, consider enhancing your SLI definitions by leveraging options that are not available with traditional metric expressions.
@@ -531,18 +531,18 @@ To automate SLO management and evaluation, use the dedicated API endpoints. Refe
 
 ## Upgrade via Configuration as Code
 
-For scalable SLO management and evaluation, use [Configuration as Code overview](/docs/deliver/configuration-as-code "Use Dynatrace configuration as code via Monaco or Terraform.") on top of the SLO Service Public API.
+For scalable SLO management and evaluation, use [Configuration as Code overview](../ru/deliver/configuration-as-code.md "Use Dynatrace configuration as code via Monaco or Terraform.") on top of the SLO Service Public API.
 
 To access the SLO Service Public API on your tenant
 
 1. Go to Dynatrace.
-2. In the [platform search](/docs/discover-dynatrace/get-started/dynatrace-ui#search "Navigate the latest Dynatrace"), type `API`. In the search results, see **Support resources** section and **Dynatrace API** below it.
+2. In the [platform search](../ru/discover-dynatrace/get-started/dynatrace-ui.md#search "Navigate the latest Dynatrace"), type `API`. In the search results, see **Support resources** section and **Dynatrace API** below it.
 3. Select **Dynatrace API** to access the Dynatrace API documentation. A new page opens with the Dynatrace API definitions.
 4. In the upper right corner, go to **Select a definition**.
 5. From the drop-down list, choose the endpoint.
 
-* [Configuration as Code via Terraform overview](/docs/deliver/configuration-as-code/terraform "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform.") support the SLO Service Public API since v1.78.0 and the Dynatrace Terraform provider can be found `dynatrace-oss/dynatrace | Terraform Registry`.
-* [Configuration as Code via Monaco overview](/docs/deliver/configuration-as-code/monaco "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco.") supports the SLO Service Public API since v2.22.
+* [Configuration as Code via Terraform overview](deliver/configuration-as-code/terraform.md "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform.") support the SLO Service Public API since v1.78.0 and the Dynatrace Terraform provider can be found `dynatrace-oss/dynatrace | Terraform Registry`.
+* [Configuration as Code via Monaco overview](deliver/configuration-as-code/monaco.md "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco.") supports the SLO Service Public API since v2.22.
 
 ## Whatâs next?
 
@@ -553,9 +553,9 @@ For further optimization and guidance, contact your Dynatrace support team to ma
 
 ## Related topics
 
-* [Discover Dynatrace](/docs/discover-dynatrace "Discover Dynatrace")
-* [Service-level objective templates](/docs/deliver/service-level-objectives/service-level-objective-templates "Explore the out-of-the-box service-level objective templates.")
-* [Service-level objective examples](/docs/deliver/service-level-objectives/service-level-objective-examples "Explore the out-of-the-box service-level objective definitions by way of examples.")
+* [Discover Dynatrace](discover-dynatrace.md "Discover Dynatrace")
+* [Service-level objective templates](deliver/service-level-objectives/service-level-objective-templates.md "Explore the out-of-the-box service-level objective templates.")
+* [Service-level objective examples](deliver/service-level-objectives/service-level-objective-examples.md "Explore the out-of-the-box service-level objective definitions by way of examples.")
 
 ---
 
@@ -622,14 +622,14 @@ storage:user.events:read
 
 Read user events from Grail
 
-To read and write SLOs, you need the following [IAM](/docs/manage/identity-access-management "Configure users, groups and permissions.") permissions:
+To read and write SLOs, you need the following [IAM](../common/manage/identity-access-management.md "Configure users, groups and permissions.") permissions:
 
 * `ALLOW slo:slos:read, slo:objective-templates:read;`
 * `ALLOW slo:slos:write;`
 
 ### Installation
 
-Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Make sure the app is [installed in your environment](../ru/manage/hub.md#install "See the information about Dynatrace Hub.").
 
 Get started
 
@@ -637,7 +637,7 @@ Concepts
 
 Use cases
 
-Dynatrace provides support for service-level objectives (SLOs) leveraging Grail. With ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**, you can define and review your service-level objectives utilizing [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.").
+Dynatrace provides support for service-level objectives (SLOs) leveraging Grail. With ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**, you can define and review your service-level objectives utilizing [Dynatrace Query Language (DQL)](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.").
 
 ![SLO management and details view](https://dt-cdn.net/hub/mgmt_3kmKiTU.png)![UI-guided SLO creation wizard](https://dt-cdn.net/hub/wizard2_gDvLrMb.png)![Dynatrace supports dedicated dashboard tiles, where existing SLOs can be visualized and customized to display the most critical KPIs.](https://dt-cdn.net/hub/dashboard_GSOPSku_KlVeOFv.png)
 
@@ -659,7 +659,7 @@ Service-level indicator (SLI)
     SLIs typically refer to metrics such as service success rates, successful synthetic test runs, or response times.
     However, they can also be based on any other data type, representing an indicator of the end-user experience.
     The SLI is given as a normalized time series expressed as a percentage value between 0 and 100%, where 100% is goodâfor example, the ratio of successful service requests over all requests.
-    In Dynatrace, you must use a DQL query to calculate the SLI. For more information, see the [`sli` field when creating an SLO](/docs/deliver/service-level-objectives/create-slo#create-custom-slo "Create and configure service-level objectives (SLOs).").
+    In Dynatrace, you must use a DQL query to calculate the SLI. For more information, see the [`sli` field when creating an SLO](../ru/deliver/service-level-objectives/create-slo.md#create-custom-slo "Create and configure service-level objectives (SLOs).").
 
 SLO target
 :   The target defines the planned goal to achieve in terms of the service level.
@@ -719,7 +719,7 @@ We calculate the remaining error budget of an SLO by taking the difference betwe
 Working with error budgets allows an improved approach to monitoring and ensuring the system's health and serves as a quality gate for new deployments.
 
 Imagine that your availability SLO has 95% as a target over one week, and the current SLO status shows 96%, meaning you have only 1% of your error budget.
-You might want to improve your availability metrics before a new release that might impact availability. For more information, see [Service-level objective templates](/docs/deliver/service-level-objectives/service-level-objective-templates "Explore the out-of-the-box service-level objective templates.").
+You might want to improve your availability metrics before a new release that might impact availability. For more information, see [Service-level objective templates](deliver/service-level-objectives/service-level-objective-templates.md "Explore the out-of-the-box service-level objective templates.").
 
 #### Error budget burn rate
 
@@ -797,13 +797,13 @@ Dynatrace SLOs are defined using DQL, allowing you to determine the SLI based on
 
 You can use ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** to automatically raise an event if the error budget burn rate exceeds a specific predefined limit.
 
-1. In ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**, enter your SLI as a [DQL query](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad#simple-ad "Learn how to create and edit simple custom alerts in the Anomaly Detection app.").
+1. In ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**, enter your SLI as a [DQL query](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad.md#simple-ad "Learn how to create and edit simple custom alerts in the Anomaly Detection app.").
 
    Segments are currently not supported by ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
 2. Add the burn rate calculation.
 3. Optional If a burn rate violation event is raised for each contributing service entity or an aggregated one, add one of the DQL queries described above.
 
-Consider that the actor of the custom alert configurations needs to have the [necessary permissions](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad "Learn how to create and edit simple custom alerts in the Anomaly Detection app.").
+Consider that the actor of the custom alert configurations needs to have the [necessary permissions](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad.md "Learn how to create and edit simple custom alerts in the Anomaly Detection app.").
 
 ### Recommendations for configuring custom alerts for raising burn-rate alerts
 
@@ -821,7 +821,7 @@ We recommend adding the following event properties to the anomaly detection:
 * **slo.name** makes it easy to relate to the corresponding SLO, as the SLO names are unique within Dynatrace.
 * **dt.owner** is a team identifier that allows automatic routing and ticketing to the correct team in case of a burn rate alert event.
 
-After defining the custom alert, an event with the set event properties is raised. This event is automatically considered in case of detected problems via Dynatrace Intelligence. Furthermore, the events can be used as a trigger for [workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."), such as automated and targeted notifications and ticketing.
+After defining the custom alert, an event with the set event properties is raised. This event is automatically considered in case of detected problems via Dynatrace Intelligence. Furthermore, the events can be used as a trigger for [workflows](../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."), such as automated and targeted notifications and ticketing.
 
 ## Use cases
 
@@ -836,26 +836,26 @@ Go through the following process to learn using the Service-Level Objectives:
 [01Create service-level objectives
 
 * How-to guide
-* Create and configure service-level objectives (SLOs).](/docs/deliver/service-level-objectives/create-slo)[02Add a service-level objective (SLO) tile to a dashboard
+* Create and configure service-level objectives (SLOs).](../ru/deliver/service-level-objectives/create-slo.md)[02Add a service-level objective (SLO) tile to a dashboard
 
 * How-to guide
-* Visualize your service-level objectives by adding them to a dashboard.](/docs/deliver/service-level-objectives/service-level-objective-tile-add-to-dashboard)[03Edit a service-level objective (SLO) tile in a dashboard
+* Visualize your service-level objectives by adding them to a dashboard.](../ru/deliver/service-level-objectives/service-level-objective-tile-add-to-dashboard.md)[03Edit a service-level objective (SLO) tile in a dashboard
 
 * How-to guide
-* Edit your service-level objective tiles directly in your dashboard.](/docs/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard)[04View the details of a service-level objective (SLO) tile in a dashboard
+* Edit your service-level objective tiles directly in your dashboard.](../ru/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard.md)[04View the details of a service-level objective (SLO) tile in a dashboard
 
 * How-to guide
-* View your service-level objective (SLO) tile details directly in your dashboard.](/docs/deliver/service-level-objectives/service-level-objective-tile-view)[05Permissions for service-level objective (SLO) tiles in a dashboard
+* View your service-level objective (SLO) tile details directly in your dashboard.](../ru/deliver/service-level-objectives/service-level-objective-tile-view.md)[05Permissions for service-level objective (SLO) tiles in a dashboard
 
-* Set up permissions for service-level objective (SLO) tiles in your dashboard.](/docs/deliver/service-level-objectives/service-level-objective-permissions)[06Service-level objective templates
+* Set up permissions for service-level objective (SLO) tiles in your dashboard.](../ru/deliver/service-level-objectives/service-level-objective-permissions.md)[06Service-level objective templates
 
 * Reference
-* Explore the out-of-the-box service-level objective templates.](/docs/deliver/service-level-objectives/service-level-objective-templates)[07Service-level objective examples
+* Explore the out-of-the-box service-level objective templates.](deliver/service-level-objectives/service-level-objective-templates.md)[07Service-level objective examples
 
 * Reference
-* Explore the out-of-the-box service-level objective definitions by way of examples.](/docs/deliver/service-level-objectives/service-level-objective-examples)[08Upgrade Classic SLOs
+* Explore the out-of-the-box service-level objective definitions by way of examples.](deliver/service-level-objectives/service-level-objective-examples.md)[08Upgrade Classic SLOs
 
 * How-to guide
-* Upgrade your Classic service level objective (SLO) to latest SLO](/docs/deliver/service-level-objectives/service-level-objective-upgrade-classic)
+* Upgrade your Classic service level objective (SLO) to latest SLO](../ru/deliver/service-level-objectives/service-level-objective-upgrade-classic.md)
 
 ---

@@ -16,7 +16,7 @@ scraped: 2026-03-05T21:38:19.578189
 
 Сетевые зоны
 
-Подробности о настройке и управлении сетевыми зонами, начальной конфигурации конечных точек и расширенных настройках в ограниченных средах см. в [Использование сетевых зон в Kubernetes](/docs/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations/network-zones "Настройка и использование сетевых зон в средах Kubernetes с Dynatrace Operator.").
+Подробности о настройке и управлении сетевыми зонами, начальной конфигурации конечных точек и расширенных настройках в ограниченных средах см. в [Использование сетевых зон в Kubernetes](network-configurations/network-zones.md "Настройка и использование сетевых зон в средах Kubernetes с Dynatrace Operator.").
 
 ## Настройка прокси
 
@@ -426,7 +426,7 @@ skipCertCheck: true
 
 ## Настройка TLS-сертификата сервера для ActiveGate
 
-По умолчанию ActiveGate использует самоподписанный сертификат, который может быть заменён самостоятельно управляемым сертификатом, как описано в [Пользовательский SSL-сертификат для ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate "Узнайте, как настроить SSL-сертификат на вашем ActiveGate.").
+По умолчанию ActiveGate использует самоподписанный сертификат, который может быть заменён самостоятельно управляемым сертификатом, как описано в [Пользовательский SSL-сертификат для ActiveGate](../../../dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate.md "Узнайте, как настроить SSL-сертификат на вашем ActiveGate.").
 
 Чтобы настроить TLS-сертификат сервера для ActiveGate:
 

@@ -17,7 +17,7 @@ Dynatrace allows you to define rules that control log data timestamps.
 
 ## Timestamp detection
 
-By default, log monitoring automatically detects only the most common and unambiguous subset of date formats supported. For details, see [Supported timestamp formats](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-supported-timestamp-format "Supported timestamps for the latest version of Log Management and Analytics."). Each time a timestamp pattern is detected, the line will be treated as the beginning of the log entry. All following lines without a detected timestamp will be treated as a continuation and reported as a single multi-line log record.
+By default, log monitoring automatically detects only the most common and unambiguous subset of date formats supported. For details, see [Supported timestamp formats](lma-supported-timestamp-format.md "Supported timestamps for the latest version of Log Management and Analytics."). Each time a timestamp pattern is detected, the line will be treated as the beginning of the log entry. All following lines without a detected timestamp will be treated as a continuation and reported as a single multi-line log record.
 
 You can also control timestamp detection by using the following options from ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Log monitoring** > **Advanced log settings**:
 
@@ -41,7 +41,7 @@ Because of this, Log Monitoring also enables you to define a specific date forma
 
 * **Pattern**âDefines what should be considered a timestamp in your logline.
 * **Timestamp search limit**âSpecifies the count of characters in each log line, measured from the beginning of the line, where the timestamp is searched.
-* **Entry boundary**âOptional field. Specifies the [entry boundary](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-entry-boundary "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record."). You need to provide a fragment of the text from the first line of the entry. The pattern is treated literally, which means that there is no support for the asterisk (\*) as a wildcard.
+* **Entry boundary**âOptional field. Specifies the [entry boundary](lma-log-entry-boundary.md "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record."). You need to provide a fragment of the text from the first line of the entry. The pattern is treated literally, which means that there is no support for the asterisk (\*) as a wildcard.
 * **Timestamps in indented lines**âEnable this option if you don't want to parse timestamps in lines that start with whitespace characters.
 * **Time zone**âDefines the timestamp time zone. Optional if your timestamp pattern includes the timezone indicator (`%z`).
 * **Matcher**âNarrows down the range for the rule and applies the timestamp pattern only to matched log entries. Because you can't use the `log.content` attribute in the timestamp pattern matchers, the highest granularity is a log source. Granularity is at this level because the timestamp pattern is used to split the contents of a log source into separate log records, so it is used before the `log.content` attribute's value (or any other attributes set on an individual log record's level) is determined.
@@ -167,14 +167,14 @@ To add a rule (on the host, host group, or environment level) that interprets th
 2. **Rule name**  
    The name to display for your configuration.
 3. **Pattern**  
-   Enter the pattern to be read as a date from the logs. For details on timestamp formats, see [Supported timestamp formats](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-supported-timestamp-format "Supported timestamps for the latest version of Log Management and Analytics.") and the following list of format specifiers.
+   Enter the pattern to be read as a date from the logs. For details on timestamp formats, see [Supported timestamp formats](lma-supported-timestamp-format.md "Supported timestamps for the latest version of Log Management and Analytics.") and the following list of format specifiers.
 
    You need to specify at least the month, day, hours, minutes, and seconds, although you can use alternative formats for them. You can include the time zone indicator (`%z`) or specify the time zone separately in the rule definition.
 
    Rules without a pattern can override the timezone only for default supported timestamps.
 4. **Timestamp search limit**
 
-   Use this field to define the number of characters in every log line where timestamp is searched. If you want to ignore timestamps and split logs using the [default rules](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-one-agent-log-data-format#plain-text-logs "This topic lists all the log formats supported by Log Management and Analytics"), set this value to `0`. Use this field to overwrite the global [timestamp search limit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration#timestamp-search-limit "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record.") (default 64 bytes).
+   Use this field to define the number of characters in every log line where timestamp is searched. If you want to ignore timestamps and split logs using the [default rules](lma-one-agent-log-data-format.md#plain-text-logs "This topic lists all the log formats supported by Log Management and Analytics"), set this value to `0`. Use this field to overwrite the global [timestamp search limit](lma-timestamp-configuration.md#timestamp-search-limit "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record.") (default 64 bytes).
 5. **Entry boundary**
 
    Use this field to provide a fragment of the text from the first line of the entry.
@@ -193,7 +193,7 @@ To add a rule (on the host, host group, or environment level) that interprets th
 
    2
 
-   [Manually or automatically applied tags](/docs/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically.") are not visible to OneAgent.
+   [Manually or automatically applied tags](../../../../manage/tags-and-metadata/setup/how-to-define-tags.md#automatic "Find out how to define and apply tags manually and automatically.") are not visible to OneAgent.
 
    3
 
@@ -247,8 +247,8 @@ Timestamp configuration objects are available for configuration on the following
 
 To create a timestamp configuration using the API
 
-1. [Create an access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Write settings** (`settings.write`) and **Read settings** (`settings.read`) permissions.
-2. Use the [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration. The timestamp configuration schema identifier (`schemaId`) is `builtin:logmonitoring.timestamp-configuration`. Here is an example JSON payload with the timestamp configuration:
+1. [Create an access token](../../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Write settings** (`settings.write`) and **Read settings** (`settings.read`) permissions.
+2. Use the [GET a schema](../../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration. The timestamp configuration schema identifier (`schemaId`) is `builtin:logmonitoring.timestamp-configuration`. Here is an example JSON payload with the timestamp configuration:
 
    ```
    [
@@ -369,8 +369,8 @@ To create a timestamp configuration using the API
 
    ]
    ```
-3. Use the [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
+3. Use the [POST an object](../../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
 
 ## Related topics
 
-* [Supported timestamp formats](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-supported-timestamp-format "Supported timestamps for the latest version of Log Management and Analytics.")
+* [Supported timestamp formats](lma-supported-timestamp-format.md "Supported timestamps for the latest version of Log Management and Analytics.")

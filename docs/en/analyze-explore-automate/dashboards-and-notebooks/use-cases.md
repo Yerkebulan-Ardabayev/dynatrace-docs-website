@@ -21,7 +21,7 @@ Application Security
 
 In this use case, you use snippets to visualize exposure to vulnerabilities, prioritize remediation efforts, and communicate findings to owning teams.
 
-* [Built-in security query snippets](/docs/secure/use-cases#snippets "Use case scenarios for Application Security and Threat Observability.")
+* [Built-in security query snippets](../../secure/use-cases.md#snippets "Use case scenarios for Application Security and Threat Observability.")
 
 ### Determine threat exposure with security templates
 
@@ -29,4 +29,4 @@ Application Security
 
 In this use case, you use the Threat exposure template to visualize the risk and impact of vulnerabilities (Dashboards) or analyze the impact of vulnerabilities and prioritize remediation efforts (Notebooks).
 
-* [Out-of-the-box templates](/docs/secure/use-cases#templates "Use case scenarios for Application Security and Threat Observability.")
+* [Out-of-the-box templates](../../secure/use-cases.md#templates "Use case scenarios for Application Security and Threat Observability.")

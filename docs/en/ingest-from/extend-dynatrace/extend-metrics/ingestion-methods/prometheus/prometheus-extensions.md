@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:31:49.624600
 Dynatrace provides you with a framework that you can use to extend your observability into data acquired directly from a Prometheus endpoint. With it, you can bring the Prometheus data into Dynatrace at scale and in context with all other data.
 
 * To take full advantage of the Dynatrace Prometheus extension, you need a OneAgent on the monitored box, but it can also work in an agentless manner.
-* Check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=prometheus) to see if your technology is already covered by an existing extension. If this is not the case, you can easily build your own [Dynatrace Prometheus extension](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Learn how to create a Prometheus extension using the Extensions framework.").
+* Check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=prometheus) to see if your technology is already covered by an existing extension. If this is not the case, you can easily build your own [Dynatrace Prometheus extension](../../../../extensions/develop-your-extensions/data-sources/prometheus-extensions.md "Learn how to create a Prometheus extension using the Extensions framework.").
 
 ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions")
 
@@ -32,17 +32,17 @@ Now you can use the dedicated Extensions app to manage your extensions. It provi
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Before you begin**](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions#before-you-begin "Learn how to extend observability in Dynatrace with declarative Prometheus metrics ingestion.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Before you begin**](prometheus-extensions.md#before-you-begin "Learn how to extend observability in Dynatrace with declarative Prometheus metrics ingestion.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Add extension to environment**](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions#add-extension "Learn how to extend observability in Dynatrace with declarative Prometheus metrics ingestion.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Add extension to environment**](prometheus-extensions.md#add-extension "Learn how to extend observability in Dynatrace with declarative Prometheus metrics ingestion.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Define monitoring source**](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions#define-monitoring-source "Learn how to extend observability in Dynatrace with declarative Prometheus metrics ingestion.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**Define monitoring source**](prometheus-extensions.md#define-monitoring-source "Learn how to extend observability in Dynatrace with declarative Prometheus metrics ingestion.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**Advanced properties**](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions#advanced-properties "Learn how to extend observability in Dynatrace with declarative Prometheus metrics ingestion.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
+**Advanced properties**](prometheus-extensions.md#advanced-properties "Learn how to extend observability in Dynatrace with declarative Prometheus metrics ingestion.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
 
-**Autodiscovery**](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions#autodiscovery "Learn how to extend observability in Dynatrace with declarative Prometheus metrics ingestion.")[![Step 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Step 6")
+**Autodiscovery**](prometheus-extensions.md#autodiscovery "Learn how to extend observability in Dynatrace with declarative Prometheus metrics ingestion.")[![Step 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Step 6")
 
-**Activate extension**](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions#activate-extension "Learn how to extend observability in Dynatrace with declarative Prometheus metrics ingestion.")
+**Activate extension**](prometheus-extensions.md#activate-extension "Learn how to extend observability in Dynatrace with declarative Prometheus metrics ingestion.")
 
 ## Step 1 Before you begin
 
@@ -50,7 +50,7 @@ Decide which of your hosts will provide the Prometheus data for the extension.
 
 Prometheus extensions can run locally on a OneAgent (recommended) or remotely on an ActiveGate.
 
-* When run locally, the extension connects to the Prometheus interface automatically. Make sure the Extension Execution Controller (EEC) is enabled at the environment or selected host level. For more information, see [Extension Execution Controller](/docs/ingest-from/extensions/concepts#eec "Learn more about the concept of Dynatrace Extensions.").
+* When run locally, the extension connects to the Prometheus interface automatically. Make sure the Extension Execution Controller (EEC) is enabled at the environment or selected host level. For more information, see [Extension Execution Controller](../../../../extensions/concepts.md#eec "Learn more about the concept of Dynatrace Extensions.").
 * When monitored remotely, the ActiveGates belonging to an ActiveGate group that you'll designate for remote monitoring need to be able to connect to the host where Prometheus metrics originate.
 
 Required permission: **Change monitoring settings**
@@ -69,15 +69,15 @@ Decide how you want to monitor your host: local or remote.
 
 ### Local monitoring
 
-1. Select the host, host group or management zone for which you will run the extension, or choose to monitor the whole environment. The host needs to be running a OneAgent that is [enabled to run extensions](/docs/ingest-from/extensions/concepts#eec "Learn more about the concept of Dynatrace Extensions.").
+1. Select the host, host group or management zone for which you will run the extension, or choose to monitor the whole environment. The host needs to be running a OneAgent that is [enabled to run extensions](../../../../extensions/concepts.md#eec "Learn more about the concept of Dynatrace Extensions.").
 2. Select **Next step**.
 3. Select **Add endpoint**.
-4. Define the Prometheus endpoint providing metrics and authentication details. For more information on supported authentication schemes, see [Authentication](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference#authentication "Learn about Prometheus extensions in the Extensions framework."). Authentication details passed to Dynatrace when activating monitoring configuration are obfuscated and it's impossible to retrieve them.
+4. Define the Prometheus endpoint providing metrics and authentication details. For more information on supported authentication schemes, see [Authentication](../../../../extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference.md#authentication "Learn about Prometheus extensions in the Extensions framework."). Authentication details passed to Dynatrace when activating monitoring configuration are obfuscated and it's impossible to retrieve them.
 
 ### Remote monitoring
 
 1. Select **Monitor remotely**.
-2. Define the Prometheus endpoint providing metrics and authentication details. For more information on supported authentication schemes, see [Authentication](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference#authentication "Learn about Prometheus extensions in the Extensions framework.")
+2. Define the Prometheus endpoint providing metrics and authentication details. For more information on supported authentication schemes, see [Authentication](../../../../extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference.md#authentication "Learn about Prometheus extensions in the Extensions framework.")
 3. Select **Next step**.
 4. Select the ActiveGate group to determine which ActiveGates will run the extension. When done, select **Next step**.
 
@@ -106,13 +106,13 @@ Provide final configuration details.
 * Description
   Text explaining details of this particular monitoring configuration. When troubleshooting monitoring, this can give your teams details of this particular monitoring configuration.
 * Feature sets
-  In highly segmented networks, feature sets can reflect the segments of your environment. You can use them to limit your monitoring to particular segments. Feature sets are predefined for each extension. For more information, see [Prometheus data source reference](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference#featureset "Learn about Prometheus extensions in the Extensions framework.").
+  In highly segmented networks, feature sets can reflect the segments of your environment. You can use them to limit your monitoring to particular segments. Feature sets are predefined for each extension. For more information, see [Prometheus data source reference](../../../../extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference.md#featureset "Learn about Prometheus extensions in the Extensions framework.").
 
 When done, select **Activate**.
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](../../../../extensions/manage-extensions.md "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
 
 ## Related topics
 

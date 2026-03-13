@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:36:32.418100
 
 Dynatrace Operator version 1.0.0+
 
-This guide describes the steps required to migrate your Dynatrace deployment from classic full-stack to the [cloud-native full-stack mode](/docs/ingest-from/setup-on-k8s/how-it-works#cloud-native "In-depth description on how the deployment on Kubernetes works.").
+This guide describes the steps required to migrate your Dynatrace deployment from classic full-stack to the [cloud-native full-stack mode](../../how-it-works.md#cloud-native "In-depth description on how the deployment on Kubernetes works.").
 
 ## Advantages
 
@@ -27,7 +27,7 @@ The cloud-native full-stack deployment mode represents a major advancement in se
 
 * When switching to cloud-native full-stack monitoring, previously deployed OneAgents will get deactivated and deep monitoring of applications will stop. Consequently, the restart of all application pods requiring deep monitoring becomes mandatory. Restarting these pods will ensure that applications are reinjected, allowing deep monitoring to resume.
 * In cloud-native full-stack mode, Host IDs are determined differently, leading to the temporary presence of both new and old hosts in the host list screens. Old host entities and their associated data follow the data retention policy defined by Dynatrace, remaining accessible for the specified duration.
-* In cloud-native full-stack mode, container monitoring rules are ignored. Instead, [label selectors](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods") should be employed to precisely manage OneAgent injection.
+* In cloud-native full-stack mode, container monitoring rules are ignored. Instead, [label selectors](../deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods") should be employed to precisely manage OneAgent injection.
 
 ## Migrate to cloud-native full-stack
 
@@ -208,7 +208,7 @@ If that upgrade cannot be performed, follow the [Running CRI-O with OneAgent ver
    - dynatrace-api
    ```
 
-   For further information on how to configure DynaKube for cloud-native full-stack mode, see the comparison below, visit the [deployment guide](/docs/ingest-from/setup-on-k8s/deployment/full-stack-observability "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes") or [DynaKube parameters](/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters#spec-oneagent-cloudnativefullstack "List the available parameters for setting up Dynatrace Operator on Kubernetes."). Alternatively, download the [DynaKube custom resource sampleï»¿](https://dt-url.net/9n636jg) for cloud-native full-stack from GitHub and adapt the DynaKube custom resource according to your requirements.
+   For further information on how to configure DynaKube for cloud-native full-stack mode, see the comparison below, visit the [deployment guide](../../deployment/full-stack-observability.md "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes") or [DynaKube parameters](../../reference/dynakube-parameters.md#spec-oneagent-cloudnativefullstack "List the available parameters for setting up Dynatrace Operator on Kubernetes."). Alternatively, download the [DynaKube custom resource sampleï»¿](https://dt-url.net/9n636jg) for cloud-native full-stack from GitHub and adapt the DynaKube custom resource according to your requirements.
 3. Apply the DynaKube custom resource:
 
    Run the command below to apply the DynaKube custom resource. A validation webhook will provide helpful error messages if there's a problem.
@@ -245,7 +245,7 @@ Follow these instructions to successfully migrate from classic full-stack mode:
 
    This action will lead to the removal of OneAgents in classic full-stack mode and subsequently result in the termination of deep monitoring for application pods shortly thereafter. Additionally, if Kubernetes monitoring is configured in the DynaKube custom resource, Kubernetes monitoring will stop instantly with the removal of the ActiveGate.
 2. Wait for the OneAgent pods to terminate.
-3. Follow the instructions in the [Cleanup nodes](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator#cleanup-nodes "Upgrade and uninstallation procedures for Dynatrace Operator") section to remove Dynatrace CRI-O hooks from all Linux nodes.
+3. Follow the instructions in the [Cleanup nodes](../deployment-and-configuration/updates-and-maintenance/update-uninstall-operator.md#cleanup-nodes "Upgrade and uninstallation procedures for Dynatrace Operator") section to remove Dynatrace CRI-O hooks from all Linux nodes.
 4. Continue with step 1 of the [standard migration procedure](#migrate).
 
 ## Changes in Kubernetes resources

@@ -26,7 +26,7 @@ scraped: 2026-03-06T21:33:18.989594
 ## Требования
 
 * Разрешение среды **View sensitive request data**
-* Для ActiveGate, настроенного для поддержки нескольких сред, вы можете запустить диагностику ActiveGate только в основной среде, как определено в [конфигурации ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-an-environment-activegate-for-multi-environment-support "Ознакомьтесь с пошаговой процедурой настройки одного Environment ActiveGate для поддержки нескольких сред.").
+* Для ActiveGate, настроенного для поддержки нескольких сред, вы можете запустить диагностику ActiveGate только в основной среде, как определено в [конфигурации ActiveGate](configuration/configure-an-environment-activegate-for-multi-environment-support.md "Ознакомьтесь с пошаговой процедурой настройки одного Environment ActiveGate для поддержки нескольких сред.").
 
 ## Автоматический анализ
 
@@ -196,7 +196,7 @@ Windows
 
 #### Расположение
 
-* `agctl` находится в [каталоге установки ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux."). Если вы установили ActiveGate в пользовательскую папку, путь к `agctl` будет другим.
+* `agctl` находится в [каталоге установки ActiveGate](configuration/where-can-i-find-activegate-files.md "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux."). Если вы установили ActiveGate в пользовательскую папку, путь к `agctl` будет другим.
 * Диагностический пакет записывается в текущий рабочий каталог по умолчанию.
 
   + Чтобы изменить это, используйте параметр `--directory=<path>`.
@@ -204,7 +204,7 @@ Windows
 
 #### Разрешения
 
-* `agctl` должен быть запущен от [того же пользователя, что и процесс ActiveGate](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#user-service "Узнайте о параметрах командной строки, которые можно использовать с ActiveGate на Linux.") — по умолчанию `dtuserag`.
+* `agctl` должен быть запущен от [того же пользователя, что и процесс ActiveGate](installation/linux/linux-customize-installation-for-activegate.md#user-service "Узнайте о параметрах командной строки, которые можно использовать с ActiveGate на Linux.") — по умолчанию `dtuserag`.
 * Убедитесь, что `dtuserag` имеет права на запись в целевой каталог.
 
 #### Собираемые данные
@@ -222,7 +222,7 @@ sudo -u dtuserag /opt/dynatrace/gateway/agctl create-support-archive [--director
 
 #### Расположение
 
-* `agctl.bat` находится в [каталоге установки ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux."). Если вы установили ActiveGate в пользовательскую папку, путь к `agctl.bat` будет другим.
+* `agctl.bat` находится в [каталоге установки ActiveGate](configuration/where-can-i-find-activegate-files.md "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux."). Если вы установили ActiveGate в пользовательскую папку, путь к `agctl.bat` будет другим.
 * Диагностический пакет записывается в текущий рабочий каталог по умолчанию.
 
   + Чтобы изменить это, используйте параметр `--directory=<path>`.
@@ -230,7 +230,7 @@ sudo -u dtuserag /opt/dynatrace/gateway/agctl create-support-archive [--director
 
 #### Разрешения
 
-* `agctl.bat` должен быть запущен от [того же пользователя, что и процесс ActiveGate](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#user-service "Узнайте о параметрах командной строки, которые можно использовать с ActiveGate на Linux.") или от имени администратора.
+* `agctl.bat` должен быть запущен от [того же пользователя, что и процесс ActiveGate](installation/linux/linux-customize-installation-for-activegate.md#user-service "Узнайте о параметрах командной строки, которые можно использовать с ActiveGate на Linux.") или от имени администратора.
 
 #### Собираемые данные
 
@@ -348,7 +348,7 @@ OpenShift
 
 Вы можете удалить собранные диагностические данные раньше. Для обеспечения прозрачности Dynatrace сохраняет только небольшой набор информации о том, кто, когда, где и почему собирал диагностические данные.
 
-Подробнее о конфиденциальности данных Dynatrace см. [Сроки хранения данных](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods#diagnostics "Проверьте сроки хранения для различных типов данных.").
+Подробнее о конфиденциальности данных Dynatrace см. [Сроки хранения данных](../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md#diagnostics "Проверьте сроки хранения для различных типов данных.").
 
 ## Устранение неполадок
 

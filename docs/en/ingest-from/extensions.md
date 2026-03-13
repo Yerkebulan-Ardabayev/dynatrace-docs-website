@@ -57,19 +57,19 @@ Learn more about the supported extensions.
 
 * Explanation
 
-Read this explanation](/docs/ingest-from/extensions/supported-extensions)[#### Develop your own Extensions
+Read this explanation](extensions/supported-extensions.md)[#### Develop your own Extensions
 
 Develop your own Extensions in Dynatrace.
 
 * How-to guide
 
-Read this guide](/docs/ingest-from/extensions/develop-your-extensions)[#### Manage Extensions
+Read this guide](extensions/develop-your-extensions.md)[#### Manage Extensions
 
 Learn how to manage extensions.
 
 * How-to guide
 
-Read this guide](/docs/ingest-from/extensions/manage-extensions)
+Read this guide](extensions/manage-extensions.md)
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

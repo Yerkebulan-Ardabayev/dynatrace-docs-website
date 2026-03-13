@@ -14,8 +14,8 @@ scraped: 2026-03-06T21:09:22.514660
 
 ### Начните работу с Dynatrace или узнайте, что нового
 
-* Только начинаете? Узнайте, как [начать работу](/docs/discover-dynatrace/get-started "Learn about Dynatrace monitoring capabilities, concepts, and deployment models and find out how to get started with SaaS and Managed deployments.") всего за несколько шагов.
-* Уже используете? Узнайте, что нового в [SaaS](/docs/whats-new/saas "Release notes for Dynatrace SaaS"), [OneAgent](/docs/whats-new/oneagent "Release notes for Dynatrace OneAgent") или [ActiveGate](/docs/whats-new/activegate "Release notes for Dynatrace ActiveGate").
+* Только начинаете? Узнайте, как [начать работу](../discover-dynatrace/get-started.md "Learn about Dynatrace monitoring capabilities, concepts, and deployment models and find out how to get started with SaaS and Managed deployments.") всего за несколько шагов.
+* Уже используете? Узнайте, что нового в [SaaS](../whats-new/saas.md "Release notes for Dynatrace SaaS"), [OneAgent](../whats-new/oneagent.md "Release notes for Dynatrace OneAgent") или [ActiveGate](../whats-new/activegate.md "Release notes for Dynatrace ActiveGate").
 
 ![Dynatrace Signet](https://dt-cdn.net/images/dt-logo-color-vertical-0a89040753.svg "Dynatrace Signet")
 
@@ -33,7 +33,7 @@ Type to filter
 
 ## Приложения Dynatrace
 
-Откройте для себя все [приложения Dynatrace](/docs/discover-dynatrace/dynatrace-apps "Browse Dynatrace Apps.").
+Откройте для себя все [приложения Dynatrace](../discover-dynatrace/dynatrace-apps.md "Browse Dynatrace Apps.").
 
 ## Остались вопросы?
 

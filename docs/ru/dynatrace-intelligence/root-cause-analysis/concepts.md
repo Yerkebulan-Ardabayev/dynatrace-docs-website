@@ -145,6 +145,6 @@ Dynatrace создает проблему при получении первог
 
 ![Обнаруженная проблема в состоянии "Processing"](https://dt-cdn.net/images/problem-processing-state-934-2c9e3ab22e.png)
 
-Если вы хотите получать оповещения сразу после обнаружения проблемы, вы можете использовать пользовательское оповещение с [Событиями метрик](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace"). В этом случае флаги событий Davis `dt.davis.trigger_delay` и `dt.davis.analysis_time` будут установлены в `0`. Проблема не войдет в состояние `Processing`, и анализ каузального ИИ не будет выполнен.
+Если вы хотите получать оповещения сразу после обнаружения проблемы, вы можете использовать пользовательское оповещение с [Событиями метрик](../anomaly-detection/metric-events.md "Learn about metric events in Dynatrace"). В этом случае флаги событий Davis `dt.davis.trigger_delay` и `dt.davis.analysis_time` будут установлены в `0`. Проблема не войдет в состояние `Processing`, и анализ каузального ИИ не будет выполнен.
 
-В качестве альтернативы вы можете настроить состояние обработки для каждого источника событий Davis в конфигурации [Событий логов](/docs/analyze-explore-automate/logs/lma-analysis "Explore log data with a log viewer or create custom attributes, log events, and metrics to process and analyze your log data in Dynatrace.").
+В качестве альтернативы вы можете настроить состояние обработки для каждого источника событий Davis в конфигурации [Событий логов](../../analyze-explore-automate/logs/lma-analysis.md "Explore log data with a log viewer or create custom attributes, log events, and metrics to process and analyze your log data in Dynatrace.").

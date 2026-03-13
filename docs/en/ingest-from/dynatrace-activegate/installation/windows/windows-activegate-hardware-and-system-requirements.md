@@ -16,8 +16,8 @@ scraped: 2026-03-06T21:25:03.912818
 
 For hardware and system requirements for other ActiveGate purposes, see:
 
-* [Hardware and system requirements for Synthetic-enabled ActiveGates](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations"), which support a subset of operating systems and are more demanding in terms of hardware and system requirements than are ActiveGates that are used for routing and monitoring.
-* [Hardware and system requirements for the zRemote module for z/OS monitoring](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote#sizing "Prepare and install the zRemote for z/OS monitoring."). ActiveGates running the zRemote module are more demanding in terms of hardware and system requirements than are ActiveGates that are used for routing and monitoring.
+* [Hardware and system requirements for Synthetic-enabled ActiveGates](../../../../observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic.md "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations"), which support a subset of operating systems and are more demanding in terms of hardware and system requirements than are ActiveGates that are used for routing and monitoring.
+* [Hardware and system requirements for the zRemote module for z/OS monitoring](../../../dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote.md#sizing "Prepare and install the zRemote for z/OS monitoring."). ActiveGates running the zRemote module are more demanding in terms of hardware and system requirements than are ActiveGates that are used for routing and monitoring.
 
 Run ActiveGate on dedicated system
 
@@ -30,7 +30,7 @@ You need a machine dedicated to ActiveGate that has:
 
 * 4 GB free disk space for ActiveGate and Extensions installation, configuration, and logs for auto update purposes.
 * 4 GB for ActiveGate and OneAgent cached installers and container imagesâif such will need to be stored.
-* Space for dump filesâif such will need to be stored. This functionality is turned off by default, but can be turned on in ActiveGate configuration. The maximum size of the storage space is [configurable](/docs/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate.")â100 GB by default.
+* Space for dump filesâif such will need to be stored. This functionality is turned off by default, but can be turned on in ActiveGate configuration. The maximum size of the storage space is [configurable](../../../../observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage.md "Learn how to enable storage of memory dumps on an ActiveGate.")â100 GB by default.
 * 600 MB + 1.5 GB (buffer) of free disk space for Extension Execution Controller logs retransmission persistence file.
 * Space for extension uploadsâdepending on extensions used.
 * 2 GB RAM (4 GB recommended).
@@ -41,10 +41,10 @@ For large environments, you may need to use a machine with additional CPU and me
 ## Space requirements per directory
 
 **Space allocation per directory, for installation purposes:**  
-**(for more detailed allocation, refer to [ActiveGate directories](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems."))**
+**(for more detailed allocation, refer to [ActiveGate directories](../../configuration/where-can-i-find-activegate-files.md "Find out where ActiveGate files are stored on Windows and Linux systems."))**
 
 **Space allocation per directory, for ActiveGate operation:**  
-**(for more detailed allocation, refer to [ActiveGate directories](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems."))**
+**(for more detailed allocation, refer to [ActiveGate directories](../../configuration/where-can-i-find-activegate-files.md "Find out where ActiveGate files are stored on Windows and Linux systems."))**
 
 1
 
@@ -82,7 +82,7 @@ Supported operating systems:
 ## System requirements
 
 * ActiveGate supports only operating systems running on the x86-64 architecture (64-bit Intel/AMD).
-* Ensure that you have proper [network port configuration](/docs/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates "Learn about the connectivity priorities between ActiveGate types as well as the priorities between ActiveGates and OneAgents.").
+* Ensure that you have proper [network port configuration](../../supported-connectivity-schemes-for-activegates.md "Learn about the connectivity priorities between ActiveGate types as well as the priorities between ActiveGates and OneAgents.").
 * ActiveGate installation is not supported on Windows with a disabled `NT AUTHORITY\LocalService` account.
 
 ## AWS sizing guide

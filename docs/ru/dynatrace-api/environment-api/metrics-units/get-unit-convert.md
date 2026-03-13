@@ -26,7 +26,7 @@ scraped: 2026-03-06T21:35:45.467583
 
 Для выполнения этого запроса требуется токен доступа с областью `metrics.read`.
 
-Подробнее о получении и использовании токена см. в разделе [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Подробнее о получении и использовании токена см. в разделе [Токены и аутентификация](../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 

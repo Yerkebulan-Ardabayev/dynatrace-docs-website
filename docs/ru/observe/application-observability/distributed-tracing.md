@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:09:46.417540
 
 ## Предварительные требования
 
-* [Подписка Dynatrace Platform Subscription (DPS)](/docs/license "О Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace.")
+* [Подписка Dynatrace Platform Subscription (DPS)](../../license.md "О Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace.")
 
 ### Разрешения
 
@@ -63,7 +63,7 @@ storage:smartscape:read
 
 ### Установка
 
-Убедитесь, что приложение [установлено в вашем окружении](/docs/manage/hub#install "Смотрите информацию о Dynatrace Hub.").
+Убедитесь, что приложение [установлено в вашем окружении](../../manage/hub.md#install "Смотрите информацию о Dynatrace Hub.").
 
 ## Начало работы
 
@@ -82,28 +82,28 @@ Distributed Tracing на базе Grail помогает максимально 
 [01Анализ исключений
 
 * Учебное пособие
-* Анализ исключений помогает более эффективно обнаруживать, расследовать и устранять исключения в Dynatrace.](/docs/observe/application-observability/distributed-tracing/exception-analysis)[02Приём трассировок
+* Анализ исключений помогает более эффективно обнаруживать, расследовать и устранять исключения в Dynatrace.](distributed-tracing/exception-analysis.md)[02Приём трассировок
 
 * Практическое руководство
-* Инструментируйте ваши приложения с помощью OneAgent или OpenTelemetry, чтобы начать приём данных трассировки в Dynatrace.](/docs/observe/application-observability/distributed-tracing/ingest-traces)[03Настройка разрешений Grail для Distributed Tracing
+* Инструментируйте ваши приложения с помощью OneAgent или OpenTelemetry, чтобы начать приём данных трассировки в Dynatrace.](distributed-tracing/ingest-traces.md)[03Настройка разрешений Grail для Distributed Tracing
 
 * Практическое руководство
-* Управление разрешениями для Distributed Tracing на базе Grail.](/docs/observe/application-observability/distributed-tracing/permissions)[04Настройка хранения и удержания данных для Distributed Tracing
+* Управление разрешениями для Distributed Tracing на базе Grail.](distributed-tracing/permissions.md)[04Настройка хранения и удержания данных для Distributed Tracing
 
 * Практическое руководство
-* Управление хранением и удержанием данных для Distributed Tracing на базе Grail.](/docs/observe/application-observability/distributed-tracing/storage)[05Распространение контекста спана и трассировки
+* Управление хранением и удержанием данных для Distributed Tracing на базе Grail.](distributed-tracing/storage.md)[05Распространение контекста спана и трассировки
 
 * Справочник
-* Понимание распространения контекста спана и трассировки в Dynatrace и способы их настройки.](/docs/observe/application-observability/distributed-tracing/tracking-transactions)[06Использование трассировок, DQL и логов для выявления закономерностей
+* Понимание распространения контекста спана и трассировки в Dynatrace и способы их настройки.](distributed-tracing/tracking-transactions.md)[06Использование трассировок, DQL и логов для выявления закономерностей
 
 * Учебное пособие
-* Используйте трассировки, логи и DQL для визуализации необработанных данных и выявления аномальных закономерностей.](/docs/observe/application-observability/distributed-tracing/use-traces-and-dql-to-spot-patterns)[07Приложение Distributed Tracing
+* Используйте трассировки, логи и DQL для визуализации необработанных данных и выявления аномальных закономерностей.](distributed-tracing/use-traces-and-dql-to-spot-patterns.md)[07Приложение Distributed Tracing
 
 * Пояснение
-* Откройте для себя функциональные возможности нового приложения Distributed Tracing.](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app)[08Расширенная аналитика трассировки на базе Grail
+* Откройте для себя функциональные возможности нового приложения Distributed Tracing.](distributed-tracing/distributed-tracing-app.md)[08Расширенная аналитика трассировки на базе Grail
 
 * Учебное пособие
-* Изучите расширенные возможности анализа трассировки на Grail.](/docs/observe/application-observability/distributed-tracing/advanced-tracing-analytics)
+* Изучите расширенные возможности анализа трассировки на Grail.](distributed-tracing/advanced-tracing-analytics.md)
 
 ## Концепции
 
@@ -118,7 +118,7 @@ Distributed Tracing на базе Grail помогает максимально 
 * Понимание того, как запросы распространяются по распределённым системам и микросервисам.
 * Использование высококачественных данных, генерируемых распределёнными системами и микросервисами, для анализа запросов.
 * Быстрое понимание производительности каждого микросервиса.
-* Следование [детализированному анализу корневых причин Dynatrace Intelligence](/docs/dynatrace-intelligence/root-cause-analysis/concepts "Ознакомьтесь с концепциями анализа корневых причин.") для выявления причинно-следственных связей между событиями.
+* Следование [детализированному анализу корневых причин Dynatrace Intelligence](../../dynatrace-intelligence/root-cause-analysis/concepts.md "Ознакомьтесь с концепциями анализа корневых причин.") для выявления причинно-следственных связей между событиями.
 
 ### Спан
 
@@ -134,9 +134,9 @@ Distributed Tracing на базе Grail помогает максимально 
 
 ![Анатомия трассировки](https://dt-cdn.net/images/trace-anatomy-1920-6ba49e1863.png)
 
-Узнайте больше о [семантических полях спана](/docs/semantic-dictionary/fields#span "Ознакомьтесь со списком глобальных полей, имеющих чётко определённое семантическое значение в Dynatrace и применимых для различных типов мониторинга.").
+Узнайте больше о [семантических полях спана](../../semantic-dictionary/fields.md#span "Ознакомьтесь со списком глобальных полей, имеющих чётко определённое семантическое значение в Dynatrace и применимых для различных типов мониторинга.").
 
-Контекст спана позволяет дочернему спану связываться с трассировкой и его родительским спаном. Поэтому контекст необходимо распространять внутри сервиса (между различными потоками), а также между сервисами и границами процессов. Обычно это происходит через HTTP-заголовки (такие как [W3C trace context](https://www.w3.org/TR/trace-context/)) или через уникальные идентификаторы в системах обмена сообщениями. Чтобы узнать больше о распространении контекста, смотрите [Распространение контекста спана и трассировки](/docs/observe/application-observability/distributed-tracing/tracking-transactions "Понимание распространения контекста спана и трассировки в Dynatrace и способы их настройки.").
+Контекст спана позволяет дочернему спану связываться с трассировкой и его родительским спаном. Поэтому контекст необходимо распространять внутри сервиса (между различными потоками), а также между сервисами и границами процессов. Обычно это происходит через HTTP-заголовки (такие как [W3C trace context](https://www.w3.org/TR/trace-context/)) или через уникальные идентификаторы в системах обмена сообщениями. Чтобы узнать больше о распространении контекста, смотрите [Распространение контекста спана и трассировки](distributed-tracing/tracking-transactions.md "Понимание распространения контекста спана и трассировки в Dynatrace и способы их настройки.").
 
 ### Атрибут
 
@@ -146,19 +146,19 @@ Distributed Tracing на базе Grail помогает максимально 
 
 Dynatrace использует метаданные атрибутов для
 
-* [Обнаружения и именования сервисов](/docs/observe/application-observability/services/service-detection/service-detection-v1 "Узнайте, как Dynatrace Service Detection v1 обнаруживает и именует различные типы сервисов.").
-* Сбора данных о контексте трассировки и взаимосвязях с другими сущностями для [топологии Smartscape](/docs/analyze-explore-automate/smartscape-classic "Узнайте, как Smartscape Classic визуализирует все сущности и зависимости в вашем окружении.").
-* Связывания данных логов с трассировками для [Логов](/docs/analyze-explore-automate/logs/lma-log-enrichment "Связывайте входящие данные логов с трассировками для более точного анализа в Dynatrace.") или [Логов (классическая версия)](/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment "Узнайте, как связать входящие данные логов с трассировками для более точного анализа в Dynatrace.").
-* Понимания того, как на длительность спана влияют [тайминги сервиса](/docs/observe/application-observability/services-classic/service-analysis-timing "Узнайте, что означает каждое время в анализе сервиса.") (например, время процессора, сетевое время или просто ожидание других потоков), и анализа того, какой код был выполнен в контексте спана.
+* [Обнаружения и именования сервисов](services/service-detection/service-detection-v1.md "Узнайте, как Dynatrace Service Detection v1 обнаруживает и именует различные типы сервисов.").
+* Сбора данных о контексте трассировки и взаимосвязях с другими сущностями для [топологии Smartscape](../../analyze-explore-automate/smartscape-classic.md "Узнайте, как Smartscape Classic визуализирует все сущности и зависимости в вашем окружении.").
+* Связывания данных логов с трассировками для [Логов](../../analyze-explore-automate/logs/lma-log-enrichment.md "Связывайте входящие данные логов с трассировками для более точного анализа в Dynatrace.") или [Логов (классическая версия)](../../analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment.md "Узнайте, как связать входящие данные логов с трассировками для более точного анализа в Dynatrace.").
+* Понимания того, как на длительность спана влияют [тайминги сервиса](services-classic/service-analysis-timing.md "Узнайте, что означает каждое время в анализе сервиса.") (например, время процессора, сетевое время или просто ожидание других потоков), и анализа того, какой код был выполнен в контексте спана.
 
 #### Лучшие практики
 
 Если вы собираете данные трассировки через
 
-* OpenTelemetry, определите [настройки захваченных атрибутов](/docs/ingest-from/extend-dynatrace/extend-tracing/span-settings "Узнайте, как настроить параметры спанов для OpenTelemetry и OpenTracing.").
-* OneAgent, определите [настройки атрибутов запросов](/docs/observe/application-observability/services/request-attributes "Узнайте, что такое атрибуты запросов и как использовать их на всех уровнях представлений анализа сервисов.").
+* OpenTelemetry, определите [настройки захваченных атрибутов](../../ingest-from/extend-dynatrace/extend-tracing/span-settings.md "Узнайте, как настроить параметры спанов для OpenTelemetry и OpenTracing.").
+* OneAgent, определите [настройки атрибутов запросов](services/request-attributes.md "Узнайте, что такое атрибуты запросов и как использовать их на всех уровнях представлений анализа сервисов.").
 
-Узнайте больше о семантических полях [атрибутов запросов](/docs/semantic-dictionary/fields#request-attributes "Ознакомьтесь со списком глобальных полей, имеющих чётко определённое семантическое значение в Dynatrace и применимых для различных типов мониторинга.") и [захваченных атрибутов](/docs/semantic-dictionary/fields#captured-attributes "Ознакомьтесь со списком глобальных полей, имеющих чётко определённое семантическое значение в Dynatrace и применимых для различных типов мониторинга.").
+Узнайте больше о семантических полях [атрибутов запросов](../../semantic-dictionary/fields.md#request-attributes "Ознакомьтесь со списком глобальных полей, имеющих чётко определённое семантическое значение в Dynatrace и применимых для различных типов мониторинга.") и [захваченных атрибутов](../../semantic-dictionary/fields.md#captured-attributes "Ознакомьтесь со списком глобальных полей, имеющих чётко определённое семантическое значение в Dynatrace и применимых для различных типов мониторинга.").
 
 ### Сервис
 
@@ -166,7 +166,7 @@ Dynatrace использует метаданные атрибутов для
 
 #### Сценарии использования
 
-* [Сегментация запросов для улучшения деградации времени отклика](/docs/observe/application-observability/distributed-traces/use-cases/segment-request "Повысьте производительность вашей распределённой системы, сегментируя запросы с медленным временем отклика через Service flow и анализируя их распределённые трассировки.").
+* [Сегментация запросов для улучшения деградации времени отклика](distributed-traces/use-cases/segment-request.md "Повысьте производительность вашей распределённой системы, сегментируя запросы с медленным временем отклика через Service flow и анализируя их распределённые трассировки.").
 
 ### Сбор данных и распространение контекста
 
@@ -178,9 +178,9 @@ Dynatrace использует метаданные атрибутов для
 
 Для начала работы смотрите
 
-* [Автоматическая настройка с OneAgent](/docs/ingest-from/dynatrace-oneagent "Ознакомьтесь с важными концепциями, связанными с OneAgent, и узнайте, как установить и эксплуатировать OneAgent на различных платформах.")
-* [Инструментация с OpenTelemetry](/docs/ingest-from/opentelemetry/getting-started "Как получить данные OpenTelemetry в Dynatrace.")
-* [Расширение распределённой трассировки](/docs/ingest-from/extend-dynatrace/extend-tracing "Узнайте, как расширить возможности наблюдаемости трассировки в Dynatrace.")
+* [Автоматическая настройка с OneAgent](../../ingest-from/dynatrace-oneagent.md "Ознакомьтесь с важными концепциями, связанными с OneAgent, и узнайте, как установить и эксплуатировать OneAgent на различных платформах.")
+* [Инструментация с OpenTelemetry](../../ingest-from/opentelemetry/getting-started.md "Как получить данные OpenTelemetry в Dynatrace.")
+* [Расширение распределённой трассировки](../../ingest-from/extend-dynatrace/extend-tracing.md "Узнайте, как расширить возможности наблюдаемости трассировки в Dynatrace.")
 
 Используйте OpenTelemetry в сочетании с OneAgent для расширения охвата наблюдаемости, используя лучшее из обоих решений.
 
@@ -189,7 +189,7 @@ Dynatrace использует метаданные атрибутов для
 Используйте ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing** для:
 
 * Устранение неполадок: узнайте, почему запросы завершаются неудачей, и предотвратите будущие проблемы.
-* Оптимизация производительности: поймите [производительность системы](/docs/observe/application-observability/distributed-tracing/detect-performance-issues "Анализируйте данные трассировки и определяйте, какие запросы медленные и почему, с помощью приложения Distributed Tracing.") и выявите узкие места для повышения надёжности и улучшения пользовательского опыта.
+* Оптимизация производительности: поймите [производительность системы](distributed-tracing/detect-performance-issues.md "Анализируйте данные трассировки и определяйте, какие запросы медленные и почему, с помощью приложения Distributed Tracing.") и выявите узкие места для повышения надёжности и улучшения пользовательского опыта.
 * Детальный анализ: изучайте подробности отдельных трассировок для получения более глубокой информации.
 * Исследовательский анализ: используйте свободный анализ для обнаружения и исследования неизвестных неизвестных на лету.
 * Обнаружение неизвестных неизвестных: будьте готовы к неожиданностям, используя свободный анализ для исследования и разбора данных на лету.
@@ -220,12 +220,12 @@ DPS FullStack и/или Custom Traces Classic. При использовании
 Не все трассировки, доступные в Distributed Traces Classic, видны в приложении Distributed Tracing.
 
 * Убедитесь, что у вас установлена последняя версия OneAgent.
-* Убедитесь, что [функция OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Управление функциями OneAgent глобально и по группам процессов.") **Forward Tag 4 trace context extension** включена; это обеспечивает совместимость трассировок, захваченных OneAgent, со стандартом W3C trace context.
+* Убедитесь, что [функция OneAgent](../../ingest-from/dynatrace-oneagent/oneagent-features.md "Управление функциями OneAgent глобально и по группам процессов.") **Forward Tag 4 trace context extension** включена; это обеспечивает совместимость трассировок, захваченных OneAgent, со стандартом W3C trace context.
 
 Я вижу неполные сквозные трассировки в приложении Distributed Tracing, которые отображаются полностью в Distributed Traces Classic.
 
 * Убедитесь, что у вас установлена последняя версия OneAgent.
-* Убедитесь, что [функция OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Управление функциями OneAgent глобально и по группам процессов.") **Forward Tag 4 trace context extension** включена; это обеспечивает совместимость трассировок, захваченных OneAgent, со стандартом W3C trace context.
+* Убедитесь, что [функция OneAgent](../../ingest-from/dynatrace-oneagent/oneagent-features.md "Управление функциями OneAgent глобально и по группам процессов.") **Forward Tag 4 trace context extension** включена; это обеспечивает совместимость трассировок, захваченных OneAgent, со стандартом W3C trace context.
 
 Как я могу отфильтровать трассировки, собранные OneAgent или полученные через OpenTelemetry?
 
@@ -246,6 +246,6 @@ DPS FullStack и/или Custom Traces Classic. При использовании
 
 ## Связанные темы
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")
-* [Что такое Dynatrace Grail?](/docs/platform/grail/dynatrace-grail "Grail — это озеро данных Dynatrace, специально разработанное для данных наблюдаемости и безопасности, которое служит единым хранилищем для логов, метрик, трассировок, событий и многого другого.")
-* [Распространение контекста спана и трассировки](/docs/observe/application-observability/distributed-tracing/tracking-transactions "Понимание распространения контекста спана и трассировки в Dynatrace и способы их настройки.")
+* [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
+* [Что такое Dynatrace Grail?](../../platform/grail/dynatrace-grail.md "Grail — это озеро данных Dynatrace, специально разработанное для данных наблюдаемости и безопасности, которое служит единым хранилищем для логов, метрик, трассировок, событий и многого другого.")
+* [Распространение контекста спана и трассировки](distributed-tracing/tracking-transactions.md "Понимание распространения контекста спана и трассировки в Dynatrace и способы их настройки.")

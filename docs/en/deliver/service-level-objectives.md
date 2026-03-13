@@ -59,14 +59,14 @@ storage:user.events:read
 
 Read user events from Grail
 
-To read and write SLOs, you need the following [IAM](/docs/manage/identity-access-management "Configure users, groups and permissions.") permissions:
+To read and write SLOs, you need the following [IAM](../../common/manage/identity-access-management.md "Configure users, groups and permissions.") permissions:
 
 * `ALLOW slo:slos:read, slo:objective-templates:read;`
 * `ALLOW slo:slos:write;`
 
 ### Installation
 
-Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Make sure the app is [installed in your environment](../manage/hub.md#install "See the information about Dynatrace Hub.").
 
 Get started
 
@@ -74,7 +74,7 @@ Concepts
 
 Use cases
 
-Dynatrace provides support for service-level objectives (SLOs) leveraging Grail. With ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**, you can define and review your service-level objectives utilizing [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.").
+Dynatrace provides support for service-level objectives (SLOs) leveraging Grail. With ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**, you can define and review your service-level objectives utilizing [Dynatrace Query Language (DQL)](../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.").
 
 ![SLO management and details view](https://dt-cdn.net/hub/mgmt_3kmKiTU.png)![UI-guided SLO creation wizard](https://dt-cdn.net/hub/wizard2_gDvLrMb.png)![Dynatrace supports dedicated dashboard tiles, where existing SLOs can be visualized and customized to display the most critical KPIs.](https://dt-cdn.net/hub/dashboard_GSOPSku_KlVeOFv.png)
 
@@ -96,7 +96,7 @@ Service-level indicator (SLI)
     SLIs typically refer to metrics such as service success rates, successful synthetic test runs, or response times.
     However, they can also be based on any other data type, representing an indicator of the end-user experience.
     The SLI is given as a normalized time series expressed as a percentage value between 0 and 100%, where 100% is goodâfor example, the ratio of successful service requests over all requests.
-    In Dynatrace, you must use a DQL query to calculate the SLI. For more information, see the [`sli` field when creating an SLO](/docs/deliver/service-level-objectives/create-slo#create-custom-slo "Create and configure service-level objectives (SLOs).").
+    In Dynatrace, you must use a DQL query to calculate the SLI. For more information, see the [`sli` field when creating an SLO](service-level-objectives/create-slo.md#create-custom-slo "Create and configure service-level objectives (SLOs).").
 
 SLO target
 :   The target defines the planned goal to achieve in terms of the service level.
@@ -156,7 +156,7 @@ We calculate the remaining error budget of an SLO by taking the difference betwe
 Working with error budgets allows an improved approach to monitoring and ensuring the system's health and serves as a quality gate for new deployments.
 
 Imagine that your availability SLO has 95% as a target over one week, and the current SLO status shows 96%, meaning you have only 1% of your error budget.
-You might want to improve your availability metrics before a new release that might impact availability. For more information, see [Service-level objective templates](/docs/deliver/service-level-objectives/service-level-objective-templates "Explore the out-of-the-box service-level objective templates.").
+You might want to improve your availability metrics before a new release that might impact availability. For more information, see [Service-level objective templates](service-level-objectives/service-level-objective-templates.md "Explore the out-of-the-box service-level objective templates.").
 
 #### Error budget burn rate
 
@@ -232,13 +232,13 @@ Dynatrace SLOs are defined using DQL, allowing you to determine the SLI based on
 
 You can use ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** to automatically raise an event if the error budget burn rate exceeds a specific predefined limit.
 
-1. In ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**, enter your SLI as a [DQL query](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad#simple-ad "Learn how to create and edit simple custom alerts in the Anomaly Detection app.").
+1. In ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**, enter your SLI as a [DQL query](../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad.md#simple-ad "Learn how to create and edit simple custom alerts in the Anomaly Detection app.").
 
    Segments are currently not supported by ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
 2. Add the burn rate calculation.
 3. Optional If a burn rate violation event is raised for each contributing service entity or an aggregated one, add one of the DQL queries described above.
 
-Consider that the actor of the custom alert configurations needs to have the [necessary permissions](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad "Learn how to create and edit simple custom alerts in the Anomaly Detection app.").
+Consider that the actor of the custom alert configurations needs to have the [necessary permissions](../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad.md "Learn how to create and edit simple custom alerts in the Anomaly Detection app.").
 
 ### Recommendations for configuring custom alerts for raising burn-rate alerts
 
@@ -256,7 +256,7 @@ We recommend adding the following event properties to the anomaly detection:
 * **slo.name** makes it easy to relate to the corresponding SLO, as the SLO names are unique within Dynatrace.
 * **dt.owner** is a team identifier that allows automatic routing and ticketing to the correct team in case of a burn rate alert event.
 
-After defining the custom alert, an event with the set event properties is raised. This event is automatically considered in case of detected problems via Dynatrace Intelligence. Furthermore, the events can be used as a trigger for [workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."), such as automated and targeted notifications and ticketing.
+After defining the custom alert, an event with the set event properties is raised. This event is automatically considered in case of detected problems via Dynatrace Intelligence. Furthermore, the events can be used as a trigger for [workflows](../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."), such as automated and targeted notifications and ticketing.
 
 ## Use cases
 
@@ -271,24 +271,24 @@ Go through the following process to learn using the Service-Level Objectives:
 [01Create service-level objectives
 
 * How-to guide
-* Create and configure service-level objectives (SLOs).](/docs/deliver/service-level-objectives/create-slo)[02Add a service-level objective (SLO) tile to a dashboard
+* Create and configure service-level objectives (SLOs).](service-level-objectives/create-slo.md)[02Add a service-level objective (SLO) tile to a dashboard
 
 * How-to guide
-* Visualize your service-level objectives by adding them to a dashboard.](/docs/deliver/service-level-objectives/service-level-objective-tile-add-to-dashboard)[03Edit a service-level objective (SLO) tile in a dashboard
+* Visualize your service-level objectives by adding them to a dashboard.](service-level-objectives/service-level-objective-tile-add-to-dashboard.md)[03Edit a service-level objective (SLO) tile in a dashboard
 
 * How-to guide
-* Edit your service-level objective tiles directly in your dashboard.](/docs/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard)[04View the details of a service-level objective (SLO) tile in a dashboard
+* Edit your service-level objective tiles directly in your dashboard.](service-level-objectives/service-level-objective-tile-edit-in-dashboard.md)[04View the details of a service-level objective (SLO) tile in a dashboard
 
 * How-to guide
-* View your service-level objective (SLO) tile details directly in your dashboard.](/docs/deliver/service-level-objectives/service-level-objective-tile-view)[05Permissions for service-level objective (SLO) tiles in a dashboard
+* View your service-level objective (SLO) tile details directly in your dashboard.](service-level-objectives/service-level-objective-tile-view.md)[05Permissions for service-level objective (SLO) tiles in a dashboard
 
-* Set up permissions for service-level objective (SLO) tiles in your dashboard.](/docs/deliver/service-level-objectives/service-level-objective-permissions)[06Service-level objective templates
+* Set up permissions for service-level objective (SLO) tiles in your dashboard.](service-level-objectives/service-level-objective-permissions.md)[06Service-level objective templates
 
 * Reference
-* Explore the out-of-the-box service-level objective templates.](/docs/deliver/service-level-objectives/service-level-objective-templates)[07Service-level objective examples
+* Explore the out-of-the-box service-level objective templates.](service-level-objectives/service-level-objective-templates.md)[07Service-level objective examples
 
 * Reference
-* Explore the out-of-the-box service-level objective definitions by way of examples.](/docs/deliver/service-level-objectives/service-level-objective-examples)[08Upgrade Classic SLOs
+* Explore the out-of-the-box service-level objective definitions by way of examples.](service-level-objectives/service-level-objective-examples.md)[08Upgrade Classic SLOs
 
 * How-to guide
-* Upgrade your Classic service level objective (SLO) to latest SLO](/docs/deliver/service-level-objectives/service-level-objective-upgrade-classic)
+* Upgrade your Classic service level objective (SLO) to latest SLO](service-level-objectives/service-level-objective-upgrade-classic.md)

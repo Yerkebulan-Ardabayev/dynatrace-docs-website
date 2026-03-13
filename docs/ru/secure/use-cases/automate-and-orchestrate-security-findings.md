@@ -18,8 +18,8 @@ scraped: 2026-03-06T21:15:08.084731
 
 В данном контексте вы можете:
 
-* [Ingesting security findings](/docs/secure/threat-observability/security-events-ingest "Ingest external security data into Grail.") из различных инструментов и сопоставлять их со [Словарём семантики Dynatrace](https://dt-url.net/3q03pb0).
-* Автоматизировать и оркестрировать результаты проверок безопасности в разных продуктах и инструментах с помощью наших примеров автоматизации рабочих процессов, которые вы можете дополнительно настраивать с использованием мощных возможностей [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflows—react to events, schedule tasks, and connect services.") в соответствии с процессами оркестрации вашей организации.
+* [Ingesting security findings](../threat-observability/security-events-ingest.md "Ingest external security data into Grail.") из различных инструментов и сопоставлять их со [Словарём семантики Dynatrace](https://dt-url.net/3q03pb0).
+* Автоматизировать и оркестрировать результаты проверок безопасности в разных продуктах и инструментах с помощью наших примеров автоматизации рабочих процессов, которые вы можете дополнительно настраивать с использованием мощных возможностей [Workflows](../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflows—react to events, schedule tasks, and connect services.") в соответствии с процессами оркестрации вашей организации.
 
 ## Целевая аудитория
 
@@ -33,7 +33,7 @@ scraped: 2026-03-06T21:15:08.084731
 
 ## Предварительные условия
 
-[Ingesting security findings](/docs/secure/threat-observability/security-events-ingest "Ingest external security data into Grail.") из стороннего продукта.
+[Ingesting security findings](../threat-observability/security-events-ingest.md "Ingest external security data into Grail.") из стороннего продукта.
 
 ## Начало работы
 
@@ -48,8 +48,8 @@ scraped: 2026-03-06T21:15:08.084731
      + [Пример рабочего процесса Slack](https://dt-url.net/a643qqd)
      + [Пример рабочего процесса Jira](https://dt-url.net/l103p3t)
 
-   Для некоторых интеграций, например [Amazon ECR](/docs/secure/threat-observability/security-events-ingest/ingest-aws-ecr-data "Ingest Amazon ECR container image vulnerability findings and scan events and analyze them in Dynatrace.") или [AWS Security Hub](/docs/secure/threat-observability/security-events-ingest/ingest-aws-security-hub "Ingest AWS Security Hub security findings and analyze them in Dynatrace."), примеры рабочих процессов доступны непосредственно в приложении в разделе **Try our templates** (в **Settings** найдите и выберите приложение).
-2. Откройте [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflows—react to events, schedule tasks, and connect services."), выберите ![Import](https://dt-cdn.net/images/dashboards-app-dashboards-page-import-6a06e645df.svg "Import") **Upload**, затем выберите загруженный файл.
+   Для некоторых интеграций, например [Amazon ECR](../threat-observability/security-events-ingest/ingest-aws-ecr-data.md "Ingest Amazon ECR container image vulnerability findings and scan events and analyze them in Dynatrace.") или [AWS Security Hub](../threat-observability/security-events-ingest/ingest-aws-security-hub.md "Ingest AWS Security Hub security findings and analyze them in Dynatrace."), примеры рабочих процессов доступны непосредственно в приложении в разделе **Try our templates** (в **Settings** найдите и выберите приложение).
+2. Откройте [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflows—react to events, schedule tasks, and connect services."), выберите ![Import](https://dt-cdn.net/images/dashboards-app-dashboards-page-import-6a06e645df.svg "Import") **Upload**, затем выберите загруженный файл.
 
 Пример результата:
 

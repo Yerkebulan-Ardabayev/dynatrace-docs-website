@@ -136,7 +136,7 @@ smartscapeNodes CONTAINER
 
 ### Разрешения полей
 
-Вы можете настраивать и использовать [наборы полей](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-fields "Find out how to assign permissions to buckets and tables in Grail.") с таблицей `smartscape` для применения фильтров ко всем данным, возвращаемым командами Smartscape (`smartscapeNodes` и `smartscapeEdges`). Учтите, что только определённые поля могут быть отфильтрованы для всех типов сущностей одновременно.
+Вы можете настраивать и использовать [наборы полей](organize-data/assign-permissions-in-grail.md#grail-permissions-fields "Find out how to assign permissions to buckets and tables in Grail.") с таблицей `smartscape` для применения фильтров ко всем данным, возвращаемым командами Smartscape (`smartscapeNodes` и `smartscapeEdges`). Учтите, что только определённые поля могут быть отфильтрованы для всех типов сущностей одновременно.
 
 Ниже приведён пример конфигурации набора полей:
 
@@ -202,7 +202,7 @@ POST /fieldsets
 
 Типы узлов, используемые в Smartscape на Grail, могут отличаться от классических типов сущностей. Это означает, что идентификатор сущности или узла также может отличаться (например, `CLOUD_APPLICATION_INSTANCE` называется `K8S_POD` в Smartscape на Grail). Во избежание путаницы узлы Smartscape включают поле `id_classic`, содержащее идентификатор сущности соответствующей классической сущности. Классические идентификаторы сущностей доступны для сущностей K8s, базовых сущностей и сервисов.
 
-Если соответствующие классические сущности отсутствуют (например, для [облачных платформ](/docs/observe/infrastructure-observability/cloud-platform-monitoring "The cloud platforms Dynatrace can monitor")), поля `id_classic` на этих узлах отсутствуют.
+Если соответствующие классические сущности отсутствуют (например, для [облачных платформ](../../observe/infrastructure-observability/cloud-platform-monitoring.md "The cloud platforms Dynatrace can monitor")), поля `id_classic` на этих узлах отсутствуют.
 
 ## Различия между классическими сущностями и Smartscape на Grail
 
@@ -217,15 +217,15 @@ POST /fieldsets
 
 ## Извлечение через OpenPipeline
 
-[OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") предлагает специальные этапы для извлечения и обработки узлов и рёбер. Используйте OpenPipeline для извлечения топологических данных из любого сигнала для следующих целей:
+[OpenPipeline](../openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") предлагает специальные этапы для извлечения и обработки узлов и рёбер. Используйте OpenPipeline для извлечения топологических данных из любого сигнала для следующих целей:
 
 * Определение пользовательских типов сущностей, например расширений
 * Дополнительная информация о встроенных типах Dynatrace
 
 ## Связанные темы
 
-* [DQL Smartscape commands](/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands "DQL Smartscape commands")
-* [Join functions](/docs/platform/grail/dynatrace-query-language/functions/join-functions "A list of DQL join functions.")
-* [Conversion and casting functions](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions "A list of DQL conversion and casting functions.")
-* [DPL Smartscape ID](/docs/platform/grail/dynatrace-pattern-language/log-processing-smartscape "Explore DPL syntax for parsing out Smartscape ID from strings.")
-* [DPL Grammar](/docs/platform/grail/dynatrace-pattern-language/log-processing-grammar "Complete grammar list of Dynatrace Pattern Language (DPL) syntax.")
+* [DQL Smartscape commands](dynatrace-query-language/commands/smartscape-commands.md "DQL Smartscape commands")
+* [Join functions](dynatrace-query-language/functions/join-functions.md "A list of DQL join functions.")
+* [Conversion and casting functions](dynatrace-query-language/functions/conversion-and-casting-functions.md "A list of DQL conversion and casting functions.")
+* [DPL Smartscape ID](dynatrace-pattern-language/log-processing-smartscape.md "Explore DPL syntax for parsing out Smartscape ID from strings.")
+* [DPL Grammar](dynatrace-pattern-language/log-processing-grammar.md "Complete grammar list of Dynatrace Pattern Language (DPL) syntax.")

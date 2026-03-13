@@ -32,7 +32,7 @@ Dynatrace поддерживает сегментацию пользовател
    | --- | --- | --- |
    | Приложения | Application | Выберите имя приложения, которое хотите проанализировать. |
    |  | Application type | Укажите, хотите ли вы анализировать сессии веб-, мобильных или пользовательских приложений. |
-   |  | Browser monitor | Выберите имя [монитора браузера](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/create-a-single-url-browser-monitor "Learn how to set up a single-URL browser monitor to check the availability of your site."), используемого для синтетического мониторинга. |
+   |  | Browser monitor | Выберите имя [монитора браузера](../synthetic-monitoring/browser-monitors/create-a-single-url-browser-monitor.md "Learn how to set up a single-URL browser monitor to check the availability of your site."), используемого для синтетического мониторинга. |
    | Браузер | Browser type | Фильтруйте сессии в зависимости от того, использовался ли десктопный, планшетный или мобильный браузер, либо виртуальный через синтетического агента или ботов. |
    |  | Browser family | Фильтруйте сессии по используемому браузеру. |
    |  | Browser version | Используйте этот атрибут, если хотите фильтровать сессии не только по конкретному браузеру, но и по его версии. |
@@ -45,16 +45,16 @@ Dynatrace поддерживает сегментацию пользовател
    |  | Region | Фильтруйте сессии по географическому региону, откуда они поступают. |
    |  | City | Фильтруйте сессии по городу, откуда они поступают. |
    | Мобильные | Application version | Используйте этот фильтр для просмотра сессий для конкретной версии вашего мобильного приложения. |
-   |  | Crashes | Выберите `Yes` или `No` для фильтрации сессий, в которых произошёл или не произошёл [сбой](/docs/observe/digital-experience/rum-concepts/user-and-error-events#crash "Learn about user and error events and the types of user and error events captured by Dynatrace."). |
+   |  | Crashes | Выберите `Yes` или `No` для фильтрации сессий, в которых произошёл или не произошёл [сбой](../rum-concepts/user-and-error-events.md#crash "Learn about user and error events and the types of user and error events captured by Dynatrace."). |
    |  | Device | Фильтруйте сессии по типу мобильного устройства, используемого для доступа к приложению. |
    |  | Manufacturer | Фильтруйте пользовательские сессии по конкретному производителю мобильного устройства. |
    |  | Rooted or jailbroken | Выберите `Yes` или `No` для фильтрации мобильных сессий, где устройство рутировано/взломано или нет. Если статус устройства неизвестен или не определён, сессии имеют значение `null` и не отображаются в результатах. Пользовательские приложения всегда сообщают о неизвестном или неопределённом статусе. |
-   | Пользователь | User tag | Выберите [пользовательский тег](/docs/observe/digital-experience/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.") для анализа сессий конкретного пользователя. |
+   | Пользователь | User tag | Выберите [пользовательский тег](../rum-concepts/user-and-error-events.md#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.") для анализа сессий конкретного пользователя. |
    |  | Internal user ID | Фильтруйте сессии по уникальному идентификатору пользователя, инициировавшего пользовательскую сессию. |
    |  | User type | Выберите, хотите ли вы анализировать пользовательские сессии роботов, синтетических пользователей или реальных пользователей. |
    |  | New user | Выберите `Yes` или `No` для фильтрации сессий в зависимости от того, являются ли пользователи новыми или вернувшимися. |
-   | Сессия | Live | Выберите `Yes` или `No`, чтобы отображать [активные или завершённые](/docs/observe/digital-experience/rum-concepts/user-session#live-vs-completed-user-sessions "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.") сессии. |
-   |  | Session Replay | Выберите `Yes` или `No` для отображения пользовательских сессий с [Session Replay](/docs/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") или без него. |
+   | Сессия | Live | Выберите `Yes` или `No`, чтобы отображать [активные или завершённые](../rum-concepts/user-session.md#live-vs-completed-user-sessions "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.") сессии. |
+   |  | Session Replay | Выберите `Yes` или `No` для отображения пользовательских сессий с [Session Replay](../session-replay.md "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") или без него. |
    |  | Bounced | Выберите `Yes` или `No` для фильтрации сессий, которые были или не были отказными (отказные сессии — это сессии, от которых немедленно отказались). Отказ — это особый тип пользовательской сессии, состоящий всего из одного действия. Высокий показатель отказов нежелателен. |
    |  | Converted | Выберите `Yes` или `No` для анализа пользовательских сессий, в которых связанная цель конверсии была или не была достигнута. |
    |  | Session conversion count | Фильтруйте сессии по количеству раз, когда сессия достигает любой из целей конверсии. |
@@ -65,32 +65,32 @@ Dynatrace поддерживает сегментацию пользовател
    |  | IP | Фильтруйте сессии по IP-адресам. |
    |  | IPS | Фильтруйте сессии по конкретному интернет-провайдеру. |
    |  | Duration | Укажите продолжительность сессии в минутах. Используйте это для фильтрации сессий с продолжительностью больше или равной значению (если оставить верхнюю границу пустой), меньше или равной значению (если оставить нижнюю границу пустой) или в определённом диапазоне. |
-   | Свойства сессий | Session date properties | Фильтруйте пользовательские сессии по конкретному свойству даты сессии ([property](/docs/observe/digital-experience/web-applications/additional-configuration/define-user-action-and-session-properties "Define custom string, numeric, and date properties for your monitored web applications.")) и его значению. |
+   | Свойства сессий | Session date properties | Фильтруйте пользовательские сессии по конкретному свойству даты сессии ([property](../web-applications/additional-configuration/define-user-action-and-session-properties.md "Define custom string, numeric, and date properties for your monitored web applications.")) и его значению. |
    |  | Session double properties | Фильтруйте пользовательские сессии по конкретному свойству типа double и его значению. |
    |  | Session long properties | Фильтруйте пользовательские сессии по конкретному свойству типа long и его значению. |
    |  | Session string properties | Фильтруйте пользовательские сессии по конкретному строковому свойству и его значению. |
    | Действия пользователя | User action count | Укажите диапазон целых чисел, представляющих количество действий пользователя в рамках одной сессии. Это помогает, например, выявлять сессии с большим числом действий. |
    |  | User action name | Укажите действие пользователя для анализа всех сессий, включающих хотя бы один экземпляр этого действия. |
-   |  | User action date properties | Фильтруйте пользовательские сессии по конкретному свойству даты действия пользователя ([property](/docs/observe/digital-experience/web-applications/additional-configuration/define-user-action-and-session-properties "Define custom string, numeric, and date properties for your monitored web applications.")) и его значению. |
+   |  | User action date properties | Фильтруйте пользовательские сессии по конкретному свойству даты действия пользователя ([property](../web-applications/additional-configuration/define-user-action-and-session-properties.md "Define custom string, numeric, and date properties for your monitored web applications.")) и его значению. |
    |  | User action double properties | Фильтруйте пользовательские сессии по конкретному свойству типа double действия пользователя и его значению. |
    |  | User action string properties | Фильтруйте пользовательские сессии по конкретному строковому свойству действия пользователя и его значению. |
    |  | User action long properties | Фильтруйте пользовательские сессии по конкретному свойству типа long действия пользователя и его значению. |
    | Страницы | Page name | Отображайте сессии, в которых пользователь обращался к указанной странице. |
    |  | Page group | Отображайте сессии, в которых пользователь обращался к странице из указанной группы страниц. |
-   | Удобство использования | Rage click count | Укажите диапазон числа [кликов в ярости](/docs/observe/digital-experience/rum-concepts/user-and-error-events#rage-event "Learn about user and error events and the types of user and error events captured by Dynatrace."). Используйте это для фильтрации сессий с более чем определённым числом кликов в ярости (если оставить верхнюю границу пустой), меньше или равным значению (если оставить нижнюю границу пустой) или в определённом диапазоне. |
-   |  | User experience score | Отображайте пользовательские сессии с оценкой пользовательского опыта «Удовлетворительно», «Терпимо» или «Неприемлемо» ([user experience score](/docs/observe/digital-experience/rum-concepts/scores-and-ratings/user-experience-score "User experience score is a metric used to categorize user sessions as Frustrating, Tolerable, or Satisfying.")). |
-   |  | Rage tap count | Укажите диапазон числа [нажатий в ярости](/docs/observe/digital-experience/rum-concepts/user-and-error-events#rage-event "Learn about user and error events and the types of user and error events captured by Dynatrace."). Используйте это для фильтрации мобильных пользовательских сессий с более чем определённым числом нажатий в ярости (если оставить верхнюю границу пустой), меньше или равным значению (если оставить нижнюю границу пустой) или в определённом диапазоне. |
+   | Удобство использования | Rage click count | Укажите диапазон числа [кликов в ярости](../rum-concepts/user-and-error-events.md#rage-event "Learn about user and error events and the types of user and error events captured by Dynatrace."). Используйте это для фильтрации сессий с более чем определённым числом кликов в ярости (если оставить верхнюю границу пустой), меньше или равным значению (если оставить нижнюю границу пустой) или в определённом диапазоне. |
+   |  | User experience score | Отображайте пользовательские сессии с оценкой пользовательского опыта «Удовлетворительно», «Терпимо» или «Неприемлемо» ([user experience score](../rum-concepts/scores-and-ratings/user-experience-score.md "User experience score is a metric used to categorize user sessions as Frustrating, Tolerable, or Satisfying.")). |
+   |  | Rage tap count | Укажите диапазон числа [нажатий в ярости](../rum-concepts/user-and-error-events.md#rage-event "Learn about user and error events and the types of user and error events captured by Dynatrace."). Используйте это для фильтрации мобильных пользовательских сессий с более чем определённым числом нажатий в ярости (если оставить верхнюю границу пустой), меньше или равным значению (если оставить нижнюю границу пустой) или в определённом диапазоне. |
 
-   В фильтрах оператор тильды (`~`) работает не так, как ключевое слово `LIKE` в [USQL](/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.").
+   В фильтрах оператор тильды (`~`) работает не так, как ключевое слово `LIKE` в [USQL](custom-queries-segmentation-and-aggregation-of-session-data.md "Learn how you can access and query user session data based on keywords, syntax, functions, and more.").
 3. Выберите интересующее вас значение атрибута. Некоторые атрибуты предоставляют текстовые поля для поиска в свободной форме. Также можно выбрать несколько значений одного атрибута; это работает как оператор `OR` для этого атрибута.
 4. Повторите этот процесс для всех интересующих вас атрибутов. Определив фильтр, нажмите в любом месте за пределами текстового поля.
 
    Результат определённых фильтров выдаёт список первых 500 сессий, упорядоченных по времени начала новейшей сессии. Чтобы изменить порядок, отсортируйте столбцы таблицы по возрастанию или убыванию.
-5. Выберите временную метку сессии (см. **3** на примере ниже), чтобы перейти на страницу сведений о сессии. Либо, чтобы проанализировать сессии отдельного пользователя, выберите имя пользователя (см. **2** на примере ниже), чтобы перейти на [страницу сведений о пользователе](/docs/observe/digital-experience/session-segmentation/analyze-all-sessions-of-a-single-user "Learn about user behavior by analyzing the user profile (user experience score) and session activity.").
+5. Выберите временную метку сессии (см. **3** на примере ниже), чтобы перейти на страницу сведений о сессии. Либо, чтобы проанализировать сессии отдельного пользователя, выберите имя пользователя (см. **2** на примере ниже), чтобы перейти на [страницу сведений о пользователе](analyze-all-sessions-of-a-single-user.md "Learn about user behavior by analyzing the user profile (user experience score) and session activity.").
 
 ![User sessions page](https://dt-cdn.net/images/new-user-sessions-page-3342-dd45c41c38.png)
 
-Используйте [селектор временного диапазона](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings.") в строке меню для настройки периода анализа пользовательских сессий.
+Используйте [селектор временного диапазона](../../../analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe.md "Learn about Dynatrace dashboard timeframe and management zone settings.") в строке меню для настройки периода анализа пользовательских сессий.
 
 ![Timeframe selector: menu bar](https://dt-cdn.net/images/timeframe-selector-menu-bar-264-8193110c8c.png)
 
@@ -118,7 +118,7 @@ Dynatrace поддерживает сегментацию пользовател
 * Если явное время окончания отсутствует, подразумеваются `to` и `now`. Например, `-2h` эквивалентно `-2h to now`.
 * Поддерживаемые единицы: `s`, `m`, `h`, `d`, `w`, `M`, `q`, `y` (можно также использовать полные слова, например `minutes` и `quarter`)
 
-Пользовательские сессии, которые [активны](/docs/observe/digital-experience/rum-concepts/user-session#live-vs-completed-sessions "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.") в течение временного диапазона, заданного в селекторе, отображаются в списке сессий. Находка **Analysis over time** ([findings](#drill-down-using-findings)), напротив, показывает только те сессии, которые начались в рамках заданного временного диапазона.
+Пользовательские сессии, которые [активны](../rum-concepts/user-session.md#live-vs-completed-sessions "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.") в течение временного диапазона, заданного в селекторе, отображаются в списке сессий. Находка **Analysis over time** ([findings](#drill-down-using-findings)), напротив, показывает только те сессии, которые начались в рамках заданного временного диапазона.
 
 Например, если временной диапазон установлен с 12:00 до 12:05, а сессия, начавшаяся в 11:55, всё ещё активна в этом диапазоне, она отображается в списке сессий, но не учитывается в находке **Analysis over time**, поскольку она началась до заданного временного диапазона.
 
@@ -132,25 +132,25 @@ Dynatrace поддерживает сегментацию пользовател
 
 ## Фокус на сессиях отдельного пользователя
 
-Вы можете сосредоточиться на пользовательских сессиях конкретного пользователя. Выберите пользователя в столбце **User**, чтобы перейти на [страницу обзора этого пользователя](/docs/observe/digital-experience/session-segmentation/analyze-all-sessions-of-a-single-user "Learn about user behavior by analyzing the user profile (user experience score) and session activity.").
+Вы можете сосредоточиться на пользовательских сессиях конкретного пользователя. Выберите пользователя в столбце **User**, чтобы перейти на [страницу обзора этого пользователя](analyze-all-sessions-of-a-single-user.md "Learn about user behavior by analyzing the user profile (user experience score) and session activity.").
 
-Для поиска пользовательских сессий конкретного пользователя выберите [**User tag**](/docs/observe/digital-experience/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.") в поле **Filter by** и выберите нужного пользователя. Например, чтобы отобразить пользовательские сессии пользователя `Zara`, добавьте фильтр **User tag:** `Zara`. Затем выберите **Zara** в столбце **User**, чтобы перейти на страницу обзора этого пользователя.
+Для поиска пользовательских сессий конкретного пользователя выберите [**User tag**](../rum-concepts/user-and-error-events.md#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.") в поле **Filter by** и выберите нужного пользователя. Например, чтобы отобразить пользовательские сессии пользователя `Zara`, добавьте фильтр **User tag:** `Zara`. Затем выберите **Zara** в столбце **User**, чтобы перейти на страницу обзора этого пользователя.
 
 ![User sessions of a particular user](https://dt-cdn.net/images/user-sessions-of-a-particulra-user-2460-63bd6314da.png)
 
 Чтобы узнать, как пометить каждого пользователя вашего приложения уникальным именем, обратитесь к следующим страницам в зависимости от типа приложения и операционной системы:
 
-* [Веб-приложения](/docs/observe/digital-experience/web-applications/additional-configuration/identify-individual-users-for-session-analysis "Tag individual users via the JavaScript API for session analysis.")
+* [Веб-приложения](../web-applications/additional-configuration/identify-individual-users-for-session-analysis.md "Tag individual users via the JavaScript API for session analysis.")
 * Мобильные приложения
 
-  + [Android](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android#tag-specific-users "Learn how to enrich mobile user experience monitoring in Android using OneAgent SDK.")
-  + [iOS](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios#tag-specific-users "Enrich mobile user experience monitoring using OneAgent SDK for iOS.")
+  + [Android](../mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android.md#tag-specific-users "Learn how to enrich mobile user experience monitoring in Android using OneAgent SDK.")
+  + [iOS](../mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios.md#tag-specific-users "Enrich mobile user experience monitoring using OneAgent SDK for iOS.")
   + [Cordova](https://www.npmjs.com/package/@dynatrace/cordova-plugin#identify-user)
   + [Flutter](https://pub.dev/packages/dynatrace_flutter_plugin#identifyUser)
   + [React Native](https://www.npmjs.com/package/@dynatrace/react-native-plugin#identify-a-user)
-  + [Xamarin](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/xamarin-nuget#identify-user "Monitor Xamarin apps with Dynatrace OneAgent.")
-  + [.NET MAUI](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/maui#identify-user "Monitor .NET MAUI applications with Dynatrace OneAgent.")
-* [Пользовательские приложения: OpenKit](/docs/ingest-from/extend-dynatrace/openkit/dynatrace-openkit-api-methods#tag-specific-users "Read how Dynatrace OpenKit can be used from the developer's point of view.")
+  + [Xamarin](../mobile-applications/cross-platform-frameworks/xamarin-nuget.md#identify-user "Monitor Xamarin apps with Dynatrace OneAgent.")
+  + [.NET MAUI](../mobile-applications/cross-platform-frameworks/maui.md#identify-user "Monitor .NET MAUI applications with Dynatrace OneAgent.")
+* [Пользовательские приложения: OpenKit](../../../ingest-from/extend-dynatrace/openkit/dynatrace-openkit-api-methods.md#tag-specific-users "Read how Dynatrace OpenKit can be used from the developer's point of view.")
 
 Выберите одну из сессий `Zara`, чтобы просмотреть дополнительные сведения. Например, можно проверить все действия, выполненные пользователем `Zara` в течение выбранной сессии. Сведения о сессии содержат важную информацию об устройстве, такую как разрешение устройства, производитель, операционная система, геолокация и IP-адрес.
 
@@ -158,7 +158,7 @@ Dynatrace поддерживает сегментацию пользовател
 
 ## Просмотр сведений об ошибках
 
-Анализ сессий можно также использовать для получения подробной информации об [ошибках](/docs/observe/digital-experience/rum-concepts/user-and-error-events#error "Learn about user and error events and the types of user and error events captured by Dynatrace."), возникающих в вашем приложении.
+Анализ сессий можно также использовать для получения подробной информации об [ошибках](../rum-concepts/user-and-error-events.md#error "Learn about user and error events and the types of user and error events captured by Dynatrace."), возникающих в вашем приложении.
 
 Чтобы перейти на страницу сведений об ошибке
 
@@ -194,7 +194,7 @@ Dynatrace поддерживает сегментацию пользовател
 
 ## Проверка сессий с событиями ярости
 
-Когда приложение не реагирует быстро, текстовый ярлык выглядит как кнопка или переключатель скрыт под другим переключателем, пользователи могут многократно нажимать или касаться затронутого элемента управления интерфейсом в раздражении. Dynatrace определяет такое поведение как [событие ярости](/docs/observe/digital-experience/rum-concepts/user-and-error-events#rage-event "Learn about user and error events and the types of user and error events captured by Dynatrace."): **rage click** (клик в ярости) или **rage tap** (нажатие в ярости).
+Когда приложение не реагирует быстро, текстовый ярлык выглядит как кнопка или переключатель скрыт под другим переключателем, пользователи могут многократно нажимать или касаться затронутого элемента управления интерфейсом в раздражении. Dynatrace определяет такое поведение как [событие ярости](../rum-concepts/user-and-error-events.md#rage-event "Learn about user and error events and the types of user and error events captured by Dynatrace."): **rage click** (клик в ярости) или **rage tap** (нажатие в ярости).
 
 Чтобы просмотреть пользовательские сессии с событиями ярости
 
@@ -207,14 +207,14 @@ Dynatrace поддерживает сегментацию пользовател
 
 Мобильные и пользовательские приложения
 
-Когда пользовательская сессия заканчивается [сбоем](/docs/observe/digital-experience/rum-concepts/user-and-error-events#crash "Learn about user and error events and the types of user and error events captured by Dynatrace."), анализ сессий можно использовать для просмотра полной последовательности действий пользователя, предшествовавших сбою. Также можно открыть отчёт о сбое, чтобы получить всю информацию на уровне кода и быстро найти первопричины сбоя.
+Когда пользовательская сессия заканчивается [сбоем](../rum-concepts/user-and-error-events.md#crash "Learn about user and error events and the types of user and error events captured by Dynatrace."), анализ сессий можно использовать для просмотра полной последовательности действий пользователя, предшествовавших сбою. Также можно открыть отчёт о сбое, чтобы получить всю информацию на уровне кода и быстро найти первопричины сбоя.
 
 1. Перейдите в раздел ![Session Segmentation](https://dt-cdn.net/images/session-segmentation-512-5278e8fa16.png "Session Segmentation") **Session Segmentation**.
 2. Установите **Filter by** следующим образом:
 
    * **Application type:** `Mobile` для отображения только мобильных пользовательских сессий или **Application type:** `Custom` для получения пользовательских сессий из пользовательских приложений
    * **Crashes:** `Yes` для отображения сессий, завершившихся сбоем
-   * Мобильные приложения **Session Replay:** `Yes` для отображения сессий, записанных с Session Replay при сбоях для приложений [Android](/docs/observe/digital-experience/session-replay/session-replay-android "Set up Session Replay for your Android apps to learn which actions your users perform.") или [iOS](/docs/observe/digital-experience/session-replay/session-replay-ios "Prerequisites and the procedure for enabling Session Replay for your iOS apps.")
+   * Мобильные приложения **Session Replay:** `Yes` для отображения сессий, записанных с Session Replay при сбоях для приложений [Android](../session-replay/session-replay-android.md "Set up Session Replay for your Android apps to learn which actions your users perform.") или [iOS](../session-replay/session-replay-ios.md "Prerequisites and the procedure for enabling Session Replay for your iOS apps.")
 3. Выберите интересующую вас пользовательскую сессию, чтобы открыть страницу сведений о сессии.
 4. Мобильные приложения: для просмотра записи Session Replay перейдите на вкладку **Session Replay** и нажмите **Play** ![Replay](https://dt-cdn.net/images/replay-button-optimized-41ad05863e.svg "Replay").
    Последнее событие сессии — это сбой, отмеченный красной точкой на временной шкале. Используйте элементы управления Session Replay для детального анализа сбоя.
@@ -222,7 +222,7 @@ Dynatrace поддерживает сегментацию пользовател
    ![Mobile user session with Session Replay](https://dt-cdn.net/images/mobile-user-session-with-session-replay-2134-d486b7d1b9.png)
 5. Чтобы просмотреть все действия и события пользователя, предшествовавшие сбою, прокрутите вниз до раздела **Events and actions**.
 6. Чтобы просмотреть отчёт о сбое, разверните событие сбоя и выберите **Open crash details**.
-   Отчёт о сбое предоставляет информацию об устройстве пользователя и трассировку стека. Также можно анализировать группы сбоев для [мобильных](/docs/observe/digital-experience/mobile-applications/analyze-and-use/crash-reports-mobile#crash-groups "Check the latest crash reports for your mobile applications.") и [пользовательских приложений](/docs/observe/digital-experience/custom-applications/analyze-and-use/crash-reports-custom#crash-groups "Check the latest crash reports for your custom applications.") или скачать трассировку стека сбоя.
+   Отчёт о сбое предоставляет информацию об устройстве пользователя и трассировку стека. Также можно анализировать группы сбоев для [мобильных](../mobile-applications/analyze-and-use/crash-reports-mobile.md#crash-groups "Check the latest crash reports for your mobile applications.") и [пользовательских приложений](../custom-applications/analyze-and-use/crash-reports-custom.md#crash-groups "Check the latest crash reports for your custom applications.") или скачать трассировку стека сбоя.
 
    ![Opening the mobile crash report](https://dt-cdn.net/images/open-mobile-crash-details-2132-311049ce33.png)
 
@@ -299,5 +299,5 @@ Dynatrace поддерживает сегментацию пользовател
 
 ## Связанные темы
 
-* [Пользовательские сессии](/docs/observe/digital-experience/rum-concepts/user-session "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.")
-* [Эффективная поддержка клиентов с сегментацией сессий](/docs/observe/digital-experience/dem-use-cases/customer-support-with-session-segmentation "Learn how to resolve customer complaints using session segmentation.")
+* [Пользовательские сессии](../rum-concepts/user-session.md "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.")
+* [Эффективная поддержка клиентов с сегментацией сессий](../dem-use-cases/customer-support-with-session-segmentation.md "Learn how to resolve customer complaints using session segmentation.")

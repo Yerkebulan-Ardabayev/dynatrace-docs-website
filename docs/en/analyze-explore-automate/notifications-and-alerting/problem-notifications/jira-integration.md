@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:11:34.918585
 * 3-min read
 * Updated on Apr 25, 2024
 
-For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see [Workflows Connectors](/docs/analyze-explore-automate/workflows/actions "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
+For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see [Workflows Connectors](../../workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
 
 With Dynatrace and Jira integration, issue tickets are generated automatically for all new problems that are auto-detected in your Dynatrace environments.
 

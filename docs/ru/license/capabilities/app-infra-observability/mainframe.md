@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:19:44.937750
 * Updated on Dec 10, 2025
 
 Dynatrace Mainframe Monitoring обеспечивает автоматический сквозной мониторинг производительности приложений для транзакций, регионов и приложений, развёрнутых на IBM z/OS.
-Он включает распределённую трассировку, метрики, топологию и анализ на уровне кода для [более чем 30 поддерживаемых технологий](/docs/ingest-from/technology-support/mainframe-technology-support "Learn which technologies Dynatrace supports for Mainframe monitoring.").
+Он включает распределённую трассировку, метрики, топологию и анализ на уровне кода для [более чем 30 поддерживаемых технологий](../../../ingest-from/technology-support/mainframe-technology-support.md "Learn which technologies Dynatrace supports for Mainframe monitoring.").
 
 С возможностью DPS для Mainframe Monitoring:
 
@@ -27,8 +27,8 @@ Dynatrace Mainframe Monitoring обеспечивает автоматическ
 Технические предварительные требования для DPS:
 
 * Dynatrace Cluster версии 1.279+
-* Модуль [zRemote](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote "Prepare and install the zRemote for z/OS monitoring.") версии 1.265+
-* Подсистема [zDC](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc "Set up the z/OS Data Collection subsystem (zDC).") версии 1.247+
+* Модуль [zRemote](../../../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote.md "Prepare and install the zRemote for z/OS monitoring.") версии 1.265+
+* Подсистема [zDC](../../../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc.md "Set up the z/OS Data Collection subsystem (zDC).") версии 1.247+
 
 Мониторируемый логический раздел (LPAR) представляется как хост в Dynatrace.
 Стоимость мониторинга LPAR зависит от значения Million Service Unit (MSU) раздела и продолжительности мониторинга Dynatrace.
@@ -51,28 +51,28 @@ MSU -- это единица измерения IBM для объёма вычи
 
 ### Включённое и расширенное хранение трассировок
 
-Dynatrace [хранит общий объём принятых трассировок](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods#purepath "Check retention times for various data types.") из вашей среды в течение 10 дней.
+Dynatrace [хранит общий объём принятых трассировок](../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md#purepath "Check retention times for various data types.") из вашей среды в течение 10 дней.
 
 Dynatrace предоставляет возможность выборочного продления хранения трассировок на срок до 10 лет.
-Это достигается путём [создания пользовательских бакетов](/docs/platform/grail/organize-data "Insights on the Grail data model consisting of buckets, tables, and views.") в Grail.
+Это достигается путём [создания пользовательских бакетов](../../../platform/grail/organize-data.md "Insights on the Grail data model consisting of buckets, tables, and views.") в Grail.
 Первые 10 дней хранения всегда включены.
-Любые данные трассировок, хранящиеся дольше 10 дней, тарифицируются на основе гибибайт как [Trace Retain](/docs/license/capabilities/traces#trace-retain-usage "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.").
+Любые данные трассировок, хранящиеся дольше 10 дней, тарифицируются на основе гибибайт как [Trace Retain](../traces.md#trace-retain-usage "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.").
 
 ### Метрики
 
-Mainframe Monitoring включает мониторинг производительности приложений и связанные встроенные метрики, за исключением пользовательских метрик, которые измеряются в точках данных метрик и тарифицируются как [Metrics powered by Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
-Например, [пользовательские JMX-метрики](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics "Learn how to set up JMX metrics monitoring for your Java applications on z/OS.") потребляют точки данных метрик.
+Mainframe Monitoring включает мониторинг производительности приложений и связанные встроенные метрики, за исключением пользовательских метрик, которые измеряются в точках данных метрик и тарифицируются как [Metrics powered by Grail](../metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+Например, [пользовательские JMX-метрики](../../../ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics.md "Learn how to set up JMX metrics monitoring for your Java applications on z/OS.") потребляют точки данных метрик.
 
 Как тарифицируются метрики в DPS до появления Metrics powered by Grail
 
-Если [Metrics powered by Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") отсутствует в вашем тарифном плане, точки данных метрик тарифицируются как [Custom Metrics Classic](/docs/license/capabilities/platform-extensions/custom-metrics-classic "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
+Если [Metrics powered by Grail](../metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") отсутствует в вашем тарифном плане, точки данных метрик тарифицируются как [Custom Metrics Classic](../platform-extensions/custom-metrics-classic.md "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
 
 ## Детали потребления: Mainframe
 
 Dynatrace предоставляет метрику использования, которая помогает понять и проанализировать потребление MSU-часов.
 Для использования этой метрики в ![Data Explorer](https://dt-cdn.net/images/data-explorer-512-743267b1fc.png "Data Explorer") **Data Explorer** введите следующий ключ или название метрики в поле **Search**.
 
-Кроме того, вы можете запрашивать эту метрику через [Environment API - Metrics API v2](/docs/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.").
+Кроме того, вы можете запрашивать эту метрику через [Environment API - Metrics API v2](../../../dynatrace-api/environment-api/metric-v2.md "Retrieve metric information via Metrics v2 API.").
 
 (DPS) Mainframe Monitoring billing usage
 :   Key: `builtin:billing.mainframe_monitoring.usage`
@@ -114,7 +114,7 @@ Dynatrace предоставляет метрику использования, 
 * Раздел **N7** доступен начиная с версии IBM SCRT 25.2.
   Он был выпущен IBM в декабре 2017 года.
 
-Мониторы сетевой доступности (NAM) не имеют отдельной строки в тарифном плане Dynatrace. Вместо этого тарификация основана на [количестве точек данных метрик](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model."), генерируемых при каждом выполнении теста NAM. Для получения дополнительной информации обратитесь к вашему менеджеру по работе с клиентами Dynatrace.
+Мониторы сетевой доступности (NAM) не имеют отдельной строки в тарифном плане Dynatrace. Вместо этого тарификация основана на [количестве точек данных метрик](../metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model."), генерируемых при каждом выполнении теста NAM. Для получения дополнительной информации обратитесь к вашему менеджеру по работе с клиентами Dynatrace.
 
 Расчёт точек данных метрик
 
@@ -131,6 +131,6 @@ Dynatrace предоставляет метрику использования, 
 
 ## Связанные темы
 
-* [Dynatrace OneAgent](/docs/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
-* [Обзор Application & Infrastructure Observability (DPS)](/docs/license/capabilities/app-infra-observability "Learn about the different Application & Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.")
+* [Dynatrace OneAgent](../../../ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
+* [Обзор Application & Infrastructure Observability (DPS)](../app-infra-observability.md "Learn about the different Application & Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.")
 * [Тарификация Dynatrace](https://www.dynatrace.com/pricing/)

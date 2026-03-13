@@ -15,7 +15,7 @@ updated: 2026-02-09
 
 This page describes best practices for optimizing your DQL queries for ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** custom alerts to ensure a stable performance and minimized resource and time consumption.
 
-[![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") uses the power of Grail to support a wide range of use cases through flexible DQL capabilities. This versatility allows for multiple solution approaches depending on the specific scenario. To ensure efficient and effective usage, this guide provides best practice examples that demonstrate how to get the most out of ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
+[![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**](../anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.") uses the power of Grail to support a wide range of use cases through flexible DQL capabilities. This versatility allows for multiple solution approaches depending on the specific scenario. To ensure efficient and effective usage, this guide provides best practice examples that demonstrate how to get the most out of ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
 
 ## Minimize the volume of scanned data
 
@@ -23,7 +23,7 @@ Regardless of whether your queries are included in a rate card or not, we strong
 
 ## Manage your storage properly
 
-A well-planned storage management strategy forms the foundation for optimal performance in your environment. We recommend organizing your [Dynatrace storage buckets](/docs/platform/grail/organize-data#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.") based on the usage and access patterns of your teams to prevent excessive scanning across multiple teams or organizational units. We also suggest planning your storage structure upfront to simplify access permission policy management and ensure a more efficient and secure setup.
+A well-planned storage management strategy forms the foundation for optimal performance in your environment. We recommend organizing your [Dynatrace storage buckets](../../../platform/grail/organize-data.md#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.") based on the usage and access patterns of your teams to prevent excessive scanning across multiple teams or organizational units. We also suggest planning your storage structure upfront to simplify access permission policy management and ensure a more efficient and secure setup.
 
 ## Improve query optimization via DQL filters
 
@@ -200,6 +200,6 @@ To optimize filtering and avoid including redundant fields, we recommend trying 
 
 ## Related topics
 
-* [Anomaly Detection app](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Anomaly Detection DQL writing guide](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice "Best practices for creating Anomaly Detection custom alert DQL queries.")
+* [Anomaly Detection app](../anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.")
+* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Anomaly Detection DQL writing guide](davis-ad-dql-best-practice.md "Best practices for creating Anomaly Detection custom alert DQL queries.")

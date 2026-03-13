@@ -45,7 +45,7 @@ Latest Dynatrace
 Rejected metrics come with a `reason` dimension, which provides additional details on why a data point was rejected.
 In Dynatrace, you can filter, sort, and split by that dimension.
 
-A typical reason is when metrics are sent with cumulative aggregation temporality (Dynatrace [requires delta temporality](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#aggregation-temporality "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")), in which case `reason` indicates `UNSUPPORTED_METRIC_TYPE_MONOTONIC_CUMULATIVE_SUM`.
+A typical reason is when metrics are sent with cumulative aggregation temporality (Dynatrace [requires delta temporality](otlp-api/ingest-otlp-metrics/about-metrics-ingest.md#aggregation-temporality "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")), in which case `reason` indicates `UNSUPPORTED_METRIC_TYPE_MONOTONIC_CUMULATIVE_SUM`.
 
 ### Metrics for traces ingest
 
@@ -92,7 +92,7 @@ See also:
 ### Ingestion issues
 
 * [Why does my OTLP export not work?ï»¿](https://dt-url.net/sb238k5)
-* [Dynatrace OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
+* [Dynatrace OTLP API endpoints](otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
 
 ### Vertical topology
 
@@ -102,9 +102,9 @@ See also:
 
 Specific information about ingesting each signal type is available at
 
-* [Ingest OTLP logs](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")
-* [About OTLP metrics ingest](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
-* [Ingest OTLP traces](/docs/ingest-from/opentelemetry/otlp-api/ingest-traces "Learn how Dynatrace ingests OpenTelemetry traces and what limitations apply.")
+* [Ingest OTLP logs](otlp-api/ingest-logs.md "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")
+* [About OTLP metrics ingest](otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
+* [Ingest OTLP traces](otlp-api/ingest-traces.md "Learn how Dynatrace ingests OpenTelemetry traces and what limitations apply.")
 
 ### Traces
 

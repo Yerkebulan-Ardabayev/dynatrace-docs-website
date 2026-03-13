@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:19:10.728325
 
 OneAgent, установленный в режиме full-stack, имеет встроенный настраиваемый механизм автообновления.
 
-Обзор обновления OneAgent, включая мониторинг обновлений и создание окон обновления, см. в разделе [Обновление OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-update "Узнайте, как обновить OneAgent.").
+Обзор обновления OneAgent, включая мониторинг обновлений и создание окон обновления, см. в разделе [Обновление OneAgent](../../../oneagent-update.md "Узнайте, как обновить OneAgent.").
 
 ## Настройка обновлений OneAgent
 
@@ -120,7 +120,7 @@ OneAgent, установленный в режиме full-stack, имеет вс
 1. Перейдите в **Settings** > **Updates** > **OneAgent updates**.
 2. В разделе **Update mode** выберите **No automatic updates**, чтобы отключить автоматическое обновление OneAgent.
 
-   Подробнее об отключении автоматического обновления OneAgent для PaaS/Kubernetes см. в разделе [Параметры DynaKube для Dynatrace Operator на Kubernetes/OpenShift](/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters "Список доступных параметров для настройки Dynatrace Operator на Kubernetes.").
+   Подробнее об отключении автоматического обновления OneAgent для PaaS/Kubernetes см. в разделе [Параметры DynaKube для Dynatrace Operator на Kubernetes/OpenShift](../../../../setup-on-k8s/reference/dynakube-parameters.md "Список доступных параметров для настройки Dynatrace Operator на Kubernetes.").
 3. В разделе **Target version** выберите версию OneAgent для установки на всех новых хостах.
 
 Выбранная версия OneAgent также используется для интеграций PaaS.
@@ -162,7 +162,7 @@ OneAgent, установленный в режиме full-stack, имеет вс
 
 ### Дисковое пространство
 
-Подробности см. в разделе [Файлы OneAgent и требования к дисковому пространству](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux "Узнайте о структуре каталогов OneAgent и требованиях к дисковому пространству для установки OneAgent на Linux.")
+Подробности см. в разделе [Файлы OneAgent и требования к дисковому пространству](../installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux.md "Узнайте о структуре каталогов OneAgent и требованиях к дисковому пространству для установки OneAgent на Linux.")
 
 ### Свободная память
 
@@ -174,7 +174,7 @@ OneAgent, установленный в режиме full-stack, имеет вс
 
 ### Интерфейс командной строки OneAgent
 
-Запустите `oneagentctl` с параметром `--version`. Подробнее см. в разделе [Настройка OneAgent через интерфейс командной строки](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#display-oneagent-version "Узнайте, как выполнить некоторые задачи настройки OneAgent без необходимости переустановки OneAgent.").
+Запустите `oneagentctl` с параметром `--version`. Подробнее см. в разделе [Настройка OneAgent через интерфейс командной строки](../../../oneagent-configuration-via-command-line-interface.md#display-oneagent-version "Узнайте, как выполнить некоторые задачи настройки OneAgent без необходимости переустановки OneAgent.").
 
 ### Обзор хоста
 

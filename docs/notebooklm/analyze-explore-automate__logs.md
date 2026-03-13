@@ -31,7 +31,7 @@ Understanding these approaches will help you choose the most suitable alerting m
 
 ### Use alerting with metrics based on logs
 
-Use [custom alerts](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") with metrics based on logs when you need to:
+Use [custom alerts](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.") with metrics based on logs when you need to:
 
 * Set thresholds.
 * Employ statistical analyzers to trigger alerts.
@@ -40,7 +40,7 @@ Metrics based on logs are particularly useful for detecting anomalies in the num
 
 Keep in mind that metric analyzers are triggered every minute, which means they are not suitable for real-time alerting.
 
-For detailed instructions, see [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.").
+For detailed instructions, see [Set up custom alerts based on metrics extracted from logs](../ru/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics.md "How to create and configure Davis problems and custom alerts with metrics based on logs.").
 
 ### Use alerting with events based on logs
 
@@ -51,11 +51,11 @@ It also provides near real-time alerting and instant notifications without the n
 
 It is particularly useful when you require prompt responses to specific log events without the complexity of statistical analysis.
 
-For detailed instructions, see [Set up alerts based on events extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events "How to create and configure Davis problems and alerts with events based on logs.").
+For detailed instructions, see [Set up alerts based on events extracted from logs](../ru/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events.md "How to create and configure Davis problems and alerts with events based on logs.").
 
 ### Use DQL queries in custom alerts
 
-Use DQL queries in [custom alerts](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") when you need to define custom alert conditions based on specific log data patterns, and metric or event extraction is not possible.
+Use DQL queries in [custom alerts](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.") when you need to define custom alert conditions based on specific log data patterns, and metric or event extraction is not possible.
 This approach allows for flexible and precise querying to identify events or trends within your logs.
 
 Keep in mind that these queries are executed every minute, which can increase license consumption.
@@ -64,7 +64,7 @@ Therefore, make sure you use only optimized queries.
 This method is not typically recommended as the primary alerting strategy.
 However, it can serve as a fallback when alerting with metrics or events is not possible.
 
-For detailed instructions, see [Create log alerts for a log event or summary of log data](/docs/dynatrace-intelligence/use-cases/create-alert-in-logs "Create log alerts for a specific log event or summary of log data").
+For detailed instructions, see [Create log alerts for a log event or summary of log data](../ru/dynatrace-intelligence/use-cases/create-alert-in-logs.md "Create log alerts for a specific log event or summary of log data").
 
 ## Comparison of Alerting Methods
 
@@ -79,11 +79,11 @@ For detailed instructions, see [Create log alerts for a log event or summary of 
 
 ## Related topics
 
-* [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Anomaly detection](/docs/dynatrace-intelligence/anomaly-detection "How Dynatrace detects anomalies in your environment.")
-* [Event analysis and correlation](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation "Gain an understanding of the Events section on each host, process, and service overview page.")
-* [Anomaly detection configuration](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration "How to set up an alert for missing measurements.")
-* [Detect problems with Logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs "Use the Problems app and Logs to quickly detect and analyze arising problems.")
+* [OpenPipeline](../ru/platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
+* [Anomaly detection](../ru/dynatrace-intelligence/anomaly-detection.md "How Dynatrace detects anomalies in your environment.")
+* [Event analysis and correlation](../ru/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation.md "Gain an understanding of the Events section on each host, process, and service overview page.")
+* [Anomaly detection configuration](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md "How to set up an alert for missing measurements.")
+* [Detect problems with Logs](../ru/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs.md "Use the Problems app and Logs to quickly detect and analyze arising problems.")
 
 ---
 
@@ -110,7 +110,7 @@ Log Management and Analytics gives you direct access to the log content of all y
 
 The logs and events viewer enables you to present log data in a filterable table that is easy to work with and to browse log data within a certain timeframe using detected aspects of the log content. You can use **Available attributes** to narrow down your log view and focus on a specific aspect of the log content.
 
-* See [Logs and events viewer](/docs/analyze-explore-automate/logs/lma-analysis/logs-and-events "Browse log data within a specified timeframe using DQL and elements that are automatically detected within the log content.")
+* See [Logs and events viewer](analyze-explore-automate/logs/lma-analysis/logs-and-events.md "Browse log data within a specified timeframe using DQL and elements that are automatically detected within the log content.")
 
 User rights for log monitoring
 
@@ -120,25 +120,25 @@ Logs often contain sensitive information that may not be appropriate for all use
 
 Once you create log events based on your log content, Dynatrace artificial intelligence will automatically correlate relevant log events with any problems that it detects in your environment. Relevant log events that are associated with problems are then factored into problem root-cause analysis.
 
-* See [Log events](/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-events "Create log events based on log data and use them in problem detection.")
+* See [Log events](analyze-explore-automate/logs/lma-log-processing/lma-log-events.md "Create log events based on log data and use them in problem detection.")
 
 ## Log metrics
 
 Dynatrace log monitoring gives you the ability not only to view and analyze logs but also to create metrics based on log data and use them throughout Dynatrace like any other metric. You can add them to your dashboard, include them in analysis, and even create custom alerts.
 
-* See [Log metrics](/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-metrics "Create metrics based on log data and use them throughout Dynatrace like any other metric.")
+* See [Log metrics](analyze-explore-automate/logs/lma-log-processing/lma-log-metrics.md "Create metrics based on log data and use them throughout Dynatrace like any other metric.")
 
 ## Log custom attributes
 
 In Dynatrace log monitoring, you can define your own custom log data attributes that suits your particular log data format. Similarly to the automatically detected log attributes, your custom log attributes are extracted from the log data during ingestion and become available within Dynatrace.
 
-* See [Log custom attributes](/docs/analyze-explore-automate/logs/lma-analysis/logs-and-events/lma-log-custom-attributes "Create and use custom attributes during log data ingestion.")
+* See [Log custom attributes](analyze-explore-automate/logs/lma-analysis/logs-and-events/lma-log-custom-attributes.md "Create and use custom attributes during log data ingestion.")
 
 ## Enriched log data analysis
 
 With enriched log data, you can check for the specific user inside your application. Use the log viewer and PurePathÂ® distributed traces link from a specific log record. You can view all logs for a particular user session to see how the user interacted with the application and, with the **Logs** tab in distributed traces, you can navigate through the trace and, based on logs associated with that trace, quickly see what happened.
 
-* See [Leverage log enrichment for traces to resolve problems](/docs/observe/application-observability/distributed-traces/use-cases/problems-logs-traces "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.")
+* See [Leverage log enrichment for traces to resolve problems](../ru/observe/application-observability/distributed-traces/use-cases/problems-logs-traces.md "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.")
 
 ---
 
@@ -183,7 +183,7 @@ Here are some things to think about before you start, so that you can make an ef
 Different sources use different ways to send log data.
 By estimating your daily ingest volume, you can better decide on data partition and segmentation.
 
-For more about collecting and ingesting data, see [Log ingestion](/docs/analyze-explore-automate/logs/lma-log-ingestion#log-ingestion "Stream log data to Dynatrace.").
+For more about collecting and ingesting data, see [Log ingestion](../ru/analyze-explore-automate/logs/lma-log-ingestion.md#log-ingestion "Stream log data to Dynatrace.").
 
 ### 2. Identify usage patterns, log types, and retention needs
 
@@ -220,7 +220,7 @@ Grail organizes data in buckets. Buckets behave like folders in a file system an
 * Serves the same use case.
 * Needs to be deleted at the same time.
 
-For more about buckets, see [Configure data storage and retention for logs](/docs/analyze-explore-automate/logs/lma-bucket-assignment "Your log data can be stored in data retention buckets based on specific retention periods.").
+For more about buckets, see [Configure data storage and retention for logs](../ru/analyze-explore-automate/logs/lma-bucket-assignment.md "Your log data can be stored in data retention buckets based on specific retention periods.").
 
 ## Best practices
 
@@ -273,7 +273,7 @@ If you intentionally use the default bucket for onboarding new data, a good prac
 
 For most use cases, try to keep the volume of daily retained data in a single bucket to around 2â3 TB. This is especially true for frequently queried buckets. (However, it is usually not possible for buckets used to address compliance use cases, where you'll likely retain petabytes worth of log records in a single bucket.)
 
-This will help to ensure the best user experience and performance, especially if users don't follow [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.") (such as applying specific filters for time spans or buckets, or increasing the query volume limit with the `scanLimitGBytes` parameter).
+This will help to ensure the best user experience and performance, especially if users don't follow [DQL best practices](../ru/platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.") (such as applying specific filters for time spans or buckets, or increasing the query volume limit with the `scanLimitGBytes` parameter).
 
 ### Configure bucket retention periods
 
@@ -284,11 +284,11 @@ For example:
 * Debug logs for application developers can be stored in one bucket with a shorter retention period.
 * Access and security logs from networking teams can be stored a different bucket with a longer retention period.
 
-Log records can be stored from one day up to 10 years. The retention period is defined when you create a bucket, and can be re-configured at any time. For more information about retention periods, see [Data retention periods: Log Management and Analytics](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods#log-management "Check retention times for various data types.").
+Log records can be stored from one day up to 10 years. The retention period is defined when you create a bucket, and can be re-configured at any time. For more information about retention periods, see [Data retention periods: Log Management and Analytics](../ru/manage/data-privacy-and-security/data-privacy/data-retention-periods.md#log-management "Check retention times for various data types.").
 
 ### Filter logs on ingest
 
-You can filter logs so that non-relevant logs are either sent to a different bucket or deleted outright. To filter logs on ingest, use either OneAgent (see [Log ingest rules](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis.")) or OpenPipeline (see [OpenPipeline processing examples](/docs/platform/openpipeline/use-cases/processing-examples "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")).
+You can filter logs so that non-relevant logs are either sent to a different bucket or deleted outright. To filter logs on ingest, use either OneAgent (see [Log ingest rules](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.")) or OpenPipeline (see [OpenPipeline processing examples](../ru/platform/openpipeline/use-cases/processing-examples.md "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")).
 
 ### Use bucket filters
 
@@ -296,9 +296,9 @@ Bucket filters are like permissions on the query level. By adding a bucket filte
 
 This reduces the amount of scanned data and the associated costs, especially with queries used in auto-refreshing dashboards.
 
-Additionally, you can use segments to provide easy filtering by bucket, see [Segment logs by bucket](/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket "Segment logs by bucket with segments").
+Additionally, you can use segments to provide easy filtering by bucket, see [Segment logs by bucket](../ru/manage/segments/use-cases/segments-use-cases-logs-by-bucket.md "Segment logs by bucket with segments").
 
-For more information about bucket filters, see [Query and filter logs](/docs/analyze-explore-automate/logs/lma-logs-app/query-and-filter "Explore logs with DQL queries and filter statements in the Dynatrace Logs app.").
+For more information about bucket filters, see [Query and filter logs](../ru/analyze-explore-automate/logs/lma-logs-app/query-and-filter.md "Explore logs with DQL queries and filter statements in the Dynatrace Logs app.").
 
 ### Set access permissions
 
@@ -314,21 +314,21 @@ By externalizing access conditions, policy boundaries simplify management, ensur
 
 For more information about access permissions, see the following page:
 
-* [Bucket permissions](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-bucket "Find out how to assign permissions to buckets and tables in Grail.")
-* [Record-level permissions](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.")
-* [Policy boundaries](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries "Restrict security policies with policy boundaries to provide tailored access to your users.")
+* [Bucket permissions](../ru/platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-bucket "Find out how to assign permissions to buckets and tables in Grail.")
+* [Record-level permissions](../ru/platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.")
+* [Policy boundaries](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries.md "Restrict security policies with policy boundaries to provide tailored access to your users.")
 
 ### Use log-based events and metrics
 
 You can create events and metrics from log records.
 
-To convert log queries to log-based metrics, see [Optimize performance and costs of dashboards running log queries](/docs/analyze-explore-automate/logs/lma-use-cases/lma-log-query-dashboard "How to optimize performance and costs of dashboards running log queries."). After you've extracted metrics, you can delete the log recordsâthis is especially useful for aggregated information where access to the raw record isnât important.
+To convert log queries to log-based metrics, see [Optimize performance and costs of dashboards running log queries](../ru/analyze-explore-automate/logs/lma-use-cases/lma-log-query-dashboard.md "How to optimize performance and costs of dashboards running log queries."). After you've extracted metrics, you can delete the log recordsâthis is especially useful for aggregated information where access to the raw record isnât important.
 
-You can use log-based events and metrics for alerting, instead of log queries. For more information, see [Set up alerts based on events extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events "How to create and configure Davis problems and alerts with events based on logs.") and [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.").
+You can use log-based events and metrics for alerting, instead of log queries. For more information, see [Set up alerts based on events extracted from logs](../ru/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events.md "How to create and configure Davis problems and alerts with events based on logs.") and [Set up custom alerts based on metrics extracted from logs](../ru/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics.md "How to create and configure Davis problems and custom alerts with metrics based on logs.").
 
 ### Use apps with logs in context
 
-Some apps, such as Kubernetes, let you see logs in context. This lets you scan only the logs that are relevant to a specific use case. For more information, see [Use logs in context to troubleshoot Kubernetes (K8s) issues](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-troubleshooting "Faster troubleshooting with logs, metrics and traces on Kubernetes.").
+Some apps, such as Kubernetes, let you see logs in context. This lets you scan only the logs that are relevant to a specific use case. For more information, see [Use logs in context to troubleshoot Kubernetes (K8s) issues](analyze-explore-automate/logs/lma-use-cases/lma-e2e-troubleshooting.md "Faster troubleshooting with logs, metrics and traces on Kubernetes.").
 
 Viewing logs in context using the Dynatrace apps is zero rated and therefore free of charge. This includes features like surrounding logs (viewing related log entries) and drill-down views, for example, changing from a trace view to a topology view.
 
@@ -344,7 +344,7 @@ For your log records, you can additionally utilize the following Dynatrace apps:
 
 Since you use DQL to access log records, follow DQL best practices to create optimized queries.
 
-For more information, see [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.").
+For more information, see [DQL best practices](../ru/platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.").
 
 ### Track adoption and usage
 
@@ -386,7 +386,7 @@ To start, first you need to set up log ingestion.
 
 ### 1. Set up log ingestion
 
-To set up log ingestion, follow the steps described in [Log ingestion](/docs/analyze-explore-automate/logs/lma-log-ingestion "Stream log data to Dynatrace.").
+To set up log ingestion, follow the steps described in [Log ingestion](../ru/analyze-explore-automate/logs/lma-log-ingestion.md "Stream log data to Dynatrace.").
 
 By default, all log data is ingested into the `default_logs` bucket. Ideally, after you have implemented all the best practices, only admins should have access to this bucket. Bucket permissions should follow the principle of least privilege, in which individual users have access to just the buckets that they're required to query or visualize.
 
@@ -406,7 +406,7 @@ There are two ways that you can verify data is ingested and retained.
   | filter dt.system.bucket == "default_logs"
   ```
 
-If you don't see any log data, see [Troubleshooting Log Management and Analytics](/docs/analyze-explore-automate/logs/lma-troubleshooting "Fix issues related to the setup and configuration of Log Management and Analytics.") for troubleshooting tips.
+If you don't see any log data, see [Troubleshooting Log Management and Analytics](../ru/analyze-explore-automate/logs/lma-troubleshooting.md "Fix issues related to the setup and configuration of Log Management and Analytics.") for troubleshooting tips.
 
 ### Apply best practices
 
@@ -425,14 +425,14 @@ This step creates a dedicated bucket for certain data.
    For this example, set the type to `logs`.
 5. Optional Select **Retain with Included Queries** and define the included query retention period.
 
-   For more info about Retain with Included Queries, see [Take control of log query costs using Retain with Included Queries](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-included-log-queries "How to use the Retain with Included Queries capability to control and predict log consumption.").
+   For more info about Retain with Included Queries, see [Take control of log query costs using Retain with Included Queries](analyze-explore-automate/logs/lma-use-cases/lma-e2e-included-log-queries.md "How to use the Retain with Included Queries capability to control and predict log consumption.").
 6. Select **Create** to save the bucket.
 
 ### 2. Filter logs on ingest
 
 
 
-[OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") handles log ingestion from all sources and allows processing, transformation and bucket assignment before logs are stored in Grail.
+[OpenPipeline](../ru/platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") handles log ingestion from all sources and allows processing, transformation and bucket assignment before logs are stored in Grail.
 
 For this example, let's use OpenPipeline to filter logs on ingest. We'll configure a pipeline that processes CloudFront logs and stores them in the `access_logs` bucket.
 
@@ -533,11 +533,11 @@ This step grants users access to only specific buckets.
 
 ## Related topics
 
-* [Log ingestion via OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
-* [Log ingestion API](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
-* [OneAgent log ingest API](/docs/ingest-from/extend-dynatrace/extend-logs/oneagent-log-ingest-api "Use the Dynatrace API to push locally retrieved logs to Dynatrace.")
+* [Log ingestion via OneAgent](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
+* [Log ingestion API](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
+* [OneAgent log ingest API](../ru/ingest-from/extend-dynatrace/extend-logs/oneagent-log-ingest-api.md "Use the Dynatrace API to push locally retrieved logs to Dynatrace.")
 * [Explore Log Management and Analytics in Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?filter=log-management-and-analytics&internal_source=doc&internal_medium=link&internal_campaign=cross)
-* [Log processing with OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.")
+* [Log processing with OpenPipeline](../ru/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.")
 
 ---
 
@@ -574,8 +574,8 @@ This tutorial is intended for Site Reliability Engineers (SREs) and architects w
 
 ## Prerequisites
 
-* Permissions to [manage custom Grail buckets](/docs/platform/grail/organize-data#managing-custom-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
-* `openpipeline:configurations:write` and `openpipeline:configurations:read` permissions. To learn how to set up the permissions, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
+* Permissions to [manage custom Grail buckets](../ru/platform/grail/organize-data.md#managing-custom-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
+* `openpipeline:configurations:write` and `openpipeline:configurations:read` permissions. To learn how to set up the permissions, see [Permissions in Grail](../ru/platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
 
 ## Example 1: Retain logs for three years
 
@@ -587,7 +587,7 @@ Using a custom log bucket, you can:
 * Store log data that needs to be queried and analyzed together.
 * Store log data that needs to be deleted at the same time.
 
-For more information, see [Log Management and Analytics best practices](/docs/analyze-explore-automate/logs/lma-best-practices "Best practices for setting up Log Management and Analytics with Dynatrace.").
+For more information, see [Log Management and Analytics best practices](../ru/analyze-explore-automate/logs/lma-best-practices.md "Best practices for setting up Log Management and Analytics with Dynatrace.").
 
 ### 1. Create a custom bucket
 
@@ -618,13 +618,13 @@ For more information, see [Log Management and Analytics best practices](/docs/an
 ### 3. Assign bucket permissions to users
 
 1. Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/), and select one of your accounts.
-2. Set up permissions and [assign bucket permissions](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.") to the right users.
+2. Set up permissions and [assign bucket permissions](../ru/platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.") to the right users.
 
 ## Example 2: Skip storage for selected logs
 
 With this example, you skip the storage of logs that match the route and pipeline conditions. Log records are not retained.
 
-This can be useful when you [parse log lines and extract metrics](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Configure OpenPipeline processing for log lines."), and access to original records is not needed.
+This can be useful when you [parse log lines and extract metrics](../ru/platform/openpipeline/use-cases/tutorial-log-processing-pipeline.md "Configure OpenPipeline processing for log lines."), and access to original records is not needed.
 
 To skip storage for selected log records
 
@@ -646,21 +646,21 @@ There are two retention models that you can configure on a per-bucket basis:
 * **Usage-based**: Each query execution is charged separately.
 * **Retain with Included Queries**: Log data for the defined timeframe is included in the retention cost. Querying this data does not incur additional costs.
 
-For more information, see [Take control of log query costs using Retain with Included Queries](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-included-log-queries "How to use the Retain with Included Queries capability to control and predict log consumption.").
+For more information, see [Take control of log query costs using Retain with Included Queries](analyze-explore-automate/logs/lma-use-cases/lma-e2e-included-log-queries.md "How to use the Retain with Included Queries capability to control and predict log consumption.").
 
 ## Call to action
 
 Buckets are the foundation of log managementâset them up right to avoid data silos and optimize retention. A few best practices can make a big difference in performance and cost.
 
-For more information, see [Log Management and Analytics best practices](/docs/analyze-explore-automate/logs/lma-best-practices "Best practices for setting up Log Management and Analytics with Dynatrace.").
+For more information, see [Log Management and Analytics best practices](../ru/analyze-explore-automate/logs/lma-best-practices.md "Best practices for setting up Log Management and Analytics with Dynatrace.").
 
 ## Related topics
 
-* [Organize data](/docs/platform/grail/organize-data "Insights on the Grail data model consisting of buckets, tables, and views.")
-* [Data flow in OpenPipeline](/docs/platform/openpipeline/concepts/data-flow "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
-* [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies")
-* [Log Management and Analytics best practices](/docs/analyze-explore-automate/logs/lma-best-practices "Best practices for setting up Log Management and Analytics with Dynatrace.")
-* [Take control of log query costs using Retain with Included Queries](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-included-log-queries "How to use the Retain with Included Queries capability to control and predict log consumption.")
+* [Organize data](../ru/platform/grail/organize-data.md "Insights on the Grail data model consisting of buckets, tables, and views.")
+* [Data flow in OpenPipeline](../ru/platform/openpipeline/concepts/data-flow.md "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
+* [Working with policies](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies")
+* [Log Management and Analytics best practices](../ru/analyze-explore-automate/logs/lma-best-practices.md "Best practices for setting up Log Management and Analytics with Dynatrace.")
+* [Take control of log query costs using Retain with Included Queries](analyze-explore-automate/logs/lma-use-cases/lma-e2e-included-log-queries.md "How to use the Retain with Included Queries capability to control and predict log consumption.")
 
 ---
 
@@ -681,7 +681,7 @@ scraped: 2026-03-05T21:30:59.143327
 * 1-min read
 * Updated on Oct 15, 2025
 
-With [Dynatrace on Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), you can use [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") (DQL) functions and logical operators in matchers.
+With [Dynatrace on Grail](../ru/platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), you can use [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") (DQL) functions and logical operators in matchers.
 
 The matcher filters the ingested data and reduces the scope of data processed by the rule that you create. You can use the matcher in log and event processing, log metrics, log events, and log buckets to:
 
@@ -690,7 +690,7 @@ The matcher filters the ingested data and reduces the scope of data processed by
 * Test if a value is NULL.
 * Use logical operators to connect two or more expressions.
 
-  To learn about the use of logical operators in DQL, see [Logical or equality operators](/docs/platform/grail/dynatrace-query-language/operators#dql-logical-or-equality-operators "A list of DQL Operators.").
+  To learn about the use of logical operators in DQL, see [Logical or equality operators](../ru/platform/grail/dynatrace-query-language/operators.md#dql-logical-or-equality-operators "A list of DQL Operators.").
 
 ## Functions
 
@@ -699,7 +699,7 @@ The matcher filters the ingested data and reduces the scope of data processed by
 Filters records containing a specified phrase. Returns only matching records. This function is case insensitive for ASCII characters, it works with multi-value attributes (matching any of the values), and the asterisk character (`*`) is a wildcard only referring to a single term, not the whole field value.
 
 * **Validation**  
-  The `matchesPhrase` function performs case-insensitive [contains](/docs/platform/grail/dynatrace-query-language/functions#contains "A list of DQL functions.") for the whole query string and doesn't support mid-string wildcards.
+  The `matchesPhrase` function performs case-insensitive [contains](../ru/platform/grail/dynatrace-query-language/functions.md#contains "A list of DQL functions.") for the whole query string and doesn't support mid-string wildcards.
   For found results, additional validation takes place:
 
   + if the query starts with a word character, the preceding character must be a non-word character.
@@ -766,7 +766,7 @@ Tests if a value is NULL.
 
 ## Operators
 
-Logical operators can be used to connect two or more expressions. Check out [Logical or equality operators](/docs/platform/grail/dynatrace-query-language/operators#dql-logical-or-equality-operators "A list of DQL Operators.") to find out more about the behavior of logical operators in DQL.
+Logical operators can be used to connect two or more expressions. Check out [Logical or equality operators](../ru/platform/grail/dynatrace-query-language/operators.md#dql-logical-or-equality-operators "A list of DQL Operators.") to find out more about the behavior of logical operators in DQL.
 
 ### OR
 
@@ -809,7 +809,7 @@ Logical negation.
 
 ### Strict equality
 
-[Logical operator](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.") (`==`) indicating an exact match.
+[Logical operator](../ru/platform/grail/dynatrace-query-language/operators.md "A list of DQL Operators.") (`==`) indicating an exact match.
 
 Data types need to be identical. However, if the decimal value is `0`, floating numbers can be compared with integer data. For example, `1==1.0`  
 For strings, the search is case-sensitive.
@@ -832,11 +832,11 @@ matchesValue(process.technology, "nginx") and ( matchesPhrase(content, "error") 
 
 ## Reuse expressions
 
-All the matcher expressions used in either log events, metrics, processing or bucket configurations are valid DQL. That means you can also use these expressions together with DQL filter command, for example, in the [log viewer](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.").
+All the matcher expressions used in either log events, metrics, processing or bucket configurations are valid DQL. That means you can also use these expressions together with DQL filter command, for example, in the [log viewer](../ru/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer.md "Learn how to use Dynatrace log viewer to analyze log data.").
 
 ## Related topics
 
-* [Conversion to DQL for Logs](/docs/analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion "Convert your current log monitoring rules to DQL.")
+* [Conversion to DQL for Logs](analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion.md "Convert your current log monitoring rules to DQL.")
 
 ---
 
@@ -861,15 +861,15 @@ Dynatrace can transform your incoming log lines for improved clarity, analysis, 
 
 Switch to log processing with OpenPipeline
 
-Even thought the classic log processing pipeline is still available for some environments, we recommend switching to [log processing with OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.") as a powerful solution to manage, process, and analyze logs. Log processing with the classic pipeline will be deprecated at some point in the future.
+Even thought the classic log processing pipeline is still available for some environments, we recommend switching to [log processing with OpenPipeline](../ru/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.") as a powerful solution to manage, process, and analyze logs. Log processing with the classic pipeline will be deprecated at some point in the future.
 
-Log processing occurs as log data arrives in the Dynatrace SaaS environment and before it is written to disk (stored). By setting log processing rules, you can process the log data as soon as it reaches Dynatrace. After the log data is processed, it's sent to storage and is available for further analysis. This method allows to process log data from all [log ingest](/docs/analyze-explore-automate/logs/lma-log-ingestion "Stream log data to Dynatrace.") channels.
+Log processing occurs as log data arrives in the Dynatrace SaaS environment and before it is written to disk (stored). By setting log processing rules, you can process the log data as soon as it reaches Dynatrace. After the log data is processed, it's sent to storage and is available for further analysis. This method allows to process log data from all [log ingest](../ru/analyze-explore-automate/logs/lma-log-ingestion.md "Stream log data to Dynatrace.") channels.
 
 For example, you can extract numerical values from log lines using the classic log processing pipeline, turn these into metrics on the Dynatrace Platform, and include them in dashboards and problem detection.
 
 DDU consumption
 
-Log processing does not affect [DDU](/docs/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.") consumption of log ingest.
+Log processing does not affect [DDU](../ru/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics.md "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.") consumption of log ingest.
 
 Log processing with the classic pipeline is based on rules that contain a matcher and a processing rule definition.
 
@@ -882,7 +882,7 @@ The classic log processing pipeline includes the following steps:
 
 1. Automatic log processing on ingest
 
-2. [Log processing with the classic pipeline](/docs/analyze-explore-automate/logs/lma-classic-log-processing "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.")
+2. [Log processing with the classic pipeline](../ru/analyze-explore-automate/logs/lma-classic-log-processing.md "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.")
 
 ![Diagram - Steps of log processing with classic pipeline](https://dt-cdn.net/images/lma-log-processing-with-classic-pipeline-2500-3154c0acd9.png)
 
@@ -914,7 +914,7 @@ To create a log processing rule
 2. Select **Add rule**.
 3. Provide the name for the log processing rule.
 4. Provide a log query in the **Matcher** section.  
-   A log search query narrows down the available log data for executing this specific rule. Add a **Matcher** to your rule by pasting your [matcher-specific DQL query](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher "Examine specific DQL functions and logical operators for log processing.").
+   A log search query narrows down the available log data for executing this specific rule. Add a **Matcher** to your rule by pasting your [matcher-specific DQL query](../ru/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher.md "Examine specific DQL functions and logical operators for log processing.").
 
    Matching based on previous rules is not supported
 
@@ -922,7 +922,7 @@ To create a log processing rule
 5. Provide the processing rule definition.  
    The processing rule definition is a log processing instruction about how Dynatrace should transform or modify your log data.
 
-   The rule definition is created using log processing [commands](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-commands "Explore scenarios of how to use log processing commands in Dynatrace powered by Grail."), [functions](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-functions "Explore scenarios of how to use log processing functions in Dynatrace powered by Grail."), and pattern matching ([Dynatrace Pattern Language](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.")) that allows you to add, transform, or remove incoming log records. This gives you total control over how your log data is presented to Dynatrace log monitoring.
+   The rule definition is created using log processing [commands](analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-commands.md "Explore scenarios of how to use log processing commands in Dynatrace powered by Grail."), [functions](analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-functions.md "Explore scenarios of how to use log processing functions in Dynatrace powered by Grail."), and pattern matching ([Dynatrace Pattern Language](../ru/platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.")) that allows you to add, transform, or remove incoming log records. This gives you total control over how your log data is presented to Dynatrace log monitoring.
 6. Test the log processing rule.
 
    1. Provide a log sample.
@@ -935,8 +935,8 @@ To create a log processing rule
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [DQL matcher in logs](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher "Examine specific DQL functions and logical operators for log processing.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [DQL matcher in logs](../ru/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher.md "Examine specific DQL functions and logical operators for log processing.")
 
 ---
 
@@ -995,7 +995,7 @@ A log request may increase in size due to the following reasons:
 * Missing content attributes in ingested log records: If a log ingested through the Log Ingestion API endpoint does not have a content-like attribute, this attribute will be added after ingestion.
 * For logs ingested via the OTLP endpoint, resource and scope attributes are copied to each individual log record.
 
-Check your access to OpenPipeline in [Log processing with OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.").
+Check your access to OpenPipeline in [Log processing with OpenPipeline](../ru/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.").
 
 ## Log ingestion latency
 
@@ -1019,10 +1019,10 @@ Number of metrics is limited to:
 
 ## Log ingestion API request objects
 
-In addition to generic Dynatrace API limitations ([Dynatrace API - Access limit](/docs/dynatrace-api/basics/access-limit "Find out about payload limits and request throttling that may affect your use of the Dynatrace API.")) the following log ingestion API specific limits apply:
+In addition to generic Dynatrace API limitations ([Dynatrace API - Access limit](dynatrace-api/basics/access-limit.md "Find out about payload limits and request throttling that may affect your use of the Dynatrace API.")) the following log ingestion API specific limits apply:
 
-* `LogMessageJson` JSON object. See [Ingest JSON and TXT logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.") for the complete list of keys and their descriptions.
-* `LogMessageOTLP` OpenTelemetry Protocol object. See [Ingest OTLP logs](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
+* `LogMessageJson` JSON object. See [Ingest JSON and TXT logs](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.") for the complete list of keys and their descriptions.
+* `LogMessageOTLP` OpenTelemetry Protocol object. See [Ingest OTLP logs](../ru/ingest-from/opentelemetry/otlp-api/ingest-logs.md "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
 
 ## Limits for your log autodiscovery when using OneAgent
 
@@ -1138,7 +1138,7 @@ Log enrichment modifies your ingested log data and adds the following informatio
 
 ## Supported frameworks
 
-For a complete list of logging frameworks that support automatic trace/span log context enrichment, go to [Technology support](/docs/ingest-from/technology-support#web-servers "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+For a complete list of logging frameworks that support automatic trace/span log context enrichment, go to [Technology support](../ru/ingest-from/technology-support.md#web-servers "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 ## Structured log data
 
@@ -1280,7 +1280,7 @@ Log data in raw text is enriched with an additional `[!dt dt.trace_id=$trace_id,
 
 OneAgent version 1.239+
 
-You can manually enrich your Dynatrace ingested log data by defining a log pattern to include the `dt.span_id`, `dt.trace_id`, `dt.trace_sampled`, and `dt.entity.process_group_instance` fields. You can enable manual log enrichment for a specific technology by following the [Log enrichment steps](/docs/analyze-explore-automate/logs/lma-log-enrichment#enableenr "Connect your incoming log data to traces for more precise Dynatrace analysis.").
+You can manually enrich your Dynatrace ingested log data by defining a log pattern to include the `dt.span_id`, `dt.trace_id`, `dt.trace_sampled`, and `dt.entity.process_group_instance` fields. You can enable manual log enrichment for a specific technology by following the [Log enrichment steps](../ru/analyze-explore-automate/logs/lma-log-enrichment.md#enableenr "Connect your incoming log data to traces for more precise Dynatrace analysis.").
 
 Be sure to follow these rules for the format of the enriched fields in an unstructured log:
 
@@ -1510,7 +1510,7 @@ In .NET Serilog, you can customize the output templates for text-based sinks, li
 
 You can enrich your logs using NGINX ingress with Kubernetes in two steps:
 
-1. Execute the [ingress-nginx on Kubernetes](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/instrument-nginx "Instrument ingress-nginx on Kubernetes") instrumentation instructions.
+1. Execute the [ingress-nginx on Kubernetes](../ru/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/instrument-nginx.md "Instrument ingress-nginx on Kubernetes") instrumentation instructions.
 2. Add the command below to the `configmap.yaml` file for NGINX ingress.
 
    Adding the `main-snippet` line enables OneAgent ingestion and is optional if you have followed the manual instrumentation instructions already.
@@ -2015,7 +2015,7 @@ log.Fatal(http.ListenAndServe(":8080", nil))
 }
 ```
 
-For details on configuration, see [AWS Lambda logs in context of traces](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/log-enrichment "Configure log message enrichment with OpenTelemetry on AWS Lambda.").
+For details on configuration, see [AWS Lambda logs in context of traces](../ru/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/log-enrichment.md "Configure log message enrichment with OpenTelemetry on AWS Lambda.").
 
 For instructions on how to source these attributes via OneAgent SDK:
 
@@ -2150,11 +2150,11 @@ endpoint="http://localhost:14499/otlp/v1/traces"
 )))
 ```
 
-When using OneAgent, make sure to enable the public [Extension Execution Controller](/docs/ingest-from/extensions/concepts#eec "Learn more about the concept of Dynatrace Extensions.") in your Dynatrace Settings, otherwise no data will be sent.
+When using OneAgent, make sure to enable the public [Extension Execution Controller](../ru/ingest-from/extensions/concepts.md#eec "Learn more about the concept of Dynatrace Extensions.") in your Dynatrace Settings, otherwise no data will be sent.
 
 Go to **Settings** > **Preferences** > **Extension Execution Controller**. The toggles **Enable Extension Execution Controller** and **Enable local PIPE/HTTP metric and Log Ingest API** should be active.
 
-For details on configuration, see [Instrument your Python application with OpenTelemetry](/docs/ingest-from/opentelemetry/walkthroughs/python "Learn how to instrument your Python application using OpenTelemetry and Dynatrace.")
+For details on configuration, see [Instrument your Python application with OpenTelemetry](../ru/ingest-from/opentelemetry/walkthroughs/python.md "Learn how to instrument your Python application using OpenTelemetry and Dynatrace.")
 
 ## Limitations
 
@@ -2258,8 +2258,8 @@ format: winston.format.simple()
 
 ## Related topics
 
-* [Leverage log enrichment for traces to resolve problems](/docs/observe/application-observability/distributed-traces/use-cases/problems-logs-traces "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.")
-* [Automatic log enrichment](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.")
+* [Leverage log enrichment for traces to resolve problems](../ru/observe/application-observability/distributed-traces/use-cases/problems-logs-traces.md "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.")
+* [Automatic log enrichment](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.")
 
 ---
 
@@ -2288,7 +2288,7 @@ This guide shows you how to configure your Environment ActiveGate on Linux to co
 
 ## Prerequisites
 
-* Environment ActiveGate version 1.295+ on Linux installed to [monitor remote technologies](/docs/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose "Learn about the routing and monitoring capabilities and uses of ActiveGate.").
+* Environment ActiveGate version 1.295+ on Linux installed to [monitor remote technologies](ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose.md "Learn about the routing and monitoring capabilities and uses of ActiveGate.").
 * Your network devices have syslog enabled, or you have other syslog producers configured in your network. Refer to RFC 3164 and RFC 5424 for details. Dynatrace supports a wide variety of syslog implementations, including RSysLog, Syslog-NG, NXLog, and others.
 * By default, the ingested syslogs must be in the format defined by RFC 3164 and RFC 5424. If your devices produce non-standard syslog entries, you need to transform them to the supported format using [Dynatrace OpenPipeline processing](#process-non-standard-syslog).
 
@@ -2315,7 +2315,7 @@ To enable syslog ingestion
 
 1. **Deploy Environment ActiveGate**.
 
-   Deploy Environment ActiveGate in a place ensuring connectivity between ActiveGate and the monitored devices. See instructions for [Linux](/docs/ingest-from/dynatrace-activegate/installation/linux "Learn how to install ActiveGate on Windows, customize installation, and more."), and use the [remote technologies monitoring](/docs/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose "Learn about the routing and monitoring capabilities and uses of ActiveGate.") purpose.
+   Deploy Environment ActiveGate in a place ensuring connectivity between ActiveGate and the monitored devices. See instructions for [Linux](../ru/ingest-from/dynatrace-activegate/installation/linux.md "Learn how to install ActiveGate on Windows, customize installation, and more."), and use the [remote technologies monitoring](ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose.md "Learn about the routing and monitoring capabilities and uses of ActiveGate.") purpose.
 2. **Enable syslog ingestion on your ActiveGate**.
 
    Add the following flag to the `/var/lib/dynatrace/remotepluginmodule/agent/conf/extensionsuser.conf` file:
@@ -2331,7 +2331,7 @@ To enable syslog ingestion
 
    If your syslog producers use the default ports per supported protocols, your syslog-enabled ActiveGate should receive syslog records right away.
 
-   If your syslog producers send events on custom ports or the syslog protocol is RFC 3164, modify the syslog receiver configuration. For details, see [Ingest syslog data with the OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/syslog "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.").
+   If your syslog producers send events on custom ports or the syslog protocol is RFC 3164, modify the syslog receiver configuration. For details, see [Ingest syslog data with the OpenTelemetry Collector](ingest-from/opentelemetry/collector/use-cases/syslog.md "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.").
 
    Default syslog receiver configuration
 
@@ -2775,7 +2775,7 @@ To enable syslog ingestion
    #      exporters: [otlp_http/syslog]
    ```
 
-   Do not modify the [exporter configuration](/docs/ingest-from/opentelemetry/collector/use-cases/syslog#exporters "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace."). It's preconfigured to forward your syslogs to the Dynatrace Environment.
+   Do not modify the [exporter configuration](ingest-from/opentelemetry/collector/use-cases/syslog.md#exporters "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace."). It's preconfigured to forward your syslogs to the Dynatrace Environment.
 4. **Verify syslog ingestion is enabled**.
 
    Open the newest `ruxit_extensionmodule_*.log` log file in the `/var/lib/dynatrace/remotepluginmodule/log/extensions` directory, and make sure it contains the following line:
@@ -2895,7 +2895,7 @@ Let's assume a credit card number is visible in a syslog as follows:
 <14>2 2024-07-19T14:53:55Z example-host 0OOButHPbR 1234 - - New operation for CreditCard 1234567891011124
 ```
 
-To mask a credit card number, add the following configuration under the [processors](/docs/ingest-from/opentelemetry/collector/use-cases/syslog#processors "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.") node of the `syslog.yaml` file. For details, see the **Edit the syslog receiver configuration** step under [Enable syslog ingestion](#enable-syslog-ingestion).
+To mask a credit card number, add the following configuration under the [processors](ingest-from/opentelemetry/collector/use-cases/syslog.md#processors "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.") node of the `syslog.yaml` file. For details, see the **Edit the syslog receiver configuration** step under [Enable syslog ingestion](#enable-syslog-ingestion).
 
 ```
 processors:
@@ -3112,13 +3112,13 @@ Parsers help you to improve filtering, troubleshooting, metrics, alerts, and das
 
 ![syslog-bundles](https://dt-cdn.net/images/env-syslogbundles-2589-90e4e38b45.png)
 
-For more information, see [Process logs with technology bundle parsers](/docs/platform/openpipeline/use-cases/tutorial-technology-processor "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.").
+For more information, see [Process logs with technology bundle parsers](../ru/platform/openpipeline/use-cases/tutorial-technology-processor.md "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.").
 
 ## Process non-standard syslogs
 
 Sometimes, even when the ingested syslogs follow the format defined by the syslog protocols, they might still slightly deviate from the supported standard. For example, they might contain an additional space or miss a timestamp. To fix that, transform such syslog entries using the Dynatrace OpenPipeline processing.
 
-When there are differences from the syslog standard, the OpenTelemetry Collector fails to parse such syslog entries properly at ingest. They're still forwarded to Dynatrace but are not parsed on the syslog endpoint. Because of this, raw syslog messages are visible in Dynatrace, for example, in [![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**](/docs/analyze-explore-automate/logs/lma-logs-app "Search, filter, and analyze logs with Dynatrace Logs app to quickly investigate and share insights.") or [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
+When there are differences from the syslog standard, the OpenTelemetry Collector fails to parse such syslog entries properly at ingest. They're still forwarded to Dynatrace but are not parsed on the syslog endpoint. Because of this, raw syslog messages are visible in Dynatrace, for example, in [![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**](../ru/analyze-explore-automate/logs/lma-logs-app.md "Search, filter, and analyze logs with Dynatrace Logs app to quickly investigate and share insights.") or [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
 
 You can expect errors like this:
 
@@ -3157,7 +3157,7 @@ You successfully created a pipeline and configured it with a processor to struct
 
 You successfully configured a new dynamic route. All syslog logs are routed to the pipeline for processing. The new route is in the route list.
 
-To learn more about dynamic routing, see [Route data](/docs/platform/openpipeline/getting-started/how-to-routing "Learn how to route data to an OpenPipeline processing pipeline.").
+To learn more about dynamic routing, see [Route data](../ru/platform/openpipeline/getting-started/how-to-routing.md "Learn how to route data to an OpenPipeline processing pipeline.").
 
 3. Add custom attributes
 
@@ -3165,11 +3165,11 @@ Optional
 
 You can enrich syslogs at ingest with custom attributes, allowing you to route different syslog streams to separate pipelines. For details, see [Add custom attributes](#add-custom-attributes).
 
-For additional instructions and information on analyzing structured logs, see [Process logs with technology bundle parsers](/docs/platform/openpipeline/use-cases/tutorial-technology-processor "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.").
+For additional instructions and information on analyzing structured logs, see [Process logs with technology bundle parsers](../ru/platform/openpipeline/use-cases/tutorial-technology-processor.md "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.").
 
 ## Troubleshooting
 
-Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Management and Analytics](/docs/analyze-explore-automate/logs/lma-troubleshooting "Fix issues related to the setup and configuration of Log Management and Analytics.").
+Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Management and Analytics](../ru/analyze-explore-automate/logs/lma-troubleshooting.md "Fix issues related to the setup and configuration of Log Management and Analytics.").
 
 * [Syslog Ingestion via ActiveGate Troubleshooting Guideï»¿](https://community.dynatrace.com/t5/Troubleshooting/Syslog-Ingestion-via-ActiveGate-Troubleshooting-Guide/ta-p/282718)
 * [Syslog Ingestion Troubleshootingï»¿](https://community.dynatrace.com/t5/Troubleshooting/Syslog-Ingestion-Troubleshooting/ta-p/264112)
@@ -3193,18 +3193,18 @@ scraped: 2026-03-06T21:25:57.009301
 * 15-min read
 * Updated on Feb 06, 2026
 
-The Log ingestion API ingests logs in JSON, TXT, and OTLP formats. On this page, we will describe the JSON and text formats. For OTLP documentation, refer to the [OTLP](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs#otlp-structured-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.") formats.
+The Log ingestion API ingests logs in JSON, TXT, and OTLP formats. On this page, we will describe the JSON and text formats. For OTLP documentation, refer to the [OTLP](../ru/ingest-from/opentelemetry/otlp-api/ingest-logs.md#otlp-structured-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.") formats.
 
 The Log ingestion API is responsible for collecting the data and forwarding it to Dynatrace in batches.
 
 * SaaS endpoints: `https://{your-environment-id}.live.dynatrace.com/api/v2/logs/ingest`.
   The Log ingestion API endpoint is available in your Dynatrace environment.
 * Environment ActiveGate endpoints: `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/logs/ingest`.
-  The Log ingestion API is automatically enabled after you [install an ActiveGate](/docs/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate")
+  The Log ingestion API is automatically enabled after you [install an ActiveGate](ingest-from/dynatrace-activegate/installation.md "Learn how to configure ActiveGate")
 
-For details regarding supported payloads, authentication, parameters, and body objects, refer to [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.").
+For details regarding supported payloads, authentication, parameters, and body objects, refer to [Log Monitoring API v2 - POST ingest logs](../ru/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.").
 
-For details regarding limitations, refer to [Log Management and Analytics default limits](/docs/analyze-explore-automate/logs/lma-limits "Default limits for the latest version of Dynatrace Log Management and Analytics.").
+For details regarding limitations, refer to [Log Management and Analytics default limits](../ru/analyze-explore-automate/logs/lma-limits.md "Default limits for the latest version of Dynatrace Log Management and Analytics.").
 
 ## Data transformation and automatic JSON parsing
 
@@ -3216,7 +3216,7 @@ The Log ingestion API collects and attempts to automatically transform log data.
 * Supported formats are: `UTC milliseconds`, `RFC3339`, and `RFC3164`.
 
   For unsupported timestamp formats, the current timestamp is used, and the value of the unsupported format is stored in the `unparsed_timestamp` attribute.
-* Log records older than the [log age limit](/docs/analyze-explore-automate/logs/lma-limits#log-ingestion-limits "Default limits for the latest version of Dynatrace Log Management and Analytics.") are discarded. Timestamps more than 10 minutes ahead of the current time are replaced with the current time.
+* Log records older than the [log age limit](../ru/analyze-explore-automate/logs/lma-limits.md#log-ingestion-limits "Default limits for the latest version of Dynatrace Log Management and Analytics.") are discarded. Timestamps more than 10 minutes ahead of the current time are replaced with the current time.
 * If there is no supported timestamp key in the log record, the default value is the current timestamp.
 * If there is no timezone in the timestamp, the default timezone is UTC.
 
@@ -3233,7 +3233,7 @@ The Log ingestion API collects and attempts to automatically transform log data.
 ### Attributes
 
 * Log attributes contain all other keys from the input JSON object except those used for `timestamp`, `loglevel`, and `content`.
-* First-level attributes should preferably map to semantic attributes for Dynatrace to map them to context. All attributes can be used in queries, though Semantic Dictionary helps Dynatrace Intelligence AI in the interpretation of the logs. See [Semantic Dictionary](/docs/semantic-dictionary "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.") for more details.
+* First-level attributes should preferably map to semantic attributes for Dynatrace to map them to context. All attributes can be used in queries, though Semantic Dictionary helps Dynatrace Intelligence AI in the interpretation of the logs. See [Semantic Dictionary](semantic-dictionary.md "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.") for more details.
 * Automatic attribute. The `dt.auth.origin` attribute is automatically added to every log record ingested via API. This attribute is the public part of the API key that the log source authorizes to connect to the generic log ingest API.
 
 Attribute processing differs depending on tenant and environment type:
@@ -3258,7 +3258,7 @@ The raw data model preserves the original log structure and context, maintaining
 
 We recommend using this approach for highly nested JSON logs, as it maintains the semantic meaning and relationships between data points.
 
-When using log shippers such as [Fluentbit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit "Integrate Fluent Bit to stream logs to Dynatrace."), [Fluentd](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace.") or [Logstash](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash "Integrate Logstash to stream logs from nodes and pods to Dynatrace."), avoid using JSON parsers on the shipper side and let Dynatrace handle the JSON parsing instead. This approach reduces processing overhead on your log shipper and ensures consistent parsing behavior.
+When using log shippers such as [Fluentbit](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit.md "Integrate Fluent Bit to stream logs to Dynatrace."), [Fluentd](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s.md "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace.") or [Logstash](analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash.md "Integrate Logstash to stream logs from nodes and pods to Dynatrace."), avoid using JSON parsers on the shipper side and let Dynatrace handle the JSON parsing instead. This approach reduces processing overhead on your log shipper and ensures consistent parsing behavior.
 
 The raw data model transforms the content of structured logs as described in the sections below.
 
@@ -3340,7 +3340,7 @@ These attributes are merged with those provided in the log record body according
 * All query parameters passed to the Log ingestion API endpoint are added to the log record body attributes.
 * If a parameter key appears multiple times, all values are captured as an array attribute.
 * Keys and values follow the same attribute parsing rules as body attributes.
-* Certain parameters are processed by the API for internal purposes and never appear as log record attributes, even if explicitly provided (such as those used in the **XâDynatraceâOptions** header). For the complete list of reserved parameter names and their processing behavior, see the [API documentation](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs#parameters "Push custom logs to Dynatrace via the Log Monitoring API v2.").
+* Certain parameters are processed by the API for internal purposes and never appear as log record attributes, even if explicitly provided (such as those used in the **XâDynatraceâOptions** header). For the complete list of reserved parameter names and their processing behavior, see the [API documentation](../ru/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md#parameters "Push custom logs to Dynatrace via the Log Monitoring API v2.").
 
 #### Example
 
@@ -3383,8 +3383,8 @@ For multi-value attributes, the attribute key contributes to billing only once, 
 
 ## Related topics
 
-* [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.")
-* [Automatic log enrichment](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation "Log ingestion API automatically transforms log data into output values for the loglevel attribute.")
+* [Log Monitoring API v2 - POST ingest logs](../ru/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.")
+* [Automatic log enrichment](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation.md "Log ingestion API automatically transforms log data into output values for the loglevel attribute.")
 
 ---
 
@@ -3429,8 +3429,8 @@ The `level` severity key in the Log ingestion API request parameter contains the
 
 ## Related topics
 
-* [Log ingestion API](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
-* [Log ingestion via OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
+* [Log ingestion API](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
+* [Log ingestion via OneAgent](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
 
 ---
 
@@ -3457,13 +3457,13 @@ When unable to install OneAgent, use the Log ingestion API. For example, in serv
 
 ![log-api](https://dt-cdn.net/images/log-api-1980-03664b6a2d.png)
 
-You can configure Log ingestion API integration for any log shippers that integrate with Dynatrace REST API, e.g. [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector."), [Fluentbit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit "Integrate Fluent Bit to stream logs to Dynatrace."), [Fluentd](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace."), [Logstash](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash "Integrate Logstash to stream logs from nodes and pods to Dynatrace.").
+You can configure Log ingestion API integration for any log shippers that integrate with Dynatrace REST API, e.g. [OpenTelemetry Collector](../ru/ingest-from/opentelemetry/collector.md "Learn about the Dynatrace OTel Collector."), [Fluentbit](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit.md "Integrate Fluent Bit to stream logs to Dynatrace."), [Fluentd](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s.md "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace."), [Logstash](analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash.md "Integrate Logstash to stream logs from nodes and pods to Dynatrace.").
 
 Dynatrace automatically collects log and event data from a vast array of technologies. With the Log ingestion API, you can stream log records to a system and have Dynatrace transform the stream into meaningful log messages.
 
 ![LMA - Generic log ingestion API](https://dt-cdn.net/images/lma-generic-log-ingestion-api-2500-090a5b5c43.png)
 
-The Log ingestion API allows you to stream log records to the system. It is available via [Ingest JSON and TXT logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.") or via [Ingest OTLP logs](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
+The Log ingestion API allows you to stream log records to the system. It is available via [Ingest JSON and TXT logs](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.") or via [Ingest OTLP logs](../ru/ingest-from/opentelemetry/otlp-api/ingest-logs.md "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
 
 * For Dynatrace SaaS, the logs ingestion endpoint is available in your environment.
 * If the Environment ActiveGate is your choice for an endpoint in your local environment, install an ActiveGate instance: In Dynatrace Hub, select **ActiveGate** > **Set up**. The Log ingestion API v2 is automatically enabled on ActiveGate.
@@ -3477,7 +3477,7 @@ The Log ingestion API allows you to stream log records to the system. It is avai
 
   + `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/logs/ingest`
   + `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/otlp/v1/logs`
-* For Kubernetes environments, you can use [Fluentd](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace.") or [Fluent Bit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s "Integrate Fluent Bit in Kubernetes to stream logs to Dynatrace.") to forward logs to Dynatrace.
+* For Kubernetes environments, you can use [Fluentd](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s.md "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace.") or [Fluent Bit](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s.md "Integrate Fluent Bit in Kubernetes to stream logs to Dynatrace.") to forward logs to Dynatrace.
 
 ActiveGate will collect and attempt to automatically transform any log data containing the following elements:
 
@@ -3495,7 +3495,7 @@ Each API endpoint documentation specifies which response codes are retryable. Wh
 
 ## Log data queue
 
-You can customize the log data queue properties by editing the `custom.properties` file (see [Configuration properties and parameters of ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#generic-ingest "Learn which ActiveGate properties you can configure based on your needs and requirements.")) on your ActiveGate to set the following values:
+You can customize the log data queue properties by editing the `custom.properties` file (see [Configuration properties and parameters of ActiveGate](ingest-from/dynatrace-activegate/configuration/configure-activegate.md#generic-ingest "Learn which ActiveGate properties you can configure based on your needs and requirements.")) on your ActiveGate to set the following values:
 
 ```
 [generic_ingest]
@@ -3589,17 +3589,17 @@ Success
 
 ## Troubleshooting
 
-Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Management and Analytics](/docs/analyze-explore-automate/logs/lma-troubleshooting "Fix issues related to the setup and configuration of Log Management and Analytics.").
+Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Management and Analytics](../ru/analyze-explore-automate/logs/lma-troubleshooting.md "Fix issues related to the setup and configuration of Log Management and Analytics.").
 
 * [Troubleshooting log Ingestion via API - POST ingest logsï»¿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608)
 
 ## Related topics
 
-* [Ingest JSON and TXT logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.")
-* [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.")
-* [Ingest OTLP logs](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")
-* [OpenTelemetry logs ingest API](/docs/dynatrace-api/environment-api/opentelemetry/post-logs "Send OpenTelemetry logs to Dynatrace via API.")
-* [Automatic log enrichment](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation "Log ingestion API automatically transforms log data into output values for the loglevel attribute.")
+* [Ingest JSON and TXT logs](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.")
+* [Log Monitoring API v2 - POST ingest logs](../ru/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.")
+* [Ingest OTLP logs](../ru/ingest-from/opentelemetry/otlp-api/ingest-logs.md "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")
+* [OpenTelemetry logs ingest API](dynatrace-api/environment-api/opentelemetry/post-logs.md "Send OpenTelemetry logs to Dynatrace via API.")
+* [Automatic log enrichment](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation.md "Log ingestion API automatically transforms log data into output values for the loglevel attribute.")
 
 ---
 
@@ -3620,7 +3620,7 @@ scraped: 2026-03-06T21:20:04.360187
 * 6-min read
 * Updated on Jul 07, 2025
 
-Custom log source configuration enables you to manually add log sources that have not been autodetected. If you want to ingest them, you still need to configure it using the [log ingest configuration](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis.") The use cases when you need to use custom log sources include:
+Custom log source configuration enables you to manually add log sources that have not been autodetected. If you want to ingest them, you still need to configure it using the [log ingest configuration](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.") The use cases when you need to use custom log sources include:
 
 * Autodiscovery might not identify a log source if a log file is not kept open for writing during a process.
 * It might also fail to find log sources that are not part of any processes or are part of short-lived processes.
@@ -3628,11 +3628,11 @@ Custom log source configuration enables you to manually add log sources that hav
 The entire process consists of two parts:
 
 1. Source definition (custom log source configuration), which is described on this page.
-2. Log acquisition (adding logs to storage), which is described on [Log ingest rules](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis.").
+2. Log acquisition (adding logs to storage), which is described on [Log ingest rules](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.").
 
 If you need to store your custom logs, you need to complete both steps.
 
-Each custom log source path you add needs to be validated by OneAgent and abide by its security rules. See [Security rules](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-security-rules "Configure security rules for custom log sources to ensure data protection.") for configuration files and examples.
+Each custom log source path you add needs to be validated by OneAgent and abide by its security rules. See [Security rules](analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-security-rules.md "Configure security rules for custom log sources to ensure data protection.") for configuration files and examples.
 
 ### Hosts
 
@@ -3846,7 +3846,7 @@ changelog:
 
 ---
 
-We recommend [Stream Kubernetes logs with Dynatrace Log Module](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.") for log ingestion as it provides improved log detection, streamlined configuration, and better support for Kubernetes environments.
+We recommend [Stream Kubernetes logs with Dynatrace Log Module](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes.md "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.") for log ingestion as it provides improved log detection, streamlined configuration, and better support for Kubernetes environments.
 
 This page provides instructions for deploying and configuring Fluent Bit in your Kubernetes environment for log collection.
 
@@ -4480,7 +4480,7 @@ Follow the step-by-step guide to prepare the configuration for Fluent Bit.
 
    fieldPath: status.hostIP
    ```
-2. Get a [Dynatrace API token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") with the `logs.ingest` (Ingest Logs) scope for the `DT_INGEST_TOKEN` environment variable.
+2. Get a [Dynatrace API token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") with the `logs.ingest` (Ingest Logs) scope for the `DT_INGEST_TOKEN` environment variable.
 3. Update the `K8S_CLUSTER_NAME`, `DT_INGEST_HOST`, and `DT_INGEST_TOKEN` environment variables in the `values.yaml` file. Use the same cluster name that you have configured in Dynatrace for `K8S_CLUSTER_NAME`, and specify your SaaS or Managed endpoint as `DT_INGEST_HOST`.
 4. Optional Adapt the filter section in the `values.yaml` file to target specific namespaces or pods.
 5. Optional Be sure to remove or mask any sensitive information in the logs.
@@ -4517,7 +4517,7 @@ Ingested logs are accessible at the cluster, namespace, workload, and pod levels
 
 ## Troubleshooting
 
-Visit [Troubleshooting logs ingested via Fluent Bitï»¿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718) in the Dynatrace Community, as well as see [Troubleshooting Log Management and Analytics](/docs/analyze-explore-automate/logs/lma-troubleshooting "Fix issues related to the setup and configuration of Log Management and Analytics.").
+Visit [Troubleshooting logs ingested via Fluent Bitï»¿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718) in the Dynatrace Community, as well as see [Troubleshooting Log Management and Analytics](../ru/analyze-explore-automate/logs/lma-troubleshooting.md "Fix issues related to the setup and configuration of Log Management and Analytics.").
 
 ### Check that Fluent Bit pods are running
 
@@ -4621,7 +4621,7 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 
 ## Related topics
 
-* [Stream logs to Dynatrace with Fluent Bit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit "Integrate Fluent Bit to stream logs to Dynatrace.")
+* [Stream logs to Dynatrace with Fluent Bit](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit.md "Integrate Fluent Bit to stream logs to Dynatrace.")
 
 ---
 
@@ -4705,9 +4705,9 @@ During the log ingestion via OneAgent, the following attributes are added automa
 * `loglevel`
 * `log.source`
 * `process.technology`
-* [`span_id`](/docs/analyze-explore-automate/logs/lma-log-enrichment "Connect your incoming log data to traces for more precise Dynatrace analysis.")
+* [`span_id`](../ru/analyze-explore-automate/logs/lma-log-enrichment.md "Connect your incoming log data to traces for more precise Dynatrace analysis.")
 * `status`
-* [`trace_id`](/docs/analyze-explore-automate/logs/lma-log-enrichment "Connect your incoming log data to traces for more precise Dynatrace analysis.")
+* [`trace_id`](../ru/analyze-explore-automate/logs/lma-log-enrichment.md "Connect your incoming log data to traces for more precise Dynatrace analysis.")
 * `web_server.iis.site_id`
 * `web_server.iis.site_name`
 * `web_server.iis.application_pool`
@@ -4729,8 +4729,8 @@ During the log ingestion via OneAgent, the following attributes are added automa
 ## Resource attributes
 
 All log entries are enriched with host-level resource attributes, such as host tags, cloud attributes, Kubernetes attributes, and more.  
-For more details and the full list of host-level attributes, see [Resource attributes](/docs/platform/oneagent/resource-attributes "Any signal that uses a given resource, such as host or process group, is enriched with certain attributes coming from the resource.").  
-Kubernetes-specific metadata enrichment is described in [Metadata enrichment of all telemetry originating from Kubernetes workloads](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment "Guides for telemetry enrichment on Kubernetes").
+For more details and the full list of host-level attributes, see [Resource attributes](../ru/platform/oneagent/resource-attributes.md "Any signal that uses a given resource, such as host or process group, is enriched with certain attributes coming from the resource.").  
+Kubernetes-specific metadata enrichment is described in [Metadata enrichment of all telemetry originating from Kubernetes workloads](../ru/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment.md "Guides for telemetry enrichment on Kubernetes").
 
 ## Attributes automatically extracted from log content via OneAgent
 
@@ -4750,8 +4750,8 @@ will result in additional `dt.trace_id` and `dt.span_id` attributes for log reco
 
 ## Related topics
 
-* [Log ingestion API](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
-* [Log ingestion via OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
+* [Log ingestion API](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
+* [Log ingestion via OneAgent](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
 
 ---
 
@@ -4772,14 +4772,14 @@ scraped: 2026-03-06T21:19:59.231616
 * 19-min read
 * Updated on Jul 07, 2025
 
-Dynatrace log ingest configuration allows you to remotely configure installed OneAgents to either include specific log sources for forwarding to Dynatrace or exclude them from upload. While log discovery refers to the [automatic detection](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-autodiscovery "Dynatrace automatically discovers all new log files that meet specific requirements.") of log files so that no additional log source configuration effort is required on your environment, log ingestion involves the process of collecting logs and sending required log sources into Dynatrace.
+Dynatrace log ingest configuration allows you to remotely configure installed OneAgents to either include specific log sources for forwarding to Dynatrace or exclude them from upload. While log discovery refers to the [automatic detection](analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-autodiscovery.md "Dynatrace automatically discovers all new log files that meet specific requirements.") of log files so that no additional log source configuration effort is required on your environment, log ingestion involves the process of collecting logs and sending required log sources into Dynatrace.
 
-Log ingest configuration is based on rules that use matchers to target process groups, content, log levels, log paths, and other attributes described in this document. These rules determine which log files are ingested among those automatically detected by OneAgent or defined as [custom log sources](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-custom-log-source "Configure custom log sources to manually add log data sources that have not been autodetected."). Log ingest rules are ordered configurations processed from top to bottom. For higher configuration granularity, log ingest rules can be defined at three scopes: host, host group, and environment, with host scope rules having the highest priority.
+Log ingest configuration is based on rules that use matchers to target process groups, content, log levels, log paths, and other attributes described in this document. These rules determine which log files are ingested among those automatically detected by OneAgent or defined as [custom log sources](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-custom-log-source.md "Configure custom log sources to manually add log data sources that have not been autodetected."). Log ingest rules are ordered configurations processed from top to bottom. For higher configuration granularity, log ingest rules can be defined at three scopes: host, host group, and environment, with host scope rules having the highest priority.
 
-The log ingest rules are based on the [Settings 2.0](/docs/manage/settings/settings-20 "Introduction to the Settings 2.0 framework") framework, which provides a unified instrument to control various configurations in Dynatrace via the user interface and API.
-The access to the settings is controlled via [IAM policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies"). To learn how to configure access policies for Settings 2.0, review the documented [sample policies](/docs/manage/settings/settings-20#permissions-and-access "Introduction to the Settings 2.0 framework").
+The log ingest rules are based on the [Settings 2.0](../ru/manage/settings/settings-20.md "Introduction to the Settings 2.0 framework") framework, which provides a unified instrument to control various configurations in Dynatrace via the user interface and API.
+The access to the settings is controlled via [IAM policies](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies"). To learn how to configure access policies for Settings 2.0, review the documented [sample policies](../ru/manage/settings/settings-20.md#permissions-and-access "Introduction to the Settings 2.0 framework").
 
-To ingest Kubernetes logs, follow the configuration described in the [Stream Kubernetes logs with Dynatrace Log Module](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.") page.
+To ingest Kubernetes logs, follow the configuration described in the [Stream Kubernetes logs with Dynatrace Log Module](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes.md "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.") page.
 
 ## Log ingest rule
 
@@ -4814,7 +4814,7 @@ OneAgent version 1.309+
 
 5
 
-[Manually or automatically applied tags](/docs/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically.") are not visible to OneAgent.
+[Manually or automatically applied tags](manage/tags-and-metadata/setup/how-to-define-tags.md#automatic "Find out how to define and apply tags manually and automatically.") are not visible to OneAgent.
 
 6
 
@@ -4965,8 +4965,8 @@ Log ingest rules can be configured for the following scopes:
 
 To create a log ingest rule using the API:
 
-1. [Create an access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Write settings** (`settings.write`) and **Read settings** (`settings.read`) permissions.
-2. Use the [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration. The log ingest rules schema identifier (`schemaId`) is `builtin:logmonitoring.log-storage-settings`. Here is an example JSON payload with the log ingest rules:
+1. [Create an access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Write settings** (`settings.write`) and **Read settings** (`settings.read`) permissions.
+2. Use the [GET a schema](../ru/dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration. The log ingest rules schema identifier (`schemaId`) is `builtin:logmonitoring.log-storage-settings`. Here is an example JSON payload with the log ingest rules:
 
    ```
    [
@@ -5083,7 +5083,7 @@ To create a log ingest rule using the API:
 
    ]
    ```
-3. Use the [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
+3. Use the [POST an object](../ru/dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
 
 ## Examples
 
@@ -5867,7 +5867,7 @@ The rules have to be executed in the order indicated below.
 
 Is the log ingest rules configuration the same as/part of the autodiscovery process?
 
-No. Autodiscovery is a mechanism of OneAgent that detects logs, but it doesn't mean that log files are automatically ingested. It only refers to the automatic identification of log data. To learn more about autodiscovery, see [Log content autodiscovery (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-content-auto-discovery-v2 "Learn about autodiscovery of log content and requirements for autodiscovery to occur.")
+No. Autodiscovery is a mechanism of OneAgent that detects logs, but it doesn't mean that log files are automatically ingested. It only refers to the automatic identification of log data. To learn more about autodiscovery, see [Log content autodiscovery (Logs Classic)](analyze-explore-automate/log-monitoring/acquire-log-data/log-content-auto-discovery-v2.md "Learn about autodiscovery of log content and requirements for autodiscovery to occur.")
 
 Is the order of configuration items important?
 
@@ -5879,7 +5879,7 @@ It is applied within 90 seconds.
 
 Why are the logs not ingested after the configuration?
 
-If your logs are not ingested, it can be either because the [OneAgent Log Enablement](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#log-monitoring "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") is disabled, or because the logs' source ingest is prevented by [OneAgent security rules](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-custom-log-source#security-rules "Configure custom log sources to manually add log data sources that have not been autodetected.").
+If your logs are not ingested, it can be either because the [OneAgent Log Enablement](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#log-monitoring "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") is disabled, or because the logs' source ingest is prevented by [OneAgent security rules](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-custom-log-source.md#security-rules "Configure custom log sources to manually add log data sources that have not been autodetected.").
 
 Does adding a content matcher reduce the number of log events sent to Dynatrace?
 
@@ -5888,19 +5888,19 @@ Yes. A content matcher narrows down the scope of log events (log entries) accord
 Where is filtering carried out, in Dynatrace and or in OneAgent?
 
 * Filtering (limiting the number of log recoreds ingested according to the criteria set) is carried out in OneAgent.
-* Log ingest characteristics [limits](/docs/analyze-explore-automate/logs/lma-limits "Default limits for the latest version of Dynatrace Log Management and Analytics.") (for example, the log events per minute limit or the attribute values limit) is conducted in Dynatrace.
+* Log ingest characteristics [limits](../ru/analyze-explore-automate/logs/lma-limits.md "Default limits for the latest version of Dynatrace Log Management and Analytics.") (for example, the log events per minute limit or the attribute values limit) is conducted in Dynatrace.
 
 Does filtering the content reduce DDU cost and/or network usage?
 
 Yes. Content filtering conducted on OneAgent reduces both DDU costs and network usage. You can calculate the cost and network use reduction by determining your total data consumption and deducting the GB size of data that was filtered out. For details on how DDUs costs are calculated, see:
 
-* [Log Monitoring DDU calculation](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.")
-* [Log Management and analytics powered by Grail DDU calculation](/docs/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.")
+* [Log Monitoring DDU calculation](license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.")
+* [Log Management and analytics powered by Grail DDU calculation](../ru/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics.md "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.")
 
 Will older OneAgents work with this solution?
 
 OneAgent versions earlier than `1.243` won't send any data.
-If you use a OneAgent version earlier than 1.243 and Dynatrace Cluster version earlier than `1.252`, go to [Log Sources and Storage](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-add-log-file-sources "Learn how to include and exclude log sources for analysis.").
+If you use a OneAgent version earlier than 1.243 and Dynatrace Cluster version earlier than `1.252`, go to [Log Sources and Storage](analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-add-log-file-sources.md "Learn how to include and exclude log sources for analysis.").
 
 Starting with OneAgent version `1.249`, you can activate/inactivate your rules by turning on/off the **Active** toggle. To manage your rules effectively, we recommend that you upgrade your OneAgent to version `1.249`. If you have any rules set on the host with OneAgent version earlier than 249, you will not be able to inactivate them, in which case you need to remove such rules by selecting **Delete** on the rule level or via the REST API.
 
@@ -5923,9 +5923,9 @@ scraped: 2026-03-06T21:25:49.968543
 * 13-min read
 * Updated on Oct 08, 2025
 
-Dynatrace provides integrated Log management and analytics for your Kubernetes environments. We recommend collecting logs in Kubernetes using our fully managed [Dynatrace Log module](/docs/ingest-from/setup-on-k8s/deployment/k8s-log-monitoring "Manage your Kubernetes logs with Dynatrace."), either integrated in the OneAgent deployed on the node (OneAgent Log module) or without OneAgent as a standalone deployment (Kubernetes Log module). Dynatrace Operator configures and manages the Dynatrace Log module for both approaches. Alternatively, you can stream logs to Dynatrace using log collectors such as [Fluent Bit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s "Integrate Fluent Bit in Kubernetes to stream logs to Dynatrace."), [Dynatrace OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data."), [Logstash](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash "Integrate Logstash to stream logs from nodes and pods to Dynatrace."), or [Fluentd](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace.").
+Dynatrace provides integrated Log management and analytics for your Kubernetes environments. We recommend collecting logs in Kubernetes using our fully managed [Dynatrace Log module](ingest-from/setup-on-k8s/deployment/k8s-log-monitoring.md "Manage your Kubernetes logs with Dynatrace."), either integrated in the OneAgent deployed on the node (OneAgent Log module) or without OneAgent as a standalone deployment (Kubernetes Log module). Dynatrace Operator configures and manages the Dynatrace Log module for both approaches. Alternatively, you can stream logs to Dynatrace using log collectors such as [Fluent Bit](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s.md "Integrate Fluent Bit in Kubernetes to stream logs to Dynatrace."), [Dynatrace OpenTelemetry Collector](../ru/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich.md "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data."), [Logstash](analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash.md "Integrate Logstash to stream logs from nodes and pods to Dynatrace."), or [Fluentd](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s.md "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace.").
 
-On this page you learn advanced configuration of our OneAgent Log module and Kubernetes Log module to ingest logs from Kubernetes. To learn about the different **deployment options, supported platforms, and runtimes**, see the [Kubernetes log monitoring](/docs/ingest-from/setup-on-k8s/deployment/k8s-log-monitoring "Manage your Kubernetes logs with Dynatrace.") page.
+On this page you learn advanced configuration of our OneAgent Log module and Kubernetes Log module to ingest logs from Kubernetes. To learn about the different **deployment options, supported platforms, and runtimes**, see the [Kubernetes log monitoring](ingest-from/setup-on-k8s/deployment/k8s-log-monitoring.md "Manage your Kubernetes logs with Dynatrace.") page.
 
 ## Auto-discovery of Kubernetes container logs
 
@@ -5933,7 +5933,7 @@ The Dynatrace Log module automatically discovers logs written to the **stdout/st
 
 The Dynatrace Log module does not discover logs written to the container filesystem (as opposed to stdout/stderr). In this case, you can use a log shipper to read the logs from the container filesystem and write them to stdout/stderr for the Dynatrace Log module to pick them up.
 
-For the OneAgent Log module, we recommend to review the [Collect all containers logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-feature-flags#collect-all-container-logs "Enable or disable specific functionalities of the OneAgent log module and the Dynatrace log module for Kubernetes.") feature flag within your settings to ensure best coverage of your logs within Kubernetes. The Kubernetes Log module always collects all container logs.
+For the OneAgent Log module, we recommend to review the [Collect all containers logs](analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-feature-flags.md#collect-all-container-logs "Enable or disable specific functionalities of the OneAgent log module and the Dynatrace log module for Kubernetes.") feature flag within your settings to ensure best coverage of your logs within Kubernetes. The Kubernetes Log module always collects all container logs.
 
 ## Log enrichment with Kubernetes metadata
 
@@ -5941,12 +5941,12 @@ Dynatrace Log module decorates the ingested logs with the following Kubernetes m
 
 Also, any pod annotations starting with the `metadata.dynatrace.com/` prefix are added to the log records.
 
-Additionally, you can use existing Kubernetes annotations and labels to enrich your logs. See [metadata enrichment for Kubernetes](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment "Guides for telemetry enrichment on Kubernetes") to learn more.
+Additionally, you can use existing Kubernetes annotations and labels to enrich your logs. See [metadata enrichment for Kubernetes](../ru/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment.md "Guides for telemetry enrichment on Kubernetes") to learn more.
 
 ## Control log ingest with Kubernetes metadata
 
 You can control logs from Kubernetes ingestion with log ingest rules in Dynatrace. You can configure these rules at the Kubernetes cluster level to allow cluster-specific log ingestion. The rules use matchers for Kubernetes metadata and other common log entry attributes to determine which logs are to be ingested.
-Standard log processing features from OneAgent, including [sensitive data masking](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking "Mask sensitive information in your log data using Log Management and Analytics."), [timestamp configuration](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record."), [log boundary definition](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-entry-boundary "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record."), and [automatic enrichment](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") of log records, are also available and enabled here.
+Standard log processing features from OneAgent, including [sensitive data masking](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking.md "Mask sensitive information in your log data using Log Management and Analytics."), [timestamp configuration](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration.md "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record."), [log boundary definition](analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-entry-boundary.md "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record."), and [automatic enrichment](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") of log records, are also available and enabled here.
 
 Use the following recommended matching attributes when configuring log ingestion from Kubernetes.
 
@@ -5956,7 +5956,7 @@ Subject to change in the future versions of OneAgent. Separate matchers for each
 
 2
 
-Log record level attribute, transformed by Dynatrace Log Module, is different than the log `status` attribute transformed by the Dynatrace server. Learn more by accessing the [Automatic log enrichment](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") page.
+Log record level attribute, transformed by Dynatrace Log Module, is different than the log `status` attribute transformed by the Dynatrace server. Learn more by accessing the [Automatic log enrichment](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") page.
 
 ### Log ingest rule hierarchy
 
@@ -5971,13 +5971,13 @@ Matching occurs in a predefined hierarchy and rules are executed from top to bot
 
 To prevent the unintended ingestion of all logs due to the **Ingest all** rule enabled at the environment level, we recommend adding an **Exclude everything** rule at the end of the cluster scope configuration. This ensures that any unmatched logs are explicitly excluded. Without this, the log ingest rules defined at the environment scope will be further evaluated by the Dynatrace Log module, and logs will be ingested if the conditions are matched.
 
-Consult the [Configuration scopes](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration#configuration-scopes "Include and exclude specific log sources already known to OneAgent for storage and analysis.") for the three scopes of the configuration hierarchy.
+Consult the [Configuration scopes](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md#configuration-scopes "Include and exclude specific log sources already known to OneAgent for storage and analysis.") for the three scopes of the configuration hierarchy.
 
 ## Use cases
 
 Explore the following use cases for log ingestion from Kubernetes environments using Dynatrace. By configuring log ingestion with different matchers, you can control which logs are captured in the system. The use cases below offer guidance on configuring Dynatrace to capture logs based on your specific monitoring needs, whether it's from a particular namespace, container, or other criteria.
 
-For detailed instructions on how to configure log ingestion, see [Log ingest rules](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis.").
+For detailed instructions on how to configure log ingestion, see [Log ingest rules](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.").
 
 ### Ingest all logs from a specific namespace
 
@@ -6058,8 +6058,8 @@ Log ingest rule objects can be configured for the following scopes:
 
 To create a log ingest rule using the API:
 
-1. [Create an access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Write settings** (`settings.write`) and **Read settings** (`settings.read`) scopes.
-2. Use the [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration. The log ingest rules schema identifier (`schemaId`) is `builtin:logmonitoring.log-storage-settings`. Here is an example JSON payload with the log ingest rules:
+1. [Create an access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Write settings** (`settings.write`) and **Read settings** (`settings.read`) scopes.
+2. Use the [GET a schema](../ru/dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration. The log ingest rules schema identifier (`schemaId`) is `builtin:logmonitoring.log-storage-settings`. Here is an example JSON payload with the log ingest rules:
 
    ```
    {
@@ -6545,11 +6545,11 @@ This task requires setting two rules.
 }]
 ```
 
-To learn more about log ingestion please consult the [Log ingest rules](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration#faq "Include and exclude specific log sources already known to OneAgent for storage and analysis.") page.
+To learn more about log ingestion please consult the [Log ingest rules](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md#faq "Include and exclude specific log sources already known to OneAgent for storage and analysis.") page.
 
 ## Troubleshooting
 
-Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Management and Analytics](/docs/analyze-explore-automate/logs/lma-troubleshooting "Fix issues related to the setup and configuration of Log Management and Analytics.").
+Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Management and Analytics](../ru/analyze-explore-automate/logs/lma-troubleshooting.md "Fix issues related to the setup and configuration of Log Management and Analytics.").
 
 * [Why my logs are not visible in Dynatrace?ï»¿](https://community.dynatrace.com/t5/Troubleshooting/Why-my-logs-are-not-visible-in-Dynatrace/ta-p/242716)
 * [Logs Ingest on K8s with Dynatraceï»¿](https://community.dynatrace.com/t5/Troubleshooting/Logs-Ingest-on-K8s-with-Dynatrace/ta-p/285827)
@@ -6611,7 +6611,7 @@ You can configure sensitive data masking on the host, host group or environment 
 
    2
 
-   [Manually or automatically applied tags](/docs/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically.") are not visible to OneAgent.
+   [Manually or automatically applied tags](manage/tags-and-metadata/setup/how-to-define-tags.md#automatic "Find out how to define and apply tags manually and automatically.") are not visible to OneAgent.
 
    3
 
@@ -6692,8 +6692,8 @@ To check the current schema version for sensitive data masking configuration, li
 
 To create a sensitive data masking configuration using the API
 
-1. [Create an access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Write settings** (`settings.write`) and **Read settings** (`settings.read`) permissions.
-2. Use the [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration. The sensitive data masking configuration schema identifier (`schemaId`) is `builtin:sensitive-data-masking-settings`. Here is an example JSON payload with the sensitive data masking configuration:
+1. [Create an access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Write settings** (`settings.write`) and **Read settings** (`settings.read`) permissions.
+2. Use the [GET a schema](../ru/dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration. The sensitive data masking configuration schema identifier (`schemaId`) is `builtin:sensitive-data-masking-settings`. Here is an example JSON payload with the sensitive data masking configuration:
 
 ```
 [
@@ -7540,7 +7540,7 @@ Data masking occurs within the entire expression or a capturing group. An expres
 
 Where does sensitive data masking happen?
 
-You can execute sensitive data masking in your environment so that the confidential data does not leave your infrastructure unprotected. If you import your data to Dynatrace via generic ingest, you need to mask the sensitive data on the source level, before ingestion. Alternatively, you can mask sensitive data during [Log Processing](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample13 "Example log processing scenarios."). However, if you choose to mask your data during Log processing, your data will leave your environment as log processing occurs on the Dynatrace side. Therefore, it is safer to mask it within your environment.
+You can execute sensitive data masking in your environment so that the confidential data does not leave your infrastructure unprotected. If you import your data to Dynatrace via generic ingest, you need to mask the sensitive data on the source level, before ingestion. Alternatively, you can mask sensitive data during [Log Processing](../ru/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples.md#lpexample13 "Example log processing scenarios."). However, if you choose to mask your data during Log processing, your data will leave your environment as log processing occurs on the Dynatrace side. Therefore, it is safer to mask it within your environment.
 
 How many capturing groups are supported?
 
@@ -7554,8 +7554,8 @@ Be aware of the following limitations to sensitive data masking:
 
 ## Related topics
 
-* [Data privacy and security](/docs/manage/data-privacy-and-security "Learn how Dynatrace applies various security measures required to protect private data.")
-* [Log Management and Analytics default limits](/docs/analyze-explore-automate/logs/lma-limits "Default limits for the latest version of Dynatrace Log Management and Analytics.")
+* [Data privacy and security](../common/manage/data-privacy-and-security.md "Learn how Dynatrace applies various security measures required to protect private data.")
+* [Log Management and Analytics default limits](../ru/analyze-explore-automate/logs/lma-limits.md "Default limits for the latest version of Dynatrace Log Management and Analytics.")
 
 ---
 
@@ -7580,7 +7580,7 @@ Dynatrace allows you to define rules that control log data timestamps.
 
 ## Timestamp detection
 
-By default, log monitoring automatically detects only the most common and unambiguous subset of date formats supported. For details, see [Supported timestamp formats](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-supported-timestamp-format "Supported timestamps for the latest version of Log Management and Analytics."). Each time a timestamp pattern is detected, the line will be treated as the beginning of the log entry. All following lines without a detected timestamp will be treated as a continuation and reported as a single multi-line log record.
+By default, log monitoring automatically detects only the most common and unambiguous subset of date formats supported. For details, see [Supported timestamp formats](analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-supported-timestamp-format.md "Supported timestamps for the latest version of Log Management and Analytics."). Each time a timestamp pattern is detected, the line will be treated as the beginning of the log entry. All following lines without a detected timestamp will be treated as a continuation and reported as a single multi-line log record.
 
 You can also control timestamp detection by using the following options from ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Log monitoring** > **Advanced log settings**:
 
@@ -7604,7 +7604,7 @@ Because of this, Log Monitoring also enables you to define a specific date forma
 
 * **Pattern**âDefines what should be considered a timestamp in your logline.
 * **Timestamp search limit**âSpecifies the count of characters in each log line, measured from the beginning of the line, where the timestamp is searched.
-* **Entry boundary**âOptional field. Specifies the [entry boundary](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-entry-boundary "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record."). You need to provide a fragment of the text from the first line of the entry. The pattern is treated literally, which means that there is no support for the asterisk (\*) as a wildcard.
+* **Entry boundary**âOptional field. Specifies the [entry boundary](analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-entry-boundary.md "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record."). You need to provide a fragment of the text from the first line of the entry. The pattern is treated literally, which means that there is no support for the asterisk (\*) as a wildcard.
 * **Timestamps in indented lines**âEnable this option if you don't want to parse timestamps in lines that start with whitespace characters.
 * **Time zone**âDefines the timestamp time zone. Optional if your timestamp pattern includes the timezone indicator (`%z`).
 * **Matcher**âNarrows down the range for the rule and applies the timestamp pattern only to matched log entries. Because you can't use the `log.content` attribute in the timestamp pattern matchers, the highest granularity is a log source. Granularity is at this level because the timestamp pattern is used to split the contents of a log source into separate log records, so it is used before the `log.content` attribute's value (or any other attributes set on an individual log record's level) is determined.
@@ -7732,14 +7732,14 @@ To add a rule (on the host, host group, or environment level) that interprets th
 2. **Rule name**  
    The name to display for your configuration.
 3. **Pattern**  
-   Enter the pattern to be read as a date from the logs. For details on timestamp formats, see [Supported timestamp formats](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-supported-timestamp-format "Supported timestamps for the latest version of Log Management and Analytics.") and the following list of format specifiers.
+   Enter the pattern to be read as a date from the logs. For details on timestamp formats, see [Supported timestamp formats](analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-supported-timestamp-format.md "Supported timestamps for the latest version of Log Management and Analytics.") and the following list of format specifiers.
 
    You need to specify at least the month, day, hours, minutes, and seconds, although you can use alternative formats for them. You can include the time zone indicator (`%z`) or specify the time zone separately in the rule definition.
 
    Rules without a pattern can override the timezone only for default supported timestamps.
 4. **Timestamp search limit**
 
-   Use this field to define the number of characters in every log line where timestamp is searched. If you want to ignore timestamps and split logs using the [default rules](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-one-agent-log-data-format#plain-text-logs "This topic lists all the log formats supported by Log Management and Analytics"), set this value to `0`. Use this field to overwrite the global [timestamp search limit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration#timestamp-search-limit "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record.") (default 64 bytes).
+   Use this field to define the number of characters in every log line where timestamp is searched. If you want to ignore timestamps and split logs using the [default rules](analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-one-agent-log-data-format.md#plain-text-logs "This topic lists all the log formats supported by Log Management and Analytics"), set this value to `0`. Use this field to overwrite the global [timestamp search limit](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration.md#timestamp-search-limit "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record.") (default 64 bytes).
 5. **Entry boundary**
 
    Use this field to provide a fragment of the text from the first line of the entry.
@@ -7758,7 +7758,7 @@ To add a rule (on the host, host group, or environment level) that interprets th
 
    2
 
-   [Manually or automatically applied tags](/docs/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically.") are not visible to OneAgent.
+   [Manually or automatically applied tags](manage/tags-and-metadata/setup/how-to-define-tags.md#automatic "Find out how to define and apply tags manually and automatically.") are not visible to OneAgent.
 
    3
 
@@ -7812,8 +7812,8 @@ Timestamp configuration objects are available for configuration on the following
 
 To create a timestamp configuration using the API
 
-1. [Create an access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Write settings** (`settings.write`) and **Read settings** (`settings.read`) permissions.
-2. Use the [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration. The timestamp configuration schema identifier (`schemaId`) is `builtin:logmonitoring.timestamp-configuration`. Here is an example JSON payload with the timestamp configuration:
+1. [Create an access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Write settings** (`settings.write`) and **Read settings** (`settings.read`) permissions.
+2. Use the [GET a schema](../ru/dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration. The timestamp configuration schema identifier (`schemaId`) is `builtin:logmonitoring.timestamp-configuration`. Here is an example JSON payload with the timestamp configuration:
 
    ```
    [
@@ -7934,11 +7934,11 @@ To create a timestamp configuration using the API
 
    ]
    ```
-3. Use the [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
+3. Use the [POST an object](../ru/dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
 
 ## Related topics
 
-* [Supported timestamp formats](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-supported-timestamp-format "Supported timestamps for the latest version of Log Management and Analytics.")
+* [Supported timestamp formats](analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-supported-timestamp-format.md "Supported timestamps for the latest version of Log Management and Analytics.")
 
 ---
 
@@ -7964,7 +7964,7 @@ Windows Event Logs are a detailed record of notifications stored by the Windows 
 * System Logs: Contains events logged by Windows system components.
 * Security Logs: Contains security-related events like login attempts and resource access.
 
-Windows Event Logs are automatically detected and can be ingested using the Dynatrace OneAgent. You can provide custom Event Logs by the [Custom log source](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-custom-log-source#configure-log-source-mainclscuipage "Configure custom log sources to manually add log data sources that have not been autodetected.") configuration.
+Windows Event Logs are automatically detected and can be ingested using the Dynatrace OneAgent. You can provide custom Event Logs by the [Custom log source](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-custom-log-source.md#configure-log-source-mainclscuipage "Configure custom log sources to manually add log data sources that have not been autodetected.") configuration.
 
 ## Configure Windows event logs ingestion
 
@@ -8203,11 +8203,11 @@ scraped: 2026-03-06T21:32:33.082076
 
 Recommended
 
-OneAgent is a recommended, powerful tool that automatically finds log sources from a wide range of technologies on many different platforms, container orchestration and operating systems. Refer to [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix#other-modules "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") to see the supported operating systems.
+OneAgent is a recommended, powerful tool that automatically finds log sources from a wide range of technologies on many different platforms, container orchestration and operating systems. Refer to [OneAgent platform and capability support matrix](../ru/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md#other-modules "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") to see the supported operating systems.
 
 ![log-oneagents](https://dt-cdn.net/images/log-oneagents-1980-8ae52ce287.png)
 
-See the [OneAgent for logs ingestion](/docs/analyze-explore-automate/logs/lma-use-cases/lma-oa-logs-ingest "Set up log monitoring using OneAgent to automatically discover and ingest logs from your hosts.") use case to learn how to set up log monitoring using OneAgent to automatically discover and ingest logs from your hosts.
+See the [OneAgent for logs ingestion](analyze-explore-automate/logs/lma-use-cases/lma-oa-logs-ingest.md "Set up log monitoring using OneAgent to automatically discover and ingest logs from your hosts.") use case to learn how to set up log monitoring using OneAgent to automatically discover and ingest logs from your hosts.
 
 We recommend using OneAgent for logs, as it provides the following advantages:
 
@@ -8219,22 +8219,22 @@ We recommend using OneAgent for logs, as it provides the following advantages:
 * Automatic detection of critical logs coupled with flexible custom log source configuration, ensuring comprehensive observability.
 * Advanced log management capabilities at scale, offering configurations for log formats, sensitive data masking, and capture and processing filtering.
 
-Check out the OneAgent platform and capability [support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix#other-modules "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") and deploy OneAgent to your environment.
+Check out the OneAgent platform and capability [support matrix](../ru/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md#other-modules "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") and deploy OneAgent to your environment.
 
 ## Log data autodiscovery
 
-OneAgent automatically detects log files, ensuring that relevant logs are collected and analyzed for all monitored processes. OneAgent scans the file system and applications running on the host to detect log files and sources and identifies log files. Access the [Log content autodiscovery](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-autodiscovery "Dynatrace automatically discovers all new log files that meet specific requirements.") page to learn about the autodiscovery process.
+OneAgent automatically detects log files, ensuring that relevant logs are collected and analyzed for all monitored processes. OneAgent scans the file system and applications running on the host to detect log files and sources and identifies log files. Access the [Log content autodiscovery](analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-autodiscovery.md "Dynatrace automatically discovers all new log files that meet specific requirements.") page to learn about the autodiscovery process.
 
-Once log sources are detected, OneAgent applies relevant log ingestion rules. These rules define how the logs should be collected, parsed, and forwarded to the Dynatrace monitoring platform. The autodetection includes [log rotation patterns](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-rotation-patterns "Dynatrace monitors rotation patterns for log files and ensures the completeness of the file reading process, even if OneAgent is temporarily switched off or the log source is unavailable.").
+Once log sources are detected, OneAgent applies relevant log ingestion rules. These rules define how the logs should be collected, parsed, and forwarded to the Dynatrace monitoring platform. The autodetection includes [log rotation patterns](analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-rotation-patterns.md "Dynatrace monitors rotation patterns for log files and ensures the completeness of the file reading process, even if OneAgent is temporarily switched off or the log source is unavailable.").
 
-OneAgent autodetects logs from hosts, and collects logs from [Kubernetes](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.") container orchestration systems and from [Docker](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-in-docker "Dynatrace supports the collection of log data from non-orchestrated Docker environments via OneAgent.") containers.
+OneAgent autodetects logs from hosts, and collects logs from [Kubernetes](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes.md "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.") container orchestration systems and from [Docker](analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-in-docker.md "Dynatrace supports the collection of log data from non-orchestrated Docker environments via OneAgent.") containers.
 
 A OneAgent starts ingesting logs as soon as its log module reads a log file for the first time. The actual start time may be affected by ingestion intervals and how long it takes to propagate the configuration from the environment to the log module.
 
 ### OneAgent for host logs
 
 OneAgent simplifies log management by automatically decorating logs based on infrastructure and log source context, and enabling one-click trace enrichment for enhanced troubleshooting. Installation and central log ingestion rules setup in Dynatrace are all it takes to start monitoring logs. OneAgent also offers advanced features for scalable log management, including filtering, masking sensitive data, custom log source definition, log rotation pattern detection, and centralized configuration for easier lifecycle management.
-Learn more by accessing the [Log ingestion via OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.").
+Learn more by accessing the [Log ingestion via OneAgent](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.").
 
 Find below an example of ingested logs attributes.
 
@@ -8296,7 +8296,7 @@ Find below an example of ingested logs attributes.
 
 ### Kubernetes logs via OneAgent
 
-Read more about configuring log ingest from Kubernetes by accessing the [Stream Kubernetes logs with Dynatrace Log Module](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.") page.
+Read more about configuring log ingest from Kubernetes by accessing the [Stream Kubernetes logs with Dynatrace Log Module](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes.md "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.") page.
 
 Find below an example of ingested logs attributes.
 
@@ -8470,7 +8470,7 @@ Find below an example of ingested logs attributes.
 
 ## Custom log sources
 
-Many applications generate logs in formats or locations not covered by the default autodiscovery mechanism. You can add custom log sources when automatic detection does not recognize specific log files or when you need to monitor logs from applications not covered by default settings. Configure custom log sources if you encounter challenges with the rotation pattern or when the log file does not meet the detector's requirements. To learn more, see [Custom log source](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-custom-log-source "Configure custom log sources to manually add log data sources that have not been autodetected.").
+Many applications generate logs in formats or locations not covered by the default autodiscovery mechanism. You can add custom log sources when automatic detection does not recognize specific log files or when you need to monitor logs from applications not covered by default settings. Configure custom log sources if you encounter challenges with the rotation pattern or when the log file does not meet the detector's requirements. To learn more, see [Custom log source](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-custom-log-source.md "Configure custom log sources to manually add log data sources that have not been autodetected.").
 
 ## OneAgent log configuration flow
 
@@ -8486,26 +8486,26 @@ Required
 
 Setting up the log ingest rules is the most important step in the configuration process. The rules allow you to specify which automatically discovered and custom logs are ingested, filtered, and stored. The log ingest rules allow customization according to specified matchers, such as process group or log source file. This ensures that the logs ingested from various sources are properly managed and integrated into the Dynatrace log monitoring system. (includes automatically discovered and custom logs).
 
-You can review log sources detected by OneAgent on the **Host** or **Process** page in Dynatrace. For new tenants, some built-in rules are enabled by default. Learn more by accessing the [Log ingest rules](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis.") page.
+You can review log sources detected by OneAgent on the **Host** or **Process** page in Dynatrace. For new tenants, some built-in rules are enabled by default. Learn more by accessing the [Log ingest rules](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.") page.
 
 The log ingest rules apply exclusively to OneAgent. These rules do not extend to other log collection mechanisms.
 
 ### Sensitive data
 
-You can set up OneAgent to mask any information that you consider to be sensitive so it doesn't reach Dynatrace in plain text. To learn about this configuration, see [Sensitive data masking in OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking "Mask sensitive information in your log data using Log Management and Analytics.").
+You can set up OneAgent to mask any information that you consider to be sensitive so it doesn't reach Dynatrace in plain text. To learn about this configuration, see [Sensitive data masking in OneAgent](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking.md "Mask sensitive information in your log data using Log Management and Analytics.").
 
 ### Timestamps
 
-Learn how OneAgent supports [timestamps](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-supported-timestamp-format "Supported timestamps for the latest version of Log Management and Analytics."), or you can optionally [configure a custom timestamp pattern](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record.") specific to your case.
+Learn how OneAgent supports [timestamps](analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-supported-timestamp-format.md "Supported timestamps for the latest version of Log Management and Analytics."), or you can optionally [configure a custom timestamp pattern](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration.md "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record.") specific to your case.
 
 ## OneAgent settings
 
-Dynatrace Log Monitoring uses the [OneAgent log module](/docs/discover-dynatrace/get-started/glossary#glossary-oneagent-log-module "Get acquainted with Dynatrace terminology.") enabled by default with all OneAgent installations. While Log Monitoring does not require any specific configuration, you can modify some of the options available for the OneAgent log module.
+Dynatrace Log Monitoring uses the [OneAgent log module](discover-dynatrace/get-started/glossary.md#glossary-oneagent-log-module "Get acquainted with Dynatrace terminology.") enabled by default with all OneAgent installations. While Log Monitoring does not require any specific configuration, you can modify some of the options available for the OneAgent log module.
 
 ### Enable Log Monitoring with `oneagentctl`
 
 To enable Log Monitoring on a OneAgent, use `oneagentctl` with the option `--set-app-log-content-access=true`.
-For more information, see [Log Monitoring configuration](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#log-monitoring "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+For more information, see [Log Monitoring configuration](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#log-monitoring "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ### Global OneAgent settings for Log Monitoring
 
@@ -8542,15 +8542,15 @@ If this setting is disabled at the global level, you can enable **Dynatrace Log 
 
 ## Log enrichment
 
-As an out of the box feature, OneAgent automatically decorates logs by adding topology context, maintaining trace information, and identifying severity levels. To learn more, see [Automatic log enrichment](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.").
+As an out of the box feature, OneAgent automatically decorates logs by adding topology context, maintaining trace information, and identifying severity levels. To learn more, see [Automatic log enrichment](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.").
 
 ## Alternative to ingestion via OneAgent
 
 You can use the following alternatives to OneAgent for monitoring your log data:
 
-* [Log ingestion API](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages."): Collect logs via API when unable to install OneAgent.
-* [Dynatrace Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions."): Use customizable add-ons to ingest logs and extend observability.
-* [Syslog](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog "Ingest syslog log data to Dynatrace using ActiveGate and have Dynatrace transform it into meaningful log messages."): Stream, oversee and control log files from various system components.
+* [Log ingestion API](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages."): Collect logs via API when unable to install OneAgent.
+* [Dynatrace Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions."): Use customizable add-ons to ingest logs and extend observability.
+* [Syslog](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog.md "Ingest syslog log data to Dynatrace using ActiveGate and have Dynatrace transform it into meaningful log messages."): Stream, oversee and control log files from various system components.
 
 ## Recent past logs ingestion when enabling the log module
 
@@ -8570,13 +8570,13 @@ Log files whose last modification time is older than 7 days are not tracked by O
 
 ## Troubleshooting
 
-Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Management and Analytics](/docs/analyze-explore-automate/logs/lma-troubleshooting "Fix issues related to the setup and configuration of Log Management and Analytics.").
+Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Management and Analytics](../ru/analyze-explore-automate/logs/lma-troubleshooting.md "Fix issues related to the setup and configuration of Log Management and Analytics.").
 
 * [Why my logs are not visible in Dynatrace?ï»¿](https://community.dynatrace.com/t5/Troubleshooting/Why-my-logs-are-not-visible-in-Dynatrace/ta-p/242716)
 
 ## Related topics
 
-* [OneAgent for logs ingestion](/docs/analyze-explore-automate/logs/lma-use-cases/lma-oa-logs-ingest "Set up log monitoring using OneAgent to automatically discover and ingest logs from your hosts.")
+* [OneAgent for logs ingestion](analyze-explore-automate/logs/lma-use-cases/lma-oa-logs-ingest.md "Set up log monitoring using OneAgent to automatically discover and ingest logs from your hosts.")
 
 ---
 
@@ -8605,7 +8605,7 @@ You can configure Logpush via the Cloudflare dashboard or via API.
 Before you configure Cloudflare Logpush, you need the following:
 
 * A Dynatrace API token with the `logs.ingest` scope.
-  For more information about tokens, generation, and scopes, see [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+  For more information about tokens, generation, and scopes, see [Dynatrace API - Tokens and authentication](../ru/dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
 * The base URL for your Dynatrace HTTP logs intake.
   An example base URL is `https://abc123.live.dynatrace.com`.
 
@@ -8613,7 +8613,7 @@ Before you configure Cloudflare Logpush, you need the following:
 * A Cloudflare role with **Log Share** edit permissions.
   For more information, see [Rolesï»¿](https://developers.cloudflare.com/logs/logpush/permissions/#roles).
 
-For more information about the Dynatrace logs ingest API, see [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.").
+For more information about the Dynatrace logs ingest API, see [Log Monitoring API v2 - POST ingest logs](../ru/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.").
 
 ## Steps
 
@@ -8950,9 +8950,9 @@ scraped: 2026-03-03T21:27:46.123119
 
 Recommended syslog ingestion
 
-Stream syslog via Fluentd if you already collect logs with it or if a specific use case requires an additional component, for example, forwarding logs to different targets. If you want to benefit from a secure, trusted edge component with enterprise support and life-cycle management, see [Syslog ingestion with ActiveGate](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog "Ingest syslog log data to Dynatrace using ActiveGate and have Dynatrace transform it into meaningful log messages.").
+Stream syslog via Fluentd if you already collect logs with it or if a specific use case requires an additional component, for example, forwarding logs to different targets. If you want to benefit from a secure, trusted edge component with enterprise support and life-cycle management, see [Syslog ingestion with ActiveGate](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog.md "Ingest syslog log data to Dynatrace using ActiveGate and have Dynatrace transform it into meaningful log messages.").
 
-In the case where Linux system syslog observability is the main focus, we recommend deploying OneAgent, which [autodiscovers host syslog data](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-autodiscovery#oneagent-log-configuration-flow "Dynatrace automatically discovers all new log files that meet specific requirements."), preserves topology context, and requires minimal configuration and maintenance.
+In the case where Linux system syslog observability is the main focus, we recommend deploying OneAgent, which [autodiscovers host syslog data](analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-autodiscovery.md#oneagent-log-configuration-flow "Dynatrace automatically discovers all new log files that meet specific requirements."), preserves topology context, and requires minimal configuration and maintenance.
 
 You can send Syslog to Dynatrace using Fluentd. Configure Fluentd to send Syslog to Dynatrace Log ingestion API.
 
@@ -8967,14 +8967,14 @@ You can send Syslog to Dynatrace using Fluentd. Configure Fluentd to send Syslog
 
 Set up the flow from Syslog producer over Fluentd to Dynatrace with the following steps:
 
-1. Get a [Dynatrace API token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") with the `logs.ingest` (Ingest Logs) scope.
+1. Get a [Dynatrace API token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") with the `logs.ingest` (Ingest Logs) scope.
 2. Deploy Fluentd according to your preferences.
 
    * [Deploy Fluentdï»¿](https://dt-url.net/o9034h3). Fluentd can also run as a [DaemonSet in a Kubernetes clusterï»¿](https://dt-url.net/t2234xz). Built-in resiliency ensures data completeness and consistency even if Fluentd or an endpoint service temporarily goes down.
 3. Enable Fluentd to accept incoming Syslog messages.
 
    * The [in\_syslogï»¿](https://dt-url.net/t00343n) input plugin enables Fluentd to retrieve records via the Syslog protocol on UDP or TCP. It is included in Fluentd's core so no additional installation is needed in this step.
-4. Use the Dynatrace [Fluentd pluginï»¿](https://dt-url.net/gb23475) to stream logs to the Dynatrace cluster. The open-source Dynatrace Fluentd plugin uses [Log ingestion API](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.") to send logs to Dynatrace.
+4. Use the Dynatrace [Fluentd pluginï»¿](https://dt-url.net/gb23475) to stream logs to the Dynatrace cluster. The open-source Dynatrace Fluentd plugin uses [Log ingestion API](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.") to send logs to Dynatrace.
 5. Point your devices to send syslogs to Fluentd.
 
 ## Send syslogs to a remote endpoint
@@ -9004,7 +9004,7 @@ Refer to the [F5 BIG-IP documentationï»¿](https://dt-url.net/080348q) for pro
 
 ## Add attributes to syslogs in Fluentd
 
-The Dynatrace software intelligence platform and Dynatrace Intelligence depend on context-rich, quality data. You can provide the context for your data ingested via Log ingestion API that supports a set of [keys and semantic attributes](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs#parameters "Push custom logs to Dynatrace via the Log Monitoring API v2."). You can also provide custom attributes that don't require indexing in [Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.").
+The Dynatrace software intelligence platform and Dynatrace Intelligence depend on context-rich, quality data. You can provide the context for your data ingested via Log ingestion API that supports a set of [keys and semantic attributes](../ru/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md#parameters "Push custom logs to Dynatrace via the Log Monitoring API v2."). You can also provide custom attributes that don't require indexing in [Grail](../ru/platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.").
 
 ### Example 1
 
@@ -9130,7 +9130,7 @@ scraped: 2026-03-06T21:16:24.238689
 * 1-min read
 * Published Dec 02, 2021
 
-[Dynatrace Log Management and Analytics](/docs/analyze-explore-automate/logs "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") uses OneAgent DaemonSet, which includes a log module. This is the recommended way of streaming logs from nodes and pods to Dynatrace.
+[Dynatrace Log Management and Analytics](../ru/analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") uses OneAgent DaemonSet, which includes a log module. This is the recommended way of streaming logs from nodes and pods to Dynatrace.
 
 Alternatively, you can use the [Dynatrace Fluentd pluginï»¿](https://dt-url.net/gb23475), which is an open-source module, to stream logs.
 
@@ -9141,7 +9141,7 @@ The architecture is illustrated below.
 ## Capabilities
 
 * Supports streaming logs to different Dynatrace environments from the same Kubernetes cluster. For example, you can send application pod logs to a different environment than the Kubernetes node logs.
-* Supports streaming logs for [application-only integrations](/docs/ingest-from/setup-on-k8s/deployment/application-observability "Deploy Dynatrace Operator in application monitoring mode to Kubernetes").
+* Supports streaming logs for [application-only integrations](../ru/ingest-from/setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes").
 * Can be configured to stream logs directly to Dynatrace.
 
 ## Limitations
@@ -9154,7 +9154,7 @@ For instructions on how to deploy Fluentd integration, see the [documentation on
 
 ## Related topics
 
-* [Kubernetes Classic](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring "Monitor Kubernetes/OpenShift with Dynatrace.")
+* [Kubernetes Classic](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring.md "Monitor Kubernetes/OpenShift with Dynatrace.")
 
 ---
 
@@ -9177,7 +9177,7 @@ scraped: 2026-03-06T21:27:17.743091
 
 You can send logs, metrics, and traces to Dynatrace using Cribl Stream via OpenTelemetry Protocol (OTLP) or send only logs using Cribl Stream via HTTP and API ingestion.
 
-The [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.") offers various ingestion and transformation capabilities, making it a versatile tool for processing log data from a variety of sources.
+The [Dynatrace Collector](../ru/ingest-from/opentelemetry/collector.md "Learn about the Dynatrace OTel Collector.") offers various ingestion and transformation capabilities, making it a versatile tool for processing log data from a variety of sources.
 
 ## Key Features
 
@@ -9264,9 +9264,9 @@ You can send logs to Dynatrace using Fluent Bit. Configure Fluent Bit to send lo
 
 The Fluent Bit `http output` plugin allows you to stream your logs to the Dynatrace generic logs ingest endpoint.
 
-1. Get a [Dynatrace API token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") with the `logs.ingest` (Ingest Logs) scope.
+1. Get a [Dynatrace API token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") with the `logs.ingest` (Ingest Logs) scope.
 2. [Deploy Fluent Bitï»¿](https://dt-url.net/zd034je).
-3. To send logs into the Dynatrace [generic logs ingest](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.") endpoint, configure the [http output pluginï»¿](https://dt-url.net/0z034x4) through the configuration file.
+3. To send logs into the Dynatrace [generic logs ingest](../ru/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api.md "Learn how Dynatrace ingests log data and what are potential limits such ingestion.") endpoint, configure the [http output pluginï»¿](https://dt-url.net/0z034x4) through the configuration file.
 4. In your main Fluent Bit configuration file, append the Output section with the following parameters:
 
 ```
@@ -9327,8 +9327,8 @@ tls.verify On
 
 You can place your API token in the header or as `GET` variable in URI (see example below).
 
-* For Dynatrace SaaS, the [generic logs ingest](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.") endpoint is available in your environment.
-* If [Environment ActiveGate](/docs/ingest-from/dynatrace-activegate#agtypes "Understand the basic concepts related to ActiveGate.") is your choice for an endpoint in local environment, install ActiveGate instance.
+* For Dynatrace SaaS, the [generic logs ingest](../ru/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api.md "Learn how Dynatrace ingests log data and what are potential limits such ingestion.") endpoint is available in your environment.
+* If [Environment ActiveGate](../ru/ingest-from/dynatrace-activegate.md#agtypes "Understand the basic concepts related to ActiveGate.") is your choice for an endpoint in local environment, install ActiveGate instance.
 
   In Dynatrace Hub, select **ActiveGate** > **Set up**.
 * Generic log ingest API v2 is automatically enabled on ActiveGate.
@@ -9403,7 +9403,7 @@ For more configuration details, see [Amazon ECS Developer Guideï»¿](https://d
 
 ## Troubleshooting
 
-Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Management and Analytics](/docs/analyze-explore-automate/logs/lma-troubleshooting "Fix issues related to the setup and configuration of Log Management and Analytics.").
+Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Management and Analytics](../ru/analyze-explore-automate/logs/lma-troubleshooting.md "Fix issues related to the setup and configuration of Log Management and Analytics.").
 
 * [Troubleshooting logs ingested via Fluent Bitï»¿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718)
 
@@ -9434,25 +9434,25 @@ Find below an overview of log ingest strategies that you can use with Dynatrace.
 
 Recommended
 
-Automatically ingest log data from a wide variety of sources.](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")[### Log ingestion API
+Automatically ingest log data from a wide variety of sources.](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")[### Log ingestion API
 
-Configure Log ingest API integration for your use cases.](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")[![Syslog](https://dt-cdn.net/images/syslog-c85e9ae419.svg "Syslog")
+Configure Log ingest API integration for your use cases.](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")[![Syslog](https://dt-cdn.net/images/syslog-c85e9ae419.svg "Syslog")
 
 ### Syslog ingestion via ActiveGate
 
-Ingest syslog logs.](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog "Ingest syslog log data to Dynatrace using ActiveGate and have Dynatrace transform it into meaningful log messages.")
+Ingest syslog logs.](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog.md "Ingest syslog log data to Dynatrace using ActiveGate and have Dynatrace transform it into meaningful log messages.")
 
 ### Ingest Kubernetes logs
 
-Dynatrace Log Monitoring enables the collection of logs from Kubernetes container orchestration systems through OneAgent. [Kubernetes logs ingestion via OneAgent](/docs/ingest-from/setup-on-k8s/deployment/k8s-log-monitoring "Manage your Kubernetes logs with Dynatrace.") includes out-of-the-box sensitive data masking, entity linking and preservation of Kubernetes metadata.
+Dynatrace Log Monitoring enables the collection of logs from Kubernetes container orchestration systems through OneAgent. [Kubernetes logs ingestion via OneAgent](ingest-from/setup-on-k8s/deployment/k8s-log-monitoring.md "Manage your Kubernetes logs with Dynatrace.") includes out-of-the-box sensitive data masking, entity linking and preservation of Kubernetes metadata.
 
 You can centrally configure OneAgent ingestion rules across your entire Kubernetes environment. By applying centralized filtering rules, you can ensure that only logs relevant to your use case are ingested, reducing maintenance efforts.
 
-* [Stream Kubernetes logs with OneAgent](/docs/ingest-from/setup-on-k8s/deployment/k8s-log-monitoring "Manage your Kubernetes logs with Dynatrace.")
-* [Stream Kubernetes logs with Fluent Bit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s "Integrate Fluent Bit in Kubernetes to stream logs to Dynatrace.")
-* [Stream Kubernetes logs with Dynatrace OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.")
-* [Stream Kubernetes logs with Logstash](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash "Integrate Logstash to stream logs from nodes and pods to Dynatrace.")
-* [Stream Kubernetes logs with Fluentd](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace.")
+* [Stream Kubernetes logs with OneAgent](ingest-from/setup-on-k8s/deployment/k8s-log-monitoring.md "Manage your Kubernetes logs with Dynatrace.")
+* [Stream Kubernetes logs with Fluent Bit](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s.md "Integrate Fluent Bit in Kubernetes to stream logs to Dynatrace.")
+* [Stream Kubernetes logs with Dynatrace OpenTelemetry Collector](../ru/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich.md "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.")
+* [Stream Kubernetes logs with Logstash](analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash.md "Integrate Logstash to stream logs from nodes and pods to Dynatrace.")
+* [Stream Kubernetes logs with Fluentd](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s.md "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace.")
 
 ### Export telemetry data with OpenTelemetry
 
@@ -9466,53 +9466,53 @@ Dynatrace provides native OTLP endpoints with the following services:
 
 Additionally, you can deploy the Collector as intermediary service application, to batch requests and improve network performance or transform requests before forwarding them to Dynatrace (for example, mask sensitive data).
 
-* [OpenTelemetry Export with OTLP](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
+* [OpenTelemetry Export with OTLP](../ru/ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
 
 ### Forward log data from cloud platforms
 
-[Cloud log forwarding](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-cloud-provider-log-forwarding "Configure AWS, Azure and Google Cloud log forwarding to stream log data to Dynatrace using API.") allows the streaming of log data from various cloud platforms directly into Dynatrace. The following integrations are available:
+[Cloud log forwarding](analyze-explore-automate/logs/lma-log-ingestion/lma-cloud-provider-log-forwarding.md "Configure AWS, Azure and Google Cloud log forwarding to stream log data to Dynatrace using API.") allows the streaming of log data from various cloud platforms directly into Dynatrace. The following integrations are available:
 
 ### AWS
 
 Use Amazon Data Firehose integration, Amazon S3 forwarder, and direct AWS Lambda integration for cost-optimized flow logs setup with Dynatrace.
 
-* [Stream logs via Amazon Data Firehose](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.")
-* [Stream logs from AWS S3](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-cloud-provider-log-forwarding#s3-log-ingestion "Configure AWS, Azure and Google Cloud log forwarding to stream log data to Dynatrace using API.")
-* [Collect logs from AWS Lambda functions](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector "Collect logs from AWS Lambda functions")
+* [Stream logs via Amazon Data Firehose](ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose.md "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.")
+* [Stream logs from AWS S3](analyze-explore-automate/logs/lma-log-ingestion/lma-cloud-provider-log-forwarding.md#s3-log-ingestion "Configure AWS, Azure and Google Cloud log forwarding to stream log data to Dynatrace using API.")
+* [Collect logs from AWS Lambda functions](ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector.md "Collect logs from AWS Lambda functions")
 
 ### Azure
 
 Stream logs from Azure Event Hubs into Dynatrace through the Azure Function App instance. Azure resource logs and activity logs are supported. Dynatrace purchased via Azure Marketplace comes with deep Azure platform logs integration. It offers streamlined configuration via Azure Portal, and simplifies financial settlements.
 
-* [Stream Azure logs from Azure Event Hubs](/docs/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Use Azure log forwarding to ingest Azure logs.")
-* [Logs via Azure Native Dynatrace Service](/docs/ingest-from/microsoft-azure-services/azure-platform/azure-native-integration "Set and configure your Dynatrace SaaS environment using Azure Marketplace.")
+* [Stream Azure logs from Azure Event Hubs](../ru/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure.md "Use Azure log forwarding to ingest Azure logs.")
+* [Logs via Azure Native Dynatrace Service](../ru/ingest-from/microsoft-azure-services/azure-platform/azure-native-integration.md "Set and configure your Dynatrace SaaS environment using Azure Marketplace.")
 
 ### GCP
 
 Create a Pub/Sub subscription to facilitate the ingestion of metrics, logs, dashboards, and alerts into Dynatrace. This provides a comprehensive view of your Google Cloud Platform health, including resource and audit logs.
 
-* [Set up the Dynatrace GCP metric and log integration](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
+* [Set up the Dynatrace GCP metric and log integration](../ru/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8.md "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
 
 ### Stream log data with log shippers
 
 A log shipper is a versatile component that can be seamlessly integrated into the API to collect logs from various sources and forward them to designated destinations. The links below illustrate supported configurations, showcasing how various log shippers can be tailored to meet different deployment needs.
 
-* [Stream logs with Fluent Bit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit "Integrate Fluent Bit to stream logs to Dynatrace.")
-* [Stream logs with Fluentd on Kubernetes](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace.")
-* [Stream logs with Logstash](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash "Integrate Logstash to stream logs from nodes and pods to Dynatrace.")
+* [Stream logs with Fluent Bit](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit.md "Integrate Fluent Bit to stream logs to Dynatrace.")
+* [Stream logs with Fluentd on Kubernetes](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s.md "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace.")
+* [Stream logs with Logstash](analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash.md "Integrate Logstash to stream logs from nodes and pods to Dynatrace.")
 
 ### Stream Logs with Cribl
 
 You can send logs, metrics and traces to Dynatrace using Cribl Streamâ¢ via OpenTelemetry Protocol (OTLP) or only logs using Cribl Streamâ¢ via Dynatrace HTTP destination that integrates with Log ingestion API.
 
-* [Stream logs with Cribl](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-cribl "How to send logs, metrics, and traces from Cribl Stream to Dynatrace using OTLP or HTTP integration.")
+* [Stream logs with Cribl](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-cribl.md "How to send logs, metrics, and traces from Cribl Stream to Dynatrace using OTLP or HTTP integration.")
 
 ### Push logs with Cloudflare
 
 Use Cloudflare Logpush to push logs directly to Dynatrace.
 Configure Logpush either via the Clouflare dashboard or the API.
 
-* [Push logs with Cloudflare](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-push-logs-with-cloudflare "How to use Cloudflare Logpush to push logs directly to Dynatrace.")
+* [Push logs with Cloudflare](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-push-logs-with-cloudflare.md "How to use Cloudflare Logpush to push logs directly to Dynatrace.")
 
 ### Integrations via Dynatrace Hub
 
@@ -9522,21 +9522,21 @@ Dynatrace Hub is a marketplace for Dynatrace extensions, integrations, and add-o
 
 ### Ingest via Dynatrace Extensions
 
-Logs are observability data that [Dynatrace Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") collect and forward to Grail together with other monitoring signals to deliver a holistic view of your technology. [Extensions](/docs/ingest-from/extend-dynatrace/extend-logs "Learn how to extend log observability in Dynatrace.") expand observability data and analytics capabilities, streamlining data configuration and integration with third-party systems.
+Logs are observability data that [Dynatrace Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.") collect and forward to Grail together with other monitoring signals to deliver a holistic view of your technology. [Extensions](ingest-from/extend-dynatrace/extend-logs.md "Learn how to extend log observability in Dynatrace.") expand observability data and analytics capabilities, streamlining data configuration and integration with third-party systems.
 
 ![log-extensions](https://dt-cdn.net/images/log-extensions-1980-76d7fc4317.png)
 
-You can use the local `http://localhost:<port>/v2/logs/ingest` API endpoint to push locally retrieved logs to Dynatrace over a secure and authenticated channel. Learn more by accessing the [Extensions](/docs/ingest-from/extend-dynatrace/extend-logs/oneagent-log-ingest-api "Use the Dynatrace API to push locally retrieved logs to Dynatrace.") page.
+You can use the local `http://localhost:<port>/v2/logs/ingest` API endpoint to push locally retrieved logs to Dynatrace over a secure and authenticated channel. Learn more by accessing the [Extensions](../ru/ingest-from/extend-dynatrace/extend-logs/oneagent-log-ingest-api.md "Use the Dynatrace API to push locally retrieved logs to Dynatrace.") page.
 
 ## Related topics
 
 
 
-* [Log ingestion via OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
-* [Log ingestion API](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
-* [OneAgent log ingest API](/docs/ingest-from/extend-dynatrace/extend-logs/oneagent-log-ingest-api "Use the Dynatrace API to push locally retrieved logs to Dynatrace.")
+* [Log ingestion via OneAgent](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
+* [Log ingestion API](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
+* [OneAgent log ingest API](../ru/ingest-from/extend-dynatrace/extend-logs/oneagent-log-ingest-api.md "Use the Dynatrace API to push locally retrieved logs to Dynatrace.")
 * [Explore Log Management and Analytics in Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?filter=log-management-and-analytics&internal_source=doc&internal_medium=link&internal_campaign=cross)
-* [Log processing with OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.")
+* [Log processing with OpenPipeline](../ru/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.")
 
 ---
 
@@ -9557,7 +9557,7 @@ scraped: 2026-03-05T21:33:12.923279
 * 2-min read
 * Published Dec 08, 2025
 
-Automatically ingest and process logs with [OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages."), [Ingest JSON and TXT logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Understand how JSON and TXT logs are processed, whether in flattened or raw mode."), or [Dynatrace OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") for seamless log management.
+Automatically ingest and process logs with [OneAgent](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages."), [Ingest JSON and TXT logs](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md "Understand how JSON and TXT logs are processed, whether in flattened or raw mode."), or [Dynatrace OTLP API endpoints](../ru/ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") for seamless log management.
 
 Dynatrace applies a unified processing approach at ingestion.
 This approach ensures compatibility when switching integration mechanismsâsuch as transitioning from a log shipper integration to OneAgentâwithout requiring any additional or, in some cases, minimal configuration.
@@ -9578,35 +9578,35 @@ If you have specific needs, you have the option to customize your experience.
 
 You can make use of the following out-of-box options:
 
-* Support for [JSON logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-one-agent-log-data-format#json-logs "This topic lists all the log formats supported by Log Management and Analytics") data format.
-* Extract automatically the `severity` attribute using [Automatic log enrichment](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") for already enriched data.
-* Extract automatically the [topology context](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa#autoattributes "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") to ensure logs are tied to relevant entities.
-* Timestamp extraction is supported for listed [Supported timestamp formats](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-supported-timestamp-format "Supported timestamps for the latest version of Log Management and Analytics.") with no configuration.
+* Support for [JSON logs](analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-one-agent-log-data-format.md#json-logs "This topic lists all the log formats supported by Log Management and Analytics") data format.
+* Extract automatically the `severity` attribute using [Automatic log enrichment](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") for already enriched data.
+* Extract automatically the [topology context](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md#autoattributes "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") to ensure logs are tied to relevant entities.
+* Timestamp extraction is supported for listed [Supported timestamp formats](analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-supported-timestamp-format.md "Supported timestamps for the latest version of Log Management and Analytics.") with no configuration.
 
 For optimal automatic log processing, you can make use of the following capabilities:
 
-* **Timestamp/Splitting patterns** for [Timestamp/splitting configuration](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record.").
-* [Connect](/docs/analyze-explore-automate/logs/lma-log-enrichment "Connect your incoming log data to traces for more precise Dynatrace analysis.") log data seamlessly to traces for faster problem resolution and effortless context switching.
+* **Timestamp/Splitting patterns** for [Timestamp/splitting configuration](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration.md "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record.").
+* [Connect](../ru/analyze-explore-automate/logs/lma-log-enrichment.md "Connect your incoming log data to traces for more precise Dynatrace analysis.") log data seamlessly to traces for faster problem resolution and effortless context switching.
 
 #### Log Monitoring API - JSON and TXT endpoint
 
 Log Monitoring API automatically process ingested logs by:
 
-* Checking the supported **Severity** and **Timestamp** keys in [`LogMessageJson` object](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs#data-transformation-and-automatic-json-parsing "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.").
+* Checking the supported **Severity** and **Timestamp** keys in [`LogMessageJson` object](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md#data-transformation-and-automatic-json-parsing "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.").
 * JSON logs are processed on Log Monitoring API endpoints to preserve the original log structure.
-  For more information on data models, see [Ingest JSON and TXT logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.").
+  For more information on data models, see [Ingest JSON and TXT logs](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.").
 
 #### Dynatrace OTLP API
 
-[Dynatrace OTLP API](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.") automatically process ingested logs by:
+[Dynatrace OTLP API](../ru/ingest-from/opentelemetry/otlp-api/ingest-logs.md "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.") automatically process ingested logs by:
 
-* Checking the supported [`severity` and `timestamp`](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs#semantic-attributes "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.") keys.
+* Checking the supported [`severity` and `timestamp`](../ru/ingest-from/opentelemetry/otlp-api/ingest-logs.md#semantic-attributes "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.") keys.
 * Structured logs are processed on Dynatrace OTLP API endpoints to preserve the original log structure.
-  For more information on data models, see [Ingest OTLP logs](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs#otlp-structured-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
+  For more information on data models, see [Ingest OTLP logs](../ru/ingest-from/opentelemetry/otlp-api/ingest-logs.md#otlp-structured-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
 
 ## Related topics
 
-* [Log processing with OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.")
+* [Log processing with OpenPipeline](../ru/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.")
 
 ---
 
@@ -9627,20 +9627,20 @@ scraped: 2026-03-06T21:10:01.169544
 * 4-min read
 * Updated on Oct 15, 2025
 
-[OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") is the Dynatrace solution for processing data from various sources. It enables effortless data handling at any scale and format on the Dynatrace platform. Using OpenPipeline when processing logs in Dynatrace offers a powerful solution to manage, process, and analyze logs. This approach combines the traditional log processing capabilities with the advanced data handling features of OpenPipeline to get deeper insights into your log data.
+[OpenPipeline](../ru/platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") is the Dynatrace solution for processing data from various sources. It enables effortless data handling at any scale and format on the Dynatrace platform. Using OpenPipeline when processing logs in Dynatrace offers a powerful solution to manage, process, and analyze logs. This approach combines the traditional log processing capabilities with the advanced data handling features of OpenPipeline to get deeper insights into your log data.
 
-We recommend utilizing log processing with OpenPipeline as a scalable, powerful solution to manage, process, and analyze logs. If you don't have access to OpenPipeline, use the [classic log processing pipeline](/docs/analyze-explore-automate/logs/lma-classic-log-processing "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.").
+We recommend utilizing log processing with OpenPipeline as a scalable, powerful solution to manage, process, and analyze logs. If you don't have access to OpenPipeline, use the [classic log processing pipeline](../ru/analyze-explore-automate/logs/lma-classic-log-processing.md "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.").
 
 ## OpenPipeline advantages
 
 OpenPipeline provides the following advantages:
 
 * Contextual data transformation: OpenPipeline extracts data with context and transforms it into more efficient formats, for example, converting logs to business events.
-* Unified processing language: [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") is used as a processing language, offering one syntax for all Dynatrace features and more advanced options for processing.
+* Unified processing language: [Dynatrace Query Language (DQL)](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") is used as a processing language, offering one syntax for all Dynatrace features and more advanced options for processing.
 * Pipeline concepts: You can split log ingest traffic into different pipelines with dedicated processing, data and metric extraction, permissions, and storage.
-* Additional processors: You can use additional processors, for example, to add or remove fields. For the complete list, see [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.").
+* Additional processors: You can use additional processors, for example, to add or remove fields. For the complete list, see [Processing in OpenPipeline](../ru/platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.").
 * Enhanced data extraction: Extract business events from logs with more data extraction options.
-* Increased limits: Benefit from increased default [limits](/docs/analyze-explore-automate/logs/lma-limits "Default limits for the latest version of Dynatrace Log Management and Analytics."), including content size up to 524,288 bytes, attribute size up to 2,500 bytes, and up to 250 log attributes.
+* Increased limits: Benefit from increased default [limits](../ru/analyze-explore-automate/logs/lma-limits.md "Default limits for the latest version of Dynatrace Log Management and Analytics."), including content size up to 524,288 bytes, attribute size up to 2,500 bytes, and up to 250 log attributes.
 * Improved performance and higher throughput.
 
 ## Stages of log processing
@@ -9649,7 +9649,7 @@ The stages of log processing with OpenPipeline are described below.
 
 ![logs-openpipeline](https://dt-cdn.net/images/logs-openpipeline-1566-74807e1b77.png)
 
-Specific fields are excluded from matching and processing or restricted. To learn more, see [Limits specific to fields](/docs/platform/openpipeline/reference/limits#fields "Reference limits of Dynatrace OpenPipeline.").
+Specific fields are excluded from matching and processing or restricted. To learn more, see [Limits specific to fields](../ru/platform/openpipeline/reference/limits.md#fields "Reference limits of Dynatrace OpenPipeline.").
 
 1
 
@@ -9665,21 +9665,21 @@ If you have created custom pipelines and your logs are routed to them by the dyn
 
 ## Enable technology bundles
 
-OpenPipeline provides [technology bundles](/docs/platform/openpipeline/use-cases/tutorial-technology-processor "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.") for common technologies and log formats. You can manually enable the required technology bundles.
+OpenPipeline provides [technology bundles](../ru/platform/openpipeline/use-cases/tutorial-technology-processor.md "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.") for common technologies and log formats. You can manually enable the required technology bundles.
 
 To enable technology bundles in OpenPipeline
 
 1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Process and contextualize** > **OpenPipeline** > **Logs**.
 2. Go to the **Pipelines** tab, and select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add")**Pipeline** to add a new pipeline.
 
-   If you see **Classic pipeline** in the **Pipelines** tab, it means that you still use the [classic log processing pipeline](/docs/analyze-explore-automate/logs/lma-classic-log-processing "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation."). We recommend migrating all your log processing rules (that is, classic pipeline) to log processing with OpenPipeline by creating the required pipelines as described on this page.
+   If you see **Classic pipeline** in the **Pipelines** tab, it means that you still use the [classic log processing pipeline](../ru/analyze-explore-automate/logs/lma-classic-log-processing.md "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation."). We recommend migrating all your log processing rules (that is, classic pipeline) to log processing with OpenPipeline by creating the required pipelines as described on this page.
 3. Enter a name for your new pipeline.
 4. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add")**Processor** in the **Processing** tab, and choose **Technology bundle**.
 5. Choose the required technology, and then select **Choose**.
 6. Select **Run sample data** to test the configuration, and view the result.
 7. Select **Save**.
 
-To process logs, you need to enable dynamic routing. For details, see [Route data](/docs/platform/openpipeline/getting-started/how-to-routing "Learn how to route data to an OpenPipeline processing pipeline.").
+To process logs, you need to enable dynamic routing. For details, see [Route data](../ru/platform/openpipeline/getting-started/how-to-routing.md "Learn how to route data to an OpenPipeline processing pipeline.").
 
 ## Add a custom pipeline
 
@@ -9700,14 +9700,14 @@ You can review or edit any pipeline by selecting the record and making the neces
 
 Check the following use cases to learn how to leverage log processing with OpenPipeline.
 
-* [Parse log lines and extract a metric](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Configure OpenPipeline processing for log lines.")
-* [Process logs with technology bundle parsers](/docs/platform/openpipeline/use-cases/tutorial-technology-processor "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.")
+* [Parse log lines and extract a metric](../ru/platform/openpipeline/use-cases/tutorial-log-processing-pipeline.md "Configure OpenPipeline processing for log lines.")
+* [Process logs with technology bundle parsers](../ru/platform/openpipeline/use-cases/tutorial-technology-processor.md "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.")
 
 ## Related topics
 
-* [OpenPipeline processing examples](/docs/platform/openpipeline/use-cases/processing-examples "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")
-* [Parse log lines and extract a metric](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Configure OpenPipeline processing for log lines.")
-* [DQL matcher in OpenPipeline](/docs/platform/openpipeline/reference/dql-matcher-in-openpipeline "Examine specific DQL functions and logical operators for log processing.")
+* [OpenPipeline processing examples](../ru/platform/openpipeline/use-cases/processing-examples.md "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")
+* [Parse log lines and extract a metric](../ru/platform/openpipeline/use-cases/tutorial-log-processing-pipeline.md "Configure OpenPipeline processing for log lines.")
+* [DQL matcher in OpenPipeline](../ru/platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing.")
 
 ---
 
@@ -9728,7 +9728,7 @@ scraped: 2026-03-06T21:28:23.371162
 * 2-min read
 * Published Feb 02, 2026
 
-JSON log pre-processing detects escape characters in JSON strings and converts them into structured JSON objects for further processing and deeper analysis. You can then query the unescaped JSON field using the [jsonField](/docs/platform/grail/dynatrace-query-language/functions/string-functions#jsonField "A list of DQL string functions.") and [jsonPath](/docs/platform/grail/dynatrace-query-language/functions/string-functions#jsonPath "A list of DQL string functions.") DQL functions for precise extraction and filtering log attributes.
+JSON log pre-processing detects escape characters in JSON strings and converts them into structured JSON objects for further processing and deeper analysis. You can then query the unescaped JSON field using the [jsonField](../ru/platform/grail/dynatrace-query-language/functions/string-functions.md#jsonField "A list of DQL string functions.") and [jsonPath](../ru/platform/grail/dynatrace-query-language/functions/string-functions.md#jsonPath "A list of DQL string functions.") DQL functions for precise extraction and filtering log attributes.
 
 ## Benefits
 
@@ -9836,7 +9836,7 @@ JSON log pre-processing performs the following steps.
 
 You can query the unescaped JSON field for precise extraction and filtering log attributes using the following DQL functions.
 
-* [jsonField](/docs/platform/grail/dynatrace-query-language/functions/string-functions#jsonField "A list of DQL string functions.") function for extracting the value by its actual name.
+* [jsonField](../ru/platform/grail/dynatrace-query-language/functions/string-functions.md#jsonField "A list of DQL string functions.") function for extracting the value by its actual name.
 
   This is an example of extracting `loglevel` using `jsonField`.
 
@@ -9851,7 +9851,7 @@ You can query the unescaped JSON field for precise extraction and filtering log 
 
   | filter logLevel == "ERROR"
   ```
-* [jsonPath](/docs/platform/grail/dynatrace-query-language/functions/string-functions#jsonPath "A list of DQL string functions.") function for extracting value by a `JSONPath` expression.
+* [jsonPath](../ru/platform/grail/dynatrace-query-language/functions/string-functions.md#jsonPath "A list of DQL string functions.") function for extracting value by a `JSONPath` expression.
 
   This is an example of extracting `eventType` using `jsonPath`.
 
@@ -9873,7 +9873,7 @@ Unescapingâfor example, removing a forward slashâis skipped when the J
 
 ## Related topics
 
-* [Log processing with OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.")
+* [Log processing with OpenPipeline](../ru/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.")
 
 ---
 
@@ -9928,7 +9928,7 @@ To find the list of out-of-the-box coverage for popular technologies as **Ingest
 
 ## Related topics
 
-* [Log processing with OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.")
+* [Log processing with OpenPipeline](../ru/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.")
 
 ---
 
@@ -9959,11 +9959,11 @@ Log processing comprises the following steps.
 
 ### 1. Automatic log processing on ingest
 
-Dynatrace processes logs upon ingestion to ensure that your log lines are ready for automation, troubleshooting, and analysis. This unified approach allows you to switch between different [log ingest strategies](/docs/analyze-explore-automate/logs/lma-log-ingestion "Stream log data to Dynatrace.") with zero or minimum configuration.
+Dynatrace processes logs upon ingestion to ensure that your log lines are ready for automation, troubleshooting, and analysis. This unified approach allows you to switch between different [log ingest strategies](../ru/analyze-explore-automate/logs/lma-log-ingestion.md "Stream log data to Dynatrace.") with zero or minimum configuration.
 
 Automatic log processing on ingest includes timestamp extraction, severity extraction, and log payload parsing.
 
-For more details, see [Automatic log processing at ingestion](/docs/analyze-explore-automate/logs/lma-log-processing/lma-automatic-processing "Ingest and process logs automatically with OneAgent, Log Monitoring API v2, or Dynatrace OTLP API.").
+For more details, see [Automatic log processing at ingestion](../ru/analyze-explore-automate/logs/lma-log-processing/lma-automatic-processing.md "Ingest and process logs automatically with OneAgent, Log Monitoring API v2, or Dynatrace OTLP API.").
 
 ### 2. Pre-processing with OpenPipeline
 
@@ -9971,19 +9971,19 @@ Dynatrace applies log pre-processing to enrich, normalize, and prepare log data 
 
 Pre-processing with OpenPipeline ensures consistent log structure, improved queryability, and seamless integration with Dynatrace observability features.
 
-For more information, see [Log pre-processing with OpenPipeline with ready-made bundles](/docs/analyze-explore-automate/logs/lma-log-processing/lma-pre-processing "Streamline log analysis by enriching and normalizing data using ready-made technology bundles for popular technologies before it enters OpenPipeline.").
+For more information, see [Log pre-processing with OpenPipeline with ready-made bundles](../ru/analyze-explore-automate/logs/lma-log-processing/lma-pre-processing.md "Streamline log analysis by enriching and normalizing data using ready-made technology bundles for popular technologies before it enters OpenPipeline.").
 
 ### 3. Log processing with OpenPipeline
 
-Log processing with OpenPipeline involves using the [OpenPipeline solution](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to handle logs before they are stored in Grail. This step includes different stages, such as processing, metric and data extraction, permissions, and storage. See [Log processing with OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.") for the detailed overview of all the stages.
+Log processing with OpenPipeline involves using the [OpenPipeline solution](../ru/platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to handle logs before they are stored in Grail. This step includes different stages, such as processing, metric and data extraction, permissions, and storage. See [Log processing with OpenPipeline](../ru/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.") for the detailed overview of all the stages.
 
-We recommend utilizing log processing with OpenPipeline as a scalable, powerful solution to manage, process, and analyze logs. If you don't have access to OpenPipeline, use the [classic log processing pipeline](/docs/analyze-explore-automate/logs/lma-classic-log-processing "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.").
+We recommend utilizing log processing with OpenPipeline as a scalable, powerful solution to manage, process, and analyze logs. If you don't have access to OpenPipeline, use the [classic log processing pipeline](../ru/analyze-explore-automate/logs/lma-classic-log-processing.md "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.").
 
 ## Related topics
 
-* [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Data flow in OpenPipeline](/docs/platform/openpipeline/concepts/data-flow "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
-* [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* [OpenPipeline](../ru/platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
+* [Data flow in OpenPipeline](../ru/platform/openpipeline/concepts/data-flow.md "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
+* [Processing in OpenPipeline](../ru/platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
 
 ---
 
@@ -10147,7 +10147,7 @@ Log entries are grouped by status. Each status is represented by a distinct colo
 * `ERROR`
 * `NONE`
 
-These statuses correspond to the `status` attribute that is created during log ingestion. For details, see the information on automatic log enrichment for [OneAgent-](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") or [API-ingested logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation#transform-all-types-of-logs "Log ingestion API automatically transforms log data into output values for the loglevel attribute.").
+These statuses correspond to the `status` attribute that is created during log ingestion. For details, see the information on automatic log enrichment for [OneAgent-](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") or [API-ingested logs](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation.md#transform-all-types-of-logs "Log ingestion API automatically transforms log data into output values for the loglevel attribute.").
 
 ## Interact with log distribution chart
 
@@ -10237,7 +10237,7 @@ For certain technologies, or as a result of your parsing rules, the field with t
 
 For your log sources ingested to Dynatrace over the API, write the log message to any of the previous attributes during logging for best results.
 
-As an alternative, extract that readable information to a first-level attribute with just a few steps in an OpenPipeline processor. For details, see [Log processing with OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.").
+As an alternative, extract that readable information to a first-level attribute with just a few steps in an OpenPipeline processor. For details, see [Log processing with OpenPipeline](../ru/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.").
 
 ### Structured JSON logs
 
@@ -10308,7 +10308,7 @@ Query logs by specifying a segment and filter statement with keys and values wit
 
 ![Filter field in Logs app](https://dt-cdn.net/images/untitled-001-1835-80e79a2919.png)
 
-[Filter with facets](/docs/analyze-explore-automate/logs/lma-logs-app/facets "Filter with facets in the Dynatrace Logs app.") to add keys and and values to your filter automatically.
+[Filter with facets](../ru/analyze-explore-automate/logs/lma-logs-app/facets.md "Filter with facets in the Dynatrace Logs app.") to add keys and and values to your filter automatically.
 
 Use the date picker to apply the correct timeframe for your query.
 
@@ -10323,7 +10323,7 @@ Apply a segment filter to your query whenever possible.
 * Segments let you filter on logs and other observability data with a consistent filter.
 * Segments are convenient to limit your queries to only specific Grail buckets, which reduces the amount of data that you need to scan to get the relevant results.
 
-  For additional details, see [Segment logs by bucket](/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket "Segment logs by bucket with segments") and the [best practices for logs](/docs/analyze-explore-automate/logs/lma-best-practices#use-bucket-filters "Best practices for setting up Log Management and Analytics with Dynatrace.").
+  For additional details, see [Segment logs by bucket](../ru/manage/segments/use-cases/segments-use-cases-logs-by-bucket.md "Segment logs by bucket with segments") and the [best practices for logs](../ru/analyze-explore-automate/logs/lma-best-practices.md#use-bucket-filters "Best practices for setting up Log Management and Analytics with Dynatrace.").
 * Segments let you save and reuse commonly used filters, which are applicable in ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs** and across other Dynatrace apps.
 
 ## Explore recent filters and pin filters
@@ -10344,7 +10344,7 @@ Use `*` instead of a keyname and `~` as the comparator to search for your phrase
 
 For example, the `* ~ "failed to charge card"` filter matches logs that contain this phrase in any field.
 
-This is equivalent to using the [`search`](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#search "DQL filter and search commands") DQL command.
+This is equivalent to using the [`search`](platform/grail/dynatrace-query-language/commands/filtering-commands.md#search "DQL filter and search commands") DQL command.
 
 ### Search from `content`
 
@@ -10352,7 +10352,7 @@ Typically, original log payload is preserved in the `content` field of the log r
 
 For example, the `content ~ "failed to charge card"` filter matches logs that contain this phrase in the `content` field.
 
-This is equivalent to using the [`matchesPhrase`](/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesPhrase "A list of DQL string functions.") DQL string function.
+This is equivalent to using the [`matchesPhrase`](../ru/platform/grail/dynatrace-query-language/functions/string-functions.md#matchesPhrase "A list of DQL string functions.") DQL string function.
 
 ### Wildcard in value
 
@@ -10360,9 +10360,9 @@ You can also specify just a part of the value with a wildcard by using `*` in yo
 
 For example, the `content = "*card*"` filter matches logs that contain the `card` phrase in the `content` field.
 
-This is equivalent to using the [`matchesValue`](/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesValue "A list of DQL string functions.") DQL string function.
+This is equivalent to using the [`matchesValue`](../ru/platform/grail/dynatrace-query-language/functions/string-functions.md#matchesValue "A list of DQL string functions.") DQL string function.
 
-For the full reference, see [Filter field](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
+For the full reference, see [Filter field](../ru/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
 
 ## Filter on a field with multiple values
 
@@ -10382,10 +10382,10 @@ Note that suggestions are presented based on actual values queried in the backgr
 
 ## Related topics
 
-* [Filter field](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.")
-* [Filter with facets](/docs/analyze-explore-automate/logs/lma-logs-app/facets "Filter with facets in the Dynatrace Logs app.")
-* [Segment logs by bucket](/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket "Segment logs by bucket with segments")
-* [Log Management and Analytics best practices](/docs/analyze-explore-automate/logs/lma-best-practices "Best practices for setting up Log Management and Analytics with Dynatrace.")
+* [Filter field](../ru/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.")
+* [Filter with facets](../ru/analyze-explore-automate/logs/lma-logs-app/facets.md "Filter with facets in the Dynatrace Logs app.")
+* [Segment logs by bucket](../ru/manage/segments/use-cases/segments-use-cases-logs-by-bucket.md "Segment logs by bucket with segments")
+* [Log Management and Analytics best practices](../ru/analyze-explore-automate/logs/lma-best-practices.md "Best practices for setting up Log Management and Analytics with Dynatrace.")
 
 ---
 
@@ -10419,7 +10419,7 @@ The surrounding logs are shown for the context provided by the log record.
 
 * If `trace_id` parameter is present, you should see other records with the same trace ID.
 
-  For more information about automated correlation, see [Connect log data to traces](/docs/analyze-explore-automate/logs/lma-log-enrichment "Connect your incoming log data to traces for more precise Dynatrace analysis.").
+  For more information about automated correlation, see [Connect log data to traces](../ru/analyze-explore-automate/logs/lma-log-enrichment.md "Connect your incoming log data to traces for more precise Dynatrace analysis.").
 * Alternatively, you can examine the surrounding logs for the same topology entity, for example, a host.
 
   Select **Run query for 15 logs before** or **Run query for 15 logs after** to expand the context by loading more data before or after the timestamp of the original.
@@ -10491,7 +10491,7 @@ allow to do joins on the lookup tables
 
 ### Installation
 
-Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Make sure the app is [installed in your environment](../ru/manage/hub.md#install "See the information about Dynatrace Hub.").
 
 Get started
 
@@ -10504,22 +10504,22 @@ Concepts
 [01Query and filter logs
 
 * How-to guide
-* Explore logs with DQL queries and filter statements in the Dynatrace Logs app.](/docs/analyze-explore-automate/logs/lma-logs-app/query-and-filter)[02Spot trends with the log distribution chart
+* Explore logs with DQL queries and filter statements in the Dynatrace Logs app.](../ru/analyze-explore-automate/logs/lma-logs-app/query-and-filter.md)[02Spot trends with the log distribution chart
 
 * How-to guide
-* Get a visual overview of log entries grouped by status to spot trends, identify anomalies, and perform targeted queries without leaving the visualization.](/docs/analyze-explore-automate/logs/lma-logs-app/log-distribution-chart)[03View surrounding logs
+* Get a visual overview of log entries grouped by status to spot trends, identify anomalies, and perform targeted queries without leaving the visualization.](../ru/analyze-explore-automate/logs/lma-logs-app/log-distribution-chart.md)[03View surrounding logs
 
 * How-to guide
-* Use surrounding logs to understand log data in context in the Dynatrace Logs app.](/docs/analyze-explore-automate/logs/lma-logs-app/surrounding-logs)[04Filter with facets
+* Use surrounding logs to understand log data in context in the Dynatrace Logs app.](../ru/analyze-explore-automate/logs/lma-logs-app/surrounding-logs.md)[04Filter with facets
 
 * How-to guide
-* Filter with facets in the Dynatrace Logs app.](/docs/analyze-explore-automate/logs/lma-logs-app/facets)[05Adjust the log message
+* Filter with facets in the Dynatrace Logs app.](../ru/analyze-explore-automate/logs/lma-logs-app/facets.md)[05Adjust the log message
 
 * How-to guide
-* Adjust the log message in the Dynatrace Logs app.](/docs/analyze-explore-automate/logs/lma-logs-app/message)[06Limits in Logs
+* Adjust the log message in the Dynatrace Logs app.](../ru/analyze-explore-automate/logs/lma-logs-app/message.md)[06Limits in Logs
 
 * Reference
-* Learn about the limits that apply to the Logs app and how to modify these limits.](/docs/analyze-explore-automate/logs/lma-logs-app/limits)
+* Learn about the limits that apply to the Logs app and how to modify these limits.](../ru/analyze-explore-automate/logs/lma-logs-app/limits.md)
 
 ## About Logs
 
@@ -10552,9 +10552,9 @@ How are logs licensed?
 Querying logs works based on the same licensing as other Log Management and Analytics feature.
 
 * If you have **Retain** and **Query** as separate rate-card items, you only consume the license for queried log volume in bytes.
-  For more info, see [Calculate your consumption of Log Management & Analytics - Query (DPS)](/docs/license/capabilities/log-analytics/dps-log-query "Learn how your consumption of the Log Management & Analytics - Query DPS capability is billed and charged.").
+  For more info, see [Calculate your consumption of Log Management & Analytics - Query (DPS)](../ru/license/capabilities/log-analytics/dps-log-query.md "Learn how your consumption of the Log Management & Analytics - Query DPS capability is billed and charged.").
 * If you have **Retain with Included Queries** on your rate card, there is no cost to for included queries.
-  For more info, see [Log Analytics (DPS)](/docs/license/capabilities/log-analytics#log-retain-included-queries "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.").
+  For more info, see [Log Analytics (DPS)](../ru/license/capabilities/log-analytics.md#log-retain-included-queries "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.").
 
 The following actions are free of charge:
 
@@ -10566,7 +10566,7 @@ The license is consumed only when you click the **Run query** button or when you
 
 How to configure access to Logs?
 
-The users must have access to the Dynatrace Platform and logs stored in Grail ([see the built-in access policies](/docs/platform/upgrade#built-in-policies "Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data.") for log data). The application replaces the **Logs and Events** screen, so users who accessed logs previously can use ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**.
+The users must have access to the Dynatrace Platform and logs stored in Grail ([see the built-in access policies](../ru/platform/upgrade.md#built-in-policies "Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data.") for log data). The application replaces the **Logs and Events** screen, so users who accessed logs previously can use ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -10642,11 +10642,11 @@ If you've encountered an issue related to Log Management and Analytics, check on
 
 For example, the content is trimmed, the timestamp is corrected, or the processing rule seems not to work.
 
-The log ingest pipeline consists of several stages where logs are processed and checked against product characteristics and [limits](/docs/analyze-explore-automate/logs/lma-limits "Default limits for the latest version of Dynatrace Log Management and Analytics."). A particular log record contains warnings regarding issues that occurred in the log ingest and processing pipeline. Warnings are persisted and stored in `dt.ingest.warnings` attribute for each log record individually. See the list and description of all possible [log ingestion warnings](/docs/analyze-explore-automate/logs/lma-troubleshooting/lma-ingest-warnings "List of log ingestion warnings").
+The log ingest pipeline consists of several stages where logs are processed and checked against product characteristics and [limits](../ru/analyze-explore-automate/logs/lma-limits.md "Default limits for the latest version of Dynatrace Log Management and Analytics."). A particular log record contains warnings regarding issues that occurred in the log ingest and processing pipeline. Warnings are persisted and stored in `dt.ingest.warnings` attribute for each log record individually. See the list and description of all possible [log ingestion warnings](../ru/analyze-explore-automate/logs/lma-troubleshooting/lma-ingest-warnings.md "List of log ingestion warnings").
 
 ### OneAgent is not ingesting configured log records
 
-If OneAgent is not ingesting log records from a log file despite a log file is configured to be ingested and either automatically detected or added as a custom log source, then Log Agent Security rules might be violated. See [Security rules](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-security-rules "Configure security rules for custom log sources to ensure data protection.") for more information.
+If OneAgent is not ingesting log records from a log file despite a log file is configured to be ingested and either automatically detected or added as a custom log source, then Log Agent Security rules might be violated. See [Security rules](analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-security-rules.md "Configure security rules for custom log sources to ensure data protection.") for more information.
 
 ---
 
@@ -10673,14 +10673,14 @@ Using Davis events based on logs you will get immediate alerts once the log reco
 
 Follow this guide to learn more about extracting events from logs.
 
-If you need to set thresholds for your alerts, you should follow the instructions in [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.").
+If you need to set thresholds for your alerts, you should follow the instructions in [Set up custom alerts based on metrics extracted from logs](../ru/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics.md "How to create and configure Davis problems and custom alerts with metrics based on logs.").
 
 ## Prerequisites
 
 Optional
 
-* You have set up [log ingestion](/docs/analyze-explore-automate/logs/lma-log-ingestion "Stream log data to Dynatrace.").
-* You have the necessary permissions to configure OpenPipeline. For example, the permissions granted with the default policy: [Data Processing and Storage](/docs/manage/identity-access-management/permission-management/default-policies#data-access "Dynatrace default policies reference").
+* You have set up [log ingestion](../ru/analyze-explore-automate/logs/lma-log-ingestion.md "Stream log data to Dynatrace.").
+* You have the necessary permissions to configure OpenPipeline. For example, the permissions granted with the default policy: [Data Processing and Storage](manage/identity-access-management/permission-management/default-policies.md#data-access "Dynatrace default policies reference").
 
 ## Steps
 
@@ -10715,7 +10715,7 @@ If your DQL query uses `parse`, `fieldAdd`, or other transformations, you should
    3. Select  >  **Edit**.
       The pipeline configuration page appears.
    4. Select **Data extraction** tab and add a **Davis event** processor.
-2. Set the [DQL matcher](/docs/platform/openpipeline/reference/dql-matcher-in-openpipeline "Examine specific DQL functions and logical operators for log processing.").
+2. Set the [DQL matcher](../ru/platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing.").
    A matcher sets the condition for the event that is to be extracted.
    It is a subset of filtering conditions in a single DQL statement.
 
@@ -10728,13 +10728,13 @@ If your DQL query uses `parse`, `fieldAdd`, or other transformations, you should
    If you use segments or your permissions are set at the record level, you should include those conditions in the matcher.
 
    There are situations when a matcher can't be easily extracted from a DQL statement.
-   In these cases, you can [create log alerts for a log event or summary of log data](/docs/dynatrace-intelligence/use-cases/create-alert-in-logs "Create log alerts for a specific log event or summary of log data").
+   In these cases, you can [create log alerts for a log event or summary of log data](../ru/dynatrace-intelligence/use-cases/create-alert-in-logs.md "Create log alerts for a specific log event or summary of log data").
 3. Set event properties.
 
    Event properties are metadata that your event will contain when it is triggered.
    You can remap any field from the log record.
 
-   In our example, we will remap the `dt.source_entity` field to have the alerts connected to entities for [Dynatrace Intelligence root cause analysis](/docs/dynatrace-intelligence/root-cause-analysis "How Dynatrace analyzes problems to determine their root cause.").
+   In our example, we will remap the `dt.source_entity` field to have the alerts connected to entities for [Dynatrace Intelligence root cause analysis](../ru/dynatrace-intelligence/root-cause-analysis.md "How Dynatrace analyzes problems to determine their root cause.").
 
    In **Event template**, set the following key/value pairs.
 
@@ -10761,21 +10761,21 @@ Extracting Davis events from logs is ideal for simple alerting when thresholds a
 * It provides immediate/real-time alerting.
 * Additional overview of matching data overtime is not required.
 
-Once you're extracting events, you can use these to trigger automations using simple workflows as described in [Create a simple workflow in Dynatrace Workflows](/docs/analyze-explore-automate/workflows/simple-workflow "Build and run a simple workflow.").
+Once you're extracting events, you can use these to trigger automations using simple workflows as described in [Create a simple workflow in Dynatrace Workflows](analyze-explore-automate/workflows/simple-workflow.md "Build and run a simple workflow.").
 
 ## Further reading
 
 More information about event properties is available at:
 
-* [Davis Event Reports](/docs/semantic-dictionary/model/davis#event "Get to know the Semantic Dictionary models related to Davis AI.")
-* [Custom-defined event correlation](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation#custom-defined-event-correlation "Gain an understanding of the Events section on each host, process, and service overview page.")
+* [Davis Event Reports](../common/semantic-dictionary/model/davis.md#event "Get to know the Semantic Dictionary models related to Davis AI.")
+* [Custom-defined event correlation](../ru/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation.md#custom-defined-event-correlation "Gain an understanding of the Events section on each host, process, and service overview page.")
 
 ## Related topics
 
-* [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.")
-* [Log metrics (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
-* [Log events (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-events "Learn how to create and use Dynatrace log events to analyze log data.")
-* [Alerting and notifications](/docs/analyze-explore-automate/alerting-and-notifications "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")
+* [Set up custom alerts based on metrics extracted from logs](../ru/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics.md "How to create and configure Davis problems and custom alerts with metrics based on logs.")
+* [Log metrics (Logs Classic)](../ru/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics.md "Learn how to create and use Dynatrace log metrics to analyze log data.")
+* [Log events (Logs Classic)](../ru/analyze-explore-automate/log-monitoring/analyze-log-data/log-events.md "Learn how to create and use Dynatrace log events to analyze log data.")
+* [Alerting and notifications](../ru/analyze-explore-automate/alerting-and-notifications.md "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")
 
 ---
 
@@ -10798,20 +10798,20 @@ scraped: 2026-03-06T21:33:43.409363
 
 Ingested logs can be triggers for opening new Davis problems.
 
-Using a combination of metrics based on logs and [custom alerts](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app."), you can use the power of different Dynatrace Intelligence data analyzers to address use cases from simple threshold-based alerting to seasonal baselines, for example:
+Using a combination of metrics based on logs and [custom alerts](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app."), you can use the power of different Dynatrace Intelligence data analyzers to address use cases from simple threshold-based alerting to seasonal baselines, for example:
 
 * Alert when the average count of matching records exceeds a specific number within a defined time period.
 * Alert when the value of a metric is abnormal, without setting a static threshold.
 
 Follow this guide to learn more about alerting with metrics based on logs.
 
-If you don't need to set thresholds, you should follow the instructions in [Set up alerts based on events extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events "How to create and configure Davis problems and alerts with events based on logs.").
+If you don't need to set thresholds, you should follow the instructions in [Set up alerts based on events extracted from logs](../ru/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events.md "How to create and configure Davis problems and alerts with events based on logs.").
 
 ## Prerequisites
 
-* You have set up [log ingestion](/docs/analyze-explore-automate/logs/lma-log-ingestion "Stream log data to Dynatrace.").
+* You have set up [log ingestion](../ru/analyze-explore-automate/logs/lma-log-ingestion.md "Stream log data to Dynatrace.").
 * You are using OpenPipeline.
-* You have the necessary permissions to configure the custom alert, within [Anomaly Detection app](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.").
+* You have the necessary permissions to configure the custom alert, within [Anomaly Detection app](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.").
 
 ## Steps
 
@@ -10847,7 +10847,7 @@ Add metric extraction configuration in OpenPipeline.
 5. Set
 
    * The metric name and ID.
-   * The [DQL matcher](/docs/platform/openpipeline/reference/dql-matcher-in-openpipeline "Examine specific DQL functions and logical operators for log processing.").
+   * The [DQL matcher](../ru/platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing.").
      A matcher sets the condition for the event that is to be extracted.
      It is a subset of filtering conditions in a single DQL statement.
 
@@ -10860,7 +10860,7 @@ Add metric extraction configuration in OpenPipeline.
 If you use Segments or your permissions are set at the record level, you should include those conditions in the matcher.
 
 There are situations when a matcher can't be easily extracted from a DQL statement.
-In these cases, you can [create log alerts for a log event or summary of log data](/docs/dynatrace-intelligence/use-cases/create-alert-in-logs "Create log alerts for a specific log event or summary of log data").
+In these cases, you can [create log alerts for a log event or summary of log data](../ru/dynatrace-intelligence/use-cases/create-alert-in-logs.md "Create log alerts for a specific log event or summary of log data").
 
 3. Add dimensions.
    For most logs, you can add automated correlation to entities in Dynatrace Intelligence root cause analysis.
@@ -10897,14 +10897,14 @@ Here's when to use a custom alert with metrics based on logs:
 * Metric analyzers are triggered every minute so itâs not a real-time alerting method.
 * Metric dimensions have low cardinality.
 
-Detected anomalies can trigger automations using simple workflows as described in [Create a simple workflow in Dynatrace Workflows](/docs/analyze-explore-automate/workflows/simple-workflow "Build and run a simple workflow.").
+Detected anomalies can trigger automations using simple workflows as described in [Create a simple workflow in Dynatrace Workflows](analyze-explore-automate/workflows/simple-workflow.md "Build and run a simple workflow.").
 
 ## Related topics
 
-* [Set up alerts based on events extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events "How to create and configure Davis problems and alerts with events based on logs.")
-* [Log metrics (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
-* [Log events (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-events "Learn how to create and use Dynatrace log events to analyze log data.")
-* [Alerting and notifications](/docs/analyze-explore-automate/alerting-and-notifications "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")
+* [Set up alerts based on events extracted from logs](../ru/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events.md "How to create and configure Davis problems and alerts with events based on logs.")
+* [Log metrics (Logs Classic)](../ru/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics.md "Learn how to create and use Dynatrace log metrics to analyze log data.")
+* [Log events (Logs Classic)](../ru/analyze-explore-automate/log-monitoring/analyze-log-data/log-events.md "Learn how to create and use Dynatrace log events to analyze log data.")
+* [Alerting and notifications](../ru/analyze-explore-automate/alerting-and-notifications.md "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")
 
 ---
 
@@ -10952,9 +10952,9 @@ The example used in this guideline is taken from [Dynatrace Observability Lab: P
 
 * Access to a Dynatrace SaaS environment
 * Access to OpenTelemetry demo or OneAgent
-* Installed [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
-* [Set up OpenPipeline ingestion](/docs/platform/openpipeline/getting-started/how-to-ingestion "How to ingest data for a configuration scope in OpenPipeline.")
-* [Configured OpenPipeline](/docs/platform/openpipeline/getting-started/tutorial-configure-processing "Configure ingest sources, routes, and processing for your data in OpenPipeline.")
+* Installed [Problems app](../ru/dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* [Set up OpenPipeline ingestion](../ru/platform/openpipeline/getting-started/how-to-ingestion.md "How to ingest data for a configuration scope in OpenPipeline.")
+* [Configured OpenPipeline](../ru/platform/openpipeline/getting-started/tutorial-configure-processing.md "Configure ingest sources, routes, and processing for your data in OpenPipeline.")
 
 ## Steps
 
@@ -10962,19 +10962,19 @@ This tutorial assumes that you're already monitoring your environment with Dynat
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Create a new pipeline for data extraction**](/docs/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs#step-1 "Use the Problems app and Logs to quickly detect and analyze arising problems.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Create a new pipeline for data extraction**](../ru/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs.md#step-1 "Use the Problems app and Logs to quickly detect and analyze arising problems.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Add a dynamic route for the pipeline**](/docs/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs#step-2 "Use the Problems app and Logs to quickly detect and analyze arising problems.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Add a dynamic route for the pipeline**](../ru/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs.md#step-2 "Use the Problems app and Logs to quickly detect and analyze arising problems.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Access problems through the Problems app**](/docs/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs#step-3 "Use the Problems app and Logs to quickly detect and analyze arising problems.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**Access problems through the Problems app**](../ru/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs.md#step-3 "Use the Problems app and Logs to quickly detect and analyze arising problems.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**View Logs through the problem records**](/docs/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs#step-4 "Use the Problems app and Logs to quickly detect and analyze arising problems.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
+**View Logs through the problem records**](../ru/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs.md#step-4 "Use the Problems app and Logs to quickly detect and analyze arising problems.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
 
-**View details in Distributed Traces**](/docs/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs#step-5 "Use the Problems app and Logs to quickly detect and analyze arising problems.")
+**View details in Distributed Traces**](../ru/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs.md#step-5 "Use the Problems app and Logs to quickly detect and analyze arising problems.")
 
 ### Step 1 Create a new pipeline for data extraction
 
-OpenPipeline is the Dynatrace data handling solution for data processing and ingestion. You can configure OpenPipeline to extract specific information relevant for your case and convert it into an event that can be alerted on. For more information on OpenPipeline processing capabilities, see [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.").
+OpenPipeline is the Dynatrace data handling solution for data processing and ingestion. You can configure OpenPipeline to extract specific information relevant for your case and convert it into an event that can be alerted on. For more information on OpenPipeline processing capabilities, see [Processing in OpenPipeline](../ru/platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.").
 
 To create a new pipeline
 
@@ -11002,7 +11002,7 @@ An example of creating a new Log Error pipeline
 
 ### Step 2 Add a dynamic route for the pipeline
 
-Ingested and extracted data needs to be directed to the pipeline before it's processed. Creating a route is necessary to make sure that your data is directed to the right pipeline, especially in cases where you have multiple pipelines. For more information, see [Routing](/docs/platform/openpipeline/concepts/data-flow#routing "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.").
+Ingested and extracted data needs to be directed to the pipeline before it's processed. Creating a route is necessary to make sure that your data is directed to the right pipeline, especially in cases where you have multiple pipelines. For more information, see [Routing](../ru/platform/openpipeline/concepts/data-flow.md#routing "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.").
 
 To add new dynamic routing
 
@@ -11033,7 +11033,7 @@ An example of creating a new dynamic route for Log Errors pipeline
 
 Once the problem is detected and recorded in logs, you can check its status in the Problems app.
 
-The Problems app is a tool designed to help operational and site reliability teams reduce the mean time to repair (MTTR) by presenting every aspect of the incident. For more information, see [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.").
+The Problems app is a tool designed to help operational and site reliability teams reduce the mean time to repair (MTTR) by presenting every aspect of the incident. For more information, see [Problems app](../ru/dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.").
 
 To access the Problems app
 
@@ -11087,7 +11087,7 @@ Related event additional information example
 
 ### Step 5 View details in Distributed Traces
 
-Traces provide you with a deeper view and additional context for the information available in logs. To be able to access traces through logs, you need to connect log data to traces via OpenTelemetry or OneAgent. To learn more about enriching logs with traces, see [Understand and fix multiple problems via logs and traces](/docs/observe/application-observability/distributed-traces/use-cases/problems-logs-traces "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.").
+Traces provide you with a deeper view and additional context for the information available in logs. To be able to access traces through logs, you need to connect log data to traces via OpenTelemetry or OneAgent. To learn more about enriching logs with traces, see [Understand and fix multiple problems via logs and traces](../ru/observe/application-observability/distributed-traces/use-cases/problems-logs-traces.md "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.").
 
 To access traces through logs
 
@@ -11167,7 +11167,7 @@ This query performs the following actions:
 1. Go to **Settings** > **Log Monitoring** > **Metrics extraction** and select **Add log metric**.
 2. In **Key**, append the metric name to the `log.` metric key: `log.conn_refused_count`.
 3. Add **Matcher**.  
-   Use the [DQL function](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher#lp-dql-matchesPhrase "Examine specific DQL functions and logical operators for log processing.") for matching phrases, which is part of the [Dynatrace Query Language (DQL)](#matchesPhrase):
+   Use the [DQL function](../ru/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher.md#lp-dql-matchesPhrase "Examine specific DQL functions and logical operators for log processing.") for matching phrases, which is part of the [Dynatrace Query Language (DQL)](#matchesPhrase):
 
    ```
    matchesPhrase(content, "Connection refused")
@@ -11221,7 +11221,7 @@ This query performs the following actions:
 1. Go to **Settings** > **Log Monitoring** > **Metrics extraction** and select **Add log metric**.
 2. In **Key**, append the metric name to the `log.` metric key: `K8-92233333`.
 3. Add **Matcher**.  
-   Use the [DQL function](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher#lp-dql-matchesPhrase "Examine specific DQL functions and logical operators for log processing.") for matching phrases, which is part of the [Dynatrace Query Language (DQL)](#matchesPhrase):
+   Use the [DQL function](../ru/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher.md#lp-dql-matchesPhrase "Examine specific DQL functions and logical operators for log processing.") for matching phrases, which is part of the [Dynatrace Query Language (DQL)](#matchesPhrase):
 
    ```
    matchesValue(dt.entity.kubernetes_cluster, "KUBERNETES_CLUSTER-92233333")
@@ -11284,43 +11284,43 @@ The easiest way to start sending logs to Dynatrace is by using OneAgent.
 1. Install OneAgent on a host.
 2. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **Log monitoring** > **Log ingest rules**, and turn on **[Built-in] Ingest all logs**.
 
-For more details on supported log sources, see [Log ingestion](/docs/analyze-explore-automate/logs/lma-log-ingestion "Stream log data to Dynatrace.").
+For more details on supported log sources, see [Log ingestion](../ru/analyze-explore-automate/logs/lma-log-ingestion.md "Stream log data to Dynatrace.").
 
 ### 2. Explore log entries in Logs app
 
 To quickly find and explore ingested logs, use ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**. It helps you find logs using quick filters and autocomplete. Moreover, it can also explain the meaning of a selected record.
 
-For more details, see [Logs app](/docs/analyze-explore-automate/logs/lma-logs-app "Search, filter, and analyze logs with Dynatrace Logs app to quickly investigate and share insights.").
+For more details, see [Logs app](../ru/analyze-explore-automate/logs/lma-logs-app.md "Search, filter, and analyze logs with Dynatrace Logs app to quickly investigate and share insights.").
 
 ### 3. Share information via Notebooks app
 
-In ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, create shareable documents for custom analytics. Create a new notebook and [add a Prompt section](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#section-create-davis-copilot "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") for natural language queries.
+In ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, create shareable documents for custom analytics. Create a new notebook and [add a Prompt section](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md#section-create-davis-copilot "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") for natural language queries.
 
-For more details, see [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
+For more details, see [Notebooks](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
 
 ### 4. Monitor with Dashboards app
 
 In ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, use different tiles to visualize your log data and monitor them for your use cases.
 
-For more details, see [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
+For more details, see [Dashboards](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
 
 ## Next steps
 
 To start observing your logs, no complex configuration or query language knowledge is required. Once you have data in, you can explore other use cases for analytics and observability with logs.
 
-For more information, check the **Related topics** section and see [Log Management and Analytics use cases](/docs/analyze-explore-automate/logs/lma-use-cases "Explore common Log Management and Analytics use cases in Dynatrace deployments.").
+For more information, check the **Related topics** section and see [Log Management and Analytics use cases](../ru/analyze-explore-automate/logs/lma-use-cases.md "Explore common Log Management and Analytics use cases in Dynatrace deployments.").
 
 ## Related topics
 
-* [Log on Grail examples](/docs/analyze-explore-automate/logs/logs-on-grail-examples "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.")
-* [Log alerts](/docs/analyze-explore-automate/logs/alerting-on-logs "Create, or let Dynatrace create, alerts-based log data in Dynatrace log monitoring")
-* [Connect log data to traces](/docs/analyze-explore-automate/logs/lma-log-enrichment "Connect your incoming log data to traces for more precise Dynatrace analysis.")
-* [Use logs in context to troubleshoot Kubernetes (K8s) issues](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-troubleshooting "Faster troubleshooting with logs, metrics and traces on Kubernetes.")
-* [Log ingestion](/docs/analyze-explore-automate/logs/lma-log-ingestion "Stream log data to Dynatrace.")
-* [Mask sensitive data in logs](/docs/analyze-explore-automate/logs/lma-use-cases/methods-of-masking-sensitive-data "Choose the optimal method to mask your sensitive data in logs.")
-* [Configure data storage and retention for logs](/docs/analyze-explore-automate/logs/lma-bucket-assignment "Your log data can be stored in data retention buckets based on specific retention periods.")
-* [Set up Grail permissions for logs](/docs/analyze-explore-automate/logs/lma-security-context "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.")
-* [Log Management and Analytics best practices](/docs/analyze-explore-automate/logs/lma-best-practices "Best practices for setting up Log Management and Analytics with Dynatrace.")
+* [Log on Grail examples](../ru/analyze-explore-automate/logs/logs-on-grail-examples.md "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.")
+* [Log alerts](../ru/analyze-explore-automate/logs/alerting-on-logs.md "Create, or let Dynatrace create, alerts-based log data in Dynatrace log monitoring")
+* [Connect log data to traces](../ru/analyze-explore-automate/logs/lma-log-enrichment.md "Connect your incoming log data to traces for more precise Dynatrace analysis.")
+* [Use logs in context to troubleshoot Kubernetes (K8s) issues](analyze-explore-automate/logs/lma-use-cases/lma-e2e-troubleshooting.md "Faster troubleshooting with logs, metrics and traces on Kubernetes.")
+* [Log ingestion](../ru/analyze-explore-automate/logs/lma-log-ingestion.md "Stream log data to Dynatrace.")
+* [Mask sensitive data in logs](analyze-explore-automate/logs/lma-use-cases/methods-of-masking-sensitive-data.md "Choose the optimal method to mask your sensitive data in logs.")
+* [Configure data storage and retention for logs](../ru/analyze-explore-automate/logs/lma-bucket-assignment.md "Your log data can be stored in data retention buckets based on specific retention periods.")
+* [Set up Grail permissions for logs](analyze-explore-automate/logs/lma-security-context.md "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.")
+* [Log Management and Analytics best practices](../ru/analyze-explore-automate/logs/lma-best-practices.md "Best practices for setting up Log Management and Analytics with Dynatrace.")
 
 ---
 
@@ -11420,7 +11420,7 @@ Letâs look what you can do to optimize different types of queries.
 
 ### Convert queries to metrics based on logs
 
-When you are interested in aggregated values like sums, or counts spitted by a low cardinality dimension, follow the guide to [Parse log lines and extract a metric](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Configure OpenPipeline processing for log lines.").
+When you are interested in aggregated values like sums, or counts spitted by a low cardinality dimension, follow the guide to [Parse log lines and extract a metric](../ru/platform/openpipeline/use-cases/tutorial-log-processing-pipeline.md "Configure OpenPipeline processing for log lines.").
 
 In our example this is the required configuration for your metric extraction:
 
@@ -11436,7 +11436,7 @@ timeseries count = count(log.obslab.errors)
 ```
 
 Once you have adjusted the two tiles, there will be no query cost generated on rendering the two tiles.
-Log-based metrics are licensed like any other [Custom Metric powered by Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+Log-based metrics are licensed like any other [Custom Metric powered by Grail](../ru/license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 
 Itâs not always possible to extract metrics from any DQL query.
 Be aware of dimensional cardinality, and specific commands like `dedup` or `join`.
@@ -11459,7 +11459,7 @@ To do so, simply edit the dashboard tile.
   | filter dt.system.bucket == "default_logs"
   ```
 
-More DQL best practices for queries optimization are at [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.").
+More DQL best practices for queries optimization are at [DQL best practices](../ru/platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.").
 
 ### Optimize the order of query commands
 
@@ -11509,9 +11509,9 @@ Sampling isnât a good idea when you care about accuracy or scan small datas
 
 ### Configure bucket to use Retain with Included Queries
 
-If many users frequently open a dashboard and they query shorter time ranges (data that is less than 35 days old), consider using the [Retain with Included Queries](/docs/license/capabilities/log-analytics#log-retain-included-queries "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") pricing model and set the appropriate [IAM permissions](/docs/platform/grail/organize-data/assign-permissions-in-grail#included-queries "Find out how to assign permissions to buckets and tables in Grail.").
+If many users frequently open a dashboard and they query shorter time ranges (data that is less than 35 days old), consider using the [Retain with Included Queries](../ru/license/capabilities/log-analytics.md#log-retain-included-queries "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") pricing model and set the appropriate [IAM permissions](../ru/platform/grail/organize-data/assign-permissions-in-grail.md#included-queries "Find out how to assign permissions to buckets and tables in Grail.").
 
-For the detailed instructions on the bucket configuration, see [Take control of log query costs using Retain with Included Queries](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-included-log-queries "How to use the Retain with Included Queries capability to control and predict log consumption.").
+For the detailed instructions on the bucket configuration, see [Take control of log query costs using Retain with Included Queries](analyze-explore-automate/logs/lma-use-cases/lma-e2e-included-log-queries.md "How to use the Retain with Included Queries capability to control and predict log consumption.").
 
 ### Turn off auto-refresh
 
@@ -11527,26 +11527,26 @@ Your results may vary.
 
 Best practices:
 
-* If possible, use metrics based on logs as described in [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.").
+* If possible, use metrics based on logs as described in [Set up custom alerts based on metrics extracted from logs](../ru/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics.md "How to create and configure Davis problems and custom alerts with metrics based on logs.").
   Metrics are faster, have longer and cheaper retention, queries for metrics are not charged, you can drop the log records contributing to a metric and save on retention costs, can metrics be used for alerting.
 
-  To extract metrics, [Parse log lines and extract a metric](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Configure OpenPipeline processing for log lines.") with OpenPipeline.
+  To extract metrics, [Parse log lines and extract a metric](../ru/platform/openpipeline/use-cases/tutorial-log-processing-pipeline.md "Configure OpenPipeline processing for log lines.") with OpenPipeline.
 * If your use case requires that log content (or other high-cardinality data) is presented via dashboards, optimize your DQL queries by setting timeframe, segments, buckets, query limits, and disable auto-refresh.
 
 ## Learn more
 
-* [Logs use case: Observe cloud network traffic with logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-observability "Observability using logs, metrics and dashboards.")
+* [Logs use case: Observe cloud network traffic with logs](analyze-explore-automate/logs/lma-use-cases/lma-e2e-observability.md "Observability using logs, metrics and dashboards.")
 * [Start exploration journey with Dashboardsï»¿](https://www.dynatrace.com/news/blog/start-your-exploration-journey-with-dashboards/)
 * [Transform data into insights with Dynatrace Dashboards and Notebooksï»¿](https://www.dynatrace.com/news/blog/transform-data-into-insights-with-dynatrace-dashboards-and-notebooks/)
-* [Dynatrace Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")
-* [Learn more about DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.")
-* [Use OpenPipeline to extract metrics from log records](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Configure OpenPipeline processing for log lines.")
+* [Dynatrace Dashboards](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")
+* [Learn more about DQL best practices](../ru/platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.")
+* [Use OpenPipeline to extract metrics from log records](../ru/platform/openpipeline/use-cases/tutorial-log-processing-pipeline.md "Configure OpenPipeline processing for log lines.")
 
 ## Related topics
 
-* [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.")
-* [Log metrics (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
-* [Log events (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-events "Learn how to create and use Dynatrace log events to analyze log data.")
+* [Set up custom alerts based on metrics extracted from logs](../ru/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics.md "How to create and configure Davis problems and custom alerts with metrics based on logs.")
+* [Log metrics (Logs Classic)](../ru/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics.md "Learn how to create and use Dynatrace log metrics to analyze log data.")
+* [Log events (Logs Classic)](../ru/analyze-explore-automate/log-monitoring/analyze-log-data/log-events.md "Learn how to create and use Dynatrace log events to analyze log data.")
 
 ---
 
@@ -11573,79 +11573,79 @@ The following use cases show just some of the ways you can use Log Management an
 
 In this use case, you need to use VPC Flow logs to monitor and analyze incoming HTTP(S) traffic to your Virtual Private Cloud (VPC) in Amazon Web Services (AWS).
 
-* [Observe cloud network traffic with logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-observability "Observability using logs, metrics and dashboards.")
+* [Observe cloud network traffic with logs](analyze-explore-automate/logs/lma-use-cases/lma-e2e-observability.md "Observability using logs, metrics and dashboards.")
 
 ### Use logs in context to troubleshoot issues
 
 In this use case, you need to do proactive health and performance check of the apps running on maintained cluster and learns about errors in logs that are caused by another component.
 
-* [Use logs in context to troubleshoot Kubernetes (K8s) issues](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-troubleshooting "Faster troubleshooting with logs, metrics and traces on Kubernetes.")
+* [Use logs in context to troubleshoot Kubernetes (K8s) issues](analyze-explore-automate/logs/lma-use-cases/lma-e2e-troubleshooting.md "Faster troubleshooting with logs, metrics and traces on Kubernetes.")
 
 ### Investigate security incidents in Kubernetes clusters Threat hunting
 
 Incident response
 
-In this use case, you work with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to analyze unauthorized requests in your Kubernetes audit logs. See how you can manage and reuse the evidence gathered during the investigation, navigate between executed queries while maintaining investigation in context, and get a detailed overview of your results in the original format.
+In this use case, you work with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../ru/secure/investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to analyze unauthorized requests in your Kubernetes audit logs. See how you can manage and reuse the evidence gathered during the investigation, navigate between executed queries while maintaining investigation in context, and get a detailed overview of your results in the original format.
 
-* [Threat hunting and forensics](/docs/secure/use-cases/threat-hunting "Use case scenario for threat hunting and forensics with Investigations.")
+* [Threat hunting and forensics](../ru/secure/use-cases/threat-hunting.md "Use case scenario for threat hunting and forensics with Investigations.")
 
 ### Analyze AWS CloudTrail logs
 
 Incident response
 
-In this use case, you work with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to analyze CloudTrail event data, monitor and identify your AWS account activity against security threats and potential deviations from normal activities.
+In this use case, you work with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../ru/secure/investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to analyze CloudTrail event data, monitor and identify your AWS account activity against security threats and potential deviations from normal activities.
 
-* [Analyze AWS CloudTrail logs with Investigations](/docs/secure/use-cases/analyze-aws-cloudtrail-logs-with-security-investigator "Analyze CloudTrail logs and find potential security issues with Dynatrace.")
+* [Analyze AWS CloudTrail logs with Investigations](../ru/secure/use-cases/analyze-aws-cloudtrail-logs-with-security-investigator.md "Analyze CloudTrail logs and find potential security issues with Dynatrace.")
 
 ### Analyze Amazon API Gateway access logs
 
 Incident response
 
-In this use case, you work with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to monitor and identify errors in your Amazon API Gateway access logs.
+In this use case, you work with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../ru/secure/investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to monitor and identify errors in your Amazon API Gateway access logs.
 
-* [Analyze Amazon API Gateway access logs with Investigations](/docs/secure/use-cases/analyze-aws-api-gateway-access-logs-with-security-investigator "Monitor and identify errors in your Amazon API Gateway access logs with Dynatrace.")
+* [Analyze Amazon API Gateway access logs with Investigations](../ru/secure/use-cases/analyze-aws-api-gateway-access-logs-with-security-investigator.md "Monitor and identify errors in your Amazon API Gateway access logs with Dynatrace.")
 
 ### Detect threats against your AWS Secrets
 
 Incident response
 
-In this use case, you work with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to monitor and identify potential threats against your AWS Secrets by analyzing CloudTrail logs.
+In this use case, you work with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../ru/secure/investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to monitor and identify potential threats against your AWS Secrets by analyzing CloudTrail logs.
 
-* [Detect threats against your AWS Secrets with Investigations](/docs/secure/use-cases/detect-threats-against-aws-secrets-with-security-investigator "Monitor and identify potential threats against your AWS Secrets with Dynatrace.")
+* [Detect threats against your AWS Secrets with Investigations](../ru/secure/use-cases/detect-threats-against-aws-secrets-with-security-investigator.md "Monitor and identify potential threats against your AWS Secrets with Dynatrace.")
 
 ### Resolve team dependencies
 
 In this use case, you create a Log Analysis Dashboard that takes care of identifying bugs from logs, as well as grouping, triaging, and distributing to a bug tracker that clarifies ambiguous responsibilities and interdependencies.
 
-* [Automated bug triaging and ticketing](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-resolve-dependencies "Explore a Log Management and Analytics use case for resolving team dependencies.")
+* [Automated bug triaging and ticketing](analyze-explore-automate/logs/lma-use-cases/lma-e2e-resolve-dependencies.md "Explore a Log Management and Analytics use case for resolving team dependencies.")
 
 ### Real-time advanced observability with logs and DQL
 
 In this use case, you want to observe mission-critical information over time found in your logs that are sent using log ingest API.
 
-* [Observe your logs in real time](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-real-time-observability-logs-dql "Explore the Log Management and Analytics use case for real-time observability with logs.")
+* [Observe your logs in real time](../ru/analyze-explore-automate/logs/lma-use-cases/lma-e2e-real-time-observability-logs-dql.md "Explore the Log Management and Analytics use case for real-time observability with logs.")
 
 ### Control log query costs using Retention with Included Queries
 
 In this use case, you use the DPS capability **Retain with Included Queries** to control and predict log consumption.
 
-* [Take control of log query costs using Retain with Included Queries](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-included-log-queries "How to use the Retain with Included Queries capability to control and predict log consumption.")
+* [Take control of log query costs using Retain with Included Queries](analyze-explore-automate/logs/lma-use-cases/lma-e2e-included-log-queries.md "How to use the Retain with Included Queries capability to control and predict log consumption.")
 
 ### Set up custom alerts based on events extracted from logs
 
 Using Davis events based on logs you will get immediate alerts once the log record you define is ingested.
 
-* [Set up alerts based on events extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events "How to create and configure Davis problems and alerts with events based on logs.")
+* [Set up alerts based on events extracted from logs](../ru/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events.md "How to create and configure Davis problems and alerts with events based on logs.")
 
 ### Set up custom alerts based on metrics extracted from logs
 
-Using a combination of metrics based on logs and [custom alerts](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app."), you can use the power of different Dynatrace Intelligence data analyzers to address use cases from simple threshold-based alerting to seasonal baselines.
+Using a combination of metrics based on logs and [custom alerts](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app."), you can use the power of different Dynatrace Intelligence data analyzers to address use cases from simple threshold-based alerting to seasonal baselines.
 
-* [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.")
+* [Set up custom alerts based on metrics extracted from logs](../ru/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics.md "How to create and configure Davis problems and custom alerts with metrics based on logs.")
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
 
 ---
 
@@ -11666,15 +11666,15 @@ scraped: 2026-03-06T21:15:20.149749
 * 17-min read
 * Updated on Oct 15, 2025
 
-Log Management and Analytics powered by Grail enables you to pinpoint and retrieve any log data with the help of [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."). After reviewing the [fundamentals of DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts."), use the examples on this page to start getting answers from your log data.
+Log Management and Analytics powered by Grail enables you to pinpoint and retrieve any log data with the help of [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."). After reviewing the [fundamentals of DQL queries](../ru/platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts."), use the examples on this page to start getting answers from your log data.
 
 To run DQL queries with logs on Grail, go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic** > **Advanced mode**.
 
-* [Example 1](/docs/analyze-explore-automate/logs/logs-on-grail-examples#logexample1 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Get the distribution of HTTP status codes and counts per error type.
-* [Example 2](/docs/analyze-explore-automate/logs/logs-on-grail-examples#logexample2 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Define an average cart size based on logs.
-* [Example 3](/docs/analyze-explore-automate/logs/logs-on-grail-examples#logexample3 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Track user changes with audit logs.
-* [Example 4](/docs/analyze-explore-automate/logs/logs-on-grail-examples#logexample4 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Create a log metric.
-* [Example 5](/docs/analyze-explore-automate/logs/logs-on-grail-examples#logexample5 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Create a log alert.
+* [Example 1](../ru/analyze-explore-automate/logs/logs-on-grail-examples.md#logexample1 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Get the distribution of HTTP status codes and counts per error type.
+* [Example 2](../ru/analyze-explore-automate/logs/logs-on-grail-examples.md#logexample2 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Define an average cart size based on logs.
+* [Example 3](../ru/analyze-explore-automate/logs/logs-on-grail-examples.md#logexample3 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Track user changes with audit logs.
+* [Example 4](../ru/analyze-explore-automate/logs/logs-on-grail-examples.md#logexample4 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Create a log metric.
+* [Example 5](../ru/analyze-explore-automate/logs/logs-on-grail-examples.md#logexample5 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Create a log alert.
 
 ### Example 1: Status codes and counts
 
@@ -11705,11 +11705,11 @@ The proxy server logs HTTP response status codes. You need to see the response c
 
    **Results table**
 2. Extract your metric from the content field.  
-   The log content field includes the HTTP\_STATUS codes you need. Now let's use the `parse` command to create a [Dynatrace Pattern Language](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.") pattern with the following elements:
+   The log content field includes the HTTP\_STATUS codes you need. Now let's use the `parse` command to create a [Dynatrace Pattern Language](../ru/platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.") pattern with the following elements:
 
-   * `LD`: start by matching any [line data](/docs/platform/grail/dynatrace-pattern-language/log-processing-lines-strings#line-data "Explore DPL syntax for handling lines and strings.") at the beginning of the field
-   * `'HTTP_STATUS '`: [literal expression](/docs/platform/grail/dynatrace-pattern-language/log-processing-literal-expression "Explore DPL syntax for handling literal expressions.") that immediately precedes the numerical Http Status, and takes into account a space
-   * `INT:httpstatus`: [integer](/docs/platform/grail/dynatrace-pattern-language/log-processing-numeric#int-integer "Explore DPL syntax for handling numeric data.") that will be parsed out as a new field `httpstatus`
+   * `LD`: start by matching any [line data](platform/grail/dynatrace-pattern-language/log-processing-lines-strings.md#line-data "Explore DPL syntax for handling lines and strings.") at the beginning of the field
+   * `'HTTP_STATUS '`: [literal expression](platform/grail/dynatrace-pattern-language/log-processing-literal-expression.md "Explore DPL syntax for handling literal expressions.") that immediately precedes the numerical Http Status, and takes into account a space
+   * `INT:httpstatus`: [integer](platform/grail/dynatrace-pattern-language/log-processing-numeric.md#int-integer "Explore DPL syntax for handling numeric data.") that will be parsed out as a new field `httpstatus`
 
    ```
    fetch logs
@@ -11809,15 +11809,15 @@ Your application logs context data that is relevant to your business. You need t
    **Results table**
 3. Extract the products and corresponding quantities.  
    You need to extract the product identifiers and quantities from logs with the `parse` command.  
-   Using the [Dynatrace Pattern Language](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers."), create a pattern and match the following parts of the `content` field:
+   Using the [Dynatrace Pattern Language](../ru/platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers."), create a pattern and match the following parts of the `content` field:
 
-   * `LD`: start by matching any [line data](/docs/platform/grail/dynatrace-pattern-language/log-processing-lines-strings#line-data "Explore DPL syntax for handling lines and strings.") at the start of the field
-   * `'userId='`: [literal expression](/docs/platform/grail/dynatrace-pattern-language/log-processing-literal-expression "Explore DPL syntax for handling literal expressions.") that immediately precedes user ID
+   * `LD`: start by matching any [line data](platform/grail/dynatrace-pattern-language/log-processing-lines-strings.md#line-data "Explore DPL syntax for handling lines and strings.") at the start of the field
+   * `'userId='`: [literal expression](platform/grail/dynatrace-pattern-language/log-processing-literal-expression.md "Explore DPL syntax for handling literal expressions.") that immediately precedes user ID
    * `LD:userId`: any line data that will be parsed out as a new field with the `userId` name
    * `', productId='`: literal expression that ends user ID and separates it from product ID
    * `LD:productId`: any line data that will be parsed out as a new field with the `productId` name
    * `', quantity='`: literal expression that ends product ID and separates it from quantity
-   * `INT:productQuantity`: [integer](/docs/platform/grail/dynatrace-pattern-language/log-processing-numeric#int-integer "Explore DPL syntax for handling numeric data.") that will be parsed out as a new field with the `productQuantity` name
+   * `INT:productQuantity`: [integer](platform/grail/dynatrace-pattern-language/log-processing-numeric.md#int-integer "Explore DPL syntax for handling numeric data.") that will be parsed out as a new field with the `productQuantity` name
 
    The remaining fields are ignored.
 
@@ -12114,23 +12114,23 @@ In this example, you track user changes with audit logs. You want to track the t
 
 In this example, you need to count how many refused connections are recorded in your log data. For that, filter the correct logs and turn the number of occurrences into a log metric.
 
-* [Create connections refused metric](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-create-log-metric#lma-uc-create-connections-refused-metric "Explore the Log Management and Analytics use case for creating a log metric.")
+* [Create connections refused metric](../ru/analyze-explore-automate/logs/lma-use-cases/lma-e2e-create-log-metric.md#lma-uc-create-connections-refused-metric "Explore the Log Management and Analytics use case for creating a log metric.")
 
 In this example, you need to monitor an attribute of your logs, and you need to keep an eye on the error levels reported in your logs from your K8s cluster.
 
-* [Create log attribute metric](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-create-log-metric#lma-uc-create-log-attribute-metric "Explore the Log Management and Analytics use case for creating a log metric.")
+* [Create log attribute metric](../ru/analyze-explore-automate/logs/lma-use-cases/lma-e2e-create-log-metric.md#lma-uc-create-log-attribute-metric "Explore the Log Management and Analytics use case for creating a log metric.")
 
 ### Example 5: Create a log alert
 
 In this example, you need to set an alert based on the occurrence of log events. See how you can extract data from logs, create a processing rule, build an alert by forming a log event, and check if your alert captures logs that meet predefined criteria.
 
-* [Set up alerts based on events extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events "How to create and configure Davis problems and alerts with events based on logs.")
+* [Set up alerts based on events extracted from logs](../ru/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events.md "How to create and configure Davis problems and alerts with events based on logs.")
 
 ### Create anomaly detection metric
 
 In this use case, you need to automate anomaly detection. See how you can extract data from logs, create a processing rule, create a metric, and create an alert that generates a notification if an anomaly occurs.
 
-* [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.")
+* [Set up custom alerts based on metrics extracted from logs](../ru/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics.md "How to create and configure Davis problems and custom alerts with metrics based on logs.")
 
 ---
 
@@ -12150,7 +12150,7 @@ scraped: 2026-03-05T21:34:52.597060
 * 5-min read
 * Updated on Nov 20, 2025
 
-Log Management and Analytics is the latest Dynatrace log monitoring solution. With the introduction of Dynatrace Platform and [Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), we encourage you to upgrade to the latest log monitoring offer.
+Log Management and Analytics is the latest Dynatrace log monitoring solution. With the introduction of Dynatrace Platform and [Grail](../ru/platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), we encourage you to upgrade to the latest log monitoring offer.
 
 ### How can I upgrade from Log Monitoring Classic to Log Management and Analytics?
 
@@ -12182,15 +12182,15 @@ After activating Log Management and Analytics, the following changes take place:
 
 * Ingested log data
 
-  + Ingested log data is saved in the [Grail database](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.").
-  + Ingested log data can be routed to buckets with different [retention periods](/docs/analyze-explore-automate/logs/lma-bucket-assignment "Your log data can be stored in data retention buckets based on specific retention periods.").
+  + Ingested log data is saved in the [Grail database](../ru/platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.").
+  + Ingested log data can be routed to buckets with different [retention periods](../ru/analyze-explore-automate/logs/lma-bucket-assignment.md "Your log data can be stored in data retention buckets based on specific retention periods.").
 * DDU consumption
 
-  + When you activate Log Management and Analytics, you begin consuming DDUs under a [new model with three dimensions: Ingest & Process, Retain, Query](/docs/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.").
+  + When you activate Log Management and Analytics, you begin consuming DDUs under a [new model with three dimensions: Ingest & Process, Retain, Query](../ru/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics.md "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.").
   + If you choose **Wait 7 days**, you'll still start consuming DDUs for ingestion and retention under the new model immediately and for querying after you run your first DQL query.
 * API
 
-  + The [log export API](/docs/dynatrace-api/environment-api/log-monitoring-v2/get-export-logs "Fetch log records via the Log Monitoring API v2.") will not be available. We recommend that you stop using [Log GET search](/docs/dynatrace-api/environment-api/log-monitoring-v2/get-search-logs "Fetch log records via the Log Monitoring API v2.") and [Log GET aggregate](/docs/dynatrace-api/environment-api/log-monitoring-v2/get-aggregate-logs "Fetch the aggregated log records via the Log Monitoring API v2."). If you continue using them, they require an [OAuth2 token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.") with the `storage:logs:read` and `storage:buckets:read` scopes.
+  + The [log export API](dynatrace-api/environment-api/log-monitoring-v2/get-export-logs.md "Fetch log records via the Log Monitoring API v2.") will not be available. We recommend that you stop using [Log GET search](dynatrace-api/environment-api/log-monitoring-v2/get-search-logs.md "Fetch log records via the Log Monitoring API v2.") and [Log GET aggregate](dynatrace-api/environment-api/log-monitoring-v2/get-aggregate-logs.md "Fetch the aggregated log records via the Log Monitoring API v2."). If you continue using them, they require an [OAuth2 token](manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.") with the `storage:logs:read` and `storage:buckets:read` scopes.
   + We recommend that you switch from existing APIs to the [Grail Query APIï»¿](https://developer.dynatrace.com/platform-services/services/storage/).
 * No support for Management Zones
 
@@ -12200,12 +12200,12 @@ After activating Log Management and Analytics, the following changes take place:
 
 After activating Log Management and Analytics, the following will not change:
 
-* Ingestion configuration, including [OneAgent configuration](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.") and [generic API ingest](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.").
-* Log processing, including [processing rules](/docs/analyze-explore-automate/logs/lma-classic-log-processing#lmc-log-processing-rules "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.") with matchers based on the LQL syntax.
-* Log metrics, including [metric queries](/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-metrics "Create metrics based on log data and use them throughout Dynatrace like any other metric.") based on the LQL syntax.
-* Log events, including [event queries](/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-events "Create log events based on log data and use them in problem detection.") based on the LQL syntax.
+* Ingestion configuration, including [OneAgent configuration](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.") and [generic API ingest](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.").
+* Log processing, including [processing rules](../ru/analyze-explore-automate/logs/lma-classic-log-processing.md#lmc-log-processing-rules "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.") with matchers based on the LQL syntax.
+* Log metrics, including [metric queries](analyze-explore-automate/logs/lma-log-processing/lma-log-metrics.md "Create metrics based on log data and use them throughout Dynatrace like any other metric.") based on the LQL syntax.
+* Log events, including [event queries](analyze-explore-automate/logs/lma-log-processing/lma-log-events.md "Create log events based on log data and use them in problem detection.") based on the LQL syntax.
 
-However we recommend to [convert your LQL matchers](/docs/analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion "Convert your current log monitoring rules to DQL.") for log processing, metrics and events to highly performing [DQL matcher](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher "Examine specific DQL functions and logical operators for log processing.").
+However we recommend to [convert your LQL matchers](analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion.md "Convert your current log monitoring rules to DQL.") for log processing, metrics and events to highly performing [DQL matcher](../ru/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher.md "Examine specific DQL functions and logical operators for log processing.").
 
 ### User access
 
@@ -12240,19 +12240,19 @@ The user access granting process depends on whether you are a new or existing us
     **Policy name**: Storage Logs Read  
     **Policy description**: Enables reading logs from GRAIL  
     **Policy statements**: `ALLOW storage:logs:read`  
-    For details, see [Manage IAM policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt#create "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.").
+    For details, see [Manage IAM policies](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt.md#create "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.").
 
-  To make a policy effective, you need to [bind it to a group](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies#add-or-remove "Working with policies").
+  To make a policy effective, you need to [bind it to a group](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies.md#add-or-remove "Working with policies").
 
   1. Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/).
   2. Select **Identity & access management** > **Group management**.  
-     For details, see [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+     For details, see [Working with policies](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
   3. Edit the group to which you want to bind the policy (for example, Logs and events). Make sure the users who need to use the Logs and events have this group assigned to their names.
   4. Select the **Policies** tab.
 
   Assign policy via API
 
-  1. Obtain an [OAuth](/docs/manage/account-management/identity-access-management/oauth "Manage authentication and user permissions for the Account Management API.") token
+  1. Obtain an [OAuth](manage/account-management/identity-access-management/oauth.md "Manage authentication and user permissions for the Account Management API.") token
      Make a POST call with form parameters to SSO.
 
      + client\_id = [client\_id]
@@ -12286,7 +12286,7 @@ The user access granting process depends on whether you are a new or existing us
      }
      ```
   2. Create a storage events read policy
-     Make a POST call to [IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies")
+     Make a POST call to [IAM](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies")
 
      Body payload for the policy is:
 
@@ -12314,7 +12314,7 @@ The user access granting process depends on whether you are a new or existing us
      "statementQuery": "ALLOW storage:events:read;"
      ```
   3. Create a storage logs read policy
-     Make a POST call to [IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies")
+     Make a POST call to [IAM](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies")
 
      Body payload for the policy is:
 
@@ -12350,8 +12350,8 @@ The user access granting process depends on whether you are a new or existing us
 
 ## Related topics
 
-* [Best practices for upgrading to the latest Dynatrace](/docs/manage/upgrade-guide-landing-page "Best practices for upgrading to the latest Dynatrace")
-* [Set up Grail permissions for logs](/docs/analyze-explore-automate/logs/lma-security-context "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.")
+* [Best practices for upgrading to the latest Dynatrace](manage/upgrade-guide-landing-page.md "Best practices for upgrading to the latest Dynatrace")
+* [Set up Grail permissions for logs](analyze-explore-automate/logs/lma-security-context.md "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.")
 
 ---
 
@@ -12372,9 +12372,9 @@ scraped: 2026-03-06T21:10:16.285435
 * 6-min read
 * Updated on Jan 28, 2026
 
-Log Management and Analytics powered by [Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.") provides a unified approach to unlocking the value of log data in the Dynatrace platform.
+Log Management and Analytics powered by [Grail](../ru/platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.") provides a unified approach to unlocking the value of log data in the Dynatrace platform.
 
-Hassle-free management of your log data lets you [ingest](/docs/analyze-explore-automate/logs/lma-log-ingestion "Stream log data to Dynatrace.") petabytes of data without schemas, indexing, or rehydration. All of that data is usable at any time for any analytics task. Thanks to schema on-read and the [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."), there's no need to decide what you want to query during data ingestion. Select the retention period for your data that suits your business and compliance needs, whether for debugging or audit purposes.
+Hassle-free management of your log data lets you [ingest](../ru/analyze-explore-automate/logs/lma-log-ingestion.md "Stream log data to Dynatrace.") petabytes of data without schemas, indexing, or rehydration. All of that data is usable at any time for any analytics task. Thanks to schema on-read and the [Dynatrace Query Language (DQL)](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."), there's no need to decide what you want to query during data ingestion. Select the retention period for your data that suits your business and compliance needs, whether for debugging or audit purposes.
 
 Put Dynatrace Log Management and Analytics into use:
 
@@ -12388,27 +12388,27 @@ Put Dynatrace Log Management and Analytics into use:
 
 **Quick start guide**
 
-Take the first steps to onboard and explore your logs.](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-real-time-observability-logs-dql "Explore the Log Management and Analytics use case for real-time observability with logs.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+Take the first steps to onboard and explore your logs.](../ru/analyze-explore-automate/logs/lma-use-cases/lma-e2e-real-time-observability-logs-dql.md "Explore the Log Management and Analytics use case for real-time observability with logs.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
 **Ingest logs**
 
-Set up log collection to automatically bring logs from different sources.](/docs/analyze-explore-automate/logs/lma-log-ingestion "Stream log data to Dynatrace.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+Set up log collection to automatically bring logs from different sources.](../ru/analyze-explore-automate/logs/lma-log-ingestion.md "Stream log data to Dynatrace.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
 **Set up buckets and permissions**
 
-Configure storage and define retention and access controls.](/docs/analyze-explore-automate/logs/lma-bucket-assignment "Your log data can be stored in data retention buckets based on specific retention periods.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+Configure storage and define retention and access controls.](../ru/analyze-explore-automate/logs/lma-bucket-assignment.md "Your log data can be stored in data retention buckets based on specific retention periods.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
 **Configure processing in OpenPipeline**
 
-Define how ingested logs are processed and stored.](/docs/analyze-explore-automate/logs/lma-log-processing "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
+Define how ingested logs are processed and stored.](../ru/analyze-explore-automate/logs/lma-log-processing.md "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
 
 ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs** **app**
 
-Learn how to leverage ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**.](/docs/analyze-explore-automate/logs/lma-logs-app "Search, filter, and analyze logs with Dynatrace Logs app to quickly investigate and share insights.")[![Step 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Step 6")
+Learn how to leverage ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**.](../ru/analyze-explore-automate/logs/lma-logs-app.md "Search, filter, and analyze logs with Dynatrace Logs app to quickly investigate and share insights.")[![Step 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Step 6")
 
 **Alerting, Problems, and automations**
 
-Create anomaly detection and alerts, as well as automate the detection process.](/docs/analyze-explore-automate/logs/alerting-on-logs "Create, or let Dynatrace create, alerts-based log data in Dynatrace log monitoring")
+Create anomaly detection and alerts, as well as automate the detection process.](../ru/analyze-explore-automate/logs/alerting-on-logs.md "Create, or let Dynatrace create, alerts-based log data in Dynatrace log monitoring")
 
 Log data can come from diverse sources, including Kubernetes, technology stacks, cloud services, hyperscalers, custom API integrations, or Dynatrace extensions. Dynatrace employs OneAgent and API as key methods for ingesting logs from these sources.
 
@@ -12422,7 +12422,7 @@ You can analyze the ingested data in ![Logs](https://dt-cdn.net/images/logs-256-
 
 ## Consumption model
 
-The consumption model for Log Management and Analytics is based on three dimensions of data usage (Ingest & Process, Retain, and Query). The unit of measure for consumed data volume is gibibytes (GiB). In addition, **Retain with Included queries** is an available option combining the dimensions of Query and Retention. For details, see [Log Analytics (DPS)](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.").
+The consumption model for Log Management and Analytics is based on three dimensions of data usage (Ingest & Process, Retain, and Query). The unit of measure for consumed data volume is gibibytes (GiB). In addition, **Retain with Included queries** is an available option combining the dimensions of Query and Retention. For details, see [Log Analytics (DPS)](../ru/license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.").
 
 ## Availability and previous versions
 
@@ -12436,9 +12436,9 @@ Make smarter, faster decisions when troubleshooting and measuring the health of 
 
 ## Related topics
 
-* [Upgrade to Log Management and Analytics](/docs/analyze-explore-automate/log-monitoring/logs-upgrade/lmc-logs-upgrade-to-lma "Log Management and Analytics is the latest Dynatrace log monitoring solution. We encourage you to upgrade to this latest log monitoring offer.")
-* [Log Management and Analytics use cases](/docs/analyze-explore-automate/logs/lma-use-cases "Explore common Log Management and Analytics use cases in Dynatrace deployments.")
-* [Log on Grail examples](/docs/analyze-explore-automate/logs/logs-on-grail-examples "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
+* [Upgrade to Log Management and Analytics](../ru/analyze-explore-automate/log-monitoring/logs-upgrade/lmc-logs-upgrade-to-lma.md "Log Management and Analytics is the latest Dynatrace log monitoring solution. We encourage you to upgrade to this latest log monitoring offer.")
+* [Log Management and Analytics use cases](../ru/analyze-explore-automate/logs/lma-use-cases.md "Explore common Log Management and Analytics use cases in Dynatrace deployments.")
+* [Log on Grail examples](../ru/analyze-explore-automate/logs/logs-on-grail-examples.md "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
 
 ---

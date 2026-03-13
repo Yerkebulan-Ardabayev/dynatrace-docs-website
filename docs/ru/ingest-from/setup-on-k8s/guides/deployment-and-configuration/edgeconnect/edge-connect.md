@@ -26,7 +26,7 @@ EdgeConnect обеспечивает безопасное взаимодейст
 
 ## Шаг 1. Создание EdgeConnect
 
-Чтобы создать EdgeConnect, следуйте инструкциям в разделе [Create a new EdgeConnect configuration](/docs/ingest-from/edgeconnect#createconfiguration "Use EdgeConnect to control how your apps and workflows interact with your internal systems.").
+Чтобы создать EdgeConnect, следуйте инструкциям в разделе [Create a new EdgeConnect configuration](../../../../edgeconnect.md#createconfiguration "Use EdgeConnect to control how your apps and workflows interact with your internal systems.").
 
 ## Шаг 2. Создание секрета учётных данных OAuth
 
@@ -71,7 +71,7 @@ EdgeConnect обеспечивает безопасное взаимодейст
 
 ## Шаг 3. Настройка EdgeConnect
 
-1. Перед применением конфигурации убедитесь, что у вас есть все необходимые сведения. Поля конфигурации см. в разделе [EdgeConnect parameters for Dynatrace Operator](/docs/ingest-from/setup-on-k8s/reference/edgeconnect-parameters "List of configuration parameters for EdgeConnect.").
+1. Перед применением конфигурации убедитесь, что у вас есть все необходимые сведения. Поля конфигурации см. в разделе [EdgeConnect parameters for Dynatrace Operator](../../../reference/edgeconnect-parameters.md "List of configuration parameters for EdgeConnect.").
 2. Создайте файл пользовательского ресурса EdgeConnect. Убедитесь, что значение `metadata.name` совпадает с именем, использованным при создании конфигурации EdgeConnect на шаге 1.
 
    ```
@@ -147,4 +147,4 @@ sample-edge-connect-name   <environment-id>.apps.dynatrace.com   Running   16m
 
 ## Связанные темы
 
-* [Configure and deploy EdgeConnect](/docs/ingest-from/edgeconnect "Use EdgeConnect to control how your apps and workflows interact with your internal systems.")
+* [Configure and deploy EdgeConnect](../../../../edgeconnect.md "Use EdgeConnect to control how your apps and workflows interact with your internal systems.")

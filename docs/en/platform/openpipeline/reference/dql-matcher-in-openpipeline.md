@@ -13,9 +13,9 @@ scraped: 2026-03-06T21:13:46.603842
 * 8-min read
 * Updated on Dec 15, 2025
 
-With [Dynatrace powered by Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), you can use [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") (DQL) functions and logical operators in matchers.
+With [Dynatrace powered by Grail](../../grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), you can use [Dynatrace Query Language](../../grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") (DQL) functions and logical operators in matchers.
 
-The matcher filters the ingested data and reduces the scope of data processed by the processor that you create. You can use the matcher in [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to:
+The matcher filters the ingested data and reduces the scope of data processed by the processor that you create. You can use the matcher in [OpenPipeline](../../openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to:
 
 * Filter records containing a specified phrase.
 * Search data for a specific value in a given attribute.
@@ -23,7 +23,7 @@ The matcher filters the ingested data and reduces the scope of data processed by
 * Use logical operators to connect two or more expressions.
 * Request logs that show duration for requests longer than `1s`.
 
-To learn about the use of logical operators in DQL, see [Logical or equality operators](/docs/platform/grail/dynatrace-query-language/operators#dql-logical-or-equality-operators "A list of DQL Operators.").
+To learn about the use of logical operators in DQL, see [Logical or equality operators](../../grail/dynatrace-query-language/operators.md#dql-logical-or-equality-operators "A list of DQL Operators.").
 
 ## Functions
 
@@ -33,7 +33,7 @@ Filters records containing a specified phrase. Returns only matching records. Th
 
 ##### Validation
 
-The `matchesPhrase` function performs case-insensitive [contains](/docs/platform/grail/dynatrace-query-language/functions#contains "A list of DQL functions.") for the whole query string and doesn't support mid-string wildcards.
+The `matchesPhrase` function performs case-insensitive [contains](../../grail/dynatrace-query-language/functions.md#contains "A list of DQL functions.") for the whole query string and doesn't support mid-string wildcards.
 For found results, additional validation takes place:
 
 * If the query starts with a word character, the preceding character must be a non-word character.
@@ -115,7 +115,7 @@ filter isNull(`host.name`)
 
 ## Operators
 
-Logical operators can be used to connect two or more expressions. Check out [Logical or equality operators](/docs/platform/grail/dynatrace-query-language/operators#dql-logical-or-equality-operators "A list of DQL Operators.") to find out more about the behavior of logical operators in DQL.
+Logical operators can be used to connect two or more expressions. Check out [Logical or equality operators](../../grail/dynatrace-query-language/operators.md#dql-logical-or-equality-operators "A list of DQL Operators.") to find out more about the behavior of logical operators in DQL.
 
 ### OR
 
@@ -198,7 +198,7 @@ With DQL matcher in OpenPipeline, you can use the following numerical operators:
 
 #### Strict equality
 
-[Logical operator](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.") (`==`) indicating an exact match.
+[Logical operator](../../grail/dynatrace-query-language/operators.md "A list of DQL Operators.") (`==`) indicating an exact match.
 
 Configuration scopes need to be identical. However, if the decimal value is `0`, floating numbers can be compared with integer data. For example, `1==1.0`.
 For strings, the search is case-sensitive.
@@ -211,6 +211,6 @@ Contrary to `matchesValue` function, `strict equality` operator performs case-se
 
 ## Related topics
 
-* [DQL Functions in OpenPipeline](/docs/platform/openpipeline/reference/openpipeline-dql-functions "A list of DQL functions available in OpenPipeline.")
-* [DQL Commands](/docs/platform/openpipeline/reference/openpipeline-dql-commands "A list of DQL commands available in OpenPipeline.")
-* [DQL Operators in OpenPipeline DQL processor](/docs/platform/openpipeline/reference/openpipeline-dql-operators "A list of DQL operators available in OpenPipeline DQL processor.")
+* [DQL Functions in OpenPipeline](openpipeline-dql-functions.md "A list of DQL functions available in OpenPipeline.")
+* [DQL Commands](openpipeline-dql-commands.md "A list of DQL commands available in OpenPipeline.")
+* [DQL Operators in OpenPipeline DQL processor](openpipeline-dql-operators.md "A list of DQL operators available in OpenPipeline DQL processor.")

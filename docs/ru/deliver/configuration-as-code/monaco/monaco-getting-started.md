@@ -17,11 +17,11 @@ scraped: 2026-03-02T21:28:22.074262
 
 ## Предварительные требования
 
-* [Установите Monaco](/docs/deliver/configuration-as-code/monaco/installation "Download and install Dynatrace Configuration as Code via Monaco.") и сделайте исполняемый файл доступным в переменной окружения `PATH`.
-* Создайте [платформенный токен или OAuth-клиент](/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling "This is a list of the Monaco API support and access permission handling.") с соответствующими правами доступа.
+* [Установите Monaco](installation.md "Download and install Dynatrace Configuration as Code via Monaco.") и сделайте исполняемый файл доступным в переменной окружения `PATH`.
+* Создайте [платформенный токен или OAuth-клиент](monaco-api-support-and-access-handling.md "This is a list of the Monaco API support and access permission handling.") с соответствующими правами доступа.
   Необходимые права зависят от того, какие API вы используете.
 
-  Для получения дополнительной информации см. документацию по API или [справочник по IAM-политикам](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+  Для получения дополнительной информации см. документацию по API или [справочник по IAM-политикам](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
 В этом примере мы будем использовать конфигурацию SLO, для которой необходимы следующие разрешения:
 
@@ -497,5 +497,5 @@ time=2025-09-01T09:08:23.557+02:00 level=INFO msg="Deployment finished without e
 
 ## Связанные темы
 
-* [Установка Dynatrace Configuration as Code via Monaco](/docs/deliver/configuration-as-code/monaco/installation "Download and install Dynatrace Configuration as Code via Monaco.")
-* [Поддержка API и управление правами доступа в Monaco](/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling "This is a list of the Monaco API support and access permission handling.")
+* [Установка Dynatrace Configuration as Code via Monaco](installation.md "Download and install Dynatrace Configuration as Code via Monaco.")
+* [Поддержка API и управление правами доступа в Monaco](monaco-api-support-and-access-handling.md "This is a list of the Monaco API support and access permission handling.")

@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:17:36.115344
 
 Потребление DDU для Log Monitoring
 
-Ценообразование DDU применяется к облачному Log Monitoring. Подробности см. в разделе [DDU для Log Monitoring](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Узнайте, как рассчитывается объём потребления DDU для Dynatrace Log Monitoring Classic.").
+Ценообразование DDU применяется к облачному Log Monitoring. Подробности см. в разделе [DDU для Log Monitoring](../../../license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Узнайте, как рассчитывается объём потребления DDU для Dynatrace Log Monitoring Classic.").
 
 Перенаправление логов Azure позволяет передавать логи Azure из Azure Event Hubs в логи Dynatrace через экземпляр Azure Function App. Поддерживаются логи ресурсов Azure, логи активности и логи входа Entra ID.
 
@@ -50,10 +50,10 @@ scraped: 2026-03-06T21:17:36.115344
 
 * Dynatrace версии 1.217+
 
-* [Включить универсальный приём логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Передавайте данные логов в Dynatrace через API и позвольте Dynatrace преобразовать их в понятные сообщения логов.")
-* [Включить мониторинг логов (последняя версия)](/docs/analyze-explore-automate/logs "Log Management and Analytics обеспечивает единый подход к управлению и изучению данных логов в Dynatrace.")
+* [Включить универсальный приём логов](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Передавайте данные логов в Dynatrace через API и позвольте Dynatrace преобразовать их в понятные сообщения логов.")
+* [Включить мониторинг логов (последняя версия)](../../../analyze-explore-automate/logs.md "Log Management and Analytics обеспечивает единый подход к управлению и изучению данных логов в Dynatrace.")
 
-* [Создать токен API](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Узнайте о концепции токена доступа и его областях.") и включить разрешение **Ingest logs**. Токен API применяется к обеим версиям.
+* [Создать токен API](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Узнайте о концепции токена доступа и его областях.") и включить разрешение **Ingest logs**. Токен API применяется к обеим версиям.
 
 ### Azure
 
@@ -87,7 +87,7 @@ scraped: 2026-03-06T21:17:36.115344
 
      **Примечание:** Имя должно быть глобально уникальным — оно добавляется к именам создаваемых ресурсов Azure.
 
-* Для `TARGET_URL` введите URL вашей среды: `https://<your_environment_ID>.live.dynatrace.com`. Чтобы узнать, как определить идентификатор среды для развёртывания SaaS, см. [идентификатор среды](/docs/discover-dynatrace/get-started/monitoring-environment "Понимание и работа со средами мониторинга.").
+* Для `TARGET_URL` введите URL вашей среды: `https://<your_environment_ID>.live.dynatrace.com`. Чтобы узнать, как определить идентификатор среды для развёртывания SaaS, см. [идентификатор среды](../../../discover-dynatrace/get-started/monitoring-environment.md "Понимание и работа со средами мониторинга.").
 
 * Для `TARGET_API_TOKEN` введите ваш токен API. Подробности см. в разделе [Требования Dynatrace](#dynatrace).
 * Для `RESOURCE_GROUP` введите имя группы ресурсов Azure, в которой будет выполняться развёртывание. Подробности см. в разделе [Требования Azure](#azure).
@@ -133,7 +133,7 @@ EVENT_HUB_CONNECTION_STRING="<your_Event_Hub_connection_string>"
 * Если логи поступают, значит инструмент перенаправления логов Azure успешно развёрнут.
 * Если в течение 10 минут логи не поступают, ознакомьтесь с разделом руководства **Проверка**.
 
-Вы можете использовать [DQL](/docs/platform/grail/dynatrace-query-language "Как использовать язык запросов Dynatrace.") для фильтрации логов Azure.
+Вы можете использовать [DQL](../../../platform/grail/dynatrace-query-language.md "Как использовать язык запросов Dynatrace.") для фильтрации логов Azure.
 В качестве примера можно добавить следующую строку в запрос DQL:
 
 ```
@@ -333,7 +333,7 @@ Dynatrace версии 1.217+
 1. Задайте следующие переменные среды, заменив заполнители (`<...>`) своими значениями.
 
    * Для `DEPLOYMENT_NAME` введите имя развёртывания (только строчные буквы).
-   * Для `TARGET_URL` введите URL API конечной точки вашего ActiveGate: `https://<your_activegate_IP_or_hostname>:9999/e/<your_environment_ID>`. Чтобы узнать, как определить идентификатор среды, см. [идентификатор среды](/docs/discover-dynatrace/get-started/monitoring-environment "Понимание и работа со средами мониторинга.").
+   * Для `TARGET_URL` введите URL API конечной точки вашего ActiveGate: `https://<your_activegate_IP_or_hostname>:9999/e/<your_environment_ID>`. Чтобы узнать, как определить идентификатор среды, см. [идентификатор среды](../../../discover-dynatrace/get-started/monitoring-environment.md "Понимание и работа со средами мониторинга.").
    * Для `TARGET_API_TOKEN` введите ваш токен API. Подробности см. в предварительных требованиях выше.
    * Для `RESOURCE_GROUP` введите имя группы ресурсов Azure, в которой будет выполняться развёртывание. Подробности см. в разделе [Требования Azure](#azure).
    * Для `EVENT_HUB_CONNECTION_STRING` введите строку подключения для экземпляров Azure Event Hubs, настроенных для получения логов. Подробности см. в разделе [Требования Azure](#azure).
@@ -447,7 +447,7 @@ Dynatrace версии 1.217+
 
    * Для `DEPLOYMENT_NAME` введите имя развёртывания (только строчные буквы).
 
-* Для `TARGET_URL` введите URL вашей среды: `https://<your_environment_ID>.live.dynatrace.com`. Чтобы узнать, как определить идентификатор среды для развёртывания SaaS, см. [идентификатор среды](/docs/discover-dynatrace/get-started/monitoring-environment "Понимание и работа со средами мониторинга.").
+* Для `TARGET_URL` введите URL вашей среды: `https://<your_environment_ID>.live.dynatrace.com`. Чтобы узнать, как определить идентификатор среды для развёртывания SaaS, см. [идентификатор среды](../../../discover-dynatrace/get-started/monitoring-environment.md "Понимание и работа со средами мониторинга.").
 
 * Для `TARGET_API_TOKEN` введите ваш токен API. Подробности см. в предварительных требованиях выше.
 * Для `RESOURCE_GROUP` введите имя группы ресурсов Azure, в которой будет выполняться развёртывание. Подробности см. в разделе [Требования Azure](#azure).
@@ -554,5 +554,5 @@ Dynatrace версии 1.217+
 
 ## Связанные темы
 
-* [Интеграции Microsoft Azure](/docs/ingest-from/microsoft-azure-services/azure-integrations "Настройте глубокий мониторинг кода Dynatrace на Azure с помощью OneAgent или OpenTelemetry.")
+* [Интеграции Microsoft Azure](../azure-integrations.md "Настройте глубокий мониторинг кода Dynatrace на Azure с помощью OneAgent или OpenTelemetry.")
 * [Устранение неполадок с инструментом перенаправления логов Azure](https://community.dynatrace.com/t5/Troubleshooting/Azure-Log-Forwarder-Troubleshooting/ta-p/243797)

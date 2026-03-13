@@ -24,7 +24,7 @@ The request consumes an `application/json` payload.
 
 To execute this request, you need an access token with `securityProblems.write` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Parameters
 
@@ -363,5 +363,5 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/mute
 
 ## Related topics
 
-* [Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.")
-* [Davis Security Advisor API](/docs/dynatrace-api/environment-api/application-security/davis-security-advice "View the Davis Security Advisor recommendations via Dynatrace API.")
+* [Application Security](../../../../secure/application-security.md "Access the Dynatrace Application Security functionalities.")
+* [Davis Security Advisor API](../davis-security-advice.md "View the Davis Security Advisor recommendations via Dynatrace API.")

@@ -499,5 +499,5 @@ dt.entity.container_group_instance
 
 ## Связанные темы
 
-* [Использование запросов DQL](/docs/platform/grail/dynatrace-query-language/dql-guide "Узнайте, как работает DQL и каковы ключевые концепции DQL.")
-* [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и обменивайтесь информацией из данных наблюдаемости -- всё в одном совместном настраиваемом рабочем пространстве.")
+* [Использование запросов DQL](../../../platform/grail/dynatrace-query-language/dql-guide.md "Узнайте, как работает DQL и каковы ключевые концепции DQL.")
+* [Notebooks](../../dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и обменивайтесь информацией из данных наблюдаемости -- всё в одном совместном настраиваемом рабочем пространстве.")

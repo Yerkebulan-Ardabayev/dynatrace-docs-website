@@ -57,19 +57,19 @@ Extensions полезны, когда вам необходимо монитор
 
 * Описание
 
-[Читать описание](/docs/ingest-from/extensions/supported-extensions)[#### Разработка собственных Extensions
+[Читать описание](extensions/supported-extensions.md)[#### Разработка собственных Extensions
 
 Разрабатывайте собственные Extensions в Dynatrace.
 
 * Практическое руководство
 
-[Читать руководство](/docs/ingest-from/extensions/develop-your-extensions)[#### Управление Extensions
+[Читать руководство](extensions/develop-your-extensions.md)[#### Управление Extensions
 
 Узнайте, как управлять расширениями.
 
 * Практическое руководство
 
-[Читать руководство](/docs/ingest-from/extensions/manage-extensions)
+[Читать руководство](extensions/manage-extensions.md)
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

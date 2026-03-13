@@ -18,11 +18,11 @@ scraped: 2026-03-02T21:29:57.548368
 
 ### Требования к размеру
 
-Сведения об ориентировочных требованиях к размеру для каждого каталога см. в разделе [Каталоги ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux.").
+Сведения об ориентировочных требованиях к размеру для каждого каталога см. в разделе [Каталоги ActiveGate](../configuration/where-can-i-find-activegate-files.md "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux.").
 
 ## Усиленная безопасность
 
-[Пример развёртывания](/docs/ingest-from/dynatrace-activegate/activegate-in-container#deployment-example "Развернуть контейнеризованный ActiveGate.") ActiveGate защищён для минимизации возможных атак: параметр `securityContext.readOnlyRootFilesystem` установлен в значение `true`.
+[Пример развёртывания](../activegate-in-container.md#deployment-example "Развернуть контейнеризованный ActiveGate.") ActiveGate защищён для минимизации возможных атак: параметр `securityContext.readOnlyRootFilesystem` установлен в значение `true`.
 
 Это предотвращает изменение контейнером содержимого образа, поэтому [каталоги](#directories) необходимо настраивать с использованием томов.
 
@@ -122,4 +122,4 @@ mountPath: /var/log/dynatrace/gateway
 mountPath: /var/tmp/dynatrace/gateway
 ```
 
-Информацию о размерах томов см. в разделе [Требования к хранилищу ActiveGate](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-activegate-hardware-and-system-requirements#space-requirements "Узнайте, какие требования к оборудованию и операционной системе необходимо учитывать перед установкой ActiveGate на Linux для целей маршрутизации и мониторинга.").
+Информацию о размерах томов см. в разделе [Требования к хранилищу ActiveGate](../installation/linux/linux-activegate-hardware-and-system-requirements.md#space-requirements "Узнайте, какие требования к оборудованию и операционной системе необходимо учитывать перед установкой ActiveGate на Linux для целей маршрутизации и мониторинга.").

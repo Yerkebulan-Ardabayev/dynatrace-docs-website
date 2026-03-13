@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:12:54.357617
 
 Discover new technologies that can be monitored with Dynatrace, and how to get started. Included are OneAgent operating systems and code modules, mainframe, serverless integrations, and platform extensions.
 
-New technology support may require an opt-in via [OneAgent features](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.").
+New technology support may require an opt-in via [OneAgent features](../ingest-from/dynatrace-oneagent/oneagent-features.md "Manage OneAgent features globally and per process group.").
 
 You can find the [Technology support roadmapï»¿](https://community.dynatrace.com/t5/Feedback-channel/Dynatrace-technology-support-roadmap/td-p/183451) in the Dynatrace Community.
 
@@ -151,7 +151,7 @@ Rollout starts Jun 3, 2025, for OneAgent
 
 * Go toolchain with FIPS 1.23.6 (openssl-fips)
 * NGINX 1.28.0 (NGINX module)
-* IBM AIX 7.3 TL3 (OS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix "Learn how to install OneAgent on AIX, how to customize installation, and more.")
+* IBM AIX 7.3 TL3 (OS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/aix.md "Learn how to install OneAgent on AIX, how to customize installation, and more.")
 * Redis-Py 3.4+ (Python module). OneAgent feature: Python Redis
 * Confluent Golang 2.10 Client (Go module). OneAgent features: Go Kafka Consumer; Go Kafka Producer
 * Amazon SNS v1-2 for Java. OneAgent feature: Java Amazon SNS
@@ -240,9 +240,9 @@ Rollout starts Jan 14, 2025, for OneAgent
 * Node.js 23 (Node.js module)
 * NGINX 1.27.2 (NGINX module)
 * NGINX Plus R33
-* Red Hat Enterprise Linux 9.5 (OS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.")
-* Oracle Linux 9.5 (OS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.")
-* Rocky Linux 9.5 (OS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.")
+* Red Hat Enterprise Linux 9.5 (OS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Learn how to install OneAgent on Linux, how to customize installation, and more.")
+* Oracle Linux 9.5 (OS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Learn how to install OneAgent on Linux, how to customize installation, and more.")
+* Rocky Linux 9.5 (OS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Learn how to install OneAgent on Linux, how to customize installation, and more.")
 
 ## 1.303 OneAgent
 
@@ -272,7 +272,7 @@ Rollout starts Sep 9, 2024, for OneAgent
 * Eclipse Temurin (a.k.a. 'Adoptium') 23 (Java module)
 * Kafka (IBM/sarama) 1.40+ (Go module)
 * Kafka (Shopify/sarama) 1.18 - 1.39 (Go Module)
-* SUSE Linux Enterprise Server 15.6 (OS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux "Learn how to download and install Dynatrace OneAgent on Linux.")
+* SUSE Linux Enterprise Server 15.6 (OS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux.md "Learn how to download and install Dynatrace OneAgent on Linux.")
 * Fedora 39, 40 (OS module)
 * openSUSE 15.6 (OS module)
 * Ubuntu 24.04 (OS module)
@@ -282,14 +282,14 @@ Rollout starts Sep 9, 2024, for OneAgent
 Rollout starts Aug 13, 2024, for OneAgent
 
 * Apache Tomcat access log enrichment (Java module). OneAgent feature: Java - Trace/span context enrichment for unstructured Apache Tomcat access logs
-* Log monitoring for IBM CICS regions and IBM IMS subsystems. [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")
+* Log monitoring for IBM CICS regions and IBM IMS subsystems. [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs.md "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")
 * NGINX 1.26.1, 1.27 (NGINX module)
 
 ## 1.295 OneAgent
 
 Rollout starts Jul 16, 2024, for OneAgent
 
-* GraalVM Native Image for Maven and Gradle projects (Java Native Image module). [Get started](/docs/ingest-from/technology-support/application-software/java/graalvm-native-image "Install, configure, and manage Dynatrace GraalVM Native Image module.")
+* GraalVM Native Image for Maven and Gradle projects (Java Native Image module). [Get started](../ingest-from/technology-support/application-software/java/graalvm-native-image.md "Install, configure, and manage Dynatrace GraalVM Native Image module.")
 * Go toolchain with FIPS (openssl-fips) modifications (Go module). OneAgent feature: Go FIPS
 * RxJava 3 (Java module). OneAgent feature: Java RxJava v3+ tracing
 
@@ -297,7 +297,7 @@ Rollout starts Jul 16, 2024, for OneAgent
 
 Released on Jun 24, 2024
 
-* Full OpenShift observability support on s390x architecture. [Get started with Full-Stack observability](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes")
+* Full OpenShift observability support on s390x architecture. [Get started with Full-Stack observability](../ingest-from/setup-on-k8s/deployment.md "Deploy Dynatrace Operator on Kubernetes")
 
 ## 1.293 OneAgent
 
@@ -323,7 +323,7 @@ Rollout starts Apr 22, 2024, for OneAgent
 * Amazon SQS incoming messages (Java module). OneAgent feature: Java Amazon SQS
 * Kafka Batch Listener (Java module). OneAgent feature: Java Spring Kafka Batch Listener
 * NGINX 1.25.4 (NGINX module)
-* redis-py (AWS Lambda integration). [Get started](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java.")
+* redis-py (AWS Lambda integration). [Get started](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension.md "Monitor Lambda functions written in Python, Node.js, and Java.")
 
 ## 1.287 OneAgent
 
@@ -381,8 +381,8 @@ Rollout starts Oct 26, 2023, for OneAgent
 
 Rollout starts Oct 4, 2023, for OneAgent
 
-* Amazon SNS for .NET (AWS Lambda integration). [Get started](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration#sqs-sns-out "Trace AWS Lambda functions using a .NET runtime")
-* Amazon SQS for .NET (AWS Lambda integration). [Get started](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration#sqs-sns-out "Trace AWS Lambda functions using a .NET runtime")
+* Amazon SNS for .NET (AWS Lambda integration). [Get started](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration.md#sqs-sns-out "Trace AWS Lambda functions using a .NET runtime")
+* Amazon SQS for .NET (AWS Lambda integration). [Get started](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration.md#sqs-sns-out "Trace AWS Lambda functions using a .NET runtime")
 * OpenJDK 21 LTS (Java module)
 * Rancher Kubernetes Engine 2 (OS module)
 
@@ -390,7 +390,7 @@ Rollout starts Oct 4, 2023, for OneAgent
 
 Rollout starts Sep 5, 2023, for OneAgent
 
-* .NET (GCP integration). [Get started](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet "Monitor Google Cloud Functions with OpenTelemetry for .NET and Dynatrace.")
+* .NET (GCP integration). [Get started](../ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet.md "Monitor Google Cloud Functions with OpenTelemetry for .NET and Dynatrace.")
 * go-redis 7, 8, 9 (Go module). OneAgent feature: Go Redis (go-redis/redis)
 * Java ForkJoin (Java module). OneAgent feature: Java/Scala ForkJoinPool
 * JBoss LogManager 1.1+, 2, 3 (Java module)
@@ -400,8 +400,8 @@ Rollout starts Sep 5, 2023, for OneAgent
 Rollout starts Aug 7, 2023, for OneAgent
 
 * AlmaLinux 9.0, 9.1, 9.2 (OS module)
-* Amazon SNS for Java (AWS Lambda integration). [Get started](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-java "Connect Dynatrace AWS Lambda extension to the OpenTelemetry Java API via OpenTelemetry interoperability.")
-* Amazon SQS for Java (AWS Lambda integration). [Get started](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-java "Connect Dynatrace AWS Lambda extension to the OpenTelemetry Java API via OpenTelemetry interoperability.")
+* Amazon SNS for Java (AWS Lambda integration). [Get started](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-java.md "Connect Dynatrace AWS Lambda extension to the OpenTelemetry Java API via OpenTelemetry interoperability.")
+* Amazon SQS for Java (AWS Lambda integration). [Get started](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-java.md "Connect Dynatrace AWS Lambda extension to the OpenTelemetry Java API via OpenTelemetry interoperability.")
 * Fedora 37, 38 (OS module)
 * NGINX 1.25.0, 1.25.1 (NGINX module)
 * NGINX Plus R30 (NGINX module)
@@ -436,7 +436,7 @@ Released in May 2023 on Dynatrace Hub
 
 Rollout starts May 12, 2023, for OneAgent
 
-* CBL-Mariner 2 (OS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.")
+* CBL-Mariner 2 (OS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Learn how to install OneAgent on Linux, how to customize installation, and more.")
 * DataStax client for Apache Cassandra 4 (Java module)
 * Fujitsu Interstage 13 (Java module)
 * Jakarta RESTful Web Services 2.1+ (Java module). OneAgent feature: Java Servlet 5.0
@@ -455,9 +455,9 @@ Rollout starts Apr 17, 2023, for OneAgent
 * Azul Platform Core (Zulu) 20 (Java module)
 * Bellsoft Liberica 20 (Java module)
 * Eclipse Temurin (a.k.a. 'Adoptium') 20 (Java module)
-* Flatcar Container Linux 3033 LTS (OS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.")
+* Flatcar Container Linux 3033 LTS (OS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Learn how to install OneAgent on Linux, how to customize installation, and more.")
 * Go 1.20 (Go module)
-* IBM IMS terminal transactions (IMS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring#ims-terminal-transactions "Customize the Dynatrace CICS and IMS monitoring on z/OS."). OneAgent feature: z/OS IMS terminal transaction sensor
+* IBM IMS terminal transactions (IMS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring.md#ims-terminal-transactions "Customize the Dynatrace CICS and IMS monitoring on z/OS."). OneAgent feature: z/OS IMS terminal transaction sensor
 * log4net 2.0.6+ (.NET module). OneAgent feature: .NET - Trace/span context enrichment Framework log4net
 * OpenJDK 20 (Java module)
 * OpenTelemetry 1.11.1 - 1.14 (Go module)
@@ -477,8 +477,8 @@ Rollout starts Feb 20, 2023, for OneAgent
 
 * Apache Tomcat 10 (Java module). [Get startedï»¿](https://www.dynatrace.com/hub/detail/apache-tomcat/#get-started), OneAgent feature: Java Servlet 5.0
 * Cassandra client (gocql/gocql) 1.0 - 1.3 (Go module). [Get startedï»¿](https://www.dynatrace.com/hub/detail/cassandra/#get-started), OneAgent feature: Go CQL (gocql/gocql)
-* IBM CICS file access methods VSAM and BDAM (IBM CICS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-cics-file-access "File access monitoring of CICS applications using the CICS module."), OneAgent feature: z/OS CICS file monitoring sensor
-* IBM IMS [transaction-oriented BMPsï»¿](https://www.ibm.com/docs/en/ims/15.1.0?topic=bmps-batch-message-processing-transaction-oriented) (IBM IMS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims#bmp-tracing "Install the Dynatrace IMS module.")
+* IBM CICS file access methods VSAM and BDAM (IBM CICS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-cics-file-access.md "File access monitoring of CICS applications using the CICS module."), OneAgent feature: z/OS CICS file monitoring sensor
+* IBM IMS [transaction-oriented BMPsï»¿](https://www.ibm.com/docs/en/ims/15.1.0?topic=bmps-batch-message-processing-transaction-oriented) (IBM IMS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims.md#bmp-tracing "Install the Dynatrace IMS module.")
 * Jakarta Servlet 5, 6 (Java module). [Get startedï»¿](https://www.dynatrace.com/hub/detail/jakarta-servlet/#get-started), OneAgent feature: Java Servlet 5.0
 * Jersey 3 (Java module). OneAgent feature: Java Servlet 5.0
 * Jetty HTTP server 11 (Java module). [Get startedï»¿](https://www.dynatrace.com/hub/detail/eclipse-jetty/#get-started), OneAgent feature: Java Servlet 5.0
@@ -491,14 +491,14 @@ Rollout starts Feb 20, 2023, for OneAgent
 
 Rollout starts Jan 24, 2023, for OneAgent
 
-* Amazon SNS for Python (AWS Lambda integration). [Get started](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#python-sqs-sns "Enable and use OpenTelemetry interoperability in AWS Lambda.")
-* Amazon SNS for Node.js (AWS Lambda integration). [Get started](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#nodejs-sqs-sns "Enable and use OpenTelemetry interoperability in AWS Lambda.")
+* Amazon SNS for Python (AWS Lambda integration). [Get started](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability.md#python-sqs-sns "Enable and use OpenTelemetry interoperability in AWS Lambda.")
+* Amazon SNS for Node.js (AWS Lambda integration). [Get started](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability.md#nodejs-sqs-sns "Enable and use OpenTelemetry interoperability in AWS Lambda.")
 * Apache HttpClient 5.2 (Java module).
-* Google Cloud Run managed execution environment generation 1, 2 (Java module). [Get started](/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun "Monitor Java application deployed on Google Cloud Run managed.")
+* Google Cloud Run managed execution environment generation 1, 2 (Java module). [Get started](../ingest-from/google-cloud-platform/gcp-integrations/cloudrun.md "Monitor Java application deployed on Google Cloud Run managed.")
 * IBM App Connect Enterprise Callable nodes (IBM IIB/ACE module)
-* IBM CICS Transaction Server JSON requests (IBM CICS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics#web-services "Install the Dynatrace CICS module.")
+* IBM CICS Transaction Server JSON requests (IBM CICS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics.md#web-services "Install the Dynatrace CICS module.")
 * Node.js 19 (Node.js module)
-* SUSE Linux Enterprise Server 15.4 (OS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux "Learn how to download and install Dynatrace OneAgent on Linux.")
+* SUSE Linux Enterprise Server 15.4 (OS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux.md "Learn how to download and install Dynatrace OneAgent on Linux.")
 
 ## 1.255 OneAgent
 
@@ -512,8 +512,8 @@ Rollout starts Dec 12, 2022, for OneAgent
 
 Rollout starts Nov 14, 2022, for OneAgent
 
-* Amazon SQS for Node.js (AWS Lambda integration). [Get started](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability "Enable and use OpenTelemetry interoperability in AWS Lambda.")
-* Amazon SQS for Python (AWS Lambda integration). [Get started](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability "Enable and use OpenTelemetry interoperability in AWS Lambda.")
+* Amazon SQS for Node.js (AWS Lambda integration). [Get started](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability.md "Enable and use OpenTelemetry interoperability in AWS Lambda.")
+* Amazon SQS for Python (AWS Lambda integration). [Get started](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability.md "Enable and use OpenTelemetry interoperability in AWS Lambda.")
 * PostgreSQL (jackc/pgx) 4.7 - 4.17 (Go module). [Get startedï»¿](https://www.dynatrace.com/hub/detail/postgresql/#get-started)
 * SQLite3 5.1+ (Node.js module)
 
@@ -527,8 +527,8 @@ Rollout starts Oct 14, 2022, for OneAgent
 * Azul Platform Core (Zulu) 19 (Java module)
 * Bellsoft Liberica 19 (Java module)
 * Eclipse Temurin (a.k.a. 'Adoptium') 19 (Java module)
-* Go 1.16+ (GCP integration). [Get started](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-go "Learn how to instrument Google Cloud Functions in Go with OpenTelemetry and export the traces to Dynatrace.")
-* IBM z/OS Connect EE MQ service provider (z/OS Java module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java "Set up Java monitoring on z/OS using the Java module.")
+* Go 1.16+ (GCP integration). [Get started](../ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-go.md "Learn how to instrument Google Cloud Functions in Go with OpenTelemetry and export the traces to Dynatrace.")
+* IBM z/OS Connect EE MQ service provider (z/OS Java module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java.md "Set up Java monitoring on z/OS using the Java module.")
 * Jetty HTTP server 10 (Java module)
 * Oracle HotSpot VM 19 (Java module)
 * OpenJDK 19 (Java module)
@@ -541,20 +541,20 @@ Rollout starts Oct 14, 2022, for OneAgent
 
 Rollout starts Sep 15, 2022, for OneAgent
 
-* Amazon Linux 2022 (OS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.")
-* Go 1.19 (Go module). [Get started](/docs/ingest-from/technology-support/application-software/go "Read an overview of Dynatrace support for Go applications.")
-* OpenTelemetry 1.8, 1.9 (Go module). [Get started](/docs/ingest-from/technology-support/application-software/go "Read an overview of Dynatrace support for Go applications.")
-* Rocky Linux 9 (OS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.")
+* Amazon Linux 2022 (OS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Learn how to install OneAgent on Linux, how to customize installation, and more.")
+* Go 1.19 (Go module). [Get started](../ingest-from/technology-support/application-software/go.md "Read an overview of Dynatrace support for Go applications.")
+* OpenTelemetry 1.8, 1.9 (Go module). [Get started](../ingest-from/technology-support/application-software/go.md "Read an overview of Dynatrace support for Go applications.")
+* Rocky Linux 9 (OS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Learn how to install OneAgent on Linux, how to customize installation, and more.")
 
 ## 1.247 OneAgent
 
 Rollout starts Aug 25, 2022, for OneAgent
 
 * Apache Camel 2.21+ (Java module). [Get startedï»¿](https://www.dynatrace.com/hub/detail/apache-camel/)
-* IBM Semeru for z/OS 11 (z/OS Java module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java "Set up Java monitoring on z/OS using the Java module.")
-* JMX 1.0+ (z/OS Java module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics "Learn how to set up JMX metrics monitoring for your Java applications on z/OS.")
+* IBM Semeru for z/OS 11 (z/OS Java module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java.md "Set up Java monitoring on z/OS using the Java module.")
+* JMX 1.0+ (z/OS Java module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics.md "Learn how to set up JMX metrics monitoring for your Java applications on z/OS.")
 * Monolog 3.0 (PHP module)
-* Python (GCP integration). [Get started](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-python "Monitor Google Cloud Functions with OpenTelemetry for Python and Dynatrace.")
+* Python (GCP integration). [Get started](../ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-python.md "Monitor Google Cloud Functions with OpenTelemetry for Python and Dynatrace.")
 * Red Hat Fuse on OpenShift 7.0+ (Java module). [Get startedï»¿](https://www.dynatrace.com/hub/detail/red-hat-fuse/)
 * Red Hat Fuse Standalone 7.0+ (Java module). [Get startedï»¿](https://www.dynatrace.com/hub/detail/red-hat-fuse/)
 
@@ -562,72 +562,72 @@ Rollout starts Aug 25, 2022, for OneAgent
 
 Rollout starts Jul 25, 2022, for SaaS and Aug 1, 2022, for Managed
 
-* DynamoDB client SDK for Node.js (AWS Lambda integration). [Get started](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#nodejs-instrumentation "Enable and use OpenTelemetry interoperability in AWS Lambda.")
+* DynamoDB client SDK for Node.js (AWS Lambda integration). [Get started](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability.md#nodejs-instrumentation "Enable and use OpenTelemetry interoperability in AWS Lambda.")
 
 ## 1.245 SaaS
 
 Rollout starts Jul 6, 2022, for SaaS
 
-* DynamoDB client SDK for .NET (AWS Lambda integration). [Get started](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration#dynamo-db "Trace AWS Lambda functions using a .NET runtime")
+* DynamoDB client SDK for .NET (AWS Lambda integration). [Get started](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration.md#dynamo-db "Trace AWS Lambda functions using a .NET runtime")
 
 ## 1.245 OneAgent
 
 Rollout starts Jul 19, 2022, for OneAgent
 
-* AlmaLinux 8.6+ (OS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.")
-* Fedora 35, 36 (OS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.")
-* IBM CICS Transaction Server 6.1 (CICS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics "Install the Dynatrace CICS module.")
-* IBM Virtual I/O Server (AIX) 3.1 (OS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix#vios-installation "Learn how to download and install Dynatrace OneAgent on AIX.")
-* Kong API Gateway (NGINX module). [Get started](/docs/ingest-from/technology-support/application-software/nginx/manual-runtime-instrumentation#howto "Learn how to force instrumenting patched/non-standard NGINX binaries during runtime.")
+* AlmaLinux 8.6+ (OS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Learn how to install OneAgent on Linux, how to customize installation, and more.")
+* Fedora 35, 36 (OS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Learn how to install OneAgent on Linux, how to customize installation, and more.")
+* IBM CICS Transaction Server 6.1 (CICS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics.md "Install the Dynatrace CICS module.")
+* IBM Virtual I/O Server (AIX) 3.1 (OS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix.md#vios-installation "Learn how to download and install Dynatrace OneAgent on AIX.")
+* Kong API Gateway (NGINX module). [Get started](../ingest-from/technology-support/application-software/nginx/manual-runtime-instrumentation.md#howto "Learn how to force instrumenting patched/non-standard NGINX binaries during runtime.")
 * OpenTelemetry 0.0.10, 0.0.11 (PHP module)
-* Python consumption plan (Azure integration). [Get started](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-python "Monitor Azure Functions with OpenTelemetry for Python and Dynatrace.")
+* Python consumption plan (Azure integration). [Get started](../ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-python.md "Monitor Azure Functions with OpenTelemetry for Python and Dynatrace.")
 * [RabbitMQï»¿](https://www.npmjs.com/package/amqplib) client 0.9 (Node.js module). [Get startedï»¿](https://www.dynatrace.com/hub/detail/net-rabbitmq/#get-started)
 
 ## 1.244 SaaS/Managed
 
 Rollout starts Jun 27, 2022, for SaaS and Jul 5, 2022, for Managed
 
-* DynamoDB client SDK for Python (AWS Lambda integration). [Get started](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#python-instrumentation "Enable and use OpenTelemetry interoperability in AWS Lambda.")
+* DynamoDB client SDK for Python (AWS Lambda integration). [Get started](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability.md#python-instrumentation "Enable and use OpenTelemetry interoperability in AWS Lambda.")
 
 ## 1.243 OneAgent
 
 Rollout starts Jun 29, 2022, for OneAgent
 
 * Apache Log4j2 2.17.2 - 2.18 (Java module)
-* JDBC 3, 4 (z/OS Java module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java#jdbc "Set up Java monitoring on z/OS using the Java module.")
+* JDBC 3, 4 (z/OS Java module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java.md#jdbc "Set up Java monitoring on z/OS using the Java module.")
 * Node.js 18 (Node.js module)
-* Node.js consumption plan (Azure integration). [Get started](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-nodejs "Monitor Azure Functions with OpenTelemetry for Node.js and Dynatrace.")
+* Node.js consumption plan (Azure integration). [Get started](../ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-nodejs.md "Monitor Azure Functions with OpenTelemetry for Node.js and Dynatrace.")
 * Microsoft OpenJDK 11 LTS, 17 LTS (Java module)
 * [oracledbï»¿](https://www.npmjs.com/package/oracledb) 5 (Node.js module). [Get startedï»¿](https://www.dynatrace.com/hub/detail/oracle-database/)
-* Red Hat Enterprise Linux 9 (OS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.")
-* Ubuntu 22.04 LTS (OS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.")
+* Red Hat Enterprise Linux 9 (OS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Learn how to install OneAgent on Linux, how to customize installation, and more.")
+* Ubuntu 22.04 LTS (OS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Learn how to install OneAgent on Linux, how to customize installation, and more.")
 
 ## 1.241 OneAgent
 
 Rollout starts Jun 8, 2022, for OneAgent
 
-* .NET / .NET Core (AWS Lambda integration). [Get started](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration "Trace AWS Lambda functions using a .NET runtime")
-* .NET / .NET Core consumption plan (Azure integration). [Get started](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet "Monitor Azure Functions with OpenTelemetry for .NET and Dynatrace.")
+* .NET / .NET Core (AWS Lambda integration). [Get started](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration.md "Trace AWS Lambda functions using a .NET runtime")
+* .NET / .NET Core consumption plan (Azure integration). [Get started](../ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet.md "Monitor Azure Functions with OpenTelemetry for .NET and Dynatrace.")
 * Apache HttpClient 5.x (Java module)
 * Azul Platform Core (Zulu) 18 (Java module)
 * Bellsoft Liberica 18 (Java module)
-* JMS 1.1 (z/OS Java module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java "Set up Java monitoring on z/OS using the Java module.")
-* Node.js (GCP integration). [Get started](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-nodejs "Monitor Google Cloud Functions with OpenTelemetry for Node.js and Dynatrace.")
+* JMS 1.1 (z/OS Java module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java.md "Set up Java monitoring on z/OS using the Java module.")
+* Node.js (GCP integration). [Get started](../ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-nodejs.md "Monitor Google Cloud Functions with OpenTelemetry for Node.js and Dynatrace.")
 * OpenJDK 18 (Java module)
 * OpenTelemetry 0.0.9 (PHP module)
 * Oracle HotSpot VM 18 (Java module)
-* Rocky Linux 8 (OS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.")
+* Rocky Linux 8 (OS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Learn how to install OneAgent on Linux, how to customize installation, and more.")
 * SAP JVM 18 (Java module)
 
 ## 1.239 OneAgent
 
 Rollout starts Apr 27, 2022, for OneAgent
 
-* CentOS Stream 9 (OS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.")
+* CentOS Stream 9 (OS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Learn how to install OneAgent on Linux, how to customize installation, and more.")
 * Go 18 (Go module)
-* IBM AIX 7.3 TL0 (OS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix "Learn how to install OneAgent on AIX, how to customize installation, and more.")
+* IBM AIX 7.3 TL0 (OS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/aix.md "Learn how to install OneAgent on AIX, how to customize installation, and more.")
 * Kestrel (ASP.NET Core applications), Real User Monitoring (RUM JavaScript and .NET module).
-* Ubuntu 21.10 (OS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.")
+* Ubuntu 21.10 (OS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Learn how to install OneAgent on Linux, how to customize installation, and more.")
 
 ## 1.237 OneAgent
 
@@ -643,8 +643,8 @@ Rollout starts Mar 7, 2022, for OneAgent
 
 * .NET / .NET Core 5.0, 6.0 on Linux ARM64 (.NET module). [Get startedï»¿](https://www.dynatrace.com/hub/detail/net/)
 * IBM App Connect Enterprise JavaCompute node (ACE module)
-* IBM CICS terminal transactions (CICS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring#transaction-start-filters "Customize the Dynatrace CICS and IMS monitoring on z/OS.")
-* IBM z/OS Connect EE IMS service provider (z/OS Java module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java "Set up Java monitoring on z/OS using the Java module.")
+* IBM CICS terminal transactions (CICS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring.md#transaction-start-filters "Customize the Dynatrace CICS and IMS monitoring on z/OS.")
+* IBM z/OS Connect EE IMS service provider (z/OS Java module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java.md "Set up Java monitoring on z/OS using the Java module.")
 * TIBCO ActiveMatrix BusinessWorks 6.6 - 6.8 (Java module)
 
 ## 1.233 OneAgent
@@ -652,7 +652,7 @@ Rollout starts Mar 7, 2022, for OneAgent
 Rollout starts Feb 7, 2022, for OneAgent
 
 * Go 17 (Go module)
-* IBM IMS Fast Path (IMS module). [Get started](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims "Install the Dynatrace IMS module.")
+* IBM IMS Fast Path (IMS module). [Get started](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims.md "Install the Dynatrace IMS module.")
 * Jedis Redis 4 (Java module)
 * reactor-core 3 (Java module). [Get startedï»¿](https://www.dynatrace.com/hub/detail/reactor-core/)
 

@@ -18,26 +18,26 @@ scraped: 2026-03-06T21:27:26.606529
 Не пытайтесь настраивать SSL-сертификаты напрямую на Cluster ActiveGate. В этом случае сертификат будет перезаписан автоматическим управлением, выполняемым Dynatrace.
 Для Cluster ActiveGate необходимо загружать сертификаты через [Cluster Management Console](https://docs.dynatrace.com/managed/shortlink/managed-ssl-cluster-ag) или [Cluster REST API v1](https://docs.dynatrace.com/managed/shortlink/api-cluster-post-ssl-cert-store).
 
-Подключение к ActiveGate от OneAgent или REST API осуществляется через зашифрованный канал HTTPS. ActiveGate предъявляет самоподписанный сертификат аутентификации всем подключающимся клиентам. В то время как экземпляры OneAgent могут игнорировать валидность сертификатов ActiveGate (в зависимости от конфигурации), соединения от браузерных клиентов (таких как [RUM JavaScript](/docs/observe/digital-experience/web-applications/initial-setup/rum-injection "Настройка автоматического внедрения RUM JavaScript на страницы ваших приложений")) проверяют правильность имени хоста, указанного в сертификате, перед отправкой данных.
+Подключение к ActiveGate от OneAgent или REST API осуществляется через зашифрованный канал HTTPS. ActiveGate предъявляет самоподписанный сертификат аутентификации всем подключающимся клиентам. В то время как экземпляры OneAgent могут игнорировать валидность сертификатов ActiveGate (в зависимости от конфигурации), соединения от браузерных клиентов (таких как [RUM JavaScript](../../../../observe/digital-experience/web-applications/initial-setup/rum-injection.md "Настройка автоматического внедрения RUM JavaScript на страницы ваших приложений")) проверяют правильность имени хоста, указанного в сертификате, перед отправкой данных.
 
 **ActiveGate может обслуживать пользовательский сертификат вместо сертификата по умолчанию. Для этого вам нужен файл в формате `PKCS#12`, содержащий закрытый ключ и соответствующую цепочку сертификатов.**
 
-В зависимости от корневого удостоверяющего центра, подписавшего пользовательский сертификат ActiveGate, может потребоваться дополнительная настройка OneAgent. См. [Безопасность OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-security#trusted-root-certificates "Управление безопасностью OneAgent").
+В зависимости от корневого удостоверяющего центра, подписавшего пользовательский сертификат ActiveGate, может потребоваться дополнительная настройка OneAgent. См. [Безопасность OneAgent](../../../../ingest-from/dynatrace-oneagent/oneagent-security.md#trusted-root-certificates "Управление безопасностью OneAgent").
 
 ### Возможность настройки во время установки
 
-Эту конфигурацию также можно применить во время установки ActiveGate, указав параметры установки для [Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#custom-ssl-certificate "Узнайте о параметрах командной строки, которые можно использовать с ActiveGate на Linux.") или [Windows](/docs/ingest-from/dynatrace-activegate/installation/windows/windows-customize-installation-for-activegate#custom-ssl-certificate "Узнайте о параметрах, которые можно использовать с ActiveGate на Windows.").
+Эту конфигурацию также можно применить во время установки ActiveGate, указав параметры установки для [Linux](../../../../ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate.md#custom-ssl-certificate "Узнайте о параметрах командной строки, которые можно использовать с ActiveGate на Linux.") или [Windows](../../../../ingest-from/dynatrace-activegate/installation/windows/windows-customize-installation-for-activegate.md#custom-ssl-certificate "Узнайте о параметрах, которые можно использовать с ActiveGate на Windows.").
 
 ## Настройка пользовательского сертификата
 
 Чтобы настроить ActiveGate для использования пользовательского сертификата
 
-1. Скопируйте файл сертификата в [каталог ssl](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux.") и установите правильные разрешения.
+1. Скопируйте файл сертификата в [каталог ssl](../../../../ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files.md "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux.") и установите правильные разрешения.
 
    В Linux убедитесь, что разрешения скопированного файла сертификата включают пользователя ActiveGate, которого вы назначили для запуска службы ActiveGate. Если вы не указали пользовательского пользователя при установке, пользователь по умолчанию -- `dtuserag`.
 
    В Windows убедитесь, что учетная запись `LocalService` имеет разрешения на доступ к скопированному файлу сертификата.
-2. Добавьте следующие записи в файл `custom.properties` в [каталоге конфигурации ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux.").
+2. Добавьте следующие записи в файл `custom.properties` в [каталоге конфигурации ActiveGate](../../../../ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files.md "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux.").
 
    ```
    [com.compuware.apm.webserver]
@@ -57,7 +57,7 @@ scraped: 2026-03-06T21:27:26.606529
 
    Вам необходимо добавить вышеуказанные записи в секцию `[com.compuware.apm.webserver]`. Если такая секция уже существует в вашем файле `custom.properties`, просто добавьте свойства в эту секцию. Если секция не существует, создайте также заголовок секции.
 
-   Пароль сертификата, который вы указываете в свойстве `certificate-password`, будет обфусцирован после [перезапуска основной службы ActiveGate](/docs/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Узнайте, как запускать, останавливать и перезапускать ActiveGate на Windows или Linux."). Обфусцированный пароль сохраняется в свойстве `certificate-password-encr`, а исходное свойство удаляется.
+   Пароль сертификата, который вы указываете в свойстве `certificate-password`, будет обфусцирован после [перезапуска основной службы ActiveGate](../../../../ingest-from/dynatrace-activegate/operation/stop-restart-activegate.md "Узнайте, как запускать, останавливать и перезапускать ActiveGate на Windows или Linux."). Обфусцированный пароль сохраняется в свойстве `certificate-password-encr`, а исходное свойство удаляется.
 
    **Значение `certificate-alias` должно быть указано в нижнем регистре.** Если у сертификата нет дружественного имени, вы можете опустить свойство `certificate-alias`.
 
@@ -67,7 +67,7 @@ scraped: 2026-03-06T21:27:26.606529
 
 Токен авторизации
 
-Для авторизации требуется API-токен. API-токены могут предоставляться через HTTP-заголовки или другими способами. См. [Dynatrace API -- Токены и аутентификация](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования Dynatrace API.")
+Для авторизации требуется API-токен. API-токены могут предоставляться через HTTP-заголовки или другими способами. См. [Dynatrace API -- Токены и аутентификация](../../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования Dynatrace API.")
 
 API-токен, используемый для следующих действий, должен иметь разрешение `ActiveGate certificate management`.
 

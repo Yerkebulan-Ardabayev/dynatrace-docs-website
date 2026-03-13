@@ -39,6 +39,6 @@ To set up VictorOps problem-notification integration
      Placeholders
 
      The **Available placeholders** section of the configuration page lists placeholders you can use for this integration. Placeholders are automatically replaced with values in the message.
-   * Assign an [Alerting profile](/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.").
+   * Assign an [Alerting profile](../alerting-profiles.md "Learn how to create and manage alerting profiles.").
 5. Select **Send test notification** to make sure your VictorOps integration is working.
 6. **Save changes**.

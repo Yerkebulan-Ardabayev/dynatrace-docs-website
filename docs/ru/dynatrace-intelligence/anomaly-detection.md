@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:11:03.759228
 * Время чтения: 2 мин
 * Обновлено 28 января 2026
 
-Dynatrace непрерывно отслеживает производительность каждого аспекта ваших приложений, сервисов и инфраструктуры, чтобы автоматически изучать все базовые метрики и общее состояние каждого компонента в вашей среде, включая время отклика ваших приложений и сервисов. Такие переменные, как геолокация, тип браузера, операционная система, пропускная способность соединения и действия пользователей, учитываются автоматически. Это интеллектуальное [автоматическое построение базовых линий](/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining "Learn how Dynatrace AI automatically calculates baselines based on a multi-dimensional baselining scheme.") позволяет Dynatrace обнаруживать аномалии на очень детальном уровне и уведомлять вас об обнаруженных проблемах в реальном времени. Вы можете настраивать пороговые значения, сформированные автоматическим построением базовых линий, либо [изменяя чувствительность обнаружения проблем](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection "Learn how to adapt the sensitivity of problem detection in Dynatrace."), либо, при необходимости, задавая собственные статические пороговые значения.
+Dynatrace непрерывно отслеживает производительность каждого аспекта ваших приложений, сервисов и инфраструктуры, чтобы автоматически изучать все базовые метрики и общее состояние каждого компонента в вашей среде, включая время отклика ваших приложений и сервисов. Такие переменные, как геолокация, тип браузера, операционная система, пропускная способность соединения и действия пользователей, учитываются автоматически. Это интеллектуальное [автоматическое построение базовых линий](anomaly-detection/automated-multidimensional-baselining.md "Learn how Dynatrace AI automatically calculates baselines based on a multi-dimensional baselining scheme.") позволяет Dynatrace обнаруживать аномалии на очень детальном уровне и уведомлять вас об обнаруженных проблемах в реальном времени. Вы можете настраивать пороговые значения, сформированные автоматическим построением базовых линий, либо [изменяя чувствительность обнаружения проблем](anomaly-detection/adjust-sensitivity-anomaly-detection.md "Learn how to adapt the sensitivity of problem detection in Dynatrace."), либо, при необходимости, задавая собственные статические пороговые значения.
 
 ## Варианты использования
 
@@ -29,31 +29,31 @@ Dynatrace непрерывно отслеживает производитель
 
 * Пояснение
 
-[Читать пояснение](/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold)[#### Статические пороговые значения для обнаружения аномалий
+[Читать пояснение](anomaly-detection/auto-adaptive-threshold.md)[#### Статические пороговые значения для обнаружения аномалий
 
 Когда следует использовать статический порог для обнаружения аномалий.
 
 * Пояснение
 
-[Читать пояснение](/docs/dynatrace-intelligence/anomaly-detection/static-thresholds)[#### Конфигурация обнаружения аномалий
+[Читать пояснение](anomaly-detection/static-thresholds.md)[#### Конфигурация обнаружения аномалий
 
 Как настроить оповещение об отсутствующих измерениях.
 
 * Пояснение
 
-[Читать пояснение](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration)[#### Автоматическое многомерное построение базовых линий
+[Читать пояснение](anomaly-detection/anomaly-detection-configuration.md)[#### Автоматическое многомерное построение базовых линий
 
 Узнайте, как Dynatrace AI автоматически рассчитывает базовые линии на основе многомерной схемы.
 
 * Пояснение
 
-[Читать пояснение](/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining)[#### Типы статусов обнаружения аномалий
+[Читать пояснение](anomaly-detection/automated-multidimensional-baselining.md)[#### Типы статусов обнаружения аномалий
 
 Описание типов статусов обнаружения аномалий
 
 * Пояснение
 
-[Читать пояснение](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types)
+[Читать пояснение](anomaly-detection/anomaly-detection-app/anomaly-detection-status-types.md)
 
 ## Начало работы
 
@@ -63,7 +63,7 @@ Dynatrace непрерывно отслеживает производитель
 
 * Пояснение
 
-[Читать пояснение](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection)[![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new")
+[Читать пояснение](anomaly-detection/adjust-sensitivity-anomaly-detection.md)[![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new")
 
 #### Приложение Anomaly Detection
 
@@ -71,16 +71,16 @@ Dynatrace непрерывно отслеживает производитель
 
 * Приложение
 
-[Открыть приложение](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app)[#### Метрические события
+[Открыть приложение](anomaly-detection/anomaly-detection-app.md)[#### Метрические события
 
 Узнайте о метрических событиях в Dynatrace
 
 * Обзор
 
-[Смотреть обзор](/docs/dynatrace-intelligence/anomaly-detection/metric-events)[#### Автоматизация оповещений с помощью API
+[Смотреть обзор](anomaly-detection/metric-events.md)[#### Автоматизация оповещений с помощью API
 
 Узнайте, как настроить пользовательское оповещение обнаружения аномалий через API.
 
 * Руководство
 
-[Читать руководство](/docs/dynatrace-intelligence/anomaly-detection/set-up-anomaly-detectors-via-api)
+[Читать руководство](anomaly-detection/set-up-anomaly-detectors-via-api.md)

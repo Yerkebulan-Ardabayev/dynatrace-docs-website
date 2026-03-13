@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:32:18.857315
 * Reference
 * Published Jul 29, 2022
 
-This API is intended for use with the latest AWS Lambda implementation. For details, see [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+This API is intended for use with the latest AWS Lambda implementation. For details, see [AWS Lambda](../../../../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration.md "AWS Lambda capabilities and integration options").
 
 Get the Amazon Resource Names (ARNs) of the latest version of OneAgent for AWS Lambda layers for supported AWS Lambda runtimes.
 
@@ -28,7 +28,7 @@ The request produces an `application/json` payload.
 
 To execute this request, you need an access token with `InstallerDownload` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Parameters
 

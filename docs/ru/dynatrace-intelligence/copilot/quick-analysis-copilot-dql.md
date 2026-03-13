@@ -17,7 +17,7 @@ scraped: 2026-03-04T21:30:33.891937
 
 ## Предварительные требования
 
-Предполагается, что вы выполнили настройку, описанную в разделе [Начало работы с агентным и генеративным ИИ Dynatrace Intelligence](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+Предполагается, что вы выполнили настройку, описанную в разделе [Начало работы с агентным и генеративным ИИ Dynatrace Intelligence](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
 ## Использование генеративного ИИ в Notebooks
 
@@ -40,7 +40,7 @@ scraped: 2026-03-04T21:30:33.891937
 
      + Если запрос был отредактирован, DQL сначала будет сгенерирован заново, а затем выполнен.
      + Если запросы не были отредактированы, будет просто выполнен существующий сгенерированный DQL.
-7. Необязательно: нажмите **Options** в заголовке раздела, чтобы изменить визуализацию (дополнительную информацию см. в [документации по визуализациям](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.")).
+7. Необязательно: нажмите **Options** в заголовке раздела, чтобы изменить визуализацию (дополнительную информацию см. в [документации по визуализациям](../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.")).
 
    Автоматический выбор визуализации
 
@@ -51,7 +51,7 @@ scraped: 2026-03-04T21:30:33.891937
 
 ## Использование генеративного ИИ в Dashboards
 
-1. Перейдите в [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") и откройте или создайте панель мониторинга, которую вы можете редактировать.
+1. Перейдите в [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") и откройте или создайте панель мониторинга, которую вы можете редактировать.
 2. Откройте меню **Add** и выберите **Prompt**.
 
    * Будет создана новая плитка панели мониторинга с генеративным ИИ Dynatrace Intelligence
@@ -76,13 +76,13 @@ scraped: 2026-03-04T21:30:33.891937
 
      + Если запрос был отредактирован, DQL сначала будет сгенерирован заново, а затем выполнен.
      + Если запросы не были отредактированы, будет просто выполнен существующий сгенерированный DQL.
-8. Необязательно: выберите вкладку **Visual**, чтобы изменить визуализацию (дополнительную информацию см. в [документации по визуализациям](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.")).
+8. Необязательно: выберите вкладку **Visual**, чтобы изменить визуализацию (дополнительную информацию см. в [документации по визуализациям](../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.")).
 
 Хотя использование генеративного ИИ Dynatrace Intelligence не тарифицируется, все запросы, выполняемые генеративным ИИ, подлежат учету лицензионного потребления в соответствии с вашим действующим лицензионным соглашением.
 
 ## Запросы с учетом среды
 
-Запросы с учетом среды обогащают генеративный ИИ Dynatrace Intelligence данными вашей среды. Это позволяет генерировать более точные запросы, которые идентифицируют и ссылаются на соответствующие сущности, события, спаны, логи и метрики из вашей среды. Вы также можете выполнять более сложный анализ данных, задавая генеративному ИИ Dynatrace Intelligence вопросы о специфике ваших данных. Чтобы узнать больше о том, как контролировать и управлять доступом генеративного ИИ Dynatrace Intelligence к данным и как включить запросы с учетом среды, см. [Включение запросов с учетом среды](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-environment-aware-queries "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+Запросы с учетом среды обогащают генеративный ИИ Dynatrace Intelligence данными вашей среды. Это позволяет генерировать более точные запросы, которые идентифицируют и ссылаются на соответствующие сущности, события, спаны, логи и метрики из вашей среды. Вы также можете выполнять более сложный анализ данных, задавая генеративному ИИ Dynatrace Intelligence вопросы о специфике ваших данных. Чтобы узнать больше о том, как контролировать и управлять доступом генеративного ИИ Dynatrace Intelligence к данным и как включить запросы с учетом среды, см. [Включение запросов с учетом среды](copilot-getting-started.md#enable-environment-aware-queries "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
 ### Семантический индекс генеративного ИИ Dynatrace Intelligence
 
@@ -149,7 +149,7 @@ timeseries avg(new_trip_booking_duration)
 Процесс генерации ответов NL2DQL генеративным ИИ Dynatrace Intelligence можно описать в 4 шага.
 
 1. Генеративный ИИ Dynatrace Intelligence получает запрос от пользователя.
-2. Если запрос хорошо сформулирован и распознан (дополнительную информацию см. в разделе [Агентный и генеративный ИИ Dynatrace Intelligence -- советы по написанию лучших запросов](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips "Learn best practices for writing more accurate prompts.")), генеративный ИИ Dynatrace Intelligence сопоставляет запрос пользователя с контентом Dynatrace, таким как документация и курируемые примеры запросов, и передает запрос в LLM.
+2. Если запрос хорошо сформулирован и распознан (дополнительную информацию см. в разделе [Агентный и генеративный ИИ Dynatrace Intelligence -- советы по написанию лучших запросов](quick-analysis-copilot-dql/copilot-tips.md "Learn best practices for writing more accurate prompts.")), генеративный ИИ Dynatrace Intelligence сопоставляет запрос пользователя с контентом Dynatrace, таким как документация и курируемые примеры запросов, и передает запрос в LLM.
 
    Если у вас включены запросы с учетом среды, релевантные фрагменты данных будут использованы для обогащения запроса наряду с контентом Dynatrace.
 3. LLM генерирует ответ и проверяет корректность DQL.
@@ -166,8 +166,8 @@ timeseries avg(new_trip_booking_duration)
 
 ## Связанные темы
 
-* [Обзор агентного и генеративного ИИ Dynatrace Intelligence](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
-* [Начало работы с агентным и генеративным ИИ Dynatrace Intelligence](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
-* [Часто задаваемые вопросы об агентном и генеративном ИИ Dynatrace Intelligence](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
-* [Агентный и генеративный ИИ Dynatrace Intelligence -- советы по написанию лучших запросов](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips "Learn best practices for writing more accurate prompts.")
-* [Примеры быстрого анализа с генеративным ИИ](/docs/dynatrace-intelligence/use-cases/copilot-examples "Learn more about what kind of prompts work well in Dynatrace Intelligence agentic and generative AI.")
+* [Обзор агентного и генеративного ИИ Dynatrace Intelligence](copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
+* [Начало работы с агентным и генеративным ИИ Dynatrace Intelligence](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
+* [Часто задаваемые вопросы об агентном и генеративном ИИ Dynatrace Intelligence](../../../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")
+* [Агентный и генеративный ИИ Dynatrace Intelligence -- советы по написанию лучших запросов](quick-analysis-copilot-dql/copilot-tips.md "Learn best practices for writing more accurate prompts.")
+* [Примеры быстрого анализа с генеративным ИИ](../use-cases/copilot-examples.md "Learn more about what kind of prompts work well in Dynatrace Intelligence agentic and generative AI.")

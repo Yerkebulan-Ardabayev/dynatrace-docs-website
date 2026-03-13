@@ -64,8 +64,8 @@ You can visualize histogram metrics in Dynatrace Notebooks or Dashboards using D
 
 * Dynatrace currently visualizes histogram metrics **as percentiles with line charts over time** (using the `timeseries` command). Visualizing the distribution of occurrences across buckets for a given period of time (typically using a bar chart visualization) is **NOT** supported at this time.
 
-For more information, see [Edit visualizations for Notebooks and Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.").
+For more information, see [Edit visualizations for Notebooks and Dashboards](../dashboards-and-notebooks/edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.").
 
 ## Licensing and billing
 
-The [timeseries percentile](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries_percentile "DQL metric commands") function, which is necessary to query histograms, is only available to DPS customers with the **Metrics powered by Grail** rate card. For more information, see [Metrics powered by Grail overview (DPS)](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+The [timeseries percentile](../../platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries_percentile "DQL metric commands") function, which is necessary to query histograms, is only available to DPS customers with the **Metrics powered by Grail** rate card. For more information, see [Metrics powered by Grail overview (DPS)](../../license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").

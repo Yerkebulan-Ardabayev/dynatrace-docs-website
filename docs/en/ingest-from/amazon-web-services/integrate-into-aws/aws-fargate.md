@@ -17,11 +17,11 @@ To deploy OneAgent on AWS Fargate, read the instructions provided below.
 
 ## Prerequisites
 
-* [Create an API token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") in your Dynatrace environment and enable the following permissions:
+* [Create an API token](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.") in your Dynatrace environment and enable the following permissions:
 
   + **Access problem and event feed, metrics, and topology** (API v1)
   + **PaaS integration - Installer download**
-* Review the list of [supported applications and versions](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+* Review the list of [supported applications and versions](../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 ## Integrate OneAgent into your application image
 
@@ -58,7 +58,7 @@ Before you start installation, make sure you have a running AWS Fargate cluster.
    kubectl -n dynatrace create secret generic dynakube --from-literal="apiToken=<API_TOKEN>"
    ```
 5. Download the [preconfigured DynaKube custom resource sample file from GitHubï»¿](https://dt-url.net/dynakube-applicationmonitoring).
-6. Review the [available parameters](/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes."), and adapt the DynaKube custom resource according to your requirements.
+6. Review the [available parameters](../../setup-on-k8s/reference/dynakube-parameters.md "List the available parameters for setting up Dynatrace Operator on Kubernetes."), and adapt the DynaKube custom resource according to your requirements.
 7. Apply the DynaKube custom resource.
 
    ```
@@ -342,11 +342,11 @@ You can configure network zones as an environment variable:
 
 * `DT_NETWORK_ZONE`: equals `your.network.zone`
 
-See [network zones](/docs/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
+See [network zones](../../../manage/network-zones.md "Find out how network zones work in Dynatrace.") for more information.
 
 ## Monitoring consumption
 
-For AWS Fargate, monitoring consumption is based on host units. To learn how host units are calculated for Dynatrace application and infrastructure monitoring, see [Application and Infrastructure Monitoring (Host Units)](/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
+For AWS Fargate, monitoring consumption is based on host units. To learn how host units are calculated for Dynatrace application and infrastructure monitoring, see [Application and Infrastructure Monitoring (Host Units)](../../../license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
 
 ## Troubleshooting
 
@@ -354,4 +354,4 @@ For AWS Fargate, monitoring consumption is based on host units. To learn how hos
 
 ## Related topics
 
-* [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* [OneAgent platform and capability support matrix](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

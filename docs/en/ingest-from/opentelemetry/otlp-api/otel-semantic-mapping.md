@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:35:37.469462
 * 2-min read
 * Published Jan 08, 2026
 
-Dynatrace automatically maps OpenTelemetry semantic conventions to the [Dynatrace Semantic Dictionary](/docs/semantic-dictionary "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.").
+Dynatrace automatically maps OpenTelemetry semantic conventions to the [Dynatrace Semantic Dictionary](../../../semantic-dictionary.md "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.").
 
 This mapping ensures consistent data interpretation across your observability stack and enables Dynatrace apps, analytics, and visualization features to work with OpenTelemetry instrumentation.
 
@@ -25,11 +25,11 @@ Dynatrace maps OpenTelemetry messaging attributes to the Dynatrace semantic mode
 | --- | --- |
 | `messaging.operation` | `messaging.operation.type` |
 
-For [`messaging.operation.type`](/docs/semantic-dictionary/fields#messaging "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types."), the value `send` is normalized to `publish`.
+For [`messaging.operation.type`](../../../semantic-dictionary/fields.md#messaging "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types."), the value `send` is normalized to `publish`.
 
 ## URL parsing
 
-Dynatrace automatically parses [`url.full`](/docs/semantic-dictionary/fields#url "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") into its constituent components:
+Dynatrace automatically parses [`url.full`](../../../semantic-dictionary/fields.md#url "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") into its constituent components:
 
 | Derived attribute | Description |
 | --- | --- |
@@ -56,7 +56,7 @@ Dynatrace creates provider-specific attributes from standard OpenTelemetry cloud
 
 ### Account and project identifiers
 
-Dynatrace creates provider-specific account attributes from the standard [`cloud.account.id`](/docs/semantic-dictionary/fields#cloud "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") attribute:
+Dynatrace creates provider-specific account attributes from the standard [`cloud.account.id`](../../../semantic-dictionary/fields.md#cloud "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") attribute:
 
 | Cloud provider | OpenTelemetry attribute | Created attribute |
 | --- | --- | --- |
@@ -66,7 +66,7 @@ Dynatrace creates provider-specific account attributes from the standard [`cloud
 
 ### Regional attributes
 
-Dynatrace creates provider-specific region attributes from standard [`cloud.region`](/docs/semantic-dictionary/fields#cloud "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") and related attributes:
+Dynatrace creates provider-specific region attributes from standard [`cloud.region`](../../../semantic-dictionary/fields.md#cloud "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") and related attributes:
 
 | Cloud provider | OpenTelemetry attributes | Created attribute |
 | --- | --- | --- |

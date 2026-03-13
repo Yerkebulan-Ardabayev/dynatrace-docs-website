@@ -22,14 +22,14 @@ In the following, you'll learn how to ingest sign-in logs from your [Microsoft E
 
 ### Use cases
 
-With the ingested data, you can leverage Dynatrace platform to monitor your Microsoft Entra ID sign-in activity and access to business-critical organization applications, spotting anomalies and staying ahead of potential threats. For details, see [Monitor suspicious sign-in activity with Dynatrace](/docs/secure/use-cases/monitor-sign-in-activity "Analyze suspicious and malicious sign-in behaviors with Dynatrace.").
+With the ingested data, you can leverage Dynatrace platform to monitor your Microsoft Entra ID sign-in activity and access to business-critical organization applications, spotting anomalies and staying ahead of potential threats. For details, see [Monitor suspicious sign-in activity with Dynatrace](../../use-cases/monitor-sign-in-activity.md "Analyze suspicious and malicious sign-in behaviors with Dynatrace.").
 
 ### Requirements
 
 * Enable Entra ID sign-in logs forwarding to Dynatrace via either of these options:
 
-  + **Option 1**: [Azure log forwarding](/docs/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Use Azure log forwarding to ingest Azure logs.")
-  + **Option 2**: [Azure Native Dynatrace Service](/docs/ingest-from/microsoft-azure-services/azure-platform/azure-native-integration "Set and configure your Dynatrace SaaS environment using Azure Marketplace.")
+  + **Option 1**: [Azure log forwarding](../../../ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure.md "Use Azure log forwarding to ingest Azure logs.")
+  + **Option 2**: [Azure Native Dynatrace Service](../../../ingest-from/microsoft-azure-services/azure-platform/azure-native-integration.md "Set and configure your Dynatrace SaaS environment using Azure Marketplace.")
 * Permissions:
 
   + To query ingested logs: `storage:logs:read`.
@@ -59,7 +59,7 @@ To set up Microsoft Entra ID sign-in log monitoring, follow the steps below.
 
 2. Verify configuration
 
-Verify the configuration by running the following query in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."):
+Verify the configuration by running the following query in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."):
 
 ```
 fetch logs
@@ -80,7 +80,7 @@ AND isNotNull(authentication.is_multifactor)
 3. Visualize results with our sample dashboard
 
 1. Download our [sample dashboard from GitHubï»¿](https://dt-url.net/ur03wvb).
-2. Open [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), select ![Import](https://dt-cdn.net/images/dashboards-app-dashboards-page-import-6a06e645df.svg "Import") **Upload**, then select the downloaded file.
+2. Open [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), select ![Import](https://dt-cdn.net/images/dashboards-app-dashboards-page-import-6a06e645df.svg "Import") **Upload**, then select the downloaded file.
 
 ## Details
 
@@ -88,8 +88,8 @@ AND isNotNull(authentication.is_multifactor)
 
 There are two ways to enable Entra ID sign-in logs forwarding to Dynatrace:
 
-* **Option 1**: Via [Azure log forwarding](/docs/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Use Azure log forwarding to ingest Azure logs.")
-* **Option 2**: Via [Azure Native Dynatrace Service](/docs/ingest-from/microsoft-azure-services/azure-platform/azure-native-integration "Set and configure your Dynatrace SaaS environment using Azure Marketplace.")
+* **Option 1**: Via [Azure log forwarding](../../../ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure.md "Use Azure log forwarding to ingest Azure logs.")
+* **Option 2**: Via [Azure Native Dynatrace Service](../../../ingest-from/microsoft-azure-services/azure-platform/azure-native-integration.md "Set and configure your Dynatrace SaaS environment using Azure Marketplace.")
 
 See below for details.
 
@@ -102,12 +102,12 @@ Via Azure Native Dynatrace Service
 1. Logs are ingested into Dynatrace
 
 1. Microsoft Entra ID continuously exports sign-in logs to [Azure Event Hubsï»¿](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about).
-2. An [Azure Functionï»¿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview?pivots=programming-language-csharp) app pre-processes the logs and sends them to Dynatrace, taking advantage of the [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") dedicated [log ingest endpoint](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.").
+2. An [Azure Functionï»¿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview?pivots=programming-language-csharp) app pre-processes the logs and sends them to Dynatrace, taking advantage of the [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") dedicated [log ingest endpoint](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.").
 
 2. Logs are processed and stored in Grail
 
-1. The fetched data is mapped to the [Dynatrace Semantic Dictionary](/docs/semantic-dictionary/model/security-events#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.").
-2. Data is stored in [Grail](/docs/platform/grail "Insights on what and how you can query Dynatrace data.") in a unified format, in a default bucket called `default_logs`. For details, see [Built-in Grail buckets](/docs/platform/grail/organize-data#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
+1. The fetched data is mapped to the [Dynatrace Semantic Dictionary](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.").
+2. Data is stored in [Grail](../../../platform/grail.md "Insights on what and how you can query Dynatrace data.") in a unified format, in a default bucket called `default_logs`. For details, see [Built-in Grail buckets](../../../platform/grail/organize-data.md#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
 
 ![mechanism2](https://dt-cdn.net/images/image-20250508-154902-2731-fc140d187d.png)
 
@@ -117,15 +117,15 @@ Microsoft Entra ID sign-in logs are collected, processed, and sent to Dynatrace 
 
 2. Logs are processed and stored in Grail
 
-1. The fetched data is mapped to the [Dynatrace Semantic Dictionary](/docs/semantic-dictionary/model/security-events#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.").
-2. Data is stored in [Grail](/docs/platform/grail "Insights on what and how you can query Dynatrace data.") in a unified format, in a default bucket called `default_logs`. For details, see [Built-in Grail buckets](/docs/platform/grail/organize-data#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
+1. The fetched data is mapped to the [Dynatrace Semantic Dictionary](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.").
+2. Data is stored in [Grail](../../../platform/grail.md "Insights on what and how you can query Dynatrace data.") in a unified format, in a default bucket called `default_logs`. For details, see [Built-in Grail buckets](../../../platform/grail/organize-data.md#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
 
 ### Licensing and cost
 
-For billing information, see [Events powered by Grail](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For billing information, see [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 
 ## Related topics
 
-* [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Security events](/docs/semantic-dictionary/model/security-events "Get to know the Semantic Dictionary models related to security events.")
+* [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
+* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Security events](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")

@@ -65,11 +65,11 @@ Some one-time setup is necessary before using ![Sensitive Data Center](https://d
 
 ### Create service user
 
-![Sensitive Data Center](https://dt-cdn.net/images/privacy-rights-highresolution-1024-fa3477e788.png "Sensitive Data Center") **Sensitive Data Center** uses a service user to continue processing scans and requests while you aren't using the app. See [Create service users](/docs/manage/identity-access-management/user-and-group-management/access-service-users#create-service-users "Service users") to learn how to create the service user. Follow the following instructions to set up the service user:
+![Sensitive Data Center](https://dt-cdn.net/images/privacy-rights-highresolution-1024-fa3477e788.png "Sensitive Data Center") **Sensitive Data Center** uses a service user to continue processing scans and requests while you aren't using the app. See [Create service users](../../identity-access-management/user-and-group-management/access-service-users.md#create-service-users "Service users") to learn how to create the service user. Follow the following instructions to set up the service user:
 
 1. Name the service user `sensitive-data-center`. The name must match exactly.
 2. Create a policy with the policy statement below, to grant the service user the required permissions.
-3. Create a group to assign the policy to (for example, `sensitive-data-center-service-users`) and assign the service user to this group. For more details, see [Create policies based on a service user](/docs/manage/identity-access-management/user-and-group-management/access-service-users#policy "Service users").
+3. Create a group to assign the policy to (for example, `sensitive-data-center-service-users`) and assign the service user to this group. For more details, see [Create policies based on a service user](../../identity-access-management/user-and-group-management/access-service-users.md#policy "Service users").
 4. This user must also be assigned to the `sensitive-data-center-users` group defined in the next section.
 
 ```
@@ -108,7 +108,7 @@ If you previously used **Privacy Rights**, rename your `privacy-rights` service 
 
 ### `sensitive-data-center-users` group
 
-Assign users to this group when you want them to be able to create requests and scans. To view all matching data for requests and scans, these users need unrestricted access to data in [Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."). For ![Sensitive Data Center](https://dt-cdn.net/images/privacy-rights-highresolution-1024-fa3477e788.png "Sensitive Data Center") **Sensitive Data Center** to function correctly, the group name must match exactly and a [policy](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.") with the following permissions must be assigned to the group:
+Assign users to this group when you want them to be able to create requests and scans. To view all matching data for requests and scans, these users need unrestricted access to data in [Grail](../../../platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."). For ![Sensitive Data Center](https://dt-cdn.net/images/privacy-rights-highresolution-1024-fa3477e788.png "Sensitive Data Center") **Sensitive Data Center** to function correctly, the group name must match exactly and a [policy](../../identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt.md "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.") with the following permissions must be assigned to the group:
 
 ```
 ALLOW app-engine:apps:run WHERE shared:app-id = 'dynatrace.sensitive.data.center';
@@ -156,16 +156,16 @@ ALLOW automation:workflows:read, automation:workflows:write;
 
 Replace the placeholder value for `iam:service-user-email` with the email of your `sensitive-data-center` service user. To find the email of your service user:
 
-1. In Dynatrace, go to [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.").
+1. In Dynatrace, go to [Account Management](../../account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health.").
 2. Select **Identity & access management** > **Service users**. You will see an overview table with all of your service users.
 3. In the **Actions** column, select  >  **Edit**.
 4. The service user's email is displayed at the top.
 
-If you previously used **Privacy Rights**, this group is equivalent to the `Privacy Rights request assignees` group. You can edit the group name and reuse the same group, but note that you need to add additional permissions to the policy. These permissions support the Sensitive Data Scanner functionality, which is currently available as a [preview program](/docs/whats-new/preview-releases "Learn about our Preview releases and how you can participate in them.") in ![Sensitive Data Center](https://dt-cdn.net/images/privacy-rights-highresolution-1024-fa3477e788.png "Sensitive Data Center") **Sensitive Data Center**.
+If you previously used **Privacy Rights**, this group is equivalent to the `Privacy Rights request assignees` group. You can edit the group name and reuse the same group, but note that you need to add additional permissions to the policy. These permissions support the Sensitive Data Scanner functionality, which is currently available as a [preview program](../../../../common/whats-new/preview-releases.md "Learn about our Preview releases and how you can participate in them.") in ![Sensitive Data Center](https://dt-cdn.net/images/privacy-rights-highresolution-1024-fa3477e788.png "Sensitive Data Center") **Sensitive Data Center**.
 
 ### `sensitive-data-center-admins` group
 
-Assign users to this group when you want them to be able to approve requests and delete data from Grail. All users assigned to this group must also be assigned to the `sensitive-data-center-users` group. For ![Sensitive Data Center](https://dt-cdn.net/images/privacy-rights-highresolution-1024-fa3477e788.png "Sensitive Data Center") **Sensitive Data Center** to function correctly, the group name must match exactly and a [policy](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.") with this permission must be assigned to the group:
+Assign users to this group when you want them to be able to approve requests and delete data from Grail. All users assigned to this group must also be assigned to the `sensitive-data-center-users` group. For ![Sensitive Data Center](https://dt-cdn.net/images/privacy-rights-highresolution-1024-fa3477e788.png "Sensitive Data Center") **Sensitive Data Center** to function correctly, the group name must match exactly and a [policy](../../identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt.md "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.") with this permission must be assigned to the group:
 
 ```
 ALLOW storage:records:delete;
@@ -175,7 +175,7 @@ If you previously used **Privacy Rights**, this group is equivalent to the `Priv
 
 ### Configure audit logging
 
-By default, audit logs go to the `default_logs` bucket. To change this, you can create a `privacy_audit` bucket to assign audit logs to. The name must match exactly. You can customize the retention period to suit your needs and restrict access to the bucket using IAM policies. You also need to [configure bucket assignment](/docs/analyze-explore-automate/logs/lma-bucket-assignment "Your log data can be stored in data retention buckets based on specific retention periods.") so that logs matching `log.source == "Sensitive Data Center"` are assigned to the `privacy_audit` bucket.
+By default, audit logs go to the `default_logs` bucket. To change this, you can create a `privacy_audit` bucket to assign audit logs to. The name must match exactly. You can customize the retention period to suit your needs and restrict access to the bucket using IAM policies. You also need to [configure bucket assignment](../../../analyze-explore-automate/logs/lma-bucket-assignment.md "Your log data can be stored in data retention buckets based on specific retention periods.") so that logs matching `log.source == "Sensitive Data Center"` are assigned to the `privacy_audit` bucket.
 
 ### Restrict access
 
@@ -205,10 +205,10 @@ They should also be denied read access to audit logs in the `default_logs` or `p
 
 ![Sensitive Data Center](https://dt-cdn.net/images/privacy-rights-highresolution-1024-fa3477e788.png "Sensitive Data Center") **Sensitive Data Center** helps you to:
 
-* [Export personal data](/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/export-personal-data "Export personal data with Sensitive Data Center export requests."): Review and export personal data that relates to a specific end user.
-* [Delete personal data](/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/delete-personal-data "Delete personal data with Sensitive Data Center deletion requests."): Review and delete personal data that relates to a specific end user.
-* [Clean up data](/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/cleanup-data "Clean up data with Sensitive Data Center cleanup requests."): Delete mistakenly ingested data for a specific timeframe.
-* [Schedule scans](/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/create-scheduled-scan "Create a scheduled scan to maintain personal data with Sensitive Data Center."): Create scans for mistakenly ingested sensitive data, such as credit card numbers and IBANs, using the Sensitive Data Scanner. This functionality is only available as a [preview](/docs/whats-new/preview-releases "Learn about our Preview releases and how you can participate in them.").
+* [Export personal data](sensitive-data-center/export-personal-data.md "Export personal data with Sensitive Data Center export requests."): Review and export personal data that relates to a specific end user.
+* [Delete personal data](sensitive-data-center/delete-personal-data.md "Delete personal data with Sensitive Data Center deletion requests."): Review and delete personal data that relates to a specific end user.
+* [Clean up data](sensitive-data-center/cleanup-data.md "Clean up data with Sensitive Data Center cleanup requests."): Delete mistakenly ingested data for a specific timeframe.
+* [Schedule scans](sensitive-data-center/create-scheduled-scan.md "Create a scheduled scan to maintain personal data with Sensitive Data Center."): Create scans for mistakenly ingested sensitive data, such as credit card numbers and IBANs, using the Sensitive Data Scanner. This functionality is only available as a [preview](../../../../common/whats-new/preview-releases.md "Learn about our Preview releases and how you can participate in them.").
 
 ![Sensitive Data Center](https://dt-cdn.net/images/privacy-rights-highresolution-1024-fa3477e788.png "Sensitive Data Center") **Sensitive Data Center** currently supports export, deletion, and cleanup of Grail logs. Other data types are not supported.
 
@@ -233,7 +233,7 @@ To limit the scope of requests:
 
 * Use the shortest possible timeframe and select relevant buckets only.
 * Make sure you aren't exporting personal data of other individuals or confidential data.
-* Use [policies](/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/create-policy "Create a policy to enrich or filter request results with Sensitive Data Center.") to help ensure that your organizationâs policies regarding sensitive data are followed.
+* Use [policies](sensitive-data-center/create-policy.md "Create a policy to enrich or filter request results with Sensitive Data Center.") to help ensure that your organizationâs policies regarding sensitive data are followed.
 * Minimize the number of logs you export/delete so it is easier to review the data.
 
 ## FAQ
@@ -256,7 +256,7 @@ My request is in "Failed" state, what should I do?
 
 If any deletion error occurs, then your request transitions into the **Failed** state. In the request details, further information will be provided for each failed task. Deletion and cleanup requests are processed in one or more tasks that cover specific timeframes. You can assume that deletion has succeeded for any timeframe not listed in the failed tasks. There are four reasons why a deletion task may fail:
 
-1. **Invalid request:** the request was not accepted because either it uses [DQL that is unsupported for deletion](/docs/platform/grail/organize-data/record-deletion-in-grail "Find out how to delete records in Grail via API.") or it matches too many records. No data has been deleted. You can resolve this by creating a new request with a modified query and attempting deletion again for the failed timeframe(s).
+1. **Invalid request:** the request was not accepted because either it uses [DQL that is unsupported for deletion](../../../platform/grail/organize-data/record-deletion-in-grail.md "Find out how to delete records in Grail via API.") or it matches too many records. No data has been deleted. You can resolve this by creating a new request with a modified query and attempting deletion again for the failed timeframe(s).
 2. **Trigger timeout:** due to a temporary outage, it was not possible to start deletion and the task timed out. No data has been deleted. We recommend you wait 12 hours or longer, then create a new request for the failed timeframe(s) to attempt deletion again.
 3. **Processing timeout:** due to a temporary outage during deletion, the task has timed out. Data may have been partially deleted. We recommend you wait 12 hours or longer, then create a new request for the failed timeframe(s) to attempt deletion again.
 4. **Internal error:** an internal error occurred during deletion. In this unlikely case, data may have been partially deleted for the timeframe. Please contact Support so we can assist you in resolving the issue.
@@ -286,19 +286,19 @@ The most likely cause of failed scans is misconfigured permissions for the servi
 [01Create a policy in Sensitive Data Center
 
 * How-to guide
-* Create a policy to enrich or filter request results with Sensitive Data Center.](/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/create-policy)[02Export personal data in Sensitive Data Center
+* Create a policy to enrich or filter request results with Sensitive Data Center.](sensitive-data-center/create-policy.md)[02Export personal data in Sensitive Data Center
 
 * How-to guide
-* Export personal data with Sensitive Data Center export requests.](/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/export-personal-data)[03Review audit logs in Sensitive Data Center
+* Export personal data with Sensitive Data Center export requests.](sensitive-data-center/export-personal-data.md)[03Review audit logs in Sensitive Data Center
 
 * How-to guide
-* Review Sensitive Data Center audit logs.](/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/review-audit-logs)[04Delete personal data in Sensitive Data Center
+* Review Sensitive Data Center audit logs.](sensitive-data-center/review-audit-logs.md)[04Delete personal data in Sensitive Data Center
 
 * How-to guide
-* Delete personal data with Sensitive Data Center deletion requests.](/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/delete-personal-data)[05Clean up data in Sensitive Data Center
+* Delete personal data with Sensitive Data Center deletion requests.](sensitive-data-center/delete-personal-data.md)[05Clean up data in Sensitive Data Center
 
 * How-to guide
-* Clean up data with Sensitive Data Center cleanup requests.](/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/cleanup-data)[06Create scheduled scan in Sensitive Data Center
+* Clean up data with Sensitive Data Center cleanup requests.](sensitive-data-center/cleanup-data.md)[06Create scheduled scan in Sensitive Data Center
 
 * How-to guide
-* Create a scheduled scan to maintain personal data with Sensitive Data Center.](/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/create-scheduled-scan)
+* Create a scheduled scan to maintain personal data with Sensitive Data Center.](sensitive-data-center/create-scheduled-scan.md)

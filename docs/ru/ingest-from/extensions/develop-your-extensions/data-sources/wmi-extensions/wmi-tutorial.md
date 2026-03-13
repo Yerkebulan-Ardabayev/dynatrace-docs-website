@@ -17,9 +17,9 @@ scraped: 2026-03-04T21:28:59.832907
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Создание сертификата и ключа разработчика**](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial#generate-certificate-and-key "Learn about WMI extensions in the Extensions framework.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Создание сертификата и ключа разработчика**](wmi-tutorial.md#generate-certificate-and-key "Learn about WMI extensions in the Extensions framework.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Распространение корневого сертификата на компоненты Dynatrace**](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial#distribute-root-certificate "Learn about WMI extensions in the Extensions framework.")
+**Распространение корневого сертификата на компоненты Dynatrace**](wmi-tutorial.md#distribute-root-certificate "Learn about WMI extensions in the Extensions framework.")
 
 ## Прежде чем начать
 
@@ -38,7 +38,7 @@ scraped: 2026-03-04T21:28:59.832907
     pip install dt-cli
     ```
 
-    Дополнительные сведения см. в разделе [Подписание расширений](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
+    Дополнительные сведения см. в разделе [Подписание расширений](../../sign-extensions.md "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
 * Ваш корневой сертификат, загруженный в Dynatrace и на хост OneAgent
 
 ## Шаг 1. Создание сертификата и ключа разработчика
@@ -80,4 +80,4 @@ dt extension generate-developer-pem -o developer.pem --ca-crt ca.pem --ca-key ca
 
 Ваша среда Dynatrace готова к созданию расширения WMI.
 
-**Следующий шаг**: [Пакет расширения](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial/wmi-tutorial-01 "Learn about WMI extensions in the Extensions framework.")
+**Следующий шаг**: [Пакет расширения](wmi-tutorial/wmi-tutorial-01.md "Learn about WMI extensions in the Extensions framework.")

@@ -92,7 +92,7 @@ Letâs look what you can do to optimize different types of queries.
 
 ### Convert queries to metrics based on logs
 
-When you are interested in aggregated values like sums, or counts spitted by a low cardinality dimension, follow the guide to [Parse log lines and extract a metric](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Configure OpenPipeline processing for log lines.").
+When you are interested in aggregated values like sums, or counts spitted by a low cardinality dimension, follow the guide to [Parse log lines and extract a metric](../../../platform/openpipeline/use-cases/tutorial-log-processing-pipeline.md "Configure OpenPipeline processing for log lines.").
 
 In our example this is the required configuration for your metric extraction:
 
@@ -108,7 +108,7 @@ timeseries count = count(log.obslab.errors)
 ```
 
 Once you have adjusted the two tiles, there will be no query cost generated on rendering the two tiles.
-Log-based metrics are licensed like any other [Custom Metric powered by Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+Log-based metrics are licensed like any other [Custom Metric powered by Grail](../../../license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 
 Itâs not always possible to extract metrics from any DQL query.
 Be aware of dimensional cardinality, and specific commands like `dedup` or `join`.
@@ -131,7 +131,7 @@ To do so, simply edit the dashboard tile.
   | filter dt.system.bucket == "default_logs"
   ```
 
-More DQL best practices for queries optimization are at [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.").
+More DQL best practices for queries optimization are at [DQL best practices](../../../platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.").
 
 ### Optimize the order of query commands
 
@@ -181,9 +181,9 @@ Sampling isnât a good idea when you care about accuracy or scan small datas
 
 ### Configure bucket to use Retain with Included Queries
 
-If many users frequently open a dashboard and they query shorter time ranges (data that is less than 35 days old), consider using the [Retain with Included Queries](/docs/license/capabilities/log-analytics#log-retain-included-queries "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") pricing model and set the appropriate [IAM permissions](/docs/platform/grail/organize-data/assign-permissions-in-grail#included-queries "Find out how to assign permissions to buckets and tables in Grail.").
+If many users frequently open a dashboard and they query shorter time ranges (data that is less than 35 days old), consider using the [Retain with Included Queries](../../../license/capabilities/log-analytics.md#log-retain-included-queries "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") pricing model and set the appropriate [IAM permissions](../../../platform/grail/organize-data/assign-permissions-in-grail.md#included-queries "Find out how to assign permissions to buckets and tables in Grail.").
 
-For the detailed instructions on the bucket configuration, see [Take control of log query costs using Retain with Included Queries](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-included-log-queries "How to use the Retain with Included Queries capability to control and predict log consumption.").
+For the detailed instructions on the bucket configuration, see [Take control of log query costs using Retain with Included Queries](lma-e2e-included-log-queries.md "How to use the Retain with Included Queries capability to control and predict log consumption.").
 
 ### Turn off auto-refresh
 
@@ -199,23 +199,23 @@ Your results may vary.
 
 Best practices:
 
-* If possible, use metrics based on logs as described in [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.").
+* If possible, use metrics based on logs as described in [Set up custom alerts based on metrics extracted from logs](lma-alert-log-based-metrics.md "How to create and configure Davis problems and custom alerts with metrics based on logs.").
   Metrics are faster, have longer and cheaper retention, queries for metrics are not charged, you can drop the log records contributing to a metric and save on retention costs, can metrics be used for alerting.
 
-  To extract metrics, [Parse log lines and extract a metric](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Configure OpenPipeline processing for log lines.") with OpenPipeline.
+  To extract metrics, [Parse log lines and extract a metric](../../../platform/openpipeline/use-cases/tutorial-log-processing-pipeline.md "Configure OpenPipeline processing for log lines.") with OpenPipeline.
 * If your use case requires that log content (or other high-cardinality data) is presented via dashboards, optimize your DQL queries by setting timeframe, segments, buckets, query limits, and disable auto-refresh.
 
 ## Learn more
 
-* [Logs use case: Observe cloud network traffic with logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-observability "Observability using logs, metrics and dashboards.")
+* [Logs use case: Observe cloud network traffic with logs](lma-e2e-observability.md "Observability using logs, metrics and dashboards.")
 * [Start exploration journey with Dashboardsï»¿](https://www.dynatrace.com/news/blog/start-your-exploration-journey-with-dashboards/)
 * [Transform data into insights with Dynatrace Dashboards and Notebooksï»¿](https://www.dynatrace.com/news/blog/transform-data-into-insights-with-dynatrace-dashboards-and-notebooks/)
-* [Dynatrace Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")
-* [Learn more about DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.")
-* [Use OpenPipeline to extract metrics from log records](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Configure OpenPipeline processing for log lines.")
+* [Dynatrace Dashboards](../../dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")
+* [Learn more about DQL best practices](../../../platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.")
+* [Use OpenPipeline to extract metrics from log records](../../../platform/openpipeline/use-cases/tutorial-log-processing-pipeline.md "Configure OpenPipeline processing for log lines.")
 
 ## Related topics
 
-* [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.")
-* [Log metrics (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
-* [Log events (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-events "Learn how to create and use Dynatrace log events to analyze log data.")
+* [Set up custom alerts based on metrics extracted from logs](lma-alert-log-based-metrics.md "How to create and configure Davis problems and custom alerts with metrics based on logs.")
+* [Log metrics (Logs Classic)](../../log-monitoring/analyze-log-data/log-metrics.md "Learn how to create and use Dynatrace log metrics to analyze log data.")
+* [Log events (Logs Classic)](../../log-monitoring/analyze-log-data/log-events.md "Learn how to create and use Dynatrace log events to analyze log data.")

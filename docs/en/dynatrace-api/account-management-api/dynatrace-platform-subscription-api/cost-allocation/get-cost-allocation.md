@@ -18,7 +18,7 @@ The request produces an `application/json` payload.
 
 ## Authentication
 
-To execute this request, you need the **Allow read access for usage and consumption resources** (`account-uac-read`) scope assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+To execute this request, you need the **Allow read access for usage and consumption resources** (`account-uac-read`) scope assigned to your token. To learn how to obtain and use it, see [OAuth clients](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
 
 ## Parameters
 
@@ -91,4 +91,4 @@ To execute this request, you need the **Allow read access for usage and consumpt
 
 ## Related topics
 
-* [Allocate your DPS costs](/docs/license/cost-allocation "Learn how to allocate costs to cost centers and products.")
+* [Allocate your DPS costs](../../../../license/cost-allocation.md "Learn how to allocate costs to cost centers and products.")

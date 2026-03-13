@@ -18,9 +18,9 @@ Dynatrace предоставляет фреймворк, который позв
 Предполагается следующее:
 
 * Вы обладаете достаточными экспертными знаниями в области баз данных для создания расширения. В частности, вы знаете, как строить и выполнять SQL-запросы.
-* Вы знакомы с [основными концепциями расширений](/docs/ingest-from/extensions/concepts "Подробнее об основных концепциях расширений Dynatrace.") и общей структурой [файла YAML расширения](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml "Узнайте, как создать файл YAML расширения с использованием фреймворка расширений.").
+* Вы знакомы с [основными концепциями расширений](../../concepts.md "Подробнее об основных концепциях расширений Dynatrace.") и общей структурой [файла YAML расширения](../extension-yaml.md "Узнайте, как создать файл YAML расширения с использованием фреймворка расширений.").
 
-Ознакомьтесь с предварительными условиями и объёмом поддерживаемых технологий. Об ограничениях, применимых к вашему расширению, см. в разделе [Ограничения расширений](/docs/ingest-from/extensions/concepts "Подробнее об основных концепциях расширений Dynatrace.").
+Ознакомьтесь с предварительными условиями и объёмом поддерживаемых технологий. Об ограничениях, применимых к вашему расширению, см. в разделе [Ограничения расширений](../../concepts.md "Подробнее об основных концепциях расширений Dynatrace.").
 
 ## Поддерживаемые версии Dynatrace
 
@@ -44,15 +44,15 @@ Dynatrace предоставляет фреймворк, который позв
 
 ## Создание расширения
 
-* См. [Справочник по источнику данных SQL](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sql-reference "Узнайте о структуре файла YAML расширения для SQL-расширений."), чтобы ознакомиться со структурой файла YAML расширения.
+* См. [Справочник по источнику данных SQL](sql/sql-reference.md "Узнайте о структуре файла YAML расширения для SQL-расширений."), чтобы ознакомиться со структурой файла YAML расширения.
 
 ## Конфигурация мониторинга
 
-* См. [Конфигурация мониторинга Oracle Database](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring "Создание и активация конфигурации мониторинга для расширения на основе источника данных SQL для Oracle Database."), чтобы узнать, как создать конфигурацию мониторинга для Oracle Database.
-* См. [Конфигурация мониторинга Microsoft SQL Server](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring "Расширения Microsoft SQL в фреймворке расширений."), чтобы узнать, как создать конфигурацию мониторинга для Microsoft Database.
-* См. [Конфигурация мониторинга IBM Database](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/ibm-monitoring "Расширения IBM DB2 в фреймворке расширений."), чтобы узнать, как создать конфигурацию мониторинга для IBM Database.
-* См. [Конфигурация мониторинга MySQL](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/mysql-monitoring "Расширения MySQL в фреймворке расширений."), чтобы узнать, как создать конфигурацию мониторинга для MySQL.
-* См. [Конфигурация мониторинга PostgreSQL](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring "Расширения PostgreSQL в фреймворке расширений."), чтобы узнать, как создать конфигурацию мониторинга для PostgreSQL.
-* См. [Конфигурация мониторинга SAP Hana Database](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring "Расширения SAP Hana в фреймворке расширений."), чтобы узнать, как создать конфигурацию мониторинга для SAP Hana Database.
-* См. [Конфигурация мониторинга Snowflake Database](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring "Расширения Snowflake Database в фреймворке расширений."), чтобы узнать, как создать конфигурацию мониторинга для Snowflake Database.
-* См. [Конфигурация мониторинга JDBC](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring "Расширения JDBC в фреймворке расширений."), чтобы узнать, как создать конфигурацию мониторинга для JDBC Database.
+* См. [Конфигурация мониторинга Oracle Database](sql/oracle-monitoring.md "Создание и активация конфигурации мониторинга для расширения на основе источника данных SQL для Oracle Database."), чтобы узнать, как создать конфигурацию мониторинга для Oracle Database.
+* См. [Конфигурация мониторинга Microsoft SQL Server](sql/microsoft-sql-monitoring.md "Расширения Microsoft SQL в фреймворке расширений."), чтобы узнать, как создать конфигурацию мониторинга для Microsoft Database.
+* См. [Конфигурация мониторинга IBM Database](sql/ibm-monitoring.md "Расширения IBM DB2 в фреймворке расширений."), чтобы узнать, как создать конфигурацию мониторинга для IBM Database.
+* См. [Конфигурация мониторинга MySQL](sql/mysql-monitoring.md "Расширения MySQL в фреймворке расширений."), чтобы узнать, как создать конфигурацию мониторинга для MySQL.
+* См. [Конфигурация мониторинга PostgreSQL](sql/postgresql-monitoring.md "Расширения PostgreSQL в фреймворке расширений."), чтобы узнать, как создать конфигурацию мониторинга для PostgreSQL.
+* См. [Конфигурация мониторинга SAP Hana Database](sql/sap-hana-monitoring.md "Расширения SAP Hana в фреймворке расширений."), чтобы узнать, как создать конфигурацию мониторинга для SAP Hana Database.
+* См. [Конфигурация мониторинга Snowflake Database](sql/snowflake-monitoring.md "Расширения Snowflake Database в фреймворке расширений."), чтобы узнать, как создать конфигурацию мониторинга для Snowflake Database.
+* См. [Конфигурация мониторинга JDBC](sql/jdbc-monitoring.md "Расширения JDBC в фреймворке расширений."), чтобы узнать, как создать конфигурацию мониторинга для JDBC Database.

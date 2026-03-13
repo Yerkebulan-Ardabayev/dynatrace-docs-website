@@ -15,9 +15,9 @@ scraped: 2026-03-05T21:37:43.036318
 
 После определения области действия вашей конфигурации необходимо указать базы данных, из которых вы хотите собирать данные, и определить ActiveGate, которые будут выполнять расширение и подключаться к вашим устройствам.
 
-Убедитесь, что все ActiveGate из группы ActiveGate, которую вы определите в качестве области действия, могут подключиться к соответствующему источнику данных. Вы можете назначить ActiveGate группе во время или после установки. Подробнее см. [Группа ActiveGate](/docs/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
+Убедитесь, что все ActiveGate из группы ActiveGate, которую вы определите в качестве области действия, могут подключиться к соответствующему источнику данных. Вы можете назначить ActiveGate группе во время или после установки. Подробнее см. [Группа ActiveGate](../../../../dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.").
 
-Конфигурация мониторинга — это JSON-полезная нагрузка, определяющая детали подключения, учётные данные и наборы функций, которые вы хотите отслеживать. Подробнее см. [Начало мониторинга](/docs/ingest-from/extensions/manage-extensions#start-monitoring "Learn how to manage extensions.").
+Конфигурация мониторинга — это JSON-полезная нагрузка, определяющая детали подключения, учётные данные и наборы функций, которые вы хотите отслеживать. Подробнее см. [Начало мониторинга](../../../manage-extensions.md#start-monitoring "Learn how to manage extensions.").
 
 Пример полезной нагрузки для активации расширения Oracle SQL:
 
@@ -145,13 +145,13 @@ scraped: 2026-03-05T21:37:43.036318
 ]
 ```
 
-Когда ваш исходный YAML-файл расширения готов, упакуйте его, подпишите и загрузите в вашу среду Dynatrace. Подробнее см. [Управление жизненным циклом расширений](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.").
+Когда ваш исходный YAML-файл расширения готов, упакуйте его, подпишите и загрузите в вашу среду Dynatrace. Подробнее см. [Управление жизненным циклом расширений](../../../manage-extensions.md "Learn how to manage extensions.").
 
 Мастер активации расширений на основе Dynatrace Hub содержит динамически обновляемую JSON-полезную нагрузку с вашей конфигурацией мониторинга.
 
 Вы также можете использовать Dynatrace API для загрузки схемы вашего расширения, которая поможет вам создать JSON-полезную нагрузку для конфигурации мониторинга.
 
-Используйте эндпоинт [GET an extension schema](/docs/dynatrace-api/environment-api/extensions-20/extensions/get-schema "View the schema of an extension the Dynatrace Extensions 2.0 API.").
+Используйте эндпоинт [GET an extension schema](../../../../../dynatrace-api/environment-api/extensions-20/extensions/get-schema.md "View the schema of an extension the Dynatrace Extensions 2.0 API.").
 
 Выполните следующий запрос:
 
@@ -171,9 +171,9 @@ curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/{extension-name}/{ext
 
 ## Область действия
 
-Обратите внимание, что каждому хосту ActiveGate, выполняющему ваше расширение, необходим корневой сертификат для проверки подлинности расширения. Подробнее см. [Подпись расширения](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
+Обратите внимание, что каждому хосту ActiveGate, выполняющему ваше расширение, необходим корневой сертификат для проверки подлинности расширения. Подробнее см. [Подпись расширения](../../sign-extensions.md "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
 
-Область действия — это группа ActiveGate, которая будет выполнять расширение. Только один ActiveGate из группы будет запускать эту конфигурацию мониторинга. Если вы планируете использовать один ActiveGate, назначьте его выделенной группе. Вы можете назначить ActiveGate группе во время или после установки. Подробнее см. [Группа ActiveGate](/docs/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
+Область действия — это группа ActiveGate, которая будет выполнять расширение. Только один ActiveGate из группы будет запускать эту конфигурацию мониторинга. Если вы планируете использовать один ActiveGate, назначьте его выделенной группе. Вы можете назначить ActiveGate группе во время или после установки. Подробнее см. [Группа ActiveGate](../../../../dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.").
 
 Используйте следующий формат при определении группы ActiveGate:
 

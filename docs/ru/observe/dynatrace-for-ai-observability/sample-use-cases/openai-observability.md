@@ -42,7 +42,7 @@ Dynatrace с OpenTelemetry или OpenLLMetry помогает:
 2. Указываете `api_endpoint` на ваш OTLP-эндпоинт Dynatrace.
 3. Выполняете аутентификацию с помощью API-токена Dynatrace (в примере он считывается из `/etc/secrets/dynatrace_otel`).
 
-Дополнительные параметры конфигурации см. в руководстве [Начало работы с наблюдаемостью AI](/docs/observe/dynatrace-for-ai-observability/get-started "Начало работы с OpenLLMetry и OpenTelemetry для наблюдаемости AI.").
+Дополнительные параметры конфигурации см. в руководстве [Начало работы с наблюдаемостью AI](../get-started.md "Начало работы с OpenLLMetry и OpenTelemetry для наблюдаемости AI.").
 
 ### Запуск примера
 

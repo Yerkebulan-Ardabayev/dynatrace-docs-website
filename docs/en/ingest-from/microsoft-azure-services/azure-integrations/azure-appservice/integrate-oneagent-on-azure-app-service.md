@@ -20,17 +20,17 @@ Azure App Service provides many different hosting options for Windows, Linux, an
 The App Service integration with Dynatrace provides the following capabilities:
 
 * [Integration for OneAgent on Windows via an extension for easy deployment](#install)
-* [Integration for OneAgent on Linux and containers](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.")
+* [Integration for OneAgent on Linux and containers](integrate-oneagent-on-web-app-for-containers.md "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.")
 * Automatic distributed tracing and monitoring for .NET/.NET Core, Java, Node.js, PHP, and IIS
 * Enhanced capturing of Azure App Service metadata, such as SKU or Website-Name
-* Capturing of platform-level metrics and [additional insights into your App-Service Plan](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/monitor-app-service "Monitor Azure App Service (App Service Plan, Web App Deployment Slot) and view available metrics.") via the [Azure Monitor integration](/docs/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
-* Capturing of logs via [log forwarding](/docs/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Use Azure log forwarding to ingest Azure logs.")
+* Capturing of platform-level metrics and [additional insights into your App-Service Plan](monitor-app-service.md "Monitor Azure App Service (App Service Plan, Web App Deployment Slot) and view available metrics.") via the [Azure Monitor integration](../../../microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")
+* Capturing of logs via [log forwarding](../set-up-log-forwarder-azure.md "Use Azure log forwarding to ingest Azure logs.")
 
 **Limitations**  
 Since Azure App Service is a fully managed hosting platform, applications are deployed into a sandboxed environment that doesn't allow direct access to the underlying operating system. The OneAgent integration for Azure App Service uses the application-only or universal injection approach, which results in some differences from the Full-Stack OneAgent installation:
 
-* I/O monitoring requires that you enable [Azure Monitor integration](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide "Set up and configure Azure monitoring in Dynatrace."), which also provides [additional insights into your App-Service Plan](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/monitor-app-service "Monitor Azure App Service (App Service Plan, Web App Deployment Slot) and view available metrics.")
-* Capturing logs requires that you enable [log forwarding](/docs/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Use Azure log forwarding to ingest Azure logs.")
+* I/O monitoring requires that you enable [Azure Monitor integration](../azure-monitoring-guide.md "Set up and configure Azure monitoring in Dynatrace."), which also provides [additional insights into your App-Service Plan](monitor-app-service.md "Monitor Azure App Service (App Service Plan, Web App Deployment Slot) and view available metrics.")
+* Capturing logs requires that you enable [log forwarding](../set-up-log-forwarder-azure.md "Use Azure log forwarding to ingest Azure logs.")
 * Automatic OneAgent updates need to be triggered via the [Dynatrace OneAgent site extension REST API](#restapi)
 * Hostgroup configuration is not available
 
@@ -40,11 +40,11 @@ Windows only
 
 Dynatrace provides a [site extensionï»¿](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions) to install OneAgent on Azure App Services on Windows.
 
-For Azure App Service on Linux or containers, see [Integration for OneAgent on Azure App Service on Linux and containers](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.").
+For Azure App Service on Linux or containers, see [Integration for OneAgent on Azure App Service on Linux and containers](integrate-oneagent-on-web-app-for-containers.md "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.").
 
 Site extension is the native extension mechanism provided via [Kuduï»¿](https://github.com/projectkudu/kudu), which is the deployment management engine behind Azure App Services.
 
-The Dynatrace OneAgent site extension doesn't include the OneAgent installer. Instead, the extension uses the Dynatrace REST API to download the installer from the cluster in the target version as set in [OneAgent updates](/docs/ingest-from/dynatrace-oneagent/oneagent-update#configure-oneagent-updates "Learn how to update OneAgent.").
+The Dynatrace OneAgent site extension doesn't include the OneAgent installer. Instead, the extension uses the Dynatrace REST API to download the installer from the cluster in the target version as set in [OneAgent updates](../../../dynatrace-oneagent/oneagent-update.md#configure-oneagent-updates "Learn how to update OneAgent.").
 
 There are multiple ways to install the Dynatrace OneAgent site extension:
 
@@ -56,8 +56,8 @@ See below for instructions.
 
 ### Prerequisites
 
-* Create a [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
-* Determine your [environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+* Create a [PaaS token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.").
+* Determine your [environment ID](../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
 * Determine your server URL if required.
 
   The server URL is required only if you use an ActiveGate for a Dynatrace SaaS endpoint. The URL is automatically generated from the environment ID.
@@ -78,7 +78,7 @@ See below for instructions.
    ![Kudu site](https://dt-cdn.net/images/screenshot-2023-08-08-at-5-41-34-pm-1046-18f975f56f.png)
 8. Select **Site extensions**.
 9. Select **Launch** on the Dynatrace tile.
-10. On the **Start monitoring your App Service instance** page, enter your environment ID, [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes."), and server URL. See [Prerequisites](#prerequisites) section for details.
+10. On the **Start monitoring your App Service instance** page, enter your environment ID, [PaaS token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes."), and server URL. See [Prerequisites](#prerequisites) section for details.
 11. Optional You can select **Accept all self-signed SSL certificates** to automatically accept all self-signed TLS certificates.
 12. Select **Install OneAgent**.
 13. To check the deployment status, go to **Deployment Status**.
@@ -729,7 +729,7 @@ dynatrace-oneagent-site-extension.json
 | APIToken | Required | The PaaS token as described in [Prerequisites](#prerequisites). |
 | APIUrl | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
 | SSLMode | Optional | To automatically accept all self-signed TLS certificates, set the value to `all`. |
-| networkZone | Optional | Your network zone. Set the value you want for your App Service instance. See [network zones](/docs/manage/network-zones "Find out how network zones work in Dynatrace.") for more information. |
+| networkZone | Optional | Your network zone. Set the value you want for your App Service instance. See [network zones](../../../../manage/network-zones.md "Find out how network zones work in Dynatrace.") for more information. |
 | monitoredCLR | Optional | Set the value to `clr` if your application is running on .NET, or `coreclr` if your application is running on .NET Core, default value is `both` |
 
 To check the deployment status, go to **Deployment Status**.
@@ -830,7 +830,7 @@ If the application is running at the time of removal, the site extension recogni
 
 ## Monitoring consumption
 
-For Azure App Service, monitoring consumption is based on host units. See [Application and Infrastructure Monitoring (Host Units)](/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
+For Azure App Service, monitoring consumption is based on host units. See [Application and Infrastructure Monitoring (Host Units)](../../../../license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
 
 ## Troubleshooting
 
@@ -847,5 +847,5 @@ Location of log files
 
 ## Related topics
 
-* [Set up Dynatrace on Microsoft Azure](/docs/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
-* [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* [Set up Dynatrace on Microsoft Azure](../../../microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")
+* [OneAgent platform and capability support matrix](../../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

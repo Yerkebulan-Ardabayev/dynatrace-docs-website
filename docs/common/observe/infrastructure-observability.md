@@ -21,7 +21,7 @@ Monitor hosts, VMs, processes, and networks to detect issues and improve infrast
 
 * App
 
-Explore this app](/docs/observe/infrastructure-observability/infrastructure-and-operations)[![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")
+Explore this app](infrastructure-observability/infrastructure-and-operations.md)[![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")
 
 #### Kubernetes
 
@@ -29,7 +29,7 @@ Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and healt
 
 * App
 
-Explore this app](/docs/observe/infrastructure-observability/kubernetes-app)[![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases")
+Explore this app](infrastructure-observability/kubernetes-app.md)[![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases")
 
 #### Databases app
 
@@ -37,7 +37,7 @@ The Databases app gives you an overview of all your Extensions Framework 2.0-mon
 
 * App
 
-Explore this app](/docs/observe/infrastructure-observability/databases/database-app)[![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds")
+Explore this app](infrastructure-observability/databases/database-app.md)[![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds")
 
 #### Clouds app
 
@@ -45,7 +45,7 @@ Monitor all cloud platforms at once.
 
 * App
 
-Explore this app](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app)
+Explore this app](infrastructure-observability/cloud-platform-monitoring/clouds-app.md)
 
 ## Concepts
 
@@ -55,37 +55,37 @@ Monitor the health and performance of your data centers and availability zones t
 
 * Explanation
 
-Read this explanation](/docs/observe/infrastructure-observability/infrastructure-and-operations/data-centers)[#### Hosts
+Read this explanation](infrastructure-observability/infrastructure-and-operations/data-centers.md)[#### Hosts
 
 Monitor infrastructure hosts across physical machines, VMs, and cloud instances to track health, performance, and resource utilization.
 
 * Explanation
 
-Read this explanation](/docs/observe/infrastructure-observability/infrastructure-and-operations/hosts)[#### Processes
+Read this explanation](infrastructure-observability/infrastructure-and-operations/hosts.md)[#### Processes
 
 Monitor processes running on hosts and containers with detailed insights into CPU and memory usage trends and key metrics.
 
 * Explanation
 
-Read this explanation](/docs/observe/infrastructure-observability/infrastructure-and-operations/processes)[#### Containers
+Read this explanation](infrastructure-observability/infrastructure-and-operations/processes.md)[#### Containers
 
 Monitor and troubleshoot containerized workloads across Kubernetes and standalone hosts.
 
 * Explanation
 
-Read this explanation](/docs/observe/infrastructure-observability/infrastructure-and-operations/containers)[#### Networks
+Read this explanation](infrastructure-observability/infrastructure-and-operations/containers.md)[#### Networks
 
 Monitor network devices and gain insights into networking components with Dynatrace Intelligence-powered analytics and flexible observability options.
 
 * Explanation
 
-Read this explanation](/docs/observe/infrastructure-observability/infrastructure-and-operations/networks)[#### Extensions
+Read this explanation](infrastructure-observability/infrastructure-and-operations/networks.md)[#### Extensions
 
 Extensions ordered by category
 
 * Reference
 
-Read this reference](/docs/observe/infrastructure-observability/extensions)
+Read this reference](infrastructure-observability/extensions.md)
 
 ## Classic
 
@@ -95,29 +95,29 @@ The container platforms Dynatrace can monitor
 
 * Explanation
 
-Read this explanation](/docs/observe/infrastructure-observability/container-platform-monitoring)[#### Process groups
+Read this explanation](infrastructure-observability/container-platform-monitoring.md)[#### Process groups
 
 Analyze process groups and customize process group naming, detection, and monitoring.
 
 * Explanation
 
-Read this explanation](/docs/observe/infrastructure-observability/process-groups)[#### Message queues
+Read this explanation](infrastructure-observability/process-groups.md)[#### Message queues
 
 Monitor and analyze your message queues with Dynatrace.
 
 * Explanation
 
-Read this explanation](/docs/observe/infrastructure-observability/queues)[#### VMware vSphere monitoring
+Read this explanation](infrastructure-observability/queues.md)[#### VMware vSphere monitoring
 
 Monitor VMware vSphere with Dynatrace.
 
 * How-to guide
 
-Read this guide](/docs/observe/infrastructure-observability/vmware-vsphere-monitoring)
+Read this guide](infrastructure-observability/vmware-vsphere-monitoring.md)
 
 ## Related topics
 
-* [Serverless monitoring](/docs/discover-dynatrace/get-started/serverless-monitoring "Serverless observability with Dynatrace")
-* [Ingest data](/docs/ingest-from "Learn how to install and configure ActiveGate and OneAgent on various platforms.")
-* [Monitor container groups](/docs/observe/infrastructure-observability/container-platform-monitoring/container-groups "Overview on container groups monitoring")
-* [Container monitoring rules](/docs/observe/infrastructure-observability/container-platform-monitoring/container-monitoring-rules "Define, enable and disable container monitoring rules")
+* [Serverless monitoring](../discover-dynatrace/get-started/serverless-monitoring.md "Serverless observability with Dynatrace")
+* [Ingest data](../ingest-from.md "Learn how to install and configure ActiveGate and OneAgent on various platforms.")
+* [Monitor container groups](infrastructure-observability/container-platform-monitoring/container-groups.md "Overview on container groups monitoring")
+* [Container monitoring rules](infrastructure-observability/container-platform-monitoring/container-monitoring-rules.md "Define, enable and disable container monitoring rules")

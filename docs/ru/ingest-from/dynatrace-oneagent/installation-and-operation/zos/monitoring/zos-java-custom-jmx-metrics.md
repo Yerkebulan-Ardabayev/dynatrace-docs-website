@@ -14,14 +14,14 @@ scraped: 2026-03-05T21:29:53.332272
 
 JMX (Java Management Extensions) -- удобный инструмент для мониторинга приложений, написанных на Java. С помощью модуля кода OneAgent z/OS Java вы можете отслеживать любую метрику в вашей JVM, которая доступна через MBean.
 
-* Каждая пользовательская JMX-метрика, находящаяся под мониторингом, потребляет единицы данных Davis. Концепция [Включенных метрик на единицу хоста](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.") не применима для мониторируемых LPAR на z/OS. Подробнее о единицах данных Davis см. [DDU для метрик](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+* Каждая пользовательская JMX-метрика, находящаяся под мониторингом, потребляет единицы данных Davis. Концепция [Включенных метрик на единицу хоста](../../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.") не применима для мониторируемых LPAR на z/OS. Подробнее о единицах данных Davis см. [DDU для метрик](../../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 * [PMI (Performance Monitoring Infrastructure)](https://www.ibm.com/docs/en/was/9.0.5?topic=health-performance-monitoring-infrastructure-pmi) для IBM WebSphere Application Server в настоящее время не поддерживается.
 
 ## Определение
 
 Атрибут `customJmxMetrics` определяет список [метрик](#metrics) для мониторинга. Для начала работы добавьте атрибут `customJmxMetrics` в ваш файл `dtconfig.json`, как показано в следующем примере.
 
-Обычно вы создаете файл `dtconfig.json` во время [установки модуля кода z/OS Java](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java#download "Set up Java monitoring on z/OS using the Java module.") и устанавливаете атрибуты `Tenant`, `ClusterID` и `zdcName` для вашей среды.
+Обычно вы создаете файл `dtconfig.json` во время [установки модуля кода z/OS Java](../installation/install-zos-java.md#download "Set up Java monitoring on z/OS using the Java module.") и устанавливаете атрибуты `Tenant`, `ClusterID` и `zdcName` для вашей среды.
 
 ```
 {
@@ -362,15 +362,15 @@ used: integer
 
 ## Мониторинг
 
-Перейдите в [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") для анализа и построения графиков ваших пользовательских JMX-метрик. При необходимости вы можете закрепить графики на панели мониторинга. В следующем примере вы можете увидеть метрику `java.lang.MemoryPoolUsage`, разделенную по измерению `memory_type`:
+Перейдите в [Data Explorer](../../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") для анализа и построения графиков ваших пользовательских JMX-метрик. При необходимости вы можете закрепить графики на панели мониторинга. В следующем примере вы можете увидеть метрику `java.lang.MemoryPoolUsage`, разделенную по измерению `memory_type`:
 
 ![Data Explorer с JMX-метриками z/OS](https://dt-cdn.net/images/data-explorer-1643-7696285fbf.png)
 
-Чтобы получить список метрик, доступных в вашей среде мониторинга, перейдите в **Metrics**, чтобы открыть [браузер метрик](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser."). В следующем примере вы можете увидеть три метрики, которые мы создали выше:
+Чтобы получить список метрик, доступных в вашей среде мониторинга, перейдите в **Metrics**, чтобы открыть [браузер метрик](../../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser."). В следующем примере вы можете увидеть три метрики, которые мы создали выше:
 
 ![Браузер метрик с JMX-метриками z/OS](https://dt-cdn.net/images/metrics-browser-1636-1096adef93.png)
 
 ## Связанные темы
 
-* [Браузер метрик](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.")
-* [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.")
+* [Браузер метрик](../../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser.")
+* [Data Explorer](../../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.")

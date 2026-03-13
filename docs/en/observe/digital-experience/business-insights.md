@@ -37,8 +37,8 @@ A user needs the following the following permissions to use the app:
 
 To install the app:
 
-1. [Subscribe](/docs/manage/hub#add-subscription "See the information about Dynatrace Hub.") to the Business Insights channel using the token provided by the Business Insights team.
-2. After you're subscribed, search for the Business Insights in the Hub and select [Install](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+1. [Subscribe](../../manage/hub.md#add-subscription "See the information about Dynatrace Hub.") to the Business Insights channel using the token provided by the Business Insights team.
+2. After you're subscribed, search for the Business Insights in the Hub and select [Install](../../manage/hub.md#install "See the information about Dynatrace Hub.").
 
 Reach out to your Insights team for questions or assistance with installation if needed.
 

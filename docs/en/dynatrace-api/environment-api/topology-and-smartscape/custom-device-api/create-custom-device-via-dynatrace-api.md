@@ -16,7 +16,7 @@ The **Custom device** endpoint of the **Topology and Smartscape** API enables yo
 
 This page describes how to create a custom device without sending any data to it.
 
-To learn how to report data to a custom device, see [Report custom device metric via REST API](/docs/dynatrace-api/environment-api/topology-and-smartscape/custom-device-api/report-custom-device-metric-via-rest-api "Learn how you can use the Dynatrace API to send a custom metric data point to a custom device.").
+To learn how to report data to a custom device, see [Report custom device metric via REST API](report-custom-device-metric-via-rest-api.md "Learn how you can use the Dynatrace API to send a custom metric data point to a custom device.").
 
 The request consumes and produces an `application/json` payload.
 
@@ -29,7 +29,7 @@ The request consumes and produces an `application/json` payload.
 
 To execute this request, you need an access token with `DataExport` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Parameters
 
@@ -335,7 +335,7 @@ A list of constraint violations
 
 In this example, the request creates custom device `idOfmyCustomDevice` of type `F5-Firewall`, with IP address `172.16.115.211` and listen port `9999`. The request also specifies some additional parameters.
 
-See [Report custom device metric via the Dynatrace API](/docs/dynatrace-api/environment-api/topology-and-smartscape/custom-device-api/report-custom-device-metric-via-rest-api "Learn how you can use the Dynatrace API to send a custom metric data point to a custom device.") to learn how to submit data to the newly created custom device.
+See [Report custom device metric via the Dynatrace API](report-custom-device-metric-via-rest-api.md "Learn how you can use the Dynatrace API to send a custom metric data point to a custom device.") to learn how to submit data to the newly created custom device.
 
 The API token is passed in the **Authorization** header.
 

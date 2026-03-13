@@ -157,7 +157,7 @@ Kyverno
 
 The BACK stack includes the artifact delivery and security as well as the configuration and developer portal, but thatâs not all it takes. Observing the workloads is equally important and must be included in a minimum viable platform.
 
-To feed the observability and security data back to the developers, we offer a [Backstage integration](/docs/deliver/backstage-integration "Learn how to integrate Dynatrace into Backstage") with Kubernetes support by default and customizable queries.
+To feed the observability and security data back to the developers, we offer a [Backstage integration](../../deliver/backstage-integration.md "Learn how to integrate Dynatrace into Backstage") with Kubernetes support by default and customizable queries.
 
 OpenTelemetry offers open-source observability, and Dynatrace can be used for observability either out of the box with our proprietary OneAgent or by easily ingesting and using the data provided through OpenTelemetry.
 
@@ -236,7 +236,7 @@ Provide observability into test results automatically across different used tool
 * Visualize test results and KPIs in one central view or dashboard
 * Identify long lasting tests to easily optimize for faster test feedback
 
-Try it yourself: [Test pipeline observability](/docs/deliver/test-pipeline-observability "Utilize Dynatrace to observe and analyze test pipelines effectively").
+Try it yourself: [Test pipeline observability](../../deliver/test-pipeline-observability.md "Utilize Dynatrace to observe and analyze test pipelines effectively").
 
 #### Continuous testing validation Continuous testing validation
 
@@ -280,7 +280,7 @@ Goal
 
 Automatically validate new releases â taking downstream and upstream dependencies into account â based on baselining, observability data, SLOs, and security information. Use the results to drive meaningful follow-up actions. Providing release validation templates as part of every delivery process enables fast feedback regarding any negative side-effects of a new version. Faster feedback leads to better developer experience, higher release quality, and higher innovation pace.
 
-Try it yourself: [Release validation](/docs/deliver/quality-gates "Validate the releases of your business-critical services").
+Try it yourself: [Release validation](../../deliver/quality-gates.md "Validate the releases of your business-critical services").
 
 #### Progressive delivery Progressive delivery
 
@@ -320,7 +320,7 @@ Goal
 
 By combining network data with infrastructure and billing information, top cost contributors can be identified and analyzed, leading to improvements by pinpointed adoption of network compression or other hyperscaler tools.
 
-Try it yourself: [Data-driven cloud tuning](/docs/observe/infrastructure-observability/cloud-platform-monitoring/use-cases/cloud-costs "Manage your cloud deployment using Grail and your cloud vendor-provided data in context.").
+Try it yourself: [Data-driven cloud tuning](../../observe/infrastructure-observability/cloud-platform-monitoring/use-cases/cloud-costs.md "Manage your cloud deployment using Grail and your cloud vendor-provided data in context.").
 
 #### AI Observability Generative AI observability
 
@@ -333,7 +333,7 @@ Using observability data further allows the proper sizing and configuration of g
 
 Try it yourself:
 
-* [AI and LLM Observability](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes generative AI (LLM) models and AI SaaS services, and much more.")
+* [AI and LLM Observability](../../observe/dynatrace-for-ai-observability.md "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes generative AI (LLM) models and AI SaaS services, and much more.")
 
 #### Infrastructure observability Observability for infrastructure
 
@@ -368,7 +368,7 @@ Goal
 
 Within cloud-native environments, resizing disks can happen frequently. Predictive AI for forecasting enables automatic and timely resizing of disks, avoiding system outages while keeping costs low.
 
-Try it yourself: [Predictive Kubernetes operations](/docs/observe/infrastructure-observability/kubernetes-app/use-cases/predictive-operations "Proactively manage disk space within Kubernetes environments").
+Try it yourself: [Predictive Kubernetes operations](../../observe/infrastructure-observability/kubernetes-app/use-cases/predictive-operations.md "Proactively manage disk space within Kubernetes environments").
 
 #### Forecasting in data analytics Forecasting in data analytics
 
@@ -384,7 +384,7 @@ Goal
 
 Predictive AI in workflow automation makes it possible to proactively raise tickets and act automatically before problems arise.
 
-Try it yourself: [AI in Workflows - Predictive maintenance of cloud disks](/docs/dynatrace-intelligence/use-cases/davis-for-workflows "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.").
+Try it yourself: [AI in Workflows - Predictive maintenance of cloud disks](../../dynatrace-intelligence/use-cases/davis-for-workflows.md "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.").
 
 ### Prevent
 
@@ -397,7 +397,7 @@ Goal
 
 Ingesting and automatically analyzing application log data from production makes it easy to issue tickets with context and create and assign work to the respective development teams, allowing them to act and resolve bugs before end-users encounter them.
 
-Try it yourself: [Automated bug triaging and ticketing](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-resolve-dependencies "Explore a Log Management and Analytics use case for resolving team dependencies.").
+Try it yourself: [Automated bug triaging and ticketing](../../analyze-explore-automate/logs/lma-use-cases/lma-e2e-resolve-dependencies.md "Explore a Log Management and Analytics use case for resolving team dependencies.").
 
 #### Unified exposure protection Unified exposure protection
 
@@ -458,7 +458,7 @@ Goal
 
 Avoiding fatigue due to the myriad of security events emitted by hyperscaler tools every single day by deduplication and consolidation combined with automatic ticket creation and assignment based on development and security ownership.
 
-Try it yourself: [CSPM Notification Automation](/docs/secure/use-cases/notification-automation "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.").
+Try it yourself: [CSPM Notification Automation](../../secure/use-cases/notification-automation.md "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.").
 
 #### Security as a service Automate security findings at scale
 
@@ -495,7 +495,7 @@ Goal
 
 With observability data around CPU, thread, and memory usage, it's easy to quickly identify the biggest performance bottlenecks and flag them for improvement. Such bottlenecks could manifest themselves as inefficient string operations leading to high memory allocation and pressure on the garbage collector, which can, in turn, lead to scalability and performance issues.
 
-Try it yourself: [Always-on app profiling](/docs/observe/application-observability/services/always-on-app-profiling "Optimize your code and find performance problems").
+Try it yourself: [Always-on app profiling](../../observe/application-observability/services/always-on-app-profiling.md "Optimize your code and find performance problems").
 
 #### Kubernetes utilization improvement Kubernetes utilization improvement
 
@@ -562,7 +562,7 @@ The SPACE framework doesn't provide a ready-to-use list of metrics like the DORA
 
 ## Dynatrace and OpenTelemetry
 
-[OpenTelemetry](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.") (also referred to as OTel) is an open-source observability framework made up of a collection of tools, APIs, and SDKs.
+[OpenTelemetry](../../ingest-from/opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.") (also referred to as OTel) is an open-source observability framework made up of a collection of tools, APIs, and SDKs.
 
 * OTel enables IT teams to instrument, generate, collect, and export telemetry data for analysis and understanding software performance and behavior.
 

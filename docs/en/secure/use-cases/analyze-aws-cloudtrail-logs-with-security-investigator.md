@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:28:49.736649
 
 [AWS CloudTrailï»¿](https://dt-url.net/ax63uwp) is an AWS service that helps you enable operational and risk auditing, governance, and compliance of your AWS account. Actions taken by a user, role, or an AWS service in an Amazon AWS environment are recorded as events in CloudTrail. Events include actions taken in the AWS Management Console, AWS Command Line Interface, and AWS SDKs and APIs.
 
-In the following, you'll learn how [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") can help you
+In the following, you'll learn how [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") can help you
 
 * [Monitor sign-in failures to AWS console](#sign-in)
 * [Create metrics for unauthorized API calls](#metrics)
@@ -31,11 +31,11 @@ This article is intended for security engineers and site reliability engineers w
 * Send CloudTrail logs to Dynatrace. There are two options to stream logs:
 
   + [Amazon S3ï»¿](https://dt-url.net/c703wc8) Recommended
-  + [Amazon Data Firehose](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.")
+  + [Amazon Data Firehose](../../ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose.md "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.")
 * Knowledge of
 
-  + [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") and [how to use DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.")
-  + [Dynatrace Pattern Language](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.")
+  + [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") and [how to use DQL queries](../../platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.")
+  + [Dynatrace Pattern Language](../../platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.")
 
 ## Before you begin
 
@@ -45,7 +45,7 @@ Follow the steps below to fetch the AWS CloudTrail logs from Grail using ![Inves
 
 Once your CloudTrail logs are ingested into Dynatrace, follow these steps to fetch the logs.
 
-1. Open [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.").
+1. Open [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.").
 2. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Investigation** to create an investigation scenario.
 3. In the query input section, insert the DQL query below.
 
@@ -74,7 +74,7 @@ Once your CloudTrail logs are ingested into Dynatrace, follow these steps to fet
    | filter aws.service == "cloudtrail"
    ```
 
-   For details, see [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.").
+   For details, see [DQL best practices](../../platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.").
 
    The results table will be populated with the JSON-formatted events.
 5. Right-click on an event and select **View field details** to see the JSON-formatted event in a structured way. This enables investigators to grasp the content of the event much faster.
@@ -88,8 +88,8 @@ Once your CloudTrail logs are ingested into Dynatrace, follow these steps to fet
 
 Follow the steps below to simplify log analysis, speed up investigations, and maintain the required precision for analytical tasks.
 
-1. Add to your DQL query the [parse command](/docs/platform/grail/dynatrace-query-language/commands/extraction-and-parsing-commands "DQL extraction commands") to extract the required data from the log records into separate fields.
-2. Add the [JSON matcher](/docs/platform/grail/dynatrace-pattern-language/log-processing-json-object "Explore DPL syntax for handling JSON Objects.") to extract the JSON-formatted log content as a JSON object into a separate field called `event`.
+1. Add to your DQL query the [parse command](../../platform/grail/dynatrace-query-language/commands/extraction-and-parsing-commands.md "DQL extraction commands") to extract the required data from the log records into separate fields.
+2. Add the [JSON matcher](../../platform/grail/dynatrace-pattern-language/log-processing-json-object.md "Explore DPL syntax for handling JSON Objects.") to extract the JSON-formatted log content as a JSON object into a separate field called `event`.
 
    Your DQL query should look like this:
 
@@ -235,7 +235,7 @@ Unauthorized API calls can indicate a hacking attempt or a system malfunction. T
 To identify the "top targets" from the API list
 
 1. Create a filter to fetch only events, with an `AccessDenied` or `UnauthorizedOperation` error code.
-2. Add the [makeTimeseries command](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#makeTimeseries "DQL aggregation commands") to convert your log results to metrics.
+2. Add the [makeTimeseries command](../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#makeTimeseries "DQL aggregation commands") to convert your log results to metrics.
 3. Add the `event[eventName]` value from the logs as a metrics dimension.
 4. Sort the results to see only the top 10 APIs and limit the results to 10 records.
 
@@ -304,7 +304,7 @@ Monitoring request counts towards APIs is important from the availability, cost,
 To monitor AWS API throttling from AWS CloudTrail logs in Dynatrace
 
 1. Create a filter to fetch only events with an error code `Client.RequestLimitExceeded`.
-2. Add the [makeTimeseries command](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#makeTimeseries "DQL aggregation commands") to convert your log results to metrics.
+2. Add the [makeTimeseries command](../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#makeTimeseries "DQL aggregation commands") to convert your log results to metrics.
 3. Add the `event[eventName]` value from the logs as a metrics dimension.
 
    Your DQL query should look like this:
@@ -421,8 +421,8 @@ These are some of the use cases that can be solved using CloudTrail logs and Dyn
 
 ## Related topics
 
-* [Analyze Amazon API Gateway access logs with Investigations](/docs/secure/use-cases/analyze-aws-api-gateway-access-logs-with-security-investigator "Monitor and identify errors in your Amazon API Gateway access logs with Dynatrace.")
-* [Detect threats against your AWS Secrets with Investigations](/docs/secure/use-cases/detect-threats-against-aws-secrets-with-security-investigator "Monitor and identify potential threats against your AWS Secrets with Dynatrace.")
-* [Threat hunting and forensics](/docs/secure/use-cases/threat-hunting "Use case scenario for threat hunting and forensics with Investigations.")
-* [Operationalize DQL query results with Investigations](/docs/secure/use-cases/operationalize-query-results "Build DQL queries from your query results faster and more conveniently with Dynatrace Investigations.")
-* [Resolve incidents faster with Investigations templates](/docs/secure/use-cases/resolve-incidents-faster-with-templates "Speed up your log-related investigations with Investigations templates.")
+* [Analyze Amazon API Gateway access logs with Investigations](analyze-aws-api-gateway-access-logs-with-security-investigator.md "Monitor and identify errors in your Amazon API Gateway access logs with Dynatrace.")
+* [Detect threats against your AWS Secrets with Investigations](detect-threats-against-aws-secrets-with-security-investigator.md "Monitor and identify potential threats against your AWS Secrets with Dynatrace.")
+* [Threat hunting and forensics](threat-hunting.md "Use case scenario for threat hunting and forensics with Investigations.")
+* [Operationalize DQL query results with Investigations](operationalize-query-results.md "Build DQL queries from your query results faster and more conveniently with Dynatrace Investigations.")
+* [Resolve incidents faster with Investigations templates](resolve-incidents-faster-with-templates.md "Speed up your log-related investigations with Investigations templates.")

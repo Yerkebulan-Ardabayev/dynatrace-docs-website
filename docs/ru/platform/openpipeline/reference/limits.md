@@ -19,7 +19,7 @@ scraped: 2026-03-06T21:16:07.099440
 
 Ограничения, специфичные для областей конфигурации, могут переопределять общие лимиты OpenPipeline. Для получения информации о лимитах, специфичных для области конфигурации, см.
 
-* [Лимиты по умолчанию для Log Management and Analytics](/docs/analyze-explore-automate/logs/lma-limits "Default limits for the latest version of Dynatrace Log Management and Analytics.") и [Валидация схемы для логов](#schema-validation-logs)
+* [Лимиты по умолчанию для Log Management and Analytics](../../../analyze-explore-automate/logs/lma-limits.md "Default limits for the latest version of Dynatrace Log Management and Analytics.") и [Валидация схемы для логов](#schema-validation-logs)
 * [Поля с лимитами для метрик](#fields-metrics)
 * [Поля с лимитами для спанов](#fields-spans)
 
@@ -59,7 +59,7 @@ scraped: 2026-03-06T21:16:07.099440
 
   2
 
-  OneAgent версии 1.309+, Dynatrace Operator версии 1.4.2+. Поле доступно до этапа Processing, если [модуль логов OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.") работает в автономном режиме.
+  OneAgent версии 1.309+, Dynatrace Operator версии 1.4.2+. Поле доступно до этапа Processing, если [модуль логов OneAgent](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes.md "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.") работает в автономном режиме.
 
 ### Поля с лимитами для метрик
 
@@ -164,7 +164,7 @@ scraped: 2026-03-06T21:16:07.099440
 
 Вычисление идентификатора Smartscape поддерживает только тип `string`. Компоненты идентификатора должны иметь тип `string`.
 
-[Предварительно обработайте](/docs/platform/openpipeline/concepts/data-flow#pre-processing "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.") записи для преобразования необходимых значений в тип данных `string`.
+[Предварительно обработайте](../concepts/data-flow.md#pre-processing "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.") записи для преобразования необходимых значений в тип данных `string`.
 
 ## Конфигурация
 

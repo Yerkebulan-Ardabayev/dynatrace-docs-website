@@ -16,7 +16,7 @@ scraped: 2026-03-06T21:18:17.162329
 ## Возможности
 
 * Полный мониторинг Java-стека на базе OneAgent
-* Интеграция с [Azure Monitor](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-spring/monitor-azure-spring-apps "Мониторинг Azure Spring Apps и просмотр доступных метрик.")
+* Интеграция с [Azure Monitor](azure-spring/monitor-azure-spring-apps.md "Мониторинг Azure Spring Apps и просмотр доступных метрик.")
 * Автоматическое обнаружение сервисов, работающих в Azure Spring Apps
 
 Поскольку Azure Spring Apps является полностью управляемой платформой хостинга, приложения развёртываются в изолированной среде, которая не предоставляет прямого доступа к базовой операционной системе.
@@ -25,18 +25,18 @@ scraped: 2026-03-06T21:18:17.162329
 
 ## Предварительные требования
 
-* Создайте [PaaS-токен](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Узнайте о концепции токена доступа и его областях действия.")
+* Создайте [PaaS-токен](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Узнайте о концепции токена доступа и его областях действия.")
 * [Установите Azure CLI](https://dt-url.net/cf63rl6)
 
 ## Настройка интеграции
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Подготовьте среду в Azure**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-spring#prepare-env "Узнайте, как настроить OneAgent для мониторинга Azure Spring Apps.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Подготовьте среду в Azure**](azure-spring.md#prepare-env "Узнайте, как настроить OneAgent для мониторинга Azure Spring Apps.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Определите значения необходимых переменных окружения**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-spring#envvar "Узнайте, как настроить OneAgent для мониторинга Azure Spring Apps.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Определите значения необходимых переменных окружения**](azure-spring.md#envvar "Узнайте, как настроить OneAgent для мониторинга Azure Spring Apps.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Добавьте переменные окружения в ваше приложение**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-spring#add-variables "Узнайте, как настроить OneAgent для мониторинга Azure Spring Apps.")
+**Добавьте переменные окружения в ваше приложение**](azure-spring.md#add-variables "Узнайте, как настроить OneAgent для мониторинга Azure Spring Apps.")
 
 ### Шаг 1. Подготовка среды в Azure
 
@@ -59,15 +59,15 @@ scraped: 2026-03-06T21:18:17.162329
 
 Перед началом соберите следующую информацию:
 
-* Ваш [идентификатор среды Dynatrace](/docs/discover-dynatrace/get-started/monitoring-environment "Понимание и работа со средами мониторинга.")
+* Ваш [идентификатор среды Dynatrace](../../../discover-dynatrace/get-started/monitoring-environment.md "Понимание и работа со средами мониторинга.")
 * Аутентификация
 
   + **PaaS-токен** аутентифицирует вас как пользователя Dynatrace и необходим для определения токена арендатора.
   + **Токен арендатора** позволяет OneAgent отправлять данные в Dynatrace.
-    Дополнительную информацию о токенах см. в разделе [Токены доступа](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Узнайте о концепции токена доступа и его областях действия.").
+    Дополнительную информацию о токенах см. в разделе [Токены доступа](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md "Узнайте о концепции токена доступа и его областях действия.").
 
-1. Значение `DT_TENANT` — это ваш [идентификатор среды Dynatrace](/docs/discover-dynatrace/get-started/monitoring-environment "Понимание и работа со средами мониторинга.").
-2. Для определения значений `DT_TENANTTOKEN` и `DT_CONNECTION_POINT` выполните API-запрос к эндпоинту [Deployment API — GET connectivity information for OneAgent](/docs/dynatrace-api/environment-api/deployment/oneagent/get-connectivity-info "Просмотр информации о подключении OneAgent через Dynatrace API."). Необходимые значения возвращаются в полях `tenantToken` и `communicationEndpoints`.
+1. Значение `DT_TENANT` — это ваш [идентификатор среды Dynatrace](../../../discover-dynatrace/get-started/monitoring-environment.md "Понимание и работа со средами мониторинга.").
+2. Для определения значений `DT_TENANTTOKEN` и `DT_CONNECTION_POINT` выполните API-запрос к эндпоинту [Deployment API — GET connectivity information for OneAgent](../../../dynatrace-api/environment-api/deployment/oneagent/get-connectivity-info.md "Просмотр информации о подключении OneAgent через Dynatrace API."). Необходимые значения возвращаются в полях `tenantToken` и `communicationEndpoints`.
 
    Вы можете отправить запрос на URL вашей среды (SaaS или Managed) или на URL Environment ActiveGate.
 
@@ -79,7 +79,7 @@ scraped: 2026-03-06T21:18:17.162329
 
      Замените:
 
-     + `<your-environment-id>` на ваш [идентификатор среды Dynatrace](/docs/discover-dynatrace/get-started/monitoring-environment "Понимание и работа со средами мониторинга.")
+     + `<your-environment-id>` на ваш [идентификатор среды Dynatrace](../../../discover-dynatrace/get-started/monitoring-environment.md "Понимание и работа со средами мониторинга.")
      + `<your_PaaS_token>` на ваш [PaaS-токен](#prerequisites)
    * **Dynatrace Managed**:
 
@@ -90,7 +90,7 @@ scraped: 2026-03-06T21:18:17.162329
      Замените:
 
      + `<your-domain>` на домен вашего развёртывания Managed
-     + `<your-environment-id>` на ваш [идентификатор среды Dynatrace](/docs/discover-dynatrace/get-started/monitoring-environment "Понимание и работа со средами мониторинга.")
+     + `<your-environment-id>` на ваш [идентификатор среды Dynatrace](../../../discover-dynatrace/get-started/monitoring-environment.md "Понимание и работа со средами мониторинга.")
      + `<your_PaaS_token>` на ваш [PaaS-токен](#prerequisites)
    * **Environment ActiveGate**:
 
@@ -101,7 +101,7 @@ scraped: 2026-03-06T21:18:17.162329
      Замените:
 
      + `<your-activegate-domain>` на домен вашего ActiveGate
-     + `<your-environment-id>` на ваш [идентификатор среды Dynatrace](/docs/discover-dynatrace/get-started/monitoring-environment "Понимание и работа со средами мониторинга.")
+     + `<your-environment-id>` на ваш [идентификатор среды Dynatrace](../../../discover-dynatrace/get-started/monitoring-environment.md "Понимание и работа со средами мониторинга.")
      + `<your_PaaS_token>` на ваш [PaaS-токен](#prerequisites)
 
 ### Шаг 3. Добавление переменных окружения в приложение
@@ -132,17 +132,17 @@ DT_TENANTTOKEN=<your-tenant-token> DT_CONNECTION_POINT=<your-communication-endpo
 
    | Ключ | Значение |
    | --- | --- |
-   | `DT_TENANT` | [Ваш идентификатор среды Dynatrace](/docs/discover-dynatrace/get-started/monitoring-environment "Понимание и работа со средами мониторинга.") |
+   | `DT_TENANT` | [Ваш идентификатор среды Dynatrace](../../../discover-dynatrace/get-started/monitoring-environment.md "Понимание и работа со средами мониторинга.") |
    | `DT_TENANTTOKEN` | Ваш токен арендатора. Подробнее см. в разделе [Определение значений необходимых переменных окружения](#envvar). |
    | `DT_CONNECTION_POINT` | Ваша конечная точка связи. Подробнее см. в разделе [Определение значений необходимых переменных окружения](#envvar). |
 4. [Создайте привязку buildpack](https://dt-url.net/nu036u6) для Dynatrace, используя PaaS-токен (API-токен) и URL API в качестве свойств.
 
    | Свойство | Значение |
    | --- | --- |
-   | `api-url` | [Ваш идентификатор среды Dynatrace](/docs/discover-dynatrace/get-started/monitoring-environment "Понимание и работа со средами мониторинга.") |
+   | `api-url` | [Ваш идентификатор среды Dynatrace](../../../discover-dynatrace/get-started/monitoring-environment.md "Понимание и работа со средами мониторинга.") |
    | `api-token` | [PaaS-токен](#prerequisites) |
 
-Дополнительно вы можете настроить встроенные правила обнаружения групп процессов, установив ещё одну переменную окружения `DT_CLUSTER_ID`. Значением может быть имя группы процессов, которое вы хотите видеть в Dynatrace. Подробнее см. в разделе [Обнаружение групп процессов](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Способы настройки обнаружения групп процессов").
+Дополнительно вы можете настроить встроенные правила обнаружения групп процессов, установив ещё одну переменную окружения `DT_CLUSTER_ID`. Значением может быть имя группы процессов, которое вы хотите видеть в Dynatrace. Подробнее см. в разделе [Обнаружение групп процессов](../../../observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Способы настройки обнаружения групп процессов").
 
 ## Просмотр данных в Dynatrace
 
@@ -171,5 +171,5 @@ DT_TENANTTOKEN=<your-tenant-token> DT_CONNECTION_POINT=<your-communication-endpo
 
 ## Связанные темы
 
-* [Мониторинг Azure Spring Apps](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-spring/monitor-azure-spring-apps "Мониторинг Azure Spring Apps и просмотр доступных метрик.")
-* [Матрица поддержки платформ и возможностей OneAgent](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Узнайте, какие возможности поддерживаются OneAgent на различных операционных системах и платформах.")
+* [Мониторинг Azure Spring Apps](azure-spring/monitor-azure-spring-apps.md "Мониторинг Azure Spring Apps и просмотр доступных метрик.")
+* [Матрица поддержки платформ и возможностей OneAgent](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Узнайте, какие возможности поддерживаются OneAgent на различных операционных системах и платформах.")

@@ -16,13 +16,13 @@ scraped: 2026-02-06T16:30:49.933952
 
 ## Требования
 
-* Вам необходимы [разрешения](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Узнайте, когда Dynatrace OneAgent требует привилегий root на Linux.") для следующих действий:
+* Вам необходимы [разрешения](linux-non-privileged.md "Узнайте, когда Dynatrace OneAgent требует привилегий root на Linux.") для следующих действий:
 
   + Создание каталога, в который вы хотите установить OneAgent
   + Изменение настроек брандмауэра (необходимо только в том случае, если ваша внутренняя политика маршрутизации может препятствовать соединению программного обеспечения Dynatrace с Интернетом).
   + Перезапуск служб приложений
-* Также необходимо проверить [требования к дисковому пространству](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix "Узнайте о требованиях к дисковому пространству для установки OneAgent на AIX.").
-* Все хосты, которые нужно отслеживать, должны иметь возможность отправлять данные в кластер Dynatrace. В зависимости от типа вашего развёртывания Dynatrace (SaaS или Managed), а также от конфигурации сети и параметров безопасности вы можете либо обеспечить прямой доступ к кластеру Dynatrace, либо [настроить ActiveGate](/docs/ingest-from/dynatrace-activegate "Ознакомьтесь с основными концепциями, связанными с ActiveGate.").
+* Также необходимо проверить [требования к дисковому пространству](../../aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix.md "Узнайте о требованиях к дисковому пространству для установки OneAgent на AIX.").
+* Все хосты, которые нужно отслеживать, должны иметь возможность отправлять данные в кластер Dynatrace. В зависимости от типа вашего развёртывания Dynatrace (SaaS или Managed), а также от конфигурации сети и параметров безопасности вы можете либо обеспечить прямой доступ к кластеру Dynatrace, либо [настроить ActiveGate](../../../../dynatrace-activegate.md "Ознакомьтесь с основными концепциями, связанными с ActiveGate.").
 
 * На PPC BE Linux OneAgent поддерживает только Java и Apache/IHS.
 * Для установки OneAgent на PPC BE Linux доступ с правами root не требуется.

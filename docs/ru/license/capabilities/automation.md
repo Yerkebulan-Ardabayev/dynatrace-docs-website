@@ -18,11 +18,11 @@ Dynatrace Automation позволяет вам осуществить цифро
 В Dynatrace существует три типа рабочих процессов автоматизации.
 
 * Стандартные рабочие процессы (Standard workflows): рабочие процессы автоматизации, запускающие две или более задач.
-* [Простые рабочие процессы (Simple workflows)](/docs/analyze-explore-automate/workflows/simple-workflow "Build and run a simple workflow."): однозадачные рабочие процессы с ограниченной функциональностью.
-* [Черновые рабочие процессы (Draft-only workflows)](/docs/analyze-explore-automate/workflows/building "Create and edit workflows in Dynatrace Workflows."): рабочие процессы, которые ещё не развёрнуты или были отменены.
+* [Простые рабочие процессы (Simple workflows)](../../analyze-explore-automate/workflows/simple-workflow.md "Build and run a simple workflow."): однозадачные рабочие процессы с ограниченной функциональностью.
+* [Черновые рабочие процессы (Draft-only workflows)](../../analyze-explore-automate/workflows/building.md "Create and edit workflows in Dynatrace Workflows."): рабочие процессы, которые ещё не развёрнуты или были отменены.
 
 ## Связанные темы
 
-* [Рассчитайте потребление Automation Workflow (DPS)](/docs/license/capabilities/automation/automation "Learn how your consumption of Dynatrace Automation Workflow DPS capability is billed and charged.")
-* [Лицензирование Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* [Рассчитайте потребление Automation Workflow (DPS)](automation/automation.md "Learn how your consumption of Dynatrace Automation Workflow DPS capability is billed and charged.")
+* [Лицензирование Dynatrace](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
 * [Цены Dynatrace](https://www.dynatrace.com/pricing/)

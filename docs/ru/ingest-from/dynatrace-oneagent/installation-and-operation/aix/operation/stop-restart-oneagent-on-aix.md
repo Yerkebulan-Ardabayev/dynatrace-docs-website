@@ -22,7 +22,7 @@ scraped: 2026-03-06T21:18:34.259197
 
 ## Остановка и запуск OneAgent с помощью командной строки
 
-* [Перезапустите OneAgent через интерфейс командной строки `oneagentctl`](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+* [Перезапустите OneAgent через интерфейс командной строки `oneagentctl`](../../../oneagent-configuration-via-command-line-interface.md#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 * Если вы используете инструменты управления конфигурацией, такие как Puppet или Ansible, вы также можете остановить службу OneAgent с помощью команды оболочки. Сценарий службы `oneagent` находится по пути `<INSTALL_PATH>/agent/initscripts/`.
 
   Для остановки OneAgent используйте права суперпользователя (root) и выполните сценарий службы `oneagent` с параметром `stop`.
@@ -31,4 +31,4 @@ scraped: 2026-03-06T21:18:34.259197
 
   Для запуска OneAgent используйте права суперпользователя (root) и выполните сценарий службы `oneagent` с параметром `start`.
 
-Узнайте больше о том, [как OneAgent взаимодействует с вашей ОС](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix "Learn about Dynatrace OneAgent security and modifications to your AIX-based system.").
+Узнайте больше о том, [как OneAgent взаимодействует с вашей ОС](../installation/oneagent-security-aix.md "Learn about Dynatrace OneAgent security and modifications to your AIX-based system.").

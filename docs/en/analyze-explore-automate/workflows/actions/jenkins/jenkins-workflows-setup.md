@@ -38,7 +38,7 @@ To fine-tune permissions granted to Workflows
 
   + `app-settings:objects:read`
 
-For more on general Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+For more on general Workflows user permissions, see [User permissions for workflows](../../security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Step 3 Configure Jenkins connection
 

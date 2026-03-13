@@ -18,7 +18,7 @@ A user action represents a significant operation within the frontend and its imp
 
 User actions in web frontends can be grouped into three types:
 
-* **Navigation user actions:** When a soft navigation occurs, which results in a view change, a new user action is created automatically. Navigations are usually triggered by a [user interaction](/docs/observe/digital-experience/new-rum-experience/concepts/data-model#user-interactions "Get familiar with the data model at the heart of the New RUM Experience."), but a user interaction is not required for a user action to be created.
+* **Navigation user actions:** When a soft navigation occurs, which results in a view change, a new user action is created automatically. Navigations are usually triggered by a [user interaction](../../concepts/data-model.md#user-interactions "Get familiar with the data model at the heart of the New RUM Experience."), but a user interaction is not required for a user action to be created.
 * **Request user actions:** If a click user interaction is followed by an XHR or fetch request, a user action is created.
 * **API user actions:** You can also create user actions using [`dynatrace.userAction.create()`ï»¿](https://docs.dynatrace.com/javascriptapi/doc-latest/interfaces/Types.UserActions.html) in the JavaScript API. There are no prerequisites for triggering a user action this way.
 
@@ -62,4 +62,4 @@ RUM Classic also provides a user action concept, but it differs in several ways 
 
 ## Related topics
 
-* [Data model of the New RUM Experience](/docs/observe/digital-experience/new-rum-experience/concepts/data-model "Get familiar with the data model at the heart of the New RUM Experience.")
+* [Data model of the New RUM Experience](../../concepts/data-model.md "Get familiar with the data model at the heart of the New RUM Experience.")

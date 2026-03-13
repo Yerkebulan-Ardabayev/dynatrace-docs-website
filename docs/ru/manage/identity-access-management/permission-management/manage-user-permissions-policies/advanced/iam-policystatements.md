@@ -1362,7 +1362,7 @@ Grail
 
 ## Связанные темы
 
-* [Работа с политиками](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies")
-* [Синтаксис и примеры операторов политик IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax "IAM policy statement syntax.")
-* [Предоставление доступа к настройкам](/docs/manage/identity-access-management/use-cases/access-settings "Grant access to Settings")
-* [API управления учетной записью](/docs/dynatrace-api/account-management-api "Explore endpoints of the Account Management API.")
+* [Работа с политиками](../../manage-user-permissions-policies.md "Working with policies")
+* [Синтаксис и примеры операторов политик IAM](../iam-policystatement-syntax.md "IAM policy statement syntax.")
+* [Предоставление доступа к настройкам](../../../use-cases/access-settings.md "Grant access to Settings")
+* [API управления учетной записью](../../../../../dynatrace-api/account-management-api.md "Explore endpoints of the Account Management API.")

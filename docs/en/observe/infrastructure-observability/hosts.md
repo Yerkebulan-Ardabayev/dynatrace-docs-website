@@ -19,7 +19,7 @@ Brief overview
 
 ### Host groups
 
-With many Dynatrace-monitored environments growing larger and more complex all the time, often spanning different data centers and multiple applications, [host groups](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") are increasingly important. Host groups enable you to configure hosts per group, roll out OneAgent versions selectively per group, and track service metrics differently depending on the platform they run on.
+With many Dynatrace-monitored environments growing larger and more complex all the time, often spanning different data centers and multiple applications, [host groups](hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") are increasingly important. Host groups enable you to configure hosts per group, roll out OneAgent versions selectively per group, and track service metrics differently depending on the platform they run on.
 
 ### Virtualization performance insights
 
@@ -27,11 +27,11 @@ Dynatrace tells you how the virtual machines in your environment affect the perf
 
 ### Tags in a host-based configuration file
 
-Within dynamic or large environments, manual host tagging can be impractical. For dynamic deployments that include frequently changing host instances and names (for example, AWS or MS Azure), you can [use a dedicated configuration file to programmatically apply tags to your hosts](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.").
+Within dynamic or large environments, manual host tagging can be impractical. For dynamic deployments that include frequently changing host instances and names (for example, AWS or MS Azure), you can [use a dedicated configuration file to programmatically apply tags to your hosts](hosts/configuration/define-tags-and-metadata-for-hosts.md "Learn how to tag and set additional properties for a monitored host.").
 
 ### Custom host names
 
-Dynatrace generally names the detected hosts in your environment based on their DNS names, exactly as they are detected by Dynatrace OneAgent. To improve readability, you may want to [create custom host names](/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name.") to display instead of the detected host names.
+Dynatrace generally names the detected hosts in your environment based on their DNS names, exactly as they are detected by Dynatrace OneAgent. To improve readability, you may want to [create custom host names](hosts/configuration/set-custom-host-names-in-dynamic-environments.md "Learn how to change a monitored host name.") to display instead of the detected host names.
 
 ## Basic concepts
 
@@ -39,35 +39,35 @@ Dynatrace generally names the detected hosts in your environment based on their 
 
 ### Monitoring modes
 
-Find out what's included and how to enable Infrastructure Monitoring and Discovery modes.](/docs/observe/infrastructure-observability/hosts/monitoring-modes "Find out what's included in Dynatrace Infrastructure Monitoring mode.")[### How effective is infrastructure monitoring on its own?
+Find out what's included and how to enable Infrastructure Monitoring and Discovery modes.](hosts/monitoring-modes.md "Find out what's included in Dynatrace Infrastructure Monitoring mode.")[### How effective is infrastructure monitoring on its own?
 
-Learn how monitoring only the infrastructure layer of your environment can lead to an incomplete picture of the health of your applications and customer experience.](/docs/observe/infrastructure-observability/hosts/monitoring-modes/how-effective-is-infrastructure-monitoring-on-its-own "Learn how monitoring only the infrastructure layer of your environment can lead to an incomplete picture of the health of your applications and customer experience.")
+Learn how monitoring only the infrastructure layer of your environment can lead to an incomplete picture of the health of your applications and customer experience.](hosts/monitoring-modes/how-effective-is-infrastructure-monitoring-on-its-own.md "Learn how monitoring only the infrastructure layer of your environment can lead to an incomplete picture of the health of your applications and customer experience.")
 
 ## Configuration
 
 [### Host anomaly detection
 
-Configure host anomaly detection, including problem and event thresholds.](/docs/observe/infrastructure-observability/hosts/configuration/anomaly-detection "Configure host anomaly detection, including problem and event thresholds.")[### Define tags and metadata for hosts
+Configure host anomaly detection, including problem and event thresholds.](hosts/configuration/anomaly-detection.md "Configure host anomaly detection, including problem and event thresholds.")[### Define tags and metadata for hosts
 
-Tag and set additional properties for a monitored host.](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.")[### Exclude disks and network traffic from host monitoring
+Tag and set additional properties for a monitored host.](hosts/configuration/define-tags-and-metadata-for-hosts.md "Learn how to tag and set additional properties for a monitored host.")[### Exclude disks and network traffic from host monitoring
 
-Exclude selected disks and network traffic from host monitoring.](/docs/observe/infrastructure-observability/hosts/configuration/exclude-disks-and-network-traffic "Learn how to exclude selected disks and network traffic from host monitoring.")[### Organize your environment using host groups
+Exclude selected disks and network traffic from host monitoring.](hosts/configuration/exclude-disks-and-network-traffic.md "Learn how to exclude selected disks and network traffic from host monitoring.")[### Organize your environment using host groups
 
-Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.")[### Set custom host names
+Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.](hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.")[### Set custom host names
 
-Change a monitored host name.](/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name.")
+Change a monitored host name.](hosts/configuration/set-custom-host-names-in-dynamic-environments.md "Learn how to change a monitored host name.")
 
 ## Monitoring
 
 [### Host monitoring with Dynatrace
 
-Monitor hosts with Dynatrace.](/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring "Monitor hosts with Dynatrace.")[### OS services monitoring
+Monitor hosts with Dynatrace.](hosts/monitoring/host-monitoring.md "Monitor hosts with Dynatrace.")[### OS services monitoring
 
-Improve the visibility of your infrastructure by monitoring the availability of operating system services.](/docs/observe/infrastructure-observability/hosts/monitoring/os-services "Improve the visibility of your infrastructure by monitoring the availability of operating system services.")[### Classic Windows services monitoring
+Improve the visibility of your infrastructure by monitoring the availability of operating system services.](hosts/monitoring/os-services.md "Improve the visibility of your infrastructure by monitoring the availability of operating system services.")[### Classic Windows services monitoring
 
-Improve the visibility of your infrastructure by monitoring the availability of Windows services.](/docs/observe/infrastructure-observability/hosts/monitoring/windows-services "Learn how to improve the visibility of your infrastructure by monitoring the availability of Windows services.")[### Process availability
+Improve the visibility of your infrastructure by monitoring the availability of Windows services.](hosts/monitoring/windows-services.md "Learn how to improve the visibility of your infrastructure by monitoring the availability of Windows services.")[### Process availability
 
-Monitor availability and performance of the key processes on your hosts.](/docs/observe/infrastructure-observability/hosts/monitoring/process-availability "Monitor availability and performance of the key processes on your hosts.")
+Monitor availability and performance of the key processes on your hosts.](hosts/monitoring/process-availability.md "Monitor availability and performance of the key processes on your hosts.")
 
 ## Diagnostics
 
@@ -75,4 +75,4 @@ Monitor availability and performance of the key processes on your hosts.](/docs/
 
 ### OneAgent diagnostics
 
-Learn how to run OneAgent diagnostics.](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics "Learn how to run OneAgent diagnostics")
+Learn how to run OneAgent diagnostics.](../../ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics.md "Learn how to run OneAgent diagnostics")

@@ -59,7 +59,7 @@ Data reaches the Dynatrace platform via different ingestion sources, such as API
 
 Once the records reach your Dynatrace SaaS environment via ingest sources, you can route it to a pipeline.
 
-To learn the ingest sources available in OpenPipeline, see [Ingest sources in OpenPipeline](/docs/platform/openpipeline/reference/api-ingestion-reference "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.").
+To learn the ingest sources available in OpenPipeline, see [Ingest sources in OpenPipeline](../reference/api-ingestion-reference.md "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.").
 
 ### Types
 
@@ -80,7 +80,7 @@ Builtâin ingest sources represent the primary data entry points provided by
 
 #### Ready-made ingest source
 
-A readyâmade ingest source is automatically created when an [extension](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") is installed. In addition to the ingest source, the installation may also generate a pipeline and an active route. Readyâmade ingest sources are owned by the installing extension and are viewâonly for all users with `settings:read` permissions. They remain unchanged through extension reactivations and are removed only when the extension is uninstalled. This type is available for the event, log, and metric configuration scopes. Typically, a ready-made ingest source routes records to the generated pipeline via static routing, however dynamic routing is supported as well.
+A readyâmade ingest source is automatically created when an [extension](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.") is installed. In addition to the ingest source, the installation may also generate a pipeline and an active route. Readyâmade ingest sources are owned by the installing extension and are viewâonly for all users with `settings:read` permissions. They remain unchanged through extension reactivations and are removed only when the extension is uninstalled. This type is available for the event, log, and metric configuration scopes. Typically, a ready-made ingest source routes records to the generated pipeline via static routing, however dynamic routing is supported as well.
 
 #### Custom ingest source
 
@@ -123,16 +123,16 @@ Routing is defined according to the following:
 
 ### Best practices
 
-* Route as much data as feasible to [custom pipelines](/docs/platform/openpipeline/concepts/processing#custom-pipeline "Learn the core concepts of Dynatrace OpenPipeline processing.") using explicit matching conditions.
+* Route as much data as feasible to [custom pipelines](processing.md#custom-pipeline "Learn the core concepts of Dynatrace OpenPipeline processing.") using explicit matching conditions.
 * When multiple routing options are available, choose according to the data set dimension. For example, large data sets benefit more from dynamic routing.
 
 ## Processing
 
-OpenPipeline processing occurs in pipelines containing instructions on how to structure, separate, and store your data. To learn more, see [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.").
+OpenPipeline processing occurs in pipelines containing instructions on how to structure, separate, and store your data. To learn more, see [Processing in OpenPipeline](processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.").
 
 ## Storage
 
-Dynatrace Grail database provides a single unified storage solution for all your configuration scopes. OpenPipeline target storage are [Grail buckets](/docs/platform/grail/organize-data "Insights on the Grail data model consisting of buckets, tables, and views."). You can leverage built-in buckets and, if available for the configuration scope, create new buckets with custom retention periods. Each bucket is assigned to a DQL database table. [Assign permissions](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.") to user groups or single users to provide them with access to specific buckets and tables.
+Dynatrace Grail database provides a single unified storage solution for all your configuration scopes. OpenPipeline target storage are [Grail buckets](../../grail/organize-data.md "Insights on the Grail data model consisting of buckets, tables, and views."). You can leverage built-in buckets and, if available for the configuration scope, create new buckets with custom retention periods. Each bucket is assigned to a DQL database table. [Assign permissions](../../grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.") to user groups or single users to provide them with access to specific buckets and tables.
 
 By default, OpenPipeline routes data into a built-in pipeline with target storage built-in Grail bucket of the configuration scope. You can configure storage assignment
 

@@ -39,7 +39,7 @@ scraped: 2026-03-06T21:17:54.642583
 ![URL OneAgent](https://dt-cdn.net/images/oneagent-url-570-2bbd3eb216.png)
 
 * Замените значение параметра `arch` на `<arch>`. Игнорируйте параметр `flavor=default`.
-* В качестве значения `API-Token` вам необходим [PaaS-токен](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Узнайте о концепции токена доступа и его областях действия.").
+* В качестве значения `API-Token` вам необходим [PaaS-токен](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Узнайте о концепции токена доступа и его областях действия.").
 
 Ваш URL должен выглядеть так:
 `https://host.domain.com/api/v1/deployment/installer/agent/unix/default/latest?arch=<arch>`
@@ -65,7 +65,7 @@ scraped: 2026-03-06T21:17:54.642583
 1. В Dynatrace Hub выберите **OneAgent**.
 2. Выберите **Set up** > **Windows** или **Linux**.
 
-Подробнее см. инструкции по установке OneAgent для [Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows "Узнайте, как скачать и установить Dynatrace OneAgent на Windows.") или [Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux "Узнайте, как скачать и установить Dynatrace OneAgent на Linux.").
+Подробнее см. инструкции по установке OneAgent для [Windows](../../dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows.md "Узнайте, как скачать и установить Dynatrace OneAgent на Windows.") или [Linux](../../dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux.md "Узнайте, как скачать и установить Dynatrace OneAgent на Linux.").
 
 ## Настройка установки
 
@@ -146,7 +146,7 @@ Windows
    command: "service httpd restart"
    ```
 
-   Если вы хотите добавить дополнительные параметры, разделяйте их пробелами. Подробнее о параметрах установки см. в разделе [настройка установки OneAgent на Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Узнайте, как использовать установщик Linux с параметрами командной строки.").
+   Если вы хотите добавить дополнительные параметры, разделяйте их пробелами. Подробнее о параметрах установки см. в разделе [настройка установки OneAgent на Linux](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Узнайте, как использовать установщик Linux с параметрами командной строки.").
 
    Не используйте свойство `env` команды, так как оно перезаписывает, а не дополняет существующее окружение и приведёт к сбою установки OneAgent.
 4. Необязательно: расширьте вашу конфигурацию.
@@ -284,20 +284,20 @@ Windows
    command: "C:/OneAgent/Dynatrace-OneAgent-Installer.exe --quiet --set-proxy=172.1.1.128:8080"
    ```
 
-   Если вы хотите добавить дополнительные параметры, разделяйте их пробелами. Подробнее о параметрах установки см. в разделе [настройка установки OneAgent на Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows "Узнайте, как использовать установщик OneAgent для Windows.").
+   Если вы хотите добавить дополнительные параметры, разделяйте их пробелами. Подробнее о параметрах установки см. в разделе [настройка установки OneAgent на Windows](../../dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md "Узнайте, как использовать установщик OneAgent для Windows.").
 
    Вам не нужно добавлять дополнительные команды после установки OneAgent. Amazon самостоятельно перезапустит IIS после успешной загрузки всех файлов приложения.
 
 ## Настройка сетевых зон (необязательно)
 
-Для настройки сетевых зон используйте следующий аргумент: `--set-network-zone=<your.network.zone>`. Подробнее см. в разделе [сетевые зоны](/docs/manage/network-zones "Узнайте, как работают сетевые зоны в Dynatrace.").
+Для настройки сетевых зон используйте следующий аргумент: `--set-network-zone=<your.network.zone>`. Подробнее см. в разделе [сетевые зоны](../../../manage/network-zones.md "Узнайте, как работают сетевые зоны в Dynatrace.").
 
 ## Потребление мониторинга
 
-Для AWS Elastic Beanstalk потребление мониторинга рассчитывается на основе единиц хостов. Подробности см. в разделе [Мониторинг приложений и инфраструктуры (единицы хостов)](/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Узнайте, как рассчитывается потребление мониторинга приложений и инфраструктуры Dynatrace на основе единиц хостов.").
+Для AWS Elastic Beanstalk потребление мониторинга рассчитывается на основе единиц хостов. Подробности см. в разделе [Мониторинг приложений и инфраструктуры (единицы хостов)](../../../license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Узнайте, как рассчитывается потребление мониторинга приложений и инфраструктуры Dynatrace на основе единиц хостов.").
 
 ## Связанные темы
 
-* [Dynatrace OneAgent](/docs/ingest-from/dynatrace-oneagent "Основные концепции OneAgent, а также установка и эксплуатация OneAgent на различных платформах.")
-* [Ограничение вызовов API к AWS с помощью тегов](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/limit-api-calls-to-aws-using-tags "Добавление и настройка тегов AWS для ограничения ресурсов AWS.")
-* [Матрица поддержки платформ и возможностей OneAgent](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Узнайте, какие возможности поддерживаются OneAgent на различных операционных системах и платформах.")
+* [Dynatrace OneAgent](../../dynatrace-oneagent.md "Основные концепции OneAgent, а также установка и эксплуатация OneAgent на различных платформах.")
+* [Ограничение вызовов API к AWS с помощью тегов](../integrate-with-aws/cloudwatch-metrics/limit-api-calls-to-aws-using-tags.md "Добавление и настройка тегов AWS для ограничения ресурсов AWS.")
+* [Матрица поддержки платформ и возможностей OneAgent](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Узнайте, какие возможности поддерживаются OneAgent на различных операционных системах и платформах.")

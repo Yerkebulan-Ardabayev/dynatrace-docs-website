@@ -23,52 +23,52 @@ scraped: 2026-03-06T21:17:23.936481
 
 * How-to guide
 
-Читать это руководство](/docs/observe/application-observability/services-classic/service-analysis-new)[#### Детализация по контексту
+Читать это руководство](services-classic/service-analysis-new.md)[#### Детализация по контексту
 
 Узнайте об удобной навигации и фильтрации для анализа сервисов.
 
 * Reference
 
-Читать этот справочник](/docs/observe/application-observability/services-classic/context-specific-drill-down)[#### Анализ отдельных экземпляров сервисов
+Читать этот справочник](services-classic/context-specific-drill-down.md)[#### Анализ отдельных экземпляров сервисов
 
 Узнайте, как выполнять анализ экземпляров сервисов.
 
 * How-to guide
 
-Читать это руководство](/docs/observe/application-observability/services-classic/analyze-individual-service-instances)[#### Тайминги анализа сервисов
+Читать это руководство](services-classic/analyze-individual-service-instances.md)[#### Тайминги анализа сервисов
 
 Узнайте, что означает каждое время в анализе сервисов.
 
 * Reference
 
-Читать этот справочник](/docs/observe/application-observability/services-classic/service-analysis-timing)[#### Распределение времени ответа и анализ выбросов
+Читать этот справочник](services-classic/service-analysis-timing.md)[#### Распределение времени ответа и анализ выбросов
 
 Получите представление о распределении времени ответа по всем запросам, включая аномально высокие и аномально низкие значения.
 
 * How-to guide
 
-Читать это руководство](/docs/observe/application-observability/services-classic/response-time-distribution-and-outlier-analysis)[#### Горячие точки времени ответа сервисов
+Читать это руководство](services-classic/response-time-distribution-and-outlier-analysis.md)[#### Горячие точки времени ответа сервисов
 
 Определите действия, потребляющие наибольшее время ответа для каждого сервиса.
 
 * How-to guide
 
-Читать это руководство](/docs/observe/application-observability/services-classic/service-response-time-hotspots)[#### Поток сервисов
+Читать это руководство](services-classic/service-response-time-hotspots.md)[#### Поток сервисов
 
 Узнайте, как Dynatrace помогает отслеживать последовательность вызовов сервисов, инициируемых каждым запросом к сервису в вашей среде.
 
 * How-to guide
 
-Читать это руководство](/docs/observe/application-observability/services-classic/service-flow)[#### Мониторинг ключевых запросов
+Читать это руководство](services-classic/service-flow.md)[#### Мониторинг ключевых запросов
 
 Узнайте, как внимательно отслеживать запросы, критически важные для вашего бизнеса.
 
 * How-to guide
 
-Читать это руководство](/docs/observe/application-observability/services-classic/monitor-key-requests)[#### Обратная трассировка сервисов
+Читать это руководство](services-classic/monitor-key-requests.md)[#### Обратная трассировка сервисов
 
 Отследите последовательность вызовов сервисов вплоть до клика в браузере, инициировавшего эту последовательность.
 
 * How-to guide
 
-Читать это руководство](/docs/observe/application-observability/services-classic/service-backtrace)
+Читать это руководство](services-classic/service-backtrace.md)

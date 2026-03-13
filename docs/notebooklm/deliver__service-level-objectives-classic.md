@@ -22,13 +22,13 @@ scraped: 2026-03-06T21:28:10.855487
 * Published Feb 16, 2022
 
 You can control access to the SLOs in your environment by setting write and/or read permissions to users or user groups at the environment or management-zone level.
-For details on how to set permissions, see [Role-based permissions](/docs/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions").
+For details on how to set permissions, see [Role-based permissions](manage/identity-access-management/permission-management/role-based-permissions.md "Role-based permissions").
 
 Permission checks are based only on the global entity selector.
 
 ## Read access based on permission levels
 
-* At the environment level, a user with **View environment** permission can view any SLO. To manage group permissions, you can [create policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+* At the environment level, a user with **View environment** permission can view any SLO. To manage group permissions, you can [create policies](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
 
   **Example policy:** `ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = "builtin:monitoring.slo";`
 * On a management-zone level, a user with **View environment** permission can read all global SLOs and all SLOs belonging to the respective management zone.
@@ -37,7 +37,7 @@ Permission checks are based only on the global entity selector.
 
 ## Write access based on permission levels
 
-* At the environment level, a user with **Change monitoring settings** permissions can create and update any SLO, including global SLOs without management zones specified. To manage group permissions, you can [create policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+* At the environment level, a user with **Change monitoring settings** permissions can create and update any SLO, including global SLOs without management zones specified. To manage group permissions, you can [create policies](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
 
   **Example policy:** `ALLOW settings:objects:read, settings:schemas:read, settings:objects:write WHERE settings:schemaId = "builtin:monitoring.slo";`.
 * On a management-zone level, a user with **Change monitoring settings** permissions can create and update any SLO for the respective management zone, but can't create or update global SLOs.
@@ -85,7 +85,7 @@ scraped: 2026-03-04T21:33:40.088795
 * 1-min read
 * Published Sep 14, 2020
 
-Dynatrace comes with native support for [service-level objective (SLO)](/docs/deliver/service-level-objectives-classic/slo-basics "Basic terminology related to service-level objectives") monitoring according to [Site Reliability Engineering (SRE) fundamentals published by Googleï»¿](https://dt-url.net/cv030av).
+Dynatrace comes with native support for [service-level objective (SLO)](deliver/service-level-objectives-classic/slo-basics.md "Basic terminology related to service-level objectives") monitoring according to [Site Reliability Engineering (SRE) fundamentals published by Googleï»¿](https://dt-url.net/cv030av).
 
 ## SLO overview
 
@@ -93,19 +93,19 @@ You can review the current health status, error budgets, target and warning, alo
 
 ## Define and configure
 
-* You can [define SLOs based on preconfigured templates provided by Dynatrace or create and configure your own SLO definitions](/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo#config "Create, configure, and monitor service-level objectives with Dynatrace."). For a better understanding of how to configure out-of-the-box SLOs, see [Example configuration of service-level objective definitions](/docs/deliver/service-level-objectives-classic/slo-definition-configuration-examples "Explore the out-of-the-box service-level objective definitions by way of examples.").
-* You can [control access to the SLOs in your environment based on management-zone permissions](/docs/deliver/service-level-objectives-classic/slo-mz-permissions "Permissions required at the environment and management-zone level to manage service-level objectives.").
+* You can [define SLOs based on preconfigured templates provided by Dynatrace or create and configure your own SLO definitions](deliver/service-level-objectives-classic/configure-and-monitor-slo.md#config "Create, configure, and monitor service-level objectives with Dynatrace."). For a better understanding of how to configure out-of-the-box SLOs, see [Example configuration of service-level objective definitions](deliver/service-level-objectives-classic/slo-definition-configuration-examples.md "Explore the out-of-the-box service-level objective definitions by way of examples.").
+* You can [control access to the SLOs in your environment based on management-zone permissions](../ru/deliver/service-level-objectives-classic/slo-mz-permissions.md "Permissions required at the environment and management-zone level to manage service-level objectives.").
 
 ## Visualize
 
 You can
 
-* [Pin SLO tiles to your dashboard](/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo#dash "Create, configure, and monitor service-level objectives with Dynatrace.") to visualize their current state along with the remaining error budgets.
-* [Query and chart metrics in Data Explorer](/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo#explorer "Create, configure, and monitor service-level objectives with Dynatrace.").
-* Review a list of current SLOs on the [**Hosts**](/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring#slo "Monitor hosts with Dynatrace."), **Services**, and [**Kubernetes workload**](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-slos-kubernetes "Keep track of SLOs for Kubernetes/OpenShift.") details pages.
+* [Pin SLO tiles to your dashboard](deliver/service-level-objectives-classic/configure-and-monitor-slo.md#dash "Create, configure, and monitor service-level objectives with Dynatrace.") to visualize their current state along with the remaining error budgets.
+* [Query and chart metrics in Data Explorer](deliver/service-level-objectives-classic/configure-and-monitor-slo.md#explorer "Create, configure, and monitor service-level objectives with Dynatrace.").
+* Review a list of current SLOs on the [**Hosts**](observe/infrastructure-observability/hosts/monitoring/host-monitoring.md#slo "Monitor hosts with Dynatrace."), **Services**, and [**Kubernetes workload**](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-slos-kubernetes.md "Keep track of SLOs for Kubernetes/OpenShift.") details pages.
 
 ## Alerting
 
-You get [Davis support](/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo#davis-support "Create, configure, and monitor service-level objectives with Dynatrace.") to determine SLO violations before software is in production and to provide root-cause analysis.
+You get [Davis support](deliver/service-level-objectives-classic/configure-and-monitor-slo.md#davis-support "Create, configure, and monitor service-level objectives with Dynatrace.") to determine SLO violations before software is in production and to provide root-cause analysis.
 
 ---

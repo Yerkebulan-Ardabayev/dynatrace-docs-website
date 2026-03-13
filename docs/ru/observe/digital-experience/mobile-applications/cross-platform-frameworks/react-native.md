@@ -21,11 +21,11 @@ scraped: 2026-03-05T21:25:22.621291
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Создайте мобильное приложение в Dynatrace**](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/react-native#create-app-in-ui "Автоматическое инструментирование ваших приложений React Native с помощью OneAgent.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Создайте мобильное приложение в Dynatrace**](react-native.md#create-app-in-ui "Автоматическое инструментирование ваших приложений React Native с помощью OneAgent.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Настройте плагин React Native**](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/react-native#set-up-plugin "Автоматическое инструментирование ваших приложений React Native с помощью OneAgent.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Настройте плагин React Native**](react-native.md#set-up-plugin "Автоматическое инструментирование ваших приложений React Native с помощью OneAgent.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Соберите и запустите приложение**](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/react-native#build-and-run-app "Автоматическое инструментирование ваших приложений React Native с помощью OneAgent.")
+**Соберите и запустите приложение**](react-native.md#build-and-run-app "Автоматическое инструментирование ваших приложений React Native с помощью OneAgent.")
 
 ## Предварительные требования
 
@@ -203,7 +203,7 @@ scraped: 2026-03-05T21:25:22.621291
 
 ## Именование действий пользователя
 
-См. [Правила именования действий пользователя](/docs/observe/digital-experience/rum-concepts/user-actions#user-action-naming-rules "Узнайте, что такое действия пользователя и как они помогают понять, что пользователи делают с вашим приложением.") для получения подробной информации об именовании действий пользователя в Dynatrace.
+См. [Правила именования действий пользователя](../../rum-concepts/user-actions.md#user-action-naming-rules "Узнайте, что такое действия пользователя и как они помогают понять, что пользователи делают с вашим приложением.") для получения подробной информации об именовании действий пользователя в Dynatrace.
 
 #### Представления React
 

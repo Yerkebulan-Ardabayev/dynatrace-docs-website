@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:24:56.840993
 * Опубликовано 19 августа 2025 г.
 * Preview
 
-Если вы впервые создаёте подключение, сначала ознакомьтесь с [инструкциями по первоначальной настройке](/docs/ingest-from/amazon-web-services/create-an-aws-connection "See the differences between creating your AWS connections via API or ::app-settings::.") и её предварительными требованиями.
+Если вы впервые создаёте подключение, сначала ознакомьтесь с [инструкциями по первоначальной настройке](../../../../ingest-from/amazon-web-services/create-an-aws-connection.md "See the differences between creating your AWS connections via API or ::app-settings::.") и её предварительными требованиями.
 
 Если у вас есть существующее классическое подключение и вы хотите начать использовать новый мониторинг облачных платформ, сначала удалите классическое подключение, и только после этого создайте новое облачное подключение для соответствующей учётной записи AWS.
 

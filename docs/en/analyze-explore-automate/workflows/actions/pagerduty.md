@@ -18,11 +18,11 @@ Your Dynatrace environment can integrate with a PagerDuty environment using Page
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Grant permissions to Workflows**](/docs/analyze-explore-automate/workflows/actions/pagerduty#permissions "Automate creation of incidents in PagerDuty based on your monitoring data and events.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Grant permissions to Workflows**](pagerduty.md#permissions "Automate creation of incidents in PagerDuty based on your monitoring data and events.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Create PagerDuty API key**](/docs/analyze-explore-automate/workflows/actions/pagerduty#api-key "Automate creation of incidents in PagerDuty based on your monitoring data and events.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Create PagerDuty API key**](pagerduty.md#api-key "Automate creation of incidents in PagerDuty based on your monitoring data and events.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Configure PagerDuty connection**](/docs/analyze-explore-automate/workflows/actions/pagerduty#connection "Automate creation of incidents in PagerDuty based on your monitoring data and events.")
+**Configure PagerDuty connection**](pagerduty.md#connection "Automate creation of incidents in PagerDuty based on your monitoring data and events.")
 
 ### Step 1 Grant permissions to Workflows
 
@@ -38,7 +38,7 @@ To fine-tune permissions granted to Workflows
    * `state:app-states:write`
    * `state:app-states:delete`
 
-For more on general Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+For more on general Workflows user permissions, see [User permissions for workflows](../security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Step 2 Create PagerDuty API key
 
@@ -90,7 +90,7 @@ To create a workflow that raises a PagerDuty incident
 6. On one of the information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add"), search for `PagerDuty`, and select **Create an incident**.
 7. On each of the remaining information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") and drag the line to the **Create an incident** action.
 8. In the **Create an incident** action, select the [connection](#connection) to your PagerDuty environment.
-9. Configure the input fields as needed. To learn how to use the output of information-extracting notes, see [Expression reference](/docs/analyze-explore-automate/workflows/reference "Get to know the workflows expression").
+9. Configure the input fields as needed. To learn how to use the output of information-extracting notes, see [Expression reference](../reference.md "Get to know the workflows expression").
 10. To test your workflow, select **Run**.
 
 ## Troubleshooting

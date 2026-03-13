@@ -13,19 +13,19 @@ scraped: 2026-03-05T21:32:03.786138
 * 2-min read
 * Updated on Jan 10, 2024
 
-When you can't use the [Dynatrace Android Gradle plugin](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin "Learn how the Dynatrace Android Gradle plugin can auto-instrument your Android application project.") due to certain technical limitations, opt for standalone manual instrumentation with OneAgent SDK for Android.
+When you can't use the [Dynatrace Android Gradle plugin](../instrumentation-via-plugin.md "Learn how the Dynatrace Android Gradle plugin can auto-instrument your Android application project.") due to certain technical limitations, opt for standalone manual instrumentation with OneAgent SDK for Android.
 
 Follow the steps below to manually instrument your application using OneAgent SDK for Android.
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Ensure that the Maven Central repository is declared.**](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/manual-instrumentation#step-declare-maven-central "Use OneAgent SDK for Android to manually instrument your Android application.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Ensure that the Maven Central repository is declared.**](manual-instrumentation.md#step-declare-maven-central "Use OneAgent SDK for Android to manually instrument your Android application.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Include the OneAgent library as a dependency to your project.**](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/manual-instrumentation#step-include-OneAgent-library "Use OneAgent SDK for Android to manually instrument your Android application.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Include the OneAgent library as a dependency to your project.**](manual-instrumentation.md#step-include-OneAgent-library "Use OneAgent SDK for Android to manually instrument your Android application.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Start OneAgent manually.**](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/manual-instrumentation#step-start-one-agent "Use OneAgent SDK for Android to manually instrument your Android application.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**Start OneAgent manually.**](manual-instrumentation.md#step-start-one-agent "Use OneAgent SDK for Android to manually instrument your Android application.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**Capture additional data via OneAgent SDK for Android.**](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/manual-instrumentation#step-capture-additional-data "Use OneAgent SDK for Android to manually instrument your Android application.")
+**Capture additional data via OneAgent SDK for Android.**](manual-instrumentation.md#step-capture-additional-data "Use OneAgent SDK for Android to manually instrument your Android application.")
 
 When you use standalone manual instrumentation, nothing is done automatically. Ensure that every important part of your application is manually instrumented. Otherwise, OneAgent won't be able to monitor your application and send monitoring data to Dynatrace.
 
@@ -191,9 +191,9 @@ When you use standalone manual instrumentation, nothing is done automatically. E
    .buildConfiguration())
    ```
 
-   To get the correct application identification keys (`applicationId` and `beaconUrl`), access the [mobile instrumentation wizard](/docs/observe/digital-experience/mobile-applications/instrument-android-app/get-started-with-android-monitoring#instrumentation-wizard "Learn the steps you need to perform to instrument your Android app for monitoring with Dynatrace.") for your application.
+   To get the correct application identification keys (`applicationId` and `beaconUrl`), access the [mobile instrumentation wizard](../get-started-with-android-monitoring.md#instrumentation-wizard "Learn the steps you need to perform to instrument your Android app for monitoring with Dynatrace.") for your application.
 
-   If your application supports Direct Boot, never call the `Dynatrace.startup` API method from a Direct Boot aware component. Also, check [Adjust communication with OneAgent SDK for Android](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/adjust-oneagent-communication "Configure communication with OneAgent to report the user experience data to Dynatrace.") to make sure that OneAgent can transmit data to Dynatrace.
-4. Capture additional data via [OneAgent SDK for Android](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android "Learn how to enrich mobile user experience monitoring in Android using OneAgent SDK.").
+   If your application supports Direct Boot, never call the `Dynatrace.startup` API method from a Direct Boot aware component. Also, check [Adjust communication with OneAgent SDK for Android](adjust-oneagent-communication.md "Configure communication with OneAgent to report the user experience data to Dynatrace.") to make sure that OneAgent can transmit data to Dynatrace.
+4. Capture additional data via [OneAgent SDK for Android](oneagent-sdk-for-android.md "Learn how to enrich mobile user experience monitoring in Android using OneAgent SDK.").
 
    For instance, you can create custom actions, report errors, tag specific users, and more.

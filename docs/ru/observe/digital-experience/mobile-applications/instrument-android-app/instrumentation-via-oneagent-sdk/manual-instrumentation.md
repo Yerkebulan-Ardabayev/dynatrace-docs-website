@@ -13,19 +13,19 @@ scraped: 2026-03-05T21:32:03.786138
 * Чтение: 2 мин
 * Обновлено 10 января 2024 г.
 
-Если вы не можете использовать [плагин Dynatrace Android Gradle](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin "Узнайте, как плагин Dynatrace Android Gradle может автоматически инструментировать ваш проект Android-приложения.") из-за определённых технических ограничений, выберите автономную ручную инструментацию с помощью OneAgent SDK для Android.
+Если вы не можете использовать [плагин Dynatrace Android Gradle](../instrumentation-via-plugin.md "Узнайте, как плагин Dynatrace Android Gradle может автоматически инструментировать ваш проект Android-приложения.") из-за определённых технических ограничений, выберите автономную ручную инструментацию с помощью OneAgent SDK для Android.
 
 Выполните приведённые ниже шаги для ручной инструментации вашего приложения с помощью OneAgent SDK для Android.
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Убедитесь, что репозиторий Maven Central объявлен.**](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/manual-instrumentation#step-declare-maven-central "Используйте OneAgent SDK для Android для ручной инструментации вашего Android-приложения.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Убедитесь, что репозиторий Maven Central объявлен.**](manual-instrumentation.md#step-declare-maven-central "Используйте OneAgent SDK для Android для ручной инструментации вашего Android-приложения.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Добавьте библиотеку OneAgent как зависимость в ваш проект.**](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/manual-instrumentation#step-include-OneAgent-library "Используйте OneAgent SDK для Android для ручной инструментации вашего Android-приложения.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Добавьте библиотеку OneAgent как зависимость в ваш проект.**](manual-instrumentation.md#step-include-OneAgent-library "Используйте OneAgent SDK для Android для ручной инструментации вашего Android-приложения.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Запустите OneAgent вручную.**](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/manual-instrumentation#step-start-one-agent "Используйте OneAgent SDK для Android для ручной инструментации вашего Android-приложения.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**Запустите OneAgent вручную.**](manual-instrumentation.md#step-start-one-agent "Используйте OneAgent SDK для Android для ручной инструментации вашего Android-приложения.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**Захватите дополнительные данные с помощью OneAgent SDK для Android.**](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/manual-instrumentation#step-capture-additional-data "Используйте OneAgent SDK для Android для ручной инструментации вашего Android-приложения.")
+**Захватите дополнительные данные с помощью OneAgent SDK для Android.**](manual-instrumentation.md#step-capture-additional-data "Используйте OneAgent SDK для Android для ручной инструментации вашего Android-приложения.")
 
 При использовании автономной ручной инструментации ничего не выполняется автоматически. Убедитесь, что каждая важная часть вашего приложения инструментирована вручную. В противном случае OneAgent не сможет отслеживать ваше приложение и отправлять данные мониторинга в Dynatrace.
 
@@ -191,9 +191,9 @@ scraped: 2026-03-05T21:32:03.786138
    .buildConfiguration())
    ```
 
-   Чтобы получить правильные ключи идентификации приложения (`applicationId` и `beaconUrl`), откройте [мастер мобильной инструментации](/docs/observe/digital-experience/mobile-applications/instrument-android-app/get-started-with-android-monitoring#instrumentation-wizard "Узнайте, какие шаги необходимо выполнить для инструментации вашего Android-приложения для мониторинга с помощью Dynatrace.") для вашего приложения.
+   Чтобы получить правильные ключи идентификации приложения (`applicationId` и `beaconUrl`), откройте [мастер мобильной инструментации](../get-started-with-android-monitoring.md#instrumentation-wizard "Узнайте, какие шаги необходимо выполнить для инструментации вашего Android-приложения для мониторинга с помощью Dynatrace.") для вашего приложения.
 
-   Если ваше приложение поддерживает Direct Boot, никогда не вызывайте метод API `Dynatrace.startup` из компонента, поддерживающего Direct Boot. Также ознакомьтесь с разделом [Настройка связи с OneAgent SDK для Android](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/adjust-oneagent-communication "Настройте связь с OneAgent для отправки данных о пользовательском опыте в Dynatrace."), чтобы убедиться, что OneAgent может передавать данные в Dynatrace.
-4. Захватите дополнительные данные с помощью [OneAgent SDK для Android](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android "Узнайте, как расширить мониторинг мобильного пользовательского опыта на Android с помощью OneAgent SDK.").
+   Если ваше приложение поддерживает Direct Boot, никогда не вызывайте метод API `Dynatrace.startup` из компонента, поддерживающего Direct Boot. Также ознакомьтесь с разделом [Настройка связи с OneAgent SDK для Android](adjust-oneagent-communication.md "Настройте связь с OneAgent для отправки данных о пользовательском опыте в Dynatrace."), чтобы убедиться, что OneAgent может передавать данные в Dynatrace.
+4. Захватите дополнительные данные с помощью [OneAgent SDK для Android](oneagent-sdk-for-android.md "Узнайте, как расширить мониторинг мобильного пользовательского опыта на Android с помощью OneAgent SDK.").
 
    Например, вы можете создавать пользовательские действия, сообщать об ошибках, отмечать конкретных пользователей и многое другое.

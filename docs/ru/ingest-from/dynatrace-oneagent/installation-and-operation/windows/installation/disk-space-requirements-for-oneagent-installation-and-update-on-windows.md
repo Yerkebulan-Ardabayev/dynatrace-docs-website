@@ -34,15 +34,15 @@ scraped: 2026-03-06T21:19:31.029614
 
 1
 
-Используйте параметр установки [INSTALL\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#installation-path "Узнайте, как использовать установщик OneAgent для Windows.").
+Используйте параметр установки [INSTALL\_PATH](customize-oneagent-installation-on-windows.md#installation-path "Узнайте, как использовать установщик OneAgent для Windows.").
 
 2
 
-Используйте параметр установки [LOG\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#log-path "Узнайте, как использовать установщик OneAgent для Windows.").
+Используйте параметр установки [LOG\_PATH](customize-oneagent-installation-on-windows.md#log-path "Узнайте, как использовать установщик OneAgent для Windows.").
 
 3
 
-Используйте параметр установки [DATA\_STORAGE](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#data-storage "Узнайте, как использовать установщик OneAgent для Windows.").
+Используйте параметр установки [DATA\_STORAGE](customize-oneagent-installation-on-windows.md#data-storage "Узнайте, как использовать установщик OneAgent для Windows.").
 
 4
 
@@ -50,17 +50,17 @@ scraped: 2026-03-06T21:19:31.029614
 
 5
 
-Применимо только при использовании расширений Dynatrace, которые [определяют метрики логов, события или добавляют собственные правила обработки логов](/docs/ingest-from/extensions/advanced-configuration/extension-customize#log-metrics-events-and-processing-rules "Узнайте, как инструментировать ваши расширения для настройки обработки полученных данных в Dynatrace."). Может быть изменено по запросу в службу поддержки.
+Применимо только при использовании расширений Dynatrace, которые [определяют метрики логов, события или добавляют собственные правила обработки логов](../../../../extensions/advanced-configuration/extension-customize.md#log-metrics-events-and-processing-rules "Узнайте, как инструментировать ваши расширения для настройки обработки полученных данных в Dynatrace."). Может быть изменено по запросу в службу поддержки.
 
 6
 
 Механизм надежности не работает, если требование не выполнено. Для получения дополнительной информации см. [Детали хранения](#persistence).
 
-Полный список файлов и каталогов, добавляемых на вашу систему OneAgent, см. в разделе [Безопасность OneAgent в Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows "Узнайте о безопасности Dynatrace OneAgent и изменениях в вашей системе на базе Windows").
+Полный список файлов и каталогов, добавляемых на вашу систему OneAgent, см. в разделе [Безопасность OneAgent в Windows](oneagent-security-windows.md "Узнайте о безопасности Dynatrace OneAgent и изменениях в вашей системе на базе Windows").
 
 ## Механизм устаревания файлов OneAgent
 
-OneAgent в режиме мониторинга full-stack использует встроенный механизм устаревания для обеспечения поддержания разумного размера файлов OneAgent, включая файлы логов и данные времени выполнения. Для получения дополнительной информации см. [Механизм устаревания файлов OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism "Узнайте, как OneAgent удаляет старые файлы для минимизации использования дискового пространства.").
+OneAgent в режиме мониторинга full-stack использует встроенный механизм устаревания для обеспечения поддержания разумного размера файлов OneAgent, включая файлы логов и данные времени выполнения. Для получения дополнительной информации см. [Механизм устаревания файлов OneAgent](../../../oneagent-aging-mechanism.md "Узнайте, как OneAgent удаляет старые файлы для минимизации использования дискового пространства.").
 
 ## Пространство, необходимое для обновлений
 

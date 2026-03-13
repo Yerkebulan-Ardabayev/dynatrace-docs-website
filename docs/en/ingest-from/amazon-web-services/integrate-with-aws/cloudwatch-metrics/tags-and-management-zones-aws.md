@@ -12,28 +12,28 @@ scraped: 2026-03-02T21:30:15.566087
 * 4-min read
 * Updated on Feb 20, 2024
 
-To organize cloud entities in your environment and simplify searches for them, you can use tags and basic instance properties imported from the cloud, as well as tags and management zones assigned in Dynatrace. Tags and management zones are applied to cloud entities just as they are for other entities, but they are best applied via the [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.").
+To organize cloud entities in your environment and simplify searches for them, you can use tags and basic instance properties imported from the cloud, as well as tags and management zones assigned in Dynatrace. Tags and management zones are applied to cloud entities just as they are for other entities, but they are best applied via the [entity selector](../../../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.").
 
 ## Cloud entities in your environment
 
-You can browse all cloud entites in your environment using their ID or type from [cloud entity types](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services#cloud-entity-types "Monitor all AWS cloud services with Dynatrace and view available metrics.") via the [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector#tag "Configure the entity selector for Environment API endpoints."), just as for other entities. You can also explore all available properties and relationships available for each individual resource or type.
+You can browse all cloud entites in your environment using their ID or type from [cloud entity types](../aws-all-services.md#cloud-entity-types "Monitor all AWS cloud services with Dynatrace and view available metrics.") via the [entity selector](../../../../dynatrace-api/environment-api/entity-v2/entity-selector.md#tag "Configure the entity selector for Environment API endpoints."), just as for other entities. You can also explore all available properties and relationships available for each individual resource or type.
 
-You can also browse their metrics using entity selector as part of [metric selector](/docs/dynatrace-api/environment-api/metric-v2/metric-selector "Configure the metric selector for the Metric v2 API."), e.g. in [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+You can also browse their metrics using entity selector as part of [metric selector](../../../../dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API."), e.g. in [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.").
 
 Cloud entity types
 
-To learn more about Dynatrace cloud entities and to check which ones can have tags imported from the cloud, see [Cloud services with their respective Dynatrace entity types](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services#cloud-entity-types "Monitor all AWS cloud services with Dynatrace and view available metrics.").
+To learn more about Dynatrace cloud entities and to check which ones can have tags imported from the cloud, see [Cloud services with their respective Dynatrace entity types](../aws-all-services.md#cloud-entity-types "Monitor all AWS cloud services with Dynatrace and view available metrics.").
 
 ## Add an automatically applied tag to cloud entities
 
-Follow the steps below to automatically apply a tag to cloud entities. To learn more about tags, see [Define and apply tags](/docs/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.").
+Follow the steps below to automatically apply a tag to cloud entities. To learn more about tags, see [Define and apply tags](../../../../manage/tags-and-metadata/setup/how-to-define-tags.md "Find out how to define and apply tags manually and automatically.").
 
 1. Go to **Settings** > **Tags** > **Automatically applied tags**.
 2. Select **Create tag** and type a name for the new tag in the **Tag name** field.
 3. Select **Add a new rule**.
 4. Optional **Optional tag value**. This value appears next to the tag name that the rule is specified for, after a `:`, and is used to provide more precise information based on the individual rule. Note that for rules based on the entity selector, this value cannot be extracted from the entity itself using placeholders.
 5. From the **Rule type** list, choose the **Entity selector** type.
-6. Use one of the code snippets from the [examples](#entity-selector-examples) and adapt it with your own values to apply tags to cloud entities matching your [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.").
+6. Use one of the code snippets from the [examples](#entity-selector-examples) and adapt it with your own values to apply tags to cloud entities matching your [entity selector](../../../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.").
 7. Select **Preview** to verify the results returned by the specific entity selector.
 8. Select **Save changes**.
 
@@ -43,12 +43,12 @@ Example of a rule-based entity selector
 
 ## Add cloud entities to existing management zones
 
-Follow the steps below to add cloud entities to existing management zones. To learn more about management zones, see [Set up management zones](/docs/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.").
+Follow the steps below to add cloud entities to existing management zones. To learn more about management zones, see [Set up management zones](../../../../manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Create and assign access rights to management zones.").
 
 1. Go to **Settings** > **Preferences** > **Management zones**.
 2. Edit an existing management zone and select **Add a new rule**.
 3. In the **Rule applies to** list, choose the **Entity selector**.
-4. Use one of the code snippets from the [examples](#entity-selector-examples) and adapt it with your own values to add to the management zone cloud entities matching the [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector#tag "Configure the entity selector for Environment API endpoints.").
+4. Use one of the code snippets from the [examples](#entity-selector-examples) and adapt it with your own values to add to the management zone cloud entities matching the [entity selector](../../../../dynatrace-api/environment-api/entity-v2/entity-selector.md#tag "Configure the entity selector for Environment API endpoints.").
 5. Select **Preview** to verify the results returned by the specific entity selector.
 6. Select **Save changes**.
 
@@ -58,7 +58,7 @@ Example of a management zone based on the entity selector
 
 ## Entity selector examples for AWS entities
 
-You can use the examples below and [cloud entity types](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services#cloud-entity-types "Monitor all AWS cloud services with Dynatrace and view available metrics.") to suit your own needs.
+You can use the examples below and [cloud entity types](../aws-all-services.md#cloud-entity-types "Monitor all AWS cloud services with Dynatrace and view available metrics.") to suit your own needs.
 
 Regions and zones
 
@@ -286,8 +286,8 @@ type(PROCESS_GROUP),fromRelationships.runsOn(type(HOST),fromRelationships.runsOn
 
 ## Related topics
 
-* [Management zones](/docs/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.")
-* [Queue tags and management zones](/docs/observe/infrastructure-observability/queues/configuration/tags-and-management-zones "Automatically apply tags to queues and organize them into management zones.")
-* [Set up management zones](/docs/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.")
-* [Define and apply tags](/docs/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.")
-* [Infrastructure Observability](/docs/observe/infrastructure-observability "The application infrastructure, including cloud and container platforms, that Dynatrace can monitor")
+* [Management zones](../../../../manage/identity-access-management/permission-management/management-zones.md "Learn about management zones concepts, how to define management zones, and how to make the most of them.")
+* [Queue tags and management zones](../../../../observe/infrastructure-observability/queues/configuration/tags-and-management-zones.md "Automatically apply tags to queues and organize them into management zones.")
+* [Set up management zones](../../../../manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Create and assign access rights to management zones.")
+* [Define and apply tags](../../../../manage/tags-and-metadata/setup/how-to-define-tags.md "Find out how to define and apply tags manually and automatically.")
+* [Infrastructure Observability](../../../../observe/infrastructure-observability.md "The application infrastructure, including cloud and container platforms, that Dynatrace can monitor")

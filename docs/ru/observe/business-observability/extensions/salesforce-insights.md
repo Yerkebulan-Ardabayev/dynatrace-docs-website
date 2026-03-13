@@ -171,9 +171,9 @@ API Queries (SOQL)
 
 Platform Events
 
-Захватывайте [события реального времени](https://dt-url.net/fj03qyl) из Salesforce и отправляйте их как [бизнес-события](/docs/observe/business-observability/bo-basic-concepts "Основные концепции Dynatrace Business Observability.") в Dynatrace.
+Захватывайте [события реального времени](https://dt-url.net/fj03qyl) из Salesforce и отправляйте их как [бизнес-события](../bo-basic-concepts.md "Основные концепции Dynatrace Business Observability.") в Dynatrace.
 
-[Приём RUM](/docs/observe/digital-experience/rum-concepts/rum-overview "Узнайте о мониторинге реальных пользователей, ключевых метриках производительности, мониторинге мобильных приложений и многом другом.") следует использовать только в управляемых средах.
+[Приём RUM](../../digital-experience/rum-concepts/rum-overview.md "Узнайте о мониторинге реальных пользователей, ключевых метриках производительности, мониторинге мобильных приложений и многом другом.") следует использовать только в управляемых средах.
 
 1. Включите **Real-time event Streaming**.
 2. В **Setup** > **Event Manager** включите **Streaming Data** для событий, которые вы хотите захватывать.
@@ -320,7 +320,7 @@ fetch bizevents
 * **Sessions Details**
 * Отдельным свойствам, выбрав **User Action** > **Perform waterfall analysis**
 
-Для использования этих свойств в [User Sessions Query Language](/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Узнайте, как получать доступ и выполнять запросы к данным пользовательских сессий на основе ключевых слов, синтаксиса, функций и многого другого."):
+Для использования этих свойств в [User Sessions Query Language](../../digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md "Узнайте, как получать доступ и выполнять запросы к данным пользовательских сессий на основе ключевых слов, синтаксиса, функций и многого другого."):
 
 1. В настройках приложения перейдите в **Session and user action properties**.
 2. Создайте свойство.
@@ -340,7 +340,7 @@ SELECT useraction.name, SUM(longProperties.rowsprocessed) FROM useraction WHERE 
 
 ## EventLogFile
 
-Захватывайте [файлы логов событий](https://dt-url.net/0a03q0q) из Salesforce и принимайте их как [логи](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Передавайте данные логов в Dynatrace через API и позвольте Dynatrace преобразовать их в значимые сообщения логов.") в Dynatrace.
+Захватывайте [файлы логов событий](https://dt-url.net/0a03q0q) из Salesforce и принимайте их как [логи](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Передавайте данные логов в Dynatrace через API и позвольте Dynatrace преобразовать их в значимые сообщения логов.") в Dynatrace.
 
 * EventLogFile необходимо включить в [Salesforce](https://dt-url.net/27u3qmr).
 * У пользователя должны быть установлены разрешения для чтения файлов логов событий.
@@ -394,7 +394,7 @@ fetch logs
 
 ## API Queries (SOQL)
 
-Выполняйте [запросы SOQL](https://dt-url.net/ox23q6n) к Salesforce и принимайте данные как [логи](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Передавайте данные логов в Dynatrace через API и позвольте Dynatrace преобразовать их в значимые сообщения логов.") или бизнес-события.
+Выполняйте [запросы SOQL](https://dt-url.net/ox23q6n) к Salesforce и принимайте данные как [логи](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Передавайте данные логов в Dynatrace через API и позвольте Dynatrace преобразовать их в значимые сообщения логов.") или бизнес-события.
 У пользователя должны быть разрешения для запроса Salesforce API и чтения запрашиваемых **объектов**.
 
 #### Детали
@@ -483,7 +483,7 @@ fetch logs
 
 ## Platform Events
 
-Подписывайтесь на пользовательские [Salesforce Platform Events](https://developer.salesforce.com/docs/atlas.en-us.250.0.platform_events.meta/platform_events/platform_events_intro.htm) и принимайте их как [бизнес-события](/docs/observe/business-observability/bo-basic-concepts "Основные концепции Dynatrace Business Observability.") в Dynatrace.
+Подписывайтесь на пользовательские [Salesforce Platform Events](https://developer.salesforce.com/docs/atlas.en-us.250.0.platform_events.meta/platform_events/platform_events_intro.htm) и принимайте их как [бизнес-события](../bo-basic-concepts.md "Основные концепции Dynatrace Business Observability.") в Dynatrace.
 
 Platform Events предоставляют мощный способ отправки и получения пользовательских уведомлений о событиях внутри Salesforce и во внешние системы. Эта конфигурация позволяет захватывать данные о событиях в реальном времени из пользовательских платформенных событий, стандартных платформенных событий и событий захвата изменений данных.
 
@@ -539,14 +539,14 @@ fetch bizevents
 
 ## Расширение периода хранения данных Salesforce Insights
 
-По умолчанию принятые данные хранятся 30 дней. Вы можете изменить время хранения, создав пользовательский [бакет](/docs/observe/business-observability/bo-event-processing/bo-bucket-assignment "Назначьте период хранения данным бизнес-событий в Dynatrace через классический конвейер.").
+По умолчанию принятые данные хранятся 30 дней. Вы можете изменить время хранения, создав пользовательский [бакет](../bo-event-processing/bo-bucket-assignment.md "Назначьте период хранения данным бизнес-событий в Dynatrace через классический конвейер.").
 
 Чтобы создать пользовательский бакет для события Salesforce
 
 1. В Dynatrace перейдите в **Settings** > **Business Observability** > **Bucket assignment**.
 2. На странице **Business event bucket assignment** выберите **Add rule** и назовите ваше правило.
 3. В поле **Bucket** выберите период хранения.
-4. Добавьте **Matcher** к вашему правилу, введя или вставив ваш [специфичный для матчера DQL-запрос](/docs/observe/business-observability/bo-event-processing/bo-events-processing-matcher "Это DQL-матчер в событиях классического конвейера."). События, соответствующие вашему правилу, будут назначены в выбранный вами бакет. Если ни одно правило не совпадает, события будут назначены в бакет по умолчанию. Чтобы назначить все ваши события Salesforce в ваш бакет, необходимо использовать матчер, содержащий функцию `matchesValue` и URL Salesforce, как в примере ниже.
+4. Добавьте **Matcher** к вашему правилу, введя или вставив ваш [специфичный для матчера DQL-запрос](../bo-event-processing/bo-events-processing-matcher.md "Это DQL-матчер в событиях классического конвейера."). События, соответствующие вашему правилу, будут назначены в выбранный вами бакет. Если ни одно правило не совпадает, события будут назначены в бакет по умолчанию. Чтобы назначить все ваши события Salesforce в ваш бакет, необходимо использовать матчер, содержащий функцию `matchesValue` и URL Salesforce, как в примере ниже.
 
    ```
    matchesValue(event.provider, "https://environment.my.salesforce.com")
@@ -557,4 +557,4 @@ fetch bizevents
 
 Журналы ошибок можно получить через Dynatrace, перейдя на страницу расширения и выбрав **Status** для каждой конфигурации мониторинга.
 
-Подробные журналы можно получить, создав [диагностику ActiveGate](/docs/ingest-from/dynatrace-activegate/activegate-diagnostics "Узнайте, как запустить диагностику ActiveGate").
+Подробные журналы можно получить, создав [диагностику ActiveGate](../../../ingest-from/dynatrace-activegate/activegate-diagnostics.md "Узнайте, как запустить диагностику ActiveGate").

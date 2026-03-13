@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:15:30.427209
 * 7-min read
 * Updated on Aug 20, 2025
 
-Use these procedures in the Dynatrace web UI to manage Dynatrace [IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies") policies.
+Use these procedures in the Dynatrace web UI to manage Dynatrace [IAM](../manage-user-permissions-policies.md "Working with policies") policies.
 
 API alternative
 
@@ -37,7 +37,7 @@ To let you use policies right away, Dynatrace IAM is shipped with built-in globa
 
 * On the **Policies** page, in the **Source** column, they're all set to `Dynatrace`
 * They're predefined and managed by Dynatrace
-* You can apply a built-in policy by [assigning it to a group](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies") for the whole account or to any environment.
+* You can apply a built-in policy by [assigning it to a group](../manage-user-permissions-policies.md "Working with policies") for the whole account or to any environment.
 * You can inspect themâselect **View policy** in the **Actions** columnâbut you can't edit them
 
 ## Create a policy
@@ -50,7 +50,7 @@ To create a policy
 
 ### Services
 
-For a complete and up-to-date list of Dynatrace services that support permission management via IAM policies, see [IAM policy reference](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+For a complete and up-to-date list of Dynatrace services that support permission management via IAM policies, see [IAM policy reference](advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
 ## Edit a policy
 
@@ -88,4 +88,4 @@ To copy an existing policy
 
 ## Apply a policy to a group
 
-To apply a policy to a group, you need to bind the policy to the group. For details on managing group permissions with IAM, see [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+To apply a policy to a group, you need to bind the policy to the group. For details on managing group permissions with IAM, see [Working with policies](../manage-user-permissions-policies.md "Working with policies").

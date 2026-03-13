@@ -28,11 +28,11 @@ scraped: 2026-03-03T21:30:53.933975
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Настройка контроллера Event-Driven Ansible для интеграции с Dynatrace**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible#setup-eda "Отправка событий в Red Hat Event-Driven Ansible")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Настройка контроллера Event-Driven Ansible для интеграции с Dynatrace**](redhat-even-driven-ansible.md#setup-eda "Отправка событий в Red Hat Event-Driven Ansible")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Предоставление разрешений для Workflows**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible#permissions "Отправка событий в Red Hat Event-Driven Ansible")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Предоставление разрешений для Workflows**](redhat-even-driven-ansible.md#permissions "Отправка событий в Red Hat Event-Driven Ansible")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Настройка подключения к Red Hat Event-Driven Ansible**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible#connection "Отправка событий в Red Hat Event-Driven Ansible")
+**Настройка подключения к Red Hat Event-Driven Ansible**](redhat-even-driven-ansible.md#connection "Отправка событий в Red Hat Event-Driven Ansible")
 
 ### Шаг 1. Конфигурация контроллера Event-Driven Ansible
 
@@ -221,7 +221,7 @@ scraped: 2026-03-03T21:30:53.933975
 * `state:app-states:write`
 * `state:app-states:delete`
 
-Дополнительную информацию об общих пользовательских разрешениях Workflows см. в [Пользовательские разрешения для рабочих процессов](/docs/analyze-explore-automate/workflows/security#user-permission "Руководство по аспектам безопасности автоматизации рабочих процессов в Dynatrace Workflows").
+Дополнительную информацию об общих пользовательских разрешениях Workflows см. в [Пользовательские разрешения для рабочих процессов](../../security.md#user-permission "Руководство по аспектам безопасности автоматизации рабочих процессов в Dynatrace Workflows").
 
 ### Шаг 3. Настройка подключения к Red Hat Ansible
 
@@ -264,7 +264,7 @@ scraped: 2026-03-03T21:30:53.933975
 4. На одном из узлов извлечения информации выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить"), найдите `Ansible` и выберите **Send event to Event-Driven Ansible**.
 5. На каждом из оставшихся узлов извлечения информации выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") и перетащите линию к действию **Send event to Event-Driven Ansible**.
 6. В действии **Send event to Event-Driven Ansible** выберите [подключение](#connection) к вашему **контроллеру Red Hat Event-Driven Ansible**.
-7. Настройте поле данных события по необходимости. Чтобы узнать, как использовать выходные данные узлов извлечения информации, см. [Справочник по выражениям](/docs/analyze-explore-automate/workflows/reference "Ознакомьтесь с выражениями рабочих процессов").
+7. Настройте поле данных события по необходимости. Чтобы узнать, как использовать выходные данные узлов извлечения информации, см. [Справочник по выражениям](../../reference.md "Ознакомьтесь с выражениями рабочих процессов").
 
    Данные события должны быть валидным JSON.
 8. Чтобы протестировать ваш рабочий процесс, выберите **Run**.

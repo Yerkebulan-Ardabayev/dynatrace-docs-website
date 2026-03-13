@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:28:07.516797
 * How-to guide
 * Updated on Jan 22, 2026
 
-Event and session properties let you attach custom-defined key-value pairs to user events and user sessions, using the namespaces [`event_properties`](/docs/semantic-dictionary/model/rum/user-events#event-properties "User events provide deep visibility and insights into experience, behavior, performance, and errors of your customers and end-users in real-time.") and [`session_properties`](/docs/semantic-dictionary/model/rum/user-sessions#user-session-properties "User sessions provide a summary of the user events from the same customer or end-user of your application during a limited period of time.").
+Event and session properties let you attach custom-defined key-value pairs to user events and user sessions, using the namespaces [`event_properties`](../../../../../semantic-dictionary/model/rum/user-events.md#event-properties "User events provide deep visibility and insights into experience, behavior, performance, and errors of your customers and end-users in real-time.") and [`session_properties`](../../../../../semantic-dictionary/model/rum/user-sessions.md#user-session-properties "User sessions provide a summary of the user events from the same customer or end-user of your application during a limited period of time.").
 
 ## Before you start sending event or session properties
 
@@ -31,10 +31,10 @@ Dynatrace automatically prefixes your field name with `event_properties.` or `se
 
 ## How to send properties
 
-Event and session properties can be sent via the [New RUM APIs](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/new-rum-apis "Explore the new Real User Monitoring (RUM) APIs for mobile frontends, including startup configuration, event reporting, error handling, view tracking, and advanced features for Dynatrace on Grail."):
+Event and session properties can be sent via the [New RUM APIs](../new-rum-apis.md "Explore the new Real User Monitoring (RUM) APIs for mobile frontends, including startup configuration, event reporting, error handling, view tracking, and advanced features for Dynatrace on Grail."):
 
-* To add event properties, use [`addEventModifier`](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/new-rum-apis#add-event-modifier "Explore the new Real User Monitoring (RUM) APIs for mobile frontends, including startup configuration, event reporting, error handling, view tracking, and advanced features for Dynatrace on Grail.").
-* To send a session property, use [`sendSessionPropertyEvent`](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/new-rum-apis#send-session-property-event "Explore the new Real User Monitoring (RUM) APIs for mobile frontends, including startup configuration, event reporting, error handling, view tracking, and advanced features for Dynatrace on Grail.").
+* To add event properties, use [`addEventModifier`](../new-rum-apis.md#add-event-modifier "Explore the new Real User Monitoring (RUM) APIs for mobile frontends, including startup configuration, event reporting, error handling, view tracking, and advanced features for Dynatrace on Grail.").
+* To send a session property, use [`sendSessionPropertyEvent`](../new-rum-apis.md#send-session-property-event "Explore the new Real User Monitoring (RUM) APIs for mobile frontends, including startup configuration, event reporting, error handling, view tracking, and advanced features for Dynatrace on Grail.").
 
 ## Limits
 
@@ -59,4 +59,4 @@ Valid examples:
 
 ## Related topics
 
-* [New RUM APIs for mobile frontends](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/new-rum-apis "Explore the new Real User Monitoring (RUM) APIs for mobile frontends, including startup configuration, event reporting, error handling, view tracking, and advanced features for Dynatrace on Grail.")
+* [New RUM APIs for mobile frontends](../new-rum-apis.md "Explore the new Real User Monitoring (RUM) APIs for mobile frontends, including startup configuration, event reporting, error handling, view tracking, and advanced features for Dynatrace on Grail.")

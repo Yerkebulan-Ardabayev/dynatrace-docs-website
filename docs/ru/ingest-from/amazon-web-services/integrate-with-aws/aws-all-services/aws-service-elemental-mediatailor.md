@@ -23,10 +23,10 @@ Dynatrace собирает метрики для нескольких предв
 
 * Для развёртываний Dynatrace SaaS необходим Environment ActiveGate или Multi-environment ActiveGate.
 
-  Для доступа на основе ролей в развёртывании [SaaS](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Интеграция метрик из Amazon CloudWatch.") необходим [Environment ActiveGate](/docs/ingest-from/dynatrace-activegate/installation "Узнайте, как настроить ActiveGate"), установленный на хосте Amazon EC2.
+  Для доступа на основе ролей в развёртывании [SaaS](../cloudwatch-metrics.md#role-based-access "Интеграция метрик из Amazon CloudWatch.") необходим [Environment ActiveGate](../../../dynatrace-activegate/installation.md "Узнайте, как настроить ActiveGate"), установленный на хосте Amazon EC2.
 
 * Dynatrace версии 1.200+
-* Обновлённая [политика мониторинга AWS](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#monitoring-policy "Интеграция метрик из Amazon CloudWatch.") для включения дополнительных AWS сервисов.
+* Обновлённая [политика мониторинга AWS](../cloudwatch-metrics.md#monitoring-policy "Интеграция метрик из Amazon CloudWatch.") для включения дополнительных AWS сервисов.
 
 Для [обновления политики AWS IAMï»¿](https://dt-url.net/8q038eb) используйте JSON ниже, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
@@ -416,7 +416,7 @@ Dynatrace собирает метрики для нескольких предв
 }
 ```
 
-Если вы не хотите добавлять разрешения для всех сервисов, а только для определённых, обратитесь к таблице ниже. В таблице приведены разрешения, необходимые для [всех облачных сервисов AWS](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик."), а также для каждого поддерживаемого сервиса — список дополнительных разрешений, специфичных для него.
+Если вы не хотите добавлять разрешения для всех сервисов, а только для определённых, обратитесь к таблице ниже. В таблице приведены разрешения, необходимые для [всех облачных сервисов AWS](../aws-all-services.md "Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик."), а также для каждого поддерживаемого сервиса — список дополнительных разрешений, специфичных для него.
 
 Разрешения, необходимые для интеграции мониторинга AWS:
 
@@ -688,7 +688,7 @@ Dynatrace собирает метрики для нескольких предв
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. раздел [Включение мониторинга сервиса](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Включение мониторинга AWS в Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. раздел [Включение мониторинга сервиса](../aws-metrics-ingest/aws-enable-service-monitoring.md "Включение мониторинга AWS в Dynatrace.").
 
 ## Просмотр метрик сервиса
 

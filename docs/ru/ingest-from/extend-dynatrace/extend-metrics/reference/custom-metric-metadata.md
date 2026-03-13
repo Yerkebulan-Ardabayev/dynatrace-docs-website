@@ -168,7 +168,7 @@ scraped: 2026-03-06T21:33:32.965519
 
 ## Установка метаданных метрики
 
-Используйте вызов [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Создание или проверка объекта настроек через API Dynatrace.") API настроек для предоставления метаданных вашей метрики. Используйте следующие параметры в теле запроса:
+Используйте вызов [POST an object](../../../../dynatrace-api/environment-api/settings/objects/post-object.md "Создание или проверка объекта настроек через API Dynatrace.") API настроек для предоставления метаданных вашей метрики. Используйте следующие параметры в теле запроса:
 
 | Поле | Значение |
 | --- | --- |
@@ -336,14 +336,14 @@ scraped: 2026-03-06T21:33:32.965519
 
 Кроме того, вы можете:
 
-* Отправить метаданные через [протокол приёма данных](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#metadata "Узнайте, как работает протокол приёма данных для Dynatrace Metrics API.").
-* Настроить метаданные метрики в [браузере метрик](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Просмотр метрик с помощью браузера метрик Dynatrace.").
+* Отправить метаданные через [протокол приёма данных](metric-ingestion-protocol.md#metadata "Узнайте, как работает протокол приёма данных для Dynatrace Metrics API.").
+* Настроить метаданные метрики в [браузере метрик](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Просмотр метрик с помощью браузера метрик Dynatrace.").
 
 ## Просмотр метаданных метрики
 
-Вы можете получить метаданные метрики через вызов [GET metric descriptor](/docs/dynatrace-api/environment-api/metric-v2/get-descriptor "Просмотр дескриптора метрики через Metrics v2 API.") API метрик v2 или через [браузер метрик](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Просмотр метрик с помощью браузера метрик Dynatrace.").
+Вы можете получить метаданные метрики через вызов [GET metric descriptor](../../../../dynatrace-api/environment-api/metric-v2/get-descriptor.md "Просмотр дескриптора метрики через Metrics v2 API.") API метрик v2 или через [браузер метрик](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Просмотр метрик с помощью браузера метрик Dynatrace.").
 
 ## Связанные темы
 
-* [API метрик — POST для загрузки точек данных](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Загрузка пользовательских метрик в Dynatrace через Metrics v2 API.")
-* [API настроек](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает API настроек Dynatrace.")
+* [API метрик — POST для загрузки точек данных](../../../../dynatrace-api/environment-api/metric-v2/post-ingest-metrics.md "Загрузка пользовательских метрик в Dynatrace через Metrics v2 API.")
+* [API настроек](../../../../dynatrace-api/environment-api/settings.md "Узнайте, что предлагает API настроек Dynatrace.")

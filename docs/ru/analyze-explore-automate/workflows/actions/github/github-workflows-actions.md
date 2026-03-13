@@ -25,7 +25,7 @@ scraped: 2026-03-01T21:25:46.175084
 
 | Поле | Описание | Обязательность |
 | --- | --- | --- |
-| **Connection** | [Подключение](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
+| **Connection** | [Подключение](github-workflows-setup.md#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
 | **Owner** | Владелец учётной записи репозитория (частный пользователь или организация). | Обязательно |
 | **Repository** | Имя репозитория без расширения `.git`. Регистр не учитывается. | Обязательно |
 | **File path** | Путь к одному существующему файлу. Путь к директории не поддерживается. | Обязательно |
@@ -45,7 +45,7 @@ scraped: 2026-03-01T21:25:46.175084
 
 | Поле | Описание | Обязательность |
 | --- | --- | --- |
-| **Connection** | [Подключение](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
+| **Connection** | [Подключение](github-workflows-setup.md#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
 | **Owner** | Владелец учётной записи репозитория (частный пользователь или организация). | Обязательно |
 | **Repository** | Имя репозитория без расширения `.git`. Регистр не учитывается. | Обязательно |
 | **Create new branch** | Выберите этот вариант, если хотите внести изменение в новую ветку. | Необязательно |
@@ -70,7 +70,7 @@ scraped: 2026-03-01T21:25:46.175084
 
 | Поле | Описание | Обязательность |
 | --- | --- | --- |
-| **Connection** | [Подключение](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
+| **Connection** | [Подключение](github-workflows-setup.md#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
 | **Owner** | Владелец учётной записи репозитория (частный пользователь или организация). | Обязательно |
 | **Repository** | Имя репозитория без расширения `.git`. Регистр не учитывается. | Обязательно |
 | **Create new branch** | Выберите этот вариант, если хотите выполнить удаление файла в новой ветке. | Необязательно |
@@ -94,7 +94,7 @@ scraped: 2026-03-01T21:25:46.175084
 
 | Поле | Описание | Обязательность |
 | --- | --- | --- |
-| **Connection** | [Подключение](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
+| **Connection** | [Подключение](github-workflows-setup.md#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
 | **Owner** | Владелец учётной записи репозитория (частный пользователь или организация). | Обязательно |
 | **Repository** | Имя репозитория без расширения .git. Регистр не учитывается. | Обязательно |
 | **Source branch** | Исходная ветка, в которой реализованы изменения. | Обязательно |
@@ -116,7 +116,7 @@ scraped: 2026-03-01T21:25:46.175084
 
 | Поле | Описание | Обязательность |
 | --- | --- | --- |
-| **Connection** | [Подключение](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
+| **Connection** | [Подключение](github-workflows-setup.md#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
 | **Owner** | Владелец учётной записи репозитория (частный пользователь или организация). | Обязательно |
 | **Repository** | Имя репозитория без расширения `.git`. Регистр не учитывается. | Обязательно |
 | **Pull request number** | Номер, идентифицирующий pull request. | Обязательно |
@@ -135,7 +135,7 @@ scraped: 2026-03-01T21:25:46.175084
 
 | Поле | Описание | Обязательность |
 | --- | --- | --- |
-| **Connection** | [Подключение](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
+| **Connection** | [Подключение](github-workflows-setup.md#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
 | **Owner** | Владелец учётной записи репозитория (частный пользователь или организация). | Обязательно |
 | **Repository** | Имя репозитория без расширения `.git`. Регистр не учитывается. | Обязательно |
 | **State** | Состояние интересующих pull request (open, closed, all). | Необязательно |
@@ -154,7 +154,7 @@ scraped: 2026-03-01T21:25:46.175084
 
 | Поле | Описание | Обязательность |
 | --- | --- | --- |
-| **Connection** | [Подключение](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
+| **Connection** | [Подключение](github-workflows-setup.md#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
 | **Owner** | Владелец учётной записи репозитория (частный пользователь или организация). | Обязательно |
 | **Repository** | Имя репозитория без расширения `.git`. Регистр не учитывается. | Обязательно |
 | **Pull request number** | Номер, идентифицирующий pull request. | Обязательно |
@@ -174,7 +174,7 @@ scraped: 2026-03-01T21:25:46.175084
 
 | Поле | Описание | Обязательность |
 | --- | --- | --- |
-| **Connection** | [Подключение](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
+| **Connection** | [Подключение](github-workflows-setup.md#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
 | **Owner** | Владелец учётной записи репозитория (частный пользователь или организация). | Обязательно |
 | **Repository** | Имя репозитория без расширения `.git`. Регистр не учитывается. | Обязательно |
 | **Issue Title** | Заголовок создаваемого issue. | Обязательно |
@@ -196,7 +196,7 @@ scraped: 2026-03-01T21:25:46.175084
 
 | Поле | Описание | Обязательность |
 | --- | --- | --- |
-| **Connection** | [Подключение](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
+| **Connection** | [Подключение](github-workflows-setup.md#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
 | **Owner** | Владелец учётной записи репозитория (частный пользователь или организация). | Обязательно |
 | **Repository** | Имя репозитория без расширения `.git`. Регистр не учитывается. | Обязательно |
 | **Issue Number** | Номер обновляемого issue. | Обязательно |
@@ -220,7 +220,7 @@ scraped: 2026-03-01T21:25:46.175084
 
 | Поле | Описание | Обязательность |
 | --- | --- | --- |
-| **Connection** | [Подключение](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
+| **Connection** | [Подключение](github-workflows-setup.md#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
 | **Owner** | Владелец учётной записи репозитория (частный пользователь или организация). | Обязательно |
 | **Repository** | Имя репозитория без расширения `.git`. Регистр не учитывается. | Обязательно |
 | **Issue or pull request ID** | Идентификатор issue или pull request, к которому будет добавлен комментарий. | Обязательно |
@@ -240,7 +240,7 @@ scraped: 2026-03-01T21:25:46.175084
 
 | Поле | Описание | Обязательность |
 | --- | --- | --- |
-| **Connection** | [Подключение](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
+| **Connection** | [Подключение](github-workflows-setup.md#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
 | **Owner** | Владелец учётной записи репозитория (частный пользователь или организация). | Обязательно |
 | **Repository** | Имя репозитория без расширения `.git`. Регистр не учитывается. | Обязательно |
 | **Workflow** | Идентификатор рабочего процесса или имя файла рабочего процесса, включая расширение `.yml` или `.yaml`. | Обязательно |
@@ -261,7 +261,7 @@ scraped: 2026-03-01T21:25:46.175084
 
 | Поле | Описание | Обязательность |
 | --- | --- | --- |
-| **Connection** | [Подключение](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
+| **Connection** | [Подключение](github-workflows-setup.md#connection "Узнайте, как настроить GitHub Connector.") к вашей среде GitHub. | Обязательно |
 | **Owner** | Владелец учётной записи репозитория (частный пользователь или организация). | Обязательно |
 | **Repository** | Имя репозитория без расширения `.git`. Регистр не учитывается. | Обязательно |
 | **Workflow** | Идентификатор рабочего процесса или имя файла рабочего процесса, включая расширение `.yml` или `.yaml`. | Обязательно |
@@ -275,4 +275,4 @@ scraped: 2026-03-01T21:25:46.175084
 
 ## Связанные темы
 
-* [Настройка GitHub Connector](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup "Узнайте, как настроить GitHub Connector.")
+* [Настройка GitHub Connector](github-workflows-setup.md "Узнайте, как настроить GitHub Connector.")

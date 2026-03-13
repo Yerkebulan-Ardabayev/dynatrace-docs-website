@@ -19,7 +19,7 @@ scraped: 2026-03-06T21:25:59.818788
 
 Переход с RUM Classic на новый RUM Experience требует лишь изменения конфигурации. Следующие руководства описывают необходимые шаги.
 
-[Web](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/enable-new-rum-for-web-apps) [Android](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/android/id-01-initial-setup) [iOS](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/ios/id-01-initial-setup) [React Native](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/react-native/id-01-initial-setup) [Flutter](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/flutter/id-01-initial-setup) [![.NET MAUI](https://dt-cdn.net/images/dotnetmaui-aea483621e.svg ".NET MAUI").NET MAUI](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/maui/id-01-initial-setup) 
+[Web](web-frontends/initial-setup/enable-new-rum-for-web-apps.md) [Android](mobile-frontends/android/id-01-initial-setup.md) [iOS](mobile-frontends/ios/id-01-initial-setup.md) [React Native](mobile-frontends/react-native/id-01-initial-setup.md) [Flutter](mobile-frontends/flutter/id-01-initial-setup.md) [![.NET MAUI](https://dt-cdn.net/images/dotnetmaui-aea483621e.svg ".NET MAUI").NET MAUI](mobile-frontends/maui/id-01-initial-setup.md) 
 
 ## Связь между новым RUM Experience и RUM Classic
 
@@ -44,15 +44,15 @@ scraped: 2026-03-06T21:25:59.818788
 
 #### Требования к инфраструктуре
 
-На данный момент новый RUM Experience опирается только на HTTP-заголовки и cookie, уже включённые в [ограничения файервола для RUM Classic](/docs/observe/digital-experience/web-applications/initial-setup/firewall-constraints-for-rum "Убедитесь, что данные мониторинга реальных пользователей проходят через ваш файервол."). Если ваши файерволы и другие компоненты инфраструктуры уже настроены для пропуска этих заголовков и cookie, дальнейшие изменения при включении нового RUM Experience не требуются.
+На данный момент новый RUM Experience опирается только на HTTP-заголовки и cookie, уже включённые в [ограничения файервола для RUM Classic](../web-applications/initial-setup/firewall-constraints-for-rum.md "Убедитесь, что данные мониторинга реальных пользователей проходят через ваш файервол."). Если ваши файерволы и другие компоненты инфраструктуры уже настроены для пропуска этих заголовков и cookie, дальнейшие изменения при включении нового RUM Experience не требуются.
 
 #### Встроенные метрики
 
-Новый RUM Experience предоставляет множество встроенных метрик. Из-за другой базовой модели данных они не являются прямыми эквивалентами [метрик RUM Classic](/docs/analyze-explore-automate/metrics-classic/built-in-metrics#applications "Изучите полный список встроенных метрик Dynatrace."). Тем не менее, для многих метрик есть функциональные замены, перечисленные в [миграции метрик RUM](/docs/analyze-explore-automate/metrics/upgrade/rum-metric-migration "Как классические метрики RUM соотносятся с их логическими эквивалентами в Grail.").
+Новый RUM Experience предоставляет множество встроенных метрик. Из-за другой базовой модели данных они не являются прямыми эквивалентами [метрик RUM Classic](../../../analyze-explore-automate/metrics-classic/built-in-metrics.md#applications "Изучите полный список встроенных метрик Dynatrace."). Тем не менее, для многих метрик есть функциональные замены, перечисленные в [миграции метрик RUM](../../../analyze-explore-automate/metrics/upgrade/rum-metric-migration.md "Как классические метрики RUM соотносятся с их логическими эквивалентами в Grail.").
 
 ## Связанные темы
 
-* [Захват свойств событий и сессий для веб-фронтендов](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/event-and-session-properties "Узнайте, как захватывать свойства событий и сессий для веб-фронтендов.")
-* [Захват свойств событий и сессий для мобильных фронтендов](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/additional-configuration/event-and-session-properties "Узнайте, как захватывать свойства событий и сессий для мобильных фронтендов.")
-* [Ограничения файервола для RUM](/docs/observe/digital-experience/web-applications/initial-setup/firewall-constraints-for-rum "Убедитесь, что данные мониторинга реальных пользователей проходят через ваш файервол.")
-* [Миграция метрик RUM](/docs/analyze-explore-automate/metrics/upgrade/rum-metric-migration "Как классические метрики RUM соотносятся с их логическими эквивалентами в Grail.")
+* [Захват свойств событий и сессий для веб-фронтендов](web-frontends/additional-configuration/event-and-session-properties.md "Узнайте, как захватывать свойства событий и сессий для веб-фронтендов.")
+* [Захват свойств событий и сессий для мобильных фронтендов](mobile-frontends/additional-configuration/event-and-session-properties.md "Узнайте, как захватывать свойства событий и сессий для мобильных фронтендов.")
+* [Ограничения файервола для RUM](../web-applications/initial-setup/firewall-constraints-for-rum.md "Убедитесь, что данные мониторинга реальных пользователей проходят через ваш файервол.")
+* [Миграция метрик RUM](../../../analyze-explore-automate/metrics/upgrade/rum-metric-migration.md "Как классические метрики RUM соотносятся с их логическими эквивалентами в Grail.")

@@ -25,13 +25,13 @@ With detailed contextual logs and insights into requests containing exceptions, 
 
 In Dynatrace, an exception refers to an error or unexpected condition that occurs during code execution. Exceptions may result from programming errors, invalid inputs, resource issues, or external service failures.
 
-Exceptions are captured during a span either by OneAgent or via OpenTelemetry. The new Exception analysis will leverage the semantics defined [Semantic Dictionary: Traces](/docs/semantic-dictionary/model/trace#exception "Get to know the Semantic Dictionary models related to traces."), which are based on [OpenTelemetry semantic conventionsï»¿](https://opentelemetry.io/docs/specs/semconv/exceptions/exceptions-spans/).
+Exceptions are captured during a span either by OneAgent or via OpenTelemetry. The new Exception analysis will leverage the semantics defined [Semantic Dictionary: Traces](../../../semantic-dictionary/model/trace.md#exception "Get to know the Semantic Dictionary models related to traces."), which are based on [OpenTelemetry semantic conventionsï»¿](https://opentelemetry.io/docs/specs/semconv/exceptions/exceptions-spans/).
 
 Exception analysis helps you detect, investigate, and resolve exceptions more effectively. It introduces a user-focused interface with advanced capabilities for both reactive and proactive troubleshooting.
 
 To explore **Exceptions**
 
-1. Go to [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app "Discover the functionalities of the new Distributed Tracing app.").
+1. Go to [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](distributed-tracing-app.md "Discover the functionalities of the new Distributed Tracing app.").
 2. Select the **Exceptions** tab.
 
 This feature is designed for SREs, developers, and DevOps teams who need fast, actionable insights into exception patterns and their impact on services.
@@ -52,7 +52,7 @@ Exception analysis provides:
 
 ### Integration with Dynatrace
 
-* Embedded in [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app "Discover the functionalities of the new Distributed Tracing app.") as a new **Exceptions** tab
+* Embedded in [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](distributed-tracing-app.md "Discover the functionalities of the new Distributed Tracing app.") as a new **Exceptions** tab
 * Integrated into the Dynatrace services-specific drill-down options
 * Replaces the legacy Exceptions Analysis page for DPS customers
 
@@ -69,14 +69,14 @@ Exception analysis is designed to support both contextual and exploratory workfl
 
 To explore **Exceptions** directly
 
-1. Go to [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app "Discover the functionalities of the new Distributed Tracing app.").
+1. Go to [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](distributed-tracing-app.md "Discover the functionalities of the new Distributed Tracing app.").
 2. Select the **Exceptions** tab.
 
 ### Contextual access
 
 To analyze exceptions in context
 
-1. Go to [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](/docs/observe/application-observability/services/services-app "Maintain centralized control over service health, performance, and resources with the Services app.").
+1. Go to [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](../services/services-app.md "Maintain centralized control over service health, performance, and resources with the Services app.").
 2. Turn on **Analyze details**.
 3. Select the **Exceptions** tab.
 
@@ -84,7 +84,7 @@ To analyze exceptions in context
 
 To get started troubleshooting service exceptions
 
-1. Go to [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app "Discover the functionalities of the new Distributed Tracing app.") and select the **Exceptions** tab.
+1. Go to [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](distributed-tracing-app.md "Discover the functionalities of the new Distributed Tracing app.") and select the **Exceptions** tab.
 2. Apply filters for service, endpoint, and timeframe.
 3. Select an exception from the table to highlight its trend in the chart and additional details for further analysis.
 4. For the selected exception, the screen provides aggregated stack traces. These stack traces are grouped to show common execution paths with their contribution, making it easier to understand what they have in common and where they deviate from each other.

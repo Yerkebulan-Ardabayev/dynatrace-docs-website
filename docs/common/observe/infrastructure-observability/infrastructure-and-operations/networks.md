@@ -22,7 +22,7 @@ The  **Network devices** view provides different perspectives for viewing your n
 The **Health** perspective includes the following default columns:
 
 * **Network device**: The name or identifier of the network device. Select the name for a comprehensive, full-page view with detailed metadata and metrics.
-* **Network area**: The logical grouping of network devices. Network areas are configured in the [SNMP Autodiscovery extension](/docs/observe/infrastructure-observability/extensions/snmp-autodiscovery "Scan through your subnets and build an inventory of SNMP-enabled network devices.").
+* **Network area**: The logical grouping of network devices. Network areas are configured in the [SNMP Autodiscovery extension](../extensions/snmp-autodiscovery.md "Scan through your subnets and build an inventory of SNMP-enabled network devices.").
 * **Problems**: Lists any problems detected by Davis AI. Select a problem to access affected entities and investigate specific issues.
 * **Reachability**: Indicates whether the device is reachable and responsive over the network.
 * **Uptime**: The duration the device has been operational since the last restart.

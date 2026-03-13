@@ -25,14 +25,14 @@ scraped: 2026-03-06T21:32:27.989679
 
 Для ознакомления с метриками, собираемыми для каждого из сервисов AWS, см.:
 
-* [Сервисы AWS с включённым мониторингом по умолчанию и их метрики](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/default-aws-metrics "Список классических (ранее «встроенных») метрик, которые Dynatrace собирает по умолчанию для мониторинга AWS.")
-* [Облачные сервисы AWS](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик.")
+* [Сервисы AWS с включённым мониторингом по умолчанию и их метрики](cloudwatch-metrics/default-aws-metrics.md "Список классических (ранее «встроенных») метрик, которые Dynatrace собирает по умолчанию для мониторинга AWS.")
+* [Облачные сервисы AWS](aws-all-services.md "Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик.")
 
 Мониторинг инфраструктуры Amazon Web Services предоставляет метрики из CloudWatch, данные об инфраструктуре, доступные через публичный AWS API, и конкретные события. Данные собираются с пятиминутными интервалами.
 
 ## Стоимость мониторинга
 
-* Каждый сервис, отслеживаемый Dynatrace через CloudWatch, а также обработка и анализ журналов потребляют [DDU](/docs/license/monitoring-consumption-classic/davis-data-units "Понять, как рассчитывается потребление мониторинга Dynatrace на основе единиц данных Davis (DDU).").
+* Каждый сервис, отслеживаемый Dynatrace через CloudWatch, а также обработка и анализ журналов потребляют [DDU](../../../license/monitoring-consumption-classic/davis-data-units.md "Понять, как рассчитывается потребление мониторинга Dynatrace на основе единиц данных Davis (DDU).").
 * Amazon может взимать дополнительную плату за запросы метрик CloudWatch. Подробности о дополнительных расходах см. в [онлайн-документации по ценообразованию Amazon CloudWatch](https://aws.amazon.com/cloudwatch/pricing/).
 
 ## Предварительные требования для мониторинга
@@ -47,7 +47,7 @@ scraped: 2026-03-06T21:32:27.989679
 * Они входят в разрешения **Change monitoring settings**.
 * Доступ только для чтения не поддерживается.
 
-Подробности об управлении и настройке разрешений см. в разделе [Управление разрешениями пользователей с помощью ролей](/docs/manage/identity-access-management/permission-management/role-based-permissions "Разрешения на основе ролей").
+Подробности об управлении и настройке разрешений см. в разделе [Управление разрешениями пользователей с помощью ролей](../../../manage/identity-access-management/permission-management/role-based-permissions.md "Разрешения на основе ролей").
 
 2. Разрешение ActiveGate на доступ к URL
 
@@ -59,12 +59,12 @@ scraped: 2026-03-06T21:32:27.989679
 
 ActiveGate, способный осуществлять мониторинг вашей учётной записи AWS для классических (встроенных) поддерживаемых сервисов, уже предоставлен и доступен в учётной записи Dynatrace AWS (только для сред SaaS, размещённых в AWS).
 
-Однако для мониторинга конкретных нестандартных облачных сервисов AWS или если ваша учётная запись AWS превышает 2000 ресурсов AWS, необходимо установить и настроить Environment ActiveGate. Следуйте [руководству по установке ActiveGate](/docs/ingest-from/dynatrace-activegate/installation "Узнайте, как настроить ActiveGate") и продолжите выполнение этого руководства после завершения.
+Однако для мониторинга конкретных нестандартных облачных сервисов AWS или если ваша учётная запись AWS превышает 2000 ресурсов AWS, необходимо установить и настроить Environment ActiveGate. Следуйте [руководству по установке ActiveGate](../../dynatrace-activegate/installation.md "Узнайте, как настроить ActiveGate") и продолжите выполнение этого руководства после завершения.
 
 Необходимо установить и настроить Environment ActiveGate, если вы хотите отслеживать одно из следующего или оба:
 
 * Более 2000 ресурсов AWS (экземпляров сервисов AWS)
-* [Нестандартные облачные сервисы AWS](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services#aws-non-default "Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик.")
+* [Нестандартные облачные сервисы AWS](aws-all-services.md#aws-non-default "Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик.")
 
 #### Разрешение ActiveGate на доступ к URL AWS
 
@@ -219,9 +219,9 @@ https://sts.amazonaws.com/
 
 Если проблемы с прокси сохраняются, см.:
 
-* [Прокси для ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate "Узнайте, как настроить свойства ActiveGate для работы с прокси.")
-* [Доверенные корневые сертификаты для ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-trusted-root-certificates-on-activegate "Узнайте, как указать пользовательский файл хранилища доверия, объединяемый с корневыми сертификатами Java и используемый по умолчанию для всех соединений.")
-* [Пользовательский SSL-сертификат для ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate "Узнайте, как настроить SSL-сертификат в ActiveGate.")
+* [Прокси для ActiveGate](../../dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate.md "Узнайте, как настроить свойства ActiveGate для работы с прокси.")
+* [Доверенные корневые сертификаты для ActiveGate](../../dynatrace-activegate/configuration/configure-trusted-root-certificates-on-activegate.md "Узнайте, как указать пользовательский файл хранилища доверия, объединяемый с корневыми сертификатами Java и используемый по умолчанию для всех соединений.")
+* [Пользовательский SSL-сертификат для ActiveGate](../../dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate.md "Узнайте, как настроить SSL-сертификат в ActiveGate.")
 
 «Ошибка связи.»
 
@@ -232,7 +232,7 @@ https://sts.amazonaws.com/
 Для выполнения этих шагов необходимы права администратора AWS.
 
 Политика мониторинга AWS определяет минимальный набор разрешений, который необходимо предоставить Dynatrace для мониторинга сервисов, работающих в вашей учётной записи AWS. Создайте её один раз и используйте каждый раз при предоставлении Dynatrace доступа к вашей учётной записи AWS.
-Если вы не хотите добавлять разрешения для всех сервисов, а хотите выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. Таблица содержит набор разрешений, необходимых для [всех облачных сервисов AWS](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик."), а также список дополнительных разрешений, специфичных для каждого сервиса.
+Если вы не хотите добавлять разрешения для всех сервисов, а хотите выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. Таблица содержит набор разрешений, необходимых для [всех облачных сервисов AWS](aws-all-services.md "Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик."), а также список дополнительных разрешений, специфичных для каждого сервиса.
 
 Разрешения, необходимые для интеграции мониторинга AWS:
 
@@ -427,7 +427,7 @@ Dynatrace SaaS требует доступа к вашей учётной зап
   + Специальная [роль мониторинга](#create-role-dt) для Dynatrace в вашей учётной записи AWS.
   + Прикреплённая политика, определяющая разрешения аутентификации Dynatrace в вашей среде AWS.
 
-Для мониторинга нескольких учётных записей используйте `role_based_access_AG_account_multiple_monitoring_roles_template.yml` и повторяйте шаги [Создание роли для ActiveGate в учётной записи, в которой размещён ActiveGate](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#create-role-dt "Интеграция метрик из Amazon CloudWatch.") для каждой отслеживаемой учётной записи.
+Для мониторинга нескольких учётных записей используйте `role_based_access_AG_account_multiple_monitoring_roles_template.yml` и повторяйте шаги [Создание роли для ActiveGate в учётной записи, в которой размещён ActiveGate](cloudwatch-metrics.md#create-role-dt "Интеграция метрик из Amazon CloudWatch.") для каждой отслеживаемой учётной записи.
 
 Вам понадобятся:
 
@@ -976,11 +976,11 @@ aws cloudformation create-stack \
 
 1. Откройте раздел ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
 2. Выберите вкладку **Integration manager**.
-3. Узнайте, как перемещаться и подключить новый экземпляр через [Integration manager](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app#integration-manager "Мониторинг всех облачных платформ одновременно.").
+3. Узнайте, как перемещаться и подключить новый экземпляр через [Integration manager](../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md#integration-manager "Мониторинг всех облачных платформ одновременно.").
 
 2. Облачные сервисы AWS, отслеживаемые по умолчанию
 
-После подключения Dynatrace к вашей среде AWS он немедленно начинает отслеживать [выбранные сервисы AWS](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services#aws-default "Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик."). В разделе [Классические (ранее «встроенные») метрики AWS](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/default-aws-metrics "Список классических (ранее «встроенных») метрик, которые Dynatrace собирает по умолчанию для мониторинга AWS.") перечислены метрики облачных сервисов AWS, отслеживаемых по умолчанию.
+После подключения Dynatrace к вашей среде AWS он немедленно начинает отслеживать [выбранные сервисы AWS](aws-all-services.md#aws-default "Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик."). В разделе [Классические (ранее «встроенные») метрики AWS](cloudwatch-metrics/default-aws-metrics.md "Список классических (ранее «встроенных») метрик, которые Dynatrace собирает по умолчанию для мониторинга AWS.") перечислены метрики облачных сервисов AWS, отслеживаемых по умолчанию.
 
 3. Мониторинг других сервисов AWS
 
@@ -1012,7 +1012,7 @@ aws cloudformation create-stack \
 
 Список облачных сервисов AWS и собираемых метрик
 
-Полный список облачных сервисов AWS и метрик, собираемых для каждого из них, см. в разделе [Все облачные сервисы AWS](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик.").
+Полный список облачных сервисов AWS и метрик, собираемых для каждого из них, см. в разделе [Все облачные сервисы AWS](aws-all-services.md "Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик.").
 
 Также можно просмотреть список поддерживаемых сервисов AWS в Dynatrace Hub прямо в продукте (поиск **AWS**) или в [веб-версии Dynatrace Hub](https://www.dynatrace.com/hub/?query=aws).
 
@@ -1037,23 +1037,23 @@ aws cloudformation create-stack \
 1. Перейдите в раздел ![AWS](https://dt-cdn.net/images/aws-512-eed109b7f1.png "AWS") **AWS Classic**.
 2. Выберите подключение, для которого хотите просмотреть обзор инфраструктуры AWS.
 
-Вы также можете создать собственный дашборд на основе метрик, собранных для ваших экземпляров AWS. Подробности о создании дашбордов см. в разделе [Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Узнайте, как создавать дашборды Dynatrace Classic, управлять ими и использовать их.").
+Вы также можете создать собственный дашборд на основе метрик, собранных для ваших экземпляров AWS. Подробности о создании дашбордов см. в разделе [Dashboards Classic](../../../analyze-explore-automate/dashboards-classic.md "Узнайте, как создавать дашборды Dynatrace Classic, управлять ими и использовать их.").
 
 Виртуальные машины, контейнеры и глубокий мониторинг кода с Dynatrace OneAgent
 
-Dynatrace OneAgent предлагает непревзойдённую глубину анализа хостов, контейнеров и кода. Подробности см. в разделе [Настройка Dynatrace на Amazon Web Services](/docs/ingest-from/amazon-web-services "Настройка и конфигурация мониторинга для Amazon Web Services.").
+Dynatrace OneAgent предлагает непревзойдённую глубину анализа хостов, контейнеров и кода. Подробности см. в разделе [Настройка Dynatrace на Amazon Web Services](../../amazon-web-services.md "Настройка и конфигурация мониторинга для Amazon Web Services.").
 
 Дополнительная настройка уведомлений и оповещений
 
 После настройки мониторинга AWS вы можете:
 
-* [Настроить события метрик для оповещений](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-set-up-metric-events-for-alerting "Настройка и конфигурация событий метрик для оповещений."). Это позволяет создавать, включать, отключать и настраивать рекомендуемые правила оповещений.
-* [Ограничить вызовы API к AWS с помощью тегов](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/limit-api-calls-to-aws-using-tags "Добавление и настройка тегов AWS для ограничения ресурсов AWS."). По умолчанию Dynatrace отслеживает все сервисы Amazon Web Services, указанные в вашей политике разрешений. Дополнительно можно использовать теги для ограничения ресурсов AWS, отслеживаемых Dynatrace.
+* [Настроить события метрик для оповещений](cloudwatch-metrics/aws-set-up-metric-events-for-alerting.md "Настройка и конфигурация событий метрик для оповещений."). Это позволяет создавать, включать, отключать и настраивать рекомендуемые правила оповещений.
+* [Ограничить вызовы API к AWS с помощью тегов](cloudwatch-metrics/limit-api-calls-to-aws-using-tags.md "Добавление и настройка тегов AWS для ограничения ресурсов AWS."). По умолчанию Dynatrace отслеживает все сервисы Amazon Web Services, указанные в вашей политике разрешений. Дополнительно можно использовать теги для ограничения ресурсов AWS, отслеживаемых Dynatrace.
 
 Интеграция CloudWatch Metric Streams
 
-Этот метод мониторинга не требует ActiveGate. Интеграция Dynatrace с Amazon CloudWatch Metric Streams обеспечивает простой и безопасный способ приёма метрик AWS. Amazon CloudWatch Metric Streams позволяет передавать все метрики, формируемые в заданном регионе AWS, через Kinesis Firehose в Dynatrace API. Подробности см. в разделе [Amazon CloudWatch Metric Streams](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams "Приём метрик из ваших учётных записей AWS с помощью Amazon CloudWatch Metric Streams.").
+Этот метод мониторинга не требует ActiveGate. Интеграция Dynatrace с Amazon CloudWatch Metric Streams обеспечивает простой и безопасный способ приёма метрик AWS. Amazon CloudWatch Metric Streams позволяет передавать все метрики, формируемые в заданном регионе AWS, через Kinesis Firehose в Dynatrace API. Подробности см. в разделе [Amazon CloudWatch Metric Streams](aws-metrics-ingest/cloudwatch-metric-streams.md "Приём метрик из ваших учётных записей AWS с помощью Amazon CloudWatch Metric Streams.").
 
 OpenTelemetry и распределённая трассировка
 
-Также возможна [трассировка функций AWS Lambda .NET Core с помощью OpenTelemetry .NET](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration/lambda-otel-native "Узнайте, как использовать OpenTelemetry для трассировки функций AWS Lambda .NET Core.").
+Также возможна [трассировка функций AWS Lambda .NET Core с помощью OpenTelemetry .NET](../integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration/lambda-otel-native.md "Узнайте, как использовать OpenTelemetry для трассировки функций AWS Lambda .NET Core.").

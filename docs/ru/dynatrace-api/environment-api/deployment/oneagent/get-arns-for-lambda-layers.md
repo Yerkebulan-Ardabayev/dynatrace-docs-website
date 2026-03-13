@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:32:18.857315
 * Справочник
 * Опубликовано 29 июл. 2022 г.
 
-Этот API предназначен для использования с последней реализацией AWS Lambda. Подробнее см. в разделе [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "Возможности AWS Lambda и варианты интеграции").
+Этот API предназначен для использования с последней реализацией AWS Lambda. Подробнее см. в разделе [AWS Lambda](../../../../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration.md "Возможности AWS Lambda и варианты интеграции").
 
 Получение Amazon Resource Names (ARN) последней версии OneAgent для слоёв AWS Lambda для поддерживаемых сред выполнения AWS Lambda.
 
@@ -28,7 +28,7 @@ scraped: 2026-03-06T21:32:18.857315
 
 Для выполнения этого запроса необходим токен доступа с областью видимости `InstallerDownload`.
 
-Информацию о том, как получить и использовать токен, см. в разделе [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Информацию о том, как получить и использовать токен, см. в разделе [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 

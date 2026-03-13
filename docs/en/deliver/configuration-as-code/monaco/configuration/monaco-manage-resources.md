@@ -13,11 +13,11 @@ scraped: 2026-03-01T21:24:34.545844
 * 8-min read
 * Published Jul 22, 2025
 
-To run Monaco, you need to define the [deployment manifest](/docs/deliver/configuration-as-code/monaco/monaco-concepts#deploy-manifest "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration."), [project directories](/docs/deliver/configuration-as-code/monaco/monaco-concepts#projects "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration."), and [resource configuration](/docs/deliver/configuration-as-code/monaco/monaco-concepts#resource-configuration "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration.") so that you can manage the resources.
+To run Monaco, you need to define the [deployment manifest](../monaco-concepts.md#deploy-manifest "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration."), [project directories](../monaco-concepts.md#projects "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration."), and [resource configuration](../monaco-concepts.md#resource-configuration "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration.") so that you can manage the resources.
 
 ## Deployment manifest
 
-The [deployment manifest](/docs/deliver/configuration-as-code/monaco/monaco-concepts#deploy-manifest "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration.") file has three top-level keys: `manifestVersion`, `projects`, and `environmentGroups`.
+The [deployment manifest](../monaco-concepts.md#deploy-manifest "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration.") file has three top-level keys: `manifestVersion`, `projects`, and `environmentGroups`.
 
 ### Sample manifest.yaml
 
@@ -217,7 +217,7 @@ The release notes will contain details if the manifest is extended, of if newer 
 
 ### projects
 
-All entries under [`projects`](/docs/deliver/configuration-as-code/monaco/monaco-concepts#projects "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration.") specify the projects to deploy by Monaco.
+All entries under [`projects`](../monaco-concepts.md#projects "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration.") specify the projects to deploy by Monaco.
 To specify a project's:
 
 * Name, provide the `name` key.
@@ -305,7 +305,7 @@ Always define a `token` specifying the access token for general configuration an
 
 Access tokens for the Dynatrace Monaco CLI always require at least the "Access problem and event feed, metrics, and topology (`DataExport`)âAPI v1" permission to query general information about your environment.
 
-You need to configure each available configuration type with specific permissions. For more detailed information, see [Monaco API support and access permission handling](/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling "This is a list of the Monaco API support and access permission handling.").
+You need to configure each available configuration type with specific permissions. For more detailed information, see [Monaco API support and access permission handling](../monaco-api-support-and-access-handling.md "This is a list of the Monaco API support and access permission handling.").
 
 In most cases, you require a token with at least these permissions:
 
@@ -315,7 +315,7 @@ In most cases, you require a token with at least these permissions:
 * "Read settings (`settings.read`)âAPI v2"
 * "Write settings (`settings.write`)âAPI v2"
 
-For general information on access token authentication, see [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+For general information on access token authentication, see [Dynatrace API - Tokens and authentication](../../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
 
 You need an OAuth section specifying the OAuth client credentials.
 
@@ -328,7 +328,7 @@ Generally, OAuth client credentials for the Dynatrace Monaco CLI should have at 
 
 #### projects
 
-The [`projects`](/docs/deliver/configuration-as-code/monaco/monaco-concepts#projects "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration.") are directories used to logically group API configurations together.
+The [`projects`](../monaco-concepts.md#projects "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration.") are directories used to logically group API configurations together.
 An example of a project could be a service where all configurations regarding this service are present in the folder.
 Projects can consist of multiple files and directories.
 
@@ -340,7 +340,7 @@ The configuration folders finally contain the YAML files specifying what resourc
 
 The configuration files consist of
 
-* [configs YAML file](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas "The Monaco configuration YAML file is structure."), defining parameters, dependencies, name, and template
+* [configs YAML file](yaml-configuration-saas.md "The Monaco configuration YAML file is structure."), defining parameters, dependencies, name, and template
 * JSON template file
 
 The Dynatrace Monaco CLI uses Go templates, which allow you to define more complex templates. Still, we recommend keeping templates simpleâreferencing variables via `{{ .PARAMETER_NAME }}` should be sufficient.

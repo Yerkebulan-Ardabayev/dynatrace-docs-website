@@ -153,7 +153,7 @@ scraped: 2026-03-05T21:38:08.442249
 
 ### Лицензирование и стоимость
 
-Использование расширения бесплатно. Оплата взимается только за данные, которые расширение загружает. Детали потребления лицензии зависят от используемой модели лицензирования. Это может быть [классическое лицензирование Dynatrace](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing.") или модель [Dynatrace Platform Subscription (DPS)](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+Использование расширения бесплатно. Оплата взимается только за данные, которые расширение загружает. Детали потребления лицензии зависят от используемой модели лицензирования. Это может быть [классическое лицензирование Dynatrace](../../../license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing.") или модель [Dynatrace Platform Subscription (DPS)](../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
 
 #### Метрики
 
@@ -197,7 +197,7 @@ scraped: 2026-03-05T21:38:08.442249
 
 #### Классическое лицензирование
 
-В модели классического лицензирования Dynatrace загрузка метрик потребляет [Davis Data Units (DDU)](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") со скоростью 0,001 DDU за точку данных метрики.
+В модели классического лицензирования Dynatrace загрузка метрик потребляет [Davis Data Units (DDU)](../../../license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") со скоростью 0,001 DDU за точку данных метрики.
 Чтобы оценить годовое потребление DDU, возьмите результат приведённой выше формулы для годовых точек данных и умножьте его на 0,001.
 
 ## Часто задаваемые вопросы

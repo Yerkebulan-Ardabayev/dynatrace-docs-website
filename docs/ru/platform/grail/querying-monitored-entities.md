@@ -205,7 +205,7 @@ describe dt.entity.service_instance
 * Большинство полей сущностей имеют те же имена, что и в API v2 среды (например, gcpZone и oneAgentCustomName).
 * Первая и последняя метки наблюдения сущности хранятся в поле lifetime, представленном как тип timeframe, состоящий из начальной и конечной метки времени. Время жизни сущности должно пересекаться с временным диапазоном запроса, чтобы сущность была включена в результаты запроса.
 * Несколько имён сущностей имеют префикс 'entity.' (например, `entity.conditional_name`)
-* Связи возвращаются как записи. Подробнее о них см. в разделе [связи сущностей](/docs/semantic-dictionary/model/dt-entities#entity-relationships "Познакомьтесь с моделями Semantic Dictionary, связанными с топологией.").
+* Связи возвращаются как записи. Подробнее о них см. в разделе [связи сущностей](../../semantic-dictionary/model/dt-entities.md#entity-relationships "Познакомьтесь с моделями Semantic Dictionary, связанными с топологией.").
 
 Команда `describe` является ценным инструментом для изучения схемы данных Grail.
 
@@ -267,7 +267,7 @@ fetch dt.entity.service
 
 ### Фильтрация по связям
 
-Когда ваш запрос оценивает связи, мы рекомендуем использовать функцию [`classicEntitySelector`](/docs/platform/grail/dynatrace-query-language/functions/general-functions#classic-entity-selector "Список общих функций DQL.") вместо нативных DQL-запросов.
+Когда ваш запрос оценивает связи, мы рекомендуем использовать функцию [`classicEntitySelector`](dynatrace-query-language/functions/general-functions.md#classic-entity-selector "Список общих функций DQL.") вместо нативных DQL-запросов.
 
 В следующих примерах нативный DQL-запрос будет медленнее и может давать неполные результаты по сравнению с запросом `classicEntitySelector`:
 
@@ -382,8 +382,8 @@ fetch dt.entity.host
 
 ## Связанные темы
 
-* [Что такое Dynatrace Grail?](/docs/platform/grail/dynatrace-grail "Grail — это озеро данных Dynatrace, разработанное специально для данных наблюдаемости и безопасности, которое выступает единым унифицированным хранилищем для логов, метрик, трассировок, событий и т.д.")
-* [Команды DQL](/docs/platform/grail/dynatrace-query-language/commands "Список команд DQL.")
-* [Справочник политик IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Полный справочник политик IAM и соответствующих условий для всех сервисов Dynatrace.")
-* [Разрешения в Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Узнайте, как назначить разрешения для корзин и таблиц в Grail.")
-* [API среды v2 — селектор сущностей](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Настройте селектор сущностей для конечных точек API среды.")
+* [Что такое Dynatrace Grail?](dynatrace-grail.md "Grail — это озеро данных Dynatrace, разработанное специально для данных наблюдаемости и безопасности, которое выступает единым унифицированным хранилищем для логов, метрик, трассировок, событий и т.д.")
+* [Команды DQL](dynatrace-query-language/commands.md "Список команд DQL.")
+* [Справочник политик IAM](../../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md "Полный справочник политик IAM и соответствующих условий для всех сервисов Dynatrace.")
+* [Разрешения в Grail](organize-data/assign-permissions-in-grail.md "Узнайте, как назначить разрешения для корзин и таблиц в Grail.")
+* [API среды v2 — селектор сущностей](../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Настройте селектор сущностей для конечных точек API среды.")

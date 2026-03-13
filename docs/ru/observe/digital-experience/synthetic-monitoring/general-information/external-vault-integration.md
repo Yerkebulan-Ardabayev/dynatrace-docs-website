@@ -13,11 +13,11 @@ scraped: 2026-03-06T21:27:16.073735
 * 22-min read
 * Updated on Jan 17, 2024
 
-Учётные данные Synthetic Monitoring типа [имя пользователя-пароль](/docs/manage/credential-vault#uid-password "Хранение и управление учётными данными в хранилище учётных данных.") и [токен](/docs/manage/credential-vault#token "Хранение и управление учётными данными в хранилище учётных данных.") в [хранилище учётных данных](/docs/manage/credential-vault "Хранение и управление учётными данными в хранилище учётных данных.") Dynatrace могут быть синхронизированы с внешним хранилищем — [Azure Key Vault](#azure-key-vault), [HashiCorp Vault](#hashicorp) или [CyberArk Vault](#cyberark) (только учётные данные типа имя пользователя-пароль). Синхронизированные учётные данные содержат ключи внешних пар ключ-значение, которые хранят необходимые значения.
+Учётные данные Synthetic Monitoring типа [имя пользователя-пароль](../../../../../common/manage/credential-vault.md#uid-password "Хранение и управление учётными данными в хранилище учётных данных.") и [токен](../../../../../common/manage/credential-vault.md#token "Хранение и управление учётными данными в хранилище учётных данных.") в [хранилище учётных данных](../../../../../common/manage/credential-vault.md "Хранение и управление учётными данными в хранилище учётных данных.") Dynatrace могут быть синхронизированы с внешним хранилищем — [Azure Key Vault](#azure-key-vault), [HashiCorp Vault](#hashicorp) или [CyberArk Vault](#cyberark) (только учётные данные типа имя пользователя-пароль). Синхронизированные учётные данные содержат ключи внешних пар ключ-значение, которые хранят необходимые значения.
 
-При настройке синхронизированных учётных данных в хранилище учётных данных Dynatrace автоматически создаёт [HTTP-мониторы](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Узнайте, как настроить HTTP-монитор для проверки производительности и доступности вашего сайта.") специально для целей синхронизации. Вы также можете использовать методы `api.saveCredential()` или `api.saveToken()` в [пре- и пост-скриптах выполнения](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Узнайте, как применять пре- и пост-скрипты к вашим запросам") для создания собственных мониторов синхронизации.
+При настройке синхронизированных учётных данных в хранилище учётных данных Dynatrace автоматически создаёт [HTTP-мониторы](../http-monitors-classic/create-an-http-monitor-classic.md "Узнайте, как настроить HTTP-монитор для проверки производительности и доступности вашего сайта.") специально для целей синхронизации. Вы также можете использовать методы `api.saveCredential()` или `api.saveToken()` в [пре- и пост-скриптах выполнения](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Узнайте, как применять пре- и пост-скрипты к вашим запросам") для создания собственных мониторов синхронизации.
 
-Автоматически созданные мониторы синхронизации именуются по идентификатору учётных данных синхронизированных учётных данных и по умолчанию выполняются ежечасно из [публичной синтетической локации](/docs/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Узнайте обо всех доступных публичных локациях Synthetic Monitoring.") Amazon US East (Северная Вирджиния). Обратите внимание, что тела запросов и ответов, а также заголовки мониторов синхронизации автоматически скрываются из деталей выполнения (**Анализ деталей выполнения**).
+Автоматически созданные мониторы синхронизации именуются по идентификатору учётных данных синхронизированных учётных данных и по умолчанию выполняются ежечасно из [публичной синтетической локации](public-synthetic-locations.md "Узнайте обо всех доступных публичных локациях Synthetic Monitoring.") Amazon US East (Северная Вирджиния). Обратите внимание, что тела запросов и ответов, а также заголовки мониторов синхронизации автоматически скрываются из деталей выполнения (**Анализ деталей выполнения**).
 
 Другие синтетические мониторы могут вызывать и использовать эти синхронизированные учётные данные для тестирования эндпоинтов API и веб-сайтов. Мониторы, которые вызывают эти учётные данные, используют синхронизированные значения, полученные из внешних хранилищ. Частота синхронизации определяет, как часто эти учётные данные ротируются в синтетических мониторах, которые их вызывают.
 
@@ -29,7 +29,7 @@ scraped: 2026-03-06T21:27:16.073735
 
 ### Предварительные требования
 
-Перед настройкой учётных данных, синхронизированных с Azure Key Vault, необходимо определить требуемый **идентификатор клиента (приложения)** и **секрет клиента** как учётные данные типа [токен](/docs/manage/credential-vault#token "Хранение и управление учётными данными в хранилище учётных данных."), хранящиеся в [хранилище учётных данных](/docs/manage/credential-vault "Хранение и управление учётными данными в хранилище учётных данных.") Dynatrace. Мы рекомендуем называть такие вспомогательные токены так, чтобы их было легко идентифицировать как сопутствующие учётные данные для синхронизации. Если ваше хранилище не содержит токенов, к которым у вас есть доступ, вы увидите предупреждение.
+Перед настройкой учётных данных, синхронизированных с Azure Key Vault, необходимо определить требуемый **идентификатор клиента (приложения)** и **секрет клиента** как учётные данные типа [токен](../../../../../common/manage/credential-vault.md#token "Хранение и управление учётными данными в хранилище учётных данных."), хранящиеся в [хранилище учётных данных](../../../../../common/manage/credential-vault.md "Хранение и управление учётными данными в хранилище учётных данных.") Dynatrace. Мы рекомендуем называть такие вспомогательные токены так, чтобы их было легко идентифицировать как сопутствующие учётные данные для синхронизации. Если ваше хранилище не содержит токенов, к которым у вас есть доступ, вы увидите предупреждение.
 
 ### Настройка синхронизированных учётных данных
 
@@ -52,7 +52,7 @@ scraped: 2026-03-06T21:27:16.073735
    * В **Имя секрета для токена** введите имя ключа Azure Key Vault, сопоставленного со значением токена; не вводите фактическое значение токена.
 9. Выберите **Локацию для синхронизации** — вы можете выбрать любую публичную или приватную синтетическую локацию для выполнения [монитора синхронизации](#azure-monitor). Вы можете искать локацию, введя имя локации в поле.
 10. Необязательно: укажите **Описание** для учётных данных.
-11. По умолчанию для учётных данных установлен **Доступ только для владельца**. (Подробнее о [владении учётными данными](/docs/manage/credential-vault#owner-shared-public "Хранение и управление учётными данными в хранилище учётных данных.").)
+11. По умолчанию для учётных данных установлен **Доступ только для владельца**. (Подробнее о [владении учётными данными](../../../../../common/manage/credential-vault.md#owner-shared-public "Хранение и управление учётными данными в хранилище учётных данных.").)
 12. **Сохраните** ваши учётные данные.
 
 См. также [Лучшие практики](#best-practices) и что происходит при [редактировании или удалении синхронизированных и сопутствующих учётных данных](#edit-delete-credential).
@@ -61,7 +61,7 @@ scraped: 2026-03-06T21:27:16.073735
 
 ### Мониторы синхронизации Azure Key Vault
 
-Когда вы [настроили синхронизированные учётные данные типа имя пользователя-пароль или токен](#azure-set-up), Dynatrace автоматически создаёт и выполняет [HTTP-монитор](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Узнайте, как настроить HTTP-монитор для проверки производительности и доступности вашего сайта."), который синхронизирует учётные данные с Azure Key Vault. Этот монитор автоматически связывается с синхронизированными учётными данными типа имя пользователя-пароль или токен.
+Когда вы [настроили синхронизированные учётные данные типа имя пользователя-пароль или токен](#azure-set-up), Dynatrace автоматически создаёт и выполняет [HTTP-монитор](../http-monitors-classic/create-an-http-monitor-classic.md "Узнайте, как настроить HTTP-монитор для проверки производительности и доступности вашего сайта."), который синхронизирует учётные данные с Azure Key Vault. Этот монитор автоматически связывается с синхронизированными учётными данными типа имя пользователя-пароль или токен.
 
 См. также [Лучшие практики](#best-practices) и что происходит при [редактировании или удалении учётных данных синхронизации](#edit-delete-credential).
 
@@ -77,10 +77,10 @@ scraped: 2026-03-06T21:27:16.073735
    * URL запроса ссылается на идентификатор арендатора как атрибут [синхронизированных учётных данных](#azure-set-up), определённых выше; идентификатор арендатора не отображается.
 
      ![URL запроса 1 Azure KV](https://dt-cdn.net/images/cvazurerequest1url-1446-eed3251a4d.png)
-   * Идентификатор клиента и секрет клиента, ссылающиеся как атрибуты синхронизированных учётных данных, передаются как пары ключ-значение в [теле запроса](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#request-body "Узнайте о настройке HTTP-мониторов."); идентификатор клиента и секрет клиента не отображаются.
+   * Идентификатор клиента и секрет клиента, ссылающиеся как атрибуты синхронизированных учётных данных, передаются как пары ключ-значение в [теле запроса](../http-monitors-classic/configure-http-monitors-classic.md#request-body "Узнайте о настройке HTTP-мониторов."); идентификатор клиента и секрет клиента не отображаются.
 
      ![Тело запроса 1 Azure KV](https://dt-cdn.net/images/cvazurerequest1requestbody-984-7631f538d2.png)
-   * Токен клиента возвращается в теле ответа. [Пост-скрипт выполнения](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет токен в [глобальной переменной](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам").
+   * Токен клиента возвращается в теле ответа. [Пост-скрипт выполнения](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет токен в [глобальной переменной](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам").
 
      ![Пост-скрипт запроса 1 Azure KV](https://dt-cdn.net/images/cvazurerequest1postscript-962-26b361836f.png)
 2. Второй запрос (GET) получает значение имени пользователя.
@@ -89,10 +89,10 @@ scraped: 2026-03-06T21:27:16.073735
    * URL запроса ссылается на URL хранилища как атрибут [синхронизированных учётных данных](#azure-set-up), определённых выше; URL хранилища не отображается. URL запроса также ссылается на ключ, сопоставленный со значением имени пользователя в Azure Key Vault.
 
      ![URL запроса 2 Azure KV](https://dt-cdn.net/images/cvazurerequest2url-1775-b114ec0406.png)
-   * [Заголовок авторизации](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers "Узнайте о настройке HTTP-мониторов.") содержит токен доступа, полученный в первом запросе.
+   * [Заголовок авторизации](../http-monitors-classic/configure-http-monitors-classic.md#headers "Узнайте о настройке HTTP-мониторов.") содержит токен доступа, полученный в первом запросе.
 
      ![Заголовок запроса 2 Azure KV](https://dt-cdn.net/images/cvazurerequest2authheader-964-9fb3850f7d.png)
-   * Значение имени пользователя возвращается в теле ответа. [Пост-скрипт выполнения](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет значение в [глобальной переменной](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам").
+   * Значение имени пользователя возвращается в теле ответа. [Пост-скрипт выполнения](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет значение в [глобальной переменной](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам").
 
      ![Пост-скрипт запроса 2 Azure KV](https://dt-cdn.net/images/cvazurerequest2postscript-962-8bccc9e09c.png)
 3. Третий запрос (GET) получает значение пароля. Он также использует `api.saveCredential()` в пост-скрипте выполнения для записи полученных значений в [синхронизированные учётные данные типа имя пользователя-пароль](#azure-set-up), определённые выше.
@@ -101,8 +101,8 @@ scraped: 2026-03-06T21:27:16.073735
    * URL запроса ссылается на URL хранилища как атрибут [синхронизированных учётных данных](#azure-set-up); URL хранилища не отображается. URL запроса также ссылается на ключ, сопоставленный со значением пароля в Azure Key Vault.
 
      ![URL запроса 3 Azure KV](https://dt-cdn.net/images/cvazurerequest3url-1777-8a113269d0.png)
-   * [Заголовок авторизации](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers "Узнайте о настройке HTTP-мониторов.") содержит токен доступа, полученный в первом запросе.
-   * Значение пароля возвращается в теле ответа. [Пост-скрипт выполнения](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет значение в [глобальной переменной](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам"). Он также использует `api.saveCredential()` для записи полученных значений в синхронизированные учётные данные типа имя пользователя-пароль.
+   * [Заголовок авторизации](../http-monitors-classic/configure-http-monitors-classic.md#headers "Узнайте о настройке HTTP-мониторов.") содержит токен доступа, полученный в первом запросе.
+   * Значение пароля возвращается в теле ответа. [Пост-скрипт выполнения](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет значение в [глобальной переменной](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам"). Он также использует `api.saveCredential()` для записи полученных значений в синхронизированные учётные данные типа имя пользователя-пароль.
 
      ![Пост-скрипт запроса 3 Azure KV](https://dt-cdn.net/images/cvazurerequest3postscript-962-b44c6bda2a.png)
 
@@ -114,10 +114,10 @@ scraped: 2026-03-06T21:27:16.073735
    * URL запроса ссылается на идентификатор арендатора, который хранится как атрибут [синхронизированных учётных данных](#azure-set-up), определённых выше; идентификатор арендатора не отображается.
 
      ![URL запроса 1 Azure KV](https://dt-cdn.net/images/cv-azure-token-request1-url-1446-9fd964d06c.png)
-   * Идентификатор клиента и секрет клиента, ссылающиеся как атрибуты синхронизированных учётных данных, передаются как пары ключ-значение в [теле запроса](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#request-body "Узнайте о настройке HTTP-мониторов."); идентификатор клиента и секрет клиента не отображаются.
+   * Идентификатор клиента и секрет клиента, ссылающиеся как атрибуты синхронизированных учётных данных, передаются как пары ключ-значение в [теле запроса](../http-monitors-classic/configure-http-monitors-classic.md#request-body "Узнайте о настройке HTTP-мониторов."); идентификатор клиента и секрет клиента не отображаются.
 
      ![Тело запроса 1 Azure KV](https://dt-cdn.net/images/cvazurerequest1requestbody-984-7631f538d2.png)
-   * Токен клиента возвращается в теле ответа. [Пост-скрипт выполнения](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет токен в [глобальной переменной](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам").
+   * Токен клиента возвращается в теле ответа. [Пост-скрипт выполнения](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет токен в [глобальной переменной](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам").
 
      ![Пост-скрипт запроса 1 Azure KV](https://dt-cdn.net/images/cvazurerequest1postscript-962-26b361836f.png)
 2. Второй запрос (GET) получает значение токена.
@@ -126,10 +126,10 @@ scraped: 2026-03-06T21:27:16.073735
    * URL запроса ссылается на URL хранилища как атрибут [синхронизированных учётных данных](#azure-set-up), определённых выше; URL хранилища не отображается. URL запроса также ссылается на ключ, сопоставленный со значением токена в Azure Key Vault.
 
      ![URL запроса 2 Azure KV](https://dt-cdn.net/images/cv-azure-token-request2-url-1770-f949f51173.png)
-   * [Заголовок авторизации](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers "Узнайте о настройке HTTP-мониторов.") содержит токен доступа, полученный в первом запросе.
+   * [Заголовок авторизации](../http-monitors-classic/configure-http-monitors-classic.md#headers "Узнайте о настройке HTTP-мониторов.") содержит токен доступа, полученный в первом запросе.
 
      ![Заголовок запроса 2 Azure KV](https://dt-cdn.net/images/cvazurerequest2authheader-964-9fb3850f7d.png)
-   * Значение токена возвращается в теле ответа. [Пост-скрипт выполнения](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет значение в переменной. Он также использует `api.saveToken()` в пост-скрипте выполнения для записи полученного значения в синхронизированные учётные данные типа токен.
+   * Значение токена возвращается в теле ответа. [Пост-скрипт выполнения](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет значение в переменной. Он также использует `api.saveToken()` в пост-скрипте выполнения для записи полученного значения в синхронизированные учётные данные типа токен.
 
      ![Пост-скрипт запроса 2 Azure KV](https://dt-cdn.net/images/cv-azure-token-request2-post-script-961-337899fa61.png)
 
@@ -139,8 +139,8 @@ scraped: 2026-03-06T21:27:16.073735
 
 ### Предварительные требования
 
-* Перед использованием [аутентификации на основе AppRole](#app-role) необходимо определить требуемый **секретный идентификатор** как учётные данные типа [токен](/docs/manage/credential-vault#token "Хранение и управление учётными данными в хранилище учётных данных."), хранящиеся в [хранилище учётных данных](/docs/manage/credential-vault "Хранение и управление учётными данными в хранилище учётных данных.") Dynatrace; не используйте повторно другие токены в качестве секретного идентификатора. Если ваше хранилище не содержит токенов, к которым у вас есть доступ, вы увидите предупреждение.
-* Перед использованием [аутентификации по сертификату](#certificate) необходимо сохранить требуемый **TLS-[сертификат](/docs/manage/credential-vault#certificate "Хранение и управление учётными данными в хранилище учётных данных.")** в [хранилище учётных данных](/docs/manage/credential-vault "Хранение и управление учётными данными в хранилище учётных данных.") Dynatrace. Если ваше хранилище не содержит сертификатов, к которым у вас есть доступ, вы увидите предупреждение.
+* Перед использованием [аутентификации на основе AppRole](#app-role) необходимо определить требуемый **секретный идентификатор** как учётные данные типа [токен](../../../../../common/manage/credential-vault.md#token "Хранение и управление учётными данными в хранилище учётных данных."), хранящиеся в [хранилище учётных данных](../../../../../common/manage/credential-vault.md "Хранение и управление учётными данными в хранилище учётных данных.") Dynatrace; не используйте повторно другие токены в качестве секретного идентификатора. Если ваше хранилище не содержит токенов, к которым у вас есть доступ, вы увидите предупреждение.
+* Перед использованием [аутентификации по сертификату](#certificate) необходимо сохранить требуемый **TLS-[сертификат](../../../../../common/manage/credential-vault.md#certificate "Хранение и управление учётными данными в хранилище учётных данных.")** в [хранилище учётных данных](../../../../../common/manage/credential-vault.md "Хранение и управление учётными данными в хранилище учётных данных.") Dynatrace. Если ваше хранилище не содержит сертификатов, к которым у вас есть доступ, вы увидите предупреждение.
 
 Мы рекомендуем называть такие вспомогательные токены и сертификаты так, чтобы их было легко идентифицировать как сопутствующие учётные данные для синхронизации.
 
@@ -183,12 +183,12 @@ scraped: 2026-03-06T21:27:16.073735
    ![Настройка синхронизации HashiCorp по сертификату — имя пользователя-пароль](https://dt-cdn.net/images/cv-hashicorp-certificate-uid-1113-8b177811b5.webp)
 9. Выберите **Локацию для синхронизации** — вы можете выбрать любую публичную или приватную синтетическую локацию для выполнения монитора синхронизации. Вы можете искать локацию, введя имя локации в поле.
 10. Необязательно: укажите **Описание**.
-11. По умолчанию для учётных данных установлен **Доступ только для владельца**. (Подробнее о [владении учётными данными](/docs/manage/credential-vault#owner-shared-public "Хранение и управление учётными данными в хранилище учётных данных.").)
+11. По умолчанию для учётных данных установлен **Доступ только для владельца**. (Подробнее о [владении учётными данными](../../../../../common/manage/credential-vault.md#owner-shared-public "Хранение и управление учётными данными в хранилище учётных данных.").)
 12. **Сохраните** ваши учётные данные.
 
 См. также [Лучшие практики](#best-practices) и что происходит при [редактировании или удалении синхронизированных и сопутствующих учётных данных](#edit-delete-credential).
 
-Когда вы настроили синхронизированные учётные данные, Dynatrace автоматически создаёт и выполняет [HTTP-монитор](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Узнайте, как настроить HTTP-монитор для проверки производительности и доступности вашего сайта."), который синхронизирует учётные данные с HashiCorp Vault.
+Когда вы настроили синхронизированные учётные данные, Dynatrace автоматически создаёт и выполняет [HTTP-монитор](../http-monitors-classic/create-an-http-monitor-classic.md "Узнайте, как настроить HTTP-монитор для проверки производительности и доступности вашего сайта."), который синхронизирует учётные данные с HashiCorp Vault.
 
 ### Мониторы синхронизации HashiCorp Vault AppRole
 
@@ -204,13 +204,13 @@ scraped: 2026-03-06T21:27:16.073735
    * URL запроса ссылается на URL хранилища как атрибут [синхронизированных учётных данных](#hashicorp-set-up); URL хранилища не отображается. URL запроса также содержит метод аутентификации `approle`.
 
      ![URL запроса 1 HashiCorp AppRole](https://dt-cdn.net/images/cvhashiapprolerequest1url-1447-20b5ca2512.png)
-   * Пространство имён хранилища, ссылающееся как атрибут синхронизированных учётных данных, передаётся как [заголовок запроса](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers "Узнайте о настройке HTTP-мониторов."); пространство имён хранилища не отображается.
+   * Пространство имён хранилища, ссылающееся как атрибут синхронизированных учётных данных, передаётся как [заголовок запроса](../http-monitors-classic/configure-http-monitors-classic.md#headers "Узнайте о настройке HTTP-мониторов."); пространство имён хранилища не отображается.
 
      ![Заголовок запроса 1 HashiCorp AppRole](https://dt-cdn.net/images/cvhashiapprolerequest1requestheader-964-7efd88a7af.png)
-   * Идентификатор роли и секретный идентификатор, ссылающиеся как атрибуты синхронизированных учётных данных, передаются как пары ключ-значение в [теле запроса](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#request-body "Узнайте о настройке HTTP-мониторов."); идентификатор роли и секретный идентификатор не отображаются.
+   * Идентификатор роли и секретный идентификатор, ссылающиеся как атрибуты синхронизированных учётных данных, передаются как пары ключ-значение в [теле запроса](../http-monitors-classic/configure-http-monitors-classic.md#request-body "Узнайте о настройке HTTP-мониторов."); идентификатор роли и секретный идентификатор не отображаются.
 
      ![Тело запроса 1 HashiCorp AppRole](https://dt-cdn.net/images/cvhashiapprolerequest1requestbody-966-5eb6ad4427.png)
-   * Токен клиента возвращается в теле ответа. [Пост-скрипт выполнения](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет токен в [глобальной переменной](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам").
+   * Токен клиента возвращается в теле ответа. [Пост-скрипт выполнения](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет токен в [глобальной переменной](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам").
 
      ![Пост-скрипт запроса 1 HashiCorp AppRole](https://dt-cdn.net/images/cvhashiapprolerequest1postscript-964-48e414d846.png)
 2. Второй запрос (GET) получает значения имени пользователя и пароля. Он также использует `api.saveCredential()` в пост-скрипте выполнения для записи полученных значений в [синхронизированные учётные данные типа имя пользователя-пароль](#hashicorp-set-up), определённые выше.
@@ -219,10 +219,10 @@ scraped: 2026-03-06T21:27:16.073735
    * URL запроса ссылается на URL хранилища и путь к учётным данным как атрибуты синхронизированных учётных данных; URL хранилища и путь к учётным данным не отображаются.
 
      ![URL запроса 2 HashiCorp AppRole](https://dt-cdn.net/images/cvhashiapprolerequest2url-1777-d33a680540.png)
-   * [Заголовок запроса](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers "Узнайте о настройке HTTP-мониторов.") содержит токен клиента, полученный в первом запросе. Пространство имён хранилища (не отображается, но ссылается как атрибут синхронизированных учётных данных) также передаётся как заголовок запроса.
+   * [Заголовок запроса](../http-monitors-classic/configure-http-monitors-classic.md#headers "Узнайте о настройке HTTP-мониторов.") содержит токен клиента, полученный в первом запросе. Пространство имён хранилища (не отображается, но ссылается как атрибут синхронизированных учётных данных) также передаётся как заголовок запроса.
 
      ![Заголовки запроса 2 HashiCorp AppRole](https://dt-cdn.net/images/cvhashiapprolerequest2requestheader-964-739c560649.png)
-   * Значения имени пользователя и пароля возвращаются в JSON-ответе. [Пост-скрипт выполнения](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет значения в [глобальных переменных](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам"). Он также использует `api.saveCredential()` для записи полученных значений в синхронизированные учётные данные типа имя пользователя-пароль.
+   * Значения имени пользователя и пароля возвращаются в JSON-ответе. [Пост-скрипт выполнения](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет значения в [глобальных переменных](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам"). Он также использует `api.saveCredential()` для записи полученных значений в синхронизированные учётные данные типа имя пользователя-пароль.
 
      ![Пост-скрипт запроса 2 HashiCorp AppRole](https://dt-cdn.net/images/cvhashiapprolerequest2postscript-964-828da84802.png)
 
@@ -232,13 +232,13 @@ scraped: 2026-03-06T21:27:16.073735
    * URL запроса ссылается на URL хранилища как атрибут [синхронизированных учётных данных](#hashicorp-set-up); URL хранилища не отображается. URL запроса также содержит метод аутентификации `approle`.
 
      ![URL запроса 1 HashiCorp AppRole](https://dt-cdn.net/images/cvhashiapprolerequest1url-1447-20b5ca2512.png)
-   * Пространство имён хранилища, ссылающееся как атрибут синхронизированных учётных данных, передаётся как [заголовок запроса](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers "Узнайте о настройке HTTP-мониторов."); пространство имён хранилища не отображается.
+   * Пространство имён хранилища, ссылающееся как атрибут синхронизированных учётных данных, передаётся как [заголовок запроса](../http-monitors-classic/configure-http-monitors-classic.md#headers "Узнайте о настройке HTTP-мониторов."); пространство имён хранилища не отображается.
 
      ![Заголовок запроса 1 HashiCorp AppRole](https://dt-cdn.net/images/cvhashiapprolerequest1requestheader-964-7efd88a7af.png)
-   * Идентификатор роли и секретный идентификатор, ссылающиеся как атрибуты синхронизированных учётных данных, передаются как пары ключ-значение в [теле запроса](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#request-body "Узнайте о настройке HTTP-мониторов."); идентификатор роли и секретный идентификатор не отображаются.
+   * Идентификатор роли и секретный идентификатор, ссылающиеся как атрибуты синхронизированных учётных данных, передаются как пары ключ-значение в [теле запроса](../http-monitors-classic/configure-http-monitors-classic.md#request-body "Узнайте о настройке HTTP-мониторов."); идентификатор роли и секретный идентификатор не отображаются.
 
      ![Тело запроса 1 HashiCorp AppRole](https://dt-cdn.net/images/cvhashiapprolerequest1requestbody-966-5eb6ad4427.png)
-   * Токен клиента возвращается в теле ответа. [Пост-скрипт выполнения](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет токен в [глобальной переменной](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам").
+   * Токен клиента возвращается в теле ответа. [Пост-скрипт выполнения](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет токен в [глобальной переменной](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам").
 
      ![Пост-скрипт запроса 1 HashiCorp AppRole](https://dt-cdn.net/images/cvhashiapprolerequest1postscript-964-48e414d846.png)
 2. Второй запрос (GET) получает значение токена. Он также использует `api.saveToken()` в пост-скрипте выполнения для записи полученных значений в [синхронизированные учётные данные типа токен](#hashicorp-set-up), определённые выше.
@@ -247,10 +247,10 @@ scraped: 2026-03-06T21:27:16.073735
    * URL запроса ссылается на URL хранилища и путь к учётным данным как атрибуты синхронизированных учётных данных; URL хранилища и путь к учётным данным не отображаются.
 
      ![URL запроса 2 HashiCorp AppRole](https://dt-cdn.net/images/cvhashiapprolerequest2url-1777-d33a680540.png)
-   * [Заголовок запроса](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers "Узнайте о настройке HTTP-мониторов.") содержит токен клиента, полученный в первом запросе. Пространство имён хранилища (не отображается, но ссылается как атрибут синхронизированных учётных данных) также передаётся как заголовок запроса.
+   * [Заголовок запроса](../http-monitors-classic/configure-http-monitors-classic.md#headers "Узнайте о настройке HTTP-мониторов.") содержит токен клиента, полученный в первом запросе. Пространство имён хранилища (не отображается, но ссылается как атрибут синхронизированных учётных данных) также передаётся как заголовок запроса.
 
      ![Заголовки запроса 2 HashiCorp AppRole](https://dt-cdn.net/images/cvhashiapprolerequest2requestheader-964-739c560649.png)
-   * Значение токена возвращается в JSON-ответе. [Пост-скрипт выполнения](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет значение в [глобальной переменной](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам"). Он также использует `api.saveToken()` для записи полученного значения в синхронизированные учётные данные типа токен.
+   * Значение токена возвращается в JSON-ответе. [Пост-скрипт выполнения](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет значение в [глобальной переменной](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам"). Он также использует `api.saveToken()` для записи полученного значения в синхронизированные учётные данные типа токен.
 
      ![Пост-скрипт запроса 2 HashiCorp AppRole для сохранения токена](https://dt-cdn.net/images/cv-hashi-approle-request2-postscript-savetoken-936-a139146cec.png)
 
@@ -271,7 +271,7 @@ scraped: 2026-03-06T21:27:16.073735
    * Запрос использует TLS-сертификат для аутентификации.
 
      ![Сертификат запроса 1 HashiCorp](https://dt-cdn.net/images/cvhashicertificaterequest1cert-964-996d51d92a.png)
-   * Токен клиента возвращается в теле ответа. [Пост-скрипт выполнения](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет токен в [глобальной переменной](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам").
+   * Токен клиента возвращается в теле ответа. [Пост-скрипт выполнения](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет токен в [глобальной переменной](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам").
 
      ![Пост-скрипт запроса 1 HashiCorp по сертификату](https://dt-cdn.net/images/cvhashiapprolerequest1postscript-964-48e414d846.png)
 2. Второй запрос (GET) получает значения имени пользователя и пароля. Он также использует `api.saveCredential()` в пост-скрипте выполнения для записи полученных значений в [синхронизированные учётные данные типа имя пользователя-пароль](#hashicorp-set-up), определённые выше.
@@ -280,10 +280,10 @@ scraped: 2026-03-06T21:27:16.073735
    * URL запроса ссылается на URL хранилища и путь к учётным данным как атрибуты синхронизированных учётных данных; URL хранилища и путь к учётным данным не отображаются.
 
      ![URL запроса 2 HashiCorp AppRole](https://dt-cdn.net/images/cvhashiapprolerequest2url-1777-d33a680540.png)
-   * [Заголовок запроса](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers "Узнайте о настройке HTTP-мониторов.") содержит токен клиента, полученный в первом запросе.
+   * [Заголовок запроса](../http-monitors-classic/configure-http-monitors-classic.md#headers "Узнайте о настройке HTTP-мониторов.") содержит токен клиента, полученный в первом запросе.
 
      ![Заголовок запроса 2 HashiCorp по сертификату](https://dt-cdn.net/images/cvhashicertificaterequest2requestheader-964-230e35242e.png)
-   * Значения имени пользователя и пароля возвращаются в JSON-ответе. [Пост-скрипт выполнения](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет значения в [глобальных переменных](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам"). Он также использует `api.saveCredential()` для записи полученных значений в синхронизированные учётные данные типа имя пользователя-пароль.
+   * Значения имени пользователя и пароля возвращаются в JSON-ответе. [Пост-скрипт выполнения](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет значения в [глобальных переменных](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам"). Он также использует `api.saveCredential()` для записи полученных значений в синхронизированные учётные данные типа имя пользователя-пароль.
 
      ![Пост-скрипт запроса 2 HashiCorp по сертификату](https://dt-cdn.net/images/cvhashiapprolerequest2postscript-964-828da84802.png)
 
@@ -296,7 +296,7 @@ scraped: 2026-03-06T21:27:16.073735
    * Запрос использует TLS-сертификат для аутентификации.
 
      ![Сертификат запроса 1 HashiCorp](https://dt-cdn.net/images/cvhashicertificaterequest1cert-964-996d51d92a.png)
-   * Токен клиента возвращается в теле ответа. [Пост-скрипт выполнения](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет токен в [глобальной переменной](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам").
+   * Токен клиента возвращается в теле ответа. [Пост-скрипт выполнения](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет токен в [глобальной переменной](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам").
 
      ![Пост-скрипт запроса 1 HashiCorp по сертификату](https://dt-cdn.net/images/cvhashiapprolerequest1postscript-964-48e414d846.png)
 2. Второй запрос (GET) получает значение токена. Он также использует `api.saveToken()` в пост-скрипте выполнения для записи полученного значения в [синхронизированные учётные данные типа токен](#hashicorp-set-up), определённые выше.
@@ -305,10 +305,10 @@ scraped: 2026-03-06T21:27:16.073735
    * URL запроса ссылается на URL хранилища и путь к учётным данным как атрибуты синхронизированных учётных данных; URL хранилища и путь к учётным данным не отображаются.
 
      ![URL запроса 2 HashiCorp AppRole](https://dt-cdn.net/images/cvhashiapprolerequest2url-1777-d33a680540.png)
-   * [Заголовок запроса](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers "Узнайте о настройке HTTP-мониторов.") содержит токен клиента, полученный в первом запросе.
+   * [Заголовок запроса](../http-monitors-classic/configure-http-monitors-classic.md#headers "Узнайте о настройке HTTP-мониторов.") содержит токен клиента, полученный в первом запросе.
 
      ![Заголовок запроса 2 HashiCorp по сертификату](https://dt-cdn.net/images/cvhashicertificaterequest2requestheader-964-230e35242e.png)
-   * Значение токена возвращается в JSON-ответе. [Пост-скрипт выполнения](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет значение в [глобальной переменной](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам"). Он также использует `api.saveToken()` для записи полученного значения в синхронизированные учётные данные типа токен.
+   * Значение токена возвращается в JSON-ответе. [Пост-скрипт выполнения](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет значение в [глобальной переменной](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам"). Он также использует `api.saveToken()` для записи полученного значения в синхронизированные учётные данные типа токен.
 
      ![Пост-скрипт запроса 2 HashiCorp по сертификату для сохранения токена](https://dt-cdn.net/images/cv-hashi-approle-request2-postscript-savetoken-936-a139146cec.png)
 
@@ -318,8 +318,8 @@ scraped: 2026-03-06T21:27:16.073735
 
 ### Предварительные требования
 
-* Перед использованием [аутентификации по имени пользователя и паролю](#cyberark-monitor-uid-authentication) необходимо определить учётные данные для аутентификации в CyberArk Vault — пару [имя пользователя-пароль](/docs/manage/credential-vault#uid-password "Хранение и управление учётными данными в хранилище учётных данных.") и, необязательно, учётные данные типа [сертификат](/docs/manage/credential-vault#certificate "Хранение и управление учётными данными в хранилище учётных данных."), хранящиеся в [хранилище учётных данных](/docs/manage/credential-vault "Хранение и управление учётными данными в хранилище учётных данных.") Dynatrace. Мы рекомендуем называть такие вспомогательные учётные данные так, чтобы их было легко идентифицировать как сопутствующие учётные данные для синхронизации.
-* Перед использованием [аутентификации на основе хостов](#cyberark-monitor-allowed-machines) необходимо определить **Разрешённые машины** по имени хоста или IP-адресу в деталях приложения CyberArk Vault. Это хосты, которым разрешён доступ к синхронизированным учётным данным в CyberArk Vault, и это публичные или приватные синтетические локации, которые вы выбираете для выполнения монитора синхронизации. Обратите внимание, что при определении разрешённых машин в CyberArk Vault идентификатор приложения должен совпадать с указанным при [настройке синхронизированных учётных данных в Dynatrace](#cyberak-set-up). Необязательно вы также можете определить учётные данные типа [сертификат](/docs/manage/credential-vault#certificate "Хранение и управление учётными данными в хранилище учётных данных."), хранящиеся в [хранилище учётных данных](/docs/manage/credential-vault "Хранение и управление учётными данными в хранилище учётных данных.") Dynatrace, для аутентификации в CyberArk Vault. Если ваше хранилище не содержит сертификатов, к которым у вас есть доступ, вы увидите предупреждение.
+* Перед использованием [аутентификации по имени пользователя и паролю](#cyberark-monitor-uid-authentication) необходимо определить учётные данные для аутентификации в CyberArk Vault — пару [имя пользователя-пароль](../../../../../common/manage/credential-vault.md#uid-password "Хранение и управление учётными данными в хранилище учётных данных.") и, необязательно, учётные данные типа [сертификат](../../../../../common/manage/credential-vault.md#certificate "Хранение и управление учётными данными в хранилище учётных данных."), хранящиеся в [хранилище учётных данных](../../../../../common/manage/credential-vault.md "Хранение и управление учётными данными в хранилище учётных данных.") Dynatrace. Мы рекомендуем называть такие вспомогательные учётные данные так, чтобы их было легко идентифицировать как сопутствующие учётные данные для синхронизации.
+* Перед использованием [аутентификации на основе хостов](#cyberark-monitor-allowed-machines) необходимо определить **Разрешённые машины** по имени хоста или IP-адресу в деталях приложения CyberArk Vault. Это хосты, которым разрешён доступ к синхронизированным учётным данным в CyberArk Vault, и это публичные или приватные синтетические локации, которые вы выбираете для выполнения монитора синхронизации. Обратите внимание, что при определении разрешённых машин в CyberArk Vault идентификатор приложения должен совпадать с указанным при [настройке синхронизированных учётных данных в Dynatrace](#cyberak-set-up). Необязательно вы также можете определить учётные данные типа [сертификат](../../../../../common/manage/credential-vault.md#certificate "Хранение и управление учётными данными в хранилище учётных данных."), хранящиеся в [хранилище учётных данных](../../../../../common/manage/credential-vault.md "Хранение и управление учётными данными в хранилище учётных данных.") Dynatrace, для аутентификации в CyberArk Vault. Если ваше хранилище не содержит сертификатов, к которым у вас есть доступ, вы увидите предупреждение.
 
 Мы рекомендуем называть любые вспомогательные учётные данные так, чтобы их было легко идентифицировать как сопутствующие учётные данные для синхронизации.
 
@@ -356,12 +356,12 @@ scraped: 2026-03-06T21:27:16.073735
    * **Имя папки** (необязательно) — имя папки, где хранятся учётные данные в CyberArk Vault; имя папки по умолчанию — `Root`.
 10. Выберите **Локацию для синхронизации** — вы можете выбрать любую публичную или приватную синтетическую локацию для выполнения монитора синхронизации. Вы можете искать локацию, введя имя локации в поле.
 11. Необязательно: укажите **Описание** для учётных данных.
-12. По умолчанию для учётных данных установлен **Доступ только для владельца**. (Подробнее о [владении учётными данными](/docs/manage/credential-vault#owner-shared-public "Хранение и управление учётными данными в хранилище учётных данных.").)
+12. По умолчанию для учётных данных установлен **Доступ только для владельца**. (Подробнее о [владении учётными данными](../../../../../common/manage/credential-vault.md#owner-shared-public "Хранение и управление учётными данными в хранилище учётных данных.").)
 13. **Сохраните** ваши учётные данные.
 
 См. также [Лучшие практики](#best-practices) и что происходит при [редактировании или удалении синхронизированных и сопутствующих учётных данных](#edit-delete-credential).
 
-Когда вы настроили синхронизированные учётные данные, Dynatrace автоматически создаёт и выполняет [HTTP-монитор](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Узнайте, как настроить HTTP-монитор для проверки производительности и доступности вашего сайта."), который синхронизирует учётные данные с CyberArk Vault.
+Когда вы настроили синхронизированные учётные данные, Dynatrace автоматически создаёт и выполняет [HTTP-монитор](../http-monitors-classic/create-an-http-monitor-classic.md "Узнайте, как настроить HTTP-монитор для проверки производительности и доступности вашего сайта."), который синхронизирует учётные данные с CyberArk Vault.
 
 ### Мониторы синхронизации CyberArk Vault (аутентификация по имени пользователя-паролю)
 
@@ -373,13 +373,13 @@ scraped: 2026-03-06T21:27:16.073735
    * URL запроса ссылается на **URL центрального провайдера учётных данных** как атрибут [синхронизированных учётных данных](#cyberark-set-up), определённых выше; URL центрального провайдера учётных данных не отображается.
 
      ![URL запроса 1 CyberArk Vault](https://dt-cdn.net/images/cv-cyberark-request1-url-1445-f352bc0566.png)
-   * [Тело запроса](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#request-body "Узнайте о настройке HTTP-мониторов.") ссылается на учётные данные типа имя пользователя-пароль, выбранные для аутентификации CyberArk Vault (**Имя пользователя и пароль для центрального провайдера учётных данных**); имя пользователя и пароль для аутентификации не отображаются.
+   * [Тело запроса](../http-monitors-classic/configure-http-monitors-classic.md#request-body "Узнайте о настройке HTTP-мониторов.") ссылается на учётные данные типа имя пользователя-пароль, выбранные для аутентификации CyberArk Vault (**Имя пользователя и пароль для центрального провайдера учётных данных**); имя пользователя и пароль для аутентификации не отображаются.
 
      ![Тело запроса 1 CyberArk Vault](https://dt-cdn.net/images/cv-cyberark-request1-request-body-1409-efb85f9433.png)
    * Кроме того, первый запрос содержит любой сертификат аутентификации, указанный в **Сертификат для аутентификации в CyberArk**.
 
      ![Сертификат запроса 1 CyberArk Vault](https://dt-cdn.net/images/cv-cyberark-request1-certificate-962-8b7934f165.png)
-   * Токен возвращается в теле ответа. [Пост-скрипт выполнения](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет токен в [глобальной переменной](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам").
+   * Токен возвращается в теле ответа. [Пост-скрипт выполнения](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет токен в [глобальной переменной](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам").
 
      ![Пост-скрипт запроса 1 CyberArk Vault](https://dt-cdn.net/images/cv-cyberark-request1-post-script-962-04c94bf083.png)
 2. Второй запрос (GET) получает значения имени пользователя и пароля из CyberArk Vault. Он также использует `api.saveCredential()` в пост-скрипте выполнения для записи полученных значений в [синхронизированные учётные данные типа имя пользователя-пароль](#cyberark-set-up), определённые выше.
@@ -388,10 +388,10 @@ scraped: 2026-03-06T21:27:16.073735
    * URL запроса ссылается на **URL центрального провайдера учётных данных** как атрибут синхронизированных учётных данных; URL центрального провайдера учётных данных не отображается. URL запроса также ссылается (но не отображает) на **Идентификатор приложения**, **Имя сейфа**, **Имя учётной записи** и **Имя папки**.
 
      ![URL запроса 2 CyberArk Vault](https://dt-cdn.net/images/cv-cyberark-request2-url-1879-7911c0b652.png)
-   * Второй запрос также содержит любой сертификат аутентификации и токен доступа, полученный в первом запросе, в [заголовке авторизации](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#headers "Узнайте о настройке HTTP-мониторов.").
+   * Второй запрос также содержит любой сертификат аутентификации и токен доступа, полученный в первом запросе, в [заголовке авторизации](../http-monitors-classic/configure-http-monitors-classic.md#headers "Узнайте о настройке HTTP-мониторов.").
 
      ![Токен и сертификат запроса 2 CyberArk Vault](https://dt-cdn.net/images/cv-cyberark-request2-certificate-auth-header-1269-b10aa9737b.png)
-   * Значения имени пользователя и пароля возвращаются в теле ответа. [Пост-скрипт выполнения](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет значения в [глобальных переменных](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам"). Он также использует `api.saveCredential()` для записи полученных значений в синхронизированные учётные данные типа имя пользователя-пароль.
+   * Значения имени пользователя и пароля возвращаются в теле ответа. [Пост-скрипт выполнения](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет значения в [глобальных переменных](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам"). Он также использует `api.saveCredential()` для записи полученных значений в синхронизированные учётные данные типа имя пользователя-пароль.
 
      ![Пост-скрипт запроса 2 CyberArk Vault](https://dt-cdn.net/images/cv-cyberark-request2-post-script-999-5b4607154b.png)
 
@@ -409,28 +409,28 @@ scraped: 2026-03-06T21:27:16.073735
 
 ![Сертификат аутентификации CyberArk Vault для разрешённых машин](https://dt-cdn.net/images/cv-cyberark-allowed-machines-certificate-1415-568a21181f.jpg)
 
-* Значения имени пользователя и пароля возвращаются в теле ответа. [Пост-скрипт выполнения](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет значения в [глобальных переменных](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам"). Он также использует `api.saveCredential()` для записи полученных значений в синхронизированные учётные данные типа имя пользователя-пароль.
+* Значения имени пользователя и пароля возвращаются в теле ответа. [Пост-скрипт выполнения](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md "Узнайте, как применять пре- и пост-скрипты к вашим запросам") сохраняет значения в [глобальных переменных](../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#variables "Узнайте, как применять пре- и пост-скрипты к вашим запросам"). Он также использует `api.saveCredential()` для записи полученных значений в синхронизированные учётные данные типа имя пользователя-пароль.
 
 ![Пост-скрипт CyberArk Vault для разрешённых машин](https://dt-cdn.net/images/cv-cyberark-allowed-machines-post-script-1415-5e3ea56704.jpg)
 
 ## Лучшие практики и предостережения
 
-При создании монитора синхронизации вручную обязательно выберите **Не сохранять и не отображать тела запросов и ответов, а также значения заголовков в деталях выполнения** в любых запросах, которые получают токены клиента или значения учётных данных из внешних хранилищ. В противном случае конфиденциальная информация будет раскрыта при **Анализе деталей выполнения** в [деталях HTTP-монитора](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic "Узнайте о странице деталей Synthetic для HTTP-мониторов.").
+При создании монитора синхронизации вручную обязательно выберите **Не сохранять и не отображать тела запросов и ответов, а также значения заголовков в деталях выполнения** в любых запросах, которые получают токены клиента или значения учётных данных из внешних хранилищ. В противном случае конфиденциальная информация будет раскрыта при **Анализе деталей выполнения** в [деталях HTTP-монитора](../analysis-and-alerting/synthetic-details-for-http-monitors-classic.md "Узнайте о странице деталей Synthetic для HTTP-мониторов.").
 
-* Автоматически созданные мониторы синхронизации могут быть отредактированы. Для редактирования автоматически созданного монитора синхронизации вы должны иметь [доступ к учётным данным](/docs/manage/credential-vault#owner-shared-public "Хранение и управление учётными данными в хранилище учётных данных."), на которые ссылается монитор. Вам может потребоваться внести правки, если поставщик внешнего хранилища вносит изменения. Например, вам может потребоваться отредактировать URL запросов, если Microsoft изменит версию API для получения токенов клиента из Azure Key Vault.
+* Автоматически созданные мониторы синхронизации могут быть отредактированы. Для редактирования автоматически созданного монитора синхронизации вы должны иметь [доступ к учётным данным](../../../../../common/manage/credential-vault.md#owner-shared-public "Хранение и управление учётными данными в хранилище учётных данных."), на которые ссылается монитор. Вам может потребоваться внести правки, если поставщик внешнего хранилища вносит изменения. Например, вам может потребоваться отредактировать URL запросов, если Microsoft изменит версию API для получения токенов клиента из Azure Key Vault.
 
   + В общем случае, однако, мы рекомендуем ограничить ваши изменения частотой выполнения или локациями.
-  + При смене локации будьте осторожны, чтобы не выбрать [приватные синтетические локации](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Узнайте, как создать приватную локацию для синтетического мониторинга."), которые не имеют доступа к внешней сети.
+  + При смене локации будьте осторожны, чтобы не выбрать [приватные синтетические локации](../private-synthetic-locations/create-a-private-synthetic-location.md "Узнайте, как создать приватную локацию для синтетического мониторинга."), которые не имеют доступа к внешней сети.
   + При смене локации на приватную синтетическую локацию убедитесь, что конфигурация прокси не блокирует доступ к необходимым ресурсам.
 * Мы рекомендуем изменить имена по умолчанию для синхронизированных учётных данных, сопутствующих учётных данных (например, TLS-сертификатов для HashiCorp Vault) и мониторов синхронизации для простой идентификации.
 * Мы не рекомендуем повторно использовать сопутствующие учётные данные (например, токен секретного идентификатора HashiCorp), необходимые для мониторов синхронизации, в других синтетических мониторах для целей тестирования.
 
 ### Редактирование или удаление синхронизированных и сопутствующих учётных данных
 
-* После создания синхронизированные учётные данные больше не могут быть отредактированы кем-либо; их можно только [перезаписать](/docs/manage/credential-vault#overwrite-credential "Хранение и управление учётными данными в хранилище учётных данных."). Для перезаписи синхронизированных учётных данных необходимо предоставить новые данные синхронизации; не предоставляйте фактические значения имени пользователя, пароля или токена.
+* После создания синхронизированные учётные данные больше не могут быть отредактированы кем-либо; их можно только [перезаписать](../../../../../common/manage/credential-vault.md#overwrite-credential "Хранение и управление учётными данными в хранилище учётных данных."). Для перезаписи синхронизированных учётных данных необходимо предоставить новые данные синхронизации; не предоставляйте фактические значения имени пользователя, пароля или токена.
 
   + При перезаписи синхронизированных учётных данных мониторы синхронизации, созданные Dynatrace, автоматически обновляются.
-* Обязательно поддерживайте одинаковое [владение](/docs/manage/credential-vault#owner-shared-public "Хранение и управление учётными данными в хранилище учётных данных.") для всех учётных данных в мониторе синхронизации (то есть синхронизированных учётных данных и сопутствующих учётных данных).
+* Обязательно поддерживайте одинаковое [владение](../../../../../common/manage/credential-vault.md#owner-shared-public "Хранение и управление учётными данными в хранилище учётных данных.") для всех учётных данных в мониторе синхронизации (то есть синхронизированных учётных данных и сопутствующих учётных данных).
 * Вы не можете удалить сопутствующие учётные данные, на которые ссылается монитор синхронизации, если не отключите или не удалите монитор синхронизации.
 * Если вы удалите синхронизированные учётные данные, автоматически созданный монитор синхронизации также будет удалён.
 

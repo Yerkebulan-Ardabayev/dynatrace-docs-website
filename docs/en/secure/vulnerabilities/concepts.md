@@ -45,12 +45,12 @@ In ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1
 
 Both vectors are visible on the **Prioritization** page:
 
-* In the vulnerabilities table (go to the [column settings](/docs/secure/vulnerabilities/manage-results#format "Filter, format, and sort to find relevant vulnerability information.") ![Column](https://dt-cdn.net/images/column-settings-dfb41f159c.svg "Column") and select **CVSS Base Vector** and **CVSS Modified Vector**).
+* In the vulnerabilities table (go to the [column settings](manage-results.md#format "Filter, format, and sort to find relevant vulnerability information.") ![Column](https://dt-cdn.net/images/column-settings-dfb41f159c.svg "Column") and select **CVSS Base Vector** and **CVSS Modified Vector**).
 * In the details of a vulnerability (in the side panel that opens when you select a vulnerability, go to **Overview** and look for **Dynatrace Security Score calculation**).
 
 This visibility helps you understand how the CVSS score was derived and compare raw versus contextualized risk.
 
-Dynatrace supports filtering by CVSS vector components for advanced triage. For practical examples and usage, see [Filter by CVSS vectors](/docs/secure/vulnerabilities/manage-results#cvss-filter "Filter, format, and sort to find relevant vulnerability information.").
+Dynatrace supports filtering by CVSS vector components for advanced triage. For practical examples and usage, see [Filter by CVSS vectors](manage-results.md#cvss-filter "Filter, format, and sort to find relevant vulnerability information.").
 
 ## Dynatrace Security Score
 
@@ -145,7 +145,7 @@ A vulnerability with `Critical` severity affects two processes, `Process_1` and 
 * In ![Third Party Vulnerabilities](https://dt-cdn.net/images/third-party-vulnerabilities-512-1b375181bf.png "Third Party Vulnerabilities") **Third-Party Vulnerabilities**, DSS aggregates the risk factors of the affected entities (the vulnerability is both exposed to the public internet and has reachable data assets), thus the severity remains `Critical`.
 * In ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**, the score is determined by the affected entity with the highest DSS score. So if both affected entities have `High` severity, the severity is lowered from the initial `Critical` to `High`.
 
-How to use: You can [prioritize vulnerabilities based on DSS](/docs/secure/vulnerabilities/prioritize#dss "Prioritize third-party, code-level, and runtime vulnerabilities.").
+How to use: You can [prioritize vulnerabilities based on DSS](prioritize.md#dss "Prioritize third-party, code-level, and runtime vulnerabilities.").
 
 ## Coverage
 
@@ -157,7 +157,7 @@ Coverage:
 * Identifies the most affected processes with the corresponding hosts.
 * Provides trends in findings and scans over time.
 
-For practical guidance on how to visualize coverage, see [Assess coverage](/docs/secure/vulnerabilities/assess-coverage "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").
+For practical guidance on how to visualize coverage, see [Assess coverage](assess-coverage.md "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").
 
 ## Security Advisor
 
@@ -199,11 +199,11 @@ Public internet exposure
 | --- | --- |
 | Public network | There is public internet exposure. |
 | Not detected | No public internet exposure was found. |
-| Not available | Data isn't available, because the related hosts aren't running in Full-Stack Monitoring mode. For details, see [Monitoring modes](/docs/secure/application-security "Access the Dynatrace Application Security functionalities."). |
+| Not available | Data isn't available, because the related hosts aren't running in Full-Stack Monitoring mode. For details, see [Monitoring modes](../application-security.md "Access the Dynatrace Application Security functionalities."). |
 
-How to use: You can [filter](/docs/secure/vulnerabilities/manage-results#expressions "Filter, format, and sort to find relevant vulnerability information.") vulnerabilities by **Dynatrace Assessment** > `Public internet exposure`.
+How to use: You can [filter](manage-results.md#expressions "Filter, format, and sort to find relevant vulnerability information.") vulnerabilities by **Dynatrace Assessment** > `Public internet exposure`.
 
-Further reading: [How is public internet exposure determined?](/docs/secure/faq#internet-exposure "Frequently asked questions about Dynatrace Application Security.")
+Further reading: [How is public internet exposure determined?](../faq.md#internet-exposure "Frequently asked questions about Dynatrace Application Security.")
 
 ### Reachable data assets
 
@@ -216,9 +216,9 @@ Reachable data assets
 | --- | --- |
 | Within range | There are reachable data assets affected. |
 | None within range | There are no reachable data assets within range. |
-| Not available | Data isn't available, because the related hosts aren't running in Full-Stack Monitoring mode. For details, see [Monitoring modes](/docs/secure/application-security "Access the Dynatrace Application Security functionalities."). |
+| Not available | Data isn't available, because the related hosts aren't running in Full-Stack Monitoring mode. For details, see [Monitoring modes](../application-security.md "Access the Dynatrace Application Security functionalities."). |
 
-How to use: You can [filter](/docs/secure/vulnerabilities/manage-results#expressions "Filter, format, and sort to find relevant vulnerability information.") vulnerabilities by **Dynatrace Assessment** > `Reachable data assets`.
+How to use: You can [filter](manage-results.md#expressions "Filter, format, and sort to find relevant vulnerability information.") vulnerabilities by **Dynatrace Assessment** > `Reachable data assets`.
 
 ### Vulnerable functions
 
@@ -243,18 +243,18 @@ Function usage
 | --- | --- |
 | In use | There are vulnerable functions in use. |
 | Not in use | No vulnerable functions in use were found. |
-| Not available | Data isn't available. For details, see [FAQ: Why is there no data available for vulnerable function?](/docs/secure/faq#vuln-funct-no-info-available "Frequently asked questions about Dynatrace Application Security."). |
+| Not available | Data isn't available. For details, see [FAQ: Why is there no data available for vulnerable function?](../faq.md#vuln-funct-no-info-available "Frequently asked questions about Dynatrace Application Security."). |
 
 How to use: You can
 
-* [Filter](/docs/secure/vulnerabilities/manage-results#expressions "Filter, format, and sort to find relevant vulnerability information.") vulnerabilities by **Dynatrace Assessment** > `Vulnerable functions in use`
-* [Prioritize vulnerabilities based on vulnerable functions](/docs/secure/vulnerabilities/prioritize#details-functions "Prioritize third-party, code-level, and runtime vulnerabilities.")
+* [Filter](manage-results.md#expressions "Filter, format, and sort to find relevant vulnerability information.") vulnerabilities by **Dynatrace Assessment** > `Vulnerable functions in use`
+* [Prioritize vulnerabilities based on vulnerable functions](prioritize.md#details-functions "Prioritize third-party, code-level, and runtime vulnerabilities.")
 
 Further reading:
 
-* [How are vulnerable functions determined?](/docs/secure/faq#vuln-function-calculation "Frequently asked questions about Dynatrace Application Security.")
-* [Why is there no information on vulnerable functions?](/docs/secure/faq#vuln-function-no-info-available "Frequently asked questions about Dynatrace Application Security.")
-* [Why is there no data available for vulnerable functions?](/docs/secure/faq#vuln-function-no-data-available "Frequently asked questions about Dynatrace Application Security.")
+* [How are vulnerable functions determined?](../faq.md#vuln-function-calculation "Frequently asked questions about Dynatrace Application Security.")
+* [Why is there no information on vulnerable functions?](../faq.md#vuln-function-no-info-available "Frequently asked questions about Dynatrace Application Security.")
+* [Why is there no data available for vulnerable functions?](../faq.md#vuln-function-no-data-available "Frequently asked questions about Dynatrace Application Security.")
 
 ### Public exploit
 
@@ -270,7 +270,7 @@ Public exploit
 | Public exploit published | A publicly known exploit for this vulnerability is available. |
 | No public exploit published | No publicly known exploit for this vulnerability is available. |
 
-How to use: You can [filter](/docs/secure/vulnerabilities/manage-results#expressions "Filter, format, and sort to find relevant vulnerability information.") vulnerabilities by **Dynatrace Assessment** > `Public exploit published`.
+How to use: You can [filter](manage-results.md#expressions "Filter, format, and sort to find relevant vulnerability information.") vulnerabilities by **Dynatrace Assessment** > `Public exploit published`.
 
 ### Assessment mode
 
@@ -281,11 +281,11 @@ Assessment mode
 
 | **State** | **Description** |
 | --- | --- |
-| Full | All process group instances are monitored in [Full-stack monitoring mode](/docs/secure/application-security#fullstack "Access the Dynatrace Application Security functionalities."). |
+| Full | All process group instances are monitored in [Full-stack monitoring mode](../application-security.md#fullstack "Access the Dynatrace Application Security functionalities."). |
 | Reduced | Detailed assessment isn't possible because at least one process group instance isn't monitored in Full-stack monitoring mode. |
 | Not available | The vulnerability is resolved. |
 
-How to use: You can [filter](/docs/secure/vulnerabilities/manage-results#expressions "Filter, format, and sort to find relevant vulnerability information.") vulnerabilities by **Dynatrace Assessment** > `Assessment mode`.
+How to use: You can [filter](manage-results.md#expressions "Filter, format, and sort to find relevant vulnerability information.") vulnerabilities by **Dynatrace Assessment** > `Assessment mode`.
 
 #### How reduced accuracy affects the DSS calculation
 
@@ -303,7 +303,7 @@ Affected entities
 Affected process
 :   A process that contains a vulnerable library or runtime.
 
-How to use: You can [prioritize vulnerabilities by affected entities](/docs/secure/vulnerabilities/prioritize#affected-related "Prioritize third-party, code-level, and runtime vulnerabilities.").
+How to use: You can [prioritize vulnerabilities by affected entities](prioritize.md#affected-related "Prioritize third-party, code-level, and runtime vulnerabilities.").
 
 ### Related entities
 
@@ -328,7 +328,7 @@ Related Kubernetes workload/cluster
 Related container image
 :   In Kubernetes environments, the container image used by the affected processes.
 
-How to use: You can [prioritize vulnerabilities by related entities](/docs/secure/vulnerabilities/prioritize#affected-related "Prioritize third-party, code-level, and runtime vulnerabilities.").
+How to use: You can [prioritize vulnerabilities by related entities](prioritize.md#affected-related "Prioritize third-party, code-level, and runtime vulnerabilities.").
 
 ## Vulnerability source
 
@@ -345,9 +345,9 @@ Vulnerable component
 
     * For NVD-based vulnerabilities, the runtime technology (examples: `Java runtime`, `Node.js runtime`)
 
-How to use: You can [drill down and explore vulnerable components](/docs/secure/vulnerabilities/address-remediation#vulnerable-component "Address remediation and optimize remediation activities.").
+How to use: You can [drill down and explore vulnerable components](address-remediation.md#vulnerable-component "Address remediation and optimize remediation activities.").
 
-Further reading: [Why is a fixed vulnerability still showing as open?](/docs/secure/faq#open "Frequently asked questions about Dynatrace Application Security.")
+Further reading: [Why is a fixed vulnerability still showing as open?](../faq.md#open "Frequently asked questions about Dynatrace Application Security.")
 
 ### Entry point
 
@@ -370,7 +370,7 @@ Payloads
 
     * Example: `HTTP parameter value: bioText`
 
-How to use: You can [drill down and explore entry points](/docs/secure/vulnerabilities/address-remediation#entry-points "Address remediation and optimize remediation activities.").
+How to use: You can [drill down and explore entry points](address-remediation.md#entry-points "Address remediation and optimize remediation activities.").
 
 ### Code location
 
@@ -381,7 +381,7 @@ Code location
 
     * Example: `SQL injection at DatabaseManager.updateBio():82`
 
-How to use: You can [drill down and explore code location](/docs/secure/vulnerabilities/address-remediation#code-location "Address remediation and optimize remediation activities.").
+How to use: You can [drill down and explore code location](address-remediation.md#code-location "Address remediation and optimize remediation activities.").
 
 ## Vulnerability status
 
@@ -392,15 +392,15 @@ Learn about the resolution and mute status of a vulnerability or [affected entit
 | **State** | **Description** |
 | --- | --- |
 | Open | The vulnerability is active. |
-| Resolved | The vulnerability was closed automatically because the root cause is no longer present. For details, see [Vulnerability evaluation: Resolution](/docs/secure/application-security "Access the Dynatrace Application Security functionalities."). |
+| Resolved | The vulnerability was closed automatically because the root cause is no longer present. For details, see [Vulnerability evaluation: Resolution](../application-security.md "Access the Dynatrace Application Security functionalities."). |
 | Muted (Open) | The vulnerability is active but all its affected entities were muted by request. |
 
-How to use: On the **Prioritization** page, you can [filter](/docs/secure/vulnerabilities/manage-results#expressions "Filter, format, and sort to find relevant vulnerability information.")
+How to use: On the **Prioritization** page, you can [filter](manage-results.md#expressions "Filter, format, and sort to find relevant vulnerability information.")
 
 * By **Status** to see `Open` and `Resolved` vulnerabilities
 * By **Mute: Status** to see `Muted (Open)` vulnerabilities
 
-  Resolved vulnerabilities are displayed only once (at the resolution time). Extend the timeframe to include more results. For details, see [Timeframe filter](/docs/secure/vulnerabilities/manage-results#timeframe "Filter, format, and sort to find relevant vulnerability information.").
+  Resolved vulnerabilities are displayed only once (at the resolution time). Extend the timeframe to include more results. For details, see [Timeframe filter](manage-results.md#timeframe "Filter, format, and sort to find relevant vulnerability information.").
 
 ### States for affected entities
 
@@ -415,20 +415,20 @@ A muted entity that was closed automatically doesn't change its status to `Resol
 
 How to use: On the overview page of affected process groups or Kubernetes nodes, you can
 
-* [Filter](/docs/secure/vulnerabilities/manage-results#expressions "Filter, format, and sort to find relevant vulnerability information.")
+* [Filter](manage-results.md#expressions "Filter, format, and sort to find relevant vulnerability information.")
 
   + By **Status** to see the affected entities that are `Affected` or `Resolved`
   + By **Mute** > **Mute: Status** to see affected entities that are `Muted (Affected)` or `Muted (Resolved)`
-* [Format](/docs/secure/vulnerabilities/manage-results#format "Filter, format, and sort to find relevant vulnerability information.") affected entities table by **Status**
-* [Change the mute status of affected entities](/docs/secure/vulnerabilities/address-remediation#mute-entities "Address remediation and optimize remediation activities.")
+* [Format](manage-results.md#format "Filter, format, and sort to find relevant vulnerability information.") affected entities table by **Status**
+* [Change the mute status of affected entities](address-remediation.md#mute-entities "Address remediation and optimize remediation activities.")
 
-Further reference: [Can a vulnerability be resolved while there are still affected entities?](/docs/secure/faq#resolution-affected-entities "Frequently asked questions about Dynatrace Application Security.")
+Further reference: [Can a vulnerability be resolved while there are still affected entities?](../faq.md#resolution-affected-entities "Frequently asked questions about Dynatrace Application Security.")
 
 ## Third-party library events
 
 Third-party libraries
 
-Prerequisite: [Enable third-party vulnerability detection](/docs/secure/application-security/vulnerability-analytics#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.").
+Prerequisite: [Enable third-party vulnerability detection](../application-security/vulnerability-analytics.md#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.").
 
 To help you monitor and analyze **third-party libraries** in your applications, Dynatrace provides detailed event data that captures how external libraries are assessed for security risks.
 
@@ -436,14 +436,14 @@ This data is represented through two types of security events:
 
 * `VULNERABILITY_FINDING`: Represents a single vulnerability identified in a specific process at a given time.
 
-  + For details, see [Semantic Dictionary](/docs/semantic-dictionary/model/security-events#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.").
+  + For details, see [Semantic Dictionary](../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.").
 * `VULNERABILITY_SCAN`: Represents the analysis of detected packages within a specific process at a given time.
 
-  + For details, see [Semantic Dictionary](/docs/semantic-dictionary/model/security-events#vulnerability-scan-events "Get to know the Semantic Dictionary models related to security events.").
+  + For details, see [Semantic Dictionary](../../semantic-dictionary/model/security-events.md#vulnerability-scan-events "Get to know the Semantic Dictionary models related to security events.").
 
-Both types are stored in the `security.events` table and can be queried using [DQL](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.").
+Both types are stored in the `security.events` table and can be queried using [DQL](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.").
 
-As Dynatrace analyzes the libraries used by your application, it continuously generates vulnerability findings. These raw events reflect the same underlying vulnerability data shown in [![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**](/docs/secure/vulnerabilities "Prioritize and efficiently manage vulnerabilities in your monitored environments."), but in a more granular form.
+As Dynatrace analyzes the libraries used by your application, it continuously generates vulnerability findings. These raw events reflect the same underlying vulnerability data shown in [![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**](../vulnerabilities.md "Prioritize and efficiently manage vulnerabilities in your monitored environments."), but in a more granular form.
 
 The table below highlights the core differences between the granular finding events and the aggregated view in the app and entity events:
 
@@ -451,7 +451,7 @@ The table below highlights the core differences between the granular finding eve
 | --- | --- |
 | Continuously generated by Dynatrace during library analysis | Aggregated from entity state events |
 | Unaggregated event data: `VULNERABILITY_FINDING` and `VULNERABILITY_SCAN` | Vulnerability-based view with comprehensive summaries |
-| Not influenced by user actions | Includes [states](#status) (open/resolved) and user-controlled input like [mute states](/docs/secure/vulnerabilities/address-remediation#mute-entities "Address remediation and optimize remediation activities.") and [tracking links](/docs/secure/vulnerabilities/address-remediation#remediation-tracking "Address remediation and optimize remediation activities.") |
+| Not influenced by user actions | Includes [states](#status) (open/resolved) and user-controlled input like [mute states](address-remediation.md#mute-entities "Address remediation and optimize remediation activities.") and [tracking links](address-remediation.md#remediation-tracking "Address remediation and optimize remediation activities.") |
 | Queried using DQL | Accessed via the app interface or via DQL by querying entity state events |
 | Offers deeper investigative context for custom analysis | Designed for high-level overview and vulnerability management |
 
@@ -473,9 +473,9 @@ fetch security.events
 
 ## Ingested vulnerability findings
 
-In addition to findings generated by Dynatrace through [thirdâparty library detection](#tpv-events) and code-level vulnerability detection, vulnerability findings can also be ingested from external security tools. These originate outside Dynatrace and are brought in via [security events ingest](/docs/secure/threat-observability/security-events-ingest "Ingest external security data into Grail."). For details, see [Vulnerability findings](/docs/secure/threat-observability/concepts#vuln-findings "Basic concepts related to Threat Observability").
+In addition to findings generated by Dynatrace through [thirdâparty library detection](#tpv-events) and code-level vulnerability detection, vulnerability findings can also be ingested from external security tools. These originate outside Dynatrace and are brought in via [security events ingest](../threat-observability/security-events-ingest.md "Ingest external security data into Grail."). For details, see [Vulnerability findings](../threat-observability/concepts.md#vuln-findings "Basic concepts related to Threat Observability").
 
-Ingested findings represent individual vulnerabilities reported by thirdâparty products. They are stored in the `security.events` table and available in ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities** on the [**Findings** page](/docs/secure/vulnerabilities/explore-findings "View, filter, and analyze vulnerability findings from Dynatrace and external security tools."), where you can filter, sort, remove duplicates, and analyze them alongside Dynatraceâgenerated findings.
+Ingested findings represent individual vulnerabilities reported by thirdâparty products. They are stored in the `security.events` table and available in ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities** on the [**Findings** page](explore-findings.md "View, filter, and analyze vulnerability findings from Dynatrace and external security tools."), where you can filter, sort, remove duplicates, and analyze them alongside Dynatraceâgenerated findings.
 
 ### Severity normalization mapping
 
@@ -491,4 +491,4 @@ Severity normalization follows this mapping:
 | Low | 3.9 |
 | Other/unknown | 0.0 |
 
-For details on how normalization works, see [Severity and score normalization](/docs/secure/threat-observability/concepts#normalization "Basic concepts related to Threat Observability").
+For details on how normalization works, see [Severity and score normalization](../threat-observability/concepts.md#normalization "Basic concepts related to Threat Observability").

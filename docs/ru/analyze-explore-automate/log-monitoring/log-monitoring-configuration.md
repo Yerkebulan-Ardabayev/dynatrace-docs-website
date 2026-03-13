@@ -16,8 +16,8 @@ Log Monitoring Classic
 
 По умолчанию Log Monitoring активирован в вашей среде Dynatrace. Чтобы начать приём логов, в зависимости от вашего сценария использования, вам необходимо либо настроить правила хранения логов на OneAgent, либо отправлять логи в API приёма данных.
 
-* [Правила приёма логов (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-storage "Configure storage of log files that are already known to OneAgent.")
-* [API приёма логов (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")
+* [Правила приёма логов (Logs Classic)](acquire-log-data/log-storage.md "Configure storage of log files that are already known to OneAgent.")
+* [API приёма логов (Logs Classic)](acquire-log-data/logs-classic-ingestion-api.md "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")
 
 Вы можете подтвердить, что Log Monitoring включён, или включить его глобально или на уровне хоста, но проверка статуса и включение или отключение Log Monitoring является необязательной в большинстве случаев. Если вы планируете использовать Log Monitoring, вы можете сосредоточиться на настройках OneAgent, которые непосредственно влияют на работу Log Monitoring.
 
@@ -62,7 +62,7 @@ Log Monitoring Classic
 
 ## Настройки OneAgent
 
-Dynatrace Log Monitoring использует [модуль логов OneAgent](/docs/discover-dynatrace/get-started/glossary#glossary-oneagent-log-module "Get acquainted with Dynatrace terminology."), включённый по умолчанию при всех установках OneAgent. Хотя Log Monitoring не требует специальной конфигурации, вы можете изменить некоторые параметры, доступные для модуля логов OneAgent.
+Dynatrace Log Monitoring использует [модуль логов OneAgent](../../discover-dynatrace/get-started/glossary.md#glossary-oneagent-log-module "Get acquainted with Dynatrace terminology."), включённый по умолчанию при всех установках OneAgent. Хотя Log Monitoring не требует специальной конфигурации, вы можете изменить некоторые параметры, доступные для модуля логов OneAgent.
 
 Вы можете настроить:
 

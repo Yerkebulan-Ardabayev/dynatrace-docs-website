@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:33:08.142213
 
 Log Monitoring Classic
 
-Для новейшей версии Dynatrace см. [Автоматическое обогащение логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.").
+Для новейшей версии Dynatrace см. [Автоматическое обогащение логов](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.").
 
 Dynatrace позволяет преобразовывать логи, принятые как через OneAgent, так и через API.
 
@@ -90,5 +90,5 @@ API приёма логов автоматически преобразует к
 
 ## Связанные темы
 
-* [API приёма логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
-* [Приём логов через OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
+* [API приёма логов](../../logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
+* [Приём логов через OneAgent](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")

@@ -21,16 +21,16 @@ scraped: 2026-03-06T21:28:05.793494
 
 * Reference
 
-Читать справочник](/docs/observe/digital-experience/new-rum-experience/use-cases/dql-examples)[#### Извлечение метрики из событий пользователей
+Читать справочник](use-cases/dql-examples.md)[#### Извлечение метрики из событий пользователей
 
 Превращайте события пользователей в практически применимые данные, извлекая пользовательские метрики для долгосрочного анализа.
 
 * Tutorial
 
-Читать руководство](/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-events)[#### Извлечение метрики из сессий пользователей
+Читать руководство](use-cases/extract-custom-metrics-from-user-events.md)[#### Извлечение метрики из сессий пользователей
 
 Узнайте, как создавать пользовательские метрики на основе сессий пользователей, на примере метрики конверсии клиентов.
 
 * Tutorial
 
-Читать руководство](/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-sessions)
+Читать руководство](use-cases/extract-custom-metrics-from-user-sessions.md)

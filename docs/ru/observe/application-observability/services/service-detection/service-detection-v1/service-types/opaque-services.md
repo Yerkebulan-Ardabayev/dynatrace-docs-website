@@ -36,7 +36,7 @@ scraped: 2026-03-06T21:13:00.325403
 
 Непрозрачные сервисы на основе нераспознанных или неподдерживаемых технологий включаются в Smartscape. Это обеспечивает полное представление топологии вашей инфраструктуры, даже если в среде присутствуют непрозрачные сервисы.
 
-[OneAgent SDK](/docs/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") позволяет вручную инструментировать приложение для расширения сквозной видимости нераспознанных или неподдерживаемых технологий.
+[OneAgent SDK](../../../../../../ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk.md "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") позволяет вручную инструментировать приложение для расширения сквозной видимости нераспознанных или неподдерживаемых технологий.
 
 ## Другие причины, по которым сервисы могут классифицироваться как непрозрачные
 

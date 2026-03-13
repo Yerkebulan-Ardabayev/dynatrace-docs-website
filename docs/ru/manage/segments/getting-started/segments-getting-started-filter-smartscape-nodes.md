@@ -27,16 +27,16 @@ scraped: 2026-03-06T21:24:58.481368
 
 Предварительные знания
 
-* [Включение данных в сегменты](/docs/manage/segments/concepts/segments-concepts-includes "Learn how data of different types can be included in segments.")
-* [Переменные в сегментах](/docs/manage/segments/concepts/segments-concepts-variables "Learn how variables help to form dynamic segments and reduce configuration effort and maintenance.")
+* [Включение данных в сегменты](../concepts/segments-concepts-includes.md "Learn how data of different types can be included in segments.")
+* [Переменные в сегментах](../concepts/segments-concepts-variables.md "Learn how variables help to form dynamic segments and reduce configuration effort and maintenance.")
 
 Приложения Dynatrace, поддерживающие сегменты:
 
-* [Dashboards ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards")](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")
-* [Notebooks ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks")](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
-* [Problems ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new")](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
-* [Workflows ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
-* [Distributed Tracing ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing")](/docs/observe/application-observability/distributed-tracing "Trace and analyze in real time highly distributed systems with Grail.")
+* [Dashboards ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards")](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")
+* [Notebooks ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks")](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+* [Problems ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new")](../../../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* [Workflows ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")](../../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
+* [Distributed Tracing ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing")](../../../observe/application-observability/distributed-tracing.md "Trace and analyze in real time highly distributed systems with Grail.")
 * Discovery & Coverage
 
 Поддержка сегментов в других приложениях будет добавлена позже. Следите за обновлениями.
@@ -44,7 +44,7 @@ scraped: 2026-03-06T21:24:58.481368
 Предварительные требования
 
 * Среда Dynatrace SaaS на основе Grail и AppEngine.
-* У вас есть разрешение `storage:filter-segments:read`. Сведения о настройке разрешений см. в разделе [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
+* У вас есть разрешение `storage:filter-segments:read`. Сведения о настройке разрешений см. в разделе [Permissions in Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
 
 ## Фильтрация узлов Smartscape с помощью блоков включения данных
 

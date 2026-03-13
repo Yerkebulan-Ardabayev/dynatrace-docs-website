@@ -19,12 +19,12 @@ Dynatrace supports most industry standards for authentication and authorization,
 
 [## Overview
 
-Gain insight into the key Identity and Access Management (IAM) components.](/docs/manage/identity-access-management/iam-concepts "Understand the key Identity and Access Management concepts (IAM) areas in Dynatrace")[## Use cases
+Gain insight into the key Identity and Access Management (IAM) components.](../../ru/manage/identity-access-management/iam-concepts.md "Understand the key Identity and Access Management concepts (IAM) areas in Dynatrace")[## Use cases
 
-Learn how to manage access to Dynatrace using various available layers.](/docs/manage/identity-access-management/use-cases "Access control use cases")[## Identity management
+Learn how to manage access to Dynatrace using various available layers.](identity-access-management/use-cases.md "Access control use cases")[## Identity management
 
-Manage your Dynatrace users and groups and integrate the authentication using your identity provider (IdP).](/docs/manage/identity-access-management/user-and-group-management "User and group management")[## Access management
+Manage your Dynatrace users and groups and integrate the authentication using your identity provider (IdP).](identity-access-management/user-and-group-management.md "User and group management")[## Access management
 
-Dynatrace lets you manage user permissions based on user account membership in user groups.](/docs/manage/identity-access-management/permission-management "Permission management")[## Tokens and OAuth clients
+Dynatrace lets you manage user permissions based on user account membership in user groups.](identity-access-management/permission-management.md "Permission management")[## Tokens and OAuth clients
 
-Control external access to your Dynatrace monitoring and account management through API tokens and OAuth clients.](/docs/manage/identity-access-management/access-tokens-and-oauth-clients "Tokens and OAuth clients")
+Control external access to your Dynatrace monitoring and account management through API tokens and OAuth clients.](identity-access-management/access-tokens-and-oauth-clients.md "Tokens and OAuth clients")

@@ -46,17 +46,17 @@ scraped: 2026-03-06T21:16:48.623627
 
 Нажмите на значок в правом верхнем углу графика, чтобы:
 
-* **Show in Data Explorer** — открыть [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") для соответствующего запроса, чтобы просмотреть запрос, изучить данные детальнее, настроить параметры графика и закрепить его на собственной панели мониторинга.
-* **Create metric event** — открыть страницу [Metric events](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace") для выбранной метрики.
-* **Pin to dashboard** — закрепить копию выбранного графика на любой классической панели мониторинга, доступной для редактирования. Например, если определённые хосты особенно важны для вашего бизнеса, создайте панель мониторинга для наблюдения только за этими хостами и закрепите на неё графики со страниц их обзора — практически без ввода текста. Подробнее см. [Pin tiles to your dashboard](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+* **Show in Data Explorer** — открыть [Data Explorer](../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") для соответствующего запроса, чтобы просмотреть запрос, изучить данные детальнее, настроить параметры графика и закрепить его на собственной панели мониторинга.
+* **Create metric event** — открыть страницу [Metric events](../../../dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace") для выбранной метрики.
+* **Pin to dashboard** — закрепить копию выбранного графика на любой классической панели мониторинга, доступной для редактирования. Например, если определённые хосты особенно важны для вашего бизнеса, создайте панель мониторинга для наблюдения только за этими хостами и закрепите на неё графики со страниц их обзора — практически без ввода текста. Подробнее см. [Pin tiles to your dashboard](../../../analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard.md "Learn to pin tiles to your dashboards.").
 
 ## Группы процессов
 
-В разделе **Process groups** отображаются все группы процессов для выбранной группы контейнеров. Выберите группу процессов из таблицы для перехода на соответствующую страницу обзора. Дополнительные сведения см. в разделе [Overview of all technologies running in your environment](/docs/observe/infrastructure-observability/process-groups/monitoring/overview-of-all-technologies-running-in-my-environment "Get a summary of the performance of all the technologies in your environment.").
+В разделе **Process groups** отображаются все группы процессов для выбранной группы контейнеров. Выберите группу процессов из таблицы для перехода на соответствующую страницу обзора. Дополнительные сведения см. в разделе [Overview of all technologies running in your environment](../process-groups/monitoring/overview-of-all-technologies-running-in-my-environment.md "Get a summary of the performance of all the technologies in your environment.").
 
 ## События
 
-На плитке **Events** отображается распределение [событий](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation "Gain an understanding of the Events section on each host, process, and service overview page."), таких как развёртывания сервисов, сведения об аварийном завершении процессов и дампы памяти. Разверните плитку для просмотра списка событий.
+На плитке **Events** отображается распределение [событий](../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation.md "Gain an understanding of the Events section on each host, process, and service overview page."), таких как развёртывания сервисов, сведения об аварийном завершении процессов и дампы памяти. Разверните плитку для просмотра списка событий.
 
 ## Журналы
 
@@ -66,5 +66,5 @@ scraped: 2026-03-06T21:16:48.623627
 
 Нажмите на значок в правом верхнем углу графика, чтобы:
 
-* **Go to Log Viewer** — открыть страницу [Log Viewer](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data."), отфильтрованную по выбранной группе контейнеров.
-* **Create metric** — открыть страницу [Log metrics](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.") со значением поля **Query**, установленным для выбранной группы контейнеров.
+* **Go to Log Viewer** — открыть страницу [Log Viewer](../../../analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer.md "Learn how to use Dynatrace log viewer to analyze log data."), отфильтрованную по выбранной группе контейнеров.
+* **Create metric** — открыть страницу [Log metrics](../../../analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics.md "Learn how to create and use Dynatrace log metrics to analyze log data.") со значением поля **Query**, установленным для выбранной группы контейнеров.

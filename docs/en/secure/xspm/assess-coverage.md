@@ -16,17 +16,17 @@ The following options to assess coverage are available.
 
 ## Review system coverage
 
-On the **Overview** page, the **System coverage** donut chart helps you determine the percentage of monitored systems on which [Security Posture Management](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") is enabled.
+On the **Overview** page, the **System coverage** donut chart helps you determine the percentage of monitored systems on which [Security Posture Management](../application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") is enabled.
 
 ![system coverage](https://dt-cdn.net/images/2024-11-08-08-15-45-387-114cb209db.png)
 
-Enabling Security Posture Management on your systems allows you to view results in the app and take full advantage of its [capabilities](/docs/secure/xspm#about "Detect, manage, and take action on security and compliance findings.").
+Enabling Security Posture Management on your systems allows you to view results in the app and take full advantage of its [capabilities](../xspm.md#about "Detect, manage, and take action on security and compliance findings.").
 
-If you later on disable Security Posture Management on your system, you keep the access to previously created assessment results and you can query for [compliance events](/docs/secure/threat-observability/dql-examples#compliance "DQL examples for security data powered by Grail.") from that system in [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") and [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
+If you later on disable Security Posture Management on your system, you keep the access to previously created assessment results and you can query for [compliance events](../threat-observability/dql-examples.md#compliance "DQL examples for security data powered by Grail.") from that system in [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") and [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
 
 ### Improve system coverage
 
-To improve [Security Posture Management](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") coverage on your systems
+To improve [Security Posture Management](../application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") coverage on your systems
 
 1. On the **Overview** page, in the **My systems** table, search for systems labeled `Not enabled`.
 2. For each system you want to cover, select **Enable SPM**.
@@ -34,11 +34,11 @@ To improve [Security Posture Management](/docs/secure/application-security/spm "
 
 ## Review compliance status per environment
 
-On the **Overview** page, the compliance standard cards help you determine your compliance status per environment for each [supported compliance standard](/docs/secure/application-security/spm#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."). You can view
+On the **Overview** page, the compliance standard cards help you determine your compliance status per environment for each [supported compliance standard](../application-security/spm.md#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards."). You can view
 
 * The percentage of passed rules
-* The total number of rules and how many of them are [passed, manual, and failed](/docs/secure/xspm/concepts#concept-results "Concepts that are specific to the Dynatrace Security Posture Management app.")
-* The number of rules by [severity](/docs/secure/xspm/concepts#concept-severity "Concepts that are specific to the Dynatrace Security Posture Management app.") (critical, high, medium, and low)
+* The total number of rules and how many of them are [passed, manual, and failed](concepts.md#concept-results "Concepts that are specific to the Dynatrace Security Posture Management app.")
+* The number of rules by [severity](concepts.md#concept-severity "Concepts that are specific to the Dynatrace Security Posture Management app.") (critical, high, medium, and low)
 
 ![compliance status](https://dt-cdn.net/images/2024-11-04-21-06-16-1477-6f03aab3d1.png)
 
@@ -66,8 +66,8 @@ Any configuration changes take effect after the next compliance analysis.
 
 On the **Overview** page, the **My systems** table helps you review the results and compliance status for each of your monitored systems. You can view
 
-* The total number of [failed, manual, and passed rules](/docs/secure/xspm/concepts#concept-results "Concepts that are specific to the Dynatrace Security Posture Management app.")
-* The total number of failed rules based on [severity](/docs/secure/xspm/concepts#concept-severity "Concepts that are specific to the Dynatrace Security Posture Management app.")
+* The total number of [failed, manual, and passed rules](concepts.md#concept-results "Concepts that are specific to the Dynatrace Security Posture Management app.")
+* The total number of failed rules based on [severity](concepts.md#concept-severity "Concepts that are specific to the Dynatrace Security Posture Management app.")
 * The compliance status
 * The time when the latest assessment was completed
 
@@ -83,8 +83,8 @@ See below for the potential reasons why, on the **Overview** page, in **My syste
 
 * Security Posture Management isn't enabled on that system. In this case, the system is labeled `Not enabled`. Select **Enable SPM** to navigate to the Settings page of that system and enable Security Posture Management.
 
-* The initial assessment is still in progress. In this case, the system is labeled `No data`. Please allow around one hour for the assessment to finish. For details of the assessment mechanism, see [How it works](/docs/secure/application-security/spm#mechanism "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+* The initial assessment is still in progress. In this case, the system is labeled `No data`. Please allow around one hour for the assessment to finish. For details of the assessment mechanism, see [How it works](../application-security/spm.md#mechanism "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
 
 ## Related topics
 
-* [Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes.")
+* [Kubernetes Security Posture Management](../../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes.")

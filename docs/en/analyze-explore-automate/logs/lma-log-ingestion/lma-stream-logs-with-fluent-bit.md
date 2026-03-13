@@ -25,9 +25,9 @@ You can send logs to Dynatrace using Fluent Bit. Configure Fluent Bit to send lo
 
 The Fluent Bit `http output` plugin allows you to stream your logs to the Dynatrace generic logs ingest endpoint.
 
-1. Get a [Dynatrace API token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") with the `logs.ingest` (Ingest Logs) scope.
+1. Get a [Dynatrace API token](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") with the `logs.ingest` (Ingest Logs) scope.
 2. [Deploy Fluent Bitï»¿](https://dt-url.net/zd034je).
-3. To send logs into the Dynatrace [generic logs ingest](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.") endpoint, configure the [http output pluginï»¿](https://dt-url.net/0z034x4) through the configuration file.
+3. To send logs into the Dynatrace [generic logs ingest](../../log-monitoring/acquire-log-data/logs-classic-ingestion-api.md "Learn how Dynatrace ingests log data and what are potential limits such ingestion.") endpoint, configure the [http output pluginï»¿](https://dt-url.net/0z034x4) through the configuration file.
 4. In your main Fluent Bit configuration file, append the Output section with the following parameters:
 
 ```
@@ -88,8 +88,8 @@ tls.verify On
 
 You can place your API token in the header or as `GET` variable in URI (see example below).
 
-* For Dynatrace SaaS, the [generic logs ingest](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.") endpoint is available in your environment.
-* If [Environment ActiveGate](/docs/ingest-from/dynatrace-activegate#agtypes "Understand the basic concepts related to ActiveGate.") is your choice for an endpoint in local environment, install ActiveGate instance.
+* For Dynatrace SaaS, the [generic logs ingest](../../log-monitoring/acquire-log-data/logs-classic-ingestion-api.md "Learn how Dynatrace ingests log data and what are potential limits such ingestion.") endpoint is available in your environment.
+* If [Environment ActiveGate](../../../ingest-from/dynatrace-activegate.md#agtypes "Understand the basic concepts related to ActiveGate.") is your choice for an endpoint in local environment, install ActiveGate instance.
 
   In Dynatrace Hub, select **ActiveGate** > **Set up**.
 * Generic log ingest API v2 is automatically enabled on ActiveGate.
@@ -164,6 +164,6 @@ For more configuration details, see [Amazon ECS Developer Guideï»¿](https://d
 
 ## Troubleshooting
 
-Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Management and Analytics](/docs/analyze-explore-automate/logs/lma-troubleshooting "Fix issues related to the setup and configuration of Log Management and Analytics.").
+Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Management and Analytics](../lma-troubleshooting.md "Fix issues related to the setup and configuration of Log Management and Analytics.").
 
 * [Troubleshooting logs ingested via Fluent Bitï»¿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718)

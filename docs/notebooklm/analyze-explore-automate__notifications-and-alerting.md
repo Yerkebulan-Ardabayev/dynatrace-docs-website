@@ -20,7 +20,7 @@ scraped: 2026-03-06T21:21:41.046909
 * 4-min read
 * Updated on Aug 26, 2025
 
-Problem alerting profiles control the delivery of problem notifications across your organization's alerting channels based on consideration of predefined filters that are based on problem severity, problem duration, custom events, and tags. Problem alerting profiles allow you to control exactly which conditions result in problem notifications and which don't. This includes all problem-push notifications that are sent via the [Dynatrace mobile app](/docs/analyze-explore-automate/notifications-and-alerting/push-notifications-via-the-dynatrace-mobile-app "Learn how you can connect your Dynatrace environments with the Dynatrace mobile app to receive problem alerts.") and displayed in the Dynatrace web UI. Problem alerting profiles can also be used to set up filtered problem-notification integrations with third-party messaging systems like [Slack](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration "Set up a Slack problem-notification integration that can keep you updated on all Dynatrace problems."), [Opsgenie](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration "Configure Opsgenie integration with Dynatrace."), and [PagerDuty](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration "Learn how to send problem notifications from Dynatrace to PagerDuty.").
+Problem alerting profiles control the delivery of problem notifications across your organization's alerting channels based on consideration of predefined filters that are based on problem severity, problem duration, custom events, and tags. Problem alerting profiles allow you to control exactly which conditions result in problem notifications and which don't. This includes all problem-push notifications that are sent via the [Dynatrace mobile app](analyze-explore-automate/notifications-and-alerting/push-notifications-via-the-dynatrace-mobile-app.md "Learn how you can connect your Dynatrace environments with the Dynatrace mobile app to receive problem alerts.") and displayed in the Dynatrace web UI. Problem alerting profiles can also be used to set up filtered problem-notification integrations with third-party messaging systems like [Slack](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration.md "Set up a Slack problem-notification integration that can keep you updated on all Dynatrace problems."), [Opsgenie](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration.md "Configure Opsgenie integration with Dynatrace."), and [PagerDuty](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration.md "Learn how to send problem notifications from Dynatrace to PagerDuty.").
 
 Each of your monitoring environments has a default alerting profile that defines the severity level that must be met before an alert is sent out for a detected problem.
 
@@ -56,7 +56,7 @@ Severity rules filter events based on their severity level. For each alerting pr
 
 You can use the following criteria:
 
-* [Severity level](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.").
+* [Severity level](dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories.md "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.").
 * How long the problem is open before an alert is sent outâthis enables you to avoid alerts for low-severity problems that don't affect customer experience and therefore don't require immediate attention.
 * Optional Monitoring entities that have any or all of the specified tags
 
@@ -87,8 +87,8 @@ To create an alerting profile
 
 1. Go to **Settings** > **Alerting** > **Problem alerting profiles** and select **Add alerting profile**.
 2. Type a name for the new profile in the **Create new alerting profile** field and select **Create**.
-3. Define the [management zone](/docs/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.") filter.
-4. Define the [severity-level](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.") rules for the profile.
+3. Define the [management zone](manage/identity-access-management/permission-management/management-zones.md "Learn about management zones concepts, how to define management zones, and how to make the most of them.") filter.
+4. Define the [severity-level](dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories.md "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.") rules for the profile.
 5. Define the event filter. You can base it one one of the following:
 
    * `Predefined`: a specific built-in event type
@@ -98,7 +98,7 @@ To create an alerting profile
 
 ## Alerting profiles API
 
-In addition to the Dynatrace web UI, you can manage your problem alerting profiles via the [Settings API](/docs/dynatrace-api/configuration-api/alerting-profiles-api "Learn what the Dynatrace alerting profiles API offers."). Look for the **Problem alerting profiles** (`builtin:alerting.profile`) schema.
+In addition to the Dynatrace web UI, you can manage your problem alerting profiles via the [Settings API](dynatrace-api/configuration-api/alerting-profiles-api.md "Learn what the Dynatrace alerting profiles API offers."). Look for the **Problem alerting profiles** (`builtin:alerting.profile`) schema.
 
 ---
 
@@ -118,7 +118,7 @@ scraped: 2026-03-06T21:11:39.929087
 * 2-min read
 * Updated on Apr 25, 2024
 
-For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see [Workflows Connectors](/docs/analyze-explore-automate/workflows/actions "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
+For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see [Workflows Connectors](../ru/analyze-explore-automate/workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
 
 Dynatrace offers several out-of-the-box integrations that automatically push Dynatrace problem notifications to your third-party messaging or incident-management systems. If, however, your third-party system isn't supported with an out-of-the-box integration, you can easily set up email integration. Using this approach, an email is sent out whenever Dynatrace detects a problem in your environment that affects real users.
 
@@ -126,7 +126,7 @@ Short-lived problems
 
 Short-lived problems do not generate open problem notifications. For such problems, Dynatrace sends out only resolved problem notifications to inform you that such a problem occurred.
 
-You can customize the subject line of problem-notification emails by defining a text template that includes placeholders that are dynamically populated with relevant problem details, such as problem ID, problem impact, or problem state. By default, the body of email notifications contain an HTML-formatted description of the detected problem and a direct link to the corresponding [problem details](/docs/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.") page in Dynatrace.
+You can customize the subject line of problem-notification emails by defining a text template that includes placeholders that are dynamically populated with relevant problem details, such as problem ID, problem impact, or problem state. By default, the body of email notifications contain an HTML-formatted description of the detected problem and a direct link to the corresponding [problem details](../ru/dynatrace-intelligence/root-cause-analysis/concepts.md "Get acquainted with root cause analysis concepts.") page in Dynatrace.
 
 To set up email-based problem notifications
 
@@ -145,7 +145,7 @@ To set up email-based problem notifications
      Placeholders
 
      The **Available placeholders** section of the configuration page lists placeholders you can use for this integration. Placeholders are automatically replaced with actual values in the message.
-   * Select an [alerting profile](/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.") to filter the problem feed.
+   * Select an [alerting profile](../ru/analyze-explore-automate/notifications-and-alerting/alerting-profiles.md "Learn how to create and manage alerting profiles.") to filter the problem feed.
 5. Select **Send test notification** to make sure your email integration is working.
 6. **Save changes**.
 
@@ -167,7 +167,7 @@ scraped: 2026-03-06T21:11:34.918585
 * 3-min read
 * Updated on Apr 25, 2024
 
-For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see [Workflows Connectors](/docs/analyze-explore-automate/workflows/actions "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
+For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see [Workflows Connectors](../ru/analyze-explore-automate/workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
 
 With Dynatrace and Jira integration, issue tickets are generated automatically for all new problems that are auto-detected in your Dynatrace environments.
 
@@ -243,7 +243,7 @@ scraped: 2026-03-06T21:11:51.891771
 * 2-min read
 * Updated on Jan 22, 2026
 
-For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see [Workflows Connectors](/docs/analyze-explore-automate/workflows/actions "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
+For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see [Workflows Connectors](../ru/analyze-explore-automate/workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
 
 Deprecation
 
@@ -334,7 +334,7 @@ To set up Opsgenie problem-notification integration
      Placeholders
 
      The **Available placeholders** section of the configuration page lists placeholders you can use for this integration. Problem notifications automatically fill in the placeholder values and include them in the corresponding Opsgenie incidents. Opsgenie incidents are automatically created when problems are detected and closed when problems are resolved. Incident details contain the detailed problem information as well as a direct link to the problem in Dynatrace.
-5. Assign an [Alerting profile](/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.").
+5. Assign an [Alerting profile](../ru/analyze-explore-automate/notifications-and-alerting/alerting-profiles.md "Learn how to create and manage alerting profiles.").
 6. Select **Send test notification** to make sure your OspGenie integration is working.
 7. **Save changes**.
 
@@ -370,7 +370,7 @@ scraped: 2026-03-06T21:11:50.165388
 * 3-min read
 * Updated on Apr 25, 2024
 
-For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see [Workflows Connectors](/docs/analyze-explore-automate/workflows/actions "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
+For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see [Workflows Connectors](../ru/analyze-explore-automate/workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
 
 Dynatrace offers an [out-of-the-box integration](#out-of-the-box-integration) that automatically pushes Dynatrace problem notifications to your PagerDuty environment. This integration provides PagerDuty responders with the link to the Dynatrace problem card.
 
@@ -418,7 +418,7 @@ If you want more custom notification fields, use this procedure to integrate Dyn
 
 ### More information
 
-* For general information on configuring a custom integration in Dynatrace, see [Webhook integration](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration "Learn how to integrate problem-notifications using a custom webhook.").
+* For general information on configuring a custom integration in Dynatrace, see [Webhook integration](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration.md "Learn how to integrate problem-notifications using a custom webhook.").
 * For the PagerDuty documentation on how to integrate PagerDuty with Dynatrace via a custom webhook, see PagerDuty's [Dynatrace Integration Guideï»¿](https://www.pagerduty.com/docs/guides/dynatrace-integration-guide/).
 
 ---
@@ -439,7 +439,7 @@ scraped: 2026-03-06T21:11:41.657451
 * 9-min read
 * Updated on Apr 15, 2025
 
-For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see [Workflows Connectors](/docs/analyze-explore-automate/workflows/actions "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
+For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see [Workflows Connectors](../ru/analyze-explore-automate/workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
 
 To connect your Dynatrace monitoring environment to your ServiceNow instance, configuration is required both on the ServiceNow instance and in the Dynatrace web UI.
 
@@ -460,7 +460,7 @@ Once you configure Dynatrace incident integration, Dynatrace automatically creat
 
 ### Dynatrace Workflows
 
-Dynatrace Workflows allows you to model incident creation and management processes directly within Dynatrace. For more information about configuration and usage details, see [ServiceNow](/docs/analyze-explore-automate/workflows/actions/service-now "Automate creation of incidents in ServiceNow based on your monitoring data and events.") workflow documentation.
+Dynatrace Workflows allows you to model incident creation and management processes directly within Dynatrace. For more information about configuration and usage details, see [ServiceNow](../ru/analyze-explore-automate/workflows/actions/service-now.md "Automate creation of incidents in ServiceNow based on your monitoring data and events.") workflow documentation.
 
 ### Dynatrace Incident Integration app
 
@@ -684,7 +684,7 @@ scraped: 2026-03-06T21:11:36.546788
 * 2-min read
 * Updated on Apr 25, 2024
 
-For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see [Workflows Connectors](/docs/analyze-explore-automate/workflows/actions "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
+For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see [Workflows Connectors](../ru/analyze-explore-automate/workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
 
 With a Slack problem-notification integration, your teams will always be aware of potential risks within applications, services, and infrastructure. Your teams can also use a Dynatrace-integrated Slack channel to discuss incidents, evaluate solutions, and link to similar problems.
 
@@ -709,7 +709,7 @@ With a Slack problem-notification integration, your teams will always be aware o
      Placeholders
 
      The **Available placeholders** section of the configuration page lists placeholders you can use for this integration. Placeholders are automatically replaced with actual values.
-7. Assign an [Alerting profile](/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.").
+7. Assign an [Alerting profile](../ru/analyze-explore-automate/notifications-and-alerting/alerting-profiles.md "Learn how to create and manage alerting profiles.").
 8. Select **Send test notification** to make sure your Slack integration is working.
 9. **Save changes**.
 
@@ -768,7 +768,7 @@ To set up Trello problem-notification integration
 
      The **Available placeholders** section of the configuration page lists placeholders you can use for this integration. Placeholders are automatically replaced with actual values in the card text.
    * Enter the card description.
-   * Assign an [Alerting profile](/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.").
+   * Assign an [Alerting profile](../ru/analyze-explore-automate/notifications-and-alerting/alerting-profiles.md "Learn how to create and manage alerting profiles.").
 5. Select **Send test notification** to make sure your Trello integration is working. It should send a test notification to Trello.
 6. If the test was successful, **Save changes**.
 
@@ -817,7 +817,7 @@ To set up VictorOps problem-notification integration
      Placeholders
 
      The **Available placeholders** section of the configuration page lists placeholders you can use for this integration. Placeholders are automatically replaced with values in the message.
-   * Assign an [Alerting profile](/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.").
+   * Assign an [Alerting profile](../ru/analyze-explore-automate/notifications-and-alerting/alerting-profiles.md "Learn how to create and manage alerting profiles.").
 5. Select **Send test notification** to make sure your VictorOps integration is working.
 6. **Save changes**.
 
@@ -869,7 +869,7 @@ To integrate problem-notifications using a custom webhook:
      The **Available placeholders** section of the configuration page lists placeholders you can use for this integration. Placeholders are automatically replaced with problem-related information such as problem state or title.
    * Optional Turn on **Accept any SSL certificate**.
    * Optional Turn on **Call webhook if new events merge into existing problems**.
-   * Assign an [Alerting profile](/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.").
+   * Assign an [Alerting profile](../ru/analyze-explore-automate/notifications-and-alerting/alerting-profiles.md "Learn how to create and manage alerting profiles.").
 5. Select **Send test notification** to make sure your webhook integration is working.
 6. **Save changes**.
 
@@ -1036,7 +1036,7 @@ The built-in version of xMatters integration that requires an API token is no lo
    * Optional Turn on **Accept any SSL certificate** option. We recommend that you use a valid SSL certificate (even for internal installations), but you can ignore the certificate for convenience.
    * Optional **Additional HTTP headers**âcustom HTTP header fields such as 'Content-Type' or 'Authorization' that can be used if the target endpoint needs an authentication token within the HTTP header or if you would like to send a different content type such as 'text/plain' or 'application/xml'.
    * **Custom payload**âonce a problem is detected or resolved, this customizable payload is pushed through an **HTTP POST** to the target system. Use specific placeholders to dynamically populate the payload with problem-related information, such as problem state or title.
-   * Assign an [Alerting profile](/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.").
+   * Assign an [Alerting profile](../ru/analyze-explore-automate/notifications-and-alerting/alerting-profiles.md "Learn how to create and manage alerting profiles.").
 5. Select **Send test notification** to make sure your xMatters integration is working.
 6. Select **Save changes**.
 
@@ -1072,20 +1072,20 @@ Enterprise service management
 
 Custom integrations
 
-These systems help organizations manage large amounts of incidents across multiple teams. Incident management systems offer features such as incident-notification tracking, escalation-level definition, and on-duty schedules. Typically, incident management systems offer a wide range of notification channels, such as call centers, pagers, and mobile push notifications. Dynatrace offers out-of-the-box integrations for major incident management systems such as [Opsgenie](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration "Configure Opsgenie integration with Dynatrace."), [VictorOps](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/victorops-integration "Learn how to configure VictorOps integration with Dynatrace."), [PagerDuty](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration "Learn how to send problem notifications from Dynatrace to PagerDuty."), [xMatters](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/xmatters-integration "Learn how to create problem notifications by adding an xMatters webhook URL from your xMatters instance to Dynatrace settings."), and [Jira](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/jira-integration "Configure Jira integration with Dynatrace.").
+These systems help organizations manage large amounts of incidents across multiple teams. Incident management systems offer features such as incident-notification tracking, escalation-level definition, and on-duty schedules. Typically, incident management systems offer a wide range of notification channels, such as call centers, pagers, and mobile push notifications. Dynatrace offers out-of-the-box integrations for major incident management systems such as [Opsgenie](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration.md "Configure Opsgenie integration with Dynatrace."), [VictorOps](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/victorops-integration.md "Learn how to configure VictorOps integration with Dynatrace."), [PagerDuty](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration.md "Learn how to send problem notifications from Dynatrace to PagerDuty."), [xMatters](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/xmatters-integration.md "Learn how to create problem notifications by adding an xMatters webhook URL from your xMatters instance to Dynatrace settings."), and [Jira](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/jira-integration.md "Configure Jira integration with Dynatrace.").
 
-[Jira](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/jira-integration) [Opsgenie](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration) [PagerDuty](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration) [Trello](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/trello-integration) [VictorOps](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/victorops-integration) [xMatters](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/xmatters-integration)
+[Jira](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/jira-integration.md) [Opsgenie](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration.md) [PagerDuty](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration.md) [Trello](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/trello-integration.md) [VictorOps](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/victorops-integration.md) [xMatters](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/xmatters-integration.md)
 
-Today, chat systems are widely used by DevOps teams to triage incoming issues, discuss follow-up actions and to archive lessons learned. Dynatrace offers out-of-the-box integrations for popular ChatOps systems such as [Slack](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration "Set up a Slack problem-notification integration that can keep you updated on all Dynatrace problems.") and [Microsoft Teams](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/microsoft-teams-integration "Set up a Microsoft Teams problem-notification integration that can keep you updated on all Dynatrace-detected problems.").
+Today, chat systems are widely used by DevOps teams to triage incoming issues, discuss follow-up actions and to archive lessons learned. Dynatrace offers out-of-the-box integrations for popular ChatOps systems such as [Slack](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration.md "Set up a Slack problem-notification integration that can keep you updated on all Dynatrace problems.") and [Microsoft Teams](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/microsoft-teams-integration.md "Set up a Microsoft Teams problem-notification integration that can keep you updated on all Dynatrace-detected problems.").
 
-[Microsoft Teams](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/microsoft-teams-integration) [Slack](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration)
+[Microsoft Teams](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/microsoft-teams-integration.md) [Slack](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration.md)
 
-Enterprise service-management systems are widely used by large enterprises to organize all types of IT and non-IT related services and resources. These systems are used by companies to organize their IT services according to global standards, such as ITIL (Information Technology Infrastructure Library). All hardware and software service-related incidents are tracked and trigger workflows. Dynatrace offers a certified integration with [ServiceNow](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/servicenow-integration "Connect your monitoring environment with your ServiceNow instance."), the most popular SaaS enterprise service-management system.
+Enterprise service-management systems are widely used by large enterprises to organize all types of IT and non-IT related services and resources. These systems are used by companies to organize their IT services according to global standards, such as ITIL (Information Technology Infrastructure Library). All hardware and software service-related incidents are tracked and trigger workflows. Dynatrace offers a certified integration with [ServiceNow](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/servicenow-integration.md "Connect your monitoring environment with your ServiceNow instance."), the most popular SaaS enterprise service-management system.
 
-[ServiceNow](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/servicenow-integration)
+[ServiceNow](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/servicenow-integration.md)
 
-If Dynatrace doesnât yet offer an out-of-the-box integration for your specific system, you can set up an [email integration](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration "Get email whenever Dynatrace detects a problem in your environment that affects real users.") or [webhook integration](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration "Learn how to integrate problem-notifications using a custom webhook.").
+If Dynatrace doesnât yet offer an out-of-the-box integration for your specific system, you can set up an [email integration](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration.md "Get email whenever Dynatrace detects a problem in your environment that affects real users.") or [webhook integration](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration.md "Learn how to integrate problem-notifications using a custom webhook.").
 
-[Email](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration) [Webhook](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration)
+[Email](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration.md) [Webhook](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration.md)
 
 ---

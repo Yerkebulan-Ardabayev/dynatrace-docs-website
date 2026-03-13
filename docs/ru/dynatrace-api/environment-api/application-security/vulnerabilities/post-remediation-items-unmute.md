@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:35:54.405045
 * Справочник
 * Обновлено 25 сент. 2024
 
-Снимает отключение (unmute) для нескольких групп процессов [отслеживания устранения](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Отслеживание прогресса устранения уязвимостей.") или, в случае уязвимостей Kubernetes, для нескольких узлов Kubernetes отслеживания устранения.
+Снимает отключение (unmute) для нескольких групп процессов [отслеживания устранения](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Отслеживание прогресса устранения уязвимостей.") или, в случае уязвимостей Kubernetes, для нескольких узлов Kubernetes отслеживания устранения.
 
 Запрос принимает полезную нагрузку `application/json`.
 
@@ -24,7 +24,7 @@ scraped: 2026-03-06T21:35:54.405045
 
 Для выполнения этого запроса вам необходим токен доступа с областью `securityProblems.write`.
 
-Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 
@@ -348,6 +348,6 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 
 ## Связанные темы
 
-* [Application Security](/docs/secure/application-security "Доступ к функциям Application Security Dynatrace.")
-* [Davis Security Advisor API](/docs/dynatrace-api/environment-api/application-security/davis-security-advice "Просмотр рекомендаций Davis Security Advisor через Dynatrace API.")
-* [Отслеживание устранения](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Отслеживание прогресса устранения уязвимостей.")
+* [Application Security](../../../../secure/application-security.md "Доступ к функциям Application Security Dynatrace.")
+* [Davis Security Advisor API](../davis-security-advice.md "Просмотр рекомендаций Davis Security Advisor через Dynatrace API.")
+* [Отслеживание устранения](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Отслеживание прогресса устранения уязвимостей.")

@@ -16,10 +16,10 @@ scraped: 2026-03-06T21:12:33.553012
 
 ### OpenTelemetry
 
-Узнайте, как расширить возможности наблюдаемости распределённой трассировки с помощью трассировки OpenTelemetry.](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.")[![Opentracing](https://dt-cdn.net/images/techn-icon-opentracing-936f2ba1cd.svg "Opentracing")
+Узнайте, как расширить возможности наблюдаемости распределённой трассировки с помощью трассировки OpenTelemetry.](../dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel.md "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.")[![Opentracing](https://dt-cdn.net/images/techn-icon-opentracing-936f2ba1cd.svg "Opentracing")
 
 ### OpenTracing
 
-Узнайте, как расширить возможности наблюдаемости распределённой трассировки в Dynatrace с помощью OpenTracing.](/docs/ingest-from/extend-dynatrace/extend-tracing/opentracing "Learn how to integrate OpenTracing with Dynatrace.")[### OneAgent SDK
+Узнайте, как расширить возможности наблюдаемости распределённой трассировки в Dynatrace с помощью OpenTracing.](extend-tracing/opentracing.md "Learn how to integrate OpenTracing with Dynatrace.")[### OneAgent SDK
 
-Узнайте, как расширить возможности наблюдаемости распределённой трассировки в Dynatrace с помощью OneAgent SDK.](/docs/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.")
+Узнайте, как расширить возможности наблюдаемости распределённой трассировки в Dynatrace с помощью OneAgent SDK.](extend-tracing/oneagent-sdk.md "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.")

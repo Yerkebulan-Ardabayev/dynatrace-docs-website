@@ -32,12 +32,12 @@ scraped: 2026-03-06T21:20:54.757825
 2. Разверните **Anomaly detection**.
 3. Выберите нужный тип сущности. Подробные инструкции см. в одной из тем ниже.
 
-* [Приложения](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications "Узнайте, как настроить чувствительность обнаружения проблем для приложений.")
-* [Сервисы](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services "Узнайте, как настроить чувствительность обнаружения проблем для сервисов.")
-* [Сервисы баз данных](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database "Узнайте, как настроить чувствительность обнаружения проблем для сервисов баз данных.")
-* [Инфраструктура](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure "Настройка чувствительности обнаружения проблем для инфраструктуры.")
-* [События расширений](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-extension "Узнайте, как настроить чувствительность обнаружения проблем для событий расширений.")
+* [Приложения](adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications.md "Узнайте, как настроить чувствительность обнаружения проблем для приложений.")
+* [Сервисы](adjust-sensitivity-anomaly-detection/adjust-sensitivity-services.md "Узнайте, как настроить чувствительность обнаружения проблем для сервисов.")
+* [Сервисы баз данных](adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database.md "Узнайте, как настроить чувствительность обнаружения проблем для сервисов баз данных.")
+* [Инфраструктура](adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure.md "Настройка чувствительности обнаружения проблем для инфраструктуры.")
+* [События расширений](adjust-sensitivity-anomaly-detection/adjust-sensitivity-extension.md "Узнайте, как настроить чувствительность обнаружения проблем для событий расширений.")
 
 ## Связанные темы
 
-* [Anomaly detection API](/docs/dynatrace-api/configuration-api/anomaly-detection-api "Узнайте, что предлагает API обнаружения аномалий Dynatrace.")
+* [Anomaly detection API](../../dynatrace-api/configuration-api/anomaly-detection-api.md "Узнайте, что предлагает API обнаружения аномалий Dynatrace.")

@@ -19,13 +19,13 @@ scraped: 2026-03-03T21:32:35.758185
 
 * Один из следующих дистрибутивов Collector:
 
-  + [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Узнайте о Dynatrace OTel Collector.")
-  + OpenTelemetry [Core](/docs/ingest-from/opentelemetry/collector#collector-core "Узнайте о Dynatrace OTel Collector.") или [Contrib](/docs/ingest-from/opentelemetry/collector#collector-contrib "Узнайте о Dynatrace OTel Collector.")
-  + [Пользовательская версия Builder](/docs/ingest-from/opentelemetry/collector#collector-builder "Узнайте о Dynatrace OTel Collector.")
-* [URL-адрес конечной точки API Dynatrace](/docs/ingest-from/opentelemetry/otlp-api "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."), в которую должны экспортироваться данные
-* [Токен API](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с соответствующей областью доступа (требуется только для SaaS и ActiveGate)
+  + [Dynatrace Collector](../../collector.md#dt-collector-dist "Узнайте о Dynatrace OTel Collector.")
+  + OpenTelemetry [Core](../../collector.md#collector-core "Узнайте о Dynatrace OTel Collector.") или [Contrib](../../collector.md#collector-contrib "Узнайте о Dynatrace OTel Collector.")
+  + [Пользовательская версия Builder](../../collector.md#collector-builder "Узнайте о Dynatrace OTel Collector.")
+* [URL-адрес конечной точки API Dynatrace](../../otlp-api.md "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."), в которую должны экспортироваться данные
+* [Токен API](../../otlp-api.md#authentication-export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с соответствующей областью доступа (требуется только для SaaS и ActiveGate)
 
-Сведения о настройке Collector с приведённой ниже конфигурацией см. в разделах [Развёртывание Collector](/docs/ingest-from/opentelemetry/collector/deployment "Как развернуть Dynatrace OTel Collector.") и [Конфигурация Collector](/docs/ingest-from/opentelemetry/collector/configuration "Как настроить OpenTelemetry Collector.").
+Сведения о настройке Collector с приведённой ниже конфигурацией см. в разделах [Развёртывание Collector](../deployment.md "Как развернуть Dynatrace OTel Collector.") и [Конфигурация Collector](../configuration.md "Как настроить OpenTelemetry Collector.").
 
 ## Демонстрационная конфигурация
 
@@ -127,7 +127,7 @@ exporters: [otlp_http]
 
 Проверка конфигурации
 
-[Проверьте ваши настройки](/docs/ingest-from/opentelemetry/collector/configuration#validate "Как настроить OpenTelemetry Collector."), чтобы избежать проблем с конфигурацией.
+[Проверьте ваши настройки](../configuration.md#validate "Как настроить OpenTelemetry Collector."), чтобы избежать проблем с конфигурацией.
 
 ## Компоненты
 
@@ -143,8 +143,8 @@ exporters: [otlp_http]
 
 Для этого мы задаём следующие две переменные среды и ссылаемся на них в значениях конфигурации для `endpoint` и `Authorization`.
 
-* `DT_ENDPOINT` содержит [базовый URL конечной точки API Dynatrace](/docs/ingest-from/opentelemetry/otlp-api#export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") (например, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
-* `DT_API_TOKEN` содержит [токен API](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.")
+* `DT_ENDPOINT` содержит [базовый URL конечной точки API Dynatrace](../../otlp-api.md#export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") (например, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
+* `DT_API_TOKEN` содержит [токен API](../../otlp-api.md#authentication-export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.")
 
 ### Конвейеры служб
 
@@ -152,14 +152,14 @@ exporters: [otlp_http]
 
 ## Ограничения
 
-Данные принимаются с использованием протокола OpenTelemetry (OTLP) через [Dynatrace OTLP APIs](/docs/ingest-from/opentelemetry/otlp-api "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") и подпадают под ограничения и лимиты API.
+Данные принимаются с использованием протокола OpenTelemetry (OTLP) через [Dynatrace OTLP APIs](../../otlp-api.md "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") и подпадают под ограничения и лимиты API.
 Дополнительные сведения см. в:
 
-* [Ограничения метрик OpenTelemetry](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest "Узнайте, как Dynatrace принимает метрики OpenTelemetry и какие ограничения применяются.")
-* [Сопоставление метрик Dynatrace](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#dynatrace-mapping "Узнайте, как Dynatrace принимает метрики OpenTelemetry и какие ограничения применяются.")
-* [Приём журналов OpenTelemetry](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Узнайте, как Dynatrace принимает записи журналов OpenTelemetry и какие ограничения применяются.")
+* [Ограничения метрик OpenTelemetry](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Узнайте, как Dynatrace принимает метрики OpenTelemetry и какие ограничения применяются.")
+* [Сопоставление метрик Dynatrace](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md#dynatrace-mapping "Узнайте, как Dynatrace принимает метрики OpenTelemetry и какие ограничения применяются.")
+* [Приём журналов OpenTelemetry](../../otlp-api/ingest-logs.md "Узнайте, как Dynatrace принимает записи журналов OpenTelemetry и какие ограничения применяются.")
 
 ## Связанные темы
 
-* [Обогащение принятых данных полями, специфичными для Dynatrace](/docs/ingest-from/extend-dynatrace/extend-data "Узнайте, как автоматически обогащать данные телеметрии полями, специфичными для Dynatrace.")
-* [Обогащение OTLP-запросов данными Kubernetes](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Настройте OpenTelemetry Collector для обогащения OTLP-запросов данными Kubernetes.")
+* [Обогащение принятых данных полями, специфичными для Dynatrace](../../../extend-dynatrace/extend-data.md "Узнайте, как автоматически обогащать данные телеметрии полями, специфичными для Dynatrace.")
+* [Обогащение OTLP-запросов данными Kubernetes](kubernetes/k8s-enrich.md "Настройте OpenTelemetry Collector для обогащения OTLP-запросов данными Kubernetes.")

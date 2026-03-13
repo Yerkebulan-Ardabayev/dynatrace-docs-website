@@ -14,7 +14,7 @@ scraped: 2026-03-05T21:31:21.874741
 * Published Nov 05, 2024
 
 With ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**, you can configure new service-level objectives (SLO)s from templates provided by Dynatrace.
-You can also define your SLOs based on a custom [DQL](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") query.
+You can also define your SLOs based on a custom [DQL](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") query.
 
 ## Steps
 
@@ -39,7 +39,7 @@ To create a new SLO with a predefined template
 
    ![Add segments filter to the SLO](https://dt-cdn.net/images/slo-level-segments-1313-399767711c.png)
 
-   This is only an additional filter for the required entities. It does not apply to the SLO evaluation. To add the segment filter to the SLO evaluation, use step 5 in the [Create a custom SLO](/docs/deliver/service-level-objectives/create-slo#create-a-custom-slo "Create and configure service-level objectives (SLOs).") section.
+   This is only an additional filter for the required entities. It does not apply to the SLO evaluation. To add the segment filter to the SLO evaluation, use step 5 in the [Create a custom SLO](create-slo.md#create-a-custom-slo "Create and configure service-level objectives (SLOs).") section.
 7. Select **Next**.
 8. Define the criteria of your SLO. Fill in the **Target** field and select the timeframe for the evaluation period by using the dropdown in the **Over the evaluation period** field.
 9. Optional Turn on **Show warning** and enter the numeric percent in **Show warning at** field.
@@ -54,7 +54,7 @@ To create a new SLO with a predefined template
 1. In **Dynatrace**, search for ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**.
 2. In the overview of **Service-Level Objectives**, select  **Service-level objective**.
 3. Select  **Custom SLO**.
-4. Provide your DQL query. Your query has to include an "sli" field like in the following example, to ensure consistent visualization, transformation, and aggregation across your SLOs. The "sli" field needs to return an array of `double` type. The DQL query can be based on any data type in Grail, such as events or logs. Using the [makeTimeseries](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#makeTimeseries "DQL aggregation commands") provides the possibility to create an sli time series that can be used for calculating the SLO status.
+4. Provide your DQL query. Your query has to include an "sli" field like in the following example, to ensure consistent visualization, transformation, and aggregation across your SLOs. The "sli" field needs to return an array of `double` type. The DQL query can be based on any data type in Grail, such as events or logs. Using the [makeTimeseries](../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#makeTimeseries "DQL aggregation commands") provides the possibility to create an sli time series that can be used for calculating the SLO status.
 
 ```
 timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.request.failure_count) }
@@ -89,8 +89,8 @@ timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.reques
 You can create, edit, list, delete, and evaluate your SLOs via API.
 
 1. Go to Dynatrace.
-2. In the [platform search](/docs/discover-dynatrace/get-started/dynatrace-ui#search "Navigate the latest Dynatrace"), type `API`. In the search results, see **Support resources** section and **Dynatrace API** below it.
+2. In the [platform search](../../discover-dynatrace/get-started/dynatrace-ui.md#search "Navigate the latest Dynatrace"), type `API`. In the search results, see **Support resources** section and **Dynatrace API** below it.
 3. Select **Dynatrace API** to access the Dynatrace API documentation. A new page opens with the Dynatrace API definitions.
 4. In the upper right corner, go to **Select a definition**.
 5. From the drop-down list, choose the endpoint.
-6. Authenticate with your API token. For more details, see [Authentication](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+6. Authenticate with your API token. For more details, see [Authentication](../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.").

@@ -26,7 +26,7 @@ The difference between third-party content providers and CDNs lies in the contro
 
 ## View your application's top providers
 
-You can view your application's top providers and access the detailed information on each provider from your application overview page. For details, see [Performance analysis > Resources](/docs/observe/digital-experience/web-applications/analyze-and-use/performance-analysis#resources "Understand the available types of performance analysis that are provided by Dynatrace.").
+You can view your application's top providers and access the detailed information on each provider from your application overview page. For details, see [Performance analysis > Resources](../analyze-and-use/performance-analysis.md#resources "Understand the available types of performance analysis that are provided by Dynatrace.").
 
 ## Manage your environment's providers
 
@@ -68,4 +68,4 @@ To change the order of manually added providers
 
 ## Related topics
 
-* [Content resources API](/docs/dynatrace-api/configuration-api/rum/content-resources "Learn what the Dynatrace configuration API for content resources offers.")
+* [Content resources API](../../../../dynatrace-api/configuration-api/rum/content-resources.md "Learn what the Dynatrace configuration API for content resources offers.")

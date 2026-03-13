@@ -20,15 +20,15 @@ This section provides an in-depth look at how Dynatrace components are deployed 
 
 In-depth description of Kubernetes platform monitoring using Dynatrace Operator.
 
-Kubernetes platform monitoring](/docs/ingest-from/setup-on-k8s/how-it-works/kubernetes-monitoring)[#### Application observability
+Kubernetes platform monitoring](how-it-works/kubernetes-monitoring.md)[#### Application observability
 
 In-depth description of Application observability using the Dynatrace Operator.
 
-Application observability](/docs/ingest-from/setup-on-k8s/how-it-works/application-monitoring)[#### Full-stack observability
+Application observability](how-it-works/application-monitoring.md)[#### Full-stack observability
 
 In-depth description of full-stack observability using Dynatrace Operator.
 
-Full-stack observability](/docs/ingest-from/setup-on-k8s/how-it-works/cloud-native-fullstack)
+Full-stack observability](how-it-works/cloud-native-fullstack.md)
 
 ### Other
 
@@ -36,11 +36,11 @@ Full-stack observability](/docs/ingest-from/setup-on-k8s/how-it-works/cloud-nati
 
 In-depth description of Classic Full-Stack monitoring using Dynatrace Operator.
 
-Classic Full-Stack monitoring](/docs/ingest-from/setup-on-k8s/how-it-works/other-deployment-modes/classic-fullstack)[#### Host monitoring
+Classic Full-Stack monitoring](how-it-works/other-deployment-modes/classic-fullstack.md)[#### Host monitoring
 
 In-depth description of Host monitoring using Dynatrace Operator.
 
-Host monitoring](/docs/ingest-from/setup-on-k8s/how-it-works/other-deployment-modes/host-monitoring)
+Host monitoring](how-it-works/other-deployment-modes/host-monitoring.md)
 
 ## Components
 
@@ -48,4 +48,4 @@ Host monitoring](/docs/ingest-from/setup-on-k8s/how-it-works/other-deployment-mo
 
 Components of Dynatrace Operator
 
-Dynatrace Operator](/docs/ingest-from/setup-on-k8s/how-it-works/components/dynatrace-operator)
+Dynatrace Operator](how-it-works/components/dynatrace-operator.md)

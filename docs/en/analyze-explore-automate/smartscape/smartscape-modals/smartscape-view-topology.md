@@ -21,13 +21,13 @@ By using the View topology ![Smartscape](https://dt-cdn.net/images/smartscapes-2
 
 You can trigger View topology modal from the entity details in any Dynatrace application, either via an explicit intent or through the **Open with** option after selecting the entity.
 
-Some nodes might not have any edges to other nodes in your environment. If no edges exist in [**Smartscape on Grail**](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL."), the topology view will only contain the selected node.
+Some nodes might not have any edges to other nodes in your environment. If no edges exist in [**Smartscape on Grail**](../../../platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL."), the topology view will only contain the selected node.
 
 You can find some examples of triggering the View topology modal below:
 
-* [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities."): You can trigger the View topology modal directly from any entity in any [Smartscape view](/docs/analyze-explore-automate/smartscape/smartscape-views "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.").
-* [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."): You can trigger the View topology modal from a Smartscape node by selecting the **Show topology** action in the tooltip.
-* [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts."): You can trigger the View topology modal from the **Affected object** details within the app.
+* [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**](../../smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities."): You can trigger the View topology modal directly from any entity in any [Smartscape view](../smartscape-views.md "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.").
+* [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."): You can trigger the View topology modal from a Smartscape node by selecting the **Show topology** action in the tooltip.
+* [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](../../../secure/threats-and-exploits.md "Understand, triage, and investigate detection findings and alerts."): You can trigger the View topology modal from the **Affected object** details within the app.
 
 ## Overview
 
@@ -105,5 +105,5 @@ To maximize your efficiency when using ![Smartscape](https://dt-cdn.net/images/s
 
 ## Related topics
 
-* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
-* [Smartscape views](/docs/analyze-explore-automate/smartscape/smartscape-views "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.")
+* [Smartscape](../../smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* [Smartscape views](../smartscape-views.md "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.")

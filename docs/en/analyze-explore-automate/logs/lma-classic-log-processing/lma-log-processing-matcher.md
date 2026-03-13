@@ -13,7 +13,7 @@ scraped: 2026-03-05T21:30:59.143327
 * 1-min read
 * Updated on Oct 15, 2025
 
-With [Dynatrace on Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), you can use [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") (DQL) functions and logical operators in matchers.
+With [Dynatrace on Grail](../../../platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), you can use [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") (DQL) functions and logical operators in matchers.
 
 The matcher filters the ingested data and reduces the scope of data processed by the rule that you create. You can use the matcher in log and event processing, log metrics, log events, and log buckets to:
 
@@ -22,7 +22,7 @@ The matcher filters the ingested data and reduces the scope of data processed by
 * Test if a value is NULL.
 * Use logical operators to connect two or more expressions.
 
-  To learn about the use of logical operators in DQL, see [Logical or equality operators](/docs/platform/grail/dynatrace-query-language/operators#dql-logical-or-equality-operators "A list of DQL Operators.").
+  To learn about the use of logical operators in DQL, see [Logical or equality operators](../../../platform/grail/dynatrace-query-language/operators.md#dql-logical-or-equality-operators "A list of DQL Operators.").
 
 ## Functions
 
@@ -31,7 +31,7 @@ The matcher filters the ingested data and reduces the scope of data processed by
 Filters records containing a specified phrase. Returns only matching records. This function is case insensitive for ASCII characters, it works with multi-value attributes (matching any of the values), and the asterisk character (`*`) is a wildcard only referring to a single term, not the whole field value.
 
 * **Validation**  
-  The `matchesPhrase` function performs case-insensitive [contains](/docs/platform/grail/dynatrace-query-language/functions#contains "A list of DQL functions.") for the whole query string and doesn't support mid-string wildcards.
+  The `matchesPhrase` function performs case-insensitive [contains](../../../platform/grail/dynatrace-query-language/functions.md#contains "A list of DQL functions.") for the whole query string and doesn't support mid-string wildcards.
   For found results, additional validation takes place:
 
   + if the query starts with a word character, the preceding character must be a non-word character.
@@ -98,7 +98,7 @@ Tests if a value is NULL.
 
 ## Operators
 
-Logical operators can be used to connect two or more expressions. Check out [Logical or equality operators](/docs/platform/grail/dynatrace-query-language/operators#dql-logical-or-equality-operators "A list of DQL Operators.") to find out more about the behavior of logical operators in DQL.
+Logical operators can be used to connect two or more expressions. Check out [Logical or equality operators](../../../platform/grail/dynatrace-query-language/operators.md#dql-logical-or-equality-operators "A list of DQL Operators.") to find out more about the behavior of logical operators in DQL.
 
 ### OR
 
@@ -141,7 +141,7 @@ Logical negation.
 
 ### Strict equality
 
-[Logical operator](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.") (`==`) indicating an exact match.
+[Logical operator](../../../platform/grail/dynatrace-query-language/operators.md "A list of DQL Operators.") (`==`) indicating an exact match.
 
 Data types need to be identical. However, if the decimal value is `0`, floating numbers can be compared with integer data. For example, `1==1.0`  
 For strings, the search is case-sensitive.
@@ -164,8 +164,8 @@ matchesValue(process.technology, "nginx") and ( matchesPhrase(content, "error") 
 
 ## Reuse expressions
 
-All the matcher expressions used in either log events, metrics, processing or bucket configurations are valid DQL. That means you can also use these expressions together with DQL filter command, for example, in the [log viewer](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.").
+All the matcher expressions used in either log events, metrics, processing or bucket configurations are valid DQL. That means you can also use these expressions together with DQL filter command, for example, in the [log viewer](../../log-monitoring/analyze-log-data/log-viewer.md "Learn how to use Dynatrace log viewer to analyze log data.").
 
 ## Related topics
 
-* [Conversion to DQL for Logs](/docs/analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion "Convert your current log monitoring rules to DQL.")
+* [Conversion to DQL for Logs](../logs-upgrade/lma-dql-conversion.md "Convert your current log monitoring rules to DQL.")

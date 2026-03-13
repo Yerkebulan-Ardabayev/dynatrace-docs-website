@@ -64,7 +64,7 @@ NetTracer официально поддерживает версии ядра Li
 1. Перейдите в **Settings** > **Network & Discovery** > **NetTracer traffic**.
 2. Включите **Enable NetTracer traffic network monitoring**.
 
-Для корректной работы NetTracer необходимо, чтобы OneAgent был установлен в режиме Full-Stack или Infrastructure monitoring, поскольку эти режимы включают функцию мониторинга сети. Если OneAgent установлен в ограниченном режиме (например, Discovery monitoring), NetTracer может работать некорректно. Подробнее см. [Режимы мониторинга OneAgent](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Узнайте больше о доступных режимах мониторинга при использовании OneAgent.").
+Для корректной работы NetTracer необходимо, чтобы OneAgent был установлен в режиме Full-Stack или Infrastructure monitoring, поскольку эти режимы включают функцию мониторинга сети. Если OneAgent установлен в ограниченном режиме (например, Discovery monitoring), NetTracer может работать некорректно. Подробнее см. [Режимы мониторинга OneAgent](../../../platform/oneagent/monitoring-modes/monitoring-modes.md "Узнайте больше о доступных режимах мониторинга при использовании OneAgent.").
 
 ## Встроенные метрики для NetTracer
 
@@ -113,7 +113,7 @@ NetTracer официально поддерживает версии ядра Li
 
 После сбора данные NetTracer доступны в виде метрик по всей системе Dynatrace.
 
-* **Data Explorer**: вы можете использовать метрики в [Data Explorer](/docs/analyze-explore-automate/explorer "Запрос метрик и преобразование результатов для получения нужной информации.") для создания графиков и дашбордов, отображающих интересующие вас данные.
+* **Data Explorer**: вы можете использовать метрики в [Data Explorer](../../../analyze-explore-automate/explorer.md "Запрос метрик и преобразование результатов для получения нужной информации.") для создания графиков и дашбордов, отображающих интересующие вас данные.
 * **Страница экземпляра группы процессов**: перейдите на страницу экземпляра группы процессов и выберите вкладку **Networking**.
 
   ![Страница экземпляра группы процессов — сетевые данные](https://dt-cdn.net/images/pgi-page-networking-details-2172-bcb6d64191.png)

@@ -21,19 +21,19 @@ Dynatrace Business Observability связывает производительн
 
 ### Business Flow
 
-Отслеживайте ключевые показатели эффективности бизнеса (KPI), выявляйте аномалии процессов и расставляйте приоритеты для оптимизации с целью улучшения бизнес-результатов.](/docs/observe/business-observability/business-flow "Мониторинг и анализ критически важных бизнес-процессов. Отслеживание KPI, выявление аномалий процессов и расстановка приоритетов для оптимизации бизнес-результатов.")[![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant")
+Отслеживайте ключевые показатели эффективности бизнеса (KPI), выявляйте аномалии процессов и расставляйте приоритеты для оптимизации с целью улучшения бизнес-результатов.](business-observability/business-flow.md "Мониторинг и анализ критически важных бизнес-процессов. Отслеживание KPI, выявление аномалий процессов и расстановка приоритетов для оптимизации бизнес-результатов.")[![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant")
 
 ### Compliance Assistant
 
-Отслеживайте, управляйте и автоматизируйте соответствие требованиям во всём IT- и бизнес-ландшафте, используя консолидированные сведения о наблюдаемости и безопасности.](/docs/observe/business-observability/compliance-assistant "Отслеживание, управление и автоматизация соответствия требованиям во всём IT- и бизнес-ландшафте с использованием консолидированных сведений о наблюдаемости и безопасности.")[![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization")
+Отслеживайте, управляйте и автоматизируйте соответствие требованиям во всём IT- и бизнес-ландшафте, используя консолидированные сведения о наблюдаемости и безопасности.](business-observability/compliance-assistant.md "Отслеживание, управление и автоматизация соответствия требованиям во всём IT- и бизнес-ландшафте с использованием консолидированных сведений о наблюдаемости и безопасности.")[![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization")
 
 ### Cost & Carbon Optimization
 
-Отслеживайте, составляйте отчёты и снижайте затраты на облачные ресурсы и углеродные выбросы, возникающие в результате работы инструментированной инфраструктуры.](/docs/observe/business-observability/cost-and-carbon-optimization "Отслеживание, анализ и снижение углеродного следа IT.")[![Explore Business Events](https://dt-cdn.net/images/biz-events-512-68c4be09db.png "Explore Business Events")
+Отслеживайте, составляйте отчёты и снижайте затраты на облачные ресурсы и углеродные выбросы, возникающие в результате работы инструментированной инфраструктуры.](business-observability/cost-and-carbon-optimization.md "Отслеживание, анализ и снижение углеродного следа IT.")[![Explore Business Events](https://dt-cdn.net/images/biz-events-512-68c4be09db.png "Explore Business Events")
 
 ### Explore Business Events
 
-Explore Business Events — центральный репозиторий ресурсов, связанных с бизнес-событиями: публикации блога, документация, прямые ссылки на продукты и другие приложения, актуальные для бизнес-анализа.](/docs/observe/business-observability/explore-business-events "Explore Business Events — центральный репозиторий ресурсов, связанных с бизнес-событиями: публикации блога, документация, прямые ссылки на продукты и другие приложения, актуальные для бизнес-анализа.")
+Explore Business Events — центральный репозиторий ресурсов, связанных с бизнес-событиями: публикации блога, документация, прямые ссылки на продукты и другие приложения, актуальные для бизнес-анализа.](business-observability/explore-business-events.md "Explore Business Events — центральный репозиторий ресурсов, связанных с бизнес-событиями: публикации блога, документация, прямые ссылки на продукты и другие приложения, актуальные для бизнес-анализа.")
 
 ## Расширения Business Observability
 
@@ -41,33 +41,33 @@ Explore Business Events — центральный репозиторий рес
 
 ### Salesforce Insights
 
-Обеспечьте оптимальную производительность решения Salesforce, отслеживая производительность, использование функций, входы в систему, действия пользователей и угрозы в среде Salesforce.](/docs/observe/business-observability/extensions/salesforce-insights "Возможности, предварительные требования, настройка и сценарии использования расширения Salesforce Insights.")[![Power BI](https://dt-cdn.net/images/power-bi-960-6f6e4e4daa.png "Power BI")
+Обеспечьте оптимальную производительность решения Salesforce, отслеживая производительность, использование функций, входы в систему, действия пользователей и угрозы в среде Salesforce.](business-observability/extensions/salesforce-insights.md "Возможности, предварительные требования, настройка и сценарии использования расширения Salesforce Insights.")[![Power BI](https://dt-cdn.net/images/power-bi-960-6f6e4e4daa.png "Power BI")
 
 ## Microsoft Power BI
 
-Используйте данные из Grail непосредственно в отчётах и дашбордах Microsoft Power BI с помощью DQL-запросов.](/docs/observe/business-observability/extensions/microsoft-power-bi "Наполнение дашбордов и отчётов Microsoft Power BI данными из Grail.")
+Используйте данные из Grail непосредственно в отчётах и дашбордах Microsoft Power BI с помощью DQL-запросов.](business-observability/extensions/microsoft-power-bi.md "Наполнение дашбордов и отчётов Microsoft Power BI данными из Grail.")
 
 ## Обзор Business Observability
 
 [### Концепции
 
-Ознакомьтесь с бизнес-событиями и данными бизнес-класса.](/docs/observe/business-observability/bo-basic-concepts "Базовые концепции Dynatrace Business Observability.")[### Захват
+Ознакомьтесь с бизнес-событиями и данными бизнес-класса.](business-observability/bo-basic-concepts.md "Базовые концепции Dynatrace Business Observability.")[### Захват
 
-Узнайте, как захватывать бизнес-события.](/docs/observe/business-observability/bo-events-capturing "Захват бизнес-событий для Dynatrace Business Observability.")[### Приём
+Узнайте, как захватывать бизнес-события.](business-observability/bo-events-capturing.md "Захват бизнес-событий для Dynatrace Business Observability.")[### Приём
 
-Принимайте бизнес-события через API.](/docs/observe/business-observability/bo-api-ingest "Настройка аутентификации и приём бизнес-событий через API.")[### Обработка
+Принимайте бизнес-события через API.](business-observability/bo-api-ingest.md "Настройка аутентификации и приём бизнес-событий через API.")[### Обработка
 
-Узнайте, как обрабатываются данные бизнес-событий.](/docs/observe/business-observability/bo-event-processing/bo-processing-classic-pipeline "Обработка данных бизнес-событий в Dynatrace через классический конвейер.")[### Хранение
+Узнайте, как обрабатываются данные бизнес-событий.](business-observability/bo-event-processing/bo-processing-classic-pipeline.md "Обработка данных бизнес-событий в Dynatrace через классический конвейер.")[### Хранение
 
-Задайте периоды хранения данных.](/docs/observe/business-observability/bo-event-processing/bo-bucket-assignment "Назначение периода хранения данных бизнес-событий в Dynatrace через классический конвейер.")[### Анализ и примеры
+Задайте периоды хранения данных.](business-observability/bo-event-processing/bo-bucket-assignment.md "Назначение периода хранения данных бизнес-событий в Dynatrace через классический конвейер.")[### Анализ и примеры
 
-Анализируйте и представляйте данные бизнес-событий.](/docs/observe/business-observability/bo-analysis "Анализ и представление данных бизнес-событий.")[### Сценарий использования
+Анализируйте и представляйте данные бизнес-событий.](business-observability/bo-analysis.md "Анализ и представление данных бизнес-событий.")[### Сценарий использования
 
-Пройдите сквозной сценарий использования.](/docs/observe/business-observability/end-to-end-example "Как захватывать и обрабатывать бизнес-события.")
+Пройдите сквозной сценарий использования.](business-observability/end-to-end-example.md "Как захватывать и обрабатывать бизнес-события.")
 
 Существующим пользователям Dynatrace
 
-Перед использованием бизнес-событий необходимо [выполнить миграцию на Grail](/docs/analyze-explore-automate/log-monitoring/logs-upgrade/lmc-logs-upgrade-to-lma "Log Management and Analytics — последнее решение Dynatrace для мониторинга журналов. Рекомендуем перейти на это предложение.").
+Перед использованием бизнес-событий необходимо [выполнить миграцию на Grail](../analyze-explore-automate/log-monitoring/logs-upgrade/lmc-logs-upgrade-to-lma.md "Log Management and Analytics — последнее решение Dynatrace для мониторинга журналов. Рекомендуем перейти на это предложение.").
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -77,4 +77,4 @@ Explore Business Events — центральный репозиторий рес
 
 ## Связанные темы
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")
+* [Dynatrace Query Language](../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")

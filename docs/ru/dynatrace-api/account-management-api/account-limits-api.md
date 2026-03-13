@@ -14,4 +14,4 @@ scraped: 2026-03-06T21:32:11.991786
 
 [### Список лимитов аккаунта
 
-Обзор лимитов аккаунта, назначенных вашему аккаунту Dynatrace.](/docs/dynatrace-api/account-management-api/account-limits-api/get-account-limits "Получение списка назначенных лимитов аккаунта через API Dynatrace.")
+Обзор лимитов аккаунта, назначенных вашему аккаунту Dynatrace.](account-limits-api/get-account-limits.md "Получение списка назначенных лимитов аккаунта через API Dynatrace.")

@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:25:14.270507
 * 4-min read
 * Published Jul 17, 2018
 
-Dynatrace требует, чтобы определённые порты и пути были открыты и доступны через отслеживаемую инфраструктуру, межсетевые экраны и другие компоненты. Порты [настраиваемы](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#com-compuware-apm-webserver "Узнайте, какие свойства ActiveGate можно настроить в соответствии с вашими потребностями и требованиями."), а значения по умолчанию указаны ниже.
+Dynatrace требует, чтобы определённые порты и пути были открыты и доступны через отслеживаемую инфраструктуру, межсетевые экраны и другие компоненты. Порты [настраиваемы](configuration/configure-activegate.md#com-compuware-apm-webserver "Узнайте, какие свойства ActiveGate можно настроить в соответствии с вашими потребностями и требованиями."), а значения по умолчанию указаны ниже.
 
 ## Схема подключения Dynatrace SaaS
 
@@ -29,11 +29,11 @@ Dynatrace требует, чтобы определённые порты и пу
 
 * Кластер Dynatrace SaaS принимает соединения на порту 443.
 
-Если вы запускаете [Browser monitors](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Узнайте, как создать частное расположение для синтетического мониторинга.") или [HTTP monitors](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Узнайте, как настроить HTTP-монитор для проверки производительности и доступности вашего сайта.") из частных расположений Synthetic, необходимо убедиться, что ActiveGate с поддержкой Synthetic имеет доступ к тестируемому ресурсу. Если вы используете расширения ActiveGate, необходимо убедиться, что ActiveGate, выполняющий расширения, имеет доступ к отслеживаемой технологии.
+Если вы запускаете [Browser monitors](../../observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location.md "Узнайте, как создать частное расположение для синтетического мониторинга.") или [HTTP monitors](../../observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic.md "Узнайте, как настроить HTTP-монитор для проверки производительности и доступности вашего сайта.") из частных расположений Synthetic, необходимо убедиться, что ActiveGate с поддержкой Synthetic имеет доступ к тестируемому ресурсу. Если вы используете расширения ActiveGate, необходимо убедиться, что ActiveGate, выполняющий расширения, имеет доступ к отслеживаемой технологии.
 
 Соединение
 
-Конфигурация **[сетевых зон](/docs/manage/network-zones "Узнайте, как работают сетевые зоны в Dynatrace.")** означает, что OneAgents предпочтут устанавливать соединение с ActiveGates из той же зоны, прежде чем подключаться к ActiveGates за пределами активной зоны.
+Конфигурация **[сетевых зон](../../manage/network-zones.md "Узнайте, как работают сетевые зоны в Dynatrace.")** означает, что OneAgents предпочтут устанавливать соединение с ActiveGates из той же зоны, прежде чем подключаться к ActiveGates за пределами активной зоны.
 
 ## Конфигурация прокси и балансировщика нагрузки
 
@@ -42,9 +42,9 @@ Dynatrace требует, чтобы определённые порты и пу
 
 На диаграмме ниже показаны все возможные расположения прокси и балансировщика нагрузки (обратного прокси) для развёртывания ActiveGate. Для простоты прямые соединения — те, которые не проходят через прокси или балансировщики нагрузки — не показаны на этой диаграмме. Альтернативные соединения (те, которые проходят через один или несколько прокси или балансировщиков нагрузки) показаны пунктирными линиями.
 
-* Если между OneAgents и ActiveGate находится балансировщик нагрузки, необходимо указать адрес балансировщика нагрузки в качестве свойства [`dnsEntryPoint`](/docs/ingest-from/dynatrace-activegate/configuration/set-up-reverse-proxy-for-oneagent "Настройте свойства ActiveGate для настройки обратного прокси или балансировщика нагрузки для OneAgent.") в конфигурации ActiveGate.
-* Если между ActiveGate и следующей конечной точкой связи, через которую должен маршрутизироваться трафик, находится балансировщик нагрузки, настройте [`seedServerUrl` и `ignoreClusterRuntimeInfo`](/docs/ingest-from/dynatrace-activegate/configuration/set-up-reverse-proxy-for-activegate "Узнайте, как настроить свойства ActiveGate для настройки обратного прокси или балансировщика нагрузки.").
-* Если прокси используется для доступа к кластеру Dynatrace или к любому из отслеживаемых облаков, [настройте прокси](/docs/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate "Узнайте, как настроить свойства ActiveGate для настройки прокси.").
+* Если между OneAgents и ActiveGate находится балансировщик нагрузки, необходимо указать адрес балансировщика нагрузки в качестве свойства [`dnsEntryPoint`](configuration/set-up-reverse-proxy-for-oneagent.md "Настройте свойства ActiveGate для настройки обратного прокси или балансировщика нагрузки для OneAgent.") в конфигурации ActiveGate.
+* Если между ActiveGate и следующей конечной точкой связи, через которую должен маршрутизироваться трафик, находится балансировщик нагрузки, настройте [`seedServerUrl` и `ignoreClusterRuntimeInfo`](configuration/set-up-reverse-proxy-for-activegate.md "Узнайте, как настроить свойства ActiveGate для настройки обратного прокси или балансировщика нагрузки.").
+* Если прокси используется для доступа к кластеру Dynatrace или к любому из отслеживаемых облаков, [настройте прокси](configuration/set-up-proxy-authentication-for-activegate.md "Узнайте, как настроить свойства ActiveGate для настройки прокси.").
 
 ![Proxy and load balancer placements for ActiveGate deployments](https://dt-cdn.net/images/proxy-rev-proxy-005-1018-c916f384ca.png)
 
@@ -70,4 +70,4 @@ Dynatrace требует, чтобы определённые порты и пу
 
 ## Связанные темы
 
-* [Сетевые зоны](/docs/manage/network-zones "Узнайте, как работают сетевые зоны в Dynatrace.")
+* [Сетевые зоны](../../manage/network-zones.md "Узнайте, как работают сетевые зоны в Dynatrace.")

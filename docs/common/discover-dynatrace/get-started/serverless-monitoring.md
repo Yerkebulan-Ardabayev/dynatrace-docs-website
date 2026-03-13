@@ -49,25 +49,25 @@ Through integrations with the three major public cloud service providers, Dynatr
 
 ![Unified serverless telemetry](https://dt-cdn.net/images/unified-service-descr-630-f2484fd514.png)
 
-With over [600+ integrations, extensions, and technology-specific supportï»¿](https://www.dynatrace.com/hub/), Dynatrace provides extensive monitoring support, including your [serverless technologies](/docs/ingest-from/technology-support/serverless-compute-services "Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS).") running on AWS, Azure, or Google Cloud.
+With over [600+ integrations, extensions, and technology-specific supportï»¿](https://www.dynatrace.com/hub/), Dynatrace provides extensive monitoring support, including your [serverless technologies](../../../ru/ingest-from/technology-support/serverless-compute-services.md "Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS).") running on AWS, Azure, or Google Cloud.
 
 ## Getting started with serverless monitoring
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Turn on cloud service monitoring**](/docs/discover-dynatrace/get-started/serverless-monitoring#services "Serverless observability with Dynatrace")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Turn on cloud service monitoring**](serverless-monitoring.md#services "Serverless observability with Dynatrace")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Enable Dynatrace extensions on cloud services**](/docs/discover-dynatrace/get-started/serverless-monitoring#extensions "Serverless observability with Dynatrace")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Enable Dynatrace extensions on cloud services**](serverless-monitoring.md#extensions "Serverless observability with Dynatrace")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Advanced visibility**](/docs/discover-dynatrace/get-started/serverless-monitoring#advanced "Serverless observability with Dynatrace")
+**Advanced visibility**](serverless-monitoring.md#advanced "Serverless observability with Dynatrace")
 
 ### Step 1 Turn on cloud service monitoring
 
 With a single integration per cloud vendor, Dynatrace automatically discovers your cloud services and monitors the services to provide you with out-of-the-box service health and availability monitoring:
 
-* [Amazon CloudWatch integration](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.")
-* [Azure Monitor integration](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide "Set up and configure Azure monitoring in Dynatrace.")
-* [Google Cloud operations suite integration](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new "Monitor Google Cloud services with Dynatrace and view available metrics.")
+* [Amazon CloudWatch integration](../../../ru/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md "Integrate metrics from Amazon CloudWatch.")
+* [Azure Monitor integration](../../../ru/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide.md "Set up and configure Azure monitoring in Dynatrace.")
+* [Google Cloud operations suite integration](../../../ru/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new.md "Monitor Google Cloud services with Dynatrace and view available metrics.")
 
 ### Step 2 Enable Dynatrace extensions on cloud services that provide a native extensibility mechanism
 
@@ -79,9 +79,9 @@ Visit Dynatrace Hub to see all services with a [cloud-native integrationï»¿](
 
 For instructions on how to integrate Dynatrace into your container image, or how to make use of OpenTelemetry or advanced visibility to enable additional details via logs and other telemetry events, see the service-specific tutorials in our documentation:
 
-* [Amazon Web Services](/docs/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services.")
-* [Azure Services](/docs/ingest-from/microsoft-azure-services/azure-integrations "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")
-* [Google Cloud Services](/docs/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
+* [Amazon Web Services](../../ingest-from/amazon-web-services.md "Set up and configure monitoring for Amazon Web Services.")
+* [Azure Services](../../../ru/ingest-from/microsoft-azure-services/azure-integrations.md "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")
+* [Google Cloud Services](../../../ru/ingest-from/google-cloud-platform/gcp-integrations.md "Set up and configure Dynatrace on Google Cloud.")
 
 Be sure to watch for the recommendations within the Dynatrace web UI to enable additional telemetry sources that will improve the observability of your services. For example:
 

@@ -19,8 +19,8 @@ scraped: 2026-03-06T21:35:59.966349
 
 Чтобы получить доступ к интеграциям приложений, убедитесь в следующем:
 
-* Генеративный ИИ Dynatrace Intelligence включён на уровне среды. Подробности см. в разделе [Включение генеративного ИИ Dynatrace Intelligence в вашей среде](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Узнайте, как настроить агентный и генеративный ИИ Dynatrace Intelligence.").
-* У вас есть разрешения для доступа к навыку диалогового рекомендателя. Подробности см. в разделе [Разрешения пользователей](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Узнайте, как настроить агентный и генеративный ИИ Dynatrace Intelligence.").
+* Генеративный ИИ Dynatrace Intelligence включён на уровне среды. Подробности см. в разделе [Включение генеративного ИИ Dynatrace Intelligence в вашей среде](../copilot-getting-started.md#enable-davis-copilot "Узнайте, как настроить агентный и генеративный ИИ Dynatrace Intelligence.").
+* У вас есть разрешения для доступа к навыку диалогового рекомендателя. Подробности см. в разделе [Разрешения пользователей](../copilot-getting-started.md#davis-copilot-user-permissions "Узнайте, как настроить агентный и генеративный ИИ Dynatrace Intelligence.").
 
 ## Dynatrace Assist в Kubernetes
 
@@ -43,7 +43,7 @@ scraped: 2026-03-06T21:35:59.966349
 
 Чтобы получить доступ к функциональности
 
-1. В [![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**](/docs/secure/vulnerabilities "Приоритизируйте и эффективно управляйте уязвимостями в ваших мониторируемых средах.") выберите уязвимость.
+1. В [![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**](../../../secure/vulnerabilities.md "Приоритизируйте и эффективно управляйте уязвимостями в ваших мониторируемых средах.") выберите уязвимость.
 2. В правом верхнем углу панели деталей уязвимости выберите **Explain vulnerability**.
 
 Генеративный ИИ предоставит ответ, содержащий:
@@ -62,7 +62,7 @@ scraped: 2026-03-06T21:35:59.966349
 
 Чтобы получить доступ к функциональности
 
-1. В [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Понимайте, сортируйте и исследуйте результаты обнаружения и оповещения.") выберите результат.
+1. В [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](../../../secure/threats-and-exploits.md "Понимайте, сортируйте и исследуйте результаты обнаружения и оповещения.") выберите результат.
 2. В правом верхнем углу панели деталей результата выберите **Explain finding**.
 
 Генеративный ИИ предоставит ответ, содержащий:
@@ -81,7 +81,7 @@ scraped: 2026-03-06T21:35:59.966349
 
 Чтобы получить доступ к функциональности
 
-1. В [![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**](/docs/secure/xspm "Обнаруживайте, управляйте и принимайте меры по результатам безопасности и соответствия.") на странице **Assessment results** выберите правило.
+1. В [![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**](../../../secure/xspm.md "Обнаруживайте, управляйте и принимайте меры по результатам безопасности и соответствия.") на странице **Assessment results** выберите правило.
 2. На вкладке **Assessed resources** выберите **Explain assessment**.
 
 Генеративный ИИ предоставит ответ, содержащий:
@@ -138,7 +138,7 @@ scraped: 2026-03-06T21:35:59.966349
 
 ## Dynatrace Assist в Dashboards
 
-Вы можете использовать возможности DQL для интеграции **Dynatrace Assist** в плитки ваших [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.").
+Вы можете использовать возможности DQL для интеграции **Dynatrace Assist** в плитки ваших [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.").
 
 Добавив команды `| fieldsAdd prompt` и `| fieldsAdd execute`, вы можете предопределить и автоматически выполнять запросы в **Dynatrace Assist**, что позволяет быстро получить объяснение результатов запроса или получить рекомендации по улучшению запроса или решению проблемы.
 
@@ -162,9 +162,9 @@ scraped: 2026-03-06T21:35:59.966349
 | parse supplementaryContext , "LD JSON_ARRAY:contexts"
 ```
 
-Чтобы интегрировать **Dynatrace Assist** в плитки ваших [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.")
+Чтобы интегрировать **Dynatrace Assist** в плитки ваших [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.")
 
-1. Перейдите в [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") и откройте дашборд, который вы можете редактировать.
+1. Перейдите в [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") и откройте дашборд, который вы можете редактировать.
 2. Выберите плитку дашборда, содержащую запрос DQL.
 3. Выберите **Edit**, чтобы открыть меню редактирования справа.
 4. В разделе **DQL** меню редактирования добавьте следующее к вашему стандартному запросу:
@@ -189,7 +189,7 @@ scraped: 2026-03-06T21:35:59.966349
 
 ## Dynatrace Assist в Notebooks
 
-Вы можете использовать возможности DQL для интеграции **Dynatrace Assist** в ваши [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном, настраиваемом рабочем пространстве.").
+Вы можете использовать возможности DQL для интеграции **Dynatrace Assist** в ваши [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном, настраиваемом рабочем пространстве.").
 
 Добавив команды `| fieldsAdd prompt` и `| fieldsAdd execute`, вы можете предопределить и автоматически выполнять запросы в **Dynatrace Assist**, что позволяет быстро получить объяснение результатов запроса или получить рекомендации по улучшению запроса или решению проблемы.
 
@@ -213,9 +213,9 @@ scraped: 2026-03-06T21:35:59.966349
 | parse supplementaryContext , "LD JSON_ARRAY:contexts"
 ```
 
-Чтобы интегрировать **Dynatrace Assist** в ваши [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном, настраиваемом рабочем пространстве.")
+Чтобы интегрировать **Dynatrace Assist** в ваши [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном, настраиваемом рабочем пространстве.")
 
-1. Перейдите в [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном, настраиваемом рабочем пространстве.") и откройте блокнот, который вы можете редактировать.
+1. Перейдите в [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном, настраиваемом рабочем пространстве.") и откройте блокнот, который вы можете редактировать.
 2. Выберите раздел блокнота, содержащий запрос DQL.
 3. Выберите поле запроса и добавьте следующее к вашему стандартному запросу:
 
@@ -239,9 +239,9 @@ scraped: 2026-03-06T21:35:59.966349
 
 ## Обратная связь
 
-Если у вас есть обратная связь, вы можете предоставить её непосредственно в окне чата. Для получения дополнительной информации см. [Предоставление обратной связи](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot#feedback "Задавайте вопросы на естественном языке и быстро получайте ответы от Dynatrace Assist, вашего ассистента на основе генеративного ИИ.").
+Если у вас есть обратная связь, вы можете предоставить её непосредственно в окне чата. Для получения дополнительной информации см. [Предоставление обратной связи](../chat-with-davis-copilot.md#feedback "Задавайте вопросы на естественном языке и быстро получайте ответы от Dynatrace Assist, вашего ассистента на основе генеративного ИИ.").
 
 ## Связанные темы
 
-* [Начало работы с агентным и генеративным ИИ Dynatrace Intelligence](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Узнайте, как настроить агентный и генеративный ИИ Dynatrace Intelligence.")
-* [Часто задаваемые вопросы по агентному и генеративному ИИ Dynatrace Intelligence](/docs/dynatrace-intelligence/copilot/copilot-faq "Узнайте о часто задаваемых вопросах и найдите ответы на них.")
+* [Начало работы с агентным и генеративным ИИ Dynatrace Intelligence](../copilot-getting-started.md "Узнайте, как настроить агентный и генеративный ИИ Dynatrace Intelligence.")
+* [Часто задаваемые вопросы по агентному и генеративному ИИ Dynatrace Intelligence](../../../../common/dynatrace-intelligence/copilot/copilot-faq.md "Узнайте о часто задаваемых вопросах и найдите ответы на них.")

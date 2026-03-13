@@ -12,14 +12,14 @@ scraped: 2026-03-06T21:27:03.952660
 * Время чтения: 1 мин
 * Опубликовано 10 марта 2022 г.
 
-Эта страница относится к Data Explorer — классической функции Dynatrace, тесно интегрированной с классическими информационными панелями, созданными с помощью [![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**](/docs/analyze-explore-automate/dashboards-classic "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic."). [Перейдите на последнюю версию Dynatrace](/docs/platform/upgrade "Используйте возможности Grail, AppEngine и AutomationEngine для хранения и анализа данных наблюдаемости и безопасности."), чтобы воспользоваться новейшими возможностями изучения данных.
+Эта страница относится к Data Explorer — классической функции Dynatrace, тесно интегрированной с классическими информационными панелями, созданными с помощью [![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**](../dashboards-classic.md "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic."). [Перейдите на последнюю версию Dynatrace](../../platform/upgrade.md "Используйте возможности Grail, AppEngine и AutomationEngine для хранения и анализа данных наблюдаемости и безопасности."), чтобы воспользоваться новейшими возможностями изучения данных.
 
 Почему я вижу не все серии своей метрики?
 
 * *По умолчанию* на каждую метрику отображается `20` серий. Следовательно, некоторые серии могут отсутствовать в Data Explorer. Чтобы гарантировать отображение нужных данных серий, используйте более конкретные фильтры, например фильтр по зоне управления или имени сущности.
-* *Максимальное* количество отображаемых серий на метрику составляет `100`. Обратите внимание, что это ограничение действует, даже если вы удалите [преобразование **limit**](/docs/dynatrace-api/environment-api/metric-v2/metric-selector#limit "Настройка селектора метрик для Metric v2 API.") из селектора метрик на [вкладке **Code**](/docs/analyze-explore-automate/explorer/explorer-advanced-query-editor "Создание расширенных запросов с помощью расширенного режима Data Explorer.").
+* *Максимальное* количество отображаемых серий на метрику составляет `100`. Обратите внимание, что это ограничение действует, даже если вы удалите [преобразование **limit**](../../dynatrace-api/environment-api/metric-v2/metric-selector.md#limit "Настройка селектора метрик для Metric v2 API.") из селектора метрик на [вкладке **Code**](explorer-advanced-query-editor.md "Создание расширенных запросов с помощью расширенного режима Data Explorer.").
 
-Если данные серий для выражения метрики отсутствуют, см. раздел [Почему результат моего выражения метрики пуст?](/docs/dynatrace-api/environment-api/metric-v2/metric-faq#empty-result-metric-expression "Часто задаваемые вопросы об API метрик v2.").
+Если данные серий для выражения метрики отсутствуют, см. раздел [Почему результат моего выражения метрики пуст?](../../dynatrace-api/environment-api/metric-v2/metric-faq.md#empty-result-metric-expression "Часто задаваемые вопросы об API метрик v2.").
 
 Почему некоторые ячейки таблицы пусты, хотя в них должны быть значения?
 
@@ -54,8 +54,8 @@ scraped: 2026-03-06T21:27:03.952660
 
 Обсуждение этой проблемы см. в записи [Correction required on Dashboard Charts showing dip at current timeï»¿](https://community.dynatrace.com/t5/Dynatrace-product-ideas/RFE-Correction-required-onDashboard-Charts-showing-dip-at/idi-p/144070) в сообществе Dynatrace.
 
-Для получения дополнительной информации о временных диапазонах см. раздел [Настройки временного диапазона и зоны управления информационных панелей Dynatrace](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Информация о настройках временного диапазона и зоны управления информационных панелей Dynatrace.").
+Для получения дополнительной информации о временных диапазонах см. раздел [Настройки временного диапазона и зоны управления информационных панелей Dynatrace](../dashboards-classic/dashboards/dashboard-timeframe.md "Информация о настройках временного диапазона и зоны управления информационных панелей Dynatrace.").
 
 ## Связанные темы
 
-* [API метрик — FAQ](/docs/dynatrace-api/environment-api/metric-v2/metric-faq "Часто задаваемые вопросы об API метрик v2.")
+* [API метрик — FAQ](../../dynatrace-api/environment-api/metric-v2/metric-faq.md "Часто задаваемые вопросы об API метрик v2.")

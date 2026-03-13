@@ -18,18 +18,18 @@ This page describes how to download and install Dynatrace OneAgent on Windows.
 To get started, log in to your Dynatrace SaaS environment via the [Dynatrace.comï»¿](https://www.dynatrace.com) website using the credentials provided during signup. Then continue with the installation steps below.
 
 Dynatrace provides an Ansible collection that you can use to orchestrate OneAgent deployment in your environment.
-For more information, see [Install OneAgent using Ansible](/docs/ingest-from/dynatrace-oneagent/deployment-orchestration/ansible "Learn how to deploy OneAgent using Dynatrace-provided Ansible playbook.").
+For more information, see [Install OneAgent using Ansible](../../../deployment-orchestration/ansible.md "Learn how to deploy OneAgent using Dynatrace-provided Ansible playbook.").
 
 ## Requirements and prerequisites
 
-* You need [administrator rights](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows "Learn about Dynatrace OneAgent security and modifications to your Windows-based system") for the servers where OneAgent will be installed as well as for changing firewall settings (necessary only if your internal routing policy may prevent Dynatrace software from reaching the Internet).
+* You need [administrator rights](oneagent-security-windows.md "Learn about Dynatrace OneAgent security and modifications to your Windows-based system") for the servers where OneAgent will be installed as well as for changing firewall settings (necessary only if your internal routing policy may prevent Dynatrace software from reaching the Internet).
 * You need permissions and credentials for restarting all your application services.
-* You need to check also the [disk space requirements](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/disk-space-requirements-for-oneagent-installation-and-update-on-windows "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Windows.").
+* You need to check also the [disk space requirements](disk-space-requirements-for-oneagent-installation-and-update-on-windows.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Windows.").
 * The host on which you install OneAgent needs at least 200 MB RAM.
 * OneAgent installation isn't supported on networked storage mount points that are managed by standards such as NFS or iSCSI.
-* All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
-* For OneAgent version 1.253 and earlier, we recommend that you [uninstall any existing `WinPcap` driver](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows#uninstall-winpcap-driver-to-allow-npcap-installation "Learn how to download and install Dynatrace OneAgent on Windows.") to allow `Npcap` installationâdo this on all Windows versions, except for `Windows Server 2019 build 1809 without hotfix KB5066187`.
-  For OneAgent version 1.255+, `Npcap` is installed by default and may cause a network disruption on `Windows Server 2016`, `Windows Server 2019 build 1809`, and `Windows Server 2019 build 1809 without hotfix KB5066187`. To prevent it, upgrade your hosts with the hotfix [KB5066187ï»¿](https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066187) or use [other documented options](/docs/observe/infrastructure-observability/networks-classic/troubleshoot-network-monitoring#potential-network-disruption-during-oneagent-installation-on-windows "Learn more about troubleshooting network monitoring.").
+* All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](../../../../dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.").
+* For OneAgent version 1.253 and earlier, we recommend that you [uninstall any existing `WinPcap` driver](install-oneagent-on-windows.md#uninstall-winpcap-driver-to-allow-npcap-installation "Learn how to download and install Dynatrace OneAgent on Windows.") to allow `Npcap` installationâdo this on all Windows versions, except for `Windows Server 2019 build 1809 without hotfix KB5066187`.
+  For OneAgent version 1.255+, `Npcap` is installed by default and may cause a network disruption on `Windows Server 2016`, `Windows Server 2019 build 1809`, and `Windows Server 2019 build 1809 without hotfix KB5066187`. To prevent it, upgrade your hosts with the hotfix [KB5066187ï»¿](https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066187) or use [other documented options](../../../../../observe/infrastructure-observability/networks-classic/troubleshoot-network-monitoring.md#potential-network-disruption-during-oneagent-installation-on-windows "Learn more about troubleshooting network monitoring.").
 
 ### Allow connections through firewall
 
@@ -44,10 +44,10 @@ If you have the `WinPcap` driver installed, we recommend that you remove it prio
 
 For more information, see:
 
-* [OneAgent security on Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows "Learn about Dynatrace OneAgent security and modifications to your Windows-based system")
-* [Customize OneAgent installation on Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#packet_capture_driver "Learn how to use the OneAgent installer for Windows.")
+* [OneAgent security on Windows](oneagent-security-windows.md "Learn about Dynatrace OneAgent security and modifications to your Windows-based system")
+* [Customize OneAgent installation on Windows](customize-oneagent-installation-on-windows.md#packet_capture_driver "Learn how to use the OneAgent installer for Windows.")
 
-During the upgrade from `WinPcap` to `Npcap`, you might encounter network disruptions that can be mitigated by upgrading your Windows Server version and/or disabling `Microsoft Network Monitor Driver`. For more details, see [Potential network disruptions during OneAgent installation on Windows](/docs/observe/infrastructure-observability/networks-classic/troubleshoot-network-monitoring#disruptionnetwork "Learn more about troubleshooting network monitoring.")
+During the upgrade from `WinPcap` to `Npcap`, you might encounter network disruptions that can be mitigated by upgrading your Windows Server version and/or disabling `Microsoft Network Monitor Driver`. For more details, see [Potential network disruptions during OneAgent installation on Windows](../../../../../observe/infrastructure-observability/networks-classic/troubleshoot-network-monitoring.md#disruptionnetwork "Learn more about troubleshooting network monitoring.")
 
 ## Re-installation or repair of installation
 
@@ -57,7 +57,7 @@ OneAgent installer for Windows doesn't support the `modify` and `repair` operati
 
 1. In Dynatrace Hub, select **OneAgent**.
 2. Select **Set up** > **Windows**.
-3. Paste a [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.") into **Installer download token** or select **Generate token** to generate a token now and automatically paste it into **Installer download token**. This token is required to download the OneAgent installer from your environment. The token is automatically appended to the download and installation commands you'll use later.
+3. Paste a [PaaS token](../../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.") into **Installer download token** or select **Generate token** to generate a token now and automatically paste it into **Installer download token**. This token is required to download the OneAgent installer from your environment. The token is automatically appended to the download and installation commands you'll use later.
 4. Download the installer. There are two options:
 
    * Select **Download OneAgent installer** to download the installer for Windows (EXE file) for single-server installation.
@@ -76,21 +76,21 @@ OneAgent installer for Windows doesn't support the `modify` and `repair` operati
    C:\Downloads\Dynatrace-OneAgent-Windows.exe --unpack-msi "C:\installers"
    ```
 
-   When using the `--unpack-msi` parameter, no other [installation parameters](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows "Learn how to use the OneAgent installer for Windows.") are allowed. Add the `--quiet` parameter to run the MSI package extraction in quiet mode. Use the `--help` parameter to display a pop-up window with a list of available parameters.
+   When using the `--unpack-msi` parameter, no other [installation parameters](customize-oneagent-installation-on-windows.md "Learn how to use the OneAgent installer for Windows.") are allowed. Add the `--quiet` parameter to run the MSI package extraction in quiet mode. Use the `--help` parameter to display a pop-up window with a list of available parameters.
 
-   Copy and paste the MSI package and the batch file when configuring Group Policy for Dynatrace installation. The default installation should work in most cases, but if you need to customize it, you can modify the [installation parameters](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows "Learn how to use the OneAgent installer for Windows."). Then, you have to create a distribution point, assign a package (the OneAgent MSI package with parameters), specify a command to install the MSI package as [silent installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#silent-installation "Learn how to use the OneAgent installer for Windows."), and publish your policy.
+   Copy and paste the MSI package and the batch file when configuring Group Policy for Dynatrace installation. The default installation should work in most cases, but if you need to customize it, you can modify the [installation parameters](customize-oneagent-installation-on-windows.md "Learn how to use the OneAgent installer for Windows."). Then, you have to create a distribution point, assign a package (the OneAgent MSI package with parameters), specify a command to install the MSI package as [silent installation](customize-oneagent-installation-on-windows.md#silent-installation "Learn how to use the OneAgent installer for Windows."), and publish your policy.
 5. Optional **Set customized options**  
    At this point, the Dynatrace UI allows you to customize your OneAgent installation: You can specify a number of customizations interactively on-screen. Based on your entries, an installation command will be generated and displayed, for use in the next step of installation (see below).  
    You can:
 
-   * Set a [network zone](/docs/manage/network-zones#deploy-network-zones "Find out how network zones work in Dynatrace.") for this host.
-   * Organize your hosts into [host groups](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups."), if your environment is segmented (for example, into development and production).
-   * Override automatically detected [host name](/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name."). This is useful in large and dynamic environments, where defined host names can be unintuitive or can change frequently.
-   * Apply [tags](/docs/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.") to the host to organize your monitored environments in a meaningful way.
-   * Change the OneAgent mode to Infrastructure Monitoring or Discovery in place of Full-Stack Monitoring. For more information, see [OneAgent monitoring modes](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
-   * Disable [Log Monitoring](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
+   * Set a [network zone](../../../../../manage/network-zones.md#deploy-network-zones "Find out how network zones work in Dynatrace.") for this host.
+   * Organize your hosts into [host groups](../../../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups."), if your environment is segmented (for example, into development and production).
+   * Override automatically detected [host name](../../../../../observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments.md "Learn how to change a monitored host name."). This is useful in large and dynamic environments, where defined host names can be unintuitive or can change frequently.
+   * Apply [tags](../../../../../../common/manage/tags-and-metadata.md "Use tags and metadata to organize data in your Dynatrace environment.") to the host to organize your monitored environments in a meaningful way.
+   * Change the OneAgent mode to Infrastructure Monitoring or Discovery in place of Full-Stack Monitoring. For more information, see [OneAgent monitoring modes](../../../../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.").
+   * Disable [Log Monitoring](../../../../../analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
 
-   **If further customizations are required, you can specify [additional options on the command line](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows "Learn how to use the OneAgent installer for Windows.").**
+   **If further customizations are required, you can specify [additional options on the command line](customize-oneagent-installation-on-windows.md "Learn how to use the OneAgent installer for Windows.").**
 6. If you have not specified any custom options, simply run the executable file and follow the instructions as displayed.
    If you have specified custom options above, use the generated command, and run it from the download directory. The command will contain all the installation parameters reflecting the custom settings you have specified.
 7. Restart all processes that you want to monitor. Youâll be prompted with a list of the processes that need to be restarted. Note that you can restart your processes at any time, even during your organizationâs next planned maintenance period. Though until all processes have been restarted, youâll only see a limited set of metrics, for example CPU or memory consumption.
@@ -113,7 +113,7 @@ During the installation process, the installer:
   + Log in through Remote Desktop Services.  
     The `dtuser` is required for Dynatrace to operate properly, therefore you must not delete it. If, for some reason, the `dtuser` was deleted, next update will recreate it.
 * OneAgent version 1.195+ For fresh OneAgent 1.195+ installations, the default `LocalSystem account` is used to run OneAgent extensions.
-  For a summarized view of the changes made to your system by OneAgent installation, see [OneAgent security on Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows "Learn about Dynatrace OneAgent security and modifications to your Windows-based system").
+  For a summarized view of the changes made to your system by OneAgent installation, see [OneAgent security on Windows](oneagent-security-windows.md "Learn about Dynatrace OneAgent security and modifications to your Windows-based system").
 
 ## You've arrived!
 

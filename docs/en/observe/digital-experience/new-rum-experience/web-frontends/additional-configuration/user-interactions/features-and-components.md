@@ -18,7 +18,7 @@ The New RUM Experience allows you to associate user interactions with features a
 
 ## Associate user interactions with features
 
-Use the `data-dt-features` attribute to associate user interactions on an HTML element with one or more specific product features. On user interactions, the captured features are available in the field `ui_element.features`; see [User interactions](/docs/semantic-dictionary/model/rum/user-events/user-interactions). Elements inherit features from their ancestors, providing comprehensive feature tracking.
+Use the `data-dt-features` attribute to associate user interactions on an HTML element with one or more specific product features. On user interactions, the captured features are available in the field `ui_element.features`; see [User interactions](../../../../../../semantic-dictionary/model/rum/user-events/user-interactions.md). Elements inherit features from their ancestors, providing comprehensive feature tracking.
 
 ### Use cases
 
@@ -175,7 +175,7 @@ fetch user.events
 
 ## Associate user interactions with UI components
 
-Use the `data-dt-component` attribute to associate user interactions on an HTML element with one or more UI components, such as a date picker or a calendar. Component values are inherited from all ancestor elements and collected in topâdown order, forming a path through the component tree. On the captured user interaction, the collected components are available in the field `ui_element.components`; see [User interactions](/docs/semantic-dictionary/model/rum/user-events/user-interactions).
+Use the `data-dt-component` attribute to associate user interactions on an HTML element with one or more UI components, such as a date picker or a calendar. Component values are inherited from all ancestor elements and collected in topâdown order, forming a path through the component tree. On the captured user interaction, the collected components are available in the field `ui_element.components`; see [User interactions](../../../../../../semantic-dictionary/model/rum/user-events/user-interactions.md).
 
 ### Use cases
 

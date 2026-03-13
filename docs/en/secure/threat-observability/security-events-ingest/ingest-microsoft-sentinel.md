@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:23:57.288661
 * How-to guide
 * Updated on Aug 12, 2025
 
-This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](/docs/secure/threat-observability/migration "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
 
 Ingest Microsoft Sentinel security events and analyze them in Dynatrace.
 
@@ -26,10 +26,10 @@ The integration ingests [security alertsï»¿](https://learn.microsoft.com/en-u
 
 ### Use cases
 
-* Visualize and report your current security posture and trends around security findings across environments with [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
-* Analyze and prioritize security findings across multiple tools and products uniformly with [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
-* Create notifications and tickets for critical security findings with [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
-* Use security findings as an additional dimension for threat hunting and incident forensics using [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.").
+* Visualize and report your current security posture and trends around security findings across environments with [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
+* Analyze and prioritize security findings across multiple tools and products uniformly with [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
+* Create notifications and tickets for critical security findings with [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](../../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+* Use security findings as an additional dimension for threat hunting and incident forensics using [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.").
 
 ### Requirements
 
@@ -46,15 +46,15 @@ See below for the Microsoft Sentinel and Dynatrace requirements.
   + To query ingested data: `storage:security.events:read`.
 * Tokens:
 
-  + Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+  + Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see [Dynatrace API - Tokens and authentication](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
 
 ## Activation and setup
 
-1. In Dynatrace, open  [**Hub**](/docs/manage/hub "See the information about Dynatrace Hub.").
+1. In Dynatrace, open  [**Hub**](../../../manage/hub.md "See the information about Dynatrace Hub.").
 2. Look for **Microsoft Sentinel** and select **Install**.
 3. Select **Set up**, then select  **Configure new connection**.
 4. Follow the on-screen instructions to set up the ingestion.
-5. Verify configuration by running the following query in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."):
+5. Verify configuration by running the following query in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."):
 
    ```
    fetch security.events
@@ -77,12 +77,12 @@ See below for the Microsoft Sentinel and Dynatrace requirements.
 1. Events are ingested into Dynatrace
 
 1. Microsoft Sentinel exports security findings to [Azure Event Hubsï»¿](https://dt-url.net/zmc3wv9).
-2. An [Azure Functionï»¿](https://dt-url.net/b643w2v) app pre-processes the events and sends them to Dynatrace, taking advantage of the [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") dedicated [security events ingest endpoint](/docs/secure/threat-observability/security-events-ingest/ingest-custom-data#default "Ingest security events from custom third-party products via API.").
+2. An [Azure Functionï»¿](https://dt-url.net/b643w2v) app pre-processes the events and sends them to Dynatrace, taking advantage of the [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") dedicated [security events ingest endpoint](ingest-custom-data.md#default "Ingest security events from custom third-party products via API.").
 
 2. Security findings are processed and stored in Grail
 
-1. The fetched data is mapped to the [Dynatrace Semantic Dictionary](/docs/semantic-dictionary/model/security-events#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.").
-2. Data is stored in [Grail](/docs/platform/grail "Insights on what and how you can query Dynatrace data.") in a unified format, in a default bucket called `default_securityevents`. For details, see [Built-in Grail buckets](/docs/platform/grail/organize-data#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
+1. The fetched data is mapped to the [Dynatrace Semantic Dictionary](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.").
+2. Data is stored in [Grail](../../../platform/grail.md "Insights on what and how you can query Dynatrace data.") in a unified format, in a default bucket called `default_securityevents`. For details, see [Built-in Grail buckets](../../../platform/grail/organize-data.md#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
 
 ### Monitor data
 
@@ -101,21 +101,21 @@ You can view
 
 ### Visualize and analyze findings
 
-You can create your own [dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or use our templates to visualize and analyze container vulnerability findings.
+You can create your own [dashboards](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or use our templates to visualize and analyze container vulnerability findings.
 
 1. In **Settings**, open **Microsoft Sentinel**.
 2. In the **Try our templates** section, select the desired dashboard template.
 
 ### Automate and orchestrate findings
 
-You can create your own [workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") or use our templates to automate and orchestrate container vulnerability findings.
+You can create your own [workflows](../../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") or use our templates to automate and orchestrate container vulnerability findings.
 
 1. In **Settings**, open **Microsoft Sentinel**.
 2. In the **Try our templates** section, select the desired workflow template.
 
 ### Query ingested data
 
-You can query ingested data in [**![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks****](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), using the data format in [Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0).
+You can query ingested data in [**![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks****](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), using the data format in [Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0).
 
 1. In **Settings**, open **Microsoft Sentinel**.
 2. Select **Open with** .
@@ -123,7 +123,7 @@ You can query ingested data in [**![Notebooks](https://dt-cdn.net/images/noteboo
 
 ### Evaluate, triage, and investigate detection findings
 
-You can evaluate, triage, and investigate detection findings with [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts.").
+You can evaluate, triage, and investigate detection findings with [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](../../threats-and-exploits.md "Understand, triage, and investigate detection findings and alerts.").
 
 1. Open ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**.
 2. Filter for **Provider** > **Microsoft Sentinel**.
@@ -140,13 +140,13 @@ This removes the Dynatrace resources created for this integration.
 
 ### Licensing and cost
 
-For billing information, see [Events powered by Grail](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For billing information, see [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 
 ## FAQ
 
 ### Which data model is used for the security logs and events coming from Microsoft Sentinel?
 
-[Detection finding events](/docs/semantic-dictionary/model/security-events#detection-finding-events "Get to know the Semantic Dictionary models related to security events.") store the individual detection findings per affected object represented by an affected Azure resource.
+[Detection finding events](../../../semantic-dictionary/model/security-events.md#detection-finding-events "Get to know the Semantic Dictionary models related to security events.") store the individual detection findings per affected object represented by an affected Azure resource.
 
 ### Which extension fields are added on top of the core fields of the events ingested from Microsoft Sentinel?
 
@@ -168,7 +168,7 @@ For billing information, see [Events powered by Grail](/docs/license/capabilitie
 ### How do we normalize the risk score for Microsoft Sentinel findings?
 
 Dynatrace normalizes severity and risk scores for all findings ingested through the current integration. This helps you to prioritize findings consistently, regardless of their source.  
-For details on how normalization works, see [Severity and score normalization](/docs/secure/threat-observability/concepts#normalization "Basic concepts related to Threat Observability").
+For details on how normalization works, see [Severity and score normalization](../concepts.md#normalization "Basic concepts related to Threat Observability").
 
 * `dt.security.risk.level` is mapped directly from the severity level (`AlertSeverity`) set by Microsoft Sentinel.
 * `dt.security.risk.score` is mapped directly from the severity level (`AlertSeverity`) set by Microsoft Sentinel.
@@ -188,6 +188,6 @@ Ingest Microsoft Sentinel security findings.](https://www.dynatrace.com/hub/deta
 
 ## Related topics
 
-* [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Security events](/docs/semantic-dictionary/model/security-events "Get to know the Semantic Dictionary models related to security events.")
+* [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
+* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Security events](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")

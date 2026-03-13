@@ -17,7 +17,7 @@ The `Dynatrace.OpenTelemetry.Instrumentation.GoogleCloudFunctions` NuGet package
 
 ## Prerequisites
 
-* [Set up OpenTelemetry monitoring for Google Cloud Functions](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf "Monitor Google Cloud Functions with OpenTelemetry and Dynatrace.").
+* [Set up OpenTelemetry monitoring for Google Cloud Functions](opentelemetry-on-gcf.md "Monitor Google Cloud Functions with OpenTelemetry and Dynatrace.").
 * Dynatrace.OpenTelemetry.Instrumentation.GoogleCloudFunctions version 1.273+
 * Cloud Functions product versions: 1st gen, 2nd gen
 
@@ -35,9 +35,9 @@ This adds the latest version of the `Dynatrace.OpenTelemetry.Instrumentation.Goo
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Initialize tracing**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet#initialize "Monitor Google Cloud Functions with OpenTelemetry for .NET and Dynatrace.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Initialize tracing**](opentelemetry-on-gcf-dotnet.md#initialize "Monitor Google Cloud Functions with OpenTelemetry for .NET and Dynatrace.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Instrument a handler function**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet#instrument "Monitor Google Cloud Functions with OpenTelemetry for .NET and Dynatrace.")
+**Instrument a handler function**](opentelemetry-on-gcf-dotnet.md#instrument "Monitor Google Cloud Functions with OpenTelemetry for .NET and Dynatrace.")
 
 ## Step 1 Initialize tracing
 
@@ -234,5 +234,5 @@ Because code running outside the function execution can be terminated at any tim
 
 ## Related topics
 
-* [Set up Dynatrace on Google Cloud](/docs/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
+* [Set up Dynatrace on Google Cloud](../../../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
 * [Google Cloud monitoringï»¿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)

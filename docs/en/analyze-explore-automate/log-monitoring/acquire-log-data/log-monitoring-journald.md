@@ -36,7 +36,7 @@ Enabling the feature flag is required to opt-in. Without it, even with configure
 
 ## Configure log ingestion from Journald
 
-You can enable log ingestion from Journald by either configuring the default Journald [ingest rule](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis."), or by configuring the tenant storage upload, for example `kubelet.service` as `Journald.unit` from Journald.
+You can enable log ingestion from Journald by either configuring the default Journald [ingest rule](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis."), or by configuring the tenant storage upload, for example `kubelet.service` as `Journald.unit` from Journald.
 
 ### Enable the default ingestion rule
 

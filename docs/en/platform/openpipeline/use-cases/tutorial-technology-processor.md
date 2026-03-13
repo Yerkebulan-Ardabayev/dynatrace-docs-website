@@ -29,14 +29,14 @@ In this article, you will learn how to parse logs with technology bundle in Open
 
 Prior knowledge
 
-* [Syslog ingestion with ActiveGate](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog "Ingest syslog log data to Dynatrace using ActiveGate and have Dynatrace transform it into meaningful log messages.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* [Syslog ingestion with ActiveGate](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog.md "Ingest syslog log data to Dynatrace using ActiveGate and have Dynatrace transform it into meaningful log messages.")
+* [Dynatrace Query Language](../../grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Processing in OpenPipeline](../concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
 
 Prerequisites
 
-* [Latest Dynatrace](/docs/platform "Dynatrace is an all-in-one platform that's purpose-built for a wide range of use cases.") environment
-* [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license with [Log Analytics (DPS)](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") capabilities
+* [Latest Dynatrace](../../../platform.md "Dynatrace is an all-in-one platform that's purpose-built for a wide range of use cases.") environment
+* [License Dynatrace](../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license with [Log Analytics (DPS)](../../../license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") capabilities
 
 ## Steps
 
@@ -49,7 +49,7 @@ Prerequisites
    You can add multiple technology bundles on one pipeline, so you don't have to create a pipeline and a dynamic routing each time.
 4. Copy the technology matching condition.
 
-   You can customize the technology matching condition to match your needs through OpenPipeline. See [Configure a processing pipeline](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#route "Configure ingest sources, routes, and processing for your data in OpenPipeline.").
+   You can customize the technology matching condition to match your needs through OpenPipeline. See [Configure a processing pipeline](../getting-started/tutorial-configure-processing.md#route "Configure ingest sources, routes, and processing for your data in OpenPipeline.").
 5. Select **Save**.
 
 You successfully configured a new pipeline with a processor to structure syslog logs according to pre-defined rules that match Dynatrace Semantic Dictionary. The new pipeline is in the pipeline list.
@@ -68,11 +68,11 @@ You successfully configured a new pipeline with a processor to structure syslog 
 
 You successfully configured a new route. All syslog logs are routed to the pipeline for processing. The new route is in the route list.
 
-To learn more about dynamic routing, see [Route data](/docs/platform/openpipeline/getting-started/how-to-routing "Learn how to route data to an OpenPipeline processing pipeline.").
+To learn more about dynamic routing, see [Route data](../getting-started/how-to-routing.md "Learn how to route data to an OpenPipeline processing pipeline.").
 
 3. Analyze structured logs
 
-Once logs are processed according to the technology bundle, several attributes are extracted from the log content into new fields that match Dynatrace Semantic Dictionary. On top of that, technology bundles extract other attributes from logs so you can build your own [Custom alerts](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories/custom-alerts "Learn more about custom alerts and the logic behind raising them."), [Metrics](/docs/analyze-explore-automate/metrics "Metrics powered by Grail offer a comprehensive solution to manage your metrics data, in integration with logs, spans, and events, providing a unified approach to data analysis."), and [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
+Once logs are processed according to the technology bundle, several attributes are extracted from the log content into new fields that match Dynatrace Semantic Dictionary. On top of that, technology bundles extract other attributes from logs so you can build your own [Custom alerts](../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories/custom-alerts.md "Learn more about custom alerts and the logic behind raising them."), [Metrics](../../../analyze-explore-automate/metrics.md "Metrics powered by Grail offer a comprehensive solution to manage your metrics data, in integration with logs, spans, and events, providing a unified approach to data analysis."), and [Dashboards](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
 
 Log enrichment
 
@@ -245,6 +245,6 @@ You successfully structured syslog logs according to pre-defined processing rule
 
 ## Related topics
 
-* [Semantic Dictionary](/docs/semantic-dictionary "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.")
-* [Filter logs](/docs/secure/investigations/filter-logs "Narrow down data to relevant entries in Investigations.")
-* [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+* [Semantic Dictionary](../../../semantic-dictionary.md "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.")
+* [Filter logs](../../../secure/investigations/filter-logs.md "Narrow down data to relevant entries in Investigations.")
+* [Notebooks](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")

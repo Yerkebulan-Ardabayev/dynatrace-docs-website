@@ -11,9 +11,9 @@ scraped: 2026-03-06T21:36:54.830279
 * Reference
 * Published Aug 23, 2018
 
-To be authenticated to use the Dynatrace API, you need a valid [access token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") or a valid [personal access token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token "Learn the concept of a personal access token and its scopes."). Access to the API is fine-grained, meaning that you also need the proper scopes assigned to the token. See the description of each request to find out which scopes are required to use it.
+To be authenticated to use the Dynatrace API, you need a valid [access token](../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md "Learn the concept of an access token and its scopes.") or a valid [personal access token](../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token.md "Learn the concept of a personal access token and its scopes."). Access to the API is fine-grained, meaning that you also need the proper scopes assigned to the token. See the description of each request to find out which scopes are required to use it.
 
-For details on OAuth clients, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+For details on OAuth clients, see [OAuth clients](../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
 
 ## Token format
 
@@ -47,7 +47,7 @@ To generate an access token:
 
 To generate a personal access token
 
-1. Go to **Personal Access Tokens** (accessible via the [user menu](/docs/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Navigate the latest Dynatrace") in the previous Dynatrace).
+1. Go to **Personal Access Tokens** (accessible via the [user menu](../../discover-dynatrace/get-started/dynatrace-ui.md#user-menu-previous-dynatrace "Navigate the latest Dynatrace") in the previous Dynatrace).
 2. Select **Generate new token**.
 3. Enter a name for your token.  
    Dynatrace doesn't enforce unique token names. You can create multiple tokens with the same name. Be sure to provide a meaningful name for each token you generate. Proper naming helps you to efficiently manage your tokens and perhaps delete them when they're no longer needed.
@@ -59,9 +59,9 @@ To generate a personal access token
 
 You can assign multiple scopes to a single token, or you can generate several tokens, each with different access levels and use them accordinglyâcheck your organization's security policies for the best practice.
 
-To change the scope of an existing token, use the [PUT a token call](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens/put-token "Update an access token via Dynatrace API.") of the Access tokens API. Note that you need to submit the existing scopes if you want to keep them. Any existing scope missing in the payload is removed.
+To change the scope of an existing token, use the [PUT a token call](../environment-api/tokens-v2/api-tokens/put-token.md "Update an access token via Dynatrace API.") of the Access tokens API. Note that you need to submit the existing scopes if you want to keep them. Any existing scope missing in the payload is removed.
 
-Alternatively, you can use the [POST a token](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens/post-token "Create an access token via Dynatrace API.") call to generate a token.
+Alternatively, you can use the [POST a token](../environment-api/tokens-v2/api-tokens/post-token.md "Create an access token via Dynatrace API.") call to generate a token.
 
 ## Token scopes
 
@@ -79,7 +79,7 @@ Personal access token
 
 ### Other
 
-Dynatrace provides the following permissions for personal access tokens. You can set them in the web UI as described above or via the [**Access tokens** API](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens "Manage Dynatrace API authentication tokens.").
+Dynatrace provides the following permissions for personal access tokens. You can set them in the web UI as described above or via the [**Access tokens** API](../environment-api/tokens-v2/api-tokens.md "Manage Dynatrace API authentication tokens.").
 
 ## Authenticate
 
@@ -129,4 +129,4 @@ You can also unlock all endpoints by selecting **Authorize**. In the displayed d
 
 ## Related topics
 
-* [Access tokens classic](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.")
+* [Access tokens classic](../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md "Learn the concept of an access token and its scopes.")

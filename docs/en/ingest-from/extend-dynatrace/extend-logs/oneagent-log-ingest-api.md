@@ -14,7 +14,7 @@ scraped: 2026-03-05T21:32:31.516583
 
 You can use the local `http://localhost:<port>/v2/logs/ingest` API endpoint to push locally retrieved logs to Dynatrace over a secure and authenticated channel. This endpoint is available only to local clients and cannot be reached from remote hosts.
 
-The OneAgent log ingest endpoint mimics the behavior of the public [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.") endpoint.
+The OneAgent log ingest endpoint mimics the behavior of the public [Log Monitoring API v2 - POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.") endpoint.
 
 ## Enable the log ingest API
 
@@ -53,15 +53,15 @@ Enable for a host group
 
 ## Log event format
 
-The request consumes an `application/json` payload with the `charset=utf-8` character set. For more information on the format, see [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.").
+The request consumes an `application/json` payload with the `charset=utf-8` character set. For more information on the format, see [Log Monitoring API v2 - POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.").
 
 ## Limits
 
-The log events pushed to Dynatrace using the OneAgent log ingest API are subject to the same limits as those for the public [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs#request-body-objects "Push custom logs to Dynatrace via the Log Monitoring API v2.").
+The log events pushed to Dynatrace using the OneAgent log ingest API are subject to the same limits as those for the public [Log Monitoring API v2 - POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md#request-body-objects "Push custom logs to Dynatrace via the Log Monitoring API v2.").
 
 ## Example
 
-With this `curl` command, you'll ingest the `Exception: Custom error log sent via OneAgent log ingest` event, with the severity set to `error` and a custom attribute set to `attribute value`. As the timestamp isn't provided, the event is automatically timestamped with the event reading time. You'll be able to access the event in [Log viewer (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.").
+With this `curl` command, you'll ingest the `Exception: Custom error log sent via OneAgent log ingest` event, with the severity set to `error` and a custom attribute set to `attribute value`. As the timestamp isn't provided, the event is automatically timestamped with the event reading time. You'll be able to access the event in [Log viewer (Logs Classic)](../../../analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer.md "Learn how to use Dynatrace log viewer to analyze log data.").
 
 ```
 curl -i -X POST "http://127.0.0.1:14499/v2/logs/ingest" -H "Content-Type: application/json; charset=utf-8" -d "{\"content\":\"Exception: Custom error log sent via Generic Log Ingest\",\"custom.attribute\":\"attribute value\",\"severity\": \"error\"}"
@@ -89,7 +89,7 @@ Content-Length: 116
 
 Starting with OneAgent version 1.267+, AIX systems also support metric ingestion.
 
-The default metric ingestion port is `14499`. If necessary, you can use the [oneagentctl](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the port. Changing the metric ingestion port requires restart of OneAgent. Add [`--restart-service`](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
+The default metric ingestion port is `14499`. If necessary, you can use the [oneagentctl](../../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the port. Changing the metric ingestion port requires restart of OneAgent. Add [`--restart-service`](../../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
 
 ### Check the ingestion port
 
@@ -113,4 +113,4 @@ Use the `--set-extensions-ingest-port=<arg>` parameter to set a custom local ing
 
 Configure your host proxy to allow localhost traffic going to the metric ingestion port, `14499` by default.
 
-Note that changing the port for the OneAgent log ingest API also affects [OneAgent metric API](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities."), [Metric scripting integration](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe "Learn how to ingest metrics using local scripting integration."), and [Telegraf metrics integration](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf "Ingest Telegraf metrics into Dynatrace.").
+Note that changing the port for the OneAgent log ingest API also affects [OneAgent metric API](../extend-metrics/ingestion-methods/oneagent-metric-api.md "Use the Dynatrace API to retrieve the metrics of monitored entities."), [Metric scripting integration](../extend-metrics/ingestion-methods/oneagent-pipe.md "Learn how to ingest metrics using local scripting integration."), and [Telegraf metrics integration](../extend-metrics/ingestion-methods/telegraf.md "Ingest Telegraf metrics into Dynatrace.").

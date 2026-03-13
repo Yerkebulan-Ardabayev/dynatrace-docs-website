@@ -18,11 +18,11 @@ scraped: 2026-03-05T21:26:40.159355
 
 Notification
 
-* В этом процессе обнаружены несовместимые модули NGINX. Автоматическое инструментирование было отключено. Чтобы принудительно инструментировать NGINX, см. [Runtime instrumentation](/docs/ingest-from/technology-support/application-software/nginx/manual-runtime-instrumentation "Learn how to force instrumenting patched/non-standard NGINX binaries during runtime.").
+* В этом процессе обнаружены несовместимые модули NGINX. Автоматическое инструментирование было отключено. Чтобы принудительно инструментировать NGINX, см. [Runtime instrumentation](manual-runtime-instrumentation.md "Learn how to force instrumenting patched/non-standard NGINX binaries during runtime.").
 
 ## Инструментирование изменённого NGINX
 
-Кодовый модуль NGINX может инструментировать изменённый NGINX для [поддерживаемых версий](/docs/ingest-from/technology-support/application-software/nginx#nginx-versions "Learn the details of Dynatrace support for NGINX."), проверяя объявления внутренних структур данных NGINX при запуске (во время выполнения), вместо того чтобы полагаться на заблаговременные предположения.
+Кодовый модуль NGINX может инструментировать изменённый NGINX для [поддерживаемых версий](../nginx.md#nginx-versions "Learn the details of Dynatrace support for NGINX."), проверяя объявления внутренних структур данных NGINX при запуске (во время выполнения), вместо того чтобы полагаться на заблаговременные предположения.
 
 Примером изменённого NGINX является бинарный файл NGINX, распространяемый вместе с Kong Gateway.
 

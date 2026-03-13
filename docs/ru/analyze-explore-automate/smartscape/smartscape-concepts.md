@@ -17,11 +17,11 @@ scraped: 2026-03-04T21:32:46.793171
 
 ## Представления Smartscape
 
-![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** предоставляет несколько топологических представлений, каждое из которых предлагает уникальную перспективу вашей цифровой системы. Подробнее см. [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") представления **Smartscape**](/docs/analyze-explore-automate/smartscape/smartscape-views "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.").
+![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** предоставляет несколько топологических представлений, каждое из которых предлагает уникальную перспективу вашей цифровой системы. Подробнее см. [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") представления **Smartscape**](smartscape-views.md "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.").
 
 ## Модальные окна Smartscape
 
-Модальные окна ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** предоставляют контекстные топологические данные в любом месте платформы, органично интегрируя аналитику в ваши рабочие процессы. Модальные окна ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** отображаются в виде наложения поверх существующего приложения, что позволяет вам получать доступ к топологическим данным и аналитике без выхода из текущего приложения или контекста. Подробнее см. [модальные окна ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**](/docs/analyze-explore-automate/smartscape/smartscape-modals "Use Smartscape modals to visualize your environment in any Dynatrace app and gain insights into problem resolution and service dependencies").
+Модальные окна ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** предоставляют контекстные топологические данные в любом месте платформы, органично интегрируя аналитику в ваши рабочие процессы. Модальные окна ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** отображаются в виде наложения поверх существующего приложения, что позволяет вам получать доступ к топологическим данным и аналитике без выхода из текущего приложения или контекста. Подробнее см. [модальные окна ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**](smartscape-modals.md "Use Smartscape modals to visualize your environment in any Dynatrace app and gain insights into problem resolution and service dependencies").
 
 ## Узлы, ребра и группы
 
@@ -42,7 +42,7 @@ scraped: 2026-03-04T21:32:46.793171
 
 Селектор временного диапазона в приложении ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** работает несколько иначе по сравнению с другими областями платформы. Селектор временного диапазона позволяет просматривать узлы, время существования которых пересекается с выбранным временным диапазоном. Это гарантирует, что вы видите только узлы, актуальные для анализируемого периода.
 
-Подробнее о времени существования см. в разделе [**Smartscape on Grail**](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
+Подробнее о времени существования см. в разделе [**Smartscape on Grail**](../../platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
 
 ## Сегменты
 
@@ -54,7 +54,7 @@ scraped: 2026-03-04T21:32:46.793171
 
 В вложенных представлениях, если ваш сегмент отфильтровывает родительскую группу, вы не сможете увидеть дочерние узлы этой группы, даже если эти дочерние узлы не затронуты фильтром сегмента напрямую.
 
-Подробнее о сегментах см. в разделе [Сегменты](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.").
+Подробнее о сегментах см. в разделе [Сегменты](../../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.").
 
 ## Всплывающие подсказки
 

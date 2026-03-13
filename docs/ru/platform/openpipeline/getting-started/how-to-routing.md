@@ -94,4 +94,4 @@ scraped: 2026-03-06T21:13:37.885258
 
 ## Связанные темы
 
-* [Поток данных в OpenPipeline](/docs/platform/openpipeline/concepts/data-flow "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
+* [Поток данных в OpenPipeline](../concepts/data-flow.md "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")

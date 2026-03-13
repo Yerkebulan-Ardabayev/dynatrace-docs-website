@@ -27,4 +27,4 @@ Depending on your team, a single individual may be able to administer more than 
 
 ## Related topics
 
-* [Technology support](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.")
+* [Technology support](../../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.")

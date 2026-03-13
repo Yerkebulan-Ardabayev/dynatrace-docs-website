@@ -38,7 +38,7 @@ scraped: 2026-03-06T21:13:15.473875
 
 ![segments variable configuration](https://dt-cdn.net/images/segments-11-2142-785fbf7a08.png)
 
-Аналогичного результата можно достичь с помощью [команды data](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#data "Команды источников данных DQL") в DQL для формирования статического списка значений, как показано ниже.
+Аналогичного результата можно достичь с помощью [команды data](../../../platform/grail/dynatrace-query-language/commands/data-source-commands.md#data "Команды источников данных DQL") в DQL для формирования статического списка значений, как показано ниже.
 
 ```
 data

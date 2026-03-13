@@ -19,7 +19,7 @@ Data sources
 
 ### Extension Execution Controller (EEC)
 
-The Extension Execution Controller (EEC) is the Dynatrace component running your extensions. EEC queries either your local data sources when run on OneAgent, or remote data sources when run from an ActiveGate. EEC is automatically installed and managed with each OneAgent and ActiveGate configuration. EEC also translates all the ingested data for [Dynatrace Intelligence causation analysis](/docs/dynatrace-intelligence/reference/ai-models/causal-correlation-analysis "Learn how Dynatrace Intelligence causal correlation analysis finds related metrics across your environment."). For more information, see [Metric ingestion](/docs/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.").
+The Extension Execution Controller (EEC) is the Dynatrace component running your extensions. EEC queries either your local data sources when run on OneAgent, or remote data sources when run from an ActiveGate. EEC is automatically installed and managed with each OneAgent and ActiveGate configuration. EEC also translates all the ingested data for [Dynatrace Intelligence causation analysis](../../dynatrace-intelligence/reference/ai-models/causal-correlation-analysis.md "Learn how Dynatrace Intelligence causal correlation analysis finds related metrics across your environment."). For more information, see [Metric ingestion](../extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace.").
 
 To run local extensions, make sure EEC is enabled at the environment, host, or host group level.
 
@@ -56,9 +56,9 @@ Enable for a host group
 
 ### ActiveGate group
 
-Dynatrace uses ActiveGate groups to determine where extensions should run. Every ActiveGate that runs an extension must be part of a group. If you plan to use a single ActiveGate, assign it to a dedicated group. For more information, see [ActiveGate group](/docs/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
+Dynatrace uses ActiveGate groups to determine where extensions should run. Every ActiveGate that runs an extension must be part of a group. If you plan to use a single ActiveGate, assign it to a dedicated group. For more information, see [ActiveGate group](../dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.").
 
-You can run extensions using an Environment ActiveGate installed to [route OneAgent traffic to Dynatrace, and to monitor cloud environments and remote technologies using extensions](/docs/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose "Learn about the routing and monitoring capabilities and uses of ActiveGate.").
+You can run extensions using an Environment ActiveGate installed to [route OneAgent traffic to Dynatrace, and to monitor cloud environments and remote technologies using extensions](../dynatrace-activegate/capabilities/routing-monitoring-purpose.md "Learn about the routing and monitoring capabilities and uses of ActiveGate.").
 
 Cluster ActiveGates and multi-environment ActiveGates aren't supported for the Extensions framework.
 
@@ -95,7 +95,7 @@ Change the performance profile of an ActiveGate
 3. On the **Settings** page, go to **Extension Execution Controller**.
 4. Set **Performance profile** to `Default`, `High limits`, or `Dedicated limits`.
 
-   You can enable `Dedicated limits` only after you have configured the ActiveGate as described on [Dedicated performance profile configuration](/docs/ingest-from/extensions/advanced-configuration/dedicated-performance-profile "Configure the dedicated performance profile mode to optimize the performance of your ActiveGate host.").
+   You can enable `Dedicated limits` only after you have configured the ActiveGate as described on [Dedicated performance profile configuration](advanced-configuration/dedicated-performance-profile.md "Configure the dedicated performance profile mode to optimize the performance of your ActiveGate host.").
 
 ### Environment configuration
 
@@ -126,14 +126,14 @@ To start monitoring using the extension, you must use an API call to add a monit
 
 Without a monitoring configuration, an extension is visible in the Dynatrace platform, but it doesn't collect any data.
 
-* See [Oracle Database monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.") to learn how to create an Oracle Databaseâspecific monitoring configuration.
-* See [Microsoft SQL Server monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring "Microsoft SQL extensions in the Extensions framework.") to learn how to create a Microsoft Databaseâspecific monitoring configuration.
-* See [IBM Database monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/ibm-monitoring "IBM DB2 extensions in the Extensions framework.") to learn how to create an IBM Databaseâspecific monitoring configuration.
-* See [MySQL monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/mysql-monitoring "MySQL extensions in the Extensions framework.") to learn how to create a MySQL Databaseâspecific monitoring configuration.
-* See [PostgreSQL monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring "PostgreSQL extensions in the Extensions framework.") to learn how to create a PostgreSQL Databaseâspecific monitoring configuration.
-* See [SAP Hana Database monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring "SAP Hana extensions in the Extensions framework.") to learn how to create a SAP Hana Databaseâspecific monitoring configuration.
-* See [Snowflake Database monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring "Snowflake Database extensions in the Extensions framework.") to learn how to create a Snowflake Databaseâspecific monitoring configuration.
-* See [JDBC monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring "JDBC extensions in the Extensions framework.") to learn how to create a JDBC Databaseâspecific monitoring configuration.
+* See [Oracle Database monitoring configuration](develop-your-extensions/data-sources/sql/oracle-monitoring.md "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.") to learn how to create an Oracle Databaseâspecific monitoring configuration.
+* See [Microsoft SQL Server monitoring configuration](develop-your-extensions/data-sources/sql/microsoft-sql-monitoring.md "Microsoft SQL extensions in the Extensions framework.") to learn how to create a Microsoft Databaseâspecific monitoring configuration.
+* See [IBM Database monitoring configuration](develop-your-extensions/data-sources/sql/ibm-monitoring.md "IBM DB2 extensions in the Extensions framework.") to learn how to create an IBM Databaseâspecific monitoring configuration.
+* See [MySQL monitoring configuration](develop-your-extensions/data-sources/sql/mysql-monitoring.md "MySQL extensions in the Extensions framework.") to learn how to create a MySQL Databaseâspecific monitoring configuration.
+* See [PostgreSQL monitoring configuration](develop-your-extensions/data-sources/sql/postgresql-monitoring.md "PostgreSQL extensions in the Extensions framework.") to learn how to create a PostgreSQL Databaseâspecific monitoring configuration.
+* See [SAP Hana Database monitoring configuration](develop-your-extensions/data-sources/sql/sap-hana-monitoring.md "SAP Hana extensions in the Extensions framework.") to learn how to create a SAP Hana Databaseâspecific monitoring configuration.
+* See [Snowflake Database monitoring configuration](develop-your-extensions/data-sources/sql/snowflake-monitoring.md "Snowflake Database extensions in the Extensions framework.") to learn how to create a Snowflake Databaseâspecific monitoring configuration.
+* See [JDBC monitoring configuration](develop-your-extensions/data-sources/sql/jdbc-monitoring.md "JDBC extensions in the Extensions framework.") to learn how to create a JDBC Databaseâspecific monitoring configuration.
 
 ### Extension package
 
@@ -167,7 +167,7 @@ With Dynatrace CLI you can:
 * Generate development certificates for extension signing
 * Generate CA certificates for development
 
-For details, see [Sign extension](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.") and the [dt-cliï»¿](https://github.com/dynatrace-oss/dt-cli) project on GitHub.
+For details, see [Sign extension](develop-your-extensions/sign-extensions.md "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.") and the [dt-cliï»¿](https://github.com/dynatrace-oss/dt-cli) project on GitHub.
 
 ### Feature sets
 
@@ -178,7 +178,7 @@ Imagine an SNMP extension that monitors your network devices and collects metric
 
 ### Configurations and limitations
 
-Before deploying extensions, be aware of current [limitations](/docs/ingest-from/extensions/extension-limits "Learn about extensions limits.") to ensure you can meet your monitoring goals effectively.
+Before deploying extensions, be aware of current [limitations](extension-limits.md "Learn about extensions limits.") to ensure you can meet your monitoring goals effectively.
 
 ### Access control and required permissions
 
@@ -191,22 +191,22 @@ Working with Extensions requires specific permissions to manage extensions lifec
 
 ### SNMP
 
-Extend your observability into data from your network devices with declarative metrics based on SNMP OIDs.](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions "Learn how to create an SNMP extension using the Extensions framework.")[![WMI](https://dt-cdn.net/images/techn-icon-microsoft-e15d516aaf.svg "WMI")
+Extend your observability into data from your network devices with declarative metrics based on SNMP OIDs.](develop-your-extensions/data-sources/snmp-extensions.md "Learn how to create an SNMP extension using the Extensions framework.")[![WMI](https://dt-cdn.net/images/techn-icon-microsoft-e15d516aaf.svg "WMI")
 
 ### WMI
 
-Extend your observability into data from devices exposing Windows Management Instrumentation interface.](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions "Learn how to create a WMI extension using the Extensions framework.")[![Prometheus](https://dt-cdn.net/images/prometheus-b1fab729ac.svg "Prometheus")
+Extend your observability into data from devices exposing Windows Management Instrumentation interface.](develop-your-extensions/data-sources/wmi-extensions.md "Learn how to create a WMI extension using the Extensions framework.")[![Prometheus](https://dt-cdn.net/images/prometheus-b1fab729ac.svg "Prometheus")
 
 ### Prometheus
 
-Extend your applications and services data with metrics acquired from a Prometheus endpoint outside Kubernetes.](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Learn how to create a Prometheus extension using the Extensions framework.")[![SQL data source](https://dt-cdn.net/images/sql-logo-036ab75f37.svg "SQL data source")
+Extend your applications and services data with metrics acquired from a Prometheus endpoint outside Kubernetes.](develop-your-extensions/data-sources/prometheus-extensions.md "Learn how to create a Prometheus extension using the Extensions framework.")[![SQL data source](https://dt-cdn.net/images/sql-logo-036ab75f37.svg "SQL data source")
 
 ### SQL
 
-Extend your observability into data acquired from a database layer using SQL queries.](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql "Learn how to create an SQL data source-based extension using the Extensions framework.")[![JMX](https://dt-cdn.net/images/techn-icon-java-3016283f6a.svg "JMX")
+Extend your observability into data acquired from a database layer using SQL queries.](develop-your-extensions/data-sources/sql.md "Learn how to create an SQL data source-based extension using the Extensions framework.")[![JMX](https://dt-cdn.net/images/techn-icon-java-3016283f6a.svg "JMX")
 
 ### JMX
 
-Extend your observability into data acquired from JMX MBeans.](/docs/ingest-from/extensions/develop-your-extensions/data-sources/jmx "Learn how to create a JMX extension using the Extensions framework.")[### Python
+Extend your observability into data acquired from JMX MBeans.](develop-your-extensions/data-sources/jmx.md "Learn how to create a JMX extension using the Extensions framework.")[### Python
 
-Extend your observability into data from any technology that exposes data via an interface using custom-coded extensions based on the Dynatrace-provided Python SDK.](/docs/ingest-from/extensions/develop-your-extensions/data-sources/python "Python library and a toolbox for building Python extensions for Dynatrace Extensions.")
+Extend your observability into data from any technology that exposes data via an interface using custom-coded extensions based on the Dynatrace-provided Python SDK.](develop-your-extensions/data-sources/python.md "Python library and a toolbox for building Python extensions for Dynatrace Extensions.")

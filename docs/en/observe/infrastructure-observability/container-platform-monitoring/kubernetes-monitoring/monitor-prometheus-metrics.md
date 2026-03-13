@@ -23,15 +23,15 @@ in Kubernetes using [Prometheus exportersï»¿](https://dt-url.net/lw02ror) and
 ### Counter
 
 The Prometheus counter metric[1](#fn-1-1-def) is a monotonically increasing value typically used for measurements that can only increase or remain constant.
-Dynatrace uses its [`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.") metric type, which uses **delta encoding**[2](#fn-1-2-def) in order to reduce data redundancy, for data ingestion.
+Dynatrace uses its [`COUNT`](../../../../ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.") metric type, which uses **delta encoding**[2](#fn-1-2-def) in order to reduce data redundancy, for data ingestion.
 As such, the value displayed in Dynatrace does not reflect the actual counter value, but instead its change, or delta, over observations.
 
 This method results in a counter metric appearing one minute delayed in contrast to a [Gauge](#gauge) metric if scraping for both metrics started simultaneously.
-For details, see the [metric ingestion protocol reference](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+For details, see the [metric ingestion protocol reference](../../../../ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
 
 Ingesting Counter metrics
 
-The **delta encoding** used by the Dynatrace [`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.") ingestion type means that the ingested value *does not* reflect the actual value, but the difference between measurements.
+The **delta encoding** used by the Dynatrace [`COUNT`](../../../../ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.") ingestion type means that the ingested value *does not* reflect the actual value, but the difference between measurements.
 
 1
 
@@ -45,7 +45,7 @@ for seldomly changing data, the method avoids data redundancy.
 ### Gauge
 
 In contrast to [Counter](#counter), the gauge metric[1](#fn-2-1-def) stores a single numerical value which can increase and decrease and is typically used for measured values such as
-current memory usage or number of users online. In Dynatrace, the [`GAUGE`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#gauge-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.") metric type will be used for data ingest.
+current memory usage or number of users online. In Dynatrace, the [`GAUGE`](../../../../ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#gauge-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.") metric type will be used for data ingest.
 
 1
 
@@ -133,7 +133,7 @@ The filter syntax also supports the asterisk (`*`). This symbol allows you to fi
 Using the `*` symbol within a filter, such as `redis_*_bytes`, is not supported.
 
 The filter is applied to the raw metric key, so it's important to know that Dynatrace automatically appends suffixes to some metric keys, depending on the original metric key and metric type.
-For details, see [Payload](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#payload "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+For details, see [Payload](../../../../ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#payload "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
 
 For summary and histogram, the filter is applied to the whole metric family, as stated in the `#TYPE` line of OpenMetrics format.
 For example, if the summary metric family `foo_seconds` is filtered, all the metric points, including `foo_seconds_count` and `foo_seconds_sum`, are filtered.
@@ -727,13 +727,13 @@ If you don't have full control over the pod template, you have the following opt
 
 ## View metrics on a dashboard
 
-Metrics from Prometheus exporters are available in Data Explorer for custom charting. Select **Create custom chart** and select **Try it out** in the top banner. For more information, see [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+Metrics from Prometheus exporters are available in Data Explorer for custom charting. Select **Create custom chart** and select **Try it out** in the top banner. For more information, see [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.").
 
 You can simply search for metric keys of all available metrics and define how youâd like to analyze and chart your metrics. After that you can pin your charts on a dashboard.
 
 ## Metric alerts
 
-You can also create custom alerts based on the Prometheus scraped metrics. Go to **Settings** > **Anomaly detection** > **Metric events** and select **Add metric event**. In the **Add metric event** page, search for a Prometheus metric using its key and define your alert. For more information, see [Metric events for alerting](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace").
+You can also create custom alerts based on the Prometheus scraped metrics. Go to **Settings** > **Anomaly detection** > **Metric events** and select **Add metric event**. In the **Add metric event** page, search for a Prometheus metric using its key and define your alert. For more information, see [Metric events for alerting](../../../../dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace").
 
 ## Limitations
 
@@ -774,14 +774,14 @@ These two methods serve different contexts, work independently from each other, 
 
 ## Monitoring consumption
 
-If you have DPS licensing, you can get more information about your environment's custom metric consumption from our [licensing documentation](/docs/license/capabilities/platform-extensions/custom-metrics-classic "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
+If you have DPS licensing, you can get more information about your environment's custom metric consumption from our [licensing documentation](../../../../license/capabilities/platform-extensions/custom-metrics-classic.md "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
 
-* Full-Stack Monitoring [includes a fixed number of custom metric data points](/docs/license/capabilities/app-infra-observability/full-stack-monitoring#full-stack-metrics "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") for each GiB that contributes to your environment's GiB-hour consumption for containers with code-modules.
+* Full-Stack Monitoring [includes a fixed number of custom metric data points](../../../../license/capabilities/app-infra-observability/full-stack-monitoring.md#full-stack-metrics "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") for each GiB that contributes to your environment's GiB-hour consumption for containers with code-modules.
 
-If you have Dynatrace classic licensing, Prometheus metrics in Kubernetes environments are subject to [DDU consumption](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+If you have Dynatrace classic licensing, Prometheus metrics in Kubernetes environments are subject to [DDU consumption](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 
-* Prometheus metrics from exporters running on hosts monitored by OneAgent are first deducted from your quota of [included metrics per host unit](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."). After this quota is exceeded, any additional metrics consume [DDUs](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
-* Prometheus metrics from exporters running on hosts not monitored by OneAgent always consume [DDUs](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+* Prometheus metrics from exporters running on hosts monitored by OneAgent are first deducted from your quota of [included metrics per host unit](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."). After this quota is exceeded, any additional metrics consume [DDUs](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+* Prometheus metrics from exporters running on hosts not monitored by OneAgent always consume [DDUs](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 
 ## Troubleshooting
 
@@ -789,5 +789,5 @@ To troubleshoot Prometheus integration issues, download the [Kubernetes Monitori
 
 ## Related topics
 
-* [Metrics Classic](/docs/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.")
-* [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Metrics Classic](../../../../analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")
+* [Set up Dynatrace on Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")

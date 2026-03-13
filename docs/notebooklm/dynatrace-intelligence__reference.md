@@ -25,7 +25,7 @@ scraped: 2026-03-06T21:11:12.668111
 
 Анализ не зависит от распределения входных данных. Прогноз рассчитывается без каких-либо предположений о конкретном распределении данных и работает как для симметричных, так и для несимметричных распределений.
 
-Вы можете запустить прогностический анализ из своей [тетради](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks "Запустите анализ ИИ в Dynatrace Тетради.").
+Вы можете запустить прогностический анализ из своей [тетради](../ru/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks.md "Запустите анализ ИИ в Dynatrace Тетради.").
 
 ## Входные данные анализатора
 
@@ -135,7 +135,7 @@ scraped: 2026-03-06T21:11:12.668111
 
 ## Запись DQL запросов для прогнозирования
 
-При использовании прогностического анализа в одной из своих [тетрадей](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь идеями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.") вы можете записать любой DQL запрос, который возвращает данные временной серии в [формате записи временной серии](#формат-записи-временной-серии).
+При использовании прогностического анализа в одной из своих [тетрадей](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь идеями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.") вы можете записать любой DQL запрос, который возвращает данные временной серии в [формате записи временной серии](#формат-записи-временной-серии).
 
 * Если данные не соответствуют одному из вышеуказанных форматов, прогностический анализ не удается.
 * Каждое числовое значение в массиве данных должно иметь хотя бы одну десятичную точку (например, `1,0`).
@@ -144,8 +144,8 @@ scraped: 2026-03-06T21:11:12.668111
 
 Примеры запросов DQL ниже возвращают действительные ответы.
 
-* Команда [`timeseries`](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands") DQL всегда возвращает ответ в формате записи временного ряда.
-* Вы также можете писать запросы, используя команду [`fetch`](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands") вместе с командой [`summarize`](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#summarize "DQL aggregation commands"). Эти запросы будут возвращать данные в формате единственного значения. Все записи должны иметь одинаковое расстояние (интервал) между ними. Это гарантировано при использовании команды `summarize`, поскольку она будет агрегировать и группировать значения для определенных временных интервалов. Каждая запись должна иметь поле с именем `value` типа double (см. [Формат единственного значения](#single-value-format) для более подробной информации).
+* Команда [`timeseries`](platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries "DQL metric commands") DQL всегда возвращает ответ в формате записи временного ряда.
+* Вы также можете писать запросы, используя команду [`fetch`](platform/grail/dynatrace-query-language/commands/data-source-commands.md#fetch "DQL data source commands") вместе с командой [`summarize`](platform/grail/dynatrace-query-language/commands/aggregation-commands.md#summarize "DQL aggregation commands"). Эти запросы будут возвращать данные в формате единственного значения. Все записи должны иметь одинаковое расстояние (интервал) между ними. Это гарантировано при использовании команды `summarize`, поскольку она будет агрегировать и группировать значения для определенных временных интервалов. Каждая запись должна иметь поле с именем `value` типа double (см. [Формат единственного значения](#single-value-format) для более подробной информации).
 
 #### DQL команда timeseries
 
@@ -193,7 +193,7 @@ fetch events, from: -3d
 
 #### DQL команда data
 
-Вы можете использовать команду DQL [`data`](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#data "DQL data source commands") для генерации прогноза для своих собственных данных. Любые данные можно использовать, пока они соответствуют одному из двух форматов.
+Вы можете использовать команду DQL [`data`](platform/grail/dynatrace-query-language/commands/data-source-commands.md#data "DQL data source commands") для генерации прогноза для своих собственных данных. Любые данные можно использовать, пока они соответствуют одному из двух форматов.
 
 Следующая команда DQL `data` возвращает результат в формате записи временного ряда.
 
@@ -374,9 +374,9 @@ data=array(
 
 Запись временного ряда должна содержать:
 
-* Именно одно поле типа timeframe, которое содержит начало и конец [timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "Список DQL типов данных.")
-* Именно одно поле типа [duration](/docs/platform/grail/dynatrace-query-language/data-types#duration "Список DQL типов данных.")
-* Одно или несколько полей типа `array`, которые содержат только [double](/docs/platform/grail/dynatrace-query-language/data-types#double "Список DQL типов данных.") или [long](/docs/platform/grail/dynatrace-query-language/data-types#long "Список DQL типов данных.") значения и null
+* Именно одно поле типа timeframe, которое содержит начало и конец [timestamp](../ru/platform/grail/dynatrace-query-language/data-types.md#timestamp "Список DQL типов данных.")
+* Именно одно поле типа [duration](../ru/platform/grail/dynatrace-query-language/data-types.md#duration "Список DQL типов данных.")
+* Одно или несколько полей типа `array`, которые содержат только [double](../ru/platform/grail/dynatrace-query-language/data-types.md#double "Список DQL типов данных.") или [long](../ru/platform/grail/dynatrace-query-language/data-types.md#long "Список DQL типов данных.") значения и null
 
   + Все числовые массивы должны иметь столько же значений, сколько существует временных шагов ширины duration между началом и концом timeframe `(end-start)/duration`
 * Поля в записи временного ряда, кроме timeframe, duration и числовых массивов данных, считаются измерениями
@@ -386,7 +386,7 @@ DQL ответ в формате записи временного ряда
 Следующий JSON описывает структуру формата записи.
 
 * Типы полей записи указаны в разделе `types`.
-* Фактическое значение поля типа [duration](/docs/platform/grail/dynatrace-query-language/data-types#duration "Список DQL типов данных.") указано в наносекундах.
+* Фактическое значение поля типа [duration](../ru/platform/grail/dynatrace-query-language/data-types.md#duration "Список DQL типов данных.") указано в наносекундах.
 
 ```
 {
@@ -21069,18 +21069,18 @@ In the single value format, each record entry specifies a single value in the ti
 
 A record in a valid single value format response must contain:
 
-* Exactly one field named `value` of type [double](/docs/platform/grail/dynatrace-query-language/data-types#double "A list of DQL data types.")
-  values or [long](/docs/platform/grail/dynatrace-query-language/data-types#long "A list of DQL data types.")
+* Exactly one field named `value` of type [double](../ru/platform/grail/dynatrace-query-language/data-types.md#double "A list of DQL data types.")
+  values or [long](../ru/platform/grail/dynatrace-query-language/data-types.md#long "A list of DQL data types.")
 * Time information as either:
 
-  + a field named `timestamp` of type [timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "A list of DQL data types.")
-  + a field named `timeframe` of type `timeframe` that contains a start and end [timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "A list of DQL data types.")
+  + a field named `timestamp` of type [timestamp](../ru/platform/grail/dynatrace-query-language/data-types.md#timestamp "A list of DQL data types.")
+  + a field named `timeframe` of type `timeframe` that contains a start and end [timestamp](../ru/platform/grail/dynatrace-query-language/data-types.md#timestamp "A list of DQL data types.")
 
 #### Interval
 
 The smallest allowed interval (time difference between two records) is one minute.
 
-* An interval can be specified by adding a field `interval` of type [duration](/docs/platform/grail/dynatrace-query-language/data-types#duration "A list of DQL data types.").
+* An interval can be specified by adding a field `interval` of type [duration](../ru/platform/grail/dynatrace-query-language/data-types.md#duration "A list of DQL data types.").
 * This field can be named `frequency` as well, although `interval` takes precedence if both are specified.
 * If `interval`/`frequency` is set, it must have the same value in each entry.
 
@@ -21096,7 +21096,7 @@ DQL response in the single value format
 The following JSON describes the structure of the single value format.
 
 * The types of the record fields are specified in the `types` section.
-* The actual value of a field of type [duration](/docs/platform/grail/dynatrace-query-language/data-types#duration "A list of DQL data types.") is given in nanoseconds.
+* The actual value of a field of type [duration](../ru/platform/grail/dynatrace-query-language/data-types.md#duration "A list of DQL data types.") is given in nanoseconds.
 
 ```
 {
@@ -21445,7 +21445,7 @@ If **metric boundaries** (minimum or maximum value of the metric) are set in the
 
 The model (be it seasonal or simple) is updated daily.
 
-Another important parameter for seasonal baselines is the [sliding window](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#sliding-window "How to set up an alert for missing measurements.") that is used to compare current measurements against the confidence band. It defines how often the confidence band must be violated within a sliding window of time to raise an event (violations don't have to be successive). This approach helps to reduce the number of false positives when alerting. You can set the sliding window to a maximum of 60 minutes.
+Another important parameter for seasonal baselines is the [sliding window](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#sliding-window "How to set up an alert for missing measurements.") that is used to compare current measurements against the confidence band. It defines how often the confidence band must be violated within a sliding window of time to raise an event (violations don't have to be successive). This approach helps to reduce the number of false positives when alerting. You can set the sliding window to a maximum of 60 minutes.
 
 ## Training of the baseline model
 
@@ -21476,7 +21476,7 @@ After the training is finished, Dynatrace uses the seasonal model to detect anom
 
 ## Related topics
 
-* [Metrics Classic](/docs/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.")
+* [Metrics Classic](analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")
 
 ---
 
@@ -21505,19 +21505,19 @@ scraped: 2026-03-06T21:14:53.620919
 
 * Объяснение
 
-Прочитайте это объяснение](/docs/dynatrace-intelligence/reference/ai-models/causal-correlation-analysis)[#### Прогностический анализ ИИ интеллекта Dynatrace
+Прочитайте это объяснение](dynatrace-intelligence/reference/ai-models/causal-correlation-analysis.md)[#### Прогностический анализ ИИ интеллекта Dynatrace
 
 Узнайте, как прогностический ИИ интеллекта Dynatrace генерирует прогнозы.
 
 * Объяснение
 
-Прочитайте это объяснение](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis)[#### Сезонный базовый уровень
+Прочитайте это объяснение](../ru/dynatrace-intelligence/reference/ai-models/forecast-analysis.md)[#### Сезонный базовый уровень
 
 Как интеллект Dynatrace предлагает пороговые значения сезонного базового уровня для области сущностей.
 
 * Объяснение
 
-Прочитайте это объяснение](/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline)
+Прочитайте это объяснение](../ru/dynatrace-intelligence/reference/ai-models/seasonal-baseline.md)
 
 ---
 

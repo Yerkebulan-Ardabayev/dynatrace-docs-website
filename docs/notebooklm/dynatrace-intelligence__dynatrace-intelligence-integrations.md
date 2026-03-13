@@ -35,7 +35,7 @@ scraped: 2026-03-06T21:29:56.714019
 
 * **Рекомендатель по разговорам** `ALLOW davis-copilot:conversations:execute;`
 
-  Для получения более подробной информации о назначении разрешения **Рекомендатель по разговорам** см. [Разрешения пользователей](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Узнайте, как настроить Dynatrace Intelligence агентный и генеративный ИИ.").
+  Для получения более подробной информации о назначении разрешения **Рекомендатель по разговорам** см. [Разрешения пользователей](../ru/dynatrace-intelligence/copilot/copilot-getting-started.md#davis-copilot-user-permissions "Узнайте, как настроить Dynatrace Intelligence агентный и генеративный ИИ.").
 
 Чтобы использовать **Dynatrace Intelligence (Предварительный просмотр)**, вам необходимо
 
@@ -78,15 +78,15 @@ scraped: 2026-03-06T21:29:56.714019
 8. Выберите **Сохранить**.
 9. Далее выберите **Выполнить**, чтобы выполнить рабочий процесс.
 
-Чтобы узнать о конкретных сценариях использования и о том, как вы можете использовать действие рабочего процесса генеративного ИИ Dynatrace Intelligence, см. [Суммируйте открытые проблемы с помощью Dynatrace Intelligence (Предварительный просмотр)](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples "Используйте Dynatrace Intelligence (Предварительный просмотр), чтобы суммировать открытые проблемы и предлагать шаги по исправлению.").
+Чтобы узнать о конкретных сценариях использования и о том, как вы можете использовать действие рабочего процесса генеративного ИИ Dynatrace Intelligence, см. [Суммируйте открытые проблемы с помощью Dynatrace Intelligence (Предварительный просмотр)](../ru/dynatrace-intelligence/use-cases/copilot-in-workflows-examples.md "Используйте Dynatrace Intelligence (Предварительный просмотр), чтобы суммировать открытые проблемы и предлагать шаги по исправлению.").
 
 ## Связанные темы
 
-* [Рабочие процессы](/docs/analyze-explore-automate/workflows "Автоматизируйте процессы ИТ с помощью рабочих процессов Dynatrace — реагируйте на события, планируйте задачи и подключайте сервисы.")
-* [Обзор агентного и генеративного ИИ Dynatrace Intelligence](/docs/dynatrace-intelligence/copilot/copilot-overview "Узнайте о безопасности данных и других аспектах агентного и генеративного ИИ Dynatrace Intelligence.")
-* [Помощник Dynatrace](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot "Задавайте вопросы на естественном языке и получайте быстрые ответы от помощника Dynatrace, вашего генеративного ИИ-помощника.")
-* [Суммируйте открытые проблемы с помощью рабочих процессов](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples "Используйте Dynatrace Intelligence (Предварительный просмотр), чтобы суммировать открытые проблемы и предлагать шаги по исправлению.")
-* [Агентные рабочие процессы](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/agentic-workflows "Основные концепции использования агентных рабочих процессов для автоматизации сложных, данных-ориентированных задач более гибко с помощью генеративного и агентного ИИ.")
+* [Рабочие процессы](../ru/analyze-explore-automate/workflows.md "Автоматизируйте процессы ИТ с помощью рабочих процессов Dynatrace — реагируйте на события, планируйте задачи и подключайте сервисы.")
+* [Обзор агентного и генеративного ИИ Dynatrace Intelligence](../ru/dynatrace-intelligence/copilot/copilot-overview.md "Узнайте о безопасности данных и других аспектах агентного и генеративного ИИ Dynatrace Intelligence.")
+* [Помощник Dynatrace](../ru/dynatrace-intelligence/copilot/chat-with-davis-copilot.md "Задавайте вопросы на естественном языке и получайте быстрые ответы от помощника Dynatrace, вашего генеративного ИИ-помощника.")
+* [Суммируйте открытые проблемы с помощью рабочих процессов](../ru/dynatrace-intelligence/use-cases/copilot-in-workflows-examples.md "Используйте Dynatrace Intelligence (Предварительный просмотр), чтобы суммировать открытые проблемы и предлагать шаги по исправлению.")
+* [Агентные рабочие процессы](dynatrace-intelligence/dynatrace-intelligence-integrations/agentic-workflows.md "Основные концепции использования агентных рабочих процессов для автоматизации сложных, данных-ориентированных задач более гибко с помощью генеративного и агентного ИИ.")
 
 ---
 
@@ -111,19 +111,19 @@ Dynatrace Intelligence для Notebooks запускает ряд анализа
 
 ## Обнаружение аномалий
 
-С помощью ![Обнаружение аномалий - новое](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Обнаружение аномалий - новое") **Обнаружение аномалий**, объединенного с возможностями [DQL](/docs/platform/grail/dynatrace-query-language "Как использовать язык запросов Dynatrace.") , вы можете создавать мощные конфигурации для обнаружения аномалий в метриках, журналах, бизнес-данных или их комбинации. Чтобы предварительно просмотреть и тонко настроить вашу конфигурацию обнаружения аномалий перед развертыванием ее в действие, используйте опцию анализа Dynatrace Intelligence для Notebooks:
+С помощью ![Обнаружение аномалий - новое](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Обнаружение аномалий - новое") **Обнаружение аномалий**, объединенного с возможностями [DQL](../ru/platform/grail/dynatrace-query-language.md "Как использовать язык запросов Dynatrace.") , вы можете создавать мощные конфигурации для обнаружения аномалий в метриках, журналах, бизнес-данных или их комбинации. Чтобы предварительно просмотреть и тонко настроить вашу конфигурацию обнаружения аномалий перед развертыванием ее в действие, используйте опцию анализа Dynatrace Intelligence для Notebooks:
 
-* [Автоадаптивный порог](/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold "Как Dynatrace адаптирует пороги для нескольких сущностей в рамках конфигурации обнаружения аномалий.") — Dynatrace рассчитывает порог автоматически и адаптирует его динамически к поведению ваших данных.
-* [Сезонный бaseline](/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline "Как Dynatrace Intelligence предлагает сезонные пороги для диапазона сущностей.") — Dynatrace создает доверительную полосу для данных с сезонными закономерностями.
-* [Статический порог](/docs/dynatrace-intelligence/anomaly-detection/static-thresholds "Когда использовать статический порог для вашего обнаружения аномалий.") — порог, который не меняется со временем.
+* [Автоадаптивный порог](../ru/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold.md "Как Dynatrace адаптирует пороги для нескольких сущностей в рамках конфигурации обнаружения аномалий.") — Dynatrace рассчитывает порог автоматически и адаптирует его динамически к поведению ваших данных.
+* [Сезонный бaseline](../ru/dynatrace-intelligence/reference/ai-models/seasonal-baseline.md "Как Dynatrace Intelligence предлагает сезонные пороги для диапазона сущностей.") — Dynatrace создает доверительную полосу для данных с сезонными закономерностями.
+* [Статический порог](../ru/dynatrace-intelligence/anomaly-detection/static-thresholds.md "Когда использовать статический порог для вашего обнаружения аномалий.") — порог, который не меняется со временем.
 
-Для каждой из этих опций вы можете настроить [оповещение о пропущенных данных](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#missing-data "Как настроить оповещение о пропущенных измерениях."). Пропущенные данные и условия порога объединяются логикой **ИЛИ**.
+Для каждой из этих опций вы можете настроить [оповещение о пропущенных данных](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#missing-data "Как настроить оповещение о пропущенных измерениях."). Пропущенные данные и условия порога объединяются логикой **ИЛИ**.
 
 Чтобы запустить анализ обнаружения аномалий в Notebooks
 
 1. Перейдите в **Notebooks** ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks").
 2. Откройте свою тетрадь или создайте новую.
-3. Добавьте раздел **Запрос Grail** и [запросите](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#query-grail "Анализируйте, визуализируйте и делитесь знаниями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.") данные, которые вас интересуют, или добавьте раздел **Метрики** и выберите необходимую метрику.
+3. Добавьте раздел **Запрос Grail** и [запросите](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md#query-grail "Анализируйте, визуализируйте и делитесь знаниями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.") данные, которые вас интересуют, или добавьте раздел **Метрики** и выберите необходимую метрику.
 
    Для запроса DQL используйте параметр `interval: 1m`, чтобы обеспечить правильное разрешение данных для анализа.
 4. Выберите **Опции**.
@@ -137,11 +137,11 @@ Dynatrace Intelligence анализирует данные и показывае
 
 ## Анализ прогноза
 
-Прогнозный анализ Dynatrace Intelligence предсказывает будущие значения любого временного ряда числовых значений на основе накопленных данных. Чтобы запустить [анализ прогноза](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis "Узнайте, как Dynatrace Intelligence генерирует прогнозы.")
+Прогнозный анализ Dynatrace Intelligence предсказывает будущие значения любого временного ряда числовых значений на основе накопленных данных. Чтобы запустить [анализ прогноза](../ru/dynatrace-intelligence/reference/ai-models/forecast-analysis.md "Узнайте, как Dynatrace Intelligence генерирует прогнозы.")
 
 1. Перейдите в **Notebooks** ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks").
 2. Откройте свою тетрадь или создайте новую.
-3. Добавьте раздел **Запрос Grail** и [запросите](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#query-grail "Анализируйте, визуализируйте и делитесь знаниями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.") данные, которые вас интересуют, или добавьте раздел **Метрики** и выберите необходимую метрику.
+3. Добавьте раздел **Запрос Grail** и [запросите](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md#query-grail "Анализируйте, визуализируйте и делитесь знаниями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.") данные, которые вас интересуют, или добавьте раздел **Метрики** и выберите необходимую метрику.
 4. Выберите **Опции**.
 5. В панели **Опции** выберите **Анализировать и оповещать** и активируйте анализатор.
 6. Выберите анализатор **Прогноз** и настройте его параметры.
@@ -153,7 +153,7 @@ Dynatrace Intelligence рассчитывает прогноз и показыв
 
 ## Связанные темы
 
-* [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь знаниями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.")
+* [Notebooks](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь знаниями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.")
 * [[Видео] Введение в обнаружение аномалий на основе DQL](https://www.youtube.com/watch?v=-GxLlr9oGGA)
 
 ---
@@ -185,7 +185,7 @@ scraped: 2026-03-06T21:14:51.943719
 
 * Руководство по началу работы
 
-Прочитайте это руководство](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks)
+Прочитайте это руководство](../ru/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks.md)
 
 ## Dynatrace сервер MCP
 
@@ -197,7 +197,7 @@ scraped: 2026-03-06T21:14:51.943719
 
 * Обзор
 
-Прочитайте обзор](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp)
+Прочитайте обзор](../common/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp.md)
 
 ## Работы
 
@@ -209,18 +209,18 @@ scraped: 2026-03-06T21:14:51.943719
 
 * Урок
 
-Прочитайте этот урок](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-dql)[#### Суммируйте открытые проблемы с помощью Работ
+Прочитайте этот урок](../ru/dynatrace-intelligence/use-cases/copilot-in-workflows-dql.md)[#### Суммируйте открытые проблемы с помощью Работ
 
 Используйте Dynatrace Intelligence (Предварительный просмотр), чтобы суммировать открытые проблемы и предложить шаги по исправлению.
 
 * Урок
 
-Прочитайте этот урок](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples)[#### ИИ в Работах - прогностическое обслуживание облачных дисков
+Прочитайте этот урок](../ru/dynatrace-intelligence/use-cases/copilot-in-workflows-examples.md)[#### ИИ в Работах - прогностическое обслуживание облачных дисков
 
 Автоматизируйте прогностическое обслуживание облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.
 
 * Урок
 
-Прочитайте этот урок](/docs/dynatrace-intelligence/use-cases/davis-for-workflows)
+Прочитайте этот урок](../ru/dynatrace-intelligence/use-cases/davis-for-workflows.md)
 
 ---

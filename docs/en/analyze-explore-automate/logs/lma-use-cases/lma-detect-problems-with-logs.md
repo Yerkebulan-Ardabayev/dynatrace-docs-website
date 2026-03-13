@@ -40,9 +40,9 @@ The example used in this guideline is taken from [Dynatrace Observability Lab: P
 
 * Access to a Dynatrace SaaS environment
 * Access to OpenTelemetry demo or OneAgent
-* Installed [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
-* [Set up OpenPipeline ingestion](/docs/platform/openpipeline/getting-started/how-to-ingestion "How to ingest data for a configuration scope in OpenPipeline.")
-* [Configured OpenPipeline](/docs/platform/openpipeline/getting-started/tutorial-configure-processing "Configure ingest sources, routes, and processing for your data in OpenPipeline.")
+* Installed [Problems app](../../../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* [Set up OpenPipeline ingestion](../../../platform/openpipeline/getting-started/how-to-ingestion.md "How to ingest data for a configuration scope in OpenPipeline.")
+* [Configured OpenPipeline](../../../platform/openpipeline/getting-started/tutorial-configure-processing.md "Configure ingest sources, routes, and processing for your data in OpenPipeline.")
 
 ## Steps
 
@@ -50,19 +50,19 @@ This tutorial assumes that you're already monitoring your environment with Dynat
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Create a new pipeline for data extraction**](/docs/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs#step-1 "Use the Problems app and Logs to quickly detect and analyze arising problems.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Create a new pipeline for data extraction**](lma-detect-problems-with-logs.md#step-1 "Use the Problems app and Logs to quickly detect and analyze arising problems.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Add a dynamic route for the pipeline**](/docs/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs#step-2 "Use the Problems app and Logs to quickly detect and analyze arising problems.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Add a dynamic route for the pipeline**](lma-detect-problems-with-logs.md#step-2 "Use the Problems app and Logs to quickly detect and analyze arising problems.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Access problems through the Problems app**](/docs/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs#step-3 "Use the Problems app and Logs to quickly detect and analyze arising problems.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**Access problems through the Problems app**](lma-detect-problems-with-logs.md#step-3 "Use the Problems app and Logs to quickly detect and analyze arising problems.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**View Logs through the problem records**](/docs/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs#step-4 "Use the Problems app and Logs to quickly detect and analyze arising problems.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
+**View Logs through the problem records**](lma-detect-problems-with-logs.md#step-4 "Use the Problems app and Logs to quickly detect and analyze arising problems.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
 
-**View details in Distributed Traces**](/docs/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs#step-5 "Use the Problems app and Logs to quickly detect and analyze arising problems.")
+**View details in Distributed Traces**](lma-detect-problems-with-logs.md#step-5 "Use the Problems app and Logs to quickly detect and analyze arising problems.")
 
 ### Step 1 Create a new pipeline for data extraction
 
-OpenPipeline is the Dynatrace data handling solution for data processing and ingestion. You can configure OpenPipeline to extract specific information relevant for your case and convert it into an event that can be alerted on. For more information on OpenPipeline processing capabilities, see [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.").
+OpenPipeline is the Dynatrace data handling solution for data processing and ingestion. You can configure OpenPipeline to extract specific information relevant for your case and convert it into an event that can be alerted on. For more information on OpenPipeline processing capabilities, see [Processing in OpenPipeline](../../../platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.").
 
 To create a new pipeline
 
@@ -90,7 +90,7 @@ An example of creating a new Log Error pipeline
 
 ### Step 2 Add a dynamic route for the pipeline
 
-Ingested and extracted data needs to be directed to the pipeline before it's processed. Creating a route is necessary to make sure that your data is directed to the right pipeline, especially in cases where you have multiple pipelines. For more information, see [Routing](/docs/platform/openpipeline/concepts/data-flow#routing "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.").
+Ingested and extracted data needs to be directed to the pipeline before it's processed. Creating a route is necessary to make sure that your data is directed to the right pipeline, especially in cases where you have multiple pipelines. For more information, see [Routing](../../../platform/openpipeline/concepts/data-flow.md#routing "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.").
 
 To add new dynamic routing
 
@@ -121,7 +121,7 @@ An example of creating a new dynamic route for Log Errors pipeline
 
 Once the problem is detected and recorded in logs, you can check its status in the Problems app.
 
-The Problems app is a tool designed to help operational and site reliability teams reduce the mean time to repair (MTTR) by presenting every aspect of the incident. For more information, see [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.").
+The Problems app is a tool designed to help operational and site reliability teams reduce the mean time to repair (MTTR) by presenting every aspect of the incident. For more information, see [Problems app](../../../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.").
 
 To access the Problems app
 
@@ -173,7 +173,7 @@ Related event additional information example
 
 ### Step 5 View details in Distributed Traces
 
-Traces provide you with a deeper view and additional context for the information available in logs. To be able to access traces through logs, you need to connect log data to traces via OpenTelemetry or OneAgent. To learn more about enriching logs with traces, see [Understand and fix multiple problems via logs and traces](/docs/observe/application-observability/distributed-traces/use-cases/problems-logs-traces "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.").
+Traces provide you with a deeper view and additional context for the information available in logs. To be able to access traces through logs, you need to connect log data to traces via OpenTelemetry or OneAgent. To learn more about enriching logs with traces, see [Understand and fix multiple problems via logs and traces](../../../observe/application-observability/distributed-traces/use-cases/problems-logs-traces.md "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.").
 
 To access traces through logs
 

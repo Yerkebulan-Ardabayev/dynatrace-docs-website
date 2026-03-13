@@ -163,9 +163,9 @@ scraped: 2026-03-06T21:29:41.296118
 
    -java.xmx.relative_part=0
    ```
-3. [Перезапустите ActiveGate](/docs/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Узнайте, как запустить, остановить и перезапустить ActiveGate в Windows или Linux."), чтобы применить изменения конфигурации.
-4. [Задайте профиль производительности ActiveGate](/docs/ingest-from/extensions/concepts#performance-profile "Узнайте больше о концепции расширений Dynatrace.") на `Dedicated limits`.
+3. [Перезапустите ActiveGate](../../dynatrace-activegate/operation/stop-restart-activegate.md "Узнайте, как запустить, остановить и перезапустить ActiveGate в Windows или Linux."), чтобы применить изменения конфигурации.
+4. [Задайте профиль производительности ActiveGate](../concepts.md#performance-profile "Узнайте больше о концепции расширений Dynatrace.") на `Dedicated limits`.
 
 ## Связанные темы
 
-* [О расширениях](/docs/ingest-from/extensions/concepts "Узнайте больше о концепции расширений Dynatrace.")
+* [О расширениях](../concepts.md "Узнайте больше о концепции расширений Dynatrace.")

@@ -89,7 +89,7 @@ settings:objects:write
 
 ### Установка
 
-Убедитесь, что приложение [установлено в вашей среде](/docs/manage/hub#install "Информация о Dynatrace Hub.").
+Убедитесь, что приложение [установлено в вашей среде](../../manage/hub.md#install "Информация о Dynatrace Hub.").
 
 Начало работы
 
@@ -148,13 +148,13 @@ settings:objects:write
 [01 Настройка Business Flow
 
 * Практическое руководство
-* Следуйте инструкциям по успешной настройке Business Flow.](/docs/observe/business-observability/business-flow/set-up-business-flow)[02 Подробности Business Flow
+* Следуйте инструкциям по успешной настройке Business Flow.](business-flow/set-up-business-flow.md)[02 Подробности Business Flow
 
 * Объяснение
-* Изучите подробности Business Flow.](/docs/observe/business-observability/business-flow/business-flow-details)[03 KPI Business Flow
+* Изучите подробности Business Flow.](business-flow/business-flow-details.md)[03 KPI Business Flow
 
 * Объяснение
-* Узнайте, как ключевые показатели эффективности могут помочь вам отслеживать производительность и выявлять возможности для улучшения в приложении Business Flow.](/docs/observe/business-observability/business-flow/reported-kpis)
+* Узнайте, как ключевые показатели эффективности могут помочь вам отслеживать производительность и выявлять возможности для улучшения в приложении Business Flow.](business-flow/reported-kpis.md)
 
 ## Возможности
 
@@ -173,12 +173,12 @@ settings:objects:write
 * Бизнес-процесс может содержать до 20 узлов. Узел определяется как шаг или ветвь; если шаг имеет три ветви, это считается за 3 узла.
 * Каждый шаг должен иметь хотя бы одно активное бизнес-событие, иначе конфигурация не может быть сохранена.
 * Разница между временными метками событий, находящихся на разных шагах, должна составлять не менее одной миллисекунды, так как более низкое разрешение длительности не поддерживается или может генерировать ложноположительные оповещения о неупорядоченных потоках при анализе бизнес-процесса.
-* Оповещения по ключевым метрикам возможны только когда средняя длительность мониторируемого бизнес-процесса составляет менее 30 минут, так как ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** анализирует только скользящее окно в 60 минут по определённым метрикам. Подробнее см. [Скользящее окно](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#sliding-window "Настройка оповещения для пропущенных измерений.").
+* Оповещения по ключевым метрикам возможны только когда средняя длительность мониторируемого бизнес-процесса составляет менее 30 минут, так как ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** анализирует только скользящее окно в 60 минут по определённым метрикам. Подробнее см. [Скользящее окно](../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#sliding-window "Настройка оповещения для пропущенных измерений.").
 * Все бизнес-KPI в ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow** являются результатом выполнения сложных DQL-запросов, которые, в зависимости от объёма сканируемых данных, могут достигнуть установленного по умолчанию лимита чтения данных. Если вы достигнете этого лимита в каком-либо запросе, вы будете уведомлены и вам будет предложена возможность запустить DQL-запросы без ограничений для данной конфигурации (однократно или по умолчанию).
 
   Безлимитный режим конфигурации можно отключить в режиме редактирования.
 
-  См. [лучшие практики DQL](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Лучшие практики использования Dynatrace Query Language."), чтобы узнать больше о лимитах данных.
+  См. [лучшие практики DQL](../../platform/grail/dynatrace-query-language/dql-best-practices.md "Лучшие практики использования Dynatrace Query Language."), чтобы узнать больше о лимитах данных.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

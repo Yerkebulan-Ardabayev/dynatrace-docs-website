@@ -25,7 +25,7 @@ scraped: 2026-03-06T21:17:56.336075
 
 ### Предварительные условия
 
-* [URL OTLP-трассировок](/docs/ingest-from/opentelemetry/otlp-api "Узнайте об конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") для экспорта.
+* [URL OTLP-трассировок](../otlp-api.md "Узнайте об конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") для экспорта.
 * Кодовый модуль OneAgent для Envoy отключён.
   Для этого:
 
@@ -140,7 +140,7 @@ typed_config:
 
 Следующие значения необходимо скорректировать в соответствии с вашей средой Dynatrace и конфигурацией экспорта:
 
-* `uri` — указывает желаемый [URL экспорта с путём трассировки](/docs/ingest-from/opentelemetry/otlp-api "Узнайте об конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."). Значение не должно содержать схему протокола, а начинаться с имени хоста.
+* `uri` — указывает желаемый [URL экспорта с путём трассировки](../otlp-api.md "Узнайте об конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."). Значение не должно содержать схему протокола, а начинаться с имени хоста.
 * `cluster` — указывает имя кластера и должно совпадать со значением `cluster_name` предыдущего определения кластера.
 * `request_headers_to_add` — содержит HTTP-заголовки, которые необходимо включить в запрос. Обязательно при экспорте через ActiveGate (настраивается для [токена API](#prerequisites)).
 
@@ -152,5 +152,5 @@ typed_config:
 
 ## Связанные темы
 
-* [Prometheus](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus "Узнайте, как расширить наблюдаемость в Dynatrace с помощью метрик Prometheus.")
-* [Метрики прокси Istio/Envoy](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-istio-metrics "Приём метрик Istio и обнаружение топологии")
+* [Prometheus](../../extend-dynatrace/extend-metrics/ingestion-methods/prometheus.md "Узнайте, как расширить наблюдаемость в Dynatrace с помощью метрик Prometheus.")
+* [Метрики прокси Istio/Envoy](../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-istio-metrics.md "Приём метрик Istio и обнаружение топологии")

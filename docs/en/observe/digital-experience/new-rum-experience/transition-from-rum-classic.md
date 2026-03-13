@@ -19,7 +19,7 @@ If you already monitor your web and mobile frontends with RUM Classic, upgrading
 
 Upgrading from RUM Classic to the New RUM Experience requires only a configuration change. The following guides outline the necessary steps.
 
-[Web](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/enable-new-rum-for-web-apps) [Android](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/android/id-01-initial-setup) [iOS](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/ios/id-01-initial-setup) [React Native](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/react-native/id-01-initial-setup) [Flutter](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/flutter/id-01-initial-setup) [![.NET MAUI](https://dt-cdn.net/images/dotnetmaui-aea483621e.svg ".NET MAUI").NET MAUI](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/maui/id-01-initial-setup) 
+[Web](web-frontends/initial-setup/enable-new-rum-for-web-apps.md) [Android](mobile-frontends/android/id-01-initial-setup.md) [iOS](mobile-frontends/ios/id-01-initial-setup.md) [React Native](mobile-frontends/react-native/id-01-initial-setup.md) [Flutter](mobile-frontends/flutter/id-01-initial-setup.md) [![.NET MAUI](https://dt-cdn.net/images/dotnetmaui-aea483621e.svg ".NET MAUI").NET MAUI](mobile-frontends/maui/id-01-initial-setup.md) 
 
 ## Relationship between the New RUM Experience and RUM Classic
 
@@ -44,15 +44,15 @@ When the New RUM Experience is enabled, RUM beacons in a new format are sent alo
 
 #### Infrastructure requirements
 
-At this point, the New RUM Experience relies only on the HTTP headers and cookies already covered by the [firewall constraints for RUM Classic](/docs/observe/digital-experience/web-applications/initial-setup/firewall-constraints-for-rum "Find out how to make sure that Real User Monitoring data passes through your firewall."). If your firewalls and other infrastructure components are already configured to let these headers and cookies pass through, no further changes are required when you enable the New RUM Experience.
+At this point, the New RUM Experience relies only on the HTTP headers and cookies already covered by the [firewall constraints for RUM Classic](../web-applications/initial-setup/firewall-constraints-for-rum.md "Find out how to make sure that Real User Monitoring data passes through your firewall."). If your firewalls and other infrastructure components are already configured to let these headers and cookies pass through, no further changes are required when you enable the New RUM Experience.
 
 #### Built-in metrics
 
-The New RUM Experience provides numerous builtâin metrics. Due to its different underlying data model, these are not direct equivalents of the [RUM Classic metrics](/docs/analyze-explore-automate/metrics-classic/built-in-metrics#applications "Explore the complete list of built-in Dynatrace metrics."). Still, many metrics have functional replacements, which are listed in [RUM metrics migration](/docs/analyze-explore-automate/metrics/upgrade/rum-metric-migration "See how RUM Classic metrics map to their logical equivalents in Grail.").
+The New RUM Experience provides numerous builtâin metrics. Due to its different underlying data model, these are not direct equivalents of the [RUM Classic metrics](../../../analyze-explore-automate/metrics-classic/built-in-metrics.md#applications "Explore the complete list of built-in Dynatrace metrics."). Still, many metrics have functional replacements, which are listed in [RUM metrics migration](../../../analyze-explore-automate/metrics/upgrade/rum-metric-migration.md "See how RUM Classic metrics map to their logical equivalents in Grail.").
 
 ## Related topics
 
-* [Capture event and session properties for web frontends](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/event-and-session-properties "Learn how to capture event and session properties for web frontends.")
-* [Capture event and session properties for mobile frontends](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/additional-configuration/event-and-session-properties "Learn how to capture event and session properties for mobile frontends.")
-* [Firewall constraints for RUM](/docs/observe/digital-experience/web-applications/initial-setup/firewall-constraints-for-rum "Find out how to make sure that Real User Monitoring data passes through your firewall.")
-* [RUM metrics migration](/docs/analyze-explore-automate/metrics/upgrade/rum-metric-migration "See how RUM Classic metrics map to their logical equivalents in Grail.")
+* [Capture event and session properties for web frontends](web-frontends/additional-configuration/event-and-session-properties.md "Learn how to capture event and session properties for web frontends.")
+* [Capture event and session properties for mobile frontends](mobile-frontends/additional-configuration/event-and-session-properties.md "Learn how to capture event and session properties for mobile frontends.")
+* [Firewall constraints for RUM](../web-applications/initial-setup/firewall-constraints-for-rum.md "Find out how to make sure that Real User Monitoring data passes through your firewall.")
+* [RUM metrics migration](../../../analyze-explore-automate/metrics/upgrade/rum-metric-migration.md "See how RUM Classic metrics map to their logical equivalents in Grail.")

@@ -32,7 +32,7 @@ Use OneAgent for direct installation on the host with StatsD. For more details, 
 
 If OneAgent cannot be installed on the host, use ActiveGate as a remote listener to collect StatsD metrics. For more details, go to [Remote StatsD](#remote-statsd).
 
-For distributed environments or when using Kubernetes, OpenTelemetry Collector provides a solution to ingest StatsD metrics into Dynatrace. For more details, see [Ingest data from StatsD](/docs/ingest-from/opentelemetry/collector/use-cases/statsd "Configure the OpenTelemetry Collector to ingest StatsD data.").
+For distributed environments or when using Kubernetes, OpenTelemetry Collector provides a solution to ingest StatsD metrics into Dynatrace. For more details, see [Ingest data from StatsD](../../../opentelemetry/collector/use-cases/statsd.md "Configure the OpenTelemetry Collector to ingest StatsD data.").
 
 ## Enable DynatraceStatsD
 
@@ -132,7 +132,7 @@ Make sure that your ActiveGate can connect to your StatsD client. For example, y
 
 ### OneAgent listener
 
-The default DynatraceStatsD UDP listening port for the OneAgent listener is `18125`. If necessary, you can use the [oneagentctl](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the metric ingestion port. Changing the port requires restart of OneAgent. Add [`--restart-service`](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
+The default DynatraceStatsD UDP listening port for the OneAgent listener is `18125`. If necessary, you can use the [oneagentctl](../../../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the metric ingestion port. Changing the port requires restart of OneAgent. Add [`--restart-service`](../../../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
 
 #### Check the ingestion port
 
@@ -169,7 +169,7 @@ StatsdPort=18126
 
 ## Topology awareness
 
-Using DynatraceStatsD with OneAgent, the host ID and host name context are added as dimensions to each metric automatically. For more information, see [Metric ingestion](/docs/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace."). Note that we're already working on more automatic metric enrichments. For remote ingestion, no extra enrichment is added. If you want to add context to your metrics, you'll need to add dimensions of your choice to your StatsD metrics.
+Using DynatraceStatsD with OneAgent, the host ID and host name context are added as dimensions to each metric automatically. For more information, see [Metric ingestion](../../extend-metrics.md "Learn how to extend metric observability in Dynatrace."). Note that we're already working on more automatic metric enrichments. For remote ingestion, no extra enrichment is added. If you want to add context to your metrics, you'll need to add dimensions of your choice to your StatsD metrics.
 
 ## Security
 

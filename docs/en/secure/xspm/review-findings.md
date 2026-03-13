@@ -72,8 +72,8 @@ On the **Assessment results** page, use the **Assessment view** filter to contro
 
 On the **Assessment results** page, filter for the options you're interested in:
 
-* [Result](/docs/secure/xspm/concepts#concept-results "Concepts that are specific to the Dynatrace Security Posture Management app.") (`Failed`, `Manual`, `Passed`, `Not relevant`)
-* [Severity](/docs/secure/xspm/concepts#concept-severity "Concepts that are specific to the Dynatrace Security Posture Management app.") (`Critical`, `High`, `Medium`, `Low`)
+* [Result](concepts.md#concept-results "Concepts that are specific to the Dynatrace Security Posture Management app.") (`Failed`, `Manual`, `Passed`, `Not relevant`)
+* [Severity](concepts.md#concept-severity "Concepts that are specific to the Dynatrace Security Posture Management app.") (`Critical`, `High`, `Medium`, `Low`)
 * Rule (full or partial match of the rule name)
 
 Filters can be combined.
@@ -88,4 +88,4 @@ On the **Overview** and the **Assessment results** pages, select any of the colu
 
 ## Related topics
 
-* [Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes.")
+* [Kubernetes Security Posture Management](../../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes.")

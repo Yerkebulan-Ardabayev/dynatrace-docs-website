@@ -11,7 +11,7 @@ scraped: 2026-03-05T21:39:01.543097
 * Reference
 * Published Dec 22, 2022
 
-[API обнаружения частых проблем](/docs/dynatrace-api/configuration-api/frequent-issue-detection-api "Управление конфигурацией обнаружения частых проблем через Dynatrace API.") был объявлен устаревшим в [Dynatrace версии 1.249](/docs/whats-new/dynatrace-api/sprint-249 "Список изменений для Dynatrace API версии 1.249"). Его замена — [Settings API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API.") со схемой **Frequent issue detection** (`builtin:anomaly-detection.frequent-issues`). Мы рекомендуем выполнить миграцию на новый API при первой возможности.
+[API обнаружения частых проблем](../../configuration-api/frequent-issue-detection-api.md "Управление конфигурацией обнаружения частых проблем через Dynatrace API.") был объявлен устаревшим в [Dynatrace версии 1.249](../../../whats-new/dynatrace-api/sprint-249.md "Список изменений для Dynatrace API версии 1.249"). Его замена — [Settings API](../../environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.") со схемой **Frequent issue detection** (`builtin:anomaly-detection.frequent-issues`). Мы рекомендуем выполнить миграцию на новый API при первой возможности.
 
 Миграция затрагивает URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также область действия токена для аутентификации запросов.
 
@@ -29,9 +29,9 @@ scraped: 2026-03-05T21:39:01.543097
 
 ## Параметры
 
-Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в [Settings API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API.").
+Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в [Settings API](../../environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.").
 
-В рамках Settings 2.0 каждая конфигурация обнаружения частых проблем представлена объектом настроек. Объект содержит метаданные (такие как область действия или временная метка создания) и саму конфигурацию, инкапсулированную в объекте **value**. Чтобы узнать о параметрах конфигурации обнаружения частых проблем, запросите схему **Frequent issue detection** (`builtin:anomaly-detection.frequent-issues`) с помощью запроса [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "Просмотр схемы настроек через Dynatrace API.").
+В рамках Settings 2.0 каждая конфигурация обнаружения частых проблем представлена объектом настроек. Объект содержит метаданные (такие как область действия или временная метка создания) и саму конфигурацию, инкапсулированную в объекте **value**. Чтобы узнать о параметрах конфигурации обнаружения частых проблем, запросите схему **Frequent issue detection** (`builtin:anomaly-detection.frequent-issues`) с помощью запроса [GET a schema](../../environment-api/settings/schemas/get-schema.md "Просмотр схемы настроек через Dynatrace API.").
 
 ## Примеры
 
@@ -43,7 +43,7 @@ Settings 2.0
 
 Frequent issue detection
 
-Для просмотра конфигураций обнаружения частых проблем необходимо использовать запрос [GET objects](/docs/dynatrace-api/environment-api/settings/objects/get-objects "Просмотр нескольких объектов настроек через Dynatrace API."). В параметрах запроса установите **schemaIds** в значение `builtin:anomaly-detection.frequent-issues` и **scope** в значение `environment`.
+Для просмотра конфигураций обнаружения частых проблем необходимо использовать запрос [GET objects](../../environment-api/settings/objects/get-objects.md "Просмотр нескольких объектов настроек через Dynatrace API."). В параметрах запроса установите **schemaIds** в значение `builtin:anomaly-detection.frequent-issues` и **scope** в значение `environment`.
 
 #### URL запроса
 
@@ -171,7 +171,7 @@ Settings 2.0
 
 Frequent issue detection
 
-Для редактирования окна обслуживания необходимо использовать запрос [PUT an object](/docs/dynatrace-api/environment-api/settings/objects/put-object "Редактирование объекта настроек через Dynatrace API."). В теле запроса установите **schemaId** в значение `builtin:anomaly-detection.frequent-issues` и **scope** в значение `environment`. Укажите конфигурацию обнаружения частых проблем в объекте **value**.
+Для редактирования окна обслуживания необходимо использовать запрос [PUT an object](../../environment-api/settings/objects/put-object.md "Редактирование объекта настроек через Dynatrace API."). В теле запроса установите **schemaId** в значение `builtin:anomaly-detection.frequent-issues` и **scope** в значение `environment`. Укажите конфигурацию обнаружения частых проблем в объекте **value**.
 
 #### URL запроса
 
@@ -273,5 +273,5 @@ PUT https://mySampleEnv.live.dynatrace.com/config/v1/frequentIssueDetection/07f4
 
 ## Связанные темы
 
-* [Settings API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API.")
-* [API обнаружения частых проблем](/docs/dynatrace-api/configuration-api/frequent-issue-detection-api "Управление конфигурацией обнаружения частых проблем через Dynatrace API.")
+* [Settings API](../../environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.")
+* [API обнаружения частых проблем](../../configuration-api/frequent-issue-detection-api.md "Управление конфигурацией обнаружения частых проблем через Dynatrace API.")

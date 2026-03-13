@@ -30,15 +30,15 @@ The dedicated-admin user must be added before the OneAgent Operator is visible i
 
 Deployment options that can be installed from OperatorHub:
 
-* [Kubernetes platform monitoring](/docs/ingest-from/setup-on-k8s/deployment/platform-observability "Deploy Dynatrace Operator for Kubernetes platform monitoring.")
-* [Classic Full-Stack monitoring](/docs/ingest-from/setup-on-k8s/deployment/other/classic-full-stack "Deploy Dynatrace Operator in classic full-stack mode to Kubernetes")
-* [Application observability](/docs/ingest-from/setup-on-k8s/deployment/application-observability "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") without CSI driver
+* [Kubernetes platform monitoring](../platform-observability.md "Deploy Dynatrace Operator for Kubernetes platform monitoring.")
+* [Classic Full-Stack monitoring](classic-full-stack.md "Deploy Dynatrace Operator in classic full-stack mode to Kubernetes")
+* [Application observability](../application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") without CSI driver
 
 Deployment options that **can't** be installed from OperatorHub (they require Helm or manifest installation approaches):
 
-* [Full-Stack observability](/docs/ingest-from/setup-on-k8s/deployment/full-stack-observability "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes")
-* [Application observability](/docs/ingest-from/setup-on-k8s/deployment/application-observability "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") with CSI driver
-* [Host monitoring](/docs/ingest-from/setup-on-k8s/deployment/other/host-monitoring "Deploy Dynatrace Operator in host monitoring mode to Kubernetes")
+* [Full-Stack observability](../full-stack-observability.md "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes")
+* [Application observability](../application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") with CSI driver
+* [Host monitoring](host-monitoring.md "Deploy Dynatrace Operator in host monitoring mode to Kubernetes")
 
 ## Installation
 
@@ -52,8 +52,8 @@ To install Dynatrace Operator on OpenShift via OperatorHub
 6. Go to **Operators** > **Installed Operators** and wait until you see **Install Succeeded**.
 7. Go to **Workloads** > **Secrets** and create a new key named `dynakube` with two values:
 
-   * `apiToken` equal to your cluster's [Dynatrace Operator token](/docs/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
-   * `dataIngestToken` equal to your cluster's [Data Ingest token](/docs/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
+   * `apiToken` equal to your cluster's [Dynatrace Operator token](../tokens-permissions.md "Configure tokens and permissions to monitor your Kubernetes cluster").
+   * `dataIngestToken` equal to your cluster's [Data Ingest token](../tokens-permissions.md "Configure tokens and permissions to monitor your Kubernetes cluster").
 8. Go to **Operators** > **Installed Operators** from the side menu and select **Dynatrace Operator**.
 9. Select **Create instance**.
 10. Make the following changes:
@@ -70,7 +70,7 @@ To install Dynatrace Operator on OpenShift via OperatorHub
       apiURL: 'https://ENVIRONMENTID.live.dynatrace.com/api'
       ```
 
-      Replace `ENVIRONMENTID` with your [environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+      Replace `ENVIRONMENTID` with your [environment ID](../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
     * Set `classicFullStack.enabled` to `true`.
     * If you're using a custom resource file, set `namespace` to the namespace where you installed Dynatrace Operator.
 11. Select **Create**.

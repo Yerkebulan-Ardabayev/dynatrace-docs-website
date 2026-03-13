@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:33:48.651906
 * 4-min read
 * Updated on Aug 06, 2024
 
-На этой странице описывается настройка на стороне IdP (**Azure**) для конфигурации SSO с использованием **SCIM**, а не на стороне Dynatrace. Используйте данное руководство как часть полной [процедуры настройки SCIM](/docs/manage/identity-access-management/user-and-group-management/access-scim "SCIM") для Dynatrace SaaS, если вы используете Azure.
+На этой странице описывается настройка на стороне IdP (**Azure**) для конфигурации SSO с использованием **SCIM**, а не на стороне Dynatrace. Используйте данное руководство как часть полной [процедуры настройки SCIM](../access-scim.md "SCIM") для Dynatrace SaaS, если вы используете Azure.
 
 Мы делаем всё возможное, чтобы предоставить вам актуальную информацию, однако Dynatrace не контролирует изменения, которые могут быть внесены сторонними поставщиками. Всегда обращайтесь к официальной документации вашего IdP как к основному источнику информации по сторонним продуктам.
 
@@ -21,17 +21,17 @@ scraped: 2026-03-06T21:33:48.651906
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Создание приложения SCIM в Azure**](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure#create-scim-app "Learn how to configure Dynatrace SCIM in Azure.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Создание приложения SCIM в Azure**](scim-azure.md#create-scim-app "Learn how to configure Dynatrace SCIM in Azure.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Настройка провизионирования**](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure#provisioning "Learn how to configure Dynatrace SCIM in Azure.")[![Step 3 optional](https://dt-cdn.net/images/dotted-step-3-e2082c1921.svg "Step 3 optional")
+**Настройка провизионирования**](scim-azure.md#provisioning "Learn how to configure Dynatrace SCIM in Azure.")[![Step 3 optional](https://dt-cdn.net/images/dotted-step-3-e2082c1921.svg "Step 3 optional")
 
-**Настройка сопоставления групп**](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure#configure-group-mappings "Learn how to configure Dynatrace SCIM in Azure.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**Настройка сопоставления групп**](scim-azure.md#configure-group-mappings "Learn how to configure Dynatrace SCIM in Azure.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**Настройка сопоставления пользователей**](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure#configure-user-mappings "Learn how to configure Dynatrace SCIM in Azure.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
+**Настройка сопоставления пользователей**](scim-azure.md#configure-user-mappings "Learn how to configure Dynatrace SCIM in Azure.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
 
-**Назначение пользователей и групп**](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure#assign-users-and-groups "Learn how to configure Dynatrace SCIM in Azure.")[![Step 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Step 6")
+**Назначение пользователей и групп**](scim-azure.md#assign-users-and-groups "Learn how to configure Dynatrace SCIM in Azure.")[![Step 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Step 6")
 
-**Включение SCIM**](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure#enable-scim "Learn how to configure Dynatrace SCIM in Azure.")
+**Включение SCIM**](scim-azure.md#enable-scim "Learn how to configure Dynatrace SCIM in Azure.")
 
 ## Шаг 1. Создание приложения SCIM в Azure
 
@@ -46,7 +46,7 @@ scraped: 2026-03-06T21:33:48.651906
 
 ## Шаг 2. Настройка провизионирования
 
-Для настройки провизионирования в Azure вам потребуются базовый URL-адрес Dynatrace SCIM и секретный токен, полученные в процедуре [Получение конечной точки Dynatrace SCIM и создание секретного токена](/docs/manage/identity-access-management/user-and-group-management/access-scim#scim-endpoint-secret-token "SCIM").
+Для настройки провизионирования в Azure вам потребуются базовый URL-адрес Dynatrace SCIM и секретный токен, полученные в процедуре [Получение конечной точки Dynatrace SCIM и создание секретного токена](../access-scim.md#scim-endpoint-secret-token "SCIM").
 
 В **Microsoft Entra ID** с выбранным приложением
 
@@ -70,7 +70,7 @@ scraped: 2026-03-06T21:33:48.651906
    * **Tenant URL**
      Пример: `https://api.sso.dynatrace.com/idm/public/scim/<YOUR_ACCOUNT_ID>/v2`
    * **Secret Token**
-     Вы создали его ранее в процедуре [Получение секретного токена](/docs/manage/identity-access-management/user-and-group-management/access-scim#scim-endpoint-secret-token "SCIM").
+     Вы создали его ранее в процедуре [Получение секретного токена](../access-scim.md#scim-endpoint-secret-token "SCIM").
 
 ## Шаг 3 (необязательный). Настройка сопоставления групп
 

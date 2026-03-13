@@ -180,4 +180,4 @@ ld.so.1: sudo: warning: /opt/dynatrace/oneagent/agent/lib/liboneagentproc.so: op
    ls -ltr /opt/dynatrace/oneagent/log/java
    ```
 
-Для получения дополнительной информации о настройке мониторинга Oracle WebLogic см. [Настройка Oracle WebLogic через скрипт запуска](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris#weblogic "Узнайте, как настроить Dynatrace для мониторинга приложений различных технологий, работающих на Solaris (x86 и SPARC).")
+Для получения дополнительной информации о настройке мониторинга Oracle WebLogic см. [Настройка Oracle WebLogic через скрипт запуска](install-oneagent-on-solaris.md#weblogic "Узнайте, как настроить Dynatrace для мониторинга приложений различных технологий, работающих на Solaris (x86 и SPARC).")

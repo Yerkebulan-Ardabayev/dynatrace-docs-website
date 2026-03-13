@@ -26,7 +26,7 @@ scraped: 2026-03-06T21:10:19.637942
 
 ## Где найти Dynatrace Hub
 
-Вы можете получить доступ к Dynatrace Hub через поиск в [Launcher](/docs/discover-dynatrace/get-started/dynatrace-ui#launcher "Navigate the latest Dynatrace").
+Вы можете получить доступ к Dynatrace Hub через поиск в [Launcher](../discover-dynatrace/get-started/dynatrace-ui.md#launcher "Navigate the latest Dynatrace").
 
 Найдите «Hub» и откройте Dynatrace Hub.
 
@@ -47,11 +47,11 @@ scraped: 2026-03-06T21:10:19.637942
 
 По сравнению с другими функциями платформы Dynatrace, приложения Dynatrace Apps — это более компактные, самодостаточные решения, ориентированные на конкретные сценарии использования. Однако Dynatrace App не является изолированным приложением: платформа Dynatrace реализует концепцию интентов, которая обеспечивает взаимодействие между приложениями Dynatrace Apps.
 
-Для получения дополнительной информации см. [AppEngine](/docs/platform/appengine "Develop feature-rich Dynatrace apps for you and the world!").
+Для получения дополнительной информации см. [AppEngine](../platform/appengine.md "Develop feature-rich Dynatrace apps for you and the world!").
 
 ### Расширения
 
-С помощью [Extensions 2.0](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") вы можете декларативно импортировать метрики в Dynatrace, которые обеспечивают аналитику и возможности мониторинга платформы. Dynatrace связывает ваши данные осмысленным образом, чтобы вы могли изучать их, создавать инструментирование и настраивать оповещения.
+С помощью [Extensions 2.0](../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.") вы можете декларативно импортировать метрики в Dynatrace, которые обеспечивают аналитику и возможности мониторинга платформы. Dynatrace связывает ваши данные осмысленным образом, чтобы вы могли изучать их, создавать инструментирование и настраивать оповещения.
 
 Вы можете управлять своими расширениями с помощью [приложения Extensions](https://www.dynatrace.com/hub/detail/extension-manager/).
 
@@ -70,7 +70,7 @@ scraped: 2026-03-06T21:10:19.637942
 * **Информация о продукте**:
   Обзор приложения, начало работы, сценарии использования и ссылки на связанные ресурсы.
 * **Техническая информация**:
-  Всё, что нужно для начала работы ваших пользователей с приложением, включая необходимые разрешения и поддерживаемые [интенты](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+  Всё, что нужно для начала работы ваших пользователей с приложением, включая необходимые разрешения и поддерживаемые [интенты](../analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 * **Содержимое**:
   Все готовые дашборды, ноутбуки и действия рабочих процессов, которые входят в состав приложения. Вы можете начать использовать их сразу после установки приложения.
 * **Примечания к выпуску**
@@ -89,20 +89,20 @@ Dynatrace Hub обеспечивает вам полный контроль на
 
 ### Установка
 
-Для установки приложений и предоставления их пользователям вашей среды вам необходимы разрешения [app-engine:apps:install](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#app-engine-apps-install "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+Для установки приложений и предоставления их пользователям вашей среды вам необходимы разрешения [app-engine:apps:install](identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#app-engine-apps-install "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
 Чтобы установить приложение, откройте страницу обзора приложения и выберите **Install**.
 
 Установка выполняется автоматически и занимает несколько секунд.
 
-После установки приложение становится доступным всем пользователям вашей среды. Убедитесь, что вы назначили потенциальных пользователей приложения группам с разрешениями, указанными на вкладке **Technical information** в обзоре приложения. Для получения дополнительной информации см. [Управление политиками IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.").
+После установки приложение становится доступным всем пользователям вашей среды. Убедитесь, что вы назначили потенциальных пользователей приложения группам с разрешениями, указанными на вкладке **Technical information** в обзоре приложения. Для получения дополнительной информации см. [Управление политиками IAM](identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt.md "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.").
 
 Если у вас нет разрешения на установку приложения
 
 1. Отправьте запрос, открыв страницу обзора приложения и выбрав **Request install**.
 2. Выберите один из вариантов:
 
-   * **Автоматический запрос на установку** — В разделе **Send a request** просмотрите ответственное лицо, которое получит ваш запрос, добавьте комментарий в поле и выберите **Send Request**. Обратите внимание, что для работы автоматических запросов на установку администратор должен сначала [настроить контактные данные](/docs/manage/hub#auto-install-requests "See the information about Dynatrace Hub.").
+   * **Автоматический запрос на установку** — В разделе **Send a request** просмотрите ответственное лицо, которое получит ваш запрос, добавьте комментарий в поле и выберите **Send Request**. Обратите внимание, что для работы автоматических запросов на установку администратор должен сначала [настроить контактные данные](hub.md#auto-install-requests "See the information about Dynatrace Hub.").
    * **Ручной запрос на установку** — Выберите **Request manually**, скопируйте предоставленную информацию и передайте её вашему администратору для помощи с установкой приложения.
 
 ### Включение автоматических запросов на установку
@@ -152,7 +152,7 @@ Dynatrace Hub может отправлять вам уведомления по
 
 ### Удаление
 
-Для удаления приложения вам необходимы разрешения [app-engine:apps:delete](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#app-engine-apps-delete "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+Для удаления приложения вам необходимы разрешения [app-engine:apps:delete](identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#app-engine-apps-delete "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
 Чтобы удалить приложение:
 

@@ -31,7 +31,7 @@ Before you begin, be sure to meet the following prerequisites:
 
 ## Dynatrace container images
 
-Dynatrace immutable and signed container images are available on various container registries. For more details on repositories and tag information, explore our [supported public registries](/docs/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Use a public registry").
+Dynatrace immutable and signed container images are available on various container registries. For more details on repositories and tag information, explore our [supported public registries](use-public-registry.md#supported-public-registries "Use a public registry").
 
 We strongly recommend choosing one of our supported public registries from which to copy container images.
 
@@ -41,7 +41,7 @@ An exception applies for the OneAgent image for Classic Full-Stack, where the re
 
 ### Observability options
 
-Depending on the [observability options](/docs/ingest-from/setup-on-k8s/deployment#observability-options-for-kubernetes "Deploy Dynatrace Operator on Kubernetes") you choose, you might want to only copy required images. The following table outlines the relations between Dynatrace images and observability options.
+Depending on the [observability options](../../deployment.md#observability-options-for-kubernetes "Deploy Dynatrace Operator on Kubernetes") you choose, you might want to only copy required images. The following table outlines the relations between Dynatrace images and observability options.
 
 1
 
@@ -57,7 +57,7 @@ In all cases, version-based image tagging is employed with container images. Mut
 
 ### Image signature verification
 
-All of our immutable and signed container images adhere to best practices, enhancing security and shielding against supply chain attacks. To learn how to verify signatures and guarantee software integrity, see [Verify Dynatrace image signatures](/docs/ingest-from/setup-on-k8s/guides/container-registries/verify-image-signature "Verify Dynatrace image signatures").
+All of our immutable and signed container images adhere to best practices, enhancing security and shielding against supply chain attacks. To learn how to verify signatures and guarantee software integrity, see [Verify Dynatrace image signatures](verify-image-signature.md "Verify Dynatrace image signatures").
 
 ## Copy Dynatrace container images
 
@@ -73,7 +73,7 @@ Recommended
 
 Due to its support for easy copying of multi-arch images and signatures[1](#fn-2-1-def), we strongly recommend that you use the Skopeo CLI for copying container images. To learn more about the Skopeo CLI, see [Skopeo GitHub repositoryï»¿](https://github.com/containers/skopeo).
 
-In the following instructions, be sure to always replace `<tag>` with an available version (see the [Supported public registries](/docs/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Use a public registry") section).
+In the following instructions, be sure to always replace `<tag>` with an available version (see the [Supported public registries](use-public-registry.md#supported-public-registries "Use a public registry") section).
 
 #### Copy Dynatrace Operator image
 
@@ -145,7 +145,7 @@ If you still want to use Docker CLI, please refer to the [official Docker CLI do
 
 ### Support for Classic Full-Stack monitoring
 
-[Classic Full-Stack monitoring](/docs/ingest-from/setup-on-k8s/how-it-works#classic "In-depth description on how the deployment on Kubernetes works.") requires a pre-configured Dynatrace OneAgent image, which is available **only** via the Dynatrace built-in registry.
+[Classic Full-Stack monitoring](../../how-it-works.md#classic "In-depth description on how the deployment on Kubernetes works.") requires a pre-configured Dynatrace OneAgent image, which is available **only** via the Dynatrace built-in registry.
 
 Consequently, the OneAgent image must be replicated via the Dynatrace built-in registry as described below.
 
@@ -162,8 +162,8 @@ Make sure you meet the following prerequisites:
 
 As the Dynatrace built-in registry requires authentication, you need to know your monitoring environment ID and provide a PaaS token for the login:
 
-* To determine `<your-environment-id>`, see [environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
-* To determine `<your-paas-token>`, see [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
+* To determine `<your-environment-id>`, see [environment ID](../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+* To determine `<your-paas-token>`, see [PaaS token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.").
 
 Example login using *Skopeo* CLI:
 
@@ -190,8 +190,8 @@ For image replication, we recommend that you copy raw images (images with the ta
 
 To understand which OneAgent versions are available for replication, you can use the following Deployment APIs:
 
-* [List available versions of OneAgent](/docs/dynatrace-api/environment-api/deployment/oneagent/get-available-versions "List available versions of OneAgent via Dynatrace API.") to get an overview of available OneAgent versions.
-* [View the latest version of OneAgent](/docs/dynatrace-api/environment-api/deployment/oneagent/get-version-latest "View the latest version of OneAgent via Dynatrace API."), if you want to understand the OneAgent version behind `latest` or automate OneAgent image replication.
+* [List available versions of OneAgent](../../../../dynatrace-api/environment-api/deployment/oneagent/get-available-versions.md "List available versions of OneAgent via Dynatrace API.") to get an overview of available OneAgent versions.
+* [View the latest version of OneAgent](../../../../dynatrace-api/environment-api/deployment/oneagent/get-version-latest.md "View the latest version of OneAgent via Dynatrace API."), if you want to understand the OneAgent version behind `latest` or automate OneAgent image replication.
 
 The following examples show how OneAgent versions translate to image tags available in the Dynatrace built-in registry:
 
@@ -209,9 +209,9 @@ docker://<your_environment_domain_name>/linux/oneagent:<tag-with-raw-suffix> \
 docker://registry.my-company.com/dynatrace-oneagent-classic:<tag-with-raw-suffix>
 ```
 
-For more information on configuring a DynaKube custom resource, see our examples of how to [use private registries](/docs/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Use a private registry").
+For more information on configuring a DynaKube custom resource, see our examples of how to [use private registries](use-private-registry.md "Use a private registry").
 
 ## Related topics
 
-* [Use a private registry](/docs/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Use a private registry")
-* [Verify Dynatrace image signatures](/docs/ingest-from/setup-on-k8s/guides/container-registries/verify-image-signature "Verify Dynatrace image signatures")
+* [Use a private registry](use-private-registry.md "Use a private registry")
+* [Verify Dynatrace image signatures](verify-image-signature.md "Verify Dynatrace image signatures")

@@ -38,7 +38,7 @@ scraped: 2026-03-05T21:30:53.886389
 
   + `app-settings:objects:read`
 
-Подробнее об общих пользовательских разрешениях для Workflows см. в разделе [Пользовательские разрешения для рабочих процессов](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+Подробнее об общих пользовательских разрешениях для Workflows см. в разделе [Пользовательские разрешения для рабочих процессов](../../security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Шаг 3 Настройка подключения к Jenkins
 

@@ -35,16 +35,16 @@ Dynatrace Runtime Application Protection leverages code-level insights and trans
 
 ## How it works
 
-[Runtime Application Protection (RAP)](/docs/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.") uses runtime instrumentation to detect and optionally block exploit attempts. When your application receives a web request, [Dynatrace OneAgent](/docs/platform/oneagent "Learn the monitoring capabilities of OneAgent.") tracks user input and analyzes how it interacts with sensitive code paths, such as SQL queries, OS commands, or JNDI lookups. If the behavior matches a known attack pattern, Dynatrace reports it as a security finding. If attack blocking is enabled, OneAgent throws an exception to stop the malicious request before it executes. RAP is lightweight and safe for use in production environments.
+[Runtime Application Protection (RAP)](application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.") uses runtime instrumentation to detect and optionally block exploit attempts. When your application receives a web request, [Dynatrace OneAgent](../../platform/oneagent.md "Learn the monitoring capabilities of OneAgent.") tracks user input and analyzes how it interacts with sensitive code paths, such as SQL queries, OS commands, or JNDI lookups. If the behavior matches a known attack pattern, Dynatrace reports it as a security finding. If attack blocking is enabled, OneAgent throws an exception to stop the malicious request before it executes. RAP is lightweight and safe for use in production environments.
 
 ## Prerequisites
 
 Before you begin, ensure your environment meets the necessary requirements:
 
-* You're using a supported version of Dynatrace. Review the [release notes](/docs/whats-new "Read the product news and the release notes and find out which Documentation topics are new.") for currently supported versions.
+* You're using a supported version of Dynatrace. Review the [release notes](../../whats-new.md "Read the product news and the release notes and find out which Documentation topics are new.") for currently supported versions.
 * For Runtime Application Protection to work properly, make sure deep monitoring is enabled in **Settings** > **Process and contextualize** > **Process groups** > **Process group monitoring**.
 
-  For .NET, Go, and Python technologies, for which automatic deep monitoring is disabled, you need to manually enable deep monitoring on each host. For more information, see [Process deep monitoring](/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring "Ways to customize process-group monitoring").
+  For .NET, Go, and Python technologies, for which automatic deep monitoring is disabled, you need to manually enable deep monitoring on each host. For more information, see [Process deep monitoring](../../observe/infrastructure-observability/process-groups/configuration/pg-monitoring.md "Ways to customize process-group monitoring").
 
 ## Supported technologies
 
@@ -66,7 +66,7 @@ Only .NET Framework 4.5, .NET Core 3.0 or higher, and 64-bit processes are suppo
 
 3
 
-For .NET and Go technologies, for which automatic deep monitoring is disabled, you need to manually enable deep monitoring on each host. For more information, see [Process deep monitoring](/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring "Ways to customize process-group monitoring").
+For .NET and Go technologies, for which automatic deep monitoring is disabled, you need to manually enable deep monitoring on each host. For more information, see [Process deep monitoring](../../observe/infrastructure-observability/process-groups/configuration/pg-monitoring.md "Ways to customize process-group monitoring").
 
 ## Get started
 
@@ -94,7 +94,7 @@ To define the global attack control for all process groups
 * **Monitor; incoming attacks detected only.**âMonitoring is enabled; no attacks in the selected technology are blocked.
 * **Block; incoming attacks detected and blocked.**âMonitoring is enabled; attacks in the selected technology are blocked at runtime.
 
-If you define [custom monitoring rules](/docs/secure/application-security/application-protection/application-protection-rules#handling-rules "Create, modify, and delete rules for specific attacks.") based on certain process groups or vulnerability types, the custom rules override the global attack control for the selected technology, and Runtime Application Protection continues to monitor the attacks based on your rules.
+If you define [custom monitoring rules](application-protection/application-protection-rules.md#handling-rules "Create, modify, and delete rules for specific attacks.") based on certain process groups or vulnerability types, the custom rules override the global attack control for the selected technology, and Runtime Application Protection continues to monitor the attacks based on your rules.
 
 3. Select **Save**.
 4. Restart your processes.
@@ -117,16 +117,16 @@ OneAgent version 1.309 To detect SSRF attacks, you also need to enable SSRF atta
 
 After you set up Runtime Application Protection, you can
 
-* Evaluate, triage, and investigate findings with [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts.").
-* [Set up Runtime Application Protection monitoring rules](/docs/secure/application-security/application-protection/application-protection-rules "Create, modify, and delete rules for specific attacks.").
+* Evaluate, triage, and investigate findings with [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](../threats-and-exploits.md "Understand, triage, and investigate detection findings and alerts.").
+* [Set up Runtime Application Protection monitoring rules](application-protection/application-protection-rules.md "Create, modify, and delete rules for specific attacks.").
 
 ## Consumption
 
 Runtime Application Protection consumption depends on your Dynatrace licensing model:
 
-* [Dynatrace Platform Subscription (DPS)](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities."): measured in GiBâhours. For details, see [Calculate your consumption of Runtime Application Protection (RAP) (DPS)](/docs/license/capabilities/application-security/runtime-application-protection "Learn how how your consumption of the Runtime Application Protection (RAP) DPS capability is billed and charged.").
-* [Dynatrace classic licensing](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing."): measured in Application Security units (ASUs). For details, see [Application Security monitoring (ASUs)](/docs/license/monitoring-consumption-classic/application-security-units "Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.").
+* [Dynatrace Platform Subscription (DPS)](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities."): measured in GiBâhours. For details, see [Calculate your consumption of Runtime Application Protection (RAP) (DPS)](../../license/capabilities/application-security/runtime-application-protection.md "Learn how how your consumption of the Runtime Application Protection (RAP) DPS capability is billed and charged.").
+* [Dynatrace classic licensing](../../license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing."): measured in Application Security units (ASUs). For details, see [Application Security monitoring (ASUs)](../../license/monitoring-consumption-classic/application-security-units.md "Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.").
 
 ## Related topics
 
-* [Application Security FAQ](/docs/secure/faq "Frequently asked questions about Dynatrace Application Security.")
+* [Application Security FAQ](../faq.md "Frequently asked questions about Dynatrace Application Security.")

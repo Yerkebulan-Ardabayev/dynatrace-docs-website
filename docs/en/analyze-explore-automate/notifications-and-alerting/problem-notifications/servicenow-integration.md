@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:11:41.657451
 * 9-min read
 * Updated on Apr 15, 2025
 
-For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see [Workflows Connectors](/docs/analyze-explore-automate/workflows/actions "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
+For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see [Workflows Connectors](../../workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
 
 To connect your Dynatrace monitoring environment to your ServiceNow instance, configuration is required both on the ServiceNow instance and in the Dynatrace web UI.
 
@@ -33,7 +33,7 @@ Once you configure Dynatrace incident integration, Dynatrace automatically creat
 
 ### Dynatrace Workflows
 
-Dynatrace Workflows allows you to model incident creation and management processes directly within Dynatrace. For more information about configuration and usage details, see [ServiceNow](/docs/analyze-explore-automate/workflows/actions/service-now "Automate creation of incidents in ServiceNow based on your monitoring data and events.") workflow documentation.
+Dynatrace Workflows allows you to model incident creation and management processes directly within Dynatrace. For more information about configuration and usage details, see [ServiceNow](../../workflows/actions/service-now.md "Automate creation of incidents in ServiceNow based on your monitoring data and events.") workflow documentation.
 
 ### Dynatrace Incident Integration app
 

@@ -13,10 +13,10 @@ scraped: 2026-03-02T21:31:44.785730
 * 1-min read
 * Published Apr 02, 2024
 
-The **Execute DQL Query** action for Workflows enables you to use DQL queries in a workflow. In **DQL query**, enter your [DQL query](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."). In **Segment**, you can optionally select a filter segment.
+The **Execute DQL Query** action for Workflows enables you to use DQL queries in a workflow. In **DQL query**, enter your [DQL query](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."). In **Segment**, you can optionally select a filter segment.
 
 You can find the results in the **Result** tab of the **Execution** that you could use in subsequent tasks.
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
+* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")

@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:26:35.434463
 * 12 мин. чтения
 * Обновлено 07 апреля 2025 г.
 
-Модель потребления DDU, описанная здесь для Log Management and Analytics, затрагивает только среды Dynatrace SaaS, которые активированы для Dynatrace Grail для управления данными логов. Потребление DDU для всех остальных типов возможностей DDU, включая [Log Monitoring для Dynatrace SaaS и Managed](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Узнайте, как рассчитывается объём потребления DDU для Dynatrace Log Monitoring Classic."), остаётся без изменений. Для получения информации об активации Log Management and Analytics для вашей среды Dynatrace обратитесь к специалисту Dynatrace через чат в вашей среде Dynatrace.
+Модель потребления DDU, описанная здесь для Log Management and Analytics, затрагивает только среды Dynatrace SaaS, которые активированы для Dynatrace Grail для управления данными логов. Потребление DDU для всех остальных типов возможностей DDU, включая [Log Monitoring для Dynatrace SaaS и Managed](log-monitoring-consumption.md "Узнайте, как рассчитывается объём потребления DDU для Dynatrace Log Monitoring Classic."), остаётся без изменений. Для получения информации об активации Log Management and Analytics для вашей среды Dynatrace обратитесь к специалисту Dynatrace через чат в вашей среде Dynatrace.
 
 На этой странице объясняется, как DDU потребляются Log Management and Analytics в Dynatrace и как вы можете оценить и отслеживать потребление DDU вашей средой.
 
@@ -147,4 +147,4 @@ scraped: 2026-03-06T21:26:35.434463
 ## Связанные темы
 
 * [Цены Dynatrace](https://www.dynatrace.com/pricing/)
-* [Log Monitoring Classic](/docs/analyze-explore-automate/log-monitoring "Узнайте, как включить Log Monitoring, какую аналитику он может предоставить, и многое другое.")
+* [Log Monitoring Classic](../../../analyze-explore-automate/log-monitoring.md "Узнайте, как включить Log Monitoring, какую аналитику он может предоставить, и многое другое.")

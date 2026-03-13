@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:27:17.743091
 
 You can send logs, metrics, and traces to Dynatrace using Cribl Stream via OpenTelemetry Protocol (OTLP) or send only logs using Cribl Stream via HTTP and API ingestion.
 
-The [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.") offers various ingestion and transformation capabilities, making it a versatile tool for processing log data from a variety of sources.
+The [Dynatrace Collector](../../../ingest-from/opentelemetry/collector.md "Learn about the Dynatrace OTel Collector.") offers various ingestion and transformation capabilities, making it a versatile tool for processing log data from a variety of sources.
 
 ## Key Features
 

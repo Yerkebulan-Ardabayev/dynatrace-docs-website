@@ -24,7 +24,7 @@ To view the **Response time** chart for a service
 3. On the service overview page, select a **View** button (such as **View requests**, **View dynamic requests**, or **View resource requests**).
 4. Select the **Response time** tab.
 
-The **Response time** chart illustrates how the response times of the requests triggered by this service were distributed during the [selected timeframe](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings.") (see the example below). This chart also shows you the average number of requests over time as well as the minimum/maximum response time of each [service instance](/docs/observe/application-observability/services-classic/analyze-individual-service-instances "Find out how you can perform a service-instance analysis."). For response time analysis, you have the option of viewing the `Median`, `Slowest 10%`, or `Slowest 5%` percentiles.
+The **Response time** chart illustrates how the response times of the requests triggered by this service were distributed during the [selected timeframe](../../../analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe.md "Learn about Dynatrace dashboard timeframe and management zone settings.") (see the example below). This chart also shows you the average number of requests over time as well as the minimum/maximum response time of each [service instance](analyze-individual-service-instances.md "Find out how you can perform a service-instance analysis."). For response time analysis, you have the option of viewing the `Median`, `Slowest 10%`, or `Slowest 5%` percentiles.
 
 ![Outlier 1](https://dt-cdn.net/images/outlier01-1650-3919f9c0c9.png)
 
@@ -90,5 +90,5 @@ As you can see, outlier analysis, enabled by Dynatrace response-time distributio
 
 ## Related topics
 
-* [Service analysis timings](/docs/observe/application-observability/services-classic/service-analysis-timing "Find out what each time in service analysis means.")
+* [Service analysis timings](service-analysis-timing.md "Find out what each time in service analysis means.")
 * [[Blog] Better understand response time differences over time using compare modeï»¿](https://www.dynatrace.com/news/blog/better-understand-response-time-differences-over-time-using-compare-mode/)

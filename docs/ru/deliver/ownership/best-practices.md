@@ -26,18 +26,18 @@ scraped: 2026-03-06T21:37:01.750284
 
 **Используйте рекомендуемые методы назначения владения в зависимости от типа сущности**; хотя вы можете использовать теги для назначения владения любой отслеживаемой сущности, эти рекомендуемые методы являются наиболее эффективными способами назначения сущностей владельцам.
 
-* [Метки Kubernetes для объектов Kubernetes](/docs/deliver/ownership/assign-ownership#kubernetes "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
-* [Метаданные для хостов](/docs/deliver/ownership/assign-ownership#host-metadata "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
-* [Переменные окружения для процессов](/docs/deliver/ownership/assign-ownership#process-env-variables "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
-* [Теги (ручные, автоматические и через API) для всех остальных сущностей](/docs/deliver/ownership/assign-ownership#tags "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
+* [Метки Kubernetes для объектов Kubernetes](assign-ownership.md#kubernetes "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
+* [Метаданные для хостов](assign-ownership.md#host-metadata "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
+* [Переменные окружения для процессов](assign-ownership.md#process-env-variables "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
+* [Теги (ручные, автоматические и через API) для всех остальных сущностей](assign-ownership.md#tags "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
 
 ### Kubernetes
 
-Для [объектов Kubernetes](/docs/deliver/ownership/assign-ownership#kubernetes "Assign owners to entities using entity metadata like labels, environment variables, and tags.") **определяйте владение одновременно для всех необходимых объектов Kubernetes**. Это гарантирует, что все ваши объекты Kubernetes будут иметь адекватное покрытие владения на этапе развёртывания.
+Для [объектов Kubernetes](assign-ownership.md#kubernetes "Assign owners to entities using entity metadata like labels, environment variables, and tags.") **определяйте владение одновременно для всех необходимых объектов Kubernetes**. Это гарантирует, что все ваши объекты Kubernetes будут иметь адекватное покрытие владения на этапе развёртывания.
 
 * Всегда применяйте метки для **Deployment**.
 * Мы рекомендуем указывать владение как минимум для сущностей `CLOUD_APPLICATION` (например, Deployment, Job, CronJob или DaemonSet) и `CLOUD_APPLICATION_INSTANCE` (поды).
-* Уникальные ключи являются обязательным требованием в [парах ключ-значение](/docs/deliver/ownership/assign-ownership#format "Assign owners to entities using entity metadata like labels, environment variables, and tags.") в метках Kubernetes. Ключи должны начинаться с [пользовательских имён ключей, которые вы определяете для информации о владении](/docs/deliver/ownership/assign-ownership#custom-keys "Assign owners to entities using entity metadata like labels, environment variables, and tags."). Например, вы можете использовать `owner` и `dt.owner` в качестве префиксов для создания уникальных ключей.
+* Уникальные ключи являются обязательным требованием в [парах ключ-значение](assign-ownership.md#format "Assign owners to entities using entity metadata like labels, environment variables, and tags.") в метках Kubernetes. Ключи должны начинаться с [пользовательских имён ключей, которые вы определяете для информации о владении](assign-ownership.md#custom-keys "Assign owners to entities using entity metadata like labels, environment variables, and tags."). Например, вы можете использовать `owner` и `dt.owner` в качестве префиксов для создания уникальных ключей.
 
 Пример файла развёртывания Kubernetes с определённым владением для Deployment, Pod и процесса
 
@@ -147,27 +147,27 @@ value: 'dt.owner-1=my-team-1' # Ownership defined for the process
 
 ### Теги
 
-**Используйте [теги для назначения владения](/docs/deliver/ownership/assign-ownership#tags "Assign owners to entities using entity metadata like labels, environment variables, and tags.") только для сущностей, которые не покрыты другими методами**.
+**Используйте [теги для назначения владения](assign-ownership.md#tags "Assign owners to entities using entity metadata like labels, environment variables, and tags.") только для сущностей, которые не покрыты другими методами**.
 
 #### Преимущества и варианты использования тегов
 
 * Теги подходят для назначения **нескольких стабильных сущностей** (например, приложение и синтетические мониторы, работающие против него) конкретным командам-владельцам.
-* [Ручное тегирование](/docs/manage/tags-and-metadata/setup/how-to-define-tags#manual "Find out how to define and apply tags manually and automatically.") или [API пользовательских тегов](/docs/dynatrace-api/environment-api/custom-tags "Manage custom tags of the monitored entities via the Dynatrace API.") эффективны для назначения владения **существующим (уже развёрнутым) сущностям**.
-* [Правила автоматического тегирования](/docs/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically.") имеют преимущество в отслеживании **новых сущностей**, соответствующих вашим правилам тегирования. Автоматически применённые теги также не могут быть вручную удалены с отдельных сервисов, групп процессов, экземпляров групп процессов, приложений или хостов.
-* Хотя API пользовательских тегов и правила автоматического тегирования используют мощный и гибкий [**селектор сущностей**](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") для выбора сущностей, **вызов API пользовательских тегов выполняется немедленно**. Это [основное преимущество по сравнению с правилами автоматического тегирования](/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale#custom-tags-api "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process."), которые планируются через процесс тегирования Dynatrace. Это помогает ускорить время выполнения, когда необходимы сложные правила тегирования.
+* [Ручное тегирование](../../manage/tags-and-metadata/setup/how-to-define-tags.md#manual "Find out how to define and apply tags manually and automatically.") или [API пользовательских тегов](../../dynatrace-api/environment-api/custom-tags.md "Manage custom tags of the monitored entities via the Dynatrace API.") эффективны для назначения владения **существующим (уже развёрнутым) сущностям**.
+* [Правила автоматического тегирования](../../manage/tags-and-metadata/setup/how-to-define-tags.md#automatic "Find out how to define and apply tags manually and automatically.") имеют преимущество в отслеживании **новых сущностей**, соответствующих вашим правилам тегирования. Автоматически применённые теги также не могут быть вручную удалены с отдельных сервисов, групп процессов, экземпляров групп процессов, приложений или хостов.
+* Хотя API пользовательских тегов и правила автоматического тегирования используют мощный и гибкий [**селектор сущностей**](../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.") для выбора сущностей, **вызов API пользовательских тегов выполняется немедленно**. Это [основное преимущество по сравнению с правилами автоматического тегирования](../../manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale.md#custom-tags-api "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process."), которые планируются через процесс тегирования Dynatrace. Это помогает ускорить время выполнения, когда необходимы сложные правила тегирования.
 
 #### Важные соображения при использовании тегов для владения
 
 * **Ручное тегирование** не **масштабируется** адекватно для назначения владения в больших, динамичных средах мониторинга. Ручные теги также могут быть удалены вручную.
-* Хотя **правила автоматического тегирования** (на основе веб-интерфейса) предназначены для сложных сценариев, запуски автоматического тегирования могут занимать **длительное время** в зависимости от сложности ваших правил и размера вашей среды. Тем временем критически важная сущность, испытывающая проблему, может не получить тег владения. Подробнее об оптимизации тегирования читайте в [Лучшие практики для масштабирования правил тегирования и зон управления](/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.").
+* Хотя **правила автоматического тегирования** (на основе веб-интерфейса) предназначены для сложных сценариев, запуски автоматического тегирования могут занимать **длительное время** в зависимости от сложности ваших правил и размера вашей среды. Тем временем критически важная сущность, испытывающая проблему, может не получить тег владения. Подробнее об оптимизации тегирования читайте в [Лучшие практики для масштабирования правил тегирования и зон управления](../../manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale.md "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.").
 * Хотя **вызов API пользовательских тегов** выполняется немедленно, компромисс заключается в том, что это **одноразовая операция**. В зависимости от частоты ваших запусков тегирования, новые или краткоживущие сущности могут полностью не получить тег с информацией о владении, что затрудняет поиск владельцев в случае уязвимостей или сбоев.
 * Мы **не рекомендуем** использовать теги для назначения владения процессам или группам процессов.
 
 ## Информация о команде
 
-Хотя для создания [команды владения](/docs/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") требуются только поля **Название команды** и **Идентификатор команды**, вот несколько рекомендаций и лучших способов использования других полей.
+Хотя для создания [команды владения](ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") требуются только поля **Название команды** и **Идентификатор команды**, вот несколько рекомендаций и лучших способов использования других полей.
 
-* При определении [пользовательских ключей](/docs/deliver/ownership/assign-ownership#custom-keys "Assign owners to entities using entity metadata like labels, environment variables, and tags.") для идентификаторов владения используйте конкретные, легко понятные имена, которые вряд ли будут использоваться для других целей тегирования.
+* При определении [пользовательских ключей](assign-ownership.md#custom-keys "Assign owners to entities using entity metadata like labels, environment variables, and tags.") для идентификаторов владения используйте конкретные, легко понятные имена, которые вряд ли будут использоваться для других целей тегирования.
 * Всегда добавляйте **Описание** команды — оно отображается вместе с названием команды на странице настроек **Команды владения** и помогает различать команды с первого взгляда. Команды без описания или с неудачным названием (team 1) не дают подсказок об их роли в вашей организации. Команды с описаниями (2 и 3) более идентифицируемы.
 
   ![Определения команд](https://dt-cdn.net/images/ownership-team-definitions-1888-78e12327f8.png)
@@ -189,4 +189,4 @@ value: 'dt.owner-1=my-team-1' # Ownership defined for the process
 
 ## Связанные темы
 
-* [Лучшие практики для масштабирования правил тегирования и зон управления](/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.")
+* [Лучшие практики для масштабирования правил тегирования и зон управления](../../manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale.md "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.")

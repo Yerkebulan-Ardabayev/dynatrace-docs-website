@@ -163,9 +163,9 @@ To configure the ActiveGate for the dedicated performance profile
 
    -java.xmx.relative_part=0
    ```
-3. [Restart the ActiveGate](/docs/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.") to apply the configuration changes.
-4. [Set the performance profile of the ActiveGate](/docs/ingest-from/extensions/concepts#performance-profile "Learn more about the concept of Dynatrace Extensions.") to `Dedicated limits`.
+3. [Restart the ActiveGate](../../dynatrace-activegate/operation/stop-restart-activegate.md "Learn how you can start, stop and restart ActiveGate on Windows or Linux.") to apply the configuration changes.
+4. [Set the performance profile of the ActiveGate](../concepts.md#performance-profile "Learn more about the concept of Dynatrace Extensions.") to `Dedicated limits`.
 
 ## Related topics
 
-* [About Extensions](/docs/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.")
+* [About Extensions](../concepts.md "Learn more about the concept of Dynatrace Extensions.")

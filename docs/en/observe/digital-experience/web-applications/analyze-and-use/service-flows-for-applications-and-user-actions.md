@@ -13,7 +13,7 @@ scraped: 2026-03-05T21:27:38.698380
 * 1-min read
 * Published Oct 04, 2017
 
-Dynatrace enables you to easily grasp the service flow chain within the context of your application and even within the context of individual user actions. [**Service flow**](/docs/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") shows you which services are called by each application or individual user action and helps you understand how these services call each other.
+Dynatrace enables you to easily grasp the service flow chain within the context of your application and even within the context of individual user actions. [**Service flow**](../../../application-observability/services-classic/service-flow.md "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") shows you which services are called by each application or individual user action and helps you understand how these services call each other.
 
 ## Access service flow for an application
 

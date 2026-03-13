@@ -31,13 +31,13 @@ While the instructions to integrate Dynatrace may differ depending on the techno
 
 Before you begin, you need to take care of the following:
 
-* Get an **access token** to download the Dynatrace OneAgent with `InstallerDownload` scope. For details on access tokens, see [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+* Get an **access token** to download the Dynatrace OneAgent with `InstallerDownload` scope. For details on access tokens, see [Dynatrace API - Tokens and authentication](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
 
   In the procedures that follow, replace `<DT_TOKEN>` with your actual access token.
-* Get the **environment ID**. For details on environment IDs, see [What is a monitoring environment?](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+* Get the **environment ID**. For details on environment IDs, see [What is a monitoring environment?](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
 
   In the procedures that follow, replace `<DT_ENV_ID>` with your actual environment ID.
-* Get your Dynatrace API endpoint as defined by your [Environment URL](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") or alternatively an [ActiveGate address](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
+* Get your Dynatrace API endpoint as defined by your [Environment URL](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") or alternatively an [ActiveGate address](../../dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.").
 
   In the procedures that follow, replace `<DT_ENV_FQDN>` with the actual Dynatrace API endpoint.
 * Install [gcloud CLIï»¿](https://cloud.google.com/sdk/docs/install)
@@ -54,11 +54,11 @@ Jib
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Add OneAgent installer**](/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun#add-oneagent-installer-option-1 "Monitor Java application deployed on Google Cloud Run managed.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Add OneAgent installer**](cloudrun.md#add-oneagent-installer-option-1 "Monitor Java application deployed on Google Cloud Run managed.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Configure Cloud Build**](/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun#configure-cloud-build-option-1 "Monitor Java application deployed on Google Cloud Run managed.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Configure Cloud Build**](cloudrun.md#configure-cloud-build-option-1 "Monitor Java application deployed on Google Cloud Run managed.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Build and deploy**](/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun#build-and-deploy-option-1 "Monitor Java application deployed on Google Cloud Run managed.")
+**Build and deploy**](cloudrun.md#build-and-deploy-option-1 "Monitor Java application deployed on Google Cloud Run managed.")
 
 #### Step 1 Add the OneAgent installer to a Docker image
 
@@ -431,9 +431,9 @@ Make sure to substitute the placeholders with your actual values.
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Add OneAgent installer**](/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun#add-oneagent-installer-option-2 "Monitor Java application deployed on Google Cloud Run managed.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Add OneAgent installer**](cloudrun.md#add-oneagent-installer-option-2 "Monitor Java application deployed on Google Cloud Run managed.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Build and deploy**](/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun#build-and-deploy-option-2 "Monitor Java application deployed on Google Cloud Run managed.")
+**Build and deploy**](cloudrun.md#build-and-deploy-option-2 "Monitor Java application deployed on Google Cloud Run managed.")
 
 #### Step 1 Add the OneAgent installer to a Docker image
 
@@ -671,15 +671,15 @@ You can use additional environment variables to configure, for example, troubles
 | Name | Description |
 | --- | --- |
 | **Networking** |  |
-| `DT_NETWORK_ZONE` | Specifies to use a network zone. For details, see [Network zones](/docs/manage/network-zones "Find out how network zones work in Dynatrace."). |
-| `DT_PROXY` | When using a proxy, use this environment variable to pass proxy credentials. For details, see [Set up OneAgent on containers for application-only monitoring](/docs/ingest-from/setup-on-container-platforms/docker/set-up-oneagent-on-containers-for-application-only-monitoring "Install, update, and uninstall OneAgent on containers for application-only monitoring.") |
+| `DT_NETWORK_ZONE` | Specifies to use a network zone. For details, see [Network zones](../../../manage/network-zones.md "Find out how network zones work in Dynatrace."). |
+| `DT_PROXY` | When using a proxy, use this environment variable to pass proxy credentials. For details, see [Set up OneAgent on containers for application-only monitoring](../../setup-on-container-platforms/docker/set-up-oneagent-on-containers-for-application-only-monitoring.md "Install, update, and uninstall OneAgent on containers for application-only monitoring.") |
 | **Additional metadata for Process Grouping / Service Detection** |  |
-| `DT_LOCALTOVIRTUALHOSTNAME` | Multiple containers are sometimes detected as a single instance (localhost), leading to various problems in, for example, service detection or availability alerts. Use this environment variable to define a unique name for your container instance. For details, see [Service Detection v1](/docs/observe/application-observability/services/service-detection/service-detection-v1#adjusting-service-detection "Find out how Dynatrace Service Detection v1 detects and names different types of services.") |
-| `DT_APPLICATIONID` | Some technologies don't provide unique application names. In such cases, use this environment variable to provide a unique name. For details, see [Service Detection v1](/docs/observe/application-observability/services/service-detection/service-detection-v1#web-server-naming-issues "Find out how Dynatrace Service Detection v1 detects and names different types of services.") |
-| `DT_TAGS` | Applies [custom tags](/docs/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables.") to your process group |
-| `DT_CUSTOM_PROP` | Applies [custom metadata](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata "Configure your own process-related metadata based on the unique needs of your organization or environment.") to your process group |
-| `DT_CLUSTER_ID` | If the [process group detection rules](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection") won't work for your use-case, use this environment variable to **group all processes with the same value**. |
-| `DT_NODE_ID` | If the [process group detection rules](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection") won't work for your use-case, use this environment variable to **separate process group instances** |
+| `DT_LOCALTOVIRTUALHOSTNAME` | Multiple containers are sometimes detected as a single instance (localhost), leading to various problems in, for example, service detection or availability alerts. Use this environment variable to define a unique name for your container instance. For details, see [Service Detection v1](../../../observe/application-observability/services/service-detection/service-detection-v1.md#adjusting-service-detection "Find out how Dynatrace Service Detection v1 detects and names different types of services.") |
+| `DT_APPLICATIONID` | Some technologies don't provide unique application names. In such cases, use this environment variable to provide a unique name. For details, see [Service Detection v1](../../../observe/application-observability/services/service-detection/service-detection-v1.md#web-server-naming-issues "Find out how Dynatrace Service Detection v1 detects and names different types of services.") |
+| `DT_TAGS` | Applies [custom tags](../../../manage/tags-and-metadata/setup/define-tags-based-on-environment-variables.md "Find out how Dynatrace enables you to define tags based on environment variables.") to your process group |
+| `DT_CUSTOM_PROP` | Applies [custom metadata](../../../observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata.md "Configure your own process-related metadata based on the unique needs of your organization or environment.") to your process group |
+| `DT_CLUSTER_ID` | If the [process group detection rules](../../../observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection") won't work for your use-case, use this environment variable to **group all processes with the same value**. |
+| `DT_NODE_ID` | If the [process group detection rules](../../../observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection") won't work for your use-case, use this environment variable to **separate process group instances** |
 | **Troubleshooting** |  |
 | `DT_LOGSTREAM` | Set this variable with `stdout` to configure agent to log errors into console. To see additional agent logs set the log level with DT\_LOGLEVELCON as below. |
 | `DT_LOGLEVELCON` | Use this environment variable to define the console log level. Valid options are `NONE`, `INFO`, `WARNING`, `SEVERE` in order to increase log level. |
@@ -706,7 +706,7 @@ You can filter for containers in the host overview to filter by **Monitoring Mod
   The first generation of the GCR execution environment, also referred to as Gen1, comes with intentionally increased security limitations. As a consequence, some OneAgent functionalities cannot work in this runtime and are not available. For example, metrics on the **Hosts** page such as `CPU Usage` and `Memory Usage` are not available.
 * **GCR instances detected as hosts**
 
-  GCR execution environments are currently displayed on the **Hosts** page, with proper detection of GCP properties and the memory limit of each of these runtime (container) instances, not on the [**Container groups** page](/docs/observe/infrastructure-observability/container-platform-monitoring/container-groups "Overview on container groups monitoring"). Container metrics are not available.
+  GCR execution environments are currently displayed on the **Hosts** page, with proper detection of GCP properties and the memory limit of each of these runtime (container) instances, not on the [**Container groups** page](../../../observe/infrastructure-observability/container-platform-monitoring/container-groups.md "Overview on container groups monitoring"). Container metrics are not available.
 * **Possible startup overhead**
 
   Because each revision of Google Cloud Run scales automatically to the number of container instances needed to handle incoming requests, such cold starts might appear more often than on other environments, thus increasing overall startup overhead.
@@ -715,7 +715,7 @@ You can filter for containers in the host overview to filter by **Monitoring Mod
 
 Each time you want to leverage a new version of Dynatrace OneAgent, you must rebuild and redeploy.
 
-If you've specified a default OneAgent installation version for new hosts and applications using [OneAgent update settings](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux "Learn about the different ways to update OneAgent on Linux."), your application will be automatically monitored by the defined default version of OneAgent.
+If you've specified a default OneAgent installation version for new hosts and applications using [OneAgent update settings](../../dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux.md "Learn about the different ways to update OneAgent on Linux."), your application will be automatically monitored by the defined default version of OneAgent.
 
 ## Uninstall OneAgent
 
@@ -723,5 +723,5 @@ To uninstall OneAgent from application-only monitoring, remove references from y
 
 ## Related topics
 
-* [Set up Dynatrace on Google Cloud](/docs/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
-* [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* [Set up Dynatrace on Google Cloud](../../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
+* [OneAgent platform and capability support matrix](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

@@ -113,7 +113,7 @@ scraped: 2026-02-17T04:46:08.290556
 
 Запрос панели мониторинга Grail в рабочий процесс
 
-Чтобы скопировать запрос Grail из панели мониторинга в [![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы") **Рабочие процессы**](/docs/analyze-explore-automate/workflows "Автоматизируйте процессы ИТ с помощью рабочих процессов Dynatrace - реагируйте на события, планируйте задачи и подключайте сервисы.") как задачу в рабочем процессе
+Чтобы скопировать запрос Grail из панели мониторинга в [![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы") **Рабочие процессы**](../workflows.md "Автоматизируйте процессы ИТ с помощью рабочих процессов Dynatrace - реагируйте на события, планируйте задачи и подключайте сервисы.") как задачу в рабочем процессе
 
 1. В панели мониторинга выберите плитку запроса, которую вы хотите скопировать в рабочий процесс.
 2. Выберите  >  **Откройте с**.
@@ -233,10 +233,10 @@ fetch logs
   + Ссылки видны для каждого столбца, что позволяет взаимодействовать с отдельными данными, используя другие данные. Например, выбор ссылки в столбце `Status` может использовать значение другого поля при навигации.
 * **Неподдерживаемые визуализации**
 
-  + Визуализации карт, такие как [Choropleth](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-choropleth "Создание и редактирование визуализаций карт Choropleth на ваших панелях управления и блокнотах Dynatrace."), [Dot](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-dot "Создание и редактирование визуализаций точечных карт на ваших панелях управления и блокнотах Dynatrace."), [Connection](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-connection "Создание и редактирование визуализаций связей карт на ваших панелях управления и блокнотах Dynatrace.") и [Bubble](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-bubble "Создание и редактирование визуализаций пузырьковых карт на ваших панелях управления и блокнотах Dynatrace.")
-  + [Одиночное значение](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value "Создание и редактирование визуализаций одиночного значения на ваших панелях управления и блокнотах Dynatrace.")
-  + [График-индикатор](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-gauge "Создание и редактирование визуализаций-индикаторов на ваших панелях управления и блокнотах Dynatrace.")
-  + [График-измеритель](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-meterbar "Создание и редактирование визуализаций измерителей на ваших панелях управления и блокнотах Dynatrace.")
+  + Визуализации карт, такие как [Choropleth](edit-visualizations/visualization-map-choropleth.md "Создание и редактирование визуализаций карт Choropleth на ваших панелях управления и блокнотах Dynatrace."), [Dot](edit-visualizations/visualization-map-dot.md "Создание и редактирование визуализаций точечных карт на ваших панелях управления и блокнотах Dynatrace."), [Connection](edit-visualizations/visualization-map-connection.md "Создание и редактирование визуализаций связей карт на ваших панелях управления и блокнотах Dynatrace.") и [Bubble](edit-visualizations/visualization-map-bubble.md "Создание и редактирование визуализаций пузырьковых карт на ваших панелях управления и блокнотах Dynatrace.")
+  + [Одиночное значение](edit-visualizations/visualization-chart-single-value.md "Создание и редактирование визуализаций одиночного значения на ваших панелях управления и блокнотах Dynatrace.")
+  + [График-индикатор](edit-visualizations/visualization-gauge.md "Создание и редактирование визуализаций-индикаторов на ваших панелях управления и блокнотах Dynatrace.")
+  + [График-измеритель](edit-visualizations/visualization-meterbar.md "Создание и редактирование визуализаций измерителей на ваших панелях управления и блокнотах Dynatrace.")
 * **Все остальные визуализации**
 
   + Для визуализаций с разделением данных (например, линейных графиков по хостам) ссылки динамически корректируются в зависимости от серии данных. Например, использование заполнителя `{{:name}}` в линейном графике, разделенном по хостам, заменит заполнитель на соответствующее имя хоста для каждой серии (линии).

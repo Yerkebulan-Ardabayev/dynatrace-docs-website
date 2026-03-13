@@ -21,7 +21,7 @@ Trace and analyze in real time highly distributed systems with Grail.
 
 * App
 
-Explore this app](/docs/observe/application-observability/distributed-tracing)[![Live Debugger](https://dt-cdn.net/images/live-debugger-256-b934a2bad5.png "Live Debugger")
+Explore this app](application-observability/distributed-tracing.md)[![Live Debugger](https://dt-cdn.net/images/live-debugger-256-b934a2bad5.png "Live Debugger")
 
 #### Live Debugger
 
@@ -29,7 +29,7 @@ Get familiar with the Live Debugger capabilities in Dynatrace.
 
 * App
 
-Explore this app](/docs/observe/application-observability/live-debugger)[![Services](https://dt-cdn.net/hub/logos/services.png "Services")
+Explore this app](application-observability/live-debugger.md)[![Services](https://dt-cdn.net/hub/logos/services.png "Services")
 
 #### Services
 
@@ -37,7 +37,7 @@ Learn how to monitor and analyze your services, define and use request attribute
 
 * Overview
 
-See the overview](/docs/observe/application-observability/services)
+See the overview](application-observability/services.md)
 
 ## Classic
 
@@ -47,25 +47,25 @@ Gain observability into highly distributed, cloud-native architectures to effect
 
 * Overview
 
-See the overview](/docs/observe/application-observability/distributed-traces)[#### Multidimensional analysis
+See the overview](application-observability/distributed-traces.md)[#### Multidimensional analysis
 
 Configure a multidimensional analysis view and save it as a calculated metric.
 
 * How-to guide
 
-Read this guide](/docs/observe/application-observability/multidimensional-analysis)[#### Profiling and optimization
+Read this guide](application-observability/multidimensional-analysis.md)[#### Profiling and optimization
 
 Learn how to use Dynatrace diagnostic tools for crash analysis, memory dump analysis, and more.
 
 * Overview
 
-See the overview](/docs/observe/application-observability/profiling-and-optimization)[#### Services Classic
+See the overview](application-observability/profiling-and-optimization.md)[#### Services Classic
 
 Learn about Dynatrace's classic service monitoring
 
 * Overview
 
-See the overview](/docs/observe/application-observability/services-classic)
+See the overview](application-observability/services-classic.md)
 
 ## See also
 
@@ -73,8 +73,8 @@ See the overview](/docs/observe/application-observability/services-classic)
 
 ### Log Management and Analytics
 
-Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.](/docs/analyze-explore-automate/logs "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")[![Digital Experience](https://cdn.bfldr.com/B686QPH3/at/24vb99tkw5wm7xrvxpshcbvr/Digital_Experience.svg?auto=webp&width=72&height=72 "Digital Experience")
+Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.](../analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")[![Digital Experience](https://cdn.bfldr.com/B686QPH3/at/24vb99tkw5wm7xrvxpshcbvr/Digital_Experience.svg?auto=webp&width=72&height=72 "Digital Experience")
 
 ### Digital Experience
 
-Use RUM and Synthetic Monitoring for total Digital Experience Monitoring.](/docs/observe/digital-experience "Optimize end-user experience with Digital Experience Monitoring to ensure application performance and availability across all channels.")
+Use RUM and Synthetic Monitoring for total Digital Experience Monitoring.](digital-experience.md "Optimize end-user experience with Digital Experience Monitoring to ensure application performance and availability across all channels.")

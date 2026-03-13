@@ -36,7 +36,7 @@ OpenTracing с OneAgent позволяет вам:
 
 1
 
-Поддерживается в [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "Возможности и варианты интеграции AWS Lambda").
+Поддерживается в [AWS Lambda](../../amazon-web-services/integrate-into-aws/aws-lambda-integration.md "Возможности и варианты интеграции AWS Lambda").
 
 ## Включение интеграции OpenTracing
 
@@ -161,17 +161,17 @@ OpenTracing с OneAgent позволяет вам:
    traced.getMap("map").put("key", "value");
    ```
 
-См. [Настройки спанов](/docs/ingest-from/extend-dynatrace/extend-tracing/span-settings "Узнайте, как настраивать параметры спанов для OpenTelemetry и OpenTracing.") для всех параметров конфигурации.
+См. [Настройки спанов](span-settings.md "Узнайте, как настраивать параметры спанов для OpenTelemetry и OpenTracing.") для всех параметров конфигурации.
 
 ## Ограничения
 
-* [Сервис спанов по умолчанию](/docs/observe/application-observability/services/service-detection/service-detection-v1#span-service "Узнайте, как Dynatrace Service Detection v1 обнаруживает и именует различные типы сервисов.")
+* [Сервис спанов по умолчанию](../../../observe/application-observability/services/service-detection/service-detection-v1.md#span-service "Узнайте, как Dynatrace Service Detection v1 обнаруживает и именует различные типы сервисов.")
 * Когда инструментарий OneAgent и OpenTracing присутствуют одновременно для одной и той же технологии (например, входящие веб-запросы через Servlet API), вы можете столкнуться со следующими ограничениями:
 
   + Дублирование узлов в распределённых трассировках PurePath
   + Дополнительные накладные расходы
   + Для JDBC такое двойное инструментирование может нарушить обнаружение сервисов
-    Будьте особенно осторожны при включении поддержки OpenTracing Java в OneAgent для [поддерживаемых технологий](/docs/ingest-from/technology-support#java "Технические подробности поддержки Dynatrace для конкретных платформ и фреймворков разработки."), поддерживаемых OneAgent «из коробки».
+    Будьте особенно осторожны при включении поддержки OpenTracing Java в OneAgent для [поддерживаемых технологий](../../technology-support.md#java "Технические подробности поддержки Dynatrace для конкретных платформ и фреймворков разработки."), поддерживаемых OneAgent «из коробки».
 * Интеграция трассировок из инструментария OpenTracing для Spring Framework в настоящее время не поддерживается.
 * Java-сенсор OpenTracing не захватывает атрибуты типа `array`.
 

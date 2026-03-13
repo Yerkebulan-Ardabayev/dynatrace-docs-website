@@ -11,7 +11,7 @@ scraped: 2026-03-03T21:32:05.233768
 * Reference
 * Published Dec 21, 2022
 
-The [Maintenance windows API](/docs/dynatrace-api/configuration-api/maintenance-windows-api "Learn what the Dynatrace maintenance windows config API offers.") has been deprecated with [Dynatrace version 1.240](/docs/whats-new/dynatrace-api/sprint-240 "Changelog for Dynatrace API version 1.240"). Its replacement is [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") with the **Maintenance windows** (`builtin:alerting.maintenance-window`) schema. We recommend that you migrate to the new API at your earliest convenience.
+The [Maintenance windows API](../../configuration-api/maintenance-windows-api.md "Learn what the Dynatrace maintenance windows config API offers.") has been deprecated with [Dynatrace version 1.240](../../../whats-new/dynatrace-api/sprint-240.md "Changelog for Dynatrace API version 1.240"). Its replacement is [Settings API](../../environment-api/settings.md "Find out what the Dynatrace Settings API offers.") with the **Maintenance windows** (`builtin:alerting.maintenance-window`) schema. We recommend that you migrate to the new API at your earliest convenience.
 
 The migration affects endpoint URLs, query parameters, and response/request body parameters, as well as the scope of the token for request authentication.
 
@@ -29,9 +29,9 @@ The migration affects endpoint URLs, query parameters, and response/request body
 
 ## Parameters
 
-To learn about new query/body parameters, see the documentation of individual requests in [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.").
+To learn about new query/body parameters, see the documentation of individual requests in [Settings API](../../environment-api/settings.md "Find out what the Dynatrace Settings API offers.").
 
-In the Settings 2.0 framework, each maintenance window is represented by a settings object. An object contains some metadata (like the scope or creation timestamp) and the configuration itself, encapsulated in the **value** object. To learn about the parameters of the maintenance window configuration, query the **Maintenance windows** (`builtin:alerting.maintenance-window`) schema with the [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") request.
+In the Settings 2.0 framework, each maintenance window is represented by a settings object. An object contains some metadata (like the scope or creation timestamp) and the configuration itself, encapsulated in the **value** object. To learn about the parameters of the maintenance window configuration, query the **Maintenance windows** (`builtin:alerting.maintenance-window`) schema with the [GET a schema](../../environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") request.
 
 ## Examples
 
@@ -43,7 +43,7 @@ Settings 2.0
 
 Maintenance windows
 
-To list all maintenance windows, you need the [GET objects](/docs/dynatrace-api/environment-api/settings/objects/get-objects "View multiple settings objects via the Dynatrace API.") request. In query parameters, set **schemaIds** to `builtin:alerting.maintenance-window` and **scope** to `environment`.
+To list all maintenance windows, you need the [GET objects](../../environment-api/settings/objects/get-objects.md "View multiple settings objects via the Dynatrace API.") request. In query parameters, set **schemaIds** to `builtin:alerting.maintenance-window` and **scope** to `environment`.
 
 #### Request URL
 
@@ -411,7 +411,7 @@ Settings 2.0
 
 Maintenance windows
 
-To create a maintenance window, you need the [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") request. In the request body, set **schemaId** to `builtin:alerting.maintenance-window` and **scope** to `environment`. Provide the maintenance window configuration in the **value** object.
+To create a maintenance window, you need the [POST an object](../../environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") request. In the request body, set **schemaId** to `builtin:alerting.maintenance-window` and **scope** to `environment`. Provide the maintenance window configuration in the **value** object.
 
 The response contains the ID of the object that you need to modify the settings.
 
@@ -779,7 +779,7 @@ Settings 2.0
 
 Maintenance windows
 
-To edit a maintenance window, you need the [PUT an object](/docs/dynatrace-api/environment-api/settings/objects/put-object "Edit a settings object via the Dynatrace API.") request.
+To edit a maintenance window, you need the [PUT an object](../../environment-api/settings/objects/put-object.md "Edit a settings object via the Dynatrace API.") request.
 
 #### Request URL
 
@@ -1129,5 +1129,5 @@ PUT https://mySampleEnv.live.dynatrace.com/config/v1/maintenanceWindows/07f476c6
 
 ## Related topics
 
-* [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.")
-* [Maintenance windows API](/docs/dynatrace-api/configuration-api/maintenance-windows-api "Learn what the Dynatrace maintenance windows config API offers.")
+* [Settings API](../../environment-api/settings.md "Find out what the Dynatrace Settings API offers.")
+* [Maintenance windows API](../../configuration-api/maintenance-windows-api.md "Learn what the Dynatrace maintenance windows config API offers.")

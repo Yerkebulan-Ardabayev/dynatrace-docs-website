@@ -46,11 +46,11 @@ Dynatrace Hub предоставляет унифицированный проц
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Определить конечные точки**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/ibm-db#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from IBM Database server.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Определить конечные точки**](ibm-db.md#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from IBM Database server.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Группа ActiveGate**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/ibm-db#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from IBM Database server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Группа ActiveGate**](ibm-db.md#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from IBM Database server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Активировать расширение**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/ibm-db#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from IBM Database server.")
+**Активировать расширение**](ibm-db.md#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from IBM Database server.")
 
 ### Шаг 1: Определить конечные точки
 
@@ -63,7 +63,7 @@ Dynatrace Hub предоставляет унифицированный проц
 
   + Поддерживается только базовая аутентификация.
   + Данные аутентификации, передаваемые в Dynatrace при активации конфигурации мониторинга, скрываются, и их невозможно извлечь.
-  + Для более надёжного хранения учётных данных пользователей и управления ими можно [использовать хранилище учётных данных](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/ibm-monitoring#authentication "IBM DB2 extensions in the Extensions framework.").
+  + Для более надёжного хранения учётных данных пользователей и управления ими можно [использовать хранилище учётных данных](../../../develop-your-extensions/data-sources/sql/ibm-monitoring.md#authentication "IBM DB2 extensions in the Extensions framework.").
 * Нажмите **Next step** (Следующий шаг).
 
 ### Шаг 2: Группа ActiveGate
@@ -83,4 +83,4 @@ Dynatrace Hub предоставляет унифицированный проц
 
 ## Конфигурация мониторинга в формате JSON
 
-Мастер активации расширения содержит динамически обновляемые JSON-данные с конфигурацией мониторинга. Сведения об использовании этих данных для активации расширения через Dynatrace API см. в разделе [Manage Extensions](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.").
+Мастер активации расширения содержит динамически обновляемые JSON-данные с конфигурацией мониторинга. Сведения об использовании этих данных для активации расширения через Dynatrace API см. в разделе [Manage Extensions](../../../manage-extensions.md "Learn how to manage extensions.").

@@ -34,13 +34,13 @@ This walkthrough shows how to add observability to your .NET application using t
 
 ### Determine the API base URL
 
-For details on how to assemble the base OTLP endpoint URL, see [Dynatrace OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). The URL should end in `/api/v2/otlp`.
+For details on how to assemble the base OTLP endpoint URL, see [Dynatrace OTLP API endpoints](../otlp-api.md#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). The URL should end in `/api/v2/otlp`.
 
 ### Get API access token
 
 To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
 
-[Dynatrace OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api#authentication "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") has more details on the format and the necessary access scopes.
+[Dynatrace OTLP API endpoints](../otlp-api.md#authentication "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") has more details on the format and the necessary access scopes.
 
 ## Step 2 Choose how you want to instrument your application
 
@@ -56,7 +56,7 @@ It's a good idea to start with automatic instrumentation and add manual instrume
 
 Enrichment with OneAgent
 
-It is currently not possible to [enrich](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") automatically instrumented services with host-relevant information. To achieve this, you'd need to switch to manual instrumentation.
+It is currently not possible to [enrich](../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") automatically instrumented services with host-relevant information. To achieve this, you'd need to switch to manual instrumentation.
 
 During development
 
@@ -77,7 +77,7 @@ After deployment
 2. [Run (on Unix)ï»¿](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation#shell-scripts) or [import (on Windows)ï»¿](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation#powershell-module-windows) the auto installer, to install and set up all necessary auto instrumentation libraries.
 3. Run your application.
 
-In addition to the instrumentation setup above, you also need to configure the relevant export parameters with environment variables. This includes the [endpoint URL](/docs/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."), the [authentication token](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."), and the [temporality preference for metrics](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#aggregation-temporality "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.").
+In addition to the instrumentation setup above, you also need to configure the relevant export parameters with environment variables. This includes the [endpoint URL](../otlp-api.md#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."), the [authentication token](../otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."), and the [temporality preference for metrics](../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md#aggregation-temporality "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.").
 
 ```
 OTEL_EXPORTER_OTLP_ENDPOINT=[URL]
@@ -434,7 +434,7 @@ ASP.NET
    }
    ```
 
-   The file read operations, parsing the `dt_metadata` files in the example code, attempt to read the [OneAgent data files](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.
+   The file read operations, parsing the `dt_metadata` files in the example code, attempt to read the [OneAgent data files](../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.
 
 1. Install the following packages.
 
@@ -817,7 +817,7 @@ ASP.NET
    }
    ```
 
-   The file read operations, parsing the `dt_metadata` files in the example code, attempt to read the [OneAgent data files](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.
+   The file read operations, parsing the `dt_metadata` files in the example code, attempt to read the [OneAgent data files](../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.
 
 ### Add tracing
 
@@ -882,7 +882,7 @@ logger.LogInformation(eventId: 123, "Log line");
 
 ### Ensure context propagation Optional
 
-[Context propagation](/docs/ingest-from/opentelemetry#context-propagation "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.") is particularly important when network calls (for example, REST) are involved.
+[Context propagation](../../opentelemetry.md#context-propagation "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.") is particularly important when network calls (for example, REST) are involved.
 
 If you are using automatic instrumentation and your networking libraries are covered by automatic instrumentation, this will be automatically taken care of by the instrumentation libraries. Otherwise, your code needs to take this into account.
 
@@ -964,7 +964,7 @@ propagator.Inject(new PropagationContext(activity!.Context, Baggage.Current), re
 
 While Dynatrace automatically captures all OpenTelemetry attributes, only attribute values specified in the allowlist are stored and displayed in the Dynatrace web UI. This prevents accidental storage of personal data, so you can meet your privacy requirements and control the amount of monitoring data stored.
 
-To view your custom attributes, you need to allow them in the Dynatrace web UI first. To learn how to configure attribute storage and masking, see [Attribute redaction](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration#attribute-redaction "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.").
+To view your custom attributes, you need to allow them in the Dynatrace web UI first. To learn how to configure attribute storage and masking, see [Attribute redaction](../../dynatrace-oneagent/oneagent-and-opentelemetry/configuration.md#attribute-redaction "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.").
 
 ## Step 6 Verify data ingestion into Dynatrace
 
@@ -976,4 +976,4 @@ For metrics and logs, go to **Metrics** or ![Logs and Events](https://dt-cdn.net
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific fields](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
+* [Enrich ingested data with Dynatrace-specific fields](../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")

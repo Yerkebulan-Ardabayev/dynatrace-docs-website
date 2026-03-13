@@ -12,12 +12,12 @@ scraped: 2026-03-02T21:29:13.586579
 * 33-min read
 * Updated on May 16, 2022
 
-[Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+[Dashboards Classic](../../dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
 
 This page refers to classic dashboards created using the ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** functionality integrated with Dynatrace Classic.
 
-* If you're already using the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace, see [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") for related documentation.
-* If you're still using classic dashboards, we encourage you to [upgrade your dashboards](/docs/analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.") and benefit from all the latest dashboarding possibilities made available by the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace.
+* If you're already using the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace, see [Dashboards](../../dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") for related documentation.
+* If you're still using classic dashboards, we encourage you to [upgrade your dashboards](../dashboards-upgrade-classic-to-latest.md "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.") and benefit from all the latest dashboarding possibilities made available by the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace.
 
 Tiles you can add to your dashboards are described below.
 
@@ -62,21 +62,21 @@ Editing tips
 
 ## Visualizations
 
-Use visualization tiles to create visual representations of [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") queries that you can pin to your dashboards.
+Use visualization tiles to create visual representations of [Data Explorer](../../explorer.md "Query for metrics and transform results to gain desired insights.") queries that you can pin to your dashboards.
 
 ### Visualization types
 
 Dynatrace offers the following visualization types:
 
-* [Graph](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-graph "Configure and use a graph visualization in Data Explorer and pin it to your dashboards as a graph tile.")
-* [Stacked column](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-column "Configure and use a stacked column visualization in Data Explorer and display it on your dashboards.")
-* [Stacked area](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-area "Configure and use a stacked area visualization in Data Explorer and display it on your dashboards.")
-* [Pie](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-pie "Configure and use a pie/doughnut visualization in Data Explorer and display it on your dashboards.")
-* [Single value](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-single-value "Configure and use a single-value visualization in Data Explorer and display it on your dashboards.")
-* [Table](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-table "Configure and use a table visualization in Data Explorer and display it on your dashboards.")
-* [Top list](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-top-list "Configure a top-list visualization in Data Explorer and display it on your dashboards.")
-* [Heatmap](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-heatmap "Configure and use a heatmap visualization in Data Explorer and pin it to your dashboards as a heatmap tile.")
-* [Honeycomb](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-honeycomb "Configure and use a honeycomb visualization in Data Explorer and display it on your dashboards.")
+* [Graph](visualization-graph.md "Configure and use a graph visualization in Data Explorer and pin it to your dashboards as a graph tile.")
+* [Stacked column](visualization-stacked-column.md "Configure and use a stacked column visualization in Data Explorer and display it on your dashboards.")
+* [Stacked area](visualization-stacked-area.md "Configure and use a stacked area visualization in Data Explorer and display it on your dashboards.")
+* [Pie](visualization-pie.md "Configure and use a pie/doughnut visualization in Data Explorer and display it on your dashboards.")
+* [Single value](visualization-single-value.md "Configure and use a single-value visualization in Data Explorer and display it on your dashboards.")
+* [Table](visualization-table.md "Configure and use a table visualization in Data Explorer and display it on your dashboards.")
+* [Top list](visualization-top-list.md "Configure a top-list visualization in Data Explorer and display it on your dashboards.")
+* [Heatmap](visualization-heatmap.md "Configure and use a heatmap visualization in Data Explorer and pin it to your dashboards as a heatmap tile.")
+* [Honeycomb](visualization-honeycomb.md "Configure and use a honeycomb visualization in Data Explorer and display it on your dashboards.")
 
 #### Interactivity
 
@@ -87,7 +87,7 @@ Interactivity of visualization tiles varies according to the type of visualizati
 * The legend is active: select a legend entry to show or hide the corresponding element on the visualization.
 * All tiles have a tile menu in the upper-right corner:
 
-  + **Configure tile in Data Explorer** opens the tile in [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."), where you can configure the query and visualization.
+  + **Configure tile in Data Explorer** opens the tile in [Data Explorer](../../explorer.md "Query for metrics and transform results to gain desired insights."), where you can configure the query and visualization.
   + **Edit tile** (if you have edit rights) opens the dashboard in edit mode with the current tile selected.
 
 #### Configuration
@@ -96,7 +96,7 @@ To configure a visualization tile from the dashboard editor
 
 1. Display your dashboard and select **Edit**.
 2. Drag a visualization tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard.
-3. Select **Configure tile** to open your tile in [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+3. Select **Configure tile** to open your tile in [Data Explorer](../../explorer.md "Query for metrics and transform results to gain desired insights.").
 4. Configure the query for the tile. You don't have to create the final version all at once; you can build your query iteratively.
 
    * Select **Run query** after you make a query change to see the results of the change.
@@ -121,15 +121,15 @@ To configure a visualization tile from the 'Data Explorer'
    * Select different visualization types to see what works best for your query.
    * The selection of visual settings available depends on the query and visualization type. For details:
 
-     + [Graph](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-graph "Configure and use a graph visualization in Data Explorer and pin it to your dashboards as a graph tile.")
-     + [Stacked column](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-column "Configure and use a stacked column visualization in Data Explorer and display it on your dashboards.")
-     + [Stacked area](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-area "Configure and use a stacked area visualization in Data Explorer and display it on your dashboards.")
-     + [Pie](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-pie "Configure and use a pie/doughnut visualization in Data Explorer and display it on your dashboards.")
-     + [Single value](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-single-value "Configure and use a single-value visualization in Data Explorer and display it on your dashboards.")
-     + [Table](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-table "Configure and use a table visualization in Data Explorer and display it on your dashboards.")
-     + [Top list](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-top-list "Configure a top-list visualization in Data Explorer and display it on your dashboards.")
-     + [Heatmap](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-heatmap "Configure and use a heatmap visualization in Data Explorer and pin it to your dashboards as a heatmap tile.")
-     + [Honeycomb](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-honeycomb "Configure and use a honeycomb visualization in Data Explorer and display it on your dashboards.")
+     + [Graph](visualization-graph.md "Configure and use a graph visualization in Data Explorer and pin it to your dashboards as a graph tile.")
+     + [Stacked column](visualization-stacked-column.md "Configure and use a stacked column visualization in Data Explorer and display it on your dashboards.")
+     + [Stacked area](visualization-stacked-area.md "Configure and use a stacked area visualization in Data Explorer and display it on your dashboards.")
+     + [Pie](visualization-pie.md "Configure and use a pie/doughnut visualization in Data Explorer and display it on your dashboards.")
+     + [Single value](visualization-single-value.md "Configure and use a single-value visualization in Data Explorer and display it on your dashboards.")
+     + [Table](visualization-table.md "Configure and use a table visualization in Data Explorer and display it on your dashboards.")
+     + [Top list](visualization-top-list.md "Configure a top-list visualization in Data Explorer and display it on your dashboards.")
+     + [Heatmap](visualization-heatmap.md "Configure and use a heatmap visualization in Data Explorer and pin it to your dashboards as a heatmap tile.")
+     + [Honeycomb](visualization-honeycomb.md "Configure and use a honeycomb visualization in Data Explorer and display it on your dashboards.")
    * Some visualizations (for example, heatmaps) can display only one metric. To display a different metric in the visualization, select the letter next to the metric you want to visualize. In this example, we would change the selection from **A** (`CPU usage %`) to **B** (`Memory used %`).
 
      ![Change metric selection](https://dt-cdn.net/images/select-metric-379-6a5af28695.png)
@@ -619,11 +619,11 @@ To configure this tile type from the dashboard editor
 
    **Performance metric based on user actions:**
 
-   * [Apdex](/docs/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.")
-   * [User actions](/docs/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")
-   * [Load actions](/docs/observe/digital-experience/rum-concepts/user-actions#load-action "Learn what user actions are and how they help you understand what users do with your application.")
-   * [XHR actions](/docs/observe/digital-experience/rum-concepts/user-actions#xhr-action "Learn what user actions are and how they help you understand what users do with your application.")
-   * [Custom actions](/docs/observe/digital-experience/rum-concepts/user-actions#custom-action "Learn what user actions are and how they help you understand what users do with your application.")
+   * [Apdex](../../../observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings.md "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.")
+   * [User actions](../../../observe/digital-experience/rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application.")
+   * [Load actions](../../../observe/digital-experience/rum-concepts/user-actions.md#load-action "Learn what user actions are and how they help you understand what users do with your application.")
+   * [XHR actions](../../../observe/digital-experience/rum-concepts/user-actions.md#xhr-action "Learn what user actions are and how they help you understand what users do with your application.")
+   * [Custom actions](../../../observe/digital-experience/rum-concepts/user-actions.md#custom-action "Learn what user actions are and how they help you understand what users do with your application.")
    * Errors
 
    **Behavior metric based on sessions or users:**
@@ -646,7 +646,7 @@ To pin this tile to your dashboard with filters set
 
 **Troubleshooting:**
 
-* If you don't see data on the world map, you might need to map your internal IP addresses to locations for your [web](/docs/observe/digital-experience/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web "Configure Dynatrace to use local addresses to understand where the users of your web applications are."), [mobile](/docs/observe/digital-experience/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile "Configure Dynatrace to use local addresses to understand where the users of your mobile applications are."), and [custom applications](/docs/observe/digital-experience/custom-applications/additional-configuration/map-internal-ip-addresses-to-locations-custom "Configure Dynatrace to use local addresses to understand where the users of your custom applications are.").
+* If you don't see data on the world map, you might need to map your internal IP addresses to locations for your [web](../../../observe/digital-experience/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web.md "Configure Dynatrace to use local addresses to understand where the users of your web applications are."), [mobile](../../../observe/digital-experience/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile.md "Configure Dynatrace to use local addresses to understand where the users of your mobile applications are."), and [custom applications](../../../observe/digital-experience/custom-applications/additional-configuration/map-internal-ip-addresses-to-locations-custom.md "Configure Dynatrace to use local addresses to understand where the users of your custom applications are.").
 * Remember that the timeframe of a world map tile is always **Last 2 hours**, regardless of how you set the global or dashboard timeframe.
 
 ### Key user action overview
@@ -836,7 +836,7 @@ To configure this tile type from the dashboard editor
 
 ### Web application
 
-Displays key performance indicators related to the selected application: [Apdex rating](/docs/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance."), [user actions](/docs/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.") per minute, and number of JavaScript errors per minute.
+Displays key performance indicators related to the selected application: [Apdex rating](../../../observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings.md "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance."), [user actions](../../../observe/digital-experience/rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application.") per minute, and number of JavaScript errors per minute.
 
 #### Drilldowns
 
@@ -861,7 +861,7 @@ To pin this tile to your dashboard with filters set
 
 ### Key user action
 
-Displays key performance indicators related to the selected application and key [user action](/docs/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application."): user action duration, user actions/min, and number of errors/min.
+Displays key performance indicators related to the selected application and key [user action](../../../observe/digital-experience/rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application."): user action duration, user actions/min, and number of errors/min.
 
 #### Drilldowns
 
@@ -904,7 +904,7 @@ To configure this tile type from the dashboard editor
 
 1. Drag a **User Sessions Query** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
 2. Select **Configure tile** in the **User Sessions Query** configuration pane
-3. On the **User sessions query** page, [create a query](/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") and select **Run query**
+3. On the **User sessions query** page, [create a query](../../../observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") and select **Run query**
 4. When you have a query that you want to link to your tile, select **Save changes to dashboard**
 5. Optional Select a custom timeframe
 6. Optional Select a custom management zone
@@ -926,7 +926,7 @@ Displays the following:
 * **Tiles filters\*Environment**
 * Optional Set **Title**
 
-For more information, see [Configure and monitor service-level objectives with Dynatrace](/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo#slodashboardtile "Create, configure, and monitor service-level objectives with Dynatrace.").
+For more information, see [Configure and monitor service-level objectives with Dynatrace](../../../deliver/service-level-objectives-classic/configure-and-monitor-slo.md#slodashboardtile "Create, configure, and monitor service-level objectives with Dynatrace.").
 
 #### Drilldowns
 
@@ -1163,7 +1163,7 @@ Displays the number of problems that are currently watched and active against th
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open your [Problems](/docs/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.") feed.
+* From the tile menu, select **View details** to open your [Problems](../../../dynatrace-intelligence/root-cause-analysis/concepts.md "Get acquainted with root cause analysis concepts.") feed.
 
 #### Configuration
 
@@ -1176,11 +1176,11 @@ To configure this tile type from the dashboard editor
 
 ### Smartscape
 
-Synthetically visualizes your environment components based on [Smartscape](/docs/analyze-explore-automate/smartscape-classic "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") analysis. The tile display constantly cycles through the five Smartscape layers: applications, services, OS processes, hosts, and datacenters. For each layer, the tile shows the total number in your environment and, in red, the number currently affected by problems.
+Synthetically visualizes your environment components based on [Smartscape](../../smartscape-classic.md "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") analysis. The tile display constantly cycles through the five Smartscape layers: applications, services, OS processes, hosts, and datacenters. For each layer, the tile shows the total number in your environment and, in red, the number currently affected by problems.
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open your [Smartscape](/docs/analyze-explore-automate/smartscape-classic#services "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") topology view to the Services layer.
+* From the tile menu, select **View details** to open your [Smartscape](../../smartscape-classic.md#services "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") topology view to the Services layer.
 
 #### Configuration
 

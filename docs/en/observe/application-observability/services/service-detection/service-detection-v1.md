@@ -22,7 +22,7 @@ It provides detection capabilities based on technology-specific service types, e
 * **Request naming**: Tracks key business transactions.
 * **Failure detection**: Identifies errors and problematic requests.
 
-In addition to SDv1, you can also use [Service Detection v2](/docs/observe/application-observability/services/service-detection/service-detection-v2 "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.") (SDv2), which provides unified service detection rules across OpenTelemetry and OneAgent data sources. SDv2 is available in general availability for OpenTelemetry and in public preview for OneAgent on Kubernetes.
+In addition to SDv1, you can also use [Service Detection v2](service-detection-v2.md "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.") (SDv2), which provides unified service detection rules across OpenTelemetry and OneAgent data sources. SDv2 is available in general availability for OpenTelemetry and in public preview for OneAgent on Kubernetes.
 
 ## Service types
 
@@ -47,7 +47,7 @@ With SDv1, you can configure the options described below.
 * Create rules for unmonitored hosts.
 * Fix web server naming issues.
 
-For details, see [Service detection rules](/docs/observe/application-observability/services/service-detection/service-detection-v1/customize-service-detection "Use detection rules to customize and enhance the automated detection of your services.").
+For details, see [Service detection rules](service-detection-v1/customize-service-detection.md "Use detection rules to customize and enhance the automated detection of your services.").
 
 ### Service naming
 
@@ -55,7 +55,7 @@ For details, see [Service detection rules](/docs/observe/application-observabili
 * Custom service naming rules let you create your own naming standards.
 * Service name formats with placeholders for consistent naming conventions.
 
-For additional information, see [Service naming rules](/docs/observe/application-observability/services/service-detection/service-detection-v1/customize-service-naming "Use naming rules to customize and enhance the automated naming of your services.")
+For additional information, see [Service naming rules](service-detection-v1/customize-service-naming.md "Use naming rules to customize and enhance the automated naming of your services.")
 
 ### Request naming
 
@@ -63,7 +63,7 @@ For additional information, see [Service naming rules](/docs/observe/application
 * Create intuitive names for business transactions.
 * Track operations at a granular level.
 
-Check out [Set up request naming](/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer.") for details.
+Check out [Set up request naming](service-detection-v1/set-up-request-naming.md "Adjust request naming and define the operations your services offer.") for details.
 
 ### Failure detection
 
@@ -71,10 +71,10 @@ Check out [Set up request naming](/docs/observe/application-observability/servic
 * Define custom error rules.
 * Handle HTTP errors and exceptions based on your needs.
 
-See [Configure service failure detection](/docs/observe/application-observability/services/service-detection/service-detection-v1/configure-service-failure-detection "Discover which service error types Dynatrace automatically detects and learn how to adjust failure detection settings to meet your specific requirements.") for more information.
+See [Configure service failure detection](service-detection-v1/configure-service-failure-detection.md "Discover which service error types Dynatrace automatically detects and learn how to adjust failure detection settings to meet your specific requirements.") for more information.
 
 ## Related topics
 
-* [Service Detection v2](/docs/observe/application-observability/services/service-detection/service-detection-v2 "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.")
-* [Service detection API](/docs/dynatrace-api/configuration-api/service-api/detection-rules "Learn what the Dynatrace service detection rules config API offers.")
-* [Process group detection](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection")
+* [Service Detection v2](service-detection-v2.md "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.")
+* [Service detection API](../../../../dynatrace-api/configuration-api/service-api/detection-rules.md "Learn what the Dynatrace service detection rules config API offers.")
+* [Process group detection](../../../infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection")

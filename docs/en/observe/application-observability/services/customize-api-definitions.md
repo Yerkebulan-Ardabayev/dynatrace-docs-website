@@ -33,4 +33,4 @@ The user-defined **easyTravel** API is now included in the code-level analysis.
 
 ## Related topics
 
-* [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.")
+* [Settings API](../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.")

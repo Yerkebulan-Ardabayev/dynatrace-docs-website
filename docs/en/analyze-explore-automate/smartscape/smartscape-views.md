@@ -19,18 +19,18 @@ Whether you're exploring service relationships, understanding infrastructure dep
 
 [### Smartscape on Grail view
 
-Discover all entities and relationships in your environment and focus on what's relevant to you and your team.](/docs/analyze-explore-automate/smartscape/smartscape-views/smartscape-on-grail-view "Discover all entities and relationships in your environment and select relevant segments with the help of Grail.")[### Infrastructure overview
+Discover all entities and relationships in your environment and focus on what's relevant to you and your team.](smartscape-views/smartscape-on-grail-view.md "Discover all entities and relationships in your environment and select relevant segments with the help of Grail.")[### Infrastructure overview
 
-Gain insight into what components are running, how they're connected, and where the impact may spread.](/docs/analyze-explore-automate/smartscape/smartscape-views/infrastructure-overview "Visualize call-type relationships between components and gain insights into process dependencies and workload distribution.")[### Problem graph
+Gain insight into what components are running, how they're connected, and where the impact may spread.](smartscape-views/infrastructure-overview.md "Visualize call-type relationships between components and gain insights into process dependencies and workload distribution.")[### Problem graph
 
-Analyze problem impact and blast radius across your environment.](/docs/analyze-explore-automate/smartscape/smartscape-views/problem-graph "Use Problem graph to visualize and quickly identify problems and nodes that require immediate attention.")[### Service dependency graph
+Analyze problem impact and blast radius across your environment.](smartscape-views/problem-graph.md "Use Problem graph to visualize and quickly identify problems and nodes that require immediate attention.")[### Service dependency graph
 
-Discover how your services connect and communicate in real time.](/docs/analyze-explore-automate/smartscape/smartscape-views/service-dependency-graph "Visualize relationships between services in your environment to identify dependency chains and and uncover critical dependencies.")[### Kubernetes overview
+Discover how your services connect and communicate in real time.](smartscape-views/service-dependency-graph.md "Visualize relationships between services in your environment to identify dependency chains and and uncover critical dependencies.")[### Kubernetes overview
 
-Map your Kubernetes environments from clusters to components.](/docs/analyze-explore-automate/smartscape/smartscape-views/kubernetes-overview "Get a high-level overview of your Kubernetes environment to navigate dependencies and identify misconfigurations.")[### AWS EC2 ecosystem overview
+Map your Kubernetes environments from clusters to components.](smartscape-views/kubernetes-overview.md "Get a high-level overview of your Kubernetes environment to navigate dependencies and identify misconfigurations.")[### AWS EC2 ecosystem overview
 
-Visualize your AWS EC2 ecosystem and resource relationships.](/docs/analyze-explore-automate/smartscape/smartscape-views/aws-ec2-ecosystem-overview "Visualize your AWS EC2 ecosystem and resource relationships.")
+Visualize your AWS EC2 ecosystem and resource relationships.](smartscape-views/aws-ec2-ecosystem-overview.md "Visualize your AWS EC2 ecosystem and resource relationships.")
 
 ## Related topics
 
-* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* [Smartscape](../smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")

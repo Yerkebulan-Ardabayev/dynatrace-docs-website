@@ -13,7 +13,7 @@ scraped: 2026-03-04T21:31:12.564761
 * 7-min read
 * Published Jan 14, 2025
 
-The page load waterfall in ![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals** provides powerful visualization and analysis capabilities for understanding web application performance at the [page instance](/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts/pages-views-and-navigations#pages-and-page-instances "Understand how pages, views, and navigations are defined for web frontends the New RUM Experience.") level. This feature helps you analyze individual page loads, identify performance bottlenecks, and optimize the user experience by examining resource loading patterns and timing metrics.
+The page load waterfall in ![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals** provides powerful visualization and analysis capabilities for understanding web application performance at the [page instance](../web-frontends/concepts/pages-views-and-navigations.md#pages-and-page-instances "Understand how pages, views, and navigations are defined for web frontends the New RUM Experience.") level. This feature helps you analyze individual page loads, identify performance bottlenecks, and optimize the user experience by examining resource loading patterns and timing metrics.
 
 ![Example page load waterfall](https://dt-cdn.net/images/rum-page-load-waterfall-1915-f8def7fc9c.png)
 

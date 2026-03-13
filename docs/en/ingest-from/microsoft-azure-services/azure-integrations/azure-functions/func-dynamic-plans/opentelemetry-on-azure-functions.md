@@ -16,21 +16,21 @@ scraped: 2026-03-06T21:27:46.855290
 Dynatrace version 1.240+ OneAgent version 1.193+
 
 Dynatrace uses [OpenTelemetryï»¿](https://dt-url.net/y903u4j) to monitor Azure Functions invocations.
-For that purpose, Dynatrace provides language-specific packages, such as [`Dynatrace.OpenTelemetry.Instrumentation.AzureFunctions.Core` for .NET](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet "Monitor Azure Functions with OpenTelemetry for .NET and Dynatrace."), that can be used in combination with default OpenTelemetry SDKs and APIs.
+For that purpose, Dynatrace provides language-specific packages, such as [`Dynatrace.OpenTelemetry.Instrumentation.AzureFunctions.Core` for .NET](opentelemetry-on-azure-functions-dotnet.md "Monitor Azure Functions with OpenTelemetry for .NET and Dynatrace."), that can be used in combination with default OpenTelemetry SDKs and APIs.
 
 ## Installation
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Activate the OneAgent feature**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions#oneagent-feature "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Activate the OneAgent feature**](opentelemetry-on-azure-functions.md#oneagent-feature "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Select a configuration method**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions#choose-config-method "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.")[![Step 3 optional](https://dt-cdn.net/images/dotted-step-3-e2082c1921.svg "Step 3 optional")
+**Select a configuration method**](opentelemetry-on-azure-functions.md#choose-config-method "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.")[![Step 3 optional](https://dt-cdn.net/images/dotted-step-3-e2082c1921.svg "Step 3 optional")
 
-**Specify a Dynatrace API endpoint**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions#specify-endpoint "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**Specify a Dynatrace API endpoint**](opentelemetry-on-azure-functions.md#specify-endpoint "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
 **Apply the configuration to your function app**](#apply-config)[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
 
-**Instrument the function code**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions#instrument-code "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.")
+**Instrument the function code**](opentelemetry-on-azure-functions.md#instrument-code "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.")
 
 ### Step 1 Activate the OneAgent feature
 
@@ -70,9 +70,9 @@ Leave the settings not listed by Dynatrace unchanged.
 
 Adding the required API calls to monitor function invocations via OpenTelemetry is specific to languages and their respective OpenTelemetry distribution:
 
-* **.NET (C#):** [Trace Azure Functions written in .NET](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet "Monitor Azure Functions with OpenTelemetry for .NET and Dynatrace.")
-* **Node.js (Javascript):** [Trace Azure Functions written in Node.js](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-nodejs "Monitor Azure Functions with OpenTelemetry for Node.js and Dynatrace.")
-* **Python:** [Trace Azure Functions written in Python](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-python "Monitor Azure Functions with OpenTelemetry for Python and Dynatrace.")
+* **.NET (C#):** [Trace Azure Functions written in .NET](opentelemetry-on-azure-functions-dotnet.md "Monitor Azure Functions with OpenTelemetry for .NET and Dynatrace.")
+* **Node.js (Javascript):** [Trace Azure Functions written in Node.js](opentelemetry-on-azure-functions-nodejs.md "Monitor Azure Functions with OpenTelemetry for Node.js and Dynatrace.")
+* **Python:** [Trace Azure Functions written in Python](opentelemetry-on-azure-functions-python.md "Monitor Azure Functions with OpenTelemetry for Python and Dynatrace.")
 
 ## Known limitations
 
@@ -80,6 +80,6 @@ The Dynatrace Azure Functions integration doesn't capture the IP addresses of ou
 
 ## Related topics
 
-* [Monitor Azure Functions on App Service Plan for Windows](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.")
-* [Set up Dynatrace on Microsoft Azure](/docs/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
-* [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* [Monitor Azure Functions on App Service Plan for Windows](../integrate-oneagent-on-azure-functions.md "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.")
+* [Set up Dynatrace on Microsoft Azure](../../../../microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")
+* [OneAgent platform and capability support matrix](../../../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

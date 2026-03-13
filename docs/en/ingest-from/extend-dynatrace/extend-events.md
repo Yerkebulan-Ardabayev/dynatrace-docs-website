@@ -17,7 +17,7 @@ Dynatrace provides a dedicated REST API for the ingestion and management of cust
 * ActiveGate, for event ingestion and querying of existing events
 * OneAgent, for event ingestion only
 
-The full API documentation is available at [Events API v2](/docs/dynatrace-api/environment-api/events-v2 "Find out what you can do with the Dynatrace Events API v2.").
+The full API documentation is available at [Events API v2](../../dynatrace-api/environment-api/events-v2.md "Find out what you can do with the Dynatrace Events API v2.").
 
 ## Manage events with ActiveGate
 
@@ -33,7 +33,7 @@ Dynatrace supports the following API endpoints for querying and ingesting custom
 
 Environment ActiveGates listen by default on port `9999`. If you changed that port, adjust the port in the URL accordingly.
 
-Be sure to specify your [environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") at the correct location in the URL.
+Be sure to specify your [environment ID](../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") at the correct location in the URL.
 
 ### Authentication
 
@@ -45,7 +45,7 @@ Authorization: Api-Token dt.....
 
 To obtain an access token, in Dynatrace, go to **Access Tokens**. Depending on whether you want to query or ingest events, your token needs the scopes `events.read` or `events.ingest`, respectively. You can also combine scopes.
 
-For more information on access tokens, see [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+For more information on access tokens, see [Dynatrace API - Tokens and authentication](../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
 
 ### Network requirements
 
@@ -58,7 +58,7 @@ For more information on access tokens, see [Dynatrace API - Tokens and authentic
 
 ### curl sample commands
 
-See [Events API v2](/docs/dynatrace-api/environment-api/events-v2 "Find out what you can do with the Dynatrace Events API v2.") for a full list of ActiveGate examples for the different request types.
+See [Events API v2](../../dynatrace-api/environment-api/events-v2.md "Find out what you can do with the Dynatrace Events API v2.") for a full list of ActiveGate examples for the different request types.
 
 ## Send events to OneAgent
 
@@ -106,7 +106,7 @@ Enable for a single host
 
 With EEC enabled, the OneAgent installations on the respective hosts will start accepting requests at the URL `http://localhost:14499/v2/events/ingest`.
 
-OneAgent uses by default the TCP port 14499 for this endpoint. You can change the port with [`oneagentctl`](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api#communication-port "Use the Dynatrace API to retrieve the metrics of monitored entities.").
+OneAgent uses by default the TCP port 14499 for this endpoint. You can change the port with [`oneagentctl`](extend-metrics/ingestion-methods/oneagent-metric-api.md#communication-port "Use the Dynatrace API to retrieve the metrics of monitored entities.").
 
 EEC unavailable on container setups
 
@@ -124,7 +124,7 @@ Being a local-only endpoint, OneAgent does not require authentication.
 
 ### curl sample command
 
-The following curl command sends a `POST` request to the local OneAgent endpoint at `/v2/events/ingest`, indicates a JSON content type, and provides the [JSON event data](/docs/dynatrace-api/environment-api/events-v2/post-event#request-body-objects "Ingests an event via the Dynatrace API.") using the `--data` parameter.
+The following curl command sends a `POST` request to the local OneAgent endpoint at `/v2/events/ingest`, indicates a JSON content type, and provides the [JSON event data](../../dynatrace-api/environment-api/events-v2/post-event.md#request-body-objects "Ingests an event via the Dynatrace API.") using the `--data` parameter.
 
 ```
 curl --request POST --url http://localhost:14499/v2/events/ingest --header "Content-type: application/json" --data "{ \"eventType\": \"AVAILABILITY_EVENT\", \"title\": \"Demo title\" }"
@@ -132,4 +132,4 @@ curl --request POST --url http://localhost:14499/v2/events/ingest --header "Cont
 
 ## Related topics
 
-* [Events API v2](/docs/dynatrace-api/environment-api/events-v2 "Find out what you can do with the Dynatrace Events API v2.")
+* [Events API v2](../../dynatrace-api/environment-api/events-v2.md "Find out what you can do with the Dynatrace Events API v2.")

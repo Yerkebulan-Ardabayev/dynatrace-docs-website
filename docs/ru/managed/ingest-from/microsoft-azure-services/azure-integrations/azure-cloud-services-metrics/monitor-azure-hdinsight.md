@@ -23,7 +23,7 @@ Dynatrace получает метрики из Azure Metrics API для Azure HD
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Включите мониторинг Azure в Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](../../../../../ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring.md "Включите мониторинг Azure в Dynatrace.").
 
 ## Установка OneAgent (необязательно)
 
@@ -35,11 +35,11 @@ Dynatrace получает метрики из Azure Metrics API для Azure HD
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Создание скрипта установки**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight#step-1 "Мониторинг Azure HDInsight и просмотр доступных метрик.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Создание скрипта установки**](../../../../../ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight.md#step-1 "Мониторинг Azure HDInsight и просмотр доступных метрик.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Создание кластера HDInsight**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight#step-2 "Мониторинг Azure HDInsight и просмотр доступных метрик.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Создание кластера HDInsight**](../../../../../ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight.md#step-2 "Мониторинг Azure HDInsight и просмотр доступных метрик.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Перезапуск процессов**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight#step-3 "Мониторинг Azure HDInsight и просмотр доступных метрик.")
+**Перезапуск процессов**](../../../../../ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight.md#step-3 "Мониторинг Azure HDInsight и просмотр доступных метрик.")
 
 ### Шаг 1: Создание скрипта установки
 
@@ -112,7 +112,7 @@ wget  -O Dynatrace-OneAgent-Linux-1.137.163.sh "https://YOURTENANT.live.dynatrac
 
 ### Настройка зоны управления
 
-Для импорта дашборда для Azure HDInsight необходимо [настроить зону управления](/docs/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Создание и назначение прав доступа к зонам управления.") для ограничения отображаемых на дашборде объектов только узлами кластера и исключения других хостов, не относящихся к сервису.
+Для импорта дашборда для Azure HDInsight необходимо [настроить зону управления](../../../../../manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Создание и назначение прав доступа к зонам управления.") для ограничения отображаемых на дашборде объектов только узлами кластера и исключения других хостов, не относящихся к сервису.
 
 При создании зоны управления для этого дашборда:
 
@@ -132,7 +132,7 @@ wget  -O Dynatrace-OneAgent-Linux-1.137.163.sh "https://YOURTENANT.live.dynatrac
 
 ![Azure management zone](https://dt-cdn.net/images/hdinsightmanagementzone-2629-26e6039169.webp)
 
-После создания зоны управления назначьте её вашему дашборду (из дашборда выберите **Edit** > **Settings** > **Default management zone**). Дополнительную информацию см. в разделе [Временные рамки и зона управления дашборда](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Узнайте о настройках временных рамок и зон управления дашбордов Dynatrace.").
+После создания зоны управления назначьте её вашему дашборду (из дашборда выберите **Edit** > **Settings** > **Default management zone**). Дополнительную информацию см. в разделе [Временные рамки и зона управления дашборда](../../../../../analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe.md "Узнайте о настройках временных рамок и зон управления дашбордов Dynatrace.").
 
 ## Доступные метрики
 

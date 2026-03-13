@@ -12,18 +12,18 @@ scraped: 2026-03-01T21:16:56.958006
 * Чтение займёт 2 минуты
 * Опубликовано 16 мая 2022 г.
 
-Вы можете использовать теги и зоны управления для организации объектов очередей в вашей среде и упрощения их поиска. Теги и зоны управления применяются к объектам очередей так же, как и к другим объектам, однако их необходимо применять через [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Настройте entity selector для конечных точек Environment API.").
+Вы можете использовать теги и зоны управления для организации объектов очередей в вашей среде и упрощения их поиска. Теги и зоны управления применяются к объектам очередей так же, как и к другим объектам, однако их необходимо применять через [entity selector](../../../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Настройте entity selector для конечных точек Environment API.").
 
 ## Определение автоматически применяемого тега
 
-Выполните следующие шаги, чтобы автоматически применять тег к объектам очередей. Дополнительные сведения о тегах см. в разделе [Define and apply tags](/docs/manage/tags-and-metadata/setup/how-to-define-tags "Узнайте, как определять и применять теги вручную и автоматически.").
+Выполните следующие шаги, чтобы автоматически применять тег к объектам очередей. Дополнительные сведения о тегах см. в разделе [Define and apply tags](../../../../manage/tags-and-metadata/setup/how-to-define-tags.md "Узнайте, как определять и применять теги вручную и автоматически.").
 
 1. Перейдите в **Settings** > **Tags** > **Automatically applied tags**.
 2. Выберите **Create tag** и введите имя нового тега в поле **Tag name**.
 3. Выберите **Add a new rule**.
 4. Необязательно: укажите **Optional tag value**. Это значение будет отображаться рядом с именем тега после `:` и используется для предоставления более точной информации об объекте очереди.
 5. В списке **Rule type** выберите тип **Entity selector**.
-6. Используйте один из следующих фрагментов кода для применения тегов из объекта сервиса, группы процессов, хоста или группы хостов к объекту очереди через [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector#tag "Настройте entity selector для конечных точек Environment API."). Замените `yourKey:yourValue` собственными значениями тегов.
+6. Используйте один из следующих фрагментов кода для применения тегов из объекта сервиса, группы процессов, хоста или группы хостов к объекту очереди через [entity selector](../../../../dynatrace-api/environment-api/entity-v2/entity-selector.md#tag "Настройте entity selector для конечных точек Environment API."). Замените `yourKey:yourValue` собственными значениями тегов.
 
    Сервисы-производители
 
@@ -63,12 +63,12 @@ scraped: 2026-03-01T21:16:56.958006
 
 ## Добавление объектов очередей в существующие зоны управления
 
-Выполните следующие шаги, чтобы добавить объекты очередей в существующие зоны управления. Дополнительные сведения о зонах управления см. в разделе [Set up management zones](/docs/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Создание зон управления и назначение прав доступа.").
+Выполните следующие шаги, чтобы добавить объекты очередей в существующие зоны управления. Дополнительные сведения о зонах управления см. в разделе [Set up management zones](../../../../manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Создание зон управления и назначение прав доступа.").
 
 1. Перейдите в **Settings** > **Preferences** > **Management zones**.
 2. Отредактируйте существующую зону управления и выберите **Add a new rule**.
 3. В списке **Rule applies to** выберите **Entity selector**.
-4. Используйте один из следующих фрагментов кода для добавления объекта очереди на основе тегов из объекта сервиса, группы процессов, хоста или группы хостов в зону управления через [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector#tag "Настройте entity selector для конечных точек Environment API."). Замените `yourKey:yourValue` собственными значениями тегов.
+4. Используйте один из следующих фрагментов кода для добавления объекта очереди на основе тегов из объекта сервиса, группы процессов, хоста или группы хостов в зону управления через [entity selector](../../../../dynatrace-api/environment-api/entity-v2/entity-selector.md#tag "Настройте entity selector для конечных точек Environment API."). Замените `yourKey:yourValue` собственными значениями тегов.
 
 Сервисы-производители
 
@@ -109,5 +109,5 @@ type(QUEUE),toRelationships.isInstanceOf(type(QUEUE_INSTANCE),fromRelationships.
 
 ## Смотрите также
 
-* [Define and apply tags](/docs/manage/tags-and-metadata/setup/how-to-define-tags "Узнайте, как определять и применять теги вручную и автоматически.")
-* [Set up management zones](/docs/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Создание зон управления и назначение прав доступа.")
+* [Define and apply tags](../../../../manage/tags-and-metadata/setup/how-to-define-tags.md "Узнайте, как определять и применять теги вручную и автоматически.")
+* [Set up management zones](../../../../manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Создание зон управления и назначение прав доступа.")

@@ -16,9 +16,9 @@ scraped: 2026-03-06T21:22:20.349191
 Разрешения Dynatrace структурированы на трёх уровнях:
 
 Разрешения являются кумулятивными и назначаются в разделе **Account Management** > **Identity & access management**.
-Подробнее см. в разделе [Работа с политиками](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+Подробнее см. в разделе [Работа с политиками](../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
 
 ## Связанные темы
 
-* [Лицензирование Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
-* [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
+* [Лицензирование Dynatrace](../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* [Account Management](../manage/account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health.")

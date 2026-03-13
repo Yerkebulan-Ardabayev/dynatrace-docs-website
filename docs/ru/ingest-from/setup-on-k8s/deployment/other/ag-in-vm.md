@@ -16,13 +16,13 @@ scraped: 2026-03-05T21:33:23.286611
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Начало установки**](/docs/ingest-from/setup-on-k8s/deployment/other/ag-in-vm#start-installation "Настройка и конфигурация ActiveGate для мониторинга платформы Kubernetes в виртуальной машине.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Начало установки**](ag-in-vm.md#start-installation "Настройка и конфигурация ActiveGate для мониторинга платформы Kubernetes в виртуальной машине.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Загрузка установщика**](/docs/ingest-from/setup-on-k8s/deployment/other/ag-in-vm#download-installer "Настройка и конфигурация ActiveGate для мониторинга платформы Kubernetes в виртуальной машине.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Загрузка установщика**](ag-in-vm.md#download-installer "Настройка и конфигурация ActiveGate для мониторинга платформы Kubernetes в виртуальной машине.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Запуск установщика**](/docs/ingest-from/setup-on-k8s/deployment/other/ag-in-vm#run-installer "Настройка и конфигурация ActiveGate для мониторинга платформы Kubernetes в виртуальной машине.")[![Шаг 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Шаг 4")
+**Запуск установщика**](ag-in-vm.md#run-installer "Настройка и конфигурация ActiveGate для мониторинга платформы Kubernetes в виртуальной машине.")[![Шаг 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Шаг 4")
 
-**Подключение кластеров Kubernetes к Dynatrace**](/docs/ingest-from/setup-on-k8s/deployment/other/ag-in-vm#connect-clusters-to-dynatrace "Настройка и конфигурация ActiveGate для мониторинга платформы Kubernetes в виртуальной машине.")
+**Подключение кластеров Kubernetes к Dynatrace**](ag-in-vm.md#connect-clusters-to-dynatrace "Настройка и конфигурация ActiveGate для мониторинга платформы Kubernetes в виртуальной машине.")
 
 ## Шаг 1 Начало установки
 
@@ -35,8 +35,8 @@ scraped: 2026-03-05T21:33:23.286611
 
 Способ загрузки установщика зависит от вашей конфигурации и потребностей. Вы можете загрузить установщик непосредственно на сервер, на котором планируете установить Environment ActiveGate, или загрузить его на другую машину и затем перенести на сервер.
 
-1. Выберите [Маршрутизация трафика OneAgent](/docs/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose "Узнайте о возможностях маршрутизации и мониторинга ActiveGate.") в качестве [назначения ActiveGate](/docs/ingest-from/dynatrace-activegate#purposes "Основные концепции, связанные с ActiveGate.").
-2. Укажите токен доступа с областью действия [`PaaS Integration - InstallerDownload`](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Узнайте о концепции токена доступа и его областях действия."). Этот токен необходим для загрузки установщика ActiveGate из вашей среды. Если у вас нет токена доступа, вы можете создать его прямо в интерфейсе. Токен автоматически добавляется к командам загрузки и установки, которые вы будете использовать позже.
+1. Выберите [Маршрутизация трафика OneAgent](../../../dynatrace-activegate/capabilities/routing-monitoring-purpose.md "Узнайте о возможностях маршрутизации и мониторинга ActiveGate.") в качестве [назначения ActiveGate](../../../dynatrace-activegate.md#purposes "Основные концепции, связанные с ActiveGate.").
+2. Укажите токен доступа с областью действия [`PaaS Integration - InstallerDownload`](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Узнайте о концепции токена доступа и его областях действия."). Этот токен необходим для загрузки установщика ActiveGate из вашей среды. Если у вас нет токена доступа, вы можете создать его прямо в интерфейсе. Токен автоматически добавляется к командам загрузки и установки, которые вы будете использовать позже.
 3. Выберите **Download installer**. Доступны два варианта:
 
    * Загрузка через команду оболочки. Скопируйте и выполните команду `wget`.
@@ -51,11 +51,11 @@ scraped: 2026-03-05T21:33:23.286611
 
 ### Добавление сертификата ЦС Kubernetes в хранилище доверенных сертификатов Рекомендуется
 
-Инструкции по добавлению сертификата в файл хранилища доверенных сертификатов см. в разделе [Доверенные корневые сертификаты для ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-trusted-root-certificates-on-activegate "Узнайте, как указать пользовательский файл хранилища доверенных сертификатов.").
+Инструкции по добавлению сертификата в файл хранилища доверенных сертификатов см. в разделе [Доверенные корневые сертификаты для ActiveGate](../../../dynatrace-activegate/configuration/configure-trusted-root-certificates-on-activegate.md "Узнайте, как указать пользовательский файл хранилища доверенных сертификатов.").
 
 ### Настройка установки
 
-Вы можете добавить дополнительные [параметры](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate "Узнайте о параметрах командной строки для ActiveGate на Linux.") к команде установки для настройки. Например, чтобы установить ActiveGate в другой каталог, используйте параметр `INSTALL=<path>`:
+Вы можете добавить дополнительные [параметры](../../../dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate.md "Узнайте о параметрах командной строки для ActiveGate на Linux.") к команде установки для настройки. Например, чтобы установить ActiveGate в другой каталог, используйте параметр `INSTALL=<path>`:
 
 ```
 [root@host]# /bin/bash Dynatrace-ActiveGate-Linux-x86-1.0.0.sh INSTALL=/hosted_app/dynatrace
@@ -63,7 +63,7 @@ scraped: 2026-03-05T21:33:23.286611
 
 ### Параметры установки по умолчанию
 
-Информацию о параметрах по умолчанию, включая каталоги по умолчанию, см. в разделе [Параметры по умолчанию ActiveGate для Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-default-settings "Узнайте о параметрах по умолчанию, с которыми ActiveGate устанавливается на Linux").
+Информацию о параметрах по умолчанию, включая каталоги по умолчанию, см. в разделе [Параметры по умолчанию ActiveGate для Linux](../../../dynatrace-activegate/installation/linux/linux-default-settings.md "Узнайте о параметрах по умолчанию, с которыми ActiveGate устанавливается на Linux").
 
 ## Шаг 4 Подключение кластеров Kubernetes к Dynatrace
 
@@ -675,4 +675,4 @@ scraped: 2026-03-05T21:33:23.286611
 
 11. Выберите **Save changes** для сохранения конфигурации.
 
-Для обновления ActiveGate см. [Обновление ActiveGate](/docs/ingest-from/dynatrace-activegate/operation/update-activegate "Узнайте, как определить установленную версию ActiveGate и загрузить и установить последнюю версию.").
+Для обновления ActiveGate см. [Обновление ActiveGate](../../../dynatrace-activegate/operation/update-activegate.md "Узнайте, как определить установленную версию ActiveGate и загрузить и установить последнюю версию.").

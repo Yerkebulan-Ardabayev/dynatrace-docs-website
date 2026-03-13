@@ -112,7 +112,7 @@ timeseries cpu=avg(dt.host.cpu.usage), by:{dt.entity.host}
 
 ## Визуализация
 
-Если вы не уверены, что выбрали правильную визуализацию, используйте [селектор визуализации](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") для выбора различных визуализаций.
+Если вы не уверены, что выбрали правильную визуализацию, используйте [селектор визуализации](../edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") для выбора различных визуализаций.
 
 Чтобы быстро изучить опции и решить, что работает лучше всего, включайте и выключайте опции и сразу наблюдайте за эффектом на графике. Например, лучше ли выглядит с подписью или без? Включите и выключите эту опцию и убедитесь сами.
 

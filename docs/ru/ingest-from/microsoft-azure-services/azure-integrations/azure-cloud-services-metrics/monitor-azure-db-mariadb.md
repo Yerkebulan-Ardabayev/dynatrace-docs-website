@@ -22,9 +22,9 @@ scraped: 2026-03-05T21:31:05.733511
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. раздел [Включение мониторинга сервиса](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Включение мониторинга Azure в Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. раздел [Включение мониторинга сервиса](../azure-monitoring-guide/azure-enable-service-monitoring.md "Включение мониторинга Azure в Dynatrace.").
 
-При необходимости для интеграции с OneAgent см. [как отслеживается активность базы данных](/docs/observe/infrastructure-observability/databases/database-services-classic/how-database-activity-is-monitored "Узнайте об автоматическом обнаружении и мониторинге сервисов баз данных в среде вашего приложения.").
+При необходимости для интеграции с OneAgent см. [как отслеживается активность базы данных](../../../../observe/infrastructure-observability/databases/database-services-classic/how-database-activity-is-monitored.md "Узнайте об автоматическом обнаружении и мониторинге сервисов баз данных в среде вашего приложения.").
 
 ## Просмотр метрик сервиса
 
@@ -56,7 +56,7 @@ scraped: 2026-03-05T21:31:05.733511
 
 ### Настройка зоны управления
 
-Для импорта панели управления Azure Database for MariaDB необходимо [настроить зону управления](/docs/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Создание и назначение прав доступа к зонам управления.") для ограничения отображаемых на панели управления сущностей теми, которые относятся к этому сервису.
+Для импорта панели управления Azure Database for MariaDB необходимо [настроить зону управления](../../../../manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Создание и назначение прав доступа к зонам управления.") для ограничения отображаемых на панели управления сущностей теми, которые относятся к этому сервису.
 
 При создании зоны управления для данной панели управления:
 
@@ -71,7 +71,7 @@ scraped: 2026-03-05T21:31:05.733511
 
 ![Azure management zone](https://dt-cdn.net/images/azuredbformariadbmanagementzone-2686-28aa52c965.png)
 
-После создания зоны управления выберите её на панели управления (**Редактировать** > **Настройки** > **Зона управления по умолчанию**). Дополнительную информацию см. в разделе [Временной диапазон панели управления и зона управления](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Узнайте о настройках временного диапазона и зоны управления панели управления Dynatrace.").
+После создания зоны управления выберите её на панели управления (**Редактировать** > **Настройки** > **Зона управления по умолчанию**). Дополнительную информацию см. в разделе [Временной диапазон панели управления и зона управления](../../../../analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe.md "Узнайте о настройках временного диапазона и зоны управления панели управления Dynatrace.").
 
 ## Доступные метрики
 

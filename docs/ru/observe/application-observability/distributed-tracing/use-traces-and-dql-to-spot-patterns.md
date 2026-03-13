@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:12:23.534272
 * Чтение: 14 мин
 * Опубликовано 20 ноября 2025 г.
 
-Выявляйте аномальные закономерности в трассировках и логах с помощью [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app "Откройте для себя возможности нового приложения Distributed Tracing.") и [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.").
+Выявляйте аномальные закономерности в трассировках и логах с помощью [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](distributed-tracing-app.md "Откройте для себя возможности нового приложения Distributed Tracing.") и [Dynatrace Query Language (DQL)](../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.").
 
 ## Введение
 
@@ -47,7 +47,7 @@ scraped: 2026-03-06T21:12:23.534272
 
 * Знакомство с последней версией Dynatrace
 * Хотя бы базовые знания DQL
-* Понимание того, что такое [Distributed Tracing](/docs/observe/application-observability/distributed-tracing "Отслеживайте и анализируйте в реальном времени высокораспределённые системы с помощью Grail.")
+* Понимание того, что такое [Distributed Tracing](../distributed-tracing.md "Отслеживайте и анализируйте в реальном времени высокораспределённые системы с помощью Grail.")
 
   Для обзора посмотрите видео [Unleash the Power of Distributed Tracing](https://youtu.be/8QuBqPsqZlg?si=RKrl7MW6kODQgFDA) на YouTube.
 
@@ -106,7 +106,7 @@ scraped: 2026-03-06T21:12:23.534272
 
 ### Обнаружение необычных паттернов с помощью DQL
 
-После использования ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing** давайте узнаем, как использовать DQL для выявления нетипичных паттернов в трассировках и логах. Мы рекомендуем использовать [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь инсайтами из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.") для выполнения всех примеров DQL-запросов в этом руководстве.
+После использования ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing** давайте узнаем, как использовать DQL для выявления нетипичных паттернов в трассировках и логах. Мы рекомендуем использовать [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь инсайтами из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.") для выполнения всех примеров DQL-запросов в этом руководстве.
 
 1. Перейдите в ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**.
 2. Выберите  **Notebook** в заголовке приложения, чтобы создать новый ноутбук.
@@ -385,7 +385,7 @@ fetch logs
 
 Наконец, давайте узнаем, сколько логов создаётся для каждой конечной точки сервиса.
 
-По умолчанию логи не содержат информации о конечной точке. Однако, [обогащая логи идентификатором трассировки](/docs/analyze-explore-automate/logs/lma-log-enrichment "Свяжите входящие данные логов с трассировками для более точного анализа Dynatrace."), мы можем выполнить `join` логов и трассировок на основе их общего поля.
+По умолчанию логи не содержат информации о конечной точке. Однако, [обогащая логи идентификатором трассировки](../../../analyze-explore-automate/logs/lma-log-enrichment.md "Свяжите входящие данные логов с трассировками для более точного анализа Dynatrace."), мы можем выполнить `join` логов и трассировок на основе их общего поля.
 
 Пояснение к DQL-запросу
 
@@ -451,15 +451,15 @@ fetch logs
 
 Вы узнали, как использовать ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing** для обнаружения паттернов запросов к базе данных. Кроме того, вы освоили множество примеров использования DQL для поиска сервисов с наибольшим количеством исключений, выявления «горячих» методов и даже объединения логов и трассировок для подсчёта количества логов, созданных для каждой конечной точки сервиса.
 
-Если вы считаете, что вам необходимо иметь определённую информацию под рукой, [добавьте результат DQL-запроса на дашборд](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#edit-section-edit-controls "Анализируйте, визуализируйте и делитесь инсайтами из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве."). Вы также можете рассмотреть возможность [создания метрики](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-create-log-metric "Изучите сценарий использования Log Management and Analytics для создания метрики из логов."), которую можно извлекать из логов по мере их поступления в Dynatrace.
+Если вы считаете, что вам необходимо иметь определённую информацию под рукой, [добавьте результат DQL-запроса на дашборд](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md#edit-section-edit-controls "Анализируйте, визуализируйте и делитесь инсайтами из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве."). Вы также можете рассмотреть возможность [создания метрики](../../../analyze-explore-automate/logs/lma-use-cases/lma-e2e-create-log-metric.md "Изучите сценарий использования Log Management and Analytics для создания метрики из логов."), которую можно извлекать из логов по мере их поступления в Dynatrace.
 
 ## Следующие шаги
 
 * Ознакомьтесь с этим [специальным ноутбуком](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.notebooks/notebook/94d1e2b0-0d81-4803-8b5e-5b9614598d86), созданным в нашей среде Dynatrace Playground, где мы делимся некоторыми советами и приёмами использования трассировок, логов и DQL для выявления необычных паттернов в вашей среде.
-* Погрузитесь глубже в мир DQL: посетите [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.") и [лучшие практики DQL](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Лучшие практики использования Dynatrace Query Language.").
+* Погрузитесь глубже в мир DQL: посетите [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.") и [лучшие практики DQL](../../../platform/grail/dynatrace-query-language/dql-best-practices.md "Лучшие практики использования Dynatrace Query Language.").
 * Изучите следующие приложения Dynatrace:
 
-  + [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app "Откройте для себя возможности нового приложения Distributed Tracing.")
-  + [![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**](/docs/analyze-explore-automate/logs/lma-logs-app "Ищите, фильтруйте и анализируйте логи с помощью приложения Dynatrace Logs для быстрого исследования и обмена результатами.")
-  + [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь инсайтами из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.")
-  + [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.")
+  + [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](distributed-tracing-app.md "Откройте для себя возможности нового приложения Distributed Tracing.")
+  + [![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**](../../../analyze-explore-automate/logs/lma-logs-app.md "Ищите, фильтруйте и анализируйте логи с помощью приложения Dynatrace Logs для быстрого исследования и обмена результатами.")
+  + [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь инсайтами из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.")
+  + [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.")

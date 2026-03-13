@@ -14,7 +14,7 @@ scraped: 2026-03-03T21:21:55.698101
 
 Log Monitoring Classic
 
-Dynatrace [automatically detects attributes](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation#autoattributes "Log ingestion API automatically transforms log data into output values for the loglevel attribute.") of ingested log data. **Available attributes** quickly filter the result table data for a specific log data attribute.
+Dynatrace [automatically detects attributes](../../logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation.md#autoattributes "Log ingestion API automatically transforms log data into output values for the loglevel attribute.") of ingested log data. **Available attributes** quickly filter the result table data for a specific log data attribute.
 
 You can also define your own custom log data attributes that suits your particular log data format. Similarly to the automatically detected log attributes, your custom log attributes are extracted from the log data during ingestion and become available within Dynatrace.
 
@@ -39,7 +39,7 @@ Dynatrace automatically recognizes log attributes that are visible in log detail
    * It can't begin with a hyphen.
    * All characters must be from the Latin alphabet, with no diacritics; characters such as 'Ã¶' are not allowed.
 
-You can check if the custom attributes you plan to add are part of the [key-values attributes](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api#semantics "Learn how Dynatrace ingests log data and what are potential limits such ingestion.") list for automatic detection. If they are present there, there is no need to add them to the custom list.
+You can check if the custom attributes you plan to add are part of the [key-values attributes](../acquire-log-data/logs-classic-ingestion-api.md#semantics "Learn how Dynatrace ingests log data and what are potential limits such ingestion.") list for automatic detection. If they are present there, there is no need to add them to the custom list.
 
 Dynatrace Log Monitoring gives you the ability to define custom index log data attributes for log data that is ingested.
 
@@ -85,7 +85,7 @@ Then you will create a custom log attribute and use it for creating a log metric
 2. Create a custom attribute.
 
    ![Creating a custom log attribute.](https://dt-cdn.net/images/lm-custom-att-set-custom-att-1129-96179dda7e.png)
-3. View the attribute in log viewer. (See [Log viewer (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.") for details.)
+3. View the attribute in log viewer. (See [Log viewer (Logs Classic)](log-viewer.md "Learn how to use Dynatrace log viewer to analyze log data.") for details.)
 
    * Check **Available attributes**
 

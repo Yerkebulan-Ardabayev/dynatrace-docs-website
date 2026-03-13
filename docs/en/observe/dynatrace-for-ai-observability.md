@@ -29,7 +29,7 @@ Get a holistic view of the AI-generated parts of your system such as LLM, vector
 
 Dynatrace unifies metrics, logs, traces, problem analytics, and root cause information in dashboards and notebooks, providing a single operational view of your AI-powered cloud applications end-to-end.
 
-Use Dynatrace with [Traceloop OpenLLMetry](/docs/observe/dynatrace-for-ai-observability/get-started "Get started with OpenLLMetry and OpenTelemetry for AI Observability.") or [OpenTelemetry with GenAI semantic conventionsï»¿](https://opentelemetry.io/docs/specs/semconv/gen-ai/) to gain detailed insights into your generative AI stack.
+Use Dynatrace with [Traceloop OpenLLMetry](dynatrace-for-ai-observability/get-started.md "Get started with OpenLLMetry and OpenTelemetry for AI Observability.") or [OpenTelemetry with GenAI semantic conventionsï»¿](https://opentelemetry.io/docs/specs/semconv/gen-ai/) to gain detailed insights into your generative AI stack.
 
 ![Full AI/ML observability with Dynatrace](https://dt-cdn.net/images/ai-obs-tech-stack-latest-1892-88a8b44f2c.png)
 
@@ -73,7 +73,7 @@ Dynatrace integrates with workloads such as OpenAI Agent SDK, LangChain/LangGrap
 
 ### Observing model providers and platforms
 
-Dynatrace integrates with providers such as [OpenAI](/docs/observe/dynatrace-for-ai-observability/models-and-platforms/openai "OpenAI observability"), [Amazon Bedrock](/docs/observe/dynatrace-for-ai-observability/models-and-platforms/bedrock "Bedrock observability"), [NVIDIA NIM](/docs/observe/dynatrace-for-ai-observability/models-and-platforms/nvidia-nim "NVIDIA NIM observability"), [Ollama](/docs/observe/dynatrace-for-ai-observability/models-and-platforms/ollama "Ollama observability") to monitor performance (token consumption, latency, availability, and errors) at scale.
+Dynatrace integrates with providers such as [OpenAI](dynatrace-for-ai-observability/models-and-platforms/openai.md "OpenAI observability"), [Amazon Bedrock](dynatrace-for-ai-observability/models-and-platforms/bedrock.md "Bedrock observability"), [NVIDIA NIM](dynatrace-for-ai-observability/models-and-platforms/nvidia-nim.md "NVIDIA NIM observability"), [Ollama](dynatrace-for-ai-observability/models-and-platforms/ollama.md "Ollama observability") to monitor performance (token consumption, latency, availability, and errors) at scale.
 
 ### Observing semantic caches and vector databases
 
@@ -81,11 +81,11 @@ Vector databases and semantic caches are central to RAG architectures. Dynatrace
 
 ### Observing orchestration frameworks
 
-Frameworks like [LangChain](/docs/observe/dynatrace-for-ai-observability/orchestration-frameworks/langchain "LangChain observability") manage data ingestion and prompt engineering for RAG applications. Dynatrace ensures you can track performance, versions, and degradation points in these pipelines.
+Frameworks like [LangChain](dynatrace-for-ai-observability/orchestration-frameworks/langchain.md "LangChain observability") manage data ingestion and prompt engineering for RAG applications. Dynatrace ensures you can track performance, versions, and degradation points in these pipelines.
 
 ### Observing infrastructure and resources
 
-Monitor infrastructure usage (GPU/TPU metrics, temperature, memory, etc.) for cloud services such as [Amazon Elastic Inference](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elastic-inference "Monitor Amazon Elastic Inference and view available metrics.") and [Google TPU](/docs/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace."), or custom hardware like [NVIDIA GPUï»¿](https://www.dynatrace.com/hub/detail/nvidia-gpu). This helps optimize resources and supports sustainability initiatives.
+Monitor infrastructure usage (GPU/TPU metrics, temperature, memory, etc.) for cloud services such as [Amazon Elastic Inference](../ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elastic-inference.md "Monitor Amazon Elastic Inference and view available metrics.") and [Google TPU](../ingest-from/google-cloud-platform.md "Monitor Google Cloud with Dynatrace."), or custom hardware like [NVIDIA GPUï»¿](https://www.dynatrace.com/hub/detail/nvidia-gpu). This helps optimize resources and supports sustainability initiatives.
 
 An overview of all of our integrations can be found on our [Dynatrace Hub pageï»¿](https://www.dynatrace.com/hub/?filter=ai-ml-observability)
 
@@ -93,6 +93,6 @@ An overview of all of our integrations can be found on our [Dynatrace Hub pageï
 
 Dynatrace, a software intelligence company, has implemented its own AI observability solution to monitor, analyze, and visualize the internal states, inputs, and outputs of its own AI models.
 
-The example below shows one of many self-monitoring dashboards that Dynatrace data scientists use to observe the operation of [Dynatrace Intelligence](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.") across all monitoring environments.
+The example below shows one of many self-monitoring dashboards that Dynatrace data scientists use to observe the operation of [Dynatrace Intelligence](../dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence.") across all monitoring environments.
 
 ![An example of an anomaly detection self-monitoring dashboard.](https://dt-cdn.net/images/dashboards-self-monitoring-model-statistics-1818-c5c0a57141.png)

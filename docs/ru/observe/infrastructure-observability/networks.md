@@ -30,31 +30,31 @@ scraped: 2026-02-06T16:29:04.150090
 
 * How-to guide
 
-Читать руководство](/docs/observe/infrastructure-observability/networks/how-to-monitor-network-communication)[#### Обнаружение сетевых ошибок
+Читать руководство](networks/how-to-monitor-network-communication.md)[#### Обнаружение сетевых ошибок
 
 Узнайте, как такие ошибки, как потерянные пакеты и повторные передачи на уровне сети, могут влиять на производительность и связность ваших сервисов.
 
 * How-to guide
 
-Читать руководство](/docs/observe/infrastructure-observability/networks/detect-network-errors)[#### Расширенный мониторинг сети
+Читать руководство](networks/detect-network-errors.md)[#### Расширенный мониторинг сети
 
 Расширьте возможности мониторинга сети с помощью метрик сетевого трафика в контейнеризованных хостах Linux с использованием NetTracer.
 
 * How-to guide
 
-Читать руководство](/docs/observe/infrastructure-observability/networks/network-monitoring-with-nettracer)[#### Устранение неполадок мониторинга сети
+Читать руководство](networks/network-monitoring-with-nettracer.md)[#### Устранение неполадок мониторинга сети
 
 Узнайте больше об устранении неполадок мониторинга сети.
 
 * Troubleshooting
 
-Читать руководство по устранению неполадок](/docs/observe/infrastructure-observability/networks/troubleshoot-network-monitoring)[#### Приём записей NetFlow в Dynatrace
+Читать руководство по устранению неполадок](networks/troubleshoot-network-monitoring.md)[#### Приём записей NetFlow в Dynatrace
 
 Узнайте, как принимать записи NetFlow в Dynatrace.
 
 * How-to guide
 
-Читать руководство](/docs/observe/infrastructure-observability/networks/ingest-netflow-records)
+Читать руководство](networks/ingest-netflow-records.md)
 
 ## Связанные темы
 

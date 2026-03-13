@@ -80,7 +80,7 @@ timeseries avg(dt.host.cpu.usage)
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Перейти к хосту** — открывает выбранный элемент в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   В целом, если есть рекомендованные приложения для открытия выбранного элемента, меню предлагает прямые ссылки на эти приложения, за которыми следует параметр **Открыть с помощью** для выбора другого целевого приложения.
-* **Открыть с помощью** — подробнее см. [Детализация и навигация](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Детализация из Dashboards и Notebooks с помощью ссылок на основе намерений или URL-адресов.").
+* **Открыть с помощью** — подробнее см. [Детализация и навигация](../drilldowns-and-navigation.md "Детализация из Dashboards и Notebooks с помощью ссылок на основе намерений или URL-адресов.").
 
 ## Заголовок
 
@@ -100,7 +100,7 @@ timeseries avg(dt.host.cpu.usage)
 
 ## Визуализация
 
-Если вы не уверены, что выбрали правильную визуализацию, используйте [селектор визуализации](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Создание, редактирование и просмотр визуализаций в дашбордах и блокнотах Dynatrace."), чтобы попробовать разные визуализации.
+Если вы не уверены, что выбрали правильную визуализацию, используйте [селектор визуализации](../edit-visualizations.md#select-visualization "Создание, редактирование и просмотр визуализаций в дашбордах и блокнотах Dynatrace."), чтобы попробовать разные визуализации.
 
 ## Сопоставление данных
 
@@ -157,7 +157,7 @@ Dynatrace версии 1.322+
 
 Столбчатая диаграмма отображает одно или несколько значений во времени, поэтому сопоставление должно включать следующее:
 
-* **Время**: столбец результата, используемый для оси X ([timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "Список типов данных DQL.") или [timeframe](/docs/platform/grail/dynatrace-query-language/data-types#timeframe "Список типов данных DQL.")).
+* **Время**: столбец результата, используемый для оси X ([timestamp](../../../platform/grail/dynatrace-query-language/data-types.md#timestamp "Список типов данных DQL.") или [timeframe](../../../platform/grail/dynatrace-query-language/data-types.md#timeframe "Список типов данных DQL.")).
 * **Интервал**: это значение сопоставляется автоматически и не может быть изменено. Оно показывает, какие поля сопоставлены для результатов на основе временных рядов. Берётся первое доступное поле интервала из набора результатов при использовании временного ряда (также включает любые данные на основе makeTimeseries).
 * **Значения**: выбор одного или нескольких значений, которые ваша диаграмма отображает во времени.
 * **Имена**: элементы, отображаемые, например, в легенде и именах серий.

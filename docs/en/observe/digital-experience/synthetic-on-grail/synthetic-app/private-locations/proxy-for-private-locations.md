@@ -12,10 +12,10 @@ scraped: 2026-03-02T21:20:36.386068
 * How-to guide
 * Published Sep 11, 2025
 
-You can incorporate [proxies, load balancers, and reverse proxies in your Dynatrace deployment](/docs/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates#proxies "Learn about the connectivity priorities between ActiveGate types as well as the priorities between ActiveGates and OneAgents."). In particular, your ActiveGate configuration allows you to define one or more proxies for outgoing connections.
+You can incorporate [proxies, load balancers, and reverse proxies in your Dynatrace deployment](../../../../../ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates.md#proxies "Learn about the connectivity priorities between ActiveGate types as well as the priorities between ActiveGates and OneAgents."). In particular, your ActiveGate configuration allows you to define one or more proxies for outgoing connections.
 
-* To set up a proxy for communication with the tested resource, edit the [`custom.properties`](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate "Learn which ActiveGate properties you can configure based on your needs and requirements.") file and set properties in the `[synthetic]` section.
-* To set up a proxy only for internal communication with the Dynatrace Cluster, see [settings for Dynatrace Cluster communication only](/docs/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate#internal "Learn how to configure ActiveGate properties to set up a proxy.").
+* To set up a proxy for communication with the tested resource, edit the [`custom.properties`](../../../../../ingest-from/dynatrace-activegate/configuration/configure-activegate.md "Learn which ActiveGate properties you can configure based on your needs and requirements.") file and set properties in the `[synthetic]` section.
+* To set up a proxy only for internal communication with the Dynatrace Cluster, see [settings for Dynatrace Cluster communication only](../../../../../ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate.md#internal "Learn how to configure ActiveGate properties to set up a proxy.").
 * To set up the same proxy for both a tested resource and the Dynatrace Cluster, set properties in the `[http.client]` section.
 
 ## Proxy configuration properties
@@ -191,7 +191,7 @@ A Proxy Auto-Configuration (PAC) file is a JavaScript function that determines w
 4. Select **Edit** in the upper-right of the preview panel.
 
    From this point, you're redirected to previous Dynatrace where you can provide a PAC file URL.
-5. Switch to the [script mode](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/script-mode-for-browser-monitor-configuration "Create or edit your browser monitors in JSON format.").
+5. Switch to the [script mode](../../../synthetic-monitoring/browser-monitors/script-mode-for-browser-monitor-configuration.md "Create or edit your browser monitors in JSON format.").
 
    * For a clickpath, select **Recorded clickpath** > **Script**.
    * For a single-URL monitor, select **Monitor script**.
@@ -213,7 +213,7 @@ A Proxy Auto-Configuration (PAC) file is a JavaScript function that determines w
 
    ![Add a PAC file to a browser monitor.](https://dt-cdn.net/images/screenshot-2025-09-18-145741-826-11ee737f0f.png)
 
-   For more information on script mode, see [Script mode for browser monitor configuration](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/script-mode-for-browser-monitor-configuration "Create or edit your browser monitors in JSON format.").
+   For more information on script mode, see [Script mode for browser monitor configuration](../../../synthetic-monitoring/browser-monitors/script-mode-for-browser-monitor-configuration.md "Create or edit your browser monitors in JSON format.").
 
 ### PAC file configuration compatibility
 

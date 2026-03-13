@@ -21,7 +21,7 @@ You can configure Logpush via the Cloudflare dashboard or via API.
 Before you configure Cloudflare Logpush, you need the following:
 
 * A Dynatrace API token with the `logs.ingest` scope.
-  For more information about tokens, generation, and scopes, see [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+  For more information about tokens, generation, and scopes, see [Dynatrace API - Tokens and authentication](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
 * The base URL for your Dynatrace HTTP logs intake.
   An example base URL is `https://abc123.live.dynatrace.com`.
 
@@ -29,7 +29,7 @@ Before you configure Cloudflare Logpush, you need the following:
 * A Cloudflare role with **Log Share** edit permissions.
   For more information, see [Rolesï»¿](https://developers.cloudflare.com/logs/logpush/permissions/#roles).
 
-For more information about the Dynatrace logs ingest API, see [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.").
+For more information about the Dynatrace logs ingest API, see [Log Monitoring API v2 - POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.").
 
 ## Steps
 

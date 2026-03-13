@@ -20,9 +20,9 @@ Dynatrace version 1.232+
 
 ## View Kubernetes metrics
 
-* For details on container metrics, see [Built-in metrics - Containers/CPU](/docs/analyze-explore-automate/metrics-classic/built-in-metrics#containers-cpu "Explore the complete list of built-in Dynatrace metrics.") and [Built-in metrics - Containers/Memory](/docs/analyze-explore-automate/metrics-classic/built-in-metrics#containers-memory "Explore the complete list of built-in Dynatrace metrics.").
+* For details on container metrics, see [Built-in metrics - Containers/CPU](../../../../analyze-explore-automate/metrics-classic/built-in-metrics.md#containers-cpu "Explore the complete list of built-in Dynatrace metrics.") and [Built-in metrics - Containers/Memory](../../../../analyze-explore-automate/metrics-classic/built-in-metrics.md#containers-memory "Explore the complete list of built-in Dynatrace metrics.").
 
-* For details on Kubernetes metrics, see [Built-in metrics - Cloud/Kubernetes](/docs/analyze-explore-automate/metrics-classic/built-in-metrics#cloud-kubernetes "Explore the complete list of built-in Dynatrace metrics.").
+* For details on Kubernetes metrics, see [Built-in metrics - Cloud/Kubernetes](../../../../analyze-explore-automate/metrics-classic/built-in-metrics.md#cloud-kubernetes "Explore the complete list of built-in Dynatrace metrics.").
 
 ![K8 dash](https://dt-cdn.net/images/2021-03-12-08-54-46-1668-d24182ddd2.png)
 
@@ -44,8 +44,8 @@ To enable monitoring of workload and node resource metrics
    Monitoring **node resource metrics** requires ActiveGate version 1.271+.
 3. Optional Select **Test connection** to verify that the feature has been successfully activated.
 
-For a list of all available metrics, see [Workload metrics](/docs/analyze-explore-automate/metrics-classic/all-metrics#workload "Explore the complete list of Dynatrace metrics.") or [Node](/docs/analyze-explore-automate/metrics-classic/all-metrics#node "Explore the complete list of Dynatrace metrics.") for node resource metrics.
+For a list of all available metrics, see [Workload metrics](../../../../analyze-explore-automate/metrics-classic/all-metrics.md#workload "Explore the complete list of Dynatrace metrics.") or [Node](../../../../analyze-explore-automate/metrics-classic/all-metrics.md#node "Explore the complete list of Dynatrace metrics.") for node resource metrics.
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Set up Dynatrace on Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")

@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:24:56.840993
 * Published Aug 19, 2025
 * Preview
 
-If this is the first time you are creating a connection, first see the [onboarding instructions](/docs/ingest-from/amazon-web-services/create-an-aws-connection "See the differences between creating your AWS connections via API or ::app-settings::.") and its prerequisites.
+If this is the first time you are creating a connection, first see the [onboarding instructions](../../../../ingest-from/amazon-web-services/create-an-aws-connection.md "See the differences between creating your AWS connections via API or ::app-settings::.") and its prerequisites.
 
 If you have an existing classic connection and want to start the new cloud platform monitoring, delete the classic connection first and only then create a new cloud connection for the respective AWS Account.
 

@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:24:04.309763
 * Расширение
 * Обновлено 7 октября 2025 г.
 
-Эта страница обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список изменений и необходимых действий для завершения миграции см. в [руководстве по миграции таблиц безопасности Grail](/docs/secure/threat-observability/migration "Узнайте об изменениях в новой таблице безопасности Grail и о том, как выполнить миграцию.").
+Эта страница обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список изменений и необходимых действий для завершения миграции см. в [руководстве по миграции таблиц безопасности Grail](../migration.md "Узнайте об изменениях в новой таблице безопасности Grail и о том, как выполнить миграцию.").
 
 Загружайте журналы аудита и события безопасности GitHub Advanced Security в Dynatrace в качестве событий безопасности.
 
@@ -30,9 +30,9 @@ scraped: 2026-03-06T21:24:04.309763
 
 С загруженными данными вы можете реализовать различные сценарии, такие как:
 
-* [Визуализация и анализ результатов безопасности](/docs/secure/use-cases/visualize-and-analyze-security-findings "Визуализируйте, приоритизируйте и анализируйте загруженные результаты безопасности.")
-* [Автоматизация и оркестрация результатов безопасности](/docs/secure/use-cases/automate-and-orchestrate-security-findings "Регулярно проверяйте критические результаты безопасности и получайте автоматические тикеты Jira или оповещения Slack.")
-* [Обнаружение пробелов в покрытии безопасности](/docs/secure/use-cases/discover-coverage-gaps-in-security-scans "Выявите слепые зоны в вашем жизненном цикле разработки ПО (SDLC).")
+* [Визуализация и анализ результатов безопасности](../../use-cases/visualize-and-analyze-security-findings.md "Визуализируйте, приоритизируйте и анализируйте загруженные результаты безопасности.")
+* [Автоматизация и оркестрация результатов безопасности](../../use-cases/automate-and-orchestrate-security-findings.md "Регулярно проверяйте критические результаты безопасности и получайте автоматические тикеты Jira или оповещения Slack.")
+* [Обнаружение пробелов в покрытии безопасности](../../use-cases/discover-coverage-gaps-in-security-scans.md "Выявите слепые зоны в вашем жизненном цикле разработки ПО (SDLC).")
 
 ### Требования
 
@@ -118,13 +118,13 @@ scraped: 2026-03-06T21:24:04.309763
 
   + Для запуска ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**: Перейдите в **Hub**, выберите ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions** и откройте **Technical information**.
   + Для запросов загруженных данных: `storage:security.events:read`.
-* Сгенерируйте токен доступа с областью `openpipeline.events_security` и сохраните его. Подробнее см. [API Dynatrace — Токены и аутентификация](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования API Dynatrace.").
+* Сгенерируйте токен доступа с областью `openpipeline.events_security` и сохраните его. Подробнее см. [API Dynatrace — Токены и аутентификация](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования API Dynatrace.").
 
 ## Активация и настройка
 
 1. В Dynatrace найдите **GitHub Advanced Security** и выберите **Install**.
 2. Следуйте инструкциям на экране для настройки расширения.
-3. Проверьте конфигурацию, выполнив следующие запросы в [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь аналитикой ваших данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве."):
+3. Проверьте конфигурацию, выполнив следующие запросы в [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь аналитикой ваших данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве."):
 
    * Для журналов аудита:
 
@@ -169,7 +169,7 @@ scraped: 2026-03-06T21:24:04.309763
 
      AND event.type=="VULNERABILITY_SCAN"
      ```
-4. После установки и настройки расширения вы можете получить доступ к нему и управлять им в Dynatrace через ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**. Подробнее см. [О расширениях](/docs/ingest-from/extensions/concepts "Узнайте больше о концепции расширений Dynatrace.").
+4. После установки и настройки расширения вы можете получить доступ к нему и управлять им в Dynatrace через ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**. Подробнее см. [О расширениях](../../../ingest-from/extensions/concepts.md "Узнайте больше о концепции расширений Dynatrace.").
 
 ## Подробности
 
@@ -179,23 +179,23 @@ scraped: 2026-03-06T21:24:04.309763
 
 1. События и логи собираются из продуктов GHAS
 
-Интеграция Dynatrace GHAS — это расширение, развёрнутое в [Dynatrace ActiveGate](/docs/ingest-from/dynatrace-activegate "Основные концепции ActiveGate."), которое периодически собирает результаты анализа безопасности и журналы аудита с помощью [GitHub REST API](https://docs.github.com/en/rest?apiVersion=2022-11-28).
+Интеграция Dynatrace GHAS — это расширение, развёрнутое в [Dynatrace ActiveGate](../../../ingest-from/dynatrace-activegate.md "Основные концепции ActiveGate."), которое периодически собирает результаты анализа безопасности и журналы аудита с помощью [GitHub REST API](https://docs.github.com/en/rest?apiVersion=2022-11-28).
 
 2. Результаты безопасности и логи загружаются в Dynatrace
 
-Результаты безопасности загружаются в платформу Dynatrace через выделенный эндпоинт приёма безопасности [OpenPipeline](/docs/platform/openpipeline "Масштабируйте обработку данных платформы Dynatrace с помощью OpenPipeline.").
+Результаты безопасности загружаются в платформу Dynatrace через выделенный эндпоинт приёма безопасности [OpenPipeline](../../../platform/openpipeline.md "Масштабируйте обработку данных платформы Dynatrace с помощью OpenPipeline.").
 
 3. Результаты безопасности и логи обрабатываются и сохраняются в Grail
 
 Эндпоинт приёма OpenPipeline обрабатывает и сопоставляет результаты безопасности в соответствии с [конвенциями Semantic Dictionary](https://dt-url.net/3q03pb0).
 
-Они сохраняются в бакете `default_securityevents` (подробнее см. [Встроенные бакеты Grail](/docs/platform/grail/organize-data#built-in-grail-buckets "Организация данных в модели данных Grail, состоящей из бакетов, таблиц и представлений.")).
+Они сохраняются в бакете `default_securityevents` (подробнее см. [Встроенные бакеты Grail](../../../platform/grail/organize-data.md#built-in-grail-buckets "Организация данных в модели данных Grail, состоящей из бакетов, таблиц и представлений.")).
 
-Опционально собранные журналы аудита загружаются через выделенный [конвейер приёма логов расширений](/docs/analyze-explore-automate/logs/lma-log-ingestion#ingest-extensions "Потоковая передача данных логов в Dynatrace.") и сохраняются в соответствующем [семантическом формате](/docs/semantic-dictionary/model/log "Модели Semantic Dictionary, связанные с аналитикой логов.").
+Опционально собранные журналы аудита загружаются через выделенный [конвейер приёма логов расширений](../../../analyze-explore-automate/logs/lma-log-ingestion.md#ingest-extensions "Потоковая передача данных логов в Dynatrace.") и сохраняются в соответствующем [семантическом формате](../../../semantic-dictionary/model/log.md "Модели Semantic Dictionary, связанные с аналитикой логов.").
 
 ### Лицензирование и стоимость
 
-Информацию о тарификации см. в [События на платформе Grail](/docs/license/capabilities/events "Узнайте, как рассчитывается потребление событий Dynatrace на платформе Grail в рамках модели подписки Dynatrace Platform.").
+Информацию о тарификации см. в [События на платформе Grail](../../../license/capabilities/events.md "Узнайте, как рассчитывается потребление событий Dynatrace на платформе Grail в рамках модели подписки Dynatrace Platform.").
 
 ## Наборы функций
 
@@ -211,9 +211,9 @@ scraped: 2026-03-06T21:24:04.309763
 
 ### Какая модель данных используется для логов безопасности и событий из интеграции GHAS?
 
-* [**События обнаружения уязвимостей**](/docs/semantic-dictionary/model/security-events#vulnerability-finding-events "Модели Semantic Dictionary, связанные с событиями безопасности.") хранят отдельные результаты обнаружения уязвимостей, сообщённые различными продуктами GHAS для затронутых артефактов и компонентов.
-* [**События сканирования уязвимостей**](/docs/semantic-dictionary/model/security-events#vulnerability-scan-events "Модели Semantic Dictionary, связанные с событиями безопасности.") указывают на покрытие сканирования для отдельных артефактов.
-* [**Журналы аудита**](/docs/semantic-dictionary/model/log#audit-logs "Модели Semantic Dictionary, связанные с аналитикой логов.") представляют журналы активности пользователей в продуктах GHAS.
+* [**События обнаружения уязвимостей**](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Модели Semantic Dictionary, связанные с событиями безопасности.") хранят отдельные результаты обнаружения уязвимостей, сообщённые различными продуктами GHAS для затронутых артефактов и компонентов.
+* [**События сканирования уязвимостей**](../../../semantic-dictionary/model/security-events.md#vulnerability-scan-events "Модели Semantic Dictionary, связанные с событиями безопасности.") указывают на покрытие сканирования для отдельных артефактов.
+* [**Журналы аудита**](../../../semantic-dictionary/model/log.md#audit-logs "Модели Semantic Dictionary, связанные с аналитикой логов.") представляют журналы активности пользователей в продуктах GHAS.
 
 ### Какие результаты безопасности GHAS импортируются в Dynatrace?
 
@@ -247,7 +247,7 @@ scraped: 2026-03-06T21:24:04.309763
 ### Как нормализуется оценка риска для результатов GHAS?
 
 Dynatrace нормализует уровни серьёзности и оценки риска для всех результатов, загруженных через текущую интеграцию. Это помогает приоритизировать результаты единообразно, независимо от их источника.
-Подробнее о нормализации см. [Нормализация серьёзности и оценок](/docs/secure/threat-observability/concepts#normalization "Основные концепции наблюдаемости угроз").
+Подробнее о нормализации см. [Нормализация серьёзности и оценок](../concepts.md#normalization "Основные концепции наблюдаемости угроз").
 
 Уровни и оценки риска Dynatrace сопоставляются с исходными [уровнями серьёзности и оценками GHAS](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide).
 
@@ -271,6 +271,6 @@ Dynatrace нормализует уровни серьёзности и оцен
 
 ## Связанные темы
 
-* [OpenPipeline](/docs/platform/openpipeline "Масштабируйте обработку данных платформы Dynatrace с помощью OpenPipeline.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")
-* [События безопасности](/docs/semantic-dictionary/model/security-events "Модели Semantic Dictionary, связанные с событиями безопасности.")
+* [OpenPipeline](../../../platform/openpipeline.md "Масштабируйте обработку данных платформы Dynatrace с помощью OpenPipeline.")
+* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
+* [События безопасности](../../../semantic-dictionary/model/security-events.md "Модели Semantic Dictionary, связанные с событиями безопасности.")

@@ -37,13 +37,13 @@ This walkthrough shows how to add observability to your C++ application using th
 
 ### Determine the API base URL
 
-For details on how to assemble the base OTLP endpoint URL, see [Dynatrace OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). The URL should end in `/api/v2/otlp`.
+For details on how to assemble the base OTLP endpoint URL, see [Dynatrace OTLP API endpoints](../otlp-api.md#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). The URL should end in `/api/v2/otlp`.
 
 ### Get API access token
 
 To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
 
-[Dynatrace OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api#authentication "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") has more details on the format and the necessary access scopes.
+[Dynatrace OTLP API endpoints](../otlp-api.md#authentication "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") has more details on the format and the necessary access scopes.
 
 ## Step 2 Set up OpenTelemetry
 
@@ -918,7 +918,7 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
    }
    ```
 
-   The file read operations, parsing the `dt_metadata` files in the example code, attempt to read the [OneAgent data files](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.
+   The file read operations, parsing the `dt_metadata` files in the example code, attempt to read the [OneAgent data files](../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.
 3. Configure `DT_API_URL` and `DT_API_TOKEN` for the [Dynatrace URL](#base-url) and [access token](#access-token) in `otel.h`.
 
 ## Step 3 Instrument your application
@@ -1254,7 +1254,7 @@ http_client::Result result = http_client->GetNoSsl(url, carrier.headers_);
 
 While Dynatrace automatically captures all OpenTelemetry attributes, only attribute values specified in the allowlist are stored and displayed in the Dynatrace web UI. This prevents accidental storage of personal data, so you can meet your privacy requirements and control the amount of monitoring data stored.
 
-To view your custom attributes, you need to allow them in the Dynatrace web UI first. To learn how to configure attribute storage and masking, see [Attribute redaction](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration#attribute-redaction "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.").
+To view your custom attributes, you need to allow them in the Dynatrace web UI first. To learn how to configure attribute storage and masking, see [Attribute redaction](../../dynatrace-oneagent/oneagent-and-opentelemetry/configuration.md#attribute-redaction "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.").
 
 ## Step 5 Verify data ingestion into Dynatrace
 
@@ -1266,4 +1266,4 @@ For metrics and logs, go to **Metrics** or ![Logs and Events](https://dt-cdn.net
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific fields](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
+* [Enrich ingested data with Dynatrace-specific fields](../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")

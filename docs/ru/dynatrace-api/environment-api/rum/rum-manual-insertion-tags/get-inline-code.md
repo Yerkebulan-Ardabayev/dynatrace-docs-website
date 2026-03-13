@@ -11,7 +11,7 @@ scraped: 2026-03-04T21:33:10.946309
 * Reference
 * Updated on Sep 18, 2025
 
-Возвращает самую последнюю версию [встроенного кода](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats#inline-code "Select a format for the RUM JavaScript snippet that best fits your specific use case") для ручной вставки в код вашего веб-приложения. Включает как конфигурацию, так и код мониторинга RUM.
+Возвращает самую последнюю версию [встроенного кода](../../../../observe/digital-experience/web-applications/initial-setup/snippet-formats.md#inline-code "Select a format for the RUM JavaScript snippet that best fits your specific use case") для ручной вставки в код вашего веб-приложения. Включает как конфигурацию, так и код мониторинга RUM.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,7 +22,7 @@ scraped: 2026-03-04T21:33:10.946309
 
 Для выполнения этого запроса вам необходим токен доступа с областью разрешений `rumManualInsertionTags.read`.
 
-Сведения о том, как получить и использовать токен, см. в разделе [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Сведения о том, как получить и использовать токен, см. в разделе [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 
@@ -32,4 +32,4 @@ scraped: 2026-03-04T21:33:10.946309
 
 ## Ответ
 
-Ответ содержит полезную нагрузку типа `text/plain` с последней версией [встроенного кода](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats#inline-code "Select a format for the RUM JavaScript snippet that best fits your specific use case") для указанного приложения.
+Ответ содержит полезную нагрузку типа `text/plain` с последней версией [встроенного кода](../../../../observe/digital-experience/web-applications/initial-setup/snippet-formats.md#inline-code "Select a format for the RUM JavaScript snippet that best fits your specific use case") для указанного приложения.

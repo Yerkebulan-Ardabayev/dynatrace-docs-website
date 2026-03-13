@@ -59,7 +59,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Explore in Playground](https://dt-url.net/q143wbn).
 
-Связанное приложение Dynatrace:  [Dynatrace ActiveGate](/docs/ingest-from/dynatrace-activegate "Понимание основных концепций, связанных с ActiveGate.")
+Связанное приложение Dynatrace:  [Dynatrace ActiveGate](../../../ingest-from/dynatrace-activegate.md "Понимание основных концепций, связанных с ActiveGate.")
 
 ![Пример готовой панели мониторинга: обзор диагностики ActiveGate](https://dt-cdn.net/images/activegate-diagnostic-overview-1433-31dccc87de.png)
 
@@ -69,7 +69,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Explore in Playground](https://dt-url.net/qz2336h).
 
-Связанное приложение Dynatrace: ![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Облака") [Облака](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app "Мониторинг всех облачных платформ одновременно.")
+Связанное приложение Dynatrace: ![Облака](https://dt-cdn.net/images/clouds-1025-170946931c.png "Облака") [Облака](../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md "Мониторинг всех облачных платформ одновременно.")
 
 ![Пример готовой панели мониторинга: обзор AWS](https://dt-cdn.net/images/ready-made-aws-overview-3834-c36f9921b4.png)
 ## Обзор Azure
@@ -78,7 +78,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/dp433oi).
 
-Связанное приложение Dynatrace: [![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app "Мониторинг всех облачных платформ одновременно.")
+Связанное приложение Dynatrace: [![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**](../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md "Мониторинг всех облачных платформ одновременно.")
 
 ![Готовый пример панели: Обзор Azure](https://dt-cdn.net/images/ready-made-azure-overview-3834-391f0bda19.png)
 
@@ -88,7 +88,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/vu6333f)
 
-Связанное приложение Dynatrace: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Узнайте, как создавать и управлять расширениями Dynatrace.")
+Связанное приложение Dynatrace: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Узнайте, как создавать и управлять расширениями Dynatrace.")
 
 ![Готовый пример панели: Обзор устройств Cisco](https://dt-cdn.net/images/ready-made-cisco-device-overview-1920-58959b879f.png)
 
@@ -98,7 +98,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/9163wft).
 
-Связанная документация: [Безопасность интеграций](/docs/secure/threat-observability/security-events-ingest "Импорт внешних данных безопасности в Grail.")
+Связанная документация: [Безопасность интеграций](../../../secure/threat-observability/security-events-ingest.md "Импорт внешних данных безопасности в Grail.")
 
 ![Готовый пример панели: События сканирования контейнеров](https://dt-cdn.net/images/container-scan-events-coverage-1438-2014fa781a.png)
 
@@ -108,7 +108,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/u083wwj)
 
-Связанная документация: [Безопасность интеграций](/docs/secure/threat-observability/security-events-ingest "Импорт внешних данных безопасности в Grail.")
+Связанная документация: [Безопасность интеграций](../../../secure/threat-observability/security-events-ingest.md "Импорт внешних данных безопасности в Grail.")
 
 ![Готовый пример панели: Найденные уязвимости контейнеров](https://dt-cdn.net/images/container-vulnerability-findings-1438-e6133afd13.png)
 
@@ -118,7 +118,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/lx8337c)
 
-Связанное приложение Dynatrace: [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в режиме реального времени.")
+Связанное приложение Dynatrace: [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../dashboards-new.md "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в режиме реального времени.")
 
 ![Готовый пример панели: Панели - Начало работы](https://dt-cdn.net/images/ready-made-dashboards-getting-started-dark-1405-a077c12d3d.png)
 
@@ -128,7 +128,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/x4a3wdv).
 
-Связанное приложение Dynatrace: ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases") [Приложение баз данных](/docs/observe/infrastructure-observability/databases/database-app "Приложение баз данных дает вам обзор всех ваших баз данных, контролируемых с помощью Extensions Framework 2.0.")
+Связанное приложение Dynatrace: ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases") [Приложение баз данных](../../../observe/infrastructure-observability/databases/database-app.md "Приложение баз данных дает вам обзор всех ваших баз данных, контролируемых с помощью Extensions Framework 2.0.")
 
 ![Готовый пример панели: Обзор баз данных](https://dt-cdn.net/images/databases-overview-1320-e01a99a799.png)
 ## Потребление данных расширений
@@ -137,7 +137,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/mja33bw)
 
-Связанное приложение Dynatrace: ![Расширения](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Расширения") [Расширения](/docs/ingest-from/extensions "Узнайте, как создавать и управлять расширениями Dynatrace.")
+Связанное приложение Dynatrace: ![Расширения](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Расширения") [Расширения](../../../ingest-from/extensions.md "Узнайте, как создавать и управлять расширениями Dynatrace.")
 
 ![Готовый пример панели: Потребление данных расширений](https://dt-cdn.net/images/ready-made-extension-data-consumption-dark-1387-ab1f25ac38.png)
 
@@ -147,7 +147,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/ogc335g)
 
-Связанное приложение Dynatrace: ![Расширения](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Расширения") [Расширения](/docs/ingest-from/extensions "Узнайте, как создавать и управлять расширениями Dynatrace.")
+Связанное приложение Dynatrace: ![Расширения](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Расширения") [Расширения](../../../ingest-from/extensions.md "Узнайте, как создавать и управлять расширениями Dynatrace.")
 
 ![Готовый пример панели: Обзор мониторинга IBM MQ](https://dt-cdn.net/images/ready-made-ibm-mq-monitoring-overview-1920-56883c156c.png)
 
@@ -157,7 +157,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/gpc3wam).
 
-Связанное приложение Dynatrace: ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Инфраструктура и операции") [Инфраструктура и операции](/docs/observe/infrastructure-observability/infrastructure-and-operations "Мониторьте хосты, виртуальные машины, процессы и сети, чтобы обнаружить проблемы и улучшить производительность инфраструктуры.")
+Связанное приложение Dynatrace: ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Инфраструктура и операции") [Инфраструктура и операции](../../../observe/infrastructure-observability/infrastructure-and-operations.md "Мониторьте хосты, виртуальные машины, процессы и сети, чтобы обнаружить проблемы и улучшить производительность инфраструктуры.")
 
 ![Готовый пример панели: Панель наблюдаемости инфраструктуры](https://dt-cdn.net/images/infrastructure-observability-dashboard-1432-35f83ede4a.png)
 
@@ -167,7 +167,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/yie333z)
 
-Связанное приложение Dynatrace: ![Расширения](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Расширения") [Расширения](/docs/ingest-from/extensions "Узнайте, как создавать и управлять расширениями Dynatrace.")
+Связанное приложение Dynatrace: ![Расширения](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Расширения") [Расширения](../../../ingest-from/extensions.md "Узнайте, как создавать и управлять расширениями Dynatrace.")
 
 ![Готовый пример панели: Обзор Kafka](https://dt-cdn.net/images/ready-made-kafka-overview-3840-9bbd89d659.png)
 
@@ -177,7 +177,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/0vg33tv)
 
-Связанное приложение Dynatrace: ![Kubernetes (новый)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (новый)") [Kubernetes](/docs/observe/infrastructure-observability/kubernetes-app "Мониторьте и оптимизируйте Kubernetes с помощью Dynatrace. Получите реальные данные и информацию о здоровье кластеров и рабочих нагрузок.")
+Связанное приложение Dynatrace: ![Kubernetes (новый)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (новый)") [Kubernetes](../../../observe/infrastructure-observability/kubernetes-app.md "Мониторьте и оптимизируйте Kubernetes с помощью Dynatrace. Получите реальные данные и информацию о здоровье кластеров и рабочих нагрузок.")
 
 ![Готовый пример панели: Кластер Kubernetes](https://dt-cdn.net/images/ready-made-kubernetes-cluster-7680-ca562f4f97.png)
 
@@ -187,7 +187,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/zvi339y)
 
-Связанное приложение Dynatrace: ![Kubernetes (новый)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (новый)") [Kubernetes](/docs/observe/infrastructure-observability/kubernetes-app "Мониторьте и оптимизируйте Kubernetes с помощью Dynatrace. Получите реальные данные и информацию о здоровье кластеров и рабочих нагрузок.")
+Связанное приложение Dynatrace: ![Kubernetes (новый)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (новый)") [Kubernetes](../../../observe/infrastructure-observability/kubernetes-app.md "Мониторьте и оптимизируйте Kubernetes с помощью Dynatrace. Получите реальные данные и информацию о здоровье кластеров и рабочих нагрузок.")
 
 ![Готовый пример панели: Пространство имен Kubernetes - Поды](https://dt-cdn.net/images/ready-made-kubernetes-namespace-pods-7680-84c7c1f4ba.png)
 ## Kubernetes Пространство имен - Workloads
@@ -196,7 +196,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучить в Playgroundï»¿](https://dt-url.net/f4m33vt)
 
-Связанное приложение Dynatrace: ![Kubernetes (новое)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (новое)") [Kubernetes](/docs/observe/infrastructure-observability/kubernetes-app "Мониторинг и оптимизация Kubernetes с помощью Dynatrace. Получайте данные в реальном времени и информацию о здоровье кластеров и workload.")
+Связанное приложение Dynatrace: ![Kubernetes (новое)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (новое)") [Kubernetes](../../../observe/infrastructure-observability/kubernetes-app.md "Мониторинг и оптимизация Kubernetes с помощью Dynatrace. Получайте данные в реальном времени и информацию о здоровье кластеров и workload.")
 
 ![Готовый пример панели мониторинга: Kubernetes Пространство имен - Workloads](https://dt-cdn.net/images/ready-made-kubernetes-namespace-workloads-7680-e811f53769.png)
 
@@ -206,7 +206,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучить в Playgroundï»¿](https://dt-url.net/1jo33ba)
 
-Связанное приложение Dynatrace: ![Kubernetes (новое)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (новое)") [Kubernetes](/docs/observe/infrastructure-observability/kubernetes-app "Мониторинг и оптимизация Kubernetes с помощью Dynatrace. Получайте данные в реальном времени и информацию о здоровье кластеров и workload.")
+Связанное приложение Dynatrace: ![Kubernetes (новое)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (новое)") [Kubernetes](../../../observe/infrastructure-observability/kubernetes-app.md "Мониторинг и оптимизация Kubernetes с помощью Dynatrace. Получайте данные в реальном времени и информацию о здоровье кластеров и workload.")
 
 ![Готовый пример панели мониторинга: Kubernetes Узел - Pods](https://dt-cdn.net/images/ready-made-kubernetes-node-pods-7680-2fba73c7e9.png)
 
@@ -216,7 +216,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучить в Playgroundï»¿](https://dt-url.net/0vq330he)
 
-Связанное приложение Dynatrace: ![Kubernetes (новое)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (новое)") [Kubernetes](/docs/observe/infrastructure-observability/kubernetes-app "Мониторинг и оптимизация Kubernetes с помощью Dynatrace. Получайте данные в реальном времени и информацию о здоровье кластеров и workload.")
+Связанное приложение Dynatrace: ![Kubernetes (новое)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (новое)") [Kubernetes](../../../observe/infrastructure-observability/kubernetes-app.md "Мониторинг и оптимизация Kubernetes с помощью Dynatrace. Получайте данные в реальном времени и информацию о здоровье кластеров и workload.")
 
 ![Готовый пример панели мониторинга: Kubernetes Постоянные тома](https://dt-cdn.net/images/ready-made-kubernetes-persistent-volumes-7680-a524779929.png)
 
@@ -226,7 +226,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучить в Playgroundï»¿](https://dt-url.net/f6s33ic)
 
-Связанное приложение Dynatrace: ![Журналы и события](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Журналы и события") [Журналы](/docs/analyze-explore-automate/logs "Управление журналами и аналитика предоставляет унифицированный подход к контролю и изучению ваших данных журналов в Dynatrace.")
+Связанное приложение Dynatrace: ![Журналы и события](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Журналы и события") [Журналы](../../logs.md "Управление журналами и аналитика предоставляет унифицированный подход к контролю и изучению ваших данных журналов в Dynatrace.")
 
 ![Готовый пример панели мониторинга: Обзор ингеста журналов](https://dt-cdn.net/images/ready-made-log-ingest-overview-7680-9aa180d1c0.png)
 
@@ -236,7 +236,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучить в Playgroundï»¿](https://dt-url.net/kbu33w5)
 
-Связанное приложение Dynatrace: ![Журналы и события](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Журналы и события") [Журналы](/docs/analyze-explore-automate/logs "Управление журналами и аналитика предоставляет унифицированный подход к контролю и изучению ваших данных журналов в Dynatrace.")
+Связанное приложение Dynatrace: ![Журналы и события](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Журналы и события") [Журналы](../../logs.md "Управление журналами и аналитика предоставляет унифицированный подход к контролю и изучению ваших данных журналов в Dynatrace.")
 
 ![Готовый пример панели мониторинга: Использование и затраты на запросы журналов](https://dt-cdn.net/images/ready-made-log-query-usage-and-costs-3840-27b2be0372.png)
 ## Мониторинг доступности сети
@@ -245,7 +245,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/rxw33oy)
 
-Связанное приложение Dynatrace: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") [Synthetic](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app "Просмотрите синтетические мониторы в вашей среде, найдите мониторы и получите быстрый обзор выбранного монитора.")
+Связанное приложение Dynatrace: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") [Synthetic](../../../observe/digital-experience/synthetic-on-grail/synthetic-app.md "Просмотрите синтетические мониторы в вашей среде, найдите мониторы и получите быстрый обзор выбранного монитора.")
 
 ![Готовый пример панели: Мониторинг доступности сети](https://dt-cdn.net/images/network-availability-monitoring-1920-7e5215d39f.png)
 
@@ -253,7 +253,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/uyy33hp)
 
-Связанное приложение Dynatrace: ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Инфраструктура и операции") [Инфраструктура и операции](/docs/observe/infrastructure-observability/infrastructure-and-operations "Мониторьте хосты, виртуальные машины, процессы и сети, чтобы обнаружить проблемы и улучшить производительность инфраструктуры.")
+Связанное приложение Dynatrace: ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Инфраструктура и операции") [Инфраструктура и операции](../../../observe/infrastructure-observability/infrastructure-and-operations.md "Мониторьте хосты, виртуальные машины, процессы и сети, чтобы обнаружить проблемы и улучшить производительность инфраструктуры.")
 
 ![Готовый пример панели: Устройства сети](https://dt-cdn.net/images/network-devices-3654-e5556c192b.png)
 
@@ -263,7 +263,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/3b10337b)
 
-Связанное приложение Dynatrace: ![Расширения](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Расширения") [Расширения](/docs/ingest-from/extensions "Узнайте, как создавать и управлять расширениями Dynatrace.")
+Связанное приложение Dynatrace: ![Расширения](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Расширения") [Расширения](../../../ingest-from/extensions.md "Узнайте, как создавать и управлять расширениями Dynatrace.")
 
 ![Готовый пример панели: Обзор Nutanix](https://dt-cdn.net/images/ready-made-nutanix-overview-7680-bd44577062.png)
 
@@ -277,7 +277,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/ooe3w1m).
 
-Связанное приложение Dynatrace: ![OpenPipeline](https://dt-cdn.net/images/openpipeline-configurations-highresolution-1025-8c07f4c78c.webp "OpenPipeline") [OpenPipeline](/docs/platform/openpipeline "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.")
+Связанное приложение Dynatrace: ![OpenPipeline](https://dt-cdn.net/images/openpipeline-configurations-highresolution-1025-8c07f4c78c.webp "OpenPipeline") [OpenPipeline](../../../platform/openpipeline.md "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.")
 
 ![Готовый пример панели: Обзор использования OpenPipeline](https://dt-cdn.net/images/openpipeline-usage-overview-1441-d00df250d4.png)
 
@@ -287,7 +287,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/tw1233r9)
 
-Связанное приложение Dynatrace: ![Расширения](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Расширения") [Расширения](/docs/ingest-from/extensions "Узнайте, как создавать и управлять расширениями Dynatrace.")
+Связанное приложение Dynatrace: ![Расширения](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Расширения") [Расширения](../../../ingest-from/extensions.md "Узнайте, как создавать и управлять расширениями Dynatrace.")
 
 ![Готовый пример панели: Обзор Oracle DB](https://dt-cdn.net/images/ready-made-oracle-db-overview-dark-1401-ef84afea7b.png)
 ## Контекстуализация runtime контейнерных результатов для уменьшения оповещений
@@ -296,7 +296,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/lig3w5p).
 
-Связанная документация: [Интеграции безопасности](/docs/secure/threat-observability/security-events-ingest "Впитывание внешних данных безопасности в Grail.")
+Связанная документация: [Интеграции безопасности](../../../secure/threat-observability/security-events-ingest.md "Впитывание внешних данных безопасности в Grail.")
 
 ![Готовый пример dashboard: Контекстуализация runtime контейнерных результатов для уменьшения оповещений](https://dt-cdn.net/images/runtime-contextualization-of-container-findings-for-alert-reduction-1434-66d158782e.png)
 
@@ -306,13 +306,13 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/ab1433kh)
 
-Связанное приложение Dynatrace: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Узнайте, как создавать и управлять расширениями Dynatrace.")
+Связанное приложение Dynatrace: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Узнайте, как создавать и управлять расширениями Dynatrace.")
 
 Этот dashboard был удален из готовых dashboard. Чтобы использовать его в вашей среде:
 
 1. Перейдите к dashboard, используя ссылку **Explore in Playground** выше.
-2. [Скачайте dashboard JSON](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-download "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") из Playground.
-3. [Загрузите dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-upload "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") в вашей среде.
+2. [Скачайте dashboard JSON](../dashboards-new.md#dashboards-download "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") из Playground.
+3. [Загрузите dashboard](../dashboards-new.md#dashboards-upload "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") в вашей среде.
 
 В будущих выпусках dashboard, распространяемые через расширения, будут автоматически появляться среди готовых dashboard после установки расширений в вашей среде.
 
@@ -324,13 +324,13 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/3i1633rp)
 
-Связанное приложение Dynatrace: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Узнайте, как создавать и управлять расширениями Dynatrace.")
+Связанное приложение Dynatrace: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Узнайте, как создавать и управлять расширениями Dynatrace.")
 
 Этот dashboard был удален из готовых dashboard. Чтобы использовать его в вашей среде:
 
 1. Перейдите к dashboard, используя ссылку **Explore in Playground** выше.
-2. [Скачайте dashboard JSON](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-download "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") из Playground.
-3. [Загрузите dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-upload "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") в вашей среде.
+2. [Скачайте dashboard JSON](../dashboards-new.md#dashboards-download "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") из Playground.
+3. [Загрузите dashboard](../dashboards-new.md#dashboards-upload "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") в вашей среде.
 
 В будущих выпусках dashboard, распространяемые через расширения, будут автоматически появляться среди готовых dashboard после установки расширений в вашей среде.
 
@@ -341,13 +341,13 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/lj1833fp)
 
-Связанное приложение Dynatrace: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Узнайте, как создавать и управлять приложениями Dynatrace Extensions.")
+Связанное приложение Dynatrace: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Узнайте, как создавать и управлять приложениями Dynatrace Extensions.")
 
 Эта панель управления была удалена из готовых панелей управления. Чтобы использовать ее в вашей среде.
 
 1. Перейдите к панели управления, используя ссылку **Explore in Playground** выше.
-2. [Скачайте панель управления JSON](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-download "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") из Playground.
-3. [Загрузите панель управления](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-upload "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") в вашей среде.
+2. [Скачайте панель управления JSON](../dashboards-new.md#dashboards-download "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") из Playground.
+3. [Загрузите панель управления](../dashboards-new.md#dashboards-upload "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") в вашей среде.
 
 В будущих выпусках панели управления, распространяемые через расширения, будут автоматически появляться среди готовых панелей управления после установки расширений в вашей среде.
 
@@ -359,13 +359,13 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/oo1a33ut)
 
-Связанное приложение Dynatrace: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Узнайте, как создавать и управлять приложениями Dynatrace Extensions.")
+Связанное приложение Dynatrace: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Узнайте, как создавать и управлять приложениями Dynatrace Extensions.")
 
 Эта панель управления была удалена из готовых панелей управления. Чтобы использовать ее в вашей среде.
 
 1. Перейдите к панели управления, используя ссылку **Explore in Playground** выше.
-2. [Скачайте панель управления JSON](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-download "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") из Playground.
-3. [Загрузите панель управления](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-upload "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") в вашей среде.
+2. [Скачайте панель управления JSON](../dashboards-new.md#dashboards-download "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") из Playground.
+3. [Загрузите панель управления](../dashboards-new.md#dashboards-upload "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") в вашей среде.
 
 В будущих выпусках панели управления, распространяемые через расширения, будут автоматически появляться среди готовых панелей управления после установки расширений в вашей среде.
 
@@ -377,13 +377,13 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/gq1c33t8)
 
-Связанное приложение Dynatrace: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Узнайте, как создавать и управлять приложениями Dynatrace Extensions.")
+Связанное приложение Dynatrace: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Узнайте, как создавать и управлять приложениями Dynatrace Extensions.")
 
 Эта панель управления была удалена из готовых панелей управления. Чтобы использовать ее в вашей среде.
 
 1. Перейдите к панели управления, используя ссылку **Explore in Playground** выше.
-2. [Скачайте панель управления JSON](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-download "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") из Playground.
-3. [Загрузите панель управления](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-upload "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") в вашей среде.
+2. [Скачайте панель управления JSON](../dashboards-new.md#dashboards-download "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") из Playground.
+3. [Загрузите панель управления](../dashboards-new.md#dashboards-upload "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") в вашей среде.
 
 В будущих выпусках панели управления, распространяемые через расширения, будут автоматически появляться среди готовых панелей управления после установки расширений в вашей среде.
 
@@ -394,7 +394,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/lz1e33cx)
 
-Связанное приложение Dynatrace: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Узнайте, как создавать и управлять расширениями Dynatrace.")
+Связанное приложение Dynatrace: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Узнайте, как создавать и управлять расширениями Dynatrace.")
 
 ![Готовый пример панели управления: Обзор сервера SQL](https://dt-cdn.net/images/ready-made-sql-server-overview-7680-636e4461f1.png)
 
@@ -404,7 +404,7 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/t51g33g2)
 
-Связанное приложение Dynatrace: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](/docs/ingest-from/extensions "Узнайте, как создавать и управлять расширениями Dynatrace.")
+Связанное приложение Dynatrace: ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") [Extensions](../../../ingest-from/extensions.md "Узнайте, как создавать и управлять расширениями Dynatrace.")
 
 ![Готовый пример панели управления: Обзор расширения VMware](https://dt-cdn.net/images/ready-made-vmware-extension-overview-7680-b839d5c59d.png)
 
@@ -414,6 +414,6 @@ scraped: 2026-03-06T21:09:48.245169
 
 [Изучите в Playgroundï»¿](https://dt-url.net/wv1i33mz)
 
-Связанное приложение Dynatrace: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") [Synthetic](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app "Просмотрите синтетические мониторы в вашей среде, найдите мониторы и получите быстрый обзор выбранного монитора.")
+Связанное приложение Dynatrace: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") [Synthetic](../../../observe/digital-experience/synthetic-on-grail/synthetic-app.md "Просмотрите синтетические мониторы в вашей среде, найдите мониторы и получите быстрый обзор выбранного монитора.")
 
 ![Готовый пример панели управления: Доступность и производительность веб-приложений](https://dt-cdn.net/images/web-availability-and-performance-1920-da66ea8453.png)

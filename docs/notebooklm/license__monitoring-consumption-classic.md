@@ -20,15 +20,15 @@ scraped: 2026-03-06T21:17:18.901123
 * 12-min read
 * Updated on Aug 20, 2025
 
-Dynatrace application and infrastructure monitoring is provided via installation of a single [Dynatrace OneAgent](/docs/platform/oneagent "Learn the monitoring capabilities of OneAgent.") on each monitored host in your environment. OneAgent is licensed on a per-host basis (virtual or physical server).
+Dynatrace application and infrastructure monitoring is provided via installation of a single [Dynatrace OneAgent](../ru/platform/oneagent.md "Learn the monitoring capabilities of OneAgent.") on each monitored host in your environment. OneAgent is licensed on a per-host basis (virtual or physical server).
 
 However, not all hosts are of equal size. Larger hosts consume more host units than do smaller-sized hosts. We use the amount of RAM on a monitored server as a measuring stick to determine the size of a host (that is how many host units it comprises). The advantage of this approach is its simplicity. You can have 10 JVMs or 1,000 JVMs; such factors don't affect the amount of monitoring that an environment consumes.
 
-OneAgent can operate in two different modes. By default, OneAgent operates in Full-Stack Monitoring mode. Alternatively, you can use [Infrastructure monitoring mode](/docs/platform/oneagent/monitoring-modes/monitoring-modes#infrastructure-only "Find out more about the available monitoring modes when using OneAgent.") to monitor hosts that don't require full-stack visibility. Infrastructure mode consumes fewer host units than Full-Stack mode.
+OneAgent can operate in two different modes. By default, OneAgent operates in Full-Stack Monitoring mode. Alternatively, you can use [Infrastructure monitoring mode](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md#infrastructure-only "Find out more about the available monitoring modes when using OneAgent.") to monitor hosts that don't require full-stack visibility. Infrastructure mode consumes fewer host units than Full-Stack mode.
 
 ## Host units
 
-Refer to the host unit weighting table below to see how many host units are consumed based on the amount of RAM a monitored server has. Total host-unit consumption is calculated based on the sum of all host units of all modes and monitored systems. For details about the host unit quota split, see [Quotas and overages](/docs/manage/account-management/license-subscription/license-overview-classic#quotas-and-overages "View your Dynatrace classic licensing usage and details.").
+Refer to the host unit weighting table below to see how many host units are consumed based on the amount of RAM a monitored server has. Total host-unit consumption is calculated based on the sum of all host units of all modes and monitored systems. For details about the host unit quota split, see [Quotas and overages](manage/account-management/license-subscription/license-overview-classic.md#quotas-and-overages "View your Dynatrace classic licensing usage and details.").
 
 | Max. RAM | Host units (Full-Stack[1](#fn-1-1-def)) | Host units (Infrastructure[2](#fn-1-2-def)) |
 | --- | --- | --- |
@@ -50,7 +50,7 @@ When the amount of RAM on a host falls between the values listed in the table ab
 
 2
 
-For [Infrastructure Monitoring mode](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent."), the same rounding principle applies. If a host unit cap is enabled for your Cloud Infrastructure license, the number of host units consumed by a host is capped at 1.0. If you have an existing agreement that doesn't reflect the `1.0` cap on host units per host, please [contact your Dynatrace Sales representativeï»¿](https://www.dynatrace.com/contact/).
+For [Infrastructure Monitoring mode](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent."), the same rounding principle applies. If a host unit cap is enabled for your Cloud Infrastructure license, the number of host units consumed by a host is capped at 1.0. If you have an existing agreement that doesn't reflect the `1.0` cap on host units per host, please [contact your Dynatrace Sales representativeï»¿](https://www.dynatrace.com/contact/).
 
 ### Host unit hours
 
@@ -135,21 +135,21 @@ Example scenarios include, but are not limited to:
 
 * [Amazon ECSï»¿](https://docs.aws.amazon.com/whitepapers/latest/aws-overview/compute-services.html)
 
-  + [AWS ECS daemon](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs/deploy-oneagent-on-ecs "Monitor ECS clusters as a daemon service, with the EC2 launch type.")
-  + [AWS Elastic Beanstalk](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-beanstalk "Install OneAgent on AWS Elastic Beanstalk.")
-  + [AWS Elastic Kubernetes Service](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-eks "Install OneAgent on Elastic Kubernetes Service.")
-* [AWS Fargate](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate "Install OneAgent on AWS Fargate.")
-* [Azure App Service](/docs/observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring "Monitor Azure with Dynatrace") including [Azure Functions on App-Service (Dedicated) Plan](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.")
+  + [AWS ECS daemon](../ru/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs/deploy-oneagent-on-ecs.md "Monitor ECS clusters as a daemon service, with the EC2 launch type.")
+  + [AWS Elastic Beanstalk](../ru/ingest-from/amazon-web-services/integrate-into-aws/aws-beanstalk.md "Install OneAgent on AWS Elastic Beanstalk.")
+  + [AWS Elastic Kubernetes Service](../ru/ingest-from/amazon-web-services/integrate-into-aws/aws-eks.md "Install OneAgent on Elastic Kubernetes Service.")
+* [AWS Fargate](../ru/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate.md "Install OneAgent on AWS Fargate.")
+* [Azure App Service](../ru/observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring.md "Monitor Azure with Dynatrace") including [Azure Functions on App-Service (Dedicated) Plan](../ru/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions.md "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.")
 * [Azure Container instancesï»¿](https://docs.microsoft.com/en-us/azure/container-instances/)
 
-  + [Azure Kubernetes Service](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-aks "Learn how to deploy, operate, and maintain OneAgent on Azure Kubernetes Service.")
-* [Cloud Foundry](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring "Install OneAgent on Cloud Foundry.")
+  + [Azure Kubernetes Service](../ru/ingest-from/microsoft-azure-services/azure-integrations/azure-aks.md "Learn how to deploy, operate, and maintain OneAgent on Azure Kubernetes Service.")
+* [Cloud Foundry](ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring.md "Install OneAgent on Cloud Foundry.")
 
-* [Kubernetes](/docs/ingest-from/setup-on-k8s/deployment/application-observability "Deploy Dynatrace Operator in application monitoring mode to Kubernetes")
+* [Kubernetes](../ru/ingest-from/setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes")
 
 * [Red Hat OpenShift Container Platformï»¿](https://www.redhat.com/en/technologies/cloud-computing/openshift/container-platform)
 
-For application-only monitoring, Dynatrace uses [universal injection](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix#universal-injection "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") to inject OneAgent code modules into applications in a unified way across multiple platforms.
+For application-only monitoring, Dynatrace uses [universal injection](../ru/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md#universal-injection "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") to inject OneAgent code modules into applications in a unified way across multiple platforms.
 
 Host unit calculations for application-only monitoring are based on the detected memory limit, such as a container memory limit.
 This memory is detected at the level of the OS instance or container.
@@ -165,7 +165,7 @@ The following scenarios have their own calculations for host units and host unit
 | Azure App Service (running on Linux OS or Linux containers) | Consumption is based on the memory of a plans instance, multiplied by the number of running containers. This is because container resource limits cannot be set. |
 | Oracle Solaris Zones | Solaris Zones are counted as hosts. |
 | Monitored containers that are not detected as containers | These containers are counted as hosts. |
-| Serverless functions | Serverless functions consume [DDUs for serverless functions](/docs/license/monitoring-consumption-classic/davis-data-units/serverless-monitoring "Understand how serverless monitoring consumption is calculated."). |
+| Serverless functions | Serverless functions consume [DDUs for serverless functions](license/monitoring-consumption-classic/davis-data-units/serverless-monitoring.md "Understand how serverless monitoring consumption is calculated."). |
 
 Host unit hours calculation example (application-only monitoring)
 
@@ -186,11 +186,11 @@ The host has 16 GiB RAM, but no container memory limits are detected. Therefore,
 
 Full-Stack Monitoring includes a defined amount of trace data volume. The included peak trace volume available in an environment at any time depends on the active host units in that environment. Each environment processes a minimum of 5,000 full-service calls per minute, regardless of the number of active host units. Every active host unit increases the environment's peak trace volume by 250 full-service calls per minute. You can calculate the peak trace volume with the following calculation: `peak trace volume = (number of active host units) * 250`.
 
-The source distributed trace data is Dynatrace OneAgent. OneAgent automatically manages the volume of captured trace data via [Adaptive Traffic Management](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-saas-classic "Learn how Adaptive Traffic Management works with Dynatrace classic license and how to adjust trace sampling for HTTP and RPC requests."). It automatically and continuously adjusts the sampling rate in an intelligent way and keeps the ingested trace data volume roughly within your included trace data volume.
+The source distributed trace data is Dynatrace OneAgent. OneAgent automatically manages the volume of captured trace data via [Adaptive Traffic Management](ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-saas-classic.md "Learn how Adaptive Traffic Management works with Dynatrace classic license and how to adjust trace sampling for HTTP and RPC requests."). It automatically and continuously adjusts the sampling rate in an intelligent way and keeps the ingested trace data volume roughly within your included trace data volume.
 
 ## Mainframe monitoring on IBM z/OS
 
-Monitoring of the [CICS, IMS, and z/OS Java code modules](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos "Install, configure, and manage Dynatrace modules on z/OS.") that run on IBM z/OS are consumed based on million service units (MSUs). Therefore, mainframe monitoring doesn't contribute to the consumption of host units or host unit hours.
+Monitoring of the [CICS, IMS, and z/OS Java code modules](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos.md "Install, configure, and manage Dynatrace modules on z/OS.") that run on IBM z/OS are consumed based on million service units (MSUs). Therefore, mainframe monitoring doesn't contribute to the consumption of host units or host unit hours.
 
 An MSU is an IBM measurement of the amount of processing workload an IBM Z mainframe can perform per hour. The amount of consumed MSUs in [sub-capacity licensingï»¿](https://www.ibm.com/it-infrastructure/z/pricing-licensing) is calculated based on peak rolling 4-hour average MSU values of the most recent month from IBM system management facility data per monitored logical partition (LPAR) or subsystem.
 
@@ -202,7 +202,7 @@ The [Premium High Availabilityï»¿](https://docs.dynatrace.com/managed/shortli
 
 ## How consumption of Synthetic NAM Monitoring affects billing
 
-Network availability monitoring (NAM) monitors don't have a separate line on the Dynatrace rate card. Instead, you're billed based on the [number of metric data points](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") generated during each execution of a NAM test. For more information, please contact your Dynatrace account manager.
+Network availability monitoring (NAM) monitors don't have a separate line on the Dynatrace rate card. Instead, you're billed based on the [number of metric data points](../ru/license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") generated during each execution of a NAM test. For more information, please contact your Dynatrace account manager.
 
 Metric data point calculations
 
@@ -220,9 +220,9 @@ The following details apply to metric data points:
 ## Related topics
 
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
-* [Extending Dynatrace (Davis data units)](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).")
-* [Extend metric observability](/docs/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.")
-* [DDUs for Log Monitoring Classic](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.")
+* [Extending Dynatrace (Davis data units)](license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).")
+* [Extend metric observability](../ru/ingest-from/extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace.")
+* [DDUs for Log Monitoring Classic](license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.")
 
 ---
 
@@ -242,9 +242,9 @@ scraped: 2026-03-06T21:37:37.198226
 * 2-min read
 * Published Mar 30, 2021
 
-While there are no additional costs or licensing involved in the integration of OpenTracing and OpenTelemetry span data into Dynatrace via OneAgent, you have the option to configure the Dynatrace Trace API to ingest OpenTelemetry and OpenTracing spans; these are known as "custom traces." This approach is useful for seamlessly integrating OpenTelemetry trace data that's emitted by third-party services. Ingestion of spans via the Trace API endpoint consumes [Davis data units](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") because this approach requires more processing and analytical power than ingestion via OneAgent.
+While there are no additional costs or licensing involved in the integration of OpenTracing and OpenTelemetry span data into Dynatrace via OneAgent, you have the option to configure the Dynatrace Trace API to ingest OpenTelemetry and OpenTracing spans; these are known as "custom traces." This approach is useful for seamlessly integrating OpenTelemetry trace data that's emitted by third-party services. Ingestion of spans via the Trace API endpoint consumes [Davis data units](license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") because this approach requires more processing and analytical power than ingestion via OneAgent.
 
-For details on OneAgent-based ingestion of OpenTelemetry and OpenTracing spans, which does not consume DDUs, see [OneAgent OpenTracing and OpenTelemetry support](/docs/ingest-from/extend-dynatrace/extend-tracing/opentracing "Learn how to integrate OpenTracing with Dynatrace.").
+For details on OneAgent-based ingestion of OpenTelemetry and OpenTracing spans, which does not consume DDUs, see [OneAgent OpenTracing and OpenTelemetry support](../ru/ingest-from/extend-dynatrace/extend-tracing/opentracing.md "Learn how to integrate OpenTracing with Dynatrace.").
 
 ## DDU consumption for custom trace ingestion
 
@@ -256,15 +256,15 @@ To calculate the DDU consumption for custom traces, multiply the total number of
 
 Davis data unit pools
 
-[Davis data units pools for traces](/docs/license/monitoring-consumption-classic/davis-data-units#ddu-pools "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") allow you to set hard limits on your DDU consumption for traces. Go to **Settings** > **Consumption** > **Davis data units pools** and turn on **Enable limit** in the **Traces** section to set an annual or monthly limit.
+[Davis data units pools for traces](license/monitoring-consumption-classic/davis-data-units.md#ddu-pools "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") allow you to set hard limits on your DDU consumption for traces. Go to **Settings** > **Consumption** > **Davis data units pools** and turn on **Enable limit** in the **Traces** section to set an annual or monthly limit.
 
 ## Related topics
 
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
-* [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
-* [Extending Dynatrace (Davis data units)](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).")
-* [DDUs for metrics](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.")
-* [Extend metric observability](/docs/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.")
+* [License Dynatrace](license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* [Extending Dynatrace (Davis data units)](license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).")
+* [DDUs for metrics](license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.")
+* [Extend metric observability](../ru/ingest-from/extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace.")
 
 ---
 
@@ -284,28 +284,28 @@ scraped: 2026-03-06T21:32:03.536928
 * 2-min read
 * Published Jul 09, 2021
 
-While there are no additional costs or licensing involved in the default monitoring and reporting of built-in event types via OneAgent or cloud integrations, you have the option to configure custom events and/or event-ingestion channels. Such event-related customizations do result in the consumption of [Davis data units](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU)."). Custom Davis event ingestion consumes DDUs because it requires significantly more processing and analytical power than does built-in event ingestion via OneAgent of cloud integrations.
+While there are no additional costs or licensing involved in the default monitoring and reporting of built-in event types via OneAgent or cloud integrations, you have the option to configure custom events and/or event-ingestion channels. Such event-related customizations do result in the consumption of [Davis data units](license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU)."). Custom Davis event ingestion consumes DDUs because it requires significantly more processing and analytical power than does built-in event ingestion via OneAgent of cloud integrations.
 
 ## Custom Davis event types that consume DDUs
 
 Custom created/ingested or subscribed events that you might configure for your environment and thereby consume DDUs include:
 
-* Any custom event sent to Dynatrace using the [Events API v2](/docs/dynatrace-api/environment-api/events-v2 "Find out what you can do with the Dynatrace Events API v2.") or the [OneAgent API](/docs/ingest-from/extend-dynatrace/extend-events#oneagent "Learn how to extend event observability in Dynatrace.")
-* Any custom event (such as a Kubernetes event) created from log messages by a [log event](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-events "Learn how to create and use Dynatrace log events to analyze log data.") extraction rule
+* Any custom event sent to Dynatrace using the [Events API v2](../ru/dynatrace-api/environment-api/events-v2.md "Find out what you can do with the Dynatrace Events API v2.") or the [OneAgent API](../ru/ingest-from/extend-dynatrace/extend-events.md#oneagent "Learn how to extend event observability in Dynatrace.")
+* Any custom event (such as a Kubernetes event) created from log messages by a [log event](../ru/analyze-explore-automate/log-monitoring/analyze-log-data/log-events.md "Learn how to create and use Dynatrace log events to analyze log data.") extraction rule
 
 ## How DDU consumption is calculated for custom Davis events
 
-DDU consumption for custom Davis events is equivalent to [custom metric data point licensing](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation#calculation-details "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."). Every ingested custom event consumes 0.001 DDU. This also applies to updates custom events already sent.
+DDU consumption for custom Davis events is equivalent to [custom metric data point licensing](license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md#calculation-details "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."). Every ingested custom event consumes 0.001 DDU. This also applies to updates custom events already sent.
 
 Davis data unit pools
 
-[Davis data units pools for events](/docs/license/monitoring-consumption-classic/davis-data-units#ddu-pools "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") allow you to set hard limits on your DDU consumption for events. Go to **Settings** > **Consumption** > **Davis data units pools** and turn on **Enable limit** in the **Events** section to set an annual or monthly limit.
+[Davis data units pools for events](license/monitoring-consumption-classic/davis-data-units.md#ddu-pools "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") allow you to set hard limits on your DDU consumption for events. Go to **Settings** > **Consumption** > **Davis data units pools** and turn on **Enable limit** in the **Events** section to set an annual or monthly limit.
 
 ## FAQ
 
 ### What can cause consumption shown as entity "Not related to a monitored entity"
 
-The consumption can be caused by events v2 API if no entity selector is provided. See [Events v2](/docs/dynatrace-api/environment-api/events-v2 "Find out what you can do with the Dynatrace Events API v2.").
+The consumption can be caused by events v2 API if no entity selector is provided. See [Events v2](../ru/dynatrace-api/environment-api/events-v2.md "Find out what you can do with the Dynatrace Events API v2.").
 
 ## Related topics
 
@@ -329,7 +329,7 @@ scraped: 2026-03-06T21:26:35.434463
 * 12-min read
 * Updated on Apr 07, 2025
 
-The DDU consumption model outlined here for Log Management and Analytics only affects Dynatrace SaaS environments that are activated for Dynatrace Grail for log data management. DDU consumption for all other DDU capability types, including [Log Monitoring for Dynatrace SaaS & Managed](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic."), remains unchanged. For details about activating Log Management and Analytics for your Dynatrace environment, contact a Dynatrace product expert via live chat within your Dynatrace environment.
+The DDU consumption model outlined here for Log Management and Analytics only affects Dynatrace SaaS environments that are activated for Dynatrace Grail for log data management. DDU consumption for all other DDU capability types, including [Log Monitoring for Dynatrace SaaS & Managed](license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic."), remains unchanged. For details about activating Log Management and Analytics for your Dynatrace environment, contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 This page explains how DDUs are consumed by Dynatrace Log Management and Analytics and how you can estimate and track your environmentâs DDU consumption.
 
@@ -464,7 +464,7 @@ If you cancel a query execution, all data read before the cancellation will be f
 ## Related topics
 
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
-* [Log Monitoring Classic](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* [Log Monitoring Classic](analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
 
 ---
 
@@ -484,7 +484,7 @@ scraped: 2026-03-06T21:17:17.183082
 * 1-min read
 * Published Mar 30, 2021
 
-Monitoring consumption for Dynatrace classic licensing is based on various monitoring units that are consumed by your Dynatrace environment as your organization uses Dynatrace platform capabilities. If you have a Dynatrace Platform Subscription, please refer to [Dynatrace Platform Subscription (DPS) documentation](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+Monitoring consumption for Dynatrace classic licensing is based on various monitoring units that are consumed by your Dynatrace environment as your organization uses Dynatrace platform capabilities. If you have a Dynatrace Platform Subscription, please refer to [Dynatrace Platform Subscription (DPS) documentation](license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
 
 To get started using Dynatrace, [contact Dynatrace Salesï»¿](https://www.dynatrace.com/contact/). Your sales representative will provide you with further details.
 
@@ -492,15 +492,15 @@ This page is provided for informational purposes only. The terms of the Dynatrac
 
 [### Dynatrace license lifecycle
 
-Get to know the lifecycle of Dynatrace SaaS licenses and understand how licenses affect your consumption of Dynatrace services.](/docs/license/license-lifecycle "Understand your Dynatrace DPS or Classic license lifecycle, and how it affects your consumption of Dynatrace services.")[### Application and infrastructure monitoring (host units)
+Get to know the lifecycle of Dynatrace SaaS licenses and understand how licenses affect your consumption of Dynatrace services.](../ru/license/license-lifecycle.md "Understand your Dynatrace DPS or Classic license lifecycle, and how it affects your consumption of Dynatrace services.")[### Application and infrastructure monitoring (host units)
 
-Each OneAgent-monitored host in your environment consumes host units.](/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.")[### Davis data units (DDUs)
+Each OneAgent-monitored host in your environment consumes host units.](../ru/license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.")[### Davis data units (DDUs)
 
-Davis data units (DDU) provide a simple means of licensing certain capabilities (custom metrics, traces, log monitoring, and custom events) on the Dynatrace platform.](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).")[### Digital Experience monitoring (DEM units)
+Davis data units (DDU) provide a simple means of licensing certain capabilities (custom metrics, traces, log monitoring, and custom events) on the Dynatrace platform.](license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).")[### Digital Experience monitoring (DEM units)
 
-Dynatrace Synthetic Monitoring, Real User Monitoring, and Session Replay consume DEM units.](/docs/license/monitoring-consumption-classic/digital-experience-monitoring-units "Understand how Dynatrace Digital Experience Monitoring consumption is calculated based on DEM units.")[### Application Security monitoring (ASUs)
+Dynatrace Synthetic Monitoring, Real User Monitoring, and Session Replay consume DEM units.](license/monitoring-consumption-classic/digital-experience-monitoring-units.md "Understand how Dynatrace Digital Experience Monitoring consumption is calculated based on DEM units.")[### Application Security monitoring (ASUs)
 
-Dynatrace Application Security consumes Application Security units (ASUs).](/docs/license/monitoring-consumption-classic/application-security-units "Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.")
+Dynatrace Application Security consumes Application Security units (ASUs).](license/monitoring-consumption-classic/application-security-units.md "Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.")
 
 ## Related topics
 

@@ -13,14 +13,14 @@ scraped: 2026-03-05T21:27:31.687061
 * 8-min read
 * Updated on Jul 12, 2022
 
-To set up how errors are captured, edit your application and expand the **Errors** section. Select the required error type and then configure an error to be captured, included in [Apdex calculations](/docs/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance."), or considered for [Davis AI problem detection and analysis](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.").
+To set up how errors are captured, edit your application and expand the **Errors** section. Select the required error type and then configure an error to be captured, included in [Apdex calculations](../../rum-concepts/scores-and-ratings/apdex-ratings.md "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance."), or considered for [Davis AI problem detection and analysis](../../../../dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence.").
 
 ## Error types
 
-Dynatrace categorizes [errors](/docs/observe/digital-experience/rum-concepts/user-and-error-events#error "Learn about user and error events and the types of user and error events captured by Dynatrace.") into the following types.
+Dynatrace categorizes [errors](../../rum-concepts/user-and-error-events.md#error "Learn about user and error events and the types of user and error events captured by Dynatrace.") into the following types.
 
 * **Request errors** are detected by the browser and OneAgent on your servers.
-* **Custom errors** are triggered directly in your application via the [RUM JavaScript API](/docs/observe/digital-experience/web-applications/additional-configuration/customize-rum "Find out how to customize Real User Monitoring using the JavaScript API.").
+* **Custom errors** are triggered directly in your application via the [RUM JavaScript API](customize-rum.md "Find out how to customize Real User Monitoring using the JavaScript API.").
 * **JavaScript errors** are detected JavaScript exceptions thrown by the browser.
 
 ## Configure request errors
@@ -103,7 +103,7 @@ For applications created with Dynatrace versions earlier than 1.238, the custom 
 
 Custom errors allow you to detect your own errors. An example of this is an error that is triggered during a form field validation.
 
-For setting up a custom error, configure how Dynatrace should treat the error, and then trigger the error in your application using the [RUM JavaScript API](/docs/observe/digital-experience/web-applications/additional-configuration/customize-rum "Find out how to customize Real User Monitoring using the JavaScript API.").
+For setting up a custom error, configure how Dynatrace should treat the error, and then trigger the error in your application using the [RUM JavaScript API](customize-rum.md "Find out how to customize Real User Monitoring using the JavaScript API.").
 
 To add a custom error rule
 
@@ -128,7 +128,7 @@ The custom error rules are executed in the order of their appearance in the erro
 
 You can also turn on **Ignore custom errors in Apdex calculations** to override Apdex settings for individual custom error rules.
 
-After adding or excluding a custom error in Dynatrace, you must trigger the error in your application using the `dtrum.reportCustomError()` method of the [RUM JavaScript API](/docs/observe/digital-experience/web-applications/additional-configuration/customize-rum "Find out how to customize Real User Monitoring using the JavaScript API.").
+After adding or excluding a custom error in Dynatrace, you must trigger the error in your application using the `dtrum.reportCustomError()` method of the [RUM JavaScript API](customize-rum.md "Find out how to customize Real User Monitoring using the JavaScript API.").
 
 For example, a form field error would require the following JavaScript method parameters:
 
@@ -170,10 +170,10 @@ To create additional error alerts
 4. Under **Detail analysis for selected timeframe**, set filters in the **Filter byâ¦** box. Available filters in the **Errors** category are `Custom error name`, `Custom error type`, `Error type`, `Errors`, `Request error code`, `Request error resource`, and `Request error type`.
 5. Select **Create metric**.
 6. In the opened overlay, adjust the metric settings, and select **Create metric**.  
-   For details on creating and charting calculated metrics, see [Create calculated metrics for web applications](/docs/observe/digital-experience/web-applications/additional-configuration/rum-calculated-metrics-web "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.").
+   For details on creating and charting calculated metrics, see [Create calculated metrics for web applications](rum-calculated-metrics-web.md "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.").
 7. Select **Create alert**.
 8. Configure the alert settings. When done, select **Create custom event for alerting**.
 
-   For details on creating an alert, see [Metric events](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace").
+   For details on creating an alert, see [Metric events](../../../../dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace").
 
-   Use a static threshold of `1` if you want Davis to always raise a problem when a particular error occurs. If you're interested only in anomalies for that error, use [auto-baselining](/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining "Learn how Dynatrace AI automatically calculates baselines based on a multi-dimensional baselining scheme.").
+   Use a static threshold of `1` if you want Davis to always raise a problem when a particular error occurs. If you're interested only in anomalies for that error, use [auto-baselining](../../../../dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining.md "Learn how Dynatrace AI automatically calculates baselines based on a multi-dimensional baselining scheme.").

@@ -13,13 +13,13 @@ scraped: 2026-03-01T21:24:07.443885
 
 [### List all units
 
-Get an overview of all units available in your environment.](/docs/dynatrace-api/environment-api/metrics-units/get-all-units "List all metrics that are available for your monitoring environment via the Dynatrace API.")[### View a unit
+Get an overview of all units available in your environment.](metrics-units/get-all-units.md "List all metrics that are available for your monitoring environment via the Dynatrace API.")[### View a unit
 
-Get the full descriptor of a unit.](/docs/dynatrace-api/environment-api/metrics-units/get-unit "View metadata of a metric unit via the Dynatrace API.")[### Convert units
+Get the full descriptor of a unit.](metrics-units/get-unit.md "View metadata of a metric unit via the Dynatrace API.")[### Convert units
 
-Convert a metric value from one unit into another.](/docs/dynatrace-api/environment-api/metrics-units/get-unit-convert "Convert a metric value from one unit into another via the Dynatrace API.")
+Convert a metric value from one unit into another.](metrics-units/get-unit-convert.md "Convert a metric value from one unit into another via the Dynatrace API.")
 
 ## Related topics
 
-* [Metrics API v2](/docs/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.")
-* [Extend metric observability](/docs/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.")
+* [Metrics API v2](metric-v2.md "Retrieve metric information via Metrics v2 API.")
+* [Extend metric observability](../../ingest-from/extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace.")

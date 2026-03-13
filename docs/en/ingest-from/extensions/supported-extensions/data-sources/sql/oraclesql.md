@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:16:43.613643
 
 Dynatrace provides you with a framework that you can use to extend your application observability into data acquired directly from your Oracle Database layer, so that you can monitor how database server tasks impact your app.
 
-To get started, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=oracle+sql) to see if the Dynatrace-provided Oracle Database extension satisfies your requirements. If this is not the case, you can build your own [Dynatrace Oracle Database extension](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql "Learn how to create an SQL data source-based extension using the Extensions framework.").
+To get started, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=oracle+sql) to see if the Dynatrace-provided Oracle Database extension satisfies your requirements. If this is not the case, you can build your own [Dynatrace Oracle Database extension](../../../develop-your-extensions/data-sources/sql.md "Learn how to create an SQL data source-based extension using the Extensions framework.").
 
 ## Before you begin
 
@@ -54,13 +54,13 @@ Next, perform the following steps.
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Accept Oracle JDBC driver redistribution license**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql#step-1 "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Accept Oracle JDBC driver redistribution license**](oraclesql.md#step-1 "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Define endpoints**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql#step-2 "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Define endpoints**](oraclesql.md#step-2 "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**ActiveGate group**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql#step-3 "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**ActiveGate group**](oraclesql.md#step-3 "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**Activate extension**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql#step-4 "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")
+**Activate extension**](oraclesql.md#step-4 "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")
 
 ### Step 1 Accept Oracle JDBC driver redistribution license
 
@@ -75,7 +75,7 @@ Select **Add Oracle endpoint** to define the Oracle Database servers from which 
 * Database identifier, either **Service Name** or **SID**.
 * Authentication credentials. Note that only basic authentication is supported. Authentication details passed to Dynatrace when activating monitoring configuration are obfuscated and it's impossible to retrieve them.
 
-  + You can [use credential vault](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring#credential-vault "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.") to provide a more secure approach of storing and managing user credentials.
+  + You can [use credential vault](../../../develop-your-extensions/data-sources/sql/oracle-monitoring.md#credential-vault "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.") to provide a more secure approach of storing and managing user credentials.
 
 When done, select **Next step**
 
@@ -96,7 +96,7 @@ When done, select **Activate**.
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](../../../manage-extensions.md "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
 
 ## Related topics
 

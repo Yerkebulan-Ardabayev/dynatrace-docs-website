@@ -21,7 +21,7 @@ scraped: 2026-03-06T21:10:29.766809
 
 * Приложение
 
-[Перейти к приложению](/docs/observe/infrastructure-observability/infrastructure-and-operations)[![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")
+[Перейти к приложению](infrastructure-observability/infrastructure-and-operations.md)[![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")
 
 #### Kubernetes
 
@@ -29,7 +29,7 @@ scraped: 2026-03-06T21:10:29.766809
 
 * Приложение
 
-[Перейти к приложению](/docs/observe/infrastructure-observability/kubernetes-app)[![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases")
+[Перейти к приложению](infrastructure-observability/kubernetes-app.md)[![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases")
 
 #### Приложение Databases
 
@@ -37,7 +37,7 @@ scraped: 2026-03-06T21:10:29.766809
 
 * Приложение
 
-[Перейти к приложению](/docs/observe/infrastructure-observability/databases/database-app)[![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds")
+[Перейти к приложению](infrastructure-observability/databases/database-app.md)[![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds")
 
 #### Приложение Clouds
 
@@ -45,7 +45,7 @@ scraped: 2026-03-06T21:10:29.766809
 
 * Приложение
 
-[Перейти к приложению](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app)
+[Перейти к приложению](infrastructure-observability/cloud-platform-monitoring/clouds-app.md)
 
 ## Концепции
 
@@ -55,37 +55,37 @@ scraped: 2026-03-06T21:10:29.766809
 
 * Пояснение
 
-[Читать пояснение](/docs/observe/infrastructure-observability/infrastructure-and-operations/data-centers)[#### Хосты
+[Читать пояснение](infrastructure-observability/infrastructure-and-operations/data-centers.md)[#### Хосты
 
 Мониторинг хостов инфраструктуры: физических серверов, виртуальных машин и облачных экземпляров для отслеживания состояния, производительности и использования ресурсов.
 
 * Пояснение
 
-[Читать пояснение](/docs/observe/infrastructure-observability/infrastructure-and-operations/hosts)[#### Процессы
+[Читать пояснение](infrastructure-observability/infrastructure-and-operations/hosts.md)[#### Процессы
 
 Мониторинг процессов, работающих на хостах и в контейнерах, с подробной информацией о тенденциях использования ЦП и памяти, а также ключевых метриках.
 
 * Пояснение
 
-[Читать пояснение](/docs/observe/infrastructure-observability/infrastructure-and-operations/processes)[#### Контейнеры
+[Читать пояснение](infrastructure-observability/infrastructure-and-operations/processes.md)[#### Контейнеры
 
 Мониторинг и устранение неполадок контейнерных рабочих нагрузок в Kubernetes и на автономных хостах.
 
 * Пояснение
 
-[Читать пояснение](/docs/observe/infrastructure-observability/infrastructure-and-operations/containers)[#### Сетевые устройства
+[Читать пояснение](infrastructure-observability/infrastructure-and-operations/containers.md)[#### Сетевые устройства
 
 Мониторинг сетевых устройств и получение информации о сетевых компонентах с помощью аналитики на основе Dynatrace Intelligence и гибких возможностей наблюдаемости.
 
 * Пояснение
 
-[Читать пояснение](/docs/observe/infrastructure-observability/infrastructure-and-operations/network-devices)[#### Расширения
+[Читать пояснение](infrastructure-observability/infrastructure-and-operations/network-devices.md)[#### Расширения
 
 Расширения, упорядоченные по категориям
 
 * Справочник
 
-[Читать справочник](/docs/observe/infrastructure-observability/extensions)
+[Читать справочник](infrastructure-observability/extensions.md)
 
 ## Классический режим
 
@@ -95,29 +95,29 @@ scraped: 2026-03-06T21:10:29.766809
 
 * Пояснение
 
-[Читать пояснение](/docs/observe/infrastructure-observability/container-platform-monitoring)[#### Группы процессов
+[Читать пояснение](infrastructure-observability/container-platform-monitoring.md)[#### Группы процессов
 
 Анализ групп процессов и настройка именования, обнаружения и мониторинга групп процессов.
 
 * Пояснение
 
-[Читать пояснение](/docs/observe/infrastructure-observability/process-groups)[#### Очереди сообщений
+[Читать пояснение](infrastructure-observability/process-groups.md)[#### Очереди сообщений
 
 Мониторинг и анализ очередей сообщений с помощью Dynatrace.
 
 * Пояснение
 
-[Читать пояснение](/docs/observe/infrastructure-observability/queues)[#### Мониторинг VMware vSphere
+[Читать пояснение](infrastructure-observability/queues.md)[#### Мониторинг VMware vSphere
 
 Мониторинг VMware vSphere с помощью Dynatrace.
 
 * Практическое руководство
 
-[Читать руководство](/docs/observe/infrastructure-observability/vmware-vsphere-monitoring)
+[Читать руководство](infrastructure-observability/vmware-vsphere-monitoring.md)
 
 ## Связанные темы
 
-* [Мониторинг бессерверных вычислений](/docs/discover-dynatrace/get-started/serverless-monitoring "Serverless observability with Dynatrace")
-* [Прием данных](/docs/ingest-from "Learn how to install and configure ActiveGate and OneAgent on various platforms.")
-* [Мониторинг групп контейнеров](/docs/observe/infrastructure-observability/container-platform-monitoring/container-groups "Overview on container groups monitoring")
-* [Правила мониторинга контейнеров](/docs/observe/infrastructure-observability/container-platform-monitoring/container-monitoring-rules "Define, enable and disable container monitoring rules")
+* [Мониторинг бессерверных вычислений](../discover-dynatrace/get-started/serverless-monitoring.md "Serverless observability with Dynatrace")
+* [Прием данных](../ingest-from.md "Learn how to install and configure ActiveGate and OneAgent on various platforms.")
+* [Мониторинг групп контейнеров](infrastructure-observability/container-platform-monitoring/container-groups.md "Overview on container groups monitoring")
+* [Правила мониторинга контейнеров](infrastructure-observability/container-platform-monitoring/container-monitoring-rules.md "Define, enable and disable container monitoring rules")

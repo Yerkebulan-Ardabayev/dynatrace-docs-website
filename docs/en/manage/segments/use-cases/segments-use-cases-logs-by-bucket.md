@@ -27,14 +27,14 @@ In this article, you'll learn how to create a new segment to function as a log b
 
 Prior knowledge
 
-* [Include data in segments](/docs/manage/segments/concepts/segments-concepts-includes "Learn how data of different types can be included in segments.")
-* [Variables in segments](/docs/manage/segments/concepts/segments-concepts-variables "Learn how variables help to form dynamic segments and reduce configuration effort and maintenance.")
-* [Segments in DQL queries](/docs/manage/segments/concepts/segments-concepts-queries "Learn how Grail evaluates segments during query execution to return matching results only.")
+* [Include data in segments](../concepts/segments-concepts-includes.md "Learn how data of different types can be included in segments.")
+* [Variables in segments](../concepts/segments-concepts-variables.md "Learn how variables help to form dynamic segments and reduce configuration effort and maintenance.")
+* [Segments in DQL queries](../concepts/segments-concepts-queries.md "Learn how Grail evaluates segments during query execution to return matching results only.")
 
 Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine.
-* You have both `storage:filter-segments:write` and `storage:filter-segments:read` permissions. To learn how to set up the permissions, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
+* You have both `storage:filter-segments:write` and `storage:filter-segments:read` permissions. To learn how to set up the permissions, see [Permissions in Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
 
 Key terms
 
@@ -51,11 +51,11 @@ Dynamic segment
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Create a segment for a single log bucket**](/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket#create-segment "Segment logs by bucket with segments")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Create a segment for a single log bucket**](segments-use-cases-logs-by-bucket.md#create-segment "Segment logs by bucket with segments")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Add a variable to filter for any log bucket**](/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket#variable "Segment logs by bucket with segments")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Add a variable to filter for any log bucket**](segments-use-cases-logs-by-bucket.md#variable "Segment logs by bucket with segments")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Use segment to analyze logs by bucket**](/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket#analyze "Segment logs by bucket with segments")
+**Use segment to analyze logs by bucket**](segments-use-cases-logs-by-bucket.md#analyze "Segment logs by bucket with segments")
 
 ### Step 1 Create a segment for a single log bucket
 

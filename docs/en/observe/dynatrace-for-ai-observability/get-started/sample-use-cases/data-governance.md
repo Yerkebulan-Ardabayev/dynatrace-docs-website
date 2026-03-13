@@ -41,7 +41,7 @@ See below for the details of each step.
 
 ### Step 1 Configure Dynatrace
 
-In this step, we create a Dynatrace token and we configure [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to retain the data for 5+ years.
+In this step, we create a Dynatrace token and we configure [OpenPipeline](../../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to retain the data for 5+ years.
 
 #### Create Dynatrace token
 
@@ -176,6 +176,6 @@ And that's it! ![Progressive delivery](https://cdn.bfldr.com/B686QPH3/at/r898jzt
 Now you can:
 
 * Fetch all the user/AI interactions, training status, and more on demand.
-* Use [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") or [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") to create data-driven documents for custom analytics on it.
+* Use [Notebooks](../../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") or [Dashboards](../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") to create data-driven documents for custom analytics on it.
 
 ![GenAI Compliance Auditing](https://dt-cdn.net/images/gen-ai-auditing-7680-1f44c8a6bf.png)

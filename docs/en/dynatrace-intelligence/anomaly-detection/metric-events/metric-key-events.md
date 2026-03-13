@@ -46,7 +46,7 @@ Two types of filters are available:
 
    1. Specify the threshold value. Select **Use suggested threshold** to use a value based on the previous data.
    2. If applicable, select the threshold unit.
-   3. Choose the [missing data alert](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#missing-data "How to set up an alert for missing measurements.") behavior.  
+   3. Choose the [missing data alert](../anomaly-detection-configuration.md#missing-data "How to set up an alert for missing measurements.") behavior.  
       If the missing data alert is enabled, it is combined with the threshold condition by the **OR** logic.
    4. Select the alert condition: alert if the metric is above or below the threshold.
    5. Optional In the **Advanced model properties** section, specify a sliding window for comparison.  
@@ -60,7 +60,7 @@ Two types of filters are available:
 
     * `{alert_condition}`âthe condition of the alert (above/below the threshold).
     * `{baseline}`âthe violated value of the baseline.
-    * `{dims}`âa list of all dimensions (and their values) of the metric that violated the threshold. You can also specify a particular dimension: `{dims:dt.entity.<entity>}`. To fetch the list of available dimensions for your metric, query it via the [GET metric descriptor](/docs/dynatrace-api/environment-api/metric-v2/get-descriptor "View the descriptor of a metric via Metrics v2 API.") request.
+    * `{dims}`âa list of all dimensions (and their values) of the metric that violated the threshold. You can also specify a particular dimension: `{dims:dt.entity.<entity>}`. To fetch the list of available dimensions for your metric, query it via the [GET metric descriptor](../../../dynatrace-api/environment-api/metric-v2/get-descriptor.md "View the descriptor of a metric via Metrics v2 API.") request.
     * `{entityname}`âthe name of the affected entity.
     * `{metricname}`âthe name of the metric that violated the threshold.
     * `{missing_data_samples}`âthe number of samples with missing data. Only available if missing data alert is enabled.
@@ -78,4 +78,4 @@ Two types of filters are available:
 
 ## Related topics
 
-* [Metrics Classic](/docs/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.")
+* [Metrics Classic](../../../analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")

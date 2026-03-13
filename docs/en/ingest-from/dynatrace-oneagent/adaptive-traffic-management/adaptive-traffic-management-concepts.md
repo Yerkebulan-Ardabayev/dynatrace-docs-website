@@ -31,7 +31,7 @@ ATM for Dynatrace Platform Subscription ATM for Dynatrace classic license
 
 Adaptive Traffic Management instructs agents to initiate traces at a specific rate, for example, 1,000 per minute. This rate is continuously adjusted to keep the ingested trace data volume below a defined limit. Agents reporting a 100% trace capture rate may start fewer traces than this rate, depending on the number of application transactions. Agents reporting a trace capture rate below 100% are sampling at that rate.
 
-With the Dynatrace Platform Subscription, you can adjust the [adaptive trace sampling rate](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-saas-dps#adjust-adaptive-trace-sampling-rate "Learn how Adaptive Traffic Management works with Dynatrace Platform Subscription (DPS) and how it manages trace sampling for Full-Stack monitored hosts and applications.") at scope level, allowing you to better control the usage of the Full-Stack Monitoring included trace volume.
+With the Dynatrace Platform Subscription, you can adjust the [adaptive trace sampling rate](adaptive-traffic-management-saas-dps.md#adjust-adaptive-trace-sampling-rate "Learn how Adaptive Traffic Management works with Dynatrace Platform Subscription (DPS) and how it manages trace sampling for Full-Stack monitored hosts and applications.") at scope level, allowing you to better control the usage of the Full-Stack Monitoring included trace volume.
 
 ## Extended trace ingest
 
@@ -39,13 +39,13 @@ ATM for Dynatrace Platform Subscription
 
 **Extended trace ingest** is a billed option allowing you to extend your ingested trace volume on top of your trace volume already included in Full-Stack Monitoring.
 
-For details, see [Extended trace ingest for Full-Stack Monitoring](/docs/license/capabilities/app-infra-observability/full-stack-monitoring#extend-trace-ingest "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.").
+For details, see [Extended trace ingest for Full-Stack Monitoring](../../../license/capabilities/app-infra-observability/full-stack-monitoring.md#extend-trace-ingest "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.").
 
 ## Full-Stack included trace volume
 
 ATM for Dynatrace Platform Subscription ATM for Dynatrace classic license
 
-**Full-Stack included trace volume** is the amount of [trace data volume](/docs/license/capabilities/app-infra-observability/full-stack-monitoring#full-stack-traces "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") included in [Full-Stack Monitoring](/docs/license/capabilities/app-infra-observability/full-stack-monitoring "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.").
+**Full-Stack included trace volume** is the amount of [trace data volume](../../../license/capabilities/app-infra-observability/full-stack-monitoring.md#full-stack-traces "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") included in [Full-Stack Monitoring](../../../license/capabilities/app-infra-observability/full-stack-monitoring.md "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.").
 
 Adaptive Traffic Management ensures that Full-Stack monitored hosts and applications stay within this licensed trace volume.
 
@@ -65,4 +65,4 @@ ATM for Dynatrace Platform Subscription
 
 **Usable adaptive trace volume** is the portion of your [total licensed Full-Stack trace volume](#total-licensed-full-stack-trace-volume) that you allocate to Adaptive Traffic Management.
 
-To control how much of your [Full-Stack included trace volume](#full-stack-included-trace-volume) is distributed by Adaptive Traffic Management, you can [reduce the usable adaptive trace volume](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-saas-dps#reduce-usable-adaptive-trace-volume "Learn how Adaptive Traffic Management works with Dynatrace Platform Subscription (DPS) and how it manages trace sampling for Full-Stack monitored hosts and applications."). This self-service capability also enables you to allocate part of the Full-Stack included trace volume to fixed-rate sampled spans from OpenTelemetry or OneAgent. By doing this, you can manage your excess trace ingest volume more effectively.
+To control how much of your [Full-Stack included trace volume](#full-stack-included-trace-volume) is distributed by Adaptive Traffic Management, you can [reduce the usable adaptive trace volume](adaptive-traffic-management-saas-dps.md#reduce-usable-adaptive-trace-volume "Learn how Adaptive Traffic Management works with Dynatrace Platform Subscription (DPS) and how it manages trace sampling for Full-Stack monitored hosts and applications."). This self-service capability also enables you to allocate part of the Full-Stack included trace volume to fixed-rate sampled spans from OpenTelemetry or OneAgent. By doing this, you can manage your excess trace ingest volume more effectively.

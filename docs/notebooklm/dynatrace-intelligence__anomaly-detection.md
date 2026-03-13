@@ -43,7 +43,7 @@ You can opt-in to receive notifications about graceful shutdowns as well.
 
 Server-side disk alerting for new tenants
 
-Starting with SaaS version 1.308, server-side disk alerting is disabled for new tenants by default. We recommend using [Disk Edge alerting](/docs/observe/infrastructure-observability/hosts/configuration/anomaly-detection#disk-edge-alerting "Configure host anomaly detection, including problem and event thresholds.") instead. Disk Edge alerting allows you to create more complex and specific rules using:
+Starting with SaaS version 1.308, server-side disk alerting is disabled for new tenants by default. We recommend using [Disk Edge alerting](observe/infrastructure-observability/hosts/configuration/anomaly-detection.md#disk-edge-alerting "Configure host anomaly detection, including problem and event thresholds.") instead. Disk Edge alerting allows you to create more complex and specific rules using:
 
 * Metrics to alert on (available disk space, is read-only file system, read time, write time, and available inodes)
 * Operating system to which the policy should be applied
@@ -104,11 +104,11 @@ To change threshold settings for a specific host
 
 ## Related topics
 
-* [Host anomaly detection](/docs/observe/infrastructure-observability/hosts/configuration/anomaly-detection "Configure host anomaly detection, including problem and event thresholds.")
-* [Anomaly detection API - Hosts](/docs/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-hosts "Learn what the Dynatrace Anomaly detection API for hosts offers.")
-* [Anomaly detection API - AWS](/docs/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-aws "Learn what the Dynatrace Anomaly detection API for AWS offers.")
-* [Anomaly detection API - VMware](/docs/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-vmware "Learn what the Dynatrace Anomaly detection API for VMware offers.")
-* [Anomaly detection API - Disk events](/docs/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-disk-events "Learn what the Dynatrace Anomaly detection API for disk events offers.")
+* [Host anomaly detection](observe/infrastructure-observability/hosts/configuration/anomaly-detection.md "Configure host anomaly detection, including problem and event thresholds.")
+* [Anomaly detection API - Hosts](dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-hosts.md "Learn what the Dynatrace Anomaly detection API for hosts offers.")
+* [Anomaly detection API - AWS](dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-aws.md "Learn what the Dynatrace Anomaly detection API for AWS offers.")
+* [Anomaly detection API - VMware](dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-vmware.md "Learn what the Dynatrace Anomaly detection API for VMware offers.")
+* [Anomaly detection API - Disk events](dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-disk-events.md "Learn what the Dynatrace Anomaly detection API for disk events offers.")
 
 ---
 
@@ -148,15 +148,15 @@ To configure detection sensitivity on the global level
 2. Expand **Anomaly detection**.
 3. Select the required entity type. For specific instructions, see one of the topics below.
 
-* [Applications](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications "Learn how to adapt the sensitivity of problem detection for applications.")
-* [Services](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services "Learn how to adapt the sensitivity of problem detection for services.")
-* [Database services](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database "Learn how to adapt the sensitivity of problem detection for database services.")
-* [Infrastructure](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure "Adjust problem detection sensitivity for infrastructure.")
-* [Extension events](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-extension "Learn how to adapt the sensitivity of problem detection for extension events.")
+* [Applications](dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications.md "Learn how to adapt the sensitivity of problem detection for applications.")
+* [Services](dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services.md "Learn how to adapt the sensitivity of problem detection for services.")
+* [Database services](dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database.md "Learn how to adapt the sensitivity of problem detection for database services.")
+* [Infrastructure](../ru/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure.md "Adjust problem detection sensitivity for infrastructure.")
+* [Extension events](dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-extension.md "Learn how to adapt the sensitivity of problem detection for extension events.")
 
 ## Related topics
 
-* [Anomaly detection API](/docs/dynatrace-api/configuration-api/anomaly-detection-api "Learn what the Dynatrace anomaly detection API offers.")
+* [Anomaly detection API](dynatrace-api/configuration-api/anomaly-detection-api.md "Learn what the Dynatrace anomaly detection API offers.")
 
 ---
 
@@ -199,13 +199,13 @@ Some of the error messages might be more complicated than others. Here are some 
 
 * `Query failed because the response time exceeded 10000 ms`: ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** sets a 10-second execution limit on queries. This safety limit helps to prevent other custom alert configurations from being delayed or stuck in the queue.
 
-* `Anomaly detector failed with an unauthorized request. Fix the required permissions in the authorization settings`: ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** lacks the necessary permissions and is unable to read the data on your behalf. For more information about required permissions and editing authorization settings, see [Prerequisites](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app#prerequisites "Explore anomaly detection configurations using the Anomaly Detection app.") and [Enable or edit Anomaly Detection authorization settings](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app#edit-authorization-settings "Explore anomaly detection configurations using the Anomaly Detection app.").
-* `Query does not result in a valid timeseries: No valid time series records found. A valid time series record contains a single duration field, a single timeframe and one or multiple numeric arrays. Consider using the 'timeseries' or 'makeTimeseries' DQL command`: ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** requires a timeseries to automatically check the alert condition. For more information and examples of a valid query, see [Examples of ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** on Grail](/docs/dynatrace-intelligence/use-cases/anomaly-detection-examples "Use the power of Grail and DQL to convert any data into time series for anomaly detection analyzers.").
+* `Anomaly detector failed with an unauthorized request. Fix the required permissions in the authorization settings`: ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** lacks the necessary permissions and is unable to read the data on your behalf. For more information about required permissions and editing authorization settings, see [Prerequisites](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md#prerequisites "Explore anomaly detection configurations using the Anomaly Detection app.") and [Enable or edit Anomaly Detection authorization settings](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md#edit-authorization-settings "Explore anomaly detection configurations using the Anomaly Detection app.").
+* `Query does not result in a valid timeseries: No valid time series records found. A valid time series record contains a single duration field, a single timeframe and one or multiple numeric arrays. Consider using the 'timeseries' or 'makeTimeseries' DQL command`: ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** requires a timeseries to automatically check the alert condition. For more information and examples of a valid query, see [Examples of ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** on Grail](dynatrace-intelligence/use-cases/anomaly-detection-examples.md "Use the power of Grail and DQL to convert any data into time series for anomaly detection analyzers.").
 
 ## Related topics
 
-* [Anomaly Detection app](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.")
-* [Examples of anomaly detection on Grail](/docs/dynatrace-intelligence/use-cases/anomaly-detection-examples "Use the power of Grail and DQL to convert any data into time series for anomaly detection analyzers.")
+* [Anomaly Detection app](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.")
+* [Examples of anomaly detection on Grail](dynatrace-intelligence/use-cases/anomaly-detection-examples.md "Use the power of Grail and DQL to convert any data into time series for anomaly detection analyzers.")
 
 ---
 
@@ -230,7 +230,7 @@ scraped: 2026-03-06T21:35:01.911530
 
 ## Prerequisites
 
-To use the latest version of ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**, you need to have appropriate permissions. For more information, see [![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** overview](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.").
+To use the latest version of ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**, you need to have appropriate permissions. For more information, see [![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** overview](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.").
 
 ## Create or edit a simple custom alert
 
@@ -240,11 +240,11 @@ To manually create a simple custom alert configuration
 2. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **New alert** > **Create your own custom alert** to create a new alert. To edit an existing custom alert, select any custom alert from the list.
 3. On the **Simple** tab, expand **Set scope**.
 4. Optional In **Segments**, choose one or more segments you want to filter by.
-5. In **Query**, provide the [DQL query](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.") to fetch your data.
+5. In **Query**, provide the [DQL query](../ru/platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.") to fetch your data.
 
    We recommend that you use the `interval: 1m` parameter to ensure proper data resolution for the analysis.
 6. Expand **Define alert condition**.
-7. In **Select use case**, choose the preferred analyzer. For details, see [Analyzer type and parameters](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "How to set up an alert for missing measurements.").
+7. In **Select use case**, choose the preferred analyzer. For details, see [Analyzer type and parameters](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#analyzer "How to set up an alert for missing measurements.").
 8. In **Set a condition** > **Threshold**, select **Suggest values** if you want Dynatrace Intelligence to automatically suggest a value based on the latest behavior of your data. You can also choose the desired threshold value and the **Unit** of your value manually.
 9. Optional In **Set a condition** > **Alert condition**, select:
 
@@ -255,7 +255,7 @@ To manually create a simple custom alert configuration
 12. Set **Title** to name your custom alert.
 13. Set **Event name** to any name you like. The **Event name** will show as a title for events generated by this custom alert.
 
-    You can write `{` to let Dynatrace Intelligence suggest you placeholder names with desired value (for example, `{alert_condition}`). For more information, see [Event template](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#event-template "How to set up an alert for missing measurements.").
+    You can write `{` to let Dynatrace Intelligence suggest you placeholder names with desired value (for example, `{alert_condition}`). For more information, see [Event template](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#event-template "How to set up an alert for missing measurements.").
 14. Select **Create** to create a simple custom alert or select **Save** to update your configuration.
 
 Whenever you **Create** or **Save** your custom alert, its configuration gets automatically validated. If the there's no errors present in your configuration, you'll be able to save or update your configuration. If there are any errors, the section will be highlighted with red and marked with `Error` message under the section title.
@@ -276,7 +276,7 @@ With Dynatrace Intelligence for Notebooks, you can preview your custom alert con
 5. Optional Select , then select one or more segments you want to filter by.
 6. Select **Options** > **Analyze and alert**.
 7. Activate the analyzer.
-8. Select the required analyzer and configure it. For details, see [Anomaly detection configuration](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration "How to set up an alert for missing measurements.").
+8. Select the required analyzer and configure it. For details, see [Anomaly detection configuration](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md "How to set up an alert for missing measurements.").
 9. Select **Run analysis**.
 10. Once you're satisfied with the result, select ![More actions](https://dt-cdn.net/images/dashboards-app-menu-kebab-c39eda426b.svg "More actions") > ![Open with](https://dt-cdn.net/images/open-with-003fc82dcd.svg "Open with") **Open with** and select **Anomaly Detection**.  
     This action takes you back to ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
@@ -288,7 +288,7 @@ With Dynatrace Intelligence for Notebooks, you can preview your custom alert con
 
 ## Transform a metric event configuration
 
-[Metric events](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace") enhance anomaly detection, expanding them beyond out-of-the-box use cases into metric-based events. With the power of DQL, you can extend this reach further.
+[Metric events](../ru/dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace") enhance anomaly detection, expanding them beyond out-of-the-box use cases into metric-based events. With the power of DQL, you can extend this reach further.
 
 To convert a metric event to the custom alert configuration
 
@@ -307,9 +307,9 @@ To convert a metric event to the custom alert configuration
 
 ## Related topics
 
-* [Anomaly Detection app](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.")
-* [Configure an advanced custom alert](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-an-advanced-ad "Learn how to create and edit advanced custom alerts in the Anomaly Detection app")
-* [Anomaly Detection status types](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types "An explanation of Anomaly Detection status types")
+* [Anomaly Detection app](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.")
+* [Configure an advanced custom alert](../common/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-an-advanced-ad.md "Learn how to create and edit advanced custom alerts in the Anomaly Detection app")
+* [Anomaly Detection status types](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types.md "An explanation of Anomaly Detection status types")
 * [[Video] Elevating Security with Anomaly Detectionï»¿](https://www.youtube.com/watch?v=WDZUus-VxCE)
 * [[Video] Anomaly Detection and Data Observabilityï»¿](https://www.youtube.com/watch?v=HPQi63mQg3w)
 
@@ -477,8 +477,8 @@ When creating a custom alert:
 
 ## Related topics
 
-* [Anomaly Detection app](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
+* [Anomaly Detection app](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
 
 ---
 
@@ -501,7 +501,7 @@ scraped: 2026-03-05T21:38:33.126042
 
 This page describes best practices for optimizing your DQL queries for ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** custom alerts to ensure a stable performance and minimized resource and time consumption.
 
-[![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") uses the power of Grail to support a wide range of use cases through flexible DQL capabilities. This versatility allows for multiple solution approaches depending on the specific scenario. To ensure efficient and effective usage, this guide provides best practice examples that demonstrate how to get the most out of ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
+[![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.") uses the power of Grail to support a wide range of use cases through flexible DQL capabilities. This versatility allows for multiple solution approaches depending on the specific scenario. To ensure efficient and effective usage, this guide provides best practice examples that demonstrate how to get the most out of ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
 
 ## Minimize the volume of scanned data
 
@@ -509,7 +509,7 @@ Regardless of whether your queries are included in a rate card or not, we strong
 
 ## Manage your storage properly
 
-A well-planned storage management strategy forms the foundation for optimal performance in your environment. We recommend organizing your [Dynatrace storage buckets](/docs/platform/grail/organize-data#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.") based on the usage and access patterns of your teams to prevent excessive scanning across multiple teams or organizational units. We also suggest planning your storage structure upfront to simplify access permission policy management and ensure a more efficient and secure setup.
+A well-planned storage management strategy forms the foundation for optimal performance in your environment. We recommend organizing your [Dynatrace storage buckets](../ru/platform/grail/organize-data.md#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.") based on the usage and access patterns of your teams to prevent excessive scanning across multiple teams or organizational units. We also suggest planning your storage structure upfront to simplify access permission policy management and ensure a more efficient and secure setup.
 
 ## Improve query optimization via DQL filters
 
@@ -688,9 +688,9 @@ To optimize filtering and avoid including redundant fields, we recommend trying 
 
 
 
-* [Anomaly Detection app](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Anomaly Detection DQL writing guide](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice "Best practices for creating Anomaly Detection custom alert DQL queries.")
+* [Anomaly Detection app](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Anomaly Detection DQL writing guide](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice.md "Best practices for creating Anomaly Detection custom alert DQL queries.")
 
 ---
 
@@ -759,11 +759,11 @@ davis:analyzers:execute
 
 Execute Threshold Suggestion Analyzer
 
-User permissions can only be changed by your Dynatrace administrator in **Account Management** > **Identity and Access Management**. To learn more about user groups and assigning permissions, see [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+User permissions can only be changed by your Dynatrace administrator in **Account Management** > **Identity and Access Management**. To learn more about user groups and assigning permissions, see [Working with policies](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
 
 ### Installation
 
-Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Make sure the app is [installed in your environment](../ru/manage/hub.md#install "See the information about Dynatrace Hub.").
 
 ## Enable or edit Anomaly Detection authorization settings
 
@@ -786,7 +786,7 @@ Use cases
 
 When you open the app, you can see the information about your existing anomaly detection configurations, such as:
 
-* StatusâIf there's an error, the status is displayed as **Error**, select it to open the detailed report in a [notebook](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
+* StatusâIf there's an error, the status is displayed as **Error**, select it to open the detailed report in a [notebook](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
 * Source
 * Type of anomaly prediction model
 
@@ -799,19 +799,19 @@ Go through the following processes to learn how to use ![Anomaly Detection - new
 [01Anomaly Detection DQL writing guide
 
 * How-to guide
-* Best practices for creating Anomaly Detection custom alert DQL queries.](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice)[02Anomaly Detection DQL optimization guide
+* Best practices for creating Anomaly Detection custom alert DQL queries.](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice.md)[02Anomaly Detection DQL optimization guide
 
 * How-to guide
-* Best practices for optimizing Anomaly Detection DQL queries.](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization)[03Configure a simple custom alert
+* Best practices for optimizing Anomaly Detection DQL queries.](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization.md)[03Configure a simple custom alert
 
 * How-to guide
-* Learn how to create and edit simple custom alerts in the Anomaly Detection app.](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad)[04Configure an advanced custom alert
+* Learn how to create and edit simple custom alerts in the Anomaly Detection app.](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad.md)[04Configure an advanced custom alert
 
 * How-to guide
-* Learn how to create and edit advanced custom alerts in the Anomaly Detection app](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-an-advanced-ad)[05Anomaly Detection status types
+* Learn how to create and edit advanced custom alerts in the Anomaly Detection app](../common/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-an-advanced-ad.md)[05Anomaly Detection status types
 
 * Explanation
-* An explanation of Anomaly Detection status types](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types)
+* An explanation of Anomaly Detection status types](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types.md)
 
 ## Custom alert actors
 
@@ -827,7 +827,7 @@ If you edit an existing custom alert created by a different actor, Dynatrace wil
 
 We recommend using service users as actors for custom alerts created for a department or organization use case. This makes the custom alert independent of the status of the user who maintains it.
 
-There are no specific authorization settings for a service user. The permissions granted to a service user should follow the least privilege principle. To learn more about managing service users, see [Service users](/docs/manage/identity-access-management/user-and-group-management/access-service-users "Service users").
+There are no specific authorization settings for a service user. The permissions granted to a service user should follow the least privilege principle. To learn more about managing service users, see [Service users](../ru/manage/identity-access-management/user-and-group-management/access-service-users.md "Service users").
 
 ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -839,8 +839,8 @@ Detect anomalies in timeseries using ![Anomaly Detection - new](https://dt-cdn.n
 
 ## Related topics
 
-* [Anomaly Detection status types](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types "An explanation of Anomaly Detection status types")
-* [Dynatrace Intelligence limits](/docs/dynatrace-intelligence/reference/davis-ai-limits "Reference limits of Dynatrace Intelligence components.")
+* [Anomaly Detection status types](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types.md "An explanation of Anomaly Detection status types")
+* [Dynatrace Intelligence limits](../ru/dynatrace-intelligence/reference/davis-ai-limits.md "Reference limits of Dynatrace Intelligence components.")
 * [[Video] Elevating Security with Anomaly Detectionï»¿](https://www.youtube.com/watch?v=WDZUus-VxCE)
 * [[Video] Anomaly Detection and Data Observabilityï»¿](https://www.youtube.com/watch?v=HPQi63mQg3w)
 
@@ -878,7 +878,7 @@ Once configured and activated, the configuration observes the data and triggers 
 
 Data source provides a time series that is evaluated by Dynatrace Intelligence:
 
-* Previous Dynatrace A metric defines the time series. It can be a single metric defined by a metric key or a [metric expression](/docs/dynatrace-api/environment-api/metric-v2/metric-expressions "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.").
+* Previous Dynatrace A metric defines the time series. It can be a single metric defined by a metric key or a [metric expression](../ru/dynatrace-api/environment-api/metric-v2/metric-expressions.md "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.").
 
 If your data has a latency, you need to offset it in your configuration via the **Query offset** parameter. Specify the value in minutes.
 
@@ -894,15 +894,15 @@ You can configure the **Delay** parameter using **Minutes** or **Seconds**, but 
 
 Analyzer parameters define how Dynatrace Intelligence evaluates the data provided by the data source. The exact set of parameters depends on the type of the analysis:
 
-* [Auto-adaptive threshold](/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration.")âDynatrace calculates the threshold automatically and adapts it dynamically to your data's behavior.
-* [Seasonal baseline](/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline "How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.")âDynatrace creates a confidence band for data with seasonal patterns.
-* [Static threshold](/docs/dynatrace-intelligence/anomaly-detection/static-thresholds "When to use a static threshold for your anomaly detection.")âthe threshold that doesn't change over time.
+* [Auto-adaptive threshold](../ru/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold.md "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration.")âDynatrace calculates the threshold automatically and adapts it dynamically to your data's behavior.
+* [Seasonal baseline](../ru/dynatrace-intelligence/reference/ai-models/seasonal-baseline.md "How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.")âDynatrace creates a confidence band for data with seasonal patterns.
+* [Static threshold](../ru/dynatrace-intelligence/anomaly-detection/static-thresholds.md "When to use a static threshold for your anomaly detection.")âthe threshold that doesn't change over time.
 
 | Parameter | Description |
 | --- | --- |
-| Number of signal fluctuations | The auto-adaptive threshold consists of two components: a baseline and a signal fluctuation. This parameter defines how many times the signal fluctuation is added to the baseline. For more information, see [Threshold calculation](/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold#calculation "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration."). |
+| Number of signal fluctuations | The auto-adaptive threshold consists of two components: a baseline and a signal fluctuation. This parameter defines how many times the signal fluctuation is added to the baseline. For more information, see [Threshold calculation](../ru/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold.md#calculation "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration."). |
 | Threshold | This parameter defines the value of a static threshold and, if applicable, its unit. Select **Suggest values** to use a value calculated by Dynatrace Intelligence based on the previous data. |
-| Tolerance | This parameter defines the [tolerance](/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline#parameters "How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.") of the seasonal model. The higher the tolerance, the broader the confidence band, leading to fewer triggered events. |
+| Tolerance | This parameter defines the [tolerance](../ru/dynatrace-intelligence/reference/ai-models/seasonal-baseline.md#parameters "How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.") of the seasonal model. The higher the tolerance, the broader the confidence band, leading to fewer triggered events. |
 | Alert condition | This parameter defines when an event is triggered: if the metric is above, below, or outside of the threshold. |
 | Missing data alert | This parameter defines whether the missing data alert is active for the configuration. If active, it's combined with the threshold condition by the **OR** logic. You can find it in the **Advanced properties** section of the configuration. |
 
@@ -966,11 +966,11 @@ The event template defines characteristics of an event triggered by threshold vi
   + `{severity}` - the severity of the event.
   + `{threshold}` - the violated value of the threshold.
 
-You can provide additional parameters as key-value pairs. For a list of possible event properties, see [Semantic Dictionary](/docs/semantic-dictionary/model/davis#davis-ai-events "Get to know the Semantic Dictionary models related to Davis AI.").
+You can provide additional parameters as key-value pairs. For a list of possible event properties, see [Semantic Dictionary](../common/semantic-dictionary/model/davis.md#davis-ai-events "Get to know the Semantic Dictionary models related to Davis AI.").
 
 ## Related topics
 
-* [Metric events](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace")
+* [Metric events](../ru/dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace")
 
 ---
 
@@ -991,7 +991,7 @@ scraped: 2026-03-06T21:20:46.412216
 * 3-min read
 * Updated on Jan 28, 2026
 
-Auto-adaptive thresholds are a dynamic approach to baselining where the reference value for detecting anomalies changes over time. The main advantage over a [static threshold](/docs/dynatrace-intelligence/anomaly-detection/static-thresholds "When to use a static threshold for your anomaly detection.") is that the reference value dynamically adapts over time, and you don't have to know the threshold upfront. You also don't have to manually adapt multiple static thresholds for metrics whose behavior changes over time.
+Auto-adaptive thresholds are a dynamic approach to baselining where the reference value for detecting anomalies changes over time. The main advantage over a [static threshold](../ru/dynatrace-intelligence/anomaly-detection/static-thresholds.md "When to use a static threshold for your anomaly detection.") is that the reference value dynamically adapts over time, and you don't have to know the threshold upfront. You also don't have to manually adapt multiple static thresholds for metrics whose behavior changes over time.
 
 When an anomaly detection configuration includes multiple entities, each entity receives its own auto-adaptive threshold, and each threshold is evaluated independently. For example, if the scope of the configuration includes five hosts, Dynatrace calculates and evaluates five independent thresholds.
 
@@ -1020,7 +1020,7 @@ By default, any 3 minutes out of a sliding window of 5 minutes must violate your
 
 ## Related topics
 
-* [Metrics Classic](/docs/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.")
+* [Metrics Classic](analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")
 
 ---
 
@@ -1098,10 +1098,10 @@ The identification of reference values is based, as explained above, on a baseli
 
 #### Service baselining dimensions
 
-* **Service method**: A service's individual service methods (for example, `getBookingPage` or `getReportPage`). In the case of database services, the service method represents the different SQL statements that are queried (for example, `call verify_location(?) select booking0_.id from Booking booking0_ where booking0_.user_name<>?`). A reference value is additionally calculated for the predefined service method groups, static requests, and [dynamic requests](/docs/discover-dynatrace/get-started/glossary#request "Get acquainted with Dynatrace terminology.").
+* **Service method**: A service's individual service methods (for example, `getBookingPage` or `getReportPage`). In the case of database services, the service method represents the different SQL statements that are queried (for example, `call verify_location(?) select booking0_.id from Booking booking0_ where booking0_.user_name<>?`). A reference value is additionally calculated for the predefined service method groups, static requests, and [dynamic requests](discover-dynatrace/get-started/glossary.md#request "Get acquainted with Dynatrace terminology.").
 * **Service method group**: Static or dynamic groups for web services, and for database services, groups that correspond to database operations like insert, update, select and so forth. For database services, a reference value is calculated for the predefined service method groups `inserts`, `updates`, and `selects`.
 
-Services of the `PROCESS` type don't support automated baselining. Use [anomaly detection](/docs/observe/infrastructure-observability/hosts/configuration/anomaly-detection "Configure host anomaly detection, including problem and event thresholds.") instead.
+Services of the `PROCESS` type don't support automated baselining. Use [anomaly detection](observe/infrastructure-observability/hosts/configuration/anomaly-detection.md "Configure host anomaly detection, including problem and event thresholds.") instead.
 
 ### How automated baselining works
 
@@ -1129,7 +1129,7 @@ Dynatrace application traffic anomaly detection is based on the assumption that 
 
 Following the learning period, Dynatrace forecasts the next weekâs traffic and then compares the actual incoming application traffic with the prediction. If Dynatrace detects a statistically significant deviation from forecasted traffic levels, it raises either an `Unexpected low traffic` or `Unexpected high traffic` problem.
 
-In general, newly detected anomalous events in an environment won't necessarily result in the immediate raising of an alert. Raised alerts always provide insight into the underlying root cause. To identify the root causes of problems, Dynatrace follows [a context-aware approach to detect interdependent events](/docs/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.") across time, processes, hosts, services, applications, and both vertical and horizontal topological monitoring perspectives. By taking into account all these monitoring perspectives, Dynatrace pinpoints the root causes of problems. And only then will alerts be generated for a detected problem.
+In general, newly detected anomalous events in an environment won't necessarily result in the immediate raising of an alert. Raised alerts always provide insight into the underlying root cause. To identify the root causes of problems, Dynatrace follows [a context-aware approach to detect interdependent events](../ru/dynatrace-intelligence/root-cause-analysis/concepts.md "Get acquainted with root cause analysis concepts.") across time, processes, hosts, services, applications, and both vertical and horizontal topological monitoring perspectives. By taking into account all these monitoring perspectives, Dynatrace pinpoints the root causes of problems. And only then will alerts be generated for a detected problem.
 
 ### Default baseline event timeouts
 
@@ -1193,7 +1193,7 @@ Two types of filters are available:
 
    1. Specify the threshold value. Select **Use suggested threshold** to use a value based on the previous data.
    2. If applicable, select the threshold unit.
-   3. Choose the [missing data alert](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#missing-data "How to set up an alert for missing measurements.") behavior.  
+   3. Choose the [missing data alert](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#missing-data "How to set up an alert for missing measurements.") behavior.  
       If the missing data alert is enabled, it is combined with the threshold condition by the **OR** logic.
    4. Select the alert condition: alert if the metric is above or below the threshold.
    5. Optional In the **Advanced model properties** section, specify a sliding window for comparison.  
@@ -1207,7 +1207,7 @@ Two types of filters are available:
 
     * `{alert_condition}`âthe condition of the alert (above/below the threshold).
     * `{baseline}`âthe violated value of the baseline.
-    * `{dims}`âa list of all dimensions (and their values) of the metric that violated the threshold. You can also specify a particular dimension: `{dims:dt.entity.<entity>}`. To fetch the list of available dimensions for your metric, query it via the [GET metric descriptor](/docs/dynatrace-api/environment-api/metric-v2/get-descriptor "View the descriptor of a metric via Metrics v2 API.") request.
+    * `{dims}`âa list of all dimensions (and their values) of the metric that violated the threshold. You can also specify a particular dimension: `{dims:dt.entity.<entity>}`. To fetch the list of available dimensions for your metric, query it via the [GET metric descriptor](dynatrace-api/environment-api/metric-v2/get-descriptor.md "View the descriptor of a metric via Metrics v2 API.") request.
     * `{entityname}`âthe name of the affected entity.
     * `{metricname}`âthe name of the metric that violated the threshold.
     * `{missing_data_samples}`âthe number of samples with missing data. Only available if missing data alert is enabled.
@@ -1225,7 +1225,7 @@ Two types of filters are available:
 
 ## Related topics
 
-* [Metrics Classic](/docs/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.")
+* [Metrics Classic](analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")
 
 ---
 
@@ -1248,8 +1248,8 @@ scraped: 2026-03-06T21:25:45.312965
 
 The metric selector is a powerful instrument for specifying which data you want to read for the metric event evaluation. It provides you with two major possibilities:
 
-* [Metric transformations](/docs/dynatrace-api/environment-api/metric-v2/metric-selector "Configure the metric selector for the Metric v2 API.") for transforming the data you're reading.
-* [Metric expressions](/docs/dynatrace-api/environment-api/metric-v2/metric-expressions "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.") for combining one or more metrics into a different result using simple mathematics.
+* [Metric transformations](../ru/dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API.") for transforming the data you're reading.
+* [Metric expressions](../ru/dynatrace-api/environment-api/metric-v2/metric-expressions.md "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.") for combining one or more metrics into a different result using simple mathematics.
 
 With the metric selector, Davis can access the historic data of the metric and can learn the normal behavior of your environment, enabling you to use auto-adaptive thresholds in your metric event. However, some limitations apply:
 
@@ -1261,7 +1261,7 @@ With the metric selector, Davis can access the historic data of the metric and c
 
 ## Scope of metric selector events
 
-The selector itself defines the scope of a metric selector event. It is important to understand the implications when configuring a selector consisting of measurements from thousands of individual sources. Dynatrace applies safety limits to anomaly detection in terms of the number of metric dimensions that can be observed within one monitoring environment to avoid any operational issues. To learn how to narrow down the scope of your configuration, see [**Filter transformation**](/docs/dynatrace-api/environment-api/metric-v2/metric-selector#filter "Configure the metric selector for the Metric v2 API.").
+The selector itself defines the scope of a metric selector event. It is important to understand the implications when configuring a selector consisting of measurements from thousands of individual sources. Dynatrace applies safety limits to anomaly detection in terms of the number of metric dimensions that can be observed within one monitoring environment to avoid any operational issues. To learn how to narrow down the scope of your configuration, see [**Filter transformation**](../ru/dynatrace-api/environment-api/metric-v2/metric-selector.md#filter "Configure the metric selector for the Metric v2 API.").
 
 ![Metric selector example](https://dt-cdn.net/images/metric-selector-example-1296-84f54644de.png)
 
@@ -1291,10 +1291,10 @@ If there are sparse counts across many entities (for example, an error count acr
       * Static thresholdâthe threshold that doesn't change over time.
       * Seasonal BaselineâDynatrace creates a confidence band on a metric with seasonal patterns
    2. For the static threshold, specify the threshold. Select **Use suggested threshold** to use a value based on the previous data.
-   3. Choose the [missing data alert](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#missing-data "How to set up an alert for missing measurements.") behavior.  
+   3. Choose the [missing data alert](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#missing-data "How to set up an alert for missing measurements.") behavior.  
       If the missing data alert is enabled, it is combined with the threshold condition by the **OR** logic.
    4. Select the alert condition: alert if the metric is above, below, or outside of the threshold.
-   5. Optional In the **Advanced model properties** section, specify a [sliding window](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#sliding-window "How to set up an alert for missing measurements.") for comparison.  
+   5. Optional In the **Advanced model properties** section, specify a [sliding window](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#sliding-window "How to set up an alert for missing measurements.") for comparison.  
       The sliding window defines how often the thresholdâwhether it is automatically calculated or manually specifiedâmust be violated within a sliding window of time to raise an event (violations don't have to be successive). This helps you to avoid overly aggressive alerting on single violations. You can set a sliding window of up to 60 minutes.
 7. Check the preview for your alert and evaluate the effectiveness of your configuration.
 
@@ -1305,7 +1305,7 @@ If there are sparse counts across many entities (for example, an error count acr
 
    * `{alert_condition}`âthe condition of the alert (above/below the threshold).
    * `{baseline}`âthe violated value of the baseline.
-   * `{dims}`âa list of all dimensions (and their values) of the metric that violated the threshold. You can also specify a particular dimension: `{dims:dt.entity.<entity>}`. To fetch the list of available dimensions for your metric, query it via the [GET metric descriptor](/docs/dynatrace-api/environment-api/metric-v2/get-descriptor "View the descriptor of a metric via Metrics v2 API.") request.
+   * `{dims}`âa list of all dimensions (and their values) of the metric that violated the threshold. You can also specify a particular dimension: `{dims:dt.entity.<entity>}`. To fetch the list of available dimensions for your metric, query it via the [GET metric descriptor](dynatrace-api/environment-api/metric-v2/get-descriptor.md "View the descriptor of a metric via Metrics v2 API.") request.
    * `{entityname}`âthe name of the affected entity.
    * `{metricname}`âthe name of the metric that violated the threshold.
    * `{missing_data_samples}`âthe number of samples with missing data. Only available if missing data alert is enabled.
@@ -1323,9 +1323,9 @@ If there are sparse counts across many entities (for example, an error count acr
 
 ## Related topics
 
-* [Metrics API - Metric selector](/docs/dynatrace-api/environment-api/metric-v2/metric-selector "Configure the metric selector for the Metric v2 API.")
-* [Metrics API - Metric expressions](/docs/dynatrace-api/environment-api/metric-v2/metric-expressions "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.")
-* [Metrics Classic](/docs/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.")
+* [Metrics API - Metric selector](../ru/dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API.")
+* [Metrics API - Metric expressions](../ru/dynatrace-api/environment-api/metric-v2/metric-expressions.md "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.")
+* [Metrics Classic](analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")
 
 ---
 
@@ -1348,7 +1348,7 @@ scraped: 2026-03-06T21:20:48.129795
 
 Dynatrace Classic
 
-We encourage you to try [Anomaly Detection](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") for more advanced configuration options such as:
+We encourage you to try [Anomaly Detection](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.") ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") for more advanced configuration options such as:
 
 * The ability to use DQL queries in addition to Grail records
 * Alerting on data such as logs, spans, and business events
@@ -1358,14 +1358,14 @@ You can easily migrate your metric event configurations to ![Anomaly Detection -
 
 Dynatrace DavisÂ® AI automatically analyzes abnormal situations within your IT infrastructure and attempts to identify any relevant impact and root cause. Davis relies on a broad spectrum of information sources, such as a transactional view of your services and applications, as well as all events raised on individual nodes within your SmartscapeÂ® topology. One of the sources for events in Dynatrace is metric events, that is, events based on metric data. They are configured in the global settings of your environment and are visible to all Dynatrace users in your environment. There are two types of metric events based on how the metric is queried for event evaluation:
 
-* [Metric key](/docs/dynatrace-intelligence/anomaly-detection/metric-events/metric-key-events "Learn about metric events based on a metric key."). Metric key events evaluate the incoming measures of a single metric. You can use only static thresholds with this query type.
-* [Metric selector](/docs/dynatrace-intelligence/anomaly-detection/metric-events/metric-selector-events "Learn about metric events based on a metric selector."). Metric selector events evaluate a complex query defined by the [selector](/docs/dynatrace-api/environment-api/metric-v2/metric-selector "Configure the metric selector for the Metric v2 API."). This query type can include historical data and even [arithmetic operations](/docs/dynatrace-api/environment-api/metric-v2/metric-expressions "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.") with multiple metrics.
+* [Metric key](../ru/dynatrace-intelligence/anomaly-detection/metric-events/metric-key-events.md "Learn about metric events based on a metric key."). Metric key events evaluate the incoming measures of a single metric. You can use only static thresholds with this query type.
+* [Metric selector](../ru/dynatrace-intelligence/anomaly-detection/metric-events/metric-selector-events.md "Learn about metric events based on a metric selector."). Metric selector events evaluate a complex query defined by the [selector](../ru/dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API."). This query type can include historical data and even [arithmetic operations](../ru/dynatrace-api/environment-api/metric-v2/metric-expressions.md "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.") with multiple metrics.
 
 Dynatrace uses three monitoring strategies for such events:
 
-* [Static threshold](/docs/dynatrace-intelligence/anomaly-detection/static-thresholds "When to use a static threshold for your anomaly detection.")âthe threshold that doesn't change over time.
-* [Auto-adaptive threshold](/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration.")âDynatrace calculates the threshold automatically and adapts it dynamically to your metric's behavior.
-* [Seasonal baseline](/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline "How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.")âDynatrace calculates a confidence band for a metric with seasonal patterns.
+* [Static threshold](../ru/dynatrace-intelligence/anomaly-detection/static-thresholds.md "When to use a static threshold for your anomaly detection.")âthe threshold that doesn't change over time.
+* [Auto-adaptive threshold](../ru/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold.md "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration.")âDynatrace calculates the threshold automatically and adapts it dynamically to your metric's behavior.
+* [Seasonal baseline](../ru/dynatrace-intelligence/reference/ai-models/seasonal-baseline.md "How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.")âDynatrace calculates a confidence band for a metric with seasonal patterns.
 
 * Auto-adaptive thresholds and seasonal baselining are available only for metric selector events.
 * The number of metric event configurations (both metric key and metric selector) is limited to **10,000**.
@@ -1394,7 +1394,7 @@ If you have management-zone-level permissions, you can create metric event confi
 
 To create metric events without management zone scopes, you need admin access.
 
-Management zones set up via [dimensional data rules](/docs/manage/identity-access-management/permission-management/management-zones/management-zone-rules#logs-metrics "Define rules to limit the entities accessible within a management zone.") are not supported for metric events.
+Management zones set up via [dimensional data rules](../ru/manage/identity-access-management/permission-management/management-zones/management-zone-rules.md#logs-metrics "Define rules to limit the entities accessible within a management zone.") are not supported for metric events.
 
 ## Topology awareness
 
@@ -1402,7 +1402,7 @@ Topology awareness and context are the key themes of the Dynatrace observability
 
 When an anomaly detection configuration raises an event, Dynatrace automatically identifies the most relevant entity to map the event to. If multiple entity references are detected, the most relevant one is automatically selected. For example, if a metric with reference to both a host and a process leads to an event, the event is raised on the process.
 
-[Metric ingestion](/docs/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.") enables you to submit all types of metric measurements, regardless of the number of entities they relate to. The following scenarios exist:
+[Metric ingestion](../ru/ingest-from/extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace.") enables you to submit all types of metric measurements, regardless of the number of entities they relate to. The following scenarios exist:
 
 ### Measurements aren't related to any entity
 
@@ -1484,10 +1484,10 @@ DQL-based ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydete
 
 ### Prior knowledge
 
-* [Anomaly detection](/docs/dynatrace-intelligence/anomaly-detection "How Dynatrace detects anomalies in your environment.")
-* [Adjust the sensitivity of anomaly detection](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection "Learn how to adapt the sensitivity of problem detection in Dynatrace.")
-* [AI models](/docs/dynatrace-intelligence/reference/ai-models "Learn about AI models that Dynatrace Intelligence uses.")
-* [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.") or [Platform tokens](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.")
+* [Anomaly detection](../ru/dynatrace-intelligence/anomaly-detection.md "How Dynatrace detects anomalies in your environment.")
+* [Adjust the sensitivity of anomaly detection](../ru/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection.md "Learn how to adapt the sensitivity of problem detection in Dynatrace.")
+* [AI models](../ru/dynatrace-intelligence/reference/ai-models.md "Learn about AI models that Dynatrace Intelligence uses.")
+* [OAuth clients](manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.") or [Platform tokens](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.")
 * [How to access platform APIsï»¿](https://developer.dynatrace.com/develop/access-platform-apis-from-outside/)
 
 ### Prerequisites
@@ -1516,9 +1516,9 @@ To authenticate API access with OAuth client, you need to
 1. Create an OAuth client with all the permissions listed in [Prerequisites](#api-prerequisites).
 2. Generate a bearer token from the created client.
 
-To learn more about creating an OAuth client and generating a bearer token, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+To learn more about creating an OAuth client and generating a bearer token, see [OAuth clients](manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
 
-If you want to use the platform token instead, create a platform token for a chosen user or environment. To learn more about creating and managing platform tokens, see [Platform tokens](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+If you want to use the platform token instead, create a platform token for a chosen user or environment. To learn more about creating and managing platform tokens, see [Platform tokens](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
 
 A platform token will only work within the limits of the assigned user's permissions. This means that a selected scope is only granting access if that user has the respective permissions.
 
@@ -1532,7 +1532,7 @@ https://{your-environment-id}.apps.dynatrace.com/platform/classic/environment-ap
 
 To create a custom alert configuration
 
-1. Get the platform token or the bearer token generated during the [Authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+1. Get the platform token or the bearer token generated during the [Authentication](../ru/dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
 2. Call the app function via the endpoint URL.
 3. Create a new settings object using a schemaID for DQL-based custom alerts, `builtin:davis.anomaly-detectors`, and a platform token or an OAuth client. This will create a custom alert settings object. An example of the call for the new settings object can be seen below:
 
@@ -1843,7 +1843,7 @@ An anomaly detection configuration consists of the following fields:
 * `description`: a free-text parameter describing your custom alert configuration.
 * `source`: a free-text parameter that can be used to group and filter configs on the UI. For example, setting source as `kubernetes` on some configs can be used for filtering all `kubernetes` configs in the app. If `source` isn't set, a default value indicating that it comes from REST API will be used.
 * `executionSettings`: this object contains an optional field, `queryOffset`. When `queryOffset` is set to any value of type `integer`, it offsets the sliding evaluation window. This can be used to avoid evaluating the last few data points in metrics that are latency associated.
-* `analyzer`: this object indicates an anomaly detection model and associated parameters that will be used in the configuration. To learn more about anomaly detection models, see [AI models](/docs/dynatrace-intelligence/reference/ai-models "Learn about AI models that Dynatrace Intelligence uses.").
+* `analyzer`: this object indicates an anomaly detection model and associated parameters that will be used in the configuration. To learn more about anomaly detection models, see [AI models](../ru/dynatrace-intelligence/reference/ai-models.md "Learn about AI models that Dynatrace Intelligence uses.").
 * `eventTemplate`: this object determines the content of the events generated when the configured anomaly is detected.
 
 #### `analyzer` object fields
@@ -1885,7 +1885,7 @@ The `eventTemplate` object has additional fields that need to be configured for 
   + Required `event.description`: a free-text parameter describing your custom alert configuration.
   + Required `event.type`: the type of the raised event, such as `CUSTOM_INFO`, `ERROR_EVENT`, `AVAILABILITY_EVENT`, `PERFORMANCE_EVENT`, `RESOURCE_CONTENTION_EVENT`, `CUSTOM_ALERT`, `CUSTOM_ANNOTATION`, `CUSTOM_CONFIGURATION`, `CUSTOM_DEPLOYMENT`, `MARKED_FOR_TERMINATION`.
 
-    To check all available event types, see [Dynatrace Intelligence Semantic Dictionary](/docs/semantic-dictionary/model/davis "Get to know the Semantic Dictionary models related to Davis AI."). You can also include your custom events here.
+    To check all available event types, see [Dynatrace Intelligence Semantic Dictionary](../common/semantic-dictionary/model/davis.md "Get to know the Semantic Dictionary models related to Davis AI."). You can also include your custom events here.
 
 ## Conclusion
 
@@ -1893,12 +1893,12 @@ You have learned how to set up and configure a custom alert via API. Now you can
 
 ## Related topics
 
-* [Anomaly detection](/docs/dynatrace-intelligence/anomaly-detection "How Dynatrace detects anomalies in your environment.")
-* [AI models](/docs/dynatrace-intelligence/reference/ai-models "Learn about AI models that Dynatrace Intelligence uses.")
-* [Settings API - GET objects](/docs/dynatrace-api/environment-api/settings/objects/get-objects "View multiple settings objects via the Dynatrace API.")
-* [Settings API - POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.")
-* [Settings API - PUT an object](/docs/dynatrace-api/environment-api/settings/objects/put-object "Edit a settings object via the Dynatrace API.")
-* [Settings API - DELETE an object](/docs/dynatrace-api/environment-api/settings/objects/del-object "Delete a settings object via the Dynatrace API.")
+* [Anomaly detection](../ru/dynatrace-intelligence/anomaly-detection.md "How Dynatrace detects anomalies in your environment.")
+* [AI models](../ru/dynatrace-intelligence/reference/ai-models.md "Learn about AI models that Dynatrace Intelligence uses.")
+* [Settings API - GET objects](dynatrace-api/environment-api/settings/objects/get-objects.md "View multiple settings objects via the Dynatrace API.")
+* [Settings API - POST an object](../ru/dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.")
+* [Settings API - PUT an object](dynatrace-api/environment-api/settings/objects/put-object.md "Edit a settings object via the Dynatrace API.")
+* [Settings API - DELETE an object](dynatrace-api/environment-api/settings/objects/del-object.md "Delete a settings object via the Dynatrace API.")
 
 ---
 
@@ -1921,7 +1921,7 @@ scraped: 2026-03-06T21:20:53.079076
 
 A static threshold represents a hard limit that a metric should not violate. Because static thresholds don't change over time, they are an important monitoring tool for defining critical boundaries of normal operation.
 
-It's important to choose between a static and an [adaptive threshold](/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration."), depending on your use case.
+It's important to choose between a static and an [adaptive threshold](../ru/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold.md "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration."), depending on your use case.
 
 For example, you can use a static threshold to set a limit for total memory usage by a well-known process. In this case, a static threshold is superior to an adaptive threshold because if memory consumption slowly grows over time, the adaptive threshold simply changes with it, raising no problems and eventually leading to a hidden memory leak.
 
@@ -1937,7 +1937,7 @@ By default, any 3 minutes out of a sliding window of 5 minutes must violate your
 
 ## Related topics
 
-* [Metrics Classic](/docs/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.")
+* [Metrics Classic](analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")
 
 ---
 
@@ -1958,7 +1958,7 @@ scraped: 2026-03-06T21:11:03.759228
 * 2-минутное чтение
 * Обновлено 28 января 2026 г.
 
-Dynatrace непрерывно контролирует производительность каждого аспекта ваших приложений, сервисов и инфраструктуры, чтобы автоматически изучить все базовые метрики и общее состояние каждого компонента в вашей среде, включая время ответа ваших приложений и сервисов. Переменные, такие как геолокация, тип браузера, операционная система, пропускная способность соединения и действия пользователей, учитываются автоматически. Этот интеллектуальный [автоматический базелинг](/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining "Узнайте, как Dynatrace AI автоматически рассчитывает базовые значения на основе многомерной схемы базелинга.") позволяет Dynatrace обнаруживать аномалии на высоком уровне детализации и уведомлять вас о обнаруженных проблемах в режиме реального времени. Вы можете настроить пороги, сгенерированные с помощью автоматического базелинга, либо путем [адаптации чувствительности обнаружения проблем](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection "Узнайте, как адаптировать чувствительность обнаружения проблем в Dynatrace.") или, если необходимо, путем определения собственных статических порогов.
+Dynatrace непрерывно контролирует производительность каждого аспекта ваших приложений, сервисов и инфраструктуры, чтобы автоматически изучить все базовые метрики и общее состояние каждого компонента в вашей среде, включая время ответа ваших приложений и сервисов. Переменные, такие как геолокация, тип браузера, операционная система, пропускная способность соединения и действия пользователей, учитываются автоматически. Этот интеллектуальный [автоматический базелинг](../ru/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining.md "Узнайте, как Dynatrace AI автоматически рассчитывает базовые значения на основе многомерной схемы базелинга.") позволяет Dynatrace обнаруживать аномалии на высоком уровне детализации и уведомлять вас о обнаруженных проблемах в режиме реального времени. Вы можете настроить пороги, сгенерированные с помощью автоматического базелинга, либо путем [адаптации чувствительности обнаружения проблем](../ru/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection.md "Узнайте, как адаптировать чувствительность обнаружения проблем в Dynatrace.") или, если необходимо, путем определения собственных статических порогов.
 
 ## Сценарии использования
 
@@ -1974,31 +1974,31 @@ Dynatrace непрерывно контролирует производител
 
 * Объяснение
 
-Прочитайте это объяснение](/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold)[#### Статические пороги для обнаружения аномалий
+Прочитайте это объяснение](../ru/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold.md)[#### Статические пороги для обнаружения аномалий
 
 Когда использовать статический порог для вашего обнаружения аномалий.
 
 * Объяснение
 
-Прочитайте это объяснение](/docs/dynatrace-intelligence/anomaly-detection/static-thresholds)[#### Конфигурация обнаружения аномалий
+Прочитайте это объяснение](../ru/dynatrace-intelligence/anomaly-detection/static-thresholds.md)[#### Конфигурация обнаружения аномалий
 
 Как настроить оповещение для пропущенных измерений.
 
 * Объяснение
 
-Прочитайте это объяснение](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration)[#### Автоматический многомерный базелинг
+Прочитайте это объяснение](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md)[#### Автоматический многомерный базелинг
 
 Узнайте, как Dynatrace AI автоматически рассчитывает базовые значения на основе многомерной схемы базелинга.
 
 * Объяснение
 
-Прочитайте это объяснение](/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining)[#### Типы статуса обнаружения аномалий
+Прочитайте это объяснение](../ru/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining.md)[#### Типы статуса обнаружения аномалий
 
 Объяснение типов статуса обнаружения аномалий
 
 * Объяснение
 
-Прочитайте это объяснение](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types)
+Прочитайте это объяснение](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types.md)
 
 ## Начало работы
 
@@ -2008,7 +2008,7 @@ Dynatrace непрерывно контролирует производител
 
 * Объяснение
 
-Прочитайте это объяснение](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection)[![Обнаружение аномалий - новое](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Обнаружение аномалий - новое")
+Прочитайте это объяснение](../ru/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection.md)[![Обнаружение аномалий - новое](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Обнаружение аномалий - новое")
 
 #### Приложение для обнаружения аномалий
 
@@ -2016,18 +2016,18 @@ Dynatrace непрерывно контролирует производител
 
 * Приложение
 
-Изучите это приложение](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app)[#### События метрик
+Изучите это приложение](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md)[#### События метрик
 
 Узнайте о событиях метрик в Dynatrace
 
 * Обзор
 
-Посмотрите обзор](/docs/dynatrace-intelligence/anomaly-detection/metric-events)[#### Автоматизация оповещений с помощью API
+Посмотрите обзор](../ru/dynatrace-intelligence/anomaly-detection/metric-events.md)[#### Автоматизация оповещений с помощью API
 
 Узнайте, как настроить пользовательское оповещение для обнаружения аномалий через API.
 
 * Учебник
 
-Прочитайте этот учебник](/docs/dynatrace-intelligence/anomaly-detection/set-up-anomaly-detectors-via-api)
+Прочитайте этот учебник](../ru/dynatrace-intelligence/anomaly-detection/set-up-anomaly-detectors-via-api.md)
 
 ---

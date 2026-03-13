@@ -26,18 +26,18 @@ We recommend that you **assign owners to critical entities**. These are entities
 
 **Use these recommended methods for applying ownership based on entity type**; while you can use tags to apply ownership to any monitored entity, these recommended methods are the most efficient ways to assign entities to owners.
 
-* [Kubernetes labels for Kubernetes objects](/docs/deliver/ownership/assign-ownership#kubernetes "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
-* [Metadata for hosts](/docs/deliver/ownership/assign-ownership#host-metadata "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
-* [Environment variables for processes](/docs/deliver/ownership/assign-ownership#process-env-variables "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
-* [Tags (manual, automated, and via API) for all other entities](/docs/deliver/ownership/assign-ownership#tags "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
+* [Kubernetes labels for Kubernetes objects](assign-ownership.md#kubernetes "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
+* [Metadata for hosts](assign-ownership.md#host-metadata "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
+* [Environment variables for processes](assign-ownership.md#process-env-variables "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
+* [Tags (manual, automated, and via API) for all other entities](assign-ownership.md#tags "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
 
 ### Kubernetes
 
-For [Kubernetes objects](/docs/deliver/ownership/assign-ownership#kubernetes "Assign owners to entities using entity metadata like labels, environment variables, and tags."), **define ownership simultaneously for all desired Kubernetes objects**. This ensures that all your Kubernetes objects have adequate ownership coverage at the time of deployment.
+For [Kubernetes objects](assign-ownership.md#kubernetes "Assign owners to entities using entity metadata like labels, environment variables, and tags."), **define ownership simultaneously for all desired Kubernetes objects**. This ensures that all your Kubernetes objects have adequate ownership coverage at the time of deployment.
 
 * Always apply labels for the **Deployment**.
 * We recommend specifying ownership for at least the `CLOUD_APPLICATION` (for example, the Deployment, Job, CronJob, or DaemonSet) and the `CLOUD_APPLICATION_INSTANCE` (Pods) entities.
-* Unique keys are a requirement in [key-value pairs](/docs/deliver/ownership/assign-ownership#format "Assign owners to entities using entity metadata like labels, environment variables, and tags.") in Kubernetes labels. Keys must begin with the [custom key names you define for ownership information](/docs/deliver/ownership/assign-ownership#custom-keys "Assign owners to entities using entity metadata like labels, environment variables, and tags."). For example, you can use `owner` and `dt.owner` as prefixes to create unique keys.
+* Unique keys are a requirement in [key-value pairs](assign-ownership.md#format "Assign owners to entities using entity metadata like labels, environment variables, and tags.") in Kubernetes labels. Keys must begin with the [custom key names you define for ownership information](assign-ownership.md#custom-keys "Assign owners to entities using entity metadata like labels, environment variables, and tags."). For example, you can use `owner` and `dt.owner` as prefixes to create unique keys.
 
 Sample Kubernetes deployment file with ownership defined for Deployment, Pod, and process
 
@@ -147,27 +147,27 @@ value: 'dt.owner-1=my-team-1' # Ownership defined for the process
 
 ### Tags
 
-**Use [tags to apply ownership](/docs/deliver/ownership/assign-ownership#tags "Assign owners to entities using entity metadata like labels, environment variables, and tags.") only for entities that aren't covered by other methods**.
+**Use [tags to apply ownership](assign-ownership.md#tags "Assign owners to entities using entity metadata like labels, environment variables, and tags.") only for entities that aren't covered by other methods**.
 
 #### Advantages and uses of tags
 
 * Tags are appropriate for assigning a **few stable entities** (for example, an application and the synthetic monitors running against it) to specific ownership teams.
-* [Manual tagging](/docs/manage/tags-and-metadata/setup/how-to-define-tags#manual "Find out how to define and apply tags manually and automatically.") or the [Custom tags API](/docs/dynatrace-api/environment-api/custom-tags "Manage custom tags of the monitored entities via the Dynatrace API.") are effective in applying ownership to **existing (already deployed) entities**.
-* [Automatic tagging rules](/docs/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically.") have the advantage of capturing **new entities** that match your tagging rules. Automatically applied tags also can't be removed manually from individual services, process groups, process group instances, applications, or hosts.
-* While the Custom tags API and automatic tagging rules both use the powerful and flexible [**entity selector**](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") for selecting entities, the **Custom tags API call is executed immediately**. This is a [major advantage over automatic tagging rules](/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale#custom-tags-api "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.") that are scheduled via the Dynatrace tagging process. This helps you speed up execution time when complex tagging rules are necessary.
+* [Manual tagging](../../manage/tags-and-metadata/setup/how-to-define-tags.md#manual "Find out how to define and apply tags manually and automatically.") or the [Custom tags API](../../dynatrace-api/environment-api/custom-tags.md "Manage custom tags of the monitored entities via the Dynatrace API.") are effective in applying ownership to **existing (already deployed) entities**.
+* [Automatic tagging rules](../../manage/tags-and-metadata/setup/how-to-define-tags.md#automatic "Find out how to define and apply tags manually and automatically.") have the advantage of capturing **new entities** that match your tagging rules. Automatically applied tags also can't be removed manually from individual services, process groups, process group instances, applications, or hosts.
+* While the Custom tags API and automatic tagging rules both use the powerful and flexible [**entity selector**](../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.") for selecting entities, the **Custom tags API call is executed immediately**. This is a [major advantage over automatic tagging rules](../../manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale.md#custom-tags-api "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.") that are scheduled via the Dynatrace tagging process. This helps you speed up execution time when complex tagging rules are necessary.
 
 #### Important considerations when using tags for ownership
 
 * **Manual tagging** doesn't **scale** adequately for assigning ownership in large, dynamic monitoring environments. Manual tags can also be removed manually.
-* While (web UIâbased) **automatic tagging rules** are designed for complexity, automatic tagging runs can take a **long time** to be completed, depending on the complexity of your rules and the size of your environment. Meanwhile, a critical entity experiencing an issue could miss being tagged with ownership. Read more about optimizing tagging in [Best practices for scaling tagging and management-zone rules](/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.").
+* While (web UIâbased) **automatic tagging rules** are designed for complexity, automatic tagging runs can take a **long time** to be completed, depending on the complexity of your rules and the size of your environment. Meanwhile, a critical entity experiencing an issue could miss being tagged with ownership. Read more about optimizing tagging in [Best practices for scaling tagging and management-zone rules](../../manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale.md "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.").
 * While the **Custom tags API call** is executed immediately, the tradeoff is that it's a **one-time operation**. Depending on the frequency of your tagging runs, new or short-lived entities could miss being tagged with ownership information entirely, making it difficult to find owners in case of vulnerabilities or outages.
 * We **do not recommend** using tags to apply ownership to processes or process groups.
 
 ## Team information
 
-While only the **Team name** and **Team identifier** fields are required for creating an [ownership team](/docs/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership."), here are some suggestions and best uses of other fields.
+While only the **Team name** and **Team identifier** fields are required for creating an [ownership team](ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership."), here are some suggestions and best uses of other fields.
 
-* When defining [custom keys](/docs/deliver/ownership/assign-ownership#custom-keys "Assign owners to entities using entity metadata like labels, environment variables, and tags.") for ownership identifiers, use specific, easily understandable names that are not likely to be used for other tagging needs.
+* When defining [custom keys](assign-ownership.md#custom-keys "Assign owners to entities using entity metadata like labels, environment variables, and tags.") for ownership identifiers, use specific, easily understandable names that are not likely to be used for other tagging needs.
 * Always add a team **Description**âthis is displayed along with the team name on the **Ownership teams** settings page and helps to differentiate teams at a glance. Teams with no description or a poor name (team 1) offer no clues as to their role in your organization. Teams with descriptions (2 and 3) are more identifiable.
 
   ![Team definitions](https://dt-cdn.net/images/ownership-team-definitions-1888-78e12327f8.png)
@@ -189,4 +189,4 @@ While only the **Team name** and **Team identifier** fields are required for cre
 
 ## Related topics
 
-* [Best practices for scaling tagging and management-zone rules](/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.")
+* [Best practices for scaling tagging and management-zone rules](../../manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale.md "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.")

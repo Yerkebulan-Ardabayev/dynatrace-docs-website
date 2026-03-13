@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:37:23.233559
 * Чтение: 2 мин
 * Опубликовано 29 сентября 2023 г.
 
-Ваш инструмент непрерывной интеграции (CI), например Jenkins, может [отправлять бизнес-события в Dynatrace](/docs/observe/business-observability/bo-api-ingest "Set up authentication for and ingest business events via API."). Эти события затем могут инициировать проверки Site Reliability Guardian в рамках рабочего процесса.
+Ваш инструмент непрерывной интеграции (CI), например Jenkins, может [отправлять бизнес-события в Dynatrace](../../observe/business-observability/bo-api-ingest.md "Set up authentication for and ingest business events via API."). Эти события затем могут инициировать проверки Site Reliability Guardian в рамках рабочего процесса.
 
 Disclaimer
 

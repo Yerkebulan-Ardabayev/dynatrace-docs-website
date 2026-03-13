@@ -13,9 +13,9 @@ scraped: 2026-03-06T21:13:46.603842
 * 8 мин. чтения
 * Обновлено 15 декабря 2025 г.
 
-С [Dynatrace на базе Grail](/docs/platform/grail/dynatrace-grail "Grail — это хранилище данных Dynatrace, разработанное специально для данных наблюдаемости и безопасности и выступающее единым хранилищем для логов, метрик, трассировок, событий и прочего.") вы можете использовать функции и логические операторы [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.") (DQL) в сопоставителях.
+С [Dynatrace на базе Grail](../../grail/dynatrace-grail.md "Grail — это хранилище данных Dynatrace, разработанное специально для данных наблюдаемости и безопасности и выступающее единым хранилищем для логов, метрик, трассировок, событий и прочего.") вы можете использовать функции и логические операторы [Dynatrace Query Language](../../grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.") (DQL) в сопоставителях.
 
-Сопоставитель фильтрует поступающие данные и сужает область данных, обрабатываемых создаваемым процессором. Сопоставитель в [OpenPipeline](/docs/platform/openpipeline "Масштабируйте обработку данных платформы Dynatrace с помощью OpenPipeline.") можно использовать для:
+Сопоставитель фильтрует поступающие данные и сужает область данных, обрабатываемых создаваемым процессором. Сопоставитель в [OpenPipeline](../../openpipeline.md "Масштабируйте обработку данных платформы Dynatrace с помощью OpenPipeline.") можно использовать для:
 
 * Фильтрации записей, содержащих указанную фразу.
 * Поиска данных по определённому значению в заданном атрибуте.
@@ -23,7 +23,7 @@ scraped: 2026-03-06T21:13:46.603842
 * Использования логических операторов для соединения двух или более выражений.
 * Запроса логов, отображающих длительность для запросов дольше `1s`.
 
-Подробнее об использовании логических операторов в DQL см. в разделе [Логические операторы и операторы равенства](/docs/platform/grail/dynatrace-query-language/operators#dql-logical-or-equality-operators "Список операторов DQL.").
+Подробнее об использовании логических операторов в DQL см. в разделе [Логические операторы и операторы равенства](../../grail/dynatrace-query-language/operators.md#dql-logical-or-equality-operators "Список операторов DQL.").
 
 ## Функции
 
@@ -33,7 +33,7 @@ scraped: 2026-03-06T21:13:46.603842
 
 ##### Валидация
 
-Функция `matchesPhrase` выполняет нечувствительный к регистру поиск [contains](/docs/platform/grail/dynatrace-query-language/functions#contains "Список функций DQL.") для всей строки запроса и не поддерживает подстановочные знаки в середине строки.
+Функция `matchesPhrase` выполняет нечувствительный к регистру поиск [contains](../../grail/dynatrace-query-language/functions.md#contains "Список функций DQL.") для всей строки запроса и не поддерживает подстановочные знаки в середине строки.
 Для найденных результатов выполняется дополнительная валидация:
 
 * Если запрос начинается со словесного символа, предшествующий символ должен быть несловесным.
@@ -115,7 +115,7 @@ filter isNull(`host.name`)
 
 ## Операторы
 
-Логические операторы можно использовать для соединения двух или более выражений. Подробнее о поведении логических операторов в DQL см. в разделе [Логические операторы и операторы равенства](/docs/platform/grail/dynatrace-query-language/operators#dql-logical-or-equality-operators "Список операторов DQL.").
+Логические операторы можно использовать для соединения двух или более выражений. Подробнее о поведении логических операторов в DQL см. в разделе [Логические операторы и операторы равенства](../../grail/dynatrace-query-language/operators.md#dql-logical-or-equality-operators "Список операторов DQL.").
 
 ### OR
 
@@ -198,7 +198,7 @@ iAny(a[] > 2)
 
 #### Строгое равенство
 
-[Логический оператор](/docs/platform/grail/dynatrace-query-language/operators "Список операторов DQL.") (`==`), указывающий на точное совпадение.
+[Логический оператор](../../grail/dynatrace-query-language/operators.md "Список операторов DQL.") (`==`), указывающий на точное совпадение.
 
 Области конфигурации должны быть идентичными. Однако если десятичное значение равно `0`, числа с плавающей точкой можно сравнивать с целочисленными данными. Например, `1==1.0`.
 Для строк поиск чувствителен к регистру.
@@ -211,6 +211,6 @@ iAny(a[] > 2)
 
 ## Связанные темы
 
-* [Функции DQL в OpenPipeline](/docs/platform/openpipeline/reference/openpipeline-dql-functions "Список функций DQL, доступных в OpenPipeline.")
-* [Команды DQL](/docs/platform/openpipeline/reference/openpipeline-dql-commands "Список команд DQL, доступных в OpenPipeline.")
-* [Операторы DQL в процессоре DQL OpenPipeline](/docs/platform/openpipeline/reference/openpipeline-dql-operators "Список операторов DQL, доступных в процессоре DQL OpenPipeline.")
+* [Функции DQL в OpenPipeline](openpipeline-dql-functions.md "Список функций DQL, доступных в OpenPipeline.")
+* [Команды DQL](openpipeline-dql-commands.md "Список команд DQL, доступных в OpenPipeline.")
+* [Операторы DQL в процессоре DQL OpenPipeline](openpipeline-dql-operators.md "Список операторов DQL, доступных в процессоре DQL OpenPipeline.")

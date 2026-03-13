@@ -15,11 +15,11 @@ scraped: 2026-03-06T21:10:39.754758
 
 OpenPipeline processing allows you to normalize span and metric data to prevent high-cardinality issues that can make aggregations and analysis unusable.
 
-The following use cases show how to reduce cardinality in three different views in [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](/docs/observe/application-observability/services/services-app "Maintain centralized control over service health, performance, and resources with the Services app."):
+The following use cases show how to reduce cardinality in three different views in [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](../../../observe/application-observability/services/services-app.md "Maintain centralized control over service health, performance, and resources with the Services app."):
 
 * [Outbound calls](#outbound-calls)
 * [Database queries](#database-queries): This tab shows aggregated metrics for database calls made by your service.
-* [Message processing](/docs/observe/application-observability/services/monitor-service-message-processing "Monitor service message processing")
+* [Message processing](../../../observe/application-observability/services/monitor-service-message-processing.md "Monitor service message processing")
 
 ## Outbound calls
 
@@ -83,7 +83,7 @@ Now that we have defined and saved a processor, we can enable the processor by c
 
 ## Database queries
 
-Redis statements often include unique identifiers or values, for example, `GET user:12345`, `GET user:12346`, and `GET user:12347` or `SET order:123`, `SET order:124`, and `SET order:125`. This high cardinality results in thousands of distinct entries shown in the [**Database queries** view](/docs/observe/application-observability/services/services-app#database-queries "Maintain centralized control over service health, performance, and resources with the Services app.") in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**.
+Redis statements often include unique identifiers or values, for example, `GET user:12345`, `GET user:12346`, and `GET user:12347` or `SET order:123`, `SET order:124`, and `SET order:125`. This high cardinality results in thousands of distinct entries shown in the [**Database queries** view](../../../observe/application-observability/services/services-app.md#database-queries "Maintain centralized control over service health, performance, and resources with the Services app.") in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**.
 
 Unlike parameterized SQL databases, where OneAgent or OpenTelemetry automatically handles normalization, Redis commands require manual cardinality handling via an OpenPipeline pipeline. In this section, we'll utilize a processing rule to transform these commands into normalized patterns such as `GET` or `SET`, making your Redis query data more actionable.
 

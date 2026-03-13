@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:22:38.429363
 * 4-min read
 * Published Oct 04, 2017
 
-Dynatrace [автоматически обнаруживает и именует серверные сервисы ваших приложений](/docs/observe/application-observability/services/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.") на основе базовых свойств конфигурации и развёртывания приложения. Эти имена определяются встроенными правилами. Свойства и получаемые имена сервисов должны быть интуитивно понятны, поскольку они отражают ваш сервисный ландшафт. Тем не менее вы можете захотеть настроить эти имена. Пользовательские правила именования сервисов позволяют улучшить автоматическое именование.
+Dynatrace [автоматически обнаруживает и именует серверные сервисы ваших приложений](../service-detection-v1.md "Find out how Dynatrace Service Detection v1 detects and names different types of services.") на основе базовых свойств конфигурации и развёртывания приложения. Эти имена определяются встроенными правилами. Свойства и получаемые имена сервисов должны быть интуитивно понятны, поскольку они отражают ваш сервисный ландшафт. Тем не менее вы можете захотеть настроить эти имена. Пользовательские правила именования сервисов позволяют улучшить автоматическое именование.
 
 ## Встроенные правила
 
@@ -41,8 +41,8 @@ Dynatrace [автоматически обнаруживает и именует
 
 Формат имени сервиса позволяет строить сложные стандарты именования для сервисов в вашей среде. Вы можете использовать заполнители для построения имени на основе свойств сервиса. Заполнители будут заменены фактическими значениями в имени сервиса. Если указанное значение отсутствует, заполнитель будет заменён пустой строкой. Установите курсор в поле ввода **Service name format**, чтобы увидеть список доступных заполнителей.
 
-Вы можете использовать [регулярные выражения](/docs/manage/tags-and-metadata/reference/regular-expressions-in-dynatrace "Learn how to use regular expressions in the context of Dynatrace.") для извлечения фрагментов имени сервиса, созданного встроенным правилом. Добавьте регулярное выражение перед закрывающей фигурной скобкой `}` заполнителя. Например, для `{ProcessGroup:DetectedName}` используйте `{ProcessGroup:DetectedName/REGEX}`.
+Вы можете использовать [регулярные выражения](../../../../../manage/tags-and-metadata/reference/regular-expressions-in-dynatrace.md "Learn how to use regular expressions in the context of Dynatrace.") для извлечения фрагментов имени сервиса, созданного встроенным правилом. Добавьте регулярное выражение перед закрывающей фигурной скобкой `}` заполнителя. Например, для `{ProcessGroup:DetectedName}` используйте `{ProcessGroup:DetectedName/REGEX}`.
 
 ## Связанные темы
 
-* [API условного именования](/docs/dynatrace-api/configuration-api/conditional-naming "Learn what the Dynatrace configuration API for conditional naming offers.")
+* [API условного именования](../../../../../dynatrace-api/configuration-api/conditional-naming.md "Learn what the Dynatrace configuration API for conditional naming offers.")

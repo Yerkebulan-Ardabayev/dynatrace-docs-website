@@ -90,4 +90,4 @@ scraped: 2026-03-05T21:38:28.083609
 
 ## Связанные темы
 
-* [Настройка управления доступом в OpenPipeline](/docs/platform/openpipeline/getting-started/set-access-control "Distribute OpenPipeline ingest source and pipeline management via owner-based access control.")
+* [Настройка управления доступом в OpenPipeline](../getting-started/set-access-control.md "Distribute OpenPipeline ingest source and pipeline management via owner-based access control.")

@@ -14,13 +14,13 @@ scraped: 2026-03-06T21:28:10.855487
 * Опубликовано 16 февраля 2022 г.
 
 Вы можете управлять доступом к SLO в своей среде, устанавливая разрешения на запись и/или чтение для пользователей или групп пользователей на уровне среды или зоны управления.
-Подробнее о настройке разрешений см. в разделе [Разрешения на основе ролей](/docs/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions").
+Подробнее о настройке разрешений см. в разделе [Разрешения на основе ролей](../../manage/identity-access-management/permission-management/role-based-permissions.md "Role-based permissions").
 
 Проверка разрешений основана исключительно на глобальном селекторе сущностей.
 
 ## Доступ на чтение в зависимости от уровня разрешений
 
-* На уровне среды пользователь с разрешением **View environment** может просматривать любой SLO. Для управления разрешениями групп можно [создавать политики](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+* На уровне среды пользователь с разрешением **View environment** может просматривать любой SLO. Для управления разрешениями групп можно [создавать политики](../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
 
   **Пример политики:** `ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = "builtin:monitoring.slo";`
 * На уровне зоны управления пользователь с разрешением **View environment** может читать все глобальные SLO и все SLO, принадлежащие соответствующей зоне управления.
@@ -29,7 +29,7 @@ scraped: 2026-03-06T21:28:10.855487
 
 ## Доступ на запись в зависимости от уровня разрешений
 
-* На уровне среды пользователь с разрешением **Change monitoring settings** может создавать и обновлять любые SLO, включая глобальные SLO без указанных зон управления. Для управления разрешениями групп можно [создавать политики](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+* На уровне среды пользователь с разрешением **Change monitoring settings** может создавать и обновлять любые SLO, включая глобальные SLO без указанных зон управления. Для управления разрешениями групп можно [создавать политики](../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
 
   **Пример политики:** `ALLOW settings:objects:read, settings:schemas:read, settings:objects:write WHERE settings:schemaId = "builtin:monitoring.slo";`.
 * На уровне зоны управления пользователь с разрешением **Change monitoring settings** может создавать и обновлять любые SLO для соответствующей зоны управления, но не может создавать или обновлять глобальные SLO.

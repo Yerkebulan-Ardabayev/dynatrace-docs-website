@@ -50,7 +50,7 @@ Dynatrace версии 1.232+
 
 Рабочая нагрузка состоит из одного или нескольких подов. Это способ описания типа микросервиса, входящего в состав приложения. Например, приложение может иметь фронтенд-нагрузку и бэкенд-нагрузку, состоящую из десятка подов, распределённых по кластеру Kubernetes.
 
-Страница единого анализа рабочей нагрузки предоставляет информацию об использовании ресурсов, обнаружении проблем, [уязвимостях](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-vulnerabilities-kubernetes "Keep track of vulnerabilities in Kubernetes/OpenShift."), количестве подов в соответствующей рабочей нагрузке, количестве сервисов, отправляющих трафик на поды, и событиях для всех подов в данной рабочей нагрузке. Эта информация полезна для анализа общей производительности микросервиса, а не для рассмотрения конкретных проблем отдельного экземпляра пода.
+Страница единого анализа рабочей нагрузки предоставляет информацию об использовании ресурсов, обнаружении проблем, [уязвимостях](monitor-vulnerabilities-kubernetes.md "Keep track of vulnerabilities in Kubernetes/OpenShift."), количестве подов в соответствующей рабочей нагрузке, количестве сервисов, отправляющих трафик на поды, и событиях для всех подов в данной рабочей нагрузке. Эта информация полезна для анализа общей производительности микросервиса, а не для рассмотрения конкретных проблем отдельного экземпляра пода.
 
 Для отображения страницы единого анализа рабочей нагрузки в Dynatrace перейдите в ![Kubernetes Workloads](https://dt-cdn.net/images/kubernetes-workloads-512-c5f749c651.png "Kubernetes Workloads") **Kubernetes Workloads Classic** и выберите рабочую нагрузку.
 
@@ -100,4 +100,4 @@ ActiveGate версии 1.277 Dynatrace версии 1.277
 
 ## Связанные темы
 
-* [Настройка Dynatrace на Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Настройка Dynatrace на Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")

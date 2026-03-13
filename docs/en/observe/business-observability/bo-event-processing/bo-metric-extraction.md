@@ -26,7 +26,7 @@ To add a business event metric
 
 1. Go to **Settings** > **Business Observability** > **Metric extraction**.
 2. Select **Add business event metric** and name your metric by adding a metric **Key** starting with the `bizevents.` prefix (for example, `bizevents.EasyTrade.TradingVolume`).
-3. Add a **Matcher** to your rule by pasting your [matcher-specific DQL query](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher "Examine specific DQL functions and logical operators for log processing."). In the above example, to calculate your trading volume metric, you need to extract only buy transactions, so the matcher query is as follows.
+3. Add a **Matcher** to your rule by pasting your [matcher-specific DQL query](../../../analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher.md "Examine specific DQL functions and logical operators for log processing."). In the above example, to calculate your trading volume metric, you need to extract only buy transactions, so the matcher query is as follows.
 
    ```
    matchesValue(event.type, "com.easytrade.buy-assets")
@@ -64,13 +64,13 @@ See the example visualization below.
 
 ### Display metrics in Notebooks Notebooks
 
-You can also explore custom metrics based on business events in Grail, for example, by using the DQL [`timeseries` command](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands"). The following is an example DQL `timeseries` query against the `bizevents.easyTrade.TradingVolume` metric.
+You can also explore custom metrics based on business events in Grail, for example, by using the DQL [`timeseries` command](../../../platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries "DQL metric commands"). The following is an example DQL `timeseries` query against the `bizevents.easyTrade.TradingVolume` metric.
 
 ```
 timeseries avg(bizevents.easyTrade.TradingVolume), alias:avgTradingVolume, interval:1d, from:now()-30d, to:now()
 ```
 
-Run this query in [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (**Query Grail** > **Run query**) and view results using the recommended **Line chart** visualization option.
+Run this query in [Notebooks](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (**Query Grail** > **Run query**) and view results using the recommended **Line chart** visualization option.
 
 ![Query Business Observability custom metrics through DQL with timeseries in Notebooks](https://dt-cdn.net/images/ba-event-metric-query-notebooks-2122-6c3ead0aef.webp)
 
@@ -81,12 +81,12 @@ To create alerts based on business event metrics
 1. Go to **Settings** > **Anomaly detection** > **Metric events**.
 2. Select **Add metric event** and create a custom event where **Type** is **Metric selector**. This is the [metric key defined earlier](#configure), for example, `bizevents.EasyTrade.TradingVolume`.
 
-   Metric events based on business events are only supported with metric selector queries. See [Metric selector events](/docs/dynatrace-intelligence/anomaly-detection/metric-events/metric-selector-events#metricselectorevent "Learn about metric events based on a metric selector.") for more information.
+   Metric events based on business events are only supported with metric selector queries. See [Metric selector events](../../../dynatrace-intelligence/anomaly-detection/metric-events/metric-selector-events.md#metricselectorevent "Learn about metric events based on a metric selector.") for more information.
 
 ### Unrecognized timestamp handling
 
-If the event timestamp doesn't fall within the allowed [range](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#payload "Learn how the data ingestion protocol for Dynatrace Metrics API works."), your metric is replaced in Grail by a metric with the `.failed` suffix added to the metric key. This new metric will have a recent timestamp, `(now())` and the dimension that would have been attached to the metric you wanted to extract. You can also visualize this metric in [Data Explorer](#data-explorer) or [Notebooks](#notebooks).
+If the event timestamp doesn't fall within the allowed [range](../../../ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#payload "Learn how the data ingestion protocol for Dynatrace Metrics API works."), your metric is replaced in Grail by a metric with the `.failed` suffix added to the metric key. This new metric will have a recent timestamp, `(now())` and the dimension that would have been attached to the metric you wanted to extract. You can also visualize this metric in [Data Explorer](#data-explorer) or [Notebooks](#notebooks).
 
 ## Related topics
 
-* [Metric ingestion protocol](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
+* [Metric ingestion protocol](../../../ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md "Learn how the data ingestion protocol for Dynatrace Metrics API works.")

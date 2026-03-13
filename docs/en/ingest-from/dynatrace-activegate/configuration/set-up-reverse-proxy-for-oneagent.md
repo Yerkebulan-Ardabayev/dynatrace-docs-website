@@ -20,13 +20,13 @@ There is no need to configure OneAgent to use a reverse proxy. OneAgent uses a l
 
 Linux only
 
-On Linux systems, you can configure a reverse proxy or load balancer for OneAgent by specifying the installation parameters during ActiveGate installation. For details, see [Customize ActiveGate installation on Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#load-balancer-oneagent "Learn about the command-line parameters that you can use with ActiveGate on Linux.").
+On Linux systems, you can configure a reverse proxy or load balancer for OneAgent by specifying the installation parameters during ActiveGate installation. For details, see [Customize ActiveGate installation on Linux](../installation/linux/linux-customize-installation-for-activegate.md#load-balancer-oneagent "Learn about the command-line parameters that you can use with ActiveGate on Linux.").
 
 ## Configure after installation
 
 To specify the reverse proxy address after ActiveGate installation
 
-1. Stop the ActiveGate and edit the `custom.properties` file in the [ActiveGate configuration directory](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.").
+1. Stop the ActiveGate and edit the `custom.properties` file in the [ActiveGate configuration directory](where-can-i-find-activegate-files.md "Find out where ActiveGate files are stored on Windows and Linux systems.").
 2. Configure the `dnsEntryPoint` parameter in the `[connectivity]` section using the following format:
 
    `dnsEntryPoint = https://<DOMAIN>:<PORT>`
@@ -50,7 +50,7 @@ To specify the reverse proxy address after ActiveGate installation
 
    dnsEntryPoint = https://address.of.my.lb-1.com:9999,https://address.of.my.lb-2.com:9999
    ```
-3. Save the `custom.properties` file and [restart the ActiveGate main service](/docs/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.").
+3. Save the `custom.properties` file and [restart the ActiveGate main service](../operation/stop-restart-activegate.md "Learn how you can start, stop and restart ActiveGate on Windows or Linux.").
 
 ## Verify the configuration
 

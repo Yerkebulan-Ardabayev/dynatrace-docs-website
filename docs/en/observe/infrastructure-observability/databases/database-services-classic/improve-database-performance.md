@@ -26,15 +26,15 @@ With the following few steps for simple database performance tuning, you can sig
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Check the health of your database**](/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance#database-health "Boost your database performance in a few practical steps.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Check the health of your database**](improve-database-performance.md#database-health "Boost your database performance in a few practical steps.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Understand how your database is accessed**](/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance#database-access "Boost your database performance in a few practical steps.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Understand how your database is accessed**](improve-database-performance.md#database-access "Boost your database performance in a few practical steps.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Understand the load and individual response time of each service instance**](/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance#load-and-response-time "Boost your database performance in a few practical steps.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**Understand the load and individual response time of each service instance**](improve-database-performance.md#load-and-response-time "Boost your database performance in a few practical steps.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**Check the number of database connections**](/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance#database-connections "Boost your database performance in a few practical steps.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
+**Check the number of database connections**](improve-database-performance.md#database-connections "Boost your database performance in a few practical steps.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
 
-**Check your network**](/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance#check-network "Boost your database performance in a few practical steps.")
+**Check your network**](improve-database-performance.md#check-network "Boost your database performance in a few practical steps.")
 
 ## Step 1 Check the health of your database
 
@@ -134,4 +134,4 @@ Most often, over-stressed processes start dropping packets when resources are de
 
 ## Related topics
 
-* [Host monitoring with Dynatrace](/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring "Monitor hosts with Dynatrace.")
+* [Host monitoring with Dynatrace](../../hosts/monitoring/host-monitoring.md "Monitor hosts with Dynatrace.")

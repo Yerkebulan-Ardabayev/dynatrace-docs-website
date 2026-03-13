@@ -17,10 +17,10 @@ scraped: 2026-03-05T21:34:12.624189
 
 [### Visual Resolution Path
 
-Use the Visual Resolution Path (VRP) add-on to access the problem resolution path directly from any Dynatrace app and gain insights into the problem and underlying problem event timeline without leaving your current context.](/docs/analyze-explore-automate/smartscape/smartscape-modals/visual-resolution-path "Access the problem resolution path directly from any Dynatrace app to gain insights into a problem and event timeline without leaving the current context.")[### View Topology
+Use the Visual Resolution Path (VRP) add-on to access the problem resolution path directly from any Dynatrace app and gain insights into the problem and underlying problem event timeline without leaving your current context.](smartscape-modals/visual-resolution-path.md "Access the problem resolution path directly from any Dynatrace app to gain insights into a problem and event timeline without leaving the current context.")[### View Topology
 
-Visualize the topology around any selected entity to gain immediate insights on the relationships to other entities within your digital system.](/docs/analyze-explore-automate/smartscape/smartscape-modals/smartscape-view-topology "Visualize the topology around the selected entity to gain insights on service dependencies and relationships between the nodes.")
+Visualize the topology around any selected entity to gain immediate insights on the relationships to other entities within your digital system.](smartscape-modals/smartscape-view-topology.md "Visualize the topology around the selected entity to gain insights on service dependencies and relationships between the nodes.")
 
 ## Related topics
 
-* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* [Smartscape](../smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")

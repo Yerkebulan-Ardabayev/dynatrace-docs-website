@@ -45,13 +45,13 @@ Required permission: **Change monitoring settings**
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**SAP Hana JDBC driver redistribution license**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql#jdbc-driver "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**SAP Hana JDBC driver redistribution license**](oraclesql.md#jdbc-driver "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Define endpoints**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from SAP Hana Database server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Define endpoints**](sap-hana.md#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from SAP Hana Database server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**ActiveGate group**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from SAP Hana Database server.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**ActiveGate group**](sap-hana.md#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from SAP Hana Database server.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**Activate extension**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from SAP Hana Database server.")
+**Activate extension**](sap-hana.md#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from SAP Hana Database server.")
 
 ### Step 1 SAP Hana JDBC driver
 
@@ -79,7 +79,7 @@ You can obtain the `ngdbc.jar` file from the SAP Hana Client installation direct
 
   + Only basic authentication is supported.
   + Authentication details passed to Dynatrace when activating monitoring configuration are obfuscated and it's impossible to retrieve them.
-  + You can [use credential vault](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring#authentication "SAP Hana extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
+  + You can [use credential vault](../../../develop-your-extensions/data-sources/sql/sap-hana-monitoring.md#authentication "SAP Hana extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
 * Select **Next step**.
 
 ### Step 3 ActiveGate group
@@ -99,7 +99,7 @@ You can obtain the `ngdbc.jar` file from the SAP Hana Client installation direct
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](../../../manage-extensions.md "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
 
 ## Related topics
 

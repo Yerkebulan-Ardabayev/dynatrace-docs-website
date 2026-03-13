@@ -40,9 +40,9 @@ You will receive a notification email that explains the details of your license 
 
 Your license becomes active at its start date.
 
-With an active Dynatrace license, you can consume Dynatrace services according to the [monitoring consumption rules](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") and the terms and conditions of your contract.
+With an active Dynatrace license, you can consume Dynatrace services according to the [monitoring consumption rules](../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") and the terms and conditions of your contract.
 
-You can view your consumption and the remaining quotas of your license in [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.") or via the [Dynatrace Platform Subscription API](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api "Query the data about your Dynatrace Platform Subscription via the Account Management API.").
+You can view your consumption and the remaining quotas of your license in [Account Management](../manage/account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health.") or via the [Dynatrace Platform Subscription API](../dynatrace-api/account-management-api/dynatrace-platform-subscription-api.md "Query the data about your Dynatrace Platform Subscription via the Account Management API.").
 
 ## Expired licenses
 
@@ -71,4 +71,4 @@ All data is deleted 30 days following the date of expiration of your license:
 ## Data retention
 
 Different types of monitored data are stored for different periods of time.
-For more information, see [Data retention periods](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods "Check retention times for various data types.").
+For more information, see [Data retention periods](../manage/data-privacy-and-security/data-privacy/data-retention-periods.md "Check retention times for various data types.").

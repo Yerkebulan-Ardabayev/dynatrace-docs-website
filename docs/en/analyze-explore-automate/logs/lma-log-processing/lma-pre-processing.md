@@ -47,4 +47,4 @@ To find the list of out-of-the-box coverage for popular technologies as **Ingest
 
 ## Related topics
 
-* [Log processing with OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.")
+* [Log processing with OpenPipeline](lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.")

@@ -28,11 +28,11 @@ To use Red Hat Ansible workflow actions, you first need to install Red Hat Ansib
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Set up Event-Driven Ansible controller for integration with Dynatrace**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible#setup-eda "Send events to Red Hat Event-Driven Ansible")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Set up Event-Driven Ansible controller for integration with Dynatrace**](redhat-even-driven-ansible.md#setup-eda "Send events to Red Hat Event-Driven Ansible")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Grant permissions to Workflows**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible#permissions "Send events to Red Hat Event-Driven Ansible")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Grant permissions to Workflows**](redhat-even-driven-ansible.md#permissions "Send events to Red Hat Event-Driven Ansible")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Configure Red Hat Event-Driven Ansible connection**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible#connection "Send events to Red Hat Event-Driven Ansible")
+**Configure Red Hat Event-Driven Ansible connection**](redhat-even-driven-ansible.md#connection "Send events to Red Hat Event-Driven Ansible")
 
 ### Step 1 Configuration of Event-Driven Ansible controller
 
@@ -221,7 +221,7 @@ To fine-tune permissions granted to Workflows
 * `state:app-states:write`
 * `state:app-states:delete`
 
-For more on general Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+For more on general Workflows user permissions, see [User permissions for workflows](../../security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Step 3 Configure Red Hat Ansible connection
 
@@ -264,7 +264,7 @@ To create a workflow that sends an event to Event-Driven Ansible
 4. On one of the information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add"), search for `Ansible`, and select **Send event to Event-Driven Ansible**.
 5. On each of the remaining information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") and drag the line to the **Send event to Event-Driven Ansible** action.
 6. In the **Send event to Event-Driven Ansible** action, select the [connection](#connection) to your **Red Hat Event-Driven Ansible Controller**.
-7. Configure the event data field as needed. To learn how to use the output of information-extracting notes, see [Expression reference](/docs/analyze-explore-automate/workflows/reference "Get to know the workflows expression").
+7. Configure the event data field as needed. To learn how to use the output of information-extracting notes, see [Expression reference](../../reference.md "Get to know the workflows expression").
 
    The event data must be valid JSON.
 8. To test your workflow, select **Run**.

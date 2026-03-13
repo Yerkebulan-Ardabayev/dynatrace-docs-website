@@ -65,7 +65,7 @@ scraped: 2026-03-06T21:11:07.243073
 ## Пример 1: Простой запрос и ответ в таблицу
 
 В этом простом примере мы используем API [dummyjson.com](https://dummyjson.com/docs/products) для получения образцов данных о продуктах.
-Результатом этого API-запроса являются несколько образцов продуктов в формате JSON. Добавив `.products` к результату, мы можем передать его напрямую в визуализацию [таблицы](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-table "Создание и редактирование визуализаций таблиц на ваших Dynatrace панелях и тетрадях.").
+Результатом этого API-запроса являются несколько образцов продуктов в формате JSON. Добавив `.products` к результату, мы можем передать его напрямую в визуализацию [таблицы](../../edit-visualizations/visualization-table.md "Создание и редактирование визуализаций таблиц на ваших Dynatrace панелях и тетрадях.").
 
 ![Add code - example 1](https://dt-cdn.net/images/screenshot-2023-04-28-at-10-09-03-3352-8ebe772088.png)
 
@@ -95,7 +95,7 @@ return result.products;
 
 ## Пример 2: Простой запрос и ответ в единицу
 
-В этом примере мы основываемся на примере 1 и вычисляем среднюю цену для всех образцов продуктов, а затем передаем ее в визуализацию [единичное значение](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value "Создание и редактирование визуализаций единичного значения на ваших Dynatrace панелях и тетрадях.").
+В этом примере мы основываемся на примере 1 и вычисляем среднюю цену для всех образцов продуктов, а затем передаем ее в визуализацию [единичное значение](../../edit-visualizations/visualization-chart-single-value.md "Создание и редактирование визуализаций единичного значения на ваших Dynatrace панелях и тетрадях.").
 
 ![Add code - example 2](https://dt-cdn.net/images/screenshot-2023-04-28-at-11-38-07-3356-ca95b247f3.png)
 
@@ -145,7 +145,7 @@ return avgPrice;
 
 ## Пример 3: Расширенный запрос и ответ в список записей
 
-В этом примере мы используем API Dynatrace [Environment API](/docs/dynatrace-api/environment-api "Узнайте, что вам нужно для использования раздела среды API Dynatrace.") для получения событий и создания визуализации таблицы.
+В этом примере мы используем API Dynatrace [Environment API](../../../../dynatrace-api/environment-api.md "Узнайте, что вам нужно для использования раздела среды API Dynatrace.") для получения событий и создания визуализации таблицы.
 
 ![Add code - example 3](https://dt-cdn.net/images/screenshot-2023-04-28-at-14-02-51-3358-99746f6f57.webp)
 

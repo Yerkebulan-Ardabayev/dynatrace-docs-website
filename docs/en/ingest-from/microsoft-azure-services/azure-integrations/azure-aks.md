@@ -19,10 +19,10 @@ In addition you can enable capturing AKS specific metrics from Azure Monitor
 
 ## Integration
 
-[Enable Kubernetes monitoring](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+[Enable Kubernetes monitoring](../../setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
 
-[Azure Monitor AKS metrics](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-aks/monitor-azure-kubernetes-service "Monitor Azure Kubernetes Service and view available metrics.")
+[Azure Monitor AKS metrics](azure-aks/monitor-azure-kubernetes-service.md "Monitor Azure Kubernetes Service and view available metrics.")
 
 ## Related topics
 
-* [Set up Dynatrace on Microsoft Azure](/docs/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
+* [Set up Dynatrace on Microsoft Azure](../../microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")

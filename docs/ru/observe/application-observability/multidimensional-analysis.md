@@ -26,15 +26,15 @@ scraped: 2026-03-06T21:17:27.365659
 
 [### Top web requests
 
-Анализ наиболее частых и наиболее ресурсоёмких веб-запросов.](/docs/observe/application-observability/multidimensional-analysis/top-web-requests "Learn how to analyze all web requests across all of your services using Dynatrace.")[### Top database statements
+Анализ наиболее частых и наиболее ресурсоёмких веб-запросов.](multidimensional-analysis/top-web-requests.md "Learn how to analyze all web requests across all of your services using Dynatrace.")[### Top database statements
 
-Анализ наиболее частых и наиболее ресурсоёмких запросов к базам данных.](/docs/observe/application-observability/multidimensional-analysis/top-database-statements "Understand the database activity across your environment with Dynatrace.")[### Exception analysis
+Анализ наиболее частых и наиболее ресурсоёмких запросов к базам данных.](multidimensional-analysis/top-database-statements.md "Understand the database activity across your environment with Dynatrace.")[### Exception analysis
 
-Анализ и понимание всех исключений на уровне кода.](/docs/observe/application-observability/multidimensional-analysis/exception-analysis "Learn how Dynatrace can help you see which exceptions occurred in your environment during a selected analysis timeframe.")
+Анализ и понимание всех исключений на уровне кода.](multidimensional-analysis/exception-analysis.md "Learn how Dynatrace can help you see which exceptions occurred in your environment during a selected analysis timeframe.")
 
 ## Источник данных
 
-Многомерный анализ использует данные трассировок и запросов в качестве источника данных, включая информацию о [распределённых трассировках](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods#traces-grail "Check retention times for various data types.") и [запросах](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods#request-attributes "Check retention times for various data types.").
+Многомерный анализ использует данные трассировок и запросов в качестве источника данных, включая информацию о [распределённых трассировках](../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md#traces-grail "Check retention times for various data types.") и [запросах](../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md#request-attributes "Check retention times for various data types.").
 
 * Для временных интервалов менее двух часов используется более высокое разрешение (менее 1 минуты).
 * Для больших объёмов данных, особенно для длительных временных интервалов или нефильтрованного анализа, применяется выборка (сэмплирование): используется только часть данных трассировок и запросов.
@@ -43,7 +43,7 @@ scraped: 2026-03-06T21:17:27.365659
 
 Многомерный анализ и диаграммы
 
-В отличие от [Data Explorer](/docs/analyze-explore-automate/explorer#limitations "Query for metrics and transform results to gain desired insights."), многомерный анализ использует данные трассировок и запросов, а не данные метрик, поэтому значения на диаграммах многомерного анализа могут отличаться от значений на пользовательских диаграммах.
+В отличие от [Data Explorer](../../analyze-explore-automate/explorer.md#limitations "Query for metrics and transform results to gain desired insights."), многомерный анализ использует данные трассировок и запросов, а не данные метрик, поэтому значения на диаграммах многомерного анализа могут отличаться от значений на пользовательских диаграммах.
 
 ## Настройка представления
 
@@ -65,7 +65,7 @@ scraped: 2026-03-06T21:17:27.365659
 В столбце **Actions** таблицы вы можете выбрать:
 
 * **Filter** ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") для фильтрации представления по указанному измерению.
-* **More** (**...**) для доступа к дополнительным вариантам анализа из [меню **Analyze**](/docs/observe/application-observability/services-classic/context-specific-drill-down#analyze-menu "Learn about easy navigation and filtering for services analysis.").
+* **More** (**...**) для доступа к дополнительным вариантам анализа из [меню **Analyze**](services-classic/context-specific-drill-down.md#analyze-menu "Learn about easy navigation and filtering for services analysis.").
 
 Для временных интервалов, содержащих данные старше 10 дней, вы можете включить **Show data retention**, чтобы лучше понять, какие данные доступны за какой период, непосредственно на диаграмме.
 
@@ -75,13 +75,13 @@ scraped: 2026-03-06T21:17:27.365659
 
 Dynatrace предоставляет несколько предустановленных представлений:
 
-* [Exception analysis](/docs/observe/application-observability/multidimensional-analysis/exception-analysis "Learn how Dynatrace can help you see which exceptions occurred in your environment during a selected analysis timeframe.")
-* [Top database statements](/docs/observe/application-observability/multidimensional-analysis/top-database-statements "Understand the database activity across your environment with Dynatrace.")
-* [Top web requests](/docs/observe/application-observability/multidimensional-analysis/top-web-requests "Learn how to analyze all web requests across all of your services using Dynatrace.")
+* [Exception analysis](multidimensional-analysis/exception-analysis.md "Learn how Dynatrace can help you see which exceptions occurred in your environment during a selected analysis timeframe.")
+* [Top database statements](multidimensional-analysis/top-database-statements.md "Understand the database activity across your environment with Dynatrace.")
+* [Top web requests](multidimensional-analysis/top-web-requests.md "Learn how to analyze all web requests across all of your services using Dynatrace.")
 
 ## Вычисляемая метрика сервиса
 
-Вы можете сохранить настроенное представление как вычисляемую метрику сервиса, которую можно использовать так же, как любую другую метрику Dynatrace, например, для [построения диаграмм](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") или [экспорта данных через API](/docs/dynatrace-api/environment-api/metric-v2/get-data-points "Read data points of one or multiple metrics via Metrics v2 API.").
+Вы можете сохранить настроенное представление как вычисляемую метрику сервиса, которую можно использовать так же, как любую другую метрику Dynatrace, например, для [построения диаграмм](../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") или [экспорта данных через API](../../dynatrace-api/environment-api/metric-v2/get-data-points.md "Read data points of one or multiple metrics via Metrics v2 API.").
 
 В вычисляемые метрики записываются только новые данные; ретроспективные данные не включаются.
 
@@ -89,9 +89,9 @@ Dynatrace предоставляет несколько предустановл
 
 * В вычисляемые метрики записываются только новые данные; ретроспективные данные не включаются.
 * Вы можете иметь до 500 включённых вычисляемых метрик на окружение и до 100 включённых вычисляемых метрик на сервис.
-* Классические вычисляемые метрики поддерживают не более 100 значений измерений. Это называется правилом «top X», поскольку в зависимости от конфигурации можно выбрать меньше. Однако, какие бы 100 значений измерений вы ни выбрали, оставшиеся измерения агрегируются в один временной ряд, и значение измерения доступно через специальное измерение `remainder`. Условие фильтрации [remainder](/docs/dynatrace-api/environment-api/metric-v2/metric-selector#remainder "Configure the metric selector for the Metric v2 API.") позволяет фильтровать по этому измерению `remainder`.
+* Классические вычисляемые метрики поддерживают не более 100 значений измерений. Это называется правилом «top X», поскольку в зависимости от конфигурации можно выбрать меньше. Однако, какие бы 100 значений измерений вы ни выбрали, оставшиеся измерения агрегируются в один временной ряд, и значение измерения доступно через специальное измерение `remainder`. Условие фильтрации [remainder](../../dynatrace-api/environment-api/metric-v2/metric-selector.md#remainder "Configure the metric selector for the Metric v2 API.") позволяет фильтровать по этому измерению `remainder`.
 
-* Вычисляемые метрики сервиса Grail с кардинальностью выше 2000 в любом 5-минутном окне за последние 2 недели или с момента последнего изменения метрики автоматически отключаются в Grail. Включение таких метрик в Grail не допускается. Если метрика уже включена в Grail, вы будете уведомлены об отклонении метрики через готовый дашборд [**Metric & Dimensions Usage + Rejections**](/docs/dynatrace-api/environment-api/metric-v2/best-practices#identify-high-cardinality-situations "Best practices for metrics."). Чтобы включить классическую метрику в Grail и продолжить сбор входящих данных в Grail, убедитесь, что кардинальность остаётся ниже лимита.
+* Вычисляемые метрики сервиса Grail с кардинальностью выше 2000 в любом 5-минутном окне за последние 2 недели или с момента последнего изменения метрики автоматически отключаются в Grail. Включение таких метрик в Grail не допускается. Если метрика уже включена в Grail, вы будете уведомлены об отклонении метрики через готовый дашборд [**Metric & Dimensions Usage + Rejections**](../../dynatrace-api/environment-api/metric-v2/best-practices.md#identify-high-cardinality-situations "Best practices for metrics."). Чтобы включить классическую метрику в Grail и продолжить сбор входящих данных в Grail, убедитесь, что кардинальность остаётся ниже лимита.
 
 Чтобы создать вычисляемую метрику сервиса из представления многомерного анализа
 
@@ -106,10 +106,10 @@ Dynatrace предоставляет несколько предустановл
 7. Необязательно: при необходимости измените ключ метрики.
 
    После создания метрики её ключ изменить нельзя.
-8. Необязательно: если вы хотите более точно настроить метрику, выберите **Advanced options** для настройки дополнительных параметров метрики. Подробности см. в разделе [Вычисляемые метрики для сервисов](/docs/observe/application-observability/services/calculated-service-metric "Learn how to create a calculated metric based on web requests.").
+8. Необязательно: если вы хотите более точно настроить метрику, выберите **Advanced options** для настройки дополнительных параметров метрики. Подробности см. в разделе [Вычисляемые метрики для сервисов](services/calculated-service-metric.md "Learn how to create a calculated metric based on web requests.").
 9. Выберите **Create metric**.
 
 ## Связанные темы
 
-* [API метрик сервиса](/docs/dynatrace-api/configuration-api/calculated-metrics/service-metrics "Manage calculated service metrics via the Dynatrace configuration API.")
-* [Вычисляемые метрики для сервисов](/docs/observe/application-observability/services/calculated-service-metric "Learn how to create a calculated metric based on web requests.")
+* [API метрик сервиса](../../dynatrace-api/configuration-api/calculated-metrics/service-metrics.md "Manage calculated service metrics via the Dynatrace configuration API.")
+* [Вычисляемые метрики для сервисов](services/calculated-service-metric.md "Learn how to create a calculated metric based on web requests.")

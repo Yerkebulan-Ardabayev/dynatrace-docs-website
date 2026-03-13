@@ -15,14 +15,14 @@ scraped: 2026-03-05T21:32:41.795195
 
 Dynatrace OneAgent предлагает четыре способа мониторинга ваших приложений и инфраструктуры.
 Некоторые режимы обеспечивают полный доступ к данным наблюдаемости, тогда как другие собирают более ограниченный объём информации.
-Для каждого установленного в вашей инфраструктуре OneAgent вы можете выбрать режим мониторинга, наилучшим образом соответствующий вашим потребностям — см. [настройку OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation#oneagent-setup "Установка OneAgent на сервер впервые.").
+Для каждого установленного в вашей инфраструктуре OneAgent вы можете выбрать режим мониторинга, наилучшим образом соответствующий вашим потребностям — см. [настройку OneAgent](../../ingest-from/dynatrace-oneagent/installation-and-operation.md#oneagent-setup "Установка OneAgent на сервер впервые.").
 
-* [Мониторинг Full-Stack](/docs/license/capabilities/app-infra-observability/full-stack-monitoring "Узнайте, как тарифицируется потребление возможности Dynatrace Full-Stack Monitoring DPS.")
-* [Мониторинг инфраструктуры](/docs/license/capabilities/app-infra-observability/infrastructure-monitoring "Узнайте, как тарифицируется потребление возможности Dynatrace Infrastructure Monitoring DPS.")
-* [Foundation & Discovery](/docs/license/capabilities/app-infra-observability/foundation-and-discovery "Узнайте, как тарифицируется потребление возможности Dynatrace Foundation & Discovery DPS.")
-* [Мониторинг мейнфреймов](/docs/license/capabilities/app-infra-observability/mainframe "Узнайте, как тарифицируется потребление возможности Dynatrace Mainframe Monitoring DPS.")
+* [Мониторинг Full-Stack](app-infra-observability/full-stack-monitoring.md "Узнайте, как тарифицируется потребление возможности Dynatrace Full-Stack Monitoring DPS.")
+* [Мониторинг инфраструктуры](app-infra-observability/infrastructure-monitoring.md "Узнайте, как тарифицируется потребление возможности Dynatrace Infrastructure Monitoring DPS.")
+* [Foundation & Discovery](app-infra-observability/foundation-and-discovery.md "Узнайте, как тарифицируется потребление возможности Dynatrace Foundation & Discovery DPS.")
+* [Мониторинг мейнфреймов](app-infra-observability/mainframe.md "Узнайте, как тарифицируется потребление возможности Dynatrace Mainframe Monitoring DPS.")
 
 ## Связанные темы
 
-* [Dynatrace OneAgent](/docs/ingest-from/dynatrace-oneagent "Ознакомьтесь с важными концепциями OneAgent и узнайте, как установить и эксплуатировать OneAgent на различных платформах.")
+* [Dynatrace OneAgent](../../ingest-from/dynatrace-oneagent.md "Ознакомьтесь с важными концепциями OneAgent и узнайте, как установить и эксплуатировать OneAgent на различных платформах.")
 * [Тарифы Dynatrace](https://www.dynatrace.com/pricing/)

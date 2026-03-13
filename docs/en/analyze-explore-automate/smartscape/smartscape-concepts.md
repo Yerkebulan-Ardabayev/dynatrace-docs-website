@@ -17,11 +17,11 @@ This page is an introduction to Smartscape-specific concepts, as well as general
 
 ## Smartscape views
 
-![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** provides multiple topology views, each offering a unique perspective on your digital system. For more information, see [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** views](/docs/analyze-explore-automate/smartscape/smartscape-views "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.").
+![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** provides multiple topology views, each offering a unique perspective on your digital system. For more information, see [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** views](smartscape-views.md "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.").
 
 ## Smartscape modals
 
-![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** modals deliver in-context topological insights anywhere on the platform, seamlessly integrating analytics into your workflows. ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** modals are displayed in an overlay on top of the existing app, which allows you to access topological insights and analytics without leaving your current app or context. For more information, see [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** modals](/docs/analyze-explore-automate/smartscape/smartscape-modals "Use Smartscape modals to visualize your environment in any Dynatrace app and gain insights into problem resolution and service dependencies").
+![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** modals deliver in-context topological insights anywhere on the platform, seamlessly integrating analytics into your workflows. ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** modals are displayed in an overlay on top of the existing app, which allows you to access topological insights and analytics without leaving your current app or context. For more information, see [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** modals](smartscape-modals.md "Use Smartscape modals to visualize your environment in any Dynatrace app and gain insights into problem resolution and service dependencies").
 
 ## Nodes, edges, and groups
 
@@ -42,7 +42,7 @@ The nodes and edges shown in the ![Smartscape](https://dt-cdn.net/images/smartsc
 
 The timeframe selector in the ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** app works slightly different compared to the other areas of the platform. The timeframe selector lets you view nodes whose lifetime overlaps with the selected timeframe. This ensures that you only see nodes relevant to the period you're analyzing.
 
-For more information about lifetime, see [**Smartscape on Grail**](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
+For more information about lifetime, see [**Smartscape on Grail**](../../platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
 
 ## Segments
 
@@ -54,7 +54,7 @@ Working with vast amounts of data such as thousands of nodes in a graph, and try
 
 In nested views, if your segment filters out a parent group, you won't be able to see the child nodes of that group even if those child nodes aren't directly affected by the segment filter.
 
-For more information about Segments, see [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.").
+For more information about Segments, see [Segments](../../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.").
 
 ## Tooltips
 

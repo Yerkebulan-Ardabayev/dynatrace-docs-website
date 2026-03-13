@@ -51,7 +51,7 @@ Route as much data as feasible to custom pipelines using explicit matching condi
 
 ##### Classic pipeline
 
-The **Classic pipeline** is a built-in pipeline specific to the log and business event configuration scopes. It represents and serves as an entry point to the rules you set in **Settings Classic** for [log](/docs/analyze-explore-automate/logs/lma-classic-log-processing "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.") or [business event](/docs/observe/business-observability/bo-event-processing "Utilize business event processing rules to reshape incoming business event data for better understanding, analysis, or further transformation.") processing via the classic pipeline.
+The **Classic pipeline** is a built-in pipeline specific to the log and business event configuration scopes. It represents and serves as an entry point to the rules you set in **Settings Classic** for [log](../../../analyze-explore-automate/logs/lma-classic-log-processing.md "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.") or [business event](../../../observe/business-observability/bo-event-processing.md "Utilize business event processing rules to reshape incoming business event data for better understanding, analysis, or further transformation.") processing via the classic pipeline.
 
 If you use log processing via the classic pipeline, migrate your rules to OpenPipeline custom pipelines.
 
@@ -72,7 +72,7 @@ Processing via OpenPipeline offers higher limits and flexibility. The following 
 
 1
 
-If logs are ingested via [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2."), the field names are automatically lowercased after data is routed to the **Classic pipeline**.
+If logs are ingested via [Log Monitoring API v2 - POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2."), the field names are automatically lowercased after data is routed to the **Classic pipeline**.
 
 2
 
@@ -80,7 +80,7 @@ The enrichment is done automatically, without requiring any user interaction.
 
 3
 
-See also [Conversion to DQL for Logs](/docs/analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion "Convert your current log monitoring rules to DQL.").
+See also [Conversion to DQL for Logs](../../../analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion.md "Convert your current log monitoring rules to DQL.").
 
 ### Use cases
 
@@ -95,7 +95,7 @@ A stage is a phase in a pipeline sequence that focuses on a task, such as maskin
 
 The following table is a comprehensive list of stages, ordered in the pipeline sequence of execution, specifying which processors are available and executed for each stage, for the supported configuration scopes.
 
-Specific fields are excluded from matching and processing or restricted. To learn more, see [Limits specific to fields](/docs/platform/openpipeline/reference/limits#fields "Reference limits of Dynatrace OpenPipeline.").
+Specific fields are excluded from matching and processing or restricted. To learn more, see [Limits specific to fields](../reference/limits.md#fields "Reference limits of Dynatrace OpenPipeline.").
 
 1
 
@@ -118,5 +118,5 @@ The following table lists alphabetically all available processors in a pipeline.
 
 ## Related topics
 
-* [DQL Functions in OpenPipeline](/docs/platform/openpipeline/reference/openpipeline-dql-functions "A list of DQL functions available in OpenPipeline.")
-* [DQL Commands](/docs/platform/openpipeline/reference/openpipeline-dql-commands "A list of DQL commands available in OpenPipeline.")
+* [DQL Functions in OpenPipeline](../reference/openpipeline-dql-functions.md "A list of DQL functions available in OpenPipeline.")
+* [DQL Commands](../reference/openpipeline-dql-commands.md "A list of DQL commands available in OpenPipeline.")

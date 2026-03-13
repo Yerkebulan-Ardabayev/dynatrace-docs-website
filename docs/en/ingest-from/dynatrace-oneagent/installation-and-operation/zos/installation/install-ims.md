@@ -23,7 +23,7 @@ To install the Dynatrace IMS module:
 1. Install the IMS module into the Control Region of each IMS DB/DC and DCCTL system that you want to monitor. This is enough to cover all message processing regions associated with the Control Region.
    Note that installing the IMS module into a DBCTL only system is not supported.
 2. You need to add the Dynatrace exit to each IMS Connect that you want to monitor.
-3. You need to add the [z/OS Java module](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java#middleware "Set up Java monitoring on z/OS using the Java module.") to each IMS SOAP Gateway you want to monitor.
+3. You need to add the [z/OS Java module](install-zos-java.md#middleware "Set up Java monitoring on z/OS using the Java module.") to each IMS SOAP Gateway you want to monitor.
 
 IMS restart
 
@@ -40,7 +40,7 @@ Add the authorized Dynatrace dataset `<hlq>.SZDTAUTH` to the IMS Connect job STE
 * If you use IMS Connect Extensions, concatenate SZDTAUTH after the IMS Connect Extensions library.
 * If you use a locally developed HWSTECL0 exit, concatenate SZDTAUTH ahead of the dataset that contains the local exit.
 
-The IMS Connect exit can be enabled to create PurePath nodes in a distributed trace. Activate the required [OneAgent feature](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.") **z/OS IMS Connect**.
+The IMS Connect exit can be enabled to create PurePath nodes in a distributed trace. Activate the required [OneAgent feature](../../../oneagent-features.md "Manage OneAgent features globally and per process group.") **z/OS IMS Connect**.
 
 * If the IMS Connect exit is configured to create PurePath nodes, the exit will connect to the default zDC subsystem name. The target zDC subsystem name can be overridden by specifying the following DDNAME and keyword parameter in the IMS Connect startup JCL:
 
@@ -682,14 +682,14 @@ There are two sets of IMS module logs.
 * The first set of IMS messages comes from the IMS injection job. These are messages that occur during injection of the module into the IMS control region. These messages only appear in the job spool of the IMS module injection job.
 * The second set of IMS messages comes from the IMS module as it monitors IMS activity. These messages are sent to the zDC and then are routed to the zRemote.
 
-You can access the IMS module logs via the [zRemote logs](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote#logging "Prepare and install the zRemote for z/OS monitoring.").
+You can access the IMS module logs via the [zRemote logs](install-zremote.md#logging "Prepare and install the zRemote for z/OS monitoring.").
 
 ## Update without region restart
 
 To update your IMS module to a newer version without restarting the region
 
-1. [Download z/OS product datasets](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets#download-pax "Download and install the Dynatrace product datasets for z/OS.") and [extract them](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets#extract-datasets "Download and install the Dynatrace product datasets for z/OS.").
-2. Update the injection job to point to the new `<hlq>.SZDTAUTH`. If you have [defined an alias](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets#alias "Download and install the Dynatrace product datasets for z/OS."), redefine the alias. For example:
+1. [Download z/OS product datasets](zosmf-installer/download-zos-datasets.md#download-pax "Download and install the Dynatrace product datasets for z/OS.") and [extract them](zosmf-installer/download-zos-datasets.md#extract-datasets "Download and install the Dynatrace product datasets for z/OS.").
+2. Update the injection job to point to the new `<hlq>.SZDTAUTH`. If you have [defined an alias](zosmf-installer/download-zos-datasets.md#alias "Download and install the Dynatrace product datasets for z/OS."), redefine the alias. For example:
 
    ```
    DELETE 'DT.DYNTRC.SZDTAUTH' NOSCRATCH
@@ -719,7 +719,7 @@ ZDTI036W ZDTIII15 0000000 20221103 10.51 VER 1.255.0 ABEND at offset 007874.
 ZDTI033W Successful ABEND recovery, agent disabled.
 ```
 
-Different or additional messages might be issued if abnormal conditions are encountered by the recovery process (for example, when dynamic storage cannot be obtained, retry is not permitted, or no SDWA was passed). All of the messages related to the ABEND recovery process are documented in the [z/OS module messages](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/zos-code-module-messages "Messages that are created by the Dynatrace z/OS modules.") section.
+Different or additional messages might be issued if abnormal conditions are encountered by the recovery process (for example, when dynamic storage cannot be obtained, retry is not permitted, or no SDWA was passed). All of the messages related to the ABEND recovery process are documented in the [z/OS module messages](../operation/zos-code-module-messages.md "Messages that are created by the Dynatrace z/OS modules.") section.
 
 A Software (SFT) Error Record further describing the ABEND is usually written to the z/OS system SYS1.LOGREC data set. You should run the z/OS EREP utility program to print the Software (SFT) Error Record associated with the ABEND.
 

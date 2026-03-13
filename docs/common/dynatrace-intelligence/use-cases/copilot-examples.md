@@ -861,6 +861,6 @@ fetch dt.davis.problems, from:bin(now(), 24h) - 365d
 
 ## Related topics
 
-* [Dynatrace Intelligence generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
-* [Query with natural language](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
-* [Dynatrace Intelligence generative AI - Tips for writing better prompts](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips "Learn best practices for writing more accurate prompts.")
+* [Dynatrace Intelligence generative AI FAQ](../copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")
+* [Query with natural language](../copilot/quick-analysis-copilot-dql.md "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
+* [Dynatrace Intelligence generative AI - Tips for writing better prompts](../copilot/quick-analysis-copilot-dql/copilot-tips.md "Learn best practices for writing more accurate prompts.")

@@ -13,7 +13,7 @@ scraped: 2026-03-04T21:28:06.966694
 * Чтение: 1 мин
 * Обновлено 21 февраля 2023 г.
 
-С помощью событий метрик USQL вы можете извлекать KPI-метрики бизнес-уровня из данных пользовательских сессий и действий пользователей и сохранять их в виде временных рядов. Затем вы можете использовать сохранённые метрики в [пользовательских графиках](/docs/analyze-explore-automate/explorer "Запрашивайте метрики и преобразуйте результаты для получения нужных данных."), [механизмах оповещения](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Узнайте о событиях метрик в Dynatrace") или [Metrics API](/docs/dynatrace-api/environment-api/metric-v2 "Получайте информацию о метриках через Metrics v2 API.").
+С помощью событий метрик USQL вы можете извлекать KPI-метрики бизнес-уровня из данных пользовательских сессий и действий пользователей и сохранять их в виде временных рядов. Затем вы можете использовать сохранённые метрики в [пользовательских графиках](../../../../analyze-explore-automate/explorer.md "Запрашивайте метрики и преобразуйте результаты для получения нужных данных."), [механизмах оповещения](../../../../dynatrace-intelligence/anomaly-detection/metric-events.md "Узнайте о событиях метрик в Dynatrace") или [Metrics API](../../../../dynatrace-api/environment-api/metric-v2.md "Получайте информацию о метриках через Metrics v2 API.").
 
 События метрик USQL доступны в виде:
 
@@ -41,7 +41,7 @@ scraped: 2026-03-04T21:28:06.966694
 
 1. Перейдите в **Settings** > **Web and mobile monitoring** > **User session metric events** или **User action metric events**.
 2. Выберите **Add item**.
-3. Введите **Metric key** (ключ метрики), который будет использоваться при загрузке метрики. Вы будете использовать этот ключ при запросе данных метрики через [Data Explorer](/docs/analyze-explore-automate/explorer "Запрашивайте метрики и преобразуйте результаты для получения нужных данных.").
+3. Введите **Metric key** (ключ метрики), который будет использоваться при загрузке метрики. Вы будете использовать этот ключ при запросе данных метрики через [Data Explorer](../../../../analyze-explore-automate/explorer.md "Запрашивайте метрики и преобразуйте результаты для получения нужных данных.").
 
    * Для событий метрик пользовательских сессий начинайте ключ метрики с префикса `uscm.`.
    * Для событий метрик действий пользователей начинайте ключ метрики с префикса `uacm.`.
@@ -49,11 +49,11 @@ scraped: 2026-03-04T21:28:06.966694
 
    * Для событий метрик пользовательских сессий:
 
-     + **User session counter** — для подсчёта количества пользовательских сессий, аналогично `COUNT(*)` при использовании [USQL](/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Узнайте, как получать доступ к данным пользовательских сессий и выполнять запросы на основе ключевых слов, синтаксиса, функций и т.д.").
+     + **User session counter** — для подсчёта количества пользовательских сессий, аналогично `COUNT(*)` при использовании [USQL](../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md "Узнайте, как получать доступ к данным пользовательских сессий и выполнять запросы на основе ключевых слов, синтаксиса, функций и т.д.").
      + **User session field value** — для извлечения значения поля пользовательской сессии. Также укажите **Field name**. Возможные значения см. в разделе [Значения для событий метрик пользовательских сессий](#values-uscm).
    * Для событий метрик действий пользователей:
 
-     + **User action counter** — для подсчёта количества действий пользователей, аналогично `COUNT(*)` при использовании [USQL](/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Узнайте, как получать доступ к данным пользовательских сессий и выполнять запросы на основе ключевых слов, синтаксиса, функций и т.д.").
+     + **User action counter** — для подсчёта количества действий пользователей, аналогично `COUNT(*)` при использовании [USQL](../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md "Узнайте, как получать доступ к данным пользовательских сессий и выполнять запросы на основе ключевых слов, синтаксиса, функций и т.д.").
      + **User action field value** — для извлечения значения поля действия пользователя. Также укажите **Field name**. Возможные значения см. в разделе [Значения для событий метрик действий пользователей](#values-uacm).
 5. В разделе **Add a dimension** укажите поля, которые должны использоваться в качестве измерений. Возможные значения см. в разделах [Измерения для событий метрик пользовательских сессий](#dimensions-uscm) и [Измерения для событий метрик действий пользователей](#dimensions-uacm).
 6. В разделе **Add a filter** добавьте необходимые фильтры.
@@ -64,14 +64,14 @@ scraped: 2026-03-04T21:28:06.966694
 
 ![Создание пользовательской метрики пользовательской сессии](https://dt-cdn.net/images/creating-user-session-custom-metric-1359-e1cdae0345.png)
 
-В качестве альтернативы вы можете использовать [USQL](/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data#convert-usql-into-custom-metrics "Узнайте, как получать доступ к данным пользовательских сессий и выполнять запросы на основе ключевых слов, синтаксиса, функций и т.д.") для создания событий метрик USQL.
+В качестве альтернативы вы можете использовать [USQL](../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md#convert-usql-into-custom-metrics "Узнайте, как получать доступ к данным пользовательских сессий и выполнять запросы на основе ключевых слов, синтаксиса, функций и т.д.") для создания событий метрик USQL.
 
 ## Настройка метрик через API
 
-Вы также можете использовать [Settings API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API.") для настройки событий метрик USQL.
+Вы также можете использовать [Settings API](../../../../dynatrace-api/environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.") для настройки событий метрик USQL.
 
-1. [Создайте токен доступа](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с разрешениями **Write settings** (`settings.write`) и **Read settings** (`settings.read`).
-2. Используйте эндпоинт [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "Просмотрите схему настроек через Dynatrace API."), чтобы узнать формат JSON, необходимый для отправки вашей конфигурации.
+1. [Создайте токен доступа](../../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с разрешениями **Write settings** (`settings.write`) и **Read settings** (`settings.read`).
+2. Используйте эндпоинт [GET a schema](../../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "Просмотрите схему настроек через Dynatrace API."), чтобы узнать формат JSON, необходимый для отправки вашей конфигурации.
 
    Пользовательская метрика пользовательской сессии
 
@@ -150,7 +150,7 @@ scraped: 2026-03-04T21:28:06.966694
    }
    ]
    ```
-3. Используйте эндпоинт [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Создайте или валидируйте объект настроек через Dynatrace API.") для отправки вашей конфигурации.
+3. Используйте эндпоинт [POST an object](../../../../dynatrace-api/environment-api/settings/objects/post-object.md "Создайте или валидируйте объект настроек через Dynatrace API.") для отправки вашей конфигурации.
 
 В таблице ниже описаны все свойства конфигурации, необходимые для создания или обновления пользовательской метрики USQL через API.
 
@@ -576,7 +576,7 @@ scraped: 2026-03-04T21:28:06.966694
 
 * Данные синтетических пользовательских сессий не учитываются в значениях событий метрик USQL; включаются только данные реальных пользователей.
 * Dynatrace обновляет события метрик USQL каждый раз при закрытии сессии. Это означает, что данные текущих (живых) сессий не учитываются в значениях пользовательских метрик USQL; включаются только данные закрытых сессий.
-* Ключевое слово `DISTINCT`, используемое в [USQL](/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Узнайте, как получать доступ к данным пользовательских сессий и выполнять запросы на основе ключевых слов, синтаксиса, функций и т.д."), не поддерживается. Если у вас есть запрос вида `SELECT COUNT(DISTINCT country) from usersession`, создать эквивалентную пользовательскую метрику USQL невозможно.
+* Ключевое слово `DISTINCT`, используемое в [USQL](../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md "Узнайте, как получать доступ к данным пользовательских сессий и выполнять запросы на основе ключевых слов, синтаксиса, функций и т.д."), не поддерживается. Если у вас есть запрос вида `SELECT COUNT(DISTINCT country) from usersession`, создать эквивалентную пользовательскую метрику USQL невозможно.
 
 ## Руководство
 
@@ -623,7 +623,7 @@ scraped: 2026-03-04T21:28:06.966694
 2. Выберите метрику `uscm.average_duration_of_sessions_by_browser_family_and_version` и выберите **Run query**.
 
    ![Создание графика в Data Explorer на основе метрики пользовательских сессий](https://dt-cdn.net/images/data-explorer-custom-metric-1221-7d8891ede4.png)
-3. Используя [Data Explorer](/docs/analyze-explore-automate/explorer "Запрашивайте метрики и преобразуйте результаты для получения нужных данных."), разделите собранные данные, чтобы увидеть данные пользовательских сессий, разбитые по `browserMajorVersion`, `browserFamily` или по обоим параметрам.
+3. Используя [Data Explorer](../../../../analyze-explore-automate/explorer.md "Запрашивайте метрики и преобразуйте результаты для получения нужных данных."), разделите собранные данные, чтобы увидеть данные пользовательских сессий, разбитые по `browserMajorVersion`, `browserFamily` или по обоим параметрам.
 4. Отфильтруйте данные пользовательских сессий по `browserMajorVersion` или `browserFamily`, чтобы сосредоточиться на интересующих вас данных.
 5. После создания графика, представляющего ваши данные, вы можете закрепить его на классическом дашборде: выберите **Pin to dashboard**, выберите один из ваших дашбордов и введите название плитки.
 
@@ -637,7 +637,7 @@ scraped: 2026-03-04T21:28:06.966694
 
 1. Перейдите в **Settings** > **Anomaly detection** > **Metric events**.
 2. Выберите **Add metric event**.
-3. Создайте событие метрики на основе метрики `uscm.average_duration_of_sessions_by_browser_family_and_version`. Подробнее см. [События метрик](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Узнайте о событиях метрик в Dynatrace").
+3. Создайте событие метрики на основе метрики `uscm.average_duration_of_sessions_by_browser_family_and_version`. Подробнее см. [События метрик](../../../../dynatrace-intelligence/anomaly-detection/metric-events.md "Узнайте о событиях метрик в Dynatrace").
 
 ![Создание пользовательского события для оповещения на основе метрики пользовательских сессий](https://dt-cdn.net/images/create-custom-events-for-alerting-2092-9b1d66309a.png)
 
@@ -659,16 +659,16 @@ scraped: 2026-03-04T21:28:06.966694
 
 Как тарифицируются события метрик USQL?
 
-Начиная с Dynatrace 1.232, события метрик USQL подлежат [лицензированию по единицам данных Davis (DDU)](/docs/license/monitoring-consumption-classic/davis-data-units "Узнайте, как рассчитывается потребление мониторинга Dynatrace на основе единиц данных Davis (DDU)."). Эти метрики тарифицируются как обычные бессхемные метрики.
+Начиная с Dynatrace 1.232, события метрик USQL подлежат [лицензированию по единицам данных Davis (DDU)](../../../../license/monitoring-consumption-classic/davis-data-units.md "Узнайте, как рассчитывается потребление мониторинга Dynatrace на основе единиц данных Davis (DDU)."). Эти метрики тарифицируются как обычные бессхемные метрики.
 
-Для оценки стоимости на метрику анализируются сессии за последние 7 дней, и стоимость в DDU на метрику рассчитывается в соответствии с ожидаемой загрузкой в минуту. Подробнее см. [Как мы рассчитываем потребление DDU для событий метрик?](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation#calculation-details "Узнайте, как рассчитать потребление единиц данных Davis и затраты, связанные с мониторинговыми метриками.").
+Для оценки стоимости на метрику анализируются сессии за последние 7 дней, и стоимость в DDU на метрику рассчитывается в соответствии с ожидаемой загрузкой в минуту. Подробнее см. [Как мы рассчитываем потребление DDU для событий метрик?](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md#calculation-details "Узнайте, как рассчитать потребление единиц данных Davis и затраты, связанные с мониторинговыми метриками.").
 
 Какова гранулярность интервалов для событий метрик USQL?
 
 Система хранения данных метрик Dynatrace следует стратегии хранения данных, которая агрегирует метрики с течением времени. Стратегия хранения данных, применяемая к событиям метрик USQL, идентична стратегии, используемой для встроенных метрик временных рядов.
 
-Подробнее см. [Периоды хранения данных > Метрики](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods#metrics-classic "Проверьте сроки хранения для различных типов данных.")
+Подробнее см. [Периоды хранения данных > Метрики](../../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md#metrics-classic "Проверьте сроки хранения для различных типов данных.")
 
 ## Связанные темы
 
-* [Metrics API v2](/docs/dynatrace-api/environment-api/metric-v2 "Получайте информацию о метриках через Metrics v2 API.")
+* [Metrics API v2](../../../../dynatrace-api/environment-api/metric-v2.md "Получайте информацию о метриках через Metrics v2 API.")

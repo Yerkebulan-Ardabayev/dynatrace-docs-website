@@ -13,17 +13,17 @@ scraped: 2026-03-06T21:21:42.823422
 * Обновлено 18 ноября 2025 г.
 
 Ваша среда Dynatrace может интегрироваться со средой ServiceNow с помощью коннектора ServiceNow ![ServiceNow for Workflows](https://dt-cdn.net/images/servicenow-for-workflows-257-9349ea0329.png "ServiceNow for Workflows"), позволяя автоматически создавать инциденты на основе данных мониторинга и событий.
-Кроме того, вы можете получать группы из ServiceNow и импортировать их как [команды владельцев](/docs/deliver/ownership/ownership-teams#import-teams "Определение команд с идентификаторами, описаниями, обязанностями и маршрутизацией для владения сущностями.").
+Кроме того, вы можете получать группы из ServiceNow и импортировать их как [команды владельцев](../../../deliver/ownership/ownership-teams.md#import-teams "Определение команд с идентификаторами, описаниями, обязанностями и маршрутизацией для владения сущностями.").
 
 ## Настройка интеграции
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Предоставьте разрешения для Workflows**](/docs/analyze-explore-automate/workflows/actions/service-now#permissions "Автоматизация создания инцидентов в ServiceNow на основе данных мониторинга и событий.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Предоставьте разрешения для Workflows**](service-now.md#permissions "Автоматизация создания инцидентов в ServiceNow на основе данных мониторинга и событий.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Создайте учётные данные аутентификации ServiceNow**](/docs/analyze-explore-automate/workflows/actions/service-now#authentication "Автоматизация создания инцидентов в ServiceNow на основе данных мониторинга и событий.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Создайте учётные данные аутентификации ServiceNow**](service-now.md#authentication "Автоматизация создания инцидентов в ServiceNow на основе данных мониторинга и событий.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Настройте подключение ServiceNow**](/docs/analyze-explore-automate/workflows/actions/service-now#connection "Автоматизация создания инцидентов в ServiceNow на основе данных мониторинга и событий.")
+**Настройте подключение ServiceNow**](service-now.md#connection "Автоматизация создания инцидентов в ServiceNow на основе данных мониторинга и событий.")
 
 ### Шаг 1. Предоставьте разрешения для Workflows
 
@@ -38,7 +38,7 @@ scraped: 2026-03-06T21:21:42.823422
 
      + `app-settings:objects:read`
 
-Подробнее об общих разрешениях пользователей Workflows см. [Разрешения пользователей для рабочих процессов](/docs/analyze-explore-automate/workflows/security#user-permission "Руководство по аспектам безопасности автоматизации рабочих процессов в Dynatrace Workflows").
+Подробнее об общих разрешениях пользователей Workflows см. [Разрешения пользователей для рабочих процессов](../security.md#user-permission "Руководство по аспектам безопасности автоматизации рабочих процессов в Dynatrace Workflows").
 
 ### Шаг 2. Создайте учётные данные аутентификации ServiceNow
 

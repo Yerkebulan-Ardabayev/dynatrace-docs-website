@@ -19,8 +19,8 @@ Dynatrace applications like ![Kubernetes (new)](https://dt-cdn.net/images/kubern
 
 To access the application integrations, ensure the following:
 
-* Dynatrace Intelligence generative AI has been enabled on the environment level. For details, see [Enable Dynatrace Intelligence generative AI on your environment](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Learn how to set up Dynatrace Intelligence generative AI.").
-* You have permissions to access the conversational recommender skill. For details, see [User permissions](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Learn how to set up Dynatrace Intelligence generative AI.").
+* Dynatrace Intelligence generative AI has been enabled on the environment level. For details, see [Enable Dynatrace Intelligence generative AI on your environment](../copilot-getting-started.md#enable-davis-copilot "Learn how to set up Dynatrace Intelligence generative AI.").
+* You have permissions to access the conversational recommender skill. For details, see [User permissions](../copilot-getting-started.md#davis-copilot-user-permissions "Learn how to set up Dynatrace Intelligence generative AI.").
 
 ## Dynatrace Assist in Kubernetes
 
@@ -43,7 +43,7 @@ Dynatrace Intelligence generative AI provides explanations of vulnerabilities to
 
 To access the functionality
 
-1. In [![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**](/docs/secure/vulnerabilities "Prioritize and efficiently manage vulnerabilities in your monitored environments."), select a vulnerability.
+1. In [![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**](../../../../ru/secure/vulnerabilities.md "Prioritize and efficiently manage vulnerabilities in your monitored environments."), select a vulnerability.
 2. In the upper-right corner of the vulnerability details pane, select  **Explain vulnerability**.
 
 Generative AI will provide a response that details:
@@ -62,7 +62,7 @@ Dynatrace Intelligence generative AI can provide contextual, plain-language expl
 
 To access the functionality
 
-1. In [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts."), select a finding.
+1. In [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](../../../../ru/secure/threats-and-exploits.md "Understand, triage, and investigate detection findings and alerts."), select a finding.
 2. In the upper-right corner of the finding details pane, select  **Explain finding**.
 
 Generative AI will provide a response that details:
@@ -81,7 +81,7 @@ Dynatrace Intelligence generative AI provides explanations of configuration asse
 
 To access the functionality
 
-1. In [![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**](/docs/secure/xspm "Detect, manage, and take action on security and compliance findings."), on the **Assessment results** page, select a rule.
+1. In [![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**](../../../../ru/secure/xspm.md "Detect, manage, and take action on security and compliance findings."), on the **Assessment results** page, select a rule.
 2. On the **Assessed resources** tab, select  **Explain assessment**.
 
 Generative AI will provide a response that details:
@@ -138,7 +138,7 @@ To explain multiple problems with Generative AI
 
 ## Dynatrace Assist in Dashboards
 
-You can use the power of DQL to integrate  **Dynatrace Assist** into your [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") tiles.
+You can use the power of DQL to integrate  **Dynatrace Assist** into your [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") tiles.
 
 By adding `| fieldsAdd prompt` and `| fieldsAdd execute` commands, you can predefine and auto-execute prompts in  **Dynatrace Assist**, allowing you to quickly get an explanation about the query results, or receive suggestions on how to improve the query or resolve a problem.
 
@@ -162,9 +162,9 @@ While the supplementary context is hidden in the chat UI, it can help Generative
 | parse supplementaryContext , "LD JSON_ARRAY:contexts"
 ```
 
-To integrate  **Dynatrace Assist** into your [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") tiles
+To integrate  **Dynatrace Assist** into your [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") tiles
 
-1. Go to [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and open a dashboard you can edit.
+1. Go to [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and open a dashboard you can edit.
 2. Select a dashboard tile that contains a DQL query.
 3. Select  **Edit** to open the edit menu on the right.
 4. In the  **DQL** section of the edit menu, add the following to your standard query:
@@ -189,7 +189,7 @@ If you've added `| fieldsAdd execute = true` to your query, the predefined promp
 
 ## Dynatrace Assist in Notebooks
 
-You can use the power of DQL to integrate  **Dynatrace Assist** into your [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
+You can use the power of DQL to integrate  **Dynatrace Assist** into your [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
 
 By adding `| fieldsAdd prompt` and `| fieldsAdd execute` commands, you can predefine and auto-execute prompts in  **Dynatrace Assist**, allowing you to quickly get an explanation about the query results, or receive suggestions on how to improve the query or resolve a problem.
 
@@ -213,9 +213,9 @@ While the supplementary context is hidden in the chat UI, it can help Generative
 | parse supplementaryContext , "LD JSON_ARRAY:contexts"
 ```
 
-To integrate  **Dynatrace Assist** into your [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+To integrate  **Dynatrace Assist** into your [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
 
-1. Go to [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and open a notebook you can edit.
+1. Go to [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and open a notebook you can edit.
 2. Select a notebook section that contains a DQL query.
 3. Select the query field and add the following to your standard query:
 
@@ -239,9 +239,9 @@ If you've added `| fieldsAdd execute = true` to your query, the predefined promp
 
 ## Feedback
 
-If you have any feedback, you can provide it directly in the chat window. For more information, see [Give feedback](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot#feedback "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.").
+If you have any feedback, you can provide it directly in the chat window. For more information, see [Give feedback](../chat-with-davis-copilot.md#feedback "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.").
 
 ## Related topics
 
-* [Get started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.")
-* [Dynatrace Intelligence generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
+* [Get started with Dynatrace Intelligence generative AI](../copilot-getting-started.md "Learn how to set up Dynatrace Intelligence generative AI.")
+* [Dynatrace Intelligence generative AI FAQ](../copilot-faq.md "Learn about frequently asked questions and find your answers.")

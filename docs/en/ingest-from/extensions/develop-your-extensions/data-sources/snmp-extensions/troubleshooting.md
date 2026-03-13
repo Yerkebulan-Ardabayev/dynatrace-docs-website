@@ -52,7 +52,7 @@ Invalid config will point back to the details entered in the monitoring configur
 
 ### Extension logs
 
-Extension logs can be found in the [ActiveGate directories](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems."). Look for the `Extensions configuration, logs` in **Purpose of** column.
+Extension logs can be found in the [ActiveGate directories](../../../../dynatrace-activegate/configuration/where-can-i-find-activegate-files.md "Find out where ActiveGate files are stored on Windows and Linux systems."). Look for the `Extensions configuration, logs` in **Purpose of** column.
 
 ## Optimization for large devices
 

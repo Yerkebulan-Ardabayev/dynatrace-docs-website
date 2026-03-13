@@ -16,21 +16,21 @@ Dynatrace поддерживает полностековый мониторин
 
 ## Предварительные требования
 
-1. [Настройте и сконфигурируйте интеграцию Dynatrace на Cloud Foundry](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry "Install OneAgent on Cloud Foundry with BOSH.")
-2. [Подключите ваш кластер к Dynatrace](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/connect-your-cloud-foundry-foundations-to-dynatrace "Enable monitoring on your Cloud Foundry foundations.")
+1. [Настройте и сконфигурируйте интеграцию Dynatrace на Cloud Foundry](../../../ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry.md "Install OneAgent on Cloud Foundry with BOSH.")
+2. [Подключите ваш кластер к Dynatrace](../../../ingest-from/setup-on-container-platforms/cloud-foundry/connect-your-cloud-foundry-foundations-to-dynatrace.md "Enable monitoring on your Cloud Foundry foundations.")
 
-Дополнительные параметры и сведения см. в разделе [Cloud Foundry](/docs/ingest-from/setup-on-container-platforms/cloud-foundry "Set up and configure Dynatrace on Cloud Foundry.").
+Дополнительные параметры и сведения см. в разделе [Cloud Foundry](../../../ingest-from/setup-on-container-platforms/cloud-foundry.md "Set up and configure Dynatrace on Cloud Foundry.").
 
 ## Параметры конфигурации мониторинга
 
-[Организуйте развёртывания с помощью тегов](/docs/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring/organize-cf-deployments-by-tags "Automatically organize and filter all your monitored applications by applying tags from your Cloud Foundry environment.").
+[Организуйте развёртывания с помощью тегов](cloud-foundry-monitoring/organize-cf-deployments-by-tags.md "Automatically organize and filter all your monitored applications by applying tags from your Cloud Foundry environment.").
 
-[Определите метаданные группы процессов для приложений Cloud Foundry](/docs/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring/define-process-group-metadata-for-cloud-foundry-applications "Define Cloud Foundry service metadata and reuse it for multiple applications.").
+[Определите метаданные группы процессов для приложений Cloud Foundry](cloud-foundry-monitoring/define-process-group-metadata-for-cloud-foundry-applications.md "Define Cloud Foundry service metadata and reuse it for multiple applications.").
 
 ## Просмотр результатов мониторинга
 
-Чтобы узнать, как анализировать результаты мониторинга в Dynatrace, см. раздел [Обзор метрик Cloud Foundry](/docs/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring/cloud-foundry-metrics "Available metrics for monitoring your Cloud Foundry clusters with Dynatrace").
+Чтобы узнать, как анализировать результаты мониторинга в Dynatrace, см. раздел [Обзор метрик Cloud Foundry](cloud-foundry-monitoring/cloud-foundry-metrics.md "Available metrics for monitoring your Cloud Foundry clusters with Dynatrace").
 
 ## Связанные темы
 
-* [Настройка Dynatrace на Cloud Foundry](/docs/ingest-from/setup-on-container-platforms/cloud-foundry "Set up and configure Dynatrace on Cloud Foundry.")
+* [Настройка Dynatrace на Cloud Foundry](../../../ingest-from/setup-on-container-platforms/cloud-foundry.md "Set up and configure Dynatrace on Cloud Foundry.")

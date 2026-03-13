@@ -15,11 +15,11 @@ scraped: 2026-03-05T21:29:34.371827
 
 OneAgent version 1.225+
 
-OpenTelemetry interoperability connects the [Dynatrace AWS Lambda extension](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java.") to the OpenTelemetry Java API to use the instrumentation packages and extensions. You can then monitor technologies like databases or messaging frameworks that aren't supported by Dynatrace AWS Lambda extension out of the box.
+OpenTelemetry interoperability connects the [Dynatrace AWS Lambda extension](../aws-lambda-extension.md "Monitor Lambda functions written in Python, Node.js, and Java.") to the OpenTelemetry Java API to use the instrumentation packages and extensions. You can then monitor technologies like databases or messaging frameworks that aren't supported by Dynatrace AWS Lambda extension out of the box.
 
 ## Before you start
 
-Ensure that [OpenTelemetry interoperability is enabled](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#enable "Enable and use OpenTelemetry interoperability in AWS Lambda.").
+Ensure that [OpenTelemetry interoperability is enabled](../opentelemetry-interoperability.md#enable "Enable and use OpenTelemetry interoperability in AWS Lambda.").
 
 ## Use OpenTelemetry Java instrumentation
 
@@ -354,7 +354,7 @@ Because a span can have only a single parent, if your Lambda function receives a
 * If that is enough for you, or you have a maximum batch size of one configured, or you send messages only rarely, no additional code or configuration is required.
 * If you want to gain more insights into a batch scenario with multiple messages, you first need to apply some configuration to allow you to override the parent span.
 
-  To [configure the Dynatrace AWS Lambda extension](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension#lambda-cfg-method "Monitor Lambda functions written in Python, Node.js, and Java.") to allow setting parent spans manually:
+  To [configure the Dynatrace AWS Lambda extension](../aws-lambda-extension.md#lambda-cfg-method "Monitor Lambda functions written in Python, Node.js, and Java.") to allow setting parent spans manually:
 
   + For the environment variables configuration method, set the `DT_OPEN_TELEMETRY_ALLOW_EXPLICIT_PARENT` environment variable to `true`:
 
@@ -632,5 +632,5 @@ This structure is required to be prepared for batch receives. When you send mult
 
 ## Related topics
 
-* [OpenTelemetry interoperability](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability "Enable and use OpenTelemetry interoperability in AWS Lambda.")
-* [Trace Python, Node.js, and Java Lambda functions](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java.")
+* [OpenTelemetry interoperability](../opentelemetry-interoperability.md "Enable and use OpenTelemetry interoperability in AWS Lambda.")
+* [Trace Python, Node.js, and Java Lambda functions](../aws-lambda-extension.md "Monitor Lambda functions written in Python, Node.js, and Java.")

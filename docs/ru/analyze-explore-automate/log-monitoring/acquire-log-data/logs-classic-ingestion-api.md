@@ -15,11 +15,11 @@ scraped: 2026-03-06T21:16:13.984280
 
 Log Monitoring Classic
 
-Для новейшей версии Dynatrace см. [Log ingestion API](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Передавайте данные логов в Dynatrace через API и позвольте Dynatrace преобразовывать их в понятные сообщения логов.").
+Для новейшей версии Dynatrace см. [Log ingestion API](../../logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Передавайте данные логов в Dynatrace через API и позвольте Dynatrace преобразовывать их в понятные сообщения логов.").
 
 Dynatrace автоматически собирает данные логов и событий из широкого спектра технологий. С помощью Log ingestion API можно передавать записи логов в систему, а Dynatrace будет преобразовывать поток в понятные сообщения логов.
 
-Log ingestion API позволяет передавать записи логов в систему. Он доступен через [Ingest JSON and TXT logs (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api/log-classic-ingest-json-txt-logs "Узнайте, как обрабатываются JSON и TXT логи.") или через [Ingest OTLP logs](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.").
+Log ingestion API позволяет передавать записи логов в систему. Он доступен через [Ingest JSON and TXT logs (Logs Classic)](logs-classic-ingestion-api/log-classic-ingest-json-txt-logs.md "Узнайте, как обрабатываются JSON и TXT логи.") или через [Ingest OTLP logs](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.").
 
 * Для Dynatrace SaaS конечная точка Log ingestion доступна в вашей среде.
 
@@ -41,7 +41,7 @@ Log ingestion API v2 автоматически включается на Active
 
 ## Очередь данных логов на Environment ActiveGate
 
-Свойства очереди данных логов можно настроить, отредактировав файл `custom.properties` (см. [Свойства конфигурации и параметры ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#generic-ingest "Узнайте, какие свойства ActiveGate можно настроить в соответствии с вашими потребностями и требованиями.")) на вашем ActiveGate, задав следующие значения:
+Свойства очереди данных логов можно настроить, отредактировав файл `custom.properties` (см. [Свойства конфигурации и параметры ActiveGate](../../../ingest-from/dynatrace-activegate/configuration/configure-activegate.md#generic-ingest "Узнайте, какие свойства ActiveGate можно настроить в соответствии с вашими потребностями и требованиями.")) на вашем ActiveGate, задав следующие значения:
 
 ```
 [generic_ingest]
@@ -135,11 +135,11 @@ Success
 
 ## Устранение неполадок
 
-Посетите Dynatrace Community для получения руководств по устранению неполадок, а также см. [Устранение неполадок Log Monitoring (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/lmc-troubleshooting "Исправляйте проблемы, связанные с настройкой и конфигурацией Log Monitoring Classic.").
+Посетите Dynatrace Community для получения руководств по устранению неполадок, а также см. [Устранение неполадок Log Monitoring (Logs Classic)](../lmc-troubleshooting.md "Исправляйте проблемы, связанные с настройкой и конфигурацией Log Monitoring Classic.").
 
 * [Troubleshooting log Ingestion via API - POST ingest logs](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608)
 
 ## Связанные темы
 
-* [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Отправляйте пользовательские логи в Dynatrace через Log Monitoring API v2.")
-* [Ingest OTLP logs](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.")
+* [Log Monitoring API v2 - POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Отправляйте пользовательские логи в Dynatrace через Log Monitoring API v2.")
+* [Ingest OTLP logs](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.")

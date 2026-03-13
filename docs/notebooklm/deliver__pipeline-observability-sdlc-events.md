@@ -35,11 +35,11 @@ Below is an example of what your Argo CD dashboard could look like.
 ## Concepts
 
 Software Development Lifecycle (SDLC) events
-:   [SDLC events](/docs/deliver/pipeline-observability-sdlc-events#sdlc-events "With insights into your pipelines and processes, you can observe and analyze software engineering practices within an organization.")
+:   [SDLC events](deliver/pipeline-observability-sdlc-events.md#sdlc-events "With insights into your pipelines and processes, you can observe and analyze software engineering practices within an organization.")
 
 Why were Argo CD notifications changed into SDLC events?
 :   The main benefits are data normalization, being tool-agnostic, and not relying on specific tools.
-    As a result, Dynatrace Dashboards, Apps, and Workflows can build on [SDLC events](/docs/deliver/pipeline-observability-sdlc-events#sdlc-events "With insights into your pipelines and processes, you can observe and analyze software engineering practices within an organization.") with well-defined properties rather than tool-specific details.
+    As a result, Dynatrace Dashboards, Apps, and Workflows can build on [SDLC events](deliver/pipeline-observability-sdlc-events.md#sdlc-events "With insights into your pipelines and processes, you can observe and analyze software engineering practices within an organization.") with well-defined properties rather than tool-specific details.
 
 ## Target audience
 
@@ -58,13 +58,13 @@ If you prefer, you could follow the [Argo CD tutorial directly on GitHubï»¿](
 
 ## Prerequisites
 
-[Install Dynatrace Configuration as Code via Monaco](/docs/deliver/configuration-as-code/monaco/installation "Download and install Dynatrace Configuration as Code via Monaco.")
+[Install Dynatrace Configuration as Code via Monaco](deliver/configuration-as-code/monaco/installation.md "Download and install Dynatrace Configuration as Code via Monaco.")
 
 ## How-to
 
 1. Setup: Prepare the Monaco configuration
 
-1. [Create an OAuth client for the Dynatrace Monaco CLI](/docs/deliver/configuration-as-code/monaco/guides/create-oauth-client "Create an OAuth client for Dynatrace Configuration as Code via Monaco.") with the following permissions
+1. [Create an OAuth client for the Dynatrace Monaco CLI](deliver/configuration-as-code/monaco/guides/create-oauth-client.md "Create an OAuth client for Dynatrace Configuration as Code via Monaco.") with the following permissions
 
    * Run apps: `app-engine:apps:run`
    * View OpenPipeline configurations: `openpipeline:configurations:read`
@@ -161,7 +161,7 @@ If you prefer, you could follow the [Argo CD tutorial directly on GitHubï»¿](
 
 2. Setup: Check the OpenPipeline configuration for SDLC events
 
-These steps modify the OpenPipeline configuration for [SDLC events](/docs/deliver/pipeline-observability-sdlc-events/sdlc-events "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.").
+These steps modify the OpenPipeline configuration for [SDLC events](deliver/pipeline-observability-sdlc-events/sdlc-events.md "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.").
 If your OpenPipeline configuration contains only default/built-in values, you can directly apply the Monaco configuration.
 If you have any custom ingest sources, dynamic routes, or pipelines, you'll first need to download your configuration and manually merge it into the Monaco configuration.
 
@@ -188,7 +188,7 @@ Step 3 will indicate if a configuration merge is needed or if you can apply the 
    The configuration consists of
 
    * Dashboards to analyze Argo CD activities.
-   * OpenPipeline configuration to normalize [Argo CD notificationsï»¿](https://argo-cd.readthedocs.io/en/stable/operator-manual/notifications/) into [SDLC events](/docs/deliver/pipeline-observability-sdlc-events/sdlc-events "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.").
+   * OpenPipeline configuration to normalize [Argo CD notificationsï»¿](https://argo-cd.readthedocs.io/en/stable/operator-manual/notifications/) into [SDLC events](deliver/pipeline-observability-sdlc-events/sdlc-events.md "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.").
 
    Run this command to apply the provided Monaco configuration:
 
@@ -405,11 +405,11 @@ To generate an access token:
 
 Argo CD exposes different sets of Prometheus metrics for different services.
 Configure your Argo CD services to expose this information so that it can be collected by Dynatrace.
-You can use either [Dynatrace ActiveGate](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate."), which is installed on the Kubernetes cluster that hosts Argo CD, or the [Dynatrace OTel Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace OTel Collector.").
+You can use either [Dynatrace ActiveGate](../ru/ingest-from/dynatrace-activegate.md "Understand the basic concepts related to ActiveGate."), which is installed on the Kubernetes cluster that hosts Argo CD, or the [Dynatrace OTel Collector](../ru/ingest-from/opentelemetry/collector.md#dt-collector-dist "Learn about the Dynatrace OTel Collector.").
 
-To use [Dynatrace ActiveGate](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.")
+To use [Dynatrace ActiveGate](../ru/ingest-from/dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.")
 
-1. Enable [Prometheus metrics monitoring](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.").
+1. Enable [Prometheus metrics monitoring](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics.md "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.").
 
    1. Go to **Kubernetes** and select the monitored cluster with Argo CD installation.
    2. In the upper-right corner, go to  > **Connection settings**.
@@ -473,14 +473,14 @@ We highly value your insights on Argo CD observability. Your feedback is crucial
 ## Further reading
 
 * [Observability throughout the software development lifecycle increases delivery performanceï»¿](https://www.dynatrace.com/news/blog/observability-throughout-the-software-development-lifecycle/)
-* [Pipeline observability](/docs/deliver/pipeline-observability-sdlc-events "With insights into your pipelines and processes, you can observe and analyze software engineering practices within an organization.")
+* [Pipeline observability](deliver/pipeline-observability-sdlc-events.md "With insights into your pipelines and processes, you can observe and analyze software engineering practices within an organization.")
 
 ## Related topics
 
-* [How to ingest data (events)](/docs/platform/openpipeline/getting-started/how-to-ingestion "How to ingest data for a configuration scope in OpenPipeline.")
-* [Software development lifecycle (SDLC) events](/docs/semantic-dictionary/model/sdlc-events "Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.")
-* [Ingest SDLC events](/docs/deliver/pipeline-observability-sdlc-events/sdlc-events "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.")
-* [Auto-update for Dynatrace Operator](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/dto-auto-update "Enable automatic updates of Dynatrace Operator following a GitOps approach.")
+* [How to ingest data (events)](../ru/platform/openpipeline/getting-started/how-to-ingestion.md "How to ingest data for a configuration scope in OpenPipeline.")
+* [Software development lifecycle (SDLC) events](semantic-dictionary/model/sdlc-events.md "Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.")
+* [Ingest SDLC events](deliver/pipeline-observability-sdlc-events/sdlc-events.md "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.")
+* [Auto-update for Dynatrace Operator](../ru/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/dto-auto-update.md "Enable automatic updates of Dynatrace Operator following a GitOps approach.")
 
 ---
 
@@ -514,9 +514,9 @@ Below is a screenshot with highlights from the **Engineering Flow Metrics** dash
 ## Concepts
 
 Software Development Lifecycle (SDLC) events
-:   [SDLC events](/docs/deliver/pipeline-observability-sdlc-events#sdlc-events "With insights into your pipelines and processes, you can observe and analyze software engineering practices within an organization.") within the Software Development Lifecycle (SDLC) play a pivotal role in achieving effective pipeline observability.
+:   [SDLC events](deliver/pipeline-observability-sdlc-events.md#sdlc-events "With insights into your pipelines and processes, you can observe and analyze software engineering practices within an organization.") within the Software Development Lifecycle (SDLC) play a pivotal role in achieving effective pipeline observability.
     They represent key actions that occur throughout the lifecycle â such as releasing a new software version, deploying that version, or successfully passing a performance test.
-    For more information, see [Semantic Dictionary SDLC events](/docs/semantic-dictionary/model/sdlc-events "Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.")
+    For more information, see [Semantic Dictionary SDLC events](semantic-dictionary/model/sdlc-events.md "Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.")
 
 ## Target audience
 
@@ -528,7 +528,7 @@ The **Engineering Flow Metrics** dashboard is intended for:
 ## Prerequisites
 
 * Access to the Jira Cloud instance.
-* You have an [access token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") with the `OpenPipeline - Ingest Software Development Lifecycle Events (Built-in)` scope.
+* You have an [access token](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.") with the `OpenPipeline - Ingest Software Development Lifecycle Events (Built-in)` scope.
 
 ## How-to
 
@@ -570,7 +570,7 @@ To find and copy the **Endpoints path**:
 
 Data is stored as events in Dynatrace.
 Thus, the data is charged as Events powered by Grail.
-For more information on the cost of Events powered by Grail, see [Events powered by Grail overview (DPS)](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For more information on the cost of Events powered by Grail, see [Events powered by Grail overview (DPS)](../ru/license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 
 To populate Dynatrace with Jira data, set up a Jira automation.
 
@@ -600,7 +600,7 @@ As part of the Jira automation, you need to set up a Jira **Send web request** a
 This action sends an HTTP request to the URL specified.
 
 1. Add a [**Send web request** actionï»¿](https://confluence.atlassian.com/automation074/actions-1141481289.html#Actions-sendwebrequest).
-2. Enter your **Web request URL** from the [Dynatrace: Copy Endpoints path step](/docs/deliver/pipeline-observability-sdlc-events/tutorials/pipeline-observability-tutorial-jira#copy "Stabilize your value delivery system by making data-driven decisions that improve focus, predictability, and value delivery lead times.").
+2. Enter your **Web request URL** from the [Dynatrace: Copy Endpoints path step](../ru/deliver/pipeline-observability-sdlc-events/tutorials/pipeline-observability-tutorial-jira.md#copy "Stabilize your value delivery system by making data-driven decisions that improve focus, predictability, and value delivery lead times.").
    The pattern is `https://{your-environment-id}.live.dynatrace.com/platform/ingest/v1/events.sdlc`.
 3. In the **HTTP method** field, select **POST**.
 4. In the **Web request body**, select **Custom data**.
@@ -842,7 +842,7 @@ Add the custom field IDs of the automatically created **Rank** and **Team** Jira
 
 7. Organize data
 
-To organize the data in Dynatrace, set up a [custom Grail bucket](/docs/platform/grail/organize-data#custom-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
+To organize the data in Dynatrace, set up a [custom Grail bucket](../ru/platform/grail/organize-data.md#custom-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
 
 1. In Dynatrace, go to **Settings** > **Storage management** > **Bucket storage management**.
 2. Select  **Bucket**.
@@ -851,7 +851,7 @@ To organize the data in Dynatrace, set up a [custom Grail bucket](/docs/platform
 5. Set the **Retention period** to three years in days which is `1095` days.
 6. Select **Create**.
 
-If the data should be restricted, configure the [bucket permissions](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
+If the data should be restricted, configure the [bucket permissions](../ru/platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
 
 8. Route data
 
@@ -876,7 +876,7 @@ To route the data into the custom bucket, set up an SDLC pipeline.
 17. Select **Save**.
 
 All events created by the Jira automation are added to the bucket.
-For more general information, see [Configure a processing pipeline](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#process "Configure ingest sources, routes, and processing for your data in OpenPipeline.").
+For more general information, see [Configure a processing pipeline](../ru/platform/openpipeline/getting-started/tutorial-configure-processing.md#process "Configure ingest sources, routes, and processing for your data in OpenPipeline.").
 
 9. Verify setup
 
@@ -907,8 +907,8 @@ We're providing you with a ready-made dashboard.
 To find and use the dashboard:
 
 1. Go to the [Engineering Flow Metrics dashboard on Playgroundï»¿](https://dt-url.net/e0032zt).
-2. [Download](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-download "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") the dashboard.
-3. [Upload](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-upload "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") the dashboard to your environment.
+2. [Download](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-download "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") the dashboard.
+3. [Upload](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-upload "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") the dashboard to your environment.
 
    You need to adjust the start date of specific queries to match the start of your data ingestion which we explain in detail in the **Hard-Coded Dates** section of the dashboard.
 
@@ -959,10 +959,10 @@ Below is a full screenshot of the **Engineering Flow Metrics** dashboard.
 
 ## Related topics
 
-* [Software development lifecycle (SDLC) events](/docs/semantic-dictionary/model/sdlc-events "Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.")
-* [Ingest SDLC events](/docs/deliver/pipeline-observability-sdlc-events/sdlc-events "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.")
-* [Data flow in OpenPipeline](/docs/platform/openpipeline/concepts/data-flow "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
-* [Ingest sources in OpenPipeline](/docs/platform/openpipeline/reference/api-ingestion-reference "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.")
-* [Analyze SDLC events from your pipeline](/docs/deliver/pipeline-observability-sdlc-events/pipeline-observability-analyze "Analyze your pipeline using data from your software development lifecycle (SDLC) events  using our examples.")
+* [Software development lifecycle (SDLC) events](semantic-dictionary/model/sdlc-events.md "Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.")
+* [Ingest SDLC events](deliver/pipeline-observability-sdlc-events/sdlc-events.md "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.")
+* [Data flow in OpenPipeline](../ru/platform/openpipeline/concepts/data-flow.md "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
+* [Ingest sources in OpenPipeline](../ru/platform/openpipeline/reference/api-ingestion-reference.md "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.")
+* [Analyze SDLC events from your pipeline](deliver/pipeline-observability-sdlc-events/pipeline-observability-analyze.md "Analyze your pipeline using data from your software development lifecycle (SDLC) events  using our examples.")
 
 ---

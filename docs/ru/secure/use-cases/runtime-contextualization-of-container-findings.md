@@ -51,9 +51,9 @@ scraped: 2026-03-06T21:15:09.804438
 
 ## Предварительные условия
 
-* [Настройка наблюдаемости Kubernetes с Dynatrace Operator](/docs/ingest-from/setup-on-k8s/deployment/other/classic-full-stack "Развёртывание Dynatrace Operator в классическом режиме full-stack в Kubernetes")
-* [Приём результатов сканирования уязвимостей и событий сканирования Amazon ECR](/docs/secure/threat-observability/security-events-ingest/ingest-aws-ecr-data "Приём результатов сканирования уязвимостей образов контейнеров Amazon ECR и событий сканирования и их анализ в Dynatrace.")
-* [Использование тегов продукта/стадии релиза Dynatrace](/docs/deliver/release-monitoring/version-detection-strategies "Метаданные для определения версий в различных технологиях") для ваших контейнеров
+* [Настройка наблюдаемости Kubernetes с Dynatrace Operator](../../ingest-from/setup-on-k8s/deployment/other/classic-full-stack.md "Развёртывание Dynatrace Operator в классическом режиме full-stack в Kubernetes")
+* [Приём результатов сканирования уязвимостей и событий сканирования Amazon ECR](../threat-observability/security-events-ingest/ingest-aws-ecr-data.md "Приём результатов сканирования уязвимостей образов контейнеров Amazon ECR и событий сканирования и их анализ в Dynatrace.")
+* [Использование тегов продукта/стадии релиза Dynatrace](../../deliver/release-monitoring/version-detection-strategies.md "Метаданные для определения версий в различных технологиях") для ваших контейнеров
 
 ## Начало работы
 
@@ -61,7 +61,7 @@ scraped: 2026-03-06T21:15:09.804438
 
 Для просмотра сводного и унифицированного списка недавних результатов сканирования уязвимостей, полученных из Amazon ECR
 
-1. Откройте [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создание интерактивных, настраиваемых представлений для визуализации, анализа и обмена данными наблюдаемости в режиме реального времени.") и перейдите в **Ready-made**.
+1. Откройте [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создание интерактивных, настраиваемых представлений для визуализации, анализа и обмена данными наблюдаемости в режиме реального времени.") и перейдите в **Ready-made**.
 2. Найдите и выберите **Container Vulnerability Findings** для интеграции с Amazon ECR.
 
 Пример дашборда:
@@ -79,11 +79,11 @@ scraped: 2026-03-06T21:15:09.804438
 
 3. Автоматизация
 
-Вы можете адаптировать наши примеры рабочих процессов автоматизации для обогащения и фильтрации внешних результатов уязвимостей образов контейнеров с учётом контекста выполнения. Подробности см. в [Автоматизация и оркестрация результатов безопасности](/docs/secure/use-cases/automate-and-orchestrate-security-findings "Регулярная проверка критических результатов безопасности и автоматическое создание заявок Jira или оповещений Slack.").
+Вы можете адаптировать наши примеры рабочих процессов автоматизации для обогащения и фильтрации внешних результатов уязвимостей образов контейнеров с учётом контекста выполнения. Подробности см. в [Автоматизация и оркестрация результатов безопасности](automate-and-orchestrate-security-findings.md "Регулярная проверка критических результатов безопасности и автоматическое создание заявок Jira или оповещений Slack.").
 
 Пример запроса для получения новых критических уязвимостей образов контейнеров со списком затронутых образов контейнеров и работающих контейнеров:
 
-Этот запрос был обновлён для соответствия новой таблице событий безопасности Grail. Полный список обновлений и действий, необходимых для выполнения миграции, см. в [Руководстве по миграции таблицы безопасности Grail](/docs/secure/threat-observability/migration "Понимание изменений в новой таблице безопасности Grail и обучение миграции.").
+Этот запрос был обновлён для соответствия новой таблице событий безопасности Grail. Полный список обновлений и действий, необходимых для выполнения миграции, см. в [Руководстве по миграции таблицы безопасности Grail](../threat-observability/migration.md "Понимание изменений в новой таблице безопасности Grail и обучение миграции.").
 
 ```
 // The query has a rolling window of 7 days and the last 24hrs.
@@ -337,7 +337,7 @@ vulnerability_finding_events
 
 Для отслеживания процесса сокращения оповещений на основе прогрессивной фильтрации на [шаге 2](#filter)
 
-1. Откройте [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создание интерактивных, настраиваемых представлений для визуализации, анализа и обмена данными наблюдаемости в режиме реального времени.") и перейдите в **Ready-made**.
+1. Откройте [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создание интерактивных, настраиваемых представлений для визуализации, анализа и обмена данными наблюдаемости в режиме реального времени.") и перейдите в **Ready-made**.
 2. Найдите и выберите **Container image alert reduction** для интеграции с Amazon ECR.
 
 Пример результата:

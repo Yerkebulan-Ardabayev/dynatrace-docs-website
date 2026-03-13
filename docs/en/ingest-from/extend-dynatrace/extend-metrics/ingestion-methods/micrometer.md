@@ -20,7 +20,7 @@ You can use Micrometer in Dynatrace to:
 * Ingest pre-instrumented metrics from JVM-based frameworks, servers, and cache systems
 * Define and ingest custom metrics
 
-Metrics ingested from Micrometer consume [DDUs for custom metrics](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+Metrics ingested from Micrometer consume [DDUs for custom metrics](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 
 There are two ways of using Micrometer:
 
@@ -101,14 +101,14 @@ There are two ways of using Micrometer:
 
 You can use one of the following ingestion channels to send your Micrometer metrics:
 
-* [OneAgent metric API](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.")âneeds OneAgent installed on the monitored host.
-* [Metrics API v2](/docs/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.").
+* [OneAgent metric API](oneagent-metric-api.md "Use the Dynatrace API to retrieve the metrics of monitored entities.")âneeds OneAgent installed on the monitored host.
+* [Metrics API v2](../../../../dynatrace-api/environment-api/metric-v2.md "Retrieve metric information via Metrics v2 API.").
 
 ## Dynatrace Micrometer registry
 
 Micrometer uses the concept of a registry to export metrics to monitoring systems.
 
-* For Micrometer version 1.8.0 or later, [Dynatrace Registry v2ï»¿](https://micrometer.io/docs/registry/dynatrace) is available. It exports metrics via the [Metrics API v2](/docs/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API."). All new integrations of Micrometer and Dynatrace must use this version.
+* For Micrometer version 1.8.0 or later, [Dynatrace Registry v2ï»¿](https://micrometer.io/docs/registry/dynatrace) is available. It exports metrics via the [Metrics API v2](../../../../dynatrace-api/environment-api/metric-v2.md "Retrieve metric information via Metrics v2 API."). All new integrations of Micrometer and Dynatrace must use this version.
 * Older Micrometer versions are no longer supported (see [Dynatrace Micrometer registry v1 (legacy)](#registry-v1) below).
 
 ## Ingest metrics from Spring Boot apps
@@ -128,7 +128,7 @@ Without OneAgent
 
 OneAgent on Kubernetes nodes does not support the ingestion of Micrometer metrics directly. See [Sending Metrics from Kubernetes](#k8s-metrics) for more details. If you're using Dynatrace on Kubernetes, we recommend using Dynatrace Operator, which provides autoconfiguration.
 
-For hosts that are monitored by OneAgent, automatic configuration is available. You don't need to specify the API endpoint to ingest the metricâif the **uri** parameter is not set in the configuration, the metric will be ingested via the [OneAgent metric API](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.").
+For hosts that are monitored by OneAgent, automatic configuration is available. You don't need to specify the API endpoint to ingest the metricâif the **uri** parameter is not set in the configuration, the metric will be ingested via the [OneAgent metric API](oneagent-metric-api.md "Use the Dynatrace API to retrieve the metrics of monitored entities.").
 
 YAML
 
@@ -179,7 +179,7 @@ management.dynatrace.metrics.export.v2.default-dimensions.region=us-east-1
 ```
 
 Dynatrace Operator configures Dynatrace Micrometer registry by providing ingest URL, credentials and Kubernetes metadata. For configuration examples, see our [Dynakube examplesï»¿](https://github.com/Dynatrace/dynatrace-operator/tree/main/assets/samples/dynakube).
-For more information about metadata enrichment, see [the documentation on enrichment files](/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+For more information about metadata enrichment, see [the documentation on enrichment files](../../extend-data.md#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
 
 * This feature is available when using Dynatrace Micrometer registry versions 1.9.0 and above.
 * An app using the Dynatrace Micrometer registry and running in Kubernetes with a Dynatrace Operator does not require any explicit configuration. Dynatrace Operator and the registry will work together and automatically export Micrometer metrics to Dynatrace.
@@ -233,11 +233,11 @@ management.dynatrace.metrics.export.v2.default-dimensions.stack=prod
 management.dynatrace.metrics.export.v2.default-dimensions.region=us-east-1
 ```
 
-To ingest metrics from hosts where OneAgent is not installed, such as serverless deployments (for example, AWS ECS) or other non-Kubernetes environments, you need to use the [ingest endpoint of the Metrics API v2](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ingest custom metrics to Dynatrace via Metrics v2 API."). To learn how to use the endpoint, see the [POST ingest data points example](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics#example "Ingest custom metrics to Dynatrace via Metrics v2 API."). The Micrometer Dynatrace registry exports to this API when the URI and token are set.
+To ingest metrics from hosts where OneAgent is not installed, such as serverless deployments (for example, AWS ECS) or other non-Kubernetes environments, you need to use the [ingest endpoint of the Metrics API v2](../../../../dynatrace-api/environment-api/metric-v2/post-ingest-metrics.md "Ingest custom metrics to Dynatrace via Metrics v2 API."). To learn how to use the endpoint, see the [POST ingest data points example](../../../../dynatrace-api/environment-api/metric-v2/post-ingest-metrics.md#example "Ingest custom metrics to Dynatrace via Metrics v2 API."). The Micrometer Dynatrace registry exports to this API when the URI and token are set.
 
 Ensure that the URI is explicitly configured, as leaving it unset will default to `localhost`, and the OneAgent local ingest is not available in these environments.
 
-HTTP clients connecting to the non-public ActiveGate REST endpoint must trust provided certificates. For details, see [Add a custom certificate for ActiveGate](/docs/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations "Configure Dynatrace in network-restricted environments, network-related settings and proxy configurations.").
+HTTP clients connecting to the non-public ActiveGate REST endpoint must trust provided certificates. For details, see [Add a custom certificate for ActiveGate](../../../setup-on-k8s/guides/networking-security-compliance/network-configurations.md "Configure Dynatrace in network-restricted environments, network-related settings and proxy configurations.").
 
 You can use the Spring placeholder notation (for example, `api-token: ${YOUR_METRICS_INGEST_API_TOKEN}`), which will automatically read the environment variable and supply it to the Micrometer configuration.
 
@@ -317,7 +317,7 @@ With Dynatrace Operator for Kubernetes
 
 Without OneAgent
 
-For hosts that are monitored by OneAgent, automatic configuration is available. You don't need to specify the API endpoint to ingest the metricâif the **uri** parameter is not set in the configuration, the metric will be ingested via the [OneAgent metric API](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.").
+For hosts that are monitored by OneAgent, automatic configuration is available. You don't need to specify the API endpoint to ingest the metricâif the **uri** parameter is not set in the configuration, the metric will be ingested via the [OneAgent metric API](oneagent-metric-api.md "Use the Dynatrace API to retrieve the metrics of monitored entities.").
 
 View auto-configuration code
 
@@ -362,7 +362,7 @@ DynatraceMeterRegistry registry = DynatraceMeterRegistry.builder(config).build()
 ```
 
 Dynatrace Operator configures Dynatrace Micrometer registry by providing ingest URL, credentials and Kubernetes metadata. For configuration examples, see our [Dynakube examplesï»¿](https://github.com/Dynatrace/dynatrace-operator/tree/main/assets/samples/dynakube).
-For more information about metadata enrichment, see [the documentation on enrichment files](/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+For more information about metadata enrichment, see [the documentation on enrichment files](../../extend-data.md#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
 
 * This feature is available when using Dynatrace Micrometer registry versions 1.9.0 and above.
 * An app using the Dynatrace Micrometer registry and running in Kubernetes with a Dynatrace Operator does not require any explicit configuration. Dynatrace Operator and the registry will work together and automatically export Micrometer metrics to Dynatrace.
@@ -410,11 +410,11 @@ return null;
 DynatraceMeterRegistry registry = DynatraceMeterRegistry.builder(config).build();
 ```
 
-To ingest metrics from hosts where OneAgent is not installed, such as serverless deployments (for example, AWS ECS) or other non-Kubernetes environments, you need to use the [ingest endpoint of the Metrics API v2](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ingest custom metrics to Dynatrace via Metrics v2 API."). To learn how to use the endpoint, see the [POST ingest data points example](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics#example "Ingest custom metrics to Dynatrace via Metrics v2 API."). The Micrometer Dynatrace registry exports to this API when the URI and token are set.
+To ingest metrics from hosts where OneAgent is not installed, such as serverless deployments (for example, AWS ECS) or other non-Kubernetes environments, you need to use the [ingest endpoint of the Metrics API v2](../../../../dynatrace-api/environment-api/metric-v2/post-ingest-metrics.md "Ingest custom metrics to Dynatrace via Metrics v2 API."). To learn how to use the endpoint, see the [POST ingest data points example](../../../../dynatrace-api/environment-api/metric-v2/post-ingest-metrics.md#example "Ingest custom metrics to Dynatrace via Metrics v2 API."). The Micrometer Dynatrace registry exports to this API when the URI and token are set.
 
 Ensure that the URI is explicitly configured, as leaving it unset will default to `localhost`, and the OneAgent local ingest is not available in these environments.
 
-HTTP clients connecting to the non-public ActiveGate REST endpoint must trust provided certificates. For details, see [Add a custom certificate for ActiveGate](/docs/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations "Configure Dynatrace in network-restricted environments, network-related settings and proxy configurations.").
+HTTP clients connecting to the non-public ActiveGate REST endpoint must trust provided certificates. For details, see [Add a custom certificate for ActiveGate](../../../setup-on-k8s/guides/networking-security-compliance/network-configurations.md "Configure Dynatrace in network-restricted environments, network-related settings and proxy configurations.").
 
 View manual configuration code
 
@@ -534,7 +534,7 @@ DynatraceMeterRegistry registry = DynatraceMeterRegistry.builder(dynatraceConfig
 
 ## Verify the metrics
 
-After you have sent your metrics, verify the data in the [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") or [query them in Grail](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands").
+After you have sent your metrics, verify the data in the [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") or [query them in Grail](../../../../platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries "DQL metric commands").
 
 ## Configuration properties
 
@@ -760,7 +760,7 @@ return null; // Accept the rest of the defaults
 
 ### Metric types
 
-All metrics are transformed to follow the [Metric ingestion protocol types](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol "Learn how the data ingestion protocol for Dynatrace Metrics API works.") used by Dynatrace.
+All metrics are transformed to follow the [Metric ingestion protocol types](../reference/metric-ingestion-protocol.md "Learn how the data ingestion protocol for Dynatrace Metrics API works.") used by Dynatrace.
 
 Note that the `count` for LongTaskTimers can be misleading as it is likely to double-count depending on the export frequency. In case you require the current number of active tasks, exporting a separate Gauge is more reliable.
 
@@ -860,11 +860,11 @@ return null; // Accept the rest of the defaults
 ```
 
 For previous versions of Micrometer, metadata needs to be specified manually using either the Dynatrace API or web UI.
-For more information, see [Custom metric metadata](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata "Provide metadata for your custom metric.").
+For more information, see [Custom metric metadata](../reference/custom-metric-metadata.md "Provide metadata for your custom metric.").
 
 ### Sending metrics from Kubernetes
 
-OneAgent cannot be used for Micrometer metric ingestion on Kubernetes nodes. You can configure your Micrometer setup to push metrics directly to Dynatrace using the [Metrics API](/docs/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.").
+OneAgent cannot be used for Micrometer metric ingestion on Kubernetes nodes. You can configure your Micrometer setup to push metrics directly to Dynatrace using the [Metrics API](../../../../dynatrace-api/environment-api/metric-v2.md "Retrieve metric information via Metrics v2 API.").
 
 ### Capture JVM metrics in Micrometer
 
@@ -1070,4 +1070,4 @@ Starting with Micrometer version 1.9.x, specialized instruments are used in the 
 
 Timeseries v1 API deprecation
 
-The [Timeseries v1 API](/docs/dynatrace-api/environment-api/metric-v1 "Retrieve metric information via Timeseries v1 API.") is deprecated and no longer accepts data. Please migrate to the supported exporter as described on this page.
+The [Timeseries v1 API](../../../../dynatrace-api/environment-api/metric-v1.md "Retrieve metric information via Timeseries v1 API.") is deprecated and no longer accepts data. Please migrate to the supported exporter as described on this page.

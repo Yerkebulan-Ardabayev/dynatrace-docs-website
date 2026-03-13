@@ -27,25 +27,25 @@ In this article, you'll learn how to create a segment to conveniently filter obs
 
 Prior knowledge
 
-* [Include data in segments](/docs/manage/segments/concepts/segments-concepts-includes "Learn how data of different types can be included in segments.")
-* [Segments in DQL queries](/docs/manage/segments/concepts/segments-concepts-queries "Learn how Grail evaluates segments during query execution to return matching results only.")
-* [Getting started with Kubernetes experience](/docs/observe/infrastructure-observability/kubernetes-app/enable-k8s-experience "Enable Kubernetes experience for existing clusters or start monitoring new clusters.")
+* [Include data in segments](../concepts/segments-concepts-includes.md "Learn how data of different types can be included in segments.")
+* [Segments in DQL queries](../concepts/segments-concepts-queries.md "Learn how Grail evaluates segments during query execution to return matching results only.")
+* [Getting started with Kubernetes experience](../../../observe/infrastructure-observability/kubernetes-app/enable-k8s-experience.md "Enable Kubernetes experience for existing clusters or start monitoring new clusters.")
 
 Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine.
-* You have both `storage:filter-segments:write` and `storage:filter-segments:read` permissions. To learn how to set up the permissions, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
-* You have licensed and set up [Kubernetes Platform Monitoring](/docs/license/capabilities/container-monitoring/kubernetes-platform-monitoring "Learn how your consumption of the Dynatrace Kubernetes Platform Monitoring DPS capability is billed and charged.").
+* You have both `storage:filter-segments:write` and `storage:filter-segments:read` permissions. To learn how to set up the permissions, see [Permissions in Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+* You have licensed and set up [Kubernetes Platform Monitoring](../../../license/capabilities/container-monitoring/kubernetes-platform-monitoring.md "Learn how your consumption of the Dynatrace Kubernetes Platform Monitoring DPS capability is billed and charged.").
 
 ## Steps
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Create a segment for clusters of a common stack**](/docs/manage/segments/use-cases/segments-use-cases-kubernetes-clusters#create "Configure a segment for signals and monitored entities related to Kubernetes clusters")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Create a segment for clusters of a common stack**](segments-use-cases-kubernetes-clusters.md#create "Configure a segment for signals and monitored entities related to Kubernetes clusters")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Include observability signals and monitored entities**](/docs/manage/segments/use-cases/segments-use-cases-kubernetes-clusters#include "Configure a segment for signals and monitored entities related to Kubernetes clusters")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Include observability signals and monitored entities**](segments-use-cases-kubernetes-clusters.md#include "Configure a segment for signals and monitored entities related to Kubernetes clusters")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Analyze performance and health of entire stack**](/docs/manage/segments/use-cases/segments-use-cases-kubernetes-clusters#analyze "Configure a segment for signals and monitored entities related to Kubernetes clusters")
+**Analyze performance and health of entire stack**](segments-use-cases-kubernetes-clusters.md#analyze "Configure a segment for signals and monitored entities related to Kubernetes clusters")
 
 ### Step 1 Create a segment for clusters of a common stack
 

@@ -13,7 +13,7 @@ scraped: 2026-03-05T21:33:12.923279
 * Чтение: 2 минуты
 * Опубликовано 08 декабря 2025 г.
 
-Автоматически принимайте и обрабатывайте логи с помощью [OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa "Принимайте данные логов в Dynatrace с помощью OneAgent и преобразуйте их в понятные сообщения журнала."), [приёма JSON и TXT логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Узнайте, как обрабатываются JSON и TXT логи — в плоском или необработанном режиме.") или [конечных точек Dynatrace OTLP API](/docs/ingest-from/opentelemetry/otlp-api "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") для удобного управления логами.
+Автоматически принимайте и обрабатывайте логи с помощью [OneAgent](../lma-log-ingestion/lma-log-ingestion-via-oa.md "Принимайте данные логов в Dynatrace с помощью OneAgent и преобразуйте их в понятные сообщения журнала."), [приёма JSON и TXT логов](../lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md "Узнайте, как обрабатываются JSON и TXT логи — в плоском или необработанном режиме.") или [конечных точек Dynatrace OTLP API](../../../ingest-from/opentelemetry/otlp-api.md "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") для удобного управления логами.
 
 Dynatrace применяет единый подход к обработке при приёме.
 Этот подход обеспечивает совместимость при переключении механизмов интеграции — например, при переходе с интеграции через шиппер логов на OneAgent — без необходимости дополнительной или, в ряде случаев, минимальной конфигурации.
@@ -34,32 +34,32 @@ OneAgent — предпочтительный метод приёма логов
 
 Вы можете воспользоваться следующими готовыми возможностями:
 
-* Поддержка формата данных [JSON логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-one-agent-log-data-format#json-logs "В этом разделе перечислены все форматы логов, поддерживаемые системой управления логами и аналитики").
-* Автоматическое извлечение атрибута `severity` с помощью [автоматического обогащения логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa "Общий приём логов автоматически преобразует данные в выходные значения атрибута loglevel.") для уже обогащённых данных.
-* Автоматическое извлечение [топологического контекста](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa#autoattributes "Общий приём логов автоматически преобразует данные в выходные значения атрибута loglevel.") для привязки логов к соответствующим объектам.
-* Извлечение временных меток поддерживается для перечисленных [поддерживаемых форматов временных меток](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-supported-timestamp-format "Поддерживаемые временные метки для последней версии системы управления логами и аналитики.") без дополнительной настройки.
+* Поддержка формата данных [JSON логов](../lma-log-ingestion/lma-log-ingestion-via-oa/lma-one-agent-log-data-format.md#json-logs "В этом разделе перечислены все форматы логов, поддерживаемые системой управления логами и аналитики").
+* Автоматическое извлечение атрибута `severity` с помощью [автоматического обогащения логов](../lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md "Общий приём логов автоматически преобразует данные в выходные значения атрибута loglevel.") для уже обогащённых данных.
+* Автоматическое извлечение [топологического контекста](../lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md#autoattributes "Общий приём логов автоматически преобразует данные в выходные значения атрибута loglevel.") для привязки логов к соответствующим объектам.
+* Извлечение временных меток поддерживается для перечисленных [поддерживаемых форматов временных меток](../lma-log-ingestion/lma-log-ingestion-via-oa/lma-supported-timestamp-format.md "Поддерживаемые временные метки для последней версии системы управления логами и аналитики.") без дополнительной настройки.
 
 Для оптимальной автоматической обработки логов вы можете воспользоваться следующими возможностями:
 
-* **Шаблоны временных меток/разбиения** для [настройки временных меток/разбиения](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration "Задайте конкретный формат даты с помощью правил временных меток, определяющих, что должно считаться временной меткой в записи лога.").
-* [Связывайте](/docs/analyze-explore-automate/logs/lma-log-enrichment "Связывайте входящие данные логов с трассировками для более точного анализа в Dynatrace.") данные логов с трассировками для ускорения устранения проблем и лёгкого переключения контекста.
+* **Шаблоны временных меток/разбиения** для [настройки временных меток/разбиения](../lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration.md "Задайте конкретный формат даты с помощью правил временных меток, определяющих, что должно считаться временной меткой в записи лога.").
+* [Связывайте](../lma-log-enrichment.md "Связывайте входящие данные логов с трассировками для более точного анализа в Dynatrace.") данные логов с трассировками для ускорения устранения проблем и лёгкого переключения контекста.
 
 #### Log Monitoring API — конечная точка JSON и TXT
 
 Log Monitoring API автоматически обрабатывает принятые логи путём:
 
-* Проверки поддерживаемых ключей **Severity** и **Timestamp** в [объекте `LogMessageJson`](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs#data-transformation-and-automatic-json-parsing "Узнайте, как обрабатываются JSON и TXT логи — в плоском или необработанном режиме.").
+* Проверки поддерживаемых ключей **Severity** и **Timestamp** в [объекте `LogMessageJson`](../lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md#data-transformation-and-automatic-json-parsing "Узнайте, как обрабатываются JSON и TXT логи — в плоском или необработанном режиме.").
 * JSON логи обрабатываются на конечных точках Log Monitoring API для сохранения исходной структуры лога.
-  Дополнительную информацию о моделях данных см. в разделе [Приём JSON и TXT логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Узнайте, как обрабатываются JSON и TXT логи — в плоском или необработанном режиме.").
+  Дополнительную информацию о моделях данных см. в разделе [Приём JSON и TXT логов](../lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md "Узнайте, как обрабатываются JSON и TXT логи — в плоском или необработанном режиме.").
 
 #### Dynatrace OTLP API
 
-[Dynatrace OTLP API](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.") автоматически обрабатывает принятые логи путём:
+[Dynatrace OTLP API](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.") автоматически обрабатывает принятые логи путём:
 
-* Проверки поддерживаемых ключей [`severity` и `timestamp`](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs#semantic-attributes "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.").
+* Проверки поддерживаемых ключей [`severity` и `timestamp`](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md#semantic-attributes "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.").
 * Структурированные логи обрабатываются на конечных точках Dynatrace OTLP API для сохранения исходной структуры лога.
-  Дополнительную информацию о моделях данных см. в разделе [Приём OTLP логов](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs#otlp-structured-logs "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.").
+  Дополнительную информацию о моделях данных см. в разделе [Приём OTLP логов](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md#otlp-structured-logs "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.").
 
 ## Связанные темы
 
-* [Обработка логов с помощью OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Обрабатывайте логи с помощью Dynatrace OpenPipeline.")
+* [Обработка логов с помощью OpenPipeline](lma-openpipeline.md "Обрабатывайте логи с помощью Dynatrace OpenPipeline.")

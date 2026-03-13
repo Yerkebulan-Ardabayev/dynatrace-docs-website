@@ -19,18 +19,18 @@ scraped: 2026-03-06T21:36:07.918496
 
 Получите ограниченное количество записей журнала, соответствующих вашим критериям.
 
-Устаревший](/docs/dynatrace-api/environment-api/log-monitoring-v2/get-search-logs "Fetch log records via the Log Monitoring API v2.")[### Экспорт (Export)
+Устаревший](log-monitoring-v2/get-search-logs.md "Fetch log records via the Log Monitoring API v2.")[### Экспорт (Export)
 
 Получите неограниченное количество записей журнала, соответствующих вашим критериям.
 
-Устаревший](/docs/dynatrace-api/environment-api/log-monitoring-v2/get-export-logs "Fetch log records via the Log Monitoring API v2.")[### Агрегация (Aggregate)
+Устаревший](log-monitoring-v2/get-export-logs.md "Fetch log records via the Log Monitoring API v2.")[### Агрегация (Aggregate)
 
 Получите агрегированные записи журнала, соответствующие вашим критериям.
 
-Устаревший](/docs/dynatrace-api/environment-api/log-monitoring-v2/get-aggregate-logs "Fetch the aggregated log records via the Log Monitoring API v2.")[### Загрузка (Ingest)
+Устаревший](log-monitoring-v2/get-aggregate-logs.md "Fetch the aggregated log records via the Log Monitoring API v2.")[### Загрузка (Ingest)
 
-Отправьте пользовательские записи журнала в Dynatrace.](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.")
+Отправьте пользовательские записи журнала в Dynatrace.](log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.")
 
 ## Связанные темы
 
-* [Log Monitoring Classic](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* [Log Monitoring Classic](../../analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")

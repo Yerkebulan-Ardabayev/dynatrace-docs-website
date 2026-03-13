@@ -26,9 +26,9 @@ Below is a screenshot with highlights from the **Engineering Flow Metrics** dash
 ## Concepts
 
 Software Development Lifecycle (SDLC) events
-:   [SDLC events](/docs/deliver/pipeline-observability-sdlc-events#sdlc-events "With insights into your pipelines and processes, you can observe and analyze software engineering practices within an organization.") within the Software Development Lifecycle (SDLC) play a pivotal role in achieving effective pipeline observability.
+:   [SDLC events](../../pipeline-observability-sdlc-events.md#sdlc-events "With insights into your pipelines and processes, you can observe and analyze software engineering practices within an organization.") within the Software Development Lifecycle (SDLC) play a pivotal role in achieving effective pipeline observability.
     They represent key actions that occur throughout the lifecycle â such as releasing a new software version, deploying that version, or successfully passing a performance test.
-    For more information, see [Semantic Dictionary SDLC events](/docs/semantic-dictionary/model/sdlc-events "Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.")
+    For more information, see [Semantic Dictionary SDLC events](../../../semantic-dictionary/model/sdlc-events.md "Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.")
 
 ## Target audience
 
@@ -40,7 +40,7 @@ The **Engineering Flow Metrics** dashboard is intended for:
 ## Prerequisites
 
 * Access to the Jira Cloud instance.
-* You have an [access token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") with the `OpenPipeline - Ingest Software Development Lifecycle Events (Built-in)` scope.
+* You have an [access token](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.") with the `OpenPipeline - Ingest Software Development Lifecycle Events (Built-in)` scope.
 
 ## How-to
 
@@ -82,7 +82,7 @@ To find and copy the **Endpoints path**:
 
 Data is stored as events in Dynatrace.
 Thus, the data is charged as Events powered by Grail.
-For more information on the cost of Events powered by Grail, see [Events powered by Grail overview (DPS)](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For more information on the cost of Events powered by Grail, see [Events powered by Grail overview (DPS)](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 
 To populate Dynatrace with Jira data, set up a Jira automation.
 
@@ -112,7 +112,7 @@ As part of the Jira automation, you need to set up a Jira **Send web request** a
 This action sends an HTTP request to the URL specified.
 
 1. Add a [**Send web request** actionï»¿](https://confluence.atlassian.com/automation074/actions-1141481289.html#Actions-sendwebrequest).
-2. Enter your **Web request URL** from the [Dynatrace: Copy Endpoints path step](/docs/deliver/pipeline-observability-sdlc-events/tutorials/pipeline-observability-tutorial-jira#copy "Stabilize your value delivery system by making data-driven decisions that improve focus, predictability, and value delivery lead times.").
+2. Enter your **Web request URL** from the [Dynatrace: Copy Endpoints path step](pipeline-observability-tutorial-jira.md#copy "Stabilize your value delivery system by making data-driven decisions that improve focus, predictability, and value delivery lead times.").
    The pattern is `https://{your-environment-id}.live.dynatrace.com/platform/ingest/v1/events.sdlc`.
 3. In the **HTTP method** field, select **POST**.
 4. In the **Web request body**, select **Custom data**.
@@ -354,7 +354,7 @@ Add the custom field IDs of the automatically created **Rank** and **Team** Jira
 
 7. Organize data
 
-To organize the data in Dynatrace, set up a [custom Grail bucket](/docs/platform/grail/organize-data#custom-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
+To organize the data in Dynatrace, set up a [custom Grail bucket](../../../platform/grail/organize-data.md#custom-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
 
 1. In Dynatrace, go to **Settings** > **Storage management** > **Bucket storage management**.
 2. Select  **Bucket**.
@@ -363,7 +363,7 @@ To organize the data in Dynatrace, set up a [custom Grail bucket](/docs/platform
 5. Set the **Retention period** to three years in days which is `1095` days.
 6. Select **Create**.
 
-If the data should be restricted, configure the [bucket permissions](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
+If the data should be restricted, configure the [bucket permissions](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
 
 8. Route data
 
@@ -388,7 +388,7 @@ To route the data into the custom bucket, set up an SDLC pipeline.
 17. Select **Save**.
 
 All events created by the Jira automation are added to the bucket.
-For more general information, see [Configure a processing pipeline](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#process "Configure ingest sources, routes, and processing for your data in OpenPipeline.").
+For more general information, see [Configure a processing pipeline](../../../platform/openpipeline/getting-started/tutorial-configure-processing.md#process "Configure ingest sources, routes, and processing for your data in OpenPipeline.").
 
 9. Verify setup
 
@@ -419,8 +419,8 @@ We're providing you with a ready-made dashboard.
 To find and use the dashboard:
 
 1. Go to the [Engineering Flow Metrics dashboard on Playgroundï»¿](https://dt-url.net/e0032zt).
-2. [Download](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-download "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") the dashboard.
-3. [Upload](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-upload "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") the dashboard to your environment.
+2. [Download](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-download "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") the dashboard.
+3. [Upload](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-upload "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") the dashboard to your environment.
 
    You need to adjust the start date of specific queries to match the start of your data ingestion which we explain in detail in the **Hard-Coded Dates** section of the dashboard.
 
@@ -469,8 +469,8 @@ Below is a full screenshot of the **Engineering Flow Metrics** dashboard.
 
 ## Related topics
 
-* [Software development lifecycle (SDLC) events](/docs/semantic-dictionary/model/sdlc-events "Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.")
-* [Ingest SDLC events](/docs/deliver/pipeline-observability-sdlc-events/sdlc-events "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.")
-* [Data flow in OpenPipeline](/docs/platform/openpipeline/concepts/data-flow "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
-* [Ingest sources in OpenPipeline](/docs/platform/openpipeline/reference/api-ingestion-reference "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.")
-* [Analyze SDLC events from your pipeline](/docs/deliver/pipeline-observability-sdlc-events/pipeline-observability-analyze "Analyze your pipeline using data from your software development lifecycle (SDLC) events  using our examples.")
+* [Software development lifecycle (SDLC) events](../../../semantic-dictionary/model/sdlc-events.md "Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.")
+* [Ingest SDLC events](../sdlc-events.md "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.")
+* [Data flow in OpenPipeline](../../../platform/openpipeline/concepts/data-flow.md "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
+* [Ingest sources in OpenPipeline](../../../platform/openpipeline/reference/api-ingestion-reference.md "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.")
+* [Analyze SDLC events from your pipeline](../pipeline-observability-analyze.md "Analyze your pipeline using data from your software development lifecycle (SDLC) events  using our examples.")

@@ -106,14 +106,14 @@ Applying CaC allows
 * Reduce deployment time by integrating CaC to streamline your application onboarding process via Golden Paths.
 * Introduce observability and security standards in your environment by integrating them into your CI/CD pipelines, for example, via container images, and ensuring consistency in all your stages.
 * Provide self-service possibilities, integrating observability, automation, and quality gates into your SDLC.
-  For more information, see [Platform Engineering](/docs/discover-dynatrace/get-started/platform-engineering "Use observability and security to drive analytics and automation at scale.").
+  For more information, see [Platform Engineering](../discover-dynatrace/get-started/platform-engineering.md "Use observability and security to drive analytics and automation at scale.").
 
 ## Tools
 
 To set up and manage Dynatrace with CaC you have two tool options:
 
-* [Terraform](/docs/deliver/configuration-as-code/terraform "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform."), the industry-standard CaC software tool.
-* [Monaco](/docs/deliver/configuration-as-code/monaco "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco."), the Dynatrace-proprietary CaC CLI tool.
+* [Terraform](configuration-as-code/terraform.md "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform."), the industry-standard CaC software tool.
+* [Monaco](configuration-as-code/monaco.md "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco."), the Dynatrace-proprietary CaC CLI tool.
 
 Deciding what to use depends on the tool stack and requirements.
 
@@ -129,6 +129,6 @@ Monaco provides a third-party independent solution, operating in standalone mode
 
 ## Related topics
 
-* [Configuration as Code via Terraform overview](/docs/deliver/configuration-as-code/terraform "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform.")
-* [Configuration as Code via Monaco overview](/docs/deliver/configuration-as-code/monaco "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco.")
+* [Configuration as Code via Terraform overview](configuration-as-code/terraform.md "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform.")
+* [Configuration as Code via Monaco overview](configuration-as-code/monaco.md "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco.")
 * [[Blog] Automated observability, security, and reliability at scaleï»¿](https://www.dynatrace.com/news/blog/automated-observability-security-and-reliability-at-scale/)

@@ -17,7 +17,7 @@ Visual Resolution Path (VRP) -- это модальное окно ![Smartscape]
 
 Из Visual Resolution Path вы можете запускать дополнительные действия и углублённый анализ для более детального исследования. Наряду с визуализированными сущностями Visual Resolution Path, он включает временную шкалу базовых событий проблемы. Это обеспечивает всестороннее контекстное представление проблемы и её пути разрешения.
 
-Для получения дополнительной информации о проблемах и их разрешении см. [Анализ первопричин](/docs/dynatrace-intelligence/root-cause-analysis "Как Dynatrace анализирует проблемы для определения их первопричины.").
+Для получения дополнительной информации о проблемах и их разрешении см. [Анализ первопричин](../../../dynatrace-intelligence/root-cause-analysis.md "Как Dynatrace анализирует проблемы для определения их первопричины.").
 
 ## Поддержка Visual Resolution Path в приложениях Dynatrace
 
@@ -27,8 +27,8 @@ Visual Resolution Path (VRP) -- это модальное окно ![Smartscape]
 
 Ниже приведены примеры вызова Visual Resolution Path:
 
-* [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**](/docs/analyze-explore-automate/smartscape "Визуализируйте структуру ваших сред и понимайте взаимосвязи и зависимости между сущностями ваших сервисов."): вы можете вызвать Visual Resolution Path непосредственно из узла проблемы в [представлении Problem graph](/docs/analyze-explore-automate/smartscape/smartscape-views/problem-graph "Используйте Problem graph для визуализации и быстрого выявления проблем и узлов, требующих немедленного внимания.").
-* [![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](/docs/dynatrace-intelligence/davis-problems-app "Используйте приложение Problems для быстрого определения первопричины инцидентов в вашей среде."): вы можете вызвать Visual Resolution Path, выбрав **Maximize** в разделе **Visual resolution path** на вкладке обзора.
+* [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**](../../smartscape.md "Визуализируйте структуру ваших сред и понимайте взаимосвязи и зависимости между сущностями ваших сервисов."): вы можете вызвать Visual Resolution Path непосредственно из узла проблемы в [представлении Problem graph](../smartscape-views/problem-graph.md "Используйте Problem graph для визуализации и быстрого выявления проблем и узлов, требующих немедленного внимания.").
+* [![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](../../../dynatrace-intelligence/davis-problems-app.md "Используйте приложение Problems для быстрого определения первопричины инцидентов в вашей среде."): вы можете вызвать Visual Resolution Path, выбрав **Maximize** в разделе **Visual resolution path** на вкладке обзора.
 
   Пример вызова Visual Resolution Path из вкладки обзора VRP в приложении Problems
 
@@ -53,7 +53,7 @@ Visual Resolution Path (VRP) -- это модальное окно ![Smartscape]
 
 Рёбра в графе Visual Resolution Path представляют дерево зависимостей и связи между сущностями. Эти визуальные соединения помогают понять, как различные компоненты и сервисы связаны между собой.
 
-Для получения дополнительной информации см. [Анализ первопричин](/docs/dynatrace-intelligence/root-cause-analysis "Как Dynatrace анализирует проблемы для определения их первопричины.").
+Для получения дополнительной информации см. [Анализ первопричин](../../../dynatrace-intelligence/root-cause-analysis.md "Как Dynatrace анализирует проблемы для определения их первопричины.").
 
 ### Временная шкала событий
 
@@ -82,7 +82,7 @@ Visual Resolution Path (VRP) -- это модальное окно ![Smartscape]
 
 ## Связанные темы
 
-* [Smartscape](/docs/analyze-explore-automate/smartscape "Визуализируйте структуру ваших сред и понимайте взаимосвязи и зависимости между сущностями ваших сервисов.")
-* [Представления Smartscape](/docs/analyze-explore-automate/smartscape/smartscape-views "Визуализируйте вашу среду с помощью настроенных представлений Smartscape для получения информации о взаимосвязях и зависимостях между вашими сервисами.")
-* [Problem graph](/docs/analyze-explore-automate/smartscape/smartscape-views/problem-graph "Используйте Problem graph для визуализации и быстрого выявления проблем и узлов, требующих немедленного внимания.")
-* [Анализ первопричин](/docs/dynatrace-intelligence/root-cause-analysis "Как Dynatrace анализирует проблемы для определения их первопричины.")
+* [Smartscape](../../smartscape.md "Визуализируйте структуру ваших сред и понимайте взаимосвязи и зависимости между сущностями ваших сервисов.")
+* [Представления Smartscape](../smartscape-views.md "Визуализируйте вашу среду с помощью настроенных представлений Smartscape для получения информации о взаимосвязях и зависимостях между вашими сервисами.")
+* [Problem graph](../smartscape-views/problem-graph.md "Используйте Problem graph для визуализации и быстрого выявления проблем и узлов, требующих немедленного внимания.")
+* [Анализ первопричин](../../../dynatrace-intelligence/root-cause-analysis.md "Как Dynatrace анализирует проблемы для определения их первопричины.")

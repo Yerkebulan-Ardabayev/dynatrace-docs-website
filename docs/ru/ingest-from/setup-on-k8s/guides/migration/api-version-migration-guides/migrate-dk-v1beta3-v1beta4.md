@@ -37,7 +37,7 @@ scraped: 2026-03-05T21:31:57.056358
 
 #### OneAgent `autoUpdate`
 
-Поле `spec.oneAgent.<mode>.autoUpdate: true/false` [устарело](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).") в `v1beta5` и не должно использоваться.
+Поле `spec.oneAgent.<mode>.autoUpdate: true/false` [устарело](../../deployment-and-configuration/updates-and-maintenance/auto-update-components.md "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).") в `v1beta5` и не должно использоваться.
 
 Рекомендуется следующее:
 

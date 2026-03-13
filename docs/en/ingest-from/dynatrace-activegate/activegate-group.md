@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:24:16.455659
 * 2-min read
 * Published Jul 08, 2022
 
-You can use ActiveGate groups to perform bulk actions on your ActiveGates, such as managing [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") running on ActiveGates or connecting your [Cloud Foundry foundations](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/connect-your-cloud-foundry-foundations-to-dynatrace "Enable monitoring on your Cloud Foundry foundations.").
+You can use ActiveGate groups to perform bulk actions on your ActiveGates, such as managing [Extensions](../extensions.md "Learn how to create and manage Dynatrace Extensions.") running on ActiveGates or connecting your [Cloud Foundry foundations](../setup-on-container-platforms/cloud-foundry/connect-your-cloud-foundry-foundations-to-dynatrace.md "Enable monitoring on your Cloud Foundry foundations.").
 
 ## Requirements
 
@@ -42,7 +42,7 @@ Dynatrace-ActiveGate-Windows-x86-<version>.exe --set-group=my-group
 
 ### Assign to a group after installation
 
-To assign ActiveGates to a group, you can use [Remote configuration management](/docs/ingest-from/bulk-configuration#configure-activegates "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify ActiveGate group** action).
+To assign ActiveGates to a group, you can use [Remote configuration management](../bulk-configuration.md#configure-activegates "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify ActiveGate group** action).
 
 Alternatively, you can use the `group` ActiveGate configuration property. For example:
 
@@ -54,7 +54,7 @@ Alternatively, you can use the `group` ActiveGate configuration property. For ex
 group = mygroup
 ```
 
-For more information, see [Basic rules for working with ActiveGate configuration](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#basic-rules "Learn which ActiveGate properties you can configure based on your needs and requirements.")
+For more information, see [Basic rules for working with ActiveGate configuration](configuration/configure-activegate.md#basic-rules "Learn which ActiveGate properties you can configure based on your needs and requirements.")
 
 ## Extensions
 
@@ -64,4 +64,4 @@ When activating the extension, you need to specify an ActiveGate group that will
 
 ## Cloud Foundry foundations
 
-When connecting Dynatrace to Cloud Foundry foundations, you specify an ActiveGate group responsible for querying Cloud Foundry for data. For more information, see [Connect your Cloud Foundry foundations with Dynatrace](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/connect-your-cloud-foundry-foundations-to-dynatrace "Enable monitoring on your Cloud Foundry foundations.")
+When connecting Dynatrace to Cloud Foundry foundations, you specify an ActiveGate group responsible for querying Cloud Foundry for data. For more information, see [Connect your Cloud Foundry foundations with Dynatrace](../setup-on-container-platforms/cloud-foundry/connect-your-cloud-foundry-foundations-to-dynatrace.md "Enable monitoring on your Cloud Foundry foundations.")

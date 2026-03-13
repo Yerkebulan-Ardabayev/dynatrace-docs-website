@@ -14,12 +14,12 @@ scraped: 2026-03-05T21:33:14.629107
 
 Early Access
 
-The New RUM Experience allows you to capture [user interactions](/docs/observe/digital-experience/new-rum-experience/concepts/data-model#user-interactions "Get familiar with the data model at the heart of the New RUM Experience.") such as clicks and scrolls and turn them into actionable insights:
+The New RUM Experience allows you to capture [user interactions](../../concepts/data-model.md#user-interactions "Get familiar with the data model at the heart of the New RUM Experience.") such as clicks and scrolls and turn them into actionable insights:
 
-* You can view all user interactions that occurred during a user session using the [![Users & Sessions](https://dt-cdn.net/images/users-sessions-149-f84e0b9b20.png "Users & Sessions") **Users & Sessions**](/docs/observe/digital-experience/new-rum-experience/users-and-sessions#events "The Users & Sessions app delivers insight into individual user journeys and behavior patterns.") app. This is especially useful for customer support teams and developers when diagnosing customer issues or bugs.
-* User interaction analysis via DQL allows you to understand behavioral patterns across a wide range of use cases; see [DQL examples](/docs/observe/digital-experience/new-rum-experience/use-cases/dql-examples#behavioral-insights "Analyze and explore RUM data in depth by leveraging DQL.").
+* You can view all user interactions that occurred during a user session using the [![Users & Sessions](https://dt-cdn.net/images/users-sessions-149-f84e0b9b20.png "Users & Sessions") **Users & Sessions**](../../users-and-sessions.md#events "The Users & Sessions app delivers insight into individual user journeys and behavior patterns.") app. This is especially useful for customer support teams and developers when diagnosing customer issues or bugs.
+* User interaction analysis via DQL allows you to understand behavioral patterns across a wide range of use cases; see [DQL examples](../../use-cases/dql-examples.md#behavioral-insights "Analyze and explore RUM data in depth by leveraging DQL.").
 
-During the User Interaction Early Access, there are no additional charges for ingesting user interactions. Querying user interactions is also included at no extra cost, because raw DEM data queries are currently in Early Access; see [Calculate your consumption of Digital Experience Monitoring (DEM) - Query](/docs/license/capabilities/digital-experience-monitoring-query-retain/queries-dem "Learn how your consumption of the DEM-related DQL queries is consumed and billed before and after Early Access.").
+During the User Interaction Early Access, there are no additional charges for ingesting user interactions. Querying user interactions is also included at no extra cost, because raw DEM data queries are currently in Early Access; see [Calculate your consumption of Digital Experience Monitoring (DEM) - Query](../../../../../license/capabilities/digital-experience-monitoring-query-retain/queries-dem.md "Learn how your consumption of the DEM-related DQL queries is consumed and billed before and after Early Access.").
 
 ## Activate capturing of user interactions
 
@@ -33,7 +33,7 @@ To capture user interactions
 
 ## Types of user interactions
 
-The following table provides an overview of the available types of user interactions. For a detailed specification, see [User interaction](/docs/semantic-dictionary/model/rum/user-events/user-interactions) in the Semantic Dictionary.
+The following table provides an overview of the available types of user interactions. For a detailed specification, see [User interaction](../../../../../semantic-dictionary/model/rum/user-events/user-interactions.md) in the Semantic Dictionary.
 
 ## Opt-in user interaction types
 
@@ -196,4 +196,4 @@ Learn More
 
 ## Customization
 
-For additional context, you can add attributes to your HTML that associate the captured user interactions with features and UI components; see [Associate user interactions with features and UI components](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/user-interactions/features-and-components "Learn how to associate user interactions for web frontends with features and UI components."). This customization facilitates powerful queries and deeper analysis of how users engage with your application's UI and functionality.
+For additional context, you can add attributes to your HTML that associate the captured user interactions with features and UI components; see [Associate user interactions with features and UI components](user-interactions/features-and-components.md "Learn how to associate user interactions for web frontends with features and UI components."). This customization facilitates powerful queries and deeper analysis of how users engage with your application's UI and functionality.

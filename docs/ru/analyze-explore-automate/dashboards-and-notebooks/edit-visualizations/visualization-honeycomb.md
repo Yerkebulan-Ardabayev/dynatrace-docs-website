@@ -54,7 +54,7 @@ fetch dt.davis.problems
 
 Визуализация «Соты» выше основана на следующем запросе.
 
-Запрос ниже был обновлён в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и необходимых действий для выполнения миграции см. в [руководстве по миграции таблицы безопасности Grail](/docs/secure/threat-observability/migration "Узнайте об изменениях в новой таблице безопасности Grail и как выполнить миграцию.").
+Запрос ниже был обновлён в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и необходимых действий для выполнения миграции см. в [руководстве по миграции таблицы безопасности Grail](../../../secure/threat-observability/migration.md "Узнайте об изменениях в новой таблице безопасности Grail и как выполнить миграцию.").
 
 ```
 fetch security.events
@@ -89,7 +89,7 @@ fetch security.events
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host** -- открытие выбранного элемента в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   Как правило, если для выбранного элемента есть рекомендуемые приложения, меню предлагает прямые ссылки на эти приложения, а также опцию **Open with** для выбора другого целевого приложения.
-* **Open with** -- подробнее см. [Детализация и навигация](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Детализация из дашбордов и блокнотов с использованием ссылок на основе интентов или URL.").
+* **Open with** -- подробнее см. [Детализация и навигация](../drilldowns-and-navigation.md "Детализация из дашбордов и блокнотов с использованием ссылок на основе интентов или URL.").
 
 ## Заголовок
 
@@ -109,7 +109,7 @@ fetch security.events
 
 ## Визуализация
 
-Если вы не уверены, что выбрали подходящую визуализацию, используйте [селектор визуализации](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Создание, редактирование и просмотр визуализаций на дашбордах и в блокнотах Dynatrace.") для выбора других типов визуализации.
+Если вы не уверены, что выбрали подходящую визуализацию, используйте [селектор визуализации](../edit-visualizations.md#select-visualization "Создание, редактирование и просмотр визуализаций на дашбордах и в блокнотах Dynatrace.") для выбора других типов визуализации.
 
 ## Сопоставление данных
 

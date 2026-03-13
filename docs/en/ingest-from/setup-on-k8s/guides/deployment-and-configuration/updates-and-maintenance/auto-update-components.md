@@ -82,7 +82,7 @@ Similar to OneAgent, the ActiveGate update can be configured in the UI, resultin
 
 ## Configure EdgeConnect auto-update
 
-Dynatrace Operator can be configured to disable auto-updates by setting the `autoUpdate` field in the [EdgeConnect spec](/docs/ingest-from/setup-on-k8s/reference/edgeconnect-parameters#spec "List of configuration parameters for EdgeConnect.") section to `false`.
+Dynatrace Operator can be configured to disable auto-updates by setting the `autoUpdate` field in the [EdgeConnect spec](../../../reference/edgeconnect-parameters.md#spec "List of configuration parameters for EdgeConnect.") section to `false`.
 
 ```
 apiVersion: dynatrace.com/v1alpha2

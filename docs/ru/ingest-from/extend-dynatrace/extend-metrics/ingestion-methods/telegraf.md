@@ -153,12 +153,12 @@ prefix = "telegraf."
 
 ### Без OneAgent на хосте
 
-Если вы не можете установить OneAgent на хосте, мониторинг которого осуществляется Telegraf, вы можете настроить Dynatrace Output Plugin для отправки метрик напрямую в вашу среду Dynatrace через [Metrics API v2](/docs/dynatrace-api/environment-api/metric-v2 "Получение информации о метриках через Metrics v2 API.").
+Если вы не можете установить OneAgent на хосте, мониторинг которого осуществляется Telegraf, вы можете настроить Dynatrace Output Plugin для отправки метрик напрямую в вашу среду Dynatrace через [Metrics API v2](../../../../dynatrace-api/environment-api/metric-v2.md "Получение информации о метриках через Metrics v2 API.").
 
 #### Предварительные требования
 
-* [Токен API](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Узнайте о концепции токена доступа и его областях действия.") с областью действия **Ingest metrics data points**.
-* Ваш [идентификатор среды](/docs/discover-dynatrace/get-started/monitoring-environment "Понимание и работа со средами мониторинга.").
+* [Токен API](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Узнайте о концепции токена доступа и его областях действия.") с областью действия **Ingest metrics data points**.
+* Ваш [идентификатор среды](../../../../discover-dynatrace/get-started/monitoring-environment.md "Понимание и работа со средами мониторинга.").
 
 1. Отредактируйте `telegraf.conf`, [файл конфигурации Telegraf](https://docs.influxdata.com/telegraf/v1.15/administration/configuration/).
 2. Раскомментируйте строку `# [[outputs.dynatrace]]`.
@@ -327,17 +327,17 @@ prefix = "telegraf."
 
 ## Осведомлённость о топологии
 
-Когда OneAgent и Telegraf установлены на одном хосте, идентификатор хоста и имя хоста автоматически добавляются к каждой метрике в качестве измерений. Узнайте, как [обогатить ваши метрики дополнительными измерениями, специфичными для Dynatrace](/docs/ingest-from/extend-dynatrace/extend-data "Узнайте, как автоматически обогащать телеметрические данные измерениями, специфичными для Dynatrace."), и применить детали причинно-следственного анализа Dynatrace AI к вашим принятым данным.
+Когда OneAgent и Telegraf установлены на одном хосте, идентификатор хоста и имя хоста автоматически добавляются к каждой метрике в качестве измерений. Узнайте, как [обогатить ваши метрики дополнительными измерениями, специфичными для Dynatrace](../../extend-data.md "Узнайте, как автоматически обогащать телеметрические данные измерениями, специфичными для Dynatrace."), и применить детали причинно-следственного анализа Dynatrace AI к вашим принятым данным.
 
 ## Формат метрик
 
-Предоставляемые точки данных должны соответствовать [протоколу приёма метрик](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol "Узнайте, как работает протокол приёма данных для Dynatrace Metrics API.").
+Предоставляемые точки данных должны соответствовать [протоколу приёма метрик](../reference/metric-ingestion-protocol.md "Узнайте, как работает протокол приёма данных для Dynatrace Metrics API.").
 
 ## Порт связи
 
-Плагин Telegraf Dynatrace Output Plugin отправляет метрики на конечную точку [OneAgent metric API](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Приём пользовательских метрик в Dynatrace через Metrics v2 API.").
+Плагин Telegraf Dynatrace Output Plugin отправляет метрики на конечную точку [OneAgent metric API](../../../../dynatrace-api/environment-api/metric-v2/post-ingest-metrics.md "Приём пользовательских метрик в Dynatrace через Metrics v2 API.").
 
-Порт приёма метрик по умолчанию — `14499`. При необходимости вы можете использовать команду [oneagentctl](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#metrics "Узнайте, как выполнять некоторые задачи настройки OneAgent без переустановки OneAgent.") для проверки или изменения порта. Изменение порта приёма метрик требует перезапуска OneAgent. Добавьте [`--restart-service`](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart "Узнайте, как выполнять некоторые задачи настройки OneAgent без переустановки OneAgent.") к команде для автоматического перезапуска OneAgent.
+Порт приёма метрик по умолчанию — `14499`. При необходимости вы можете использовать команду [oneagentctl](../../../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#metrics "Узнайте, как выполнять некоторые задачи настройки OneAgent без переустановки OneAgent.") для проверки или изменения порта. Изменение порта приёма метрик требует перезапуска OneAgent. Добавьте [`--restart-service`](../../../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#oneagent-restart "Узнайте, как выполнять некоторые задачи настройки OneAgent без переустановки OneAgent.") к команде для автоматического перезапуска OneAgent.
 
 ### Проверка порта приёма
 

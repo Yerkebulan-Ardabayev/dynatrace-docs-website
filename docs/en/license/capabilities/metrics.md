@@ -15,9 +15,9 @@ scraped: 2026-03-06T21:24:49.836217
 
 For information about how usage of a specific capability translates to consumption of your DPS license commit, see
 
-* [Metrics - Ingest & Process](/docs/license/capabilities/metrics/dps-metrics-ingest "Learn how your consumption of the Metrics - Ingest & Process DPS capability is billed and charged.")
-* [Metrics - Retain](/docs/license/capabilities/metrics/dps-metrics-retain "Learn how your consumption of the Metrics - Retain DPS capability is billed and charged.")
-* [Metrics - Query](/docs/license/capabilities/metrics/dps-metrics-query "Learn how your consumption of the Metrics - Query DPS capability is billed and charged.")
+* [Metrics - Ingest & Process](metrics/dps-metrics-ingest.md "Learn how your consumption of the Metrics - Ingest & Process DPS capability is billed and charged.")
+* [Metrics - Retain](metrics/dps-metrics-retain.md "Learn how your consumption of the Metrics - Retain DPS capability is billed and charged.")
+* [Metrics - Query](metrics/dps-metrics-query.md "Learn how your consumption of the Metrics - Query DPS capability is billed and charged.")
 
 ## Metrics - Ingest & Process feature overview
 
@@ -33,12 +33,12 @@ Here's what's included with the Query data-usage dimension:
 
 | Concept | Explanation |
 | --- | --- |
-| DQL query execution | A [DQL query](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") scans and fetches data that is stored in Grail. Querying metrics using the `timeseries` command is always included. |
+| DQL query execution | A [DQL query](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") scans and fetches data that is stored in Grail. Querying metrics using the `timeseries` command is always included. |
 | App usage | DQL queries can be executed by:  - Apps such as Notebooks **Notebooks**, Dashboards **Dashboards**, Workflows **Workflows**, and Anomaly Detection - new **Anomaly Detection**. - Dashboard tiles that are based on metrics trigger the execution of DQL queries on refresh - Custom apps - The Dynatrace API |
 
 ## Related topics
 
-* [Metrics](/docs/analyze-explore-automate/metrics "Metrics powered by Grail offer a comprehensive solution to manage your metrics data, in integration with logs, spans, and events, providing a unified approach to data analysis.")
-* [What is Dynatrace Grail?](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.")
-* [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* [Metrics](../../analyze-explore-automate/metrics.md "Metrics powered by Grail offer a comprehensive solution to manage your metrics data, in integration with logs, spans, and events, providing a unified approach to data analysis.")
+* [What is Dynatrace Grail?](../../platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.")
+* [License Dynatrace](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)

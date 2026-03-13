@@ -61,11 +61,11 @@ davis:analyzers:execute
 
 Выполнение анализатора предложений пороговых значений
 
-Разрешения пользователей могут быть изменены только вашим администратором Dynatrace в разделе **Account Management** > **Identity and Access Management**. Чтобы узнать больше о группах пользователей и назначении разрешений, см. [Работа с политиками](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+Разрешения пользователей могут быть изменены только вашим администратором Dynatrace в разделе **Account Management** > **Identity and Access Management**. Чтобы узнать больше о группах пользователей и назначении разрешений, см. [Работа с политиками](../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
 
 ### Установка
 
-Убедитесь, что приложение [установлено в вашей среде](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Убедитесь, что приложение [установлено в вашей среде](../../manage/hub.md#install "See the information about Dynatrace Hub.").
 
 ## Включение или редактирование настроек авторизации Anomaly Detection
 
@@ -88,7 +88,7 @@ davis:analyzers:execute
 
 При открытии приложения вы можете увидеть информацию о существующих конфигурациях обнаружения аномалий, такую как:
 
-* Статус -- если есть ошибка, статус отображается как **Error**; выберите его, чтобы открыть подробный отчёт в [блокноте](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
+* Статус -- если есть ошибка, статус отображается как **Error**; выберите его, чтобы открыть подробный отчёт в [блокноте](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
 * Источник
 * Тип модели прогнозирования аномалий
 
@@ -101,19 +101,19 @@ davis:analyzers:execute
 [01Руководство по написанию DQL для Anomaly Detection
 
 * Практическое руководство
-* Лучшие практики создания DQL-запросов для пользовательских оповещений Anomaly Detection.](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice)[02Руководство по оптимизации DQL для Anomaly Detection
+* Лучшие практики создания DQL-запросов для пользовательских оповещений Anomaly Detection.](anomaly-detection-app/davis-ad-dql-best-practice.md)[02Руководство по оптимизации DQL для Anomaly Detection
 
 * Практическое руководство
-* Лучшие практики оптимизации DQL-запросов Anomaly Detection.](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization)[03Настройка простого пользовательского оповещения
+* Лучшие практики оптимизации DQL-запросов Anomaly Detection.](anomaly-detection-app/davis-ad-dql-optimization.md)[03Настройка простого пользовательского оповещения
 
 * Практическое руководство
-* Узнайте, как создавать и редактировать простые пользовательские оповещения в приложении Anomaly Detection.](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad)[04Настройка расширенного пользовательского оповещения
+* Узнайте, как создавать и редактировать простые пользовательские оповещения в приложении Anomaly Detection.](anomaly-detection-app/configure-a-simple-ad.md)[04Настройка расширенного пользовательского оповещения
 
 * Практическое руководство
-* Узнайте, как создавать и редактировать расширенные пользовательские оповещения в приложении Anomaly Detection](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-an-advanced-ad)[05Типы статусов Anomaly Detection
+* Узнайте, как создавать и редактировать расширенные пользовательские оповещения в приложении Anomaly Detection](../../../common/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-an-advanced-ad.md)[05Типы статусов Anomaly Detection
 
 * Описание
-* Описание типов статусов Anomaly Detection](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types)
+* Описание типов статусов Anomaly Detection](anomaly-detection-app/anomaly-detection-status-types.md)
 
 ## Акторы пользовательских оповещений
 
@@ -129,7 +129,7 @@ davis:analyzers:execute
 
 Мы рекомендуем использовать сервисных пользователей в качестве акторов для пользовательских оповещений, созданных для отдела или организации. Это делает пользовательское оповещение независимым от статуса пользователя, который его поддерживает.
 
-Для сервисного пользователя нет специальных настроек авторизации. Разрешения, предоставленные сервисному пользователю, должны следовать принципу минимальных привилегий. Чтобы узнать больше об управлении сервисными пользователями, см. [Сервисные пользователи](/docs/manage/identity-access-management/user-and-group-management/access-service-users "Service users").
+Для сервисного пользователя нет специальных настроек авторизации. Разрешения, предоставленные сервисному пользователю, должны следовать принципу минимальных привилегий. Чтобы узнать больше об управлении сервисными пользователями, см. [Сервисные пользователи](../../manage/identity-access-management/user-and-group-management/access-service-users.md "Service users").
 
 ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -141,7 +141,7 @@ davis:analyzers:execute
 
 ## Связанные темы
 
-* [Типы статусов Anomaly Detection](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types "An explanation of Anomaly Detection status types")
-* [Ограничения Dynatrace Intelligence](/docs/dynatrace-intelligence/reference/davis-ai-limits "Reference limits of Dynatrace Intelligence components.")
+* [Типы статусов Anomaly Detection](anomaly-detection-app/anomaly-detection-status-types.md "An explanation of Anomaly Detection status types")
+* [Ограничения Dynatrace Intelligence](../reference/davis-ai-limits.md "Reference limits of Dynatrace Intelligence components.")
 * [[Видео] Повышение безопасности с помощью Anomaly Detection](https://www.youtube.com/watch?v=WDZUus-VxCE)
 * [[Видео] Anomaly Detection и наблюдаемость данных](https://www.youtube.com/watch?v=HPQi63mQg3w)

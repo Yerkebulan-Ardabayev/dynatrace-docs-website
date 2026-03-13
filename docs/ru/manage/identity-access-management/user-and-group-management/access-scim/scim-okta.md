@@ -13,11 +13,11 @@ scraped: 2026-03-06T21:31:30.983595
 * 1-min read
 * Published May 14, 2020
 
-На этой странице описывается сторона IdP (**Okta**) в конфигурации **SCIM** SSO, а не сторона Dynatrace. Используйте её как часть полной [процедуры настройки SCIM](/docs/manage/identity-access-management/user-and-group-management/access-scim "SCIM") для Dynatrace SaaS при использовании Okta.
+На этой странице описывается сторона IdP (**Okta**) в конфигурации **SCIM** SSO, а не сторона Dynatrace. Используйте её как часть полной [процедуры настройки SCIM](../access-scim.md "SCIM") для Dynatrace SaaS при использовании Okta.
 
 Несмотря на все усилия предоставить актуальную информацию, Dynatrace не контролирует изменения, которые могут вносить сторонние поставщики. Всегда обращайтесь к официальной документации стороннего поставщика (вашего IdP) как к основному источнику информации о сторонних продуктах.
 
-Для интеграции Dynatrace SCIM в Okta вам потребуются базовый URL Dynatrace SCIM и секретный токен, полученные в процедуре [Получение конечной точки Dynatrace SCIM и создание секретного токена](/docs/manage/identity-access-management/user-and-group-management/access-scim#scim-endpoint-secret-token "SCIM").
+Для интеграции Dynatrace SCIM в Okta вам потребуются базовый URL Dynatrace SCIM и секретный токен, полученные в процедуре [Получение конечной точки Dynatrace SCIM и создание секретного токена](../access-scim.md#scim-endpoint-secret-token "SCIM").
 
 Okta предоставляет два варианта интеграции SCIM:
 

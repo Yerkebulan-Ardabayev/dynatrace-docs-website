@@ -24,13 +24,13 @@ For active Dynatrace accounts, the following retention rates are set by default:
 
 ## Distributed tracing powered by Grail
 
-With [Distributed tracing powered by Grail](/docs/observe/application-observability/distributed-tracing "Trace and analyze in real time highly distributed systems with Grail.") you can to ingest, process, retain, and analyze trace data stored in the Grail data lakehouse in SaaS environments.
+With [Distributed tracing powered by Grail](../../../observe/application-observability/distributed-tracing.md "Trace and analyze in real time highly distributed systems with Grail.") you can to ingest, process, retain, and analyze trace data stored in the Grail data lakehouse in SaaS environments.
 
-With Grail storage, you don't have to worry about managing data storage performance, availability, or free space. Select the desired retention period for your traces in the [bucket configuration](/docs/observe/application-observability/distributed-tracing/storage "Manage data storage and retention for Distributed Tracing powered by Grail."). For span buckets, the available retention period ranges from 10 days to 10 years, with an additional week.
+With Grail storage, you don't have to worry about managing data storage performance, availability, or free space. Select the desired retention period for your traces in the [bucket configuration](../../../observe/application-observability/distributed-tracing/storage.md "Manage data storage and retention for Distributed Tracing powered by Grail."). For span buckets, the available retention period ranges from 10 days to 10 years, with an additional week.
 
 ## Distributed traces Classic
 
-Dynatrace stores the complete details of every transaction for 10 days . This enables you to analyze individual transactions and get all the details available with your [instrumentation](/docs/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.").
+Dynatrace stores the complete details of every transaction for 10 days . This enables you to analyze individual transactions and get all the details available with your [instrumentation](../../../observe/application-observability/distributed-traces.md "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.").
 
 For trial users, an additional storage-size limit applies, which might lead to shorter retention times.
 
@@ -42,7 +42,7 @@ After 10 days, session data is optimized for aggregated views. Non-aggregated an
 
 ## Services Classic: Requests and request attributes
 
-Short-term storage of the data related to service metrics used in [multidimensional analysis](/docs/observe/application-observability/multidimensional-analysis "Configure a multidimensional analysis view and save it as a calculated metric.") and [request charting](/docs/observe/application-observability/services-classic#charts "Learn about Dynatrace's classic service monitoring"). This data is available for 35 days with the following interval granularity levels:
+Short-term storage of the data related to service metrics used in [multidimensional analysis](../../../observe/application-observability/multidimensional-analysis.md "Configure a multidimensional analysis view and save it as a calculated metric.") and [request charting](../../../observe/application-observability/services-classic.md#charts "Learn about Dynatrace's classic service monitoring"). This data is available for 35 days with the following interval granularity levels:
 
 | Timeframe | Interval granularity |
 | --- | --- |
@@ -59,7 +59,7 @@ After 10 days, session data is optimized for aggregated views. Non-aggregated an
 
 Aggregated user action metrics, which are used in tables like **Top user actions** and **Top JavaScript errors**, are available for 35 days. After 10 days, user actions data is optimized for aggregated views, and some individual user actions become unavailable for individual analysis. However, the sample set is large enough for statistically correct aggregations.
 
-For [key user actions](/docs/observe/digital-experience/rum-concepts/user-actions#key-user-actions "Learn what user actions are and how they help you understand what users do with your application."), raw user action data is also kept for 35 days. The retention for timeseries data of key user actions is the same as for [timeseries metrics](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods#metrics-classic "Check retention times for various data types.").
+For [key user actions](../../../observe/digital-experience/rum-concepts/user-actions.md#key-user-actions "Learn what user actions are and how they help you understand what users do with your application."), raw user action data is also kept for 35 days. The retention for timeseries data of key user actions is the same as for [timeseries metrics](data-retention-periods.md#metrics-classic "Check retention times for various data types.").
 
 ## RUM Classic: User sessions
 
@@ -85,13 +85,13 @@ A dedicated disk is used for Session Replay data.
 
 ## New RUM Experience: User events and user sessions
 
-The default retention time for both user eventsâincluding user interactionsâand user sessions is 35 days. You can extend data retention by joining the [Extended Retention for RUM & Synthetic preview](/docs/whats-new/preview-releases#extended-retention-for-rum-and-synthetic "Learn about our Preview releases and how you can participate in them.").
+The default retention time for both user eventsâincluding user interactionsâand user sessions is 35 days. You can extend data retention by joining the [Extended Retention for RUM & Synthetic preview](../../../../common/whats-new/preview-releases.md#extended-retention-for-rum-and-synthetic "Learn about our Preview releases and how you can participate in them.").
 
 ## Log Management and Analytics
 
-Log Management and Analytics enables you to ingest, process, retain and analyze log data stored in the [Grail](/docs/analyze-explore-automate/logs "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") data lakehouse in SaaS environments.
+Log Management and Analytics enables you to ingest, process, retain and analyze log data stored in the [Grail](../../../analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") data lakehouse in SaaS environments.
 
-With Grail storage, you don't have to worry about managing data storage performance, availability, or free space. Select the desired retention period for your logs in the [bucket configuration](/docs/analyze-explore-automate/logs/lma-bucket-assignment "Your log data can be stored in data retention buckets based on specific retention periods."). For log buckets, the available retention period ranges from 1 day to 10 years, with an additional week.
+With Grail storage, you don't have to worry about managing data storage performance, availability, or free space. Select the desired retention period for your logs in the [bucket configuration](../../../analyze-explore-automate/logs/lma-bucket-assignment.md "Your log data can be stored in data retention buckets based on specific retention periods."). For log buckets, the available retention period ranges from 1 day to 10 years, with an additional week.
 
 ## Log Monitoring Classic
 
@@ -105,7 +105,7 @@ Memory dumps are immediately deleted from the disk once they're uploaded to Acti
 
 ## Metrics powered by Grail
 
-Metrics powered by Grail provides a default 1-minute interval granularity for 15 months. Metrics with this granularity and retention can be accessed via Platform applications, such as [Dashboards and Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks "Dashboards and Notebooks"). Learn more at [Metrics Limits](/docs/analyze-explore-automate/metrics/limits "Reference of metrics powered by Grail").
+Metrics powered by Grail provides a default 1-minute interval granularity for 15 months. Metrics with this granularity and retention can be accessed via Platform applications, such as [Dashboards and Notebooks](../../../analyze-explore-automate/dashboards-and-notebooks.md "Dashboards and Notebooks"). Learn more at [Metrics Limits](../../../analyze-explore-automate/metrics/limits.md "Reference of metrics powered by Grail").
 
 ## Metrics Classic
 
@@ -130,7 +130,7 @@ You can delete OneAgent or ActiveGate diagnostics issues at any time. If you del
 
 ## Security data powered by Grail
 
-Depending on the source of the data, Dynatrace stores [security events](/docs/secure/threat-observability/concepts#security-events "Basic concepts related to Threat Observability") in dedicated [Grail buckets](/docs/platform/grail/organize-data#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.") for different periods of time, as follows:
+Depending on the source of the data, Dynatrace stores [security events](../../../secure/threat-observability/concepts.md#security-events "Basic concepts related to Threat Observability") in dedicated [Grail buckets](../../../platform/grail/organize-data.md#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.") for different periods of time, as follows:
 
 * Security events generated by Dynatrace from your monitored environment are stored in the `default_securityevents_builtin` bucket for **three years**.
 * Security events ingested from third-party sources are stored in the `default_securityevents` bucket for **one year**.
@@ -139,7 +139,7 @@ Depending on the source of the data, Dynatrace stores [security events](/docs/se
 
 ### Vulnerabilities
 
-* Open [third-party vulnerabilities](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.") are stored as long as they are open, regardless of the timeframe.
+* Open [third-party vulnerabilities](../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities.md "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.") are stored as long as they are open, regardless of the timeframe.
 * The storage time for resolved third-party vulnerabilities depends on when vulnerabilities are resolved:
 
   + If a vulnerability is resolved before 365 days since it was first opened, it's deleted after 365 days.
@@ -155,6 +155,6 @@ Depending on the source of the data, Dynatrace stores [security events](/docs/se
 
 ### Events
 
-[Third-party vulnerability evolution events](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities#evolution "Monitor the security issues of your third-party libraries.") are stored for 365 days and can only be queried up to the timestamp of when the vulnerability was first detected.
+[Third-party vulnerability evolution events](../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities.md#evolution "Monitor the security issues of your third-party libraries.") are stored for 365 days and can only be queried up to the timestamp of when the vulnerability was first detected.
 
 ![First detected timestamp](https://dt-cdn.net/images/2023-12-13-09-27-13-602-340a8dff4a.png)

@@ -29,28 +29,28 @@ Monitor your hosts with OpenTelemetry using integrated metric visualizations, to
 
 ### Requirements
 
-This extension depends on telemetry data that is pushed to Dynatrace from OpenTelemetry via an [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.").
+This extension depends on telemetry data that is pushed to Dynatrace from OpenTelemetry via an [OpenTelemetry Collector](../../../ingest-from/opentelemetry/collector.md "Learn about the Dynatrace OTel Collector.").
 
 ## Activation and setup
 
 1. Deploy the OpenTelemetry Collector.
 
-   1. Follow the instructions on the [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") to deploy the Collector.
+   1. Follow the instructions on the [OpenTelemetry Collector](../../../ingest-from/opentelemetry/collector/deployment.md "How to deploy Dynatrace OTel Collector.") to deploy the Collector.
    2. Use the [reference configurationï»¿](https://github.com/Dynatrace/dynatrace-otel-collector/blob/main/config_examples/host-metrics.yaml).
    3. Ensure the Collector is running and telemetry data is reported to Dynatrace correctly.
 2. Activate the OpenTelemetry Host Monitoring extension.
 
 ## Details
 
-The [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.") captures telemetry data from your infrastructure and pushes metrics to Dynatrace via the OTel API.
+The [OpenTelemetry Collector](../../../ingest-from/opentelemetry/collector.md "Learn about the Dynatrace OTel Collector.") captures telemetry data from your infrastructure and pushes metrics to Dynatrace via the OTel API.
 
 The extension displays telemetry data captured by the OpenTelemetry Collector and provides quick analysis and clear understanding of the data, adding Dynatrace-specific context to all signals (metrics, logs, and spans).
 
-For information on how to use the extension within Dynatrace, see [Monitor hosts that send OpenTelemetry data to Dynatrace](/docs/ingest-from/opentelemetry/collector/use-cases/host-monitoring "How to monitor your hosts that use Collectors to send OpenTelemetry data to Dynatrace.").
+For information on how to use the extension within Dynatrace, see [Monitor hosts that send OpenTelemetry data to Dynatrace](../../../ingest-from/opentelemetry/collector/use-cases/host-monitoring.md "How to monitor your hosts that use Collectors to send OpenTelemetry data to Dynatrace.").
 
 ### Licensing and cost
 
-All ingested OpenTelemetry data (logs, metrics, and spans) is charged according to your rate card, see [Dynatrace Platform Subscription](/docs/license/capabilities "How different DPS capabilities work and how consumption is calculated and billed.") or [Dynatrace classic licensing](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing.").
+All ingested OpenTelemetry data (logs, metrics, and spans) is charged according to your rate card, see [Dynatrace Platform Subscription](../../../license/capabilities.md "How different DPS capabilities work and how consumption is calculated and billed.") or [Dynatrace classic licensing](../../../license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing.").
 
 The use of this extension does not itself incur any additional costs.
 

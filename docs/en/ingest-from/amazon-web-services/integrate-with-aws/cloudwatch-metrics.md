@@ -25,14 +25,14 @@ Details of collected measurements
 
 To learn the measurements collected for each of the AWS services, see:
 
-* [AWS cloud services enabled by default and metrics](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/default-aws-metrics "The list of classic (formerly 'built-in') metrics Dynatrace collects by default for AWS monitoring.")
-* [AWS cloud services](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.")
+* [AWS cloud services enabled by default and metrics](cloudwatch-metrics/default-aws-metrics.md "The list of classic (formerly 'built-in') metrics Dynatrace collects by default for AWS monitoring.")
+* [AWS cloud services](aws-all-services.md "Monitor all AWS cloud services with Dynatrace and view available metrics.")
 
 The Amazon Web Services infrastructure monitoring provides metrics from CloudWatch, infrastructure data available via public AWS API, and specific events. The data is collected in five-minute intervals.
 
 ## Cost of monitoring
 
-* Each service monitored by Dynatrace through CloudWatch, as well as log processing and analysis, consumes [DDUs](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
+* Each service monitored by Dynatrace through CloudWatch, as well as log processing and analysis, consumes [DDUs](../../../license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
 * Amazon may charge you extra for CloudWatch metric queries. For details on these additional costs, please consult [Amazon CloudWatch pricing online documentationï»¿](https://aws.amazon.com/cloudwatch/pricing/).
 
 ## Monitoring prerequisites
@@ -47,7 +47,7 @@ To manage AWS monitoring configuration, you need permissions to read and modify 
 * They are included in the **Change monitoring settings** permissions.
 * Read-only access is not supported.
 
-See [Manage user permissions with roles](/docs/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions") for details on how to manage and set permissions.
+See [Manage user permissions with roles](../../../manage/identity-access-management/permission-management/role-based-permissions.md "Role-based permissions") for details on how to manage and set permissions.
 
 2. Allow ActiveGate to access URLs
 
@@ -59,12 +59,12 @@ From Dynatrace version 1.267+, only role-based access can be used. Key-based aut
 
 An ActiveGate capable of monitoring your AWS account for classic (built-in) supported services is already provided and available within the Dynatrace AWS account (only for SaaS environments hosted on AWS).
 
-However, to monitor specific non-default AWS cloud services or if your AWS account exceeds 2,000 AWS resources, you must install and configure an Environment ActiveGate. Follow the [ActiveGate installation guide](/docs/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") and resume this guide when done.
+However, to monitor specific non-default AWS cloud services or if your AWS account exceeds 2,000 AWS resources, you must install and configure an Environment ActiveGate. Follow the [ActiveGate installation guide](../../dynatrace-activegate/installation.md "Learn how to configure ActiveGate") and resume this guide when done.
 
 You must install and configure an Environment ActiveGate if you want to monitor either or both of the following:
 
 * More than 2,000 AWS resources (AWS service instances)
-* [Non-default AWS Cloud services](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services#aws-non-default "Monitor all AWS cloud services with Dynatrace and view available metrics.")
+* [Non-default AWS Cloud services](aws-all-services.md#aws-non-default "Monitor all AWS cloud services with Dynatrace and view available metrics.")
 
 #### Allow ActiveGate to access AWS URLs
 
@@ -219,9 +219,9 @@ The most frequent cause of certificate issues with the TLS interception proxy is
 
 If you're still having proxy issues, see:
 
-* [Proxy for ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate "Learn how to configure ActiveGate properties to set up a proxy.")
-* [Trusted root certificates for ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-trusted-root-certificates-on-activegate "Learn how to specify a custom truststore file that is merged with Java's root certificates and used as a default on all connections.")
-* [Custom SSL certificate for ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate "Learn how to configure the SSL certificate on your ActiveGate.")
+* [Proxy for ActiveGate](../../dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate.md "Learn how to configure ActiveGate properties to set up a proxy.")
+* [Trusted root certificates for ActiveGate](../../dynatrace-activegate/configuration/configure-trusted-root-certificates-on-activegate.md "Learn how to specify a custom truststore file that is merged with Java's root certificates and used as a default on all connections.")
+* [Custom SSL certificate for ActiveGate](../../dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate.md "Learn how to configure the SSL certificate on your ActiveGate.")
 
 "Communication error."
 
@@ -232,7 +232,7 @@ Make sure that the URLs are whitelisted. Otherwise, you might get communication 
 To perform these steps, you need to have AWS admin privileges.
 
 The AWS monitoring policy defines the minimal scope of permissions you need to give to Dynatrace to monitor the services running in your AWS account. Create it once and use it any time when enabling Dynatrace access to your AWS account.
-If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for [all AWS cloud services](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics."), a list of optional permissions specific to that service.
+If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for [all AWS cloud services](aws-all-services.md "Monitor all AWS cloud services with Dynatrace and view available metrics."), a list of optional permissions specific to that service.
 
 Permissions required for AWS monitoring integration:
 
@@ -427,7 +427,7 @@ The instructions below are applicable whether or not the account hosting your Ac
   + A dedicated [monitoring role](#create-role-dt) for Dynatrace in your AWS account.
   + Its attached policy, defining the Dynatrace authentication permissions to your AWS environment.
 
-To monitor multiple accounts, use the `role_based_access_AG_account_multiple_monitoring_roles_template.yml` and repeat the [Create a role for ActiveGate on the account that hosts ActiveGate](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#create-role-dt "Integrate metrics from Amazon CloudWatch.") steps to create a stack for each monitored account.
+To monitor multiple accounts, use the `role_based_access_AG_account_multiple_monitoring_roles_template.yml` and repeat the [Create a role for ActiveGate on the account that hosts ActiveGate](cloudwatch-metrics.md#create-role-dt "Integrate metrics from Amazon CloudWatch.") steps to create a stack for each monitored account.
 
 You will need:
 
@@ -976,11 +976,11 @@ To add a new AWS connection
 
 1. Open ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
 2. Select **Integration manager** tab.
-3. Learn how to navigate and connect a new instance via [Integration manager](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app#integration-manager "Monitor all cloud platforms at once.").
+3. Learn how to navigate and connect a new instance via [Integration manager](../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md#integration-manager "Monitor all cloud platforms at once.").
 
 2. AWS cloud services monitored by default
 
-After Dynatrace connects to your AWS environment, it immediately starts monitoring [selected AWS services](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services#aws-default "Monitor all AWS cloud services with Dynatrace and view available metrics."). [Classic (formerly 'built-in') AWS metrics](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/default-aws-metrics "The list of classic (formerly 'built-in') metrics Dynatrace collects by default for AWS monitoring.") lists the metrics of AWS cloud services monitored by default.
+After Dynatrace connects to your AWS environment, it immediately starts monitoring [selected AWS services](aws-all-services.md#aws-default "Monitor all AWS cloud services with Dynatrace and view available metrics."). [Classic (formerly 'built-in') AWS metrics](cloudwatch-metrics/default-aws-metrics.md "The list of classic (formerly 'built-in') metrics Dynatrace collects by default for AWS monitoring.") lists the metrics of AWS cloud services monitored by default.
 
 3. Monitor other AWS services
 
@@ -1012,7 +1012,7 @@ Apart from the recommended metrics, most services have the possibility of enabli
 
 List of AWS cloud services and collected metrics
 
-To see the complete list of AWS cloud services and learn about the metrics collected for each of them, see [All AWS cloud services](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.").
+To see the complete list of AWS cloud services and learn about the metrics collected for each of them, see [All AWS cloud services](aws-all-services.md "Monitor all AWS cloud services with Dynatrace and view available metrics.").
 
 Alternatively, you can check the list of supported AWS Services within in-product Dynatrace Hub (search for **AWS**) or in the [web version of Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=aws).
 
@@ -1037,23 +1037,23 @@ To see the core measurements per each of the AWS connections
 1. Go to ![AWS](https://dt-cdn.net/images/aws-512-eed109b7f1.png "AWS") **AWS Classic**.
 2. Select the connection for which you want to see an overview of the AWS infrastructure.
 
-You can also build your own dashboard from the metrics collected for your AWS instances. For details on building dashboards, see [Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
+You can also build your own dashboard from the metrics collected for your AWS instances. For details on building dashboards, see [Dashboards Classic](../../../analyze-explore-automate/dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
 
 Virtual Machines, containers, and deep code monitoring with Dynatrace OneAgent
 
-Dynatrace OneAgent offers unparalleled depth of insight into hosts, containers, and code. To learn more, see [Set up Dynatrace on Amazon Web Services](/docs/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services.").
+Dynatrace OneAgent offers unparalleled depth of insight into hosts, containers, and code. To learn more, see [Set up Dynatrace on Amazon Web Services](../../amazon-web-services.md "Set up and configure monitoring for Amazon Web Services.").
 
 Further configuration for notifications and alerts
 
 After you set up AWS monitoring, you can:
 
-* [Set up metric events for alerting](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-set-up-metric-events-for-alerting "Set up and configure metric events for alerting."). This enables you to create, enable, disable and configure recommended alerting rules.
-* [Limit API calls to AWS using tags](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/limit-api-calls-to-aws-using-tags "Add and configure AWS tags to limit AWS resources."). By default, Dynatrace monitors all Amazon Web Services that have been specified in your permission policy. Optionally, you can use tagging to limit the AWS resources that are monitored by Dynatrace.
+* [Set up metric events for alerting](cloudwatch-metrics/aws-set-up-metric-events-for-alerting.md "Set up and configure metric events for alerting."). This enables you to create, enable, disable and configure recommended alerting rules.
+* [Limit API calls to AWS using tags](cloudwatch-metrics/limit-api-calls-to-aws-using-tags.md "Add and configure AWS tags to limit AWS resources."). By default, Dynatrace monitors all Amazon Web Services that have been specified in your permission policy. Optionally, you can use tagging to limit the AWS resources that are monitored by Dynatrace.
 
 Integrate CloudWatch Metric Streams
 
-This method of monitoring does not require an ActiveGate. Dynatrace integration with Amazon CloudWatch Metric Streams provides a simple and safe way to ingest AWS metrics. Amazon CloudWatch Metric Streams allows all metrics issued in a given AWS region to be streamed through Kinesis Firehose to the Dynatrace API. For details, see [Amazon CloudWatch Metric Streams](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams "Ingest metrics from your AWS accounts using Amazon CloudWatch Metric Streams.").
+This method of monitoring does not require an ActiveGate. Dynatrace integration with Amazon CloudWatch Metric Streams provides a simple and safe way to ingest AWS metrics. Amazon CloudWatch Metric Streams allows all metrics issued in a given AWS region to be streamed through Kinesis Firehose to the Dynatrace API. For details, see [Amazon CloudWatch Metric Streams](aws-metrics-ingest/cloudwatch-metric-streams.md "Ingest metrics from your AWS accounts using Amazon CloudWatch Metric Streams.").
 
 OpenTelemetry and distributed tracing
 
-It is also possible to [trace AWS Lambda .NET Core functions with OpenTelemetry .NET](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration/lambda-otel-native "Learn how to use OpenTelemetry to trace AWS Lambda .NET Core functions.").
+It is also possible to [trace AWS Lambda .NET Core functions with OpenTelemetry .NET](../integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration/lambda-otel-native.md "Learn how to use OpenTelemetry to trace AWS Lambda .NET Core functions.").

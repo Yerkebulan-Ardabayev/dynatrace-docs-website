@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:14:35.723933
 * Чтение: 2 мин
 * Обновлено 28 ноября 2025 г.
 
-Бизнес-события могут храниться в бакетах с различными периодами хранения. Вы создаёте правила с матчер-специфичными запросами [DQL](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") для назначения совпадающих бизнес-событий в определённый бакет. Период хранения по умолчанию для встроенного бакета бизнес-событий (`default_bizevents`) составляет 35 дней. Вы также можете создавать [пользовательские бакеты](/docs/platform/grail/organize-data/assign-permissions-in-grail#custom-grail-buckets "Find out how to assign permissions to buckets and tables in Grail.") с определённым периодом хранения.
+Бизнес-события могут храниться в бакетах с различными периодами хранения. Вы создаёте правила с матчер-специфичными запросами [DQL](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") для назначения совпадающих бизнес-событий в определённый бакет. Период хранения по умолчанию для встроенного бакета бизнес-событий (`default_bizevents`) составляет 35 дней. Вы также можете создавать [пользовательские бакеты](../../../platform/grail/organize-data/assign-permissions-in-grail.md#custom-grail-buckets "Find out how to assign permissions to buckets and tables in Grail.") с определённым периодом хранения.
 
 Для пользовательских бакетов возможный период хранения варьируется от 1 дня до 10 лет плюс дополнительная неделя.
 
@@ -24,7 +24,7 @@ scraped: 2026-03-06T21:14:35.723933
 1. Перейдите в **Settings** > **Business Observability** > **Ingest Pipeline** > **Bucket assignment**.
 2. В разделе **Business event bucket assignment** выберите **Add rule** и задайте имя правила.
 3. Выберите **Bucket**.
-4. Добавьте **Matcher** к вашему правилу, введя или вставив [матчер-специфичный DQL-запрос](/docs/analyze-explore-automate/logs/lma-classic-log-processing#dql-functions "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation."). События, соответствующие вашему правилу, будут назначены в выбранный бакет. Если ни одно правило не совпало, события будут назначены в бакет по умолчанию.
+4. Добавьте **Matcher** к вашему правилу, введя или вставив [матчер-специфичный DQL-запрос](../../../analyze-explore-automate/logs/lma-classic-log-processing.md#dql-functions "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation."). События, соответствующие вашему правилу, будут назначены в выбранный бакет. Если ни одно правило не совпало, события будут назначены в бакет по умолчанию.
 5. Выберите **Save changes**.
 
 ## Примеры матчеров

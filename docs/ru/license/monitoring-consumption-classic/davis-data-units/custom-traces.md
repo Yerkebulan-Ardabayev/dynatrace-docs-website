@@ -12,9 +12,9 @@ scraped: 2026-03-06T21:37:37.198226
 * 2-min read
 * Published Mar 30, 2021
 
-Хотя интеграция данных спанов OpenTracing и OpenTelemetry в Dynatrace через OneAgent не влечёт дополнительных затрат и лицензирования, у вас есть возможность настроить Dynatrace Trace API для приёма спанов OpenTelemetry и OpenTracing; они называются «пользовательскими трассировками». Такой подход полезен для бесшовной интеграции данных трассировок OpenTelemetry, генерируемых сторонними сервисами. Приём спанов через конечную точку Trace API потребляет [единицы данных Davis](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU)."), поскольку этот подход требует большей вычислительной мощности и аналитических ресурсов, чем приём через OneAgent.
+Хотя интеграция данных спанов OpenTracing и OpenTelemetry в Dynatrace через OneAgent не влечёт дополнительных затрат и лицензирования, у вас есть возможность настроить Dynatrace Trace API для приёма спанов OpenTelemetry и OpenTracing; они называются «пользовательскими трассировками». Такой подход полезен для бесшовной интеграции данных трассировок OpenTelemetry, генерируемых сторонними сервисами. Приём спанов через конечную точку Trace API потребляет [единицы данных Davis](../davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU)."), поскольку этот подход требует большей вычислительной мощности и аналитических ресурсов, чем приём через OneAgent.
 
-Для получения подробной информации о приёме спанов OpenTelemetry и OpenTracing на основе OneAgent, при котором DDU не потребляются, см. [поддержку OpenTracing и OpenTelemetry в OneAgent](/docs/ingest-from/extend-dynatrace/extend-tracing/opentracing "Learn how to integrate OpenTracing with Dynatrace.").
+Для получения подробной информации о приёме спанов OpenTelemetry и OpenTracing на основе OneAgent, при котором DDU не потребляются, см. [поддержку OpenTracing и OpenTelemetry в OneAgent](../../../ingest-from/extend-dynatrace/extend-tracing/opentracing.md "Learn how to integrate OpenTracing with Dynatrace.").
 
 ## Потребление DDU при приёме пользовательских трассировок
 
@@ -26,12 +26,12 @@ scraped: 2026-03-06T21:37:37.198226
 
 Пулы единиц данных Davis
 
-[Пулы единиц данных Davis для трассировок](/docs/license/monitoring-consumption-classic/davis-data-units#ddu-pools "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") позволяют устанавливать жёсткие ограничения на потребление DDU для трассировок. Перейдите в **Settings** > **Consumption** > **Davis data units pools** и включите **Enable limit** в разделе **Traces**, чтобы задать годовой или ежемесячный лимит.
+[Пулы единиц данных Davis для трассировок](../davis-data-units.md#ddu-pools "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") позволяют устанавливать жёсткие ограничения на потребление DDU для трассировок. Перейдите в **Settings** > **Consumption** > **Davis data units pools** и включите **Enable limit** в разделе **Traces**, чтобы задать годовой или ежемесячный лимит.
 
 ## Связанные темы
 
 * [Цены на Dynatrace](https://www.dynatrace.com/pricing/)
-* [Лицензирование Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
-* [Расширение Dynatrace (единицы данных Davis)](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).")
-* [DDU для метрик](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.")
-* [Расширение наблюдаемости метрик](/docs/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.")
+* [Лицензирование Dynatrace](../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* [Расширение Dynatrace (единицы данных Davis)](../davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).")
+* [DDU для метрик](metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.")
+* [Расширение наблюдаемости метрик](../../../ingest-from/extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace.")

@@ -17,7 +17,7 @@ The [`@dynatrace/opentelemetry-gcf`ï»¿](https://dt-url.net/zm03ye8) module pr
 
 ## Prerequisites
 
-Make sure you have followed the instructions on how to [integrate OpenTelemetry on Google Cloud Functions](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf "Monitor Google Cloud Functions with OpenTelemetry and Dynatrace.").
+Make sure you have followed the instructions on how to [integrate OpenTelemetry on Google Cloud Functions](opentelemetry-on-gcf.md "Monitor Google Cloud Functions with OpenTelemetry and Dynatrace.").
 
 * So far, only [HTTP triggersï»¿](https://dt-url.net/os23yfz) are supported.
 * Cloud Function product version: 1st gen, 2nd gen
@@ -484,5 +484,5 @@ You need to pay special attention to cases like unhandled exceptions or function
 
 ## Related topics
 
-* [Set up Dynatrace on Google Cloud](/docs/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
+* [Set up Dynatrace on Google Cloud](../../../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
 * [Google Cloud monitoringï»¿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)

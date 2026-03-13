@@ -88,7 +88,7 @@ You can use arithmetic operators with numbers, represented by both the types `lo
 
 Integer division
 
-When you divide a `long` value by another `long` value using the `/` operator, the result is also a `long` value, and any fractional part is discarded. To get a result with the fractional part (a `double` value), you need to convert or cast at least one of the operands to `double` (e.g., by using the [toDouble](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toDouble "A list of DQL conversion and casting functions.") function).
+When you divide a `long` value by another `long` value using the `/` operator, the result is also a `long` value, and any fractional part is discarded. To get a result with the fractional part (a `double` value), you need to convert or cast at least one of the operands to `double` (e.g., by using the [toDouble](functions/conversion-and-casting-functions.md#toDouble "A list of DQL conversion and casting functions.") function).
 
 | DIVISION | Long | Double | String | Boolean | Timestamp | Duration | Timeframe | Binary | IP | UID | Array | Record |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -157,10 +157,10 @@ The data type resulting from the operation is indicated in parentheses in the ta
 Equality comparisons (`==`, `!=`) use a tri-state boolean algebra (`true`, `false`, `null`). This means that if any side of the equality comparison is `null`, the overall result of the comparison is `null`.
 There are four DQL functions that cover scenarios where missing or `null` records need to be retrieved:
 
-* The [`isTrueOrNull` function](/docs/platform/grail/dynatrace-query-language/functions/boolean-functions#isTrueOrNull "A list of DQL boolean functions.")
-* The [`isFalseOrNull` function](/docs/platform/grail/dynatrace-query-language/functions/boolean-functions#isFalseOrNull "A list of DQL boolean functions.")
-* The [`isNull` function](/docs/platform/grail/dynatrace-query-language/functions/boolean-functions#isNull "A list of DQL boolean functions.")
-* The [`isNotNull` function](/docs/platform/grail/dynatrace-query-language/functions/boolean-functions#isNotNull "A list of DQL boolean functions.")
+* The [`isTrueOrNull` function](functions/boolean-functions.md#isTrueOrNull "A list of DQL boolean functions.")
+* The [`isFalseOrNull` function](functions/boolean-functions.md#isFalseOrNull "A list of DQL boolean functions.")
+* The [`isNull` function](functions/boolean-functions.md#isNull "A list of DQL boolean functions.")
+* The [`isNotNull` function](functions/boolean-functions.md#isNotNull "A list of DQL boolean functions.")
 
 For example, the below query that uses basic filtering does not provide records with `null` or missing values:
 
@@ -339,7 +339,7 @@ For example, `-2M@..`. is equivalent to `(now() - 2M)@...`.
 
 #### Right side
 
-The time unit can be any DQL supported [duration unit](/docs/platform/grail/dynatrace-query-language/data-types#duration "A list of DQL data types.") including `s` (second), `m` (minute), `h` (hour), or a calendar duration unit like `d` (day), `w` (week), `M` (month), `q` (quarter), and `y` (year).
+The time unit can be any DQL supported [duration unit](data-types.md#duration "A list of DQL data types.") including `s` (second), `m` (minute), `h` (hour), or a calendar duration unit like `d` (day), `w` (week), `M` (month), `q` (quarter), and `y` (year).
 
 Duration units (`h`, `m`, `s`, `ms`, `us`, and `ns`) allow to add a factor, for example, `@3h`.  
 Leaving the factor out is equivalent to setting it to `1`. Note the following constraints when adding such factor:
@@ -416,11 +416,11 @@ The operator searches the pattern in the tokens of a string. Its behavior depend
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Use DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.")
-* [DQL compared to SQL and more](/docs/platform/grail/dynatrace-query-language/dql-comparison "See how DQL compares to other query languages.")
-* [DQL language reference](/docs/platform/grail/dynatrace-query-language/dql-reference "Dynatrace Query Language syntax reference.")
-* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [DQL functions](/docs/platform/grail/dynatrace-query-language/functions "A list of DQL functions.")
-* [DQL data types](/docs/platform/grail/dynatrace-query-language/data-types "A list of DQL data types.")
-* [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.")
+* [Dynatrace Query Language](../dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Use DQL queries](dql-guide.md "Find out how DQL works and what are DQL key concepts.")
+* [DQL compared to SQL and more](dql-comparison.md "See how DQL compares to other query languages.")
+* [DQL language reference](dql-reference.md "Dynatrace Query Language syntax reference.")
+* [DQL commands](commands.md "A list of DQL commands.")
+* [DQL functions](functions.md "A list of DQL functions.")
+* [DQL data types](data-types.md "A list of DQL data types.")
+* [DQL best practices](dql-best-practices.md "Best practices for using Dynatrace Query Language.")

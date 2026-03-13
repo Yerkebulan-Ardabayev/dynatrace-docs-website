@@ -24,11 +24,11 @@ Message queues take the form of either a queue or a topic. They offer endpoints 
 
 ## Prerequisites
 
-OneAgent must run in [Full-Stack Monitoring](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.") mode to detect queues and topics as part of distributed traces. Only in Full-Stack Monitoring mode does Dynatrace create a continuous service flow across connected producer and consumer services.
+OneAgent must run in [Full-Stack Monitoring](../../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.") mode to detect queues and topics as part of distributed traces. Only in Full-Stack Monitoring mode does Dynatrace create a continuous service flow across connected producer and consumer services.
 
 ## Queue entity types: queues and topics
 
-OneAgent automatically detects queues and topics when monitored applications interact with them by instrumenting compatible messaging clients. When queues and topics aren't used by applications, OneAgent can't access them even if they're available on the messaging server. To check the compatible clients, see [Technology support](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+OneAgent automatically detects queues and topics when monitored applications interact with them by instrumenting compatible messaging clients. When queues and topics aren't used by applications, OneAgent can't access them even if they're available on the messaging server. To check the compatible clients, see [Technology support](../../../ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 Dynatrace creates **Queue** entities for all detected queues and topics that are part of distributed traces. These entities are shown in the **Queues and topics** table on the **Queues** page.
 
@@ -59,10 +59,10 @@ If you're just monitoring a queue or topic, and not looking into the message pro
 
 Because of their properties,
 
-* Listener services aren't visible on the analytics pages available from the **Queues** page, but you can find details in the [**Service analysis**](/docs/observe/application-observability/services-classic "Learn about Dynatrace's classic service monitoring"), [**Service flow**](/docs/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment."), and [**Distributed traces**](/docs/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") pages.
+* Listener services aren't visible on the analytics pages available from the **Queues** page, but you can find details in the [**Service analysis**](../../application-observability/services-classic.md "Learn about Dynatrace's classic service monitoring"), [**Service flow**](../../application-observability/services-classic/service-flow.md "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment."), and [**Distributed traces**](../../application-observability/distributed-traces.md "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") pages.
 * Listener service requests can't be renamed or pinned to a dashboard.
 
-  Note that a listener service is always followed by a messaging service on which you can perform such actions. For example, you can rename the messaging service requests via (global) [request naming rules](/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer.") using the message queue name as a placeholder, and then [pin the request to a dashboard](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/available-tiles#tile-service-or-request "Find out how to configure your dashboard to track business-critical user-actions and conversion goals.").
+  Note that a listener service is always followed by a messaging service on which you can perform such actions. For example, you can rename the messaging service requests via (global) [request naming rules](../../application-observability/services/service-detection/service-detection-v1/set-up-request-naming.md "Adjust request naming and define the operations your services offer.") using the message queue name as a placeholder, and then [pin the request to a dashboard](../../../analyze-explore-automate/dashboards-classic/charts-and-tiles/available-tiles.md#tile-service-or-request "Find out how to configure your dashboard to track business-critical user-actions and conversion goals.").
 
 ### Examples
 
@@ -76,5 +76,5 @@ The following is a distributed trace example with a producer service, queue enti
 
 ## Related topics
 
-* [Services](/docs/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.")
-* [Service Detection v1](/docs/observe/application-observability/services/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
+* [Services](../../application-observability/services.md "Learn how to monitor and analyze your services, define and use request attributes, and more.")
+* [Service Detection v1](../../application-observability/services/service-detection/service-detection-v1.md "Find out how Dynatrace Service Detection v1 detects and names different types of services.")

@@ -22,11 +22,11 @@ Dynatrace ingests metrics for multiple preselected namespaces, including Azure S
 
 ## Enable monitoring
 
-To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+To learn how to enable service monitoring, see [Enable service monitoring](../azure-monitoring-guide/azure-enable-service-monitoring.md "Enable Azure monitoring in Dynatrace.").
 
 ## Activate OneAgent Recommended
 
-For an end-to-end view into your Spring Apps workloads, you can [set up OneAgent integration with Azure Spring Apps](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-spring "Learn how to configure OneAgent for monitoring Azure Spring Apps.").
+For an end-to-end view into your Spring Apps workloads, you can [set up OneAgent integration with Azure Spring Apps](../azure-spring.md "Learn how to configure OneAgent for monitoring Azure Spring Apps.").
 
 ## View service metrics
 
@@ -89,4 +89,4 @@ Hiding a dashboard doesn't affect other users.
 
 ## Related topics
 
-* [Monitor Azure Spring Apps](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-spring "Learn how to configure OneAgent for monitoring Azure Spring Apps.")
+* [Monitor Azure Spring Apps](../azure-spring.md "Learn how to configure OneAgent for monitoring Azure Spring Apps.")

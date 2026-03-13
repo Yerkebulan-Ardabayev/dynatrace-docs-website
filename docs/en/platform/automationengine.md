@@ -30,9 +30,9 @@ Use cases include:
 * **Preventive security configurations**: Block malicious IPs based on known attack patterns.
 * **Predictive capacity management**: Forecast capacity shortages to avoid resource related outages.
 
-AutomationEngine is not intended for mass data ingestion or mass data export. For large-scale data processing, consider using [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") or building custom solutions with [Dynatrace Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.").
+AutomationEngine is not intended for mass data ingestion or mass data export. For large-scale data processing, consider using [OpenPipeline](openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") or building custom solutions with [Dynatrace Extensions](../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.").
 
-[Dynatrace Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."), powered by AutomationEngine, puts automation use cases at your fingertips. Every automated workflow consists of easy configuration, extensive trigger options, out-of-the-box actions and integrations, and unprecedented extensibility by leveraging webhooks, JavaScript code, and application actions powered by [AppEngine](/docs/platform/appengine "Develop feature-rich Dynatrace apps for you and the world!").
+[Dynatrace Workflows](../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."), powered by AutomationEngine, puts automation use cases at your fingertips. Every automated workflow consists of easy configuration, extensive trigger options, out-of-the-box actions and integrations, and unprecedented extensibility by leveraging webhooks, JavaScript code, and application actions powered by [AppEngine](appengine.md "Develop feature-rich Dynatrace apps for you and the world!").
 
 ## Learn more
 
@@ -40,11 +40,11 @@ AutomationEngine is not intended for mass data ingestion or mass data export. Fo
 
 ### Workflows
 
-Boost your productivity, optimize your reporting, handle security alerts faster, or build any custom workflows.](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")[![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian")
+Boost your productivity, optimize your reporting, handle security alerts faster, or build any custom workflows.](../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")[![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian")
 
 ### Site Reliability Guardian
 
-Make the right release decisions and empower SREs to apply Service-Level Objectives (SLOs) for their critical services using Site Reliability Guardian.](/docs/deliver/site-reliability-guardian "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision.")
+Make the right release decisions and empower SREs to apply Service-Level Objectives (SLOs) for their critical services using Site Reliability Guardian.](../deliver/site-reliability-guardian.md "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision.")
 
 ## Related topics
 

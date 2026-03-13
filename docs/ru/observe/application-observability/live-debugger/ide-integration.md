@@ -42,7 +42,7 @@ JetBrains часто обновляет версии своей платформ
 
 ### 2. Добавление точки останова Live Debugging
 
-Вам необходимо добавить [точку останова](/docs/observe/application-observability/live-debugger/breakpoints "Learn how to add breakpoints, view available statuses, set breakpoint levels, and more.") Live Debugging в Visual Studio Code.
+Вам необходимо добавить [точку останова](breakpoints.md "Learn how to add breakpoints, view available statuses, set breakpoint levels, and more.") Live Debugging в Visual Studio Code.
 
 Щелкните правой кнопкой мыши на номере строки кода и выберите **Add Live Debugging Breakpoint**. Точка останова применяется к экземплярам, соответствующим фильтрам и среде, настроенным на предыдущих шагах.
 
@@ -80,7 +80,7 @@ JetBrains часто обновляет версии своей платформ
 
 ### 2. Добавление точки останова Live Debugging
 
-Вам необходимо добавить [точку останова](/docs/observe/application-observability/live-debugger/breakpoints "Learn how to add breakpoints, view available statuses, set breakpoint levels, and more.") Live Debugging в вашей IDE JetBrains.
+Вам необходимо добавить [точку останова](breakpoints.md "Learn how to add breakpoints, view available statuses, set breakpoint levels, and more.") Live Debugging в вашей IDE JetBrains.
 
 Выберите нужный номер строки кода, затем выберите **Live Debugging Breakpoint**. Точка останова применяется к экземплярам, соответствующим фильтрам и среде, настроенным на предыдущих шагах.
 

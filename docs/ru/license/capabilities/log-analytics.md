@@ -17,10 +17,10 @@ scraped: 2026-03-06T21:15:21.899416
 
 Информацию о том, как использование конкретной возможности влияет на потребление вашего лицензионного обязательства DPS, см. в разделах:
 
-* [Log - Ingest & Process](/docs/license/capabilities/log-analytics/dps-log-ingest "Узнайте, как рассчитывается и оплачивается потребление DPS-возможности Log Management & Analytics - Ingest & Process.")
-* [Log - Retain](/docs/license/capabilities/log-analytics/dps-log-retain "Узнайте, как рассчитывается и оплачивается потребление DPS-возможности Log Management & Analytics - Retain.")
-* [Log - Query](/docs/license/capabilities/log-analytics/dps-log-query "Узнайте, как рассчитывается и оплачивается потребление DPS-возможности Log Management & Analytics - Query.")
-* [Log - Retain with Included Queries](/docs/license/capabilities/log-analytics/dps-log-retain-included "Узнайте, как рассчитывается и оплачивается потребление DPS-возможности Log Management & Analytics - Retain with Included Queries.")
+* [Log - Ingest & Process](log-analytics/dps-log-ingest.md "Узнайте, как рассчитывается и оплачивается потребление DPS-возможности Log Management & Analytics - Ingest & Process.")
+* [Log - Retain](log-analytics/dps-log-retain.md "Узнайте, как рассчитывается и оплачивается потребление DPS-возможности Log Management & Analytics - Retain.")
+* [Log - Query](log-analytics/dps-log-query.md "Узнайте, как рассчитывается и оплачивается потребление DPS-возможности Log Management & Analytics - Query.")
+* [Log - Retain with Included Queries](log-analytics/dps-log-retain-included.md "Узнайте, как рассчитывается и оплачивается потребление DPS-возможности Log Management & Analytics - Retain with Included Queries.")
 
 Dynatrace предлагает
 
@@ -109,7 +109,7 @@ Dynatrace версии 1.316+
 
 ## Связанные темы
 
-* [Log Analytics](/docs/analyze-explore-automate/logs "Log Management and Analytics обеспечивает единый подход к управлению и изучению данных журналов в Dynatrace.")
-* [Что такое Dynatrace Grail?](/docs/platform/grail/dynatrace-grail "Grail -- это хранилище данных Dynatrace, специально разработанное для данных наблюдаемости и безопасности. Оно служит единым унифицированным хранилищем для журналов, метрик, трассировок, событий и многого другого.")
-* [Лицензирование Dynatrace](/docs/license "О Dynatrace Platform Subscription (DPS) -- модели лицензирования для всех возможностей Dynatrace.")
+* [Log Analytics](../../analyze-explore-automate/logs.md "Log Management and Analytics обеспечивает единый подход к управлению и изучению данных журналов в Dynatrace.")
+* [Что такое Dynatrace Grail?](../../platform/grail/dynatrace-grail.md "Grail -- это хранилище данных Dynatrace, специально разработанное для данных наблюдаемости и безопасности. Оно служит единым унифицированным хранилищем для журналов, метрик, трассировок, событий и многого другого.")
+* [Лицензирование Dynatrace](../../license.md "О Dynatrace Platform Subscription (DPS) -- модели лицензирования для всех возможностей Dynatrace.")
 * [Цены Dynatrace](https://www.dynatrace.com/pricing/)

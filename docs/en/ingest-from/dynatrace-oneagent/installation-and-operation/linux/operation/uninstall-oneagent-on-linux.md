@@ -30,4 +30,4 @@ For a complete OneAgent uninstallation, remove the following:
 * The user running OneAgent, `dtuser`.
 * Optional If you use a custom installation path, the installer creates a symbolic link in the default directory (`/opt/dynatrace/oneagent`) to the custom installation path.
   This symbolic link needs to be removed manually after OneAgent is uninstalled.
-  For more information, see [Installation path](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#installation-path "Learn how to use the Linux installer with command line parameters.").
+  For more information, see [Installation path](../installation/customize-oneagent-installation-on-linux.md#installation-path "Learn how to use the Linux installer with command line parameters.").

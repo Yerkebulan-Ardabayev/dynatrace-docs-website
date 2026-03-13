@@ -29,7 +29,7 @@ If you're using classic services, we recommend migrating to cloud services to ta
 
 AWS Lambda
 
-If you're using OneAgent integration for your Lambdas, we recommend Lambda migration. Since the release of Dynatrace version 1.283, we show data for the new Lambda service together with OneAgent data on the [Lambda service page](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java.").
+If you're using OneAgent integration for your Lambdas, we recommend Lambda migration. Since the release of Dynatrace version 1.283, we show data for the new Lambda service together with OneAgent data on the [Lambda service page](../../integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension.md "Monitor Lambda functions written in Python, Node.js, and Java.").
 
 ## Impact of the migration
 
@@ -49,12 +49,12 @@ You currently have the option to choose from a classic or cloud service to prese
 
   + Entities containing historical and new data.
   + Cloud service data and data coming from OneAgent for opaque **Amazon RDS**ânot linked to the new cloud service page with CloudWatch metrics.
-* Logs from [Amazon Data Firehose](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.") to **Amazon RDS** are still being linked to the historical data and entity `RELATIONAL_DATABASE_SERVICE`.
+* Logs from [Amazon Data Firehose](../aws-logs-ingest/lma-stream-logs-with-firehose.md "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.") to **Amazon RDS** are still being linked to the historical data and entity `RELATIONAL_DATABASE_SERVICE`.
 * Events or problems that would have been auto-detected on the historical (classic) data might not be automatically raised. Alerting rules are not provided for these cloud services:
 
   + **Amazon RDS**
   + **Amazon EBS**
-  + **AWS Lambda**â[predefined metric event configuration](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-set-up-metric-events-for-alerting "Set up and configure metric events for alerting.") is provided but needs to be manually enabled.
+  + **AWS Lambda**â[predefined metric event configuration](aws-set-up-metric-events-for-alerting.md "Set up and configure metric events for alerting.") is provided but needs to be manually enabled.
 
 To monitor cloud services, you need to have [Environment ActiveGateï»¿](https://dt-url.net/sc0396g) configured.
 
@@ -83,19 +83,19 @@ For example, letâs have a look at **Amazon EBS**.
 
 | new Cloud service | old Classic service |
 | --- | --- |
-| [Amazon EC2 Auto Scaling](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-auto-scaling "Monitor Amazon EC2 Auto Scaling and view available metrics.") | [Amazon EC2 Auto Scaling (classic)](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-auto-scaling-builltin "Monitor Amazon EC2 Auto Scaling and view available metrics.") |
-| [Amazon DynamoDB](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-dynamodb-new "Monitor Amazon DynamoDB and view available metrics.") | [Amazon DynamoDB (classic)](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-dynamo-db-builtin "Monitor Amazon DynamoDB and view available metrics.") |
-| [Amazon EBS](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-ebs-new "Monitor Amazon EBS and view available metrics.") | [Amazon EBS (classic)](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elastic-block-store-ebs-builtin "Monitor Amazon Elastic Block Store and view available metrics.") |
-| [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-lambda-new "Monitor AWS Lambda and view available metrics.") | [AWS Lambda (classic)](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-lambda-cloudwatch-metrics/lambda-builtin "Monitor AWS Lambda (built-in) and view available metrics.") |
-| [Amazon RDS](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-relational-database-service-rds-new "Monitor Amazon RDS and view available metrics.") | [Amazon RDS (classic)](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-relational-database-service-rds-builtin "Monitor Amazon RDS and view available metrics.") |
+| [Amazon EC2 Auto Scaling](cloudwatch-ec2/ec2-auto-scaling.md "Monitor Amazon EC2 Auto Scaling and view available metrics.") | [Amazon EC2 Auto Scaling (classic)](cloudwatch-ec2/ec2-auto-scaling-builltin.md "Monitor Amazon EC2 Auto Scaling and view available metrics.") |
+| [Amazon DynamoDB](../aws-all-services/aws-service-dynamodb-new.md "Monitor Amazon DynamoDB and view available metrics.") | [Amazon DynamoDB (classic)](../aws-all-services/aws-service-dynamo-db-builtin.md "Monitor Amazon DynamoDB and view available metrics.") |
+| [Amazon EBS](../aws-all-services/aws-service-ebs-new.md "Monitor Amazon EBS and view available metrics.") | [Amazon EBS (classic)](../aws-all-services/aws-service-elastic-block-store-ebs-builtin.md "Monitor Amazon Elastic Block Store and view available metrics.") |
+| [AWS Lambda](../aws-all-services/aws-service-lambda-new.md "Monitor AWS Lambda and view available metrics.") | [AWS Lambda (classic)](aws-lambda-cloudwatch-metrics/lambda-builtin.md "Monitor AWS Lambda (built-in) and view available metrics.") |
+| [Amazon RDS](../aws-all-services/aws-service-relational-database-service-rds-new.md "Monitor Amazon RDS and view available metrics.") | [Amazon RDS (classic)](../aws-all-services/aws-service-relational-database-service-rds-builtin.md "Monitor Amazon RDS and view available metrics.") |
 
 ## Metrics migration
 
 Below you can find tables with classic services metrics and their corresponding cloud services metrics. Empty cells indicate the lack of an identical corresponding metric.
 
-You can find more details about accessing these in Grail on this [page](/docs/analyze-explore-automate/metrics/built-in-metrics-on-grail "Get to know the equivalents of the classic built-in metrics supported on Grail.").
+You can find more details about accessing these in Grail on this [page](../../../../analyze-explore-automate/metrics/built-in-metrics-on-grail.md "Get to know the equivalents of the classic built-in metrics supported on Grail.").
 
-The `ext:` prefix is used by metrics from [OneAgent extensions](/docs/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.") and [ActiveGate extensions](/docs/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace."), and also by [classic metrics for AWS integration](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.").
+The `ext:` prefix is used by metrics from [OneAgent extensions](../../../extensions/develop-your-extensions.md "Develop your own Extensions in Dynatrace.") and [ActiveGate extensions](../../../extensions/develop-your-extensions.md "Develop your own Extensions in Dynatrace."), and also by [classic metrics for AWS integration](../cloudwatch-metrics.md "Integrate metrics from Amazon CloudWatch.").
 
 Despite the naming similarities, AWS integration metrics are **not** based on extensions.
 

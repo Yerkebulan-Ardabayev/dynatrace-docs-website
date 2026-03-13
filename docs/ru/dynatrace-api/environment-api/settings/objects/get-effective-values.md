@@ -26,7 +26,7 @@ scraped: 2026-03-06T21:34:40.987848
 
 Для выполнения этого запроса необходим токен доступа с областью действия `settings.read`.
 
-О том, как получить и использовать токен, см. в разделе [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, см. в разделе [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 

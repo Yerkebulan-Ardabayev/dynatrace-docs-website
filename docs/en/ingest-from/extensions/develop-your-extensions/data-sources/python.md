@@ -22,7 +22,7 @@ This SDK offers:
 * Greater flexibility to ingest the data from your proprietary technologies or when your case requires extended customization that available data sources don't offer.
 * Tooling to export your current OneAgent and ActiveGate extensions to the new framework.
 
-Dynatrace Extensions Python SDK is publicly available with [OneAgent 1.285](/docs/whats-new/oneagent/sprint-285#custom-coded-python-extensions "Release notes for Dynatrace OneAgent version 1.285").
+Dynatrace Extensions Python SDK is publicly available with [OneAgent 1.285](../../../../whats-new/oneagent/sprint-285.md#custom-coded-python-extensions "Release notes for Dynatrace OneAgent version 1.285").
 
 Set the filesystem flag to `exec` and not `noexec` to ensure a Python extension runs correctly. This configuration is crucial because it allows the execution of binaries and scripts within the specified filesystem. The extension can't execute properly without this setting, leading to potential errors and failures.
 

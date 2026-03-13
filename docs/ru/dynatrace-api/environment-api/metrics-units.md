@@ -13,13 +13,13 @@ scraped: 2026-03-01T21:24:07.443885
 
 [### Список всех единиц
 
-Обзор всех единиц, доступных в вашей среде.](/docs/dynatrace-api/environment-api/metrics-units/get-all-units "Список всех метрик, доступных для вашей среды мониторинга, через API Dynatrace.")[### Просмотр единицы
+Обзор всех единиц, доступных в вашей среде.](metrics-units/get-all-units.md "Список всех метрик, доступных для вашей среды мониторинга, через API Dynatrace.")[### Просмотр единицы
 
-Получение полного дескриптора единицы.](/docs/dynatrace-api/environment-api/metrics-units/get-unit "Просмотр метаданных единицы метрики через API Dynatrace.")[### Конвертировать единицы
+Получение полного дескриптора единицы.](metrics-units/get-unit.md "Просмотр метаданных единицы метрики через API Dynatrace.")[### Конвертировать единицы
 
-Конвертирование значения метрики из одной единицы в другую.](/docs/dynatrace-api/environment-api/metrics-units/get-unit-convert "Конвертирование значения метрики из одной единицы в другую через API Dynatrace.")
+Конвертирование значения метрики из одной единицы в другую.](metrics-units/get-unit-convert.md "Конвертирование значения метрики из одной единицы в другую через API Dynatrace.")
 
 ## Связанные темы
 
-* [Metrics API v2](/docs/dynatrace-api/environment-api/metric-v2 "Получение информации о метриках через Metrics v2 API.")
-* [Расширение наблюдаемости метрик](/docs/ingest-from/extend-dynatrace/extend-metrics "Узнайте, как расширить наблюдаемость метрик в Dynatrace.")
+* [Metrics API v2](metric-v2.md "Получение информации о метриках через Metrics v2 API.")
+* [Расширение наблюдаемости метрик](../../ingest-from/extend-dynatrace/extend-metrics.md "Узнайте, как расширить наблюдаемость метрик в Dynatrace.")

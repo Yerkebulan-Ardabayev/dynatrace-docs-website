@@ -25,8 +25,8 @@ scraped: 2026-03-06T21:17:22.247193
 
 [### Дампы памяти
 
-Запускайте и анализируйте дампы памяти Java, .NET и Node.js.](/docs/observe/application-observability/profiling-and-optimization/memory-dump-analysis "Узнайте, как Dynatrace позволяет запускать, скачивать и анализировать дампы памяти для Java и Node.js.")[### Профилирование CPU
+Запускайте и анализируйте дампы памяти Java, .NET и Node.js.](profiling-and-optimization/memory-dump-analysis.md "Узнайте, как Dynatrace позволяет запускать, скачивать и анализировать дампы памяти для Java и Node.js.")[### Профилирование CPU
 
-Изучайте и анализируйте потребление CPU вашими процессами вплоть до уровня кода.](/docs/observe/application-observability/profiling-and-optimization/cpu-profiling "Узнайте, как использовать Dynatrace для расширенного анализа кода.")[### Сбои процессов
+Изучайте и анализируйте потребление CPU вашими процессами вплоть до уровня кода.](profiling-and-optimization/cpu-profiling.md "Узнайте, как использовать Dynatrace для расширенного анализа кода.")[### Сбои процессов
 
-Отслеживайте все аварийные завершения приложений и включайте их анализ.](/docs/observe/application-observability/profiling-and-optimization/crash-analysis "Узнайте, как Dynatrace помогает получить информацию о сбоях процессов.")
+Отслеживайте все аварийные завершения приложений и включайте их анализ.](profiling-and-optimization/crash-analysis.md "Узнайте, как Dynatrace помогает получить информацию о сбоях процессов.")

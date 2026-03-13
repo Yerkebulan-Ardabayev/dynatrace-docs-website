@@ -16,8 +16,8 @@ Dynatrace Operator управляет жизненным циклом неско
 
 ## Предварительные требования
 
-* [Создайте токен доступа с областью `PaaS Integration - InstallerDownload`](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Узнайте концепцию токена доступа и его областей.")
-* [Создайте токен аутентификации](/docs/ingest-from/dynatrace-activegate/activegate-security#generate-individual "Защитите ActiveGate с помощью выделенных токенов.")
+* [Создайте токен доступа с областью `PaaS Integration - InstallerDownload`](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Узнайте концепцию токена доступа и его областей.")
+* [Создайте токен аутентификации](../../../dynatrace-activegate/activegate-security.md#generate-individual "Защитите ActiveGate с помощью выделенных токенов.")
 * Получите UUID пространства имён kube-system
 
   Как извлечь UUID пространства имён kube-system
@@ -937,7 +937,7 @@ Dynatrace Operator управляет жизненным циклом неско
    type: RollingUpdate
    ```
 
-   Для получения дополнительной информации о конфигурации контейнеризированного ActiveGate см. [Конфигурация контейнеризированного ActiveGate](/docs/ingest-from/dynatrace-activegate/activegate-in-container/configuration "Узнайте, как настроить контейнеризированный ActiveGate.").
+   Для получения дополнительной информации о конфигурации контейнеризированного ActiveGate см. [Конфигурация контейнеризированного ActiveGate](../../../dynatrace-activegate/activegate-in-container/configuration.md "Узнайте, как настроить контейнеризированный ActiveGate.").
 
    Рекомендации по ограничениям ресурсов ActiveGate
 
@@ -954,10 +954,10 @@ Dynatrace Operator управляет жизненным циклом неско
 
    Фактические значения зависят от вашей среды.
 
-   Эти ограничения следует рассматривать как рекомендации. Они предназначены для предотвращения замедления процесса запуска ActiveGate и чрезмерного использования ресурсов узлов. Значения по умолчанию охватывают широкий диапазон различных размеров кластеров; вы можете изменить их в соответствии с вашими потребностями на основе [метрик самомониторинга](/docs/analyze-explore-automate/metrics-classic/self-monitoring-metrics#activegate-insights "Ознакомьтесь с полным списком метрик самомониторинга Dynatrace.") ActiveGate.
-   Для получения дополнительной информации о рекомендациях по размерам обратитесь к [Руководству по размерам для компонентов Dynatrace ActiveGate](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Установите ограничения ресурсов для Dynatrace ActiveGate")
+   Эти ограничения следует рассматривать как рекомендации. Они предназначены для предотвращения замедления процесса запуска ActiveGate и чрезмерного использования ресурсов узлов. Значения по умолчанию охватывают широкий диапазон различных размеров кластеров; вы можете изменить их в соответствии с вашими потребностями на основе [метрик самомониторинга](../../../../analyze-explore-automate/metrics-classic/self-monitoring-metrics.md#activegate-insights "Ознакомьтесь с полным списком метрик самомониторинга Dynatrace.") ActiveGate.
+   Для получения дополнительной информации о рекомендациях по размерам обратитесь к [Руководству по размерам для компонентов Dynatrace ActiveGate](../../guides/deployment-and-configuration/resource-management/ag-resource-limits.md "Установите ограничения ресурсов для Dynatrace ActiveGate")
 
-   Для архитектуры PPC64le требуется дополнительная конфигурация. Подробнее см. [Образ контейнера ActiveGate](/docs/ingest-from/dynatrace-activegate/activegate-in-container#additional-configuration "Развертывание контейнеризированного ActiveGate.").
+   Для архитектуры PPC64le требуется дополнительная конфигурация. Подробнее см. [Образ контейнера ActiveGate](../../../dynatrace-activegate/activegate-in-container.md#additional-configuration "Развертывание контейнеризированного ActiveGate.").
 6. Разверните ActiveGate.
 
    Kubernetes
@@ -974,7 +974,7 @@ Dynatrace Operator управляет жизненным циклом неско
 
 ## Подключение ActiveGate к Kubernetes API
 
-Продолжите с шага 3 из [руководства по включению мониторинга Kubernetes API](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring#connect-ag-k8s-api "Мониторинг Kubernetes API с помощью Dynatrace")
+Продолжите с шага 3 из [руководства по включению мониторинга Kubernetes API](../../guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring.md#connect-ag-k8s-api "Мониторинг Kubernetes API с помощью Dynatrace")
 
 ## Поведение обновления ActiveGate
 

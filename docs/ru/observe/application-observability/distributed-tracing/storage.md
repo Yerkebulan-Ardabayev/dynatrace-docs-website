@@ -20,13 +20,13 @@ scraped: 2026-03-06T21:12:25.224798
 
 ## Для кого предназначена эта статья
 
-Эта статья содержит информацию о настройке хранения и хранилища данных трассировок для Distributed Tracing на базе Grail через [OpenPipeline](/docs/platform/openpipeline "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline."). Статья предназначена для администраторов, управляющих идентификацией и доступом.
+Эта статья содержит информацию о настройке хранения и хранилища данных трассировок для Distributed Tracing на базе Grail через [OpenPipeline](../../../platform/openpipeline.md "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline."). Статья предназначена для администраторов, управляющих идентификацией и доступом.
 
 ## Предварительные требования
 
 * Среда Dynatrace SaaS на базе Grail и AppEngine.
-* Подписка Dynatrace Platform Subscription (DPS) с возможностями [Traces powered by Grail (DPS)](/docs/license/capabilities/traces "Узнайте, как рассчитывается потребление Dynatrace Traces на базе Grail по модели Dynatrace Platform Subscription (DPS).").
-* Разрешения `openpipeline:configurations:write` и `openpipeline:configurations:read`. Сведения о настройке разрешений см. в разделе [Разрешения в Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.").
+* Подписка Dynatrace Platform Subscription (DPS) с возможностями [Traces powered by Grail (DPS)](../../../license/capabilities/traces.md "Узнайте, как рассчитывается потребление Dynatrace Traces на базе Grail по модели Dynatrace Platform Subscription (DPS).").
+* Разрешения `openpipeline:configurations:write` и `openpipeline:configurations:read`. Сведения о настройке разрешений см. в разделе [Разрешения в Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.").
 
 ## Хранение данных трассировок в пользовательском бакете
 
@@ -74,5 +74,5 @@ scraped: 2026-03-06T21:12:25.224798
 
 ## Связанные темы
 
-* [Хранение данных трассировок в течение длительного времени](/docs/observe/application-observability/distributed-tracing/data-retention "Создайте и назначьте бакеты с пользовательским сроком хранения для данных трассировок в Grail.")
-* [Сроки хранения данных](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods "Проверьте сроки хранения для различных типов данных.")
+* [Хранение данных трассировок в течение длительного времени](data-retention.md "Создайте и назначьте бакеты с пользовательским сроком хранения для данных трассировок в Grail.")
+* [Сроки хранения данных](../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md "Проверьте сроки хранения для различных типов данных.")

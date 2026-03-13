@@ -13,7 +13,7 @@ scraped: 2026-03-04T21:34:17.030619
 * 10-min read
 * Published Jan 08, 2021
 
-After [setting up Azure Monitor integration](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide "Set up and configure Azure monitoring in Dynatrace."), you can start setting up and configuring metric events for alerting.
+After [setting up Azure Monitor integration](../azure-monitoring-guide.md "Set up and configure Azure monitoring in Dynatrace."), you can start setting up and configuring metric events for alerting.
 
 To configure metric events for alerting, go to **Settings** > **Cloud and virtualization** > **Azure** > **Metric events for alerting** > **Manage alerting rules**. On the **Metric events for alerting** page you can create, enable/disable, and configure recommended alerting rules.  
 For an overview of all recommended alerting rules for all cloud services, see the list below.
@@ -135,4 +135,4 @@ If you disable any or all of the alerting rules, you can always re-enable them.
 
 ## Related topics
 
-* [Microsoft Azure Integrations](/docs/ingest-from/microsoft-azure-services/azure-integrations "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")
+* [Microsoft Azure Integrations](../../azure-integrations.md "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")

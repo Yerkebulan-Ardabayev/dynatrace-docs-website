@@ -17,21 +17,21 @@ Your `extension.yaml` file defines the generic scope of your extension and is th
 
 This topic describes core elements of the `extension.yaml` file applicable to any kind of extension from the Dynatrace Extensions framework. For elements specific to particular data source types, see:
 
-* [SNMP extension](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions "Learn how to create an SNMP extension using the Extensions framework.")
-* [WMI extension](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions "Learn how to create a WMI extension using the Extensions framework.")
-* [Prometheus extension](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Learn how to create a Prometheus extension using the Extensions framework.")
-* [JMX extension](/docs/ingest-from/extensions/develop-your-extensions/data-sources/jmx "Learn how to create a JMX extension using the Extensions framework.")
-* [SQL extension](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql "Learn how to create an SQL data source-based extension using the Extensions framework.")
+* [SNMP extension](data-sources/snmp-extensions.md "Learn how to create an SNMP extension using the Extensions framework.")
+* [WMI extension](data-sources/wmi-extensions.md "Learn how to create a WMI extension using the Extensions framework.")
+* [Prometheus extension](data-sources/prometheus-extensions.md "Learn how to create a Prometheus extension using the Extensions framework.")
+* [JMX extension](data-sources/jmx.md "Learn how to create a JMX extension using the Extensions framework.")
+* [SQL extension](data-sources/sql.md "Learn how to create an SQL data source-based extension using the Extensions framework.")
 
 ## Schemas
 
-When you create the `extension.yaml` file, make sure to rely on the schemas provided through the [Extensions API](/docs/dynatrace-api/environment-api/extensions-20 "Learn how to manage extensions with the Dynatrace Extensions 2.0 API."). We recommend that you use an editor supporting schema validation and snippets, which significantly simplifies `extension.yaml` editing.
+When you create the `extension.yaml` file, make sure to rely on the schemas provided through the [Extensions API](../../../dynatrace-api/environment-api/extensions-20.md "Learn how to manage extensions with the Dynatrace Extensions 2.0 API."). We recommend that you use an editor supporting schema validation and snippets, which significantly simplifies `extension.yaml` editing.
 
 We recommend using the Dynatrace Extensions VS Code add-on provided by Dynatrace. For more information, see [Add-on for VS Codeï»¿](https://dt-url.net/tx03uks/).
 
 To download Extensions schemas:
 
-1. Check available schema versions using the [GET all schemas](/docs/dynatrace-api/environment-api/extensions-20/schemas/get-all-schemas "View available extension schema versions via the Dynatrace Extensions 2.0 API.") endpoint. Schema version relate to Dynatrace Cluster versions.
+1. Check available schema versions using the [GET all schemas](../../../dynatrace-api/environment-api/extensions-20/schemas/get-all-schemas.md "View available extension schema versions via the Dynatrace Extensions 2.0 API.") endpoint. Schema version relate to Dynatrace Cluster versions.
 
    ```
    curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/schemas" \
@@ -70,7 +70,7 @@ To download Extensions schemas:
 
    }
    ```
-2. Use the [GET all files](/docs/dynatrace-api/environment-api/extensions-20/schemas/get-all-files "View available schema files in a schema version via the Dynatrace Extensions 2.0 API.") endpoint to list all available schemas for a specific Dynatrace version.
+2. Use the [GET all files](../../../dynatrace-api/environment-api/extensions-20/schemas/get-all-files.md "View available schema files in a schema version via the Dynatrace Extensions 2.0 API.") endpoint to list all available schemas for a specific Dynatrace version.
    For example:
 
    ```
@@ -134,7 +134,7 @@ To download Extensions schemas:
 
    }
    ```
-3. Use the [GET a file](/docs/dynatrace-api/environment-api/extensions-20/schemas/get-file "View an extension schema file via the Dynatrace Extensions 2.0 API.") endpoint to download a specific file in a specific version. For example, to download `extension.schema.json`, version `1.215`:
+3. Use the [GET a file](../../../dynatrace-api/environment-api/extensions-20/schemas/get-file.md "View an extension schema file via the Dynatrace Extensions 2.0 API.") endpoint to download a specific file in a specific version. For example, to download `extension.schema.json`, version `1.215`:
 
    ```
    curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/schemas/1.215/extension.schema.json" \
@@ -152,9 +152,9 @@ Alternatively, you can use the Dynatrace GitHub repository for [Extensions schem
 
 ## Start extension YAML file
 
-The extension YAML file starts with basic information about the extension. It also contains optional references to [assets](/docs/ingest-from/extensions/concepts#extension-assets "Learn more about the concept of Dynatrace Extensions.") used by the extension.
+The extension YAML file starts with basic information about the extension. It also contains optional references to [assets](../concepts.md#extension-assets "Learn more about the concept of Dynatrace Extensions.") used by the extension.
 
-* `name`âthe name of your extension. A custom extension name (an extension not developed by Dynatrace) must start with `custom:`. The string must comply with the metric [ingestion protocol requirements](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#dimension-optional "Learn how the data ingestion protocol for Dynatrace Metrics API works.") for dimensions.
+* `name`âthe name of your extension. A custom extension name (an extension not developed by Dynatrace) must start with `custom:`. The string must comply with the metric [ingestion protocol requirements](../../extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#dimension-optional "Learn how the data ingestion protocol for Dynatrace Metrics API works.") for dimensions.
 * `version`âthe version of your extension in `major`.`minor`.`build` format, such as `1.0.0`. Your Dynatrace environment can store 10 extension versions, but only one can be active at the time.
 * `minDynatraceVersion`âthe earliest Dynatrace version supported by the extension enclosed in quotes (`"`), such as `"1.213"`.
 * `author`âthe extension developer or company.
@@ -163,7 +163,7 @@ The extension YAML file starts with basic information about the extension. It al
 
 ## Groups and subgroups
 
-You can organize your metrics into groups and subgroups to assign metrics within a group to specific [dimensions](#dimensions) or [feature sets](/docs/ingest-from/extensions/concepts#feature-sets "Learn more about the concept of Dynatrace Extensions."), or control the [interval](#interval) at which they're reported at a group level.
+You can organize your metrics into groups and subgroups to assign metrics within a group to specific [dimensions](#dimensions) or [feature sets](../concepts.md#feature-sets "Learn more about the concept of Dynatrace Extensions."), or control the [interval](#interval) at which they're reported at a group level.
 
 For each extension, you can define 10 groups, and each group can contain 10 subgroups.
 
@@ -292,8 +292,8 @@ interval: 5m
 You can define metrics at the extension, group, and subgroup level. The details on how you extract metric values vary depending on the data source type.
 See:
 
-* [SNMP](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions#dimensions "Learn how to create an SNMP extension using the Extensions framework.")
-* [WMI](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions#dimensions "Learn how to create a WMI extension using the Extensions framework.")
+* [SNMP](data-sources/snmp-extensions.md#dimensions "Learn how to create an SNMP extension using the Extensions framework.")
+* [WMI](data-sources/wmi-extensions.md#dimensions "Learn how to create a WMI extension using the Extensions framework.")
 
 ### Best practices for metric keys
 
@@ -304,9 +304,9 @@ The metrics you ingest into Dynatrace using your extension are just some of the 
 You can define a dimension at the metric, group, and subgroup level. The details on how you extract dimension values vary depending on the data source type.
 See:
 
-* [SNMP](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions#dimensions "Learn how to create an SNMP extension using the Extensions framework.")
-* [WMI](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions#dimensions "Learn how to create a WMI extension using the Extensions framework.")
-* [Prometheus](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions#dimensions "Learn how to create a Prometheus extension using the Extensions framework.")
+* [SNMP](data-sources/snmp-extensions.md#dimensions "Learn how to create an SNMP extension using the Extensions framework.")
+* [WMI](data-sources/wmi-extensions.md#dimensions "Learn how to create a WMI extension using the Extensions framework.")
+* [Prometheus](data-sources/prometheus-extensions.md#dimensions "Learn how to create a Prometheus extension using the Extensions framework.")
 
 ## Variables
 
@@ -528,4 +528,4 @@ Define the filter based on a condition as follows:
     filter: const:$not(<expr>)
     ```
 
-The filtering logic is different for WMI extensions, where you pass the condition as a query. For more information, see [Filter extracted dimensions](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-schema-reference#filter-extracted-dimensions "Learn about WMI extensions in the Extensions framework.").
+The filtering logic is different for WMI extensions, where you pass the condition as a query. For more information, see [Filter extracted dimensions](data-sources/wmi-extensions/wmi-schema-reference.md#filter-extracted-dimensions "Learn about WMI extensions in the Extensions framework.").

@@ -41,25 +41,25 @@ Required permissions: `settings:objects:read` and `settings:objects:write` with 
 
 Show Settings API schemas
 
-* [Settings API - Pipeline Groups configuration (events) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-pipeline-groups "View builtin:openpipeline.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (bizevents) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-pipeline-groups "View builtin:openpipeline.bizevents.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (spans) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-pipeline-groups "View builtin:openpipeline.spans.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (logs) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipeline-groups "View builtin:openpipeline.logs.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (davis.problems) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-pipeline-groups "View builtin:openpipeline.davis.problems.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (metrics) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-pipeline-groups "View builtin:openpipeline.metrics.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (security.events) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-pipeline-groups "View builtin:openpipeline.security.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (events.security) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-pipeline-groups "View builtin:openpipeline.events.security.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (davis.events) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-pipeline-groups "View builtin:openpipeline.davis.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (events.sdlc) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-pipeline-groups "View builtin:openpipeline.events.sdlc.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (system.events) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-pipeline-groups "View builtin:openpipeline.system.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (usersessions) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-pipeline-groups "View builtin:openpipeline.usersessions.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (user.events) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-pipeline-groups "View builtin:openpipeline.user.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (events) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-pipeline-groups.md "View builtin:openpipeline.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (bizevents) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-pipeline-groups.md "View builtin:openpipeline.bizevents.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (spans) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-pipeline-groups.md "View builtin:openpipeline.spans.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (logs) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipeline-groups.md "View builtin:openpipeline.logs.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (davis.problems) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-pipeline-groups.md "View builtin:openpipeline.davis.problems.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (metrics) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-pipeline-groups.md "View builtin:openpipeline.metrics.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (security.events) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-pipeline-groups.md "View builtin:openpipeline.security.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (events.security) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-pipeline-groups.md "View builtin:openpipeline.events.security.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (davis.events) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-pipeline-groups.md "View builtin:openpipeline.davis.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (events.sdlc) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-pipeline-groups.md "View builtin:openpipeline.events.sdlc.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (system.events) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-pipeline-groups.md "View builtin:openpipeline.system.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (usersessions) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-pipeline-groups.md "View builtin:openpipeline.usersessions.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (user.events) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-pipeline-groups.md "View builtin:openpipeline.user.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
 
 ### Prior knowledge
 
-* You know how to create pipelines via the [Settings API](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipelines "View builtin:openpipeline.logs.pipelines settings schema table of your monitoring environment via the Dynatrace API.").
-* You know how to [set access control in OpenPipeline](/docs/platform/openpipeline/getting-started/set-access-control "Distribute OpenPipeline ingest source and pipeline management via owner-based access control.").
-* You are familiar with [pipeline groups](/docs/platform/openpipeline/concepts/pipeline-groups "Understand how restricting and mandating configurations for pipeline groups via Settings API works.") and [pipeline group limits](/docs/platform/openpipeline/reference/limits#pipeline-groups "Reference limits of Dynatrace OpenPipeline.").
+* You know how to create pipelines via the [Settings API](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipelines.md "View builtin:openpipeline.logs.pipelines settings schema table of your monitoring environment via the Dynatrace API.").
+* You know how to [set access control in OpenPipeline](../getting-started/set-access-control.md "Distribute OpenPipeline ingest source and pipeline management via owner-based access control.").
+* You are familiar with [pipeline groups](../concepts/pipeline-groups.md "Understand how restricting and mandating configurations for pipeline groups via Settings API works.") and [pipeline group limits](../reference/limits.md#pipeline-groups "Reference limits of Dynatrace OpenPipeline.").
 
 ## Configure pipeline groups
 
@@ -1817,11 +1817,11 @@ In this tutorial, we'll create two pipeline groups, one per cloud provider, each
 
   }
   ```
-* Use the [`POST /api/v2/settings/objects`](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") request with the pipeline schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.pipelines`).
+* Use the [`POST /api/v2/settings/objects`](../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") request with the pipeline schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.pipelines`).
 
 ### 2. Create member pipelines
 
-1. To create a member pipeline, create a custom pipeline with the member role (`"groupRole": "memberPipeline"` and `"routing": "routable"`). Use the OpenPipeline settings Web UI or the [`POST /api/v2/settings/objects`](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") request with the pipeline schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.pipelines`).
+1. To create a member pipeline, create a custom pipeline with the member role (`"groupRole": "memberPipeline"` and `"routing": "routable"`). Use the OpenPipeline settings Web UI or the [`POST /api/v2/settings/objects`](../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") request with the pipeline schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.pipelines`).
 
    JSON example
 
@@ -2002,7 +2002,7 @@ In this tutorial, we'll create two pipeline groups, one per cloud provider, each
 
    }
    ```
-2. Create the associated route. Use the OpenPipeline settings Web UI or the [`POST /api/v2/settings/objects`](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") request with the route schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.routing`).
+2. Create the associated route. Use the OpenPipeline settings Web UI or the [`POST /api/v2/settings/objects`](../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") request with the route schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.routing`).
 
    JSON example
 
@@ -2544,16 +2544,16 @@ Azure
 
    }
    ```
-2. Use the [`POST /api/v2/settings/objects`](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") request with the pipeline group schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.pipeline-groups`).
+2. Use the [`POST /api/v2/settings/objects`](../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") request with the pipeline group schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.pipeline-groups`).
 
 ## Congratulations!
 
 You now have a complete API-based workflow to manage pipeline groups, enforce global governance, and scale pipeline operations across AWS and Azure environments.
 
-You can create new member pipelines and then add them to the group any time. Use the [`PUT /api/v2/settings/objects/{objectId}`](/docs/dynatrace-api/environment-api/settings/objects/put-object "Edit a settings object via the Dynatrace API.") request with the pipeline group schema of the configuration scope (`builtin:openpipeline.<configuration-scope>.pipeline-groups`).
+You can create new member pipelines and then add them to the group any time. Use the [`PUT /api/v2/settings/objects/{objectId}`](../../../dynatrace-api/environment-api/settings/objects/put-object.md "Edit a settings object via the Dynatrace API.") request with the pipeline group schema of the configuration scope (`builtin:openpipeline.<configuration-scope>.pipeline-groups`).
 
 Once the request is successfull, the `memberPipelines` field of the pipeline group lists the member pipeline IDs.
 
 ## Related topics
 
-* [OpenPipeline pipeline groups](/docs/platform/openpipeline/concepts/pipeline-groups "Understand how restricting and mandating configurations for pipeline groups via Settings API works.")
+* [OpenPipeline pipeline groups](../concepts/pipeline-groups.md "Understand how restricting and mandating configurations for pipeline groups via Settings API works.")

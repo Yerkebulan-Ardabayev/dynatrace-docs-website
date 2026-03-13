@@ -13,11 +13,11 @@ scraped: 2026-03-06T21:32:25.972152
 * Чтение: 2 минуты
 * Опубликовано 27 января 2023 г.
 
-Dynatrace позволяет легко анализировать [Apdex](/docs/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings "Узнайте, как Dynatrace использует Apdex для измерения удовлетворённости пользователей производительностью приложений.") вашего приложения по различным измерениям. Вы можете проверить рейтинг Apdex для определённого пользовательского действия, локации и приложения, а также просматривать рейтинг Apdex для каждого пользовательского действия в рамках одной пользовательской сессии.
+Dynatrace позволяет легко анализировать [Apdex](../rum-concepts/scores-and-ratings/apdex-ratings.md "Узнайте, как Dynatrace использует Apdex для измерения удовлетворённости пользователей производительностью приложений.") вашего приложения по различным измерениям. Вы можете проверить рейтинг Apdex для определённого пользовательского действия, локации и приложения, а также просматривать рейтинг Apdex для каждого пользовательского действия в рамках одной пользовательской сессии.
 
 ## Анализ по локации
 
-Используйте представление **World map**, доступное для ваших [веб-](/docs/observe/digital-experience/web-applications/analyze-and-use/world-map-view "Узнайте, как представление World map предоставляет аналитические данные о рейтингах Apdex, пользовательских действиях, продолжительности действий и ошибках JavaScript."), [мобильных](/docs/observe/digital-experience/mobile-applications/analyze-and-use/check-usage-metrics-mobile#geo-regions "Узнайте, как использовать Dynatrace для проверки метрик пользовательского опыта вашего мобильного приложения.") и [пользовательских приложений](/docs/observe/digital-experience/custom-applications/analyze-and-use/check-usage-metrics-custom#geo-regions "Узнайте, как использовать Dynatrace для проверки метрик пользовательского опыта вашего пользовательского приложения."), чтобы видеть цветовые коды оценок Apdex и другую информацию о производительности.
+Используйте представление **World map**, доступное для ваших [веб-](../web-applications/analyze-and-use/world-map-view.md "Узнайте, как представление World map предоставляет аналитические данные о рейтингах Apdex, пользовательских действиях, продолжительности действий и ошибках JavaScript."), [мобильных](../mobile-applications/analyze-and-use/check-usage-metrics-mobile.md#geo-regions "Узнайте, как использовать Dynatrace для проверки метрик пользовательского опыта вашего мобильного приложения.") и [пользовательских приложений](../custom-applications/analyze-and-use/check-usage-metrics-custom.md#geo-regions "Узнайте, как использовать Dynatrace для проверки метрик пользовательского опыта вашего пользовательского приложения."), чтобы видеть цветовые коды оценок Apdex и другую информацию о производительности.
 
 ![Location-based analysis](https://dt-cdn.net/images/apdex-on-worldmap-1903-677a742e2e.png)
 
@@ -45,10 +45,10 @@ Dynatrace позволяет легко анализировать [Apdex](/docs
      ![Application-based analysis](https://dt-cdn.net/images/apdex-on-application-overview-1905-895ba0a0d2.png)
 * **Мобильные приложения**
 
-  [График **Apdex rating**](/docs/observe/digital-experience/mobile-applications/analyze-and-use/check-usage-metrics-mobile#apdex-rating "Узнайте, как использовать Dynatrace для проверки метрик пользовательского опыта вашего мобильного приложения.") доступен на странице обзора приложения.
+  [График **Apdex rating**](../mobile-applications/analyze-and-use/check-usage-metrics-mobile.md#apdex-rating "Узнайте, как использовать Dynatrace для проверки метрик пользовательского опыта вашего мобильного приложения.") доступен на странице обзора приложения.
 * **Пользовательские приложения**
 
-  Откройте [график **Apdex rating**](/docs/observe/digital-experience/custom-applications/analyze-and-use/check-usage-metrics-custom#apdex-rating "Узнайте, как использовать Dynatrace для проверки метрик пользовательского опыта вашего пользовательского приложения.") со страницы обзора приложения.
+  Откройте [график **Apdex rating**](../custom-applications/analyze-and-use/check-usage-metrics-custom.md#apdex-rating "Узнайте, как использовать Dynatrace для проверки метрик пользовательского опыта вашего пользовательского приложения.") со страницы обзора приложения.
 
 ## Анализ пользовательского пути через несколько приложений
 
@@ -66,7 +66,7 @@ Dynatrace позволяет легко анализировать [Apdex](/docs
 
 ## Связанные темы
 
-* [Рейтинги Apdex](/docs/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings "Узнайте, как Dynatrace использует Apdex для измерения удовлетворённости пользователей производительностью приложений.")
-* [Настройка параметров Apdex для веб-приложений](/docs/observe/digital-experience/web-applications/additional-configuration/configure-apdex-web "Настройте пороговые значения производительности для удовлетворённости пользователей вашего веб-приложения и его ключевых пользовательских действий.")
-* [Настройка параметров Apdex для мобильных приложений](/docs/observe/digital-experience/mobile-applications/additional-configuration/configure-apdex-mobile "Настройте пороговые значения производительности для удовлетворённости пользователей вашего мобильного приложения и его ключевых пользовательских действий.")
-* [Настройка параметров Apdex для пользовательских приложений](/docs/observe/digital-experience/custom-applications/additional-configuration/configure-apdex-custom "Настройте пороговые значения производительности для удовлетворённости пользователей вашего пользовательского приложения и его ключевых пользовательских действий.")
+* [Рейтинги Apdex](../rum-concepts/scores-and-ratings/apdex-ratings.md "Узнайте, как Dynatrace использует Apdex для измерения удовлетворённости пользователей производительностью приложений.")
+* [Настройка параметров Apdex для веб-приложений](../web-applications/additional-configuration/configure-apdex-web.md "Настройте пороговые значения производительности для удовлетворённости пользователей вашего веб-приложения и его ключевых пользовательских действий.")
+* [Настройка параметров Apdex для мобильных приложений](../mobile-applications/additional-configuration/configure-apdex-mobile.md "Настройте пороговые значения производительности для удовлетворённости пользователей вашего мобильного приложения и его ключевых пользовательских действий.")
+* [Настройка параметров Apdex для пользовательских приложений](../custom-applications/additional-configuration/configure-apdex-custom.md "Настройте пороговые значения производительности для удовлетворённости пользователей вашего пользовательского приложения и его ключевых пользовательских действий.")

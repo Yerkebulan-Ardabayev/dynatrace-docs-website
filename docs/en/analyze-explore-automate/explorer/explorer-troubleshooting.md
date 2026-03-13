@@ -12,14 +12,14 @@ scraped: 2026-03-06T21:27:03.952660
 * 1-min read
 * Published Mar 10, 2022
 
-This page refers to Data Explorer, a Dynatrace Classic feature closely integrated with classic dashboards created using [![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic."). [Upgrade to the latest Dynatrace](/docs/platform/upgrade "Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data.") to take advantage of our latest data exploration capabilities.
+This page refers to Data Explorer, a Dynatrace Classic feature closely integrated with classic dashboards created using [![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**](../dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic."). [Upgrade to the latest Dynatrace](../../platform/upgrade.md "Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data.") to take advantage of our latest data exploration capabilities.
 
 Why am I not seeing all series of my metric?
 
 * The *default* number of displayed series per metric is `20`. Consequently, some series might be missing in Data Explorer. To ensure the series data you're looking for is displayed, provide more specific filters such as a management zone or an entity name filter.
-* The *maximum* number of displayed series per metric is `100`. Note that this limit applies even if you remove the [**limit** transformation](/docs/dynatrace-api/environment-api/metric-v2/metric-selector#limit "Configure the metric selector for the Metric v2 API.") from the metric selector on the [**Code** tab](/docs/analyze-explore-automate/explorer/explorer-advanced-query-editor "Build advanced queries using the Data Explorer advanced mode.").
+* The *maximum* number of displayed series per metric is `100`. Note that this limit applies even if you remove the [**limit** transformation](../../dynatrace-api/environment-api/metric-v2/metric-selector.md#limit "Configure the metric selector for the Metric v2 API.") from the metric selector on the [**Code** tab](explorer-advanced-query-editor.md "Build advanced queries using the Data Explorer advanced mode.").
 
-If series data is absent for a metric expression, see [Why is the result of my metric expression empty?](/docs/dynatrace-api/environment-api/metric-v2/metric-faq#empty-result-metric-expression "Frequently asked questions about the Metrics API v2.").
+If series data is absent for a metric expression, see [Why is the result of my metric expression empty?](../../dynatrace-api/environment-api/metric-v2/metric-faq.md#empty-result-metric-expression "Frequently asked questions about the Metrics API v2.").
 
 Why are some table cells empty when they should have values?
 
@@ -54,8 +54,8 @@ To set the adjusted timeframe as the default timeframe for the dashboard
 
 For a discussion of this issue, see [Correction required on Dashboard Charts showing dip at current timeï»¿](https://community.dynatrace.com/t5/Dynatrace-product-ideas/RFE-Correction-required-onDashboard-Charts-showing-dip-at/idi-p/144070) in the Dynatrace Community.
 
-For more about timeframes, see [Dynatrace dashboard timeframe and management zone settings](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings.").
+For more about timeframes, see [Dynatrace dashboard timeframe and management zone settings](../dashboards-classic/dashboards/dashboard-timeframe.md "Learn about Dynatrace dashboard timeframe and management zone settings.").
 
 ## Related topics
 
-* [Metrics API - FAQ](/docs/dynatrace-api/environment-api/metric-v2/metric-faq "Frequently asked questions about the Metrics API v2.")
+* [Metrics API - FAQ](../../dynatrace-api/environment-api/metric-v2/metric-faq.md "Frequently asked questions about the Metrics API v2.")

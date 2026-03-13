@@ -17,9 +17,9 @@ To deploy OneAgent on **AWS Elastic Container Service** (ECS) clusters with EC2 
 
 ## Prerequisites
 
-* Create a [PaaS Token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
+* Create a [PaaS Token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.").
 * ECS cluster with **Linux-based container instances**.
-* Review the list of [supported applications and versions](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+* Review the list of [supported applications and versions](../../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 * Create the `ecsinstanceRole` IAM role in the ECS console.
 
 ## Deploy OneAgent as a daemon service
@@ -56,9 +56,9 @@ This approach describes the installation of OneAgent as a daemon service in its 
    If you connect via an ActiveGate, you can skip the certificate check by adding the `ONEAGENT_INSTALLER_SKIP_CERT_CHECK` key with the value `true`.
 6. Optional Add OneAgent installer parameters.
 
-   While still in **Environment variables**, you can [customize your OneAgent installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.") by adding several OneAgent installer parameters in the command text box. Make sure to separate each parameter by a space. For example, `--set-app-log-content-access=false --set-network-zone=<your.network.zone>`.
+   While still in **Environment variables**, you can [customize your OneAgent installation](../../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters.") by adding several OneAgent installer parameters in the command text box. Make sure to separate each parameter by a space. For example, `--set-app-log-content-access=false --set-network-zone=<your.network.zone>`.
 
-   Set the `--set-network-zone=<your.network.zone>` parameter if you want to configure network zones. See [network zones](/docs/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
+   Set the `--set-network-zone=<your.network.zone>` parameter if you want to configure network zones. See [network zones](../../../../manage/network-zones.md "Find out how network zones work in Dynatrace.") for more information.
 7. Go to **Storage and logging** and enter the following values in **Mount point**:
 
    * **Source volume**: `oneagent`
@@ -96,16 +96,16 @@ This approach describes the installation of OneAgent as a daemon service in its 
 
 ## Security implications
 
-See [Docker security implications](/docs/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#security "Install and update Dynatrace OneAgent as a Docker container.") for details.
+See [Docker security implications](../../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#security "Install and update Dynatrace OneAgent as a Docker container.") for details.
 
 ## Limitations
 
-See [Docker limitations](/docs/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container.") for details.
+See [Docker limitations](../../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Install and update Dynatrace OneAgent as a Docker container.") for details.
 
 ## Monitoring consumption
 
-For Elastic Container Service, monitoring consumption is based on hosts units. See [Application and Infrastructure Monitoring (Host Units)](/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
+For Elastic Container Service, monitoring consumption is based on hosts units. See [Application and Infrastructure Monitoring (Host Units)](../../../../license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
 
 ## Related topics
 
-* [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* [OneAgent platform and capability support matrix](../../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

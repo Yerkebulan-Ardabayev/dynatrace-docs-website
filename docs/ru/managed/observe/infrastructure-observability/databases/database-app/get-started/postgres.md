@@ -19,10 +19,10 @@ scraped: 2026-03-04T21:31:47.373622
 * Назначьте группу или группы ActiveGate, которые будут удалённо подключаться к вашему серверу базы данных PostgreSQL для получения данных. Все ActiveGate в каждой группе должны иметь возможность подключения к вашему серверу базы данных PostgreSQL.
 * Для самостоятельно размещённого PostgreSQL:
 
-  + Должны быть установлены [дополнительные поставляемые модули](/docs/observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring#monitor-self-hosted-postgres "Наблюдайте, анализируйте и оптимизируйте использование, работоспособность и производительность вашей базы данных PostgreSQL.") PostgreSQL.
+  + Должны быть установлены [дополнительные поставляемые модули](../../../../../../observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring.md#monitor-self-hosted-postgres "Наблюдайте, анализируйте и оптимизируйте использование, работоспособность и производительность вашей базы данных PostgreSQL.") PostgreSQL.
 * Для облачных управляемых сервисов PostgreSQL:
 
-  + Убедитесь, что [определённые расширения и настройки включены](/docs/observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring#setup-cloud-monitoring-capabilities "Наблюдайте, анализируйте и оптимизируйте использование, работоспособность и производительность вашей базы данных PostgreSQL.").
+  + Убедитесь, что [определённые расширения и настройки включены](../../../../../../observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring.md#setup-cloud-monitoring-capabilities "Наблюдайте, анализируйте и оптимизируйте использование, работоспособность и производительность вашей базы данных PostgreSQL.").
 * Создайте выделенного пользователя базы данных в вашем экземпляре базы данных. Dynatrace использует этого пользователя для выполнения мониторинговых запросов к вашей базе данных PostgreSQL.
 
   ```
@@ -52,7 +52,7 @@ scraped: 2026-03-04T21:31:47.373622
 
 ### Выбор группы ActiveGate
 
-1. Выберите [группу ActiveGate](/docs/ingest-from/dynatrace-activegate/activegate-group "Узнайте основные концепции групп ActiveGate."), чтобы определить, какие ActiveGate будут запускать расширение.
+1. Выберите [группу ActiveGate](../../../../../../ingest-from/dynatrace-activegate/activegate-group.md "Узнайте основные концепции групп ActiveGate."), чтобы определить, какие ActiveGate будут запускать расширение.
 2. Нажмите **Next**.
 
 ### Создание подключения
@@ -67,7 +67,7 @@ scraped: 2026-03-04T21:31:47.373622
 3. Укажите учётные данные для **аутентификации** пользователя мониторинга `dynatrace`, который вы создали, напрямую или используйте безопасные альтернативы.
 
    * Базовые учётные данные: данные аутентификации, переданные Dynatrace при активации конфигурации мониторинга, маскируются для предотвращения их извлечения.
-   * Хранилище учётных данных: используйте [учётные данные из хранилища](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring#authentication "Расширения PostgreSQL в фреймворке расширений.") для безопасного хранения и извлечения учётных данных базы данных.
+   * Хранилище учётных данных: используйте [учётные данные из хранилища](../../../../../../ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring.md#authentication "Расширения PostgreSQL в фреймворке расширений.") для безопасного хранения и извлечения учётных данных базы данных.
 4. Нажмите **Next**.
 
 ### Установка экземпляра
@@ -78,7 +78,7 @@ scraped: 2026-03-04T21:31:47.373622
 2. Завершите ручную настройку для необходимых экземпляров.
 3. Нажмите **Create DB instance monitoring**.
 
-Вы должны запустить этот скрипт для получения метрик из базы данных. Для получения дополнительной информации обратитесь к деталям вспомогательных функций в разделе [установка экземпляра](/docs/observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring#install-instance "Наблюдайте, анализируйте и оптимизируйте использование, работоспособность и производительность вашей базы данных PostgreSQL.").
+Вы должны запустить этот скрипт для получения метрик из базы данных. Для получения дополнительной информации обратитесь к деталям вспомогательных функций в разделе [установка экземпляра](../../../../../../observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring.md#install-instance "Наблюдайте, анализируйте и оптимизируйте использование, работоспособность и производительность вашей базы данных PostgreSQL.").
 
 Рекомендация
 
@@ -92,16 +92,16 @@ scraped: 2026-03-04T21:31:47.373622
 
 ## Сценарии использования
 
-Узнайте больше о мониторинге PostgreSQL в этих [сценариях использования](/docs/observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring#use-cases "Наблюдайте, анализируйте и оптимизируйте использование, работоспособность и производительность вашей базы данных PostgreSQL.").
+Узнайте больше о мониторинге PostgreSQL в этих [сценариях использования](../../../../../../observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring.md#use-cases "Наблюдайте, анализируйте и оптимизируйте использование, работоспособность и производительность вашей базы данных PostgreSQL.").
 
 ## Наборы функций
 
-[Наборы функций](/docs/observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring#feature-sets "Наблюдайте, анализируйте и оптимизируйте использование, работоспособность и производительность вашей базы данных PostgreSQL.") ограничивают, какие метрики собираются при активации расширения.
+[Наборы функций](../../../../../../observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring.md#feature-sets "Наблюдайте, анализируйте и оптимизируйте использование, работоспособность и производительность вашей базы данных PostgreSQL.") ограничивают, какие метрики собираются при активации расширения.
 
 ## Часто задаваемые вопросы и устранение неполадок
 
-Для получения полной информации перейдите в раздел [FAQ](/docs/observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring#faq "Наблюдайте, анализируйте и оптимизируйте использование, работоспособность и производительность вашей базы данных PostgreSQL.").
+Для получения полной информации перейдите в раздел [FAQ](../../../../../../observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring.md#faq "Наблюдайте, анализируйте и оптимизируйте использование, работоспособность и производительность вашей базы данных PostgreSQL.").
 
 ## Связанные темы
 
-* [Расширение PostgreSQL](/docs/observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring "Наблюдайте, анализируйте и оптимизируйте использование, работоспособность и производительность вашей базы данных PostgreSQL.")
+* [Расширение PostgreSQL](../../../../../../observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring.md "Наблюдайте, анализируйте и оптимизируйте использование, работоспособность и производительность вашей базы данных PostgreSQL.")

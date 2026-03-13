@@ -17,7 +17,7 @@ scraped: 2026-03-06T21:10:49.876144
 Новые функции OneAgent полностью поддерживаются и протестированы сразу после их появления.
 
 * Для новых окружений вы можете активировать или деактивировать функции OneAgent (opt-in) в зависимости от конкретного сценария использования.
-* Для существующих окружений вновь добавленные функции OneAgent по-прежнему требуют явной активации пользователями с разрешением **Write settings** (`settings.write`) в [таблице схемы Settings API - OneAgent features](/docs/dynatrace-api/environment-api/settings/schemas/builtin-oneagent-features "Просмотр таблицы схемы настроек builtin:oneagent.features вашего окружения мониторинга через Dynatrace API.").
+* Для существующих окружений вновь добавленные функции OneAgent по-прежнему требуют явной активации пользователями с разрешением **Write settings** (`settings.write`) в [таблице схемы Settings API - OneAgent features](../../dynatrace-api/environment-api/settings/schemas/builtin-oneagent-features.md "Просмотр таблицы схемы настроек builtin:oneagent.features вашего окружения мониторинга через Dynatrace API.").
 
 ## Область действия
 
@@ -26,12 +26,12 @@ scraped: 2026-03-06T21:10:49.876144
 ## Сценарии использования
 
 * Поскольку новые функции постоянно добавляются в OneAgent, вам необходимо явно включать их в существующих окружениях мониторинга, чтобы избежать неожиданных изменений.
-* Вы можете отключить определённые функции OneAgent на детальном уровне при устранении проблем. Это может быть полезно для определения первопричины проблемы вплоть до конкретной функции. Подробнее см. в разделе [Устранение проблем глубокого мониторинга OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-deep-monitoring-issues "Работайте с командой поддержки Dynatrace для устранения проблем глубокого мониторинга OneAgent.").
+* Вы можете отключить определённые функции OneAgent на детальном уровне при устранении проблем. Это может быть полезно для определения первопричины проблемы вплоть до конкретной функции. Подробнее см. в разделе [Устранение проблем глубокого мониторинга OneAgent](oneagent-troubleshooting/troubleshoot-oneagent-deep-monitoring-issues.md "Работайте с командой поддержки Dynatrace для устранения проблем глубокого мониторинга OneAgent.").
 
 ## Веб-интерфейс или API
 
 * Вы можете включать или отключать функции OneAgent через веб-интерфейс Dynatrace на странице **OneAgent features** на соответствующем уровне (глобальном или группы процессов).
-* Вы можете использовать [Settings API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API.") Dynatrace для выполнения тех же настроек через API-вызовы.
+* Вы можете использовать [Settings API](../../dynatrace-api/environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.") Dynatrace для выполнения тех же настроек через API-вызовы.
 
 ### Настройка через веб-интерфейс
 
@@ -66,17 +66,17 @@ scraped: 2026-03-06T21:10:49.876144
 
 ### Настройка через API
 
-С помощью [Settings API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API.") вы можете:
+С помощью [Settings API](../../dynatrace-api/environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.") вы можете:
 
 * **Включать/отключать** настройки функций OneAgent.
 * **Переопределять область действия** функции OneAgent, чтобы задать другую настройку для конкретной группы процессов или процесса.
 * **Экспортировать** текущую конфигурацию из окружения.
 
-Для использования API вам потребуется токен доступа с областями **Read settings** (`settings.read`) и **Write settings** (`settings.write`). Чтобы узнать, как его получить, см. [Создание токена доступа](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Узнайте, как пройти аутентификацию для использования Dynatrace API.").
+Для использования API вам потребуется токен доступа с областями **Read settings** (`settings.read`) и **Write settings** (`settings.write`). Чтобы узнать, как его получить, см. [Создание токена доступа](../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Узнайте, как пройти аутентификацию для использования Dynatrace API.").
 
 Для использования Settings API
 
-1. Чтобы узнать формат JSON, необходимый для отправки вашей конфигурации, используйте конечную точку [Get a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "Просмотр схемы настроек через Dynatrace API."). Идентификатор схемы — `builtin:oneagent.features`.
+1. Чтобы узнать формат JSON, необходимый для отправки вашей конфигурации, используйте конечную точку [Get a schema](../../dynatrace-api/environment-api/settings/schemas/get-schema.md "Просмотр схемы настроек через Dynatrace API."). Идентификатор схемы — `builtin:oneagent.features`.
 
    Пример: JSON-полезная нагрузка для отключения обогащения контекста журналов Java для неструктурированных журналов для конкретной группы процессов.
 
@@ -165,4 +165,4 @@ scraped: 2026-03-06T21:10:49.876144
 
    ]
    ```
-2. Для отправки конфигурации используйте конечную точку [Post an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Создание или валидация объекта настроек через Dynatrace API.").
+2. Для отправки конфигурации используйте конечную точку [Post an object](../../dynatrace-api/environment-api/settings/objects/post-object.md "Создание или валидация объекта настроек через Dynatrace API.").

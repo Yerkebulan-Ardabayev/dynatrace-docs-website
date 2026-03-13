@@ -35,4 +35,4 @@ Use the top search bar to find an extension by entering its name, technology, or
 
 Latest Dynatrace
 
-With ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**, Dynatrace allows you to manage your extensions, including installation, configuration, and monitoring.](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.")
+With ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**, Dynatrace allows you to manage your extensions, including installation, configuration, and monitoring.](../../ingest-from/extensions/manage-extensions.md "Learn how to manage extensions.")

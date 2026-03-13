@@ -50,7 +50,7 @@ Linux
 
 ![K8s best practice](https://dt-cdn.net/images/k8s-labels-env-1-662-06080041a8.png)
 
-Начиная с версии 0.10.0+ Dynatrace Operator, вы можете настроить передачу меток релизов, установив флаг функции `feature.dynatrace.com/label-version-detection=true` в пользовательском ресурсе DynaKube. Подробности см. в разделе [Настройка передачи меток сборки](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/build-label-propagation "Configure build label propagation").
+Начиная с версии 0.10.0+ Dynatrace Operator, вы можете настроить передачу меток релизов, установив флаг функции `feature.dynatrace.com/label-version-detection=true` в пользовательском ресурсе DynaKube. Подробности см. в разделе [Настройка передачи меток сборки](../../ingest-from/setup-on-k8s/guides/metadata-automation/build-label-propagation.md "Configure build label propagation").
 
 Вы можете использовать:
 
@@ -68,12 +68,12 @@ Linux
 
 ![Recommended labels](https://dt-cdn.net/images/k8s-recommended-labels-1982-5e4ca55659.png)
 
-Dynatrace OneAgent с [правами просмотра пространства имён](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments#viewer "Organize and filter your monitored applications by importing labels and annotations from your Kubernetes/OpenShift environment.") может автоматически обнаруживать метки, прикреплённые к подам Kubernetes.
+Dynatrace OneAgent с [правами просмотра пространства имён](../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments.md#viewer "Organize and filter your monitored applications by importing labels and annotations from your Kubernetes/OpenShift environment.") может автоматически обнаруживать метки, прикреплённые к подам Kubernetes.
 
 * **Version** и **Product** отображаются в реестре релизов.
 * Пространства имён Kubernetes или настроенные имена хост-групп Dynatrace отображаются как **Stages** в реестре релизов.
 
-Если вам нужно обновить информацию о версии, обновите конфигурацию развёртывания, включив обновлённую метку, и выполните повторное развёртывание подов. Это обеспечит правильную установку переменной среды `DT_RELEASE_VERSION` при запуске пода. Дополнительную информацию см. в разделе [Настройка передачи меток сборки](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/build-label-propagation "Configure build label propagation").
+Если вам нужно обновить информацию о версии, обновите конфигурацию развёртывания, включив обновлённую метку, и выполните повторное развёртывание подов. Это обеспечит правильную установку переменной среды `DT_RELEASE_VERSION` при запуске пода. Дополнительную информацию см. в разделе [Настройка передачи меток сборки](../../ingest-from/setup-on-k8s/guides/metadata-automation/build-label-propagation.md "Configure build label propagation").
 
 Приведённая ниже команда не передаст обновлённую метку в переменную среды `DT_RELEASE_VERSION`, используемую OneAgent.
 
@@ -83,17 +83,17 @@ kubectl label --overwrite pod yourPodId -n yourNamespace app.kubernetes.io/versi
 
 ## Приём событий
 
-Используйте Dynatrace Events API для отправки [пользовательских событий развёртывания](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories/info-events "Learn more about informational events and the logic behind raising them.") с метаданными релизов.
+Используйте Dynatrace Events API для отправки [пользовательских событий развёртывания](../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories/info-events.md "Learn more about informational events and the logic behind raising them.") с метаданными релизов.
 
 * Информация о версиях, отправленная через события, не может использоваться для фильтрации трассировок или метрик.
   Всегда устанавливайте переменные среды для отражения текущей развёрнутой версии, чтобы обеспечить точную фильтрацию и анализ.
   Убедитесь, что переменные среды всегда указывают на текущую развёрнутую версию.
 
   + Поскольку процессы сопоставляются с помощью тегов, для каждого процесса создаётся отдельное событие.
-    В результате любой [рабочий процесс](/docs/analyze-explore-automate/workflows/quickstart "Build and run your first workflow."), подписанный на эти события, может быть запущен несколько раз.
+    В результате любой [рабочий процесс](../../analyze-explore-automate/workflows/quickstart.md "Build and run your first workflow."), подписанный на эти события, может быть запущен несколько раз.
     Чтобы избежать повторных выполнений, рекомендуется отправлять выделенное событие в рабочий процесс.
 
-В приведённом ниже примере JSON показано, как отправлять пользовательские события развёртывания в [API приёма событий](/docs/dynatrace-api/environment-api/events-v2/post-event "Ingests an event via the Dynatrace API.").
+В приведённом ниже примере JSON показано, как отправлять пользовательские события развёртывания в [API приёма событий](../../dynatrace-api/environment-api/events-v2/post-event.md "Ingests an event via the Dynatrace API.").
 
 Для обнаружения релиза должны быть выполнены следующие требования:
 
@@ -180,9 +180,9 @@ kubectl label --overwrite pod yourPodId -n yourNamespace app.kubernetes.io/versi
 Dynatrace поддерживает приём метаданных релизов через атрибуты ресурсов OpenTelemetry, позволяя передавать информацию о версиях через данные телеметрии.
 
 Чтобы использовать этот метод, определите переменную среды `OTEL_RESOURCE_ATTRIBUTES` в вашем приложении и задайте пары ключ-значение, представляющие метаданные релиза.
-Полный список поддерживаемых [атрибутов](/docs/semantic-dictionary/fields#deployment-attributes "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types."), называемых атрибутами развёртывания, см. в [Семантическом словаре](/docs/semantic-dictionary/fields "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
+Полный список поддерживаемых [атрибутов](../../semantic-dictionary/fields.md#deployment-attributes "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types."), называемых атрибутами развёртывания, см. в [Семантическом словаре](../../semantic-dictionary/fields.md "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
 Хотя Dynatrace обогащает данные телеметрии этими атрибутами, они не передаются сущностям экземпляров групп процессов.
-В результате релизы, определённые через атрибуты ресурсов OpenTelemetry, не будут отображаться в [реестре релизов](/docs/deliver/release-monitoring/monitor-releases-with-dynatrace#release-inventory "Analyze data related to each release version of your software.").
+В результате релизы, определённые через атрибуты ресурсов OpenTelemetry, не будут отображаться в [реестре релизов](monitor-releases-with-dynatrace.md#release-inventory "Analyze data related to each release version of your software.").
 
 ### Пример
 

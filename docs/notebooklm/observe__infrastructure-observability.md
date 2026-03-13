@@ -55,7 +55,7 @@ Parsers help you to improve filtering, troubleshooting, metrics, alerts, and das
 
 ![syslog-bundles](https://dt-cdn.net/images/env-syslogbundles-2589-90e4e38b45.png)
 
-For more information, see [Process logs with technology bundle parsers](/docs/platform/openpipeline/use-cases/tutorial-technology-processor "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.").
+For more information, see [Process logs with technology bundle parsers](../ru/platform/openpipeline/use-cases/tutorial-technology-processor.md "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.").
 
 ---
 
@@ -104,7 +104,7 @@ Tracking of services and dependencies is not limited to Azure. Thanks to Dynatra
 
 ## Related topics
 
-* [Set up Dynatrace on Microsoft Azure](/docs/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
+* [Set up Dynatrace on Microsoft Azure](../ru/ingest-from/microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")
 
 ---
 
@@ -126,7 +126,7 @@ scraped: 2026-03-06T21:24:56.840993
 * Published Aug 19, 2025
 * Preview
 
-If this is the first time you are creating a connection, first see the [onboarding instructions](/docs/ingest-from/amazon-web-services/create-an-aws-connection "See the differences between creating your AWS connections via API or ::app-settings::.") and its prerequisites.
+If this is the first time you are creating a connection, first see the [onboarding instructions](ingest-from/amazon-web-services/create-an-aws-connection.md "See the differences between creating your AWS connections via API or ::app-settings::.") and its prerequisites.
 
 If you have an existing classic connection and want to start the new cloud platform monitoring, delete the classic connection first and only then create a new cloud connection for the respective AWS Account.
 
@@ -174,7 +174,7 @@ scraped: 2026-03-06T21:24:55.181464
 * Published Aug 19, 2025
 * Preview
 
-If this is the first time you are creating a connection, first see the [onboarding instructions](/docs/ingest-from/microsoft-azure-services/create-an-azure-connection/azure-connection-app-settings "Onboard your Azure environments and create Azure connections via the Settings app.") and its prerequisites.
+If this is the first time you are creating a connection, first see the [onboarding instructions](ingest-from/microsoft-azure-services/create-an-azure-connection/azure-connection-app-settings.md "Onboard your Azure environments and create Azure connections via the Settings app.") and its prerequisites.
 
 If you have an existing classic connection and want to start the new cloud platform monitoring, delete the classic connection first and only then create a new cloud connection for the respective Azure subscription.
 
@@ -224,7 +224,7 @@ The centerpiece of this experience is ![Clouds](https://dt-cdn.net/images/clouds
 * Leverage your (existing) cloud tags to route notifications, define ownership, or allocate costs.
 * Take advantage of ready-made dashboards to save time and get instant insights.
 
-The underlying observability data is all powered by [Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), which supports flexible analytics through the [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, and ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
+The underlying observability data is all powered by [Grail](../ru/platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), which supports flexible analytics through the [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, and ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
 
 ![Get a comprehensive view of your multi-cloud environments and see your full cloud inventory](https://cdn.hub.central.dynatrace.com/hub/console/drafts/170/media/clouds-app-overview-aws-and-azure.png)![Details of problems associated with selected cloud resources are easy to analyze](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/8822a738-a2bf-4d75-bdfa-beabbb150a0e.png)![See full configuration details of cloud services](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/b96f7374-5a8e-4c7a-b256-d79f469803a4.png)![Get started immediately with ready-made dashboards. Customize them according to your needs.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/170/media/08-ready-made-dashboard-aws-lambda.png)![Use ready-made health alerts and warning signals and custom alert templates to assess health of your cloud services.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/d7350ea9-6129-4818-8798-27514232ca8f.png)![Easily and seamlessly set up a new AWS connection. New Cloud Connections simplifies the onboarding experience for customers.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/170/media/06-clouds-app-new-aws-connection_2.png)![You can still use Explorer Classic for classic cloud connections](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.clouds/media/f743e7e6-ec1d-488c-b0ae-5d5a3a8c98e5.png)
 
@@ -241,14 +241,14 @@ New cloud connections (AWS, Azure)
 Classic cloud connections (AWS, Azure, GCP)
 
 * Dynatrace SaaS environment powered by Grail and AppEngine hosted in any AWS region or an eligible Azure region
-* [DPS license](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") is required with the following capabilities:
+* [DPS license](license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") is required with the following capabilities:
 
-  + [Metrics powered by Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
-  + [Logs powered by Grail](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.")
-  + [Events powered by Grail](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+  + [Metrics powered by Grail](../ru/license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+  + [Logs powered by Grail](../ru/license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.")
+  + [Events powered by Grail](../ru/license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
 
 * Dynatrace SaaS environment powered by Grail and AppEngine
-* Available for [DPS license](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") and [classic licensing](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing.").
+* Available for [DPS license](license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") and [classic licensing](../ru/license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing.").
 
 See [concepts](#concepts) for the comparison between classic and new cloud connections.
 
@@ -315,10 +315,10 @@ Use the following guide to set up and configure a new cloud connection in Dynatr
 [01Create a new AWS connection
 
 * How-to guide
-* Learn how to create a new AWS connection in the Clouds app.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-aws-connection)[02Create a new Azure connection
+* Learn how to create a new AWS connection in the Clouds app.](../ru/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-aws-connection.md)[02Create a new Azure connection
 
 * How-to guide
-* Learn how to create a new Azure connection in the Clouds app.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-azure-connection)
+* Learn how to create a new Azure connection in the Clouds app.](../ru/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-azure-connection.md)
 
 In ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**, use the app header bar and select  **Create connection** > **AWS (Classic connections)** or  **Create connection** > **Azure (Classic connections)** or  **Create connection** > **GCP (Classic connections)**.
 
@@ -343,7 +343,7 @@ Use the **Explorer New** tab to analyze your AWS cloud services and environments
 * In the sidebar on the left, you can select a specific service category (such as  **Containers** or  **Functions**) or analyze all services. In addition, you can quickly filter by predefined attributes that are relevant for the selected category. Select any attribute in the facets sidebar and select **Update** to get results. The filter field is updated with your selection.
 * Alternatively, select the filter field at the top to view suggestions and enter filtering options. Add more statements to narrow down the results. Criteria of the same type are grouped by `OR` logic. Criteria of different types are grouped by `AND` logic. You can filter services using tags, alert status, and attributes like name or region. This helps you focus on specific subsets of services based on your criteria.
 
-  For more details on the filter field syntax, see [Filter field](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
+  For more details on the filter field syntax, see [Filter field](../ru/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
 * You can explore data in the table using the available perspectives:
 
   + **Health**
@@ -371,7 +371,7 @@ Health alerts and warning signals are provided and maintained out of the box by 
 
   Health alerts and warning signals are both surfaced in ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
 
-You can easily adopt ready-made health alerts and warning signals for your AWS accounts either upon your [AWS connection onboarding](/docs/ingest-from/amazon-web-services/create-an-aws-connection/aws-connection-app-settings "Onboard your AWS environments and create AWS connections via the Settings app.") or in ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**.
+You can easily adopt ready-made health alerts and warning signals for your AWS accounts either upon your [AWS connection onboarding](../ru/ingest-from/amazon-web-services/create-an-aws-connection/aws-connection-app-settings.md "Onboard your AWS environments and create AWS connections via the Settings app.") or in ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**.
 
 If you want to create new or update ready-made health alerts and warning signals, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Analyze and alert** > **Alerts** > **Cloud services**, where you can create, update, and enable/disable alerts for your connections.
 
@@ -394,13 +394,13 @@ If you want to create new or update ready-made health alerts and warning signals
 
 Dynatrace provides predefined alert templates to allow for additional custom alerts on popular cloud services. These alert templates are complementary to ready-made health alerts and warning signals.
 
-You can easily create new [custom alerts](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") directly in ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** by selecting a template and  **New Alert**.
+You can easily create new [custom alerts](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.") directly in ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** by selecting a template and  **New Alert**.
 
 Next, you can either customize the alert in the Anomaly Detection wizard or create the alert with one click.
 
 ![Clouds app | Custom alert templates](https://dt-cdn.net/images/clouds-app-custom-alerts-template-3840-e1a42bda6c.png)
 
-You can find all custom alerts and more information around capabilities and limits in [![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.").
+You can find all custom alerts and more information around capabilities and limits in [![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.").
 
 ### Explorer (Classic connections)
 
@@ -455,9 +455,9 @@ In the **Health** perspective, you can see each cloud service's health and custo
 
 * This mode highlights the most relevant metrics associated with the alert and narrows down the timeframe to the start and end times of the selected problem.
 * Additionally, it offers quick access to the underlying problem, allowing you to efficiently diagnose and resolve issues.
-* You can use [Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot "Learn about Dynatrace Intelligence agentic and generative AI.") to get additional insights about the problem and potential remediation steps.
+* You can use [Dynatrace Intelligence agentic and generative AI](../ru/dynatrace-intelligence/copilot.md "Learn about Dynatrace Intelligence agentic and generative AI.") to get additional insights about the problem and potential remediation steps.
 
-**Problem mode** is always active when you navigate from a specific problem in [![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") to ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
+**Problem mode** is always active when you navigate from a specific problem in [![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](../ru/dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.") to ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
 
 ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** operates in **Problem mode** whenever a problem is highlighted next to the filter bar at the top of the app.
 
@@ -471,7 +471,7 @@ The ready-made dashboards can be accessed through:
 
 * ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**
 
-  Open ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, select [Ready-made dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards "Use ready-made dashboards to visualize your data right out of the box.") in the left menu, and search for `aws`.
+  Open ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, select [Ready-made dashboards](../ru/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards.md "Use ready-made dashboards to visualize your data right out of the box.") in the left menu, and search for `aws`.
 * ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**
 
   + Open ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** and select the **Overview New** tab. You can then either select one of the more popular dashboards directly (for example, AWS Lambda) or select **Browse all dashboards**.
@@ -481,11 +481,11 @@ The ready-made dashboards can be accessed through:
 
 ### Segments (New connections)
 
-[Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") allow you to logically structure and conveniently filter observability data across apps on the Dynatrace platform. Segments are available within the new **Explorer New** tab and can be defined easily for new cloud connections, since all data (including [Smartscape nodes](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.")) is stored in Grail.
+[Segments](../ru/manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") allow you to logically structure and conveniently filter observability data across apps on the Dynatrace platform. Segments are available within the new **Explorer New** tab and can be defined easily for new cloud connections, since all data (including [Smartscape nodes](../ru/platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.")) is stored in Grail.
 
-For a step-by-step guide on how to define segments for Smartscape nodes, see [Filter Smartscape nodes with segments](/docs/manage/segments/getting-started/segments-getting-started-filter-smartscape-nodes "Learn how to filter Smartscape nodes by using segments in Dashboards."). You can use any primary Grail field (and, in the future, also tags) to conveniently define simple segments across **All data**:
+For a step-by-step guide on how to define segments for Smartscape nodes, see [Filter Smartscape nodes with segments](../ru/manage/segments/getting-started/segments-getting-started-filter-smartscape-nodes.md "Learn how to filter Smartscape nodes by using segments in Dashboards."). You can use any primary Grail field (and, in the future, also tags) to conveniently define simple segments across **All data**:
 
-* [Primary Grail fields](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.") (for example, `aws.account.id`, `aws.region`)
+* [Primary Grail fields](../ru/platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.") (for example, `aws.account.id`, `aws.region`)
 * Primary Grail tags (future)
 
 Example segment definition by AWS Account ID:
@@ -515,7 +515,7 @@ We do not recommend setting up the classic and new cloud connections for the sam
 
 ### How can I join the Azure Preview?
 
-You can find more information and join the Cloud Platform Monitoring for Azure Preview through our [Preview program page](/docs/whats-new/preview-releases#new-cloud-platform-monitoring-for-azure "Learn about our Preview releases and how you can participate in them.").
+You can find more information and join the Cloud Platform Monitoring for Azure Preview through our [Preview program page](../common/whats-new/preview-releases.md#new-cloud-platform-monitoring-for-azure "Learn about our Preview releases and how you can participate in them.").
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -554,7 +554,7 @@ All metrics published to the Operations API (formerly Stackdriver) can be automa
 
 ## Related topics
 
-* [Set up Dynatrace on Google Cloud](/docs/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
+* [Set up Dynatrace on Google Cloud](../ru/ingest-from/google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
 
 ---
 
@@ -577,17 +577,17 @@ scraped: 2026-03-05T21:31:07.446265
 
 [### Data-driven cloud tuning
 
-Manage your cloud deployment using Grail and your cloud vendor-provided data in context.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/use-cases/cloud-costs "Manage your cloud deployment using Grail and your cloud vendor-provided data in context.")[![Threat hunting](https://cdn.bfldr.com/B686QPH3/at/5zkt85btt85svwwb79495t3j/DT0080.svg?auto=webp&width=72&height=72 "Threat hunting")
+Manage your cloud deployment using Grail and your cloud vendor-provided data in context.](observe/infrastructure-observability/cloud-platform-monitoring/use-cases/cloud-costs.md "Manage your cloud deployment using Grail and your cloud vendor-provided data in context.")[![Threat hunting](https://cdn.bfldr.com/B686QPH3/at/5zkt85btt85svwwb79495t3j/DT0080.svg?auto=webp&width=72&height=72 "Threat hunting")
 
 ### Threat hunting and forensics
 
-Search for indicators of compromise (IoC) and perform forensic investigations and threat hunting activities.](/docs/secure/use-cases/threat-hunting "Use case scenario for threat hunting and forensics with Investigations.")[### Analyze AWS CloudTrail logs
+Search for indicators of compromise (IoC) and perform forensic investigations and threat hunting activities.](../ru/secure/use-cases/threat-hunting.md "Use case scenario for threat hunting and forensics with Investigations.")[### Analyze AWS CloudTrail logs
 
-Analyze CloudTrail logs and find potential security issues with Dynatrace Investigations.](/docs/secure/use-cases/analyze-aws-cloudtrail-logs-with-security-investigator "Analyze CloudTrail logs and find potential security issues with Dynatrace.")[### Analyze Amazon API Gateway access logs
+Analyze CloudTrail logs and find potential security issues with Dynatrace Investigations.](../ru/secure/use-cases/analyze-aws-cloudtrail-logs-with-security-investigator.md "Analyze CloudTrail logs and find potential security issues with Dynatrace.")[### Analyze Amazon API Gateway access logs
 
-Monitor and identify errors in your Amazon API Gateway access logs with Dynatrace Investigations.](/docs/secure/use-cases/analyze-aws-api-gateway-access-logs-with-security-investigator "Monitor and identify errors in your Amazon API Gateway access logs with Dynatrace.")[### Detect threats against your AWS Secrets
+Monitor and identify errors in your Amazon API Gateway access logs with Dynatrace Investigations.](../ru/secure/use-cases/analyze-aws-api-gateway-access-logs-with-security-investigator.md "Monitor and identify errors in your Amazon API Gateway access logs with Dynatrace.")[### Detect threats against your AWS Secrets
 
-Monitor and identify potential threats against your AWS Secrets with Dynatrace Investigations.](/docs/secure/use-cases/detect-threats-against-aws-secrets-with-security-investigator "Monitor and identify potential threats against your AWS Secrets with Dynatrace.")
+Monitor and identify potential threats against your AWS Secrets with Dynatrace Investigations.](../ru/secure/use-cases/detect-threats-against-aws-secrets-with-security-investigator.md "Monitor and identify potential threats against your AWS Secrets with Dynatrace.")
 
 ---
 
@@ -611,24 +611,24 @@ Dynatrace supports full-stack monitoring for Cloud Foundry, from the application
 
 ## Prerequisites
 
-1. [Set up and configure Dynatrace integration on Cloud Foundry](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry "Install OneAgent on Cloud Foundry with BOSH.")
-2. [Connect your cluster to Dynatrace](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/connect-your-cloud-foundry-foundations-to-dynatrace "Enable monitoring on your Cloud Foundry foundations.")
+1. [Set up and configure Dynatrace integration on Cloud Foundry](ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry.md "Install OneAgent on Cloud Foundry with BOSH.")
+2. [Connect your cluster to Dynatrace](ingest-from/setup-on-container-platforms/cloud-foundry/connect-your-cloud-foundry-foundations-to-dynatrace.md "Enable monitoring on your Cloud Foundry foundations.")
 
-See [Cloud Foundry](/docs/ingest-from/setup-on-container-platforms/cloud-foundry "Set up and configure Dynatrace on Cloud Foundry.") for further options and details.
+See [Cloud Foundry](../ru/ingest-from/setup-on-container-platforms/cloud-foundry.md "Set up and configure Dynatrace on Cloud Foundry.") for further options and details.
 
 ## Monitoring configuration options
 
-[Organize deployments by tags](/docs/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring/organize-cf-deployments-by-tags "Automatically organize and filter all your monitored applications by applying tags from your Cloud Foundry environment.").
+[Organize deployments by tags](observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring/organize-cf-deployments-by-tags.md "Automatically organize and filter all your monitored applications by applying tags from your Cloud Foundry environment.").
 
-[Define process group metadata for Cloud Foundry applications](/docs/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring/define-process-group-metadata-for-cloud-foundry-applications "Define Cloud Foundry service metadata and reuse it for multiple applications.").
+[Define process group metadata for Cloud Foundry applications](observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring/define-process-group-metadata-for-cloud-foundry-applications.md "Define Cloud Foundry service metadata and reuse it for multiple applications.").
 
 ## View monitoring results
 
-To learn how to analyze monitoring results in Dynatrace, see [Cloud Foundry metrics overview](/docs/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring/cloud-foundry-metrics "Available metrics for monitoring your Cloud Foundry clusters with Dynatrace").
+To learn how to analyze monitoring results in Dynatrace, see [Cloud Foundry metrics overview](observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring/cloud-foundry-metrics.md "Available metrics for monitoring your Cloud Foundry clusters with Dynatrace").
 
 ## Related topics
 
-* [Set up Dynatrace on Cloud Foundry](/docs/ingest-from/setup-on-container-platforms/cloud-foundry "Set up and configure Dynatrace on Cloud Foundry.")
+* [Set up Dynatrace on Cloud Foundry](../ru/ingest-from/setup-on-container-platforms/cloud-foundry.md "Set up and configure Dynatrace on Cloud Foundry.")
 
 ---
 
@@ -682,17 +682,17 @@ Leverage these charts
 
 Select  in the upper-right corner of a chart to:
 
-* **Show in Data Explorer**âOpens [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
-* **Create metric event**âOpens the [Metric events](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace") for the selected metric.
-* **Pin to dashboard**âPins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to your dashboard](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+* **Show in Data Explorer**âOpens [Data Explorer](../ru/analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
+* **Create metric event**âOpens the [Metric events](../ru/dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace") for the selected metric.
+* **Pin to dashboard**âPins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to your dashboard](../ru/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard.md "Learn to pin tiles to your dashboards.").
 
 ## Process groups
 
-The **Process groups** section shows all process groups for the selected container group. Select a process group from the table to go to the dedicated overview page. For more information, see [Overview of all technologies running in your environment](/docs/observe/infrastructure-observability/process-groups/monitoring/overview-of-all-technologies-running-in-my-environment "Get a summary of the performance of all the technologies in your environment.").
+The **Process groups** section shows all process groups for the selected container group. Select a process group from the table to go to the dedicated overview page. For more information, see [Overview of all technologies running in your environment](observe/infrastructure-observability/process-groups/monitoring/overview-of-all-technologies-running-in-my-environment.md "Get a summary of the performance of all the technologies in your environment.").
 
 ## Events
 
-The **Events** tile charts the distribution of [events](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation "Gain an understanding of the Events section on each host, process, and service overview page."), such as service deployments, process crash details, and memory dumps. Expand the tile to list events.
+The **Events** tile charts the distribution of [events](../ru/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation.md "Gain an understanding of the Events section on each host, process, and service overview page."), such as service deployments, process crash details, and memory dumps. Expand the tile to list events.
 
 ## Logs
 
@@ -702,8 +702,8 @@ Leverage these charts
 
 Select  in the upper-right corner of a chart to:
 
-* **Go to Log Viewer**âOpens the [Log Viewer](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.") page filtered by the selected container group.
-* **Create metric**âOpens the [Log metrics](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.") page with the **Query** value set to the selected container group.
+* **Go to Log Viewer**âOpens the [Log Viewer](../ru/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer.md "Learn how to use Dynatrace log viewer to analyze log data.") page filtered by the selected container group.
+* **Create metric**âOpens the [Log metrics](../ru/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics.md "Learn how to create and use Dynatrace log metrics to analyze log data.") page with the **Query** value set to the selected container group.
 
 ---
 
@@ -784,7 +784,7 @@ Built-in rules are enabled by default. You can choose to disable them, but you c
 * Application-only integrations without a full OneAgent installation donât support monitoring rules. However, in such situations, the integrations themselves effectively provide the same level of control over your container monitoring setup.
 * In Kubernetes, container monitoring rules apply only to the `classicFullStack` injection mode.
 
-  Container monitoring rules are ignored for webhook-based injection modes (`cloudNativeFullStack` or `applicationMonitoring`). For these modes, use the annotation-based configuration option as described in [Configure monitoring for namespaces and pods](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods").
+  Container monitoring rules are ignored for webhook-based injection modes (`cloudNativeFullStack` or `applicationMonitoring`). For these modes, use the annotation-based configuration option as described in [Configure monitoring for namespaces and pods](ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods").
 
 ---
 
@@ -807,14 +807,14 @@ scraped: 2026-02-06T16:28:55.999404
 With Dynatrace cloud-native monitoring enabled for your Heroku applications, you get
 
 * Deep application monitoring and code-level details for Java, PHP, Node.js and more â with just a single, language-independent buildpack
-* [Automatic root cause analysis](/docs/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.") of your Heroku web applications
-* Insights into how your Heroku applications use [databases](/docs/observe/infrastructure-observability/databases "Track the database performance and resources to create and maintain a high performing and available application infrastructure.")âincluding detailed metrics for each database statement
-* [Real User Monitoring](/docs/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.") data on customersâ web browser and mobile device behavior
+* [Automatic root cause analysis](../ru/dynatrace-intelligence/root-cause-analysis/concepts.md "Get acquainted with root cause analysis concepts.") of your Heroku web applications
+* Insights into how your Heroku applications use [databases](observe/infrastructure-observability/databases.md "Track the database performance and resources to create and maintain a high performing and available application infrastructure.")âincluding detailed metrics for each database statement
+* [Real User Monitoring](observe/digital-experience/rum-concepts/rum-overview.md "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.") data on customersâ web browser and mobile device behavior
 * Automated external and third-party service monitoring (for example, calls to external REST APIs)
 
 ## Prerequisites
 
-[Set up and configure Dynatrace integration on Heroku](/docs/ingest-from/setup-on-container-platforms/heroku "Install OneAgent to monitor applications running on Heroku.").
+[Set up and configure Dynatrace integration on Heroku](../ru/ingest-from/setup-on-container-platforms/heroku.md "Install OneAgent to monitor applications running on Heroku.").
 
 ## View monitoring results
 
@@ -828,13 +828,13 @@ Dynatrace automatically initiates deep application monitoring for your Heroku ap
 
 ## Tag your Heroku applications
 
-You can use the Dynatrace powerful [tagging mechanism](/docs/manage/tags-and-metadata "Learn how to define tags and metadata. Understand how to use tags and metadata to organize your environment.") to automatically organize and filter all monitored Heroku application components. Dynatrace allows you to apply tags to processes and hosts based on environment variables.
+You can use the Dynatrace powerful [tagging mechanism](../common/manage/tags-and-metadata.md "Learn how to define tags and metadata. Understand how to use tags and metadata to organize your environment.") to automatically organize and filter all monitored Heroku application components. Dynatrace allows you to apply tags to processes and hosts based on environment variables.
 
 `heroku config:set DT_TAGS=owner=team-easytravel`
 
 ## Related topics
 
-* [Set up Dynatrace on Heroku](/docs/ingest-from/setup-on-container-platforms/heroku "Install OneAgent to monitor applications running on Heroku.")
+* [Set up Dynatrace on Heroku](../ru/ingest-from/setup-on-container-platforms/heroku.md "Install OneAgent to monitor applications running on Heroku.")
 
 ---
 
@@ -857,7 +857,7 @@ scraped: 2026-02-06T16:19:46.615282
 
 У вас есть возможность включить все или определенные кластеры Kubernetes для использования новых возможностей Kubernetes.
 
-Это можно сделать с помощью API настроек с помощью [Таблица схемы приложения Kubernetes](/docs/dynatrace-api/environment-api/settings/schemas/builtin-app-transition-kubernetes "View builtin:app-transition.kubernetes settings schema table of your monitoring environment via the Dynatrace API.") или, альтернативно, настроив параметр, как описано ниже.
+Это можно сделать с помощью API настроек с помощью [Таблица схемы приложения Kubernetes](../ru/dynatrace-api/environment-api/settings/schemas/builtin-app-transition-kubernetes.md "View builtin:app-transition.kubernetes settings schema table of your monitoring environment via the Dynatrace API.") или, альтернативно, настроив параметр, как описано ниже.
 
 ## Включить все кластеры
 
@@ -901,8 +901,8 @@ scraped: 2026-02-06T16:19:47.983316
 * Среда Dynatrace SaaS на базе Grail и AppEngine.
 
 + Существует очень небольшое исключение для некоторых конкретных арендаторов, которые не смогут получить доступ к предварительной версии.Более подробная информация об этом будет доступна в продукте.
-* [лицензия ДПС](/docs/license "About Dynatrace Platform Subscription (DPS), модель лицензирования для всех возможностей Dynatrace.") с возможностью **Мониторинг платформы Kubernetes** в вашем прейскуранте.
-* [Достаточные разрешения](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/reference/permissions "Overview of user and tailoring permissions.") для использования ![Кубернетес (новый)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** в вашей среде Dynatrace.
+* [лицензия ДПС](license.md "About Dynatrace Platform Subscription (DPS), модель лицензирования для всех возможностей Dynatrace.") с возможностью **Мониторинг платформы Kubernetes** в вашем прейскуранте.
+* [Достаточные разрешения](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/reference/permissions.md "Overview of user and tailoring permissions.") для использования ![Кубернетес (новый)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** в вашей среде Dynatrace.
 * Dynatrace версии 1.324+
 * ActiveGate версии 1.323+
 * Оператор Dynatrace версии 1.7.0+
@@ -1069,7 +1069,7 @@ verbs:
 
 ## Увеличивает ли этот предварительный просмотр мой расход урона в секунду?
 
-Предварительная версия основана на существующей ![Кубернетес (новый)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** и соответствующей лицензии на основе [капсульные часы](/docs/license/capabilities/container-monitoring/kubernetes-platform-monitoring "Learn how your consumption of the Dynatrace Kubernetes Platform Monitoring DPS capability is billed and charged."). Потребленные часы модуля включают в себя информацию обо всех вновь добавленных объектах Kubernetes, а это означает, что не будет никакого увеличения потребления DPS, характерного для этой предварительной версии.
+Предварительная версия основана на существующей ![Кубернетес (новый)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** и соответствующей лицензии на основе [капсульные часы](../ru/license/capabilities/container-monitoring/kubernetes-platform-monitoring.md "Learn how your consumption of the Dynatrace Kubernetes Platform Monitoring DPS capability is billed and charged."). Потребленные часы модуля включают в себя информацию обо всех вновь добавленных объектах Kubernetes, а это означает, что не будет никакого увеличения потребления DPS, характерного для этой предварительной версии.
 
 ## Что технически произойдет, если вы присоединитесь к этой предварительной версии?
 
@@ -1082,7 +1082,7 @@ Dynatrace начинает дополнительно вставлять объ�
 
 ## Какой вариант наблюдения мне нужен для этого предварительного просмотра?Нужна ли мне полная наблюдаемость?
 
-Эта предварительная версия основана на **мониторинге платформы Kubernetes**, который включен во все [параметры наблюдения](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes").
+Эта предварительная версия основана на **мониторинге платформы Kubernetes**, который включен во все [параметры наблюдения](../ru/ingest-from/setup-on-k8s/deployment.md "Deploy Dynatrace Operator on Kubernetes").
 
 ## Что такое рабочие нагрузки верхнего уровня?
 
@@ -1099,11 +1099,11 @@ Dynatrace начинает дополнительно вставлять объ�
 
 ## Как исправить отсутствующие разрешения `ClusterRole`?
 
-Недавно добавленные типы объектов Kubernetes требуют дополнительных разрешений ActiveGate.Эти разрешения (за исключением ConfigMaps и Secrets [1](#fn-1-1-def)) предоставляются автоматически при обновлении Dynatrace Operation до [версия 1.7.0](/docs/whats-new/dynatrace-operator/dto-fix-1-7-0 "Release notes for Dynatrace Operator, version 1.7.0").Клиенты, использующие более старые версии Dynatrace Оператора или те, кто вручную перезаписал разрешения ActiveGate, могут не иметь доступа к новым конечным точкам Kubernetes.Если разрешения отсутствуют, над таблицей появляется предупреждающее сообщение (например, `Missing "ConfigMap" ClusterRole permission for cluster(s): aks-playground-dev.`):
+Недавно добавленные типы объектов Kubernetes требуют дополнительных разрешений ActiveGate.Эти разрешения (за исключением ConfigMaps и Secrets [1](#fn-1-1-def)) предоставляются автоматически при обновлении Dynatrace Operation до [версия 1.7.0](../ru/whats-new/dynatrace-operator/dto-fix-1-7-0.md "Release notes for Dynatrace Operator, version 1.7.0").Клиенты, использующие более старые версии Dynatrace Оператора или те, кто вручную перезаписал разрешения ActiveGate, могут не иметь доступа к новым конечным точкам Kubernetes.Если разрешения отсутствуют, над таблицей появляется предупреждающее сообщение (например, `Missing "ConfigMap" ClusterRole permission for cluster(s): aks-playground-dev.`):
 
 ![Как исправить отсутствующие разрешения ClusterRole?](https://dt-cdn.net/images/image-20250909-123859-2305-e1ca79056f.png)
 
-Чтобы это исправить, [обновите своего оператора Dynatrace](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator#update "Upgrade and uninstallation procedures for Dynatrace Operator") до версии 1.7.0+.
+Чтобы это исправить, [обновите своего оператора Dynatrace](ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator.md#update "Upgrade and uninstallation procedures for Dynatrace Operator") до версии 1.7.0+.
 
 1
 
@@ -1156,7 +1156,7 @@ scraped: 2026-02-06T16:19:43.850239
 
 Dynatrace IAM позволяет очень подробно и гибко определять и назначать разрешения.Эти разрешения можно сгруппировать в политики, а затем назначить пользователям или группам.Кроме того, разрешения могут быть нацелены на определенные подмножества объектов Kubernetes с помощью условий, например, для определенных кластеров и/или пространств имен.
 
-Для получения дополнительной информации см. [Управление идентификацией и доступом (IAM)](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+Для получения дополнительной информации см. [Управление идентификацией и доступом (IAM)](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
 
 Пример политики
 
@@ -1201,20 +1201,20 @@ scraped: 2026-02-06T16:18:49.950622
 
 Новый [Опыт Kubernetes»¿](https://dt-url.net/k1038uw) оптимизирован для инженеров платформ DevOps и инженеров по надежности сайтов (SRE), уделяя особое внимание оптимизации работоспособности и производительности мультиоблачных сред Kubernetes.Центральным элементом этого опыта является ![Кубернетес (новый)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**.
 
-Базовые метрики, события и журналы основаны на [Грааль](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), который поддерживает гибкую аналитику с помощью [Язык запросов Dynatrace](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") в ![Кубернетес (новый)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**, ![Панели мониторинга](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Панели мониторинга** и ![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Рабочие процессы**.
+Базовые метрики, события и журналы основаны на [Грааль](../ru/platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), который поддерживает гибкую аналитику с помощью [Язык запросов Dynatrace](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") в ![Кубернетес (новый)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**, ![Панели мониторинга](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Панели мониторинга** и ![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Рабочие процессы**.
 
 ## Предварительные условия
 
 * Среда Dynatrace SaaS на базе Grail и AppEngine.
-* [лицензия ДПС](/docs/license "About Dynatrace Platform Subscription (DPS), модель лицензирования для всех возможностей Dynatrace.") с возможностью **Мониторинг платформы Kubernetes** в вашем прейскуранте.
-* [Достаточные разрешения](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/reference/permissions "Overview of user and tailoring permissions.") для использования ![Кубернетес (новый)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** в среде Dynatrace.
-* ActiveGate версии 1.327+ является обязательным условием для [Улучшенная видимость объектов Kubernetes](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/preview/enhanced-object-vis-preview "Accelerate root cause analysis with deeper Kubernetes object visibility.").
+* [лицензия ДПС](license.md "About Dynatrace Platform Subscription (DPS), модель лицензирования для всех возможностей Dynatrace.") с возможностью **Мониторинг платформы Kubernetes** в вашем прейскуранте.
+* [Достаточные разрешения](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/reference/permissions.md "Overview of user and tailoring permissions.") для использования ![Кубернетес (новый)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** в среде Dynatrace.
+* ActiveGate версии 1.327+ является обязательным условием для [Улучшенная видимость объектов Kubernetes](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/preview/enhanced-object-vis-preview.md "Accelerate root cause analysis with deeper Kubernetes object visibility.").
 
 + Старые версии ActiveGate поддерживаются в режиме обратной совместимости;в этом режиме в пользовательском интерфейсе появляется дополнительная вкладка **Проводник (классический)**.
 
-Для получения более подробной информации см. [начало работы часто задаваемые вопросы](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/enable-k8s-experience#k8s-app-getting-started-faq "Enable Kubernetes experience for existing clusters or start monitoring new clusters.").
+Для получения более подробной информации см. [начало работы часто задаваемые вопросы](observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/enable-k8s-experience.md#k8s-app-getting-started-faq "Enable Kubernetes experience for existing clusters or start monitoring new clusters.").
 
-Новый интерфейс Kubernetes недоступен для управляемых приложений или SaaS в средах, отличных от Grail. Вы можете продолжать использовать [**Кубернетес Классик**](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring "Monitor Kubernetes/OpenShift with Dynatrace.") (доступно из предыдущей версии Dynatrace через **Kubernetes**).
+Новый интерфейс Kubernetes недоступен для управляемых приложений или SaaS в средах, отличных от Grail. Вы можете продолжать использовать [**Кубернетес Классик**](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring.md "Monitor Kubernetes/OpenShift with Dynatrace.") (доступно из предыдущей версии Dynatrace через **Kubernetes**).
 
 ## Начать
 
@@ -1238,7 +1238,7 @@ scraped: 2026-02-06T16:18:49.950622
 [01Включить Kubernetes для существующих кластеров
 
 * Практическое руководство
-* Включите существующие кластеры для нового опыта Kubernetes.](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/enable-k8s-experience/existing-clusters)
+* Включите существующие кластеры для нового опыта Kubernetes.](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/enable-k8s-experience/existing-clusters.md)
 
 ## Проводник
 
@@ -1323,7 +1323,7 @@ Explorer — это общий интерфейс Dynatrace для монито�
 
 Оповещения о состоянии здоровья и предупреждающие сигналы помогают вам контролировать вашу инфраструктуру, предоставляя четкую и полезную информацию.Эти функции уменьшают шум, вызванный проблемами инфраструктуры, и улучшают возможности оповещения, поэтому вы можете сосредоточиться на самом важном.Это достигается за счет лучшей категоризации обнаруженных неисправностей.
 
-* В случае критических событий выдается предупреждение о работоспособности, которое запускает расследование [Проблемы с Dynatrace](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.").
+* В случае критических событий выдается предупреждение о работоспособности, которое запускает расследование [Проблемы с Dynatrace](../ru/dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.").
 * В некритических ситуациях предупреждающий сигнал информирует вас о потенциальной проблеме.
 
 Хотя они не всегда могут указывать на активные проблемы со здоровьем в данный момент, частые сигналы **Неработоспособность**, например, могут указывать на неправильно настроенные проверки готовности, неподходящие ограничения ЦП или необычно высокую рабочую нагрузку.
@@ -1355,9 +1355,9 @@ Explorer — это общий интерфейс Dynatrace для монито�
 
 |Столбец |Содержание |Примеры |
 |--- |--- |--- |
-|Узел предупреждающих сигналов |[Объединяет события, исходящие от узлов, и проблемные состояния узлов.](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues#node "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") |`DiskPressure`, `MemoryPressure`, `NodeNotReady` |
-|Предупреждающие сигналы Pod |[Объединяет события, создаваемые модулями, и условия, влияющие на модули.](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues#workload "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") |`BackOff`, `PodEviction`, `OOMKilled` |
-|Предупреждающие сигналы о рабочей нагрузке |[Объединяет события, создаваемые пространствами имен, рабочими нагрузками и модулями, а также условия рабочей нагрузки.](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues#workload "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") |`CPUThrottlingHigh`, `ContainerRestarts`, `PodsPending` |
+|Узел предупреждающих сигналов |[Объединяет события, исходящие от узлов, и проблемные состояния узлов.](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues.md#node "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") |`DiskPressure`, `MemoryPressure`, `NodeNotReady` |
+|Предупреждающие сигналы Pod |[Объединяет события, создаваемые модулями, и условия, влияющие на модули.](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues.md#workload "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") |`BackOff`, `PodEviction`, `OOMKilled` |
+|Предупреждающие сигналы о рабочей нагрузке |[Объединяет события, создаваемые пространствами имен, рабочими нагрузками и модулями, а также условия рабочей нагрузки.](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues.md#workload "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") |`CPUThrottlingHigh`, `ContainerRestarts`, `PodsPending` |
 
 ## Варианты использования
 
@@ -1413,7 +1413,7 @@ Configuring an alert on a different level is only intended to simplify the confi
 
 For example, enabling a workload CPU usage saturation alert will still evaluate and raise problems for each Kubernetes workload separately, even if it has been configured on the Kubernetes cluster level.
 
-For further details on the settings hierarchy, see [Settings documentation](/docs/manage/settings/settings-20#scope-and-hierarchy-of-settings "Introduction to the Settings 2.0 framework").
+For further details on the settings hierarchy, see [Settings documentation](../ru/manage/settings/settings-20.md#scope-and-hierarchy-of-settings "Introduction to the Settings 2.0 framework").
 
 Per tenant level
 
@@ -1718,7 +1718,7 @@ The following expression returns the number of pending and running pods in the r
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Set up Dynatrace on Kubernetes](../ru/ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
 
 ---
 
@@ -1765,7 +1765,7 @@ To see which clusters are currently overriding these settings
 1. On the environment-level **Monitoring settings** page, select **More** (**â¦**) > **Hierarchy and overrides** in the upper-right corner.
 2. Review the **Hierarchy and overrides** table.
 
-For details on the settings hierarchy, see [Settings documentation](/docs/manage/settings/settings-20#scope-and-hierarchy-of-settings "Introduction to the Settings 2.0 framework").
+For details on the settings hierarchy, see [Settings documentation](../ru/manage/settings/settings-20.md#scope-and-hierarchy-of-settings "Introduction to the Settings 2.0 framework").
 
 ![Kubernetes monitoring settings overrides](https://dt-cdn.net/images/tenant-monitoring-settings-overrides-2058-db713cf077.png)
 
@@ -1782,15 +1782,15 @@ If you want to remove an override from a specific cluster
 
 ## Configuration via API
 
-You can also configure monitoring settings via the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") using the [Monitoring settings schema](/docs/dynatrace-api/environment-api/settings/schemas/builtin-cloud-kubernetes-monitoring "View builtin:cloud.kubernetes.monitoring settings schema table of your monitoring environment via the Dynatrace API.").
+You can also configure monitoring settings via the [Settings API](../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") using the [Monitoring settings schema](dynatrace-api/environment-api/settings/schemas/builtin-cloud-kubernetes-monitoring.md "View builtin:cloud.kubernetes.monitoring settings schema table of your monitoring environment via the Dynatrace API.").
 
 To change the default values for the environment, set the `scope` property in the request to `environment`.
 
-To use the default settings when connecting a cluster, the [Connection settings schema](/docs/dynatrace-api/environment-api/settings/schemas/builtin-cloud-kubernetes "View builtin:cloud.kubernetes settings schema table of your monitoring environment via the Dynatrace API.") should be version `3.0.0` or higher. Using older versions will automatically override the default monitoring settings for this cluster.
+To use the default settings when connecting a cluster, the [Connection settings schema](dynatrace-api/environment-api/settings/schemas/builtin-cloud-kubernetes.md "View builtin:cloud.kubernetes settings schema table of your monitoring environment via the Dynatrace API.") should be version `3.0.0` or higher. Using older versions will automatically override the default monitoring settings for this cluster.
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Set up Dynatrace on Kubernetes](../ru/ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
 
 ---
 
@@ -1815,19 +1815,19 @@ Dynatrace automatically derives tags from your Kubernetes/OpenShift labels. This
 
 ## Recommendations
 
-We recommend that you define additional metadata at the deployed system. For Kubernetes-based applications, you can simply use [Kubernetes annotationsï»¿](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/). Dynatrace automatically detects and retrieves all Kubernetes and OpenShift annotations for pods that are monitored with a OneAgent code module. This enables you to use [automated tagging rules](/docs/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically."), based on existing or custom metadata, to define your filter sets for charts, alerting, and more. These tags and rules can be changed and adapted any time and will apply almost immediately without any change to the monitored environment or applications.
+We recommend that you define additional metadata at the deployed system. For Kubernetes-based applications, you can simply use [Kubernetes annotationsï»¿](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/). Dynatrace automatically detects and retrieves all Kubernetes and OpenShift annotations for pods that are monitored with a OneAgent code module. This enables you to use [automated tagging rules](manage/tags-and-metadata/setup/how-to-define-tags.md#automatic "Find out how to define and apply tags manually and automatically."), based on existing or custom metadata, to define your filter sets for charts, alerting, and more. These tags and rules can be changed and adapted any time and will apply almost immediately without any change to the monitored environment or applications.
 
-In Dynatrace, you can specify [entity ownership](/docs/deliver/ownership "Map team ownership to monitored entities for better collaboration, task assignment, incident and vulnerability response, and service-level management.") for different Kubernetes objects such as Deployments, Pods, Services, or namespaces. We recommend providing ownership information via Kubernetes labels or annotations (you can use either labels or annotations to attach metadata to Kubernetes objects). This ensures that Kubernetes objects have adequate ownership coverage, which is especially important for short-lived entities like Pods. See [Assign ownership teams to monitored entities](/docs/deliver/ownership/assign-ownership "Assign owners to entities using entity metadata like labels, environment variables, and tags.") for more on the correct format and examples of providing ownership information in key-value pairs in the deployment specification file.
+In Dynatrace, you can specify [entity ownership](../ru/deliver/ownership.md "Map team ownership to monitored entities for better collaboration, task assignment, incident and vulnerability response, and service-level management.") for different Kubernetes objects such as Deployments, Pods, Services, or namespaces. We recommend providing ownership information via Kubernetes labels or annotations (you can use either labels or annotations to attach metadata to Kubernetes objects). This ensures that Kubernetes objects have adequate ownership coverage, which is especially important for short-lived entities like Pods. See [Assign ownership teams to monitored entities](../ru/deliver/ownership/assign-ownership.md "Assign owners to entities using entity metadata like labels, environment variables, and tags.") for more on the correct format and examples of providing ownership information in key-value pairs in the deployment specification file.
 
-We recommend defining ownership for the Deployment and all other objects for which you want ownership coverage. See also [Best practices for entity ownership](/docs/deliver/ownership/best-practices "Tips and best practices to ensure that entities have adequate ownership coverage"). You can assign more than one team to a Kubernetes object, provided that the keys in the key-value pairs are unique.
+We recommend defining ownership for the Deployment and all other objects for which you want ownership coverage. See also [Best practices for entity ownership](../ru/deliver/ownership/best-practices.md "Tips and best practices to ensure that entities have adequate ownership coverage"). You can assign more than one team to a Kubernetes object, provided that the keys in the key-value pairs are unique.
 
-While you can also use tags (manual, automated, and via API) to apply ownership information to Kubernetes objects, this approach has its limitationsâread more in [Best practices for entity ownership](/docs/deliver/ownership/best-practices "Tips and best practices to ensure that entities have adequate ownership coverage").
+While you can also use tags (manual, automated, and via API) to apply ownership information to Kubernetes objects, this approach has its limitationsâread more in [Best practices for entity ownership](../ru/deliver/ownership/best-practices.md "Tips and best practices to ensure that entities have adequate ownership coverage").
 
 ## Automatic detection of Kubernetes properties and annotations
 
-Dynatrace detects Kubernetes properties and annotations. Such [properties and annotations](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata "Configure your own process-related metadata based on the unique needs of your organization or environment.") can be used when specifying [automated rule-based tags](/docs/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.").
+Dynatrace detects Kubernetes properties and annotations. Such [properties and annotations](observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata.md "Configure your own process-related metadata based on the unique needs of your organization or environment.") can be used when specifying [automated rule-based tags](manage/tags-and-metadata/setup/how-to-define-tags.md "Find out how to define and apply tags manually and automatically.").
 
-Additionally Dynatrace detects the following properties that can be used for [automated rule-based tags](/docs/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.") and [property-based process group detection rules](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection#detection-rules "Ways to customize process-group detection").
+Additionally Dynatrace detects the following properties that can be used for [automated rule-based tags](manage/tags-and-metadata/setup/how-to-define-tags.md "Find out how to define and apply tags manually and automatically.") and [property-based process group detection rules](../ru/observe/infrastructure-observability/process-groups/configuration/pg-detection.md#detection-rules "Ways to customize process-group detection").
 
 * Kubernetes base pod name: User-provided name of the pod the container belongs to.
 * Kubernetes container: Name of the container that runs the process.
@@ -1837,7 +1837,7 @@ Additionally Dynatrace detects the following properties that can be used for [au
 
 ## Leverage Kubernetes labels in Dynatrace
 
-Kubernetes-based tags are searchable via Dynatrace search. This allows you to easily find and inspect the monitoring results of related processes running in your Kubernetes or OpenShift environment. You can also leverage Kubernetes tags to set up fine-grained [problem alerting profiles](/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles."). Kubernetes tags also integrate perfectly with [Dynatrace filters](/docs/observe/application-observability/services-classic/service-flow/service-flow-filtering "Understand how service filtering works and how it can be exploited.").
+Kubernetes-based tags are searchable via Dynatrace search. This allows you to easily find and inspect the monitoring results of related processes running in your Kubernetes or OpenShift environment. You can also leverage Kubernetes tags to set up fine-grained [problem alerting profiles](../ru/analyze-explore-automate/notifications-and-alerting/alerting-profiles.md "Learn how to create and manage alerting profiles."). Kubernetes tags also integrate perfectly with [Dynatrace filters](../ru/observe/application-observability/services-classic/service-flow/service-flow-filtering.md "Understand how service filtering works and how it can be exploited.").
 
 ## Import your labels and annotations
 
@@ -2038,12 +2038,12 @@ Alternatively, OpenShift also allows you to bind the `Role` to all service accou
 oc -n project1 policy add-role-to-group dynatrace-oneagent-metadata-viewer --role-namespace="project1" system:serviceaccounts:project1
 ```
 
-As a result, Kubernetes [processes](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata "Configure your own process-related metadata based on the unique needs of your organization or environment.") monitored in your Dynatrace environment will have Kubernetes labels attached as Kubernetes tags. For namespaces, pods, and workloads, Kubernetes tags are not evaluated.
+As a result, Kubernetes [processes](observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata.md "Configure your own process-related metadata based on the unique needs of your organization or environment.") monitored in your Dynatrace environment will have Kubernetes labels attached as Kubernetes tags. For namespaces, pods, and workloads, Kubernetes tags are not evaluated.
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
-* [Assign ownership teams to monitored entities](/docs/deliver/ownership/assign-ownership "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
+* [Set up Dynatrace on Kubernetes](../ru/ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Assign ownership teams to monitored entities](../ru/deliver/ownership/assign-ownership.md "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
 
 ---
 
@@ -2103,7 +2103,7 @@ By selecting a specific node, you can access the host details at the top of the 
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Set up Dynatrace on Kubernetes](../ru/ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
 
 ---
 
@@ -2127,7 +2127,7 @@ scraped: 2026-03-06T21:21:56.612300
 
 * ActiveGate version 1.265+
 * In Dynatrace, go to **Monitoring settings** > **Kubernetes** and make sure that **Monitor Kubernetes namespaces, services, workloads, and pods** is turned on.
-* [Enable the latest version of Dynatrace log monitoring](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* [Enable the latest version of Dynatrace log monitoring](analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
 
 ## Kubernetes events monitoring for analysis and alerting
 
@@ -2174,7 +2174,7 @@ Kubernetes events are associated with Kubernetes entities. An event is displayed
 
 You can also view events on the **Log viewer** page (in Dynatrace, go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic**), which allows for advanced search and filtering.
 
-If the environment is platform enabled the events are stored in Grail. The following DQL query can be used as a template to query for specific events in [**Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [**Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
+If the environment is platform enabled the events are stored in Grail. The following DQL query can be used as a template to query for specific events in [**Notebooks**](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [**Dashboards**](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
 
 ```
 fetch events
@@ -2251,7 +2251,7 @@ Example command:
 kubectl get events --all-namespaces --field-selector involvedObject.namespace=hipster-shop,type=Warning
 ```
 
-You can define the event field selectors via [Dynatrace API](/docs/dynatrace-api/configuration-api/k8s-credentials-api-api "Manage Kubernetes credentials via the Dynatrace configuration API.").
+You can define the event field selectors via [Dynatrace API](dynatrace-api/configuration-api/k8s-credentials-api-api.md "Manage Kubernetes credentials via the Dynatrace configuration API.").
 
 You can create a maximum of 20 event filter rules per Kubernetes cluster.
 
@@ -2288,8 +2288,8 @@ To enable monitoring of important events, when event filtering is turned on
 
 Kubernetes events are made available in the **Kubernetes: Event count** (`builtin:kubernetes.events`) metric. To filter the events count metric for the relevant events, use the `k8s.event.reason` and `k8s.event.type` dimensions.
 
-* To help you understand the distribution and development of Kubernetes events over time, use [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") to create charts. You can use the charts to compare different timeframes, different entities, event filters, and the use of complex expressions.
-* To trigger alerts whenever Kubernetes events occur (for example, always alert in case of an `Evicted` event), define [Metric events](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace") based on the **Kubernetes: Event count** metric.
+* To help you understand the distribution and development of Kubernetes events over time, use [Data Explorer](../ru/analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") to create charts. You can use the charts to compare different timeframes, different entities, event filters, and the use of complex expressions.
+* To trigger alerts whenever Kubernetes events occur (for example, always alert in case of an `Evicted` event), define [Metric events](../ru/dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace") based on the **Kubernetes: Event count** metric.
 
 ## Licensing
 
@@ -2301,11 +2301,11 @@ Example query for a 24-hour timeframe:
 
 `dsfm:active_gate.kubernetes.events.processed:splitBy("dt.entity.kubernetes_cluster"):sum:auto:sort(value(sum,descending)):limit(10)`
 
-DDU consumption applies to Kubernetes event monitoring. For details, see [DDUs for custom Davis events](/docs/license/monitoring-consumption-classic/davis-data-units/ddu-events "Understand how to calculate Davis data unit consumption and costs related to custom-configured and custom-ingested events.").
+DDU consumption applies to Kubernetes event monitoring. For details, see [DDUs for custom Davis events](../ru/license/monitoring-consumption-classic/davis-data-units/ddu-events.md "Understand how to calculate Davis data unit consumption and costs related to custom-configured and custom-ingested events.").
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Set up Dynatrace on Kubernetes](../ru/ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
 
 ---
 
@@ -2329,15 +2329,15 @@ Dynatrace version 1.255+
 
 Istio is a platform-independent service mesh that is very popular in the Kubernetes community. Dynatrace OneAgent and ActiveGate can monitor Istio with the following observability options:
 
-* Distributed tracing and service-level metrics: OneAgent with [code modules](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* Distributed tracing and service-level metrics: OneAgent with [code modules](../ru/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
 * Istio metrics and topology: ActiveGate
-* Istio logs: OneAgent [log module](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
+* Istio logs: OneAgent [log module](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
 
-Alternatively, [Unified services](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/unified-service "Define services on observability signals ingested via Trace ingest APIs.") provide agentless support for Istio service meshes.
+Alternatively, [Unified services](../ru/observe/application-observability/services/service-detection/service-detection-v1/service-types/unified-service.md "Define services on observability signals ingested via Trace ingest APIs.") provide agentless support for Istio service meshes.
 
 ## How it works
 
-ActiveGate ingests Istio metrics and sends them to Dynatrace. Because Istio exposes metrics as Prometheus exporters, you just need to [provide annotations](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.").
+ActiveGate ingests Istio metrics and sends them to Dynatrace. Because Istio exposes metrics as Prometheus exporters, you just need to [provide annotations](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics.md "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.").
 
 Based on the labels of ingested metrics, Dynatrace also detects the Istio topology without OneAgent. This is supported with ActiveGate version 1.261+.
 
@@ -2347,7 +2347,7 @@ See [Istio Service Meshï»¿](https://www.dynatrace.com/hub/detail/istio-and-en
 
 ### ActiveGate
 
-* See [Prometheus metrics](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.") for ingestion prerequisites
+* See [Prometheus metrics](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics.md "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.") for ingestion prerequisites
 * Topology detection: ActiveGate version 1.261+
 * Sum and count extraction from histogram metrics: ActiveGate version 1.261+
 
@@ -2356,11 +2356,11 @@ See [Istio Service Meshï»¿](https://www.dynatrace.com/hub/detail/istio-and-en
 * Istio metrics card on Kubernetes services, workload, and namespace pages: Dynatrace version 1.255+
 * Topology (calling and called corresponding entities) on Kubernetes services, workload, and namespace pages: Dynatrace version 1.263+
 
-Istio monitoring by OneAgent is supported for the classic full-stack, cloud-native full-stack, and application-only [deployment options](/docs/ingest-from/setup-on-k8s/how-it-works "In-depth description on how the deployment on Kubernetes works.") since Operator version 0.11.0+. Earlier versions support classic full-stack only.
+Istio monitoring by OneAgent is supported for the classic full-stack, cloud-native full-stack, and application-only [deployment options](../ru/ingest-from/setup-on-k8s/how-it-works.md "In-depth description on how the deployment on Kubernetes works.") since Operator version 0.11.0+. Earlier versions support classic full-stack only.
 
 ## Related topics
 
-* [Monitor Prometheus metrics](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.")
+* [Monitor Prometheus metrics](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics.md "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.")
 
 ---
 
@@ -2388,9 +2388,9 @@ Dynatrace version 1.232+
 
 ## View Kubernetes metrics
 
-* For details on container metrics, see [Built-in metrics - Containers/CPU](/docs/analyze-explore-automate/metrics-classic/built-in-metrics#containers-cpu "Explore the complete list of built-in Dynatrace metrics.") and [Built-in metrics - Containers/Memory](/docs/analyze-explore-automate/metrics-classic/built-in-metrics#containers-memory "Explore the complete list of built-in Dynatrace metrics.").
+* For details on container metrics, see [Built-in metrics - Containers/CPU](../ru/analyze-explore-automate/metrics-classic/built-in-metrics.md#containers-cpu "Explore the complete list of built-in Dynatrace metrics.") and [Built-in metrics - Containers/Memory](../ru/analyze-explore-automate/metrics-classic/built-in-metrics.md#containers-memory "Explore the complete list of built-in Dynatrace metrics.").
 
-* For details on Kubernetes metrics, see [Built-in metrics - Cloud/Kubernetes](/docs/analyze-explore-automate/metrics-classic/built-in-metrics#cloud-kubernetes "Explore the complete list of built-in Dynatrace metrics.").
+* For details on Kubernetes metrics, see [Built-in metrics - Cloud/Kubernetes](../ru/analyze-explore-automate/metrics-classic/built-in-metrics.md#cloud-kubernetes "Explore the complete list of built-in Dynatrace metrics.").
 
 ![K8 dash](https://dt-cdn.net/images/2021-03-12-08-54-46-1668-d24182ddd2.png)
 
@@ -2412,11 +2412,11 @@ To enable monitoring of workload and node resource metrics
    Monitoring **node resource metrics** requires ActiveGate version 1.271+.
 3. Optional Select **Test connection** to verify that the feature has been successfully activated.
 
-For a list of all available metrics, see [Workload metrics](/docs/analyze-explore-automate/metrics-classic/all-metrics#workload "Explore the complete list of Dynatrace metrics.") or [Node](/docs/analyze-explore-automate/metrics-classic/all-metrics#node "Explore the complete list of Dynatrace metrics.") for node resource metrics.
+For a list of all available metrics, see [Workload metrics](analyze-explore-automate/metrics-classic/all-metrics.md#workload "Explore the complete list of Dynatrace metrics.") or [Node](analyze-explore-automate/metrics-classic/all-metrics.md#node "Explore the complete list of Dynatrace metrics.") for node resource metrics.
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Set up Dynatrace on Kubernetes](../ru/ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
 
 ---
 
@@ -2447,15 +2447,15 @@ in Kubernetes using [Prometheus exportersï»¿](https://dt-url.net/lw02ror) and
 ### Counter
 
 The Prometheus counter metric[1](#fn-1-1-def) is a monotonically increasing value typically used for measurements that can only increase or remain constant.
-Dynatrace uses its [`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.") metric type, which uses **delta encoding**[2](#fn-1-2-def) in order to reduce data redundancy, for data ingestion.
+Dynatrace uses its [`COUNT`](../ru/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.") metric type, which uses **delta encoding**[2](#fn-1-2-def) in order to reduce data redundancy, for data ingestion.
 As such, the value displayed in Dynatrace does not reflect the actual counter value, but instead its change, or delta, over observations.
 
 This method results in a counter metric appearing one minute delayed in contrast to a [Gauge](#gauge) metric if scraping for both metrics started simultaneously.
-For details, see the [metric ingestion protocol reference](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+For details, see the [metric ingestion protocol reference](../ru/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
 
 Ingesting Counter metrics
 
-The **delta encoding** used by the Dynatrace [`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.") ingestion type means that the ingested value *does not* reflect the actual value, but the difference between measurements.
+The **delta encoding** used by the Dynatrace [`COUNT`](../ru/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.") ingestion type means that the ingested value *does not* reflect the actual value, but the difference between measurements.
 
 1
 
@@ -2469,7 +2469,7 @@ for seldomly changing data, the method avoids data redundancy.
 ### Gauge
 
 In contrast to [Counter](#counter), the gauge metric[1](#fn-2-1-def) stores a single numerical value which can increase and decrease and is typically used for measured values such as
-current memory usage or number of users online. In Dynatrace, the [`GAUGE`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#gauge-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.") metric type will be used for data ingest.
+current memory usage or number of users online. In Dynatrace, the [`GAUGE`](../ru/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#gauge-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.") metric type will be used for data ingest.
 
 1
 
@@ -2557,7 +2557,7 @@ The filter syntax also supports the asterisk (`*`). This symbol allows you to fi
 Using the `*` symbol within a filter, such as `redis_*_bytes`, is not supported.
 
 The filter is applied to the raw metric key, so it's important to know that Dynatrace automatically appends suffixes to some metric keys, depending on the original metric key and metric type.
-For details, see [Payload](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#payload "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+For details, see [Payload](../ru/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#payload "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
 
 For summary and histogram, the filter is applied to the whole metric family, as stated in the `#TYPE` line of OpenMetrics format.
 For example, if the summary metric family `foo_seconds` is filtered, all the metric points, including `foo_seconds_count` and `foo_seconds_sum`, are filtered.
@@ -3153,7 +3153,7 @@ If you don't have full control over the pod template, you have the following opt
 
 ## View metrics on a dashboard
 
-Metrics from Prometheus exporters are available in Data Explorer for custom charting. Select **Create custom chart** and select **Try it out** in the top banner. For more information, see [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+Metrics from Prometheus exporters are available in Data Explorer for custom charting. Select **Create custom chart** and select **Try it out** in the top banner. For more information, see [Data Explorer](../ru/analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.").
 
 You can simply search for metric keys of all available metrics and define how youâd like to analyze and chart your metrics. After that you can pin your charts on a dashboard.
 
@@ -3161,7 +3161,7 @@ You can simply search for metric keys of all available metrics and define how yo
 
 
 
-You can also create custom alerts based on the Prometheus scraped metrics. Go to **Settings** > **Anomaly detection** > **Metric events** and select **Add metric event**. In the **Add metric event** page, search for a Prometheus metric using its key and define your alert. For more information, see [Metric events for alerting](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace").
+You can also create custom alerts based on the Prometheus scraped metrics. Go to **Settings** > **Anomaly detection** > **Metric events** and select **Add metric event**. In the **Add metric event** page, search for a Prometheus metric using its key and define your alert. For more information, see [Metric events for alerting](../ru/dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace").
 
 ## Limitations
 
@@ -3202,14 +3202,14 @@ These two methods serve different contexts, work independently from each other, 
 
 ## Monitoring consumption
 
-If you have DPS licensing, you can get more information about your environment's custom metric consumption from our [licensing documentation](/docs/license/capabilities/platform-extensions/custom-metrics-classic "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
+If you have DPS licensing, you can get more information about your environment's custom metric consumption from our [licensing documentation](license/capabilities/platform-extensions/custom-metrics-classic.md "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
 
-* Full-Stack Monitoring [includes a fixed number of custom metric data points](/docs/license/capabilities/app-infra-observability/full-stack-monitoring#full-stack-metrics "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") for each GiB that contributes to your environment's GiB-hour consumption for containers with code-modules.
+* Full-Stack Monitoring [includes a fixed number of custom metric data points](../ru/license/capabilities/app-infra-observability/full-stack-monitoring.md#full-stack-metrics "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") for each GiB that contributes to your environment's GiB-hour consumption for containers with code-modules.
 
-If you have Dynatrace classic licensing, Prometheus metrics in Kubernetes environments are subject to [DDU consumption](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+If you have Dynatrace classic licensing, Prometheus metrics in Kubernetes environments are subject to [DDU consumption](license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 
-* Prometheus metrics from exporters running on hosts monitored by OneAgent are first deducted from your quota of [included metrics per host unit](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."). After this quota is exceeded, any additional metrics consume [DDUs](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
-* Prometheus metrics from exporters running on hosts not monitored by OneAgent always consume [DDUs](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+* Prometheus metrics from exporters running on hosts monitored by OneAgent are first deducted from your quota of [included metrics per host unit](license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."). After this quota is exceeded, any additional metrics consume [DDUs](license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+* Prometheus metrics from exporters running on hosts not monitored by OneAgent always consume [DDUs](license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 
 ## Troubleshooting
 
@@ -3217,8 +3217,8 @@ To troubleshoot Prometheus integration issues, download the [Kubernetes Monitori
 
 ## Related topics
 
-* [Metrics Classic](/docs/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.")
-* [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Metrics Classic](analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")
+* [Set up Dynatrace on Kubernetes](../ru/ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
 
 ---
 
@@ -3276,11 +3276,11 @@ Dynatrace provides a pre-configured dashboard that covers the following use-case
 
 ## Limitations
 
-This feature is available only if your Kubernetes cluster is [connected to a local Kubernetes API endpoint](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring "Monitor the Kubernetes API using Dynatrace").
+This feature is available only if your Kubernetes cluster is [connected to a local Kubernetes API endpoint](../ru/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring.md "Monitor the Kubernetes API using Dynatrace").
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Set up Dynatrace on Kubernetes](../ru/ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
 
 ---
 
@@ -3309,7 +3309,7 @@ The unified analysis view for Kubernetes services enables you to examine port de
 The Kubernetes services from Infrastructure Monitoring and the services from Applications & Microservices are two fundamentally different concepts.
 
 * A [Kubernetes serviceï»¿](https://dt-url.net/x3034x8) (entity type: `KUBERNETES_SERVICE`) is a Kubernetes-specific concept. It usually exposes a set of pods on the network level. Pods can be served by multiple Kubernetes services.
-* A [service](/docs/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.")(entity type: `SERVICE`) is automatically detected by Dynatrace based on the properties of your application deployment and configuration. Depending on technologies and configuration, Dynatrace can either detect multiple services per pod, or services that span across multiple pods.
+* A [service](../ru/observe/application-observability/services.md "Learn how to monitor and analyze your services, define and use request attributes, and more.")(entity type: `SERVICE`) is automatically detected by Dynatrace based on the properties of your application deployment and configuration. Depending on technologies and configuration, Dynatrace can either detect multiple services per pod, or services that span across multiple pods.
 
 ## Prerequisites
 
@@ -3359,7 +3359,7 @@ Existing management zones need to be manually updated to cover Kubernetes servic
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Set up Dynatrace on Kubernetes](../ru/ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
 
 ---
 
@@ -3379,13 +3379,13 @@ scraped: 2026-03-06T21:22:03.440195
 * 2-min read
 * Published Jan 19, 2023
 
-You can keep track of current [service-level objectives](/docs/deliver/service-level-objectives-classic "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic.") related to a Kubernetes/OpenShift workload on the **Kubernetes workload** details pages.
+You can keep track of current [service-level objectives](../ru/deliver/service-level-objectives-classic.md "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic.") related to a Kubernetes/OpenShift workload on the **Kubernetes workload** details pages.
 
 * Select **SLOs** on the notifications bar to display the **Service-level objectives** panel, which lists SLOs that are directly or indirectly connected to the workload.
 
 ## Directly connected SLOs
 
-* An SLO is directly connected to a workload when the [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") of an SLO meets the following criteria:
+* An SLO is directly connected to a workload when the [entity selector](../ru/dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.") of an SLO meets the following criteria:
 
   + The entity type is set to `"CLOUD_APPLICATION"`.
   + The entity ID is set to the workload ID.
@@ -3393,7 +3393,7 @@ You can keep track of current [service-level objectives](/docs/deliver/service-l
 
 ## Indirectly connected SLOs
 
-* An SLO isn't directly connected to a workload when, in the [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") of an SLO, no entity ID is provided.
+* An SLO isn't directly connected to a workload when, in the [entity selector](../ru/dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.") of an SLO, no entity ID is provided.
 
   Example: When generic values such as `type("CLOUD_APPLICATION"),tag("slo")` are provided, the query results in all SLOs for all workloads, including the current workload.
 * To see SLOs that are not directly connected to the workload, turn off **Show only directly connected SLOs**.
@@ -3403,11 +3403,11 @@ You can keep track of current [service-level objectives](/docs/deliver/service-l
 * Select **Details** to view a chart of the respective SLO metrics.
 * In **Actions**, select
 
-  + **View in Data Explorer** to [see SLO metrics in Data Explorer](/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo#explorer "Create, configure, and monitor service-level objectives with Dynatrace.").
-  + **Pin to Dashboard** to [pin the SLO to your dashboard](/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo#dash "Create, configure, and monitor service-level objectives with Dynatrace."). For details, see [Pin tiles to your dashboard](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+  + **View in Data Explorer** to [see SLO metrics in Data Explorer](deliver/service-level-objectives-classic/configure-and-monitor-slo.md#explorer "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **Pin to Dashboard** to [pin the SLO to your dashboard](deliver/service-level-objectives-classic/configure-and-monitor-slo.md#dash "Create, configure, and monitor service-level objectives with Dynatrace."). For details, see [Pin tiles to your dashboard](../ru/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard.md "Learn to pin tiles to your dashboards.").
   + **SLO definition** to edit the SLO in **Service-level objective definitions**.
-  + **Clone** to [clone the SLO](/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo#clone "Create, configure, and monitor service-level objectives with Dynatrace.").
-  + **Create alert** to [create an alert for the SLO](/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo#alerts "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **Clone** to [clone the SLO](deliver/service-level-objectives-classic/configure-and-monitor-slo.md#clone "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **Create alert** to [create an alert for the SLO](deliver/service-level-objectives-classic/configure-and-monitor-slo.md#alerts "Create, configure, and monitor service-level objectives with Dynatrace.").
 
 ## No SLOs
 
@@ -3416,7 +3416,7 @@ If no SLOs are found, you can
 * Select a different timeframe in the upper-right corner.
 
   ![Timeframe selector: menu bar](https://dt-cdn.net/images/timeframe-selector-menu-bar-264-8193110c8c.png)
-* Select **Add SLO** to create an SLO in the [SLO wizard](/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo#wizard "Create, configure, and monitor service-level objectives with Dynatrace.").
+* Select **Add SLO** to create an SLO in the [SLO wizard](deliver/service-level-objectives-classic/configure-and-monitor-slo.md#wizard "Create, configure, and monitor service-level objectives with Dynatrace.").
 
 ## Example SLO panel
 
@@ -3424,7 +3424,7 @@ If no SLOs are found, you can
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Set up Dynatrace on Kubernetes](../ru/ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
 
 ---
 
@@ -3449,8 +3449,8 @@ You can keep track of security vulnerabilities in your Kubernetes environments o
 ## Prerequisites
 
 * In Dynatrace, go to your Kubernetes cluster settings page and make sure that **Monitor Kubernetes namespaces, services, workloads, and pods** is turned on.
-* [Activate and enable Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.")
-* To view code-level vulnerabilities [Activate and enable Runtime Application Protection](/docs/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
+* [Activate and enable Application Security](../ru/secure/application-security.md "Access the Dynatrace Application Security functionalities.")
+* To view code-level vulnerabilities [Activate and enable Runtime Application Protection](../ru/secure/application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
 
 ## Vulnerability section
 
@@ -3459,7 +3459,7 @@ The **Vulnerabilities** section is displayed on the Kubernetes
 * Cluster details page
 * Workloads page
 
-It shows the five most severe related [third-party vulnerabilities](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities "Monitor the security issues of your third-party libraries.") and [code-level vulnerabilities](/docs/secure/vulnerabilities "Prioritize and efficiently manage vulnerabilities in your monitored environments.").
+It shows the five most severe related [third-party vulnerabilities](../ru/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities.md "Monitor the security issues of your third-party libraries.") and [code-level vulnerabilities](../ru/secure/vulnerabilities.md "Prioritize and efficiently manage vulnerabilities in your monitored environments.").
 
 * Select a vulnerability to view the details and understand the severity and impact of a vulnerability within your environment.
 * For a complete list of the detected vulnerabilities for your Kubernetes environment, select **Show all third-party vulnerabilities**/**Show all code-level vulnerabilities**.
@@ -3472,14 +3472,14 @@ Example code-level vulnerabilities:
 
 ![Kubernetes workload: CLV](https://dt-cdn.net/images/workload-clv-767-ba23d97d54.png)
 
-If you're missing the [security permissions](/docs/secure/application-security#permissions "Access the Dynatrace Application Security functionalities.") for the selected management zone,
+If you're missing the [security permissions](../ru/secure/application-security.md#permissions "Access the Dynatrace Application Security functionalities.") for the selected management zone,
 
 * On the **Kubernetes cluster** page, the **Vulnerabilities** section is not displayed.
 * On the **Kubernetes workload** page, the **Vulnerabilities** tab on the notification bar shows `Not analyzed`.
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Set up Dynatrace on Kubernetes](../ru/ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
 
 ---
 
@@ -3537,7 +3537,7 @@ To display the namespace unified analysis page, in Dynatrace, go to ![Kubernetes
 
 A workload consists of one or more pods. It's a way of describing a type of microservice that comprises an application. For instance, an application might have a frontend workload and a backend workload made up of a dozen pods, each across a Kubernetes cluster.
 
-The workload unified analysis page provides insights into resource utilization, problem detection, [vulnerabilities](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-vulnerabilities-kubernetes "Keep track of vulnerabilities in Kubernetes/OpenShift."), number of pods in the respective workload, number of services that are sending traffic to the pods, and events for all of the pods in a given workload. This information is valuable for analyzing the overall performance of a microservice rather than looking at specific problems in a pod instance.
+The workload unified analysis page provides insights into resource utilization, problem detection, [vulnerabilities](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-vulnerabilities-kubernetes.md "Keep track of vulnerabilities in Kubernetes/OpenShift."), number of pods in the respective workload, number of services that are sending traffic to the pods, and events for all of the pods in a given workload. This information is valuable for analyzing the overall performance of a microservice rather than looking at specific problems in a pod instance.
 
 To display the workload unified analysis page, in Dynatrace, go to ![Kubernetes Workloads](https://dt-cdn.net/images/kubernetes-workloads-512-c5f749c651.png "Kubernetes Workloads") **Kubernetes Workloads Classic** and select a workload.
 
@@ -3587,7 +3587,7 @@ You can use management zones to control user access to the monitoring data of sp
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Set up Dynatrace on Kubernetes](../ru/ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
 
 ---
 
@@ -3611,36 +3611,36 @@ Dynatrace provides full-stack monitoring for Kubernetes, covering everything fro
 
 ## Prerequisites
 
-1. [Set up and configure Dynatrace integration on Kubernetes](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes")
-2. [Connect your cluster to Dynatrace](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring "Monitor the Kubernetes API using Dynatrace")
+1. [Set up and configure Dynatrace integration on Kubernetes](../ru/ingest-from/setup-on-k8s/deployment.md "Deploy Dynatrace Operator on Kubernetes")
+2. [Connect your cluster to Dynatrace](../ru/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring.md "Monitor the Kubernetes API using Dynatrace")
 
-See [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes") for further options and details.
+See [Set up Dynatrace on Kubernetes](../ru/ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes") for further options and details.
 
 ## Default monitoring features
 
-To learn how to configure default monitoring features for Kubernetes/OpenShift clusters, see [Global default monitoring settings for Kubernetes/OpenShift](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/default-monitoring-settings "Configure default monitoring settings for all new Kubernetes/OpenShift clusters in your environment.")
+To learn how to configure default monitoring features for Kubernetes/OpenShift clusters, see [Global default monitoring settings for Kubernetes/OpenShift](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/default-monitoring-settings.md "Configure default monitoring settings for all new Kubernetes/OpenShift clusters in your environment.")
 
 ## View monitoring results
 
 To learn how to analyze monitoring results in Dynatrace, see:
 
-* [Monitor Kubernetes/OpenShift cluster utilization](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-cluster-utilization-kubernetes "Monitor the health and utilization of your Kubernetes/OpenShift cluster resources.")
-* [Monitor Kubernetes/OpenShift events](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-events-kubernetes "Extend visibility into Kubernetes/OpenShift events.")
-* [Monitor Kubernetes/OpenShift workloads](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-workloads-kubernetes "Enable Kubernetes/OpenShift workloads integration for Dynatrace monitoring.")
-* [Monitor Kubernetes/OpenShift services](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-services-kubernetes "Enable Kubernetes/OpenShift service integration for Dynatrace monitoring.")
-* [Monitor Kubernetes/OpenShift metrics](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-metrics-kubernetes "Available metrics for monitoring Kubernetes/OpenShift clusters")
-* [Monitor Prometheus metrics](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.")
-* [Organize Kubernetes/OpenShift deployments by tags](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments "Organize and filter your monitored applications by importing labels and annotations from your Kubernetes/OpenShift environment.")
-* [Monitor persistent volume claims on Kubernetes/OpenShift](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-pvc-metrics "Enable Kubernetes/OpenShift monitoring for persistent volume claims metrics.")
-* [Alert on common Kubernetes/OpenShift issues](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.")
-* [Monitor vulnerabilities in Kubernetes/OpenShift](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-vulnerabilities-kubernetes "Keep track of vulnerabilities in Kubernetes/OpenShift.")
-* [Monitor service-level objectives in Kubernetes/OpenShift](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-slos-kubernetes "Keep track of SLOs for Kubernetes/OpenShift.")
-* [Istio/Envoy proxy metrics](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-istio-metrics "Istio metric ingestion and topology detection")
-* [Global default monitoring settings for Kubernetes/OpenShift](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/default-monitoring-settings "Configure default monitoring settings for all new Kubernetes/OpenShift clusters in your environment.")
+* [Monitor Kubernetes/OpenShift cluster utilization](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-cluster-utilization-kubernetes.md "Monitor the health and utilization of your Kubernetes/OpenShift cluster resources.")
+* [Monitor Kubernetes/OpenShift events](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-events-kubernetes.md "Extend visibility into Kubernetes/OpenShift events.")
+* [Monitor Kubernetes/OpenShift workloads](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-workloads-kubernetes.md "Enable Kubernetes/OpenShift workloads integration for Dynatrace monitoring.")
+* [Monitor Kubernetes/OpenShift services](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-services-kubernetes.md "Enable Kubernetes/OpenShift service integration for Dynatrace monitoring.")
+* [Monitor Kubernetes/OpenShift metrics](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-metrics-kubernetes.md "Available metrics for monitoring Kubernetes/OpenShift clusters")
+* [Monitor Prometheus metrics](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics.md "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.")
+* [Organize Kubernetes/OpenShift deployments by tags](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments.md "Organize and filter your monitored applications by importing labels and annotations from your Kubernetes/OpenShift environment.")
+* [Monitor persistent volume claims on Kubernetes/OpenShift](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-pvc-metrics.md "Enable Kubernetes/OpenShift monitoring for persistent volume claims metrics.")
+* [Alert on common Kubernetes/OpenShift issues](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues.md "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.")
+* [Monitor vulnerabilities in Kubernetes/OpenShift](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-vulnerabilities-kubernetes.md "Keep track of vulnerabilities in Kubernetes/OpenShift.")
+* [Monitor service-level objectives in Kubernetes/OpenShift](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-slos-kubernetes.md "Keep track of SLOs for Kubernetes/OpenShift.")
+* [Istio/Envoy proxy metrics](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-istio-metrics.md "Istio metric ingestion and topology detection")
+* [Global default monitoring settings for Kubernetes/OpenShift](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/default-monitoring-settings.md "Configure default monitoring settings for all new Kubernetes/OpenShift clusters in your environment.")
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Set up Dynatrace on Kubernetes](../ru/ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
 
 ---
 
@@ -3678,15 +3678,15 @@ Find detailed descriptions of various use cases below.
 
 [### Assess and troubleshoot cluster health
 
-Understand and manage the health of your Kubernetes clusters.](/docs/observe/infrastructure-observability/container-platform-monitoring/use-cases/cluster-health "Understand and manage the health of your Kubernetes clusters with Dynatrace.")[### Optimize workload resource usage with Kubernetes (new) **Kubernetes** and Notebooks **Notebooks**
+Understand and manage the health of your Kubernetes clusters.](observe/infrastructure-observability/container-platform-monitoring/use-cases/cluster-health.md "Understand and manage the health of your Kubernetes clusters with Dynatrace.")[### Optimize workload resource usage with Kubernetes (new) **Kubernetes** and Notebooks **Notebooks**
 
-Efficiently utilize your cluster's resources.](/docs/observe/infrastructure-observability/container-platform-monitoring/use-cases/resource-optimization "Efficiently utilize your cluster's resources by identifying workloads that don't fully utilize their allocated resources.")[### Troubleshooting common health problems of Kubernetes workloads
+Efficiently utilize your cluster's resources.](observe/infrastructure-observability/container-platform-monitoring/use-cases/resource-optimization.md "Efficiently utilize your cluster's resources by identifying workloads that don't fully utilize their allocated resources.")[### Troubleshooting common health problems of Kubernetes workloads
 
-Identify and resolve health problems in Kubernetes workloads.](/docs/observe/infrastructure-observability/container-platform-monitoring/use-cases/troubleshoot-health-problems "Identify and resolve health problems in Kubernetes workloads.")[### Predictive Kubernetes operations
+Identify and resolve health problems in Kubernetes workloads.](observe/infrastructure-observability/container-platform-monitoring/use-cases/troubleshoot-health-problems.md "Identify and resolve health problems in Kubernetes workloads.")[### Predictive Kubernetes operations
 
-Manage disk space within Kubernetes environments.](/docs/observe/infrastructure-observability/container-platform-monitoring/use-cases/predictive-operations "Proactively manage disk space within Kubernetes environments")[### Alert on common misconfigurations and detect anomalies
+Manage disk space within Kubernetes environments.](observe/infrastructure-observability/container-platform-monitoring/use-cases/predictive-operations.md "Proactively manage disk space within Kubernetes environments")[### Alert on common misconfigurations and detect anomalies
 
-Address Kubernetes issues using out-of-the-box alerting mechanisms.](/docs/observe/infrastructure-observability/container-platform-monitoring/use-cases/alert-use-case "Proactively address Kubernetes issues using out-of-the-box alerting mechanisms.")
+Address Kubernetes issues using out-of-the-box alerting mechanisms.](observe/infrastructure-observability/container-platform-monitoring/use-cases/alert-use-case.md "Proactively address Kubernetes issues using out-of-the-box alerting mechanisms.")
 
 ---
 
@@ -3711,25 +3711,25 @@ scraped: 2026-03-06T21:17:04.380827
 
 ### Kubernetes Classic
 
-Available metrics for monitoring Kubernetes clusters.](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring "Monitor Kubernetes/OpenShift with Dynatrace.")[![Cloud Foundry](https://dt-cdn.net/images/cloud-foundry-512-d7620ed0ba.png "Cloud Foundry")
+Available metrics for monitoring Kubernetes clusters.](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring.md "Monitor Kubernetes/OpenShift with Dynatrace.")[![Cloud Foundry](https://dt-cdn.net/images/cloud-foundry-512-d7620ed0ba.png "Cloud Foundry")
 
 ### Cloud Foundry
 
-Monitor Cloud Foundry with Dynatrace.](/docs/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.")[![Docker](https://dt-cdn.net/images/docker-512-0c0977826e.webp "Docker")
+Monitor Cloud Foundry with Dynatrace.](../ru/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring.md "Monitor Cloud Foundry with Dynatrace.")[![Docker](https://dt-cdn.net/images/docker-512-0c0977826e.webp "Docker")
 
 ### Docker
 
-Deploy OneAgent on Docker.](/docs/ingest-from/setup-on-container-platforms/docker "Deploy OneAgent on Docker.")[![Heroku](https://dt-cdn.net/images/heroku-512-984aa81b41.webp "Heroku")
+Deploy OneAgent on Docker.](../ru/ingest-from/setup-on-container-platforms/docker.md "Deploy OneAgent on Docker.")[![Heroku](https://dt-cdn.net/images/heroku-512-984aa81b41.webp "Heroku")
 
 ### Heroku
 
-Monitor Heroku with Dynatrace.](/docs/observe/infrastructure-observability/container-platform-monitoring/heroku "Monitor Heroku with Dynatrace.")
+Monitor Heroku with Dynatrace.](../ru/observe/infrastructure-observability/container-platform-monitoring/heroku.md "Monitor Heroku with Dynatrace.")
 
 ## Related topics
 
-* [Set up Dynatrace on container and PaaS platforms](/docs/ingest-from/setup-on-container-platforms "Deploy Dynatrace on various container and PaaS platforms.")
-* [Monitor container groups](/docs/observe/infrastructure-observability/container-platform-monitoring/container-groups "Overview on container groups monitoring")
-* [Container monitoring rules](/docs/observe/infrastructure-observability/container-platform-monitoring/container-monitoring-rules "Define, enable and disable container monitoring rules")
+* [Set up Dynatrace on container and PaaS platforms](ingest-from/setup-on-container-platforms.md "Deploy Dynatrace on various container and PaaS platforms.")
+* [Monitor container groups](../ru/observe/infrastructure-observability/container-platform-monitoring/container-groups.md "Overview on container groups monitoring")
+* [Container monitoring rules](../ru/observe/infrastructure-observability/container-platform-monitoring/container-monitoring-rules.md "Define, enable and disable container monitoring rules")
 
 ---
 
@@ -3755,14 +3755,14 @@ All collected data can also be used in dashboards, alerts, notebooks, and any ot
 
 For a complete list of metrics collected, select your database vendor from the list below.
 
-* [IBM DB2](/docs/observe/infrastructure-observability/databases/extensions/ibm-db2-for-luw-remote-monitoring#feature-sets "Remotely collect monitoring metrics from your DB2 databases.")
-* [MariaDB](/docs/observe/infrastructure-observability/databases/extensions/mariadb-1#feature-sets "Remotely monitor your MariaDB instances, collect key KPIs & slow queries details")
-* [Microsoft SQL Server](/docs/observe/infrastructure-observability/databases/database-app/get-started/microsoft-sql#feature-sets "How to set up monitoring for Microsoft SQL databases in Dynatrace.")
-* [MySQL](/docs/observe/infrastructure-observability/databases/extensions/mysql-remote-monitoring-v2#feature-sets "Monitor your MySQL instances remotely, collect key KPIs, and slow query details.")
-* [Oracle](/docs/observe/infrastructure-observability/databases/extensions/oracle-database#feature-sets "Observe, analyze, and optimize the usage, health, and performance of your database.")
-* [PostgreSQL](/docs/observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring#feature-sets "Observe, analyze, and optimize the usage, health, and performance of your PostgreSQL database.")
-* [SAP HANA](/docs/observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring#feature-sets "Monitor SAP HANA databases remotely to analyze SQL performance and database health.")
-* [Snowflake](/docs/observe/infrastructure-observability/databases/extensions/snowflake#feature-sets "Expand visibility to improve health and performance monitoring of your Snowflake database.")
+* [IBM DB2](observe/infrastructure-observability/databases/extensions/ibm-db2-for-luw-remote-monitoring.md#feature-sets "Remotely collect monitoring metrics from your DB2 databases.")
+* [MariaDB](observe/infrastructure-observability/databases/extensions/mariadb-1.md#feature-sets "Remotely monitor your MariaDB instances, collect key KPIs & slow queries details")
+* [Microsoft SQL Server](../ru/observe/infrastructure-observability/databases/database-app/get-started/microsoft-sql.md#feature-sets "How to set up monitoring for Microsoft SQL databases in Dynatrace.")
+* [MySQL](observe/infrastructure-observability/databases/extensions/mysql-remote-monitoring-v2.md#feature-sets "Monitor your MySQL instances remotely, collect key KPIs, and slow query details.")
+* [Oracle](observe/infrastructure-observability/databases/extensions/oracle-database.md#feature-sets "Observe, analyze, and optimize the usage, health, and performance of your database.")
+* [PostgreSQL](observe/infrastructure-observability/databases/extensions/postgresdb-remote-monitoring.md#feature-sets "Observe, analyze, and optimize the usage, health, and performance of your PostgreSQL database.")
+* [SAP HANA](observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring.md#feature-sets "Monitor SAP HANA databases remotely to analyze SQL performance and database health.")
+* [Snowflake](observe/infrastructure-observability/databases/extensions/snowflake.md#feature-sets "Expand visibility to improve health and performance monitoring of your Snowflake database.")
 
 ## Data collection details
 
@@ -3859,15 +3859,15 @@ scraped: 2026-03-06T21:27:36.645522
 * How-to guide
 * Published Jan 20, 2026
 
-Use Dynatrace Extension framework to extend your application observability into data acquired directly from your IBM Database layer and monitor how database server tasks impact your app. To learn more, see [Get started with IBM DB2 database extension](/docs/observe/infrastructure-observability/databases/extensions/ibm-db2-for-luw-remote-monitoring#get-started "Remotely collect monitoring metrics from your DB2 databases.").
+Use Dynatrace Extension framework to extend your application observability into data acquired directly from your IBM Database layer and monitor how database server tasks impact your app. To learn more, see [Get started with IBM DB2 database extension](observe/infrastructure-observability/databases/extensions/ibm-db2-for-luw-remote-monitoring.md#get-started "Remotely collect monitoring metrics from your DB2 databases.").
 
 ## Prerequisites
 
-Ensure your system meets these [requirements](/docs/observe/infrastructure-observability/databases/extensions/ibm-db2-for-luw-remote-monitoring#requirements "Remotely collect monitoring metrics from your DB2 databases.") for full feature support.
+Ensure your system meets these [requirements](observe/infrastructure-observability/databases/extensions/ibm-db2-for-luw-remote-monitoring.md#requirements "Remotely collect monitoring metrics from your DB2 databases.") for full feature support.
 
 ## Set up IBM DB2 extension for monitoring
 
-To set up and activate the extension, follow these [detailed activation steps](/docs/observe/infrastructure-observability/databases/extensions/ibm-db2-for-luw-remote-monitoring#activation-and-setup "Remotely collect monitoring metrics from your DB2 databases.").
+To set up and activate the extension, follow these [detailed activation steps](observe/infrastructure-observability/databases/extensions/ibm-db2-for-luw-remote-monitoring.md#activation-and-setup "Remotely collect monitoring metrics from your DB2 databases.").
 
 1. Install the IBM DB2 extension.
 2. Define endpoints.
@@ -3876,15 +3876,15 @@ To set up and activate the extension, follow these [detailed activation steps](/
 
 ## FAQ
 
-For complete details, go to the [FAQ](/docs/observe/infrastructure-observability/databases/extensions/ibm-db2-for-luw-remote-monitoring#faq "Remotely collect monitoring metrics from your DB2 databases.").
+For complete details, go to the [FAQ](observe/infrastructure-observability/databases/extensions/ibm-db2-for-luw-remote-monitoring.md#faq "Remotely collect monitoring metrics from your DB2 databases.").
 
 ## Feature sets
 
-[Feature sets](/docs/observe/infrastructure-observability/databases/extensions/ibm-db2-for-luw-remote-monitoring#feature-sets "Remotely collect monitoring metrics from your DB2 databases.") restrict which metrics are collected when you activate the extension.
+[Feature sets](observe/infrastructure-observability/databases/extensions/ibm-db2-for-luw-remote-monitoring.md#feature-sets "Remotely collect monitoring metrics from your DB2 databases.") restrict which metrics are collected when you activate the extension.
 
 ## Related topics
 
-* [IBM DB2 for LUW (remote monitoring) extension](/docs/observe/infrastructure-observability/databases/extensions/ibm-db2-for-luw-remote-monitoring "Remotely collect monitoring metrics from your DB2 databases.")
+* [IBM DB2 for LUW (remote monitoring) extension](observe/infrastructure-observability/databases/extensions/ibm-db2-for-luw-remote-monitoring.md "Remotely collect monitoring metrics from your DB2 databases.")
 
 ---
 
@@ -3908,11 +3908,11 @@ Use Dynatrace Extension framework to extend your application observability into 
 
 ## Prerequisites
 
-Ensure your system meets these [requirements](/docs/observe/infrastructure-observability/databases/extensions/mariadb-1#requirements "Remotely monitor your MariaDB instances, collect key KPIs & slow queries details") for full feature support.
+Ensure your system meets these [requirements](observe/infrastructure-observability/databases/extensions/mariadb-1.md#requirements "Remotely monitor your MariaDB instances, collect key KPIs & slow queries details") for full feature support.
 
 ## Set up MariaDB extension for monitoring
 
-To set up and activate the extension, follow these [detailed activation steps](/docs/observe/infrastructure-observability/databases/extensions/mariadb-1#activation-and-setup "Remotely monitor your MariaDB instances, collect key KPIs & slow queries details").
+To set up and activate the extension, follow these [detailed activation steps](observe/infrastructure-observability/databases/extensions/mariadb-1.md#activation-and-setup "Remotely monitor your MariaDB instances, collect key KPIs & slow queries details").
 
 1. Add the database instance.
 2. Select the hosting type.
@@ -3922,15 +3922,15 @@ To set up and activate the extension, follow these [detailed activation steps](/
 
 ## FAQ
 
-For complete details, go to the [FAQ](/docs/observe/infrastructure-observability/databases/extensions/mariadb-1#faq "Remotely monitor your MariaDB instances, collect key KPIs & slow queries details") section.
+For complete details, go to the [FAQ](observe/infrastructure-observability/databases/extensions/mariadb-1.md#faq "Remotely monitor your MariaDB instances, collect key KPIs & slow queries details") section.
 
 ## Feature sets
 
-[Feature sets](/docs/observe/infrastructure-observability/databases/extensions/mariadb-1#feature-sets "Remotely monitor your MariaDB instances, collect key KPIs & slow queries details") restrict which metrics are collected when you activate the extension.
+[Feature sets](observe/infrastructure-observability/databases/extensions/mariadb-1.md#feature-sets "Remotely monitor your MariaDB instances, collect key KPIs & slow queries details") restrict which metrics are collected when you activate the extension.
 
 ## Related topics
 
-* [MariaDB extension](/docs/observe/infrastructure-observability/databases/extensions/mariadb-1 "Remotely monitor your MariaDB instances, collect key KPIs & slow queries details")
+* [MariaDB extension](observe/infrastructure-observability/databases/extensions/mariadb-1.md "Remotely monitor your MariaDB instances, collect key KPIs & slow queries details")
 
 ---
 
@@ -3952,9 +3952,9 @@ scraped: 2026-03-03T21:22:02.020530
 
 There are three Microsoft SQL extensions supported in Dynatrace:
 
-* [Microsoft SQL Server](/docs/observe/infrastructure-observability/databases/extensions/microsoft-sql-server-2#overview "Improve the health and performance monitoring of your Microsoft SQL Servers."): Uses a modern extension architecture with AIOps capabilities to simplify database monitoring and improve cross-team collaboration. This extension provides real-time and automatic insights into database performance metrics and business KPIs.
-* [Microsoft SQL Server (local)](/docs/observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local#overview "Improve the health and performance monitoring of your Microsoft SQL Servers."): Uses WMI queries to collect key performance and health metrics from the SQL Server instance running on the host, extending your visibility.
-* [Microsoft SQL Server local counters](/docs/observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local-counters#overview "Improve the health and performance monitoring of your Microsoft SQL Servers."): Uses Windows Performance Counters to collect key performance and health metrics for all SQL Server instances on the host.
+* [Microsoft SQL Server](observe/infrastructure-observability/databases/extensions/microsoft-sql-server-2.md#overview "Improve the health and performance monitoring of your Microsoft SQL Servers."): Uses a modern extension architecture with AIOps capabilities to simplify database monitoring and improve cross-team collaboration. This extension provides real-time and automatic insights into database performance metrics and business KPIs.
+* [Microsoft SQL Server (local)](observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local.md#overview "Improve the health and performance monitoring of your Microsoft SQL Servers."): Uses WMI queries to collect key performance and health metrics from the SQL Server instance running on the host, extending your visibility.
+* [Microsoft SQL Server local counters](observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local-counters.md#overview "Improve the health and performance monitoring of your Microsoft SQL Servers."): Uses Windows Performance Counters to collect key performance and health metrics for all SQL Server instances on the host.
 
 Depending on your particular use case, such as the environmentâs access restrictions, performance needs, and monitoring goals, you might choose one or both extensions to get complete visibility.
 
@@ -3962,45 +3962,45 @@ Depending on your particular use case, such as the environmentâs access res
 
 Ensure your system meets the requirements and has the necessary compatibility information for full feature support.
 
-* For Microsoft SQL Server, refer to the [requirements](/docs/observe/infrastructure-observability/databases/extensions/microsoft-sql-server-2#requirements "Improve the health and performance monitoring of your Microsoft SQL Servers.") and [compatibility information](/docs/observe/infrastructure-observability/databases/extensions/microsoft-sql-server-2#compatibility-information "Improve the health and performance monitoring of your Microsoft SQL Servers.") information.
-* For Microsoft SQL Server (local), refer to [compatibility information](/docs/observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local#compatibility-information "Improve the health and performance monitoring of your Microsoft SQL Servers.") information.
-* For Microsoft SQL Server local counters, refer to the [requirements and compatibility](/docs/observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local-counters#requirements "Improve the health and performance monitoring of your Microsoft SQL Servers.") information.
+* For Microsoft SQL Server, refer to the [requirements](observe/infrastructure-observability/databases/extensions/microsoft-sql-server-2.md#requirements "Improve the health and performance monitoring of your Microsoft SQL Servers.") and [compatibility information](observe/infrastructure-observability/databases/extensions/microsoft-sql-server-2.md#compatibility-information "Improve the health and performance monitoring of your Microsoft SQL Servers.") information.
+* For Microsoft SQL Server (local), refer to [compatibility information](observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local.md#compatibility-information "Improve the health and performance monitoring of your Microsoft SQL Servers.") information.
+* For Microsoft SQL Server local counters, refer to the [requirements and compatibility](observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local-counters.md#requirements "Improve the health and performance monitoring of your Microsoft SQL Servers.") information.
 
 ## Set up Microsoft SQL extension for monitoring
 
 To set up and activate the extension:
 
-* For Microsoft SQL Server, refer to [Microsoft SQL Server activation and setup](/docs/observe/infrastructure-observability/databases/extensions/microsoft-sql-server-2#activation-and-setup "Improve the health and performance monitoring of your Microsoft SQL Servers.").
+* For Microsoft SQL Server, refer to [Microsoft SQL Server activation and setup](observe/infrastructure-observability/databases/extensions/microsoft-sql-server-2.md#activation-and-setup "Improve the health and performance monitoring of your Microsoft SQL Servers.").
 * For Microsoft SQL Server (local) and Microsoft SQL Server local counters, follow these steps.
 
   1. Install OneAgent on the SQL Server host.
   2. Enable log monitoring.
   3. Activate the extension from the Hub.
 
-  To learn more, refer to [Microsoft SQL Server (local) activation steps](/docs/observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local#activation-and-setup "Improve the health and performance monitoring of your Microsoft SQL Servers.") and [Microsoft SQL Server local counters activation steps](/docs/observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local-counters#activation-and-setup "Improve the health and performance monitoring of your Microsoft SQL Servers.").
+  To learn more, refer to [Microsoft SQL Server (local) activation steps](observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local.md#activation-and-setup "Improve the health and performance monitoring of your Microsoft SQL Servers.") and [Microsoft SQL Server local counters activation steps](observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local-counters.md#activation-and-setup "Improve the health and performance monitoring of your Microsoft SQL Servers.").
 
 ## Feature sets
 
 Feature sets restrict which metrics are collected when you activate the extension.
 Refer to the sections below to learn more about each feature set.
 
-* [Microsoft SQL Server](/docs/observe/infrastructure-observability/databases/extensions/microsoft-sql-server-2#feature-sets "Improve the health and performance monitoring of your Microsoft SQL Servers.") feature sets.
-* [Microsoft SQL Server (local)](/docs/observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local#feature-sets "Improve the health and performance monitoring of your Microsoft SQL Servers.") feature sets.
-* [Microsoft SQL Server local counters](/docs/observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local-counters#feature-sets "Improve the health and performance monitoring of your Microsoft SQL Servers.") feature sets.
+* [Microsoft SQL Server](observe/infrastructure-observability/databases/extensions/microsoft-sql-server-2.md#feature-sets "Improve the health and performance monitoring of your Microsoft SQL Servers.") feature sets.
+* [Microsoft SQL Server (local)](observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local.md#feature-sets "Improve the health and performance monitoring of your Microsoft SQL Servers.") feature sets.
+* [Microsoft SQL Server local counters](observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local-counters.md#feature-sets "Improve the health and performance monitoring of your Microsoft SQL Servers.") feature sets.
 
 ## Use cases
 
 Check these use case scenarios for more details.
 
-* [Microsoft SQL Server](/docs/observe/infrastructure-observability/databases/extensions/microsoft-sql-server-2#use-cases "Improve the health and performance monitoring of your Microsoft SQL Servers.") use cases.
-* [Microsoft SQL Server (local)](/docs/observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local#use-cases "Improve the health and performance monitoring of your Microsoft SQL Servers.") use cases.
-* [Microsoft SQL Server local counters](/docs/observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local-counters#use-cases "Improve the health and performance monitoring of your Microsoft SQL Servers.") use cases.
+* [Microsoft SQL Server](observe/infrastructure-observability/databases/extensions/microsoft-sql-server-2.md#use-cases "Improve the health and performance monitoring of your Microsoft SQL Servers.") use cases.
+* [Microsoft SQL Server (local)](observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local.md#use-cases "Improve the health and performance monitoring of your Microsoft SQL Servers.") use cases.
+* [Microsoft SQL Server local counters](observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local-counters.md#use-cases "Improve the health and performance monitoring of your Microsoft SQL Servers.") use cases.
 
 ## Related topics
 
-* [Microsoft SQL Server extension](/docs/observe/infrastructure-observability/databases/extensions/microsoft-sql-server-2 "Improve the health and performance monitoring of your Microsoft SQL Servers.")
-* [Microsoft SQL Server local counters extension](/docs/observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local-counters "Improve the health and performance monitoring of your Microsoft SQL Servers.")
-* [Microsoft SQL Server (local) extension](/docs/observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local "Improve the health and performance monitoring of your Microsoft SQL Servers.")
+* [Microsoft SQL Server extension](observe/infrastructure-observability/databases/extensions/microsoft-sql-server-2.md "Improve the health and performance monitoring of your Microsoft SQL Servers.")
+* [Microsoft SQL Server local counters extension](observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local-counters.md "Improve the health and performance monitoring of your Microsoft SQL Servers.")
+* [Microsoft SQL Server (local) extension](observe/infrastructure-observability/databases/extensions/microsoft-sql-server-local.md "Improve the health and performance monitoring of your Microsoft SQL Servers.")
 
 ---
 
@@ -4024,19 +4024,19 @@ Use Dynatrace Extension framework to extend your application observability into 
 
 ## Prerequisites
 
-Ensure that your system meets the [requirements](/docs/observe/infrastructure-observability/databases/extensions/mysql-remote-monitoring-v2#requirements "Monitor your MySQL instances remotely, collect key KPIs, and slow query details.") for full feature support.
+Ensure that your system meets the [requirements](observe/infrastructure-observability/databases/extensions/mysql-remote-monitoring-v2.md#requirements "Monitor your MySQL instances remotely, collect key KPIs, and slow query details.") for full feature support.
 
 ## Set up the MySQL extension for monitoring
 
-To set up and activate the extension, follow these [detailed activation steps](/docs/observe/infrastructure-observability/databases/extensions/mysql-remote-monitoring-v2#activation-and-setup "Monitor your MySQL instances remotely, collect key KPIs, and slow query details.").
+To set up and activate the extension, follow these [detailed activation steps](observe/infrastructure-observability/databases/extensions/mysql-remote-monitoring-v2.md#activation-and-setup "Monitor your MySQL instances remotely, collect key KPIs, and slow query details.").
 
 ## Feature sets
 
-[Feature sets](/docs/observe/infrastructure-observability/databases/extensions/mysql-remote-monitoring-v2#feature-sets "Monitor your MySQL instances remotely, collect key KPIs, and slow query details.") restrict which metrics are collected when you activate the extension.
+[Feature sets](observe/infrastructure-observability/databases/extensions/mysql-remote-monitoring-v2.md#feature-sets "Monitor your MySQL instances remotely, collect key KPIs, and slow query details.") restrict which metrics are collected when you activate the extension.
 
 ## FAQ and troubleshooting
 
-For complete details, go to the [FAQ](/docs/observe/infrastructure-observability/databases/extensions/mysql-remote-monitoring-v2#faq "Monitor your MySQL instances remotely, collect key KPIs, and slow query details.") section.
+For complete details, go to the [FAQ](observe/infrastructure-observability/databases/extensions/mysql-remote-monitoring-v2.md#faq "Monitor your MySQL instances remotely, collect key KPIs, and slow query details.") section.
 
 ---
 
@@ -4060,27 +4060,27 @@ Use Dynatrace Extension framework to extend your application observability into 
 
 ## Prerequisites
 
-Ensure that your system meets the [requirements](/docs/observe/infrastructure-observability/databases/extensions/oracle-database#requirements "Observe, analyze, and optimize the usage, health, and performance of your database.") for full feature support.
+Ensure that your system meets the [requirements](observe/infrastructure-observability/databases/extensions/oracle-database.md#requirements "Observe, analyze, and optimize the usage, health, and performance of your database.") for full feature support.
 
 ## Set up Oracle extension for monitoring
 
-To set up and activate the extension, follow these [detailed activation steps](/docs/observe/infrastructure-observability/databases/extensions/oracle-database#activation-and-setup "Observe, analyze, and optimize the usage, health, and performance of your database.").
+To set up and activate the extension, follow these [detailed activation steps](observe/infrastructure-observability/databases/extensions/oracle-database.md#activation-and-setup "Observe, analyze, and optimize the usage, health, and performance of your database.").
 
 ## FAQ and troubleshooting
 
-Refer to the Oracle database extension [FAQ](/docs/observe/infrastructure-observability/databases/extensions/oracle-database#faq "Observe, analyze, and optimize the usage, health, and performance of your database.") and [troubleshooting](/docs/observe/infrastructure-observability/databases/extensions/oracle-database#troubleshooting "Observe, analyze, and optimize the usage, health, and performance of your database.") sections.
+Refer to the Oracle database extension [FAQ](observe/infrastructure-observability/databases/extensions/oracle-database.md#faq "Observe, analyze, and optimize the usage, health, and performance of your database.") and [troubleshooting](observe/infrastructure-observability/databases/extensions/oracle-database.md#troubleshooting "Observe, analyze, and optimize the usage, health, and performance of your database.") sections.
 
 ## Feature sets
 
-[Feature sets](/docs/observe/infrastructure-observability/databases/extensions/oracle-database#feature-sets "Observe, analyze, and optimize the usage, health, and performance of your database.") restrict which metrics are collected when you activate the extension.
+[Feature sets](observe/infrastructure-observability/databases/extensions/oracle-database.md#feature-sets "Observe, analyze, and optimize the usage, health, and performance of your database.") restrict which metrics are collected when you activate the extension.
 
 ## Use cases
 
-Oracle Database monitoring helps you understand your application's database interactions, performance bottlenecks, and resource impact by monitoring executed statements, query patterns, and server health. To learn more, see [Oracle database monitoring use cases](/docs/observe/infrastructure-observability/databases/extensions/oracle-database#use-cases "Observe, analyze, and optimize the usage, health, and performance of your database.").
+Oracle Database monitoring helps you understand your application's database interactions, performance bottlenecks, and resource impact by monitoring executed statements, query patterns, and server health. To learn more, see [Oracle database monitoring use cases](observe/infrastructure-observability/databases/extensions/oracle-database.md#use-cases "Observe, analyze, and optimize the usage, health, and performance of your database.").
 
 ## Related topics
 
-* [Oracle Database extension](/docs/observe/infrastructure-observability/databases/extensions/oracle-database "Observe, analyze, and optimize the usage, health, and performance of your database.")
+* [Oracle Database extension](observe/infrastructure-observability/databases/extensions/oracle-database.md "Observe, analyze, and optimize the usage, health, and performance of your database.")
 
 ---
 
@@ -4104,11 +4104,11 @@ Use Dynatrace Extension framework to extend your application observability into 
 
 ## Prerequisites
 
-Ensure your system meets these [requirements](/docs/observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring#requirements "Monitor SAP HANA databases remotely to analyze SQL performance and database health.") for full feature support.
+Ensure your system meets these [requirements](observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring.md#requirements "Monitor SAP HANA databases remotely to analyze SQL performance and database health.") for full feature support.
 
 ## Set up SAP HANA extension for monitoring
 
-To set up and activate the extension, follow these [detailed activation steps](/docs/observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring#activation-and-setup "Monitor SAP HANA databases remotely to analyze SQL performance and database health.").
+To set up and activate the extension, follow these [detailed activation steps](observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring.md#activation-and-setup "Monitor SAP HANA databases remotely to analyze SQL performance and database health.").
 
 1. Add the database instance.
 2. Select the hosting type.
@@ -4118,19 +4118,19 @@ To set up and activate the extension, follow these [detailed activation steps](/
 
 ## Use cases
 
-You can benefit from SAP HANA monitoring in these [use cases](/docs/observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring#use-cases "Monitor SAP HANA databases remotely to analyze SQL performance and database health.").
+You can benefit from SAP HANA monitoring in these [use cases](observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring.md#use-cases "Monitor SAP HANA databases remotely to analyze SQL performance and database health.").
 
 ## Feature sets
 
-[Feature sets](/docs/observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring#feature-sets "Monitor SAP HANA databases remotely to analyze SQL performance and database health.") restrict which metrics are collected when you activate the extension.
+[Feature sets](observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring.md#feature-sets "Monitor SAP HANA databases remotely to analyze SQL performance and database health.") restrict which metrics are collected when you activate the extension.
 
 ## FAQ and troubleshooting
 
-For complete details, go to the [FAQ](/docs/observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring#faq "Monitor SAP HANA databases remotely to analyze SQL performance and database health.") section.
+For complete details, go to the [FAQ](observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring.md#faq "Monitor SAP HANA databases remotely to analyze SQL performance and database health.") section.
 
 ## Related topics
 
-* [SAP HANA Database (remote monitoring) extension](/docs/observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring "Monitor SAP HANA databases remotely to analyze SQL performance and database health.")
+* [SAP HANA Database (remote monitoring) extension](observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring.md "Monitor SAP HANA databases remotely to analyze SQL performance and database health.")
 
 ---
 
@@ -4154,11 +4154,11 @@ Use Dynatrace Extension framework to extend your application observability into 
 
 ## Prerequisites
 
-Ensure your system meets these [requirements](/docs/observe/infrastructure-observability/databases/extensions/snowflake#requirements "Expand visibility to improve health and performance monitoring of your Snowflake database.") for full feature support.
+Ensure your system meets these [requirements](observe/infrastructure-observability/databases/extensions/snowflake.md#requirements "Expand visibility to improve health and performance monitoring of your Snowflake database.") for full feature support.
 
 ## Set up Snowflake extension for monitoring
 
-To set up and activate the extension, follow the [detailed activation steps](/docs/observe/infrastructure-observability/databases/extensions/snowflake#activation-and-setup "Expand visibility to improve health and performance monitoring of your Snowflake database.").
+To set up and activate the extension, follow the [detailed activation steps](observe/infrastructure-observability/databases/extensions/snowflake.md#activation-and-setup "Expand visibility to improve health and performance monitoring of your Snowflake database.").
 
 1. Add the database instance.
 2. Select the hosting type.
@@ -4168,15 +4168,15 @@ To set up and activate the extension, follow the [detailed activation steps](/do
 
 ## Use cases
 
-You can benefit from Snowflake monitoring in these [use cases](/docs/observe/infrastructure-observability/databases/extensions/snowflake#use-cases "Expand visibility to improve health and performance monitoring of your Snowflake database.").
+You can benefit from Snowflake monitoring in these [use cases](observe/infrastructure-observability/databases/extensions/snowflake.md#use-cases "Expand visibility to improve health and performance monitoring of your Snowflake database.").
 
 ## Feature sets
 
-[Feature sets](/docs/observe/infrastructure-observability/databases/extensions/snowflake#feature-sets "Expand visibility to improve health and performance monitoring of your Snowflake database.") restrict which metrics are collected when you activate the extension.
+[Feature sets](observe/infrastructure-observability/databases/extensions/snowflake.md#feature-sets "Expand visibility to improve health and performance monitoring of your Snowflake database.") restrict which metrics are collected when you activate the extension.
 
 ## Related topics
 
-* [Snowflake extension](/docs/observe/infrastructure-observability/databases/extensions/snowflake "Expand visibility to improve health and performance monitoring of your Snowflake database.")
+* [Snowflake extension](observe/infrastructure-observability/databases/extensions/snowflake.md "Expand visibility to improve health and performance monitoring of your Snowflake database.")
 
 ---
 
@@ -4202,7 +4202,7 @@ Dynatrace database monitoring starts with installing the ![Databases](https://dt
 
 1. Go to the  **Hub**.
 2. Locate the ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases") **Databases** app, open the app overview, and select **Open**.
-3. Ensure your environment meets the required [permissions](/docs/observe/infrastructure-observability/databases/database-app#permissions "The Databases app gives you an overview of all your Extensions Framework 2.0-monitored databases.").
+3. Ensure your environment meets the required [permissions](../ru/observe/infrastructure-observability/databases/database-app.md#permissions "The Databases app gives you an overview of all your Extensions Framework 2.0-monitored databases.").
 
 ## Set up Dynatrace database monitoring
 
@@ -4210,31 +4210,31 @@ Explore the available SQL extensions below to learn how to configure each one fo
 
 [### Oracle Database
 
-Monitor Oracle Database instances with performance metrics and query insights.](/docs/observe/infrastructure-observability/databases/database-app/get-started/oracle "How to set up monitoring for Oracle databases in Dynatrace.")[![Microsoft SQL Server](https://dt-cdn.net/images/techn-icon-microsoft-sqlserver-60740bd3fa.svg "Microsoft SQL Server")
+Monitor Oracle Database instances with performance metrics and query insights.](../ru/observe/infrastructure-observability/databases/database-app/get-started/oracle.md "How to set up monitoring for Oracle databases in Dynatrace.")[![Microsoft SQL Server](https://dt-cdn.net/images/techn-icon-microsoft-sqlserver-60740bd3fa.svg "Microsoft SQL Server")
 
 ### Microsoft SQL Server Database
 
-Monitor Microsoft SQL Server Database instances with performance metrics and query insights.](/docs/observe/infrastructure-observability/databases/database-app/get-started/microsoft-sql "How to set up monitoring for Microsoft SQL databases in Dynatrace.")[### PostgreSQL
+Monitor Microsoft SQL Server Database instances with performance metrics and query insights.](../ru/observe/infrastructure-observability/databases/database-app/get-started/microsoft-sql.md "How to set up monitoring for Microsoft SQL databases in Dynatrace.")[### PostgreSQL
 
-Monitor PostgreSQL instances with performance metrics and query insights.](/docs/observe/infrastructure-observability/databases/database-app/get-started/postgres "How to set up monitoring for PostgreSQL databases in Dynatrace.")[### MySQL
+Monitor PostgreSQL instances with performance metrics and query insights.](observe/infrastructure-observability/databases/database-app/get-started/postgres.md "How to set up monitoring for PostgreSQL databases in Dynatrace.")[### MySQL
 
-Monitor MySQL instances with performance metrics and query insights.](/docs/observe/infrastructure-observability/databases/database-app/get-started/mysql "How to set up monitoring for MySQL databases in Dynatrace.")[![Snowflake](https://dt-cdn.net/images/snowflake-for-workflows-256-3d9ba2057b.png "Snowflake")
+Monitor MySQL instances with performance metrics and query insights.](../ru/observe/infrastructure-observability/databases/database-app/get-started/mysql.md "How to set up monitoring for MySQL databases in Dynatrace.")[![Snowflake](https://dt-cdn.net/images/snowflake-for-workflows-256-3d9ba2057b.png "Snowflake")
 
 ### Snowflake
 
-Monitor Snowflake instances with performance metrics and query insights.](/docs/observe/infrastructure-observability/databases/database-app/get-started/snowflake "How to set up monitoring for Snowflake databases in Dynatrace.")[![SAP Hana DB](https://dt-cdn.net/images/sap-hana-768x256-removebg-preview-768-7c1d985abf.png "SAP Hana DB")
+Monitor Snowflake instances with performance metrics and query insights.](../ru/observe/infrastructure-observability/databases/database-app/get-started/snowflake.md "How to set up monitoring for Snowflake databases in Dynatrace.")[![SAP Hana DB](https://dt-cdn.net/images/sap-hana-768x256-removebg-preview-768-7c1d985abf.png "SAP Hana DB")
 
 ### SAP HANA DB
 
-Monitor SAP HANA DB instances with performance metrics and query insights.](/docs/observe/infrastructure-observability/databases/database-app/get-started/sap-hana "How to set up monitoring for SAP HANA databases in Dynatrace.")[![IBM DB2](https://dt-cdn.net/images/png-clipart-ibm-db2-logo-ibm-db2-database-computer-software-sql-ibm-text-rectangle-thumbnail-removebg-preview-348-4dff315301.png "IBM DB2")
+Monitor SAP HANA DB instances with performance metrics and query insights.](../ru/observe/infrastructure-observability/databases/database-app/get-started/sap-hana.md "How to set up monitoring for SAP HANA databases in Dynatrace.")[![IBM DB2](https://dt-cdn.net/images/png-clipart-ibm-db2-logo-ibm-db2-database-computer-software-sql-ibm-text-rectangle-thumbnail-removebg-preview-348-4dff315301.png "IBM DB2")
 
 ### IBM DB2
 
-Monitor IBM DB2 instances with performance metrics and query insights.](/docs/observe/infrastructure-observability/databases/database-app/get-started/ibm-db2 "How to set up monitoring for IBM DB2 databases in Dynatrace.")[![MariaDB](https://dt-cdn.net/hub/mariadb-logo-vert_blue-transparent-icon_1_UyPQzsq_99Xr62T.png "MariaDB")
+Monitor IBM DB2 instances with performance metrics and query insights.](../ru/observe/infrastructure-observability/databases/database-app/get-started/ibm-db2.md "How to set up monitoring for IBM DB2 databases in Dynatrace.")[![MariaDB](https://dt-cdn.net/hub/mariadb-logo-vert_blue-transparent-icon_1_UyPQzsq_99Xr62T.png "MariaDB")
 
 ### MariaDB
 
-Monitor MariaDB instances with performance metrics and query insights.](/docs/observe/infrastructure-observability/databases/database-app/get-started/mariadb "How to set up monitoring for MariaDB databases in Dynatrace.")
+Monitor MariaDB instances with performance metrics and query insights.](../ru/observe/infrastructure-observability/databases/database-app/get-started/mariadb.md "How to set up monitoring for MariaDB databases in Dynatrace.")
 
 ---
 
@@ -4283,11 +4283,11 @@ Before you begin, ensure the following:
 
 * ActiveGate configuration
 
-  + Assign one or more [ActiveGate group](/docs/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.") to connect to the target database servers remotely.
+  + Assign one or more [ActiveGate group](../ru/ingest-from/dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.") to connect to the target database servers remotely.
 * Required components
 
-  + For databases requiring additional components (for example, JDBC drivers), install them on all designated ActiveGates according to the [extension guidelines](/docs/ingest-from/extensions/concepts#ag "Learn more about the concept of Dynatrace Extensions.").
-* Network and [permissions](/docs/observe/infrastructure-observability/databases/database-app#permissions "The Databases app gives you an overview of all your Extensions Framework 2.0-monitored databases.")
+  + For databases requiring additional components (for example, JDBC drivers), install them on all designated ActiveGates according to the [extension guidelines](../ru/ingest-from/extensions/concepts.md#ag "Learn more about the concept of Dynatrace Extensions.").
+* Network and [permissions](../ru/observe/infrastructure-observability/databases/database-app.md#permissions "The Databases app gives you an overview of all your Extensions Framework 2.0-monitored databases.")
 
   + Validate network connectivity and firewall rules for each database type. ActiveGate should be able to establish a direct network connection to the database host.
   + Create a monitoring user account with appropriate permissions (for example, access to system views, performance metrics, and schemas).
@@ -4348,12 +4348,12 @@ The `default_database_monitoring` bucket is where all the database extension-ret
 ALLOW storage:buckets:read WHERE storage:bucket-name = 'default_database_monitoring'
 ```
 
-For more information see, [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies") and [Grant access to Grail](/docs/manage/identity-access-management/use-cases/access-grail "Grant access to Grail").
+For more information see, [Working with policies](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies") and [Grant access to Grail](../ru/manage/identity-access-management/use-cases/access-grail.md "Grant access to Grail").
 
 ### Installation steps
 
 1. Install ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases") **Databases** from the Dynatrace  **Hub**.
-2. Configure the app to monitor supported database instances. For vendor-specific setup instructions, see [Get started with database monitoring](/docs/observe/infrastructure-observability/databases/database-app/get-started "Set up database monitoring and learn how to extend Dynatrace Databases monitoring.").
+2. Configure the app to monitor supported database instances. For vendor-specific setup instructions, see [Get started with database monitoring](../ru/observe/infrastructure-observability/databases/database-app/get-started.md "Set up database monitoring and learn how to extend Dynatrace Databases monitoring.").
 3. Add the required monitoring configurations (for example, credentials, endpoints) for each instance.
 
 ## Get started
@@ -4434,14 +4434,14 @@ A predefined, non-configurable metric evaluates availability, performance, confi
 
 Health alerts and warning signals help you monitor your infrastructure by providing clear, actionable insights. These features reduce the noise from infrastructure issues and improve alerting capabilities, so you can focus on what matters most. This is achieved through better categorization of detected malfunctions.
 
-* For critical events, a Health alert is raised, triggering a [Dynatrace Problems](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") investigation.
+* For critical events, a Health alert is raised, triggering a [Dynatrace Problems](../ru/dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.") investigation.
 * For non-critical situations, a Warning signal informs you of a potential challenge.
 
 You can set up the ready-made health alerts and warning signals through the **Alert templates** tab.
 
 In the **Alert templates** tab, we provide pre-defined alert templates for the most popular DB vendors. Easily create a new alert by selecting a template and **New Alert**. Next, either customize the alert in the **Anomaly Detection** wizard or create the alert with one step.
 
-Find all the custom alerts, more details of capabilities, and limits in [Anomaly Detection](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.").
+Find all the custom alerts, more details of capabilities, and limits in [Anomaly Detection](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.").
 
 ### Insights
 
@@ -4500,9 +4500,9 @@ Get an overview of all your extension-monitored databases.](https://www.dynatrac
 
 [01Get started with database monitoring
 
-* How-to guide](/docs/observe/infrastructure-observability/databases/database-app/get-started)[02Data collected with Dynatrace database monitoring
+* How-to guide](../ru/observe/infrastructure-observability/databases/database-app/get-started.md)[02Data collected with Dynatrace database monitoring
 
-* Reference](/docs/observe/infrastructure-observability/databases/database-app/data-collected)
+* Reference](../ru/observe/infrastructure-observability/databases/database-app/data-collected.md)
 
 ---
 
@@ -4526,7 +4526,7 @@ scraped: 2026-03-05T21:31:30.344039
 We have redesigned the database overview page.
 
 * This documentation describes the new design.
-* If you want to revert to the classic database page, on the database overview page select **More** (**â¦**) > **Return to classic page** and then refer to the [documentation for the classic database page](/docs/observe/infrastructure-observability/databases/database-services-classic/analyze-database-services "Analyze your database services with Dynatrace (classic page).").
+* If you want to revert to the classic database page, on the database overview page select **More** (**â¦**) > **Return to classic page** and then refer to the [documentation for the classic database page](observe/infrastructure-observability/databases/database-services-classic/analyze-database-services.md "Analyze your database services with Dynatrace (classic page).").
 
 All databases detected by Dynatrace in your environment are displayed on the **Databases** page. You can analyze each database and drill down to code-level information.
 
@@ -4559,16 +4559,16 @@ Select **Properties and tags** on the notifications bar to display the **Propert
 * Select **Problems** on the notifications bar to display the **Problems** panel, which lists the problems.
 
   + Select a problem to display details.
-  + Select **Go to problems** to go to the [Problems](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.") page filtered by the selected database.
+  + Select **Go to problems** to go to the [Problems](dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence.") page filtered by the selected database.
 
 ### SLOs
 
-* On the notifications bar, **SLOs** indicates the current number of [SLOs](/docs/deliver/service-level-objectives-classic "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic.") related to the selected database.
+* On the notifications bar, **SLOs** indicates the current number of [SLOs](../ru/deliver/service-level-objectives-classic.md "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic.") related to the selected database.
 * Select **SLOs** on the notifications bar to display the **Service-level objectives** panel, which lists SLOs that are directly or indirectly connected to the database.
 
 #### Directly connected SLOs
 
-* An SLO is directly connected to a service when the [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") of an SLO meets the following criteria:
+* An SLO is directly connected to a service when the [entity selector](../ru/dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.") of an SLO meets the following criteria:
 
   + The entity type is set to `"DATABASE"`.
   + The entity ID is set to the database ID.
@@ -4576,7 +4576,7 @@ Select **Properties and tags** on the notifications bar to display the **Propert
 
 #### Indirectly connected SLOs
 
-* An SLO isn't directly connected to a database when, in the [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") of an SLO, no entity ID is provided.
+* An SLO isn't directly connected to a database when, in the [entity selector](../ru/dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.") of an SLO, no entity ID is provided.
 
   Example: When generic values such as `type("DATABASE"),tag("slo")` are provided, the query results in all SLOs for all databases, including the current database.
 * To see SLOs that are not directly connected to the database, turn off **Show only directly connected SLOs**.
@@ -4586,11 +4586,11 @@ Select **Properties and tags** on the notifications bar to display the **Propert
 * Expand **Details** to view a chart of the respective SLO metrics.
 * In **Actions**, select
 
-  + **View in Data Explorer** to [see SLO metrics in Data Explorer](/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo#explorer "Create, configure, and monitor service-level objectives with Dynatrace.").
-  + **Pin to Dashboard** to [pin the SLO to your dashboard](/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo#dash "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **View in Data Explorer** to [see SLO metrics in Data Explorer](deliver/service-level-objectives-classic/configure-and-monitor-slo.md#explorer "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **Pin to Dashboard** to [pin the SLO to your dashboard](deliver/service-level-objectives-classic/configure-and-monitor-slo.md#dash "Create, configure, and monitor service-level objectives with Dynatrace.").
   + **SLO definition** to edit the SLO in **Service-level objective definitions**.
-  + **Clone** to [clone the SLO](/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo#clone "Create, configure, and monitor service-level objectives with Dynatrace.").
-  + **Create alert** to [create an alert for the SLO](/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo#alerts "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **Clone** to [clone the SLO](deliver/service-level-objectives-classic/configure-and-monitor-slo.md#clone "Create, configure, and monitor service-level objectives with Dynatrace.").
+  + **Create alert** to [create an alert for the SLO](deliver/service-level-objectives-classic/configure-and-monitor-slo.md#alerts "Create, configure, and monitor service-level objectives with Dynatrace.").
 
 #### No SLOs
 
@@ -4599,7 +4599,7 @@ If no SLOs are found, you can
 * Select a different timeframe in the upper-right corner.
 
   ![Timeframe selector: menu bar](https://dt-cdn.net/images/timeframe-selector-menu-bar-264-8193110c8c.png)
-* Select **Add SLO** to create an SLO in the [SLO wizard](/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo#wizard "Create, configure, and monitor service-level objectives with Dynatrace.").
+* Select **Add SLO** to create an SLO in the [SLO wizard](deliver/service-level-objectives-classic/configure-and-monitor-slo.md#wizard "Create, configure, and monitor service-level objectives with Dynatrace.").
 
 ### Database availability
 
@@ -4607,7 +4607,7 @@ Select **Database availability** on the notifications bar to display a chart sum
 
 ### Owners
 
-Select **Owners** on the notifications bar to display the **Ownership** panel, which lists [owners](/docs/deliver/ownership "Map team ownership to monitored entities for better collaboration, task assignment, incident and vulnerability response, and service-level management.") of the selected database.
+Select **Owners** on the notifications bar to display the **Ownership** panel, which lists [owners](../ru/deliver/ownership.md "Map team ownership to monitored entities for better collaboration, task assignment, incident and vulnerability response, and service-level management.") of the selected database.
 
 * Select  to learn more about the current ownership.
 * To add an ownership tag, select **Add Ownership tag**.
@@ -4620,14 +4620,14 @@ You can configure the **Database service overview** section to focus on various 
 
 * Analyze the metric in Data Explorer.
 * Create a metric event.
-* Pin the metric to a classic dashboard. For details, see [Pin tiles to your dashboard](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+* Pin the metric to a classic dashboard. For details, see [Pin tiles to your dashboard](../ru/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard.md "Learn to pin tiles to your dashboards.").
 
 ### Topology
 
 In the **Topology** section, you can learn
 
 * The services that are calling the database and the services that are called by the database.  
-  Select **Related services** to understand the service relation. Expand **Details** to view a chart of the respective service metrics. To proceed with your analysis, you can select [**View backtrace**](/docs/observe/application-observability/services-classic/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.").
+  Select **Related services** to understand the service relation. Expand **Details** to view a chart of the respective service metrics. To proceed with your analysis, you can select [**View backtrace**](../ru/observe/application-observability/services-classic/service-backtrace.md "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.").
 * The processes and hosts on which the service is running.  
   Expand **Details** to view a chart of the respective process metrics. Select the name of the process to analyze it.
 
@@ -4641,22 +4641,22 @@ Contains an overview of statement types found for the database in the selected t
 
 ### Distributed traces
 
-The **Distributed traces** section provides an overview of the most recent traces for the selected timeframe. Select **Full search** to go to the [distributed traces overview for the database](/docs/observe/application-observability/distributed-traces/analysis/get-started "Get started with distributed trace analysis in Dynatrace.").
+The **Distributed traces** section provides an overview of the most recent traces for the selected timeframe. Select **Full search** to go to the [distributed traces overview for the database](observe/application-observability/distributed-traces/analysis/get-started.md "Get started with distributed trace analysis in Dynatrace.").
 
 ### Events
 
-Lists [events](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation "Gain an understanding of the Events section on each host, process, and service overview page.") that affect the database in the current timeframe.
+Lists [events](../ru/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation.md "Gain an understanding of the Events section on each host, process, and service overview page.") that affect the database in the current timeframe.
 
 ### Related logs
 
-Lists [logs](/docs/analyze-explore-automate/logs "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") related to the database in the current timeframe.
+Lists [logs](../ru/analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") related to the database in the current timeframe.
 
 * To analyze all the logs for the related database, select **Go to logs** .
 * To analyze a specific log, expand **Details**. If a trace or a user session is found for the log line, you can directly access it from this view.
 
 ## Related topics
 
-* [Unified analysis pages](/docs/ingest-from/extend-dynatrace/extend-ui/unified-analysis "Extend the Dynatrace web UI using entity-tailored unified analysis pages.")
+* [Unified analysis pages](../ru/ingest-from/extend-dynatrace/extend-ui/unified-analysis.md "Extend the Dynatrace web UI using entity-tailored unified analysis pages.")
 
 ---
 
@@ -4690,15 +4690,15 @@ With the following few steps for simple database performance tuning, you can sig
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Check the health of your database**](/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance#database-health "Boost your database performance in a few practical steps.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Check the health of your database**](../ru/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance.md#database-health "Boost your database performance in a few practical steps.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Understand how your database is accessed**](/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance#database-access "Boost your database performance in a few practical steps.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Understand how your database is accessed**](../ru/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance.md#database-access "Boost your database performance in a few practical steps.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Understand the load and individual response time of each service instance**](/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance#load-and-response-time "Boost your database performance in a few practical steps.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**Understand the load and individual response time of each service instance**](../ru/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance.md#load-and-response-time "Boost your database performance in a few practical steps.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**Check the number of database connections**](/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance#database-connections "Boost your database performance in a few practical steps.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
+**Check the number of database connections**](../ru/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance.md#database-connections "Boost your database performance in a few practical steps.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
 
-**Check your network**](/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance#check-network "Boost your database performance in a few practical steps.")
+**Check your network**](../ru/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance.md#check-network "Boost your database performance in a few practical steps.")
 
 ## Step 1 Check the health of your database
 
@@ -4800,7 +4800,7 @@ Most often, over-stressed processes start dropping packets when resources are de
 
 
 
-* [Host monitoring with Dynatrace](/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring "Monitor hosts with Dynatrace.")
+* [Host monitoring with Dynatrace](observe/infrastructure-observability/hosts/monitoring/host-monitoring.md "Monitor hosts with Dynatrace.")
 
 ---
 
@@ -4867,7 +4867,7 @@ A sample result of this feature is distributed tracing. The following webpage il
 
 ![Purepath example](https://dt-cdn.net/images/purepath-example-1413-383ad7b07c.png)
 
-Bind variables are considered confidential as they can contain IDs and other sensitive values. [Learn how to ensure the data privacy of your customers](/docs/manage/data-privacy-and-security "Learn how Dynatrace applies various security measures required to protect private data.").
+Bind variables are considered confidential as they can contain IDs and other sensitive values. [Learn how to ensure the data privacy of your customers](../common/manage/data-privacy-and-security.md "Learn how Dynatrace applies various security measures required to protect private data.").
 
 Only users who have permission to view a specific entity or management zone can view the bind variables within that entity or zone.
 
@@ -4877,17 +4877,17 @@ Only users who have permission to view a specific entity or management zone can 
 
 Bind variables are not available in my Dynatrace environment. How do I get this feature?
 
-This feature is available in Dynatrace environments that are licensed via [Dynatrace Platform Subscription (DPS)](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities."). If you have a Dynatrace classic license, change your subscription plan to a Dynatrace Platform Subscription (DPS) license to use bind variables.
+This feature is available in Dynatrace environments that are licensed via [Dynatrace Platform Subscription (DPS)](license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities."). If you have a Dynatrace classic license, change your subscription plan to a Dynatrace Platform Subscription (DPS) license to use bind variables.
 
 Does capturing bind variables have negative consequences?
 
 This feature can capture a lot of sensitive data, so you should consider its usage carefully.
-You might also choose to mask or drop parts of the captured data via [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.").
+You might also choose to mask or drop parts of the captured data via [OpenPipeline](../ru/platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.").
 
 Additionally, this feature can capture a lot of data in the absolute sense.
 Heavy usage of this feature means that you will run out of the included trace volume for your Full-Stack monitored applications faster.
 In other words, heavy usage can lower your trace capture rate.
-To mitigate this, you should either use this feature for troubleshooting only or you can opt into [Extended trace ingest](/docs/license/capabilities/app-infra-observability/full-stack-monitoring#extend-trace-ingest "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") to accommodate the increased data volume.
+To mitigate this, you should either use this feature for troubleshooting only or you can opt into [Extended trace ingest](../ru/license/capabilities/app-infra-observability/full-stack-monitoring.md#extend-trace-ingest "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") to accommodate the increased data volume.
 
 ---
 
@@ -5335,7 +5335,7 @@ The extension package contains:
 
 #### DPS licensing
 
-[DPS license consumption](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") is based on metric data points ingested. The following formula provides an approximate annual ingest amount if all feature sets are enabled and the extension runs every minute:
+[DPS license consumption](license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") is based on metric data points ingested. The following formula provides an approximate annual ingest amount if all feature sets are enabled and the extension runs every minute:
 
 ```
 ((2 * # of CPUs)
@@ -5407,8 +5407,8 @@ The extension package contains:
 
 #### Classic licensing
 
-For [Dynatrace classic licenses](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing."), metric ingestion consumes Davis Data Units (DDUs) at a rate of 0.001 DDUs per metric data point.
-For details, see [DDUs for metrics](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+For [Dynatrace classic licenses](../ru/license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing."), metric ingestion consumes Davis Data Units (DDUs) at a rate of 0.001 DDUs per metric data point.
+For details, see [DDUs for metrics](license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 
 To estimate annual DDU consumption, multiply the result of the formula above by 0.001.
 
@@ -5515,7 +5515,7 @@ The extension package contains:
 
 #### DPS licensing
 
-[DPS license consumption](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") is based on metric data points ingested. The following formula provides an approximate annual ingest amount if all feature sets are enabled and the extension runs every minute:
+[DPS license consumption](license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") is based on metric data points ingested. The following formula provides an approximate annual ingest amount if all feature sets are enabled and the extension runs every minute:
 
 ```
 (2 * # of CPUs)
@@ -5595,8 +5595,8 @@ The extension package contains:
 
 #### Classic licensing
 
-For [Dynatrace classic licenses](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing."), metric ingestion consumes Davis Data Units (DDUs) at the rate of 0.001 DDUs per metric data point.
-For details, see [DDUs for metrics](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+For [Dynatrace classic licenses](../ru/license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing."), metric ingestion consumes Davis Data Units (DDUs) at the rate of 0.001 DDUs per metric data point.
+For details, see [DDUs for metrics](license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 
 To estimate annual DDU consumption, multiply the result of the formula above by 0.001.
 
@@ -5634,7 +5634,7 @@ The Disk Analytics extension enables you to inspect and analyze physical and log
 ### Requirements
 
 * OneAgent 1.233+
-* Linux hosts only; see [OneAgent Linux supported technologies](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.")
+* Linux hosts only; see [OneAgent Linux supported technologies](../ru/ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.")
 * Local disks only (network disks are not supported)
 * Full-stack OneAgent deployments only. PaaS OneAgent deployments do not support the Disk Analytics extension
 
@@ -5742,28 +5742,28 @@ Monitor your hosts with OpenTelemetry using integrated metric visualizations, to
 
 ### Requirements
 
-This extension depends on telemetry data that is pushed to Dynatrace from OpenTelemetry via an [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.").
+This extension depends on telemetry data that is pushed to Dynatrace from OpenTelemetry via an [OpenTelemetry Collector](../ru/ingest-from/opentelemetry/collector.md "Learn about the Dynatrace OTel Collector.").
 
 ## Activation and setup
 
 1. Deploy the OpenTelemetry Collector.
 
-   1. Follow the instructions on the [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") to deploy the Collector.
+   1. Follow the instructions on the [OpenTelemetry Collector](../ru/ingest-from/opentelemetry/collector/deployment.md "How to deploy Dynatrace OTel Collector.") to deploy the Collector.
    2. Use the [reference configurationï»¿](https://github.com/Dynatrace/dynatrace-otel-collector/blob/main/config_examples/host-metrics.yaml).
    3. Ensure the Collector is running and telemetry data is reported to Dynatrace correctly.
 2. Activate the OpenTelemetry Host Monitoring extension.
 
 ## Details
 
-The [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.") captures telemetry data from your infrastructure and pushes metrics to Dynatrace via the OTel API.
+The [OpenTelemetry Collector](../ru/ingest-from/opentelemetry/collector.md "Learn about the Dynatrace OTel Collector.") captures telemetry data from your infrastructure and pushes metrics to Dynatrace via the OTel API.
 
 The extension displays telemetry data captured by the OpenTelemetry Collector and provides quick analysis and clear understanding of the data, adding Dynatrace-specific context to all signals (metrics, logs, and spans).
 
-For information on how to use the extension within Dynatrace, see [Monitor hosts that send OpenTelemetry data to Dynatrace](/docs/ingest-from/opentelemetry/collector/use-cases/host-monitoring "How to monitor your hosts that use Collectors to send OpenTelemetry data to Dynatrace.").
+For information on how to use the extension within Dynatrace, see [Monitor hosts that send OpenTelemetry data to Dynatrace](ingest-from/opentelemetry/collector/use-cases/host-monitoring.md "How to monitor your hosts that use Collectors to send OpenTelemetry data to Dynatrace.").
 
 ### Licensing and cost
 
-All ingested OpenTelemetry data (logs, metrics, and spans) is charged according to your rate card, see [Dynatrace Platform Subscription](/docs/license/capabilities "How different DPS capabilities work and how consumption is calculated and billed.") or [Dynatrace classic licensing](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing.").
+All ingested OpenTelemetry data (logs, metrics, and spans) is charged according to your rate card, see [Dynatrace Platform Subscription](../ru/license/capabilities.md "How different DPS capabilities work and how consumption is calculated and billed.") or [Dynatrace classic licensing](../ru/license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing.").
 
 The use of this extension does not itself incur any additional costs.
 
@@ -5835,7 +5835,7 @@ This extension collects infrastructure metrics to monitor the health and perform
 
 Activate the extension in your environment using the in-product Hub, provide the necessary device configuration, and you're all set up.
 
-For details, see the [SNMP extension data source documentation](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions "Learn how to create an SNMP extension using the Extensions framework.").
+For details, see the [SNMP extension data source documentation](../ru/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions.md "Learn how to create an SNMP extension using the Extensions framework.").
 
 ## Details
 
@@ -6042,7 +6042,7 @@ This extension collects generally supported SNMP infrastructure metrics to monit
 ## Activation and setup
 
 Simply activate the extension in your environment using the in-product Hub and provide the required device connection configurations.
-This extension uses the [Dynatrace SNMP Data source](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions "Learn how to create an SNMP extension using the Extensions framework.").
+This extension uses the [Dynatrace SNMP Data source](../ru/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions.md "Learn how to create an SNMP extension using the Extensions framework.").
 
 ## Details
 
@@ -6237,7 +6237,7 @@ These alerts are based purely on metrics and can be adjusted or extended in Dyna
 
 ### Licensing and cost
 
-There is no charge to use the extension. You are only charged for the data that the extension ingests. The license consumption details depend on which licensing model you're using. This can either be [Dynatrace classic licensing](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing.") or the [Dynatrace Platform Subscription (DPS)](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") model.
+There is no charge to use the extension. You are only charged for the data that the extension ingests. The license consumption details depend on which licensing model you're using. This can either be [Dynatrace classic licensing](../ru/license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing.") or the [Dynatrace Platform Subscription (DPS)](license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") model.
 
 #### Metrics
 
@@ -6281,7 +6281,7 @@ License consumption is based on the number of metric data points ingested. A rou
 
 #### Classic licensing
 
-In the Dynatrace classic licensing model, metric ingestion consumes [Davis Data Units (DDUs)](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") at the rate of .001 DDUs per metric data point.
+In the Dynatrace classic licensing model, metric ingestion consumes [Davis Data Units (DDUs)](license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") at the rate of .001 DDUs per metric data point.
 To estimate annual DDU usage, take the result of the above formula for annual data points and multiply it by .001.
 
 ## FAQ
@@ -6339,7 +6339,7 @@ Use the top search bar to find an extension by entering its name, technology, or
 
 Latest Dynatrace
 
-With ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**, Dynatrace allows you to manage your extensions, including installation, configuration, and monitoring.](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.")
+With ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**, Dynatrace allows you to manage your extensions, including installation, configuration, and monitoring.](../ru/ingest-from/extensions/manage-extensions.md "Learn how to manage extensions.")
 
 ---
 
@@ -6488,7 +6488,7 @@ To list all hosts in a host group
 
 ## Assign a host to a host group
 
-You can assign a host to a host group during or after [OneAgent installation](/docs/ingest-from "Learn how to install and configure ActiveGate and OneAgent on various platforms.").
+You can assign a host to a host group during or after [OneAgent installation](ingest-from.md "Learn how to install and configure ActiveGate and OneAgent on various platforms.").
 
 * **During** OneAgent installation
 
@@ -6505,7 +6505,7 @@ You can assign a host to a host group during or after [OneAgent installation](/d
 
   Dynatrace UI
 
-  Use the [oneagentctl](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#host-groups "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command-line tool.
+  Use the [oneagentctl](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#host-groups "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command-line tool.
 
   1. Go to **Deployment Status** and check the box next to the desired host.
   2. Select **modify host group** at the bottom of the page.
@@ -6522,7 +6522,7 @@ Host group string requirements
 * Must not start with `dt.`.
 * Maximum length is 100 characters.
 
-The host group is statically assigned to the host. Each host belongs to at most one host group and the host group can be changed by using the 'oneagentctl' command, [remote configuration management](/docs/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API."), or by re-installing OneAgent. Host groups are displayed, for example, on the **Hosts** page from the [**Infrastructure & Operations**](/docs/observe/infrastructure-observability/infrastructure-and-operations#hosts "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.") app, and on the **Monitoring overview** page, where you can select the **Host group** link to edit the settings for all hosts in a host group.
+The host group is statically assigned to the host. Each host belongs to at most one host group and the host group can be changed by using the 'oneagentctl' command, [remote configuration management](ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API."), or by re-installing OneAgent. Host groups are displayed, for example, on the **Hosts** page from the [**Infrastructure & Operations**](../ru/observe/infrastructure-observability/infrastructure-and-operations.md#hosts "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.") app, and on the **Monitoring overview** page, where you can select the **Host group** link to edit the settings for all hosts in a host group.
 
 ![Host groups](https://dt-cdn.net/images/host-groups-1200-d314d1729f.png)
 
@@ -6538,7 +6538,7 @@ You can also define the OneAgent update settings and trigger the update for all 
 
 Additionally, host groups affect how process groups are detected. When the same process is running in two different host groups, Dynatrace will create one process group for each host group. This means you can also configure process groups differently depending on which host group they run in. Consequently, services are also grouped per host group. So you can configure services differently per host group.
 
-Host groups can also be used in [tagging rules](/docs/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.") and for defining [management zones](/docs/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.") so you can apply additional context information to the different entities in Dynatrace, based on host groups. As shown in the example below, you can tag entities based on the host group they belong to.
+Host groups can also be used in [tagging rules](manage/tags-and-metadata/setup/how-to-define-tags.md "Find out how to define and apply tags manually and automatically.") and for defining [management zones](manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Create and assign access rights to management zones.") so you can apply additional context information to the different entities in Dynatrace, based on host groups. As shown in the example below, you can tag entities based on the host group they belong to.
 
 ![Host groups](https://dt-cdn.net/images/host-groups4-1414-8039d74ee9.png)
 
@@ -6615,7 +6615,7 @@ OneAgent automatically monitors a host and its processes, services, and applicat
 2. Go to **Monitoring** and set **Monitor this host** to turn monitoring on or off for the selected host.
 3. Go to **Monitoring Mode** and set **Full-Stack**, **Infrastructure**, or **Discovery** to turn the selected monitoring mode on or off for the selected host.
 
-   * For details, see [OneAgent monitoring modes](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
+   * For details, see [OneAgent monitoring modes](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.").
    * The OneAgent's monitoring mode will automatically overwrite this setting whenever it is changed with oneagentctl or the OneAgent comes online.
 4. Go to **Advanced settings** and set **ProcessAgent injection** or **CodeModule injection** to turn the automatic injection on or off for the selected host.
 5. Select **Save changes**.
@@ -6644,7 +6644,7 @@ OneAgent automatically detects and monitors all your mount points, but you can c
 
      You can create exception rules to remove disks from monitoring.
 
-     For details, see [Exclude disks and network traffic from host monitoring](/docs/observe/infrastructure-observability/hosts/configuration/exclude-disks-and-network-traffic#disk-options "Learn how to exclude selected disks and network traffic from host monitoring.").
+     For details, see [Exclude disks and network traffic from host monitoring](../ru/observe/infrastructure-observability/hosts/configuration/exclude-disks-and-network-traffic.md#disk-options "Learn how to exclude selected disks and network traffic from host monitoring.").
 
 ## Disk Analytics Extension
 
@@ -6655,9 +6655,9 @@ Install the Disk Analytics extension to gain more detailed visibility into local
 1. On the **Host settings** page, select **Disk Analytics Extension**.
 2. Turn **Enable Disk Analytics data collection** on or off to determine whether Disk Analytics data is collected on the selected host.
 
-   If you enable data collection without adding the extension, the data is visible only in [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+   If you enable data collection without adding the extension, the data is visible only in [Data Explorer](../ru/analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.").
 
-For details on installing and using the Disk Analytics extension, see [Disk Analytics extension](/docs/observe/infrastructure-observability/extensions/disk-analytics "Gain detailed visibility into Linux host local datastores where OneAgent is installed.").
+For details on installing and using the Disk Analytics extension, see [Disk Analytics extension](../ru/observe/infrastructure-observability/extensions/disk-analytics.md "Gain detailed visibility into Linux host local datastores where OneAgent is installed.").
 
 ## NetTracer traffic
 
@@ -6669,7 +6669,7 @@ NetTracer is an open-source tool for tracing TCP events and collecting network c
 2. Turn **Enable NetTracer traffic network monitoring** on or off to determine whether NetTracer monitors network traffic on the selected host.
 3. Select **Save changes**.
 
-For details, see [Extended network monitoring](/docs/observe/infrastructure-observability/networks-classic/network-monitoring-with-nettracer "Extend network monitoring with network traffic metrics in containerized Linux hosts using NetTracer.").
+For details, see [Extended network monitoring](../ru/observe/infrastructure-observability/networks-classic/network-monitoring-with-nettracer.md "Extend network monitoring with network traffic metrics in containerized Linux hosts using NetTracer.").
 
 ## Exclude network traffic
 
@@ -6691,7 +6691,7 @@ OneAgent automatically detects and monitors all of your network traffic, but you
      + To edit an entry, expand ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") **Details**
 2. Select **Save changes**.
 
-For details, see [Exclude disks and network traffic from host monitoring](/docs/observe/infrastructure-observability/hosts/configuration/exclude-disks-and-network-traffic#exclude-network-traffic "Learn how to exclude selected disks and network traffic from host monitoring.").
+For details, see [Exclude disks and network traffic from host monitoring](../ru/observe/infrastructure-observability/hosts/configuration/exclude-disks-and-network-traffic.md#exclude-network-traffic "Learn how to exclude selected disks and network traffic from host monitoring.").
 
 ## Detected processes
 
@@ -6700,7 +6700,7 @@ The **Detected processes** page is a read-only table of processes detected on th
 * To manage your process monitoring settings, select the **Process group monitoring** link.
 * To enable or disable deep monitoring for certain process groups on the host, select the **Process group deep monitoring** link.
 
-For details, see [Process deep monitoring](/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring "Ways to customize process-group monitoring").
+For details, see [Process deep monitoring](../ru/observe/infrastructure-observability/process-groups/configuration/pg-monitoring.md "Ways to customize process-group monitoring").
 
 ## Process group monitoring
 
@@ -6717,7 +6717,7 @@ To enable or disable deep monitoring for a certain process group on a host
    * To edit an entry, expand ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") **Details** and change the settings.
 2. Select **Save changes**.
 
-For details, see [Process deep monitoring](/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring "Ways to customize process-group monitoring").
+For details, see [Process deep monitoring](../ru/observe/infrastructure-observability/process-groups/configuration/pg-monitoring.md "Ways to customize process-group monitoring").
 
 ## Process group detection flags
 
@@ -6733,7 +6733,7 @@ To enable or disable process group detection flags
    Hover over the information icon for a rule to view rule details.
 3. Select **Save changes**.
 
-For details, see [Process group detection](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection").
+For details, see [Process group detection](../ru/observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection").
 
 ## Declarative process grouping
 
@@ -6749,7 +6749,7 @@ To add a declarative process group to the table
 4. Select **Add detection rule** to describe how to detect the process group: property and condition. See the on-screen instructions for help with conditions.
 5. Select **Save changes**.
 
-For details, see [Process group detection](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection#declare "Ways to customize process-group detection").
+For details, see [Process group detection](../ru/observe/infrastructure-observability/process-groups/configuration/pg-detection.md#declare "Ways to customize process-group detection").
 
 ## Process availability
 
@@ -6764,7 +6764,7 @@ To add a process monitoring rule
 5. Select **Add property** to define additional key-value properties to be attached to the triggered event.
 6. Select **Save changes**.
 
-For details, see [Process availability](/docs/observe/infrastructure-observability/hosts/monitoring/process-availability "Monitor availability and performance of the key processes on your hosts.").
+For details, see [Process availability](../ru/observe/infrastructure-observability/hosts/monitoring/process-availability.md "Monitor availability and performance of the key processes on your hosts.").
 
 ## Process instance snapshots
 
@@ -6788,10 +6788,10 @@ To configure a capture rule on the host level
 
 1. On the **Host settings** page, select **Business Observability** > **OneAgent**.
 2. Select **Add new capture rule**.
-3. Define a rule. For details, see [Business event capture](/docs/observe/business-observability/bo-events-capturing "Capture business events for Dynatrace Business Observability.").
+3. Define a rule. For details, see [Business event capture](../ru/observe/business-observability/bo-events-capturing.md "Capture business events for Dynatrace Business Observability.").
 4. Select **Save changes**.
 
-For details, see [Business event capture](/docs/observe/business-observability/bo-events-capturing#report-business-event-oneagent "Capture business events for Dynatrace Business Observability.").
+For details, see [Business event capture](../ru/observe/business-observability/bo-events-capturing.md#report-business-event-oneagent "Capture business events for Dynatrace Business Observability.").
 
 ## Anomaly detection
 
@@ -6809,7 +6809,7 @@ To configure anomaly detection for host disks
 2. Adjust the host-specific thresholds as needed.
 3. Select **Save changes**.
 
-For details, see [Adjust the sensitivity of anomaly detection for infrastructure](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure "Adjust problem detection sensitivity for infrastructure.").
+For details, see [Adjust the sensitivity of anomaly detection for infrastructure](../ru/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure.md "Adjust problem detection sensitivity for infrastructure.").
 
 ## OneAgent updates
 
@@ -6819,7 +6819,7 @@ Use **OneAgent updates** to configure the selected host's OneAgent update behavi
 * Automatic updates during update windows
 * No automatic updates
 
-Manually triggered environment updates override individual host update settings. To learn more about environment updates, see [One Agent Updates](/docs/ingest-from/dynatrace-oneagent/oneagent-update#oneagent-environment-settings "Learn how to update OneAgent.").
+Manually triggered environment updates override individual host update settings. To learn more about environment updates, see [One Agent Updates](ingest-from/dynatrace-oneagent/oneagent-update.md#oneagent-environment-settings "Learn how to update OneAgent.").
 
 To set automatic OneAgent update behavior on the selected host
 
@@ -6843,7 +6843,7 @@ Use **OS services monitoring** to set up alerts for OS services in undesirable s
 5. Define the alerting conditions.
 6. Select **Save changes**.
 
-For details, see [OS services monitoring](/docs/observe/infrastructure-observability/hosts/monitoring/os-services "Improve the visibility of your infrastructure by monitoring the availability of operating system services.").
+For details, see [OS services monitoring](../ru/observe/infrastructure-observability/hosts/monitoring/os-services.md "Improve the visibility of your infrastructure by monitoring the availability of operating system services.").
 
 ## Extension Execution Controller
 
@@ -6858,7 +6858,7 @@ Use **Extension Execution Controller** to configure the Extension Execution Cont
    * Set **Performance profile**. For details, see [Performance profile - resource consumption](#resource-consumption).
 3. Select **Save changes**.
 
-For EEC details, see [About Extensions](/docs/ingest-from/extensions/concepts#eec "Learn more about the concept of Dynatrace Extensions.").
+For EEC details, see [About Extensions](../ru/ingest-from/extensions/concepts.md#eec "Learn more about the concept of Dynatrace Extensions.").
 
 ## Log Monitoring
 
@@ -6869,10 +6869,10 @@ Use the **Log Monitoring** page to configure host-specific settings for log moni
 
    * OneAgent configuration
 
-* Custom log source configurationâfor details, see [Custom log source](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-custom-log-source "Configure custom log sources to manually add log data sources that have not been autodetected.")
-* Log storage configurationâfor details, see [Log ingest rules](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis.")
-* Sensitive data maskingâfor details, see [Sensitive data masking in OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking "Mask sensitive information in your log data using Log Management and Analytics.")
-* Timestamp configurationâfor details, see [Timestamp/splitting configuration](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record.")
+* Custom log source configurationâfor details, see [Custom log source](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-custom-log-source.md "Configure custom log sources to manually add log data sources that have not been autodetected.")
+* Log storage configurationâfor details, see [Log ingest rules](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.")
+* Sensitive data maskingâfor details, see [Sensitive data masking in OneAgent](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking.md "Mask sensitive information in your log data using Log Management and Analytics.")
+* Timestamp configurationâfor details, see [Timestamp/splitting configuration](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration.md "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record.")
 * Select **Save changes**.
 
 ## Crash dump analytics
@@ -6885,7 +6885,7 @@ Use **Crash dump analytics** to manage the automatic detection of application cr
 2. Turn on/off **Crash dump analytics** to determine whether Dynatrace automatically detects application crashes on the selected host.
 3. Select **Save changes**.
 
-For details on Linux and Windows core crash dumps, see [Crash analysis](/docs/observe/application-observability/profiling-and-optimization/crash-analysis "Learn how Dynatrace can help you gain insight into process crashes.").
+For details on Linux and Windows core crash dumps, see [Crash analysis](../ru/observe/application-observability/profiling-and-optimization/crash-analysis.md "Learn how Dynatrace can help you gain insight into process crashes.").
 
 ---
 
@@ -6983,7 +6983,7 @@ If your Linux distribution experiences connections problems or the network manag
 
 ## Maintenance windows
 
-Maintenance windows are periods of time during which maintenance activities are scheduled to be performed in monitored environments. These maintenance windows can be used to prevent alerting, log file collection, system profiling, and other activities from taking place. For details, see [Maintenance windows](/docs/analyze-explore-automate/notifications-and-alerting/maintenance-windows "Understand when to use a maintenance window. Read about the supported maintenance window types.").
+Maintenance windows are periods of time during which maintenance activities are scheduled to be performed in monitored environments. These maintenance windows can be used to prevent alerting, log file collection, system profiling, and other activities from taking place. For details, see [Maintenance windows](analyze-explore-automate/notifications-and-alerting/maintenance-windows.md "Understand when to use a maintenance window. Read about the supported maintenance window types.").
 
 Maintenance windows are displayed as gray bars at the top of the **Host availability** and **Host performance** tiles on the host overview page.
 
@@ -7012,7 +7012,7 @@ scraped: 2026-03-06T21:19:55.370527
 
 Dynatrace provides out-of-the-box availability monitoring of OS services.
 
-You can monitor hosts in full-stack monitoring mode or use lightweight monitoring modes. For more information, see [OneAgent monitoring modes](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
+You can monitor hosts in full-stack monitoring mode or use lightweight monitoring modes. For more information, see [OneAgent monitoring modes](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.").
 
 ## Requirements
 
@@ -7027,7 +7027,7 @@ Depending on your monitoring requirements, you can choose between basic or advan
 
 Basic alerting provides insight only into the service status. The system will monitor an OS service's current status and alert you when it changes from running to failed.
 
-With the service status property in ![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") [Smartscape](/docs/analyze-explore-automate/smartscape-classic "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment."), you can query the current status of the service.
+With the service status property in ![Smartscape](https://dt-cdn.net/images/smartscape-topology-512-dca23011f9.png "Smartscape") [Smartscape](../ru/analyze-explore-automate/smartscape-classic.md "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment."), you can query the current status of the service.
 
 #### Example
 
@@ -7041,7 +7041,7 @@ fetch `dt.entity.os:service`
 
 ![Service status - Basic monitoring](https://dt-cdn.net/images/os-service-status-dashboard-example-light-919-5bd9bbe242.png)
 
-If the alert is enabled, events and problems are created when a service status changes, such as when a service goes from running to failed. For more details, refer to [Host availability](/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring/host-availability "Check host availability, interpret host availability states, and see how maintenance windows are reflected in host availability charts.").
+If the alert is enabled, events and problems are created when a service status changes, such as when a service goes from running to failed. For more details, refer to [Host availability](../ru/observe/infrastructure-observability/hosts/monitoring/host-monitoring/host-availability.md "Check host availability, interpret host availability states, and see how maintenance windows are reflected in host availability charts.").
 
 #### Failed service alert
 
@@ -7124,7 +7124,7 @@ The order of service monitoring policies is important. Policies that are higher 
 2. **System**: select your operating system.
 3. **Rule name**: enter the name that will be displayed in the **Summary** field.
 4. **Monitor**: decide whether you want to monitor service availability using the **OS service availability** (`builtin:osservice.availability`) metric. If available, the metric sends the service status every 10 seconds. The status is carried by the [**Service status**](#service-status) (`dt.osservice.status`) dimension.  
-   Note that the metric consumes data points. For more information, see [Metrics powered by Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+   Note that the metric consumes data points. For more information, see [Metrics powered by Grail](../ru/license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 5. **Alert**: decide whether you want alerting for your policy.
 6. OneAgent version 1.257+ **Alert if service is not installed**: whether you want to receive alerts about OS services that are not installed on the host.
 7. **Service status**: set the service status for which an alert should be triggered.
@@ -7373,21 +7373,21 @@ Dynatrace version 1.243+
 
 OneAgent version 1.243+
 
-The [Host overview](/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring "Monitor hosts with Dynatrace.") page contains the **OS services analysis** section listing the OS services for which any policy (with active alerting or monitoring) is fulfilled.
+The [Host overview](observe/infrastructure-observability/hosts/monitoring/host-monitoring.md "Monitor hosts with Dynatrace.") page contains the **OS services analysis** section listing the OS services for which any policy (with active alerting or monitoring) is fulfilled.
 
 1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
 2. Select any host to go to its overview page.
 3. In the **OS services analysis** section, select the service name to open the **Service overview** page.
 
-For more information, see [OS services analysis](/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring#os-services "Monitor hosts with Dynatrace.").
+For more information, see [OS services analysis](observe/infrastructure-observability/hosts/monitoring/host-monitoring.md#os-services "Monitor hosts with Dynatrace.").
 
 ## Configure at scale using Settings API
 
-You can use the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") to configure your service availability monitoring at scale.
+You can use the [Settings API](../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") to configure your service availability monitoring at scale.
 
-1. To learn the schema, use [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") with `builtin:os-services-monitoring` as the schemaId.
+1. To learn the schema, use [GET a schema](../ru/dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") with `builtin:os-services-monitoring` as the schemaId.
 2. Based on the `builtin:os-services-monitoring` schema, create your configuration object.
-3. To create your configuration, use [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.").
+3. To create your configuration, use [POST an object](../ru/dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.").
 
 ## Limitations
 
@@ -7422,7 +7422,7 @@ OneAgent version 1.237+
 
 To monitor the availability of key processes on your hosts, you need to define monitoring rules. After you create a rule, when a matching process is missing on a host, Dynatrace issues an alerting event.
 
-You can analyze the latest activity of the processes defined for process availability in the [Process instance snapshots](/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring#snapshots "Monitor hosts with Dynatrace.") section on the host overview page.
+You can analyze the latest activity of the processes defined for process availability in the [Process instance snapshots](observe/infrastructure-observability/hosts/monitoring/host-monitoring.md#snapshots "Monitor hosts with Dynatrace.") section on the host overview page.
 
 ## Determine scope
 
@@ -7571,7 +7571,7 @@ The table below shows an overview of available monitoring options for each of th
 
 1
 
-For more information on Infrastructure Monitoring and Discovery modes for Application Security, see [Monitoring modes for Application Security](/docs/secure/application-security#monitoring-modes "Access the Dynatrace Application Security functionalities.").
+For more information on Infrastructure Monitoring and Discovery modes for Application Security, see [Monitoring modes for Application Security](../ru/secure/application-security.md#monitoring-modes "Access the Dynatrace Application Security functionalities.").
 
 ## Default monitoring mode
 
@@ -7593,7 +7593,7 @@ OneAgent Discovery mode provides basic metrics enabling you to discover your hos
 
 We recommend that you deploy OneAgent in Full-Stack Monitoring mode to monitor your business-critical applications. Similarly, we recommend that you monitor critical infrastructure, like databases, queues, and messaging systems with Infrastructure Monitoring. OneAgent in Discovery mode can be deployed across the remainder of your infrastructure for full visibility thanks to its relatively low cost.
 
-Discovery mode is available only if you're using the Dynatrace Platform Subscription model. License consumption is via the **Foundation & Discovery** capability. To learn more, see [Application & Infrastructure Observability overview (DPS)](/docs/license/capabilities/app-infra-observability#discovery "Learn about the different Application & Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.").
+Discovery mode is available only if you're using the Dynatrace Platform Subscription model. License consumption is via the **Foundation & Discovery** capability. To learn more, see [Application & Infrastructure Observability overview (DPS)](../ru/license/capabilities/app-infra-observability.md#discovery "Learn about the different Application & Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.").
 
 The following built-in metrics are available in Discovery mode:
 
@@ -7667,7 +7667,7 @@ During OneAgent installation
 
 To turn on Discovery mode during OneAgent installation, use the `--set-monitoring-mode=discovery` parameter.
 
-For more information, see the [OneAgent installation](/docs/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") documentation that's specific to your environment.
+For more information, see the [OneAgent installation](../ru/ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") documentation that's specific to your environment.
 
 After OneAgent installation
 
@@ -7680,11 +7680,11 @@ To turn on Discovery mode after OneAgent installation, use one of these options:
   3. Select **Host monitoring**.
   4. Go to **Monitoring Mode** and in the drop-down menu select **Discovery**.
   5. Select **Save changes**.
-* Use the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to set the `--set-monitoring-mode=discovery` parameter.
+* Use the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to set the `--set-monitoring-mode=discovery` parameter.
 
 ### Code-module injection
 
-For [Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.") and [Live Debugger](/docs/observe/application-observability/live-debugger "Get familiar with the Live Debugger capabilities in Dynatrace.") to work in Discovery mode, code-module injection is required. Code-module injection is disabled by default.
+For [Application Security](../ru/secure/application-security.md "Access the Dynatrace Application Security functionalities.") and [Live Debugger](../ru/observe/application-observability/live-debugger.md "Get familiar with the Live Debugger capabilities in Dynatrace.") to work in Discovery mode, code-module injection is required. Code-module injection is disabled by default.
 
 After [turning on Discovery mode](#enable-discovery-mode), you can turn on the code-module injection for a single host.
 
@@ -7693,7 +7693,7 @@ After [turning on Discovery mode](#enable-discovery-mode), you can turn on the c
 3. Turn on **CodeModule Injection**, then select **Save changes**.
 4. Restart the monitored processes on the host.
 
-For details on how Application Security works in Discovery mode, see [Application Security: Discovery mode](/docs/secure/application-security#discovery "Access the Dynatrace Application Security functionalities.").
+For details on how Application Security works in Discovery mode, see [Application Security: Discovery mode](../ru/secure/application-security.md#discovery "Access the Dynatrace Application Security functionalities.").
 
 ## Infrastructure Monitoring mode
 
@@ -7713,7 +7713,7 @@ During OneAgent installation
 
 To turn on Infrastructure Monitoring mode during OneAgent installation, use the `--set-monitoring-mode=infra-only` parameter.
 
-For more information, see the [OneAgent installation](/docs/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") documentation that's specific to your environment.
+For more information, see the [OneAgent installation](../ru/ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") documentation that's specific to your environment.
 
 After OneAgent installation
 
@@ -7726,9 +7726,9 @@ To turn on Infrastructure Monitoring mode after OneAgent installation, use one o
   3. Select **Host monitoring**.
   4. Go to **Monitoring Mode** and in the drop-down menu select **Infrastructure**.
   5. Select **Save changes**.
-* Use the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to set the `--set-monitoring-mode=infra-only` parameter.
-* Use the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") to turn on Infrastructure Monitoring mode at scale.
-* To download the schema, use [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") with `builtin:host.monitoring` as the schemaId and create your configuration object using [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.").
+* Use the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to set the `--set-monitoring-mode=infra-only` parameter.
+* Use the [Settings API](../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") to turn on Infrastructure Monitoring mode at scale.
+* To download the schema, use [GET a schema](../ru/dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") with `builtin:host.monitoring` as the schemaId and create your configuration object using [POST an object](../ru/dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.").
 
 ### Process injection
 
@@ -7736,7 +7736,7 @@ Process injection provides you with additional data for Infrastructure Monitorin
 
 If you run your OneAgent as a container with Infrastructure Monitoring mode enabled, process injection will not be performed.
 
-Infrastructure Monitoring mode enables you to monitor any infrastructure component and backing service written in Java. You can monitor backing services supported by default (for example, Kafka or ActiveMQ), and you can also build your own custom [JMX and PMI extensions](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions "Learn how to extend Dynatrace monitoring to include applications you've instrumented with JMX.") for infrastructure components and use them in Infrastructure Monitoring mode.
+Infrastructure Monitoring mode enables you to monitor any infrastructure component and backing service written in Java. You can monitor backing services supported by default (for example, Kafka or ActiveMQ), and you can also build your own custom [JMX and PMI extensions](../ru/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions.md "Learn how to extend Dynatrace monitoring to include applications you've instrumented with JMX.") for infrastructure components and use them in Infrastructure Monitoring mode.
 
 Additionally, with process injection, Infrastructure Monitoring mode provides runtime metrics for:
 
@@ -7749,7 +7749,7 @@ Additionally, with process injection, Infrastructure Monitoring mode provides ru
 
 ### Disable process auto-injection
 
-We don't recommend turning off auto-injection, but if you're required to do so due to strict security requirements, you can choose among various options. Turning off auto-injection also prevents Dynatrace from discovering vulnerabilities or live debugging in your environment, even if you enable [Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.") or [Live Debugger](/docs/observe/application-observability/live-debugger "Get familiar with the Live Debugger capabilities in Dynatrace."). You can turn off automatic injection at the host or environment level.
+We don't recommend turning off auto-injection, but if you're required to do so due to strict security requirements, you can choose among various options. Turning off auto-injection also prevents Dynatrace from discovering vulnerabilities or live debugging in your environment, even if you enable [Application Security](../ru/secure/application-security.md "Access the Dynatrace Application Security functionalities.") or [Live Debugger](../ru/observe/application-observability/live-debugger.md "Get familiar with the Live Debugger capabilities in Dynatrace."). You can turn off automatic injection at the host or environment level.
 
 #### Disable auto-injection for a single host
 
@@ -7764,9 +7764,9 @@ After OneAgent installation with UI
 
 After OneAgent installation with command line
 
-Use the [OneAgent command line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to set the `--set-auto-injection-enabled=false` parameter.
+Use the [OneAgent command line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to set the `--set-auto-injection-enabled=false` parameter.
 
-If you use oneagentctl to turn off automatic injection, you won't be able to control auto-injection in Infrastructure Monitoring mode using the Dynatrace web UI at **Settings > Monitoring > Monitored technologies** or [OneAgent monitoring configuration API](/docs/dynatrace-api/configuration-api/oneagent-configuration/oneagent-on-host/oneagent-monitoring/put-monitoring-configuration "Update the monitoring configuration of a OneAgent instance via the Dynatrace API.").
+If you use oneagentctl to turn off automatic injection, you won't be able to control auto-injection in Infrastructure Monitoring mode using the Dynatrace web UI at **Settings > Monitoring > Monitored technologies** or [OneAgent monitoring configuration API](../ru/dynatrace-api/configuration-api/oneagent-configuration/oneagent-on-host/oneagent-monitoring/put-monitoring-configuration.md "Update the monitoring configuration of a OneAgent instance via the Dynatrace API.").
 
 #### Disable auto-injection for an environment
 
@@ -7776,7 +7776,7 @@ You can turn off process injection for particular process groups using custom pr
 
 Custom process monitoring rules give you fine-grained control over which processes OneAgent injects into, with an approach that scales easily within large environments. You donât need to adjust your system configuration, and a few rules can cover thousands of processes.
 
-For more information, see [Process deep monitoring](/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring#rules "Ways to customize process-group monitoring").
+For more information, see [Process deep monitoring](../ru/observe/infrastructure-observability/process-groups/configuration/pg-monitoring.md#rules "Ways to customize process-group monitoring").
 
 Disable runtime metrics
 
@@ -7814,7 +7814,7 @@ You can also turn off selected extensions collecting the metrics at the environm
 
 ### Filter hosts by injection status
 
-When you turn off auto-injection, you can find such hosts using the **Auto-injection** filter on the **Deployment Status** page or [OneAgent on a host - GET a list of hosts with OneAgent details](/docs/dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents "Check the configuration of OneAgent instances on your hosts via Dynatrace API.").
+When you turn off auto-injection, you can find such hosts using the **Auto-injection** filter on the **Deployment Status** page or [OneAgent on a host - GET a list of hosts with OneAgent details](../ru/dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents.md "Check the configuration of OneAgent instances on your hosts via Dynatrace API.").
 
 Use Dynatrace web UI
 
@@ -7834,13 +7834,13 @@ Use Dynatrace web UI
 
 Use Dynatrace API
 
-Run the [OneAgent on a host - GET a list of hosts with OneAgent details](/docs/dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents "Check the configuration of OneAgent instances on your hosts via Dynatrace API.") call with the `autoInjection` parameter set to `DISABLED_MANUAL`. The returned payload contains the list of OneAgents with auto-injection disabled [after OneAgent installation](#after-install) via either the Dynatrace web UI or `oneagentctl`.
+Run the [OneAgent on a host - GET a list of hosts with OneAgent details](../ru/dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents.md "Check the configuration of OneAgent instances on your hosts via Dynatrace API.") call with the `autoInjection` parameter set to `DISABLED_MANUAL`. The returned payload contains the list of OneAgents with auto-injection disabled [after OneAgent installation](#after-install) via either the Dynatrace web UI or `oneagentctl`.
 
 ## Virtualization monitoring
 
 
 
-Dynatrace supports [virtualization monitoring](/docs/observe/infrastructure-observability/vmware-vsphere-monitoring "Monitor VMware vSphere with Dynatrace."). To monitor the virtual components in your environment, you need to complete an extra step beyond the initial setup. For full details, see [Set up virtualization monitoring](/docs/observe/infrastructure-observability/vmware-vsphere-monitoring "Monitor VMware vSphere with Dynatrace.").
+Dynatrace supports [virtualization monitoring](../ru/observe/infrastructure-observability/vmware-vsphere-monitoring.md "Monitor VMware vSphere with Dynatrace."). To monitor the virtual components in your environment, you need to complete an extra step beyond the initial setup. For full details, see [Set up virtualization monitoring](../ru/observe/infrastructure-observability/vmware-vsphere-monitoring.md "Monitor VMware vSphere with Dynatrace.").
 
 ## FAQ
 
@@ -7885,7 +7885,7 @@ scraped: 2026-03-05T21:36:56.739400
 
 This is a reference list of the metrics used for hosts, with details of their availability on Windows, Linux, and AIX operating systems.
 
-You can also check if the metrics are available in the Discovery monitoring mode. For more details, refer to [Discovery mode](/docs/platform/oneagent/monitoring-modes/monitoring-modes#discovery "Find out more about the available monitoring modes when using OneAgent.").
+You can also check if the metrics are available in the Discovery monitoring mode. For more details, refer to [Discovery mode](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md#discovery "Find out more about the available monitoring modes when using OneAgent.").
 
 ## CPU and Memory metrics
 
@@ -8046,7 +8046,7 @@ Brief overview
 
 ### Host groups
 
-With many Dynatrace-monitored environments growing larger and more complex all the time, often spanning different data centers and multiple applications, [host groups](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") are increasingly important. Host groups enable you to configure hosts per group, roll out OneAgent versions selectively per group, and track service metrics differently depending on the platform they run on.
+With many Dynatrace-monitored environments growing larger and more complex all the time, often spanning different data centers and multiple applications, [host groups](../ru/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") are increasingly important. Host groups enable you to configure hosts per group, roll out OneAgent versions selectively per group, and track service metrics differently depending on the platform they run on.
 
 ### Virtualization performance insights
 
@@ -8054,11 +8054,11 @@ Dynatrace tells you how the virtual machines in your environment affect the perf
 
 ### Tags in a host-based configuration file
 
-Within dynamic or large environments, manual host tagging can be impractical. For dynamic deployments that include frequently changing host instances and names (for example, AWS or MS Azure), you can [use a dedicated configuration file to programmatically apply tags to your hosts](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.").
+Within dynamic or large environments, manual host tagging can be impractical. For dynamic deployments that include frequently changing host instances and names (for example, AWS or MS Azure), you can [use a dedicated configuration file to programmatically apply tags to your hosts](observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts.md "Learn how to tag and set additional properties for a monitored host.").
 
 ### Custom host names
 
-Dynatrace generally names the detected hosts in your environment based on their DNS names, exactly as they are detected by Dynatrace OneAgent. To improve readability, you may want to [create custom host names](/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name.") to display instead of the detected host names.
+Dynatrace generally names the detected hosts in your environment based on their DNS names, exactly as they are detected by Dynatrace OneAgent. To improve readability, you may want to [create custom host names](observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments.md "Learn how to change a monitored host name.") to display instead of the detected host names.
 
 ## Basic concepts
 
@@ -8066,35 +8066,35 @@ Dynatrace generally names the detected hosts in your environment based on their 
 
 ### Monitoring modes
 
-Find out what's included and how to enable Infrastructure Monitoring and Discovery modes.](/docs/observe/infrastructure-observability/hosts/monitoring-modes "Find out what's included in Dynatrace Infrastructure Monitoring mode.")[### How effective is infrastructure monitoring on its own?
+Find out what's included and how to enable Infrastructure Monitoring and Discovery modes.](../ru/observe/infrastructure-observability/hosts/monitoring-modes.md "Find out what's included in Dynatrace Infrastructure Monitoring mode.")[### How effective is infrastructure monitoring on its own?
 
-Learn how monitoring only the infrastructure layer of your environment can lead to an incomplete picture of the health of your applications and customer experience.](/docs/observe/infrastructure-observability/hosts/monitoring-modes/how-effective-is-infrastructure-monitoring-on-its-own "Learn how monitoring only the infrastructure layer of your environment can lead to an incomplete picture of the health of your applications and customer experience.")
+Learn how monitoring only the infrastructure layer of your environment can lead to an incomplete picture of the health of your applications and customer experience.](observe/infrastructure-observability/hosts/monitoring-modes/how-effective-is-infrastructure-monitoring-on-its-own.md "Learn how monitoring only the infrastructure layer of your environment can lead to an incomplete picture of the health of your applications and customer experience.")
 
 ## Configuration
 
 [### Host anomaly detection
 
-Configure host anomaly detection, including problem and event thresholds.](/docs/observe/infrastructure-observability/hosts/configuration/anomaly-detection "Configure host anomaly detection, including problem and event thresholds.")[### Define tags and metadata for hosts
+Configure host anomaly detection, including problem and event thresholds.](observe/infrastructure-observability/hosts/configuration/anomaly-detection.md "Configure host anomaly detection, including problem and event thresholds.")[### Define tags and metadata for hosts
 
-Tag and set additional properties for a monitored host.](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.")[### Exclude disks and network traffic from host monitoring
+Tag and set additional properties for a monitored host.](observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts.md "Learn how to tag and set additional properties for a monitored host.")[### Exclude disks and network traffic from host monitoring
 
-Exclude selected disks and network traffic from host monitoring.](/docs/observe/infrastructure-observability/hosts/configuration/exclude-disks-and-network-traffic "Learn how to exclude selected disks and network traffic from host monitoring.")[### Organize your environment using host groups
+Exclude selected disks and network traffic from host monitoring.](../ru/observe/infrastructure-observability/hosts/configuration/exclude-disks-and-network-traffic.md "Learn how to exclude selected disks and network traffic from host monitoring.")[### Organize your environment using host groups
 
-Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.")[### Set custom host names
+Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.](../ru/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.")[### Set custom host names
 
-Change a monitored host name.](/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name.")
+Change a monitored host name.](observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments.md "Learn how to change a monitored host name.")
 
 ## Monitoring
 
 [### Host monitoring with Dynatrace
 
-Monitor hosts with Dynatrace.](/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring "Monitor hosts with Dynatrace.")[### OS services monitoring
+Monitor hosts with Dynatrace.](observe/infrastructure-observability/hosts/monitoring/host-monitoring.md "Monitor hosts with Dynatrace.")[### OS services monitoring
 
-Improve the visibility of your infrastructure by monitoring the availability of operating system services.](/docs/observe/infrastructure-observability/hosts/monitoring/os-services "Improve the visibility of your infrastructure by monitoring the availability of operating system services.")[### Classic Windows services monitoring
+Improve the visibility of your infrastructure by monitoring the availability of operating system services.](../ru/observe/infrastructure-observability/hosts/monitoring/os-services.md "Improve the visibility of your infrastructure by monitoring the availability of operating system services.")[### Classic Windows services monitoring
 
-Improve the visibility of your infrastructure by monitoring the availability of Windows services.](/docs/observe/infrastructure-observability/hosts/monitoring/windows-services "Learn how to improve the visibility of your infrastructure by monitoring the availability of Windows services.")[### Process availability
+Improve the visibility of your infrastructure by monitoring the availability of Windows services.](observe/infrastructure-observability/hosts/monitoring/windows-services.md "Learn how to improve the visibility of your infrastructure by monitoring the availability of Windows services.")[### Process availability
 
-Monitor availability and performance of the key processes on your hosts.](/docs/observe/infrastructure-observability/hosts/monitoring/process-availability "Monitor availability and performance of the key processes on your hosts.")
+Monitor availability and performance of the key processes on your hosts.](../ru/observe/infrastructure-observability/hosts/monitoring/process-availability.md "Monitor availability and performance of the key processes on your hosts.")
 
 ## Diagnostics
 
@@ -8102,7 +8102,7 @@ Monitor availability and performance of the key processes on your hosts.](/docs/
 
 ### OneAgent diagnostics
 
-Learn how to run OneAgent diagnostics.](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics "Learn how to run OneAgent diagnostics")
+Learn how to run OneAgent diagnostics.](ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics.md "Learn how to run OneAgent diagnostics")
 
 ---
 
@@ -8260,7 +8260,7 @@ Here's what each column in the  **Hosts** view stands for.
   Analyze and compare CPU, memory, disk, and network usage metrics across hosts to optimize resource allocation.
 * Organize environments
 
-  Use [host groups](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to configure hosts per group, roll out OneAgent versions selectively, and track service metrics differently depending on the platform they run on.
+  Use [host groups](../ru/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to configure hosts per group, roll out OneAgent versions selectively, and track service metrics differently depending on the platform they run on.
 * Drill down into host details
 
   Select a host name to view detailed graphs, processes, logs, events, and connected services for troubleshooting.
@@ -8273,13 +8273,13 @@ Find out more about the available monitoring modes when using OneAgent.
 
 * Explanation
 
-Read this explanation](/docs/platform/oneagent/monitoring-modes/monitoring-modes)[#### Enable OneAgent monitoring modes
+Read this explanation](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md)[#### Enable OneAgent monitoring modes
 
 Learn how to enable monitoring modes when using OneAgent.
 
 * How-to guide
 
-Read this guide](/docs/platform/oneagent/monitoring-modes/enable-monitoring-modes)
+Read this guide](../ru/platform/oneagent/monitoring-modes/enable-monitoring-modes.md)
 
 ---
 
@@ -8300,7 +8300,7 @@ scraped: 2026-03-06T21:16:45.289692
 * 2-min read
 * Published Nov 25, 2025
 
-The  **Network devices** view in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** provides insights into networking components and their availability, with analytics powered by [Dynatrace Intelligence](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence."). Dynatrace offers flexible network device observability, allowing you to choose the level of monitoring and onboarding process that fits your needs.
+The  **Network devices** view in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** provides insights into networking components and their availability, with analytics powered by [Dynatrace Intelligence](dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence."). Dynatrace offers flexible network device observability, allowing you to choose the level of monitoring and onboarding process that fits your needs.
 
 ## Overview
 
@@ -8309,7 +8309,7 @@ The  **Network devices** view provides different perspectives for viewing your n
 The **Health** perspective includes the following default columns:
 
 * **Network device**: The name or identifier of the network device. Select the name for a comprehensive, full-page view with detailed metadata and metrics.
-* **Network area**: The logical grouping of network devices. Network areas are configured in the [SNMP Autodiscovery extension](/docs/observe/infrastructure-observability/extensions/snmp-autodiscovery "Scan through your subnets and build an inventory of SNMP-enabled network devices.").
+* **Network area**: The logical grouping of network devices. Network areas are configured in the [SNMP Autodiscovery extension](observe/infrastructure-observability/extensions/snmp-autodiscovery.md "Scan through your subnets and build an inventory of SNMP-enabled network devices.").
 * **Problems**: Lists any problems detected by Dynatrace Intelligence. Select a problem to access affected entities and investigate specific issues.
 * **Reachability**: Indicates whether the device is reachable and responsive over the network.
 * **Uptime**: The duration the device has been operational since the last restart.
@@ -8347,7 +8347,7 @@ scraped: 2026-03-01T21:10:49.079167
 * 2-min read
 * Published Nov 25, 2025
 
-The  **Network devices** view in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** provides insights into networking components and their availability, with analytics powered by [Dynatrace Intelligence](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence."). Dynatrace offers flexible network device observability, allowing you to choose the level of monitoring and onboarding process that fits your needs.
+The  **Network devices** view in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** provides insights into networking components and their availability, with analytics powered by [Dynatrace Intelligence](dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence."). Dynatrace offers flexible network device observability, allowing you to choose the level of monitoring and onboarding process that fits your needs.
 
 ## Overview
 
@@ -8356,7 +8356,7 @@ The  **Network devices** view provides different perspectives for viewing your n
 The **Health** perspective includes the following default columns:
 
 * **Network device**: The name or identifier of the network device. Select the name for a comprehensive, full-page view with detailed metadata and metrics.
-* **Network area**: The logical grouping of network devices. Network areas are configured in the [SNMP Autodiscovery extension](/docs/observe/infrastructure-observability/extensions/snmp-autodiscovery "Scan through your subnets and build an inventory of SNMP-enabled network devices.").
+* **Network area**: The logical grouping of network devices. Network areas are configured in the [SNMP Autodiscovery extension](observe/infrastructure-observability/extensions/snmp-autodiscovery.md "Scan through your subnets and build an inventory of SNMP-enabled network devices.").
 * **Problems**: Lists any problems detected by Dynatrace Intelligence causal AI. Select a problem to access affected entities and investigate specific issues.
 * **Reachability**: Indicates whether the device is reachable and responsive over the network.
 * **Uptime**: The duration the device has been operational since the last restart.
@@ -8406,7 +8406,7 @@ The **Health** perspective includes the following default columns:
 
 * **Process**: The process name or identifier. Select the name for a comprehensive, full-page view with detailed metadata, logs, events, and time-series charts.
 * **Process group name**: The group to which the process belongs.
-* **Health alerts**: Displays health alerts and warning signals powered by [Dynatrace Intelligence](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence."). For details, see [View health alerts and warning signals](/docs/observe/infrastructure-observability/infrastructure-and-operations#health-alerts "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.").
+* **Health alerts**: Displays health alerts and warning signals powered by [Dynatrace Intelligence](dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence."). For details, see [View health alerts and warning signals](../ru/observe/infrastructure-observability/infrastructure-and-operations.md#health-alerts "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.").
 * **Custom alerts**: Lists any active custom alerts associated with the process.
 * **Availability**: Shows the current availability status of the process.
 * **Technologies**: The technologies detected for this process.
@@ -8456,13 +8456,13 @@ scraped: 2026-03-06T21:10:46.597387
 
 The ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** app simplifies infrastructure health monitoring and facilitates root cause analysis for problems.
 
-* Health indicators powered by [Dynatrace Intelligence](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.") help you detect early signs of performance degradation to quickly see which areas of your environment need attention.
+* Health indicators powered by [Dynatrace Intelligence](dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence.") help you detect early signs of performance degradation to quickly see which areas of your environment need attention.
 * Check infrastructure host health metrics, logs, and events for all infrastructure entities.
 * Drill down from ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** to any infrastructure entity metrics, logs, or events.
 
 ## Prerequisites
 
-1. Deploy [Dynatrace OneAgent](/docs/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") on your hostsâit's the optimal choice to collect the most granular metrics and network insights.
+1. Deploy [Dynatrace OneAgent](../ru/ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") on your hostsâit's the optimal choice to collect the most granular metrics and network insights.
 2. If you are using cloud services, integrate your cloud infrastructure with Dynatrace. Follow the specific integration guides for AWS, Azure, Google Cloud, or other cloud providers.
 
 ### Permissions
@@ -8539,7 +8539,7 @@ You can filter the tables in the app by using the filter field with listed sugge
 
 You can add several statements to narrow down the filter results. For example, `"Alert status" = Critical` `name != *1b*`. In this case, you narrow the search to hosts with more than 4 problems and names that don't include `1b`.
 
-For more details on using filters, see [Filter field](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
+For more details on using filters, see [Filter field](../ru/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
 
 ### Segments
 
@@ -8570,7 +8570,7 @@ Some of the advantages of using segments are
    * Add entities and topology. Select from the available options in the menu.
 6. Select **Save**.
 
-For more details on managing segments, refer to [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.").
+For more details on managing segments, refer to [Segments](../ru/manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.").
 
 ### Analyze overview charts
 
@@ -8578,7 +8578,7 @@ You can define which metrics are displayed in the charts by selecting ![Expand m
 
 #### Export data to Notebooks
 
-To further analyze the data from ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."):
+To further analyze the data from ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") [Notebooks](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."):
 
 1. Go to ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 2. Select an entity to see its details.
@@ -8602,7 +8602,7 @@ Note that processes can run directly on hosts or in containers running on hosts.
 
 ### Display code-module metrics
 
-You can inject code modules and display the injected data in the app. For more details, see [Universal injection of code modules](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix#universal-injection "Learn which capabilities are supported by OneAgent on different operating systems and platforms.").
+You can inject code modules and display the injected data in the app. For more details, see [Universal injection of code modules](../ru/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md#universal-injection "Learn which capabilities are supported by OneAgent on different operating systems and platforms.").
 
 After selecting a process from the list, the data is presented in a dedicated tab.
 
@@ -8618,11 +8618,11 @@ The incoming and outgoing process connections in the table display processes wit
 
 ### Measure the reachability of a host or device
 
-The **Reachability** column on the **Hosts** and **Network devices** pages shows how easily you can access a device or a host over the network from a remote location. For more details, see [Synthetic Monitoring](/docs/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.").
+The **Reachability** column on the **Hosts** and **Network devices** pages shows how easily you can access a device or a host over the network from a remote location. For more details, see [Synthetic Monitoring](../ru/observe/digital-experience/synthetic-monitoring.md "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.").
 
 The value presents the ratio of fully available Network Availability Monitors (NAM) (with 100% availability over the selected time period) to all configured monitors for the given host or network device.
 
-To use this feature, you need to configure NAM for the desired device or host. For details, refer to [Configure a NAM monitor](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor "Learn how to set up a NAM monitor to check the performance and availability of your site.").
+To use this feature, you need to configure NAM for the desired device or host. For details, refer to [Configure a NAM monitor](../ru/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor.md "Learn how to set up a NAM monitor to check the performance and availability of your site.").
 
 ### View health alerts and warning signals
 
@@ -8630,7 +8630,7 @@ In ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-opera
 
 Health alerts and warning signals help you monitor your infrastructure by providing clear, actionable insights. These features reduce the noise from infrastructure issues and improve alerting capabilities, so you can focus on what matters most. This is achieved through better categorization of detected malfunctions.
 
-* For critical events, a Health alert is raised, triggering a [Dynatrace Problems](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") investigation.
+* For critical events, a Health alert is raised, triggering a [Dynatrace Problems](../ru/dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.") investigation.
 * For non-critical situations, a Warning signal informs you of a potential challenge.
 
 To take advantage of this feature in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**, you need to enable it. Once enabled, certain alerts that were previously classified as critical will be reclassified as warnings, as they are not considered critical enough to require immediate attention.
@@ -8664,7 +8664,7 @@ To view installed technologies
 1. Go to ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** > **Technologies**.
 2. Select an extension from the list to view more details.
 
-For details on setting up extensions, see [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.").
+For details on setting up extensions, see [Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.").
 
 Minimum required versions of extensions
 
@@ -8682,7 +8682,7 @@ This list concerns extensions for supporting network devices and is not exhausti
 | Generic network device | 2.0.0 |
 | Fortigate | 1.2.21 |
 
-See our detailed [Generic network topology](/docs/ingest-from/extend-dynatrace/extend-topology/network-topology "Use the generic network topology model available in Dynatrace extensions.") guide on how to make your custom extensions appear in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
+See our detailed [Generic network topology](../ru/ingest-from/extend-dynatrace/extend-topology/network-topology.md "Use the generic network topology model available in Dynatrace extensions.") guide on how to make your custom extensions appear in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
 ## Concepts
 
@@ -8692,23 +8692,23 @@ See our detailed [Generic network topology](/docs/ingest-from/extend-dynatrace/e
 
 Monitor the health and performance of your data centers and availability zones to detect and resolve critical issues.
 
-Data centers](/docs/observe/infrastructure-observability/infrastructure-and-operations/data-centers)[#### Hosts
+Data centers](../ru/observe/infrastructure-observability/infrastructure-and-operations/data-centers.md)[#### Hosts
 
 Monitor infrastructure hosts across physical machines, VMs, and cloud instances to track health, performance, and resource utilization.
 
-Hosts](/docs/observe/infrastructure-observability/infrastructure-and-operations/hosts)[#### Containers
+Hosts](../ru/observe/infrastructure-observability/infrastructure-and-operations/hosts.md)[#### Containers
 
 Monitor and troubleshoot containerized workloads across Kubernetes and standalone hosts.
 
-Containers](/docs/observe/infrastructure-observability/infrastructure-and-operations/containers)[#### Processes
+Containers](../ru/observe/infrastructure-observability/infrastructure-and-operations/containers.md)[#### Processes
 
 Monitor processes running on hosts and containers with detailed insights into CPU and memory usage trends and key metrics.
 
-Processes](/docs/observe/infrastructure-observability/infrastructure-and-operations/processes)[#### Network devices
+Processes](../ru/observe/infrastructure-observability/infrastructure-and-operations/processes.md)[#### Network devices
 
 Monitor network devices and gain insights into networking components with Dynatrace Intelligence-powered analytics and flexible observability options.
 
-Network devices](/docs/observe/infrastructure-observability/infrastructure-and-operations/network-devices)
+Network devices](../ru/observe/infrastructure-observability/infrastructure-and-operations/network-devices.md)
 
 ### Relation between hosts, containers, and processes
 
@@ -8769,7 +8769,7 @@ scraped: 2026-03-06T21:12:00.286290
 
 You have the option to enable all or specific Kubernetes clusters to benefit from the new Kubernetes experience.
 
-You could accomplish this using the Settings API with the [Kubernetes app schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-app-transition-kubernetes "View builtin:app-transition.kubernetes settings schema table of your monitoring environment via the Dynatrace API."), or alternatively, by configuring the setting as described next.
+You could accomplish this using the Settings API with the [Kubernetes app schema table](../ru/dynatrace-api/environment-api/settings/schemas/builtin-app-transition-kubernetes.md "View builtin:app-transition.kubernetes settings schema table of your monitoring environment via the Dynatrace API."), or alternatively, by configuring the setting as described next.
 
 To fully disable the Kubernetes experience and stop Kubernetes monitoring or related license consumption, make sure the setting is turned off at both the environment and cluster level.
 
@@ -8815,8 +8815,8 @@ Prerequisites
 * Dynatrace SaaS environment powered by Grail and AppEngine
 
   + There is a very small exception for a few specific tenants that won't be able to access the preview. More information on that will be available within the product.
-* [DPS license](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") with the **Kubernetes Platform Monitoring** capability on your Rate Card
-* [Sufficient permissions](/docs/observe/infrastructure-observability/kubernetes-app/reference/permissions "Overview of user and tailoring permissions.") to use ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** within your Dynatrace environment
+* [DPS license](license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") with the **Kubernetes Platform Monitoring** capability on your Rate Card
+* [Sufficient permissions](../ru/observe/infrastructure-observability/kubernetes-app/reference/permissions.md "Overview of user and tailoring permissions.") to use ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** within your Dynatrace environment
 * Dynatrace version 1.324+
 * ActiveGate version 1.323+
 * Dynatrace Operator version 1.7.0+
@@ -8983,7 +8983,7 @@ verbs:
 
 ## Does this preview increase my DPS consumption?
 
-The preview builds upon the existing ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** and the corresponding license based on [pod-hours](/docs/license/capabilities/container-monitoring/kubernetes-platform-monitoring "Learn how your consumption of the Dynatrace Kubernetes Platform Monitoring DPS capability is billed and charged."). The consumed pod-hours include insights into all newly added Kubernetes objects, meaning there won't be any increase in DPS consumption specific to this preview.
+The preview builds upon the existing ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** and the corresponding license based on [pod-hours](../ru/license/capabilities/container-monitoring/kubernetes-platform-monitoring.md "Learn how your consumption of the Dynatrace Kubernetes Platform Monitoring DPS capability is billed and charged."). The consumed pod-hours include insights into all newly added Kubernetes objects, meaning there won't be any increase in DPS consumption specific to this preview.
 
 ## What happens technically by joining this preview?
 
@@ -8996,7 +8996,7 @@ We will continue for some time to offer the entities that powered the former **E
 
 ## What observability option do I need for this preview? Do I need Full-Stack observability?
 
-This preview is based on **Kubernetes platform monitoring**, which is included in all [observability options](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes").
+This preview is based on **Kubernetes platform monitoring**, which is included in all [observability options](../ru/ingest-from/setup-on-k8s/deployment.md "Deploy Dynatrace Operator on Kubernetes").
 
 ## What are top-level workloads?
 
@@ -9015,11 +9015,11 @@ Please note, that labels and annotation are not part of this field, but are stor
 
 
 
-The newly added Kubernetes object types require additional ActiveGate permissions. These permissions (except for ConfigMaps and Secrets [1](#fn-1-1-def)) are automatically granted when Dynatrace Operator is updated to [version 1.7.0](/docs/whats-new/dynatrace-operator/dto-fix-1-7-0 "Release notes for Dynatrace Operator, version 1.7.0"). Customers using older Dynatrace Operator versions, or those who manually have overwritten the ActiveGate permissions, may lack access to the new Kubernetes endpoints. If permissions are missing, a warning message appears above the table (for example `Missing "ConfigMap" ClusterRole permission for cluster(s): aks-playground-dev.`):
+The newly added Kubernetes object types require additional ActiveGate permissions. These permissions (except for ConfigMaps and Secrets [1](#fn-1-1-def)) are automatically granted when Dynatrace Operator is updated to [version 1.7.0](../ru/whats-new/dynatrace-operator/dto-fix-1-7-0.md "Release notes for Dynatrace Operator, version 1.7.0"). Customers using older Dynatrace Operator versions, or those who manually have overwritten the ActiveGate permissions, may lack access to the new Kubernetes endpoints. If permissions are missing, a warning message appears above the table (for example `Missing "ConfigMap" ClusterRole permission for cluster(s): aks-playground-dev.`):
 
 ![How can I fix missing ClusterRole permissions?](https://dt-cdn.net/images/image-20250909-123859-2305-e1ca79056f.png)
 
-To fix this, [update your Dynatrace Operator](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator#update "Upgrade and uninstallation procedures for Dynatrace Operator") to version 1.7.0+.
+To fix this, [update your Dynatrace Operator](ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator.md#update "Upgrade and uninstallation procedures for Dynatrace Operator") to version 1.7.0+.
 
 1
 
@@ -9072,7 +9072,7 @@ To manage permissions within ![Kubernetes (new)](https://dt-cdn.net/images/kuber
 
 Dynatrace IAM allows for a highly detailed and flexible definition and assignment of permissions. These permissions can be grouped into policies and then assigned to users or groups. Additionally, permissions can be targeted to specific subsets of Kubernetes objects by using conditions, such as for particular clusters and/or namespaces.
 
-For more information, see [Identity and access management (IAM)](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+For more information, see [Identity and access management (IAM)](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
 
 Example policy
 
@@ -9137,7 +9137,7 @@ Kubernetes out-of-the-box (OOTB) alerts can be easily configured within the glob
 * **Direct navigation**: Navigate to the settings related to your namespace directly from Dynatrace and adapt everything to your needs without the need for external configurations.
 * **Default configurations**: Set up default alert configurations for all active and future Kubernetes clusters, namespaces, and workloads, ensuring consistent monitoring as your infrastructure grows.
 * **Granular customization**: Customize alert settings at various levels, allowing you to handle alerts differently for production and development clusters and adjust node alerts within each.
-* **Automation with Dynatrace API**: Leverage the Dynatrace API to automate configurations, ensuring that your alerting system evolves smoothly with your infrastructure changes. Moreover, with the Dynatrace API, you can adopt the [Configuration as Code](/docs/deliver/configuration-as-code "Use Dynatrace configuration as code via Monaco or Terraform.") approach to configure alerts, integrating them into a GitOps workflow.
+* **Automation with Dynatrace API**: Leverage the Dynatrace API to automate configurations, ensuring that your alerting system evolves smoothly with your infrastructure changes. Moreover, with the Dynatrace API, you can adopt the [Configuration as Code](../ru/deliver/configuration-as-code.md "Use Dynatrace configuration as code via Monaco or Terraform.") approach to configure alerts, integrating them into a GitOps workflow.
 
 ## Getting started
 
@@ -9152,7 +9152,7 @@ To configure these settings
 1. Go to **Settings** > **Anomaly detection**.
 2. Under **Kubernetes**, select any option.
 
-For complete details on this feature, see [Alert on common Kubernetes/OpenShift issues](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.").
+For complete details on this feature, see [Alert on common Kubernetes/OpenShift issues](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues.md "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.").
 
 ---
 
@@ -9219,7 +9219,7 @@ Make sure all of these are true before you start.
 
 * You have basic knowledge of Kubernetes architecture, including nodes, pods, and services.
 * You have experience with Kubernetes Disk Management: Understanding of disk utilization in Kubernetes and the challenges associated with managing disk space in dynamic environments.
-* You know how to set up automated workflows in Dynatrace for responding to disk space alerts. See [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
+* You know how to set up automated workflows in Dynatrace for responding to disk space alerts. See [Workflows](../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
 * You know how to set up monitoring and alerting mechanisms within Dynatrace for Kubernetes environments.
 * You understand GitOps principles, particularly for managing Kubernetes configurations through repository-based approaches.
 
@@ -9229,11 +9229,11 @@ To keep the internal systems up and running, create an automated workflow for Ku
 
 ### 1. Set up continuous monitoring
 
-[Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes") to continuously monitor all services within the Kubernetes infrastructure. When your monitoring is providing you with data, [set up an alert](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") for disk utilization exceeding a 60% threshold to ensure optimal performance without resource wastage. With this alert, you'll be able to model a workflow for solving a disk size shortage issue.
+[Set up Dynatrace on Kubernetes](../ru/ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes") to continuously monitor all services within the Kubernetes infrastructure. When your monitoring is providing you with data, [set up an alert](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues.md "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") for disk utilization exceeding a 60% threshold to ensure optimal performance without resource wastage. With this alert, you'll be able to model a workflow for solving a disk size shortage issue.
 
 ### 2. Set up configuration file retrieval through ownership
 
-With [ownership](/docs/deliver/ownership "Map team ownership to monitored entities for better collaboration, task assignment, incident and vulnerability response, and service-level management.") assigned to objects, you can store the repository information. On detecting an anomaly, the system identifies the impacted service and fetches its associated configuration file. This step ensures that any adaptation made aligns directly with the specific service configuration.
+With [ownership](../ru/deliver/ownership.md "Map team ownership to monitored entities for better collaboration, task assignment, incident and vulnerability response, and service-level management.") assigned to objects, you can store the repository information. On detecting an anomaly, the system identifies the impacted service and fetches its associated configuration file. This step ensures that any adaptation made aligns directly with the specific service configuration.
 
 ### 3. Set up a workflow
 
@@ -9783,8 +9783,8 @@ Explore further how Dynatrace can transform your approach to Kubernetes manageme
 
 ## Related topics
 
-* [AI in Workflows - Predictive maintenance of cloud disks](/docs/dynatrace-intelligence/use-cases/davis-for-workflows "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")
-* [Dynatrace Intelligence DQL examples](/docs/dynatrace-intelligence/use-cases/davis-dql-examples "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")
+* [AI in Workflows - Predictive maintenance of cloud disks](../ru/dynatrace-intelligence/use-cases/davis-for-workflows.md "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")
+* [Dynatrace Intelligence DQL examples](../ru/dynatrace-intelligence/use-cases/davis-dql-examples.md "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")
 
 ---
 
@@ -9807,20 +9807,20 @@ scraped: 2026-03-06T21:09:44.668198
 
 The latest [Kubernetes experienceï»¿](https://dt-url.net/k1038uw) is optimized for DevOps Platform Engineers and Site Reliability Engineers (SREs), focusing on the health and performance optimization of multicloud Kubernetes environments. The centerpiece of this experience is [![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**ï»¿](https://dt-url.net/mx238j5).
 
-The underlying metrics, events, and logs are all powered by [Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), which supports flexible analytics through the [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") in ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**, ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, and ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
+The underlying metrics, events, and logs are all powered by [Grail](../ru/platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), which supports flexible analytics through the [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") in ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**, ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, and ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
 
 ## Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine
-* [DPS license](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") with the **Kubernetes Platform Monitoring** capability on your Rate Card
-* [Sufficient permissions](/docs/observe/infrastructure-observability/kubernetes-app/reference/permissions "Overview of user and tailoring permissions.") to use the ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** within your Dynatrace environment
+* [DPS license](license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") with the **Kubernetes Platform Monitoring** capability on your Rate Card
+* [Sufficient permissions](../ru/observe/infrastructure-observability/kubernetes-app/reference/permissions.md "Overview of user and tailoring permissions.") to use the ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** within your Dynatrace environment
 * ActiveGate version 1.327+ is a prerequisite for [Kubernetes Enhanced Object Visibility](#enhanced-object-visibility).
 
   + Older ActiveGate versions are supported in backward compatibility mode; in that mode, an additional **Explorer (Classic)** tab appears in the UI.
 
-For more details, see [getting started FAQ](/docs/observe/infrastructure-observability/kubernetes-app/enable-k8s-experience#k8s-app-getting-started-faq "Enable Kubernetes experience for existing clusters or start monitoring new clusters.").
+For more details, see [getting started FAQ](observe/infrastructure-observability/kubernetes-app/enable-k8s-experience.md#k8s-app-getting-started-faq "Enable Kubernetes experience for existing clusters or start monitoring new clusters.").
 
-The new Kubernetes experience is not available for Managed or SaaS on non-Grail environmentsâyou can continue to use [**Kubernetes Classic**](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring "Monitor Kubernetes/OpenShift with Dynatrace.") (accessible from the previous Dynatrace via **Kubernetes**).
+The new Kubernetes experience is not available for Managed or SaaS on non-Grail environmentsâyou can continue to use [**Kubernetes Classic**](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring.md "Monitor Kubernetes/OpenShift with Dynatrace.") (accessible from the previous Dynatrace via **Kubernetes**).
 
 ## Get started
 
@@ -9844,7 +9844,7 @@ Use the following guide to set up and configure Kubernetes monitoring in Dynatra
 [01Enable Kubernetes experience for existing clusters
 
 * How-to guide
-* Enable existing clusters for the new Kubernetes experience.](/docs/observe/infrastructure-observability/kubernetes-app/enable-k8s-experience/existing-clusters)
+* Enable existing clusters for the new Kubernetes experience.](../ru/observe/infrastructure-observability/kubernetes-app/enable-k8s-experience/existing-clusters.md)
 
 ## Explorer
 
@@ -9932,7 +9932,7 @@ In this example, you can see that 8 nodes out of 24 are currently considered unh
 
 Health alerts and warning signals help you monitor your infrastructure by providing clear, actionable insights. These features reduce the noise from infrastructure issues and improve alerting capabilities, so you can focus on what matters most. This is achieved through better categorization of detected malfunctions.
 
-* For critical events, a Health alert is raised, triggering a [Dynatrace Problems](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") investigation.
+* For critical events, a Health alert is raised, triggering a [Dynatrace Problems](../ru/dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.") investigation.
 * For non-critical situations, a Warning signal informs you of a potential challenge.
 
 While they may not always represent active health issues at the moment, frequent **Unhealthy** signals, for instance, might indicate misconfigured readiness probes, inappropriate CPU limits, or unusually high workload.
@@ -9964,17 +9964,17 @@ There are two types of warning signals. They're organized as follows:
 
 | Column | Content | Examples |
 | --- | --- | --- |
-| Node warning signals | [Combines events emitted by nodes and problematic node conditions](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues#node "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") | `DiskPressure`, `MemoryPressure`, `NodeNotReady` |
-| Pod warning signals | [Combines events emitted by pods and conditions affecting pods](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues#workload "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") | `BackOff`, `PodEviction`, `OOMKilled` |
-| Workload warning signals | [Combines events emitted by namespaces, workloads, and pods, along with workload conditions](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues#workload "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") | `CPUThrottlingHigh`, `ContainerRestarts`, `PodsPending` |
+| Node warning signals | [Combines events emitted by nodes and problematic node conditions](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues.md#node "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") | `DiskPressure`, `MemoryPressure`, `NodeNotReady` |
+| Pod warning signals | [Combines events emitted by pods and conditions affecting pods](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues.md#workload "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") | `BackOff`, `PodEviction`, `OOMKilled` |
+| Workload warning signals | [Combines events emitted by namespaces, workloads, and pods, along with workload conditions](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues.md#workload "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") | `CPUThrottlingHigh`, `ContainerRestarts`, `PodsPending` |
 
 ## Kubernetes Enhanced Object Visibility
 
 ### Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine
-* [DPS license](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") with the **Kubernetes Platform Monitoring** capability on your Rate Card
-* [Sufficient permissions](/docs/observe/infrastructure-observability/kubernetes-app/reference/permissions "Overview of user and tailoring permissions.") to use the ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** within your Dynatrace environment
+* [DPS license](license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") with the **Kubernetes Platform Monitoring** capability on your Rate Card
+* [Sufficient permissions](../ru/observe/infrastructure-observability/kubernetes-app/reference/permissions.md "Overview of user and tailoring permissions.") to use the ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** within your Dynatrace environment
 * ActiveGate version 1.327+
 
 Starting January 19, 2026, ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** offers insights into more Kubernetes objects and their YAML definitions:
@@ -10033,19 +10033,19 @@ Ingesting network flows into Dynatrace immediately puts this data in context. Th
 
 ## How does Dynatrace as a platform support NetFlow ingestion?
 
-Dynatrace supports network flow protocols such as NetFlow, sFlow, and IPFIX through a fully supported version of the [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector."). A dedicated network flow receiver enables seamless ingestion of flow data into the Dynatrace platform for analysis and visualization.
+Dynatrace supports network flow protocols such as NetFlow, sFlow, and IPFIX through a fully supported version of the [OpenTelemetry Collector](../ru/ingest-from/opentelemetry/collector.md "Learn about the Dynatrace OTel Collector."). A dedicated network flow receiver enables seamless ingestion of flow data into the Dynatrace platform for analysis and visualization.
 
 ## Prerequisites
 
-* A [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace OTel Collector.") distribution with [NetFlow receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.136.0/receiver/netflowreceiver).
-* The [Dynatrace API endpoint URL](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported.
-* An [API token](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the **Ingest logs** (`logs.ingest`) and **Ingest metrics** (`metrics.ingest`) scopes. For details, see [OpenTelemetry Collector self-monitoring](/docs/ingest-from/opentelemetry/collector/self-monitoring "How to monitor OpenTelemetry Collectors with Dynatrace dashboards.").
+* A [Dynatrace Collector](../ru/ingest-from/opentelemetry/collector.md#dt-collector-dist "Learn about the Dynatrace OTel Collector.") distribution with [NetFlow receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.136.0/receiver/netflowreceiver).
+* The [Dynatrace API endpoint URL](../ru/ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported.
+* An [API token](../ru/ingest-from/opentelemetry/otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the **Ingest logs** (`logs.ingest`) and **Ingest metrics** (`metrics.ingest`) scopes. For details, see [OpenTelemetry Collector self-monitoring](ingest-from/opentelemetry/collector/self-monitoring.md "How to monitor OpenTelemetry Collectors with Dynatrace dashboards.").
 
-See [Collector Deployment](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](/docs/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
+See [Collector Deployment](../ru/ingest-from/opentelemetry/collector/deployment.md "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](../ru/ingest-from/opentelemetry/collector/configuration.md "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
 
 ## Steps
 
-In this example, we deploy using Docker to keep the demonstration simple. For production use cases, we recommend deploying as a gateway on a Kubernetes cluster. For details, see [Configure OpenTelemetry Collector for Kubernetes monitoring](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-monitoring "Configure the OpenTelemetry Collector to monitor your Kubernetes clusters.").
+In this example, we deploy using Docker to keep the demonstration simple. For production use cases, we recommend deploying as a gateway on a Kubernetes cluster. For details, see [Configure OpenTelemetry Collector for Kubernetes monitoring](ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-monitoring.md "Configure the OpenTelemetry Collector to monitor your Kubernetes clusters.").
 
 1. To configure a Dynatrace Collector instance, create a file called `otel-collector-config.yaml` and add the following configuration:
 
@@ -10168,8 +10168,8 @@ In this example, we deploy using Docker to keep the demonstration simple. For pr
    Check the [NetFlow receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.136.0/receiver/netflowreceiver#netflow-receiver) documentation for the available configuration options.
 2. Create an `.env` file to add the `DT_ENDPOINT` and `DT_API_TOKEN` variables.
 
-   * `DT_ENDPOINT` is the Dynatrace API server endpoint. It contains the [base URL of the Dynatrace API endpoint](/docs/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). For example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`. For more details, see [Integrate OneAgent on Azure App Service for Linux and containers](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.").
-   * `DT_API_TOKEN` contains the [API token](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+   * `DT_ENDPOINT` is the Dynatrace API server endpoint. It contains the [base URL of the Dynatrace API endpoint](../ru/ingest-from/opentelemetry/otlp-api.md#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). For example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`. For more details, see [Integrate OneAgent on Azure App Service for Linux and containers](../ru/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers.md "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.").
+   * `DT_API_TOKEN` contains the [API token](../ru/ingest-from/opentelemetry/otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
 
    Ensure your `.env` file is properly secured and not exposed to unauthorized access, as it contains sensitive information.
 3. Create an access token by going to **Access Tokens** > **Generate new token** and selecting **Ingest logs** as a scope.
@@ -10238,7 +10238,7 @@ fetch logs
 
 ## Related topics
 
-* [Ingest NetFlow with the OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/netflow "Configure the OpenTelemetry Collector to ingest NetFlow data.")
+* [Ingest NetFlow with the OpenTelemetry Collector](../ru/ingest-from/opentelemetry/collector/use-cases/netflow.md "Configure the OpenTelemetry Collector to ingest NetFlow data.")
 
 ---
 
@@ -10310,7 +10310,7 @@ To enable NetTracer globally on all your Linux hosts
 1. Go to **Settings** > **Network & Discovery** > **NetTracer traffic**.
 2. Turn on **Enable NetTracer traffic network monitoring**.
 
-To ensure NetTracer works correctly, OneAgent must be installed in either Full-Stack or Infrastructure monitoring mode, as these modes enable the network monitoring feature. If OneAgent is installed in a limited mode (for example, Discovery monitoring mode), NetTracer may not function as intended. For more details, see [OneAgent monitoring modes](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
+To ensure NetTracer works correctly, OneAgent must be installed in either Full-Stack or Infrastructure monitoring mode, as these modes enable the network monitoring feature. If OneAgent is installed in a limited mode (for example, Discovery monitoring mode), NetTracer may not function as intended. For more details, see [OneAgent monitoring modes](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.").
 
 ## Built-in metrics for NetTracer
 
@@ -10359,7 +10359,7 @@ Additional container dimensions are added depending on the deployment type.
 
 After it's collected, NetTracer data is available as metrics throughout Dynatrace.
 
-* **Data Explorer**: You can use the metrics in [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") to create charts and dashboards that display data that interests you.
+* **Data Explorer**: You can use the metrics in [Data Explorer](../ru/analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") to create charts and dashboards that display data that interests you.
 * **Process group instance page**: Go to process group instance page and select **Networking** tab.
 
   ![Process group instance page - Networking details](https://dt-cdn.net/images/pgi-page-networking-details-2172-bcb6d64191.png)
@@ -10428,19 +10428,19 @@ Ingesting network flows into Dynatrace immediately puts this data in context. Th
 
 ## How does Dynatrace as a platform support NetFlow ingestion?
 
-Dynatrace supports network flow protocols such as NetFlow, sFlow, and IPFIX through a fully supported version of the [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector."). A dedicated network flow receiver enables seamless ingestion of flow data into the Dynatrace platform for analysis and visualization.
+Dynatrace supports network flow protocols such as NetFlow, sFlow, and IPFIX through a fully supported version of the [OpenTelemetry Collector](../ru/ingest-from/opentelemetry/collector.md "Learn about the Dynatrace OTel Collector."). A dedicated network flow receiver enables seamless ingestion of flow data into the Dynatrace platform for analysis and visualization.
 
 ## Prerequisites
 
-* A [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace OTel Collector.") distribution with [NetFlow receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.136.0/receiver/netflowreceiver).
-* The [Dynatrace API endpoint URL](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported.
-* An [API token](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the **Ingest logs** (`logs.ingest`) and **Ingest metrics** (`metrics.ingest`) scopes. For details, see [OpenTelemetry Collector self-monitoring](/docs/ingest-from/opentelemetry/collector/self-monitoring "How to monitor OpenTelemetry Collectors with Dynatrace dashboards.").
+* A [Dynatrace Collector](../ru/ingest-from/opentelemetry/collector.md#dt-collector-dist "Learn about the Dynatrace OTel Collector.") distribution with [NetFlow receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.136.0/receiver/netflowreceiver).
+* The [Dynatrace API endpoint URL](../ru/ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported.
+* An [API token](../ru/ingest-from/opentelemetry/otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the **Ingest logs** (`logs.ingest`) and **Ingest metrics** (`metrics.ingest`) scopes. For details, see [OpenTelemetry Collector self-monitoring](ingest-from/opentelemetry/collector/self-monitoring.md "How to monitor OpenTelemetry Collectors with Dynatrace dashboards.").
 
-See [Collector Deployment](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](/docs/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
+See [Collector Deployment](../ru/ingest-from/opentelemetry/collector/deployment.md "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](../ru/ingest-from/opentelemetry/collector/configuration.md "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
 
 ## Steps
 
-In this example, we deploy using Docker to keep the demonstration simple. For production use cases, we recommend deploying as a gateway on a Kubernetes cluster. For details, see [Configure OpenTelemetry Collector for Kubernetes monitoring](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-monitoring "Configure the OpenTelemetry Collector to monitor your Kubernetes clusters.").
+In this example, we deploy using Docker to keep the demonstration simple. For production use cases, we recommend deploying as a gateway on a Kubernetes cluster. For details, see [Configure OpenTelemetry Collector for Kubernetes monitoring](ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-monitoring.md "Configure the OpenTelemetry Collector to monitor your Kubernetes clusters.").
 
 1. To configure a Dynatrace Collector instance, create a file called `otel-collector-config.yaml` and add the following configuration:
 
@@ -10563,8 +10563,8 @@ In this example, we deploy using Docker to keep the demonstration simple. For pr
    Check the [NetFlow receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.136.0/receiver/netflowreceiver#netflow-receiver) documentation for the available configuration options.
 2. Create an `.env` file to add the `DT_ENDPOINT` and `DT_API_TOKEN` variables.
 
-   * `DT_ENDPOINT` is the Dynatrace API server endpoint. It contains the [base URL of the Dynatrace API endpoint](/docs/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). For example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`. For more details, see [Integrate OneAgent on Azure App Service for Linux and containers](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.").
-   * `DT_API_TOKEN` contains the [API token](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+   * `DT_ENDPOINT` is the Dynatrace API server endpoint. It contains the [base URL of the Dynatrace API endpoint](../ru/ingest-from/opentelemetry/otlp-api.md#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). For example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`. For more details, see [Integrate OneAgent on Azure App Service for Linux and containers](../ru/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers.md "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.").
+   * `DT_API_TOKEN` contains the [API token](../ru/ingest-from/opentelemetry/otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
 
    Ensure your `.env` file is properly secured and not exposed to unauthorized access, as it contains sensitive information.
 3. Create an access token by going to **Access Tokens** > **Generate new token** and selecting **Ingest logs** as a scope.
@@ -10633,7 +10633,7 @@ fetch logs
 
 ## Related topics
 
-* [Ingest NetFlow with the OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/netflow "Configure the OpenTelemetry Collector to ingest NetFlow data.")
+* [Ingest NetFlow with the OpenTelemetry Collector](../ru/ingest-from/opentelemetry/collector/use-cases/netflow.md "Configure the OpenTelemetry Collector to ingest NetFlow data.")
 
 ---
 
@@ -10706,7 +10706,7 @@ To enable NetTracer globally on all your Linux hosts
 1. Go to **Settings** > **Network & Discovery** > **NetTracer traffic**.
 2. Turn on **Enable NetTracer traffic network monitoring**.
 
-To ensure NetTracer works correctly, OneAgent must be installed in either Full-Stack or Infrastructure monitoring mode, as these modes enable the network monitoring feature. If OneAgent is installed in a limited mode (for example, Discovery monitoring mode), NetTracer may not function as intended. For more details, see [OneAgent monitoring modes](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
+To ensure NetTracer works correctly, OneAgent must be installed in either Full-Stack or Infrastructure monitoring mode, as these modes enable the network monitoring feature. If OneAgent is installed in a limited mode (for example, Discovery monitoring mode), NetTracer may not function as intended. For more details, see [OneAgent monitoring modes](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.").
 
 ## Built-in metrics for NetTracer
 
@@ -10755,7 +10755,7 @@ Additional container dimensions are added depending on the deployment type.
 
 After it's collected, NetTracer data is available as metrics throughout Dynatrace.
 
-* **Data Explorer**: You can use the metrics in [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") to create charts and dashboards that display data that interests you.
+* **Data Explorer**: You can use the metrics in [Data Explorer](../ru/analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") to create charts and dashboards that display data that interests you.
 * **Process group instance page**: Go to process group instance page and select **Networking** tab.
 
   ![Process group instance page - Networking details](https://dt-cdn.net/images/pgi-page-networking-details-2172-bcb6d64191.png)
@@ -10832,31 +10832,31 @@ Learn the basics of Dynatrace network monitoring, including how to analyze netwo
 
 * How-to guide
 
-Read this guide](/docs/observe/infrastructure-observability/networks/how-to-monitor-network-communication)[#### Detect network errors
+Read this guide](observe/infrastructure-observability/networks/how-to-monitor-network-communication.md)[#### Detect network errors
 
 Learn how errors such as dropped packets and retransmissions on the network level can affect the performance and connectivity of your services.
 
 * How-to guide
 
-Read this guide](/docs/observe/infrastructure-observability/networks/detect-network-errors)[#### Extended network monitoring
+Read this guide](observe/infrastructure-observability/networks/detect-network-errors.md)[#### Extended network monitoring
 
 Extend network monitoring with network traffic metrics in containerized Linux hosts using NetTracer.
 
 * How-to guide
 
-Read this guide](/docs/observe/infrastructure-observability/networks/network-monitoring-with-nettracer)[#### Troubleshooting network monitoring
+Read this guide](../ru/observe/infrastructure-observability/networks/network-monitoring-with-nettracer.md)[#### Troubleshooting network monitoring
 
 Learn more about troubleshooting network monitoring.
 
 * Troubleshooting
 
-Read this troubleshooting guide](/docs/observe/infrastructure-observability/networks/troubleshoot-network-monitoring)[#### Ingest NetFlow records into Dynatrace
+Read this troubleshooting guide](../ru/observe/infrastructure-observability/networks/troubleshoot-network-monitoring.md)[#### Ingest NetFlow records into Dynatrace
 
 Learn how to ingest NetFlow records into Dynatrace.
 
 * How-to guide
 
-Read this guide](/docs/observe/infrastructure-observability/networks/ingest-netflow-records)
+Read this guide](../ru/observe/infrastructure-observability/networks/ingest-netflow-records.md)
 
 ## Related topics
 
@@ -10885,11 +10885,11 @@ To view the most important processes running on a specific host, go to ![Hosts](
 
 Within the **Process analysis** section, you can also see various process group instances categorized by technology type.
 
-For more details, refer to [Process analysis](/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring#process-analysis "Monitor hosts with Dynatrace.").
+For more details, refer to [Process analysis](observe/infrastructure-observability/hosts/monitoring/host-monitoring.md#process-analysis "Monitor hosts with Dynatrace.").
 
 For processes to be visible in this section, they have to meet at least one of the following criteria:
 
-* Processes that are [supported applications](/docs/ingest-from/technology-support#applications-services-and-databases "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+* Processes that are [supported applications](../ru/ingest-from/technology-support.md#applications-services-and-databases "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 * Processes with an open TCP listening port
 * Processes for which one of the following conditions is met for at least 3 of the last 5 one-minute intervals:
 
@@ -10898,7 +10898,7 @@ For processes to be visible in this section, they have to meet at least one of t
   + **Network Traffic > 5%**.
 * Processes that have been defined by a user as important, for example, by enabling Log Monitoring for a process.
 
-Dynatrace provides also the option of [monitoring specific processes that fall into neither of these categories](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection").
+Dynatrace provides also the option of [monitoring specific processes that fall into neither of these categories](../ru/observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection").
 
 Any processes that do not meet the above criteria, and therefore are not considered important processes, are aggregated and labeled as **Other processes**.
 
@@ -10939,7 +10939,7 @@ scraped: 2026-03-06T21:13:32.671349
 * 10-min read
 * Updated on Aug 07, 2023
 
-Dynatrace detects which processes are part of the same [process groups](/docs/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring.") by means of a default set of detection rules.
+Dynatrace detects which processes are part of the same [process groups](../ru/observe/infrastructure-observability/process-groups.md "Analyze process groups and customize process group naming, detection, and monitoring.") by means of a default set of detection rules.
 
 You can change the structure of default process groups by modifying the default process-group detection logic in:
 
@@ -10947,12 +10947,12 @@ You can change the structure of default process groups by modifying the default 
 
   + On the **Built-in detection rules** page, you can enable or disable specific process group detection toggles. Hover over the **info** icon to the right of each toggle for details.
   + On the [**Simple detection rules**](#simple) and [**Advanced detection rules**](#advanced) pages, you can add your own process group detection rules, which will override the default ones.
-  + On the [Declarative process grouping](/docs/observe/infrastructure-observability/process-groups/configuration/declarative-process-grouping "Monitor specific processes using the declarative process grouping.") page, you can monitor specific processes of a technology that is unknown to Dynatrace.
+  + On the [Declarative process grouping](observe/infrastructure-observability/process-groups/configuration/declarative-process-grouping.md "Monitor specific processes using the declarative process grouping.") page, you can monitor specific processes of a technology that is unknown to Dynatrace.
 * **Settings** > **Processes and containers** > **Containers** > **Cloud application and workload detection**, where you can define rules to merge similar Kubernetes workloads into process groups.
 
 * Process group detection settings and rules require a restart of your processes to affect how processes are identified and grouped.
-* Process group detection settings and rules only affect the composition of process groups. If you want to change how a process group is named, you have to use the [process group naming rules](/docs/observe/infrastructure-observability/process-groups/configuration/pg-naming "Ways to customize process-group naming") instead.
-* It's also possible to use [host groups](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to separate clusters into different process groups.
+* Process group detection settings and rules only affect the composition of process groups. If you want to change how a process group is named, you have to use the [process group naming rules](observe/infrastructure-observability/process-groups/configuration/pg-naming.md "Ways to customize process-group naming") instead.
+* It's also possible to use [host groups](../ru/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to separate clusters into different process groups.
 
 ## Simple detection rules
 
@@ -10988,9 +10988,9 @@ The environment variables that you select as process group identifiers must exis
 * For WebSphere, you can do this in the WebSphere console in the JVM section.
 * For Tomcat and others, simply define the environment variable as part of the startup script.
 
-We recommend creating environment variables specific to process detection. Environment variables that serve other scopes, such as [`DT_TAGS`](/docs/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables#variables "Find out how Dynatrace enables you to define tags based on environment variables.") or [`DT_CUSTOM_PROP`](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment."), might cause incorrect or unintentional splits because all values of environment variables are evaluated for process-group detection.
+We recommend creating environment variables specific to process detection. Environment variables that serve other scopes, such as [`DT_TAGS`](../ru/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables.md#variables "Find out how Dynatrace enables you to define tags based on environment variables.") or [`DT_CUSTOM_PROP`](observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata.md#variables "Configure your own process-related metadata based on the unique needs of your organization or environment."), might cause incorrect or unintentional splits because all values of environment variables are evaluated for process-group detection.
 
-Identifiers also serve as the default name for the detected process groups. See [Define your own process group metadata](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") for details on how to define an environment variable for IIS or for Windows services.
+Identifiers also serve as the default name for the detected process groups. See [Define your own process group metadata](observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata.md#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") for details on how to define an environment variable for IIS or for Windows services.
 
 **Example:**
 
@@ -11048,11 +11048,11 @@ You have the option to define a second property that identifies specific process
 
 ## Declarative process grouping
 
-Dynatrace automatically monitors process groups that are of known technology types or that consume significant resources. With declarative process grouping, you can automatically monitor additional technologies by overriding the default behavior and customizing the grouping of processes into process groups (PGs) and process group instances (PGIs). For more details, refer to [Declarative process grouping](/docs/observe/infrastructure-observability/process-groups/configuration/declarative-process-grouping "Monitor specific processes using the declarative process grouping.").
+Dynatrace automatically monitors process groups that are of known technology types or that consume significant resources. With declarative process grouping, you can automatically monitor additional technologies by overriding the default behavior and customizing the grouping of processes into process groups (PGs) and process group instances (PGIs). For more details, refer to [Declarative process grouping](observe/infrastructure-observability/process-groups/configuration/declarative-process-grouping.md "Monitor specific processes using the declarative process grouping.").
 
 ## Easy configuration with Settings API
 
-Using the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers."), you can easily
+Using the [Settings API](../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers."), you can easily
 
 * Change the definition of your process groups
 * Set up a simple or an advanced detection rule
@@ -11060,8 +11060,8 @@ Using the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out 
 
 To use the Settings API
 
-1. [Create an API token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") and enable the **Write settings** (`settings.write`) permission.
-2. Use the [Get a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration.
+1. [Create an API token](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.") and enable the **Write settings** (`settings.write`) permission.
+2. Use the [Get a schema](../ru/dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration.
 
    Example JSON payload for a simple detection rule
 
@@ -11338,11 +11338,11 @@ To use the Settings API
 
      ]
      ```
-3. Use the [Post an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
+3. Use the [Post an object](../ru/dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
 
 ## Add your configuration to Extensions 2.0
 
-You can also attach your current configuration to your [Extensions 2.0](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") extension so that your custom extension comes with predefined process grouping rules. Add your definition to the [Extension YAML](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml "Learn how to create an extension YAML file using the Extensions framework.") file as in this example:
+You can also attach your current configuration to your [Extensions 2.0](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.") extension so that your custom extension comes with predefined process grouping rules. Add your definition to the [Extension YAML](../ru/ingest-from/extensions/develop-your-extensions/extension-yaml.md "Learn how to create an extension YAML file using the Extensions framework.") file as in this example:
 
 ```
 ---
@@ -11464,7 +11464,7 @@ To disable automatic deep monitoring
 
 How process monitoring rules are applied
 
-**Enable automatic deep monitoring** doesnât take precedence over any [individual process monitoring rules](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection") you may have set up. If a process monitoring rule indicates that Dynatrace should monitor a certain process, and **Enable automatic deep monitoring** is **Off**, the individual rule will take precedence and Dynatrace will monitor the respective process. Therefore, **each process monitoring rule is an exception to the general monitoring policy**.
+**Enable automatic deep monitoring** doesnât take precedence over any [individual process monitoring rules](../ru/observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection") you may have set up. If a process monitoring rule indicates that Dynatrace should monitor a certain process, and **Enable automatic deep monitoring** is **Off**, the individual rule will take precedence and Dynatrace will monitor the respective process. Therefore, **each process monitoring rule is an exception to the general monitoring policy**.
 
 ## Define custom process monitoring rules
 
@@ -11481,7 +11481,7 @@ To add a custom monitoring rule
    * **Do not monitor** the process if the condition is met
 5. Define the **Condition**:
 
-   * The condition target (see [process group detection rules](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection")).
+   * The condition target (see [process group detection rules](../ru/observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection")).
    * The condition operator (for example, `contains`).
    * The condition value.
 6. Select **Save changes** to save your configuration and add the new rule to your list of custom process monitoring rules.
@@ -11521,7 +11521,7 @@ To list all built-in rules
 
 All built-in rules are enabled by default. You can disable them, but you can't edit the rules.
 
-These built-in rules don't cover your own .NET and Go applications unless those applications are deployed in containers, Cloud Foundry, or Kubernetes. If this is not the case for your .NET and Go applications, you should add your own .NET and Go applications as [custom monitoring rules](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection").
+These built-in rules don't cover your own .NET and Go applications unless those applications are deployed in containers, Cloud Foundry, or Kubernetes. If this is not the case for your .NET and Go applications, you should add your own .NET and Go applications as [custom monitoring rules](../ru/observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection").
 
 Dynatrace doesnât automatically carry out deep monitoring of **all** .NET and Go processes. Many popular applications such as Microsoft Office make use of .NET, and many common infrastructure components are written in Go, so Dynatrace performs deep monitoring of .NET and Go processes only if you explicitly enable it or if they are covered by monitoring rules.
 
@@ -11596,7 +11596,7 @@ Dynatrace automatically merges related processes into process groups. A âpr
 
 Show moreâ¦
 
-Dynatrace automatically [detects application types](/docs/observe/infrastructure-observability/process-groups/basic-concepts/what-technologies-underlie-individual-processes "The technologies and versions behind a process") such as Tomcat, JBoss, Apache HTTP Server, MongoDB, and many others technologies. To create process groups, Dynatrace uses specific process properties. For Tomcat, Dynatrace uses `CATALINA_HOME` and `CATALINA_BASE` to distinguish between different Tomcat clusters. For JBoss, Dynatrace uses `JBOSS_HOME` and the JBoss cluster configuration. For generic Java processes, Dynatrace uses the JAR file or the main class used to start the process. There are also many specialized detection mechanisms. For example, Dynatrace can detect:
+Dynatrace automatically [detects application types](observe/infrastructure-observability/process-groups/basic-concepts/what-technologies-underlie-individual-processes.md "The technologies and versions behind a process") such as Tomcat, JBoss, Apache HTTP Server, MongoDB, and many others technologies. To create process groups, Dynatrace uses specific process properties. For Tomcat, Dynatrace uses `CATALINA_HOME` and `CATALINA_BASE` to distinguish between different Tomcat clusters. For JBoss, Dynatrace uses `JBOSS_HOME` and the JBoss cluster configuration. For generic Java processes, Dynatrace uses the JAR file or the main class used to start the process. There are also many specialized detection mechanisms. For example, Dynatrace can detect:
 
 * IBM WebSphere clusters and domains
 * Oracle WebLogic clusters and domains
@@ -11620,9 +11620,9 @@ If you instruct Dynatrace to merge two separate process groups into a single pro
 
 To serve your particular needs when monitoring your processes, Dynatrace allows you to:
 
-* [Customize the name of process groups](/docs/observe/infrastructure-observability/process-groups/configuration/pg-naming "Ways to customize process-group naming").
-* [Adapt the composition of default process groups](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection").
-* [Create new process groups in cases where the technology of processes isn't recognized by Dynatrace](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection").
+* [Customize the name of process groups](observe/infrastructure-observability/process-groups/configuration/pg-naming.md "Ways to customize process-group naming").
+* [Adapt the composition of default process groups](../ru/observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection").
+* [Create new process groups in cases where the technology of processes isn't recognized by Dynatrace](../ru/observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection").
 
 ## Basic concepts
 
@@ -11630,37 +11630,37 @@ To serve your particular needs when monitoring your processes, Dynatrace allows 
 
 ### What technologies underlie individual processes?
 
-Technologies and versions behind a process.](/docs/observe/infrastructure-observability/process-groups/basic-concepts/what-technologies-underlie-individual-processes "The technologies and versions behind a process")[### Which are the most important processes?
+Technologies and versions behind a process.](observe/infrastructure-observability/process-groups/basic-concepts/what-technologies-underlie-individual-processes.md "The technologies and versions behind a process")[### Which are the most important processes?
 
-Display the most important processes for monitoring and process grouping.](/docs/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes "Display the most important processes for monitoring and process grouping.")
+Display the most important processes for monitoring and process grouping.](../ru/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes.md "Display the most important processes for monitoring and process grouping.")
 
 ## Configuration
 
 [### Cloud application and workload detection
 
-Detect cloud applications and workloads, and define rules to merge similar Kubernetes workloads into process groups.](/docs/observe/infrastructure-observability/process-groups/configuration/cloud-app-and-workload-detection "Detect cloud applications and workloads, and define rules to merge similar Kubernetes workloads into process groups.")[### Define your own process group metadata
+Detect cloud applications and workloads, and define rules to merge similar Kubernetes workloads into process groups.](observe/infrastructure-observability/process-groups/configuration/cloud-app-and-workload-detection.md "Detect cloud applications and workloads, and define rules to merge similar Kubernetes workloads into process groups.")[### Define your own process group metadata
 
-Configure your own process-related metadata based on the unique needs of your organization or environment.](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata "Configure your own process-related metadata based on the unique needs of your organization or environment.")[### Process group detection
+Configure your own process-related metadata based on the unique needs of your organization or environment.](observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata.md "Configure your own process-related metadata based on the unique needs of your organization or environment.")[### Process group detection
 
-Customize process-group detection.](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection")[### Process deep monitoring
+Customize process-group detection.](../ru/observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection")[### Process deep monitoring
 
-Customize process-group monitoring.](/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring "Ways to customize process-group monitoring")[### Process group naming
+Customize process-group monitoring.](../ru/observe/infrastructure-observability/process-groups/configuration/pg-monitoring.md "Ways to customize process-group monitoring")[### Process group naming
 
-Customize process-group naming.](/docs/observe/infrastructure-observability/process-groups/configuration/pg-naming "Ways to customize process-group naming")
+Customize process-group naming.](observe/infrastructure-observability/process-groups/configuration/pg-naming.md "Ways to customize process-group naming")
 
 ## Monitoring
 
 [### Analyze process responsiveness
 
-Leverage responsiveness to assess process performance.](/docs/observe/infrastructure-observability/process-groups/monitoring/analyze-process-responsiveness "Use responsiveness to assess process performance.")[### Analyze processes
+Leverage responsiveness to assess process performance.](observe/infrastructure-observability/process-groups/monitoring/analyze-process-responsiveness.md "Use responsiveness to assess process performance.")[### Analyze processes
 
-Analyze processes, including information on process metrics, vulnerabilities, and availability.](/docs/observe/infrastructure-observability/process-groups/monitoring/analyze-processes "The Dynatrace approach to process monitoring and process grouping")[### Monitor process-specific network connections
+Analyze processes, including information on process metrics, vulnerabilities, and availability.](observe/infrastructure-observability/process-groups/monitoring/analyze-processes.md "The Dynatrace approach to process monitoring and process grouping")[### Monitor process-specific network connections
 
-Analyze process-specific network connections.](/docs/observe/infrastructure-observability/process-groups/monitoring/monitor-process-specific-network-connections "Analyze process-specific network connections.")[### Overview of all technologies running in your environment
+Analyze process-specific network connections.](observe/infrastructure-observability/process-groups/monitoring/monitor-process-specific-network-connections.md "Analyze process-specific network connections.")[### Overview of all technologies running in your environment
 
-Get a performance summary of all the technologies in your environment.](/docs/observe/infrastructure-observability/process-groups/monitoring/overview-of-all-technologies-running-in-my-environment "Get a summary of the performance of all the technologies in your environment.")[### Process group availability monitoring and alerting
+Get a performance summary of all the technologies in your environment.](observe/infrastructure-observability/process-groups/monitoring/overview-of-all-technologies-running-in-my-environment.md "Get a summary of the performance of all the technologies in your environment.")[### Process group availability monitoring and alerting
 
-Enable process-group availability monitoring to get alerts if processes go offline or crash.](/docs/observe/infrastructure-observability/process-groups/monitoring/process-group-availability-monitoring-and-alerting "Enable process-group availability monitoring to get alerts if processes go offline or crash.")
+Enable process-group availability monitoring to get alerts if processes go offline or crash.](observe/infrastructure-observability/process-groups/monitoring/process-group-availability-monitoring-and-alerting.md "Enable process-group availability monitoring to get alerts if processes go offline or crash.")
 
 ---
 
@@ -11749,7 +11749,7 @@ DavisÂ® AI anomaly detection can automatically detect unexpected load scenario
 To automatically detect load drops or load spikes
 
 1. Go to **Settings** > **Anomaly detection** > **Services**.
-2. Find **[Service load drops](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services#load-drops "Learn how to adapt the sensitivity of problem detection for services.")** and/or **[Service load spikes](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services#load-spikes "Learn how to adapt the sensitivity of problem detection for services.")**, turn on the dedicated switch and specify the observed load threshold.
+2. Find **[Service load drops](dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services.md#load-drops "Learn how to adapt the sensitivity of problem detection for services.")** and/or **[Service load spikes](dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services.md#load-spikes "Learn how to adapt the sensitivity of problem detection for services.")**, turn on the dedicated switch and specify the observed load threshold.
 
 ![Problem for unexpected low load](https://dt-cdn.net/images/producer-issue-1577-b431cc74e8.png)
 
@@ -11772,7 +11772,7 @@ scraped: 2026-03-06T21:26:53.183725
 * 6-min read
 * Updated on Jun 21, 2022
 
-Dynatrace can automatically create a continuous [service flow](/docs/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") for IBM MQ when the producer and consumer services use the same queue or topic name. If the producer and consumer services refer to different queue or topic names, IBM MQ configuration might be required to create a continuous service flow.
+Dynatrace can automatically create a continuous [service flow](../ru/observe/application-observability/services-classic/service-flow.md "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") for IBM MQ when the producer and consumer services use the same queue or topic name. If the producer and consumer services refer to different queue or topic names, IBM MQ configuration might be required to create a continuous service flow.
 
 Without IBM MQ configuration, Dynatrace can still trace all messages, but the service flow will be broken.
 
@@ -11788,16 +11788,16 @@ IBM MQ distributed trace example
 
 Should I create the MQRFH2 header when it is not present in my IBM MQ messages?
 
-We recommend that you create the `MQRFH2` header for IBM MQ messages. The presence of the `MQRFH2` header in your IBM MQ messages allows Dynatrace to use [identifiers instead of unique keys](/docs/observe/infrastructure-observability/queues/queue-concepts#producer-consumer-service "Basic concepts of message queue monitoring in Dynatrace.") to trace messages across queues and topics of IBM App Connect Enterprise and IBM Integration Bus.
+We recommend that you create the `MQRFH2` header for IBM MQ messages. The presence of the `MQRFH2` header in your IBM MQ messages allows Dynatrace to use [identifiers instead of unique keys](../ru/observe/infrastructure-observability/queues/queue-concepts.md#producer-consumer-service "Basic concepts of message queue monitoring in Dynatrace.") to trace messages across queues and topics of IBM App Connect Enterprise and IBM Integration Bus.
 
 Benefits of creating the `MQRFH2` header for IBM MQ messages include:
 
-* Consistent [Adaptive Traffic Management](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.") across your monitoring environment, lowering the volume on IBM MQ traces.
+* Consistent [Adaptive Traffic Management](../ru/ingest-from/dynatrace-oneagent/adaptive-traffic-management.md "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.") across your monitoring environment, lowering the volume on IBM MQ traces.
 * An accurate and continuous service flow without the need to configure IBM MQ mapping when the messages are solely processed by IBM App Connect Enterprise and IBM Integration Bus.
 
 How can I create the MQRFH2 header when it is not present in my IBM MQ messages?
 
-When the `MQRFH2` header is present in your messages before an `MQOutput` node is called by IBM App Connect Enterprise or IBM Integration Bus, Dynatrace uses [identifiers instead of unique keys](/docs/observe/infrastructure-observability/queues/queue-concepts#producer-consumer-service "Basic concepts of message queue monitoring in Dynatrace.") to trace IBM MQ messages.
+When the `MQRFH2` header is present in your messages before an `MQOutput` node is called by IBM App Connect Enterprise or IBM Integration Bus, Dynatrace uses [identifiers instead of unique keys](../ru/observe/infrastructure-observability/queues/queue-concepts.md#producer-consumer-service "Basic concepts of message queue monitoring in Dynatrace.") to trace IBM MQ messages.
 
 If this isn't the case in your environment, you can create an empty `MQRFH2` header by, for example, executing the following ESQL command by a preceding `Compute` node
 
@@ -11815,7 +11815,7 @@ Specifications
 
 ## Manage IBM MQ configuration
 
-You can manage an IBM MQ configuration automatically by installing an [IBM MQ extension](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") and activating **Retrieve topology for improved transaction tracing** to retrieve the IBM MQ configuration of your environment and send it to the Settings API. This can also be done manually via the web UI or the Settings API.
+You can manage an IBM MQ configuration automatically by installing an [IBM MQ extension](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.") and activating **Retrieve topology for improved transaction tracing** to retrieve the IBM MQ configuration of your environment and send it to the Settings API. This can also be done manually via the web UI or the Settings API.
 
 ### Manual configuration via web UI
 
@@ -11827,15 +11827,15 @@ To manage the IBM MQ configuration via the Dynatrace web UI, go to **Settings** 
 
 ### Manual configuration via Settings API
 
-You can manage the IBM MQ configuration via the Dynatrace [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.").
+You can manage the IBM MQ configuration via the Dynatrace [Settings API](../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.").
 
-To be able to use the API you need an access token with **Read settings** (`settings.read`) and **Write settings** (`settings.write`) scopes. To learn how to obtain it, see [Create an access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.").
+To be able to use the API you need an access token with **Read settings** (`settings.read`) and **Write settings** (`settings.write`) scopes. To learn how to obtain it, see [Create an access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.").
 
 ## Configuration items
 
 The table lists the available IBM MQ configuration items for queues and topics.
 
-Follow the procedures below to create or update a configuration item. Note that the scope of these items is always an environment. Before starting, learn the format of the settings object by querying its schema via the [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") call.
+Follow the procedures below to create or update a configuration item. Note that the scope of these items is always an environment. Before starting, learn the format of the settings object by querying its schema via the [GET a schema](../ru/dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") call.
 
 Create a configuration item
 
@@ -12006,7 +12006,7 @@ The ID of the queue manager schema is `builtin:ibmmq.queue-managers`.
 
    ]
    ```
-2. Use the [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
+2. Use the [POST an object](../ru/dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
 
 ### New queue sharing group
 
@@ -12083,7 +12083,7 @@ The ID of the queue sharing group schema is `builtin:ibmmq.queue-sharing-group`.
 
    ]
    ```
-2. Use the [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
+2. Use the [POST an object](../ru/dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
 
 ### New IMS bridge
 
@@ -12164,7 +12164,7 @@ The ID of the IMS bridge schema is `builtin:ibmmq.ims-bridges`.
 
    ]
    ```
-2. Use the [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
+2. Use the [POST an object](../ru/dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
 
 ### Update queue manager
 
@@ -12174,7 +12174,7 @@ The ID of the queue manager schema is `builtin:ibmmq.queue-managers`.
 
 The `aliasQueues` object can be a local queue owned by this queue manager, a local definition of a remote queue, or a cluster queue visible by this queue manager but owned by another queue manager.
 
-1. Query the current configuration via the [GET objects](/docs/dynatrace-api/environment-api/settings/objects/get-objects "View multiple settings objects via the Dynatrace API.") call.
+1. Query the current configuration via the [GET objects](dynatrace-api/environment-api/settings/objects/get-objects.md "View multiple settings objects via the Dynatrace API.") call.
 2. Create the JSON for your update.
 
    * Use the **updateToken** value from the previous step.
@@ -12325,13 +12325,13 @@ The `aliasQueues` object can be a local queue owned by this queue manager, a loc
 
      }
      ```
-3. Use the [PUT an object](/docs/dynatrace-api/environment-api/settings/objects/put-object "Edit a settings object via the Dynatrace API.") endpoint to send your configuration.
+3. Use the [PUT an object](dynatrace-api/environment-api/settings/objects/put-object.md "Edit a settings object via the Dynatrace API.") endpoint to send your configuration.
 
 ### Update sharing group
 
 The ID of the queue sharing group schema is `builtin:ibmmq.queue-sharing-group`.
 
-1. Query the current configuration via the [GET objects](/docs/dynatrace-api/environment-api/settings/objects/get-objects "View multiple settings objects via the Dynatrace API.") call.
+1. Query the current configuration via the [GET objects](dynatrace-api/environment-api/settings/objects/get-objects.md "View multiple settings objects via the Dynatrace API.") call.
 2. Create the JSON for your update.
 
    * Use the **updateToken** value from the previous step.
@@ -12393,13 +12393,13 @@ The ID of the queue sharing group schema is `builtin:ibmmq.queue-sharing-group`.
 
      }
      ```
-3. Use the [PUT an object](/docs/dynatrace-api/environment-api/settings/objects/put-object "Edit a settings object via the Dynatrace API.") endpoint to send your configuration.
+3. Use the [PUT an object](dynatrace-api/environment-api/settings/objects/put-object.md "Edit a settings object via the Dynatrace API.") endpoint to send your configuration.
 
 ### Update IMS bridge
 
 The ID of the IMS bridge schema is `builtin:ibmmq.ims-bridges`.
 
-1. Query the current configuration via the [GET objects](/docs/dynatrace-api/environment-api/settings/objects/get-objects "View multiple settings objects via the Dynatrace API.") call.
+1. Query the current configuration via the [GET objects](dynatrace-api/environment-api/settings/objects/get-objects.md "View multiple settings objects via the Dynatrace API.") call.
 2. Create the JSON for your update.
 
    * Use the **updateToken** value from the previous step.
@@ -12466,11 +12466,11 @@ The ID of the IMS bridge schema is `builtin:ibmmq.ims-bridges`.
 
      }
      ```
-3. Use the [PUT an object](/docs/dynatrace-api/environment-api/settings/objects/put-object "Edit a settings object via the Dynatrace API.") endpoint to send your configuration.
+3. Use the [PUT an object](dynatrace-api/environment-api/settings/objects/put-object.md "Edit a settings object via the Dynatrace API.") endpoint to send your configuration.
 
 ## Related topics
 
-* [Set up IBM MQ tracing on z/OS](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/ibm-mq-monitoring "Trace IBM MQ messages with Dynatrace on z/OS.")
+* [Set up IBM MQ tracing on z/OS](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/ibm-mq-monitoring.md "Trace IBM MQ messages with Dynatrace on z/OS.")
 
 ---
 
@@ -12490,18 +12490,18 @@ scraped: 2026-03-01T21:16:56.958006
 * 2-min read
 * Published May 16, 2022
 
-You can use tags and management zones to organize queue entities in your environment and simplify searches for them. Tags and management zones are applied to queue entities just as they are for other entities, but they must be applied via the [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.").
+You can use tags and management zones to organize queue entities in your environment and simplify searches for them. Tags and management zones are applied to queue entities just as they are for other entities, but they must be applied via the [entity selector](../ru/dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.").
 
 ## Define an automatically applied tag
 
-Follow the steps below to automatically apply a tag to queue entities. To learn more about tags, see [Define and apply tags](/docs/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.").
+Follow the steps below to automatically apply a tag to queue entities. To learn more about tags, see [Define and apply tags](manage/tags-and-metadata/setup/how-to-define-tags.md "Find out how to define and apply tags manually and automatically.").
 
 1. Go to **Settings** > **Tags** > **Automatically applied tags**.
 2. Select **Create tag** and type a name for the new tag in the **Tag name** field.
 3. Select **Add a new rule**.
 4. Optional Specify an **Optional tag value**. This value will appear next to the tag name after a `:` and is used to provide more precise information about the queue entity.
 5. From the **Rule type** list, choose the **Entity selector** type.
-6. Use one of the following code snippets to apply tags from a service, process group, host, or host group entity to a queue entity via the [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector#tag "Configure the entity selector for Environment API endpoints."). Replace `yourKey:yourValue` with your own tag values.
+6. Use one of the following code snippets to apply tags from a service, process group, host, or host group entity to a queue entity via the [entity selector](../ru/dynatrace-api/environment-api/entity-v2/entity-selector.md#tag "Configure the entity selector for Environment API endpoints."). Replace `yourKey:yourValue` with your own tag values.
 
    Producer services
 
@@ -12541,12 +12541,12 @@ Example of a rule-based entity selector
 
 ## Add queue entities to existing management zones
 
-Follow the steps below to add queue entities to existing management zones. To learn more about management zones, see [Set up management zones](/docs/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.").
+Follow the steps below to add queue entities to existing management zones. To learn more about management zones, see [Set up management zones](manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Create and assign access rights to management zones.").
 
 1. Go to **Settings** > **Preferences** > **Management zones**.
 2. Edit an existing management zone and select **Add a new rule**.
 3. In the **Rule applies to** list, choose the **Entity selector**.
-4. Use one of the following code snippets to add a queue entity based on tags from a service, process group, host, or host group entity to a management zone via the [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector#tag "Configure the entity selector for Environment API endpoints."). Replace `yourKey:yourValue` with your own tag values.
+4. Use one of the following code snippets to add a queue entity based on tags from a service, process group, host, or host group entity to a management zone via the [entity selector](../ru/dynatrace-api/environment-api/entity-v2/entity-selector.md#tag "Configure the entity selector for Environment API endpoints."). Replace `yourKey:yourValue` with your own tag values.
 
 Producer services
 
@@ -12587,8 +12587,8 @@ Example of a management zone based on the entity selector
 
 ## Related topics
 
-* [Define and apply tags](/docs/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.")
-* [Set up management zones](/docs/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.")
+* [Define and apply tags](manage/tags-and-metadata/setup/how-to-define-tags.md "Find out how to define and apply tags manually and automatically.")
+* [Set up management zones](manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Create and assign access rights to management zones.")
 
 ---
 
@@ -12620,15 +12620,15 @@ Review the following table to determine whether some manual configuration is nee
 OneAgent version 1.250+ Dynatrace uses the IBM MQ queue manager name to detect and group IBM MQ processes. To manage the IBM MQ process group detection
 
 * Go to **Settings** > **Processes and containers** > **Built-in detection rules** and find **Group IBM MQ processes by queue manager name**.
-* Via [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers."), use the `builtin:process-group.detection-flags` schema ID.
+* Via [Settings API](../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers."), use the `builtin:process-group.detection-flags` schema ID.
 
-  To be able to use the API you need an access token with **Read settings** (`settings.read`) and **Write settings** (`settings.write`) scopes. To learn how to obtain it, see [Create an access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.").
+  To be able to use the API you need an access token with **Read settings** (`settings.read`) and **Write settings** (`settings.write`) scopes. To learn how to obtain it, see [Create an access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.").
 
 The process group detection requires a restart of the IBM MQ process.
 
 ## Related topics
 
-* [Custom messaging services](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/define-messaging-services "Set up custom messaging services to trace message queues.")
+* [Custom messaging services](observe/application-observability/services/service-detection/service-detection-v1/service-types/define-messaging-services.md "Set up custom messaging services to trace message queues.")
 
 ---
 
@@ -12660,11 +12660,11 @@ Message queues take the form of either a queue or a topic. They offer endpoints 
 
 ## Prerequisites
 
-OneAgent must run in [Full-Stack Monitoring](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.") mode to detect queues and topics as part of distributed traces. Only in Full-Stack Monitoring mode does Dynatrace create a continuous service flow across connected producer and consumer services.
+OneAgent must run in [Full-Stack Monitoring](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.") mode to detect queues and topics as part of distributed traces. Only in Full-Stack Monitoring mode does Dynatrace create a continuous service flow across connected producer and consumer services.
 
 ## Queue entity types: queues and topics
 
-OneAgent automatically detects queues and topics when monitored applications interact with them by instrumenting compatible messaging clients. When queues and topics aren't used by applications, OneAgent can't access them even if they're available on the messaging server. To check the compatible clients, see [Technology support](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+OneAgent automatically detects queues and topics when monitored applications interact with them by instrumenting compatible messaging clients. When queues and topics aren't used by applications, OneAgent can't access them even if they're available on the messaging server. To check the compatible clients, see [Technology support](../ru/ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 Dynatrace creates **Queue** entities for all detected queues and topics that are part of distributed traces. These entities are shown in the **Queues and topics** table on the **Queues** page.
 
@@ -12695,10 +12695,10 @@ If you're just monitoring a queue or topic, and not looking into the message pro
 
 Because of their properties,
 
-* Listener services aren't visible on the analytics pages available from the **Queues** page, but you can find details in the [**Service analysis**](/docs/observe/application-observability/services-classic "Learn about Dynatrace's classic service monitoring"), [**Service flow**](/docs/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment."), and [**Distributed traces**](/docs/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") pages.
+* Listener services aren't visible on the analytics pages available from the **Queues** page, but you can find details in the [**Service analysis**](../ru/observe/application-observability/services-classic.md "Learn about Dynatrace's classic service monitoring"), [**Service flow**](../ru/observe/application-observability/services-classic/service-flow.md "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment."), and [**Distributed traces**](../ru/observe/application-observability/distributed-traces.md "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") pages.
 * Listener service requests can't be renamed or pinned to a dashboard.
 
-  Note that a listener service is always followed by a messaging service on which you can perform such actions. For example, you can rename the messaging service requests via (global) [request naming rules](/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer.") using the message queue name as a placeholder, and then [pin the request to a dashboard](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/available-tiles#tile-service-or-request "Find out how to configure your dashboard to track business-critical user-actions and conversion goals.").
+  Note that a listener service is always followed by a messaging service on which you can perform such actions. For example, you can rename the messaging service requests via (global) [request naming rules](../ru/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming.md "Adjust request naming and define the operations your services offer.") using the message queue name as a placeholder, and then [pin the request to a dashboard](../ru/analyze-explore-automate/dashboards-classic/charts-and-tiles/available-tiles.md#tile-service-or-request "Find out how to configure your dashboard to track business-critical user-actions and conversion goals.").
 
 ### Examples
 
@@ -12712,8 +12712,8 @@ The following is a distributed trace example with a producer service, queue enti
 
 ## Related topics
 
-* [Services](/docs/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.")
-* [Service Detection v1](/docs/observe/application-observability/services/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
+* [Services](../ru/observe/application-observability/services.md "Learn how to monitor and analyze your services, define and use request attributes, and more.")
+* [Service Detection v1](../ru/observe/application-observability/services/service-detection/service-detection-v1.md "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
 
 ---
 
@@ -12734,27 +12734,27 @@ scraped: 2026-03-06T21:16:50.344003
 * 4-min read
 * Updated on Jul 15, 2022
 
-Message queues in the form of a queue or a topic provide lightweight storage for messages. They offer endpoints that allow applications to send messages to them and endpoints that allow applications to retrieve messages from them asynchronously or to subscribe to topics. For full details, see [Queue concepts](/docs/observe/infrastructure-observability/queues/queue-concepts "Basic concepts of message queue monitoring in Dynatrace.").
+Message queues in the form of a queue or a topic provide lightweight storage for messages. They offer endpoints that allow applications to send messages to them and endpoints that allow applications to retrieve messages from them asynchronously or to subscribe to topics. For full details, see [Queue concepts](../ru/observe/infrastructure-observability/queues/queue-concepts.md "Basic concepts of message queue monitoring in Dynatrace.").
 
 Decoupled services are standard in applications built with microservices, and events are used to communicate between services, making it essential to observe the performance of message queues. With Dynatrace, you can get full observability into your producer and consumer services and simplify troubleshooting in asynchronous communication flows.
 
 [### Queue concepts
 
-Learn the most important concepts of queue monitoring.](/docs/observe/infrastructure-observability/queues/queue-concepts "Basic concepts of message queue monitoring in Dynatrace.")[### Configuration
+Learn the most important concepts of queue monitoring.](../ru/observe/infrastructure-observability/queues/queue-concepts.md "Basic concepts of message queue monitoring in Dynatrace.")[### Configuration
 
-Configure monitoring, tracing for IBM MQ, tags, and management zones.](/docs/observe/infrastructure-observability/queues/configuration "Configure Dynatrace to monitor message queues.")[### Analysis
+Configure monitoring, tracing for IBM MQ, tags, and management zones.](../ru/observe/infrastructure-observability/queues/configuration.md "Configure Dynatrace to monitor message queues.")[### Analysis
 
-Analyze queues and topics in your environment.](/docs/observe/infrastructure-observability/queues/analyze-queues "Get insight into message queue-related anomalies with analytics views.")
+Analyze queues and topics in your environment.](../ru/observe/infrastructure-observability/queues/analyze-queues.md "Get insight into message queue-related anomalies with analytics views.")
 
 ## Queues and topics in Dynatrace
 
-OneAgent automatically detects queues and topics as part of distributed traces when monitored applications use the endpoints of compatible messaging clients to send or retrieve messages. To check the compatible clients, see [Technology support](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+OneAgent automatically detects queues and topics as part of distributed traces when monitored applications use the endpoints of compatible messaging clients to send or retrieve messages. To check the compatible clients, see [Technology support](../ru/ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 To get an overview of all detected queues and topics, go to **Message Queues**.
 
 * For all queues and topics, OneAgent measures the number of **Incoming messages** and **Outgoing messages**.  
   By monitoring these metrics, you can catch unbalanced message processing that could result in severe problems (such as queue overflows) and prevent them by scaling queues quickly or maintaining failover processes.
-* Select the **Name** of a specific queue or topic to display its [analytic view](/docs/observe/infrastructure-observability/queues/analyze-queues "Get insight into message queue-related anomalies with analytics views."), with enhanced troubleshooting capabilities to gain additional insight into related anomalies.
+* Select the **Name** of a specific queue or topic to display its [analytic view](../ru/observe/infrastructure-observability/queues/analyze-queues.md "Get insight into message queue-related anomalies with analytics views."), with enhanced troubleshooting capabilities to gain additional insight into related anomalies.
 
 ![Message queues table](https://dt-cdn.net/images/queues-table-1857-49308cb749.png)
 
@@ -12771,11 +12771,11 @@ In Dynatrace, both a queue and a topic result in a **Queue** entity.
 
 Is a specific license required for OneAgent to detect queues and topics?
 
-No. Queues and topics are detected as part of distributed traces when OneAgent is running in [Full-Stack Monitoring](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.") mode.
+No. Queues and topics are detected as part of distributed traces when OneAgent is running in [Full-Stack Monitoring](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.") mode.
 
 Can OneAgent detect queues and topics in Infrastructure Monitoring mode?
 
-No. Queues and topics are detected as part of distributed traces only when OneAgent is running in [Full-Stack Monitoring](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.") mode.
+No. Queues and topics are detected as part of distributed traces only when OneAgent is running in [Full-Stack Monitoring](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.") mode.
 
 When are queues and topics visible?
 
@@ -12801,7 +12801,7 @@ Dynatrace applies this logic to prevent monitoring of too many queues or topics.
 
 Which messaging clients are compatible with OneAgent?
 
-OneAgent supports various messaging clients. To find out the compatible clients, see [Technology support](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+OneAgent supports various messaging clients. To find out the compatible clients, see [Technology support](../ru/ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 Why is my ActiveMQ broker not detected?
 
@@ -12811,11 +12811,11 @@ This configuration allows the broker to accept incoming messages on all network 
 
 How can I define an automatically applied tag for queue entities?
 
-Visit the related section on the [Tags and management zone page](/docs/observe/infrastructure-observability/queues/configuration/tags-and-management-zones#tags "Automatically apply tags to queues and organize them into management zones.").
+Visit the related section on the [Tags and management zone page](../ru/observe/infrastructure-observability/queues/configuration/tags-and-management-zones.md#tags "Automatically apply tags to queues and organize them into management zones.").
 
 How can I add queue entities to existing management zones?
 
-Visit the related section on the [Tags and management zone page](/docs/observe/infrastructure-observability/queues/configuration/tags-and-management-zones#management-zones "Automatically apply tags to queues and organize them into management zones.").
+Visit the related section on the [Tags and management zone page](../ru/observe/infrastructure-observability/queues/configuration/tags-and-management-zones.md#management-zones "Automatically apply tags to queues and organize them into management zones.").
 
 ---
 
@@ -12904,7 +12904,7 @@ To assign users read-only permission to a VM
 
 ## Related topics
 
-* [VMware vSphere monitoring](/docs/observe/infrastructure-observability/vmware-vsphere-monitoring "Monitor VMware vSphere with Dynatrace.")
+* [VMware vSphere monitoring](../ru/observe/infrastructure-observability/vmware-vsphere-monitoring.md "Monitor VMware vSphere with Dynatrace.")
 
 ---
 
@@ -12946,12 +12946,12 @@ Follow the steps below to set up monitoring on the virtualization management lay
 
 ## Install and configure ActiveGate
 
-[Install an Environment ActiveGate](/docs/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") in your data center before connecting Dynatrace to your VMware platform.  
+[Install an Environment ActiveGate](ingest-from/dynatrace-activegate/installation.md "Learn how to configure ActiveGate") in your data center before connecting Dynatrace to your VMware platform.  
 For **Dynatrace Managed** you can use the embedded ActiveGate running on the cluster node. However, the Cluster ActiveGate is typically used to forward RUM and/or Synthetic monitoring data to the Dynatrace Cluster. We recommend that you don't overutilize this ActiveGate with another type of monitoring data. Depending on the VMware size, you might consider using a dedicated ActiveGate per environment.
 
 For virtualization monitoring, the `vmware_monitoring_enabled` property in `custom.properties` must be set to `true` (default value).
 
-See [Customize ActiveGate properties](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#vmware "Learn which ActiveGate properties you can configure based on your needs and requirements.") for details.
+See [Customize ActiveGate properties](ingest-from/dynatrace-activegate/configuration/configure-activegate.md#vmware "Learn which ActiveGate properties you can configure based on your needs and requirements.") for details.
 
 ## Connect Dynatrace to your VMware platform
 
@@ -12962,7 +12962,7 @@ To connect Dynatrace to your VMware platform
 3. Check the network/proxy settings.  
    If you get a communication error even though the data provided is correct, it might be because of your network/proxy settings. We recommend that you revise the network/proxy settings when adding a new VMware integration.
 
-   Optional You can also bypass the proxy for connecting with vCenter or ESXi when configuring the VMware integration. Modify [ActiveGate configuration](/docs/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate#exclude-hosts "Learn how to configure ActiveGate properties to set up a proxy.") to exclude a specific host from the proxy.
+   Optional You can also bypass the proxy for connecting with vCenter or ESXi when configuring the VMware integration. Modify [ActiveGate configuration](ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate.md#exclude-hosts "Learn how to configure ActiveGate properties to set up a proxy.") to exclude a specific host from the proxy.
 4. Enter the associated user credentials so that ActiveGate can sign in and collect monitoring data. The required privileges for this user are **view and read-only access**. Administrator-level access isn't required to enable monitoring (no changes to your VMware settings are required).
 
    You donât need to add ESXi hosts individually if they're managed by a vCenter server.
@@ -12989,7 +12989,7 @@ To cover your entire virtual infrastructure, repeat these steps for all other vC
 
 ## Limit VMware infrastructure monitoring
 
-After you set up VMware monitoring, you might want to limit which infrastructural elements (such as hosts and VMs) should actually be monitored by Dynatrace. To do this, you can use the permissions mechanism available in VMware. For more information, see [Limit VMware infrastructure monitoring using permissions](/docs/observe/infrastructure-observability/vmware-vsphere-monitoring/limit-infrastructure-monitoring-using-permissions "Limit the size of your monitored VMware infrastructure using the VMware permissions mechanism.").
+After you set up VMware monitoring, you might want to limit which infrastructural elements (such as hosts and VMs) should actually be monitored by Dynatrace. To do this, you can use the permissions mechanism available in VMware. For more information, see [Limit VMware infrastructure monitoring using permissions](../ru/observe/infrastructure-observability/vmware-vsphere-monitoring/limit-infrastructure-monitoring-using-permissions.md "Limit the size of your monitored VMware infrastructure using the VMware permissions mechanism.").
 
 ## Troubleshoot VMware connection
 
@@ -12999,11 +12999,11 @@ After you set up VMware monitoring, you might want to limit which infrastructura
 
 ## Configure vSphere monitoring using Settings API
 
-You can use the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") to configure VMware vSphere monitoring.
+You can use the [Settings API](../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") to configure VMware vSphere monitoring.
 
-1. To learn the schema, use [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") with `builtin:virtualization.vmware` as the schemaId.
+1. To learn the schema, use [GET a schema](../ru/dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") with `builtin:virtualization.vmware` as the schemaId.
 2. Based on the `builtin:virtualization.vmware` schema, create your configuration object.
-3. To create your configuration, use [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.").
+3. To create your configuration, use [POST an object](../ru/dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.").
 
 ---
 
@@ -13032,7 +13032,7 @@ Monitor hosts, VMs, processes, and networks to detect issues and improve infrast
 
 * App
 
-Explore this app](/docs/observe/infrastructure-observability/infrastructure-and-operations)[![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")
+Explore this app](../ru/observe/infrastructure-observability/infrastructure-and-operations.md)[![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")
 
 #### Kubernetes
 
@@ -13040,7 +13040,7 @@ Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and healt
 
 * App
 
-Explore this app](/docs/observe/infrastructure-observability/kubernetes-app)[![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases")
+Explore this app](../ru/observe/infrastructure-observability/kubernetes-app.md)[![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases")
 
 #### Databases app
 
@@ -13048,7 +13048,7 @@ The Databases app gives you an overview of all your Extensions Framework 2.0-mon
 
 * App
 
-Explore this app](/docs/observe/infrastructure-observability/databases/database-app)[![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds")
+Explore this app](../ru/observe/infrastructure-observability/databases/database-app.md)[![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds")
 
 #### Clouds app
 
@@ -13056,7 +13056,7 @@ Monitor all cloud platforms at once.
 
 * App
 
-Explore this app](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app)
+Explore this app](../ru/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md)
 
 ## Concepts
 
@@ -13066,37 +13066,37 @@ Monitor the health and performance of your data centers and availability zones t
 
 * Explanation
 
-Read this explanation](/docs/observe/infrastructure-observability/infrastructure-and-operations/data-centers)[#### Hosts
+Read this explanation](../ru/observe/infrastructure-observability/infrastructure-and-operations/data-centers.md)[#### Hosts
 
 Monitor infrastructure hosts across physical machines, VMs, and cloud instances to track health, performance, and resource utilization.
 
 * Explanation
 
-Read this explanation](/docs/observe/infrastructure-observability/infrastructure-and-operations/hosts)[#### Processes
+Read this explanation](../ru/observe/infrastructure-observability/infrastructure-and-operations/hosts.md)[#### Processes
 
 Monitor processes running on hosts and containers with detailed insights into CPU and memory usage trends and key metrics.
 
 * Explanation
 
-Read this explanation](/docs/observe/infrastructure-observability/infrastructure-and-operations/processes)[#### Containers
+Read this explanation](../ru/observe/infrastructure-observability/infrastructure-and-operations/processes.md)[#### Containers
 
 Monitor and troubleshoot containerized workloads across Kubernetes and standalone hosts.
 
 * Explanation
 
-Read this explanation](/docs/observe/infrastructure-observability/infrastructure-and-operations/containers)[#### Network devices
+Read this explanation](../ru/observe/infrastructure-observability/infrastructure-and-operations/containers.md)[#### Network devices
 
 Monitor network devices and gain insights into networking components with Dynatrace Intelligence-powered analytics and flexible observability options.
 
 * Explanation
 
-Read this explanation](/docs/observe/infrastructure-observability/infrastructure-and-operations/network-devices)[#### Extensions
+Read this explanation](../ru/observe/infrastructure-observability/infrastructure-and-operations/network-devices.md)[#### Extensions
 
 Extensions ordered by category
 
 * Reference
 
-Read this reference](/docs/observe/infrastructure-observability/extensions)
+Read this reference](../ru/observe/infrastructure-observability/extensions.md)
 
 ## Classic
 
@@ -13106,31 +13106,31 @@ The container platforms Dynatrace can monitor
 
 * Explanation
 
-Read this explanation](/docs/observe/infrastructure-observability/container-platform-monitoring)[#### Process groups
+Read this explanation](../ru/observe/infrastructure-observability/container-platform-monitoring.md)[#### Process groups
 
 Analyze process groups and customize process group naming, detection, and monitoring.
 
 * Explanation
 
-Read this explanation](/docs/observe/infrastructure-observability/process-groups)[#### Message queues
+Read this explanation](../ru/observe/infrastructure-observability/process-groups.md)[#### Message queues
 
 Monitor and analyze your message queues with Dynatrace.
 
 * Explanation
 
-Read this explanation](/docs/observe/infrastructure-observability/queues)[#### VMware vSphere monitoring
+Read this explanation](../ru/observe/infrastructure-observability/queues.md)[#### VMware vSphere monitoring
 
 Monitor VMware vSphere with Dynatrace.
 
 * How-to guide
 
-Read this guide](/docs/observe/infrastructure-observability/vmware-vsphere-monitoring)
+Read this guide](../ru/observe/infrastructure-observability/vmware-vsphere-monitoring.md)
 
 ## Related topics
 
-* [Serverless monitoring](/docs/discover-dynatrace/get-started/serverless-monitoring "Serverless observability with Dynatrace")
-* [Ingest data](/docs/ingest-from "Learn how to install and configure ActiveGate and OneAgent on various platforms.")
-* [Monitor container groups](/docs/observe/infrastructure-observability/container-platform-monitoring/container-groups "Overview on container groups monitoring")
-* [Container monitoring rules](/docs/observe/infrastructure-observability/container-platform-monitoring/container-monitoring-rules "Define, enable and disable container monitoring rules")
+* [Serverless monitoring](../ru/discover-dynatrace/get-started/serverless-monitoring.md "Serverless observability with Dynatrace")
+* [Ingest data](ingest-from.md "Learn how to install and configure ActiveGate and OneAgent on various platforms.")
+* [Monitor container groups](../ru/observe/infrastructure-observability/container-platform-monitoring/container-groups.md "Overview on container groups monitoring")
+* [Container monitoring rules](../ru/observe/infrastructure-observability/container-platform-monitoring/container-monitoring-rules.md "Define, enable and disable container monitoring rules")
 
 ---

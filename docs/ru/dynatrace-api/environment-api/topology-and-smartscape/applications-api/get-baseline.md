@@ -25,7 +25,7 @@ scraped: 2026-03-05T21:26:55.942296
 
 Для выполнения этого запроса необходим токен доступа с областью `DataExport`.
 
-Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 
@@ -324,4 +324,4 @@ scraped: 2026-03-05T21:26:55.942296
 
 ## Связанные темы
 
-* [Real User Monitoring](/docs/observe/digital-experience/rum-concepts/rum-overview "Узнайте о Real User Monitoring, ключевых метриках производительности, мониторинге мобильных приложений и многом другом.")
+* [Real User Monitoring](../../../../observe/digital-experience/rum-concepts/rum-overview.md "Узнайте о Real User Monitoring, ключевых метриках производительности, мониторинге мобильных приложений и многом другом.")

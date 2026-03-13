@@ -12,7 +12,7 @@ scraped: 2026-03-04T21:30:01.817464
 * 7-min read
 * Updated on Dec 22, 2025
 
-[EdgeConnect](/docs/ingest-from/edgeconnect "Use EdgeConnect to control how your apps and workflows interact with your internal systems.") enables Dynatrace apps and workflows to interact securely with your systems. EdgeConnect is available as a Docker container and can run in any container runtime environment. This reference guide provides detailed information on how to configure the EdgeConnect [custom resourceï»¿](https://dt-url.net/b60397m) within your Kubernetes environment.
+[EdgeConnect](../../edgeconnect.md "Use EdgeConnect to control how your apps and workflows interact with your internal systems.") enables Dynatrace apps and workflows to interact securely with your systems. EdgeConnect is available as a Docker container and can run in any container runtime environment. This reference guide provides detailed information on how to configure the EdgeConnect [custom resourceï»¿](https://dt-url.net/b60397m) within your Kubernetes environment.
 
 The following table lists the minimum required Dynatrace Operator versions for each EdgeConnect API version.
 

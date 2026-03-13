@@ -145,6 +145,6 @@ Below, you can find the example of a problem in the `Processing` state.
 
 ![Detected Problem going through the "Processing" state](https://dt-cdn.net/images/problem-processing-state-934-2c9e3ab22e.png)
 
-If you want to receive alerts immediately after the problem is detected, you can use Custom alert with [Metric events](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace"). In this case, the Davis event flags `dt.davis.trigger_delay` and `dt.davis.analysis_time` will be set to `0`. The problem won't enter the `Processing` state, and no causal AI analysis will be performed.
+If you want to receive alerts immediately after the problem is detected, you can use Custom alert with [Metric events](../anomaly-detection/metric-events.md "Learn about metric events in Dynatrace"). In this case, the Davis event flags `dt.davis.trigger_delay` and `dt.davis.analysis_time` will be set to `0`. The problem won't enter the `Processing` state, and no causal AI analysis will be performed.
 
-Alternatively, you can set the processing state per Davis event source in [Log events](/docs/analyze-explore-automate/logs/lma-analysis "Explore log data with a log viewer or create custom attributes, log events, and metrics to process and analyze your log data in Dynatrace.") configuration.
+Alternatively, you can set the processing state per Davis event source in [Log events](../../analyze-explore-automate/logs/lma-analysis.md "Explore log data with a log viewer or create custom attributes, log events, and metrics to process and analyze your log data in Dynatrace.") configuration.

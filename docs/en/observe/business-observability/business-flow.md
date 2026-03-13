@@ -89,7 +89,7 @@ Write settings objects
 
 ### Installation
 
-Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Make sure the app is [installed in your environment](../../manage/hub.md#install "See the information about Dynatrace Hub.").
 
 Get started
 
@@ -148,13 +148,13 @@ Go through the following processes to learn using ![Business Flow](https://dt-cd
 [01Set up Business Flow
 
 * How-to guide
-* Follow the instructions on how to successfully set up Business Flow.](/docs/observe/business-observability/business-flow/set-up-business-flow)[02Business Flow Details
+* Follow the instructions on how to successfully set up Business Flow.](business-flow/set-up-business-flow.md)[02Business Flow Details
 
 * Explanation
-* Explore Business Flow Details.](/docs/observe/business-observability/business-flow/business-flow-details)[03Business Flow KPIs
+* Explore Business Flow Details.](business-flow/business-flow-details.md)[03Business Flow KPIs
 
 * Explanation
-* Discover how key performance indicators can help you track performance and identify improvement opportunities within the Business Flow app.](/docs/observe/business-observability/business-flow/reported-kpis)
+* Discover how key performance indicators can help you track performance and identify improvement opportunities within the Business Flow app.](business-flow/reported-kpis.md)
 
 ## Capabilities
 
@@ -173,12 +173,12 @@ With ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png
 * A business process can have up to 20 nodes in total. A node is defined as a step or a branch; if a step has three branches, that counts as 3 nodes.
 * Each step must have at least one active business event assigned, otherwise the configuration cannot be saved.
 * The difference between timestamps on events that are in different steps must be at least one millisecond, as lower resolutions on durations are not supported, or may generate false positive alerts of disordered flows during the analysis of the business process.
-* Alerting on key metrics is only possible when the average duration of a business process monitored is below 30 minutes, as ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** only analyzes a 60-minute rolling window on defined metrics. See [Sliding window](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#sliding-window "How to set up an alert for missing measurements.") for more details.
+* Alerting on key metrics is only possible when the average duration of a business process monitored is below 30 minutes, as ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** only analyzes a 60-minute rolling window on defined metrics. See [Sliding window](../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#sliding-window "How to set up an alert for missing measurements.") for more details.
 * All business KPIs in ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow** are the result of running complex DQL queries thatâdepending on the amount of data scannedâcan hit the default read data limit. If you reach this limit in any of the queries, you'll be notified and offered the option to run the DQL queries limitless on that configuration (once or by default).
 
   The limitless mode on a configuration can be switched off in the edit mode.
 
-  See [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language."), to learn more about data limits.
+  See [DQL best practices](../../platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language."), to learn more about data limits.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

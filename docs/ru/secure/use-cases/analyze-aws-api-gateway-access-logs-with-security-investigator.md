@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:29:02.173566
 
 [Amazon API Gateway](https://dt-url.net/dm03wn5) — это мощный сервис, позволяющий создавать бессерверные веб-API с использованием функций Lambda или добавлять дополнительный уровень безопасности для существующих сервисов. Возможности варьируются от простых действий, таких как [применение TLS-шифрования](https://dt-url.net/q823w6q) или [кэширования](https://dt-url.net/bj43w6c), до более сложных мер, таких как [контроль доступа](https://dt-url.net/iq63wsn), [троттлинг API](https://dt-url.net/km83wry) или [логирование безопасности](https://dt-url.net/vqa3w97). API Gateway обеспечивает дополнительный уровень безопасности, который можно быстро применить к вашим сервисам без изменения базового кода.
 
-Далее вы узнаете, как [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Объедините функциональные возможности Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ причин и поиск угроз.") может помочь вам отслеживать и выявлять ошибки в логах доступа Amazon API Gateway.
+Далее вы узнаете, как [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Объедините функциональные возможности Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ причин и поиск угроз.") может помочь вам отслеживать и выявлять ошибки в логах доступа Amazon API Gateway.
 
 ## Целевая аудитория
 
@@ -23,11 +23,11 @@ scraped: 2026-03-06T21:29:02.173566
 ## Предварительные требования
 
 * Создайте [группу логов Amazon CloudWatch](https://dt-url.net/r8c3wk1) для логов доступа Amazon API Gateway
-* [Настройте Amazon Data Firehose](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose "Интеграция Amazon Data Firehose позволяет напрямую загружать облачные логи без дополнительной инфраструктуры и с более высокой пропускной способностью.") для отправки логов из группы логов в Dynatrace
+* [Настройте Amazon Data Firehose](../../ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose.md "Интеграция Amazon Data Firehose позволяет напрямую загружать облачные логи без дополнительной инфраструктуры и с более высокой пропускной способностью.") для отправки логов из группы логов в Dynatrace
 * Знание
 
-  + [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.") и [как использовать запросы DQL](/docs/platform/grail/dynatrace-query-language/dql-guide "Узнайте, как работает DQL и каковы ключевые концепции DQL.")
-  + [Dynatrace Pattern Language](/docs/platform/grail/dynatrace-pattern-language "Используйте Dynatrace Pattern Language для описания шаблонов с помощью матчеров.")
+  + [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.") и [как использовать запросы DQL](../../platform/grail/dynatrace-query-language/dql-guide.md "Узнайте, как работает DQL и каковы ключевые концепции DQL.")
+  + [Dynatrace Pattern Language](../../platform/grail/dynatrace-pattern-language.md "Используйте Dynatrace Pattern Language для описания шаблонов с помощью матчеров.")
 
 ## Перед началом
 
@@ -135,7 +135,7 @@ scraped: 2026-03-06T21:29:02.173566
 
 ## Начало работы
 
-Анализируйте логи Amazon API Gateway с помощью [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Объедините функциональные возможности Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ причин и поиск угроз.").
+Анализируйте логи Amazon API Gateway с помощью [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Объедините функциональные возможности Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ причин и поиск угроз.").
 
 1. Обнаружение проблем бэкенда с помощью метрик задержки
 
@@ -159,7 +159,7 @@ scraped: 2026-03-06T21:29:02.173566
 
    | filter aws.log_group == "/aws/apigateway/my-gateway-demo"
    ```
-2. В таблице результатов запроса щёлкните правой кнопкой мыши по полю и выберите **View field details**, чтобы [просмотреть запись лога в исходном формате](/docs/secure/investigations/enhance-results#view-details "Организация и интерпретация результатов запросов в расследованиях — от анализа производительности до обнаружения угроз.").
+2. В таблице результатов запроса щёлкните правой кнопкой мыши по полю и выберите **View field details**, чтобы [просмотреть запись лога в исходном формате](../investigations/enhance-results.md#view-details "Организация и интерпретация результатов запросов в расследованиях — от анализа производительности до обнаружения угроз.").
 
    Пример записи лога в формате JSON:
 
@@ -226,13 +226,13 @@ scraped: 2026-03-06T21:29:02.173566
 
    }
    ```
-3. Добавьте следующую [команду parse](/docs/platform/grail/dynatrace-query-language/commands/extraction-and-parsing-commands "Команды извлечения DQL") к запросу DQL для извлечения свойств `path` и `integrationLatency` из записи JSON.
+3. Добавьте следующую [команду parse](../../platform/grail/dynatrace-query-language/commands/extraction-and-parsing-commands.md "Команды извлечения DQL") к запросу DQL для извлечения свойств `path` и `integrationLatency` из записи JSON.
 
    ```
    | parse content, "JSON{ STRING:path, INT:integrationLatency }(flat=true)"
    ```
 
-   В этом примере используются [Dynatrace Pattern Language](/docs/platform/grail/dynatrace-pattern-language "Используйте Dynatrace Pattern Language для описания шаблонов с помощью матчеров.") и [JSON-матчер](/docs/platform/grail/dynatrace-pattern-language/log-processing-json-object "Синтаксис DPL для обработки JSON-объектов.") для извлечения [выбранных матчеров](/docs/platform/grail/dynatrace-pattern-language/log-processing-json-object#parse-selected "Синтаксис DPL для обработки JSON-объектов.") в отдельные поля.
+   В этом примере используются [Dynatrace Pattern Language](../../platform/grail/dynatrace-pattern-language.md "Используйте Dynatrace Pattern Language для описания шаблонов с помощью матчеров.") и [JSON-матчер](../../platform/grail/dynatrace-pattern-language/log-processing-json-object.md "Синтаксис DPL для обработки JSON-объектов.") для извлечения [выбранных матчеров](../../platform/grail/dynatrace-pattern-language/log-processing-json-object.md#parse-selected "Синтаксис DPL для обработки JSON-объектов.") в отдельные поля.
 
    Используемый шаблон DPL:
 
@@ -253,7 +253,7 @@ scraped: 2026-03-06T21:29:02.173566
    ```
 
    После выполнения запроса вы увидите два новых столбца — **path** и **integrationLatency** — в таблице результатов.
-4. Для упрощения просмотра результатов добавьте следующую [команду `makeTimeseries`](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#makeTimeseries "Команды агрегации DQL") к запросу DQL для создания метрики из логов API Gateway. Метрика должна использовать path в качестве измерения и среднюю задержку в минуту в качестве значений.
+4. Для упрощения просмотра результатов добавьте следующую [команду `makeTimeseries`](../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#makeTimeseries "Команды агрегации DQL") к запросу DQL для создания метрики из логов API Gateway. Метрика должна использовать path в качестве измерения и среднюю задержку в минуту в качестве значений.
 
    ```
    | makeTimeseries {
@@ -311,7 +311,7 @@ scraped: 2026-03-06T21:29:02.173566
 
 Следуйте шагам ниже для углублённого анализа кодов ответа.
 
-1. Извлеките коды ответа как дополнительный столбец с [INT-матчером](/docs/platform/grail/dynatrace-pattern-language/log-processing-numeric#int "Синтаксис DPL для обработки числовых данных."), поскольку ожидается целочисленное значение поля.
+1. Извлеките коды ответа как дополнительный столбец с [INT-матчером](../../platform/grail/dynatrace-pattern-language/log-processing-numeric.md#int "Синтаксис DPL для обработки числовых данных."), поскольку ожидается целочисленное значение поля.
 
    Используемый шаблон DPL:
 
@@ -490,8 +490,8 @@ scraped: 2026-03-06T21:29:02.173566
    Обнаруживается, что ошибки тайм-аута являются наиболее частыми.
 5. Чтобы увидеть, как сообщения об ошибках распределяются за тот же период, создайте метрику на основе ошибок тайм-аута следующим образом:
 
-* Добавьте [команду `filterOut`](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#filterOut "Команды фильтрации и поиска DQL") для удаления успешных событий
-* Добавьте поле `timestamp` в [команду `fields`](/docs/platform/grail/dynatrace-query-language/commands/selection-and-modification-commands#fields "Команды выбора и модификации DQL")
+* Добавьте [команду `filterOut`](../../platform/grail/dynatrace-query-language/commands/filtering-commands.md#filterOut "Команды фильтрации и поиска DQL") для удаления успешных событий
+* Добавьте поле `timestamp` в [команду `fields`](../../platform/grail/dynatrace-query-language/commands/selection-and-modification-commands.md#fields "Команды выбора и модификации DQL")
 * Создайте команду `makeTimeseries` для агрегации ошибок по количеству с минутным интервалом.
 
   Ваш итоговый запрос должен выглядеть так:
@@ -534,8 +534,8 @@ scraped: 2026-03-06T21:29:02.173566
 
 ## Связанные темы
 
-* [Анализ логов AWS CloudTrail с помощью Investigations](/docs/secure/use-cases/analyze-aws-cloudtrail-logs-with-security-investigator "Анализируйте логи CloudTrail и находите потенциальные проблемы безопасности с помощью Dynatrace.")
-* [Обнаружение угроз для ваших секретов AWS с помощью Investigations](/docs/secure/use-cases/detect-threats-against-aws-secrets-with-security-investigator "Отслеживайте и выявляйте потенциальные угрозы для ваших секретов AWS с помощью Dynatrace.")
-* [Поиск угроз и цифровая криминалистика](/docs/secure/use-cases/threat-hunting "Сценарий использования для поиска угроз и цифровой криминалистики с Investigations.")
-* [Операционализация результатов запросов DQL с помощью Investigations](/docs/secure/use-cases/operationalize-query-results "Быстрее и удобнее создавайте запросы DQL из результатов с помощью Dynatrace Investigations.")
-* [Ускорение разрешения инцидентов с помощью шаблонов Investigations](/docs/secure/use-cases/resolve-incidents-faster-with-templates "Ускорьте расследования, связанные с логами, с помощью шаблонов Investigations.")
+* [Анализ логов AWS CloudTrail с помощью Investigations](analyze-aws-cloudtrail-logs-with-security-investigator.md "Анализируйте логи CloudTrail и находите потенциальные проблемы безопасности с помощью Dynatrace.")
+* [Обнаружение угроз для ваших секретов AWS с помощью Investigations](detect-threats-against-aws-secrets-with-security-investigator.md "Отслеживайте и выявляйте потенциальные угрозы для ваших секретов AWS с помощью Dynatrace.")
+* [Поиск угроз и цифровая криминалистика](threat-hunting.md "Сценарий использования для поиска угроз и цифровой криминалистики с Investigations.")
+* [Операционализация результатов запросов DQL с помощью Investigations](operationalize-query-results.md "Быстрее и удобнее создавайте запросы DQL из результатов с помощью Dynatrace Investigations.")
+* [Ускорение разрешения инцидентов с помощью шаблонов Investigations](resolve-incidents-faster-with-templates.md "Ускорьте расследования, связанные с логами, с помощью шаблонов Investigations.")

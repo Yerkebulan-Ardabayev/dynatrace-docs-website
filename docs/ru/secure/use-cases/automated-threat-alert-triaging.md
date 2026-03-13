@@ -33,8 +33,8 @@ scraped: 2026-03-06T21:32:55.922343
 
 ## Предварительные требования
 
-* [Установите и настройте интеграцию Amazon GuardDuty](/docs/secure/threat-observability/security-events-ingest/ingest-amazon-guardduty "Ingest Amazon GuardDuty security findings and analyze them in Dynatrace.") (или любую другую [поддерживаемую интеграцию загрузки данных](/docs/secure/threat-observability/security-events-ingest#ingest "Ingest external security data into Grail.")).
-* [Установите и настройте обогащение AbuseIPDB](/docs/secure/threat-observability/security-events-ingest/abuseipdb-enrich "Enrich threat observables with AbuseIPDB and analyze them in Dynatrace.") (или любую другую [поддерживаемую интеграцию обогащения](/docs/secure/threat-observability/security-events-ingest#enrich "Ingest external security data into Grail.")).
+* [Установите и настройте интеграцию Amazon GuardDuty](../threat-observability/security-events-ingest/ingest-amazon-guardduty.md "Ingest Amazon GuardDuty security findings and analyze them in Dynatrace.") (или любую другую [поддерживаемую интеграцию загрузки данных](../threat-observability/security-events-ingest.md#ingest "Ingest external security data into Grail.")).
+* [Установите и настройте обогащение AbuseIPDB](../threat-observability/security-events-ingest/abuseipdb-enrich.md "Enrich threat observables with AbuseIPDB and analyze them in Dynatrace.") (или любую другую [поддерживаемую интеграцию обогащения](../threat-observability/security-events-ingest.md#enrich "Ingest external security data into Grail.")).
 * Пользователи должны иметь разрешение `security-intelligence:enrichments:run` для запуска обогащений.
 
 ## Начало работы
@@ -74,4 +74,4 @@ scraped: 2026-03-06T21:32:55.922343
 
 ## Связанные темы
 
-* [Оповещения и уведомления](/docs/analyze-explore-automate/alerting-and-notifications "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")
+* [Оповещения и уведомления](../../analyze-explore-automate/alerting-and-notifications.md "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")

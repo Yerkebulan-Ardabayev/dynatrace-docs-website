@@ -38,19 +38,19 @@ scraped: 2026-03-06T21:15:55.878660
 Предварительные требования
 
 * Среда Dynatrace SaaS на основе Grail и AppEngine.
-* Лицензия [Dynatrace](/docs/license "О подписке Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace."), включающая [обзор Events на основе Grail (DPS)](/docs/license/capabilities/events "Узнайте, как рассчитывается потребление Dynatrace Events на основе Grail по модели Dynatrace Platform Subscription.").
+* Лицензия [Dynatrace](../../../license.md "О подписке Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace."), включающая [обзор Events на основе Grail (DPS)](../../../license/capabilities/events.md "Узнайте, как рассчитывается потребление Dynatrace Events на основе Grail по модели Dynatrace Platform Subscription.").
 
 ## Шаги
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Аутентификация**](/docs/platform/openpipeline/getting-started/how-to-ingestion#authenticate "Как принимать данные для области конфигурации в OpenPipeline.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Аутентификация**](how-to-ingestion.md#authenticate "Как принимать данные для области конфигурации в OpenPipeline.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Скопировать путь эндпоинта**](/docs/platform/openpipeline/getting-started/how-to-ingestion#path "Как принимать данные для области конфигурации в OpenPipeline.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Скопировать путь эндпоинта**](how-to-ingestion.md#path "Как принимать данные для области конфигурации в OpenPipeline.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Отправить событие**](/docs/platform/openpipeline/getting-started/how-to-ingestion#send "Как принимать данные для области конфигурации в OpenPipeline.")[![Шаг 4, необязательный](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Шаг 4, необязательный")
+**Отправить событие**](how-to-ingestion.md#send "Как принимать данные для области конфигурации в OpenPipeline.")[![Шаг 4, необязательный](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Шаг 4, необязательный")
 
-**Проверить приём**](/docs/platform/openpipeline/getting-started/how-to-ingestion#verify "Как принимать данные для области конфигурации в OpenPipeline.")
+**Проверить приём**](how-to-ingestion.md#verify "Как принимать данные для области конфигурации в OpenPipeline.")
 
 ### Шаг 1. Аутентификация
 
@@ -133,9 +133,9 @@ OpenPipeline — это унифицированный компонент при
 3. Отправить запись.
 4. Проверить приём.
 
-Обзор доступных эндпоинтов см. в разделе [Источники приёма в OpenPipeline](/docs/platform/openpipeline/reference/api-ingestion-reference "Справочник по источникам приёма и API для областей конфигурации, поддерживаемых в OpenPipeline.").
+Обзор доступных эндпоинтов см. в разделе [Источники приёма в OpenPipeline](../reference/api-ingestion-reference.md "Справочник по источникам приёма и API для областей конфигурации, поддерживаемых в OpenPipeline.").
 
 ## Связанные темы
 
-* [Поток данных в OpenPipeline](/docs/platform/openpipeline/concepts/data-flow "Узнайте, как данные проходят через Dynatrace Platform: от приёма до хранения, через Dynatrace OpenPipeline.")
-* [Источники приёма в OpenPipeline](/docs/platform/openpipeline/reference/api-ingestion-reference "Справочник по источникам приёма и API для областей конфигурации, поддерживаемых в OpenPipeline.")
+* [Поток данных в OpenPipeline](../concepts/data-flow.md "Узнайте, как данные проходят через Dynatrace Platform: от приёма до хранения, через Dynatrace OpenPipeline.")
+* [Источники приёма в OpenPipeline](../reference/api-ingestion-reference.md "Справочник по источникам приёма и API для областей конфигурации, поддерживаемых в OpenPipeline.")

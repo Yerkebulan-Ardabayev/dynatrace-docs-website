@@ -11,7 +11,7 @@ scraped: 2026-03-05T21:27:12.459284
 * Reference
 * Опубликовано 22 марта 2023 г.
 
-[Topology and Smartscape API](/docs/dynatrace-api/environment-api/topology-and-smartscape "Узнайте о Dynatrace Topology and Smartscape API.") устарел начиная с [Dynatrace версии 1.263](/docs/whats-new/dynatrace-api/sprint-242 "Журнал изменений Dynatrace API версии 1.242"). Его замена -- [Monitored entities API](/docs/dynatrace-api/environment-api/entity-v2 "Узнайте о Dynatrace Monitored entities API."). Мы рекомендуем выполнить миграцию на новый API при первой возможности.
+[Topology and Smartscape API](../../environment-api/topology-and-smartscape.md "Узнайте о Dynatrace Topology and Smartscape API.") устарел начиная с [Dynatrace версии 1.263](../../../whats-new/dynatrace-api/sprint-242.md "Журнал изменений Dynatrace API версии 1.242"). Его замена -- [Monitored entities API](../../environment-api/entity-v2.md "Узнайте о Dynatrace Monitored entities API."). Мы рекомендуем выполнить миграцию на новый API при первой возможности.
 
 Эта миграция затрагивает URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также область действия токена для аутентификации запросов.
 
@@ -20,7 +20,7 @@ scraped: 2026-03-05T21:27:12.459284
 Monitored entities API предлагает следующие новые возможности:
 
 * Конечная точка, не зависящая от типа сущности -- вы можете запрашивать любой тип сущности через один и тот же URL
-* Мощный [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Настройка entity selector для конечных точек Environment API."), помогающий фильтровать нужные сущности
+* Мощный [entity selector](../../environment-api/entity-v2/entity-selector.md "Настройка entity selector для конечных точек Environment API."), помогающий фильтровать нужные сущности
 * Унифицированный селектор временного интервала
 * Настраиваемое возвращаемое значение -- вы можете контролировать, какие свойства сущности включаются в ответ
 * Конечные точки типов сущностей
@@ -42,7 +42,7 @@ Monitored entities API предлагает следующие новые воз
 
 ## Параметры
 
-Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в [Monitored entities API](/docs/dynatrace-api/environment-api/entity-v2 "Узнайте о Dynatrace Monitored entities API.").
+Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в [Monitored entities API](../../environment-api/entity-v2.md "Узнайте о Dynatrace Monitored entities API.").
 
 ## Изменения в рабочем процессе
 
@@ -57,11 +57,11 @@ Monitored entities API предлагает следующие новые воз
 
 ### Создание пользовательских устройств
 
-В Monitored entities API вы не можете назначить теги пользовательскому устройству при создании. Если вам нужно назначить теги пользовательскому устройству, используйте отдельный запрос к конечной точке [POST custom tags](/docs/dynatrace-api/environment-api/custom-tags/post-tags "Назначение пользовательских тегов отслеживаемым сущностям через Dynatrace API.").
+В Monitored entities API вы не можете назначить теги пользовательскому устройству при создании. Если вам нужно назначить теги пользовательскому устройству, используйте отдельный запрос к конечной точке [POST custom tags](../../environment-api/custom-tags/post-tags.md "Назначение пользовательских тегов отслеживаемым сущностям через Dynatrace API.").
 
 ### Отправка данных на пользовательские устройства
 
-В Monitored entities API вы не можете отправлять данные на пользовательские устройства. Используйте вместо этого вызов [POST ingest data points](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Отправка пользовательских метрик в Dynatrace через Metrics v2 API.").
+В Monitored entities API вы не можете отправлять данные на пользовательские устройства. Используйте вместо этого вызов [POST ingest data points](../../environment-api/metric-v2/post-ingest-metrics.md "Отправка пользовательских метрик в Dynatrace через Metrics v2 API.").
 
 ## Примеры
 
@@ -863,7 +863,7 @@ Monitored entities API
 
 Topology and Smartscape API
 
-В новом Monitored entities API вы можете назначать теги нескольким сущностям одновременно, выбирая их через [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Настройка entity selector для конечных точек Environment API."). В этом примере мы выбираем хосты по их идентификаторам сущностей.
+В новом Monitored entities API вы можете назначать теги нескольким сущностям одновременно, выбирая их через [entity selector](../../environment-api/entity-v2/entity-selector.md "Настройка entity selector для конечных точек Environment API."). В этом примере мы выбираем хосты по их идентификаторам сущностей.
 
 #### URL запроса
 
@@ -1197,5 +1197,5 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/restE
 
 ## Связанные темы
 
-* [Access tokens API](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens "Управление токенами аутентификации Dynatrace API.")
-* [Tokens API v1](/docs/dynatrace-api/environment-api/tokens-v1 "Узнайте, как управлять токенами аутентификации Dynatrace API в вашей среде.")
+* [Access tokens API](../../environment-api/tokens-v2/api-tokens.md "Управление токенами аутентификации Dynatrace API.")
+* [Tokens API v1](../../environment-api/tokens-v1.md "Узнайте, как управлять токенами аутентификации Dynatrace API в вашей среде.")

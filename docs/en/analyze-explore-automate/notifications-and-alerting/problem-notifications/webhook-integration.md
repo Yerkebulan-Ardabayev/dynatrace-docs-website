@@ -42,7 +42,7 @@ To integrate problem-notifications using a custom webhook:
      The **Available placeholders** section of the configuration page lists placeholders you can use for this integration. Placeholders are automatically replaced with problem-related information such as problem state or title.
    * Optional Turn on **Accept any SSL certificate**.
    * Optional Turn on **Call webhook if new events merge into existing problems**.
-   * Assign an [Alerting profile](/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.").
+   * Assign an [Alerting profile](../alerting-profiles.md "Learn how to create and manage alerting profiles.").
 5. Select **Send test notification** to make sure your webhook integration is working.
 6. **Save changes**.
 

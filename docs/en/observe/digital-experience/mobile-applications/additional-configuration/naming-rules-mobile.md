@@ -26,4 +26,4 @@ To create a user action naming rule
 
 ## Related topics
 
-* [User actions](/docs/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")
+* [User actions](../../rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application.")

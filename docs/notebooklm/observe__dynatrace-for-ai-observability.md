@@ -33,11 +33,11 @@ It provides out-of-the-box support for 20+ technologies, including OpenAI, Amazo
 Prerequisites
 
 * ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") **AI Observability** needs to be installed from the platform HUB. Go ahead and install it now!
-* To use ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") **AI Observability**, you need a [DPS license](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") with the following capabilities on your [rate cardï»¿](https://www.dynatrace.com/pricing/):
+* To use ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") **AI Observability**, you need a [DPS license](license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") with the following capabilities on your [rate cardï»¿](https://www.dynatrace.com/pricing/):
 
-  + [Metrics powered by Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
-  + [Traces powered by Grail](/docs/license/capabilities/traces "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.")
-  + [Logs powered by Grail](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.")
+  + [Metrics powered by Grail](../ru/license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+  + [Traces powered by Grail](../ru/license/capabilities/traces.md "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.")
+  + [Logs powered by Grail](../ru/license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.")
 
 Query and sampling cost for AI Observability dashboards
 
@@ -116,7 +116,7 @@ Get a unified view of the operational state of your AI services. **Service Healt
 Filter your results:
 
 * In the sidebar on the left, you can select a specific service category (such as  **Containers** or  **Functions**) or analyze all services. In addition, you can quickly filter by predefined attributes that are relevant for the selected category. Select any attribute in the facets sidebar and select **Update** to get results. The filter field is updated with your selection. This allows you to keep the same scoped context when switching between tabs (**Overview**, **Errors**, **Traffic and Latency**, **Cost**, **Guardrails**).
-* Alternatively, select the filter field at the top to view suggestions and enter filtering options. Add more statements to narrow down the results. Criteria of the same type are grouped by OR logic. Criteria of different types are grouped by AND logic. You can filter services using tags, alert status, and attributes like name or region. This helps you focus on specific subsets of services based on your criteria. For more details on the filter field syntax, see [Filter field](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
+* Alternatively, select the filter field at the top to view suggestions and enter filtering options. Add more statements to narrow down the results. Criteria of the same type are grouped by OR logic. Criteria of different types are grouped by AND logic. You can filter services using tags, alert status, and attributes like name or region. This helps you focus on specific subsets of services based on your criteria. For more details on the filter field syntax, see [Filter field](../ru/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
 * **Overview** tab: See counts for Services, Models, and Agents, plus Model Requests, Token Usage, Average Request Duration, and Overall Cost. Each tile supports drillâdown and alert creation.
 * **Errors** tab: Track success/failure rate, number of problems, invocation error count, error rate over time, HTTP error types (4xx/5xx), and an error trend with forecast. Use the time brush to zoom into a spike and jump to traces.
 * **Traffic and Latency**: Monitor time to response (AVG, p50, p90, p95), response time per model, number of requests, time to first token, and invocation latency. Create alerts for latency regressions.
@@ -132,9 +132,9 @@ Filter your results:
 
 
 * Create new alerts: Select **New alert** on metrics-based tiles (for example, Invocation error count, Invocation latency, Token count, Token usage forecast, Overall guardrail activation). The alert wizard is preâfilled with the current scope (time range, provider/model/service/agent filters) so you can fineâtune thresholds and notifications. Alerts appear in **Manage all alerts** for review and muting.
-* Manage all alerts: Use the **Manage all alerts** action from any tab to review, edit, or mute [custom alerts](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") created from Service Health cards and charts. You can also create a new alert directly from most tiles.
+* Manage all alerts: Use the **Manage all alerts** action from any tab to review, edit, or mute [custom alerts](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.") created from Service Health cards and charts. You can also create a new alert directly from most tiles.
 
-You can find all custom alerts and more information about capabilities and limits in [![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.").
+You can find all custom alerts and more information about capabilities and limits in [![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.").
 
 ### Debug prompts and traces
 
@@ -255,14 +255,14 @@ Kubernetes
 
 OpenTelemetry Collector
 
-Follow the [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes") guide to monitor your cluster.
+Follow the [Set up Dynatrace on Kubernetes](../ru/ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes") guide to monitor your cluster.
 
 Afterwards, add the following annotations to your Kong Deployments:
 
 * `metrics.dynatrace.com/scrape: "true"`
 * `metrics.dynatrace.com/port: "8100"`
 
-Follow the [OpenTelemetry Collector installation guide](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") to deploy a collector.
+Follow the [OpenTelemetry Collector installation guide](../ru/ingest-from/opentelemetry/collector/deployment.md "How to deploy Dynatrace OTel Collector.") to deploy a collector.
 With the following config, the collector will scrape AI LLM metrics every 10 seconds from the `kong-metrics.kong:8100` endpoint.
 
 ```
@@ -505,7 +505,7 @@ scraped: 2026-03-06T21:28:35.685729
 
 OpenTelemetry provides a vendor-neutral standard for collecting traces and metrics from AI applications. With the [GenAI semantic conventionsï»¿](https://opentelemetry.io/docs/specs/semconv/gen-ai/), OpenTelemetry defines a consistent way to capture AI-specific attributes such as model names, token counts, latency, and cost metrics across different LLM providers.
 
-Dynatrace fully supports OpenTelemetry, allowing you to send AI observability data directly to your Dynatrace environment using the [OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). This approach gives you flexibility to use any OpenTelemetry-compatible instrumentation library or build custom instrumentation.
+Dynatrace fully supports OpenTelemetry, allowing you to send AI observability data directly to your Dynatrace environment using the [OTLP API endpoints](../ru/ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). This approach gives you flexibility to use any OpenTelemetry-compatible instrumentation library or build custom instrumentation.
 
 ## Who is this for?
 
@@ -533,10 +533,10 @@ By following this guide, you will learn:
 In order for this to work, you need to have:
 
 * A running AI app or AI demo app.
-* Dynatrace SaaS with a [Dynatrace Platform Subscription (DPS)](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license that has [Traces powered by Grail](/docs/license/capabilities/traces "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model."), [Metrics powered by Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model."), and [Log Analytics](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") enabled.
-* OTLP ingestion enabled, see [OpenTelemetry and Dynatrace](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
+* Dynatrace SaaS with a [Dynatrace Platform Subscription (DPS)](license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license that has [Traces powered by Grail](../ru/license/capabilities/traces.md "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model."), [Metrics powered by Grail](../ru/license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model."), and [Log Analytics](../ru/license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") enabled.
+* OTLP ingestion enabled, see [OpenTelemetry and Dynatrace](../ru/ingest-from/opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
 * An OpenAPI platform API key.
-* A Dynatrace API token the following scopes, see [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+* A Dynatrace API token the following scopes, see [Dynatrace API - Tokens and authentication](../ru/dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
 
   + Ingest metrics (`metrics.ingest`)
   + Ingest logs (`logs.ingest`)
@@ -700,7 +700,7 @@ Node.js
 The OpenTelemetry GenAI semantic conventions standardize the attributes captured for generative AI operations.
 To make sure that your telemetry data follows these conventions, add the following code to your application.
 
-For more information about semantic conventions, see [GenAI semantic conventions](/docs/observe/dynatrace-for-ai-observability/terms-and-concepts#semantic-conventions "Learn how to combine Dynatrace and Traceloop OpenLLMetry to observe an AI/ML model through OpenTelemetry.").
+For more information about semantic conventions, see [GenAI semantic conventions](observe/dynatrace-for-ai-observability/terms-and-concepts.md#semantic-conventions "Learn how to combine Dynatrace and Traceloop OpenLLMetry to observe an AI/ML model through OpenTelemetry.").
 
 Python
 
@@ -838,7 +838,7 @@ span.end();
 
 Now that you've set up your AI app to send observability data directly to Dynatrace, you can:
 
-* Explore the [AI Observability app](/docs/observe/dynatrace-for-ai-observability/ai-observability-app "Use the new AI Observability app to monitor all your AI workloads.") to visualize your AI workloads.
+* Explore the [AI Observability app](../ru/observe/dynatrace-for-ai-observability/ai-observability-app.md "Use the new AI Observability app to monitor all your AI workloads.") to visualize your AI workloads.
 * Check out the [sample applicationsï»¿](https://github.com/dynatrace-oss/dynatrace-ai-agent-instrumentation-examples) for more examples.
 
 ---
@@ -888,7 +888,7 @@ See below for the details of each step.
 
 ### Step 1 Configure Dynatrace
 
-In this step, we create a Dynatrace token and we configure [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to retain the data for 5+ years.
+In this step, we create a Dynatrace token and we configure [OpenPipeline](../ru/platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to retain the data for 5+ years.
 
 #### Create Dynatrace token
 
@@ -1023,7 +1023,7 @@ And that's it! ![Progressive delivery](https://cdn.bfldr.com/B686QPH3/at/r898jzt
 Now you can:
 
 * Fetch all the user/AI interactions, training status, and more on demand.
-* Use [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") or [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") to create data-driven documents for custom analytics on it.
+* Use [Notebooks](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") or [Dashboards](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") to create data-driven documents for custom analytics on it.
 
 ![GenAI Compliance Auditing](https://dt-cdn.net/images/gen-ai-auditing-7680-1f44c8a6bf.png)
 
@@ -1140,9 +1140,9 @@ Dynatrace offers multiple ways of capturing request payload content, such as the
 
 Capturing request payload content with Dynatrace can be achieved by:
 
-* [Logging the information and capture the metrics and trace mapping directly from the log entries.](/docs/observe/dynatrace-for-ai-observability/get-started/sample-use-cases/openai-observability#lplogs "Learn about Dynatrace for OpenAI Observability, how Dynatrace observes OpenAI SaaS services, and much more.")
-* [Sending custom metrics by using the OneAgent metric ingest channel.](/docs/observe/dynatrace-for-ai-observability/get-started/sample-use-cases/openai-observability#lpcustom-metrics "Learn about Dynatrace for OpenAI Observability, how Dynatrace observes OpenAI SaaS services, and much more.")
-* [Capturing parts of the request payload using business events.](/docs/observe/business-observability/bo-event-processing/bo-processing-classic-pipeline "Process business event data in Dynatrace via the classic pipeline.")
+* [Logging the information and capture the metrics and trace mapping directly from the log entries.](../ru/observe/dynatrace-for-ai-observability/get-started/sample-use-cases/openai-observability.md#lplogs "Learn about Dynatrace for OpenAI Observability, how Dynatrace observes OpenAI SaaS services, and much more.")
+* [Sending custom metrics by using the OneAgent metric ingest channel.](../ru/observe/dynatrace-for-ai-observability/get-started/sample-use-cases/openai-observability.md#lpcustom-metrics "Learn about Dynatrace for OpenAI Observability, how Dynatrace observes OpenAI SaaS services, and much more.")
+* [Capturing parts of the request payload using business events.](../ru/observe/business-observability/bo-event-processing/bo-processing-classic-pipeline.md "Process business event data in Dynatrace via the classic pipeline.")
 
 ## Observe OpenAI request cost using logs
 
@@ -1307,9 +1307,9 @@ These getting started guides show you how to instrument your AI application and 
 
 [### OpenLLMetry
 
-Instrument your AI application with OpenLLMetry.](/docs/observe/dynatrace-for-ai-observability/get-started/openllmetry "Use OpenLLMetry to collect observability data from AI applications.")[### OpenTelemetry
+Instrument your AI application with OpenLLMetry.](observe/dynatrace-for-ai-observability/get-started/openllmetry.md "Use OpenLLMetry to collect observability data from AI applications.")[### OpenTelemetry
 
-Instrument your AI application with OpenTelemetry.](/docs/observe/dynatrace-for-ai-observability/get-started/opentelemetry "Use OpenTelemetry and the GenAI semantic conventions to collect observability data from AI applications.")
+Instrument your AI application with OpenTelemetry.](../ru/observe/dynatrace-for-ai-observability/get-started/opentelemetry.md "Use OpenTelemetry and the GenAI semantic conventions to collect observability data from AI applications.")
 
 ---
 
@@ -1367,8 +1367,8 @@ The following attributes are available for GenAI Spans.
 
 ## Related topics
 
-* [Dynatrace OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
-* [About OTLP metrics ingest](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
+* [Dynatrace OTLP API endpoints](../ru/ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
+* [About OTLP metrics ingest](../ru/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
 
 ---
 
@@ -1401,14 +1401,14 @@ Kubernetes
 
 OpenTelemetry Collector
 
-Follow the [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes") guide to monitor your cluster.
+Follow the [Set up Dynatrace on Kubernetes](../ru/ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes") guide to monitor your cluster.
 
 Afterwards, add the following annotations to your NVIDIA NIM deployments:
 
 * `metrics.dynatrace.com/scrape: "true"`
 * `metrics.dynatrace.com/port: "8000"`
 
-Follow the [OpenTelemetry Collector installation guide](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") to deploy a collector.
+Follow the [OpenTelemetry Collector installation guide](../ru/ingest-from/opentelemetry/collector/deployment.md "How to deploy Dynatrace OTel Collector.") to deploy a collector.
 With the following config, the collector will scrape AI metrics every 10 seconds from the `<NIM-endpoint>:8000` endpoint.
 
 ```
@@ -1577,8 +1577,8 @@ Additionally, the following metrics are reported.
 
 ## Related topics
 
-* [Dynatrace OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
-* [About OTLP metrics ingest](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
+* [Dynatrace OTLP API endpoints](../ru/ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
+* [About OTLP metrics ingest](../ru/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
 
 ---
 
@@ -1626,9 +1626,9 @@ The following attributes are available for GenAI Spans.
 
 ## Related topics
 
-* [Dynatrace OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
-* [About OTLP metrics ingest](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
-* [Observability of Retrieval-Augmented Generation pipelines](/docs/observe/dynatrace-for-ai-observability/sample-use-cases/self-service-ai-observability-tutorial "Learn how to use Dynatrace to have deep insights into your RAG pipelines.")
+* [Dynatrace OTLP API endpoints](../ru/ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
+* [About OTLP metrics ingest](../ru/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
+* [Observability of Retrieval-Augmented Generation pipelines](observe/dynatrace-for-ai-observability/sample-use-cases/self-service-ai-observability-tutorial.md "Learn how to use Dynatrace to have deep insights into your RAG pipelines.")
 
 ---
 
@@ -1692,8 +1692,8 @@ The following attributes are available for GenAI Spans.
 
 ## Related topics
 
-* [Dynatrace OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
-* [About OTLP metrics ingest](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
+* [Dynatrace OTLP API endpoints](../ru/ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
+* [About OTLP metrics ingest](../ru/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
 
 ---
 
@@ -2127,9 +2127,9 @@ The following attributes are available for GenAI Spans.
 
 ## Related topics
 
-* [Dynatrace OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
-* [About OTLP metrics ingest](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
-* [Observability of Retrieval-Augmented Generation pipelines](/docs/observe/dynatrace-for-ai-observability/sample-use-cases/self-service-ai-observability-tutorial "Learn how to use Dynatrace to have deep insights into your RAG pipelines.")
+* [Dynatrace OTLP API endpoints](../ru/ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
+* [About OTLP metrics ingest](../ru/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
+* [Observability of Retrieval-Augmented Generation pipelines](observe/dynatrace-for-ai-observability/sample-use-cases/self-service-ai-observability-tutorial.md "Learn how to use Dynatrace to have deep insights into your RAG pipelines.")
 
 ---
 
@@ -2178,7 +2178,7 @@ See below for the details of each step.
 
 ### Step 1 Configure Dynatrace
 
-In this step, we create a Dynatrace token and we configure [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to retain the data for 5+ years.
+In this step, we create a Dynatrace token and we configure [OpenPipeline](../ru/platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to retain the data for 5+ years.
 
 #### Create Dynatrace token
 
@@ -2313,7 +2313,7 @@ And that's it! ![Progressive delivery](https://cdn.bfldr.com/B686QPH3/at/r898jzt
 Now you can:
 
 * Fetch all the user/AI interactions, training status, and more on demand.
-* Use [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") or [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") to create data-driven documents for custom analytics on it.
+* Use [Notebooks](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") or [Dashboards](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") to create data-driven documents for custom analytics on it.
 
 ![GenAI Compliance Auditing](https://dt-cdn.net/images/gen-ai-auditing-7680-1f44c8a6bf.png)
 
@@ -2365,7 +2365,7 @@ In the sample, you:
 2. Point `api_endpoint` to your Dynatrace OTLP endpoint.
 3. Authenticate with a Dynatrace API token (the sample reads it from `/etc/secrets/dynatrace_otel`).
 
-For more configuration options, see the [Get started with AI Observability](/docs/observe/dynatrace-for-ai-observability/get-started "Get started with OpenLLMetry and OpenTelemetry for AI Observability.") guide.
+For more configuration options, see the [Get started with AI Observability](../ru/observe/dynatrace-for-ai-observability/get-started.md "Get started with OpenLLMetry and OpenTelemetry for AI Observability.") guide.
 
 ### Run the sample
 
@@ -2577,7 +2577,7 @@ Get a holistic view of the AI-generated parts of your system such as LLM, vector
 
 Dynatrace unifies metrics, logs, traces, problem analytics, and root cause information in dashboards and notebooks, providing a single operational view of your AI-powered cloud applications end-to-end.
 
-Use Dynatrace with [Traceloop OpenLLMetry](/docs/observe/dynatrace-for-ai-observability/get-started "Get started with OpenLLMetry and OpenTelemetry for AI Observability.") or [OpenTelemetry with GenAI semantic conventionsï»¿](https://opentelemetry.io/docs/specs/semconv/gen-ai/) to gain detailed insights into your generative AI stack.
+Use Dynatrace with [Traceloop OpenLLMetry](../ru/observe/dynatrace-for-ai-observability/get-started.md "Get started with OpenLLMetry and OpenTelemetry for AI Observability.") or [OpenTelemetry with GenAI semantic conventionsï»¿](https://opentelemetry.io/docs/specs/semconv/gen-ai/) to gain detailed insights into your generative AI stack.
 
 ![Full AI/ML observability with Dynatrace](https://dt-cdn.net/images/ai-obs-tech-stack-latest-1892-88a8b44f2c.png)
 
@@ -2621,7 +2621,7 @@ Dynatrace integrates with workloads such as OpenAI Agent SDK, LangChain/LangGrap
 
 ### Observing model providers and platforms
 
-Dynatrace integrates with providers such as [OpenAI](/docs/observe/dynatrace-for-ai-observability/models-and-platforms/openai "OpenAI observability"), [Amazon Bedrock](/docs/observe/dynatrace-for-ai-observability/models-and-platforms/bedrock "Bedrock observability"), [NVIDIA NIM](/docs/observe/dynatrace-for-ai-observability/models-and-platforms/nvidia-nim "NVIDIA NIM observability"), [Ollama](/docs/observe/dynatrace-for-ai-observability/models-and-platforms/ollama "Ollama observability") to monitor performance (token consumption, latency, availability, and errors) at scale.
+Dynatrace integrates with providers such as [OpenAI](../ru/observe/dynatrace-for-ai-observability/models-and-platforms/openai.md "OpenAI observability"), [Amazon Bedrock](../ru/observe/dynatrace-for-ai-observability/models-and-platforms/bedrock.md "Bedrock observability"), [NVIDIA NIM](../ru/observe/dynatrace-for-ai-observability/models-and-platforms/nvidia-nim.md "NVIDIA NIM observability"), [Ollama](../ru/observe/dynatrace-for-ai-observability/models-and-platforms/ollama.md "Ollama observability") to monitor performance (token consumption, latency, availability, and errors) at scale.
 
 ### Observing semantic caches and vector databases
 
@@ -2629,11 +2629,11 @@ Vector databases and semantic caches are central to RAG architectures. Dynatrace
 
 ### Observing orchestration frameworks
 
-Frameworks like [LangChain](/docs/observe/dynatrace-for-ai-observability/orchestration-frameworks/langchain "LangChain observability") manage data ingestion and prompt engineering for RAG applications. Dynatrace ensures you can track performance, versions, and degradation points in these pipelines.
+Frameworks like [LangChain](../ru/observe/dynatrace-for-ai-observability/orchestration-frameworks/langchain.md "LangChain observability") manage data ingestion and prompt engineering for RAG applications. Dynatrace ensures you can track performance, versions, and degradation points in these pipelines.
 
 ### Observing infrastructure and resources
 
-Monitor infrastructure usage (GPU/TPU metrics, temperature, memory, etc.) for cloud services such as [Amazon Elastic Inference](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elastic-inference "Monitor Amazon Elastic Inference and view available metrics.") and [Google TPU](/docs/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace."), or custom hardware like [NVIDIA GPUï»¿](https://www.dynatrace.com/hub/detail/nvidia-gpu). This helps optimize resources and supports sustainability initiatives.
+Monitor infrastructure usage (GPU/TPU metrics, temperature, memory, etc.) for cloud services such as [Amazon Elastic Inference](../ru/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elastic-inference.md "Monitor Amazon Elastic Inference and view available metrics.") and [Google TPU](../ru/ingest-from/google-cloud-platform.md "Monitor Google Cloud with Dynatrace."), or custom hardware like [NVIDIA GPUï»¿](https://www.dynatrace.com/hub/detail/nvidia-gpu). This helps optimize resources and supports sustainability initiatives.
 
 An overview of all of our integrations can be found on our [Dynatrace Hub pageï»¿](https://www.dynatrace.com/hub/?filter=ai-ml-observability)
 
@@ -2641,7 +2641,7 @@ An overview of all of our integrations can be found on our [Dynatrace Hub pageï
 
 Dynatrace, a software intelligence company, has implemented its own AI observability solution to monitor, analyze, and visualize the internal states, inputs, and outputs of its own AI models.
 
-The example below shows one of many self-monitoring dashboards that Dynatrace data scientists use to observe the operation of [Dynatrace Intelligence](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.") across all monitoring environments.
+The example below shows one of many self-monitoring dashboards that Dynatrace data scientists use to observe the operation of [Dynatrace Intelligence](dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence.") across all monitoring environments.
 
 ![An example of an anomaly detection self-monitoring dashboard.](https://dt-cdn.net/images/dashboards-self-monitoring-model-statistics-1818-c5c0a57141.png)
 

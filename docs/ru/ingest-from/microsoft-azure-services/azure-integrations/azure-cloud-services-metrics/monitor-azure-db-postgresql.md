@@ -22,9 +22,9 @@ scraped: 2026-03-06T21:25:58.699675
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Включение мониторинга Azure в Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](../azure-monitoring-guide/azure-enable-service-monitoring.md "Включение мониторинга Azure в Dynatrace.").
 
-Дополнительно, для интеграции с OneAgent, см. [как осуществляется мониторинг активности базы данных](/docs/observe/infrastructure-observability/databases/database-services-classic/how-database-activity-is-monitored "Узнайте об автоматическом обнаружении и мониторинге сервисов баз данных в вашей прикладной среде.").
+Дополнительно, для интеграции с OneAgent, см. [как осуществляется мониторинг активности базы данных](../../../../observe/infrastructure-observability/databases/database-services-classic/how-database-activity-is-monitored.md "Узнайте об автоматическом обнаружении и мониторинге сервисов баз данных в вашей прикладной среде.").
 
 ## Просмотр метрик сервиса
 
@@ -58,7 +58,7 @@ scraped: 2026-03-06T21:25:58.699675
 
 ### Настройка зоны управления
 
-Чтобы импортировать дашборд для Azure Database for PostgreSQL, необходимо [настроить зону управления](/docs/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Создание и назначение прав доступа для зон управления."), чтобы ограничить отображаемые на дашборде сущности только теми, которые относятся к данному сервису.
+Чтобы импортировать дашборд для Azure Database for PostgreSQL, необходимо [настроить зону управления](../../../../manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Создание и назначение прав доступа для зон управления."), чтобы ограничить отображаемые на дашборде сущности только теми, которые относятся к данному сервису.
 
 При создании зоны управления для этого дашборда:
 
@@ -74,7 +74,7 @@ scraped: 2026-03-06T21:25:58.699675
 
 Вы можете проверить, требует ли дашборд зоны управления, в настройках правил.
 
-После создания зоны управления назначьте её вашему дашборду (из дашборда выберите **Edit** > **Settings** > **Default management zone**). Для получения дополнительной информации см. [Временной диапазон и зона управления дашборда](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Узнайте о настройках временного диапазона и зоны управления дашбордов Dynatrace.").
+После создания зоны управления назначьте её вашему дашборду (из дашборда выберите **Edit** > **Settings** > **Default management zone**). Для получения дополнительной информации см. [Временной диапазон и зона управления дашборда](../../../../analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe.md "Узнайте о настройках временного диапазона и зоны управления дашбордов Dynatrace.").
 
 ## Доступные метрики
 

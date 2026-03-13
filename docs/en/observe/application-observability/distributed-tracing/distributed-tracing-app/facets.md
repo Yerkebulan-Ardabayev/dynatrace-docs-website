@@ -19,7 +19,7 @@ This article contains information on how to manage your facets to correspond to 
 
 Prerequisites
 
-* [Set up Grail permissions for Distributed Tracing](/docs/observe/application-observability/distributed-tracing/permissions "Manage permissions for Distributed Tracing powered by Grail.").
+* [Set up Grail permissions for Distributed Tracing](../permissions.md "Manage permissions for Distributed Tracing powered by Grail.").
 
 ## Manage all facets
 

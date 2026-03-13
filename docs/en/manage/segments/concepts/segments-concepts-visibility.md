@@ -30,4 +30,4 @@ It is important to understand that the **Visibility** setting doesn't affect gen
 
 Regardless of configured visibility, any segment can be accessed with `storage:filter-segments:read` permission. This guarantees that even unlisted segments that may be referenced in a shared notebook, can be used by anyone having access to that notebook.
 
-For more information on segment permissons see [IAM policy statements](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#storage-filter-segments-read "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+For more information on segment permissons see [IAM policy statements](../../identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#storage-filter-segments-read "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").

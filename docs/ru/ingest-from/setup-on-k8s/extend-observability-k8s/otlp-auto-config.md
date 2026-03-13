@@ -19,7 +19,7 @@ Dynatrace Operator может автоматически настраивать 
 
 ### Предоставление токена для загрузки данных
 
-Вам необходимо предоставить [токен для загрузки данных](/docs/ingest-from/setup-on-k8s/deployment/tokens-permissions#dataIngestToken "Настройте токены и разрешения для мониторинга вашего кластера Kubernetes") для Dynatrace Operator. Этот токен передаётся вашему приложению как часть конфигурации экспортёра OTLP.
+Вам необходимо предоставить [токен для загрузки данных](../deployment/tokens-permissions.md#dataIngestToken "Настройте токены и разрешения для мониторинга вашего кластера Kubernetes") для Dynatrace Operator. Этот токен передаётся вашему приложению как часть конфигурации экспортёра OTLP.
 
 ### Обновление ресурса DynaKube
 
@@ -132,7 +132,7 @@ Dynatrace Operator добавляет атрибуты ресурсов в `OTEL
 * `dt.kubernetes.cluster.id`
 * `dt.entity.kubernetes_cluster`
 
-Значения для этих атрибутов получаются из метаданных кластера и подов. Кроме того, применяются [правила обогащения метаданными](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment#enrichment-options "Руководства по обогащению телеметрии в Kubernetes"), определённые в вашем тенанте, для дополнительного улучшения атрибутов ресурсов. Также все метаданные, предоставленные в аннотациях `metadata.dynatrace.com/<key>: <value>` на пространстве имён или на внедрённом поде, добавляются как атрибуты ресурсов.
+Значения для этих атрибутов получаются из метаданных кластера и подов. Кроме того, применяются [правила обогащения метаданными](../guides/metadata-automation/k8s-metadata-telemetry-enrichment.md#enrichment-options "Руководства по обогащению телеметрии в Kubernetes"), определённые в вашем тенанте, для дополнительного улучшения атрибутов ресурсов. Также все метаданные, предоставленные в аннотациях `metadata.dynatrace.com/<key>: <value>` на пространстве имён или на внедрённом поде, добавляются как атрибуты ресурсов.
 
 Любые атрибуты, которые вы уже установили в `OTEL_RESOURCE_ATTRIBUTES`, сохраняются, а вышеуказанные атрибуты добавляются к ним.
 
@@ -627,4 +627,4 @@ feature.dynatrace.com/otlp-exporter-configuration-set-no-proxy: "false"
 
 ## Связанные темы
 
-* [Параметры DynaKube для Dynatrace Operator](/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters "Список доступных параметров для настройки Dynatrace Operator в Kubernetes.")
+* [Параметры DynaKube для Dynatrace Operator](../reference/dynakube-parameters.md "Список доступных параметров для настройки Dynatrace Operator в Kubernetes.")

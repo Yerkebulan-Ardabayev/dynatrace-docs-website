@@ -20,7 +20,7 @@ to support each Go version at least half a year longer so that you have enough t
 
 ### Official [Golang toolchainï»¿](https://dt-url.net/go)
 
-| Go version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/docs/ingest-from/technology-support#support-levels) |
+| Go version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](../../../../technology-support.md#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1.25 | 2025-08-12 | 2026-08-12 | 1.325 | - | 2027-08-12 | Supported |
 | 1.24 | 2025-02-11 | 2026-02-11 | 1.311 | - | 2027-02-11 | Supported |
@@ -34,7 +34,7 @@ Prerequisites
 
   To enable the feature, go to **Settings** > **Preferences** > **OneAgent features** and turn on **Go FIPS**.
 
-| Go version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/docs/ingest-from/technology-support#support-levels) |
+| Go version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](../../../../technology-support.md#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1.25.3 | 2025-08-12 | 2026-08-12 | 1.331 | - | 2027-08-12 | Supported |
 | 1.24.6 | 2025-02-11 | 2026-02-11 | 1.325 | - | 2027-02-11 | Supported |

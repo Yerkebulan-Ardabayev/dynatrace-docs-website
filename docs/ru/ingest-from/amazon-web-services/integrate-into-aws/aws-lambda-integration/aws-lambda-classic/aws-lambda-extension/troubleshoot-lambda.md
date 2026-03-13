@@ -13,7 +13,7 @@ scraped: 2026-03-04T21:30:20.410674
 * 1-min read
 * Published Aug 30, 2021
 
-Этот раздел посвящён классической интеграции AWS Lambda. Ознакомьтесь с разделом [Трассировка функций Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/trace-lambda-functions "Monitor AWS Lambda functions.") для получения актуальных сведений.
+Этот раздел посвящён классической интеграции AWS Lambda. Ознакомьтесь с разделом [Трассировка функций Lambda](../../trace-lambda-functions.md "Monitor AWS Lambda functions.") для получения актуальных сведений.
 
 Для устранения проблем с интеграцией расширения Dynatrace AWS Lambda начните с анализа журналов и сообщений об ошибках.
 
@@ -67,7 +67,7 @@ OneAgent не включит совместимость с OpenTelemetry, есл
 [Dynatrace] 2022-07-27 08:55:01.852 UTC [9-dfaf4836] INFO    [dynatrace.inject.agent] opentelemetry-api version (1.10.0) is not compatible with Dynatrace SDK (1.9.1).
 ```
 
-Можно переопределить проверку совместимости через конфигурацию. Например, при настройке OneAgent с использованием [переменных среды](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension#lambda-cfg-method "Monitor Lambda functions written in Python, Node.js, and Java.") добавьте:
+Можно переопределить проверку совместимости через конфигурацию. Например, при настройке OneAgent с использованием [переменных среды](../aws-lambda-extension.md#lambda-cfg-method "Monitor Lambda functions written in Python, Node.js, and Java.") добавьте:
 
 `DT_OPEN_TELEMETRY_OVERRIDE_MAX_API_VERSION=1.11.1`
 

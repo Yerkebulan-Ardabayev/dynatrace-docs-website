@@ -15,8 +15,8 @@ scraped: 2026-03-06T21:25:45.312965
 
 The metric selector is a powerful instrument for specifying which data you want to read for the metric event evaluation. It provides you with two major possibilities:
 
-* [Metric transformations](/docs/dynatrace-api/environment-api/metric-v2/metric-selector "Configure the metric selector for the Metric v2 API.") for transforming the data you're reading.
-* [Metric expressions](/docs/dynatrace-api/environment-api/metric-v2/metric-expressions "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.") for combining one or more metrics into a different result using simple mathematics.
+* [Metric transformations](../../../dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API.") for transforming the data you're reading.
+* [Metric expressions](../../../dynatrace-api/environment-api/metric-v2/metric-expressions.md "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.") for combining one or more metrics into a different result using simple mathematics.
 
 With the metric selector, Davis can access the historic data of the metric and can learn the normal behavior of your environment, enabling you to use auto-adaptive thresholds in your metric event. However, some limitations apply:
 
@@ -28,7 +28,7 @@ With the metric selector, Davis can access the historic data of the metric and c
 
 ## Scope of metric selector events
 
-The selector itself defines the scope of a metric selector event. It is important to understand the implications when configuring a selector consisting of measurements from thousands of individual sources. Dynatrace applies safety limits to anomaly detection in terms of the number of metric dimensions that can be observed within one monitoring environment to avoid any operational issues. To learn how to narrow down the scope of your configuration, see [**Filter transformation**](/docs/dynatrace-api/environment-api/metric-v2/metric-selector#filter "Configure the metric selector for the Metric v2 API.").
+The selector itself defines the scope of a metric selector event. It is important to understand the implications when configuring a selector consisting of measurements from thousands of individual sources. Dynatrace applies safety limits to anomaly detection in terms of the number of metric dimensions that can be observed within one monitoring environment to avoid any operational issues. To learn how to narrow down the scope of your configuration, see [**Filter transformation**](../../../dynatrace-api/environment-api/metric-v2/metric-selector.md#filter "Configure the metric selector for the Metric v2 API.").
 
 ![Metric selector example](https://dt-cdn.net/images/metric-selector-example-1296-84f54644de.png)
 
@@ -58,10 +58,10 @@ If there are sparse counts across many entities (for example, an error count acr
       * Static thresholdâthe threshold that doesn't change over time.
       * Seasonal BaselineâDynatrace creates a confidence band on a metric with seasonal patterns
    2. For the static threshold, specify the threshold. Select **Use suggested threshold** to use a value based on the previous data.
-   3. Choose the [missing data alert](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#missing-data "How to set up an alert for missing measurements.") behavior.  
+   3. Choose the [missing data alert](../anomaly-detection-configuration.md#missing-data "How to set up an alert for missing measurements.") behavior.  
       If the missing data alert is enabled, it is combined with the threshold condition by the **OR** logic.
    4. Select the alert condition: alert if the metric is above, below, or outside of the threshold.
-   5. Optional In the **Advanced model properties** section, specify a [sliding window](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#sliding-window "How to set up an alert for missing measurements.") for comparison.  
+   5. Optional In the **Advanced model properties** section, specify a [sliding window](../anomaly-detection-configuration.md#sliding-window "How to set up an alert for missing measurements.") for comparison.  
       The sliding window defines how often the thresholdâwhether it is automatically calculated or manually specifiedâmust be violated within a sliding window of time to raise an event (violations don't have to be successive). This helps you to avoid overly aggressive alerting on single violations. You can set a sliding window of up to 60 minutes.
 7. Check the preview for your alert and evaluate the effectiveness of your configuration.
 
@@ -72,7 +72,7 @@ If there are sparse counts across many entities (for example, an error count acr
 
    * `{alert_condition}`âthe condition of the alert (above/below the threshold).
    * `{baseline}`âthe violated value of the baseline.
-   * `{dims}`âa list of all dimensions (and their values) of the metric that violated the threshold. You can also specify a particular dimension: `{dims:dt.entity.<entity>}`. To fetch the list of available dimensions for your metric, query it via the [GET metric descriptor](/docs/dynatrace-api/environment-api/metric-v2/get-descriptor "View the descriptor of a metric via Metrics v2 API.") request.
+   * `{dims}`âa list of all dimensions (and their values) of the metric that violated the threshold. You can also specify a particular dimension: `{dims:dt.entity.<entity>}`. To fetch the list of available dimensions for your metric, query it via the [GET metric descriptor](../../../dynatrace-api/environment-api/metric-v2/get-descriptor.md "View the descriptor of a metric via Metrics v2 API.") request.
    * `{entityname}`âthe name of the affected entity.
    * `{metricname}`âthe name of the metric that violated the threshold.
    * `{missing_data_samples}`âthe number of samples with missing data. Only available if missing data alert is enabled.
@@ -90,6 +90,6 @@ If there are sparse counts across many entities (for example, an error count acr
 
 ## Related topics
 
-* [Metrics API - Metric selector](/docs/dynatrace-api/environment-api/metric-v2/metric-selector "Configure the metric selector for the Metric v2 API.")
-* [Metrics API - Metric expressions](/docs/dynatrace-api/environment-api/metric-v2/metric-expressions "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.")
-* [Metrics Classic](/docs/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.")
+* [Metrics API - Metric selector](../../../dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API.")
+* [Metrics API - Metric expressions](../../../dynatrace-api/environment-api/metric-v2/metric-expressions.md "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.")
+* [Metrics Classic](../../../analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")

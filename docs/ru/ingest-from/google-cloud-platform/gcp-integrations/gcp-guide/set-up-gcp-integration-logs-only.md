@@ -15,18 +15,18 @@ scraped: 2026-03-05T21:37:05.026071
 
 Dynatrace версии 1.230+
 
-В качестве альтернативы [основному развёртыванию](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Настройка мониторинга логов и метрик для сервисов GCP на новом кластере GKE Autopilot."), которое обеспечивает мониторинг Google Cloud как для метрик, так и для логов, вы можете настроить мониторинг только логов. В этом сценарии вы запустите скрипт развёртывания в Google Cloud Shell. Инструкции зависят от того, где вы хотите запустить скрипт развёртывания:
+В качестве альтернативы [основному развёртыванию](deploy-k8.md "Настройка мониторинга логов и метрик для сервисов GCP на новом кластере GKE Autopilot."), которое обеспечивает мониторинг Google Cloud как для метрик, так и для логов, вы можете настроить мониторинг только логов. В этом сценарии вы запустите скрипт развёртывания в Google Cloud Shell. Инструкции зависят от того, где вы хотите запустить скрипт развёртывания:
 
 * На новом кластере GKE Autopilot, создаваемом автоматически Рекомендуется
 * На существующем стандартном кластере GKE или кластере GKE Autopilot
 
 Во время настройки будет создана новая подписка Pub/Sub. GKE запустит контейнер для пересылки логов. После установки вы получите логи, дашборды и оповещения для настроенных сервисов в Dynatrace.
 
-Другие варианты развёртывания описаны в разделе [Альтернативные сценарии развёртывания](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide "Другие варианты настройки мониторинга логов и/или метрик для сервисов Google Cloud").
+Другие варианты развёртывания описаны в разделе [Альтернативные сценарии развёртывания](../gcp-guide.md "Другие варианты настройки мониторинга логов и/или метрик для сервисов Google Cloud").
 
 На этой странице описана установка версии 1.0 интеграции с Google Cloud на кластере GKE.
 
-* Если у вас уже установлена [более ранняя версия](/docs/ingest-from/google-cloud-platform/legacy/deployment-k8s-container-legacy "Настройка мониторинга логов и метрик для сервисов GCP в контейнере Kubernetes."), необходимо выполнить [миграцию](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function "Миграция с версии 0.1 интеграции Google Cloud на версию 1.0 для Kubernetes и Google Cloud Function.").
+* Если у вас уже установлена [более ранняя версия](../../legacy/deployment-k8s-container-legacy.md "Настройка мониторинга логов и метрик для сервисов GCP в контейнере Kubernetes."), необходимо выполнить [миграцию](migrate-gcp-function.md "Миграция с версии 0.1 интеграции Google Cloud на версию 1.0 для Kubernetes и Google Cloud Function.").
 
 ## Ограничения
 
@@ -309,14 +309,14 @@ chmod +x deploy-pubsub.sh
 
 ### Разрешения Dynatrace
 
-* [Создайте API-токен](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Узнайте о концепции токена доступа и его областях действия.") и [включите следующее разрешение](/docs/dynatrace-api/basics/dynatrace-api-authentication#token-permissions "Узнайте, как пройти аутентификацию для использования Dynatrace API."): **Ingest logs** (API v2).
+* [Создайте API-токен](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Узнайте о концепции токена доступа и его областях действия.") и [включите следующее разрешение](../../../../dynatrace-api/basics/dynatrace-api-authentication.md#token-permissions "Узнайте, как пройти аутентификацию для использования Dynatrace API."): **Ingest logs** (API v2).
 
 ### Загрузка логов
 
 * Определите, где будет выполняться загрузка логов, в зависимости от вашего развёртывания. Это различие важно при настройке [параметров](#param) для данной интеграции.
 
   + **Для SaaS-развёртываний:** загрузка логов SaaS, при которой загрузка логов выполняется напрямую через Cluster API. Рекомендуется
-  + **Для Managed-развёртываний:** вы можете использовать существующий ActiveGate для загрузки логов. Информацию о развёртывании см. в разделе [Установка ActiveGate](/docs/ingest-from/dynatrace-activegate/installation "Узнайте, как настроить ActiveGate").
+  + **Для Managed-развёртываний:** вы можете использовать существующий ActiveGate для загрузки логов. Информацию о развёртывании см. в разделе [Установка ActiveGate](../../../dynatrace-activegate/installation.md "Узнайте, как настроить ActiveGate").
 
 Из-за реализации GCP Cloud Function 2-го поколения, логи этих ресурсов будут связаны с базовыми экземплярами Cloud Run. Оба расширения должны быть включены.
 
@@ -328,13 +328,13 @@ chmod +x deploy-pubsub.sh
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Скачайте пакет развёртывания Helm в Google Cloud Shell**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-logs-only#dwld "Настройка мониторинга логов для сервисов Google Cloud в контейнере Kubernetes (GKE).")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Скачайте пакет развёртывания Helm в Google Cloud Shell**](set-up-gcp-integration-logs-only.md#dwld "Настройка мониторинга логов для сервисов Google Cloud в контейнере Kubernetes (GKE).")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Настройте значения параметров**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-logs-only#param "Настройка мониторинга логов для сервисов Google Cloud в контейнере Kubernetes (GKE).")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Настройте значения параметров**](set-up-gcp-integration-logs-only.md#param "Настройка мониторинга логов для сервисов Google Cloud в контейнере Kubernetes (GKE).")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Подключите ваш кластер Kubernetes**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-logs-only#connect "Настройка мониторинга логов для сервисов Google Cloud в контейнере Kubernetes (GKE).")[![Шаг 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Шаг 4")
+**Подключите ваш кластер Kubernetes**](set-up-gcp-integration-logs-only.md#connect "Настройка мониторинга логов для сервисов Google Cloud в контейнере Kubernetes (GKE).")[![Шаг 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Шаг 4")
 
-**Запустите скрипт развёртывания**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-logs-only#script "Настройка мониторинга логов для сервисов Google Cloud в контейнере Kubernetes (GKE).")
+**Запустите скрипт развёртывания**](set-up-gcp-integration-logs-only.md#script "Настройка мониторинга логов для сервисов Google Cloud в контейнере Kubernetes (GKE).")
 
 ### Шаг 1 Скачайте пакет развёртывания Helm в Google Cloud Shell
 
@@ -542,7 +542,7 @@ kubectl -n dynatrace logs -l app=dynatrace-gcp-monitor -c dynatrace-gcp-monitor-
 Для исследования потенциальных проблем развёртывания и подключения
 
 1. [Проверьте установку](#verify)
-2. [Включите самомониторинг](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp "Определите, правильно ли функция самомониторинга обрабатывает и отправляет логи в Dynatrace.") Необязательно
+2. [Включите самомониторинг](deploy-k8/self-monitoring-gcp.md "Определите, правильно ли функция самомониторинга обрабатывает и отправляет логи в Dynatrace.") Необязательно
 3. Проверьте лог-файл `dynatrace_gcp_<date_time>.log`, созданный в процессе установки.
 
 * Этот файл создаётся при каждом запуске скрипта установки.
@@ -553,7 +553,7 @@ kubectl -n dynatrace logs -l app=dynatrace-gcp-monitor -c dynatrace-gcp-monitor-
   + Предоставьте информацию о версии.
 
     - При проблемах во время установки проверьте файл `version.txt`.
-    - При проблемах во время выполнения [проверьте логи контейнера](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp "Определите, правильно ли функция самомониторинга обрабатывает и отправляет логи в Dynatrace.").
+    - При проблемах во время выполнения [проверьте логи контейнера](deploy-k8/self-monitoring-gcp.md "Определите, правильно ли функция самомониторинга обрабатывает и отправляет логи в Dynatrace.").
 
 ## Руководство по масштабированию для логов
 
@@ -614,9 +614,9 @@ kubectl delete namespace dynatrace
 
 ## Потребление мониторинга
 
-Потребление DDU применяется к облачному мониторингу логов. Подробности см. в разделе [DDU для мониторинга логов](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Узнайте, как рассчитывается объём потребления DDU для Dynatrace Log Monitoring Classic.").
+Потребление DDU применяется к облачному мониторингу логов. Подробности см. в разделе [DDU для мониторинга логов](../../../../license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Узнайте, как рассчитывается объём потребления DDU для Dynatrace Log Monitoring Classic.").
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Google Cloud](/docs/ingest-from/google-cloud-platform "Мониторинг Google Cloud с помощью Dynatrace.")
+* [Настройка Dynatrace в Google Cloud](../../../google-cloud-platform.md "Мониторинг Google Cloud с помощью Dynatrace.")
 * [Устранение неполадок Google Cloud Monitor](https://community.dynatrace.com/t5/Troubleshooting/Google-Cloud-Monitor-Troubleshooting/ta-p/243796)

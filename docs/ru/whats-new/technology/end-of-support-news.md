@@ -19,7 +19,7 @@ Dynatrace Operator
 
 ## Dynatrace OneAgent
 
-Dynatrace, как правило, поддерживает технологии и их версии на шесть месяцев дольше, чем вендор, чтобы дать вам достаточно времени для обновления вашей среды. [Среды выполнения](/docs/ingest-from/technology-support/application-software "Discover what runtimes can be monitored with Dynatrace.") могут иметь расширенный жизненный цикл поддержки.
+Dynatrace, как правило, поддерживает технологии и их версии на шесть месяцев дольше, чем вендор, чтобы дать вам достаточно времени для обновления вашей среды. [Среды выполнения](../../ingest-from/technology-support/application-software.md "Discover what runtimes can be monitored with Dynatrace.") могут иметь расширенный жизненный цикл поддержки.
 
 Объявления об окончании поддержки публикуются за шесть месяцев до его наступления.
 
@@ -184,7 +184,7 @@ For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability 
 
 ### 2025-12-31 Окончание поддержки
 
-* x86\_64-v1 CPU microarchitecture. For details, see [Minimum Supported Microarchitecture Level: x86-64-v2](/docs/ingest-from/dynatrace-oneagent/oa-requirements#minimum-supported-microarchitecture-level-x86-64-v2 "OneAgent code module requirements")
+* x86\_64-v1 CPU microarchitecture. For details, see [Minimum Supported Microarchitecture Level: x86-64-v2](../../ingest-from/dynatrace-oneagent/oa-requirements.md#minimum-supported-microarchitecture-level-x86-64-v2 "OneAgent code module requirements")
 * Node.js 23
 
   + Дата окончания поддержки вендором: 2025-06-01
@@ -803,7 +803,7 @@ Ubuntu 21.10 (модуль ОС)
 
 Для Red Hat/Oracle Linux/Rocky Linux 8 не выходят новые версии Chromium выше версии 133. По важным соображениям безопасности и стабильности мы приняли решение прекратить поддержку установки **Synthetic-enabled** ActiveGate на Red Hat/Oracle Linux/Rocky Linux 8 начиная с версии ActiveGate 1.325.
 
-Для обеспечения непрерывности и безопасности синтетических мониторов рекомендуем перенести Synthetic-enabled ActiveGate на одну из [поддерживаемых операционных систем](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic#linux-supported-os "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations"), например Red Hat/Oracle Linux/Rocky Linux 9.
+Для обеспечения непрерывности и безопасности синтетических мониторов рекомендуем перенести Synthetic-enabled ActiveGate на одну из [поддерживаемых операционных систем](../../observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic.md#linux-supported-os "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations"), например Red Hat/Oracle Linux/Rocky Linux 9.
 
 Версия ActiveGate 1.325 — **последняя версия Synthetic-enabled** ActiveGate, поддерживаемая на Red Hat/Oracle Linux/Rocky Linux 8.
 

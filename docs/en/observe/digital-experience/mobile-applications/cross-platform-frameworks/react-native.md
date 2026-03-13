@@ -21,11 +21,11 @@ Follow the steps below to set up the Dynatrace React Native plugin for your mobi
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Create a mobile application in Dynatrace**](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/react-native#create-app-in-ui "Auto-instrument your React Native applications with OneAgent.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Create a mobile application in Dynatrace**](react-native.md#create-app-in-ui "Auto-instrument your React Native applications with OneAgent.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Set up React Native plugin**](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/react-native#set-up-plugin "Auto-instrument your React Native applications with OneAgent.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Set up React Native plugin**](react-native.md#set-up-plugin "Auto-instrument your React Native applications with OneAgent.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Build and run your app**](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/react-native#build-and-run-app "Auto-instrument your React Native applications with OneAgent.")
+**Build and run your app**](react-native.md#build-and-run-app "Auto-instrument your React Native applications with OneAgent.")
 
 ## Prerequisites
 
@@ -203,7 +203,7 @@ To create a mobile application in Dynatrace
 
 ## User action naming
 
-See [User action naming rules](/docs/observe/digital-experience/rum-concepts/user-actions#user-action-naming-rules "Learn what user actions are and how they help you understand what users do with your application.") for more details on user action naming in Dynatrace.
+See [User action naming rules](../../rum-concepts/user-actions.md#user-action-naming-rules "Learn what user actions are and how they help you understand what users do with your application.") for more details on user action naming in Dynatrace.
 
 #### React views
 

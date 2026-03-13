@@ -34,7 +34,7 @@ scraped: 2026-03-06T21:32:07.008765
 
 ### Определение базового URL API
 
-Подробности о том, как сформировать базовый URL конечной точки OTLP, см. в [Конечные точки Dynatrace OTLP API](/docs/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+Подробности о том, как сформировать базовый URL конечной точки OTLP, см. в [Конечные точки Dynatrace OTLP API](../otlp-api.md#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
 
 URL должен заканчиваться на `/api/v2/otlp`.
 
@@ -42,7 +42,7 @@ URL должен заканчиваться на `/api/v2/otlp`.
 
 Чтобы сгенерировать токен доступа, в Dynatrace перейдите в ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
 
-[Конечные точки Dynatrace OTLP API](/docs/ingest-from/opentelemetry/otlp-api#authentication "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") содержат дополнительные сведения о формате и необходимых областях доступа.
+[Конечные точки Dynatrace OTLP API](../otlp-api.md#authentication "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") содержат дополнительные сведения о формате и необходимых областях доступа.
 
 ## Шаг 2. Настройка OpenTelemetry
 
@@ -271,7 +271,7 @@ URL должен заканчиваться на `/api/v2/otlp`.
    make_tuples([], Acc) -> Acc.
    ```
 
-   Операции чтения файлов, разбирающие файлы `dt_metadata` в примере кода, пытаются прочитать [файлы данных OneAgent](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") для обогащения запроса OTLP и обеспечения доступности всей релевантной информации о топологии в Dynatrace.
+   Операции чтения файлов, разбирающие файлы `dt_metadata` в примере кода, пытаются прочитать [файлы данных OneAgent](../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") для обогащения запроса OTLP и обеспечения доступности всей релевантной информации о топологии в Dynatrace.
 
 ## Шаг 3. Инструментирование вашего приложения
 
@@ -489,7 +489,7 @@ headers_list(Headers) ->
 
 Хотя Dynatrace автоматически захватывает все атрибуты OpenTelemetry, только значения атрибутов, указанные в списке разрешённых, сохраняются и отображаются в веб-интерфейсе Dynatrace. Это предотвращает случайное хранение персональных данных, позволяя вам соответствовать требованиям конфиденциальности и контролировать объём хранимых данных мониторинга.
 
-Чтобы просматривать пользовательские атрибуты, вам сначала необходимо разрешить их в веб-интерфейсе Dynatrace. Чтобы узнать, как настроить хранение и маскирование атрибутов, см. [Редактирование атрибутов](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration#attribute-redaction "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.").
+Чтобы просматривать пользовательские атрибуты, вам сначала необходимо разрешить их в веб-интерфейсе Dynatrace. Чтобы узнать, как настроить хранение и маскирование атрибутов, см. [Редактирование атрибутов](../../dynatrace-oneagent/oneagent-and-opentelemetry/configuration.md#attribute-redaction "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.").
 
 ## Шаг 5. Проверка приёма данных в Dynatrace
 
@@ -501,4 +501,4 @@ headers_list(Headers) ->
 
 ## Связанные темы
 
-* [Обогащение принятых данных полями, специфичными для Dynatrace](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
+* [Обогащение принятых данных полями, специфичными для Dynatrace](../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")

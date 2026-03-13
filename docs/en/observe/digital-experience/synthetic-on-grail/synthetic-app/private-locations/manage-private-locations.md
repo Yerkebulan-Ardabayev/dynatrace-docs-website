@@ -66,7 +66,7 @@ For **Capacity usage**, **Compatibility**, and **ActiveGates**, the health statu
 
 ### Metrics for health status
 
-Metrics for the health status of each monitor type are available for charting and alerting. Metrics for charting and alerting on the health status of each monitor type are available in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."). For example, you can choose the following metrics for charting and alerting:
+Metrics for the health status of each monitor type are available for charting and alerting. Metrics for charting and alerting on the health status of each monitor type are available in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."). For example, you can choose the following metrics for charting and alerting:
 
 * Synthetic - HTTP - Engine Utilization
 * Synthetic - HTTP High Resource - Engine Utilization

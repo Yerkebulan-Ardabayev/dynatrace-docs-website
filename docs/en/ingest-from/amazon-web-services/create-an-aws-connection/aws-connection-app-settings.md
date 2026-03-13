@@ -1068,14 +1068,14 @@ The new AWS Platform Monitoring has been integrated with the core Dynatrace Iden
 
 Learn more about the basic concepts:
 
-* [Users, service users](/docs/manage/identity-access-management/user-and-group-management/identity-concepts#users "Understand the key identity concepts in Dynatrace IAM")
-* [Local groups, policies](/docs/manage/identity-access-management/user-and-group-management/access-group-management "Manage Dynatrace groups and their permissions.")
-* [Platform tokens for service users](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens#allow-users-to-generate-platform-tokens-against-service-users "Create personalised platform tokens to access Dynatrace services via the API in your user context.")
+* [Users, service users](../../../manage/identity-access-management/user-and-group-management/identity-concepts.md#users "Understand the key identity concepts in Dynatrace IAM")
+* [Local groups, policies](../../../manage/identity-access-management/user-and-group-management/access-group-management.md "Manage Dynatrace groups and their permissions.")
+* [Platform tokens for service users](../../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md#allow-users-to-generate-platform-tokens-against-service-users "Create personalised platform tokens to access Dynatrace services via the API in your user context.")
 
 In this documentation section context:
 
 Dynatrace account admin
-:   A built-in [user](/docs/manage/identity-access-management/use-cases/access-platform#who "Grant access to Dynatrace") with `View and manage users and groups` permission.
+:   A built-in [user](../../../manage/identity-access-management/use-cases/access-platform.md#who "Grant access to Dynatrace") with `View and manage users and groups` permission.
 
 CloudsAdmins
 :   A customer-created custom IAM group where its members will be able to create and manage AWS connections in ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**.
@@ -1098,7 +1098,7 @@ Data-Acquisition AWS Integration App
 
 #### Interactive IAM identity (IAM user)
 
-1. [Create](/docs/manage/identity-access-management/user-and-group-management/access-group-management#account-management "Manage Dynatrace groups and their permissions.") the `CloudsAdmins` group.
+1. [Create](../../../manage/identity-access-management/user-and-group-management/access-group-management.md#account-management "Manage Dynatrace groups and their permissions.") the `CloudsAdmins` group.
 
    Once the `CloudsAdmins` group is created, select  **Permissions** > **Scope** and add the `Data-Acquisition AWS Integration App` and `Standard User` policies.
 
@@ -1108,7 +1108,7 @@ Data-Acquisition AWS Integration App
 
    * `Data-Acquisition AWS Integration App`
    * `Standard User`
-2. [Assign](/docs/manage/identity-access-management/user-and-group-management/access-user-management#edit-existing-user "User management") your CloudAdmin IAM user (or any other Dynatrace IAM user) as a member of the `CloudsAdmins` group.
+2. [Assign](../../../manage/identity-access-management/user-and-group-management/access-user-management.md#edit-existing-user "User management") your CloudAdmin IAM user (or any other Dynatrace IAM user) as a member of the `CloudsAdmins` group.
 
 ## Onboarding
 
@@ -1140,7 +1140,7 @@ If the button is grayed out, it means you do not have the proper permissions to 
      + AWS account resources topology, depicted as rich resource entities using ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** (for supported AWS services).
      + Amazon CloudWatch API metric polling (per enabled region) for our recommended services (automatically opted-in).
      + The Regions that were selected, allowing the AWS administrator to deploy Amazon Data Firehose streams for logs ingest as stacksets on the AWS Organizations Console.
-   * **Advanced**: The most [fine-grained path](/docs/ingest-from/amazon-web-services/manage-aws-connections#customize "Find out how to manage your AWS connections.") monitoring configuration. Allows the full customization any monitoring setting to meet advanced use cases.
+   * **Advanced**: The most [fine-grained path](../manage-aws-connections.md#customize "Find out how to manage your AWS connections.") monitoring configuration. Allows the full customization any monitoring setting to meet advanced use cases.
 
    Regardless of the selected path, customizing all the supported monitoring settings is possible post-onboarding.
 
@@ -1184,11 +1184,11 @@ If the CloudFormation stack deployment failed, see [Troubleshooting](#troublesho
 
 ### 5. Configure Health alerts and Warning signalsOptional
 
-You can configure Health alerts and Warning signals now or [later](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app#alerting "Monitor all cloud platforms at once.").
+You can configure Health alerts and Warning signals now or [later](../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md#alerting "Monitor all cloud platforms at once.").
 
 Health alerts and warning signals help you monitor your infrastructure by providing clear, actionable insights. These features reduce the noise from infrastructure issues and improve alerting capabilities, so you can focus on what matters most. This is achieved through better categorization of detected malfunctions.
 
-* For critical events, a Health alert is raised, triggering a [Dynatrace Problems](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") investigation.
+* For critical events, a Health alert is raised, triggering a [Dynatrace Problems](../../../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.") investigation.
 * For non-critical situations, a Warning signal informs you of a potential challenge.
 
 Successful onboarding involves two elements:
@@ -1198,9 +1198,9 @@ Successful onboarding involves two elements:
 
 ## What's next?
 
-* Go to [![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app "Monitor all cloud platforms at once."). AWS resources with telemetry should start to appear shortly.
-* See [Manage your AWS connections](/docs/ingest-from/amazon-web-services/manage-aws-connections "Find out how to manage your AWS connections.") to learn how to manage your newly created connection.
-* Configure [CloudWatch log group subscriptions](/docs/ingest-from/amazon-web-services/ingest-telemetry/cloudwatch-logs-private-preview/aws-subscribe-log-groups-pp "Find out how to configure AWS log groups to be ingested into Dynatrace.").
+* Go to [![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**](../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md "Monitor all cloud platforms at once."). AWS resources with telemetry should start to appear shortly.
+* See [Manage your AWS connections](../manage-aws-connections.md "Find out how to manage your AWS connections.") to learn how to manage your newly created connection.
+* Configure [CloudWatch log group subscriptions](../ingest-telemetry/cloudwatch-logs-private-preview/aws-subscribe-log-groups-pp.md "Find out how to configure AWS log groups to be ingested into Dynatrace.").
 
 ## Troubleshooting
 
@@ -1292,7 +1292,7 @@ Verify that
 
 When creating the platform token, why is the "service user" option grayed out?
 
-Your IAM user might not have permission to create platform tokens for (existing) service users. Contact you Dynatrace Admin to learn if the [prerequisites](#prerequisitesuisites) were followed. In this case, a [specific permission scope must be granted](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens#allow-users-to-generate-platform-tokens-against-service-users "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+Your IAM user might not have permission to create platform tokens for (existing) service users. Contact you Dynatrace Admin to learn if the [prerequisites](#prerequisitesuisites) were followed. In this case, a [specific permission scope must be granted](../../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md#allow-users-to-generate-platform-tokens-against-service-users "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
 
 ## Share your feedback
 

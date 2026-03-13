@@ -43,7 +43,7 @@ If **metric boundaries** (minimum or maximum value of the metric) are set in the
 
 The model (be it seasonal or simple) is updated daily.
 
-Another important parameter for seasonal baselines is the [sliding window](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#sliding-window "How to set up an alert for missing measurements.") that is used to compare current measurements against the confidence band. It defines how often the confidence band must be violated within a sliding window of time to raise an event (violations don't have to be successive). This approach helps to reduce the number of false positives when alerting. You can set the sliding window to a maximum of 60 minutes.
+Another important parameter for seasonal baselines is the [sliding window](../../anomaly-detection/anomaly-detection-configuration.md#sliding-window "How to set up an alert for missing measurements.") that is used to compare current measurements against the confidence band. It defines how often the confidence band must be violated within a sliding window of time to raise an event (violations don't have to be successive). This approach helps to reduce the number of false positives when alerting. You can set the sliding window to a maximum of 60 minutes.
 
 ## Training of the baseline model
 
@@ -74,4 +74,4 @@ After the training is finished, Dynatrace uses the seasonal model to detect anom
 
 ## Related topics
 
-* [Metrics Classic](/docs/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.")
+* [Metrics Classic](../../../analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")

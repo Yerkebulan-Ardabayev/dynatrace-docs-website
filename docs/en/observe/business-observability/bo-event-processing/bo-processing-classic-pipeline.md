@@ -20,7 +20,7 @@ Business event processing via the classic pipeline allows you to define how your
 
 If you create multiple rules, the rules are performed in the order in which you have defined them.
 
-We recommend utilizing business event processing with [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") as a scalable, powerful solution to manage and process business events. If you don't have access to OpenPipeline, use the classic business event processing pipeline.
+We recommend utilizing business event processing with [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") as a scalable, powerful solution to manage and process business events. If you don't have access to OpenPipeline, use the classic business event processing pipeline.
 
 ## Configure business event processing rules
 
@@ -28,7 +28,7 @@ To configure business event processing rules
 
 1. Go to **Settings** > **Business Observability** > **Ingest Pipeline** > **Processing**.
 2. Select **Add rule** and name your rule.
-3. Add a **Matcher** to your rule by pasting your [matcher-specific DQL query](/docs/observe/business-observability/bo-event-processing/bo-events-processing-matcher "This is the DQL matcher in events in the classic pipeline .").
+3. Add a **Matcher** to your rule by pasting your [matcher-specific DQL query](bo-events-processing-matcher.md "This is the DQL matcher in events in the classic pipeline .").
 
    Matching based on previous rules is not supported
 
@@ -40,7 +40,7 @@ To configure business event processing rules
    * **Read-Only**: Cannot be changed during transformation.
 5. Add a **Processor definition**.
    Processor definitions are instructions that tell Dynatrace how to transform the data youâve selected in the matcher DQL query.
-   It is created using [processing commands](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-commands "Explore scenarios of how to use log processing commands in Dynatrace powered by Grail."), [functions](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-functions "Explore scenarios of how to use log processing functions in Dynatrace powered by Grail.") and [pattern matching](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.") (Dynatrace Pattern Language) that allows you to add, modify or remove incoming records.
+   It is created using [processing commands](../../../analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-commands.md "Explore scenarios of how to use log processing commands in Dynatrace powered by Grail."), [functions](../../../analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-functions.md "Explore scenarios of how to use log processing functions in Dynatrace powered by Grail.") and [pattern matching](../../../platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.") (Dynatrace Pattern Language) that allows you to add, modify or remove incoming records.
 6. In the **Rule testing** section, paste an event sample and run the test.
 
    Your incoming data example needs to be provided in the JSON format.
@@ -196,7 +196,7 @@ In the below examples, you can see how ingest pipeline processing can be used to
   + **Processor definition**: `PARSE(details,"JSON{INTEGER:accountId,INTEGER:amount,INTEGER:instrumentId,DOUBLE:price}(flat=true)") | FIELDS_REMOVE(details)`
 * Example 5. Parse error message.
 
-  In this example, you need to remove the voucher code from the error message field below to have the ability to count how often the same error message appears. The solution below leverages the [Dynatrace Pattern language](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.") for parsing.
+  In this example, you need to remove the voucher code from the error message field below to have the ability to count how often the same error message appears. The solution below leverages the [Dynatrace Pattern language](../../../platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.") for parsing.
 
   ```
   {

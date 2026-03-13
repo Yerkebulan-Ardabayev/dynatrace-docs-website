@@ -36,7 +36,7 @@ This is the URL:
 ![OneAgent URL](https://dt-cdn.net/images/oneagent-url-570-2bbd3eb216.png)
 
 * Replace the value of `arch` parameter with `<arch>`. Ignore the `flavor=default` parameter.
-* For the `API-Token` value, you need a [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
+* For the `API-Token` value, you need a [PaaS token](../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.").
 
 Your URL should look like this:
 `https://host.domain.com/api/v1/deployment/installer/agent/unix/default/latest?arch=<arch>`
@@ -209,8 +209,8 @@ This is your `ONEAGENT_INSTALLER_SCRIPT_URL`.
    ```
 2. Deploy OneAgent on Mesos master nodes.
 
-   Marathon doesn't allow you to deploy applications to master nodes (except for nodes that are tagged as both master and agent). This is why you must manually install OneAgent on all Mesos master nodes that aren't additionally configured as Mesos agents. For this, use the default [Linux installer](/docs/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.").
+   Marathon doesn't allow you to deploy applications to master nodes (except for nodes that are tagged as both master and agent). This is why you must manually install OneAgent on all Mesos master nodes that aren't additionally configured as Mesos agents. For this, use the default [Linux installer](../dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.").
 
 ## Related topics
 
-* [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* [OneAgent platform and capability support matrix](../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

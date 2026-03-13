@@ -28,10 +28,10 @@ Steps
 1. Go to ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
 2. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **New alert** > **Create your own custom alert**.
 3. Give your configuration a meaningful **Title**.
-4. Expand **Configure your query** and provide the [DQL query](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.") to fetch your data.
+4. Expand **Configure your query** and provide the [DQL query](../../../ru/platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.") to fetch your data.
 
    We recommend that you use the `interval: 1m` parameter to ensure proper data resolution for the analysis.
-5. Expand **Customize parameters** and define the analyzer and its parameters. For details, see [Analyzer type and parameters](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "How to set up an alert for missing measurements.").
+5. Expand **Customize parameters** and define the analyzer and its parameters. For details, see [Analyzer type and parameters](../../../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#analyzer "How to set up an alert for missing measurements.").
 6. Expand **Create an event template** and configure the event triggered by the configuration.
 
 Event name

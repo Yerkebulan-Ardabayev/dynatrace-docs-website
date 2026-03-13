@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:19:18.937696
 
 Поле фильтрации — это мощный компонент пользовательского интерфейса, который позволяет быстро сузить результаты и найти нужную информацию в приложениях Dynatrace. Используйте поле фильтрации, когда вам нужно выполнить поиск по определённым атрибутам (например, имя сервиса или статус), объединить несколько условий с помощью логических операторов или отфильтровать JSON-данные с использованием точечной или скобочной нотации.
 
-Для сложных запросов, выходящих за рамки возможностей поля фильтрации, рекомендуется использовать [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") в [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
+Для сложных запросов, выходящих за рамки возможностей поля фильтрации, рекомендуется использовать [Dynatrace Query Language (DQL)](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") в [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
 
 ## Структура
 
@@ -136,8 +136,8 @@ scraped: 2026-03-06T21:19:18.937696
 
 #### Связанные материалы
 
-* [Переменные в дашбордах](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable "Add variables to your Dynatrace dashboards.")
-* [Переменные в сегментах](/docs/manage/segments/concepts/segments-concepts-variables "Learn how variables help to form dynamic segments and reduce configuration effort and maintenance.")
+* [Переменные в дашбордах](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable.md "Add variables to your Dynatrace dashboards.")
+* [Переменные в сегментах](../../../manage/segments/concepts/segments-concepts-variables.md "Learn how variables help to form dynamic segments and reduce configuration effort and maintenance.")
 
 ### Фильтрация JSON-данных
 

@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:13:32.671349
 * 10-min read
 * Updated on Aug 07, 2023
 
-Dynatrace detects which processes are part of the same [process groups](/docs/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring.") by means of a default set of detection rules.
+Dynatrace detects which processes are part of the same [process groups](../../process-groups.md "Analyze process groups and customize process group naming, detection, and monitoring.") by means of a default set of detection rules.
 
 You can change the structure of default process groups by modifying the default process-group detection logic in:
 
@@ -21,12 +21,12 @@ You can change the structure of default process groups by modifying the default 
 
   + On the **Built-in detection rules** page, you can enable or disable specific process group detection toggles. Hover over the **info** icon to the right of each toggle for details.
   + On the [**Simple detection rules**](#simple) and [**Advanced detection rules**](#advanced) pages, you can add your own process group detection rules, which will override the default ones.
-  + On the [Declarative process grouping](/docs/observe/infrastructure-observability/process-groups/configuration/declarative-process-grouping "Monitor specific processes using the declarative process grouping.") page, you can monitor specific processes of a technology that is unknown to Dynatrace.
+  + On the [Declarative process grouping](declarative-process-grouping.md "Monitor specific processes using the declarative process grouping.") page, you can monitor specific processes of a technology that is unknown to Dynatrace.
 * **Settings** > **Processes and containers** > **Containers** > **Cloud application and workload detection**, where you can define rules to merge similar Kubernetes workloads into process groups.
 
 * Process group detection settings and rules require a restart of your processes to affect how processes are identified and grouped.
-* Process group detection settings and rules only affect the composition of process groups. If you want to change how a process group is named, you have to use the [process group naming rules](/docs/observe/infrastructure-observability/process-groups/configuration/pg-naming "Ways to customize process-group naming") instead.
-* It's also possible to use [host groups](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to separate clusters into different process groups.
+* Process group detection settings and rules only affect the composition of process groups. If you want to change how a process group is named, you have to use the [process group naming rules](pg-naming.md "Ways to customize process-group naming") instead.
+* It's also possible to use [host groups](../../hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to separate clusters into different process groups.
 
 ## Simple detection rules
 
@@ -62,9 +62,9 @@ The environment variables that you select as process group identifiers must exis
 * For WebSphere, you can do this in the WebSphere console in the JVM section.
 * For Tomcat and others, simply define the environment variable as part of the startup script.
 
-We recommend creating environment variables specific to process detection. Environment variables that serve other scopes, such as [`DT_TAGS`](/docs/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables#variables "Find out how Dynatrace enables you to define tags based on environment variables.") or [`DT_CUSTOM_PROP`](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment."), might cause incorrect or unintentional splits because all values of environment variables are evaluated for process-group detection.
+We recommend creating environment variables specific to process detection. Environment variables that serve other scopes, such as [`DT_TAGS`](../../../../manage/tags-and-metadata/setup/define-tags-based-on-environment-variables.md#variables "Find out how Dynatrace enables you to define tags based on environment variables.") or [`DT_CUSTOM_PROP`](define-your-own-process-group-metadata.md#variables "Configure your own process-related metadata based on the unique needs of your organization or environment."), might cause incorrect or unintentional splits because all values of environment variables are evaluated for process-group detection.
 
-Identifiers also serve as the default name for the detected process groups. See [Define your own process group metadata](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") for details on how to define an environment variable for IIS or for Windows services.
+Identifiers also serve as the default name for the detected process groups. See [Define your own process group metadata](define-your-own-process-group-metadata.md#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") for details on how to define an environment variable for IIS or for Windows services.
 
 **Example:**
 
@@ -120,11 +120,11 @@ You have the option to define a second property that identifies specific process
 
 ## Declarative process grouping
 
-Dynatrace automatically monitors process groups that are of known technology types or that consume significant resources. With declarative process grouping, you can automatically monitor additional technologies by overriding the default behavior and customizing the grouping of processes into process groups (PGs) and process group instances (PGIs). For more details, refer to [Declarative process grouping](/docs/observe/infrastructure-observability/process-groups/configuration/declarative-process-grouping "Monitor specific processes using the declarative process grouping.").
+Dynatrace automatically monitors process groups that are of known technology types or that consume significant resources. With declarative process grouping, you can automatically monitor additional technologies by overriding the default behavior and customizing the grouping of processes into process groups (PGs) and process group instances (PGIs). For more details, refer to [Declarative process grouping](declarative-process-grouping.md "Monitor specific processes using the declarative process grouping.").
 
 ## Easy configuration with Settings API
 
-Using the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers."), you can easily
+Using the [Settings API](../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers."), you can easily
 
 * Change the definition of your process groups
 * Set up a simple or an advanced detection rule
@@ -132,8 +132,8 @@ Using the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out 
 
 To use the Settings API
 
-1. [Create an API token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") and enable the **Write settings** (`settings.write`) permission.
-2. Use the [Get a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration.
+1. [Create an API token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.") and enable the **Write settings** (`settings.write`) permission.
+2. Use the [Get a schema](../../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration.
 
    Example JSON payload for a simple detection rule
 
@@ -410,11 +410,11 @@ To use the Settings API
 
      ]
      ```
-3. Use the [Post an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
+3. Use the [Post an object](../../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
 
 ## Add your configuration to Extensions 2.0
 
-You can also attach your current configuration to your [Extensions 2.0](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") extension so that your custom extension comes with predefined process grouping rules. Add your definition to the [Extension YAML](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml "Learn how to create an extension YAML file using the Extensions framework.") file as in this example:
+You can also attach your current configuration to your [Extensions 2.0](../../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.") extension so that your custom extension comes with predefined process grouping rules. Add your definition to the [Extension YAML](../../../../ingest-from/extensions/develop-your-extensions/extension-yaml.md "Learn how to create an extension YAML file using the Extensions framework.") file as in this example:
 
 ```
 ---

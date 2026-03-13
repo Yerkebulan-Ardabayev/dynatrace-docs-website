@@ -29,20 +29,20 @@ In this article, you'll learn how Dynatrace Intelligence agentic and generative 
 Dynatrace Intelligence agentic and generative AI periodically indexes notebooks and dashboards that have been labeled as troubleshooting guides and shared within the environment.
 
 * By default, semantic vector indexing of the guides occurs every 6 hours.
-* In order for Dynatrace Intelligence agentic and generative AI to index and suggest your document, you have to share it with all users in your environment. Dynatrace Intelligence agentic and generative AI won't index or suggest any private documents or documents shared only with specific users. To learn more about sharing documents, see [Share documents](/docs/discover-dynatrace/get-started/dynatrace-ui/share "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
+* In order for Dynatrace Intelligence agentic and generative AI to index and suggest your document, you have to share it with all users in your environment. Dynatrace Intelligence agentic and generative AI won't index or suggest any private documents or documents shared only with specific users. To learn more about sharing documents, see [Share documents](../../discover-dynatrace/get-started/dynatrace-ui/share.md "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
 
 ### Prior knowledge
 
-* [Dynatrace Intelligence agentic and generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
-* [Getting started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
-* [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* [Dynatrace Intelligence agentic and generative AI overview](copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
+* [Getting started with Dynatrace Intelligence agentic and generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
+* [Problems app](../davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.")
 
 ### Prerequisites
 
 * Dynatrace SaaS environment.
-* You have completed the Dynatrace Intelligence agentic and generative AI setup described in [Getting started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
-* You have document suggestions enabled in your environment. Document indexing enablement is a part of the [Enable Dynatrace Intelligence agentic and generative AI on your environment](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Learn how to set up Dynatrace Intelligence agentic and generative AI.") guide.
-* You have the `ALLOW davis-copilot:document-search:execute;` permission. To learn how to set up the permissions, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
+* You have completed the Dynatrace Intelligence agentic and generative AI setup described in [Getting started with Dynatrace Intelligence agentic and generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+* You have document suggestions enabled in your environment. Document indexing enablement is a part of the [Enable Dynatrace Intelligence agentic and generative AI on your environment](copilot-getting-started.md#enable-davis-copilot "Learn how to set up Dynatrace Intelligence agentic and generative AI.") guide.
+* You have the `ALLOW davis-copilot:document-search:execute;` permission. To learn how to set up the permissions, see [Permissions in Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
 
 ## Get document suggestions to remediate problems
 
@@ -278,6 +278,6 @@ Once the newly created notebook is attached to the AI-detected problem, you'll b
 
 ## Related topics
 
-* [Dynatrace Intelligence agentic and generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
-* [Get started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
-* [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* [Dynatrace Intelligence agentic and generative AI overview](copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
+* [Get started with Dynatrace Intelligence agentic and generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
+* [Problems app](../davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.")

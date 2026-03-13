@@ -17,7 +17,7 @@ scraped: 2026-03-06T21:33:53.919137
 
 ### Интеграция AWS по умолчанию и AWS Metric Streams
 
-Различия между [интеграцией AWS по умолчанию](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics "Интеграция метрик из Amazon CloudWatch.") и AWS Metric Streams.
+Различия между [интеграцией AWS по умолчанию](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md "Интеграция метрик из Amazon CloudWatch.") и AWS Metric Streams.
 
 |  | Интеграция AWS по умолчанию | AWS Metric Streams |
 | --- | --- | --- |
@@ -36,12 +36,12 @@ scraped: 2026-03-06T21:33:53.919137
 
 1
 
-Префикс `ext:` используется метриками из [расширений OneAgent](/docs/ingest-from/extensions/develop-your-extensions "Разработка собственных расширений в Dynatrace.") и [расширений ActiveGate](/docs/ingest-from/extensions/develop-your-extensions "Разработка собственных расширений в Dynatrace."), а также [классическими метриками для интеграции AWS](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics "Интеграция метрик из Amazon CloudWatch.").
+Префикс `ext:` используется метриками из [расширений OneAgent](../../../../../ingest-from/extensions/develop-your-extensions.md "Разработка собственных расширений в Dynatrace.") и [расширений ActiveGate](../../../../../ingest-from/extensions/develop-your-extensions.md "Разработка собственных расширений в Dynatrace."), а также [классическими метриками для интеграции AWS](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md "Интеграция метрик из Amazon CloudWatch.").
 Несмотря на схожесть именования, метрики интеграции AWS **не** основаны на расширениях.
 
 ## Предварительные требования
 
-* Создайте [API-токен](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования Dynatrace API.") в вашей среде Dynatrace и включите разрешение **Ingest metrics**.
+* Создайте [API-токен](../../../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования Dynatrace API.") в вашей среде Dynatrace и включите разрешение **Ingest metrics**.
 * Определите API URL для вашей среды:
 
   + **Для Dynatrace SaaS**
@@ -51,7 +51,7 @@ scraped: 2026-03-06T21:33:53.919137
   + **Для ActiveGate**
     `https://<your_active_gate_IP_or_hostname>:9999/e/<your_environment_ID>`
 
-Для определения `<your_environment_ID>` см. [идентификатор среды](/docs/discover-dynatrace/get-started/monitoring-environment "Узнайте, как работать со средами мониторинга.").
+Для определения `<your_environment_ID>` см. [идентификатор среды](../../../../../discover-dynatrace/get-started/monitoring-environment.md "Узнайте, как работать со средами мониторинга.").
 
 Для получения метрик AWS выбранный ранее эндпоинт должен быть открыт для входящего интернет-трафика. Ограничительные межсетевые экраны могут блокировать сервис потоковой передачи.
 
@@ -170,9 +170,9 @@ aws cloudformation deploy --capabilities CAPABILITY_NAMED_IAM --template-file ./
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Создание потока Data Firehose**](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams#step-1 "Приём метрик из ваших учётных записей AWS с помощью Amazon CloudWatch Metric Streams.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Создание потока Data Firehose**](../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams.md#step-1 "Приём метрик из ваших учётных записей AWS с помощью Amazon CloudWatch Metric Streams.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Создание CloudWatch Metric Stream**](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams#step-2 "Приём метрик из ваших учётных записей AWS с помощью Amazon CloudWatch Metric Streams.")
+**Создание CloudWatch Metric Stream**](../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams.md#step-2 "Приём метрик из ваших учётных записей AWS с помощью Amazon CloudWatch Metric Streams.")
 
 Для каждого региона, который вы хотите отслеживать, необходимо повторить всю процедуру: создать поток Data Firehose и создать CloudWatch Metric Stream.
 
@@ -244,7 +244,7 @@ OpenTelemetry 0.7
 Предварительные требования
 
 * Установите [Python 3](https://www.python.org/downloads/) (дополнительные библиотеки не требуются)
-* Включите разрешения **Read configuration** и **Write configuration** для вашего [API-токена](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования Dynatrace API.")
+* Включите разрешения **Read configuration** и **Write configuration** для вашего [API-токена](../../../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования Dynatrace API.")
 
 Для загрузки предустановленных дашбордов из GitHub:
 

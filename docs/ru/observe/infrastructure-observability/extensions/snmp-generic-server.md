@@ -39,7 +39,7 @@ scraped: 2026-03-04T21:39:18.259271
 ## Активация и настройка
 
 Просто активируйте расширение в вашей среде с помощью встроенного Hub и укажите необходимые конфигурации подключения устройств.
-Это расширение использует [источник данных Dynatrace SNMP](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions "Узнайте, как создать SNMP-расширение с помощью фреймворка расширений.").
+Это расширение использует [источник данных Dynatrace SNMP](../../../ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions.md "Узнайте, как создать SNMP-расширение с помощью фреймворка расширений.").
 
 ## Подробности
 

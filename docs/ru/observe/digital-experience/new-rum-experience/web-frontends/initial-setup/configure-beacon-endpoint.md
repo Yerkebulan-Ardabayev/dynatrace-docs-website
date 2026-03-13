@@ -20,14 +20,14 @@ RUM JavaScript отправляет beacon-сигналы в Dynatrace для п
 
 ### Автоматически инжектируемые фронтенды
 
-Если [RUM JavaScript инжектируется автоматически](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-auto-injected-frontend "Learn how to set up an auto-injected web frontend in the New RUM Experience."), beacon-сигналы отправляются на ваш веб-сервер или сервер приложений, где OneAgent предоставляет конечную точку beacon, которая перехватывает и перенаправляет их. Для этого используется относительный URL от корня, последний сегмент пути которого начинается с префикса `rb_`. Точный путь URL зависит от технологии:
+Если [RUM JavaScript инжектируется автоматически](set-up-auto-injected-frontend.md "Learn how to set up an auto-injected web frontend in the New RUM Experience."), beacon-сигналы отправляются на ваш веб-сервер или сервер приложений, где OneAgent предоставляет конечную точку beacon, которая перехватывает и перенаправляет их. Для этого используется относительный URL от корня, последний сегмент пути которого начинается с префикса `rb_`. Точный путь URL зависит от технологии:
 
 * **Java или IIS:** Сегмент пути добавляется к корневому контексту, если он доступен, например: `/myapplication/rb_bf12345abc`.
-* **Другие технологии или когда корневой контекст недоступен:** Сегмент пути добавляется к корню, например: `/rb_bf12345abc`. Это также поведение по умолчанию, если вы вручную вставляете RUM JavaScript, как описано в разделе [Использование ручной вставки для страниц автоматически инжектируемого фронтенда](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-auto-injection#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your frontends in the New RUM Experience.").
+* **Другие технологии или когда корневой контекст недоступен:** Сегмент пути добавляется к корню, например: `/rb_bf12345abc`. Это также поведение по умолчанию, если вы вручную вставляете RUM JavaScript, как описано в разделе [Использование ручной вставки для страниц автоматически инжектируемого фронтенда](configure-auto-injection.md#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your frontends in the New RUM Experience.").
 
 ### Безагентный мониторинг
 
-Если вы используете [безагентный мониторинг](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-agentless-monitoring "Learn how to set up agentless RUM for your web frontends in the New RUM Experience."), данные отправляются на Cluster ActiveGate, который является частью SaaS-инфраструктуры Dynatrace.
+Если вы используете [безагентный мониторинг](set-up-agentless-monitoring.md "Learn how to set up agentless RUM for your web frontends in the New RUM Experience."), данные отправляются на Cluster ActiveGate, который является частью SaaS-инфраструктуры Dynatrace.
 
 ## Параметры конфигурации
 
@@ -76,11 +76,11 @@ RUM JavaScript отправляет beacon-сигналы в Dynatrace для п
 6. В выпадающем списке **Type** выберите **Cluster ActiveGate**.
 7. Выберите **Save changes**.
 
-При такой конфигурации Dynatrace применяет [список разрешенных источников beacon](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/configure-beacon-origin-allowlist "Specify the origins from which cross-origin RUM beacons should be accepted.") к RUM beacon-сигналам вашего фронтенда.
+При такой конфигурации Dynatrace применяет [список разрешенных источников beacon](../additional-configuration/configure-beacon-origin-allowlist.md "Specify the origins from which cross-origin RUM beacons should be accepted.") к RUM beacon-сигналам вашего фронтенда.
 
 ### Автоматически инжектируемый фронтенд: отправка beacon-сигналов на другой веб-сервер
 
-По умолчанию RUM beacon-сигналы автоматически инжектируемого фронтенда обрабатываются агентом OneAgent на одной из групп процессов, обслуживающих ваше приложение. В качестве альтернативы beacon-сигналы могут обрабатываться на любом другом инструментированном веб-сервере или сервере приложений технологии, указанной в [Поддержка технологий - Real User Monitoring - Веб-серверы и приложения](/docs/ingest-from/technology-support#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+По умолчанию RUM beacon-сигналы автоматически инжектируемого фронтенда обрабатываются агентом OneAgent на одной из групп процессов, обслуживающих ваше приложение. В качестве альтернативы beacon-сигналы могут обрабатываться на любом другом инструментированном веб-сервере или сервере приложений технологии, указанной в [Поддержка технологий - Real User Monitoring - Веб-серверы и приложения](../../../../../ingest-from/technology-support.md#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 Чтобы отправить beacon-сигналы автоматически инжектируемого фронтенда на другой инструментированный сервер
 
@@ -98,4 +98,4 @@ RUM JavaScript отправляет beacon-сигналы в Dynatrace для п
 10. Включите **Send beacon data via CORS**.
 11. Выберите **Save changes**.
 
-При такой конфигурации Dynatrace применяет [список разрешенных источников beacon](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/configure-beacon-origin-allowlist "Specify the origins from which cross-origin RUM beacons should be accepted.") к RUM beacon-сигналам вашего фронтенда.
+При такой конфигурации Dynatrace применяет [список разрешенных источников beacon](../additional-configuration/configure-beacon-origin-allowlist.md "Specify the origins from which cross-origin RUM beacons should be accepted.") к RUM beacon-сигналам вашего фронтенда.

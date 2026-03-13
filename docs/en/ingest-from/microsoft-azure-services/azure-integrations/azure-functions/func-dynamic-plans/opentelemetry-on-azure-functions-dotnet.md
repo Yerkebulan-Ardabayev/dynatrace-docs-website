@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:38:21.488936
 
 ## Prerequisites
 
-Ensure that you have followed the **initial configuration** steps described in [Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.") before using the packages below.
+Ensure that you have followed the **initial configuration** steps described in [Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan](opentelemetry-on-azure-functions.md "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.") before using the packages below.
 
 .NET version 8 or earlier
 
@@ -308,7 +308,7 @@ AzureFunctionsInstrumentation.AddIncomingHttpAzureFunctionCallInfo(Activity.Curr
 ```
 
 Additionally, you need to modify `host.json` to allow logging for `Dynatrace.OpenTelemetry`.
-Note that this does not enable logging unless [explicitly configured](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace."). See [InitializeLogging](#initializelogging).
+Note that this does not enable logging unless [explicitly configured](opentelemetry-on-azure-functions.md "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace."). See [InitializeLogging](#initializelogging).
 
 ```
 {
@@ -580,7 +580,7 @@ host.Run();
 
 ### `InitializeLogging`
 
-* Calling `InitializeLogging` is required even if you don't plan to enable logging, and the actual log messages won't be logged even after calling this method, unless [configured](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.").
+* Calling `InitializeLogging` is required even if you don't plan to enable logging, and the actual log messages won't be logged even after calling this method, unless [configured](opentelemetry-on-azure-functions.md "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.").
 * If you use the [`dotnet-isolated` runtimeï»¿](https://dt-url.net/2i23yrm) (out-of-process, worker functions), you need to call `InitializeLogging` in your `Main` method before calling `AddDynatrace`. You can pass `null` as `loggerFactory`, so that, if enabled, logging can use `Console.Out`/`Console.Error`. This is automatically forwarded to AppInsights for the `dotnet-isolated` runtime.
 * If you have specific requirements, you can also pass any custom `LoggingFactory`.
 * For the [`dotnet` runtimeï»¿](https://dt-url.net/2r43yf7) (in-process, class-library), sending logs to AppInsights requires using an `ILogger` or `ILoggerFactory` injected into the function with a dependency injection. Thus, you shouldn't use `null` as an argument for the `loggerFactory` parameter, but call `InitializeLogging` the first time any function in your Function App is invoked. To get the `ILoggerFactory`, simply add a parameter of that type.
@@ -624,7 +624,7 @@ host.Run();
 
 ### `AddDynatrace`
 
-* `AddDynatrace` is an extension method to OpenTelemetry's `TracerProvider`. It requires `using Dynatrace.OpenTelemetry`. Currently, there aren't any additional parameters for this function, as configuration is read from environment variables and a `dtconfig.json` file. For details, see [Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.").
+* `AddDynatrace` is an extension method to OpenTelemetry's `TracerProvider`. It requires `using Dynatrace.OpenTelemetry`. Currently, there aren't any additional parameters for this function, as configuration is read from environment variables and a `dtconfig.json` file. For details, see [Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan](opentelemetry-on-azure-functions.md "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.").
 * `AddDynatrace` mainly adds an `ActivityProcessor` to the `TracerProvider` that will send all activities to Dynatrace. This extension:
 
   + Sets the resources required by Dynatrace. Due to [an issue with the OpenTelemetry .NET SDKï»¿](https://github.com/open-telemetry/opentelemetry-dotnet/issues/2909), this will override any existing resources. If you need custom resources, you need to call `SetResourceBuilder` on the `TracerProvider` *after* `AddDynatrace`. Be aware that this will override the resources configured by `AddDynatrace` and you need to readd them as part of the same `SetResourceBuilder` call. You can do this by calling the OpenTelemetry SDK's `AddTelemetrySdk` extension method on the `ResourceBuilder`.
@@ -1019,4 +1019,4 @@ The underlying issue can also affect other instrumentations. Therefore, we do no
 
 ## Related topics
 
-* [Set up Dynatrace on Microsoft Azure](/docs/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
+* [Set up Dynatrace on Microsoft Azure](../../../../microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")

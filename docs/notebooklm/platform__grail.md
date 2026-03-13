@@ -31,7 +31,7 @@ Grail provides:
 * Unified observability, security and business dataâcost effectively and at exabyte scale.
 * Any-question-any-time real-time analytics with always hydrated zero-latency cold/hot storage.
 * Increased productivity as no-index datawarping technology as well as schema-on-read drastically reduces data preparation efforts by magnitudes.
-* Simplified compliance as Grail securely integrates with [Dynatrace Intelligence hypermodal AI](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence."), [AppEngine](/docs/platform/appengine "Develop feature-rich Dynatrace apps for you and the world!"), [AutomationEngine](/docs/platform/automationengine "Combine observability, security, and business data with causal AI to easily automate BizDevSecOps workflows at enterprise scale."), and more as part of the Dynatrace platform.
+* Simplified compliance as Grail securely integrates with [Dynatrace Intelligence hypermodal AI](dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence."), [AppEngine](../ru/platform/appengine.md "Develop feature-rich Dynatrace apps for you and the world!"), [AutomationEngine](../ru/platform/automationengine.md "Combine observability, security, and business data with causal AI to easily automate BizDevSecOps workflows at enterprise scale."), and more as part of the Dynatrace platform.
 
 ## Contextual analytics
 
@@ -50,7 +50,7 @@ Contextual analytics leverages Dynatrace Intelligence causal AI to follow depend
 
 Grail breaks through the limits of common index-enabled databases and thus is uniquely capable of bringing all data types together into a single place and de-siloing information, while retaining full granularity. It does this by:
 
-* Processing and storing up to 1,000 TB of data per day, depending on the data ingestion channels (such as OneAgent or API) and the nature of the signals. To ensure optimal performance, a tailored scaling strategy is essential. To see the actual limits, see [OpenPipeline limits](/docs/platform/openpipeline/reference/limits "Reference limits of Dynatrace OpenPipeline.").
+* Processing and storing up to 1,000 TB of data per day, depending on the data ingestion channels (such as OneAgent or API) and the nature of the signals. To ensure optimal performance, a tailored scaling strategy is essential. To see the actual limits, see [OpenPipeline limits](../ru/platform/openpipeline/reference/limits.md "Reference limits of Dynatrace OpenPipeline.").
 * Providing a Massive Parallel Processing (MPP) query engine, enabling rapid processing of any query any time, without requiring any upfront definitions.
 * Utilizing datawarping to retrieve data from always hydrated zero-latency cold/hot storage, while eliminating the overhead cost and scalability limits of indexes.
 
@@ -134,9 +134,9 @@ NoSQL databases like Cassandra, Redis, and Amazon DynamoDB are examples of stora
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Log Analytics](/docs/analyze-explore-automate/logs "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")
-* [Business Observability](/docs/observe/business-observability "Basic concepts, setup and configuration, and use cases for Dynatrace Business Observability")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Log Analytics](../ru/analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")
+* [Business Observability](../ru/observe/business-observability.md "Basic concepts, setup and configuration, and use cases for Dynatrace Business Observability")
 
 ---
 
@@ -186,7 +186,7 @@ The match preview dataset consists of records displayed in DPL Architect. When y
 
 You can currently access DPL Architect from
 
-* [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks")
+* [Notebooks](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks")
 
   Show me how
 
@@ -195,11 +195,11 @@ You can currently access DPL Architect from
   3. In the results section, select a cell and then select **Extract fields** from the pop-up menu.
 
   ![Extract fields](https://dt-cdn.net/images/extract-fields-793-11d23cd027.png)
-* [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.")
+* [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../ru/secure/investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.")
 
   Show me how
 
-  While using [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), there are several ways to access DPL Architect. For instructions, see [Extract](/docs/secure/investigations/extract-fields "Pull specific data points from logs in Investigations.").
+  While using [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../ru/secure/investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), there are several ways to access DPL Architect. For instructions, see [Extract](secure/investigations/extract-fields.md "Pull specific data points from logs in Investigations.").
 
 ## Use DPL Architect
 
@@ -300,9 +300,9 @@ See below for the list of preset patterns.
 
 Application Security
 
-In this use case, you work with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to analyze unauthorized requests in your Kubernetes audit logs. See how you can get a precise extraction of fields from complex data and instant feedback on your patterns about their effectiveness and coverage, without the need to re-execute queries, to find the origin of your unauthorized requests and get accurate results about what happened.
+In this use case, you work with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../ru/secure/investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to analyze unauthorized requests in your Kubernetes audit logs. See how you can get a precise extraction of fields from complex data and instant feedback on your patterns about their effectiveness and coverage, without the need to re-execute queries, to find the origin of your unauthorized requests and get accurate results about what happened.
 
-* [Threat hunting and forensics](/docs/secure/use-cases/threat-hunting "Use case scenario for threat hunting and forensics with Investigations.")
+* [Threat hunting and forensics](../ru/secure/use-cases/threat-hunting.md "Use case scenario for threat hunting and forensics with Investigations.")
 
 ## Further resources
 
@@ -315,10 +315,10 @@ For additional insights into DPL Architect, see
 
 ## Related topics
 
-* [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
-* [Dynatrace Pattern Language](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.")
-* [Investigations](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.")
-* [Threat hunting and forensics](/docs/secure/use-cases/threat-hunting "Use case scenario for threat hunting and forensics with Investigations.")
+* [Notebooks](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+* [Dynatrace Pattern Language](../ru/platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.")
+* [Investigations](../ru/secure/investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.")
+* [Threat hunting and forensics](../ru/secure/use-cases/threat-hunting.md "Use case scenario for threat hunting and forensics with Investigations.")
 
 ---
 
@@ -502,10 +502,10 @@ Dynatrace Pattern Language (DPL) is a pattern language that allows you to descri
 
 Use DPL to:
 
-* Parse a record field into multiple output fields with the [DQL parse command](/docs/platform/grail/dynatrace-query-language/commands/extraction-and-parsing-commands#parse "DQL extraction commands").
-* Reshape incoming data for better understanding, analysis, or further processing in [Log processing](/docs/analyze-explore-automate/logs/lma-log-processing "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.").
+* Parse a record field into multiple output fields with the [DQL parse command](platform/grail/dynatrace-query-language/commands/extraction-and-parsing-commands.md#parse "DQL extraction commands").
+* Reshape incoming data for better understanding, analysis, or further processing in [Log processing](../ru/analyze-explore-automate/logs/lma-log-processing.md "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.").
 
-For instant feedback on the effectiveness and coverage of your patterns for your specific use case, use [DPL Architect](/docs/platform/grail/dynatrace-pattern-language/dpl-architect "Extract fields with Dynatrace Pattern Language Architect.").
+For instant feedback on the effectiveness and coverage of your patterns for your specific use case, use [DPL Architect](../ru/platform/grail/dynatrace-pattern-language/dpl-architect.md "Extract fields with Dynatrace Pattern Language Architect.").
 
 ## Pattern Structure
 
@@ -541,13 +541,13 @@ IPADDR:ip //followed by IPv4 or IPv6 address, extracted as a new field, `ip`
 EOL       //line is terminated with line feed character
 ```
 
-With [DPL Architect](/docs/platform/grail/dynatrace-pattern-language/dpl-architect "Extract fields with Dynatrace Pattern Language Architect."), you can use [preset patterns](/docs/platform/grail/dynatrace-pattern-language/dpl-architect#preset-patterns "Extract fields with Dynatrace Pattern Language Architect.") for the most popular technologies.
+With [DPL Architect](../ru/platform/grail/dynatrace-pattern-language/dpl-architect.md "Extract fields with Dynatrace Pattern Language Architect."), you can use [preset patterns](../ru/platform/grail/dynatrace-pattern-language/dpl-architect.md#preset-patterns "Extract fields with Dynatrace Pattern Language Architect.") for the most popular technologies.
 
 ## Matching vs Parsing
 
 You don't necessarily need all data elements in the input data for analysis. For instance, field separators or end-of-record markers in a log line are useful only for parsing, but we don't need them when we run the queries. All matchers in a defined pattern must match, but only a subset of them may also extract (parse) data.
 
-A matcher will extract data only when it has been assigned an [export name](/docs/platform/grail/dynatrace-pattern-language/log-processing-modifiers#exportname "Explore DPL syntax for optional controlling elements (modifiers).") - this is an arbitrary name of your choice, which becomes the name of the field you use in query statements.
+A matcher will extract data only when it has been assigned an [export name](platform/grail/dynatrace-pattern-language/log-processing-modifiers.md#exportname "Explore DPL syntax for optional controlling elements (modifiers).") - this is an arbitrary name of your choice, which becomes the name of the field you use in query statements.
 
 In the following example, the pattern has:
 
@@ -558,27 +558,27 @@ In the following example, the pattern has:
 
 ## Matcher structure
 
-A DPL pattern consists of one or more matcher expressions. They can be separated by whitespace or commas or newlines. For a handy reference guide to all matchers, see the [DPL Grammar page](/docs/platform/grail/dynatrace-pattern-language/log-processing-grammar "Complete grammar list of Dynatrace Pattern Language (DPL) syntax.").
+A DPL pattern consists of one or more matcher expressions. They can be separated by whitespace or commas or newlines. For a handy reference guide to all matchers, see the [DPL Grammar page](platform/grail/dynatrace-pattern-language/log-processing-grammar.md "Complete grammar list of Dynatrace Pattern Language (DPL) syntax.").
 
 ### Matcher types
 
 In general, a matcher expression can be any of the following:
 
 * Built-in matchers for many frequently used data types (numeric, time, network, and so on)
-* [literal expressions](/docs/platform/grail/dynatrace-pattern-language/log-processing-literal-expression "Explore DPL syntax for handling literal expressions.")
-* [character groups](/docs/platform/grail/dynatrace-pattern-language/log-processing-lines-strings "Explore DPL syntax for handling lines and strings."), which are arbitrary set of characters to be matched (Regular Expression compatible)
-* [Reference to another pattern expression](/docs/platform/grail/dynatrace-pattern-language/log-processing-macros "Explore DPL syntax for creating a series of matcher expressions (subpatterns)."), to facilitate building complex patterns in a modular way
+* [literal expressions](platform/grail/dynatrace-pattern-language/log-processing-literal-expression.md "Explore DPL syntax for handling literal expressions.")
+* [character groups](platform/grail/dynatrace-pattern-language/log-processing-lines-strings.md "Explore DPL syntax for handling lines and strings."), which are arbitrary set of characters to be matched (Regular Expression compatible)
+* [Reference to another pattern expression](platform/grail/dynatrace-pattern-language/log-processing-macros.md "Explore DPL syntax for creating a series of matcher expressions (subpatterns)."), to facilitate building complex patterns in a modular way
 
 ### Matcher grouping
 
 Matcher expressions can be grouped:
 
-* [sequence group](/docs/platform/grail/dynatrace-pattern-language/log-processing-sequence-group "Explore DPL syntax for sequence group matching where all its members must match.")âdefines an ordered sequence of matchers
-* [alternatives group](/docs/platform/grail/dynatrace-pattern-language/log-processing-alternatives-group "Explore DPL syntax for Alternatives group.")âdefines a list of matchers to choose from
-* [array](/docs/platform/grail/dynatrace-pattern-language/log-processing-array "The DPL ARRAY allows parsing repeated sequences of variable number data elements, specified by a pattern supplied as an argument.")âto parse repeated data elements
-* [structure](/docs/platform/grail/dynatrace-pattern-language/log-processing-structure "Explore DPL syntax for structuring data.")âto capture parsed data as composite type
-* [enum group](/docs/platform/grail/dynatrace-pattern-language/log-processing-enum "The DPL Enum constructor allows matching for a set of predefined strings and converts them into respectively assigned integer values.")âto match strings to numeric values
-* [JSON](/docs/platform/grail/dynatrace-pattern-language/log-processing-json-object "Explore DPL syntax for handling JSON Objects.")âto parse JSON structures
+* [sequence group](platform/grail/dynatrace-pattern-language/log-processing-sequence-group.md "Explore DPL syntax for sequence group matching where all its members must match.")âdefines an ordered sequence of matchers
+* [alternatives group](platform/grail/dynatrace-pattern-language/log-processing-alternatives-group.md "Explore DPL syntax for Alternatives group.")âdefines a list of matchers to choose from
+* [array](platform/grail/dynatrace-pattern-language/log-processing-array.md "The DPL ARRAY allows parsing repeated sequences of variable number data elements, specified by a pattern supplied as an argument.")âto parse repeated data elements
+* [structure](platform/grail/dynatrace-pattern-language/log-processing-structure.md "Explore DPL syntax for structuring data.")âto capture parsed data as composite type
+* [enum group](platform/grail/dynatrace-pattern-language/log-processing-enum.md "The DPL Enum constructor allows matching for a set of predefined strings and converts them into respectively assigned integer values.")âto match strings to numeric values
+* [JSON](platform/grail/dynatrace-pattern-language/log-processing-json-object.md "Explore DPL syntax for handling JSON Objects.")âto parse JSON structures
 
 ### Matcher Expression Syntax
 
@@ -594,13 +594,13 @@ Note that whitespace characters and newlines are allowed between the elements. P
 
 Matcher expressions have `operators`:
 
-* Some matchers allow [configuration](/docs/platform/grail/dynatrace-pattern-language/log-processing-modifiers "Explore DPL syntax for optional controlling elements (modifiers).") specifying their behavior. For instance, a timestamp needs an expected format definition.
-* Most matchers and groupings can be added with a [quantifier](/docs/platform/grail/dynatrace-pattern-language/log-processing-modifiers "Explore DPL syntax for optional controlling elements (modifiers).") to tell the engine how many times it should try to match.
-* All matchers and groupings can be declared to be [optional](/docs/platform/grail/dynatrace-pattern-language/log-processing-modifiers "Explore DPL syntax for optional controlling elements (modifiers)."). If the element in the expected position is missing, the engine outputs NULL to the resultset and continues with the next matcher in the expression.
-* All matchers and groupings can be assigned an [export name](/docs/platform/grail/dynatrace-pattern-language/log-processing-modifiers "Explore DPL syntax for optional controlling elements (modifiers)."), which is the name of the field exposed to the query layer.
+* Some matchers allow [configuration](platform/grail/dynatrace-pattern-language/log-processing-modifiers.md "Explore DPL syntax for optional controlling elements (modifiers).") specifying their behavior. For instance, a timestamp needs an expected format definition.
+* Most matchers and groupings can be added with a [quantifier](platform/grail/dynatrace-pattern-language/log-processing-modifiers.md "Explore DPL syntax for optional controlling elements (modifiers).") to tell the engine how many times it should try to match.
+* All matchers and groupings can be declared to be [optional](platform/grail/dynatrace-pattern-language/log-processing-modifiers.md "Explore DPL syntax for optional controlling elements (modifiers)."). If the element in the expected position is missing, the engine outputs NULL to the resultset and continues with the next matcher in the expression.
+* All matchers and groupings can be assigned an [export name](platform/grail/dynatrace-pattern-language/log-processing-modifiers.md "Explore DPL syntax for optional controlling elements (modifiers)."), which is the name of the field exposed to the query layer.
 
   The sole purpose of pattern matching is to make data elements available for the query engine. However, not all matched elements are needed for queries (such as field separators in tabulated files), so an export name is a mechanism for the user to declare which data elements are exposed for queries (at the same time providing a name for the query fields). A matcher without an export name still does its job matching the pattern, but it's not visible in queries.
-* All matchers and groupings can ["look around"](/docs/platform/grail/dynatrace-pattern-language/log-processing-modifiers "Explore DPL syntax for optional controlling elements (modifiers).") (backward or forward), mainly to enable decision-making (conditional branching).
+* All matchers and groupings can ["look around"](platform/grail/dynatrace-pattern-language/log-processing-modifiers.md "Explore DPL syntax for optional controlling elements (modifiers).") (backward or forward), mainly to enable decision-making (conditional branching).
 
 ## Example
 
@@ -662,7 +662,7 @@ The pattern matching engine tries to apply the pattern by utilizing matchers in 
 
 Next, the engine finds the byte to be a comma. This does not match with an integer, so the `INT:seq` matcher is completed by converting `1` to an integer and the next matcher in the pattern is selected: `','`. The engine tries it for a current position of data and finds a match.
 
-So the data pointer is moved on to the next byte (pointing to the first letter of `bob`). As the constant string matcher contained just one character, the matcher is considered complete and the engine takes the next one in the pattern: `[a-zA-Z0-9]*:uname`. The [quantifier](/docs/platform/grail/dynatrace-pattern-language/log-processing-modifiers "Explore DPL syntax for optional controlling elements (modifiers).") `*` forces `[a-zA-Z0-9]*:uname` to consume a variable number of bytes (zero or more), so it keeps matching until it finds a byte not matching its defined characters. This happens at the second comma (just after `bob`), where the engine considers the `[a-zA-Z0-9]*:uname` matcher complete and takes the next one: `','`. Again, it tries to match it to the byte at the current position and succeeds.
+So the data pointer is moved on to the next byte (pointing to the first letter of `bob`). As the constant string matcher contained just one character, the matcher is considered complete and the engine takes the next one in the pattern: `[a-zA-Z0-9]*:uname`. The [quantifier](platform/grail/dynatrace-pattern-language/log-processing-modifiers.md "Explore DPL syntax for optional controlling elements (modifiers).") `*` forces `[a-zA-Z0-9]*:uname` to consume a variable number of bytes (zero or more), so it keeps matching until it finds a byte not matching its defined characters. This happens at the second comma (just after `bob`), where the engine considers the `[a-zA-Z0-9]*:uname` matcher complete and takes the next one: `','`. Again, it tries to match it to the byte at the current position and succeeds.
 
 The data pointer is moved to the next byte, pointing to the beginning of `192.168.1.1`. As `','` is completed, the engine takes `IPV4ADDR:user_ip`. Trying it from the current position, a match is found and the data pointer is moved forward 11 bytes, now pointing to a newline character. The engine finds a match for it using the last matcher in the pattern: `[\n]`.
 
@@ -678,7 +678,7 @@ If the engine encounters data for which it is unable to find a match, it resets 
 
 ## Related topics
 
-* [Log processing (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/log-processing "Create log processing rules that reshape your incoming log data for better analysis or further processing.")
+* [Log processing (Logs Classic)](../ru/analyze-explore-automate/log-monitoring/log-processing.md "Create log processing rules that reshape your incoming log data for better analysis or further processing.")
 
 ---
 
@@ -700,34 +700,34 @@ scraped: 2026-03-06T21:20:34.787797
 
 This page provides a list of DQL commands grouped by categories. To get more in-depth information on a specific command, click on its name.
 
-## [Data source commands](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands "DQL data source commands")
+## [Data source commands](platform/grail/dynatrace-query-language/commands/data-source-commands.md "DQL data source commands")
 
-## [Metric commands](/docs/platform/grail/dynatrace-query-language/commands/metric-commands "DQL metric commands")
+## [Metric commands](platform/grail/dynatrace-query-language/commands/metric-commands.md "DQL metric commands")
 
-## [Filter and search commands](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands "DQL filter and search commands")
+## [Filter and search commands](platform/grail/dynatrace-query-language/commands/filtering-commands.md "DQL filter and search commands")
 
-## [Selection and modification commands](/docs/platform/grail/dynatrace-query-language/commands/selection-and-modification-commands "DQL selection and modification commands")
+## [Selection and modification commands](platform/grail/dynatrace-query-language/commands/selection-and-modification-commands.md "DQL selection and modification commands")
 
-## [Extraction and parsing commands](/docs/platform/grail/dynatrace-query-language/commands/extraction-and-parsing-commands "DQL extraction commands")
+## [Extraction and parsing commands](platform/grail/dynatrace-query-language/commands/extraction-and-parsing-commands.md "DQL extraction commands")
 
-## [Ordering commands](/docs/platform/grail/dynatrace-query-language/commands/ordering-commands "DQL ordering commands")
+## [Ordering commands](platform/grail/dynatrace-query-language/commands/ordering-commands.md "DQL ordering commands")
 
-## [Structuring commands](/docs/platform/grail/dynatrace-query-language/commands/structuring-commands "DQL structuring commands")
+## [Structuring commands](platform/grail/dynatrace-query-language/commands/structuring-commands.md "DQL structuring commands")
 
-## [Aggregation commands](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands "DQL aggregation commands")
+## [Aggregation commands](platform/grail/dynatrace-query-language/commands/aggregation-commands.md "DQL aggregation commands")
 
-## [Correlation and join commands](/docs/platform/grail/dynatrace-query-language/commands/correlation-and-join-commands "DQL correlation and join commands")
+## [Correlation and join commands](platform/grail/dynatrace-query-language/commands/correlation-and-join-commands.md "DQL correlation and join commands")
 
-## [Smartscape commands](/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands "DQL Smartscape commands")
+## [Smartscape commands](platform/grail/dynatrace-query-language/commands/smartscape-commands.md "DQL Smartscape commands")
 
 ## Related topics
 
-* [Use DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.")
-* [DQL language reference](/docs/platform/grail/dynatrace-query-language/dql-reference "Dynatrace Query Language syntax reference.")
-* [DQL functions](/docs/platform/grail/dynatrace-query-language/functions "A list of DQL functions.")
-* [DQL operators](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.")
-* [DQL data types](/docs/platform/grail/dynatrace-query-language/data-types "A list of DQL data types.")
-* [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.")
+* [Use DQL queries](../ru/platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.")
+* [DQL language reference](../ru/platform/grail/dynatrace-query-language/dql-reference.md "Dynatrace Query Language syntax reference.")
+* [DQL functions](../ru/platform/grail/dynatrace-query-language/functions.md "A list of DQL functions.")
+* [DQL operators](../ru/platform/grail/dynatrace-query-language/operators.md "A list of DQL Operators.")
+* [DQL data types](../ru/platform/grail/dynatrace-query-language/data-types.md "A list of DQL data types.")
+* [DQL best practices](../ru/platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.")
 
 ---
 
@@ -981,7 +981,7 @@ Sequence of characters with a specified character set.
   Optionally, you can enclose strings in triple quotes, such as """someString""".
 
   + Inside triple quotes, no escaping is necessary.
-  + Triple quotes are not allowed as part of the string. In such a scenario, you can use the standard strings or the [concat](/docs/platform/grail/dynatrace-query-language/functions/string-functions#concat "A list of DQL string functions.") function.
+  + Triple quotes are not allowed as part of the string. In such a scenario, you can use the standard strings or the [concat](../ru/platform/grail/dynatrace-query-language/functions/string-functions.md#concat "A list of DQL string functions.") function.
 * **Converting to String**  
   All DQL datatypes can be converted to a string:
 
@@ -1003,9 +1003,9 @@ A data type that is used to represent 64-bit identifiers and 128-bit identifiers
 
 You can use the following DQL functions to create `UID` data:
 
-* [uid64](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#uid64 "A list of DQL conversion and casting functions.")
-* [uid128](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#uid128 "A list of DQL conversion and casting functions.")
-* [toUid](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toUid "A list of DQL conversion and casting functions.")
+* [uid64](platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions.md#uid64 "A list of DQL conversion and casting functions.")
+* [uid128](platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions.md#uid128 "A list of DQL conversion and casting functions.")
+* [toUid](platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions.md#toUid "A list of DQL conversion and casting functions.")
 
 ## Complex types
 
@@ -1045,7 +1045,7 @@ A data structure that contains a sequence of values, each identified by index.
   | fields a == b, arraySize(b) > arraySize(c)
   ```
 
-See the complete list of [DQL array functions](/docs/platform/grail/dynatrace-query-language/functions#array-functions "A list of DQL functions.") for further information.
+See the complete list of [DQL array functions](../ru/platform/grail/dynatrace-query-language/functions.md#array-functions "A list of DQL functions.") for further information.
 
 ### Record
 
@@ -1132,14 +1132,14 @@ A set of key-value pair data whose value can be any DQL data type.
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Use DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.")
-* [DQL compared to SQL and more](/docs/platform/grail/dynatrace-query-language/dql-comparison "See how DQL compares to other query languages.")
-* [DQL language reference](/docs/platform/grail/dynatrace-query-language/dql-reference "Dynatrace Query Language syntax reference.")
-* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [DQL functions](/docs/platform/grail/dynatrace-query-language/functions "A list of DQL functions.")
-* [DQL operators](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.")
-* [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Use DQL queries](../ru/platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.")
+* [DQL compared to SQL and more](../ru/platform/grail/dynatrace-query-language/dql-comparison.md "See how DQL compares to other query languages.")
+* [DQL language reference](../ru/platform/grail/dynatrace-query-language/dql-reference.md "Dynatrace Query Language syntax reference.")
+* [DQL commands](../ru/platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.")
+* [DQL functions](../ru/platform/grail/dynatrace-query-language/functions.md "A list of DQL functions.")
+* [DQL operators](../ru/platform/grail/dynatrace-query-language/operators.md "A list of DQL Operators.")
+* [DQL best practices](../ru/platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.")
 
 ---
 
@@ -1163,7 +1163,7 @@ This page describes actions you can take to improve query performance.
 
 ### Narrow the query time range
 
-A shorter analysis window provides better performance based on identical data sets. Use available timeframe selectors provided by the user interface or directly specify the query time range within the [fetch command](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.").
+A shorter analysis window provides better performance based on identical data sets. Use available timeframe selectors provided by the user interface or directly specify the query time range within the [fetch command](../ru/platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.").
 
 ```
 fetch bizevents, from:-10m
@@ -1171,7 +1171,7 @@ fetch bizevents, from:-10m
 
 ### Utilize available sampling options
 
-Grail samples incoming data on write and allows the selection of these partitions within the DQL [fetch command](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands."). Depending on the specified value, a fraction (`1/<samplingRatio>`) of all available raw records is returned.
+Grail samples incoming data on write and allows the selection of these partitions within the DQL [fetch command](../ru/platform/grail/dynatrace-query-language/commands.md "A list of DQL commands."). Depending on the specified value, a fraction (`1/<samplingRatio>`) of all available raw records is returned.
 
 The applicable value ranges for sampling are:
 
@@ -1197,7 +1197,7 @@ fetch spans, samplingRatio:100
 
 ### Further options to limit the scanned amount of data
 
-The DQL [fetch command](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.") provides further options to limit data processing by
+The DQL [fetch command](../ru/platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.") provides further options to limit data processing by
 
 * stopping processing after a specified amount of data
 
@@ -1387,14 +1387,14 @@ Similarly, if you need to sort by a field named 'not':
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Use DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.")
-* [DQL compared to SQL and more](/docs/platform/grail/dynatrace-query-language/dql-comparison "See how DQL compares to other query languages.")
-* [DQL language reference](/docs/platform/grail/dynatrace-query-language/dql-reference "Dynatrace Query Language syntax reference.")
-* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [DQL functions](/docs/platform/grail/dynatrace-query-language/functions "A list of DQL functions.")
-* [DQL operators](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.")
-* [DQL data types](/docs/platform/grail/dynatrace-query-language/data-types "A list of DQL data types.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Use DQL queries](../ru/platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.")
+* [DQL compared to SQL and more](../ru/platform/grail/dynatrace-query-language/dql-comparison.md "See how DQL compares to other query languages.")
+* [DQL language reference](../ru/platform/grail/dynatrace-query-language/dql-reference.md "Dynatrace Query Language syntax reference.")
+* [DQL commands](../ru/platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.")
+* [DQL functions](../ru/platform/grail/dynatrace-query-language/functions.md "A list of DQL functions.")
+* [DQL operators](../ru/platform/grail/dynatrace-query-language/operators.md "A list of DQL Operators.")
+* [DQL data types](../ru/platform/grail/dynatrace-query-language/data-types.md "A list of DQL data types.")
 
 ---
 
@@ -1792,14 +1792,14 @@ events
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Use DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.")
-* [DQL language reference](/docs/platform/grail/dynatrace-query-language/dql-reference "Dynatrace Query Language syntax reference.")
-* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [DQL functions](/docs/platform/grail/dynatrace-query-language/functions "A list of DQL functions.")
-* [DQL operators](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.")
-* [DQL data types](/docs/platform/grail/dynatrace-query-language/data-types "A list of DQL data types.")
-* [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Use DQL queries](../ru/platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.")
+* [DQL language reference](../ru/platform/grail/dynatrace-query-language/dql-reference.md "Dynatrace Query Language syntax reference.")
+* [DQL commands](../ru/platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.")
+* [DQL functions](../ru/platform/grail/dynatrace-query-language/functions.md "A list of DQL functions.")
+* [DQL operators](../ru/platform/grail/dynatrace-query-language/operators.md "A list of DQL Operators.")
+* [DQL data types](../ru/platform/grail/dynatrace-query-language/data-types.md "A list of DQL data types.")
+* [DQL best practices](../ru/platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.")
 
 ---
 
@@ -1968,7 +1968,7 @@ fetch bizevents
 
 ## Aggregations over time
 
-DQL provides dedicated commands such as [makeTimeseries](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#makeTimeseries "DQL aggregation commands") to aggregate a list of raw event records into a chartable timeseries. Let's observe the logs grouped by the log level and a 5-minute aggregation interval:
+DQL provides dedicated commands such as [makeTimeseries](platform/grail/dynatrace-query-language/commands/aggregation-commands.md#makeTimeseries "DQL aggregation commands") to aggregate a list of raw event records into a chartable timeseries. Let's observe the logs grouped by the log level and a 5-minute aggregation interval:
 
 ```
 fetch logs
@@ -1988,14 +1988,14 @@ You can learn DQL through hands-on experience with interactive tutorials in the 
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [DQL compared to SQL and more](/docs/platform/grail/dynatrace-query-language/dql-comparison "See how DQL compares to other query languages.")
-* [DQL language reference](/docs/platform/grail/dynatrace-query-language/dql-reference "Dynatrace Query Language syntax reference.")
-* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [DQL functions](/docs/platform/grail/dynatrace-query-language/functions "A list of DQL functions.")
-* [DQL operators](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.")
-* [DQL data types](/docs/platform/grail/dynatrace-query-language/data-types "A list of DQL data types.")
-* [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [DQL compared to SQL and more](../ru/platform/grail/dynatrace-query-language/dql-comparison.md "See how DQL compares to other query languages.")
+* [DQL language reference](../ru/platform/grail/dynatrace-query-language/dql-reference.md "Dynatrace Query Language syntax reference.")
+* [DQL commands](../ru/platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.")
+* [DQL functions](../ru/platform/grail/dynatrace-query-language/functions.md "A list of DQL functions.")
+* [DQL operators](../ru/platform/grail/dynatrace-query-language/operators.md "A list of DQL Operators.")
+* [DQL data types](../ru/platform/grail/dynatrace-query-language/data-types.md "A list of DQL data types.")
+* [DQL best practices](../ru/platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.")
 
 ---
 
@@ -2015,7 +2015,7 @@ scraped: 2026-03-06T21:20:36.484418
 * Reference
 * Updated on Nov 06, 2025
 
-A DQL query contains at least one or more [commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands."), each of which returns tabular output containing records (lines or rows) and fields (columns). All commands are sequenced by a | (pipe). Data flows or is piped from one command to the next. The data is filtered or manipulated at each step and then streamed into the following step.
+A DQL query contains at least one or more [commands](../ru/platform/grail/dynatrace-query-language/commands.md "A list of DQL commands."), each of which returns tabular output containing records (lines or rows) and fields (columns). All commands are sequenced by a | (pipe). Data flows or is piped from one command to the next. The data is filtered or manipulated at each step and then streamed into the following step.
 
 ## DQL Syntax
 
@@ -2041,7 +2041,7 @@ A DQL command consists of mandatory and optional parameters which are comma-sepa
   + field
   + groupexpression
 
-The required parameter is `aggregation`. For this command to be syntactically valid, at least one call to an [aggregation function](/docs/platform/grail/dynatrace-query-language/functions#aggregation-functions "A list of DQL functions.") has to be specified.
+The required parameter is `aggregation`. For this command to be syntactically valid, at least one call to an [aggregation function](../ru/platform/grail/dynatrace-query-language/functions.md#aggregation-functions "A list of DQL functions.") has to be specified.
 
 ```
 | summarize count()
@@ -2090,7 +2090,7 @@ Parameters can be:
 
 ### Parameter groups
 
-If several parameters, either mandatory or optional, belong together, you should group them with curly braces (`{}`). This is especially important if the group is named. Using curly braces doesn't affect the data type. If you choose to group your parameters, you won't be able to use [DQL operators](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.") with them.
+If several parameters, either mandatory or optional, belong together, you should group them with curly braces (`{}`). This is especially important if the group is named. Using curly braces doesn't affect the data type. If you choose to group your parameters, you won't be able to use [DQL operators](../ru/platform/grail/dynatrace-query-language/operators.md "A list of DQL Operators.") with them.
 
 The below example shows two groups of parameters. The first group holds the aggregations (not named), while the second group holds the fields by which to summarize (`by:`).
 
@@ -2110,7 +2110,7 @@ The following DQL query uses seven pipeline steps to get from raw log data to an
   fetch       logs, from:now()-10m
   ```
 
-  You retrieve the log data using the [`fetch`](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands") command. In addition, the optional `from:` parameter specifies the query start timestamp.
+  You retrieve the log data using the [`fetch`](platform/grail/dynatrace-query-language/commands/data-source-commands.md#fetch "DQL data source commands") command. In addition, the optional `from:` parameter specifies the query start timestamp.
 * **Line 2**
 
   ```
@@ -2124,14 +2124,14 @@ The following DQL query uses seven pipeline steps to get from raw log data to an
   | filter    endsWith(log.source, "pgi.log")
   ```
 
-  The [`filter`](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#filter "DQL filter and search commands") command filters the log records based on the [`endsWith`](/docs/platform/grail/dynatrace-query-language/functions/string-functions#endsWith "A list of DQL string functions.") function that retrieves log files whose names end with the predefined string (the `pgi.log` string).
+  The [`filter`](platform/grail/dynatrace-query-language/commands/filtering-commands.md#filter "DQL filter and search commands") command filters the log records based on the [`endsWith`](../ru/platform/grail/dynatrace-query-language/functions/string-functions.md#endsWith "A list of DQL string functions.") function that retrieves log files whose names end with the predefined string (the `pgi.log` string).
 * **Line 4**
 
   ```
   | parse     content, "LD IPADDR:ip ':' LONG:payload SPACE LD 'HTTP_STATUS' SPACE INT:http_status  LD (EOL| EOS)"
   ```
 
-  We use the [`parse`](/docs/platform/grail/dynatrace-query-language/commands/extraction-and-parsing-commands#parse "DQL extraction commands") command to extract key-value pairs containing execution statistics out of the raw log text string. In this case, it adds the `IP address`, `payload` and `http_status` fields to the result and transforms their data types into required formats.
+  We use the [`parse`](platform/grail/dynatrace-query-language/commands/extraction-and-parsing-commands.md#parse "DQL extraction commands") command to extract key-value pairs containing execution statistics out of the raw log text string. In this case, it adds the `IP address`, `payload` and `http_status` fields to the result and transforms their data types into required formats.
 * **Line 5, 6, 7, 8**
 
   ```
@@ -2150,7 +2150,7 @@ The following DQL query uses seven pipeline steps to get from raw log data to an
   by:{ip, host.name}
   ```
 
-  The [`summarize`](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#summarize "DQL aggregation commands") command is a key element of DQL as it allows multiple aggregations across one or more fields. This query groups the results by `ip` and `host.name`. The retrieved records include the total value of payload, calculated using the [`sum`](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#sum "A list of DQL aggregation functions.") function, and two columns calculated using the [`countif`](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#countIf "A list of DQL aggregation functions.") function:
+  The [`summarize`](platform/grail/dynatrace-query-language/commands/aggregation-commands.md#summarize "DQL aggregation commands") command is a key element of DQL as it allows multiple aggregations across one or more fields. This query groups the results by `ip` and `host.name`. The retrieved records include the total value of payload, calculated using the [`sum`](platform/grail/dynatrace-query-language/functions/aggregation-functions.md#sum "A list of DQL aggregation functions.") function, and two columns calculated using the [`countif`](platform/grail/dynatrace-query-language/functions/aggregation-functions.md#countIf "A list of DQL aggregation functions.") function:
 
   + a column with numbers of failed requests (defined as those having `http_status` >=400)
   + a column with numbers of successful requests (defined as those having `http_status` <400)  
@@ -2161,41 +2161,41 @@ The following DQL query uses seven pipeline steps to get from raw log data to an
   |fieldsAdd total_payload_MB = total_payload/1000000
   ```
 
-  With the [`fieldsAdd`](/docs/platform/grail/dynatrace-query-language/commands#fields-add "A list of DQL commands.") command, you add a new field showing the total payload converted into megabytes, basing on a mathematical expression.
+  With the [`fieldsAdd`](../ru/platform/grail/dynatrace-query-language/commands.md#fields-add "A list of DQL commands.") command, you add a new field showing the total payload converted into megabytes, basing on a mathematical expression.
 * **Line 10**
 
   ```
   |fields    ip, host.name, failedRequests, successfulRequests, total_payload_MB
   ```
 
-  With the [`fields`](/docs/platform/grail/dynatrace-query-language/commands/selection-and-modification-commands#fields "DQL selection and modification commands") command, you can determine which fields you need to retrieve.
+  With the [`fields`](platform/grail/dynatrace-query-language/commands/selection-and-modification-commands.md#fields "DQL selection and modification commands") command, you can determine which fields you need to retrieve.
 * **Line 11**
 
   ```
   | sort  failedRequests desc
   ```
 
-  The [`sort`](/docs/platform/grail/dynatrace-query-language/commands/ordering-commands#sort "DQL ordering commands") command is used to finalize the result. In this case, the results are sorted according to the number of failed requests, from the highest to lowest.
+  The [`sort`](platform/grail/dynatrace-query-language/commands/ordering-commands.md#sort "DQL ordering commands") command is used to finalize the result. In this case, the results are sorted according to the number of failed requests, from the highest to lowest.
 
 ## DQL key building blocks
 
-* [Commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [Functions](/docs/platform/grail/dynatrace-query-language/functions "A list of DQL functions.")  
-  Functions can be used to perform any desired computation on fields of [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.").
+* [Commands](../ru/platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.")
+* [Functions](../ru/platform/grail/dynatrace-query-language/functions.md "A list of DQL functions.")  
+  Functions can be used to perform any desired computation on fields of [DQL commands](../ru/platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.").
 
-* [Data types](/docs/platform/grail/dynatrace-query-language/data-types "A list of DQL data types.")  
+* [Data types](../ru/platform/grail/dynatrace-query-language/data-types.md "A list of DQL data types.")  
   The Dynatrace Query Language operates with strongly typed data: functions and operators accept only declared types of data. The type is assigned to data during parsing or by using casting functions. DQL also recognizes value types expressed in literal notation (for example, using constant values in functions).
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Use DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.")
-* [DQL compared to SQL and more](/docs/platform/grail/dynatrace-query-language/dql-comparison "See how DQL compares to other query languages.")
-* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [DQL functions](/docs/platform/grail/dynatrace-query-language/functions "A list of DQL functions.")
-* [DQL operators](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.")
-* [DQL data types](/docs/platform/grail/dynatrace-query-language/data-types "A list of DQL data types.")
-* [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Use DQL queries](../ru/platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.")
+* [DQL compared to SQL and more](../ru/platform/grail/dynatrace-query-language/dql-comparison.md "See how DQL compares to other query languages.")
+* [DQL commands](../ru/platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.")
+* [DQL functions](../ru/platform/grail/dynatrace-query-language/functions.md "A list of DQL functions.")
+* [DQL operators](../ru/platform/grail/dynatrace-query-language/operators.md "A list of DQL Operators.")
+* [DQL data types](../ru/platform/grail/dynatrace-query-language/data-types.md "A list of DQL data types.")
+* [DQL best practices](../ru/platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.")
 
 ---
 
@@ -2271,7 +2271,7 @@ The content field for every record looks as below:
 }
 ```
 
-You can use the `parse` command in combination with the [Dynatrace Pattern Language](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.") for parsing JSON objects. The query parses the `payment_provider` field from the JSON data and groups the number of transactions by each provider using the `summarize` command, as well as calculates the total count of transactions. The share is calculated in a separate column, next to each provider's number of transactions.
+You can use the `parse` command in combination with the [Dynatrace Pattern Language](../ru/platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.") for parsing JSON objects. The query parses the `payment_provider` field from the JSON data and groups the number of transactions by each provider using the `summarize` command, as well as calculates the total count of transactions. The share is calculated in a separate column, next to each provider's number of transactions.
 
 ```
 fetch logs
@@ -2411,7 +2411,7 @@ The XML field for every record looks as below:
 </log-entry>
 ```
 
-In the DQL query, you need to use the [DPL matcher](/docs/platform/grail/dynatrace-pattern-language/dpl-xml "Find out how to use XML matchers with DPL.") to extract the whole XML element:
+In the DQL query, you need to use the [DPL matcher](platform/grail/dynatrace-pattern-language/dpl-xml.md "Find out how to use XML matchers with DPL.") to extract the whole XML element:
 
 ```
 ...
@@ -2447,20 +2447,20 @@ Results:
 
 Application Security
 
-In this use case, you perform queries using [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to analyze unauthorized requests in your Kubernetes audit logs. Follow different investigation paths, navigate between executed queries, and get a detailed overview of your results in the original format.
+In this use case, you perform queries using [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../ru/secure/investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to analyze unauthorized requests in your Kubernetes audit logs. Follow different investigation paths, navigate between executed queries, and get a detailed overview of your results in the original format.
 
-* [Threat hunting and forensics](/docs/secure/use-cases/threat-hunting "Use case scenario for threat hunting and forensics with Investigations.")
+* [Threat hunting and forensics](../ru/secure/use-cases/threat-hunting.md "Use case scenario for threat hunting and forensics with Investigations.")
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Use DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.")
-* [DQL compared to SQL and more](/docs/platform/grail/dynatrace-query-language/dql-comparison "See how DQL compares to other query languages.")
-* [DQL language reference](/docs/platform/grail/dynatrace-query-language/dql-reference "Dynatrace Query Language syntax reference.")
-* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [DQL functions](/docs/platform/grail/dynatrace-query-language/functions "A list of DQL functions.")
-* [DQL operators](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.")
-* [DQL data types](/docs/platform/grail/dynatrace-query-language/data-types "A list of DQL data types.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Use DQL queries](../ru/platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.")
+* [DQL compared to SQL and more](../ru/platform/grail/dynatrace-query-language/dql-comparison.md "See how DQL compares to other query languages.")
+* [DQL language reference](../ru/platform/grail/dynatrace-query-language/dql-reference.md "Dynatrace Query Language syntax reference.")
+* [DQL commands](../ru/platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.")
+* [DQL functions](../ru/platform/grail/dynatrace-query-language/functions.md "A list of DQL functions.")
+* [DQL operators](../ru/platform/grail/dynatrace-query-language/operators.md "A list of DQL Operators.")
+* [DQL data types](../ru/platform/grail/dynatrace-query-language/data-types.md "A list of DQL data types.")
 
 ---
 
@@ -3394,7 +3394,7 @@ Query result:
 ## parseAll
 
 Extracts several values from a string as specified in the pattern.
-Unlike the [`parse`](/docs/platform/grail/dynatrace-query-language/functions/string-functions#parse "A list of DQL string functions.") function, `parseAll` returns an array all the time. The array can be empty if no patterns matched. A single element can be primitive type or a record.
+Unlike the [`parse`](../ru/platform/grail/dynatrace-query-language/functions/string-functions.md#parse "A list of DQL string functions.") function, `parseAll` returns an array all the time. The array can be empty if no patterns matched. A single element can be primitive type or a record.
 
 #### Syntax
 
@@ -3489,7 +3489,7 @@ Query result:
 
 ## replacePattern
 
-Replaces each substring of a string that matches the DPL pattern with the given string. The pattern must be defined as a constant string expression. For additional details about pattern syntax, see the [DPL documentation](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.").
+Replaces each substring of a string that matches the DPL pattern with the given string. The pattern must be defined as a constant string expression. For additional details about pattern syntax, see the [DPL documentation](../ru/platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.").
 
 #### Syntax
 
@@ -3972,14 +3972,14 @@ Query result:
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Use DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.")
-* [DQL compared to SQL and more](/docs/platform/grail/dynatrace-query-language/dql-comparison "See how DQL compares to other query languages.")
-* [DQL language reference](/docs/platform/grail/dynatrace-query-language/dql-reference "Dynatrace Query Language syntax reference.")
-* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [DQL operators](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.")
-* [DQL data types](/docs/platform/grail/dynatrace-query-language/data-types "A list of DQL data types.")
-* [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Use DQL queries](../ru/platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.")
+* [DQL compared to SQL and more](../ru/platform/grail/dynatrace-query-language/dql-comparison.md "See how DQL compares to other query languages.")
+* [DQL language reference](../ru/platform/grail/dynatrace-query-language/dql-reference.md "Dynatrace Query Language syntax reference.")
+* [DQL commands](../ru/platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.")
+* [DQL operators](../ru/platform/grail/dynatrace-query-language/operators.md "A list of DQL Operators.")
+* [DQL data types](../ru/platform/grail/dynatrace-query-language/data-types.md "A list of DQL data types.")
+* [DQL best practices](../ru/platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.")
 
 ---
 
@@ -4001,72 +4001,72 @@ scraped: 2026-03-06T21:20:42.968672
 
 DQL functions grouped by category. For in-depth information on a specific function, select its name.
 
-## [Aggregation functions](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions "A list of DQL aggregation functions.")
+## [Aggregation functions](platform/grail/dynatrace-query-language/functions/aggregation-functions.md "A list of DQL aggregation functions.")
 
 Aggregation functions compute results from a list of records.
 
-## [String functions](/docs/platform/grail/dynatrace-query-language/functions/string-functions "A list of DQL string functions.")
+## [String functions](../ru/platform/grail/dynatrace-query-language/functions/string-functions.md "A list of DQL string functions.")
 
 String functions allow you to create expressions that manipulate text strings in a variety of ways.
 
-## [Conversion and casting functions](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions "A list of DQL conversion and casting functions.")
+## [Conversion and casting functions](platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions.md "A list of DQL conversion and casting functions.")
 
 Conversion and casting functions convert the expression or value from one data type to another type.
 
-## [Conditional functions](/docs/platform/grail/dynatrace-query-language/functions/conditional-functions "A list of DQL conditional functions.")
+## [Conditional functions](platform/grail/dynatrace-query-language/functions/conditional-functions.md "A list of DQL conditional functions.")
 
 Functions that return a conditional result.
 
-## [Boolean functions](/docs/platform/grail/dynatrace-query-language/functions/boolean-functions "A list of DQL boolean functions.")
+## [Boolean functions](platform/grail/dynatrace-query-language/functions/boolean-functions.md "A list of DQL boolean functions.")
 
 Functions that evaluate boolean expressions and test the presence of values.
 
-## [Time functions](/docs/platform/grail/dynatrace-query-language/functions/time-functions "A list of DQL time functions.")
+## [Time functions](platform/grail/dynatrace-query-language/functions/time-functions.md "A list of DQL time functions.")
 
 Time functions return the decimal number for a particular time value, calculate the number of time units (days, months, years) between two dates, and allow to determine timestamps and timeframes, among others.
 
-## [Array functions](/docs/platform/grail/dynatrace-query-language/functions/array-functions "A list of DQL array functions.")
+## [Array functions](platform/grail/dynatrace-query-language/functions/array-functions.md "A list of DQL array functions.")
 
 Functions related to a collection of items of the same data type stored at adjacent memory locations.
 
-## [Vector distance functions](/docs/platform/grail/dynatrace-query-language/functions/vector-distance-functions "A list of DQL vector distance functions.")
+## [Vector distance functions](platform/grail/dynatrace-query-language/functions/vector-distance-functions.md "A list of DQL vector distance functions.")
 
 Functions that calculate the distance between numeric array expressions.
 
-## [Network functions](/docs/platform/grail/dynatrace-query-language/functions/network-functions "A list of DQL array functions.")
+## [Network functions](platform/grail/dynatrace-query-language/functions/network-functions.md "A list of DQL array functions.")
 
 Functions related to IP addresses.
 
-## [Hash functions](/docs/platform/grail/dynatrace-query-language/functions/hash-functions "A list of DQL hash functions.")
+## [Hash functions](platform/grail/dynatrace-query-language/functions/hash-functions.md "A list of DQL hash functions.")
 
 Hash related functions.
 
-## [Bitwise functions](/docs/platform/grail/dynatrace-query-language/functions/bitwise-functions "A list of DQL bitwise functions.")
+## [Bitwise functions](platform/grail/dynatrace-query-language/functions/bitwise-functions.md "A list of DQL bitwise functions.")
 
 Bitwise operations performing on long expressions.
 
-## [Mathematical functions](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions "A list of DQL mathematical functions.")
+## [Mathematical functions](platform/grail/dynatrace-query-language/functions/mathematical-functions.md "A list of DQL mathematical functions.")
 
 Functions executing mathematical calculations.
 
-## [Join functions](/docs/platform/grail/dynatrace-query-language/functions/join-functions "A list of DQL join functions.")
+## [Join functions](platform/grail/dynatrace-query-language/functions/join-functions.md "A list of DQL join functions.")
 
 Functions that join records from subqueries.
 
-## [General functions](/docs/platform/grail/dynatrace-query-language/functions/general-functions "A list of DQL general functions.")
+## [General functions](platform/grail/dynatrace-query-language/functions/general-functions.md "A list of DQL general functions.")
 
 Functions with a general purpose.
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Use DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.")
-* [DQL compared to SQL and more](/docs/platform/grail/dynatrace-query-language/dql-comparison "See how DQL compares to other query languages.")
-* [DQL language reference](/docs/platform/grail/dynatrace-query-language/dql-reference "Dynatrace Query Language syntax reference.")
-* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [DQL operators](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.")
-* [DQL data types](/docs/platform/grail/dynatrace-query-language/data-types "A list of DQL data types.")
-* [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Use DQL queries](../ru/platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.")
+* [DQL compared to SQL and more](../ru/platform/grail/dynatrace-query-language/dql-comparison.md "See how DQL compares to other query languages.")
+* [DQL language reference](../ru/platform/grail/dynatrace-query-language/dql-reference.md "Dynatrace Query Language syntax reference.")
+* [DQL commands](../ru/platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.")
+* [DQL operators](../ru/platform/grail/dynatrace-query-language/operators.md "A list of DQL Operators.")
+* [DQL data types](../ru/platform/grail/dynatrace-query-language/data-types.md "A list of DQL data types.")
+* [DQL best practices](../ru/platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.")
 
 ---
 
@@ -4164,7 +4164,7 @@ You can use arithmetic operators with numbers, represented by both the types `lo
 
 Integer division
 
-When you divide a `long` value by another `long` value using the `/` operator, the result is also a `long` value, and any fractional part is discarded. To get a result with the fractional part (a `double` value), you need to convert or cast at least one of the operands to `double` (e.g., by using the [toDouble](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toDouble "A list of DQL conversion and casting functions.") function).
+When you divide a `long` value by another `long` value using the `/` operator, the result is also a `long` value, and any fractional part is discarded. To get a result with the fractional part (a `double` value), you need to convert or cast at least one of the operands to `double` (e.g., by using the [toDouble](platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions.md#toDouble "A list of DQL conversion and casting functions.") function).
 
 | DIVISION | Long | Double | String | Boolean | Timestamp | Duration | Timeframe | Binary | IP | UID | Array | Record |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -4235,10 +4235,10 @@ The data type resulting from the operation is indicated in parentheses in the ta
 Equality comparisons (`==`, `!=`) use a tri-state boolean algebra (`true`, `false`, `null`). This means that if any side of the equality comparison is `null`, the overall result of the comparison is `null`.
 There are four DQL functions that cover scenarios where missing or `null` records need to be retrieved:
 
-* The [`isTrueOrNull` function](/docs/platform/grail/dynatrace-query-language/functions/boolean-functions#isTrueOrNull "A list of DQL boolean functions.")
-* The [`isFalseOrNull` function](/docs/platform/grail/dynatrace-query-language/functions/boolean-functions#isFalseOrNull "A list of DQL boolean functions.")
-* The [`isNull` function](/docs/platform/grail/dynatrace-query-language/functions/boolean-functions#isNull "A list of DQL boolean functions.")
-* The [`isNotNull` function](/docs/platform/grail/dynatrace-query-language/functions/boolean-functions#isNotNull "A list of DQL boolean functions.")
+* The [`isTrueOrNull` function](platform/grail/dynatrace-query-language/functions/boolean-functions.md#isTrueOrNull "A list of DQL boolean functions.")
+* The [`isFalseOrNull` function](platform/grail/dynatrace-query-language/functions/boolean-functions.md#isFalseOrNull "A list of DQL boolean functions.")
+* The [`isNull` function](platform/grail/dynatrace-query-language/functions/boolean-functions.md#isNull "A list of DQL boolean functions.")
+* The [`isNotNull` function](platform/grail/dynatrace-query-language/functions/boolean-functions.md#isNotNull "A list of DQL boolean functions.")
 
 For example, the below query that uses basic filtering does not provide records with `null` or missing values:
 
@@ -4417,7 +4417,7 @@ For example, `-2M@..`. is equivalent to `(now() - 2M)@...`.
 
 #### Right side
 
-The time unit can be any DQL supported [duration unit](/docs/platform/grail/dynatrace-query-language/data-types#duration "A list of DQL data types.") including `s` (second), `m` (minute), `h` (hour), or a calendar duration unit like `d` (day), `w` (week), `M` (month), `q` (quarter), and `y` (year).
+The time unit can be any DQL supported [duration unit](../ru/platform/grail/dynatrace-query-language/data-types.md#duration "A list of DQL data types.") including `s` (second), `m` (minute), `h` (hour), or a calendar duration unit like `d` (day), `w` (week), `M` (month), `q` (quarter), and `y` (year).
 
 Duration units (`h`, `m`, `s`, `ms`, `us`, and `ns`) allow to add a factor, for example, `@3h`.  
 Leaving the factor out is equivalent to setting it to `1`. Note the following constraints when adding such factor:
@@ -4496,14 +4496,14 @@ The operator searches the pattern in the tokens of a string. Its behavior depend
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Use DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.")
-* [DQL compared to SQL and more](/docs/platform/grail/dynatrace-query-language/dql-comparison "See how DQL compares to other query languages.")
-* [DQL language reference](/docs/platform/grail/dynatrace-query-language/dql-reference "Dynatrace Query Language syntax reference.")
-* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [DQL functions](/docs/platform/grail/dynatrace-query-language/functions "A list of DQL functions.")
-* [DQL data types](/docs/platform/grail/dynatrace-query-language/data-types "A list of DQL data types.")
-* [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Use DQL queries](../ru/platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.")
+* [DQL compared to SQL and more](../ru/platform/grail/dynatrace-query-language/dql-comparison.md "See how DQL compares to other query languages.")
+* [DQL language reference](../ru/platform/grail/dynatrace-query-language/dql-reference.md "Dynatrace Query Language syntax reference.")
+* [DQL commands](../ru/platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.")
+* [DQL functions](../ru/platform/grail/dynatrace-query-language/functions.md "A list of DQL functions.")
+* [DQL data types](../ru/platform/grail/dynatrace-query-language/data-types.md "A list of DQL data types.")
+* [DQL best practices](../ru/platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.")
 
 ---
 
@@ -4523,41 +4523,41 @@ scraped: 2026-03-06T21:11:00.245264
 * Reference
 * Updated on Jan 28, 2026
 
-Dynatrace Query Language (DQL) is a powerful tool to explore your data and discover patterns, identify anomalies and outliers, create statistical modeling, and more based on data stored in [Dynatrace Grail storage](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.").
+Dynatrace Query Language (DQL) is a powerful tool to explore your data and discover patterns, identify anomalies and outliers, create statistical modeling, and more based on data stored in [Dynatrace Grail storage](../ru/platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.").
 
 DQL offers maximum flexibility because it is built for processing arbitrary event data, requiring no up-front description of the input data's schema contrary to relational databases like SQL tables.
 
-Read [how to use DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.") to get started or explore the language.
+Read [how to use DQL queries](../ru/platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.") to get started or explore the language.
 
 [### How to use DQL
 
-Find out how DQL works and what are DQL key concepts.](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.")[### Language reference
+Find out how DQL works and what are DQL key concepts.](../ru/platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.")[### Language reference
 
-Learn about DQL syntax in detail.](/docs/platform/grail/dynatrace-query-language/dql-reference "Dynatrace Query Language syntax reference.")[### Learn DQL
+Learn about DQL syntax in detail.](../ru/platform/grail/dynatrace-query-language/dql-reference.md "Dynatrace Query Language syntax reference.")[### Learn DQL
 
-Get hands-on experience with interactive tutorials on how to use DQL.](/docs/platform/grail/dynatrace-query-language/dql-guide#learn-dql-app "Find out how DQL works and what are DQL key concepts.")[### Migrating to DQL
+Get hands-on experience with interactive tutorials on how to use DQL.](../ru/platform/grail/dynatrace-query-language/dql-guide.md#learn-dql-app "Find out how DQL works and what are DQL key concepts.")[### Migrating to DQL
 
-Compare DQL to other common query languages.](/docs/platform/grail/dynatrace-query-language/dql-comparison "See how DQL compares to other query languages.")[### DQL examples for logs
+Compare DQL to other common query languages.](../ru/platform/grail/dynatrace-query-language/dql-comparison.md "See how DQL compares to other query languages.")[### DQL examples for logs
 
-Find out what you can do with logs using DQL.](/docs/analyze-explore-automate/logs/logs-on-grail-examples "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.")[### DQL examples for security data
+Find out what you can do with logs using DQL.](../ru/analyze-explore-automate/logs/logs-on-grail-examples.md "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.")[### DQL examples for security data
 
-Use DQL to query your security data on Grail.](/docs/secure/threat-observability/dql-examples "DQL examples for security data powered by Grail.")[### DQL examples for business events
+Use DQL to query your security data on Grail.](../ru/secure/threat-observability/dql-examples.md "DQL examples for security data powered by Grail.")[### DQL examples for business events
 
-Find out what you can do with business events using DQL.](/docs/observe/business-observability/bo-analysis "Analyze and present business event data.")[### DQL examples for Davis problems and events
+Find out what you can do with business events using DQL.](../ru/observe/business-observability/bo-analysis.md "Analyze and present business event data.")[### DQL examples for Davis problems and events
 
-Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.](/docs/dynatrace-intelligence/use-cases/davis-dql-examples "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")[### DQL examples for metrics
+Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.](../ru/dynatrace-intelligence/use-cases/davis-dql-examples.md "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")[### DQL examples for metrics
 
-Use DQL to query your metric observability data.](/docs/analyze-explore-automate/metrics/dql-examples "DQL timeseries examples")
+Use DQL to query your metric observability data.](../ru/analyze-explore-automate/metrics/dql-examples.md "DQL timeseries examples")
 
 ## Related topics
 
-* [Use DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.")
-* [DQL compared to SQL and more](/docs/platform/grail/dynatrace-query-language/dql-comparison "See how DQL compares to other query languages.")
-* [DQL language reference](/docs/platform/grail/dynatrace-query-language/dql-reference "Dynatrace Query Language syntax reference.")
-* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [DQL functions](/docs/platform/grail/dynatrace-query-language/functions "A list of DQL functions.")
-* [DQL operators](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.")
-* [DQL data types](/docs/platform/grail/dynatrace-query-language/data-types "A list of DQL data types.")
+* [Use DQL queries](../ru/platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.")
+* [DQL compared to SQL and more](../ru/platform/grail/dynatrace-query-language/dql-comparison.md "See how DQL compares to other query languages.")
+* [DQL language reference](../ru/platform/grail/dynatrace-query-language/dql-reference.md "Dynatrace Query Language syntax reference.")
+* [DQL commands](../ru/platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.")
+* [DQL functions](../ru/platform/grail/dynatrace-query-language/functions.md "A list of DQL functions.")
+* [DQL operators](../ru/platform/grail/dynatrace-query-language/operators.md "A list of DQL Operators.")
+* [DQL data types](../ru/platform/grail/dynatrace-query-language/data-types.md "A list of DQL data types.")
 
 ---
 
@@ -4584,9 +4584,9 @@ Storing lookup data in [Grail](#grail) enables you to enrich your observability 
 
 ![A diagram demonstrating how lookup data in Grail works. ](https://dt-cdn.net/images/diagram-spc-file-storage-in-grail-web-res-docs-1920-a87d521cbd.png)
 
-Dynatrace stores lookup data as tabular files in the Resource Store, which is part of Grail. You can upload and manage your lookup data through the [Resource Store API](#lookup-files-rest-api). Once stored in Grail, you can use your lookup files to enrich your data within [DQL](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") queries.
+Dynatrace stores lookup data as tabular files in the Resource Store, which is part of Grail. You can upload and manage your lookup data through the [Resource Store API](#lookup-files-rest-api). Once stored in Grail, you can use your lookup files to enrich your data within [DQL](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") queries.
 
-You can define lookup tables in [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), which currently provides the only user interface for creating and managing lookup tables without using the API. For instructions, see [Create and use lookup tables](/docs/secure/investigations/enhance-results#lookup "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
+You can define lookup tables in [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../ru/secure/investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), which currently provides the only user interface for creating and managing lookup tables without using the API. For instructions, see [Create and use lookup tables](secure/investigations/enhance-results.md#lookup "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
 
 ## Lookup files
 
@@ -4615,15 +4615,15 @@ To upload lookup data to Grail via REST API or to delete it, the policy bound to
 * `storage:files:write`
 * `storage:files:delete`
 
-All permissions can be restricted to specific paths or prefixes, giving users access to only a limited set of files. To learn more about setting up the required permissions, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
+All permissions can be restricted to specific paths or prefixes, giving users access to only a limited set of files. To learn more about setting up the required permissions, see [Permissions in Grail](../ru/platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
 
 When creating an OAuth token or platform token to make API calls from an API client, ensure these permissions are also configured for the token. The user linked to that OAuth token or platform token must have these permissions assigned.
 
 Preview opt-in
 
-Customers with [Dynatrace Platform Subscription (DPS)](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") can join the preview for lookup data in Grail. During the preview phase, the `storage:files` permissions are not included in the default Grail policies. You can opt into the preview program by manually adding permissions to access lookup files to your custom policies.
+Customers with [Dynatrace Platform Subscription (DPS)](license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") can join the preview for lookup data in Grail. During the preview phase, the `storage:files` permissions are not included in the default Grail policies. You can opt into the preview program by manually adding permissions to access lookup files to your custom policies.
 
-You can configure permissions with [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health."). To grant full access to all lookup data in `/lookups/`, you can create a policy (**Identity & access management** > **Policy management** >  **Create policy**) with the following statements:
+You can configure permissions with [Account Management](../ru/manage/account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health."). To grant full access to all lookup data in `/lookups/`, you can create a policy (**Identity & access management** > **Policy management** >  **Create policy**) with the following statements:
 
 ```
 ALLOW storage:files:read WHERE storage:file-path startsWith "/lookups/";
@@ -4667,7 +4667,7 @@ You can manage your lookup files in Grail via the Resource Store API. Dynatrace 
 
 To update a file's content, you need to reupload the whole file and overwrite the existing file.
 
-The Resource Store API uses the [Dynatrace Pattern Language](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.") to parse uploaded data and convert it into a tabular storage format. This provides complete flexibility regarding the uploaded data, supporting various text-based formats, including `CSV`, `JSONL`, or `XML`.
+The Resource Store API uses the [Dynatrace Pattern Language](../ru/platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.") to parse uploaded data and convert it into a tabular storage format. This provides complete flexibility regarding the uploaded data, supporting various text-based formats, including `CSV`, `JSONL`, or `XML`.
 
 ### Access API documentation
 
@@ -4675,7 +4675,7 @@ To access the Swagger API documentation for the Resource Store API and to start 
 
 1. Search for and select **Dynatrace API**.
 2. In the **Select a definition** field, select **Grail - Resource Store**.
-3. Optional Authenticate with your API token if you want to use Swagger to execute your requests. For details, see [Authentication](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context."). Select the **Try it out** button to interact with the API directly from the documentation.
+3. Optional Authenticate with your API token if you want to use Swagger to execute your requests. For details, see [Authentication](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context."). Select the **Try it out** button to interact with the API directly from the documentation.
 4. Perform one of the following actions.
 
 ### Parse lookup data
@@ -4874,9 +4874,9 @@ With DQL, you can fetch the `dt.system.files` table to get a list of all accessi
 fetch dt.system.files
 ```
 
-If you want to search for specific files, you can add the [search](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#search "DQL filter and search commands") or [filter](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#filter "DQL filter and search commands") commands to the above example. The autocomplete suggestions within the DQL Code Editor will also help you find your files.
+If you want to search for specific files, you can add the [search](platform/grail/dynatrace-query-language/commands/filtering-commands.md#search "DQL filter and search commands") or [filter](platform/grail/dynatrace-query-language/commands/filtering-commands.md#filter "DQL filter and search commands") commands to the above example. The autocomplete suggestions within the DQL Code Editor will also help you find your files.
 
-Use the [load](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#load "DQL data source commands") command if you want to inspect the contents of a file:
+Use the [load](platform/grail/dynatrace-query-language/commands/data-source-commands.md#load "DQL data source commands") command if you want to inspect the contents of a file:
 
 ```
 load "/lookups/http_status_codes"
@@ -4884,7 +4884,7 @@ load "/lookups/http_status_codes"
 
 ## Enrich your data
 
-You can use the [load](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#load "DQL data source commands") command to retrieve the tabular data from your lookup files in DQL and combine it with commands such as [lookup](/docs/platform/grail/dynatrace-query-language/commands/correlation-and-join-commands#lookup "DQL correlation and join commands") or [join](/docs/platform/grail/dynatrace-query-language/commands/correlation-and-join-commands#join "DQL correlation and join commands") to add additional context to your observability data:
+You can use the [load](platform/grail/dynatrace-query-language/commands/data-source-commands.md#load "DQL data source commands") command to retrieve the tabular data from your lookup files in DQL and combine it with commands such as [lookup](platform/grail/dynatrace-query-language/commands/correlation-and-join-commands.md#lookup "DQL correlation and join commands") or [join](platform/grail/dynatrace-query-language/commands/correlation-and-join-commands.md#join "DQL correlation and join commands") to add additional context to your observability data:
 
 ```
 fetch spans
@@ -4923,11 +4923,11 @@ scraped: 2026-03-06T21:27:14.199849
 
 This guide outlines Dynatrace permission set up for your data-from basic access controls to advanced configurations such as enriching data with `dt.security_context`, applying OpenPipeline processors for conditional access, and managing IAM policies with boundaries and templates for scalable control.
 
-Dynatrace has a [permission model for Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail."). This applies to all telemetry data, such as metrics, events, spans, and logs.
+Dynatrace has a [permission model for Grail](../ru/platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail."). This applies to all telemetry data, such as metrics, events, spans, and logs.
 
-We recommend setting up permissions along organizational lines and deployment scopes. Suitable concepts include host groups, Kubernetes clusters, and Kubernetes namespaces. These attributes are typically available for all telemetry data ingested via Dynatrace collection methods like OneAgent, OpenTelemetry, or Kubernetes operator. Hence, you can use these attributes to enable [record-level permissions](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.").
+We recommend setting up permissions along organizational lines and deployment scopes. Suitable concepts include host groups, Kubernetes clusters, and Kubernetes namespaces. These attributes are typically available for all telemetry data ingested via Dynatrace collection methods like OneAgent, OpenTelemetry, or Kubernetes operator. Hence, you can use these attributes to enable [record-level permissions](../ru/platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.").
 
-For Kubernetes-based deployments, make sure Dynatrace Operator has [metadata enrichment](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") enabled.
+For Kubernetes-based deployments, make sure Dynatrace Operator has [metadata enrichment](../ru/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment.md "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") enabled.
 
 If you only require a basic permission concept, setting up bucket-level permissions is the best option. You can then route your data to the correct bucket in OpenPipeline by matching one of the mentioned deployment-relevant primary Grail fields.
 
@@ -4936,7 +4936,7 @@ For more control in Dynatrace, you can set up policy boundaries with more granul
 * `dt.host_group.id`
 * `k8s.cluster.name`
 * `k8s.namespace.name`
-* Any other attribute listed in the [permission model](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.")
+* Any other attribute listed in the [permission model](../ru/platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.")
 
 Dynatrace provides a comprehensive permission model for Grail that applies to all telemetry data-including metrics, logs, spans, and events.
 
@@ -4944,13 +4944,13 @@ Dynatrace provides a comprehensive permission model for Grail that applies to al
 
 You can set up access controls for your data and entities using the guides below.
 
-* [OneAgent permission setup](/docs/ingest-from/dynatrace-oneagent/oneagent-security-context "Learn how to set up Grail permissions for OneAgent.")
-* [Kubernetes permission setup](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment#security-context-and-cost-allocation "Guides for telemetry enrichment on Kubernetes")
+* [OneAgent permission setup](../ru/ingest-from/dynatrace-oneagent/oneagent-security-context.md "Learn how to set up Grail permissions for OneAgent.")
+* [Kubernetes permission setup](../ru/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment.md#security-context-and-cost-allocation "Guides for telemetry enrichment on Kubernetes")
 
-* [Logs permission setup](/docs/analyze-explore-automate/logs/lma-security-context "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.")
-* [Traces permission setup](/docs/observe/application-observability/distributed-tracing/permissions "Manage permissions for Distributed Tracing powered by Grail.")
-* [Entities permission setup](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context")
-* [OpenPipeline permission setup](/docs/platform/grail/organize-data/advanced-permission-setup#set-up-the-security-context-in-openpipeline "Configure advanced permissions with security context.")
+* [Logs permission setup](analyze-explore-automate/logs/lma-security-context.md "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.")
+* [Traces permission setup](../ru/observe/application-observability/distributed-tracing/permissions.md "Manage permissions for Distributed Tracing powered by Grail.")
+* [Entities permission setup](../ru/manage/identity-access-management/use-cases/access-security-context.md "Grant access to entities with security context")
+* [OpenPipeline permission setup](../ru/platform/grail/organize-data/advanced-permission-setup.md#set-up-the-security-context-in-openpipeline "Configure advanced permissions with security context.")
 
 ## Set up the security context
 
@@ -4958,7 +4958,7 @@ If the permissions on deployment-level attributes or the bucket level are insuff
 
 ### Set up the security context in OpenPipeline
 
-You can define a security context based on existing resource attributes to your [data within OpenPipeline](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#process "Configure ingest sources, routes, and processing for your data in OpenPipeline.").
+You can define a security context based on existing resource attributes to your [data within OpenPipeline](../ru/platform/openpipeline/getting-started/tutorial-configure-processing.md#process "Configure ingest sources, routes, and processing for your data in OpenPipeline.").
 After configuring your pipeline, add `Set Security Context` processors on the `Permission` tab.
 
 To define the `dt.security_context` attribute
@@ -4978,7 +4978,7 @@ Based on the created attribute, you can enforce security-related user and group 
 
 ## Enforce access controls
 
-You can [enforce access controls](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.") to ensure that teams only access data that is relevant to them by using policy statements such as:
+You can [enforce access controls](../ru/platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.") to ensure that teams only access data that is relevant to them by using policy statements such as:
 
 ```
 ALLOW storage:buckets:read WHERE storage:bucket-name MATCH (â*-database-*â);
@@ -4988,16 +4988,16 @@ ALLOW storage:buckets:read WHERE storage:bucket-name MATCH (â*-database-*â
 ALLOW storage:logs:read WHERE storage:dt.security_context = "TeamA" AND storage:dt.host_group.id MATCH ("shared_host_*");
 ```
 
-You can also use [policy boundaries](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries "Restrict security policies with policy boundaries to provide tailored access to your users.") or [policy templating](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policy-templating "Policy templating") for easier management of your access controls.
+You can also use [policy boundaries](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries.md "Restrict security policies with policy boundaries to provide tailored access to your users.") or [policy templating](manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policy-templating.md "Policy templating") for easier management of your access controls.
 
 ## Related topics
 
-* [Set up Grail permissions for OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-security-context "Learn how to set up Grail permissions for OneAgent.")
-* [Metadata enrichment of all telemetry originating from Kubernetes](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment "Guides for telemetry enrichment on Kubernetes")
-* [Set up Grail permissions for logs](/docs/analyze-explore-automate/logs/lma-security-context "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.")
-* [Set up Grail permissions for Distributed Tracing](/docs/observe/application-observability/distributed-tracing/permissions "Manage permissions for Distributed Tracing powered by Grail.")
-* [Grant access to entities with security context](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context")
-* [OpenPipeline processing examples](/docs/platform/openpipeline/use-cases/processing-examples "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")
+* [Set up Grail permissions for OneAgent](../ru/ingest-from/dynatrace-oneagent/oneagent-security-context.md "Learn how to set up Grail permissions for OneAgent.")
+* [Metadata enrichment of all telemetry originating from Kubernetes](../ru/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment.md "Guides for telemetry enrichment on Kubernetes")
+* [Set up Grail permissions for logs](analyze-explore-automate/logs/lma-security-context.md "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.")
+* [Set up Grail permissions for Distributed Tracing](../ru/observe/application-observability/distributed-tracing/permissions.md "Manage permissions for Distributed Tracing powered by Grail.")
+* [Grant access to entities with security context](../ru/manage/identity-access-management/use-cases/access-security-context.md "Grant access to entities with security context")
+* [OpenPipeline processing examples](../ru/platform/openpipeline/use-cases/processing-examples.md "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")
 
 ---
 
@@ -5066,7 +5066,7 @@ The example below shows how to include only buckets prefixed with `default_` or 
 ALLOW storage:buckets:read WHERE storage:bucket-name MATCH ("default_*", "common_logs");
 ```
 
-For more information, see [IAM policy reference](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#storage "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+For more information, see [IAM policy reference](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#storage "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
 ### Included queries
 
@@ -5076,7 +5076,7 @@ This only applies if `Log Management & Analytics - Retain with Included Queries`
 
 Included queries
 
-For more information about retained log data and included query log data, see [Retain with Included Queries](/docs/license/capabilities/log-analytics#log-retain-included-queries "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.").
+For more information about retained log data and included query log data, see [Retain with Included Queries](../ru/license/capabilities/log-analytics.md#log-retain-included-queries "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.").
 
 Bucket permissions let you define user group access to
 
@@ -5133,7 +5133,7 @@ The following examples describe how to use bucket permissions to grant access to
 
 Besides granting access to buckets, you also need to configure table permissions.
 
-For more information, see [IAM policy reference](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#storage "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+For more information, see [IAM policy reference](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#storage "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
 ### Bucket level permissions
 
@@ -5271,7 +5271,7 @@ Permissions for entities allow you to define IAM policies that control data acce
 
 In contrast to monitoring data, entity permissions only allow filtering for the `dt.security_context` field.
 
-For more information, see [Grant access to entities with security context](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context").
+For more information, see [Grant access to entities with security context](../ru/manage/identity-access-management/use-cases/access-security-context.md "Grant access to entities with security context").
 
 ## Field permissions
 
@@ -5303,7 +5303,7 @@ You can manage your custom fieldsets via REST API
 1. In Dynatrace, search for and select **Dynatrace API**.
 2. In the **Select a definition** field, select **Grail - Fieldsets**.
 3. Authenticate with your API token.  
-   For details, see [Authentication](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+   For details, see [Authentication](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
 4. Perform one of the following actions.
 
 #### Example
@@ -5418,7 +5418,7 @@ To give read-only access to a specific file, you could also use a permission sim
 ALLOW storage:files:read WHERE storage:file-path startsWith "/lookups/http_status_codes";
 ```
 
-For more information, see [IAM policy reference](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#storage "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+For more information, see [IAM policy reference](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#storage "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
 ## Predefined global policies
 
@@ -5544,13 +5544,13 @@ ALLOW storage:system:read;
 * If there is an unconditional table permission in any other policy available for a user, the `WHERE` clause is irrelevant and the user will always be able to view all records from that table.
 * Use the `MATCH` operator to simplify your statements instead of combination of `=`, `IN` and `STARTSWITH`, as there is a 100-statement limit per policy.
 * When using the `MATCH` operator with wildcards (`*`) in record filters, it's best to place wildcards before or after word separators such as: `-`, `_`, `.`, or `/`. This is because `matchesValue` used in DQL queries, performs better when word separators are present. For example, `... WHERE storage:dt.host_group.id MATCH ("db-tech-*")` is more efficient than `... WHERE storage:dt.host_group.id MATCH ("db-tech*")`.
-* Make sure to combine logs, events and metrics where applicable (to further save on the 100 statement policy [IAM policy statement syntax and examples](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax#iam-example-statements-combined "IAM policy statement syntax."))
+* Make sure to combine logs, events and metrics where applicable (to further save on the 100 statement policy [IAM policy statement syntax and examples](manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax.md#iam-example-statements-combined "IAM policy statement syntax."))
 * When you create custom fieldsets, make sure to avoid including any essential fields in your fieldset (such as `timestamp`, `id`, `content`).
 
 ## Related topics
 
-* [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies")
-* [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.")
+* [Working with policies](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies")
+* [DQL best practices](../ru/platform/grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.")
 
 ---
 
@@ -5592,7 +5592,7 @@ There is a set of predefined built-in buckets that cannot be modified, including
 
 ### Built-in buckets with corresponding retention periods
 
-This section has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](/docs/secure/threat-observability/migration "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This section has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../ru/secure/threat-observability/migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
 
 These are examples of built-in buckets with corresponding retention periods.
 For a full list of available built-in buckets, run this DQL query:
@@ -5655,7 +5655,7 @@ To manage your custom Grail buckets via REST API
 2. In the **Select a definition** field, select **Grail Storage Management**.
 3. Authenticate with your API token.
 
-   For details, see [Authentication](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+   For details, see [Authentication](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
 4. Perform one of the following actions.
 
    | To do this | Go to **Bucket Definitions** and select this |
@@ -5670,11 +5670,11 @@ The delete buckets operation is irreversible. This operation will remove the con
 Status will show **deleting** as long as data will be drained, and finally the bucket will be deleted. Afterwards, the bucket will cease to exist.
 This operation can be executed on all types of buckets, except buckets where **bucketName** starts with `dt_` or `default_`. Before a bucket is deleted, checks are performed to verify that the bucket is not in use. To delete a bucket, you need the `storage:bucket-definitions:delete` permission.
 
-See when to [create custom buckets and how to allow access to them](/docs/platform/upgrade#organize-your-data "Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data.").
+See when to [create custom buckets and how to allow access to them](../ru/platform/upgrade.md#organize-your-data "Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data.").
 
 ## Related topics
 
-* [What is Dynatrace Grail?](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.")
+* [What is Dynatrace Grail?](../ru/platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.")
 
 ---
 
@@ -5887,7 +5887,7 @@ Take this information into account when working with different fields:
 * Most entity fields have the same names as in the API v2 environment (for example, gcpZone and oneAgentCustomName).
 * The first and last observation timestamp of an entity is stored in the lifetime field, represented as a timeframe type comprising a start and end timestamp. The lifetime of an entity needs to overlap with the query timeframe for the entity to be included in the query.
 * Several entity names are prefixed with 'entity.' (for example, `entity.conditional_name`)
-* Relationships are returned as records, to learn more about them, see [entity relationships](/docs/semantic-dictionary/model/dt-entities#entity-relationships "Get to know the Semantic Dictionary models related to topology.").
+* Relationships are returned as records, to learn more about them, see [entity relationships](semantic-dictionary/model/dt-entities.md#entity-relationships "Get to know the Semantic Dictionary models related to topology.").
 
 The `describe` command is a valuable tool to explore the Grail data schema.
 
@@ -5949,7 +5949,7 @@ This query has limitations, such as returning only 100 hosts per service entity,
 
 ### Filtering along relationships
 
-When your query evaluates relationships, we recommend using the [`classicEntitySelector`](/docs/platform/grail/dynatrace-query-language/functions/general-functions#classic-entity-selector "A list of DQL general functions.") function instead of native DQL queries.
+When your query evaluates relationships, we recommend using the [`classicEntitySelector`](platform/grail/dynatrace-query-language/functions/general-functions.md#classic-entity-selector "A list of DQL general functions.") function instead of native DQL queries.
 
 In the following examples, the native DQL query will be slower and might yield incomplete results compared to the `classicEntitySelector` query:
 
@@ -6066,11 +6066,11 @@ Entity relationships in the previous Dynatrace (for example, the environment API
 
 ## Related topics
 
-* [What is Dynatrace Grail?](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.")
-* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [IAM policy reference](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.")
-* [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.")
-* [Environment API v2 - Entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.")
+* [What is Dynatrace Grail?](../ru/platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.")
+* [DQL commands](../ru/platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.")
+* [IAM policy reference](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.")
+* [Permissions in Grail](../ru/platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.")
+* [Environment API v2 - Entity selector](../ru/dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.")
 
 ---
 
@@ -6214,7 +6214,7 @@ The `dt.security_context` field is an optional node field and is empty by defaul
 
 ### Field permissions
 
-You can configure and use [fieldsets](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-fields "Find out how to assign permissions to buckets and tables in Grail.") with the `smartscape` table to apply filters to all data returned by Smartscape commands (`smartscapeNodes` and `smartscapeEdges`). Be aware that only certain fields can be filtered out for all entity types simultaneously.
+You can configure and use [fieldsets](../ru/platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-fields "Find out how to assign permissions to buckets and tables in Grail.") with the `smartscape` table to apply filters to all data returned by Smartscape commands (`smartscapeNodes` and `smartscapeEdges`). Be aware that only certain fields can be filtered out for all entity types simultaneously.
 
 See the example of a field set configuration below:
 
@@ -6280,7 +6280,7 @@ Now only users that have the permission `ALLOW storage:fieldsets:read WHERE stor
 
 Node types used by Smartscape on Grail might be different from classic entity types. This means that the entity or node ID might also be different (for example, `CLOUD_APPLICATION_INSTANCE` is called `K8S_POD` in Smartscape on Grail). To avoid confusion, Smartscape nodes include an `id_classic` field that contains the entity ID of the corresponding classic entity. Classic entity IDs are available for K8s entities, core entities, and services.
 
-If there are no corresponding classic entities (for example, with [Clouds](/docs/observe/infrastructure-observability/cloud-platform-monitoring "The cloud platforms Dynatrace can monitor")), there are no `id_classic` fields on those nodes.
+If there are no corresponding classic entities (for example, with [Clouds](observe/infrastructure-observability/cloud-platform-monitoring.md "The cloud platforms Dynatrace can monitor")), there are no `id_classic` fields on those nodes.
 
 ## Differences between classic entities and Smartscape on Grail
 
@@ -6295,18 +6295,18 @@ Only Smartscape nodes can be filtered using segments, meaning that Smartscape ed
 
 ## Extract via OpenPipeline
 
-[OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") offers dedicated stages for node and edge extraction and processing. Use OpenPipeline to extract topological data from any signal for the following purposes:
+[OpenPipeline](../ru/platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") offers dedicated stages for node and edge extraction and processing. Use OpenPipeline to extract topological data from any signal for the following purposes:
 
 * Custom entity type definition, such as extensions
 * Additional information on Dynatrace built-in types
 
 ## Related topics
 
-* [DQL Smartscape commands](/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands "DQL Smartscape commands")
-* [Join functions](/docs/platform/grail/dynatrace-query-language/functions/join-functions "A list of DQL join functions.")
-* [Conversion and casting functions](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions "A list of DQL conversion and casting functions.")
-* [DPL Smartscape ID](/docs/platform/grail/dynatrace-pattern-language/log-processing-smartscape "Explore DPL syntax for parsing out Smartscape ID from strings.")
-* [DPL Grammar](/docs/platform/grail/dynatrace-pattern-language/log-processing-grammar "Complete grammar list of Dynatrace Pattern Language (DPL) syntax.")
+* [DQL Smartscape commands](platform/grail/dynatrace-query-language/commands/smartscape-commands.md "DQL Smartscape commands")
+* [Join functions](platform/grail/dynatrace-query-language/functions/join-functions.md "A list of DQL join functions.")
+* [Conversion and casting functions](platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions.md "A list of DQL conversion and casting functions.")
+* [DPL Smartscape ID](platform/grail/dynatrace-pattern-language/log-processing-smartscape.md "Explore DPL syntax for parsing out Smartscape ID from strings.")
+* [DPL Grammar](platform/grail/dynatrace-pattern-language/log-processing-grammar.md "Complete grammar list of Dynatrace Pattern Language (DPL) syntax.")
 
 ---
 
@@ -6333,23 +6333,23 @@ Grail is the Dynatrace data lakehouse designed explicitly for observability data
 
 ### What is Dynatrace Grail?
 
-Get to know Grail, the Dynatrace data lakehouse designed for observability data.](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.")[![Data](https://dt-cdn.net/images/dashboards-app-dashboard-add-data-f6d2ed4717.svg "Data")
+Get to know Grail, the Dynatrace data lakehouse designed for observability data.](../ru/platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.")[![Data](https://dt-cdn.net/images/dashboards-app-dashboard-add-data-f6d2ed4717.svg "Data")
 
 ### Organize data
 
-Insights on the Grail data model consisting of buckets, tables, and views.](/docs/platform/grail/organize-data "Insights on the Grail data model consisting of buckets, tables, and views.")[![Share case](https://dt-cdn.net/images/lock-22963d32e5.svg "Share case")
+Insights on the Grail data model consisting of buckets, tables, and views.](../ru/platform/grail/organize-data.md "Insights on the Grail data model consisting of buckets, tables, and views.")[![Share case](https://dt-cdn.net/images/lock-22963d32e5.svg "Share case")
 
 ### Permissions in Grail
 
-See how to assign permissions to buckets and tables in Grail.](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.")[![DQL](https://cdn.bfldr.com/B686QPH3/at/t9h436nzjqq6cww99sqs6z/DQL.svg?auto=webp&width=72&height=72 "DQL")
+See how to assign permissions to buckets and tables in Grail.](../ru/platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.")[![DQL](https://cdn.bfldr.com/B686QPH3/at/t9h436nzjqq6cww99sqs6z/DQL.svg?auto=webp&width=72&height=72 "DQL")
 
 ### Dynatrace Query Language (DQL)
 
-See how to use DQL to query data in Grail.](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")[![Code](https://dt-cdn.net/images/code-571afa1aee.svg "Code")
+See how to use DQL to query data in Grail.](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")[![Code](https://dt-cdn.net/images/code-571afa1aee.svg "Code")
 
 ### Dynatrace Pattern Language (DPL)
 
-See how to use DPL to describe patterns using matchers.](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.")[![Grail](https://cdn.bfldr.com/B686QPH3/at/kc3c7k476pbx2pb8cphzktf/Grail.svg?auto=webp&width=72&height=72 "Grail")
+See how to use DPL to describe patterns using matchers.](../ru/platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.")[![Grail](https://cdn.bfldr.com/B686QPH3/at/kc3c7k476pbx2pb8cphzktf/Grail.svg?auto=webp&width=72&height=72 "Grail")
 
 ### Grail service
 

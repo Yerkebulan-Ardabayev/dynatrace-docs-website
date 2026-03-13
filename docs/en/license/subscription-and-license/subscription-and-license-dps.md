@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:22:13.621808
 * Published Feb 01, 2022
 
 This documentation is valid for Dynatrace Platform Subscription licenses that were signed prior to April 26, 2023.
-For information about all other Dynatrace Platform Subscription licenses, see [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+For information about all other Dynatrace Platform Subscription licenses, see [License Dynatrace](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
 
 This page is provided for informational purposes only.
 The terms of the Dynatrace free trial offer and/or your Dynatrace license will be applied to any use of Dynatrace products or services.
@@ -36,7 +36,7 @@ Products' capabilities include
 1
 
 The size of a host for licensing purposes (based on the amount of RAM provided by a host).
-For full details, see [Application and Infrastructure Monitoring (Host Units)](/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
+For full details, see [Application and Infrastructure Monitoring (Host Units)](../monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
 
 2
 
@@ -58,8 +58,8 @@ The total consumption is then deducted from your DPS annual commit. The remainin
 
 You can view your license consumption in:
 
-* Account Management, see [Subscription overview (Dynatrace Platform Subscription pre-2023)](/docs/manage/account-management/license-subscription/subscription-overview-dps-la "View your Dynatrace Platform Subscription budget summary and cost analysis.").
-* The Account Management API, see [Dynatrace Platform Subscription API](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api "Query the data about your Dynatrace Platform Subscription via the Account Management API.").
+* Account Management, see [Subscription overview (Dynatrace Platform Subscription pre-2023)](../../manage/account-management/license-subscription/subscription-overview-dps-la.md "View your Dynatrace Platform Subscription budget summary and cost analysis.").
+* The Account Management API, see [Dynatrace Platform Subscription API](../../dynatrace-api/account-management-api/dynatrace-platform-subscription-api.md "Query the data about your Dynatrace Platform Subscription via the Account Management API.").
 
 Information includes:
 

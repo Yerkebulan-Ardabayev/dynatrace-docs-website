@@ -14,8 +14,8 @@ Learn about Dynatrace and explore resources to enhance your observability and se
 
 ### Get started with Dynatrace or discover whatâs new
 
-* New to Dynatrace? Learn how to [get started](/docs/discover-dynatrace/get-started "Learn about Dynatrace monitoring capabilities, concepts, and deployment models and find out how to get started with SaaS and Managed deployments.") in just a few steps.
-* Already on board? Discover whatâs new for [SaaS](/docs/whats-new/saas "Release notes for Dynatrace SaaS"), [OneAgent](/docs/whats-new/oneagent "Release notes for Dynatrace OneAgent"), or [ActiveGate](/docs/whats-new/activegate "Release notes for Dynatrace ActiveGate").
+* New to Dynatrace? Learn how to [get started](../ru/discover-dynatrace/get-started.md "Learn about Dynatrace monitoring capabilities, concepts, and deployment models and find out how to get started with SaaS and Managed deployments.") in just a few steps.
+* Already on board? Discover whatâs new for [SaaS](../ru/whats-new/saas.md "Release notes for Dynatrace SaaS"), [OneAgent](../ru/whats-new/oneagent.md "Release notes for Dynatrace OneAgent"), or [ActiveGate](../ru/whats-new/activegate.md "Release notes for Dynatrace ActiveGate").
 
 ![Dynatrace Signet](https://dt-cdn.net/images/dt-logo-color-vertical-0a89040753.svg "Dynatrace Signet")
 
@@ -39,7 +39,7 @@ Type to filter
 
 ## Dynatrace apps
 
-Discover all [Dynatrace apps](/docs/discover-dynatrace/dynatrace-apps "Browse Dynatrace Apps.").
+Discover all [Dynatrace apps](../ru/discover-dynatrace/dynatrace-apps.md "Browse Dynatrace Apps.").
 
 ## Still have questions?
 

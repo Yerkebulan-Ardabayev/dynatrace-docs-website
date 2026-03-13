@@ -50,7 +50,7 @@ This query performs the following actions:
 1. Go to **Settings** > **Log Monitoring** > **Metrics extraction** and select **Add log metric**.
 2. In **Key**, append the metric name to the `log.` metric key: `log.conn_refused_count`.
 3. Add **Matcher**.  
-   Use the [DQL function](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher#lp-dql-matchesPhrase "Examine specific DQL functions and logical operators for log processing.") for matching phrases, which is part of the [Dynatrace Query Language (DQL)](#matchesPhrase):
+   Use the [DQL function](../lma-classic-log-processing/lma-log-processing-matcher.md#lp-dql-matchesPhrase "Examine specific DQL functions and logical operators for log processing.") for matching phrases, which is part of the [Dynatrace Query Language (DQL)](#matchesPhrase):
 
    ```
    matchesPhrase(content, "Connection refused")
@@ -104,7 +104,7 @@ This query performs the following actions:
 1. Go to **Settings** > **Log Monitoring** > **Metrics extraction** and select **Add log metric**.
 2. In **Key**, append the metric name to the `log.` metric key: `K8-92233333`.
 3. Add **Matcher**.  
-   Use the [DQL function](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher#lp-dql-matchesPhrase "Examine specific DQL functions and logical operators for log processing.") for matching phrases, which is part of the [Dynatrace Query Language (DQL)](#matchesPhrase):
+   Use the [DQL function](../lma-classic-log-processing/lma-log-processing-matcher.md#lp-dql-matchesPhrase "Examine specific DQL functions and logical operators for log processing.") for matching phrases, which is part of the [Dynatrace Query Language (DQL)](#matchesPhrase):
 
    ```
    matchesValue(dt.entity.kubernetes_cluster, "KUBERNETES_CLUSTER-92233333")

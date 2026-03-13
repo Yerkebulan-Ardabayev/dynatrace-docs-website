@@ -53,7 +53,7 @@ Combining the Dynatrace automation capabilities with insights into security-rela
 
 ### Context
 
-Logs from your [Dynatrace-monitored environment](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") are ingested into [Grail](/docs/platform/grail "Insights on what and how you can query Dynatrace data.") via [log ingestion](/docs/analyze-explore-automate/logs "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace."). When an attack is detected, a Dynatrace problem is created.
+Logs from your [Dynatrace-monitored environment](../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") are ingested into [Grail](../../platform/grail.md "Insights on what and how you can query Dynatrace data.") via [log ingestion](../../analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace."). When an attack is detected, a Dynatrace problem is created.
 
 ### 1. Intrusion notification automation
 
@@ -70,32 +70,32 @@ For details, see [Instant queries](#notebook).
 ## Prerequisites
 
 * Dynatrace version 1.283+
-* [Set up log ingestion](/docs/analyze-explore-automate/logs "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") (ingests security incidents into Grail).
-* [Set up ownership teams](/docs/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") (allows the workflow to assign security incidents based on ownership of the affected entity).
-* [Set up Jira Connector](/docs/analyze-explore-automate/workflows/actions/jira "Automate creating, transitioning, commenting, and assigning Jira issues on the events and schedules defined for your workflows.") (allows the workflow to convert resulting findings into Jira tickets).
-* [Set up Slack Connector](/docs/analyze-explore-automate/workflows/actions/slack "Send messages to Slack Workspaces") (allows the workflow to send resulting findings to Slack channels).
+* [Set up log ingestion](../../analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") (ingests security incidents into Grail).
+* [Set up ownership teams](../../deliver/ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") (allows the workflow to assign security incidents based on ownership of the affected entity).
+* [Set up Jira Connector](../../analyze-explore-automate/workflows/actions/jira.md "Automate creating, transitioning, commenting, and assigning Jira issues on the events and schedules defined for your workflows.") (allows the workflow to convert resulting findings into Jira tickets).
+* [Set up Slack Connector](../../analyze-explore-automate/workflows/actions/slack.md "Send messages to Slack Workspaces") (allows the workflow to send resulting findings to Slack channels).
 
-  While the current scenario uses Slack and Jira as notification channels, other integrations are also available. For details, see [Workflows integrations](/docs/analyze-explore-automate/workflows/actions "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
+  While the current scenario uses Slack and Jira as notification channels, other integrations are also available. For details, see [Workflows integrations](../../analyze-explore-automate/workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
 * Basic knowledge of how to
 
-  + [Use Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language/dql-reference "Dynatrace Query Language syntax reference.")
-  + [Create workflows](/docs/analyze-explore-automate/workflows/quickstart "Build and run your first workflow.")
+  + [Use Dynatrace Query Language (DQL)](../../platform/grail/dynatrace-query-language/dql-reference.md "Dynatrace Query Language syntax reference.")
+  + [Create workflows](../../analyze-explore-automate/workflows/quickstart.md "Build and run your first workflow.")
 * Make sure the following permissions are enabled.
 
-  + **Grail**: `storage:logs:read`. For instructions, see [Assign permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
-  + ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**: Permissions to access, view, write, and execute workflows. For details, see [Authorization](/docs/analyze-explore-automate/workflows#authorization "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+  + **Grail**: `storage:logs:read`. For instructions, see [Assign permissions in Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+  + ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**: Permissions to access, view, write, and execute workflows. For details, see [Authorization](../../analyze-explore-automate/workflows.md#authorization "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 
     To access permissions, go to the **Settings** menu in the upper-right corner of ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** and select **Authorization settings**.
 
 ## 1. Intrusion notification automation
 
-The following example illustrates how you can implement an attack notification automation using [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."). You can customize the workflow according to your needs.
+The following example illustrates how you can implement an attack notification automation using [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."). You can customize the workflow according to your needs.
 
 1. Set the trigger
 
 The automation needs to be triggered whenever an attack occurs.
 
-In the **Select trigger** section, select and configure **Davis Problem trigger**. For details, see [Create workflows in Dynatrace Workflows: Trigger](/docs/analyze-explore-automate/workflows/building#trigger "Create and edit workflows in Dynatrace Workflows.").
+In the **Select trigger** section, select and configure **Davis Problem trigger**. For details, see [Create workflows in Dynatrace Workflows: Trigger](../../analyze-explore-automate/workflows/building.md#trigger "Create and edit workflows in Dynatrace Workflows.").
 
 Show me the relevant workflow task sequence
 
@@ -105,7 +105,7 @@ Show me the relevant workflow task sequence
 
 Route notifications to the team responsible for the affected entities.
 
-Select the **Get owners** action to create and configure this task. For details, see [Ownership app: **`get_owners`**](/docs/deliver/ownership-app#get-owners "It provides custom actions to define workflows integrating entity owners and their contact information.").
+Select the **Get owners** action to create and configure this task. For details, see [Ownership app: **`get_owners`**](../../deliver/ownership-app.md#get-owners "It provides custom actions to define workflows integrating entity owners and their contact information.").
 
 Show me the relevant workflow task sequence
 
@@ -115,7 +115,7 @@ Show me the relevant workflow task sequence
 
 Configure variables such as default values for Slack and Jira fields, that will be used in later steps in the notification process.
 
-Select the **Run JavaScript** action to create and configure these tasks. For details, see [Introduction to workflows: Action](/docs/analyze-explore-automate/workflows#concept-action "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+Select the **Run JavaScript** action to create and configure these tasks. For details, see [Introduction to workflows: Action](../../analyze-explore-automate/workflows.md#concept-action "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 
 Show me the relevant workflow task sequences
 
@@ -128,13 +128,13 @@ Show me the relevant workflow task sequences
   + Perform a WHOIS lookup to find details about the attacker's IP address.
   + Verify the IP reputation using a third-party service such as AbuseIPDB.
 
-  Select the **HTTP Request** action to create and configure these tasks. For details, see [Introduction to workflows: Action](/docs/analyze-explore-automate/workflows#concept-action "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+  Select the **HTTP Request** action to create and configure these tasks. For details, see [Introduction to workflows: Action](../../analyze-explore-automate/workflows.md#concept-action "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 * Query Dynatrace. For example:
 
   + Determine whether there were any successful logins from the attacker's IP address.
   + Find out additional traffic information from the attacker's IP address.
 
-  Select the **Execute DQL Query** action to create and configure these tasks. For details, see [Introduction to workflows: Action](/docs/analyze-explore-automate/workflows#concept-action "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+  Select the **Execute DQL Query** action to create and configure these tasks. For details, see [Introduction to workflows: Action](../../analyze-explore-automate/workflows.md#concept-action "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 
 Show me the relevant workflow task sequences
 
@@ -144,7 +144,7 @@ Show me the relevant workflow task sequences
 
 Extract the successful requests from the total requests collected.
 
-Select the **Run JavaScript** action to create and configure this task. For details, see [Introduction to workflows: Action](/docs/analyze-explore-automate/workflows#concept-action "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+Select the **Run JavaScript** action to create and configure this task. For details, see [Introduction to workflows: Action](../../analyze-explore-automate/workflows.md#concept-action "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 
 Show me the relevant workflow task sequence
 
@@ -154,7 +154,7 @@ Show me the relevant workflow task sequence
 
 Replay the successful requests against the target entity to look for indicators of compromise. Custom code steps allow you to automate complex logic that you want to run for each detected attack. Depending on the detected attack and the affected systems, you might want to replay the attacks for more detailed analysis.
 
-Select the **Run JavaScript** action to create and configure this task. For details, see [Introduction to workflows: Action](/docs/analyze-explore-automate/workflows#concept-action "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+Select the **Run JavaScript** action to create and configure this task. For details, see [Introduction to workflows: Action](../../analyze-explore-automate/workflows.md#concept-action "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 
 Show me the relevant workflow task sequence
 
@@ -164,10 +164,10 @@ Show me the relevant workflow task sequence
 
 * Notify the responsible team on Slack.
 
-  Select the **Send message** action to create and configure this task. For details, see [Use Workflows with Slack](/docs/analyze-explore-automate/workflows/actions/slack#workflow "Send messages to Slack Workspaces").
+  Select the **Send message** action to create and configure this task. For details, see [Use Workflows with Slack](../../analyze-explore-automate/workflows/actions/slack.md#workflow "Send messages to Slack Workspaces").
 * Create a Jira ticket for the entity owner containing the collected information.
 
-  Select the **Create issue** action to create and configure this task. For details, see [Create Jira issues with workflows](/docs/analyze-explore-automate/workflows/actions/jira#workflow "Automate creating, transitioning, commenting, and assigning Jira issues on the events and schedules defined for your workflows.").
+  Select the **Create issue** action to create and configure this task. For details, see [Create Jira issues with workflows](../../analyze-explore-automate/workflows/actions/jira.md#workflow "Automate creating, transitioning, commenting, and assigning Jira issues on the events and schedules defined for your workflows.").
 
 Show me the relevant workflow task sequences
 
@@ -175,7 +175,7 @@ Show me the relevant workflow task sequences
 
 ## 2. Instant queries
 
-After receiving the notification, the security team can immediately respond to discoveries and instantly run additional DQL queries in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") without knowing beforehand where the information they're looking for is. In an emergency situation, this is crucial, as a speedy response can ensure that the attack can be contained.
+After receiving the notification, the security team can immediately respond to discoveries and instantly run additional DQL queries in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") without knowing beforehand where the information they're looking for is. In an emergency situation, this is crucial, as a speedy response can ensure that the attack can be contained.
 
 The following are some examples of how you can query Grail in case of a web attack.
 
@@ -393,8 +393,8 @@ You can use the above instructions as building blocks to automate common steps i
 
 ## Further reading
 
-[Log on Grail examples](/docs/analyze-explore-automate/logs/logs-on-grail-examples "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.")
+[Log on Grail examples](../../analyze-explore-automate/logs/logs-on-grail-examples.md "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.")
 
-[Dynatrace Intelligence DQL examples](/docs/dynatrace-intelligence/use-cases/davis-dql-examples "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")
+[Dynatrace Intelligence DQL examples](../../dynatrace-intelligence/use-cases/davis-dql-examples.md "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")
 
-[DQL examples for security-related data](/docs/secure/threat-observability/dql-examples "DQL examples for security data powered by Grail.")
+[DQL examples for security-related data](../threat-observability/dql-examples.md "DQL examples for security data powered by Grail.")

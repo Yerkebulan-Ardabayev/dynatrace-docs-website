@@ -17,15 +17,15 @@ scraped: 2026-03-06T21:28:19.838321
 
 Уведомление состоит из:
 
-* Конфигурации [пользовательского оповещения](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection."), которое создаёт событие оповещения при выполнении определённого условия.
+* Конфигурации [пользовательского оповещения](../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection."), которое создаёт событие оповещения при выполнении определённого условия.
 * Простого рабочего процесса, который автоматически отправляет email при активации события оповещения.
 
 ## Предварительные требования
 
 * Terraform CLI с установленным провайдером Dynatrace, доступным в PATH.
-  Подробнее см. [Установка Terraform CLI и настройка Configuration as Code через Terraform](/docs/deliver/configuration-as-code/terraform/terraform-cli "Установка Terraform CLI и настройка Dynatrace Configuration as Code через Terraform.").
+  Подробнее см. [Установка Terraform CLI и настройка Configuration as Code через Terraform](../terraform-cli.md "Установка Terraform CLI и настройка Dynatrace Configuration as Code через Terraform.").
 * OAuth-клиент или платформенный токен со следующими разрешениями.
-  Подробнее см. [Создание токена доступа API](/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling#terraform-api-setup "Описание различных вариантов аутентификации API-вызовов Dynatrace провайдером Terraform.").
+  Подробнее см. [Создание токена доступа API](../terraform-api-support-access-permission-handling.md#terraform-api-setup "Описание различных вариантов аутентификации API-вызовов Dynatrace провайдером Terraform.").
 
   + Просмотр объектов настроек для схемы (`settings:objects:read`)
   + Создание объектов настроек для схемы (`settings:objects:write`)
@@ -37,7 +37,7 @@ scraped: 2026-03-06T21:28:19.838321
 
 ## Что вы узнаете
 
-Вы узнаете, как настроить [пользовательское оповещение](/docs/dynatrace-intelligence/anomaly-detection "Как Dynatrace обнаруживает аномалии в вашей среде.") и [рабочий процесс](/docs/analyze-explore-automate/workflows "Автоматизация ИТ-процессов с помощью Dynatrace Workflows — реагирование на события, планирование задач и подключение сервисов.") с действием отправки email.
+Вы узнаете, как настроить [пользовательское оповещение](../../../../dynatrace-intelligence/anomaly-detection.md "Как Dynatrace обнаруживает аномалии в вашей среде.") и [рабочий процесс](../../../../analyze-explore-automate/workflows.md "Автоматизация ИТ-процессов с помощью Dynatrace Workflows — реагирование на события, планирование задач и подключение сервисов.") с действием отправки email.
 
 ## Шаги
 
@@ -538,7 +538,7 @@ scraped: 2026-03-06T21:28:19.838321
    Если вы хотите попробовать другие ресурсы, рассмотрите использование утилиты экспорта для экспорта существующих конфигураций из вашей выбранной среды.
 2. Откройте терминал и установите переменные среды для URL вашей среды и учётных данных аутентификации.
    Переменная среды определяет, на какой тенант вы будете отправлять конфигурации.
-   Подробнее см. [Обработка поддержки API и разрешений доступа Terraform](/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling "Описание различных вариантов аутентификации API-вызовов Dynatrace провайдером Terraform.").
+   Подробнее см. [Обработка поддержки API и разрешений доступа Terraform](../terraform-api-support-access-permission-handling.md "Описание различных вариантов аутентификации API-вызовов Dynatrace провайдером Terraform.").
 3. В вашей рабочей директории выполните `terraform plan` для генерации плана выполнения, предоставляющего предварительный просмотр планируемых Terraform изменений.
 
    Показать пример предварительного просмотра

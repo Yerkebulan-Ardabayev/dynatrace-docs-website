@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:25:14.270507
 * 4-min read
 * Published Jul 17, 2018
 
-Dynatrace requires certain ports and paths to be opened and accessible through the monitored infrastructure, firewalls and other components. The ports are [configurable](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#com-compuware-apm-webserver "Learn which ActiveGate properties you can configure based on your needs and requirements.") and the default values are shown here.
+Dynatrace requires certain ports and paths to be opened and accessible through the monitored infrastructure, firewalls and other components. The ports are [configurable](configuration/configure-activegate.md#com-compuware-apm-webserver "Learn which ActiveGate properties you can configure based on your needs and requirements.") and the default values are shown here.
 
 ## Dynatrace SaaS connectivity scheme
 
@@ -29,11 +29,11 @@ The **direction of arrows** in the diagrams indicates which component initiates 
 
 * Dynatrace SaaS Cluster receives connections on port 443.
 
-If you run [Browser monitors](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.") or [HTTP monitors](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor to check the performance and availability of your site.") from private Synthetic locations, you need to make sure the Synthetic-enabled ActiveGate has access to the tested resource. If you use ActiveGate extensions, you need to make sure the ActiveGate executing the extensions has access to the monitored technology.
+If you run [Browser monitors](../../observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location.md "Learn how to create a private location for synthetic monitoring.") or [HTTP monitors](../../observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic.md "Learn how to set up an HTTP monitor to check the performance and availability of your site.") from private Synthetic locations, you need to make sure the Synthetic-enabled ActiveGate has access to the tested resource. If you use ActiveGate extensions, you need to make sure the ActiveGate executing the extensions has access to the monitored technology.
 
 Connection
 
-**[Network zones](/docs/manage/network-zones "Find out how network zones work in Dynatrace.")** configuration means that OneAgents will prefer to communicate with ActiveGates from the same zone, before connecting to ActiveGates outside of the active zone.
+**[Network zones](../../manage/network-zones.md "Find out how network zones work in Dynatrace.")** configuration means that OneAgents will prefer to communicate with ActiveGates from the same zone, before connecting to ActiveGates outside of the active zone.
 
 ## Proxy and load balancer configuration
 
@@ -42,9 +42,9 @@ This works automatically, unless there are networking devices (proxies, load bal
 
 The diagram below shows all possible proxy and load balancer (reverse proxy) placements for an ActiveGate deployment. For simplicity, direct connectionsâthose that are not through proxies or load balancersâare not shown in this diagram. Alternative connections (those that connect through one or more proxies or load balancers), are shown as dashed lines.
 
-* If there is a load balancer between OneAgents and an ActiveGate, you should specify the load balancer's address as the [`dnsEntryPoint`](/docs/ingest-from/dynatrace-activegate/configuration/set-up-reverse-proxy-for-oneagent "Configure ActiveGate properties to set up a reverse proxy or a load balancer for OneAgent.") property in the ActiveGate configuration.
-* If there is a load balancer between ActiveGate and the next communication endpoint that traffic should be routed through, configure [`seedServerUrl` and `ignoreClusterRuntimeInfo`](/docs/ingest-from/dynatrace-activegate/configuration/set-up-reverse-proxy-for-activegate "Learn how to configure ActiveGate properties to set up a reverse proxy or a load balancer.")
-* If a proxy is used to reach the Dynatrace Cluster or any of the monitored clouds, [configure a proxy](/docs/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate "Learn how to configure ActiveGate properties to set up a proxy.").
+* If there is a load balancer between OneAgents and an ActiveGate, you should specify the load balancer's address as the [`dnsEntryPoint`](configuration/set-up-reverse-proxy-for-oneagent.md "Configure ActiveGate properties to set up a reverse proxy or a load balancer for OneAgent.") property in the ActiveGate configuration.
+* If there is a load balancer between ActiveGate and the next communication endpoint that traffic should be routed through, configure [`seedServerUrl` and `ignoreClusterRuntimeInfo`](configuration/set-up-reverse-proxy-for-activegate.md "Learn how to configure ActiveGate properties to set up a reverse proxy or a load balancer.")
+* If a proxy is used to reach the Dynatrace Cluster or any of the monitored clouds, [configure a proxy](configuration/set-up-proxy-authentication-for-activegate.md "Learn how to configure ActiveGate properties to set up a proxy.").
 
 ![Proxy and load balancer placements for ActiveGate deployments](https://dt-cdn.net/images/proxy-rev-proxy-005-1018-c916f384ca.png)
 
@@ -70,4 +70,4 @@ Example value:
 
 ## Related topics
 
-* [Network zones](/docs/manage/network-zones "Find out how network zones work in Dynatrace.")
+* [Network zones](../../manage/network-zones.md "Find out how network zones work in Dynatrace.")

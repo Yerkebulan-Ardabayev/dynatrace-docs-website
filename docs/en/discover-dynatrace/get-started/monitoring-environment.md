@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:13:03.640210
 * 4-min read
 * Published Dec 05, 2017
 
-Your Dynatrace monitoring environment is where all your Dynatrace performance analysis takes place. [Dynatrace OneAgent](/docs/platform/oneagent "Learn the monitoring capabilities of OneAgent.") sends all captured monitoring data to your monitoring environment for analysis. A monitoring environment is analogous to an analysis server that provides all Dynatrace application-performance analysis functionality, including all dashboards, charts, reports and other tools.
+Your Dynatrace monitoring environment is where all your Dynatrace performance analysis takes place. [Dynatrace OneAgent](../../platform/oneagent.md "Learn the monitoring capabilities of OneAgent.") sends all captured monitoring data to your monitoring environment for analysis. A monitoring environment is analogous to an analysis server that provides all Dynatrace application-performance analysis functionality, including all dashboards, charts, reports and other tools.
 
 ![Dynatrace architecture](https://dt-cdn.net/images/dynatrace-architecture-1743-fab92236e8.png)
 
@@ -28,7 +28,7 @@ Your monitoring environment location depends on your deployment type.
 
 ## Environment ID
 
-All external access to your Dynatrace monitoring environment relies on two credential types: an *environment ID* and an [access token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.").
+All external access to your Dynatrace monitoring environment relies on two credential types: an *environment ID* and an [access token](../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md "Learn the concept of an access token and its scopes.").
 
 Each environment that you monitor with Dynatrace is identified with a unique character stringâthe environment ID. The Dynatrace API relies heavily on environment IDs to ensure that it pulls monitoring data from and pushes relevant external events to the correct Dynatrace environments.
 
@@ -40,7 +40,7 @@ Each environment that you monitor with Dynatrace is identified with a unique cha
 
   For example, for the Dynatrace environment `https://abc123a.dynatrace.com`, the environment ID is `abc123a`.
 
-  You can also find your environment ID in [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.").
+  You can also find your environment ID in [Account Management](../../manage/account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health.").
 
   1. Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/). If you have more than one account, select the account you want to manage.
   2. Select **Settings** > **Environments**.
@@ -84,5 +84,5 @@ With multiple environments, monitoring data is strictly separated by design. Env
 
 In some scenarios, however, you might need to connect your environments. For example:
 
-* To trace calls between services monitored in different Dynatrace environments, you can configure cross-environment tracing. For details, see [Set up cross-environment tracing](/docs/observe/application-observability/distributed-traces/analysis/connect-environments "Analyze requests across environment boundaries.").
-* To display metrics from remote environments on your local environment's dashboards, you can set up cross-environment dashboard tiles. For details, see [Create remote/multi-environment Dynatrace dashboards](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment "Create dashboards that display data from multiple Dynatrace environments.").
+* To trace calls between services monitored in different Dynatrace environments, you can configure cross-environment tracing. For details, see [Set up cross-environment tracing](../../observe/application-observability/distributed-traces/analysis/connect-environments.md "Analyze requests across environment boundaries.").
+* To display metrics from remote environments on your local environment's dashboards, you can set up cross-environment dashboard tiles. For details, see [Create remote/multi-environment Dynatrace dashboards](../../analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment.md "Create dashboards that display data from multiple Dynatrace environments.").

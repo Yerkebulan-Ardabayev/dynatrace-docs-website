@@ -26,7 +26,7 @@ scraped: 2026-03-06T21:11:23.170852
 
 * Если параметр `trace_id` присутствует, вы увидите другие записи с тем же идентификатором трассировки.
 
-  Дополнительные сведения об автоматической корреляции см. в разделе [Связывание данных логов с трассировками](/docs/analyze-explore-automate/logs/lma-log-enrichment "Connect your incoming log data to traces for more precise Dynatrace analysis.").
+  Дополнительные сведения об автоматической корреляции см. в разделе [Связывание данных логов с трассировками](../lma-log-enrichment.md "Connect your incoming log data to traces for more precise Dynatrace analysis.").
 * Кроме того, можно изучить окружающие логи для той же топологической сущности, например хоста.
 
   Выберите **Run query for 15 logs before** или **Run query for 15 logs after**, чтобы расширить контекст, загрузив больше данных до или после временной метки исходной записи.

@@ -74,7 +74,7 @@ This can help you identify the current misconfiguration for a selected resource 
 
 For `Manual` rules, where automatic assessment isn't possible, hints are provided about what information is needed to complete the assessment.
 
-For details about `manual` rules, see [Results](/docs/secure/xspm/concepts#concept-results "Concepts that are specific to the Dynatrace Security Posture Management app.").
+For details about `manual` rules, see [Results](concepts.md#concept-results "Concepts that are specific to the Dynatrace Security Posture Management app.").
 
 * **Example**: A `Manual` rule `The Kubernetes kubelet staticPodPath must not enable static pods` reports that Dynatrace can't check configuration because Kubernetes Node Configuration Collector is missing.
 
@@ -84,14 +84,14 @@ For details about `manual` rules, see [Results](/docs/secure/xspm/concepts#conce
 
 To use this generative AI feature, make sure:
 
-* Dynatrace Intelligence generative AI is enabled for your environment. See [Enable Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
-* You have permission to use it. See [User permissions](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+* Dynatrace Intelligence generative AI is enabled for your environment. See [Enable Dynatrace Intelligence generative AI](../../dynatrace-intelligence/copilot/copilot-getting-started.md#enable-davis-copilot "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+* You have permission to use it. See [User permissions](../../dynatrace-intelligence/copilot/copilot-getting-started.md#davis-copilot-user-permissions "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
 Dynatrace Intelligence generative AI can provide contextual, plain-language explanations of rule assessments to accelerate understanding and remediation.
 
 To access the functionality
 
-1. In [![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**](/docs/secure/xspm "Detect, manage, and take action on security and compliance findings."), on the **Assessment results** page, select a rule.
+1. In [![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**](../xspm.md "Detect, manage, and take action on security and compliance findings."), on the **Assessment results** page, select a rule.
 2. On the **Assessed resources** tab, select  **Explain assessment**.
 
 When selected, Dynatrace Intelligence generative AI analyzes the technical details of a rule assessment and generates a structured summary that may include:
@@ -106,4 +106,4 @@ Dynatrace Intelligence generative AI explanations are tailored to the nature of 
 
 ## Related topics
 
-* [Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes.")
+* [Kubernetes Security Posture Management](../../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes.")

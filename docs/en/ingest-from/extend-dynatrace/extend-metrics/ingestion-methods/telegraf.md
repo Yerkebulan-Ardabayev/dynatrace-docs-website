@@ -153,12 +153,12 @@ prefix = "telegraf."
 
 ### No OneAgent on the host
 
-If you can't install OneAgent on the Telegraf-monitored host, you can configure the Dynatrace Output Plugin to push metrics directly to your Dynatrace environment through [Metrics API v2](/docs/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.").
+If you can't install OneAgent on the Telegraf-monitored host, you can configure the Dynatrace Output Plugin to push metrics directly to your Dynatrace environment through [Metrics API v2](../../../../dynatrace-api/environment-api/metric-v2.md "Retrieve metric information via Metrics v2 API.").
 
 #### Prerequisites
 
-* [API token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") with the **Ingest metrics data points** scope.
-* Your [Environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+* [API token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.") with the **Ingest metrics data points** scope.
+* Your [Environment ID](../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
 
 1. Edit `telegraf.conf`, the [Telegraf configuration fileï»¿](https://docs.influxdata.com/telegraf/v1.15/administration/configuration/).
 2. Uncomment the `# [[outputs.dynatrace]]` line.
@@ -327,17 +327,17 @@ Enable for a host group
 
 ## Topology awareness
 
-When OneAgent and Telegraf are installed on the same host, the host ID and host name context are automatically added to each metric as dimensions. Learn how to [enrich your metrics with other Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.") and apply Dynatrace-AI causation details to your ingested data.
+When OneAgent and Telegraf are installed on the same host, the host ID and host name context are automatically added to each metric as dimensions. Learn how to [enrich your metrics with other Dynatrace-specific dimensions](../../extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.") and apply Dynatrace-AI causation details to your ingested data.
 
 ## Metric format
 
-Provided data points must follow the [Metrics ingestion protocol](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+Provided data points must follow the [Metrics ingestion protocol](../reference/metric-ingestion-protocol.md "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
 
 ## Communication port
 
-The Telegraf Dynatrace Output Plugin sends metrics to the [OneAgent metric API](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ingest custom metrics to Dynatrace via Metrics v2 API.") endpoint.
+The Telegraf Dynatrace Output Plugin sends metrics to the [OneAgent metric API](../../../../dynatrace-api/environment-api/metric-v2/post-ingest-metrics.md "Ingest custom metrics to Dynatrace via Metrics v2 API.") endpoint.
 
-The default metric ingestion port is `14499`. If necessary, you can use the [oneagentctl](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the port. Changing the metric ingestion port requires restart of OneAgent. Add [`--restart-service`](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
+The default metric ingestion port is `14499`. If necessary, you can use the [oneagentctl](../../../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the port. Changing the metric ingestion port requires restart of OneAgent. Add [`--restart-service`](../../../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
 
 ### Check the ingestion port
 

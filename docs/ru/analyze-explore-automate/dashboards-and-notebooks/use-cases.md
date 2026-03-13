@@ -21,7 +21,7 @@ Application Security
 
 В этом сценарии вы используете фрагменты кода для визуализации подверженности уязвимостям, расстановки приоритетов при устранении проблем и передачи результатов ответственным командам.
 
-* [Встроенные фрагменты запросов безопасности](/docs/secure/use-cases#snippets "Use case scenarios for Application Security and Threat Observability.")
+* [Встроенные фрагменты запросов безопасности](../../secure/use-cases.md#snippets "Use case scenarios for Application Security and Threat Observability.")
 
 ### Определение подверженности угрозам с помощью шаблонов безопасности
 
@@ -29,4 +29,4 @@ Application Security
 
 В этом сценарии вы используете шаблон анализа подверженности угрозам для визуализации риска и воздействия уязвимостей (Dashboards) или анализа влияния уязвимостей и расстановки приоритетов при устранении проблем (Notebooks).
 
-* [Готовые шаблоны](/docs/secure/use-cases#templates "Use case scenarios for Application Security and Threat Observability.")
+* [Готовые шаблоны](../../secure/use-cases.md#templates "Use case scenarios for Application Security and Threat Observability.")

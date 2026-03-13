@@ -15,9 +15,9 @@ scraped: 2026-03-06T21:15:26.954952
 
 ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** -- это мощный инструмент, позволяющий автоматически реагировать на данные мониторинга.
 
-Workflow не предназначен для массового приёма или массового экспорта данных. Для крупномасштабной обработки данных рассмотрите использование [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") или создание собственных решений с помощью [Dynatrace Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.").
+Workflow не предназначен для массового приёма или массового экспорта данных. Для крупномасштабной обработки данных рассмотрите использование [OpenPipeline](../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") или создание собственных решений с помощью [Dynatrace Extensions](../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.").
 
-Для получения дополнительной информации см. [пример быстрого старта](/docs/analyze-explore-automate/workflows/quickstart "Build and run your first workflow.").
+Для получения дополнительной информации см. [пример быстрого старта](workflows/quickstart.md "Build and run your first workflow.").
 
 Предварительные требования
 
@@ -69,11 +69,11 @@ automation:workflows:read
 
 Полный список разрешений, необходимых для использования ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, можно найти в разделе **Hub**: найдите и выберите **Workflows**, затем перейдите на вкладку **Technical information**.
 
-Для получения дополнительной информации о безопасности ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** см. [Пользовательские разрешения для workflow](/docs/analyze-explore-automate/workflows/security "Guide on security aspects of workflow automation in Dynatrace Workflows").
+Для получения дополнительной информации о безопасности ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** см. [Пользовательские разрешения для workflow](workflows/security.md "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Установка
 
-Убедитесь, что приложение [установлено в вашей среде](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Убедитесь, что приложение [установлено в вашей среде](../manage/hub.md#install "See the information about Dynatrace Hub.").
 
 Концепции
 
@@ -136,7 +136,7 @@ Workflow, задачи и действия определяют, как долж
 
 EdgeConnect позволяет обращаться к непубличным сервисам в задачах workflow. HTTP-запросы, выполняемые в любом типе действия или функции платформы, могут проксироваться через EdgeConnect в целевую сеть.
 
-Любой HTTP-запрос (из вашего пользовательского приложения, workflow или произвольного кода на JavaScript), соответствующий заданному шаблону хоста, обрабатывается экземпляром EdgeConnect, указанным в конфигурации платформы. Для получения дополнительной информации см. [Настройка и развёртывание EdgeConnect](/docs/ingest-from/edgeconnect "Use EdgeConnect to control how your apps and workflows interact with your internal systems.").
+Любой HTTP-запрос (из вашего пользовательского приложения, workflow или произвольного кода на JavaScript), соответствующий заданному шаблону хоста, обрабатывается экземпляром EdgeConnect, указанным в конфигурации платформы. Для получения дополнительной информации см. [Настройка и развёртывание EdgeConnect](../ingest-from/edgeconnect.md "Use EdgeConnect to control how your apps and workflows interact with your internal systems.").
 
 ## Сценарии использования
 
@@ -159,37 +159,37 @@ Workflows позволяет:
 [01Краткое руководство по Workflows
 
 * Практическое руководство
-* Создайте и запустите свой первый workflow.](/docs/analyze-explore-automate/workflows/quickstart)[02Создание workflow в Dynatrace Workflows
+* Создайте и запустите свой первый workflow.](workflows/quickstart.md)[02Создание workflow в Dynatrace Workflows
 
 * Практическое руководство
-* Создание и редактирование workflow в Dynatrace Workflows.](/docs/analyze-explore-automate/workflows/building)[03Создание простого workflow в Dynatrace Workflows
+* Создание и редактирование workflow в Dynatrace Workflows.](workflows/building.md)[03Создание простого workflow в Dynatrace Workflows
 
 * Практическое руководство
-* Создайте и запустите простой workflow.](/docs/analyze-explore-automate/workflows/simple-workflow)[04Триггеры workflow
+* Создайте и запустите простой workflow.](workflows/simple-workflow.md)[04Триггеры workflow
 
 * Обзор
-* Введение в триггеры автоматизации для workflow.](/docs/analyze-explore-automate/workflows/trigger)[05Запуск и мониторинг workflow, созданных в Dynatrace Workflows
+* Введение в триггеры автоматизации для workflow.](workflows/trigger.md)[05Запуск и мониторинг workflow, созданных в Dynatrace Workflows
 
 * Практическое руководство
-* Запуск и мониторинг workflow, созданных в Dynatrace Workflows.](/docs/analyze-explore-automate/workflows/running)[06Пользовательские разрешения для workflow
+* Запуск и мониторинг workflow, созданных в Dynatrace Workflows.](workflows/running.md)[06Пользовательские разрешения для workflow
 
 * Справочник
-* Руководство по аспектам безопасности автоматизации workflow в Dynatrace Workflows](/docs/analyze-explore-automate/workflows/security)[07Действия Workflows
+* Руководство по аспектам безопасности автоматизации workflow в Dynatrace Workflows](workflows/security.md)[07Действия Workflows
 
 * Обзор
-* Используйте готовые действия Dynatrace для ваших workflow.](/docs/analyze-explore-automate/workflows/default-workflow-actions)[08Коннекторы Workflows
+* Используйте готовые действия Dynatrace для ваших workflow.](workflows/default-workflow-actions.md)[08Коннекторы Workflows
 
 * Обзор
-* Используйте готовые действия Dynatrace для ваших workflow и интегрируйте Dynatrace со сторонними системами.](/docs/analyze-explore-automate/workflows/actions)[09Управление workflow
+* Используйте готовые действия Dynatrace для ваших workflow и интегрируйте Dynatrace со сторонними системами.](workflows/actions.md)[09Управление workflow
 
 * Обзор
-* Управляйте вашими workflow](/docs/analyze-explore-automate/workflows/manage-workflows)[10Справочник по выражениям
+* Управляйте вашими workflow](workflows/manage-workflows.md)[10Справочник по выражениям
 
 * Справочник
-* Познакомьтесь с выражениями workflow](/docs/analyze-explore-automate/workflows/reference)[11Сценарии использования Workflows
+* Познакомьтесь с выражениями workflow](workflows/reference.md)[11Сценарии использования Workflows
 
 * Обзор
-* Изучите распространённые сценарии использования Workflows в развёртываниях Dynatrace.](/docs/analyze-explore-automate/workflows/use-cases)
+* Изучите распространённые сценарии использования Workflows в развёртываниях Dynatrace.](workflows/use-cases.md)
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

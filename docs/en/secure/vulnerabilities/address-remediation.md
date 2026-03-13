@@ -55,11 +55,11 @@ Make sure to restart processes after upgrading a library.
 
 ### Further reading
 
-To learn more about Security Advisor, see [Concepts: Security Advisor](/docs/secure/vulnerabilities/concepts#dsa "Concepts that are specific to the Dynatrace Vulnerabilities app.").
+To learn more about Security Advisor, see [Concepts: Security Advisor](concepts.md#dsa "Concepts that are specific to the Dynatrace Vulnerabilities app.").
 
 ## Track remediation progress
 
-You can add links to tickets created in your issue tracking system for [affected entities](/docs/secure/vulnerabilities/concepts#affected "Concepts that are specific to the Dynatrace Vulnerabilities app.").
+You can add links to tickets created in your issue tracking system for [affected entities](concepts.md#affected "Concepts that are specific to the Dynatrace Vulnerabilities app.").
 
 Adding a tracking link allows you to
 
@@ -118,9 +118,9 @@ You can also view vulnerable components on the overview page of process groups o
 
 **Further reading**
 
-* [FAQ: Why is a fixed vulnerability still showing as open?](/docs/secure/faq#open "Frequently asked questions about Dynatrace Application Security.")
-* [Concepts: Vulnerable component](/docs/secure/vulnerabilities/concepts#vulnerable-component "Concepts that are specific to the Dynatrace Vulnerabilities app.")
-* [Vulnerability evaluation: Third-party vulnerabilities](/docs/secure/application-security/vulnerability-analytics/vulnerability-evaluation#tpv "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.")
+* [FAQ: Why is a fixed vulnerability still showing as open?](../faq.md#open "Frequently asked questions about Dynatrace Application Security.")
+* [Concepts: Vulnerable component](concepts.md#vulnerable-component "Concepts that are specific to the Dynatrace Vulnerabilities app.")
+* [Vulnerability evaluation: Third-party vulnerabilities](../application-security/vulnerability-analytics/vulnerability-evaluation.md#tpv "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.")
 
 ### Examine entry points
 
@@ -137,7 +137,7 @@ If a code-level vulnerability is resolved or is about to be resolved in the next
 
 **Further reading**
 
-* [Concepts: Entry points](/docs/secure/vulnerabilities/concepts#entry-points "Concepts that are specific to the Dynatrace Vulnerabilities app.")
+* [Concepts: Entry points](concepts.md#entry-points "Concepts that are specific to the Dynatrace Vulnerabilities app.")
 
 ### Examine code location
 
@@ -150,12 +150,12 @@ View the source of the vulnerable function call to quickly assess its impact and
 
 ## Change the mute status of affected entities
 
-You can change the mute status of [affected entities](/docs/secure/vulnerabilities/concepts#affected "Concepts that are specific to the Dynatrace Vulnerabilities app.") according to your findings and needs. For example, you can set the status of an affected entity to `Muted (...)` **if you wish to ignore the vulnerability for this particular entity**:
+You can change the mute status of [affected entities](concepts.md#affected "Concepts that are specific to the Dynatrace Vulnerabilities app.") according to your findings and needs. For example, you can set the status of an affected entity to `Muted (...)` **if you wish to ignore the vulnerability for this particular entity**:
 
 * It could be a false flag, meeting some additional conditions that make the vulnerability irrelevant.
 * Or maybe there's no remediation available and a workaround has been applied.
 
-Muting all affected entities of a vulnerability sets the vulnerability status to `Muted`. For details, see [Vulnerability status](/docs/secure/vulnerabilities/concepts#status "Concepts that are specific to the Dynatrace Vulnerabilities app.").
+Muting all affected entities of a vulnerability sets the vulnerability status to `Muted`. For details, see [Vulnerability status](concepts.md#status "Concepts that are specific to the Dynatrace Vulnerabilities app.").
 
 You can change the status of affected entities individually or in bulk.
 
@@ -177,20 +177,20 @@ In bulk
 6. Enter the new status and select **Save**.
 
 Mute status and remediation decisions depend on vulnerability monitoring scope. Vulnerabilities on hosts or processes excluded from monitoring rules won't appear here.  
-For visibility into overall monitoring coverage and exposure trends, see [Assess coverage](/docs/secure/vulnerabilities/assess-coverage "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").
+For visibility into overall monitoring coverage and exposure trends, see [Assess coverage](assess-coverage.md "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").
 
 ## Initiate deeper analysis with Dynatrace Intelligence generative AI
 
 To use this generative AI functionality, ensure the following:
 
-* Dynatrace Intelligence generative AI has been enabled at the environment level. For details, see [Enable Dynatrace Intelligence generative AI on your environment](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
-* You have permissions to access it. For details, see [User permissions](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+* Dynatrace Intelligence generative AI has been enabled at the environment level. For details, see [Enable Dynatrace Intelligence generative AI on your environment](../../dynatrace-intelligence/copilot/copilot-getting-started.md#enable-davis-copilot "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+* You have permissions to access it. For details, see [User permissions](../../dynatrace-intelligence/copilot/copilot-getting-started.md#davis-copilot-user-permissions "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
 Dynatrace Intelligence generative AI can provide contextual, plain-language explanations of vulnerabilities to accelerate understanding and remediation.
 
 To access the functionality
 
-1. In [![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**](/docs/secure/vulnerabilities "Prioritize and efficiently manage vulnerabilities in your monitored environments."), select a vulnerability.
+1. In [![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**](../vulnerabilities.md "Prioritize and efficiently manage vulnerabilities in your monitored environments."), select a vulnerability.
 2. In the upper-right corner of the vulnerability details pane, select  **Explain vulnerability**.
 
 When selected, Dynatrace Intelligence generative AI analyzes the technical details of a vulnerability and generates a structured summary that may include:

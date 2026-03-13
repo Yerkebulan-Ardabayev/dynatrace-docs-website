@@ -12,9 +12,9 @@ scraped: 2026-03-06T21:37:37.198226
 * 2-min read
 * Published Mar 30, 2021
 
-While there are no additional costs or licensing involved in the integration of OpenTracing and OpenTelemetry span data into Dynatrace via OneAgent, you have the option to configure the Dynatrace Trace API to ingest OpenTelemetry and OpenTracing spans; these are known as "custom traces." This approach is useful for seamlessly integrating OpenTelemetry trace data that's emitted by third-party services. Ingestion of spans via the Trace API endpoint consumes [Davis data units](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") because this approach requires more processing and analytical power than ingestion via OneAgent.
+While there are no additional costs or licensing involved in the integration of OpenTracing and OpenTelemetry span data into Dynatrace via OneAgent, you have the option to configure the Dynatrace Trace API to ingest OpenTelemetry and OpenTracing spans; these are known as "custom traces." This approach is useful for seamlessly integrating OpenTelemetry trace data that's emitted by third-party services. Ingestion of spans via the Trace API endpoint consumes [Davis data units](../davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") because this approach requires more processing and analytical power than ingestion via OneAgent.
 
-For details on OneAgent-based ingestion of OpenTelemetry and OpenTracing spans, which does not consume DDUs, see [OneAgent OpenTracing and OpenTelemetry support](/docs/ingest-from/extend-dynatrace/extend-tracing/opentracing "Learn how to integrate OpenTracing with Dynatrace.").
+For details on OneAgent-based ingestion of OpenTelemetry and OpenTracing spans, which does not consume DDUs, see [OneAgent OpenTracing and OpenTelemetry support](../../../ingest-from/extend-dynatrace/extend-tracing/opentracing.md "Learn how to integrate OpenTracing with Dynatrace.").
 
 ## DDU consumption for custom trace ingestion
 
@@ -26,12 +26,12 @@ To calculate the DDU consumption for custom traces, multiply the total number of
 
 Davis data unit pools
 
-[Davis data units pools for traces](/docs/license/monitoring-consumption-classic/davis-data-units#ddu-pools "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") allow you to set hard limits on your DDU consumption for traces. Go to **Settings** > **Consumption** > **Davis data units pools** and turn on **Enable limit** in the **Traces** section to set an annual or monthly limit.
+[Davis data units pools for traces](../davis-data-units.md#ddu-pools "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") allow you to set hard limits on your DDU consumption for traces. Go to **Settings** > **Consumption** > **Davis data units pools** and turn on **Enable limit** in the **Traces** section to set an annual or monthly limit.
 
 ## Related topics
 
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
-* [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
-* [Extending Dynatrace (Davis data units)](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).")
-* [DDUs for metrics](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.")
-* [Extend metric observability](/docs/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.")
+* [License Dynatrace](../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* [Extending Dynatrace (Davis data units)](../davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).")
+* [DDUs for metrics](metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.")
+* [Extend metric observability](../../../ingest-from/extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace.")

@@ -22,7 +22,7 @@ To use Dynatrace Intelligence actions, you first need to install **Dynatrace Int
 1. In Dynatrace Hub ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub"), search for **Dynatrace Intelligence (Preview)**.
 2. Select **Dynatrace Intelligence (Preview)** and select **Install**.
 
-After installation, Dynatrace Intelligence actions appear automatically in the **Choose action** section of [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+After installation, Dynatrace Intelligence actions appear automatically in the **Choose action** section of [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 
 ## Example use case
 
@@ -30,19 +30,19 @@ This use case shows how you can leverage the Dynatrace Intelligence predictive A
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-Grant necessary permissions](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#permissions "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+Grant necessary permissions](davis-for-workflows.md#permissions "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-Explore capacity measurements](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#explore "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+Explore capacity measurements](davis-for-workflows.md#explore "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-Define a trigger schedule](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#schedule "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+Define a trigger schedule](davis-for-workflows.md#schedule "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-Configure the forecast](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#forecast "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
+Configure the forecast](davis-for-workflows.md#forecast "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
 
-Evaluate the result](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#evaluate "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Step 6")
+Evaluate the result](davis-for-workflows.md#evaluate "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Step 6")
 
-Remediate before it happens](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#remediate "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 7](https://dt-cdn.net/images/step-7-35139ef2d6.svg "Step 7")
+Remediate before it happens](davis-for-workflows.md#remediate "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 7](https://dt-cdn.net/images/step-7-35139ef2d6.svg "Step 7")
 
-Review raised problems](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#problems "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")
+Review raised problems](davis-for-workflows.md#problems "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")
 
 ### Step 1 Grant necessary permissions
 
@@ -95,7 +95,7 @@ A successful Dynatrace Intelligence analysis requires proper access rights.
 
 ### Step 2 Explore capacity measurements in a notebook
 
-Predictive capacity management starts within [**Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") where you need to configure your capacity indicators. The image below shows an example of the free disk percentage indicator for an operations team.
+Predictive capacity management starts within [**Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") where you need to configure your capacity indicators. The image below shows an example of the free disk percentage indicator for an operations team.
 
 ![An example of an AI data analysis forecast.](https://dt-cdn.net/images/notebooks-data-analyzer-forecast-1891-28bee08431.png)
 
@@ -103,7 +103,7 @@ Once you have the required indicators, it's time to build the workflow that trig
 
 ### Step 3 Define a trigger schedule
 
-In ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, configure the required schedule to trigger the forecast. To learn how, see [Workflow schedule trigger](/docs/analyze-explore-automate/workflows/trigger/schedules "Guide to creating workflow automation schedule triggers in Dynatrace Workflows."). The image below shows the workflow that runs at 8:00 AM to trigger the forecast of all the disks that are likely to run out of space in the next week.
+In ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, configure the required schedule to trigger the forecast. To learn how, see [Workflow schedule trigger](../../analyze-explore-automate/workflows/trigger/schedules.md "Guide to creating workflow automation schedule triggers in Dynatrace Workflows."). The image below shows the workflow that runs at 8:00 AM to trigger the forecast of all the disks that are likely to run out of space in the next week.
 
 ![Example of a Dynatrace Intelligence trigger in the Workflows app.](https://dt-cdn.net/images/workflows-forecast-trigger-1920-652d16e024.png)
 
@@ -285,7 +285,7 @@ To send a message
 
 1. Add a new **Send message** action.
 2. Set the name of the action as `send_message`.
-3. Configure the message. To learn how, see [Slack Connector](/docs/analyze-explore-automate/workflows/actions/slack "Send messages to Slack Workspaces").
+3. Configure the message. To learn how, see [Slack Connector](../../analyze-explore-automate/workflows/actions/slack.md "Send messages to Slack Workspaces").
 4. Open the **Conditions** tab.
 5. Select the `success` condition for the **check\_prediction** action.
 6. Add the following custom condition:
@@ -397,5 +397,5 @@ Raising a problem is an optional remediation step that you can skip completely, 
 
 ## Related topics
 
-* [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
-* [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+* [Workflows](../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
+* [Notebooks](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")

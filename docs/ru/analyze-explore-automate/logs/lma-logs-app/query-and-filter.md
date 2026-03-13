@@ -29,7 +29,7 @@ scraped: 2026-03-06T21:11:29.840932
 
 ![Поле фильтра в приложении Logs](https://dt-cdn.net/images/untitled-001-1835-80e79a2919.png)
 
-[Фильтрация с помощью фасетов](/docs/analyze-explore-automate/logs/lma-logs-app/facets "Filter with facets in the Dynatrace Logs app.") позволяет автоматически добавлять ключи и значения в ваш фильтр.
+[Фильтрация с помощью фасетов](facets.md "Filter with facets in the Dynatrace Logs app.") позволяет автоматически добавлять ключи и значения в ваш фильтр.
 
 Используйте выбор даты, чтобы задать правильный временной диапазон для вашего запроса.
 
@@ -44,7 +44,7 @@ scraped: 2026-03-06T21:11:29.840932
 * Сегменты позволяют фильтровать логи и другие данные наблюдаемости с помощью единообразного фильтра.
 * Сегменты удобны для ограничения ваших запросов только определенными бакетами Grail, что сокращает объем данных, которые необходимо сканировать для получения релевантных результатов.
 
-  Дополнительные сведения см. в разделах [Сегментация логов по бакетам](/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket "Segment logs by bucket with segments") и [лучшие практики для логов](/docs/analyze-explore-automate/logs/lma-best-practices#use-bucket-filters "Best practices for setting up Log Management and Analytics with Dynatrace.").
+  Дополнительные сведения см. в разделах [Сегментация логов по бакетам](../../../manage/segments/use-cases/segments-use-cases-logs-by-bucket.md "Segment logs by bucket with segments") и [лучшие практики для логов](../lma-best-practices.md#use-bucket-filters "Best practices for setting up Log Management and Analytics with Dynatrace.").
 * Сегменты позволяют сохранять и повторно использовать часто применяемые фильтры, которые работают в ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs** и в других приложениях Dynatrace.
 
 ## Обзор недавних фильтров и закрепление фильтров
@@ -65,7 +65,7 @@ scraped: 2026-03-06T21:11:29.840932
 
 Например, фильтр `* ~ "failed to charge card"` находит логи, содержащие эту фразу в любом поле.
 
-Это эквивалентно использованию команды [`search`](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#search "DQL filter and search commands") DQL.
+Это эквивалентно использованию команды [`search`](../../../platform/grail/dynatrace-query-language/commands/filtering-commands.md#search "DQL filter and search commands") DQL.
 
 ### Поиск по полю `content`
 
@@ -73,7 +73,7 @@ scraped: 2026-03-06T21:11:29.840932
 
 Например, фильтр `content ~ "failed to charge card"` находит логи, содержащие эту фразу в поле `content`.
 
-Это эквивалентно использованию строковой функции [`matchesPhrase`](/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesPhrase "A list of DQL string functions.") DQL.
+Это эквивалентно использованию строковой функции [`matchesPhrase`](../../../platform/grail/dynatrace-query-language/functions/string-functions.md#matchesPhrase "A list of DQL string functions.") DQL.
 
 ### Подстановочный знак в значении
 
@@ -81,9 +81,9 @@ scraped: 2026-03-06T21:11:29.840932
 
 Например, фильтр `content = "*card*"` находит логи, содержащие фразу `card` в поле `content`.
 
-Это эквивалентно использованию строковой функции [`matchesValue`](/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesValue "A list of DQL string functions.") DQL.
+Это эквивалентно использованию строковой функции [`matchesValue`](../../../platform/grail/dynatrace-query-language/functions/string-functions.md#matchesValue "A list of DQL string functions.") DQL.
 
-Полное описание см. в разделе [Поле фильтра](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
+Полное описание см. в разделе [Поле фильтра](../../../discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
 
 ## Фильтрация по полю с несколькими значениями
 
@@ -103,7 +103,7 @@ scraped: 2026-03-06T21:11:29.840932
 
 ## Связанные темы
 
-* [Поле фильтра](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.")
-* [Фильтрация с помощью фасетов](/docs/analyze-explore-automate/logs/lma-logs-app/facets "Filter with facets in the Dynatrace Logs app.")
-* [Сегментация логов по бакетам](/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket "Segment logs by bucket with segments")
-* [Лучшие практики Log Management and Analytics](/docs/analyze-explore-automate/logs/lma-best-practices "Best practices for setting up Log Management and Analytics with Dynatrace.")
+* [Поле фильтра](../../../discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.")
+* [Фильтрация с помощью фасетов](facets.md "Filter with facets in the Dynatrace Logs app.")
+* [Сегментация логов по бакетам](../../../manage/segments/use-cases/segments-use-cases-logs-by-bucket.md "Segment logs by bucket with segments")
+* [Лучшие практики Log Management and Analytics](../lma-best-practices.md "Best practices for setting up Log Management and Analytics with Dynatrace.")

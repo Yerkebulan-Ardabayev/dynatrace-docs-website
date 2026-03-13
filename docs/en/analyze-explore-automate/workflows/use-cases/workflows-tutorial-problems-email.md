@@ -25,43 +25,43 @@ In this tutorial, you'll learn how to alert your team in real time by emailing t
 
 At a short glance, you will:
 
-1. [Create a simple workflow](/docs/analyze-explore-automate/workflows/simple-workflow#create-simple-workflow "Build and run a simple workflow.").
-2. Add an [event trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") for  [Davis problems](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
-3. Add an [email notification](/docs/analyze-explore-automate/workflows/actions/email "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.").
+1. [Create a simple workflow](../simple-workflow.md#create-simple-workflow "Build and run a simple workflow.").
+2. Add an [event trigger](../trigger/event-trigger.md "Guide to creating workflow automation event triggers in Dynatrace Workflows.") for  [Davis problems](../trigger/event-trigger.md#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
+3. Add an [email notification](../actions/email.md "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.").
 4. Save and run the  workflow to get email notifications.
 5. Verify your  workflow is working as expected.
 
 ## Prerequisites
 
 * You should have permission to configure and run a  simple workflow.
-  For example, the permission granted with the default policy is for a [standard user](/docs/manage/identity-access-management/permission-management/default-policies "Dynatrace default policies reference").
-* You should select the necessary permissions in [authorization settings](/docs/analyze-explore-automate/workflows/security#authorization-settings "Guide on security aspects of workflow automation in Dynatrace Workflows").
+  For example, the permission granted with the default policy is for a [standard user](../../../manage/identity-access-management/permission-management/default-policies.md "Dynatrace default policies reference").
+* You should select the necessary permissions in [authorization settings](../security.md#authorization-settings "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
   + You should allow the required permissions to
 
     - Access ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
     - Write and execute a workflow.
-      For more information, see [authorization settings](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+      For more information, see [authorization settings](../security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ## Steps
 
-1. [Create a simple workflow](/docs/analyze-explore-automate/workflows/simple-workflow#create-simple-workflow "Build and run a simple workflow.").
+1. [Create a simple workflow](../simple-workflow.md#create-simple-workflow "Build and run a simple workflow.").
 
    1. Go to ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
    2. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Workflow** in the upper-right corner of the page.
    3. Select the workflow title.
       By default, it is `Untitled workflow`, and enter a meaningful name.
       The workflow type is set to  simple workflow by default.
-2. Add an [event trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") for  [Davis problems](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
+2. Add an [event trigger](../trigger/event-trigger.md "Guide to creating workflow automation event triggers in Dynatrace Workflows.") for  [Davis problems](../trigger/event-trigger.md#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
 
-   1. In the **Select trigger** section, select a  [Davis problem trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
+   1. In the **Select trigger** section, select a  [Davis problem trigger](../trigger/event-trigger.md#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
    2. Set the **Problem state** to **active or closed**.
       This option means that the problem can be both active or closed.
       This setting causes the workflow to trigger twice, once when the problem becomes active and again when it is closed.
    3. In the **Event category** drop-down list, select **Select all**.
    4. Optional Select **Query past events** to see the most recent problem events that would have triggered this workflow.
    5. Optional Enter **Entity tags** or **Additional custom filter query** to only trigger the workflow on the relevant problems.
-3. Add an [email notification](/docs/analyze-explore-automate/workflows/actions/email "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.").
+3. Add an [email notification](../actions/email.md "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.").
 
    1. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add task** on the trigger node.
    2. In the **Choose action** section, select **Send email** action type.
@@ -117,6 +117,6 @@ This workflow is a great starting point for automating incident response and imp
 
 ## Related topics
 
-* [Create a simple workflow in Dynatrace Workflows](/docs/analyze-explore-automate/workflows/simple-workflow "Build and run a simple workflow.")
-* [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
-* [Email](/docs/analyze-explore-automate/workflows/actions/email "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.")
+* [Create a simple workflow in Dynatrace Workflows](../simple-workflow.md "Build and run a simple workflow.")
+* [Problems app](../../../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* [Email](../actions/email.md "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.")

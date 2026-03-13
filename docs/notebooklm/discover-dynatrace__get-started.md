@@ -61,7 +61,7 @@ scraped: 2026-03-06T21:30:17.899790
 
 Charts are one of the primary components used in data visualization. They're essential in visualizing complex data in a consumable and actionable manner. Get an overview of our chart types and insight into some of the most common interactions.
 
-This article presents all the visualizations and interaction options offered by the latest Dynatrace. Note that [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") applications offer you a subset of available visualizations and interactions.
+This article presents all the visualizations and interaction options offered by the latest Dynatrace. Note that [Dashboards](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and [Notebooks](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") applications offer you a subset of available visualizations and interactions.
 
 Are you an app creator?
 
@@ -71,23 +71,23 @@ If you are an app creator and would like to use our chart components in your own
 
 ### Single value chart
 
-One large value with the option to add a label, trend, sparkline, and icon.](/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations/single-value "Interact with the most basic visualization in the Dynatrace design system.")[![Donut chart](https://dt-cdn.net/images/donut-a4dc4e6b1d.svg "Donut chart")
+One large value with the option to add a label, trend, sparkline, and icon.](discover-dynatrace/get-started/dynatrace-ui/interact-visualizations/single-value.md "Interact with the most basic visualization in the Dynatrace design system.")[![Donut chart](https://dt-cdn.net/images/donut-a4dc4e6b1d.svg "Donut chart")
 
 ### Donut and pie chart
 
-Circular categorical charts that show part-to-whole relationships.](/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations/piechart "The donut and pie charts are both circular categorical charts that show part-to-whole relationships.")[![Line chart](https://dt-cdn.net/images/linecharticon-fa6b06b9a8-min-cae31a2af5.svg "Line chart")
+Circular categorical charts that show part-to-whole relationships.](discover-dynatrace/get-started/dynatrace-ui/interact-visualizations/piechart.md "The donut and pie charts are both circular categorical charts that show part-to-whole relationships.")[![Line chart](https://dt-cdn.net/images/linecharticon-fa6b06b9a8-min-cae31a2af5.svg "Line chart")
 
 ### Time series charts
 
-Changes plotted over time along a continuous axis.](/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations/time-series "Time series charts plot time-based data along a continuous time axis (X-axis).")[![Bar chart](https://dt-cdn.net/images/barcharticon-b10415ec73-aaaadb9f73-min-ec8c7a9f32.svg "Bar chart")
+Changes plotted over time along a continuous axis.](discover-dynatrace/get-started/dynatrace-ui/interact-visualizations/time-series.md "Time series charts plot time-based data along a continuous time axis (X-axis).")[![Bar chart](https://dt-cdn.net/images/barcharticon-b10415ec73-aaaadb9f73-min-ec8c7a9f32.svg "Bar chart")
 
 ### Categorical charts
 
-One continuous numerical axis and one categorical axis.](/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations/categorical "Categorical chart features one continuous numerical axis and one categorical axis.")[![Overview](https://dt-cdn.net/images/chartcollectionicon-32ce349d22-min-2f3dbada57.svg "Overview")
+One continuous numerical axis and one categorical axis.](discover-dynatrace/get-started/dynatrace-ui/interact-visualizations/categorical.md "Categorical chart features one continuous numerical axis and one categorical axis.")[![Overview](https://dt-cdn.net/images/chartcollectionicon-32ce349d22-min-2f3dbada57.svg "Overview")
 
 ### Common interactions and features
 
-Common interactions and features of data visualizations in the latest Dynatrace.](/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations/common-interactions "Get to know the common interactions and features of data visualizations in the latest Dynatrace")
+Common interactions and features of data visualizations in the latest Dynatrace.](discover-dynatrace/get-started/dynatrace-ui/interact-visualizations/common-interactions.md "Get to know the common interactions and features of data visualizations in the latest Dynatrace")
 
 ---
 
@@ -218,7 +218,7 @@ If you own a launchpad, you can share it with other users in your Dynatrace envi
 
 ![Share launchpad](https://dt-cdn.net/images/share-2226-f40006e092.png)
 
-For details on sharing Dynatrace documents (including launchpads), see [Share documents](/docs/discover-dynatrace/get-started/dynatrace-ui/share "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
+For details on sharing Dynatrace documents (including launchpads), see [Share documents](../ru/discover-dynatrace/get-started/dynatrace-ui/share.md "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
 
 ## API for launchpads
 
@@ -496,7 +496,7 @@ If you think you might need to access the document again, make a duplicate of th
 
 ### Dashboards **Dashboards**
 
-To change ownership of the currently displayed [dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")
+To change ownership of the currently displayed [dashboard](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")
 
 1. Open the  menu next to the dashboard name and select  **Change owner**.
 2. Find and select a new owner, and then select  **Change owner**.
@@ -509,7 +509,7 @@ To change ownership of multiple dashboards
 
 ### Notebooks **Notebooks**
 
-To change ownership of the currently displayed [notebook](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+To change ownership of the currently displayed [notebook](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
 
 1. Open the  menu next to the notebook name and select  **Change owner**.
 2. Find and select a new owner, and then select  **Change owner**.
@@ -522,7 +522,7 @@ To change ownership of multiple notebooks
 
 ### Launchpads
 
-To change ownership of a [launchpad](/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads "Build and manage custom start pages with launchpads.")
+To change ownership of a [launchpad](../ru/discover-dynatrace/get-started/dynatrace-ui/launchpads.md "Build and manage custom start pages with launchpads.")
 
 1. Go to **Launcher**. If a launchpad is displayed, select  **Browse all** in the upper-left corner to display a table of launchpads.
 2. Filter the table for  **Owned by me** to list your launchpads.
@@ -591,7 +591,7 @@ scraped: 2026-03-06T21:19:18.937696
 
 The filter field is a powerful UI component that enables you to quickly narrow down results and find relevant information within Dynatrace apps. Use the filter field when you need to search by specific attributes (like service name or status), combine multiple conditions with logical operators, or filter JSON data using dot or bracket notation.
 
-For complex queries beyond what the filter field offers, consider using [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") instead.
+For complex queries beyond what the filter field offers, consider using [Dynatrace Query Language (DQL)](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") instead.
 
 ## Anatomy
 
@@ -712,8 +712,8 @@ When using a variable like `$cluster`, the position of the `*` relative to the v
 
 #### Related content
 
-* [Variables in dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable "Add variables to your Dynatrace dashboards.")
-* [Variables in segments](/docs/manage/segments/concepts/segments-concepts-variables "Learn how variables help to form dynamic segments and reduce configuration effort and maintenance.")
+* [Variables in dashboards](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable.md "Add variables to your Dynatrace dashboards.")
+* [Variables in segments](../ru/manage/segments/concepts/segments-concepts-variables.md "Learn how variables help to form dynamic segments and reduce configuration effort and maintenance.")
 
 ### Filtering JSON data
 
@@ -758,7 +758,7 @@ The upper part of the Dock includes:
 * [**Dynatrace**](#dynatrace) is your home.
 * [**Search**](#search) enables you to search the platform.
 * [**Apps**](#apps)
-* [Pinned and active apps](#pinned), depending on your configuration and activity. In this example, the ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), and ![Segments](https://dt-cdn.net/images/segments-256-8e66310720.webp "Segments") [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") apps are all listed.
+* [Pinned and active apps](#pinned), depending on your configuration and activity. In this example, the ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") [Notebooks](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") [Dashboards](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), and ![Segments](https://dt-cdn.net/images/segments-256-8e66310720.webp "Segments") [Segments](../ru/manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") apps are all listed.
 
 ![Dock: bottom](https://dt-cdn.net/images/dock-all-4-bottom-280-1767392d75.png)
 
@@ -775,7 +775,7 @@ The lower part of the Dock includes:
 Select  **Dynatrace** in the upper-left corner to go to your Dynatrace home page.
 
 * The default **Getting started with Dynatrace** "launchpad" page gives you a quick overview of prominent features to start using the platform. It's focused on introducing you to key aspects of the platform and reducing your learning curve.
-* You can create additional launchpads (custom home pages) with handpicked lists of apps, documents, links, and informational text. For more information, see [Launchpads](/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads "Build and manage custom start pages with launchpads.").
+* You can create additional launchpads (custom home pages) with handpicked lists of apps, documents, links, and informational text. For more information, see [Launchpads](../ru/discover-dynatrace/get-started/dynatrace-ui/launchpads.md "Build and manage custom start pages with launchpads.").
 
 ## Search
 
@@ -786,7 +786,7 @@ The  **Search** option is always available in the Dock.
 * If you collapse the Dock, you'll only see the  icon.
 * The keyboard shortcut for **Search** is **CTRL**+**K** or **CMD**+**K**.
 
-Dynatrace platform search provides you with customizable options and features to help you filter search results. For details on advanced search features, see [Platform search](/docs/discover-dynatrace/get-started/dynatrace-ui/search "Dynatrace platform search provides you with customizable options and features to help you filter search results and find resources you're looking for.").
+Dynatrace platform search provides you with customizable options and features to help you filter search results. For details on advanced search features, see [Platform search](discover-dynatrace/get-started/dynatrace-ui/search.md "Dynatrace platform search provides you with customizable options and features to help you filter search results and find resources you're looking for.").
 
 ## Apps
 
@@ -849,7 +849,7 @@ To open the user menu, select your name in the lower-left corner, at the bottom 
 * **[your name]** ![Configurable](https://dt-cdn.net/images/configurable-490-8b015913d4.svg "Configurable") displays **User settings**, where you can change settings such as the display language, timezone, and light mode/dark mode.
 * **Environments** lists links to your available environments.
 * **Appearance** offers a quick switch to light, dark, or browser theme mode.
-* **Account Management** opens [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.") in a new tab.
+* **Account Management** opens [Account Management](../ru/manage/account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health.") in a new tab.
 * **Latest Dynatrace** toggles the latest Dynatrace on and off.
 * **Sign out** signs you out of Dynatrace.
 
@@ -927,7 +927,7 @@ scraped: 2026-03-06T21:13:03.640210
 * 4-min read
 * Published Dec 05, 2017
 
-Your Dynatrace monitoring environment is where all your Dynatrace performance analysis takes place. [Dynatrace OneAgent](/docs/platform/oneagent "Learn the monitoring capabilities of OneAgent.") sends all captured monitoring data to your monitoring environment for analysis. A monitoring environment is analogous to an analysis server that provides all Dynatrace application-performance analysis functionality, including all dashboards, charts, reports and other tools.
+Your Dynatrace monitoring environment is where all your Dynatrace performance analysis takes place. [Dynatrace OneAgent](../ru/platform/oneagent.md "Learn the monitoring capabilities of OneAgent.") sends all captured monitoring data to your monitoring environment for analysis. A monitoring environment is analogous to an analysis server that provides all Dynatrace application-performance analysis functionality, including all dashboards, charts, reports and other tools.
 
 ![Dynatrace architecture](https://dt-cdn.net/images/dynatrace-architecture-1743-fab92236e8.png)
 
@@ -943,7 +943,7 @@ Your monitoring environment location depends on your deployment type.
 
 ## Environment ID
 
-All external access to your Dynatrace monitoring environment relies on two credential types: an *environment ID* and an [access token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.").
+All external access to your Dynatrace monitoring environment relies on two credential types: an *environment ID* and an [access token](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md "Learn the concept of an access token and its scopes.").
 
 Each environment that you monitor with Dynatrace is identified with a unique character stringâthe environment ID. The Dynatrace API relies heavily on environment IDs to ensure that it pulls monitoring data from and pushes relevant external events to the correct Dynatrace environments.
 
@@ -955,7 +955,7 @@ Each environment that you monitor with Dynatrace is identified with a unique cha
 
   For example, for the Dynatrace environment `https://abc123a.dynatrace.com`, the environment ID is `abc123a`.
 
-  You can also find your environment ID in [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.").
+  You can also find your environment ID in [Account Management](../ru/manage/account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health.").
 
   1. Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/). If you have more than one account, select the account you want to manage.
   2. Select **Settings** > **Environments**.
@@ -999,8 +999,8 @@ With multiple environments, monitoring data is strictly separated by design. Env
 
 In some scenarios, however, you might need to connect your environments. For example:
 
-* To trace calls between services monitored in different Dynatrace environments, you can configure cross-environment tracing. For details, see [Set up cross-environment tracing](/docs/observe/application-observability/distributed-traces/analysis/connect-environments "Analyze requests across environment boundaries.").
-* To display metrics from remote environments on your local environment's dashboards, you can set up cross-environment dashboard tiles. For details, see [Create remote/multi-environment Dynatrace dashboards](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment "Create dashboards that display data from multiple Dynatrace environments.").
+* To trace calls between services monitored in different Dynatrace environments, you can configure cross-environment tracing. For details, see [Set up cross-environment tracing](../ru/observe/application-observability/distributed-traces/analysis/connect-environments.md "Analyze requests across environment boundaries.").
+* To display metrics from remote environments on your local environment's dashboards, you can set up cross-environment dashboard tiles. For details, see [Create remote/multi-environment Dynatrace dashboards](../ru/analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment.md "Create dashboards that display data from multiple Dynatrace environments.").
 
 ---
 
@@ -1165,7 +1165,7 @@ Kyverno
 
 The BACK stack includes the artifact delivery and security as well as the configuration and developer portal, but thatâs not all it takes. Observing the workloads is equally important and must be included in a minimum viable platform.
 
-To feed the observability and security data back to the developers, we offer a [Backstage integration](/docs/deliver/backstage-integration "Learn how to integrate Dynatrace into Backstage") with Kubernetes support by default and customizable queries.
+To feed the observability and security data back to the developers, we offer a [Backstage integration](deliver/backstage-integration.md "Learn how to integrate Dynatrace into Backstage") with Kubernetes support by default and customizable queries.
 
 OpenTelemetry offers open-source observability, and Dynatrace can be used for observability either out of the box with our proprietary OneAgent or by easily ingesting and using the data provided through OpenTelemetry.
 
@@ -1246,7 +1246,7 @@ Provide observability into test results automatically across different used tool
 * Visualize test results and KPIs in one central view or dashboard
 * Identify long lasting tests to easily optimize for faster test feedback
 
-Try it yourself: [Test pipeline observability](/docs/deliver/test-pipeline-observability "Utilize Dynatrace to observe and analyze test pipelines effectively").
+Try it yourself: [Test pipeline observability](../ru/deliver/test-pipeline-observability.md "Utilize Dynatrace to observe and analyze test pipelines effectively").
 
 #### Continuous testing validation Continuous testing validation
 
@@ -1290,7 +1290,7 @@ Goal
 
 Automatically validate new releases â taking downstream and upstream dependencies into account â based on baselining, observability data, SLOs, and security information. Use the results to drive meaningful follow-up actions. Providing release validation templates as part of every delivery process enables fast feedback regarding any negative side-effects of a new version. Faster feedback leads to better developer experience, higher release quality, and higher innovation pace.
 
-Try it yourself: [Release validation](/docs/deliver/quality-gates "Validate the releases of your business-critical services").
+Try it yourself: [Release validation](../ru/deliver/quality-gates.md "Validate the releases of your business-critical services").
 
 #### Progressive delivery Progressive delivery
 
@@ -1332,7 +1332,7 @@ Goal
 
 By combining network data with infrastructure and billing information, top cost contributors can be identified and analyzed, leading to improvements by pinpointed adoption of network compression or other hyperscaler tools.
 
-Try it yourself: [Data-driven cloud tuning](/docs/observe/infrastructure-observability/cloud-platform-monitoring/use-cases/cloud-costs "Manage your cloud deployment using Grail and your cloud vendor-provided data in context.").
+Try it yourself: [Data-driven cloud tuning](observe/infrastructure-observability/cloud-platform-monitoring/use-cases/cloud-costs.md "Manage your cloud deployment using Grail and your cloud vendor-provided data in context.").
 
 #### AI Observability Generative AI observability
 
@@ -1345,7 +1345,7 @@ Using observability data further allows the proper sizing and configuration of g
 
 Try it yourself:
 
-* [AI and LLM Observability](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes generative AI (LLM) models and AI SaaS services, and much more.")
+* [AI and LLM Observability](../ru/observe/dynatrace-for-ai-observability.md "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes generative AI (LLM) models and AI SaaS services, and much more.")
 
 #### Infrastructure observability Observability for infrastructure
 
@@ -1380,7 +1380,7 @@ Goal
 
 Within cloud-native environments, resizing disks can happen frequently. Predictive AI for forecasting enables automatic and timely resizing of disks, avoiding system outages while keeping costs low.
 
-Try it yourself: [Predictive Kubernetes operations](/docs/observe/infrastructure-observability/kubernetes-app/use-cases/predictive-operations "Proactively manage disk space within Kubernetes environments").
+Try it yourself: [Predictive Kubernetes operations](../ru/observe/infrastructure-observability/kubernetes-app/use-cases/predictive-operations.md "Proactively manage disk space within Kubernetes environments").
 
 #### Forecasting in data analytics Forecasting in data analytics
 
@@ -1396,7 +1396,7 @@ Goal
 
 Predictive AI in workflow automation makes it possible to proactively raise tickets and act automatically before problems arise.
 
-Try it yourself: [AI in Workflows - Predictive maintenance of cloud disks](/docs/dynatrace-intelligence/use-cases/davis-for-workflows "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.").
+Try it yourself: [AI in Workflows - Predictive maintenance of cloud disks](../ru/dynatrace-intelligence/use-cases/davis-for-workflows.md "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.").
 
 ### Prevent
 
@@ -1409,7 +1409,7 @@ Goal
 
 Ingesting and automatically analyzing application log data from production makes it easy to issue tickets with context and create and assign work to the respective development teams, allowing them to act and resolve bugs before end-users encounter them.
 
-Try it yourself: [Automated bug triaging and ticketing](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-resolve-dependencies "Explore a Log Management and Analytics use case for resolving team dependencies.").
+Try it yourself: [Automated bug triaging and ticketing](analyze-explore-automate/logs/lma-use-cases/lma-e2e-resolve-dependencies.md "Explore a Log Management and Analytics use case for resolving team dependencies.").
 
 #### Unified exposure protection Unified exposure protection
 
@@ -1472,7 +1472,7 @@ Goal
 
 Avoiding fatigue due to the myriad of security events emitted by hyperscaler tools every single day by deduplication and consolidation combined with automatic ticket creation and assignment based on development and security ownership.
 
-Try it yourself: [CSPM Notification Automation](/docs/secure/use-cases/notification-automation "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.").
+Try it yourself: [CSPM Notification Automation](../ru/secure/use-cases/notification-automation.md "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.").
 
 #### Security as a service Automate security findings at scale
 
@@ -1509,7 +1509,7 @@ Goal
 
 With observability data around CPU, thread, and memory usage, it's easy to quickly identify the biggest performance bottlenecks and flag them for improvement. Such bottlenecks could manifest themselves as inefficient string operations leading to high memory allocation and pressure on the garbage collector, which can, in turn, lead to scalability and performance issues.
 
-Try it yourself: [Always-on app profiling](/docs/observe/application-observability/services/always-on-app-profiling "Optimize your code and find performance problems").
+Try it yourself: [Always-on app profiling](observe/application-observability/services/always-on-app-profiling.md "Optimize your code and find performance problems").
 
 #### Kubernetes utilization improvement Kubernetes utilization improvement
 
@@ -1576,7 +1576,7 @@ The SPACE framework doesn't provide a ready-to-use list of metrics like the DORA
 
 ## Dynatrace and OpenTelemetry
 
-[OpenTelemetry](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.") (also referred to as OTel) is an open-source observability framework made up of a collection of tools, APIs, and SDKs.
+[OpenTelemetry](../ru/ingest-from/opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.") (also referred to as OTel) is an open-source observability framework made up of a collection of tools, APIs, and SDKs.
 
 * OTel enables IT teams to instrument, generate, collect, and export telemetry data for analysis and understanding software performance and behavior.
 
@@ -1666,25 +1666,25 @@ Through integrations with the three major public cloud service providers, Dynatr
 
 ![Unified serverless telemetry](https://dt-cdn.net/images/unified-service-descr-630-f2484fd514.png)
 
-With over [600+ integrations, extensions, and technology-specific supportï»¿](https://www.dynatrace.com/hub/), Dynatrace provides extensive monitoring support, including your [serverless technologies](/docs/ingest-from/technology-support/serverless-compute-services "Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS).") running on AWS, Azure, or Google Cloud.
+With over [600+ integrations, extensions, and technology-specific supportï»¿](https://www.dynatrace.com/hub/), Dynatrace provides extensive monitoring support, including your [serverless technologies](../ru/ingest-from/technology-support/serverless-compute-services.md "Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS).") running on AWS, Azure, or Google Cloud.
 
 ## Getting started with serverless monitoring
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Turn on cloud service monitoring**](/docs/discover-dynatrace/get-started/serverless-monitoring#services "Serverless observability with Dynatrace")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Turn on cloud service monitoring**](../ru/discover-dynatrace/get-started/serverless-monitoring.md#services "Serverless observability with Dynatrace")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Enable Dynatrace extensions on cloud services**](/docs/discover-dynatrace/get-started/serverless-monitoring#extensions "Serverless observability with Dynatrace")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Enable Dynatrace extensions on cloud services**](../ru/discover-dynatrace/get-started/serverless-monitoring.md#extensions "Serverless observability with Dynatrace")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Advanced visibility**](/docs/discover-dynatrace/get-started/serverless-monitoring#advanced "Serverless observability with Dynatrace")
+**Advanced visibility**](../ru/discover-dynatrace/get-started/serverless-monitoring.md#advanced "Serverless observability with Dynatrace")
 
 ### Step 1 Turn on cloud service monitoring
 
 With a single integration per cloud vendor, Dynatrace automatically discovers your cloud services and monitors the services to provide you with out-of-the-box service health and availability monitoring:
 
-* [Amazon CloudWatch integration](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.")
-* [Azure Monitor integration](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide "Set up and configure Azure monitoring in Dynatrace.")
-* [Google Cloud operations suite integration](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new "Monitor Google Cloud services with Dynatrace and view available metrics.")
+* [Amazon CloudWatch integration](../ru/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md "Integrate metrics from Amazon CloudWatch.")
+* [Azure Monitor integration](../ru/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide.md "Set up and configure Azure monitoring in Dynatrace.")
+* [Google Cloud operations suite integration](../ru/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new.md "Monitor Google Cloud services with Dynatrace and view available metrics.")
 
 ### Step 2 Enable Dynatrace extensions on cloud services that provide a native extensibility mechanism
 
@@ -1696,9 +1696,9 @@ Visit Dynatrace Hub to see all services with a [cloud-native integrationï»¿](
 
 For instructions on how to integrate Dynatrace into your container image, or how to make use of OpenTelemetry or advanced visibility to enable additional details via logs and other telemetry events, see the service-specific tutorials in our documentation:
 
-* [Amazon Web Services](/docs/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services.")
-* [Azure Services](/docs/ingest-from/microsoft-azure-services/azure-integrations "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")
-* [Google Cloud Services](/docs/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
+* [Amazon Web Services](../ru/ingest-from/amazon-web-services.md "Set up and configure monitoring for Amazon Web Services.")
+* [Azure Services](../ru/ingest-from/microsoft-azure-services/azure-integrations.md "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")
+* [Google Cloud Services](../ru/ingest-from/google-cloud-platform/gcp-integrations.md "Set up and configure Dynatrace on Google Cloud.")
 
 Be sure to watch for the recommendations within the Dynatrace web UI to enable additional telemetry sources that will improve the observability of your services. For example:
 
@@ -1723,7 +1723,7 @@ scraped: 2026-03-06T21:09:27.563916
 * 3-min read
 * Published Feb 09, 2023
 
-Dynatrace is a software-intelligence monitoring platform that simplifies enterprise cloud complexity and accelerates digital transformation. For more, see [What is Dynatrace](/docs/discover-dynatrace/what-is-dynatrace "Dynatrace is an observability platform for analyzing, automating, and innovating with the power of AI. Learn how it helps deliver more secure software faster.").
+Dynatrace is a software-intelligence monitoring platform that simplifies enterprise cloud complexity and accelerates digital transformation. For more, see [What is Dynatrace](../ru/discover-dynatrace/what-is-dynatrace.md "Dynatrace is an observability platform for analyzing, automating, and innovating with the power of AI. Learn how it helps deliver more secure software faster.").
 
 ## Get started!
 
@@ -1735,21 +1735,21 @@ Get started with Dynatrace in just three steps
 
 ### Step 2 Ingest data
 
-* [Install OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation "Install OneAgent on a server for the very first time.") on a host to automatically monitor and analyze the performance and health of your entire IT infrastructure,
+* [Install OneAgent](../ru/ingest-from/dynatrace-oneagent/installation-and-operation.md "Install OneAgent on a server for the very first time.") on a host to automatically monitor and analyze the performance and health of your entire IT infrastructure,
 * or [Ingest data from OpenTelemetryï»¿](https://www.dynatrace.com/news/blog/send-opentelemetry-data-to-dynatrace/#configure-the-otel-collector-for-dynatrace) for a more hybrid infrastructure.
 
 ### Step 3 Verify you receive data
 
-* Explore detected services with [Services app](/docs/observe/application-observability/services/services-app "Maintain centralized control over service health, performance, and resources with the Services app.") ![Services](https://dt-cdn.net/hub/logos/services.png "Services").
-* View your **identified topology with** [Smartscape](/docs/analyze-explore-automate/smartscape-classic "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.").
+* Explore detected services with [Services app](../ru/observe/application-observability/services/services-app.md "Maintain centralized control over service health, performance, and resources with the Services app.") ![Services](https://dt-cdn.net/hub/logos/services.png "Services").
+* View your **identified topology with** [Smartscape](../ru/analyze-explore-automate/smartscape-classic.md "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.").
 
 ### Step 4 Visualize data
 
-* **Visualize data with** [ready-made dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards "Use ready-made dashboards to visualize your data right out of the box.") or start building your own with [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards").
+* **Visualize data with** [ready-made dashboards](../ru/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards.md "Use ready-made dashboards to visualize your data right out of the box.") or start building your own with [Dashboards](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards").
 
 ### Step 5 Set up notifications
 
-* Set up your first [notifications](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.").
+* Set up your first [notifications](../ru/analyze-explore-automate/notifications-and-alerting/problem-notifications.md "Learn how to integrate third-party problem notification systems with Dynatrace.").
 
 ## Explore Playground
 
@@ -1757,17 +1757,17 @@ Not ready to install or ingest? Explore our functionalities with sample data in 
 
 ## Ready for more?
 
-* Proactively investigate and discover the root cause of issues in context with our [Logs app](/docs/analyze-explore-automate/logs/lma-logs-app "Search, filter, and analyze logs with Dynatrace Logs app to quickly investigate and share insights.") ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs").
+* Proactively investigate and discover the root cause of issues in context with our [Logs app](../ru/analyze-explore-automate/logs/lma-logs-app.md "Search, filter, and analyze logs with Dynatrace Logs app to quickly investigate and share insights.") ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs").
   [Explore Logs app in our sandboxï»¿](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.logs/).
-* Optimize the health and performance of your multicloud Kubernetes environments with our [Kubernetes app](/docs/observe/infrastructure-observability/kubernetes-app "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.") ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes").
+* Optimize the health and performance of your multicloud Kubernetes environments with our [Kubernetes app](../ru/observe/infrastructure-observability/kubernetes-app.md "Monitor and optimize Kubernetes with Dynatrace. Get real-time insights and health for clusters and workloads.") ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes").
   [Explore Kubernetes app in our sandboxï»¿](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.kubernetes/).
-* Triage, investigate and remediate incidents automatically and in context with our [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") ![Problems](https://dt-cdn.net/images/problems-512-34e46d913e.png "Problems").
+* Triage, investigate and remediate incidents automatically and in context with our [Problems app](../ru/dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.") ![Problems](https://dt-cdn.net/images/problems-512-34e46d913e.png "Problems").
   [Explore Problems app in our sandboxï»¿](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.davis.problems/).
-* Analyze and filter trace data with [Distributed Tracing app](/docs/observe/application-observability/distributed-tracing "Trace and analyze in real time highly distributed systems with Grail.")![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing").
+* Analyze and filter trace data with [Distributed Tracing app](../ru/observe/application-observability/distributed-tracing.md "Trace and analyze in real time highly distributed systems with Grail.")![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing").
 
 ## Continue exploring
 
 * Join our [**Dynatrace Community**ï»¿](https://community.dynatrace.com/t5/Start-with-Dynatrace/bd-p/GetStarted) to innovate with like-minded observability experts, get answers to your questions, and explore how to get started.
-* Stay up to date with [newly added and updated](/docs/whats-new "Read the product news and the release notes and find out which Documentation topics are new.") as well as [soon to be added functionalityï»¿](https://www.dynatrace.com/news/category/product-news/).
+* Stay up to date with [newly added and updated](whats-new.md "Read the product news and the release notes and find out which Documentation topics are new.") as well as [soon to be added functionalityï»¿](https://www.dynatrace.com/news/category/product-news/).
 
 ---

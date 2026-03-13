@@ -19,11 +19,11 @@ scraped: 2026-03-06T21:28:12.602325
 
 Ознакомьтесь с разделами ниже, чтобы узнать, где можно найти значения, захваченные как пользовательские свойства действий и сеансов, и как можно максимально эффективно использовать эти свойства.
 
-Прежде чем использовать свойства действий и сеансов пользователя, необходимо определить эти свойства в настройках приложения. Подробнее см. [Define user action and user session properties for web applications](/docs/observe/digital-experience/web-applications/additional-configuration/define-user-action-and-session-properties "Define custom string, numeric, and date properties for your monitored web applications.").
+Прежде чем использовать свойства действий и сеансов пользователя, необходимо определить эти свойства в настройках приложения. Подробнее см. [Define user action and user session properties for web applications](../additional-configuration/define-user-action-and-session-properties.md "Define custom string, numeric, and date properties for your monitored web applications.").
 
 ## Анализ сеансов пользователей
 
-Страница **[User sessions](/docs/observe/digital-experience/session-segmentation/new-user-sessions "Learn about user session segmentation and filtering attributes.")** позволяет фильтровать сеансы пользователей по свойствам действий и сеансов. Например, если вы проводите программу лояльности, вы можете добавить свойство `loyalty_status`, чтобы узнать, является ли пользователь в отслеживаемом сеансе участником уровня `Silver`, `Gold` или `Platinum`. Затем вы можете отфильтровать клиентов `Platinum` или `Gold` на странице **User sessions**.
+Страница **[User sessions](../../session-segmentation/new-user-sessions.md "Learn about user session segmentation and filtering attributes.")** позволяет фильтровать сеансы пользователей по свойствам действий и сеансов. Например, если вы проводите программу лояльности, вы можете добавить свойство `loyalty_status`, чтобы узнать, является ли пользователь в отслеживаемом сеансе участником уровня `Silver`, `Gold` или `Platinum`. Затем вы можете отфильтровать клиентов `Platinum` или `Gold` на странице **User sessions**.
 
 1. Перейдите в ![Session Segmentation](https://dt-cdn.net/images/session-segmentation-512-5278e8fa16.png "Session Segmentation") **Session Segmentation**.
 2. В разделе **Filter by** выберите один из типов свойств, например **Session date properties** или **User action string properties**, а затем выберите нужное свойство.
@@ -36,7 +36,7 @@ scraped: 2026-03-06T21:28:12.602325
 
 ## Дополнительные аналитические возможности с USQL
 
-Свойства действий и сеансов пользователя могут значительно расширить ваши аналитические возможности при использовании [Dynatrace User Sessions Query Language (USQL)](/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") для аналитики, требующей расширенной фильтрации или постоянной фильтрации в различных представлениях анализа. Кроме того, если вы хотите отслеживать денежные значения и цели конверсии, ключевые для успеха вашего бизнеса, вы можете создавать запросы на основе уникальных значений отдельных свойств действий пользователя или сеансов, определённых для вашей среды.
+Свойства действий и сеансов пользователя могут значительно расширить ваши аналитические возможности при использовании [Dynatrace User Sessions Query Language (USQL)](../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") для аналитики, требующей расширенной фильтрации или постоянной фильтрации в различных представлениях анализа. Кроме того, если вы хотите отслеживать денежные значения и цели конверсии, ключевые для успеха вашего бизнеса, вы можете создавать запросы на основе уникальных значений отдельных свойств действий пользователя или сеансов, определённых для вашей среды.
 
 Чтобы использовать свойства действий и сеансов в USQL
 
@@ -70,7 +70,7 @@ SELECT stringProperties.loyalty_status AS "Loyalty status", COUNT(useraction.req
 
 ## Интеграция через User session API
 
-[User sessions API](/docs/dynatrace-api/environment-api/rum/user-sessions "Learn what the Dynatrace User Sessions Query language API offers.") в сочетании с [User Sessions Query Language (USQL)](/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") позволяет получить доступ ко всем данным действий и сеансов пользователя, включая свойства и значения.
+[User sessions API](../../../../dynatrace-api/environment-api/rum/user-sessions.md "Learn what the Dynatrace User Sessions Query language API offers.") в сочетании с [User Sessions Query Language (USQL)](../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") позволяет получить доступ ко всем данным действий и сеансов пользователя, включая свойства и значения.
 
 Расширяя приведённый выше пример с программой лояльности, вы можете использовать информацию о проблемах и статусе лояльности через User session API, запрашивая сеансы пользователей, на которые повлияла проблема после её закрытия. Это позволяет использовать полученную информацию, например, для настройки персонализированных маркетинговых кампаний.
 
@@ -91,7 +91,7 @@ SELECT stringProperties.loyalty_status AS "Loyalty status", COUNT(useraction.req
 
 Для веб-, мобильных и пользовательских приложений вы можете [создать запрос](#usql) со свойствами действий и сеансов, а затем закрепить полученную диаграмму на одном из ваших дашбордов.
 
-Для веб-приложений вы можете дополнительно создать вычисляемые метрики на основе пользовательских свойств, использовать эти метрики для создания диаграммы, а затем закрепить её на дашборде. Это можно сделать в [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+Для веб-приложений вы можете дополнительно создать вычисляемые метрики на основе пользовательских свойств, использовать эти метрики для создания диаграммы, а затем закрепить её на дашборде. Это можно сделать в [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.").
 
 В следующем примере используется универсальный **Web property pack** для отслеживания маркетинговых кампаний на [Dynatrace.com](https://www.dynatrace.com/) и просмотра следующей информации:
 
@@ -105,11 +105,11 @@ SELECT stringProperties.loyalty_status AS "Loyalty status", COUNT(useraction.req
 
 Вы можете экспортировать захваченные свойства сеансов пользователя вместе со всеми остальными данными сеансов в потоках экспорта сеансов пользователя.
 
-Подробнее см. [Export user sessions](/docs/observe/digital-experience/session-segmentation/export-session-data "Set up Dynatrace to export user session data to a provided webhook endpoint.").
+Подробнее см. [Export user sessions](../../session-segmentation/export-session-data.md "Set up Dynatrace to export user session data to a provided webhook endpoint.").
 
 ## Многомерный анализ
 
-Вы также можете использовать пользовательские свойства в [Multidimensional analysis](/docs/observe/digital-experience/web-applications/analyze-and-use/multi-dimensional-analysis "Find out how Dynatrace Real User Monitoring enables you to dig deep into your user actions and perform analysis across numerous dimensions."). Например, вы можете анализировать действия пользователей на основе ваших пользовательских свойств или фильтровать данные по значениям свойств.
+Вы также можете использовать пользовательские свойства в [Multidimensional analysis](multi-dimensional-analysis.md "Find out how Dynatrace Real User Monitoring enables you to dig deep into your user actions and perform analysis across numerous dimensions."). Например, вы можете анализировать действия пользователей на основе ваших пользовательских свойств или фильтровать данные по значениям свойств.
 
 Чтобы использовать пользовательские свойства на странице **Multidimensional analysis**
 
@@ -125,7 +125,7 @@ SELECT stringProperties.loyalty_status AS "Loyalty status", COUNT(useraction.req
 
 ## Вычисляемые метрики, диаграммы и оповещения
 
-Для расширения возможностей создайте [вычисляемую метрику](/docs/observe/digital-experience/web-applications/additional-configuration/rum-calculated-metrics-web "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.") с вашими свойствами действий пользователя. Вы можете создать метрику либо со страницы [**Multidimensional analysis**](#mda), либо из настроек приложения. После добавления метрики вы можете использовать её для создания пользовательских диаграмм и оповещений.
+Для расширения возможностей создайте [вычисляемую метрику](../additional-configuration/rum-calculated-metrics-web.md "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.") с вашими свойствами действий пользователя. Вы можете создать метрику либо со страницы [**Multidimensional analysis**](#mda), либо из настроек приложения. После добавления метрики вы можете использовать её для создания пользовательских диаграмм и оповещений.
 
 Чтобы создать метрику со страницы **Multidimensional analysis**
 
@@ -135,7 +135,7 @@ SELECT stringProperties.loyalty_status AS "Loyalty status", COUNT(useraction.req
 
    ![Creating a calculated metric with data filtered by action property](https://dt-cdn.net/images/creating-calculated-metric-with-data-filtered-by-action-property-2134-e9027de910.png)
 4. Выберите **Create metric** для сохранения метрики.
-5. Необязательно: выберите **Create a chart** или **Create alert**. Подробнее см. [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") и [Metric events](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace").
+5. Необязательно: выберите **Create a chart** или **Create alert**. Подробнее см. [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") и [Metric events](../../../../dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace").
 
 Чтобы создать метрику из настроек веб-приложения
 
@@ -146,9 +146,9 @@ SELECT stringProperties.loyalty_status AS "Loyalty status", COUNT(useraction.req
 5. Выберите нужную метрику и укажите **Metric name** и **Metric key for API usage**.
 6. Необязательно: в **Filter by** установите необходимые фильтры. Например, можно фильтровать по свойствам действий пользователя.
 7. Выберите **Create metric**.
-8. Необязательно: из списка метрик разверните созданную метрику и выберите **Create a chart** или **Create alert**. Подробнее см. [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") и [Metric events](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace").
+8. Необязательно: из списка метрик разверните созданную метрику и выберите **Create a chart** или **Create alert**. Подробнее см. [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") и [Metric events](../../../../dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace").
 
 ## Связанные темы
 
-* [Define user action and user session properties for web applications](/docs/observe/digital-experience/web-applications/additional-configuration/define-user-action-and-session-properties "Define custom string, numeric, and date properties for your monitored web applications.")
+* [Define user action and user session properties for web applications](../additional-configuration/define-user-action-and-session-properties.md "Define custom string, numeric, and date properties for your monitored web applications.")
 * [Mastering session and user action properties for enhanced analytics](https://www.youtube.com/watch?v=b8Vj0EoaDeM)

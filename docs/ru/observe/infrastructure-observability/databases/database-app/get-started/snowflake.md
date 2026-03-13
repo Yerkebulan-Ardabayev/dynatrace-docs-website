@@ -16,11 +16,11 @@ scraped: 2026-03-06T21:37:21.566752
 
 ## Предварительные требования
 
-Убедитесь, что ваша система соответствует [требованиям](/docs/observe/infrastructure-observability/databases/extensions/snowflake#requirements "Expand visibility to improve health and performance monitoring of your Snowflake database.") для полной поддержки функций.
+Убедитесь, что ваша система соответствует [требованиям](../../extensions/snowflake.md#requirements "Expand visibility to improve health and performance monitoring of your Snowflake database.") для полной поддержки функций.
 
 ## Настройка расширения Snowflake для мониторинга
 
-Чтобы настроить и активировать расширение, выполните [подробные шаги активации](/docs/observe/infrastructure-observability/databases/extensions/snowflake#activation-and-setup "Expand visibility to improve health and performance monitoring of your Snowflake database.").
+Чтобы настроить и активировать расширение, выполните [подробные шаги активации](../../extensions/snowflake.md#activation-and-setup "Expand visibility to improve health and performance monitoring of your Snowflake database.").
 
 1. Добавьте экземпляр базы данных.
 2. Выберите тип размещения.
@@ -30,12 +30,12 @@ scraped: 2026-03-06T21:37:21.566752
 
 ## Сценарии использования
 
-Вы можете воспользоваться мониторингом Snowflake в следующих [сценариях использования](/docs/observe/infrastructure-observability/databases/extensions/snowflake#use-cases "Expand visibility to improve health and performance monitoring of your Snowflake database.").
+Вы можете воспользоваться мониторингом Snowflake в следующих [сценариях использования](../../extensions/snowflake.md#use-cases "Expand visibility to improve health and performance monitoring of your Snowflake database.").
 
 ## Наборы функций
 
-[Наборы функций](/docs/observe/infrastructure-observability/databases/extensions/snowflake#feature-sets "Expand visibility to improve health and performance monitoring of your Snowflake database.") ограничивают набор собираемых метрик при активации расширения.
+[Наборы функций](../../extensions/snowflake.md#feature-sets "Expand visibility to improve health and performance monitoring of your Snowflake database.") ограничивают набор собираемых метрик при активации расширения.
 
 ## Связанные темы
 
-* [Расширение Snowflake](/docs/observe/infrastructure-observability/databases/extensions/snowflake "Expand visibility to improve health and performance monitoring of your Snowflake database.")
+* [Расширение Snowflake](../../extensions/snowflake.md "Expand visibility to improve health and performance monitoring of your Snowflake database.")

@@ -37,8 +37,8 @@ scraped: 2026-03-05T21:33:16.381453
 
 Чтобы установить приложение:
 
-1. [Подпишитесь](/docs/manage/hub#add-subscription "See the information about Dynatrace Hub.") на канал Business Insights, используя токен, предоставленный командой Business Insights.
-2. После подписки найдите Business Insights в Hub и нажмите [Install](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+1. [Подпишитесь](../../manage/hub.md#add-subscription "See the information about Dynatrace Hub.") на канал Business Insights, используя токен, предоставленный командой Business Insights.
+2. После подписки найдите Business Insights в Hub и нажмите [Install](../../manage/hub.md#install "See the information about Dynatrace Hub.").
 
 Обратитесь к вашей команде Insights при возникновении вопросов или необходимости помощи с установкой.
 

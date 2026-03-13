@@ -22,7 +22,7 @@ scraped: 2026-03-03T21:23:38.569179
 1. В Dynatrace Hub ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub") найдите **Dynatrace Intelligence (Preview)**.
 2. Выберите **Dynatrace Intelligence (Preview)** и нажмите **Install**.
 
-После установки действия Dynatrace Intelligence автоматически появятся в разделе **Choose action** приложения [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.").
+После установки действия Dynatrace Intelligence автоматически появятся в разделе **Choose action** приложения [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](../../analyze-explore-automate/workflows.md "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.").
 
 ## Пример использования
 
@@ -30,19 +30,19 @@ scraped: 2026-03-03T21:23:38.569179
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-Предоставление необходимых разрешений](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#permissions "Автоматизация предиктивного обслуживания облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+Предоставление необходимых разрешений](davis-for-workflows.md#permissions "Автоматизация предиктивного обслуживания облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-Изучение показателей ёмкости](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#explore "Автоматизация предиктивного обслуживания облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+Изучение показателей ёмкости](davis-for-workflows.md#explore "Автоматизация предиктивного обслуживания облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-Определение расписания запуска](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#schedule "Автоматизация предиктивного обслуживания облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.")[![Шаг 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Шаг 4")
+Определение расписания запуска](davis-for-workflows.md#schedule "Автоматизация предиктивного обслуживания облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.")[![Шаг 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Шаг 4")
 
-Настройка прогноза](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#forecast "Автоматизация предиктивного обслуживания облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.")[![Шаг 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Шаг 5")
+Настройка прогноза](davis-for-workflows.md#forecast "Автоматизация предиктивного обслуживания облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.")[![Шаг 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Шаг 5")
 
-Оценка результата](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#evaluate "Автоматизация предиктивного обслуживания облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.")[![Шаг 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Шаг 6")
+Оценка результата](davis-for-workflows.md#evaluate "Автоматизация предиктивного обслуживания облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.")[![Шаг 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Шаг 6")
 
-Устранение до возникновения проблемы](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#remediate "Автоматизация предиктивного обслуживания облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.")[![Шаг 7](https://dt-cdn.net/images/step-7-35139ef2d6.svg "Шаг 7")
+Устранение до возникновения проблемы](davis-for-workflows.md#remediate "Автоматизация предиктивного обслуживания облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.")[![Шаг 7](https://dt-cdn.net/images/step-7-35139ef2d6.svg "Шаг 7")
 
-Просмотр созданных проблем](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#problems "Автоматизация предиктивного обслуживания облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.")
+Просмотр созданных проблем](davis-for-workflows.md#problems "Автоматизация предиктивного обслуживания облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.")
 
 ### Шаг 1. Предоставление необходимых разрешений
 
@@ -95,7 +95,7 @@ scraped: 2026-03-03T21:23:38.569179
 
 ### Шаг 2. Изучение показателей ёмкости в Notebook
 
-Предиктивное управление ёмкостью начинается в [**Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве."), где необходимо настроить показатели ёмкости. На изображении ниже показан пример индикатора процента свободного дискового пространства для операционной команды.
+Предиктивное управление ёмкостью начинается в [**Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве."), где необходимо настроить показатели ёмкости. На изображении ниже показан пример индикатора процента свободного дискового пространства для операционной команды.
 
 ![Пример прогноза анализа данных ИИ.](https://dt-cdn.net/images/notebooks-data-analyzer-forecast-1891-28bee08431.png)
 
@@ -103,7 +103,7 @@ scraped: 2026-03-03T21:23:38.569179
 
 ### Шаг 3. Определение расписания запуска
 
-В ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** настройте необходимое расписание для запуска прогноза. Чтобы узнать, как это сделать, см. [Триггер расписания рабочего процесса](/docs/analyze-explore-automate/workflows/trigger/schedules "Руководство по созданию триггеров расписания для автоматизации рабочих процессов в Dynatrace Workflows."). На изображении ниже показан рабочий процесс, который запускается в 8:00 для прогнозирования всех дисков, которые с высокой вероятностью исчерпают свободное пространство в течение следующей недели.
+В ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** настройте необходимое расписание для запуска прогноза. Чтобы узнать, как это сделать, см. [Триггер расписания рабочего процесса](../../analyze-explore-automate/workflows/trigger/schedules.md "Руководство по созданию триггеров расписания для автоматизации рабочих процессов в Dynatrace Workflows."). На изображении ниже показан рабочий процесс, который запускается в 8:00 для прогнозирования всех дисков, которые с высокой вероятностью исчерпают свободное пространство в течение следующей недели.
 
 ![Пример триггера Dynatrace Intelligence в приложении Workflows.](https://dt-cdn.net/images/workflows-forecast-trigger-1920-652d16e024.png)
 
@@ -285,7 +285,7 @@ scraped: 2026-03-03T21:23:38.569179
 
 1. Добавьте новое действие **Send message**.
 2. Задайте имя действия как `send_message`.
-3. Настройте сообщение. Чтобы узнать, как это сделать, см. [Коннектор Slack](/docs/analyze-explore-automate/workflows/actions/slack "Отправка сообщений в рабочие пространства Slack").
+3. Настройте сообщение. Чтобы узнать, как это сделать, см. [Коннектор Slack](../../analyze-explore-automate/workflows/actions/slack.md "Отправка сообщений в рабочие пространства Slack").
 4. Откройте вкладку **Conditions**.
 5. Выберите условие `success` для действия **check\_prediction**.
 6. Добавьте следующее пользовательское условие:
@@ -397,5 +397,5 @@ scraped: 2026-03-03T21:23:38.569179
 
 ## Связанные темы
 
-* [Workflows](/docs/analyze-explore-automate/workflows "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.")
-* [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.")
+* [Workflows](../../analyze-explore-automate/workflows.md "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.")
+* [Notebooks](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.")

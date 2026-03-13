@@ -25,11 +25,11 @@ This page is an introduction to Smartscape-specific concepts, as well as general
 
 ## Smartscape views
 
-![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** provides multiple topology views, each offering a unique perspective on your digital system. For more information, see [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** views](/docs/analyze-explore-automate/smartscape/smartscape-views "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.").
+![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** provides multiple topology views, each offering a unique perspective on your digital system. For more information, see [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** views](../ru/analyze-explore-automate/smartscape/smartscape-views.md "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.").
 
 ## Smartscape modals
 
-![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** modals deliver in-context topological insights anywhere on the platform, seamlessly integrating analytics into your workflows. ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** modals are displayed in an overlay on top of the existing app, which allows you to access topological insights and analytics without leaving your current app or context. For more information, see [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** modals](/docs/analyze-explore-automate/smartscape/smartscape-modals "Use Smartscape modals to visualize your environment in any Dynatrace app and gain insights into problem resolution and service dependencies").
+![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** modals deliver in-context topological insights anywhere on the platform, seamlessly integrating analytics into your workflows. ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** modals are displayed in an overlay on top of the existing app, which allows you to access topological insights and analytics without leaving your current app or context. For more information, see [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** modals](../ru/analyze-explore-automate/smartscape/smartscape-modals.md "Use Smartscape modals to visualize your environment in any Dynatrace app and gain insights into problem resolution and service dependencies").
 
 ## Nodes, edges, and groups
 
@@ -50,7 +50,7 @@ The nodes and edges shown in the ![Smartscape](https://dt-cdn.net/images/smartsc
 
 The timeframe selector in the ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** app works slightly different compared to the other areas of the platform. The timeframe selector lets you view nodes whose lifetime overlaps with the selected timeframe. This ensures that you only see nodes relevant to the period you're analyzing.
 
-For more information about lifetime, see [**Smartscape on Grail**](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
+For more information about lifetime, see [**Smartscape on Grail**](../ru/platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
 
 ## Segments
 
@@ -62,7 +62,7 @@ Working with vast amounts of data such as thousands of nodes in a graph, and try
 
 In nested views, if your segment filters out a parent group, you won't be able to see the child nodes of that group even if those child nodes aren't directly affected by the segment filter.
 
-For more information about Segments, see [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.").
+For more information about Segments, see [Segments](../ru/manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.").
 
 ## Tooltips
 
@@ -145,13 +145,13 @@ By using the View topology ![Smartscape](https://dt-cdn.net/images/smartscapes-2
 
 You can trigger View topology modal from the entity details in any Dynatrace application, either via an explicit intent or through the **Open with** option after selecting the entity.
 
-Some nodes might not have any edges to other nodes in your environment. If no edges exist in [**Smartscape on Grail**](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL."), the topology view will only contain the selected node.
+Some nodes might not have any edges to other nodes in your environment. If no edges exist in [**Smartscape on Grail**](../ru/platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL."), the topology view will only contain the selected node.
 
 You can find some examples of triggering the View topology modal below:
 
-* [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities."): You can trigger the View topology modal directly from any entity in any [Smartscape view](/docs/analyze-explore-automate/smartscape/smartscape-views "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.").
-* [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."): You can trigger the View topology modal from a Smartscape node by selecting the **Show topology** action in the tooltip.
-* [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts."): You can trigger the View topology modal from the **Affected object** details within the app.
+* [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**](../ru/analyze-explore-automate/smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities."): You can trigger the View topology modal directly from any entity in any [Smartscape view](../ru/analyze-explore-automate/smartscape/smartscape-views.md "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.").
+* [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."): You can trigger the View topology modal from a Smartscape node by selecting the **Show topology** action in the tooltip.
+* [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](../ru/secure/threats-and-exploits.md "Understand, triage, and investigate detection findings and alerts."): You can trigger the View topology modal from the **Affected object** details within the app.
 
 ## Overview
 
@@ -229,8 +229,8 @@ To maximize your efficiency when using ![Smartscape](https://dt-cdn.net/images/s
 
 ## Related topics
 
-* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
-* [Smartscape views](/docs/analyze-explore-automate/smartscape/smartscape-views "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.")
+* [Smartscape](../ru/analyze-explore-automate/smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* [Smartscape views](../ru/analyze-explore-automate/smartscape/smartscape-views.md "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.")
 
 ---
 
@@ -255,7 +255,7 @@ The Visual Resolution Path (VRP) is a ![Smartscape](https://dt-cdn.net/images/sm
 
 From the Visual Resolution Path, you can trigger additional intents and drill-downs for deeper exploration. Alongside the visualized Visual Resolution Path entities, it includes a timeline of the underlying problem events. This provides a comprehensive, in-context view of the problem and its resolution journey.
 
-For more details about problems and problem resolution, see [Root Cause Analysis](/docs/dynatrace-intelligence/root-cause-analysis "How Dynatrace analyzes problems to determine their root cause.").
+For more details about problems and problem resolution, see [Root Cause Analysis](../ru/dynatrace-intelligence/root-cause-analysis.md "How Dynatrace analyzes problems to determine their root cause.").
 
 ## Visual Resolution Path support in Dynatrace apps
 
@@ -265,8 +265,8 @@ Some problems don't have a detected root cause. If the problem's root cause wasn
 
 You can find some examples of triggering Visual Resolution Path below:
 
-* [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities."): you can trigger Visual Resolution Path directly from a problem node within the [Problem graph view](/docs/analyze-explore-automate/smartscape/smartscape-views/problem-graph "Use Problem graph to visualize and quickly identify problems and nodes that require immediate attention.").
-* [![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment."): you can trigger Visual Resolution Path by selecting  **Maximize** on the **Visual resolution path** in the overview tab.
+* [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**](../ru/analyze-explore-automate/smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities."): you can trigger Visual Resolution Path directly from a problem node within the [Problem graph view](../ru/analyze-explore-automate/smartscape/smartscape-views/problem-graph.md "Use Problem graph to visualize and quickly identify problems and nodes that require immediate attention.").
+* [![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](../ru/dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment."): you can trigger Visual Resolution Path by selecting  **Maximize** on the **Visual resolution path** in the overview tab.
 
   An example of triggering Visual Resolution Path from Problems app VRP overview tab
 
@@ -291,7 +291,7 @@ In the Visual Resolution Path, entities involved in the problem are located with
 
 Edges in the Visual Resolution Path graph represent the dependency tree and relationships between the entities. These visual connections can help you understand how different components and services are interlinked.
 
-For more information, see [Root Cause Analysis](/docs/dynatrace-intelligence/root-cause-analysis "How Dynatrace analyzes problems to determine their root cause.").
+For more information, see [Root Cause Analysis](../ru/dynatrace-intelligence/root-cause-analysis.md "How Dynatrace analyzes problems to determine their root cause.").
 
 ### Event Timeline
 
@@ -320,10 +320,10 @@ To maximize your efficiency when using ![Smartscape](https://dt-cdn.net/images/s
 
 ## Related topics
 
-* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
-* [Smartscape views](/docs/analyze-explore-automate/smartscape/smartscape-views "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.")
-* [Problem graph](/docs/analyze-explore-automate/smartscape/smartscape-views/problem-graph "Use Problem graph to visualize and quickly identify problems and nodes that require immediate attention.")
-* [Root cause analysis](/docs/dynatrace-intelligence/root-cause-analysis "How Dynatrace analyzes problems to determine their root cause.")
+* [Smartscape](../ru/analyze-explore-automate/smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* [Smartscape views](../ru/analyze-explore-automate/smartscape/smartscape-views.md "Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.")
+* [Problem graph](../ru/analyze-explore-automate/smartscape/smartscape-views/problem-graph.md "Use Problem graph to visualize and quickly identify problems and nodes that require immediate attention.")
+* [Root cause analysis](../ru/dynatrace-intelligence/root-cause-analysis.md "How Dynatrace analyzes problems to determine their root cause.")
 
 ---
 
@@ -348,13 +348,13 @@ scraped: 2026-03-05T21:34:12.624189
 
 [### Visual Resolution Path
 
-Use the Visual Resolution Path (VRP) add-on to access the problem resolution path directly from any Dynatrace app and gain insights into the problem and underlying problem event timeline without leaving your current context.](/docs/analyze-explore-automate/smartscape/smartscape-modals/visual-resolution-path "Access the problem resolution path directly from any Dynatrace app to gain insights into a problem and event timeline without leaving the current context.")[### View Topology
+Use the Visual Resolution Path (VRP) add-on to access the problem resolution path directly from any Dynatrace app and gain insights into the problem and underlying problem event timeline without leaving your current context.](../ru/analyze-explore-automate/smartscape/smartscape-modals/visual-resolution-path.md "Access the problem resolution path directly from any Dynatrace app to gain insights into a problem and event timeline without leaving the current context.")[### View Topology
 
-Visualize the topology around any selected entity to gain immediate insights on the relationships to other entities within your digital system.](/docs/analyze-explore-automate/smartscape/smartscape-modals/smartscape-view-topology "Visualize the topology around the selected entity to gain insights on service dependencies and relationships between the nodes.")
+Visualize the topology around any selected entity to gain immediate insights on the relationships to other entities within your digital system.](../ru/analyze-explore-automate/smartscape/smartscape-modals/smartscape-view-topology.md "Visualize the topology around the selected entity to gain insights on service dependencies and relationships between the nodes.")
 
 ## Related topics
 
-* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* [Smartscape](../ru/analyze-explore-automate/smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
 
 ---
 
@@ -428,7 +428,7 @@ To use the **AWS EC2 Instance Ecosystem** effectively, we recommend that you:
 
 ## Related topics
 
-* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* [Smartscape](../ru/analyze-explore-automate/smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
 
 ---
 
@@ -506,7 +506,7 @@ To use **Infrastructure overview** effectively, we recommend that you:
 
 ## Related topics
 
-* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* [Smartscape](../ru/analyze-explore-automate/smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
 
 ---
 
@@ -569,7 +569,7 @@ To use **Kubernetes overview** effectively, we recommend that you:
 
 ## Related topics
 
-* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* [Smartscape](../ru/analyze-explore-automate/smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
 
 ---
 
@@ -612,7 +612,7 @@ The edges in the **Problem graph** view connect problems, affected nodes, and re
 
 Edges link affected and related nodes together with problems to provide a visual representation of their relationships.
 
-Edges in the ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** **Problem graph** view are different from [**Smartscape on Grail**](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.") edges. For more details about Smartscape edges and how they differ, see [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** concepts](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.").
+Edges in the ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** **Problem graph** view are different from [**Smartscape on Grail**](../ru/platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.") edges. For more details about Smartscape edges and how they differ, see [![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** concepts](../ru/analyze-explore-automate/smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.").
 
 ## Use cases
 
@@ -632,7 +632,7 @@ To use ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "S
 
 ## Related topics
 
-* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* [Smartscape](../ru/analyze-explore-automate/smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
 
 ---
 
@@ -690,7 +690,7 @@ To use **Service dependency graph** effectively, we recommend that you:
 
 ## Related topics
 
-* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* [Smartscape](../ru/analyze-explore-automate/smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
 
 ---
 
@@ -719,7 +719,7 @@ With the power of Grail primary fields, tags, and segments, you can customize th
 
 ## Constituent entities overview
 
-The **Smartscape on Grail** view visualizes entities as a flat structure consisting of nodes and edges. Nodes and edges can be represented by an entity of any type permitted by [**Smartscape on Grail**](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
+The **Smartscape on Grail** view visualizes entities as a flat structure consisting of nodes and edges. Nodes and edges can be represented by an entity of any type permitted by [**Smartscape on Grail**](../ru/platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
 
 ### Nodes
 
@@ -749,7 +749,7 @@ To use the **Smartscape on Grail** view effectively, we recommend that you:
 
 ## Related topics
 
-* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* [Smartscape](../ru/analyze-explore-automate/smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
 
 ---
 
@@ -776,21 +776,21 @@ Whether you're exploring service relationships, understanding infrastructure dep
 
 [### Smartscape on Grail view
 
-Discover all entities and relationships in your environment and focus on what's relevant to you and your team.](/docs/analyze-explore-automate/smartscape/smartscape-views/smartscape-on-grail-view "Discover all entities and relationships in your environment and select relevant segments with the help of Grail.")[### Infrastructure overview
+Discover all entities and relationships in your environment and focus on what's relevant to you and your team.](../ru/analyze-explore-automate/smartscape/smartscape-views/smartscape-on-grail-view.md "Discover all entities and relationships in your environment and select relevant segments with the help of Grail.")[### Infrastructure overview
 
-Gain insight into what components are running, how they're connected, and where the impact may spread.](/docs/analyze-explore-automate/smartscape/smartscape-views/infrastructure-overview "Visualize call-type relationships between components and gain insights into process dependencies and workload distribution.")[### Problem graph
+Gain insight into what components are running, how they're connected, and where the impact may spread.](../ru/analyze-explore-automate/smartscape/smartscape-views/infrastructure-overview.md "Visualize call-type relationships between components and gain insights into process dependencies and workload distribution.")[### Problem graph
 
-Analyze problem impact and blast radius across your environment.](/docs/analyze-explore-automate/smartscape/smartscape-views/problem-graph "Use Problem graph to visualize and quickly identify problems and nodes that require immediate attention.")[### Service dependency graph
+Analyze problem impact and blast radius across your environment.](../ru/analyze-explore-automate/smartscape/smartscape-views/problem-graph.md "Use Problem graph to visualize and quickly identify problems and nodes that require immediate attention.")[### Service dependency graph
 
-Discover how your services connect and communicate in real time.](/docs/analyze-explore-automate/smartscape/smartscape-views/service-dependency-graph "Visualize relationships between services in your environment to identify dependency chains and and uncover critical dependencies.")[### Kubernetes overview
+Discover how your services connect and communicate in real time.](../ru/analyze-explore-automate/smartscape/smartscape-views/service-dependency-graph.md "Visualize relationships between services in your environment to identify dependency chains and and uncover critical dependencies.")[### Kubernetes overview
 
-Map your Kubernetes environments from clusters to components.](/docs/analyze-explore-automate/smartscape/smartscape-views/kubernetes-overview "Get a high-level overview of your Kubernetes environment to navigate dependencies and identify misconfigurations.")[### AWS EC2 ecosystem overview
+Map your Kubernetes environments from clusters to components.](../ru/analyze-explore-automate/smartscape/smartscape-views/kubernetes-overview.md "Get a high-level overview of your Kubernetes environment to navigate dependencies and identify misconfigurations.")[### AWS EC2 ecosystem overview
 
-Visualize your AWS EC2 ecosystem and resource relationships.](/docs/analyze-explore-automate/smartscape/smartscape-views/aws-ec2-ecosystem-overview "Visualize your AWS EC2 ecosystem and resource relationships.")
+Visualize your AWS EC2 ecosystem and resource relationships.](../ru/analyze-explore-automate/smartscape/smartscape-views/aws-ec2-ecosystem-overview.md "Visualize your AWS EC2 ecosystem and resource relationships.")
 
 ## Related topics
 
-* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* [Smartscape](../ru/analyze-explore-automate/smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
 
 ---
 
@@ -859,7 +859,7 @@ Necessary to read segment variables
 
 ## Get started
 
-![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** is an interactive map of your digital ecosystem powered by [**Smartscape on Grail**](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL."). Use it to visually analyze topology and relationships between all of your entities in real time with the help of customized ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** views and modals.
+![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** is an interactive map of your digital ecosystem powered by [**Smartscape on Grail**](../ru/platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL."). Use it to visually analyze topology and relationships between all of your entities in real time with the help of customized ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** views and modals.
 
 ![Get the full picture with a real-time representation of all your digital systems.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/197/media/ScreenShot_Hub_-_Image_1.png)![Instant, domain-specific insights, with no configuration required.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/114/media/Smartscape_Hub_-_Image_2.png)![Discover hidden patterns through multidimensional, visual analytics.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/114/media/Smartscape_Hub_-_Image_3.png)![Assess and visualize impact and blast radius of problems.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/114/media/Smartscape_Hub_-_Image_4.png)
 
@@ -867,18 +867,18 @@ Necessary to read segment variables
 
 ## Concepts
 
-Go through the following topics to gain a better understanding of [Smartscape concepts](/docs/analyze-explore-automate/smartscape/smartscape-concepts "Learn about Smartscape-specific concepts and UI capabilities.") and ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** features.
+Go through the following topics to gain a better understanding of [Smartscape concepts](../ru/analyze-explore-automate/smartscape/smartscape-concepts.md "Learn about Smartscape-specific concepts and UI capabilities.") and ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** features.
 
 [01Smartscape concepts
 
 * Explanation
-* Learn about Smartscape-specific concepts and UI capabilities.](/docs/analyze-explore-automate/smartscape/smartscape-concepts)[02Smartscape modals
+* Learn about Smartscape-specific concepts and UI capabilities.](../ru/analyze-explore-automate/smartscape/smartscape-concepts.md)[02Smartscape modals
 
 * Overview
-* Use Smartscape modals to visualize your environment in any Dynatrace app and gain insights into problem resolution and service dependencies](/docs/analyze-explore-automate/smartscape/smartscape-modals)[03Smartscape views
+* Use Smartscape modals to visualize your environment in any Dynatrace app and gain insights into problem resolution and service dependencies](../ru/analyze-explore-automate/smartscape/smartscape-modals.md)[03Smartscape views
 
 * Overview
-* Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.](/docs/analyze-explore-automate/smartscape/smartscape-views)
+* Visualize your environment with customized Smartscape views to gain insight into relationships and dependencies between your services.](../ru/analyze-explore-automate/smartscape/smartscape-views.md)
 
 ## Use cases
 

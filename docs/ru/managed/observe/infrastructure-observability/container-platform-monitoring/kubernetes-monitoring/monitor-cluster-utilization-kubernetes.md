@@ -53,4 +53,4 @@ Dynatrace version 1.232+
 
 ## Связанные темы
 
-* [Настройка Dynatrace на Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Настройка Dynatrace на Kubernetes](../../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")

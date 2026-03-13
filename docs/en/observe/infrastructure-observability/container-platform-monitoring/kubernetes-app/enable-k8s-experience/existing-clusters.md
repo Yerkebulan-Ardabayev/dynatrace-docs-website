@@ -15,7 +15,7 @@ scraped: 2026-02-06T16:19:46.615282
 
 You have the option to enable all or specific Kubernetes clusters to benefit from the new Kubernetes experience.
 
-You could accomplish this using the Settings API with the [Kubernetes app schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-app-transition-kubernetes "View builtin:app-transition.kubernetes settings schema table of your monitoring environment via the Dynatrace API."), or alternatively, by configuring the setting as described next.
+You could accomplish this using the Settings API with the [Kubernetes app schema table](../../../../../dynatrace-api/environment-api/settings/schemas/builtin-app-transition-kubernetes.md "View builtin:app-transition.kubernetes settings schema table of your monitoring environment via the Dynatrace API."), or alternatively, by configuring the setting as described next.
 
 ## Enable all clusters
 

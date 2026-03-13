@@ -36,19 +36,19 @@ The latest Dynatrace is a combination of intertwined new features that provide i
 
 One of the major changes is the introduction of Grail as a new unified data lakehouse. Grail gives you significant improvements in data ingestion, retention, and analytics. Later on, you'll learn how to configure data retention and data access control on Grail.
 
-For more information, see [Grail](/docs/platform/grail "Insights on what and how you can query Dynatrace data.").
+For more information, see [Grail](grail.md "Insights on what and how you can query Dynatrace data.").
 
 ### Dynatrace Query Language
 
 Grail not only stores all the observability and security data but also enables access to that data with Dynatrace Query Language (DQL). Access to all data through the query language is new to Dynatrace and goes far beyond data access through APIs and UIs we have offered up to now.
 
-For more information, see [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
+For more information, see [Dynatrace Query Language](grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
 
 ### Multiple ways to access and analyze data
 
 Together with the introduction of Grail, Dynatrace has also released a set of major improvements to user interfaces, APIs, and services.
 
-The introduction of the [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."), and new [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") enables you to access data in Grail in various ways. This ranges from consuming views sourced from Dynatrace or peers to constructing highly specialized views. Moreover, you can implement your own logic using [fully customized appsï»¿](https://developer.dynatrace.com/) running on the [AppEngine](/docs/platform/appengine "Develop feature-rich Dynatrace apps for you and the world!"). Every conceivable operation on Dynatrace data becomes possible.
+The introduction of the [Notebooks](../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), [Workflows](../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."), and new [Dashboards](../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") enables you to access data in Grail in various ways. This ranges from consuming views sourced from Dynatrace or peers to constructing highly specialized views. Moreover, you can implement your own logic using [fully customized appsï»¿](https://developer.dynatrace.com/) running on the [AppEngine](appengine.md "Develop feature-rich Dynatrace apps for you and the world!"). Every conceivable operation on Dynatrace data becomes possible.
 
 Before non-admin users can use the latest Dynatrace functionalities, however, a few administrative steps are needed to manage data access. These are explained below.
 
@@ -72,11 +72,11 @@ While management zones are a very versatile tool for setting up complex permissi
 
 Out-of-the-box permission-relevant fields can be used in most cases for access control. Additionally, we've added the `dt.security_context` field, which is reserved for environment-specific details. All Dynatrace components will ensure that these table-relevant permission fields are available on each record (event, log, span) or metric. This allows for a consistent permission concept for the entire environment.
 
-For more information, see [Identity and access management (IAM)](/docs/manage/identity-access-management "Configure users, groups and permissions.").
+For more information, see [Identity and access management (IAM)](../../common/manage/identity-access-management.md "Configure users, groups and permissions.").
 
 ## Data in Grail
 
-The [Grail data model](/docs/platform/grail/organize-data "Insights on the Grail data model consisting of buckets, tables, and views.") consists of Grail buckets, tables, and views.
+The [Grail data model](grail/organize-data.md "Insights on the Grail data model consisting of buckets, tables, and views.") consists of Grail buckets, tables, and views.
 
 * Tables describe the observability data type.
 * Grail buckets are the storage containers, like a folder on a file system.
@@ -86,12 +86,12 @@ A fresh Dynatrace environment comes with a couple of default buckets. These buck
 
 The ingestion of data to Grail starts with OneAgent or one of our ingest APIs:
 
-* [Logs](/docs/analyze-explore-automate/logs#quick-start-guide "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")
-* [Business events](/docs/observe/business-observability#business-observability-overview "Basic concepts, setup and configuration, and use cases for Dynatrace Business Observability")
+* [Logs](../analyze-explore-automate/logs.md#quick-start-guide "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")
+* [Business events](../observe/business-observability.md#business-observability-overview "Basic concepts, setup and configuration, and use cases for Dynatrace Business Observability")
 
 ### Access Grail-stored data via DQL
 
-Data stored in Grail can be accessed via [DQL](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."). The easiest way to take a first look at your data is by using [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
+Data stored in Grail can be accessed via [DQL](grail/dynatrace-query-language.md "How to use Dynatrace Query Language."). The easiest way to take a first look at your data is by using [Notebooks](../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
 
 #### Logs, Events, and Business Events
 
@@ -133,7 +133,7 @@ fetch dt.entity.host
 
 #### Metrics
 
-Many metrics are already [by default stored in Grail](/docs/analyze-explore-automate/metrics/built-in-metrics-on-grail "Get to know the equivalents of the classic built-in metrics supported on Grail."). The list will grow every month. Metrics are retained for 15 months. You can access them easily via the notebook metric explorer or using the timeseries command as in the examples below:
+Many metrics are already [by default stored in Grail](../analyze-explore-automate/metrics/built-in-metrics-on-grail.md "Get to know the equivalents of the classic built-in metrics supported on Grail."). The list will grow every month. Metrics are retained for 15 months. You can access them easily via the notebook metric explorer or using the timeseries command as in the examples below:
 
 ```
 timeseries avg(dt.host.cpu.load)
@@ -148,7 +148,7 @@ timeseries sum(dt.host.disk.util_time)
 Grail also stores Dynatrace system data that you can explore. For example, you can see which tables and buckets are defined, and check system events such as audit events.
 
 1. `dt.system.data_objects` list all tables and views.
-2. `dt.system.buckets` displays all defined [buckets](/docs/platform/grail/organize-data#custom-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
+2. `dt.system.buckets` displays all defined [buckets](grail/organize-data.md#custom-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
 3. `dt.system.events` contains environment-generated events like audit events.
 4. `dt.system.query_executions` is a view on `dt.system.events` for quick access to query executions. It allows admins to see by whom and which queries are executed.
 
@@ -195,8 +195,8 @@ If a user has already received access to all logs via an unconditional `ALLOW st
 
 Learn more about record-level permissions:
 
-* [Record permissions](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-record "Find out how to assign permissions to buckets and tables in Grail.")
-* [Storage-related policy statements](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#storage "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.")
+* [Record permissions](grail/organize-data/assign-permissions-in-grail.md#grail-permissions-record "Find out how to assign permissions to buckets and tables in Grail.")
+* [Storage-related policy statements](../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#storage "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.")
 
 ### Security context
 
@@ -240,7 +240,7 @@ For example, log files might contain the details in their content. In these case
 
 ![Security context](https://dt-cdn.net/images/log-security-context-2068-47060f9f12.webp)
 
-For more information, see [Set up Grail permissions for logs](/docs/analyze-explore-automate/logs/lma-security-context "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.").
+For more information, see [Set up Grail permissions for logs](../analyze-explore-automate/logs/lma-security-context.md "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.").
 
 #### Step 3 Control access details through custom details
 
@@ -270,7 +270,7 @@ Most of your log data might be needed for troubleshooting, and you don't want to
 
 1. Create a custom bucket.
 
-   You can create a custom bucket via the [Grail â Storage Management API](/docs/platform/grail/organize-data#manage-custom-grail-buckets-via-rest-api "Insights on the Grail data model consisting of buckets, tables, and views.") or use the [Grail Storage Management Appï»¿](https://dt-url.net/s4038cj).
+   You can create a custom bucket via the [Grail â Storage Management API](grail/organize-data.md#manage-custom-grail-buckets-via-rest-api "Insights on the Grail data model consisting of buckets, tables, and views.") or use the [Grail Storage Management Appï»¿](https://dt-url.net/s4038cj).
 
    To create custom Grail buckets, your group needs to be bound to the policy with the following statements:
 
@@ -295,7 +295,7 @@ Most of your log data might be needed for troubleshooting, and you don't want to
    ![Custom bucket](https://dt-cdn.net/images/image9-1300-4b50870c54.png)
 2. Send the data.
 
-   After the Grail bucket is created, it's time to bring data in. You need to create or adjust a [log bucket assignment rule](/docs/analyze-explore-automate/logs/lma-bucket-assignment "Your log data can be stored in data retention buckets based on specific retention periods.") to store troubleshooting logs in that new bucket. You have two possibilities:
+   After the Grail bucket is created, it's time to bring data in. You need to create or adjust a [log bucket assignment rule](../analyze-explore-automate/logs/lma-bucket-assignment.md "Your log data can be stored in data retention buckets based on specific retention periods.") to store troubleshooting logs in that new bucket. You have two possibilities:
 
    * Send only specific logs to the new log bucket by adding bucket assignment rules.
    * Send all logs by default to the 14-day bucket and add assignment rules for other retentions.
@@ -383,17 +383,17 @@ After having organized monitoring data in Grail buckets and mastered the setup o
 
 Segments mirror management zones in some ways, in that they allow you to abstract complex filter conditions and perform lookups to the monitored entity model. Segments, however, are no longer precalculated attributes, but query-time filter conditions instead. This solves the performance bottleneck of management zones, making it possible to both ingest and analyze several orders of magnitude higher volumes of monitoring data in the latest Dynatrace.
 
-For more information, see [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.").
+For more information, see [Segments](../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.").
 
 ## FAQ
 
 When we store our data now in four buckets, how does this affect my users? Do they need to know the buckets?
 
-As described in the [Grail Data Model](/docs/platform/grail/organize-data "Insights on the Grail data model consisting of buckets, tables, and views.") reference, buckets are assigned to tables. Because our four custom buckets with log data are assigned to the log table, you can access all data in this table via `fetch logs`. There is no need for a user to select a bucket (or, as in other products, an index). Developers will of course get only data from the buckets `log_sec_dev_analytics_1y`,`log_sec_dev_troubleshoot_14d`, and `default_logs`, and not from `log_sec_high_3y` because of our policy definitions.
+As described in the [Grail Data Model](grail/organize-data.md "Insights on the Grail data model consisting of buckets, tables, and views.") reference, buckets are assigned to tables. Because our four custom buckets with log data are assigned to the log table, you can access all data in this table via `fetch logs`. There is no need for a user to select a bucket (or, as in other products, an index). Developers will of course get only data from the buckets `log_sec_dev_analytics_1y`,`log_sec_dev_troubleshoot_14d`, and `default_logs`, and not from `log_sec_high_3y` because of our policy definitions.
 
 Is there a value in filtering on a bucket, and how can it be done?
 
-Yes, it is always [good practice](/docs/platform/grail/dynatrace-query-language/dql-best-practices#filter-early "Best practices for using Dynatrace Query Language.") to narrow down the data you want to analyze or search for specific terms.
+Yes, it is always [good practice](grail/dynatrace-query-language/dql-best-practices.md#filter-early "Best practices for using Dynatrace Query Language.") to narrow down the data you want to analyze or search for specific terms.
 
 Adding a bucket filter is an effective way to speed up a query and reduce the scanned bytes. Depending on your data volume this might not always be perceptible.
 
@@ -409,7 +409,7 @@ fetch logs
 
 Are there any other reasons why I need different log buckets?
 
-Grail is built for storing and querying the data with hyper-scale data processing. If you use bucket filters for your data queries, it will speed up queries, but the [number of buckets](/docs/platform/grail/organize-data#custom-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.") is limited per environment to 80.
+Grail is built for storing and querying the data with hyper-scale data processing. If you use bucket filters for your data queries, it will speed up queries, but the [number of buckets](grail/organize-data.md#custom-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.") is limited per environment to 80.
 
 Data can't be moved between buckets. Keep this in mind if:
 
@@ -426,17 +426,17 @@ Data can't be moved between buckets. Keep this in mind if:
 
 To ensure that data ingestion from unit A does not affect the query costs or performance of unit B, set up dedicated buckets for each business unit.
 
-You should not use Grail buckets for data separation on dynamic dimensions, such as creating buckets for host groups or teams. You can filter the data on other [dimensions](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.").
+You should not use Grail buckets for data separation on dynamic dimensions, such as creating buckets for host groups or teams. You can filter the data on other [dimensions](grail/dynatrace-query-language/dql-best-practices.md "Best practices for using Dynatrace Query Language.").
 
 If you need to restrict access within buckets, you can use record-level permissions.
 
 Is there a way to restrict access within buckets or even tables?
 
-[Record permissions](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-record "Find out how to assign permissions to buckets and tables in Grail.") are the right way to implement fine-grained access control and restrict data access further. You can either use the defined dedicated fields, like `event.kind` or `k8s.namespace.name`, for creating policies, or you can add a field/dimension `dt.security_context` for access control on any values such as team names.
+[Record permissions](grail/organize-data/assign-permissions-in-grail.md#grail-permissions-record "Find out how to assign permissions to buckets and tables in Grail.") are the right way to implement fine-grained access control and restrict data access further. You can either use the defined dedicated fields, like `event.kind` or `k8s.namespace.name`, for creating policies, or you can add a field/dimension `dt.security_context` for access control on any values such as team names.
 
 If you look back at our examples, we defined a policy that allows every developer to access logs stored in the default bucket and buckets starting with the naming pattern: `log_sec_dev`.
 
-Suppose a new external team will work for the next 18 months on a project and you only want to expose logs that are tagged with their team name: `extDev`. To do so, make sure that the `dt.security_context` is [set on their log](/docs/analyze-explore-automate/logs/lma-security-context "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.") lines, and create an additional statement:
+Suppose a new external team will work for the next 18 months on a project and you only want to expose logs that are tagged with their team name: `extDev`. To do so, make sure that the `dt.security_context` is [set on their log](../analyze-explore-automate/logs/lma-security-context.md "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.") lines, and create an additional statement:
 
 ```
 ALLOW storage:buckets:read WHERE storage:bucket-name STARTSWITH "log_sec_dev";
@@ -454,7 +454,7 @@ ALLOW storage:logs:read;
 ALLOW storage:logs:read WHERE storage:dt.security_context=`"extDev";
 ```
 
-You can use [OneAgentCtl](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to set `dt.security_context` as a host tag on OneAgent-monitored hosts:
+You can use [OneAgentCtl](../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to set `dt.security_context` as a host tag on OneAgent-monitored hosts:
 
 ```
 ./oneagentctl --set-host-tag=dt.security_context=my_security_context
@@ -464,7 +464,7 @@ Can I also use the same concepts for metrics?
 
 Custom buckets are currently not available for metrics, but they are planned. Today, metrics in Grail are always stored in the default bucket with a retention of 15 months. In the future, you will be able to extend the 15 months and be able to use custom buckets for metrics.
 
-Record permissions can also be used for metrics on the [supported fields](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-record "Find out how to assign permissions to buckets and tables in Grail.")
+Record permissions can also be used for metrics on the [supported fields](grail/organize-data/assign-permissions-in-grail.md#grail-permissions-record "Find out how to assign permissions to buckets and tables in Grail.")
 or by using the `dt.security_context`.
 
 ## What's next?
@@ -473,18 +473,18 @@ After your environment is set up and ready for your teams, start exploring the n
 
 ### Dynatrace UI
 
-* [Navigate the latest Dynatrace](/docs/discover-dynatrace/get-started/dynatrace-ui#navigate-the-latest-dynatrace "Navigate the latest Dynatrace")
-* [New data visualizations](/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations "Use and control Dynatrace data visualizations")
+* [Navigate the latest Dynatrace](../discover-dynatrace/get-started/dynatrace-ui.md#navigate-the-latest-dynatrace "Navigate the latest Dynatrace")
+* [New data visualizations](../discover-dynatrace/get-started/dynatrace-ui/interact-visualizations.md "Use and control Dynatrace data visualizations")
 
 ### Apps
 
-[![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards")Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new) [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks")Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks) [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")Workflows](/docs/analyze-explore-automate/workflows) [![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")Kubernetes](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring) [![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian")Site Reliability Guardian](/docs/deliver/site-reliability-guardian) [![DevSecOps](https://dt-cdn.net/images/dev-sec-ops-logo-c5208e654c.svg "DevSecOps")DevSecOps Lifecycle Coverage with Snyk](/docs/secure/vulnerabilities) [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations")Investigations](/docs/secure/investigations) [![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow")Business Flows](/docs/observe/business-observability/business-flow) [![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization")Cost & Carbon Optimization](/docs/observe/business-observability/cost-and-carbon-optimization) [![Salesforce](https://dt-cdn.net/images/salesforce-b847b1c5d3.svg "Salesforce")Salesforce Insights](/docs/observe/business-observability/extensions/salesforce-insights) [![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds")Clouds](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app) [![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations")Infrastructure & Operations](/docs/observe/infrastructure-observability/infrastructure-and-operations) [![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases")Databases](/docs/observe/infrastructure-observability/databases/database-app) 
+[![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards")Dashboards](../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md) [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks")Notebooks](../analyze-explore-automate/dashboards-and-notebooks/notebooks.md) [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")Workflows](../analyze-explore-automate/workflows.md) [![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")Kubernetes](../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring.md) [![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian")Site Reliability Guardian](../deliver/site-reliability-guardian.md) [![DevSecOps](https://dt-cdn.net/images/dev-sec-ops-logo-c5208e654c.svg "DevSecOps")DevSecOps Lifecycle Coverage with Snyk](../secure/vulnerabilities.md) [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations")Investigations](../secure/investigations.md) [![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow")Business Flows](../observe/business-observability/business-flow.md) [![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization")Cost & Carbon Optimization](../observe/business-observability/cost-and-carbon-optimization.md) [![Salesforce](https://dt-cdn.net/images/salesforce-b847b1c5d3.svg "Salesforce")Salesforce Insights](../observe/business-observability/extensions/salesforce-insights.md) [![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds")Clouds](../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md) [![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations")Infrastructure & Operations](../observe/infrastructure-observability/infrastructure-and-operations.md) [![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases")Databases](../observe/infrastructure-observability/databases/database-app.md) 
 
 ### Upgrade
 
-* [Upgrade Dashboards Classic to Dashboards](/docs/analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.")
-* [Upgrade Log Monitoring Classic to Log Management and Analytics](/docs/analyze-explore-automate/logs/logs-upgrade/logs-upgrade-to-lma "Log Management and Analytics is the latest Dynatrace log monitoring solution. We encourage you to upgrade to this latest log monitoring offer.")
-* [Conversion to DQL for Logs](/docs/analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion "Convert your current log monitoring rules to DQL.")
+* [Upgrade Dashboards Classic to Dashboards](../analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest.md "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.")
+* [Upgrade Log Monitoring Classic to Log Management and Analytics](../analyze-explore-automate/logs/logs-upgrade/logs-upgrade-to-lma.md "Log Management and Analytics is the latest Dynatrace log monitoring solution. We encourage you to upgrade to this latest log monitoring offer.")
+* [Conversion to DQL for Logs](../analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion.md "Convert your current log monitoring rules to DQL.")
 
 ## Additional resources
 

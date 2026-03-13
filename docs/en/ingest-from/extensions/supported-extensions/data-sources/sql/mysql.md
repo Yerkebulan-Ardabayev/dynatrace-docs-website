@@ -45,11 +45,11 @@ Required permission: **Change monitoring settings**
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Define endpoints**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/mysql#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from MySQL Database server.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Define endpoints**](mysql.md#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from MySQL Database server.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**ActiveGate group**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/mysql#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from MySQL Database server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**ActiveGate group**](mysql.md#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from MySQL Database server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Activate extension**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/mysql#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from MySQL Database server.")
+**Activate extension**](mysql.md#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from MySQL Database server.")
 
 ### Step 1 Define endpoints
 
@@ -62,7 +62,7 @@ Required permission: **Change monitoring settings**
 
   + Only basic authentication is supported.
   + Authentication details passed to Dynatrace when activating monitoring configuration are obfuscated and it's impossible to retrieve them.
-  + You can [use credential vault](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/mysql-monitoring#authentication "MySQL extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
+  + You can [use credential vault](../../../develop-your-extensions/data-sources/sql/mysql-monitoring.md#authentication "MySQL extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
 * Select **Next step**
 
 ### Step 2 Select ActiveGates
@@ -82,7 +82,7 @@ Required permission: **Change monitoring settings**
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](../../../manage-extensions.md "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
 
 ## Related topics
 

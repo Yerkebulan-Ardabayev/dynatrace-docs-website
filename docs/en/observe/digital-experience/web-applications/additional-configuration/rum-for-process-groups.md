@@ -13,10 +13,10 @@ scraped: 2026-03-05T21:33:02.016377
 * 2-min read
 * Published Mar 21, 2022
 
-By default, RUM is enabled for all process groups. For the technologies listed in [Technology support - Real User Monitoring - Web servers and applications](/docs/ingest-from/technology-support#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks."), this allows OneAgent to do the following:
+By default, RUM is enabled for all process groups. For the technologies listed in [Technology support - Real User Monitoring - Web servers and applications](../../../../ingest-from/technology-support.md#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks."), this allows OneAgent to do the following:
 
 * Automatically inject the RUM JavaScript into each page delivered by this process group
-* Provide the necessary information to link user actions with [server-side distributed traces](/docs/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.")
+* Provide the necessary information to link user actions with [server-side distributed traces](../../../application-observability/distributed-traces.md "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.")
 * Deliver the RUM JavaScript
 * Forward beacons to the Dynatrace Cluster
 
@@ -38,6 +38,6 @@ To manually disable RUM for a process group
 
 ## Possible issues
 
-* If you prefer to insert the RUM JavaScript manually, do not suppress the injection by disabling Real User Monitoring for your process groups. This suppresses not only the injection but also the linking of user actions and distributed traces. Instead, use a custom injection rule as described in [Configure automatic injection](/docs/observe/digital-experience/web-applications/initial-setup/rum-injection#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your applications").
+* If you prefer to insert the RUM JavaScript manually, do not suppress the injection by disabling Real User Monitoring for your process groups. This suppresses not only the injection but also the linking of user actions and distributed traces. Instead, use a custom injection rule as described in [Configure automatic injection](../initial-setup/rum-injection.md#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your applications").
 * If your application consists of multiple tiers, enable RUM at least on OneAgent that instruments the first tier (that is the tier nearest to the browser), which captures the root of the distributed trace.  
   For example, consider an Apache HTTP server as a proxy and a Java app server as a backend. Even though Dynatrace injects the RUM JavaScript on the process group of the Java backend, disabling RUM for the process group of the Apache HTTP server would cause issues. In particular, it would be impossible to link user actions and distributed traces.

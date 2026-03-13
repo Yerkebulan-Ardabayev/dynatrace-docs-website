@@ -61,7 +61,7 @@ Read entities during validations
 
 ### Installation
 
-Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Make sure the app is [installed in your environment](../manage/hub.md#install "See the information about Dynatrace Hub.").
 
 ## Get started
 
@@ -78,31 +78,31 @@ Go through the following process to learn using Site Reliability Guardian:
 [01Create a Site Reliability guardian
 
 * How-to guide
-* Create a guardian manually or from a predefined template.](/docs/deliver/site-reliability-guardian/create-srg)[02List and work with your guardians
+* Create a guardian manually or from a predefined template.](site-reliability-guardian/create-srg.md)[02List and work with your guardians
 
 * How-to guide
-* List your guardians to view, compare, or delete them in bulk.](/docs/deliver/site-reliability-guardian/guardian-list)[03Add Site Reliability Guardian objective
+* List your guardians to view, compare, or delete them in bulk.](site-reliability-guardian/guardian-list.md)[03Add Site Reliability Guardian objective
 
 * Reference
-* Add a new Site Reliability Guardian objective.](/docs/deliver/site-reliability-guardian/reference)[04Add and access validation insight links
+* Add a new Site Reliability Guardian objective.](site-reliability-guardian/reference.md)[04Add and access validation insight links
 
 * How-to guide
-* Add and access validation insight links to provide contextual information and resources for an objective.](/docs/deliver/site-reliability-guardian/validation-insight-link)[05Guardian execution context
+* Add and access validation insight links to provide contextual information and resources for an objective.](site-reliability-guardian/validation-insight-link.md)[05Guardian execution context
 
 * How-to guide
-* Filter Site Reliability Guardian validation events triggered by an external tool using the context information provided by the tool.](/docs/deliver/site-reliability-guardian/execution-context)[06Site Reliability Guardian as code
+* Filter Site Reliability Guardian validation events triggered by an external tool using the context information provided by the tool.](site-reliability-guardian/execution-context.md)[06Site Reliability Guardian as code
 
 * How-to guide
-* See configuration as code examples for a guardian and its workflow.](/docs/deliver/site-reliability-guardian/config-as-code-srg)[07Site Reliability Guardian Role Permissions
+* See configuration as code examples for a guardian and its workflow.](site-reliability-guardian/config-as-code-srg.md)[07Site Reliability Guardian Role Permissions
 
 * Reference
-* Configure role permissions to use the Site Reliability Guardian.](/docs/deliver/site-reliability-guardian/role-permissions)[08Site Reliability guardian event structure
+* Configure role permissions to use the Site Reliability Guardian.](site-reliability-guardian/role-permissions.md)[08Site Reliability guardian event structure
 
 * Reference
-* Details about the event structure of the Site Reliability Guardian.](/docs/deliver/site-reliability-guardian/event-structure)[09Validate a Site Reliability guardian
+* Details about the event structure of the Site Reliability Guardian.](site-reliability-guardian/event-structure.md)[09Validate a Site Reliability guardian
 
 * Tutorial
-* Trigger a guardian validation either manually or automatically using a workflow to evaluate service reliability.](/docs/deliver/site-reliability-guardian/trigger-srg)
+* Trigger a guardian validation either manually or automatically using a workflow to evaluate service reliability.](site-reliability-guardian/trigger-srg.md)
 
 ## Concepts
 
@@ -119,8 +119,8 @@ While these two types don't differ from a conceptual point of view, there are te
 
 ### Lifecycle guardian (SDLC events)
 
-* Reads and writes [SDLC events](/docs/deliver/pipeline-observability-sdlc-events/sdlc-events "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.") as validation results.
-* It is aligned with the [validation events specification in the Semantic Dictionary](/docs/semantic-dictionary/model/sdlc-events#sdlc-validation-events "Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.").
+* Reads and writes [SDLC events](pipeline-observability-sdlc-events/sdlc-events.md "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.") as validation results.
+* It is aligned with the [validation events specification in the Semantic Dictionary](../semantic-dictionary/model/sdlc-events.md#sdlc-validation-events "Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.").
 * It is intended to be used in the context of the Software Development Lifecycle.
 
   + As a quality gate in progressive delivery scenarios
@@ -129,11 +129,11 @@ While these two types don't differ from a conceptual point of view, there are te
 
 ### Business guardian (Business events)
 
-* Reads and writes [Business events](/docs/observe/business-observability/bo-api-ingest "Set up authentication for and ingest business events via API.") as validation results
+* Reads and writes [Business events](../observe/business-observability/bo-api-ingest.md "Set up authentication for and ingest business events via API.") as validation results
 * It is intended for business-level usage and insights into application behavior
 
 As these two types of guardians have different data sources (`bizevents` vs. `events`) and different event data structures, you need to adapt your DQL queries that target guardian validation events in Notebooks or Dashboards when switching from one type to the other.
-For more details on the structural differences, see [Site Reliability guardian event structure](/docs/deliver/site-reliability-guardian/event-structure "Details about the event structure of the Site Reliability Guardian.").
+For more details on the structural differences, see [Site Reliability guardian event structure](site-reliability-guardian/event-structure.md "Details about the event structure of the Site Reliability Guardian.").
 
 You can create a maximum of 1000 guardians.
 
@@ -145,7 +145,7 @@ You can create a maximum of 50 objectives for each guardian.
 
 ### 3. Indicator
 
-An indicator is a value against which the warning and failure thresholds are checked using a comparison operator. To retrieve an indicator value, use [DQL](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.").
+An indicator is a value against which the warning and failure thresholds are checked using a comparison operator. To retrieve an indicator value, use [DQL](../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.").
 
 ### 4. Static thresholds
 
@@ -215,7 +215,7 @@ fetch bizevents
 
 ### 8. Guardian workflow action
 
-You can automate the execution of a guardian via [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."), tying guardian execution to [an event](/docs/analyze-explore-automate/workflows/trigger/event-trigger#event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") or [an API call](/docs/analyze-explore-automate/workflows/trigger#on-demand-trigger "Introduction to workflow automation triggers for workflows.").
+You can automate the execution of a guardian via [Workflows](../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."), tying guardian execution to [an event](../analyze-explore-automate/workflows/trigger/event-trigger.md#event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") or [an API call](../analyze-explore-automate/workflows/trigger.md#on-demand-trigger "Introduction to workflow automation triggers for workflows.").
 
 ### Add a guardian action to an existing workflow or create a new workflow
 
@@ -229,7 +229,7 @@ The same final steps apply, whether you add a guardian to an existing workflow o
 #### Create a new workflow
 
 1. Go to **Workflows** ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") and select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Workflow**.
-2. Select a [trigger](/docs/analyze-explore-automate/workflows/trigger "Introduction to workflow automation triggers for workflows.").
+2. Select a [trigger](../analyze-explore-automate/workflows/trigger.md "Introduction to workflow automation triggers for workflows.").
 3. On the trigger node, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") to browse available actions.
 
 #### Set up a guardian validation action
@@ -238,10 +238,10 @@ The same final steps apply, whether you add a guardian to an existing workflow o
 2. On the **Input** tab, you have two options to select the required guardian:
 
 * Select the guardian from the list.
-* Use an [expression](/docs/analyze-explore-automate/workflows/reference "Get to know the workflows expression") to extract the guardian from the triggering event or a previous workflow action.
+* Use an [expression](../analyze-explore-automate/workflows/reference.md "Get to know the workflows expression") to extract the guardian from the triggering event or a previous workflow action.
 * Configure the validation timeframe.
 
-For more details, see also [Validate a Site Reliability guardian](/docs/deliver/site-reliability-guardian/trigger-srg "Trigger a guardian validation either manually or automatically using a workflow to evaluate service reliability."), [Automate release validation](/docs/deliver/release-validation-automated "Learn how to automatically validate your business-critical service release using this hands-on tutorial."), [Test pipeline observability](/docs/deliver/test-pipeline-observability "Utilize Dynatrace to observe and analyze test pipelines effectively")
+For more details, see also [Validate a Site Reliability guardian](site-reliability-guardian/trigger-srg.md "Trigger a guardian validation either manually or automatically using a workflow to evaluate service reliability."), [Automate release validation](release-validation-automated.md "Learn how to automatically validate your business-critical service release using this hands-on tutorial."), [Test pipeline observability](test-pipeline-observability.md "Utilize Dynatrace to observe and analyze test pipelines effectively")
 
 ### Create a workflow from the All guardians page
 
@@ -272,13 +272,13 @@ To learn more about workflows for a guardian, select  >  **Get started with Auto
 
 ### 9. Validation
 
-If a workflow is created, your guardian can be validated automatically, depending on the [trigger](/docs/analyze-explore-automate/workflows/trigger "Introduction to workflow automation triggers for workflows.") you chose. You can also perform the validation manually.
+If a workflow is created, your guardian can be validated automatically, depending on the [trigger](../analyze-explore-automate/workflows/trigger.md "Introduction to workflow automation triggers for workflows.") you chose. You can also perform the validation manually.
 
 ### Validation overview
 
 By default, the **All guardians** page lists all the guardians.
 
-For more information on the **All guardians** page, see [List and work with your guardians](/docs/deliver/site-reliability-guardian/guardian-list "List your guardians to view, compare, or delete them in bulk.").
+For more information on the **All guardians** page, see [List and work with your guardians](site-reliability-guardian/guardian-list.md "List your guardians to view, compare, or delete them in bulk.").
 
 ### Automated validation
 
@@ -312,10 +312,10 @@ After the validation of each objective is done, the guarding uses the most sever
 
 ### 10. Segments
 
-Leverage [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") in DQL-based objectives to logically structure and conveniently filter observability data.
+Leverage [Segments](../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") in DQL-based objectives to logically structure and conveniently filter observability data.
 
 ## Use cases
 
 ## Related topics
 
-* [Add and access validation insight links](/docs/deliver/site-reliability-guardian/validation-insight-link "Add and access validation insight links to provide contextual information and resources for an objective.")
+* [Add and access validation insight links](site-reliability-guardian/validation-insight-link.md "Add and access validation insight links to provide contextual information and resources for an objective.")

@@ -45,11 +45,11 @@ Dynatrace Hub предоставляет унифицированный проц
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Определение конечных точек**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/postgresql#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from PostgreSQL Database server.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Определение конечных точек**](postgresql.md#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from PostgreSQL Database server.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Выбор ActiveGate**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/postgresql#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from PostgreSQL Database server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Выбор ActiveGate**](postgresql.md#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from PostgreSQL Database server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Активация расширения**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/postgresql#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from PostgreSQL Database server.")
+**Активация расширения**](postgresql.md#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from PostgreSQL Database server.")
 
 ### Шаг 1. Определение конечных точек
 
@@ -62,7 +62,7 @@ Dynatrace Hub предоставляет унифицированный проц
 
   + Поддерживается только базовая аутентификация.
   + Данные аутентификации, переданные в Dynatrace при активации конфигурации мониторинга, скрываются, и их невозможно восстановить.
-  + Для более безопасного хранения учётных данных и управления ими можно [использовать хранилище учётных данных](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring#authentication "PostgreSQL extensions in the Extensions framework.").
+  + Для более безопасного хранения учётных данных и управления ими можно [использовать хранилище учётных данных](../../../develop-your-extensions/data-sources/sql/postgresql-monitoring.md#authentication "PostgreSQL extensions in the Extensions framework.").
 * Выберите **Next step**.
 
 ### Шаг 2. Выбор ActiveGate
@@ -82,7 +82,7 @@ Dynatrace Hub предоставляет унифицированный проц
 
 ## Конфигурация мониторинга в формате JSON
 
-Мастер активации расширения содержит динамически обновляемую полезную нагрузку JSON с вашей конфигурацией мониторинга. Чтобы узнать, как использовать её для активации расширения через Dynatrace API, см. [Manage Extensions](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.").
+Мастер активации расширения содержит динамически обновляемую полезную нагрузку JSON с вашей конфигурацией мониторинга. Чтобы узнать, как использовать её для активации расширения через Dynatrace API, см. [Manage Extensions](../../../manage-extensions.md "Learn how to manage extensions.").
 
 ## Связанные темы
 

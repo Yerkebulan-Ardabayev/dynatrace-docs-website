@@ -147,7 +147,7 @@ For example:
 
 ### Use with an Explore tile
 
-To use a variable in an [Explore data](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data "Explore your data with our point-and-click interface.") tile
+To use a variable in an [Explore data](../../explore-data.md "Explore your data with our point-and-click interface.") tile
 
 1. Open the  menu and select **Logs**.
 2. Select  and then select **host.name** from the **Available filters**.
@@ -244,7 +244,7 @@ To define a DQL variable
    * It will be displayed at the top of the dashboard, listed on the **Variables** panel, and referred to in code.
    * It can contain only letters (uppercase or lowercase) and numbers (for example, `status`, `myHosts`, or `Variable01`) and it can't start with `dt_`.
 2. Set **Type** to `DQL`.
-3. In **Data**, enter a query. Be sure to use [`summarize`](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#summarize "DQL aggregation commands") and [`collectDistinct`](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#collectDistinct "A list of DQL aggregation functions.") to get distinct values from data sources such as logs.
+3. In **Data**, enter a query. Be sure to use [`summarize`](../../../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#summarize "DQL aggregation commands") and [`collectDistinct`](../../../../platform/grail/dynatrace-query-language/functions/aggregation-functions.md#collectDistinct "A list of DQL aggregation functions.") to get distinct values from data sources such as logs.
 4. Select **Run** and inspect the results in the **Preview** section to make sure it works as expected.
 5. If you want to be able to select more than one value at a time, turn on **Multi-select**.
 
@@ -431,7 +431,7 @@ To define a Free Text variable
 
 ## Limitations when using variables in tiles
 
-* Variables in your tiles can be of string or numeric type. Cases requiring a different data type (for example, [duration](/docs/platform/grail/dynatrace-query-language/data-types#duration "A list of DQL data types.")) lead to failed queries. Below are some examples of how to work around such situations.
+* Variables in your tiles can be of string or numeric type. Cases requiring a different data type (for example, [duration](../../../../platform/grail/dynatrace-query-language/data-types.md#duration "A list of DQL data types.")) lead to failed queries. Below are some examples of how to work around such situations.
 * For security reasons, when using variables in code tiles, you can only access them within the default function.
 
 ### Resolution in DQL command
@@ -450,7 +450,7 @@ fetch logs
 | summarize count(), by: {loglevel, bin(timestamp, $resolution)}
 ```
 
-As a workaround, you can use the [duration](/docs/platform/grail/dynatrace-query-language/functions/time-functions#duration "A list of DQL time functions.") function together with a DQL [conversion](/docs/platform/grail/dynatrace-query-language/functions#conversion-and-casting-functions "A list of DQL functions.") function. This provides the required output based on your `$resolution` value.
+As a workaround, you can use the [duration](../../../../platform/grail/dynatrace-query-language/functions/time-functions.md#duration "A list of DQL time functions.") function together with a DQL [conversion](../../../../platform/grail/dynatrace-query-language/functions.md#conversion-and-casting-functions "A list of DQL functions.") function. This provides the required output based on your `$resolution` value.
 
 ```
 fetch logs
@@ -466,7 +466,7 @@ fetch logs
 
 ### Convert your variable values to other data types
 
-If you want to filter a numeric value but compare it with a string representation, you can use a native DQL [conversion](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#conversion-and-casting-functions "A list of DQL conversion and casting functions.") function such as [toString](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toString "A list of DQL conversion and casting functions.").
+If you want to filter a numeric value but compare it with a string representation, you can use a native DQL [conversion](../../../../platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions.md#conversion-and-casting-functions "A list of DQL conversion and casting functions.") function such as [toString](../../../../platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions.md#toString "A list of DQL conversion and casting functions.").
 
 ```
 fetch logs
@@ -510,5 +510,5 @@ In this example, we selected `Variable1` to display the variable definition and 
 
 ## Related topics
 
-* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [DQL functions](/docs/platform/grail/dynatrace-query-language/functions "A list of DQL functions.")
+* [DQL commands](../../../../platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.")
+* [DQL functions](../../../../platform/grail/dynatrace-query-language/functions.md "A list of DQL functions.")

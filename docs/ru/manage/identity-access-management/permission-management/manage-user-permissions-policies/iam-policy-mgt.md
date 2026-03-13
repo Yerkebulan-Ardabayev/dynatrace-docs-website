@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:15:30.427207
 * Чтение 7 мин
 * Обновлено 20 августа 2025 г.
 
-Используйте описанные здесь процедуры в веб-интерфейсе Dynatrace для управления политиками [IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies") Dynatrace.
+Используйте описанные здесь процедуры в веб-интерфейсе Dynatrace для управления политиками [IAM](../manage-user-permissions-policies.md "Working with policies") Dynatrace.
 
 Альтернатива через API
 
@@ -37,7 +37,7 @@ scraped: 2026-03-06T21:15:30.427207
 
 * На странице **Policies** в столбце **Source** для всех них установлено значение `Dynatrace`
 * Они предопределены и управляются Dynatrace
-* Вы можете применить встроенную политику, [назначив её группе](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies") для всей учётной записи или для любой среды.
+* Вы можете применить встроенную политику, [назначив её группе](../manage-user-permissions-policies.md "Working with policies") для всей учётной записи или для любой среды.
 * Вы можете просматривать их — выберите **View policy** в столбце **Actions** — но не можете редактировать
 
 ## Создание политики
@@ -50,7 +50,7 @@ scraped: 2026-03-06T21:15:30.427207
 
 ### Сервисы
 
-Полный и актуальный список сервисов Dynatrace, поддерживающих управление разрешениями через политики IAM, см. в разделе [Справочник по политикам IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+Полный и актуальный список сервисов Dynatrace, поддерживающих управление разрешениями через политики IAM, см. в разделе [Справочник по политикам IAM](advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
 ## Редактирование политики
 
@@ -88,4 +88,4 @@ scraped: 2026-03-06T21:15:30.427207
 
 ## Применение политики к группе
 
-Чтобы применить политику к группе, необходимо привязать политику к этой группе. Подробности об управлении разрешениями групп с помощью IAM см. в разделе [Работа с политиками](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+Чтобы применить политику к группе, необходимо привязать политику к этой группе. Подробности об управлении разрешениями групп с помощью IAM см. в разделе [Работа с политиками](../manage-user-permissions-policies.md "Working with policies").

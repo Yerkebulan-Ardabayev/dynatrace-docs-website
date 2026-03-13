@@ -34,7 +34,7 @@ The same disk space requirements apply to both Full-stack and Infrastructure mon
 
 1
 
-Use the [INSTALL\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#installation-path "Learn how to use the Linux installer with command line parameters.") installation parameter.
+Use the [INSTALL\_PATH](customize-oneagent-installation-on-linux.md#installation-path "Learn how to use the Linux installer with command line parameters.") installation parameter.
 
 2
 
@@ -42,11 +42,11 @@ For OneAgent version 1.201 and earlier, the default location for log files is `/
 
 3
 
-Use the [LOG\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#log-path "Learn how to use the Linux installer with command line parameters.") installation parameter.
+Use the [LOG\_PATH](customize-oneagent-installation-on-linux.md#log-path "Learn how to use the Linux installer with command line parameters.") installation parameter.
 
 4
 
-Use the [DATA\_STORAGE](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#data-storage "Learn how to use the Linux installer with command line parameters.") installation parameter.
+Use the [DATA\_STORAGE](customize-oneagent-installation-on-linux.md#data-storage "Learn how to use the Linux installer with command line parameters.") installation parameter.
 
 5
 
@@ -54,17 +54,17 @@ The size depends on the number of ingested logs.
 
 6
 
-Applicable only if you use Dynatrace Extensions that [define the log metrics, events, or add their own log processing rules](/docs/ingest-from/extensions/advanced-configuration/extension-customize#log-metrics-events-and-processing-rules "Learn how to instrument your extensions to customize how the ingested data is handled by Dynatrace."). Can be changed via support request.
+Applicable only if you use Dynatrace Extensions that [define the log metrics, events, or add their own log processing rules](../../../../extensions/advanced-configuration/extension-customize.md#log-metrics-events-and-processing-rules "Learn how to instrument your extensions to customize how the ingested data is handled by Dynatrace."). Can be changed via support request.
 
 7
 
 The reliability mechanism does not work if the requirement is not met. For more information see [Persistence details](#persistence).
 
-For a complete list of files and directories added to your system by OneAgent, see [OneAgent security on Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").
+For a complete list of files and directories added to your system by OneAgent, see [OneAgent security on Linux](oneagent-security-linux.md "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").
 
 ## OneAgent files aging mechanism
 
-OneAgent in full-stack monitoring mode uses a built-in aging mechanism to ensure that the OneAgent files, including log files and runtime data, are kept within a reasonable size. For more information, see [OneAgent file aging mechanism](/docs/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism "Learn how OneAgent deletes old files to minimize disk space usage.").
+OneAgent in full-stack monitoring mode uses a built-in aging mechanism to ensure that the OneAgent files, including log files and runtime data, are kept within a reasonable size. For more information, see [OneAgent file aging mechanism](../../../oneagent-aging-mechanism.md "Learn how OneAgent deletes old files to minimize disk space usage.").
 
 ## Dynatrace Managed self-monitoring
 

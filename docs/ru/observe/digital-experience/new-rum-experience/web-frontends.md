@@ -17,17 +17,17 @@ scraped: 2026-03-06T21:36:58.159236
 
 Предварительные требования
 
-* Убедитесь, что у вас есть разрешения, описанные в разделе [Разрешения New RUM Experience](/docs/observe/digital-experience/new-rum-experience/permissions "Узнайте, какие разрешения необходимы для настройки New RUM Experience.").
-* Минимально поддерживаемая версия RUM JavaScript — версия 1.329. Более старые версии начиная с RUM JavaScript версии 1.317 входили в предварительный выпуск и не предоставляют полный набор функций. Рекомендуем автоматически обновлять версию RUM JavaScript, как описано в разделе [Настройка версии RUM JavaScript для фронтенда](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/rum-javascript-version#configure-js-version "Узнайте, как управлять версией RUM JavaScript, используемой для мониторинга ваших фронтендов в New RUM Experience.").
+* Убедитесь, что у вас есть разрешения, описанные в разделе [Разрешения New RUM Experience](permissions.md "Узнайте, какие разрешения необходимы для настройки New RUM Experience.").
+* Минимально поддерживаемая версия RUM JavaScript — версия 1.329. Более старые версии начиная с RUM JavaScript версии 1.317 входили в предварительный выпуск и не предоставляют полный набор функций. Рекомендуем автоматически обновлять версию RUM JavaScript, как описано в разделе [Настройка версии RUM JavaScript для фронтенда](web-frontends/additional-configuration/rum-javascript-version.md#configure-js-version "Узнайте, как управлять версией RUM JavaScript, используемой для мониторинга ваших фронтендов в New RUM Experience.").
 * Хотя минимально необходимая версия OneAgent — OneAgent версии 1.301+, рекомендуем использовать последнюю доступную версию, поскольку новые функции добавляются регулярно.
-* Убедитесь, что ваша инфраструктура соответствует [требованиям брандмауэра для RUM](/docs/observe/digital-experience/new-rum-experience/rum-firewall-latest "Узнайте, как обеспечить прохождение данных Real User Monitoring через ваш брандмауэр.").
+* Убедитесь, что ваша инфраструктура соответствует [требованиям брандмауэра для RUM](rum-firewall-latest.md "Узнайте, как обеспечить прохождение данных Real User Monitoring через ваш брандмауэр.").
 
 [### Концепции
 
-Ознакомьтесь с концепциями, лежащими в основе New RUM Experience для веб-фронтендов.](/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts "Узнайте о концепциях веб-фронтендов в New RUM Experience.")[### Начальная настройка
+Ознакомьтесь с концепциями, лежащими в основе New RUM Experience для веб-фронтендов.](web-frontends/concepts.md "Узнайте о концепциях веб-фронтендов в New RUM Experience.")[### Начальная настройка
 
-Начните работу с New RUM Experience с помощью этих базовых руководств, разработанных для достижения рабочей конфигурации.](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup "Узнайте, как настроить New RUM Experience для веб-фронтендов.")[### Дополнительная конфигурация
+Начните работу с New RUM Experience с помощью этих базовых руководств, разработанных для достижения рабочей конфигурации.](web-frontends/initial-setup.md "Узнайте, как настроить New RUM Experience для веб-фронтендов.")[### Дополнительная конфигурация
 
-После завершения начальной настройки изучите эти руководства, чтобы расширить и адаптировать New RUM Experience с помощью расширенных параметров конфигурации.](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration "Узнайте, как настроить New RUM Experience для веб-фронтендов за пределами начальной настройки.")[### JavaScript API
+После завершения начальной настройки изучите эти руководства, чтобы расширить и адаптировать New RUM Experience с помощью расширенных параметров конфигурации.](web-frontends/additional-configuration.md "Узнайте, как настроить New RUM Experience для веб-фронтендов за пределами начальной настройки.")[### JavaScript API
 
-Настройте мониторинг веб-фронтенда с помощью нового JavaScript API.](/docs/observe/digital-experience/new-rum-experience/web-frontends/new-javascript-api "Узнайте, как настроить мониторинг веб-фронтенда в New RUM Experience с помощью JavaScript API.")
+Настройте мониторинг веб-фронтенда с помощью нового JavaScript API.](web-frontends/new-javascript-api.md "Узнайте, как настроить мониторинг веб-фронтенда в New RUM Experience с помощью JavaScript API.")

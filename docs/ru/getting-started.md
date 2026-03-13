@@ -67,6 +67,6 @@ sudo /bin/sh Dynatrace-OneAgent.sh
 
 ## Нужна помощь?
 
-- 🤖 [Спросите помощника ИИ](../ai/gemini.md)
+- 🤖 [Спросите помощника ИИ](../ai/groq.md)
 - 📚 [Просмотрите полную документацию](index.md)
 - 🔬 [Глубокое погружение с NotebookLM](../ai/notebooklm.md)

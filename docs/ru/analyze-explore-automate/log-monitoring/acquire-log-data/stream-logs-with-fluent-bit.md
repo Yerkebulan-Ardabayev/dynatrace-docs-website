@@ -15,7 +15,7 @@ scraped: 2026-03-05T21:32:29.846836
 
 Log Monitoring Classic
 
-Для новейшей версии Dynatrace см. [Потоковая передача логов в Dynatrace с помощью Fluent Bit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit "Интеграция Fluent Bit для потоковой передачи логов в Dynatrace.").
+Для новейшей версии Dynatrace см. [Потоковая передача логов в Dynatrace с помощью Fluent Bit](../../logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit.md "Интеграция Fluent Bit для потоковой передачи логов в Dynatrace.").
 
 Вы можете отправлять логи в Dynatrace с помощью Fluent Bit. Настройте Fluent Bit для отправки логов через универсальный API загрузки Dynatrace.
 
@@ -29,9 +29,9 @@ Log Monitoring Classic
 
 Выходной плагин Fluent Bit `http output` позволяет пересылать ваши логи в конечную точку загрузки логов Dynatrace.
 
-1. Получите [токен API Dynatrace](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования API Dynatrace.") с областью `logs.ingest` (Загрузка логов).
+1. Получите [токен API Dynatrace](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования API Dynatrace.") с областью `logs.ingest` (Загрузка логов).
 2. [Разверните Fluent Bit](https://dt-url.net/zd034je).
-3. Чтобы отправлять логи в конечную точку [загрузки логов](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Узнайте, как Dynatrace загружает данные логов и какие возможные ограничения имеет такая загрузка.") Dynatrace, настройте [выходной плагин http](https://dt-url.net/0z034x4) через конфигурационный файл.
+3. Чтобы отправлять логи в конечную точку [загрузки логов](logs-classic-ingestion-api.md "Узнайте, как Dynatrace загружает данные логов и какие возможные ограничения имеет такая загрузка.") Dynatrace, настройте [выходной плагин http](https://dt-url.net/0z034x4) через конфигурационный файл.
 4. В вашем основном конфигурационном файле Fluent Bit добавьте раздел Output со следующими параметрами:
 
 ```
@@ -92,9 +92,9 @@ tls.verify On
 
 Вы можете разместить ваш токен API в заголовке или в качестве переменной `GET` в URI (см. пример ниже).
 
-* Для Dynatrace SaaS конечная точка [загрузки логов](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Узнайте, как Dynatrace загружает данные логов и какие возможные ограничения имеет такая загрузка.") доступна в вашей среде.
+* Для Dynatrace SaaS конечная точка [загрузки логов](logs-classic-ingestion-api.md "Узнайте, как Dynatrace загружает данные логов и какие возможные ограничения имеет такая загрузка.") доступна в вашей среде.
 
-* Если [Environment ActiveGate](/docs/ingest-from/dynatrace-activegate#agtypes "Основные концепции, связанные с ActiveGate.") является вашим выбором конечной точки в локальной среде, установите экземпляр ActiveGate.
+* Если [Environment ActiveGate](../../../ingest-from/dynatrace-activegate.md#agtypes "Основные концепции, связанные с ActiveGate.") является вашим выбором конечной точки в локальной среде, установите экземпляр ActiveGate.
 
   В Dynatrace Hub выберите **ActiveGate** > **Set up**.
 * API загрузки логов v2 автоматически включён на ActiveGate.
@@ -171,6 +171,6 @@ Json_Date_Key": "timestamp"
 
 ## Устранение неполадок
 
-Посетите Dynatrace Community для получения руководств по устранению неполадок, а также см. [Устранение неполадок Log Monitoring (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/lmc-troubleshooting "Решение проблем, связанных с настройкой и конфигурацией Log Monitoring Classic.").
+Посетите Dynatrace Community для получения руководств по устранению неполадок, а также см. [Устранение неполадок Log Monitoring (Logs Classic)](../lmc-troubleshooting.md "Решение проблем, связанных с настройкой и конфигурацией Log Monitoring Classic.").
 
 * [Устранение неполадок логов, загруженных через Fluent Bit](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718)

@@ -33,7 +33,7 @@ The built-in version of xMatters integration that requires an API token is no lo
    * Optional Turn on **Accept any SSL certificate** option. We recommend that you use a valid SSL certificate (even for internal installations), but you can ignore the certificate for convenience.
    * Optional **Additional HTTP headers**âcustom HTTP header fields such as 'Content-Type' or 'Authorization' that can be used if the target endpoint needs an authentication token within the HTTP header or if you would like to send a different content type such as 'text/plain' or 'application/xml'.
    * **Custom payload**âonce a problem is detected or resolved, this customizable payload is pushed through an **HTTP POST** to the target system. Use specific placeholders to dynamically populate the payload with problem-related information, such as problem state or title.
-   * Assign an [Alerting profile](/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.").
+   * Assign an [Alerting profile](../alerting-profiles.md "Learn how to create and manage alerting profiles.").
 5. Select **Send test notification** to make sure your xMatters integration is working.
 6. Select **Save changes**.
 

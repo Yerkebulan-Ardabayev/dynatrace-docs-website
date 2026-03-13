@@ -21,20 +21,20 @@ scraped: 2026-03-06T21:18:39.737550
 
 ### Разрешения
 
-* Вам необходимы разрешения [Загрузка/установка OneAgent](/docs/manage/identity-access-management/permission-management/role-based-permissions#environment "Разрешения на основе ролей") для загрузки и установки OneAgent.
+* Вам необходимы разрешения [Загрузка/установка OneAgent](../../../../../manage/identity-access-management/permission-management/role-based-permissions.md#environment "Разрешения на основе ролей") для загрузки и установки OneAgent.
 * Вам необходимы права администратора для серверов, на которых будет установлен OneAgent, а также для изменения настроек брандмауэра (требуется только в случае, если ваша внутренняя политика маршрутизации может препятствовать доступу программного обеспечения Dynatrace к интернету).
 * Вам необходимы разрешения и учётные данные для перезапуска всех сервисов приложений.
 
 ### Ресурсы
 
-* Проверьте [требования к дисковому пространству](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix "Узнайте требования к дисковому пространству для установки OneAgent на AIX.").
+* Проверьте [требования к дисковому пространству](disk-space-requirements-for-oneagent-installation-and-update-on-aix.md "Узнайте требования к дисковому пространству для установки OneAgent на AIX.").
 * Для установки и обновления OneAgent на хосте требуется 200 МБ свободной памяти.
-* Все хосты, которые должны быть мониторинга, должны иметь возможность отправлять данные в кластер Dynatrace. В зависимости от вашего развёртывания Dynatrace и настроек сети и безопасности вы можете выбрать либо прямой доступ к кластеру Dynatrace, либо [настройку ActiveGate](/docs/ingest-from/dynatrace-activegate "Узнайте основные концепции, связанные с ActiveGate.").
+* Все хосты, которые должны быть мониторинга, должны иметь возможность отправлять данные в кластер Dynatrace. В зависимости от вашего развёртывания Dynatrace и настроек сети и безопасности вы можете выбрать либо прямой доступ к кластеру Dynatrace, либо [настройку ActiveGate](../../../../dynatrace-activegate.md "Узнайте основные концепции, связанные с ActiveGate.").
 
 ### Ограничения
 
 * Установка OneAgent не поддерживается на сетевых точках монтирования хранилища, управляемых стандартами, такими как NFS или iSCSI.
-* Поддержка [Log Management and Analytics](/docs/analyze-explore-automate/logs "Log Management and Analytics обеспечивает унифицированный подход к управлению и изучению данных логов в Dynatrace.") и [Log Monitoring Classic](/docs/analyze-explore-automate/log-monitoring "Узнайте, как включить Log Monitoring, какую информацию может предоставить Log Monitoring и многое другое.") на хостах AIX ограничена:
+* Поддержка [Log Management and Analytics](../../../../../analyze-explore-automate/logs.md "Log Management and Analytics обеспечивает унифицированный подход к управлению и изучению данных логов в Dynatrace.") и [Log Monitoring Classic](../../../../../analyze-explore-automate/log-monitoring.md "Узнайте, как включить Log Monitoring, какую информацию может предоставить Log Monitoring и многое другое.") на хостах AIX ограничена:
 
   + обнаружение логов в модуле логов ограничено только пользовательскими источниками логов.
 
@@ -47,7 +47,7 @@ scraped: 2026-03-06T21:18:39.737550
 
 1. В Dynatrace Hub найдите **OneAgent**.
 2. Выберите **Set up** > **AIX**.
-3. Вставьте [PaaS-токен](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Узнайте о концепции токена доступа и его областях.") в поле **Installer download token** или выберите **Generate token**, чтобы сгенерировать токен сейчас и автоматически вставить его в поле **Installer download token**. Этот токен необходим для загрузки установщика OneAgent из вашей среды. Токен автоматически добавляется к командам загрузки и установки, которые вы будете использовать позднее.
+3. Вставьте [PaaS-токен](../../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Узнайте о концепции токена доступа и его областях.") в поле **Installer download token** или выберите **Generate token**, чтобы сгенерировать токен сейчас и автоматически вставить его в поле **Installer download token**. Этот токен необходим для загрузки установщика OneAgent из вашей среды. Токен автоматически добавляется к командам загрузки и установки, которые вы будете использовать позднее.
 4. В поле **Download OneAgent** нажмите **Copy**, чтобы скопировать команду `wget` в буфер обмена.
 5. Войдите на ваш хост AIX, затем вставьте и выполните скопированную команду `wget`.
 
@@ -59,17 +59,17 @@ scraped: 2026-03-06T21:18:39.737550
    После завершения загрузки нажмите **Copy** в поле **Verify signature**, чтобы скопировать команду `wget` в буфер обмена, затем вставьте предоставленную команду в окно терминала и выполните её. Убедитесь, что ваша система обновлена, особенно SSL и связанные библиотеки сертификатов.
 7. Необязательно: **Настройка пользовательских параметров**
 
-   * Включите мониторинг логического раздела [Virtual I/O Server](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix#vios-installation "Узнайте, как загрузить и установить Dynatrace OneAgent на AIX.").
-   * Установите [сетевую зону](/docs/manage/network-zones#deploy-network-zones "Узнайте, как работают сетевые зоны в Dynatrace.") для этого хоста.
-   * Если ваша среда сегментирована (например, на среды разработки и производства), рассмотрите возможность [организации хостов в группы хостов](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Узнайте, как Dynatrace позволяет организовать хосты, процессы и сервисы с помощью групп хостов.").
-   * Вы можете переопределить автоматически определённое [имя хоста](/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Узнайте, как изменить имя отслеживаемого хоста."). Это полезно в больших и динамичных средах, где определённые имена хостов могут быть неинтуитивными или часто меняться.
-   * Вы также можете применить [теги](/docs/manage/tags-and-metadata "Используйте теги и метаданные для организации данных в вашей среде Dynatrace.") к хосту для организации ваших отслеживаемых сред удобным способом.
-   * Определите [свойства](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#host-metadata "Узнайте, как добавлять теги и устанавливать дополнительные свойства для отслеживаемого хоста.") хоста для автоматического добавления метаданных.
-   * Измените режим OneAgent на «Мониторинг инфраструктуры» или «Обнаружение» вместо «Полный мониторинг». Подробнее см. [Режимы мониторинга OneAgent](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Узнайте больше о доступных режимах мониторинга при использовании OneAgent.").
+   * Включите мониторинг логического раздела [Virtual I/O Server](install-oneagent-on-aix.md#vios-installation "Узнайте, как загрузить и установить Dynatrace OneAgent на AIX.").
+   * Установите [сетевую зону](../../../../../manage/network-zones.md#deploy-network-zones "Узнайте, как работают сетевые зоны в Dynatrace.") для этого хоста.
+   * Если ваша среда сегментирована (например, на среды разработки и производства), рассмотрите возможность [организации хостов в группы хостов](../../../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Узнайте, как Dynatrace позволяет организовать хосты, процессы и сервисы с помощью групп хостов.").
+   * Вы можете переопределить автоматически определённое [имя хоста](../../../../../observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments.md "Узнайте, как изменить имя отслеживаемого хоста."). Это полезно в больших и динамичных средах, где определённые имена хостов могут быть неинтуитивными или часто меняться.
+   * Вы также можете применить [теги](../../../../../../common/manage/tags-and-metadata.md "Используйте теги и метаданные для организации данных в вашей среде Dynatrace.") к хосту для организации ваших отслеживаемых сред удобным способом.
+   * Определите [свойства](../../../../../observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts.md#host-metadata "Узнайте, как добавлять теги и устанавливать дополнительные свойства для отслеживаемого хоста.") хоста для автоматического добавления метаданных.
+   * Измените режим OneAgent на «Мониторинг инфраструктуры» или «Обнаружение» вместо «Полный мониторинг». Подробнее см. [Режимы мониторинга OneAgent](../../../../../platform/oneagent/monitoring-modes/monitoring-modes.md "Узнайте больше о доступных режимах мониторинга при использовании OneAgent.").
 
      Недоступно, если включена опция мониторинга Virtual I/O Server.
 
-   Установщик OneAgent из командной строки предоставляет дополнительные опции для [настройки установки](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Узнайте, как использовать установщик Linux с параметрами командной строки.").
+   Установщик OneAgent из командной строки предоставляет дополнительные опции для [настройки установки](../../linux/installation/customize-oneagent-installation-on-linux.md "Узнайте, как использовать установщик Linux с параметрами командной строки.").
 8. Скопируйте команду, указанную в текстовом поле **Run the installer with root rights**.
 9. Запустите установщик.
    Вставьте команду в терминал и выполните её.
@@ -78,7 +78,7 @@ scraped: 2026-03-06T21:18:39.737550
    * Вы можете использовать `su` или `sudo` для запуска скрипта установки. Для этого введите следующую команду в каталоге, куда вы загрузили скрипт установки.
      `sudo /bin/sh Dynatrace-OneAgent-AIX-1.0.0.sh`
 
-   Краткое описание изменений, вносимых в вашу систему при установке OneAgent, см. в разделе [Безопасность OneAgent на AIX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix "Узнайте о безопасности Dynatrace OneAgent и изменениях в вашей системе на базе AIX.").
+   Краткое описание изменений, вносимых в вашу систему при установке OneAgent, см. в разделе [Безопасность OneAgent на AIX](oneagent-security-aix.md "Узнайте о безопасности Dynatrace OneAgent и изменениях в вашей системе на базе AIX.").
 10. На AIX Dynatrace поддерживает глубокий мониторинг кода для приложений Java, Apache, WebLogic и Websphere. Он автоматизирован для OneAgent версии 1.189+. Для более ранних версий необходимо выполнить некоторую настройку на AIX, что можно легко сделать как для отдельных приложений, так и для всей оболочки.
 
     Автоматическое внедрение глубокого мониторинга кода включено по умолчанию в Dynatrace версии 1.195+ для новых установок OneAgent 1.189+.
@@ -165,8 +165,8 @@ apachectl -c "LoadModule oneagent_module /opt/dynatrace/oneagent/agent/bin/curre
 -k start
 ```
 
-* `tenantUUID` — это идентификатор [среды](/docs/discover-dynatrace/get-started/monitoring-environment "Узнайте, как работать с средами мониторинга.") вашей среды Dynatrace, который должен быть взят из `dynatrace-env.sh` (расположен в корневом каталоге установки OneAgent). Параметр `tenantUUID` представлен в скрипте как `DT_TENANT`.
-* `tenantToken` — это [токен](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token "Узнайте, что такое токен тенанта и как его изменить."), который OneAgent использует для отправки данных в Dynatrace. Его следует взять из `dynatrace-env.sh` (или `ruxitagent.conf`, в зависимости от версии OneAgent), расположенного в корневом каталоге установки OneAgent. Параметр `tenantToken` представлен в скрипте как `DT_TENANTTOKEN`.
+* `tenantUUID` — это идентификатор [среды](../../../../../discover-dynatrace/get-started/monitoring-environment.md "Узнайте, как работать с средами мониторинга.") вашей среды Dynatrace, который должен быть взят из `dynatrace-env.sh` (расположен в корневом каталоге установки OneAgent). Параметр `tenantUUID` представлен в скрипте как `DT_TENANT`.
+* `tenantToken` — это [токен](../../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token.md "Узнайте, что такое токен тенанта и как его изменить."), который OneAgent использует для отправки данных в Dynatrace. Его следует взять из `dynatrace-env.sh` (или `ruxitagent.conf`, в зависимости от версии OneAgent), расположенного в корневом каталоге установки OneAgent. Параметр `tenantToken` представлен в скрипте как `DT_TENANTTOKEN`.
 
   Этот токен не следует путать с API-токенами или PaaS-токенами Dynatrace. Эти токены нельзя использовать здесь.
 * `communicationEndpoints` соответствует одному или нескольким HTTP-адресам, представляющим серверы Dynatrace или ActiveGate. Параметр `communicationEndpoints` представлен в скрипте как `DT_CONNECTION_POINT`. Например, файл `dynatrace-env.sh` (расположенный в корневом каталоге установки OneAgent) может содержать следующее:

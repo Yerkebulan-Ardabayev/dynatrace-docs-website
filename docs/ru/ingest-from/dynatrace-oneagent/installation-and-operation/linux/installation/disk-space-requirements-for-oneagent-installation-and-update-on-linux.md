@@ -34,7 +34,7 @@ scraped: 2026-03-06T21:19:00.574729
 
 1
 
-Используйте параметр установки [INSTALL\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#installation-path "Узнайте, как использовать установщик Linux с параметрами командной строки.").
+Используйте параметр установки [INSTALL\_PATH](customize-oneagent-installation-on-linux.md#installation-path "Узнайте, как использовать установщик Linux с параметрами командной строки.").
 
 2
 
@@ -42,11 +42,11 @@ scraped: 2026-03-06T21:19:00.574729
 
 3
 
-Используйте параметр установки [LOG\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#log-path "Узнайте, как использовать установщик Linux с параметрами командной строки.").
+Используйте параметр установки [LOG\_PATH](customize-oneagent-installation-on-linux.md#log-path "Узнайте, как использовать установщик Linux с параметрами командной строки.").
 
 4
 
-Используйте параметр установки [DATA\_STORAGE](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#data-storage "Узнайте, как использовать установщик Linux с параметрами командной строки.").
+Используйте параметр установки [DATA\_STORAGE](customize-oneagent-installation-on-linux.md#data-storage "Узнайте, как использовать установщик Linux с параметрами командной строки.").
 
 5
 
@@ -54,17 +54,17 @@ scraped: 2026-03-06T21:19:00.574729
 
 6
 
-Применимо только при использовании расширений Dynatrace Extensions, которые [определяют метрики журналов, события или добавляют собственные правила обработки журналов](/docs/ingest-from/extensions/advanced-configuration/extension-customize#log-metrics-events-and-processing-rules "Узнайте, как инструментировать расширения для настройки обработки загружаемых данных в Dynatrace."). Может быть изменено через запрос в поддержку.
+Применимо только при использовании расширений Dynatrace Extensions, которые [определяют метрики журналов, события или добавляют собственные правила обработки журналов](../../../../extensions/advanced-configuration/extension-customize.md#log-metrics-events-and-processing-rules "Узнайте, как инструментировать расширения для настройки обработки загружаемых данных в Dynatrace."). Может быть изменено через запрос в поддержку.
 
 7
 
 Механизм надежности не работает, если требование не выполнено. Подробнее см. [Детали хранилища](#persistence).
 
-Полный список файлов и каталогов, добавляемых в вашу систему OneAgent, см. в разделе [Безопасность OneAgent в Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux "Узнайте о безопасности Dynatrace OneAgent и изменениях в вашей системе на базе Linux").
+Полный список файлов и каталогов, добавляемых в вашу систему OneAgent, см. в разделе [Безопасность OneAgent в Linux](oneagent-security-linux.md "Узнайте о безопасности Dynatrace OneAgent и изменениях в вашей системе на базе Linux").
 
 ## Механизм устаревания файлов OneAgent
 
-OneAgent в режиме полного мониторинга использует встроенный механизм устаревания, чтобы файлы OneAgent, включая файлы журналов и данные времени выполнения, оставались в разумных размерах. Подробнее см. [Механизм устаревания файлов OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism "Узнайте, как OneAgent удаляет старые файлы для минимизации использования дискового пространства.").
+OneAgent в режиме полного мониторинга использует встроенный механизм устаревания, чтобы файлы OneAgent, включая файлы журналов и данные времени выполнения, оставались в разумных размерах. Подробнее см. [Механизм устаревания файлов OneAgent](../../../oneagent-aging-mechanism.md "Узнайте, как OneAgent удаляет старые файлы для минимизации использования дискового пространства.").
 
 ## Самомониторинг Dynatrace Managed
 

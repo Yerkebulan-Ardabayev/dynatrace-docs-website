@@ -21,18 +21,18 @@ Azure Functions позволяют запускать код без подгот
 
 ## Интеграция
 
-[Трассировка Azure Functions, написанных на .NET](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet "Мониторинг Azure Functions с помощью OpenTelemetry для .NET и Dynatrace.")
+[Трассировка Azure Functions, написанных на .NET](func-dynamic-plans/opentelemetry-on-azure-functions-dotnet.md "Мониторинг Azure Functions с помощью OpenTelemetry для .NET и Dynatrace.")
 
-[Трассировка Azure Functions, написанных на Node.js](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-nodejs "Мониторинг Azure Functions с помощью OpenTelemetry для Node.js и Dynatrace.")
+[Трассировка Azure Functions, написанных на Node.js](func-dynamic-plans/opentelemetry-on-azure-functions-nodejs.md "Мониторинг Azure Functions с помощью OpenTelemetry для Node.js и Dynatrace.")
 
-[Трассировка Azure Functions, написанных на Python](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-python "Мониторинг Azure Functions с помощью OpenTelemetry для Python и Dynatrace.")
+[Трассировка Azure Functions, написанных на Python](func-dynamic-plans/opentelemetry-on-azure-functions-python.md "Мониторинг Azure Functions с помощью OpenTelemetry для Python и Dynatrace.")
 
 ## Потребление при мониторинге
 
-Для Azure Functions потребление при мониторинге рассчитывается на основе единиц данных Davis. Подробности см. в разделе [Мониторинг бессерверных сред](/docs/license/monitoring-consumption-classic/davis-data-units/serverless-monitoring "Узнайте, как рассчитывается потребление при мониторинге бессерверных сред.").
+Для Azure Functions потребление при мониторинге рассчитывается на основе единиц данных Davis. Подробности см. в разделе [Мониторинг бессерверных сред](../../../../license/monitoring-consumption-classic/davis-data-units/serverless-monitoring.md "Узнайте, как рассчитывается потребление при мониторинге бессерверных сред.").
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Microsoft Azure](/docs/ingest-from/microsoft-azure-services "Настройка и конфигурирование мониторинга для Microsoft Azure.")
-* [Матрица поддержки платформ и возможностей OneAgent](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Узнайте, какие возможности поддерживает OneAgent на разных операционных системах и платформах.")
-* [Настройка мониторинга OpenTelemetry для Azure Functions на тарифном плане Consumption](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions "Мониторинг тарифного плана Consumption для Azure Functions с помощью OpenTelemetry и Dynatrace.")
+* [Настройка Dynatrace в Microsoft Azure](../../../microsoft-azure-services.md "Настройка и конфигурирование мониторинга для Microsoft Azure.")
+* [Матрица поддержки платформ и возможностей OneAgent](../../../technology-support/oneagent-platform-and-capability-support-matrix.md "Узнайте, какие возможности поддерживает OneAgent на разных операционных системах и платформах.")
+* [Настройка мониторинга OpenTelemetry для Azure Functions на тарифном плане Consumption](func-dynamic-plans/opentelemetry-on-azure-functions.md "Мониторинг тарифного плана Consumption для Azure Functions с помощью OpenTelemetry и Dynatrace.")

@@ -61,7 +61,7 @@ storage:entities:read
 
 ### Установка
 
-Убедитесь, что приложение [установлено в вашем окружении](/docs/manage/hub#install "Информация о Dynatrace Hub.").
+Убедитесь, что приложение [установлено в вашем окружении](../manage/hub.md#install "Информация о Dynatrace Hub.").
 
 ## Начало работы
 
@@ -78,31 +78,31 @@ Site Reliability Guardian -- это приложение Dynatrace, которо
 [01Создание Site Reliability Guardian
 
 * Практическое руководство
-* Создайте guardian вручную или из предопределённого шаблона.](/docs/deliver/site-reliability-guardian/create-srg)[02Список и работа с вашими guardian
+* Создайте guardian вручную или из предопределённого шаблона.](site-reliability-guardian/create-srg.md)[02Список и работа с вашими guardian
 
 * Практическое руководство
-* Просматривайте список guardian для просмотра, сравнения или массового удаления.](/docs/deliver/site-reliability-guardian/guardian-list)[03Добавление объектива Site Reliability Guardian
+* Просматривайте список guardian для просмотра, сравнения или массового удаления.](site-reliability-guardian/guardian-list.md)[03Добавление объектива Site Reliability Guardian
 
 * Справочник
-* Добавьте новый объектив Site Reliability Guardian.](/docs/deliver/site-reliability-guardian/reference)[04Добавление и доступ к ссылкам на аналитику валидации
+* Добавьте новый объектив Site Reliability Guardian.](site-reliability-guardian/reference.md)[04Добавление и доступ к ссылкам на аналитику валидации
 
 * Практическое руководство
-* Добавляйте и используйте ссылки на аналитику валидации для предоставления контекстной информации и ресурсов для объектива.](/docs/deliver/site-reliability-guardian/validation-insight-link)[05Контекст выполнения Guardian
+* Добавляйте и используйте ссылки на аналитику валидации для предоставления контекстной информации и ресурсов для объектива.](site-reliability-guardian/validation-insight-link.md)[05Контекст выполнения Guardian
 
 * Практическое руководство
-* Фильтруйте события валидации Site Reliability Guardian, инициированные внешним инструментом, используя контекстную информацию, предоставленную этим инструментом.](/docs/deliver/site-reliability-guardian/execution-context)[06Site Reliability Guardian как код
+* Фильтруйте события валидации Site Reliability Guardian, инициированные внешним инструментом, используя контекстную информацию, предоставленную этим инструментом.](site-reliability-guardian/execution-context.md)[06Site Reliability Guardian как код
 
 * Практическое руководство
-* Примеры конфигурации как кода для guardian и его рабочего процесса.](/docs/deliver/site-reliability-guardian/config-as-code-srg)[07Разрешения ролей Site Reliability Guardian
+* Примеры конфигурации как кода для guardian и его рабочего процесса.](site-reliability-guardian/config-as-code-srg.md)[07Разрешения ролей Site Reliability Guardian
 
 * Справочник
-* Настройте разрешения ролей для использования Site Reliability Guardian.](/docs/deliver/site-reliability-guardian/role-permissions)[08Структура событий Site Reliability Guardian
+* Настройте разрешения ролей для использования Site Reliability Guardian.](site-reliability-guardian/role-permissions.md)[08Структура событий Site Reliability Guardian
 
 * Справочник
-* Подробности о структуре событий Site Reliability Guardian.](/docs/deliver/site-reliability-guardian/event-structure)[09Валидация Site Reliability Guardian
+* Подробности о структуре событий Site Reliability Guardian.](site-reliability-guardian/event-structure.md)[09Валидация Site Reliability Guardian
 
 * Учебное пособие
-* Запустите валидацию guardian вручную или автоматически с помощью рабочего процесса для оценки надёжности сервиса.](/docs/deliver/site-reliability-guardian/trigger-srg)
+* Запустите валидацию guardian вручную или автоматически с помощью рабочего процесса для оценки надёжности сервиса.](site-reliability-guardian/trigger-srg.md)
 
 ## Концепции
 
@@ -119,8 +119,8 @@ Guardian предоставляет вам [рабочий процесс авт
 
 ### Lifecycle guardian (события SDLC)
 
-* Читает и записывает [события SDLC](/docs/deliver/pipeline-observability-sdlc-events/sdlc-events "Вы можете наблюдать за вашим пайплайном через события жизненного цикла разработки программного обеспечения (SDLC), которые затем можно использовать для генерации аналитики.") как результаты валидации.
-* Соответствует [спецификации событий валидации в Semantic Dictionary](/docs/semantic-dictionary/model/sdlc-events#sdlc-validation-events "Ознакомьтесь с моделями Semantic Dictionary, связанными с событиями жизненного цикла разработки программного обеспечения (SDLC).").
+* Читает и записывает [события SDLC](pipeline-observability-sdlc-events/sdlc-events.md "Вы можете наблюдать за вашим пайплайном через события жизненного цикла разработки программного обеспечения (SDLC), которые затем можно использовать для генерации аналитики.") как результаты валидации.
+* Соответствует [спецификации событий валидации в Semantic Dictionary](../semantic-dictionary/model/sdlc-events.md#sdlc-validation-events "Ознакомьтесь с моделями Semantic Dictionary, связанными с событиями жизненного цикла разработки программного обеспечения (SDLC).").
 * Предназначен для использования в контексте жизненного цикла разработки программного обеспечения.
 
   + В качестве шлюза качества в сценариях прогрессивной доставки
@@ -129,11 +129,11 @@ Guardian предоставляет вам [рабочий процесс авт
 
 ### Business guardian (бизнес-события)
 
-* Читает и записывает [бизнес-события](/docs/observe/business-observability/bo-api-ingest "Настройте аутентификацию и загружайте бизнес-события через API.") как результаты валидации
+* Читает и записывает [бизнес-события](../observe/business-observability/bo-api-ingest.md "Настройте аутентификацию и загружайте бизнес-события через API.") как результаты валидации
 * Предназначен для использования на бизнес-уровне и получения аналитики поведения приложений
 
 Поскольку эти два типа guardian имеют различные источники данных (`bizevents` и `events`) и различные структуры данных событий, вам необходимо адаптировать DQL-запросы, нацеленные на события валидации guardian в Notebooks или Dashboards, при переключении с одного типа на другой.
-Подробнее о структурных различиях см. в разделе [Структура событий Site Reliability Guardian](/docs/deliver/site-reliability-guardian/event-structure "Подробности о структуре событий Site Reliability Guardian.").
+Подробнее о структурных различиях см. в разделе [Структура событий Site Reliability Guardian](site-reliability-guardian/event-structure.md "Подробности о структуре событий Site Reliability Guardian.").
 
 Вы можете создать максимум 1000 guardian.
 
@@ -145,7 +145,7 @@ Guardian предоставляет вам [рабочий процесс авт
 
 ### 3. Индикатор
 
-Индикатор -- это значение, по которому проверяются пороги предупреждения и отказа с использованием оператора сравнения. Для получения значения индикатора используйте [DQL](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.").
+Индикатор -- это значение, по которому проверяются пороги предупреждения и отказа с использованием оператора сравнения. Для получения значения индикатора используйте [DQL](../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.").
 
 ### 4. Статические пороги
 
@@ -215,7 +215,7 @@ fetch bizevents
 
 ### 8. Действие рабочего процесса Guardian
 
-Вы можете автоматизировать выполнение guardian через [Workflows](/docs/analyze-explore-automate/workflows "Автоматизируйте IT-процессы с помощью Dynatrace Workflows -- реагируйте на события, планируйте задачи и подключайте сервисы."), привязывая выполнение guardian к [событию](/docs/analyze-explore-automate/workflows/trigger/event-trigger#event-trigger "Руководство по созданию триггеров автоматизации рабочих процессов на основе событий в Dynatrace Workflows.") или [вызову API](/docs/analyze-explore-automate/workflows/trigger#on-demand-trigger "Введение в триггеры автоматизации рабочих процессов.").
+Вы можете автоматизировать выполнение guardian через [Workflows](../analyze-explore-automate/workflows.md "Автоматизируйте IT-процессы с помощью Dynatrace Workflows -- реагируйте на события, планируйте задачи и подключайте сервисы."), привязывая выполнение guardian к [событию](../analyze-explore-automate/workflows/trigger/event-trigger.md#event-trigger "Руководство по созданию триггеров автоматизации рабочих процессов на основе событий в Dynatrace Workflows.") или [вызову API](../analyze-explore-automate/workflows/trigger.md#on-demand-trigger "Введение в триггеры автоматизации рабочих процессов.").
 
 ### Добавление действия guardian в существующий рабочий процесс или создание нового
 
@@ -229,7 +229,7 @@ fetch bizevents
 #### Создание нового рабочего процесса
 
 1. Перейдите в **Workflows** ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") и выберите ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Workflow**.
-2. Выберите [триггер](/docs/analyze-explore-automate/workflows/trigger "Введение в триггеры автоматизации рабочих процессов.").
+2. Выберите [триггер](../analyze-explore-automate/workflows/trigger.md "Введение в триггеры автоматизации рабочих процессов.").
 3. На узле триггера выберите ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add"), чтобы просмотреть доступные действия.
 
 #### Настройка действия валидации guardian
@@ -238,10 +238,10 @@ fetch bizevents
 2. На вкладке **Input** у вас есть два варианта выбора необходимого guardian:
 
 * Выберите guardian из списка.
-* Используйте [выражение](/docs/analyze-explore-automate/workflows/reference "Ознакомьтесь с выражениями workflows") для извлечения guardian из триггерного события или предыдущего действия рабочего процесса.
+* Используйте [выражение](../analyze-explore-automate/workflows/reference.md "Ознакомьтесь с выражениями workflows") для извлечения guardian из триггерного события или предыдущего действия рабочего процесса.
 * Настройте временной интервал валидации.
 
-Подробнее см. также [Валидация Site Reliability Guardian](/docs/deliver/site-reliability-guardian/trigger-srg "Запустите валидацию guardian вручную или автоматически с помощью рабочего процесса для оценки надёжности сервиса."), [Автоматизация валидации релизов](/docs/deliver/release-validation-automated "Узнайте, как автоматически валидировать релизы критически важных сервисов с помощью этого практического руководства."), [Наблюдаемость тестового пайплайна](/docs/deliver/test-pipeline-observability "Используйте Dynatrace для наблюдения и анализа тестовых пайплайнов")
+Подробнее см. также [Валидация Site Reliability Guardian](site-reliability-guardian/trigger-srg.md "Запустите валидацию guardian вручную или автоматически с помощью рабочего процесса для оценки надёжности сервиса."), [Автоматизация валидации релизов](release-validation-automated.md "Узнайте, как автоматически валидировать релизы критически важных сервисов с помощью этого практического руководства."), [Наблюдаемость тестового пайплайна](test-pipeline-observability.md "Используйте Dynatrace для наблюдения и анализа тестовых пайплайнов")
 
 ### Создание рабочего процесса со страницы всех guardian
 
@@ -272,13 +272,13 @@ fetch bizevents
 
 ### 9. Валидация
 
-Если рабочий процесс создан, ваш guardian может быть валидирован автоматически в зависимости от выбранного [триггера](/docs/analyze-explore-automate/workflows/trigger "Введение в триггеры автоматизации рабочих процессов."). Вы также можете выполнить валидацию вручную.
+Если рабочий процесс создан, ваш guardian может быть валидирован автоматически в зависимости от выбранного [триггера](../analyze-explore-automate/workflows/trigger.md "Введение в триггеры автоматизации рабочих процессов."). Вы также можете выполнить валидацию вручную.
 
 ### Обзор валидации
 
 По умолчанию страница **All guardians** отображает список всех guardian.
 
-Подробнее о странице **All guardians** см. в разделе [Список и работа с вашими guardian](/docs/deliver/site-reliability-guardian/guardian-list "Просматривайте список guardian для просмотра, сравнения или массового удаления.").
+Подробнее о странице **All guardians** см. в разделе [Список и работа с вашими guardian](site-reliability-guardian/guardian-list.md "Просматривайте список guardian для просмотра, сравнения или массового удаления.").
 
 ### Автоматическая валидация
 
@@ -312,10 +312,10 @@ fetch bizevents
 
 ### 10. Сегменты
 
-Используйте [Segments](/docs/manage/segments "Используйте сегменты для логической структуризации и удобной фильтрации данных наблюдаемости в приложениях.") в объективах на основе DQL для логической структуризации и удобной фильтрации данных наблюдаемости.
+Используйте [Segments](../manage/segments.md "Используйте сегменты для логической структуризации и удобной фильтрации данных наблюдаемости в приложениях.") в объективах на основе DQL для логической структуризации и удобной фильтрации данных наблюдаемости.
 
 ## Сценарии использования
 
 ## Связанные темы
 
-* [Добавление и доступ к ссылкам на аналитику валидации](/docs/deliver/site-reliability-guardian/validation-insight-link "Добавляйте и используйте ссылки на аналитику валидации для предоставления контекстной информации и ресурсов для объектива.")
+* [Добавление и доступ к ссылкам на аналитику валидации](site-reliability-guardian/validation-insight-link.md "Добавляйте и используйте ссылки на аналитику валидации для предоставления контекстной информации и ресурсов для объектива.")

@@ -24,7 +24,7 @@ scraped: 2026-03-02T21:29:58.784822
 
 Для выполнения этого запроса необходим токен доступа с областью действия `InstallerDownload`.
 
-Чтобы узнать, как получить и использовать токен, см. раздел [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как получить и использовать токен, см. раздел [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 

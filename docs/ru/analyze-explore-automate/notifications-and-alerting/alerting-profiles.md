@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:21:41.046909
 * Время чтения: 4 мин.
 * Обновлено 26 августа 2025 г.
 
-Профили оповещений о проблемах управляют доставкой уведомлений о проблемах по каналам оповещений вашей организации на основе предопределённых фильтров, учитывающих серьёзность проблемы, её продолжительность, пользовательские события и теги. Профили оповещений о проблемах позволяют точно контролировать, какие условия приводят к отправке уведомлений, а какие нет. Это касается всех push-уведомлений о проблемах, отправляемых через [мобильное приложение Dynatrace](/docs/analyze-explore-automate/notifications-and-alerting/push-notifications-via-the-dynatrace-mobile-app "Узнайте, как подключить среды Dynatrace к мобильному приложению Dynatrace для получения уведомлений о проблемах.") и отображаемых в веб-интерфейсе Dynatrace. Профили оповещений также могут использоваться для настройки фильтрованных интеграций уведомлений с системами обмена сообщениями сторонних производителей, такими как [Slack](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration "Настройте интеграцию Slack для уведомлений о проблемах, чтобы быть в курсе всех проблем Dynatrace."), [Opsgenie](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration "Настройте интеграцию Opsgenie с Dynatrace.") и [PagerDuty](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration "Узнайте, как отправлять уведомления о проблемах из Dynatrace в PagerDuty.").
+Профили оповещений о проблемах управляют доставкой уведомлений о проблемах по каналам оповещений вашей организации на основе предопределённых фильтров, учитывающих серьёзность проблемы, её продолжительность, пользовательские события и теги. Профили оповещений о проблемах позволяют точно контролировать, какие условия приводят к отправке уведомлений, а какие нет. Это касается всех push-уведомлений о проблемах, отправляемых через [мобильное приложение Dynatrace](push-notifications-via-the-dynatrace-mobile-app.md "Узнайте, как подключить среды Dynatrace к мобильному приложению Dynatrace для получения уведомлений о проблемах.") и отображаемых в веб-интерфейсе Dynatrace. Профили оповещений также могут использоваться для настройки фильтрованных интеграций уведомлений с системами обмена сообщениями сторонних производителей, такими как [Slack](problem-notifications/slack-integration.md "Настройте интеграцию Slack для уведомлений о проблемах, чтобы быть в курсе всех проблем Dynatrace."), [Opsgenie](problem-notifications/opsgenie-integration.md "Настройте интеграцию Opsgenie с Dynatrace.") и [PagerDuty](problem-notifications/pagerduty-integration.md "Узнайте, как отправлять уведомления о проблемах из Dynatrace в PagerDuty.").
 
 Каждая среда мониторинга имеет профиль оповещений по умолчанию, который определяет уровень серьёзности, необходимый для отправки оповещения при обнаружении проблемы.
 
@@ -48,7 +48,7 @@ scraped: 2026-03-06T21:21:41.046909
 
 Доступны следующие критерии:
 
-* [Уровень серьёзности](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories "Узнайте о различных категориях событий и поддерживаемых типах событий, их уровнях серьёзности и логике их создания.").
+* [Уровень серьёзности](../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories.md "Узнайте о различных категориях событий и поддерживаемых типах событий, их уровнях серьёзности и логике их создания.").
 * Время, в течение которого проблема должна быть открыта, прежде чем будет отправлено оповещение — это позволяет избежать оповещений о проблемах низкой серьёзности, которые не влияют на пользовательский опыт и не требуют немедленного внимания.
 * Необязательно: мониторируемые сущности, имеющие любые или все указанные теги
 
@@ -79,8 +79,8 @@ scraped: 2026-03-06T21:21:41.046909
 
 1. Перейдите в **Settings** > **Alerting** > **Problem alerting profiles** и выберите **Add alerting profile**.
 2. Введите имя нового профиля в поле **Create new alerting profile** и нажмите **Create**.
-3. Определите фильтр по [зоне управления](/docs/manage/identity-access-management/permission-management/management-zones "Узнайте о концепциях зон управления, их определении и эффективном использовании.").
-4. Определите правила [уровня серьёзности](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories "Узнайте о различных категориях событий и поддерживаемых типах событий, их уровнях серьёзности и логике их создания.") для профиля.
+3. Определите фильтр по [зоне управления](../../manage/identity-access-management/permission-management/management-zones.md "Узнайте о концепциях зон управления, их определении и эффективном использовании.").
+4. Определите правила [уровня серьёзности](../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories.md "Узнайте о различных категориях событий и поддерживаемых типах событий, их уровнях серьёзности и логике их создания.") для профиля.
 5. Определите фильтр событий. Он может основываться на одном из следующих вариантов:
 
    * `Predefined`: конкретный встроенный тип события
@@ -90,4 +90,4 @@ scraped: 2026-03-06T21:21:41.046909
 
 ## API профилей оповещений
 
-Помимо веб-интерфейса Dynatrace, вы можете управлять профилями оповещений через [Settings API](/docs/dynatrace-api/configuration-api/alerting-profiles-api "Узнайте о возможностях API профилей оповещений Dynatrace."). Ищите схему **Problem alerting profiles** (`builtin:alerting.profile`).
+Помимо веб-интерфейса Dynatrace, вы можете управлять профилями оповещений через [Settings API](../../dynatrace-api/configuration-api/alerting-profiles-api.md "Узнайте о возможностях API профилей оповещений Dynatrace."). Ищите схему **Problem alerting profiles** (`builtin:alerting.profile`).

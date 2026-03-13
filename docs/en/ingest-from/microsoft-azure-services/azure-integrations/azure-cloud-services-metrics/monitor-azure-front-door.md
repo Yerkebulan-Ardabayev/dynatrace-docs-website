@@ -22,11 +22,11 @@ The Azure Front Door (classic) overview page gives you visibility into the numbe
 
 This service monitors previous (classic) offering of [Azure Front Doorï»¿](https://dt-url.net/rz0390g).
 
-For information regarding the latest Microsoft [Azure Front Door Standard and Premiumï»¿](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-overview) service, `Front Door and CDN profile`, see [Azure Front Door Standard/Premium and CDN profiles monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-front-door-cdn-profiles "Monitor Azure Front Door Standard/Premium and CDN profiles and view available metrics.").
+For information regarding the latest Microsoft [Azure Front Door Standard and Premiumï»¿](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-overview) service, `Front Door and CDN profile`, see [Azure Front Door Standard/Premium and CDN profiles monitoring](monitor-azure-front-door-cdn-profiles.md "Monitor Azure Front Door Standard/Premium and CDN profiles and view available metrics.").
 
 ## Enable monitoring
 
-To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+To learn how to enable service monitoring, see [Enable service monitoring](../azure-monitoring-guide/azure-enable-service-monitoring.md "Enable Azure monitoring in Dynatrace.").
 
 ## View service metrics
 

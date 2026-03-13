@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:24:46.338930
 
 Dynatrace предлагает глобальную сеть публичных точек Synthetic Monitoring, доступных сразу после установки. С помощью Dynatrace Synthetic Monitoring вы можете запускать мониторы из публичных точек, расположенных на инфраструктуре следующих крупных облачных провайдеров: Alibaba Cloud, Amazon AWS, Google Cloud и Microsoft Azure.
 
-Обратите внимание, что вы также можете [создавать приватные точки Synthetic-мониторинга](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.") в рамках собственной сетевой инфраструктуры. Все публичные и приватные точки Synthetic-мониторинга поддерживают как [браузерные, так и HTTP-мониторы](/docs/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors "Learn about Dynatrace synthetic monitor types.").
+Обратите внимание, что вы также можете [создавать приватные точки Synthetic-мониторинга](../private-synthetic-locations/create-a-private-synthetic-location.md "Learn how to create a private location for synthetic monitoring.") в рамках собственной сетевой инфраструктуры. Все публичные и приватные точки Synthetic-мониторинга поддерживают как [браузерные, так и HTTP-мониторы](types-of-synthetic-monitors.md "Learn about Dynatrace synthetic monitor types.").
 
 ## Стадии выпуска точек
 
@@ -33,7 +33,7 @@ Dynatrace предлагает глобальную сеть публичных 
 Если ваша политика безопасности требует добавления IP-адреса точки в список разрешённых адресов или вам нужна эта информация для других целей, вы можете определить IP-адрес точки одним из следующих способов.
 
 * При создании или изменении мониторов все точки и их IP-адреса отображаются в таблице на странице **Frequency and locations**. Выберите одну или несколько точек, прокрутите страницу вниз и нажмите **Copy IPs to clipboard** или **Download IPs**, чтобы скопировать или скачать соответствующие IP-адреса.
-* Используйте API-вызов [Synthetic locations API - GET all locations](/docs/dynatrace-api/environment-api/synthetic/synthetic-locations/get-all-locations "List all synthetic locations via the Synthetic v1 API."), который возвращает все доступные для вашей среды точки вместе с их IP-адресами.
+* Используйте API-вызов [Synthetic locations API - GET all locations](../../../../dynatrace-api/environment-api/synthetic/synthetic-locations/get-all-locations.md "List all synthetic locations via the Synthetic v1 API."), который возвращает все доступные для вашей среды точки вместе с их IP-адресами.
 
 ## Точки
 
@@ -64,7 +64,7 @@ Alibaba объявила о закрытии дата-центров в Авст
 4. Снимите флажки **Sydney** (Alibaba) и **Mumbai** (Alibaba) и выберите альтернативные точки.
 5. **Save changes**.
 
-Вы также можете использовать [Synthetic Monitors API](/docs/dynatrace-api/environment-api/synthetic/synthetic-monitors "Manage synthetic monitors via the Synthetic v1 API.") для массовой настройки.
+Вы также можете использовать [Synthetic Monitors API](../../../../dynatrace-api/environment-api/synthetic/synthetic-monitors.md "Manage synthetic monitors via the Synthetic v1 API.") для массовой настройки.
 
 Дополнительные действия для обновления правил межсетевого экрана
 
@@ -198,5 +198,5 @@ Alibaba объявила о закрытии дата-центров в Авст
 
 ## Связанные темы
 
-* [Создание приватной точки Synthetic-мониторинга](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")
-* [Synthetic locations API - GET all locations](/docs/dynatrace-api/environment-api/synthetic/synthetic-locations/get-all-locations "List all synthetic locations via the Synthetic v1 API.")
+* [Создание приватной точки Synthetic-мониторинга](../private-synthetic-locations/create-a-private-synthetic-location.md "Learn how to create a private location for synthetic monitoring.")
+* [Synthetic locations API - GET all locations](../../../../dynatrace-api/environment-api/synthetic/synthetic-locations/get-all-locations.md "List all synthetic locations via the Synthetic v1 API.")

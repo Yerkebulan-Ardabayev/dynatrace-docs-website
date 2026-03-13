@@ -45,11 +45,11 @@ Dynatrace Hub предоставляет единый процесс для вк
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Определить конечные точки**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/mysql#define-endpoints "Расширьте наблюдаемость в Dynatrace с помощью декларативных метрик, принимаемых с сервера MySQL Database.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Определить конечные точки**](mysql.md#define-endpoints "Расширьте наблюдаемость в Dynatrace с помощью декларативных метрик, принимаемых с сервера MySQL Database.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Группа ActiveGate**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/mysql#activegate-group "Расширьте наблюдаемость в Dynatrace с помощью декларативных метрик, принимаемых с сервера MySQL Database.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Группа ActiveGate**](mysql.md#activegate-group "Расширьте наблюдаемость в Dynatrace с помощью декларативных метрик, принимаемых с сервера MySQL Database.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Активировать расширение**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/mysql#activate-extension "Расширьте наблюдаемость в Dynatrace с помощью декларативных метрик, принимаемых с сервера MySQL Database.")
+**Активировать расширение**](mysql.md#activate-extension "Расширьте наблюдаемость в Dynatrace с помощью декларативных метрик, принимаемых с сервера MySQL Database.")
 
 ### Шаг 1: Определение конечных точек
 
@@ -62,7 +62,7 @@ Dynatrace Hub предоставляет единый процесс для вк
 
   + Поддерживается только базовая аутентификация.
   + Данные аутентификации, переданные в Dynatrace при активации конфигурации мониторинга, скрываются, и их невозможно получить.
-  + Вы можете [использовать хранилище учётных данных](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/mysql-monitoring#authentication "Расширения MySQL в фреймворке Extensions.") для более безопасного хранения и управления пользовательскими учётными данными.
+  + Вы можете [использовать хранилище учётных данных](../../../develop-your-extensions/data-sources/sql/mysql-monitoring.md#authentication "Расширения MySQL в фреймворке Extensions.") для более безопасного хранения и управления пользовательскими учётными данными.
 * Выберите **Next step**
 
 ### Шаг 2: Выбор ActiveGate
@@ -82,7 +82,7 @@ Dynatrace Hub предоставляет единый процесс для вк
 
 ## Конфигурация мониторинга в формате JSON
 
-Мастер активации расширения содержит динамически обновляемую JSON-полезную нагрузку с вашей конфигурацией мониторинга. В разделе [Управление расширениями](/docs/ingest-from/extensions/manage-extensions "Узнайте, как управлять расширениями.") описано, как использовать её для активации расширения через Dynatrace API.
+Мастер активации расширения содержит динамически обновляемую JSON-полезную нагрузку с вашей конфигурацией мониторинга. В разделе [Управление расширениями](../../../manage-extensions.md "Узнайте, как управлять расширениями.") описано, как использовать её для активации расширения через Dynatrace API.
 
 ## Связанные темы
 

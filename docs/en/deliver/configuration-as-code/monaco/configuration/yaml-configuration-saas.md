@@ -141,8 +141,8 @@ The optional `groupOverrides` and `environmentOverrides` fields allow for this.
 ## `id` field
 
 The `id` field identifies a `config` within the configurations.
-It must be unique for the same [configType](/docs/deliver/configuration-as-code/monaco/reference/commands-saas "How to use the Monaco CLI application, including arguments and options.") and [project](/docs/deliver/configuration-as-code/monaco/configuration/monaco-manage-resources#projects "This a list of Monaco resources.").
-This field is needed to reference the [parameters](/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling#supported-api-types "This is a list of the Monaco API support and access permission handling.") and describe dependencies between single configs.
+It must be unique for the same [configType](../reference/commands-saas.md "How to use the Monaco CLI application, including arguments and options.") and [project](monaco-manage-resources.md#projects "This a list of Monaco resources.").
+This field is needed to reference the [parameters](../monaco-api-support-and-access-handling.md#supported-api-types "This is a list of the Monaco API support and access permission handling.") and describe dependencies between single configs.
 
 It is possible to have, for example, two dashboards with the same `id` but in two different projects.
 
@@ -152,12 +152,12 @@ The `id` field is only local to the Dynatrace Monaco CLI and does not correspond
 
 The `type` field defines the type of Dynatrace configuration.
 
-For a detailed list, see [Monaco configuration YAML file - list of type fields](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields "This is a list of type fields in the Monaco configuration YAML file.").
+For a detailed list, see [Monaco configuration YAML file - list of type fields](yaml-configuration-saas-type-fields.md "This is a list of type fields in the Monaco configuration YAML file.").
 
 The types and subcategories
 
 * `API`: selected Dynatrace APIs.
-  For more information, see [Monaco API support and access permission handling](/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling#supported-api-types "This is a list of the Monaco API support and access permission handling.").
+  For more information, see [Monaco API support and access permission handling](../monaco-api-support-and-access-handling.md#supported-api-types "This is a list of the Monaco API support and access permission handling.").
 
   + `scope`
 * `Settings API`
@@ -168,11 +168,11 @@ The types and subcategories
   + Optional `insertAfter`
 
     Not all **Settings** schemas support permission. Only applicable for objects based on schemas with ordered objects. Schema's ordered parameter is set to `true`.
-    For more information, see [SettingsObjectUpdate object](/docs/dynatrace-api/environment-api/settings/objects/put-object#openapi-parameter-body-objects-openapienv2 "Edit a settings object via the Dynatrace API.").
+    For more information, see [SettingsObjectUpdate object](../../../../dynatrace-api/environment-api/settings/objects/put-object.md#openapi-parameter-body-objects-openapienv2 "Edit a settings object via the Dynatrace API.").
   + Optional `permission`
 
     Not all **Settings** schemas support permission. Only applicable for objects based on schemas with ordered objects. Schema's ordered parameter is set to `true`.
-    For more information, see [SettingsObjectUpdate object](/docs/dynatrace-api/environment-api/settings/objects/put-object#openapi-parameter-body-objects-openapienv2 "Edit a settings object via the Dynatrace API.").
+    For more information, see [SettingsObjectUpdate object](../../../../dynatrace-api/environment-api/settings/objects/put-object.md#openapi-parameter-body-objects-openapienv2 "Edit a settings object via the Dynatrace API.").
 * `Automation` defines a workflow.
 
   + `resource`
@@ -186,7 +186,7 @@ The types and subcategories
 
   + `kind`
 
-Dynatrace version 1.323+ OpenPipeline Configurations API is replaced by dedicated Settings API schemas. To avoid the following limitations, migrate to the new format, see [Migrate OpenPipeline configurations to Settings API](/docs/platform/openpipeline/migration-settings "Understand how to migrate your OpenPipeline configurations to new Settings API."). If you already use the new Settings API schemas, refer to [Type - Settings](#type-setting) instead.
+Dynatrace version 1.323+ OpenPipeline Configurations API is replaced by dedicated Settings API schemas. To avoid the following limitations, migrate to the new format, see [Migrate OpenPipeline configurations to Settings API](../../../../platform/openpipeline/migration-settings.md "Understand how to migrate your OpenPipeline configurations to new Settings API."). If you already use the new Settings API schemas, refer to [Type - Settings](#type-setting) instead.
 
 * `Segment` defines the data segments and filter masks.
 * `Service-level objectives (SLOs)` sets up a Dynatrace slo.
@@ -202,7 +202,7 @@ Configuration `type` fields
 * `scope`: applicable for the types `api` and `settings`.
   It allows for specifying dependencies and relationships.
 * `schema` and `schemaVersion`: applicable for the `settings` type.
-  It defines the specific settings schema, such as [custom alerts](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.").
+  It defines the specific settings schema, such as [custom alerts](../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.").
 * `permission`: applicable for the type `settings`.
   It allows fine-grained access control to settings objects, based on IAM permissions.
 * `insertAfter`: applicable for the type `settings`.
@@ -215,7 +215,7 @@ Configuration `type` fields
   It specifies the accessibility/visibility of the document in the environment, for example, public versus private.
 * `id`: applicable for the type `document`.
   It specifies a user-defined ID for the document.
-  If it's specified, it also needs to be directly referenced in the [deletefile](/docs/deliver/configuration-as-code/monaco/configuration#file-structure-for-direct-reference "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest."), if you wish to delete the document later.
+  If it's specified, it also needs to be directly referenced in the [deletefile](../configuration.md#file-structure-for-direct-reference "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest."), if you wish to delete the document later.
   For document creation, if this field is not set, Monaco generates a custom ID.
   On download, the `id` field is populated, if a custom ID was used to create the document.
 
@@ -278,13 +278,13 @@ Dynatrace Monaco CLI version 2.7.0+âThe `name` property is required only fo
 
 #### Configurations of type `api`
 
-If the specified configuration is an [api type](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#type-field "This is a list of type fields in the Monaco configuration YAML file."), the `name` is used to identify configurations in a Dynatrace environment and ensure that they're updated when they already exist.
+If the specified configuration is an [api type](yaml-configuration-saas-type-fields.md#type-field "This is a list of type fields in the Monaco configuration YAML file."), the `name` is used to identify configurations in a Dynatrace environment and ensure that they're updated when they already exist.
 
 For this, the `name` needs to be used in the JSON template to fill the configuration's specific `name` property.
 Usually, this is also just a `name`, but for some configurations, this may differ.
-For more information, see the exceptional cases described for JSON templates [Work with Dynatrace Monaco CLI commands for Latest Dynatrace](/docs/deliver/configuration-as-code/monaco/reference/commands-saas "How to use the Monaco CLI application, including arguments and options.") and refer to the API documentation if in doubt.
+For more information, see the exceptional cases described for JSON templates [Work with Dynatrace Monaco CLI commands for Latest Dynatrace](../reference/commands-saas.md "How to use the Monaco CLI application, including arguments and options.") and refer to the API documentation if in doubt.
 
-When [downloading](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#download "How to use the Monaco CLI application, including arguments and options."), the names are automatically extracted and placed in the YAML for you.
+When [downloading](../reference/commands-saas.md#download "How to use the Monaco CLI application, including arguments and options."), the names are automatically extracted and placed in the YAML for you.
 
 When referencing the name in a JSON template, it needs to be used as it is, with no additional text or characters around it.
 
@@ -297,14 +297,14 @@ If you encounter issues with the configurations not being created several times 
 The `name` property isn't used to identify Dynatrace objects.
 Instead, the configuration's coordinate, a combination of project, type, and configuration ID, or originObjectId, if present, is used.
 
-The `name` property can still be used and, for some types, is automatically extracted when [downloading](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#download "How to use the Monaco CLI application, including arguments and options.").
+The `name` property can still be used and, for some types, is automatically extracted when [downloading](../reference/commands-saas.md#download "How to use the Monaco CLI application, including arguments and options.").
 
 ### `skip` field
 
 The `skip` field allows you to omit or skip the deployment of a specific configuration.
 If `skip` is set to true, the Dynatrace Monaco CLI won't deploy the configuration.
 
-The `skip` field behaves like [parameters](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#parameters "This is a list of type fields in the Monaco configuration YAML file.") and you can define it as a value or an environment parameter.
+The `skip` field behaves like [parameters](yaml-configuration-saas-type-fields.md#parameters "This is a list of type fields in the Monaco configuration YAML file.") and you can define it as a value or an environment parameter.
 Typically, it's defined directly as a shorthand value.
 
 It's most useful with environment overrides, where you want to deploy a configuration to one environment but exclude it from another.
@@ -842,7 +842,7 @@ property: status
 
 #### `list` parameter
 
-The type `list` parameter allows you to define lists of [value parameters](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#value "This is a list of type fields in the Monaco configuration YAML file.").
+The type `list` parameter allows you to define lists of [value parameters](yaml-configuration-saas-type-fields.md#value "This is a list of type fields in the Monaco configuration YAML file.").
 When these are in a template, they're written as a JSON list surrounded by square brackets and separated by commas.
 This parameter type generally applies when you require a simple list of things, such as emails or identifiers, that can be filled with any value parameter.
 
@@ -1024,7 +1024,7 @@ In the given example, you can reference the additional parameter called `comment
 
 ### `originObjectId`
 
-When using the Dynatrace Monaco CLI to [download](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#download "How to use the Monaco CLI application, including arguments and options.") existing configurations from Dynatrace, the created YAML files contain an `originObjectId` for some configuration types.
+When using the Dynatrace Monaco CLI to [download](../reference/commands-saas.md#download "How to use the Monaco CLI application, including arguments and options.") existing configurations from Dynatrace, the created YAML files contain an `originObjectId` for some configuration types.
 
 The `originObjectId` holds the ID of the downloaded Dynatrace object.
 Use `originObjectId` when you're planning on deploying again to the same Dynatrace environment to ensure that the existing object is correctly updated with the downloaded configuration.
@@ -1151,4 +1151,4 @@ skip: true
 
 ## Related topics
 
-* [Monaco configuration YAML file - list of type fields](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields "This is a list of type fields in the Monaco configuration YAML file.")
+* [Monaco configuration YAML file - list of type fields](yaml-configuration-saas-type-fields.md "This is a list of type fields in the Monaco configuration YAML file.")

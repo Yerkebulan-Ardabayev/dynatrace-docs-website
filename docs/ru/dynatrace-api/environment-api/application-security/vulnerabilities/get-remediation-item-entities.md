@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:37:32.135216
 * Справочник
 * Обновлено 25 сентября 2024 г.
 
-Возвращает список процессов [отслеживания исправлений](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.") для уязвимости сторонней библиотеки.
+Возвращает список процессов [отслеживания исправлений](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Track the remediation progress of vulnerabilities.") для уязвимости сторонней библиотеки.
 
 Запрос возвращает полезную нагрузку в формате `application/json`.
 
@@ -24,7 +24,7 @@ scraped: 2026-03-06T21:37:32.135216
 
 Для выполнения этого запроса необходим токен доступа с областью действия `securityProblems.read`.
 
-Чтобы узнать, как получить и использовать такой токен, см. [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как получить и использовать такой токен, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 
@@ -462,6 +462,6 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/74125257674335543
 
 ## Связанные темы
 
-* [Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.")
-* [Davis Security Advisor API](/docs/dynatrace-api/environment-api/application-security/davis-security-advice "View the Davis Security Advisor recommendations via Dynatrace API.")
-* [Отслеживание исправлений](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")
+* [Application Security](../../../../secure/application-security.md "Access the Dynatrace Application Security functionalities.")
+* [Davis Security Advisor API](../davis-security-advice.md "View the Davis Security Advisor recommendations via Dynatrace API.")
+* [Отслеживание исправлений](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Track the remediation progress of vulnerabilities.")

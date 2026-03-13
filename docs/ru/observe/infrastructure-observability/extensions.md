@@ -35,4 +35,4 @@ scraped: 2026-03-06T21:17:01.611559
 
 Latest Dynatrace
 
-С помощью ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions** Dynatrace позволяет управлять вашими расширениями, включая установку, настройку и мониторинг.](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.")
+С помощью ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions** Dynatrace позволяет управлять вашими расширениями, включая установку, настройку и мониторинг.](../../ingest-from/extensions/manage-extensions.md "Learn how to manage extensions.")

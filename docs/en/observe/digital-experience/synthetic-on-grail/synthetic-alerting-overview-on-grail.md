@@ -13,9 +13,9 @@ scraped: 2026-03-04T21:38:54.851437
 * 2-min read
 * Published Sep 04, 2025
 
-A synthetic monitor creates a [problem](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.") when one of the following is true:
+A synthetic monitor creates a [problem](../../../dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence.") when one of the following is true:
 
-* A monitored system is not available. In this case, the monitor reports an availability problem. The problem is created after a [specified number of consecutive executions fail](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor#outage-and-performance "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.").
+* A monitored system is not available. In this case, the monitor reports an availability problem. The problem is created after a [specified number of consecutive executions fail](synthetic-app/create-and-configure-an-http-monitor.md#outage-and-performance "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.").
 
   A monitored system is considered not available if:
 
@@ -58,5 +58,5 @@ On the **Steps** tab, you can specify performance thresholds for separate steps.
 
 You can monitor problems in:
 
-* [![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* [![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](../../../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.")
 * ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic** itself. Monitors with problems have a red icon in the **Problems** column. The red icon also displays the number of problems for a monitor. From the monitors list, select the monitor whose problems you want to examine. This displays a preview panel on the right. From there you can, for example, select **View details** > **Analyze executions** and investigate executions that detected problems.

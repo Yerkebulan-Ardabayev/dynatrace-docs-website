@@ -16,19 +16,19 @@ scraped: 2026-03-06T21:29:05.716000
 
 ## Описание same-origin и cross-origin RUM-beacon-запросов
 
-RUM JavaScript передаёт собранные данные в Dynatrace, отправляя beacon-запросы на [конечную точку beacon-запросов](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-beacon-endpoint "Узнайте, как настроить конечную точку beacon-запросов для веб-фронтендов в соответствии с вашими требованиями."). Эти beacon-запросы могут быть same-origin или cross-origin в зависимости от метода инструментирования и дополнительной конфигурации.
+RUM JavaScript передаёт собранные данные в Dynatrace, отправляя beacon-запросы на [конечную точку beacon-запросов](../initial-setup/configure-beacon-endpoint.md "Узнайте, как настроить конечную точку beacon-запросов для веб-фронтендов в соответствии с вашими требованиями."). Эти beacon-запросы могут быть same-origin или cross-origin в зависимости от метода инструментирования и дополнительной конфигурации.
 
 Термин [origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) обозначает протокол, хост и порт URL-адреса. Запрос считается same-origin, когда протокол, хост и порт страницы, отправляющей запрос, полностью совпадают с параметрами запрашиваемого ресурса.
 
 ### Безагентные фронтенды
 
-При использовании [безагентного мониторинга](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-agentless-monitoring "Узнайте, как настроить безагентный RUM для ваших веб-фронтендов в New RUM Experience.") RUM-beacon-запросы отправляются на Cluster ActiveGate, который является частью SaaS-инфраструктуры Dynatrace. Эти beacon-запросы являются cross-origin.
+При использовании [безагентного мониторинга](../initial-setup/set-up-agentless-monitoring.md "Узнайте, как настроить безагентный RUM для ваших веб-фронтендов в New RUM Experience.") RUM-beacon-запросы отправляются на Cluster ActiveGate, который является частью SaaS-инфраструктуры Dynatrace. Эти beacon-запросы являются cross-origin.
 
 ### Автоматически инжектируемые фронтенды
 
-Когда RUM JavaScript [инжектируется автоматически](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-auto-injected-frontend "Узнайте, как настроить автоматически инжектируемый веб-фронтенд в New RUM Experience."), RUM-beacon-запросы по умолчанию отправляются обратно на веб-сервер или сервер приложений, на котором размещён фронтенд, где OneAgent предоставляет конечную точку для beacon-запросов. Это same-origin beacon-запросы.
+Когда RUM JavaScript [инжектируется автоматически](../initial-setup/set-up-auto-injected-frontend.md "Узнайте, как настроить автоматически инжектируемый веб-фронтенд в New RUM Experience."), RUM-beacon-запросы по умолчанию отправляются обратно на веб-сервер или сервер приложений, на котором размещён фронтенд, где OneAgent предоставляет конечную точку для beacon-запросов. Это same-origin beacon-запросы.
 
-Вы можете настроить альтернативные конфигурации конечных точек для beacon-запросов, при которых beacon-запросы [отправляются на Cluster ActiveGate](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-beacon-endpoint#auto-injected-to-saas-infrastructure "Узнайте, как настроить конечную точку beacon-запросов для веб-фронтендов в соответствии с вашими требованиями.") или [на другой инструментированный веб-сервер в другом домене](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-beacon-endpoint#auto-injected-to-different-server "Узнайте, как настроить конечную точку beacon-запросов для веб-фронтендов в соответствии с вашими требованиями."). Поскольку эти конечные точки используют другой домен, beacon-запросы являются cross-origin.
+Вы можете настроить альтернативные конфигурации конечных точек для beacon-запросов, при которых beacon-запросы [отправляются на Cluster ActiveGate](../initial-setup/configure-beacon-endpoint.md#auto-injected-to-saas-infrastructure "Узнайте, как настроить конечную точку beacon-запросов для веб-фронтендов в соответствии с вашими требованиями.") или [на другой инструментированный веб-сервер в другом домене](../initial-setup/configure-beacon-endpoint.md#auto-injected-to-different-server "Узнайте, как настроить конечную точку beacon-запросов для веб-фронтендов в соответствии с вашими требованиями."). Поскольку эти конечные точки используют другой домен, beacon-запросы являются cross-origin.
 
 ## Обработка CORS для beacon-запросов по умолчанию
 
@@ -36,7 +36,7 @@ RUM JavaScript передаёт собранные данные в Dynatrace, о
 
 При обработке CORS по умолчанию конечная точка beacon-запросов принимает все источники, добавляя заголовок `Access-Control-Allow-Origin` в ответ. Заголовок повторяет источник, указанный в заголовке запроса `Origin`. Затем конечная точка пересылает полезную нагрузку beacon-запроса в Dynatrace.
 
-Если вы отправляете cross-origin beacon-запросы на OneAgent, необходимо включить параметр **Send beacon data via CORS**, чтобы заголовок `Access-Control-Allow-Origin` добавлялся; см. [Отправка beacon-запросов на другой веб-сервер](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-beacon-endpoint#auto-injected-to-different-server "Узнайте, как настроить конечную точку beacon-запросов для веб-фронтендов в соответствии с вашими требованиями.").
+Если вы отправляете cross-origin beacon-запросы на OneAgent, необходимо включить параметр **Send beacon data via CORS**, чтобы заголовок `Access-Control-Allow-Origin` добавлялся; см. [Отправка beacon-запросов на другой веб-сервер](../initial-setup/configure-beacon-endpoint.md#auto-injected-to-different-server "Узнайте, как настроить конечную точку beacon-запросов для веб-фронтендов в соответствии с вашими требованиями.").
 
 Если разрешающее поведение по умолчанию не соответствует вашим требованиям, используйте список разрешённых источников для beacon-запросов, чтобы указать, какие источники принимаются.
 

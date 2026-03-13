@@ -20,15 +20,15 @@ scraped: 2026-03-06T21:25:36.661384
 
 Подробное описание мониторинга платформы Kubernetes с помощью Dynatrace Operator.
 
-Мониторинг платформы Kubernetes](/docs/ingest-from/setup-on-k8s/how-it-works/kubernetes-monitoring)[#### Наблюдаемость приложений
+Мониторинг платформы Kubernetes](how-it-works/kubernetes-monitoring.md)[#### Наблюдаемость приложений
 
 Подробное описание наблюдаемости приложений с помощью Dynatrace Operator.
 
-Наблюдаемость приложений](/docs/ingest-from/setup-on-k8s/how-it-works/application-monitoring)[#### Полностековая наблюдаемость
+Наблюдаемость приложений](how-it-works/application-monitoring.md)[#### Полностековая наблюдаемость
 
 Подробное описание полностековой наблюдаемости с помощью Dynatrace Operator.
 
-Полностековая наблюдаемость](/docs/ingest-from/setup-on-k8s/how-it-works/cloud-native-fullstack)
+Полностековая наблюдаемость](how-it-works/cloud-native-fullstack.md)
 
 ### Прочее
 
@@ -36,11 +36,11 @@ scraped: 2026-03-06T21:25:36.661384
 
 Подробное описание классического полностекового мониторинга с помощью Dynatrace Operator.
 
-Классический полностековый мониторинг](/docs/ingest-from/setup-on-k8s/how-it-works/other-deployment-modes/classic-fullstack)[#### Мониторинг хостов
+Классический полностековый мониторинг](how-it-works/other-deployment-modes/classic-fullstack.md)[#### Мониторинг хостов
 
 Подробное описание мониторинга хостов с помощью Dynatrace Operator.
 
-Мониторинг хостов](/docs/ingest-from/setup-on-k8s/how-it-works/other-deployment-modes/host-monitoring)
+Мониторинг хостов](how-it-works/other-deployment-modes/host-monitoring.md)
 
 ## Компоненты
 
@@ -48,4 +48,4 @@ scraped: 2026-03-06T21:25:36.661384
 
 Компоненты Dynatrace Operator
 
-Dynatrace Operator](/docs/ingest-from/setup-on-k8s/how-it-works/components/dynatrace-operator)
+Dynatrace Operator](how-it-works/components/dynatrace-operator.md)

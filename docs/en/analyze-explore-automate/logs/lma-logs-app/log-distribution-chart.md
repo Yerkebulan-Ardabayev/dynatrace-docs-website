@@ -32,7 +32,7 @@ Log entries are grouped by status. Each status is represented by a distinct colo
 * `ERROR`
 * `NONE`
 
-These statuses correspond to the `status` attribute that is created during log ingestion. For details, see the information on automatic log enrichment for [OneAgent-](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") or [API-ingested logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation#transform-all-types-of-logs "Log ingestion API automatically transforms log data into output values for the loglevel attribute.").
+These statuses correspond to the `status` attribute that is created during log ingestion. For details, see the information on automatic log enrichment for [OneAgent-](../lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") or [API-ingested logs](../lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation.md#transform-all-types-of-logs "Log ingestion API automatically transforms log data into output values for the loglevel attribute.").
 
 ## Interact with log distribution chart
 

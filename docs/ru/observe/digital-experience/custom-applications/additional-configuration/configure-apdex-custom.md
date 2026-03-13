@@ -13,7 +13,7 @@ scraped: 2026-03-05T21:33:03.715778
 * 1-min read
 * Published Jan 30, 2023
 
-[Apdex](/docs/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.") — важный показатель, измеряющий производительность вашего приложения. Вы можете настроить пороговые значения Apdex (Удовлетворительно, Допустимо и Неудовлетворительно) для вашего приложения и его [ключевых действий пользователей](/docs/observe/digital-experience/rum-concepts/user-actions#key-user-actions "Learn what user actions are and how they help you understand what users do with your application."), чтобы уточнить расчёты Apdex.
+[Apdex](../../rum-concepts/scores-and-ratings/apdex-ratings.md "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.") — важный показатель, измеряющий производительность вашего приложения. Вы можете настроить пороговые значения Apdex (Удовлетворительно, Допустимо и Неудовлетворительно) для вашего приложения и его [ключевых действий пользователей](../../rum-concepts/user-actions.md#key-user-actions "Learn what user actions are and how they help you understand what users do with your application."), чтобы уточнить расчёты Apdex.
 
 ## Настройка параметров Apdex для вашего приложения
 
@@ -41,5 +41,5 @@ scraped: 2026-03-05T21:33:03.715778
 
 ## Связанные темы
 
-* [Рейтинги Apdex](/docs/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.")
-* [Контекстный анализ Apdex](/docs/observe/digital-experience/session-segmentation/apdex-analysis "Check Apdex rating for a user action, location, and application.")
+* [Рейтинги Apdex](../../rum-concepts/scores-and-ratings/apdex-ratings.md "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.")
+* [Контекстный анализ Apdex](../../session-segmentation/apdex-analysis.md "Check Apdex rating for a user action, location, and application.")

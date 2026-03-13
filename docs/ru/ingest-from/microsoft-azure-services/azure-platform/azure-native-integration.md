@@ -25,7 +25,7 @@ scraped: 2026-03-05T21:35:50.024995
 
 * **Единый счёт:** Получайте единый счёт для всех ресурсов, потребляемых в Azure, включая все ресурсы Dynatrace SaaS.
 * **Единый вход:** Вам не нужны отдельные учётные данные для портала Dynatrace. Войдите один раз в портал Azure и плавно переходите в Dynatrace при необходимости.
-* **Мониторинг логов:** Обеспечивает пересылку логов активности подписки и логов ресурсов в Dynatrace. Подробнее см. в разделе [Классический мониторинг логов](/docs/analyze-explore-automate/log-monitoring "Узнайте, как включить мониторинг логов, какие возможности он предоставляет и многое другое.").
+* **Мониторинг логов:** Обеспечивает пересылку логов активности подписки и логов ресурсов в Dynatrace. Подробнее см. в разделе [Классический мониторинг логов](../../../analyze-explore-automate/log-monitoring.md "Узнайте, как включить мониторинг логов, какие возможности он предоставляет и многое другое.").
 
 * **Развёртывание OneAgent:** Вы получаете единый интерфейс управления Dynatrace OneAgent. Вы можете устанавливать и удалять Dynatrace OneAgent в качестве расширений для Azure Virtual Machines и Azure App Services.
 
@@ -75,7 +75,7 @@ az provider register --namespace Dynatrace.Observability --subscription <subscri
 
 Если вы используете Microsoft Entra ID в качестве поставщика удостоверений, вы можете настроить единый вход (SSO) из портала Azure в Dynatrace. Если вы используете другой поставщик удостоверений или не хотите настраивать SSO, вы можете пропустить этот раздел.
 
-Чтобы включить аутентификацию с единым входом для вашего ресурса Dynatrace, необходимо [настроить SSO в Microsoft Entra ID](/docs/manage/identity-access-management/user-and-group-management/access-saml/idp-specific/saml-azure#configuration "Узнайте, как настроить SSO Dynatrace в Azure.").
+Чтобы включить аутентификацию с единым входом для вашего ресурса Dynatrace, необходимо [настроить SSO в Microsoft Entra ID](../../../manage/identity-access-management/user-and-group-management/access-saml/idp-specific/saml-azure.md#configuration "Узнайте, как настроить SSO Dynatrace в Azure.").
 
 После настройки SSO в Active Directory вы можете включить SSO во время или после развёртывания интеграции Azure.
 
@@ -86,8 +86,8 @@ az provider register --namespace Dynatrace.Observability --subscription <subscri
 * Ресурс Dynatrace создаётся в подписке Azure и группе ресурсов, выбранных во время установки. Вы можете настраивать, управлять и устранять неполадки ресурса Dynatrace из портала Azure.
 * Среда Dynatrace создаётся в том же регионе Azure, в котором создаётся ресурс Dynatrace. В этой новой среде:
 
-  + После [установки OneAgent](#oa) вы можете начать мониторинг [метрик](/docs/analyze-explore-automate/metrics-classic "Узнайте о классических метриках, которые предлагает Dynatrace.") из ваших ресурсов Azure. Вы также можете собирать метрики из [сервисов по умолчанию](/docs/ingest-from/microsoft-azure-services/azure-platform/azure-native-integration#default "Настройте среду Dynatrace SaaS с помощью Azure Marketplace.")
-  + Вы можете собирать [логи](/docs/analyze-explore-automate/log-monitoring "Узнайте, как включить мониторинг логов, какие возможности он предоставляет и многое другое.") из ваших ресурсов Azure
+  + После [установки OneAgent](#oa) вы можете начать мониторинг [метрик](../../../analyze-explore-automate/metrics-classic.md "Узнайте о классических метриках, которые предлагает Dynatrace.") из ваших ресурсов Azure. Вы также можете собирать метрики из [сервисов по умолчанию](azure-native-integration.md#default "Настройте среду Dynatrace SaaS с помощью Azure Marketplace.")
+  + Вы можете собирать [логи](../../../analyze-explore-automate/log-monitoring.md "Узнайте, как включить мониторинг логов, какие возможности он предоставляет и многое другое.") из ваших ресурсов Azure
   + Для этой интеграции не требуется ActiveGate среды.
 
 Настройка интеграции
@@ -129,14 +129,14 @@ az provider register --namespace Dynatrace.Observability --subscription <subscri
 * Установка OneAgent
 * Управление настройками мониторинга
 
-Дополнительные сведения см. в разделе [Разрешения среды](/docs/manage/identity-access-management/permission-management/role-based-permissions#environment "Разрешения на основе ролей").
+Дополнительные сведения см. в разделе [Разрешения среды](../../../manage/identity-access-management/permission-management/role-based-permissions.md#environment "Разрешения на основе ролей").
 
 После развёртывания интеграции Azure вы можете:
 
 * Привязать дополнительные подписки Azure к только что созданной среде Dynatrace.
 * Привязать несколько сред Dynatrace к одной подписке Azure.
 
-  При привязке нескольких подписок Azure и создании ресурса у вас должны быть привилегии аккаунта Dynatrace `tenant-manage-settings` и разрешение `tenant-agent-install`. Дополнительные сведения о настройке этих разрешений см. в разделе [Разрешения на основе ролей](/docs/manage/identity-access-management/permission-management/role-based-permissions "Разрешения на основе ролей").
+  При привязке нескольких подписок Azure и создании ресурса у вас должны быть привилегии аккаунта Dynatrace `tenant-manage-settings` и разрешение `tenant-agent-install`. Дополнительные сведения о настройке этих разрешений см. в разделе [Разрешения на основе ролей](../../../manage/identity-access-management/permission-management/role-based-permissions.md "Разрешения на основе ролей").
 
 Выполните следующие шаги, повторяя процедуру для каждой подписки, которую необходимо привязать.
 
@@ -167,15 +167,15 @@ az provider register --namespace Dynatrace.Observability --subscription <subscri
 
 На портале Azure перейдите к ресурсу Dynatrace и выберите **Обзор**. Там будут отображены все сведения о вашей среде Dynatrace, включая прямые ссылки на следующие страницы веб-интерфейса:
 
-* **Панели мониторинга** — Подробнее см. в разделе [Классические панели мониторинга](/docs/analyze-explore-automate/dashboards-classic "Узнайте, как создавать, управлять и использовать классические панели мониторинга Dynatrace.").
-* **Просмотр логов** — Подробнее см. в разделе [Просмотр логов (Классические логи)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Узнайте, как использовать средство просмотра логов Dynatrace для анализа данных логов.").
-* **Топология Smartscape** — Подробнее см. в разделе [Визуализация среды через классический Smartscape](/docs/analyze-explore-automate/smartscape-classic "Узнайте, как классический Smartscape визуализирует все объекты и зависимости в вашей среде.").
+* **Панели мониторинга** — Подробнее см. в разделе [Классические панели мониторинга](../../../analyze-explore-automate/dashboards-classic.md "Узнайте, как создавать, управлять и использовать классические панели мониторинга Dynatrace.").
+* **Просмотр логов** — Подробнее см. в разделе [Просмотр логов (Классические логи)](../../../analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer.md "Узнайте, как использовать средство просмотра логов Dynatrace для анализа данных логов.").
+* **Топология Smartscape** — Подробнее см. в разделе [Визуализация среды через классический Smartscape](../../../analyze-explore-automate/smartscape-classic.md "Узнайте, как классический Smartscape визуализирует все объекты и зависимости в вашей среде.").
 
 ## Настройка метрик и логов
 
 ### Метрики
 
-* Вы можете активировать [метрики](/docs/analyze-explore-automate/metrics-classic "Узнайте о классических метриках, которые предлагает Dynatrace.") после развёртывания интеграции Azure.
+* Вы можете активировать [метрики](../../../analyze-explore-automate/metrics-classic.md "Узнайте о классических метриках, которые предлагает Dynatrace.") после развёртывания интеграции Azure.
 
 Сбор метрик с виртуальных машин и App Services
 
@@ -184,7 +184,7 @@ az provider register --namespace Dynatrace.Observability --subscription <subscri
 Сбор метрик из облачных сервисов
 
 Все сервисы и метрики включены по умолчанию. При необходимости их можно отключить, нажав кнопку удаления в списке сервисов.
-После подключения Dynatrace к вашей среде Azure он немедленно начинает мониторинг встроенных сервисов Azure для указанного субъекта-службы. [Классические (ранее «встроенные») метрики Azure](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/default-azure-metrics "Список классических метрик, которые Dynatrace собирает по умолчанию для мониторинга Azure.") содержит перечень метрик облачных сервисов Azure, отслеживаемых по умолчанию.
+После подключения Dynatrace к вашей среде Azure он немедленно начинает мониторинг встроенных сервисов Azure для указанного субъекта-службы. [Классические (ранее «встроенные») метрики Azure](../azure-integrations/azure-monitoring-guide/default-azure-metrics.md "Список классических метрик, которые Dynatrace собирает по умолчанию для мониторинга Azure.") содержит перечень метрик облачных сервисов Azure, отслеживаемых по умолчанию.
 
 ### Управление облачными сервисами
 
@@ -211,7 +211,7 @@ az provider register --namespace Dynatrace.Observability --subscription <subscri
 
 Список облачных сервисов Azure и собираемых метрик
 
-Для просмотра полного списка облачных сервисов Azure и метрик, собираемых для каждого из них, см. раздел [Все облачные сервисы Azure](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics "Мониторинг сервисов Azure с Dynatrace и просмотр доступных метрик.").
+Для просмотра полного списка облачных сервисов Azure и метрик, собираемых для каждого из них, см. раздел [Все облачные сервисы Azure](../azure-integrations/azure-cloud-services-metrics.md "Мониторинг сервисов Azure с Dynatrace и просмотр доступных метрик.").
 
 Кроме того, вы можете проверить список поддерживаемых Azure сервисов в Dynatrace Hub (выполните поиск по запросу **Azure**) или в [веб-версии Dynatrace Hub](https://www.dynatrace.com/hub/?query=azure).
 
@@ -230,7 +230,7 @@ az provider register --namespace Dynatrace.Observability --subscription <subscri
 
 ### Логи
 
-* Вы можете активировать [логи](/docs/analyze-explore-automate/log-monitoring "Узнайте, как включить мониторинг логов, какие возможности он предоставляет и многое другое.") как [во время развёртывания интеграции Azure](#setup), так и [после развёртывания](#how-to-logs).
+* Вы можете активировать [логи](../../../analyze-explore-automate/log-monitoring.md "Узнайте, как включить мониторинг логов, какие возможности он предоставляет и многое другое.") как [во время развёртывания интеграции Azure](#setup), так и [после развёртывания](#how-to-logs).
 
 Из Azure в Dynatrace можно отправлять два типа логов: [логи активности подписки](#activity) и [логи ресурсов Azure](#resource).
 
@@ -273,7 +273,7 @@ Azure Native Dynatrace Service использует токен доступа Dy
 
 ## Создание тегов
 
-* Вы можете создавать [теги](/docs/manage/tags-and-metadata/setup/how-to-define-tags "Узнайте, как определять и применять теги вручную и автоматически.") как [во время развёртывания интеграции Azure](#setup), так и [после развёртывания](#how-to-tags).
+* Вы можете создавать [теги](../../../manage/tags-and-metadata/setup/how-to-define-tags.md "Узнайте, как определять и применять теги вручную и автоматически.") как [во время развёртывания интеграции Azure](#setup), так и [после развёртывания](#how-to-tags).
 
 Вы можете применять теги к ресурсам Azure, группам ресурсов и подпискам для их логической организации в таксономию. Вы можете указать теги для нового ресурса Dynatrace в Azure, добавляя пользовательские пары ключ/значение:
 
@@ -306,7 +306,7 @@ Azure Native Dynatrace Service использует токен доступа Dy
 2. Выберите виртуальную машину из списка, на которую хотите установить расширение OneAgent.
 3. Выберите **Установить расширение**.
 4. Необязательно Укажите, следует ли включить аналитику логов.
-5. Необязательно Укажите [группу хостов](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Узнайте, как Dynatrace позволяет организовать хосты, процессы и сервисы с помощью групп хостов.") для OneAgent.
+5. Необязательно Укажите [группу хостов](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Узнайте, как Dynatrace позволяет организовать хосты, процессы и сервисы с помощью групп хостов.") для OneAgent.
 6. Выберите **ОК** для запуска процесса установки.
 7. После завершения установки **Статус OneAgent** для выбранной виртуальной машины отображается как **Установлен**.
 
@@ -317,7 +317,7 @@ Azure Native Dynatrace Service использует токен доступа Dy
 2. В списке выберите App Service, на который хотите установить расширение OneAgent.
 3. Выберите **Установить расширение**.
 4. Необязательно Укажите, следует ли включить аналитику логов.
-5. Необязательно Укажите [группу хостов](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Узнайте, как Dynatrace позволяет организовать хосты, процессы и сервисы с помощью групп хостов.") для OneAgent.
+5. Необязательно Укажите [группу хостов](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Узнайте, как Dynatrace позволяет организовать хосты, процессы и сервисы с помощью групп хостов.") для OneAgent.
 6. Выберите **ОК** для запуска процесса установки.
 7. После завершения установки **Статус OneAgent** для выбранного App Service отображается как **Установлен**.
 
@@ -326,7 +326,7 @@ Azure Native Dynatrace Service использует токен доступа Dy
 
 Если App Service не отображается в Dynatrace после включения интеграции, перезапустите план App Service.
 
-Для запуска OneAgent на масштабируемых наборах виртуальных машин с интеграцией Dynatrace Azure используйте [расширение Dynatrace OneAgent для виртуальных машин](#vm) и создайте [токен PaaS](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Узнайте о концепции токена доступа и его областях применения.").
+Для запуска OneAgent на масштабируемых наборах виртуальных машин с интеграцией Dynatrace Azure используйте [расширение Dynatrace OneAgent для виртуальных машин](#vm) и создайте [токен PaaS](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Узнайте о концепции токена доступа и его областях применения.").
 
 ## Удаление Azure Native Dynatrace Service
 
@@ -357,4 +357,4 @@ Azure Native Dynatrace Service использует токен доступа Dy
 
 ## Связанные темы
 
-* [Интеграции Microsoft Azure](/docs/ingest-from/microsoft-azure-services/azure-integrations "Настройте глубокий мониторинг кода Dynatrace в Azure с помощью OneAgent или OpenTelemetry.")
+* [Интеграции Microsoft Azure](../azure-integrations.md "Настройте глубокий мониторинг кода Dynatrace в Azure с помощью OneAgent или OpenTelemetry.")

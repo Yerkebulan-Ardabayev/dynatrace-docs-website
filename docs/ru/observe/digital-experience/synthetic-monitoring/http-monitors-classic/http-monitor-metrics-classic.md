@@ -13,7 +13,7 @@ scraped: 2026-03-05T21:34:57.630725
 * Время чтения: 1 мин
 * Опубликовано 04 декабря 2020 г.
 
-Следующие метрики фиксируются и отображаются для синтетических [HTTP-мониторов](/docs/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors "Узнайте о типах синтетических мониторов Dynatrace."):
+Следующие метрики фиксируются и отображаются для синтетических [HTTP-мониторов](../general-information/types-of-synthetic-monitors.md "Узнайте о типах синтетических мониторов Dynatrace."):
 
 Время ответа
 :   Измеряет производительность HTTP-монитора или события.

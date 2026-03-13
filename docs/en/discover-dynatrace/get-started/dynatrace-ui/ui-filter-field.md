@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:19:18.937696
 
 The filter field is a powerful UI component that enables you to quickly narrow down results and find relevant information within Dynatrace apps. Use the filter field when you need to search by specific attributes (like service name or status), combine multiple conditions with logical operators, or filter JSON data using dot or bracket notation.
 
-For complex queries beyond what the filter field offers, consider using [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") instead.
+For complex queries beyond what the filter field offers, consider using [Dynatrace Query Language (DQL)](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") instead.
 
 ## Anatomy
 
@@ -136,8 +136,8 @@ When using a variable like `$cluster`, the position of the `*` relative to the v
 
 #### Related content
 
-* [Variables in dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable "Add variables to your Dynatrace dashboards.")
-* [Variables in segments](/docs/manage/segments/concepts/segments-concepts-variables "Learn how variables help to form dynamic segments and reduce configuration effort and maintenance.")
+* [Variables in dashboards](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable.md "Add variables to your Dynatrace dashboards.")
+* [Variables in segments](../../../manage/segments/concepts/segments-concepts-variables.md "Learn how variables help to form dynamic segments and reduce configuration effort and maintenance.")
 
 ### Filtering JSON data
 

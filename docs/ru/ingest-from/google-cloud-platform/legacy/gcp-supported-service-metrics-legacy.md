@@ -15,17 +15,17 @@ scraped: 2026-03-06T21:37:42.319279
 * Deprecated
 
 Эта страница относится к поддерживаемым метрикам сервисов GCP для версии 0.1 интеграции GCP, которая запланирована к выводу из эксплуатации.
-Список поддерживаемых сервисов и их метрик для версии 1.0 интеграции GCP см. в разделе [Метрики сервисов Google Cloud (новая версия)](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new "Monitor Google Cloud services with Dynatrace and view available metrics.").
+Список поддерживаемых сервисов и их метрик для версии 1.0 интеграции GCP см. в разделе [Метрики сервисов Google Cloud (новая версия)](../gcp-integrations/gcp-supported-service-metrics-new.md "Monitor Google Cloud services with Dynatrace and view available metrics.").
 
 Dynatrace поддерживает все метрики, доступные в Google Operations API.
 
 ## Предварительные требования
 
-Разверните интеграцию Dynatrace [как функцию GCP](/docs/ingest-from/google-cloud-platform/legacy/deploy-with-google-cloud-function-legacy "Set up monitoring for Google Cloud services using a Google Cloud Function.") или [в контейнере Kubernetes](/docs/ingest-from/google-cloud-platform/legacy/deployment-k8s-container-legacy "Set up log and metric monitoring for GCP services in a Kubernetes container.").
+Разверните интеграцию Dynatrace [как функцию GCP](deploy-with-google-cloud-function-legacy.md "Set up monitoring for Google Cloud services using a Google Cloud Function.") или [в контейнере Kubernetes](deployment-k8s-container-legacy.md "Set up log and metric monitoring for GCP services in a Kubernetes container.").
 
 ## Поддерживаемые сервисы
 
-После развёртывания интеграции Dynatrace вы можете начать мониторинг поддерживаемых сервисов GCP. В таблице ниже показаны доступные конфигурации метрик[1](#fn-1-1-def) для каждого сервиса, включая потребление [Davis data units (DDUs)](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).")[2](#fn-1-2-def) на экземпляр в минуту.
+После развёртывания интеграции Dynatrace вы можете начать мониторинг поддерживаемых сервисов GCP. В таблице ниже показаны доступные конфигурации метрик[1](#fn-1-1-def) для каждого сервиса, включая потребление [Davis data units (DDUs)](../../../license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).")[2](#fn-1-2-def) на экземпляр в минуту.
 
 1
 
@@ -132,4 +132,4 @@ Dynatrace предоставляет предустановленные дашб
 
 ## Связанные темы
 
-* [Интеграции Google Cloud](/docs/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
+* [Интеграции Google Cloud](../gcp-integrations.md "Set up and configure Dynatrace on Google Cloud.")

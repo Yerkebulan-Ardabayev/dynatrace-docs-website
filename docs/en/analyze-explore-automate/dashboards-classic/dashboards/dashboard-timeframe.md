@@ -13,12 +13,12 @@ scraped: 2026-03-05T21:27:29.970843
 * 2-min read
 * Published Jul 19, 2017
 
-[Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+[Dashboards Classic](../../dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
 
 This page refers to classic dashboards created using the ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** functionality integrated with Dynatrace Classic.
 
-* If you're already using the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace, see [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") for related documentation.
-* If you're still using classic dashboards, we encourage you to [upgrade your dashboards](/docs/analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.") and benefit from all the latest dashboarding possibilities made available by the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace.
+* If you're already using the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace, see [Dashboards](../../dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") for related documentation.
+* If you're still using classic dashboards, we encourage you to [upgrade your dashboards](../dashboards-upgrade-classic-to-latest.md "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.") and benefit from all the latest dashboarding possibilities made available by the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace.
 
 The global selectors for timeframe and management zone are available for use across all pages and views. You'll find them in the upper-right corner.
 
@@ -60,7 +60,7 @@ The timeframe selector remembers up to 10 recently used timeframes.
 
 ## Default timeframe and management zone
 
-You can set a default timeframe and management zone for each dashboard; these are selected every time you open the dashboard. They're also used when you [share](/docs/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards "Learn how to share your Dynatrace dashboards with others.") the dashboard.
+You can set a default timeframe and management zone for each dashboard; these are selected every time you open the dashboard. They're also used when you [share](share-dashboards.md "Learn how to share your Dynatrace dashboards with others.") the dashboard.
 
 You can also specify a default timeframe and management zone for each tile.
 

@@ -13,9 +13,9 @@ scraped: 2026-03-06T21:25:49.968543
 * Чтение: 13 мин
 * Обновлено 8 октября 2025 г.
 
-Dynatrace обеспечивает интегрированное управление и аналитику логов для сред Kubernetes. Мы рекомендуем собирать логи в Kubernetes с помощью полностью управляемого [модуля логирования Dynatrace](/docs/ingest-from/setup-on-k8s/deployment/k8s-log-monitoring "Управление логами Kubernetes с помощью Dynatrace."), либо интегрированного в OneAgent, развёрнутый на узле (модуль логирования OneAgent), либо без OneAgent в виде автономного развёртывания (модуль логирования Kubernetes). Dynatrace Operator настраивает и управляет модулем логирования Dynatrace для обоих подходов. Альтернативно вы можете передавать логи в Dynatrace с помощью коллекторов логов, таких как [Fluent Bit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s "Интеграция Fluent Bit в Kubernetes для потоковой передачи логов в Dynatrace."), [Dynatrace OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Настройка OpenTelemetry Collector для обогащения OTLP-запросов данными Kubernetes."), [Logstash](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash "Интеграция Logstash для потоковой передачи логов с узлов и подов в Dynatrace.") или [Fluentd](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s "Интеграция Fluentd с Dynatrace для потоковой передачи логов с узлов и подов в Dynatrace.").
+Dynatrace обеспечивает интегрированное управление и аналитику логов для сред Kubernetes. Мы рекомендуем собирать логи в Kubernetes с помощью полностью управляемого [модуля логирования Dynatrace](../../../../ingest-from/setup-on-k8s/deployment/k8s-log-monitoring.md "Управление логами Kubernetes с помощью Dynatrace."), либо интегрированного в OneAgent, развёрнутый на узле (модуль логирования OneAgent), либо без OneAgent в виде автономного развёртывания (модуль логирования Kubernetes). Dynatrace Operator настраивает и управляет модулем логирования Dynatrace для обоих подходов. Альтернативно вы можете передавать логи в Dynatrace с помощью коллекторов логов, таких как [Fluent Bit](lma-fluent-bit-logs-k8s.md "Интеграция Fluent Bit в Kubernetes для потоковой передачи логов в Dynatrace."), [Dynatrace OpenTelemetry Collector](../../../../ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich.md "Настройка OpenTelemetry Collector для обогащения OTLP-запросов данными Kubernetes."), [Logstash](../lma-stream-logs-with-logstash.md "Интеграция Logstash для потоковой передачи логов с узлов и подов в Dynatrace.") или [Fluentd](../lma-stream-logs-fluentd-k8s.md "Интеграция Fluentd с Dynatrace для потоковой передачи логов с узлов и подов в Dynatrace.").
 
-На этой странице вы узнаете о расширенной настройке модуля логирования OneAgent и модуля логирования Kubernetes для приёма логов из Kubernetes. Чтобы узнать о различных **вариантах развёртывания, поддерживаемых платформах и средах выполнения**, см. страницу [Мониторинг логов Kubernetes](/docs/ingest-from/setup-on-k8s/deployment/k8s-log-monitoring "Управление логами Kubernetes с помощью Dynatrace.").
+На этой странице вы узнаете о расширенной настройке модуля логирования OneAgent и модуля логирования Kubernetes для приёма логов из Kubernetes. Чтобы узнать о различных **вариантах развёртывания, поддерживаемых платформах и средах выполнения**, см. страницу [Мониторинг логов Kubernetes](../../../../ingest-from/setup-on-k8s/deployment/k8s-log-monitoring.md "Управление логами Kubernetes с помощью Dynatrace.").
 
 ## Автоматическое обнаружение логов контейнеров Kubernetes
 
@@ -23,7 +23,7 @@ Dynatrace обеспечивает интегрированное управле
 
 Модуль логирования Dynatrace не обнаруживает логи, записанные в файловую систему контейнера (в отличие от stdout/stderr). В этом случае вы можете использовать логшиппер для чтения логов из файловой системы контейнера и записи их в stdout/stderr, чтобы модуль логирования Dynatrace мог их подобрать.
 
-Для модуля логирования OneAgent мы рекомендуем проверить флаг функции [Сбор всех логов контейнеров](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-feature-flags#collect-all-container-logs "Включение или отключение определённых функций модуля логирования OneAgent и модуля логирования Dynatrace для Kubernetes.") в настройках, чтобы обеспечить наилучший охват логов в Kubernetes. Модуль логирования Kubernetes всегда собирает все логи контейнеров.
+Для модуля логирования OneAgent мы рекомендуем проверить флаг функции [Сбор всех логов контейнеров](lma-feature-flags.md#collect-all-container-logs "Включение или отключение определённых функций модуля логирования OneAgent и модуля логирования Dynatrace для Kubernetes.") в настройках, чтобы обеспечить наилучший охват логов в Kubernetes. Модуль логирования Kubernetes всегда собирает все логи контейнеров.
 
 ## Обогащение логов метаданными Kubernetes
 
@@ -31,12 +31,12 @@ Dynatrace обеспечивает интегрированное управле
 
 Кроме того, любые аннотации подов, начинающиеся с префикса `metadata.dynatrace.com/`, добавляются к записям логов.
 
-Дополнительно вы можете использовать существующие аннотации и метки Kubernetes для обогащения логов. Подробнее см. [Обогащение метаданными для Kubernetes](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment "Руководства по обогащению телеметрии в Kubernetes").
+Дополнительно вы можете использовать существующие аннотации и метки Kubernetes для обогащения логов. Подробнее см. [Обогащение метаданными для Kubernetes](../../../../ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment.md "Руководства по обогащению телеметрии в Kubernetes").
 
 ## Управление приёмом логов с помощью метаданных Kubernetes
 
 Вы можете управлять приёмом логов из Kubernetes с помощью правил приёма логов в Dynatrace. Эти правила можно настраивать на уровне кластера Kubernetes для специфического приёма логов по кластерам. Правила используют условия сопоставления для метаданных Kubernetes и других общих атрибутов записей логов, чтобы определить, какие логи должны быть приняты.
-Стандартные функции обработки логов OneAgent, включая [маскирование конфиденциальных данных](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking "Маскирование конфиденциальной информации в данных логов."), [настройку меток времени](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration "Определение конкретного формата даты с помощью правил меток времени."), [определение границ записей логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-entry-boundary "Определение конкретного формата даты с помощью правил меток времени.") и [автоматическое обогащение](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa "Автоматическое преобразование данных логов для атрибута уровня лога.") записей логов, также доступны и включены здесь.
+Стандартные функции обработки логов OneAgent, включая [маскирование конфиденциальных данных](lma-sensitive-data-masking.md "Маскирование конфиденциальной информации в данных логов."), [настройку меток времени](lma-timestamp-configuration.md "Определение конкретного формата даты с помощью правил меток времени."), [определение границ записей логов](lma-log-entry-boundary.md "Определение конкретного формата даты с помощью правил меток времени.") и [автоматическое обогащение](lma-log-data-transformation-oa.md "Автоматическое преобразование данных логов для атрибута уровня лога.") записей логов, также доступны и включены здесь.
 
 Используйте следующие рекомендуемые атрибуты сопоставления при настройке приёма логов из Kubernetes.
 
@@ -46,7 +46,7 @@ Dynatrace обеспечивает интегрированное управле
 
 2
 
-Атрибут уровня записи лога, преобразованный модулем логирования Dynatrace, отличается от атрибута `status` лога, преобразованного сервером Dynatrace. Подробнее см. на странице [Автоматическое обогащение логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa#transform-all-types-of-logs "Автоматическое преобразование данных логов для атрибута уровня лога.").
+Атрибут уровня записи лога, преобразованный модулем логирования Dynatrace, отличается от атрибута `status` лога, преобразованного сервером Dynatrace. Подробнее см. на странице [Автоматическое обогащение логов](lma-log-data-transformation-oa.md#transform-all-types-of-logs "Автоматическое преобразование данных логов для атрибута уровня лога.").
 
 ### Иерархия правил приёма логов
 
@@ -61,13 +61,13 @@ Dynatrace обеспечивает интегрированное управле
 
 Чтобы предотвратить непреднамеренный приём всех логов из-за правила **Ingest all**, включённого на уровне среды, мы рекомендуем добавить правило **Exclude everything** в конце конфигурации на уровне кластера. Это гарантирует, что любые несопоставленные логи будут явно исключены. Без этого правила приёма логов, определённые на уровне среды, будут далее обрабатываться модулем логирования Dynatrace, и логи будут приняты, если условия совпадут.
 
-Ознакомьтесь с [областями конфигурации](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration#configuration-scopes "Включение и исключение конкретных источников логов для хранения и анализа.") для трёх областей иерархии конфигурации.
+Ознакомьтесь с [областями конфигурации](lma-log-storage-configuration.md#configuration-scopes "Включение и исключение конкретных источников логов для хранения и анализа.") для трёх областей иерархии конфигурации.
 
 ## Сценарии использования
 
 Изучите следующие сценарии использования для приёма логов из сред Kubernetes с помощью Dynatrace. Настраивая приём логов с различными условиями сопоставления, вы можете контролировать, какие логи фиксируются в системе. Приведённые ниже сценарии помогут настроить Dynatrace для сбора логов в соответствии с вашими конкретными потребностями мониторинга — будь то из определённого пространства имён, контейнера или по другим критериям.
 
-Подробные инструкции по настройке приёма логов см. в [Правила приёма логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Включение и исключение конкретных источников логов для хранения и анализа.").
+Подробные инструкции по настройке приёма логов см. в [Правила приёма логов](lma-log-storage-configuration.md "Включение и исключение конкретных источников логов для хранения и анализа.").
 
 ### Приём всех логов из определённого пространства имён
 
@@ -146,8 +146,8 @@ Dynatrace обеспечивает интегрированное управле
 
 Чтобы создать правило приёма логов с помощью API:
 
-1. [Создайте токен доступа](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с областями **Write settings** (`settings.write`) и **Read settings** (`settings.read`).
-2. Используйте эндпоинт [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "Просмотр схемы настроек через Dynatrace API."), чтобы узнать формат JSON, необходимый для отправки конфигурации. Идентификатор схемы правил приёма логов (`schemaId`) — `builtin:logmonitoring.log-storage-settings`. Пример JSON-полезной нагрузки с правилами приёма логов:
+1. [Создайте токен доступа](../../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с областями **Write settings** (`settings.write`) и **Read settings** (`settings.read`).
+2. Используйте эндпоинт [GET a schema](../../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "Просмотр схемы настроек через Dynatrace API."), чтобы узнать формат JSON, необходимый для отправки конфигурации. Идентификатор схемы правил приёма логов (`schemaId`) — `builtin:logmonitoring.log-storage-settings`. Пример JSON-полезной нагрузки с правилами приёма логов:
 
    ```
    {
@@ -294,11 +294,11 @@ Dynatrace обеспечивает интегрированное управле
 }]
 ```
 
-Подробнее о приёме логов см. на странице [Правила приёма логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration#faq "Включение и исключение конкретных источников логов для хранения и анализа.").
+Подробнее о приёме логов см. на странице [Правила приёма логов](lma-log-storage-configuration.md#faq "Включение и исключение конкретных источников логов для хранения и анализа.").
 
 ## Устранение неполадок
 
-Посетите Dynatrace Community для руководств по устранению неполадок, а также см. [Устранение неполадок Log Management and Analytics](/docs/analyze-explore-automate/logs/lma-troubleshooting "Решение проблем, связанных с настройкой и конфигурацией Log Management and Analytics.").
+Посетите Dynatrace Community для руководств по устранению неполадок, а также см. [Устранение неполадок Log Management and Analytics](../../lma-troubleshooting.md "Решение проблем, связанных с настройкой и конфигурацией Log Management and Analytics.").
 
 * [Почему мои логи не видны в Dynatrace?](https://community.dynatrace.com/t5/Troubleshooting/Why-my-logs-are-not-visible-in-Dynatrace/ta-p/242716)
 * [Приём логов в K8s с Dynatrace](https://community.dynatrace.com/t5/Troubleshooting/Logs-Ingest-on-K8s-with-Dynatrace/ta-p/285827)

@@ -25,8 +25,8 @@ To access profiling and optimization options
 
 [### Memory dumps
 
-Trigger and analyze Java, .NET, and Node.js memory dumps.](/docs/observe/application-observability/profiling-and-optimization/memory-dump-analysis "Learn how Dynatrace enables you to trigger, download and analyze memory dumps for Java and Node.js.")[### CPU profiling
+Trigger and analyze Java, .NET, and Node.js memory dumps.](profiling-and-optimization/memory-dump-analysis.md "Learn how Dynatrace enables you to trigger, download and analyze memory dumps for Java and Node.js.")[### CPU profiling
 
-Understand and analyze the CPU usage of your processes down to the code level.](/docs/observe/application-observability/profiling-and-optimization/cpu-profiling "Learn how you can use Dynatrace to perform enhanced code analysis.")[### Process crashes
+Understand and analyze the CPU usage of your processes down to the code level.](profiling-and-optimization/cpu-profiling.md "Learn how you can use Dynatrace to perform enhanced code analysis.")[### Process crashes
 
-Track all application crashes and enable analysis.](/docs/observe/application-observability/profiling-and-optimization/crash-analysis "Learn how Dynatrace can help you gain insight into process crashes.")
+Track all application crashes and enable analysis.](profiling-and-optimization/crash-analysis.md "Learn how Dynatrace can help you gain insight into process crashes.")

@@ -40,7 +40,7 @@ This extension collects infrastructure metrics to monitor the health and perform
 
 Activate the extension in your environment using the in-product Hub, provide the necessary device configuration, and you're all set up.
 
-For details, see the [SNMP extension data source documentation](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions "Learn how to create an SNMP extension using the Extensions framework.").
+For details, see the [SNMP extension data source documentation](../../../ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions.md "Learn how to create an SNMP extension using the Extensions framework.").
 
 ## Details
 

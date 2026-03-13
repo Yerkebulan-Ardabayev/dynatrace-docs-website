@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:23:41.794802
 * How-to guide
 * Обновлено 25 авг. 2025
 
-Эта страница была обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и действий, необходимых для выполнения миграции, описан в [руководстве по миграции таблиц безопасности Grail](/docs/secure/threat-observability/migration "Ознакомьтесь с изменениями в новой таблице безопасности Grail и узнайте, как выполнить миграцию.").
+Эта страница была обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и действий, необходимых для выполнения миграции, описан в [руководстве по миграции таблиц безопасности Grail](../migration.md "Ознакомьтесь с изменениями в новой таблице безопасности Grail и узнайте, как выполнить миграцию.").
 
 Загружайте результаты безопасности AWS Security Hub и анализируйте их в Dynatrace.
 
@@ -20,15 +20,15 @@ scraped: 2026-03-06T21:23:41.794802
 
 ### Обзор
 
-Далее вы узнаете, как загрузить результаты безопасности из [AWS Security Hub](https://dt-url.net/wv03w0h) в [Grail](/docs/platform/grail "Информация о том, что и как можно запрашивать из данных Dynatrace.") и анализировать их на платформе Dynatrace, чтобы получать аналитику Dynatrace для результатов безопасности AWS Security Hub и единообразно визуализировать, анализировать и автоматизировать результаты безопасности на платформе Dynatrace.
+Далее вы узнаете, как загрузить результаты безопасности из [AWS Security Hub](https://dt-url.net/wv03w0h) в [Grail](../../../platform/grail.md "Информация о том, что и как можно запрашивать из данных Dynatrace.") и анализировать их на платформе Dynatrace, чтобы получать аналитику Dynatrace для результатов безопасности AWS Security Hub и единообразно визуализировать, анализировать и автоматизировать результаты безопасности на платформе Dynatrace.
 
 ### Сценарии использования
 
 С загруженными данными вы можете реализовать различные сценарии использования, например:
 
 * [Загрузка и обогащение результатов AWS Security Hub с помощью Dynatrace](https://dt-url.net/t703wux)
-* [Визуализация и анализ результатов безопасности](/docs/secure/use-cases/visualize-and-analyze-security-findings "Визуализируйте, приоритизируйте и анализируйте загруженные результаты безопасности.")
-* [Автоматизация и оркестрация результатов безопасности](/docs/secure/use-cases/automate-and-orchestrate-security-findings "Регулярно проверяйте критические результаты безопасности и получайте автоматические тикеты Jira или оповещения Slack.")
+* [Визуализация и анализ результатов безопасности](../../use-cases/visualize-and-analyze-security-findings.md "Визуализируйте, приоритизируйте и анализируйте загруженные результаты безопасности.")
+* [Автоматизация и оркестрация результатов безопасности](../../use-cases/automate-and-orchestrate-security-findings.md "Регулярно проверяйте критические результаты безопасности и получайте автоматические тикеты Jira или оповещения Slack.")
 
 ### Требования
 
@@ -52,15 +52,15 @@ scraped: 2026-03-06T21:23:41.794802
 
 * Разрешения:
 
-  + Вам нужен пользователь с правами администратора, чтобы определить пользовательскую политику с [разрешением `app-engine:apps:install`](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#app-engine-apps-install "Полный справочник политик IAM и соответствующих условий для всех сервисов Dynatrace.") для установки приложения. Подробнее см. [Доступ к Dynatrace](/docs/manage/identity-access-management/permission-management/default-policies#access "Справочник политик по умолчанию Dynatrace").
+  + Вам нужен пользователь с правами администратора, чтобы определить пользовательскую политику с [разрешением `app-engine:apps:install`](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#app-engine-apps-install "Полный справочник политик IAM и соответствующих условий для всех сервисов Dynatrace.") для установки приложения. Подробнее см. [Доступ к Dynatrace](../../../manage/identity-access-management/permission-management/default-policies.md#access "Справочник политик по умолчанию Dynatrace").
   + Для запросов к загруженным данным: `storage:security.events:read`.
 * Токены:
 
-  + Сгенерируйте токен доступа с областью действия `openpipeline.events_security` и сохраните его для дальнейшего использования. Подробнее см. [Dynatrace API — Токены и аутентификация](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования Dynatrace API.").
+  + Сгенерируйте токен доступа с областью действия `openpipeline.events_security` и сохраните его для дальнейшего использования. Подробнее см. [Dynatrace API — Токены и аутентификация](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования Dynatrace API.").
 
 ## Активация и настройка
 
-1. В Dynatrace откройте [**Hub**](/docs/manage/hub "Информация о Dynatrace Hub.").
+1. В Dynatrace откройте [**Hub**](../../../manage/hub.md "Информация о Dynatrace Hub.").
 2. Найдите **AWS Security Hub** и выберите **Install**.
 3. Выберите **Set up**, затем выберите **Configure new connection**.
 4. Следуйте инструкциям на экране для настройки загрузки.
@@ -73,13 +73,13 @@ scraped: 2026-03-06T21:23:41.794802
 
 1. События загружаются в Dynatrace
 
-События результатов безопасности из AWS Security Hub загружаются в Dynatrace через выделенную конечную точку загрузки безопасности [OpenPipeline](/docs/platform/openpipeline "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.") с использованием пересылки событий [Amazon EventBridge](https://dt-url.net/qi03wtk), настроенной с помощью шаблона [AWS CloudFormation](https://dt-url.net/e603poa).
+События результатов безопасности из AWS Security Hub загружаются в Dynatrace через выделенную конечную точку загрузки безопасности [OpenPipeline](../../../platform/openpipeline.md "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.") с использованием пересылки событий [Amazon EventBridge](https://dt-url.net/qi03wtk), настроенной с помощью шаблона [AWS CloudFormation](https://dt-url.net/e603poa).
 
 2. Результаты безопасности обрабатываются и сохраняются в Grail
 
 Конечная точка загрузки OpenPipeline обрабатывает и сопоставляет результаты безопасности в соответствии с [соглашениями семантического словаря](https://dt-url.net/3q03pb0).
 
-Они хранятся в корзине (bucket) с именем `default_securityevents` (подробнее см. [Встроенные корзины Grail](/docs/platform/grail/organize-data#built-in-grail-buckets "Информация о модели данных Grail, состоящей из корзин, таблиц и представлений.")).
+Они хранятся в корзине (bucket) с именем `default_securityevents` (подробнее см. [Встроенные корзины Grail](../../../platform/grail/organize-data.md#built-in-grail-buckets "Информация о модели данных Grail, состоящей из корзин, таблиц и представлений.")).
 
 ### Мониторинг данных
 
@@ -98,21 +98,21 @@ scraped: 2026-03-06T21:23:41.794802
 
 ### Визуализация и анализ результатов
 
-Вы можете создавать собственные [дашборды](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") или использовать наши шаблоны для визуализации и анализа результатов уязвимостей контейнеров.
+Вы можете создавать собственные [дашборды](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") или использовать наши шаблоны для визуализации и анализа результатов уязвимостей контейнеров.
 
 1. В **Settings** откройте **AWS Security Hub**.
 2. В разделе **Try our templates** выберите нужный шаблон дашборда.
 
 ### Автоматизация и оркестрация результатов
 
-Вы можете создавать собственные [рабочие процессы](/docs/analyze-explore-automate/workflows "Автоматизируйте IT-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.") или использовать наши шаблоны для автоматизации и оркестрации результатов уязвимостей контейнеров.
+Вы можете создавать собственные [рабочие процессы](../../../analyze-explore-automate/workflows.md "Автоматизируйте IT-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.") или использовать наши шаблоны для автоматизации и оркестрации результатов уязвимостей контейнеров.
 
 1. В **Settings** откройте **AWS Security Hub**.
 2. В разделе **Try our templates** выберите нужный шаблон рабочего процесса.
 
 ### Запрос загруженных данных
 
-Вы можете запрашивать загруженные данные в [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь аналитикой из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.") или [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Объединяйте функциональность Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и охоту за угрозами."), используя формат данных из [семантического словаря](https://dt-url.net/3q03pb0).
+Вы можете запрашивать загруженные данные в [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь аналитикой из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.") или [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../investigations.md "Объединяйте функциональность Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и охоту за угрозами."), используя формат данных из [семантического словаря](https://dt-url.net/3q03pb0).
 
 1. В **Settings** откройте **AWS Security Hub**.
 2. Выберите **Open with**.
@@ -120,7 +120,7 @@ scraped: 2026-03-06T21:23:41.794802
 
 ### Оценка, приоритизация и расследование результатов обнаружения
 
-Вы можете оценивать, приоритизировать и расследовать результаты обнаружения с помощью [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Понимайте, приоритизируйте и расследуйте результаты обнаружения и оповещения.").
+Вы можете оценивать, приоритизировать и расследовать результаты обнаружения с помощью [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](../../threats-and-exploits.md "Понимайте, приоритизируйте и расследуйте результаты обнаружения и оповещения.").
 
 1. Откройте ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**.
 2. Отфильтруйте по **Provider** > **AWS Security Hub**.
@@ -323,7 +323,7 @@ experimental
 
 ### Лицензирование и стоимость
 
-Информацию о тарификации см. в разделе [События на базе Grail](/docs/license/capabilities/events "Узнайте, как рассчитывается потребление событий Dynatrace на базе Grail в модели подписки на платформу Dynatrace.").
+Информацию о тарификации см. в разделе [События на базе Grail](../../../license/capabilities/events.md "Узнайте, как рассчитывается потребление событий Dynatrace на базе Grail в модели подписки на платформу Dynatrace.").
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -333,6 +333,6 @@ experimental
 
 ## Связанные темы
 
-* [OpenPipeline](/docs/platform/openpipeline "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")
-* [События безопасности](/docs/semantic-dictionary/model/security-events "Ознакомьтесь с моделями семантического словаря, связанными с событиями безопасности.")
+* [OpenPipeline](../../../platform/openpipeline.md "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.")
+* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
+* [События безопасности](../../../semantic-dictionary/model/security-events.md "Ознакомьтесь с моделями семантического словаря, связанными с событиями безопасности.")

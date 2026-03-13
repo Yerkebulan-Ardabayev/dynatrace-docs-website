@@ -12,7 +12,7 @@ scraped: 2026-03-05T21:27:06.244954
 * Обновлено 22 марта 2023 г.
 * Устарело
 
-Этот API устарел. Используйте вместо него [API мониторируемых сущностей](/docs/dynatrace-api/environment-api/entity-v2 "Узнайте об API мониторируемых сущностей Dynatrace."). Дополнительную информацию о переходе на новый API можно найти в [руководстве по миграции](/docs/dynatrace-api/basics/deprecation-migration-guides/topology-v1-to-entity-v2 "Перенесите вашу автоматизацию на API мониторируемых сущностей.").
+Этот API устарел. Используйте вместо него [API мониторируемых сущностей](../../entity-v2.md "Узнайте об API мониторируемых сущностей Dynatrace."). Дополнительную информацию о переходе на новый API можно найти в [руководстве по миграции](../../../basics/deprecation-migration-guides/topology-v1-to-entity-v2.md "Перенесите вашу автоматизацию на API мониторируемых сущностей.").
 
 Получает параметры указанного сервиса.
 
@@ -27,7 +27,7 @@ scraped: 2026-03-05T21:27:06.244954
 
 Для выполнения этого запроса необходим токен доступа с областью действия `DataExport`.
 
-Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 
@@ -701,4 +701,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/services/SERVICE-72503CBDD2
 
 ## Связанные темы
 
-* [Сервисы](/docs/observe/application-observability/services "Узнайте, как мониторить и анализировать ваши сервисы, определять и использовать атрибуты запросов и многое другое.")
+* [Сервисы](../../../../observe/application-observability/services.md "Узнайте, как мониторить и анализировать ваши сервисы, определять и использовать атрибуты запросов и многое другое.")

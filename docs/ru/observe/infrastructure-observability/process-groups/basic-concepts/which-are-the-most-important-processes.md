@@ -17,11 +17,11 @@ scraped: 2026-03-06T21:13:05.291736
 
 В разделе **Process analysis** также можно просмотреть различные экземпляры групп процессов, классифицированные по типу технологии.
 
-Подробнее см. в разделе [Анализ процессов](/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring#process-analysis "Monitor hosts with Dynatrace.").
+Подробнее см. в разделе [Анализ процессов](../../hosts/monitoring/host-monitoring.md#process-analysis "Monitor hosts with Dynatrace.").
 
 Чтобы процессы отображались в этом разделе, они должны соответствовать хотя бы одному из следующих критериев:
 
-* Процессы, являющиеся [поддерживаемыми приложениями](/docs/ingest-from/technology-support#applications-services-and-databases "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+* Процессы, являющиеся [поддерживаемыми приложениями](../../../../ingest-from/technology-support.md#applications-services-and-databases "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 * Процессы с открытым TCP-портом прослушивания
 * Процессы, для которых выполняется хотя бы одно из следующих условий не менее чем в 3 из последних 5 одноминутных интервалов:
 
@@ -30,7 +30,7 @@ scraped: 2026-03-06T21:13:05.291736
   + **Network Traffic > 5%**
 * Процессы, определённые пользователем как важные, например, путём включения Log Monitoring для процесса.
 
-Dynatrace также предоставляет возможность [мониторинга конкретных процессов, не подпадающих ни под одну из этих категорий](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection").
+Dynatrace также предоставляет возможность [мониторинга конкретных процессов, не подпадающих ни под одну из этих категорий](../configuration/pg-detection.md "Ways to customize process-group detection").
 
 Все процессы, не соответствующие перечисленным критериям и поэтому не считающиеся важными, агрегируются и помечаются как **Other processes**.
 

@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:16:36.669068
 * 2-min read
 * Published Mar 01, 2018
 
-Dynatrace provides extensive monitoring capabilities for nearly all popular languages and technologies, including Java, .NET, Node.js, PHP, and Golang. See our [our supported technologies page](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.") for details about all supported technologies.
+Dynatrace provides extensive monitoring capabilities for nearly all popular languages and technologies, including Java, .NET, Node.js, PHP, and Golang. See our [our supported technologies page](../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.") for details about all supported technologies.
 
 The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module available yet. With the SDK, you get full access to all analysis and monitoring functionality, including auto-baselining and AI-based root cause analysis.
 
@@ -35,7 +35,7 @@ More functionality will be added to the OneAgent SDK over time. The feature sets
 
 With the Dynatrace OneAgent SDK, you can't:
 
-* Create user sessions and user actions: This functionality is provided by [Dynatrace OpenKit](/docs/ingest-from/extend-dynatrace/openkit "Learn how you can instrument your application using OpenKit, how you can use Dynatrace OpenKit API methods, and more.")
+* Create user sessions and user actions: This functionality is provided by [Dynatrace OpenKit](../openkit.md "Learn how you can instrument your application using OpenKit, how you can use Dynatrace OpenKit API methods, and more.")
 
 ## How to use the Dynatrace OneAgent SDK
 
@@ -67,7 +67,7 @@ The Dynatrace OneAgent SDK is published directly to GitHub together with the tec
 
 ## Related topics
 
-* [Instrumentation via OneAgent SDK for Android](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android "Learn how to enrich mobile user experience monitoring in Android using OneAgent SDK.")
-* [OneAgent SDK for iOS](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios "Enrich mobile user experience monitoring using OneAgent SDK for iOS.")
-* [OneAgent](/docs/platform/oneagent "Learn the monitoring capabilities of OneAgent.")
-* [Dynatrace OneAgent](/docs/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
+* [Instrumentation via OneAgent SDK for Android](../../../observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android.md "Learn how to enrich mobile user experience monitoring in Android using OneAgent SDK.")
+* [OneAgent SDK for iOS](../../../observe/digital-experience/mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios.md "Enrich mobile user experience monitoring using OneAgent SDK for iOS.")
+* [OneAgent](../../../platform/oneagent.md "Learn the monitoring capabilities of OneAgent.")
+* [Dynatrace OneAgent](../../dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")

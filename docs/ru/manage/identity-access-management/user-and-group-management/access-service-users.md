@@ -19,7 +19,7 @@ scraped: 2026-03-04T21:39:01.387067
 
 Сервисный пользователь — это неинтерактивный пользователь: он не может войти в Dynatrace и не связан с реальным человеком. У него есть собственные разрешения на управление идентификацией и доступом, назначенные напрямую.
 
-Сервисного пользователя можно выбрать в качестве исполнителя [рабочего процесса](/docs/analyze-explore-automate/workflows/security#service-users "Руководство по аспектам безопасности автоматизации рабочих процессов в Dynatrace Workflows") или [пользовательского оповещения](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app#service-user "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection.").
+Сервисного пользователя можно выбрать в качестве исполнителя [рабочего процесса](../../../analyze-explore-automate/workflows/security.md#service-users "Руководство по аспектам безопасности автоматизации рабочих процессов в Dynatrace Workflows") или [пользовательского оповещения](../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md#service-user "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection.").
 
 ## Сценарий использования
 
@@ -67,8 +67,8 @@ scraped: 2026-03-04T21:39:01.387067
 
 Это разрешение предоставляется следующими политиками по умолчанию:
 
-* [Dynatrace Pro User](/docs/manage/identity-access-management/permission-management/default-policies#DynatraceAccessProUser "Справочник по политикам Dynatrace по умолчанию")
-* [Dynatrace Admin User](/docs/manage/identity-access-management/permission-management/default-policies#DynatraceAccessAdminUser "Справочник по политикам Dynatrace по умолчанию")
+* [Dynatrace Pro User](../permission-management/default-policies.md#DynatraceAccessProUser "Справочник по политикам Dynatrace по умолчанию")
+* [Dynatrace Admin User](../permission-management/default-policies.md#DynatraceAccessAdminUser "Справочник по политикам Dynatrace по умолчанию")
 
 ## Создание политик на основе сервисного пользователя
 

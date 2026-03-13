@@ -34,15 +34,15 @@ The same disk space requirements apply to both Full-stack and Infrastructure mon
 
 1
 
-Use the [INSTALL\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#installation-path "Learn how to use the OneAgent installer for Windows.") installation parameter.
+Use the [INSTALL\_PATH](customize-oneagent-installation-on-windows.md#installation-path "Learn how to use the OneAgent installer for Windows.") installation parameter.
 
 2
 
-Use the [LOG\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#log-path "Learn how to use the OneAgent installer for Windows.") installation parameter.
+Use the [LOG\_PATH](customize-oneagent-installation-on-windows.md#log-path "Learn how to use the OneAgent installer for Windows.") installation parameter.
 
 3
 
-Use the [DATA\_STORAGE](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#data-storage "Learn how to use the OneAgent installer for Windows.") installation parameter.
+Use the [DATA\_STORAGE](customize-oneagent-installation-on-windows.md#data-storage "Learn how to use the OneAgent installer for Windows.") installation parameter.
 
 4
 
@@ -50,17 +50,17 @@ The size depends on the number of ingested logs.
 
 5
 
-Applicable only if you use Dynatrace Extensions that [define the log metrics, events, or add their own log processing rules](/docs/ingest-from/extensions/advanced-configuration/extension-customize#log-metrics-events-and-processing-rules "Learn how to instrument your extensions to customize how the ingested data is handled by Dynatrace."). Can be changed via support request.
+Applicable only if you use Dynatrace Extensions that [define the log metrics, events, or add their own log processing rules](../../../../extensions/advanced-configuration/extension-customize.md#log-metrics-events-and-processing-rules "Learn how to instrument your extensions to customize how the ingested data is handled by Dynatrace."). Can be changed via support request.
 
 6
 
 The reliability mechanism does not work if the requirement is not met. For more information, see [Persistence details](#persistence).
 
-For a complete list of files and directories added to your system by OneAgent, see [OneAgent security on Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows "Learn about Dynatrace OneAgent security and modifications to your Windows-based system").
+For a complete list of files and directories added to your system by OneAgent, see [OneAgent security on Windows](oneagent-security-windows.md "Learn about Dynatrace OneAgent security and modifications to your Windows-based system").
 
 ## OneAgent files aging mechanism
 
-OneAgent in full-stack monitoring mode uses a built-in aging mechanism to ensure that the OneAgent files, including log files and runtime data, are kept within a reasonable size. For more information, see [OneAgent file aging mechanism](/docs/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism "Learn how OneAgent deletes old files to minimize disk space usage.").
+OneAgent in full-stack monitoring mode uses a built-in aging mechanism to ensure that the OneAgent files, including log files and runtime data, are kept within a reasonable size. For more information, see [OneAgent file aging mechanism](../../../oneagent-aging-mechanism.md "Learn how OneAgent deletes old files to minimize disk space usage.").
 
 ## Space required for updates
 

@@ -61,7 +61,7 @@ state:user-app-states:write
 
 ### На что следует обратить внимание
 
-Если вы не можете получить доступ к ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**, убедитесь, что у вас есть необходимые [разрешения](#permissions), в частности начинающиеся с `extensions:configuration` и `extensions:definitions`. Дополнительную информацию см. в разделах [Работа с политиками](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Работа с политиками") и [Политика IAM — права на чтение и запись конфигураций расширений](https://community.dynatrace.com/t5/Dynatrace-tips/IAM-Policy-Read-and-write-permissions-on-extensions/m-p/220907) в Dynatrace Community.
+Если вы не можете получить доступ к ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**, убедитесь, что у вас есть необходимые [разрешения](#permissions), в частности начинающиеся с `extensions:configuration` и `extensions:definitions`. Дополнительную информацию см. в разделах [Работа с политиками](../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Работа с политиками") и [Политика IAM — права на чтение и запись конфигураций расширений](https://community.dynatrace.com/t5/Dynatrace-tips/IAM-Policy-Read-and-write-permissions-on-extensions/m-p/220907) в Dynatrace Community.
 
 ## Обзор
 
@@ -102,11 +102,11 @@ Dynatrace Hub проверяет архив и структуру расшире
 
 Ваше расширение появляется в Dynatrace Hub. Следующий шаг — предоставить конфигурацию мониторинга для вашего расширения. Подробные шаги зависят от источника данных вашего расширения. Дополнительную информацию см. в:
 
-* [Расширения SNMP](/docs/ingest-from/extensions/supported-extensions/data-sources/snmp#activate-extension "Узнайте, как расширить наблюдаемость в Dynatrace с помощью декларативного приёма метрик и событий SNMP.")
-* [Расширения WMI](/docs/ingest-from/extensions/supported-extensions/data-sources/wmi#activate-extension "Узнайте, как расширить наблюдаемость в Dynatrace с помощью декларативного приёма метрик WMI.")
-* [Расширения Prometheus](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions#activate-extension "Узнайте, как расширить наблюдаемость в Dynatrace с помощью декларативного приёма метрик Prometheus.")
-* [Расширения Oracle SQL](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql#activate-extension "Узнайте, как расширить наблюдаемость в Dynatrace с помощью декларативного приёма метрик из Oracle Database.")
-* [Расширения Microsoft SQL](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql#activate-extension "Расширьте наблюдаемость в Dynatrace с помощью декларативного приёма метрик из Microsoft SQL Server.")
+* [Расширения SNMP](supported-extensions/data-sources/snmp.md#activate-extension "Узнайте, как расширить наблюдаемость в Dynatrace с помощью декларативного приёма метрик и событий SNMP.")
+* [Расширения WMI](supported-extensions/data-sources/wmi.md#activate-extension "Узнайте, как расширить наблюдаемость в Dynatrace с помощью декларативного приёма метрик WMI.")
+* [Расширения Prometheus](../extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions.md#activate-extension "Узнайте, как расширить наблюдаемость в Dynatrace с помощью декларативного приёма метрик Prometheus.")
+* [Расширения Oracle SQL](supported-extensions/data-sources/sql/oraclesql.md#activate-extension "Узнайте, как расширить наблюдаемость в Dynatrace с помощью декларативного приёма метрик из Oracle Database.")
+* [Расширения Microsoft SQL](supported-extensions/data-sources/sql/microsoft-sql.md#activate-extension "Расширьте наблюдаемость в Dynatrace с помощью декларативного приёма метрик из Microsoft SQL Server.")
 
 ### Обновление расширения из Dynatrace Hub
 
@@ -135,7 +135,7 @@ Dynatrace Hub проверяет архив и структуру расшире
 
 ### Разрешения API
 
-* Вам нужен [токен API](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования Dynatrace API.") со следующими разрешениями для управления жизненным циклом расширения:
+* Вам нужен [токен API](../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования Dynatrace API.") со следующими разрешениями для управления жизненным циклом расширения:
 
   + API v2
 
@@ -176,8 +176,8 @@ curl -X POST "https://{env-id}.live.dynatrace.com/api/v2/extensions" \
 
 Замените:
 
-* `{env-id}` на ваш [идентификатор среды](/docs/discover-dynatrace/get-started/monitoring-environment "Описание работы со средами мониторинга.").
-* `{api-token}` на [токен API](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с необходимыми [разрешениями](#prerequisites).
+* `{env-id}` на ваш [идентификатор среды](../../discover-dynatrace/get-started/monitoring-environment.md "Описание работы со средами мониторинга.").
+* `{api-token}` на [токен API](../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с необходимыми [разрешениями](#prerequisites).
 * `MyCustomExtension.zip` на фактическое имя файла вашего пакета расширения.
 
 После успешной загрузки Dynatrace API возвращает основные сведения о расширении, включая имя расширения, версию и минимальную версию Dynatrace, необходимую для запуска расширения:
@@ -266,8 +266,8 @@ curl -X PUT "https://{env-id}.live.dynatrace.com/api/v2/extensions/{extensionNam
 
 Замените:
 
-* `{env-id}` на ваш [идентификатор среды](/docs/discover-dynatrace/get-started/monitoring-environment "Описание работы со средами мониторинга.").
-* `{api-token}` на [токен API](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с необходимыми [разрешениями](#prerequisites).
+* `{env-id}` на ваш [идентификатор среды](../../discover-dynatrace/get-started/monitoring-environment.md "Описание работы со средами мониторинга.").
+* `{api-token}` на [токен API](../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с необходимыми [разрешениями](#prerequisites).
 * `{extensionName}` на фактическое имя расширения.
 * `{version}` на версию расширения, которую хотите активировать.
 
@@ -305,11 +305,11 @@ curl -X POST "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName>/moni
 
 Замените:
 
-* `{env-id}` на ваш [идентификатор среды](/docs/discover-dynatrace/get-started/monitoring-environment "Описание работы со средами мониторинга.").
-* `{api-token}` на [токен API](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с необходимыми [разрешениями](#prerequisites).
+* `{env-id}` на ваш [идентификатор среды](../../discover-dynatrace/get-started/monitoring-environment.md "Описание работы со средами мониторинга.").
+* `{api-token}` на [токен API](../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с необходимыми [разрешениями](#prerequisites).
 * `{extensionName}` на фактическое имя расширения.
 * `{version}` на версию расширения, которую хотите активировать.
-* `{monitoring-configuration}` на имя файла, содержащего JSON-тело с конфигурацией мониторинга. Подробности о формате см. в разделе [SNMP](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions#monitoring-configuration "Узнайте, как создать расширение SNMP с помощью фреймворка Extensions.").
+* `{monitoring-configuration}` на имя файла, содержащего JSON-тело с конфигурацией мониторинга. Подробности о формате см. в разделе [SNMP](develop-your-extensions/data-sources/snmp-extensions.md#monitoring-configuration "Узнайте, как создать расширение SNMP с помощью фреймворка Extensions.").
 
 После успешного вызова Dynatrace API возвращает объект `MonitoringConfigurationResponse`. Например:
 
@@ -325,7 +325,7 @@ curl -X POST "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName>/moni
 ]
 ```
 
-Через несколько минут перейдите в [Обозреватель метрик](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Просматривайте метрики с помощью обозревателя метрик Dynatrace.") и найдите метрики, определённые для вашего расширения.
+Через несколько минут перейдите в [Обозреватель метрик](../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Просматривайте метрики с помощью обозревателя метрик Dynatrace.") и найдите метрики, определённые для вашего расширения.
 
 ### Обновление расширения через Dynatrace API
 
@@ -341,7 +341,7 @@ curl -X POST "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName>/moni
 
 * После успешной загрузки Dynatrace API возвращает основные сведения о расширении, включая версию.
 * Найдите версию в файле `extension.yaml` внутри пакета расширения.
-* Выполните вызов API [Получить версии расширения](/docs/dynatrace-api/environment-api/extensions-20/extensions/get-extension-versions "Используйте Dynatrace Extensions 2.0 API для просмотра всех доступных версий расширения.").
+* Выполните вызов API [Получить версии расширения](../../dynatrace-api/environment-api/extensions-20/extensions/get-extension-versions.md "Используйте Dynatrace Extensions 2.0 API для просмотра всех доступных версий расширения.").
 
 Выполните следующую команду для активации новой версии. В этом примере используется URL Dynatrace SaaS.
 
@@ -367,8 +367,8 @@ curl -X PUT "https://{env-id}.live.dynatrace.com/api/v2/extensions/{extensionNam
 
 Замените:
 
-* `{env-id}` на ваш [идентификатор среды](/docs/discover-dynatrace/get-started/monitoring-environment "Описание работы со средами мониторинга.").
-* `{api-token}` на [токен API](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с необходимыми [разрешениями](#prerequisites).
+* `{env-id}` на ваш [идентификатор среды](../../discover-dynatrace/get-started/monitoring-environment.md "Описание работы со средами мониторинга.").
+* `{api-token}` на [токен API](../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с необходимыми [разрешениями](#prerequisites).
 * `{extensionName}` на фактическое имя расширения.
 * `{version}` на версию расширения, которую хотите активировать.
 
@@ -382,11 +382,11 @@ curl -X PUT "https://{env-id}.live.dynatrace.com/api/v2/extensions/{extensionNam
 
 ### Удаление расширения через Dynatrace API
 
-Если вы загрузили несколько версий расширения, необходимо удалить все версии для полного удаления расширения из вашей среды. Вы можете использовать [GET версий расширения](/docs/dynatrace-api/environment-api/extensions-20/extensions/get-extension-versions "Используйте Dynatrace Extensions 2.0 API для просмотра всех доступных версий расширения.") для получения списка всех версий расширения, доступных в вашей среде.
+Если вы загрузили несколько версий расширения, необходимо удалить все версии для полного удаления расширения из вашей среды. Вы можете использовать [GET версий расширения](../../dynatrace-api/environment-api/extensions-20/extensions/get-extension-versions.md "Используйте Dynatrace Extensions 2.0 API для просмотра всех доступных версий расширения.") для получения списка всех версий расширения, доступных в вашей среде.
 
 #### Удаление конфигурации среды через API
 
-Для удаления текущей активной конфигурации среды используйте [DELETE конфигурации среды](/docs/dynatrace-api/environment-api/extensions-20/environment-configurations/del-deactivate-env-config "Удаление текущей активной конфигурации среды расширения через Dynatrace Extensions 2.0 API."). В этом примере используется URL Dynatrace SaaS.
+Для удаления текущей активной конфигурации среды используйте [DELETE конфигурации среды](../../dynatrace-api/environment-api/extensions-20/environment-configurations/del-deactivate-env-config.md "Удаление текущей активной конфигурации среды расширения через Dynatrace Extensions 2.0 API."). В этом примере используется URL Dynatrace SaaS.
 
 ```
 curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/environmentConfiguration" \
@@ -402,8 +402,8 @@ curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/en
 
 Замените:
 
-* `{env-id}` на ваш [идентификатор среды](/docs/discover-dynatrace/get-started/monitoring-environment "Описание работы со средами мониторинга.").
-* `{api-token}` на [токен API](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с необходимыми [разрешениями](#prerequisites).
+* `{env-id}` на ваш [идентификатор среды](../../discover-dynatrace/get-started/monitoring-environment.md "Описание работы со средами мониторинга.").
+* `{api-token}` на [токен API](../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с необходимыми [разрешениями](#prerequisites).
 * `{extensionName}` на фактическое имя расширения.
 
 После успешной деактивации Dynatrace API возвращает версию деактивированного расширения. Например:
@@ -414,7 +414,7 @@ curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/en
 
 #### Удаление версии расширения через API
 
-Для удаления версии расширения используйте [DELETE версии расширения](/docs/dynatrace-api/environment-api/extensions-20/extensions/del-version "Удаление расширения из вашей среды через Dynatrace Extensions 2.0 API."). В этом примере используется URL Dynatrace SaaS.
+Для удаления версии расширения используйте [DELETE версии расширения](../../dynatrace-api/environment-api/extensions-20/extensions/del-version.md "Удаление расширения из вашей среды через Dynatrace Extensions 2.0 API."). В этом примере используется URL Dynatrace SaaS.
 
 ```
 curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/{version}" \
@@ -430,8 +430,8 @@ curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/{v
 
 Замените:
 
-* `{env-id}` на ваш [идентификатор среды](/docs/discover-dynatrace/get-started/monitoring-environment "Описание работы со средами мониторинга.").
-* `{api-token}` на [токен API](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с необходимыми [разрешениями](#prerequisites).
+* `{env-id}` на ваш [идентификатор среды](../../discover-dynatrace/get-started/monitoring-environment.md "Описание работы со средами мониторинга.").
+* `{api-token}` на [токен API](../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с необходимыми [разрешениями](#prerequisites).
 * `{extensionName}` на фактическое имя расширения.
 * `{version}` на версию расширения, которую хотите удалить.
 

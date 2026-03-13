@@ -23,44 +23,44 @@ scraped: 2026-03-04T21:36:56.983118
 
 Кратко, вы будете:
 
-1. [Создавать простой рабочий процесс](/docs/analyze-explore-automate/workflows/simple-workflow#create-simple-workflow "Создайте и запустите простой рабочий процесс.").
-2. Добавлять [триггер события](/docs/analyze-explore-automate/workflows/trigger/event-trigger "Руководство по созданию триггеров событий автоматизации рабочих процессов в Dynatrace Workflows.") для [проблем Davis](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Руководство по созданию триггеров событий автоматизации рабочих процессов в Dynatrace Workflows.").
-3. Настроить [сообщение Slack](/docs/analyze-explore-automate/workflows/actions/slack "Отправка сообщений в рабочие пространства Slack").
+1. [Создавать простой рабочий процесс](../workflows/simple-workflow.md#create-simple-workflow "Создайте и запустите простой рабочий процесс.").
+2. Добавлять [триггер события](../workflows/trigger/event-trigger.md "Руководство по созданию триггеров событий автоматизации рабочих процессов в Dynatrace Workflows.") для [проблем Davis](../workflows/trigger/event-trigger.md#davis-problem-trigger "Руководство по созданию триггеров событий автоматизации рабочих процессов в Dynatrace Workflows.").
+3. Настроить [сообщение Slack](../workflows/actions/slack.md "Отправка сообщений в рабочие пространства Slack").
 4. Сохранить и запустить рабочий процесс для получения уведомлений.
 5. Проверить, что ваш рабочий процесс работает как ожидалось.
 
 ## Предварительные требования
 
 * У вас должно быть разрешение на настройку и запуск простого рабочего процесса.
-  Например, разрешение, предоставляемое политикой по умолчанию для [стандартного пользователя](/docs/manage/identity-access-management/permission-management/default-policies "Справочник по политикам Dynatrace по умолчанию").
-* Вы должны выбрать необходимые разрешения в [настройках авторизации](/docs/analyze-explore-automate/workflows/security#authorization-settings "Руководство по аспектам безопасности автоматизации рабочих процессов в Dynatrace Workflows").
+  Например, разрешение, предоставляемое политикой по умолчанию для [стандартного пользователя](../../manage/identity-access-management/permission-management/default-policies.md "Справочник по политикам Dynatrace по умолчанию").
+* Вы должны выбрать необходимые разрешения в [настройках авторизации](../workflows/security.md#authorization-settings "Руководство по аспектам безопасности автоматизации рабочих процессов в Dynatrace Workflows").
 
   + Вы должны разрешить необходимые права для
 
     - Доступа к ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Рабочим процессам**.
     - Записи и выполнения рабочего процесса.
-      Дополнительную информацию см. в [настройках авторизации](/docs/analyze-explore-automate/workflows/security#user-permission "Руководство по аспектам безопасности автоматизации рабочих процессов в Dynatrace Workflows").
-* Вы [настроили интеграцию со Slack](/docs/analyze-explore-automate/workflows/actions/slack#setup-slack-integration "Отправка сообщений в рабочие пространства Slack").
+      Дополнительную информацию см. в [настройках авторизации](../workflows/security.md#user-permission "Руководство по аспектам безопасности автоматизации рабочих процессов в Dynatrace Workflows").
+* Вы [настроили интеграцию со Slack](../workflows/actions/slack.md#setup-slack-integration "Отправка сообщений в рабочие пространства Slack").
 
 ## Шаги
 
-1. [Создайте простой рабочий процесс](/docs/analyze-explore-automate/workflows/simple-workflow#create-simple-workflow "Создайте и запустите простой рабочий процесс.").
+1. [Создайте простой рабочий процесс](../workflows/simple-workflow.md#create-simple-workflow "Создайте и запустите простой рабочий процесс.").
 
    1. Перейдите в ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Рабочие процессы**.
    2. Нажмите ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Рабочий процесс** в верхнем правом углу страницы.
    3. Выберите заголовок рабочего процесса.
       По умолчанию это `Untitled workflow`, и введите понятное имя.
       Тип рабочего процесса по умолчанию установлен как простой рабочий процесс.
-2. Добавьте [триггер события](/docs/analyze-explore-automate/workflows/trigger/event-trigger "Руководство по созданию триггеров событий автоматизации рабочих процессов в Dynatrace Workflows.") для [проблем Davis](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Руководство по созданию триггеров событий автоматизации рабочих процессов в Dynatrace Workflows.").
+2. Добавьте [триггер события](../workflows/trigger/event-trigger.md "Руководство по созданию триггеров событий автоматизации рабочих процессов в Dynatrace Workflows.") для [проблем Davis](../workflows/trigger/event-trigger.md#davis-problem-trigger "Руководство по созданию триггеров событий автоматизации рабочих процессов в Dynatrace Workflows.").
 
-   1. В разделе **Выберите триггер** выберите [триггер проблемы Davis](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Руководство по созданию триггеров событий автоматизации рабочих процессов в Dynatrace Workflows.").
+   1. В разделе **Выберите триггер** выберите [триггер проблемы Davis](../workflows/trigger/event-trigger.md#davis-problem-trigger "Руководство по созданию триггеров событий автоматизации рабочих процессов в Dynatrace Workflows.").
    2. Установите **Состояние проблемы** на **активная или закрытая**.
       Эта опция означает, что проблема может быть как активной, так и закрытой.
       Эта настройка заставляет рабочий процесс запускаться дважды: один раз, когда проблема становится активной, и ещё раз, когда она закрывается.
    3. В выпадающем списке **Категория события** выберите **Выбрать все**.
    4. Опционально — выберите **Запросить прошлые события**, чтобы увидеть самые последние события проблем, которые запустили бы этот рабочий процесс.
    5. Опционально — введите **Теги сущностей** или **Дополнительный пользовательский запрос-фильтр**, чтобы запускать рабочий процесс только для релевантных проблем.
-3. Настройте [сообщение Slack](/docs/analyze-explore-automate/workflows/actions/slack "Отправка сообщений в рабочие пространства Slack").
+3. Настройте [сообщение Slack](../workflows/actions/slack.md "Отправка сообщений в рабочие пространства Slack").
 
    1. Нажмите ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Добавить задачу** на узле триггера.
    2. В разделе **Выберите действие** выберите тип действия ![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector") **Отправить сообщение**.
@@ -246,6 +246,6 @@ scraped: 2026-03-04T21:36:56.983118
 
 ## Связанные темы
 
-* [Создание простого рабочего процесса в Dynatrace Workflows](/docs/analyze-explore-automate/workflows/simple-workflow "Создайте и запустите простой рабочий процесс.")
-* [Приложение Problems](/docs/dynatrace-intelligence/davis-problems-app "Используйте приложение Problems для быстрого определения коренной причины инцидентов в вашей среде.")
-* [Коннектор Slack](/docs/analyze-explore-automate/workflows/actions/slack "Отправка сообщений в рабочие пространства Slack")
+* [Создание простого рабочего процесса в Dynatrace Workflows](../workflows/simple-workflow.md "Создайте и запустите простой рабочий процесс.")
+* [Приложение Problems](../../dynatrace-intelligence/davis-problems-app.md "Используйте приложение Problems для быстрого определения коренной причины инцидентов в вашей среде.")
+* [Коннектор Slack](../workflows/actions/slack.md "Отправка сообщений в рабочие пространства Slack")

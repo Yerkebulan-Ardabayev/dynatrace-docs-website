@@ -16,7 +16,7 @@ Dynatrace поддерживает полноуровневый монитори
 
 ## Интеграции
 
-Существует два подхода к развёртыванию релиза OneAgent BOSH: [неизменяемый](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry#immutable "Install OneAgent on Cloud Foundry with BOSH.") и [облегчённый](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry#lightweight "Install OneAgent on Cloud Foundry with BOSH."). Различия между этими подходами описаны ниже.
+Существует два подхода к развёртыванию релиза OneAgent BOSH: [неизменяемый](cloud-foundry/deploy-oneagent-on-cloud-foundry.md#immutable "Install OneAgent on Cloud Foundry with BOSH.") и [облегчённый](cloud-foundry/deploy-oneagent-on-cloud-foundry.md#lightweight "Install OneAgent on Cloud Foundry with BOSH."). Различия между этими подходами описаны ниже.
 
 Неизменяемый релиз
 
@@ -32,26 +32,26 @@ Dynatrace поддерживает полноуровневый монитори
 
 Если у вас нет доступа к BOSH, Dynatrace предлагает два различных подхода для мониторинга только приложений:
 
-* [OneAgent на Cloud Foundry](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring "Install OneAgent on Cloud Foundry.")
-* [OneAgent на SAP Business Technology Platform](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-sap-cloud-platform-for-application-only-monitoring "Install OneAgent on SAP Business Technology Platform.")
+* [OneAgent на Cloud Foundry](cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring.md "Install OneAgent on Cloud Foundry.")
+* [OneAgent на SAP Business Technology Platform](cloud-foundry/deploy-oneagent-on-sap-cloud-platform-for-application-only-monitoring.md "Install OneAgent on SAP Business Technology Platform.")
 
 ## Конфигурация
 
-[Подключение кластеров Cloud Foundry к Dynatrace](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/connect-your-cloud-foundry-foundations-to-dynatrace "Enable monitoring on your Cloud Foundry foundations.")
+[Подключение кластеров Cloud Foundry к Dynatrace](cloud-foundry/connect-your-cloud-foundry-foundations-to-dynatrace.md "Enable monitoring on your Cloud Foundry foundations.")
 
-[Установка плитки дашборда Dynatrace Service Broker для Cloud Foundry](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/install-the-service-broker-for-cloud-foundry-dashboard-tile "Install and configure the Dynatrace Service Broker for VMware Tanzu Platform dashboard tile.")
+[Установка плитки дашборда Dynatrace Service Broker для Cloud Foundry](cloud-foundry/install-the-service-broker-for-cloud-foundry-dashboard-tile.md "Install and configure the Dynatrace Service Broker for VMware Tanzu Platform dashboard tile.")
 
 ## Обслуживание
 
-[Обновление OneAgent на Cloud Foundry](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/update-oneagent-on-cloud-foundry "Update OneAgent on Cloud Foundry based on different deployment strategies.")
+[Обновление OneAgent на Cloud Foundry](cloud-foundry/update-oneagent-on-cloud-foundry.md "Update OneAgent on Cloud Foundry based on different deployment strategies.")
 
-[Удаление OneAgent с Cloud Foundry](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/uninstall-oneagent-from-cloud-foundry "Uninstall OneAgent from Cloud Foundry for BOSH add-ons.").
+[Удаление OneAgent с Cloud Foundry](cloud-foundry/uninstall-oneagent-from-cloud-foundry.md "Uninstall OneAgent from Cloud Foundry for BOSH add-ons.").
 
 ## Устранение неполадок
 
-[Устранение проблем при развёртывании OneAgent на Cloud Foundry](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/troubleshoot-cf "Troubleshoot deployment problems on Cloud Foundry.")
+[Устранение проблем при развёртывании OneAgent на Cloud Foundry](cloud-foundry/troubleshoot-cf.md "Troubleshoot deployment problems on Cloud Foundry.")
 
 ## Связанные темы
 
 * [Мониторинг Cloud Foundryï»¿](https://www.dynatrace.com/technologies/cloud-foundry-monitoring/)
-* [Мониторинг Cloud Foundry](/docs/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.")
+* [Мониторинг Cloud Foundry](../../observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring.md "Monitor Cloud Foundry with Dynatrace.")

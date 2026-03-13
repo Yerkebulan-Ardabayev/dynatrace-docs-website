@@ -29,7 +29,7 @@ scraped: 2026-03-06T21:18:45.069779
 
 1
 
-Используйте параметр установки [INSTALL\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix#installation-path "Узнайте, как использовать установщик AIX с параметрами командной строки.").
+Используйте параметр установки [INSTALL\_PATH](customize-oneagent-installation-on-aix.md#installation-path "Узнайте, как использовать установщик AIX с параметрами командной строки.").
 
 2
 
@@ -37,11 +37,11 @@ scraped: 2026-03-06T21:18:45.069779
 
 3
 
-Используйте параметр установки [LOG\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix#log-path "Узнайте, как использовать установщик AIX с параметрами командной строки.").
+Используйте параметр установки [LOG\_PATH](customize-oneagent-installation-on-aix.md#log-path "Узнайте, как использовать установщик AIX с параметрами командной строки.").
 
 4
 
-Используйте параметр установки [DATA\_STORAGE](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix#data-storage "Узнайте, как использовать установщик AIX с параметрами командной строки.").
+Используйте параметр установки [DATA\_STORAGE](customize-oneagent-installation-on-aix.md#data-storage "Узнайте, как использовать установщик AIX с параметрами командной строки.").
 
 5
 
@@ -49,17 +49,17 @@ scraped: 2026-03-06T21:18:45.069779
 
 6
 
-Применимо только при использовании расширений Dynatrace, которые [определяют метрики логов, события или добавляют собственные правила обработки логов](/docs/ingest-from/extensions/advanced-configuration/extension-customize#log-metrics-events-and-processing-rules "Узнайте, как инструментировать расширения для настройки обработки принимаемых данных в Dynatrace."). Может быть изменено через запрос в службу поддержки.
+Применимо только при использовании расширений Dynatrace, которые [определяют метрики логов, события или добавляют собственные правила обработки логов](../../../../extensions/advanced-configuration/extension-customize.md#log-metrics-events-and-processing-rules "Узнайте, как инструментировать расширения для настройки обработки принимаемых данных в Dynatrace."). Может быть изменено через запрос в службу поддержки.
 
 7
 
 Механизм надёжности не работает, если требование не выполнено. Для получения дополнительной информации см. [Подробности хранения данных](#persistence).
 
-Полный список файлов и каталогов, добавляемых OneAgent в вашу систему, см. в разделе [Безопасность OneAgent на AIX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix "Узнайте о безопасности Dynatrace OneAgent и изменениях в вашей системе на базе AIX.").
+Полный список файлов и каталогов, добавляемых OneAgent в вашу систему, см. в разделе [Безопасность OneAgent на AIX](oneagent-security-aix.md "Узнайте о безопасности Dynatrace OneAgent и изменениях в вашей системе на базе AIX.").
 
 ## Механизм устаревания файлов OneAgent
 
-OneAgent в режиме мониторинга Full-Stack использует встроенный механизм устаревания для поддержания разумного размера файлов OneAgent, включая файлы логов и данные среды выполнения. Для получения дополнительной информации см. [Механизм устаревания файлов OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism "Узнайте, как OneAgent удаляет старые файлы для минимизации использования дискового пространства.").
+OneAgent в режиме мониторинга Full-Stack использует встроенный механизм устаревания для поддержания разумного размера файлов OneAgent, включая файлы логов и данные среды выполнения. Для получения дополнительной информации см. [Механизм устаревания файлов OneAgent](../../../oneagent-aging-mechanism.md "Узнайте, как OneAgent удаляет старые файлы для минимизации использования дискового пространства.").
 
 ## Пространство, необходимое для обновлений
 

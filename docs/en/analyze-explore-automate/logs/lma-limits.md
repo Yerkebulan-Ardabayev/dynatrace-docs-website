@@ -51,7 +51,7 @@ A log request may increase in size due to the following reasons:
 * Missing content attributes in ingested log records: If a log ingested through the Log Ingestion API endpoint does not have a content-like attribute, this attribute will be added after ingestion.
 * For logs ingested via the OTLP endpoint, resource and scope attributes are copied to each individual log record.
 
-Check your access to OpenPipeline in [Log processing with OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.").
+Check your access to OpenPipeline in [Log processing with OpenPipeline](lma-log-processing/lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.").
 
 ## Log ingestion latency
 
@@ -75,10 +75,10 @@ Number of metrics is limited to:
 
 ## Log ingestion API request objects
 
-In addition to generic Dynatrace API limitations ([Dynatrace API - Access limit](/docs/dynatrace-api/basics/access-limit "Find out about payload limits and request throttling that may affect your use of the Dynatrace API.")) the following log ingestion API specific limits apply:
+In addition to generic Dynatrace API limitations ([Dynatrace API - Access limit](../../dynatrace-api/basics/access-limit.md "Find out about payload limits and request throttling that may affect your use of the Dynatrace API.")) the following log ingestion API specific limits apply:
 
-* `LogMessageJson` JSON object. See [Ingest JSON and TXT logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.") for the complete list of keys and their descriptions.
-* `LogMessageOTLP` OpenTelemetry Protocol object. See [Ingest OTLP logs](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
+* `LogMessageJson` JSON object. See [Ingest JSON and TXT logs](lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.") for the complete list of keys and their descriptions.
+* `LogMessageOTLP` OpenTelemetry Protocol object. See [Ingest OTLP logs](../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
 
 ## Limits for your log autodiscovery when using OneAgent
 

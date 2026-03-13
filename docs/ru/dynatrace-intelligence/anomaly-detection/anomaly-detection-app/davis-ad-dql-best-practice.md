@@ -158,5 +158,5 @@ timeseries {cpu_usage = avg(dt.host.cpu.usage), value.A = avg(dt.host.cpu.usage,
 
 ## Связанные темы
 
-* [Приложение Anomaly Detection](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")
+* [Приложение Anomaly Detection](../anomaly-detection-app.md "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection.")
+* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")

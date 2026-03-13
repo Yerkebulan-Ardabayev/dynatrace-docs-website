@@ -54,7 +54,7 @@ Dynatrace Collector можно развернуть для следующих п
 
 Перед развёртыванием Collector необходимо настроить необходимые секреты Kubernetes для данных доступа Dynatrace.
 
-Используйте kubectl для создания секретов Kubernetes для параметров экспорта Dynatrace. Замените заполнители (обозначенные фигурными скобками) фактическими значениями для [URL экспорта и API-токена](/docs/ingest-from/opentelemetry/otlp-api "Узнайте о конечных точках OTLP API, используемых приложением для экспорта данных OpenTelemetry в Dynatrace.").
+Используйте kubectl для создания секретов Kubernetes для параметров экспорта Dynatrace. Замените заполнители (обозначенные фигурными скобками) фактическими значениями для [URL экспорта и API-токена](../otlp-api.md "Узнайте о конечных точках OTLP API, используемых приложением для экспорта данных OpenTelemetry в Dynatrace.").
 
 ```
 kubectl create secret generic dynatrace-otelcol-dt-api-credentials --from-literal=DT_ENDPOINT={ENDPOINT_URL_HERE} --from-literal=DT_API_TOKEN={API_TOKEN_HERE}
@@ -1412,7 +1412,7 @@ name: dynatrace-otel-collector-config
 
 Service account
 
-В Kubernetes часто используется обогащение сигналов OpenTelemetry с помощью [процессора Kubernetes Attributes](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Настройка OpenTelemetry Collector для обогащения OTLP-запросов данными Kubernetes."). Для этого требуется service account Kubernetes, который автоматически настраивается при использовании Operator или Helm.
+В Kubernetes часто используется обогащение сигналов OpenTelemetry с помощью [процессора Kubernetes Attributes](use-cases/kubernetes/k8s-enrich.md "Настройка OpenTelemetry Collector для обогащения OTLP-запросов данными Kubernetes."). Для этого требуется service account Kubernetes, который автоматически настраивается при использовании Operator или Helm.
 
 Для необработанных манифестов это нужно настроить вручную, добавив запись `spec.serviceAccountName: collector` в манифест развёртывания.
 
@@ -1424,7 +1424,7 @@ Service account
 docker pull ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.44.0
 ```
 
-Затем убедитесь, что [файл конфигурации Collector](/docs/ingest-from/opentelemetry/collector/configuration "Настройка OpenTelemetry Collector.") существует в текущем рабочем каталоге, и запустите образ Collector следующей командой:
+Затем убедитесь, что [файл конфигурации Collector](configuration.md "Настройка OpenTelemetry Collector.") существует в текущем рабочем каталоге, и запустите образ Collector следующей командой:
 
 ```
 docker run -v $(pwd)/otel-collector-config.yaml:/etc/otelcol/otel-collector-config.yaml ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.44.0 --config=/etc/otelcol/otel-collector-config.yaml
@@ -1530,7 +1530,7 @@ rpm -ivh dynatrace-otel-collector_<VERSION>_Linux_<ARCH>.rpm
 
 #### Конфигурация сервиса
 
-При первом запуске сервис может не запуститься, если [файл конфигурации](/docs/ingest-from/opentelemetry/collector/configuration "Настройка OpenTelemetry Collector.") ещё не создан. По умолчанию Collector ищет файл по пути `/etc/dynatrace-otel-collector/config.yaml`.
+При первом запуске сервис может не запуститься, если [файл конфигурации](configuration.md "Настройка OpenTelemetry Collector.") ещё не создан. По умолчанию Collector ищет файл по пути `/etc/dynatrace-otel-collector/config.yaml`.
 
 Пользовательское расположение конфигурации
 

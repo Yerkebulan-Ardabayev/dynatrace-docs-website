@@ -22,7 +22,7 @@ Dynatrace получает метрики из Azure Metrics API для Translat
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг службы, см. [Включение мониторинга службы](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+Чтобы узнать, как включить мониторинг службы, см. [Включение мониторинга службы](../azure-monitoring-guide/azure-enable-service-monitoring.md "Enable Azure monitoring in Dynatrace.").
 
 ## Просмотр метрик службы
 

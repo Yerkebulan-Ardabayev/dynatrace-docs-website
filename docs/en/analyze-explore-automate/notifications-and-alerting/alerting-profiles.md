@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:21:41.046909
 * 4-min read
 * Updated on Aug 26, 2025
 
-Problem alerting profiles control the delivery of problem notifications across your organization's alerting channels based on consideration of predefined filters that are based on problem severity, problem duration, custom events, and tags. Problem alerting profiles allow you to control exactly which conditions result in problem notifications and which don't. This includes all problem-push notifications that are sent via the [Dynatrace mobile app](/docs/analyze-explore-automate/notifications-and-alerting/push-notifications-via-the-dynatrace-mobile-app "Learn how you can connect your Dynatrace environments with the Dynatrace mobile app to receive problem alerts.") and displayed in the Dynatrace web UI. Problem alerting profiles can also be used to set up filtered problem-notification integrations with third-party messaging systems like [Slack](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration "Set up a Slack problem-notification integration that can keep you updated on all Dynatrace problems."), [Opsgenie](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration "Configure Opsgenie integration with Dynatrace."), and [PagerDuty](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration "Learn how to send problem notifications from Dynatrace to PagerDuty.").
+Problem alerting profiles control the delivery of problem notifications across your organization's alerting channels based on consideration of predefined filters that are based on problem severity, problem duration, custom events, and tags. Problem alerting profiles allow you to control exactly which conditions result in problem notifications and which don't. This includes all problem-push notifications that are sent via the [Dynatrace mobile app](push-notifications-via-the-dynatrace-mobile-app.md "Learn how you can connect your Dynatrace environments with the Dynatrace mobile app to receive problem alerts.") and displayed in the Dynatrace web UI. Problem alerting profiles can also be used to set up filtered problem-notification integrations with third-party messaging systems like [Slack](problem-notifications/slack-integration.md "Set up a Slack problem-notification integration that can keep you updated on all Dynatrace problems."), [Opsgenie](problem-notifications/opsgenie-integration.md "Configure Opsgenie integration with Dynatrace."), and [PagerDuty](problem-notifications/pagerduty-integration.md "Learn how to send problem notifications from Dynatrace to PagerDuty.").
 
 Each of your monitoring environments has a default alerting profile that defines the severity level that must be met before an alert is sent out for a detected problem.
 
@@ -48,7 +48,7 @@ Severity rules filter events based on their severity level. For each alerting pr
 
 You can use the following criteria:
 
-* [Severity level](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.").
+* [Severity level](../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories.md "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.").
 * How long the problem is open before an alert is sent outâthis enables you to avoid alerts for low-severity problems that don't affect customer experience and therefore don't require immediate attention.
 * Optional Monitoring entities that have any or all of the specified tags
 
@@ -79,8 +79,8 @@ To create an alerting profile
 
 1. Go to **Settings** > **Alerting** > **Problem alerting profiles** and select **Add alerting profile**.
 2. Type a name for the new profile in the **Create new alerting profile** field and select **Create**.
-3. Define the [management zone](/docs/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.") filter.
-4. Define the [severity-level](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.") rules for the profile.
+3. Define the [management zone](../../manage/identity-access-management/permission-management/management-zones.md "Learn about management zones concepts, how to define management zones, and how to make the most of them.") filter.
+4. Define the [severity-level](../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories.md "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.") rules for the profile.
 5. Define the event filter. You can base it one one of the following:
 
    * `Predefined`: a specific built-in event type
@@ -90,4 +90,4 @@ To create an alerting profile
 
 ## Alerting profiles API
 
-In addition to the Dynatrace web UI, you can manage your problem alerting profiles via the [Settings API](/docs/dynatrace-api/configuration-api/alerting-profiles-api "Learn what the Dynatrace alerting profiles API offers."). Look for the **Problem alerting profiles** (`builtin:alerting.profile`) schema.
+In addition to the Dynatrace web UI, you can manage your problem alerting profiles via the [Settings API](../../dynatrace-api/configuration-api/alerting-profiles-api.md "Learn what the Dynatrace alerting profiles API offers."). Look for the **Problem alerting profiles** (`builtin:alerting.profile`) schema.

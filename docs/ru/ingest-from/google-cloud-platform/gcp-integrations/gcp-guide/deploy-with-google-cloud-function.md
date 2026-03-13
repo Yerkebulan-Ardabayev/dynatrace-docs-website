@@ -19,16 +19,16 @@ Dynatrace версии 1.230+
 Интеграция метрик Dynatrace Google Cloud в Google Cloud Functions **больше не** поддерживается.
 
 Если вы используете этот тип развёртывания, вам следует как можно скорее перейти на интеграцию Google Cloud на базе Kubernetes.
-См. [Миграция с Google Cloud Functions 1.0 на Google Cloud k8s 1.0](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function-1-to-k8s-1 "Миграция с Google Cloud Functions v1.0 на Google Cloud k8s v1.0.").
+См. [Миграция с Google Cloud Functions 1.0 на Google Cloud k8s 1.0](migrate-gcp-function-1-to-k8s-1.md "Миграция с Google Cloud Functions v1.0 на Google Cloud k8s v1.0.").
 
-В качестве альтернативы [основному развёртыванию](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Настройте мониторинг логов и метрик для сервисов GCP на новом кластере GKE Autopilot."), которое обеспечивает мониторинг Google Cloud как для метрик, так и для логов, и где развёртывание выполняется в кластере GKE, вы можете настроить мониторинг только метрик в Google Cloud Cloud Function. Обратите внимание, что развёртывание в Google Cloud Cloud Function не рекомендуется для крупных сред и не поддерживает пересылку логов.
+В качестве альтернативы [основному развёртыванию](deploy-k8.md "Настройте мониторинг логов и метрик для сервисов GCP на новом кластере GKE Autopilot."), которое обеспечивает мониторинг Google Cloud как для метрик, так и для логов, и где развёртывание выполняется в кластере GKE, вы можете настроить мониторинг только метрик в Google Cloud Cloud Function. Обратите внимание, что развёртывание в Google Cloud Cloud Function не рекомендуется для крупных сред и не поддерживает пересылку логов.
 В этом сценарии вы сможете запустить скрипт развёртывания либо в Google Cloud Shell, либо в bash. После установки вы получите метрики, дашборды и оповещения для настроенных сервисов в Dynatrace.
 
-Другие варианты развёртывания см. в разделе [Альтернативные сценарии развёртывания](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide "Другие варианты настройки мониторинга логов и/или метрик для сервисов Google Cloud").
+Другие варианты развёртывания см. в разделе [Альтернативные сценарии развёртывания](../gcp-guide.md "Другие варианты настройки мониторинга логов и/или метрик для сервисов Google Cloud").
 
 На этой странице описывается развёртывание версии 1.0 интеграции Dynatrace Google Cloud в Google Cloud Cloud Function.
 
-* Если у вас уже установлена [предыдущая версия](/docs/ingest-from/google-cloud-platform/legacy/deploy-with-google-cloud-function-legacy "Настройте мониторинг для сервисов Google Cloud с помощью Google Cloud Function.") Google Cloud Monitor, вам необходимо выполнить [миграцию](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function "Миграция с версии 0.1 интеграции Google Cloud на версию 1.0 в Kubernetes и Google Cloud Function.").
+* Если у вас уже установлена [предыдущая версия](../../legacy/deploy-with-google-cloud-function-legacy.md "Настройте мониторинг для сервисов Google Cloud с помощью Google Cloud Function.") Google Cloud Monitor, вам необходимо выполнить [миграцию](migrate-gcp-function.md "Миграция с версии 0.1 интеграции Google Cloud на версию 1.0 в Kubernetes и Google Cloud Function.").
 
 ## Предварительные требования
 
@@ -266,11 +266,11 @@ gcloud init
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Скачайте пакет развёртывания**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-with-google-cloud-function#dwld "Настройте мониторинг сервисов Google Cloud в Google Cloud Functions.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Скачайте пакет развёртывания**](deploy-with-google-cloud-function.md#dwld "Настройте мониторинг сервисов Google Cloud в Google Cloud Functions.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Настройте развёртывание**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-with-google-cloud-function#configure-deployment "Настройте мониторинг сервисов Google Cloud в Google Cloud Functions.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Настройте развёртывание**](deploy-with-google-cloud-function.md#configure-deployment "Настройте мониторинг сервисов Google Cloud в Google Cloud Functions.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Запустите скрипт развёртывания**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-with-google-cloud-function#script "Настройте мониторинг сервисов Google Cloud в Google Cloud Functions.")
+**Запустите скрипт развёртывания**](deploy-with-google-cloud-function.md#script "Настройте мониторинг сервисов Google Cloud в Google Cloud Functions.")
 
 ### Шаг 1 Скачивание пакета развёртывания
 
@@ -421,7 +421,7 @@ vars:
 filter_conditions: ""
 ```
 
-Полный список поддерживаемых сервисов Google Cloud см. в [Поддерживаемые сервисы Google Cloud](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new#services "Мониторьте сервисы Google Cloud с помощью Dynatrace и просматривайте доступные метрики.").
+Полный список поддерживаемых сервисов Google Cloud см. в [Поддерживаемые сервисы Google Cloud](../gcp-supported-service-metrics-new.md#services "Мониторьте сервисы Google Cloud с помощью Dynatrace и просматривайте доступные метрики.").
 
 ## Изменение настроек развёртывания
 
@@ -437,7 +437,7 @@ filter_conditions: ""
 Для расследования потенциальных проблем с развёртыванием и подключением
 
 1. [Проверьте установку](#verify)
-2. [Включите самомониторинг](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp "Определите, правильно ли ваша функция самомониторинга обрабатывает и отправляет логи в Dynatrace.") (необязательно)
+2. [Включите самомониторинг](deploy-k8/self-monitoring-gcp.md "Определите, правильно ли ваша функция самомониторинга обрабатывает и отправляет логи в Dynatrace.") (необязательно)
 3. Проверьте файл логов `dynatrace_gcp_<date_time>.log`, созданный во время процесса установки.
 
 * Этот файл создаётся каждый раз при запуске скрипта установки.
@@ -464,8 +464,8 @@ filter_conditions: ""
 
 ## Потребление мониторинга
 
-Все облачные сервисы потребляют DDU. Объём потребления DDU на экземпляр сервиса зависит от количества мониторируемых метрик и их измерений (каждое измерение метрики приводит к загрузке 1 точки данных; 1 точка данных потребляет 0.001 DDU). Подробности см. в [Расширение Dynatrace (единицы данных Davis)](/docs/license/monitoring-consumption-classic/davis-data-units "Узнайте, как рассчитывается потребление мониторинга Dynatrace на основе единиц данных Davis (DDU).").
+Все облачные сервисы потребляют DDU. Объём потребления DDU на экземпляр сервиса зависит от количества мониторируемых метрик и их измерений (каждое измерение метрики приводит к загрузке 1 точки данных; 1 точка данных потребляет 0.001 DDU). Подробности см. в [Расширение Dynatrace (единицы данных Davis)](../../../../license/monitoring-consumption-classic/davis-data-units.md "Узнайте, как рассчитывается потребление мониторинга Dynatrace на основе единиц данных Davis (DDU).").
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Google Cloud](/docs/ingest-from/google-cloud-platform "Мониторинг Google Cloud с помощью Dynatrace.")
+* [Настройка Dynatrace в Google Cloud](../../../google-cloud-platform.md "Мониторинг Google Cloud с помощью Dynatrace.")

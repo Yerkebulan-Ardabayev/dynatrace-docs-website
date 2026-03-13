@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:10:12.940403
 
 Dynatrace Intelligence applies deterministic, causation-based analysis across applications, services, infrastructure, logs, and traces. Using the Grail data lakehouse and the Smartscape real-time dependency graph, it establishes baselines, detects anomalies, and identifies root cause with topology and dependency context. It correlates code changes, deployments, configuration, and policy updates to show what changed and why a problem occurred.
 
-Dynatrace Intelligence can propose and run approved actions through agentic workflows and built-in agents operating under policy guardrails ([Preview](/docs/whats-new/preview-releases#dynatrace-intelligence-agentic-workflows "Learn about our Preview releases and how you can participate in them.")). It supports in-context natural language for investigation and guided next steps, so teams can review findings, open tickets, notify owners, or execute vetted runbooks using the same unified data and context.
+Dynatrace Intelligence can propose and run approved actions through agentic workflows and built-in agents operating under policy guardrails ([Preview](../common/whats-new/preview-releases.md#dynatrace-intelligence-agentic-workflows "Learn about our Preview releases and how you can participate in them.")). It supports in-context natural language for investigation and guided next steps, so teams can review findings, open tickets, notify owners, or execute vetted runbooks using the same unified data and context.
 
 ![Dynatrace Intelligence](https://dt-cdn.net/images/dti-light-mode-0c2a24e5ba-86a638dfc1.svg "Dynatrace Intelligence")
 
@@ -27,7 +27,7 @@ For a deeper understanding of how Dynatrace Intelligence can enhance your operat
 
 * Detect regressions and link them to builds or feature flags.
 * Pinpoint root cause with code-level details and stack traces.
-* Propose fixes or rollbacks through agentic workflows ([Preview](/docs/whats-new/preview-releases#dynatrace-intelligence-agentic-workflows "Learn about our Preview releases and how you can participate in them.")).
+* Propose fixes or rollbacks through agentic workflows ([Preview](../common/whats-new/preview-releases.md#dynatrace-intelligence-agentic-workflows "Learn about our Preview releases and how you can participate in them.")).
 
 ### SRE
 
@@ -49,31 +49,31 @@ How Dynatrace detects anomalies in your environment.
 
 * Overview
 
-See the overview](/docs/dynatrace-intelligence/anomaly-detection)[#### Root cause analysis
+See the overview](dynatrace-intelligence/anomaly-detection.md)[#### Root cause analysis
 
 How Dynatrace analyzes problems to determine their root cause.
 
 * Explanation
 
-Read this explanation](/docs/dynatrace-intelligence/root-cause-analysis)[#### Agentic and generative AI
+Read this explanation](dynatrace-intelligence/root-cause-analysis.md)[#### Agentic and generative AI
 
 Learn about Dynatrace Intelligence agentic and generative AI.
 
 * App
 
-Explore this app](/docs/dynatrace-intelligence/copilot)[#### AI models
+Explore this app](dynatrace-intelligence/copilot.md)[#### AI models
 
 Learn about AI models that Dynatrace Intelligence uses.
 
 * Overview
 
-See the overview](/docs/dynatrace-intelligence/reference/ai-models)[#### Dynatrace Intelligence integrations
+See the overview](dynatrace-intelligence/reference/ai-models.md)[#### Dynatrace Intelligence integrations
 
 Enhance your Dynatrace experience with the power of AI.
 
 * Overview
 
-See the overview](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations)
+See the overview](dynatrace-intelligence/dynatrace-intelligence-integrations.md)
 
 ## Getting started
 
@@ -85,7 +85,7 @@ Use the Problems app to quickly get to the root cause of incidents in your envir
 
 * App
 
-Explore this app](/docs/dynatrace-intelligence/davis-problems-app)[![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new")
+Explore this app](dynatrace-intelligence/davis-problems-app.md)[![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new")
 
 #### Anomaly Detection app
 
@@ -93,7 +93,7 @@ Explore anomaly detection configurations using the Anomaly Detection app.
 
 * App
 
-Explore this app](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app)
+Explore this app](dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md)
 
 ## Related topics
 

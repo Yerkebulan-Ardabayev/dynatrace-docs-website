@@ -15,9 +15,9 @@ scraped: 2026-03-04T21:31:54.309034
 
 Log Monitoring Classic
 
-Для новейшей версии Dynatrace см. [Потоковая передача логов в Dynatrace с помощью Logstash](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash "Integrate Logstash to stream logs from nodes and pods to Dynatrace.").
+Для новейшей версии Dynatrace см. [Потоковая передача логов в Dynatrace с помощью Logstash](../../logs/lma-log-ingestion/lma-stream-logs-with-logstash.md "Integrate Logstash to stream logs from nodes and pods to Dynatrace.").
 
-[Dynatrace Log Monitoring](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") использует DaemonSet OneAgent, который включает модуль логирования. Это рекомендуемый способ потоковой передачи логов с узлов и подов в Dynatrace.
+[Dynatrace Log Monitoring](../../log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") использует DaemonSet OneAgent, который включает модуль логирования. Это рекомендуемый способ потоковой передачи логов с узлов и подов в Dynatrace.
 
 В качестве альтернативы можно использовать [выходной плагин Dynatrace для Logstash](https://github.com/dynatrace-oss/logstash-output-dynatrace), который является модулем с открытым исходным кодом, для потоковой передачи логов.
 
@@ -25,7 +25,7 @@ Log Monitoring Classic
 
 ## Возможности
 
-Поддерживает отправку логов в [Dynatrace log ingest API v2](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.").
+Поддерживает отправку логов в [Dynatrace log ingest API v2](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.").
 
 Выходной плагин Dynatrace для Logstash также предоставляет следующие возможности:
 

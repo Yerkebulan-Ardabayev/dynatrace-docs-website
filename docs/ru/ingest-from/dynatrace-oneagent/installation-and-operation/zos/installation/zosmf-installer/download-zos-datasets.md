@@ -21,7 +21,7 @@ scraped: 2026-03-04T21:28:44.483728
 
 ## Загрузка PAX-файла
 
-Вы можете загрузить последнюю или конкретную версию PAX-файла через веб-интерфейс или [Deployment API](/docs/dynatrace-api/environment-api/deployment/oneagent "Download OneAgent installers via Dynatrace API.") для OneAgent.
+Вы можете загрузить последнюю или конкретную версию PAX-файла через веб-интерфейс или [Deployment API](../../../../../../dynatrace-api/environment-api/deployment/oneagent.md "Download OneAgent installers via Dynatrace API.") для OneAgent.
 
 Версия PAX-файла должна быть меньше или равна версии модуля zRemote.
 
@@ -52,8 +52,8 @@ scraped: 2026-03-04T21:28:44.483728
 
 Вы можете загрузить последнюю версию PAX-файла через Deployment API следующим образом:
 
-1. Сгенерируйте [токен доступа](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью **PaaS integration - Installer download** (`InstallerDownload`).
-2. Загрузите последнюю версию PAX-файла через [Deployment API - Download latest OneAgent](/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest "Download the latest OneAgent installer via Dynatrace API."):
+1. Сгенерируйте [токен доступа](../../../../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью **PaaS integration - Installer download** (`InstallerDownload`).
+2. Загрузите последнюю версию PAX-файла через [Deployment API - Download latest OneAgent](../../../../../../dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest.md "Download the latest OneAgent installer via Dynatrace API."):
 
    Ниже приведён пример команды `curl` для SaaS-среды, использующей Deployment API для загрузки последней версии PAX-файла:
 
@@ -67,8 +67,8 @@ scraped: 2026-03-04T21:28:44.483728
 
 Вы можете загрузить конкретную версию PAX-файла через Deployment API следующим образом:
 
-1. Сгенерируйте [токен доступа](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью **PaaS integration - Installer download** (`InstallerDownload`).
-2. Получите список всех доступных версий PAX-файла через [Deployment API - List available versions of OneAgent](/docs/dynatrace-api/environment-api/deployment/oneagent/get-available-versions "List available versions of OneAgent via Dynatrace API.").
+1. Сгенерируйте [токен доступа](../../../../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") с областью **PaaS integration - Installer download** (`InstallerDownload`).
+2. Получите список всех доступных версий PAX-файла через [Deployment API - List available versions of OneAgent](../../../../../../dynatrace-api/environment-api/deployment/oneagent/get-available-versions.md "List available versions of OneAgent via Dynatrace API.").
 
    Ниже приведён пример команды `curl` для SaaS-среды, использующей Deployment API для получения списка всех доступных версий PAX-файла:
 
@@ -77,7 +77,7 @@ scraped: 2026-03-04T21:28:44.483728
    ```
 
    Замените `<environment>` на идентификатор вашей среды Dynatrace и `<accessToken>` на сгенерированный токен доступа.
-3. Загрузите конкретную версию PAX-файла через [Deployment API - Download OneAgent of specific version](/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-version "Download the OneAgent installer of the specific version via Dynatrace API."):
+3. Загрузите конкретную версию PAX-файла через [Deployment API - Download OneAgent of specific version](../../../../../../dynatrace-api/environment-api/deployment/oneagent/download-oneagent-version.md "Download the OneAgent installer of the specific version via Dynatrace API."):
 
    Ниже приведён пример команды `curl` для SaaS-среды, использующей Deployment API для загрузки конкретной версии PAX-файла:
 

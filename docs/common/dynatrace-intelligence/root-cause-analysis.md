@@ -27,16 +27,16 @@ Get acquainted with root cause analysis concepts.
 
 * Explanation
 
-Read this explanation](/docs/dynatrace-intelligence/root-cause-analysis/concepts)[#### Event analysis and correlation
+Read this explanation](../../ru/dynatrace-intelligence/root-cause-analysis/concepts.md)[#### Event analysis and correlation
 
 Gain an understanding of the Events section on each host, process, and service overview page.
 
 * Explanation
 
-Read this explanation](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation)[#### Detection of frequent issues
+Read this explanation](root-cause-analysis/event-analysis-and-correlation.md)[#### Detection of frequent issues
 
 Understand how Dynatrace detects and manages recurring problem patterns as frequent issues.
 
 * Explanation
 
-Read this explanation](/docs/dynatrace-intelligence/root-cause-analysis/detection-of-frequent-issues)
+Read this explanation](root-cause-analysis/detection-of-frequent-issues.md)

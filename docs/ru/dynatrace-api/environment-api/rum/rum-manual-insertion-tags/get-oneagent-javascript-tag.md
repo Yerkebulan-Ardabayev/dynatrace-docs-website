@@ -11,7 +11,7 @@ scraped: 2026-03-02T21:19:10.698775
 * Reference
 * Updated on Sep 18, 2025
 
-Возвращает наиболее актуальный [тег JavaScript OneAgent](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats#oneagent-js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") для ручной вставки в код вашего веб-приложения. Включает конфигурацию и ссылку на код мониторинга.
+Возвращает наиболее актуальный [тег JavaScript OneAgent](../../../../observe/digital-experience/web-applications/initial-setup/snippet-formats.md#oneagent-js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") для ручной вставки в код вашего веб-приложения. Включает конфигурацию и ссылку на код мониторинга.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,7 +22,7 @@ scraped: 2026-03-02T21:19:10.698775
 
 Для выполнения этого запроса требуется токен доступа с областью действия `rumManualInsertionTags.read`.
 
-Чтобы узнать, как получить и использовать токен, см. раздел [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как получить и использовать токен, см. раздел [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 
@@ -33,4 +33,4 @@ scraped: 2026-03-02T21:19:10.698775
 
 ## Ответ
 
-Ответ содержит полезную нагрузку `text/plain` с наиболее актуальной версией [тега JavaScript OneAgent](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats#oneagent-js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") для указанного приложения.
+Ответ содержит полезную нагрузку `text/plain` с наиболее актуальной версией [тега JavaScript OneAgent](../../../../observe/digital-experience/web-applications/initial-setup/snippet-formats.md#oneagent-js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") для указанного приложения.

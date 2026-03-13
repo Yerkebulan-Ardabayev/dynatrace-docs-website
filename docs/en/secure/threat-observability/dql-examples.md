@@ -12,9 +12,9 @@ scraped: 2026-03-06T21:20:31.345755
 * How-to guide
 * Updated on Oct 22, 2025
 
-This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](/docs/secure/threat-observability/migration "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
 
-The examples below illustrate how to slice and dice [security data](/docs/secure/threat-observability/concepts#security-data "Basic concepts related to Threat Observability") and build powerful and flexible security reports with [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.").
+The examples below illustrate how to slice and dice [security data](concepts.md#security-data "Basic concepts related to Threat Observability") and build powerful and flexible security reports with [Dynatrace Query Language (DQL)](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.").
 
 ## Query Dynatrace events
 
@@ -1898,7 +1898,7 @@ AND object.type == "CONTAINER_IMAGE"
 
 ### Latest results for all covered systems
 
-Get the latest compliance results of supported standards for all systems [covered by Security Posture Management](/docs/secure/xspm/assess-coverage#coverage "Review the Security Posture Management coverage of your systems at a glance.").
+Get the latest compliance results of supported standards for all systems [covered by Security Posture Management](../xspm/assess-coverage.md#coverage "Review the Security Posture Management coverage of your systems at a glance.").
 
 **Query example**:
 
@@ -1948,7 +1948,7 @@ AND event.type == "COMPLIANCE_SCAN_COMPLETED"
 
 ### Historical compliance results for a standard for all covered systems
 
-Get the historical compliance results for a standard (in this case, DORA) for all systems [covered by Security Posture Management](/docs/secure/xspm/assess-coverage#coverage "Review the Security Posture Management coverage of your systems at a glance.").
+Get the historical compliance results for a standard (in this case, DORA) for all systems [covered by Security Posture Management](../xspm/assess-coverage.md#coverage "Review the Security Posture Management coverage of your systems at a glance.").
 
 **Query example**:
 

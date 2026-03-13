@@ -13,28 +13,28 @@ scraped: 2026-03-02T21:17:10.782245
 * 5 мин. чтения
 * Обновлено 14 октября 2024 г.
 
-Для организации облачных сущностей в вашей среде и упрощения их поиска вы можете использовать теги и базовые свойства экземпляров, импортированные из облака, а также теги и зоны управления, назначенные в Dynatrace. Теги и зоны управления применяются к облачным сущностям так же, как и к другим сущностям, но лучше всего применять их через [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Настройка entity selector для конечных точек Environment API.").
+Для организации облачных сущностей в вашей среде и упрощения их поиска вы можете использовать теги и базовые свойства экземпляров, импортированные из облака, а также теги и зоны управления, назначенные в Dynatrace. Теги и зоны управления применяются к облачным сущностям так же, как и к другим сущностям, но лучше всего применять их через [entity selector](../../../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Настройка entity selector для конечных точек Environment API.").
 
 ## Облачные сущности в вашей среде
 
-Вы можете просматривать все облачные сущности в вашей среде, используя их идентификатор или тип из [типов облачных сущностей](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics#cloud-entity-types "Мониторинг сервисов Azure с помощью Dynatrace и просмотр доступных метрик.") через [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector#tag "Настройка entity selector для конечных точек Environment API."), так же как и для других сущностей. Вы также можете исследовать все доступные свойства и взаимосвязи для каждого отдельного ресурса или типа.
+Вы можете просматривать все облачные сущности в вашей среде, используя их идентификатор или тип из [типов облачных сущностей](../azure-cloud-services-metrics.md#cloud-entity-types "Мониторинг сервисов Azure с помощью Dynatrace и просмотр доступных метрик.") через [entity selector](../../../../dynatrace-api/environment-api/entity-v2/entity-selector.md#tag "Настройка entity selector для конечных точек Environment API."), так же как и для других сущностей. Вы также можете исследовать все доступные свойства и взаимосвязи для каждого отдельного ресурса или типа.
 
-Вы также можете просматривать их метрики, используя entity selector как часть [metric selector](/docs/dynatrace-api/environment-api/metric-v2/metric-selector "Настройка metric selector для Metric v2 API."), например, в [Data Explorer](/docs/analyze-explore-automate/explorer "Запрос метрик и преобразование результатов для получения нужной аналитики.").
+Вы также можете просматривать их метрики, используя entity selector как часть [metric selector](../../../../dynatrace-api/environment-api/metric-v2/metric-selector.md "Настройка metric selector для Metric v2 API."), например, в [Data Explorer](../../../../analyze-explore-automate/explorer.md "Запрос метрик и преобразование результатов для получения нужной аналитики.").
 
 Типы облачных сущностей
 
-Чтобы узнать больше об облачных сущностях Dynatrace и проверить, у каких из них можно импортировать теги из облака, см. [Облачные сервисы с соответствующими типами сущностей Dynatrace](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics#cloud-entity-types "Мониторинг сервисов Azure с помощью Dynatrace и просмотр доступных метрик.").
+Чтобы узнать больше об облачных сущностях Dynatrace и проверить, у каких из них можно импортировать теги из облака, см. [Облачные сервисы с соответствующими типами сущностей Dynatrace](../azure-cloud-services-metrics.md#cloud-entity-types "Мониторинг сервисов Azure с помощью Dynatrace и просмотр доступных метрик.").
 
 ## Добавление автоматически применяемого тега к облачным сущностям
 
-Выполните следующие шаги для автоматического применения тега к облачным сущностям. Чтобы узнать больше о тегах, см. [Определение и применение тегов](/docs/manage/tags-and-metadata/setup/how-to-define-tags "Узнайте, как определять и применять теги вручную и автоматически.").
+Выполните следующие шаги для автоматического применения тега к облачным сущностям. Чтобы узнать больше о тегах, см. [Определение и применение тегов](../../../../manage/tags-and-metadata/setup/how-to-define-tags.md "Узнайте, как определять и применять теги вручную и автоматически.").
 
 1. Перейдите в **Settings** > **Tags** > **Automatically applied tags**.
 2. Выберите **Create tag** и введите имя нового тега в поле **Tag name**.
 3. Выберите **Add a new rule**.
 4. Необязательно **Optional tag value**. Это значение появляется рядом с именем тега, для которого указано правило, после `:` и используется для предоставления более точной информации на основе конкретного правила. Обратите внимание, что для правил на основе entity selector это значение не может быть извлечено из самой сущности с помощью заполнителей.
 5. В списке **Rule type** выберите тип **Entity selector**.
-6. Используйте один из фрагментов кода из [примеров](#entity-selector-examples) и адаптируйте его с вашими собственными значениями для применения тегов к облачным сущностям, соответствующим вашему [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Настройка entity selector для конечных точек Environment API.").
+6. Используйте один из фрагментов кода из [примеров](#entity-selector-examples) и адаптируйте его с вашими собственными значениями для применения тегов к облачным сущностям, соответствующим вашему [entity selector](../../../../dynatrace-api/environment-api/entity-v2/entity-selector.md "Настройка entity selector для конечных точек Environment API.").
 7. Выберите **Preview** для проверки результатов, возвращаемых конкретным entity selector.
 8. Выберите **Save changes**.
 
@@ -44,12 +44,12 @@ scraped: 2026-03-02T21:17:10.782245
 
 ## Добавление облачных сущностей в существующие зоны управления
 
-Выполните следующие шаги для добавления облачных сущностей в существующие зоны управления. Чтобы узнать больше о зонах управления, см. [Настройка зон управления](/docs/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Создание зон управления и назначение прав доступа к ним.").
+Выполните следующие шаги для добавления облачных сущностей в существующие зоны управления. Чтобы узнать больше о зонах управления, см. [Настройка зон управления](../../../../manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Создание зон управления и назначение прав доступа к ним.").
 
 1. Перейдите в **Settings** > **Preferences** > **Management zones**.
 2. Отредактируйте существующую зону управления и выберите **Add a new rule**.
 3. В списке **Rule applies to** выберите **Entity selector**.
-4. Используйте один из фрагментов кода из [примеров](#entity-selector-examples) и адаптируйте его с вашими собственными значениями для добавления в зону управления облачных сущностей, соответствующих [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector#tag "Настройка entity selector для конечных точек Environment API.").
+4. Используйте один из фрагментов кода из [примеров](#entity-selector-examples) и адаптируйте его с вашими собственными значениями для добавления в зону управления облачных сущностей, соответствующих [entity selector](../../../../dynatrace-api/environment-api/entity-v2/entity-selector.md#tag "Настройка entity selector для конечных точек Environment API.").
 5. Выберите **Preview** для проверки результатов, возвращаемых конкретным entity selector.
 6. Выберите **Save changes**.
 
@@ -59,7 +59,7 @@ scraped: 2026-03-02T21:17:10.782245
 
 ## Примеры entity selector для сущностей Azure
 
-Вы можете использовать приведённые ниже примеры и [типы облачных сущностей](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics#cloud-entity-types "Мониторинг сервисов Azure с помощью Dynatrace и просмотр доступных метрик.") в соответствии с вашими потребностями.
+Вы можете использовать приведённые ниже примеры и [типы облачных сущностей](../azure-cloud-services-metrics.md#cloud-entity-types "Мониторинг сервисов Azure с помощью Dynatrace и просмотр доступных метрик.") в соответствии с вашими потребностями.
 
 Регионы
 
@@ -387,8 +387,8 @@ type(PROCESS_GROUP), toRelationships.isPgAppOf(type(AZURE_FUNCTION_APP),fromRela
 
 ## Связанные темы
 
-* [Зоны управления](/docs/manage/identity-access-management/permission-management/management-zones "Узнайте о концепциях зон управления, как определять зоны управления и как использовать их максимально эффективно.")
-* [Теги и зоны управления для очередей](/docs/observe/infrastructure-observability/queues/configuration/tags-and-management-zones "Автоматическое применение тегов к очередям и организация их в зоны управления.")
-* [Настройка зон управления](/docs/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Создание зон управления и назначение прав доступа к ним.")
-* [Определение и применение тегов](/docs/manage/tags-and-metadata/setup/how-to-define-tags "Узнайте, как определять и применять теги вручную и автоматически.")
-* [Наблюдаемость инфраструктуры](/docs/observe/infrastructure-observability "Инфраструктура приложений, включая облачные и контейнерные платформы, которые Dynatrace может мониторить")
+* [Зоны управления](../../../../manage/identity-access-management/permission-management/management-zones.md "Узнайте о концепциях зон управления, как определять зоны управления и как использовать их максимально эффективно.")
+* [Теги и зоны управления для очередей](../../../../observe/infrastructure-observability/queues/configuration/tags-and-management-zones.md "Автоматическое применение тегов к очередям и организация их в зоны управления.")
+* [Настройка зон управления](../../../../manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Создание зон управления и назначение прав доступа к ним.")
+* [Определение и применение тегов](../../../../manage/tags-and-metadata/setup/how-to-define-tags.md "Узнайте, как определять и применять теги вручную и автоматически.")
+* [Наблюдаемость инфраструктуры](../../../../observe/infrastructure-observability.md "Инфраструктура приложений, включая облачные и контейнерные платформы, которые Dynatrace может мониторить")

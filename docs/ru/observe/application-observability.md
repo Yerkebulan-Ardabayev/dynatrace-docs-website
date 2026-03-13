@@ -21,7 +21,7 @@ scraped: 2026-03-06T21:10:32.743972
 
 * App
 
-Изучить это приложение](/docs/observe/application-observability/distributed-tracing)[![Live Debugger](https://dt-cdn.net/images/live-debugger-256-b934a2bad5.png "Live Debugger")
+Изучить это приложение](application-observability/distributed-tracing.md)[![Live Debugger](https://dt-cdn.net/images/live-debugger-256-b934a2bad5.png "Live Debugger")
 
 #### Live Debugger
 
@@ -29,7 +29,7 @@ scraped: 2026-03-06T21:10:32.743972
 
 * App
 
-Изучить это приложение](/docs/observe/application-observability/live-debugger)[![Services](https://dt-cdn.net/hub/logos/services.png "Services")
+Изучить это приложение](application-observability/live-debugger.md)[![Services](https://dt-cdn.net/hub/logos/services.png "Services")
 
 #### Сервисы
 
@@ -37,7 +37,7 @@ scraped: 2026-03-06T21:10:32.743972
 
 * Overview
 
-Посмотреть обзор](/docs/observe/application-observability/services)
+Посмотреть обзор](application-observability/services.md)
 
 ## Классические функции
 
@@ -47,25 +47,25 @@ scraped: 2026-03-06T21:10:32.743972
 
 * Overview
 
-Посмотреть обзор](/docs/observe/application-observability/distributed-traces)[#### Многомерный анализ
+Посмотреть обзор](application-observability/distributed-traces.md)[#### Многомерный анализ
 
 Настройте представление многомерного анализа и сохраните его как вычисляемую метрику.
 
 * How-to guide
 
-Читать руководство](/docs/observe/application-observability/multidimensional-analysis)[#### Профилирование и оптимизация
+Читать руководство](application-observability/multidimensional-analysis.md)[#### Профилирование и оптимизация
 
 Узнайте, как использовать диагностические инструменты Dynatrace для анализа сбоев, анализа дампов памяти и многого другого.
 
 * Overview
 
-Посмотреть обзор](/docs/observe/application-observability/profiling-and-optimization)[#### Services Classic
+Посмотреть обзор](application-observability/profiling-and-optimization.md)[#### Services Classic
 
 Узнайте о классическом мониторинге сервисов Dynatrace.
 
 * Overview
 
-Посмотреть обзор](/docs/observe/application-observability/services-classic)
+Посмотреть обзор](application-observability/services-classic.md)
 
 ## Смотрите также
 
@@ -73,8 +73,8 @@ scraped: 2026-03-06T21:10:32.743972
 
 ### Управление журналами и аналитика
 
-Управление журналами и аналитика обеспечивают единый подход к контролю и изучению данных журналов в Dynatrace.](/docs/analyze-explore-automate/logs "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")[![Digital Experience](https://cdn.bfldr.com/B686QPH3/at/24vb99tkw5wm7xrvxpshcbvr/Digital_Experience.svg?auto=webp&width=72&height=72 "Digital Experience")
+Управление журналами и аналитика обеспечивают единый подход к контролю и изучению данных журналов в Dynatrace.](../analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")[![Digital Experience](https://cdn.bfldr.com/B686QPH3/at/24vb99tkw5wm7xrvxpshcbvr/Digital_Experience.svg?auto=webp&width=72&height=72 "Digital Experience")
 
 ### Digital Experience
 
-Используйте RUM и синтетический мониторинг для комплексного мониторинга цифрового опыта.](/docs/observe/digital-experience "Optimize end-user experience with Digital Experience Monitoring to ensure application performance and availability across all channels.")
+Используйте RUM и синтетический мониторинг для комплексного мониторинга цифрового опыта.](digital-experience.md "Optimize end-user experience with Digital Experience Monitoring to ensure application performance and availability across all channels.")

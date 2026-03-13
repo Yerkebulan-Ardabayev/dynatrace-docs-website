@@ -15,7 +15,7 @@ scraped: 2026-03-05T21:35:44.907456
 
 Log Monitoring Classic
 
-Для новейшей версии Dynatrace см. [Потоковая передача логов Kubernetes с помощью Fluent Bit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s "Интегрируйте Fluent Bit в Kubernetes для потоковой передачи логов в Dynatrace.").
+Для новейшей версии Dynatrace см. [Потоковая передача логов Kubernetes с помощью Fluent Bit](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s.md "Интегрируйте Fluent Bit в Kubernetes для потоковой передачи логов в Dynatrace.").
 
 На этой странице представлены инструкции по развёртыванию и настройке Fluent Bit в вашей среде Kubernetes для сбора логов.
 
@@ -649,7 +649,7 @@ Log Monitoring Classic
 
    fieldPath: status.hostIP
    ```
-2. Получите [API-токен Dynatrace](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования API Dynatrace.") с областью действия `logs.ingest` (Ingest Logs) для переменной окружения `DT_INGEST_TOKEN`.
+2. Получите [API-токен Dynatrace](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования API Dynatrace.") с областью действия `logs.ingest` (Ingest Logs) для переменной окружения `DT_INGEST_TOKEN`.
 3. Обновите переменные окружения `K8S_CLUSTER_NAME`, `DT_INGEST_HOST` и `DT_INGEST_TOKEN` в файле `values.yaml`. Используйте то же имя кластера, которое вы настроили в Dynatrace для `K8S_CLUSTER_NAME`, и укажите конечную точку SaaS или Managed в качестве `DT_INGEST_HOST`.
 4. Необязательно Адаптируйте раздел фильтров в файле `values.yaml` для нацеливания на определённые пространства имён или поды, как описано в разделе [Fluent Bit Filter](https://dt-url.net/m903n8q) для подробностей.
 5. Необязательно Убедитесь, что вы удалили или замаскировали любую конфиденциальную информацию в логах.
@@ -698,7 +698,7 @@ helm uninstall fluent-bit
 
 ## Устранение неполадок
 
-Посетите раздел [Устранение неполадок логов, принятых через Fluent Bit](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718) в сообществе Dynatrace, а также см. [Устранение неполадок Log Monitoring (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/lmc-troubleshooting "Устранение проблем, связанных с настройкой и конфигурацией Log Monitoring Classic.").
+Посетите раздел [Устранение неполадок логов, принятых через Fluent Bit](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718) в сообществе Dynatrace, а также см. [Устранение неполадок Log Monitoring (Logs Classic)](../lmc-troubleshooting.md "Устранение проблем, связанных с настройкой и конфигурацией Log Monitoring Classic.").
 
 ### Проверка работы подов Fluent Bit
 
@@ -800,4 +800,4 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 
 ## Связанные темы
 
-* [Потоковая передача логов в Dynatrace с помощью Fluent Bit (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/stream-logs-with-fluent-bit "Интегрируйте Fluent Bit для потоковой передачи логов в Dynatrace.")
+* [Потоковая передача логов в Dynatrace с помощью Fluent Bit (Logs Classic)](stream-logs-with-fluent-bit.md "Интегрируйте Fluent Bit для потоковой передачи логов в Dynatrace.")

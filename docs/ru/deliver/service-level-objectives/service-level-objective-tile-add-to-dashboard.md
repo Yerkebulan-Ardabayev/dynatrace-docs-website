@@ -33,7 +33,7 @@ scraped: 2026-03-05T21:34:17.198712
 
 Добавляйте и редактируйте SLO непосредственно из ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
 
-1. Перейдите в ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** и создайте [новый дашборд](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#create-dashboard "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в режиме реального времени.") или выберите [существующий](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboard-display "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в режиме реального времени.").
+1. Перейдите в ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** и создайте [новый дашборд](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#create-dashboard "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в режиме реального времени.") или выберите [существующий](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboard-display "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в режиме реального времени.").
 2. Добавить SLO можно с помощью сочетания клавиш Shift+S или нажав значок плюса в правом верхнем углу дашборда.
 
    ![Добавление плитки SLO с дашборда](https://dt-cdn.net/images/chrome-ftp3kxoqkt-736-3ea4751a06.png)
@@ -51,7 +51,7 @@ scraped: 2026-03-05T21:34:17.198712
 
    ![Снимок экрана панели Service-level objective с вкладкой Visual](https://dt-cdn.net/images/wtp95711-dev-apps-dynatracelabs-com-ui-apps-dynatrace-dashboards-dashboard-f8f0ee42-e4a3-4b63-a3af-ca753060d7f7-3-2400-a36ac46dc8.png)
 
-Плитка не будет функциональной, пока не выбран SLO. Дополнительные сведения см. в статье [Редактирование плитки целевого уровня обслуживания (SLO) на дашборде](/docs/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard "Редактируйте плитки целевого уровня обслуживания прямо на дашборде.").
+Плитка не будет функциональной, пока не выбран SLO. Дополнительные сведения см. в статье [Редактирование плитки целевого уровня обслуживания (SLO) на дашборде](service-level-objective-tile-edit-in-dashboard.md "Редактируйте плитки целевого уровня обслуживания прямо на дашборде.").
 
 Новая плитка SLO добавлена на дашборд.
 
@@ -59,7 +59,7 @@ scraped: 2026-03-05T21:34:17.198712
 
 ### Добавление фильтра сегмента в SLO на дашбордах
 
-1. Добавьте SLO на дашборд согласно разделу [Добавление SLO с дашборда](/docs/deliver/service-level-objectives/service-level-objective-tile-add-to-dashboard#tiles-add-from-dashboard "Визуализируйте целевые уровни обслуживания, добавляя их на дашборд.").
+1. Добавьте SLO на дашборд согласно разделу [Добавление SLO с дашборда](service-level-objective-tile-add-to-dashboard.md#tiles-add-from-dashboard "Визуализируйте целевые уровни обслуживания, добавляя их на дашборд.").
 2. Выберите сегменты, отметьте нужные сегменты и нажмите **Apply**.
 
    ![Добавление фильтра сегментов в SLO на уровне дашборда](https://dt-cdn.net/images/dashboard-level-slo-segments-1971-8ef61073f5.png)

@@ -17,7 +17,7 @@ The forecast analysis predicts future values of any time series of numeric value
 
 The analysis is agnostic to the distribution of the input data. The forecast is calculated without any assumption about specific data distribution and works for both symmetric and non-symmetric distributions.
 
-You can trigger a forecast analysis from your [notebook](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks "Run AI analysis in Dynatrace Notebooks.").
+You can trigger a forecast analysis from your [notebook](../../dynatrace-intelligence-integrations/davis-for-notebooks.md "Run AI analysis in Dynatrace Notebooks.").
 
 ## Analyzer input
 
@@ -127,7 +127,7 @@ If the condition is satisfied, the forecast is assessed as valid. Otherwise, the
 
 ## Write DQL queries for forecasting
 
-When using the forecast analysis in one of your [notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), you can write any DQL query that returns time series data in the [time series record format](#time-series-record-format).
+When using the forecast analysis in one of your [notebooks](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), you can write any DQL query that returns time series data in the [time series record format](#time-series-record-format).
 
 * If the data does not comply with one of the above formats, the forecast analysis fails.
 * Every numerical value in a data array must have at least one decimal point (for example, `1.0`).
@@ -136,8 +136,8 @@ When using the forecast analysis in one of your [notebooks](/docs/analyze-explor
 
 The example DQL queries below yield valid responses.
 
-* The [`timeseries`](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands") DQL command always returns a response in the time series record format.
-* You can also write queries using the [`fetch`](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands") command together with the [`summarize`](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#summarize "DQL aggregation commands") command. Those queries will return data in the [single value format](#single-value-format). All records must have the same distance (interval) between them. This is guaranteed when using the `summarize` command, as it will aggregate and group values for the defined time bins. Every record needs to have a field named `value` of type double (see [Single value format](#single-value-format) for more info).
+* The [`timeseries`](../../../platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries "DQL metric commands") DQL command always returns a response in the time series record format.
+* You can also write queries using the [`fetch`](../../../platform/grail/dynatrace-query-language/commands/data-source-commands.md#fetch "DQL data source commands") command together with the [`summarize`](../../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#summarize "DQL aggregation commands") command. Those queries will return data in the [single value format](#single-value-format). All records must have the same distance (interval) between them. This is guaranteed when using the `summarize` command, as it will aggregate and group values for the defined time bins. Every record needs to have a field named `value` of type double (see [Single value format](#single-value-format) for more info).
 
 #### DQL timeseries command
 
@@ -185,7 +185,7 @@ fetch events, from: -3d
 
 #### DQL data command
 
-You can use the DQL [`data`](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#data "DQL data source commands") command to generate a forecast for your own data. Any data can be used, as long as it conforms to one of the two formats.
+You can use the DQL [`data`](../../../platform/grail/dynatrace-query-language/commands/data-source-commands.md#data "DQL data source commands") command to generate a forecast for your own data. Any data can be used, as long as it conforms to one of the two formats.
 
 The following DQL `data` command returns a result in the [time series record format](#time-series-record-format).
 
@@ -366,9 +366,9 @@ In the time series record format, time series are defined as **simple double arr
 
 A time series record must contain:
 
-* Exactly one field of type timeframe that contains a start and end [timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "A list of DQL data types.")
-* Exactly one field of type [duration](/docs/platform/grail/dynatrace-query-language/data-types#duration "A list of DQL data types.")
-* One or more fields of type `array` that contain only [double](/docs/platform/grail/dynatrace-query-language/data-types#double "A list of DQL data types.") or [long](/docs/platform/grail/dynatrace-query-language/data-types#long "A list of DQL data types.") values and null
+* Exactly one field of type timeframe that contains a start and end [timestamp](../../../platform/grail/dynatrace-query-language/data-types.md#timestamp "A list of DQL data types.")
+* Exactly one field of type [duration](../../../platform/grail/dynatrace-query-language/data-types.md#duration "A list of DQL data types.")
+* One or more fields of type `array` that contain only [double](../../../platform/grail/dynatrace-query-language/data-types.md#double "A list of DQL data types.") or [long](../../../platform/grail/dynatrace-query-language/data-types.md#long "A list of DQL data types.") values and null
 
   + All numeric arrays must have as many values as there are time steps of width duration between the start and end of the timeframe `(end-start)/duration`
 * Fields in a time series record other than the timeframe, duration, and numeric data arrays are considered to be dimensions
@@ -378,7 +378,7 @@ DQL response in the time series record format
 The following JSON describes the structure of the record format.
 
 * The types of the record fields are specified in the `types` section.
-* The actual value of a field of type [duration](/docs/platform/grail/dynatrace-query-language/data-types#duration "A list of DQL data types.") is given in nanoseconds.
+* The actual value of a field of type [duration](../../../platform/grail/dynatrace-query-language/data-types.md#duration "A list of DQL data types.") is given in nanoseconds.
 
 ```
 {
@@ -574,18 +574,18 @@ In the single value format, each record entry specifies a single value in the ti
 
 A record in a valid single value format response must contain:
 
-* Exactly one field named `value` of type [double](/docs/platform/grail/dynatrace-query-language/data-types#double "A list of DQL data types.")
-  values or [long](/docs/platform/grail/dynatrace-query-language/data-types#long "A list of DQL data types.")
+* Exactly one field named `value` of type [double](../../../platform/grail/dynatrace-query-language/data-types.md#double "A list of DQL data types.")
+  values or [long](../../../platform/grail/dynatrace-query-language/data-types.md#long "A list of DQL data types.")
 * Time information as either:
 
-  + a field named `timestamp` of type [timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "A list of DQL data types.")
-  + a field named `timeframe` of type `timeframe` that contains a start and end [timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "A list of DQL data types.")
+  + a field named `timestamp` of type [timestamp](../../../platform/grail/dynatrace-query-language/data-types.md#timestamp "A list of DQL data types.")
+  + a field named `timeframe` of type `timeframe` that contains a start and end [timestamp](../../../platform/grail/dynatrace-query-language/data-types.md#timestamp "A list of DQL data types.")
 
 #### Interval
 
 The smallest allowed interval (time difference between two records) is one minute.
 
-* An interval can be specified by adding a field `interval` of type [duration](/docs/platform/grail/dynatrace-query-language/data-types#duration "A list of DQL data types.").
+* An interval can be specified by adding a field `interval` of type [duration](../../../platform/grail/dynatrace-query-language/data-types.md#duration "A list of DQL data types.").
 * This field can be named `frequency` as well, although `interval` takes precedence if both are specified.
 * If `interval`/`frequency` is set, it must have the same value in each entry.
 
@@ -601,7 +601,7 @@ DQL response in the single value format
 The following JSON describes the structure of the single value format.
 
 * The types of the record fields are specified in the `types` section.
-* The actual value of a field of type [duration](/docs/platform/grail/dynatrace-query-language/data-types#duration "A list of DQL data types.") is given in nanoseconds.
+* The actual value of a field of type [duration](../../../platform/grail/dynatrace-query-language/data-types.md#duration "A list of DQL data types.") is given in nanoseconds.
 
 ```
 {

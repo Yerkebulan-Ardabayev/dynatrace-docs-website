@@ -19,13 +19,13 @@ scraped: 2026-03-06T21:10:34.460722
 
 **Атрибуты** — это пары «ключ-значение», которые предоставляют сведения о спанах, запросах или ресурсах (например, имя спана, коды ответов, HTTP-методы, URL-адреса или результаты обнаружения сбоев). Они используются для группировки, запроса, поиска и анализа трассировок и спанов.
 
-Dynatrace использует атрибуты ресурсов для обнаружения и именования сервисов, сбора данных контекста трассировок и взаимосвязей сущностей для топологии Smartscape, связывания данных журналов с трассировками, понимания влияния продолжительности спанов от таймингов сервисов, а также анализа выполняемого кода. Ключи атрибутов соответствуют [Dynatrace Semantic Dictionary](/docs/semantic-dictionary "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.").
+Dynatrace использует атрибуты ресурсов для обнаружения и именования сервисов, сбора данных контекста трассировок и взаимосвязей сущностей для топологии Smartscape, связывания данных журналов с трассировками, понимания влияния продолжительности спанов от таймингов сервисов, а также анализа выполняемого кода. Ключи атрибутов соответствуют [Dynatrace Semantic Dictionary](../../../semantic-dictionary.md "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.").
 
 ## Спаны и распределённые трассировки
 
 **Спаны** — это отдельные единицы работы в рамках распределённой трассировки. Каждый спан состоит из множества атрибутов и содержит такие сведения, как идентификатор спана, имя спана, время начала, длительность, события спана (например, исключения), вид спана и идентификатор родительского спана. Спаны соединяются через родительский идентификатор, образуя древовидную структуру.
 
-**Распределённые трассировки** — это последовательности спанов с одинаковым идентификатором трассировки, которые следуют единым путём через различные сервисы и компоненты. Они помогают понять распространение запросов в распределённых системах, анализировать данные микросервисов, оценивать производительность микросервисов и следить за анализом первопричин [Dynatrace Intelligence](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.") для выявления причинно-следственных связей.
+**Распределённые трассировки** — это последовательности спанов с одинаковым идентификатором трассировки, которые следуют единым путём через различные сервисы и компоненты. Они помогают понять распространение запросов в распределённых системах, анализировать данные микросервисов, оценивать производительность микросервисов и следить за анализом первопричин [Dynatrace Intelligence](../../../dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence.") для выявления причинно-следственных связей.
 
 ## Сервисы и обнаружение сервисов
 
@@ -37,7 +37,7 @@ Dynatrace использует атрибуты ресурсов для обна
 
 ## Конечные точки и точки входа
 
-**Конечные точки** представляют точку входа API сервиса. В Service Detection v2 конечные точки определяются через правила, сопоставляющие атрибуты спана. В Service Detection v1 конечные точки формируются автоматически и заменяют концепцию [ключевых запросов](#key-requests) в SaaS. Все конечные точки генерируют связанные метрики и отображаются в [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](/docs/observe/application-observability/services/services-app "Maintain centralized control over service health, performance, and resources with the Services app.") для обеих версий обнаружения сервисов.
+**Конечные точки** представляют точку входа API сервиса. В Service Detection v2 конечные точки определяются через правила, сопоставляющие атрибуты спана. В Service Detection v1 конечные точки формируются автоматически и заменяют концепцию [ключевых запросов](#key-requests) в SaaS. Все конечные точки генерируют связанные метрики и отображаются в [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](services-app.md "Maintain centralized control over service health, performance, and resources with the Services app.") для обеих версий обнаружения сервисов.
 
 **Точки входа** (Service Detection v1) отмечают первый метод или операцию при вызове сервиса. Они служат отправной точкой для трассировки активности и используются в настройке обнаружения сбоев, определении пользовательских сервисов и анализе потока сервисов.
 
@@ -54,7 +54,7 @@ Dynatrace использует атрибуты ресурсов для обна
 
 Переход на Enhanced endpoints для SDv1
 
-Вместо [определения ключевых запросов](/docs/observe/application-observability/services-classic/monitor-key-requests "Discover how to closely monitor requests that are critical to your business.") для сервисов SDv1 мы настоятельно рекомендуем включить [функцию **Enhanced endpoints for SDv1**](/docs/observe/application-observability/services/service-detection/service-detection-v1/enhanced-endpoints-sdv1 "Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions."), которая позволяет отображать все конечные точки в ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**, а не только ключевые запросы.
+Вместо [определения ключевых запросов](../services-classic/monitor-key-requests.md "Discover how to closely monitor requests that are critical to your business.") для сервисов SDv1 мы настоятельно рекомендуем включить [функцию **Enhanced endpoints for SDv1**](service-detection/service-detection-v1/enhanced-endpoints-sdv1.md "Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions."), которая позволяет отображать все конечные точки в ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**, а не только ключевые запросы.
 
 ## Ошибки, исключения и сбои
 

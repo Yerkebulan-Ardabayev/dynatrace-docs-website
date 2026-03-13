@@ -246,7 +246,7 @@ Sequence of characters with a specified character set.
   Optionally, you can enclose strings in triple quotes, such as """someString""".
 
   + Inside triple quotes, no escaping is necessary.
-  + Triple quotes are not allowed as part of the string. In such a scenario, you can use the standard strings or the [concat](/docs/platform/grail/dynatrace-query-language/functions/string-functions#concat "A list of DQL string functions.") function.
+  + Triple quotes are not allowed as part of the string. In such a scenario, you can use the standard strings or the [concat](functions/string-functions.md#concat "A list of DQL string functions.") function.
 * **Converting to String**  
   All DQL datatypes can be converted to a string:
 
@@ -268,9 +268,9 @@ A data type that is used to represent 64-bit identifiers and 128-bit identifiers
 
 You can use the following DQL functions to create `UID` data:
 
-* [uid64](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#uid64 "A list of DQL conversion and casting functions.")
-* [uid128](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#uid128 "A list of DQL conversion and casting functions.")
-* [toUid](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toUid "A list of DQL conversion and casting functions.")
+* [uid64](functions/conversion-and-casting-functions.md#uid64 "A list of DQL conversion and casting functions.")
+* [uid128](functions/conversion-and-casting-functions.md#uid128 "A list of DQL conversion and casting functions.")
+* [toUid](functions/conversion-and-casting-functions.md#toUid "A list of DQL conversion and casting functions.")
 
 ## Complex types
 
@@ -310,7 +310,7 @@ A data structure that contains a sequence of values, each identified by index.
   | fields a == b, arraySize(b) > arraySize(c)
   ```
 
-See the complete list of [DQL array functions](/docs/platform/grail/dynatrace-query-language/functions#array-functions "A list of DQL functions.") for further information.
+See the complete list of [DQL array functions](functions.md#array-functions "A list of DQL functions.") for further information.
 
 ### Record
 
@@ -397,11 +397,11 @@ A set of key-value pair data whose value can be any DQL data type.
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Use DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.")
-* [DQL compared to SQL and more](/docs/platform/grail/dynatrace-query-language/dql-comparison "See how DQL compares to other query languages.")
-* [DQL language reference](/docs/platform/grail/dynatrace-query-language/dql-reference "Dynatrace Query Language syntax reference.")
-* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [DQL functions](/docs/platform/grail/dynatrace-query-language/functions "A list of DQL functions.")
-* [DQL operators](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.")
-* [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.")
+* [Dynatrace Query Language](../dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Use DQL queries](dql-guide.md "Find out how DQL works and what are DQL key concepts.")
+* [DQL compared to SQL and more](dql-comparison.md "See how DQL compares to other query languages.")
+* [DQL language reference](dql-reference.md "Dynatrace Query Language syntax reference.")
+* [DQL commands](commands.md "A list of DQL commands.")
+* [DQL functions](functions.md "A list of DQL functions.")
+* [DQL operators](operators.md "A list of DQL Operators.")
+* [DQL best practices](dql-best-practices.md "Best practices for using Dynatrace Query Language.")

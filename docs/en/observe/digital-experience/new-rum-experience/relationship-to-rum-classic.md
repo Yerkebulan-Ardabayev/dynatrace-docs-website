@@ -34,10 +34,10 @@ When the New RUM Experience is enabled, RUM beacons in a new format are sent alo
 
 #### Infrastructure requirements
 
-At this point, the New RUM Experience relies only on the HTTP headers and cookies already covered by the [firewall constraints for RUM Classic](/docs/observe/digital-experience/web-applications/initial-setup/firewall-constraints-for-rum "Find out how to make sure that Real User Monitoring data passes through your firewall."). If your firewalls and other infrastructure components are already configured to let these headers and cookies pass through, no further changes are required when you enable the New RUM Experience.
+At this point, the New RUM Experience relies only on the HTTP headers and cookies already covered by the [firewall constraints for RUM Classic](../web-applications/initial-setup/firewall-constraints-for-rum.md "Find out how to make sure that Real User Monitoring data passes through your firewall."). If your firewalls and other infrastructure components are already configured to let these headers and cookies pass through, no further changes are required when you enable the New RUM Experience.
 
 ## Related topics
 
-* [Capture event and session properties for web frontends](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/event-and-session-properties "Learn how to capture event and session properties for web frontends.")
-* [Capture event and session properties for mobile frontends](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/additional-configuration/event-and-session-properties "Learn how to capture event and session properties for mobile frontends.")
-* [Firewall constraints for RUM](/docs/observe/digital-experience/web-applications/initial-setup/firewall-constraints-for-rum "Find out how to make sure that Real User Monitoring data passes through your firewall.")
+* [Capture event and session properties for web frontends](web-frontends/additional-configuration/event-and-session-properties.md "Learn how to capture event and session properties for web frontends.")
+* [Capture event and session properties for mobile frontends](mobile-frontends/additional-configuration/event-and-session-properties.md "Learn how to capture event and session properties for mobile frontends.")
+* [Firewall constraints for RUM](../web-applications/initial-setup/firewall-constraints-for-rum.md "Find out how to make sure that Real User Monitoring data passes through your firewall.")

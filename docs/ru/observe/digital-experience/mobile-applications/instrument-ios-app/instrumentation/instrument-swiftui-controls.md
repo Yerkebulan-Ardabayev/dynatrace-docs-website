@@ -15,7 +15,7 @@ scraped: 2026-03-05T21:25:19.171690
 
 OneAgent для iOS версии 8.249+
 
-После [инструментирования вашего мобильного приложения с помощью OneAgent для iOS](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios "Настройте мониторинг пользовательского опыта для приложений iOS в Dynatrace."), вы также можете захотеть инструментировать элементы управления SwiftUI вашего приложения. Эта страница предоставляет дополнительную информацию о том, как настроить ваш проект, обновить инструментор SwiftUI, преодолеть известные ограничения и многое другое.
+После [инструментирования вашего мобильного приложения с помощью OneAgent для iOS](dynatrace-auto-instrumentation-for-ios.md "Настройте мониторинг пользовательского опыта для приложений iOS в Dynatrace."), вы также можете захотеть инструментировать элементы управления SwiftUI вашего приложения. Эта страница предоставляет дополнительную информацию о том, как настроить ваш проект, обновить инструментор SwiftUI, преодолеть известные ограничения и многое другое.
 
 Для инструментирования элементов управления SwiftUI наш инструментор SwiftUI добавляет дополнительный код в исходный код вашего проекта (файлы `*.swift`) в процессе сборки. Этот код отслеживает состояние элементов пользовательского интерфейса и уведомляет OneAgent для iOS о любых обновлениях. После завершения процесса сборки все изменения в исходном коде вашего проекта отменяются.
 
@@ -25,7 +25,7 @@ OneAgent для iOS версии 8.249+
 
 * SwiftUI версии 2.0+
 * iOS 14+
-* [OneAgent для iOS](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios "Настройте мониторинг пользовательского опыта для приложений iOS в Dynatrace.")
+* [OneAgent для iOS](dynatrace-auto-instrumentation-for-ios.md "Настройте мониторинг пользовательского опыта для приложений iOS в Dynatrace.")
 
 ## Поддерживаемые элементы управления
 
@@ -95,11 +95,11 @@ OneAgent для iOS версии 8.265+
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Создайте приложение в Dynatrace**](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios#create-app-in-ui "Настройте мониторинг пользовательского опыта для приложений iOS в Dynatrace.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Создайте приложение в Dynatrace**](dynatrace-auto-instrumentation-for-ios.md#create-app-in-ui "Настройте мониторинг пользовательского опыта для приложений iOS в Dynatrace.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Настройте OneAgent для вашего проекта**](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios#set-up-oneagent "Настройте мониторинг пользовательского опыта для приложений iOS в Dynatrace.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Настройте OneAgent для вашего проекта**](dynatrace-auto-instrumentation-for-ios.md#set-up-oneagent "Настройте мониторинг пользовательского опыта для приложений iOS в Dynatrace.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Установите наш инструментор SwiftUI**](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/instrument-swiftui-controls#install-instrumentor "Используйте инструментор Dynatrace SwiftUI для мониторинга ваших приложений SwiftUI.")
+**Установите наш инструментор SwiftUI**](instrument-swiftui-controls.md#install-instrumentor "Используйте инструментор Dynatrace SwiftUI для мониторинга ваших приложений SwiftUI.")
 
 ## Управление инструментором SwiftUI
 
@@ -107,7 +107,7 @@ OneAgent для iOS версии 8.265+
 
 Чтобы инструментировать элементы управления SwiftUI вашего приложения, установите инструментор Dynatrace SwiftUI. Это можно сделать через Homebrew или вручную.
 
-[OneAgent для iOS](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios "Настройте мониторинг пользовательского опыта для приложений iOS в Dynatrace.") должен быть уже настроен для вашего проекта. Также не забудьте сделать резервную копию проекта перед установкой инструментора.
+[OneAgent для iOS](dynatrace-auto-instrumentation-for-ios.md "Настройте мониторинг пользовательского опыта для приложений iOS в Dynatrace.") должен быть уже настроен для вашего проекта. Также не забудьте сделать резервную копию проекта перед установкой инструментора.
 
 Homebrew
 
@@ -119,7 +119,7 @@ Homebrew
 
    * Необязательно Дополнительно можно указать `<PROJECT.xcodeproj> --scheme <SCHEME> --target <TARGET>`. Если данные проекта не указаны, инструмент попытается автоматически определить доступные цели и схемы и запустить интерактивный выбор.
 
-1. Загрузите и извлеките ZIP-файл, содержащий наш инструментор SwiftUI. Ссылка доступна в [мастере инструментирования мобильных приложений](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios#instrumentation-wizard "Настройте мониторинг пользовательского опыта для приложений iOS в Dynatrace.").
+1. Загрузите и извлеките ZIP-файл, содержащий наш инструментор SwiftUI. Ссылка доступна в [мастере инструментирования мобильных приложений](dynatrace-auto-instrumentation-for-ios.md#instrumentation-wizard "Настройте мониторинг пользовательского опыта для приложений iOS в Dynatrace.").
 2. Создайте папку `.dynatrace` в корне вашего проекта — на том же уровне, что и файл `*.xcodeproj`.
 
    Если вы получаете системное предупреждение о том, что невозможно создать папку с именем, начинающимся с точки, выполните одно из следующих действий:
@@ -147,7 +147,7 @@ Homebrew
 
 Выполните `brew update` и `brew upgrade DTSwiftInstrumentor`, чтобы обновить наш инструментор SwiftUI.
 
-1. Загрузите и извлеките ZIP-файл, содержащий новую версию инструментора SwiftUI. Ссылка доступна в [мастере инструментирования мобильных приложений](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios#instrumentation-wizard "Настройте мониторинг пользовательского опыта для приложений iOS в Dynatrace.").
+1. Загрузите и извлеките ZIP-файл, содержащий новую версию инструментора SwiftUI. Ссылка доступна в [мастере инструментирования мобильных приложений](dynatrace-auto-instrumentation-for-ios.md#instrumentation-wizard "Настройте мониторинг пользовательского опыта для приложений iOS в Dynatrace.").
 2. Скопируйте загруженный `DTSwiftInstrumentor` в папку `.dynatrace`, заменив существующий файл.
 
 Если вы видите следующее предупреждение сборки, вам также необходимо обновить скрипты сборки, которые были интегрированы во время установки инструментора Dynatrace SwiftUI.
@@ -302,9 +302,9 @@ Button("Login", action: {
 
 ### Включение Session Replay при сбоях
 
-Session Replay при сбоях может захватывать и визуально воспроизводить действия, которые пользователь вашего приложения выполнял до [сбоя](/docs/observe/digital-experience/rum-concepts/user-and-error-events#crash "Узнайте о событиях пользователя и ошибках, а также о типах событий пользователя и ошибок, захватываемых Dynatrace.").
+Session Replay при сбоях может захватывать и визуально воспроизводить действия, которые пользователь вашего приложения выполнял до [сбоя](../../../rum-concepts/user-and-error-events.md#crash "Узнайте о событиях пользователя и ошибках, а также о типах событий пользователя и ошибок, захватываемых Dynatrace.").
 
-Чтобы включить эту функцию, см. [Включение Session Replay для приложений SwiftUI](/docs/observe/digital-experience/session-replay/session-replay-ios#sr-swiftui "Предварительные требования и процедура включения Session Replay для ваших приложений iOS.").
+Чтобы включить эту функцию, см. [Включение Session Replay для приложений SwiftUI](../../../session-replay/session-replay-ios.md#sr-swiftui "Предварительные требования и процедура включения Session Replay для ваших приложений iOS.").
 
 ### Глобальное исключение элементов управления из инструментирования SwiftUI
 
@@ -312,7 +312,7 @@ OneAgent для iOS версии 8.263+
 
 Инструментор Dynatrace SwiftUI инструментирует все элементы пользовательского интерфейса, перечисленные в разделе [Поддерживаемые элементы управления](#supported-controls). При необходимости вы можете глобально исключить определённые элементы управления из процесса инструментирования SwiftUI.
 
-Чтобы глобально исключить элементы управления из инструментирования SwiftUI, добавьте [ключ конфигурации `DTXSwiftUIExcludedControls`](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#swiftui "С помощью ключей конфигурации вы можете тонко настроить автоматическое инструментирование ваших приложений iOS.") в [файл `Info.plist`](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Файл Info.plist хранит идентификацию вашего приложения и ключи конфигурации. Используйте его для тонкой настройки конфигурации инструментирования.") вашего проекта.
+Чтобы глобально исключить элементы управления из инструментирования SwiftUI, добавьте [ключ конфигурации `DTXSwiftUIExcludedControls`](../customization/ios-configuration-keys.md#swiftui "С помощью ключей конфигурации вы можете тонко настроить автоматическое инструментирование ваших приложений iOS.") в [файл `Info.plist`](info-plist-file.md "Файл Info.plist хранит идентификацию вашего приложения и ключи конфигурации. Используйте его для тонкой настройки конфигурации инструментирования.") вашего проекта.
 
 ```
 <key>DTXExcludedSwiftUIFiles</key>
@@ -421,7 +421,7 @@ Button("Register", action: { /* perform registration */ })
 
 Чтобы исключить файлы и каталоги из инструментирования SwiftUI
 
-1. Добавьте [ключ конфигурации `DTXExcludedSwiftUIFiles`](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#swiftui "С помощью ключей конфигурации вы можете тонко настроить автоматическое инструментирование ваших приложений iOS.") в [файл `Info.plist`](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Файл Info.plist хранит идентификацию вашего приложения и ключи конфигурации. Используйте его для тонкой настройки конфигурации инструментирования.") вашего проекта.
+1. Добавьте [ключ конфигурации `DTXExcludedSwiftUIFiles`](../customization/ios-configuration-keys.md#swiftui "С помощью ключей конфигурации вы можете тонко настроить автоматическое инструментирование ваших приложений iOS.") в [файл `Info.plist`](info-plist-file.md "Файл Info.plist хранит идентификацию вашего приложения и ключи конфигурации. Используйте его для тонкой настройки конфигурации инструментирования.") вашего проекта.
 2. Перечислите относительные пути всех файлов и каталогов, которые вы не хотите инструментировать. Пути должны быть относительно корня проекта — каталога, в котором расположен файл `.xcodeproj`.
 
    ```
@@ -450,7 +450,7 @@ Button("Register", action: { /* perform registration */ })
 
 Мы отключили инструментирование SwiftUI для сборок симулятора, чтобы преодолеть [проблему с предпросмотром в Xcode](#issue-preview-xcode).
 
-Чтобы включить инструментирование SwiftUI для сборок симулятора, добавьте [ключ конфигурации `DTXSwiftUIInstrumentSimulatorBuilds`](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#swiftui "С помощью ключей конфигурации вы можете тонко настроить автоматическое инструментирование ваших приложений iOS.") в [файл `Info.plist`](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Файл Info.plist хранит идентификацию вашего приложения и ключи конфигурации. Используйте его для тонкой настройки конфигурации инструментирования.") вашего проекта и установите этот ключ в значение `true`.
+Чтобы включить инструментирование SwiftUI для сборок симулятора, добавьте [ключ конфигурации `DTXSwiftUIInstrumentSimulatorBuilds`](../customization/ios-configuration-keys.md#swiftui "С помощью ключей конфигурации вы можете тонко настроить автоматическое инструментирование ваших приложений iOS.") в [файл `Info.plist`](info-plist-file.md "Файл Info.plist хранит идентификацию вашего приложения и ключи конфигурации. Используйте его для тонкой настройки конфигурации инструментирования.") вашего проекта и установите этот ключ в значение `true`.
 
 ```
 <key>DTXSwiftUIInstrumentSimulatorBuilds</key>
@@ -464,7 +464,7 @@ Button("Register", action: { /* perform registration */ })
 
 Наш инструментор SwiftUI генерирует код, совместимый с SwiftUI 2.0+, который работает только на устройствах с iOS 14+. Попытка генерации сборок для целей развёртывания iOS 13 и более ранних версий завершится неудачей.
 
-Чтобы переопределить эту проверку, добавьте [ключ конфигурации `DTXSwiftUIIgnoreDeploymentTarget`](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#swiftui "С помощью ключей конфигурации вы можете тонко настроить автоматическое инструментирование ваших приложений iOS.") в [файл `Info.plist`](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Файл Info.plist хранит идентификацию вашего приложения и ключи конфигурации. Используйте его для тонкой настройки конфигурации инструментирования.") вашего проекта и установите этот ключ в значение `true`.
+Чтобы переопределить эту проверку, добавьте [ключ конфигурации `DTXSwiftUIIgnoreDeploymentTarget`](../customization/ios-configuration-keys.md#swiftui "С помощью ключей конфигурации вы можете тонко настроить автоматическое инструментирование ваших приложений iOS.") в [файл `Info.plist`](info-plist-file.md "Файл Info.plist хранит идентификацию вашего приложения и ключи конфигурации. Используйте его для тонкой настройки конфигурации инструментирования.") вашего проекта и установите этот ключ в значение `true`.
 
 ```
 <key>DTXSwiftUIIgnoreDeploymentTarget</key>
@@ -482,7 +482,7 @@ Button("Register", action: { /* perform registration */ })
 
 Чтобы включить сопоставление номеров строк для проектов Objective-C
 
-1. Добавьте [ключ конфигурации `DTXSwiftUIManualPlaceholder`](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#swiftui "С помощью ключей конфигурации вы можете тонко настроить автоматическое инструментирование ваших приложений iOS.") в [файл `Info.plist`](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Файл Info.plist хранит идентификацию вашего приложения и ключи конфигурации. Используйте его для тонкой настройки конфигурации инструментирования.") вашего проекта и установите этот ключ в значение `true`.
+1. Добавьте [ключ конфигурации `DTXSwiftUIManualPlaceholder`](../customization/ios-configuration-keys.md#swiftui "С помощью ключей конфигурации вы можете тонко настроить автоматическое инструментирование ваших приложений iOS.") в [файл `Info.plist`](info-plist-file.md "Файл Info.plist хранит идентификацию вашего приложения и ключи конфигурации. Используйте его для тонкой настройки конфигурации инструментирования.") вашего проекта и установите этот ключ в значение `true`.
 
    ```
    <key>DTXSwiftUIManualPlaceholder</key>
@@ -558,7 +558,7 @@ OneAgent для iOS версии 8.257+
 
 После каждой сборки инструментор SwiftUI создаёт резервные копии инструментированных файлов и сгенерированных журналов, которые хранятся в `dynatrace_instrumented`. По умолчанию эти файлы не удаляются, и общий размер каталога будет увеличиваться со временем. По этой причине мы рекомендуем включить автоматическую очистку журналов.
 
-* Чтобы удалять журналы инструментора SwiftUI после определённого количества сборок, добавьте [ключ конфигурации `DTXCleanSwiftUILogsByCount`](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#swiftui "С помощью ключей конфигурации вы можете тонко настроить автоматическое инструментирование ваших приложений iOS.") в [файл `Info.plist`](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Файл Info.plist хранит идентификацию вашего приложения и ключи конфигурации. Используйте его для тонкой настройки конфигурации инструментирования.") вашего проекта.
+* Чтобы удалять журналы инструментора SwiftUI после определённого количества сборок, добавьте [ключ конфигурации `DTXCleanSwiftUILogsByCount`](../customization/ios-configuration-keys.md#swiftui "С помощью ключей конфигурации вы можете тонко настроить автоматическое инструментирование ваших приложений iOS.") в [файл `Info.plist`](info-plist-file.md "Файл Info.plist хранит идентификацию вашего приложения и ключи конфигурации. Используйте его для тонкой настройки конфигурации инструментирования.") вашего проекта.
 
   ```
   <key>DTXCleanSwiftUILogsByCount</key>
@@ -567,7 +567,7 @@ OneAgent для iOS версии 8.257+
 
   <number>10</number>
   ```
-* Чтобы удалять журналы по истечении определённого количества дней, добавьте [ключ конфигурации `DTXCleanSwiftUILogsByAgeDays`](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#swiftui "С помощью ключей конфигурации вы можете тонко настроить автоматическое инструментирование ваших приложений iOS.") в файл `Info.plist`.
+* Чтобы удалять журналы по истечении определённого количества дней, добавьте [ключ конфигурации `DTXCleanSwiftUILogsByAgeDays`](../customization/ios-configuration-keys.md#swiftui "С помощью ключей конфигурации вы можете тонко настроить автоматическое инструментирование ваших приложений iOS.") в файл `Info.plist`.
 
   ```
   <key>DTXCleanSwiftUILogsByAgeDays</key>

@@ -13,7 +13,7 @@ scraped: 2026-03-05T21:29:41.920596
 * 14-min read
 * Updated on Jan 23, 2026
 
-This page refers to the classic AWS Lambda integration. For the latest version, see [Trace Lambda functions](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/trace-lambda-functions "Monitor AWS Lambda functions.").
+This page refers to the classic AWS Lambda integration. For the latest version, see [Trace Lambda functions](../trace-lambda-functions.md "Monitor AWS Lambda functions.").
 
 Dynatrace provides you with a dedicated AWS Lambda layer that contains the Dynatrace extension for AWS Lambda. You need to add the publicly available layer for your runtime and region to your function. Then, based on your configuration method, Dynatrace provides a template or configuration for your AWS Lambda function.
 
@@ -31,7 +31,7 @@ For other invocation types, OneAgent can't capture any specific information or c
 
 ## Prerequisites
 
-* A supported AWS Lambda [runtime](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration#support-lifecycle "AWS Lambda capabilities and integration options"). The Dynatrace extension supports AWS Lambda functions written in **Node.js**, **Python**, or **Java**.
+* A supported AWS Lambda [runtime](../../aws-lambda-integration.md#support-lifecycle "AWS Lambda capabilities and integration options"). The Dynatrace extension supports AWS Lambda functions written in **Node.js**, **Python**, or **Java**.
   Both **64-bit ARM** ([AWS Graviton2 processorsï»¿](https://aws.amazon.com/ec2/graviton/)) and **64-bit x86** architectures are supported.
 * Java The following RAM requirements need to be met:
 
@@ -46,21 +46,21 @@ For other invocation types, OneAgent can't capture any specific information or c
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Enable AWS Lambda**](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension#activate-aws-lambda "Monitor Lambda functions written in Python, Node.js, and Java.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Enable AWS Lambda**](aws-lambda-extension.md#activate-aws-lambda "Monitor Lambda functions written in Python, Node.js, and Java.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Choose a configuration method**](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension#lambda-cfg-method "Monitor Lambda functions written in Python, Node.js, and Java.")[![Step 3 optional](https://dt-cdn.net/images/dotted-step-3-e2082c1921.svg "Step 3 optional")
+**Choose a configuration method**](aws-lambda-extension.md#lambda-cfg-method "Monitor Lambda functions written in Python, Node.js, and Java.")[![Step 3 optional](https://dt-cdn.net/images/dotted-step-3-e2082c1921.svg "Step 3 optional")
 
-**Specify a Dynatrace API endpoint**](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension#lambda-cfg-endpoint "Monitor Lambda functions written in Python, Node.js, and Java.")[![Step 4 optional](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Step 4 optional")
+**Specify a Dynatrace API endpoint**](aws-lambda-extension.md#lambda-cfg-endpoint "Monitor Lambda functions written in Python, Node.js, and Java.")[![Step 4 optional](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Step 4 optional")
 
-**Enable Real User Monitoring**](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension#lambda-cfg-rum "Monitor Lambda functions written in Python, Node.js, and Java.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
+**Enable Real User Monitoring**](aws-lambda-extension.md#lambda-cfg-rum "Monitor Lambda functions written in Python, Node.js, and Java.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
 
-**Define an AWS layer name**](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension#lambda-cfg-layer "Monitor Lambda functions written in Python, Node.js, and Java.")[![Step 6 optional](https://dt-cdn.net/images/dotted-step-6-fbd29ea893.svg "Step 6 optional")
+**Define an AWS layer name**](aws-lambda-extension.md#lambda-cfg-layer "Monitor Lambda functions written in Python, Node.js, and Java.")[![Step 6 optional](https://dt-cdn.net/images/dotted-step-6-fbd29ea893.svg "Step 6 optional")
 
-**Deployment**](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension#deployment "Monitor Lambda functions written in Python, Node.js, and Java.")[![Step 7](https://dt-cdn.net/images/step-7-35139ef2d6.svg "Step 7")
+**Deployment**](aws-lambda-extension.md#deployment "Monitor Lambda functions written in Python, Node.js, and Java.")[![Step 7](https://dt-cdn.net/images/step-7-35139ef2d6.svg "Step 7")
 
-**Configuration options**](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension#config-options "Monitor Lambda functions written in Python, Node.js, and Java.")[![Step 8](https://dt-cdn.net/images/step-8-72c2162189.svg "Step 8")
+**Configuration options**](aws-lambda-extension.md#config-options "Monitor Lambda functions written in Python, Node.js, and Java.")[![Step 8](https://dt-cdn.net/images/step-8-72c2162189.svg "Step 8")
 
-**Dynatrace AWS integration**](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension#aws-integration "Monitor Lambda functions written in Python, Node.js, and Java.")
+**Dynatrace AWS integration**](aws-lambda-extension.md#aws-integration "Monitor Lambda functions written in Python, Node.js, and Java.")
 
 ## Step 1 Enable AWS Lambda
 
@@ -189,7 +189,7 @@ Copy the configuration snippets into your deployment and use your deployment met
 AWS Lambda also supports [**non-proxy integration**ï»¿](https://dt-url.net/8u03rh3), whichâwithout some additional configurationâprevents Dynatrace from
 
 * Tracing calls from other monitored applications
-* [RUM](/docs/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.") detection (web and mobile)
+* [RUM](../../../../../observe/digital-experience/rum-concepts/rum-overview.md "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.") detection (web and mobile)
 
 Node.jsPython To make tracing calls from other monitored applications/RUM detection work in this scenario, create a custom mapping template in the integration requests configuration.
 
@@ -271,7 +271,7 @@ A fetch accesses AWS Secrets Manager only once, during the Lambda function's ini
 
 The Node.js and Python layers use the AWS SDK version provided by the AWS Lambda runtime to access the secret.
 
-To [fetch the token for log collection](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector#aws-secrets-manager "Collect logs from AWS Lambda functions"), set another fetch.
+To [fetch the token for log collection](../collector.md#aws-secrets-manager "Collect logs from AWS Lambda functions"), set another fetch.
 
 ### Filter cold starts
 
@@ -335,7 +335,7 @@ While not mandatory, we recommend that you set up Dynatrace Amazon CloudWatch in
 
 ## Known limitations
 
-* The Dynatrace AWS Lambda extension does not support the capture of [method-level request attributes](/docs/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-method-arguments "Learn how to create request attributes based on Java, .NET, or PHP method arguments and how to use them on the serviceâs overview page. Also find out how you can aggregate the captured values of request attributes as well as how you can access objects, in case the value to be captured is a complex object.").
+* The Dynatrace AWS Lambda extension does not support the capture of [method-level request attributes](../../../../../observe/application-observability/services/request-attributes/capture-request-attributes-based-on-method-arguments.md "Learn how to create request attributes based on Java, .NET, or PHP method arguments and how to use them on the serviceâs overview page. Also find out how you can aggregate the captured values of request attributes as well as how you can access objects, in case the value to be captured is a complex object.").
 * Most Dynatrace AWS Lambda extensions don't capture IP addresses of outgoing HTTP requests. This results in **unmonitored hosts** if the called service isn't monitored with Dynatrace.
 * Getting auth token from AWS Secrets Manager is not supported if [Lambda SnapStartï»¿](https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html) is enabled.
 * **Outgoing requests to another AWS Lambda function:** In a monitored AWS Lambda function, the following libraries are supported for outgoing requests to another AWS Lambda function:
@@ -372,4 +372,4 @@ While not mandatory, we recommend that you set up Dynatrace Amazon CloudWatch in
 
 ## Related topics
 
-* [Limit API calls to AWS using tags](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/limit-api-calls-to-aws-using-tags "Add and configure AWS tags to limit AWS resources.")
+* [Limit API calls to AWS using tags](../../../integrate-with-aws/cloudwatch-metrics/limit-api-calls-to-aws-using-tags.md "Add and configure AWS tags to limit AWS resources.")

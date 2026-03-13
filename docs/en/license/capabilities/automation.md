@@ -18,11 +18,11 @@ Dynatrace Automation empowers you to digitally transform with cloud-native answe
 There are three types of Automation workflows in Dynatrace.
 
 * Standard workflows: These are automation workflows that trigger two or more tasks.
-* [Simple workflows](/docs/analyze-explore-automate/workflows/simple-workflow "Build and run a simple workflow."): Single-task workflows with restricted functionality.
-* [Draft-only workflows](/docs/analyze-explore-automate/workflows/building "Create and edit workflows in Dynatrace Workflows."): Workflows that are not yet deployed, or which have been un-deployed.
+* [Simple workflows](../../analyze-explore-automate/workflows/simple-workflow.md "Build and run a simple workflow."): Single-task workflows with restricted functionality.
+* [Draft-only workflows](../../analyze-explore-automate/workflows/building.md "Create and edit workflows in Dynatrace Workflows."): Workflows that are not yet deployed, or which have been un-deployed.
 
 ## Related topics
 
-* [Calculate your consumption of Automation Workflow (DPS)](/docs/license/capabilities/automation/automation "Learn how your consumption of Dynatrace Automation Workflow DPS capability is billed and charged.")
-* [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* [Calculate your consumption of Automation Workflow (DPS)](automation/automation.md "Learn how your consumption of Dynatrace Automation Workflow DPS capability is billed and charged.")
+* [License Dynatrace](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)

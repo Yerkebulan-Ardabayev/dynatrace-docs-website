@@ -27,25 +27,25 @@ scraped: 2026-03-06T21:13:18.908578
 
 Необходимые знания
 
-* [Включение данных в сегменты](/docs/manage/segments/concepts/segments-concepts-includes "Узнайте, как данные различных типов могут быть включены в сегменты.")
-* [Сегменты в DQL-запросах](/docs/manage/segments/concepts/segments-concepts-queries "Узнайте, как Grail оценивает сегменты во время выполнения запроса для возврата только совпадающих результатов.")
-* [Начало работы с Kubernetes](/docs/observe/infrastructure-observability/kubernetes-app/enable-k8s-experience "Включите Kubernetes для существующих кластеров или начните мониторинг новых кластеров.")
+* [Включение данных в сегменты](../concepts/segments-concepts-includes.md "Узнайте, как данные различных типов могут быть включены в сегменты.")
+* [Сегменты в DQL-запросах](../concepts/segments-concepts-queries.md "Узнайте, как Grail оценивает сегменты во время выполнения запроса для возврата только совпадающих результатов.")
+* [Начало работы с Kubernetes](../../../observe/infrastructure-observability/kubernetes-app/enable-k8s-experience.md "Включите Kubernetes для существующих кластеров или начните мониторинг новых кластеров.")
 
 Предварительные требования
 
 * Среда Dynatrace SaaS на базе Grail и AppEngine.
-* У вас есть разрешения `storage:filter-segments:write` и `storage:filter-segments:read`. Чтобы узнать, как настроить разрешения, см. [Разрешения в Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.").
-* У вас есть лицензия и настроен [Kubernetes Platform Monitoring](/docs/license/capabilities/container-monitoring/kubernetes-platform-monitoring "Узнайте, как рассчитывается потребление возможности Dynatrace Kubernetes Platform Monitoring DPS.").
+* У вас есть разрешения `storage:filter-segments:write` и `storage:filter-segments:read`. Чтобы узнать, как настроить разрешения, см. [Разрешения в Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.").
+* У вас есть лицензия и настроен [Kubernetes Platform Monitoring](../../../license/capabilities/container-monitoring/kubernetes-platform-monitoring.md "Узнайте, как рассчитывается потребление возможности Dynatrace Kubernetes Platform Monitoring DPS.").
 
 ## Шаги
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Создание сегмента для кластеров общего стека**](/docs/manage/segments/use-cases/segments-use-cases-kubernetes-clusters#create "Настройте сегмент для сигналов и отслеживаемых сущностей, связанных с кластерами Kubernetes")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Создание сегмента для кластеров общего стека**](segments-use-cases-kubernetes-clusters.md#create "Настройте сегмент для сигналов и отслеживаемых сущностей, связанных с кластерами Kubernetes")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Включение сигналов наблюдаемости и отслеживаемых сущностей**](/docs/manage/segments/use-cases/segments-use-cases-kubernetes-clusters#include "Настройте сегмент для сигналов и отслеживаемых сущностей, связанных с кластерами Kubernetes")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Включение сигналов наблюдаемости и отслеживаемых сущностей**](segments-use-cases-kubernetes-clusters.md#include "Настройте сегмент для сигналов и отслеживаемых сущностей, связанных с кластерами Kubernetes")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Анализ производительности и состояния всего стека**](/docs/manage/segments/use-cases/segments-use-cases-kubernetes-clusters#analyze "Настройте сегмент для сигналов и отслеживаемых сущностей, связанных с кластерами Kubernetes")
+**Анализ производительности и состояния всего стека**](segments-use-cases-kubernetes-clusters.md#analyze "Настройте сегмент для сигналов и отслеживаемых сущностей, связанных с кластерами Kubernetes")
 
 ### Шаг 1. Создание сегмента для кластеров общего стека
 

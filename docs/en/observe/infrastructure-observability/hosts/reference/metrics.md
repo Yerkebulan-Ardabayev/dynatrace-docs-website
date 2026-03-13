@@ -15,7 +15,7 @@ scraped: 2026-03-05T21:36:56.739400
 
 This is a reference list of the metrics used for hosts, with details of their availability on Windows, Linux, and AIX operating systems.
 
-You can also check if the metrics are available in the Discovery monitoring mode. For more details, refer to [Discovery mode](/docs/platform/oneagent/monitoring-modes/monitoring-modes#discovery "Find out more about the available monitoring modes when using OneAgent.").
+You can also check if the metrics are available in the Discovery monitoring mode. For more details, refer to [Discovery mode](../../../../platform/oneagent/monitoring-modes/monitoring-modes.md#discovery "Find out more about the available monitoring modes when using OneAgent.").
 
 ## CPU and Memory metrics
 

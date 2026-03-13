@@ -11,7 +11,7 @@ scraped: 2026-03-05T21:32:40.132058
 * Reference
 * Обновлено 18 сентября 2025 г.
 
-Возвращает актуальный [JavaScript tag](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats#js-tag "Выберите формат RUM JavaScript-сниппета, наиболее подходящий для вашего конкретного случая использования") для ручной вставки в код вашего веб-приложения. Тег включает ссылку на внешний файл, содержащий как код мониторинга, так и его конфигурацию.
+Возвращает актуальный [JavaScript tag](../../../../observe/digital-experience/web-applications/initial-setup/snippet-formats.md#js-tag "Выберите формат RUM JavaScript-сниппета, наиболее подходящий для вашего конкретного случая использования") для ручной вставки в код вашего веб-приложения. Тег включает ссылку на внешний файл, содержащий как код мониторинга, так и его конфигурацию.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,7 +22,7 @@ scraped: 2026-03-05T21:32:40.132058
 
 Для выполнения этого запроса вам необходим токен доступа с областью действия `rumManualInsertionTags.read`.
 
-Чтобы узнать, как его получить и использовать, см. [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как его получить и использовать, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 
@@ -34,4 +34,4 @@ scraped: 2026-03-05T21:32:40.132058
 
 ## Ответ
 
-Ответ содержит полезную нагрузку `text/plain` с актуальной версией [JavaScript tag](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats#js-tag "Выберите формат RUM JavaScript-сниппета, наиболее подходящий для вашего конкретного случая использования") для указанного приложения.
+Ответ содержит полезную нагрузку `text/plain` с актуальной версией [JavaScript tag](../../../../observe/digital-experience/web-applications/initial-setup/snippet-formats.md#js-tag "Выберите формат RUM JavaScript-сниппета, наиболее подходящий для вашего конкретного случая использования") для указанного приложения.

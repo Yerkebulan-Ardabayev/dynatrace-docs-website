@@ -36,7 +36,7 @@ The quality of the OpenTracing spans captured by OneAgent depends on the quality
 
 1
 
-Supported in [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](../../amazon-web-services/integrate-into-aws/aws-lambda-integration.md "AWS Lambda capabilities and integration options").
 
 ## Enable OpenTracing integration
 
@@ -161,17 +161,17 @@ To enable support for capturing span data
    traced.getMap("map").put("key", "value");
    ```
 
-See [Span settings](/docs/ingest-from/extend-dynatrace/extend-tracing/span-settings "Learn how to configure span settings for OpenTelemetry and OpenTracing.") for all configuration options.
+See [Span settings](span-settings.md "Learn how to configure span settings for OpenTelemetry and OpenTracing.") for all configuration options.
 
 ## Limitations
 
-* [Span default service](/docs/observe/application-observability/services/service-detection/service-detection-v1#span-service "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
+* [Span default service](../../../observe/application-observability/services/service-detection/service-detection-v1.md#span-service "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
 * When both OneAgent and OpenTracing instrumentation are present for the same technology (for example, incoming web requests via the Servlet API), you may experience the following limitations:
 
   + Duplicate nodes in PurePathÂ® distributed traces
   + Additional overhead
   + For JDBC, such double instrumentation may break service detection
-    Be extra cautious when enabling OneAgent OpenTracing Java support for OneAgent out-of-the-box [supported technologies](/docs/ingest-from/technology-support#java "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+    Be extra cautious when enabling OneAgent OpenTracing Java support for OneAgent out-of-the-box [supported technologies](../../technology-support.md#java "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 * Integrating traces from OpenTracing Spring framework instrumentation currently is not supported.
 * The OpenTracing Java sensor doesn't capture `array`-type attributes.
 

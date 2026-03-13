@@ -13,18 +13,18 @@ scraped: 2026-03-05T21:27:58.397956
 * Чтение займёт 2 минуты
 * Обновлено 25 октября 2023 г.
 
-В этой статье рассматриваются токены доступа, используемые в предыдущих версиях Dynatrace для аутентификации в классических API конфигурации и окружения. Для работы с последней версией Dynatrace см. разделы [Токены платформы](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.") и [OAuth-клиенты](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+В этой статье рассматриваются токены доступа, используемые в предыдущих версиях Dynatrace для аутентификации в классических API конфигурации и окружения. Для работы с последней версией Dynatrace см. разделы [Токены платформы](platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.") и [OAuth-клиенты](oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
 
-Любой внешний доступ к вашей среде мониторинга Dynatrace основывается на двух элементах: [идентификаторе окружения](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") и *токене доступа*.
+Любой внешний доступ к вашей среде мониторинга Dynatrace основывается на двух элементах: [идентификаторе окружения](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") и *токене доступа*.
 
 Dynatrace использует несколько типов токенов:
 
 * Токены доступа и персональные токены доступа предоставляют доступ к:
 
-  + [Dynatrace API](/docs/dynatrace-api "Find out what you need to use the Dynatrace API.")
+  + [Dynatrace API](../../../dynatrace-api.md "Find out what you need to use the Dynatrace API.")
   + Загрузке установщиков OneAgent и ActiveGate
-* [Персональные токены доступа](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token "Learn the concept of a personal access token and its scopes.") предоставляют доступ к некоторым конечным точкам Dynatrace API
-* [Токены арендатора](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token "Learn what a tenant token is and how to change it.") позволяют OneAgent передавать данные в Dynatrace
+* [Персональные токены доступа](access-tokens/personal-access-token.md "Learn the concept of a personal access token and its scopes.") предоставляют доступ к некоторым конечным точкам Dynatrace API
+* [Токены арендатора](access-tokens/rotate-tenant-token.md "Learn what a tenant token is and how to change it.") позволяют OneAgent передавать данные в Dynatrace
 
 ## Формат токена
 
@@ -92,4 +92,4 @@ dt0[a-zA-Z]{1}[0-9]{2}\.[A-Z0-9]{24}\.[A-Z0-9]{64}
 
 ## Связанные темы
 
-* [Tokens API v1](/docs/dynatrace-api/environment-api/tokens-v1 "Learn how to manage Dynatrace API authentication tokens in your environment.")
+* [Tokens API v1](../../../dynatrace-api/environment-api/tokens-v1.md "Learn how to manage Dynatrace API authentication tokens in your environment.")

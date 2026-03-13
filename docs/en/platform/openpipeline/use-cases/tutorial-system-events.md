@@ -27,13 +27,13 @@ In this article, you'll learn how to set up OpenPipeline to extract a metric to 
 
 Prior knowledge
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* [Dynatrace Query Language](../../grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Processing in OpenPipeline](../concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
 
 Prerequisites
 
-* [Latest Dynatrace](/docs/platform "Dynatrace is an all-in-one platform that's purpose-built for a wide range of use cases.") environment
-* [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license with [Metrics powered by Grail overview (DPS)](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") capabilities
+* [Latest Dynatrace](../../../platform.md "Dynatrace is an all-in-one platform that's purpose-built for a wide range of use cases.") environment
+* [License Dynatrace](../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license with [Metrics powered by Grail overview (DPS)](../../../license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") capabilities
 * `storage:system:read` user permission
 
 ## Steps
@@ -74,7 +74,7 @@ You found the condition that identifies app updates (`event.kind == "AUDIT_EVENT
    * The new metric keyâfor example, `apps.updates`
    * The metric dimensions:
 
-     1. Select **Pre-defined** and choose `resource` from the [pre-defined dimensions](/docs/semantic-dictionary/model/dt-system-events#audit-event "Get to know the Semantic Dictionary models related to system events."). This dimension identifies the ID of the app from which the update originates.
+     1. Select **Pre-defined** and choose `resource` from the [pre-defined dimensions](../../../semantic-dictionary/model/dt-system-events.md#audit-event "Get to know the Semantic Dictionary models related to system events."). This dimension identifies the ID of the app from which the update originates.
      2. Select **Custom** and enter:
 
         + **Field name on record**: A custom dimension that further defines your metricâfor example, `details.app.type`.
@@ -113,4 +113,4 @@ You successfully extracted a metric to track app update frequency. All new app l
 
 ## Related topics
 
-* [System event models](/docs/semantic-dictionary/model/dt-system-events "Get to know the Semantic Dictionary models related to system events.")
+* [System event models](../../../semantic-dictionary/model/dt-system-events.md "Get to know the Semantic Dictionary models related to system events.")

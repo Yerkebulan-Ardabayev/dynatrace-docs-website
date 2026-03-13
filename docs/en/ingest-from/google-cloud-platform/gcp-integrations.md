@@ -17,19 +17,19 @@ Dynatrace OneAgent provides full-stack monitoring on Google Compute Engine and G
 
 ## Integrations
 
-[Monitor Google Kubernetes Engine (GKE)](/docs/ingest-from/google-cloud-platform/gcp-integrations/google-gke "Google GKE")
+[Monitor Google Kubernetes Engine (GKE)](gcp-integrations/google-gke.md "Google GKE")
 
-[Google Cloud Functions monitoring](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions "Set up monitoring for Google Cloud Functions.")
+[Google Cloud Functions monitoring](gcp-integrations/gcp-functions.md "Set up monitoring for Google Cloud Functions.")
 
-[Monitor Google Cloud Run managed](/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun "Monitor Java application deployed on Google Cloud Run managed.")
+[Monitor Google Cloud Run managed](gcp-integrations/cloudrun.md "Monitor Java application deployed on Google Cloud Run managed.")
 
-[Monitor Google App Engine](/docs/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine "Install OneAgent on Google App Engine clusters for application-only monitoring.")
+[Monitor Google App Engine](gcp-integrations/google-app-engine.md "Install OneAgent on Google App Engine clusters for application-only monitoring.")
 
-[Monitor Google Compute Engine](/docs/ingest-from/google-cloud-platform/gcp-integrations/google-compute-engine "Install OneAgent on Google Compute Engine.")
+[Monitor Google Compute Engine](gcp-integrations/google-compute-engine.md "Install OneAgent on Google Compute Engine.")
 
-[End-to-end guide for monitoring Google Cloud services integrating Operations Suite](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide "Other options to set up log and/or metric monitoring for Google Cloud services")
+[End-to-end guide for monitoring Google Cloud services integrating Operations Suite](gcp-integrations/gcp-guide.md "Other options to set up log and/or metric monitoring for Google Cloud services")
 
 ## Related topics
 
-* [Set up Dynatrace on Google Cloud](/docs/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
+* [Set up Dynatrace on Google Cloud](../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
 * [Google Cloud monitoringï»¿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)

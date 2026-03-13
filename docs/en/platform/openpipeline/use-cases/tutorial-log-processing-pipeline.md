@@ -45,25 +45,25 @@ The following log line is an example of the raw data this article focuses on.
 
 Prior knowledge
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* [Dynatrace Query Language](../../grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Processing in OpenPipeline](../concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
 
 Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine.
-* Either [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license that includes [Log Analytics (DPS)](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") capabilities or [DDUs for Log Management and Analytics](/docs/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.").
+* Either [License Dynatrace](../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license that includes [Log Analytics (DPS)](../../../license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") capabilities or [DDUs for Log Management and Analytics](../../../license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics.md "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.").
 
 ## Steps
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Find the relevant log lines in Grail**](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline#logs "Configure OpenPipeline processing for log lines.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Find the relevant log lines in Grail**](tutorial-log-processing-pipeline.md#logs "Configure OpenPipeline processing for log lines.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Configure a pipeline for parsing and metric extraction**](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline#pipeline "Configure OpenPipeline processing for log lines.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Configure a pipeline for parsing and metric extraction**](tutorial-log-processing-pipeline.md#pipeline "Configure OpenPipeline processing for log lines.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Route data to the pipeline**](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline#route "Configure OpenPipeline processing for log lines.")[![Step 4 optional](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Step 4 optional")
+**Route data to the pipeline**](tutorial-log-processing-pipeline.md#route "Configure OpenPipeline processing for log lines.")[![Step 4 optional](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Step 4 optional")
 
-**Verify the configuration**](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline#verify "Configure OpenPipeline processing for log lines.")
+**Verify the configuration**](tutorial-log-processing-pipeline.md#verify "Configure OpenPipeline processing for log lines.")
 
 ### Step 1 Find the relevant log lines in Grail
 

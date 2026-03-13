@@ -21,7 +21,7 @@ scraped: 2026-03-04T21:28:36.205318
 
 ## Для кого это
 
-Это руководство предназначено для администраторов аккаунтов Dynatrace, которые отвечают за создание политик для предоставления пользователям доступа к отслеживаемым сущностям, таким как хосты, через [DQL](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.").
+Это руководство предназначено для администраторов аккаунтов Dynatrace, которые отвечают за создание политик для предоставления пользователям доступа к отслеживаемым сущностям, таким как хосты, через [DQL](../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.").
 
 ## Что вы узнаете
 
@@ -35,9 +35,9 @@ scraped: 2026-03-04T21:28:36.205318
 
 Необходимые знания
 
-* [Управление идентификацией и доступом (IAM)](/docs/manage/identity-access-management "Настройка пользователей, групп и разрешений.")
-* [Предоставление доступа к Dynatrace](/docs/manage/identity-access-management/use-cases/access-platform "Предоставление доступа к Dynatrace")
-* [Разрешения пользователей в группах по умолчанию](/docs/manage/identity-access-management/user-and-group-management/default-groups "Справочник по группам по умолчанию в Dynatrace")
+* [Управление идентификацией и доступом (IAM)](../../../../common/manage/identity-access-management.md "Настройка пользователей, групп и разрешений.")
+* [Предоставление доступа к Dynatrace](access-platform.md "Предоставление доступа к Dynatrace")
+* [Разрешения пользователей в группах по умолчанию](../user-and-group-management/default-groups.md "Справочник по группам по умолчанию в Dynatrace")
 
 Предварительные требования
 
@@ -72,12 +72,12 @@ scraped: 2026-03-04T21:28:36.205318
 
 `managementZones` является значением по умолчанию для большинства типов сущностей. При этом варианте контекст безопасности сущностей сопоставляется с классическими зонами управления.
 Логи, спаны, метрики и события, работающие на Grail и отправляемые сущностью, не наследуют зоны управления этой сущности.
-Это означает, что [контроль доступа](/docs/platform/grail/organize-data/assign-permissions-in-grail "Узнайте, как назначить разрешения для бакетов и таблиц в Grail.") к логам, спанам, метрикам и событиям, работающим на Grail, должен обрабатываться отдельно.
+Это означает, что [контроль доступа](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Узнайте, как назначить разрешения для бакетов и таблиц в Grail.") к логам, спанам, метрикам и событиям, работающим на Grail, должен обрабатываться отдельно.
 Этот вариант полезен, если у вас уже настроены зоны управления и вы хотите повторно использовать их для управления доступом к сущностям.
 
 #### Вариант 2: Теги и свойства хоста
 
-Вы можете настроить контекст безопасности, используя свойство хоста `dt.security_context`, заданное с помощью автоматизированных правил или свойств хоста, настроенных через [интерфейс командной строки конфигурации OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнайте, как выполнять некоторые задачи конфигурации OneAgent без необходимости переустановки OneAgent.").
+Вы можете настроить контекст безопасности, используя свойство хоста `dt.security_context`, заданное с помощью автоматизированных правил или свойств хоста, настроенных через [интерфейс командной строки конфигурации OneAgent](../../../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Узнайте, как выполнять некоторые задачи конфигурации OneAgent без необходимости переустановки OneAgent.").
 
 После установки контекста безопасности на хосте он будет автоматически использоваться для определения контекста безопасности всех логов, спанов, метрик и событий, отправляемых с этого хоста.
 
@@ -93,7 +93,7 @@ scraped: 2026-03-04T21:28:36.205318
 
 #### Вариант 3: Определение правила извлечения для универсальных типов
 
-Для [универсальных типов сущностей](/docs/ingest-from/extend-dynatrace/extend-topology/events-entity-extraction#extract-map "Извлечение универсальных сущностей из метаданных событий и сопоставление событий с ними.") можно добавить правило извлечения для `dt.security_context` и получить контекст безопасности из любых данных источника.
+Для [универсальных типов сущностей](../../../ingest-from/extend-dynatrace/extend-topology/events-entity-extraction.md#extract-map "Извлечение универсальных сущностей из метаданных событий и сопоставление событий с ними.") можно добавить правило извлечения для `dt.security_context` и получить контекст безопасности из любых данных источника.
 Это особенно полезно для расширений, где можно задать `dt.security_context` для каждой конфигурации расширения.
 
 Рассмотрим упрощённый пример с расширением PostgreSQL, предполагая конфигурацию с `dt.security_context`, установленным в `TeamA`.
@@ -121,7 +121,7 @@ postgres.activity.idle,port=5432,dt.security_context="TeamA",dt.entity.sql:postg
 
 Этот API устарел.
 
-Установите контекст безопасности через [API отслеживаемых сущностей](/docs/dynatrace-api/environment-api/entity-v2/security-context "Создание или удаление контекста безопасности через Dynatrace API.").
+Установите контекст безопасности через [API отслеживаемых сущностей](../../../dynatrace-api/environment-api/entity-v2/security-context.md "Создание или удаление контекста безопасности через Dynatrace API.").
 
 2. Создание политики
 
@@ -156,6 +156,6 @@ storage:dt.security_context = "mySecurityContext";
 
 ## Связанные темы
 
-* [API отслеживаемых сущностей — контекст безопасности](/docs/dynatrace-api/environment-api/entity-v2/security-context "Создание или удаление контекста безопасности через Dynatrace API.")
-* [Справочник по политикам IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Полный справочник по политикам IAM и соответствующим условиям для всех сервисов Dynatrace.")
-* [Работа с политиками](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Работа с политиками")
+* [API отслеживаемых сущностей — контекст безопасности](../../../dynatrace-api/environment-api/entity-v2/security-context.md "Создание или удаление контекста безопасности через Dynatrace API.")
+* [Справочник по политикам IAM](../permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md "Полный справочник по политикам IAM и соответствующим условиям для всех сервисов Dynatrace.")
+* [Работа с политиками](../permission-management/manage-user-permissions-policies.md "Работа с политиками")

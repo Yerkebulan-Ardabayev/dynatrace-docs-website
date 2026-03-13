@@ -15,14 +15,14 @@ scraped: 2026-02-06T16:28:55.999404
 With Dynatrace cloud-native monitoring enabled for your Heroku applications, you get
 
 * Deep application monitoring and code-level details for Java, PHP, Node.js and more â with just a single, language-independent buildpack
-* [Automatic root cause analysis](/docs/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.") of your Heroku web applications
-* Insights into how your Heroku applications use [databases](/docs/observe/infrastructure-observability/databases "Track the database performance and resources to create and maintain a high performing and available application infrastructure.")âincluding detailed metrics for each database statement
-* [Real User Monitoring](/docs/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.") data on customersâ web browser and mobile device behavior
+* [Automatic root cause analysis](../../../dynatrace-intelligence/root-cause-analysis/concepts.md "Get acquainted with root cause analysis concepts.") of your Heroku web applications
+* Insights into how your Heroku applications use [databases](../databases.md "Track the database performance and resources to create and maintain a high performing and available application infrastructure.")âincluding detailed metrics for each database statement
+* [Real User Monitoring](../../digital-experience/rum-concepts/rum-overview.md "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.") data on customersâ web browser and mobile device behavior
 * Automated external and third-party service monitoring (for example, calls to external REST APIs)
 
 ## Prerequisites
 
-[Set up and configure Dynatrace integration on Heroku](/docs/ingest-from/setup-on-container-platforms/heroku "Install OneAgent to monitor applications running on Heroku.").
+[Set up and configure Dynatrace integration on Heroku](../../../ingest-from/setup-on-container-platforms/heroku.md "Install OneAgent to monitor applications running on Heroku.").
 
 ## View monitoring results
 
@@ -36,10 +36,10 @@ Dynatrace automatically initiates deep application monitoring for your Heroku ap
 
 ## Tag your Heroku applications
 
-You can use the Dynatrace powerful [tagging mechanism](/docs/manage/tags-and-metadata "Learn how to define tags and metadata. Understand how to use tags and metadata to organize your environment.") to automatically organize and filter all monitored Heroku application components. Dynatrace allows you to apply tags to processes and hosts based on environment variables.
+You can use the Dynatrace powerful [tagging mechanism](../../../../common/manage/tags-and-metadata.md "Learn how to define tags and metadata. Understand how to use tags and metadata to organize your environment.") to automatically organize and filter all monitored Heroku application components. Dynatrace allows you to apply tags to processes and hosts based on environment variables.
 
 `heroku config:set DT_TAGS=owner=team-easytravel`
 
 ## Related topics
 
-* [Set up Dynatrace on Heroku](/docs/ingest-from/setup-on-container-platforms/heroku "Install OneAgent to monitor applications running on Heroku.")
+* [Set up Dynatrace on Heroku](../../../ingest-from/setup-on-container-platforms/heroku.md "Install OneAgent to monitor applications running on Heroku.")

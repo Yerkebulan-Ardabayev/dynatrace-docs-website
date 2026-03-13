@@ -41,7 +41,7 @@ To fine-tune permissions granted to Workflows
 
 * `app-settings:objects:read`
 
-To learn more about Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+To learn more about Workflows user permissions, see [User permissions for workflows](../../security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Step 3 Authorize connection to GitLab
 
@@ -64,5 +64,5 @@ Refer to the GitLab documentation for details on which scope is needed for which
 
 ## Related topics
 
-* [Actions for GitLab Connector](/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions "List of available actions in GitLab Connector.")
-* [GitLab Connector](/docs/analyze-explore-automate/workflows/actions/gitlab "Integrate Workflows with GitLab.")
+* [Actions for GitLab Connector](gitlab-workflows-actions.md "List of available actions in GitLab Connector.")
+* [GitLab Connector](../gitlab.md "Integrate Workflows with GitLab.")

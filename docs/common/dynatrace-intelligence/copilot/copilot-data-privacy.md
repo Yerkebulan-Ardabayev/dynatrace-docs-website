@@ -25,7 +25,7 @@ Each data request is sent to the LLM individually, over an SSL-encrypted service
 
 Dynatrace may store the prompts submitted to Dynatrace Intelligence generative AI and the responses provided by the LLMs to understand the use cases, contextualize the feedback on the responses, and identify additional user expectations.
 
-Learn more about the [Dynatrace Intelligence generative AI architecture and data flow](/docs/dynatrace-intelligence/copilot/copilot-overview#copilot-data-flow "Learn about data security and other aspects of Dynatrace Intelligence generative AI.").
+Learn more about the [Dynatrace Intelligence generative AI architecture and data flow](copilot-overview.md#copilot-data-flow "Learn about data security and other aspects of Dynatrace Intelligence generative AI.").
 
 ## PII masking
 
@@ -50,6 +50,6 @@ In our logs and calls to LLM models, we replace values from the identified patte
 
 ## Related topics
 
-* [Dynatrace Intelligence generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
-* [Get started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.")
-* [Dynatrace Intelligence generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
+* [Dynatrace Intelligence generative AI overview](copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
+* [Get started with Dynatrace Intelligence generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence generative AI.")
+* [Dynatrace Intelligence generative AI FAQ](copilot-faq.md "Learn about frequently asked questions and find your answers.")

@@ -36,7 +36,7 @@ Write settings 2.0 schemas
 
 ### Installation
 
-Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Make sure the app is [installed in your environment](../manage/hub.md#install "See the information about Dynatrace Hub.").
 
 Get started
 
@@ -44,13 +44,13 @@ Use cases
 
 ![Ownership](https://dt-cdn.net/images/ownership-w-background-512-99cc966544.webp "Ownership") **Ownership** provides actions for building a workflow querying for an entity's ownership team and related contact information. With these actions, you can extract ownership data about an entity and integrate it with other apps, for example, to send Slack notifications or Jira updates to entity owners based on different triggers.
 
-Furthermore, the ![Ownership](https://dt-cdn.net/images/ownership-w-background-512-99cc966544.webp "Ownership") **Ownership** enables you to import teams from the following sources using [automation workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."):
+Furthermore, the ![Ownership](https://dt-cdn.net/images/ownership-w-background-512-99cc966544.webp "Ownership") **Ownership** enables you to import teams from the following sources using [automation workflows](../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."):
 
-* Groups from [Microsoft Entra ID](/docs/analyze-explore-automate/workflows/actions/microsoft-entra-id "Set up Microsoft Entra ID Connector to automate importing teams from Microsoft Entra ID via Workflows.")
-* Groups from [ServiceNow](/docs/analyze-explore-automate/workflows/actions/service-now "Automate creation of incidents in ServiceNow based on your monitoring data and events.")
+* Groups from [Microsoft Entra ID](../analyze-explore-automate/workflows/actions/microsoft-entra-id.md "Set up Microsoft Entra ID Connector to automate importing teams from Microsoft Entra ID via Workflows.")
+* Groups from [ServiceNow](../analyze-explore-automate/workflows/actions/service-now.md "Automate creation of incidents in ServiceNow based on your monitoring data and events.")
 * Any data source using JSON structure
 
-See [Actions for Ownership](/docs/deliver/ownership-app/ownership-actions "Combine Ownership actions with other tasks and actions to create workflows for team import, notifications, task assignments, and other use cases.") for details.
+See [Actions for Ownership](ownership-app/ownership-actions.md "Combine Ownership actions with other tasks and actions to create workflows for team import, notifications, task assignments, and other use cases.") for details.
 
 ![Retrieving the ownership team information from selected entities is handled by the "get_owners" workflow action.
 One entity ID or a list of entity IDs can be used directly or via expression to use the result from previously executed workflow action to retrieve the ownership team information.
@@ -69,5 +69,5 @@ If contact details are set within ownership teams settings, the returned informa
 
 ## Related topics
 
-* [Actions for Ownership](/docs/deliver/ownership-app/ownership-actions "Combine Ownership actions with other tasks and actions to create workflows for team import, notifications, task assignments, and other use cases.")
-* [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
+* [Actions for Ownership](ownership-app/ownership-actions.md "Combine Ownership actions with other tasks and actions to create workflows for team import, notifications, task assignments, and other use cases.")
+* [Workflows](../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")

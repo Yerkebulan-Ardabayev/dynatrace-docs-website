@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:29:16.110902
 * Updated on Jun 06, 2025
 * Deprecated
 
-This API is deprecated. Use the [Management zones](/docs/dynatrace-api/environment-api/settings/schemas/builtin-management-zones "View builtin:management-zones settings schema table of your monitoring environment via the Dynatrace API.") schema (`builtin:management-zones`) of the Settings API instead.
+This API is deprecated. Use the [Management zones](../settings/schemas/builtin-management-zones.md "View builtin:management-zones settings schema table of your monitoring environment via the Dynatrace API.") schema (`builtin:management-zones`) of the Settings API instead.
 
 Create or delete security context for monitored entities.
 
@@ -20,7 +20,7 @@ Matching entities will have a management zone assigned if the given security con
 
 Management zone rules will not apply to entities with a set security context. To be able to apply them again, you need to delete the security context.
 
-For more information on security context, see [Grant access to entities with security context](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context").
+For more information on security context, see [Grant access to entities with security context](../../../manage/identity-access-management/use-cases/access-security-context.md "Grant access to entities with security context").
 
 ## Create the security context
 
@@ -35,7 +35,7 @@ The request consumes and produces an `application/json` payload.
 
 To execute this request, you need an access token with `settings.write` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Tokens and authentication](../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ### Parameters
 
@@ -225,7 +225,7 @@ A list of constraint violations
 
 To execute this request, you need an access token with `settings.write` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Tokens and authentication](../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ### Parameters
 

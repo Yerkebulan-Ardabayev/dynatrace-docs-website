@@ -390,11 +390,11 @@ events
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Use DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.")
-* [DQL language reference](/docs/platform/grail/dynatrace-query-language/dql-reference "Dynatrace Query Language syntax reference.")
-* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [DQL functions](/docs/platform/grail/dynatrace-query-language/functions "A list of DQL functions.")
-* [DQL operators](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.")
-* [DQL data types](/docs/platform/grail/dynatrace-query-language/data-types "A list of DQL data types.")
-* [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.")
+* [Dynatrace Query Language](../dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Use DQL queries](dql-guide.md "Find out how DQL works and what are DQL key concepts.")
+* [DQL language reference](dql-reference.md "Dynatrace Query Language syntax reference.")
+* [DQL commands](commands.md "A list of DQL commands.")
+* [DQL functions](functions.md "A list of DQL functions.")
+* [DQL operators](operators.md "A list of DQL Operators.")
+* [DQL data types](data-types.md "A list of DQL data types.")
+* [DQL best practices](dql-best-practices.md "Best practices for using Dynatrace Query Language.")

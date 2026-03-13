@@ -12,9 +12,9 @@ scraped: 2026-03-05T21:26:49.944416
 * Updated on Mar 22, 2023
 * Deprecated
 
-Assigns [custom tags](/docs/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.") to the specified host. You only need to provide a tag value. The `CONTEXTLESS` context will be assigned automatically.
+Assigns [custom tags](../../../../../common/manage/tags-and-metadata.md "Use tags and metadata to organize data in your Dynatrace environment.") to the specified host. You only need to provide a tag value. The `CONTEXTLESS` context will be assigned automatically.
 
-The usage of this API is limited to value-only tags. To assign key:value tags, use the [Custom tags API](/docs/dynatrace-api/environment-api/custom-tags/post-tags "Assign custom tags to monitored entities via Dynatrace API.").
+The usage of this API is limited to value-only tags. To assign key:value tags, use the [Custom tags API](../../custom-tags/post-tags.md "Assign custom tags to monitored entities via Dynatrace API.").
 
 The request consumes an `application/json` payload.
 
@@ -27,7 +27,7 @@ The request consumes an `application/json` payload.
 
 To execute this request, you need an access token with `DataExport` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Parameters
 
@@ -256,4 +256,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts/HOST-B
 
 ## Related topics
 
-* [Hosts Classic](/docs/observe/infrastructure-observability/hosts "Learn how to get started with host monitoring, understand which measures contribute to host health, how to set up custom host names, and more.")
+* [Hosts Classic](../../../../observe/infrastructure-observability/hosts.md "Learn how to get started with host monitoring, understand which measures contribute to host health, how to set up custom host names, and more.")

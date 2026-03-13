@@ -57,7 +57,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## Query limits
 

@@ -168,7 +168,7 @@ A dimension of the metric.
 
 ## Set metric metadata
 
-Use the [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") call of the Settings API to provide metadata for your metric. Use the following parameters in the payload:
+Use the [POST an object](../../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") call of the Settings API to provide metadata for your metric. Use the following parameters in the payload:
 
 | Field | Value |
 | --- | --- |
@@ -336,14 +336,14 @@ Example payload
 
 Alternatively, you can:
 
-* Send metadata via the [ingestion protocol](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#metadata "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
-* Configure a metric's metadata in [Metrics browser](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.").
+* Send metadata via the [ingestion protocol](metric-ingestion-protocol.md#metadata "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+* Configure a metric's metadata in [Metrics browser](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser.").
 
 ## View metric metadata
 
-You can retrieve the metadata of a metric via the [GET metric descriptor](/docs/dynatrace-api/environment-api/metric-v2/get-descriptor "View the descriptor of a metric via Metrics v2 API.") call of the Metrics v2 API or via the [Metrics browser](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.").
+You can retrieve the metadata of a metric via the [GET metric descriptor](../../../../dynatrace-api/environment-api/metric-v2/get-descriptor.md "View the descriptor of a metric via Metrics v2 API.") call of the Metrics v2 API or via the [Metrics browser](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser.").
 
 ## Related topics
 
-* [Metrics API - POST ingest data points](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ingest custom metrics to Dynatrace via Metrics v2 API.")
-* [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.")
+* [Metrics API - POST ingest data points](../../../../dynatrace-api/environment-api/metric-v2/post-ingest-metrics.md "Ingest custom metrics to Dynatrace via Metrics v2 API.")
+* [Settings API](../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.")

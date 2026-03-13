@@ -21,7 +21,7 @@ The ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-oper
 
 ## Prerequisites
 
-1. Deploy [Dynatrace OneAgent](/docs/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") on your hostsâit's the optimal choice to collect the most granular metrics and network insights.
+1. Deploy [Dynatrace OneAgent](../../ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") on your hostsâit's the optimal choice to collect the most granular metrics and network insights.
 2. If you are using cloud services, integrate your cloud infrastructure with Dynatrace. Follow the specific integration guides for AWS, Azure, Google Cloud, or other cloud providers.
 
 ### Permissions
@@ -124,7 +124,7 @@ You can filter the tables in the app by using the filter field with listed sugge
 
 You can add several statements to narrow down the filter results. For example, `"Alert status" = Critical` `name != *1b*`. In this case, you narrow the search to hosts with more than 4 problems and names that don't include `1b`.
 
-For more details on using filters, see [Filter field](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
+For more details on using filters, see [Filter field](../../../ru/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
 
 ### Segments
 
@@ -155,7 +155,7 @@ Some of the advantages of using segments are
    * Add entities and topology. Select from the available options in the menu.
 6. Select **Save**.
 
-For more details on managing segments, refer to [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.").
+For more details on managing segments, refer to [Segments](../../manage/segments.md "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.").
 
 ### Analyze overview charts
 
@@ -163,7 +163,7 @@ You can define which metrics are displayed in the charts by selecting ![Expand m
 
 #### Export data to Notebooks
 
-To further analyze the data from ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."):
+To further analyze the data from ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") [Notebooks](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."):
 
 1. Go to ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 2. Select an entity to see its details.
@@ -187,7 +187,7 @@ Note that processes can run directly on hosts or in containers running on hosts.
 
 ### Display code-module metrics
 
-You can inject code modules and display the injected data in the app. For more details, see [Universal injection of code modules](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix#universal-injection "Learn which capabilities are supported by OneAgent on different operating systems and platforms.").
+You can inject code modules and display the injected data in the app. For more details, see [Universal injection of code modules](../../ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md#universal-injection "Learn which capabilities are supported by OneAgent on different operating systems and platforms.").
 
 After selecting a process from the list, the data is presented in a dedicated tab.
 
@@ -201,11 +201,11 @@ The incoming and outgoing process connections in the table display processes wit
 
 ### Measure the reachability of a host or device
 
-The **Reachability** column on the **Hosts** and **Network devices** pages shows how easily you can access a device or a host over the network from a remote location. For more details, see [Synthetic Monitoring](/docs/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.").
+The **Reachability** column on the **Hosts** and **Network devices** pages shows how easily you can access a device or a host over the network from a remote location. For more details, see [Synthetic Monitoring](../../../ru/observe/digital-experience/synthetic-monitoring.md "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.").
 
 The value presents the ratio of fully available Network Availability Monitors (NAM) (with 100% availability over the selected time period) to all configured monitors for the given host or network device.
 
-To use this feature, you need to configure NAM for the desired device or host. For details, refer to [Configure a NAM monitor](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor "Learn how to set up a NAM monitor to check the performance and availability of your site.").
+To use this feature, you need to configure NAM for the desired device or host. For details, refer to [Configure a NAM monitor](../../../ru/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor.md "Learn how to set up a NAM monitor to check the performance and availability of your site.").
 
 ### View health alerts and warning signals
 
@@ -213,7 +213,7 @@ In ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-opera
 
 Health alerts and warning signals help you monitor your infrastructure by providing clear, actionable insights. These features reduce the noise from infrastructure issues and improve alerting capabilities, so you can focus on what matters most. This is achieved through better categorization of detected malfunctions.
 
-* For critical events, a Health alert is raised, triggering a [Dynatrace Problems](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") investigation.
+* For critical events, a Health alert is raised, triggering a [Dynatrace Problems](../../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.") investigation.
 * For non-critical situations, a Warning signal informs you of a potential challenge.
 
 To take advantage of this feature in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**, you need to enable it. Once enabled, certain alerts that were previously classified as critical will be reclassified as warnings, as they are not considered critical enough to require immediate attention.
@@ -247,7 +247,7 @@ To view installed technologies
 1. Go to ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** > **Technologies**.
 2. Select an extension from the list to view more details.
 
-For details on setting up extensions, see [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.").
+For details on setting up extensions, see [Extensions](../../../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.").
 
 Minimum required versions of extensions
 
@@ -265,7 +265,7 @@ This list concerns extensions for supporting network devices and is not exhausti
 | Generic network device | 2.0.0 |
 | Fortigate | 1.2.21 |
 
-See our detailed [Generic network topology](/docs/ingest-from/extend-dynatrace/extend-topology/network-topology "Use the generic network topology model available in Dynatrace extensions.") guide on how to make your custom extensions appear in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
+See our detailed [Generic network topology](../../../ru/ingest-from/extend-dynatrace/extend-topology/network-topology.md "Use the generic network topology model available in Dynatrace extensions.") guide on how to make your custom extensions appear in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
 ## Concepts
 
@@ -275,23 +275,23 @@ See our detailed [Generic network topology](/docs/ingest-from/extend-dynatrace/e
 
 Monitor the health and performance of your data centers and availability zones to detect and resolve critical issues.
 
-Data centers](/docs/observe/infrastructure-observability/infrastructure-and-operations/data-centers)[#### Hosts
+Data centers](infrastructure-and-operations/data-centers.md)[#### Hosts
 
 Monitor infrastructure hosts across physical machines, VMs, and cloud instances to track health, performance, and resource utilization.
 
-Hosts](/docs/observe/infrastructure-observability/infrastructure-and-operations/hosts)[#### Containers
+Hosts](infrastructure-and-operations/hosts.md)[#### Containers
 
 Monitor and troubleshoot containerized workloads across Kubernetes and standalone hosts.
 
-Containers](/docs/observe/infrastructure-observability/infrastructure-and-operations/containers)[#### Processes
+Containers](infrastructure-and-operations/containers.md)[#### Processes
 
 Monitor processes running on hosts and containers with detailed insights into CPU and memory usage trends and key metrics.
 
-Processes](/docs/observe/infrastructure-observability/infrastructure-and-operations/processes)[#### Networks
+Processes](infrastructure-and-operations/processes.md)[#### Networks
 
 Monitor network devices and gain insights into networking components with Dynatrace Intelligence-powered analytics and flexible observability options.
 
-Networks](/docs/observe/infrastructure-observability/infrastructure-and-operations/networks)
+Networks](infrastructure-and-operations/networks.md)
 
 ### Relation between hosts, containers, and processes
 

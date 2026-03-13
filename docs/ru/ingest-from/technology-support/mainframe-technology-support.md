@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:19:51.815419
 
 Dynatrace поддерживает мониторинг технологий и версий, перечисленных ниже, на IBM z/OS.
 
-Поддерживаемые операционные системы модуля zRemote см. в разделе [Системные требования](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote#system-requirements "Подготовка и установка zRemote для мониторинга z/OS.").
+Поддерживаемые операционные системы модуля zRemote см. в разделе [Системные требования](../dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote.md#system-requirements "Подготовка и установка zRemote для мониторинга z/OS.").
 
 Схема версий поддержки технологий
 
@@ -42,7 +42,7 @@ Dynatrace поддерживает мониторинг технологий и 
 
 ## IBM z/OS
 
-Чтобы начать мониторинг, см. [Dynatrace для z/OS](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos "Установка, настройка и управление модулями Dynatrace на z/OS.").
+Чтобы начать мониторинг, см. [Dynatrace для z/OS](../dynatrace-oneagent/installation-and-operation/zos.md "Установка, настройка и управление модулями Dynatrace на z/OS.").
 
 | Операционная система | Версии |
 | --- | --- |
@@ -50,7 +50,7 @@ Dynatrace поддерживает мониторинг технологий и 
 
 ## IBM CICS
 
-Чтобы начать мониторинг, см. [Установка модуля CICS](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics "Установка модуля CICS для Dynatrace.").
+Чтобы начать мониторинг, см. [Установка модуля CICS](../dynatrace-oneagent/installation-and-operation/zos/installation/install-cics.md "Установка модуля CICS для Dynatrace.").
 
 | IBM CICS | Версии |
 | --- | --- |
@@ -81,7 +81,7 @@ Dynatrace поддерживает мониторинг технологий и 
 
 ## IBM IMS
 
-Чтобы начать мониторинг, см. [Установка модуля IMS](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims "Установка модуля IMS для Dynatrace.").
+Чтобы начать мониторинг, см. [Установка модуля IMS](../dynatrace-oneagent/installation-and-operation/zos/installation/install-ims.md "Установка модуля IMS для Dynatrace.").
 
 | IBM IMS | Версии |
 | --- | --- |
@@ -114,7 +114,7 @@ Dynatrace поддерживает мониторинг технологий и 
 
 ## z/OS Java
 
-Чтобы начать мониторинг, см. [Установка модуля z/OS Java](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java "Настройка мониторинга Java на z/OS с использованием модуля Java.").
+Чтобы начать мониторинг, см. [Установка модуля z/OS Java](../dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java.md "Настройка мониторинга Java на z/OS с использованием модуля Java.").
 
 | Среда выполнения Java | Версии |
 | --- | --- |
@@ -175,4 +175,4 @@ Dynatrace поддерживает мониторинг технологий и 
 
 | Фреймворк мониторинга | Версии |
 | --- | --- |
-| [JMX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics "Узнайте, как настроить мониторинг метрик JMX для Java-приложений на z/OS.") | 1.0+ |
+| [JMX](../dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics.md "Узнайте, как настроить мониторинг метрик JMX для Java-приложений на z/OS.") | 1.0+ |

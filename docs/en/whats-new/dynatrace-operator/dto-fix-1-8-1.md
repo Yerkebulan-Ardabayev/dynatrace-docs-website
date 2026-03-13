@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:37:12.752343
 
 Release date: February 9th, 2026
 
-This page provides an overview of the patches included in Dynatrace Operator version 1.8.1. For detailed information on new features and other enhancements, please refer to the [release notes for version 1.8](/docs/whats-new/dynatrace-operator/dto-fix-1-8-0 "Release notes for Dynatrace Operator, version 1.8.0").
+This page provides an overview of the patches included in Dynatrace Operator version 1.8.1. For detailed information on new features and other enhancements, please refer to the [release notes for version 1.8](dto-fix-1-8-0.md "Release notes for Dynatrace Operator, version 1.8.0").
 
 ## Resolved issues
 
@@ -41,13 +41,13 @@ This page provides an overview of the patches included in Dynatrace Operator ver
 
 * To prevent potential disruptions, we strongly advise keeping your DynaKube API version up to date. Once a version is deprecated and removed, updates may become significantly more complex and time-sensitive.
 
-  + More information about the deprecation process of the DynaKube API versions can be found in the [migration guide](/docs/ingest-from/setup-on-k8s/guides/migration/dynakube#deprecation "Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.").
+  + More information about the deprecation process of the DynaKube API versions can be found in the [migration guide](../../ingest-from/setup-on-k8s/guides/migration/dynakube.md#deprecation "Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.").
 
 ## Upgrade from Dynatrace Operator version 1.7
 
-* Specifying an image in `.spec.templates.otelCollector.imageRef` is now mandatory when [telemetry ingest](/docs/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.") is enabled.
+* Specifying an image in `.spec.templates.otelCollector.imageRef` is now mandatory when [telemetry ingest](../../ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest.md "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.") is enabled.
 * Deprecated DynaKube API versions `v1beta1` and `v1beta2` have been removed from the DynaKube CRD schema.
-* DynaKube API version `v1beta3` is no longer served and will be removed in a future Dynatrace Operator release. See: [Migration guide for DynaKube API versions](/docs/ingest-from/setup-on-k8s/guides/migration/dynakube#deprecation "Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.")
+* DynaKube API version `v1beta3` is no longer served and will be removed in a future Dynatrace Operator release. See: [Migration guide for DynaKube API versions](../../ingest-from/setup-on-k8s/guides/migration/dynakube.md#deprecation "Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.")
 * Upgrading Dynatrace Operator may restart the ActiveGate, the OneAgent DaemonSet (host agent), and Log Monitoring DaemonSet.
-* If you are monitoring Kubernetes through the public Kubernetes API from within an in-cluster ActiveGate, you will need to recreate the bearer token because the name of the used ServiceAccount changed from `dynatrace-kubernetes-monitoring` to `dynatrace-activegate`. Follow the instructions at [Connect to the public Kubernetes API](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring#connect "Monitor the Kubernetes API using Dynatrace").
+* If you are monitoring Kubernetes through the public Kubernetes API from within an in-cluster ActiveGate, you will need to recreate the bearer token because the name of the used ServiceAccount changed from `dynatrace-kubernetes-monitoring` to `dynatrace-activegate`. Follow the instructions at [Connect to the public Kubernetes API](../../ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring.md#connect "Monitor the Kubernetes API using Dynatrace").
 * Due to the aformentioned changes to the ActiveGate RBAC objects, setting `rbac.kspm.create: true` now requires `rbac.activeGate.create: true` and `rbac.kubernetesMonitoring.create: true`. **Be sure to adjust your Helm values if applicable before upgrading.**

@@ -18,9 +18,9 @@ OneAgent version 1.295+ Dynatrace version 1.295+
 
 Dynatrace provides end-to-end distributed tracing for your native Java applications pre-compiled as GraalVM Native Image running in virtualized, containerized, and K8s environments. Dynatrace automatically discovers your native Java apps' services and visualizes their dependencies from the website to containers, infrastructure, and the cloud. It diagnoses anomalies in real-time using AI and determines the root cause down to the broken code. Performance metrics give you insight into memory usage, garbage collection, and threads.
 
-For the supported distributed tracing technologies, see [Java Native Image](/docs/ingest-from/technology-support#java-native-image "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+For the supported distributed tracing technologies, see [Java Native Image](../../../technology-support.md#java-native-image "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
-Dynatrace GraalVM Native Image observability requires a [Full-Stack Monitoring](/docs/license/capabilities/app-infra-observability/full-stack-monitoring "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") license.
+Dynatrace GraalVM Native Image observability requires a [Full-Stack Monitoring](../../../../license/capabilities/app-infra-observability/full-stack-monitoring.md "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") license.
 
 ## Get started
 
@@ -32,9 +32,9 @@ The Dynatrace GraalVM Native Image module consists of a **build-time module** an
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Integrate Dynatrace in your project**](/docs/ingest-from/technology-support/application-software/java/graalvm-native-image#integration "Install, configure, and manage Dynatrace GraalVM Native Image module.")[![Step 2 optional](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Step 2 optional")
+**Integrate Dynatrace in your project**](graalvm-native-image.md#integration "Install, configure, and manage Dynatrace GraalVM Native Image module.")[![Step 2 optional](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Step 2 optional")
 
-**Activate Dynatrace observability**](/docs/ingest-from/technology-support/application-software/java/graalvm-native-image#activate "Install, configure, and manage Dynatrace GraalVM Native Image module.")
+**Activate Dynatrace observability**](graalvm-native-image.md#activate "Install, configure, and manage Dynatrace GraalVM Native Image module.")
 
 ### Step 1 Integrate Dynatrace in your project
 
@@ -154,12 +154,12 @@ To integrate Dynatrace in a Maven project
 
    Replace `ENVIRONMENT_URL` and `API_TOKEN` according to your Dynatrace environment:
 
-   * `ENVIRONMENT_URL` is the Dynatrace environment URL of your [monitoring environment](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
-   * `API_TOKEN` is your access token and can, for example, be provided with an environment variable by using `<apiToken>${env.DT_API_TOKEN}</apiToken>`. This access token requires the **PaaS integration - Installer download** scope. To learn how to generate the token, see [Generate access token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.").
+   * `ENVIRONMENT_URL` is the Dynatrace environment URL of your [monitoring environment](../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+   * `API_TOKEN` is your access token and can, for example, be provided with an environment variable by using `<apiToken>${env.DT_API_TOKEN}</apiToken>`. This access token requires the **PaaS integration - Installer download** scope. To learn how to generate the token, see [Generate access token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.").
 
    This will automatically download and use the latest GraalVM Native Image module version available in your environment. To use a specific GraalVM Native Image module version, add `<agentVersion>AGENT_VERSION</agentVersion>` to the `agentDownload` configuration.
 
-   Alternatively, you can also [manually download the GraalVM Native Image module](/docs/ingest-from/technology-support/application-software/java/graalvm-native-image#manual-agent-download "Install, configure, and manage Dynatrace GraalVM Native Image module.") and use
+   Alternatively, you can also [manually download the GraalVM Native Image module](graalvm-native-image.md#manual-agent-download "Install, configure, and manage Dynatrace GraalVM Native Image module.") and use
 
    ```
    <configuration>
@@ -182,7 +182,7 @@ To integrate Dynatrace in a Maven project
 
 Prerequisites
 
-* Gradle 8.4+ runs on a supported [JVM](/docs/ingest-from/technology-support#java "Find technical details related to Dynatrace support for specific platforms and development frameworks.") or [Native Image](/docs/ingest-from/technology-support#java-native-image "Find technical details related to Dynatrace support for specific platforms and development frameworks.") of Java version 17+.
+* Gradle 8.4+ runs on a supported [JVM](../../../technology-support.md#java "Find technical details related to Dynatrace support for specific platforms and development frameworks.") or [Native Image](../../../technology-support.md#java-native-image "Find technical details related to Dynatrace support for specific platforms and development frameworks.") of Java version 17+.
 * Gradle plugin `org.graalvm.buildtools:native-gradle-plugin` with version 0.10+ is applied to your project.
 
 To integrate Dynatrace in a Gradle project
@@ -248,12 +248,12 @@ To integrate Dynatrace in a Gradle project
 
    Replace `ENVIRONMENT_URL` and `API_TOKEN` according to your Dynatrace environment:
 
-   * `ENVIRONMENT_URL` is the Dynatrace environment URL of your [monitoring environment](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
-   * `API_TOKEN` is your access token and can, for example, be provided with an environment variable by using `System.getenv("DT_API_TOKEN")`. This access token requires the **PaaS integration - Installer download** scope. To learn how to generate the token, see [Generate access token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.").
+   * `ENVIRONMENT_URL` is the Dynatrace environment URL of your [monitoring environment](../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+   * `API_TOKEN` is your access token and can, for example, be provided with an environment variable by using `System.getenv("DT_API_TOKEN")`. This access token requires the **PaaS integration - Installer download** scope. To learn how to generate the token, see [Generate access token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.").
 
    This will automatically download and use the latest GraalVM Native Image module version available in your environment. To use a specific GraalVM Native Image module version, add `agentVersion = "AGENT_VERSION"` to the `agentDownload` configuration.
 
-   Alternatively, you can also [manually download the GraalVM Native Image module](/docs/ingest-from/technology-support/application-software/java/graalvm-native-image#manual-agent-download "Install, configure, and manage Dynatrace GraalVM Native Image module.") and use
+   Alternatively, you can also [manually download the GraalVM Native Image module](graalvm-native-image.md#manual-agent-download "Install, configure, and manage Dynatrace GraalVM Native Image module.") and use
 
    ```
    dynatrace {
@@ -274,7 +274,7 @@ To integrate Dynatrace in a Gradle project
 
 #### Manually downloading the GraalVM Native Image module
 
-You can also manually download the GraalVM Native Image module from [Dynatrace OneAgent Deployment API](/docs/dynatrace-api/environment-api/deployment/oneagent "Download OneAgent installers via Dynatrace API.") for your target platform.
+You can also manually download the GraalVM Native Image module from [Dynatrace OneAgent Deployment API](../../../../dynatrace-api/environment-api/deployment/oneagent.md "Download OneAgent installers via Dynatrace API.") for your target platform.
 
 An example API call using `curl`:
 
@@ -287,7 +287,7 @@ Replace `$DT_TENANT_URL`, `$OS_TYPE`, `$ARCH`, and `$DT_API_TOKEN` with your Dyn
 * `$DT_TENANT_URL` is your Dynatrace environment URL.
 * `$OS_TYPE` can be `unix` or `windows`.
 * `$ARCH` can be `x86` or `arm`, while `arm` is only available for the OS type `unix`.
-* `$DT_API_TOKEN` is your access token with the **PaaS integration - Installer download** scope. To learn how to generate the token, see [Generate access token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.").
+* `$DT_API_TOKEN` is your access token with the **PaaS integration - Installer download** scope. To learn how to generate the token, see [Generate access token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.").
 
 ### Step 2 optional Activate Dynatrace observability
 
@@ -313,7 +313,7 @@ export DT_CONNECTION_POINT=$DT_CONNECTION_POINT
 
 Replace `$DT_TENANT_ID`, `$DT_TENANTTOKEN`, and `$DT_CONNECTION_POINT` with your Dynatrace connection details. Replace `$YOUR_APP_NAME` with your application name.
 
-You can retrieve your connection details via [View connectivity information for OneAgent](/docs/dynatrace-api/environment-api/deployment/oneagent/get-connectivity-info "View the connectivity information of OneAgent via Dynatrace API.") API call. You need the following fields of the response:
+You can retrieve your connection details via [View connectivity information for OneAgent](../../../../dynatrace-api/environment-api/deployment/oneagent/get-connectivity-info.md "View the connectivity information of OneAgent via Dynatrace API.") API call. You need the following fields of the response:
 
 * **tenantUUID** for `$DT_TENANT_ID`
 * **tenantToken** for `$DT_TENANTTOKEN`
@@ -357,8 +357,8 @@ You can configure the following properties:
 
 * `agentDownload` is used to configure the automatic GraalVM Native Image module download:
 
-  + `environmentUrl` specifies the Dynatrace environment URL of your [monitoring environment](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
-  + `apiToken` specifies the access token with **PaaS integration - Installer download** scope. To learn how to generate the token, see [Generate access token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.").
+  + `environmentUrl` specifies the Dynatrace environment URL of your [monitoring environment](../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+  + `apiToken` specifies the access token with **PaaS integration - Installer download** scope. To learn how to generate the token, see [Generate access token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.").
   + `agentVersion` specifies the GraalVM Native Image module version. If not set, the latest GraalVM Native Image module version is used.
 * `agentZip` sets the absolute or relative path to the manually downloaded ZIP file.
 * `agentOptions` defines the options for the Dynatrace build-time module (optional).
@@ -404,8 +404,8 @@ You can configure the following properties:
 
 * `agentDownload` is used to configure the automatic GraalVM Native Image module download:
 
-  + `environmentUrl` specifies the Dynatrace environment URL of your [monitoring environment](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
-  + `apiToken` specifies the access token with **PaaS integration - Installer download** scope. To learn how to generate the token, see [Generate access token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.").
+  + `environmentUrl` specifies the Dynatrace environment URL of your [monitoring environment](../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+  + `apiToken` specifies the access token with **PaaS integration - Installer download** scope. To learn how to generate the token, see [Generate access token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.").
   + `agentVersion` specifies the GraalVM Native Image module version. If not set, the latest GraalVM Native Image module version is used.
 * `agentZip` sets the absolute or relative path to the manually downloaded ZIP file.
 * `agentOptions` defines the options for the Dynatrace build-time module (optional).
@@ -461,7 +461,7 @@ FIPS mode is disabled by default. To enable FIPS mode for the runtime module, de
 
 ### Limited GraalVM Native Image module feature set
 
-The GraalVM Native Image module does not have all the features of the regular Java module. The technologies supported by the GraalVM Native Image module can be found in the [Java Native Image](/docs/ingest-from/technology-support#java-native-image "Find technical details related to Dynatrace support for specific platforms and development frameworks.") section of the technology support page.
+The GraalVM Native Image module does not have all the features of the regular Java module. The technologies supported by the GraalVM Native Image module can be found in the [Java Native Image](../../../technology-support.md#java-native-image "Find technical details related to Dynatrace support for specific platforms and development frameworks.") section of the technology support page.
 
 Furthermore, the GraalVM Native Image module currently does not support:
 

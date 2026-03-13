@@ -31,11 +31,11 @@ EdgeConnect can also operate behind an HTTP proxy:
 
 ### User permissions
 
-A regular platform user is only granted read-only access for EdgeConnect configurations through `app-engine:edge-connects:read` permission bound to the Standard and Pro user [default policies](/docs/manage/identity-access-management/permission-management/default-policies#access "Dynatrace default policies reference").
+A regular platform user is only granted read-only access for EdgeConnect configurations through `app-engine:edge-connects:read` permission bound to the Standard and Pro user [default policies](../manage/identity-access-management/permission-management/default-policies.md#access "Dynatrace default policies reference").
 
 If you want to configure EdgeConnect so that it can connect to your environment, your user needs to belong to a group bound to the policy with specific IAM permissions.
 
-The Admin [default policy](/docs/manage/identity-access-management/permission-management/default-policies#access "Dynatrace default policies reference") already contains the necessary scopes, so an admin user can fully manage EdgeConnect configurations by default.
+The Admin [default policy](../manage/identity-access-management/permission-management/default-policies.md#access "Dynatrace default policies reference") already contains the necessary scopes, so an admin user can fully manage EdgeConnect configurations by default.
 
 If you need to create your own policy for your admin users, you need to include the following permissions in your policy.
 
@@ -73,7 +73,7 @@ ALLOW app-engine:edge-connects:delete, oauth2:clients:manage WHERE oauth2:scopes
 
 You need OAuth client management permission to delete the OAuth client for an EdgeConnect.
 
-To adjust the policies and group memberships of users, go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/) > **Identity & access management** and select **People**, **Groups**, or **Policies**. For more information, see [Manage IAM policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.").
+To adjust the policies and group memberships of users, go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/) > **Identity & access management** and select **People**, **Groups**, or **Policies**. For more information, see [Manage IAM policies](../manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt.md "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.").
 
 ### Create a new EdgeConnect configuration
 
@@ -292,7 +292,7 @@ EdgeConnect then securely replaces occurrences of these tokens on the fly with a
 This section explains how to configure such secrets.
 EdgeConnect can read secrets from two sources: from environment variables or from files mounted into your EdgeConnect container.
 
-If you run [EdgeConnect in Kubernetes via Dynatrace Operator](#kubernetes), the above fields are configured using the parameters of a custom Kubernetes resource as explained in [EdgeConnect parameters for Dynatrace Operator](/docs/ingest-from/setup-on-k8s/reference/edgeconnect-parameters "List of configuration parameters for EdgeConnect.").
+If you run [EdgeConnect in Kubernetes via Dynatrace Operator](#kubernetes), the above fields are configured using the parameters of a custom Kubernetes resource as explained in [EdgeConnect parameters for Dynatrace Operator](setup-on-k8s/reference/edgeconnect-parameters.md "List of configuration parameters for EdgeConnect.").
 
 ### Step 3 Get EdgeConnect container image
 
@@ -302,7 +302,7 @@ To run the EdgeConnect container, you first need to get the image.
 
 Dynatrace provides signed container images to ensure authenticity and integrity, along with a Software Bill of Materials (SBOM) that lists all included software components.
 Verifying the signatures and reviewing the SBOMs enables effective vulnerability management and risk mitigation.
-For verification details, see [Verify Software Bill of Materials (SBOM) Attestation](/docs/ingest-from/setup-on-k8s/guides/container-registries/verify-image-signature#sbom-attestation-verification "Verify Dynatrace image signatures").
+For verification details, see [Verify Software Bill of Materials (SBOM) Attestation](setup-on-k8s/guides/container-registries/verify-image-signature.md#sbom-attestation-verification "Verify Dynatrace image signatures").
 
 ```
 docker pull dynatrace/edgeconnect:latest
@@ -497,8 +497,8 @@ Validate the EdgeConnect successfully connected to the platform.
 
 Dynatrace Operator provides specific support for running EdgeConnect via an EdgeConnect custom resource. There are three deployment scenarios:
 
-* Use the Dynatrace Operator to only deploy the EdgeConnect as described in [Set up EdgeConnect](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/edgeconnect/edge-connect "Deploy and configure EdgeConnect on Kubernetes using Dynatrace."). You still create the EdgeConnect configuration in the app and follow the instructions in **Actions** > **Deploy EdgeConnect** > **Deploy via Dynatrace Operator**.
-* Make the Dynatrace Operator provision an EdgeConnect configuration as explained in [Provision EdgeConnect for Dynatrace environment](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/edgeconnect/edge-connect-provision "Provision EdgeConnect for a Dynatrace environment.") so that the Operator will fully manage the lifecycle of EdgeConnect. The Operator will create the configuration itself, and the host patterns of the EdgeConnect are specified in the EdgeConnect custom resource. You can't edit these configurations in the app.
+* Use the Dynatrace Operator to only deploy the EdgeConnect as described in [Set up EdgeConnect](setup-on-k8s/guides/deployment-and-configuration/edgeconnect/edge-connect.md "Deploy and configure EdgeConnect on Kubernetes using Dynatrace."). You still create the EdgeConnect configuration in the app and follow the instructions in **Actions** > **Deploy EdgeConnect** > **Deploy via Dynatrace Operator**.
+* Make the Dynatrace Operator provision an EdgeConnect configuration as explained in [Provision EdgeConnect for Dynatrace environment](setup-on-k8s/guides/deployment-and-configuration/edgeconnect/edge-connect-provision.md "Provision EdgeConnect for a Dynatrace environment.") so that the Operator will fully manage the lifecycle of EdgeConnect. The Operator will create the configuration itself, and the host patterns of the EdgeConnect are specified in the EdgeConnect custom resource. You can't edit these configurations in the app.
 * Set up EdgeConnect without the Dynatrace Operator as described in <#no-operator>.
 
 ### Running EdgeConnect in Kubernetes without using the Dynatrace Operator
@@ -949,7 +949,7 @@ A request to `https://kubernetes-api-dev-cluster/api/v1/pods` in the Dynatrace J
 
 You'd deploy EdgeConnect containers for that configuration in your `dev` Kubernetes cluster and would reliably be able to manage that cluster via HTTPS requests from the Dynatrace runtime. At the same time, you also have a production Kubernetes cluster that you want to manage accordingly. So you create another EdgeConnect configuration `k8-api-production` configuring the host pattern `kubernetes-api-production-cluster` and a host mapping of `kubernetes-api-production-cluster` to `kubernetes.default.svc.cluster.local`, and deploy instances of it in the production Kubernetes cluster. As a result, you can target the Kubernetes API of the desired cluster reliably by making a request to either `https://kubernetes-api-dev-cluster/api/v1/pods` or `https://kubernetes-api-production-cluster/api/v1/pods`.
 
-For details on this example, see [Set up manually EdgeConnect for Kubernetes Connector](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/edgeconnect/kubernetes-automation/edge-connect-kubernetes-automation-manual-setup "Set up manually EdgeConnect for Kubernetes Connector to be able to use our wide range of Kubernetes Connector actions in your workflow.").
+For details on this example, see [Set up manually EdgeConnect for Kubernetes Connector](setup-on-k8s/guides/deployment-and-configuration/edgeconnect/kubernetes-automation/edge-connect-kubernetes-automation-manual-setup.md "Set up manually EdgeConnect for Kubernetes Connector to be able to use our wide range of Kubernetes Connector actions in your workflow.").
 
 ## System Requirements
 

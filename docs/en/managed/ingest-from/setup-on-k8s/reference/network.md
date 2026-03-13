@@ -14,7 +14,7 @@ scraped: 2026-02-23T21:31:13.154982
 
 To ensure Dynatrace Operator components work correctly in a Kubernetes cluster, they need to be able to communicate with both the Dynatrace Cluster and the Kubernetes cluster.
 
-Dynatrace Operator components are accessible through specific ports and access various resources inside and outside the Kubernetes cluster. For more details on which resources are accessed within the Kubernetes cluster, see the [Operator RBAC permissions](/docs/ingest-from/setup-on-k8s/reference/security "This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require") reference page.
+Dynatrace Operator components are accessible through specific ports and access various resources inside and outside the Kubernetes cluster. For more details on which resources are accessed within the Kubernetes cluster, see the [Operator RBAC permissions](../../../../ingest-from/setup-on-k8s/reference/security.md "This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require") reference page.
 
 ## Ingress traffic
 
@@ -134,9 +134,9 @@ Application pods
 
 Dynatrace Collector
 
-[Telemetry ingest ports](/docs/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest#port-list "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.")
+[Telemetry ingest ports](../../../../ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest.md#port-list "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.")
 
-[Ingest telemetry data](/docs/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.")
+[Ingest telemetry data](../../../../ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest.md "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.")
 
 kubelet
 
@@ -300,7 +300,7 @@ Depending on your setup, the port may differ from the default.
 
 2
 
-Communication with hosts must be allowed as configured in [DynaKube](/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") (`apiUrl`) or [EdgeConnect](/docs/ingest-from/setup-on-k8s/reference/edgeconnect-parameters "List of configuration parameters for EdgeConnect.") (`apiServer`) custom resources. Different communication endpoints may be used as fallback to ensure proper connection.
+Communication with hosts must be allowed as configured in [DynaKube](../../../../ingest-from/setup-on-k8s/reference/dynakube-parameters.md "List the available parameters for setting up Dynatrace Operator on Kubernetes.") (`apiUrl`) or [EdgeConnect](../../../../ingest-from/setup-on-k8s/reference/edgeconnect-parameters.md "List of configuration parameters for EdgeConnect.") (`apiServer`) custom resources. Different communication endpoints may be used as fallback to ensure proper connection.
 
 3
 
@@ -308,7 +308,7 @@ Only required when `codeModulesImage` field is used.
 
 4
 
-[Supported connectivity schemes for ActiveGates](/docs/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates "Learn about the connectivity priorities between ActiveGate types as well as the priorities between ActiveGates and OneAgents.")
+[Supported connectivity schemes for ActiveGates](../../../../ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates.md "Learn about the connectivity priorities between ActiveGate types as well as the priorities between ActiveGates and OneAgents.")
 
 5
 

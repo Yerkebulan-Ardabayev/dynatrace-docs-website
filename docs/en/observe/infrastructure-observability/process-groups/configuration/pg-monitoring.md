@@ -42,7 +42,7 @@ To disable automatic deep monitoring
 
 How process monitoring rules are applied
 
-**Enable automatic deep monitoring** doesnât take precedence over any [individual process monitoring rules](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection") you may have set up. If a process monitoring rule indicates that Dynatrace should monitor a certain process, and **Enable automatic deep monitoring** is **Off**, the individual rule will take precedence and Dynatrace will monitor the respective process. Therefore, **each process monitoring rule is an exception to the general monitoring policy**.
+**Enable automatic deep monitoring** doesnât take precedence over any [individual process monitoring rules](pg-detection.md "Ways to customize process-group detection") you may have set up. If a process monitoring rule indicates that Dynatrace should monitor a certain process, and **Enable automatic deep monitoring** is **Off**, the individual rule will take precedence and Dynatrace will monitor the respective process. Therefore, **each process monitoring rule is an exception to the general monitoring policy**.
 
 ## Define custom process monitoring rules
 
@@ -59,7 +59,7 @@ To add a custom monitoring rule
    * **Do not monitor** the process if the condition is met
 5. Define the **Condition**:
 
-   * The condition target (see [process group detection rules](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection")).
+   * The condition target (see [process group detection rules](pg-detection.md "Ways to customize process-group detection")).
    * The condition operator (for example, `contains`).
    * The condition value.
 6. Select **Save changes** to save your configuration and add the new rule to your list of custom process monitoring rules.
@@ -99,7 +99,7 @@ To list all built-in rules
 
 All built-in rules are enabled by default. You can disable them, but you can't edit the rules.
 
-These built-in rules don't cover your own .NET and Go applications unless those applications are deployed in containers, Cloud Foundry, or Kubernetes. If this is not the case for your .NET and Go applications, you should add your own .NET and Go applications as [custom monitoring rules](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection").
+These built-in rules don't cover your own .NET and Go applications unless those applications are deployed in containers, Cloud Foundry, or Kubernetes. If this is not the case for your .NET and Go applications, you should add your own .NET and Go applications as [custom monitoring rules](pg-detection.md "Ways to customize process-group detection").
 
 Dynatrace doesnât automatically carry out deep monitoring of **all** .NET and Go processes. Many popular applications such as Microsoft Office make use of .NET, and many common infrastructure components are written in Go, so Dynatrace performs deep monitoring of .NET and Go processes only if you explicitly enable it or if they are covered by monitoring rules.
 

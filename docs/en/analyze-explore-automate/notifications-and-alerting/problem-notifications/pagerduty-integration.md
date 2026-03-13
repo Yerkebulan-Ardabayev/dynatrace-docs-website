@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:11:50.165388
 * 3-min read
 * Updated on Apr 25, 2024
 
-For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see [Workflows Connectors](/docs/analyze-explore-automate/workflows/actions "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
+For extended capabilities and workflow automation (for example, enabling targeted notification and problem remediation), see [Workflows Connectors](../../workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
 
 Dynatrace offers an [out-of-the-box integration](#out-of-the-box-integration) that automatically pushes Dynatrace problem notifications to your PagerDuty environment. This integration provides PagerDuty responders with the link to the Dynatrace problem card.
 
@@ -60,5 +60,5 @@ If you want more custom notification fields, use this procedure to integrate Dyn
 
 ### More information
 
-* For general information on configuring a custom integration in Dynatrace, see [Webhook integration](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration "Learn how to integrate problem-notifications using a custom webhook.").
+* For general information on configuring a custom integration in Dynatrace, see [Webhook integration](webhook-integration.md "Learn how to integrate problem-notifications using a custom webhook.").
 * For the PagerDuty documentation on how to integrate PagerDuty with Dynatrace via a custom webhook, see PagerDuty's [Dynatrace Integration Guideï»¿](https://www.pagerduty.com/docs/guides/dynatrace-integration-guide/).

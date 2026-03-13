@@ -56,7 +56,7 @@ OneAgent version 1.299 is the last release that support the Python Extensions 1.
 
 * EoS: Support (that is bug fixes, security updates) ended on Sep 30, 2025.
 * Python Extension Framework 1.0 is EoS since Sep 1, 2024.
-* To continue using extensions after the OneAgent version 1.299 EoL date, migrate to the new [Extensions framework](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") and [update OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-update "Learn how to update OneAgent.") to a supported version. See [Migration guides for custom extensions 1.0](#migration)
+* To continue using extensions after the OneAgent version 1.299 EoL date, migrate to the new [Extensions framework](../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.") and [update OneAgent](../../ingest-from/dynatrace-oneagent/oneagent-update.md "Learn how to update OneAgent.") to a supported version. See [Migration guides for custom extensions 1.0](#migration)
 
 ### ActiveGate extensions
 
@@ -72,11 +72,11 @@ Migrate all Python extensions 1.0 to the new Extensions to maintain a secure, su
 * [Migrate Python extensionsï»¿](https://developer.dynatrace.com/develop/extensions/dynatrace-extensions-vscode/guides/migrate/python-migrate/)
 * [Video: A Practical Guide to Building Python Based Extensions with Dynatraceï»¿](https://www.youtube.com/watch?v=g-lPIZx66BA)
 
-To remain supported, [update your OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-update "Learn how to update OneAgent.") to the latest version.
+To remain supported, [update your OneAgent](../../ingest-from/dynatrace-oneagent/oneagent-update.md "Learn how to update OneAgent.") to the latest version.
 
 ## Native mobile applications for iOS and Android
 
-As part of our ongoing commitment to delivering a streamlined and consistent user experience, Dynatrace is retiring its [native mobile applications for iOS and Android](/docs/analyze-explore-automate/notifications-and-alerting/push-notifications-via-the-dynatrace-mobile-app "Learn how you can connect your Dynatrace environments with the Dynatrace mobile app to receive problem alerts."). This change aligns with our strategy to provide a unified, responsive web interface and leverage modern, flexible notification channels.
+As part of our ongoing commitment to delivering a streamlined and consistent user experience, Dynatrace is retiring its [native mobile applications for iOS and Android](../../analyze-explore-automate/notifications-and-alerting/push-notifications-via-the-dynatrace-mobile-app.md "Learn how you can connect your Dynatrace environments with the Dynatrace mobile app to receive problem alerts."). This change aligns with our strategy to provide a unified, responsive web interface and leverage modern, flexible notification channels.
 
 ### Key dates
 
@@ -102,8 +102,8 @@ Push notifications will now be delivered through third-party integrations such a
 * Begin using the responsive web interface.
 * Set up your preferred notification integrations via:
 
-  + Dynatrace SaaS: [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
-  + Dynatrace Managed: [Problem notifications](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.")
+  + Dynatrace SaaS: [Workflows](../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
+  + Dynatrace Managed: [Problem notifications](../../analyze-explore-automate/notifications-and-alerting/problem-notifications.md "Learn how to integrate third-party problem notification systems with Dynatrace.")
 * Remove the native app from your devices after the sunset date.
 
 ### Need help?

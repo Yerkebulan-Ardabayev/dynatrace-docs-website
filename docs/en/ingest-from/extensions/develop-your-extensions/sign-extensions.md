@@ -23,8 +23,8 @@ Each extension uploaded to a Dynatrace environment must be signed so that Dynatr
 Depending on your needs, choose one of the following methods to sign and build your extension:
 
 * [`dt-extensions-sdk`ï»¿](https://dynatrace-extensions.github.io/dt-extensions-python-sdk/cli/sign.html) - an all-in-one CLI tool Recommended
-* [VSCode Extension](/docs/ingest-from/extensions/develop-your-extensions/addon-for-vscode "Introduction to the Dynatrace Extensions add-on for VS Code") - an all-in-one editor-based tool Recommended
-* [Use OpenSSL](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions/manually-openssl "Sign an extension manually with OpenSSL.") - a standard crypto library for manual control
+* [VSCode Extension](addon-for-vscode.md "Introduction to the Dynatrace Extensions add-on for VS Code") - an all-in-one editor-based tool Recommended
+* [Use OpenSSL](sign-extensions/manually-openssl.md "Sign an extension manually with OpenSSL.") - a standard crypto library for manual control
 
 Dynatrace CLI
 
@@ -41,7 +41,7 @@ By doing this:
 * You verify the authenticity of distributed extensions
 * You prevent potential malicious extension distribution by an intruder who could take control of your environment
 
-For JMX extensions, you only need to add the certificate to the Dynatrace [credential vault](/docs/manage/credential-vault "Store and manage credentials in the credential vault.").
+For JMX extensions, you only need to add the certificate to the Dynatrace [credential vault](../../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault.").
 When adding the certificate, select the **Extension validation** scope.
 
 ### Remote extensions

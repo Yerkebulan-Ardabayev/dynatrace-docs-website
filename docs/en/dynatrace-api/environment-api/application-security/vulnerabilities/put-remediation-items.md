@@ -11,7 +11,7 @@ scraped: 2026-03-05T21:38:03.339161
 * Reference
 * Updated on May 03, 2022
 
-Set the mute status of a [remediation tracking](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.") process group or, in the case of Kubernetes vulnerabilities, of a remediation tracking Kubernetes node, to `mute` or `unmute`.
+Set the mute status of a [remediation tracking](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Track the remediation progress of vulnerabilities.") process group or, in the case of Kubernetes vulnerabilities, of a remediation tracking Kubernetes node, to `mute` or `unmute`.
 
 The request consumes an `application/json` payload.
 
@@ -24,7 +24,7 @@ The request consumes an `application/json` payload.
 
 To execute this request, you need an access token with `securityProblems.write` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Parameters
 
@@ -168,7 +168,7 @@ A list of constraint violations
 
 ## Example
 
-Mute the `PROCESS_GROUP-70DF2C1374244F5A` remediation item of the `8788643471842202915` vulnerability from the [GET request example](/docs/dynatrace-api/environment-api/application-security/vulnerabilities/get-remediation-items#example "View the list of remediation items of a vulnerability via Dynatrace API."). The response code of **200** indicates a successful request.
+Mute the `PROCESS_GROUP-70DF2C1374244F5A` remediation item of the `8788643471842202915` vulnerability from the [GET request example](get-remediation-items.md#example "View the list of remediation items of a vulnerability via Dynatrace API."). The response code of **200** indicates a successful request.
 
 #### Curl
 
@@ -242,6 +242,6 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/87886434718422029
 
 ## Related topics
 
-* [Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.")
-* [Davis Security Advisor API](/docs/dynatrace-api/environment-api/application-security/davis-security-advice "View the Davis Security Advisor recommendations via Dynatrace API.")
-* [Remediation tracking](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")
+* [Application Security](../../../../secure/application-security.md "Access the Dynatrace Application Security functionalities.")
+* [Davis Security Advisor API](../davis-security-advice.md "View the Davis Security Advisor recommendations via Dynatrace API.")
+* [Remediation tracking](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Track the remediation progress of vulnerabilities.")

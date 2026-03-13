@@ -28,4 +28,4 @@ API для Dynatrace Platform Subscription предоставляет досту
 
 ## Связанные темы
 
-* [Лицензирование Dynatrace](/docs/license "О Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace.")
+* [Лицензирование Dynatrace](../license.md "О Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace.")

@@ -18,11 +18,11 @@ To avoid such a scenario, the NGINX code module tries to detect patched NGINX da
 
 Notification
 
-* Incompatible NGINX modules were detected in this process. Automatic instrumentation was disabled. To force instrumenting NGINX, see [Runtime instrumentation](/docs/ingest-from/technology-support/application-software/nginx/manual-runtime-instrumentation "Learn how to force instrumenting patched/non-standard NGINX binaries during runtime.").
+* Incompatible NGINX modules were detected in this process. Automatic instrumentation was disabled. To force instrumenting NGINX, see [Runtime instrumentation](manual-runtime-instrumentation.md "Learn how to force instrumenting patched/non-standard NGINX binaries during runtime.").
 
 ## Instrument a patched NGINX
 
-NGNIX Code Module can instrument a patched NGINX for [supported versions](/docs/ingest-from/technology-support/application-software/nginx#nginx-versions "Learn the details of Dynatrace support for NGINX.") by inspecting internal NGINX data structure declarations on startup (during runtime), instead of relying on ahead-of-time assumptions.
+NGNIX Code Module can instrument a patched NGINX for [supported versions](../nginx.md#nginx-versions "Learn the details of Dynatrace support for NGINX.") by inspecting internal NGINX data structure declarations on startup (during runtime), instead of relying on ahead-of-time assumptions.
 
 An example of a patched NGINX is the NGINX binary distributed with the Kong Gateway.
 

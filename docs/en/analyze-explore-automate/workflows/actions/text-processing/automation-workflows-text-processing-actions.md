@@ -26,10 +26,10 @@ Below is a list of workflow actions available for Text Processing.
 
 You may encounter double curly braces templating syntax when dealing with JSON or YAML files.
 
-[workflow expressions](/docs/analyze-explore-automate/workflows/reference "Get to know the workflows expression") also use double curly bracket notation.
+[workflow expressions](../../reference.md "Get to know the workflows expression") also use double curly bracket notation.
 
 It is possible to escape `{{` and `}}` with `{{ '{{' }}` and `{{ '}}' }}` respectively, however; actions provided by Text Processing only support valid JSON or YAML syntax.
-Should the expression evaluation result yield an action input that is not considered valid in respect to [JSONï»¿](https://www.json.org/json-en.html) or [YAMLï»¿](https://yaml.org/spec/1.2.2/), the workflow execution state is [`Error`](/docs/analyze-explore-automate/workflows/running#workflow-execution-states "Run and monitor workflows created in Dynatrace Workflows.").
+Should the expression evaluation result yield an action input that is not considered valid in respect to [JSONï»¿](https://www.json.org/json-en.html) or [YAMLï»¿](https://yaml.org/spec/1.2.2/), the workflow execution state is [`Error`](../../running.md#workflow-execution-states "Run and monitor workflows created in Dynatrace Workflows.").
 
 In the official Jinja documentation, read more about [escape mechanismsï»¿](https://jinja.palletsprojects.com/en/stable/templates/#escaping).
 

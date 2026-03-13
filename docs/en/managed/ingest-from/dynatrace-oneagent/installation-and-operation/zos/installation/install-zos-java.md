@@ -16,15 +16,15 @@ With the z/OS Java module, you can get observability for your Java applications 
 
 Trace your Java applications end-to-end with Dynatrace and quickly detect any anomalies
 
-Analyze the performance of your transactions end-to-end using the [service flow](/docs/observe/application-observability/services-classic/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.").
+Analyze the performance of your transactions end-to-end using the [service flow](../../../../../../observe/application-observability/services-classic/service-backtrace.md "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.").
 
 ![zOS Java 1](https://dt-cdn.net/images/zos-java-1-2772-facc3b2740.png)
 
-Use the [PurePath distributed traces](/docs/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") to drill down to the code level and to optimize your programs.
+Use the [PurePath distributed traces](../../../../../../observe/application-observability/distributed-traces.md "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") to drill down to the code level and to optimize your programs.
 
 ![zOS Java 2](https://dt-cdn.net/images/zos-java-2-2729-43a263828d.png)
 
-Quickly detect anomalies with the [Service response time hotspots](/docs/observe/application-observability/services-classic/service-response-time-hotspots "Identify the activities that consume the most response time for each service.").
+Quickly detect anomalies with the [Service response time hotspots](../../../../../../observe/application-observability/services-classic/service-response-time-hotspots.md "Identify the activities that consume the most response time for each service.").
 
 ![zOS Java 3](https://dt-cdn.net/images/zos-java-3-2312-97d45f24a2.png)
 
@@ -52,15 +52,15 @@ Websphere Application Server specific metrics:
 
 ### Can I monitor custom JMX metrics with the z/OS Java module?
 
-Yes, you can use the z/OS Java module to monitor custom JMX metrics. For more information, see [Monitor JMX metrics on z/OS](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics "Learn how to set up JMX metrics monitoring for your Java applications on z/OS.").
+Yes, you can use the z/OS Java module to monitor custom JMX metrics. For more information, see [Monitor JMX metrics on z/OS](../../../../../../ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics.md "Learn how to set up JMX metrics monitoring for your Java applications on z/OS.").
 
 ## Prerequisite
 
-Activate the [OneAgent feature](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.") **Forward Tag 4 trace context extension**.
+Activate the [OneAgent feature](../../../../../../ingest-from/dynatrace-oneagent/oneagent-features.md "Manage OneAgent features globally and per process group.") **Forward Tag 4 trace context extension**.
 
 ## Download
 
-1. [Download z/OS product datasets](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets "Download and install the Dynatrace product datasets for z/OS.") and extract the JAR file (`dynatrace-oneagent-zos-java.jar`).
+1. [Download z/OS product datasets](../../../../../../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets.md "Download and install the Dynatrace product datasets for z/OS.") and extract the JAR file (`dynatrace-oneagent-zos-java.jar`).
 2. Transfer the JAR file to your z/OS [Unix System Servicesï»¿](https://www.ibm.com/docs/en/zos/2.5.0?topic=zos-unix-system-services) (USS) environment in binary mode.
 3. Create a new file with the name `dtconfig.json` in the z/OS USS folder where the module is located.
 
@@ -90,7 +90,7 @@ Activate the [OneAgent feature](/docs/ingest-from/dynatrace-oneagent/oneagent-fe
 
    If the zDC name is defined as `DEFAULT`, the module will connect to the default zDC subsystem ID. To use a different zDC, replace `DEFAULT` with an alternative subsystem ID.
 
-   You can find the zDC subsystem name in the [SYSIN parameters](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc#sysin-params "Set up the z/OS Data Collection subsystem (zDC).") of your JCL SYSIN member `ZDCSYSIN`. The default zDC subsystem name is `MEPC`.
+   You can find the zDC subsystem name in the [SYSIN parameters](../../../../../../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc.md#sysin-params "Set up the z/OS Data Collection subsystem (zDC).") of your JCL SYSIN member `ZDCSYSIN`. The default zDC subsystem name is `MEPC`.
 
    ```
    //SYSIN DD DISP=SHR,DSN=<hlq>.SZDTSAMP(ZDCSYSIN)
@@ -104,7 +104,7 @@ Activate the [OneAgent feature](/docs/ingest-from/dynatrace-oneagent/oneagent-fe
    DEFAULT(YES)
    ```
 
-   If `DEFAULT` is set to `YES` in the [SYSIN parameters](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc#sysin-params "Set up the z/OS Data Collection subsystem (zDC)."), you can also use `DEFAULT` in the `dtconfig.json` file.
+   If `DEFAULT` is set to `YES` in the [SYSIN parameters](../../../../../../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc.md#sysin-params "Set up the z/OS Data Collection subsystem (zDC)."), you can also use `DEFAULT` in the `dtconfig.json` file.
 
 * EBCDIC 1047, UTF-8, and ASCII encodings are supported for the `dtconfig.json` file.
 * The module automatically reads `dtconfig.json` when it's placed in the same folder as `dynatrace-oneagent-zos-java.jar`.
@@ -207,9 +207,9 @@ WebSphere Liberty inside a CICS region
    ```
 4. Save the changes and restart your WebSphere Liberty.
 
-* Monitoring of both the CICS region and the WebSphere Liberty that operates inside this CICS region is only supported if they report to a different zDC subsystem. If they report to different zDC subsystems, at least one of those zDCs must be started as non-default (see `SUBSYSTEM_ID` in the [zDC SYSIN parameters](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc#sysin-params "Set up the z/OS Data Collection subsystem (zDC).")). However, both zDCs can report to the same zRemote module.
+* Monitoring of both the CICS region and the WebSphere Liberty that operates inside this CICS region is only supported if they report to a different zDC subsystem. If they report to different zDC subsystems, at least one of those zDCs must be started as non-default (see `SUBSYSTEM_ID` in the [zDC SYSIN parameters](../../../../../../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc.md#sysin-params "Set up the z/OS Data Collection subsystem (zDC).")). However, both zDCs can report to the same zRemote module.
 
-  + For the CICS module, the zDC subsystem name is defined in the [CICS SYSIN parameters](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics#connect-cics-zdc "Install the Dynatrace CICS module.").
+  + For the CICS module, the zDC subsystem name is defined in the [CICS SYSIN parameters](../../../../../../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics.md#connect-cics-zdc "Install the Dynatrace CICS module.").
   + For the z/OS Java module, the zDC subsystem name is defined in the [`dtconfig.json` file](#download).
 * OneAgent version 1.281+ Dynatrace version 1.283+ When running in a CICS region, the process group instance name will include both the CICS region name and the WebSphere Liberty server name in the `CICS region (server name)` format.
 
@@ -252,11 +252,11 @@ IMS SOAP Gateway
    </server>
    ```
 3. Save the changes and restart your z/OS Connect Enterprise Edition.
-4. For the CICS service provider, activate the [OneAgent feature](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.") **z/OS CICS z/OS Connect**.
+4. For the CICS service provider, activate the [OneAgent feature](../../../../../../ingest-from/dynatrace-oneagent/oneagent-features.md "Manage OneAgent features globally and per process group.") **z/OS CICS z/OS Connect**.
 5. For the IMS service provider:
 
-   1. Add the IMS module to **IMS Connect** as described in [Install the IMS module](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims#install "Install the Dynatrace IMS module.").
-   2. Activate the [OneAgent feature](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.") **z/OS IMS z/OS Connect**.
+   1. Add the IMS module to **IMS Connect** as described in [Install the IMS module](../../../../../../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims.md#install "Install the Dynatrace IMS module.").
+   2. Activate the [OneAgent feature](../../../../../../ingest-from/dynatrace-oneagent/oneagent-features.md "Manage OneAgent features globally and per process group.") **z/OS IMS z/OS Connect**.
 6. For the MQ service provider, no additional configuration is needed.
 
 1. Add the module to the `CTGENV` member and to the `CTGSTART_OPTS` variable:
@@ -301,7 +301,7 @@ By changing the default folder, ensure that the application server has appropria
 
 ### OneAgent diagnostics
 
-Dynatrace recommends to write the logs to the shared log folder of the zDC so that they are included into the [OneAgent diagnostics](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics "Learn how to run OneAgent diagnostics") workflow. For example, if the `dtzagent` binary is located at `/u/dt/agent/lib64/dtzagent` in the z/OS USS environment, the log folder is `/u/dt/log`. Typically, a shared zDC log folder already exists and contains some zDC logs.
+Dynatrace recommends to write the logs to the shared log folder of the zDC so that they are included into the [OneAgent diagnostics](../../../../../../ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics.md "Learn how to run OneAgent diagnostics") workflow. For example, if the `dtzagent` binary is located at `/u/dt/agent/lib64/dtzagent` in the z/OS USS environment, the log folder is `/u/dt/log`. Typically, a shared zDC log folder already exists and contains some zDC logs.
 
 To enable file logging to an absolute path such as the shared zDC log folder `/u/dt/log`, specify the JVM argument as follows:
 
@@ -315,7 +315,7 @@ If your zDC is installed in a different location, you must adopt the absolute pa
 
 To update your z/OS Java module to a newer version
 
-1. [Download z/OS product datasets](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets#download-pax "Download and install the Dynatrace product datasets for z/OS.") and transfer the JAR file (`dynatrace-oneagent-zos-java.jar`) to your z/OS USS environment in binary mode.
+1. [Download z/OS product datasets](../../../../../../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets.md#download-pax "Download and install the Dynatrace product datasets for z/OS.") and transfer the JAR file (`dynatrace-oneagent-zos-java.jar`) to your z/OS USS environment in binary mode.
 2. Locate your existing dtconfig.json in the z/OS USS folder where the old version of the module is located and copy it to the z/OS USS folder you used in step(1).
 3. Stop your monitored application server or middleware.
 4. Replace your current JAR file with the new JAR file.

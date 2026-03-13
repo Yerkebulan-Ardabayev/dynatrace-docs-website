@@ -76,9 +76,9 @@ During the log ingestion via OneAgent, the following attributes are added automa
 * `loglevel`
 * `log.source`
 * `process.technology`
-* [`span_id`](/docs/analyze-explore-automate/logs/lma-log-enrichment "Connect your incoming log data to traces for more precise Dynatrace analysis.")
+* [`span_id`](../../lma-log-enrichment.md "Connect your incoming log data to traces for more precise Dynatrace analysis.")
 * `status`
-* [`trace_id`](/docs/analyze-explore-automate/logs/lma-log-enrichment "Connect your incoming log data to traces for more precise Dynatrace analysis.")
+* [`trace_id`](../../lma-log-enrichment.md "Connect your incoming log data to traces for more precise Dynatrace analysis.")
 * `web_server.iis.site_id`
 * `web_server.iis.site_name`
 * `web_server.iis.application_pool`
@@ -100,8 +100,8 @@ During the log ingestion via OneAgent, the following attributes are added automa
 ## Resource attributes
 
 All log entries are enriched with host-level resource attributes, such as host tags, cloud attributes, Kubernetes attributes, and more.  
-For more details and the full list of host-level attributes, see [Resource attributes](/docs/platform/oneagent/resource-attributes "Any signal that uses a given resource, such as host or process group, is enriched with certain attributes coming from the resource.").  
-Kubernetes-specific metadata enrichment is described in [Metadata enrichment of all telemetry originating from Kubernetes workloads](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment "Guides for telemetry enrichment on Kubernetes").
+For more details and the full list of host-level attributes, see [Resource attributes](../../../../platform/oneagent/resource-attributes.md "Any signal that uses a given resource, such as host or process group, is enriched with certain attributes coming from the resource.").  
+Kubernetes-specific metadata enrichment is described in [Metadata enrichment of all telemetry originating from Kubernetes workloads](../../../../ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment.md "Guides for telemetry enrichment on Kubernetes").
 
 ## Attributes automatically extracted from log content via OneAgent
 
@@ -121,5 +121,5 @@ will result in additional `dt.trace_id` and `dt.span_id` attributes for log reco
 
 ## Related topics
 
-* [Log ingestion API](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
-* [Log ingestion via OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
+* [Log ingestion API](../lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
+* [Log ingestion via OneAgent](../lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")

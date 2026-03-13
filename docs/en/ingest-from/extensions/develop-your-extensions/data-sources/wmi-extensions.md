@@ -18,11 +18,11 @@ Dynatrace provides you with a framework that you can use to extend your observab
 We assume the following:
 
 * You possess sufficient Windows and WMI subject matter expertise to create a WMI extension.
-* You're familiar with [Extensions basic concepts](/docs/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.") and the general structure of the [extension YAML file](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml "Learn how to create an extension YAML file using the Extensions framework.").
+* You're familiar with [Extensions basic concepts](../../concepts.md "Learn more about the concept of Dynatrace Extensions.") and the general structure of the [extension YAML file](../extension-yaml.md "Learn how to create an extension YAML file using the Extensions framework.").
 
 ## Prerequisites and support
 
-Learn the prerequisites and scope of the supported technologies. For limits applying to your extension, see [Extensions limits](/docs/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.").
+Learn the prerequisites and scope of the supported technologies. For limits applying to your extension, see [Extensions limits](../../concepts.md "Learn more about the concept of Dynatrace Extensions.").
 
 ### Supported Dynatrace versions
 
@@ -32,7 +32,7 @@ Learn the prerequisites and scope of the supported technologies. For limits appl
 
 ### Monitored host
 
-Local WMI extensions can be run on any OneAgent-supported Windows host without any special requirements. Make sure Extension Execution Controller (EEC) is enabled at the environment or selected host level. For more information, see [Extension Execution Controller](/docs/ingest-from/extensions/concepts#eec "Learn more about the concept of Dynatrace Extensions.").
+Local WMI extensions can be run on any OneAgent-supported Windows host without any special requirements. Make sure Extension Execution Controller (EEC) is enabled at the environment or selected host level. For more information, see [Extension Execution Controller](../../concepts.md#eec "Learn more about the concept of Dynatrace Extensions.").
 
 A host you want to monitor using a remote WMI extension must meet the requirements described below, including remote permissions enabled and connectivity details configured to allow your ActiveGate to access the WMI monitoring data.
 

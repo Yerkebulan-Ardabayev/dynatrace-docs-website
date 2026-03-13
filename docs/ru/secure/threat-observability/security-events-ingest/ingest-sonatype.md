@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:24:09.563425
 * Extension
 * Обновлено 07 окт. 2025
 
-Эта страница была обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и действий, необходимых для выполнения миграции, описан в [руководстве по миграции таблиц безопасности Grail](/docs/secure/threat-observability/migration "Ознакомьтесь с изменениями в новой таблице безопасности Grail и узнайте, как выполнить миграцию.").
+Эта страница была обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и действий, необходимых для выполнения миграции, описан в [руководстве по миграции таблиц безопасности Grail](../migration.md "Ознакомьтесь с изменениями в новой таблице безопасности Grail и узнайте, как выполнить миграцию.").
 
 Загружайте события безопасности и журналы аудита Sonatype Lifecycle в Dynatrace в качестве событий безопасности.
 
@@ -28,9 +28,9 @@ Sonatype предлагает ряд продуктов, помогающих р
 
 С загруженными данными вы можете реализовать различные сценарии использования, например:
 
-* [Визуализация и анализ результатов безопасности](/docs/secure/use-cases/visualize-and-analyze-security-findings "Визуализируйте, приоритизируйте и анализируйте загруженные результаты безопасности.")
-* [Обнаружение пробелов в покрытии результатов безопасности](/docs/secure/use-cases/discover-coverage-gaps-in-security-scans "Выявляйте слепые зоны в жизненном цикле разработки программного обеспечения (SDLC).")
-* [Автоматизация и оркестрация результатов безопасности](/docs/secure/use-cases/automate-and-orchestrate-security-findings "Регулярно проверяйте критические результаты безопасности и получайте автоматические тикеты Jira или оповещения Slack.")
+* [Визуализация и анализ результатов безопасности](../../use-cases/visualize-and-analyze-security-findings.md "Визуализируйте, приоритизируйте и анализируйте загруженные результаты безопасности.")
+* [Обнаружение пробелов в покрытии результатов безопасности](../../use-cases/discover-coverage-gaps-in-security-scans.md "Выявляйте слепые зоны в жизненном цикле разработки программного обеспечения (SDLC).")
+* [Автоматизация и оркестрация результатов безопасности](../../use-cases/automate-and-orchestrate-security-findings.md "Регулярно проверяйте критические результаты безопасности и получайте автоматические тикеты Jira или оповещения Slack.")
 
 ### Требования
 
@@ -63,13 +63,13 @@ Sonatype предлагает ряд продуктов, помогающих р
   + Запускать фреймворк Extensions 2.0
   + Обращаться к конечным точкам API Sonatype
 * Разрешения: список необходимых разрешений можно найти, перейдя в **Hub**, выбрав ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions** и открыв **Technical information**.
-* Сгенерируйте токен доступа с областью действия `openpipeline.events_security` и сохраните его для дальнейшего использования. Подробнее см. [Dynatrace API — Токены и аутентификация](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования Dynatrace API.").
+* Сгенерируйте токен доступа с областью действия `openpipeline.events_security` и сохраните его для дальнейшего использования. Подробнее см. [Dynatrace API — Токены и аутентификация](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования Dynatrace API.").
 
 ## Активация и настройка
 
 1. В Dynatrace найдите **Sonatype Lifecycle** и выберите **Install**.
 2. Следуйте инструкциям на экране для настройки расширения.
-3. Проверьте конфигурацию, выполнив следующие запросы в [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь аналитикой из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве."):
+3. Проверьте конфигурацию, выполнив следующие запросы в [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь аналитикой из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве."):
 
    * Для журналов аудита:
 
@@ -114,7 +114,7 @@ Sonatype предлагает ряд продуктов, помогающих р
 
      AND event.type=="VULNERABILITY_SCAN"
      ```
-4. После установки и запуска расширения вы можете управлять им в Dynatrace через ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**. Подробнее см. [О расширениях](/docs/ingest-from/extensions/concepts "Узнайте больше о концепции расширений Dynatrace.").
+4. После установки и запуска расширения вы можете управлять им в Dynatrace через ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**. Подробнее см. [О расширениях](../../../ingest-from/extensions/concepts.md "Узнайте больше о концепции расширений Dynatrace.").
 
 ## Подробности
 
@@ -122,23 +122,23 @@ Sonatype предлагает ряд продуктов, помогающих р
 
 ![как это работает - sonatype](https://dt-cdn.net/images/architechture-diagram-2560-277696e6e1.png)
 
-Интеграция Dynatrace с Sonatype Lifecycle — это [расширение](/docs/ingest-from/extensions "Узнайте, как создавать и управлять расширениями Dynatrace."), работающее на Dynatrace ActiveGate. После включения и настройки расширения Dynatrace Sonatype Lifecycle
+Интеграция Dynatrace с Sonatype Lifecycle — это [расширение](../../../ingest-from/extensions.md "Узнайте, как создавать и управлять расширениями Dynatrace."), работающее на Dynatrace ActiveGate. После включения и настройки расширения Dynatrace Sonatype Lifecycle
 
 1. Оно периодически собирает результаты безопасности и журналы аудита с помощью [Sonatype REST API](https://help.sonatype.com/en/rest-apis.html).
-2. Полученные данные загружаются в Dynatrace и сопоставляются с [семантическим словарём Dynatrace](/docs/semantic-dictionary/model/security-events#vulnerability-finding-events "Ознакомьтесь с моделями семантического словаря, связанными с событиями безопасности.").
-3. Данные хранятся в корзине (bucket) с именем `default_securityevents` (подробнее см. [Встроенные корзины Grail](/docs/platform/grail/organize-data#built-in-grail-buckets "Информация о модели данных Grail, состоящей из корзин, таблиц и представлений.")).
+2. Полученные данные загружаются в Dynatrace и сопоставляются с [семантическим словарём Dynatrace](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Ознакомьтесь с моделями семантического словаря, связанными с событиями безопасности.").
+3. Данные хранятся в корзине (bucket) с именем `default_securityevents` (подробнее см. [Встроенные корзины Grail](../../../platform/grail/organize-data.md#built-in-grail-buckets "Информация о модели данных Grail, состоящей из корзин, таблиц и представлений.")).
 
 ### Лицензирование и стоимость
 
-Информацию о тарификации см. в разделе [События на базе Grail](/docs/license/capabilities/events "Узнайте, как рассчитывается потребление событий Dynatrace на базе Grail в модели подписки на платформу Dynatrace.").
+Информацию о тарификации см. в разделе [События на базе Grail](../../../license/capabilities/events.md "Узнайте, как рассчитывается потребление событий Dynatrace на базе Grail в модели подписки на платформу Dynatrace.").
 
 ## Часто задаваемые вопросы
 
 ### Какая модель данных используется для журналов безопасности и событий, поступающих из Sonatype Lifecycle?
 
-* [События обнаружения уязвимостей](/docs/semantic-dictionary/model/security-events#vulnerability-finding-events "Ознакомьтесь с моделями семантического словаря, связанными с событиями безопасности.") хранят отдельные результаты обнаружения уязвимостей, сообщённые Sonatype Lifecycle для затронутых артефактов и компонентов.
-* [**События сканирования уязвимостей**](/docs/semantic-dictionary/model/security-events#vulnerability-scan-events "Ознакомьтесь с моделями семантического словаря, связанными с событиями безопасности.") указывают на покрытие сканирования для отдельных артефактов.
-* [**Журналы аудита**](/docs/semantic-dictionary/model/log#audit-logs "Ознакомьтесь с моделями семантического словаря, связанными с Log Analytics.") представляют собой журналы активности пользователей в Sonatype Lifecycle.
+* [События обнаружения уязвимостей](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Ознакомьтесь с моделями семантического словаря, связанными с событиями безопасности.") хранят отдельные результаты обнаружения уязвимостей, сообщённые Sonatype Lifecycle для затронутых артефактов и компонентов.
+* [**События сканирования уязвимостей**](../../../semantic-dictionary/model/security-events.md#vulnerability-scan-events "Ознакомьтесь с моделями семантического словаря, связанными с событиями безопасности.") указывают на покрытие сканирования для отдельных артефактов.
+* [**Журналы аудита**](../../../semantic-dictionary/model/log.md#audit-logs "Ознакомьтесь с моделями семантического словаря, связанными с Log Analytics.") представляют собой журналы активности пользователей в Sonatype Lifecycle.
 
 ### Какие результаты безопасности Sonatype Lifecycle импортируются в Dynatrace?
 
@@ -170,7 +170,7 @@ Sonatype предлагает ряд продуктов, помогающих р
 ### Как нормализуется оценка риска для результатов Sonatype Lifecycle?
 
 Dynatrace нормализует уровни серьёзности и оценки риска для всех результатов, загруженных через текущую интеграцию. Это помогает вам последовательно приоритизировать результаты, независимо от их источника.
-Подробнее о работе нормализации см. [Нормализация серьёзности и оценки](/docs/secure/threat-observability/concepts#normalization "Основные концепции, связанные с Threat Observability").
+Подробнее о работе нормализации см. [Нормализация серьёзности и оценки](../concepts.md#normalization "Основные концепции, связанные с Threat Observability").
 
 Уровни и оценки риска Dynatrace сопоставляются с исходными оценками Sonatype Lifecycle.
 
@@ -192,6 +192,6 @@ Dynatrace нормализует уровни серьёзности и оцен
 
 ## Связанные темы
 
-* [OpenPipeline](/docs/platform/openpipeline "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")
-* [События безопасности](/docs/semantic-dictionary/model/security-events "Ознакомьтесь с моделями семантического словаря, связанными с событиями безопасности.")
+* [OpenPipeline](../../../platform/openpipeline.md "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.")
+* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
+* [События безопасности](../../../semantic-dictionary/model/security-events.md "Ознакомьтесь с моделями семантического словаря, связанными с событиями безопасности.")

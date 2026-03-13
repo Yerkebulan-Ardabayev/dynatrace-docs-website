@@ -13,11 +13,11 @@ scraped: 2026-03-06T21:32:25.972152
 * 2-min read
 * Published Jan 27, 2023
 
-Dynatrace makes it easy for you to analyze your application's [Apdex](/docs/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.") from a variety of dimensions. You can check the Apdex rating for a particular user action, location, and application as well as view the Apdex rating for each user action within one user session.
+Dynatrace makes it easy for you to analyze your application's [Apdex](../rum-concepts/scores-and-ratings/apdex-ratings.md "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.") from a variety of dimensions. You can check the Apdex rating for a particular user action, location, and application as well as view the Apdex rating for each user action within one user session.
 
 ## Location-based analysis
 
-Leverage the **World map** view available for your [web](/docs/observe/digital-experience/web-applications/analyze-and-use/world-map-view "Learn how the World map view offers insights into Apdex ratings, user actions, action durations, and JavaScript errors."), [mobile](/docs/observe/digital-experience/mobile-applications/analyze-and-use/check-usage-metrics-mobile#geo-regions "Learn how to use Dynatrace to check the user experience metrics of your mobile application."), and [custom applications](/docs/observe/digital-experience/custom-applications/analyze-and-use/check-usage-metrics-custom#geo-regions "Learn how to use Dynatrace to check the user experience metrics of your custom application.") to see the color-coded Apdex scores and other performance information.
+Leverage the **World map** view available for your [web](../web-applications/analyze-and-use/world-map-view.md "Learn how the World map view offers insights into Apdex ratings, user actions, action durations, and JavaScript errors."), [mobile](../mobile-applications/analyze-and-use/check-usage-metrics-mobile.md#geo-regions "Learn how to use Dynatrace to check the user experience metrics of your mobile application."), and [custom applications](../custom-applications/analyze-and-use/check-usage-metrics-custom.md#geo-regions "Learn how to use Dynatrace to check the user experience metrics of your custom application.") to see the color-coded Apdex scores and other performance information.
 
 ![Location-based analysis](https://dt-cdn.net/images/apdex-on-worldmap-1903-677a742e2e.png)
 
@@ -45,10 +45,10 @@ To see how user satisfaction evolves over time for a specific application
      ![Application-based analysis](https://dt-cdn.net/images/apdex-on-application-overview-1905-895ba0a0d2.png)
 * **Mobile applications**
 
-  The [**Apdex rating** chart](/docs/observe/digital-experience/mobile-applications/analyze-and-use/check-usage-metrics-mobile#apdex-rating "Learn how to use Dynatrace to check the user experience metrics of your mobile application.") is available on the application overview page.
+  The [**Apdex rating** chart](../mobile-applications/analyze-and-use/check-usage-metrics-mobile.md#apdex-rating "Learn how to use Dynatrace to check the user experience metrics of your mobile application.") is available on the application overview page.
 * **Custom applications**
 
-  Access the [**Apdex rating** chart](/docs/observe/digital-experience/custom-applications/analyze-and-use/check-usage-metrics-custom#apdex-rating "Learn how to use Dynatrace to check the user experience metrics of your custom application.") from the application overview page.
+  Access the [**Apdex rating** chart](../custom-applications/analyze-and-use/check-usage-metrics-custom.md#apdex-rating "Learn how to use Dynatrace to check the user experience metrics of your custom application.") from the application overview page.
 
 ## Cross-application user journey analysis
 
@@ -66,7 +66,7 @@ You can highlight Apdex as a core metric for your business peers by adding Apdex
 
 ## Related topics
 
-* [Apdex ratings](/docs/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.")
-* [Adjust Apdex settings for web applications](/docs/observe/digital-experience/web-applications/additional-configuration/configure-apdex-web "Configure the user-satisfaction performance thresholds for your web application and its key user actions.")
-* [Adjust Apdex settings for mobile applications](/docs/observe/digital-experience/mobile-applications/additional-configuration/configure-apdex-mobile "Configure the user-satisfaction performance thresholds for your mobile application and its key user actions.")
-* [Adjust Apdex settings for custom applications](/docs/observe/digital-experience/custom-applications/additional-configuration/configure-apdex-custom "Configure the user-satisfaction performance thresholds for your custom application and its key user actions.")
+* [Apdex ratings](../rum-concepts/scores-and-ratings/apdex-ratings.md "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.")
+* [Adjust Apdex settings for web applications](../web-applications/additional-configuration/configure-apdex-web.md "Configure the user-satisfaction performance thresholds for your web application and its key user actions.")
+* [Adjust Apdex settings for mobile applications](../mobile-applications/additional-configuration/configure-apdex-mobile.md "Configure the user-satisfaction performance thresholds for your mobile application and its key user actions.")
+* [Adjust Apdex settings for custom applications](../custom-applications/additional-configuration/configure-apdex-custom.md "Configure the user-satisfaction performance thresholds for your custom application and its key user actions.")

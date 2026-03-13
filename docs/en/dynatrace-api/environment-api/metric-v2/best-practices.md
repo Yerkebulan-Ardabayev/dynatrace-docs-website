@@ -17,7 +17,7 @@ This page summarizes best practices for configuring and revising your metrics.
 
 Every metric supports dimensions to enrich your metric with context, such as where the metric was measured. These dimensions can then be filtered and aggregated at query time.
 
-You can see your dimensions when using the [metric ingestion protocol](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+You can see your dimensions when using the [metric ingestion protocol](../../../ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
 
 ### What's a dimension tuple?
 

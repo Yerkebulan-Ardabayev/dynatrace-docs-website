@@ -12,8 +12,8 @@ scraped: 2026-03-06T21:27:59.052662
 * Tutorial
 * Опубликовано 13 мая 2025 г.
 
-Эффективное реагирование на инциденты и анализ корневых причин зависят от точности временных данных и контекста. С помощью [эталонного времени](/docs/secure/investigations/concepts#reference "Key concepts for using Dynatrace Investigations across security, operations, and performance analysis.") в ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations** вы можете улучшить расследования, основанные на данных, получив более глубокое понимание последовательности событий.
-В этой статье рассмотрено, как максимально эффективно использовать привязку к временным меткам в [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.").
+Эффективное реагирование на инциденты и анализ корневых причин зависят от точности временных данных и контекста. С помощью [эталонного времени](../investigations/concepts.md#reference "Key concepts for using Dynatrace Investigations across security, operations, and performance analysis.") в ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations** вы можете улучшить расследования, основанные на данных, получив более глубокое понимание последовательности событий.
+В этой статье рассмотрено, как максимально эффективно использовать привязку к временным меткам в [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.").
 
 ## Целевая аудитория
 
@@ -26,7 +26,7 @@ scraped: 2026-03-06T21:27:59.052662
 ## Прежде чем начать
 
 1. Откройте [расследование в режиме только для чтения в Dynatrace Playground](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.security.investigator/share/484db0e6-d7fa-48ec-97ce-6612260e0854).
-2. Дублируйте расследование, чтобы продолжить сценарий расследования и иметь возможность выполнять запросы. Инструкции см. в разделе [Дублирование расследований](/docs/secure/investigations/case-sharing#duplicate "Share, duplicate, and control access to investigations across teams in Dynatrace Investigations.").
+2. Дублируйте расследование, чтобы продолжить сценарий расследования и иметь возможность выполнять запросы. Инструкции см. в разделе [Дублирование расследований](../investigations/case-sharing.md#duplicate "Share, duplicate, and control access to investigations across teams in Dynatrace Investigations.").
 
 ## Начало работы
 
@@ -73,7 +73,7 @@ scraped: 2026-03-06T21:27:59.052662
 Используя эталонное время, давайте найдём запрос, который привёл к тому, что наш сервис стал недоступен.
 
 1. Перейдите ко второму (оранжевому) узлу для просмотра журналов Istio. Обратите внимание, что поле смещения эталонного времени присутствует и в этой таблице результатов.
-2. В меню блока эталонного времени выберите **Earlier than**. Это [создаст фильтр по временной метке](/docs/secure/investigations/filter-logs#reference "Narrow down data to relevant entries in Investigations.") для получения журналов, записанных до времени эталонного значения.
+2. В меню блока эталонного времени выберите **Earlier than**. Это [создаст фильтр по временной метке](../investigations/filter-logs.md#reference "Narrow down data to relevant entries in Investigations.") для получения журналов, записанных до времени эталонного значения.
 
    ![timestamp filter](https://dt-cdn.net/images/2025-05-12-12-19-49-1920-3d859cdb64.png)
 3. Переименуйте `timestamp` в `start_time` в команде фильтра по временной метке.

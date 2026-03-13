@@ -101,7 +101,7 @@ If you have specified more than 50 recipients, Dynatrace filters the email addre
 
 Cost monitors can notify you via API when forecast and cost events occur.
 
-For API documentation related to forecast and cost events, see [Dynatrace Platform Subscription API](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api "Query the data about your Dynatrace Platform Subscription via the Account Management API.").
+For API documentation related to forecast and cost events, see [Dynatrace Platform Subscription API](../dynatrace-api/account-management-api/dynatrace-platform-subscription-api.md "Query the data about your Dynatrace Platform Subscription via the Account Management API.").
 
 ### Notification triggers
 
@@ -173,7 +173,7 @@ Adjusting the time frame will give you a better sense of whether this is a one-o
 
 ![cost management](https://dt-cdn.net/images/5-cost-and-usage-analysis-777-bd4db9cda3.png)
 
-In such scenarios, if a specific capability is determined to be the reason for the notification, please refer to [Get detailed consumption insights](/docs/license/consumption-insights "Get detailed consumption insights to identify increased usage and resolve issues with unwanted or excessive consumption.").
+In such scenarios, if a specific capability is determined to be the reason for the notification, please refer to [Get detailed consumption insights](consumption-insights.md "Get detailed consumption insights to identify increased usage and resolve issues with unwanted or excessive consumption.").
 
 ## FAQ
 
@@ -198,5 +198,5 @@ License administrators will be notified by email that alerts them when something
 
 ## Related topics
 
-* [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
+* [Account Management](../manage/account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)

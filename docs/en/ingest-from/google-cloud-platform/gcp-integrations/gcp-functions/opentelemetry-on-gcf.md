@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:29:42.968498
 
 Dynatrace uses [OpenTelemetryï»¿](https://dt-url.net/y903u4j) to monitor Google Cloud Functions invocations.
 
-For that purpose, Dynatrace provides language-specific packagesâsuch as [`@dynatrace/opentelemetry-gcf` for Node.js](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-nodejs "Monitor Google Cloud Functions with OpenTelemetry for Node.js and Dynatrace."), [`dynatrace-opentelemetry-gcf` for Python](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-python "Monitor Google Cloud Functions with OpenTelemetry for Python and Dynatrace."), and [`Dynatrace.OpenTelemetry.Instrumentation.GoogleCloudFunctions` for .NET](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet "Monitor Google Cloud Functions with OpenTelemetry for .NET and Dynatrace.")âthat can be used in combination with default OpenTelemetry SDKs and APIs.
+For that purpose, Dynatrace provides language-specific packagesâsuch as [`@dynatrace/opentelemetry-gcf` for Node.js](opentelemetry-on-gcf-nodejs.md "Monitor Google Cloud Functions with OpenTelemetry for Node.js and Dynatrace."), [`dynatrace-opentelemetry-gcf` for Python](opentelemetry-on-gcf-python.md "Monitor Google Cloud Functions with OpenTelemetry for Python and Dynatrace."), and [`Dynatrace.OpenTelemetry.Instrumentation.GoogleCloudFunctions` for .NET](opentelemetry-on-gcf-dotnet.md "Monitor Google Cloud Functions with OpenTelemetry for .NET and Dynatrace.")âthat can be used in combination with default OpenTelemetry SDKs and APIs.
 
 ## Prerequisites
 
@@ -27,13 +27,13 @@ For that purpose, Dynatrace provides language-specific packagesâsuch as [`@
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Select a configuration method**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf#choose-config-method "Monitor Google Cloud Functions with OpenTelemetry and Dynatrace.")[![Step 2 optional](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Step 2 optional")
+**Select a configuration method**](opentelemetry-on-gcf.md#choose-config-method "Monitor Google Cloud Functions with OpenTelemetry and Dynatrace.")[![Step 2 optional](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Step 2 optional")
 
-**Specify a Dynatrace API endpoint**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf#specify-endpoint "Monitor Google Cloud Functions with OpenTelemetry and Dynatrace.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Specify a Dynatrace API endpoint**](opentelemetry-on-gcf.md#specify-endpoint "Monitor Google Cloud Functions with OpenTelemetry and Dynatrace.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Apply the configuration to your Google Cloud function**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf#apply-config "Monitor Google Cloud Functions with OpenTelemetry and Dynatrace.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**Apply the configuration to your Google Cloud function**](opentelemetry-on-gcf.md#apply-config "Monitor Google Cloud Functions with OpenTelemetry and Dynatrace.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**Instrument the function code**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf#instrument-code "Monitor Google Cloud Functions with OpenTelemetry and Dynatrace.")
+**Instrument the function code**](opentelemetry-on-gcf.md#instrument-code "Monitor Google Cloud Functions with OpenTelemetry and Dynatrace.")
 
 ## Step 1 Select a configuration method
 
@@ -61,10 +61,10 @@ On **Enable Monitoring for Google Cloud Functions**, under **Use the following v
 
 Adding the required API calls to monitor function invocations via OpenTelemetry is specific to languages and their respective OpenTelemetry distribution:
 
-* **Node.js:** [Integrate on Google Cloud Functions Node.js](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-nodejs "Monitor Google Cloud Functions with OpenTelemetry for Node.js and Dynatrace.")
-* **Python:** [Integrate on Google Cloud Functions Python](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-python "Monitor Google Cloud Functions with OpenTelemetry for Python and Dynatrace.")
-* **Go:** [Integrate on Google Cloud Functions GoLang](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-go "Monitor Google Cloud Functions with OpenTelemetry for Go and Dynatrace.")
-* **.NET:** [Integrate on Google Cloud Functions .NET](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet "Monitor Google Cloud Functions with OpenTelemetry for .NET and Dynatrace.")
+* **Node.js:** [Integrate on Google Cloud Functions Node.js](opentelemetry-on-gcf-nodejs.md "Monitor Google Cloud Functions with OpenTelemetry for Node.js and Dynatrace.")
+* **Python:** [Integrate on Google Cloud Functions Python](opentelemetry-on-gcf-python.md "Monitor Google Cloud Functions with OpenTelemetry for Python and Dynatrace.")
+* **Go:** [Integrate on Google Cloud Functions GoLang](opentelemetry-on-gcf-go.md "Monitor Google Cloud Functions with OpenTelemetry for Go and Dynatrace.")
+* **.NET:** [Integrate on Google Cloud Functions .NET](opentelemetry-on-gcf-dotnet.md "Monitor Google Cloud Functions with OpenTelemetry for .NET and Dynatrace.")
 
 ## Known limitations
 
@@ -72,6 +72,6 @@ The Dynatrace Google Cloud Functions integration doesn't capture the IP addresse
 
 ## Related topics
 
-* [Set up Dynatrace on Google Cloud](/docs/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
-* [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* [Set up Dynatrace on Google Cloud](../../../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
+* [OneAgent platform and capability support matrix](../../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
 * [Google Cloud monitoringï»¿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)

@@ -12,8 +12,8 @@ scraped: 2026-03-06T21:27:59.052662
 * Tutorial
 * Published May 13, 2025
 
-Effective incident response and root cause analysis rely on accurate timing and context. With ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**'s [reference time](/docs/secure/investigations/concepts#reference "Key concepts for using Dynatrace Investigations across security, operations, and performance analysis."), you can enhance data-driven investigations by gaining deeper insight into the sequence of events.
-This article explores how you can maximize the benefits of timestamp reference within [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.").
+Effective incident response and root cause analysis rely on accurate timing and context. With ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**'s [reference time](../investigations/concepts.md#reference "Key concepts for using Dynatrace Investigations across security, operations, and performance analysis."), you can enhance data-driven investigations by gaining deeper insight into the sequence of events.
+This article explores how you can maximize the benefits of timestamp reference within [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.").
 
 ## Target audience
 
@@ -26,7 +26,7 @@ You get a notification that your production environment has a high load of HTTP 
 ## Before you begin
 
 1. Open the [read-only shared investigation in Dynatrace Playgroundï»¿](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.security.investigator/share/484db0e6-d7fa-48ec-97ce-6612260e0854).
-2. Duplicate the investigation to continue the investigation scenario and be able to execute queries. For instructions, see [Duplicate investigations](/docs/secure/investigations/case-sharing#duplicate "Share, duplicate, and control access to investigations across teams in Dynatrace Investigations.").
+2. Duplicate the investigation to continue the investigation scenario and be able to execute queries. For instructions, see [Duplicate investigations](../investigations/case-sharing.md#duplicate "Share, duplicate, and control access to investigations across teams in Dynatrace Investigations.").
 
 ## Get started
 
@@ -73,7 +73,7 @@ To find out what caused the service problems, let's examine the events that occu
 Using the reference time, let's look for the request that led to our service being unresponsive.
 
 1. Navigate to the second (orange) node to see the Istio logs. You notice that the reference time offset field is present in this results table as well.
-2. In the menu of the reference time box, select **Earlier than**. This [creates a timestamp filter](/docs/secure/investigations/filter-logs#reference "Narrow down data to relevant entries in Investigations.") to fetch logs written before the time of the reference timestamp value.
+2. In the menu of the reference time box, select **Earlier than**. This [creates a timestamp filter](../investigations/filter-logs.md#reference "Narrow down data to relevant entries in Investigations.") to fetch logs written before the time of the reference timestamp value.
 
    ![timestamp filter](https://dt-cdn.net/images/2025-05-12-12-19-49-1920-3d859cdb64.png)
 3. Rename `timestamp` to `start_time` in the timestamp filter command.

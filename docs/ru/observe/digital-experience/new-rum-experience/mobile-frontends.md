@@ -17,16 +17,16 @@ scraped: 2026-03-06T21:30:10.639111
 
 [### Концепции
 
-Узнайте о концепциях мобильных фронтендов в New RUM Experience.](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/mobile-rum-concepts "Learn about concepts for mobile frontends in the New RUM Experience.")[### Конфиденциальность данных
+Узнайте о концепциях мобильных фронтендов в New RUM Experience.](mobile-frontends/mobile-rum-concepts.md "Learn about concepts for mobile frontends in the New RUM Experience.")[### Конфиденциальность данных
 
-Настройте параметры конфиденциальности данных, чтобы ваши мобильные приложения соответствовали региональным требованиям к защите данных.](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/data-privacy "Learn about the available settings that help you ensure your mobile frontends comply with data privacy regulations.")[### Android
+Настройте параметры конфиденциальности данных, чтобы ваши мобильные приложения соответствовали региональным требованиям к защите данных.](mobile-frontends/data-privacy.md "Learn about the available settings that help you ensure your mobile frontends comply with data privacy regulations.")[### Android
 
-Настройте New RUM Experience для Android.](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/android "Set up and configure the New RUM Experience for Android mobile frontends.")[### iOS
+Настройте New RUM Experience для Android.](mobile-frontends/android.md "Set up and configure the New RUM Experience for Android mobile frontends.")[### iOS
 
-Настройте New RUM Experience для iOS.](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/ios "Set up and configure the New RUM Experience for iOS mobile frontends.")[### React Native
+Настройте New RUM Experience для iOS.](mobile-frontends/ios.md "Set up and configure the New RUM Experience for iOS mobile frontends.")[### React Native
 
-Настройте New RUM Experience для React Native.](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/react-native "Learn how to configure and use the New RUM Experience for your mobile frontends.")[### Flutter
+Настройте New RUM Experience для React Native.](mobile-frontends/react-native.md "Learn how to configure and use the New RUM Experience for your mobile frontends.")[### Flutter
 
-Настройте New RUM Experience для Flutter.](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/flutter "Learn how to configure and use the New RUM Experience for your mobile frontends.")[### .NET MAUI
+Настройте New RUM Experience для Flutter.](mobile-frontends/flutter.md "Learn how to configure and use the New RUM Experience for your mobile frontends.")[### .NET MAUI
 
-Настройте New RUM Experience для .NET MAUI.](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/maui "Learn how to configure and use the New RUM Experience for your .NET MAUI app.")
+Настройте New RUM Experience для .NET MAUI.](mobile-frontends/maui.md "Learn how to configure and use the New RUM Experience for your .NET MAUI app.")

@@ -28,7 +28,7 @@ You can use the following native commands with the Dynatrace Terraform provider:
 Additionally, Dynatrace implements the following command specifically for the Dynatrace Terraform provider:
 
 * `export`: Exports the existing Dynatrace resources from a given Dynatrace environment.
-  [Terraform CLI examples](/docs/deliver/configuration-as-code/terraform/terraform-cli-commands#terraform-cli-examples "This is a list of Terraform CLI commands.") provides examples of how to use the `export` command.
+  [Terraform CLI examples](terraform-cli-commands.md#terraform-cli-examples "This is a list of Terraform CLI commands.") provides examples of how to use the `export` command.
 
 ## Export configuration from a Dynatrace environment using the Dynatrace Terraform Provider
 
@@ -38,14 +38,14 @@ When exporting resources, consider appropriate permission scopes for fetching th
 
 ### Prerequisites
 
-* [Install Terraform CLI and set up Configuration as Code via Terraform](/docs/deliver/configuration-as-code/terraform/terraform-cli "Install the Terraform CLI and set up Dynatrace Configuration as Code via Terraform.") and make it available in your `PATH`.
-* Create a [platform token or OAuth client](/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.") with the correct access permissions.
+* [Install Terraform CLI and set up Configuration as Code via Terraform](terraform-cli.md "Install the Terraform CLI and set up Dynatrace Configuration as Code via Terraform.") and make it available in your `PATH`.
+* Create a [platform token or OAuth client](terraform-api-support-access-permission-handling.md "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.") with the correct access permissions.
   The correct permissions depends on which APIs you use.
-  For more info, see the API documentation or [IAM policy reference](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+  For more info, see the API documentation or [IAM policy reference](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
 ### Using the export utility
 
-1. Define the environment variables to identify the Dynatrace tenant for configuration retrieval, according to the [API support and access permission handling](/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.").
+1. Define the environment variables to identify the Dynatrace tenant for configuration retrieval, according to the [API support and access permission handling](terraform-api-support-access-permission-handling.md "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.").
 
    Optionally, set the environment variable `DYNATRACE_TARGET_FOLDER` to designate an output directory (export folder). If not set, the default directory `.configuration` is used.
 2. Go to the Terraform Dynatrace Provider executable in the terminal. This executable isn't generic, such as `terraform.exe` or `./terraform`.
@@ -102,7 +102,7 @@ For simplicity, only Linux examples are provided.
 ## Additional information
 
 During a Terraform export, it's possible that certain files cannot be processed correctly.
-These files are moved to the following directories in the export folder, see [Using the export utility](/docs/deliver/configuration-as-code/terraform/terraform-cli-commands#export "This is a list of Terraform CLI commands.").
+These files are moved to the following directories in the export folder, see [Using the export utility](terraform-cli-commands.md#export "This is a list of Terraform CLI commands.").
 The reasons are added as comments at the beginning of each file.
 
 * `.flawed`: The files in this directory are either deprecated or require modifications.

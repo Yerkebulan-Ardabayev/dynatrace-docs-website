@@ -68,7 +68,7 @@ scraped: 2026-03-02T21:25:43.385489
 }
 ```
 
-Можно использовать команду `parse` в сочетании с [Dynatrace Pattern Language](/docs/platform/grail/dynatrace-pattern-language "Используйте Dynatrace Pattern Language для описания шаблонов с помощью матчеров.") для разбора JSON-объектов. Запрос извлекает поле `payment_provider` из JSON-данных и группирует количество транзакций по каждому провайдеру с помощью команды `summarize`, а также вычисляет общее количество транзакций. Доля отображается в отдельном столбце рядом с количеством транзакций каждого провайдера.
+Можно использовать команду `parse` в сочетании с [Dynatrace Pattern Language](../dynatrace-pattern-language.md "Используйте Dynatrace Pattern Language для описания шаблонов с помощью матчеров.") для разбора JSON-объектов. Запрос извлекает поле `payment_provider` из JSON-данных и группирует количество транзакций по каждому провайдеру с помощью команды `summarize`, а также вычисляет общее количество транзакций. Доля отображается в отдельном столбце рядом с количеством транзакций каждого провайдера.
 
 ```
 fetch logs
@@ -208,7 +208,7 @@ total=count()
 </log-entry>
 ```
 
-В DQL-запросе необходимо использовать [матчер DPL](/docs/platform/grail/dynatrace-pattern-language/dpl-xml "Узнайте, как использовать XML-матчеры с DPL.") для извлечения всего XML-элемента:
+В DQL-запросе необходимо использовать [матчер DPL](../dynatrace-pattern-language/dpl-xml.md "Узнайте, как использовать XML-матчеры с DPL.") для извлечения всего XML-элемента:
 
 ```
 ...
@@ -244,17 +244,17 @@ code = xml[code]
 
 Application Security
 
-В данном сценарии выполняются запросы с помощью [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Объединение возможностей Grail для расследований на основе доказательств: разрешение инцидентов, анализ первопричин и поиск угроз.") для анализа несанкционированных запросов в журналах аудита Kubernetes. Следуйте различным путям расследования, перемещайтесь между выполненными запросами и получайте подробный обзор результатов в исходном формате.
+В данном сценарии выполняются запросы с помощью [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../../secure/investigations.md "Объединение возможностей Grail для расследований на основе доказательств: разрешение инцидентов, анализ первопричин и поиск угроз.") для анализа несанкционированных запросов в журналах аудита Kubernetes. Следуйте различным путям расследования, перемещайтесь между выполненными запросами и получайте подробный обзор результатов в исходном формате.
 
-* [Поиск угроз и форензика](/docs/secure/use-cases/threat-hunting "Сценарий использования для поиска угроз и форензики с помощью Investigations.")
+* [Поиск угроз и форензика](../../../secure/use-cases/threat-hunting.md "Сценарий использования для поиска угроз и форензики с помощью Investigations.")
 
 ## Связанные темы
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")
-* [Использование DQL-запросов](/docs/platform/grail/dynatrace-query-language/dql-guide "Узнайте, как работает DQL и каковы ключевые концепции DQL.")
-* [DQL в сравнении с SQL и другими языками](/docs/platform/grail/dynatrace-query-language/dql-comparison "Сравнение DQL с другими языками запросов.")
-* [Справочник по языку DQL](/docs/platform/grail/dynatrace-query-language/dql-reference "Справочник синтаксиса Dynatrace Query Language.")
-* [Команды DQL](/docs/platform/grail/dynatrace-query-language/commands "Список команд DQL.")
-* [Функции DQL](/docs/platform/grail/dynatrace-query-language/functions "Список функций DQL.")
-* [Операторы DQL](/docs/platform/grail/dynatrace-query-language/operators "Список операторов DQL.")
-* [Типы данных DQL](/docs/platform/grail/dynatrace-query-language/data-types "Список типов данных DQL.")
+* [Dynatrace Query Language](../dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
+* [Использование DQL-запросов](dql-guide.md "Узнайте, как работает DQL и каковы ключевые концепции DQL.")
+* [DQL в сравнении с SQL и другими языками](dql-comparison.md "Сравнение DQL с другими языками запросов.")
+* [Справочник по языку DQL](dql-reference.md "Справочник синтаксиса Dynatrace Query Language.")
+* [Команды DQL](commands.md "Список команд DQL.")
+* [Функции DQL](functions.md "Список функций DQL.")
+* [Операторы DQL](operators.md "Список операторов DQL.")
+* [Типы данных DQL](data-types.md "Список типов данных DQL.")

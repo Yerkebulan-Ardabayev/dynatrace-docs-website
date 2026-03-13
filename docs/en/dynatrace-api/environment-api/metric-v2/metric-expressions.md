@@ -23,7 +23,7 @@ For the operands of the expression, you can use metrics or numbers.
 
 * You need to use brackets to enforce order of operations.
 * All metrics with more than 1 data point involved in a metric expression must be of the same resolution.
-* You can use any metric as an operand, including metrics modified by any [transformation chain](/docs/dynatrace-api/environment-api/metric-v2/metric-selector "Configure the metric selector for the Metric v2 API."), and you can apply transformations to the result of the expression.
+* You can use any metric as an operand, including metrics modified by any [transformation chain](metric-selector.md "Configure the metric selector for the Metric v2 API."), and you can apply transformations to the result of the expression.
 
 ## Limitations
 
@@ -103,7 +103,7 @@ builtin:host.cpu.usage:filter(eq("dt.entity.host","HOST-002")):splitBy()
 /2
 ```
 
-There are two problems with this approach. First, the expression is hard to read and therefore prone to syntax errors. Second, if one of the hosts is offline, the result of the expression is empty. Even though the second problem could be solved by a **default** transformation, usage of the [average aggregation](/docs/dynatrace-api/environment-api/metric-v2/metric-selector#aggregation "Configure the metric selector for the Metric v2 API.") is more effective:
+There are two problems with this approach. First, the expression is hard to read and therefore prone to syntax errors. Second, if one of the hosts is offline, the result of the expression is empty. Even though the second problem could be solved by a **default** transformation, usage of the [average aggregation](metric-selector.md#aggregation "Configure the metric selector for the Metric v2 API.") is more effective:
 
 ```
 builtin:host.cpu.usage
@@ -143,11 +143,11 @@ eq("dt.entity.host","HOST-002")
 
 ### Do not convert units
 
-Do not use a metric expression to convert the unit of the data. Use the [**toUnit** transformation](/docs/dynatrace-api/environment-api/metric-v2/metric-selector#to-unit "Configure the metric selector for the Metric v2 API.") instead. The only exception to this rule is for units that Dynatrace does not support. Use the [GET all units](/docs/dynatrace-api/environment-api/metrics-units/get-all-units "List all metrics that are available for your monitoring environment via the Dynatrace API.") request to fetch the list of supported units.
+Do not use a metric expression to convert the unit of the data. Use the [**toUnit** transformation](metric-selector.md#to-unit "Configure the metric selector for the Metric v2 API.") instead. The only exception to this rule is for units that Dynatrace does not support. Use the [GET all units](../metrics-units/get-all-units.md "List all metrics that are available for your monitoring environment via the Dynatrace API.") request to fetch the list of supported units.
 
 ### Limit transformation usage
 
-Always apply the [**limit** transformation](/docs/dynatrace-api/environment-api/metric-v2/metric-selector#limit-transformation "Configure the metric selector for the Metric v2 API.") to the result of a calculation, not to its operands.
+Always apply the [**limit** transformation](metric-selector.md#limit-transformation "Configure the metric selector for the Metric v2 API.") to the result of a calculation, not to its operands.
 
 Consider the following query, which attempts to add top-10 CPU usage times to top-10 CPU idle times.
 
@@ -195,7 +195,7 @@ builtin:host.cpu.idle
 
 ### Cover data gaps with the default transformation
 
-The [**default** transformation](/docs/dynatrace-api/environment-api/metric-v2/metric-selector#default "Configure the metric selector for the Metric v2 API.") is particularly valuable for metric expressions. Even though normally the transformation doesn't fill up `null` data points if a metric doesn't have a single data point in the query timeframe, in the metric expression context its semantic is slightly different. As long as a metric on either side of the expression has at least one data point, the transformation will fill the gaps. However, if all metrics in the expression are missing data, the transformation will return empty results.
+The [**default** transformation](metric-selector.md#default "Configure the metric selector for the Metric v2 API.") is particularly valuable for metric expressions. Even though normally the transformation doesn't fill up `null` data points if a metric doesn't have a single data point in the query timeframe, in the metric expression context its semantic is slightly different. As long as a metric on either side of the expression has at least one data point, the transformation will fill the gaps. However, if all metrics in the expression are missing data, the transformation will return empty results.
 
 Consider this example of a ratio expression, where we calculate the error ratio for key user actions:
 
@@ -264,7 +264,7 @@ builtin:service.errors.total.count:value:default(0)
 )
 ```
 
-The [**default** transformation](/docs/dynatrace-api/environment-api/metric-v2/metric-selector#default "Configure the metric selector for the Metric v2 API.") is used to replace the values of the time slots that have the value `null` with 0.
+The [**default** transformation](metric-selector.md#default "Configure the metric selector for the Metric v2 API.") is used to replace the values of the time slots that have the value `null` with 0.
 
 Metric 1
 
@@ -602,8 +602,8 @@ The **builtin:service.errors.total.count** metric shows the number of errors acr
 
 You need these transformations:
 
-* [filter transformation](/docs/dynatrace-api/environment-api/metric-v2/metric-selector#filter "Configure the metric selector for the Metric v2 API.") to obtain the error count for the service that you're checking.
-* [split by transformation](/docs/dynatrace-api/environment-api/metric-v2/metric-selector#splitby "Configure the metric selector for the Metric v2 API.") to merge individual error counts of each service into one.
+* [filter transformation](metric-selector.md#filter "Configure the metric selector for the Metric v2 API.") to obtain the error count for the service that you're checking.
+* [split by transformation](metric-selector.md#splitby "Configure the metric selector for the Metric v2 API.") to merge individual error counts of each service into one.
 
 Then use this expression:
 
@@ -619,7 +619,7 @@ builtin:service.errors.total.count:filter(eq("dt.entity.service","SERVICE-B82BFB
 builtin:service.errors.total.count:splitBy():value:default(0) * 100
 ```
 
-The [**default** transformation](/docs/dynatrace-api/environment-api/metric-v2/metric-selector#default "Configure the metric selector for the Metric v2 API.") is used to replace the values of the time slots that have the value `null` with 0.
+The [**default** transformation](metric-selector.md#default "Configure the metric selector for the Metric v2 API.") is used to replace the values of the time slots that have the value `null` with 0.
 
 Isolated service
 
@@ -853,7 +853,7 @@ The **builtin:tech.jvm.memory.gc.collectionTime** metric shows the total duratio
 
 Before we start the calculation, we need to align the dimensions of both metrics. To do that, we need to apply the **split by** transformation with the `dt.entity.process_group_instance` argument to the **builtin:tech.jvm.memory.pool.collectionCount** metric.
 
-Additionally, we can sort the result in descending order by applying the [sort transformation](/docs/dynatrace-api/environment-api/metric-v2/metric-selector#sort "Configure the metric selector for the Metric v2 API."). The expression looks like this:
+Additionally, we can sort the result in descending order by applying the [sort transformation](metric-selector.md#sort "Configure the metric selector for the Metric v2 API."). The expression looks like this:
 
 ```
 (

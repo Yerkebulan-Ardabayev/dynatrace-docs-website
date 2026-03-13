@@ -79,7 +79,7 @@ Log Monitoring Classic
 
 ## Объекты запросов API загрузки логов
 
-В дополнение к [общим ограничениям API Dynatrace](/docs/dynatrace-api/basics/access-limit "Find out about payload limits and request throttling that may affect your use of the Dynatrace API."), к API загрузки логов применяются следующие специфические ограничения:
+В дополнение к [общим ограничениям API Dynatrace](../../dynatrace-api/basics/access-limit.md "Find out about payload limits and request throttling that may affect your use of the Dynatrace API."), к API загрузки логов применяются следующие специфические ограничения:
 
 * Объект `LogMessagePlain plain` текстовый.
   Длина сообщения ограничена 8 192 символами. Любое содержимое, превышающее лимит, обрезается.
@@ -91,7 +91,7 @@ Log Monitoring Classic
   + Содержимое. Если ключ содержимого не задан, весь JSON анализируется как содержимое.
   + Атрибуты. Поддерживаются строковые, числовые, логические значения или массив этих типов. Числа и логические значения преобразуются в строковое представление. Вложенные объекты разворачиваются (например, `host: {name: "host1"}` становится `host.name`).
     Семантические атрибуты и пользовательские атрибуты индексируются и могут использоваться в запросах. Они также отображаются в агрегациях (фасетах). Если встречается неподдерживаемый ключ, он не индексируется и не может использоваться в запросах и агрегациях.
-    Подробнее см. в разделе [Семантические атрибуты (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api/log-classic-semantic-attributes "Supported semantic attributes that are indexed in Log Monitoring Classic.").
+    Подробнее см. в разделе [Семантические атрибуты (Logs Classic)](acquire-log-data/logs-classic-ingestion-api/log-classic-semantic-attributes.md "Supported semantic attributes that are indexed in Log Monitoring Classic.").
 
   Длина значения ограничена для всех атрибутов. Любое содержимое, превышающее лимит, обрезается. Лимиты по умолчанию следующие:
 

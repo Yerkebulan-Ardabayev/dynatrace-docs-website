@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:38:12.631540
 * Reference
 * Published Nov 30, 2022
 
-[Problems API v1](/docs/dynatrace-api/environment-api/problems "Find out what the Dynatrace Problems v1 API offers.") has been deprecated with [Dynatrace version 1.243](/docs/whats-new/dynatrace-api/sprint-243 "Changelog for Dynatrace API version 1.243"). Its replacement is [Problems API v2](/docs/dynatrace-api/environment-api/problems-v2 "Find out what the Dynatrace Problems v2 API offers."). We recommend that you migrate to the new API at your earliest convenience.
+[Problems API v1](../../environment-api/problems.md "Find out what the Dynatrace Problems v1 API offers.") has been deprecated with [Dynatrace version 1.243](../../../whats-new/dynatrace-api/sprint-243.md "Changelog for Dynatrace API version 1.243"). Its replacement is [Problems API v2](../../environment-api/problems-v2.md "Find out what the Dynatrace Problems v2 API offers."). We recommend that you migrate to the new API at your earliest convenience.
 
 The migration affects endpoint URLs, query parameters, and response/request body parameters, as well as the scope of the token for request authentication.
 
@@ -19,7 +19,7 @@ The migration affects endpoint URLs, query parameters, and response/request body
 
 Events API v2 offers you the following new features:
 
-* The [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") helps you to filter problems in read requests.
+* The [entity selector](../../environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.") helps you to filter problems in read requests.
 * Improved problem filtering via a problem selector.
 * Unified timeframe selector.
 
@@ -37,7 +37,7 @@ Events API v2 offers you the following new features:
 
 ## Parameters
 
-To learn about new query/body parameters, see the documentation of individual requests in [Problems API v2](/docs/dynatrace-api/environment-api/problems-v2 "Find out what the Dynatrace Problems v2 API offers.").
+To learn about new query/body parameters, see the documentation of individual requests in [Problems API v2](../../environment-api/problems-v2.md "Find out what the Dynatrace Problems v2 API offers.").
 
 ## Example
 
@@ -991,5 +991,5 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/problem/feed?relativeTime=2hou
 
 ## Related topics
 
-* [Problems API v2](/docs/dynatrace-api/environment-api/problems-v2 "Find out what the Dynatrace Problems v2 API offers.")
-* [Problems API v1](/docs/dynatrace-api/environment-api/problems "Find out what the Dynatrace Problems v1 API offers.")
+* [Problems API v2](../../environment-api/problems-v2.md "Find out what the Dynatrace Problems v2 API offers.")
+* [Problems API v1](../../environment-api/problems.md "Find out what the Dynatrace Problems v1 API offers.")

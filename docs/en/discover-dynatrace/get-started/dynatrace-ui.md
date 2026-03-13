@@ -33,7 +33,7 @@ The upper part of the Dock includes:
 * [**Dynatrace**](#dynatrace) is your home.
 * [**Search**](#search) enables you to search the platform.
 * [**Apps**](#apps)
-* [Pinned and active apps](#pinned), depending on your configuration and activity. In this example, the ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), and ![Segments](https://dt-cdn.net/images/segments-256-8e66310720.webp "Segments") [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") apps are all listed.
+* [Pinned and active apps](#pinned), depending on your configuration and activity. In this example, the ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") [Notebooks](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") [Dashboards](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), and ![Segments](https://dt-cdn.net/images/segments-256-8e66310720.webp "Segments") [Segments](../../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") apps are all listed.
 
 ![Dock: bottom](https://dt-cdn.net/images/dock-all-4-bottom-280-1767392d75.png)
 
@@ -50,7 +50,7 @@ The lower part of the Dock includes:
 Select  **Dynatrace** in the upper-left corner to go to your Dynatrace home page.
 
 * The default **Getting started with Dynatrace** "launchpad" page gives you a quick overview of prominent features to start using the platform. It's focused on introducing you to key aspects of the platform and reducing your learning curve.
-* You can create additional launchpads (custom home pages) with handpicked lists of apps, documents, links, and informational text. For more information, see [Launchpads](/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads "Build and manage custom start pages with launchpads.").
+* You can create additional launchpads (custom home pages) with handpicked lists of apps, documents, links, and informational text. For more information, see [Launchpads](dynatrace-ui/launchpads.md "Build and manage custom start pages with launchpads.").
 
 ## Search
 
@@ -61,7 +61,7 @@ The  **Search** option is always available in the Dock.
 * If you collapse the Dock, you'll only see the  icon.
 * The keyboard shortcut for **Search** is **CTRL**+**K** or **CMD**+**K**.
 
-Dynatrace platform search provides you with customizable options and features to help you filter search results. For details on advanced search features, see [Platform search](/docs/discover-dynatrace/get-started/dynatrace-ui/search "Dynatrace platform search provides you with customizable options and features to help you filter search results and find resources you're looking for.").
+Dynatrace platform search provides you with customizable options and features to help you filter search results. For details on advanced search features, see [Platform search](dynatrace-ui/search.md "Dynatrace platform search provides you with customizable options and features to help you filter search results and find resources you're looking for.").
 
 ## Apps
 
@@ -124,7 +124,7 @@ To open the user menu, select your name in the lower-left corner, at the bottom 
 * **[your name]** ![Configurable](https://dt-cdn.net/images/configurable-490-8b015913d4.svg "Configurable") displays **User settings**, where you can change settings such as the display language, timezone, and light mode/dark mode.
 * **Environments** lists links to your available environments.
 * **Appearance** offers a quick switch to light, dark, or browser theme mode.
-* **Account Management** opens [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.") in a new tab.
+* **Account Management** opens [Account Management](../../manage/account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health.") in a new tab.
 * **Latest Dynatrace** toggles the latest Dynatrace on and off.
 * **Sign out** signs you out of Dynatrace.
 

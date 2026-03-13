@@ -16,13 +16,13 @@ If you want to monitor several Kubernetes clusters with one ActiveGate and don't
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Start installation**](/docs/ingest-from/setup-on-k8s/deployment/other/ag-in-vm#start-installation "Set up and configure an ActiveGate for Kubernetes platform monitoring in a virtual machine.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Start installation**](ag-in-vm.md#start-installation "Set up and configure an ActiveGate for Kubernetes platform monitoring in a virtual machine.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Download the installer**](/docs/ingest-from/setup-on-k8s/deployment/other/ag-in-vm#download-installer "Set up and configure an ActiveGate for Kubernetes platform monitoring in a virtual machine.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Download the installer**](ag-in-vm.md#download-installer "Set up and configure an ActiveGate for Kubernetes platform monitoring in a virtual machine.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Run the installer**](/docs/ingest-from/setup-on-k8s/deployment/other/ag-in-vm#run-installer "Set up and configure an ActiveGate for Kubernetes platform monitoring in a virtual machine.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**Run the installer**](ag-in-vm.md#run-installer "Set up and configure an ActiveGate for Kubernetes platform monitoring in a virtual machine.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**Connect your Kubernetes clusters to Dynatrace**](/docs/ingest-from/setup-on-k8s/deployment/other/ag-in-vm#connect-clusters-to-dynatrace "Set up and configure an ActiveGate for Kubernetes platform monitoring in a virtual machine.")
+**Connect your Kubernetes clusters to Dynatrace**](ag-in-vm.md#connect-clusters-to-dynatrace "Set up and configure an ActiveGate for Kubernetes platform monitoring in a virtual machine.")
 
 ## Step 1 Start installation
 
@@ -35,8 +35,8 @@ If you want to monitor several Kubernetes clusters with one ActiveGate and don't
 
 How you download your installer depends on your setup and needs. You can choose to download an installer directly to the server where you plan to install Environment ActiveGate or you can download an installer to a different machine and then transfer the installer to the server.
 
-1. Select [Route OneAgent traffic](/docs/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose "Learn about the routing and monitoring capabilities and uses of ActiveGate.") as an [ActiveGate purpose](/docs/ingest-from/dynatrace-activegate#purposes "Understand the basic concepts related to ActiveGate.").
-2. Provide an access token with [`PaaS Integration - InstallerDownload`](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.") scope. This token is required to download the ActiveGate installer from your environment. If you don't have an access token, you can create one right in the UI. The token is automatically appended to the download and installation commands you'll use later.
+1. Select [Route OneAgent traffic](../../../dynatrace-activegate/capabilities/routing-monitoring-purpose.md "Learn about the routing and monitoring capabilities and uses of ActiveGate.") as an [ActiveGate purpose](../../../dynatrace-activegate.md#purposes "Understand the basic concepts related to ActiveGate.").
+2. Provide an access token with [`PaaS Integration - InstallerDownload`](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.") scope. This token is required to download the ActiveGate installer from your environment. If you don't have an access token, you can create one right in the UI. The token is automatically appended to the download and installation commands you'll use later.
 3. Select **Download installer**. There are two options:
 
    * Download via shell command. Copy and run the `wget` command.
@@ -51,11 +51,11 @@ Copy the installation script command from the **Run the installer with root righ
 
 ### Add the Kubernetes CA certificate to the truststore Recommended
 
-For instructions on how to add the certificate to the truststore file, see [Trusted root certificates for ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-trusted-root-certificates-on-activegate "Learn how to specify a custom truststore file that is merged with Java's root certificates and used as a default on all connections.").
+For instructions on how to add the certificate to the truststore file, see [Trusted root certificates for ActiveGate](../../../dynatrace-activegate/configuration/configure-trusted-root-certificates-on-activegate.md "Learn how to specify a custom truststore file that is merged with Java's root certificates and used as a default on all connections.").
 
 ### Customize installation
 
-You can add additional [parameters](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate "Learn about the command-line parameters that you can use with ActiveGate on Linux.") to the installation command to customize your installation. For example, to install ActiveGate in a different directory, use the `INSTALL=<path>` parameter:
+You can add additional [parameters](../../../dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate.md "Learn about the command-line parameters that you can use with ActiveGate on Linux.") to the installation command to customize your installation. For example, to install ActiveGate in a different directory, use the `INSTALL=<path>` parameter:
 
 ```
 [root@host]# /bin/bash Dynatrace-ActiveGate-Linux-x86-1.0.0.sh INSTALL=/hosted_app/dynatrace
@@ -63,7 +63,7 @@ You can add additional [parameters](/docs/ingest-from/dynatrace-activegate/insta
 
 ### Default installation settings
 
-For installation defaults, including default directories, see [ActiveGate default settings for Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-default-settings "Learn about the default settings with which ActiveGate is installed on Linux").
+For installation defaults, including default directories, see [ActiveGate default settings for Linux](../../../dynatrace-activegate/installation/linux/linux-default-settings.md "Learn about the default settings with which ActiveGate is installed on Linux").
 
 ## Step 4 Connect your Kubernetes clusters to Dynatrace
 
@@ -675,4 +675,4 @@ Disabling certificate validation isn't recommended because it imposes security r
 
 11. Select **Save changes** to save your configuration.
 
-To update ActiveGate, see [Update ActiveGate](/docs/ingest-from/dynatrace-activegate/operation/update-activegate "Learn how to find out which version of ActiveGate you have installed and how you can download and install the latest version.").
+To update ActiveGate, see [Update ActiveGate](../../../dynatrace-activegate/operation/update-activegate.md "Learn how to find out which version of ActiveGate you have installed and how you can download and install the latest version.").

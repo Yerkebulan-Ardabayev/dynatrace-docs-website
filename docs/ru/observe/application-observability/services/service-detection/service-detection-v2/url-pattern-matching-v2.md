@@ -17,7 +17,7 @@ Dynatrace SaaS версии 1.330+
 
 С помощью функции **сопоставления шаблонов URL** Service Detection v2 (SDv2) может генерировать более качественные имена эндпоинтов, извлекая шаблоны URL-путей из необработанных URL-путей.
 
-Dynatrace может извлекать стабильные, низковолатильные шаблоны URL из необработанных URL-путей и записывать их в атрибут span `url.path.pattern`. Атрибут `url.path.pattern` определяется предварительно и затем используется [обнаружением эндпоинтов SDv2](/docs/observe/application-observability/services/service-detection/service-detection-v2/endpoint-detection-v2 "Find out how to detect endpoints that are entry points into your service.") для корректного именования и группировки эндпоинтов.
+Dynatrace может извлекать стабильные, низковолатильные шаблоны URL из необработанных URL-путей и записывать их в атрибут span `url.path.pattern`. Атрибут `url.path.pattern` определяется предварительно и затем используется [обнаружением эндпоинтов SDv2](endpoint-detection-v2.md "Find out how to detect endpoints that are entry points into your service.") для корректного именования и группировки эндпоинтов.
 
 Функция **сопоставления шаблонов URL** предназначена для ситуаций, когда фреймворки или серверы не предоставляют шаблоны маршрутов (например, обратные прокси или библиотеки без `http.route`), чтобы имена эндпоинтов оставались осмысленными и согласованными, сохраняя корректную гранулярность для критически важных метрик производительности.
 
@@ -26,7 +26,7 @@ Dynatrace может извлекать стабильные, низковола
 На этой странице описывается сопоставление шаблонов URL-путей для SDv2 и способы создания правил сопоставления шаблонов URL-путей, в частности, как правильно определять шаблоны URL-путей.
 
 * SDv2 применяет сопоставление шаблонов URL к типам span `span.kind == server` и `span.kind == consumer`.
-* Обнаружение эндпоинтов включает [встроенное правило эндпоинта](/docs/observe/application-observability/services/service-detection/service-detection-v2/endpoint-detection-v2#default-endpoint-rules "Find out how to detect endpoints that are entry points into your service.") **HTTP request method and URL path pattern**. Это правило использует `url.path.pattern` и имеет приоритет над правилом **HTTP request method and route** при определении имён эндпоинтов. Таким образом, извлечённый шаблон URL имеет приоритет, когда доступны оба атрибута — `url.path.pattern` и `http.route`.
+* Обнаружение эндпоинтов включает [встроенное правило эндпоинта](endpoint-detection-v2.md#default-endpoint-rules "Find out how to detect endpoints that are entry points into your service.") **HTTP request method and URL path pattern**. Это правило использует `url.path.pattern` и имеет приоритет над правилом **HTTP request method and route** при определении имён эндпоинтов. Таким образом, извлечённый шаблон URL имеет приоритет, когда доступны оба атрибута — `url.path.pattern` и `http.route`.
 * Чтобы воспользоваться функцией **сопоставления шаблонов URL**, необходимо [создать правила сопоставления шаблонов URL-путей](#create-rule), указав необходимые шаблоны URL-путей в соответствии с синтаксисом шаблонов.
 * Шаблон URL-пути описывает, как необработанный URL-путь (например, `/order/12345`) обобщается в стабильный шаблон (например, `/order/{id}`). Он используется для создания низковолатильных значений атрибута span `url.path.pattern`.
 
@@ -93,7 +93,7 @@ Dynatrace может извлекать стабильные, низковола
 
 1. Перейдите в **Settings** (Dynatrace Classic) или **Settings Classic** > **Service detection** > **URL path pattern matching**.
 
-Если опция **Settings Classic** недоступна, используйте [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") для создания правил сопоставления шаблонов URL.
+Если опция **Settings Classic** недоступна, используйте [Settings API](../../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") для создания правил сопоставления шаблонов URL.
 
 2. Выберите **Add rule**.
 3. Заполните следующие обязательные и необязательные поля.
@@ -106,7 +106,7 @@ Dynatrace может извлекать стабильные, низковола
      Читаемое описание правила.
    * **Matching condition**: Обязательное
 
-     [DQL-matcher](/docs/platform/openpipeline/reference/dql-matcher-in-openpipeline "Examine specific DQL functions and logical operators for log processing.").
+     [DQL-matcher](../../../../../platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing.").
      Если условие совпадения выполняется, правило оценивается.
 4. Выберите **Add item** и укажите шаблон URL-пути в соответствии с [справочником по синтаксису шаблонов](#syntax-reference). Повторите, если необходимо добавить дополнительные шаблоны путей.
 5. При необходимости используйте ![Drag handle](https://dt-cdn.net/images/drag-handle-turquoise-600-1aa0e5ea00.svg "Drag handle") для изменения порядка добавленных шаблонов URL-путей, учитывая, что первый совпавший шаблон используется для определения значения атрибута `url.path.pattern`.
@@ -118,7 +118,7 @@ Dynatrace может извлекать стабильные, низковола
 
 1. Перейдите в **Settings** (Dynatrace Classic) или **Settings Classic** > **Service detection** > **URL path pattern matching**.
 
-Если опция **Settings Classic** недоступна, используйте [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") для создания правил сопоставления шаблонов URL.
+Если опция **Settings Classic** недоступна, используйте [Settings API](../../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") для создания правил сопоставления шаблонов URL.
 
 2. Внесите необходимые изменения в правила сопоставления шаблонов URL-путей:
 
@@ -140,4 +140,4 @@ Dynatrace может извлекать стабильные, низковола
 
 ## Связанные темы
 
-* [Настройка обнаружения эндпоинтов в Service Detection v2](/docs/observe/application-observability/services/service-detection/service-detection-v2/endpoint-detection-v2 "Find out how to detect endpoints that are entry points into your service.")
+* [Настройка обнаружения эндпоинтов в Service Detection v2](endpoint-detection-v2.md "Find out how to detect endpoints that are entry points into your service.")

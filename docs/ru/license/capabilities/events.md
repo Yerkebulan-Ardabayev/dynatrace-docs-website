@@ -17,9 +17,9 @@ scraped: 2026-03-06T21:24:51.504563
 
 Для получения информации о том, как потребление конкретной возможности переводится в использование лицензионного коммита DPS, см.:
 
-* [Events - Ingest & Process](/docs/license/capabilities/events/dps-events-ingest "Learn how your consumption of the Events powered by Grail - Ingest & Process DPS capability is billed and charged.")
-* [Events - Retain](/docs/license/capabilities/events/dps-events-retain "Learn how your consumption of the Events powered by Grail - Retain DPS capability is billed and charged.")
-* [Events - Query](/docs/license/capabilities/events/dps-events-query "Learn how your consumption of the Events powered by Grail - Query DPS capability is billed and charged.")
+* [Events - Ingest & Process](events/dps-events-ingest.md "Learn how your consumption of the Events powered by Grail - Ingest & Process DPS capability is billed and charged.")
+* [Events - Retain](events/dps-events-retain.md "Learn how your consumption of the Events powered by Grail - Retain DPS capability is billed and charged.")
+* [Events - Query](events/dps-events-query.md "Learn how your consumption of the Events powered by Grail - Query DPS capability is billed and charged.")
 
 Dynatrace обеспечивает мониторинг и отчётность по:
 
@@ -27,9 +27,9 @@ Dynatrace обеспечивает мониторинг и отчётность 
 * Пользовательским событиям и/или каналам приёма событий.
   К ним относятся:
 
-  + Любое пользовательское событие, отправленное в Dynatrace через [Events API v2](/docs/dynatrace-api/environment-api/events-v2 "Find out what you can do with the Dynatrace Events API v2.") или [OneAgent API](/docs/ingest-from/extend-dynatrace/extend-events#oneagent "Learn how to extend event observability in Dynatrace.").
-  + Любое пользовательское событие (например, событие Kubernetes), созданное из сообщений журнала с помощью [правила обработки журнала](/docs/analyze-explore-automate/logs/lma-classic-log-processing#lmc-log-processing-rules "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.").
-  + Любое пользовательское событие, созданное на [шаге обработки](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.") в OpenPipeline.
+  + Любое пользовательское событие, отправленное в Dynatrace через [Events API v2](../../dynatrace-api/environment-api/events-v2.md "Find out what you can do with the Dynatrace Events API v2.") или [OneAgent API](../../ingest-from/extend-dynatrace/extend-events.md#oneagent "Learn how to extend event observability in Dynatrace.").
+  + Любое пользовательское событие (например, событие Kubernetes), созданное из сообщений журнала с помощью [правила обработки журнала](../../analyze-explore-automate/logs/lma-classic-log-processing.md#lmc-log-processing-rules "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.").
+  + Любое пользовательское событие, созданное на [шаге обработки](../../platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.") в OpenPipeline.
 
 Потребление всех событий подлежит тарификации, за исключением определённых включённых событий, описанных в таблице «Включённые события» ниже.
 
@@ -75,9 +75,9 @@ Dynatrace обеспечивает мониторинг и отчётность 
 
 ## Связанные темы
 
-* [Log events](/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-events "Create log events based on log data and use them in problem detection.")
-* [Metric events](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace")
-* [Events API v2](/docs/dynatrace-api/environment-api/events-v2 "Find out what you can do with the Dynatrace Events API v2.")
-* [What is Dynatrace Grail?](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.")
-* [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* [Log events](../../analyze-explore-automate/logs/lma-log-processing/lma-log-events.md "Create log events based on log data and use them in problem detection.")
+* [Metric events](../../dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace")
+* [Events API v2](../../dynatrace-api/environment-api/events-v2.md "Find out what you can do with the Dynatrace Events API v2.")
+* [What is Dynatrace Grail?](../../platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.")
+* [License Dynatrace](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
 * [Dynatrace pricing](https://www.dynatrace.com/pricing/)

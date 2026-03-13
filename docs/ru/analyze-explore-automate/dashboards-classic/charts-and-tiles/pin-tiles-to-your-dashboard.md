@@ -12,14 +12,14 @@ scraped: 2026-03-02T21:20:52.180811
 * Время чтения: 5 мин
 * Обновлено 16 мая 2022 г.
 
-[Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic.")
+[Dashboards Classic](../../dashboards-classic.md "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic.")
 
 Эта страница относится к классическим дашбордам, созданным с помощью функциональности ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**, интегрированной с Dynatrace Classic.
 
-* Если вы уже используете приложение ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace, см. [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") для соответствующей документации.
-* Если вы по-прежнему используете классические дашборды, мы рекомендуем [обновить ваши дашборды](/docs/analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest "Обновите классические дашборды, созданные в предыдущей версии Dynatrace, до приложения Dashboards в последней версии Dynatrace.") и воспользоваться всеми новейшими возможностями, предоставляемыми приложением ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace.
+* Если вы уже используете приложение ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace, см. [Dashboards](../../dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") для соответствующей документации.
+* Если вы по-прежнему используете классические дашборды, мы рекомендуем [обновить ваши дашборды](../dashboards-upgrade-classic-to-latest.md "Обновите классические дашборды, созданные в предыдущей версии Dynatrace, до приложения Dashboards в последней версии Dynatrace.") и воспользоваться всеми новейшими возможностями, предоставляемыми приложением ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace.
 
-Вы можете автоматически создать новую плитку дашборда с любой страницы Dynatrace, содержащей кнопку **Pin to dashboard**. Всё, что вам нужно, это [разрешение на редактирование](/docs/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards "Узнайте, как делиться дашбордами Dynatrace с другими пользователями.") для дашборда. В этом примере мы создаём новый дашборд, поэтому вам гарантированно предоставлено разрешение на редактирование.
+Вы можете автоматически создать новую плитку дашборда с любой страницы Dynatrace, содержащей кнопку **Pin to dashboard**. Всё, что вам нужно, это [разрешение на редактирование](../dashboards/share-dashboards.md "Узнайте, как делиться дашбордами Dynatrace с другими пользователями.") для дашборда. В этом примере мы создаём новый дашборд, поэтому вам гарантированно предоставлено разрешение на редактирование.
 
 ## Создание дашборда
 

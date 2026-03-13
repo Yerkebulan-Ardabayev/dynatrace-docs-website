@@ -14,11 +14,11 @@ scraped: 2026-02-06T16:28:21.884183
 
 Log Monitoring Classic
 
-Для последней версии Dynatrace см. [API загрузки журналов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.").
+Для последней версии Dynatrace см. [API загрузки журналов](../../logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.").
 
 Dynatrace автоматически собирает данные журналов и событий из широкого спектра технологий. С помощью универсальной загрузки журналов вы можете передавать записи журналов в систему, а Dynatrace преобразует поток в понятные сообщения журналов.
 
-API загрузки журналов позволяет передавать записи журналов в систему. Он доступен через [Log Monitoring API v2 — POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.") для форматов JSON и text или через [конечную точку OTLP](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") для формата OTLP binary protobuf.
+API загрузки журналов позволяет передавать записи журналов в систему. Он доступен через [Log Monitoring API v2 — POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.") для форматов JSON и text или через [конечную точку OTLP](../../../ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") для формата OTLP binary protobuf.
 
 * Для Dynatrace SaaS конечная точка загрузки журналов доступна в вашей среде.
 
@@ -42,11 +42,11 @@ API загрузки журналов позволяет передавать з
 * Метка времени
 * Атрибуты в формате ключ-значение
 
-Для просмотра всех предопределённых атрибутов ключ-значение, включая поддерживаемые семантические ключи атрибутов, обратитесь к [Log Monitoring API v2 — POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.").
+Для просмотра всех предопределённых атрибутов ключ-значение, включая поддерживаемые семантические ключи атрибутов, обратитесь к [Log Monitoring API v2 — POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.").
 
 ## Очередь данных журналов на Environment ActiveGate
 
-Вы можете настроить свойства очереди данных журналов, отредактировав файл `custom.properties` (см. [Свойства конфигурации и параметры ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#generic-ingest "Learn which ActiveGate properties you can configure based on your needs and requirements.")) на вашем ActiveGate, задав следующие значения:
+Вы можете настроить свойства очереди данных журналов, отредактировав файл `custom.properties` (см. [Свойства конфигурации и параметры ActiveGate](../../../ingest-from/dynatrace-activegate/configuration/configure-activegate.md#generic-ingest "Learn which ActiveGate properties you can configure based on your needs and requirements.")) на вашем ActiveGate, задав следующие значения:
 
 ```
 [generic_ingest]
@@ -140,10 +140,10 @@ Success
 
 ## Устранение неполадок
 
-Посетите сообщество Dynatrace для получения руководств по устранению неполадок, а также см. [Устранение неполадок Log Monitoring (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/lmc-troubleshooting "Fix issues related to the setup and configuration of Log Monitoring Classic.").
+Посетите сообщество Dynatrace для получения руководств по устранению неполадок, а также см. [Устранение неполадок Log Monitoring (Logs Classic)](../lmc-troubleshooting.md "Fix issues related to the setup and configuration of Log Monitoring Classic.").
 
 * [Устранение неполадок при загрузке журналов через API — POST ingest logs](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608)
 
 ## Связанные темы
 
-* [Log Monitoring API v2 — POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.")
+* [Log Monitoring API v2 — POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.")

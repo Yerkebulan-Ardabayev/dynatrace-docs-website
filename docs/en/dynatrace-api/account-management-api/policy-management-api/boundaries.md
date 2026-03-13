@@ -14,12 +14,12 @@ scraped: 2026-03-06T21:28:30.431018
 
 [### List all policy boundaries
 
-Get an overview of all policy boundaries of a level.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/get-all-boundaries "View all policy boundaries of a level via the Policy management API.")[### View a policy boundary
+Get an overview of all policy boundaries of a level.](boundaries/get-all-boundaries.md "View all policy boundaries of a level via the Policy management API.")[### View a policy boundary
 
-View parameters of a policy boundary.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/get-boundary "View a policy boundary via the Policy management API.")[### Create a policy boundary
+View parameters of a policy boundary.](boundaries/get-boundary.md "View a policy boundary via the Policy management API.")[### Create a policy boundary
 
-Create a new policy boundary.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/post-boundary "Create a new boundary via the Policy management API.")[### Update a policy boundary
+Create a new policy boundary.](boundaries/post-boundary.md "Create a new boundary via the Policy management API.")[### Update a policy boundary
 
-Edit an existing policy boundary.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/put-boundary "Edit a policy boundary via the Policy management API.")[### Delete a policy boundary
+Edit an existing policy boundary.](boundaries/put-boundary.md "Edit a policy boundary via the Policy management API.")[### Delete a policy boundary
 
-Delete a policy boundary you no longer need.](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/delete-boundary "Delete a policy boundary via the Policy management API.")
+Delete a policy boundary you no longer need.](boundaries/delete-boundary.md "Delete a policy boundary via the Policy management API.")

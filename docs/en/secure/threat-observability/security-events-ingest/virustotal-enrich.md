@@ -28,18 +28,18 @@ Once you set up the VirusTotal integration, you can enrich observables, such as 
 
 Key use cases include:
 
-* [Accelerate threat validation and streamline case triage in ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations** with external reputation data](/docs/secure/investigations/enhance-results#enrich "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
-* [Enhance detection findings in ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits** with external reputation data](/docs/secure/threats-and-exploits/manage-results#enrich "Filter, format, and sort detection findings.").
+* [Accelerate threat validation and streamline case triage in ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations** with external reputation data](../../investigations/enhance-results.md#enrich "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
+* [Enhance detection findings in ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits** with external reputation data](../../threats-and-exploits/manage-results.md#enrich "Filter, format, and sort detection findings.").
 * IP enrichment with the Workflows app
 
-  1. In [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows"), create a new workflow or edit an existing one.
+  1. In [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](../../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows"), create a new workflow or edit an existing one.
   2. In the **Choose action** pane, search for **AbuseIPDB** and select the **AbuseIPDB check IP** action.
   3. Enter the parameters required for the action to run.
   4. Run the workflow to validate the action and review the results.
   5. Continue with your automation definition.
 
   ![workflow sample](https://dt-cdn.net/images/image-51-2526-e747d4a5ee.png)
-* [Automated threat-alert triaging](/docs/secure/use-cases/automated-threat-alert-triaging "Use case scenario for automating threat-alert triaging with Dynatrace.")
+* [Automated threat-alert triaging](../../use-cases/automated-threat-alert-triaging.md "Use case scenario for automating threat-alert triaging with Dynatrace.")
 * Threat-informed security investigations Coming soon
 
 ### Requirements
@@ -69,7 +69,7 @@ To run the enrichment workflow action, all the permissions above need to be enab
 
 ## Activation and setup
 
-1. In Dynatrace, open  [**Hub**](/docs/manage/hub "See the information about Dynatrace Hub.").
+1. In Dynatrace, open  [**Hub**](../../../manage/hub.md "See the information about Dynatrace Hub.").
 2. Look for **VirusTotal** and select **Install**.
 3. Select **Set up** , then select  **Configure new connection**.
 4. Follow the on-screen instructions to set up the connection using the API key obtained in [Prerequisites](#prereq).
@@ -90,13 +90,13 @@ To run the enrichment workflow action, all the permissions above need to be enab
 
 1. Install and configure the app
 
-Dynatrace integration with VirusTotal is an app that you can install from  [**Hub**](/docs/manage/hub "See the information about Dynatrace Hub.").
+Dynatrace integration with VirusTotal is an app that you can install from  [**Hub**](../../../manage/hub.md "See the information about Dynatrace Hub.").
 
 The app delivers a workflow action for observable enrichment in ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
 
 To prevent accidental edits or deletions across environments, connection setup now includes owner-based access control. This ensures reliable automation, avoids unexpected configuration loss, and aligns with minimal access requirements.
 
-For details on sharing and permissions, see [Access control for Connectors](/docs/analyze-explore-automate/workflows/actions/access-control "Display, view, create, and share connections for Dynatrace Connectors.").
+For details on sharing and permissions, see [Access control for Connectors](../../../analyze-explore-automate/workflows/actions/access-control.md "Display, view, create, and share connections for Dynatrace Connectors.").
 
 2. Enrich observables
 
@@ -113,7 +113,7 @@ The threat intelligence context is displayed within the consumer apps or in ![Wo
 
 ### Licensing and cost
 
-For billing information, see [Events powered by Grail](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For billing information, see [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 
 ## FAQ
 

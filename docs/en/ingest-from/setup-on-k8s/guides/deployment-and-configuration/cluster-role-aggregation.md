@@ -24,7 +24,7 @@ ClusterRole aggregation is a Kubernetes RBAC feature that allows you to combine 
 
 By default, the Dynatrace Operator installation creates a `dynatrace-kubernetes-monitoring-default` ClusterRole that contains the standard set of permissions required for Kubernetes platform monitoring. This ClusterRole is automatically labeled with `rbac.dynatrace.com/aggregate-to-monitoring: "true"`, so its permissions are included in the aggregated role.
 
-The default permissions are documented in the [security reference](/docs/ingest-from/setup-on-k8s/reference/security#activegate "This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require") and cover standard monitoring of:
+The default permissions are documented in the [security reference](../../reference/security.md#activegate "This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require") and cover standard monitoring of:
 
 * Pods, deployments, StatefulSets, and other workload resources.
 * Services and endpoints.

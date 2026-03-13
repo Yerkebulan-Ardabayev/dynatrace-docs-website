@@ -15,8 +15,8 @@ scraped: 2026-03-06T21:25:45.312965
 
 Селектор метрик — это мощный инструмент для указания, какие данные вы хотите считывать для оценки событий метрик. Он предоставляет вам две основные возможности:
 
-* [Трансформации метрик](/docs/dynatrace-api/environment-api/metric-v2/metric-selector "Configure the metric selector for the Metric v2 API.") для преобразования считываемых данных.
-* [Выражения метрик](/docs/dynatrace-api/environment-api/metric-v2/metric-expressions "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.") для объединения одной или нескольких метрик в другой результат с помощью простой математики.
+* [Трансформации метрик](../../../dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API.") для преобразования считываемых данных.
+* [Выражения метрик](../../../dynatrace-api/environment-api/metric-v2/metric-expressions.md "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.") для объединения одной или нескольких метрик в другой результат с помощью простой математики.
 
 С помощью селектора метрик Davis может получить доступ к историческим данным метрики и изучить нормальное поведение вашей среды, что позволяет использовать автоадаптивные пороговые значения в событиях метрик. Однако действуют некоторые ограничения:
 
@@ -28,7 +28,7 @@ scraped: 2026-03-06T21:25:45.312965
 
 ## Область действия событий селектора метрик
 
-Сам селектор определяет область действия события селектора метрик. Важно понимать последствия при настройке селектора, состоящего из измерений от тысяч отдельных источников. Dynatrace применяет защитные ограничения к обнаружению аномалий по количеству измерений метрик, которые могут наблюдаться в одной среде мониторинга, чтобы избежать эксплуатационных проблем. Чтобы узнать, как сузить область действия вашей конфигурации, см. [**Трансформация фильтра**](/docs/dynatrace-api/environment-api/metric-v2/metric-selector#filter "Configure the metric selector for the Metric v2 API.").
+Сам селектор определяет область действия события селектора метрик. Важно понимать последствия при настройке селектора, состоящего из измерений от тысяч отдельных источников. Dynatrace применяет защитные ограничения к обнаружению аномалий по количеству измерений метрик, которые могут наблюдаться в одной среде мониторинга, чтобы избежать эксплуатационных проблем. Чтобы узнать, как сузить область действия вашей конфигурации, см. [**Трансформация фильтра**](../../../dynatrace-api/environment-api/metric-v2/metric-selector.md#filter "Configure the metric selector for the Metric v2 API.").
 
 ![Metric selector example](https://dt-cdn.net/images/metric-selector-example-1296-84f54644de.png)
 
@@ -58,10 +58,10 @@ scraped: 2026-03-06T21:25:45.312965
       * Статический порог — порог, который не изменяется со временем.
       * Сезонная базовая линия — Dynatrace создаёт доверительную полосу для метрики с сезонными паттернами.
    2. Для статического порога укажите пороговое значение. Нажмите **Use suggested threshold**, чтобы использовать значение на основе предыдущих данных.
-   3. Выберите поведение [оповещения об отсутствующих данных](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#missing-data "How to set up an alert for missing measurements.").
+   3. Выберите поведение [оповещения об отсутствующих данных](../anomaly-detection-configuration.md#missing-data "How to set up an alert for missing measurements.").
       Если оповещение об отсутствующих данных включено, оно комбинируется с условием порога по логике **ИЛИ**.
    4. Выберите условие оповещения: оповещать, если метрика выше, ниже или за пределами порога.
-   5. Необязательно В разделе **Advanced model properties** укажите [скользящее окно](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#sliding-window "How to set up an alert for missing measurements.") для сравнения.
+   5. Необязательно В разделе **Advanced model properties** укажите [скользящее окно](../anomaly-detection-configuration.md#sliding-window "How to set up an alert for missing measurements.") для сравнения.
       Скользящее окно определяет, как часто порог — будь он рассчитан автоматически или указан вручную — должен быть нарушен в пределах скользящего окна времени для генерации события (нарушения не обязательно должны быть последовательными). Это помогает избежать чрезмерно агрессивного оповещения по единичным нарушениям. Вы можете установить скользящее окно до 60 минут.
 7. Проверьте предварительный просмотр вашего оповещения и оцените эффективность вашей конфигурации.
 
@@ -72,7 +72,7 @@ scraped: 2026-03-06T21:25:45.312965
 
    * `{alert_condition}` — условие оповещения (выше/ниже порога).
    * `{baseline}` — нарушенное значение базовой линии.
-   * `{dims}` — список всех измерений (и их значений) метрики, нарушившей порог. Вы также можете указать конкретное измерение: `{dims:dt.entity.<entity>}`. Чтобы получить список доступных измерений для вашей метрики, запросите его через запрос [GET metric descriptor](/docs/dynatrace-api/environment-api/metric-v2/get-descriptor "View the descriptor of a metric via Metrics v2 API.").
+   * `{dims}` — список всех измерений (и их значений) метрики, нарушившей порог. Вы также можете указать конкретное измерение: `{dims:dt.entity.<entity>}`. Чтобы получить список доступных измерений для вашей метрики, запросите его через запрос [GET metric descriptor](../../../dynatrace-api/environment-api/metric-v2/get-descriptor.md "View the descriptor of a metric via Metrics v2 API.").
    * `{entityname}` — имя затронутой сущности.
    * `{metricname}` — имя метрики, нарушившей порог.
    * `{missing_data_samples}` — количество сэмплов с отсутствующими данными. Доступно только при включённом оповещении об отсутствующих данных.
@@ -90,6 +90,6 @@ scraped: 2026-03-06T21:25:45.312965
 
 ## Связанные темы
 
-* [Metrics API - Селектор метрик](/docs/dynatrace-api/environment-api/metric-v2/metric-selector "Configure the metric selector for the Metric v2 API.")
-* [Metrics API - Выражения метрик](/docs/dynatrace-api/environment-api/metric-v2/metric-expressions "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.")
-* [Metrics Classic](/docs/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.")
+* [Metrics API - Селектор метрик](../../../dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API.")
+* [Metrics API - Выражения метрик](../../../dynatrace-api/environment-api/metric-v2/metric-expressions.md "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.")
+* [Metrics Classic](../../../analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")

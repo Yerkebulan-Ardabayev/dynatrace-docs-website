@@ -26,15 +26,15 @@ scraped: 2026-03-04T21:37:36.126300
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Проверьте состояние вашей базы данных**](/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance#database-health "Boost your database performance in a few practical steps.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Проверьте состояние вашей базы данных**](improve-database-performance.md#database-health "Boost your database performance in a few practical steps.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Изучите, как осуществляется доступ к вашей базе данных**](/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance#database-access "Boost your database performance in a few practical steps.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Изучите, как осуществляется доступ к вашей базе данных**](improve-database-performance.md#database-access "Boost your database performance in a few practical steps.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Изучите нагрузку и время отклика каждого экземпляра сервиса**](/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance#load-and-response-time "Boost your database performance in a few practical steps.")[![Шаг 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Шаг 4")
+**Изучите нагрузку и время отклика каждого экземпляра сервиса**](improve-database-performance.md#load-and-response-time "Boost your database performance in a few practical steps.")[![Шаг 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Шаг 4")
 
-**Проверьте количество подключений к базе данных**](/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance#database-connections "Boost your database performance in a few practical steps.")[![Шаг 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Шаг 5")
+**Проверьте количество подключений к базе данных**](improve-database-performance.md#database-connections "Boost your database performance in a few practical steps.")[![Шаг 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Шаг 5")
 
-**Проверьте вашу сеть**](/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance#check-network "Boost your database performance in a few practical steps.")
+**Проверьте вашу сеть**](improve-database-performance.md#check-network "Boost your database performance in a few practical steps.")
 
 ## Шаг 1. Проверьте состояние вашей базы данных
 
@@ -134,4 +134,4 @@ scraped: 2026-03-04T21:37:36.126300
 
 ## Связанные темы
 
-* [Мониторинг хостов с помощью Dynatrace](/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring "Monitor hosts with Dynatrace.")
+* [Мониторинг хостов с помощью Dynatrace](../../hosts/monitoring/host-monitoring.md "Monitor hosts with Dynatrace.")

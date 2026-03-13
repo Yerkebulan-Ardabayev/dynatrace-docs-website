@@ -15,8 +15,8 @@ scraped: 2026-03-06T21:19:14.372926
 
 С помощью мониторов доступности сети (NAM) можно проверять доступность хостов, устройств и служб.
 
-Существует три типа мониторов NAM: ICMP, TCP и DNS. Подробнее о них см. в разделе [Типы NAM](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/network-availability-monitoring#NAM-types "Синтетические мониторы ICMP, TCP и DNS").
-Вы можете создавать мониторы NAM в [![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") Synthetic](#monitor-configuration) в последней версии Dynatrace или через [API](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor#nam-api "Узнайте, как настроить монитор NAM для проверки производительности и доступности вашего сайта.").
+Существует три типа мониторов NAM: ICMP, TCP и DNS. Подробнее о них см. в разделе [Типы NAM](network-availability-monitoring.md#NAM-types "Синтетические мониторы ICMP, TCP и DNS").
+Вы можете создавать мониторы NAM в [![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") Synthetic](#monitor-configuration) в последней версии Dynatrace или через [API](create-a-nam-monitor.md#nam-api "Узнайте, как настроить монитор NAM для проверки производительности и доступности вашего сайта.").
 
 ## Настройка NAM
 
@@ -201,7 +201,7 @@ NAM предлагает несколько способов решения эт
 2. В поле **Выбрать определение** выберите **Synthetic — Мониторы доступности сети**.
 3. Пройдите аутентификацию с помощью токена API.
 
-   Подробнее см. в разделе [Аутентификация](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Ознакомьтесь с концепцией токена доступа и его областями.").
+   Подробнее см. в разделе [Аутентификация](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md "Ознакомьтесь с концепцией токена доступа и его областями.").
 4. Выполните одно из следующих действий.
 
    | Что нужно сделать | Перейдите в **Synthetic — Мониторы доступности сети** и выберите |
@@ -212,7 +212,7 @@ NAM предлагает несколько способов решения эт
    | Получить определение синтетического монитора для указанного идентификатора монитора | **GET /synthetic/monitors/{monitorId}** |
    | Обновить определение синтетического монитора для указанного идентификатора монитора | **PUT /synthetic/monitors/{monitorId}** |
 
-Подробнее см. в разделе [API v2 синтетических мониторов](/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-network-availability-monitors "Создавайте, читайте, обновляйте и удаляйте синтетические мониторы. Сейчас поддерживаются только мониторы доступности сети.").
+Подробнее см. в разделе [API v2 синтетических мониторов](../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-network-availability-monitors.md "Создавайте, читайте, обновляйте и удаляйте синтетические мониторы. Сейчас поддерживаются только мониторы доступности сети.").
 
 ## Доступные свойства конфигурации сценария
 
@@ -709,4 +709,4 @@ NAM предлагает несколько способов решения эт
 
 ## Связанные темы
 
-* [API синтетических мониторов](/docs/dynatrace-api/environment-api/synthetic/synthetic-monitors "Управляйте синтетическими мониторами через Synthetic v1 API.")
+* [API синтетических мониторов](../../../../dynatrace-api/environment-api/synthetic/synthetic-monitors.md "Управляйте синтетическими мониторами через Synthetic v1 API.")

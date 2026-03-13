@@ -13,14 +13,14 @@ scraped: 2026-03-06T21:36:09.966171
 * Чтение: 11 минут
 * Опубликовано 18 апреля 2022 г.
 
-С точки зрения данных и инфраструктуры это [расширение Prometheus 2.0](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Узнайте, как создать расширение Prometheus с использованием платформы расширений.") позволяет отслеживать и анализировать активность ваших кластеров Apache Cassandra. Оно визуализирует состояние кластера и отображает такие метрики, как использование ЦП, подключения, задержка запросов, приостановка и время сборки мусора. Кроме того, с помощью [Dynatrace Intelligence](/docs/dynatrace-intelligence "Ознакомьтесь с возможностями Dynatrace Intelligence.") автоматически обнаруживаются проблемы производительности и выполняется точный анализ первопричин.
+С точки зрения данных и инфраструктуры это [расширение Prometheus 2.0](../../../../../ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions.md "Узнайте, как создать расширение Prometheus с использованием платформы расширений.") позволяет отслеживать и анализировать активность ваших кластеров Apache Cassandra. Оно визуализирует состояние кластера и отображает такие метрики, как использование ЦП, подключения, задержка запросов, приостановка и время сборки мусора. Кроме того, с помощью [Dynatrace Intelligence](../../../../../dynatrace-intelligence.md "Ознакомьтесь с возможностями Dynatrace Intelligence.") автоматически обнаруживаются проблемы производительности и выполняется точный анализ первопричин.
 
 ## Предварительные требования
 
 * Создан и запущен [Azure Managed Instance для Apache Cassandra](https://docs.microsoft.com/en-us/azure/managed-instance-apache-cassandra/).
 * Виртуальная машина Ubuntu, развёрнутая в виртуальной сети Azure, в которой присутствует управляемый экземпляр.
 * Сервер Prometheus настроен для сбора данных с узлов Cassandra и с заданной [конфигурацией relabel](https://github.com/datastax/metric-collector-for-apache-cassandra/blob/master/dashboards/prometheus/prometheus.yaml).
-* [Environment ActiveGate версии 1.231+](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-install-an-environment-activegate "Ознакомьтесь с пошаговой процедурой установки Environment ActiveGate на Linux.") с доступом к серверу Prometheus.
+* [Environment ActiveGate версии 1.231+](../../../../../ingest-from/dynatrace-activegate/installation/linux/linux-install-an-environment-activegate.md "Ознакомьтесь с пошаговой процедурой установки Environment ActiveGate на Linux.") с доступом к серверу Prometheus.
 
 ## Настройка
 
@@ -1162,8 +1162,8 @@ action: labeldrop
 
    prom/prometheus
    ```
-5. Если ваша виртуальная машина недоступна из интернета, установите [Dynatrace Environment ActiveGate](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-install-an-environment-activegate "Ознакомьтесь с пошаговой процедурой установки Environment ActiveGate на Linux.") на вашу виртуальную машину Ubuntu.
-   **Рекомендуется:** Задайте [свойство](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#group "Узнайте о параметрах командной строки, доступных для ActiveGate на Linux.") `group` при установке.
+5. Если ваша виртуальная машина недоступна из интернета, установите [Dynatrace Environment ActiveGate](../../../../../ingest-from/dynatrace-activegate/installation/linux/linux-install-an-environment-activegate.md "Ознакомьтесь с пошаговой процедурой установки Environment ActiveGate на Linux.") на вашу виртуальную машину Ubuntu.
+   **Рекомендуется:** Задайте [свойство](../../../../../ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate.md#group "Узнайте о параметрах командной строки, доступных для ActiveGate на Linux.") `group` при установке.
 
 ## Включение и настройка расширения
 
@@ -1187,7 +1187,7 @@ action: labeldrop
 
 Доступные метрики перечислены ниже.
 
-* Метаданные метрик и измерения доступны через [Data Explorer](/docs/analyze-explore-automate/explorer "Выполняйте запросы по метрикам и преобразовывайте результаты для получения необходимых сведений.") после включения расширения.
+* Метаданные метрик и измерения доступны через [Data Explorer](../../../../../analyze-explore-automate/explorer.md "Выполняйте запросы по метрикам и преобразовывайте результаты для получения необходимых сведений.") после включения расширения.
 * Дополнительные сведения о собираемых метриках см. в [документации по мониторингу Apache Cassandra](https://cassandra.apache.org/doc/latest/cassandra/operating/metrics.html).
 
 ### Метрики узла кластера

@@ -94,4 +94,4 @@ ALLOW storage:system:read;
 ALLOW storage:events:read, storage:logs:read, storage:metrics:read, storage:entities:read, storage:bizevents:read,storage:spans:read;
 ```
 
-For full details, see [bucket and table permissions for Grail documentation](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
+For full details, see [bucket and table permissions for Grail documentation](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").

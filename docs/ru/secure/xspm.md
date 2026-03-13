@@ -36,8 +36,8 @@ scraped: 2026-03-06T21:29:55.059316
 
 Предварительные требования
 
-* Ознакомьтесь с [поддерживаемыми стандартами соответствия и технологиями](/docs/secure/application-security/spm#support "Оценивайте, управляйте и принимайте меры по неправильным конфигурациям и нарушениям руководств по усилению безопасности и нормативных стандартов соответствия.").
-* Для полного использования [функциональности Security Posture Management](/docs/secure/application-security/spm "Оценивайте, управляйте и принимайте меры по неправильным конфигурациям и нарушениям руководств по усилению безопасности и нормативных стандартов соответствия.") необходимо [развернуть Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Настройка и включение Security Posture Management в Kubernetes.").
+* Ознакомьтесь с [поддерживаемыми стандартами соответствия и технологиями](application-security/spm.md#support "Оценивайте, управляйте и принимайте меры по неправильным конфигурациям и нарушениям руководств по усилению безопасности и нормативных стандартов соответствия.").
+* Для полного использования [функциональности Security Posture Management](application-security/spm.md "Оценивайте, управляйте и принимайте меры по неправильным конфигурациям и нарушениям руководств по усилению безопасности и нормативных стандартов соответствия.") необходимо [развернуть Kubernetes Security Posture Management](../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Настройка и включение Security Posture Management в Kubernetes.").
 * Разрешения: для получения списка необходимых разрешений перейдите в **Hub**, выберите ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management** и откройте **Technical information**.
 * Предварительные знания: понимание Kubernetes.
 
@@ -53,14 +53,14 @@ scraped: 2026-03-06T21:29:55.059316
 
 ### 1. Установка приложения
 
-1. В Dynatrace откройте [**Hub**](/docs/manage/hub "Информация о Dynatrace Hub.").
+1. В Dynatrace откройте [**Hub**](../manage/hub.md "Информация о Dynatrace Hub.").
 2. Найдите ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management** и нажмите **Install**.
 
 ### 2. Настройка охвата SPM
 
 Необязательно
 
-Вы можете настроить, какие из ваших систем (или кластеров в случае [Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Настройка и включение Security Posture Management в Kubernetes.")), отслеживаемых Dynatrace, охватываются [Security Posture Management](/docs/secure/application-security/spm "Оценивайте, управляйте и принимайте меры по неправильным конфигурациям и нарушениям руководств по усилению безопасности и нормативных стандартов соответствия.").
+Вы можете настроить, какие из ваших систем (или кластеров в случае [Kubernetes Security Posture Management](../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Настройка и включение Security Posture Management в Kubernetes.")), отслеживаемых Dynatrace, охватываются [Security Posture Management](application-security/spm.md "Оценивайте, управляйте и принимайте меры по неправильным конфигурациям и нарушениям руководств по усилению безопасности и нормативных стандартов соответствия.").
 
 1. Откройте ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**.
 2. На странице **Overview** в таблице **My systems** включите или отключите нужные системы.
@@ -100,7 +100,7 @@ Kubernetes Security Posture Management (KSPM)
 1. Перейдите в **Settings** > **Analyze and alert** > **Application Security** > **Security Posture Management**.
 2. Включите или отключите нужные стандарты.
 
-Dynatrace оценивает данные, полученные от ваших систем, и ищет неправильные конфигурации по [поддерживаемым стандартам соответствия](/docs/secure/application-security/spm#support "Оценивайте, управляйте и принимайте меры по неправильным конфигурациям и нарушениям руководств по усилению безопасности и нормативных стандартов соответствия."). Результаты отображаются в приложении.
+Dynatrace оценивает данные, полученные от ваших систем, и ищет неправильные конфигурации по [поддерживаемым стандартам соответствия](application-security/spm.md#support "Оценивайте, управляйте и принимайте меры по неправильным конфигурациям и нарушениям руководств по усилению безопасности и нормативных стандартов соответствия."). Результаты отображаются в приложении.
 
 Попробуйте ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management** и [поделитесь обратной связью](https://dt-url.net/1m03u6q), чтобы помочь нам улучшить продукт.
 
@@ -109,19 +109,19 @@ Dynatrace оценивает данные, полученные от ваших 
 [01Концепции Security Posture Management
 
 * Описание
-* Концепции, специфичные для приложения Dynatrace Security Posture Management.](/docs/secure/xspm/concepts)[02Оценка охвата
+* Концепции, специфичные для приложения Dynatrace Security Posture Management.](xspm/concepts.md)[02Оценка охвата
 
 * Практическое руководство
-* Обзор охвата Security Posture Management ваших систем.](/docs/secure/xspm/assess-coverage)[03Анализ результатов
+* Обзор охвата Security Posture Management ваших систем.](xspm/assess-coverage.md)[03Анализ результатов
 
 * Практическое руководство
-* Поиск релевантной информации для эффективного анализа результатов безопасности и соответствия.](/docs/secure/xspm/review-findings)[04Получение аналитики
+* Поиск релевантной информации для эффективного анализа результатов безопасности и соответствия.](xspm/review-findings.md)[04Получение аналитики
 
 * Практическое руководство
-* Детальный анализ результатов, которые помогут исправить неправильные конфигурации и несоответствия.](/docs/secure/xspm/gain-insights)[05Совместная работа с приложениями и обмен результатами
+* Детальный анализ результатов, которые помогут исправить неправильные конфигурации и несоответствия.](xspm/gain-insights.md)[05Совместная работа с приложениями и обмен результатами
 
 * Практическое руководство
-* Взаимодействие с другими приложениями для получения дополнительной аналитики и обмен результатами с заинтересованными сторонами.](/docs/secure/xspm/share-findings)
+* Взаимодействие с другими приложениями для получения дополнительной аналитики и обмен результатами с заинтересованными сторонами.](xspm/share-findings.md)
 
 Сценарии использования
 
@@ -129,9 +129,9 @@ Dynatrace оценивает данные, полученные от ваших 
 
 Связанные блоги
 
-[Поддержание соответствия с помощью Security Posture Management](/docs/secure/use-cases/stay-compliant "Контролируйте ваши меры безопасности, политики и практики.")
+[Поддержание соответствия с помощью Security Posture Management](use-cases/stay-compliant.md "Контролируйте ваши меры безопасности, политики и практики.")
 
-Список часто задаваемых вопросов по Security Posture Management см. в [FAQ](/docs/secure/application-security/spm#faq "Оценивайте, управляйте и принимайте меры по неправильным конфигурациям и нарушениям руководств по усилению безопасности и нормативных стандартов соответствия.").
+Список часто задаваемых вопросов по Security Posture Management см. в [FAQ](application-security/spm.md#faq "Оценивайте, управляйте и принимайте меры по неправильным конфигурациям и нарушениям руководств по усилению безопасности и нормативных стандартов соответствия.").
 
 * [Kubernetes security essentials: Container misconfigurations -- From theory to exploitation](https://www.dynatrace.com/news/blog/kubernetes-security-essentials-container-misconfigurations-from-theory-to-exploitation/)
 * [Revolutionizing cloud security with observability context: Dynatrace Cloud Security addressing CADR](https://www.dynatrace.com/news/blog/revolutionizing-cloud-security-observability-cadr/)
@@ -145,4 +145,4 @@ Dynatrace оценивает данные, полученные от ваших 
 
 ## Связанные темы
 
-* [Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Настройка и включение Security Posture Management в Kubernetes.")
+* [Kubernetes Security Posture Management](../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Настройка и включение Security Posture Management в Kubernetes.")

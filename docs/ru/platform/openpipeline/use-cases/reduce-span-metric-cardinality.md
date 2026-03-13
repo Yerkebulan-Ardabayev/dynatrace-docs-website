@@ -15,11 +15,11 @@ scraped: 2026-03-06T21:10:39.754758
 
 Обработка OpenPipeline позволяет нормализовать данные спанов и метрик для предотвращения проблем высокой кардинальности, которые могут сделать агрегации и анализ непригодными для использования.
 
-Следующие сценарии использования показывают, как снизить кардинальность в трёх различных представлениях в [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](/docs/observe/application-observability/services/services-app "Обеспечьте централизованный контроль над здоровьем, производительностью и ресурсами сервисов с помощью приложения Services."):
+Следующие сценарии использования показывают, как снизить кардинальность в трёх различных представлениях в [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](../../../observe/application-observability/services/services-app.md "Обеспечьте централизованный контроль над здоровьем, производительностью и ресурсами сервисов с помощью приложения Services."):
 
 * [Исходящие вызовы](#outbound-calls)
 * [Запросы к базе данных](#database-queries): эта вкладка показывает агрегированные метрики для вызовов базы данных, выполняемых вашим сервисом.
-* [Обработка сообщений](/docs/observe/application-observability/services/monitor-service-message-processing "Мониторинг обработки сообщений сервиса")
+* [Обработка сообщений](../../../observe/application-observability/services/monitor-service-message-processing.md "Мониторинг обработки сообщений сервиса")
 
 ## Исходящие вызовы
 
@@ -83,7 +83,7 @@ scraped: 2026-03-06T21:10:39.754758
 
 ## Запросы к базе данных
 
-Операторы Redis часто содержат уникальные идентификаторы или значения, например `GET user:12345`, `GET user:12346` и `GET user:12347` или `SET order:123`, `SET order:124` и `SET order:125`. Эта высокая кардинальность приводит к тысячам различных записей, отображаемых в представлении [**Database queries**](/docs/observe/application-observability/services/services-app#database-queries "Обеспечьте централизованный контроль над здоровьем, производительностью и ресурсами сервисов с помощью приложения Services.") в ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**.
+Операторы Redis часто содержат уникальные идентификаторы или значения, например `GET user:12345`, `GET user:12346` и `GET user:12347` или `SET order:123`, `SET order:124` и `SET order:125`. Эта высокая кардинальность приводит к тысячам различных записей, отображаемых в представлении [**Database queries**](../../../observe/application-observability/services/services-app.md#database-queries "Обеспечьте централизованный контроль над здоровьем, производительностью и ресурсами сервисов с помощью приложения Services.") в ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**.
 
 В отличие от параметризованных баз данных SQL, где OneAgent или OpenTelemetry автоматически обрабатывают нормализацию, команды Redis требуют ручной обработки кардинальности через пайплайн OpenPipeline. В этом разделе мы используем правило обработки для преобразования этих команд в нормализованные шаблоны, такие как `GET` или `SET`, делая данные запросов Redis более пригодными для анализа.
 

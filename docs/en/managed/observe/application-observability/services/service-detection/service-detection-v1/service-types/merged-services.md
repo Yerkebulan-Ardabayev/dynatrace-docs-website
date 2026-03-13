@@ -18,7 +18,7 @@ scraped: 2026-03-04T21:36:47.023440
 * If merged services exist in your environment, you can still access the page to view and edit them.
 * You can't create new merged services from this setting page. To create or edit the equivalent of a merged service via rule-based detection, see [Create a rule to aggregate services](#create-merged-service) below.
 
-A merged service is a service that aggregates multiple [web-request services](/docs/observe/application-observability/services/service-detection/service-detection-v1#web-request-service "Find out how Dynatrace Service Detection v1 detects and names different types of services.") of the same process group that perform identical functions across separate cluster nodes. These web-request services are effectively identical from a performance-monitoring perspective. A merged service appears in Dynatrace as a single service that contains all the data of all aggregated services.
+A merged service is a service that aggregates multiple [web-request services](../../../../../../../observe/application-observability/services/service-detection/service-detection-v1.md#web-request-service "Find out how Dynatrace Service Detection v1 detects and names different types of services.") of the same process group that perform identical functions across separate cluster nodes. These web-request services are effectively identical from a performance-monitoring perspective. A merged service appears in Dynatrace as a single service that contains all the data of all aggregated services.
 
 Say you have an Apache web server with several virtual host definitions (for example, `dynatrace.com`, `dynatrace.at`, and `dynatrace.pl`). From the Apache perspective, these are independent virtual hosts. Dynatrace therefore detects them as separate services. For your monitoring purposes however, you might want to view these services as a single merged service called `Dynatrace web page`.
 
@@ -68,8 +68,8 @@ To carry out the equivalent task of creating a merged service, but via rule-base
    * Disabling the port
 5. Select **Save changes**.
 
-To learn more about how to create, edit, or delete service detection rules, see [Manage rule-based service detection](/docs/observe/application-observability/services/service-detection/service-detection-v1/customize-service-detection#manage "Use detection rules to customize and enhance the automated detection of your services.").
+To learn more about how to create, edit, or delete service detection rules, see [Manage rule-based service detection](../../../../../../../observe/application-observability/services/service-detection/service-detection-v1/customize-service-detection.md#manage "Use detection rules to customize and enhance the automated detection of your services.").
 
 ## Related topics
 
-* [Service detection rules](/docs/observe/application-observability/services/service-detection/service-detection-v1/customize-service-detection "Use detection rules to customize and enhance the automated detection of your services.")
+* [Service detection rules](../../../../../../../observe/application-observability/services/service-detection/service-detection-v1/customize-service-detection.md "Use detection rules to customize and enhance the automated detection of your services.")

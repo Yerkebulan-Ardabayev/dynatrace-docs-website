@@ -33,26 +33,26 @@ Availability is stored as a percentage with two decimal places.
 
 ## Maintenance windows
 
-Maintenance windows can be excluded from availability calculation for synthetic monitors, displayed, for example, in **Synthetic Classic**, [synthetic monitor details pages](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors "Analyze browser monitor and clickpath results on the Synthetic details page."), and reports. A global setting enables you to always exclude maintenance windows from availability calculationsâgo to **Settings** > **Web and mobile monitoring** > **Synthetic availability** to access it.
+Maintenance windows can be excluded from availability calculation for synthetic monitors, displayed, for example, in **Synthetic Classic**, [synthetic monitor details pages](../analysis-and-alerting/synthetic-details-for-browser-monitors.md "Analyze browser monitor and clickpath results on the Synthetic details page."), and reports. A global setting enables you to always exclude maintenance windows from availability calculationsâgo to **Settings** > **Web and mobile monitoring** > **Synthetic availability** to access it.
 
 ![Availability calculation](https://dt-cdn.net/images/maintenancewindowsavailability-901-6ba52f57f9.png)
 
-Outages that occur within such excluded maintenance windows are shown, for example, in graphs and data points on the [**Multidimensional analysis** page](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors "Learn how to analyze browser-monitor data points."). Any failing resources are highlighted in [waterfall graphs](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/waterfall-graphs "How to analyze page resource downloads for browser monitors."). However, failed executions are not included in availability calculations for the maintenance periods.
+Outages that occur within such excluded maintenance windows are shown, for example, in graphs and data points on the [**Multidimensional analysis** page](../analysis-and-alerting/multidimensional-analysis-for-browser-monitors.md "Learn how to analyze browser-monitor data points."). Any failing resources are highlighted in [waterfall graphs](../analysis-and-alerting/waterfall-graphs.md "How to analyze page resource downloads for browser monitors."). However, failed executions are not included in availability calculations for the maintenance periods.
 
 This setting also applies to retroactive maintenance windows. That is, you can exclude a retroactive maintenance window from synthetic availability calculations for the same period. Note, however, that maintenance windows are not retroactively excluded from any reports that were generated before the maintenance windows were created.
 
-[Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") charts and the [Metrics API](/docs/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.") provide availability metrics with the option of including or excluding maintenance windows.
+[Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") charts and the [Metrics API](../../../../dynatrace-api/environment-api/metric-v2.md "Retrieve metric information via Metrics v2 API.") provide availability metrics with the option of including or excluding maintenance windows.
 
 ## Retries
 
-Retry on error for single-URL browser monitors and browser clickpaths is configurable via [monitor settings](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors#outage-handling "Learn about configuring browser monitors and clickpaths.") and is enabled by default. Discarded executions are ignored in availability calculations.
+Retry on error for single-URL browser monitors and browser clickpaths is configurable via [monitor settings](../browser-monitors/configure-browser-monitors.md#outage-handling "Learn about configuring browser monitors and clickpaths.") and is enabled by default. Discarded executions are ignored in availability calculations.
 
 * **Browser monitors:** Automatic retry (first unsuccessful execution is ignored) when option is enabled in monitor settings
 * **HTTP monitors:** No retries
 
 ## Key performance metrics
 
-**Total duration** is calculated as a summation of the **User action duration** of the load and XHR actions in a monitor. Other [key performance metric](/docs/observe/digital-experience/web-applications/analyze-and-use/work-with-key-performance-metrics "Learn how to use the right key performance metrics to optimize user experience data for each of your applications.") values are averages, calculated separately for load actions and XHR actions.
+**Total duration** is calculated as a summation of the **User action duration** of the load and XHR actions in a monitor. Other [key performance metric](../../web-applications/analyze-and-use/work-with-key-performance-metrics.md "Learn how to use the right key performance metrics to optimize user experience data for each of your applications.") values are averages, calculated separately for load actions and XHR actions.
 
 ## Performance problems, resolution, and timeouts
 
@@ -68,11 +68,11 @@ Performance problem resolution occurs when a monitor is enabled/active. If a mon
 
 ### Performance thresholds
 
-Performance thresholds for [browser monitors](/docs/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors "Learn about Dynatrace synthetic monitor types.") are defined as the **Total duration** of the monitor or of individual events, which, in turn, can comprise multiple load or XHR actions. Total duration is the sum of the User action durations of the constituent actions. Where an event has just one action, Total duration is the same as the User action duration.
+Performance thresholds for [browser monitors](types-of-synthetic-monitors.md "Learn about Dynatrace synthetic monitor types.") are defined as the **Total duration** of the monitor or of individual events, which, in turn, can comprise multiple load or XHR actions. Total duration is the sum of the User action durations of the constituent actions. Where an event has just one action, Total duration is the same as the User action duration.
 
-Note that Total duration is not available as a metric for individual load or XHR actions when viewing browser monitor [Multidimensional analysis](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors "Learn how to analyze browser-monitor data points.") or a [waterfall graph](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/waterfall-graphs "How to analyze page resource downloads for browser monitors.").
+Note that Total duration is not available as a metric for individual load or XHR actions when viewing browser monitor [Multidimensional analysis](../analysis-and-alerting/multidimensional-analysis-for-browser-monitors.md "Learn how to analyze browser-monitor data points.") or a [waterfall graph](../analysis-and-alerting/waterfall-graphs.md "How to analyze page resource downloads for browser monitors.").
 
-Performance thresholds for [HTTP monitors](/docs/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors#http-monitor "Learn about Dynatrace synthetic monitor types.") are defined as the **Response time** of the monitor or of individual requests.
+Performance thresholds for [HTTP monitors](types-of-synthetic-monitors.md#http-monitor "Learn about Dynatrace synthetic monitor types.") are defined as the **Response time** of the monitor or of individual requests.
 
 ## Availability problems, resolution, and timeouts
 
@@ -88,4 +88,4 @@ Outage problem resolution occurs when a monitor is enabled/active. If a monitor 
 
 ## Related topics
 
-* [Number of actions consumed by browser clickpaths](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/number-of-actions-consumed-by-browser-clickpaths "Find out how many actions are consumed by a browser clickpath and how they differ from events.")
+* [Number of actions consumed by browser clickpaths](../browser-monitors/number-of-actions-consumed-by-browser-clickpaths.md "Find out how many actions are consumed by a browser clickpath and how they differ from events.")

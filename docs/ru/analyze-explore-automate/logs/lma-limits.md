@@ -51,7 +51,7 @@ scraped: 2026-03-06T21:13:43.103611
 * Отсутствие атрибутов содержимого в принятых записях лога: если лог, принятый через конечную точку Log Ingestion API, не содержит атрибута, подобного содержимому, этот атрибут будет добавлен после приёма.
 * Для логов, принятых через конечную точку OTLP, атрибуты ресурса и области копируются в каждую отдельную запись лога.
 
-Проверьте ваш доступ к OpenPipeline в разделе [Обработка логов с помощью OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Обработка логов с помощью Dynatrace OpenPipeline.").
+Проверьте ваш доступ к OpenPipeline в разделе [Обработка логов с помощью OpenPipeline](lma-log-processing/lma-openpipeline.md "Обработка логов с помощью Dynatrace OpenPipeline.").
 
 ## Задержка приёма логов
 
@@ -75,10 +75,10 @@ scraped: 2026-03-06T21:13:43.103611
 
 ## Объекты запросов Log Ingestion API
 
-Помимо общих ограничений Dynatrace API ([Dynatrace API — лимит доступа](/docs/dynatrace-api/basics/access-limit "Узнайте об ограничениях данных и регулировании запросов, которые могут повлиять на использование Dynatrace API.")) действуют следующие ограничения, специфичные для Log Ingestion API:
+Помимо общих ограничений Dynatrace API ([Dynatrace API — лимит доступа](../../dynatrace-api/basics/access-limit.md "Узнайте об ограничениях данных и регулировании запросов, которые могут повлиять на использование Dynatrace API.")) действуют следующие ограничения, специфичные для Log Ingestion API:
 
-* JSON-объект `LogMessageJson`. См. [Приём логов в форматах JSON и TXT](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Узнайте, как обрабатываются логи в формате JSON и TXT, как в выровненном, так и в необработанном режиме.") для полного списка ключей и их описания.
-* Объект протокола OpenTelemetry `LogMessageOTLP`. См. [Приём логов OTLP](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения действуют.").
+* JSON-объект `LogMessageJson`. См. [Приём логов в форматах JSON и TXT](lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md "Узнайте, как обрабатываются логи в формате JSON и TXT, как в выровненном, так и в необработанном режиме.") для полного списка ключей и их описания.
+* Объект протокола OpenTelemetry `LogMessageOTLP`. См. [Приём логов OTLP](../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения действуют.").
 
 ## Лимиты автообнаружения логов при использовании OneAgent
 

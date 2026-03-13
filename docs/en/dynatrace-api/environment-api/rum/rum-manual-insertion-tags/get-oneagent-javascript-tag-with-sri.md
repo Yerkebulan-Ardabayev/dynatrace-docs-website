@@ -11,7 +11,7 @@ scraped: 2026-03-01T21:25:54.381923
 * Reference
 * Updated on Sep 18, 2025
 
-Returns the most recent [OneAgent JavaScript tag with SRI](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats#oneagent-js-tag-sri "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes configuration, a reference to the monitoring code, and an integrity hash. For more information on SRI support for RUM, see [Use Subresource Integrity (SRI) for Real User Monitoring code](/docs/observe/digital-experience/web-applications/initial-setup/subresource-integrity "Use the Subresource Integrity (SRI) browser feature to ensure the integrity of Real User Monitoring code.").
+Returns the most recent [OneAgent JavaScript tag with SRI](../../../../observe/digital-experience/web-applications/initial-setup/snippet-formats.md#oneagent-js-tag-sri "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes configuration, a reference to the monitoring code, and an integrity hash. For more information on SRI support for RUM, see [Use Subresource Integrity (SRI) for Real User Monitoring code](../../../../observe/digital-experience/web-applications/initial-setup/subresource-integrity.md "Use the Subresource Integrity (SRI) browser feature to ensure the integrity of Real User Monitoring code.").
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,7 +22,7 @@ Returns the most recent [OneAgent JavaScript tag with SRI](/docs/observe/digital
 
 To execute this request, you need an access token with `rumManualInsertionTags.read` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Parameters
 
@@ -33,4 +33,4 @@ To learn how to obtain and use it, see [Tokens and authentication](/docs/discove
 
 ## Response
 
-The response includes a `text/plain` payload containing the most recent version of the [OneAgent JavaScript tag with SRI](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats#oneagent-js-tag-sri "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.
+The response includes a `text/plain` payload containing the most recent version of the [OneAgent JavaScript tag with SRI](../../../../observe/digital-experience/web-applications/initial-setup/snippet-formats.md#oneagent-js-tag-sri "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.

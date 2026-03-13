@@ -25,7 +25,7 @@ After your extension starts sending data to Dynatrace, you can create a custom d
 
 ## Dashboards **Dashboards**
 
-If you're using [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), follow these procedures.
+If you're using [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), follow these procedures.
 
 You can export a dashboard definition through the Dynatrace web UI.
 
@@ -50,7 +50,7 @@ To download (export) the currently displayed dashboard as JSON
 After you create a dashboard that uses your extension data, and you export the dashboard JSON as described earlier, you can add the dashboard to your extension package.
 
 1. Rename the dashboard JSON file to match the pattern `<string>.dashboard.json`. For example, `device-health.dashboard.json`.
-2. Add the JSON to the [extension package](/docs/ingest-from/extensions/concepts#package "Learn more about the concept of Dynatrace Extensions.").
+2. Add the JSON to the [extension package](../ru/ingest-from/extensions/concepts.md#package "Learn more about the concept of Dynatrace Extensions.").
 
    For example,
 
@@ -73,7 +73,7 @@ After you create a dashboard that uses your extension data, and you export the d
 
    â   device-health.dashboard.json
    ```
-3. Declare the JSON in the [extension YAML file](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml "Learn how to create an extension YAML file using the Extensions framework.").
+3. Declare the JSON in the [extension YAML file](../ru/ingest-from/extensions/develop-your-extensions/extension-yaml.md "Learn how to create an extension YAML file using the Extensions framework.").
 
    For example,
 
@@ -107,22 +107,22 @@ You can also access the dashboard from ![Extensions](https://dt-cdn.net/images/d
 
 ## Dashboards Classic
 
-If you're using [Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic."), follow these procedures.
+If you're using [Dashboards Classic](analyze-explore-automate/dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic."), follow these procedures.
 
-After your extension starts sending data to Dynatrace, you can [create a custom dashboard](/docs/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Learn how to create and edit Dynatrace dashboards.") and then export its definition to a JSON file and add it to your extension archive. You can export a dashboard definition through the Dynatrace web UI or Dynatrace API.
+After your extension starts sending data to Dynatrace, you can [create a custom dashboard](analyze-explore-automate/dashboards-classic/dashboards/create-dashboards.md "Learn how to create and edit Dynatrace dashboards.") and then export its definition to a JSON file and add it to your extension archive. You can export a dashboard definition through the Dynatrace web UI or Dynatrace API.
 
 ### Export dashboard JSON in web UI
 
 1. Go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**.
 2. In the row for the dashboard you want to export, select **More** (**â¦**) > **Export**.  
    A JSON file with the dashboard's name is downloaded to your local machine.
-   For more information, see [Edit Dynatrace dashboard JSON](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json "Learn how to export, edit, and import the JSON for a Dynatrace dashboard.").
+   For more information, see [Edit Dynatrace dashboard JSON](../ru/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json.md "Learn how to export, edit, and import the JSON for a Dynatrace dashboard.").
 
 ### Export dashboard JSON using API
 
 1. Go to ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** and display the dashboard.
 2. In the dashboard URL, find the `id` parameter (for example, `id=d996b25e-593c-4213-8ad3-c87319a8830a`) and save the parameter value.
-3. Use the [Get a dashboard](/docs/dynatrace-api/configuration-api/dashboards-api/get-dashboard "View a dashboard via the Dynatrace Classic API.") API endpoint to get the dashboard JSON definition.
+3. Use the [Get a dashboard](dynatrace-api/configuration-api/dashboards-api/get-dashboard.md "View a dashboard via the Dynatrace Classic API.") API endpoint to get the dashboard JSON definition.
    Run the following command to get the dashboard definition. For this example, we use the Dynatrace SaaS URL:
 
    ```
@@ -139,8 +139,8 @@ After your extension starts sending data to Dynatrace, you can [create a custom 
 
    Replace:
 
-   * `{env-id}` with your [Environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
-   * `{api-token}` with an [API token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](/docs/ingest-from/extensions/manage-extensions#permissions "Learn how to manage extensions.").
+   * `{env-id}` with your [Environment ID](../ru/discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+   * `{api-token}` with an [API token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](../ru/ingest-from/extensions/manage-extensions.md#permissions "Learn how to manage extensions.").
    * `{dashboard-id}` with the dashboard identifier you determined in the previous step.
 4. The call returns the JSON payload containing the dashboard definition. Save it as a JSON file.
 
@@ -182,7 +182,7 @@ extension.zip
 â   dashboard.json
 ```
 
-Use the following reference in the top level of your [YAML file](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml "Learn how to create an extension YAML file using the Extensions framework."):
+Use the following reference in the top level of your [YAML file](../ru/ingest-from/extensions/develop-your-extensions/extension-yaml.md "Learn how to create an extension YAML file using the Extensions framework."):
 
 ```
 dashboards:
@@ -369,12 +369,12 @@ To configure the ActiveGate for the dedicated performance profile
 
    -java.xmx.relative_part=0
    ```
-3. [Restart the ActiveGate](/docs/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.") to apply the configuration changes.
-4. [Set the performance profile of the ActiveGate](/docs/ingest-from/extensions/concepts#performance-profile "Learn more about the concept of Dynatrace Extensions.") to `Dedicated limits`.
+3. [Restart the ActiveGate](ingest-from/dynatrace-activegate/operation/stop-restart-activegate.md "Learn how you can start, stop and restart ActiveGate on Windows or Linux.") to apply the configuration changes.
+4. [Set the performance profile of the ActiveGate](../ru/ingest-from/extensions/concepts.md#performance-profile "Learn more about the concept of Dynatrace Extensions.") to `Dedicated limits`.
 
 ## Related topics
 
-* [About Extensions](/docs/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.")
+* [About Extensions](../ru/ingest-from/extensions/concepts.md "Learn more about the concept of Dynatrace Extensions.")
 
 ---
 
@@ -508,7 +508,7 @@ Only Dynatrace extensions can be elevated, while custom ones cannot. In case an 
 
 ## Related topics
 
-* [Develop your own Extensions](/docs/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.")
+* [Develop your own Extensions](../ru/ingest-from/extensions/develop-your-extensions.md "Develop your own Extensions in Dynatrace.")
 
 ---
 
@@ -535,7 +535,7 @@ You can tailor various aspects of Dynatrace to the specifics of data acquired by
 
 The Extensions 2.0 framework enables you to tailor the Dynatrace UI for the specific needs of the data ingested by your extension. You can add customized dashboards or specialized unified analysis pages to your extension.
 
-For more information, see [Extend Dynatrace with domain-specific web UI](/docs/ingest-from/extend-dynatrace/extend-ui "Extend the Dynatrace web UI using entity-tailored unified analysis pages.").
+For more information, see [Extend Dynatrace with domain-specific web UI](../ru/ingest-from/extend-dynatrace/extend-ui.md "Extend the Dynatrace web UI using entity-tailored unified analysis pages.").
 
 ## Custom metric events
 
@@ -562,13 +562,13 @@ Export custom event for alerting definition
 
    Replace:
 
-   * `{env-id}` with your [Environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
-   * `{api-token}` with an [API token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](/docs/ingest-from/extensions/manage-extensions#permissions "Learn how to manage extensions.").
+   * `{env-id}` with your [Environment ID](../ru/discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+   * `{api-token}` with an [API token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](../ru/ingest-from/extensions/manage-extensions.md#permissions "Learn how to manage extensions.").
    * `{custom-event-id}` with the custom metric event identifier you determined in the previous step.
 5. The call returns the JSON payload containing a custom metric event definition. Save it as a JSON file.
 6. Declare the exported JSON files in your `extension.yaml` file and add them to your extension package.
 
-For more information, see [Extensions 2.0 hands-on excercise](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial "Learn about WMI extensions in the Extensions framework.").
+For more information, see [Extensions 2.0 hands-on excercise](../ru/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial.md "Learn about WMI extensions in the Extensions framework.").
 
 After you upload or update an extension containing custom metric events, make sure you enable the events you'd like to use. The extension-imported events are disabled by default after each upload and activation, inluding an update. To enable metric events, go to **Settings** > **Anomaly detection** > **Metric events**.
 
@@ -576,7 +576,7 @@ After you upload or update an extension containing custom metric events, make su
 
 After you start to send in your own data via an extension, you might be interested in extending the built-in topology model by adding your own domain-related entity types and relationships.
 
-For more information, see [Custom topology model](/docs/ingest-from/extend-dynatrace/extend-topology "Ensure that all incoming observations are context-rich and analyzed in the context of the monitored entities they relate to.").
+For more information, see [Custom topology model](../ru/ingest-from/extend-dynatrace/extend-topology.md "Ensure that all incoming observations are context-rich and analyzed in the context of the monitored entities they relate to.").
 
 ## Custom metric metadata
 
@@ -584,7 +584,7 @@ To add more context to data points and their dimensions ingested by your extensi
 
 You can provide such information via custom metric metadata. Metadata is stored independently from data points and tied together by the metric key. You can push data points and set metadata in any order.
 
-For more information, see [Custom metric metadata](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata "Provide metadata for your custom metric.").
+For more information, see [Custom metric metadata](../ru/ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata.md "Provide metadata for your custom metric.").
 
 ### Data filtering
 
@@ -604,23 +604,23 @@ Filters match entity names to include/exclude certain configurations from monito
 
 ## Custom process group detection rules
 
-Dynatrace detects which processes are part of the same [process groups](/docs/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring.") by means of a default set of detection rules. However, you can add your own process detection rules suited to the data retrieved by your extension.
+Dynatrace detects which processes are part of the same [process groups](../ru/observe/infrastructure-observability/process-groups.md "Analyze process groups and customize process group naming, detection, and monitoring.") by means of a default set of detection rules. However, you can add your own process detection rules suited to the data retrieved by your extension.
 
-For more information, see [Process group detection](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection").
+For more information, see [Process group detection](../ru/observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection").
 
 ## Custom security context attribute
 
 You can add a security context attribute to Dynatrace-provided and custom extensions. You can do this as part of the extension's activation, individually per each configuration, or you can edit the settings later.
 
-You need to have a monitoring configuration for the selected extension. For more details on setting up a monitoring configuration via API, see [Extensions 2.0 API - POST a monitoring configuration](/docs/dynatrace-api/environment-api/extensions-20/monitoring-configurations/post-monitoring-configuration "Create a monitoring configuration of an extension via the Dynatrace Extensions 2.0 API.").
+You need to have a monitoring configuration for the selected extension. For more details on setting up a monitoring configuration via API, see [Extensions 2.0 API - POST a monitoring configuration](dynatrace-api/environment-api/extensions-20/monitoring-configurations/post-monitoring-configuration.md "Create a monitoring configuration of an extension via the Dynatrace Extensions 2.0 API.").
 
 You can add security context from the **Monitoring configurations** tab of the chosen extension by selecting **Edit** from the **Actions** column. Then, select **Next** to go to the **Attributes** page.
 
 The attribute is applied to all metrics, logs, and events produced by the configuration.
 
-An API can also be used to set up a security context. For details, see [Monitored entities API - security context](/docs/dynatrace-api/environment-api/entity-v2/security-context "Create or delete security context via Dynatrace API.").
+An API can also be used to set up a security context. For details, see [Monitored entities API - security context](../ru/dynatrace-api/environment-api/entity-v2/security-context.md "Create or delete security context via Dynatrace API.").
 
-To avoid vulnerabilities, such as unauthorized access or data leakage, configure the security context for extensions according to our [recommended practices](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context").
+To avoid vulnerabilities, such as unauthorized access or data leakage, configure the security context for extensions according to our [recommended practices](../ru/manage/identity-access-management/use-cases/access-security-context.md "Grant access to entities with security context").
 
 ## Custom cost center and cost product attributes
 
@@ -631,9 +631,9 @@ The fields are based on the following attributes:
 * `dt.cost.costcenter` assigns usage to a specific cost center.
 * `dt.cost.product` assigns usage to a product or application ID.
 
-To learn more about the field syntax, see [Global field reference](/docs/semantic-dictionary/fields#dynatrace "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
+To learn more about the field syntax, see [Global field reference](../ru/semantic-dictionary/fields.md#dynatrace "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
 
-To add cost center and cost product attributes to your extension, you need to have a monitoring configuration for the selected extension. For more details on setting up a monitoring configuration via API, see [Extensions 2.0 API - POST a monitoring configuration](/docs/dynatrace-api/environment-api/extensions-20/monitoring-configurations/post-monitoring-configuration "Create a monitoring configuration of an extension via the Dynatrace Extensions 2.0 API.").
+To add cost center and cost product attributes to your extension, you need to have a monitoring configuration for the selected extension. For more details on setting up a monitoring configuration via API, see [Extensions 2.0 API - POST a monitoring configuration](dynatrace-api/environment-api/extensions-20/monitoring-configurations/post-monitoring-configuration.md "Create a monitoring configuration of an extension via the Dynatrace Extensions 2.0 API.").
 
 You can add security context from the **Monitoring configurations** tab of the chosen extension by selecting **Edit** from the **Actions** column. Then, select **Next** to go to the **Attributes** page.
 
@@ -643,19 +643,19 @@ The attributes are applied to all metrics, logs, and events produced by the conf
 
 
 
-After you enable [log ingestion](/docs/analyze-explore-automate/logs "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") into Dynatrace you can define the log metrics, events, and add your own log processing rules to be shipped with your extension.
+After you enable [log ingestion](../ru/analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") into Dynatrace you can define the log metrics, events, and add your own log processing rules to be shipped with your extension.
 
 For general information, on your logs configuration, see
 
-* [Log events](/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-events "Create log events based on log data and use them in problem detection.")
-* [Log metrics](/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-metrics "Create metrics based on log data and use them throughout Dynatrace like any other metric.")
-* [Log processing](/docs/analyze-explore-automate/logs/lma-log-processing "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.")
+* [Log events](analyze-explore-automate/logs/lma-log-processing/lma-log-events.md "Create log events based on log data and use them in problem detection.")
+* [Log metrics](analyze-explore-automate/logs/lma-log-processing/lma-log-metrics.md "Create metrics based on log data and use them throughout Dynatrace like any other metric.")
+* [Log processing](../ru/analyze-explore-automate/logs/lma-log-processing.md "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.")
 
 The Extensions YAML file supports the same fields as the Settings 2.0 schemas:
 
-* [Log metrics](/docs/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-schemaless-log-metric "View builtin:logmonitoring.schemaless-log-metric settings schema table of your monitoring environment via the Dynatrace API.")
-* [Log events](/docs/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-events "View builtin:logmonitoring.log-events settings schema table of your monitoring environment via the Dynatrace API.")
-* [Processing](/docs/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-dpp-rules "View builtin:logmonitoring.log-dpp-rules settings schema table of your monitoring environment via the Dynatrace API.")
+* [Log metrics](dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-schemaless-log-metric.md "View builtin:logmonitoring.schemaless-log-metric settings schema table of your monitoring environment via the Dynatrace API.")
+* [Log events](dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-events.md "View builtin:logmonitoring.log-events settings schema table of your monitoring environment via the Dynatrace API.")
+* [Processing](dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-dpp-rules.md "View builtin:logmonitoring.log-dpp-rules settings schema table of your monitoring environment via the Dynatrace API.")
 
 You define your custom log configuration in the Extensions YAML file, starting with the following nodes in the root of the file
 
@@ -671,7 +671,7 @@ To learn the structure of the definition, check the Extensions schemas:
 * `log.processing.rule.schema.json`
 * `log.processing.rule.schema.lql.json`
 
-See [Extension YAML file](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml#schemas "Learn how to create an extension YAML file using the Extensions framework.") to learn how to get the schema JSON files.
+See [Extension YAML file](../ru/ingest-from/extensions/develop-your-extensions/extension-yaml.md#schemas "Learn how to create an extension YAML file using the Extensions framework.") to learn how to get the schema JSON files.
 
 Check the examples below on how to define your log metrics, events, and processing rules in the extension YAML file.
 
@@ -940,7 +940,7 @@ Data sources
 
 ### Extension Execution Controller (EEC)
 
-The Extension Execution Controller (EEC) is the Dynatrace component running your extensions. EEC queries either your local data sources when run on OneAgent, or remote data sources when run from an ActiveGate. EEC is automatically installed and managed with each OneAgent and ActiveGate configuration. EEC also translates all the ingested data for [Dynatrace Intelligence causation analysis](/docs/dynatrace-intelligence/reference/ai-models/causal-correlation-analysis "Learn how Dynatrace Intelligence causal correlation analysis finds related metrics across your environment."). For more information, see [Metric ingestion](/docs/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.").
+The Extension Execution Controller (EEC) is the Dynatrace component running your extensions. EEC queries either your local data sources when run on OneAgent, or remote data sources when run from an ActiveGate. EEC is automatically installed and managed with each OneAgent and ActiveGate configuration. EEC also translates all the ingested data for [Dynatrace Intelligence causation analysis](dynatrace-intelligence/reference/ai-models/causal-correlation-analysis.md "Learn how Dynatrace Intelligence causal correlation analysis finds related metrics across your environment."). For more information, see [Metric ingestion](../ru/ingest-from/extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace.").
 
 To run local extensions, make sure EEC is enabled at the environment, host, or host group level.
 
@@ -977,9 +977,9 @@ Enable for a host group
 
 ### ActiveGate group
 
-Dynatrace uses ActiveGate groups to determine where extensions should run. Every ActiveGate that runs an extension must be part of a group. If you plan to use a single ActiveGate, assign it to a dedicated group. For more information, see [ActiveGate group](/docs/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
+Dynatrace uses ActiveGate groups to determine where extensions should run. Every ActiveGate that runs an extension must be part of a group. If you plan to use a single ActiveGate, assign it to a dedicated group. For more information, see [ActiveGate group](../ru/ingest-from/dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.").
 
-You can run extensions using an Environment ActiveGate installed to [route OneAgent traffic to Dynatrace, and to monitor cloud environments and remote technologies using extensions](/docs/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose "Learn about the routing and monitoring capabilities and uses of ActiveGate.").
+You can run extensions using an Environment ActiveGate installed to [route OneAgent traffic to Dynatrace, and to monitor cloud environments and remote technologies using extensions](ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose.md "Learn about the routing and monitoring capabilities and uses of ActiveGate.").
 
 Cluster ActiveGates and multi-environment ActiveGates aren't supported for the Extensions framework.
 
@@ -1016,7 +1016,7 @@ Change the performance profile of an ActiveGate
 3. On the **Settings** page, go to **Extension Execution Controller**.
 4. Set **Performance profile** to `Default`, `High limits`, or `Dedicated limits`.
 
-   You can enable `Dedicated limits` only after you have configured the ActiveGate as described on [Dedicated performance profile configuration](/docs/ingest-from/extensions/advanced-configuration/dedicated-performance-profile "Configure the dedicated performance profile mode to optimize the performance of your ActiveGate host.").
+   You can enable `Dedicated limits` only after you have configured the ActiveGate as described on [Dedicated performance profile configuration](../ru/ingest-from/extensions/advanced-configuration/dedicated-performance-profile.md "Configure the dedicated performance profile mode to optimize the performance of your ActiveGate host.").
 
 ### Environment configuration
 
@@ -1049,14 +1049,14 @@ To start monitoring using the extension, you must use an API call to add a monit
 
 Without a monitoring configuration, an extension is visible in the Dynatrace platform, but it doesn't collect any data.
 
-* See [Oracle Database monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.") to learn how to create an Oracle Databaseâspecific monitoring configuration.
-* See [Microsoft SQL Server monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring "Microsoft SQL extensions in the Extensions framework.") to learn how to create a Microsoft Databaseâspecific monitoring configuration.
-* See [IBM Database monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/ibm-monitoring "IBM DB2 extensions in the Extensions framework.") to learn how to create an IBM Databaseâspecific monitoring configuration.
-* See [MySQL monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/mysql-monitoring "MySQL extensions in the Extensions framework.") to learn how to create a MySQL Databaseâspecific monitoring configuration.
-* See [PostgreSQL monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring "PostgreSQL extensions in the Extensions framework.") to learn how to create a PostgreSQL Databaseâspecific monitoring configuration.
-* See [SAP Hana Database monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring "SAP Hana extensions in the Extensions framework.") to learn how to create a SAP Hana Databaseâspecific monitoring configuration.
-* See [Snowflake Database monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring "Snowflake Database extensions in the Extensions framework.") to learn how to create a Snowflake Databaseâspecific monitoring configuration.
-* See [JDBC monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring "JDBC extensions in the Extensions framework.") to learn how to create a JDBC Databaseâspecific monitoring configuration.
+* See [Oracle Database monitoring configuration](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring.md "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.") to learn how to create an Oracle Databaseâspecific monitoring configuration.
+* See [Microsoft SQL Server monitoring configuration](ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring.md "Microsoft SQL extensions in the Extensions framework.") to learn how to create a Microsoft Databaseâspecific monitoring configuration.
+* See [IBM Database monitoring configuration](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/ibm-monitoring.md "IBM DB2 extensions in the Extensions framework.") to learn how to create an IBM Databaseâspecific monitoring configuration.
+* See [MySQL monitoring configuration](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/mysql-monitoring.md "MySQL extensions in the Extensions framework.") to learn how to create a MySQL Databaseâspecific monitoring configuration.
+* See [PostgreSQL monitoring configuration](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring.md "PostgreSQL extensions in the Extensions framework.") to learn how to create a PostgreSQL Databaseâspecific monitoring configuration.
+* See [SAP Hana Database monitoring configuration](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring.md "SAP Hana extensions in the Extensions framework.") to learn how to create a SAP Hana Databaseâspecific monitoring configuration.
+* See [Snowflake Database monitoring configuration](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring.md "Snowflake Database extensions in the Extensions framework.") to learn how to create a Snowflake Databaseâspecific monitoring configuration.
+* See [JDBC monitoring configuration](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring.md "JDBC extensions in the Extensions framework.") to learn how to create a JDBC Databaseâspecific monitoring configuration.
 
 ### Extension package
 
@@ -1090,7 +1090,7 @@ With Dynatrace CLI you can:
 * Generate development certificates for extension signing
 * Generate CA certificates for development
 
-For details, see [Sign extension](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.") and the [dt-cliï»¿](https://github.com/dynatrace-oss/dt-cli) project on GitHub.
+For details, see [Sign extension](../ru/ingest-from/extensions/develop-your-extensions/sign-extensions.md "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.") and the [dt-cliï»¿](https://github.com/dynatrace-oss/dt-cli) project on GitHub.
 
 ### Feature sets
 
@@ -1101,7 +1101,7 @@ Imagine an SNMP extension that monitors your network devices and collects metric
 
 ### Configurations and limitations
 
-Before deploying extensions, be aware of current [limitations](/docs/ingest-from/extensions/extension-limits "Learn about extensions limits.") to ensure you can meet your monitoring goals effectively.
+Before deploying extensions, be aware of current [limitations](ingest-from/extensions/extension-limits.md "Learn about extensions limits.") to ensure you can meet your monitoring goals effectively.
 
 ### Access control and required permissions
 
@@ -1114,25 +1114,25 @@ Working with Extensions requires specific permissions to manage extensions lifec
 
 ### SNMP
 
-Extend your observability into data from your network devices with declarative metrics based on SNMP OIDs.](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions "Learn how to create an SNMP extension using the Extensions framework.")[![WMI](https://dt-cdn.net/images/techn-icon-microsoft-e15d516aaf.svg "WMI")
+Extend your observability into data from your network devices with declarative metrics based on SNMP OIDs.](../ru/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions.md "Learn how to create an SNMP extension using the Extensions framework.")[![WMI](https://dt-cdn.net/images/techn-icon-microsoft-e15d516aaf.svg "WMI")
 
 ### WMI
 
-Extend your observability into data from devices exposing Windows Management Instrumentation interface.](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions "Learn how to create a WMI extension using the Extensions framework.")[![Prometheus](https://dt-cdn.net/images/prometheus-b1fab729ac.svg "Prometheus")
+Extend your observability into data from devices exposing Windows Management Instrumentation interface.](../ru/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions.md "Learn how to create a WMI extension using the Extensions framework.")[![Prometheus](https://dt-cdn.net/images/prometheus-b1fab729ac.svg "Prometheus")
 
 ### Prometheus
 
-Extend your applications and services data with metrics acquired from a Prometheus endpoint outside Kubernetes.](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Learn how to create a Prometheus extension using the Extensions framework.")[![SQL data source](https://dt-cdn.net/images/sql-logo-036ab75f37.svg "SQL data source")
+Extend your applications and services data with metrics acquired from a Prometheus endpoint outside Kubernetes.](../ru/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions.md "Learn how to create a Prometheus extension using the Extensions framework.")[![SQL data source](https://dt-cdn.net/images/sql-logo-036ab75f37.svg "SQL data source")
 
 ### SQL
 
-Extend your observability into data acquired from a database layer using SQL queries.](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql "Learn how to create an SQL data source-based extension using the Extensions framework.")[![JMX](https://dt-cdn.net/images/techn-icon-java-3016283f6a.svg "JMX")
+Extend your observability into data acquired from a database layer using SQL queries.](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql.md "Learn how to create an SQL data source-based extension using the Extensions framework.")[![JMX](https://dt-cdn.net/images/techn-icon-java-3016283f6a.svg "JMX")
 
 ### JMX
 
-Extend your observability into data acquired from JMX MBeans.](/docs/ingest-from/extensions/develop-your-extensions/data-sources/jmx "Learn how to create a JMX extension using the Extensions framework.")[### Python
+Extend your observability into data acquired from JMX MBeans.](../ru/ingest-from/extensions/develop-your-extensions/data-sources/jmx.md "Learn how to create a JMX extension using the Extensions framework.")[### Python
 
-Extend your observability into data from any technology that exposes data via an interface using custom-coded extensions based on the Dynatrace-provided Python SDK.](/docs/ingest-from/extensions/develop-your-extensions/data-sources/python "Python library and a toolbox for building Python extensions for Dynatrace Extensions.")
+Extend your observability into data from any technology that exposes data via an interface using custom-coded extensions based on the Dynatrace-provided Python SDK.](../ru/ingest-from/extensions/develop-your-extensions/data-sources/python.md "Python library and a toolbox for building Python extensions for Dynatrace Extensions.")
 
 ---
 
@@ -1549,7 +1549,7 @@ scraped: 2026-03-06T21:36:35.777912
 
 Dynatrace provides a framework to create metrics from [JMX MBeansï»¿](https://en.wikipedia.org/wiki/Java_Management_Extensions). Every process monitored by OneAgent Java code module is capable of processing JMX 2.0 extensions.
 
-You need to enable the **Java Metric Extensions (JMX)** [OneAgent feature](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.")
+You need to enable the **Java Metric Extensions (JMX)** [OneAgent feature](../ru/ingest-from/dynatrace-oneagent/oneagent-features.md "Manage OneAgent features globally and per process group.")
 
 ## Background
 
@@ -1566,7 +1566,7 @@ Numeric attributes can be directly used to produce metrics in Dynatrace. It's al
 We assume the following:
 
 * You possess sufficient JMX subject matter expertise to create an extension.
-* You're familiar with [Extensions basic concepts](/docs/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.") and the general structure of the [extension YAML file](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml "Learn how to create an extension YAML file using the Extensions framework.").
+* You're familiar with [Extensions basic concepts](../ru/ingest-from/extensions/concepts.md "Learn more about the concept of Dynatrace Extensions.") and the general structure of the [extension YAML file](../ru/ingest-from/extensions/develop-your-extensions/extension-yaml.md "Learn how to create an extension YAML file using the Extensions framework.").
 
 ## Supported Dynatrace versions
 
@@ -1694,7 +1694,7 @@ OneAgent will automatically add the following dimensions to your metric:
 * `dt.metrics.source`
 * `dt.extension.config.id`
 
-For more information, see [JMX data source reference](/docs/ingest-from/extensions/develop-your-extensions/data-sources/jmx/jmx-schema-reference "Learn about JMX extensions in the Extensions framework.").
+For more information, see [JMX data source reference](../ru/ingest-from/extensions/develop-your-extensions/data-sources/jmx/jmx-schema-reference.md "Learn about JMX extensions in the Extensions framework.").
 
 ---
 
@@ -1717,14 +1717,14 @@ scraped: 2026-03-04T21:37:13.983043
 
 Dynatrace provides you with a framework that you can use to extend your application and services observability into data acquired directly from Prometheus. The Dynatrace extensions framework can pull Prometheus metrics from the `/metrics` endpoint, a Prometheus API endpoint, or a data exporter (Prometheus target).
 
-Note that Dynatrace provides out-of-the-box support for ingesting metrics from [Prometheus exporters in Kubernetes](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.").
+Note that Dynatrace provides out-of-the-box support for ingesting metrics from [Prometheus exporters in Kubernetes](../ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics.md "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.").
 
 You can run Prometheus extensions right on the Prometheus host where you installed OneAgent, so your metrics are automatically enriched with host-specific dimensions. If, however, you can't install OneAgent on the Prometheus host, you can run extensions remotely and execute them on an ActiveGate group of your choice.
 
 We assume the following:
 
 * You possess sufficient [Prometheusï»¿](https://prometheus.io/) subject matter expertise to create an extension.
-* You're familiar with [Extensions basic concepts](/docs/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.") and the general structure of the [extension YAML file](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml "Learn how to create an extension YAML file using the Extensions framework.").
+* You're familiar with [Extensions basic concepts](../ru/ingest-from/extensions/concepts.md "Learn more about the concept of Dynatrace Extensions.") and the general structure of the [extension YAML file](../ru/ingest-from/extensions/develop-your-extensions/extension-yaml.md "Learn how to create an extension YAML file using the Extensions framework.").
 
 Be sure to review all prerequisites and limits.
 
@@ -1736,7 +1736,7 @@ Be sure to review all prerequisites and limits.
 
 ## Limits
 
-For limits applying to your extension, see [Extensions limits](/docs/ingest-from/extensions/extension-limits "Learn about extensions limits.") and the following Prometheus-specific limits:
+For limits applying to your extension, see [Extensions limits](ingest-from/extensions/extension-limits.md "Learn about extensions limits.") and the following Prometheus-specific limits:
 
 * Maximum 1,000 `metrics` definitions
 * Maximum 50 dimensions per metric
@@ -1748,7 +1748,7 @@ Note that a large number of dimensions can exceed the limits and impact your Dyn
 * Prometheus labels automatically become Dynatrace dimensions.
 * Certain metrics can be assigned to dimensions with a constantly increasing set of values, each of them becoming a new dimension.
 
-See [Prometheus data source reference](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference "Learn about Prometheus extensions in the Extensions framework.") to learn about the structure of the Prometheus extension YAML file and monitoring configuration format.
+See [Prometheus data source reference](ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference.md "Learn about Prometheus extensions in the Extensions framework.") to learn about the structure of the Prometheus extension YAML file and monitoring configuration format.
 
 ---
 
@@ -1778,7 +1778,7 @@ This SDK offers:
 * Greater flexibility to ingest the data from your proprietary technologies or when your case requires extended customization that available data sources don't offer.
 * Tooling to export your current OneAgent and ActiveGate extensions to the new framework.
 
-Dynatrace Extensions Python SDK is publicly available with [OneAgent 1.285](/docs/whats-new/oneagent/sprint-285#custom-coded-python-extensions "Release notes for Dynatrace OneAgent version 1.285").
+Dynatrace Extensions Python SDK is publicly available with [OneAgent 1.285](whats-new/oneagent/sprint-285.md#custom-coded-python-extensions "Release notes for Dynatrace OneAgent version 1.285").
 
 Set the filesystem flag to `exec` and not `noexec` to ensure a Python extension runs correctly. This configuration is crucial because it allows the execution of binaries and scripts within the specified filesystem. The extension can't execute properly without this setting, leading to potential errors and failures.
 
@@ -1848,7 +1848,7 @@ Invalid config will point back to the details entered in the monitoring configur
 
 ### Extension logs
 
-Extension logs can be found in the [ActiveGate directories](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems."). Look for the `Extensions configuration, logs` in **Purpose of** column.
+Extension logs can be found in the [ActiveGate directories](ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files.md "Find out where ActiveGate files are stored on Windows and Linux systems."). Look for the `Extensions configuration, logs` in **Purpose of** column.
 
 ## Optimization for large devices
 
@@ -1883,14 +1883,14 @@ scraped: 2026-03-02T21:28:59.047980
 
 Dynatrace provides you with a framework that you can use to extend your observability into data acquired directly from your SNMP monitored devices.
 
-We also provide an SNMP traps data source reporting a single metric that counts the number of traps sent by a defined source during a defined interval. For more information, see [SNMP traps data source](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions/snmptraps-extensions "Create an SNMP traps extension using the Dynatrace Extensions framework.").
+We also provide an SNMP traps data source reporting a single metric that counts the number of traps sent by a defined source during a defined interval. For more information, see [SNMP traps data source](ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions/snmptraps-extensions.md "Create an SNMP traps extension using the Dynatrace Extensions framework.").
 
 We assume the following:
 
 * You possess sufficient SNMP subject matter expertise to create an SNMP extension.
-* You're familiar with [Extensions basic concepts](/docs/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.") and the general structure of the [extension YAML file](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml "Learn how to create an extension YAML file using the Extensions framework.").
+* You're familiar with [Extensions basic concepts](../ru/ingest-from/extensions/concepts.md "Learn more about the concept of Dynatrace Extensions.") and the general structure of the [extension YAML file](../ru/ingest-from/extensions/develop-your-extensions/extension-yaml.md "Learn how to create an extension YAML file using the Extensions framework.").
 
-Learn the prerequisites and scope of the supported technologies. For limits applying to your extension, see [Extensions](/docs/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.").
+Learn the prerequisites and scope of the supported technologies. For limits applying to your extension, see [Extensions](../ru/ingest-from/extensions/concepts.md "Learn more about the concept of Dynatrace Extensions.").
 
 ## Supported Dynatrace versions
 
@@ -1938,7 +1938,7 @@ For SNMP v3, the SNMP data source supports the `NoAuthNoPriv`, `authNoPriv`, and
 
 These encryption algorithms are not officially specified, but they are often supported by network devices. See [SNMPv3 with AES-256ï»¿](https://www.snmp.com/snmpv3/snmpv3_aes256.shtml).
 
-To learn how to define authentication in your monitoring configuration, see [SNMP authentication](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions/snmp-schema-reference#authentication "Learn about SNMP extensions in the Extensions framework.").
+To learn how to define authentication in your monitoring configuration, see [SNMP authentication](ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions/snmp-schema-reference.md#authentication "Learn about SNMP extensions in the Extensions framework.").
 
 ## Hardware requirements
 
@@ -1946,7 +1946,7 @@ SNMP monitoring with the Extensions framework is performed by an ActiveGate. The
 
 * Number of polled devices.
 * Number of metric ingestion protocol lines ingested per polling interval (1 minute). A unique metric-dimension combination (tuple) results in a single line.
-* Whether you configured the [EEC](/docs/ingest-from/extensions/concepts#eec "Learn more about the concept of Dynatrace Extensions.") performance profile to high limits.
+* Whether you configured the [EEC](../ru/ingest-from/extensions/concepts.md#eec "Learn more about the concept of Dynatrace Extensions.") performance profile to high limits.
 
 Depending on the number of devices and ingested lines, the ActiveGates performing SNMP monitoring need to meet the following hardware requirements:
 
@@ -2288,9 +2288,9 @@ Enable this option when connecting to databases using custom certificates.
 
 ### Scope
 
-Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see [Sign extension](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
+Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see [Sign extension](../ru/ingest-from/extensions/develop-your-extensions/sign-extensions.md "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
 
-The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](/docs/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
+The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](../ru/ingest-from/dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.").
 
 Use the following format when defining the ActiveGate group:
 
@@ -2659,9 +2659,9 @@ Enable this option when connecting to databases using custom certificates.
 
 ### Scope
 
-Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see [Sign extension](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
+Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see [Sign extension](../ru/ingest-from/extensions/develop-your-extensions/sign-extensions.md "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
 
-The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](/docs/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
+The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](../ru/ingest-from/dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.").
 
 Use the following format when defining the ActiveGate group:
 
@@ -3052,9 +3052,9 @@ Enable this option when connecting to databases using custom certificates.
 
 ### Scope
 
-Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see [Sign extension](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
+Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see [Sign extension](../ru/ingest-from/extensions/develop-your-extensions/sign-extensions.md "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
 
-The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](/docs/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
+The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](../ru/ingest-from/dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.").
 
 Use the following format when defining the ActiveGate group:
 
@@ -3085,9 +3085,9 @@ scraped: 2026-03-05T21:37:43.036318
 
 After you define the scope of your configuration, you need to identify the databases you'd like to collect data from and identify the ActiveGates that will execute the extension and connect to your devices.
 
-Make sure that all the ActiveGates from the ActiveGate group you'll define as the scope can connect to a respective data source. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](/docs/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
+Make sure that all the ActiveGates from the ActiveGate group you'll define as the scope can connect to a respective data source. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](../ru/ingest-from/dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.").
 
-The monitoring configuration is a JSON payload defining the connection details, credentials, and feature sets that you want to monitor. For details, see [Start monitoring](/docs/ingest-from/extensions/manage-extensions#start-monitoring "Learn how to manage extensions.").
+The monitoring configuration is a JSON payload defining the connection details, credentials, and feature sets that you want to monitor. For details, see [Start monitoring](../ru/ingest-from/extensions/manage-extensions.md#start-monitoring "Learn how to manage extensions.").
 
 Example payload to activate an Oracle SQL extension:
 
@@ -3215,13 +3215,13 @@ Example payload to activate an Oracle SQL extension:
 ]
 ```
 
-When you have your initial extension YAML ready, package it, sign it, and upload it to your Dynatrace environment. For details, see [Manage extension lifecyle](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.").
+When you have your initial extension YAML ready, package it, sign it, and upload it to your Dynatrace environment. For details, see [Manage extension lifecyle](../ru/ingest-from/extensions/manage-extensions.md "Learn how to manage extensions.").
 
 The Dynatrace Hub-based extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration
 
 You can also use the Dynatrace API to download the schema for your extension that will help you create the JSON payload for your monitoring configuration.
 
-Use the [GET an extension schema](/docs/dynatrace-api/environment-api/extensions-20/extensions/get-schema "View the schema of an extension the Dynatrace Extensions 2.0 API.") endpoint.
+Use the [GET an extension schema](dynatrace-api/environment-api/extensions-20/extensions/get-schema.md "View the schema of an extension the Dynatrace Extensions 2.0 API.") endpoint.
 
 Issue the following request:
 
@@ -3241,9 +3241,9 @@ Make sure to replace `{extension-name}` and `{extension-version}` with values fr
 
 ## Scope
 
-Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see [Sign extension](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
+Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see [Sign extension](../ru/ingest-from/extensions/develop-your-extensions/sign-extensions.md "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
 
-The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](/docs/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
+The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](../ru/ingest-from/dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.").
 
 Use the following format when defining the ActiveGate group:
 
@@ -3907,9 +3907,9 @@ Enable this option when connecting to databases using custom certificates.
 
 ### Scope
 
-Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see [Sign extension](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
+Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see [Sign extension](../ru/ingest-from/extensions/develop-your-extensions/sign-extensions.md "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
 
-The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](/docs/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
+The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](../ru/ingest-from/dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.").
 
 Use the following format when defining the ActiveGate group:
 
@@ -4227,9 +4227,9 @@ Enable this option when connecting to databases using custom certificates.
 
 ### Scope
 
-Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see [Sign extension](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
+Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see [Sign extension](../ru/ingest-from/extensions/develop-your-extensions/sign-extensions.md "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
 
-The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](/docs/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
+The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](../ru/ingest-from/dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.").
 
 Use the following format when defining the ActiveGate group:
 
@@ -4541,9 +4541,9 @@ The credential vault authentication type provides a more secure approach to usin
 
 ### Scope
 
-Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see [Sign extension](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
+Note that each ActiveGate host running your extension needs the root certificate to verify the authenticity of your extension. For more information, see [Sign extension](../ru/ingest-from/extensions/develop-your-extensions/sign-extensions.md "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
 
-The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](/docs/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
+The scope is an ActiveGate group that will execute the extension. Only one ActiveGate from the group will run this monitoring configuration. If you plan to use a single ActiveGate, assign it to a dedicated group. You can assign an ActiveGate to a group during or after installation. For more information, see [ActiveGate group](../ru/ingest-from/dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.").
 
 Use the following format when defining the ActiveGate group:
 
@@ -4590,7 +4590,7 @@ We recommend the following when developing custom SQL extensions:
 * Only one query can be executed at a time
 * Queries containing comments are rejected
 * To prevent data integrity violations (manipulating, changing, or deleting data), the SQL data source executes the queries in rolled-back transactions. For this reason, databases that don't support transactions are not supported as a SQL data source.
-* Make sure that the connection string used in the JDBC monitoring configuration doesn't expose any sensitive data. For more information, see [JDBC monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring "JDBC extensions in the Extensions framework.").
+* Make sure that the connection string used in the JDBC monitoring configuration doesn't expose any sensitive data. For more information, see [JDBC monitoring configuration](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring.md "JDBC extensions in the Extensions framework.").
 
 ## Data scope
 
@@ -4762,7 +4762,7 @@ value: col:host_cpu_usage
 type: gauge
 ```
 
-Depending on the provider, your SQL monitoring scope definition starts with a dedicated YAML node. For Oracle Database, it's `sqloracle`. All the settings under the node pertain to the declared [data source type](/docs/ingest-from/extensions/concepts#data-source-type "Learn more about the concept of Dynatrace Extensions.") (in this case, SQL).
+Depending on the provider, your SQL monitoring scope definition starts with a dedicated YAML node. For Oracle Database, it's `sqloracle`. All the settings under the node pertain to the declared [data source type](../ru/ingest-from/extensions/concepts.md#data-source-type "Learn more about the concept of Dynatrace Extensions.") (in this case, SQL).
 
 ## JDBC connector
 
@@ -4795,7 +4795,7 @@ connectionStringPatternErrorMessage: âThis isn't a correct connection strin
 validationQuery: âSELECT 1â
 ```
 
-Users running your extension will also need to upload a related JDBC driver to an ActiveGate belonging to the group designated to run your extension. For more information, see [JDBC monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring#upload "JDBC extensions in the Extensions framework.").
+Users running your extension will also need to upload a related JDBC driver to an ActiveGate belonging to the group designated to run your extension. For more information, see [JDBC monitoring configuration](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring.md#upload "JDBC extensions in the Extensions framework.").
 
 ## SQL queries
 
@@ -5110,7 +5110,7 @@ For example, to let user control the interval:
    type: gauge
    ```
 
-   For more information on using variables, see [Extension YAML file](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml#variables "Learn how to create an extension YAML file using the Extensions framework.")
+   For more information on using variables, see [Extension YAML file](../ru/ingest-from/extensions/develop-your-extensions/extension-yaml.md#variables "Learn how to create an extension YAML file using the Extensions framework.")
 
 ## Timeouts
 
@@ -5118,7 +5118,7 @@ For example, to let user control the interval:
 
 When developing an extension, a timeout value can be specified for a given query at both group and subgroup levels. Timeouts are specified in seconds; the default value is `10`. The provided value must be a string, for example: `20`, `60`, `120`, and so on.
 
-You can also use a reference to a variable to specify the timeout. For more information on using variables, see [Extension YAML file](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml#variables "Learn how to create an extension YAML file using the Extensions framework.").
+You can also use a reference to a variable to specify the timeout. For more information on using variables, see [Extension YAML file](../ru/ingest-from/extensions/develop-your-extensions/extension-yaml.md#variables "Learn how to create an extension YAML file using the Extensions framework.").
 
 ```
 sqlOracle:
@@ -5180,7 +5180,7 @@ A subgroup inherits the dimensions of its parent group. To ensure data propagati
 
 ### Dimension key
 
-The dimension key string must conform to the [metrics ingestion protocol](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#dimension-optional "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+The dimension key string must conform to the [metrics ingestion protocol](../ru/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#dimension-optional "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
 
 ### Dimension value
 
@@ -5233,7 +5233,7 @@ ActiveGate version 1.311+
 You can add filtering logic at the dimension level. This will result in reporting only the metric whose dimension's value matches the filtering criteria.
 If filters are set on more than one dimension, all filters have to match for a metric line to be created. Filtering logic does not modify the executed query.
 
-Filters can be set as a constant value or as a [variable](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml#variables "Learn how to create an extension YAML file using the Extensions framework.").
+Filters can be set as a constant value or as a [variable](../ru/ingest-from/extensions/develop-your-extensions/extension-yaml.md#variables "Learn how to create an extension YAML file using the Extensions framework.").
 
 ```
 dimensions:
@@ -5364,7 +5364,7 @@ type: gauge
 
 ### Metric key
 
-The metric key string must conform to the [metrics ingestion protocol](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#metric-key-required "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+The metric key string must conform to the [metrics ingestion protocol](../ru/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#metric-key-required "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
 
 For Dynatrace versions 1.215 and 1.217, a metric node requires the `id` parameter in place of `key`. Starting with Dynatrace version 1.219, you should use the `key` parameter, as `id` will be considered deprecated.
 
@@ -5378,11 +5378,11 @@ The column value queried from your database.
 
 ### Type
 
-The Dynatrace Extensions framework supports metric payloads in the gauge (`gauge`) or count value (`count`) formats. For details, see [Metric payload](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#payload-required "Learn how the data ingestion protocol for Dynatrace Metrics API works."). To indicate the metric type, use the `type` attribute.
+The Dynatrace Extensions framework supports metric payloads in the gauge (`gauge`) or count value (`count`) formats. For details, see [Metric payload](../ru/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#payload-required "Learn how the data ingestion protocol for Dynatrace Metrics API works."). To indicate the metric type, use the `type` attribute.
 
 ## Metric metadata
 
-An Extension can define metadata for each metric available in Dynatrace. For example, you might want to add the metric display name and the unit, both of which can be used for filtering in the [Metrics browser](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.").
+An Extension can define metadata for each metric available in Dynatrace. For example, you might want to add the metric display name and the unit, both of which can be used for filtering in the [Metrics browser](../ru/analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser.").
 
 Define all metric metadata in the `metrics` section of the extension's YAML file to ensure it's correctly associated with the metric configuration.
 
@@ -5546,7 +5546,7 @@ A metric inherits the feature set of a subgroup, which in turn inherits the feat
 
 After you define the scope of your configuration, you need to identify the network devices you'd like to collect data from and identify the ActiveGates that will execute the extension and connect to your devices.
 
-The monitoring configuration format depends on the database provider. For more information, see [Oracle Database monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.").
+The monitoring configuration format depends on the database provider. For more information, see [Oracle Database monitoring configuration](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring.md "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.").
 
 ---
 
@@ -5572,9 +5572,9 @@ Dynatrace provides you with a framework that you can use to extend your observab
 We assume the following:
 
 * You possess sufficient database subject matter expertise to create an extension. In particular, you know how to build and execute SQL queries.
-* You're familiar with [Extensions basic concepts](/docs/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.") and the general structure of the [extension YAML file](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml "Learn how to create an extension YAML file using the Extensions framework.").
+* You're familiar with [Extensions basic concepts](../ru/ingest-from/extensions/concepts.md "Learn more about the concept of Dynatrace Extensions.") and the general structure of the [extension YAML file](../ru/ingest-from/extensions/develop-your-extensions/extension-yaml.md "Learn how to create an extension YAML file using the Extensions framework.").
 
-Learn about the prerequisites and scope of the supported technologies. For limits applying to your extension, see [Extensions limits](/docs/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.").
+Learn about the prerequisites and scope of the supported technologies. For limits applying to your extension, see [Extensions limits](../ru/ingest-from/extensions/concepts.md "Learn more about the concept of Dynatrace Extensions.").
 
 ## Supported Dynatrace versions
 
@@ -5598,18 +5598,18 @@ The SQL data source supports remote database access using various authentication
 
 ## Create extension
 
-* See [SQL data source reference](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sql-reference "Learn about SQL extensions in the Extensions framework.") to learn about the structure of the extension YAML file.
+* See [SQL data source reference](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/sql-reference.md "Learn about SQL extensions in the Extensions framework.") to learn about the structure of the extension YAML file.
 
 ## Monitoring configuration
 
-* See [Oracle Database monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.") to learn how to create an Oracle Databaseâspecific monitoring configuration.
-* See [Microsoft SQL Server monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring "Microsoft SQL extensions in the Extensions framework.") to learn how to create a Microsoft Databaseâspecific monitoring configuration.
-* See [IBM Database monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/ibm-monitoring "IBM DB2 extensions in the Extensions framework.") to learn how to create an IBM Databaseâspecific monitoring configuration.
-* See [MySQL monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/mysql-monitoring "MySQL extensions in the Extensions framework.") to learn how to create a MySQL Databaseâspecific monitoring configuration.
-* See [PostgreSQL monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring "PostgreSQL extensions in the Extensions framework.") to learn how to create a PostgreSQL Databaseâspecific monitoring configuration.
-* See [SAP Hana Database monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring "SAP Hana extensions in the Extensions framework.") to learn how to create a SAP Hana Databaseâspecific monitoring configuration.
-* See [Snowflake Database monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring "Snowflake Database extensions in the Extensions framework.") to learn how to create a Snowflake Databaseâspecific monitoring configuration.
-* See [JDBC monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring "JDBC extensions in the Extensions framework.") to learn how to create a JDBC Databaseâspecific monitoring configuration.
+* See [Oracle Database monitoring configuration](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring.md "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.") to learn how to create an Oracle Databaseâspecific monitoring configuration.
+* See [Microsoft SQL Server monitoring configuration](ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring.md "Microsoft SQL extensions in the Extensions framework.") to learn how to create a Microsoft Databaseâspecific monitoring configuration.
+* See [IBM Database monitoring configuration](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/ibm-monitoring.md "IBM DB2 extensions in the Extensions framework.") to learn how to create an IBM Databaseâspecific monitoring configuration.
+* See [MySQL monitoring configuration](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/mysql-monitoring.md "MySQL extensions in the Extensions framework.") to learn how to create a MySQL Databaseâspecific monitoring configuration.
+* See [PostgreSQL monitoring configuration](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring.md "PostgreSQL extensions in the Extensions framework.") to learn how to create a PostgreSQL Databaseâspecific monitoring configuration.
+* See [SAP Hana Database monitoring configuration](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring.md "SAP Hana extensions in the Extensions framework.") to learn how to create a SAP Hana Databaseâspecific monitoring configuration.
+* See [Snowflake Database monitoring configuration](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring.md "Snowflake Database extensions in the Extensions framework.") to learn how to create a Snowflake Databaseâspecific monitoring configuration.
+* See [JDBC monitoring configuration](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring.md "JDBC extensions in the Extensions framework.") to learn how to create a JDBC Databaseâspecific monitoring configuration.
 
 ---
 
@@ -5634,9 +5634,9 @@ This is a step-by-step tutorial for building a WMI data source-based extension. 
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Generate a developer certificate and key**](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial#generate-certificate-and-key "Learn about WMI extensions in the Extensions framework.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Generate a developer certificate and key**](../ru/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial.md#generate-certificate-and-key "Learn about WMI extensions in the Extensions framework.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Distribute the root certificate to Dynatrace components**](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial#distribute-root-certificate "Learn about WMI extensions in the Extensions framework.")
+**Distribute the root certificate to Dynatrace components**](../ru/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial.md#distribute-root-certificate "Learn about WMI extensions in the Extensions framework.")
 
 ## Before you begin
 
@@ -5655,7 +5655,7 @@ To successfully develop an Extensions extension and be able to complete this tut
     pip install dt-cli
     ```
 
-    For more information, see [Sign extensions](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
+    For more information, see [Sign extensions](../ru/ingest-from/extensions/develop-your-extensions/sign-extensions.md "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
 * Your root certificate uploaded to Dynatrace and on the OneAgent host
 
 ## Step 1 Generate a developer certificate and key
@@ -5697,7 +5697,7 @@ The command generates the following files:
 
 Your Dynatrace environment is ready to start creating your WMI extension.
 
-**Next step**: [Extension package](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial/wmi-tutorial-01 "Learn about WMI extensions in the Extensions framework.")
+**Next step**: [Extension package](ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial/wmi-tutorial-01.md "Learn about WMI extensions in the Extensions framework.")
 
 ---
 
@@ -5723,11 +5723,11 @@ Dynatrace provides you with a framework that you can use to extend your observab
 We assume the following:
 
 * You possess sufficient Windows and WMI subject matter expertise to create a WMI extension.
-* You're familiar with [Extensions basic concepts](/docs/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.") and the general structure of the [extension YAML file](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml "Learn how to create an extension YAML file using the Extensions framework.").
+* You're familiar with [Extensions basic concepts](../ru/ingest-from/extensions/concepts.md "Learn more about the concept of Dynatrace Extensions.") and the general structure of the [extension YAML file](../ru/ingest-from/extensions/develop-your-extensions/extension-yaml.md "Learn how to create an extension YAML file using the Extensions framework.").
 
 ## Prerequisites and support
 
-Learn the prerequisites and scope of the supported technologies. For limits applying to your extension, see [Extensions limits](/docs/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.").
+Learn the prerequisites and scope of the supported technologies. For limits applying to your extension, see [Extensions limits](../ru/ingest-from/extensions/concepts.md "Learn more about the concept of Dynatrace Extensions.").
 
 ### Supported Dynatrace versions
 
@@ -5737,7 +5737,7 @@ Learn the prerequisites and scope of the supported technologies. For limits appl
 
 ### Monitored host
 
-Local WMI extensions can be run on any OneAgent-supported Windows host without any special requirements. Make sure Extension Execution Controller (EEC) is enabled at the environment or selected host level. For more information, see [Extension Execution Controller](/docs/ingest-from/extensions/concepts#eec "Learn more about the concept of Dynatrace Extensions.").
+Local WMI extensions can be run on any OneAgent-supported Windows host without any special requirements. Make sure Extension Execution Controller (EEC) is enabled at the environment or selected host level. For more information, see [Extension Execution Controller](../ru/ingest-from/extensions/concepts.md#eec "Learn more about the concept of Dynatrace Extensions.").
 
 A host you want to monitor using a remote WMI extension must meet the requirements described below, including remote permissions enabled and connectivity details configured to allow your ActiveGate to access the WMI monitoring data.
 
@@ -5833,21 +5833,21 @@ Your `extension.yaml` file defines the generic scope of your extension and is th
 
 This topic describes core elements of the `extension.yaml` file applicable to any kind of extension from the Dynatrace Extensions framework. For elements specific to particular data source types, see:
 
-* [SNMP extension](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions "Learn how to create an SNMP extension using the Extensions framework.")
-* [WMI extension](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions "Learn how to create a WMI extension using the Extensions framework.")
-* [Prometheus extension](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Learn how to create a Prometheus extension using the Extensions framework.")
-* [JMX extension](/docs/ingest-from/extensions/develop-your-extensions/data-sources/jmx "Learn how to create a JMX extension using the Extensions framework.")
-* [SQL extension](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql "Learn how to create an SQL data source-based extension using the Extensions framework.")
+* [SNMP extension](../ru/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions.md "Learn how to create an SNMP extension using the Extensions framework.")
+* [WMI extension](../ru/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions.md "Learn how to create a WMI extension using the Extensions framework.")
+* [Prometheus extension](../ru/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions.md "Learn how to create a Prometheus extension using the Extensions framework.")
+* [JMX extension](../ru/ingest-from/extensions/develop-your-extensions/data-sources/jmx.md "Learn how to create a JMX extension using the Extensions framework.")
+* [SQL extension](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql.md "Learn how to create an SQL data source-based extension using the Extensions framework.")
 
 ## Schemas
 
-When you create the `extension.yaml` file, make sure to rely on the schemas provided through the [Extensions API](/docs/dynatrace-api/environment-api/extensions-20 "Learn how to manage extensions with the Dynatrace Extensions 2.0 API."). We recommend that you use an editor supporting schema validation and snippets, which significantly simplifies `extension.yaml` editing.
+When you create the `extension.yaml` file, make sure to rely on the schemas provided through the [Extensions API](dynatrace-api/environment-api/extensions-20.md "Learn how to manage extensions with the Dynatrace Extensions 2.0 API."). We recommend that you use an editor supporting schema validation and snippets, which significantly simplifies `extension.yaml` editing.
 
 We recommend using the Dynatrace Extensions VS Code add-on provided by Dynatrace. For more information, see [Add-on for VS Codeï»¿](https://dt-url.net/tx03uks/).
 
 To download Extensions schemas:
 
-1. Check available schema versions using the [GET all schemas](/docs/dynatrace-api/environment-api/extensions-20/schemas/get-all-schemas "View available extension schema versions via the Dynatrace Extensions 2.0 API.") endpoint. Schema version relate to Dynatrace Cluster versions.
+1. Check available schema versions using the [GET all schemas](dynatrace-api/environment-api/extensions-20/schemas/get-all-schemas.md "View available extension schema versions via the Dynatrace Extensions 2.0 API.") endpoint. Schema version relate to Dynatrace Cluster versions.
 
    ```
    curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/schemas" \
@@ -5886,7 +5886,7 @@ To download Extensions schemas:
 
    }
    ```
-2. Use the [GET all files](/docs/dynatrace-api/environment-api/extensions-20/schemas/get-all-files "View available schema files in a schema version via the Dynatrace Extensions 2.0 API.") endpoint to list all available schemas for a specific Dynatrace version.
+2. Use the [GET all files](dynatrace-api/environment-api/extensions-20/schemas/get-all-files.md "View available schema files in a schema version via the Dynatrace Extensions 2.0 API.") endpoint to list all available schemas for a specific Dynatrace version.
    For example:
 
    ```
@@ -5950,7 +5950,7 @@ To download Extensions schemas:
 
    }
    ```
-3. Use the [GET a file](/docs/dynatrace-api/environment-api/extensions-20/schemas/get-file "View an extension schema file via the Dynatrace Extensions 2.0 API.") endpoint to download a specific file in a specific version. For example, to download `extension.schema.json`, version `1.215`:
+3. Use the [GET a file](dynatrace-api/environment-api/extensions-20/schemas/get-file.md "View an extension schema file via the Dynatrace Extensions 2.0 API.") endpoint to download a specific file in a specific version. For example, to download `extension.schema.json`, version `1.215`:
 
    ```
    curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/schemas/1.215/extension.schema.json" \
@@ -5968,9 +5968,9 @@ Alternatively, you can use the Dynatrace GitHub repository for [Extensions schem
 
 ## Start extension YAML file
 
-The extension YAML file starts with basic information about the extension. It also contains optional references to [assets](/docs/ingest-from/extensions/concepts#extension-assets "Learn more about the concept of Dynatrace Extensions.") used by the extension.
+The extension YAML file starts with basic information about the extension. It also contains optional references to [assets](../ru/ingest-from/extensions/concepts.md#extension-assets "Learn more about the concept of Dynatrace Extensions.") used by the extension.
 
-* `name`âthe name of your extension. A custom extension name (an extension not developed by Dynatrace) must start with `custom:`. The string must comply with the metric [ingestion protocol requirements](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#dimension-optional "Learn how the data ingestion protocol for Dynatrace Metrics API works.") for dimensions.
+* `name`âthe name of your extension. A custom extension name (an extension not developed by Dynatrace) must start with `custom:`. The string must comply with the metric [ingestion protocol requirements](../ru/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#dimension-optional "Learn how the data ingestion protocol for Dynatrace Metrics API works.") for dimensions.
 * `version`âthe version of your extension in `major`.`minor`.`build` format, such as `1.0.0`. Your Dynatrace environment can store 10 extension versions, but only one can be active at the time.
 * `minDynatraceVersion`âthe earliest Dynatrace version supported by the extension enclosed in quotes (`"`), such as `"1.213"`.
 * `author`âthe extension developer or company.
@@ -5979,7 +5979,7 @@ The extension YAML file starts with basic information about the extension. It al
 
 ## Groups and subgroups
 
-You can organize your metrics into groups and subgroups to assign metrics within a group to specific [dimensions](#dimensions) or [feature sets](/docs/ingest-from/extensions/concepts#feature-sets "Learn more about the concept of Dynatrace Extensions."), or control the [interval](#interval) at which they're reported at a group level.
+You can organize your metrics into groups and subgroups to assign metrics within a group to specific [dimensions](#dimensions) or [feature sets](../ru/ingest-from/extensions/concepts.md#feature-sets "Learn more about the concept of Dynatrace Extensions."), or control the [interval](#interval) at which they're reported at a group level.
 
 For each extension, you can define 10 groups, and each group can contain 10 subgroups.
 
@@ -6108,8 +6108,8 @@ interval: 5m
 You can define metrics at the extension, group, and subgroup level. The details on how you extract metric values vary depending on the data source type.
 See:
 
-* [SNMP](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions#dimensions "Learn how to create an SNMP extension using the Extensions framework.")
-* [WMI](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions#dimensions "Learn how to create a WMI extension using the Extensions framework.")
+* [SNMP](../ru/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions.md#dimensions "Learn how to create an SNMP extension using the Extensions framework.")
+* [WMI](../ru/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions.md#dimensions "Learn how to create a WMI extension using the Extensions framework.")
 
 ### Best practices for metric keys
 
@@ -6120,9 +6120,9 @@ The metrics you ingest into Dynatrace using your extension are just some of the 
 You can define a dimension at the metric, group, and subgroup level. The details on how you extract dimension values vary depending on the data source type.
 See:
 
-* [SNMP](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions#dimensions "Learn how to create an SNMP extension using the Extensions framework.")
-* [WMI](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions#dimensions "Learn how to create a WMI extension using the Extensions framework.")
-* [Prometheus](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions#dimensions "Learn how to create a Prometheus extension using the Extensions framework.")
+* [SNMP](../ru/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions.md#dimensions "Learn how to create an SNMP extension using the Extensions framework.")
+* [WMI](../ru/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions.md#dimensions "Learn how to create a WMI extension using the Extensions framework.")
+* [Prometheus](../ru/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions.md#dimensions "Learn how to create a Prometheus extension using the Extensions framework.")
 
 ## Variables
 
@@ -6346,7 +6346,7 @@ Define the filter based on a condition as follows:
     filter: const:$not(<expr>)
     ```
 
-The filtering logic is different for WMI extensions, where you pass the condition as a query. For more information, see [Filter extracted dimensions](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-schema-reference#filter-extracted-dimensions "Learn about WMI extensions in the Extensions framework.").
+The filtering logic is different for WMI extensions, where you pass the condition as a query. For more information, see [Filter extracted dimensions](ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-schema-reference.md#filter-extracted-dimensions "Learn about WMI extensions in the Extensions framework.").
 
 ---
 
@@ -6377,8 +6377,8 @@ Each extension uploaded to a Dynatrace environment must be signed so that Dynatr
 Depending on your needs, choose one of the following methods to sign and build your extension:
 
 * [`dt-extensions-sdk`ï»¿](https://dynatrace-extensions.github.io/dt-extensions-python-sdk/cli/sign.html) - an all-in-one CLI tool Recommended
-* [VSCode Extension](/docs/ingest-from/extensions/develop-your-extensions/addon-for-vscode "Introduction to the Dynatrace Extensions add-on for VS Code") - an all-in-one editor-based tool Recommended
-* [Use OpenSSL](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions/manually-openssl "Sign an extension manually with OpenSSL.") - a standard crypto library for manual control
+* [VSCode Extension](ingest-from/extensions/develop-your-extensions/addon-for-vscode.md "Introduction to the Dynatrace Extensions add-on for VS Code") - an all-in-one editor-based tool Recommended
+* [Use OpenSSL](ingest-from/extensions/develop-your-extensions/sign-extensions/manually-openssl.md "Sign an extension manually with OpenSSL.") - a standard crypto library for manual control
 
 Dynatrace CLI
 
@@ -6395,7 +6395,7 @@ By doing this:
 * You verify the authenticity of distributed extensions
 * You prevent potential malicious extension distribution by an intruder who could take control of your environment
 
-For JMX extensions, you only need to add the certificate to the Dynatrace [credential vault](/docs/manage/credential-vault "Store and manage credentials in the credential vault.").
+For JMX extensions, you only need to add the certificate to the Dynatrace [credential vault](../common/manage/credential-vault.md "Store and manage credentials in the credential vault.").
 When adding the certificate, select the **Extension validation** scope.
 
 ### Remote extensions
@@ -6457,11 +6457,11 @@ Customers needing help with unsupported extensions or extension files can reques
 
 ## Before you begin
 
-Get familiar with the [Dynatrace Extensions concepts](/docs/ingest-from/extensions/concepts#concepts "Learn more about the concept of Dynatrace Extensions.").
+Get familiar with the [Dynatrace Extensions concepts](../ru/ingest-from/extensions/concepts.md#concepts "Learn more about the concept of Dynatrace Extensions.").
 
 ## Security best practices
 
-Dynatrace applies [secure development controls](/docs/manage/data-privacy-and-security/data-security/secure-development-controls "Learn how we ensure complete security for all Dynatrace software components and development practices.") in its Security Development Lifecycle (SDL).
+Dynatrace applies [secure development controls](../ru/manage/data-privacy-and-security/data-security/secure-development-controls.md "Learn how we ensure complete security for all Dynatrace software components and development practices.") in its Security Development Lifecycle (SDL).
 
 Follow these best practices to ensure your extensions are secure, reliable, and compliant with your environmentâs security standards.
 
@@ -6484,7 +6484,7 @@ Follow these best practices to ensure your extensions are secure, reliable, and 
 * When using the API to manage extensions, use personal tokens instead of tokens that have global extension write access.
 * Set up security policies that allow editing extension settings, and assign them only to trusted user groups.
 
-  + Use the [Extensions IAM service](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#extensions "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") to restrict who can edit settings, based on specific scopes like extensions, zones, or host groups. This helps you create detailed, secure policies.
+  + Use the [Extensions IAM service](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#extensions "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") to restrict who can edit settings, based on specific scopes like extensions, zones, or host groups. This helps you create detailed, secure policies.
 
 ### Sensitive data sources
 
@@ -6564,7 +6564,7 @@ Write user preferences
 
 ### Things to consider
 
-If you can't access ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**, make sure you have the required [permissions](#permissions), specifically those starting with `extensions:configuration` and `extensions:definitions`. For additional information, refer to [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies") and [IAM Policy - Read and write permissions on extensions configurationsï»¿](https://community.dynatrace.com/t5/Dynatrace-tips/IAM-Policy-Read-and-write-permissions-on-extensions/m-p/220907) in the Dynatrace Community.
+If you can't access ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**, make sure you have the required [permissions](#permissions), specifically those starting with `extensions:configuration` and `extensions:definitions`. For additional information, refer to [Working with policies](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies") and [IAM Policy - Read and write permissions on extensions configurationsï»¿](https://community.dynatrace.com/t5/Dynatrace-tips/IAM-Policy-Read-and-write-permissions-on-extensions/m-p/220907) in the Dynatrace Community.
 
 ## Overview
 
@@ -6605,11 +6605,11 @@ Select **Add device** to define the devices from which you want to pull data and
 
 Your extension appears in Dynatrace Hub. The next step is to provide the monitoring configuration for your extension. The detailed steps depend on your extension data source. For more information, see:
 
-* [SNMP extensions](/docs/ingest-from/extensions/supported-extensions/data-sources/snmp#activate-extension "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")
-* [WMI extensions](/docs/ingest-from/extensions/supported-extensions/data-sources/wmi#activate-extension "Learn how to extend observability in Dynatrace with declarative WMI metrics ingestion.")
-* [Prometheus extensions](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions#activate-extension "Learn how to extend observability in Dynatrace with declarative Prometheus metrics ingestion.")
-* [Oracle SQL extensions](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql#activate-extension "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")
-* [Microsoft SQL extensions](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from Microsoft SQL Server.")
+* [SNMP extensions](../ru/ingest-from/extensions/supported-extensions/data-sources/snmp.md#activate-extension "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")
+* [WMI extensions](../ru/ingest-from/extensions/supported-extensions/data-sources/wmi.md#activate-extension "Learn how to extend observability in Dynatrace with declarative WMI metrics ingestion.")
+* [Prometheus extensions](../ru/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions.md#activate-extension "Learn how to extend observability in Dynatrace with declarative Prometheus metrics ingestion.")
+* [Oracle SQL extensions](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql.md#activate-extension "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")
+* [Microsoft SQL extensions](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql.md#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from Microsoft SQL Server.")
 
 ### Update an extension from Dynatrace Hub
 
@@ -6638,7 +6638,7 @@ When you delete a version, Dynatrace Hub activates the latest available version.
 
 ### API permissions
 
-* You need an [API token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") with the following permissions to manage the extension lifecycle:
+* You need an [API token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") with the following permissions to manage the extension lifecycle:
 
   + API v2
 
@@ -6679,8 +6679,8 @@ curl -X POST "https://{env-id}.live.dynatrace.com/api/v2/extensions" \
 
 Replace:
 
-* `{env-id}` with your [Environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
-* `{api-token}` with an [API token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](#prerequisites).
+* `{env-id}` with your [Environment ID](../ru/discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+* `{api-token}` with an [API token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](#prerequisites).
 * `MyCustomExtension.zip` with the actual name of your extension package.
 
 After a successful upload, the Dynatrace API returns basic extension details, including the extension name, version, and minimum Dynatrace version required to run the extension:
@@ -6771,8 +6771,8 @@ curl -X PUT "https://{env-id}.live.dynatrace.com/api/v2/extensions/{extensionNam
 
 Replace:
 
-* `{env-id}` with your [Environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
-* `{api-token}` with an [API token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](#prerequisites).
+* `{env-id}` with your [Environment ID](../ru/discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+* `{api-token}` with an [API token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](#prerequisites).
 * `{extensionName}` with the actual extension name.
 * `{version}` with the extension version you want to activate.
 
@@ -6810,11 +6810,11 @@ curl -X POST "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName>/moni
 
 Replace:
 
-* `{env-id}` with your [Environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
-* `{api-token}` with an [API token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](#prerequisites).
+* `{env-id}` with your [Environment ID](../ru/discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+* `{api-token}` with an [API token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](#prerequisites).
 * `{extensionName}` with the actual extension name.
 * `{version}` with the extension version you want to activate.
-* `{monitoring-configuration}` with the filename containing the JSON payload with the monitoring configuration. For details on the format, see [SNMP](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions#monitoring-configuration "Learn how to create an SNMP extension using the Extensions framework.").
+* `{monitoring-configuration}` with the filename containing the JSON payload with the monitoring configuration. For details on the format, see [SNMP](../ru/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions.md#monitoring-configuration "Learn how to create an SNMP extension using the Extensions framework.").
 
 After a successful call, the Dynatrace API returns the `MonitoringConfigurationResponse` object. For example:
 
@@ -6830,7 +6830,7 @@ After a successful call, the Dynatrace API returns the `MonitoringConfigurationR
 ]
 ```
 
-After a few minutes, go to [Metric browser](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.") and search for the metrics you defined for your extension.
+After a few minutes, go to [Metric browser](../ru/analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser.") and search for the metrics you defined for your extension.
 
 ### Update extension with Dynatrace API
 
@@ -6846,7 +6846,7 @@ To enable the environment configuration version, you need to add the version par
 
 * After a successful upload, the Dynatrace API returns basic extension details, including the version.
 * Find the version in the `extension.yaml` file inside the extension package.
-* Run the [Get extension versions](/docs/dynatrace-api/environment-api/extensions-20/extensions/get-extension-versions "Use the Dynatrace Extensions 2.0 API to view all available versions of an extension.") API call.
+* Run the [Get extension versions](dynatrace-api/environment-api/extensions-20/extensions/get-extension-versions.md "Use the Dynatrace Extensions 2.0 API to view all available versions of an extension.") API call.
 
 Run the following command to activate the new version. For this example, we use the Dynatrace SaaS URL.
 
@@ -6872,8 +6872,8 @@ curl -X PUT "https://{env-id}.live.dynatrace.com/api/v2/extensions/{extensionNam
 
 Replace:
 
-* `{env-id}` with your [Environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
-* `{api-token}` with an [API token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](#prerequisites).
+* `{env-id}` with your [Environment ID](../ru/discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+* `{api-token}` with an [API token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](#prerequisites).
 * `{extensionName}` with the actual extension name.
 * `{version}` with the extension version you want to activate.
 
@@ -6887,11 +6887,11 @@ If you need to revert activation to an earlier version, run the command above wi
 
 ### Delete extension with Dynatrace API
 
-If you uploaded a number of extension versions, you need to delete all the versions to completely remove the extension from your environment. You can use [GET extension versions](/docs/dynatrace-api/environment-api/extensions-20/extensions/get-extension-versions "Use the Dynatrace Extensions 2.0 API to view all available versions of an extension.") to list all the extension versions available in your environment.
+If you uploaded a number of extension versions, you need to delete all the versions to completely remove the extension from your environment. You can use [GET extension versions](dynatrace-api/environment-api/extensions-20/extensions/get-extension-versions.md "Use the Dynatrace Extensions 2.0 API to view all available versions of an extension.") to list all the extension versions available in your environment.
 
 #### Delete environment configuration with API
 
-To delete the currently active environment configuration, use [DELETE environment configuration](/docs/dynatrace-api/environment-api/extensions-20/environment-configurations/del-deactivate-env-config "Delete currently active environment configuration of an extension via the Dynatrace Extensions 2.0 API."). For this example, we use the Dynatrace SaaS URL.
+To delete the currently active environment configuration, use [DELETE environment configuration](dynatrace-api/environment-api/extensions-20/environment-configurations/del-deactivate-env-config.md "Delete currently active environment configuration of an extension via the Dynatrace Extensions 2.0 API."). For this example, we use the Dynatrace SaaS URL.
 
 ```
 curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/environmentConfiguration" \
@@ -6907,8 +6907,8 @@ curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/en
 
 Replace:
 
-* `{env-id}` with your [Environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
-* `{api-token}` with an [API token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](#prerequisites).
+* `{env-id}` with your [Environment ID](../ru/discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+* `{api-token}` with an [API token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](#prerequisites).
 * `{extensionName}` with the actual extension name.
 
 After a successful deactivation, the Dynatrace API returns the version of the deactivated extension. For example:
@@ -6919,7 +6919,7 @@ After a successful deactivation, the Dynatrace API returns the version of the de
 
 #### Delete extension version with API
 
-To delete an extension version, use [DELETE an extension version](/docs/dynatrace-api/environment-api/extensions-20/extensions/del-version "Delete an extension from your environment via the Dynatrace Extensions 2.0 API."). In this example, we use the Dynatrace SaaS URL.
+To delete an extension version, use [DELETE an extension version](dynatrace-api/environment-api/extensions-20/extensions/del-version.md "Delete an extension from your environment via the Dynatrace Extensions 2.0 API."). In this example, we use the Dynatrace SaaS URL.
 
 ```
 curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/{version}" \
@@ -6935,8 +6935,8 @@ curl -X DELETE "{env-id}.live.dynatrace.com/api/v2/extensions/{extensionName}/{v
 
 Replace:
 
-* `{env-id}` with your [Environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
-* `{api-token}` with an [API token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](#prerequisites).
+* `{env-id}` with your [Environment ID](../ru/discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+* `{api-token}` with an [API token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](#prerequisites).
 * `{extensionName}` with the actual extension name.
 * `{version}` with the extension version you want to delete.
 
@@ -7027,13 +7027,13 @@ Dynatrace provides you with a framework that you can use to extend your observab
 
 You can also extend your insights into data related to SNMP traps issued in your infrastructure.
 
-First, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=snmp) to see if your device is covered by an existing extension. If it isn't, you can build your own [Dynatrace SNMP extension](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions "Learn how to create an SNMP extension using the Extensions framework.") to cover your SNMP device.
+First, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=snmp) to see if your device is covered by an existing extension. If it isn't, you can build your own [Dynatrace SNMP extension](../ru/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions.md "Learn how to create an SNMP extension using the Extensions framework.") to cover your SNMP device.
 
 ## Before you begin
 
 1. Decide which SNMP will provide data for the extension. Dynatrace Extensions framework supports SNMP v2c and v3. Depending on the SNMP version, prepare the necessary authentication details.
 2. Designate an ActiveGate group or groups that will remotely connect to your SNMP devices to pull data. All ActiveGates in each designated group need to be able to connect to your SNMP devices.
-3. Learn [hardware requirements](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions#hw "Learn how to create an SNMP extension using the Extensions framework.") for an ActiveGate performing SNMP monitoring.
+3. Learn [hardware requirements](../ru/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions.md#hw "Learn how to create an SNMP extension using the Extensions framework.") for an ActiveGate performing SNMP monitoring.
 
 ## Manage SNMP extensions
 
@@ -7062,13 +7062,13 @@ Next, perform the following steps.
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**ActiveGate group**](/docs/ingest-from/extensions/supported-extensions/data-sources/snmp#step-1 "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**ActiveGate group**](../ru/ingest-from/extensions/supported-extensions/data-sources/snmp.md#step-1 "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Define devices**](/docs/ingest-from/extensions/supported-extensions/data-sources/snmp#step-2 "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")[![Step 3 optional](https://dt-cdn.net/images/dotted-step-3-e2082c1921.svg "Step 3 optional")
+**Define devices**](../ru/ingest-from/extensions/supported-extensions/data-sources/snmp.md#step-2 "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")[![Step 3 optional](https://dt-cdn.net/images/dotted-step-3-e2082c1921.svg "Step 3 optional")
 
-**Advanced properties**](/docs/ingest-from/extensions/supported-extensions/data-sources/snmp#step-3 "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**Advanced properties**](../ru/ingest-from/extensions/supported-extensions/data-sources/snmp.md#step-3 "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**Activate extension**](/docs/ingest-from/extensions/supported-extensions/data-sources/snmp#step-4 "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")
+**Activate extension**](../ru/ingest-from/extensions/supported-extensions/data-sources/snmp.md#step-4 "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")
 
 ### Step 1 ActiveGate group
 
@@ -7125,7 +7125,7 @@ When done, select **Activate**.
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](../ru/ingest-from/extensions/manage-extensions.md "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
 
 ## Custom MIB files
 
@@ -7208,11 +7208,11 @@ Required permission: **Change monitoring settings**
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Define endpoints**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/ibm-db#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from IBM Database server.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Define endpoints**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/ibm-db.md#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from IBM Database server.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**ActiveGate group**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/ibm-db#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from IBM Database server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**ActiveGate group**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/ibm-db.md#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from IBM Database server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Activate extension**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/ibm-db#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from IBM Database server.")
+**Activate extension**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/ibm-db.md#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from IBM Database server.")
 
 ### Step 1 Define endpoints
 
@@ -7225,7 +7225,7 @@ Required permission: **Change monitoring settings**
 
   + Only basic authentication is supported.
   + Authentication details passed to Dynatrace when activating monitoring configuration are obfuscated and it's impossible to retrieve them.
-  + You can [use credential vault](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/ibm-monitoring#authentication "IBM DB2 extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
+  + You can [use credential vault](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/ibm-monitoring.md#authentication "IBM DB2 extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
 * Select **Next step**
 
 ### Step 2 ActiveGate group
@@ -7245,7 +7245,7 @@ Required permission: **Change monitoring settings**
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](../ru/ingest-from/extensions/manage-extensions.md "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
 
 ---
 
@@ -7268,7 +7268,7 @@ scraped: 2026-03-06T21:16:10.453218
 
 Dynatrace provides you with a framework that you can use to extend your application observability into data acquired directly from your Microsoft SQL Database layer, so that you can monitor how database server tasks impact your app.
 
-Start by checking [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=microsoft+sql) to see if the Dynatrace-provided Microsoft SQL Server extension satisfies your requirements. If you need something different, you can build your own [Microsoft SQL Server extension](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql#microsoft-sql-monitoring "Learn how to create an SQL data source-based extension using the Extensions framework.").
+Start by checking [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=microsoft+sql) to see if the Dynatrace-provided Microsoft SQL Server extension satisfies your requirements. If you need something different, you can build your own [Microsoft SQL Server extension](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql.md#microsoft-sql-monitoring "Learn how to create an SQL data source-based extension using the Extensions framework.").
 
 ## Before you begin
 
@@ -7298,11 +7298,11 @@ Required permission: **Change monitoring settings**
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-Define endpoints](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from Microsoft SQL Server.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+Define endpoints](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql.md#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from Microsoft SQL Server.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-Select ActiveGates](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from Microsoft SQL Server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+Select ActiveGates](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql.md#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from Microsoft SQL Server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-Activate the extension](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from Microsoft SQL Server.")
+Activate the extension](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql.md#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from Microsoft SQL Server.")
 
 ### Step 1 Define endpoints
 
@@ -7312,13 +7312,13 @@ Activate the extension](/docs/ingest-from/extensions/supported-extensions/data-s
    * Optional Port
    * Optional Instance name
    * Optional Database name
-   * Authentication scheme. You can choose from the following [authentication schemes](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring#authentication "Microsoft SQL extensions in the Extensions framework."):
+   * Authentication scheme. You can choose from the following [authentication schemes](ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring.md#authentication "Microsoft SQL extensions in the Extensions framework."):
 
      + Basic authentication
      + Kerberos authentication
      + NTLM authentication
-   * You can [enable SSL](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring#ssl "Microsoft SQL extensions in the Extensions framework.") to establish a secure connection for your configuration.
-   * You can [use credential vault](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring#credential-vault "Microsoft SQL extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
+   * You can [enable SSL](ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring.md#ssl "Microsoft SQL extensions in the Extensions framework.") to establish a secure connection for your configuration.
+   * You can [use credential vault](ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring.md#credential-vault "Microsoft SQL extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
 2. Select **Next step**.
 
 ### Step 2 Select ActiveGates
@@ -7333,7 +7333,7 @@ Activate the extension](/docs/ingest-from/extensions/supported-extensions/data-s
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. To learn how to use it to activate an extension using the Dynatrace API, see [Manage Extensions](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.").
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. To learn how to use it to activate an extension using the Dynatrace API, see [Manage Extensions](../ru/ingest-from/extensions/manage-extensions.md "Learn how to manage extensions.").
 
 ## Related topics
 
@@ -7390,11 +7390,11 @@ Required permission: **Change monitoring settings**
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Define endpoints**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/mysql#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from MySQL Database server.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Define endpoints**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/mysql.md#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from MySQL Database server.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**ActiveGate group**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/mysql#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from MySQL Database server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**ActiveGate group**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/mysql.md#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from MySQL Database server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Activate extension**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/mysql#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from MySQL Database server.")
+**Activate extension**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/mysql.md#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from MySQL Database server.")
 
 ### Step 1 Define endpoints
 
@@ -7407,7 +7407,7 @@ Required permission: **Change monitoring settings**
 
   + Only basic authentication is supported.
   + Authentication details passed to Dynatrace when activating monitoring configuration are obfuscated and it's impossible to retrieve them.
-  + You can [use credential vault](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/mysql-monitoring#authentication "MySQL extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
+  + You can [use credential vault](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/mysql-monitoring.md#authentication "MySQL extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
 * Select **Next step**
 
 ### Step 2 Select ActiveGates
@@ -7427,7 +7427,7 @@ Required permission: **Change monitoring settings**
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](../ru/ingest-from/extensions/manage-extensions.md "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
 
 ## Related topics
 
@@ -7454,7 +7454,7 @@ scraped: 2026-03-06T21:16:43.613643
 
 Dynatrace provides you with a framework that you can use to extend your application observability into data acquired directly from your Oracle Database layer, so that you can monitor how database server tasks impact your app.
 
-To get started, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=oracle+sql) to see if the Dynatrace-provided Oracle Database extension satisfies your requirements. If this is not the case, you can build your own [Dynatrace Oracle Database extension](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql "Learn how to create an SQL data source-based extension using the Extensions framework.").
+To get started, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=oracle+sql) to see if the Dynatrace-provided Oracle Database extension satisfies your requirements. If this is not the case, you can build your own [Dynatrace Oracle Database extension](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql.md "Learn how to create an SQL data source-based extension using the Extensions framework.").
 
 ## Before you begin
 
@@ -7493,13 +7493,13 @@ Next, perform the following steps.
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Accept Oracle JDBC driver redistribution license**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql#step-1 "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Accept Oracle JDBC driver redistribution license**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql.md#step-1 "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Define endpoints**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql#step-2 "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Define endpoints**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql.md#step-2 "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**ActiveGate group**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql#step-3 "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**ActiveGate group**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql.md#step-3 "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**Activate extension**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql#step-4 "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")
+**Activate extension**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql.md#step-4 "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")
 
 ### Step 1 Accept Oracle JDBC driver redistribution license
 
@@ -7514,7 +7514,7 @@ Select **Add Oracle endpoint** to define the Oracle Database servers from which 
 * Database identifier, either **Service Name** or **SID**.
 * Authentication credentials. Note that only basic authentication is supported. Authentication details passed to Dynatrace when activating monitoring configuration are obfuscated and it's impossible to retrieve them.
 
-  + You can [use credential vault](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring#credential-vault "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.") to provide a more secure approach of storing and managing user credentials.
+  + You can [use credential vault](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring.md#credential-vault "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.") to provide a more secure approach of storing and managing user credentials.
 
 When done, select **Next step**
 
@@ -7535,7 +7535,7 @@ When done, select **Activate**.
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](../ru/ingest-from/extensions/manage-extensions.md "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
 
 ## Related topics
 
@@ -7592,11 +7592,11 @@ Required permission: **Change monitoring settings**
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Define endpoints**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/postgresql#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from PostgreSQL Database server.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Define endpoints**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/postgresql.md#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from PostgreSQL Database server.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Select ActiveGates**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/postgresql#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from PostgreSQL Database server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Select ActiveGates**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/postgresql.md#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from PostgreSQL Database server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Activate extension**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/postgresql#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from PostgreSQL Database server.")
+**Activate extension**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/postgresql.md#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from PostgreSQL Database server.")
 
 ### Step 1 Define endpoints
 
@@ -7609,7 +7609,7 @@ Required permission: **Change monitoring settings**
 
   + Only basic authentication is supported.
   + Authentication details passed to Dynatrace when activating monitoring configuration are obfuscated and it's impossible to retrieve them.
-  + You can [use credential vault](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring#authentication "PostgreSQL extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
+  + You can [use credential vault](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring.md#authentication "PostgreSQL extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
 * Select **Next step**.
 
 ### Step 2 Select ActiveGates
@@ -7629,7 +7629,7 @@ Required permission: **Change monitoring settings**
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. To learn how to use it to activate an extension using the Dynatrace API, see [Manage Extensions](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.").
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. To learn how to use it to activate an extension using the Dynatrace API, see [Manage Extensions](../ru/ingest-from/extensions/manage-extensions.md "Learn how to manage extensions.").
 
 ## Related topics
 
@@ -7686,13 +7686,13 @@ Required permission: **Change monitoring settings**
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**SAP Hana JDBC driver redistribution license**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql#jdbc-driver "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**SAP Hana JDBC driver redistribution license**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql.md#jdbc-driver "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Define endpoints**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from SAP Hana Database server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Define endpoints**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana.md#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from SAP Hana Database server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**ActiveGate group**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from SAP Hana Database server.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**ActiveGate group**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana.md#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from SAP Hana Database server.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**Activate extension**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from SAP Hana Database server.")
+**Activate extension**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana.md#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from SAP Hana Database server.")
 
 ### Step 1 SAP Hana JDBC driver
 
@@ -7720,7 +7720,7 @@ You can obtain the `ngdbc.jar` file from the SAP Hana Client installation direct
 
   + Only basic authentication is supported.
   + Authentication details passed to Dynatrace when activating monitoring configuration are obfuscated and it's impossible to retrieve them.
-  + You can [use credential vault](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring#authentication "SAP Hana extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
+  + You can [use credential vault](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring.md#authentication "SAP Hana extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
 * Select **Next step**.
 
 ### Step 3 ActiveGate group
@@ -7740,7 +7740,7 @@ You can obtain the `ngdbc.jar` file from the SAP Hana Client installation direct
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](../ru/ingest-from/extensions/manage-extensions.md "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
 
 ## Related topics
 
@@ -7799,11 +7799,11 @@ Required permission: **Change monitoring settings**
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Define endpoints**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/snowflake-sql#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from Snowflake Database.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Define endpoints**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/snowflake-sql.md#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from Snowflake Database.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Select ActiveGates**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/snowflake-sql#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from Snowflake Database.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Select ActiveGates**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/snowflake-sql.md#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from Snowflake Database.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Activate extension**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/snowflake-sql#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from Snowflake Database.")
+**Activate extension**](../ru/ingest-from/extensions/supported-extensions/data-sources/sql/snowflake-sql.md#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from Snowflake Database.")
 
 ### Step 1 Define endpoints
 
@@ -7818,7 +7818,7 @@ Required permission: **Change monitoring settings**
 
   + Only basic authentication is supported.
   + Authentication details passed to Dynatrace when activating monitoring configuration are obfuscated and it's impossible to retrieve them.
-  + You can [use credential vault](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring#authentication "Snowflake Database extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
+  + You can [use credential vault](../ru/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring.md#authentication "Snowflake Database extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
 * Select **Next step**.
 
 ### Step 2 Select ActiveGates
@@ -7838,7 +7838,7 @@ Required permission: **Change monitoring settings**
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. To learn how to use it to activate an extension using the Dynatrace API, see [Manage Extensions](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.").
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. To learn how to use it to activate an extension using the Dynatrace API, see [Manage Extensions](../ru/ingest-from/extensions/manage-extensions.md "Learn how to manage extensions.").
 
 ## Related topics
 
@@ -7865,15 +7865,15 @@ scraped: 2026-03-06T21:16:41.961961
 
 Dynatrace provides you with a framework that you can use to extend your observability into data acquired directly for WMI-monitored Windows services and components. To this end, Dynatrace offers the facility to bring WMI data into Dynatrace at scale and in the context to all other data. This works best if you have OneAgent on the monitored Windows box, but it also works in an agentless manner.
 
-First, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=wmi) to see if your technology is covered by an existing extension. If it isn't, you can build your own [Dynatrace WMI extension](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions "Learn how to create a WMI extension using the Extensions framework.") to cover your Windows technology.
+First, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=wmi) to see if your technology is covered by an existing extension. If it isn't, you can build your own [Dynatrace WMI extension](../ru/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions.md "Learn how to create a WMI extension using the Extensions framework.") to cover your Windows technology.
 
 ## Before you begin
 
 1. Decide which of your Windows-based hosts will provide data for the extension.
 2. WMI extensions can run locally on an OneAgent (recommended) or remotely on an ActiveGate.
 
-   * When run locally on a Windows host, the extension will connect to the WMI interface automatically. Make sure Extension Execution Controller is enabled at the environment or selected host level. For more information, see [Extension Execution Controller](/docs/ingest-from/extensions/concepts#eec "Learn more about the concept of Dynatrace Extensions.")
-   * When monitored remotely, make sure your Windows-based ActiveGates belonging to the ActiveGate groups you designated for remote monitoring have remote permissions enabled. See [WMI data source](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions "Learn how to create a WMI extension using the Extensions framework.") for more information.
+   * When run locally on a Windows host, the extension will connect to the WMI interface automatically. Make sure Extension Execution Controller is enabled at the environment or selected host level. For more information, see [Extension Execution Controller](../ru/ingest-from/extensions/concepts.md#eec "Learn more about the concept of Dynatrace Extensions.")
+   * When monitored remotely, make sure your Windows-based ActiveGates belonging to the ActiveGate groups you designated for remote monitoring have remote permissions enabled. See [WMI data source](../ru/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions.md "Learn how to create a WMI extension using the Extensions framework.") for more information.
 
 ## Manage WMI extensions
 
@@ -7902,22 +7902,22 @@ Next, perform the following steps.
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Define monitoring source**](/docs/ingest-from/extensions/supported-extensions/data-sources/wmi#step-1 "Learn how to extend observability in Dynatrace with declarative WMI metrics ingestion.")[![Step 2 optional](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Step 2 optional")
+**Define monitoring source**](../ru/ingest-from/extensions/supported-extensions/data-sources/wmi.md#step-1 "Learn how to extend observability in Dynatrace with declarative WMI metrics ingestion.")[![Step 2 optional](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Step 2 optional")
 
-**Advanced properties**](/docs/ingest-from/extensions/supported-extensions/data-sources/wmi#step-2 "Learn how to extend observability in Dynatrace with declarative WMI metrics ingestion.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Advanced properties**](../ru/ingest-from/extensions/supported-extensions/data-sources/wmi.md#step-2 "Learn how to extend observability in Dynatrace with declarative WMI metrics ingestion.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Activate extension**](/docs/ingest-from/extensions/supported-extensions/data-sources/wmi#step-3 "Learn how to extend observability in Dynatrace with declarative WMI metrics ingestion.")
+**Activate extension**](../ru/ingest-from/extensions/supported-extensions/data-sources/wmi.md#step-3 "Learn how to extend observability in Dynatrace with declarative WMI metrics ingestion.")
 
 ### Step 1 Define monitoring source
 
 #### Local monitoring
 
-1. Select the host, host group or management zone for which you will run the extension, or choose to monitor the whole environment. The host needs to be running a OneAgent that is [enabled to run extensions](/docs/ingest-from/extensions/concepts#eec "Learn more about the concept of Dynatrace Extensions.").
+1. Select the host, host group or management zone for which you will run the extension, or choose to monitor the whole environment. The host needs to be running a OneAgent that is [enabled to run extensions](../ru/ingest-from/extensions/concepts.md#eec "Learn more about the concept of Dynatrace Extensions.").
 2. Select **Next step**.
 
 #### Remote monitoring
 
-1. Select **Monitor remotely** and choose the ActiveGate group to determine which ActiveGate or ActiveGates will run the extension. A Windows-based ActiveGate host needs to have remote permissions enabled. See [WMI data source](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions "Learn how to create a WMI extension using the Extensions framework.") for more information
+1. Select **Monitor remotely** and choose the ActiveGate group to determine which ActiveGate or ActiveGates will run the extension. A Windows-based ActiveGate host needs to have remote permissions enabled. See [WMI data source](../ru/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions.md "Learn how to create a WMI extension using the Extensions framework.") for more information
 2. Select **Next step**.
 3. Select **Add host** and provide connection details.
 
@@ -7948,7 +7948,7 @@ When done, select **Activate**.
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](../ru/ingest-from/extensions/manage-extensions.md "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
 
 ## Explore WMI extensions
 
@@ -7981,7 +7981,7 @@ scraped: 2026-03-06T21:36:47.888698
 * 5-min read
 * Published Oct 24, 2025
 
-In Dynatrace, a data source is a predefined, technology-specific method for collecting monitoring data from external systems or services using Dynatrace Extensions framework, either by [exensions provided by Dynatrace](/docs/ingest-from/extensions/supported-extensions "Learn more about the supported extensions.") or [custom extensions developed by you](/docs/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.").
+In Dynatrace, a data source is a predefined, technology-specific method for collecting monitoring data from external systems or services using Dynatrace Extensions framework, either by [exensions provided by Dynatrace](../ru/ingest-from/extensions/supported-extensions.md "Learn more about the supported extensions.") or [custom extensions developed by you](../ru/ingest-from/extensions/develop-your-extensions.md "Develop your own Extensions in Dynatrace.").
 
 The extensions data source simplifies monitoring by providing a declarative, technology-specific way to ingest data.
 
@@ -8005,7 +8005,7 @@ Used to collect metrics or query results from relational databases.
 
 Declaratively configured to run SQL queries against a database and retrieve structured data (for example, query performance, table sizes, connection pools).
 
-See [SQL extensions](/docs/ingest-from/extensions/supported-extensions/data-sources/sql "Extend observability in Dynatrace with declarative metrics ingested from SQL-based extensions.").
+See [SQL extensions](ingest-from/extensions/supported-extensions/data-sources/sql.md "Extend observability in Dynatrace with declarative metrics ingested from SQL-based extensions.").
 
 ### WMI data source
 
@@ -8013,7 +8013,7 @@ Leverages Windows Management Instrumentation (WMI) to monitor Windows systems.
 
 Provides access to performance counters, system metrics, and hardware details in a standardized way.
 
-See [Manage WMI extensions](/docs/ingest-from/extensions/supported-extensions/data-sources/wmi "Learn how to extend observability in Dynatrace with declarative WMI metrics ingestion.").
+See [Manage WMI extensions](../ru/ingest-from/extensions/supported-extensions/data-sources/wmi.md "Learn how to extend observability in Dynatrace with declarative WMI metrics ingestion.").
 
 ### Prometheus data source
 
@@ -8029,7 +8029,7 @@ Dynatrace provides you with a framework that you can use to extend your observab
 
 You can also extend your insights into data related to SNMP traps issued in your infrastructure.
 
-See [Manage SNMP extensions](/docs/ingest-from/extensions/supported-extensions/data-sources/snmp "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.").
+See [Manage SNMP extensions](../ru/ingest-from/extensions/supported-extensions/data-sources/snmp.md "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.").
 
 ### Python data source (the flexible option)
 
@@ -8080,7 +8080,7 @@ Use the top search bar to find an extension by entering its name, technology, or
 
 Latest Dynatrace
 
-With ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**, Dynatrace allows you to manage your extensions, including installation, configuration, and monitoring.](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.")
+With ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**, Dynatrace allows you to manage your extensions, including installation, configuration, and monitoring.](../ru/ingest-from/extensions/manage-extensions.md "Learn how to manage extensions.")
 
 ---
 
@@ -8145,19 +8145,19 @@ Learn more about the supported extensions.
 
 * Explanation
 
-Read this explanation](/docs/ingest-from/extensions/supported-extensions)[#### Develop your own Extensions
+Read this explanation](../ru/ingest-from/extensions/supported-extensions.md)[#### Develop your own Extensions
 
 Develop your own Extensions in Dynatrace.
 
 * How-to guide
 
-Read this guide](/docs/ingest-from/extensions/develop-your-extensions)[#### Manage Extensions
+Read this guide](../ru/ingest-from/extensions/develop-your-extensions.md)[#### Manage Extensions
 
 Learn how to manage extensions.
 
 * How-to guide
 
-Read this guide](/docs/ingest-from/extensions/manage-extensions)
+Read this guide](../ru/ingest-from/extensions/manage-extensions.md)
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

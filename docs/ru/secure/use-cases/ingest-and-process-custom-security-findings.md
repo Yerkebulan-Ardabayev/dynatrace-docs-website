@@ -458,7 +458,7 @@ scraped: 2026-03-06T21:15:06.393399
 
 ## Предварительные условия
 
-* Ваши [контейнеры развёрнуты в Kubernetes и отслеживаются Dynatrace](/docs/ingest-from/setup-on-k8s/deployment "Развертывание Dynatrace Operator на Kubernetes")
+* Ваши [контейнеры развёрнуты в Kubernetes и отслеживаются Dynatrace](../../ingest-from/setup-on-k8s/deployment.md "Развертывание Dynatrace Operator на Kubernetes")
 * Соответствующие образы контейнеров сканируются сторонним инструментом (в данном случае, Trivy)
 
 ### Разрешения
@@ -468,11 +468,11 @@ scraped: 2026-03-06T21:15:06.393399
 * `openpipeline:configurations:read`
 * `openpipeline:configurations:write`
 
-Чтобы узнать, как настроить разрешения, см. [Разрешения в Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Узнайте, как назначать разрешения для корзин и таблиц в Grail.").
+Чтобы узнать, как настроить разрешения, см. [Разрешения в Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Узнайте, как назначать разрешения для корзин и таблиц в Grail.").
 
 ## Начало работы
 
-Инструкции по загрузке любого типа событий см. в разделе [Как загружать данные (события)](/docs/platform/openpipeline/getting-started/how-to-ingestion "Как загружать данные для области конфигурации в OpenPipeline.").
+Инструкции по загрузке любого типа событий см. в разделе [Как загружать данные (события)](../../platform/openpipeline/getting-started/how-to-ingestion.md "Как загружать данные для области конфигурации в OpenPipeline.").
 
 1. Настройка конечной точки в Dynatrace
 
@@ -483,12 +483,12 @@ scraped: 2026-03-06T21:15:06.393399
    * Рекомендуемый вариант 1 — использование встроенной конечной точки событий безопасности. Скопируйте URL встроенной конечной точки событий безопасности.
 
      ![copy URL of builtin security events endpoint](https://dt-cdn.net/images/2024-08-28-19-48-19-1855-96c02de135.png)
-   * Вариант 2 — создание пользовательской конечной точки. Выберите **Source** для [создания пользовательского источника загрузки](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#ingest "Настройка источников загрузки, маршрутов и обработки данных в OpenPipeline."), затем скопируйте его URL.
+   * Вариант 2 — создание пользовательской конечной точки. Выберите **Source** для [создания пользовательского источника загрузки](../../platform/openpipeline/getting-started/tutorial-configure-processing.md#ingest "Настройка источников загрузки, маршрутов и обработки данных в OpenPipeline."), затем скопируйте его URL.
 
-   Подробнее о вариантах загрузки см. [Загрузка событий безопасности](/docs/secure/threat-observability/security-events-ingest "Загрузка внешних данных безопасности в Grail.").
-4. Создайте [токен доступа](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token "Изучите концепцию персонального токена доступа и его области.") с необходимой областью в соответствии с выбранным вариантом загрузки из шага 3.
+   Подробнее о вариантах загрузки см. [Загрузка событий безопасности](../threat-observability/security-events-ingest.md "Загрузка внешних данных безопасности в Grail.").
+4. Создайте [токен доступа](../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token.md "Изучите концепцию персонального токена доступа и его области.") с необходимой областью в соответствии с выбранным вариантом загрузки из шага 3.
 
-   Подробнее о необходимых областях см. [Начало работы](/docs/secure/threat-observability/security-events-ingest/ingest-custom-data#start "Загрузка событий безопасности из пользовательских сторонних продуктов через API.").
+   Подробнее о необходимых областях см. [Начало работы](../threat-observability/security-events-ingest/ingest-custom-data.md#start "Загрузка событий безопасности из пользовательских сторонних продуктов через API.").
 
 2. Передача данных в Grail
 
@@ -926,11 +926,11 @@ scraped: 2026-03-06T21:15:06.393399
 
 3. Проверка данных в Notebooks
 
-Для проверки данных откройте [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь результатами из ваших данных наблюдаемости.") и выполните запрос событий безопасности.
+Для проверки данных откройте [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь результатами из ваших данных наблюдаемости.") и выполните запрос событий безопасности.
 
 Пример DQL-запроса:
 
-Этот запрос был обновлён в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и необходимых действий для миграции см. в [руководстве по миграции таблицы безопасности Grail](/docs/secure/threat-observability/migration "Изучите изменения в новой таблице безопасности Grail и узнайте, как выполнить миграцию.").
+Этот запрос был обновлён в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и необходимых действий для миграции см. в [руководстве по миграции таблицы безопасности Grail](../threat-observability/migration.md "Изучите изменения в новой таблице безопасности Grail и узнайте, как выполнить миграцию.").
 
 ```
 fetch security.events
@@ -1024,8 +1024,8 @@ fetch security.events
 
 В таких сложных случаях необходимо вручную сопоставить загруженные данные с Dynatrace Semantic Dictionary. При сопоставлении данных исходные данные сохраняются вместе с сопоставленными, что позволяет использовать специфичные для поставщика данные в анализе и автоматизации или в качестве дополнительного контекста.
 
-1. В **OpenPipeline** выберите **Pipelines** > **Pipeline** для [создания пользовательского конвейера](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#process "Настройка источников загрузки, маршрутов и обработки данных в OpenPipeline.") и назовите его, например, "Custom security findings".
-2. Добавьте [процессор](/docs/platform/openpipeline/concepts/processing#processor "Изучите основные концепции обработки Dynatrace OpenPipeline.") типа **DQL** в ваш конвейер и настройте его для разбора полей, необходимых [Semantic Dictionary](https://dt-url.net/3q03pb0) (в нашем случае мы хотим сопоставить основные поля находок уязвимостей и, в качестве расширения, данные образа контейнера). Введите следующие данные:
+1. В **OpenPipeline** выберите **Pipelines** > **Pipeline** для [создания пользовательского конвейера](../../platform/openpipeline/getting-started/tutorial-configure-processing.md#process "Настройка источников загрузки, маршрутов и обработки данных в OpenPipeline.") и назовите его, например, "Custom security findings".
+2. Добавьте [процессор](../../platform/openpipeline/concepts/processing.md#processor "Изучите основные концепции обработки Dynatrace OpenPipeline.") типа **DQL** в ваш конвейер и настройте его для разбора полей, необходимых [Semantic Dictionary](https://dt-url.net/3q03pb0) (в нашем случае мы хотим сопоставить основные поля находок уязвимостей и, в качестве расширения, данные образа контейнера). Введите следующие данные:
 
    * Имя процессора: Например, "Map Trivy fields"
    * Условие соответствия: `SchemaVersion == 2 AND ArtifactType == "container_image"` (таким образом, сопоставление будет выполняться только для соответствующих событий)
@@ -1248,7 +1248,7 @@ fetch security.events
 
    "ArtifactType": "container_image"
    ```
-3. Выберите **Dynamic routing** > **Dynamic route** для [добавления динамической маршрутизации](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#route "Настройка источников загрузки, маршрутов и обработки данных в OpenPipeline.") к новому конвейеру. Введите следующие данные:
+3. Выберите **Dynamic routing** > **Dynamic route** для [добавления динамической маршрутизации](../../platform/openpipeline/getting-started/tutorial-configure-processing.md#route "Настройка источников загрузки, маршрутов и обработки данных в OpenPipeline.") к новому конвейеру. Введите следующие данные:
 
    * Имя динамического маршрута: Например, "Custom event"
    * Условие соответствия: `SchemaVersion == 2 AND ArtifactType == "container_image"`
@@ -1256,11 +1256,11 @@ fetch security.events
 
    ![add dynamic routing](https://dt-cdn.net/images/2024-08-28-23-04-46-576-9e042f6845.png)
 
-   Подробнее о динамической маршрутизации см. [Маршрутизация](/docs/platform/openpipeline/concepts/data-flow#routing "Изучите поток данных в Dynatrace Platform.").
+   Подробнее о динамической маршрутизации см. [Маршрутизация](../../platform/openpipeline/concepts/data-flow.md#routing "Изучите поток данных в Dynatrace Platform.").
 
 ## Дальнейшие шаги
 
 Теперь вы можете использовать данные для:
 
-* [Визуализации находок уязвимостей контейнеров с помощью примерного дашборда](/docs/secure/use-cases/visualize-and-analyze-security-findings "Визуализация, приоритизация и анализ загруженных данных о безопасности.")
-* [Автоматизации создания тикетов Jira и уведомлений Slack с помощью примерных рабочих процессов](/docs/secure/use-cases/automate-and-orchestrate-security-findings "Регулярная проверка критических данных о безопасности и автоматические тикеты Jira или оповещения Slack.")
+* [Визуализации находок уязвимостей контейнеров с помощью примерного дашборда](visualize-and-analyze-security-findings.md "Визуализация, приоритизация и анализ загруженных данных о безопасности.")
+* [Автоматизации создания тикетов Jira и уведомлений Slack с помощью примерных рабочих процессов](automate-and-orchestrate-security-findings.md "Регулярная проверка критических данных о безопасности и автоматические тикеты Jira или оповещения Slack.")
