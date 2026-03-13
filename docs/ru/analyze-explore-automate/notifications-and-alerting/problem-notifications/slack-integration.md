@@ -1,0 +1,52 @@
+---
+title: Send Dynatrace notifications to Slack
+source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration
+scraped: 2026-03-06T21:11:36.546788
+---
+
+# Отправка уведомлений Dynatrace в Slack
+
+# Отправка уведомлений Dynatrace в Slack
+
+* Classic
+* Чтение: 2 мин
+* Обновлено 25 апр. 2024 г.
+
+Для расширенных возможностей и автоматизации рабочих процессов (например, целевые уведомления и устранение проблем) см. [Connectors для Workflows](/docs/analyze-explore-automate/workflows/actions "Используйте готовые действия Dynatrace для ваших рабочих процессов и интегрируйте Dynatrace со сторонними системами.").
+
+С интеграцией оповещений о проблемах в Slack ваши команды всегда будут в курсе потенциальных рисков в приложениях, сервисах и инфраструктуре. Ваши команды также могут использовать интегрированный с Dynatrace канал Slack для обсуждения инцидентов, оценки решений и ссылок на аналогичные проблемы.
+
+## Настройка интеграции со Slack
+
+1. В Slack создайте входящий Webhook, как [описано в документации Slack](https://api.slack.com/messaging/webhooks).
+2. Скопируйте сгенерированный URL Webhook в буфер обмена. URL Webhook должен выглядеть следующим образом: `<SLACK_WEBHOOK_URL_PLACEHOLDER>`.
+3. В Dynatrace перейдите в **Settings** > **Integration** > **Problem notifications**.
+4. Нажмите **Add notification**.
+5. Выберите **Slack** из доступных типов уведомлений.
+6. Введите следующую информацию:
+
+   * **Display name**
+     Это произвольное имя данной интеграции, которое будет отображаться в Dynatrace в разделе **Settings** > **Integration** > **Problem notifications** после завершения настройки.
+   * **URL**
+     Вставьте URL Webhook
+   * **Channel**
+     Введите название канала Slack
+   * **Message**
+     Введите пользовательское сообщение; оно может содержать текст и заполнители, связанные с проблемами
+
+     Заполнители
+
+     В разделе **Available placeholders** на странице конфигурации перечислены заполнители, которые можно использовать для данной интеграции. Заполнители автоматически заменяются фактическими значениями.
+7. Назначьте [Профиль оповещений](/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Узнайте, как создавать профили оповещений и управлять ими.").
+8. Нажмите **Send test notification**, чтобы убедиться, что интеграция со Slack работает.
+9. **Save changes**.
+
+Вы будете получать уведомления о проблемах Dynatrace в вашем канале Slack с вашим пользовательским сообщением.
+
+Пример
+
+![An example of Slack integration](https://dt-cdn.net/images/example-1664-91d9af0698.png)
+
+## Устранение неполадок
+
+* [Уведомления о проблемах Slack от Dynatrace не приходят](https://dt-url.net/ti03ks4)

@@ -1,39 +1,39 @@
 ---
-title: Associate user interactions with features and UI components
+title: Связь пользовательских взаимодействий с функциями и UI-компонентами
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/user-interactions/features-and-components
 scraped: 2026-03-05T21:30:50.126179
 ---
 
-# Associate user interactions with features and UI components
+# Связь пользовательских взаимодействий с функциями и UI-компонентами
 
-# Associate user interactions with features and UI components
+# Связь пользовательских взаимодействий с функциями и UI-компонентами
 
-* Latest Dynatrace
-* How-to guide
-* Updated on Mar 03, 2026
+* Последняя Dynatrace
+* Практическое руководство
+* Обновлено 3 марта 2026 г.
 
-Early Access
+Ранний доступ
 
-The New RUM Experience allows you to associate user interactions with features and UI components by adding dedicated attributes to your HTML. This comprehensive interaction context facilitates powerful queries and deeper analysis of how users engage with your application's UI and functionality.
+Новый функционал RUM Experience позволяет связывать пользовательские взаимодействия с функциями и UI-компонентами путём добавления специальных атрибутов в ваш HTML. Этот всеобъемлющий контекст взаимодействия обеспечивает мощные запросы и углублённый анализ того, как пользователи взаимодействуют с UI и функциональностью вашего приложения.
 
-## Associate user interactions with features
+## Связь пользовательских взаимодействий с функциями
 
-Use the `data-dt-features` attribute to associate user interactions on an HTML element with one or more specific product features. On user interactions, the captured features are available in the field `ui_element.features`; see [User interactions](/docs/semantic-dictionary/model/rum/user-events/user-interactions). Elements inherit features from their ancestors, providing comprehensive feature tracking.
+Используйте атрибут `data-dt-features` для связи пользовательских взаимодействий на HTML-элементе с одной или несколькими конкретными функциями продукта. При пользовательских взаимодействиях захваченные функции доступны в поле `ui_element.features`; см. [Пользовательские взаимодействия](/docs/semantic-dictionary/model/rum/user-events/user-interactions). Элементы наследуют функции от своих предков, обеспечивая комплексное отслеживание функций.
 
-### Use cases
+### Сценарии использования
 
-The `data-dt-features` attribute lets you:
+Атрибут `data-dt-features` позволяет:
 
-* Track user interactions by featureâfor example, "search", "checkout", "navigation".
-* Group related UI components across the page.
-* Analyze user behavior by feature area.
-* Create feature-based dashboards and reports.
+* Отслеживать пользовательские взаимодействия по функциям — например, «поиск», «оформление заказа», «навигация».
+* Группировать связанные UI-компоненты на странице.
+* Анализировать поведение пользователей по функциональным областям.
+* Создавать панели и отчёты на основе функций.
 
-### Format
+### Формат
 
-The value of the `data-dt-features` attribute is a comma-separated list of feature names, where a feature can be any string. Features are case-sensitiveâfor example, "Search" and "search" are different features.
+Значение атрибута `data-dt-features` — это список имён функций через запятую, где функция может быть любой строкой. Функции чувствительны к регистру — например, «Search» и «search» — это разные функции.
 
-Examples
+Примеры
 
 ```
 <!-- Single feature -->
@@ -79,11 +79,11 @@ Examples
 </nav>
 ```
 
-### Feature inheritance
+### Наследование функций
 
-Feature inheritance works by collecting feature values from all ancestor elements in a top-down order. All inherited features are combined into a single array, and any duplicates are removed while keeping the first occurrence. The final list reflects the DOM hierarchy, starting with the most distant ancestor element and ending with the element itself.
+Наследование функций работает путём сбора значений функций от всех элементов-предков в порядке сверху вниз. Все унаследованные функции объединяются в один массив, дубликаты удаляются с сохранением первого вхождения. Итоговый список отражает иерархию DOM, начиная с самого удалённого элемента-предка и заканчивая самим элементом.
 
-Examples
+Примеры
 
 ```
 <div data-dt-features="shop,product-catalog">
@@ -153,9 +153,9 @@ Examples
 </div>
 ```
 
-### DQL example
+### Пример DQL
 
-The following DQL query generates a timeseries that shows, for each feature, the number of sessions that include at least one interaction with that feature.
+Следующий DQL-запрос генерирует временной ряд, показывающий для каждой функции количество сессий, включающих хотя бы одно взаимодействие с этой функцией.
 
 ```
 fetch user.events
@@ -173,24 +173,24 @@ fetch user.events
 | makeTimeseries countDistinct(dt.rum.session.id), by: {ui_element.features}, interval: 1d
 ```
 
-## Associate user interactions with UI components
+## Связь пользовательских взаимодействий с UI-компонентами
 
-Use the `data-dt-component` attribute to associate user interactions on an HTML element with one or more UI components, such as a date picker or a calendar. Component values are inherited from all ancestor elements and collected in topâdown order, forming a path through the component tree. On the captured user interaction, the collected components are available in the field `ui_element.components`; see [User interactions](/docs/semantic-dictionary/model/rum/user-events/user-interactions).
+Используйте атрибут `data-dt-component` для связи пользовательских взаимодействий на HTML-элементе с одним или несколькими UI-компонентами, такими как выбор даты или календарь. Значения компонентов наследуются от всех элементов-предков и собираются в порядке сверху вниз, формируя путь через дерево компонентов. В захваченном пользовательском взаимодействии собранные компоненты доступны в поле `ui_element.components`; см. [Пользовательские взаимодействия](/docs/semantic-dictionary/model/rum/user-events/user-interactions).
 
-### Use cases
+### Сценарии использования
 
-The `data-dt-component` attribute lets you:
+Атрибут `data-dt-component` позволяет:
 
-* Locate where user interactions occur within component-based UI frameworks such as React, Vue, and Angular.
-* Understand the component path from the root to the interacted element.
-* Distinguish between identical elements in different component contexts.
-* Debug and analyze interactions in nested component structures.
+* Определять, где происходят пользовательские взаимодействия в компонентных UI-фреймворках, таких как React, Vue и Angular.
+* Понимать путь компонента от корня до элемента взаимодействия.
+* Различать идентичные элементы в разных контекстах компонентов.
+* Отлаживать и анализировать взаимодействия во вложенных структурах компонентов.
 
-### Format and inheritance
+### Формат и наследование
 
-The value of `data-dt-component` is a string representing a component. Components are collected top-down from all ancestors, resulting in an array that represents the path through the component tree. Empty or whitespace-only values are ignored.
+Значение `data-dt-component` — это строка, представляющая компонент. Компоненты собираются сверху вниз от всех предков, формируя массив, представляющий путь через дерево компонентов. Пустые значения или значения из пробелов игнорируются.
 
-Example (React JSX)
+Пример (React JSX)
 
 ```
 <App data-dt-component="App">
@@ -248,9 +248,9 @@ Example (React JSX)
 </App>
 ```
 
-### DQL example
+### Пример DQL
 
-The following DQL query generates a timeseries showing how many different users interacted with the `TimeframeSelector` component. The results are split by frontend.
+Следующий DQL-запрос генерирует временной ряд, показывающий, сколько разных пользователей взаимодействовали с компонентом `TimeframeSelector`. Результаты разбиваются по фронтендам.
 
 ```
 fetch user.events

@@ -1,0 +1,70 @@
+---
+title: Get started with Android monitoring
+source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/instrument-android-app/get-started-with-android-monitoring
+scraped: 2026-03-06T21:28:16.242622
+---
+
+# Начало работы с мониторингом Android
+
+# Начало работы с мониторингом Android
+
+* Classic
+* Руководство
+* Чтение: 2 мин
+* Обновлено 6 сент. 2023
+
+Для мониторинга вашего Android-приложения необходимо сначала создать мобильное приложение в Dynatrace, а затем инструментировать ваше Android-приложение.
+
+[![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
+
+**Создайте мобильное приложение в Dynatrace**](/docs/observe/digital-experience/mobile-applications/instrument-android-app/get-started-with-android-monitoring#create-app-ui "Узнайте, какие шаги необходимо выполнить для инструментирования вашего Android-приложения для мониторинга с помощью Dynatrace.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+
+**Инструментируйте ваше Android-приложение**](/docs/observe/digital-experience/mobile-applications/instrument-android-app/get-started-with-android-monitoring#instrument-app "Узнайте, какие шаги необходимо выполнить для инструментирования вашего Android-приложения для мониторинга с помощью Dynatrace.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+
+**Точная настройка инструментирования**](/docs/observe/digital-experience/mobile-applications/instrument-android-app/get-started-with-android-monitoring#adjust-instrumentation "Узнайте, какие шаги необходимо выполнить для инструментирования вашего Android-приложения для мониторинга с помощью Dynatrace.")
+
+## Шаг 1: Создание мобильного приложения в Dynatrace
+
+Перед инструментированием вашего Android-приложения создайте [мобильное приложение](/docs/observe/digital-experience/rum-concepts/applications#mobile "Узнайте о мониторируемых приложениях в Real User Monitoring и различных типах приложений, поддерживаемых Dynatrace.") в Dynatrace. Вы будете использовать это приложение для мониторинга и анализа вашего Android-приложения.
+
+Чтобы создать мобильное приложение в Dynatrace:
+
+1. В Dynatrace перейдите в раздел **Mobile**.
+2. Выберите **Create mobile app**.
+3. Введите имя для вашего приложения и выберите **Create mobile app**. Откроется страница настроек приложения.
+
+## Шаг 2: Инструментирование вашего Android-приложения
+
+Когда мобильное приложение создано в Dynatrace, инструментируйте ваше Android-приложение с помощью плагина Dynatrace Android Gradle или OneAgent SDK для Android.
+
+[### Плагин Dynatrace Android Gradle
+
+Для автоматического инструментирования вашего Android-проекта используйте плагин Dynatrace Android Gradle. Он интегрирует процесс автоматического инструментирования в сборку вашего Android-проекта.](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin "Узнайте, как плагин Dynatrace Android Gradle может автоматически инструментировать ваш Android-проект.")[### OneAgent SDK для Android
+
+Если вы не можете использовать наш плагин из-за технических ограничений, попробуйте ручное инструментирование с помощью OneAgent SDK.](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/manual-instrumentation "Используйте OneAgent SDK для Android для ручного инструментирования вашего Android-приложения.")
+
+## Шаг 3: Точная настройка инструментирования
+
+После инструментирования вашего Android-приложения вы можете настроить дополнительные параметры:
+
+* [Настройка связи с OneAgent SDK для Android](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/adjust-oneagent-communication "Настройте связь с OneAgent для передачи данных о пользовательском опыте в Dynatrace.")
+* [Настройка процесса автоматического инструментирования](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin/monitoring-capabilities "Настройте плагин Dynatrace Android Gradle для корректировки возможностей мониторинга OneAgent.")
+* Создавайте пользовательские действия, сообщайте об ошибках, отмечайте конкретных пользователей и многое другое с помощью [OneAgent SDK для Android](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android "Узнайте, как расширить мониторинг мобильного пользовательского опыта на Android с помощью OneAgent SDK.")
+* Включите и настройте [Session Replay при сбоях](/docs/observe/digital-experience/session-replay/session-replay-android "Настройте Session Replay для ваших Android-приложений, чтобы узнать, какие действия выполняют ваши пользователи.")
+* [Настройте параметры конфиденциальности данных](/docs/observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile "Используйте настройки конфиденциальности Dynatrace, чтобы обеспечить соответствие ваших мобильных приложений требованиям защиты данных вашего региона.")
+* Узнайте, какие [данные Dynatrace собирает для вашего Android-приложения](/docs/manage/data-privacy-and-security/data-privacy/user-privacy-for-android "Информация о типах данных, которые собирает OneAgent для Android. Вы можете использовать эту страницу при заполнении формы безопасности данных в Google Play Console."), для заполнения или обновления формы безопасности данных в Google Play Console
+
+## Доступ к мастеру мобильного инструментирования
+
+Мастер мобильного инструментирования в Dynatrace предоставляет вам инструкции по началу работы с инструментированием ваших мобильных приложений. Мастер также содержит фрагменты кода с ключами идентификации вашего приложения, которые необходимо добавить в файл сборки вашего проекта. Ключи идентификации приложения -- `applicationId` и `beaconUrl` -- необходимы для того, чтобы ваше приложение могло отправлять данные мониторинга в Dynatrace.
+
+1. Перейдите в раздел **Mobile**.
+2. Выберите мобильное приложение, которое хотите настроить.
+3. Выберите **More** (**...**) > **Edit** в правом верхнем углу плитки с названием вашего приложения.
+4. В настройках приложения выберите **Instrumentation wizard**.
+5. Выберите **Android**.
+
+## Связанные темы
+
+* [Плагин Dynatrace Android Gradle](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin "Узнайте, как плагин Dynatrace Android Gradle может автоматически инструментировать ваш Android-проект.")
+* [Ручное инструментирование приложения с помощью OneAgent SDK для Android](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/manual-instrumentation "Используйте OneAgent SDK для Android для ручного инструментирования вашего Android-приложения.")

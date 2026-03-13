@@ -1,0 +1,49 @@
+---
+title: Prometheus data source
+source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions
+scraped: 2026-03-04T21:37:13.983043
+---
+
+# Prometheus data source
+
+# Prometheus data source
+
+* Последняя версия Dynatrace
+* Справочник
+* Чтение: 2 мин
+* Обновлено 11 сентября 2023 г.
+
+Dynatrace предоставляет фреймворк, который можно использовать для расширения наблюдаемости приложений и сервисов с помощью данных, получаемых непосредственно из Prometheus. Фреймворк расширений Dynatrace может извлекать метрики Prometheus из конечной точки `/metrics`, конечной точки Prometheus API или экспортёра данных (цели Prometheus).
+
+Обратите внимание, что Dynatrace предоставляет встроенную поддержку для приёма метрик от [экспортёров Prometheus в Kubernetes](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Приём метрик от конечных точек Prometheus в Kubernetes, оповещения о метриках и потребление мониторинга.").
+
+Вы можете запускать расширения Prometheus непосредственно на хосте Prometheus, где установлен OneAgent, — тогда ваши метрики автоматически дополняются специфическими для хоста измерениями. Если же установить OneAgent на хост Prometheus невозможно, расширения можно запускать удалённо и выполнять их в выбранной группе ActiveGate.
+
+Предполагается следующее:
+
+* Вы обладаете достаточными знаниями предметной области [Prometheus](https://prometheus.io/) для создания расширения.
+* Вы знакомы с [основными концепциями расширений](/docs/ingest-from/extensions/concepts "Узнайте больше о концепции расширений Dynatrace.") и общей структурой [файла YAML расширения](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml "Узнайте, как создать файл YAML расширения с помощью фреймворка расширений.").
+
+Обязательно ознакомьтесь со всеми предварительными требованиями и ограничениями.
+
+## Поддерживаемые версии Dynatrace
+
+* Dynatrace версии 1.225+
+* Environment ActiveGate версии 1.225+
+* OneAgent версии 1.225+ (локальные расширения)
+
+## Ограничения
+
+Сведения об ограничениях, применяемых к вашему расширению, см. в разделе [Ограничения расширений](/docs/ingest-from/extensions/extension-limits "Узнайте об ограничениях расширений."), а также следующие ограничения, специфичные для Prometheus:
+
+* Максимум 1000 определений `metrics`
+* Максимум 50 измерений на метрику
+
+Непостоянные измерения
+
+Обратите внимание, что большое количество измерений может превысить ограничения и негативно повлиять на производительность вашей среды Dynatrace. Учтите следующее:
+
+* Метки Prometheus автоматически становятся измерениями Dynatrace.
+* Некоторые метрики могут быть привязаны к измерениям с постоянно растущим набором значений, каждое из которых становится новым измерением.
+
+Сведения о структуре файла YAML расширения Prometheus и формате конфигурации мониторинга см. в [справочнике по источнику данных Prometheus](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference "Узнайте о расширениях Prometheus в фреймворке расширений.").

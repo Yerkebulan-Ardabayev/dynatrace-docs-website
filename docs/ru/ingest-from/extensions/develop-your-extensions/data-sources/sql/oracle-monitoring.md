@@ -1,0 +1,457 @@
+---
+title: Oracle Database monitoring configuration
+source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring
+scraped: 2026-03-05T21:37:43.036318
+---
+
+# Конфигурация мониторинга Oracle Database
+
+# Конфигурация мониторинга Oracle Database
+
+* Latest Dynatrace
+* Справочник
+* Чтение: 5 мин
+* Опубликовано 11 апреля 2022
+
+После определения области действия вашей конфигурации необходимо указать базы данных, из которых вы хотите собирать данные, и определить ActiveGate, которые будут выполнять расширение и подключаться к вашим устройствам.
+
+Убедитесь, что все ActiveGate из группы ActiveGate, которую вы определите в качестве области действия, могут подключиться к соответствующему источнику данных. Вы можете назначить ActiveGate группе во время или после установки. Подробнее см. [Группа ActiveGate](/docs/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
+
+Конфигурация мониторинга — это JSON-полезная нагрузка, определяющая детали подключения, учётные данные и наборы функций, которые вы хотите отслеживать. Подробнее см. [Начало мониторинга](/docs/ingest-from/extensions/manage-extensions#start-monitoring "Learn how to manage extensions.").
+
+Пример полезной нагрузки для активации расширения Oracle SQL:
+
+```
+[
+
+
+
+{
+
+
+
+"value": {
+
+
+
+"enabled": true,
+
+
+
+"description": "My Oracle SQL extension",
+
+
+
+"version": "0.1.1",
+
+
+
+"featureSets": [
+
+
+
+"io",
+
+
+
+"cpu",
+
+
+
+],
+
+
+
+"sqlOracleRemote": {
+
+
+
+"licenseAccepted": true,
+
+
+
+"endpoints": [
+
+
+
+{
+
+
+
+"host": "sqlserver.org",
+
+
+
+"port": 1521,
+
+
+
+"databaseIdentifier": "serviceName",
+
+
+
+"authentication": {
+
+
+
+"scheme": "basic",
+
+
+
+"username": "admin",
+
+
+
+"password": "password"
+
+
+
+},
+
+
+
+"serviceName": "some-serviceName"
+
+
+
+"ssl": false
+
+
+
+}
+
+
+
+]
+
+
+
+}
+
+
+
+},
+
+
+
+"scope": "ag_group-default"
+
+
+
+}
+
+
+
+]
+```
+
+Когда ваш исходный YAML-файл расширения готов, упакуйте его, подпишите и загрузите в вашу среду Dynatrace. Подробнее см. [Управление жизненным циклом расширений](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.").
+
+Мастер активации расширений на основе Dynatrace Hub содержит динамически обновляемую JSON-полезную нагрузку с вашей конфигурацией мониторинга.
+
+Вы также можете использовать Dynatrace API для загрузки схемы вашего расширения, которая поможет вам создать JSON-полезную нагрузку для конфигурации мониторинга.
+
+Используйте эндпоинт [GET an extension schema](/docs/dynatrace-api/environment-api/extensions-20/extensions/get-schema "View the schema of an extension the Dynatrace Extensions 2.0 API.").
+
+Выполните следующий запрос:
+
+```
+curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/{extension-name}/{extension-version}/schema" \
+
+
+
+-H "accept: application/json; charset=utf-8" \
+
+
+
+-H "Authorization: Api-Token {api-token}"
+```
+
+Обязательно замените `{extension-name}` и `{extension-version}` значениями из вашего YAML-файла расширения. Успешный вызов возвращает JSON-схему.
+
+## Область действия
+
+Обратите внимание, что каждому хосту ActiveGate, выполняющему ваше расширение, необходим корневой сертификат для проверки подлинности расширения. Подробнее см. [Подпись расширения](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
+
+Область действия — это группа ActiveGate, которая будет выполнять расширение. Только один ActiveGate из группы будет запускать эту конфигурацию мониторинга. Если вы планируете использовать один ActiveGate, назначьте его выделенной группе. Вы можете назначить ActiveGate группе во время или после установки. Подробнее см. [Группа ActiveGate](/docs/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
+
+Используйте следующий формат при определении группы ActiveGate:
+
+```
+"scope": "ag_group-<ActiveGate-group-name>",
+```
+
+Замените `<ActiveGate-group-name>` фактическим именем.
+
+## Версия
+
+Версия этой конфигурации мониторинга. Обратите внимание, что одно расширение может запускать несколько конфигураций мониторинга.
+
+## Описание
+
+Читаемое описание особенностей этой конфигурации мониторинга.
+
+## Включено
+
+Если установлено значение `true`, конфигурация активна и Dynatrace немедленно начинает мониторинг.
+
+## Конечные точки
+
+Вы можете определить до 20 000 конечных точек в одной конфигурации мониторинга в разделе `SQLOracleRemote`.
+
+```
+"sqlOracleRemote": {
+
+
+
+"licenseAccepted": true,
+
+
+
+"endpoints": [
+
+
+
+{
+
+
+
+"host": "sqlserver.org",
+
+
+
+"port": 1521,
+
+
+
+"databaseIdentifier": "serviceName",
+
+
+
+"authentication": {
+
+
+
+"scheme": "basic",
+
+
+
+"username": "admin",
+
+
+
+"password": "password"
+
+
+
+},
+
+
+
+"serviceName": "some-serviceName"
+
+
+
+"ssl": false
+
+
+
+}
+
+
+
+]
+
+
+
+}
+
+
+
+}
+```
+
+### Oracle JDBC Driver
+
+Источник данных Oracle SQL требует Oracle JDBC driver, распространяемый Dynatrace. Устанавливая свойство `licenceAccepted` в `true`, вы подтверждаете, что прочитали и приняли [лицензионное соглашение Dynatrace о перераспространении Oracle JDBC Driver](https://dt-url.net/0s1n0pw9).
+
+Для определения сервера Oracle Database добавьте следующие данные в раздел `endpoints`:
+
+* Хост
+* Порт
+* Идентификатор базы данных: `serviceName` или `sid`.
+* Учётные данные аутентификации
+
+Версия Oracle JDBC driver, поставляемая с Extension Framework, — `ojdbc11`.
+
+## Аутентификация
+
+Данные аутентификации, передаваемые в Dynatrace API при активации конфигурации мониторинга, обфусцируются, и их невозможно извлечь.
+
+### Хранилище учётных данных
+
+Тип аутентификации через хранилище учётных данных (Credential Vault) обеспечивает более безопасный подход к использованию расширений путём безопасного хранения и управления учётными данными пользователей. Для использования этого типа вы должны быть владельцем учётных данных и иметь хранилище учётных данных, отвечающее следующим критериям:
+
+* **Тип учётных данных** — Пользователь и пароль
+* **Область действия учётных данных** — Включены области Synthetic (в случае использования внешнего хранилища) и аутентификации расширений
+* **Доступ только для владельца** включён только для владельцев учётных данных
+
+```
+"authentication": {
+
+
+
+"scheme": "basic",
+
+
+
+"useCredentialVault": true,
+
+
+
+"credentialVaultId": "some-credential-vault-id"
+
+
+
+}
+```
+
+## Наборы функций
+
+Добавьте список наборов функций, которые вы хотите отслеживать. Чтобы получать данные по всем наборам функций, добавьте `all`.
+
+```
+"featureSets": [
+
+
+
+"cpu",
+
+
+
+"io"
+
+
+
+]
+```
+
+### TopN
+
+Набор функций `topN` включает мониторинг наиболее ресурсоёмких запросов. Включён по умолчанию.
+
+```
+"featureSets": [
+
+
+
+"topN"
+
+
+
+]
+```
+
+Это группирует запросы topN по сущности. Запросы отображаются на странице событий и на странице унифицированного анализа для сущности сервера Oracle.
+
+### Мультитенантность
+
+Набор функций `multitenancy` расширяет возможности мониторинга, запрашивая и извлекая информацию о контейнерных базах данных (CDB), подключаемых базах данных (PDB) и сервисах, связанных с указанной базой данных в конфигурации мониторинга.
+
+```
+"featureSets": [
+
+
+
+"multitenancy"
+
+
+
+]
+```
+
+Пример навигации
+
+Для навигации по структуре сущностей Oracle
+
+1. Перейдите в ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** и откройте дашборд **Oracle Database Overview**.
+2. В разделе **Hosts** дашборда выберите хост из столбца **Oracle DB host**.
+3. На странице **Oracle DB server** выберите CDB.
+
+   ![Мультитенантность Oracle Database: CDB](https://dt-cdn.net/images/cbds-1640-8c7671e235.png)
+4. На странице **CDB** выберите подключаемую базу данных.
+
+   ![Мультитенантность Oracle Database: подключаемые базы данных](https://dt-cdn.net/images/pluggable-databases-1611-2ce2521bef.png)
+5. На странице **PDB** перечислены сервисы.
+
+   ![Мультитенантность Oracle Database: сервисы](https://dt-cdn.net/images/services-1621-d3ca42e060.png)
+
+## Тайм-аут тяжёлых запросов
+
+ActiveGate версии 1.275+
+
+Добавьте параметр `long-running-query-timeout` для настройки длительности тайм-аута для долго выполняющихся SQL-запросов. Этот параметр необязательный, и если он не задан, применяется тайм-аут по умолчанию в 10 секунд.
+
+```
+"vars": {
+
+
+
+"long-running-query-timeout": null
+
+
+
+}
+```
+
+## SSL
+
+ActiveGate версии 1.251+
+
+Включите SSL, чтобы принудительно проверять серверный сертификат источником данных и использовать SSL-шифрование вместо нативного шифрования.
+
+```
+"ssl": true
+```
+
+#### Включение SSL без локального хранилища доверия
+
+Когда SSL включён и цепочка сертификатов сервера публично проверяема (например, выпущена Azure или другими известными центрами сертификации), нет необходимости вручную создавать хранилище доверия. Система автоматически доверяет сертификату сервера на основе доверенных центров сертификации в среде.
+
+Однако, если вам нужно использовать локальное хранилище доверия для сертификатов, не признанных глобально, или для дополнительных мер безопасности
+
+1. В каталоге `userdata` на ActiveGate, выполняющих источник данных SQL, вручную создайте хранилище доверия PKCS12 с именем `sqlds_truststore` и паролем `sqlds_truststore`.
+
+   Команда для создания хранилища доверия с помощью keytool:
+
+   ```
+   keytool -genkey -keystore sqlds_truststore -storepass sqlds_truststore -keyalg DSA
+   ```
+
+   Расположение каталога `userdata`:
+
+   * Windows: `%PROGRAMDATA%\dynatrace\remotepluginmodule\agent\conf\userdata`
+   * Unix: `/var/lib/dynatrace/remotepluginmodule/agent/conf/userdata`
+2. Добавьте в него сертификат сервера.
+
+   Команда для импорта сертификата с помощью keytool:
+
+   ```
+   keytool -import -keystore sqlds_truststore -file .\ora.crt -alias oracle
+   ```
+
+#### Проверка SSL-сертификатов
+
+ActiveGate версии 1.269+
+
+Сертификат дополнительно проверяется по имени хоста, что означает, что домен из сертификата должен совпадать с доменом из конечной точки, указанной в конфигурации мониторинга.
+
+Включите эту опцию при подключении к базам данных с использованием пользовательских сертификатов.
+
+```
+"validateCertificates": true
+```
+
+## Потребление ресурсов
+
+Потребление ресурсов зависит от количества конечных точек Oracle. Первая конечная точка потребляет 110 МБ оперативной памяти и 0,1%--0,5% процессора. Каждая последующая конечная точка потребляет 0,5--1,0 МБ оперативной памяти и ~0,01% процессора.

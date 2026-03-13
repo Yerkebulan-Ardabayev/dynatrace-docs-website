@@ -1,0 +1,126 @@
+---
+title: Migration guide for DynaKube API versions
+source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/dynakube
+scraped: 2026-03-04T21:38:46.599507
+---
+
+# Руководство по миграции версий API DynaKube
+
+# Руководство по миграции версий API DynaKube
+
+* Актуальная версия Dynatrace
+* Справочник
+* Чтение: 10 мин
+* Обновлено 22 января 2026 г.
+
+## Обзор
+
+В зависимости от версии Dynatrace Operator поддерживаются различные `apiVersion` ресурса `DynaKube`. На этой странице собраны руководства по миграции для каждой `apiVersion` с учётом версии Operator.
+
+Начиная с Dynatrace Operator версии 1.8.0+, Dynatrace Operator создаёт предупреждающее событие Kubernetes, если версия установленного CRD DynaKube не соответствует версии, ожидаемой данным релизом Operator.
+
+### Обзор версий API
+
+| Версия API DynaKube | Введена | Устарела | Удалена [1](#fn-1-1-def) | Руководства по миграции |
+| --- | --- | --- | --- | --- |
+| v1beta5 | 1.6.0 |  |  |  |
+| v1beta4 | 1.5.0 |  |  | [до v1beta5](/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta4-v1beta5 "Миграция v1beta4 DynaKube CR до apiVersion v1beta5.") |
+| v1beta3 | 1.3.0 | 1.7.0 |  | [до v1beta5](/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta3-v1beta5 "Миграция v1beta3 DynaKube CR до apiVersion v1beta5."), [до v1beta4](/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta3-v1beta4 "Миграция v1beta3 DynaKube CR до apiVersion v1beta4.") |
+| v1beta2 | 1.2.0 | 1.6.0 | 1.7.0 | [до v1beta5](/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta2-v1beta5 "Миграция v1beta2 DynaKube CR до apiVersion v1beta5."), [до v1beta4](/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta2-v1beta4 "Миграция v1beta2 DynaKube CR до apiVersion v1beta4.") |
+| v1beta1 | 0.3.0 | 1.6.0 | 1.7.0 | [до v1beta5](/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta1-v1beta5 "Миграция v1beta1 DynaKube CR до apiVersion v1beta5."), [до v1beta4](/docs/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta1-v1beta4 "Миграция v1beta1 DynaKube CR до apiVersion v1beta4.") |
+
+1
+
+Соответствующая версия API больше не обслуживается указанной версией Dynatrace Operator. Она будет удалена из CRD в последующей версии.
+
+## Стратегии конвертации
+
+### Автоматическая конвертация
+
+Каждая версия Dynatrace Operator конвертирует развёрнутые `DynaKube` со старой `apiVersion` в последнюю `apiVersion`, поддерживаемую данной версией Dynatrace Operator.
+
+* Пример: Dynatrace Operator v1.6.x всегда будет конвертировать `DynaKube` в `v1beta5`.
+
+Таким образом, когда вы проверяете с помощью `kubectl`, какую `apiVersion` используете, вы всегда увидите последнюю `apiVersion`, поддерживаемую данной версией Dynatrace Operator. Вы можете использовать этот механизм вместо ручной конвертации.
+
+1. Скачайте сконвертированную версию вашего DynaKube. Следующая команда выдаст DynaKube, сконвертированный в последнюю поддерживаемую `apiVersion`:
+
+   ```
+   kubectl get dynakubes -n <namespace> <dynakube-name> -o yaml
+   ```
+2. Очистите скачанный DynaKube, оставьте только следующие разделы:
+
+   * соответствующие части раздела `.metadata`
+   * полный раздел `.spec`
+
+### Ручная конвертация
+
+1. Сначала проверьте версию Operator, которая в данный момент развёрнута. Если вы не знаете, какую версию используете, вот несколько способов это выяснить.
+
+   С помощью Helm:
+
+   * Используйте команду `helm list`, поле `APP VERSION` покажет версию установленного Dynatrace Operator.
+
+     + Пример:
+
+   ```
+   > helm list -n dynatrace -o json | jq -r '.[].app_version'`
+
+
+
+   1.6.2
+   ```
+
+   С помощью `kubectl`:
+
+   * На деплойменте Dynatrace Operator есть метка `app.kubernetes.io/version`, которая показывает используемую версию.
+
+     + Пример:
+
+   ```
+   > kubectl get deployment dynatrace-operator -n dynatrace -o jsonpath='{.metadata.labels.app\.kubernetes\.io/version}'
+
+
+
+   1.6.2
+   ```
+2. Затем проверьте `apiVersion` используемого `DynaKube` и следуйте соответствующему руководству по миграции в [обзоре выше](#overview).
+
+## Процесс удаления
+
+Dynatrace Operator следует структурированному процессу прекращения поддержки в соответствии с [официальными рекомендациями Kubernetes](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definition-versioning), чтобы обеспечить плавный переход между версиями API DynaKube с предоставлением достаточного времени для миграции.
+
+### Фаза 1: Объявление о прекращении поддержки
+
+**Предварительное уведомление**: объявление публикуется в примечаниях к релизу как минимум за один релиз Dynatrace Operator до вступления прекращения поддержки в силу.
+
+**Маркировка устаревшей версии**: версия API официально помечается как устаревшая в последующем релизе, но остаётся полностью функциональной и поддерживаемой.
+
+### Фаза 2: Период поддержки устаревшей версии
+
+**Продолжение поддержки**: устаревшая версия API продолжает быть полностью поддерживаемой и функциональной в течение периода прекращения поддержки.
+
+**Рекомендация по миграции**: пользователям настоятельно рекомендуется выполнить миграцию на новую версию API в этот период, используя предоставленные руководства по миграции.
+
+**Автоматическая конвертация**: Operator автоматически конвертирует устаревшие версии API в последнюю поддерживаемую версию в фоновом режиме, обеспечивая совместимость.
+
+### Фаза 3: Подготовка к удалению
+
+**Отключение обслуживания API**: по окончании периода поддержки устаревшая версия API помечается как `served: false` в определении пользовательского ресурса (CRD).
+
+**Режим только для конвертации**: схема версии API сохраняется в CRD только для целей конвертации, позволяя читать и конвертировать существующие ресурсы.
+
+**Крайний срок миграции**: пользователи должны завершить миграцию на новую версию API до наступления этой фазы, чтобы обеспечить дальнейшую работоспособность своих ресурсов DynaKube.
+
+### Фаза 4: Полное удаление
+
+**Удаление схемы**: схема устаревшей версии API полностью удаляется из CRD в будущем релизе Operator.
+
+**Отсутствие поддержки конвертации**: после удаления поддержка конвертации или совместимости для устаревшей версии API недоступна.
+
+### Рекомендации по срокам миграции
+
+* **Немедленные действия**: планируйте миграцию сразу после объявления о прекращении поддержки
+* **Период тестирования**: используйте период прекращения поддержки для тестирования миграции в непроизводственных средах
+* **Миграция на продакшене**: завершите миграцию на продакшене задолго до отключения обслуживания API
+* **Проверка**: убедитесь, что все ресурсы DynaKube используют актуальную версию API после миграции

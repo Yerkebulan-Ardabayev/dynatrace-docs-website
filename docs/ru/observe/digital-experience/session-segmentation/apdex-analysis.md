@@ -1,0 +1,72 @@
+---
+title: Context-based Apdex analysis
+source: https://www.dynatrace.com/docs/observe/digital-experience/session-segmentation/apdex-analysis
+scraped: 2026-03-06T21:32:25.972152
+---
+
+# Контекстный анализ Apdex
+
+# Контекстный анализ Apdex
+
+* Classic
+* Практическое руководство
+* Чтение: 2 минуты
+* Опубликовано 27 января 2023 г.
+
+Dynatrace позволяет легко анализировать [Apdex](/docs/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings "Узнайте, как Dynatrace использует Apdex для измерения удовлетворённости пользователей производительностью приложений.") вашего приложения по различным измерениям. Вы можете проверить рейтинг Apdex для определённого пользовательского действия, локации и приложения, а также просматривать рейтинг Apdex для каждого пользовательского действия в рамках одной пользовательской сессии.
+
+## Анализ по локации
+
+Используйте представление **World map**, доступное для ваших [веб-](/docs/observe/digital-experience/web-applications/analyze-and-use/world-map-view "Узнайте, как представление World map предоставляет аналитические данные о рейтингах Apdex, пользовательских действиях, продолжительности действий и ошибках JavaScript."), [мобильных](/docs/observe/digital-experience/mobile-applications/analyze-and-use/check-usage-metrics-mobile#geo-regions "Узнайте, как использовать Dynatrace для проверки метрик пользовательского опыта вашего мобильного приложения.") и [пользовательских приложений](/docs/observe/digital-experience/custom-applications/analyze-and-use/check-usage-metrics-custom#geo-regions "Узнайте, как использовать Dynatrace для проверки метрик пользовательского опыта вашего пользовательского приложения."), чтобы видеть цветовые коды оценок Apdex и другую информацию о производительности.
+
+![Location-based analysis](https://dt-cdn.net/images/apdex-on-worldmap-1903-677a742e2e.png)
+
+## Анализ по пользовательскому действию
+
+Чтобы проанализировать удовлетворённость пользователей конкретным пользовательским действием:
+
+1. Перейдите в **Web**, **Mobile** или **Custom Applications**.
+2. Выберите приложение и прокрутите вниз до раздела **Top 3 user actions** или **Top 3 actions**.
+3. Выберите **View full details** или **Analyze performance**.
+4. Найдите нужное пользовательское действие и выберите его.
+   Откроется страница сведений о пользовательском действии. Оценка отображается на плитке **Apdex rating**.
+
+![User-action-based analysis](https://dt-cdn.net/images/apdex-on-user-action-1902-f7e7545781.png)
+
+## Анализ по приложению
+
+Чтобы отследить, как удовлетворённость пользователей меняется со временем для конкретного приложения:
+
+* **Веб-приложения**
+
+  1. Перейдите в **Web**.
+  2. Выберите плитку **Apdex rating** на инфографике. Также можно выбрать **Analyze Apdex** для получения более подробных данных.
+
+     ![Application-based analysis](https://dt-cdn.net/images/apdex-on-application-overview-1905-895ba0a0d2.png)
+* **Мобильные приложения**
+
+  [График **Apdex rating**](/docs/observe/digital-experience/mobile-applications/analyze-and-use/check-usage-metrics-mobile#apdex-rating "Узнайте, как использовать Dynatrace для проверки метрик пользовательского опыта вашего мобильного приложения.") доступен на странице обзора приложения.
+* **Пользовательские приложения**
+
+  Откройте [график **Apdex rating**](/docs/observe/digital-experience/custom-applications/analyze-and-use/check-usage-metrics-custom#apdex-rating "Узнайте, как использовать Dynatrace для проверки метрик пользовательского опыта вашего пользовательского приложения.") со страницы обзора приложения.
+
+## Анализ пользовательского пути через несколько приложений
+
+Чтобы проанализировать и понять проблемные точки для каждого пользовательского действия в пользовательском пути:
+
+1. На странице обзора приложения выберите **Analyze user sessions**, а затем выберите пользовательскую сессию.
+
+![User journey analysis](https://dt-cdn.net/images/apdex-on-user-journey-1903-429abf6255.png)
+
+## Apdex для бизнес-отчётности
+
+Вы можете выделить Apdex как ключевую метрику для ваших бизнес-коллег, добавив плитки, связанные с Apdex, на ваш дашборд Dynatrace.
+
+![Apdex tiles on dashboard](https://dt-cdn.net/images/apdex-on-dashboards-1920-72e753ae39.png)
+
+## Связанные темы
+
+* [Рейтинги Apdex](/docs/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings "Узнайте, как Dynatrace использует Apdex для измерения удовлетворённости пользователей производительностью приложений.")
+* [Настройка параметров Apdex для веб-приложений](/docs/observe/digital-experience/web-applications/additional-configuration/configure-apdex-web "Настройте пороговые значения производительности для удовлетворённости пользователей вашего веб-приложения и его ключевых пользовательских действий.")
+* [Настройка параметров Apdex для мобильных приложений](/docs/observe/digital-experience/mobile-applications/additional-configuration/configure-apdex-mobile "Настройте пороговые значения производительности для удовлетворённости пользователей вашего мобильного приложения и его ключевых пользовательских действий.")
+* [Настройка параметров Apdex для пользовательских приложений](/docs/observe/digital-experience/custom-applications/additional-configuration/configure-apdex-custom "Настройте пороговые значения производительности для удовлетворённости пользователей вашего пользовательского приложения и его ключевых пользовательских действий.")

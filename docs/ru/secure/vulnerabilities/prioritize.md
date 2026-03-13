@@ -1,0 +1,162 @@
+---
+title: Prioritize vulnerabilities
+source: https://www.dynatrace.com/docs/secure/vulnerabilities/prioritize
+scraped: 2026-03-06T21:34:48.320869
+---
+
+# Приоритизация уязвимостей
+
+# Приоритизация уязвимостей
+
+* Latest Dynatrace
+* How-to guide
+* Updated on Dec 18, 2025
+
+Далее вы узнаете, как приоритизировать уязвимости сторонних компонентов, уровня кода и среды выполнения на основе
+
+* [Dynatrace Security Score](#dss)
+* [Оценки Dynatrace](#risk-factors)
+* [Что под угрозой (затронутые и связанные сущности)](#affected-related)
+* [Попытки эксплуатации](#exploit)
+* [Эволюция уязвимости](#evolution)
+* [Каталог CISA KEV](#cisa-kev)
+* [Покрытие](#coverage)
+
+## Приоритизация по Dynatrace Security Score
+
+Уязвимости сторонних компонентов
+
+Уровень риска (серьёзность) уязвимости рассчитывается на основе Dynatrace Security Score (DSS), что позволяет вам сосредоточиться на устранении уязвимостей, актуальных для вашей среды, а не тех, которые имеют лишь теоретическое воздействие. Ниже описаны доступные варианты.
+
+### Фильтрация по DSS
+
+Используйте фильтры Dynatrace Security Score для фокусировки на уязвимостях по их серьёзности и классификации риска.
+
+На странице **Prioritization** в поле фильтра можно фильтровать по
+
+* Баллу DSS (выберите **Dynatrace Security Score** и введите балл)
+* Уровню риска (выберите **Dynatrace Risk Level** и выберите серьёзность)
+
+Подробности см. в разделе [Выражения фильтров](/docs/secure/vulnerabilities/manage-results#expressions "Filter, format, and sort to find relevant vulnerability information.").
+
+### Подробности расчёта DSS
+
+Просмотрите, как Dynatrace Security Score рассчитывается для отдельных уязвимостей.
+
+1. На странице **Prioritization** выберите уязвимость.
+2. На боковой панели перейдите в раздел **Overview** и найдите **Dynatrace Security Score calculation**.
+
+### FAQ
+
+* [Почему у моей уязвимости другая оценка риска и Dynatrace Security Score, чем у её затронутых сущностей?](/docs/secure/faq#risk-assessment-affected-entities "Frequently asked questions about Dynatrace Application Security.")
+
+### Дополнительные материалы
+
+Подробнее о DSS см. в разделе [Концепции: Dynatrace Security Score](/docs/secure/vulnerabilities/concepts#dss "Concepts that are specific to the Dynatrace Vulnerabilities app.").
+
+## Приоритизация по оценке Dynatrace
+
+Приоритизируйте уязвимости, анализируя [факторы риска и режимы оценки, учитываемые при определении Dynatrace Security Score](/docs/secure/vulnerabilities/concepts#assessment "Concepts that are specific to the Dynatrace Vulnerabilities app."). Понимание режимов оценки, лежащих в основе Dynatrace Security Score, позволяет принимать более обоснованные решения по устранению уязвимостей, адаптировать реагирование к бизнес-воздействию и опережать возникающие угрозы. Ниже описаны доступные варианты.
+
+### Фильтрация по факторам риска и режимам оценки
+
+Используйте фильтры для сужения списка уязвимостей на основе режимов оценки Dynatrace Security Score и связанных факторов риска.
+
+1. На странице **Prioritization** в поле фильтра выберите **Dynatrace Assessment**.
+2. Выберите интересующие вас параметры.
+
+Подробности см. в разделе [Выражения фильтров](/docs/secure/vulnerabilities/manage-results#expressions "Filter, format, and sort to find relevant vulnerability information.").
+
+### Просмотр доступных активов данных
+
+Исследуйте, какие сервисы баз данных затронуты уязвимостью, и проследите прямые связи с затронутыми активами.
+
+1. На странице **Prioritization** выберите уязвимость.
+2. На боковой панели перейдите в раздел **Affected entities** и найдите **Reachable data assets**.
+
+### Просмотр уязвимых функций
+
+Уязвимости сторонних компонентов
+
+Определите, какие функции затронуты уязвимостью, и оцените их использование в вашем приложении.
+
+1. На странице **Prioritization** выберите уязвимость.
+2. На боковой панели перейдите в раздел **Details** и найдите **Vulnerable functions**.
+
+### Дополнительные материалы
+
+Подробнее о факторах риска см. в разделе [Концепции: Факторы риска](/docs/secure/vulnerabilities/concepts#assessment "Concepts that are specific to the Dynatrace Vulnerabilities app.").
+
+## Приоритизация по связанным и затронутым сущностям
+
+Определите, что находится под угрозой, изучив сущности, связанные с каждой уязвимостью. Ниже описаны доступные варианты.
+
+### Просмотр связанных и затронутых групп процессов или узлов Kubernetes
+
+Узнайте, как уязвимость влияет на группы процессов или узлы Kubernetes: посмотрите, сколько из них затронуто, устранено или отключено, и какой процент они составляют. Отслеживайте прогресс устранения, уровень воздействия и общее влияние.
+
+1. На странице **Prioritization** выберите уязвимость.
+2. На боковой панели перейдите в раздел **Affected entities** и найдите **Process group overview** или **Kubernetes node overview**.
+
+### Просмотр других связанных сущностей
+
+Исследуйте сущности, связанные с затронутыми группами процессов или узлами Kubernetes, чтобы обнаружить косвенное воздействие, отследить первопричины и оценить более широкое влияние уязвимостей. Откройте эти сущности в совместимых приложениях для дальнейшего исследования и принятия целенаправленных мер.
+
+1. На странице **Prioritization** выберите уязвимость.
+2. На боковой панели перейдите в раздел **Related entities**.
+
+### Дополнительные материалы
+
+Подробнее о затронутых и связанных сущностях см. в разделе [Концепции: Затронутые и связанные сущности](/docs/secure/vulnerabilities/concepts#entities "Concepts that are specific to the Dynatrace Vulnerabilities app.").
+
+## Приоритизация по попыткам эксплуатации
+
+Уязвимости уровня кода
+
+Приоритизируйте уязвимости на основе наблюдаемой активности эксплуатации, чтобы лучше понимать воздействие и паттерны реагирования. Просматривайте, как часто уязвимость подвергалась атакам, какие действия были предприняты в ответ, и ключевые детали недавних попыток для руководства вашими усилиями по устранению. Настраивайте [временной диапазон](/docs/secure/vulnerabilities/manage-results#timeframe "Filter, format, and sort to find relevant vulnerability information.") и [сегменты](/docs/secure/vulnerabilities/manage-results#segments "Filter, format, and sort to find relevant vulnerability information."), а также открывайте эксплойты в [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts.") для получения дополнительной информации.
+
+1. На странице **Prioritization** выберите уязвимость.
+2. На боковой панели перейдите в раздел **Exploit attempts**.
+
+Для обнаружения попыток эксплуатации необходимо [настроить Runtime Application Protection](/docs/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.").
+
+## Приоритизация по эволюции уязвимости
+
+Отслеживайте эволюцию уязвимости, чтобы понимать изменения серьёзности с течением времени и соответственно приоритизировать реагирование.
+
+Исторический контекст помогает прояснить, была ли уязвимость всегда критической или недавно повысила свой уровень. Например, если проблема со статусом `Medium` становится `Critical`, вы будете знать, что она не была проигнорирована -- она просто эволюционировала и теперь требует внимания. Без такой хронологии недавно ставшая критической уязвимость может выглядеть так, будто её упустили на более длительный срок, чем это было на самом деле.
+
+1. На странице **Prioritization** выберите уязвимость.
+2. На боковой панели перейдите в раздел **Vulnerability evolution**.
+
+События хранятся в течение одного года и могут быть запрошены только до метки времени первого обнаружения уязвимости.
+
+## Приоритизация по каталогу CISA KEV
+
+Уязвимости сторонних компонентов
+
+Используйте [каталог CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) для приоритизации уязвимостей на основе известной активности эксплуатации и сроков устранения, чтобы сосредоточиться на угрозах с реальным воздействием и регуляторной срочностью. Ниже описаны доступные варианты.
+
+### Фильтрация по CISA KEV
+
+На странице **Prioritization** используйте поле [фильтра](/docs/secure/vulnerabilities/manage-results#filter "Filter, format, and sort to find relevant vulnerability information.") для
+
+* Отображения наличия уязвимости в каталоге CISA KEV (`CISA KEV` > `CISA KEV - In catalog` > `Yes`/`No`)
+* Просмотра срока устранения уязвимости из списка CISA KEV (`CISA KEV` > `CISA KEV - Due date`, затем введите целевую дату в формате `YYYY-MM-DD`)
+
+### Сортировка по CISA KEV
+
+1. На странице **Prioritization** перейдите к настройкам столбцов ![Column](https://dt-cdn.net/images/column-settings-dfb41f159c.svg "Column") и выберите `CISA KEV`, чтобы добавить столбец **CISA KEV** в таблицу результатов.
+2. Нажмите на заголовок столбца **CISA KEV**, затем выберите **Sort ascending** или **Sort descending**.
+
+### Понимание сроков устранения
+
+Уязвимости с просроченными сроками устранения отмечены меткой **Overdue**.
+
+Для развёртываний GCP данные могут отставать от каталога CISA KEV приблизительно на две-четыре недели.
+
+## Приоритизация по покрытию
+
+Покрытие библиотечных уязвимостей показывает, насколько хорошо процессы и хосты вашей среды мониторятся с помощью Runtime Vulnerability Analytics (RVA). Анализируя покрытие, вы можете выявить пробелы в мониторинге, понять, какие сущности наиболее затронуты во время выполнения, и отслеживать тенденции воздействия с течением времени. Этот контекст помогает приоритизировать устранение уязвимостей там, где это наиболее важно.
+
+Подробности см. в разделе [Оценка покрытия](/docs/secure/vulnerabilities/assess-coverage "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").

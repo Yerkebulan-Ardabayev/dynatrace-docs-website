@@ -1,0 +1,190 @@
+---
+title: Install OneAgent on AIX
+source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix
+scraped: 2026-03-06T21:18:39.737550
+---
+
+# Установка OneAgent на AIX
+
+# Установка OneAgent на AIX
+
+* Последняя версия Dynatrace
+* Руководство
+* Чтение: 7 мин
+* Обновлено 07.11.2025
+
+На этой странице описано, как загрузить и установить Dynatrace OneAgent на AIX.
+
+Для начала войдите в вашу среду Dynatrace SaaS через веб-сайт [Dynatrace.com](https://www.dynatrace.com), используя учётные данные, предоставленные при регистрации. Затем продолжите выполнение описанных ниже шагов установки.
+
+## Требования
+
+### Разрешения
+
+* Вам необходимы разрешения [Загрузка/установка OneAgent](/docs/manage/identity-access-management/permission-management/role-based-permissions#environment "Разрешения на основе ролей") для загрузки и установки OneAgent.
+* Вам необходимы права администратора для серверов, на которых будет установлен OneAgent, а также для изменения настроек брандмауэра (требуется только в случае, если ваша внутренняя политика маршрутизации может препятствовать доступу программного обеспечения Dynatrace к интернету).
+* Вам необходимы разрешения и учётные данные для перезапуска всех сервисов приложений.
+
+### Ресурсы
+
+* Проверьте [требования к дисковому пространству](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix "Узнайте требования к дисковому пространству для установки OneAgent на AIX.").
+* Для установки и обновления OneAgent на хосте требуется 200 МБ свободной памяти.
+* Все хосты, которые должны быть мониторинга, должны иметь возможность отправлять данные в кластер Dynatrace. В зависимости от вашего развёртывания Dynatrace и настроек сети и безопасности вы можете выбрать либо прямой доступ к кластеру Dynatrace, либо [настройку ActiveGate](/docs/ingest-from/dynatrace-activegate "Узнайте основные концепции, связанные с ActiveGate.").
+
+### Ограничения
+
+* Установка OneAgent не поддерживается на сетевых точках монтирования хранилища, управляемых стандартами, такими как NFS или iSCSI.
+* Поддержка [Log Management and Analytics](/docs/analyze-explore-automate/logs "Log Management and Analytics обеспечивает унифицированный подход к управлению и изучению данных логов в Dynatrace.") и [Log Monitoring Classic](/docs/analyze-explore-automate/log-monitoring "Узнайте, как включить Log Monitoring, какую информацию может предоставить Log Monitoring и многое другое.") на хостах AIX ограничена:
+
+  + обнаружение логов в модуле логов ограничено только пользовательскими источниками логов.
+
+### Разрешение подключений через брандмауэр
+
+Убедитесь, что настройки вашего брандмауэра разрешают связь с Dynatrace.
+В зависимости от вашей политики брандмауэра вам может потребоваться явно разрешить определённые исходящие подключения. **Удалённые адреса Dynatrace для добавления в список разрешённых указаны на странице установки OneAgent.**
+
+## Установка
+
+1. В Dynatrace Hub найдите **OneAgent**.
+2. Выберите **Set up** > **AIX**.
+3. Вставьте [PaaS-токен](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Узнайте о концепции токена доступа и его областях.") в поле **Installer download token** или выберите **Generate token**, чтобы сгенерировать токен сейчас и автоматически вставить его в поле **Installer download token**. Этот токен необходим для загрузки установщика OneAgent из вашей среды. Токен автоматически добавляется к командам загрузки и установки, которые вы будете использовать позднее.
+4. В поле **Download OneAgent** нажмите **Copy**, чтобы скопировать команду `wget` в буфер обмена.
+5. Войдите на ваш хост AIX, затем вставьте и выполните скопированную команду `wget`.
+
+   * Команда `wget` не установлена на AIX по умолчанию. Либо установите её, либо используйте альтернативный способ загрузки OneAgent.
+   * Если при загрузке OneAgent возникает ошибка, установите необходимый сертификат, загрузив файл корневого CA с сайта [Comodo](https://support.comodo.com/index.php?/Knowledgebase/Article/View/854/75/root-addtrustexternalcaroot), а затем добавьте содержимое файла CRT к `/var/ssl/cert.pem`. В качестве альтернативы вы можете пропустить проверку сертификата, добавив параметр `--no-check-certificate`.
+   * Если вы планируете загружать OneAgent напрямую на сервер, обратите внимание, что устаревшие или отсутствующие библиотеки (например, сертификаты CA или OpenSSL) могут помешать загрузке установщика. Мы используем зашифрованные соединения. OpenSSL необходим для работы `wget` при доступе к серверу.
+6. **Проверка подписи**
+
+   После завершения загрузки нажмите **Copy** в поле **Verify signature**, чтобы скопировать команду `wget` в буфер обмена, затем вставьте предоставленную команду в окно терминала и выполните её. Убедитесь, что ваша система обновлена, особенно SSL и связанные библиотеки сертификатов.
+7. Необязательно: **Настройка пользовательских параметров**
+
+   * Включите мониторинг логического раздела [Virtual I/O Server](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix#vios-installation "Узнайте, как загрузить и установить Dynatrace OneAgent на AIX.").
+   * Установите [сетевую зону](/docs/manage/network-zones#deploy-network-zones "Узнайте, как работают сетевые зоны в Dynatrace.") для этого хоста.
+   * Если ваша среда сегментирована (например, на среды разработки и производства), рассмотрите возможность [организации хостов в группы хостов](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Узнайте, как Dynatrace позволяет организовать хосты, процессы и сервисы с помощью групп хостов.").
+   * Вы можете переопределить автоматически определённое [имя хоста](/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Узнайте, как изменить имя отслеживаемого хоста."). Это полезно в больших и динамичных средах, где определённые имена хостов могут быть неинтуитивными или часто меняться.
+   * Вы также можете применить [теги](/docs/manage/tags-and-metadata "Используйте теги и метаданные для организации данных в вашей среде Dynatrace.") к хосту для организации ваших отслеживаемых сред удобным способом.
+   * Определите [свойства](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#host-metadata "Узнайте, как добавлять теги и устанавливать дополнительные свойства для отслеживаемого хоста.") хоста для автоматического добавления метаданных.
+   * Измените режим OneAgent на «Мониторинг инфраструктуры» или «Обнаружение» вместо «Полный мониторинг». Подробнее см. [Режимы мониторинга OneAgent](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Узнайте больше о доступных режимах мониторинга при использовании OneAgent.").
+
+     Недоступно, если включена опция мониторинга Virtual I/O Server.
+
+   Установщик OneAgent из командной строки предоставляет дополнительные опции для [настройки установки](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Узнайте, как использовать установщик Linux с параметрами командной строки.").
+8. Скопируйте команду, указанную в текстовом поле **Run the installer with root rights**.
+9. Запустите установщик.
+   Вставьте команду в терминал и выполните её.
+
+   * Необходимы права root. Перед запуском скрипта от имени root необходимо сделать его исполняемым.
+   * Вы можете использовать `su` или `sudo` для запуска скрипта установки. Для этого введите следующую команду в каталоге, куда вы загрузили скрипт установки.
+     `sudo /bin/sh Dynatrace-OneAgent-AIX-1.0.0.sh`
+
+   Краткое описание изменений, вносимых в вашу систему при установке OneAgent, см. в разделе [Безопасность OneAgent на AIX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix "Узнайте о безопасности Dynatrace OneAgent и изменениях в вашей системе на базе AIX.").
+10. На AIX Dynatrace поддерживает глубокий мониторинг кода для приложений Java, Apache, WebLogic и Websphere. Он автоматизирован для OneAgent версии 1.189+. Для более ранних версий необходимо выполнить некоторую настройку на AIX, что можно легко сделать как для отдельных приложений, так и для всей оболочки.
+
+    Автоматическое внедрение глубокого мониторинга кода включено по умолчанию в Dynatrace версии 1.195+ для новых установок OneAgent 1.189+.
+
+    Вы можете включить глубокий мониторинг кода после установки OneAgent и его успешного подключения к Dynatrace. На странице **Hosts** найдите ваш хост, перейдите в **Host settings** > **Monitoring** и выберите **Allow AIX kernel extension**.
+
+## Установка на Virtual I/O Server (VIOS)
+
+Используйте общие шаги установки для загрузки OneAgent, а затем, после того как у вас будет установщик OneAgent на вашей машине VIOS, выполните следующие команды.
+
+1. Инициируйте установку OEM и настройте среду.
+
+   ```
+   oem_setup_env
+   ```
+2. Войдите в группу `system`.
+
+   ```
+   newgrp system
+   ```
+3. Установите OneAgent.
+
+   * Параметр `--set-monitoring-mode=infra-only` включает мониторинг инфраструктуры.
+   * Параметр `--set-auto-injection-enabled=false` отключает автоматическое внедрение в процессы.
+
+   ```
+   /bin/sh Dynatrace-OneAgent.sh --set-monitoring-mode=infra-only --set-auto-injection-enabled=false
+   ```
+4. Вернитесь к приглашению Virtual I/O Server.
+
+   ```
+   exit
+   ```
+
+## Ручное внедрение OneAgent
+
+Если вы не можете использовать унифицированный подход к мониторингу, вы можете внедрить OneAgent вручную.
+
+Процессы, которым предоставлены специальные привилегии через систему управления доступом на основе ролей (RBAC) AIX, не могут быть автоматически внедрены. Это механизм безопасности операционной системы, ограничивающий запуск неизвестного кода с повышенными привилегиями. Например, веб-серверу Apache или IHS может быть предоставлена привилегия `PV_NET_PORT`, позволяющая запускать сервер от имени обычного пользователя, но при этом привязываться к ограниченным портам, таким как порт `80`. В этом случае любые библиотеки, настроенные для предварительной загрузки, включая OneAgent, будут молча проигнорированы. В таких случаях работает только ручное внедрение OneAgent.
+
+Ручное внедрение OneAgent
+
+IBM Java 1.6 -- 1.8
+
+IBM/Apache HTTP Server
+
+Добавьте следующие команды перед командой запуска вашего приложения:
+
+```
+export DT_HOME=/opt/dynatrace/oneagent
+
+
+
+export LDR_PRELOAD64=$DT_HOME/agent/lib64/liboneagentproc.so
+
+
+
+export LDR_PRELOAD=$DT_HOME/agent/lib/liboneagentproc.so
+```
+
+Переменная `DT_HOME` должна указывать на каталог установки OneAgent. Если вы настроили пользовательский каталог установки OneAgent, измените переменную `DT_HOME` соответствующим образом. Вы можете опустить 32-битную или 64-битную запись в зависимости от вашей среды.
+
+Отредактируйте файл `httpd.conf` и добавьте следующие две строки в любое удобное место:
+
+```
+LoadModule oneagent_module /opt/dynatrace/oneagent/agent/bin/current/aix-ppc-64/liboneagentloader.so
+
+
+
+OneAgentConfig tenant=<tenant-id>,tenantToken=<tenant-token>,server=https://<server-url>/communication
+```
+
+В качестве альтернативы, если вы предпочитаете не изменять файл `httpd.conf`, вы можете указать те же директивы через командную строку:
+
+```
+apachectl -c "LoadModule oneagent_module /opt/dynatrace/oneagent/agent/bin/current/aix-ppc-64/liboneagentloader.so"
+
+
+
+-c "OneAgentConfig tenant=<tenantUUID>,tenantToken=<tenant-token>,server=<communicationEndpoints>"
+
+
+
+-k start
+```
+
+* `tenantUUID` — это идентификатор [среды](/docs/discover-dynatrace/get-started/monitoring-environment "Узнайте, как работать с средами мониторинга.") вашей среды Dynatrace, который должен быть взят из `dynatrace-env.sh` (расположен в корневом каталоге установки OneAgent). Параметр `tenantUUID` представлен в скрипте как `DT_TENANT`.
+* `tenantToken` — это [токен](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token "Узнайте, что такое токен тенанта и как его изменить."), который OneAgent использует для отправки данных в Dynatrace. Его следует взять из `dynatrace-env.sh` (или `ruxitagent.conf`, в зависимости от версии OneAgent), расположенного в корневом каталоге установки OneAgent. Параметр `tenantToken` представлен в скрипте как `DT_TENANTTOKEN`.
+
+  Этот токен не следует путать с API-токенами или PaaS-токенами Dynatrace. Эти токены нельзя использовать здесь.
+* `communicationEndpoints` соответствует одному или нескольким HTTP-адресам, представляющим серверы Dynatrace или ActiveGate. Параметр `communicationEndpoints` представлен в скрипте как `DT_CONNECTION_POINT`. Например, файл `dynatrace-env.sh` (расположенный в корневом каталоге установки OneAgent) может содержать следующее:
+
+  ```
+  export DT_CONNECTION_POINT="https://x1.live.dynatrace.com/communication;https://x2.live.dynatrace.com/communication;https://x3.live.dynatrace.com/communication"
+  ```
+
+  В этом случае параметр будет
+
+  ```
+  server=https://x1.live.dynatrace.com/communication;https://x2.live.dynatrace.com/communication;https://x3.live.dynatrace.com/communication
+  ```
+
+## Готово!
+
+Отлично, настройка завершена! Теперь вы можете ознакомиться с вашей новой средой мониторинга.
+
+Вы можете получить доступ к вашей среде мониторинга в любое время, перейдя на веб-сайт Dynatrace и выбрав **Login** в правом верхнем углу.
+
+Последнее замечание: для мониторинга ваших процессов необходимо их перезапустить. В любое время вы можете проверить, какие процессы не мониторятся и требуют перезапуска. Просто перейдите в **Deployment Status**, переключитесь на вкладку **All hosts** или **Recently connected hosts** и раскройте интересующий вас хост.

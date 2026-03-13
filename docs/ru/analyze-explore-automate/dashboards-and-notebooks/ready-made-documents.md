@@ -1,0 +1,65 @@
+---
+title: Ready-made documents
+source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents
+scraped: 2026-03-06T21:13:50.344696
+---
+
+# Ready-made documents
+
+# Готовые документы
+
+* Latest Dynatrace
+* Reference
+* 1-min read
+* Published Jul 08, 2022
+
+Используйте готовые документы Dynatrace прямо из коробки.
+
+Что особенного в готовых документах
+
+* Созданы и автоматически распространяются Dynatrace в качестве примеров и шаблонов.
+* Только для чтения: вы можете редактировать их в течение сессии и сохранить копию с вашими изменениями, но не можете сохранить изменения в исходном документе.
+* Этот значок в таблице документов указывает на то, что это готовый документ.
+
+[![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards")
+
+## Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards "Use ready-made dashboards to visualize your data right out of the box.")[![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks")
+
+## Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-notebooks "Use ready-made notebooks right out of the box.")
+
+## Использование документов только для чтения
+
+Когда вы открываете документ (дашборд или ноутбук), на который у вас нет прав на запись, вы всё равно можете редактировать документ в течение текущей сессии. После завершения работы у вас есть два варианта:
+
+* Сохранить изменения в новом документе
+* Отменить изменения
+
+#### Пример в Dashboards
+
+1. Перейдите в ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, откройте список готовых дашбордов и выберите дашборд **Getting started**.
+
+   В верхнем левом углу рядом с именем документа отображается надпись **Ready-made**.
+2. Выберите плитку с круговой диаграммой, затем выберите **Edit**.
+3. Измените визуализацию с Pie на Donut.
+
+   Теперь вам предлагаются две кнопки: **Save as new** и **Discard changes**.
+4. Используйте обновлённый дашборд по мере необходимости. В течение этой сессии у вас есть полный доступ к редактированию.
+5. Когда закончите, выберите, что сделать с вашими изменениями:
+
+   * **Save as new** — сохраняет ваши изменения в новой копии отредактированного дашборда.
+   * **Discard changes** — отменяет ваши изменения и возвращает вас к неотредактированному дашборду только для чтения.
+
+#### Пример в Notebooks
+
+1. Перейдите в ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, откройте список готовых ноутбуков и выберите ноутбук **Getting started**.
+
+   В верхнем левом углу рядом с именем документа отображается надпись **Ready-made**.
+2. Выберите раздел с линейным графиком, затем выберите **Options**.
+3. Измените визуализацию с Line на Area.
+
+   Теперь вам предлагаются две кнопки: **Save as new** и **Discard changes**.
+4. Используйте обновлённый ноутбук по мере необходимости. В течение этой сессии у вас есть полный доступ к редактированию.
+5. Когда закончите, выберите, что сделать с вашими изменениями:
+
+   * **Save as new** — сохраняет ваши изменения в новой копии отредактированного ноутбука.
+   * **Discard changes** — отменяет ваши изменения и возвращает вас к неотредактированному ноутбуку только для чтения.

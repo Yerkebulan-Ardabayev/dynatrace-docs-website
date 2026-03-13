@@ -1,0 +1,118 @@
+---
+title: Install OneAgent on Linux
+source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux
+scraped: 2026-03-06T21:18:57.191682
+---
+
+# Установка OneAgent на Linux
+
+# Установка OneAgent на Linux
+
+* Latest Dynatrace
+* Практическое руководство
+* Чтение: 5 мин.
+* Обновлено 22 января 2026 г.
+
+На этой странице описывается, как скачать и установить Dynatrace OneAgent на Linux.
+
+Для начала работы войдите в вашу среду Dynatrace SaaS через веб-сайт [Dynatrace.com](https://www.dynatrace.com), используя учётные данные, предоставленные при регистрации. Затем продолжите выполнение описанных ниже шагов установки.
+
+## Требования
+
+Вы можете установить OneAgent на любую систему Linux, которая [поддерживается Dynatrace](/docs/ingest-from/technology-support#linux "Технические подробности о поддержке Dynatrace для конкретных платформ и фреймворков разработки."), независимо от системы управления пакетами, используемой вашим дистрибутивом.
+
+### Разрешения
+
+* Для скачивания и установки OneAgent вам необходимы разрешения [Скачивание/установка OneAgent](/docs/manage/identity-access-management/permission-management/role-based-permissions#environment "Разрешения на основе ролей").
+* Для запуска установки OneAgent вам необходимы только [права root](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Узнайте, когда Dynatrace OneAgent требует привилегий root на Linux."). Для этого ваша система должна соответствовать [определённым требованиям](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged#system-req "Узнайте, когда Dynatrace OneAgent требует привилегий root на Linux."). В противном случае добавьте параметр `NON_ROOT_MODE=0` в команду установки, чтобы отключить непривилегированный режим OneAgent.
+* Вам необходимы разрешения и учётные данные для перезапуска всех сервисов ваших приложений.
+
+### Ресурсы
+
+* Проверьте [требования к дисковому пространству](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux "Узнайте о структуре каталогов OneAgent и требованиях к дисковому пространству для установки OneAgent на Linux.").
+* Для установки и обновления OneAgent на хосте требуется 200 МБ свободной оперативной памяти.
+* Все хосты, которые будут отслеживаться, должны иметь возможность отправлять данные в кластер Dynatrace. В зависимости от вашего развёртывания Dynatrace, а также от сетевой архитектуры и параметров безопасности, вы можете выбрать прямой доступ к кластеру Dynatrace или [настроить ActiveGate](/docs/ingest-from/dynatrace-activegate "Основные концепции ActiveGate.").
+
+### Ограничения
+
+Существуют определённые ограничения при развёртывании OneAgent на хосте Linux с Oracle Database Server 19c и/или при наличии подключённых NFS-дисков. См. раздел [Устранение неполадок при установке OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation#oracle-database-server-19c "Узнайте, как устранить неполадки при установке OneAgent на AIX, Linux и Windows.").
+
+### Разрешение подключений через брандмауэр
+
+Убедитесь, что настройки брандмауэра разрешают связь с Dynatrace.
+В зависимости от политики вашего брандмауэра, вам может потребоваться явно разрешить определённые исходящие подключения. **Удалённые адреса Dynatrace, которые необходимо добавить в список разрешённых, указаны на странице установки OneAgent.**
+
+## Установка
+
+1. В Dynatrace Hub выберите **OneAgent**.
+2. Выберите **Set up** > **Linux**.
+3. Вставьте [PaaS-токен](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Узнайте о концепции токена доступа и его областях действия.") в поле **Installer download token** или выберите **Generate token**, чтобы сгенерировать токен и автоматически вставить его в поле **Installer download token**. Этот токен необходим для скачивания установщика OneAgent из вашей среды. Токен автоматически добавляется к командам скачивания и установки, которые вы будете использовать позже.
+4. **Выберите тип установщика**
+   OneAgent поддерживает следующие архитектуры процессоров:
+
+   * `Linux ARM` — ARM64 (AARch64), включая [процессоры AWS Graviton](https://aws.amazon.com/ec2/graviton/)
+   * `PowerPC (BE)` — 64-битный PowerPC (ppc64be) [Подробнее](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-ppc-be-linux "Узнайте, как скачать и установить Dynatrace OneAgent на PPC BE Linux.")
+   * `PowerPC (LE)` — 64-битный PowerPC (ppc64le)
+   * `s390` — 64-битный мейнфрейм IBM Z (s390) [Подробнее](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos "Установка, настройка и управление модулями Dynatrace на z/OS.")
+   * `x86-64` — 64-битный Intel/AMD
+5. **Скачайте установщик**
+   Вставьте предоставленную команду в окно терминала и выполните её.
+6. **Проверьте подпись**
+   После завершения скачивания нажмите **Copy** в поле **Verify signature**, чтобы скопировать команду `wget` в буфер обмена, затем вставьте предоставленную команду в окно терминала и выполните её. Убедитесь, что ваша система обновлена, особенно SSL и связанные библиотеки сертификатов.
+7. Необязательно: **Настройте параметры**
+
+   * Установите [сетевую зону](/docs/manage/network-zones#deploy-network-zones "Узнайте, как работают сетевые зоны в Dynatrace.") для данного хоста.
+   * Если ваша среда сегментирована (например, на среды разработки и продакшен), рассмотрите возможность [организации хостов в группы хостов](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Узнайте, как Dynatrace позволяет организовать хосты, процессы и сервисы с помощью групп хостов.").
+   * Вы можете переопределить автоматически определённое [имя хоста](/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Узнайте, как изменить имя отслеживаемого хоста."). Это полезно в больших и динамичных средах, где определённые имена хостов могут быть неинтуитивными или часто меняться.
+   * Вы также можете применить [теги](/docs/manage/tags-and-metadata "Используйте теги и метаданные для организации данных в вашей среде Dynatrace.") к хосту для удобной организации отслеживаемых сред.
+   * Измените режим OneAgent на «Мониторинг инфраструктуры» или «Обнаружение» вместо «Полный мониторинг». Подробнее см. в разделе [Режимы мониторинга OneAgent](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Подробнее о доступных режимах мониторинга при использовании OneAgent.").
+   * Отключите [мониторинг логов](/docs/analyze-explore-automate/log-monitoring "Узнайте, как включить мониторинг логов и какие данные он предоставляет.").
+
+   Установщик OneAgent из командной строки предоставляет больше возможностей для [настройки установки](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Узнайте, как использовать установщик Linux с параметрами командной строки.").
+8. **Запустите установщик**
+   Вставьте команду в окно терминала и выполните её. Права root необходимы только для запуска установки OneAgent. Повышенные привилегии отзываются сразу после развёртывания Dynatrace OneAgent.
+
+   Если вы используете Ubuntu Server
+
+   ```
+   sudo /bin/sh Dynatrace-OneAgent-Linux-1.0.0.sh
+   ```
+
+   Если вы используете Red Hat Enterprise Linux
+
+   ```
+   su -c '/bin/sh Dynatrace-OneAgent-Linux-1.0.0.sh'
+   ```
+
+   Если вы запускаете сессию от имени root
+
+   ```
+   /bin/sh Dynatrace-OneAgent-Linux-1.0.0.sh
+   ```
+
+* Если вы планируете скачивать Dynatrace OneAgent непосредственно на сервер, обратите внимание, что устаревшие или отсутствующие библиотеки (например, сертификаты CA или OpenSSL) могут помешать скачиванию установщика.
+* Dynatrace использует зашифрованные соединения. OpenSSL необходим для того, чтобы `wget` мог получить доступ к серверу. Вы также можете скачать установщик, нажав **Download OneAgent installer** в нижней части страницы и сохранив скрипт установщика в любое удобное место, что позволяет обойтись без команды `wget`.
+
+Что происходит во время установки?
+
+Dynatrace OneAgent — это набор специализированных сервисов, настроенных специально для вашей среды мониторинга. Задача этих сервисов — отслеживать различные аспекты ваших хостов, включая оборудование, операционную систему и процессы приложений.
+
+Во время процесса установки установщик:
+
+* Устанавливает исполняемый код и библиотеки, используемые Dynatrace OneAgent. Бинарные файлы OneAgent устанавливаются в каталог `/opt/dynatrace/oneagent`, а стартовые скрипты создаются в `/etc/init.d` (на системах с systemd стартовые скрипты создаются в `/etc/systemd/system/`). Один из компонентов Linux OneAgent, `liboneagentproc.so`, находится в каталоге системных библиотек (`/lib` или `/lib64`, в зависимости от архитектуры) и активируется через `/etc/ld.so.preload`.
+* Создаёт собственного пользователя (`dtuser`). Этот пользователь создаётся без пароля. Вход от имени данного пользователя невозможен. В целях безопасности сервисы, не требующие привилегий root, будут работать под этим пользователем. Тем не менее для установки по-прежнему требуется доступ root.
+* Проверяет глобальные настройки прокси-сервера системы.
+* Проверяет подключение к Dynatrace Server или ActiveGate (если вы установили ActiveGate и скачали установщик OneAgent после того, как ActiveGate был подключён к Dynatrace).
+* Обнаруживает все приложения, поддерживающие SELinux, и соответствующим образом настраивает политику безопасности SELinux.
+* Позволяет Dynatrace OneAgent внедрять собственные библиотеки в отслеживаемые процессы.
+* Изменяет конфигурацию шаблона дампа памяти (core pattern), чтобы OneAgent мог обнаруживать и сообщать о сбоях процессов. Исходная конфигурация core\_pattern будет продолжать работать после установки и сохранится в `/opt/dynatrace/oneagent/agent/conf/original_core_pattern`, где вы можете определить собственные настройки дампа в формате, указанном в [Linux Programmer's Manual](https://man7.org/linux/man-pages/man5/core.5.html).
+
+Сводку изменений, вносимых установкой OneAgent в вашу систему, см. в разделе [Безопасность OneAgent на Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux "Узнайте о безопасности Dynatrace OneAgent и изменениях в вашей системе на базе Linux").
+
+## Готово!
+
+Отлично, настройка завершена! Теперь вы можете ознакомиться с вашей новой средой мониторинга.
+
+Вы можете получить доступ к среде мониторинга в любое время, перейдя на веб-сайт Dynatrace и нажав **Login** в правом верхнем углу.
+
+И последнее: для мониторинга ваших процессов необходимо их перезапустить. В любой момент вы можете проверить, какие процессы не отслеживаются и нуждаются в перезапуске. Перейдите в **Deployment Status**, переключитесь на вкладку **All hosts** или **Recently connected hosts** и разверните интересующий вас хост.

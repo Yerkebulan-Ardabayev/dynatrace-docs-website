@@ -1,0 +1,212 @@
+---
+title: Kubernetes
+source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app
+scraped: 2026-03-06T21:09:44.668198
+---
+
+# Kubernetes
+
+# Kubernetes
+
+* Latest Dynatrace
+* App
+* 7 мин. чтения
+* Обновлено 30 января 2026
+
+Новейший [Kubernetes-интерфейс](https://dt-url.net/k1038uw) оптимизирован для инженеров DevOps-платформ и инженеров по надёжности сайтов (SRE), с акцентом на здоровье и оптимизацию производительности мультиоблачных Kubernetes-сред. Центральным элементом этого интерфейса является [![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**](https://dt-url.net/mx238j5).
+
+Базовые метрики, события и логи работают на основе [Grail](/docs/platform/grail/dynatrace-grail "Grail — это хранилище данных Dynatrace, специально разработанное для данных наблюдаемости и безопасности, которое служит единым унифицированным хранилищем для логов, метрик, трейсов, событий и т.д."), что обеспечивает гибкую аналитику с помощью [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.") в ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**, ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** и ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
+
+## Предварительные требования
+
+* Среда Dynatrace SaaS на базе Grail и AppEngine
+* [Лицензия DPS](/docs/license "О Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace.") с возможностью **Kubernetes Platform Monitoring** в вашей тарифной карте
+* [Достаточные разрешения](/docs/observe/infrastructure-observability/kubernetes-app/reference/permissions "Обзор пользовательских разрешений и разрешений на настройку.") для использования ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** в вашей среде Dynatrace
+* ActiveGate версии 1.327+ является обязательным условием для [расширенной видимости объектов Kubernetes](#enhanced-object-visibility).
+
+  + Более старые версии ActiveGate поддерживаются в режиме обратной совместимости; в этом режиме в пользовательском интерфейсе появляется дополнительная вкладка **Explorer (Classic)**.
+
+Для получения дополнительной информации см. [FAQ по началу работы](/docs/observe/infrastructure-observability/kubernetes-app/enable-k8s-experience#k8s-app-getting-started-faq "Включение Kubernetes-интерфейса для существующих кластеров или начало мониторинга новых кластеров.").
+
+Новый Kubernetes-интерфейс недоступен для Managed или SaaS в средах без Grail — вы можете продолжать использовать [**Kubernetes Classic**](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring "Мониторинг Kubernetes/OpenShift с помощью Dynatrace.") (доступен из предыдущего Dynatrace через **Kubernetes**).
+
+## Начало работы
+
+![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** предоставляет комплексное представление вашей среды, позволяя автоматизировать мониторинг и оптимизировать здоровье и производительность ваших Kubernetes-кластеров и рабочих нагрузок. На этой странице описаны основные концепции, лежащие в основе ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**.
+
+С помощью ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** вы можете:
+
+* Настроить мониторинг Kubernetes с помощью Dynatrace.
+* Исследовать информацию о кластерах, узлах и рабочих нагрузках.
+* Анализировать состояние здоровья с помощью Dynatrace Intelligence.
+* Обнаруживать и устранять проблемы Kubernetes.
+
+![Общий обзор всех ваших Kubernetes-кластеров, независимо от облачного сервиса, на котором они работают.](https://dt-cdn.net/hub/highleveloverview2.png)![Детальное представление одного кластера, показывающее все сигналы состояния здоровья содержащихся ресурсов, включая узлы, пространства имён и рабочие нагрузки.](https://dt-cdn.net/hub/detailedviewofsinglecluster.png)![Просмотр состояния здоровья конкретной рабочей нагрузки с дополнительными деталями для быстрого принятия решения о дальнейших действиях.](https://dt-cdn.net/hub/healthofworkload.png)![Настройка мониторинга Kubernetes с помощью готовых дашбордов.](https://dt-cdn.net/hub/inx16596.sprint.apps.dynatracelabs.com_uiFull-HD_1oyEkuF.png)![Подключение новых Kubernetes-кластеров всего за пять минут, независимо от облачного сервиса. Документация не требуется.](https://dt-cdn.net/hub/NewWelcomeScreenK8s_RxlAOrb.png)
+
+1 из 5 — Общий обзор всех ваших Kubernetes-кластеров, независимо от облачного сервиса, на котором они работают.
+
+### Настройка и справочная информация
+
+Используйте следующее руководство для настройки и конфигурации мониторинга Kubernetes в Dynatrace.
+
+[01 Включение Kubernetes-интерфейса для существующих кластеров
+
+* Руководство
+* Включение существующих кластеров для нового Kubernetes-интерфейса.](/docs/observe/infrastructure-observability/kubernetes-app/enable-k8s-experience/existing-clusters)
+
+## Explorer
+
+Explorer — это общий интерфейс Dynatrace для мониторинга и анализа различных технологических доменов. Он определяет единый макет (боковая панель, список, панель фильтров, индикаторы здоровья и панели детализации) с согласованной фильтрацией, перспективами, навигацией с углублением и унифицированным анализом.
+
+В разделах ниже описано, как Explorer выглядит в ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**.
+
+### Базовая структура
+
+![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** предоставляет информацию о всей вашей Kubernetes-среде, отображая ценные данные по основным областям, как показано на рисунке ниже.
+
+![Обзор страницы кластеров в приложении Kubernetes.](https://dt-cdn.net/images/k8s-clusters-page-overview-1920-faadf96144.png)
+
+* **Боковая панель (1)**
+
+  Расположена слева и группирует все [объекты Kubernetes](https://dt-url.net/q0038e6) по типу, включая кластеры, узлы, пространства имён, рабочие нагрузки, поды, сервисы и контейнеры.
+* **Список объектов (2)**
+
+### Перспективы
+
+* **Агрегированная полоса здоровья (3)**
+
+  Расположена над списком объектов и предоставляет агрегированный [статус здоровья](#health-status) отображаемых объектов и их дочерних объектов.
+* **Панель фильтров (4)**
+
+### Статус здоровья Dynatrace Intelligence
+
+### Детальное представление
+
+Выберите объект Kubernetes из списка, чтобы открыть детальное представление и сфокусироваться на конкретном объекте.
+
+![Пример страницы деталей здоровья кластера в приложении Kubernetes.](https://dt-cdn.net/images/k8s-cluster-health-details-example-1920-4a19911c0d.png)
+
+* **Верхний раздел сводки (1)**
+
+  Верхняя панель предоставляет краткую сводку о состоянии здоровья и безопасности выбранного объекта и его дочерних объектов.
+* **Основной раздел деталей (2)**
+
+  Основной раздел содержит детальную информацию о данном объекте, включая вкладки для анализа здоровья и утилизации, а также для изучения логов, событий, владения и уязвимостей. Данные в детальном представлении остаются неизменными независимо от фильтров, применённых в основном интерфейсе.
+
+### Перспективы
+
+Перспективы расположены под агрегированной полосой здоровья. Они поддерживают различные сценарии использования, такие как мониторинг здоровья или оптимизация ресурсов.
+
+![Пример страницы кластеров в приложении Kubernetes.](https://dt-cdn.net/images/k8s-clusters-health-example-1920-463f1b6358.png)
+
+* **Выбор перспективы (1)**
+
+  Выбор перспективы изменяет отображаемые столбцы в таблице. Например:
+
+  + **Health** — показывает информацию, связанную со здоровьем, и оповещения.
+  + **Utilization** — сфокусирована на метриках использования CPU, памяти и других ресурсов.
+* **Настройка столбцов (2)**
+
+  Вы можете добавлять или удалять столбцы в выбранной перспективе в соответствии с вашими потребностями анализа. Ваша персональная конфигурация сохраняется в браузере, и вы можете сбросить её к макету по умолчанию в любое время, выбрав ![More actions](https://dt-cdn.net/images/dashboards-app-menu-kebab-c39eda426b.svg "More actions") рядом со списком доступных перспектив (1).
+
+### Статус здоровья Dynatrace Intelligence
+
+Статус здоровья основан на пользовательских оповещениях, ориентированных на Kubernetes. Индикаторы здоровья агрегируют состояния этих пользовательских оповещений для каждого ресурса.
+
+Объект Kubernetes (например, кластер) считается нездоровым, если любая из связанных с ним конфигураций пользовательских оповещений находится в нездоровом состоянии. Выбрав конкретный индикатор здоровья, вы можете получить дополнительную информацию о причинах этого статуса.
+
+![Пример статуса здоровья Dynatrace Intelligence для Kubernetes-кластера.](https://dt-cdn.net/images/k8s-dynatrace-intelligence-cluster-health-status-1920-4200846da4.png)
+
+Пример
+
+В этом примере вы можете видеть, что 8 узлов из 24 в настоящее время считаются нездоровыми.
+
+1. Выберите красные числа в области статуса здоровья, чтобы перейти к списку текущих нездоровых узлов.
+
+   ![Пример предупреждающего сигнала Dynatrace Intelligence в приложении Kubernetes.](https://dt-cdn.net/images/k8s-dynatrace-intelligence-warning-signals-1393-cb95af4862.png)
+2. Выберите любой узел, чтобы открыть детальное представление проблемного узла, включая ключевые метрики и события, которые привели к текущему состоянию.
+
+   ![Warning events 2](https://dt-cdn.net/images/warning-events-2-1914-c65669ad3d.png)
+
+   Вкладка **Recommendations** представляет оповещения о здоровье Kubernetes на основе лучших практик для кластеров, узлов, пространств имён, запросов на постоянные тома и рабочих нагрузок. Она показывает, какие оповещения активны, частично активны или неактивны в вашей среде.
+
+   Выберите **Activate** или **Configure**, чтобы открыть настройки, где можно применить рекомендованную конфигурацию оповещений.
+
+   ![Recommendations](https://dt-cdn.net/images/recommendations-1909-f9f2da2e1a.png)
+
+### Оповещения о здоровье и предупреждающие сигналы
+
+Оповещения о здоровье и предупреждающие сигналы помогают вам мониторить инфраструктуру, предоставляя ясную и действенную информацию. Эти функции снижают шум от инфраструктурных проблем и улучшают возможности оповещения, чтобы вы могли сосредоточиться на том, что наиболее важно. Это достигается за счёт лучшей категоризации обнаруженных неисправностей.
+
+* Для критических событий создаётся оповещение о здоровье (Health alert), которое запускает расследование [Dynatrace Problems](/docs/dynatrace-intelligence/davis-problems-app "Используйте приложение Problems для быстрого определения первопричины инцидентов в вашей среде.").
+* Для некритических ситуаций предупреждающий сигнал (Warning signal) информирует вас о потенциальной проблеме.
+
+Хотя они не всегда представляют активные проблемы со здоровьем в данный момент, частые сигналы **Unhealthy**, например, могут указывать на неправильно настроенные проверки готовности, неуместные лимиты CPU или необычно высокую рабочую нагрузку.
+
+Сортировка и фильтрация предупреждающих сигналов
+
+Существует два типа предупреждающих сигналов. Они организованы следующим образом:
+
+* Проблемные условия влияют на здоровье узла или рабочей нагрузки (например, `DiskPressure`, `MemoryPressure`).
+
+  + Отображаются первыми
+  + Сортируются в алфавитном порядке внутри каждой категории
+* Предупреждающие события менее критичны и часто сигнализируют о временных проблемах (например, `OOMKilled`, `PodEviction`).
+
+  + Отображаются после проблемных условий
+  + Сортируются по частоте
+
+![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** предоставляет несколько вариантов взаимодействия:
+
+* Действия контекстного меню:
+
+  + **Go to affected nodes** или **Go to affected workloads**: Переход непосредственно к узлам или рабочим нагрузкам, затронутым выбранным условием. Открывается отфильтрованное представление, показывающее только затронутые узлы или рабочие нагрузки.
+  + **Explore events**: Открывает детальное представление логов, показывающее события, связанные с предупреждающим сигналом.
+  + **Filter for**: Автоматически применяет фильтр для отображения только объектов, затронутых конкретным условием или событием.
+* Фильтрация из панели меню:
+  Вы можете применять фильтры непосредственно из панели меню, выбирая общие категории, такие как **Any problematic condition**, или отдельные сигналы, такие как `MemoryPressure:True` или `FailedMount`. После фильтрации представление обновляется, чтобы сфокусироваться на объектах, затронутых выбранным фильтром.
+
+![Предупреждающие сигналы Dynatrace Intelligence для узлов в приложении Kubernetes.](https://dt-cdn.net/images/k8s-nodes-warning-signals-1920-47b6aa9589.png)
+
+| Столбец | Содержание | Примеры |
+| --- | --- | --- |
+| Предупреждающие сигналы узлов | [Объединяет события, генерируемые узлами, и проблемные условия узлов](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues#node "Настройка оповещений на уровне кластера, узла, пространства имён или рабочей нагрузки Kubernetes/OpenShift.") | `DiskPressure`, `MemoryPressure`, `NodeNotReady` |
+| Предупреждающие сигналы подов | [Объединяет события, генерируемые подами, и условия, влияющие на поды](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues#workload "Настройка оповещений на уровне кластера, узла, пространства имён или рабочей нагрузки Kubernetes/OpenShift.") | `BackOff`, `PodEviction`, `OOMKilled` |
+| Предупреждающие сигналы рабочих нагрузок | [Объединяет события, генерируемые пространствами имён, рабочими нагрузками и подами, а также условия рабочих нагрузок](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues#workload "Настройка оповещений на уровне кластера, узла, пространства имён или рабочей нагрузки Kubernetes/OpenShift.") | `CPUThrottlingHigh`, `ContainerRestarts`, `PodsPending` |
+
+## Расширенная видимость объектов Kubernetes
+
+### Предварительные требования
+
+* Среда Dynatrace SaaS на базе Grail и AppEngine
+* [Лицензия DPS](/docs/license "О Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace.") с возможностью **Kubernetes Platform Monitoring** в вашей тарифной карте
+* [Достаточные разрешения](/docs/observe/infrastructure-observability/kubernetes-app/reference/permissions "Обзор пользовательских разрешений и разрешений на настройку.") для использования ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** в вашей среде Dynatrace
+* ActiveGate версии 1.327+
+
+Начиная с 19 января 2026 года, ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** предоставляет информацию о дополнительных объектах Kubernetes и их YAML-определениях:
+
+* Видимость дополнительных объектов Kubernetes: Ingress, NetworkPolicies, CRDs, PVCs, PVs, ConfigMaps и другие.
+* Доступ к YAML-определениям для отладки и валидации конфигураций в реальном времени.
+* Возможность запрашивать YAML-файлы по всем кластерам и пространствам имён с помощью Dynatrace Query Language (DQL) для мгновенного обнаружения неправильных конфигураций, отсутствующих ссылок или нарушений политик в вашей Kubernetes-среде.
+
+## Сценарии использования
+
+## Справочная информация
+
+Перейдите на следующие справочные страницы для получения дополнительной информации о разрешениях, доступных оповещениях и настройках по умолчанию для новых сред.
+
+## Узнать больше
+
+Погрузитесь глубже в ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** с помощью следующих ресурсов:
+
+* [Тестовая среда](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.kubernetes): Тестирование приложения в песочнице.
+* [От 0 до полной наблюдаемости в Kubernetes менее чем за 3 минуты](https://dt-cdn.net/resources/product/videos/k8s-0-to-full-observability.mp4): Краткое видеоруководство по установке Dynatrace Operator.
+* [Блог-пост: Раскройте мощь DevSecOps с новым Kubernetes-интерфейсом для платформенной инженерии](https://www.dynatrace.com/news/blog/kubernetes-platform-engineering/)
+
+![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
+
+### Исследуйте в Dynatrace Hub
+
+Автоматизированный анализ влияния изменений на процессы развёртывания и выпуска.
+
+[Dynatrace Hub](https://www.dynatrace.com/hub/?filter=kubernetes&internal_source=doc&internal_medium=link&internal_campaign=cross)

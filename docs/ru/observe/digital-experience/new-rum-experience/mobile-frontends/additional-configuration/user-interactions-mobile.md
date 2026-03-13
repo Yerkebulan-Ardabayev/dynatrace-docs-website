@@ -1,43 +1,43 @@
 ---
-title: Configure user interaction capturing for mobile frontends
+title: Настройка захвата пользовательских взаимодействий для мобильных фронтендов
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/mobile-frontends/additional-configuration/user-interactions-mobile
 scraped: 2026-03-04T21:37:47.727029
 ---
 
-# Configure user interaction capturing for mobile frontends
+# Настройка захвата пользовательских взаимодействий для мобильных фронтендов
 
-# Configure user interaction capturing for mobile frontends
+# Настройка захвата пользовательских взаимодействий для мобильных фронтендов
 
-* Latest Dynatrace
-* How-to guide
-* Published Feb 12, 2026
+* Последняя Dynatrace
+* Практическое руководство
+* Опубликовано 12 февраля 2026 г.
 
-Early Access
+Ранний доступ
 
-The New RUM Experience allows you to capture [user interactions](/docs/observe/digital-experience/new-rum-experience/concepts/data-model#user-interactions "Get familiar with the data model at the heart of the New RUM Experience.") and turn them into actionable insights:
+Новый функционал RUM Experience позволяет захватывать [пользовательские взаимодействия](/docs/observe/digital-experience/new-rum-experience/concepts/data-model#user-interactions "Ознакомьтесь с моделью данных в основе нового функционала RUM Experience.") и превращать их в полезные инсайты:
 
-* You can view all user interactions that occurred during a user session using the [![Users & Sessions](https://dt-cdn.net/images/users-sessions-149-f84e0b9b20.png "Users & Sessions") **Users & Sessions**](/docs/observe/digital-experience/new-rum-experience/users-and-sessions#events "The Users & Sessions app delivers insight into individual user journeys and behavior patterns.") app. This is especially useful for customer support teams and developers when diagnosing customer issues or bugs.
-* User interaction analysis via DQL allows you to understand behavioral patterns across a wide range of use cases; see [DQL examples](/docs/observe/digital-experience/new-rum-experience/use-cases/dql-examples#behavioral-insights "Analyze and explore RUM data in depth by leveraging DQL.").
+* Вы можете просматривать все пользовательские взаимодействия, произошедшие в рамках сессии пользователя, с помощью приложения [![Users & Sessions](https://dt-cdn.net/images/users-sessions-149-f84e0b9b20.png "Users & Sessions") **Users & Sessions**](/docs/observe/digital-experience/new-rum-experience/users-and-sessions#events "Приложение Users & Sessions предоставляет информацию о путях и паттернах поведения отдельных пользователей."). Это особенно полезно для команд поддержки клиентов и разработчиков при диагностике проблем клиентов или ошибок.
+* Анализ пользовательских взаимодействий через DQL позволяет понять паттерны поведения для широкого спектра сценариев использования; см. [примеры DQL](/docs/observe/digital-experience/new-rum-experience/use-cases/dql-examples#behavioral-insights "Анализ и изучение данных RUM с помощью DQL.").
 
-At this point, [touch events](/docs/semantic-dictionary/model/rum/user-events/user-interactions#touch-events) are the supported user interaction type for mobile frontends, and they are captured when a user touches a mobile component.
+В настоящее время [события касания](/docs/semantic-dictionary/model/rum/user-events/user-interactions#touch-events) являются поддерживаемым типом пользовательских взаимодействий для мобильных фронтендов и захватываются при касании пользователем мобильного компонента.
 
-During the User Interaction Early Access, there are no additional charges for ingesting user interactions. Querying user interactions is also included at no extra cost, because raw DEM data queries are currently in Early Access; see [Calculate your consumption of Digital Experience Monitoring (DEM) - Query](/docs/license/capabilities/digital-experience-monitoring-query-retain/queries-dem "Learn how your consumption of the DEM-related DQL queries is consumed and billed before and after Early Access.").
+В период раннего доступа к пользовательским взаимодействиям дополнительная плата за приём пользовательских взаимодействий не взимается. Запросы пользовательских взаимодействий также включены без дополнительных затрат, поскольку запросы необработанных данных DEM в настоящее время находятся в раннем доступе; см. [Расчёт потребления мониторинга цифрового опыта (DEM) — Запросы](/docs/license/capabilities/digital-experience-monitoring-query-retain/queries-dem "Узнайте, как потребляются и тарифицируются DQL-запросы, связанные с DEM.").
 
-## Technology support
+## Поддержка технологий
 
-User interactions are currently available for the following mobile technologies:
+Пользовательские взаимодействия в настоящее время доступны для следующих мобильных технологий:
 
 * Android native
 * Android Jetpack Compose
 * iOS native
 * iOS SwiftUI
 
-## Activate capturing of user interactions
+## Активация захвата пользовательских взаимодействий
 
-To capture user interactions
+Чтобы захватывать пользовательские взаимодействия
 
-1. Go to ![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals** > **Overview**.
-2. Select  **Mobile** to view all mobile frontends.
-3. Select the frontend you want to configure.
-4. Switch to the **Settings** tab.
-5. Under **Enablement and cost control**, turn on **User Interactions** .
+1. Перейдите в ![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals** > **Обзор**.
+2. Выберите **Mobile** для просмотра всех мобильных фронтендов.
+3. Выберите фронтенд, который хотите настроить.
+4. Перейдите на вкладку **Настройки**.
+5. В разделе **Включение и контроль затрат** включите **Пользовательские взаимодействия**.

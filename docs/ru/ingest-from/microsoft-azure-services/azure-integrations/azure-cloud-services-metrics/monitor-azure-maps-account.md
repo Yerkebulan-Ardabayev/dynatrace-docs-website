@@ -1,60 +1,60 @@
 ---
-title: Azure Maps Account monitoring
+title: Мониторинг Azure Maps Account
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-maps-account
 scraped: 2026-03-06T21:37:19.933105
 ---
 
-# Azure Maps Account monitoring
+# Мониторинг Azure Maps Account
 
-# Azure Maps Account monitoring
+# Мониторинг Azure Maps Account
 
-* Latest Dynatrace
-* How-to guide
-* 1-min read
-* Published Jul 27, 2020
+* Последняя версия Dynatrace
+* Практическое руководство
+* 1 мин. чтения
+* Опубликовано 27 июля 2020 г.
 
-Dynatrace ingests metrics from Azure Metrics API for Azure Maps Account. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+Dynatrace собирает метрики из Azure Metrics API для Azure Maps Account. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на ваших дашбордах.
 
-## Prerequisites
+## Предварительные требования
 
-* Dynatrace version 1.199+
-* Environment ActiveGate version 1.195+
+* Dynatrace версии 1.199+
+* Environment ActiveGate версии 1.195+
 
-## Enable monitoring
+## Включение мониторинга
 
-To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Включение мониторинга Azure в Dynatrace.").
 
-## View service metrics
+## Просмотр метрик сервиса
 
-You can view the service metrics in your Dynatrace environment either on the **custom device overview page** or on your **Dashboards** page.
+Вы можете просматривать метрики сервиса в вашей среде Dynatrace либо на **странице обзора пользовательского устройства**, либо на странице **Дашборды**.
 
-### View metrics on the custom device overview page
+### Просмотр метрик на странице обзора пользовательского устройства
 
-To access the custom device overview page
+Чтобы открыть страницу обзора пользовательского устройства:
 
-1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
-2. Filter by service name and select the relevant custom device group.
-3. Once you select the custom device group, you're on the **custom device group overview page**.
-4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
+1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
+3. После выбора группы пользовательских устройств вы окажетесь на **странице обзора группы пользовательских устройств**.
+4. На **странице обзора группы пользовательских устройств** перечислены все экземпляры (пользовательские устройства), входящие в группу. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
 
-### View metrics on your dashboard
+### Просмотр метрик на дашборде
 
-If the service has a preset dashboard, you'll get a preset dashboard for the respective service containing all recommended metrics on your **Dashboards** page. You can look for specific dashboards by filtering by **Preset** and then by **Name**.
+Если для сервиса предусмотрен готовый дашборд, на странице **Дашборды** появится готовый дашборд для соответствующего сервиса, содержащий все рекомендуемые метрики. Искать конкретные дашборды можно с помощью фильтра **Preset** и затем **Name**.
 
-For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **Azure**, select the desired Azure instance, then select **Save**.
+Для существующих отслеживаемых сервисов может потребоваться повторное сохранение учётных данных, чтобы готовый дашборд появился на странице **Дашборды**. Для повторного сохранения учётных данных перейдите в **Settings** > **Cloud and virtualization** > **Azure**, выберите нужный экземпляр Azure и нажмите **Save**.
 
-You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.  
-To remove a dashboard from the dashboards list, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+Вносить изменения непосредственно в готовый дашборд нельзя, но его можно клонировать и редактировать. Чтобы клонировать дашборд, откройте меню просмотра (**…**) и выберите **Clone**.  
+Чтобы убрать дашборд из списка, его можно скрыть. Для скрытия дашборда откройте меню просмотра (**…**) и выберите **Hide**.
 
-Hiding a dashboard doesn't affect other users.
+Скрытие дашборда не влияет на других пользователей.
 
 ![Clone hide azure](https://dt-cdn.net/images/2020-12-10-14-35-42-1473-23fe220b09.png)
 
 ![Maps dash](https://dt-cdn.net/images/maps-dashboard-1011-507887e400.png)
 
-## Available metrics
+## Доступные метрики
 
-| Name | Description | Dimensions | Unit | Recommended |
+| Название | Описание | Измерения | Единица | Рекомендуется |
 | --- | --- | --- | --- | --- |
-| Availability | Availability of the APIs | ApiCategory, ApiName | Percent | Applicable |
-| Usage | Count of API calls | ApiCategory, ApiName, ResultType, ResponseCode | Count | Applicable |
+| Availability | Доступность API | ApiCategory, ApiName | Процент | Применимо |
+| Usage | Количество вызовов API | ApiCategory, ApiName, ResultType, ResponseCode | Количество | Применимо |

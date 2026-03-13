@@ -1,63 +1,63 @@
 ---
-title: SNMP generic server extension
+title: Расширение SNMP Generic Server
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/snmp-generic-server
 scraped: 2026-03-04T21:39:18.259271
 ---
 
-# SNMP generic server extension
+# Расширение SNMP Generic Server
 
-# SNMP generic server extension
+# Расширение SNMP Generic Server
 
-* Latest Dynatrace
-* Extension
-* Published Feb 19, 2026
+* Последняя Dynatrace
+* Расширение
+* Опубликовано 19 февраля 2026 г.
 
-Monitor server infrastructure health and performance using SNMP protocol in environments where you can't deploy OneAgent.
+Мониторинг состояния и производительности серверной инфраструктуры с использованием протокола SNMP в средах, где невозможно развернуть OneAgent.
 
-## Get Started
+## Начало работы
 
-### Overview
+### Обзор
 
-This extension collects generally supported SNMP infrastructure metrics to monitor the health and resource usage of servers. Metrics are collected through SNMP get polling.
+Это расширение собирает общеподдерживаемые SNMP-метрики инфраструктуры для мониторинга состояния и использования ресурсов серверов. Метрики собираются через SNMP get-опрос.
 
-### Use cases
+### Сценарии использования
 
-* Monitoring of server infrastructure where a OneAgent isn't feasible to install.
-* Unix Servers: As an alternative to: [Remote Unixï»¿](https://www.dynatrace.com/hub/detail/remote-unix-monitoring-20/)
-* Windows Servers: As an alternative to WMI: [Remote Windowsï»¿](https://www.dynatrace.com/hub/detail/remote-windows-host-monitoring/)
+* Мониторинг серверной инфраструктуры, где установка OneAgent нецелесообразна.
+* Unix-серверы: как альтернатива [Remote Unix](https://www.dynatrace.com/hub/detail/remote-unix-monitoring-20/)
+* Windows-серверы: как альтернатива WMI: [Remote Windows](https://www.dynatrace.com/hub/detail/remote-windows-host-monitoring/)
 
-### Compatibility information
+### Информация о совместимости
 
-* Any device which supports SNMP polling and one or more of the following MIBs:
+* Любое устройство, поддерживающее SNMP-опрос и одну или несколько из следующих MIB:
 
   + HOST-RESOURCES-MIB
   + UCD-SNMP-MIB
   + ENTITY-SENSOR-MIB
-* Unix: Net-SNMP software agent running. [Red Hat documentation exampleï»¿](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/6/html/deployment_guide/sect-system_monitoring_tools-net-snmp)
-* Windows: the SNMP service needs to be enabled and configured. [Microsoft documentationï»¿](https://learn.microsoft.com/en-us/windows/win32/snmp/snmp-start-page)
+* Unix: необходим запущенный программный агент Net-SNMP. [Пример документации Red Hat](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/6/html/deployment_guide/sect-system_monitoring_tools-net-snmp)
+* Windows: необходимо включить и настроить службу SNMP. [Документация Microsoft](https://learn.microsoft.com/en-us/windows/win32/snmp/snmp-start-page)
 
-## Activation and setup
+## Активация и настройка
 
-Simply activate the extension in your environment using the in-product Hub and provide the required device connection configurations.
-This extension uses the [Dynatrace SNMP Data source](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions "Learn how to create an SNMP extension using the Extensions framework.").
+Просто активируйте расширение в вашей среде с помощью встроенного Hub и укажите необходимые конфигурации подключения устройств.
+Это расширение использует [источник данных Dynatrace SNMP](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions "Узнайте, как создать SNMP-расширение с помощью фреймворка расширений.").
 
-## Details
+## Подробности
 
-This extension collects SNMP OID metrics from commonly supported MIBs. Most feature sets map to general entries or tables within the MIB files.
+Это расширение собирает метрики SNMP OID из общеподдерживаемых MIB. Большинство наборов функций соответствуют общим записям или таблицам в файлах MIB.
 
-* **SNMPv2-MIB**: System properties such as `sysname` and the `sysuptime` metric.
-* **HOST-RESOURCES-MIB**: Monitoring basic system resources such as CPU, memory, storage, and running processes on a host.
-* **UCD-SNMP-MIB**: Monitoring detailed system metrics such as load averages, disk I/O
-* **ENTITY-SENSOR-MIB**: Monitoring of physical sensors such as temperature, voltage, fan speed, and others.
+* **SNMPv2-MIB**: Свойства системы, такие как `sysname`, и метрика `sysuptime`.
+* **HOST-RESOURCES-MIB**: Мониторинг базовых системных ресурсов — CPU, памяти, хранилища и запущенных процессов на хосте.
+* **UCD-SNMP-MIB**: Мониторинг детальных системных метрик — средних значений нагрузки, дискового ввода-вывода.
+* **ENTITY-SENSOR-MIB**: Мониторинг физических датчиков — температуры, напряжения, скорости вентиляторов и других.
 
-### FAQ
+### Часто задаваемые вопросы
 
-What is the Custom Metric Usage of this extension?
+Каково использование пользовательских метрик этого расширения?
 
-The custom metric usage can be managed through which feature sets you choose to enable. `sysuptime` is the only enforced metric as part of the 'default' feature set. You can also use filter variables to restrict collection of specific paths and sensor types [Dimension Filtersï»¿](https://community.dynatrace.com/t5/Dynatrace-tips/Extensions-2-0-How-to-use-dimension-filters/m-p/230904)
-All other feature sets are based on an Object Entry or Table within the SNMP Mib. e.g., `hr-storage fs` = [HR hrStorageStableï»¿](https://mibs.observium.org/mib/HOST-RESOURCES-MIB/#hrStorageTable). Sometimes this is split into multiple for even more granular selection such as `ucd-system-cpu-basic`, `ucd-system-cpu-detailed` and `ucd-system-swap` which all come from: [UCD systemStatsï»¿](https://mibs.observium.org/mib/UCD-SNMP-MIB/#systemStats).
+Использование пользовательских метрик можно управлять через выбор наборов функций, которые вы включаете. `sysuptime` — единственная обязательная метрика в составе набора функций 'default'. Вы также можете использовать переменные фильтрации для ограничения сбора определённых путей и типов датчиков [Фильтры размерностей](https://community.dynatrace.com/t5/Dynatrace-tips/Extensions-2-0-How-to-use-dimension-filters/m-p/230904).
+Все остальные наборы функций основаны на записи объекта или таблице в SNMP MIB. Например, `hr-storage fs` = [HR hrStorageStable](https://mibs.observium.org/mib/HOST-RESOURCES-MIB/#hrStorageTable). Иногда они разделены на несколько для более детального выбора, например `ucd-system-cpu-basic`, `ucd-system-cpu-detailed` и `ucd-system-swap`, которые все относятся к: [UCD systemStats](https://mibs.observium.org/mib/UCD-SNMP-MIB/#systemStats).
 
-To estimate the metrics ingested you can use a formula such as:
+Для оценки количества принимаемых метрик можно использовать формулу:
 
 ```
 Scalar OIDs: 1 metric per OID

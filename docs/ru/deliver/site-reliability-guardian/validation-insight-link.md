@@ -1,50 +1,50 @@
 ---
-title: Add and access validation insight links
+title: Добавление и доступ к ссылкам аналитики валидации
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian/validation-insight-link
 scraped: 2026-03-05T21:34:43.909572
 ---
 
-# Add and access validation insight links
+# Добавление и доступ к ссылкам аналитики валидации
 
-# Add and access validation insight links
+# Добавление и доступ к ссылкам аналитики валидации
 
-* Latest Dynatrace
-* How-to guide
-* 2-min read
-* Published Feb 17, 2026
+* Последняя Dynatrace
+* Практическое руководство
+* 2 мин. чтения
+* Опубликовано 17 февраля 2026 г.
 
-Add validation insight links to provide contextual information and resources for an objective.
-Using validation insight links, you can go directly to dashboards, notebooks, or external tools such as SonarQube.
+Добавляйте ссылки аналитики валидации для предоставления контекстной информации и ресурсов для цели.
+С помощью ссылок аналитики валидации вы можете перейти непосредственно к панелям, блокнотам или внешним инструментам, таким как SonarQube.
 
-## How to add and access validation insight links
+## Как добавить ссылки аналитики валидации и получить к ним доступ
 
-To add a validation insight link:
+Чтобы добавить ссылку аналитики валидации:
 
-1. Go to your guardian.
-2. Select your objective.
-3. On the right-hand side, select  **Add link**.
-4. Enter the dashboard, notebook, or SonarQube URL in the **Enter or paste the link** field.
+1. Перейдите к вашему гардиану.
+2. Выберите вашу цель.
+3. Справа нажмите **Добавить ссылку**.
+4. Введите URL панели, блокнота или SonarQube в поле **Введите или вставьте ссылку**.
 
-These validation insight links are visible as **Validation insights** for the objective.
+Эти ссылки аналитики валидации отображаются как **Аналитика валидации** для цели.
 
-* You can add up to five links per objective.
-* Links must be valid HTTPS URLs.
-* Display text for each link is optional.
+* Вы можете добавить до пяти ссылок на цель.
+* Ссылки должны быть действительными HTTPS URL.
+* Отображаемый текст для каждой ссылки не обязателен.
 
-Access validation insight links from ![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian") **Site Reliability Guardian**:
+Доступ к ссылкам аналитики валидации из ![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian") **Site Reliability Guardian**:
 
-1. Go to your guardian.
-2. Select  **Analyze**.
-3. Go to the **Validation result** section.
-   The links are under **Validation insights** for the objective.
+1. Перейдите к вашему гардиану.
+2. Нажмите **Анализировать**.
+3. Перейдите в раздел **Результат валидации**.
+   Ссылки находятся в разделе **Аналитика валидации** для цели.
 
-   ![Validation Insights on Analysis Page](https://dt-cdn.net/images/validation-insights-links-1340-a2f8e028f8.png)
+   ![Аналитика валидации на странице анализа](https://dt-cdn.net/images/validation-insights-links-1340-a2f8e028f8.png)
 
-Access validation insight links using DQL:
+Доступ к ссылкам аналитики валидации с помощью DQL:
 
-* For [Lifecycle guardians](/docs/deliver/site-reliability-guardian#lifecycle-guardian "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision."), you can find the validation insights for the event type `validation.objective` in the property `dt.srg.objective`.
+* Для [гардианов жизненного цикла](/docs/deliver/site-reliability-guardian#lifecycle-guardian "Автоматическая валидация целей производительности, доступности и ёмкости критических сервисов для принятия правильного решения о выпуске.") аналитику валидации для типа события `validation.objective` можно найти в свойстве `dt.srg.objective`.
 
-  Here is an example query for Lifecycle guardian:
+  Пример запроса для гардиана жизненного цикла:
 
   ```
   fetch events
@@ -65,9 +65,9 @@ Access validation insight links using DQL:
 
   | fields dt.srg.objective
   ```
-* For [Business guardians](/docs/deliver/site-reliability-guardian#business-guardian "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision."), you can find the objective links for the event type `guardian.validation.objective` in the property `guardian.objective`.
+* Для [бизнес-гардианов](/docs/deliver/site-reliability-guardian#business-guardian "Автоматическая валидация целей производительности, доступности и ёмкости критических сервисов для принятия правильного решения о выпуске.") ссылки на цели для типа события `guardian.validation.objective` можно найти в свойстве `guardian.objective`.
 
-  Here is an example query for Business guardian:
+  Пример запроса для бизнес-гардиана:
 
   ```
   fetch bizevents
@@ -85,6 +85,6 @@ Access validation insight links using DQL:
   | fields guardian.objective
   ```
 
-## Next steps
+## Дальнейшие шаги
 
-Take a look at [Guardian execution context](/docs/deliver/site-reliability-guardian/execution-context "Filter Site Reliability Guardian validation events triggered by an external tool using the context information provided by the tool."). Use events from your Continuous Integration (CI) tool to send them to Dynatrace, which, in turn, can trigger validation of your guardian in a workflow.
+Ознакомьтесь с [контекстом выполнения гардиана](/docs/deliver/site-reliability-guardian/execution-context "Фильтрация событий валидации Site Reliability Guardian, запускаемых внешним инструментом, с использованием контекстной информации, предоставленной инструментом."). Используйте события из вашего инструмента непрерывной интеграции (CI) для отправки в Dynatrace, который, в свою очередь, может запустить валидацию вашего гардиана в рабочем процессе.

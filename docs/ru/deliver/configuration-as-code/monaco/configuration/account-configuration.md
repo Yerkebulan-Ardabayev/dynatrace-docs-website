@@ -1,21 +1,21 @@
 ---
-title: Account configuration for Monaco account management
+title: Конфигурация аккаунтов для управления аккаунтами Monaco
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/account-configuration
 scraped: 2026-03-02T21:30:29.843938
 ---
 
-# Account configuration for Monaco account management
+# Конфигурация аккаунтов для управления аккаунтами Monaco
 
-# Account configuration for Monaco account management
+# Конфигурация аккаунтов для управления аккаунтами Monaco
 
-* Latest Dynatrace
-* How-to guide
-* 4-min read
-* Updated on Jan 15, 2026
+* Последняя Dynatrace
+* Практическое руководство
+* 4 мин. чтения
+* Обновлено 15 января 2026 г.
 
-To define the accounts for which Monaco will configure the account management resources, you need to create an `accounts` section in a [manifest file](/docs/deliver/configuration-as-code/monaco/configuration#manifest "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.").
+Для определения аккаунтов, для которых Monaco будет настраивать ресурсы управления аккаунтами, необходимо создать раздел `accounts` в [файле манифеста](/docs/deliver/configuration-as-code/monaco/configuration#manifest "Управление конфигурационными файлами Dynatrace с помощью Monaco через набор проектов и манифест развёртывания.").
 
-In the following example, we define a single account object containing account-related information. The **name** property specifies the account name (in this example, `my-account`) that can be referenced using the Monaco CLI commands `--account` flag.
+В следующем примере мы определяем один объект аккаунта, содержащий информацию, связанную с аккаунтом. Свойство **name** задаёт имя аккаунта (в данном примере `my-account`), на которое можно ссылаться с помощью флага `--account` команд CLI Monaco.
 
 ```
 accounts:
@@ -49,24 +49,24 @@ clientSecret:
 name: OAUTH_CLIENT_SECRET
 ```
 
-Account management requires OAuth credentials.
-Platform tokens and API tokens are not supported.
-The OAuth client must have the appropriate scopes configured for the account resources you want to manage.
-Ensure your OAuth credentials include the required permissions for users, groups, policies, boundaries, or service users before deploying configurations.
+Управление аккаунтами требует учётных данных OAuth.
+Платформенные токены и API-токены не поддерживаются.
+OAuth-клиент должен иметь соответствующие области, настроенные для ресурсов аккаунта, которыми вы хотите управлять.
+Убедитесь, что ваши учётные данные OAuth включают необходимые разрешения для пользователей, групп, политик, границ или сервисных пользователей перед развёртыванием конфигураций.
 
-Other than the `accounts` section, a `manifest.yaml` defined for account resources is the same as for environment configurations, requiring [`projects`](/docs/deliver/configuration-as-code/monaco/configuration#project-definitions "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.") of account resource configuration files.
+Помимо раздела `accounts`, файл `manifest.yaml`, определённый для ресурсов аккаунта, аналогичен файлу для конфигураций среды, требуя [`projects`](/docs/deliver/configuration-as-code/monaco/configuration#project-definitions "Управление конфигурационными файлами Dynatrace с помощью Monaco через набор проектов и манифест развёртывания.") конфигурационных файлов ресурсов аккаунта.
 
-## Account resources
+## Ресурсы аккаунта
 
-Using Monaco, you can define [users](/docs/manage/identity-access-management/user-and-group-management/access-user-management "User management"), [service users](/docs/manage/identity-access-management/user-and-group-management/access-service-users "Service users"), [groups](/docs/manage/identity-access-management/user-and-group-management/access-group-management "Manage Dynatrace groups and their permissions."), [policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies"), and [boundaries](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries "Restrict security policies with policy boundaries to provide tailored access to your users.") as dedicated types in YAML configuration files.
+С помощью Monaco вы можете определять [пользователей](/docs/manage/identity-access-management/user-and-group-management/access-user-management "Управление пользователями"), [сервисных пользователей](/docs/manage/identity-access-management/user-and-group-management/access-service-users "Сервисные пользователи"), [группы](/docs/manage/identity-access-management/user-and-group-management/access-group-management "Управление группами Dynatrace и их разрешениями."), [политики](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Работа с политиками") и [границы](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries "Ограничение политик безопасности с помощью границ политик для предоставления адаптированного доступа пользователям.") как выделенные типы в YAML-файлах конфигурации.
 
-Unlike the usual environment-level configurations, no JSON template files are needed. Monaco builds the required API data directly from your YAML configuration.
+В отличие от обычных конфигураций уровня среды, файлы JSON-шаблонов не нужны. Monaco создаёт необходимые данные API непосредственно из вашей YAML-конфигурации.
 
-### Example account management resources representation
+### Пример представления ресурсов управления аккаунтами
 
-This example shows how Monaco represents account management resources locally, with examples defining users, service users, groups, policies, and boundaries.
+Этот пример показывает, как Monaco представляет ресурсы управления аккаунтами локально, с примерами определения пользователей, сервисных пользователей, групп, политик и границ.
 
-The following sections will describe each configuration in detail.
+Следующие разделы подробно описывают каждую конфигурацию.
 
 ```
 users:
@@ -205,7 +205,7 @@ id: workflow-simple-boundary
 
 
 
-- MyExistingBoundary # If you want to reference by name directly
+- MyExistingBoundary # Если вы хотите ссылаться по имени напрямую
 
 
 
@@ -276,9 +276,9 @@ name: Workflow Simple boundary
 query: automation:workflow-type = "SIMPLE";
 ```
 
-While this sample shows users, service users, groups, policies, and boundaries defined in a single file, you can define them in individual files and structure your account resource projects and files as needed.
+Хотя этот пример показывает пользователей, сервисных пользователей, группы, политики и границы, определённые в одном файле, вы можете определять их в отдельных файлах и структурировать проекты и файлы ресурсов аккаунта по необходимости.
 
-### Users
+### Пользователи
 
 ```
 users:
@@ -304,19 +304,19 @@ groups:
 id: my-group
 ```
 
-In this example, we define these objects.
+В этом примере мы определяем следующие объекты.
 
-* **users** define one or more users bound to different groups.
+* **users** определяет одного или нескольких пользователей, привязанных к различным группам.
 
-  + **email** address
-  + **groups** specifies the groups to which the user belongs. In the example, the user belongs to the default `Log viewer` group.
+  + **email** — адрес электронной почты
+  + **groups** указывает группы, к которым принадлежит пользователь. В примере пользователь принадлежит к группе по умолчанию `Log viewer`.
 
     - **type**
-    - **id** specifies a custom group, for example, `my-group`. This **id** must match a group defined under the **groups** field.
+    - **id** указывает пользовательскую группу, например `my-group`. Этот **id** должен совпадать с группой, определённой в поле **groups**.
 
-### Service users
+### Сервисные пользователи
 
-Dynatrace Monaco CLI version 2.23.0+
+Dynatrace Monaco CLI версии 2.23.0+
 
 ```
 serviceUsers:
@@ -350,16 +350,16 @@ groups:
 id: my-group
 ```
 
-In this example, we define these objects.
+В этом примере мы определяем следующие объекты.
 
-* **serviceUsers** define one or more service users bound to different groups.
+* **serviceUsers** определяет одного или нескольких сервисных пользователей, привязанных к различным группам.
 
-  + **name** is the name of the service user. If not unique within an account, an **originObjectId** must be provided.
-  + **description** is an optional description of the service user.
-  + **originObjectId** is an optional Dynatrace ID of an existing service user to update, used to differentiate between service users if more than one has the same name.
-  + **groups** specifies the groups to which the service user belongs. In the example, the service user belongs to the default `Log viewer` group and to `my-group` defined under the **groups** field. As the latter is a reference, **type** must be set to `reference` and **id** must match that of a group defined under the **groups** field.
+  + **name** — имя сервисного пользователя. Если не уникально в рамках аккаунта, необходимо указать **originObjectId**.
+  + **description** — необязательное описание сервисного пользователя.
+  + **originObjectId** — необязательный Dynatrace ID существующего сервисного пользователя для обновления, используется для различения сервисных пользователей, если несколько имеют одинаковое имя.
+  + **groups** указывает группы, к которым принадлежит сервисный пользователь. В примере сервисный пользователь принадлежит к группе по умолчанию `Log viewer` и к `my-group`, определённой в поле **groups**. Поскольку последняя является ссылкой, **type** должен быть установлен как `reference`, а **id** должен совпадать с группой, определённой в поле **groups**.
 
-### Groups
+### Группы
 
 ```
 groups:
@@ -446,7 +446,7 @@ id: my-boundary
 
 
 
-- MyExistingBoundary # If you want to reference by name directly
+- MyExistingBoundary # Если вы хотите ссылаться по имени напрямую
 
 
 
@@ -469,34 +469,34 @@ permissions:
 - tenant-viewer
 ```
 
-In this example, we define these objects.
+В этом примере мы определяем следующие объекты.
 
-* **groups** defines one or more groups that are bound to different policies or permissions.
+* **groups** определяет одну или несколько групп, привязанных к различным политикам или разрешениям.
 
-  + **name**: The name of the group.
-  + **id**: A monaco-internal unique identifier for the group, which users and service users can reference.
-  + **description**: A description of the group.
-  + **account** specifies permissions and policies to which the group is bound on the account level.
-  + **environments** specify the permissions and policies to which the group is bound on the environment level.
+  + **name**: имя группы.
+  + **id**: внутренний уникальный идентификатор Monaco для группы, на который могут ссылаться пользователи и сервисные пользователи.
+  + **description**: описание группы.
+  + **account** указывает разрешения и политики, к которым группа привязана на уровне аккаунта.
+  + **environments** указывает разрешения и политики, к которым группа привязана на уровне среды.
 
-    - **name**: The environment-id.
-    - **permissions**: A list of permissions assigned to the group for this environment.
+    - **name**: ID среды.
+    - **permissions**: список разрешений, назначенных группе для этой среды.
     - **policies**
-    - **policy** can be referenced by name if a default policy is available.
+    - **policy** может ссылаться по имени, если доступна политика по умолчанию.
 
-      * **type** must be set to `reference` when referencing a custom policy.
-      * **id** references a custom policy. The **id** must match a policy defined in the **policies**.
-    - **boundaries** can be referenced by name if it's available.
+      * **type** должен быть установлен как `reference` при ссылке на пользовательскую политику.
+      * **id** ссылается на пользовательскую политику. **id** должен совпадать с политикой, определённой в **policies**.
+    - **boundaries** могут ссылаться по имени, если они доступны.
 
-      * **id** references a custom boundary. The **id** must match a boundary defined in the **boundaries**.
-      * **type** must be set to `reference` when referencing a custom boundary.
-  + **managementZones**: specifies the permissions assigned to the group on the management zone level.
+      * **id** ссылается на пользовательскую границу. **id** должен совпадать с границей, определённой в **boundaries**.
+      * **type** должен быть установлен как `reference` при ссылке на пользовательскую границу.
+  + **managementZones**: указывает разрешения, назначенные группе на уровне зоны управления.
 
-    - **environment**: The environment-id.
-    - **managementZone**: The name of the environment zone, for example, `Management Zone 2000`.
-    - **permissions**: A list of permissions assigned to the group for this management zone.
+    - **environment**: ID среды.
+    - **managementZone**: имя зоны управления среды, например `Management Zone 2000`.
+    - **permissions**: список разрешений, назначенных группе для данной зоны управления.
 
-### Policies
+### Политики
 
 ```
 policies:
@@ -562,20 +562,20 @@ policy: |-
 ALLOW automation:workflows:read;
 ```
 
-In this example, we define these objects.
+В этом примере мы определяем следующие объекты.
 
-* **policies** defines one or more policies.
+* **policies** определяет одну или несколько политик.
 
-  + **name**: The name of the policy.
-  + **id**: A monaco-internal unique identifier for the policy, which can be referenced by groups.
-  + **level**: Specifies the level of the policy.
+  + **name**: имя политики.
+  + **id**: внутренний уникальный идентификатор Monaco для политики, на который могут ссылаться группы.
+  + **level**: указывает уровень политики.
 
-    - **type**: This can be `account` or `environment`.
-    - **environment**: If the type is `environment`, specify the environment ID for which this policy applies.
-  + **description**: A description of the policy.
-  + **policy** contains any policy rules of this particular policy.
+    - **type**: может быть `account` или `environment`.
+    - **environment**: если тип `environment`, укажите ID среды, к которой применяется эта политика.
+  + **description**: описание политики.
+  + **policy** содержит правила данной политики.
 
-### Boundaries
+### Границы
 
 ```
 boundaries:
@@ -593,18 +593,16 @@ name: Workflow Simple boundary
 query: automation:workflow-type = "SIMPLE";
 ```
 
-In this example, we define these objects.
+В этом примере мы определяем следующие объекты.
 
-* **boundaries** defines one or more boundaries.
+* **boundaries** определяет одну или несколько границ.
 
   + **id**
   + **name**
-  + **query** contains one or more policy statements separated by `;`.
+  + **query** содержит одно или несколько выражений политики, разделённых `;`.
 
-## Commands
+## Команды
 
+Поскольку конфигурация на уровне аккаунта обычно отличается от конфигурации на уровне среды и изменяется реже, существующие команды, такие как `monaco deploy`, игнорируют любую конфигурацию аккаунта, которая может быть определена в файле манифеста.
 
-
-Because account-level configuration is usually distinct from environment-level configuration and changes less frequently, existing commands like `monaco deploy` ignore any account configuration that may be defined in a manifest file.
-
-Dedicated commands exist for account resources: [Account](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#account "How to use the Monaco CLI application, including arguments and options.").
+Для ресурсов аккаунта существуют специальные команды: [Account](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#account "Как использовать приложение CLI Monaco, включая аргументы и параметры.").

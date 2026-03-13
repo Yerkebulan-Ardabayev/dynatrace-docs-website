@@ -1,0 +1,30 @@
+---
+title: Get started
+source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started
+scraped: 2026-03-06T21:14:22.129372
+---
+
+# Начало работы
+
+# Начало работы
+
+* Latest Dynatrace
+* How-to guide
+* 1-min read
+* Updated on Feb 25, 2026
+
+Платформу полного стека наблюдаемости Dynatrace можно использовать совместно с:
+
+* Traceloop OpenLLMetry OpenTelemetry SDK.
+* OpenTelemetry SDK.
+
+В совокупности это обеспечивает всестороннее понимание больших языковых моделей (LLM) в производственных средах.
+Наблюдая за AI-моделями, предприятия могут принимать обоснованные решения, оптимизировать производительность и обеспечивать соответствие требованиям формирующегося законодательства в области искусственного интеллекта.
+
+Приведённые ниже руководства по началу работы показывают, как инструментировать AI-приложение и отправлять данные наблюдаемости в Dynatrace.
+
+[### OpenLLMetry
+
+Инструментируйте своё AI-приложение с помощью OpenLLMetry.](/docs/observe/dynatrace-for-ai-observability/get-started/openllmetry "Use OpenLLMetry to collect observability data from AI applications.")[### OpenTelemetry
+
+Инструментируйте своё AI-приложение с помощью OpenTelemetry.](/docs/observe/dynatrace-for-ai-observability/get-started/opentelemetry "Use OpenTelemetry and the GenAI semantic conventions to collect observability data from AI applications.")

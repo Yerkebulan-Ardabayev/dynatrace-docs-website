@@ -1,0 +1,398 @@
+---
+title: Customize data with extensions
+source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/extension-customize
+scraped: 2026-03-06T21:33:40.035225
+---
+
+# Настройка данных с помощью расширений
+
+# Настройка данных с помощью расширений
+
+* Последняя версия Dynatrace
+* Руководство
+* Чтение: 7 мин
+* Обновлено 28.10.2025
+
+Вы можете адаптировать различные аспекты Dynatrace к специфике данных, получаемых вашим расширением. Вы также можете использовать расширение для введения новой конфигурации в вашу среду (например, организовать данные в дашбордах, создать новые оповещения или ввести сложные метрики).
+
+## Пользовательский интерфейс Dynatrace
+
+Фреймворк Extensions 2.0 позволяет адаптировать пользовательский интерфейс Dynatrace для специфических потребностей данных, принимаемых вашим расширением. Вы можете добавить настроенные дашборды или специализированные страницы унифицированного анализа к вашему расширению.
+
+Подробнее см. [Расширение Dynatrace с помощью доменно-специфичного веб-интерфейса](/docs/ingest-from/extend-dynatrace/extend-ui "Расширяйте веб-интерфейс Dynatrace с помощью страниц унифицированного анализа, адаптированных к сущностям.").
+
+## Пользовательские события метрик
+
+Вы можете создавать пользовательские события метрик на основе метрик, извлечённых вашим расширением, и добавлять экспортированные определения в архив расширения. Таким образом, вы можете распространять пользовательские события метрик между средами Dynatrace.
+
+Экспорт определения пользовательского события для оповещения
+
+1. Перейдите в **Settings** > **Anomaly detection** > **Metric events**.
+2. Раскройте нужное событие.
+3. Прокрутите вниз определения, где вы найдёте параметр `Config id` (например, `id=1be8d58d-71a7-4566-9058-754d635363ab`), и сохраните значение параметра.
+4. Выполните следующую команду для получения определения пользовательского события метрики. В этом примере мы используем URL Dynatrace SaaS:
+
+   ```
+   curl -X GET "https://{env-id}.live.dynatrace.com/api/config/v1/anomalyDetection/metricEvents/{custom-event-id}" \
+
+
+
+   -H "accept: application/json; charset=utf-8" \
+
+
+
+   -H "Authorization: Api-Token `{api-token}"
+   ```
+
+   Замените:
+
+   * `{env-id}` на ваш [идентификатор среды](/docs/discover-dynatrace/get-started/monitoring-environment "Узнайте, как работать с средами мониторинга.").
+   * `{api-token}` на [API-токен](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с необходимыми [разрешениями](/docs/ingest-from/extensions/manage-extensions#permissions "Узнайте, как управлять расширениями.").
+   * `{custom-event-id}` на идентификатор пользовательского события метрики, определённый на предыдущем шаге.
+5. Вызов возвращает JSON-полезную нагрузку, содержащую определение пользовательского события метрики. Сохраните его как JSON-файл.
+6. Объявите экспортированные JSON-файлы в файле `extension.yaml` и добавьте их в пакет расширения.
+
+Подробнее см. [Практическое упражнение по Extensions 2.0](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial "Узнайте о расширениях WMI в фреймворке Extensions.").
+
+После загрузки или обновления расширения, содержащего пользовательские события метрик, убедитесь, что вы включили те события, которые хотите использовать. Импортированные расширением события отключены по умолчанию после каждой загрузки и активации, включая обновление. Для включения событий метрик перейдите в **Settings** > **Anomaly detection** > **Metric events**.
+
+## Пользовательская топология
+
+После того как вы начнёте отправлять собственные данные через расширение, вас может заинтересовать расширение встроенной модели топологии путём добавления собственных типов сущностей и связей, специфичных для вашей предметной области.
+
+Подробнее см. [Пользовательская модель топологии](/docs/ingest-from/extend-dynatrace/extend-topology "Убедитесь, что все входящие наблюдения обогащены контекстом и анализируются в контексте отслеживаемых сущностей, к которым они относятся.").
+
+## Пользовательские метаданные метрик
+
+Чтобы добавить больше контекста к точкам данных и их измерениям, принимаемым вашим расширением, ваша пользовательская метрика может нести дополнительную полезную информацию, такую как единица измерения, отображаемое имя и диапазоны значений.
+
+Вы можете предоставить такую информацию через пользовательские метаданные метрик. Метаданные хранятся независимо от точек данных и связываются вместе через ключ метрики. Вы можете отправлять точки данных и устанавливать метаданные в любом порядке.
+
+Подробнее см. [Пользовательские метаданные метрик](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata "Предоставьте метаданные для вашей пользовательской метрики.").
+
+### Фильтрация данных
+
+Расширения также позволяют фильтровать данные на основе определённых критериев. Эта возможность фильтрации особенно полезна для расширений SNMP, где вы можете захотеть ограничить данные, принимаемые расширением.
+
+Фильтры сопоставляют имена сущностей для включения/исключения определённых конфигураций из мониторинга. Это делает данные более релевантными и экономит ненужное потребление лицензий. Фильтры работают с определённым типом сущности и поддерживают следующий синтаксис:
+
+| Выражение | Описание |
+| --- | --- |
+| `$eq(<str>)` | Проверяет, совпадает ли `<str>` с фильтруемым значением |
+| `$prefix(...)` | Начинается с ... |
+| `$suffix(...)` | Заканчивается на ... |
+| `$contains(...)` | Содержит ... |
+| `$and(<expr1>, <expr2>)` | Объединяет два или более выражений оператором AND |
+| `$or(<expr1>, <expr2>)` | Объединяет два или более выражений оператором OR |
+| `$not(<expr>)` | Отрицает выражение. Например, чтобы исключить все пулы из раздела Common, вы можете добавить фильтр `$not($prefix(/Common/))`. |
+
+## Пользовательские правила обнаружения групп процессов
+
+Dynatrace определяет, какие процессы являются частью одних и тех же [групп процессов](/docs/observe/infrastructure-observability/process-groups "Анализируйте группы процессов и настраивайте именование, обнаружение и мониторинг групп процессов."), с помощью набора правил обнаружения по умолчанию. Однако вы можете добавить собственные правила обнаружения процессов, подходящие для данных, получаемых вашим расширением.
+
+Подробнее см. [Обнаружение групп процессов](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Способы настройки обнаружения групп процессов.").
+
+## Пользовательский атрибут контекста безопасности
+
+Вы можете добавить атрибут контекста безопасности к расширениям, предоставляемым Dynatrace, и к пользовательским расширениям. Это можно сделать при активации расширения, индивидуально для каждой конфигурации, или отредактировать настройки позднее.
+
+Необходима конфигурация мониторинга для выбранного расширения. Подробнее о настройке конфигурации мониторинга через API см. [Extensions 2.0 API - POST a monitoring configuration](/docs/dynatrace-api/environment-api/extensions-20/monitoring-configurations/post-monitoring-configuration "Создайте конфигурацию мониторинга расширения через Dynatrace Extensions 2.0 API.").
+
+Вы можете добавить контекст безопасности из вкладки **Monitoring configurations** выбранного расширения, нажав **Edit** в столбце **Actions**. Затем нажмите **Next**, чтобы перейти на страницу **Attributes**.
+
+Атрибут применяется ко всем метрикам, логам и событиям, создаваемым конфигурацией.
+
+API также можно использовать для настройки контекста безопасности. Подробности см. [Monitored entities API - security context](/docs/dynatrace-api/environment-api/entity-v2/security-context "Создание или удаление контекста безопасности через Dynatrace API.").
+
+Чтобы избежать уязвимостей, таких как несанкционированный доступ или утечка данных, настраивайте контекст безопасности для расширений в соответствии с нашими [рекомендуемыми практиками](/docs/manage/identity-access-management/use-cases/access-security-context "Предоставьте доступ к сущностям с контекстом безопасности.").
+
+## Пользовательские атрибуты центра затрат и продукта затрат
+
+Вы можете добавить атрибуты центра затрат и продукта затрат к расширениям, предоставляемым Dynatrace, и к пользовательским расширениям. Это можно сделать при активации расширения, индивидуально для каждой конфигурации, или отредактировать настройки позднее.
+
+Поля основаны на следующих атрибутах:
+
+* `dt.cost.costcenter` назначает использование определённому центру затрат.
+* `dt.cost.product` назначает использование продукту или идентификатору приложения.
+
+Подробнее о синтаксисе полей см. [Справочник глобальных полей](/docs/semantic-dictionary/fields#dynatrace "Ознакомьтесь со списком глобальных полей, имеющих чётко определённый семантический смысл в Dynatrace и используемых в различных типах мониторинга.").
+
+Чтобы добавить атрибуты центра затрат и продукта затрат к расширению, необходима конфигурация мониторинга для выбранного расширения. Подробнее о настройке конфигурации мониторинга через API см. [Extensions 2.0 API - POST a monitoring configuration](/docs/dynatrace-api/environment-api/extensions-20/monitoring-configurations/post-monitoring-configuration "Создайте конфигурацию мониторинга расширения через Dynatrace Extensions 2.0 API.").
+
+Вы можете добавить контекст безопасности из вкладки **Monitoring configurations** выбранного расширения, нажав **Edit** в столбце **Actions**. Затем нажмите **Next**, чтобы перейти на страницу **Attributes**.
+
+Атрибуты применяются ко всем метрикам, логам и событиям, создаваемым конфигурацией.
+
+## Метрики логов, события и правила обработки
+
+После включения [приёма логов](/docs/analyze-explore-automate/logs "Log Management and Analytics обеспечивает унифицированный подход к управлению и изучению данных логов в Dynatrace.") в Dynatrace вы можете определить метрики логов, события и добавить собственные правила обработки логов для поставки вместе с расширением.
+
+Общую информацию о конфигурации логов см.:
+
+* [События логов](/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-events "Создавайте события логов на основе данных логов и используйте их при обнаружении проблем.")
+* [Метрики логов](/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-metrics "Создавайте метрики на основе данных логов и используйте их в Dynatrace, как и любую другую метрику.")
+* [Обработка логов](/docs/analyze-explore-automate/logs/lma-log-processing "Используйте Dynatrace на базе Grail и DQL для преобразования входящих данных логов для лучшего понимания, анализа или дальнейшей обработки.")
+
+YAML-файл расширений поддерживает те же поля, что и схемы Settings 2.0:
+
+* [Метрики логов](/docs/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-schemaless-log-metric "Просмотр таблицы схемы настроек builtin:logmonitoring.schemaless-log-metric вашей среды мониторинга через Dynatrace API.")
+* [События логов](/docs/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-events "Просмотр таблицы схемы настроек builtin:logmonitoring.log-events вашей среды мониторинга через Dynatrace API.")
+* [Обработка](/docs/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-dpp-rules "Просмотр таблицы схемы настроек builtin:logmonitoring.log-dpp-rules вашей среды мониторинга через Dynatrace API.")
+
+Вы определяете пользовательскую конфигурацию логов в YAML-файле расширений, начиная со следующих узлов в корне файла:
+
+* `logMetrics`
+* `logEvents`
+* `logProcessingRules`
+
+Чтобы узнать структуру определения, изучите схемы расширений:
+
+* `log.events.schema.json`
+* `log.metrics.schema.json`
+* `log.processing.rule.schema.dql.json`
+* `log.processing.rule.schema.json`
+* `log.processing.rule.schema.lql.json`
+
+См. [YAML-файл расширения](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml#schemas "Узнайте, как создать YAML-файл расширения с помощью фреймворка Extensions."), чтобы узнать, как получить JSON-файлы схем.
+
+Ознакомьтесь с приведёнными ниже примерами определения метрик логов, событий и правил обработки в YAML-файле расширения.
+
+Метрики логов
+
+```
+name: custom:dynatrace.logmetric.test.extension
+
+
+
+version: 1.0.0
+
+
+
+minDynatraceVersion: "1.281.0"
+
+
+
+author:
+
+
+
+name: "John Doe"
+
+
+
+logMetrics:
+
+
+
+- key: log.test.extension.occurrence
+
+
+
+query: content="AllProcessed"
+
+
+
+enabled: true
+
+
+
+measure: OCCURRENCE
+
+
+
+- key: log.test.extension.attribute
+
+
+
+query: content="AllProcessed"
+
+
+
+enabled: true
+
+
+
+measure: ATTRIBUTE
+
+
+
+measureAttribute: dt.os.type
+
+
+
+- key: log.test.extension.dimensions
+
+
+
+query: content="AllProcessed"
+
+
+
+enabled: true
+
+
+
+measure: OCCURRENCE
+
+
+
+dimensions: [
+
+
+
+dimension1,
+
+
+
+dimension2
+
+
+
+]
+```
+
+События логов
+
+```
+ame: custom:dynatrace.logevent.test.extension2
+
+
+
+version: 1.0.0
+
+
+
+minDynatraceVersion: "1.281.0"
+
+
+
+author:
+
+
+
+name: "John Doe"
+
+
+
+logEvents:
+
+
+
+- query: content="a"
+
+
+
+enabled: true
+
+
+
+summary: abc
+
+
+
+eventTemplate:
+
+
+
+title: log_event_a
+
+
+
+description: ''
+
+
+
+eventType: CUSTOM_ALERT
+
+
+
+davisMerge: false
+
+
+
+- query: content="a"
+
+
+
+enabled: true
+
+
+
+summary: abd
+
+
+
+eventTemplate:
+
+
+
+title: abd
+
+
+
+description: My custom log event description :)
+
+
+
+eventType: CUSTOM_ALERT
+
+
+
+davisMerge: false
+```
+
+Правило обработки логов
+
+С этим определением вы используете `RAPLACE_PATTERN` для маскирования конфиденциальных данных, полученных с использованием источника данных SQL.
+
+```
+logProcessingRules:
+
+
+
+- ruleName: TopN statements masking
+
+
+
+query: event.group="query_performance"
+
+
+
+enabled: true
+
+
+
+ProcessorDefinition:
+
+
+
+rule: |
+
+
+
+USING(INOUT content) | FIELDS_ADD(content: REPLACE_PATTERN(content, "(\"'\"):p1 (LD):p2 (\"'\"):p3", "${p1}${p2|sha1}${p3}"))
+
+
+
+RuleTesting:
+
+
+
+sampleLog: |
+
+
+
+{
+
+
+
+"event.group": "query_performance",
+
+
+
+"content": "/*dt:ownQuery*/SELECT DECODE(name, 'sessions', value) AS sessions_limit, DECODE(name, 'processes', value) AS processes_limit FROM v$parameter WHERE name IN('sessions', 'processes')"
+
+
+
+}
+```

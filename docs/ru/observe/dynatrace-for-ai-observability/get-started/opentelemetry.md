@@ -1,82 +1,82 @@
 ---
-title: Get started with OpenTelemetry and AI Observability
+title: Начало работы с OpenTelemetry и наблюдаемостью ИИ
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started/opentelemetry
 scraped: 2026-03-06T21:28:35.685729
 ---
 
-# Get started with OpenTelemetry and AI Observability
+# Начало работы с OpenTelemetry и наблюдаемостью ИИ
 
-# Get started with OpenTelemetry and AI Observability
+# Начало работы с OpenTelemetry и наблюдаемостью ИИ
 
-* Latest Dynatrace
-* Getting started guide
-* 5-min read
-* Updated on Feb 25, 2026
+* Последняя Dynatrace
+* Руководство по началу работы
+* 5 мин. чтения
+* Обновлено 25 февраля 2026 г.
 
-OpenTelemetry provides a vendor-neutral standard for collecting traces and metrics from AI applications. With the [GenAI semantic conventionsï»¿](https://opentelemetry.io/docs/specs/semconv/gen-ai/), OpenTelemetry defines a consistent way to capture AI-specific attributes such as model names, token counts, latency, and cost metrics across different LLM providers.
+OpenTelemetry предоставляет вендоронезависимый стандарт для сбора трассировок и метрик из ИИ-приложений. С помощью [семантических соглашений GenAI](https://opentelemetry.io/docs/specs/semconv/gen-ai/) OpenTelemetry определяет единый способ захвата атрибутов, специфичных для ИИ, таких как имена моделей, количество токенов, задержка и метрики стоимости для различных провайдеров LLM.
 
-Dynatrace fully supports OpenTelemetry, allowing you to send AI observability data directly to your Dynatrace environment using the [OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). This approach gives you flexibility to use any OpenTelemetry-compatible instrumentation library or build custom instrumentation.
+Dynatrace полностью поддерживает OpenTelemetry, позволяя отправлять данные наблюдаемости ИИ непосредственно в вашу среду Dynatrace через [конечные точки OTLP API](/docs/ingest-from/opentelemetry/otlp-api "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."). Этот подход даёт вам гибкость в использовании любой совместимой с OpenTelemetry библиотеки инструментирования или в создании пользовательского инструментирования.
 
-## Who is this for?
+## Для кого это руководство?
 
-This getting started guide is for:
+Это руководство по началу работы предназначено для:
 
-* AI engineering teams building agent and LLM powered applications and services.
-* Site Reliability Engineers responsible for monitoring AI workloads on hyperscalers.
-* Platform engineers integrating OTel data into Dynatrace.
+* Команд ИИ-инженерии, создающих приложения и сервисы на основе агентов и LLM.
+* Инженеров по надёжности (SRE), ответственных за мониторинг ИИ-задач на гиперскейлерах.
+* Инженеров платформ, интегрирующих данные OTel в Dynatrace.
 
-## What will you learn?
+## Что вы узнаете?
 
-By following this guide, you will learn:
+Следуя этому руководству, вы узнаете:
 
-* How to set up OpenTelemetry and get trace- and log-level visibility into your AI apps.
-* How to configure and instrument your app with OTel.
-* How to configure OTLP exports to Dynatrace.
-* How to report attributes following GenAI semantic conventions.
-* What traces and metrics can be sent to Dynatrace.
-* How to achieve trace- and token-level visibility into Agent and LLM operations.
+* Как настроить OpenTelemetry и получить видимость на уровне трассировок и логов для ваших ИИ-приложений.
+* Как настроить и инструментировать приложение с помощью OTel.
+* Как настроить экспорт OTLP в Dynatrace.
+* Как сообщать атрибуты в соответствии с семантическими соглашениями GenAI.
+* Какие трассировки и метрики можно отправлять в Dynatrace.
+* Как обеспечить видимость на уровне трассировок и токенов для операций агентов и LLM.
 
-## Before you begin
+## Прежде чем начать
 
-### Prerequisites
+### Предварительные требования
 
-In order for this to work, you need to have:
+Для работы вам потребуется:
 
-* A running AI app or AI demo app.
-* Dynatrace SaaS with a [Dynatrace Platform Subscription (DPS)](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license that has [Traces powered by Grail](/docs/license/capabilities/traces "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model."), [Metrics powered by Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model."), and [Log Analytics](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") enabled.
-* OTLP ingestion enabled, see [OpenTelemetry and Dynatrace](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
-* An OpenAPI platform API key.
-* A Dynatrace API token the following scopes, see [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+* Работающее ИИ-приложение или демо-приложение ИИ.
+* Dynatrace SaaS с лицензией [Dynatrace Platform Subscription (DPS)](/docs/license "О Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace."), в которой включены [Traces powered by Grail](/docs/license/capabilities/traces "Узнайте, как рассчитывается потребление Dynatrace Traces powered by Grail в модели Dynatrace Platform Subscription (DPS)."), [Metrics powered by Grail](/docs/license/capabilities/metrics "Узнайте, как рассчитывается потребление Dynatrace Metrics powered by Grail в модели Dynatrace Platform Subscription.") и [Log Analytics](/docs/license/capabilities/log-analytics "Узнайте, как рассчитывается потребление Dynatrace Log Analytics в модели Dynatrace Platform Subscription.").
+* Включённый приём OTLP, см. [OpenTelemetry и Dynatrace](/docs/ingest-from/opentelemetry "Узнайте, как интегрировать и принимать данные OpenTelemetry (трассировки, метрики и логи) в Dynatrace.").
+* Ключ API платформы OpenAPI.
+* Токен Dynatrace API со следующими областями, см. [Dynatrace API — Токены и аутентификация](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как аутентифицироваться для использования Dynatrace API.").
 
-  + Ingest metrics (`metrics.ingest`)
-  + Ingest logs (`logs.ingest`)
-  + Ingest OpenTelemetry traces (`openTelemetryTrace.ingest`)
+  + Приём метрик (`metrics.ingest`)
+  + Приём логов (`logs.ingest`)
+  + Приём трассировок OpenTelemetry (`openTelemetryTrace.ingest`)
 
-### Prior knowledge
+### Предварительные знания
 
-It's helpful to have some basic knowledge of:
+Полезно иметь базовые знания о:
 
-* Python or Node.js.
-* OTel concepts like SDKs, spans, exporters, and collectors.
-* Dynatrace permissions and data ingestion.
+* Python или Node.js.
+* Концепциях OTel, таких как SDK, спаны, экспортёры и коллекторы.
+* Разрешениях Dynatrace и приёме данных.
 
-## Get started with AI and OpenTelemetry
+## Начало работы с ИИ и OpenTelemetry
 
-### 1. Instrument your application for OpenTelemetry
+### 1. Инструментирование приложения для OpenTelemetry
 
-You can use Python or Node.js to instrument your AI application directly with the OpenTelemetry SDK.
+Вы можете использовать Python или Node.js для инструментирования вашего ИИ-приложения непосредственно с помощью SDK OpenTelemetry.
 
 Python
 
 Node.js
 
-1. Install the OpenTelemetry SDK and Collector Exporter.
-   Run the following command in your terminal.
+1. Установите SDK OpenTelemetry и экспортёр Collector.
+   Выполните следующую команду в терминале.
 
    ```
    pip install opentelemetry-sdk opentelemetry-exporter-otlp-proto-http
    ```
-2. Optional You can also run the OpenTelemetry auto-instrumentation.
+2. Необязательно Вы также можете запустить автоинструментирование OpenTelemetry.
 
    ```
    pip install opentelemetry-distro opentelemetry-exporter-otlp
@@ -85,8 +85,8 @@ Node.js
 
    opentelemetry-bootstrap -a install
    ```
-3. Initialize the OpenTelemetry SDK.
-   Add the following code at the beginning of your main file.
+3. Инициализируйте SDK OpenTelemetry.
+   Добавьте следующий код в начало вашего основного файла.
 
    ```
    from opentelemetry import trace
@@ -144,14 +144,14 @@ Node.js
    tracer = trace.get_tracer(__name__)
    ```
 
-1. Install the OpenTelemetry SDK, API, and Collector Exporter.
-   Run the following command in your terminal.
+1. Установите SDK OpenTelemetry, API и экспортёр Collector.
+   Выполните следующую команду в терминале.
 
    ```
    npm install @opentelemetry/sdk-node @opentelemetry/api @opentelemetry/exporter-trace-otlp-proto
    ```
-2. Initialize the OpenTelemetry SDK.
-   Add the following code at the beginning of your main file.
+2. Инициализируйте SDK OpenTelemetry.
+   Добавьте следующий код в начало вашего основного файла.
 
    ```
    import { NodeSDK } from '@opentelemetry/sdk-node';
@@ -205,12 +205,12 @@ Node.js
    const tracer = trace.getTracer('my-tracer');
    ```
 
-### 2. Add GenAI attributes to your spans
+### 2. Добавление атрибутов GenAI к вашим спанам
 
-The OpenTelemetry GenAI semantic conventions standardize the attributes captured for generative AI operations.
-To make sure that your telemetry data follows these conventions, add the following code to your application.
+Семантические соглашения OpenTelemetry GenAI стандартизируют атрибуты, захватываемые для операций генеративного ИИ.
+Чтобы убедиться, что ваши данные телеметрии следуют этим соглашениям, добавьте следующий код в ваше приложение.
 
-For more information about semantic conventions, see [GenAI semantic conventions](/docs/observe/dynatrace-for-ai-observability/terms-and-concepts#semantic-conventions "Learn how to combine Dynatrace and Traceloop OpenLLMetry to observe an AI/ML model through OpenTelemetry.").
+Подробнее о семантических соглашениях см. [Семантические соглашения GenAI](/docs/observe/dynatrace-for-ai-observability/terms-and-concepts#semantic-conventions "Узнайте, как объединить Dynatrace и Traceloop OpenLLMetry для наблюдения за моделью ИИ/МО через OpenTelemetry.").
 
 Python
 
@@ -344,9 +344,9 @@ span.end();
 });
 ```
 
-## Congratulations!
+## Поздравляем!
 
-Now that you've set up your AI app to send observability data directly to Dynatrace, you can:
+Теперь, когда вы настроили ваше ИИ-приложение для отправки данных наблюдаемости непосредственно в Dynatrace, вы можете:
 
-* Explore the [AI Observability app](/docs/observe/dynatrace-for-ai-observability/ai-observability-app "Use the new AI Observability app to monitor all your AI workloads.") to visualize your AI workloads.
-* Check out the [sample applicationsï»¿](https://github.com/dynatrace-oss/dynatrace-ai-agent-instrumentation-examples) for more examples.
+* Изучить [приложение AI Observability](/docs/observe/dynatrace-for-ai-observability/ai-observability-app "Используйте новое приложение AI Observability для мониторинга всех ваших ИИ-задач.") для визуализации ваших ИИ-задач.
+* Ознакомиться с [примерами приложений](https://github.com/dynatrace-oss/dynatrace-ai-agent-instrumentation-examples) для получения дополнительных примеров.

@@ -1,157 +1,157 @@
 ---
-title: Dynatrace Platform Subscription for hybrid setups (DPS for Hybrid)
+title: Dynatrace Platform Subscription для гибридных конфигураций (DPS для Hybrid)
 source: https://www.dynatrace.com/docs/license/dps-for-hybrid
 scraped: 2026-03-06T21:22:18.711771
 ---
 
-# Dynatrace Platform Subscription for hybrid setups (DPS for Hybrid)
+# Dynatrace Platform Subscription для гибридных конфигураций (DPS для Hybrid)
 
-# Dynatrace Platform Subscription for hybrid setups (DPS for Hybrid)
+# Dynatrace Platform Subscription для гибридных конфигураций (DPS для Hybrid)
 
-* Latest Dynatrace
-* Explanation
-* 2-min read
-* Published Jan 28, 2026
+* Последняя Dynatrace
+* Описание
+* 2 мин. чтения
+* Опубликовано 28 января 2026 г.
 
-With DPS for Hybrid, you can share one Dynatrace Platform Subscription (DPS) license with any combination of Managed and SaaS accounts.
-The only requirements is that the accounts are owned by the same customer.
+С DPS для Hybrid вы можете использовать одну лицензию Dynatrace Platform Subscription (DPS) для любой комбинации Managed и SaaS аккаунтов.
+Единственное требование — аккаунты должны принадлежать одному клиенту.
 
-With DPS for Hybrid:
+С DPS для Hybrid:
 
-* There is one single annual commitment that is shared across multiple accounts.
-* Your order form contains all relevant rate card capabilities for your Managed and/or SaaS deployments.
-* On-demand consumption (ODC) is always enabled for all accounts.
+* Есть единое годовое обязательство, разделяемое между несколькими аккаунтами.
+* Ваш бланк заказа содержит все соответствующие возможности тарифной карты для ваших Managed и/или SaaS развёртываний.
+* Потребление по требованию (ODC) всегда включено для всех аккаунтов.
 
-For more information about DPS in general, see [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+Подробнее о DPS см. [Лицензирование Dynatrace](/docs/license "О Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace.").
 
-## Why to use DPS for Hybrid
+## Зачем использовать DPS для Hybrid
 
-By combining multiple accounts under a single DPS license, DPS for Hybrid lets you:
+Объединяя несколько аккаунтов под одной лицензией DPS, DPS для Hybrid позволяет:
 
-* Sign a single contract, no matter how many accounts you have.
-* Maximize flexibility and streamline licensing for effortless use.
-* Gain instant access to a unified dashboard displaying costs across all accounts.
-* Plan strategically with the projected annual commitment across all accounts for maximum impact.
-* Balance consumption across multiple accounts, preventing one account from over-spending while others under-spend.
+* Подписать единый контракт, независимо от количества аккаунтов.
+* Максимизировать гибкость и упростить лицензирование для удобного использования.
+* Получить мгновенный доступ к единой панели отображения расходов по всем аккаунтам.
+* Стратегически планировать прогнозируемые годовые обязательства по всем аккаунтам для максимального эффекта.
+* Балансировать потребление между аккаунтами, предотвращая перерасход одного аккаунта при недостаточном использовании других.
 
-## When DPS for Hybrid is right for you
+## Когда DPS для Hybrid подходит вам
 
-DPS for Hybrid is useful if:
+DPS для Hybrid полезен, если:
 
-* You want to migrate your Managed deployment to SaaS.
-* You have Managed and SaaS deployments, and want them on the same DPS license.
-* You have multiple SaaS deployments, and want them on the same DPS license.
+* Вы хотите мигрировать ваше Managed-развёртывание на SaaS.
+* У вас есть Managed и SaaS развёртывания, и вы хотите объединить их под одной лицензией DPS.
+* У вас несколько SaaS развёртываний, и вы хотите объединить их под одной лицензией DPS.
 
-## When DPS for Hybrid is not for you
+## Когда DPS для Hybrid не подходит
 
-Here are some use cases where DPS for Hybrid is not the right solution:
+Вот некоторые сценарии, в которых DPS для Hybrid не является подходящим решением:
 
-## Cost management with DPS for Hybrid
+## Управление расходами с DPS для Hybrid
 
-You can use forecasts, cost events, and budget alerts to manage your costs.
+Вы можете использовать прогнозы, события расходов и оповещения о бюджете для управления расходами.
 
-### Forecasts and cost events
+### Прогнозы и события расходов
 
-Forecasts and cost events help you manage your DPS for Hybrid budget at the account level.
-For more information, see [Customize cost alerts](/docs/license/cost-monitors "Learn how to use the Cost Monitors feature to make forecasts and cost events.").
+Прогнозы и события расходов помогают управлять бюджетом DPS для Hybrid на уровне аккаунта.
+Подробнее см. [Настройка оповещений о расходах](/docs/license/cost-monitors "Узнайте, как использовать функцию Cost Monitors для прогнозов и событий расходов.").
 
-Note that the following considerations apply for DPS for Hybrid subscriptions:
+Обратите внимание на следующие особенности подписок DPS для Hybrid:
 
-* Forecasts are only available on the account level.
-  It's not possible to get forecasts at the subscription level.
-* Forecasts show total costs in absolute terms.
-  It's not possible to show forecasts as a percentage of the total DPS commit.
+* Прогнозы доступны только на уровне аккаунта.
+  Невозможно получить прогнозы на уровне подписки.
+* Прогнозы показывают общие расходы в абсолютных значениях.
+  Невозможно отобразить прогнозы в процентах от общего обязательства DPS.
 
-Forecasts and cost events are only estimates and therefore can be misleading in some cases.
-Forecasts are based on statistical models and therefore be relied on with caution.
+Прогнозы и события расходов являются лишь оценками и поэтому могут быть неточными в некоторых случаях.
+Прогнозы основаны на статистических моделях, и на них следует полагаться с осторожностью.
 
-### Budget alerts
+### Оповещения о бюджете
 
-Use the Account Management **Budgets** tab to customize your Dynatrace Platform Subscription (DPS) budgets.
-For general information about budgets, see [Set budget alerts](/docs/license/budget-alerts "Learn how to configure budgets in Dynatrace.").
+Используйте вкладку **Бюджеты** в управлении аккаунтами для настройки бюджетов Dynatrace Platform Subscription (DPS).
+Общую информацию о бюджетах см. в [Настройка оповещений о бюджете](/docs/license/budget-alerts "Узнайте, как настроить бюджеты в Dynatrace.").
 
-Note that the following considerations apply for DPS for Hybrid subscriptions:
+Обратите внимание на следующие особенности подписок DPS для Hybrid:
 
-* Budgets are defined at the account level.
-  It's not possible to define budgets at the subscription level.
-* Budget alerts based on percentages won't work.
-  You'll need to configure fixed amounts for your budgets.
-* If you switch from DPS to DPS for Hybrid, all percentage-based budgets will be deleted in the switch and recipients will be notified via email.
+* Бюджеты определяются на уровне аккаунта.
+  Невозможно определить бюджеты на уровне подписки.
+* Оповещения о бюджете на основе процентов не работают.
+  Вам потребуется настроить фиксированные суммы для ваших бюджетов.
+* При переходе с DPS на DPS для Hybrid все бюджеты на основе процентов будут удалены, и получатели будут уведомлены по электронной почте.
 
-## Frequently asked questions (FAQs)
+## Часто задаваемые вопросы (FAQ)
 
-What is DPS for Hybrid?
+Что такое DPS для Hybrid?
 
-DPS for Hybrid allows you to operate more than one account and consume from a single budget.
-There is no need for a separate contract.
+DPS для Hybrid позволяет управлять несколькими аккаунтами и потреблять из единого бюджета.
+Отдельный контракт не требуется.
 
-What can I do with DPS for Hybrid?
+Что можно делать с DPS для Hybrid?
 
-You can operate multiple Managed and/or SaaS deployments under a single DPS license and commitment.
+Вы можете управлять несколькими Managed и/или SaaS развёртываниями под одной лицензией DPS и обязательством.
 
-How can I get started with DPS for Hybrid?
+Как начать работу с DPS для Hybrid?
 
-Please contact your Dynatrace contact person.
-They will initiate everything needed.
+Обратитесь к вашему контактному лицу в Dynatrace.
+Они инициируют всё необходимое.
 
-Where can I find support in case it is needed?
+Где можно получить поддержку при необходимости?
 
-You can always reach out to your Dynatrace contact person.
+Вы всегда можете обратиться к вашему контактному лицу в Dynatrace.
 
-In case you haven't received an invite to the forum, reach out to your DT contact person.
+Если вы не получили приглашение на форум, обратитесь к вашему контактному лицу в DT.
 
-If I move from a classic license model to DPS for Hybrid, what changes for me?
+Если я перехожу с классической модели лицензирования на DPS для Hybrid, что для меня изменится?
 
-You will get all the benefits of our powerful Dynatrace Platform Subscription (DPS).
-For more information about DPS, see [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+Вы получите все преимущества мощной подписки Dynatrace Platform Subscription (DPS).
+Подробнее о DPS см. [Лицензирование Dynatrace](/docs/license "О Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace.").
 
-Can I add additional accounts to a DPS for Hybrid, after setting it up?
+Могу ли я добавить дополнительные аккаунты к DPS для Hybrid после настройки?
 
-Yes. You can add additional accounts at any time.
+Да. Вы можете добавить дополнительные аккаунты в любое время.
 
-Where can I see the data across all accounts?
+Где я могу увидеть данные по всем аккаунтам?
 
-Once you're set up with DPS for Hybrid, you can see all license- and account-level information in Account Management, see [Subscription overview (DPS for Hybrid)](/docs/manage/account-management/license-subscription/subscription-overview-dps-hybrid "View your DPS for Hybrid budget summary and cost analysis.").
-This offers insights and information similar to the Subscription Overview for standard DPS licenses.
+После настройки DPS для Hybrid вы можете увидеть всю информацию на уровне лицензии и аккаунта в управлении аккаунтами, см. [Обзор подписки (DPS для Hybrid)](/docs/manage/account-management/license-subscription/subscription-overview-dps-hybrid "Просмотр сводки бюджета и анализа расходов DPS для Hybrid.").
+Это предоставляет аналитику и информацию, аналогичную обзору подписки для стандартных лицензий DPS.
 
-How can I set up the dashboard?
+Как настроить панель?
 
-Please see [Explore your DPS for Hybrid subscription with dashboards](/docs/license/dps-for-hybrid/api-export-business-events "How to get the most out of your DPS for Hybrid license and accounts.") for setup information.
+Пожалуйста, ознакомьтесь с [Изучение подписки DPS для Hybrid с помощью панелей](/docs/license/dps-for-hybrid/api-export-business-events "Как максимально использовать вашу лицензию и аккаунты DPS для Hybrid.") для получения информации о настройке.
 
-If you have any issues, contact your Dynatrace contact person.
+При возникновении проблем обратитесь к вашему контактному лицу в Dynatrace.
 
-Which environment will the dashboard be running in?
+В какой среде будет работать панель?
 
-The only requirements is that the dashboard needs to be in a SaaS environment.
-You can decide which environment specifically.
+Единственное требование — панель должна находиться в SaaS-среде.
+Вы можете выбрать конкретную среду.
 
-Can I also use other apps from the platform after setting up the dashboard?
+Могу ли я также использовать другие приложения платформы после настройки панели?
 
-Yes.
+Да.
 
-All data in the environment can be used with all other Dynatrace platform apps (such as ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**).
-Consumption is billed according to your rate card.
+Все данные в среде могут быть использованы со всеми другими приложениями платформы Dynatrace (такими как ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**).
+Потребление тарифицируется согласно вашей тарифной карте.
 
-So, every account has its budget, and then there is one commit above?
+Значит, у каждого аккаунта свой бюджет, а сверху единое обязательство?
 
-No.
-DPS for Hybrid has a single budget at the license level.
-There is no account-level budget within DPS for Hybrid.
+Нет.
+DPS для Hybrid имеет единый бюджет на уровне лицензии.
+В рамках DPS для Hybrid нет бюджета на уровне аккаунта.
 
-Each account consumes from one single budget.
-You can set up budget alerts and controls according to your needs.
+Каждый аккаунт потребляет из единого бюджета.
+Вы можете настроить оповещения и контроль бюджета в соответствии с вашими потребностями.
 
-Can I set notifications on the account level?
+Могу ли я настроить уведомления на уровне аккаунта?
 
-Yes.
-You can set up budget alerts and controls for individual accounts, according to your needs.
+Да.
+Вы можете настроить оповещения и контроль бюджета для отдельных аккаунтов в соответствии с вашими потребностями.
 
-How many rate cards will I have with a DPS for Hybrid setup?
+Сколько тарифных карт будет при конфигурации DPS для Hybrid?
 
-DPS for Hybrid customers have one single rate card.
-This contains all relevant Managed and/or SaaS capabilities.
+Клиенты DPS для Hybrid имеют одну единую тарифную карту.
+Она содержит все соответствующие возможности Managed и/или SaaS.
 
-## Related topics
+## Связанные темы
 
-* [Subscription overview (DPS for Hybrid)](/docs/manage/account-management/license-subscription/subscription-overview-dps-hybrid "View your DPS for Hybrid budget summary and cost analysis.")
-* [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* [Обзор подписки (DPS для Hybrid)](/docs/manage/account-management/license-subscription/subscription-overview-dps-hybrid "Просмотр сводки бюджета и анализа расходов DPS для Hybrid.")
+* [Лицензирование Dynatrace](/docs/license "О Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace.")

@@ -1,0 +1,200 @@
+---
+title: Ingest Harbor vulnerability findings, scans, and audit logs
+source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-harbor-data
+scraped: 2026-03-06T21:23:46.892274
+---
+
+# Загрузка результатов анализа уязвимостей, сканирований и журналов аудита Harbor
+
+# Загрузка результатов анализа уязвимостей, сканирований и журналов аудита Harbor
+
+* Latest Dynatrace
+* Extension
+* Updated on Oct 07, 2025
+
+Эта страница обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список изменений и необходимых действий для выполнения миграции описан в [руководстве по миграции таблиц безопасности Grail](/docs/secure/threat-observability/migration "Understand the changes in the new Grail security table and learn how to migrate to it.").
+
+Загрузка результатов анализа уязвимостей, сканирований и журналов аудита Harbor в Dynatrace в виде событий безопасности.
+
+## Начало работы
+
+### Обзор
+
+Интеграция Dynatrace с [Harbor](https://dt-url.net/hn03wbw) позволяет объединять и контекстуализировать результаты анализа уязвимостей из различных инструментов и продуктов DevSecOps, обеспечивая централизованную приоритизацию, визуализацию и автоматизацию обработки результатов безопасности.
+
+Harbor — это реестр контейнеров, который позволяет сканировать хранящиеся образы контейнеров с помощью различных инструментов, таких как Trivy. Он предоставляет результаты анализа уязвимостей для образов контейнеров. Платформа Dynatrace наблюдает за соответствующими сущностями среды выполнения (работающими контейнерами), связанными с этими образами. Загрузка и сопоставление результатов анализа уязвимостей с сущностями среды выполнения помогает пользователям сосредоточиться на наиболее критичных рисках, влияющих на их производственные приложения.
+
+### Сценарии использования
+
+С загруженными данными вы можете реализовать различные сценарии использования, например:
+
+* [Визуализация и анализ результатов безопасности](/docs/secure/use-cases/visualize-and-analyze-security-findings "Visualize, prioritize, and analyze ingested security findings.")
+* [Выявление пробелов в охвате сканированием безопасности](/docs/secure/use-cases/discover-coverage-gaps-in-security-scans "Unveil blind spots in your Software Development Lifecycle (SDLC).")
+* [Автоматизация и оркестрация обработки результатов безопасности](/docs/secure/use-cases/automate-and-orchestrate-security-findings "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* Анализ и обнаружение аномальной пользовательской активности Coming soon
+
+### Требования
+
+Ниже приведены требования для [Harbor](#harbor) и [Dynatrace](#dt).
+
+#### Требования Harbor
+
+Мы рекомендуем использовать [учётную запись робота](https://dt-url.net/my23w6o) для детальной авторизации. Убедитесь, что вы:
+
+* Сохранили сгенерированный секрет для учётной записи робота, так как его невозможно восстановить после создания
+* Своевременно обновляете срок действия
+* Отредактировали учётную запись робота, включив перечисленные ниже разрешения.
+
+| **Тип разрешения** | **Ресурс** | **Уровень доступа** |
+| --- | --- | --- |
+| Системные разрешения | Журнал аудита | Список |
+|  | Проект | Список |
+|  | Security Hub | Список |
+| Разрешения проекта | Артефакт | Список |
+|  | Репозиторий | Список |
+
+Эти разрешения должны быть предоставлены для всех проектов, которые вы хотите мониторить с помощью Dynatrace. Они обеспечивают возможность получения результатов сканирования, событий аудита и метаданных, необходимых для точного сопоставления уязвимостей.
+
+#### Требования Dynatrace
+
+* ActiveGate версии 1.300+
+* Разрешения:
+
+  + Для запуска ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**: перейдите в **Hub**, выберите ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions** и откройте **Technical information**.
+  + Для запросов к загруженным данным: `storage:security.events:read`.
+* Токены:
+
+  + Сгенерируйте токен доступа с областью `openpipeline.events_security` и сохраните его для дальнейшего использования. Подробнее см. в разделе [Dynatrace API — Токены и аутентификация](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+
+## Активация и настройка
+
+1. В Dynatrace найдите **Harbor** и выберите **Install**.
+2. Следуйте инструкциям на экране для настройки расширения.
+3. Проверьте конфигурацию, выполнив следующие запросы в [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."):
+
+   * Для журналов аудита:
+
+     ```
+     fetch logs
+
+
+
+     | filter log.source=="Harbor"
+     ```
+   * Для событий обнаружения:
+
+     ```
+     fetch security.events
+
+
+
+     | filter dt.system.bucket == "default_securityevents"
+
+
+
+     | filter event.provider=="Harbor"
+
+
+
+     AND event.type=="VULNERABILITY_FINDING"
+     ```
+   * Для событий сканирования:
+
+     ```
+     fetch security.events
+
+
+
+     | filter dt.system.bucket == "default_securityevents"
+
+
+
+     | filter event.provider=="Harbor"
+
+
+
+     AND event.type=="VULNERABILITY_SCAN"
+     ```
+4. После установки и запуска расширения вы можете получить доступ к нему и управлять им в Dynatrace через ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**. Подробнее см. [Об Extensions](/docs/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.").
+
+## Подробности
+
+### Как это работает
+
+![ingest mechanism](https://dt-cdn.net/images/image-20250210-114352-2221-6c1861c4fb.png)
+
+Интеграция Dynatrace с Harbor — это [расширение](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions."), работающее на Dynatrace ActiveGate. После включения и настройки расширения Dynatrace Harbor:
+
+1. Оно периодически обращается к продуктам Harbor и загружает новые результаты анализа уязвимостей, сканирования и журналы аудита.
+2. Загруженные данные поступают в Dynatrace и сопоставляются с [Dynatrace Semantic Dictionary](https://dt-url.net/z1c3xsm).
+3. Данные хранятся в корзине `default_securityevents` (подробнее см. [Встроенные корзины Grail](/docs/platform/grail/organize-data#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.")).
+
+### Лицензирование и стоимость
+
+Информацию о тарификации см. в разделе [События на базе Grail](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+
+## Наборы функций
+
+При активации расширения с помощью [конфигурации мониторинга](#monitoring-configuration) вы можете ограничить мониторинг одним из наборов функций. Для корректной работы расширение должно собрать хотя бы одну метрику после активации.
+
+В сильно сегментированных сетях наборы функций могут отражать сегменты вашей среды. Тогда при создании конфигурации мониторинга вы можете выбрать набор функций и соответствующую группу ActiveGate, способную подключаться к данному сегменту.
+
+Все метрики, не отнесённые ни к одному набору функций, считаются набором по умолчанию и всегда передаются.
+
+Метрика наследует набор функций подгруппы, которая, в свою очередь, наследует набор функций группы. При этом набор функций, определённый на уровне метрики, имеет приоритет над набором функций подгруппы, который, в свою очередь, имеет приоритет над набором функций группы.
+
+## Часто задаваемые вопросы
+
+### Почему некоторые сканирования не отображаются?
+
+API Harbor предоставляют только статус последнего завершённого сканирования артефактов. Это означает, что при запуске расширения оно может сообщить только о самом последнем сканировании, произошедшем (если оно было) за последний интервал сбора данных.
+
+Если расширение настроено на сбор данных о сканировании и уязвимостях один раз в час, а за последний час произошло два сканирования, будут переданы только результаты самого последнего.
+
+### Какая модель данных используется для журналов безопасности и событий, поступающих из Harbor?
+
+* [**События обнаружения уязвимостей**](/docs/semantic-dictionary/model/security-events#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.") хранят отдельные результаты обнаружения уязвимостей, сообщённые Harbor для каждого образа контейнера и компонента.
+* [**События сканирования уязвимостей**](/docs/semantic-dictionary/model/security-events#vulnerability-scan-events "Get to know the Semantic Dictionary models related to security events.") указывают на охват сканирования для отдельных образов контейнеров.
+* [**Журналы аудита**](/docs/semantic-dictionary/model/log#audit-logs "Get to know the Semantic Dictionary models related to Log Analytics.") представляют журналы активности пользователей в Harbor.
+
+### Какие поля расширения добавляются поверх основных полей событий, загруженных из Harbor?
+
+Пространство имён `container_image` добавляется для информации, связанной с образами контейнеров, со следующими полями:
+
+* `container_image.digest` представляет дайджест образа контейнера; это значение можно использовать для сопоставления с работающими контейнерами
+* `container_image.repository` представляет имя репозитория контейнера
+* `container_image.registry` представляет имя реестра контейнера
+
+Поле `container_image.tags` не передаётся Harbor, поэтому оно недоступно.
+
+### Какие типы активов Harbor поддерживаются Dynatrace для контекстуализации среды выполнения?
+
+`CONTAINER_IMAGE`: все результаты анализа из Harbor генерируются путём оценки уязвимостей образов контейнеров и имеют значение `CONTAINER_IMAGE` в поле `object.type`, а также добавленное пространство имён `container_image`.
+
+### Как нормализуется оценка риска для результатов Harbor?
+
+Dynatrace нормализует уровни серьёзности и оценки риска для всех результатов, загруженных через текущую интеграцию. Это помогает приоритизировать результаты единообразно, независимо от их источника.
+Подробнее о том, как работает нормализация, см. в разделе [Нормализация серьёзности и оценки](/docs/secure/threat-observability/concepts#normalization "Basic concepts related to Threat Observability").
+
+* `dt.security.risk.level` берётся из уровня серьёзности, установленного настроенным сканером в Harbor. Значения (`CRITICAL`, `HIGH`, `MEDIUM`, `LOW` и `NONE`) сопоставляются как есть, за исключением `Unknown`, который также сопоставляется с `NONE`.
+* `dt.security.risk.score` сопоставляется с набором фиксированных значений на основе определённого выше уровня риска.
+
+| `dt.security.risk.level` (сопоставлен из `finding.severity`) | `dt.security.risk.score` |
+| --- | --- |
+| Critical -> CRITICAL | 10.0 |
+| High -> HIGH | 8.9 |
+| Medium -> MEDIUM | 6.9 |
+| Low -> LOW | 3.9 |
+| Unknown -> NONE | 0.0 |
+
+[![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
+
+### Обзор в Dynatrace Hub
+
+Загрузка результатов анализа уязвимостей, сканирований и журналов аудита Harbor.](https://www.dynatrace.com/hub/detail/harbor)
+
+## Связанные темы
+
+* [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
+* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
+* [События безопасности](/docs/semantic-dictionary/model/security-events "Get to know the Semantic Dictionary models related to security events.")

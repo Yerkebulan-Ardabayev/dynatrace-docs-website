@@ -1,0 +1,127 @@
+---
+title: Network availability monitoring
+source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/network-availability-monitoring
+scraped: 2026-03-05T21:37:22.043515
+---
+
+# Мониторинг доступности сети
+
+# Мониторинг доступности сети
+
+* Classic
+* Описание
+* Чтение: 4 мин
+* Обновлено 8 августа 2024 г.
+
+Dynatrace версии 1.296+ ActiveGate версии 1.295+
+
+Мониторинг доступности сети (NAM) позволяет отслеживать доступность удаленных хостов или сервисов по сети, когда HTTP/HTTPS-эндпоинт недоступен.
+
+Вы можете использовать NAM для инфраструктурных сценариев использования или для углубления анализа первопричин для мониторов [HTTP](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic "Узнайте о мониторах HTTP.") и [браузерных](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors "Узнайте о браузерных мониторах.") мониторов.
+
+Вы можете создавать синтетические мониторы доступности сети типов **ICMP**, **TCP** или **DNS** ([тип](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/network-availability-monitoring#nam-types "Синтетические мониторы ICMP, TCP и DNS")).
+
+Вы можете настраивать мониторы NAM и получать доступ к результатам их производительности в [Synthetic](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app "Просмотр синтетических мониторов в вашей среде, поиск мониторов и быстрый обзор выбранного монитора.") в latest Dynatrace.
+См. раздел [создание монитора NAM](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor "Узнайте, как настроить монитор NAM для проверки производительности и доступности вашего сайта."), чтобы узнать, как настроить монитор в [Synthetic](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app "Просмотр синтетических мониторов в вашей среде, поиск мониторов и быстрый обзор выбранного монитора.") или через [API](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor#nam-api "Узнайте, как настроить монитор NAM для проверки производительности и доступности вашего сайта.").
+
+## Типы NAM
+
+Существует три типа мониторов доступности сети.
+
+* ICMP -- отправляет пинг-запросы с настраиваемым количеством пакетов или размером для проверки наличия сетевого соединения с хостом или устройством. Также проверяет качество этого соединения.
+* TCP -- устанавливает TCP-соединение с определенным портом. Проверяет, открыт ли порт и принимает ли он TCP-соединения. Также проверяет доступность хоста через сеть.
+* DNS -- проверяет, может ли имя хоста быть разрешено в IP-адрес.
+
+Подробнее о типах NAM см. в разделе [доступные свойства конфигурации скрипта](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor#script-properties "Узнайте, как настроить монитор NAM для проверки производительности и доступности вашего сайта.").
+
+## Проблемы
+
+Проблемы создаются на уровне монитора.
+
+Для получения оповещений при возникновении проблем
+
+1. Отредактируйте монитор.
+2. Перейдите в раздел [Outage and Performance](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor#monitor-configuration "Узнайте, как настроить монитор NAM для проверки производительности и доступности вашего сайта.").
+3. Настройте проблемы и оповещения, которые вы хотите генерировать.
+
+Для анализа проблемы
+
+1. В разделе **Problems** панели предварительного просмотра выберите **Open in Problems app**.
+2. В **Problems app** вы увидите мониторы, затронутые проблемами, где каждая проблема состоит из:
+
+   * Затронутые шаги -- разверните **Step Id**, чтобы увидеть как минимум одну из следующих деталей: идентификатор запроса, тип запроса, причина сбоя и сообщение о статусе.
+   * Затронутые запросы -- разверните **Request target**, чтобы увидеть адрес цели запроса, идентификатор запроса, тип запроса и причины сбоя.
+   * Затронутые локации.
+   * Дата первого неудачного выполнения.
+
+## Ограничения
+
+При использовании мониторов доступности сети существуют определенные ограничения. Подробнее о них ниже.
+
+### Количество запросов
+
+Максимальное количество сетевых действий, выполняемых на один монитор доступности сети, составляет 1 000. Сетевое действие -- это один DNS-запрос, один TCP-запрос или один ICMP-пакет. Dynatrace может использовать несколько пакетов в рамках одного ICMP-запроса, если это настроено.
+
+Если монитор использует [фильтр целей](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor#target-filter "Узнайте, как настроить монитор NAM для проверки производительности и доступности вашего сайта."), может быть невозможно точно предсказать количество запросов до выполнения (например, при мониторинге целой группы хостов или подсети с широким диапазоном IP-адресов). В таких случаях лимит применяется при разрешении фильтра целей перед выполнением монитора в фактический список адресов.
+
+Количество запросов зависит от количества хостов, соответствующих фильтру. Например, при мониторинге целой группы хостов или **фильтрации отслеживаемых хостов** с использованием подсети с широким диапазоном IP-адресов.
+
+### Количество мониторов
+
+Вы можете иметь до 5 000 мониторов NAM в одной среде. Другие типы мониторов не учитываются в этом лимите.
+
+### Тип развертывания
+
+Мониторы доступности сети поддерживаются только на [частных синтетических локациях](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Узнайте, как создать частную локацию для синтетического мониторинга.").
+
+Контейнеризованные локации
+
+Мониторы доступности сети поддерживаются на [контейнеризованных](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations#nam-monitors-on-containerized-locations "Развертывание и управление контейнеризованными автомасштабируемыми частными синтетическими локациями на Kubernetes/RedHat OpenShift.") развертываниях ActiveGate с поддержкой Synthetic, но для ICMP-тестов требуются дополнительные разрешения.
+
+Для включения типа запроса ICMP для выполнения NAM
+
+1. В Dynatrace Hub ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub") найдите **Settings**.
+2. В **Settings** выберите и разверните **Web and mobile monitoring**.
+3. В разделе **Web and mobile monitoring** выберите **Private Synthetic Locations**.
+4. Выберите **Add Kubernetes location**.
+5. Настройте вашу локацию и убедитесь, что включена опция **Enable ICMP request type for Network Availability Monitors execution**.
+
+ICMP-мониторы используют исполняемый файл `ping`, которому требуется capability `CAP_NET_RAW` для контейнера, выполняющего запросы (`synthetic-vuc`). Кроме того, свойство `allowPrivilegeEscalation` в `securityContext` для этого контейнера должно быть установлено в `true`, поскольку процесс, запускающий исполняемый файл `ping`, по умолчанию не имеет необходимых привилегий.
+
+Полный `securityContext` для контейнера `synthetic-vuc` с включенными мониторами доступности сети должен выглядеть следующим образом.
+
+```
+securityContext:
+
+
+
+readOnlyRootFilesystem: true
+
+
+
+privileged: false
+
+
+
+allowPrivilegeEscalation: true
+
+
+
+runAsNonRoot: true
+
+
+
+capabilities:
+
+
+
+drop: ["all"]
+
+
+
+add: ["NET_RAW"]
+```
+
+### Использование прокси
+
+Мониторы доступности сети не поддерживают использование [прокси-серверов](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic#proxy-connection-scenarios "Узнайте, как настроить свойства ActiveGate для настройки прокси для частного синтетического мониторинга."). Убедитесь, что ваша сетевая конфигурация позволяет прямой доступ к отслеживаемым эндпоинтам без маршрутизации через прокси.

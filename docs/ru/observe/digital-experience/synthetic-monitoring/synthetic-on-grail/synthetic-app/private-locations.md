@@ -1,0 +1,315 @@
+---
+title: Частные локации синтетического мониторинга
+source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations
+scraped: 2026-02-06T16:33:14.869956
+---
+
+# Частные локации синтетического мониторинга
+
+# Частные локации синтетического мониторинга
+
+* Последняя версия Dynatrace
+* Практическое руководство
+* Обновлено 22 декабря 2025 г.
+
+Цель частных локаций — выполнение синтетических мониторов. Частные локации необходимо использовать для мониторинга приложений и конечных точек в корпоративных сетях, недоступных из публичного интернета. Кроме того, частные локации обязательны для выполнения мониторов [NAM](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/create-a-nam-monitor-synthetic-app "Узнайте, как настроить NAM-монитор для проверки производительности и доступности вашего сайта.").
+
+С мониторами, выполняемыми из частной локации, вы можете перенести возможности тестирования, доступные в публичных локациях, прямо в собственную среду. С помощью частных локаций вы можете:
+
+* Измерять производительность и доступность внутренних веб-страниц.
+* Измерять сложные внутренние приложения с помощью кликпутей браузера.
+* Измерять внешние ресурсы с помощью синтетических мониторов, запускаемых из внутренних локаций.
+* Мониторить API — как внутренние, так и внешние.
+
+Вы можете создавать только классические локации с помощью ![Synthetic Classic](https://dt-cdn.net/images/synthetic-512-83ec796e54.png "Synthetic Classic") **Synthetic**, хотя в списке локаций отображаются как классические, так и контейнерные (например, Kubernetes и OpenShift) локации. Если вам всё же нужно создать контейнерную локацию, это можно сделать в [Settings Classic](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#add "Узнайте, как создать частную локацию для синтетического мониторинга.").
+
+Вкладка **Private locations** в ![Synthetic Classic](https://dt-cdn.net/images/synthetic-512-83ec796e54.png "Synthetic Classic") **Synthetic** отображает список всех частных локаций, доступных в данной среде. Для каждой частной локации приводится информация о количестве назначенных синтетических мониторов со ссылками на них.
+
+Если вы создали частную локацию в предыдущей версии Dynatrace, она остаётся доступной в последней версии Dynatrace — повторное развёртывание не требуется.
+
+## Системные и аппаратные требования для частных локаций
+
+Убедитесь, что целевой хост, который вы планируете использовать для запуска синтетических мониторов, соответствует [системным и аппаратным требованиям для частных локаций Synthetic](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/requirements-for-private-synthetic "Проверьте системные и аппаратные требования для частных локаций Synthetic."). Обратите внимание, что ActiveGate с поддержкой Synthetic предъявляет более высокие требования к аппаратному обеспечению и системным ресурсам, чем обычный Environment или Cluster ActiveGate.
+
+ActiveGate с поддержкой Synthetic, установленный только на Ubuntu 20.04 LTS и 22.04 LTS. Вы можете использовать [`TEMP`](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#temporary "Узнайте о параметрах командной строки, которые можно использовать с ActiveGate в Linux.") для настройки [временного каталога по умолчанию для частных файлов Synthetic](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files#default-activegate-directories--linux "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux.") — `/var/tmp/dynatrace/synthetic`. Однако путь должен начинаться с `/var/tmp`, например `TEMP=/var/tmp/syn`. Dynatrace требует доступа на запись к `/var/tmp` для установки snap-пакетов Chromium.
+
+Информация о прекращении поддержки
+
+Новых версий Chromium для Red Hat/Oracle Linux/Rocky Linux 8 после версии 133 нет. По важным соображениям безопасности и стабильности мы приняли решение прекратить поддержку установки ActiveGate с поддержкой **Synthetic** на Red Hat/Oracle Linux/Rocky Linux 8 после версии ActiveGate 1.325.
+
+Для обеспечения непрерывности и безопасности ваших синтетических мониторов мы рекомендуем перенести ActiveGate с поддержкой Synthetic на одну из [поддерживаемых операционных систем](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic#linux-supported-os "Поддерживаемые операционные системы, версии Chromium и аппаратные требования для запуска синтетических мониторов из частных локаций"), например Red Hat/Oracle Linux/Rocky Linux 9.
+
+ActiveGate версии 1.325 является **последним ActiveGate с поддержкой Synthetic**, поддерживаемым на Red Hat/Oracle Linux/Rocky Linux 8.
+
+Кроме того, начиная с версии Dynatrace 1.326, мы планируем ввести механизмы, препятствующие обновлению ActiveGate с поддержкой Synthetic на Red Hat/Oracle Linux/Rocky Linux 8 выше версии 1.325.
+
+Дополнительные примечания о поддержке
+
+* Разработка Chromium для Amazon Linux 2 остановилась на версии 126.
+  По важным соображениям безопасности и стабильности мы приняли решение прекратить поддержку установки ActiveGate с поддержкой Synthetic на Amazon Linux 2 после версии ActiveGate 1.307.
+  ActiveGate версии 1.307 является последним ActiveGate с поддержкой Synthetic для Amazon Linux 2.
+  Кроме того, начиная с версии Dynatrace 1.308, мы ввели механизмы, препятствующие обновлению ActiveGate с поддержкой Synthetic на Amazon Linux 2 выше версии 1.307.
+* Разработка Chromium для Red Hat/CentOS 7 остановилась на версии 126.
+  По важным соображениям безопасности и стабильности мы приняли решение прекратить поддержку установки ActiveGate с поддержкой Synthetic на Red Hat/CentOS 7 после версии ActiveGate 1.305.
+  ActiveGate версии 1.305 является последним ActiveGate с поддержкой Synthetic для Red Hat/CentOS 7.
+  Кроме того, начиная с версии Dynatrace 1.306, мы ввели механизмы, препятствующие обновлению ActiveGate с поддержкой Synthetic на Red Hat/CentOS 7 выше версии 1.305.
+
+  + Поскольку Red Hat Enterprise Linux 7 достиг [окончания поддержки Maintenance](https://dt-url.net/af03uea) 30 июня 2024 г., все его пакеты были заархивированы. Это означает, что поиск необходимых зависимостей для обновления может оказаться невозможным. Подробнее см. в разделе [Статус Red Hat Enterprise Linux 7](https://dt-url.net/e623zr1)
+* Ознакомьтесь с последними [примечаниями к выпуску ActiveGate](/docs/whats-new/activegate "Примечания к выпуску Dynatrace ActiveGate") для получения информации о самых старых поддерживаемых версиях ActiveGate.
+
+### Подготовка
+
+* Вы не можете выполнять синтетические мониторы с помощью Environment ActiveGate, настроенного для [поддержки нескольких сред](/docs/ingest-from/dynatrace-activegate/configuration/configure-an-environment-activegate-for-multi-environment-support "Прочитайте пошаговую процедуру настройки единого Environment ActiveGate для поддержки нескольких сред.").
+* Вы можете создать частную локацию с помощью чисто установленного Environment ActiveGate с поддержкой Synthetic версии 1.169+ или Cluster ActiveGate с Dynatrace Managed версии 1.176+. Если вы хотите использовать существующий хост ActiveGate, сначала [удалите ActiveGate](/docs/ingest-from/dynatrace-activegate/operation/uninstall-activegate "Узнайте, как удалить ActiveGate из систем на базе Windows или Linux.").
+* ActiveGate с поддержкой Synthetic используется исключительно для запуска синтетических мониторов. Чистая установка ActiveGate для целей синтетического мониторинга отключает все остальные функции ActiveGate, включая взаимодействие с OneAgents.
+
+* Для сетевой конфигурации поддерживаются только IPv4 и DNS UDP.
+
+* Как ручное, так и автоматическое обновление Chromium требует доступа к `https://synthetic-packages.s3.amazonaws.com`. По соображениям безопасности публичный доступ к S3-корзине включён только для определённых файлов; попытка получить доступ к чему-либо другому приведёт к ошибке 403.
+
+## Создание частной локации
+
+Чтобы добавить классическую частную локацию
+
+1. Перейдите на вкладку **Private locations** в левом верхнем углу домашней страницы ![Synthetic Classic](https://dt-cdn.net/images/synthetic-512-83ec796e54.png "Synthetic Classic") **Synthetic**.
+2. Выберите **New private locations** > **Classic**.
+3. Назовите вашу локацию.
+4. Привяжите её к существующей географической локации или добавьте пользовательскую локацию, определив **Country**, **Region**, **City**, **Latitude** и **Longitude**.
+5. Выберите **Existing ActiveGate**, чтобы добавить существующий ActiveGate с поддержкой Synthetic к локации, или **Deploy new ActiveGate**, чтобы развернуть новый (развёртывание нового ActiveGate перенаправит вас в [![Discovery & Coverage](https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png "Discovery & Coverage") **Discovery & Coverage**](/docs/ingest-from/discovery-coverage-app "Обнаружение и устранение пробелов в охвате мониторингом в масштабе."), откуда вы можете [установить ActiveGate](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/active-gate-for-private-locations-install "Узнайте, как установить ActiveGate с поддержкой Synthetic.")).
+
+   Добавьте несколько ActiveGate, если вы планируете запускать большое количество синтетических мониторов.
+   Дополнительные ActiveGate используются для отказоустойчивости и балансировки нагрузки.
+
+   * Мы рекомендуем использовать не менее двух ActiveGate для одной локации.
+   * Один ActiveGate нельзя использовать для нескольких локаций.
+
+6. Необязательно Включите **Enable Chromium auto-update** — автообновление будет запускаться во время обновлений движка Synthetic для этой локации.
+
+   Вы можете включить **Enable Chromium auto-update** на уровне локации, то есть для всех ActiveGate, назначенных частной локации. Автообновление Chromium происходит как при ручных, так и при автоматических обновлениях ActiveGate и движка Synthetic.
+
+   Поскольку мы рекомендуем использовать [последнюю поддерживаемую версию Chromium](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/requirements-for-private-synthetic#chromium-linux "Проверьте системные и аппаратные требования для частных локаций Synthetic.") для бесперебойного и безопасного выполнения браузерных мониторов из вашей частной локации, автообновление Chromium включено по умолчанию для локаций с ActiveGate на базе Linux. Если вы не хотите, чтобы Chromium обновлялся автоматически (например, для использования определённой версии Chromium или в автономных средах), выключите переключатель **до запуска обновления ActiveGate**.
+
+   Этот параметр применяется только к ActiveGate на базе Linux; на ActiveGate на базе Windows Chromium всегда обновляется во время обновлений движка Synthetic. Если в вашей локации есть только ActiveGate на базе Windows, переключатель включён, но неактивен.
+
+   Успешное автообновление Chromium требует доступа к репозиториям ОС (системным репозиториям) для зависимостей Chromium и доступа к `https://synthetic-packages.s3.amazonaws.com` для компонентов Chromium. Если вы включили [пользовательский локальный репозиторий](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#custom-repo "Узнайте, как установить Chromium для Linux вручную и из пользовательских репозиториев."), компоненты Chromium (но не зависимости) должны быть доступны по указанному адресу HTTP-сервера. См. раздел [Автообновление Chromium из пользовательского репозитория](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#autoupdate-custom-repo "Узнайте, как установить Chromium для Linux вручную и из пользовательских репозиториев.").
+
+   Вы увидите сообщение, если автообновление Chromium завершится неудачей по этой или другой причине — мы рекомендуем либо выполнить требования для автообновления (например, обеспечить доступ к репозиториям), либо отключить автообновление Chromium для вашей частной локации.
+
+   * Мы настоятельно рекомендуем поддерживать актуальность версий ActiveGate с поддержкой Synthetic на базе Linux и Chromium — Dynatrace поддерживает версии Chromium, которые отстают не более чем на две версии от [последней поддерживаемой Dynatrace версии](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/requirements-for-private-synthetic#chromium-linux "Проверьте системные и аппаратные требования для частных локаций Synthetic.") для конкретного выпуска ActiveGate. Если вы не выбрали автообновление Chromium, вы можете [обновить Chromium вручную](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#chromium-manual "Узнайте, как установить Chromium для Linux вручную и из пользовательских репозиториев.").
+   * Если вы отключите автообновление Chromium, вы можете [обновлять Chromium вручную](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#chromium-manual "Узнайте, как установить Chromium для Linux вручную и из пользовательских репозиториев.") для каждого ActiveGate. Однако автообновление Chromium требуется при использовании [пользовательских репозиториев](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#custom-repo "Узнайте, как установить Chromium для Linux вручную и из пользовательских репозиториев."). См. раздел [Автообновление Chromium из пользовательского репозитория](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#autoupdate-custom-repo "Узнайте, как установить Chromium для Linux вручную и из пользовательских репозиториев.").
+   * Автообновление обновляет Chromium до последней версии, предоставляемой Dynatrace для выпуска ActiveGate. В некоторых случаях это может отличаться от [последней поддерживаемой Dynatrace версии Chromium](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/requirements-for-private-synthetic#chromium-linux "Проверьте системные и аппаратные требования для частных локаций Synthetic.") для выпуска ActiveGate.
+
+   Также ознакомьтесь с информацией об [установке Chromium и других зависимостей вручную (только для Linux)](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#manual "Узнайте, как установить Chromium для Linux вручную и из пользовательских репозиториев.").
+7. Необязательно При наличии проблем с простоем в вашей частной локации используйте параметры **Location outage handling** для получения соответствующих уведомлений. Подробности см. в инструкциях на экране.
+
+   * Вы можете настроить локацию для генерации проблемы, когда вся частная локация недоступна (все ActiveGate в автономном режиме) или когда в локации отсутствует возможность, необходимая для выполнения монитора соответствующего типа.
+   * Вы можете настроить локацию для генерации проблемы, когда один ActiveGate в этой локации находится в автономном режиме.
+
+   Например, предположим, что в вашей локации два ActiveGate, и вы включили оба переключателя проблем. При недоступности локации вы увидите три проблемы: одну для всей локации и по одной для каждого ActiveGate в автономном режиме.
+
+   Контейнерные локации
+
+   Для контейнерных локаций вы можете генерировать проблему только в том случае, когда вся частная локация недоступна (все ActiveGate в автономном режиме) или когда в локации отсутствует возможность, необходимая для выполнения монитора соответствующего типа.
+8. Нажмите **Save**.
+
+## Дополнительные режимы развёртывания
+
+Доступные вам дополнительные режимы развёртывания
+
+* Без браузера (Browserless)
+* Kerberos
+* Соответствие FIPS
+
+### ActiveGate с поддержкой Synthetic без браузера
+
+В общем случае мы рекомендуем развёртывать ActiveGate с поддержкой Synthetic для поддержки выполнения всех типов синтетических мониторов (HTTP, браузер, NAM).
+
+Однако если вам не нужно выполнять браузерные мониторы, вы можете рассмотреть возможность развёртывания узла в специальном режиме без браузера. Такой узел будет развёрнут без браузера. Полученное развёртывание требует меньше аппаратных ресурсов, но браузерные мониторы не могут выполняться с такого узла.
+
+Рассматривайте узлы без браузера как альтернативу узлам с поддержкой браузерных мониторов, если вы сосредоточены исключительно на:
+
+* Использовании сети и инфраструктуры (с помощью NAM-мониторов)
+* Мониторинге API (с помощью HTTP-мониторов)
+
+### Настройка клиента Kerberos
+
+Если вы хотите запускать браузерные мониторы с аутентификацией Kerberos, частная локация должна быть настроена для получения билета от центра распределения ключей Kerberos.
+
+Windows
+
+Linux
+
+1. Каждая машина Windows, использующая Kerberos, должна быть правильно настроена с Active Directory.
+2. Если не удаётся выполнить аутентификацию через Kerberos в Windows, используйте следующую команду для регистрации машины.
+
+```
+ksetup /addkdc DOMAIN.TO.ADD address.of.kerberos.server
+```
+
+`DOMAIN.TO.ADD` — это ваше доменное имя, а `address.of.kerberos.server` — центр распределения ключей Kerberos (контроллер Active Directory при использовании решения Microsoft). Обратите внимание, что в используемых учётных данных доменное имя должно быть в верхнем регистре (например, user@EXAMPLE.COM).
+
+Synthetic использует аутентификацию Kerberos, выполняя команду `kinit`. Подробнее см. в [документации MIT Kerberos - kinit](https://dt-url.net/pr43wj6).
+
+Частная локация Linux должна быть правильно настроена для получения билета от центра распределения ключей Kerberos. Убедитесь, что в локации установлено следующее:
+
+* Установленные пакеты для клиента Kerberos (рабочая станция).
+* Правильно настроенный файл `/etc/krb5.conf` (или файл конфигурации, указанный переменной среды `KRB5_CONFIG`).
+
+Конфигурация зависит от дистрибутива Linux. Дополнительную информацию можно найти в официальной документации.
+
+* Ubuntu:
+
+  + `sudo apt install krb5-user`
+  + Дополнительная информация: [Документация Ubuntu Server — Как настроить базовую аутентификацию рабочей станции](https://dt-url.net/3g03w9p)
+* Red Hat/Rocky:
+
+  + `yum install krb5-workstation krb5-libs`
+  + Дополнительная информация: [Документация Red Hat — Настройка клиента Kerberos](https://dt-url.net/1u23wq7)
+
+### Соответствие Synthetic требованиям FIPS
+
+ActiveGate версии 1.315+
+
+#### Установка
+
+Для установки ActiveGate с поддержкой Synthetic в режиме соответствия FIPS необходимо добавить флаг `--fips-mode`. Также см. раздел [настройка установки ActiveGate для соответствия FIPS](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#fips-compliant-mode "Узнайте о параметрах командной строки, которые можно использовать с ActiveGate в Linux.").
+
+```
+/bin/bash ./Dynatrace-ActiveGate-Linux.sh --enable-synthetic --fips-mode
+```
+
+Обратите внимание, что режим соответствия FIPS нельзя изменить после установки. Для изменения режима необходимо удалить ActiveGate и переустановить его с желаемыми настройками.
+Кроме того, если вы намерены выполнять браузерные мониторы, потребуется дополнительная настройка, описанная в разделах [Конфигурация прокси для режима FIPS](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/proxy-for-private-locations#fips-proxy "Узнайте, как управлять прокси для частных локаций Synthetic.") и [Конфигурация прокси для режима FIPS с корпоративным прокси](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations/proxy-for-private-locations#fips-corporate-proxy "Узнайте, как управлять прокси для частных локаций Synthetic.").
+
+#### Требования и ограничения
+
+* Требуется операционная система с включённым режимом соответствия FIPS; также см. [Соответствие ActiveGate требованиям FIPS](/docs/ingest-from/dynatrace-activegate/activegate-fips-compliance "Узнайте о соответствии ActiveGate требованиям FIPS").
+* В настоящее время поддерживаются следующие операционные системы:
+
+  + Ubuntu Pro 22.04
+  + Red Hat Enterprise Linux 9
+* Частные локации Synthetic на Kubernetes в настоящее время не поддерживаются.
+
+#### Обеспечение соответствия
+
+Для обеспечения соответствия трафика браузерного монитора требованиям FIPS он должен направляться через локальный перехватывающий прокси, шифрующий трафик с помощью криптографической библиотеки, сертифицированной по FIPS. Подробнее см. в разделе [Конфигурация прокси для режима FIPS](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations#fips-proxy "Узнайте, как управлять частными локациями в приложении Synthetic.").
+
+Для HTTP-мониторов мы используем криптографическую библиотеку [Amazon Corretto Crypto Provider](https://github.com/corretto/amazon-corretto-crypto-provider/), сертифицированную по FIPS и использующую AWS-LC-FIPS 2.x в качестве криптографического модуля. См. [Сертификат #4816](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4816).
+
+ActiveGate с поддержкой Synthetic в режиме соответствия FIPS поддерживает тот же набор наборов шифров, что и [обычный ActiveGate](/docs/ingest-from/dynatrace-activegate/activegate-fips-compliance#supported-cipher-suites "Узнайте о соответствии ActiveGate требованиям FIPS").
+
+## Часто задаваемые вопросы
+
+Как проверить подлинность загруженных пакетов Chrome(-ium)?
+
+Chromium
+
+Chrome for Testing
+
+Каждый архив пакетов `tgz` хранится в S3-корзине вместе с файлом подписи `*.tgz.sig`. Чтобы проверить подлинность пакетов на вашем диске как оригинальных архивов, предоставленных Dynatrace:
+
+1. Загрузите файл подписи. Имя файла совпадает с архивом пакета, но имеет расширение `sig`. Например, для Chromium 140 команда выглядит так:
+
+   ```
+   curl --output chromium.tgz.sig https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-140.0.7339.185-1.el9.tgz.sig
+   ```
+2. Проверьте пакет:
+
+   ```
+   wget https://ca.dynatrace.com/dt-root.cert.pem ; openssl cms
+
+
+
+   -verify
+
+
+
+   -in chromium.tgz.sig
+
+
+
+   -inform PEM
+
+
+
+   -content chromium.tgz
+
+
+
+   -binary
+
+
+
+   -CAfile dt-root.cert.pem > /dev/null
+   ```
+3. Проверьте временную метку подписи.
+
+   Вы также можете получить точную временную метку подписи. Загрузите файл `*.tgz.sig.tsr` из того же расположения, что и установочные пакеты и подпись, затем выполните следующую команду:
+
+   ```
+   openssl ts -reply -in chromium.tgz.sig.tsr -text
+   ```
+
+Каждый архив пакетов `zip` хранится в S3-корзине вместе с файлом подписи `*.zip.sig`. Чтобы проверить подлинность пакетов на вашем диске как оригинальных архивов, предоставленных Dynatrace:
+
+1. Загрузите файл подписи. Имя файла совпадает с архивом пакета, но имеет расширение `sig`. Например, для Chrome for Testing 141.0.7390.122 команда выглядит так:
+
+   ```
+   curl --output chrome.zip.sig https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-141.0.7390.122.zip.sig
+   ```
+2. Проверьте пакет:
+
+   ```
+   wget https://ca.dynatrace.com/dt-root.cert.pem ; openssl cms
+
+
+
+   -verify
+
+
+
+   -in chrome.zip.sig
+
+
+
+   -inform PEM
+
+
+
+   -content chrome.zip
+
+
+
+   -binary
+
+
+
+   -CAfile dt-root.cert.pem > /dev/null
+   ```
+3. Проверьте временную метку подписи.
+
+   Вы также можете получить точную временную метку подписи. Загрузите файл `*.zip.sig.tsr` из того же расположения, что и установочные пакеты и подпись, затем выполните следующую команду:
+
+   ```
+   openssl ts -reply -in chrome.zip.sig.tsr -text
+   ```
+
+Могу ли я использовать прокси с ActiveGate с поддержкой Synthetic?
+
+Начиная с версии ActiveGate 1.175+, ActiveGate, выполняющий синтетические мониторы, может подключаться через прокси как к кластеру Dynatrace, так и к тестируемому ресурсу. Дополнительную информацию см. в разделе [Настройка прокси для частного синтетического мониторинга](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic "Узнайте, как настроить свойства ActiveGate для использования прокси в частном синтетическом мониторинге.").
+
+Могу ли я обновить более раннюю версию ActiveGate до версии 1.169+ и настроить её для использования с частными синтетическими мониторами?
+
+Нет, для этого необходимо выполнить чистую установку специально для целей синтетического мониторинга, чтобы ActiveGate мог выполнять мониторы из частных локаций.
+
+Могу ли я включить Synthetic на существующей установке ActiveGate?
+
+Частные локации Synthetic требуют чистой установки ActiveGate специально для целей синтетического мониторинга.
+
+Ручного редактирования файла `custom.properties` недостаточно для включения выполнения синтетических мониторов на ActiveGate.
+
+## Устранение неполадок
+
+[Не отображаются снимки экрана в результатах браузерного монитора](https://dt-url.net/mfw2xmb)
+
+Посетите [форум по устранению неполадок в сообществе Dynatrace](https://dt-url.net/dy122xtf) для получения дополнительной информации об устранении неполадок.

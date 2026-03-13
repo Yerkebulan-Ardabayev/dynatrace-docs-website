@@ -1,0 +1,32 @@
+---
+title: View surrounding logs
+source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/surrounding-logs
+scraped: 2026-03-06T21:11:23.170852
+---
+
+# Просмотр окружающих логов
+
+# Просмотр окружающих логов
+
+* Latest Dynatrace
+* Практическое руководство
+* Чтение: 1 мин
+* Опубликовано 02 июл. 2025
+
+Просматривайте окружающие логи для каждой записи лога, чтобы лучше понять контекст данных.
+
+![Surrounding logs of a log error based on trace ID correlation](https://dt-cdn.net/images/surroundinglogs-1907-40995092b7.png)
+
+Чтобы просмотреть окружающие логи
+
+1. В ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs** найдите нужную строку лога в таблице результатов и откройте её подробности.
+2. Выберите **Show surrounding logs**.
+
+Окружающие логи отображаются в соответствии с контекстом, предоставленным записью лога.
+
+* Если параметр `trace_id` присутствует, вы увидите другие записи с тем же идентификатором трассировки.
+
+  Дополнительные сведения об автоматической корреляции см. в разделе [Связывание данных логов с трассировками](/docs/analyze-explore-automate/logs/lma-log-enrichment "Connect your incoming log data to traces for more precise Dynatrace analysis.").
+* Кроме того, можно изучить окружающие логи для той же топологической сущности, например хоста.
+
+  Выберите **Run query for 15 logs before** или **Run query for 15 logs after**, чтобы расширить контекст, загрузив больше данных до или после временной метки исходной записи.

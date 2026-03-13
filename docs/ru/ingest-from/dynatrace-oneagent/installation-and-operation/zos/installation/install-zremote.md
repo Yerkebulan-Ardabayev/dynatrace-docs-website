@@ -1,0 +1,173 @@
+---
+title: Install the zRemote module
+source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote
+scraped: 2026-03-06T21:25:07.541300
+---
+
+# Установка модуля zRemote
+
+# Установка модуля zRemote
+
+* Latest Dynatrace
+* Чтение: 8 мин
+* Обновлено 22 января 2026 г.
+
+Модуль zRemote обрабатывает данные мониторинга, полученные от zLocal, и направляет эти данные в сжатом и зашифрованном виде через локальный ActiveGate в Dynatrace. Таким образом, модуль zRemote переносит значительную часть вычислительной нагрузки по инструментированию подсистем и приложений из модулей CICS, IMS и z/OS Java на открытую систему.
+
+Вы можете [настроить модуль zRemote](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote/customize-zremote "Настройте модуль zRemote под свои нужды.") для включения дополнительных функций, таких как **Группы хостов** и **Получение SQL-запросов Db2**.
+
+## Аппаратные требования
+
+Аппаратные требования к машине, на которой работает модуль zRemote, зависят от ожидаемого количества транзакций CICS и IMS, подлежащих мониторингу в секунду. Ниже приведены аппаратные требования для машин с архитектурой x86-64 и s390.
+
+* Для сред разработки CICS и IMS: малая или средняя машина.
+* Для продуктивных сред CICS и IMS: большая или сверхбольшая машина.
+* Для сред z/OS Java: малая или средняя машина.
+
+* Аппаратные требования приведены для случая, когда модуль zRemote и его ActiveGate используются только для мониторинга мейнфреймов.
+* К одному zRemote можно подключить несколько [подсистем zDC](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc "Настройка подсистемы сбора данных z/OS (zDC)."), если количество отслеживаемых транзакций соответствует аппаратным требованиям.
+
+## Системные требования
+
+Рекомендуется устанавливать модуль zRemote на мейнфрейме IBM Z или LinuxONE с поддерживаемой операционной системой Linux для s390. Применяются следующие системные требования:
+
+* Подсистема zDC и модуль zRemote, к которому она подключается, должны находиться в одном центре обработки данных, чтобы избежать проблем с производительностью и безопасностью.
+
+  + zRemote запишет предупреждение в журнал при задержке соединения в 3 секунды.
+  + zRemote разорвёт соединение при задержке соединения в 10 секунд.
+* zRemote поддерживает только [установку ActiveGate на хосте](/docs/ingest-from/dynatrace-activegate/capabilities "Узнайте о возможностях и способах использования ActiveGate."), настроенную для одной среды.
+* Мониторинг хоста, на котором работает zRemote, с помощью OneAgent поддерживается только в [режиме полного мониторинга](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Узнайте больше о доступных режимах мониторинга при использовании OneAgent.").
+
+### Поддерживаемые операционные системы
+
+Вы можете установить модуль zRemote на любую операционную систему Linux или Windows, указанную ниже.
+
+| Дистрибутив | Версии | Архитектуры процессора |
+| --- | --- | --- |
+| Oracle Linux | 8.10 | x86-64 |
+| Red Hat Enterprise Linux | 8.10, 9.4 | s390, x86-64 |
+| Rocky Linux | 8.10 | x86-64 |
+| SUSE Enterprise Linux | 15.6 | s390, x86-64 |
+| Ubuntu | 16.04, 18.04, 20.04, 22.04, 24.04 | x86-64 |
+| Ubuntu | 20.04, 22.04, 24.04 | s390 |
+| Windows | 10, 11 | x86-64 |
+| Windows Server | 2016, 2019, 2022, 2025 | x86-64 |
+
+## Обзор установщика
+
+Обзор описывает ключевые компоненты приложения zRemote, конфигурацию zRemote и их каталоги установки по умолчанию. Непостоянные каталоги заменяются при обновлении и удалении.
+
+### Приложение zRemote и каталоги установки
+
+Linux
+
+Windows
+
+Базовый путь: `/opt/dynatrace/zremote`
+
+Базовый путь: `C:/Program Files/dynatrace/zremote`
+
+Все перечисленные ниже каталоги не сохраняются при обновлении или удалении zRemote. Если вы вносите изменения в эти каталоги, они будут перезаписаны или удалены.
+
+### Конфигурация zRemote и каталоги установки
+
+Linux
+
+Windows
+
+Базовый путь: `/var/lib/dynatrace/zremote`
+
+Базовый путь: `C:/Program Files/dynatrace/zremote`
+
+Все перечисленные ниже каталоги не сохраняются при обновлении или удалении zRemote. Если вы вносите изменения в эти каталоги, они будут перезаписаны или удалены.
+
+Следующие каталоги сохраняются при обновлении или удалении. Вы можете вносить изменения в эти каталоги. Подробнее см. [Настройка модуля zRemote](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote/customize-zremote "Настройте модуль zRemote под свои нужды.").
+
+## Установка
+
+Модуль zRemote загружается и устанавливается автоматически в процессе установки ActiveGate на [Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-install-an-environment-activegate "Пошаговая инструкция по установке Environment ActiveGate на Linux.") или [Windows](/docs/ingest-from/dynatrace-activegate/installation/windows/windows-install-an-environment-activegate "Пошаговая инструкция по установке Environment ActiveGate на Windows.").
+
+1. В Dynatrace Hub выберите **ActiveGate** > **Set up**.
+2. На странице **Install Environment ActiveGate** выберите **Linux** или **Windows**.
+3. Только для Linux: выберите тип установщика **s390** (рекомендуется) или **x86/64**.
+4. Выберите назначение **Install the zRemote module for z/OS monitoring**, скачайте установщик и начните процедуру установки.
+5. Необязательно: настройте выбор порта прослушивания.
+
+   По умолчанию модуль zRemote прослушивает порт 8898 для подключений от zLocal, работающего в составе zDC. Чтобы использовать другой порт, установите параметр `zdclistenerport` на нужный порт в файле `zremoteagentuserconfig.conf`. Убедитесь, что этот порт не заблокирован файрволом.
+
+Подробнее о настройках установки по умолчанию см. настройки установки ActiveGate по умолчанию для [Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-default-settings "Узнайте о настройках по умолчанию, с которыми устанавливается ActiveGate на Linux.") или [Windows](/docs/ingest-from/dynatrace-activegate/installation/windows/windows-default-settings "Узнайте о настройках по умолчанию, с которыми устанавливается ActiveGate на Windows.").
+
+Подробнее о настройке установки см. настройку установки ActiveGate на [Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate "Узнайте о параметрах командной строки, которые можно использовать с ActiveGate на Linux.") или [Windows](/docs/ingest-from/dynatrace-activegate/installation/windows/windows-customize-installation-for-activegate "Узнайте о параметрах, которые можно использовать с ActiveGate на Windows.").
+
+## Журналирование
+
+Журналы zRemote создаются на машине, где установлен модуль zRemote, в каталогах по умолчанию для [Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-default-settings "Узнайте о настройках по умолчанию, с которыми устанавливается ActiveGate на Linux.") и [Windows](/docs/ingest-from/dynatrace-activegate/installation/windows/windows-default-settings "Узнайте о настройках по умолчанию, с которыми устанавливается ActiveGate на Windows."). Вы можете просмотреть журналы zRemote непосредственно на машине, где установлен zRemote, или запросив их из Dynatrace через процедуру [диагностики OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics "Узнайте, как запустить диагностику OneAgent.").
+
+Фактический журнал zRemote должен содержать следующие сообщения:
+
+* Сообщения журнала, отправленные от всех модулей CICS/IMS и zDC.
+* Сообщения журнала, отправленные от zLocal.
+
+## Обновление и обслуживание
+
+Для поддержания актуальности вы можете обновить модуль zRemote автоматически до более новой версии с помощью [процедуры автоматического обновления ActiveGate](/docs/ingest-from/dynatrace-activegate/operation/update-activegate "Узнайте, как определить установленную версию ActiveGate и как скачать и установить последнюю версию.").
+
+Для ручного обновления модуля zRemote
+
+Linux
+
+Windows
+
+1. Если вы настраивали установку, создайте резервную копию файла `zremoteagentuserconfig.conf` модуля zRemote и файла `custom.properties` ActiveGate. Установщик не должен перезаписывать эти файлы, но рекомендуется создать резервные копии на всякий случай.
+2. Удалите модуль zRemote.
+
+   ```
+   /opt/dynatrace/gateway/uninstall.sh
+   ```
+3. Установите модуль zRemote.
+
+   ```
+   ./bin/bash Dynatrace-ActiveGate-Linux-<arch>-<version>.sh --enable-zremote
+   ```
+
+1. Если вы настраивали установку, создайте резервную копию файла `zremoteagentuserconfig.conf` модуля zRemote и файла `custom.properties` ActiveGate. Установщик не должен перезаписывать эти файлы, но рекомендуется создать резервные копии на всякий случай.
+2. Удалите модуль zRemote через Панель управления Windows.
+3. [Установите модуль zRemote](/docs/ingest-from/dynatrace-activegate/installation/windows/windows-install-an-environment-activegate "Пошаговая инструкция по установке Environment ActiveGate на Windows."), выполнив установщик.
+
+### Операции
+
+Для остановки, запуска или перезапуска модуля zRemote вы можете использовать следующие команды.
+
+Linux
+
+Windows
+
+Для выполнения этих команд необходимы права root.
+
+Для запроса текущего состояния модуля zRemote:
+
+```
+service zremote status
+```
+
+Для остановки, запуска или перезапуска модуля zRemote:
+
+```
+service zremote stop|start|restart|forcestop
+```
+
+Разница между `stop` и `forcestop` заключается в том, что команда `stop` инструктирует процесс выполнить контролируемое завершение работы, тогда как `forcestop` принудительно завершает процесс.
+
+Для выполнения этих команд необходимы права администратора.
+
+В Windows модуль zRemote можно обслуживать с помощью вкладки **Службы** Диспетчера задач Windows. Вы также можете использовать следующую команду:
+
+```
+sc stop|start|restart "Dynatrace zRemote"
+```
+
+Команда `sc` является асинхронной, поэтому необходимо запрашивать состояние службы, чтобы определить, когда она полностью остановлена:
+
+```
+sc query "Dynatrace zRemote"
+```

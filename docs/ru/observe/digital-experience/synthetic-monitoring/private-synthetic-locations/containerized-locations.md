@@ -1,0 +1,1199 @@
+---
+title: Контейнеризованные, автоматически масштабируемые частные Synthetic-локации на Kubernetes
+source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations
+scraped: 2026-03-06T21:35:19.564395
+---
+
+# Контейнеризованные, автоматически масштабируемые частные Synthetic-локации на Kubernetes
+
+# Контейнеризованные, автоматически масштабируемые частные Synthetic-локации на Kubernetes
+
+* Classic
+* Практическое руководство
+* Чтение: 26 мин
+* Обновлено 11 февраля 2026 г.
+
+Dynatrace версии 1.264+
+
+**Контейнеризованные, автоматически масштабируемые частные Synthetic-локации на Kubernetes и его коммерческом дистрибутиве OpenShift** являются альтернативой развёртыванию Synthetic-совместимых ActiveGate на отдельных хостах или виртуальных машинах с последующим их назначением в частные локации для выполнения синтетических мониторов.
+
+В отличие от отдельных Synthetic-совместимых ActiveGate, которые развёртываются и назначаются в частные локации (и затем отслеживаются по метрикам использования), **контейнеризованные локации развёртываются целиком** с минимальным и максимальным количеством ActiveGate в качестве необходимых входных параметров.
+
+Kubernetes и OpenShift — это не просто дополнительные поддерживаемые платформы для ActiveGate наряду с Windows и Linux; в рамках данного предложения контейнеризованные частные Synthetic-локации:
+
+* Автоматически масштабируются (на основе метрик использования и указанного максимального/минимального количества ActiveGate).
+
+* Просты в управлении и обслуживании.
+* Поддерживают синтетический мониторинг облачно-нативных решений, требующих разработки приложений на основе контейнеров.
+* Могут быть развёрнуты быстрее при минимальных простоях.
+* Автоматически отслеживаются по использованию ресурсов в рамках операций автоматического масштабирования.
+
+Вы можете управлять локациями Kubernetes/OpenShift через веб-интерфейс Dynatrace и существующий [API v2 Synthetic — Локации, узлы и конфигурация](/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2 "Управляйте синтетическими локациями через Synthetic v2 API."). Дополнительные конечные точки раннего доступа в этом API облегчают развёртывание локаций Kubernetes; новые конечные точки помогают генерировать команды, которые необходимо выполнить в кластере Kubernetes.
+
+Вы можете выполнять как запланированные, так и [внеплановые](/docs/observe/digital-experience/synthetic-monitoring/general-information/on-demand-executions "Запускайте синтетические мониторы по требованию из публичных или частных локаций") выполнения всех [типов синтетических мониторов](/docs/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors "Узнайте о типах синтетических мониторов Dynatrace.") в контейнеризованных локациях.
+
+## Архитектура
+
+Контейнеризованные частные Synthetic-локации развёртываются целиком.
+
+* Каждая локация имеет несколько Synthetic-совместимых **ActiveGate**, настроенных как **поды**. Вы задаёте минимальное и максимальное количество ActiveGate при [настройке локации](#initial-setup).
+* **StatefulSet** рассматривается как **локация**.
+
+  В одном пространстве имён может быть одна или несколько локаций. См. разделы [Требования](#requirements) и [Рекомендации и предостережения](#recommend) ниже.
+
+  В одном кластере Kubernetes может быть одна или несколько автоматически масштабируемых локаций.
+
+Локации масштабируются автоматически путём изменения количества ActiveGate на локацию с помощью следующих дополнительных компонентов архитектуры контейнеризованной локации.
+
+* **Synthetic metric adapter** запрашивает и получает [метрики использования](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#location-details "Анализируйте и управляйте использованием ёмкости в ваших частных Synthetic-локациях.") для контейнеризованных ActiveGate от кластера Dynatrace.
+
+  На каждый кластер Kubernetes приходится один Synthetic metric adapter.
+
+  Metric adapter настроен на взаимодействие с одной средой Dynatrace.
+
+  Установка Synthetic metric adapter требует [роли суперпользователя в Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles) — см. раздел [Установка контейнеризованной локации](#install) ниже.
+* **Горизонтальный автомасштабировщик подов** масштабирует локацию, регулируя количество ActiveGate на основе данных об использовании, полученных от Synthetic metric adapter.
+
+  На каждую локацию приходится один горизонтальный автомасштабировщик подов.
+
+![Контейнеризованные локации для синтетического мониторинга](https://dt-cdn.net/images/k8s-synthetic-locations-1769-41775c85f2.jpg)
+
+## Требования
+
+Контейнеризованные частные Synthetic-локации поддерживаются в Dynatrace версии 1.264+ на Kubernetes 1.22–1.25 с поддержкой постоянных томов и `kubectl`.
+
+* Дополнительная поддержка Kubernetes 1.26+ доступна в [рабочем процессе установки](#install).
+* Поддерживаются все виды реализаций Kubernetes — как облачные, так и локальные (например, Amazon EKS или Minikube).
+* Поддерживаются версии OpenShift, совместимые с поддерживаемыми версиями Kubernetes.
+
+Для доступа к публичным репозиториям, где размещены образы Docker для Synthetic-совместимого ActiveGate и Synthetic metric adapter, требуется подключение к интернету. Расположение этих образов указывается в соответствующих файлах шаблонов — см. разделы [Установка контейнеризованной локации](#install) и [Обновление контейнеризованной локации](#update) ниже.
+
+### Руководство по размеру
+
+Приведённые ниже **требования к оборудованию ActiveGate** разбиты по размерам.
+
+* Запросы CPU и RAM — это ресурсы, зарезервированные подами при создании.
+* Лимиты CPU и RAM — максимальное потребление ресурсов на под.
+* Если локация отслеживается с помощью [OneAgent](/docs/ingest-from/dynatrace-oneagent/oa-requirements "Требования к кодовым модулям OneAgent") или другого решения глубокого мониторинга, требования к памяти (RAM) возрастут.
+* Под без браузера в режиме FIPS имеет те же требования, что и обычный под без браузера.
+
+Узел XS
+
+Узел S
+
+Узел M
+
+|  | Под с поддержкой браузера | Под без браузера | Под с поддержкой браузера в режиме FIPS | Под с поддержкой браузера в режиме FIPS с корпоративным прокси |  | ActiveGate | Synthetic Engine | Рабочий процесс браузера | FIPS прокси | FIPS peer |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Контейнеры | 4 | 2 | 5 | 6 |  | 1 | 1 | 2 | 1 | 1 |
+| Запросы CPU | 1.4 vCPU | 0.4 vCPU | 1.9 vCPU | 2.05 vCPU |  | 0.3 vCPU | 0.25 vCPU | 2 × 0.5 vCPU | 0.5 vCPU | 0.15 vCPU |
+| Лимиты CPU | 3.8 vCPU | 0.8 vCPU | 5.3 vCPU | 5.6 vCPU |  | 0.3 vCPU | 0.5 vCPU | 2 × 1.5 vCPU | 1.5 vCPU | 0.3 vCPU |
+| Запросы RAM | 3.25 GiB | 1.25 GiB | 3.5 GiB | 3.75 GiB |  | 0.25 GiB | 1 GiB | 2 × 1 GiB | 0.25 GiB | 0.25 GiB |
+| Лимиты RAM | 7 GiB | 3 GiB | 7.5 GiB | 8 GiB |  | 1 GiB | 2 GiB | 2 × 2 GiB | 0.5 GiB | 0.5 GiB |
+| Эфемерное хранилище | 1.5 GiB | 1.3 GiB | 1.6 GiB | 1.7 GiB |  | 1.2 GiB | 0.1 GiB | 2 × 0.1 GiB | 0.1 GiB | 0.1 GiB |
+| Постоянное хранилище | 3 GiB | 3 GiB | 3 GiB | 3 GiB |  |  |  |  |  |  |
+| RAM-диск | 1 GiB | - | 1 GiB | 1 GiB |  |  |  |  |  |  |
+
+|  | Под с поддержкой браузера | Под без браузера | Под с поддержкой браузера в режиме FIPS | Под с поддержкой браузера в режиме FIPS с корпоративным прокси |  | ActiveGate | Synthetic Engine | Рабочий процесс браузера | FIPS прокси | FIPS peer |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Контейнеры | 6 | 2 | 7 | 8 |  | 1 | 1 | 4 | 1 | 1 |
+| Запросы CPU | 2.65 vCPU | 0.65 vCPU | 3.15 vCPU | 3.3 vCPU |  | 0.3 vCPU | 0.5 vCPU | 4 × 0.5 vCPU | 0.5 vCPU | 0.15 vCPU |
+| Лимиты CPU | 7.3 vCPU | 1.3 vCPU | 8.8 vCPU | 9.1 vCPU |  | 0.3 vCPU | 1 vCPU | 4 × 1.5 vCPU | 1.5 vCPU | 0.3 vCPU |
+| Запросы RAM | 5.75 GiB | 1.75 GiB | 6 GiB | 6.25 GiB |  | 0.25 GiB | 1.5 GiB | 4 × 1 GiB | 0.25 GiB | 0.25 GiB |
+| Лимиты RAM | 12 GiB | 4 GiB | 12.5 GiB | 13 GiB |  | 1 GiB | 3 GiB | 4 × 2 GiB | 0.5 GiB | 0.5 GiB |
+| Эфемерное хранилище | 1.7 GiB | 1.3 GiB | 1.8 GiB | 1.9 GiB |  | 1.2 GiB | 0.1 GiB | 4 × 0.1 GiB | 0.1 GiB | 0.1 GiB |
+| Постоянное хранилище | 6 GiB | 6 GiB | 6 GiB | 6 GiB |  |  |  |  |  |  |
+| RAM-диск | 2 GiB | - | 2 GiB | 2 GiB |  |  |  |  |  |  |
+
+|  | Под с поддержкой браузера | Под без браузера | Под с поддержкой браузера в режиме FIPS | Под с поддержкой браузера в режиме FIPS с корпоративным прокси |  | ActiveGate | Synthetic Engine | Рабочий процесс браузера | FIPS прокси | FIPS peer |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Контейнеры | 14 | 2 | 15 | 16 |  | 1 | 1 | 12 | 1 | 1 |
+| Запросы CPU | 7.15 vCPU | 1.15 vCPU | 7.65 vCPU | 7.8 vCPU |  | 0.3 vCPU | 1 vCPU | 12 × 0.5 vCPU | 0.5 vCPU | 0.15 vCPU |
+| Лимиты CPU | 20.3 vCPU | 2.3 vCPU | 21.8 vCPU | 22.1 vCPU |  | 0.3 vCPU | 2 vCPU | 12 × 1.5 vCPU | 1.5 vCPU | 0.3 vCPU |
+| Запросы RAM | 14.25 GiB | 2.25 GiB | 14.5 GiB | 14.75 GiB |  | 0.25 GiB | 2 GiB | 12 × 1 GiB | 0.25 GiB | 0.25 GiB |
+| Лимиты RAM | 29 GiB | 5 GiB | 29.5 GiB | 30 GiB |  | 1 GiB | 4 GiB | 12 × 2 GiB | 0.5 GiB | 0.5 GiB |
+| Эфемерное хранилище | 2.5 GiB | 1.3 GiB | 2.6 GiB | 2.7 GiB |  | 1.2 GiB | 0.1 GiB | 12 × 0.1 GiB | 0.1 GiB | 0.1 GiB |
+| Постоянное хранилище | 12 GiB | 12 GiB | 12 GiB | 12 GiB |  |  |  |  |  |  |
+| RAM-диск | 4 GiB | - | 4 GiB | 4 GiB |  |  |  |  |  |  |
+
+### Рекомендации и предостережения
+
+#### ActiveGate
+
+* Рекомендуется использовать размер ActiveGate **S** и минимум два ActiveGate на локацию.
+* При выборе размера узла учитывайте возможные ограничения, характерные для используемого вами сервиса Kubernetes.
+* Все ActiveGate в рамках одной локации всегда имеют одинаковый размер.
+* После указания размер ActiveGate для локации нельзя изменить, поскольку постоянное хранилище нельзя изменить по размеру.
+* Kubernetes-локации следуют тем же правилам, что и другие локации: ActiveGate нельзя одновременно добавить в несколько локаций.
+* Нельзя объединять контейнеризованные и неконтейнеризованные ActiveGate в одной локации.
+* Образ Synthetic-совместимого ActiveGate находится в публичном реестре; расположение образа указывается в файле шаблона.
+
+#### Локации
+
+* Рекомендуется устанавливать каждую локацию в собственном пространстве имён.
+* При развёртывании нескольких локаций в одном пространстве имён используйте разные имена для соответствующих ресурсов ActiveGate — см. раздел [Установка контейнеризованной локации](#install) ниже.
+* Локации, совместно использующие одно пространство имён Kubernetes, должны быть подключены к одной среде Dynatrace, как и Synthetic metric adapter, чтобы обеспечить автомасштабирование. Например, предположим, что Локация A и metric adapter настроены для Среды X. Однако Локация A разделяет пространство имён с Локацией B, которая настроена для Среды Y. В таком случае Локация A поддерживает автомасштабирование; Локация B — нет.
+* Если вы хотите установить локацию в том же пространстве имён, что и другие ресурсы Dynatrace, например [Dynatrace Operator](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/dto-resource-limits "Задайте лимиты ресурсов для компонентов Dynatrace Operator."), обратите внимание на более высокие [требования к оборудованию и системе](#requirements) для контейнеризованных Synthetic-совместимых ActiveGate.
+
+#### Synthetic metric adapter
+
+* Рекомендуется развёртывать Synthetic metric adapter в собственном пространстве имён на каждый кластер Kubernetes. Synthetic metric adapter может разделять пространство имён с локацией. Однако развёртывание metric adapter в собственном пространстве имён гарантирует, что он не будет удалён при отключении локации.
+* Metric adapter может взаимодействовать только с одной средой Dynatrace, поэтому автомасштабирование локаций работает только для этой среды.
+* Образ Synthetic metric adapter находится в публичном реестре; расположение образа указывается в файле шаблона.
+
+### Особенности автомасштабирования
+
+Для целей автомасштабирования Synthetic metric adapter нуждается в доступе к Kubernetes API и расширяет его, определяя новый API-сервис — `v1beta1.external.metrics.k8s.io`.
+
+Этот API-сервис определён в шаблоне Synthetic metric adapter — см. раздел [Установка и развёртывание контейнеризованной локации](#install) ниже.
+
+Определение API-сервиса в шаблоне metric adapter
+
+```
+apiVersion: apiregistration.k8s.io/v1
+
+
+
+kind: APIService
+
+
+
+metadata:
+
+
+
+name: v1beta1.external.metrics.k8s.io
+
+
+
+spec:
+
+
+
+service:
+
+
+
+name: dynatrace-metrics-apiserver
+
+
+
+namespace: {{adapterNamespace}}
+
+
+
+group: external.metrics.k8s.io
+
+
+
+version: v1beta1
+
+
+
+insecureSkipTLSVerify: true
+
+
+
+groupPriorityMinimum: 100
+
+
+
+versionPriority: 100
+```
+
+Synthetic metric adapter также изменяет существующий ресурс в своём шаблоне — ServiceAccount `horizontal-pod-autoscaler` в пространстве имён `kube-system`.
+
+Изменение существующего ресурса в шаблоне metric adapter
+
+```
+apiVersion: rbac.authorization.k8s.io/v1
+
+
+
+kind: ClusterRoleBinding
+
+
+
+metadata:
+
+
+
+name: hpa-controller-dynatrace-metrics
+
+
+
+roleRef:
+
+
+
+apiGroup: rbac.authorization.k8s.io
+
+
+
+kind: ClusterRole
+
+
+
+name: dynatrace-metrics-server-resources
+
+
+
+subjects:
+
+
+
+- kind: ServiceAccount
+
+
+
+name: horizontal-pod-autoscaler
+
+
+
+namespace: kube-system
+```
+
+#### Ограничения
+
+Обратите внимание, что в кластере Kubernetes допускается только один внешний сервер метрик. Из-за этого другие компоненты, выступающие в роли сервера метрик (например, дополнение KEDA или адаптер Prometheus), не могут использоваться совместно с Synthetic metric adapter.
+
+## Установка контейнеризованной локации
+
+Установить контейнеризованную локацию можно только в предыдущей версии Dynatrace. В последней версии Dynatrace контейнеризованные локации доступны только в режиме просмотра.
+
+Настройка и управление контейнеризованной локацией осуществляется в веб-интерфейсе Dynatrace по пути **Настройки** > **Мониторинг веб и мобильных приложений** > **Частные Synthetic-локации**.
+
+### 1. Начальная настройка локации Kubernetes/OpenShift
+
+1. Выберите **Добавить локацию Kubernetes** или **Добавить локацию OpenShift** на странице **Частные Synthetic-локации**.
+2. Укажите **Имя локации** по вашему выбору.
+3. Выберите **Географическое расположение**, например `Сан-Франциско, Калифорния, США`. (Обратите внимание, что нельзя **Сохранить изменения**, пока не указаны имя и расположение.)
+4. В разделе **ActiveGate**:
+
+   1. Укажите **Минимальное** и **Максимальное количество ActiveGate** для вашей локации. Эти настройки являются параметрами автомасштабирования, используемыми [горизонтальным автомасштабировщиком подов](#architecture).
+   2. Выберите **Размер узла** ActiveGate (`XS`, `S` или `M`). Также см. разделы [Требования](#requirements) и [Рекомендации и предостережения](#recommend).
+   3. **Платформа развёртывания** предварительно выбирается в зависимости от выбора Kubernetes или OpenShift.
+5. Только для Kubernetes. Если ваша реализация Kubernetes основана на более поздней версии, чем 1.21–1.25, включите **Использовать Kubernetes версии 1.26+**. Также см. разделы [Требования](#requirements) и [Рекомендации и предостережения](#recommend).
+
+   Если вы изменяете этот параметр после загрузки шаблона локации, необходимо повторить процедуру развёртывания.
+6. Необязательно. Можно отключить поддержку браузерных мониторов. В таком случае узел ActiveGate будет рассматриваться как [без браузера](#browserless).
+7. Необязательно. Включите [создание проблемы при отключении всех ActiveGate](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#outage-handling "Анализируйте и управляйте использованием ёмкости в ваших частных Synthetic-локациях.").
+8. **Сохраните изменения** перед переходом к развёртыванию [локации](#deploy-location) и [metric adapter](#deploy-adapter).
+
+Именованная локация отображается на странице **Частные Synthetic-локации** с логотипом Kubernetes или OpenShift. Обратите внимание, что на этом этапе ActiveGate к локации ещё не назначены.
+
+![Пустая локация](https://dt-cdn.net/images/containerized-empty-location-1351-ef0b3700e2.png)
+
+### 2. Развёртывание локации
+
+Выберите вашу локацию в разделе **Частные Synthetic-локации**, чтобы загрузить шаблон локации и сгенерировать команды, которые необходимо выполнить в кластере Kubernetes.
+
+1. В разделе **Развёртывание** создайте **PaaS-токен** (**Создать токен**) или вставьте существующий токен. PaaS-токен необходим для генерации токенов подключения ActiveGate для взаимодействия с вашей средой Dynatrace.
+
+   Существующие токены перечислены на странице **Токены доступа**. Обратите внимание, что PaaS-токен отображается только один раз при создании, после чего хранится в зашифрованном виде и не может быть раскрыт. Рекомендуем хранить PaaS-токен в менеджере паролей, чтобы можно было повторно использовать его при создании дополнительных частных локаций в вашем кластере Kubernetes.
+2. Укажите **Имя ActiveGate** или используйте значение по умолчанию. Это имя используется в качестве префикса для ActiveGate, развёрнутых как часть локации. Первый ActiveGate называется `<prefix>-0`, второй — `<prefix>-1` и т.д. Это имя также используется в качестве имени StatefulSet.
+3. Укажите **Пространство имён локации** или используйте значение по умолчанию. (Оставьте **Пространство имён metric adapter** как есть. Это поле необходимо только для генерации [шаблона Synthetic metric adapter](#deploy-adapter).)
+
+   Кнопка **Загрузить synthetic.yaml** активируется после указания PaaS-токена, имени ActiveGate и пространства имён локации.
+
+   Значения полей в разделе **Развёртывание** не сохраняются. При переходе на другую страницу их потребуется ввести повторно.
+
+   ![Обязательные поля для шаблона локации](https://dt-cdn.net/images/k8s-location-tokens-namespace-1242-d9a86d7dce.png)
+4. Выберите **Загрузить synthetic.yaml**. Это файл шаблона локации. Вы можете переименовать файл для удобства идентификации.
+5. Скопируйте загруженный шаблон локации в ваш кластер Kubernetes.
+6. Скопируйте и выполните сгенерированные команды в вашем кластере Kubernetes. Ваш PaaS-токен автоматически добавляется к отображаемым командам.
+
+   Выполняйте команды из той же директории, где находится файл шаблона.
+
+   Если вы переименовали файл шаблона, используйте новое имя файла в командах.
+
+   ![Команды для создания пространства имён локации](https://dt-cdn.net/images/k8s-location-commands-1106-4b8fac8db7.png)
+7. Необязательно. Выполните следующую команду, чтобы вывести список всех подов в данном пространстве имён (в примере — `dynatrace`) и проверить их развёртывание.
+
+   ```
+   kubectl get pod -n dynatrace
+   ```
+
+   Также можно просматривать поды на странице **Статус развёртывания** > **ActiveGate**, фильтруя по парам ключ-значение `Running in container: True` и `With modules: Synthetic`.
+
+   ![Фильтры статуса развёртывания ActiveGate](https://dt-cdn.net/images/k8s-location-deployment-status-1109-28df0f6a0c.png)
+
+### 3. Развёртывание Synthetic metric adapter
+
+Эта процедура генерирует отдельный шаблон для Synthetic metric adapter. После этого выполните сгенерированные команды в вашем кластере Kubernetes для развёртывания metric adapter.
+
+* Synthetic metric adapter нужно развернуть только один раз на каждый кластер Kubernetes.
+* Установка Synthetic metric adapter требует [роли суперпользователя Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles) для создания ClusterRole и ClusterRoleBinding.
+
+1. В разделе **Развёртывание** создайте **Токен метрик** (**Создать токен**) или вставьте существующий токен. Токен метрик — это [токен доступа](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Ознакомьтесь с концепцией токена доступа и его областями.") для получения данных об использовании из Dynatrace. Существующие токены перечислены на странице **Токены доступа**.
+2. Укажите **Пространство имён metric adapter** или используйте значение по умолчанию. (Оставьте **Пространство имён локации** и **Имя ActiveGate** как есть. Эти поля необходимы только для генерации [шаблона локации](#deploy-location).)
+
+   Кнопка **Загрузить synthetic-adapter.yaml** активируется после указания токена метрик и пространства имён metric adapter.
+
+   Значения полей в разделе **Развёртывание** не сохраняются. При переходе на другую страницу их потребуется ввести повторно.
+
+   ![Обязательные поля для шаблона адаптера](https://dt-cdn.net/images/k8s-location-tokens-adapter-1213-fc6df4117a.png)
+3. Выберите **Загрузить synthetic-adapter.yaml**. Это файл шаблона для Synthetic metric adapter.
+4. Скопируйте загруженный шаблон metric adapter в ваш кластер Kubernetes.
+5. Скопируйте и выполните сгенерированные команды в вашем кластере Kubernetes. Ваш токен метрик автоматически добавляется к отображаемым командам.
+
+   Выполняйте команды из той же директории, где находится файл шаблона.
+
+   Если вы переименовали файл шаблона, используйте новое имя файла в командах.
+
+   ![Команды для создания пространства имён metric adapter](https://dt-cdn.net/images/k8s-location-adapter-commands-1167-f2c11204cc.png)
+
+## Установка контейнеризованной локации с поддержкой FIPS
+
+1. Переведите локацию в режим FIPS
+
+   В настоящее время это возможно только с помощью [REST API](/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2 "Управляйте синтетическими локациями через Synthetic v2 API."), устанавливая свойство `fipsMode` в запросном JSON.
+
+   * Для создания новой локации используйте вызов [POST location](/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/post-a-location "Создайте частную синтетическую локацию через Synthetic v2 API.").
+   * Для обновления существующей локации используйте вызов [PUT location](/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/put-a-location "Обновите частную синтетическую локацию через Synthetic v2 API.").
+2. Выполните дополнительную настройку
+
+   С поддержкой браузера
+
+   С поддержкой браузера и корпоративным прокси
+
+   Без браузера
+
+   Предоставьте сертификат для повторного подписания HTTPS-запросов (описано в разделе [Режим FIPS](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic#fips-proxy "Узнайте, как настроить свойства ActiveGate для настройки прокси для частного синтетического мониторинга.")):
+
+   ```
+   kubectl -n $NAMESPACE create secret tls synthetic-fips-proxy-cert --cert=squid.crt --key=squid.key
+   ```
+
+   1. Предоставьте сертификат для повторного подписания HTTPS-запросов (описано в разделе [Режим FIPS](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic#fips-proxy "Узнайте, как настроить свойства ActiveGate для настройки прокси для частного синтетического мониторинга.")):
+
+      ```
+      kubectl -n $NAMESPACE create secret tls synthetic-fips-proxy-cert --cert=squid.crt --key=squid.key
+      ```
+   2. Предоставьте настройку корпоративного прокси для Squid (описано в разделе [Режим FIPS с корпоративным прокси](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic#fips-corporate-proxy "Узнайте, как настроить свойства ActiveGate для настройки прокси для частного синтетического мониторинга.")):
+
+      ```
+      kubectl -n $NAMESPACE create secret generic synthetic-fips-proxy-peer --from-literal='peer.conf=cache_peer proxy.example.com parent 443 0 default no-digest proxy-only login=proxyuser:proxypass tls tls-min-version=1.2 tls-options=NO_SSLv3'
+      ```
+   3. Предоставьте настройку корпоративного прокси для ActiveGate:
+
+      * см. [Настройка прокси](#proxy)
+
+   Дополнительная настройка не требуется.
+3. Перейдите к загрузке и развёртыванию YAML-шаблона, как описано в разделе [Установка](#deploy-location).
+
+## Обновление контейнеризованной локации или её ActiveGate
+
+Обновить контейнеризованную локацию или её ActiveGate можно только в предыдущей версии Dynatrace. В последней версии Dynatrace контейнеризованные локации доступны только в режиме просмотра.
+
+Для любого обновления локации требуется повторно загрузить файл шаблона локации и применить изменения через kubectl.
+
+**Обновление версий ActiveGate**
+
+1. Загрузите файл шаблона локации.
+
+   1. Выберите вашу локацию в разделе **Частные Synthetic-локации**.
+   2. В разделе **Развёртывание** повторно введите **PaaS-токен**, **Имя ActiveGate** и **Пространство имён локации**, которые были указаны при [развёртывании локации](#deploy-location). После этого кнопка **Загрузить synthetic.yaml** станет активной.
+   3. Выберите **Загрузить synthetic.yml** для загрузки нового файла шаблона локации.
+   4. Переименуйте файл для удобства идентификации.
+   5. Скопируйте файл шаблона в ваш кластер Kubernetes.
+2. Выполните следующую команду для применения изменений в вашем кластере Kubernetes. Обязательно используйте имя вашего файла шаблона вместо `synthetic.yaml`. Выполняйте эту команду из той же директории, где находится файл шаблона.
+
+   ```
+   kubectl apply -f ./synthetic.yaml
+   ```
+
+При любом обновлении ActiveGate повторно развёртываются в порядке, обратном порядку их первоначального развёртывания. Например, если ваша локация содержит ActiveGate `activegate-name-0` и `activegate-name-1`, сначала останавливается и повторно развёртывается `activegate-name-1`.
+
+Повторно развёрнутый под ActiveGate использует тот же постоянный том, развёрнутый для непрерывности журналов.
+
+## Удаление локации или metric adapter на Kubernetes
+
+Фрагменты для удаления локации или metric adapter на Kubernetes можно генерировать только в предыдущей версии Dynatrace.
+
+Команды, сгенерированные при [развёртывании локации](#deploy-location) и [Synthetic metric adapter](#deploy-adapter), также включают фрагменты кода для их удаления на Kubernetes. Эти команды можно скопировать и сохранить для будущего использования.
+
+В любой момент можно повторно сгенерировать команды для соответствующих пространств имён.
+
+* Если вы переименовали файл шаблона, используйте новое имя файла в командах.
+* Приведённые ниже команды очистки не удаляют соответствующие пространства имён.
+
+**Локация**
+
+1. Выберите вашу локацию в разделе **Частные Synthetic-локации**.
+2. Повторно введите **PaaS-токен**, **Имя ActiveGate** и **Пространство имён локации**.
+3. **Скопируйте** и используйте команды **Очистки** локации.
+
+   ![Удаление ресурсов локации](https://dt-cdn.net/images/k8s-location-delete-1111-8927775af1.png)
+
+Обратите внимание, что эта процедура удаляет только ресурсы Kubernetes; она не удаляет [локацию, первоначально настроенную в Dynatrace](#initial-setup).
+
+**Synthetic metric adapter**
+
+1. Выберите вашу локацию в разделе **Частные Synthetic-локации**.
+2. Повторно введите **Токен метрик** и **Пространство имён metric adapter**.
+3. **Скопируйте** и используйте команду **Очистки** metric adapter.
+
+   ![Удаление metric adapter](https://dt-cdn.net/images/k8s-location-adapter-delete-1098-fe02e0d2db.png)
+
+Если [Synthetic metric adapter](#deploy-adapter) удалён или перестал работать, горизонтальные автомасштабировщики подов больше не могут получать данные об использовании от Dynatrace, и ваши контейнеризованные локации становятся [немасштабируемыми](#non-scalable).
+
+## Доступ к PVC с несколькими зонами доступности в облачных кластерах
+
+Использование кластера с несколькими зонами доступности (multi-AZ) с развёртываниями, использующими PVC, может привести к тому, что поды окажутся в состоянии ожидания при повторном создании. Это происходит потому, что тома хранилища, например EBS, не реплицируются между зонами.
+
+PVC является общим только для узлов, расположенных в одной зоне доступности. Когда в кластере с несколькими зонами доступности узел пытается получить доступ к PVC из другой зоны доступности, он переходит в состояние ожидания и отображает сообщение об ошибке.
+
+В настоящее время существует два возможных решения для развёртываний Kubernetes с несколькими зонами доступности:
+
+* Использование сродства узлов для ограничения подов определённой зоной
+* Использование общих систем хранения, например EFS
+
+### Использование сродства узлов для ограничения подов определённой зоной
+
+Вы можете настроить сродство узлов, чтобы использовать для развёртывания только определённые зоны.
+
+Для настройки сродства узлов
+
+1. Используйте следующую команду, чтобы узнать зону, в которой развёрнут каждый узел:
+
+   ```
+   kubectl get nodes --show-labels
+   ```
+2. Найдите метку `failure-domain.beta.kubernetes.io/zone`, например `failure-domain.beta.kubernetes.io/zone=us-east-1a`.
+3. Используйте команду kubectl label, чтобы установить пользовательскую метку для узла:
+
+   ```
+   kubectl label nodes node name label=value
+   ```
+
+   Пример
+
+   ```
+   kubectl label nodes ip-10-179-202-73.ec2.internal zone=us-east-1a
+   ```
+4. Добавьте пользовательскую метку узла в раздел `nodeSelector` шаблона развёртывания Synthetic. Например:
+
+   ```
+   spec:
+
+
+
+   nodeSelector:
+
+
+
+   zone: us-east-1a
+   ```
+5. Сохраните изменения.
+6. Примените шаблон.
+
+Узлы с одинаковой меткой зоны будут развёрнуты в одной зоне доступности, и вы сможете совместно использовать PVC между ними без ошибок.
+
+### Использование общих систем хранения
+
+Каждый облачный сервис предоставляет собственные варианты общих систем хранения. Для объяснения использования общих систем хранения воспользуемся AWS EFS в качестве примера. Информацию о системах хранения других провайдеров облачных хранилищ см.:
+
+* Google Cloud: [О поддержке Filestore для Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/docs/concepts/filestore-for-gke)
+* Azure Storage: [Что такое Azure Files?](https://learn.microsoft.com/en-us/azure/storage/files/storage-files-introduction)
+
+  Стандартный драйвер SMB/CIFS не поддерживается для Azure Files. Подробнее см. [Pod вылетает при изменении прав доступа к файлам на Azure Files storage](https://access.redhat.com/solutions/7078656).
+
+Предполагаем, что у вас уже есть EFS. Если нет, см. [Начало работы с Amazon EFS](https://dt-url.net/vq02epe), чтобы узнать, как настроить EFS.
+
+Имейте в виду, что EFS может быть дороже, чем EBS. Проверьте ценообразование.
+
+Для использования класса хранилища с EFS
+
+1. Дополните шаблон развёртывания Synthetic следующим образом:
+
+   ```
+   kind: StorageClass
+
+
+
+   apiVersion: storage.k8s.io/v1
+
+
+
+   metadata:
+
+
+
+   name: efs-test
+
+
+
+   provisioner: efs.csi.aws.com
+
+
+
+   parameters:
+
+
+
+   fileSystemId: fs-0c155dcd8425aa39d
+
+
+
+   provisioningMode: efs-ap
+
+
+
+   directoryPerms: "700"
+
+
+
+   basePath: "/"
+   ```
+2. Измените раздел **volumeClaimTemplates** шаблона следующим образом:
+
+   ```
+   volumeClaimTemplates:
+
+
+
+   - metadata:
+
+
+
+   name: persistent-storage
+
+
+
+   spec:
+
+
+
+   storageClassName: efs-test
+
+
+
+   accessModes:
+
+
+
+   - ReadWriteMany
+
+
+
+   resources:
+
+
+
+   requests:
+
+
+
+   storage: 3Gi
+   ```
+3. Сохраните изменения.
+4. Примените шаблон.
+
+Теперь, если под будет повторно развёрнут на узле в другой зоне, PVC должен автоматически привязаться к новой зоне развёртывания.
+
+## Мониторы NAM в контейнеризованных локациях
+
+Мониторы доступности сети поддерживаются в контейнеризованных развёртываниях Synthetic-совместимого ActiveGate, однако для тестов ICMP требуются дополнительные разрешения.
+
+Для включения типа запроса ICMP при выполнении NAM
+
+1. В Dynatrace Hub ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub") найдите **Настройки**.
+2. В разделе **Настройки** найдите и выберите **Частные Synthetic-локации**.
+3. Выберите **Добавить локацию Kubernetes**.
+4. Настройте локацию и обязательно включите **Включить тип запроса ICMP для выполнения мониторов доступности сети**.
+
+* Мониторы ICMP используют исполняемый файл `ping`, для которого требуется возможность `CAP_NET_RAW` для контейнера, выполняющего запросы (`synthetic-vuc`).
+* Свойство `allowPrivilegeEscalation` в `securityContext` для этого контейнера должно быть установлено в `true`, поскольку процесс, запускающий исполняемый файл `ping`, по умолчанию не имеет необходимых привилегий.
+
+Полный `securityContext` для контейнера `synthetic-vuc` с включёнными мониторами доступности сети должен выглядеть следующим образом.
+
+```
+securityContext:
+
+
+
+readOnlyRootFilesystem: true
+
+
+
+privileged: false
+
+
+
+allowPrivilegeEscalation: true
+
+
+
+runAsNonRoot: true
+
+
+
+capabilities:
+
+
+
+drop: ["all"]
+
+
+
+add: ["NET_RAW"]
+```
+
+### OpenShift
+
+OpenShift использует Security Context Constraint для ограничения возможностей, используемых подами.
+По умолчанию развёрнутые поды используют `restricted-v2` SCC, который не разрешает никаких дополнительных возможностей.
+Рекомендуемое решение — подготовить пользовательский Security Context Constraint.
+
+1. Создайте выделенный Service Account (необязательно)
+
+   * Если пользовательский SCC используется только для синтетического развёртывания, рекомендуется создать выделенный Service Account.
+
+     ```
+     oc -n $NAMESPACE create sa sa-dt-synthetic
+
+
+
+     oc -n $NAMESPACE adm policy add-role-to-user edit system:serviceaccount:$NAMESPACE:sa-dt-synthetic
+     ```
+2. Создайте пользовательский Security Context Constraint
+
+   * scc-dt-synthetic.yaml
+
+     ```
+     apiVersion: security.openshift.io/v1
+
+
+
+     kind: SecurityContextConstraints
+
+
+
+     metadata:
+
+
+
+     name: scc-dt-synthetic
+
+
+
+     allowPrivilegedContainer: false
+
+
+
+     allowHostDirVolumePlugin: false
+
+
+
+     allowHostIPC: false
+
+
+
+     allowHostNetwork: false
+
+
+
+     allowHostPID: false
+
+
+
+     allowHostPorts: false
+
+
+
+     runAsUser:
+
+
+
+     type: MustRunAsRange
+
+
+
+     seccompProfiles:
+
+
+
+     - runtime/default
+
+
+
+     seLinuxContext:
+
+
+
+     type: MustRunAs
+
+
+
+     fsGroup:
+
+
+
+     type: MustRunAs
+
+
+
+     supplementalGroups:
+
+
+
+     type: MustRunAs
+
+
+
+     volumes:
+
+
+
+     - configMap
+
+
+
+     - downwardAPI
+
+
+
+     - emptyDir
+
+
+
+     - persistentVolumeClaim
+
+
+
+     - projected
+
+
+
+     - secret
+
+
+
+     users: []
+
+
+
+     groups: []
+
+
+
+     priority: null
+
+
+
+     readOnlyRootFilesystem: true
+
+
+
+     requiredDropCapabilities:
+
+
+
+     - ALL
+
+
+
+     defaultAddCapabilities: null
+
+
+
+     allowedCapabilities:
+
+
+
+     - NET_RAW
+
+
+
+     allowPrivilegeEscalation: true
+     ```
+   * `priority` можно установить на любое число от 1 до 9. Если два или более SCC удовлетворяют требованиям, выбирается тот, у которого выше приоритет.
+
+     ```
+     oc create -f scc-dt-synthetic.yaml
+     ```
+3. Добавьте новый SCC к Service Account, используемому для синтетического развёртывания
+
+   ```
+   oc -n $NAMESPACE adm policy add-scc-to-user scc-dt-synthetic system:serviceaccount:$NAMESPACE:default
+   ```
+
+   * Если был создан SA `sa-dt-synthetic`, подставьте его вместо `default`.
+
+     ```
+     oc -n $NAMESPACE adm policy add-scc-to-user scc-dt-synthetic system:serviceaccount:$NAMESPACE:sa-dt-synthetic
+     ```
+
+### Azure RedHat OpenShift (ARO)
+
+Если кластер OpenShift развёрнут как ресурс Azure Red Hat OpenShift (ARO), то по умолчанию Network Security Group не будет разрешать ICMP-трафик за пределы кластера.
+
+Network Security Group ARO не поддаётся изменению, но можно создать пользовательский NSG и импортировать его при создании кластера ARO.
+Подробнее об этом см. [Использование собственной группы безопасности сети (NSG) для кластера Azure Red Hat OpenShift (ARO)](https://learn.microsoft.com/en-us/azure/openshift/howto-bring-nsg).
+
+При использовании кластера с настройками по умолчанию ICMP-мониторы NAM будут работать только для ресурсов внутри кластера OpenShift. Любые запросы за пределы кластера завершатся ошибкой.
+
+## Настройка прокси
+
+Добавьте следующий код в начало [файла шаблона локации](#install) для вставки ресурса ConfigMap, содержащего информацию о вашем прокси-сервере.
+
+В приведённом ниже примере кода:
+
+* Прокси-сервер используется для соединений с кластером Dynatrace и тестируемыми ресурсами.
+* Пространство имён (`namespace: dynatrace`) должно быть пространством имён локации.
+
+```
+kind: ConfigMap
+
+
+
+apiVersion: v1
+
+
+
+data:
+
+
+
+custom.properties: |-
+
+
+
+[http.client]
+
+
+
+proxy-server = 10.102.43.210
+
+
+
+proxy-port = 3128
+
+
+
+proxy-user = proxyuser
+
+
+
+proxy-password = proxypass
+
+
+
+metadata:
+
+
+
+name: ag-custom-configmap
+
+
+
+namespace: dynatrace
+
+
+
+---
+```
+
+Добавьте следующий код в `spec.template.spec.volumes:`.
+
+```
+- name: ag-custom-volume
+
+
+
+configMap:
+
+
+
+name: ag-custom-configmap
+
+
+
+items:
+
+
+
+- key: custom.properties
+
+
+
+path: custom.properties
+```
+
+Добавьте следующий код в конфигурацию контейнера ActiveGate в разделе `volumeMounts:`.
+
+```
+- name: ag-custom-volume
+
+
+
+mountPath: /var/lib/dynatrace/gateway/config_template/custom.properties
+
+
+
+subPath: custom.properties
+```
+
+## Частные Synthetic-локации без браузера
+
+В целом рекомендуется развёртывать полноценные частные синтетические локации для поддержки выполнения всех типов синтетических мониторов (HTTP, браузер, NAM).
+
+Если вам не нужно запускать браузерные мониторы, рассмотрите возможность развёртывания локации в режиме без браузера. В этом режиме локация (или принадлежащий ей ActiveGate) развёртывается без браузера, что снижает требования к оборудованию. Однако браузерные мониторы не могут работать в локации без браузера.
+
+Рассматривайте локации без браузера как альтернативу частным синтетическим локациям с поддержкой браузерных мониторов, когда вы сосредоточены исключительно на:
+
+* Сетевых и инфраструктурных задачах (с использованием мониторов NAM)
+* Мониторинге API (с использованием HTTP-мониторов)
+
+По сравнению с обычным шаблоном введены следующие изменения:
+
+1. Для переменной окружения `DT_SYNTHETIC_UNSUPPORTED_MONITORING_MODULES` в контейнере `synthetic-vuc` в разделе `env:` установлено значение `browser`
+
+   ```
+   - name: DT_SYNTHETIC_UNSUPPORTED_MONITORING_MODULES
+
+
+
+   value: "browser"
+   ```
+2. Контейнеры `synthetic-vuc-worker` не включены
+3. Том `chromium-cache` не указывается и не монтируется
+
+## Настройка аутентификации Kerberos
+
+Добавьте следующий код в начало [файла шаблона локации](#install) для вставки ресурса ConfigMap, содержащего информацию о вашем Kerberos-сервере.
+
+В приведённом ниже примере кода:
+
+* Область `EXAMPLE.COM` используется в аутентификации Kerberos.
+* Домен `example.com` используется в аутентификации Kerberos.
+* `kerberos.example.com` — имя хоста центра распределения ключей.
+* Пространство имён (`namespace: dynatrace`) должно быть пространством имён локации.
+
+```
+kind: ConfigMap
+
+
+
+apiVersion: v1
+
+
+
+data:
+
+
+
+krb5.conf: |-
+
+
+
+[libdefaults]
+
+
+
+dns_lookup_realm = false
+
+
+
+ticket_lifetime = 24h
+
+
+
+renew_lifetime = 7d
+
+
+
+forwardable = true
+
+
+
+rdns = false
+
+
+
+pkinit_anchors = FILE:/etc/pki/tls/certs/ca-bundle.crt
+
+
+
+spake_preauth_groups = edwards25519
+
+
+
+dns_canonicalize_hostname = fallback
+
+
+
+qualify_shortname = ""
+
+
+
+default_realm = EXAMPLE.COM
+
+
+
+default_ccache_name = /tmp/krb5cc_%{uid}
+
+
+
+[realms]
+
+
+
+EXAMPLE.COM = {
+
+
+
+kdc = kerberos.example.com
+
+
+
+admin_server = kerberos.example.com
+
+
+
+}
+
+
+
+[domain_realm]
+
+
+
+.example.com = EXAMPLE.COM
+
+
+
+example.com = EXAMPLE.COM
+
+
+
+metadata:
+
+
+
+name: krb-map
+
+
+
+namespace: dynatrace
+
+
+
+---
+```
+
+Добавьте следующий код в `spec.template.spec.volumes:`.
+
+```
+- name: krb5-conf
+
+
+
+configMap:
+
+
+
+name: krb-map
+
+
+
+items:
+
+
+
+- key: krb5.conf
+
+
+
+path: krb5.conf
+```
+
+Добавьте следующий код в конфигурацию каждого контейнера `synthetic-vuc-worker` в разделе `volumeMounts:`.
+
+```
+- name: krb5-conf
+
+
+
+mountPath: /etc/krb5.conf
+
+
+
+subPath: krb5.conf
+```
+
+## Synthetic metric adapter
+
+### Отключение проверки доменных сертификатов
+
+Добавьте следующий код в шаблон Synthetic metric adapter в разделе `env:`
+
+```
+- name: TLS_SECURE
+
+
+
+value: "false"
+```
+
+Это деактивирует проверку сертификатов для подключения Synthetic metric adapter к кластеру Dynatrace (по умолчанию она активирована).
+
+### Настройка прокси
+
+Добавьте следующий код в шаблон Synthetic metric adapter в разделе `env:`
+
+```
+- name: HTTPS_PROXY
+
+
+
+value: "http://proxyuser:proxypass@10.102.43.210:3128"
+
+
+
+- name: NO_PROXY
+
+
+
+value: "172.20.0.0/16"  # do not proxy internal calls to Kubernetes cluster
+```
+
+Более подробную информацию об этих переменных окружения см. в [документации пакета Go httpproxy](https://pkg.go.dev/golang.org/x/net/http/httpproxy#Config).
+
+Способ получения Service CIDR зависит от дистрибутива Kubernetes; например, для AWS EKS можно использовать следующую команду:
+
+```
+aws eks describe-cluster --name my-cluster --query 'cluster.kubernetesNetworkConfig'
+```
+
+## Немасштабируемые контейнеризованные локации
+
+Автоматически масштабируемые локации становятся немасштабируемыми по любой из следующих причин.
+
+* Локация достигла максимального количества подов в StatefulSet, а использование локации превышает порог в 80%. Новые поды ActiveGate не создаются до тех пор, пока не будет увеличено максимальное количество ActiveGate.
+* [Synthetic metric adapter](#deploy-adapter) перестал работать, и горизонтальные автомасштабировщики подов локации не получают метрики, необходимые для автомасштабирования.
+
+  Вы можете выполнить следующую команду для проверки состояния автомасштабировщика подов. В примере ниже `dynatrace` — пространство имён локации.
+
+  ```
+  kubectl describe hpa -n dynatrace
+  ```
+
+  Если в выводе `ScalingActive` имеет значение `False`, автомасштабировщик не получает данные метрик.
+
+## API: Synthetic — API v2 Локации, узлы и конфигурация
+
+Вы можете автоматизировать развёртывание и управление контейнеризованными локациями через существующий [API v2 Synthetic — Локации, узлы и конфигурация](/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2 "Управляйте синтетическими локациями через Synthetic v2 API."). В этот API добавлены конечные точки раннего доступа для упрощения развёртывания локаций Kubernetes. Новые конечные точки помогают генерировать команды, которые необходимо выполнить в кластере Kubernetes.
+
+![Новые конечные точки для развёртывания локации Kubernetes](https://dt-cdn.net/images/k8s-locations-endpoints-3168-a8f5b7f158.png)
+
+* Конечная точка GET location YAML (`/synthetic/locations/{LocationId}/yaml`) извлекает [файл шаблона локации](#install) на основе идентификатора [первоначально настроенной](#install) для контейнеризованного развёртывания локации.
+* Конечная точка GET apply commands (`synthetic/locations/commands/apply`) извлекает список команд для [развёртывания локации](#install) на Kubernetes/OpenShift.
+* Конечная точка GET delete commands (`synthetic/locations/{LocationId}/commands/delete`) извлекает команды для удаления контейнеризованной локации.
+
+## Связанные темы
+
+* [API v2 синтетических локаций](/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2 "Управляйте синтетическими локациями через Synthetic v2 API.")
+* [Настройка Dynatrace на Kubernetes](/docs/ingest-from/setup-on-k8s "Способы развёртывания и настройки Dynatrace на Kubernetes")
+* [Kubernetes Classic](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring "Мониторинг Kubernetes/OpenShift с помощью Dynatrace.")

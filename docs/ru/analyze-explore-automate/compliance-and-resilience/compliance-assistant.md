@@ -8,102 +8,102 @@ scraped: 2026-03-05T21:30:24.955360
 
 # Compliance Assistant
 
-* Latest Dynatrace
-* App
-* 3-min read
-* Updated on Jan 28, 2026
-* Preview
+* Последняя Dynatrace
+* Приложение
+* 3 мин. чтения
+* Обновлено 28 января 2026 г.
+* Предварительная версия
 
-About the app
+О приложении
 
-![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** collects information from various sources and applications to maintain real-time visibility into the status of compliance across critical applications and systems.
+![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** собирает информацию из различных источников и приложений для поддержания видимости статуса соответствия по критическим приложениям и системам в реальном времени.
 
-It leverages the Dynatrace platform's observability, security, and other capabilities, enhanced by Dynatrace Intelligence, to bolster its operational resilience and security posture.
+Он использует возможности платформы Dynatrace в области наблюдаемости, безопасности и другие функции, усиленные Dynatrace Intelligence, для укрепления операционной устойчивости и состояния безопасности.
 
-Prerequisites
+Предварительные требования
 
-## Set up sources and applications
+## Настройка источников и приложений
 
-* To take full advantage of ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**, see [Prerequisites](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management#prereq "Configure and enable Security Posture Management in Kubernetes.") and how to [Get started](/docs/secure/xspm#start "Detect, manage, and take action on security and compliance findings.").
-* Set up [Dynatrace Runtime Vulnerability Analytics](/docs/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
-* Set up [Dynatrace Runtime Application Protection](/docs/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
-* [Install](/docs/manage/hub#install "See the information about Dynatrace Hub.") ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**
+* Чтобы в полной мере воспользоваться ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Управлением состоянием безопасности**, см. [Предварительные требования](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management#prereq "Настройка и включение Security Posture Management в Kubernetes.") и как [Начать работу](/docs/secure/xspm#start "Обнаружение, управление и принятие мер по результатам безопасности и соответствия.").
+* Настройте [Dynatrace Runtime Vulnerability Analytics](/docs/secure/application-security/vulnerability-analytics "Мониторинг, визуализация, анализ и устранение уязвимостей сторонних компонентов и уровня кода, отслеживание прогресса устранения и создание правил мониторинга.")
+* Настройте [Dynatrace Runtime Application Protection](/docs/secure/application-security/application-protection "Настройте Dynatrace Runtime Application Protection для мониторинга атак и уязвимостей на уровне кода, генерируемых атаками.")
+* [Установите](/docs/manage/hub#install "Информация о Dynatrace Hub.") ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**
 
-## Installation
+## Установка
 
-Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Убедитесь, что приложение [установлено в вашей среде](/docs/manage/hub#install "Информация о Dynatrace Hub.").
 
-Get started
+Начало работы
 
-Concepts
+Концепции
 
-Use cases
+Варианты использования
 
-![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** supports you in achieving and managing compliance with regulations and certifications out-of-the-box, starting with [DORA (Digital Operational Resilience Act)](#dora).
+![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** помогает вам достичь и управлять соответствием нормативным требованиям и сертификациям «из коробки», начиная с [DORA (Закон о цифровой операционной устойчивости)](#dora).
 
-![Compliance Assistant overview](https://dt-cdn.net/hub/Compliance_Assistant_Preview_qb0fIUx.png)
+![Обзор Compliance Assistant](https://dt-cdn.net/hub/Compliance_Assistant_Preview_qb0fIUx.png)
 
-1 of 1
+1 из 1
 
-## Navigate Compliance Assistant
+## Навигация по Compliance Assistant
 
-![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** provides the following interactions:
+![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** предоставляет следующие возможности взаимодействия:
 
-* Open reporting template
-  Select  **ICT incident reporting notebook** in the upper-right corner of the page to access an incident reporting template in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**.
+* Открыть шаблон отчёта
+  Нажмите **ICT incident reporting notebook** в верхнем правом углу страницы, чтобы получить доступ к шаблону отчёта об инцидентах в ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**.
 
-  Note that this is a [ready-made document](/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents "Use ready-made documents right out of the box.").
-* Open DORA regulation
+  Обратите внимание, что это [готовый документ](/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents "Используйте готовые документы прямо из коробки.").
+* Открыть регламент DORA
 
-  Within each widget, you can find a chapter from DORA regulation to which it refers.
+  В каждом виджете вы можете найти главу регламента DORA, к которой он относится.
 
 ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
-## Explore in Dynatrace Hub
+## Исследуйте в Dynatrace Hub
 
-Manage compliance with automated checks and incident handling out-of-the-box.
+Управляйте соответствием с помощью автоматизированных проверок и обработки инцидентов «из коробки».
 
-[Dynatrace Hubï»¿](https://www.dynatrace.com/hub/detail/compliance-assistant/?query=compl&filter=all)
+[Dynatrace Hub](https://www.dynatrace.com/hub/detail/compliance-assistant/?query=compl&filter=all)
 
-To help achieve a strong DORA compliance posture, Dynatrace:
+Чтобы помочь достичь прочной позиции соответствия DORA, Dynatrace:
 
-* Consolidates data from across the Dynatrace security and observability platform to create a comprehensive compliance overview in line with Chapters of DORA.
-* Maintains real-time visibility into compliance status across monitored systems.
-* Supports reporting of incidents as required by DORA.
+* Консолидирует данные со всей платформы безопасности и наблюдаемости Dynatrace для создания комплексного обзора соответствия в соответствии с главами DORA.
+* Поддерживает видимость статуса соответствия в реальном времени по всем мониторируемым системам.
+* Поддерживает отчётность об инцидентах в соответствии с требованиями DORA.
 
-## DORA compliance
+## Соответствие DORA
 
-DORA is an EU regulation that enhances the digital operational resilience of the financial sector. It strives to ensure financial entities can withstand and recover from severe operational disruptions, including cyber-attacks.
+DORA — это регламент ЕС, повышающий цифровую операционную устойчивость финансового сектора. Он стремится обеспечить, чтобы финансовые организации могли выдержать и восстановиться после серьёзных операционных нарушений, включая кибератаки.
 
-## ICT configuration compliance
+## Соответствие конфигурации ИКТ
 
-ICT configuration compliance widget gathers information from **Runecast** and **Security Posture Management** to continuously scan configurations and get an overview of how they meet DORA requirements.
+Виджет соответствия конфигурации ИКТ собирает информацию из **Runecast** и **Security Posture Management** для непрерывного сканирования конфигураций и получения обзора их соответствия требованиям DORA.
 
-## ICT vulnerabilities
+## Уязвимости ИКТ
 
-ICT vulnerabilities gathers information from ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities** (with `Risk level` filter applied).
+Виджет уязвимостей ИКТ собирает информацию из ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Уязвимостей** (с применённым фильтром `Уровень риска`).
 
-## Incidents ICT critical services
+## Инциденты критических сервисов ИКТ
 
-Incidents ICT critical services widget gathers information from:
+Виджет инцидентов критических сервисов ИКТ собирает информацию из:
 
-* **Attacks** ![Attacks](https://dt-cdn.net/images/attacks-512-b922840b12.png "Attacks")âif there's a security incident, helps detect and classify an attack on your environment in real time.
-* **Problems** ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new")âif there's a resilience incident, analyzes abnormal system behavior and performance problems detected by Dynatrace Intelligence.
-* Use [segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") to conveniently filter observability and security incidents impacting a critical service under DORA.
+* **Атаки** ![Attacks](https://dt-cdn.net/images/attacks-512-b922840b12.png "Attacks") — при наличии инцидента безопасности помогает обнаружить и классифицировать атаку на вашу среду в реальном времени.
+* **Проблемы** ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") — при наличии инцидента устойчивости анализирует аномальное поведение системы и проблемы производительности, обнаруженные Dynatrace Intelligence.
+* Используйте [сегменты](/docs/manage/segments "Используйте сегменты для логической структуризации и удобной фильтрации данных наблюдаемости между приложениями.") для удобной фильтрации инцидентов наблюдаемости и безопасности, влияющих на критический сервис по DORA.
 
-**ICT vulnerabilities** widget shows you most recent resilience and security incidents, but you can view all ICT Observability in **Problems** ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") and view all ICT Security incidents in **Attacks** ![Attacks](https://dt-cdn.net/images/attacks-512-b922840b12.png "Attacks").
+Виджет **Уязвимости ИКТ** показывает самые последние инциденты устойчивости и безопасности, но вы можете просмотреть все инциденты наблюдаемости ИКТ в **Проблемах** ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") и все инциденты безопасности ИКТ в **Атаках** ![Attacks](https://dt-cdn.net/images/attacks-512-b922840b12.png "Attacks").
 
-## ICT Monitoring Coverage
+## Покрытие мониторинга ИКТ
 
-ICT Monitoring Coverage widget gather information from:
+Виджет покрытия мониторинга ИКТ собирает информацию из:
 
-* ![Discovery & Coverage](https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png "Discovery & Coverage") **Discovery & Coverage**âprevents unexpected outages by detecting and remediating monitoring coverage gaps.
+* ![Discovery & Coverage](https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png "Discovery & Coverage") **Discovery & Coverage** — предотвращает неожиданные сбои путём обнаружения и устранения пробелов в мониторинговом покрытии.
 
-## Use cases
+## Варианты использования
 
-Compliance Assistant enables you to easily achieve and manage your DORA compliance:
+Compliance Assistant позволяет легко достигать и управлять соответствием DORA:
 
-* Maintain real-time visibility into the status of DORA compliance across critical applications and systems.
-* Consolidate insights from across the Dynatrace platform streamlined to specific regulatory requirements displayed in a tailored view.
-* Identify critical incidents and support your team with timely and accurate reporting per DORA requirements.
-* Automate reporting by providing automated workflows and templates as prescribed by regulators.
+* Поддерживать видимость статуса соответствия DORA в реальном времени по критическим приложениям и системам.
+* Консолидировать аналитику со всей платформы Dynatrace, оптимизированную для конкретных нормативных требований, в адаптированном представлении.
+* Выявлять критические инциденты и поддерживать вашу команду своевременной и точной отчётностью по требованиям DORA.
+* Автоматизировать отчётность, предоставляя автоматизированные рабочие процессы и шаблоны, предписанные регуляторами.

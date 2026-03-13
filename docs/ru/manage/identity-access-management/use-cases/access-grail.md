@@ -1,38 +1,38 @@
 ---
-title: Grant access to Grail
+title: Предоставление доступа к Grail
 source: https://www.dynatrace.com/docs/manage/identity-access-management/use-cases/access-grail
 scraped: 2026-03-06T21:24:18.105486
 ---
 
-# Grant access to Grail
+# Предоставление доступа к Grail
 
-# Grant access to Grail
+# Предоставление доступа к Grail
 
-* Latest Dynatrace
-* How-to guide
-* 2-min read
-* Published Jul 01, 2024
+* Последняя Dynatrace
+* Практическое руководство
+* 2 мин. чтения
+* Опубликовано 1 июля 2024 г.
 
-This tutorial will guide you through the process of setting up data access on Grail for your users. Access control to data in Grail happens on multiple levels: buckets, tables, records, and fields.
+Это руководство проведёт вас через процесс настройки доступа к данным в Grail для ваших пользователей. Контроль доступа к данным в Grail осуществляется на нескольких уровнях: бакеты, таблицы, записи и поля.
 
-## Who this is for
+## Для кого это руководство
 
-This tutorial is for Dynatrace account administrators who need to use default policies to grant users access to data stored in Grail.
+Это руководство предназначено для администраторов аккаунтов Dynatrace, которым необходимо использовать политики по умолчанию для предоставления пользователям доступа к данным, хранящимся в Grail.
 
-## What you'll learn
+## Что вы узнаете
 
-In this tutorial, you'll learn
+В этом руководстве вы узнаете:
 
-1. Which default policies are available for Grail access
-2. How to use those policies to grant access to monitoring data stored in Grail
+1. Какие политики по умолчанию доступны для доступа к Grail
+2. Как использовать эти политики для предоставления доступа к данным мониторинга, хранящимся в Grail
 
-## Steps
+## Шаги
 
-We start by learning about available policies, and then we learn how to use those policies to grant access to monitoring data stored in Grail.
+Начнём с изучения доступных политик, а затем узнаем, как использовать эти политики для предоставления доступа к данным мониторинга, хранящимся в Grail.
 
-### 1. Default policies
+### 1. Политики по умолчанию
 
-Dynatrace comes with a set of built-in policies for data access. Their names all start with the `storage` prefix. For example, take a look at the **Storage Default Monitoring Read** policy, which provides the following two permissions:
+Dynatrace поставляется с набором встроенных политик для доступа к данным. Все их названия начинаются с префикса `storage`. Например, рассмотрим политику **Storage Default Monitoring Read**, которая предоставляет следующие два разрешения:
 
 ```
 ALLOW storage:buckets:read WHERE storage:bucket-name STARTSWITH "default_;"
@@ -42,28 +42,28 @@ ALLOW storage:buckets:read WHERE storage:bucket-name STARTSWITH "default_;"
 ALLOW storage:events:read,storage:logs:read,storage:metrics:read,storage:entities:read,storage:bizevents:read,storage:spans:read;
 ```
 
-This grants a user access to all tables and to all default buckets (they have the `default_` prefix). Once custom buckets are created, users must get explicit access to them to access them.
+Это предоставляет пользователю доступ ко всем таблицам и ко всем бакетам по умолчанию (они имеют префикс `default_`). При создании пользовательских бакетов пользователи должны получить явный доступ к ним.
 
-**Note**: Built-in policies all provide unconditional table access. Once you start adopting record-level permissions, you'll need to replace the default policies with your own.
+**Примечание**: Встроенные политики предоставляют безусловный доступ к таблицам. Когда вы начнёте использовать разрешения на уровне записей, вам потребуется заменить политики по умолчанию собственными.
 
-### 2. Grant access to data stored in Grail
+### 2. Предоставление доступа к данным, хранящимся в Grail
 
 #### Storage Default Monitoring Read
 
-Administrators can use this permission to give users access to the tables and data stored in default buckets (default bucket names start with the `default_` prefix). This policy will be adjusted automatically as new tables are added to Grail in the future.
+Администраторы могут использовать это разрешение для предоставления пользователям доступа к таблицам и данным, хранящимся в бакетах по умолчанию (имена бакетов по умолчанию начинаются с префикса `default_`). Эта политика будет автоматически корректироваться по мере добавления новых таблиц в Grail в будущем.
 
-Be aware that this policy only covers default buckets. Once custom buckets are added to Grail, administrators need to define additional permissions.
-
-```
-ALLOW storage:buckets:read WHERE storage:bucket-name startsWith âdefault_â;ALLOW storage:events:read, storage:logs:read, storage:metrics:read, storage:entities:read, storage:bizevents:read, storage:spans:read;
-```
-
-#### Storage Read per table
-
-Each table includes a policy that combines table and bucket access called **Storage** `<tablename>` **Read**. Administrators can use this policy to grant a user group access to a certain table and the assigned buckets.
+Обратите внимание, что эта политика охватывает только бакеты по умолчанию. При добавлении пользовательских бакетов в Grail администраторам необходимо определить дополнительные разрешения.
 
 ```
-ALLOW storage:buckets:read WHERE storage:table-name = âlogsâ;
+ALLOW storage:buckets:read WHERE storage:bucket-name startsWith "default_";ALLOW storage:events:read, storage:logs:read, storage:metrics:read, storage:entities:read, storage:bizevents:read, storage:spans:read;
+```
+
+#### Storage Read для каждой таблицы
+
+Каждая таблица включает политику, объединяющую доступ к таблице и бакету, под названием **Storage** `<имя_таблицы>` **Read**. Администраторы могут использовать эту политику для предоставления группе пользователей доступа к определённой таблице и связанным бакетам.
+
+```
+ALLOW storage:buckets:read WHERE storage:table-name = "logs";
 
 
 
@@ -72,7 +72,7 @@ ALLOW storage:logs:read;
 
 #### Storage All System Data Read
 
-The **Storage All System Data Read** policy grants access to Dynatrace internal data such as auditing events and query execution events. Administrators can add this policy to those users who need access to this type of data.
+Политика **Storage All System Data Read** предоставляет доступ к внутренним данным Dynatrace, таким как события аудита и события выполнения запросов. Администраторы могут назначить эту политику пользователям, которым необходим доступ к данным такого типа.
 
 ```
 ALLOW storage:buckets:read;ALLOW storage:system:read;ALLOW storage:events:read, storage:logs:read, storage:metrics:read, storage:entities:read, storage:bizevents:read,storage:spans:read;
@@ -80,7 +80,7 @@ ALLOW storage:buckets:read;ALLOW storage:system:read;ALLOW storage:events:read, 
 
 #### Storage All Grail Data Read
 
-The **Storage All Grail Data Read** policy grants unfiltered access to all data in Grail.
+Политика **Storage All Grail Data Read** предоставляет нефильтрованный доступ ко всем данным в Grail.
 
 ```
 ALLOW storage:buckets:read;
@@ -94,4 +94,4 @@ ALLOW storage:system:read;
 ALLOW storage:events:read, storage:logs:read, storage:metrics:read, storage:entities:read, storage:bizevents:read,storage:spans:read;
 ```
 
-For full details, see [bucket and table permissions for Grail documentation](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
+Подробнее см. [документацию по разрешениям для бакетов и таблиц Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.").

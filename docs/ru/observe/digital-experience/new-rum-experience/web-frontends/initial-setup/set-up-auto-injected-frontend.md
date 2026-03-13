@@ -1,0 +1,125 @@
+---
+title: Set up an auto-injected frontend in the New RUM Experience
+source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-auto-injected-frontend
+scraped: 2026-03-04T21:29:01.569167
+---
+
+# Настройка автоматически внедряемого фронтенда в New RUM Experience
+
+# Настройка автоматически внедряемого фронтенда в New RUM Experience
+
+* Latest Dynatrace
+* How-to guide
+* Обновлено 3 февраля 2026 г.
+
+Как описано в разделе [Выбор подходящего подхода к инструментированию](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup#find-suitable-instrumentation-approach "Узнайте, как настроить New RUM Experience для веб-фронтендов."), автоматическое внедрение доступно, если хотя бы один уровень приложения можно инструментировать с помощью OneAgent и автоматическое RUM-внедрение поддерживается для данной технологии. Подробности см. в разделе [Поддержка технологий - Real User Monitoring - Веб-серверы и приложения](/docs/ingest-from/technology-support#rum-auto-injection "Технические подробности о поддержке Dynatrace для конкретных платформ и фреймворков разработки."). Это руководство объясняет, как создать фронтенд в New RUM Experience и настроить правила обнаружения фронтенда, чтобы собранные данные направлялись в правильный фронтенд.
+
+[![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
+
+**Развёртывание OneAgent**](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-auto-injected-frontend#deploy-oneagent "Узнайте, как настроить автоматически внедряемый веб-фронтенд в New RUM Experience.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+
+**Узнайте, как применяются правила обнаружения фронтенда**](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-auto-injected-frontend#learn-application-of-detection-rules "Узнайте, как настроить автоматически внедряемый веб-фронтенд в New RUM Experience.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+
+**Учёт неинструментированных компонентов**](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-auto-injected-frontend#account-for-uninstrumented-components "Узнайте, как настроить автоматически внедряемый веб-фронтенд в New RUM Experience.")[![Шаг 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Шаг 4")
+
+**Создание фронтенда и определение правил обнаружения**](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-auto-injected-frontend#create-frontend "Узнайте, как настроить автоматически внедряемый веб-фронтенд в New RUM Experience.")[![Шаг 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Шаг 5")
+
+**Установка порядка правил обнаружения фронтенда**](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-auto-injected-frontend#set-order-of-rules "Узнайте, как настроить автоматически внедряемый веб-фронтенд в New RUM Experience.")[![Шаг 6 необязательный](https://dt-cdn.net/images/dotted-step-6-fbd29ea893.svg "Шаг 6 необязательный")
+
+**Настройка формата фрагмента RUM JavaScript**](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-auto-injected-frontend#configure-snippet-format "Узнайте, как настроить автоматически внедряемый веб-фронтенд в New RUM Experience.")[![Шаг 7](https://dt-cdn.net/images/step-7-35139ef2d6.svg "Шаг 7")
+
+**Проверка настройки**](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-auto-injected-frontend#verify-setup "Узнайте, как настроить автоматически внедряемый веб-фронтенд в New RUM Experience.")
+
+## Шаг 1 Развёртывание OneAgent
+
+После развёртывания OneAgent в режиме полного мониторинга (full-stack monitoring) на уровнях вашего приложения RUM JavaScript автоматически внедряется в HTML-страницы. Перезапустите процесс после развёртывания OneAgent, чтобы внедрение стало активным. Подробности установки см. в разделе [Dynatrace OneAgent](/docs/ingest-from/dynatrace-oneagent "Узнайте основные концепции OneAgent и как установить и эксплуатировать OneAgent на различных платформах.").
+
+Если OneAgent не внедряет RUM JavaScript, обратитесь к разделу [Настройка автоматического внедрения в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-auto-injection "Настройка автоматического внедрения RUM JavaScript на страницы ваших фронтендов в New RUM Experience.").
+
+По умолчанию все собранные данные RUM ассоциируются с универсальным фронтендом **My web application**. Мы рекомендуем сохранить это имя, чтобы его было легко отличить от других фронтендов.
+
+Что делать, если я не могу найти My web application?
+
+Если вы не можете найти **My web application**, возможно, он был переименован.
+
+Чтобы найти переименованный **My web application**
+
+1. Перейдите в ![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals** > **Overview**.
+2. Выберите  **Web** для просмотра всех веб-фронтендов.
+3. Выберите любой автоматически внедряемый фронтенд.
+4. На вкладке **Settings** выберите **Frontend detection**.
+5. Выберите ссылку **catch-all frontend**. Вы будете перенаправлены на **My web application**.
+
+## Шаг 2 Узнайте, как применяются правила обнаружения фронтенда
+
+Правила обнаружения фронтенда оцениваются на серверной стороне вашего приложения OneAgent на первом инструментированном уровне -- ближайшем к браузеру.
+
+Все правила обнаружения фронтенда основаны на URL и состоят из шаблона и средства сопоставления. Существует два способа их определения:
+
+* **По полному URL:** можно использовать средства сопоставления **URL starts with**, **URL ends with**, **URL contains** и **URL equals**. URL имеет формат `scheme://host:port/path?query`, где строка запроса необязательна, а стандартные порты (`80` для HTTP и `443` для HTTPS) опускаются. URL не включает идентификатор фрагмента (как в `scheme://host:port/path?query#fragment`), поскольку фрагменты используются только браузером и никогда не отправляются на сервер.
+* **Только по домену:** правило применяется к хост-части URL. Доступны средства сопоставления **Domain (host) starts with**, **Domain (host) ends with**, **Domain (host) contains**, **Domain (host) equals** и **Domain (host) matches**. При использовании последнего шаблон `example.com` соответствует как `example.com`, так и `shop.example.com`.
+
+## Шаг 3 Учёт неинструментированных компонентов
+
+Между браузером и уровнем, ответственным за обнаружение фронтенда, может находиться компонент, такой как обратный прокси-сервер или балансировщик нагрузки, который либо не инструментирован, либо использует технологию без поддержки RUM. Если этот компонент перезаписывает URL, URL, используемый для обнаружения фронтенда, отличается от первоначально запрошенного браузером. В таких случаях необходимы особые соображения для обеспечения правильной работы правил обнаружения фронтенда.
+
+* Если компонент завершает HTTPS, вы не можете использовать схему `https` в шаблоне правила обнаружения фронтенда.
+* Если компонент перезаписывает хост-часть URL, вы всё равно можете использовать исходный хост в правилах обнаружения фронтенда. Однако для этого может потребоваться настройка определения имени хоста. Подробности см. в разделе [Настройка определения имени хоста в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-host-name-determination "Узнайте, как настроить определение имени хоста в New RUM Experience.").
+* Если компонент перезаписывает путь URL и удаляет его часть, вы не можете использовать удалённую часть в правилах обнаружения фронтенда.
+
+## Шаг 4 Создание фронтенда и определение правил обнаружения
+
+С учётом базовых знаний из предыдущих шагов вы готовы создать фронтенд и определить его правила обнаружения.
+
+Чтобы создать автоматически внедряемый фронтенд
+
+1. Перейдите в ![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals** > **Overview**.
+2. Выберите  **Frontend**, чтобы начать процесс **Frontend creation**.
+3. На шаге **Start monitoring** выберите тип фронтенда **Web** и укажите имя фронтенда.
+4. На шаге **Select instrumentation method** выберите **OneAgent injection**.
+5. Выберите **Create**.
+6. На шаге **Setup** > **Configure frontend detection rule** настройте средство сопоставления и шаблон для правила обнаружения фронтенда.
+7. Выберите **Save frontend detection rule**.
+8. В разделе **Select capability and settings** проверьте, включён ли **RUM**. Если нет, выберите  **Override** и включите его.
+9. Если вы хотите фиксировать [взаимодействия пользователей](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/user-interactions "Узнайте, как настраивать и адаптировать сбор данных о взаимодействиях пользователей для веб-фронтендов."), такие как клики и прокрутки, включите **User Interactions**.
+10. Для обеспечения соответствия применимым нормативам о конфиденциальности данных настройте необходимые параметры в разделе **End users' data privacy**. Подробнее о доступных параметрах см. в разделе [Настройка конфиденциальности данных для веб-фронтендов](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/data-privacy-web "Узнайте о доступных параметрах, помогающих обеспечить соответствие ваших веб-фронтендов нормативам о конфиденциальности данных.").
+11. Выберите **Next** > **Go to new frontend**.
+
+Теперь вы увидите правило обнаружения для только что созданного фронтенда. Чтобы добавить дополнительные правила, выберите  **Add**.
+
+Вы можете создать до 1000 правил обнаружения фронтенда на среду.
+
+## Шаг 5 Установка порядка правил обнаружения фронтенда
+
+Правила обнаружения фронтенда имеют определённый порядок, и OneAgent применяет их последовательно. Правила в начале списка имеют приоритет над правилами ниже. Для точного обнаружения размещайте более специфичные правила -- например, включающие и домен, и путь -- выше в списке, чем общие правила, включающие только домен.
+
+Правила, созданные на предыдущем шаге, добавляются в конец списка, поэтому вам может потребоваться переместить их вверх для их вступления в силу. Для изменения порядка перейдите в ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **Real User Monitoring** > **Frontend** > **Application detection**. Выберите и удерживайте ![Drag handle](https://dt-cdn.net/images/drag-handle-turquoise-600-1aa0e5ea00.svg "Drag handle") рядом с названием правила, затем перетащите правило вверх или вниз для изменения его приоритета.
+
+Как быстро вступают в силу изменения правил обнаружения фронтенда?
+
+При обновлении правил обнаружения фронтенда изменения обычно передаются в OneAgent в течение минуты. Однако существуют сценарии, в которых обновлённые правила не могут вступить в силу немедленно.
+
+Когда OneAgent внедряет RUM JavaScript, он добавляет идентификатор обнаруженного фронтенда во внедрённый фрагмент. Этот идентификатор затем включается, когда RUM JavaScript сообщает о захваченных пользовательских событиях, что позволяет правильно привязать события к соответствующему фронтенду. В следующих ситуациях OneAgent не может выполнить новое внедрение с обновлённым идентификатором, что задерживает вступление в силу изменений правил:
+
+* **HTML, обслуживаемый через CDN или другой кэш:** OneAgent может внедрить RUM JavaScript только тогда, когда HTML-код вытесняется из кэша и запрашивается снова с инструментированного сервера-источника.
+* **Длительные сроки истечения для HTML-документов:** если приложение указывает длительный срок истечения с помощью заголовка ответа `Expires` или директивы `max-age` заголовка `Cache-Control`, изменения правил обнаружения фронтенда не могут вступить в силу до истечения срока кэшированного документа.
+* **Одностраничные приложения (SPA):** SPA перезаписывают текущую страницу динамически вместо загрузки новой страницы с сервера. Если HTML был загружен до изменения правил, категоризация захваченных пользовательских событий не отражает обновлённую конфигурацию, которая вступит в силу сразу после обновления страницы.
+
+## Шаг 6 необязательный Настройка формата фрагмента RUM JavaScript (необязательно)
+
+По умолчанию OneAgent внедряет формат фрагмента [OneAgent JavaScript tag](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/snippet-formats#oneagent-js-tag "Узнайте, как выбрать формат фрагмента RUM JavaScript, наилучшим образом подходящий для вашего конкретного сценария в New RUM Experience."), который рекомендуется для большинства сценариев.
+
+New RUM Experience предоставляет форматы фрагментов, адаптированные для различных требований. Подробнее о различных форматах и их параметрах конфигурации см. в разделе [Выбор формата фрагмента в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/snippet-formats "Узнайте, как выбрать формат фрагмента RUM JavaScript, наилучшим образом подходящий для вашего конкретного сценария в New RUM Experience."). Формат фрагмента можно настроить, как описано в разделе [Настройка автоматического внедрения в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-auto-injection#configure-snippet-format "Настройка автоматического внедрения RUM JavaScript на страницы ваших фронтендов в New RUM Experience.").
+
+## Шаг 7 Проверка настройки
+
+Если ваш фронтенд получает трафик, графики в [![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals**](/docs/observe/digital-experience/new-rum-experience/experience-vitals "Приложение Experience Vitals предоставляет точку входа для мониторинга веб- и мобильных фронтендов.") должны начать отображать данные в течение десяти минут.
+
+Если данные ещё не отображаются, вашей среде могут потребоваться дополнительные шаги настройки. Руководство [Завершение начальной настройки автоматически внедряемого фронтенда](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/finalize-initial-setup-auto-injection "Проверка и завершение начальной настройки автоматически внедряемого фронтенда.") содержит ряд проверок, помогающих определить необходимую конфигурацию.
+
+## Связанные темы
+
+* [Настройка определения имени хоста в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-host-name-determination "Узнайте, как настроить определение имени хоста в New RUM Experience.")
+* [Настройка автоматического внедрения в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-auto-injection "Настройка автоматического внедрения RUM JavaScript на страницы ваших фронтендов в New RUM Experience.")
+* [Выбор формата фрагмента в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/snippet-formats "Узнайте, как выбрать формат фрагмента RUM JavaScript, наилучшим образом подходящий для вашего конкретного сценария в New RUM Experience.")
+* [Завершение начальной настройки автоматически внедряемого фронтенда](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/finalize-initial-setup-auto-injection "Проверка и завершение начальной настройки автоматически внедряемого фронтенда.")

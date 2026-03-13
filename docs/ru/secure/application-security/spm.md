@@ -8,187 +8,185 @@ scraped: 2026-03-06T21:17:09.176526
 
 # Security Posture Management
 
-* Latest Dynatrace
-* How-to guide
-* Updated on Feb 23, 2026
+* Последняя Dynatrace
+* Практическое руководство
+* Обновлено 23 февраля 2026 г.
 
-What youâll find on this page
+Содержание страницы
 
-* [Explore Security Posture Management capabilities](#capabilities)
-* [How SPM evaluates and analyzes your posture](#mechanism)
-* [Check supported standards and technologies](#support)
-* [How to get started with SPM](#start)
-* [What you can do with SPM next](#next)
-* [Review common use cases](#use-cases)
-* [Frequently asked questions](#faq)
+* [Изучите возможности Security Posture Management](#capabilities)
+* [Как SPM оценивает и анализирует вашу позицию](#mechanism)
+* [Проверьте поддерживаемые стандарты и технологии](#support)
+* [Как начать работу с SPM](#start)
+* [Что можно сделать с SPM далее](#next)
+* [Обзор типичных сценариев использования](#use-cases)
+* [Часто задаваемые вопросы](#faq)
 
-Dynatrace Security Posture Management (SPM) enables you to assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.
+Dynatrace Security Posture Management (SPM) позволяет оценивать, управлять и принимать меры в отношении неправильных конфигураций и нарушений руководств по усилению безопасности и стандартов нормативного соответствия.
 
-## Capabilities
+## Возможности
 
-Security Posture Management provides comprehensive visibility into the security posture of your Kubernetes, cloud, and VMware environments. Depending on your infrastructure, the following flavors are available:
+Security Posture Management обеспечивает всестороннюю видимость состояния безопасности ваших сред Kubernetes, облака и VMware. В зависимости от вашей инфраструктуры доступны следующие варианты:
 
-* **Dynatrace Kubernetes Security Posture Management (KSPM)**: Enables you to detect, analyze, and monitor misconfigurations, security hardening guidelines, and potential compliance violations across your Kubernetes deployments.
-* **Runecast Cloud Security Posture Management (CSPM)**: Provides inâdepth insights into the security posture of your AWS, Azure, and GCP environments.
-* **Runecast VMware Security Posture Management (VSPM)**: Provides inâdepth insights into the security posture of your VMware environments, including vCenter and NSXâT.
+* **Dynatrace Kubernetes Security Posture Management (KSPM)**: Позволяет обнаруживать, анализировать и отслеживать неправильные конфигурации, руководства по усилению безопасности и потенциальные нарушения соответствия в ваших развёртываниях Kubernetes.
+* **Runecast Cloud Security Posture Management (CSPM)**: Предоставляет глубокую видимость состояния безопасности ваших сред AWS, Azure и GCP.
+* **Runecast VMware Security Posture Management (VSPM)**: Предоставляет глубокую видимость состояния безопасности ваших сред VMware, включая vCenter и NSX-T.
 
-Across these flavors, SPM delivers a consistent set of core capabilities:
+Во всех вариантах SPM предоставляет единый набор ключевых возможностей:
 
-* Automated assessments against [supported compliance standards](#support), enabling you to manage and report on the most critical findings.
-* Continuous analysis and evidence creation for internal and external auditing purposes.
-* Actionable findings that help you to
+* Автоматизированные оценки по [поддерживаемым стандартам соответствия](#support), позволяющие управлять и отчитываться по наиболее критичным результатам.
+* Непрерывный анализ и создание свидетельств для целей внутреннего и внешнего аудита.
+* Действенные результаты, помогающие:
 
-  + Prioritize compliance efforts
-  + Create audit evidence and reporting for auditors and internal security and compliance teams
+  + Приоритизировать усилия по обеспечению соответствия
+  + Создавать свидетельства и отчёты для аудиторов и внутренних команд безопасности и соответствия
 
-## How it works
+## Как это работает
 
-Security Posture Management continuously evaluates your environment for misconfigurations, policy violations, and compliance risks. Dynatrace collects configuration data from your infrastructure and cloud platforms, streams it into Grail, and normalizes it into security events. These are then evaluated against hardening guidelines and compliance standards. Results update in real time as your environment changes, helping you stay secure and audit-ready.
+Security Posture Management непрерывно оценивает вашу среду на предмет неправильных конфигураций, нарушений политик и рисков соответствия. Dynatrace собирает конфигурационные данные из вашей инфраструктуры и облачных платформ, передаёт их в Grail и нормализует в события безопасности. Затем они оцениваются на соответствие руководствам по усилению безопасности и стандартам соответствия. Результаты обновляются в реальном времени по мере изменения вашей среды, помогая поддерживать безопасность и готовность к аудиту.
 
-For a quick walkthrough, see [Dynatrace Cloud Security Posture Management elevates cloud security with real-time compliance across hyperscalersï»¿](https://www.dynatrace.com/news/blog/elevate-cloud-security-with-real-time-compliance-across-hyperscalers/).
+Для быстрого ознакомления см. [Dynatrace Cloud Security Posture Management повышает облачную безопасность с помощью соответствия в реальном времени для гиперскейлеров](https://www.dynatrace.com/news/blog/elevate-cloud-security-with-real-time-compliance-across-hyperscalers/).
 
-## Support matrix
+## Матрица поддержки
 
-Security Posture Management supports a range of compliance standards through two types of coverage: Dynatrace native support and Runecastâintegrated support. Native standards are maintained directly by Dynatrace and kept up to date.
+Security Posture Management поддерживает ряд стандартов соответствия через два типа покрытия: нативная поддержка Dynatrace и поддержка через интеграцию с Runecast. Нативные стандарты поддерживаются непосредственно Dynatrace и поддерживаются в актуальном состоянии.
 
-The table below shows which standards are supported and how each one is provided.
+В таблице ниже показано, какие стандарты поддерживаются и как обеспечивается каждый из них.
 
-For detailed explanations of each compliance standard and how Dynatrace supports them, see [Security Posture Management compliance standards](/docs/secure/application-security/spm/compliance-standards "Technical details about the supported compliance standards.").
+Для подробных описаний каждого стандарта соответствия и как Dynatrace его поддерживает, см. [Стандарты соответствия Security Posture Management](/docs/secure/application-security/spm/compliance-standards "Технические подробности о поддерживаемых стандартах соответствия.").
 
-| **Compliance standards** | **Kubernetes[1](#fn-1-1-def)** | **AWS** | **Azure** | **GCP** | **vSphere[2](#fn-1-2-def)** | **NSX-T[3](#fn-1-3-def)** |
+| **Стандарты соответствия** | **Kubernetes[1](#fn-1-1-def)** | **AWS** | **Azure** | **GCP** | **vSphere[2](#fn-1-2-def)** | **NSX-T[3](#fn-1-3-def)** |
 | --- | --- | --- | --- | --- | --- | --- |
-| [BSI C5](/docs/secure/application-security/spm/compliance-standards#bsic5 "Technical details about the supported compliance standards.") |  |  |  |  |  |  |
-| [BSI IT-Grundschutz](/docs/secure/application-security/spm/compliance-standards#bsi-it "Technical details about the supported compliance standards.") |  |  |  |  |  |  |
-| [CIS](/docs/secure/application-security/spm/compliance-standards#cis "Technical details about the supported compliance standards.") |  |  |  |  |  |  |
-| [Cyber Essentials](/docs/secure/application-security/spm/compliance-standards#cyber "Technical details about the supported compliance standards.") |  |  |  |  |  |  |
-| [DISA STIG](/docs/secure/application-security/spm/compliance-standards#stig "Technical details about the supported compliance standards.") |  |  |  |  |  |  |
-| [DORA](/docs/secure/application-security/spm/compliance-standards#dora "Technical details about the supported compliance standards.") |  |  |  |  |  |  |
-| [Essential Eight](/docs/secure/application-security/spm/compliance-standards#essential "Technical details about the supported compliance standards.") |  |  |  |  |  |  |
-| [GDPR](/docs/secure/application-security/spm/compliance-standards#gdpr "Technical details about the supported compliance standards.") |  |  |  |  |  |  |
-| [HIPAA](/docs/secure/application-security/spm/compliance-standards#hipaa "Technical details about the supported compliance standards.") |  |  |  |  |  |  |
-| [ISO 27001](/docs/secure/application-security/spm/compliance-standards#iso "Technical details about the supported compliance standards.") |  |  |  |  |  |  |
-| [KVKK](/docs/secure/application-security/spm/compliance-standards#kvkk "Technical details about the supported compliance standards.") |  |  |  |  |  |  |
-| [NIST](/docs/secure/application-security/spm/compliance-standards#nist "Technical details about the supported compliance standards.") |  |  |  |  |  |  |
-| [PCI DSS](/docs/secure/application-security/spm/compliance-standards#pci "Technical details about the supported compliance standards.") |  |  |  |  |  |  |
-| [TISAX](/docs/secure/application-security/spm/compliance-standards#tisax "Technical details about the supported compliance standards.") |  |  |  |  |  |  |
-| [VMware SCG](/docs/secure/application-security/spm/compliance-standards#vmware "Technical details about the supported compliance standards.") |  |  |  |  |  |  |
+| [BSI C5](/docs/secure/application-security/spm/compliance-standards#bsic5 "Технические подробности о поддерживаемых стандартах соответствия.") |  |  |  |  |  |  |
+| [BSI IT-Grundschutz](/docs/secure/application-security/spm/compliance-standards#bsi-it "Технические подробности о поддерживаемых стандартах соответствия.") |  |  |  |  |  |  |
+| [CIS](/docs/secure/application-security/spm/compliance-standards#cis "Технические подробности о поддерживаемых стандартах соответствия.") |  |  |  |  |  |  |
+| [Cyber Essentials](/docs/secure/application-security/spm/compliance-standards#cyber "Технические подробности о поддерживаемых стандартах соответствия.") |  |  |  |  |  |  |
+| [DISA STIG](/docs/secure/application-security/spm/compliance-standards#stig "Технические подробности о поддерживаемых стандартах соответствия.") |  |  |  |  |  |  |
+| [DORA](/docs/secure/application-security/spm/compliance-standards#dora "Технические подробности о поддерживаемых стандартах соответствия.") |  |  |  |  |  |  |
+| [Essential Eight](/docs/secure/application-security/spm/compliance-standards#essential "Технические подробности о поддерживаемых стандартах соответствия.") |  |  |  |  |  |  |
+| [GDPR](/docs/secure/application-security/spm/compliance-standards#gdpr "Технические подробности о поддерживаемых стандартах соответствия.") |  |  |  |  |  |  |
+| [HIPAA](/docs/secure/application-security/spm/compliance-standards#hipaa "Технические подробности о поддерживаемых стандартах соответствия.") |  |  |  |  |  |  |
+| [ISO 27001](/docs/secure/application-security/spm/compliance-standards#iso "Технические подробности о поддерживаемых стандартах соответствия.") |  |  |  |  |  |  |
+| [KVKK](/docs/secure/application-security/spm/compliance-standards#kvkk "Технические подробности о поддерживаемых стандартах соответствия.") |  |  |  |  |  |  |
+| [NIST](/docs/secure/application-security/spm/compliance-standards#nist "Технические подробности о поддерживаемых стандартах соответствия.") |  |  |  |  |  |  |
+| [PCI DSS](/docs/secure/application-security/spm/compliance-standards#pci "Технические подробности о поддерживаемых стандартах соответствия.") |  |  |  |  |  |  |
+| [TISAX](/docs/secure/application-security/spm/compliance-standards#tisax "Технические подробности о поддерживаемых стандартах соответствия.") |  |  |  |  |  |  |
+| [VMware SCG](/docs/secure/application-security/spm/compliance-standards#vmware "Технические подробности о поддерживаемых стандартах соответствия.") |  |  |  |  |  |  |
 
 1
 
-Support includes upstream Kubernetes, Amazon EKS, and Azure AKS. Compatibility is limited to x86-64 CPU architectures and requires Kubernetes version according to Dynatrace support lifecycle (unless defined otherwise in the specific standard).
+Поддержка включает upstream Kubernetes, Amazon EKS и Azure AKS. Совместимость ограничена архитектурами процессоров x86-64 и требует версии Kubernetes в соответствии с жизненным циклом поддержки Dynatrace (если не определено иное для конкретного стандарта).
 
 2
 
-Supported versions are VMware ESXi 8.0 v1.1.0, VMware ESXi 7.0 v1.4.0, VMware ESXi 6.7 v1.2.0, and VMware ESXi 6.5 v1.0.0.
+Поддерживаемые версии: VMware ESXi 8.0 v1.1.0, VMware ESXi 7.0 v1.4.0, VMware ESXi 6.7 v1.2.0 и VMware ESXi 6.5 v1.0.0.
 
 3
 
-NSX-T support is limited to version 3.2 and later.
+Поддержка NSX-T ограничена версией 3.2 и более поздними.
 
-## Get started
+## Начало работы
 
-* To get started with Kubernetes Security Posture Management, see [Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes.").
+* Для начала работы с Kubernetes Security Posture Management см. [Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Настройка и включение Security Posture Management в Kubernetes.").
 
-* To get started with Cloud Security Posture Management and/or VMware Security Posture Management, see [Ingest Runecast Analyzer compliance findings](/docs/secure/threat-observability/security-events-ingest/ingest-runecast-analyzer "Ingest compliance findings from Runecast Analyzer and analyze them on the Dynatrace platform.").
+* Для начала работы с Cloud Security Posture Management и/или VMware Security Posture Management см. [Приём результатов Runecast Analyzer](/docs/secure/threat-observability/security-events-ingest/ingest-runecast-analyzer "Приём результатов соответствия из Runecast Analyzer и их анализ на платформе Dynatrace.").
 
-## What's next
+## Дальнейшие шаги
 
-### Next with KSPM
+### Далее с KSPM
 
-Once you set up Kubernetes Security Posture Management, you can
+После настройки Kubernetes Security Posture Management вы можете:
 
-* Detect, manage, and take action on security and compliance findings with [![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**](/docs/secure/xspm "Detect, manage, and take action on security and compliance findings.")
-* Query [compliance events](/docs/semantic-dictionary/model/security-events#compliance-finding-events "Get to know the Semantic Dictionary models related to security events.") with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") or [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+* Обнаруживать, управлять и принимать меры по результатам безопасности и соответствия с помощью [![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**](/docs/secure/xspm "Обнаружение, управление и принятие мер по результатам безопасности и соответствия.")
+* Запрашивать [события соответствия](/docs/semantic-dictionary/model/security-events#compliance-finding-events "Ознакомьтесь с моделями Semantic Dictionary, связанными с событиями безопасности.") с помощью [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Объедините функциональности Grail для расследований на основе доказательств.") или [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь выводами из данных наблюдаемости.")
 
-  + For a list of DQL examples based on compliance events that you can use for further investigation or reporting, see [Query compliance events](/docs/secure/threat-observability/dql-examples#compliance "DQL examples for security data powered by Grail.").
+  + Для списка примеров DQL на основе событий соответствия см. [Запрос событий соответствия](/docs/secure/threat-observability/dql-examples#compliance "Примеры DQL для данных безопасности на основе Grail.").
 
-Try ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management** and [share your feedbackï»¿](https://dt-url.net/1m03u6q) to help us improve.
+Попробуйте ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management** и [поделитесь отзывом](https://dt-url.net/1m03u6q), чтобы помочь нам улучшить продукт.
 
-### Next with CSPM/VSPM
+### Далее с CSPM/VSPM
 
+После настройки CSPM/VSPM вы можете:
 
+* Визуализировать данные с помощью панели **Security Posture Overview**. Подробнее см. [Дальнейшие шаги](/docs/secure/threat-observability/security-events-ingest/ingest-runecast-analyzer#next "Приём результатов соответствия из Runecast Analyzer и их анализ на платформе Dynatrace.").
+* Запрашивать [события соответствия](/docs/semantic-dictionary/model/security-events#compliance-finding-events "Ознакомьтесь с моделями Semantic Dictionary, связанными с событиями безопасности.") с помощью [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Объедините функциональности Grail для расследований на основе доказательств.") или [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь выводами из данных наблюдаемости.").
 
-Once you set up CSPM/VSPM, you can
+  + Для списка примеров DQL на основе событий соответствия см. [Запрос событий соответствия](/docs/secure/threat-observability/dql-examples#compliance "Примеры DQL для данных безопасности на основе Grail.").
 
-* Visualize data with our **Security Posture Overview** dashboard. For details, see [Next steps](/docs/secure/threat-observability/security-events-ingest/ingest-runecast-analyzer#next "Ingest compliance findings from Runecast Analyzer and analyze them on the Dynatrace platform.").
-* Query [compliance events](/docs/semantic-dictionary/model/security-events#compliance-finding-events "Get to know the Semantic Dictionary models related to security events.") with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") or [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
+## Сценарии использования
 
-  + For a list of DQL examples based on compliance events that you can use for further investigation or reporting, see [Query compliance events](/docs/secure/threat-observability/dql-examples#compliance "DQL examples for security data powered by Grail.").
+[Обеспечение соответствия с помощью Security Posture Management](/docs/secure/use-cases/stay-compliant "Контролируйте свои меры безопасности, политики и практики.")
 
-## Use cases
+## Часто задаваемые вопросы
 
-[Stay compliant with Security Posture Management](/docs/secure/use-cases/stay-compliant "Stay on top of your security measures, policies, and practices.")
+### Как проверить мой кластер Kubernetes на соответствие стандартам безопасности?
 
-## FAQ
+* Для просмотра статуса соответствия вашего кластера см. [Просмотр статуса соответствия по системам](/docs/secure/xspm/assess-coverage#systems "Просмотрите покрытие Security Posture Management ваших систем.").
+* Для просмотра результатов по вашему кластеру вы можете [фильтровать и сортировать результаты](/docs/secure/xspm/review-findings "Ищите релевантную информацию для эффективного анализа результатов безопасности и соответствия.").
+* Для контекстной информации, помогающей исправить результаты, см. [Получение информации](/docs/secure/xspm/gain-insights "Углубитесь в результаты для исправления неправильных конфигураций и несоответствий.").
 
-### How can I check my Kubernetes cluster against security compliance standards?
+### Можно ли включить или отключить стандарты соответствия?
 
-* To review the compliance status of your cluster, see [Review compliance status per system](/docs/secure/xspm/assess-coverage#systems "Review the Security Posture Management coverage of your systems at a glance.").
-* To review findings on your cluster, you can [filter and sort results](/docs/secure/xspm/review-findings "Search for relevant information to analyze security and compliance findings efficiently.").
-* For contextual information that can help you fix findings on your cluster, see [Gain insights](/docs/secure/xspm/gain-insights "Drill into results that can help you fix misconfigurations and noncompliance.").
+* Для [Dynatrace Kubernetes Security Posture Management (KSPM)](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Настройка и включение Security Posture Management в Kubernetes.") вы можете управлять стандартами соответствия в **Settings** Dynatrace, см. [Настройка области оценки](/docs/secure/xspm#configure-assessment "Обнаружение, управление и принятие мер по результатам безопасности и соответствия.").
+* Для Runecast Cloud Security Posture Management (CSPM) и Runecast VMware Security Posture Management (VSPM) настройте выбор стандартов непосредственно в [Runecast Analyzer](https://www.dynatrace.com/platform/runecast-analyzer/).
 
-### Can I enable or disable compliance standards?
+### Что делать с результатами, сгенерированными Dynatrace?
 
-* For [Dynatrace Kubernetes Security Posture Management (KSPM)](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes."), you can manage compliance standards in the Dynatrace **Settings**, see [Configure assessment scope](/docs/secure/xspm#configure-assessment "Detect, manage, and take action on security and compliance findings.").
-* For Runecast Cloud Security Posture Management (CSPM) and Runecast VMware Security Posture Management (VSPM), adjust standard selection directly in the [Runecast Analyzerï»¿](https://www.dynatrace.com/platform/runecast-analyzer/).
+Для обзора работы с результатами соответствия см. [Обеспечение соответствия с помощью Security Posture Management](/docs/secure/use-cases/stay-compliant "Контролируйте свои меры безопасности, политики и практики.").
 
-### What can I do with the findings generated by Dynatrace?
+### Как обеспечить соответствие по результатам высокой серьёзности?
 
-For an overview of how to use compliance findings, see [Stay compliant with Security Posture Management](/docs/secure/use-cases/stay-compliant "Stay on top of your security measures, policies, and practices.").
+Для руководства по повышению соответствия см. [Обеспечение соответствия с помощью Security Posture Management](/docs/secure/use-cases/stay-compliant "Контролируйте свои меры безопасности, политики и практики.").
 
-### How can I be compliant with the high-severity findings generated by Dynatrace?
+### Как улучшить покрытие Security Posture Management?
 
-For guidelines on how to increase compliance, see [Stay compliant with Security Posture Management](/docs/secure/use-cases/stay-compliant "Stay on top of your security measures, policies, and practices.").
+Для инструкций см. [Улучшение покрытия](/docs/secure/xspm/assess-coverage#improve "Просмотрите покрытие Security Posture Management ваших систем.").
 
-### How can I improve Security Posture Management coverage?
+### Почему я получаю неудовлетворительные результаты для моей системы?
 
-For instructions, see [Improve coverage](/docs/secure/xspm/assess-coverage#improve "Review the Security Posture Management coverage of your systems at a glance.").
+Ресурсы вашей системы оцениваются как `Failed` (не соответствует) согласно правилам, указанным в [поддерживаемых стандартах](/docs/secure/application-security/spm#support "Оценка, управление и принятие мер в отношении неправильных конфигураций и нарушений.").
 
-### Why am I getting failed results on my system?
+* Для лучшего понимания конфигурации ресурсов и просмотра источника правила см. [Получение информации](/docs/secure/xspm/gain-insights "Углубитесь в результаты для исправления неправильных конфигураций и несоответствий.").
+* Для понимания типов результатов см. [Концепции: Результаты](/docs/secure/xspm/concepts#concept-results "Концепции, специфичные для приложения Dynatrace Security Posture Management.").
 
-Resources on your system are assessed as `Failed` (not compliant) according to rules specified in the [supported standards](/docs/secure/application-security/spm#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+### Что произойдёт, если не исправить систему на основе результатов?
 
-* To better understand resource configuration and review the source of the rule, see [Gain insights](/docs/secure/xspm/gain-insights "Drill into results that can help you fix misconfigurations and noncompliance.").
-* To better understand result types, see [Concepts: Results](/docs/secure/xspm/concepts#concept-results "Concepts that are specific to the Dynatrace Security Posture Management app.").
+Поддержание вашего состояния безопасности является основой общей стратегии безопасности. Думайте об этом как о базовой гигиене безопасности — без неё все другие меры безопасности будут значительно менее эффективны. С точки зрения соответствия, игнорирование этих результатов означает, что вы не сможете выявить, оценить и исправить потенциальные проблемы, которые могут привести к провалу аудита.
 
-### What happens if I don't fix my system based on the findings?
+Ручная обработка многочисленных проверок, необходимых для аудитов, быстро становится непосильной задачей. С нашим решением Security Posture Management весь этот процесс автоматизирован, обеспечивая эффективное управление как безопасностью, так и соответствием.
 
-Maintaining your security posture is fundamental to your overall security strategy. Think of it as basic security hygieneâwithout it, all other security measures you implement will be significantly less effective. On the compliance side, not addressing these findings means you won't be able to identify, assess, and fix potential issues that could lead to audit failures.
+Игнорирование проблем соответствия создаёт потенциальный риск компрометации или провала соответствия.
 
-Manually handling the numerous checks required for audits quickly becomes an overwhelming task, consuming countless hours. With our Security Posture Management solution, this entire process is automated, ensuring both security and compliance are effectively managed.
+### Как исправить обнаруженные проблемы в моей среде?
 
-Ignoring compliance issues presents potential exposure risk or compliance failure risk.
+Для руководства по исправлению результатов см. [Обеспечение соответствия с помощью Security Posture Management](/docs/secure/use-cases/stay-compliant "Контролируйте свои меры безопасности, политики и практики.").
 
-### How to fix the problems detected in my environment?
+### Какие среды можно мониторить с помощью Security Posture Management?
 
-For guidelines on how to fix findings, see [Stay compliant with Security Posture Management](/docs/secure/use-cases/stay-compliant "Stay on top of your security measures, policies, and practices.").
+Для списка поддерживаемых систем и их версий см. [Security Posture Management](/docs/secure/application-security/spm#support "Оценка, управление и принятие мер в отношении неправильных конфигураций и нарушений.").
 
-### What environments can be monitored with Security Posture Management?
+### В каких режимах мониторинга можно развернуть Security Posture Management на Kubernetes?
 
-For a list of supported systems and their versions and distributions, see [Security Posture Management](/docs/secure/application-security/spm#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+Запуск Security Posture Management на Kubernetes полностью независим от OneAgent и, следовательно, от [режимов мониторинга](/docs/secure/application-security#monitoring-modes "Доступ к функциональности Dynatrace Application Security.").
+Анализируемые данные поступают с Kubernetes API Server и Kubernetes Node Configuration Collector через ActiveGate.
+Поэтому вы можете использовать ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management** с [мониторингом платформы Kubernetes](/docs/ingest-from/setup-on-k8s/deployment/platform-observability "Развёртывание Dynatrace Operator для мониторинга платформы Kubernetes."), где OneAgent не развёрнут.
 
-### In what monitoring modes can I deploy Security Posture Management on Kubernetes?
+### Как настроить Security Posture Management для облачных сред?
 
-Running Security Posture Management on Kubernetes is entirely independent of OneAgent and thus independent of the [Monitoring modes](/docs/secure/application-security#monitoring-modes "Access the Dynatrace Application Security functionalities.").
-Analyzed data originates from the Kubernetes API Server and the Kubernetes Node Configuration Collector via ActiveGate.
-Therefore, you can use ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management** with [Kubernetes Platform Monitoring](/docs/ingest-from/setup-on-k8s/deployment/platform-observability "Deploy Dynatrace Operator for Kubernetes platform monitoring."), where OneAgent isn't deployed.
+Настройте [интеграцию с Runecast Analyzer](/docs/secure/threat-observability/security-events-ingest/ingest-runecast-analyzer "Приём результатов соответствия из Runecast Analyzer и их анализ на платформе Dynatrace.") от Dynatrace.
 
-### How can I set up Security Posture Management for cloud environments?
+## Дополнительные ресурсы
 
-Set up the Dynatrace [integration with Runecast Analyzer](/docs/secure/threat-observability/security-events-ingest/ingest-runecast-analyzer "Ingest compliance findings from Runecast Analyzer and analyze them on the Dynatrace platform.").
+* [Основы безопасности Kubernetes: неправильные конфигурации контейнеров — от теории до эксплуатации](https://www.dynatrace.com/news/blog/kubernetes-security-essentials-container-misconfigurations-from-theory-to-exploitation/)
+* [Революция в облачной безопасности с контекстом наблюдаемости: Dynatrace Cloud Security и CADR](https://www.dynatrace.com/news/blog/revolutionizing-cloud-security-observability-cadr/)
+* [Поддержка SRE с помощью аналитики уязвимостей и управления состоянием безопасности](https://www.dynatrace.com/news/blog/empowering-sres-with-runtime-vulnerability-analytics-and-security-posture-management/)
+* [Расширение платформы Dynatrace с помощью CSPM и VSPM](https://www.dynatrace.com/news/blog/extend-the-dynatrace-platform-with-cspm-and-vspm/)
+* [Возвращение к Spring4Shell: многоуровневая защита с CADR](https://www.dynatrace.com/news/blog/spring4shell-cadr-multi-layer-protection/)
+* [Что такое Kubernetes security posture management? Обеспечение безопасности бизнеса с KSPM](https://www.dynatrace.com/news/blog/kubernetes-security-posture-management-kspm/)
+* [Какое решение ИТ-безопасности подходит вашей организации? CSPM vs. KSPM vs. CNAPP](https://dt-url.net/az03zj0)
+* [Dynatrace KSPM: трансформация безопасности и соответствия Kubernetes](https://www.dynatrace.com/news/blog/dynatrace-kspm-transforming-kubernetes-security-and-compliance/)
+* [Dynatrace Cloud Security Posture Management повышает облачную безопасность](https://www.dynatrace.com/news/blog/elevate-cloud-security-with-real-time-compliance-across-hyperscalers/)
 
-## Further resources
+## Связанные темы
 
-* [Kubernetes security essentials: Container misconfigurations â From theory to exploitationï»¿](https://www.dynatrace.com/news/blog/kubernetes-security-essentials-container-misconfigurations-from-theory-to-exploitation/)
-* [Revolutionizing cloud security with observability context: Dynatrace Cloud Security addressing CADRï»¿](https://www.dynatrace.com/news/blog/revolutionizing-cloud-security-observability-cadr/)
-* [Empowering SREs with runtime vulnerability analytics and security posture managementï»¿](https://www.dynatrace.com/news/blog/empowering-sres-with-runtime-vulnerability-analytics-and-security-posture-management/)
-* [Extend the Dynatrace platform with CSPM and VSPMï»¿](https://www.dynatrace.com/news/blog/extend-the-dynatrace-platform-with-cspm-and-vspm/)
-* [Revisiting Spring4Shell: How Cloud Application Detection and Response (CADR) offers multi-layer protectionï»¿](https://www.dynatrace.com/news/blog/spring4shell-cadr-multi-layer-protection/)
-* [What is Kubernetes security posture management? Driving business security with KSPMï»¿](https://www.dynatrace.com/news/blog/kubernetes-security-posture-management-kspm/)
-* [Which IT security solution is right for your organization? CSPM vs. KSPM vs. CNAPPï»¿](https://dt-url.net/az03zj0)
-* [Dynatrace KSPM: Transforming Kubernetes security and complianceï»¿](https://www.dynatrace.com/news/blog/dynatrace-kspm-transforming-kubernetes-security-and-compliance/)
-* [Dynatrace Cloud Security Posture Management elevates cloud security with real-time compliance across hyperscalersï»¿](https://www.dynatrace.com/news/blog/elevate-cloud-security-with-real-time-compliance-across-hyperscalers/)
-
-## Related topics
-
-* [Security Posture Management](/docs/secure/xspm "Detect, manage, and take action on security and compliance findings.")
+* [Security Posture Management](/docs/secure/xspm "Обнаружение, управление и принятие мер по результатам безопасности и соответствия.")

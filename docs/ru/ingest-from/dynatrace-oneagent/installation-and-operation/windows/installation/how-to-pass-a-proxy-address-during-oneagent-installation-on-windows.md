@@ -1,0 +1,31 @@
+---
+title: How to pass a proxy address during OneAgent installation on Windows
+source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/how-to-pass-a-proxy-address-during-oneagent-installation-on-windows
+scraped: 2026-03-06T21:19:29.325777
+---
+
+# Как передать адрес прокси-сервера при установке OneAgent на Windows
+
+# Как передать адрес прокси-сервера при установке OneAgent на Windows
+
+* Latest Dynatrace
+* Чтение займёт 1 минуту
+* Опубликовано 19 сентября 2018 г.
+
+Установщик Windows позволяет ввести адрес прокси-сервера в процессе установки, поэтому в большинстве случаев вам не нужно беспокоиться о добавлении дополнительных параметров командной строки. Параметры командной строки особенно полезны при развёртывании с помощью [установки групповой политики](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows "Узнайте, как использовать установщик OneAgent для Windows.") или других автоматизированных задач.
+
+Установщик OneAgent распознаёт параметр `--set-proxy`. Значение параметра — адрес прокси-сервера. Номер порта указывается через двоеточие (например, `172.1.1.128:8080`). Для прокси с аутентификацией можно указать имя пользователя и пароль следующим образом: `username:password@172.1.1.128:8080`, при этом имя пользователя и пароль должны быть закодированы в формате URL. Dynatrace также поддерживает адреса IPv6.
+
+Имена параметров чувствительны к регистру, поэтому используйте `ВСЕ ЗАГЛАВНЫЕ БУКВЫ` для имён параметров.
+
+## Передача адреса прокси установщику
+
+Допустим, вы загрузили установщик OneAgent в папку `C:\Users\Admin\Downloads`, а IP-адрес вашего прокси — `10.1.1.5`. В таком случае установку следует начать следующим образом:
+
+```
+C:\Users\Admin\Downloads>Dynatrace-OneAgent-Windows-1.171.0.exe  --set-proxy=10.1.1.5
+```
+
+## Изменение прокси после установки
+
+Если вам нужно изменить адрес прокси-сервера после установки, используйте `--set-proxy` в [интерфейсе командной строки OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнайте, как выполнять некоторые задачи настройки OneAgent без необходимости его переустановки.").

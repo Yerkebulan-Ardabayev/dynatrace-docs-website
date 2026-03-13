@@ -1,0 +1,106 @@
+---
+title: Manage SAP Hana Database extensions
+source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana
+scraped: 2026-03-05T21:33:51.339235
+---
+
+# Управление расширениями SAP Hana Database
+
+# Управление расширениями SAP Hana Database
+
+* Latest Dynatrace
+* Руководство
+* Чтение: 3 мин.
+* Опубликовано 19 апреля 2023 г.
+
+Dynatrace предоставляет фреймворк, который вы можете использовать для расширения наблюдаемости вашего приложения с помощью данных, получаемых непосредственно из уровня SAP Hana Database, чтобы вы могли отслеживать, как задачи сервера базы данных влияют на ваше приложение.
+
+Начните с проверки [Dynatrace Hub](https://www.dynatrace.com/hub/?query=sap+hana+database), чтобы узнать, удовлетворяет ли предоставленное Dynatrace расширение PostgreSQL Database Server вашим требованиям.
+
+## Прежде чем начать
+
+Определите группу или группы ActiveGate, которые будут удалённо подключаться к вашему серверу SAP Hana Database для извлечения данных. Все ActiveGate в каждой выделенной группе должны иметь возможность подключаться к вашему серверу SAP Hana Database.
+
+## Управление расширениями SAP Hana
+
+![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions")
+
+### Extension Manager
+
+Latest Dynatrace
+
+Теперь вы можете использовать специализированное приложение Extensions для управления вашими расширениями. Оно предоставляет аналогичный рабочий процесс активации и настройки, как и Dynatrace Hub в предыдущей версии Dynatrace. Кроме того, оно даёт вам прямой доступ к мониторингу состояния расширений.
+
+* Для использования приложения:
+
+  + В Dynatrace Hub ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub") выберите и установите приложение.
+  + Страница Hub предоставляет информацию о разрешениях, необходимых для использования приложения (вкладка **Technical information**).
+
+Dynatrace Hub предоставляет единый рабочий процесс для включения и управления расширениями, которые будут загружать данные SAP Hana Database в вашу среду Dynatrace.
+
+Необходимое разрешение: **Change monitoring settings**
+
+1. В Dynatrace Hub выберите и установите **SAP Hana Database**. Это активирует расширение в вашей среде мониторинга.
+2. Добавьте конфигурацию мониторинга, чтобы расширение могло начать сбор данных.
+
+[![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
+
+**Лицензия на распространение JDBC-драйвера SAP Hana**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql#jdbc-driver "Узнайте, как расширить наблюдаемость в Dynatrace с помощью декларативных метрик, получаемых из Oracle Database.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+
+**Определение конечных точек**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana#define-endpoints "Расширение наблюдаемости в Dynatrace с помощью декларативных метрик, получаемых из сервера SAP Hana Database.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+
+**Группа ActiveGate**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana#activegate-group "Расширение наблюдаемости в Dynatrace с помощью декларативных метрик, получаемых из сервера SAP Hana Database.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+
+**Активация расширения**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana#activate-extension "Расширение наблюдаемости в Dynatrace с помощью декларативных метрик, получаемых из сервера SAP Hana Database.")
+
+### Шаг 1. JDBC-драйвер SAP Hana
+
+Расширение SAP Hana Database требует ручного размещения файла JAR драйвера на хосте ActiveGate.
+
+Для определения сервера SAP Hana Database поместите файл `ngdbc.jar` в следующее расположение:
+
+**Windows**: `C:\ProgramData\dynatrace\remotepluginmodule\agent\conf\userdata\libs`
+**Linux**: `/var/lib/dynatrace/remotepluginmodule/agent/conf/userdata/libs/`
+
+Где найти файл ngdbc.jar
+
+Вы можете получить файл `ngdbc.jar` из каталога установки SAP Hana Client:
+
+* **Windows**: `C:\Program Files\SAP\hdbclient\ngdbc.jar`
+* **Linux**: `/usr/sap/hdbclient/ngdbc.jar`
+
+### Шаг 2. Определение конечных точек
+
+1. Выберите **Add SAP Hana endpoint**, чтобы определить серверы SAP Hana Database, из которых вы хотите извлекать данные. Вы можете определить до 100 конечных точек. Укажите следующие данные для подключения:
+
+* Хост
+* Порт
+* Учётные данные для аутентификации
+
+  + Поддерживается только базовая аутентификация.
+  + Данные аутентификации, переданные в Dynatrace при активации конфигурации мониторинга, обфусцируются, и их невозможно получить обратно.
+  + Вы можете [использовать хранилище учётных данных](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring#authentication "Расширения SAP Hana в фреймворке Extensions."), чтобы обеспечить более безопасный подход к хранению и управлению учётными данными пользователей.
+* Нажмите **Next step**.
+
+### Шаг 3. Группа ActiveGate
+
+1. Выберите группу ActiveGate, чтобы определить, какие ActiveGate будут запускать расширение.
+2. Нажмите **Next step**.
+
+### Шаг 4. Активация расширения
+
+1. Укажите финальные детали конфигурации:
+
+* **Description**
+  Текст с описанием деталей данной конкретной конфигурации мониторинга. Когда ваши команды занимаются устранением неполадок мониторинга, это может предоставить им важные сведения.
+* **Feature sets**
+  В сильно сегментированных сетях наборы функций могут отражать сегменты вашей среды. Вы можете использовать их для ограничения мониторинга определёнными сегментами. Наборы функций предопределены для каждого расширения.
+* Нажмите **Activate**.
+
+## Конфигурация мониторинга в формате JSON
+
+Мастер активации расширения содержит динамически обновляемый JSON-документ с вашей конфигурацией мониторинга. См. [Управление расширениями](/docs/ingest-from/extensions/manage-extensions "Узнайте, как управлять расширениями."), чтобы узнать, как использовать его для активации расширения через API Dynatrace.
+
+## Связанные темы
+
+* [Устранение неполадок расширений](https://dt-url.net/6303zdg "Узнайте, как устранять неполадки расширений Dynatrace")

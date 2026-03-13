@@ -1,0 +1,116 @@
+---
+title: Service flow filtering
+source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-flow/service-flow-filtering
+scraped: 2026-03-06T21:22:57.357175
+---
+
+# Фильтрация потока сервисов
+
+# Фильтрация потока сервисов
+
+* Classic
+* Чтение: 5 мин
+* Опубликовано 19 июля 2017 г.
+
+Современные веб-приложения обычно имеют сложные сервисные архитектуры, способные обрабатывать миллионы различных типов запросов. Поскольку каждый уникальный запрос ведет себя немного по-разному и вызывает слегка отличающийся поток сервисов, анализ производительности и поведения отдельных запросов может быть настоящей проблемой.
+
+Функции фильтрации помогают вам ориентироваться в сложности сервисной архитектуры вашего приложения, позволяя найти пресловутую иголку в стоге сена. **Service flow** в Dynatrace позволяет анализировать подмножества запросов, инициированных данным сервисом.
+
+Общая процедура фильтрации **Service flow** выглядит следующим образом:
+
+1. Перейдите в ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
+2. Выберите сервис, который хотите проанализировать.
+3. На странице обзора сервиса в разделе **Understand dependencies** выберите **View service flow**.
+4. В **Service flow** выберите вызываемый сервис, чтобы определить последовательность сервисов, которую вы хотите проанализировать.
+   [Панель справа](/docs/observe/application-observability/services-classic/service-flow/service-flow-metrics#side-pane "Learn about the service flow metrics that measure the performance of the service calls that are triggered by each service request in your environment.") сразу откроется на вкладке **Passing transactions**.
+5. Чтобы создать фильтр для выбранной последовательности сервисов, выполните одно из следующих действий:
+
+   * Выберите **Filter service flow** в верхней плитке.
+   * Выберите **Filter** ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") над выбранным сервисом.
+6. Добавьте дополнительные критерии к фильтру:
+
+   1. В фильтре выберите сервис, к которому вы хотите применить дополнительную фильтрацию.
+   2. В списке **Filtered by** выберите критерий.
+   3. Укажите пороговое значение или правила сопоставления для критерия.
+   4. Выберите **Apply**.
+   5. При необходимости добавьте дополнительные критерии к фильтру.
+   6. По завершении выберите **Apply**.
+
+Подробное объяснение приведено ниже.
+
+## Фильтрация запросов по определенным последовательностям вызовов
+
+Фильтры по последовательности вызовов доступны в большинстве представлений анализа сервисов, но наиболее наглядно они представлены в **Service flow**. Как видно в примере ниже, только **5,9%** запросов к сервису `easyTravel Customer Frontend` также вызывают сервис `JourneyService`. Далее, **99%** из них вызывают сервис базы данных `easyTravel-Business`.
+
+![Service flow -- обзор](https://dt-cdn.net/images/service-flow-overview-1779-2ec7d38f7d.png)
+
+Чтобы сфокусировать **Service Flow** на этих вызовах:
+
+1. Перейдите в ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic**.
+2. Выберите сервис, который хотите проанализировать.
+3. На странице обзора сервиса в разделе **Understand dependencies** выберите **View service flow**.
+4. В **Service flow** выберите вызываемый сервис, чтобы определить последовательность сервисов, которую вы хотите проанализировать. В нашем примере это `easyTravel-Business`.
+   Вкладка **Passing transactions** появится в правой части страницы.
+5. Чтобы создать фильтр для выбранной последовательности сервисов, выполните одно из следующих действий:
+
+   * Выберите **Filter service flow** в верхней плитке.
+   * Выберите **Filter** ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") над выбранным сервисом.
+
+Вернемся к нашему примеру. Был создан фильтр для фокусировки анализа только на тех запросах от сервиса `easyTravel Customer Frontend`, которые вызывают сервис `JourneyService` и затем обращаются к базе данных `easyTravel-Business`.
+
+Обратите внимание, что количество анализируемых запросов на `easyTravel Customer Frontend` сократилось с **156 тыс.** до **8,73 тыс.**, так как теперь учитывается только подмножество вызовов. Соответственно, среднее время отклика теперь отражает только те запросы `easyTravel Customer Frontend`, которые вызывают `JourneyService`.
+
+Теперь внимательно посмотрите на узел `JourneyService`. Обратите внимание, что **35%** времени отклика сервиса `easyTravel Customer Frontend` приходится на `JourneyService`. **Service flow** также показывает неожиданный факт -- некоторые из выбранных запросов вызывают `RMI server`.
+
+![Service flow -- фильтр по вызываемому сервису](https://dt-cdn.net/images/service-flow-filter-1621-b66825047a.png)
+
+## Многоаспектные фильтры
+
+Каждый фильтр может содержать несколько последовательностей вызовов. Это означает, что вы можете создавать сложные, многоаспектные фильтры последовательностей вызовов в соответствии с вашими уникальными потребностями анализа сервисов. **Service Flow** будет фокусироваться только на вызовах, соответствующих всем критериям.
+
+Чтобы добавить новые последовательности к существующему фильтру:
+
+1. Пока текущий фильтр все еще активен, выберите дополнительную последовательность вызовов в **Service flow**.
+2. На вкладке **Passing transactions** в [панели справа](/docs/observe/application-observability/services-classic/service-flow/service-flow-metrics#side-pane "Learn about the service flow metrics that measure the performance of the service calls that are triggered by each service request in your environment.") выберите **Filter service flow**.
+
+В примере ниже критерии фильтра дополнены вызовами от сервиса `easyTravel Customer Frontend`, которые обращаются к сервису `RMI server` и затем к базе данных `easyTravel-Business`. Теперь количество анализируемых запросов на `easyTravel Customer Frontend` сократилось до **528**. Кроме того, сервис `JourneyService` теперь отвечает за **39%** времени отклика.
+
+![Service flow -- примененный фильтр](https://dt-cdn.net/images/service-flow-filtered-1622-125fbdca28.png)
+
+## Расширение фильтров дополнительными критериями
+
+После того как вы сузили количество вызовов на основе задействованных сервисов, вы можете добавить дополнительные критерии к фильтру.
+
+1. В фильтре выберите сервис, к которому вы хотите применить дополнительную фильтрацию.
+2. В списке **Filtered by** выберите критерий.
+3. Укажите пороговое значение или правила сопоставления для критерия.
+
+   ![Фильтр потока сервисов 8](https://dt-cdn.net/images/service-filter-8-699-1e8e0e114f.png)
+4. Выберите **Apply**.
+5. При необходимости добавьте дополнительные критерии к фильтру.
+6. По завершении выберите **Apply**.
+
+В нашем примере мы применили пороговое значение **Response time** в **200 мс** к `JourneyService`. Теперь отображаются только вызовы со временем отклика более **200 мс**, и их всего **6**. Мы уже очень близки к нахождению иголки в стоге сена!
+
+![Service flow -- результаты фильтрации](https://dt-cdn.net/images/service-flow-use-filter-1624-3394932b09.png)
+
+## Анализ последовательностей вызовов с разных сторон
+
+Истинная сила фильтрации последовательностей вызовов проявляется, когда вы начинаете анализ проблемной последовательности вызовов. В примере выше **Service flow** показывает нам, что **40%** времени отклика сервиса `easyTravel Customer Frontend` приходится на `JourneyService`.
+
+Следующий логичный шаг -- проанализировать время отклика сервиса `JourneyService` в контексте выбранной последовательности вызовов. Для этого выберите `JourneyService` в **Service flow**. Панель справа откроет все варианты анализа, которые вы можете выполнить для выбранного сервиса -- все в контексте отфильтрованной последовательности вызовов. Все фильтры, созданные в **Service flow**, также будут применены к дополнительному анализу.
+
+Подробнее о дополнительных вариантах анализа см. в разделах, перечисленных ниже.
+
+* [Распределенные трейсы](/docs/observe/application-observability/distributed-traces/use-cases/segment-request#pp-analysis "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.")
+  Анализ детальной цепочки вызовов на уровне методов.
+* [Анализ обратной трассировки](/docs/observe/application-observability/services-classic/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.")
+  Исследование последовательности вызовов сервисов, приведших к конкретному запросу сервиса.
+* [Просмотр времени отклика](/docs/observe/application-observability/services-classic/service-response-time-hotspots "Identify the activities that consume the most response time for each service.")
+  Просмотр распределения времени отклика по различным функциям сервиса (например, использование базы данных и выполнение кода).
+* [Анализ выбросов](/docs/observe/application-observability/services-classic/response-time-distribution-and-outlier-analysis "Gain insights into the distribution of response times across all requests, including those that are either unusually high or unusually low.")
+  Просмотр распределения времени отклика запросов к сервису в определенном временном диапазоне.
+
+## Связанные темы
+
+* [Расширенная фильтрация потока сервисов](https://www.youtube.com/watch?v=bbZdkuClx-E)

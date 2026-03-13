@@ -1,0 +1,225 @@
+---
+title: Supported authentication methods in Synthetic Monitoring
+source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication
+scraped: 2026-03-05T21:34:50.868896
+---
+
+# Поддерживаемые методы аутентификации в Synthetic Monitoring
+
+# Поддерживаемые методы аутентификации в Synthetic Monitoring
+
+* Classic
+* Практическое руководство
+* Чтение: 9 мин
+* Обновлено 19 августа 2025 г.
+
+Dynatrace Synthetic Monitoring предлагает различные методы мониторинга веб-приложений или API-эндпоинтов, требующих аутентификации. Ниже приведён обзор наиболее распространённых сценариев и соответствующих методов.
+
+## Браузерные мониторы
+
+Методы [**HTTP-аутентификации**](#http-bm) и [**аутентификации по сертификату**](#certificate-bm) поддерживаются как для [браузерных мониторов с одним URL](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/create-a-single-url-browser-monitor "Узнайте, как настроить браузерный монитор с одним URL для проверки доступности вашего сайта."), так и для [браузерных кликпасов](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/record-a-browser-clickpath "Узнайте, как записать браузерный кликпас для мониторинга доступности и производительности вашего приложения.").
+
+Метод [**веб-формы** (**на основе HTML**)](#web-form-bm) поддерживается только для браузерных кликпасов.
+
+### Аутентификация через веб-форму (на основе HTML) для веб-приложений
+
+Наиболее распространённый сценарий — веб-страница с аутентификацией через веб-форму (на основе HTML), которая требует ввода имени пользователя и пароля.
+
+![Веб-приложение с аутентификацией на основе HTML](https://dt-cdn.net/images/htmlbasedauthentication-2048-c9fcf36a82.png)
+
+Вы можете мониторить транзакцию в [браузерном кликпасе](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/record-a-browser-clickpath "Узнайте, как записать браузерный кликпас для мониторинга доступности и производительности вашего приложения."), записав учётные данные в веб-форме.
+
+1. Перейдите в **Synthetic Classic** > **Create a synthetic monitor** > **Create a browser monitor**.
+2. Укажите имя монитора, начальный URL и другие параметры, затем выберите **Record clickpath** внизу страницы.
+3. Во время записи вручную введите имя пользователя и пароль для аутентификации; Dynatrace автоматически зафиксирует учётные данные.
+4. После записи у вас есть возможность сохранить учётные данные в [хранилище учётных данных](/docs/manage/credential-vault "Хранение и управление учётными данными в хранилище.").
+5. [Завершите настройку](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Узнайте о настройке браузерных мониторов и кликпасов.") вашего кликпаса.
+
+#### Мониторы с одним URL и аутентификацией через веб-форму
+
+Устарело
+
+Аутентификация через веб-форму больше не поддерживается для браузерных мониторов с одним URL. Вместо этого вы можете создать [браузерные кликпасы](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/record-a-browser-clickpath "Узнайте, как записать браузерный кликпас.") для тестовых сценариев, требующих входа через веб-форму. Ваши ранее настроенные мониторы с одним URL будут работать как прежде, но мы рекомендуем перезаписать их как кликпасы, чтобы чётко разделить каждый шаг процесса входа.
+
+Перезапись необходима, если вы хотите изменить какую-либо часть конфигурации монитора. Сохранение изменений в текущем формате более невозможно.
+
+Начиная с Dynatrace версии 1.324+ мониторы с одним URL и входом через веб-форму будут автоматически обновлены путём добавления свободного шага JavaScript для поддержки процесса входа.
+
+### Аутентификация Basic, Digest, NTLM или Negotiate (Kerberos) для веб-приложений
+
+Если вам нужно мониторить страницу с нативным диалоговым окном браузера (которое не является частью веб-приложения) для аутентификации (как на изображении ниже), вероятно, в фоне используются методы аутентификации Basic, Digest, NTLM или Negotiate.
+
+Negotiate (Kerberos) поддерживается для браузерных мониторов, выполняемых в [приватных локациях](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#kerberos-client-setup "Узнайте, как создать приватную локацию для синтетического мониторинга.") на:
+
+* Windows
+* ActiveGate версии 1.311+ Linux
+* ActiveGate версии 1.311+ [Контейнеризованный](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations#kerberos "Развёртывание и управление контейнеризованными, автомасштабируемыми приватными локациями Synthetic на Kubernetes/RedHat OpenShift.")
+
+![Нативное диалоговое окно входа в браузере](https://dt-cdn.net/images/nativebrowserlogindialogbox-1837-c1502c0fdf.png)
+
+Мониторинг одной страницы
+
+Транзакция в записанном кликпасе
+
+1. Перейдите в **Synthetic Classic** > **Create a synthetic monitor** > **Create a browser monitor**.
+2. В **Additional options** включите **Enable global login authentication**.
+3. Выберите один из вариантов:
+
+   * **HTTP authentication**, если вход происходит через нативное диалоговое окно браузера
+   * **Kerberos authentication**, если вход происходит через протокол Kerberos. Заполните дополнительные обязательные поля:
+
+     + Domain: доменное имя пользователя
+     + Auth server allow list: список разрешённых серверов для аутентификации Kerberos. Можно использовать подстановочные символы. Подробности приведены в [документации Chrome Enterprise](https://dt-url.net/p803wkm)
+4. Используйте существующие учётные данные из [хранилища учётных данных](/docs/manage/credential-vault "Хранение и управление учётными данными в хранилище.") (**Select credentials**) или создайте новые (**Create new credentials**).
+5. [Завершите настройку](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Узнайте о настройке браузерных мониторов и кликпасов.") вашего браузерного монитора с одним URL.
+
+1. Перейдите в **Synthetic Classic** > **Create a synthetic monitor** > **Create a browser monitor**.
+2. Укажите имя монитора, начальный URL и другие параметры, затем выберите **Record clickpath** внизу страницы.
+3. Во время записи вручную введите имя пользователя и пароль в нативном диалоговом окне браузера.
+4. После завершения записи откройте первое [событие Navigate](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events#navigate "Узнайте о типах событий, создаваемых при записи браузерного кликпаса.") вашего кликпаса и включите **Enable HTTP authentication**.
+
+   ![HTTP-аутентификация в событии Navigate](https://dt-cdn.net/images/navigatehttpauthentication-652-d4048163be.png)
+5. Используйте существующие учётные данные из [хранилища учётных данных](/docs/manage/credential-vault "Хранение и управление учётными данными в хранилище.") (**Select credentials**) или создайте новые (**Create new credentials**).
+
+   Ваш кликпас будет автоматически использовать эти учётные данные для аутентификации через нативное диалоговое окно входа браузера.
+6. Для использования аутентификации Kerberos выберите **Kerberos authentication**. Аутентификация будет выполняться путём получения билетов Kerberos для предоставленных учётных данных из центра распределения ключей Kerberos.
+
+   ![Аутентификация Kerberos](https://dt-cdn.net/images/kerberosauth-608-429fe9ac73.png)
+
+   * Domain: доменное имя пользователя
+   * Auth server allow list: список разрешённых серверов для аутентификации Kerberos. Можно использовать подстановочные символы. Подробности приведены в [документации Chrome Enterprise](https://dt-url.net/p803wkm)
+7. [Завершите настройку](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Узнайте о настройке браузерных мониторов и кликпасов.") вашего браузерного кликпаса.
+
+Поддерживаемые форматы имени пользователя
+
+* Браузерные мониторы: `<username>` и `<domain>\<username>`
+* HTTP-мониторы: `<username>`
+* **Аутентификация NTLM** в браузерных и HTTP-мониторах: `<username>`
+
+### Аутентификация по клиентскому сертификату для веб-приложений
+
+Аутентификация по сертификату доступна для браузерных мониторов, выполняемых из любой [публичной локации](/docs/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Узнайте обо всех доступных публичных локациях Synthetic Monitoring.") и в [приватных локациях](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Узнайте, как создать приватную локацию для синтетического мониторинга.") на базе Linux. После настройки браузерного монитора необходимо указать данные клиентского сертификата на вкладке **Advanced setup** в настройках монитора в режиме редактирования.
+
+Мониторинг одной страницы
+
+Транзакция в записанном кликпасе
+
+1. Перейдите в **Synthetic Classic** > **Create a synthetic monitor** > **Create a browser monitor**.
+2. Укажите URL и имя монитора.
+
+   Указание клиентского сертификата при первоначальной настройке браузерного монитора с одним URL невозможно.
+3. [Завершите настройку](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Узнайте о настройке браузерных мониторов и кликпасов.") вашего браузерного монитора с одним URL.
+
+1. Перед первой записью кликпаса на веб-сайте, требующем аутентификации по сертификату, убедитесь, что необходимый сертификат установлен в Chrome.
+2. Перейдите в **Synthetic Classic** > **Create a synthetic monitor** > **Create a browser monitor**.
+3. Укажите имя монитора, начальный URL и другие параметры, затем выберите **Record clickpath** внизу страницы.
+4. При переходе на веб-сайт в окне записи нативный диалог браузера просто выберет правильный сертификат, который вы установили в Chrome. После записи кликпаса необходимо указать сертификат для выполнения монитора, как описано ниже.
+
+Далее, в режиме редактирования, добавьте клиентские сертификаты для выполнения браузерного монитора.
+
+1. Выберите вкладку **Advanced setup** в настройках браузерного монитора.
+2. Включите **Use client certificates**.
+3. Выберите **Add client certificate**.
+4. Введите **Domain**, для которого действителен сертификат.
+5. Выберите учётные данные из списка отображаемых сертификатов. Или выберите **Create new credential**, чтобы загрузить и использовать новый клиентский сертификат. Любые созданные вами учётные данные сертификата автоматически назначаются как [только для владельца](/docs/manage/credential-vault#work-with-credentials "Хранение и управление учётными данными в хранилище.") и сохраняются в [хранилище учётных данных](/docs/manage/credential-vault "Хранение и управление учётными данными в хранилище.").
+
+   Вы можете указать и загрузить файлы сертификатов в форматах PFX, P12 или PEM.
+
+   ![Настройка аутентификации по сертификату для браузерных мониторов](https://dt-cdn.net/images/bm-client-certificates-788-4347c846d7.png)
+6. Выберите **Add entry**.
+7. Повторите эти шаги для добавления нескольких сертификатов для использования в кликпасе. Однако каждый сертификат должен быть привязан к одному домену.
+8. **Save changes**.
+
+## HTTP-мониторы
+
+HTTP-мониторы поддерживают аутентификацию Basic, NTLM, по токену, OAuth 2.0 или по сертификату.
+
+### Аутентификация Basic или NTLM для эндпоинтов
+
+1. Перейдите в **Synthetic Classic** > **Create a synthetic monitor** > **Create an HTTP monitor**.
+2. Выберите **Add HTTP request** и тип **HTTP request**.
+3. В разделе **Additional options** запроса выберите **Set authentication/authorization**.
+4. Выберите **Basic authentication** или **NTLM**.
+5. Используйте существующие учётные данные из [хранилища учётных данных](/docs/manage/credential-vault "Хранение и управление учётными данными в хранилище.") (**Select credentials**) или создайте новые (**Create new credentials**).
+
+   Dynatrace автоматически генерирует необходимый заголовок `Authorization` с предоставленной информацией.
+
+   Поддерживаемые форматы имени пользователя
+
+   * Браузерные мониторы: `<username>` и `<domain>\<username>`
+   * HTTP-мониторы: `<username>`
+   * **Аутентификация NTLM** в браузерных и HTTP-мониторах: `<username>`
+6. Завершите [настройку вашего HTTP-монитора](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Узнайте о настройке HTTP-мониторов.").
+
+### Аутентификация Bearer или по токену для эндпоинтов
+
+1. Перейдите в **Synthetic Classic** > **Create a synthetic monitor** > **Create an HTTP monitor**.
+2. Выберите **Add HTTP request** и тип **HTTP request**.
+3. В разделе **Additional options** запроса выберите **Set additional HTTP headers**.
+4. Выберите **Add header**.
+5. Заполните заголовок, например:
+
+   **Header name** = `Authorization`
+
+   **Header value** = `Bearer <your-token>`
+
+   или
+
+   **Header name** = `Authorization`
+
+   **Header value** = `Api-Token <your-token>`
+6. Завершите [настройку вашего HTTP-монитора](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Узнайте о настройке HTTP-мониторов.").
+
+### Авторизация OAuth 2.0 для эндпоинтов
+
+Авторизация OAuth 2.0 доступна для HTTP-мониторов и чаще всего используется при запросах к API-эндпоинтам. Dynatrace предоставляет тип запроса **OAuth2 authorization request** — специализированный шаблон HTTP-запроса для запросов авторизации OAuth 2.0.
+
+Сначала необходимо настроить запрос OAuth 2.0 для получения токена доступа, который затем используется во всех последующих HTTP-запросах монитора к API-эндпоинту. Полученный токен не сохраняется в хранилище учётных данных, но легко доступен в качестве опции автозаполнения в последующих HTTP-запросах.
+
+1. Перейдите в **Synthetic Classic** > **Create a synthetic monitor** > **Create an HTTP monitor** и укажите **Name**.
+2. Выберите **Add HTTP request** и тип **OAuth2 authorization request**.
+3. Введите URL, по которому запрашивается токен авторизации (**Access token URL**), и имя запроса (**Name**).
+4. Выберите **Add HTTP request** для просмотра расширенных настроек запроса. Обратите внимание, что запрос OAuth 2.0 автоматически создаётся как запрос `POST`.
+5. Заполните или отредактируйте следующие важные настройки в деталях запроса.
+
+   1. В зависимости от настройки вашего сервера аутентификации выберите **Add authorization data to** в **Request body** или **Request URL**. Заполните POST-параметры (`grant_Type`, `scope`, `client_id`, `username` и `password`) в **Request body** или **Request URL**. Вы можете добавлять или изменять параметры по необходимости.
+
+      ![Параметры OAuth в теле запроса](https://dt-cdn.net/images/oauthparamsbody1-1171-5bbbc6be5d.png)
+
+      ![Параметры OAuth в URL запроса](https://dt-cdn.net/images/oauthparamsurl-1314-353802a4b5.png)
+   2. Автоматически включается **скрипт постобработки**, в котором:
+
+      * Запрос завершается неудачей, если возвращённый код статуса не `200`.
+      * Метод `api.fail()` определяет **сообщение об ошибке**, которое отображается в карточке **Events** на [странице деталей HTTP-монитора](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic "Узнайте о странице деталей Synthetic для HTTP-мониторов.") и в [деталях выполнения](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic#analyze-last-execution "Узнайте о странице деталей Synthetic для HTTP-мониторов.").
+      * При успешном запросе тело ответа, представляющее собой строку в формате JSON, сохраняется в объекте JavaScript (в данном примере — `bearToken-2`).
+      * Метод `api.info()` отправляет информацию в файл лога, доступный в [приватных локациях Synthetic](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Узнайте, как создать приватную локацию для синтетического мониторинга.").
+
+      Пользовательские сообщения лога также отображаются в атрибуте `customLogs` в [деталях выполнения HTTP-монитора](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic#analyze-last-execution "Узнайте о странице деталей Synthetic для HTTP-мониторов.").
+
+      ![Скрипт постобработки](https://dt-cdn.net/images/oauthpostexecutionscript-812-911fe199bc.png)
+   3. **Set token request authentication** позволяет указать дополнительные данные аутентификации (**Basic authentication**, **NTLM** или **Kerberos**) для сервера, за которым находится приложение OAuth.
+
+Для последующих HTTP-запросов
+
+1. Создайте дополнительный HTTP-запрос для эндпоинта, который необходимо мониторить (**Add HTTP request**).
+2. В разделе **Additional options** второго запроса:
+
+   * Включите **Set authentication/authorization** и выберите метод **OAuth2**. Обратите внимание, что эта опция доступна только при наличии ранее созданного запроса авторизации OAuth 2.0 (описано выше).
+
+     Отображается автоматически сгенерированный **скрипт предобработки**, ссылающийся на токен OAuth, полученный в предыдущем запросе.
+
+     ![Метод OAuth в HTTP-запросе](https://dt-cdn.net/images/oauthtokeninsert1-1129-0244726c35.png)
+   * Альтернативно задайте HTTP-заголовок `Authorization` с объектом JavaScript, содержащим токен OAuth, в качестве значения **Header value**.
+
+     ![Метод OAuth в HTTP-запросе](https://dt-cdn.net/images/oauthtokeninsert2-1214-783de8da93.png)
+3. Завершите [настройку вашего HTTP-монитора](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Узнайте о настройке HTTP-мониторов.").
+
+### Аутентификация по клиентскому сертификату для эндпоинтов
+
+1. Перейдите в **Synthetic Classic** > **Create a synthetic monitor** > **Create an HTTP monitor** и укажите **Name**.
+2. Выберите **Add HTTP request** и тип **HTTP request**.
+3. В разделе **Additional options** запроса выберите **Add client certificate**.
+4. Используйте существующий сертификат из [хранилища учётных данных](/docs/manage/credential-vault "Хранение и управление учётными данными в хранилище.") (**Select credentials**) или создайте новый (**Create new credentials**).
+5. Завершите [настройку вашего HTTP-монитора](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Узнайте о настройке HTTP-мониторов.").
+
+Для обеспечения полной взаимной аутентификации отключите опцию [**Accept any SSL certificate**](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#ssl-accept "Узнайте о настройке HTTP-мониторов.") при использовании аутентификации по сертификату.

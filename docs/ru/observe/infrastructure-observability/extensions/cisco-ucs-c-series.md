@@ -1,44 +1,44 @@
 ---
-title: Cisco UCS C-Series extension
+title: Расширение Cisco UCS C-Series
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/cisco-ucs-c-series
 scraped: 2026-03-06T21:36:04.473139
 ---
 
-# Cisco UCS C-Series extension
+# Расширение Cisco UCS C-Series
 
-# Cisco UCS C-Series extension
+# Расширение Cisco UCS C-Series
 
-* Latest Dynatrace
-* Extension
-* Published Feb 21, 2025
+* Последняя Dynatrace
+* Расширение
+* Опубликовано 21 февраля 2025 г.
 
-Get insights into your Cisco UCS C-Series devices.
+Получите информацию о ваших устройствах Cisco UCS C-Series.
 
-## Get started
+## Начало работы
 
-### Overview
+### Обзор
 
-Monitor your Cisco UCS C-Series devices with data collected through the [UCS Manager XML APIï»¿](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/sw/api/b_ucs_api_book/b_ucs_api_book_chapter_00.html).
+Мониторинг устройств Cisco UCS C-Series с данными, собранными через [UCS Manager XML API](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/sw/api/b_ucs_api_book/b_ucs_api_book_chapter_00.html).
 
-This extension collects infrastructure metrics and events for Cisco UCS C-Series hardware components, including CPU, fan modules, fans, memory, storage, power supplies, network adapters, and VIC interfaces.
+Это расширение собирает метрики инфраструктуры и события для аппаратных компонентов Cisco UCS C-Series, включая CPU, модули вентиляторов, вентиляторы, память, хранилище, блоки питания, сетевые адаптеры и интерфейсы VIC.
 
-### Use cases
+### Сценарии использования
 
-* Monitor hardware health/state signals for CPUs, fan modules/fans, memory arrays/units, storage controllers, local disks, RAID batteries, power supplies, and virtual drives.
-* Observe connectivity and status for adapters, external interfaces, vHBAs, and vNICs.
-* Detect UCS faults and raise Dynatrace error events for faster issue triage.
+* Мониторинг сигналов состояния аппаратных компонентов — CPU, модулей вентиляторов/вентиляторов, массивов/модулей памяти, контроллеров хранения, локальных дисков, батарей RAID, блоков питания и виртуальных дисков.
+* Наблюдение за подключением и состоянием адаптеров, внешних интерфейсов, vHBA и vNIC.
+* Обнаружение сбоев UCS и создание событий ошибок Dynatrace для ускоренной сортировки проблем.
 
-### Compatibility information
+### Информация о совместимости
 
-* Dynatrace version 1.318+
-* Cisco UCS C-Series device with access to the Cisco UCS Manager XML API.
+* Dynatrace версии 1.318+
+* Устройство Cisco UCS C-Series с доступом к Cisco UCS Manager XML API.
 
-### Requirements
+### Требования
 
-* A user account with read-only privileges for UCS Manager XML API queries, provided to the extension as username/password.
-* Network access from ActiveGate to the UCS endpoint.
-* Ability for the configured user to perform API operations: `aaaLogin`, `configResolveClass`, `aaaLogout`.
-* The specific classes queried depend on enabled feature sets:
+* Учётная запись с правами только на чтение для запросов UCS Manager XML API, предоставленная расширению в виде имени пользователя/пароля.
+* Сетевой доступ от ActiveGate к конечной точке UCS.
+* Возможность для настроенного пользователя выполнять API-операции: `aaaLogin`, `configResolveClass`, `aaaLogout`.
+* Конкретные запрашиваемые классы зависят от включённых наборов функций:
 
   + C-Series Faults: `faultInst`
   + C-Series CPU: `processorUnit`
@@ -58,18 +58,18 @@ This extension collects infrastructure metrics and events for Cisco UCS C-Series
   + C-Series VIC vNIC: `adaptorHostEthIf`
   + C-Series Virtual Drive: `storageVirtualDrive`
 
-## Activation and setup
+## Активация и настройка
 
-Activate the extension in your environment from Dynatrace Hub, configure connection details for your UCS endpoint, and select the feature sets you want to collect.
+Активируйте расширение в вашей среде из Dynatrace Hub, настройте параметры подключения к вашей конечной точке UCS и выберите наборы функций для сбора.
 
-## Details
+## Подробности
 
-The extension package contains:
+Пакет расширения содержит:
 
-* Overview dashboards (Classic & Platform)
-* Analysis screens integrated with ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**
-* Unified analysis pages
-* Custom topology types extracted from metric dimensions:
+* Обзорные панели (классическая и платформенная)
+* Экраны анализа, интегрированные с ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**
+* Унифицированные страницы анализа
+* Пользовательские типы топологии, извлечённые из размерностей метрик:
 
   + Cisco UCS C-Series CPU
   + Cisco UCS C-Series External Interface
@@ -89,11 +89,11 @@ The extension package contains:
   + Cisco UCS C-Series Virtual Drive
   + Cisco UCS C-Series Rack
 
-### Licensing and costs
+### Лицензирование и стоимость
 
-#### DPS licensing
+#### Лицензирование DPS
 
-[DPS license consumption](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") is based on metric data points ingested. The following formula provides an approximate annual ingest amount if all feature sets are enabled and the extension runs every minute:
+Потребление [лицензии DPS](/docs/license "О Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace.") основано на принимаемых точках данных метрик. Следующая формула даёт приблизительный годовой объём приёма при включении всех наборов функций и запуске расширения каждую минуту:
 
 ```
 ((2 * # of CPUs)
@@ -163,9 +163,9 @@ The extension package contains:
 * 525,600 metric data points/year
 ```
 
-#### Classic licensing
+#### Классическое лицензирование
 
-For [Dynatrace classic licenses](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing."), metric ingestion consumes Davis Data Units (DDUs) at a rate of 0.001 DDUs per metric data point.
-For details, see [DDUs for metrics](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+Для [классических лицензий Dynatrace](/docs/license/monitoring-consumption-classic "Понимание расчёта потребления мониторинга Dynatrace для классического лицензирования.") приём метрик потребляет Davis Data Units (DDU) со скоростью 0,001 DDU на точку данных метрики.
+Подробнее см. [DDU для метрик](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Понимание расчёта потребления и стоимости Davis Data Units для мониторинга метрик.").
 
-To estimate annual DDU consumption, multiply the result of the formula above by 0.001.
+Для оценки годового потребления DDU умножьте результат формулы выше на 0,001.

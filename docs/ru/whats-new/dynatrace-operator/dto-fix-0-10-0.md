@@ -1,0 +1,59 @@
+---
+title: Dynatrace Operator release notes version 0.10.0
+source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-0-10-0
+scraped: 2026-03-04T21:38:02.370194
+---
+
+# Dynatrace Operator release notes version 0.10.0
+
+# Dynatrace Operator release notes version 0.10.0
+
+* Последняя версия Dynatrace
+* Примечания к выпуску
+* Опубликовано 15 декабря 2022 г.
+
+Дата выпуска: 30 ноября 2022 г.
+
+## Новые функции и улучшения
+
+* ![Warning](https://dt-cdn.net/images/warning-16-56c09ccf83.png "Warning") Критическое изменение: поддержка токенов ActiveGate теперь включена по умолчанию.
+
+  + Требуется дополнительная область действия токена API: `activeGateTokenManagement.create`
+  + Чтобы отключить эту функцию, установите `feature.dynatrace.com/activegate-authtoken=false`
+* Вы можете [настроить распространение метки сборки из пода в переменные среды](/docs/ingest-from/setup-on-k8s/guides#propagation "Подробное описание параметров установки и конфигурации для конкретных сценариев использования").
+* Вы можете [настроить интервал сборки мусора для журналов CSI-драйвера](/docs/ingest-from/setup-on-k8s/deployment/troubleshooting#limit-logs "Эта страница поможет вам справиться с трудностями, которые могут возникнуть при работе с Dynatrace Operator и его компонентами.").
+* Рекомендуемые метки добавлены в Dockerfile и образ выпуска.
+
+### Подкоманда troubleshoot
+
+* Если параметр `--dynakube` не указан, анализируются все DynaKube в заданном пространстве имён.
+* Теперь отображаются все ошибки, обнаруженные подкомандой `troubleshoot`.
+
+### Метки и аннотации
+
+* Вы можете отключить внедрение webhook для пода в отслеживаемом пространстве имён с помощью следующей аннотации пода: `dynatrace.com/inject=false`.
+* Настраиваемые метки и аннотации для OneAgent и ActiveGate добавлены в пользовательский ресурс DynaKube.
+
+### Флаги функций
+
+* Вы можете настроить распространение метки выпуска, установив флаг функции `feature.dynatrace.com/label-version-detection=true` в DynaKube.
+* Вы можете настроить более агрессивную сборку мусора для CSI-драйвера:
+
+  + Переменная среды `MAX_UNMOUNTED_VOLUME_AGE` в контейнере `provisioner` пода CSI-драйвера задаёт интервал в днях.
+
+### Helm
+
+* Добавлен параметр `csidriver.maxUnmountedVolumeAge` для установки переменной среды `MAX_UNMOUNTED_VOLUME_AGE`.
+
+## Устранённые проблемы
+
+* Исправлено отсутствие метаданных пода в файле обогащения в случае отключения внедрения OneAgent.
+* Исправлено повторное создание StatefulSet для ActiveGate при внешней маркировке.
+* Исправлена обработка пользовательских образов в подкоманде `troubleshoot`.
+* Исправлено отсутствие `readOnlyRootFilesystem` для init-контейнера ActiveGate в случае установленного флага функции.
+* Снижено потребление памяти по умолчанию компонентами Dynatrace Operator за счёт уменьшения количества экземпляров логгера.
+* Уменьшен интервал сборки мусора для журналов OneAgent CSI-драйвера по умолчанию до семи дней.
+
+## Ссылки
+
+Смотрите [примечания к выпуску на GitHub](https://github.com/Dynatrace/dynatrace-operator/releases/tag/v0.10.0).
