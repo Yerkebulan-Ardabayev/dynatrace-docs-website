@@ -15,15 +15,13 @@ theme:
   custom_dir: docs/overrides
 
   palette:
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    - scheme: slate
       primary: custom
       accent: custom
       toggle:
         icon: material/weather-sunny
         name: Светлая тема
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+    - scheme: default
       primary: custom
       accent: custom
       toggle:
@@ -34,17 +32,16 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
-    - navigation.expand
     - navigation.top
     - navigation.instant
     - navigation.path
+    - navigation.indexes
     - search.suggest
     - search.highlight
     - search.share
     - content.code.copy
     - content.code.annotate
     - toc.follow
-    - header.autohide
 
   icon:
     logo: material/lightning-bolt
@@ -59,8 +56,6 @@ plugins:
       lang:
         - ru
         - en
-      exclude:
-        - notebooklm/**
 
 # =============================================================================
 # НАВИГАЦИЯ — Оптимизированная информационная архитектура

@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block announce %}{% endblock %}
+
+{% block extrahead %}
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge */
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'Inter', sans-serif;
+      color: var(--md-default-fg-color--lighter);
+      margin-right: 0.5rem;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+
+    /* Version selector in header */
+    .docflow-version-select {
+      display: none;
+      align-items: center;
+      margin-left: 0.5rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color--lighter);
+      color: var(--md-default-fg-color--lighter);
+      font-size: 0.75rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
+      -webkit-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237e7c98' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.4rem center;
+      padding-right: 1.5rem;
+    }
+    @media (min-width: 60em) {
+      .docflow-version-select {
+        display: flex;
+      }
+    }
+    .docflow-version-select:hover {
+      border-color: var(--md-primary-fg-color--light);
+      color: var(--md-default-fg-color);
+    }
+    .docflow-version-select:focus {
+      outline: none;
+      border-color: var(--md-primary-fg-color);
+      box-shadow: 0 0 0 3px var(--docflow-glow-primary);
+    }
+  </style>
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+  {{ super() }}
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script>
+    // Inject version selector into header
+    document.addEventListener('DOMContentLoaded', function() {
+      var headerInner = document.querySelector('.md-header__inner');
+      if (headerInner) {
+        var select = document.createElement('select');
+        select.className = 'docflow-version-select';
+        select.innerHTML = '<option value="managed" selected>Managed</option><option value="saas">SaaS</option>';
+        select.setAttribute('aria-label', 'Version selector');
+
+        // Insert before the search or at the end
+        var searchContainer = headerInner.querySelector('.md-header__source');
+        if (searchContainer) {
+          headerInner.insertBefore(select, searchContainer);
+        } else {
+          headerInner.appendChild(select);
+        }
+      }
+
+      // Keyboard shortcut Ctrl+K for search
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+      });
+    });
+  </script>
+{% endblock %}
