@@ -12,21 +12,22 @@ use_directory_urls: true
 theme:
   name: material
   language: ru
+  custom_dir: docs/overrides
 
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: deep purple
-      accent: cyan
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-sunny
         name: Светлая тема
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: deep purple
-      accent: cyan
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-night
         name: Тёмная тема
 
   features:
@@ -36,18 +37,21 @@ theme:
     - navigation.expand
     - navigation.top
     - navigation.instant
-    - navigation.path          # breadcrumbs
+    - navigation.path
     - search.suggest
     - search.highlight
+    - search.share
     - content.code.copy
+    - content.code.annotate
     - toc.follow
+    - header.autohide
 
   icon:
-    logo: material/server
+    logo: material/lightning-bolt
     repo: fontawesome/brands/github
 
   font:
-    text: Roboto
+    text: Inter
     code: JetBrains Mono
 
 plugins:
