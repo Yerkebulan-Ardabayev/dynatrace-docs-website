@@ -61,7 +61,7 @@ This feature is designed for SREs, developers, and DevOps teams who need fast, a
 ### Integration with Dynatrace
 
 * Embedded in the ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** application as a new **Failures** tab
-* Integrated into the **Dynatrace problems-specific drill-down options** when failure rate increases are detected as [root causes](/docs/dynatrace-intelligence/davis-problems-app#streamline-problem-resolution-with-problems-specific-drill-down-options "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* Integrated into the **Dynatrace problems-specific drill-down options** when failure rate increases are detected as [root causes](../../../dynatrace-intelligence/davis-problems-app.md#streamline-problem-resolution-with-problems-specific-drill-down-options "Use the Problems app to quickly get to the root cause of incidents in your environment.")
 * Replaces the legacy **Failure Analysis** page for DPS customers
 
 ## Access and navigation
@@ -98,9 +98,9 @@ While the new **Failure Analysis** experience introduces significant improvement
 
 To deepen your understanding of failure detection and troubleshooting in Dynatrace, explore the following resources:
 
-* [Configure service failure detection](/docs/observe/application-observability/services/service-detection/service-detection-v1/configure-service-failure-detection "Discover which service error types Dynatrace automatically detects and learn how to adjust failure detection settings to meet your specific requirements.")
-* [Root cause analysis concepts](/docs/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.")
-* [Triage and investigate incidents in the Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* [Configure service failure detection](service-detection/service-detection-v1/configure-service-failure-detection.md "Discover which service error types Dynatrace automatically detects and learn how to adjust failure detection settings to meet your specific requirements.")
+* [Root cause analysis concepts](../../../dynatrace-intelligence/root-cause-analysis/concepts.md "Get acquainted with root cause analysis concepts.")
+* [Triage and investigate incidents in the Problems app](../../../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.")
 
 ### Join the conversation
 

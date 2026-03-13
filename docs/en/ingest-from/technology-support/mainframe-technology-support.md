@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:19:51.815419
 
 Dynatrace supports monitoring of the technologies and versions listed below on IBM z/OS.
 
-For the supported operating systems of the zRemote module, see [System requirements](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote#system-requirements "Prepare and install the zRemote for z/OS monitoring.").
+For the supported operating systems of the zRemote module, see [System requirements](../dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote.md#system-requirements "Prepare and install the zRemote for z/OS monitoring.").
 
 Technology support version schema
 
@@ -42,7 +42,7 @@ Definition of the technology support version schema with examples:
 
 ## IBM z/OS
 
-To get started with monitoring, see [Dynatrace for z/OS](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos "Install, configure, and manage Dynatrace modules on z/OS.").
+To get started with monitoring, see [Dynatrace for z/OS](../dynatrace-oneagent/installation-and-operation/zos.md "Install, configure, and manage Dynatrace modules on z/OS.").
 
 | Operating system | Versions |
 | --- | --- |
@@ -50,7 +50,7 @@ To get started with monitoring, see [Dynatrace for z/OS](/docs/ingest-from/dynat
 
 ## IBM CICS
 
-To get started with monitoring, see [Install the CICS module](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics "Install the Dynatrace CICS module.").
+To get started with monitoring, see [Install the CICS module](../dynatrace-oneagent/installation-and-operation/zos/installation/install-cics.md "Install the Dynatrace CICS module.").
 
 | IBM CICS | Versions |
 | --- | --- |
@@ -81,7 +81,7 @@ The database access method DL/I is supported.
 
 ## IBM IMS
 
-To get started with monitoring, see [Install the IMS module](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims "Install the Dynatrace IMS module.").
+To get started with monitoring, see [Install the IMS module](../dynatrace-oneagent/installation-and-operation/zos/installation/install-ims.md "Install the Dynatrace IMS module.").
 
 | IBM IMS | Versions |
 | --- | --- |
@@ -114,7 +114,7 @@ The database access methods DL/I and Fast Path are supported.
 
 ## z/OS Java
 
-To get started with monitoring, see [Install the z/OS Java module](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java "Set up Java monitoring on z/OS using the Java module.").
+To get started with monitoring, see [Install the z/OS Java module](../dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java.md "Set up Java monitoring on z/OS using the Java module.").
 
 | Java Runtime | Versions |
 | --- | --- |
@@ -175,4 +175,4 @@ Only the [Db2 JDBC driver typesï»¿](https://www.ibm.com/docs/en/sdi/7.2.0.3?t
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [JMX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics "Learn how to set up JMX metrics monitoring for your Java applications on z/OS.") | 1.0+ |
+| [JMX](../dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics.md "Learn how to set up JMX metrics monitoring for your Java applications on z/OS.") | 1.0+ |

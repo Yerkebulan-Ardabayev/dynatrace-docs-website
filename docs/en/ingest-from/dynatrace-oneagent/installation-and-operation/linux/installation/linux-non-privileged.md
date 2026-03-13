@@ -25,7 +25,7 @@ To install OneAgent in non-privileged mode, your system must meet the following 
 * The filesystem must not be mounted as `noexec` or `nosuid`.
 * Linux Filesystem Capabilities must be enabled. For example, SUSE Linux Enterprise Server 11 has Linux Filesystem Capabilities disabled by default. For more information, see [Non-privileged mode and Linux Filesystem Capabilities](#cap) below.
 
-See [OneAgent security on Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux#permissions "Learn about Dynatrace OneAgent security and modifications to your Linux-based system") to learn about monitoring actions executed by OneAgent that require privileged access.
+See [OneAgent security on Linux](oneagent-security-linux.md#permissions "Learn about Dynatrace OneAgent security and modifications to your Linux-based system") to learn about monitoring actions executed by OneAgent that require privileged access.
 
 ## Privileges during installation
 
@@ -71,7 +71,7 @@ Required only during initialization phase and is unconditionally dropped afterwa
 
 2
 
-Not used if [auto-updates](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#enable-or-disable-auto-update "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") and [automatic injection](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#injection-toggle "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") are disabled.
+Not used if [auto-updates](../../../oneagent-configuration-via-command-line-interface.md#enable-or-disable-auto-update "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") and [automatic injection](../../../oneagent-configuration-via-command-line-interface.md#injection-toggle "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") are disabled.
 
 3
 
@@ -83,7 +83,7 @@ Only if ambient capabilities aren't supported.
 
 5
 
-Not used if [auto-updates](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#enable-or-disable-auto-update "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") are disabled.
+Not used if [auto-updates](../../../oneagent-configuration-via-command-line-interface.md#enable-or-disable-auto-update "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") are disabled.
 
 6
 
@@ -99,7 +99,7 @@ Only on kernels older than 2.6.33.
 
 9
 
-Not started if [automatic injection](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#injection-toggle "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") is disabled.
+Not started if [automatic injection](../../../oneagent-configuration-via-command-line-interface.md#injection-toggle "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") is disabled.
 
 Enable Linux Filesystem Capabilities
 
@@ -142,7 +142,7 @@ If you don't want to grant the superuser permission level to OneAgent, you can d
 
 `sudo /bin/sh Dynatrace-OneAgent-Linux-1.0.0.sh NON_ROOT_MODE=1 DISABLE_ROOT_FALLBACK=1`
 
-In such cases, you must perform [manual updates on individual hosts](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux#manual-update "Learn about the different ways to update OneAgent on Linux."). We don't recommend using the `DISABLE_ROOT_FALLBACK=1` parameter for OneAgents on Azure or Docker containers.
+In such cases, you must perform [manual updates on individual hosts](../operation/update-oneagent-on-linux.md#manual-update "Learn about the different ways to update OneAgent on Linux."). We don't recommend using the `DISABLE_ROOT_FALLBACK=1` parameter for OneAgents on Azure or Docker containers.
 
 ## How do I know if OneAgent operates in non-privileged mode?
 

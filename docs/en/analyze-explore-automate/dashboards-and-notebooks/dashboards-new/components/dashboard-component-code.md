@@ -69,7 +69,7 @@ To review code
 ## Example 1: Simple request and response to Table
 
 In this simple example, we leverage the [dummyjson.comï»¿](https://dummyjson.com/docs/products) API to retrieve sample product data.
-The result of this API call is multiple sample products in JSON format. By adding `.products` to the result, we can pass it directly to a [table](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-table "Create and edit table visualizations on your Dynatrace dashboards and notebooks.") visualization.
+The result of this API call is multiple sample products in JSON format. By adding `.products` to the result, we can pass it directly to a [table](../../edit-visualizations/visualization-table.md "Create and edit table visualizations on your Dynatrace dashboards and notebooks.") visualization.
 
 ![Add code - example 1](https://dt-cdn.net/images/screenshot-2023-04-28-at-10-09-03-3352-8ebe772088.png)
 
@@ -99,7 +99,7 @@ return result.products;
 
 ## Example 2: Simple request and response to Single value
 
-In this example, we build on example 1 by calculating the average price for all sample products and pass it to a [single value](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value "Create and edit single value visualizations on your Dynatrace dashboards and notebooks.") visualization.
+In this example, we build on example 1 by calculating the average price for all sample products and pass it to a [single value](../../edit-visualizations/visualization-chart-single-value.md "Create and edit single value visualizations on your Dynatrace dashboards and notebooks.") visualization.
 
 ![Add code - example 2](https://dt-cdn.net/images/screenshot-2023-04-28-at-11-38-07-3356-ca95b247f3.png)
 
@@ -149,7 +149,7 @@ return avgPrice;
 
 ## Example 3: Advanced request and response to Record list
 
-In this example, we use the Dynatrace [Environment API](/docs/dynatrace-api/environment-api "Find out what you need to use the environment section of the Dynatrace API.") to retrieve events and create a table visualization.
+In this example, we use the Dynatrace [Environment API](../../../../dynatrace-api/environment-api.md "Find out what you need to use the environment section of the Dynatrace API.") to retrieve events and create a table visualization.
 
 ![Add code - example 3](https://dt-cdn.net/images/screenshot-2023-04-28-at-14-02-51-3358-99746f6f57.webp)
 

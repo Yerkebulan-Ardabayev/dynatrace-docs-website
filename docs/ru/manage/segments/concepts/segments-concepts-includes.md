@@ -54,7 +54,7 @@ Classic entity (классическая сущность)
 
 ![segments query](https://dt-cdn.net/images/segments-5-1498-f099426644.png)
 
-Условия включений сегмента вычисляются во время запроса, непосредственно влияя на его производительность. Обязательно рассмотрите использование [![OpenPipeline](https://cdn.bfldr.com/B686QPH3/at/rp4vgwhpjx5rv6rm53mk88cc/OpenPipeline.svg?auto=webp&width=72&height=72 "OpenPipeline") OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") для обработки полей и упрощения сложных условий.
+Условия включений сегмента вычисляются во время запроса, непосредственно влияя на его производительность. Обязательно рассмотрите использование [![OpenPipeline](https://cdn.bfldr.com/B686QPH3/at/rp4vgwhpjx5rv6rm53mk88cc/OpenPipeline.svg?auto=webp&width=72&height=72 "OpenPipeline") OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") для обработки полей и упрощения сложных условий.
 
 ## Типы данных
 

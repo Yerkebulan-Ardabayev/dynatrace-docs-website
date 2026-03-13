@@ -17,7 +17,7 @@ NuGet-пакет `Dynatrace.OpenTelemetry.Instrumentation.GoogleCloudFunctions` 
 
 ## Предварительные условия
 
-* [Настройте мониторинг Google Cloud Functions с помощью OpenTelemetry](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf "Мониторинг Google Cloud Functions с помощью OpenTelemetry и Dynatrace.").
+* [Настройте мониторинг Google Cloud Functions с помощью OpenTelemetry](opentelemetry-on-gcf.md "Мониторинг Google Cloud Functions с помощью OpenTelemetry и Dynatrace.").
 * Dynatrace.OpenTelemetry.Instrumentation.GoogleCloudFunctions версии 1.273+
 * Версии Cloud Functions: 1-е поколение, 2-е поколение
 
@@ -35,9 +35,9 @@ dotnet add package Dynatrace.OpenTelemetry.Instrumentation.GoogleCloudFunctions
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Инициализация трассировки**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet#initialize "Мониторинг Google Cloud Functions с помощью OpenTelemetry для .NET и Dynatrace.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Инициализация трассировки**](opentelemetry-on-gcf-dotnet.md#initialize "Мониторинг Google Cloud Functions с помощью OpenTelemetry для .NET и Dynatrace.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Инструментирование функции-обработчика**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet#instrument "Мониторинг Google Cloud Functions с помощью OpenTelemetry для .NET и Dynatrace.")
+**Инструментирование функции-обработчика**](opentelemetry-on-gcf-dotnet.md#instrument "Мониторинг Google Cloud Functions с помощью OpenTelemetry для .NET и Dynatrace.")
 
 ## Шаг 1. Инициализация трассировки
 
@@ -232,5 +232,5 @@ TracerProvider = Sdk.CreateTracerProviderBuilder()
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Google Cloud](/docs/ingest-from/google-cloud-platform "Мониторинг Google Cloud с помощью Dynatrace.")
+* [Настройка Dynatrace в Google Cloud](../../../google-cloud-platform.md "Мониторинг Google Cloud с помощью Dynatrace.")
 * [Мониторинг Google Cloud](https://www.dynatrace.com/technologies/google-cloud-monitoring/)

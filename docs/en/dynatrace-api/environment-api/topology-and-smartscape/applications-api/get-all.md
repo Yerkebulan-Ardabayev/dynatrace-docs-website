@@ -12,9 +12,9 @@ scraped: 2026-03-05T21:26:54.216194
 * Updated on Mar 22, 2023
 * Deprecated
 
-This API is deprecated. Use the [Monitored entities API](/docs/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API.") instead. You can find more information about switching to the new API in the [migration guide](/docs/dynatrace-api/basics/deprecation-migration-guides/topology-v1-to-entity-v2 "Migrate your automation to the Monitored entities API.").
+This API is deprecated. Use the [Monitored entities API](../../entity-v2.md "Learn about the Dynatrace Monitored entities API.") instead. You can find more information about switching to the new API in the [migration guide](../../../basics/deprecation-migration-guides/topology-v1-to-entity-v2.md "Migrate your automation to the Monitored entities API.").
 
-Fetches the list of all [applications](/docs/discover-dynatrace/get-started/glossary#app "Get acquainted with Dynatrace terminology.") in your Dynatrace environment, along with their parameters.
+Fetches the list of all [applications](../../../../discover-dynatrace/get-started/glossary.md#app "Get acquainted with Dynatrace terminology.") in your Dynatrace environment, along with their parameters.
 
 The full list can be lengthy, so you can narrow it down by specifying filter parameters, like tags. See the **Parameters** section for more details.
 
@@ -34,7 +34,7 @@ The request produces an `application/json` payload.
 
 To execute this request, you need an access token with `DataExport` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Parameters
 
@@ -791,4 +791,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/applications
 
 ## Related topics
 
-* [Real User Monitoring](/docs/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.")
+* [Real User Monitoring](../../../../observe/digital-experience/rum-concepts/rum-overview.md "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.")

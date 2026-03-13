@@ -13,7 +13,7 @@ updated: 2026-02-09
 * 4-min read
 * Published Jan 18, 2023
 
-The Settings 2.0 framework provides a unified instrument to control various configurations in Dynatrace. Whether you use the Dynatrace web UI or the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers."), you're setting the same configurations with the same effect.
+The Settings 2.0 framework provides a unified instrument to control various configurations in Dynatrace. Whether you use the Dynatrace web UI or the [Settings API](../../../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers."), you're setting the same configurations with the same effect.
 
 Each Settings 2.0 configuration is represented by a *settings object* (which defines a particular set of parameters) and is based on a *settings schema* (which defines which parameters the configuration includes). Schemas are created and managed by Dynatrace; you cannot create your own schemas. Objects, on the other hand, are entirely within your control.
 
@@ -49,11 +49,11 @@ Every Settings 2.0 configuration maintains a history of changes, keeping track o
 
 ## Permissions and access
 
-Access to settings is controlled via [IAM policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies"). Policies enable you to create flexible and granular access to configurations, where users have access only to those settings where they have permissions assigned. No additional permissions are needed for policies to take effect. Policies grant access to configurations via both the Dynatrace web UI and the Settings API unless configured otherwise on the schema level.
+Access to settings is controlled via [IAM policies](../identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies"). Policies enable you to create flexible and granular access to configurations, where users have access only to those settings where they have permissions assigned. No additional permissions are needed for policies to take effect. Policies grant access to configurations via both the Dynatrace web UI and the Settings API unless configured otherwise on the schema level.
 
 If you need to configure fine-grained access to certain entities, you can do so via management zones or host groups. Note that an entity might be a part of multiple management zones but only one host group, which makes the host-group-based approach more direct, while the management-zone-based approach provides more flexibility.
 
-To learn how to configure access policies for settings, see [IAM policy reference](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#settings "Complete reference of IAM policies and corresponding conditions across all Dynatrace services."). Below you can find some sample policies.
+To learn how to configure access policies for settings, see [IAM policy reference](../../../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#settings "Complete reference of IAM policies and corresponding conditions across all Dynatrace services."). Below you can find some sample policies.
 
 Grant read and write access to the service-level objective definitions settings
 
@@ -145,5 +145,5 @@ WHERE settings:schemaId = "builtin:anomaly-detection.infrastructure-hosts" AND e
 
 ## Related topics
 
-* [Settings 2.0 - Available schemas](/docs/dynatrace-api/environment-api/settings/schemas "View the entire settings schemas table of your monitoring environment via the Dynatrace API.")
-* [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.")
+* [Settings 2.0 - Available schemas](../../dynatrace-api/environment-api/settings/schemas.md "View the entire settings schemas table of your monitoring environment via the Dynatrace API.")
+* [Settings API](../../../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.")

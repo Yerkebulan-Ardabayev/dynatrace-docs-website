@@ -17,7 +17,7 @@ Dynatrace SaaS version 1.330+
 
 With the **URL pattern matching** feature, Service Detection v2 (SDv2) can generate better endpoint names by extracting URL path patterns from raw URL paths.
 
-Dynatrace can extract stable, lowâvolatility URL patterns from raw URL paths and write them to the `url.path.pattern` span attribute. The `url.path.pattern` attribute is derived beforehand and then used by [SDv2 endpoint detection](/docs/observe/application-observability/services/service-detection/service-detection-v2/endpoint-detection-v2 "Find out how to detect endpoints that are entry points into your service.") to name and group endpoints appropriately.
+Dynatrace can extract stable, lowâvolatility URL patterns from raw URL paths and write them to the `url.path.pattern` span attribute. The `url.path.pattern` attribute is derived beforehand and then used by [SDv2 endpoint detection](endpoint-detection-v2.md "Find out how to detect endpoints that are entry points into your service.") to name and group endpoints appropriately.
 
 The **URL pattern matching** feature is designed for situations where frameworks or servers don't provide route templates (for example, reverse proxies or libraries without `http.route`), so endpoint names remain meaningful and consistent, preserving correct granularity for critical performance metrics.
 
@@ -26,7 +26,7 @@ The **URL pattern matching** feature is designed for situations where frameworks
 This page describes URL path pattern matching for SDv2 and how to create URL path pattern matching rules, specifically how to define URL path patterns correctly.
 
 * SDv2 applies URL pattern matching to the `span.kind == server` and `span.kind == consumer` span types.
-* Endpoint detection includes the **HTTP request method and URL path pattern** [built-in endpoint rule](/docs/observe/application-observability/services/service-detection/service-detection-v2/endpoint-detection-v2#default-endpoint-rules "Find out how to detect endpoints that are entry points into your service."). This rule uses `url.path.pattern` and takes precedence over the **HTTP request method and route** rule in determining endpoint names. This way, your extracted URL pattern takes precedence when both `url.path.pattern` and `http.route` are available.
+* Endpoint detection includes the **HTTP request method and URL path pattern** [built-in endpoint rule](endpoint-detection-v2.md#default-endpoint-rules "Find out how to detect endpoints that are entry points into your service."). This rule uses `url.path.pattern` and takes precedence over the **HTTP request method and route** rule in determining endpoint names. This way, your extracted URL pattern takes precedence when both `url.path.pattern` and `http.route` are available.
 * To benefit from the **URL pattern matching** feature, you need to [create URL path pattern matching rules](#create-rule), specifying the required URL path patterns according to the pattern syntax reference.
 * A URL path pattern describes how a raw URL path (for example, `/order/12345`) is generalized into a stable template (for example, `/order/{id}`). It's leveraged to produce lowâvolatility values for the `url.path.pattern` span attribute.
 
@@ -93,7 +93,7 @@ To create a URL path pattern matching rule
 
 1. Go to **Settings** (Dynatrace Classic) or **Settings Classic** > **Service detection** > **URL path pattern matching**.
 
-When the **Settings Classic** option is not available for you, use the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") to create URL pattern matching rules.
+When the **Settings Classic** option is not available for you, use the [Settings API](../../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") to create URL pattern matching rules.
 
 2. Select **Add rule**.
 3. Fill in the following optional and required fields.
@@ -106,7 +106,7 @@ When the **Settings Classic** option is not available for you, use the [Settings
      A human-readable descriptor of the rule.
    * **Matching condition**: Required
 
-     A [DQL matcher](/docs/platform/openpipeline/reference/dql-matcher-in-openpipeline "Examine specific DQL functions and logical operators for log processing.").
+     A [DQL matcher](../../../../../platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing.").
      If the matching condition applies, the rule is evaluated.
 4. Select **Add item** and specify a URL path pattern according to the [pattern syntax reference](#syntax-reference). Repeat if more path patterns should to be added.
 5. If required, use ![Drag handle](https://dt-cdn.net/images/drag-handle-turquoise-600-1aa0e5ea00.svg "Drag handle") to re-order the added URL path patterns, considering that the first matching pattern is used to determine the `url.path.pattern` attribute value.
@@ -118,7 +118,7 @@ You can edit, disable, or delete your URL pattern matching rules.
 
 1. Go to **Settings** (Dynatrace Classic) or **Settings Classic** > **Service detection** > **URL path pattern matching**.
 
-When the **Settings Classic** option is not available for you, use the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") to create URL pattern matching rules.
+When the **Settings Classic** option is not available for you, use the [Settings API](../../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") to create URL pattern matching rules.
 
 2. Make the required changes to your URL path pattern matching rules:
 
@@ -140,4 +140,4 @@ The **URL pattern matching** feature is particularly useful for the following us
 
 ## Related topics
 
-* [Customize endpoint detection in Service Detection v2](/docs/observe/application-observability/services/service-detection/service-detection-v2/endpoint-detection-v2 "Find out how to detect endpoints that are entry points into your service.")
+* [Customize endpoint detection in Service Detection v2](endpoint-detection-v2.md "Find out how to detect endpoints that are entry points into your service.")

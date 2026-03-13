@@ -321,9 +321,9 @@ ActiveGate версии 1.269+
 
 ### Scope
 
-Обратите внимание, что каждый хост ActiveGate, выполняющий ваше расширение, нуждается в корневом сертификате для проверки подлинности расширения. Дополнительную информацию см. в разделе [Подписание расширения](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
+Обратите внимание, что каждый хост ActiveGate, выполняющий ваше расширение, нуждается в корневом сертификате для проверки подлинности расширения. Дополнительную информацию см. в разделе [Подписание расширения](../../sign-extensions.md "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
 
-Область действия — это группа ActiveGate, которая будет выполнять расширение. Только один ActiveGate из группы будет выполнять данную конфигурацию мониторинга. Если вы планируете использовать один ActiveGate, назначьте его в выделенную группу. Вы можете назначить ActiveGate в группу во время или после установки. Дополнительную информацию см. в разделе [Группа ActiveGate](/docs/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
+Область действия — это группа ActiveGate, которая будет выполнять расширение. Только один ActiveGate из группы будет выполнять данную конфигурацию мониторинга. Если вы планируете использовать один ActiveGate, назначьте его в выделенную группу. Вы можете назначить ActiveGate в группу во время или после установки. Дополнительную информацию см. в разделе [Группа ActiveGate](../../../../dynatrace-activegate/activegate-group.md "Understand the basic concepts of ActiveGate groups.").
 
 Используйте следующий формат при определении группы ActiveGate:
 

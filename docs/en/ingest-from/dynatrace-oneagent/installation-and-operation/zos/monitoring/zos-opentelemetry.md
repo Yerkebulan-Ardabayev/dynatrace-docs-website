@@ -31,7 +31,7 @@ OpenTelemetry version 1.0+
 
 Enabling OpenTelemetry interoperability connects the z/OS Java code module to the OpenTelemetry API. When enabled, the code module redirects certain OpenTelemetry API usage (for example, `GlobalOpenTelemetry`) to the internal Dynatrace OpenTelemetry SDK.
 
-The z/OS Java code module forwards the captured [OpenTelemetry Spansï»¿](https://opentelemetry.io/docs/concepts/signals/traces/#spans-in-opentelemetry), via the [zDC subsystem](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java "Set up Java monitoring on z/OS using the Java module.") and [zRemote module](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote "Prepare and install the zRemote for z/OS monitoring."), to your Dynatrace environment.
+The z/OS Java code module forwards the captured [OpenTelemetry Spansï»¿](https://opentelemetry.io/docs/concepts/signals/traces/#spans-in-opentelemetry), via the [zDC subsystem](../installation/install-zos-java.md "Set up Java monitoring on z/OS using the Java module.") and [zRemote module](../installation/install-zremote.md "Prepare and install the zRemote for z/OS monitoring."), to your Dynatrace environment.
 
 ![z/OS Java OpenTelemetry](https://dt-cdn.net/images/zos-java-otel-1369-e7b35738b0.png)
 
@@ -41,7 +41,7 @@ Recommendation: avoid using the OpenTelemetry SDK in your applications together 
 
 OpenTelemetry interoperability is disabled by default. To enable it, add the `OpenTelemetry: EnableIntegration` attribute to your `dtconfig.json` file as shown in the following example.
 
-Typically, you've created the `dtconfig.json` file during the [z/OS Java code module installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java#download "Set up Java monitoring on z/OS using the Java module.") and have set the attributes `Tenant`, `ClusterID`, and `zdcName` to your environment.
+Typically, you've created the `dtconfig.json` file during the [z/OS Java code module installation](../installation/install-zos-java.md#download "Set up Java monitoring on z/OS using the Java module.") and have set the attributes `Tenant`, `ClusterID`, and `zdcName` to your environment.
 
 ```
 {
@@ -515,7 +515,7 @@ Suppressed spans will not be visible in distributed traces.
 
 ## Define a request attribute for span attributes
 
-You can define a [request attribute](/docs/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") for any captured span attribute. To do so
+You can define a [request attribute](../../../../../observe/application-observability/services/request-attributes.md "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") for any captured span attribute. To do so
 
 1. Go to **Settings** > **Server-side service monitoring** > **Request attributes**.
 2. Select **Define a new request attribute** and enter the name and data type of your request attribute.
@@ -523,10 +523,10 @@ You can define a [request attribute](/docs/observe/application-observability/ser
 4. Enter your **Attribute key**.
 5. Select **Save**.
 
-To learn more details about span attributes and how to capture them, see [Span settings](/docs/ingest-from/extend-dynatrace/extend-tracing/span-settings "Learn how to configure span settings for OpenTelemetry and OpenTracing.").
+To learn more details about span attributes and how to capture them, see [Span settings](../../../../extend-dynatrace/extend-tracing/span-settings.md "Learn how to configure span settings for OpenTelemetry and OpenTracing.").
 
 ![Use Span attribute as a request attribute](https://dt-cdn.net/images/screenshot-2022-09-30-at-09-24-35-1883-e2f2b63693.png)
 
-You can find the **Attribute key** of your spans on the [Distributed traces](/docs/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") page in the **Code level** tab under **Span attributes**.
+You can find the **Attribute key** of your spans on the [Distributed traces](../../../../../observe/application-observability/distributed-traces.md "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") page in the **Code level** tab under **Span attributes**.
 
 ![Span attributes](https://dt-cdn.net/images/span-attributes-1916-1967c4e21e.png)

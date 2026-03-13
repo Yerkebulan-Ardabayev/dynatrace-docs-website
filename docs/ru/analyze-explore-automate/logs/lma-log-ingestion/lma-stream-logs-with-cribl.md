@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:27:17.743091
 
 Вы можете отправлять журналы, метрики и трассировки в Dynatrace с помощью Cribl Stream через OpenTelemetry Protocol (OTLP) или отправлять только журналы с помощью Cribl Stream через HTTP и приём по API.
 
-[Dynatrace Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.") предлагает различные возможности приёма и преобразования данных, что делает его универсальным инструментом для обработки данных журналов из различных источников.
+[Dynatrace Collector](../../../ingest-from/opentelemetry/collector.md "Learn about the Dynatrace OTel Collector.") предлагает различные возможности приёма и преобразования данных, что делает его универсальным инструментом для обработки данных журналов из различных источников.
 
 ## Ключевые возможности
 

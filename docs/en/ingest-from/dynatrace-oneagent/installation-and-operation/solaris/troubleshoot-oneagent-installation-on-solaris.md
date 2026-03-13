@@ -180,4 +180,4 @@ If you have trouble setting the environment variables
    ls -ltr /opt/dynatrace/oneagent/log/java
    ```
 
-For more details on setting up Oracle WebLogic monitoring, see [Configure Oracle WebLogic via startup script](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris#weblogic "Find out how to configure Dynatrace to monitor applications of different technologies that run on Solaris (x86 and SPARC).")
+For more details on setting up Oracle WebLogic monitoring, see [Configure Oracle WebLogic via startup script](install-oneagent-on-solaris.md#weblogic "Find out how to configure Dynatrace to monitor applications of different technologies that run on Solaris (x86 and SPARC).")

@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:23:57.288661
 * Практическое руководство
 * Обновлено 12 августа 2025 г.
 
-Эта страница была обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и действий, необходимых для выполнения миграции, описан в [руководстве по миграции таблицы безопасности Grail](/docs/secure/threat-observability/migration "Ознакомьтесь с изменениями в новой таблице безопасности Grail и узнайте, как выполнить миграцию.").
+Эта страница была обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и действий, необходимых для выполнения миграции, описан в [руководстве по миграции таблицы безопасности Grail](../migration.md "Ознакомьтесь с изменениями в новой таблице безопасности Grail и узнайте, как выполнить миграцию.").
 
 Принимайте события безопасности Microsoft Sentinel и анализируйте их в Dynatrace.
 
@@ -26,10 +26,10 @@ scraped: 2026-03-06T21:23:57.288661
 
 ### Сценарии использования
 
-* Визуализируйте и создавайте отчёты о текущем состоянии безопасности и тенденциях по результатам безопасности в различных средах с помощью [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и совместного использования данных наблюдаемости в реальном времени.").
-* Анализируйте и приоритизируйте результаты безопасности различных инструментов и продуктов единообразно с помощью [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь выводами на основе данных наблюдаемости в едином настраиваемом рабочем пространстве.").
-* Создавайте уведомления и заявки для критических результатов безопасности с помощью [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.").
-* Используйте результаты безопасности как дополнительное измерение для поиска угроз и криминалистического анализа инцидентов с помощью [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Объединяйте функциональные возможности Grail для расследований на основе фактов, включая разрешение инцидентов, анализ первопричин и поиск угроз.").
+* Визуализируйте и создавайте отчёты о текущем состоянии безопасности и тенденциях по результатам безопасности в различных средах с помощью [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и совместного использования данных наблюдаемости в реальном времени.").
+* Анализируйте и приоритизируйте результаты безопасности различных инструментов и продуктов единообразно с помощью [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь выводами на основе данных наблюдаемости в едином настраиваемом рабочем пространстве.").
+* Создавайте уведомления и заявки для критических результатов безопасности с помощью [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](../../../analyze-explore-automate/workflows.md "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.").
+* Используйте результаты безопасности как дополнительное измерение для поиска угроз и криминалистического анализа инцидентов с помощью [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../investigations.md "Объединяйте функциональные возможности Grail для расследований на основе фактов, включая разрешение инцидентов, анализ первопричин и поиск угроз.").
 
 ### Требования
 
@@ -46,15 +46,15 @@ scraped: 2026-03-06T21:23:57.288661
   + Для запросов к полученным данным: `storage:security.events:read`.
 * Токены:
 
-  + Сгенерируйте токен доступа с областью `openpipeline.events_security` и сохраните его для дальнейшего использования. Подробнее см. [Dynatrace API — Токены и аутентификация](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как получить аутентификацию для использования Dynatrace API.").
+  + Сгенерируйте токен доступа с областью `openpipeline.events_security` и сохраните его для дальнейшего использования. Подробнее см. [Dynatrace API — Токены и аутентификация](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как получить аутентификацию для использования Dynatrace API.").
 
 ## Активация и настройка
 
-1. В Dynatrace откройте [**Hub**](/docs/manage/hub "Информация о Dynatrace Hub.").
+1. В Dynatrace откройте [**Hub**](../../../manage/hub.md "Информация о Dynatrace Hub.").
 2. Найдите **Microsoft Sentinel** и выберите **Install**.
 3. Выберите **Set up**, затем выберите **Configure new connection**.
 4. Следуйте инструкциям на экране для настройки приёма данных.
-5. Проверьте конфигурацию, выполнив следующий запрос в [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь выводами на основе данных наблюдаемости в едином настраиваемом рабочем пространстве."):
+5. Проверьте конфигурацию, выполнив следующий запрос в [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь выводами на основе данных наблюдаемости в едином настраиваемом рабочем пространстве."):
 
    ```
    fetch security.events
@@ -77,12 +77,12 @@ scraped: 2026-03-06T21:23:57.288661
 1. События принимаются в Dynatrace
 
 1. Microsoft Sentinel экспортирует результаты безопасности в [Azure Event Hubs](https://dt-url.net/zmc3wv9).
-2. Приложение [Azure Function](https://dt-url.net/b643w2v) предварительно обрабатывает события и отправляет их в Dynatrace, используя выделенный [эндпоинт приёма событий безопасности](/docs/secure/threat-observability/security-events-ingest/ingest-custom-data#default "Приём событий безопасности от сторонних продуктов через API.") [OpenPipeline](/docs/platform/openpipeline "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.").
+2. Приложение [Azure Function](https://dt-url.net/b643w2v) предварительно обрабатывает события и отправляет их в Dynatrace, используя выделенный [эндпоинт приёма событий безопасности](ingest-custom-data.md#default "Приём событий безопасности от сторонних продуктов через API.") [OpenPipeline](../../../platform/openpipeline.md "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.").
 
 2. Результаты безопасности обрабатываются и сохраняются в Grail
 
-1. Полученные данные сопоставляются с [Семантическим словарём Dynatrace](/docs/semantic-dictionary/model/security-events#vulnerability-finding-events "Ознакомьтесь с моделями Семантического словаря, связанными с событиями безопасности.").
-2. Данные сохраняются в [Grail](/docs/platform/grail "Информация о том, что и как вы можете запрашивать данные Dynatrace.") в унифицированном формате, в бакете по умолчанию `default_securityevents`. Подробнее см. [Встроенные бакеты Grail](/docs/platform/grail/organize-data#built-in-grail-buckets "Информация о модели данных Grail, состоящей из бакетов, таблиц и представлений.").
+1. Полученные данные сопоставляются с [Семантическим словарём Dynatrace](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Ознакомьтесь с моделями Семантического словаря, связанными с событиями безопасности.").
+2. Данные сохраняются в [Grail](../../../platform/grail.md "Информация о том, что и как вы можете запрашивать данные Dynatrace.") в унифицированном формате, в бакете по умолчанию `default_securityevents`. Подробнее см. [Встроенные бакеты Grail](../../../platform/grail/organize-data.md#built-in-grail-buckets "Информация о модели данных Grail, состоящей из бакетов, таблиц и представлений.").
 
 ### Мониторинг данных
 
@@ -101,21 +101,21 @@ scraped: 2026-03-06T21:23:57.288661
 
 ### Визуализация и анализ результатов
 
-Вы можете создать собственные [дашборды](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и совместного использования данных наблюдаемости в реальном времени.") или использовать наши шаблоны для визуализации и анализа результатов уязвимостей контейнеров.
+Вы можете создать собственные [дашборды](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и совместного использования данных наблюдаемости в реальном времени.") или использовать наши шаблоны для визуализации и анализа результатов уязвимостей контейнеров.
 
 1. В **Settings** откройте **Microsoft Sentinel**.
 2. В разделе **Try our templates** выберите нужный шаблон дашборда.
 
 ### Автоматизация и оркестрация результатов
 
-Вы можете создать собственные [рабочие процессы](/docs/analyze-explore-automate/workflows "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.") или использовать наши шаблоны для автоматизации и оркестрации результатов уязвимостей контейнеров.
+Вы можете создать собственные [рабочие процессы](../../../analyze-explore-automate/workflows.md "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.") или использовать наши шаблоны для автоматизации и оркестрации результатов уязвимостей контейнеров.
 
 1. В **Settings** откройте **Microsoft Sentinel**.
 2. В разделе **Try our templates** выберите нужный шаблон рабочего процесса.
 
 ### Запрос принятых данных
 
-Вы можете запрашивать принятые данные в [**![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks****](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь выводами на основе данных наблюдаемости в едином настраиваемом рабочем пространстве.") или [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Объединяйте функциональные возможности Grail для расследований на основе фактов, включая разрешение инцидентов, анализ первопричин и поиск угроз."), используя формат данных из [Семантического словаря](https://dt-url.net/3q03pb0).
+Вы можете запрашивать принятые данные в [**![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks****](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь выводами на основе данных наблюдаемости в едином настраиваемом рабочем пространстве.") или [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../investigations.md "Объединяйте функциональные возможности Grail для расследований на основе фактов, включая разрешение инцидентов, анализ первопричин и поиск угроз."), используя формат данных из [Семантического словаря](https://dt-url.net/3q03pb0).
 
 1. В **Settings** откройте **Microsoft Sentinel**.
 2. Выберите **Open with**.
@@ -123,7 +123,7 @@ scraped: 2026-03-06T21:23:57.288661
 
 ### Оценка, сортировка и расследование обнаруженных угроз
 
-Вы можете оценивать, сортировать и расследовать обнаруженные угрозы с помощью [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Анализируйте, сортируйте и расследуйте обнаруженные угрозы и оповещения.").
+Вы можете оценивать, сортировать и расследовать обнаруженные угрозы с помощью [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](../../threats-and-exploits.md "Анализируйте, сортируйте и расследуйте обнаруженные угрозы и оповещения.").
 
 1. Откройте ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**.
 2. Отфильтруйте по **Provider** > **Microsoft Sentinel**.
@@ -140,13 +140,13 @@ scraped: 2026-03-06T21:23:57.288661
 
 ### Лицензирование и стоимость
 
-Информацию о тарификации см. в разделе [Events powered by Grail](/docs/license/capabilities/events "Узнайте, как рассчитывается потребление событий Dynatrace, основанных на Grail, в рамках модели подписки Dynatrace Platform.").
+Информацию о тарификации см. в разделе [Events powered by Grail](../../../license/capabilities/events.md "Узнайте, как рассчитывается потребление событий Dynatrace, основанных на Grail, в рамках модели подписки Dynatrace Platform.").
 
 ## Часто задаваемые вопросы
 
 ### Какая модель данных используется для журналов безопасности и событий, поступающих из Microsoft Sentinel?
 
-[События обнаружения угроз](/docs/semantic-dictionary/model/security-events#detection-finding-events "Ознакомьтесь с моделями Семантического словаря, связанными с событиями безопасности.") хранят индивидуальные результаты обнаружения для каждого затронутого объекта, представленного затронутым ресурсом Azure.
+[События обнаружения угроз](../../../semantic-dictionary/model/security-events.md#detection-finding-events "Ознакомьтесь с моделями Семантического словаря, связанными с событиями безопасности.") хранят индивидуальные результаты обнаружения для каждого затронутого объекта, представленного затронутым ресурсом Azure.
 
 ### Какие дополнительные поля добавляются к основным полям событий, принятых из Microsoft Sentinel?
 
@@ -168,7 +168,7 @@ scraped: 2026-03-06T21:23:57.288661
 ### Как нормализуется оценка риска для результатов Microsoft Sentinel?
 
 Dynatrace нормализует уровни серьёзности и оценки риска для всех результатов, принятых через текущую интеграцию. Это помогает вам последовательно приоритизировать результаты независимо от их источника.
-Подробнее о работе нормализации см. в разделе [Нормализация серьёзности и оценки](/docs/secure/threat-observability/concepts#normalization "Основные концепции, связанные с наблюдаемостью угроз").
+Подробнее о работе нормализации см. в разделе [Нормализация серьёзности и оценки](../concepts.md#normalization "Основные концепции, связанные с наблюдаемостью угроз").
 
 * `dt.security.risk.level` напрямую сопоставляется с уровнем серьёзности (`AlertSeverity`), установленным Microsoft Sentinel.
 * `dt.security.risk.score` напрямую сопоставляется с уровнем серьёзности (`AlertSeverity`), установленным Microsoft Sentinel.
@@ -188,6 +188,6 @@ Dynatrace нормализует уровни серьёзности и оцен
 
 ## Связанные темы
 
-* [OpenPipeline](/docs/platform/openpipeline "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Использование Dynatrace Query Language.")
-* [События безопасности](/docs/semantic-dictionary/model/security-events "Ознакомьтесь с моделями Семантического словаря, связанными с событиями безопасности.")
+* [OpenPipeline](../../../platform/openpipeline.md "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.")
+* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "Использование Dynatrace Query Language.")
+* [События безопасности](../../../semantic-dictionary/model/security-events.md "Ознакомьтесь с моделями Семантического словаря, связанными с событиями безопасности.")

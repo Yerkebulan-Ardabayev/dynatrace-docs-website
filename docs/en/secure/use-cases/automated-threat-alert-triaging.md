@@ -33,8 +33,8 @@ The same scenario can be applied to other supported integrations for enrichment 
 
 ## Prerequisites
 
-* [Install and configure Amazon GuardDuty integration](/docs/secure/threat-observability/security-events-ingest/ingest-amazon-guardduty "Ingest Amazon GuardDuty security findings and analyze them in Dynatrace.") (or any other [supported data ingest integration](/docs/secure/threat-observability/security-events-ingest#ingest "Ingest external security data into Grail.")).
-* [Install and configure the AbuseIPDB enrichment](/docs/secure/threat-observability/security-events-ingest/abuseipdb-enrich "Enrich threat observables with AbuseIPDB and analyze them in Dynatrace.") (or any other [supported enrichment integration](/docs/secure/threat-observability/security-events-ingest#enrich "Ingest external security data into Grail.")).
+* [Install and configure Amazon GuardDuty integration](../threat-observability/security-events-ingest/ingest-amazon-guardduty.md "Ingest Amazon GuardDuty security findings and analyze them in Dynatrace.") (or any other [supported data ingest integration](../threat-observability/security-events-ingest.md#ingest "Ingest external security data into Grail.")).
+* [Install and configure the AbuseIPDB enrichment](../threat-observability/security-events-ingest/abuseipdb-enrich.md "Enrich threat observables with AbuseIPDB and analyze them in Dynatrace.") (or any other [supported enrichment integration](../threat-observability/security-events-ingest.md#enrich "Ingest external security data into Grail.")).
 * Users must have the `security-intelligence:enrichments:run` permission to run enrichments.
 
 ## Get started
@@ -74,4 +74,4 @@ Schedule and save the workflow to be triggered automatically.
 
 ## Related topics
 
-* [Alerting and notifications](/docs/analyze-explore-automate/alerting-and-notifications "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")
+* [Alerting and notifications](../../analyze-explore-automate/alerting-and-notifications.md "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")

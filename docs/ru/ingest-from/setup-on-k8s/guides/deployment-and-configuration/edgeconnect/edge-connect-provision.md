@@ -136,4 +136,4 @@ EdgeConnect обеспечивает безопасное взаимодейст
 
 ## Связанные темы
 
-* [Configure and deploy EdgeConnect](/docs/ingest-from/edgeconnect "Use EdgeConnect to control how your apps and workflows interact with your internal systems.")
+* [Configure and deploy EdgeConnect](../../../../edgeconnect.md "Use EdgeConnect to control how your apps and workflows interact with your internal systems.")

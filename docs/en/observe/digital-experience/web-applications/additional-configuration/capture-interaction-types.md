@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:30:24.896704
 * 2-min read
 * Updated on Mar 20, 2023
 
-For [XHR actions](/docs/observe/digital-experience/rum-concepts/user-actions#xhr-action "Learn what user actions are and how they help you understand what users do with your application."), Real User Monitoring detects the following interaction types:
+For [XHR actions](../../rum-concepts/user-actions.md#xhr-action "Learn what user actions are and how they help you understand what users do with your application."), Real User Monitoring detects the following interaction types:
 
 * Click
 * Double click
@@ -51,4 +51,4 @@ To select which interaction types Dynatrace should capture automatically
 
 ## Related topics
 
-* [User actions](/docs/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")
+* [User actions](../../rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application.")

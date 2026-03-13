@@ -14,13 +14,13 @@ scraped: 2026-03-05T21:33:42.980568
 
 Updates or creates a policy boundary by uuid within a level. You can't edit a global-level boundary, as these are managed by Dynatrace.
 
-If the specified boundary doesn't exist, a [new boundary is created](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/post-boundary "Create a new boundary via the Policy management API.") instead.
+If the specified boundary doesn't exist, a [new boundary is created](post-boundary.md "Create a new boundary via the Policy management API.") instead.
 
 The request consumes and produces an `application/json` payload.
 
 ## Authentication
 
-To execute this request, you need the **Allow IAM policy configuration for environments** (`iam-policies-management`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+To execute this request, you need the **Allow IAM policy configuration for environments** (`iam-policies-management`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
 
 ## Parameters
 
@@ -207,7 +207,7 @@ The request consumes an `application/json` payload.
 
 ### Authentication
 
-To execute this request, you need the **Allow IAM policy configuration for environments** (`iam-policies-management`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
+To execute this request, you need the **Allow IAM policy configuration for environments** (`iam-policies-management`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md "Manage authentication and user permissions using OAuth clients.").
 
 ### Parameters
 

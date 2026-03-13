@@ -17,7 +17,7 @@ Logs are a crucial component for understanding the behavior of your environment.
 
 ## Before you begin
 
-Connect log data to traces for [Logs](/docs/analyze-explore-automate/logs/lma-log-enrichment "Connect your incoming log data to traces for more precise Dynatrace analysis.") or [Logs Classic](/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment "Learn how you can connect your incoming log data to traces for more precise Dynatrace analysis."),
+Connect log data to traces for [Logs](../../../../analyze-explore-automate/logs/lma-log-enrichment.md "Connect your incoming log data to traces for more precise Dynatrace analysis.") or [Logs Classic](../../../../analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment.md "Learn how you can connect your incoming log data to traces for more precise Dynatrace analysis."),
 
 * Automatically via OneAgent features, for supported logging frameworks.
 * Manually via open standards corresponding context information, for technologies that are not monitored by OneAgent or not supported out of the box yet.
@@ -34,7 +34,7 @@ The problem affects multiple services and combines a failure rate increase with 
 
 ### Steps
 
-We begin our analysis with the affected Go service and check its [dynamic requests](/docs/discover-dynatrace/get-started/glossary#request "Get acquainted with Dynatrace terminology.").
+We begin our analysis with the affected Go service and check its [dynamic requests](../../../../discover-dynatrace/get-started/glossary.md#request "Get acquainted with Dynatrace terminology.").
 
 ![Log analysis distributed trace - 7](https://dt-cdn.net/images/pp-log-analysis-11-1505-1fd6fd3e99.png)
 
@@ -70,7 +70,7 @@ Looking at the distributed trace, we conclude that there's something wrong with 
 
 Now that we have identified components contributing to the problem, we can contact responsible teams and ask them to investigate.
 
-Let's go back and check logs for more errors. Because we have attended to the shipping holiday problem, we can filter out those logs with [**advanced query** mode](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer#search "Learn how to use Dynatrace log viewer to analyze log data.").
+Let's go back and check logs for more errors. Because we have attended to the shipping holiday problem, we can filter out those logs with [**advanced query** mode](../../../../analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer.md#search "Learn how to use Dynatrace log viewer to analyze log data.").
 
 ![Log analysis distributed trace - 10](https://dt-cdn.net/images/pp-log-analysis-14-1890-6ccd1ed6f9.png)
 
@@ -150,10 +150,10 @@ You need both log monitoring and trace pricing and packaging.
 
 Can I use this data for end user sessions?
 
-Yes. To learn how, see [Connect your log data to user sessions and Session Replays](/docs/whats-new/saas/sprint-244#connect-your-log-data-to-user-sessions-and-session-replays "Release notes for Dynatrace SaaS, version 1.244").
+Yes. To learn how, see [Connect your log data to user sessions and Session Replays](../../../../whats-new/saas/sprint-244.md#connect-your-log-data-to-user-sessions-and-session-replays "Release notes for Dynatrace SaaS, version 1.244").
 
 ## Related topics
 
-* [Log viewer (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.")
-* [Dynatrace Intelligence](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.")
+* [Log viewer (Logs Classic)](../../../../analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer.md "Learn how to use Dynatrace log viewer to analyze log data.")
+* [Dynatrace Intelligence](../../../../dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence.")
 * [[Blog] Automatic connection of logs and traces accelerates AI-driven cloud analyticsï»¿](https://www.dynatrace.com/news/blog/automatic-connection-of-logs-and-traces-accelerates-ai-driven-cloud-analytics/)

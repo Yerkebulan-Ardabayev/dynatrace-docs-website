@@ -67,7 +67,7 @@ Dynatrace может дополнять принятые данные журна
 
 ## Поддерживаемые фреймворки
 
-Полный список фреймворков логирования, поддерживающих автоматическое обогащение контекста трейсов/спанов в журналах, см. на странице [Поддержка технологий](/docs/ingest-from/technology-support#web-servers "Найдите технические подробности о поддержке Dynatrace для конкретных платформ и фреймворков разработки.").
+Полный список фреймворков логирования, поддерживающих автоматическое обогащение контекста трейсов/спанов в журналах, см. на странице [Поддержка технологий](../../ingest-from/technology-support.md#web-servers "Найдите технические подробности о поддержке Dynatrace для конкретных платформ и фреймворков разработки.").
 
 ## Структурированные данные журналов
 
@@ -209,7 +209,7 @@ Dynatrace может дополнять принятые данные журна
 
 OneAgent версии 1.239+
 
-Вы можете вручную обогащать принятые данные журналов Dynatrace, определив шаблон журнала для включения полей `dt.span_id`, `dt.trace_id`, `dt.trace_sampled` и `dt.entity.process_group_instance`. Вы можете включить ручное обогащение журналов для конкретной технологии, следуя [инструкциям по обогащению журналов](/docs/analyze-explore-automate/logs/lma-log-enrichment#enableenr "Подключите входящие данные журналов к трейсам для более точного анализа Dynatrace.").
+Вы можете вручную обогащать принятые данные журналов Dynatrace, определив шаблон журнала для включения полей `dt.span_id`, `dt.trace_id`, `dt.trace_sampled` и `dt.entity.process_group_instance`. Вы можете включить ручное обогащение журналов для конкретной технологии, следуя [инструкциям по обогащению журналов](lma-log-enrichment.md#enableenr "Подключите входящие данные журналов к трейсам для более точного анализа Dynatrace.").
 
 Убедитесь, что соблюдаете следующие правила для формата обогащённых полей в неструктурированном журнале:
 
@@ -437,7 +437,7 @@ Logback — преемник проекта log4j. Logstash Logback — расш
 
 Вы можете обогащать журналы с помощью NGINX ingress с Kubernetes в два шага:
 
-1. Выполните инструкции по инструментированию [ingress-nginx на Kubernetes](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/instrument-nginx "Инструментирование ingress-nginx на Kubernetes").
+1. Выполните инструкции по инструментированию [ingress-nginx на Kubernetes](../../ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/instrument-nginx.md "Инструментирование ingress-nginx на Kubernetes").
 2. Добавьте приведённую ниже команду в файл `configmap.yaml` для NGINX ingress.
 
    Добавление строки `main-snippet` включает приём данных OneAgent и является необязательным, если вы уже следовали инструкциям по ручному инструментированию.
@@ -942,7 +942,7 @@ log.Fatal(http.ListenAndServe(":8080", nil))
 }
 ```
 
-Подробнее о конфигурации см. в разделе [Журналы AWS Lambda в контексте трейсов](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/log-enrichment "Настройка обогащения сообщений журналов с помощью OpenTelemetry на AWS Lambda.").
+Подробнее о конфигурации см. в разделе [Журналы AWS Lambda в контексте трейсов](../../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/log-enrichment.md "Настройка обогащения сообщений журналов с помощью OpenTelemetry на AWS Lambda.").
 
 Инструкции по получению этих атрибутов через OneAgent SDK:
 
@@ -1075,11 +1075,11 @@ endpoint="http://localhost:14499/otlp/v1/traces"
 )))
 ```
 
-При использовании OneAgent убедитесь, что публичный [Extension Execution Controller](/docs/ingest-from/extensions/concepts#eec "Узнайте больше о концепции расширений Dynatrace.") включён в настройках Dynatrace, иначе данные не будут отправлены.
+При использовании OneAgent убедитесь, что публичный [Extension Execution Controller](../../ingest-from/extensions/concepts.md#eec "Узнайте больше о концепции расширений Dynatrace.") включён в настройках Dynatrace, иначе данные не будут отправлены.
 
 Перейдите в **Settings** > **Preferences** > **Extension Execution Controller**. Переключатели **Enable Extension Execution Controller** и **Enable local PIPE/HTTP metric and Log Ingest API** должны быть активны.
 
-Подробнее о конфигурации см. в разделе [Инструментирование приложения Python с помощью OpenTelemetry](/docs/ingest-from/opentelemetry/walkthroughs/python "Узнайте, как инструментировать приложение Python с помощью OpenTelemetry и Dynatrace.")
+Подробнее о конфигурации см. в разделе [Инструментирование приложения Python с помощью OpenTelemetry](../../ingest-from/opentelemetry/walkthroughs/python.md "Узнайте, как инструментировать приложение Python с помощью OpenTelemetry и Dynatrace.")
 
 ## Ограничения
 
@@ -1183,5 +1183,5 @@ format: winston.format.simple()
 
 ## Связанные темы
 
-* [Использование обогащения журналов для трейсов при решении проблем](/docs/observe/application-observability/distributed-traces/use-cases/problems-logs-traces "Используйте обогащение журналов для просмотра связанных записей журналов в представлении распределённых трейсов и расширения аналитических возможностей.")
-* [Автоматическое обогащение журналов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa "Общий приём журналов автоматически преобразует данные журналов в выходные значения для атрибута loglevel.")
+* [Использование обогащения журналов для трейсов при решении проблем](../../observe/application-observability/distributed-traces/use-cases/problems-logs-traces.md "Используйте обогащение журналов для просмотра связанных записей журналов в представлении распределённых трейсов и расширения аналитических возможностей.")
+* [Автоматическое обогащение журналов](lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md "Общий приём журналов автоматически преобразует данные журналов в выходные значения для атрибута loglevel.")

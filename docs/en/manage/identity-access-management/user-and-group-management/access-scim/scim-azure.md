@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:33:48.651906
 * 4-min read
 * Updated on Aug 06, 2024
 
-This page describes the IdP (**Azure**) end of your **SCIM** SSO configuration, not the Dynatrace end. Use it as part of the entire [SCIM configuration procedure](/docs/manage/identity-access-management/user-and-group-management/access-scim "SCIM") for Dynatrace SaaS if you're using Azure.
+This page describes the IdP (**Azure**) end of your **SCIM** SSO configuration, not the Dynatrace end. Use it as part of the entire [SCIM configuration procedure](../access-scim.md "SCIM") for Dynatrace SaaS if you're using Azure.
 
 While we do our best to provide you with current information, Dynatrace has no control over changes that may be made by third-party providers. Always refer to official third-party documentation from your IdP as your primary source of information for third-party products.
 
@@ -21,17 +21,17 @@ To set up SCIM for your domain
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Create SCIM application in Azure**](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure#create-scim-app "Learn how to configure Dynatrace SCIM in Azure.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Create SCIM application in Azure**](scim-azure.md#create-scim-app "Learn how to configure Dynatrace SCIM in Azure.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Configure provisioning**](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure#provisioning "Learn how to configure Dynatrace SCIM in Azure.")[![Step 3 optional](https://dt-cdn.net/images/dotted-step-3-e2082c1921.svg "Step 3 optional")
+**Configure provisioning**](scim-azure.md#provisioning "Learn how to configure Dynatrace SCIM in Azure.")[![Step 3 optional](https://dt-cdn.net/images/dotted-step-3-e2082c1921.svg "Step 3 optional")
 
-**Configure group mappings**](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure#configure-group-mappings "Learn how to configure Dynatrace SCIM in Azure.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**Configure group mappings**](scim-azure.md#configure-group-mappings "Learn how to configure Dynatrace SCIM in Azure.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**Configure user mappings**](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure#configure-user-mappings "Learn how to configure Dynatrace SCIM in Azure.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
+**Configure user mappings**](scim-azure.md#configure-user-mappings "Learn how to configure Dynatrace SCIM in Azure.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
 
-**Assign users and groups**](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure#assign-users-and-groups "Learn how to configure Dynatrace SCIM in Azure.")[![Step 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Step 6")
+**Assign users and groups**](scim-azure.md#assign-users-and-groups "Learn how to configure Dynatrace SCIM in Azure.")[![Step 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Step 6")
 
-**Enable SCIM**](/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure#enable-scim "Learn how to configure Dynatrace SCIM in Azure.")
+**Enable SCIM**](scim-azure.md#enable-scim "Learn how to configure Dynatrace SCIM in Azure.")
 
 ## Step 1 Create SCIM application in Azure
 
@@ -46,7 +46,7 @@ In **Microsoft Entra ID**
 
 ## Step 2 Configure provisioning
 
-To configure provisioning in Azure, you need the Dynatrace SCIM base URL and a secret token you got in the [Get Dynatrace SCIM endpoint and create secret token](/docs/manage/identity-access-management/user-and-group-management/access-scim#scim-endpoint-secret-token "SCIM") procedure.
+To configure provisioning in Azure, you need the Dynatrace SCIM base URL and a secret token you got in the [Get Dynatrace SCIM endpoint and create secret token](../access-scim.md#scim-endpoint-secret-token "SCIM") procedure.
 
 In **Microsoft Entra ID** with your application selected
 
@@ -70,7 +70,7 @@ In **Microsoft Entra ID** with your application selected
    * **Tenant URL**  
      Example: `https://api.sso.dynatrace.com/idm/public/scim/<YOUR_ACCOUNT_ID>/v2`
    * **Secret Token**  
-     You created this earlier in the [Get a secret token](/docs/manage/identity-access-management/user-and-group-management/access-scim#scim-endpoint-secret-token "SCIM") procedure.
+     You created this earlier in the [Get a secret token](../access-scim.md#scim-endpoint-secret-token "SCIM") procedure.
 
 ## Step 3 optional Configure group mappings Optional
 

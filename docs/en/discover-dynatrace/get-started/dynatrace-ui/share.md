@@ -224,7 +224,7 @@ If you think you might need to access the document again, make a duplicate of th
 
 ### Dashboards **Dashboards**
 
-To change ownership of the currently displayed [dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")
+To change ownership of the currently displayed [dashboard](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")
 
 1. Open the  menu next to the dashboard name and select  **Change owner**.
 2. Find and select a new owner, and then select  **Change owner**.
@@ -237,7 +237,7 @@ To change ownership of multiple dashboards
 
 ### Notebooks **Notebooks**
 
-To change ownership of the currently displayed [notebook](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+To change ownership of the currently displayed [notebook](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
 
 1. Open the  menu next to the notebook name and select  **Change owner**.
 2. Find and select a new owner, and then select  **Change owner**.
@@ -250,7 +250,7 @@ To change ownership of multiple notebooks
 
 ### Launchpads
 
-To change ownership of a [launchpad](/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads "Build and manage custom start pages with launchpads.")
+To change ownership of a [launchpad](launchpads.md "Build and manage custom start pages with launchpads.")
 
 1. Go to **Launcher**. If a launchpad is displayed, select  **Browse all** in the upper-left corner to display a table of launchpads.
 2. Filter the table for  **Owned by me** to list your launchpads.

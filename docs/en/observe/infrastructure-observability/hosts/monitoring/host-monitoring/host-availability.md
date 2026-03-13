@@ -90,7 +90,7 @@ If your Linux distribution experiences connections problems or the network manag
 
 ## Maintenance windows
 
-Maintenance windows are periods of time during which maintenance activities are scheduled to be performed in monitored environments. These maintenance windows can be used to prevent alerting, log file collection, system profiling, and other activities from taking place. For details, see [Maintenance windows](/docs/analyze-explore-automate/notifications-and-alerting/maintenance-windows "Understand when to use a maintenance window. Read about the supported maintenance window types.").
+Maintenance windows are periods of time during which maintenance activities are scheduled to be performed in monitored environments. These maintenance windows can be used to prevent alerting, log file collection, system profiling, and other activities from taking place. For details, see [Maintenance windows](../../../../../analyze-explore-automate/notifications-and-alerting/maintenance-windows.md "Understand when to use a maintenance window. Read about the supported maintenance window types.").
 
 Maintenance windows are displayed as gray bars at the top of the **Host availability** and **Host performance** tiles on the host overview page.
 

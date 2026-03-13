@@ -13,11 +13,11 @@ scraped: 2026-03-06T21:23:33.828725
 * 3-min read
 * Published Aug 19, 2025
 
-Dynatrace has a [permission model for Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail."). This applies to all telemetry data, such as metrics, events, spans, and logs.
+Dynatrace has a [permission model for Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail."). This applies to all telemetry data, such as metrics, events, spans, and logs.
 
-We recommend setting up permissions along organizational lines and deployment scopes. Suitable concepts include host groups, Kubernetes clusters, and Kubernetes namespaces. These attributes are typically available for all telemetry data ingested via Dynatrace collection methods like OneAgent, OpenTelemetry, or Kubernetes operator. Hence, you can use these attributes to enable [record-level permissions](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.").
+We recommend setting up permissions along organizational lines and deployment scopes. Suitable concepts include host groups, Kubernetes clusters, and Kubernetes namespaces. These attributes are typically available for all telemetry data ingested via Dynatrace collection methods like OneAgent, OpenTelemetry, or Kubernetes operator. Hence, you can use these attributes to enable [record-level permissions](../../platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.").
 
-For Kubernetes-based deployments, make sure Dynatrace Operator has [metadata enrichment](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") enabled.
+For Kubernetes-based deployments, make sure Dynatrace Operator has [metadata enrichment](../setup-on-k8s/guides/metadata-automation/metadata-enrichment.md "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") enabled.
 
 If you only require a basic permission concept, setting up bucket-level permissions is the best option. You can then route your data to the correct bucket in OpenPipeline by matching one of the mentioned deployment-relevant primary Grail fields.
 
@@ -26,7 +26,7 @@ For more control in Dynatrace, you can set up policy boundaries with more granul
 * `dt.host_group.id`
 * `k8s.cluster.name`
 * `k8s.namespace.name`
-* Any other attribute listed in the [permission model](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.")
+* Any other attribute listed in the [permission model](../../platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.")
 
 Dynatrace provides a comprehensive permission model for Grail that applies to all telemetry data-including metrics, logs, spans, and events.
 
@@ -51,4 +51,4 @@ To set a security context for your host, use the following command:
 
 This adds the security context to all metrics, spans, events, and logs collected by OneAgent on this host.
 
-The `dt.security_context` is utilized by many features in Dynatrace and available for all telemetry data. You can use it for [record-level security](/docs/platform/grail/organize-data/assign-permissions-in-grail#field-permissions "Find out how to assign permissions to buckets and tables in Grail.").
+The `dt.security_context` is utilized by many features in Dynatrace and available for all telemetry data. You can use it for [record-level security](../../platform/grail/organize-data/assign-permissions-in-grail.md#field-permissions "Find out how to assign permissions to buckets and tables in Grail.").

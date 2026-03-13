@@ -161,7 +161,7 @@ fetch bizevents
 
 ## Агрегации по времени
 
-DQL предоставляет специализированные команды, такие как [makeTimeseries](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#makeTimeseries "Команды агрегации DQL"), для агрегации списка необработанных записей событий в отображаемый временной ряд. Рассмотрим логи, сгруппированные по уровню лога с 5-минутным интервалом агрегации:
+DQL предоставляет специализированные команды, такие как [makeTimeseries](commands/aggregation-commands.md#makeTimeseries "Команды агрегации DQL"), для агрегации списка необработанных записей событий в отображаемый временной ряд. Рассмотрим логи, сгруппированные по уровню лога с 5-минутным интервалом агрегации:
 
 ```
 fetch logs
@@ -181,11 +181,11 @@ fetch logs
 
 ## Связанные темы
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")
-* [Сравнение DQL с SQL и другими языками](/docs/platform/grail/dynatrace-query-language/dql-comparison "Узнайте, как DQL соотносится с другими языками запросов.")
-* [Справочник по языку DQL](/docs/platform/grail/dynatrace-query-language/dql-reference "Справочник по синтаксису Dynatrace Query Language.")
-* [Команды DQL](/docs/platform/grail/dynatrace-query-language/commands "Список команд DQL.")
-* [Функции DQL](/docs/platform/grail/dynatrace-query-language/functions "Список функций DQL.")
-* [Операторы DQL](/docs/platform/grail/dynatrace-query-language/operators "Список операторов DQL.")
-* [Типы данных DQL](/docs/platform/grail/dynatrace-query-language/data-types "Список типов данных DQL.")
-* [Лучшие практики DQL](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Лучшие практики использования Dynatrace Query Language.")
+* [Dynatrace Query Language](../dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
+* [Сравнение DQL с SQL и другими языками](dql-comparison.md "Узнайте, как DQL соотносится с другими языками запросов.")
+* [Справочник по языку DQL](dql-reference.md "Справочник по синтаксису Dynatrace Query Language.")
+* [Команды DQL](commands.md "Список команд DQL.")
+* [Функции DQL](functions.md "Список функций DQL.")
+* [Операторы DQL](operators.md "Список операторов DQL.")
+* [Типы данных DQL](data-types.md "Список типов данных DQL.")
+* [Лучшие практики DQL](dql-best-practices.md "Лучшие практики использования Dynatrace Query Language.")

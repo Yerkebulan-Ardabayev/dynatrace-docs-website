@@ -28,7 +28,7 @@ Once configured and activated, the configuration observes the data and triggers 
 
 Data source provides a time series that is evaluated by Dynatrace Intelligence:
 
-* Previous Dynatrace A metric defines the time series. It can be a single metric defined by a metric key or a [metric expression](/docs/dynatrace-api/environment-api/metric-v2/metric-expressions "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.").
+* Previous Dynatrace A metric defines the time series. It can be a single metric defined by a metric key or a [metric expression](../../dynatrace-api/environment-api/metric-v2/metric-expressions.md "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.").
 
 If your data has a latency, you need to offset it in your configuration via the **Query offset** parameter. Specify the value in minutes.
 
@@ -44,15 +44,15 @@ You can configure the **Delay** parameter using **Minutes** or **Seconds**, but 
 
 Analyzer parameters define how Dynatrace Intelligence evaluates the data provided by the data source. The exact set of parameters depends on the type of the analysis:
 
-* [Auto-adaptive threshold](/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration.")âDynatrace calculates the threshold automatically and adapts it dynamically to your data's behavior.
-* [Seasonal baseline](/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline "How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.")âDynatrace creates a confidence band for data with seasonal patterns.
-* [Static threshold](/docs/dynatrace-intelligence/anomaly-detection/static-thresholds "When to use a static threshold for your anomaly detection.")âthe threshold that doesn't change over time.
+* [Auto-adaptive threshold](auto-adaptive-threshold.md "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration.")âDynatrace calculates the threshold automatically and adapts it dynamically to your data's behavior.
+* [Seasonal baseline](../reference/ai-models/seasonal-baseline.md "How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.")âDynatrace creates a confidence band for data with seasonal patterns.
+* [Static threshold](static-thresholds.md "When to use a static threshold for your anomaly detection.")âthe threshold that doesn't change over time.
 
 | Parameter | Description |
 | --- | --- |
-| Number of signal fluctuations | The auto-adaptive threshold consists of two components: a baseline and a signal fluctuation. This parameter defines how many times the signal fluctuation is added to the baseline. For more information, see [Threshold calculation](/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold#calculation "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration."). |
+| Number of signal fluctuations | The auto-adaptive threshold consists of two components: a baseline and a signal fluctuation. This parameter defines how many times the signal fluctuation is added to the baseline. For more information, see [Threshold calculation](auto-adaptive-threshold.md#calculation "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration."). |
 | Threshold | This parameter defines the value of a static threshold and, if applicable, its unit. Select **Suggest values** to use a value calculated by Dynatrace Intelligence based on the previous data. |
-| Tolerance | This parameter defines the [tolerance](/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline#parameters "How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.") of the seasonal model. The higher the tolerance, the broader the confidence band, leading to fewer triggered events. |
+| Tolerance | This parameter defines the [tolerance](../reference/ai-models/seasonal-baseline.md#parameters "How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.") of the seasonal model. The higher the tolerance, the broader the confidence band, leading to fewer triggered events. |
 | Alert condition | This parameter defines when an event is triggered: if the metric is above, below, or outside of the threshold. |
 | Missing data alert | This parameter defines whether the missing data alert is active for the configuration. If active, it's combined with the threshold condition by the **OR** logic. You can find it in the **Advanced properties** section of the configuration. |
 
@@ -116,8 +116,8 @@ The event template defines characteristics of an event triggered by threshold vi
   + `{severity}` - the severity of the event.
   + `{threshold}` - the violated value of the threshold.
 
-You can provide additional parameters as key-value pairs. For a list of possible event properties, see [Semantic Dictionary](/docs/semantic-dictionary/model/davis#davis-ai-events "Get to know the Semantic Dictionary models related to Davis AI.").
+You can provide additional parameters as key-value pairs. For a list of possible event properties, see [Semantic Dictionary](../../../common/semantic-dictionary/model/davis.md#davis-ai-events "Get to know the Semantic Dictionary models related to Davis AI.").
 
 ## Related topics
 
-* [Metric events](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace")
+* [Metric events](metric-events.md "Learn about metric events in Dynatrace")

@@ -51,9 +51,9 @@ Our solution allows you to
 
 ## Prerequisites
 
-* [Set up Kubernetes observability with Dynatrace Operator](/docs/ingest-from/setup-on-k8s/deployment/other/classic-full-stack "Deploy Dynatrace Operator in classic full-stack mode to Kubernetes")
-* [Ingest Amazon ECR vulnerability findings and scan events](/docs/secure/threat-observability/security-events-ingest/ingest-aws-ecr-data "Ingest Amazon ECR container image vulnerability findings and scan events and analyze them in Dynatrace.")
-* [Use Dynatrace release product/stage tags](/docs/deliver/release-monitoring/version-detection-strategies "Metadata for version detection in different technologies") for your containers
+* [Set up Kubernetes observability with Dynatrace Operator](../../ingest-from/setup-on-k8s/deployment/other/classic-full-stack.md "Deploy Dynatrace Operator in classic full-stack mode to Kubernetes")
+* [Ingest Amazon ECR vulnerability findings and scan events](../threat-observability/security-events-ingest/ingest-aws-ecr-data.md "Ingest Amazon ECR container image vulnerability findings and scan events and analyze them in Dynatrace.")
+* [Use Dynatrace release product/stage tags](../../deliver/release-monitoring/version-detection-strategies.md "Metadata for version detection in different technologies") for your containers
 
 ## Get started
 
@@ -61,7 +61,7 @@ Our solution allows you to
 
 To view the summarized and unified list of recent vulnerability findings ingested from Amazon ECR
 
-1. Open [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and go to **Ready-made**.
+1. Open [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and go to **Ready-made**.
 2. Search for and select **Container Vulnerability Findings** for the Amazon ECR integration.
 
 Example dashboard:
@@ -79,11 +79,11 @@ Example dashboard:
 
 3. Automate
 
-You can adjust our automation workflow samples to enrich and filter external container image vulnerability findings for runtime context. For details, see [Automate and orchestrate security findings](/docs/secure/use-cases/automate-and-orchestrate-security-findings "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.").
+You can adjust our automation workflow samples to enrich and filter external container image vulnerability findings for runtime context. For details, see [Automate and orchestrate security findings](automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.").
 
 Example query to get new critical container image vulnerabilities with a list of the affected container images and running containers:
 
-This query has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](/docs/secure/threat-observability/migration "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This query has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../threat-observability/migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
 
 ```
 // The query has a rolling window of 7 days and the last 24hrs.
@@ -337,7 +337,7 @@ Example result:
 
 To track the alert reduction process based on the progressive filtering in [step 2](#filter)
 
-1. Open [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and go to **Ready-made**.
+1. Open [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and go to **Ready-made**.
 2. Search for and select **Container image alert reduction** for the Amazon ECR integration.
 
 Example result:

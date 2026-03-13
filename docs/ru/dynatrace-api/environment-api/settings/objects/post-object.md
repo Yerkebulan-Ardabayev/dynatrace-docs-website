@@ -24,7 +24,7 @@ scraped: 2026-03-06T21:19:34.446565
 
 Для выполнения этого запроса необходим токен доступа с областью действия `settings.write`.
 
-Чтобы узнать, как получить и использовать токен, см. [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как получить и использовать токен, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 

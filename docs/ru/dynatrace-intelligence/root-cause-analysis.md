@@ -27,16 +27,16 @@ scraped: 2026-03-06T21:14:55.335298
 
 * Пояснение
 
-[Прочитать пояснение](/docs/dynatrace-intelligence/root-cause-analysis/concepts)[#### Анализ и корреляция событий
+[Прочитать пояснение](root-cause-analysis/concepts.md)[#### Анализ и корреляция событий
 
 Получите представление о разделе событий на каждой обзорной странице хоста, процесса и сервиса.
 
 * Пояснение
 
-[Прочитать пояснение](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation)[#### Обнаружение частых проблем
+[Прочитать пояснение](root-cause-analysis/event-analysis-and-correlation.md)[#### Обнаружение частых проблем
 
 Узнайте, как Dynatrace обнаруживает и управляет повторяющимися шаблонами проблем в виде частых проблем.
 
 * Пояснение
 
-[Прочитать пояснение](/docs/dynatrace-intelligence/root-cause-analysis/detection-of-frequent-issues)
+[Прочитать пояснение](../../common/dynatrace-intelligence/root-cause-analysis/detection-of-frequent-issues.md)

@@ -25,6 +25,6 @@ These getting started guides show you how to instrument your AI application and 
 
 [### OpenLLMetry
 
-Instrument your AI application with OpenLLMetry.](/docs/observe/dynatrace-for-ai-observability/get-started/openllmetry "Use OpenLLMetry to collect observability data from AI applications.")[### OpenTelemetry
+Instrument your AI application with OpenLLMetry.](get-started/openllmetry.md "Use OpenLLMetry to collect observability data from AI applications.")[### OpenTelemetry
 
-Instrument your AI application with OpenTelemetry.](/docs/observe/dynatrace-for-ai-observability/get-started/opentelemetry "Use OpenTelemetry and the GenAI semantic conventions to collect observability data from AI applications.")
+Instrument your AI application with OpenTelemetry.](get-started/opentelemetry.md "Use OpenTelemetry and the GenAI semantic conventions to collect observability data from AI applications.")

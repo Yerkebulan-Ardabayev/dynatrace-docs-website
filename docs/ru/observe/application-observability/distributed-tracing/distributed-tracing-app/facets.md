@@ -19,7 +19,7 @@ scraped: 2026-03-06T21:22:48.617165
 
 Предварительные требования
 
-* [Настройте разрешения Grail для Distributed Tracing](/docs/observe/application-observability/distributed-tracing/permissions "Manage permissions for Distributed Tracing powered by Grail.").
+* [Настройте разрешения Grail для Distributed Tracing](../permissions.md "Manage permissions for Distributed Tracing powered by Grail.").
 
 ## Управление всеми фасетами
 

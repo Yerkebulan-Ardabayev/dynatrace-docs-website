@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:14:35.723933
 * 2-min read
 * Updated on Nov 28, 2025
 
-Business events can be stored in buckets that can have different retention periods. You create rules with matcher-specific [DQL](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") queries to assign matching business events to a bucket. The default retention period for a built-in business events bucket (`default_bizevents`) is 35 days. You can also create [custom buckets](/docs/platform/grail/organize-data/assign-permissions-in-grail#custom-grail-buckets "Find out how to assign permissions to buckets and tables in Grail.") with a specific retention period.
+Business events can be stored in buckets that can have different retention periods. You create rules with matcher-specific [DQL](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") queries to assign matching business events to a bucket. The default retention period for a built-in business events bucket (`default_bizevents`) is 35 days. You can also create [custom buckets](../../../platform/grail/organize-data/assign-permissions-in-grail.md#custom-grail-buckets "Find out how to assign permissions to buckets and tables in Grail.") with a specific retention period.
 
 For custom buckets, the possible retention period ranges from 1 day to 10 years, with an additional week.
 
@@ -24,7 +24,7 @@ Business events can be stored in different buckets that determine the retention 
 1. Go to **Settings** > **Business Observability** > **Ingest Pipeline** > **Bucket assignment**.
 2. In the **Business event bucket assignment**, select **Add rule** and name your rule.
 3. Select the **Bucket**.
-4. Add a **Matcher** to your rule by typing or pasting your [matcher-specific DQL query](/docs/analyze-explore-automate/logs/lma-classic-log-processing#dql-functions "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation."). Events that match your rule will be assigned to your selected bucket. If no rules match, events will be assigned to the default bucket.
+4. Add a **Matcher** to your rule by typing or pasting your [matcher-specific DQL query](../../../analyze-explore-automate/logs/lma-classic-log-processing.md#dql-functions "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation."). Events that match your rule will be assigned to your selected bucket. If no rules match, events will be assigned to the default bucket.
 5. Select **Save changes**.
 
 ## Matcher examples

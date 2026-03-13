@@ -31,11 +31,11 @@ Customers needing help with unsupported extensions or extension files can reques
 
 ## Before you begin
 
-Get familiar with the [Dynatrace Extensions concepts](/docs/ingest-from/extensions/concepts#concepts "Learn more about the concept of Dynatrace Extensions.").
+Get familiar with the [Dynatrace Extensions concepts](concepts.md#concepts "Learn more about the concept of Dynatrace Extensions.").
 
 ## Security best practices
 
-Dynatrace applies [secure development controls](/docs/manage/data-privacy-and-security/data-security/secure-development-controls "Learn how we ensure complete security for all Dynatrace software components and development practices.") in its Security Development Lifecycle (SDL).
+Dynatrace applies [secure development controls](../../manage/data-privacy-and-security/data-security/secure-development-controls.md "Learn how we ensure complete security for all Dynatrace software components and development practices.") in its Security Development Lifecycle (SDL).
 
 Follow these best practices to ensure your extensions are secure, reliable, and compliant with your environmentâs security standards.
 
@@ -58,7 +58,7 @@ Follow these best practices to ensure your extensions are secure, reliable, and 
 * When using the API to manage extensions, use personal tokens instead of tokens that have global extension write access.
 * Set up security policies that allow editing extension settings, and assign them only to trusted user groups.
 
-  + Use the [Extensions IAM service](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#extensions "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") to restrict who can edit settings, based on specific scopes like extensions, zones, or host groups. This helps you create detailed, secure policies.
+  + Use the [Extensions IAM service](../../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#extensions "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") to restrict who can edit settings, based on specific scopes like extensions, zones, or host groups. This helps you create detailed, secure policies.
 
 ### Sensitive data sources
 

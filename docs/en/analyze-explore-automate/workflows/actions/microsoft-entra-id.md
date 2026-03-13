@@ -12,7 +12,7 @@ scraped: 2026-03-05T21:39:12.282254
 * 5-min read
 * Updated on Jun 18, 2025
 
-Your Dynatrace environment can integrate with Microsoft Entra ID (formerly Azure Active Directory) in automation [workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+Your Dynatrace environment can integrate with Microsoft Entra ID (formerly Azure Active Directory) in automation [workflows](../../workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 Microsoft Entra ID Connector ![Microsoft Entra ID Connector](https://dt-cdn.net/hub/app_icon_entra_id_new.png "Microsoft Entra ID Connector") enables you to use prebuilt actions in Workflows ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") to automate importing teams from Entra ID (based on various triggers) for defining entity ownership and other use cases in Dynatrace.
 Microsoft Entra ID Connector connects to the Azure Cloud via the [Microsoft Graph APIï»¿](https://developer.microsoft.com/en-us/graph).
 
@@ -42,7 +42,7 @@ To fine-tune permissions granted to Workflows
 
    * `app-settings:objects:read`
 
-For more on general Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+For more on general Workflows user permissions, see [User permissions for workflows](../security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 3. Set up integration with Dynatrace
 
@@ -87,7 +87,7 @@ Microsoft Entra ID Connector requires a client secret from Microsoft Azure for a
   ALLOW settings:objects:read, settings:objects:write, settings:schemas:read WHERE settings:schemaId = "app:dynatrace.azure.connector:microsoft-entra-identity-developer-connection"
   ```
 
-  For details, see [Permissions and access](/docs/manage/settings/settings-20#permissions-and-access "Introduction to the Settings 2.0 framework").
+  For details, see [Permissions and access](../../../manage/settings/settings-20.md#permissions-and-access "Introduction to the Settings 2.0 framework").
 
 ## Get groups from Entra ID in automation workflows
 
@@ -97,7 +97,7 @@ Microsoft Entra ID Connector requires a client secret from Microsoft Azure for a
 4. In the **Choose action** side panel, search for **Microsoft Entra ID** and select **Get groups**.
 5. In the action **Input**, you can target specific groups in **$filter** if you wish to filter your results. Likewise, in **$select**, specify which fields you wish to get from Entra ID. The syntax is based on [Entra ID API documentationï»¿](https://dt-url.net/azure-api-docs).
 
-   Important for importing Entra ID groups as [ownership teams](/docs/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership."):
+   Important for importing Entra ID groups as [ownership teams](../../../deliver/ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership."):
 
    * You always need to include `id` and `displayName` in `$select`; these fields are mapped to the imported ownership team's **Team identifier** and **Team name**, respectively.
    * We recommend that you always include the `mailNickname` parameter in `get_groups`. This field has unique values in Entra ID and is set as a unique, human-readable **Supplementary Identifier** for your imported ownership team within Dynatrace.
@@ -105,7 +105,7 @@ Microsoft Entra ID Connector requires a client secret from Microsoft Azure for a
    * The `mail` parameter is set as the **Email** of the imported ownership team.
 
    ![Get groups input fields](https://dt-cdn.net/images/azure-connector-get-groups-input-698-0609c7d9dc.webp)
-6. Optionally, insert the **Import teams** action (provided by the [Ownership app](/docs/deliver/ownership-app#import-teams "It provides custom actions to define workflows integrating entity owners and their contact information.") ![Ownership](https://dt-cdn.net/images/ownership-w-background-512-99cc966544.webp "Ownership")) to store Entra ID group information as [ownership teams](/docs/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") within Dynatrace **Settings**. You can then [assign these imported teams as owners](/docs/deliver/ownership/assign-ownership "Assign owners to entities using entity metadata like labels, environment variables, and tags.") to any monitored entity in Dynatrace.
+6. Optionally, insert the **Import teams** action (provided by the [Ownership app](../../../deliver/ownership-app.md#import-teams "It provides custom actions to define workflows integrating entity owners and their contact information.") ![Ownership](https://dt-cdn.net/images/ownership-w-background-512-99cc966544.webp "Ownership")) to store Entra ID group information as [ownership teams](../../../deliver/ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") within Dynatrace **Settings**. You can then [assign these imported teams as owners](../../../deliver/ownership/assign-ownership.md "Assign owners to entities using entity metadata like labels, environment variables, and tags.") to any monitored entity in Dynatrace.
 7. To test your workflow, select **Run**.
 
 ### Action result

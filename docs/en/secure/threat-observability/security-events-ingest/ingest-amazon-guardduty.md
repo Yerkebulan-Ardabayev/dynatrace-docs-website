@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:24:07.806532
 * How-to guide
 * Updated on Aug 25, 2025
 
-This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](/docs/secure/threat-observability/migration "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
 
 Ingest Amazon GuardDuty security findings and analyze them in Dynatrace.
 
@@ -28,8 +28,8 @@ GuardDuty detects suspicious activities in your AWS accounts, workloads, and dat
 
 With the ingested data, you can accomplish various use cases, such as
 
-* [Visualize and analyze security findings](/docs/secure/use-cases/visualize-and-analyze-security-findings "Visualize, prioritize, and analyze ingested security findings.")
-* [Automate and orchestrate security findings](/docs/secure/use-cases/automate-and-orchestrate-security-findings "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* [Visualize and analyze security findings](../../use-cases/visualize-and-analyze-security-findings.md "Visualize, prioritize, and analyze ingested security findings.")
+* [Automate and orchestrate security findings](../../use-cases/automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
 
 ### Requirements
 
@@ -56,11 +56,11 @@ See below for the [Amazon GuardDuty](#aws) and [Dynatrace](#dt) requirements.
   + To query ingested data: `storage:security.events:read`.
 * Tokens:
 
-  + Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+  + Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see [Dynatrace API - Tokens and authentication](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
 
 ## Activation and setup
 
-1. In Dynatrace, open  [**Hub**](/docs/manage/hub "See the information about Dynatrace Hub.").
+1. In Dynatrace, open  [**Hub**](../../../manage/hub.md "See the information about Dynatrace Hub.").
 2. Look for **Amazon GuardDuty** and select **Install**.
 3. Select **Set up**, then select  **Configure new connection**.
 4. Follow the on-screen instructions to set up the ingestion.
@@ -74,12 +74,12 @@ See below for the [Amazon GuardDuty](#aws) and [Dynatrace](#dt) requirements.
 1. Events are ingested into Dynatrace
 
 1. Amazon GuardDuty events are sent to [Amazon EventBridgeï»¿](https://dt-url.net/qi03wtk), which triggers an AWS Lambda function.
-2. The Lambda function pre-processes the events and sends them to Dynatrace via a dedicated [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") security ingest endpoint.
+2. The Lambda function pre-processes the events and sends them to Dynatrace via a dedicated [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") security ingest endpoint.
 
 2. Security findings are processed and stored in Grail
 
 1. The OpenPipeline ingest endpoint processes and maps the data according to the [Semantic Dictionary conventionsï»¿](https://dt-url.net/3q03pb0).
-2. Data is stored in a bucket called `default_securityevents` (for details, see: [Built-in Grail buckets](/docs/platform/grail/organize-data#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.")).
+2. Data is stored in a bucket called `default_securityevents` (for details, see: [Built-in Grail buckets](../../../platform/grail/organize-data.md#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.")).
 
 ### Monitor data
 
@@ -98,21 +98,21 @@ You can view
 
 ### Visualize and analyze findings
 
-You can create your own [dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or use our templates to visualize and analyze container vulnerability findings.
+You can create your own [dashboards](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or use our templates to visualize and analyze container vulnerability findings.
 
 1. In **Settings**, open **Amazon GuardDuty**.
 2. In the **Try our templates** section, select the desired dashboard template.
 
 ### Automate and orchestrate findings
 
-You can create your own [workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") or use our templates to automate and orchestrate container vulnerability findings.
+You can create your own [workflows](../../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") or use our templates to automate and orchestrate container vulnerability findings.
 
 1. In **Settings**, open **Amazon GuardDuty**.
 2. In the **Try our templates** section, select the desired workflow template.
 
 ### Query ingested data
 
-You can query ingested data in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), using the data format in [Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0).
+You can query ingested data in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), using the data format in [Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0).
 
 1. In **Settings**, open **Amazon GuardDuty**.
 2. Select **Open with** .
@@ -120,7 +120,7 @@ You can query ingested data in [![Notebooks](https://dt-cdn.net/images/notebooks
 
 ### Evaluate, triage, and investigate detection findings
 
-You can evaluate, triage, and investigate detection findings with [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts.").
+You can evaluate, triage, and investigate detection findings with [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](../../threats-and-exploits.md "Understand, triage, and investigate detection findings and alerts.").
 
 1. Open ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**.
 2. Filter for **Provider** > **Amazon GuardDuty**.
@@ -137,13 +137,13 @@ This removes the Dynatrace resources created for this integration.
 
 ### Licensing and cost
 
-For billing information, see [Events powered by Grail](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For billing information, see [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 
 ## FAQ
 
 ### Which data model is used for the security logs and events coming from Amazon GuardDuty?
 
-[Detection finding events](/docs/secure/threat-observability/concepts#detection "Basic concepts related to Threat Observability") store the individual detection findings per affected object represented by an AWS resource.
+[Detection finding events](../concepts.md#detection "Basic concepts related to Threat Observability") store the individual detection findings per affected object represented by an AWS resource.
 
 ### Which extension fields are added on the events ingested from Amazon GuardDuty?
 
@@ -167,7 +167,7 @@ The `aws` namespace is added to store AWS-related information with the following
 ### How do we normalize the risk score for Amazon GuardDuty findings?
 
 Dynatrace normalizes severity and risk scores for all findings ingested through the current integration. This helps you to prioritize findings consistently, regardless of their source.  
-For details on how normalization works, see [Severity and score normalization](/docs/secure/threat-observability/concepts#normalization "Basic concepts related to Threat Observability").
+For details on how normalization works, see [Severity and score normalization](../concepts.md#normalization "Basic concepts related to Threat Observability").
 
 * `dt.security.risk.level` is mapped from the severity level determined by Amazon GuardDuty mapping of the severity score (`detail.severity`).
 * `dt.security.risk.score` is mapped directly from the severity score (`detail.severity`) set by Amazon GuardDuty.
@@ -187,6 +187,6 @@ Ingest Amazon GuardDuty detection findings.](https://www.dynatrace.com/hub/detai
 
 ## Related topics
 
-* [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Security events](/docs/semantic-dictionary/model/security-events "Get to know the Semantic Dictionary models related to security events.")
+* [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
+* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Security events](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")

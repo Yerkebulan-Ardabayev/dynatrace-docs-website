@@ -20,7 +20,7 @@ Preview
 
 This is a preview release. Your current configuration is fully compatible with future versions, but you can expect higher resiliency to traffic spikes and better handling of connection disruptions when the feature becomes generally available.
 
-For the newest Dynatrace version, see [Syslog ingestion with ActiveGate](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog "Ingest syslog log data to Dynatrace using ActiveGate and have Dynatrace transform it into meaningful log messages.").
+For the newest Dynatrace version, see [Syslog ingestion with ActiveGate](../../logs/lma-log-ingestion/lma-log-ingestion-syslog.md "Ingest syslog log data to Dynatrace using ActiveGate and have Dynatrace transform it into meaningful log messages.").
 
 Syslog, short for system logging protocol, is a logging mechanism that enables system administrators to oversee and control log files from various system components, such as network devices, Linux host syslog, syslog servers, or other syslog producers.
 
@@ -28,7 +28,7 @@ This guide shows you how to configure your Environment ActiveGate on Linux to co
 
 ## Prerequisites
 
-* Environment ActiveGate version 1.293+ on Linux installed to [monitor remote technologies](/docs/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose "Learn about the routing and monitoring capabilities and uses of ActiveGate.").
+* Environment ActiveGate version 1.293+ on Linux installed to [monitor remote technologies](../../../ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose.md "Learn about the routing and monitoring capabilities and uses of ActiveGate.").
 * Your network devices have the syslog enabled or you have other syslog producers configured in your network. Refer to RFC3164 and RFC5424 for details. Dynatrace supports a wide variety of syslog implementations, including RSysLog, Syslog-NG, NXLog, and others.
 
 ## Who is it for?
@@ -45,7 +45,7 @@ Enabling syslog log ingestion requires you to:
 
 1. **Deploy Environment ActiveGate**.
 
-   See instructions for [Linux](/docs/ingest-from/dynatrace-activegate/installation/linux "Learn how to install ActiveGate on Windows, customize installation, and more."). Use the [remote technologies monitoring](/docs/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose "Learn about the routing and monitoring capabilities and uses of ActiveGate.") purpose.
+   See instructions for [Linux](../../../ingest-from/dynatrace-activegate/installation/linux.md "Learn how to install ActiveGate on Windows, customize installation, and more."). Use the [remote technologies monitoring](../../../ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose.md "Learn about the routing and monitoring capabilities and uses of ActiveGate.") purpose.
 2. **Enable syslog ingestion on your ActiveGate**.
 
    Edit the `/var/lib/dynatrace/remotepluginmodule/agent/conf/extensionsuser.conf` file and add the following flag:
@@ -625,7 +625,7 @@ Enabling syslog log ingestion requires you to:
 
    **Note**: Do NOT modify the exporter configuration. The default configuration points to the embedded Collector.
 
-   For more information on syslog receiver configuration, see [Ingest syslog data with the OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/syslog "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.").
+   For more information on syslog receiver configuration, see [Ingest syslog data with the OpenTelemetry Collector](../../../ingest-from/opentelemetry/collector/use-cases/syslog.md "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.").
 4. **Verify the syslog ingestion is enabled**.
 
    After you enable syslog ingestion, check the following log files to verify it:
@@ -744,7 +744,7 @@ After you enable the integration, the syslog-ingested events are enriched with t
 
 ## Troubleshooting
 
-Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Monitoring (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/lmc-troubleshooting "Fix issues related to the setup and configuration of Log Monitoring Classic.").
+Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Monitoring (Logs Classic)](../lmc-troubleshooting.md "Fix issues related to the setup and configuration of Log Monitoring Classic.").
 
 * [Syslog Ingestion via ActiveGate Troubleshooting Guideï»¿](https://community.dynatrace.com/t5/Troubleshooting/Syslog-Ingestion-via-ActiveGate-Troubleshooting-Guide/ta-p/282718)
 * [Syslog Ingestion Troubleshootingï»¿](https://community.dynatrace.com/t5/Troubleshooting/Syslog-Ingestion-Troubleshooting/ta-p/264112)

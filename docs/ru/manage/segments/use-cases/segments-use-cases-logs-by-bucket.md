@@ -27,14 +27,14 @@ scraped: 2026-03-06T21:13:17.215643
 
 Предварительные знания
 
-* [Включение данных в сегменты](/docs/manage/segments/concepts/segments-concepts-includes "Узнайте, как данные различных типов могут включаться в сегменты.")
-* [Переменные в сегментах](/docs/manage/segments/concepts/segments-concepts-variables "Узнайте, как переменные помогают формировать динамические сегменты и сокращать усилия по настройке и обслуживанию.")
-* [Сегменты в запросах DQL](/docs/manage/segments/concepts/segments-concepts-queries "Узнайте, как Grail оценивает сегменты при выполнении запросов для возврата только соответствующих результатов.")
+* [Включение данных в сегменты](../concepts/segments-concepts-includes.md "Узнайте, как данные различных типов могут включаться в сегменты.")
+* [Переменные в сегментах](../concepts/segments-concepts-variables.md "Узнайте, как переменные помогают формировать динамические сегменты и сокращать усилия по настройке и обслуживанию.")
+* [Сегменты в запросах DQL](../concepts/segments-concepts-queries.md "Узнайте, как Grail оценивает сегменты при выполнении запросов для возврата только соответствующих результатов.")
 
 Предварительные условия
 
 * Среда Dynatrace SaaS на базе Grail и AppEngine.
-* Наличие разрешений `storage:filter-segments:write` и `storage:filter-segments:read`. Сведения о настройке разрешений см. в разделе [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.").
+* Наличие разрешений `storage:filter-segments:write` и `storage:filter-segments:read`. Сведения о настройке разрешений см. в разделе [Permissions in Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.").
 
 Ключевые термины
 
@@ -51,11 +51,11 @@ scraped: 2026-03-06T21:13:17.215643
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Создание сегмента для одного бакета журналов**](/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket#create-segment "Сегментирование журналов по бакетам с помощью сегментов")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Создание сегмента для одного бакета журналов**](segments-use-cases-logs-by-bucket.md#create-segment "Сегментирование журналов по бакетам с помощью сегментов")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Добавление переменной для фильтрации по любому бакету журналов**](/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket#variable "Сегментирование журналов по бакетам с помощью сегментов")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Добавление переменной для фильтрации по любому бакету журналов**](segments-use-cases-logs-by-bucket.md#variable "Сегментирование журналов по бакетам с помощью сегментов")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Использование сегмента для анализа журналов по бакетам**](/docs/manage/segments/use-cases/segments-use-cases-logs-by-bucket#analyze "Сегментирование журналов по бакетам с помощью сегментов")
+**Использование сегмента для анализа журналов по бакетам**](segments-use-cases-logs-by-bucket.md#analyze "Сегментирование журналов по бакетам с помощью сегментов")
 
 ### Шаг 1: Создание сегмента для одного бакета журналов
 

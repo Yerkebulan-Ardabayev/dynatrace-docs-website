@@ -18,11 +18,11 @@ scraped: 2026-03-06T21:27:05.600890
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Предоставление разрешений для Workflows**](/docs/analyze-explore-automate/workflows/actions/pagerduty#permissions "Automate creation of incidents in PagerDuty based on your monitoring data and events.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Предоставление разрешений для Workflows**](pagerduty.md#permissions "Automate creation of incidents in PagerDuty based on your monitoring data and events.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Создание API-ключа PagerDuty**](/docs/analyze-explore-automate/workflows/actions/pagerduty#api-key "Automate creation of incidents in PagerDuty based on your monitoring data and events.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Создание API-ключа PagerDuty**](pagerduty.md#api-key "Automate creation of incidents in PagerDuty based on your monitoring data and events.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Настройка подключения PagerDuty**](/docs/analyze-explore-automate/workflows/actions/pagerduty#connection "Automate creation of incidents in PagerDuty based on your monitoring data and events.")
+**Настройка подключения PagerDuty**](pagerduty.md#connection "Automate creation of incidents in PagerDuty based on your monitoring data and events.")
 
 ### Шаг 1. Предоставление разрешений для Workflows
 
@@ -38,7 +38,7 @@ scraped: 2026-03-06T21:27:05.600890
    * `state:app-states:write`
    * `state:app-states:delete`
 
-Подробнее об общих разрешениях пользователей Workflows см. в разделе [Пользовательские разрешения для Workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+Подробнее об общих разрешениях пользователей Workflows см. в разделе [Пользовательские разрешения для Workflows](../security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Шаг 2. Создание API-ключа PagerDuty
 
@@ -90,7 +90,7 @@ scraped: 2026-03-06T21:27:05.600890
 6. На одном из узлов извлечения информации выберите ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add"), найдите `PagerDuty` и выберите **Create an incident**.
 7. На каждом из оставшихся узлов извлечения информации выберите ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") и перетащите линию к действию **Create an incident**.
 8. В действии **Create an incident** выберите [подключение](#connection) к вашей среде PagerDuty.
-9. Настройте поля ввода по мере необходимости. Чтобы узнать, как использовать выходные данные узлов извлечения информации, см. [Справочник выражений](/docs/analyze-explore-automate/workflows/reference "Get to know the workflows expression").
+9. Настройте поля ввода по мере необходимости. Чтобы узнать, как использовать выходные данные узлов извлечения информации, см. [Справочник выражений](../reference.md "Get to know the workflows expression").
 10. Для тестирования рабочего процесса выберите **Run**.
 
 ## Устранение неполадок

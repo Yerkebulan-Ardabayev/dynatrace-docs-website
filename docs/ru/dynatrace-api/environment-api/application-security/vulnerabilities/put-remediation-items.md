@@ -11,7 +11,7 @@ scraped: 2026-03-05T21:38:03.339161
 * Reference
 * Updated on May 03, 2022
 
-Установка состояния заглушения для группы процессов [отслеживания устранения](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Отслеживание хода устранения уязвимостей.") или, в случае уязвимостей Kubernetes, для узла Kubernetes отслеживания устранения, в значение `mute` (заглушить) или `unmute` (снять заглушение).
+Установка состояния заглушения для группы процессов [отслеживания устранения](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Отслеживание хода устранения уязвимостей.") или, в случае уязвимостей Kubernetes, для узла Kubernetes отслеживания устранения, в значение `mute` (заглушить) или `unmute` (снять заглушение).
 
 Запрос принимает полезную нагрузку в формате `application/json`.
 
@@ -24,7 +24,7 @@ scraped: 2026-03-05T21:38:03.339161
 
 Для выполнения этого запроса необходим токен доступа с областью `securityProblems.write`.
 
-Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 
@@ -168,7 +168,7 @@ scraped: 2026-03-05T21:38:03.339161
 
 ## Пример
 
-Заглушить элемент устранения `PROCESS_GROUP-70DF2C1374244F5A` для уязвимости `8788643471842202915` из [примера GET-запроса](/docs/dynatrace-api/environment-api/application-security/vulnerabilities/get-remediation-items#example "Просмотр списка элементов устранения уязвимости через Dynatrace API."). Код ответа **200** указывает на успешный запрос.
+Заглушить элемент устранения `PROCESS_GROUP-70DF2C1374244F5A` для уязвимости `8788643471842202915` из [примера GET-запроса](get-remediation-items.md#example "Просмотр списка элементов устранения уязвимости через Dynatrace API."). Код ответа **200** указывает на успешный запрос.
 
 #### Curl
 
@@ -242,6 +242,6 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/87886434718422029
 
 ## Связанные темы
 
-* [Application Security](/docs/secure/application-security "Доступ к функциям Dynatrace Application Security.")
-* [Davis Security Advisor API](/docs/dynatrace-api/environment-api/application-security/davis-security-advice "Просмотр рекомендаций Davis Security Advisor через Dynatrace API.")
-* [Отслеживание устранения](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Отслеживание хода устранения уязвимостей.")
+* [Application Security](../../../../secure/application-security.md "Доступ к функциям Dynatrace Application Security.")
+* [Davis Security Advisor API](../davis-security-advice.md "Просмотр рекомендаций Davis Security Advisor через Dynatrace API.")
+* [Отслеживание устранения](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Отслеживание хода устранения уязвимостей.")

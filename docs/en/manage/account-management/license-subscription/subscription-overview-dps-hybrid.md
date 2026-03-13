@@ -13,9 +13,9 @@ scraped: 2026-03-04T21:32:07.873486
 * 3-min read
 * Published Nov 24, 2025
 
-This page is specifically for customers with a DPS for Hybrid setup, see [DPS for Hybrid](/docs/license/dps-for-hybrid "DPS for Hybrid lets you share one subscription across multiple accounts.").
+This page is specifically for customers with a DPS for Hybrid setup, see [DPS for Hybrid](../../../license/dps-for-hybrid.md "DPS for Hybrid lets you share one subscription across multiple accounts.").
 
-If you do not share your DPS license with other accounts, see [Subscription (DPS)](/docs/manage/account-management/license-subscription/subscription-overview-dps "View your Dynatrace Platform Subscription budget summary and cost analysis.") for a description of your **Overview** view.
+If you do not share your DPS license with other accounts, see [Subscription (DPS)](subscription-overview-dps.md "View your Dynatrace Platform Subscription budget summary and cost analysis.") for a description of your **Overview** view.
 
 The Account Management subscription overview view provides key analyses of your DPS for Hybrid subscription.
 You can see overall information about your license, and drill-downs at the account level.
@@ -86,7 +86,7 @@ Additional information about your licenses is available by selecting:
 
 The **Cost distribution** pane gives you insights into the account's consumption of different Dynatrace rate-card capabilities.
 
-Select **View details** to see the **Cost and usage details** page, see [Cost and usage](/docs/manage/account-management/license-subscription/subscription-overview-dps#dps-cost-and-usage "View your Dynatrace Platform Subscription budget summary and cost analysis.").
+Select **View details** to see the **Cost and usage details** page, see [Cost and usage](subscription-overview-dps.md#dps-cost-and-usage "View your Dynatrace Platform Subscription budget summary and cost analysis.").
 
 ### Cost Forecast
 

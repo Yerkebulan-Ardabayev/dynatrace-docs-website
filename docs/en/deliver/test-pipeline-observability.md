@@ -46,9 +46,9 @@ Make sure all of these are true before you start:
 ### Knowledge
 
 * You understand how Dynatrace works.
-* You know how to set up [Dynatrace Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and alerting systems.
+* You know how to set up [Dynatrace Dashboards](../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and alerting systems.
 * You know how to ingest test-related events and metadata into Dynatrace, particularly using the Dynatrace API or similar data ingestion methods.
-* You know how to set up automated [workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") in Dynatrace for automating responses to test pipeline events.
+* You know how to set up automated [workflows](../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") in Dynatrace for automating responses to test pipeline events.
 * You have basic understanding of software testing processes and the typical structure of test pipelines in a software development environment.
 * You have knowledge of network and data security practices to ensure safe and secure data transmission and storage within the Dynatrace environment.
 
@@ -60,7 +60,7 @@ The following steps use business events to implement the test pipeline observabi
 
 1. Gather and ingest test execution data
 
-   Based on your source test pipeline tools and frameworks, collect test execution data. Ingest this data as business events into Dynatrace using the [Business events API](/docs/observe/business-observability/bo-api-ingest "Set up authentication for and ingest business events via API."). For example, you can code helpers or post to business events API directly.
+   Based on your source test pipeline tools and frameworks, collect test execution data. Ingest this data as business events into Dynatrace using the [Business events API](../observe/business-observability/bo-api-ingest.md "Set up authentication for and ingest business events via API."). For example, you can code helpers or post to business events API directly.
 
    Show me a code example
 
@@ -237,12 +237,12 @@ The following steps use business events to implement the test pipeline observabi
    ```
 
    The data submitted in events depends on your specific goal. You can send each test execution results as a business event, adding the critical information as the payload. This way, you're able to trigger workflows and Grail will store all your important text execution to be queried by DQL for ad-hoc analysis in Notebooks or as input for your dashboards.
-2. Create a [dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")
+2. Create a [dashboard](../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")
 
    Use DQL to present your data using available visualizations.
 3. Set up a workflow
 
-   The workflow can be [triggered](/docs/analyze-explore-automate/workflows/trigger "Introduction to workflow automation triggers for workflows.") on sending a business event after a test execution. Then, you can create follow-up actions based on the ingested test data. For instance, you can determine the owners of the failing property using the [Ownership](/docs/deliver/ownership-app "It provides custom actions to define workflows integrating entity owners and their contact information.") action and then notify the test owners about test results via a [workflow Slack](/docs/analyze-explore-automate/workflows/actions/slack "Send messages to Slack Workspaces") action.
+   The workflow can be [triggered](../analyze-explore-automate/workflows/trigger.md "Introduction to workflow automation triggers for workflows.") on sending a business event after a test execution. Then, you can create follow-up actions based on the ingested test data. For instance, you can determine the owners of the failing property using the [Ownership](ownership-app.md "It provides custom actions to define workflows integrating entity owners and their contact information.") action and then notify the test owners about test results via a [workflow Slack](../analyze-explore-automate/workflows/actions/slack.md "Send messages to Slack Workspaces") action.
 
    Here's an example of a simple workflow sending the test execution results to a Slack channel:
 
@@ -756,7 +756,7 @@ The following steps use business events to implement the test pipeline observabi
       ```
 4. Configure anomaly detection
 
-   You can also use the [AI in Workflows - Predictive maintenance of cloud disks](/docs/dynatrace-intelligence/use-cases/davis-for-workflows "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.") action in your workflow to detect anomalies in test/build executions, such as unusually long durations compared to historical data. This information helps to maintain and optimize test environments.
+   You can also use the [AI in Workflows - Predictive maintenance of cloud disks](../dynatrace-intelligence/use-cases/davis-for-workflows.md "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.") action in your workflow to detect anomalies in test/build executions, such as unusually long durations compared to historical data. This information helps to maintain and optimize test environments.
 5. Validate and optimize the implementation
 
    After setting up, validate the workflow by running test cases and checking the dashboard for correct data representation. Optimize the setup based on initial observations, ensuring data consistency and accuracy.

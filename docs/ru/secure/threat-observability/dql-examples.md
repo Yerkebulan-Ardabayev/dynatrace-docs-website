@@ -12,9 +12,9 @@ scraped: 2026-03-06T21:20:31.345755
 * How-to guide
 * Обновлено 22 октября 2025 г.
 
-Эта страница была обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список изменений и действий, необходимых для выполнения миграции, см. в [руководстве по миграции таблицы безопасности Grail](/docs/secure/threat-observability/migration "Understand the changes in the new Grail security table and learn how to migrate to it.").
+Эта страница была обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список изменений и действий, необходимых для выполнения миграции, см. в [руководстве по миграции таблицы безопасности Grail](migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
 
-Приведённые ниже примеры иллюстрируют, как разрезать [данные безопасности](/docs/secure/threat-observability/concepts#security-data "Basic concepts related to Threat Observability") и создавать мощные и гибкие отчёты по безопасности с помощью [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.").
+Приведённые ниже примеры иллюстрируют, как разрезать [данные безопасности](concepts.md#security-data "Basic concepts related to Threat Observability") и создавать мощные и гибкие отчёты по безопасности с помощью [Dynatrace Query Language (DQL)](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.").
 
 ## Запросы к событиям Dynatrace
 
@@ -1898,7 +1898,7 @@ AND object.type == "CONTAINER_IMAGE"
 
 ### Последние результаты для всех охваченных систем
 
-Получите последние результаты соответствия поддерживаемым стандартам для всех систем, [охваченных Security Posture Management](/docs/secure/xspm/assess-coverage#coverage "Review the Security Posture Management coverage of your systems at a glance.").
+Получите последние результаты соответствия поддерживаемым стандартам для всех систем, [охваченных Security Posture Management](../xspm/assess-coverage.md#coverage "Review the Security Posture Management coverage of your systems at a glance.").
 
 **Пример запроса**:
 
@@ -1948,7 +1948,7 @@ AND event.type == "COMPLIANCE_SCAN_COMPLETED"
 
 ### Исторические результаты соответствия стандарту для всех охваченных систем
 
-Получите исторические результаты соответствия стандарту (в данном случае DORA) для всех систем, [охваченных Security Posture Management](/docs/secure/xspm/assess-coverage#coverage "Review the Security Posture Management coverage of your systems at a glance.").
+Получите исторические результаты соответствия стандарту (в данном случае DORA) для всех систем, [охваченных Security Posture Management](../xspm/assess-coverage.md#coverage "Review the Security Posture Management coverage of your systems at a glance.").
 
 **Пример запроса**:
 

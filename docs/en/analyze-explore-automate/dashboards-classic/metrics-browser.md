@@ -17,7 +17,7 @@ Early Adopter
 
 Go to **Metrics** to open the **Metrics** browser, which is a cool tool for browsing all metrics available in your monitoring environment and making a quick metric-specific visualization.
 
-* [Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards."): You can pin the visualization to a classic dashboard.
+* [Dashboards Classic](charts-and-tiles/pin-tiles-to-your-dashboard.md "Learn to pin tiles to your dashboards."): You can pin the visualization to a classic dashboard.
 
 ## Filter and sort the table
 
@@ -54,17 +54,17 @@ The order of magnitude here is selected automatically based on the size of the v
 
 Examples of order-of-magnitude notation in Dynatrace:
 
-For details, see [Order-of-magnitude notation](/docs/discover-dynatrace/get-started/dynatrace-ui/order-of-magnitude-notation "Dynatrace order-of-magnitude notation for displaying metric values").
+For details, see [Order-of-magnitude notation](../../discover-dynatrace/get-started/dynatrace-ui/order-of-magnitude-notation.md "Dynatrace order-of-magnitude notation for displaying metric values").
 
 ## Add metric to dashboard
 
-[Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+[Dashboards Classic](../dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
 
 To add a metric to a classic dashboard
 
 1. Select ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") in the **Details** column to display metric details.
-2. Select **Create chart** to open the metric in [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
-3. Adjust the query and visualization settings as needed. For details, see [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") or [Data Explorer quick start](/docs/analyze-explore-automate/explorer/explorer-quick-start "Using Data Explorer, create your first query, select a visualization, and pin the results to a dashboard.").
+2. Select **Create chart** to open the metric in [Data Explorer](../explorer.md "Query for metrics and transform results to gain desired insights.").
+3. Adjust the query and visualization settings as needed. For details, see [Data Explorer](../explorer.md "Query for metrics and transform results to gain desired insights.") or [Data Explorer quick start](../explorer/explorer-quick-start.md "Using Data Explorer, create your first query, select a visualization, and pin the results to a dashboard.").
 4. Select **Pin to dashboard**.
 5. Specify the target dashboard and metric title.
 6. Select **Pin**.
@@ -80,7 +80,7 @@ Once this information is provided, it becomes part of the metrics descriptor and
 
 ### Configuration via API
 
-Metric metadata is fully configurable via API. For details, see [Custom metric metadata](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata "Provide metadata for your custom metric.").
+Metric metadata is fully configurable via API. For details, see [Custom metric metadata](../../ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata.md "Provide metadata for your custom metric.").
 
 ### Configuration via web UI
 

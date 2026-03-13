@@ -19,14 +19,14 @@ Dynatrace provides you with a dedicated AWS Lambda layer that contains the Dynat
 
 Dynatrace provides extensive Python, Node.js, and Java monitoring capabilities:
 
-* Automatic distributed tracing across AWS services such as [API Gateway](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-api-gateway "Monitor Amazon API Gateway and view available metrics."), [SQS](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-simple-queue-service-sqs "Monitor Amazon Simple Queue Service (Amazon SQS) and view available metrics."), [SNS](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-simple-notification-service-sns "Monitor Amazon Simple Notification Service (Amazon SNS) and view available metrics."), [EventBridge](/docs/analyze-explore-automate/workflows/actions/aws/aws-workflows-actions-eventbridge "Integrate Workflows with AWS EventBridge service.") and seamless integration with other AWS services. For more details, refer to [AWS Lambda integration](/docs/ingest-from/amazon-web-services/integrate-into-aws "Learn how to integrate Dynatrace into AWS platform.").
+* Automatic distributed tracing across AWS services such as [API Gateway](../../integrate-with-aws/aws-all-services/aws-service-api-gateway.md "Monitor Amazon API Gateway and view available metrics."), [SQS](../../integrate-with-aws/aws-all-services/aws-service-simple-queue-service-sqs.md "Monitor Amazon Simple Queue Service (Amazon SQS) and view available metrics."), [SNS](../../integrate-with-aws/aws-all-services/aws-service-simple-notification-service-sns.md "Monitor Amazon Simple Notification Service (Amazon SNS) and view available metrics."), [EventBridge](../../../../analyze-explore-automate/workflows/actions/aws/aws-workflows-actions-eventbridge.md "Integrate Workflows with AWS EventBridge service.") and seamless integration with other AWS services. For more details, refer to [AWS Lambda integration](../../integrate-into-aws.md "Learn how to integrate Dynatrace into AWS platform.").
 
 * OpenTelemetry support for trace and metric ingestion.
-* Native log ingestion from Lambda functions. Dynatrace supports log ingestion directly via the AWS Lambda Telemetry API, reducing dependency on CloudWatch. For more details, refer to [AWS Lambda log collection](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector "Collect logs from AWS Lambda functions").
-* [Cold start](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/trace-lambda-functions#filter-cold-start "Monitor AWS Lambda functions.") detection and optimization.
+* Native log ingestion from Lambda functions. Dynatrace supports log ingestion directly via the AWS Lambda Telemetry API, reducing dependency on CloudWatch. For more details, refer to [AWS Lambda log collection](collector.md "Collect logs from AWS Lambda functions").
+* [Cold start](trace-lambda-functions.md#filter-cold-start "Monitor AWS Lambda functions.") detection and optimization.
 * Infrastructure-as-Code support (Terraform, AWS SAM, Serverless Framework).
 
-See our [supported technologies matrix](/docs/ingest-from/technology-support#aws-monitor-hub "Find technical details related to Dynatrace support for specific platforms and development frameworks.") for details on supported frameworks and [runtimesï»¿](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html) for AWS supported runtimes.
+See our [supported technologies matrix](../../../technology-support.md#aws-monitor-hub "Find technical details related to Dynatrace support for specific platforms and development frameworks.") for details on supported frameworks and [runtimesï»¿](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html) for AWS supported runtimes.
 
 ### Incoming invocations
 
@@ -64,7 +64,7 @@ Quick start vs. advanced configuration
 
 Latest Dynatrace
 
-This option is available only in the latest Dynatrace. For details, see [Upgrade to the latest Dynatrace](/docs/platform/upgrade "Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data.").
+This option is available only in the latest Dynatrace. For details, see [Upgrade to the latest Dynatrace](../../../../platform/upgrade.md "Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data.").
 
 After you select your runtime, you have two different observability options:
 
@@ -95,7 +95,7 @@ When using this method, make sure that you add the Dynatrace Lambda layer to you
 
 Configure with environment variables
 
-Environment variables can be used for configuration, but we advise using the Secrets Manager as the recommended approach for fetching a security token. For more details, refer to [Fetch token from AWS Secrets Manager](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/trace-lambda-functions#aws-secrets-manager "Monitor AWS Lambda functions.").
+Environment variables can be used for configuration, but we advise using the Secrets Manager as the recommended approach for fetching a security token. For more details, refer to [Fetch token from AWS Secrets Manager](trace-lambda-functions.md#aws-secrets-manager "Monitor AWS Lambda functions.").
 
 When using this method, make sure that you add the Dynatrace Lambda layer to your function. The layer, as well as the environment variables, can be set either manually through the AWS console (**Add layer** > **Specify an ARN** and paste the ARN displayed on the deployment page) or by using an automated solution of your choice.
 
@@ -157,7 +157,7 @@ This is an optional step to use Real User Monitoring (RUM), which provides you w
 AWS Lambda also supports [**non-proxy integration**ï»¿](https://dt-url.net/8u03rh3), whichâwithout some additional configurationâprevents Dynatrace from
 
 * Tracing calls from other monitored applications
-* [RUM](/docs/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.") detection (web and mobile)
+* [RUM](../../../../observe/digital-experience/rum-concepts/rum-overview.md "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.") detection (web and mobile)
 
 To make tracing calls from other monitored applications/RUM detection work in this scenario, create a custom mapping template in the integration requests configuration.
 
@@ -266,7 +266,7 @@ This option always overrides `DT_CONNECTION_AUTH_TOKEN` (`Connection.AuthToken`)
 
 A fetch accesses AWS Secrets Manager only once, during the Lambda function's initialization phase; this causes an increase of the Lambda function's cold start duration.
 
-For details on fetching the token for log collection, refer to [Fetch token from AWS Secrets Manager](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector#aws-secrets-manager "Collect logs from AWS Lambda functions").
+For details on fetching the token for log collection, refer to [Fetch token from AWS Secrets Manager](collector.md#aws-secrets-manager "Collect logs from AWS Lambda functions").
 
 ## Monitoring overhead
 
@@ -308,7 +308,7 @@ The following table contains uncompressed layer sizes.
 
 While not mandatory, we recommend that you set up Dynatrace Amazon CloudWatch integration. This allows data ingested via AWS integration to be seamlessly combined with the data collected by the Dynatrace AWS Lambda extension.
 
-For more details, refer to [Amazon CloudWatch Metric Streams](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams "Ingest metrics from your AWS accounts using Amazon CloudWatch Metric Streams.").
+For more details, refer to [Amazon CloudWatch Metric Streams](../../integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams.md "Ingest metrics from your AWS accounts using Amazon CloudWatch Metric Streams.").
 
 ## Filter cold starts
 

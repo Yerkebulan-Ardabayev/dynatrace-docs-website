@@ -22,7 +22,7 @@ In case you don't want to use OneAgent inside a particular Java (or other) proce
 
 ## Stop and start OneAgent using the command line
 
-* [Restart OneAgent via `oneagentctl` command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+* [Restart OneAgent via `oneagentctl` command-line interface](../../../oneagent-configuration-via-command-line-interface.md#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 * If you use configuration management tools like Puppet or Ansible, you can alternatively stop the OneAgent service using the shell command. The `oneagent` service script is located in `<INSTALL_PATH>/agent/initscripts/`.
 
   To stop OneAgent, use root privileges and execute the `oneagent` service script with the `stop` parameter.
@@ -31,4 +31,4 @@ In case you don't want to use OneAgent inside a particular Java (or other) proce
 
   To start OneAgent, use root privileges and execute the `oneagent` service script with the `start` parameter.
 
-Learn more about [how OneAgent interacts with your OS](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix "Learn about Dynatrace OneAgent security and modifications to your AIX-based system.").
+Learn more about [how OneAgent interacts with your OS](../installation/oneagent-security-aix.md "Learn about Dynatrace OneAgent security and modifications to your AIX-based system.").

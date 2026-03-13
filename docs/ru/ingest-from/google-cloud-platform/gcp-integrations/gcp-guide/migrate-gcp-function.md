@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:35:30.359364
 
 Dynatrace версии 1.230+
 
-Новая версия интеграции с Google Cloud (v.1.0) использует [Extensions 2.0](/docs/ingest-from/extensions "Узнайте, как создавать и управлять расширениями Dynatrace.") и вводит [пользовательскую топологию](/docs/ingest-from/extend-dynatrace/extend-topology/custom-topology "Узнайте, как создать пользовательскую модель топологии, подходящую для ваших телеметрических данных.") для ряда сервисов Google Cloud.
+Новая версия интеграции с Google Cloud (v.1.0) использует [Extensions 2.0](../../../extensions.md "Узнайте, как создавать и управлять расширениями Dynatrace.") и вводит [пользовательскую топологию](../../../extend-dynatrace/extend-topology/custom-topology.md "Узнайте, как создать пользовательскую модель топологии, подходящую для ваших телеметрических данных.") для ряда сервисов Google Cloud.
 
 Список сервисов с пользовательской топологией
 
@@ -42,13 +42,13 @@ Dynatrace версии 1.230+
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Удаление существующего развёртывания**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function#delete-deployment "Миграция с версии 0.1 интеграции Google Cloud на версию 1.0 на Kubernetes и в виде Google Cloud Function.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Удаление существующего развёртывания**](migrate-gcp-function.md#delete-deployment "Миграция с версии 0.1 интеграции Google Cloud на версию 1.0 на Kubernetes и в виде Google Cloud Function.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Удаление дашбордов и/или оповещений**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function#remove-dashboards "Миграция с версии 0.1 интеграции Google Cloud на версию 1.0 на Kubernetes и в виде Google Cloud Function.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Удаление дашбордов и/или оповещений**](migrate-gcp-function.md#remove-dashboards "Миграция с версии 0.1 интеграции Google Cloud на версию 1.0 на Kubernetes и в виде Google Cloud Function.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Установка нового развёртывания Google Cloud**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function#install-deployment "Миграция с версии 0.1 интеграции Google Cloud на версию 1.0 на Kubernetes и в виде Google Cloud Function.")[![Шаг 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Шаг 4")
+**Установка нового развёртывания Google Cloud**](migrate-gcp-function.md#install-deployment "Миграция с версии 0.1 интеграции Google Cloud на версию 1.0 на Kubernetes и в виде Google Cloud Function.")[![Шаг 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Шаг 4")
 
-**Обновление измерений**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function#update-dimensions "Миграция с версии 0.1 интеграции Google Cloud на версию 1.0 на Kubernetes и в виде Google Cloud Function.")
+**Обновление измерений**](migrate-gcp-function.md#update-dimensions "Миграция с версии 0.1 интеграции Google Cloud на версию 1.0 на Kubernetes и в виде Google Cloud Function.")
 
 ## Шаг 1 Удаление существующего развёртывания
 
@@ -83,7 +83,7 @@ wget https://raw.githubusercontent.com/dynatrace-oss/dynatrace-gcp-monitor/maste
 
 ## Шаг 3 Установка нового развёртывания Google Cloud
 
-Для установки нового развёртывания Google Cloud см. [Настройка интеграции метрик и логов Dynatrace Google Cloud (v.1.0) на новом кластере GKE Autopilot](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Настройка мониторинга логов и метрик для сервисов GCP на новом кластере GKE Autopilot.").
+Для установки нового развёртывания Google Cloud см. [Настройка интеграции метрик и логов Dynatrace Google Cloud (v.1.0) на новом кластере GKE Autopilot](deploy-k8.md "Настройка мониторинга логов и метрик для сервисов GCP на новом кластере GKE Autopilot.").
 
 ## Шаг 4 Обновление измерений
 
@@ -177,4 +177,4 @@ wget https://raw.githubusercontent.com/dynatrace-oss/dynatrace-gcp-monitor/maste
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Google Cloud](/docs/ingest-from/google-cloud-platform "Мониторинг Google Cloud с помощью Dynatrace.")
+* [Настройка Dynatrace в Google Cloud](../../../google-cloud-platform.md "Мониторинг Google Cloud с помощью Dynatrace.")

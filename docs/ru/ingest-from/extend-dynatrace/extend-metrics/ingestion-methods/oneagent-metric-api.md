@@ -55,15 +55,15 @@ API метрик OneAgent поставляется с OneAgent версии 1.20
 5. В настройках группы хостов выберите **Extension Execution Controller**.
 6. Включите **Enable Extension Execution Controller**.
 
-Если вы хотите изменить лимиты потребления ресурсов EEC, см. [Профиль производительности](/docs/ingest-from/extensions/concepts#performance-profile "Learn more about the concept of Dynatrace Extensions.").
+Если вы хотите изменить лимиты потребления ресурсов EEC, см. [Профиль производительности](../../../extensions/concepts.md#performance-profile "Learn more about the concept of Dynatrace Extensions.").
 
 ## Осведомлённость о топологии
 
-При использовании локальной конечной точки API идентификатор хоста и контекст имени хоста автоматически добавляются к каждой метрике в качестве измерений. Узнайте, как [обогатить ваши метрики другими специфическими для Dynatrace измерениями](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") и применять детали причинно-следственного анализа Dynatrace-AI к загруженным данным.
+При использовании локальной конечной точки API идентификатор хоста и контекст имени хоста автоматически добавляются к каждой метрике в качестве измерений. Узнайте, как [обогатить ваши метрики другими специфическими для Dynatrace измерениями](../../extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") и применять детали причинно-следственного анализа Dynatrace-AI к загруженным данным.
 
 ## Формат метрик
 
-Предоставляемые точки данных должны соответствовать [протоколу загрузки метрик](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+Предоставляемые точки данных должны соответствовать [протоколу загрузки метрик](../reference/metric-ingestion-protocol.md "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
 
 Запрос принимает полезную нагрузку `text/plain` с набором символов `charset=utf-8`. Полезная нагрузка ограничена `1 000` строками.
 
@@ -105,7 +105,7 @@ curl --data "cpu.temperature,cpu=1 55" http://localhost:14499/metrics/ingest \
 
 Начиная с OneAgent версии 1.267+, системы AIX также поддерживают загрузку метрик.
 
-Порт загрузки метрик по умолчанию -- `14499`. При необходимости вы можете использовать команду [oneagentctl](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") для проверки или изменения порта. Изменение порта загрузки метрик требует перезапуска OneAgent. Добавьте [`--restart-service`](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") к команде для автоматического перезапуска OneAgent.
+Порт загрузки метрик по умолчанию -- `14499`. При необходимости вы можете использовать команду [oneagentctl](../../../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") для проверки или изменения порта. Изменение порта загрузки метрик требует перезапуска OneAgent. Добавьте [`--restart-service`](../../../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") к команде для автоматического перезапуска OneAgent.
 
 ### Проверка порта загрузки
 
@@ -133,10 +133,10 @@ curl --data "cpu.temperature,cpu=1 55" http://localhost:14499/metrics/ingest \
 
 ## Metrics API v2
 
-В отличие от локального интерфейса загрузки, который добавляет контекст топологии автоматически (каждая метрика привязывается к соответствующему хосту), метрики, отправленные через публичный [Metrics API](/docs/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.") v2, по умолчанию не привязаны к топологии. Это особенно полезно для бизнес-метрик, которые не имеют связи с сущностями топологии в вашей среде.
+В отличие от локального интерфейса загрузки, который добавляет контекст топологии автоматически (каждая метрика привязывается к соответствующему хосту), метрики, отправленные через публичный [Metrics API](../../../../dynatrace-api/environment-api/metric-v2.md "Retrieve metric information via Metrics v2 API.") v2, по умолчанию не привязаны к топологии. Это особенно полезно для бизнес-метрик, которые не имеют связи с сущностями топологии в вашей среде.
 
-Однако, чтобы генерировать события для выбранного хоста и позволить Dynatrace Intelligence выполнять причинно-следственный анализ на основе ваших метрик, вы можете настроить ваше приложение для добавления измерения `dt.entity.host`. Для автоматического обогащения идентификатором группы процессов укажите измерение `dt.process.pid`. Для получения дополнительной информации см. [Metrics API - POST ingest data points](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ingest custom metrics to Dynatrace via Metrics v2 API.").
+Однако, чтобы генерировать события для выбранного хоста и позволить Dynatrace Intelligence выполнять причинно-следственный анализ на основе ваших метрик, вы можете настроить ваше приложение для добавления измерения `dt.entity.host`. Для автоматического обогащения идентификатором группы процессов укажите измерение `dt.process.pid`. Для получения дополнительной информации см. [Metrics API - POST ingest data points](../../../../dynatrace-api/environment-api/metric-v2/post-ingest-metrics.md "Ingest custom metrics to Dynatrace via Metrics v2 API.").
 
 ## Связанные темы
 
-* [Матрица поддержки платформ и возможностей OneAgent](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* [Матрица поддержки платформ и возможностей OneAgent](../../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

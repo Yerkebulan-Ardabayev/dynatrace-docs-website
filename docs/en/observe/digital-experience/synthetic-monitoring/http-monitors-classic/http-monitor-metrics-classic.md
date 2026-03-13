@@ -13,7 +13,7 @@ scraped: 2026-03-05T21:34:57.630725
 * 1-min read
 * Published Dec 04, 2020
 
-The following metrics are captured and displayed for synthetic [HTTP monitors](/docs/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors "Learn about Dynatrace synthetic monitor types."):
+The following metrics are captured and displayed for synthetic [HTTP monitors](../general-information/types-of-synthetic-monitors.md "Learn about Dynatrace synthetic monitor types."):
 
 Response time
 :   Measures the HTTP monitor or event performance.  

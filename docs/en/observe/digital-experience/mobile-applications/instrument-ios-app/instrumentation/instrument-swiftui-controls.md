@@ -15,7 +15,7 @@ scraped: 2026-03-05T21:25:19.171690
 
 OneAgent for iOS version 8.249+
 
-After [instrumenting your mobile app with OneAgent for iOS](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios "Set up user experience monitoring for iOS apps within Dynatrace."), you might also want to instrument your app's SwiftUI controls. This page provides additional information on how to set up your project, update our SwiftUI instrumentor, overcome some known limitations, and more.
+After [instrumenting your mobile app with OneAgent for iOS](dynatrace-auto-instrumentation-for-ios.md "Set up user experience monitoring for iOS apps within Dynatrace."), you might also want to instrument your app's SwiftUI controls. This page provides additional information on how to set up your project, update our SwiftUI instrumentor, overcome some known limitations, and more.
 
 To instrument SwiftUI controls, our SwiftUI instrumentor adds additional code to your project's source code (`*.swift` files) during the build process. This code observes the state of UI elements and notifies the OneAgent for iOS about any updates. After the build process is completed, all changes to your project's source code are reverted.
 
@@ -25,7 +25,7 @@ For detailed information on actions performed by the SwiftUI instrumentor and a 
 
 * SwiftUI version 2.0+
 * iOS 14+
-* [OneAgent for iOS](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios "Set up user experience monitoring for iOS apps within Dynatrace.")
+* [OneAgent for iOS](dynatrace-auto-instrumentation-for-ios.md "Set up user experience monitoring for iOS apps within Dynatrace.")
 
 ## Supported controls
 
@@ -95,11 +95,11 @@ To instrument your app's SwiftUI controls, make sure you've completed the follow
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Create an application in Dynatrace**](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios#create-app-in-ui "Set up user experience monitoring for iOS apps within Dynatrace.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Create an application in Dynatrace**](dynatrace-auto-instrumentation-for-ios.md#create-app-in-ui "Set up user experience monitoring for iOS apps within Dynatrace.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Set up OneAgent for your project**](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios#set-up-oneagent "Set up user experience monitoring for iOS apps within Dynatrace.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Set up OneAgent for your project**](dynatrace-auto-instrumentation-for-ios.md#set-up-oneagent "Set up user experience monitoring for iOS apps within Dynatrace.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Install our SwiftUI instrumentor**](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/instrument-swiftui-controls#install-instrumentor "Use the Dynatrace SwiftUI instrumentor to monitor your SwiftUI apps.")
+**Install our SwiftUI instrumentor**](instrument-swiftui-controls.md#install-instrumentor "Use the Dynatrace SwiftUI instrumentor to monitor your SwiftUI apps.")
 
 ## Manage SwiftUI instrumentor
 
@@ -107,7 +107,7 @@ To instrument your app's SwiftUI controls, make sure you've completed the follow
 
 To instrument your app's SwiftUI controls, install the Dynatrace SwiftUI instrumentor. You can do that via Homebrew or manually.
 
-[OneAgent for iOS](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios "Set up user experience monitoring for iOS apps within Dynatrace.") should already be set up for your project. Also, don't forget to back up your project before installing the instrumentor.
+[OneAgent for iOS](dynatrace-auto-instrumentation-for-ios.md "Set up user experience monitoring for iOS apps within Dynatrace.") should already be set up for your project. Also, don't forget to back up your project before installing the instrumentor.
 
 Homebrew
 
@@ -119,7 +119,7 @@ Manual
 
    * Optional Additionally, you can specify `<PROJECT.xcodeproj> --scheme <SCHEME> --target <TARGET>`. If no project details are provided, the tool tries to auto-detect the available targets and schemes and start an interactive selection.
 
-1. Download and extract the ZIP file containing our SwiftUI instrumentor. The link is available in the [mobile instrumentation wizard](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios#instrumentation-wizard "Set up user experience monitoring for iOS apps within Dynatrace.").
+1. Download and extract the ZIP file containing our SwiftUI instrumentor. The link is available in the [mobile instrumentation wizard](dynatrace-auto-instrumentation-for-ios.md#instrumentation-wizard "Set up user experience monitoring for iOS apps within Dynatrace.").
 2. Create a `.dynatrace` folder in your project rootâon the same level as the `*.xcodeproj` file.
 
    If you receive a system warning stating that you cannot create a folder with a name that begins with a dot, do one of the following:
@@ -147,7 +147,7 @@ Once released, new versions of the instrumentor are loaded through the added tap
 
 Run `brew update` and `brew upgrade DTSwiftInstrumentor` to update our SwiftUI instrumentor.
 
-1. Download and extract the ZIP file containing the new version of the SwiftUI instrumentor. The link is available in the [mobile instrumentation wizard](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios#instrumentation-wizard "Set up user experience monitoring for iOS apps within Dynatrace.").
+1. Download and extract the ZIP file containing the new version of the SwiftUI instrumentor. The link is available in the [mobile instrumentation wizard](dynatrace-auto-instrumentation-for-ios.md#instrumentation-wizard "Set up user experience monitoring for iOS apps within Dynatrace.").
 2. Copy the downloaded `DTSwiftInstrumentor` to the `.dynatrace` folder, and replace the existing file.
 
 If you see the following build warning, you also need to update the build scripts that were integrated during the installation of the Dynatrace SwiftUI instrumentor.
@@ -302,9 +302,9 @@ This way, every touch on the button would be reported as `"Touch on Login Button
 
 ### Enable Session Replay on crashes
 
-Session Replay on crashes can capture and visually replay the actions that your application user performed before a [crash](/docs/observe/digital-experience/rum-concepts/user-and-error-events#crash "Learn about user and error events and the types of user and error events captured by Dynatrace.") occurred.
+Session Replay on crashes can capture and visually replay the actions that your application user performed before a [crash](../../../rum-concepts/user-and-error-events.md#crash "Learn about user and error events and the types of user and error events captured by Dynatrace.") occurred.
 
-To turn this feature on, see [Enable Session Replay for SwiftUI apps](/docs/observe/digital-experience/session-replay/session-replay-ios#sr-swiftui "Prerequisites and the procedure for enabling Session Replay for your iOS apps.").
+To turn this feature on, see [Enable Session Replay for SwiftUI apps](../../../session-replay/session-replay-ios.md#sr-swiftui "Prerequisites and the procedure for enabling Session Replay for your iOS apps.").
 
 ### Globally exclude controls from SwiftUI instrumentation
 
@@ -312,7 +312,7 @@ OneAgent for iOS version 8.263+
 
 The Dynatrace SwiftUI instrumentor instruments all UI elements listed under [Supported controls](#supported-controls). When required, you can globally exclude certain controls from the SwiftUI instrumentation process.
 
-To globally exclude controls from the SwiftUI instrumentation, add the [`DTXSwiftUIExcludedControls` configuration key](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#swiftui "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to your project's [`Info.plist` file](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.").
+To globally exclude controls from the SwiftUI instrumentation, add the [`DTXSwiftUIExcludedControls` configuration key](../customization/ios-configuration-keys.md#swiftui "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to your project's [`Info.plist` file](info-plist-file.md "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.").
 
 ```
 <key>DTXExcludedSwiftUIFiles</key>
@@ -421,7 +421,7 @@ By default, the Dynatrace SwiftUI instrumentor processes all files with a `.swif
 
 To exclude files and directories from the SwiftUI instrumentation
 
-1. Add the [`DTXExcludedSwiftUIFiles` configuration key](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#swiftui "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to your project's [`Info.plist` file](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.").
+1. Add the [`DTXExcludedSwiftUIFiles` configuration key](../customization/ios-configuration-keys.md#swiftui "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to your project's [`Info.plist` file](info-plist-file.md "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.").
 2. List relative paths of all files and directories that you don't want to instrument. The paths should be relative to the project root, which is the directory where the `.xcodeproj` file is located.
 
    ```
@@ -450,7 +450,7 @@ The instrumentation log, which is available after each build, contains the list 
 
 We disabled the SwiftUI instrumentation for simulator builds to overcome an [issue with the previews in Xcode](#issue-preview-xcode).
 
-To enable the SwiftUI instrumentation for simulator builds, add the [`DTXSwiftUIInstrumentSimulatorBuilds` configuration key](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#swiftui "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to your project's [`Info.plist` file](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.") and set this key to `true`.
+To enable the SwiftUI instrumentation for simulator builds, add the [`DTXSwiftUIInstrumentSimulatorBuilds` configuration key](../customization/ios-configuration-keys.md#swiftui "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to your project's [`Info.plist` file](info-plist-file.md "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.") and set this key to `true`.
 
 ```
 <key>DTXSwiftUIInstrumentSimulatorBuilds</key>
@@ -464,7 +464,7 @@ To enable the SwiftUI instrumentation for simulator builds, add the [`DTXSwiftUI
 
 Our SwiftUI instrumentor generates SwiftUI 2.0+ compatible code that only runs on devices with iOS 14+. The attempt to generate builds for deployment targets of iOS 13 and earlier will fail.
 
-To override this check, add the [`DTXSwiftUIIgnoreDeploymentTarget` configuration key](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#swiftui "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to your project's [`Info.plist` file](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.") and set this key to `true`.
+To override this check, add the [`DTXSwiftUIIgnoreDeploymentTarget` configuration key](../customization/ios-configuration-keys.md#swiftui "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to your project's [`Info.plist` file](info-plist-file.md "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.") and set this key to `true`.
 
 ```
 <key>DTXSwiftUIIgnoreDeploymentTarget</key>
@@ -482,7 +482,7 @@ By default, the Dynatrace SwiftUI instrumentor generates a line number mapping a
 
 To enable line number mapping for Objective-C projects
 
-1. Add the [`DTXSwiftUIManualPlaceholder` configuration key](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#swiftui "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to your project's [`Info.plist` file](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.") and set this key to `true`.
+1. Add the [`DTXSwiftUIManualPlaceholder` configuration key](../customization/ios-configuration-keys.md#swiftui "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to your project's [`Info.plist` file](info-plist-file.md "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.") and set this key to `true`.
 
    ```
    <key>DTXSwiftUIManualPlaceholder</key>
@@ -558,7 +558,7 @@ OneAgent for iOS version 8.257+
 
 After each build, the SwiftUI instrumentor creates backups of the instrumented files and generated logs, which are stored under `dynatrace_instrumented`. By default, these files are not deleted, and the total size of the directory will grow over time. For this reason, we recommend that you to enable the automatic log cleanup.
 
-* To delete the SwiftUI instrumentor logs after a certain number of builds, add the [`DTXCleanSwiftUILogsByCount` configuration key](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#swiftui "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to your project's [`Info.plist` file](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.").
+* To delete the SwiftUI instrumentor logs after a certain number of builds, add the [`DTXCleanSwiftUILogsByCount` configuration key](../customization/ios-configuration-keys.md#swiftui "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to your project's [`Info.plist` file](info-plist-file.md "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.").
 
   ```
   <key>DTXCleanSwiftUILogsByCount</key>
@@ -567,7 +567,7 @@ After each build, the SwiftUI instrumentor creates backups of the instrumented f
 
   <number>10</number>
   ```
-* To delete the logs after a certain number of days, add the [`DTXCleanSwiftUILogsByAgeDays` configuration key](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#swiftui "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to the `Info.plist` file.
+* To delete the logs after a certain number of days, add the [`DTXCleanSwiftUILogsByAgeDays` configuration key](../customization/ios-configuration-keys.md#swiftui "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to the `Info.plist` file.
 
   ```
   <key>DTXCleanSwiftUILogsByAgeDays</key>

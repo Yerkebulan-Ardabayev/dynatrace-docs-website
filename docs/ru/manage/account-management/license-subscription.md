@@ -24,12 +24,12 @@ Dynatrace измеряет использование на основе всем
 
 ### Dynatrace Platform Subscription (DPS)
 
-Информация, связанная с вашей Dynatrace Platform Subscription.](/docs/manage/account-management/license-subscription/subscription-overview-dps "Просмотр сводки бюджета и анализа затрат вашей Dynatrace Platform Subscription.")[![Dynatrace Signet](https://dt-cdn.net/images/dt-logo-color-vertical-0a89040753.svg "Dynatrace Signet")
+Информация, связанная с вашей Dynatrace Platform Subscription.](license-subscription/subscription-overview-dps.md "Просмотр сводки бюджета и анализа затрат вашей Dynatrace Platform Subscription.")[![Dynatrace Signet](https://dt-cdn.net/images/dt-logo-color-vertical-0a89040753.svg "Dynatrace Signet")
 
 ### Dynatrace Platform Subscription (DPS) для гибридных сред
 
-Информация, связанная с вашей Dynatrace Platform Subscription при использовании гибридной конфигурации.](/docs/manage/account-management/license-subscription/subscription-overview-dps-hybrid "Просмотр сводки бюджета и анализа затрат DPS для гибридных сред.")[![Dynatrace Signet](https://dt-cdn.net/images/dt-logo-color-vertical-0a89040753.svg "Dynatrace Signet")
+Информация, связанная с вашей Dynatrace Platform Subscription при использовании гибридной конфигурации.](license-subscription/subscription-overview-dps-hybrid.md "Просмотр сводки бюджета и анализа затрат DPS для гибридных сред.")[![Dynatrace Signet](https://dt-cdn.net/images/dt-logo-color-vertical-0a89040753.svg "Dynatrace Signet")
 
 ### Классическое лицензирование Dynatrace
 
-Информация, связанная с классическим лицензированием Dynatrace.](/docs/manage/account-management/license-subscription/license-overview-classic "Просмотр сведений об использовании классической лицензии Dynatrace.")
+Информация, связанная с классическим лицензированием Dynatrace.](license-subscription/license-overview-classic.md "Просмотр сведений об использовании классической лицензии Dynatrace.")

@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:10:51.621843
 * 5-min read
 * Updated on Nov 26, 2025
 
-Using [OneAgent](/docs/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") to collect performance and health data from your environment gives you deep observability across applications, services, and infrastructure. To accommodate different use cases and resource requirements, OneAgent supports multiple monitoring modes.
+Using [OneAgent](../../../ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") to collect performance and health data from your environment gives you deep observability across applications, services, and infrastructure. To accommodate different use cases and resource requirements, OneAgent supports multiple monitoring modes.
 
 If you don't need full-stack monitoring, you can choose one of the two lightweight modes that focus on essential infrastructure metrics:
 
@@ -41,17 +41,17 @@ Here is an overview of available monitoring options for each monitoring mode.
 
 1
 
-For more information on Infrastructure mode and Discovery mode for Application Security, see [Monitoring modes for Application Security](/docs/secure/application-security#monitoring-modes "Access the Dynatrace Application Security functionalities.").
+For more information on Infrastructure mode and Discovery mode for Application Security, see [Monitoring modes for Application Security](../../../secure/application-security.md#monitoring-modes "Access the Dynatrace Application Security functionalities.").
 
 ## Infrastructure monitoring mode
 
 OneAgent auto-injection
 
-OneAgent in Infrastructure monitoring mode automatically injects into processes to be able to monitor backing services written in Java and runtime metrics for supported languages. Learn how to [turn off auto-injection](/docs/platform/oneagent/monitoring-modes/enable-monitoring-modes#disable-auto-injection "Learn how to enable monitoring modes when using OneAgent.").
+OneAgent in Infrastructure monitoring mode automatically injects into processes to be able to monitor backing services written in Java and runtime metrics for supported languages. Learn how to [turn off auto-injection](enable-monitoring-modes.md#disable-auto-injection "Learn how to enable monitoring modes when using OneAgent.").
 
 Full-stack monitoring mode provides comprehensive application performance monitoring, including code-level visibility, in-depth process monitoring, and infrastructure monitoring (including PaaS platforms). However, if your focus is more on infrastructure health rather than in-depth application analysis, you can configure OneAgent to use Infrastructure monitoring mode, which focuses on physical and virtual infrastructure, log monitoring, and AIOps capabilities.
 
-For more details, see [Enable Infrastructure monitoring mode](/docs/platform/oneagent/monitoring-modes/enable-monitoring-modes#enable-infrastructure-monitoring-mode "Learn how to enable monitoring modes when using OneAgent.").
+For more details, see [Enable Infrastructure monitoring mode](enable-monitoring-modes.md#enable-infrastructure-monitoring-mode "Learn how to enable monitoring modes when using OneAgent.").
 
 ## Discovery monitoring mode
 
@@ -61,9 +61,9 @@ Discovery monitoring mode provides basic metrics enabling you to discover your h
 
 We recommend deploying OneAgent in Full-Stack monitoring mode to monitor your business-critical applications. Similarly, we recommend monitoring critical infrastructure, such as databases, queues, and messaging systems, with Infrastructure Observability. OneAgent in Discovery mode can be deployed across the remainder of your infrastructure for complete visibility, thanks to its relatively low cost.
 
-Discovery mode is available only if you're using the Dynatrace Platform Subscription model. License consumption is via the **Foundation & Discovery** capability. To learn more, see [Application & Infrastructure Observability overview (DPS)](/docs/license/capabilities/app-infra-observability#discovery "Learn about the different Application & Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.").
+Discovery mode is available only if you're using the Dynatrace Platform Subscription model. License consumption is via the **Foundation & Discovery** capability. To learn more, see [Application & Infrastructure Observability overview (DPS)](../../../license/capabilities/app-infra-observability.md#discovery "Learn about the different Application & Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.").
 
-For more details, see [Enable Discovery monitoring mode](/docs/platform/oneagent/monitoring-modes/enable-monitoring-modes#enable-discovery-mode "Learn how to enable monitoring modes when using OneAgent.").
+For more details, see [Enable Discovery monitoring mode](enable-monitoring-modes.md#enable-discovery-mode "Learn how to enable monitoring modes when using OneAgent.").
 
 The following built-in metrics are available in Discovery mode:
 
@@ -129,7 +129,7 @@ Network
 
 ## Virtualization monitoring
 
-Dynatrace supports [virtualization monitoring](/docs/observe/infrastructure-observability/vmware-vsphere-monitoring "Monitor VMware vSphere with Dynatrace."). To monitor the virtual components in your environment, you need to complete an extra step beyond the initial setup. For full details, see [Set up virtualization monitoring](/docs/observe/infrastructure-observability/vmware-vsphere-monitoring "Monitor VMware vSphere with Dynatrace.").
+Dynatrace supports [virtualization monitoring](../../../observe/infrastructure-observability/vmware-vsphere-monitoring.md "Monitor VMware vSphere with Dynatrace."). To monitor the virtual components in your environment, you need to complete an extra step beyond the initial setup. For full details, see [Set up virtualization monitoring](../../../observe/infrastructure-observability/vmware-vsphere-monitoring.md "Monitor VMware vSphere with Dynatrace.").
 
 ## FAQ
 

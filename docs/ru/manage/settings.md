@@ -25,10 +25,10 @@ scraped: 2026-03-06T21:30:39.602496
 
 * Для доступа к ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**:
 
-  Пользователь должен принадлежать к группе, привязанной к политике по умолчанию [Standard user](/docs/manage/identity-access-management/permission-management/default-policies#DynatraceAccessStandardUser "Справочник политик по умолчанию Dynatrace").
+  Пользователь должен принадлежать к группе, привязанной к политике по умолчанию [Standard user](identity-access-management/permission-management/default-policies.md#DynatraceAccessStandardUser "Справочник политик по умолчанию Dynatrace").
 * Для изменения ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**:
 
-  Пользователь должен принадлежать к группе, привязанной к политике по умолчанию [Pro user](/docs/manage/identity-access-management/permission-management/default-policies#DynatraceAccessProUser "Справочник политик по умолчанию Dynatrace").
+  Пользователь должен принадлежать к группе, привязанной к политике по умолчанию [Pro user](identity-access-management/permission-management/default-policies.md#DynatraceAccessProUser "Справочник политик по умолчанию Dynatrace").
 
 Ниже указан минимальный набор разрешений, необходимых для использования ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**, на случай, если вы хотите создать собственную политику.
 
@@ -89,11 +89,11 @@ storage:buckets:read
 
 ### Доступ к настройкам
 
-Доступ к настройкам контролируется через [политики IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Работа с политиками"). Политики позволяют создавать гибкий и детализированный доступ к конфигурациям, при котором пользователи имеют доступ только к тем настройкам, на которые им назначены разрешения. Дополнительные разрешения для вступления политик в силу не требуются. Политики предоставляют доступ к конфигурациям как через приложение ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**, так и через Settings API, если иное не настроено на уровне схемы.
+Доступ к настройкам контролируется через [политики IAM](identity-access-management/permission-management/manage-user-permissions-policies.md "Работа с политиками"). Политики позволяют создавать гибкий и детализированный доступ к конфигурациям, при котором пользователи имеют доступ только к тем настройкам, на которые им назначены разрешения. Дополнительные разрешения для вступления политик в силу не требуются. Политики предоставляют доступ к конфигурациям как через приложение ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**, так и через Settings API, если иное не настроено на уровне схемы.
 
 Если вам необходимо настроить детализированный доступ к определённым сущностям, вы можете сделать это, например, через группу хостов или контекст безопасности.
 
-Чтобы узнать, как настроить политики доступа для настроек, см. [Справочник политик IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#settings "Полный справочник политик IAM и соответствующих условий для всех сервисов Dynatrace.").
+Чтобы узнать, как настроить политики доступа для настроек, см. [Справочник политик IAM](identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#settings "Полный справочник политик IAM и соответствующих условий для всех сервисов Dynatrace.").
 
 ### Настройки отдельных приложений Dynatrace
 
@@ -111,16 +111,16 @@ Dynatrace предоставляет два варианта:
 
 Настройки передаются в Dynatrace в виде JSON-полезной нагрузки для объекта настроек. Структура JSON зависит от конкретной функции и определяется схемами настроек.
 
-Для получения дополнительной информации см. [Settings API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API.").
+Для получения дополнительной информации см. [Settings API](../dynatrace-api/environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.").
 
 #### Monaco
 
 Dynatrace Monaco CLI обеспечивает общую поддержку любой схемы Settings 2.0, доступной в вашей среде. Monaco — это подход Dynatrace к конфигурации как коду. Он позволяет управлять средой мониторинга через конфигурационные файлы, предлагая ряд функций для оптимизации процесса.
 
-Для получения дополнительной информации см. [Обзор конфигурации как кода через Monaco](/docs/deliver/configuration-as-code/monaco "Управляйте средой Dynatrace с помощью Dynatrace Configuration as Code через Monaco.").
+Для получения дополнительной информации см. [Обзор конфигурации как кода через Monaco](../deliver/configuration-as-code/monaco.md "Управляйте средой Dynatrace с помощью Dynatrace Configuration as Code через Monaco.").
 
 ## Связанные темы
 
-* [Фреймворк настроек Dynatrace](/docs/manage/settings/settings-20 "Введение в фреймворк Settings 2.0")
-* [Settings 2.0 — Доступные схемы](/docs/dynatrace-api/environment-api/settings/schemas "Просмотрите полную таблицу схем настроек вашей среды мониторинга через Dynatrace API.")
-* [Settings API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API.")
+* [Фреймворк настроек Dynatrace](settings/settings-20.md "Введение в фреймворк Settings 2.0")
+* [Settings 2.0 — Доступные схемы](../dynatrace-api/environment-api/settings/schemas.md "Просмотрите полную таблицу схем настроек вашей среды мониторинга через Dynatrace API.")
+* [Settings API](../dynatrace-api/environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.")

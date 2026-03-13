@@ -25,7 +25,7 @@ Each data request is sent to the LLM individually, over an SSL-encrypted service
 
 Dynatrace may store the prompts submitted to Dynatrace Intelligence agentic and generative AI and the responses provided by the LLMs to understand the use cases, contextualize the feedback on the responses, and identify additional user expectations.
 
-Learn more about the [Dynatrace Intelligence agentic and generative AI architecture and data flow](/docs/dynatrace-intelligence/copilot/copilot-overview#copilot-data-flow "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.").
+Learn more about the [Dynatrace Intelligence agentic and generative AI architecture and data flow](copilot-overview.md#copilot-data-flow "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.").
 
 ## PII masking
 
@@ -52,6 +52,6 @@ Agentic  **Dynatrace Assist** doesn't provide any PII masking. In order to prote
 
 ## Related topics
 
-* [Dynatrace Intelligence agentic and generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
-* [Get started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
-* [Dynatrace Intelligence agentic and generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
+* [Dynatrace Intelligence agentic and generative AI overview](copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
+* [Get started with Dynatrace Intelligence agentic and generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
+* [Dynatrace Intelligence agentic and generative AI FAQ](../../../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")

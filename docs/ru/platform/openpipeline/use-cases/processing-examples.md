@@ -519,7 +519,7 @@ INT:my.user.id"
 
 ### Использование специализированных DPL-сопоставителей
 
-JSON-файл содержит информацию, которую вы хотите извлечь и создать для неё новые выделенные поля на основе формата. Вы можете использовать [сопоставители Dynatrace Pattern Language (DPL)](/docs/platform/grail/dynatrace-pattern-language "Используйте Dynatrace Pattern Language для описания шаблонов с помощью сопоставителей.") для упрощения построения шаблонов.
+JSON-файл содержит информацию, которую вы хотите извлечь и создать для неё новые выделенные поля на основе формата. Вы можете использовать [сопоставители Dynatrace Pattern Language (DPL)](../../grail/dynatrace-pattern-language.md "Используйте Dynatrace Pattern Language для описания шаблонов с помощью сопоставителей.") для упрощения построения шаблонов.
 
 ### Шаги
 
@@ -856,7 +856,7 @@ fieldsAdd content.length = stringLength(content), content.words = arraySize(spli
 
 Часть поля
 
-Следующий пример использует функцию [`ipMask`](/docs/platform/grail/dynatrace-query-language/functions/network-functions#ipMask "Список сетевых функций DQL.") для установки последнего октета в значение `0`.
+Следующий пример использует функцию [`ipMask`](../../grail/dynatrace-query-language/functions/network-functions.md#ipMask "Список сетевых функций DQL.") для установки последнего октета в значение `0`.
 
 ```
 fieldsAdd ip = ipMask(ip, 24)
@@ -892,7 +892,7 @@ fieldsAdd ip = ipMask(ip, 24)
 }
 ```
 
-Следующий пример использует функцию [`replacePattern`](/docs/platform/grail/dynatrace-query-language/functions/string-functions#replacePattern "Список строковых функций DQL.") вместе с DPL-сопоставителями и [модификатором `Lookaround` behind](/docs/platform/grail/dynatrace-pattern-language/log-processing-modifiers#lookaround "Изучите синтаксис DPL для опциональных управляющих элементов (модификаторов).")(`<<`) для сопоставления определённой части (последнего октета) IP-адреса и установки его в `xxx`.
+Следующий пример использует функцию [`replacePattern`](../../grail/dynatrace-query-language/functions/string-functions.md#replacePattern "Список строковых функций DQL.") вместе с DPL-сопоставителями и [модификатором `Lookaround` behind](../../grail/dynatrace-pattern-language/log-processing-modifiers.md#lookaround "Изучите синтаксис DPL для опциональных управляющих элементов (модификаторов).")(`<<`) для сопоставления определённой части (последнего октета) IP-адреса и установки его в `xxx`.
 
 ```
 fieldsAdd ip = replacePattern(ip, "<< (INT'.'INT'.'INT'.') INT", "xxx")
@@ -928,7 +928,7 @@ fieldsAdd ip = replacePattern(ip, "<< (INT'.'INT'.'INT'.') INT", "xxx")
 }
 ```
 
-Следующий пример использует функцию [`replacePattern`](/docs/platform/grail/dynatrace-query-language/functions/string-functions#replacePattern "Список строковых функций DQL.") для маскирования всех IP-адресов в одном поле.
+Следующий пример использует функцию [`replacePattern`](../../grail/dynatrace-query-language/functions/string-functions.md#replacePattern "Список строковых функций DQL.") для маскирования всех IP-адресов в одном поле.
 
 ```
 fieldsAdd content=replacePattern(content, "IPADDR", "xxx.xxx.xxx.xxx")
@@ -964,7 +964,7 @@ fieldsAdd content=replacePattern(content, "IPADDR", "xxx.xxx.xxx.xxx")
 }
 ```
 
-Следующий пример извлекает имя пользователя из адреса электронной почты и использует функцию [`replaceString`](/docs/platform/grail/dynatrace-query-language/functions/string-functions#replaceString "Список строковых функций DQL.") для замены его статическим значением.
+Следующий пример извлекает имя пользователя из адреса электронной почты и использует функцию [`replaceString`](../../grail/dynatrace-query-language/functions/string-functions.md#replaceString "Список строковых функций DQL.") для замены его статическим значением.
 
 ```
 parse content, "LD 'email: ' LD:user '@'"
@@ -1010,5 +1010,5 @@ parse content, "LD 'email: ' LD:user '@'"
 
 ## Связанные темы
 
-* [Настройка конвейера обработки](/docs/platform/openpipeline/getting-started/tutorial-configure-processing "Настройте источники загрузки, маршруты и обработку данных в OpenPipeline.")
-* [Обработка в OpenPipeline](/docs/platform/openpipeline/concepts/processing "Изучите основные концепции обработки Dynatrace OpenPipeline.")
+* [Настройка конвейера обработки](../getting-started/tutorial-configure-processing.md "Настройте источники загрузки, маршруты и обработку данных в OpenPipeline.")
+* [Обработка в OpenPipeline](../concepts/processing.md "Изучите основные концепции обработки Dynatrace OpenPipeline.")

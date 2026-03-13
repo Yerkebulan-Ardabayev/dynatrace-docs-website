@@ -15,21 +15,21 @@ scraped: 2026-03-06T21:26:40.806409
 
 Dynatrace версии 1.230+
 
-В качестве альтернативы [основному развёртыванию](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Настройка мониторинга логов и метрик для сервисов GCP на новом кластере GKE Autopilot."), при котором скрипт развёртывания запускается на новом автоматически создаваемом кластере GKE Autopilot, вы можете запустить скрипт развёртывания на существующем стандартном кластере GKE или кластере GKE Autopilot. В этом сценарии вы настроите мониторинг Google Cloud для метрик и логов в Google Cloud Shell. Во время настройки будет создана новая подписка Pub/Sub. GKE запустит два контейнера: для пересылки метрик и для пересылки логов. После установки вы получите метрики, логи, дашборды и оповещения для настроенных сервисов в Dynatrace.
+В качестве альтернативы [основному развёртыванию](deploy-k8.md "Настройка мониторинга логов и метрик для сервисов GCP на новом кластере GKE Autopilot."), при котором скрипт развёртывания запускается на новом автоматически создаваемом кластере GKE Autopilot, вы можете запустить скрипт развёртывания на существующем стандартном кластере GKE или кластере GKE Autopilot. В этом сценарии вы настроите мониторинг Google Cloud для метрик и логов в Google Cloud Shell. Во время настройки будет создана новая подписка Pub/Sub. GKE запустит два контейнера: для пересылки метрик и для пересылки логов. После установки вы получите метрики, логи, дашборды и оповещения для настроенных сервисов в Dynatrace.
 
-Другие варианты развёртывания описаны в разделе [Альтернативные сценарии развёртывания](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide "Другие варианты настройки мониторинга логов и/или метрик для сервисов Google Cloud").
+Другие варианты развёртывания описаны в разделе [Альтернативные сценарии развёртывания](../gcp-guide.md "Другие варианты настройки мониторинга логов и/или метрик для сервисов Google Cloud").
 
 Dynatrace версии 1.230+
 
 На этой странице описана установка версии 1.0 интеграции с Google Cloud на кластере GKE.
 
-* Если у вас уже установлена [более ранняя версия](/docs/ingest-from/google-cloud-platform/legacy/deployment-k8s-container-legacy "Настройка мониторинга логов и метрик для сервисов GCP в контейнере Kubernetes."), необходимо выполнить [миграцию](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function "Миграция с версии 0.1 интеграции Google Cloud на версию 1.0 для Kubernetes и Google Cloud Function.").
+* Если у вас уже установлена [более ранняя версия](../../legacy/deployment-k8s-container-legacy.md "Настройка мониторинга логов и метрик для сервисов GCP в контейнере Kubernetes."), необходимо выполнить [миграцию](migrate-gcp-function.md "Миграция с версии 0.1 интеграции Google Cloud на версию 1.0 для Kubernetes и Google Cloud Function.").
 
 ## Ограничения
 
 Интеграция Dynatrace с Google Cloud для сбора логов поддерживает обработку до 8 ГБ данных в час (с базовыми ресурсами — без масштабирования). При больших нагрузках сообщения начнут накапливаться в подписке PubSub. Для измерения задержки используйте метрики: `Oldest unacked message age` и `Unacked messages`. Рекомендации по масштабированию приведены в [руководстве по масштабированию](#scalingguide) ниже.
 
-Интеграция Dynatrace с Google Cloud для сбора метрик поддерживает до 50 проектов Google Cloud при стандартном развёртывании. Для мониторинга более крупных сред необходимо включить область метрик. См. [Мониторинг нескольких проектов Google Cloud — крупные среды](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/monitor-multiple-projects "Отправка метрик в Dynatrace из нескольких проектов Google Cloud.").
+Интеграция Dynatrace с Google Cloud для сбора метрик поддерживает до 50 проектов Google Cloud при стандартном развёртывании. Для мониторинга более крупных сред необходимо включить область метрик. См. [Мониторинг нескольких проектов Google Cloud — крупные среды](monitor-multiple-projects.md "Отправка метрик в Dynatrace из нескольких проектов Google Cloud.").
 
 ## Предварительные требования
 
@@ -333,7 +333,7 @@ chmod +x deploy-pubsub.sh
 
 Добавить вручную
 
-[Создайте API-токен](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Узнайте о концепции токена доступа и его областях действия.") и [включите следующие разрешения](/docs/dynatrace-api/basics/dynatrace-api-authentication#token-permissions "Узнайте, как пройти аутентификацию для использования Dynatrace API."):
+[Создайте API-токен](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Узнайте о концепции токена доступа и его областях действия.") и [включите следующие разрешения](../../../../dynatrace-api/basics/dynatrace-api-authentication.md#token-permissions "Узнайте, как пройти аутентификацию для использования Dynatrace API."):
 
 * API v1:
 
@@ -361,7 +361,7 @@ chmod +x deploy-pubsub.sh
 * Определите, где будет выполняться загрузка логов, в зависимости от вашего развёртывания. Это различие важно при настройке [параметров](#param) для данной интеграции.
 
   + **Для SaaS-развёртываний:** загрузка логов SaaS, при которой загрузка логов выполняется напрямую через Cluster API. Рекомендуется
-  + **Для Managed-развёртываний:** вы можете использовать существующий ActiveGate для загрузки логов. Информацию о развёртывании см. в разделе [Установка ActiveGate](/docs/ingest-from/dynatrace-activegate/installation "Узнайте, как настроить ActiveGate").
+  + **Для Managed-развёртываний:** вы можете использовать существующий ActiveGate для загрузки логов. Информацию о развёртывании см. в разделе [Установка ActiveGate](../../../dynatrace-activegate/installation.md "Узнайте, как настроить ActiveGate").
 
 Из-за реализации GCP Cloud Function 2-го поколения, логи этих ресурсов будут связаны с базовыми экземплярами Cloud Run. Оба расширения должны быть включены.
 
@@ -373,13 +373,13 @@ chmod +x deploy-pubsub.sh
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Скачайте пакет развёртывания Helm в Google Cloud Shell**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-on-existing-cluster#dwld "Развёртывание мониторинга логов и метрик для сервисов Google Cloud на существующем стандартном кластере GKE или кластере GKE Autopilot")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Скачайте пакет развёртывания Helm в Google Cloud Shell**](set-up-gcp-integration-on-existing-cluster.md#dwld "Развёртывание мониторинга логов и метрик для сервисов Google Cloud на существующем стандартном кластере GKE или кластере GKE Autopilot")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Настройте значения параметров**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-on-existing-cluster#param "Развёртывание мониторинга логов и метрик для сервисов Google Cloud на существующем стандартном кластере GKE или кластере GKE Autopilot")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Настройте значения параметров**](set-up-gcp-integration-on-existing-cluster.md#param "Развёртывание мониторинга логов и метрик для сервисов Google Cloud на существующем стандартном кластере GKE или кластере GKE Autopilot")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Подключите ваш кластер Kubernetes**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-on-existing-cluster#connect "Развёртывание мониторинга логов и метрик для сервисов Google Cloud на существующем стандартном кластере GKE или кластере GKE Autopilot")[![Шаг 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Шаг 4")
+**Подключите ваш кластер Kubernetes**](set-up-gcp-integration-on-existing-cluster.md#connect "Развёртывание мониторинга логов и метрик для сервисов Google Cloud на существующем стандартном кластере GKE или кластере GKE Autopilot")[![Шаг 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Шаг 4")
 
-**Запустите скрипт развёртывания**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-on-existing-cluster#script "Развёртывание мониторинга логов и метрик для сервисов Google Cloud на существующем стандартном кластере GKE или кластере GKE Autopilot")
+**Запустите скрипт развёртывания**](set-up-gcp-integration-on-existing-cluster.md#script "Развёртывание мониторинга логов и метрик для сервисов Google Cloud на существующем стандартном кластере GKE или кластере GKE Autopilot")
 
 ### Шаг 1 Скачайте пакет развёртывания Helm в Google Cloud Shell
 
@@ -394,7 +394,7 @@ wget -q "https://github.com/dynatrace-oss/dynatrace-gcp-monitor/releases/latest/
    Рекомендуется сохранить этот файл для будущих обновлений, так как он понадобится при повторном развёртывании. Также учитывайте, что его схема может измениться. В этом случае следует использовать новый файл и скопировать в него только значения параметров.
 2. Выберите, какие сервисы вы хотите мониторить с помощью Dynatrace.
 
-   По умолчанию интеграция Dynatrace с Google Cloud начинает мониторинг набора выбранных сервисов. Список поддерживаемых сервисов см. в разделе [Поддерживаемые сервисы Google Cloud](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new "Мониторинг сервисов Google Cloud с помощью Dynatrace и просмотр доступных метрик.").
+   По умолчанию интеграция Dynatrace с Google Cloud начинает мониторинг набора выбранных сервисов. Список поддерживаемых сервисов см. в разделе [Поддерживаемые сервисы Google Cloud](../gcp-supported-service-metrics-new.md "Мониторинг сервисов Google Cloud с помощью Dynatrace и просмотр доступных метрик.").
 
 Информацию о потреблении DDU см. в разделе [Потребление мониторинга](#ddu).
 
@@ -494,22 +494,22 @@ kubectl -n dynatrace logs -l app=dynatrace-gcp-monitor -c dynatrace-gcp-monitor-
 
 При развёртывании Google Cloud Monitor будет включён мониторинг следующих сервисов:
 
-* [Google APIs](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-apis-monitoring "Мониторинг Google Cloud APIs и просмотр доступных метрик.")
-* [Google App Engine](/docs/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine/app-engine-monitoring "Мониторинг Google App Engine и просмотр доступных метрик.")
-* [Google BigQuery](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-bigquery-monitoring "Мониторинг Google BigQuery и просмотр доступных метрик.")
-* [Google Cloud Functions](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/cloud-functions-monitoring "Мониторинг Google Cloud Functions и просмотр доступных метрик.")
-* [Google Cloud Run](/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun/cloud-run-monitoring "Мониторинг Google Cloud Run и просмотр доступных метрик.")
-* [Google Cloud Storage](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-storage-monitoring "Мониторинг Google Cloud Storage и просмотр доступных метрик.")
-* [Google Compute Engine](/docs/ingest-from/google-cloud-platform/gcp-integrations/google-compute-engine/compute-engine-monitoring "Мониторинг Google Compute Engine и просмотр доступных метрик.")
-* [Google Firestore в режиме Datastore](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-filestore-in-datastore-mode-monitoring "Мониторинг Google Cloud Firestore в режиме Datastore и просмотр доступных метрик.")
-* [Google Filestore](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-filestore-monitoring "Мониторинг Google Filestore и просмотр доступных метрик.")
-* [Google Kubernetes Engine](/docs/ingest-from/google-cloud-platform/gcp-integrations/google-gke/google-kubernetes-engine-monitoring "Мониторинг Google Kubernetes Engine и просмотр доступных метрик.")
-* [Google Cloud Load Balancing](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-load-balancing-monitoring "Мониторинг Google Cloud Load Balancing и просмотр доступных метрик.")
-* [Google Cloud Pub/Sub](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-pub-sub-monitoring "Мониторинг Google Cloud Pub/Sub и просмотр доступных метрик.")
-* [Google Cloud Pub/Sub Lite](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-pub-sub-lite-monitoring "Мониторинг Google Cloud Pub/Sub Lite и просмотр доступных метрик.")
-* [Google Cloud SQL](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-sql "Мониторинг Google Cloud SQL и просмотр доступных метрик.")
+* [Google APIs](../gcp-supported-service-metrics-new/gcp-apis-monitoring.md "Мониторинг Google Cloud APIs и просмотр доступных метрик.")
+* [Google App Engine](../google-app-engine/app-engine-monitoring.md "Мониторинг Google App Engine и просмотр доступных метрик.")
+* [Google BigQuery](../gcp-supported-service-metrics-new/gcp-bigquery-monitoring.md "Мониторинг Google BigQuery и просмотр доступных метрик.")
+* [Google Cloud Functions](../gcp-functions/cloud-functions-monitoring.md "Мониторинг Google Cloud Functions и просмотр доступных метрик.")
+* [Google Cloud Run](../cloudrun/cloud-run-monitoring.md "Мониторинг Google Cloud Run и просмотр доступных метрик.")
+* [Google Cloud Storage](../gcp-supported-service-metrics-new/gcp-cloud-storage-monitoring.md "Мониторинг Google Cloud Storage и просмотр доступных метрик.")
+* [Google Compute Engine](../google-compute-engine/compute-engine-monitoring.md "Мониторинг Google Compute Engine и просмотр доступных метрик.")
+* [Google Firestore в режиме Datastore](../gcp-supported-service-metrics-new/gcp-filestore-in-datastore-mode-monitoring.md "Мониторинг Google Cloud Firestore в режиме Datastore и просмотр доступных метрик.")
+* [Google Filestore](../gcp-supported-service-metrics-new/gcp-filestore-monitoring.md "Мониторинг Google Filestore и просмотр доступных метрик.")
+* [Google Kubernetes Engine](../google-gke/google-kubernetes-engine-monitoring.md "Мониторинг Google Kubernetes Engine и просмотр доступных метрик.")
+* [Google Cloud Load Balancing](../gcp-supported-service-metrics-new/gcp-cloud-load-balancing-monitoring.md "Мониторинг Google Cloud Load Balancing и просмотр доступных метрик.")
+* [Google Cloud Pub/Sub](../gcp-supported-service-metrics-new/gcp-pub-sub-monitoring.md "Мониторинг Google Cloud Pub/Sub и просмотр доступных метрик.")
+* [Google Cloud Pub/Sub Lite](../gcp-supported-service-metrics-new/gcp-pub-sub-lite-monitoring.md "Мониторинг Google Cloud Pub/Sub Lite и просмотр доступных метрик.")
+* [Google Cloud SQL](../gcp-supported-service-metrics-new/gcp-cloud-sql.md "Мониторинг Google Cloud SQL и просмотр доступных метрик.")
 
-Доступны дополнительные интеграции сервисов, но их необходимо включить. Список поддерживаемых сервисов см. в разделе [Поддерживаемые сервисы Google Cloud](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new "Мониторинг сервисов Google Cloud с помощью Dynatrace и просмотр доступных метрик."). В следующем разделе описано управление ими. Для альтернативного подхода рассмотрите использование [автообнаружения](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/gcp-autodiscovery "Отправка любых метрик в Dynatrace из проектов Google Cloud.") для расширения охвата метрик.
+Доступны дополнительные интеграции сервисов, но их необходимо включить. Список поддерживаемых сервисов см. в разделе [Поддерживаемые сервисы Google Cloud](../gcp-supported-service-metrics-new.md "Мониторинг сервисов Google Cloud с помощью Dynatrace и просмотр доступных метрик."). В следующем разделе описано управление ими. Для альтернативного подхода рассмотрите использование [автообнаружения](deploy-k8/gcp-autodiscovery.md "Отправка любых метрик в Dynatrace из проектов Google Cloud.") для расширения охвата метрик.
 
 ### Управление включёнными сервисами
 
@@ -527,7 +527,7 @@ kubectl -n dynatrace logs -l app=dynatrace-gcp-monitor -c dynatrace-gcp-monitor-
 
 #### Наборы функций и доступные метрики
 
-Чтобы узнать, какие метрики включены для конкретного сервиса, см. [Поддерживаемые сервисы Google Cloud](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new "Мониторинг сервисов Google Cloud с помощью Dynatrace и просмотр доступных метрик."). По умолчанию включён только набор функций `defaultMetrics`. Для включения дополнительных наборов функций необходимо раскомментировать их в файле `values.yaml` и повторно развернуть Google Cloud Monitor.
+Чтобы узнать, какие метрики включены для конкретного сервиса, см. [Поддерживаемые сервисы Google Cloud](../gcp-supported-service-metrics-new.md "Мониторинг сервисов Google Cloud с помощью Dynatrace и просмотр доступных метрик."). По умолчанию включён только набор функций `defaultMetrics`. Для включения дополнительных наборов функций необходимо раскомментировать их в файле `values.yaml` и повторно развернуть Google Cloud Monitor.
 
 Текущую конфигурацию наборов функций можно найти в ConfigMap кластера с именем `dynatrace-gcp-function-config`.
 
@@ -607,7 +607,7 @@ resource.labels.location = "us-central1-c" AND resource.labels.namespace_name = 
 Для исследования потенциальных проблем развёртывания и подключения
 
 1. [Проверьте установку](#verify)
-2. [Включите самомониторинг](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp "Определите, правильно ли функция самомониторинга обрабатывает и отправляет логи в Dynatrace.") Необязательно
+2. [Включите самомониторинг](deploy-k8/self-monitoring-gcp.md "Определите, правильно ли функция самомониторинга обрабатывает и отправляет логи в Dynatrace.") Необязательно
 3. Проверьте лог-файл `dynatrace_gcp_<date_time>.log`, созданный в процессе установки.
 
 * Этот файл создаётся при каждом запуске скрипта установки.
@@ -618,7 +618,7 @@ resource.labels.location = "us-central1-c" AND resource.labels.namespace_name = 
   + Предоставьте информацию о версии.
 
     - При проблемах во время установки проверьте файл `version.txt`.
-    - При проблемах во время выполнения [проверьте логи контейнера](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp "Определите, правильно ли функция самомониторинга обрабатывает и отправляет логи в Dynatrace.").
+    - При проблемах во время выполнения [проверьте логи контейнера](deploy-k8/self-monitoring-gcp.md "Определите, правильно ли функция самомониторинга обрабатывает и отправляет логи в Dynatrace.").
 
 ## Руководство по масштабированию для логов
 
@@ -681,13 +681,13 @@ kubectl delete namespace dynatrace
 
 ### Загрузка метрик
 
-Все облачные сервисы потребляют DDU. Объём потребления DDU на экземпляр сервиса зависит от количества отслеживаемых метрик и их измерений (каждое измерение метрики приводит к загрузке 1 точки данных; 1 точка данных потребляет 0,001 DDU). Подробности см. в разделе [Расширение Dynatrace (единицы данных Davis)](/docs/license/monitoring-consumption-classic/davis-data-units "Узнайте, как рассчитывается потребление мониторинга Dynatrace на основе единиц данных Davis (DDU).").
+Все облачные сервисы потребляют DDU. Объём потребления DDU на экземпляр сервиса зависит от количества отслеживаемых метрик и их измерений (каждое измерение метрики приводит к загрузке 1 точки данных; 1 точка данных потребляет 0,001 DDU). Подробности см. в разделе [Расширение Dynatrace (единицы данных Davis)](../../../../license/monitoring-consumption-classic/davis-data-units.md "Узнайте, как рассчитывается потребление мониторинга Dynatrace на основе единиц данных Davis (DDU).").
 
 ### Загрузка логов
 
-Потребление DDU применяется к облачному мониторингу логов. Подробности см. в разделе [DDU для мониторинга логов](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Узнайте, как рассчитывается объём потребления DDU для Dynatrace Log Monitoring Classic.").
+Потребление DDU применяется к облачному мониторингу логов. Подробности см. в разделе [DDU для мониторинга логов](../../../../license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Узнайте, как рассчитывается объём потребления DDU для Dynatrace Log Monitoring Classic.").
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Google Cloud](/docs/ingest-from/google-cloud-platform "Мониторинг Google Cloud с помощью Dynatrace.")
+* [Настройка Dynatrace в Google Cloud](../../../google-cloud-platform.md "Мониторинг Google Cloud с помощью Dynatrace.")
 * [Устранение неполадок Google Cloud Monitor](https://community.dynatrace.com/t5/Troubleshooting/Google-Cloud-Monitor-Troubleshooting/ta-p/243796)

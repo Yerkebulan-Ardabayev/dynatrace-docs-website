@@ -25,15 +25,15 @@ See below for how to enable Dynatrace monitoring for a containerized Lambda func
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Configuration**](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension/deploy-oneagent-on-lambda-container-images#configuration "Deploy Dynatrace Lambda Layers when deployed via a container image.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Configuration**](deploy-oneagent-on-lambda-container-images.md#configuration "Deploy Dynatrace Lambda Layers when deployed via a container image.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Copy the Lambda layer configuration snippet**](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension/deploy-oneagent-on-lambda-container-images#copy-layer-snippet "Deploy Dynatrace Lambda Layers when deployed via a container image.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Copy the Lambda layer configuration snippet**](deploy-oneagent-on-lambda-container-images.md#copy-layer-snippet "Deploy Dynatrace Lambda Layers when deployed via a container image.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Add Dynatrace AWS Lambda extension to the container image**](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension/deploy-oneagent-on-lambda-container-images#add-oneagent-extension "Deploy Dynatrace Lambda Layers when deployed via a container image.")
+**Add Dynatrace AWS Lambda extension to the container image**](deploy-oneagent-on-lambda-container-images.md#add-oneagent-extension "Deploy Dynatrace Lambda Layers when deployed via a container image.")
 
 ## Step 1 Configuration
 
-1. Go to [Trace Python, Node.js, and Java Lambda functions](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension#lambda-cfg-method "Monitor Lambda functions written in Python, Node.js, and Java.") and follow the **Configure with environment variables** instructions.
+1. Go to [Trace Python, Node.js, and Java Lambda functions](../aws-lambda-extension.md#lambda-cfg-method "Monitor Lambda functions written in Python, Node.js, and Java.") and follow the **Configure with environment variables** instructions.
 2. Open the projects `Dockerfile` in an editor and copy the environment variables from the deployment screen. Each
    line must be prefixed with `ENV` and spaces around the equal signs must be removed.
 
@@ -227,7 +227,7 @@ CMD [ "index.handler" ]
 
 ## Limitations
 
-Monitoring via Dynatrace AWS Lambda extension on container images is supported only for images [created from an AWS base image for Lambdaï»¿](https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-create-1) and only for [the runtimes that we support for non-containerized functions](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration#support-lifecycle "AWS Lambda capabilities and integration options").
+Monitoring via Dynatrace AWS Lambda extension on container images is supported only for images [created from an AWS base image for Lambdaï»¿](https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-create-1) and only for [the runtimes that we support for non-containerized functions](../../../aws-lambda-integration.md#support-lifecycle "AWS Lambda capabilities and integration options").
 
 ## Additional resources
 

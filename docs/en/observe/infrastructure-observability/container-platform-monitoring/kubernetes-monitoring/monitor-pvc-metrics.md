@@ -50,8 +50,8 @@ Dynatrace provides a pre-configured dashboard that covers the following use-case
 
 ## Limitations
 
-This feature is available only if your Kubernetes cluster is [connected to a local Kubernetes API endpoint](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring "Monitor the Kubernetes API using Dynatrace").
+This feature is available only if your Kubernetes cluster is [connected to a local Kubernetes API endpoint](../../../../ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring.md "Monitor the Kubernetes API using Dynatrace").
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Set up Dynatrace on Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")

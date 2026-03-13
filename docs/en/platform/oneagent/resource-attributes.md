@@ -19,27 +19,27 @@ All monitoring artifacts that leave a given host, that is have the host as its r
 
 Host-level resource attributes are resource attributes of monitored hosts. All events raised by and measurements coming from OneAgent components running on a given host are enriched with those attributes. You can then use them in your queries to structure and filter the monitoring data.
 
-You can also use some of the attributes to create policies to manage data access. See [Global field reference](/docs/semantic-dictionary/fields "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") and search for fields tagged as Permission
+You can also use some of the attributes to create policies to manage data access. See [Global field reference](../../semantic-dictionary/fields.md "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") and search for fields tagged as Permission
 
-If you have access to a host with OneAgent installed, you can inspect the `dt_host_metadata.json` and `dt_host_metadata.properties` to see the scope of resource attributes enrichment provided by OneAgent. For more information, see [Enrich ingested data with Dynatrace-specific fields](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+If you have access to a host with OneAgent installed, you can inspect the `dt_host_metadata.json` and `dt_host_metadata.properties` to see the scope of resource attributes enrichment provided by OneAgent. For more information, see [Enrich ingested data with Dynatrace-specific fields](../../ingest-from/extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
 
 ### Custom host-level attributes
 
-You can create your own attributes by configuring key-value tags and properties set via [oneagentctl](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.") or through [Remote configuration management of OneAgents and ActiveGates](/docs/ingest-from/bulk-configuration "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API."). Custom tags and properties defined this way are reported as flat, first-level resource attributes.
+You can create your own attributes by configuring key-value tags and properties set via [oneagentctl](../../observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts.md "Learn how to tag and set additional properties for a monitored host.") or through [Remote configuration management of OneAgents and ActiveGates](../../ingest-from/bulk-configuration.md "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API."). Custom tags and properties defined this way are reported as flat, first-level resource attributes.
 
 The key tags with no value are ignored.
 
-Tags assigned through [automated rules](/docs/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically."), [environment variables](/docs/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables."), and [Topology and Smartscape API](/docs/dynatrace-api/environment-api/topology-and-smartscape "Learn about the Dynatrace Topology and Smartscape API.") are not included.
+Tags assigned through [automated rules](../../manage/tags-and-metadata/setup/how-to-define-tags.md#automatic "Find out how to define and apply tags manually and automatically."), [environment variables](../../manage/tags-and-metadata/setup/define-tags-based-on-environment-variables.md "Find out how Dynatrace enables you to define tags based on environment variables."), and [Topology and Smartscape API](../../dynatrace-api/environment-api/topology-and-smartscape.md "Learn about the Dynatrace Topology and Smartscape API.") are not included.
 
 As the keys depend on your configuration, they aren't covered by Semantic Dictionary.
 
 Tag names can't be prefixed with `dt.` except for the following tags that are subject to your configuration:
 
-* `dt.security_context` - attribute to manage data access using policies. See [Grant access to entities with security context](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context").
-* `dt.cost.costcenter` - attribute to assign usage to a Cost Center. See [Allocate your DPS costs](/docs/license/cost-allocation "Learn how to allocate costs to cost centers and products.").
-* `dt.cost.product` - attribute to assign usage to a Product or Application ID. See [Allocate your DPS costs](/docs/license/cost-allocation "Learn how to allocate costs to cost centers and products.").
+* `dt.security_context` - attribute to manage data access using policies. See [Grant access to entities with security context](../../manage/identity-access-management/use-cases/access-security-context.md "Grant access to entities with security context").
+* `dt.cost.costcenter` - attribute to assign usage to a Cost Center. See [Allocate your DPS costs](../../license/cost-allocation.md "Learn how to allocate costs to cost centers and products.").
+* `dt.cost.product` - attribute to assign usage to a Product or Application ID. See [Allocate your DPS costs](../../license/cost-allocation.md "Learn how to allocate costs to cost centers and products.").
 
-Attributes coming from custom properties and tags don't override the built-in enrichments if they have the same name. When creating your custom properties and tags, check [Global field reference](/docs/semantic-dictionary/fields "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") to make sure your name isn't already used.
+Attributes coming from custom properties and tags don't override the built-in enrichments if they have the same name. When creating your custom properties and tags, check [Global field reference](../../semantic-dictionary/fields.md "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") to make sure your name isn't already used.
 
 #### Handling name clashes when merging custom properties and tags
 
@@ -49,7 +49,7 @@ If a name clash happens when merging resource attributes at different levels, th
 
 ### General host-level attributes
 
-All host-level resource attributes follow [Semantic Dictionary](/docs/semantic-dictionary "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities."), unless stated otherwise.
+All host-level resource attributes follow [Semantic Dictionary](../../semantic-dictionary.md "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities."), unless stated otherwise.
 
 #### AWS
 

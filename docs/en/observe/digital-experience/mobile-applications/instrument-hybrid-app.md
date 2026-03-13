@@ -19,15 +19,15 @@ You can instrument your mobile application using one of our plugins. However, if
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Create a hybrid application in Dynatrace**](/docs/observe/digital-experience/mobile-applications/instrument-hybrid-app#create-app-in-ui "Learn how you can instrument various types of hybrid and cross-platform mobile apps.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Create a hybrid application in Dynatrace**](instrument-hybrid-app.md#create-app-in-ui "Learn how you can instrument various types of hybrid and cross-platform mobile apps.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Set up OneAgent and adjust its configuration**](/docs/observe/digital-experience/mobile-applications/instrument-hybrid-app#set-up-oneagent "Learn how you can instrument various types of hybrid and cross-platform mobile apps.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Set up OneAgent and adjust its configuration**](instrument-hybrid-app.md#set-up-oneagent "Learn how you can instrument various types of hybrid and cross-platform mobile apps.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Insert the RUM JavaScript into your hybrid app's HTML files**](/docs/observe/digital-experience/mobile-applications/instrument-hybrid-app#add-rum-js "Learn how you can instrument various types of hybrid and cross-platform mobile apps.")
+**Insert the RUM JavaScript into your hybrid app's HTML files**](instrument-hybrid-app.md#add-rum-js "Learn how you can instrument various types of hybrid and cross-platform mobile apps.")
 
 For hybrid applications, the native app is monitored via OneAgent for Mobile, while the browser part is observed by the Dynatrace RUM JavaScript.
 
-For hybrid apps, a user session is billed only once. See [Digital Experience Monitoring (DEM units)](/docs/license/monitoring-consumption-classic/digital-experience-monitoring-units "Understand how Dynatrace Digital Experience Monitoring consumption is calculated based on DEM units.") for more details.
+For hybrid apps, a user session is billed only once. See [Digital Experience Monitoring (DEM units)](../../../license/monitoring-consumption-classic/digital-experience-monitoring-units.md "Understand how Dynatrace Digital Experience Monitoring consumption is calculated based on DEM units.") for more details.
 
 Also note that one "hybrid" session might be displayed as two separate sessions in Dynatrace: one as a web session and another as a mobile session.
 
@@ -48,7 +48,7 @@ To create an application in Dynatrace
 
    ![Monitor web view via Cordova wizard](https://dt-cdn.net/images/monitor-web-view-cordova-wizard-2440-449be51ccc.png)
 
-   If the app that you're instrumenting is not a [Cordova app](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/apache-cordova "Set up Dynatrace to monitor hybrid mobile apps with the Cordova plugin."), skip the steps related to the Cordova plugin.
+   If the app that you're instrumenting is not a [Cordova app](cross-platform-frameworks/apache-cordova.md "Set up Dynatrace to monitor hybrid mobile apps with the Cordova plugin."), skip the steps related to the Cordova plugin.
 
 ## Step 2 Set up OneAgent and adjust its configuration
 
@@ -58,9 +58,9 @@ Android
 
 iOS
 
-To auto-instrument your Android project, use the [Dynatrace Android Gradle plugin](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin "Learn how the Dynatrace Android Gradle plugin can auto-instrument your Android application project.").
+To auto-instrument your Android project, use the [Dynatrace Android Gradle plugin](instrument-android-app/instrumentation-via-plugin.md "Learn how the Dynatrace Android Gradle plugin can auto-instrument your Android application project.").
 
-After that, [adjust the default configuration](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin/adjust-oneagent-configuration#hybrid-apps "Learn how to configure the Dynatrace Android Gradle plugin to modify the OneAgent SDK configuration.") to allow OneAgent to pass cookies to the WebView and domains specified in your app's top-level build file.
+After that, [adjust the default configuration](instrument-android-app/instrumentation-via-plugin/adjust-oneagent-configuration.md#hybrid-apps "Learn how to configure the Dynatrace Android Gradle plugin to modify the OneAgent SDK configuration.") to allow OneAgent to pass cookies to the WebView and domains specified in your app's top-level build file.
 
 Here is the example configuration for the `easytravel.com` domain:
 
@@ -104,9 +104,9 @@ domains '.easytravel.com'
 }
 ```
 
-To monitor your iOS application, you need to instrument [OneAgent for iOS](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios "Set up user experience monitoring for iOS apps within Dynatrace.").
+To monitor your iOS application, you need to instrument [OneAgent for iOS](instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios.md "Set up user experience monitoring for iOS apps within Dynatrace.").
 
-After that, use the [`DTXHybridApplication`, `DTXSetCookiesForDomain`, and `DTXSetSecureCookiesForDomain` configuration keys](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#hybrid "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to allow OneAgent to pass cookies to `WKWebView` and domains specified in your app's [`Info.plist` file](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.").
+After that, use the [`DTXHybridApplication`, `DTXSetCookiesForDomain`, and `DTXSetSecureCookiesForDomain` configuration keys](instrument-ios-app/customization/ios-configuration-keys.md#hybrid "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to allow OneAgent to pass cookies to `WKWebView` and domains specified in your app's [`Info.plist` file](instrument-ios-app/instrumentation/info-plist-file.md "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.").
 
 Here is the example configuration for the `easytravel.com` domain:
 
@@ -156,13 +156,13 @@ When the `DTXHybridApplication` configuration key is set to `true`, Apple Pay do
 
 To protect the security of transactions in `WKWebView`, Apple [disallows the use of Apple Pay with script injection APIsï»¿](https://developer.apple.com/documentation/safari-release-notes/safari-13-release-notes#Payment-Request-API), such as `WKUserScript` or `evaluateJavaScript`. Dynatrace uses `evaluateJavascript` to pass the correlation data from the native layer to `WKWebView`, and this process disables Apple Pay.
 
-As a workaround, set the `DTXHybridApplication` [configuration key](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to `false` to stop the injection of the script from OneAgent. However, this will also remove the correlation of mobile and web sessions for your hybrid app. Corresponding mobile and web sessions will not be merged, which leads to two billed sessions instead of one.
+As a workaround, set the `DTXHybridApplication` [configuration key](instrument-ios-app/customization/ios-configuration-keys.md "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to `false` to stop the injection of the script from OneAgent. However, this will also remove the correlation of mobile and web sessions for your hybrid app. Corresponding mobile and web sessions will not be merged, which leads to two billed sessions instead of one.
 
-It is important to add the required domains to your top-level build file (Android) or [`Info.plist` file](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.") (iOS) so that Dynatrace can identify mobile and web sessions within your app and merge these sessions into the same "hybrid" session.
+It is important to add the required domains to your top-level build file (Android) or [`Info.plist` file](instrument-ios-app/instrumentation/info-plist-file.md "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.") (iOS) so that Dynatrace can identify mobile and web sessions within your app and merge these sessions into the same "hybrid" session.
 
 ## Step 3 Insert the RUM JavaScript into HTML sources
 
-To capture user actions in the web-based part of your hybrid application, use the RUM JavaScript. You'll need to manually insert the JavaScript code or tag into your HTML sources. See [Set up agentless Real User Monitoring](/docs/observe/digital-experience/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.") for more information. Note that the RUM JavaScript is available in [several formats](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats "Select a format for the RUM JavaScript snippet that best fits your specific use case").
+To capture user actions in the web-based part of your hybrid application, use the RUM JavaScript. You'll need to manually insert the JavaScript code or tag into your HTML sources. See [Set up agentless Real User Monitoring](../web-applications/initial-setup/set-up-agentless-real-user-monitoring.md "Set up agentless monitoring for your web applications.") for more information. Note that the RUM JavaScript is available in [several formats](../web-applications/initial-setup/snippet-formats.md "Select a format for the RUM JavaScript snippet that best fits your specific use case").
 
 After you add the RUM JavaScript to the HTML files, user actions from your hybrid app's web views are reported to the web application that you've created in step 1.
 
@@ -170,7 +170,7 @@ If you've already instrumented the web-based part of your hybrid app, then you d
 
 ## Related topics
 
-* [Instrument mobile apps with Dynatrace Cordova plugin](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/apache-cordova "Set up Dynatrace to monitor hybrid mobile apps with the Cordova plugin.")
-* [Instrument mobile apps with Dynatrace Flutter plugin](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/flutter "Learn how to auto-instrument your Flutter applications with OneAgent.")
-* [Instrument mobile apps with Dynatrace React Native plugin](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/react-native "Auto-instrument your React Native applications with OneAgent.")
-* [Instrument mobile apps with Dynatrace Xamarin NuGet package](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/xamarin-nuget "Monitor Xamarin apps with Dynatrace OneAgent.")
+* [Instrument mobile apps with Dynatrace Cordova plugin](cross-platform-frameworks/apache-cordova.md "Set up Dynatrace to monitor hybrid mobile apps with the Cordova plugin.")
+* [Instrument mobile apps with Dynatrace Flutter plugin](cross-platform-frameworks/flutter.md "Learn how to auto-instrument your Flutter applications with OneAgent.")
+* [Instrument mobile apps with Dynatrace React Native plugin](cross-platform-frameworks/react-native.md "Auto-instrument your React Native applications with OneAgent.")
+* [Instrument mobile apps with Dynatrace Xamarin NuGet package](cross-platform-frameworks/xamarin-nuget.md "Monitor Xamarin apps with Dynatrace OneAgent.")

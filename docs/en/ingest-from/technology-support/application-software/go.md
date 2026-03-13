@@ -19,8 +19,8 @@ Dynatrace provides extensive Go monitoring capabilities:
 
 * Automatic injection and instrumentation of 64-bit Go executables on x86
 * OneAgent version 1.323+ Automatic injection and instrumentation of Go executables on AArch64
-* [Always-on 24x7 production-grade CPU profiling](/docs/ingest-from/technology-support/application-software/go/configuration-and-analysis/full-code-level-visibility "Learn how Dynatrace provides full code-level visibility into the performance of your Golang-based applications without requiring any changes to either code or application.")
-* [Go-specific metrics](/docs/ingest-from/technology-support/application-software/go/configuration-and-analysis/analyze-go-metrics "Learn about different Go metrics and how you can analyze them with Dynatrace."):
+* [Always-on 24x7 production-grade CPU profiling](go/configuration-and-analysis/full-code-level-visibility.md "Learn how Dynatrace provides full code-level visibility into the performance of your Golang-based applications without requiring any changes to either code or application.")
+* [Go-specific metrics](go/configuration-and-analysis/analyze-go-metrics.md "Learn about different Go metrics and how you can analyze them with Dynatrace."):
 
   + Suspension
   + Committed, used, idle, and live heap memory sizes
@@ -33,25 +33,25 @@ Dynatrace provides extensive Go monitoring capabilities:
   + Global Goroutine run queue size
   + Parked, out of work, and overall worker threads
   + Idle scheduling context count
-* [Incoming and outgoing web request monitoring](/docs/ingest-from/technology-support/application-software/go/configuration-and-analysis/end-to-end-request-monitoring "Find out how Dynatrace provides request-level visibility for your Go-based applications.")
-* [gRPC end-to-end service tracing](/docs/whats-new/oneagent/sprint-175#go "Release notes for Dynatrace OneAgent version 1.175")
-* [Custom service monitoring](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/custom-services "Define entry points (a method, class, or interface) for custom services that don't use standard protocols.")
+* [Incoming and outgoing web request monitoring](go/configuration-and-analysis/end-to-end-request-monitoring.md "Find out how Dynatrace provides request-level visibility for your Go-based applications.")
+* [gRPC end-to-end service tracing](../../../whats-new/oneagent/sprint-175.md#go "Release notes for Dynatrace OneAgent version 1.175")
+* [Custom service monitoring](../../../observe/application-observability/services/service-detection/service-detection-v1/service-types/custom-services.md "Define entry points (a method, class, or interface) for custom services that don't use standard protocols.")
 * [`database/sql`ï»¿](https://dt-url.net/database-sql) service tracing  
-  For the list of supported drivers, see [Go technology support](/docs/ingest-from/technology-support#go "Find technical details related to Dynatrace support for specific platforms and development frameworks.")
+  For the list of supported drivers, see [Go technology support](../../technology-support.md#go "Find technical details related to Dynatrace support for specific platforms and development frameworks.")
 * [OpenTelemetry supportï»¿](https://github.com/open-telemetry/opentelemetry-go/) for capturing traces.  
-  For more information, see [Instrument your Go application with OpenTelemetry](/docs/ingest-from/opentelemetry/walkthroughs/go "Learn how to instrument your Go application using OpenTelemetry and Dynatrace.")
+  For more information, see [Instrument your Go application with OpenTelemetry](../../opentelemetry/walkthroughs/go.md "Learn how to instrument your Go application using OpenTelemetry and Dynatrace.")
 
 ### Support
 
-* [Supported Go versions](/docs/ingest-from/technology-support/application-software/go/support/supported-go-versions "Find out which Go versions are supported by Dynatrace.")
-* [Known limitations for Go support](/docs/ingest-from/technology-support/application-software/go/support/go-known-limitations "Learn the limitations for Go support and their workarounds.")
+* [Supported Go versions](go/support/supported-go-versions.md "Find out which Go versions are supported by Dynatrace.")
+* [Known limitations for Go support](go/support/go-known-limitations.md "Learn the limitations for Go support and their workarounds.")
 
 ### Configuration and analysis
 
-* [Enable Go monitoring](/docs/ingest-from/technology-support/application-software/go/configuration-and-analysis/enable-go-monitoring "Learn how you can enable Go monitoring in Dynatrace.")
-* [Analyze Go metrics](/docs/ingest-from/technology-support/application-software/go/configuration-and-analysis/analyze-go-metrics "Learn about different Go metrics and how you can analyze them with Dynatrace.")
-* [End-to-end request monitoring](/docs/ingest-from/technology-support/application-software/go/configuration-and-analysis/end-to-end-request-monitoring "Find out how Dynatrace provides request-level visibility for your Go-based applications.")
-* [Full code-level visibility](/docs/ingest-from/technology-support/application-software/go/configuration-and-analysis/full-code-level-visibility "Learn how Dynatrace provides full code-level visibility into the performance of your Golang-based applications without requiring any changes to either code or application.")
+* [Enable Go monitoring](go/configuration-and-analysis/enable-go-monitoring.md "Learn how you can enable Go monitoring in Dynatrace.")
+* [Analyze Go metrics](go/configuration-and-analysis/analyze-go-metrics.md "Learn about different Go metrics and how you can analyze them with Dynatrace.")
+* [End-to-end request monitoring](go/configuration-and-analysis/end-to-end-request-monitoring.md "Find out how Dynatrace provides request-level visibility for your Go-based applications.")
+* [Full code-level visibility](go/configuration-and-analysis/full-code-level-visibility.md "Learn how Dynatrace provides full code-level visibility into the performance of your Golang-based applications without requiring any changes to either code or application.")
 
 ### See also
 

@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:18:48.563032
 * 1-min read
 * Updated on Jun 22, 2022
 
-На AIX Dynatrace поддерживает глубокий мониторинг кода для приложений Java, Apache, WebLogic и WebSphere. Начиная с версии OneAgent 1.189 достаточно лишь **разрешить расширение ядра AIX** на странице **Host settings** вашего AIX-хоста в Dynatrace. Для более ранних версий требуется выполнить дополнительную настройку на AIX — см. раздел [Установка OneAgent на AIX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix "Узнайте, как скачать и установить Dynatrace OneAgent на AIX.").
+На AIX Dynatrace поддерживает глубокий мониторинг кода для приложений Java, Apache, WebLogic и WebSphere. Начиная с версии OneAgent 1.189 достаточно лишь **разрешить расширение ядра AIX** на странице **Host settings** вашего AIX-хоста в Dynatrace. Для более ранних версий требуется выполнить дополнительную настройку на AIX — см. раздел [Установка OneAgent на AIX](../installation/install-oneagent-on-aix.md "Узнайте, как скачать и установить Dynatrace OneAgent на AIX.").
 
 ## Включение автоматического внедрения
 
@@ -25,12 +25,12 @@ scraped: 2026-03-06T21:18:48.563032
 4. Включите **Allow AIX kernel extension**.
    OneAgent начнёт собирать данные глубокого мониторинга кода.
 
-Для настройки автоматического внедрения можно использовать [Settings API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API.").
+Для настройки автоматического внедрения можно использовать [Settings API](../../../../../dynatrace-api/environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.").
 
-1. Чтобы изучить схему, используйте [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "Просмотр схемы настроек через Dynatrace API.") с `builtin:host.monitoring.aix-kernel-extension` в качестве schemaId.
+1. Чтобы изучить схему, используйте [GET a schema](../../../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "Просмотр схемы настроек через Dynatrace API.") с `builtin:host.monitoring.aix-kernel-extension` в качестве schemaId.
 2. На основе схемы `builtin:host.monitoring.aix-kernel-extension` создайте объект конфигурации.
-3. Для создания конфигурации используйте [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Создание или проверка объекта настроек через Dynatrace API.").
+3. Для создания конфигурации используйте [POST an object](../../../../../dynatrace-api/environment-api/settings/objects/post-object.md "Создание или проверка объекта настроек через Dynatrace API.").
 
 ## Обновление OneAgent версии 1.187 и ранее
 
-Если вы вручную настроили AIX-хост для внедрения кодовых модулей OneAgent, рекомендуется очистить переменные среды `LDR_PRELOAD` и `LDR_PRELOAD64` после включения автоматического внедрения. Это позволит удалить OneAgent с помощью [скрипта удаления](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/uninstall-oneagent-on-aix "Узнайте, как удалить OneAgent из вашей системы на базе AIX.") без необходимости вручную очищать переменные среды.
+Если вы вручную настроили AIX-хост для внедрения кодовых модулей OneAgent, рекомендуется очистить переменные среды `LDR_PRELOAD` и `LDR_PRELOAD64` после включения автоматического внедрения. Это позволит удалить OneAgent с помощью [скрипта удаления](uninstall-oneagent-on-aix.md "Узнайте, как удалить OneAgent из вашей системы на базе AIX.") без необходимости вручную очищать переменные среды.

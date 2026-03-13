@@ -24,7 +24,7 @@ In complex codebases, the number of detected vulnerabilities can be overwhelming
 
 ## Solution
 
-Dynatrace integrates with GitHub by enriching [Dependabot alertsï»¿](https://docs.github.com/en/code-security/dependabot/dependabot-alerts/about-dependabot-alerts) with runtime context and [Runtime Vulnerability Analytics (RVA)](/docs/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") validation. This enables GitHub Copilot to take targeted action:
+Dynatrace integrates with GitHub by enriching [Dependabot alertsï»¿](https://docs.github.com/en/code-security/dependabot/dependabot-alerts/about-dependabot-alerts) with runtime context and [Runtime Vulnerability Analytics (RVA)](../application-security/vulnerability-analytics.md "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.") validation. This enables GitHub Copilot to take targeted action:
 
 * **Confirmed vulnerabilities are automatically fixed**: GitHub Copilot opens a pull request with a secure fix for each vulnerability validated and confirmed by Dynatrace.
 
@@ -41,8 +41,8 @@ This reduces noise and developer effort by ensuring only relevant vulnerabilitie
 
 You can implement this solution in two ways, depending on where you want to triage vulnerabilities and trigger remediation:
 
-* [**GitHub-based workflow**](#github-based): Uses the [Dynatrace MCP Server](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp "Learn about the Dynatrace MCP server and how you can connect to it.") integrated with the [GitHub Copilot coding agentï»¿](https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent) or as a Dynatrace Security [custom agentï»¿](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents), triggered by a [GitHub Actions workflowsï»¿](https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows).
-* [**Dynatrace-driven workflow**](#dynatrace-driven): Uses [Dynatrace ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") as the trigger and processing engine, with [generative AIï»¿](https://docs.github.com/en/copilot) as the AI-driven analysis tool.
+* [**GitHub-based workflow**](#github-based): Uses the [Dynatrace MCP Server](../../../common/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp.md "Learn about the Dynatrace MCP server and how you can connect to it.") integrated with the [GitHub Copilot coding agentï»¿](https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent) or as a Dynatrace Security [custom agentï»¿](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents), triggered by a [GitHub Actions workflowsï»¿](https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows).
+* [**Dynatrace-driven workflow**](#dynatrace-driven): Uses [Dynatrace ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") as the trigger and processing engine, with [generative AIï»¿](https://docs.github.com/en/copilot) as the AI-driven analysis tool.
 
 ## GitHub-based workflow
 
@@ -65,9 +65,9 @@ To get started, follow the steps below.
 
 1. Set up Dynatrace
 
-* Set up monitoring with [Dynatrace OneAgent](/docs/platform/oneagent "Learn the monitoring capabilities of OneAgent.") for the production services.
-* [Enable Runtime Vulnerability Analytics](/docs/secure/application-security/vulnerability-analytics#start "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.").
-* [Create a Dynatrace platform token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.") with the proper permissions to both access the MCP server and to query various event types.
+* Set up monitoring with [Dynatrace OneAgent](../../platform/oneagent.md "Learn the monitoring capabilities of OneAgent.") for the production services.
+* [Enable Runtime Vulnerability Analytics](../application-security/vulnerability-analytics.md#start "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.").
+* [Create a Dynatrace platform token](../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.") with the proper permissions to both access the MCP server and to query various event types.
 
   1. List permissions
 
@@ -82,7 +82,7 @@ To get started, follow the steps below.
   + `storage:buckets:read`
   + `storage:bucket-definitions:read`
   + `storage:security.events:read`
-* [Request access to Dynatrace MCP Server](/docs/whats-new/preview-releases#mcp-server "Learn about our Preview releases and how you can participate in them.").
+* [Request access to Dynatrace MCP Server](../../../common/whats-new/preview-releases.md#mcp-server "Learn about our Preview releases and how you can participate in them.").
 
 2. Prepare your GitHub repository
 
@@ -204,8 +204,8 @@ This scenario uses Dynatrace to ingest and triage GitHub Advanced Security (GHAS
 ![Dynatrace-driven - how it works](https://dt-cdn.net/images/image-61-2188-3661817c05.png)
 
 1. GitHub Advanced Security (GHAS) detects vulnerabilities via [Dependabotï»¿](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide).
-2. The [Dynatrace integration with GHAS](/docs/secure/threat-observability/security-events-ingest/ingest-github-advanced-security "Ingest GitHub Advanced Security audit logs and security events into Dynatrace as security events.") ingests these alerts using the GitHub Advanced Security extension and stores them in [Grail](/docs/platform/grail "Insights on what and how you can query Dynatrace data.") for analysis.
-3. A Dynatrace workflow triages alerts using runtime context and Dynatrace Intelligence generative AI workflow action for validation. For more information, see [Dynatrace Intelligence (Preview) app](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.").
+2. The [Dynatrace integration with GHAS](../threat-observability/security-events-ingest/ingest-github-advanced-security.md "Ingest GitHub Advanced Security audit logs and security events into Dynatrace as security events.") ingests these alerts using the GitHub Advanced Security extension and stores them in [Grail](../../platform/grail.md "Insights on what and how you can query Dynatrace data.") for analysis.
+3. A Dynatrace workflow triages alerts using runtime context and Dynatrace Intelligence generative AI workflow action for validation. For more information, see [Dynatrace Intelligence (Preview) app](../../dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows.md "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.").
 4. A GitHub issue is created and assigned to GitHub Copilot, including both confirmed and unconfirmed vulnerabilities.
 5. GitHub Copilot coding agent automatically picks up the issue, remediates confirmed vulnerabilities, and dismisses unconfirmed ones.
 6. Developers review and merge the pull request with the fixes applied.
@@ -216,10 +216,10 @@ To get started, follow the steps below.
 
 1. Set up Dynatrace
 
-* [Enable Runtime Vulnerability Analytics](/docs/secure/application-security/vulnerability-analytics#start "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.").
-* [Request access to Dynatrace MCP Server](/docs/whats-new/preview-releases#mcp-server "Learn about our Preview releases and how you can participate in them.").
-* [Create a Dynatrace platform token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.") with the proper permissions to both access the MCP server and to query various event types.
-* [Install and configure the GitHub Advanced Security integration](/docs/secure/threat-observability/security-events-ingest/ingest-github-advanced-security "Ingest GitHub Advanced Security audit logs and security events into Dynatrace as security events.") in Dynatrace.
+* [Enable Runtime Vulnerability Analytics](../application-security/vulnerability-analytics.md#start "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.").
+* [Request access to Dynatrace MCP Server](../../../common/whats-new/preview-releases.md#mcp-server "Learn about our Preview releases and how you can participate in them.").
+* [Create a Dynatrace platform token](../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.") with the proper permissions to both access the MCP server and to query various event types.
+* [Install and configure the GitHub Advanced Security integration](../threat-observability/security-events-ingest/ingest-github-advanced-security.md "Ingest GitHub Advanced Security audit logs and security events into Dynatrace as security events.") in Dynatrace.
 
 2. Prepare your GitHub repository
 

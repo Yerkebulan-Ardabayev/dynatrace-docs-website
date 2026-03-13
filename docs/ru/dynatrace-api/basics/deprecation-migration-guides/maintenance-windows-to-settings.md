@@ -11,7 +11,7 @@ scraped: 2026-03-03T21:32:05.233768
 * Справочник
 * Опубликовано 21 декабря 2022
 
-[API окон обслуживания](/docs/dynatrace-api/configuration-api/maintenance-windows-api "Узнайте, что предлагает API конфигурации окон обслуживания Dynatrace.") был объявлен устаревшим в [Dynatrace версии 1.240](/docs/whats-new/dynatrace-api/sprint-240 "Журнал изменений Dynatrace API версии 1.240"). Его заменой является [Settings API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API.") со схемой **Maintenance windows** (`builtin:alerting.maintenance-window`). Мы рекомендуем выполнить миграцию на новый API при первой возможности.
+[API окон обслуживания](../../configuration-api/maintenance-windows-api.md "Узнайте, что предлагает API конфигурации окон обслуживания Dynatrace.") был объявлен устаревшим в [Dynatrace версии 1.240](../../../whats-new/dynatrace-api/sprint-240.md "Журнал изменений Dynatrace API версии 1.240"). Его заменой является [Settings API](../../environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.") со схемой **Maintenance windows** (`builtin:alerting.maintenance-window`). Мы рекомендуем выполнить миграцию на новый API при первой возможности.
 
 Миграция затрагивает URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также область действия токена для аутентификации запросов.
 
@@ -29,9 +29,9 @@ scraped: 2026-03-03T21:32:05.233768
 
 ## Параметры
 
-Чтобы узнать о новых параметрах запроса/тела, смотрите документацию отдельных запросов в [Settings API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API.").
+Чтобы узнать о новых параметрах запроса/тела, смотрите документацию отдельных запросов в [Settings API](../../environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.").
 
-В фреймворке Settings 2.0 каждое окно обслуживания представлено объектом настроек. Объект содержит некоторые метаданные (такие как область действия или временная метка создания) и саму конфигурацию, инкапсулированную в объекте **value**. Чтобы узнать о параметрах конфигурации окна обслуживания, запросите схему **Maintenance windows** (`builtin:alerting.maintenance-window`) с помощью запроса [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "Просмотр схемы настроек через Dynatrace API.").
+В фреймворке Settings 2.0 каждое окно обслуживания представлено объектом настроек. Объект содержит некоторые метаданные (такие как область действия или временная метка создания) и саму конфигурацию, инкапсулированную в объекте **value**. Чтобы узнать о параметрах конфигурации окна обслуживания, запросите схему **Maintenance windows** (`builtin:alerting.maintenance-window`) с помощью запроса [GET a schema](../../environment-api/settings/schemas/get-schema.md "Просмотр схемы настроек через Dynatrace API.").
 
 ## Примеры
 
@@ -43,7 +43,7 @@ Settings 2.0
 
 Maintenance windows
 
-Чтобы получить список всех окон обслуживания, используйте запрос [GET objects](/docs/dynatrace-api/environment-api/settings/objects/get-objects "Просмотр нескольких объектов настроек через Dynatrace API."). В параметрах запроса установите **schemaIds** в `builtin:alerting.maintenance-window` и **scope** в `environment`.
+Чтобы получить список всех окон обслуживания, используйте запрос [GET objects](../../environment-api/settings/objects/get-objects.md "Просмотр нескольких объектов настроек через Dynatrace API."). В параметрах запроса установите **schemaIds** в `builtin:alerting.maintenance-window` и **scope** в `environment`.
 
 #### URL запроса
 
@@ -411,7 +411,7 @@ Settings 2.0
 
 Maintenance windows
 
-Чтобы создать окно обслуживания, используйте запрос [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Создание или валидация объекта настроек через Dynatrace API."). В теле запроса установите **schemaId** в `builtin:alerting.maintenance-window` и **scope** в `environment`. Предоставьте конфигурацию окна обслуживания в объекте **value**.
+Чтобы создать окно обслуживания, используйте запрос [POST an object](../../environment-api/settings/objects/post-object.md "Создание или валидация объекта настроек через Dynatrace API."). В теле запроса установите **schemaId** в `builtin:alerting.maintenance-window` и **scope** в `environment`. Предоставьте конфигурацию окна обслуживания в объекте **value**.
 
 Ответ содержит идентификатор объекта, который необходим для изменения настроек.
 
@@ -779,7 +779,7 @@ Settings 2.0
 
 Maintenance windows
 
-Чтобы отредактировать окно обслуживания, используйте запрос [PUT an object](/docs/dynatrace-api/environment-api/settings/objects/put-object "Редактирование объекта настроек через Dynatrace API.").
+Чтобы отредактировать окно обслуживания, используйте запрос [PUT an object](../../environment-api/settings/objects/put-object.md "Редактирование объекта настроек через Dynatrace API.").
 
 #### URL запроса
 
@@ -1129,5 +1129,5 @@ PUT https://mySampleEnv.live.dynatrace.com/config/v1/maintenanceWindows/07f476c6
 
 ## Связанные темы
 
-* [Settings API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API.")
-* [API окон обслуживания](/docs/dynatrace-api/configuration-api/maintenance-windows-api "Узнайте, что предлагает API конфигурации окон обслуживания Dynatrace.")
+* [Settings API](../../environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.")
+* [API окон обслуживания](../../configuration-api/maintenance-windows-api.md "Узнайте, что предлагает API конфигурации окон обслуживания Dynatrace.")

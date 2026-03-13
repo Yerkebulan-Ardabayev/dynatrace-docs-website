@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:19:36.131208
 * 3-min read
 * Published Jul 16, 2018
 
-Dynatrace OneAgent is supported on many [platforms](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") and offers deep monitoring for many [technologies and frameworks](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks."). The Dynatrace team tests all possible deep-monitoring scenarios, but to streamline our supportability in situations in which deep monitoring might not work as planned, you can leverage the [OneAgent features](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.") page.
+Dynatrace OneAgent is supported on many [platforms](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") and offers deep monitoring for many [technologies and frameworks](../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks."). The Dynatrace team tests all possible deep-monitoring scenarios, but to streamline our supportability in situations in which deep monitoring might not work as planned, you can leverage the [OneAgent features](../oneagent-features.md "Manage OneAgent features globally and per process group.") page.
 
 ## Use cases
 

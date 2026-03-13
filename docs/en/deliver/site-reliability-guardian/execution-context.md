@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:37:23.233559
 * 2-min read
 * Published Sep 29, 2023
 
-Your Continuous Integration (CI) tool, for example, Jenkins, can [send business events to Dynatrace](/docs/observe/business-observability/bo-api-ingest "Set up authentication for and ingest business events via API."). These events can then trigger Site Reliability Guardian validations in a workflow.
+Your Continuous Integration (CI) tool, for example, Jenkins, can [send business events to Dynatrace](../../observe/business-observability/bo-api-ingest.md "Set up authentication for and ingest business events via API."). These events can then trigger Site Reliability Guardian validations in a workflow.
 
 Disclaimer
 

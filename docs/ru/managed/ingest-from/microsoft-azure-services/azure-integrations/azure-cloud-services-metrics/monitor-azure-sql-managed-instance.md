@@ -22,9 +22,9 @@ scraped: 2026-03-06T21:26:12.325912
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. [Enable service monitoring](../../../../../ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring.md "Enable Azure monitoring in Dynatrace.").
 
-При необходимости для интеграции с OneAgent см. [how database activity is monitored](/docs/observe/infrastructure-observability/databases/database-services-classic/how-database-activity-is-monitored "Learn about automatic detection and monitoring of database services in your application environment.").
+При необходимости для интеграции с OneAgent см. [how database activity is monitored](../../../../../observe/infrastructure-observability/databases/database-services-classic/how-database-activity-is-monitored.md "Learn about automatic detection and monitoring of database services in your application environment.").
 
 ## Просмотр метрик сервиса
 

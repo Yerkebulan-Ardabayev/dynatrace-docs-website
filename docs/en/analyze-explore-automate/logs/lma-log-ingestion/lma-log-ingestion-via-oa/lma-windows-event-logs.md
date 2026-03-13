@@ -18,7 +18,7 @@ Windows Event Logs are a detailed record of notifications stored by the Windows 
 * System Logs: Contains events logged by Windows system components.
 * Security Logs: Contains security-related events like login attempts and resource access.
 
-Windows Event Logs are automatically detected and can be ingested using the Dynatrace OneAgent. You can provide custom Event Logs by the [Custom log source](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-custom-log-source#configure-log-source-mainclscuipage "Configure custom log sources to manually add log data sources that have not been autodetected.") configuration.
+Windows Event Logs are automatically detected and can be ingested using the Dynatrace OneAgent. You can provide custom Event Logs by the [Custom log source](lma-custom-log-source.md#configure-log-source-mainclscuipage "Configure custom log sources to manually add log data sources that have not been autodetected.") configuration.
 
 ## Configure Windows event logs ingestion
 

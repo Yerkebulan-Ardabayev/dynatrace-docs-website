@@ -42,7 +42,7 @@ Access validation insight links from ![Site Reliability Guardian](https://dt-cdn
 
 Access validation insight links using DQL:
 
-* For [Lifecycle guardians](/docs/deliver/site-reliability-guardian#lifecycle-guardian "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision."), you can find the validation insights for the event type `validation.objective` in the property `dt.srg.objective`.
+* For [Lifecycle guardians](../site-reliability-guardian.md#lifecycle-guardian "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision."), you can find the validation insights for the event type `validation.objective` in the property `dt.srg.objective`.
 
   Here is an example query for Lifecycle guardian:
 
@@ -65,7 +65,7 @@ Access validation insight links using DQL:
 
   | fields dt.srg.objective
   ```
-* For [Business guardians](/docs/deliver/site-reliability-guardian#business-guardian "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision."), you can find the objective links for the event type `guardian.validation.objective` in the property `guardian.objective`.
+* For [Business guardians](../site-reliability-guardian.md#business-guardian "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision."), you can find the objective links for the event type `guardian.validation.objective` in the property `guardian.objective`.
 
   Here is an example query for Business guardian:
 
@@ -87,4 +87,4 @@ Access validation insight links using DQL:
 
 ## Next steps
 
-Take a look at [Guardian execution context](/docs/deliver/site-reliability-guardian/execution-context "Filter Site Reliability Guardian validation events triggered by an external tool using the context information provided by the tool."). Use events from your Continuous Integration (CI) tool to send them to Dynatrace, which, in turn, can trigger validation of your guardian in a workflow.
+Take a look at [Guardian execution context](execution-context.md "Filter Site Reliability Guardian validation events triggered by an external tool using the context information provided by the tool."). Use events from your Continuous Integration (CI) tool to send them to Dynatrace, which, in turn, can trigger validation of your guardian in a workflow.

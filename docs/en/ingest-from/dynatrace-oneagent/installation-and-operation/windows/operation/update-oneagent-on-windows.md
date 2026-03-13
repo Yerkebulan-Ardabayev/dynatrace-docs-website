@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:19:20.645595
 
 OneAgent installed in full-stack mode has a built-in, configurable auto-update mechanism.
 
-See [OneAgent update](/docs/ingest-from/dynatrace-oneagent/oneagent-update "Learn how to update OneAgent.") for an overview of OneAgent update, including how to monitor updates and how to create update windows.
+See [OneAgent update](../../../oneagent-update.md "Learn how to update OneAgent.") for an overview of OneAgent update, including how to monitor updates and how to create update windows.
 
 ## Configure OneAgent updates
 
@@ -120,7 +120,7 @@ To control which version of OneAgent is automatically installed on all new hosts
 1. Go to **Settings** > **Updates** > **OneAgent updates**.
 2. In **Update mode**, select **No automatic updates** to disable automatic OneAgent updates.
 
-   For details on how to disable OneAgent automatic updates on Paas/Kubernetes, see [DynaKube parameters for Dynatrace Operator on Kubernetes/OpenShift](/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
+   For details on how to disable OneAgent automatic updates on Paas/Kubernetes, see [DynaKube parameters for Dynatrace Operator on Kubernetes/OpenShift](../../../../setup-on-k8s/reference/dynakube-parameters.md "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
 3. In **Target version**, select the version of OneAgent to install on all new hosts.
 
 The selected OneAgent version is also used for PaaS integrations.
@@ -162,7 +162,7 @@ If you select an older version than a currently deployed version, you won't be a
 
 ### Disk space
 
-For details, see [OneAgent files and disk space requirements](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/disk-space-requirements-for-oneagent-installation-and-update-on-windows "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Windows.")
+For details, see [OneAgent files and disk space requirements](../installation/disk-space-requirements-for-oneagent-installation-and-update-on-windows.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Windows.")
 
 ### Free memory
 
@@ -174,7 +174,7 @@ Use one of these methods to check which version of OneAgent you currently have i
 
 ### OneAgent command-line interface
 
-Run `oneagentctl` with the `--version` parameter. For more information, see [OneAgent configuration via command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#display-oneagent-version "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Run `oneagentctl` with the `--version` parameter. For more information, see [OneAgent configuration via command-line interface](../../../oneagent-configuration-via-command-line-interface.md#display-oneagent-version "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ### Host Overview
 

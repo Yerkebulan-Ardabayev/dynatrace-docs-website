@@ -159,7 +159,7 @@ Here are some of the people who started [Dynatrace](https://www.dynatrace.com).
 
 ### Variables
 
-To reference a [variable](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable "Add variables to your Dynatrace dashboards.") in an annotation, use the variable name prefixed by a `$` character. For example:
+To reference a [variable](dashboard-component-variable.md "Add variables to your Dynatrace dashboards.") in an annotation, use the variable name prefixed by a `$` character. For example:
 
 ```
 The status is $Status.
@@ -167,4 +167,4 @@ The status is $Status.
 
 If the dashboard has a variable named `Status` and the current value of `Status` is `Good`, the above example would appear in your tile as "The status is Good." and it would be updated when the value of `Status` changes.
 
-For details on variables, see [Add a variable to a dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable "Add variables to your Dynatrace dashboards.").
+For details on variables, see [Add a variable to a dashboard](dashboard-component-variable.md "Add variables to your Dynatrace dashboards.").

@@ -19,13 +19,13 @@ scraped: 2026-03-06T21:28:26.746272
 
 ![log-api](https://dt-cdn.net/images/log-api-1980-03664b6a2d.png)
 
-Вы можете настроить интеграцию API приёма логов для любых средств доставки логов, которые интегрируются с Dynatrace REST API, например, [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Узнайте об OpenTelemetry Collector от Dynatrace."), [Fluentbit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit "Интеграция Fluent Bit для потоковой передачи логов в Dynatrace."), [Fluentd](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s "Интеграция Fluentd с Dynatrace для потоковой передачи логов с узлов и подов в Dynatrace."), [Logstash](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash "Интеграция Logstash для потоковой передачи логов с узлов и подов в Dynatrace.").
+Вы можете настроить интеграцию API приёма логов для любых средств доставки логов, которые интегрируются с Dynatrace REST API, например, [OpenTelemetry Collector](../../../ingest-from/opentelemetry/collector.md "Узнайте об OpenTelemetry Collector от Dynatrace."), [Fluentbit](lma-stream-logs-with-fluent-bit.md "Интеграция Fluent Bit для потоковой передачи логов в Dynatrace."), [Fluentd](lma-stream-logs-fluentd-k8s.md "Интеграция Fluentd с Dynatrace для потоковой передачи логов с узлов и подов в Dynatrace."), [Logstash](lma-stream-logs-with-logstash.md "Интеграция Logstash для потоковой передачи логов с узлов и подов в Dynatrace.").
 
 Dynatrace автоматически собирает данные логов и событий из широкого спектра технологий. С помощью API приёма логов вы можете передавать записи логов в систему и позволить Dynatrace преобразовать поток в осмысленные сообщения логов.
 
 ![LMA - Generic log ingestion API](https://dt-cdn.net/images/lma-generic-log-ingestion-api-2500-090a5b5c43.png)
 
-API приёма логов позволяет передавать записи логов в систему. Он доступен через [Приём JSON и TXT логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Узнайте, как обрабатываются JSON и TXT логи в сглаженном или необработанном режиме.") или через [Приём OTLP логов](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.").
+API приёма логов позволяет передавать записи логов в систему. Он доступен через [Приём JSON и TXT логов](lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md "Узнайте, как обрабатываются JSON и TXT логи в сглаженном или необработанном режиме.") или через [Приём OTLP логов](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.").
 
 * Для Dynatrace SaaS конечная точка приёма логов доступна в вашей среде.
 * Если в качестве конечной точки в вашей локальной среде вы выбрали Environment ActiveGate, установите экземпляр ActiveGate: в Dynatrace Hub выберите **ActiveGate** > **Set up**. API приёма логов v2 автоматически включается на ActiveGate.
@@ -39,7 +39,7 @@ API приёма логов позволяет передавать записи
 
   + `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/logs/ingest`
   + `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/otlp/v1/logs`
-* Для сред Kubernetes вы можете использовать [Fluentd](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s "Интеграция Fluentd с Dynatrace для потоковой передачи логов с узлов и подов в Dynatrace.") или [Fluent Bit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s "Интеграция Fluent Bit в Kubernetes для потоковой передачи логов в Dynatrace.") для пересылки логов в Dynatrace.
+* Для сред Kubernetes вы можете использовать [Fluentd](lma-stream-logs-fluentd-k8s.md "Интеграция Fluentd с Dynatrace для потоковой передачи логов с узлов и подов в Dynatrace.") или [Fluent Bit](lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s.md "Интеграция Fluent Bit в Kubernetes для потоковой передачи логов в Dynatrace.") для пересылки логов в Dynatrace.
 
 ActiveGate будет собирать и пытаться автоматически преобразовать любые данные логов, содержащие следующие элементы:
 
@@ -57,7 +57,7 @@ API-клиенты должны повторно выполнять запрос
 
 ## Очередь данных логов
 
-Вы можете настроить свойства очереди данных логов, отредактировав файл `custom.properties` (см. [Свойства и параметры конфигурации ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#generic-ingest "Узнайте, какие свойства ActiveGate вы можете настроить в соответствии с вашими потребностями и требованиями.")) на вашем ActiveGate для установки следующих значений:
+Вы можете настроить свойства очереди данных логов, отредактировав файл `custom.properties` (см. [Свойства и параметры конфигурации ActiveGate](../../../ingest-from/dynatrace-activegate/configuration/configure-activegate.md#generic-ingest "Узнайте, какие свойства ActiveGate вы можете настроить в соответствии с вашими потребностями и требованиями.")) на вашем ActiveGate для установки следующих значений:
 
 ```
 [generic_ingest]
@@ -151,14 +151,14 @@ Success
 
 ## Устранение неполадок
 
-Посетите Dynatrace Community для ознакомления с руководствами по устранению неполадок, а также см. [Устранение неполадок Log Management and Analytics](/docs/analyze-explore-automate/logs/lma-troubleshooting "Исправление проблем, связанных с настройкой и конфигурацией Log Management and Analytics.").
+Посетите Dynatrace Community для ознакомления с руководствами по устранению неполадок, а также см. [Устранение неполадок Log Management and Analytics](../lma-troubleshooting.md "Исправление проблем, связанных с настройкой и конфигурацией Log Management and Analytics.").
 
 * [Устранение неполадок приёма логов через API - POST ingest logs](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608)
 
 ## Связанные темы
 
-* [Приём JSON и TXT логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Узнайте, как обрабатываются JSON и TXT логи в сглаженном или необработанном режиме.")
-* [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Отправляйте пользовательские логи в Dynatrace через Log Monitoring API v2.")
-* [Приём OTLP логов](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.")
-* [API приёма логов OpenTelemetry](/docs/dynatrace-api/environment-api/opentelemetry/post-logs "Отправляйте логи OpenTelemetry в Dynatrace через API.")
-* [Автоматическое обогащение логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation "API приёма логов автоматически преобразует данные логов в выходные значения для атрибута loglevel.")
+* [Приём JSON и TXT логов](lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md "Узнайте, как обрабатываются JSON и TXT логи в сглаженном или необработанном режиме.")
+* [Log Monitoring API v2 - POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Отправляйте пользовательские логи в Dynatrace через Log Monitoring API v2.")
+* [Приём OTLP логов](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.")
+* [API приёма логов OpenTelemetry](../../../dynatrace-api/environment-api/opentelemetry/post-logs.md "Отправляйте логи OpenTelemetry в Dynatrace через API.")
+* [Автоматическое обогащение логов](lma-log-ingestion-via-api/lma-log-data-transformation.md "API приёма логов автоматически преобразует данные логов в выходные значения для атрибута loglevel.")

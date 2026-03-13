@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:24:09.563425
 * Extension
 * Updated on Oct 07, 2025
 
-This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](/docs/secure/threat-observability/migration "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
 
 Ingest Sonatype Lifecycle security events and audit logs into Dynatrace as security events.
 
@@ -28,9 +28,9 @@ Sonatype offers a range of products to help developers improve their productivit
 
 With the ingested data, you can accomplish various use cases, such as
 
-* [Visualize and analyze security findings](/docs/secure/use-cases/visualize-and-analyze-security-findings "Visualize, prioritize, and analyze ingested security findings.")
-* [Discover coverage gaps in security findings](/docs/secure/use-cases/discover-coverage-gaps-in-security-scans "Unveil blind spots in your Software Development Lifecycle (SDLC).")
-* [Automate and orchestrate security findings](/docs/secure/use-cases/automate-and-orchestrate-security-findings "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* [Visualize and analyze security findings](../../use-cases/visualize-and-analyze-security-findings.md "Visualize, prioritize, and analyze ingested security findings.")
+* [Discover coverage gaps in security findings](../../use-cases/discover-coverage-gaps-in-security-scans.md "Unveil blind spots in your Software Development Lifecycle (SDLC).")
+* [Automate and orchestrate security findings](../../use-cases/automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
 
 ### Requirements
 
@@ -63,13 +63,13 @@ To ensure successful data collection, the authenticated user must have the follo
   + Run Extensions 2.0 framework
   + Reach the Sonatype API endpoints
 * Permissions: For a list of permissions required, go to  **Hub**, select ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**, and display **Technical information**.
-* Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+* Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see [Dynatrace API - Tokens and authentication](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
 
 ## Activation and setup
 
 1. In Dynatrace, search for **Sonatype Lifecycle** and select **Install**.
 2. Follow the on-screen instructions to configure the extension.
-3. Verify configuration by running the following queries in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."):
+3. Verify configuration by running the following queries in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."):
 
    * For audit logs:
 
@@ -114,7 +114,7 @@ To ensure successful data collection, the authenticated user must have the follo
 
      AND event.type=="VULNERABILITY_SCAN"
      ```
-4. Once the extension is installed and working, you can access and manage it in Dynatrace via ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**. For details, see [About Extensions](/docs/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.").
+4. Once the extension is installed and working, you can access and manage it in Dynatrace via ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**. For details, see [About Extensions](../../../ingest-from/extensions/concepts.md "Learn more about the concept of Dynatrace Extensions.").
 
 ## Details
 
@@ -122,23 +122,23 @@ To ensure successful data collection, the authenticated user must have the follo
 
 ![how it works - sonatype](https://dt-cdn.net/images/architechture-diagram-2560-277696e6e1.png)
 
-Dynatrace integration with Sonatype Lifecycle is an [extension](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") running on Dynatrace ActiveGate. Once you enable and configure the Dynatrace Sonatype Lifecycle extension
+Dynatrace integration with Sonatype Lifecycle is an [extension](../../../ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.") running on Dynatrace ActiveGate. Once you enable and configure the Dynatrace Sonatype Lifecycle extension
 
 1. It periodically collects security findings and audit logs using [Sonatype REST APIï»¿](https://help.sonatype.com/en/rest-apis.html).
-2. The fetched data is ingested into Dynatrace and mapped to the [Dynatrace Semantic Dictionary](/docs/semantic-dictionary/model/security-events#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.").
-3. Data is stored in a bucket called `default_securityevents` (for details, see [Built-in Grail buckets](/docs/platform/grail/organize-data#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.")).
+2. The fetched data is ingested into Dynatrace and mapped to the [Dynatrace Semantic Dictionary](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.").
+3. Data is stored in a bucket called `default_securityevents` (for details, see [Built-in Grail buckets](../../../platform/grail/organize-data.md#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.")).
 
 ### Licensing and cost
 
-For billing information, see [Events powered by Grail](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For billing information, see [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 
 ## FAQ
 
 ### Which data model is used for the security logs and events coming from Sonatype Lifecycle?
 
-* [Vulnerability finding events](/docs/semantic-dictionary/model/security-events#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.") store the individual vulnerability findings reported by Sonatype Lifecycle per affected artifacts and component.
-* [**Vulnerability scan events**](/docs/semantic-dictionary/model/security-events#vulnerability-scan-events "Get to know the Semantic Dictionary models related to security events.") indicate coverage of scans for individual artifacts.
-* [**Audit logs**](/docs/semantic-dictionary/model/log#audit-logs "Get to know the Semantic Dictionary models related to Log Analytics.") represent user activity logs in Sonatype Lifecycle.
+* [Vulnerability finding events](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.") store the individual vulnerability findings reported by Sonatype Lifecycle per affected artifacts and component.
+* [**Vulnerability scan events**](../../../semantic-dictionary/model/security-events.md#vulnerability-scan-events "Get to know the Semantic Dictionary models related to security events.") indicate coverage of scans for individual artifacts.
+* [**Audit logs**](../../../semantic-dictionary/model/log.md#audit-logs "Get to know the Semantic Dictionary models related to Log Analytics.") represent user activity logs in Sonatype Lifecycle.
 
 ### Which Sonatype Lifecycle security findings are imported into Dynatrace?
 
@@ -170,7 +170,7 @@ The `sonatype` namespace is added for extracting several Sonatype-specific attri
 ### How is the risk score for Sonatype Lifecycle findings normalized?
 
 Dynatrace normalizes severity and risk scores for all findings ingested through the current integration. This helps you to prioritize findings consistently, regardless of their source.  
-For details on how normalization works, see [Severity and score normalization](/docs/secure/threat-observability/concepts#normalization "Basic concepts related to Threat Observability").
+For details on how normalization works, see [Severity and score normalization](../concepts.md#normalization "Basic concepts related to Threat Observability").
 
 The Dynatrace risk levels and scores are mapped from the original Sonatype Lifecycle scores.
 
@@ -192,6 +192,6 @@ Ingest Sonatype vulnerability findings, scans, and audit logs.](https://www.dyna
 
 ## Related topics
 
-* [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Security events](/docs/semantic-dictionary/model/security-events "Get to know the Semantic Dictionary models related to security events.")
+* [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
+* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Security events](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")

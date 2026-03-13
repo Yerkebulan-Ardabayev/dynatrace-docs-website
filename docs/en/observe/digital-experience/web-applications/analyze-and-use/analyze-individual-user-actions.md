@@ -32,19 +32,19 @@ Once on a user action detail page, select areas of the infographic at the top of
 
 ## Performance
 
-In the **Performance section**, you can view the impact of user activity on performance, check out the various [performance contributors](/docs/observe/digital-experience/rum-concepts/user-action-metrics "Learn what metrics Dynatrace calculates for user actions and find out what each metric indicates.") and see the distribution for your selected performance metric.
+In the **Performance section**, you can view the impact of user activity on performance, check out the various [performance contributors](../../rum-concepts/user-action-metrics.md "Learn what metrics Dynatrace calculates for user actions and find out what each metric indicates.") and see the distribution for your selected performance metric.
 
 ![Performance](https://dt-cdn.net/images/performance-2285-289d4f850e.png)
 
 ## Contributors breakdown chart and waterfall analysis
 
-When it comes to analyzing user actions, one of the main questions to address is on which tier is the most response time consumed? Was more time spent on the frontend (mainly in the browser), the network, or the server? The **Contributor breakdown** chart gives you a quick overview of time spent on the frontend, the network, and the server. For complete [waterfall analysis](/docs/observe/digital-experience/web-applications/analyze-and-use/waterfall-analysis "Learn how to analyze all user action monitoring data through waterfall analysis.") of individual user actions, select **View analysis in waterfall chart** to see which resources impact the action duration.
+When it comes to analyzing user actions, one of the main questions to address is on which tier is the most response time consumed? Was more time spent on the frontend (mainly in the browser), the network, or the server? The **Contributor breakdown** chart gives you a quick overview of time spent on the frontend, the network, and the server. For complete [waterfall analysis](waterfall-analysis.md "Learn how to analyze all user action monitoring data through waterfall analysis.") of individual user actions, select **View analysis in waterfall chart** to see which resources impact the action duration.
 
 ![User actions](https://dt-cdn.net/images/actions-2285-9af9ca267d.png)
 
 ## Apdex rating
 
-Dynatrace relies on [Apdex ratings](/docs/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.") to calculate user satisfaction. By selecting **Apdex rating**, you can view the user satisfaction within the specified time frame for the specific user action.
+Dynatrace relies on [Apdex ratings](../../rum-concepts/scores-and-ratings/apdex-ratings.md "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.") to calculate user satisfaction. By selecting **Apdex rating**, you can view the user satisfaction within the specified time frame for the specific user action.
 
 ![Apdex](https://dt-cdn.net/images/apdex-actions-2291-8bcf39ab96.png)
 
@@ -56,21 +56,21 @@ The **Loaded resources** section provides an overview of downloaded resource cat
 
 ## User action properties
 
-This section lists the user action properties that [you've defined for the specific user action](/docs/observe/digital-experience/web-applications/additional-configuration/define-user-action-and-session-properties "Define custom string, numeric, and date properties for your monitored web applications."). By selecting one property, you can view the data that have been captured via this property.
+This section lists the user action properties that [you've defined for the specific user action](../additional-configuration/define-user-action-and-session-properties.md "Define custom string, numeric, and date properties for your monitored web applications."). By selecting one property, you can view the data that have been captured via this property.
 
 ![User action properties](https://dt-cdn.net/images/properties-2284-38c4617813.png)
 
 ## Problems
 
-The [**Problems**](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.") section indicates problems that have been automatically detected by Davis, which is the Dynatrace AI-driven root-causation engine. Just select on a problem to learn further details.
+The [**Problems**](../../../../dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence.") section indicates problems that have been automatically detected by Davis, which is the Dynatrace AI-driven root-causation engine. Just select on a problem to learn further details.
 
 ![Problems](https://dt-cdn.net/images/problems-actions-2259-a04f530ffa.png)
 
 ## Errors
 
-Select **Errors** to view [error](/docs/observe/digital-experience/rum-concepts/user-and-error-events#error "Learn about user and error events and the types of user and error events captured by Dynatrace.") analysis from two different dimensions: error type ([JavaScript](/docs/observe/digital-experience/web-applications/analyze-and-use/source-map-support-for-javascript-error-analysis "Learn how source maps make it easy to analyze, reproduce, and fix JavaScript errors."), request, and custom errors) and origin (first-party, third-party, or CDN).
+Select **Errors** to view [error](../../rum-concepts/user-and-error-events.md#error "Learn about user and error events and the types of user and error events captured by Dynatrace.") analysis from two different dimensions: error type ([JavaScript](source-map-support-for-javascript-error-analysis.md "Learn how source maps make it easy to analyze, reproduce, and fix JavaScript errors."), request, and custom errors) and origin (first-party, third-party, or CDN).
 
-You can also view the most frequently occurring JavaScript errors in this user action during the specific [timeframe](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings."). Select **Analyze errors** to navigate to the [multidimensional analysis page](/docs/observe/digital-experience/web-applications/analyze-and-use/multi-dimensional-analysis "Find out how Dynatrace Real User Monitoring enables you to dig deep into your user actions and perform analysis across numerous dimensions."), where you can perform a multidimensional analysis from the **Errors** perspective, combined with the type, context, or origin dimension respectively. On this page, if you select a specific error from the **Error** list, you can access the [error details page](/docs/observe/digital-experience/session-segmentation/new-user-sessions#error-details-page "Learn about user session segmentation and filtering attributes.").
+You can also view the most frequently occurring JavaScript errors in this user action during the specific [timeframe](../../../../analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe.md "Learn about Dynatrace dashboard timeframe and management zone settings."). Select **Analyze errors** to navigate to the [multidimensional analysis page](multi-dimensional-analysis.md "Find out how Dynatrace Real User Monitoring enables you to dig deep into your user actions and perform analysis across numerous dimensions."), where you can perform a multidimensional analysis from the **Errors** perspective, combined with the type, context, or origin dimension respectively. On this page, if you select a specific error from the **Error** list, you can access the [error details page](../../session-segmentation/new-user-sessions.md#error-details-page "Learn about user session segmentation and filtering attributes.").
 
 ![User action details page - Errors](https://dt-cdn.net/images/user-action-page-error-2283-670dd35d85.png)
 
@@ -88,6 +88,6 @@ This sections shows the **Top 3 web request contributors**, which are the three 
 
 ## Compare JavaScript errors with user actions
 
-This section shows the percentage of the user actions that were affected by JavaScript errors during the specified [timeframe](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings.").
+This section shows the percentage of the user actions that were affected by JavaScript errors during the specified [timeframe](../../../../analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe.md "Learn about Dynatrace dashboard timeframe and management zone settings.").
 
 ![Javascript errors vs actions](https://dt-cdn.net/images/js-errors-2253-a4fad35c29.png)

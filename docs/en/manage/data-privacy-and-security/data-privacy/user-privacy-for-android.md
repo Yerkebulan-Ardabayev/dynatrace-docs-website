@@ -16,7 +16,7 @@ Starting July 20, 2022, Google requires you to provide your users with informati
 
 This page can help you with completing the [Data safety formï»¿](https://support.google.com/googleplay/android-developer/answer/10787469#complete_form_steps) in Google Play Console. The questions and data types reflect the Data safety form, but note that the answers reflect the out-of-the-box, default state.
 
-OneAgent might capture additional data through your [manual instrumentation](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk "Learn what OneAgent SDK for Android is."). If you instrument your app to collect additional data, make sure you reflect this in the **Data safety** section in Google Play Console.
+OneAgent might capture additional data through your [manual instrumentation](../../../observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk.md "Learn what OneAgent SDK for Android is."). If you instrument your app to collect additional data, make sure you reflect this in the **Data safety** section in Google Play Console.
 
 To fill out the Data safety form
 
@@ -45,4 +45,4 @@ Use the table below for all data types captured by OneAgent.
 
 * [Preparing for Google Play's new safety sectionï»¿](https://android-developers.googleblog.com/2021/07/new-google-play-safety-section.html)
 * [Provide information for Google Play's Data safety sectionï»¿](https://support.google.com/googleplay/android-developer/answer/10787469)
-* [Configure data privacy settings for mobile applications](/docs/observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.")
+* [Configure data privacy settings for mobile applications](../../../observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile.md "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.")

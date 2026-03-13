@@ -21,7 +21,7 @@ scraped: 2026-03-06T21:30:59.119248
 
 ## Обзор составляющих сущностей
 
-Представление **Smartscape on Grail** визуализирует сущности в виде плоской структуры, состоящей из узлов и рёбер. Узлы и рёбра могут быть представлены сущностью любого типа, разрешённого в [**Smartscape on Grail**](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
+Представление **Smartscape on Grail** визуализирует сущности в виде плоской структуры, состоящей из узлов и рёбер. Узлы и рёбра могут быть представлены сущностью любого типа, разрешённого в [**Smartscape on Grail**](../../../platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
 
 ### Узлы
 
@@ -51,4 +51,4 @@ scraped: 2026-03-06T21:30:59.119248
 
 ## Связанные темы
 
-* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* [Smartscape](../../smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")

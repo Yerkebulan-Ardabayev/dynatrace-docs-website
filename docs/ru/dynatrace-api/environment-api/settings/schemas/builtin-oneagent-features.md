@@ -28,7 +28,7 @@ Dynatrace OneAgent придерживается подхода нулевой к
 
 ## Аутентификация
 
-Для выполнения этого запроса вам необходим токен доступа с областью действия **Чтение настроек** (`settings.read`). Чтобы узнать, как его получить и использовать, см. [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Для выполнения этого запроса вам необходим токен доступа с областью действия **Чтение настроек** (`settings.read`). Чтобы узнать, как его получить и использовать, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 

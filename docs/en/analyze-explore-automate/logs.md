@@ -13,9 +13,9 @@ scraped: 2026-03-06T21:10:16.285435
 * 6-min read
 * Updated on Jan 28, 2026
 
-Log Management and Analytics powered by [Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.") provides a unified approach to unlocking the value of log data in the Dynatrace platform.
+Log Management and Analytics powered by [Grail](../platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.") provides a unified approach to unlocking the value of log data in the Dynatrace platform.
 
-Hassle-free management of your log data lets you [ingest](/docs/analyze-explore-automate/logs/lma-log-ingestion "Stream log data to Dynatrace.") petabytes of data without schemas, indexing, or rehydration. All of that data is usable at any time for any analytics task. Thanks to schema on-read and the [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."), there's no need to decide what you want to query during data ingestion. Select the retention period for your data that suits your business and compliance needs, whether for debugging or audit purposes.
+Hassle-free management of your log data lets you [ingest](logs/lma-log-ingestion.md "Stream log data to Dynatrace.") petabytes of data without schemas, indexing, or rehydration. All of that data is usable at any time for any analytics task. Thanks to schema on-read and the [Dynatrace Query Language (DQL)](../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."), there's no need to decide what you want to query during data ingestion. Select the retention period for your data that suits your business and compliance needs, whether for debugging or audit purposes.
 
 Put Dynatrace Log Management and Analytics into use:
 
@@ -29,27 +29,27 @@ Put Dynatrace Log Management and Analytics into use:
 
 **Quick start guide**
 
-Take the first steps to onboard and explore your logs.](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-real-time-observability-logs-dql "Explore the Log Management and Analytics use case for real-time observability with logs.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+Take the first steps to onboard and explore your logs.](logs/lma-use-cases/lma-e2e-real-time-observability-logs-dql.md "Explore the Log Management and Analytics use case for real-time observability with logs.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
 **Ingest logs**
 
-Set up log collection to automatically bring logs from different sources.](/docs/analyze-explore-automate/logs/lma-log-ingestion "Stream log data to Dynatrace.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+Set up log collection to automatically bring logs from different sources.](logs/lma-log-ingestion.md "Stream log data to Dynatrace.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
 **Set up buckets and permissions**
 
-Configure storage and define retention and access controls.](/docs/analyze-explore-automate/logs/lma-bucket-assignment "Your log data can be stored in data retention buckets based on specific retention periods.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+Configure storage and define retention and access controls.](logs/lma-bucket-assignment.md "Your log data can be stored in data retention buckets based on specific retention periods.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
 **Configure processing in OpenPipeline**
 
-Define how ingested logs are processed and stored.](/docs/analyze-explore-automate/logs/lma-log-processing "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
+Define how ingested logs are processed and stored.](logs/lma-log-processing.md "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
 
 ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs** **app**
 
-Learn how to leverage ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**.](/docs/analyze-explore-automate/logs/lma-logs-app "Search, filter, and analyze logs with Dynatrace Logs app to quickly investigate and share insights.")[![Step 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Step 6")
+Learn how to leverage ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**.](logs/lma-logs-app.md "Search, filter, and analyze logs with Dynatrace Logs app to quickly investigate and share insights.")[![Step 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Step 6")
 
 **Alerting, Problems, and automations**
 
-Create anomaly detection and alerts, as well as automate the detection process.](/docs/analyze-explore-automate/logs/alerting-on-logs "Create, or let Dynatrace create, alerts-based log data in Dynatrace log monitoring")
+Create anomaly detection and alerts, as well as automate the detection process.](logs/alerting-on-logs.md "Create, or let Dynatrace create, alerts-based log data in Dynatrace log monitoring")
 
 Log data can come from diverse sources, including Kubernetes, technology stacks, cloud services, hyperscalers, custom API integrations, or Dynatrace extensions. Dynatrace employs OneAgent and API as key methods for ingesting logs from these sources.
 
@@ -63,7 +63,7 @@ You can analyze the ingested data in ![Logs](https://dt-cdn.net/images/logs-256-
 
 ## Consumption model
 
-The consumption model for Log Management and Analytics is based on three dimensions of data usage (Ingest & Process, Retain, and Query). The unit of measure for consumed data volume is gibibytes (GiB). In addition, **Retain with Included queries** is an available option combining the dimensions of Query and Retention. For details, see [Log Analytics (DPS)](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.").
+The consumption model for Log Management and Analytics is based on three dimensions of data usage (Ingest & Process, Retain, and Query). The unit of measure for consumed data volume is gibibytes (GiB). In addition, **Retain with Included queries** is an available option combining the dimensions of Query and Retention. For details, see [Log Analytics (DPS)](../license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.").
 
 ## Availability and previous versions
 
@@ -77,7 +77,7 @@ Make smarter, faster decisions when troubleshooting and measuring the health of 
 
 ## Related topics
 
-* [Upgrade to Log Management and Analytics](/docs/analyze-explore-automate/log-monitoring/logs-upgrade/lmc-logs-upgrade-to-lma "Log Management and Analytics is the latest Dynatrace log monitoring solution. We encourage you to upgrade to this latest log monitoring offer.")
-* [Log Management and Analytics use cases](/docs/analyze-explore-automate/logs/lma-use-cases "Explore common Log Management and Analytics use cases in Dynatrace deployments.")
-* [Log on Grail examples](/docs/analyze-explore-automate/logs/logs-on-grail-examples "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
+* [Upgrade to Log Management and Analytics](log-monitoring/logs-upgrade/lmc-logs-upgrade-to-lma.md "Log Management and Analytics is the latest Dynatrace log monitoring solution. We encourage you to upgrade to this latest log monitoring offer.")
+* [Log Management and Analytics use cases](logs/lma-use-cases.md "Explore common Log Management and Analytics use cases in Dynatrace deployments.")
+* [Log on Grail examples](logs/logs-on-grail-examples.md "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.")
+* [Dynatrace Query Language](../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")

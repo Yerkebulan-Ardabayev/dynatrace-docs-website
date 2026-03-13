@@ -63,7 +63,7 @@ document:documents:delete
 
 ### Установка
 
-Убедитесь, что приложение [установлено в вашей среде](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Убедитесь, что приложение [установлено в вашей среде](../../../manage/hub.md#install "See the information about Dynatrace Hub.").
 
 Начало работы
 
@@ -78,7 +78,7 @@ document:documents:delete
 Страница синтетических мониторов является главной страницей приложения ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic** и представляет собой центр управления вашими синтетическими мониторами. По умолчанию страница отображает все мониторы в вашей среде, активные или неактивные, в [таблице](#table) с ключевыми результатами по доступности и производительности, чтобы вы могли оценить состояние ваших мониторов с первого взгляда.
 Мощные и гибкие [фильтры](#filters) позволяют сузить поиск синтетических мониторов.
 
-Чтобы узнать, как создать новый монитор, см. [Создание мониторов](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app#create-monitors "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.").
+Чтобы узнать, как создать новый монитор, см. [Создание мониторов](synthetic-app.md#create-monitors "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.").
 
 ### Таблица мониторов
 
@@ -137,9 +137,9 @@ document:documents:delete
 
 * **Type** — тип монитора
 * **Ongoing issues** — мониторы с проблемами доступности или производительности и без них
-* **Frontend application** — связанное приложение [RUM](/docs/observe/digital-experience "Optimize end-user experience with Digital Experience Monitoring to ensure application performance and availability across all channels.")
+* **Frontend application** — связанное приложение [RUM](../../digital-experience.md "Optimize end-user experience with Digital Experience Monitoring to ensure application performance and availability across all channels.")
 * **Status** — активны ли мониторы или неактивны (отключены)
-* **Locations** — [публичные](/docs/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring locations.") и [приватные](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.") локации мониторинга
+* **Locations** — [публичные](../synthetic-monitoring/general-information/public-synthetic-locations.md "Learn about all currently available public Synthetic Monitoring locations.") и [приватные](../synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location.md "Learn how to create a private location for synthetic monitoring.") локации мониторинга
 * **Device profile** — например, `desktop`, `Apple iPhone 8`
 * **Last editor** — идентификатор пользователя, который последним редактировал монитор
 * **Tags** — значения или пары ключ-значение, применённые к мониторам; вы можете выбрать теги для включения или исключения из поиска.
@@ -178,18 +178,18 @@ document:documents:delete
 1. Выберите **+New monitor** в правом верхнем углу ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**.
 2. Выберите один из вариантов:
 
-* Browser — выбор этой опции позволит создать браузерный монитор в **Synthetic Classic**. Узнайте, как [создать одностраничный браузерный монитор](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/create-a-single-url-browser-monitor "Learn how to set up a single-URL browser monitor to check the availability of your site.").
-* HTTP — выбор этой опции позволит создать HTTP-монитор в приложении ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**. Узнайте, как [создать и настроить HTTP-монитор](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.").
-* Network availability — выбор этой опции позволит создать NAM-монитор в приложении ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**. Узнайте, как [настроить NAM-монитор](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor "Learn how to set up a NAM monitor to check the performance and availability of your site.").
+* Browser — выбор этой опции позволит создать браузерный монитор в **Synthetic Classic**. Узнайте, как [создать одностраничный браузерный монитор](../synthetic-monitoring/browser-monitors/create-a-single-url-browser-monitor.md "Learn how to set up a single-URL browser monitor to check the availability of your site.").
+* HTTP — выбор этой опции позволит создать HTTP-монитор в приложении ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**. Узнайте, как [создать и настроить HTTP-монитор](synthetic-app/create-and-configure-an-http-monitor.md "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.").
+* Network availability — выбор этой опции позволит создать NAM-монитор в приложении ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**. Узнайте, как [настроить NAM-монитор](../synthetic-monitoring/network-availability-monitors/create-a-nam-monitor.md "Learn how to set up a NAM monitor to check the performance and availability of your site.").
 
 ### Отчёты
 
 Для каждого типа монитора вы можете отобразить страницу отчётов. См.
 
-* [Отчёты](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/network-availability-monitoring#reporting "ICMP, TCP, and DNS synthetic monitors") NAM-мониторов в **Synthetic**.
-* [Отчёты](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/synthetic-details-for-http-monitors "Learn about the Synthetic details page for HTTP monitors.") HTTP-мониторов в **Synthetic**.
-* [Отчёты](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic "Learn about the Synthetic details page for HTTP monitors.") HTTP-мониторов в **Synthetic Classic**.
-* [Отчёты](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors "Analyze browser monitor and clickpath results on the Synthetic details page.") браузерных мониторов в **Synthetic Classic**.
+* [Отчёты](../synthetic-monitoring/network-availability-monitors/network-availability-monitoring.md#reporting "ICMP, TCP, and DNS synthetic monitors") NAM-мониторов в **Synthetic**.
+* [Отчёты](synthetic-app/synthetic-details-for-http-monitors.md "Learn about the Synthetic details page for HTTP monitors.") HTTP-мониторов в **Synthetic**.
+* [Отчёты](../synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic.md "Learn about the Synthetic details page for HTTP monitors.") HTTP-мониторов в **Synthetic Classic**.
+* [Отчёты](../synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors.md "Analyze browser monitor and clickpath results on the Synthetic details page.") браузерных мониторов в **Synthetic Classic**.
 
 ### Расчёт общего времени простоя для синтетических мониторов
 
@@ -212,28 +212,28 @@ document:documents:delete
 [01 Отчёты HTTP-мониторов
 
 * Справочник
-* Узнайте о странице Synthetic details для HTTP-мониторов.](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/synthetic-details-for-http-monitors)[02 Отчёты браузерных мониторов
+* Узнайте о странице Synthetic details для HTTP-мониторов.](synthetic-app/synthetic-details-for-http-monitors.md)[02 Отчёты браузерных мониторов
 
 * Справочник
-* Узнайте о странице Browser details для браузерных мониторов.](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/browser-monitors-results-reporting)[03 Создание и настройка браузерного монитора
+* Узнайте о странице Browser details для браузерных мониторов.](synthetic-app/browser-monitors-results-reporting.md)[03 Создание и настройка браузерного монитора
 
 * Практическое руководство
-* Узнайте, как создать и настроить браузерный монитор для проверки производительности и доступности вашего сайта.](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-configure-browser-monitors)[04 Отчёты NAM-мониторов
+* Узнайте, как создать и настроить браузерный монитор для проверки производительности и доступности вашего сайта.](synthetic-app/create-configure-browser-monitors.md)[04 Отчёты NAM-мониторов
 
 * Справочник
-* Просмотрите синтетические мониторы в вашей среде, найдите мониторы и получите краткий обзор выбранного монитора.](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/nam-monitors-results-reporting-synthetic-app)[05 Выполнение мониторов по требованию
+* Просмотрите синтетические мониторы в вашей среде, найдите мониторы и получите краткий обзор выбранного монитора.](synthetic-app/nam-monitors-results-reporting-synthetic-app.md)[05 Выполнение мониторов по требованию
 
 * Практическое руководство
-* Узнайте о выполнении мониторов по требованию.](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/on-demand-executions)[06 Приватные синтетические локации
+* Узнайте о выполнении мониторов по требованию.](synthetic-app/on-demand-executions.md)[06 Приватные синтетические локации
 
 * Практическое руководство
-* Узнайте, как управлять приватными локациями в приложении Synthetic.](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations)[07 Создание и настройка HTTP-монитора
+* Узнайте, как управлять приватными локациями в приложении Synthetic.](synthetic-app/private-locations.md)[07 Создание и настройка HTTP-монитора
 
 * Практическое руководство
-* Узнайте, как настроить и редактировать HTTP-монитор для проверки производительности и доступности вашего сайта.](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor)[08 Создание NAM-монитора
+* Узнайте, как настроить и редактировать HTTP-монитор для проверки производительности и доступности вашего сайта.](synthetic-app/create-and-configure-an-http-monitor.md)[08 Создание NAM-монитора
 
 * Практическое руководство
-* Узнайте, как настроить NAM-монитор для проверки производительности и доступности вашего сайта.](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-a-nam-monitor-synthetic-app)
+* Узнайте, как настроить NAM-монитор для проверки производительности и доступности вашего сайта.](synthetic-app/create-a-nam-monitor-synthetic-app.md)
 
 ## Сценарии использования
 

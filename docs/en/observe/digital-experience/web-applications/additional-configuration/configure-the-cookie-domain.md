@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:28:02.411095
 * 4-min read
 * Published Mar 21, 2022
 
-Dynatrace Real User Monitoring uses HTTP cookies to group user actions into sessions and link user actions with their corresponding [distributed traces](/docs/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time."). Browsers include a cookie in the `Cookie` request header only if the request URL lies within the scope of the cookie, which is specified by the `Domain` and `Path` cookie attributes.
+Dynatrace Real User Monitoring uses HTTP cookies to group user actions into sessions and link user actions with their corresponding [distributed traces](../../../application-observability/distributed-traces.md "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time."). Browsers include a cookie in the `Cookie` request header only if the request URL lies within the scope of the cookie, which is specified by the `Domain` and `Path` cookie attributes.
 
 Dynatrace always sets the `Path` attribute of the RUM cookies to `/` so that the cookie scope covers all URL paths within a domain. The `Domain` attribute is determined automatically by default, but you can also [configure it manually for each application](#configure-cookie-domain).
 
@@ -25,14 +25,14 @@ The cookie domain is determined either on the server side by OneAgent or on the 
 
 ### Possible issues with automatic cookie domain determination
 
-OneAgent uses the result of host name determination as a starting point when it determines the cookie domain. If there is an uninstrumented component that rewrites the host portion of the URL, it is crucial for automatic cookie domain determination that host name determination is configured correctly. For details, see [What can I do if an uninstrumented component rewrites parts of the URL?](/docs/observe/digital-experience/web-applications/initial-setup/define-your-applications-via-the-my-web-application-placeholder#rum-appdetection-uninstrumentedcomponent "Learn how to define your applications following the suggested, manual, or application detection rules approach.")
+OneAgent uses the result of host name determination as a starting point when it determines the cookie domain. If there is an uninstrumented component that rewrites the host portion of the URL, it is crucial for automatic cookie domain determination that host name determination is configured correctly. For details, see [What can I do if an uninstrumented component rewrites parts of the URL?](../initial-setup/define-your-applications-via-the-my-web-application-placeholder.md#rum-appdetection-uninstrumentedcomponent "Learn how to define your applications following the suggested, manual, or application detection rules approach.")
 
 ## Manual cookie domain configuration
 
 In most scenarios, there is no need to configure the cookie domain manually. There are, however, two use cases when this is necessary:
 
 * You need to separate the user actions of different subdomains into separate user sessions.
-* Automatic determination of the cookie domain does not work because an uninstrumented component rewrites the host portion of the URL and does not forward the original host information in a request header. The preferable solution is to configure the component to add such a header (see [What can I do if an uninstrumented component rewrites parts of the URL?](/docs/observe/digital-experience/web-applications/initial-setup/define-your-applications-via-the-my-web-application-placeholder#rum-appdetection-uninstrumentedcomponent "Learn how to define your applications following the suggested, manual, or application detection rules approach.") for instructions). However, manual configuration of the cookie domain is also a possible workaround.
+* Automatic determination of the cookie domain does not work because an uninstrumented component rewrites the host portion of the URL and does not forward the original host information in a request header. The preferable solution is to configure the component to add such a header (see [What can I do if an uninstrumented component rewrites parts of the URL?](../initial-setup/define-your-applications-via-the-my-web-application-placeholder.md#rum-appdetection-uninstrumentedcomponent "Learn how to define your applications following the suggested, manual, or application detection rules approach.") for instructions). However, manual configuration of the cookie domain is also a possible workaround.
 
 ### Configure cookie domain manually
 

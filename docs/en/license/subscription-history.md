@@ -21,7 +21,7 @@ You can view details for all Dynatrace subscriptions that have been active in th
 To view subscription history, you need:
 
 * An active Dynatrace Platform Subscription that was signed after April 26, 2023.
-* A Dynatrace user account with one or both of these [Account Management permissions](/docs/manage/identity-access-management/permission-management/account-management-permissions "Dynatrace permissions required to access Account Management"):
+* A Dynatrace user account with one or both of these [Account Management permissions](../manage/identity-access-management/permission-management/account-management-permissions.md "Dynatrace permissions required to access Account Management"):
 
   + **View account**
   + **View and manage account and billing information**
@@ -38,7 +38,7 @@ This page provides easy access to details of your Dynatrace usage and the costs 
 Cost information for POC subscriptions (identified with the type `DPS:POC`) is provided for informational purposes only.
 You are not actually charged any of these costs, as POCs are free of charge according to your POC license.
 
-For more information about POCs, see [Proof of Concept for existing DPS subscriptions](/docs/license/proof-of-concept "Use Account Management tools to view consumption during your DPS Proof of Concept period.").
+For more information about POCs, see [Proof of Concept for existing DPS subscriptions](proof-of-concept.md "Use Account Management tools to view consumption during your DPS Proof of Concept period.").
 
 ![Account Management: Subscription history](https://dt-cdn.net/images/history-list-1600-dcce197542.png)
 
@@ -75,4 +75,4 @@ Only contracts with Host Unit, DEM, and DDU features are shown. If you were lice
 
 ## Related topics
 
-* [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* [License Dynatrace](../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")

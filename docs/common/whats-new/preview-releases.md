@@ -23,7 +23,7 @@ Your use of previewed (i.e. not publicly available) Dynatrace technology (each a
 * Any inconsistencies between the terms of your Subscription Agreement and these terms shall be resolved in favor of these terms.
 * If you do not accept the Preview Terms, you may not access any Preview.
 
-* Agentic and Generative AI Previews: Dynatrace may send your prompts to the LLM providers in the regions published in [Dynatrace Intelligence generative AI data privacy and security](/docs/dynatrace-intelligence/copilot/copilot-data-privacy#prompt-data "Learn about Dynatrace Intelligence generative AI data privacy and security policy."). The prompts are not retained by the LLM providers, however, Dynatrace may store them in the United States in order to provide and monitor the Preview experience and quality. Your acceptance of the Preview Terms for Agentic and Generative AI Previews will apply to all future Agentic and Generative AI Previews that Dynatrace offers under the same terms (i.e. if you wish to participate in any future Agentic and Generative AI Previews that may be offered under these terms, you will not be required to again accept the terms).
+* Agentic and Generative AI Previews: Dynatrace may send your prompts to the LLM providers in the regions published in [Dynatrace Intelligence generative AI data privacy and security](../dynatrace-intelligence/copilot/copilot-data-privacy.md#prompt-data "Learn about Dynatrace Intelligence generative AI data privacy and security policy."). The prompts are not retained by the LLM providers, however, Dynatrace may store them in the United States in order to provide and monitor the Preview experience and quality. Your acceptance of the Preview Terms for Agentic and Generative AI Previews will apply to all future Agentic and Generative AI Previews that Dynatrace offers under the same terms (i.e. if you wish to participate in any future Agentic and Generative AI Previews that may be offered under these terms, you will not be required to again accept the terms).
 
 ## Join a preview
 
@@ -47,9 +47,9 @@ Available to DPS SaaS customers, extended retention lets you keep RUM and Synthe
 
 This enables new use cases such as long-term performance trending, seasonal analysis, and fraud detection, and helps meet audit-related data compliance requirements.
 
-Retained data can be queried in the core [Digital Experience apps](/docs/observe/digital-experience/new-rum-experience "Discover the New RUM Experience for unmatched visibility into user behavior and frontend performance."), or via [Dashboards and Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks "Dashboards and Notebooks").
+Retained data can be queried in the core [Digital Experience apps](../../ru/observe/digital-experience/new-rum-experience.md "Discover the New RUM Experience for unmatched visibility into user behavior and frontend performance."), or via [Dashboards and Notebooks](../analyze-explore-automate/dashboards-and-notebooks.md "Dashboards and Notebooks").
 
-For more information, see [Calculate your consumption of Digital Experience Monitoring (DEM) - Retain](/docs/license/capabilities/digital-experience-monitoring-query-retain/retention-dem "Learn how your DEM-extended retention is consumed and billed before and after Preview.").
+For more information, see [Calculate your consumption of Digital Experience Monitoring (DEM) - Retain](../license/capabilities/digital-experience-monitoring-query-retain/retention-dem.md "Learn how your DEM-extended retention is consumed and billed before and after Preview.").
 
 [Request access](https://forms.cloud.microsoft/pages/responsepage.aspx?id=o-PrcDBbXUOdZ3cW10yhkGaiGvQH3Q1Mssy-CUGlJ9dURExYSUozVkNSMExLUkk1RkVDTzZJNThDUi4u&route=shorturl)
 
@@ -59,7 +59,7 @@ Dynatrace version 1.330+
 
 User Interactions introduces a new class of frontend RUM events such as clicks, taps, scrolls, drags, zooms, and other UI gestures, that were not captured in Classic RUM. These enable Dynatrace to collect unprecedented rich behavioural analytics while the feature is still being refined. Customers gain early visibility into use cases such as behavioral funnels, feature adoption, retention analysis, and deeper UX insights.
 
-For more information, see [User Interactions documentation](/docs/semantic-dictionary/model/rum/user-events/user-interactions).
+For more information, see [User Interactions documentation](../semantic-dictionary/model/rum/user-events/user-interactions.md).
 
 ### DEM Query
 
@@ -67,7 +67,7 @@ Dynatrace version 1.330+
 
 With the DEM Query Early Access program, customers can execute DEM-related DQL queries across Dashboards, Notebooks, Workflows, Custom Apps, SLOs, and the API that use DEM data without incurring query-based charges during the early access phase. Customers can explore and validate how RUM data on Grail behaves when queried at scale and consolidate their upcoming query-consumption patterns. An out-of-the-box dashboard will automatically be deployed to help customers track query usage.
 
-For more information, see [Digital Experience Monitoring (DEM) Query](/docs/license/capabilities/digital-experience-monitoring-query-retain/queries-dem "Learn how your consumption of the DEM-related DQL queries is consumed and billed before and after Early Access.").
+For more information, see [Digital Experience Monitoring (DEM) Query](../license/capabilities/digital-experience-monitoring-query-retain/queries-dem.md "Learn how your consumption of the DEM-related DQL queries is consumed and billed before and after Early Access.").
 
 ![DQL](https://cdn.bfldr.com/B686QPH3/at/t9h436nzjqq6cww99sqs6z/DQL.svg?auto=webp&width=72&height=72 "DQL")
 
@@ -80,10 +80,10 @@ Turn workflows into agentic automations with the Dynatrace Intelligence (Preview
 * Embed prompts that interpret observability and security signals
 * Summarize data findings and suggest remediation paths in plain language
 * Chain our generative AI action with existing workflow actions to automate ticket creation and targeted notifications
-* Explore our ready-made [Agentic workflows](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/agentic-workflows "Basic concepts of using agentic workflows to automate complex, data-driven tasks more flexibly by leveraging generative and agentic AI.")
+* Explore our ready-made [Agentic workflows](../dynatrace-intelligence/dynatrace-intelligence-integrations/agentic-workflows.md "Basic concepts of using agentic workflows to automate complex, data-driven tasks more flexibly by leveraging generative and agentic AI.")
 * Optionally combine with Dynatrace Intelligence forecasting to support use cases such as proactive scaling based on demand
 
-For more information, see [Dynatrace Intelligence (Preview) app](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.").
+For more information, see [Dynatrace Intelligence (Preview) app](../../ru/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows.md "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.").
 
 [Request access](https://forms.office.com/r/PmFzJkRkDr)
 
@@ -101,7 +101,7 @@ With Log Forwarding, OpenPipeline centralizes routing of logs to external cloud 
 * Integrating logs with external tools, such as SIEM, directly from cloud storage, without the need for third party tools.
 * Improved control, transparency, and cost efficiency through unified forwarding policies.
 
-This is available to Dynatrace SaaS customers on AWS or Azure with [Logs powered by Grail (DPS)](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") licensing capabilities.
+This is available to Dynatrace SaaS customers on AWS or Azure with [Logs powered by Grail (DPS)](../../ru/license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") licensing capabilities.
 
 Preview opens in February 2026.
 
@@ -140,7 +140,7 @@ This is currently available only for customers with Dynatrace SaaS hosted on AWS
 
 [Request access](https://forms.office.com/Pages/ResponsePage.aspx?id=o-PrcDBbXUOdZ3cW10yhkGnvB715bWpPhAdgeewUnapUOUgxTk1UVEtETDRSWVRGVzZVRFlYT0xBNS4u)
 
-For more information, see [Manage AWS encryption keys](/docs/manage/account-management/settings/encryption-keys "Bring your own key to use an AWS encryption key with Dynatrace.").
+For more information, see [Manage AWS encryption keys](../manage/account-management/settings/encryption-keys.md "Bring your own key to use an AWS encryption key with Dynatrace.").
 
 Latest Dynatrace
 
@@ -161,7 +161,7 @@ With ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "A
 
 The preview is available to customers with Latest Dynatrace and DPS licensing. No sign-up is required.
 
-For more information, see [AI and LLM Observability](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes Generative AI (LLM) models and AI SaaS services, and much more.").
+For more information, see [AI and LLM Observability](../../ru/observe/dynatrace-for-ai-observability.md "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes Generative AI (LLM) models and AI SaaS services, and much more.").
 
 Latest Dynatrace ![Dot](https://dt-cdn.net/images/dot-a32314f261.svg "Dot") Consumes DPS commit and incurs code charges on your application.
 
@@ -202,7 +202,7 @@ Dynatrace version 1.320+
 
 Lookup data in Grail lets you enrich your observability data, such as logs, events, traces, or metrics, with lookup tables. You can upload your data as files in text-based formats such as CSV, JSONL, or XML, which are then parsed into a Grail-native format for seamless integration. With lookup data stored in Grail, you can use it in your DQL queries to add additional context to your observability data. The preview is available to customers of the latest Dynatrace with DPS licensing. No sign-up is required.
 
-For more information, see [Lookup data in Grail](/docs/platform/grail/lookup-data "Learn about lookup data in Grail.").
+For more information, see [Lookup data in Grail](../../ru/platform/grail/lookup-data.md "Learn about lookup data in Grail.").
 
 ![Grail](https://dt-cdn.net/images/grail-color-81fcaa6de3.svg "Grail")
 
@@ -224,7 +224,7 @@ The first available compliance use case focuses on the Digital Operational Resil
 
 It leverages the Dynatrace platform's observability, security, and other capabilities, enhanced by hyper-modal Dynatrace Intelligence, to bolster its operational resilience and security posture.
 
-For more information, see [Compliance Assistant](/docs/analyze-explore-automate/compliance-and-resilience/compliance-assistant "Consolidate insights from the Dynatrace observability and security platform in a unified dashboard.").
+For more information, see [Compliance Assistant](../../ru/analyze-explore-automate/compliance-and-resilience/compliance-assistant.md "Consolidate insights from the Dynatrace observability and security platform in a unified dashboard.").
 
 [Request access](https://forms.office.com/Pages/ResponsePage.aspx?id=o-PrcDBbXUOdZ3cW10yhkLrUfJvfCElMtf4A6-5Fzj9UNU1WRlg2MzgwTVlSRFJaQUdCOFJLVEZLQy4u)
 
@@ -238,10 +238,10 @@ Learn about recently completed previews that are now generally available to all 
 
 Dynatrace version 1.320+
 
-[Dynatrace Platform Subscription (DPS)](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+[Dynatrace Platform Subscription (DPS)](../../ru/license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
 
-[The new Cloud Platform Monitoring for AWS](/docs/ingest-from/amazon-web-services/aws-onboarding "Learn about our latest AWS Cloud Platform Monitoring.") provides a foundation for comprehensive telemetry coverage across AWS services, and enhanced visibility into cloud topology.
-With this update, you can enrich telemetry signals using cloud tags, leverage a revamped [![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app "Monitor all cloud platforms at once.") for centralized monitoring, and take advantage of guided observability tools like ready-made dashboards and alert templates.
+[The new Cloud Platform Monitoring for AWS](../ingest-from/amazon-web-services/aws-onboarding.md "Learn about our latest AWS Cloud Platform Monitoring.") provides a foundation for comprehensive telemetry coverage across AWS services, and enhanced visibility into cloud topology.
+With this update, you can enrich telemetry signals using cloud tags, leverage a revamped [![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**](../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md "Monitor all cloud platforms at once.") for centralized monitoring, and take advantage of guided observability tools like ready-made dashboards and alert templates.
 
 This preview also delivers richer topology data with detailed metadata, full resource configuration, and infrastructure relationships.
 
@@ -267,7 +267,7 @@ By enabling this preview, you'll gain:
 
 The preview is available to customers of the latest Dynatrace with DPS licensing. No sign-up is required.
 
-For more information, see [Enhanced Kubernetes Object Visibility](/docs/observe/infrastructure-observability/kubernetes-app/preview/enhanced-object-vis-preview "Accelerate root cause analysis with deeper Kubernetes object visibility.").
+For more information, see [Enhanced Kubernetes Object Visibility](../../ru/observe/infrastructure-observability/kubernetes-app/preview/enhanced-object-vis-preview.md "Accelerate root cause analysis with deeper Kubernetes object visibility.").
 
 ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)")
 
@@ -276,14 +276,14 @@ For more information, see [Enhanced Kubernetes Object Visibility](/docs/observe/
 Segments help to logically structure and conveniently filter observability data in Grail. With segments, we allow upgrading from management zone filtering in classic Dynatrace, to data segmentation for cross-app filtering on the latest Dynatrace. To focus on the data that matters, you can use Segments to 'block out noise' and examine only a defined set of data.
 
 * General availability: Dynatrace version 1.318+
-* Get started: [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.")
+* Get started: [Segments](../manage/segments.md "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.")
 
 ![Segments](https://dt-cdn.net/images/segments-256-8e66310720.webp "Segments")
 
 ### Ask Dynatrace Assist
 
 * General availability: Dynatrace version 1.308+
-* Get started: [Dynatrace Assist](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.")
+* Get started: [Dynatrace Assist](../dynatrace-intelligence/copilot/chat-with-davis-copilot.md "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.")
 
 Dynatrace Intelligence generative AI developed by Dynatrace allows you to explore data through natural language, helping with onboarding and boosting productivity. This Preview focuses on providing answers via a conversational interface to help, support, and onboarding questions based on our support resources.
 
@@ -297,7 +297,7 @@ Session Replay Mobile lets you capture and watch all sessions from monitored mob
 
 The remote MCP Server allows third party AI agents to securely access and interact with Dynatrace. Once set up, users can utilize tools such as GitHub Copilot or Atlassian Rovo to obtain real-time insights from production environments, including logs, metrics, traces, and real-user data and all their dependencies.
 
-For more information, see [Dynatrace MCP Server](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp "Learn about the Dynatrace MCP server and how you can connect to it.").
+For more information, see [Dynatrace MCP Server](../dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp.md "Learn about the Dynatrace MCP server and how you can connect to it.").
 
 ![Dynatrace Remote MCP Server](https://dt-cdn.net/images/picture5-103-8cd29dfe7e.png "Dynatrace Remote MCP Server")
 
@@ -311,7 +311,7 @@ To participate in this preview, you must first join the [Enhanced Kubernetes Obj
 
 Please note that this preview does not include any updates to ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** or ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**.
 
-For more information, see [Smartscape on Grail](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
+For more information, see [Smartscape on Grail](../../ru/platform/grail/smartscape-on-grail.md "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
 
 ![Smartscape](https://dt-cdn.net/images/smartscape-d5c4104cad.svg "Smartscape")
 
@@ -319,6 +319,6 @@ For more information, see [Smartscape on Grail](/docs/platform/grail/smartscape-
 
 With RUM on Grail, you will gain a better client-side visibility via our new event-based data model and use-case driven apps. This advancement is crucial for insightful and contextual analysis of modern frontends that are often page and view-based. You can access all of this data using new Digital Experience apps or query them using DQL in Notebooks and Dashboards.
 
-For more information, see [New Real User Monitoring Experience](/docs/observe/digital-experience/new-rum-experience "Discover the New RUM Experience for unmatched visibility into user behavior and frontend performance.").
+For more information, see [New Real User Monitoring Experience](../../ru/observe/digital-experience/new-rum-experience.md "Discover the New RUM Experience for unmatched visibility into user behavior and frontend performance.").
 
 ![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals")

@@ -38,7 +38,7 @@ Event processing and analysis in Dynatrace is a multi-step process that, from in
 ### Event ingestion
 
 As a full-stack observability platform, Dynatrace offers a wide spectrum of event sources, including OneAgent, built-in integrations, and ingestion from third-party tools. For more information, see [Ingest dataï»¿](https://dt-url.net/d003q22).
-Latest Dynatrace also offers OpenPipeline for your ingestion purposes. For more information, see [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.").
+Latest Dynatrace also offers OpenPipeline for your ingestion purposes. For more information, see [OpenPipeline](../../../ru/platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.").
 
 ### Event normalization
 
@@ -56,11 +56,11 @@ If the event source attached references to existing entities, normalization ensu
 
 ### Topology creation
 
-[Smartscape topology](/docs/analyze-explore-automate/smartscape-classic "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") is a real-time representation of all the causal relationships within a running software environment, including deployment information as well as highly dynamic trace relationships. The topology is automatically created and updated from ingested data such as metrics, events, logs, and traces.
+[Smartscape topology](../../analyze-explore-automate/smartscape-classic.md "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") is a real-time representation of all the causal relationships within a running software environment, including deployment information as well as highly dynamic trace relationships. The topology is automatically created and updated from ingested data such as metrics, events, logs, and traces.
 
 All the built-in technology support in Dynatrace comes with automatic topology creation capabilitiesâyou don't have to configure anything manually. Moreover, you can use custom topology extraction to automatically create the topology and relationships from ingested data such as events. Custom topology creation works independently from OneAgent and doesn't even require a running OneAgent instance. You can easily implement your own domain-specific models based on the ingested data.
 
-To learn how to implement a custom topology model, see [Custom topology model](/docs/ingest-from/extend-dynatrace/extend-topology "Ensure that all incoming observations are context-rich and analyzed in the context of the monitored entities they relate to.").
+To learn how to implement a custom topology model, see [Custom topology model](../../../ru/ingest-from/extend-dynatrace/extend-topology.md "Ensure that all incoming observations are context-rich and analyzed in the context of the monitored entities they relate to.").
 
 ### Aggregation
 
@@ -156,7 +156,7 @@ String
 
 The timeout (in minutes) of the event. It defines the time period until a refresh must arrive from the event source. If no refresh is received, the event is closed with the change reason `TIMED_OUT`.
 
-Additionally, the processing of events can be influenced by the event sender or the source using `event.davis` field defined in the Semantic Dictionary. For more information, see [Semantic Dictionary](/docs/semantic-dictionary/model/davis#davis-ai-events "Get to know the Semantic Dictionary models related to Davis AI.").
+Additionally, the processing of events can be influenced by the event sender or the source using `event.davis` field defined in the Semantic Dictionary. For more information, see [Semantic Dictionary](../../semantic-dictionary/model/davis.md#davis-ai-events "Get to know the Semantic Dictionary models related to Davis AI.").
 
 ## Root cause analysis
 

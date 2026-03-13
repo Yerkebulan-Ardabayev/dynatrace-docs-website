@@ -15,6 +15,6 @@ scraped: 2026-03-06T21:13:20.535483
 
 Prior knowledge
 
-* [Include data in segments](/docs/manage/segments/concepts/segments-concepts-includes#data-types "Learn how data of different types can be included in segments.")
+* [Include data in segments](../concepts/segments-concepts-includes.md#data-types "Learn how data of different types can be included in segments.")
 
 We recommend constructing segments with a single `Data (all types)` include block when possible. This gives you the most flexibility for using the segment in different scenarios.

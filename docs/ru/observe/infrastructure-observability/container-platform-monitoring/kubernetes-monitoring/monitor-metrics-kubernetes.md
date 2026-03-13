@@ -20,9 +20,9 @@ Dynatrace version 1.232+
 
 ## Просмотр метрик Kubernetes
 
-* Подробности о метриках контейнеров смотрите в разделах [Built-in metrics - Containers/CPU](/docs/analyze-explore-automate/metrics-classic/built-in-metrics#containers-cpu "Ознакомьтесь с полным списком встроенных метрик Dynatrace.") и [Built-in metrics - Containers/Memory](/docs/analyze-explore-automate/metrics-classic/built-in-metrics#containers-memory "Ознакомьтесь с полным списком встроенных метрик Dynatrace.").
+* Подробности о метриках контейнеров смотрите в разделах [Built-in metrics - Containers/CPU](../../../../analyze-explore-automate/metrics-classic/built-in-metrics.md#containers-cpu "Ознакомьтесь с полным списком встроенных метрик Dynatrace.") и [Built-in metrics - Containers/Memory](../../../../analyze-explore-automate/metrics-classic/built-in-metrics.md#containers-memory "Ознакомьтесь с полным списком встроенных метрик Dynatrace.").
 
-* Подробности о метриках Kubernetes смотрите в разделе [Built-in metrics - Cloud/Kubernetes](/docs/analyze-explore-automate/metrics-classic/built-in-metrics#cloud-kubernetes "Ознакомьтесь с полным списком встроенных метрик Dynatrace.").
+* Подробности о метриках Kubernetes смотрите в разделе [Built-in metrics - Cloud/Kubernetes](../../../../analyze-explore-automate/metrics-classic/built-in-metrics.md#cloud-kubernetes "Ознакомьтесь с полным списком встроенных метрик Dynatrace.").
 
 ![K8 dash](https://dt-cdn.net/images/2021-03-12-08-54-46-1668-d24182ddd2.png)
 
@@ -44,8 +44,8 @@ Dynatrace version 1.264+ ActiveGate version 1.263+
    Для мониторинга **метрик ресурсов узлов** требуется ActiveGate версии 1.271+.
 3. Необязательно Выберите **Test connection**, чтобы убедиться, что функция успешно активирована.
 
-Полный список доступных метрик смотрите в разделе [Workload metrics](/docs/analyze-explore-automate/metrics-classic/all-metrics#workload "Ознакомьтесь с полным списком метрик Dynatrace.") или [Node](/docs/analyze-explore-automate/metrics-classic/all-metrics#node "Ознакомьтесь с полным списком метрик Dynatrace.") для метрик ресурсов узлов.
+Полный список доступных метрик смотрите в разделе [Workload metrics](../../../../analyze-explore-automate/metrics-classic/all-metrics.md#workload "Ознакомьтесь с полным списком метрик Dynatrace.") или [Node](../../../../analyze-explore-automate/metrics-classic/all-metrics.md#node "Ознакомьтесь с полным списком метрик Dynatrace.") для метрик ресурсов узлов.
 
 ## Связанные темы
 
-* [Настройка Dynatrace на Kubernetes](/docs/ingest-from/setup-on-k8s "Способы развёртывания и настройки Dynatrace на Kubernetes.")
+* [Настройка Dynatrace на Kubernetes](../../../../ingest-from/setup-on-k8s.md "Способы развёртывания и настройки Dynatrace на Kubernetes.")

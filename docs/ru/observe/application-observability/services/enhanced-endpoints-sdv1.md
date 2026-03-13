@@ -13,11 +13,11 @@ scraped: 2026-02-23T21:35:46.464742
 * 7 мин. чтения
 * Опубликовано 19 января 2026
 
-С функцией **Enhanced endpoints for Service Detection v1 (SDv1)** вы можете получить полную видимость конечных точек для сервисов SDv1. Когда эта функция включена, все конечные точки отображаются в [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](/docs/observe/application-observability/services/services-app "Поддерживайте централизованный контроль над состоянием, производительностью и ресурсами сервисов с помощью приложения Services.") без необходимости настраивать [ключевые запросы](/docs/observe/application-observability/services/services-concepts#key-requests "Понимание наблюдаемости приложений, сервисов и концепций распределённой трассировки."). Это согласуется с поведением, уже реализованным для сервисов [SDv2](/docs/observe/application-observability/services/service-detection/service-detection-v2 "Узнайте, как обнаруживать, именовать и разделять сервисы из span OpenTelemetry и OneAgent.").
+С функцией **Enhanced endpoints for Service Detection v1 (SDv1)** вы можете получить полную видимость конечных точек для сервисов SDv1. Когда эта функция включена, все конечные точки отображаются в [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](services-app.md "Поддерживайте централизованный контроль над состоянием, производительностью и ресурсами сервисов с помощью приложения Services.") без необходимости настраивать [ключевые запросы](services-concepts.md#key-requests "Понимание наблюдаемости приложений, сервисов и концепций распределённой трассировки."). Это согласуется с поведением, уже реализованным для сервисов [SDv2](service-detection/service-detection-v2.md "Узнайте, как обнаруживать, именовать и разделять сервисы из span OpenTelemetry и OneAgent.").
 
 Функция **Enhanced endpoints for SDv1** включена по умолчанию для сред, созданных в Dynatrace версии 1.330+. Для существующих сред функция доступна в Dynatrace версии 1.333+.
 
-Конечные точки не создаются для [внешних сервисов](/docs/discover-dynatrace/get-started/glossary#glossary-externalservice "Познакомьтесь с терминологией Dynatrace.") и для следующих типов сервисов SDv1: [Сервисы фоновой активности](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types#background-activity-services "Понимание различных типов сервисов, которые могут быть обнаружены и мониториться в вашей среде."), [Сервисы прослушивания очередей](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types#queue-listener-services "Понимание различных типов сервисов, которые могут быть обнаружены и мониториться в вашей среде.") и Key value store.
+Конечные точки не создаются для [внешних сервисов](../../../discover-dynatrace/get-started/glossary.md#glossary-externalservice "Познакомьтесь с терминологией Dynatrace.") и для следующих типов сервисов SDv1: [Сервисы фоновой активности](service-detection/service-detection-v1/service-types.md#background-activity-services "Понимание различных типов сервисов, которые могут быть обнаружены и мониториться в вашей среде."), [Сервисы прослушивания очередей](service-detection/service-detection-v1/service-types.md#queue-listener-services "Понимание различных типов сервисов, которые могут быть обнаружены и мониториться в вашей среде.") и Key value store.
 
 ## Преимущества
 
@@ -25,7 +25,7 @@ scraped: 2026-02-23T21:35:46.464742
 
   Если вы не включите функцию **Enhanced endpoints for SDv1**, раздел **Endpoints** в ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** либо останется пустым, либо будет показывать только ключевые запросы.
 * **Улучшенная аналитика сервисов**: Список конечных точек повышает видимость поведения сервиса, позволяя быстро идентифицировать и устранять проблемы.
-* **Выделенные метрики для конечных точек**: Обнаруженные конечные точки имеют [выделенные метрики](#metrics), которые вы можете добавить на [панели мониторинга](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") и анализировать для долгосрочной истории конечных точек.
+* **Выделенные метрики для конечных точек**: Обнаруженные конечные точки имеют [выделенные метрики](#metrics), которые вы можете добавить на [панели мониторинга](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") и анализировать для долгосрочной истории конечных точек.
 
 ## Метрики конечных точек
 
@@ -37,7 +37,7 @@ scraped: 2026-02-23T21:35:46.464742
 * Время ответа (Response time)
 * Пропускная способность (Throughput)
 
-Эти метрики конечных точек доступны не только в ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**, но и в других приложениях Dynatrace, таких как [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь аналитикой на основе ваших данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.") или [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.").
+Эти метрики конечных точек доступны не только в ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**, но и в других приложениях Dynatrace, таких как [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь аналитикой на основе ваших данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.") или [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.").
 
 ## Включение расширенных конечных точек для SDv1
 
@@ -96,13 +96,13 @@ scraped: 2026-02-23T21:35:46.464742
 
 Существующие ключевые запросы и правила именования запросов остаются в силе
 
-Для всех типов сервисов уже существующие [ключевые запросы](/docs/observe/application-observability/services-classic/monitor-key-requests "Узнайте, как тщательно мониторить критически важные для бизнеса запросы.") и [правила именования запросов](/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming "Настройте именование запросов и определите операции, которые предлагают ваши сервисы.") продолжают применяться.
+Для всех типов сервисов уже существующие [ключевые запросы](../services-classic/monitor-key-requests.md "Узнайте, как тщательно мониторить критически важные для бизнеса запросы.") и [правила именования запросов](service-detection/service-detection-v1/set-up-request-naming.md "Настройте именование запросов и определите операции, которые предлагают ваши сервисы.") продолжают применяться.
 
 Если вы настроили ключевые запросы, связанные конечные точки имеют те же имена, что и их ключевые запросы. Если вы настроили правила именования запросов, они также применяются к именам связанных конечных точек.
 
 ![Диаграмма — Изменения имён конечных точек](https://dt-cdn.net/images/enhanced-endpoints-sdv1-changes-to-endpoint-names-6993-563d8740fc.png)
 
-Когда функция **Enhanced endpoints for SDv1** включена, некоторые имена конечных точек для [сервисов веб-запросов](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types#web-request-service "Понимание различных типов сервисов, которые могут быть обнаружены и мониториться в вашей среде.") и других типов сервисов изменяются. Это зависит от наличия связанного [правила именования запросов](/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming "Настройте именование запросов и определите операции, которые предлагают ваши сервисы.") и от того, используются ли [изменчивые атрибуты заполнителей](#volatile-placeholder-attributes) в этих правилах.
+Когда функция **Enhanced endpoints for SDv1** включена, некоторые имена конечных точек для [сервисов веб-запросов](service-detection/service-detection-v1/service-types.md#web-request-service "Понимание различных типов сервисов, которые могут быть обнаружены и мониториться в вашей среде.") и других типов сервисов изменяются. Это зависит от наличия связанного [правила именования запросов](service-detection/service-detection-v1/set-up-request-naming.md "Настройте именование запросов и определите операции, которые предлагают ваши сервисы.") и от того, используются ли [изменчивые атрибуты заполнителей](#volatile-placeholder-attributes) в этих правилах.
 
 Имена конечных точек для сервисов веб-запросов
 
@@ -141,7 +141,7 @@ scraped: 2026-02-23T21:35:46.464742
 
 Например, шаблон `{HTTP-Method} - {URL} - user authentication endpoint` приведёт к имени конечной точки `GET - {URL} - user authentication endpoint`. Обратите внимание, что `{HTTP-Method}` (неизменчивый атрибут заполнителя) заменён на `GET`, тогда как `{URL}` (изменчивый атрибут заполнителя) не заменён и используется как есть.
 
-Вы можете изменять имена конечных точек, создавая [пользовательские правила именования](/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming#create-request-naming-rule "Настройте именование запросов и определите операции, которые предлагают ваши сервисы.").
+Вы можете изменять имена конечных точек, создавая [пользовательские правила именования](service-detection/service-detection-v1/set-up-request-naming.md#create-request-naming-rule "Настройте именование запросов и определите операции, которые предлагают ваши сервисы.").
 
 ### Изменчивые атрибуты заполнителей
 
@@ -166,16 +166,16 @@ scraped: 2026-02-23T21:35:46.464742
 
 Однако вы можете заглушить запросы статических ресурсов.
 
-Независимо от того, заглушена конечная точка **Static resources** или нет, вы всегда можете перейти в [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app "Откройте для себя функциональность нового приложения Distributed Tracing.") для просмотра и анализа span, таких как CSS, изображения или binary.
+Независимо от того, заглушена конечная точка **Static resources** или нет, вы всегда можете перейти в [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](../distributed-tracing/distributed-tracing-app.md "Откройте для себя функциональность нового приложения Distributed Tracing.") для просмотра и анализа span, таких как CSS, изображения или binary.
 
 ### Заглушение запросов статических ресурсов
 
-Чтобы заглушить запросы статических ресурсов, выполните шаги, описанные в разделе [Заглушение мониторинга запросов сервиса](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-monitoring-mute "Заглушите мониторинг определённых запросов сервиса, чтобы сосредоточиться на производительности запросов, влияющих на ваших клиентов.").
+Чтобы заглушить запросы статических ресурсов, выполните шаги, описанные в разделе [Заглушение мониторинга запросов сервиса](service-detection/service-detection-v1/service-monitoring-mute.md "Заглушите мониторинг определённых запросов сервиса, чтобы сосредоточиться на производительности запросов, влияющих на ваших клиентов.").
 
 После заглушения запросов статических ресурсов конечная точка **Static resources** не отображается в списке конечных точек в ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**, и эти запросы не учитываются в общих метриках сервиса.
 
 ### Управление обнаружением запросов ресурсов
 
-Вы можете добавлять или редактировать расширения имён файлов, которые учитываются для конечной точки **Static resources**. Подробности см. в разделе [Настройка обнаружения запросов ресурсов](/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming#resource-request-detection "Настройте именование запросов и определите операции, которые предлагают ваши сервисы.").
+Вы можете добавлять или редактировать расширения имён файлов, которые учитываются для конечной точки **Static resources**. Подробности см. в разделе [Настройка обнаружения запросов ресурсов](service-detection/service-detection-v1/set-up-request-naming.md#resource-request-detection "Настройте именование запросов и определите операции, которые предлагают ваши сервисы.").
 
 Ваша существующая конфигурация обнаружения запросов ресурсов по-прежнему применяется, поэтому если вы уже добавили дополнительные расширения имён файлов, соответствующие запросы также станут частью конечной точки **Static resources**.

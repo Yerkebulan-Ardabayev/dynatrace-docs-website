@@ -25,7 +25,7 @@ scraped: 2026-03-04T21:31:24.088421
 
 Dynatrace может сохранять промпты, отправленные в агентный и генеративный ИИ Dynatrace Intelligence, а также ответы, предоставленные LLM, для понимания сценариев использования, контекстуализации обратной связи по ответам и выявления дополнительных ожиданий пользователей.
 
-Узнайте больше об [архитектуре и потоке данных агентного и генеративного ИИ Dynatrace Intelligence](/docs/dynatrace-intelligence/copilot/copilot-overview#copilot-data-flow "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.").
+Узнайте больше об [архитектуре и потоке данных агентного и генеративного ИИ Dynatrace Intelligence](copilot-overview.md#copilot-data-flow "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.").
 
 ## Маскирование PII
 
@@ -52,6 +52,6 @@ Dynatrace версии 1.305+
 
 ## Связанные темы
 
-* [Обзор агентного и генеративного ИИ Dynatrace Intelligence](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
-* [Начало работы с агентным и генеративным ИИ Dynatrace Intelligence](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
-* [Часто задаваемые вопросы об агентном и генеративном ИИ Dynatrace Intelligence](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
+* [Обзор агентного и генеративного ИИ Dynatrace Intelligence](copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
+* [Начало работы с агентным и генеративным ИИ Dynatrace Intelligence](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
+* [Часто задаваемые вопросы об агентном и генеративном ИИ Dynatrace Intelligence](../../../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")

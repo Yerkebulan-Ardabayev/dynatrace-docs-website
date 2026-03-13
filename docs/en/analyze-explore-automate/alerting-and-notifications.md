@@ -19,7 +19,7 @@ This page explains key features such as anomaly detection, problem detection, an
 
 ## Alerting
 
-[Dynatrace Intelligence](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.") automatically detects anomalies in your environment, generates Davis events for individual issues, and groups them into problems. These problems provide a clear, contextual overview that allows faster root cause analysis and resolution.
+[Dynatrace Intelligence](../dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence.") automatically detects anomalies in your environment, generates Davis events for individual issues, and groups them into problems. These problems provide a clear, contextual overview that allows faster root cause analysis and resolution.
 
 ### Automatic detection
 
@@ -29,7 +29,7 @@ Dynatrace uses AI-powered anomaly detection to continuously monitor your environ
 * Service downtime
 * Unusual metric patterns or behaviors
 
-You can adjust the sensitivity of anomaly detection to match your environment and reduce false positives or missed anomalies. For details, see [Adjust the sensitivity of anomaly detection](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection "Learn how to adapt the sensitivity of problem detection in Dynatrace.").
+You can adjust the sensitivity of anomaly detection to match your environment and reduce false positives or missed anomalies. For details, see [Adjust the sensitivity of anomaly detection](../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection.md "Learn how to adapt the sensitivity of problem detection in Dynatrace.").
 
 ### Custom alerts
 
@@ -41,7 +41,7 @@ Typical use cases include:
 * Detecting log patterns or conditions that indicate potential risks
 * Defining thresholds for metrics or events
 
-You can configure custom alerts in the [![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") app, which gives you control over when and how alerts are triggered.
+You can configure custom alerts in the [![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**](../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.") app, which gives you control over when and how alerts are triggered.
 
 ### Problem detection
 
@@ -53,7 +53,7 @@ This approach helps you:
 * Prioritize problems based on severity and business impact
 * Accelerate resolution by focusing on the critical root cause
 
-The [![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") app provides a centralized view of all detected problems and supports efficient triage and investigation.
+The [![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.") app provides a centralized view of all detected problems and supports efficient triage and investigation.
 
 ## Workflows for external notifications
 
@@ -63,12 +63,12 @@ Dynatrace uses workflows to send notifications to external tools. Workflows allo
 
 The trigger defines when a workflow runs and sends a notification, for example, when a problem is detected.
 
-* To minimize noise, use the [problem trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") to send one notification for each detected problem.
-* For advanced scenarios, use the [Davis event trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") or the [generic event trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger#event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") to notify on specific events.
+* To minimize noise, use the [problem trigger](workflows/trigger/event-trigger.md#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") to send one notification for each detected problem.
+* For advanced scenarios, use the [Davis event trigger](workflows/trigger/event-trigger.md#davis-event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") or the [generic event trigger](workflows/trigger/event-trigger.md#event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") to notify on specific events.
 
 You can configure trigger conditions to control which problems or events generate notifications. We recommend filtering based on the following attributes:
 
-* [Primary Grail fields](/docs/semantic-dictionary/tags/primary-fields)
+* [Primary Grail fields](../semantic-dictionary/tags/primary-fields.md)
 * Security context
 * Custom attributes
 
@@ -85,7 +85,7 @@ Dynatrace supports a wide range of integrations, including:
 * Microsoft Teams
 * ServiceNow
 
-For a complete list, see [Workflows Connectors](/docs/analyze-explore-automate/workflows/actions "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
+For a complete list, see [Workflows Connectors](workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
 
 ### Simple workflows vs standard workflows
 
@@ -112,7 +112,7 @@ Examples include:
 
 ## Related topics
 
-* [Automated threat-alert triaging](/docs/secure/use-cases/automated-threat-alert-triaging "Use case scenario for automating threat-alert triaging with Dynatrace.")
-* [CSPM Notification Automation](/docs/secure/use-cases/notification-automation "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.")
-* [Set up alerts based on events extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events "How to create and configure Davis problems and alerts with events based on logs.")
-* [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.")
+* [Automated threat-alert triaging](../secure/use-cases/automated-threat-alert-triaging.md "Use case scenario for automating threat-alert triaging with Dynatrace.")
+* [CSPM Notification Automation](../secure/use-cases/notification-automation.md "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.")
+* [Set up alerts based on events extracted from logs](logs/lma-use-cases/lma-alert-log-based-events.md "How to create and configure Davis problems and alerts with events based on logs.")
+* [Set up custom alerts based on metrics extracted from logs](logs/lma-use-cases/lma-alert-log-based-metrics.md "How to create and configure Davis problems and custom alerts with metrics based on logs.")

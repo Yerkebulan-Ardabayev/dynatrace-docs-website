@@ -25,20 +25,20 @@ scraped: 2026-03-05T21:25:48.203441
 
 Dynatrace provides an [Azure Site Extensionï»¿](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions) to install OneAgent on Azure Functions. Azure Site Extensions are the native extension mechanism provided via [Kuduï»¿](https://github.com/projectkudu/kudu), which is the deployment management engine behind Azure App Services.
 
-The Dynatrace OneAgent site extension doesn't include the OneAgent installer. Instead, the extension uses the Dynatrace REST API to download the installer from the cluster in the target version as set in [OneAgent updates](/docs/ingest-from/dynatrace-oneagent/oneagent-update#configure-oneagent-updates "Learn how to update OneAgent.").
+The Dynatrace OneAgent site extension doesn't include the OneAgent installer. Instead, the extension uses the Dynatrace REST API to download the installer from the cluster in the target version as set in [OneAgent updates](../../../dynatrace-oneagent/oneagent-update.md#configure-oneagent-updates "Learn how to update OneAgent.").
 
 Limitations
 
 Since Azure Functions are a fully managed hosting platform built on top of Azure App Services, functions/applications are deployed into a sandboxed environment that doesn't allow direct access to the underlying operating system. This results in some restrictions for OneAgent:
 
-* Enhanced I/O monitoring requires [Azure Monitor integration](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide "Set up and configure Azure monitoring in Dynatrace.").
+* Enhanced I/O monitoring requires [Azure Monitor integration](../azure-monitoring-guide.md "Set up and configure Azure monitoring in Dynatrace.").
 * Dynatrace Log Monitoring isn't supported for Azure Functions.
 * Network zones aren't supported.
 
 ## Prerequisites
 
-* Create a [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
-* Determine your [environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+* Create a [PaaS token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.").
+* Determine your [environment ID](../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
 * Determine your server URL if required.
 
   The server URL is required only if you use an ActiveGate for a Dynatrace SaaS endpoint. The URL is automatically generated from the environment ID.
@@ -63,7 +63,7 @@ There are two ways to install the Dynatrace OneAgent site extension: via Azure P
    ![Kudu site](https://dt-cdn.net/images/screenshot-2023-08-08-at-5-41-34-pm-1046-18f975f56f.png)
 8. Select **Site extensions**.
 9. Select **Launch** on the Dynatrace tile.
-10. On the **Start monitoring your App Service instance** page, enter your environment ID, [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes."), and server URL. See [Prerequisites](#prerequisites) section for details.
+10. On the **Start monitoring your App Service instance** page, enter your environment ID, [PaaS token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes."), and server URL. See [Prerequisites](#prerequisites) section for details.
 11. Optional You can select **Accept all self-signed SSL certificates** to automatically accept all self-signed TLS certificates.
 12. Select **Install OneAgent**.
 13. To check the deployment status, go to **Deployment Status**.
@@ -274,10 +274,10 @@ If the application is running at the time of removal, the extension recognizes t
 
 ## Monitoring consumption
 
-See [Serverless monitoring](/docs/license/monitoring-consumption-classic/davis-data-units/serverless-monitoring "Understand how serverless monitoring consumption is calculated.") for details on monitoring consumption for Azure Functions.
+See [Serverless monitoring](../../../../license/monitoring-consumption-classic/davis-data-units/serverless-monitoring.md "Understand how serverless monitoring consumption is calculated.") for details on monitoring consumption for Azure Functions.
 
 ## Related topics
 
-* [Set up Dynatrace on Microsoft Azure](/docs/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
-* [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
-* [Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.")
+* [Set up Dynatrace on Microsoft Azure](../../../microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")
+* [OneAgent platform and capability support matrix](../../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* [Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan](func-dynamic-plans/opentelemetry-on-azure-functions.md "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.")

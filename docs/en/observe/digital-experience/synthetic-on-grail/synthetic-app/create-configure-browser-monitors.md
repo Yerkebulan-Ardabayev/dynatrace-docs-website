@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:24:33.931700
 * How-to guide
 * Updated on Feb 16, 2026
 
-You can create synthetic browser monitors to check the availability of your websites. Browser monitors can be run from our [global public](/docs/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring locations.") or [private](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations "Learn how to manage private locations in the Synthetic app.") synthetic locations.
+You can create synthetic browser monitors to check the availability of your websites. Browser monitors can be run from our [global public](../../synthetic-monitoring/general-information/public-synthetic-locations.md "Learn about all currently available public Synthetic Monitoring locations.") or [private](private-locations.md "Learn how to manage private locations in the Synthetic app.") synthetic locations.
 
 Go to ![Synthetic Classic](https://dt-cdn.net/images/synthetic-512-83ec796e54.png "Synthetic Classic") **Synthetic** >  **New monitor** > **Browser**. The configuration settings are split into the following sections:
 
@@ -34,7 +34,7 @@ To start with, configure the general settings.
 2. Select **Add tag** to manually apply tags to the monitor.
 3. Select **Assign frontends** to assign a monitor to a frontend application. You can assign the monitor to multiple frontend applications, and a frontend application can have several assigned monitors. It allows you to track the frontend application availability and performance. Detected problems are then automatically associated with your frontend application. If the monitor's executions fail due to problems with the frontend application, the reported availability rate of the frontend application is decreased within a specific timeframe.
 
-   A browser monitor can be assigned to a fronted application automatically if a URL checked by the monitor matches a pattern defined in [![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals**](/docs/observe/digital-experience/new-rum-experience/experience-vitals "The Experience Vitals app provides an entry point for monitoring web and mobile frontends.").
+   A browser monitor can be assigned to a fronted application automatically if a URL checked by the monitor matches a pattern defined in [![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals**](../../new-rum-experience/experience-vitals.md "The Experience Vitals app provides an entry point for monitoring web and mobile frontends.").
 
 Advanced settings
 
@@ -77,7 +77,7 @@ Define the steps. You have two options when you create a browser monitor:
    * Request headers that will be set for all requests performed by the monitor.
    * Requests with specific patterns that will be blocked during the monitor executions.
 
-   Although you can specify cookies, headers, and requests with specific patterns later in [Advanced setup](#advanced-setup), in some cases it may be reasonable to do it here to ensure smooth [recording of a clickpath](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-configure-browser-monitors/clickpath-synthetic-app-browser-monitor "Learn how to record a browser clickpath for a browser monitor").
+   Although you can specify cookies, headers, and requests with specific patterns later in [Advanced setup](#advanced-setup), in some cases it may be reasonable to do it here to ensure smooth [recording of a clickpath](create-configure-browser-monitors/clickpath-synthetic-app-browser-monitor.md "Learn how to record a browser clickpath for a browser monitor").
 4. Optional Turn on **Use HTTP authentication** if the website you want to test is protected by HTTP authentication (not handled by web form authentication).
 
    We support a basic **HTTP authentication** and **Kerberos** authentication. If you choose **Kerberos** as an authentication, also provide a realm name and authentication server allow list.
@@ -88,10 +88,10 @@ Define the steps. You have two options when you create a browser monitor:
 
      You can add new credentials in both ![Synthetic Classic](https://dt-cdn.net/images/synthetic-512-83ec796e54.png "Synthetic Classic") **Synthetic** ( **Add credential**) and previous Dynatrace (**Credential vault (classic)**).
    * **Monitor script**âprovide a username and password.
-5. Optional Choose the **Condition to consider this step as done** to [define a waiting time between steps](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-configure-browser-monitors/steps-waiting-time-validation-thresholds#steps-waiting-time "Learn how to customize a waiting time between steps, validate content, and set up performance thresholds.").
-6. Optional In the **Validate content** section, set up [content validation rules](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-configure-browser-monitors/steps-waiting-time-validation-thresholds#validate-content "Learn how to customize a waiting time between steps, validate content, and set up performance thresholds.").
-7. Optional Set up a [performance threshold](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-configure-browser-monitors/steps-waiting-time-validation-thresholds#performance-thresholds "Learn how to customize a waiting time between steps, validate content, and set up performance thresholds.") for loading of the page specified in the **URL**.
-8. Record a clickpath or add steps manually. Use this functionality if you want the monitor to perform a test scenario that includes a user journeyâfor example, when they open the home page in browser, apply search criteria, perform search, and select an option from the search results. For details, see [Record a browser clickpath](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-configure-browser-monitors/clickpath-synthetic-app-browser-monitor "Learn how to record a browser clickpath for a browser monitor").
+5. Optional Choose the **Condition to consider this step as done** to [define a waiting time between steps](create-configure-browser-monitors/steps-waiting-time-validation-thresholds.md#steps-waiting-time "Learn how to customize a waiting time between steps, validate content, and set up performance thresholds.").
+6. Optional In the **Validate content** section, set up [content validation rules](create-configure-browser-monitors/steps-waiting-time-validation-thresholds.md#validate-content "Learn how to customize a waiting time between steps, validate content, and set up performance thresholds.").
+7. Optional Set up a [performance threshold](create-configure-browser-monitors/steps-waiting-time-validation-thresholds.md#performance-thresholds "Learn how to customize a waiting time between steps, validate content, and set up performance thresholds.") for loading of the page specified in the **URL**.
+8. Record a clickpath or add steps manually. Use this functionality if you want the monitor to perform a test scenario that includes a user journeyâfor example, when they open the home page in browser, apply search criteria, perform search, and select an option from the search results. For details, see [Record a browser clickpath](create-configure-browser-monitors/clickpath-synthetic-app-browser-monitor.md "Learn how to record a browser clickpath for a browser monitor").
 
    ![Browser monitor steps](https://dt-cdn.net/images/screenshot-2025-08-29-151144-1417-d6dc411680.png)
 9. Select **Continue** to proceed with the monitor configuration.
@@ -100,13 +100,13 @@ Define the steps. You have two options when you create a browser monitor:
 
 Two factors make up your monitoring scheduleâhow frequently your browser monitor runs and the number of locations it's executed from.
 
-Dynatrace offers a global network of [public Synthetic Monitoring locations](/docs/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring locations.") out of the box. You can also [create private Synthetic locations](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations "Learn how to manage private locations in the Synthetic app.") within your own network infrastructure. Both public and private locations appear on this settings page.
+Dynatrace offers a global network of [public Synthetic Monitoring locations](../../synthetic-monitoring/general-information/public-synthetic-locations.md "Learn about all currently available public Synthetic Monitoring locations.") out of the box. You can also [create private Synthetic locations](private-locations.md "Learn how to manage private locations in the Synthetic app.") within your own network infrastructure. Both public and private locations appear on this settings page.
 
 The frequency and number of locations determine the number of monitor executions per hour. For example, running a monitor from 3 locations every 15 minutes results in 12 executions per hour (4 times per hour from each of the 3 locations). Monitor executions are evenly spaced within the selected interval. That is, for a monitor running from 3 locations every 15 minutes, executions are triggered at 5-minute intervals.
 
-You can choose a frequency of every **5**, **10**, **15**, or **30** minutes; or **1**, **2**, or **4** hours. You can also set up your monitor to be executed [**On demand only**](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/on-demand-executions "Learn about how to perform on-demand executions."). You can select multiple global locations from where your browser monitor is to be executed.
+You can choose a frequency of every **5**, **10**, **15**, or **30** minutes; or **1**, **2**, or **4** hours. You can also set up your monitor to be executed [**On demand only**](on-demand-executions.md "Learn about how to perform on-demand executions."). You can select multiple global locations from where your browser monitor is to be executed.
 
-Note that all public Synthetic locations are set to Coordinated Universal Time, or UTC. If your monitor script requires the local time or time zone, you can use the [`api.getContext()` method](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-configure-browser-monitors/browser-clickpath-steps#retrieve-data "Learn about the step types created when recording a browser clickpath") and the system clock to implement conditional logic.
+Note that all public Synthetic locations are set to Coordinated Universal Time, or UTC. If your monitor script requires the local time or time zone, you can use the [`api.getContext()` method](create-configure-browser-monitors/browser-clickpath-steps.md#retrieve-data "Learn about the step types created when recording a browser clickpath") and the system clock to implement conditional logic.
 
 ## Outage and performance
 
@@ -129,7 +129,7 @@ For **Performance thresholds**, you can turn on:
 
   This setting provides an option to set the **Threshold for the sum of all requests (in seconds)**. If the threshold exceeds the time you provided, you'll be notified.
 
-  Also, you can set a performance threshold for [separate steps](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-configure-browser-monitors/steps-waiting-time-validation-thresholds#performance-thresholds "Learn how to customize a waiting time between steps, validate content, and set up performance thresholds.").
+  Also, you can set a performance threshold for [separate steps](create-configure-browser-monitors/steps-waiting-time-validation-thresholds.md#performance-thresholds "Learn how to customize a waiting time between steps, validate content, and set up performance thresholds.").
 
 ## Advanced setup
 
@@ -150,7 +150,7 @@ Dynatrace version 1.272+
 
 ActiveGate version 1.271+
 
-You can set up certificate authentication for browser monitors running on any [public location](/docs/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring locations.") and [private locations](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations "Learn how to manage private locations in the Synthetic app.") with Linux-based ActiveGates (containerized as well as non-containerized).
+You can set up certificate authentication for browser monitors running on any [public location](../../synthetic-monitoring/general-information/public-synthetic-locations.md "Learn about all currently available public Synthetic Monitoring locations.") and [private locations](private-locations.md "Learn how to manage private locations in the Synthetic app.") with Linux-based ActiveGates (containerized as well as non-containerized).
 
 Before first recording a clickpath on a website that requires certificate authentication, ensure that you have installed the required certificate in Chrome. Then, when you navigate to the website in the recording window, the native browser dialog simply selects the correct certificate.
 
@@ -160,7 +160,7 @@ After you record the clickpath, you need to specify the certificate to use for b
 
 1. Select **Add certificate**.
 2. Enter the **Domain** that the certificate is valid for.
-3. Select a credential from the list of certificate credentials displayed. Alternatively, select **Create new credential** to upload and use a new client certificate. Any certificate credential you create is automatically designated as [owner only](/docs/manage/credential-vault#work-with-credentials "Store and manage credentials in the credential vault.") and stored in the [credential vault](/docs/manage/credential-vault "Store and manage credentials in the credential vault.").
+3. Select a credential from the list of certificate credentials displayed. Alternatively, select **Create new credential** to upload and use a new client certificate. Any certificate credential you create is automatically designated as [owner only](../../../../../common/manage/credential-vault.md#work-with-credentials "Store and manage credentials in the credential vault.") and stored in the [credential vault](../../../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault.").
 
 You can specify and upload certificate files in PFX, P12, or PEM format.
 
@@ -168,7 +168,7 @@ You can specify and upload certificate files in PFX, P12, or PEM format.
 
 Cookies allow you to store browser state information on the client side so that each monitor execution is based on the same state and you can accurately monitor a performance baseline.
 
-The cookies set in **Advanced setup** are valid for the entire monitor execution. If you want to set cookies only for a specific portion of your clickpath, use the [Cookie step](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-configure-browser-monitors/browser-clickpath-steps#cookie "Learn about the step types created when recording a browser clickpath").
+The cookies set in **Advanced setup** are valid for the entire monitor execution. If you want to set cookies only for a specific portion of your clickpath, use the [Cookie step](create-configure-browser-monitors/browser-clickpath-steps.md#cookie "Learn about the step types created when recording a browser clickpath").
 
 Select **Add cookie**, provide a **Name** and cookie **Value**. Every cookie must be unique within the list.
 

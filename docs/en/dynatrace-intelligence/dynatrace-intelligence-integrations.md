@@ -23,7 +23,7 @@ Run AI analysis in Dynatrace Notebooks.
 
 * How-to guide
 
-Read this guide](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks)
+Read this guide](dynatrace-intelligence-integrations/davis-for-notebooks.md)
 
 ## Dynatrace MCP server
 
@@ -35,7 +35,7 @@ Learn about the Dynatrace MCP server and how you can connect to it.
 
 * Overview
 
-See the overview](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp)
+See the overview](../../common/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp.md)
 
 ## Workflows
 
@@ -47,16 +47,16 @@ Use Dynatrace Intelligence (Preview) to optimize the cost of your queries.
 
 * Tutorial
 
-Read this tutorial](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-dql)[#### Summarize open problems with Workflows
+Read this tutorial](use-cases/copilot-in-workflows-dql.md)[#### Summarize open problems with Workflows
 
 Use Dynatrace Intelligence (Preview) to summarize open problems and suggest remediation steps.
 
 * Tutorial
 
-Read this tutorial](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples)[#### AI in Workflows - Predictive maintenance of cloud disks
+Read this tutorial](use-cases/copilot-in-workflows-examples.md)[#### AI in Workflows - Predictive maintenance of cloud disks
 
 Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.
 
 * Tutorial
 
-Read this tutorial](/docs/dynatrace-intelligence/use-cases/davis-for-workflows)
+Read this tutorial](use-cases/davis-for-workflows.md)

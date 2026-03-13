@@ -21,7 +21,7 @@ Defining tags in the environment itself has its uses. However it's not recommend
 
 We recommend that you define additional metadata at the deployed system. Typically, you should think about additional metadata and standard metadata and not about tags (that is, labels).
 
-Use the environment variable [`DT_CUSTOM_PROP`](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") to define your metadata. This enables you to use [automated tagging rules](/docs/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically."), based on existing or custom metadata, to define your filter sets for charts, alerting, and more. These tags and rules can be changed and adapted any time and are applied almost immediately without any change to the monitored environment or applications.
+Use the environment variable [`DT_CUSTOM_PROP`](../../../observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata.md#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") to define your metadata. This enables you to use [automated tagging rules](how-to-define-tags.md#automatic "Find out how to define and apply tags manually and automatically."), based on existing or custom metadata, to define your filter sets for charts, alerting, and more. These tags and rules can be changed and adapted any time and are applied almost immediately without any change to the monitored environment or applications.
 
 ## Define tags as environment variables
 
@@ -70,7 +70,7 @@ Example:
 
 ![pg-vars](https://dt-cdn.net/images/2022-02-18-9-49-57-459-fb9fe355b4.png)
 
-Applying [tags](/docs/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.") to hosts (instead of thoughtfully setting up environment variables as explained here) isn't recommended. The same applies to applications and processes. For details on setting up the `DT_CUSTOM_PROP` environment variable for Tomcat or WebSphere application metadata, Kubernetes annotations for Kubernetes-based deployments, or AWS tagging, see [Application metadata & tagging](/docs/manage/tags-and-metadata/basic-concepts/best-practices-and-recommendations-for-tagging#application-metadata-and-tagging "Learn when it's recommended to use tags that leverage auto-detected metadata, as well as best practices for enriching Dynatrace monitoring with additional metadata.").
+Applying [tags](how-to-define-tags.md "Find out how to define and apply tags manually and automatically.") to hosts (instead of thoughtfully setting up environment variables as explained here) isn't recommended. The same applies to applications and processes. For details on setting up the `DT_CUSTOM_PROP` environment variable for Tomcat or WebSphere application metadata, Kubernetes annotations for Kubernetes-based deployments, or AWS tagging, see [Application metadata & tagging](../basic-concepts/best-practices-and-recommendations-for-tagging.md#application-metadata-and-tagging "Learn when it's recommended to use tags that leverage auto-detected metadata, as well as best practices for enriching Dynatrace monitoring with additional metadata.").
 
 ![Env tagging 1](https://dt-cdn.net/images/env-tagging1-433-ef2e38dad8.png)
 

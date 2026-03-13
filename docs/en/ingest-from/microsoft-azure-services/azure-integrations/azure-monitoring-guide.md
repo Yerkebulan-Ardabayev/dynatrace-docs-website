@@ -17,7 +17,7 @@ Follow this guide to start ingesting data remotely from Azure Monitor.
 
 This guide focuses on infrastructure monitoring of Azure services, specifically the monitoring of Azure cloud services via Azure Monitor. See [What's next](#next) for Full-Stack and Log Monitoring of your Azure services.
 
-Alternatively, you can configure your Dynatrace SaaS environment using [Azure Marketplace](/docs/ingest-from/microsoft-azure-services/azure-platform/azure-native-integration "Set and configure your Dynatrace SaaS environment using Azure Marketplace.").
+Alternatively, you can configure your Dynatrace SaaS environment using [Azure Marketplace](../azure-platform/azure-native-integration.md "Set and configure your Dynatrace SaaS environment using Azure Marketplace.").
 
 After you established the initial monitoring, you can add, remove, or modify service monitoring the Dynatrace web UI or, at scale, with the Dynatrace API.
 
@@ -25,8 +25,8 @@ Details of collected measurements
 
 To learn the measurements collected for each of the Azure services, see:
 
-* [Azure cloud services enabled by default and metrics](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/default-azure-metrics "The list of classic metrics Dynatrace collects by default for Azure monitoring.")
-* [Azure cloud services](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics "Monitor Azure services with Dynatrace and view available metrics.")
+* [Azure cloud services enabled by default and metrics](azure-monitoring-guide/default-azure-metrics.md "The list of classic metrics Dynatrace collects by default for Azure monitoring.")
+* [Azure cloud services](azure-cloud-services-metrics.md "Monitor Azure services with Dynatrace and view available metrics.")
 
 The infrastructure monitoring of Azure services provides metrics from Azure Monitor and infrastructure data available via public Azure API. The data is collected in five-minute intervals.
 
@@ -34,9 +34,9 @@ The infrastructure monitoring of Azure services provides metrics from Azure Moni
 
 Factors that contribute to the cost of monitoring Azure with Dynatrace via Azure Monitor:
 
-* Each service monitored by Dynatrace through Azure Monitor, as well as log processing and analysis, causes the consumption of [Davis data units](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
+* Each service monitored by Dynatrace through Azure Monitor, as well as log processing and analysis, causes the consumption of [Davis data units](../../../license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
 * Microsoft may charge you extra for Azure Monitor metric queries if you exceed 1 million API calls monthly. For the details on these additional costs, please consult [Microsoft online documentationï»¿](https://dt-url.net/ie03w85).
-* For details regarding the metric ingest costs, see [Metrics powered by Grail overview (DPS)](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+* For details regarding the metric ingest costs, see [Metrics powered by Grail overview (DPS)](../../../license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 
 ## Monitoring prerequisites
 
@@ -44,7 +44,7 @@ There are three prerequisites for Azure monitoring setup:
 
 Dynatrace admin permissions
 
-To manage Azure monitoring configuration, you need the **Change monitoring settings** permission in Dynatrace. You can **Change monitoring settings** [permission](/docs/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions") at the environment or management-zone level.
+To manage Azure monitoring configuration, you need the **Change monitoring settings** permission in Dynatrace. You can **Change monitoring settings** [permission](../../../manage/identity-access-management/permission-management/role-based-permissions.md "Role-based permissions") at the environment or management-zone level.
 
 ActiveGate capable of Azure monitoring
 
@@ -58,7 +58,7 @@ To check for the existence of a suitable ActiveGate
    * If the resulting list is empty, you need to add at least one ActiveGate with the cloud monitoring module enabled
    * If the list is not empty, you are ready to activate Azure monitoring
 
-To add an ActiveGate that is capable of cloud monitoring, follow the [ActiveGate installation guide](/docs/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") and resume this guide when done.
+To add an ActiveGate that is capable of cloud monitoring, follow the [ActiveGate installation guide](../../dynatrace-activegate/installation.md "Learn how to configure ActiveGate") and resume this guide when done.
 
 #### Allow ActiveGate to access Azure URLs
 
@@ -81,9 +81,9 @@ Proxy
 The most frequent cause of certificate issues with TLS interception proxy is a missing proxy's CA certificate in ActiveGate truststore.
 If you're still having proxy issues, see:
 
-* [Proxy for ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate "Learn how to configure ActiveGate properties to set up a proxy.")
-* [Trusted root certificates for ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-trusted-root-certificates-on-activegate "Learn how to specify a custom truststore file that is merged with Java's root certificates and used as a default on all connections.")
-* [Custom SSL certificate for ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate "Learn how to configure the SSL certificate on your ActiveGate.")
+* [Proxy for ActiveGate](../../dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate.md "Learn how to configure ActiveGate properties to set up a proxy.")
+* [Trusted root certificates for ActiveGate](../../dynatrace-activegate/configuration/configure-trusted-root-certificates-on-activegate.md "Learn how to specify a custom truststore file that is merged with Java's root certificates and used as a default on all connections.")
+* [Custom SSL certificate for ActiveGate](../../dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate.md "Learn how to configure the SSL certificate on your ActiveGate.")
 
 "Communication error."
 
@@ -98,7 +98,7 @@ Azure monitoring is performed remotely via Azure Monitor APIs that are created a
 * Sufficient permissions to register an application with your Azure AD tenant and assign the application to a role in your Azure subscription
 * An Azure [service principalï»¿](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals) to access Azure APIs
 
-For Dynatrace to monitor your services, you need at least reader permissions. The steps below describe adding the service principal reader permissions and refer to a common, single-tenant access approach. Before that, we recommend getting familiar with our recommendations regarding [how to configure Azure service principal to avoid Azure throttling limits](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/limit-api-calls-to-azure#service-principal "Guide how to limit Azure API calls to avoid throttling limits").
+For Dynatrace to monitor your services, you need at least reader permissions. The steps below describe adding the service principal reader permissions and refer to a common, single-tenant access approach. Before that, we recommend getting familiar with our recommendations regarding [how to configure Azure service principal to avoid Azure throttling limits](azure-monitoring-guide/limit-api-calls-to-azure.md#service-principal "Guide how to limit Azure API calls to avoid throttling limits").
 
 Dynatrace integration for Azure supports **Azure Lighthouse**, which allows Dynatrace to have multi-tenant access to Azure.
 
@@ -507,7 +507,7 @@ To create a service principal in Azure Portal, you must register your applicatio
 To register your application
 
 1. Go to the Azure Management Portal and select **Microsoft Entra ID**.
-2. Copy the value of **Tenant ID** and save it as `Tenant ID` for future retrieval. This is required to [configure Dynatrace to connect to your Azure account](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide#azureconfig-connect "Set up and configure Azure monitoring in Dynatrace.").
+2. Copy the value of **Tenant ID** and save it as `Tenant ID` for future retrieval. This is required to [configure Dynatrace to connect to your Azure account](azure-monitoring-guide.md#azureconfig-connect "Set up and configure Azure monitoring in Dynatrace.").
 3. Select **App registrations** in the navigation pane of the selected Active Directory.
 4. Select **New registration** at the top of the App registrations blade and type the name of your application.
 5. Leave all other settings with their default values and select **Register**.
@@ -968,7 +968,7 @@ To monitor resources based on tags
 
 Azure services monitored by default
 
-After Dynatrace connects to your Azure environment, it immediately starts monitoring Azure's built-in services for the service principal you have defined. [Classic (formerly 'built-in') Azure metrics](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/default-azure-metrics "The list of classic metrics Dynatrace collects by default for Azure monitoring.") lists the metrics of Azure cloud services monitored by default.
+After Dynatrace connects to your Azure environment, it immediately starts monitoring Azure's built-in services for the service principal you have defined. [Classic (formerly 'built-in') Azure metrics](azure-monitoring-guide/default-azure-metrics.md "The list of classic metrics Dynatrace collects by default for Azure monitoring.") lists the metrics of Azure cloud services monitored by default.
 
 Other Azure services
 
@@ -1000,7 +1000,7 @@ Apart from the recommended metrics, most services have the possibility of enabli
 
 List of Azure cloud services and collected metrics
 
-To see the complete list of Azure cloud services and learn about the metrics collected for each of them, see [All Azure cloud services](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics "Monitor Azure services with Dynatrace and view available metrics.").
+To see the complete list of Azure cloud services and learn about the metrics collected for each of them, see [All Azure cloud services](azure-cloud-services-metrics.md "Monitor Azure services with Dynatrace and view available metrics.").
 
 You can check the list of supported Azure services in [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=azure). You can also access Dynatrace Hub from your monitoring environment and search for "Azure."
 
@@ -1026,19 +1026,19 @@ To see the core measurements for each of your Azure connections
 1. Go to ![Azure](https://dt-cdn.net/images/azure-512-a93a37d351.png "Azure") **Azure Classic**.
 2. Select the connection for which you want to see an overview of the Azure infrastructure.
 
-You can also build your own dashboard from the metrics collected for your Azure instances. For details on building dashboards, see [Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
+You can also build your own dashboard from the metrics collected for your Azure instances. For details on building dashboards, see [Dashboards Classic](../../../analyze-explore-automate/dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
 
 Virtual Machines, containers, and deep code monitoring with Dynatrace OneAgent
 
-Dynatrace OneAgent offers unparalleled depth of insight into hosts, containers, and code. To learn more, see [Microsoft Azure Integrations](/docs/ingest-from/microsoft-azure-services/azure-integrations "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.").
+Dynatrace OneAgent offers unparalleled depth of insight into hosts, containers, and code. To learn more, see [Microsoft Azure Integrations](../azure-integrations.md "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.").
 
 Further configuration for notifications and alerts
 
 After you set up Azure monitoring, you can:
 
-* [Set up monitoring notifications with Azure Alerts](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/set-up-monitoring-with-azure-alerts "Integration with Azure Monitor alerts and supported Azure Monitor alerts types"). This allows you to apply alerts and automatically transform them into events that are leveraged by Dynatrace Intelligence for deeper insights.
-* [Set up metric events for alerting](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/set-up-metric-events-for-alerting "Set up and configure metric events for alerting."). This enables you to create, enable/disable, and configure recommended alerting rules.
+* [Set up monitoring notifications with Azure Alerts](azure-monitoring-guide/set-up-monitoring-with-azure-alerts.md "Integration with Azure Monitor alerts and supported Azure Monitor alerts types"). This allows you to apply alerts and automatically transform them into events that are leveraged by Dynatrace Intelligence for deeper insights.
+* [Set up metric events for alerting](azure-monitoring-guide/set-up-metric-events-for-alerting.md "Set up and configure metric events for alerting."). This enables you to create, enable/disable, and configure recommended alerting rules.
 
 Monitoring of Azure logs
 
-You can also monitor Azure logs. For more information, see [Azure Logs](/docs/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Use Azure log forwarding to ingest Azure logs.").
+You can also monitor Azure logs. For more information, see [Azure Logs](set-up-log-forwarder-azure.md "Use Azure log forwarding to ingest Azure logs.").

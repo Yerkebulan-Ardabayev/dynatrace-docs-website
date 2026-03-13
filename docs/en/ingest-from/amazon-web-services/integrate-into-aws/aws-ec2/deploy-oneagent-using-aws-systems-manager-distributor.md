@@ -32,8 +32,8 @@ The `DynatraceOneAgent` distributor package is supported on the following operat
 
 | Operating system | Version | Architecture |
 | --- | --- | --- |
-| Windows | [All OneAgent supported versions](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | x86-64, |
-| Amazon Linux | [All OneAgent supported versions](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | x86-64, ARM64 (AArch64[1](#fn-1-1-def)) |
+| Windows | [All OneAgent supported versions](../../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | x86-64, |
+| Amazon Linux | [All OneAgent supported versions](../../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | x86-64, ARM64 (AArch64[1](#fn-1-1-def)) |
 | Ubuntu | 16.04, 18.04, 22.04 | x86-64, ARM64 (AArch64[1](#fn-1-1-def)) |
 | Red Hat Enterprise Linux | 8.x, 9.x | x86-64 |
 | SUSE Enterprise Linux | 15.x | x86-64, ARM64 (AArch64[1](#fn-1-1-def)) |
@@ -65,7 +65,7 @@ To install the `DynatraceOneAgent` distributor package
 3. On the Distributor page, select **Third party** and select the `DynatraceOneAgent` package.
 4. Select the installation mode. You can install or update the `DynatraceOneAgent` package one time or schedule the installation. For details on installing the Distributor packages, see [AWS Systems Manager Distributor documentationï»¿](https://dt-url.net/bv438ci).
 5. To configure the `DynatraceOneAgent` package installation, add the [parameters](#installation-parameters) to the **Additional Arguments** field of the **Systems Manager Run Command**.
-   The parameters require a [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
+   The parameters require a [PaaS token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.").
 
    To provide a PaaS token, we recommend using a centralized cloud secret management system, such as [AWS Secrets Managerï»¿](https://dt-url.net/2803808) or [Parameter Storeï»¿](https://dt-url.net/3y238xf).
 
@@ -313,7 +313,7 @@ To install the `DynatraceOneAgent` distributor package
 
 The `DynatraceOneAgent` distributor package provides a number of Dynatrace-specific parameters that map directly to the following OneAgent installation parameters.
 
-Learn more about customizing OneAgent installation on [Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.") and [Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows "Learn how to use the OneAgent installer for Windows.").
+Learn more about customizing OneAgent installation on [Linux](../../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters.") and [Windows](../../../dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md "Learn how to use the OneAgent installer for Windows.").
 
 1
 
@@ -327,4 +327,4 @@ Remember that `SSM_DYNATRACE_TOKEN_PARAMETER_NAME` and `SSM_DYNATRACE_TOKEN_SECR
 
 ## Related topics
 
-* [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* [OneAgent platform and capability support matrix](../../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

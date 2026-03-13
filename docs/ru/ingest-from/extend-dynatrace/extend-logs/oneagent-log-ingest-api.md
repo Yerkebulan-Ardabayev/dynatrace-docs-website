@@ -14,7 +14,7 @@ scraped: 2026-03-05T21:32:31.516583
 
 Вы можете использовать локальную конечную точку API `http://localhost:<port>/v2/logs/ingest` для отправки локально полученных логов в Dynatrace по безопасному и аутентифицированному каналу. Эта конечная точка доступна только для локальных клиентов и недоступна с удалённых хостов.
 
-Конечная точка загрузки логов OneAgent повторяет поведение публичной конечной точки [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Отправляйте пользовательские логи в Dynatrace через Log Monitoring API v2.").
+Конечная точка загрузки логов OneAgent повторяет поведение публичной конечной точки [Log Monitoring API v2 - POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Отправляйте пользовательские логи в Dynatrace через Log Monitoring API v2.").
 
 ## Включение API загрузки логов
 
@@ -53,15 +53,15 @@ scraped: 2026-03-05T21:32:31.516583
 
 ## Формат событий лога
 
-Запрос принимает полезную нагрузку `application/json` с набором символов `charset=utf-8`. Для получения дополнительной информации о формате см. [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Отправляйте пользовательские логи в Dynatrace через Log Monitoring API v2.").
+Запрос принимает полезную нагрузку `application/json` с набором символов `charset=utf-8`. Для получения дополнительной информации о формате см. [Log Monitoring API v2 - POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Отправляйте пользовательские логи в Dynatrace через Log Monitoring API v2.").
 
 ## Ограничения
 
-События логов, отправляемые в Dynatrace с использованием API загрузки логов OneAgent, подчиняются тем же ограничениям, что и для публичного [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs#request-body-objects "Отправляйте пользовательские логи в Dynatrace через Log Monitoring API v2.").
+События логов, отправляемые в Dynatrace с использованием API загрузки логов OneAgent, подчиняются тем же ограничениям, что и для публичного [Log Monitoring API v2 - POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md#request-body-objects "Отправляйте пользовательские логи в Dynatrace через Log Monitoring API v2.").
 
 ## Пример
 
-С помощью этой команды `curl` вы загрузите событие `Exception: Custom error log sent via OneAgent log ingest` с уровнем серьёзности `error` и пользовательским атрибутом со значением `attribute value`. Поскольку временная метка не указана, событие автоматически получает временную метку времени чтения события. Вы сможете получить доступ к событию в [Log viewer (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Узнайте, как использовать средство просмотра логов Dynatrace для анализа данных логов.").
+С помощью этой команды `curl` вы загрузите событие `Exception: Custom error log sent via OneAgent log ingest` с уровнем серьёзности `error` и пользовательским атрибутом со значением `attribute value`. Поскольку временная метка не указана, событие автоматически получает временную метку времени чтения события. Вы сможете получить доступ к событию в [Log viewer (Logs Classic)](../../../analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer.md "Узнайте, как использовать средство просмотра логов Dynatrace для анализа данных логов.").
 
 ```
 curl -i -X POST "http://127.0.0.1:14499/v2/logs/ingest" -H "Content-Type: application/json; charset=utf-8" -d "{\"content\":\"Exception: Custom error log sent via Generic Log Ingest\",\"custom.attribute\":\"attribute value\",\"severity\": \"error\"}"
@@ -89,7 +89,7 @@ Content-Length: 116
 
 Начиная с версии OneAgent 1.267+, системы AIX также поддерживают загрузку метрик.
 
-Порт загрузки метрик по умолчанию — `14499`. При необходимости вы можете использовать команду [oneagentctl](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#metrics "Узнайте, как выполнять некоторые задачи настройки OneAgent без необходимости переустановки OneAgent.") для проверки или изменения порта. Изменение порта загрузки метрик требует перезапуска OneAgent. Добавьте [`--restart-service`](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart "Узнайте, как выполнять некоторые задачи настройки OneAgent без необходимости переустановки OneAgent.") к команде для автоматического перезапуска OneAgent.
+Порт загрузки метрик по умолчанию — `14499`. При необходимости вы можете использовать команду [oneagentctl](../../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#metrics "Узнайте, как выполнять некоторые задачи настройки OneAgent без необходимости переустановки OneAgent.") для проверки или изменения порта. Изменение порта загрузки метрик требует перезапуска OneAgent. Добавьте [`--restart-service`](../../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#oneagent-restart "Узнайте, как выполнять некоторые задачи настройки OneAgent без необходимости переустановки OneAgent.") к команде для автоматического перезапуска OneAgent.
 
 ### Проверка порта загрузки
 
@@ -113,4 +113,4 @@ Content-Length: 116
 
 Настройте прокси вашего хоста, чтобы разрешить трафик localhost, направляемый на порт загрузки метрик, по умолчанию `14499`.
 
-Обратите внимание, что изменение порта для API загрузки логов OneAgent также влияет на [OneAgent metric API](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Используйте Dynatrace API для получения метрик отслеживаемых объектов."), [Metric scripting integration](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe "Узнайте, как загружать метрики с помощью локальной интеграции скриптов.") и [Telegraf metrics integration](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf "Загружайте метрики Telegraf в Dynatrace.").
+Обратите внимание, что изменение порта для API загрузки логов OneAgent также влияет на [OneAgent metric API](../extend-metrics/ingestion-methods/oneagent-metric-api.md "Используйте Dynatrace API для получения метрик отслеживаемых объектов."), [Metric scripting integration](../extend-metrics/ingestion-methods/oneagent-pipe.md "Узнайте, как загружать метрики с помощью локальной интеграции скриптов.") и [Telegraf metrics integration](../extend-metrics/ingestion-methods/telegraf.md "Загружайте метрики Telegraf в Dynatrace.").

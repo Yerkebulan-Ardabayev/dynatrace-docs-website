@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:24:11.399509
 * Практическое руководство
 * Обновлено 6 ноября 2025 г.
 
-Эта страница обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и необходимых действий для выполнения миграции описан в [руководстве по миграции таблицы безопасности Grail](/docs/secure/threat-observability/migration "Understand the changes in the new Grail security table and learn how to migrate to it.").
+Эта страница обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и необходимых действий для выполнения миграции описан в [руководстве по миграции таблицы безопасности Grail](../migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
 
 Загрузка событий безопасности от пользовательских сторонних продуктов через API.
 
@@ -20,7 +20,7 @@ scraped: 2026-03-06T21:24:11.399509
 
 ### Обзор
 
-Далее вы узнаете, как загружать внешние события безопасности от пользовательских сторонних продуктов в [Grail](/docs/platform/grail "Insights on what and how you can query Dynatrace data."), чтобы получать аналитику Dynatrace по результатам поиска уязвимостей из любого источника, поставщика или формата.
+Далее вы узнаете, как загружать внешние события безопасности от пользовательских сторонних продуктов в [Grail](../../../platform/grail.md "Insights on what and how you can query Dynatrace data."), чтобы получать аналитику Dynatrace по результатам поиска уязвимостей из любого источника, поставщика или формата.
 
 **Пользовательский сторонний продукт** — это любой продукт, для которого Dynatrace не предоставляет готовую интеграцию.
 
@@ -29,9 +29,9 @@ scraped: 2026-03-06T21:24:11.399509
 С загруженными данными вы можете реализовать различные сценарии использования, такие как
 
 * [Генерация событий безопасности из приложения Dynatrace Investigations через OpenPipeline](https://dt-url.net/r703qjx)
-* [Загрузка и обработка пользовательских результатов сканирования безопасности](/docs/secure/use-cases/ingest-and-process-custom-security-findings "Continuously ingest your container scan findings.")
-* [Автоматизация и оркестрация результатов сканирования безопасности](/docs/secure/use-cases/automate-and-orchestrate-security-findings "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
-* [Визуализация и анализ результатов сканирования безопасности](/docs/secure/use-cases/visualize-and-analyze-security-findings "Visualize, prioritize, and analyze ingested security findings.")
+* [Загрузка и обработка пользовательских результатов сканирования безопасности](../../use-cases/ingest-and-process-custom-security-findings.md "Continuously ingest your container scan findings.")
+* [Автоматизация и оркестрация результатов сканирования безопасности](../../use-cases/automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* [Визуализация и анализ результатов сканирования безопасности](../../use-cases/visualize-and-analyze-security-findings.md "Visualize, prioritize, and analyze ingested security findings.")
 
 ### Требования
 
@@ -525,12 +525,12 @@ scraped: 2026-03-06T21:24:11.399509
 
 ### Лицензирование и стоимость
 
-Информацию о биллинге см. в разделе [События на базе Grail](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+Информацию о биллинге см. в разделе [События на базе Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 
 ## Связанные темы
 
-* [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [События безопасности](/docs/semantic-dictionary/model/security-events "Get to know the Semantic Dictionary models related to security events.")
-* [OpenPipeline Ingest API — POST Пользовательская конечная точка событий безопасности (новая)](/docs/platform/openpipeline/reference/openpipeline-ingest-api/security-events/security-events-custom-endpoint "Configure a custom security event endpoint via OpenPipeline Ingest API.")
-* [OpenPipeline Ingest API — POST Встроенные события безопасности (новая)](/docs/platform/openpipeline/reference/openpipeline-ingest-api/security-events/security-events-builtin "Ingest security events from built-in endpoints via OpenPipeline Ingest API.")
+* [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
+* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [События безопасности](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")
+* [OpenPipeline Ingest API — POST Пользовательская конечная точка событий безопасности (новая)](../../../platform/openpipeline/reference/openpipeline-ingest-api/security-events/security-events-custom-endpoint.md "Configure a custom security event endpoint via OpenPipeline Ingest API.")
+* [OpenPipeline Ingest API — POST Встроенные события безопасности (новая)](../../../platform/openpipeline/reference/openpipeline-ingest-api/security-events/security-events-builtin.md "Ingest security events from built-in endpoints via OpenPipeline Ingest API.")

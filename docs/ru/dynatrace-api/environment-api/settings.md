@@ -13,26 +13,26 @@ scraped: 2026-03-06T21:19:39.805071
 
 [### Список схем
 
-Получите обзор всех схем настроек в вашей среде.](/docs/dynatrace-api/environment-api/settings/schemas/get-all "Просмотр всех схем настроек вашей среды мониторинга через Dynatrace API.")[### Просмотр схемы
+Получите обзор всех схем настроек в вашей среде.](settings/schemas/get-all.md "Просмотр всех схем настроек вашей среды мониторинга через Dynatrace API.")[### Просмотр схемы
 
-Получите параметры схемы.](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "Просмотр схемы настроек через Dynatrace API.")
+Получите параметры схемы.](settings/schemas/get-schema.md "Просмотр схемы настроек через Dynatrace API.")
 
 [### Список объектов
 
-Получите обзор объектов настроек.](/docs/dynatrace-api/environment-api/settings/objects/get-objects "Просмотр нескольких объектов настроек через Dynatrace API.")[### Просмотр объекта
+Получите обзор объектов настроек.](settings/objects/get-objects.md "Просмотр нескольких объектов настроек через Dynatrace API.")[### Просмотр объекта
 
-Получите параметры объекта настроек.](/docs/dynatrace-api/environment-api/settings/objects/get-object "Просмотр объекта настроек через Dynatrace API.")
+Получите параметры объекта настроек.](settings/objects/get-object.md "Просмотр объекта настроек через Dynatrace API.")
 
 [### Создание объекта
 
-Создайте новый объект настроек или проверьте объект, с которым работаете.](/docs/dynatrace-api/environment-api/settings/objects/post-object "Создание или проверка объекта настроек через Dynatrace API.")[### Редактирование объекта
+Создайте новый объект настроек или проверьте объект, с которым работаете.](settings/objects/post-object.md "Создание или проверка объекта настроек через Dynatrace API.")[### Редактирование объекта
 
-Обновите существующий объект настроек.](/docs/dynatrace-api/environment-api/settings/objects/put-object "Редактирование объекта настроек через Dynatrace API.")[### Удаление объекта
+Обновите существующий объект настроек.](settings/objects/put-object.md "Редактирование объекта настроек через Dynatrace API.")[### Удаление объекта
 
-Удалите объект настроек, который больше не нужен.](/docs/dynatrace-api/environment-api/settings/objects/del-object "Удаление объекта настроек через Dynatrace API.")[### Просмотр значений
+Удалите объект настроек, который больше не нужен.](settings/objects/del-object.md "Удаление объекта настроек через Dynatrace API.")[### Просмотр значений
 
-Проверьте фактическую конфигурацию объекта настроек.](/docs/dynatrace-api/environment-api/settings/objects/get-effective-values "Просмотр фактической конфигурации для схемы настроек через Dynatrace API.")
+Проверьте фактическую конфигурацию объекта настроек.](settings/objects/get-effective-values.md "Просмотр фактической конфигурации для схемы настроек через Dynatrace API.")
 
 ## Связанные темы
 
-* [Фреймворк настроек Dynatrace](/docs/manage/settings/settings-20 "Введение во фреймворк Settings 2.0")
+* [Фреймворк настроек Dynatrace](../../manage/settings/settings-20.md "Введение во фреймворк Settings 2.0")

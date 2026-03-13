@@ -22,7 +22,7 @@ Dynatrace ingests metrics from Azure Metrics API for Azure Device Provisioning S
 
 ## Enable monitoring
 
-To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+To learn how to enable service monitoring, see [Enable service monitoring](../azure-monitoring-guide/azure-enable-service-monitoring.md "Enable Azure monitoring in Dynatrace.").
 
 The Device Provisioning Service instance needs to be linked to IoT Hubs in order to be able to create group and individual enrollments.
 

@@ -39,7 +39,7 @@ ATM for Dynatrace Platform Subscription ATM for Dynatrace classic license
 
 Adaptive Traffic Management instructs agents to initiate traces at a specific rate, for example, 1,000 per minute. This rate is continuously adjusted to keep the ingested trace data volume below a defined limit. Agents reporting a 100% trace capture rate may start fewer traces than this rate, depending on the number of application transactions. Agents reporting a trace capture rate below 100% are sampling at that rate.
 
-With the Dynatrace Platform Subscription, you can adjust the [adaptive trace sampling rate](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-saas-dps#adjust-adaptive-trace-sampling-rate "Learn how Adaptive Traffic Management works with Dynatrace Platform Subscription (DPS) and how it manages trace sampling for Full-Stack monitored hosts and applications.") at scope level, allowing you to better control the usage of the Full-Stack Monitoring included trace volume.
+With the Dynatrace Platform Subscription, you can adjust the [adaptive trace sampling rate](ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-saas-dps.md#adjust-adaptive-trace-sampling-rate "Learn how Adaptive Traffic Management works with Dynatrace Platform Subscription (DPS) and how it manages trace sampling for Full-Stack monitored hosts and applications.") at scope level, allowing you to better control the usage of the Full-Stack Monitoring included trace volume.
 
 ## Extended trace ingest
 
@@ -47,13 +47,13 @@ ATM for Dynatrace Platform Subscription
 
 **Extended trace ingest** is a billed option allowing you to extend your ingested trace volume on top of your trace volume already included in Full-Stack Monitoring.
 
-For details, see [Extended trace ingest for Full-Stack Monitoring](/docs/license/capabilities/app-infra-observability/full-stack-monitoring#extend-trace-ingest "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.").
+For details, see [Extended trace ingest for Full-Stack Monitoring](../ru/license/capabilities/app-infra-observability/full-stack-monitoring.md#extend-trace-ingest "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.").
 
 ## Full-Stack included trace volume
 
 ATM for Dynatrace Platform Subscription ATM for Dynatrace classic license
 
-**Full-Stack included trace volume** is the amount of [trace data volume](/docs/license/capabilities/app-infra-observability/full-stack-monitoring#full-stack-traces "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") included in [Full-Stack Monitoring](/docs/license/capabilities/app-infra-observability/full-stack-monitoring "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.").
+**Full-Stack included trace volume** is the amount of [trace data volume](../ru/license/capabilities/app-infra-observability/full-stack-monitoring.md#full-stack-traces "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") included in [Full-Stack Monitoring](../ru/license/capabilities/app-infra-observability/full-stack-monitoring.md "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.").
 
 Adaptive Traffic Management ensures that Full-Stack monitored hosts and applications stay within this licensed trace volume.
 
@@ -73,7 +73,7 @@ ATM for Dynatrace Platform Subscription
 
 **Usable adaptive trace volume** is the portion of your [total licensed Full-Stack trace volume](#total-licensed-full-stack-trace-volume) that you allocate to Adaptive Traffic Management.
 
-To control how much of your [Full-Stack included trace volume](#full-stack-included-trace-volume) is distributed by Adaptive Traffic Management, you can [reduce the usable adaptive trace volume](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-saas-dps#reduce-usable-adaptive-trace-volume "Learn how Adaptive Traffic Management works with Dynatrace Platform Subscription (DPS) and how it manages trace sampling for Full-Stack monitored hosts and applications."). This self-service capability also enables you to allocate part of the Full-Stack included trace volume to fixed-rate sampled spans from OpenTelemetry or OneAgent. By doing this, you can manage your excess trace ingest volume more effectively.
+To control how much of your [Full-Stack included trace volume](#full-stack-included-trace-volume) is distributed by Adaptive Traffic Management, you can [reduce the usable adaptive trace volume](ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-saas-dps.md#reduce-usable-adaptive-trace-volume "Learn how Adaptive Traffic Management works with Dynatrace Platform Subscription (DPS) and how it manages trace sampling for Full-Stack monitored hosts and applications."). This self-service capability also enables you to allocate part of the Full-Stack included trace volume to fixed-rate sampled spans from OpenTelemetry or OneAgent. By doing this, you can manage your excess trace ingest volume more effectively.
 
 ---
 
@@ -98,11 +98,11 @@ Adaptive Traffic Management is the intelligent sampling mechanism used in Dynatr
 
 [### Adaptive Traffic Management concepts
 
-Understand different terms related to Adaptive Traffic Management, such as **Full-Stack included trace volume** or **adaptive trace sampling rate**.](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-concepts "Basic concepts related to Adaptive Traffic Management.")[### Adaptive Traffic Management for Dynatrace Platform Subscription (DPS)
+Understand different terms related to Adaptive Traffic Management, such as **Full-Stack included trace volume** or **adaptive trace sampling rate**.](../ru/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-concepts.md "Basic concepts related to Adaptive Traffic Management.")[### Adaptive Traffic Management for Dynatrace Platform Subscription (DPS)
 
-Discover Adaptive Traffic Management for Dynatrace Platform Subscription (DPS) and learn how to monitor, increase, or decrease the trace data capture rate. With Dynatrace Platform Subscription (DPS), you can extend trace ingest for Full-Stack to increase the trace capture rate. This requires your explicit opt-in. In its default configuration Adaptive Traffic Management guarantees that no extend trace ingest is being charged.](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-saas-dps "Learn how Adaptive Traffic Management works with Dynatrace Platform Subscription (DPS) and how it manages trace sampling for Full-Stack monitored hosts and applications.")[### Adaptive Traffic Management for Dynatrace classic license
+Discover Adaptive Traffic Management for Dynatrace Platform Subscription (DPS) and learn how to monitor, increase, or decrease the trace data capture rate. With Dynatrace Platform Subscription (DPS), you can extend trace ingest for Full-Stack to increase the trace capture rate. This requires your explicit opt-in. In its default configuration Adaptive Traffic Management guarantees that no extend trace ingest is being charged.](ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-saas-dps.md "Learn how Adaptive Traffic Management works with Dynatrace Platform Subscription (DPS) and how it manages trace sampling for Full-Stack monitored hosts and applications.")[### Adaptive Traffic Management for Dynatrace classic license
 
-Discover Adaptive Traffic Management for Dynatrace classic license and learn how to monitor, increase, or decrease the trace data capture rate.](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-saas-classic "Learn how Adaptive Traffic Management works with Dynatrace classic license and how to adjust trace sampling for HTTP and RPC requests.")
+Discover Adaptive Traffic Management for Dynatrace classic license and learn how to monitor, increase, or decrease the trace data capture rate.](ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-saas-classic.md "Learn how Adaptive Traffic Management works with Dynatrace classic license and how to adjust trace sampling for HTTP and RPC requests.")
 
 ---
 
@@ -156,7 +156,7 @@ INSTALL_PATH=/data/dynatrace/agent
 
 The installer creates the symbolic link `/opt/dynatrace/oneagent` > `/data/dynatrace/agent` and the OneAgent installation files are placed in the specified directory (in this example, `/data/dynatrace/agent`). Note that this symbolic link needs to be removed manually after OneAgent is uninstalled.
 
-The `INSTALL_PATH` parameter doesn't control the OneAgent [log and configuration files](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix "Find out what the disk space requirements are for OneAgent installation on AIX.") directories. To customize the log path, use the [`LOG_PATH`](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix#log-path "Learn how you can use AIX installer with command line parameters.") parameter.
+The `INSTALL_PATH` parameter doesn't control the OneAgent [log and configuration files](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix.md "Find out what the disk space requirements are for OneAgent installation on AIX.") directories. To customize the log path, use the [`LOG_PATH`](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix.md#log-path "Learn how you can use AIX installer with command line parameters.") parameter.
 
 ### Custom directory requirements
 
@@ -228,13 +228,13 @@ To set the communication endpoint, pass it as a parameter value:
 
 OneAgent and Dynatrace Cluster automatically maintain a working connection. If an endpoint detail changes, the cluster notifies OneAgent of the change and OneAgent automatically updates the endpoint you set using the `--set-server` to the new working value.
 
-To change the endpoint after installation, use `--set-server` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change the endpoint after installation, use `--set-server` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Environment ID
 
 **Default value**: `environment specific`
 
-The Dynatrace [environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") you received with your activation email. If you install OneAgent using the Dynatrace **Deploy** page, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
+The Dynatrace [environment ID](../ru/discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") you received with your activation email. If you install OneAgent using the Dynatrace **Deploy** page, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
 
 To set the environment ID, pass it as a parameter value:
 
@@ -242,7 +242,7 @@ To set the environment ID, pass it as a parameter value:
 --set-tenant=mySampleEnv
 ```
 
-To change the tenant after installation, use `--set-tenant` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change the tenant after installation, use `--set-tenant` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Token
 
@@ -256,15 +256,15 @@ To set a token, pass it as a parameter value:
 --set-tenant-token=abcdefghij123456
 ```
 
-See [Access tokens](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token "Learn what a tenant token is and how to change it.") to learn how to obtain a token.
+See [Access tokens](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token.md "Learn what a tenant token is and how to change it.") to learn how to obtain a token.
 
-To change the tenant token after installation, use `--set-tenant-token` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change the tenant token after installation, use `--set-tenant-token` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Network zones
 
 **Default value**: `unset`
 
-To learn about network zone naming rules and other reference information, see [Network zones](/docs/manage/network-zones "Find out how network zones work in Dynatrace.").
+To learn about network zone naming rules and other reference information, see [Network zones](../ru/manage/network-zones.md "Find out how network zones work in Dynatrace.").
 
 Use the `--set-network-zone` parameter to instruct OneAgent to communicate via the specified network zone:
 
@@ -272,9 +272,9 @@ Use the `--set-network-zone` parameter to instruct OneAgent to communicate via t
 --set-network-zone=your.network.zone
 ```
 
-To change or clear the network zone assignment after installation, use [Remote configuration management](/docs/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
+To change or clear the network zone assignment after installation, use [Remote configuration management](ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
 
-Alternatively, you can use `--set-network-zone` on the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#nz "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Alternatively, you can use `--set-network-zone` on the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#nz "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Proxy
 
@@ -290,7 +290,7 @@ To set a proxy, pass it as a parameter value:
 
 Dynatrace also supports IPv6 addresses.
 
-To change or clear the proxy address after installation, use `--set-proxy` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change or clear the proxy address after installation, use `--set-proxy` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Port range
 
@@ -305,10 +305,10 @@ Starting with OneAgent version 1.301, OneAgent doesn't use the TCP ports for its
 Watchdog is a binary used for starting and monitoring OneAgent monitoring processes:
 
 * `oneagentos`âoperating system monitoring
-* `oneagentplugin`âmonitoring using [OneAgent extensions](/docs/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Develop your own Extensions in Dynatrace.")
-* `oneagentextensions`âmonitoring using local [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
-* `oneagentloganalytics`â[Log Monitoring](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
-* `oneagentnetwork`â[network monitoring](/docs/observe/infrastructure-observability/networks-classic "Learn how to monitor network communications.")
+* `oneagentplugin`âmonitoring using [OneAgent extensions](../ru/ingest-from/extensions/develop-your-extensions.md#oneagent-extensions "Develop your own Extensions in Dynatrace.")
+* `oneagentextensions`âmonitoring using local [Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
+* `oneagentloganalytics`â[Log Monitoring](analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* `oneagentnetwork`â[network monitoring](observe/infrastructure-observability/networks-classic.md "Learn how to monitor network communications.")
 
 Use the `--set-watchdog-portrange=<arg>` parameter to change the watchdog listening port range to `<arg>`. The `<arg>` must contain two port numbers separated by a colon (`:`). For example `50000:50100`. The maximum supported port range is from 1024 to 65535. The port range must cover at least 4 ports. The port number starting the range must be lower. For example:
 
@@ -316,7 +316,7 @@ Use the `--set-watchdog-portrange=<arg>` parameter to change the watchdog listen
 --set-watchdog-portrange=50000:50100
 ```
 
-To change port range after installation, use `--set-watchdog-portrange` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#portrange "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change port range after installation, use `--set-watchdog-portrange` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#portrange "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Auto-update
 
@@ -332,7 +332,7 @@ After you set the parameter to `false`, you won't be able to control OneAgent au
 
 **Default value**: `unset`
 
-The name of a group you want to assign the host to. For details, see [Organize your environment using host groups](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups."). Host group string requirements:
+The name of a group you want to assign the host to. For details, see [Organize your environment using host groups](../ru/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups."). Host group string requirements:
 
 * Can contain only alphanumeric characters, hyphens, underscores, and periods
 * Must not start with `dt.`
@@ -344,11 +344,11 @@ To assign a host to the host group, pass the host group name as a parameter valu
 --set-host-group=My.HostGroup_123-456
 ```
 
-To remove the host from a group, you need to [uninstall OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux "Learn how you can remove OneAgent from your Linux-based system.") or pass an empty value `--set-host-group=""` when running a OneAgent update. You can't remove the host from a group using the `HOST_GROUP` parameter when updating OneAgent.
+To remove the host from a group, you need to [uninstall OneAgent](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux.md "Learn how you can remove OneAgent from your Linux-based system.") or pass an empty value `--set-host-group=""` when running a OneAgent update. You can't remove the host from a group using the `HOST_GROUP` parameter when updating OneAgent.
 
-To change or clear the host group assignment after installation, use [Remote configuration management](/docs/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host group** action).
+To change or clear the host group assignment after installation, use [Remote configuration management](ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host group** action).
 
-Alternatively, you can use `--set-host-group` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#host-groups "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Alternatively, you can use `--set-host-group` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#host-groups "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Monitoring mode
 
@@ -372,7 +372,7 @@ For example:
 --set-monitoring-mode=infra-only
 ```
 
-To change the monitoring mode after installation, use `--set-monitoring-mode` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#infrastructure-monitoring "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") or set it using the [Host settings](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.") page.
+To change the monitoring mode after installation, use `--set-monitoring-mode` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#infrastructure-monitoring "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") or set it using the [Host settings](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.") page.
 
 ## Custom host name
 
@@ -380,7 +380,7 @@ To change the monitoring mode after installation, use `--set-monitoring-mode` in
 
 Use the `--set-host-name` to override an automatically detected host name. The host name value must not contain the `<`, `>`, `&`, `CR` (carriage return), and `LF` (line feed) characters and the maximum length is 256 characters.
 
-This command adds a custom host name to display in the UI, but the detected host name is not changed. For details, see [Set custom host names](/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name.").
+This command adds a custom host name to display in the UI, but the detected host name is not changed. For details, see [Set custom host names](observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments.md "Learn how to change a monitored host name.").
 
 To set the host name:
 
@@ -388,7 +388,7 @@ To set the host name:
 --set-host-name=myhostname
 ```
 
-To change the host name after installation, use `--set-host-name` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change the host name after installation, use `--set-host-name` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Custom host metadata
 
@@ -404,9 +404,9 @@ To add or change host properties:
 
 You can add or change more than one property in the same command.
 
-To change the host metadata after installation, use [Remote configuration management](/docs/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select **modify host properties** action).
+To change the host metadata after installation, use [Remote configuration management](ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select **modify host properties** action).
 
-Alternatively, you can use `--set-host-property` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Alternatively, you can use `--set-host-property` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Custom host tags
 
@@ -422,9 +422,9 @@ To add or change host tags:
 
 You can add or change more than one tag in the same command. It is allowed to define tags with the same key but different values.
 
-To change the host tags after installation, use [Remote configuration management](/docs/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host tags** action).
+To change the host tags after installation, use [Remote configuration management](ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host tags** action).
 
-Alternatively, you can use `--set-host-tag` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Alternatively, you can use `--set-host-tag` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Host ID source
 
@@ -481,7 +481,7 @@ If you use the parameter to change the location for an already installed OneAgen
 
 ## Access to system logs
 
-OneAgent downloads AIX system logs for the purpose of diagnosing issues that may be caused by conditions in your environment. For details, see [System logs downloaded by OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix#system-logs-downloaded-by-oneagent "Learn about Dynatrace OneAgent security and modifications to your AIX-based system.").
+OneAgent downloads AIX system logs for the purpose of diagnosing issues that may be caused by conditions in your environment. For details, see [System logs downloaded by OneAgent](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix.md#system-logs-downloaded-by-oneagent "Learn about Dynatrace OneAgent security and modifications to your AIX-based system.").
 
 To disable access to logs:
 
@@ -495,9 +495,9 @@ To enable access to logs:
 --set-system-logs-access-enabled=true
 ```
 
-If you need to change this access after installation, use the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+If you need to change this access after installation, use the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
-Note that this is a self-diagnostics setting that is not related to [Log Monitoring](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
+Note that this is a self-diagnostics setting that is not related to [Log Monitoring](analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
 
 ## Skipping operating system support check
 
@@ -505,7 +505,7 @@ Setting this parameter to `true` will enable OneAgent installation on an otherwi
 
 This parameter is not preserved across automatic updates.
 
-For information about the OneAgent auto-update mechanism, see [Update Dynatrace OneAgent on AIX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/update-oneagent-on-aix "Learn how you can update Dynatrace OneAgent on AIX.").
+For information about the OneAgent auto-update mechanism, see [Update Dynatrace OneAgent on AIX](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/update-oneagent-on-aix.md "Learn how you can update Dynatrace OneAgent on AIX.").
 
 Default value: `false`
 
@@ -517,7 +517,7 @@ For example:
 SKIP_OS_SUPPORT_CHECK=true
 ```
 
-For supported platforms, see [Technology support](/docs/ingest-from/technology-support#aix "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+For supported platforms, see [Technology support](../ru/ingest-from/technology-support.md#aix "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 ---
 
@@ -554,7 +554,7 @@ This page provides information about the OneAgent directory structure and disk s
 
 1
 
-Use the [INSTALL\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix#installation-path "Learn how you can use AIX installer with command line parameters.") installation parameter.
+Use the [INSTALL\_PATH](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix.md#installation-path "Learn how you can use AIX installer with command line parameters.") installation parameter.
 
 2
 
@@ -562,11 +562,11 @@ For OneAgent version 1.201 and earlier, the default location for log files is `/
 
 3
 
-Use the [LOG\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix#log-path "Learn how you can use AIX installer with command line parameters.") installation parameter.
+Use the [LOG\_PATH](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix.md#log-path "Learn how you can use AIX installer with command line parameters.") installation parameter.
 
 4
 
-Use the [DATA\_STORAGE](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix#data-storage "Learn how you can use AIX installer with command line parameters.") installation parameter.
+Use the [DATA\_STORAGE](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix.md#data-storage "Learn how you can use AIX installer with command line parameters.") installation parameter.
 
 5
 
@@ -574,17 +574,17 @@ The size depends on the number of ingested logs.
 
 6
 
-Applicable only if you use Dynatrace Extensions that [define the log metrics, events, or add their own log processing rules](/docs/ingest-from/extensions/advanced-configuration/extension-customize#log-metrics-events-and-processing-rules "Learn how to instrument your extensions to customize how the ingested data is handled by Dynatrace."). Can be changed via support request.
+Applicable only if you use Dynatrace Extensions that [define the log metrics, events, or add their own log processing rules](../ru/ingest-from/extensions/advanced-configuration/extension-customize.md#log-metrics-events-and-processing-rules "Learn how to instrument your extensions to customize how the ingested data is handled by Dynatrace."). Can be changed via support request.
 
 7
 
 The reliability mechanism does not work if the requirement is not met. For more information see [Persistence details](#persistence).
 
-For a complete list of files and directories added to your system by OneAgent, see [OneAgent security on AIX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix "Learn about Dynatrace OneAgent security and modifications to your AIX-based system.").
+For a complete list of files and directories added to your system by OneAgent, see [OneAgent security on AIX](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix.md "Learn about Dynatrace OneAgent security and modifications to your AIX-based system.").
 
 ## OneAgent files aging mechanism
 
-OneAgent in Full-Stack Monitoring mode uses a built-in aging mechanism to ensure that the OneAgent files, including log files and runtime data, are kept within a reasonable size. For more information, see [OneAgent file aging mechanism](/docs/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism "Learn how OneAgent deletes old files to minimize disk space usage.").
+OneAgent in Full-Stack Monitoring mode uses a built-in aging mechanism to ensure that the OneAgent files, including log files and runtime data, are kept within a reasonable size. For more information, see [OneAgent file aging mechanism](../ru/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism.md "Learn how OneAgent deletes old files to minimize disk space usage.").
 
 ## Space required for updates
 
@@ -660,20 +660,20 @@ To get started, log in to your Dynatrace SaaS environment via the [Dynatrace.com
 
 ### Permissions
 
-* You need [Download/install OneAgent](/docs/manage/identity-access-management/permission-management/role-based-permissions#environment "Role-based permissions") permissions to download and install OneAgent.
+* You need [Download/install OneAgent](manage/identity-access-management/permission-management/role-based-permissions.md#environment "Role-based permissions") permissions to download and install OneAgent.
 * You need administrator rights for the servers where OneAgent will be installed as well as for changing firewall settings (necessary only if your internal routing policy may prevent Dynatrace software from reaching the internet).
 * You need permissions and credentials for restarting all your application services.
 
 ### Resources
 
-* Check the [disk space requirements](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix "Find out what the disk space requirements are for OneAgent installation on AIX.").
+* Check the [disk space requirements](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix.md "Find out what the disk space requirements are for OneAgent installation on AIX.").
 * Your host requires 200 MB free memory to run OneAgent installation and update.
-* All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
+* All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](../ru/ingest-from/dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.").
 
 ### Limitations
 
 * OneAgent installation isn't supported on networked storage mount points that are managed by standards such as NFS or iSCSI.
-* The support for [Log management and Analytics](/docs/analyze-explore-automate/logs "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") and [Log Monitoring Classic](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") on AIX hosts is limited:
+* The support for [Log management and Analytics](../ru/analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") and [Log Monitoring Classic](analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") on AIX hosts is limited:
 
   + log detection in log module is limited only to custom log sources.
 
@@ -686,7 +686,7 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 
 1. In Dynatrace Hub, search for **OneAgent**.
 2. Select **Set up** > **AIX**.
-3. Paste a [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.") into **Installer download token** or select **Generate token** to generate a token now and automatically paste it into **Installer download token**. This token is required to download the OneAgent installer from your environment. The token is automatically appended to the download and installation commands you'll use later.
+3. Paste a [PaaS token](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.") into **Installer download token** or select **Generate token** to generate a token now and automatically paste it into **Installer download token**. This token is required to download the OneAgent installer from your environment. The token is automatically appended to the download and installation commands you'll use later.
 4. In the **Download OneAgent** box, select  **Copy** to copy the `wget` command to the clipboard.
 5. Log into your AIX host and then paste and execute the `wget` command that you just copied.
 
@@ -698,17 +698,17 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
    After the download is complete, select  **Copy** in the **Verify signature** box to copy the `wget` command to the clipboard, then paste the provided command into your terminal window and execute it. Make sure your system is up to date, especially SSL and related certificate libraries.
 7. Optional **Set customized options**
 
-   * Enable monitoring of [Virtual I/O Server](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix#vios-installation "Learn how to download and install Dynatrace OneAgent on AIX.") logical partition.
-   * Set a [network zone](/docs/manage/network-zones#deploy-network-zones "Find out how network zones work in Dynatrace.") for this host.
-   * If your environment is segmented (for example, into development and production), consider [organizing your hosts into host groups](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
-   * You can override the automatically detected [host name](/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name."). This is useful in large and dynamic environments, where defined host names can be unintuitive or can change frequently.
-   * You can also apply [tags](/docs/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.") to the host to organize your monitored environments in a meaningful way.
-   * Define [Properties](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#host-metadata "Learn how to tag and set additional properties for a monitored host.") to the host to automatically add metadata.
-   * Change the OneAgent mode to Infrastructure Monitoring or Discovery in place of Full-Stack Monitoring. For more information, see [OneAgent monitoring modes](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
+   * Enable monitoring of [Virtual I/O Server](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix.md#vios-installation "Learn how to download and install Dynatrace OneAgent on AIX.") logical partition.
+   * Set a [network zone](../ru/manage/network-zones.md#deploy-network-zones "Find out how network zones work in Dynatrace.") for this host.
+   * If your environment is segmented (for example, into development and production), consider [organizing your hosts into host groups](../ru/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
+   * You can override the automatically detected [host name](observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments.md "Learn how to change a monitored host name."). This is useful in large and dynamic environments, where defined host names can be unintuitive or can change frequently.
+   * You can also apply [tags](../common/manage/tags-and-metadata.md "Use tags and metadata to organize data in your Dynatrace environment.") to the host to organize your monitored environments in a meaningful way.
+   * Define [Properties](observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts.md#host-metadata "Learn how to tag and set additional properties for a monitored host.") to the host to automatically add metadata.
+   * Change the OneAgent mode to Infrastructure Monitoring or Discovery in place of Full-Stack Monitoring. For more information, see [OneAgent monitoring modes](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.").
 
      It is not available if the Virtual I/O Server monitoring option is enabled.
 
-   The OneAgent command-line installer provides more options to [customize your installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").
+   The OneAgent command-line installer provides more options to [customize your installation](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters.").
 8. Copy the command provided in the **Run the installer with root rights** text field.
 9. Run the installer.  
    Paste the command into your terminal and execute it.
@@ -717,7 +717,7 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
    * You can use `su` or `sudo` to run the installation script. To do this, type the following command into the directory where you downloaded the installation script.  
      `sudo /bin/sh Dynatrace-OneAgent-AIX-1.0.0.sh`
 
-   For a summary of the changes made to your system by OneAgent installation, see [OneAgent security on AIX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix "Learn about Dynatrace OneAgent security and modifications to your AIX-based system.").
+   For a summary of the changes made to your system by OneAgent installation, see [OneAgent security on AIX](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix.md "Learn about Dynatrace OneAgent security and modifications to your AIX-based system.").
 10. On AIX, Dynatrace supports deep-code monitoring for Java, Apache, WebLogic, and Websphere applications. It's automated for OneAgent version 1.189+. For earlier releases, you need to perform some configuration on AIX, which can be easily done both for single applications as well as shell-wide.
 
     Automated injection of deep-code monitoring is enabled by default in Dynatrace version 1.195+ for fresh OneAgent 1.189+ installations.
@@ -806,8 +806,8 @@ apachectl -c "LoadModule oneagent_module /opt/dynatrace/oneagent/agent/bin/curre
 -k start
 ```
 
-* `tenantUUID` is the [environment](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") ID of your Dynatrace environment that should be pulled from `dynatrace-env.sh` (located in the OneAgent installation root directory). The `tenantUUID` parameter is represented in the script as `DT_TENANT`.
-* `tenantToken` is the [token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token "Learn what a tenant token is and how to change it.") that OneAgent uses to send data Dynatrace. It should be pulled from `dynatrace-env.sh` (or `ruxitagent.conf`, depending on your OneAgent version), which is located in the OneAgent installation root directory. The `tenantToken` parameter is represented in the script as `DT_TENANTTOKEN`.
+* `tenantUUID` is the [environment](../ru/discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") ID of your Dynatrace environment that should be pulled from `dynatrace-env.sh` (located in the OneAgent installation root directory). The `tenantUUID` parameter is represented in the script as `DT_TENANT`.
+* `tenantToken` is the [token](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token.md "Learn what a tenant token is and how to change it.") that OneAgent uses to send data Dynatrace. It should be pulled from `dynatrace-env.sh` (or `ruxitagent.conf`, depending on your OneAgent version), which is located in the OneAgent installation root directory. The `tenantToken` parameter is represented in the script as `DT_TENANTTOKEN`.
 
   This token should not be confused with Dynatrace API or PaaS tokens. Those tokens can't be used here.
 * `communicationEndpoints` corresponds to one or multiple HTTP addresses that represent Dynatrace Servers or ActiveGates. The `communicationEndpoints` parameter is represented in the script as `DT_CONNECTION_POINT`. For example, the `dynatrace-env.sh` (located in the OneAgent installation root directory) may contain the following:
@@ -851,7 +851,7 @@ scraped: 2026-03-06T21:18:30.847920
 
 To fully automate the monitoring of your operating systems, processes, and network interfaces, Dynatrace requires privileged access to your operating system during both installation and operation.
 
-OneAgent is tested extensively to ensure that it has minimal performance impact on your system and [conforms to the highest security standards](/docs/manage/data-privacy-and-security "Learn how Dynatrace applies various security measures required to protect private data.").
+OneAgent is tested extensively to ensure that it has minimal performance impact on your system and [conforms to the highest security standards](../common/manage/data-privacy-and-security.md "Learn how Dynatrace applies various security measures required to protect private data.").
 
 ## Permissions
 
@@ -888,7 +888,7 @@ The OneAgent requires admin privileges to:
 
 The OneAgents installer adds the following files to your system:
 
-* OneAgent binaries and configuration files are saved in `/opt/dynatrace/oneagent`. Note that you can change the location using [INSTALL\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix#installation-path "Learn how you can use AIX installer with command line parameters.") parameter.
+* OneAgent binaries and configuration files are saved in `/opt/dynatrace/oneagent`. Note that you can change the location using [INSTALL\_PATH](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix.md#installation-path "Learn how you can use AIX installer with command line parameters.") parameter.
 
 ### Operation
 
@@ -896,7 +896,7 @@ OneAgent adds the following files to your system:
 
 * OneAgent temporary files and runtime configuration are saved in `/var/lib/dynatrace/oneagent/runtime`.
 * OneAgent persistent configuration is saved in `/var/lib/dynatrace/oneagent/config`.
-* Large runtime data, such as memory dumps, is saved in `/var/lib/dynatrace/oneagent/datastorage`. Note that you can change the location of large runtime data using the [DATA\_STORAGE](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix#data-storage "Learn how you can use AIX installer with command line parameters.") parameter.
+* Large runtime data, such as memory dumps, is saved in `/var/lib/dynatrace/oneagent/datastorage`. Note that you can change the location of large runtime data using the [DATA\_STORAGE](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix.md#data-storage "Learn how you can use AIX installer with command line parameters.") parameter.
 
 ## System logs downloaded by OneAgent
 
@@ -911,7 +911,7 @@ System logs downloaded by OneAgent on AIX are:
 Revoking access to system logs
 
 To revoke access to system logs, use the `oneagentctl` command with the `--set-system-logs-access-enabled` parameter set to `false`.  
-For more information, see [OneAgent configuration via command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
+For more information, see [OneAgent configuration via command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
 
 ## Globally writable directories
 
@@ -949,7 +949,7 @@ scraped: 2026-03-06T21:18:48.563032
 * 1-min read
 * Updated on Jun 22, 2022
 
-On AIX, Dynatrace supports deep-code monitoring for Java, Apache, WebLogic and Websphere applications. Since OneAgent version 1.189, you only need to **Allow AIX kernel extension** on your AIX **Host settings** page in Dynatrace. For earlier releases, you need to perform some configuration on AIX, see [Install OneAgent on AIX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix "Learn how to download and install Dynatrace OneAgent on AIX.").
+On AIX, Dynatrace supports deep-code monitoring for Java, Apache, WebLogic and Websphere applications. Since OneAgent version 1.189, you only need to **Allow AIX kernel extension** on your AIX **Host settings** page in Dynatrace. For earlier releases, you need to perform some configuration on AIX, see [Install OneAgent on AIX](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix.md "Learn how to download and install Dynatrace OneAgent on AIX.").
 
 ## Enable automated injection
 
@@ -961,15 +961,15 @@ To enable automated injection
 4. Turn on **Allow AIX kernel extension**.  
    OneAgent will then begin collecting deep-code monitoring data.
 
-You can use the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") to configure your automated injection.
+You can use the [Settings API](../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") to configure your automated injection.
 
-1. To learn the schema, use [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") with `builtin:host.monitoring.aix-kernel-extension` as the schemaId.
+1. To learn the schema, use [GET a schema](../ru/dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") with `builtin:host.monitoring.aix-kernel-extension` as the schemaId.
 2. Based on the `builtin:host.monitoring.aix-kernel-extension` schema, create your configuration object.
-3. To create your configuration, use [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.").
+3. To create your configuration, use [POST an object](../ru/dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.").
 
 ## Update OneAgent version 1.187 and earlier
 
-If you manually configured your AIX host to inject OneAgent code modules, we recommend that you clear the `LDR_PRELOAD` and the `LDR_PRELOAD64` environment variables after you enable the automated injection. This enables you to uninstall OneAgent simply using the [uninstall script](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/uninstall-oneagent-on-aix "Learn how you can remove OneAgent from your AIX-based system.") without the need to clear the environment variables.
+If you manually configured your AIX host to inject OneAgent code modules, we recommend that you clear the `LDR_PRELOAD` and the `LDR_PRELOAD64` environment variables after you enable the automated injection. This enables you to uninstall OneAgent simply using the [uninstall script](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/uninstall-oneagent-on-aix.md "Learn how you can remove OneAgent from your AIX-based system.") without the need to clear the environment variables.
 
 ---
 
@@ -999,7 +999,7 @@ In case you don't want to use OneAgent inside a particular Java (or other) proce
 
 ## Stop and start OneAgent using the command line
 
-* [Restart OneAgent via `oneagentctl` command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+* [Restart OneAgent via `oneagentctl` command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 * If you use configuration management tools like Puppet or Ansible, you can alternatively stop the OneAgent service using the shell command. The `oneagent` service script is located in `<INSTALL_PATH>/agent/initscripts/`.
 
   To stop OneAgent, use root privileges and execute the `oneagent` service script with the `stop` parameter.
@@ -1008,7 +1008,7 @@ In case you don't want to use OneAgent inside a particular Java (or other) proce
 
   To start OneAgent, use root privileges and execute the `oneagent` service script with the `start` parameter.
 
-Learn more about [how OneAgent interacts with your OS](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix "Learn about Dynatrace OneAgent security and modifications to your AIX-based system.").
+Learn more about [how OneAgent interacts with your OS](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix.md "Learn about Dynatrace OneAgent security and modifications to your AIX-based system.").
 
 ---
 
@@ -1065,7 +1065,7 @@ scraped: 2026-03-06T21:18:41.434597
 
 OneAgent installed in full-stack mode has a built-in, configurable auto-update mechanism.
 
-See [OneAgent update](/docs/ingest-from/dynatrace-oneagent/oneagent-update "Learn how to update OneAgent.") for an overview of OneAgent update, including how to monitor updates and how to create update windows.
+See [OneAgent update](ingest-from/dynatrace-oneagent/oneagent-update.md "Learn how to update OneAgent.") for an overview of OneAgent update, including how to monitor updates and how to create update windows.
 
 ## Configure OneAgent updates
 
@@ -1171,7 +1171,7 @@ To control which version of OneAgent is automatically installed on all new hosts
 1. Go to **Settings** > **Updates** > **OneAgent updates**.
 2. In **Update mode**, select **No automatic updates** to disable automatic OneAgent updates.
 
-   For details on how to disable OneAgent automatic updates on Paas/Kubernetes, see [DynaKube parameters for Dynatrace Operator on Kubernetes/OpenShift](/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
+   For details on how to disable OneAgent automatic updates on Paas/Kubernetes, see [DynaKube parameters for Dynatrace Operator on Kubernetes/OpenShift](../ru/ingest-from/setup-on-k8s/reference/dynakube-parameters.md "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
 3. In **Target version**, select the version of OneAgent to install on all new hosts.
 
 The selected OneAgent version is also used for PaaS integrations.
@@ -1213,7 +1213,7 @@ If you select an older version than a currently deployed version, you won't be a
 
 ### Disk space
 
-For details, see [OneAgent files and disk space requirements](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix "Find out what the disk space requirements are for OneAgent installation on AIX.")
+For details, see [OneAgent files and disk space requirements](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix.md "Find out what the disk space requirements are for OneAgent installation on AIX.")
 
 ### Free memory
 
@@ -1227,7 +1227,7 @@ Use one of these methods to check which version of OneAgent you currently have i
 
 ### OneAgent command-line interface
 
-Run `oneagentctl` with the `--version` parameter. For more information, see [OneAgent configuration via command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#display-oneagent-version "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Run `oneagentctl` with the `--version` parameter. For more information, see [OneAgent configuration via command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#display-oneagent-version "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ### Host Overview
 
@@ -1260,7 +1260,7 @@ scraped: 2026-03-06T21:10:43.059904
 * 1-min read
 * Published Jul 19, 2017
 
-Dynatrace supports full-stack OneAgent installation on IBM AIX. For analytical information about the supported OneAgent capabilities for AIX, see the [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). For the supported AIX versions, check the [OneAgent supported technologies and versions](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+Dynatrace supports full-stack OneAgent installation on IBM AIX. For analytical information about the supported OneAgent capabilities for AIX, see the [OneAgent platform and capability support matrix](../ru/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). For the supported AIX versions, check the [OneAgent supported technologies and versions](../ru/ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 ### Installation
 
@@ -1270,13 +1270,13 @@ Find out what the disk space requirements are for OneAgent installation on AIX.
 
 * Reference
 
-Read this reference](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix)[#### OneAgent security on AIX
+Read this reference](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix.md)[#### OneAgent security on AIX
 
 Learn about Dynatrace OneAgent security and modifications to your AIX-based system.
 
 * Reference
 
-Read this reference](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix)
+Read this reference](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix.md)
 
 [#### Install OneAgent on AIX
 
@@ -1284,13 +1284,13 @@ Learn how to download and install Dynatrace OneAgent on AIX.
 
 * How-to guide
 
-Read this guide](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix)[#### Customize OneAgent installation on AIX
+Read this guide](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix.md)[#### Customize OneAgent installation on AIX
 
 Learn how you can use AIX installer with command line parameters.
 
 * How-to guide
 
-Read this guide](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix)
+Read this guide](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix.md)
 
 ### Operation
 
@@ -1300,13 +1300,13 @@ Learn how to enable automated OneAgent injection of deep-code monitoring on AIX.
 
 * How-to guide
 
-Read this guide](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/enable-auto-injection)[#### Update Dynatrace OneAgent on AIX
+Read this guide](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/enable-auto-injection.md)[#### Update Dynatrace OneAgent on AIX
 
 Learn how you can update Dynatrace OneAgent on AIX.
 
 * How-to guide
 
-Read this guide](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/update-oneagent-on-aix)
+Read this guide](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/update-oneagent-on-aix.md)
 
 [#### Stop/restart OneAgent on AIX
 
@@ -1314,13 +1314,13 @@ Learn how to stop and restart OneAgent on AIX.
 
 * How-to guide
 
-Read this guide](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix)[#### Uninstall OneAgent on AIX
+Read this guide](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix.md)[#### Uninstall OneAgent on AIX
 
 Learn how you can remove OneAgent from your AIX-based system.
 
 * How-to guide
 
-Read this guide](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/uninstall-oneagent-on-aix)
+Read this guide](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/uninstall-oneagent-on-aix.md)
 
 ### See also
 
@@ -1330,13 +1330,13 @@ Learn how to perform some OneAgent configuration tasks without the need to reins
 
 * Reference
 
-Read this reference](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface)[#### Troubleshooting OneAgent installation
+Read this reference](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md)[#### Troubleshooting OneAgent installation
 
 Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows.
 
 * Troubleshooting
 
-Read this troubleshooting guide](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation)
+Read this troubleshooting guide](../ru/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation.md)
 
 ---
 
@@ -1398,7 +1398,7 @@ The **`INSTALL_PATH`** parameter allows installation to a different directory. F
 
 The installer creates the symbolic link `/opt/dynatrace/oneagent` > `/data/dynatrace/agent` and the OneAgent installation files are placed in the specified directory (in this example, `/data/dynatrace/agent`). Note that this symbolic link needs to be removed manually after OneAgent is uninstalled.
 
-The `INSTALL_PATH` parameter doesn't control the OneAgent [log and configuration files](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.") directories. To customize the log path, use the `LOG_PATH` parameter.
+The `INSTALL_PATH` parameter doesn't control the OneAgent [log and configuration files](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.") directories. To customize the log path, use the `LOG_PATH` parameter.
 
 Additionally, the default installation paths should not be symbolic links. Specifically, `/var/lib/dynatrace` cannot be altered, except for the `/var/lib/dynatrace/oneagent/datastorage` part, which can be modified using the `DATA_STORAGE` option.
 
@@ -1477,13 +1477,13 @@ To set the communication endpoint, pass it as a parameter value:
 
 OneAgent and Dynatrace Cluster automatically maintain a working connection. If an endpoint detail changes, the cluster notifies OneAgent of the change and OneAgent automatically updates the endpoint you set using the `--set-server` to the new working value.
 
-To change the endpoint after installation, use `--set-server` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change the endpoint after installation, use `--set-server` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Environment ID
 
 **Default value**: `environment specific`
 
-The Dynatrace [environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") you received with your activation email. If you install OneAgent using the Dynatrace **Deploy** page, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
+The Dynatrace [environment ID](../ru/discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") you received with your activation email. If you install OneAgent using the Dynatrace **Deploy** page, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
 
 To set the environment ID, pass it as a parameter value:
 
@@ -1491,7 +1491,7 @@ To set the environment ID, pass it as a parameter value:
 --set-tenant=mySampleEnv
 ```
 
-To change the tenant after installation, use `--set-tenant` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change the tenant after installation, use `--set-tenant` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Token
 
@@ -1505,15 +1505,15 @@ To set a token, pass it as a parameter value:
 --set-tenant-token=abcdefghij123456
 ```
 
-See [Access tokens](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token "Learn what a tenant token is and how to change it.") to learn how to obtain a token.
+See [Access tokens](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token.md "Learn what a tenant token is and how to change it.") to learn how to obtain a token.
 
-To change the tenant token after installation, use `--set-tenant-token` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change the tenant token after installation, use `--set-tenant-token` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Network zones
 
 **Default value**: `unset`
 
-To learn about network zone naming rules and other reference information, see [Network zones](/docs/manage/network-zones "Find out how network zones work in Dynatrace.").
+To learn about network zone naming rules and other reference information, see [Network zones](../ru/manage/network-zones.md "Find out how network zones work in Dynatrace.").
 
 Use the `--set-network-zone` parameter to instruct OneAgent to communicate via the specified network zone:
 
@@ -1521,9 +1521,9 @@ Use the `--set-network-zone` parameter to instruct OneAgent to communicate via t
 --set-network-zone=your.network.zone
 ```
 
-To change or clear the network zone assignment after installation, use [Remote configuration management](/docs/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
+To change or clear the network zone assignment after installation, use [Remote configuration management](ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
 
-Alternatively, you can use `--set-network-zone` on the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#nz "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Alternatively, you can use `--set-network-zone` on the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#nz "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Proxy
 
@@ -1541,7 +1541,7 @@ To set a proxy, pass it as a parameter value:
 
 Dynatrace also supports IPv6 addresses.
 
-To change or clear the proxy address after installation, use `--set-proxy` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change or clear the proxy address after installation, use `--set-proxy` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Port range
 
@@ -1554,10 +1554,10 @@ Starting with OneAgent version 1.301, OneAgent doesn't use the TCP ports for its
 Watchdog is a binary used for starting and monitoring OneAgent monitoring processes:
 
 * `oneagentos`âoperating system monitoring
-* `oneagentplugin`âmonitoring using [OneAgent extensions](/docs/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Develop your own Extensions in Dynatrace.")
-* `oneagentextensions`âmonitoring using local [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
-* `oneagentloganalytics`â[Log Monitoring](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
-* `oneagentnetwork`â[network monitoring](/docs/observe/infrastructure-observability/networks-classic "Learn how to monitor network communications.")
+* `oneagentplugin`âmonitoring using [OneAgent extensions](../ru/ingest-from/extensions/develop-your-extensions.md#oneagent-extensions "Develop your own Extensions in Dynatrace.")
+* `oneagentextensions`âmonitoring using local [Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
+* `oneagentloganalytics`â[Log Monitoring](analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* `oneagentnetwork`â[network monitoring](observe/infrastructure-observability/networks-classic.md "Learn how to monitor network communications.")
 
 Use the `--set-watchdog-portrange=<arg>` parameter to change the watchdog listening port range to `<arg>`. The `<arg>` must contain two port numbers separated by a colon (`:`). For example `50000:50100`. The maximum supported port range is from 1024 to 65535. The port range must cover at least 4 ports. The port number starting the range must be lower. For example:
 
@@ -1565,7 +1565,7 @@ Use the `--set-watchdog-portrange=<arg>` parameter to change the watchdog listen
 --set-watchdog-portrange=50000:50100
 ```
 
-To change port range after installation, use `--set-watchdog-portrange` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#portrange "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change port range after installation, use `--set-watchdog-portrange` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#portrange "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Auto-update
 
@@ -1581,7 +1581,7 @@ After you set the parameter to `false`, you won't be able to control OneAgent au
 
 **Default value**: `unset`
 
-The name of a group you want to assign the host to. For details, see [Organize your environment using host groups](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups."). Host group string requirements:
+The name of a group you want to assign the host to. For details, see [Organize your environment using host groups](../ru/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups."). Host group string requirements:
 
 * Can contain only alphanumeric characters, hyphens, underscores, and periods
 * Must not start with `dt.`
@@ -1593,11 +1593,11 @@ To assign a host to the host group, pass the host group name as a parameter valu
 --set-host-group=My.HostGroup_123-456
 ```
 
-To remove the host from a group, you need to [uninstall OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux "Learn how you can remove OneAgent from your Linux-based system.") or pass an empty value `--set-host-group=""` when running a OneAgent update. You can't remove the host from a group using the `HOST_GROUP` parameter when updating OneAgent.
+To remove the host from a group, you need to [uninstall OneAgent](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux.md "Learn how you can remove OneAgent from your Linux-based system.") or pass an empty value `--set-host-group=""` when running a OneAgent update. You can't remove the host from a group using the `HOST_GROUP` parameter when updating OneAgent.
 
-To change or clear the host group assignment after installation, use [Remote configuration management](/docs/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host group** action).
+To change or clear the host group assignment after installation, use [Remote configuration management](ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host group** action).
 
-Alternatively, you can use `--set-host-group` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#host-groups "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Alternatively, you can use `--set-host-group` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#host-groups "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Monitoring mode
 
@@ -1621,7 +1621,7 @@ For example:
 --set-monitoring-mode=infra-only
 ```
 
-To change the monitoring mode after installation, use `--set-monitoring-mode` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#infrastructure-monitoring "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") or set it using the [Host settings](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.") page.
+To change the monitoring mode after installation, use `--set-monitoring-mode` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#infrastructure-monitoring "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") or set it using the [Host settings](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.") page.
 
 ## Custom host name
 
@@ -1629,7 +1629,7 @@ To change the monitoring mode after installation, use `--set-monitoring-mode` in
 
 Use the `--set-host-name` to override an automatically detected host name. The host name value must not contain the `<`, `>`, `&`, `CR` (carriage return), and `LF` (line feed) characters and the maximum length is 256 characters.
 
-This command adds a custom host name to display in the UI, but the detected host name is not changed. For details, see [Set custom host names](/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name.").
+This command adds a custom host name to display in the UI, but the detected host name is not changed. For details, see [Set custom host names](observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments.md "Learn how to change a monitored host name.").
 
 To set the host name:
 
@@ -1637,7 +1637,7 @@ To set the host name:
 --set-host-name=myhostname
 ```
 
-To change the host name after installation, use `--set-host-name` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change the host name after installation, use `--set-host-name` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Custom host metadata
 
@@ -1653,9 +1653,9 @@ To add or change host properties:
 
 You can add or change more than one property in the same command.
 
-To change the host metadata after installation, use [Remote configuration management](/docs/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select **modify host properties** action).
+To change the host metadata after installation, use [Remote configuration management](ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select **modify host properties** action).
 
-Alternatively, you can use `--set-host-property` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Alternatively, you can use `--set-host-property` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Custom host tags
 
@@ -1671,9 +1671,9 @@ To add or change host tags:
 
 You can add or change more than one tag in the same command. It is allowed to define tags with the same key but different values.
 
-To change the host tags after installation, use [Remote configuration management](/docs/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host tags** action).
+To change the host tags after installation, use [Remote configuration management](ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host tags** action).
 
-Alternatively, you can use `--set-host-tag` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Alternatively, you can use `--set-host-tag` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Host ID source
 
@@ -1732,7 +1732,7 @@ If you use the parameter to change the location for an already installed OneAgen
 
 **Default value**: `true`
 
-OneAgent downloads Linux system logs for the purpose of diagnosing issues that may be caused by conditions in your environment. For details, see [System logs downloaded by OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux#system-logs "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").
+OneAgent downloads Linux system logs for the purpose of diagnosing issues that may be caused by conditions in your environment. For details, see [System logs downloaded by OneAgent](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux.md#system-logs "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").
 
 To disable access to logs:
 
@@ -1746,20 +1746,20 @@ To enable access to logs:
 --set-system-logs-access-enabled=true
 ```
 
-If you need to change this access after installation, use the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent."):
+If you need to change this access after installation, use the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent."):
 
-Note that this is a self-diagnostics setting and is not related to [Log Monitoring](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
+Note that this is a self-diagnostics setting and is not related to [Log Monitoring](analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
 
 ## Log Monitoring
 
 **Default value**: `true`
 
-When set to `true`, allows OneAgent to access log files for the purpose of Log Monitoring. Accepted values are (`true`, `false`) or (`1`, `0`). This option can alternatively be [enabled/disabled through the Web UI](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
+When set to `true`, allows OneAgent to access log files for the purpose of Log Monitoring. Accepted values are (`true`, `false`) or (`1`, `0`). This option can alternatively be [enabled/disabled through the Web UI](analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
 
 For example:
 `--set-app-log-content-access=true`
 
-If you need to enable or disable Log Monitoring after installation, use `-set-app-log-content-access` in [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+If you need to enable or disable Log Monitoring after installation, use `-set-app-log-content-access` in [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Automatic injection
 
@@ -1769,23 +1769,23 @@ Do not set this parameter to `true` during the installation process.
 
 You can set the `--set-auto-injection-enabled=<arg>` parameter to `true` or `false` to disable or enable OneAgent auto-injection.
 
-For more information, see [Automatic injection](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#injection-toggle "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+For more information, see [Automatic injection](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#injection-toggle "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Local metric ingestion
 
 **Default value**: `14449`
 
-You can use the `--set-extensions-ingest-port=<arg>` parameter to change the default communication port used for local metric ingestion. The port is used by [OneAgent REST API](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities."), [Scripting integration](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe "Learn how to ingest metrics using local scripting integration.") (`dynatrace_ingest`), and [Telegraf](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf "Ingest Telegraf metrics into Dynatrace.").
+You can use the `--set-extensions-ingest-port=<arg>` parameter to change the default communication port used for local metric ingestion. The port is used by [OneAgent REST API](../ru/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api.md "Use the Dynatrace API to retrieve the metrics of monitored entities."), [Scripting integration](../ru/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe.md "Learn how to ingest metrics using local scripting integration.") (`dynatrace_ingest`), and [Telegraf](../ru/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf.md "Ingest Telegraf metrics into Dynatrace.").
 
-For more information, see [Metric ingestion](/docs/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.").
+For more information, see [Metric ingestion](../ru/ingest-from/extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace.").
 
 ## StatsD metric ingest
 
 **Default value**: `18125`
 
-You can use the `--set-extensions-statsd-port=<arg>` parameter to change the default [DynatraceStatsD](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd "Ingest metrics into Dynatrace using OneAgent and the ActiveGate StatsD client.") UDP listening port.
+You can use the `--set-extensions-statsd-port=<arg>` parameter to change the default [DynatraceStatsD](../ru/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd.md "Ingest metrics into Dynatrace using OneAgent and the ActiveGate StatsD client.") UDP listening port.
 
-For more information, see [Metric ingestion](/docs/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.").
+For more information, see [Metric ingestion](../ru/ingest-from/extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace.").
 
 ## Non-privileged mode
 
@@ -1805,7 +1805,7 @@ Note that non-privileged mode requires Linux kernel capabilities that are availa
 
 * Linux kernel version 2.6.26+ for OneAgent installation without root privileges.
 * Linux kernel version 4.3+ (recommended systemd version 221+) for OneAgent automatic updates and full operation without root privileges.
-  For more information, see [Linux non-privileged mode](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Find out when Dynatrace OneAgent requires root privileges on Linux.")
+  For more information, see [Linux non-privileged mode](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged.md "Find out when Dynatrace OneAgent requires root privileges on Linux.")
 
 ### **`DISABLE_ROOT_FALLBACK`**
 
@@ -1817,7 +1817,7 @@ Used in conjunction with the `NON_ROOT_MODE` parameter to block the superuser pe
 
 To switch the installer back to use the superuser permission level for subsequent updates, run it with `DISABLE_ROOT_FALLBACK=0`.
 
-For more information, see the [permission requirements for OneAgent installation and operation on Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Find out when Dynatrace OneAgent requires root privileges on Linux.").
+For more information, see the [permission requirements for OneAgent installation and operation on Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged.md "Find out when Dynatrace OneAgent requires root privileges on Linux.").
 
 * The uninstall process doesn't delete the unprivileged user from the system (whether or not it's `dtuser` or specified by the `USER parameter`).
 * The unprivileged `username` is preserved during upgrades, unless a new username is specified during upgrade.
@@ -1867,7 +1867,7 @@ Setting this parameter to `true` will enable OneAgent installation on an otherwi
 
 This parameter is not preserved across automatic updates.
 
-For information about the OneAgent auto-update mechanism, see [Update OneAgent on Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux "Learn about the different ways to update OneAgent on Linux.").
+For information about the OneAgent auto-update mechanism, see [Update OneAgent on Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux.md "Learn about the different ways to update OneAgent on Linux.").
 
 **Default value**: `false`
 
@@ -1879,7 +1879,7 @@ For example:
 /bin/sh Dynatrace-OneAgent-Linux-1.0.0.sh SKIP_OS_SUPPORT_CHECK=true
 ```
 
-For supported platforms, see [Technology support](/docs/ingest-from/technology-support#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+For supported platforms, see [Technology support](../ru/ingest-from/technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 ---
 
@@ -1921,7 +1921,7 @@ The same disk space requirements apply to both Full-stack and Infrastructure mon
 
 1
 
-Use the [INSTALL\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#installation-path "Learn how to use the Linux installer with command line parameters.") installation parameter.
+Use the [INSTALL\_PATH](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md#installation-path "Learn how to use the Linux installer with command line parameters.") installation parameter.
 
 2
 
@@ -1929,11 +1929,11 @@ For OneAgent version 1.201 and earlier, the default location for log files is `/
 
 3
 
-Use the [LOG\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#log-path "Learn how to use the Linux installer with command line parameters.") installation parameter.
+Use the [LOG\_PATH](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md#log-path "Learn how to use the Linux installer with command line parameters.") installation parameter.
 
 4
 
-Use the [DATA\_STORAGE](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#data-storage "Learn how to use the Linux installer with command line parameters.") installation parameter.
+Use the [DATA\_STORAGE](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md#data-storage "Learn how to use the Linux installer with command line parameters.") installation parameter.
 
 5
 
@@ -1941,17 +1941,17 @@ The size depends on the number of ingested logs.
 
 6
 
-Applicable only if you use Dynatrace Extensions that [define the log metrics, events, or add their own log processing rules](/docs/ingest-from/extensions/advanced-configuration/extension-customize#log-metrics-events-and-processing-rules "Learn how to instrument your extensions to customize how the ingested data is handled by Dynatrace."). Can be changed via support request.
+Applicable only if you use Dynatrace Extensions that [define the log metrics, events, or add their own log processing rules](../ru/ingest-from/extensions/advanced-configuration/extension-customize.md#log-metrics-events-and-processing-rules "Learn how to instrument your extensions to customize how the ingested data is handled by Dynatrace."). Can be changed via support request.
 
 7
 
 The reliability mechanism does not work if the requirement is not met. For more information see [Persistence details](#persistence).
 
-For a complete list of files and directories added to your system by OneAgent, see [OneAgent security on Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").
+For a complete list of files and directories added to your system by OneAgent, see [OneAgent security on Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux.md "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").
 
 ## OneAgent files aging mechanism
 
-OneAgent in full-stack monitoring mode uses a built-in aging mechanism to ensure that the OneAgent files, including log files and runtime data, are kept within a reasonable size. For more information, see [OneAgent file aging mechanism](/docs/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism "Learn how OneAgent deletes old files to minimize disk space usage.").
+OneAgent in full-stack monitoring mode uses a built-in aging mechanism to ensure that the OneAgent files, including log files and runtime data, are kept within a reasonable size. For more information, see [OneAgent file aging mechanism](../ru/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism.md "Learn how OneAgent deletes old files to minimize disk space usage.").
 
 ## Dynatrace Managed self-monitoring
 
@@ -2046,7 +2046,7 @@ su -c 'Dynatrace-OneAgent-Linux-0.5.0-20140217-175809.sh --set-proxy=10.1.1.5'
 
 ## Change proxy after installation
 
-If you need to change the proxy address after installation, use `--set-proxy` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+If you need to change the proxy address after installation, use `--set-proxy` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ---
 
@@ -2073,23 +2073,23 @@ To get started, log in to your Dynatrace SaaS environment via the [Dynatrace.com
 
 ## Requirements
 
-You can install OneAgent on any Linux system that's [supported by Dynatrace](/docs/ingest-from/technology-support#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks."), regardless of the packaging system your distribution depends on.
+You can install OneAgent on any Linux system that's [supported by Dynatrace](../ru/ingest-from/technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks."), regardless of the packaging system your distribution depends on.
 
 ### Permissions
 
-* You need [Download/install OneAgent](/docs/manage/identity-access-management/permission-management/role-based-permissions#environment "Role-based permissions") permissions to download and install OneAgent.
-* You only need [root rights](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Find out when Dynatrace OneAgent requires root privileges on Linux.") to start OneAgent installation. This requires that your system meets [specific requirements](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged#system-req "Find out when Dynatrace OneAgent requires root privileges on Linux."). Otherwise, add the `NON_ROOT_MODE=0` parameter to the installation command to disable OneAgent non-privileged mode.
+* You need [Download/install OneAgent](manage/identity-access-management/permission-management/role-based-permissions.md#environment "Role-based permissions") permissions to download and install OneAgent.
+* You only need [root rights](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged.md "Find out when Dynatrace OneAgent requires root privileges on Linux.") to start OneAgent installation. This requires that your system meets [specific requirements](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged.md#system-req "Find out when Dynatrace OneAgent requires root privileges on Linux."). Otherwise, add the `NON_ROOT_MODE=0` parameter to the installation command to disable OneAgent non-privileged mode.
 * You need permissions and credentials for restarting all your application services.
 
 ### Resources
 
-* Check the [disk space requirements](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.").
+* Check the [disk space requirements](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.").
 * Your host requires 200 MB free memory to run OneAgent installation and update.
-* All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
+* All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](../ru/ingest-from/dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.").
 
 ### Limitations
 
-There are certain limitations when deploying OneAgent on a Linux host Oracle Database Server 19c and/or with mounted NFS drives. See [Troubleshoot OneAgent installation](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation#oracle-database-server-19c "Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows.").
+There are certain limitations when deploying OneAgent on a Linux host Oracle Database Server 19c and/or with mounted NFS drives. See [Troubleshoot OneAgent installation](../ru/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation.md#oracle-database-server-19c "Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows.").
 
 ### Allow connections through firewall
 
@@ -2102,14 +2102,14 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 
 1. In Dynatrace Hub, select **OneAgent**.
 2. Select **Set up** > **Linux**.
-3. Paste a [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.") into **Installer download token** or select **Generate token** to generate a token now and automatically paste it into **Installer download token**. This token is required to download the OneAgent installer from your environment. The token is automatically appended to the download and installation commands you'll use later.
+3. Paste a [PaaS token](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.") into **Installer download token** or select **Generate token** to generate a token now and automatically paste it into **Installer download token**. This token is required to download the OneAgent installer from your environment. The token is automatically appended to the download and installation commands you'll use later.
 4. **Select installer type**
    OneAgent supports the following CPU architectures:
 
    * `Linux ARM` - ARM64 (AARch64) including [AWS Graviton processorsï»¿](https://aws.amazon.com/ec2/graviton/)
-   * `PowerPC (BE)` - 64-bit PowerPC (ppc64be) [Learn more](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-ppc-be-linux "Learn how to download and install Dynatrace OneAgent on PPC BE Linux.")
+   * `PowerPC (BE)` - 64-bit PowerPC (ppc64be) [Learn more](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-ppc-be-linux.md "Learn how to download and install Dynatrace OneAgent on PPC BE Linux.")
    * `PowerPC (LE)` - 64-bit PowerPC (ppc64le)
-   * `s390` - 64-bit IBM Z mainframe (s390) [Learn more](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos "Install, configure, and manage Dynatrace modules on z/OS.")
+   * `s390` - 64-bit IBM Z mainframe (s390) [Learn more](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos.md "Install, configure, and manage Dynatrace modules on z/OS.")
    * `x86-64` - 64-bit Intel/AMD
 5. **Download the installer**  
    Paste the provided command into your terminal window and execute it.
@@ -2117,14 +2117,14 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
    After the download is complete, select  **Copy** in the **Verify signature** box to copy the `wget` command to the clipboard, then paste the provided command into your terminal window and execute it. Make sure your system is up to date, especially SSL and related certificate libraries.
 7. Optional **Set customized options**
 
-   * Set a [network zone](/docs/manage/network-zones#deploy-network-zones "Find out how network zones work in Dynatrace.") for this host.
-   * If your environment is segmented (for example, into development and production), consider [organizing your hosts into host groups](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
-   * You can override automatically detected [host name](/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name."). This is useful in large and dynamic environments, where defined host names can be unintuitive or can change frequently.
-   * You can also apply [tags](/docs/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.") to the host to organize your monitored environments in a meaningful way.
-   * Change the OneAgent mode to Infrastructure Monitoring or Discovery in place of Full-Stack Monitoring. For more information, see [OneAgent monitoring modes](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
-   * Disable [Log Monitoring](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
+   * Set a [network zone](../ru/manage/network-zones.md#deploy-network-zones "Find out how network zones work in Dynatrace.") for this host.
+   * If your environment is segmented (for example, into development and production), consider [organizing your hosts into host groups](../ru/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
+   * You can override automatically detected [host name](observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments.md "Learn how to change a monitored host name."). This is useful in large and dynamic environments, where defined host names can be unintuitive or can change frequently.
+   * You can also apply [tags](../common/manage/tags-and-metadata.md "Use tags and metadata to organize data in your Dynatrace environment.") to the host to organize your monitored environments in a meaningful way.
+   * Change the OneAgent mode to Infrastructure Monitoring or Discovery in place of Full-Stack Monitoring. For more information, see [OneAgent monitoring modes](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.").
+   * Disable [Log Monitoring](analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
 
-   OneAgent command-line installer provides more options to [customize your installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").
+   OneAgent command-line installer provides more options to [customize your installation](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters.").
 8. **Run the installer**  
    Paste the command into your terminal window and execute it. You'll need root access only to start OneAgent installation. Elevated privileges are dropped as soon as Dynatrace OneAgent is deployed.
 
@@ -2163,7 +2163,7 @@ During the installation process, the installer:
 * Allows Dynatrace OneAgent to inject its own libraries into monitored processes.
 * Modifies the core pattern configuration so that OneAgent can detect and report process crashes. The original core\_pattern configuration will still work following installation and will be preserved in `/opt/dynatrace/oneagent/agent/conf/original_core_pattern`, where you can define your own core settings using the format as specified in [Linux Programmer's Manualï»¿](https://man7.org/linux/man-pages/man5/core.5.html).
 
-For a summary of the changes made to your system by OneAgent installation, see [OneAgent security on Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").
+For a summary of the changes made to your system by OneAgent installation, see [OneAgent security on Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux.md "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").
 
 ## You've arrived!
 
@@ -2195,13 +2195,13 @@ To install Dynatrace OneAgent when you have a Dynatrace SaaS deployment, go to [
 
 ## Requirements
 
-* You need the [permissions](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Find out when Dynatrace OneAgent requires root privileges on Linux.") for the following actions:
+* You need the [permissions](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged.md "Find out when Dynatrace OneAgent requires root privileges on Linux.") for the following actions:
 
   + To create a directory where you want to install OneAgent
   + To change firewall settings (necessary only if your internal routing policy may prevent Dynatrace software from reaching the Internet).
   + To restart your application services
-* You also need to check the [disk space requirements](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix "Find out what the disk space requirements are for OneAgent installation on AIX.").
-* All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on whether your Dynatrace deployment is SaaS or Managed, and depending on your network layout and security settings, you may choose to either provide direct access to the Dynatrace cluster, or you can [set up an ActiveGate](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
+* You also need to check the [disk space requirements](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix.md "Find out what the disk space requirements are for OneAgent installation on AIX.").
+* All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on whether your Dynatrace deployment is SaaS or Managed, and depending on your network layout and security settings, you may choose to either provide direct access to the Dynatrace cluster, or you can [set up an ActiveGate](../ru/ingest-from/dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.").
 
 * On PPC BE Linux, OneAgent supports only Java and Apache/IHS.
 * You don't need root access to install OneAgent on PPC BE Linux.
@@ -2299,7 +2299,7 @@ To install OneAgent in non-privileged mode, your system must meet the following 
 * The filesystem must not be mounted as `noexec` or `nosuid`.
 * Linux Filesystem Capabilities must be enabled. For example, SUSE Linux Enterprise Server 11 has Linux Filesystem Capabilities disabled by default. For more information, see [Non-privileged mode and Linux Filesystem Capabilities](#cap) below.
 
-See [OneAgent security on Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux#permissions "Learn about Dynatrace OneAgent security and modifications to your Linux-based system") to learn about monitoring actions executed by OneAgent that require privileged access.
+See [OneAgent security on Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux.md#permissions "Learn about Dynatrace OneAgent security and modifications to your Linux-based system") to learn about monitoring actions executed by OneAgent that require privileged access.
 
 ## Privileges during installation
 
@@ -2345,7 +2345,7 @@ Required only during initialization phase and is unconditionally dropped afterwa
 
 2
 
-Not used if [auto-updates](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#enable-or-disable-auto-update "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") and [automatic injection](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#injection-toggle "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") are disabled.
+Not used if [auto-updates](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#enable-or-disable-auto-update "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") and [automatic injection](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#injection-toggle "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") are disabled.
 
 3
 
@@ -2357,7 +2357,7 @@ Only if ambient capabilities aren't supported.
 
 5
 
-Not used if [auto-updates](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#enable-or-disable-auto-update "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") are disabled.
+Not used if [auto-updates](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#enable-or-disable-auto-update "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") are disabled.
 
 6
 
@@ -2373,7 +2373,7 @@ Only on kernels older than 2.6.33.
 
 9
 
-Not started if [automatic injection](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#injection-toggle "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") is disabled.
+Not started if [automatic injection](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#injection-toggle "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") is disabled.
 
 Enable Linux Filesystem Capabilities
 
@@ -2418,7 +2418,7 @@ If you don't want to grant the superuser permission level to OneAgent, you can d
 
 `sudo /bin/sh Dynatrace-OneAgent-Linux-1.0.0.sh NON_ROOT_MODE=1 DISABLE_ROOT_FALLBACK=1`
 
-In such cases, you must perform [manual updates on individual hosts](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux#manual-update "Learn about the different ways to update OneAgent on Linux."). We don't recommend using the `DISABLE_ROOT_FALLBACK=1` parameter for OneAgents on Azure or Docker containers.
+In such cases, you must perform [manual updates on individual hosts](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux.md#manual-update "Learn about the different ways to update OneAgent on Linux."). We don't recommend using the `DISABLE_ROOT_FALLBACK=1` parameter for OneAgents on Azure or Docker containers.
 
 ## How do I know if OneAgent operates in non-privileged mode?
 
@@ -2451,11 +2451,11 @@ scraped: 2026-03-06T21:19:07.272209
 
 To fully automate the monitoring of your operating systems, processes, and network interfaces, OneAgent performs the following changes to your system.
 
-OneAgent is tested extensively to ensure that it has minimal performance impact on your system and [conforms to the highest security standards](/docs/manage/data-privacy-and-security "Learn how Dynatrace applies various security measures required to protect private data.").
+OneAgent is tested extensively to ensure that it has minimal performance impact on your system and [conforms to the highest security standards](../common/manage/data-privacy-and-security.md "Learn how Dynatrace applies various security measures required to protect private data.").
 
 ## Permissions
 
-By default, OneAgent is installed in non-privileged mode, in which superuser privileges are used once to initiate the installation process. OneAgent is then run under an unprivileged user, retaining the complete set of functionalities. For details and system requirements, see [OneAgent non-privileged mode on Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Find out when Dynatrace OneAgent requires root privileges on Linux.")
+By default, OneAgent is installed in non-privileged mode, in which superuser privileges are used once to initiate the installation process. OneAgent is then run under an unprivileged user, retaining the complete set of functionalities. For details and system requirements, see [OneAgent non-privileged mode on Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged.md "Find out when Dynatrace OneAgent requires root privileges on Linux.")
 
 ### Operation
 
@@ -2480,7 +2480,7 @@ If you have Log Monitoring enabled, root privileges are also required for:
 
 The OneAgent installer performs the following changes to your system:
 
-* The `dtuser` user is created. You can change the default name using the `USER` [installation parameter](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#user "Learn how to use the Linux installer with command line parameters.").
+* The `dtuser` user is created. You can change the default name using the `USER` [installation parameter](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md#user "Learn how to use the Linux installer with command line parameters.").
 * The `oneagent` service is registered in the system init.
 * `ABRT` (Red Hat) and `Apport` (Debian) services are stopped and disabled.
 * A custom SELinux module is installed on systems with SELinux enabled. The sources of the SELinux module installed by the OneAgent installer are available under `{install-dir}/agent/SELinuxPolicy`, `/opt/dynatrace/oneagent/agent/SELinuxPolicy` by default.
@@ -2493,14 +2493,14 @@ The OneAgent installer performs the following changes to your system:
 
 The OneAgent installer modifies the following system files:
 
-* `/proc/sys/kernel/core_pattern` and `/etc/sysctl.conf` are modified to enable core dump processing by `oneagentdumpproc`. The original `core_pattern` configuration will still work following installation and will be preserved in `/opt/dynatrace/oneagent/agent/conf/original_core_pattern`, where you can define your own core settings using the format as specified in [Linux Programmer's Manualï»¿](https://man7.org/linux/man-pages/man5/core.5.html). See [Linux core dump handling](/docs/observe/application-observability/profiling-and-optimization/crash-analysis#linux-core-dump-handling "Learn how Dynatrace can help you gain insight into process crashes.") for more information.
+* `/proc/sys/kernel/core_pattern` and `/etc/sysctl.conf` are modified to enable core dump processing by `oneagentdumpproc`. The original `core_pattern` configuration will still work following installation and will be preserved in `/opt/dynatrace/oneagent/agent/conf/original_core_pattern`, where you can define your own core settings using the format as specified in [Linux Programmer's Manualï»¿](https://man7.org/linux/man-pages/man5/core.5.html). See [Linux core dump handling](../ru/observe/application-observability/profiling-and-optimization/crash-analysis.md#linux-core-dump-handling "Learn how Dynatrace can help you gain insight into process crashes.") for more information.
 * `/etc/ld.so.preload` is modified to enable auto-injection into processes.
 
 ### Operation
 
 OneAgent modifies the following files during its operation:
 
-* The OneAgent wrapper overwrites the `/var/vcap/packages/runc/bin/runc` file (Garden runc) to allow injection. This happens periodically during runtime. The original file is stored as `runc-original` and is restored by the [uninstall script](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux "Learn how you can remove OneAgent from your Linux-based system.").
+* The OneAgent wrapper overwrites the `/var/vcap/packages/runc/bin/runc` file (Garden runc) to allow injection. This happens periodically during runtime. The original file is stored as `runc-original` and is restored by the [uninstall script](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux.md "Learn how you can remove OneAgent from your Linux-based system.").
 * On [CRI-Oï»¿](https://cri-o.io/) hosts (OCI-based implementation of Kubernetes Container Runtime Interface), the crio hook (`oneagent_crio_injection-0.1.0.json`) is copied to the path specified in the `hooks_dir` parameter of the CRI-O configuration file (`/etc/crio/crio.conf`). If the `hooks_dir` parameter is not set, one of the default paths is used, either `/etc/containers/oci/hooks.d/` or `/usr/share/containers/oci/hooks.d/`. The hook is removed by the uninstall script.
 
 ## Files added
@@ -2509,7 +2509,7 @@ OneAgent modifies the following files during its operation:
 
 The OneAgent installer adds the following files to your system:
 
-* OneAgent binaries and configuration files are saved in `/opt/dynatrace/oneagent`. Note that you can change the location using the [INSTALL\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#installation-path "Learn how to use the Linux installer with command line parameters.") parameter.
+* OneAgent binaries and configuration files are saved in `/opt/dynatrace/oneagent`. Note that you can change the location using the [INSTALL\_PATH](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md#installation-path "Learn how to use the Linux installer with command line parameters.") parameter.
 * Startup scripts are copied to `/etc/init.d` on systems with SystemV and to `/etc/systemd/system` on systems with systemd.
 * `liboneagentproc.so` is placed in the system library directories, which vary depending on a distribution. For example,
 
@@ -2522,7 +2522,7 @@ The OneAgent installer adds the following files to your system:
 
 * OneAgent temporary files and runtime configuration are saved in `/var/lib/dynatrace/oneagent/runtime`.
 * OneAgent persistent configuration is saved in `/var/lib/dynatrace/oneagent/agent/config`.
-* Large runtime data, such as memory dumps, is saved in `/var/lib/dynatrace/oneagent/datastorage`. Note that you can change the location of large runtime data using the [DATA\_STORAGE](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#data-storage "Learn how to use the Linux installer with command line parameters.") parameter.
+* Large runtime data, such as memory dumps, is saved in `/var/lib/dynatrace/oneagent/datastorage`. Note that you can change the location of large runtime data using the [DATA\_STORAGE](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md#data-storage "Learn how to use the Linux installer with command line parameters.") parameter.
 
 ## System logs downloaded by OneAgent
 
@@ -2544,11 +2544,11 @@ OneAgent downloads certain system logs so that Dynatrace can diagnose issues tha
 Revoking access to system logs
 
 To revoke access to system logs, use the `oneagentctl` command with the `--set-system-logs-access-enabled` parameter set to `false`.  
-For more information, see [OneAgent configuration via command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
+For more information, see [OneAgent configuration via command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
 
 ## Globally writable directories
 
-The [OneAgent directory structure](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.") contains globally writable directories (`1777` permissions). Changing these permissions by users is not supported.
+The [OneAgent directory structure](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.") contains globally writable directories (`1777` permissions). Changing these permissions by users is not supported.
 
 ### OneAgent injection mechanism
 
@@ -2777,7 +2777,7 @@ Where `usr.sbin.tomcat-sysd` is the file that defines the AppArmor profile for T
    /proc/cgroups r,
    ```
 
-   If you used the [DATA\_STORAGE](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.") installation parameter to define a custom directory dedicated to storing large runtime data, edit the following line and add your custom directory
+   If you used the [DATA\_STORAGE](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters.") installation parameter to define a custom directory dedicated to storing large runtime data, edit the following line and add your custom directory
 
    ```
    # This path must be adjusted if DATA_STORAGE installation parameter was used
@@ -2876,7 +2876,7 @@ When you use the `set` parameters, you need to restart OneAgent service to apply
 ./oneagentctl --set-proxy=my-proxy.com --restart-service
 ```
 
-For more information, see [OneAgent configuration via command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+For more information, see [OneAgent configuration via command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Stop OneAgent using the command line
 
@@ -2898,7 +2898,7 @@ To start Dynatrace OneAgent again, use the following command:
 
 where `oneagent` is the `init.d` script for OneAgent.
 
-Learn more about [how Dynatrace interacts with your OS](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").
+Learn more about [how Dynatrace interacts with your OS](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux.md "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").
 
 ---
 
@@ -2936,7 +2936,7 @@ For a complete OneAgent uninstallation, remove the following:
 * The user running OneAgent, `dtuser`.
 * Optional If you use a custom installation path, the installer creates a symbolic link in the default directory (`/opt/dynatrace/oneagent`) to the custom installation path.
   This symbolic link needs to be removed manually after OneAgent is uninstalled.
-  For more information, see [Installation path](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#installation-path "Learn how to use the Linux installer with command line parameters.").
+  For more information, see [Installation path](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md#installation-path "Learn how to use the Linux installer with command line parameters.").
 
 ---
 
@@ -2958,7 +2958,7 @@ scraped: 2026-03-06T21:19:10.728325
 
 OneAgent installed in full-stack mode has a built-in, configurable auto-update mechanism.
 
-See [OneAgent update](/docs/ingest-from/dynatrace-oneagent/oneagent-update "Learn how to update OneAgent.") for an overview of OneAgent update, including how to monitor updates and how to create update windows.
+See [OneAgent update](ingest-from/dynatrace-oneagent/oneagent-update.md "Learn how to update OneAgent.") for an overview of OneAgent update, including how to monitor updates and how to create update windows.
 
 ## Configure OneAgent updates
 
@@ -3064,7 +3064,7 @@ To control which version of OneAgent is automatically installed on all new hosts
 1. Go to **Settings** > **Updates** > **OneAgent updates**.
 2. In **Update mode**, select **No automatic updates** to disable automatic OneAgent updates.
 
-   For details on how to disable OneAgent automatic updates on Paas/Kubernetes, see [DynaKube parameters for Dynatrace Operator on Kubernetes/OpenShift](/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
+   For details on how to disable OneAgent automatic updates on Paas/Kubernetes, see [DynaKube parameters for Dynatrace Operator on Kubernetes/OpenShift](../ru/ingest-from/setup-on-k8s/reference/dynakube-parameters.md "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
 3. In **Target version**, select the version of OneAgent to install on all new hosts.
 
 The selected OneAgent version is also used for PaaS integrations.
@@ -3106,7 +3106,7 @@ If you select an older version than a currently deployed version, you won't be a
 
 ### Disk space
 
-For details, see [OneAgent files and disk space requirements](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.")
+For details, see [OneAgent files and disk space requirements](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.")
 
 ### Free memory
 
@@ -3120,7 +3120,7 @@ Use one of these methods to check which version of OneAgent you currently have i
 
 ### OneAgent command-line interface
 
-Run `oneagentctl` with the `--version` parameter. For more information, see [OneAgent configuration via command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#display-oneagent-version "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Run `oneagentctl` with the `--version` parameter. For more information, see [OneAgent configuration via command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#display-oneagent-version "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ### Host Overview
 
@@ -3154,7 +3154,7 @@ scraped: 2026-03-06T21:18:51.882688
 
 To update an installed OneAgent instance on PPC BE follow the instructions below:
 
-1. Redo all steps of the [initial installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-ppc-be-linux "Learn how to download and install Dynatrace OneAgent on PPC BE Linux.") but install OneAgent to a new directory.
+1. Redo all steps of the [initial installation](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-ppc-be-linux.md "Learn how to download and install Dynatrace OneAgent on PPC BE Linux.") but install OneAgent to a new directory.
 2. Stop all monitored processes.
 3. Rename the current OneAgent installation directory (for example, `/opt/dynatrace/oneagent` to `/opt/dynatrace/oneagent-old`) and use the following command:
 
@@ -3176,7 +3176,7 @@ Use one of these methods to check which version of OneAgent you currently have i
 
 ### OneAgent command-line interface
 
-Run `oneagentctl` with the `--version` parameter. For more information, see [OneAgent configuration via command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#display-oneagent-version "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Run `oneagentctl` with the `--version` parameter. For more information, see [OneAgent configuration via command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#display-oneagent-version "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ### Host Overview
 
@@ -3208,46 +3208,46 @@ scraped: 2026-03-06T21:10:44.799206
 * 1-min read
 * Published Jul 19, 2017
 
-Dynatrace supports OneAgent installation on Linux. For analytical information about the supported OneAgent capabilities for Linux, see the [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). For the supported Linux distributions, check the [OneAgent supported technologies and versions](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+Dynatrace supports OneAgent installation on Linux. For analytical information about the supported OneAgent capabilities for Linux, see the [OneAgent platform and capability support matrix](../ru/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). For the supported Linux distributions, check the [OneAgent supported technologies and versions](../ru/ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 ### Installation
 
-[Disk space requirements](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.")
+[Disk space requirements](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.")
 
-[OneAgent security](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux "Learn about Dynatrace OneAgent security and modifications to your Linux-based system")
+[OneAgent security](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux.md "Learn about Dynatrace OneAgent security and modifications to your Linux-based system")
 
-[OneAgent non-privileged mode on Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Find out when Dynatrace OneAgent requires root privileges on Linux.")
+[OneAgent non-privileged mode on Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged.md "Find out when Dynatrace OneAgent requires root privileges on Linux.")
 
-[Install OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux "Learn how to download and install Dynatrace OneAgent on Linux.")
+[Install OneAgent](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux.md "Learn how to download and install Dynatrace OneAgent on Linux.")
 
-[Install OneAgent on PPC BE Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-ppc-be-linux "Learn how to download and install Dynatrace OneAgent on PPC BE Linux.")
+[Install OneAgent on PPC BE Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-ppc-be-linux.md "Learn how to download and install Dynatrace OneAgent on PPC BE Linux.")
 
-[Customize installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.")
+[Customize installation](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters.")
 
-[How to pass a proxy address](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/how-to-pass-a-proxy-address-during-oneagent-installation-on-linux "Find out how to force Dynatrace OneAgent on Linux to use a proxy for communication with your environment.")
+[How to pass a proxy address](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/how-to-pass-a-proxy-address-during-oneagent-installation-on-linux.md "Find out how to force Dynatrace OneAgent on Linux to use a proxy for communication with your environment.")
 
 ### Operation
 
-[OneAgent files and logs](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.")
+[OneAgent files and logs](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.")
 
-[Update OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux "Learn about the different ways to update OneAgent on Linux.")
+[Update OneAgent](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux.md "Learn about the different ways to update OneAgent on Linux.")
 
-[Update OneAgent on PPC BE Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-ppc-be-linux "Learn about the different ways to update OneAgent on PPC BE Linux.")
+[Update OneAgent on PPC BE Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-ppc-be-linux.md "Learn about the different ways to update OneAgent on PPC BE Linux.")
 
-[Stop/restart OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux "Learn how to stop and restart OneAgent on Linux.")
+[Stop/restart OneAgent](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux.md "Learn how to stop and restart OneAgent on Linux.")
 
-[Uninstall OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux "Learn how you can remove OneAgent from your Linux-based system.")
+[Uninstall OneAgent](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux.md "Learn how you can remove OneAgent from your Linux-based system.")
 
-[How to enable deep monitoring for applications confined by AppArmor](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/how-to-enable-deep-monitoring-for-applications-confined-by-apparmor "Read a step-by-step example of monitoring an application that's confined by AppArmor.")
-[Flatcar support on SELinux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/flatcar-os "SELinux limitations and configuration")
+[How to enable deep monitoring for applications confined by AppArmor](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/how-to-enable-deep-monitoring-for-applications-confined-by-apparmor.md "Read a step-by-step example of monitoring an application that's confined by AppArmor.")
+[Flatcar support on SELinux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/flatcar-os.md "SELinux limitations and configuration")
 
 ### See also
 
-[OneAgent configuration via command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
+[OneAgent configuration via command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
 
-[OneAgent aging mechanism](/docs/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism "Learn how OneAgent deletes old files to minimize disk space usage.")
+[OneAgent aging mechanism](../ru/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism.md "Learn how OneAgent deletes old files to minimize disk space usage.")
 
-[Troubleshoot](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation "Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows.")
+[Troubleshoot](../ru/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation.md "Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows.")
 
 ---
 
@@ -3280,12 +3280,12 @@ To get started, log in to your Dynatrace SaaS environment via the [Dynatrace.com
 
 ### Resources
 
-All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
+All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](../ru/ingest-from/dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.").
 
 ### Limitations
 
 * OneAgent installation isn't supported on networked storage mount points that are managed by standards such as NFS or iSCSI.
-* [Infrastructure Monitoring](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.") mode isn't supported on Solaris hosts.
+* [Infrastructure Monitoring](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.") mode isn't supported on Solaris hosts.
 
 ### Allow connections through firewall
 
@@ -3297,7 +3297,7 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 1. In Dynatrace Hub, select **OneAgent**.
 2. Select **Set up** > **Solaris**.
 3. Choose the CPU architecture of your environment.
-4. Provide a [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes."). This token is required to download the OneAgent installer from your environment. If you don't have a PaaS token, you can generate one right in the UI. The token is automatically appended to the download command you'll use later.
+4. Provide a [PaaS token](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes."). This token is required to download the OneAgent installer from your environment. If you don't have a PaaS token, you can generate one right in the UI. The token is automatically appended to the download command you'll use later.
 5. Click **Copy** to copy the `wget` command.
 6. Log into your Solaris host and execute the `wget` command.
 
@@ -3512,7 +3512,7 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 
    `LD_PRELOAD` will not carry over into `sudo` or `su` calls. Moreover, calling `sudo` in an execution context that has `LD_PRELOAD` set will lead to an error message that the library is in a non-secure location. This has no negative impact. This message can be ignored.
 
-If you use the WebLogic admin server to restart managed nodes on Solaris, see [Troubleshoot OneAgent installation on Solaris](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/troubleshoot-oneagent-installation-on-solaris#weblogic-admin "Find out how to solve problems related to installing OneAgent on Solaris.") to learn how to modify the startup script.
+If you use the WebLogic admin server to restart managed nodes on Solaris, see [Troubleshoot OneAgent installation on Solaris](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/troubleshoot-oneagent-installation-on-solaris.md#weblogic-admin "Find out how to solve problems related to installing OneAgent on Solaris.") to learn how to modify the startup script.
 
 ## OneAgent versions older than v1.137 and fallback
 
@@ -3778,7 +3778,7 @@ If you have trouble setting the environment variables
    ls -ltr /opt/dynatrace/oneagent/log/java
    ```
 
-For more details on setting up Oracle WebLogic monitoring, see [Configure Oracle WebLogic via startup script](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris#weblogic "Find out how to configure Dynatrace to monitor applications of different technologies that run on Solaris (x86 and SPARC).")
+For more details on setting up Oracle WebLogic monitoring, see [Configure Oracle WebLogic via startup script](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris.md#weblogic "Find out how to configure Dynatrace to monitor applications of different technologies that run on Solaris (x86 and SPARC).")
 
 ---
 
@@ -3799,7 +3799,7 @@ scraped: 2026-03-06T21:20:14.876301
 * 1-min read
 * Published Nov 13, 2025
 
-To uninstall OneAgent on Solaris, revert any configuration changes that were made when OneAgent was [installed](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris "Find out how to configure Dynatrace to monitor applications of different technologies that run on Solaris (x86 and SPARC).").
+To uninstall OneAgent on Solaris, revert any configuration changes that were made when OneAgent was [installed](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris.md "Find out how to configure Dynatrace to monitor applications of different technologies that run on Solaris (x86 and SPARC).").
 
 * Remove environment variables that are set.
   For example:
@@ -3812,7 +3812,7 @@ To uninstall OneAgent on Solaris, revert any configuration changes that were mad
   + `httpd.conf LoadModule`
 * Delete any downloaded files.
 
-Although these configuration options are common, your environment may require additional steps based on your configuration during install. For details specific to your setup, refer to the [installation guide](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris "Find out how to configure Dynatrace to monitor applications of different technologies that run on Solaris (x86 and SPARC).") and reverse the steps you applied for your applications.
+Although these configuration options are common, your environment may require additional steps based on your configuration during install. For details specific to your setup, refer to the [installation guide](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris.md "Find out how to configure Dynatrace to monitor applications of different technologies that run on Solaris (x86 and SPARC).") and reverse the steps you applied for your applications.
 
 Reinstalling OneAgent
 
@@ -3838,7 +3838,7 @@ scraped: 2026-03-06T21:20:19.993240
 
 To update an installed OneAgent instance on Solaris (x86 and SPARC) follow the instructions below:
 
-1. Redo all steps of the [initial installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris "Find out how to configure Dynatrace to monitor applications of different technologies that run on Solaris (x86 and SPARC).") but install OneAgent to a new directory.
+1. Redo all steps of the [initial installation](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris.md "Find out how to configure Dynatrace to monitor applications of different technologies that run on Solaris (x86 and SPARC).") but install OneAgent to a new directory.
 2. Stop all monitored processes.
 3. Rename the current OneAgent installation directory (for example, `/opt/dynatrace/oneagent-old`) using the following command:
 
@@ -3884,19 +3884,19 @@ scraped: 2026-03-06T21:10:56.668127
 * 1-min read
 * Updated on Nov 18, 2025
 
-Dynatrace supports Oracle Solaris (x86 and SPARC) for Java, Apache HTTP server and IBM HTTP server. If your infrastructure is based on these technologies you can use Dynatrace OneAgent to effectively monitor your hosts, services, and user experience. For analytical information about the supported OneAgent capabilities for Solaris, see the [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.").
+Dynatrace supports Oracle Solaris (x86 and SPARC) for Java, Apache HTTP server and IBM HTTP server. If your infrastructure is based on these technologies you can use Dynatrace OneAgent to effectively monitor your hosts, services, and user experience. For analytical information about the supported OneAgent capabilities for Solaris, see the [OneAgent platform and capability support matrix](../ru/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.").
 
 ### Installation
 
-[Install OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris "Find out how to configure Dynatrace to monitor applications of different technologies that run on Solaris (x86 and SPARC).")
+[Install OneAgent](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris.md "Find out how to configure Dynatrace to monitor applications of different technologies that run on Solaris (x86 and SPARC).")
 
 ### Operation
 
-[Troubleshoot](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/troubleshoot-oneagent-installation-on-solaris "Find out how to solve problems related to installing OneAgent on Solaris.")
+[Troubleshoot](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/troubleshoot-oneagent-installation-on-solaris.md "Find out how to solve problems related to installing OneAgent on Solaris.")
 
-[Update OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/update-oneagent-on-solaris "Learn how you can update Dynatrace OneAgent on Solaris.")
+[Update OneAgent](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/update-oneagent-on-solaris.md "Learn how you can update Dynatrace OneAgent on Solaris.")
 
-[Uninstall OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/uninstall-oneagent-on-solaris "Find out how to configure Dynatrace to stop monitoring applications of different technologies that run on Solaris (x86 and SPARC).")
+[Uninstall OneAgent](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/uninstall-oneagent-on-solaris.md "Find out how to configure Dynatrace to stop monitoring applications of different technologies that run on Solaris (x86 and SPARC).")
 
 ---
 
@@ -3916,7 +3916,7 @@ scraped: 2026-03-06T21:19:22.490308
 * 9-min read
 * Updated on Jan 21, 2026
 
-OneAgent installer for Windows is provided and used as a self-extracting EXE file. The installer can also be extracted and used directlyâas an MSI package. This later approach is mostly used in [Group Policy deployment](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows#installation "Learn how to download and install Dynatrace OneAgent on Windows.").
+OneAgent installer for Windows is provided and used as a self-extracting EXE file. The installer can also be extracted and used directlyâas an MSI package. This later approach is mostly used in [Group Policy deployment](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows.md#installation "Learn how to download and install Dynatrace OneAgent on Windows.").
 
 You can customize the installation by specifying command-line parameters for selected settings, or you can rely on default settings.
 However, note that parameters marked below as `environment-specific`âthat is, parameters that set the communication endpoint, environment ID, and tokenâare:
@@ -3937,7 +3937,7 @@ For example, for the EXE version of the installer:
 .\Dynatrace-OneAgent-Windows.exe --set-host-group=my_host_group --set-monitoring-mode=infra-only INSTALL_PATH="C:\installdir"
 ```
 
-When using the installer as an MSI package, you can directly append only the `INSTALL_PATH`, `LOG_PATH`, `DATA_STORAGE`, `PCAP_DRIVER`, `USER`, and `SKIP_OS_SUPPORT_CHECK` parameters. This type of installation is usually run in silent mode, as part of [Group Policy deployment](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows#installation "Learn how to download and install Dynatrace OneAgent on Windows."). The `--set-param=<value>` has to be placed inside of `ADDITIONAL_CONFIGURATION` (`ADDITIONAL_CONFIGURATION="--set-param=<value>"`).  
+When using the installer as an MSI package, you can directly append only the `INSTALL_PATH`, `LOG_PATH`, `DATA_STORAGE`, `PCAP_DRIVER`, `USER`, and `SKIP_OS_SUPPORT_CHECK` parameters. This type of installation is usually run in silent mode, as part of [Group Policy deployment](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows.md#installation "Learn how to download and install Dynatrace OneAgent on Windows."). The `--set-param=<value>` has to be placed inside of `ADDITIONAL_CONFIGURATION` (`ADDITIONAL_CONFIGURATION="--set-param=<value>"`).  
 For more information on command-line syntax, see [Silent installation](#silent-installation).
 
 ### Installer UI
@@ -3980,7 +3980,7 @@ For example:
 
 This parameter is not supported by the installer UI.
 
-The `INSTALL_PATH` parameter doesn't control the OneAgent [log and configuration files](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/disk-space-requirements-for-oneagent-installation-and-update-on-windows "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Windows.") directories. To customize the log path, use the `LOG_PATH` parameter.
+The `INSTALL_PATH` parameter doesn't control the OneAgent [log and configuration files](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/disk-space-requirements-for-oneagent-installation-and-update-on-windows.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Windows.") directories. To customize the log path, use the `LOG_PATH` parameter.
 
 ### Custom directory requirements
 
@@ -4068,7 +4068,7 @@ To set the communication endpoint, pass it as a parameter value:
 
 OneAgent and Dynatrace Cluster automatically maintain a working connection. If an endpoint detail changes, the cluster notifies OneAgent of the change and OneAgent automatically updates the endpoint you set using the `--set-server` to the new working value.
 
-To change the endpoint after installation, use `--set-server` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change the endpoint after installation, use `--set-server` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Environment ID
 
@@ -4076,7 +4076,7 @@ To change the endpoint after installation, use `--set-server` in the [OneAgent c
 
 **Default value**: `environment specific`
 
-The Dynatrace [environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") you received with your activation email. If you install OneAgent using the Dynatrace **Deploy** page, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
+The Dynatrace [environment ID](../ru/discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") you received with your activation email. If you install OneAgent using the Dynatrace **Deploy** page, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
 
 To set the environment ID, pass it as a parameter value:
 
@@ -4084,7 +4084,7 @@ To set the environment ID, pass it as a parameter value:
 --set-tenant=mySampleEnv
 ```
 
-To change the tenant after installation, use `--set-tenant` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change the tenant after installation, use `--set-tenant` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Token
 
@@ -4098,15 +4098,15 @@ To set a token, pass it as a parameter value:
 --set-tenant-token=abcdefghij123456
 ```
 
-See [Access tokens](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token "Learn what a tenant token is and how to change it.") to learn how to obtain a token.
+See [Access tokens](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token.md "Learn what a tenant token is and how to change it.") to learn how to obtain a token.
 
-To change the tenant token after installation, use `--set-tenant-token` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change the tenant token after installation, use `--set-tenant-token` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Network zones
 
 **Default value**: `unset`
 
-To learn about network zone naming rules and other reference information, see [Network zones](/docs/manage/network-zones "Find out how network zones work in Dynatrace.").
+To learn about network zone naming rules and other reference information, see [Network zones](../ru/manage/network-zones.md "Find out how network zones work in Dynatrace.").
 
 Use the `--set-network-zone` parameter to instruct OneAgent to communicate via the specified network zone:
 
@@ -4114,9 +4114,9 @@ Use the `--set-network-zone` parameter to instruct OneAgent to communicate via t
 --set-network-zone=your.network.zone
 ```
 
-To change or clear the network zone assignment after installation, use [Remote configuration management](/docs/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
+To change or clear the network zone assignment after installation, use [Remote configuration management](ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
 
-Alternatively, you can use `--set-network-zone` on the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#nz "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Alternatively, you can use `--set-network-zone` on the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#nz "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Proxy
 
@@ -4132,7 +4132,7 @@ To set a proxy, pass it as a parameter value:
 
 Dynatrace also supports IPv6 addresses.
 
-To change or clear the proxy address after installation, use `--set-proxy` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change or clear the proxy address after installation, use `--set-proxy` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Port range
 
@@ -4145,10 +4145,10 @@ Starting with OneAgent version 1.301, OneAgent doesn't use the TCP ports for its
 Watchdog is a binary used for starting and monitoring OneAgent monitoring processes:
 
 * `oneagentos`âoperating system monitoring
-* `oneagentplugin`âmonitoring using [OneAgent extensions](/docs/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Develop your own Extensions in Dynatrace.")
-* `oneagentextensions`âmonitoring using local [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
-* `oneagentloganalytics`â[Log Monitoring](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
-* `oneagentnetwork`â[network monitoring](/docs/observe/infrastructure-observability/networks-classic "Learn how to monitor network communications.")
+* `oneagentplugin`âmonitoring using [OneAgent extensions](../ru/ingest-from/extensions/develop-your-extensions.md#oneagent-extensions "Develop your own Extensions in Dynatrace.")
+* `oneagentextensions`âmonitoring using local [Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
+* `oneagentloganalytics`â[Log Monitoring](analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* `oneagentnetwork`â[network monitoring](observe/infrastructure-observability/networks-classic.md "Learn how to monitor network communications.")
 
 Use the `--set-watchdog-portrange=<arg>` parameter to change the watchdog listening port range to `<arg>`. The `<arg>` must contain two port numbers separated by a colon (`:`). For example `50000:50100`. The maximum supported port range is from 1024 to 65535. The port range must cover at least 4 ports. The port number starting the range must be lower. For example:
 
@@ -4156,7 +4156,7 @@ Use the `--set-watchdog-portrange=<arg>` parameter to change the watchdog listen
 --set-watchdog-portrange=50000:50100
 ```
 
-To change port range after installation, use `--set-watchdog-portrange` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#portrange "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change port range after installation, use `--set-watchdog-portrange` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#portrange "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Auto-update
 
@@ -4172,7 +4172,7 @@ After you set the parameter to `false`, you won't be able to control OneAgent au
 
 **Default value**: `unset`
 
-The name of a group you want to assign the host to. For details, see [Organize your environment using host groups](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups."). Host group string requirements:
+The name of a group you want to assign the host to. For details, see [Organize your environment using host groups](../ru/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups."). Host group string requirements:
 
 * Can contain only alphanumeric characters, hyphens, underscores, and periods
 * Must not start with `dt.`
@@ -4184,11 +4184,11 @@ To assign a host to the host group, pass the host group name as a parameter valu
 --set-host-group=My.HostGroup_123-456
 ```
 
-To remove the host from a group, you need to [uninstall OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux "Learn how you can remove OneAgent from your Linux-based system.") or pass an empty value `--set-host-group=""` when running a OneAgent update. You can't remove the host from a group using the `HOST_GROUP` parameter when updating OneAgent.
+To remove the host from a group, you need to [uninstall OneAgent](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux.md "Learn how you can remove OneAgent from your Linux-based system.") or pass an empty value `--set-host-group=""` when running a OneAgent update. You can't remove the host from a group using the `HOST_GROUP` parameter when updating OneAgent.
 
-To change or clear the host group assignment after installation, use [Remote configuration management](/docs/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host group** action).
+To change or clear the host group assignment after installation, use [Remote configuration management](ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host group** action).
 
-Alternatively, you can use `--set-host-group` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#host-groups "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Alternatively, you can use `--set-host-group` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#host-groups "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Monitoring mode
 
@@ -4212,7 +4212,7 @@ For example:
 --set-monitoring-mode=infra-only
 ```
 
-To change the monitoring mode after installation, use `--set-monitoring-mode` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#infrastructure-monitoring "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") or set it using the [Host settings](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.") page.
+To change the monitoring mode after installation, use `--set-monitoring-mode` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#infrastructure-monitoring "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") or set it using the [Host settings](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.") page.
 
 ## Custom host name
 
@@ -4220,7 +4220,7 @@ To change the monitoring mode after installation, use `--set-monitoring-mode` in
 
 Use the `--set-host-name` to override an automatically detected host name. The host name value must not contain the `<`, `>`, `&`, `CR` (carriage return), and `LF` (line feed) characters and the maximum length is 256 characters.
 
-This command adds a custom host name to display in the UI, but the detected host name is not changed. For details, see [Set custom host names](/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name.").
+This command adds a custom host name to display in the UI, but the detected host name is not changed. For details, see [Set custom host names](observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments.md "Learn how to change a monitored host name.").
 
 To set the host name:
 
@@ -4228,7 +4228,7 @@ To set the host name:
 --set-host-name=myhostname
 ```
 
-To change the host name after installation, use `--set-host-name` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+To change the host name after installation, use `--set-host-name` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Custom host metadata
 
@@ -4246,9 +4246,9 @@ To add or change host properties:
 
 You can add or change more than one property in the same command.
 
-To change the host metadata after installation, use [Remote configuration management](/docs/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select **modify host properties** action).
+To change the host metadata after installation, use [Remote configuration management](ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select **modify host properties** action).
 
-Alternatively, you can use `--set-host-property` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Alternatively, you can use `--set-host-property` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Custom host tags
 
@@ -4264,9 +4264,9 @@ To add or change host tags:
 
 You can add or change more than one tag in the same command. It is allowed to define tags with the same key but different values.
 
-To change the host tags after installation, use [Remote configuration management](/docs/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host tags** action).
+To change the host tags after installation, use [Remote configuration management](ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host tags** action).
 
-Alternatively, you can use `--set-host-tag` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Alternatively, you can use `--set-host-tag` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Host ID source
 
@@ -4307,7 +4307,7 @@ OneAgent can download system logs for the purpose of diagnosing issues that may 
 `--set-system-logs-access-enabled=false` disables access to logs  
 `--set-system-logs-access-enabled=true` enables access to logs
 
-If you need to change this access after installation, use the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent."):
+If you need to change this access after installation, use the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent."):
 
 Note that this is a self-diagnostics setting that is not related to [Log Monitoring](#log-monitoring).
 
@@ -4315,12 +4315,12 @@ Note that this is a self-diagnostics setting that is not related to [Log Monitor
 
 **Default value**: `true`
 
-When set to `true`, allows OneAgent to access log files for the purpose of Log Monitoring. Accepted values are (`true`, `false`) or (`1`, `0`). This option can alternatively be [enabled/disabled through the Web UI](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
+When set to `true`, allows OneAgent to access log files for the purpose of Log Monitoring. Accepted values are (`true`, `false`) or (`1`, `0`). This option can alternatively be [enabled/disabled through the Web UI](analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
 
 For example:
 `--set-app-log-content-access=true`
 
-If you need to enable or disable Log Monitoring after installation, use `-set-app-log-content-access` in [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+If you need to enable or disable Log Monitoring after installation, use `-set-app-log-content-access` in [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Automatic injection
 
@@ -4330,23 +4330,23 @@ Do not set this parameter to `true` during the installation process.
 
 You can set the `--set-auto-injection-enabled=<arg>` parameter to `true` or `false` to disable or enable OneAgent auto-injection.
 
-For more information, see [Automatic injection](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#injection-toggle "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+For more information, see [Automatic injection](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#injection-toggle "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Local metric ingestion
 
 **Default value**: `14449`
 
-You can use the `--set-extensions-ingest-port=<arg>` parameter to change the default communication port used for local metric ingestion. The port is used by [OneAgent REST API](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities."), [Scripting integration](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe "Learn how to ingest metrics using local scripting integration.") (`dynatrace_ingest`), and [Telegraf](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf "Ingest Telegraf metrics into Dynatrace.").
+You can use the `--set-extensions-ingest-port=<arg>` parameter to change the default communication port used for local metric ingestion. The port is used by [OneAgent REST API](../ru/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api.md "Use the Dynatrace API to retrieve the metrics of monitored entities."), [Scripting integration](../ru/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe.md "Learn how to ingest metrics using local scripting integration.") (`dynatrace_ingest`), and [Telegraf](../ru/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf.md "Ingest Telegraf metrics into Dynatrace.").
 
-For more information, see [Metric ingestion](/docs/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.").
+For more information, see [Metric ingestion](../ru/ingest-from/extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace.").
 
 ## StatsD metric ingest
 
 **Default value**: `18125`
 
-You can use the `--set-extensions-statsd-port=<arg>` parameter to change the default [DynatraceStatsD](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd "Ingest metrics into Dynatrace using OneAgent and the ActiveGate StatsD client.") UDP listening port.
+You can use the `--set-extensions-statsd-port=<arg>` parameter to change the default [DynatraceStatsD](../ru/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd.md "Ingest metrics into Dynatrace using OneAgent and the ActiveGate StatsD client.") UDP listening port.
 
-For more information, see [Metric ingestion](/docs/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.").
+For more information, see [Metric ingestion](../ru/ingest-from/extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace.").
 
 ## OneAgent extension user
 
@@ -4354,7 +4354,7 @@ For more information, see [Metric ingestion](/docs/ingest-from/extend-dynatrace/
 
 The **Default value**: `LocalSystem` (OneAgent version 1.195+)
 
-Use the **`USER`** parameter to define the user running the process responsible for [Dynatrace extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") functionality. For example:
+Use the **`USER`** parameter to define the user running the process responsible for [Dynatrace extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.") functionality. For example:
 
 `.\Dynatrace-OneAgent-Windows.exe USER=LocalService`
 
@@ -4432,8 +4432,8 @@ Example:
 
 For more information, see
 
-* [OneAgent security on Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows#installation "Learn about Dynatrace OneAgent security and modifications to your Windows-based system")
-* [Install OneAgent on Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows#winpcapuninstall "Learn how to download and install Dynatrace OneAgent on Windows.")
+* [OneAgent security on Windows](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows.md#installation "Learn about Dynatrace OneAgent security and modifications to your Windows-based system")
+* [Install OneAgent on Windows](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows.md#winpcapuninstall "Learn how to download and install Dynatrace OneAgent on Windows.")
 
 ## Skipping operating system support check
 
@@ -4443,7 +4443,7 @@ This parameter is not supported by the installer UI.
 
 This parameter is not preserved across automatic updates.
 
-For information about the OneAgent auto-update mechanism, see [Update Dynatrace OneAgent on Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/update-oneagent-on-windows "Learn about the different ways to update Dynatrace OneAgent on Windows.").
+For information about the OneAgent auto-update mechanism, see [Update Dynatrace OneAgent on Windows](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/update-oneagent-on-windows.md "Learn about the different ways to update Dynatrace OneAgent on Windows.").
 
 **Default value**: `false`
 
@@ -4452,7 +4452,7 @@ The **`SKIP_OS_SUPPORT_CHECK`** parameter allows you to force OneAgent installat
 For example:
 `.\Dynatrace-OneAgent-Windows.exe SKIP_OS_SUPPORT_CHECK=true`
 
-For supported platforms, see [Technology support](/docs/ingest-from/technology-support#windows "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+For supported platforms, see [Technology support](../ru/ingest-from/technology-support.md#windows "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 ---
 
@@ -4494,15 +4494,15 @@ The same disk space requirements apply to both Full-stack and Infrastructure mon
 
 1
 
-Use the [INSTALL\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#installation-path "Learn how to use the OneAgent installer for Windows.") installation parameter.
+Use the [INSTALL\_PATH](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md#installation-path "Learn how to use the OneAgent installer for Windows.") installation parameter.
 
 2
 
-Use the [LOG\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#log-path "Learn how to use the OneAgent installer for Windows.") installation parameter.
+Use the [LOG\_PATH](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md#log-path "Learn how to use the OneAgent installer for Windows.") installation parameter.
 
 3
 
-Use the [DATA\_STORAGE](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#data-storage "Learn how to use the OneAgent installer for Windows.") installation parameter.
+Use the [DATA\_STORAGE](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md#data-storage "Learn how to use the OneAgent installer for Windows.") installation parameter.
 
 4
 
@@ -4510,17 +4510,17 @@ The size depends on the number of ingested logs.
 
 5
 
-Applicable only if you use Dynatrace Extensions that [define the log metrics, events, or add their own log processing rules](/docs/ingest-from/extensions/advanced-configuration/extension-customize#log-metrics-events-and-processing-rules "Learn how to instrument your extensions to customize how the ingested data is handled by Dynatrace."). Can be changed via support request.
+Applicable only if you use Dynatrace Extensions that [define the log metrics, events, or add their own log processing rules](../ru/ingest-from/extensions/advanced-configuration/extension-customize.md#log-metrics-events-and-processing-rules "Learn how to instrument your extensions to customize how the ingested data is handled by Dynatrace."). Can be changed via support request.
 
 6
 
 The reliability mechanism does not work if the requirement is not met. For more information, see [Persistence details](#persistence).
 
-For a complete list of files and directories added to your system by OneAgent, see [OneAgent security on Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows "Learn about Dynatrace OneAgent security and modifications to your Windows-based system").
+For a complete list of files and directories added to your system by OneAgent, see [OneAgent security on Windows](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows.md "Learn about Dynatrace OneAgent security and modifications to your Windows-based system").
 
 ## OneAgent files aging mechanism
 
-OneAgent in full-stack monitoring mode uses a built-in aging mechanism to ensure that the OneAgent files, including log files and runtime data, are kept within a reasonable size. For more information, see [OneAgent file aging mechanism](/docs/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism "Learn how OneAgent deletes old files to minimize disk space usage.").
+OneAgent in full-stack monitoring mode uses a built-in aging mechanism to ensure that the OneAgent files, including log files and runtime data, are kept within a reasonable size. For more information, see [OneAgent file aging mechanism](../ru/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism.md "Learn how OneAgent deletes old files to minimize disk space usage.").
 
 ## Space required for updates
 
@@ -4587,7 +4587,7 @@ scraped: 2026-03-06T21:19:29.325777
 * 1-min read
 * Published Sep 19, 2018
 
-The Windows installer allows you to enter a proxy address during installation, so in the majority of cases you don't need to worry about adding extra command line parameters. Command line parameters are particularly useful when you're deploying a [Group Policy installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows "Learn how to use the OneAgent installer for Windows.") or other automated task.
+The Windows installer allows you to enter a proxy address during installation, so in the majority of cases you don't need to worry about adding extra command line parameters. Command line parameters are particularly useful when you're deploying a [Group Policy installation](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md "Learn how to use the OneAgent installer for Windows.") or other automated task.
 
 The OneAgent installer recognizes the `--set-proxy` parameter. The value of the parameter is the proxy server address. Add the port number following a colon (for example, `172.1.1.128:8080`). For an authenticating proxy, you can specify the username and password like this `username:password@172.1.1.128:8080`, where both username and password need to be URL encoded. Dynatrace also supports IPv6 addresses.
 
@@ -4603,7 +4603,7 @@ C:\Users\Admin\Downloads>Dynatrace-OneAgent-Windows-1.171.0.exe  --set-proxy=10.
 
 ## Change proxy after installation
 
-If you need to change the proxy address after installation, use `--set-proxy` in the [OneAgent command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+If you need to change the proxy address after installation, use `--set-proxy` in the [OneAgent command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ---
 
@@ -4629,18 +4629,18 @@ This page describes how to download and install Dynatrace OneAgent on Windows.
 To get started, log in to your Dynatrace SaaS environment via the [Dynatrace.comï»¿](https://www.dynatrace.com) website using the credentials provided during signup. Then continue with the installation steps below.
 
 Dynatrace provides an Ansible collection that you can use to orchestrate OneAgent deployment in your environment.
-For more information, see [Install OneAgent using Ansible](/docs/ingest-from/dynatrace-oneagent/deployment-orchestration/ansible "Learn how to deploy OneAgent using Dynatrace-provided Ansible playbook.").
+For more information, see [Install OneAgent using Ansible](ingest-from/dynatrace-oneagent/deployment-orchestration/ansible.md "Learn how to deploy OneAgent using Dynatrace-provided Ansible playbook.").
 
 ## Requirements and prerequisites
 
-* You need [administrator rights](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows "Learn about Dynatrace OneAgent security and modifications to your Windows-based system") for the servers where OneAgent will be installed as well as for changing firewall settings (necessary only if your internal routing policy may prevent Dynatrace software from reaching the Internet).
+* You need [administrator rights](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows.md "Learn about Dynatrace OneAgent security and modifications to your Windows-based system") for the servers where OneAgent will be installed as well as for changing firewall settings (necessary only if your internal routing policy may prevent Dynatrace software from reaching the Internet).
 * You need permissions and credentials for restarting all your application services.
-* You need to check also the [disk space requirements](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/disk-space-requirements-for-oneagent-installation-and-update-on-windows "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Windows.").
+* You need to check also the [disk space requirements](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/disk-space-requirements-for-oneagent-installation-and-update-on-windows.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Windows.").
 * The host on which you install OneAgent needs at least 200 MB RAM.
 * OneAgent installation isn't supported on networked storage mount points that are managed by standards such as NFS or iSCSI.
-* All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
-* For OneAgent version 1.253 and earlier, we recommend that you [uninstall any existing `WinPcap` driver](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows#uninstall-winpcap-driver-to-allow-npcap-installation "Learn how to download and install Dynatrace OneAgent on Windows.") to allow `Npcap` installationâdo this on all Windows versions, except for `Windows Server 2019 build 1809 without hotfix KB5066187`.
-  For OneAgent version 1.255+, `Npcap` is installed by default and may cause a network disruption on `Windows Server 2016`, `Windows Server 2019 build 1809`, and `Windows Server 2019 build 1809 without hotfix KB5066187`. To prevent it, upgrade your hosts with the hotfix [KB5066187ï»¿](https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066187) or use [other documented options](/docs/observe/infrastructure-observability/networks-classic/troubleshoot-network-monitoring#potential-network-disruption-during-oneagent-installation-on-windows "Learn more about troubleshooting network monitoring.").
+* All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](../ru/ingest-from/dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.").
+* For OneAgent version 1.253 and earlier, we recommend that you [uninstall any existing `WinPcap` driver](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows.md#uninstall-winpcap-driver-to-allow-npcap-installation "Learn how to download and install Dynatrace OneAgent on Windows.") to allow `Npcap` installationâdo this on all Windows versions, except for `Windows Server 2019 build 1809 without hotfix KB5066187`.
+  For OneAgent version 1.255+, `Npcap` is installed by default and may cause a network disruption on `Windows Server 2016`, `Windows Server 2019 build 1809`, and `Windows Server 2019 build 1809 without hotfix KB5066187`. To prevent it, upgrade your hosts with the hotfix [KB5066187ï»¿](https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066187) or use [other documented options](../ru/observe/infrastructure-observability/networks-classic/troubleshoot-network-monitoring.md#potential-network-disruption-during-oneagent-installation-on-windows "Learn more about troubleshooting network monitoring.").
 
 ### Allow connections through firewall
 
@@ -4655,10 +4655,10 @@ If you have the `WinPcap` driver installed, we recommend that you remove it prio
 
 For more information, see:
 
-* [OneAgent security on Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows "Learn about Dynatrace OneAgent security and modifications to your Windows-based system")
-* [Customize OneAgent installation on Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#packet_capture_driver "Learn how to use the OneAgent installer for Windows.")
+* [OneAgent security on Windows](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows.md "Learn about Dynatrace OneAgent security and modifications to your Windows-based system")
+* [Customize OneAgent installation on Windows](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md#packet_capture_driver "Learn how to use the OneAgent installer for Windows.")
 
-During the upgrade from `WinPcap` to `Npcap`, you might encounter network disruptions that can be mitigated by upgrading your Windows Server version and/or disabling `Microsoft Network Monitor Driver`. For more details, see [Potential network disruptions during OneAgent installation on Windows](/docs/observe/infrastructure-observability/networks-classic/troubleshoot-network-monitoring#disruptionnetwork "Learn more about troubleshooting network monitoring.")
+During the upgrade from `WinPcap` to `Npcap`, you might encounter network disruptions that can be mitigated by upgrading your Windows Server version and/or disabling `Microsoft Network Monitor Driver`. For more details, see [Potential network disruptions during OneAgent installation on Windows](../ru/observe/infrastructure-observability/networks-classic/troubleshoot-network-monitoring.md#disruptionnetwork "Learn more about troubleshooting network monitoring.")
 
 ## Re-installation or repair of installation
 
@@ -4670,7 +4670,7 @@ OneAgent installer for Windows doesn't support the `modify` and `repair` operati
 
 1. In Dynatrace Hub, select **OneAgent**.
 2. Select **Set up** > **Windows**.
-3. Paste a [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.") into **Installer download token** or select **Generate token** to generate a token now and automatically paste it into **Installer download token**. This token is required to download the OneAgent installer from your environment. The token is automatically appended to the download and installation commands you'll use later.
+3. Paste a [PaaS token](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.") into **Installer download token** or select **Generate token** to generate a token now and automatically paste it into **Installer download token**. This token is required to download the OneAgent installer from your environment. The token is automatically appended to the download and installation commands you'll use later.
 4. Download the installer. There are two options:
 
    * Select **Download OneAgent installer** to download the installer for Windows (EXE file) for single-server installation.
@@ -4689,21 +4689,21 @@ OneAgent installer for Windows doesn't support the `modify` and `repair` operati
    C:\Downloads\Dynatrace-OneAgent-Windows.exe --unpack-msi "C:\installers"
    ```
 
-   When using the `--unpack-msi` parameter, no other [installation parameters](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows "Learn how to use the OneAgent installer for Windows.") are allowed. Add the `--quiet` parameter to run the MSI package extraction in quiet mode. Use the `--help` parameter to display a pop-up window with a list of available parameters.
+   When using the `--unpack-msi` parameter, no other [installation parameters](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md "Learn how to use the OneAgent installer for Windows.") are allowed. Add the `--quiet` parameter to run the MSI package extraction in quiet mode. Use the `--help` parameter to display a pop-up window with a list of available parameters.
 
-   Copy and paste the MSI package and the batch file when configuring Group Policy for Dynatrace installation. The default installation should work in most cases, but if you need to customize it, you can modify the [installation parameters](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows "Learn how to use the OneAgent installer for Windows."). Then, you have to create a distribution point, assign a package (the OneAgent MSI package with parameters), specify a command to install the MSI package as [silent installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#silent-installation "Learn how to use the OneAgent installer for Windows."), and publish your policy.
+   Copy and paste the MSI package and the batch file when configuring Group Policy for Dynatrace installation. The default installation should work in most cases, but if you need to customize it, you can modify the [installation parameters](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md "Learn how to use the OneAgent installer for Windows."). Then, you have to create a distribution point, assign a package (the OneAgent MSI package with parameters), specify a command to install the MSI package as [silent installation](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md#silent-installation "Learn how to use the OneAgent installer for Windows."), and publish your policy.
 5. Optional **Set customized options**  
    At this point, the Dynatrace UI allows you to customize your OneAgent installation: You can specify a number of customizations interactively on-screen. Based on your entries, an installation command will be generated and displayed, for use in the next step of installation (see below).  
    You can:
 
-   * Set a [network zone](/docs/manage/network-zones#deploy-network-zones "Find out how network zones work in Dynatrace.") for this host.
-   * Organize your hosts into [host groups](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups."), if your environment is segmented (for example, into development and production).
-   * Override automatically detected [host name](/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name."). This is useful in large and dynamic environments, where defined host names can be unintuitive or can change frequently.
-   * Apply [tags](/docs/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.") to the host to organize your monitored environments in a meaningful way.
-   * Change the OneAgent mode to Infrastructure Monitoring or Discovery in place of Full-Stack Monitoring. For more information, see [OneAgent monitoring modes](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
-   * Disable [Log Monitoring](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
+   * Set a [network zone](../ru/manage/network-zones.md#deploy-network-zones "Find out how network zones work in Dynatrace.") for this host.
+   * Organize your hosts into [host groups](../ru/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups."), if your environment is segmented (for example, into development and production).
+   * Override automatically detected [host name](observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments.md "Learn how to change a monitored host name."). This is useful in large and dynamic environments, where defined host names can be unintuitive or can change frequently.
+   * Apply [tags](../common/manage/tags-and-metadata.md "Use tags and metadata to organize data in your Dynatrace environment.") to the host to organize your monitored environments in a meaningful way.
+   * Change the OneAgent mode to Infrastructure Monitoring or Discovery in place of Full-Stack Monitoring. For more information, see [OneAgent monitoring modes](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.").
+   * Disable [Log Monitoring](analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
 
-   **If further customizations are required, you can specify [additional options on the command line](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows "Learn how to use the OneAgent installer for Windows.").**
+   **If further customizations are required, you can specify [additional options on the command line](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md "Learn how to use the OneAgent installer for Windows.").**
 6. If you have not specified any custom options, simply run the executable file and follow the instructions as displayed.
    If you have specified custom options above, use the generated command, and run it from the download directory. The command will contain all the installation parameters reflecting the custom settings you have specified.
 7. Restart all processes that you want to monitor. Youâll be prompted with a list of the processes that need to be restarted. Note that you can restart your processes at any time, even during your organizationâs next planned maintenance period. Though until all processes have been restarted, youâll only see a limited set of metrics, for example CPU or memory consumption.
@@ -4726,7 +4726,7 @@ During the installation process, the installer:
   + Log in through Remote Desktop Services.  
     The `dtuser` is required for Dynatrace to operate properly, therefore you must not delete it. If, for some reason, the `dtuser` was deleted, next update will recreate it.
 * OneAgent version 1.195+ For fresh OneAgent 1.195+ installations, the default `LocalSystem account` is used to run OneAgent extensions.
-  For a summarized view of the changes made to your system by OneAgent installation, see [OneAgent security on Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows "Learn about Dynatrace OneAgent security and modifications to your Windows-based system").
+  For a summarized view of the changes made to your system by OneAgent installation, see [OneAgent security on Windows](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows.md "Learn about Dynatrace OneAgent security and modifications to your Windows-based system").
 
 ## You've arrived!
 
@@ -4756,7 +4756,7 @@ scraped: 2026-03-06T21:19:25.957588
 
 To fully automate the monitoring of your operating systems, processes, and network interfaces, Dynatrace requires privileged access to your operating system during both installation and operation.
 
-OneAgent is tested extensively to ensure that it has minimal performance impact on your system and [conforms to the highest security standards](/docs/manage/data-privacy-and-security "Learn how Dynatrace applies various security measures required to protect private data.").
+OneAgent is tested extensively to ensure that it has minimal performance impact on your system and [conforms to the highest security standards](../common/manage/data-privacy-and-security.md "Learn how Dynatrace applies various security measures required to protect private data.").
 
 ## Permissions
 
@@ -4768,8 +4768,8 @@ OneAgent installer requires admin privileges to:
 
 * Create the OneAgent service.
 * Modify certain registry keys.
-* Install packet capture driver (Npcap or WinPcap) for network metrics collection. For more information, see [Packet capture driver (pcap)](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#packet_capture_driver "Learn how to use the OneAgent installer for Windows.").
-* Install [oneagentmon device](/docs/discover-dynatrace/get-started/glossary#o "Get acquainted with Dynatrace terminology.").
+* Install packet capture driver (Npcap or WinPcap) for network metrics collection. For more information, see [Packet capture driver (pcap)](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md#packet_capture_driver "Learn how to use the OneAgent installer for Windows.").
+* Install [oneagentmon device](discover-dynatrace/get-started/glossary.md#o "Get acquainted with Dynatrace terminology.").
 
 ### Operation
 
@@ -4795,7 +4795,7 @@ OneAgent performs the following changes to your system:
 
 OneAgent installer modifies the following aspects of your system:
 
-* Starting with version 1.195, no user account is created to run OneAgent extensions. Instead, the `NT AUTHORITY\SYSTEM` privileged system account is used. For more information, see [OneAgent extension user](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#oneagent-extension-user "Learn how to use the OneAgent installer for Windows.").
+* Starting with version 1.195, no user account is created to run OneAgent extensions. Instead, the `NT AUTHORITY\SYSTEM` privileged system account is used. For more information, see [OneAgent extension user](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md#oneagent-extension-user "Learn how to use the OneAgent installer for Windows.").
 * The `Dynatrace OneAgent` service is created.
 * The Dynatrace OneAgent program is registered with Windows Installer.
 * `oneagentmon` driver is installed and `OneAgentMon` device is created. It's required to enable automatic injection into processes.
@@ -4806,7 +4806,7 @@ OneAgent installer modifies the following aspects of your system:
   + `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dynatrace OneAgent`
   + `HKEY_LOCAL_MACHINE\SOFTWARE\Caphyon\Advanced Installer`
 * [Troubleshooting: Network Agent initialization failure on Windowsï»¿](https://dt-url.net/7c438ee)
-* The `Npcap` driver is installed with the `/admin_only` flag set, which restricts Npcap's packet reading and writing to users with Administrator privileges only. Unprivileged users can't access Npcap's functionality on a monitored host. Note that WinPcap doesn't offer this restriction. For more information, see [Customize OneAgent installation on Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#packet_capture_driver "Learn how to use the OneAgent installer for Windows.").
+* The `Npcap` driver is installed with the `/admin_only` flag set, which restricts Npcap's packet reading and writing to users with Administrator privileges only. Unprivileged users can't access Npcap's functionality on a monitored host. Note that WinPcap doesn't offer this restriction. For more information, see [Customize OneAgent installation on Windows](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md#packet_capture_driver "Learn how to use the OneAgent installer for Windows.").
 
   Make sure these Npcap and WinPcap operations are permitted in your system's security settings:
 
@@ -4822,14 +4822,14 @@ OneAgent installer modifies the following aspects of your system:
 
 OneAgents installer adds the following files to your system:
 
-* OneAgent binaries and configuration files are saved in `%PROGRAMFILES%\dynatrace\oneagent`. Note that you can change the location using the [INSTALL\_PATH](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#installation-path "Learn how to use the OneAgent installer for Windows.") parameter.
+* OneAgent binaries and configuration files are saved in `%PROGRAMFILES%\dynatrace\oneagent`. Note that you can change the location using the [INSTALL\_PATH](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md#installation-path "Learn how to use the OneAgent installer for Windows.") parameter.
 * Installer temporary files are saved in `C:\AI_RecycleBin`. The folder is deleted after the installation is complete.
 
 ### Operation
 
 * OneAgent temporary files and runtime configuration are saved in `%PROGRAMDATA%\dynatrace\oneagent\runtime`.
 * OneAgent persistent configuration is saved in `%PROGRAMDATA%\dynatrace\oneagent\config`.
-* Large runtime data, such as memory dumps, is saved in `%PROGRAMDATA%\dynatrace\oneagent\datastorage`. Note that you can change the location of large runtime data using the [DATA\_STORAGE](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#data-storage "Learn how to use the OneAgent installer for Windows.") parameter.
+* Large runtime data, such as memory dumps, is saved in `%PROGRAMDATA%\dynatrace\oneagent\datastorage`. Note that you can change the location of large runtime data using the [DATA\_STORAGE](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md#data-storage "Learn how to use the OneAgent installer for Windows.") parameter.
 
 ## System logs downloaded by OneAgent
 
@@ -4838,11 +4838,11 @@ OneAgent downloads Security, System, and Application system logs from the last 1
 Revoking access to system logs
 
 To revoke access to system logs, use the `oneagentctl` command with the `--set-system-logs-access-enabled` parameter set to `false`.  
-For more information, see [OneAgent configuration via command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
+For more information, see [OneAgent configuration via command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
 
 ## Globally writable directories
 
-The [OneAgent directory structure](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/disk-space-requirements-for-oneagent-installation-and-update-on-windows "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Windows.") contains globally writable directories (directories where the `Everyone` user group can write, modify, or execute). Changing these permissions by users is not supported.
+The [OneAgent directory structure](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/disk-space-requirements-for-oneagent-installation-and-update-on-windows.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Windows.") contains globally writable directories (directories where the `Everyone` user group can write, modify, or execute). Changing these permissions by users is not supported.
 
 ### OneAgent injection mechanism
 
@@ -4905,7 +4905,7 @@ When you use the `set` parameters, you need to restart OneAgent service to apply
 .\oneagentctl.exe --set-proxy=my-proxy.com --restart-service
 ```
 
-For more information, see [OneAgent configuration via command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+For more information, see [OneAgent configuration via command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Stop OneAgent using the command line
 
@@ -4919,7 +4919,7 @@ To start OneAgent again, use the following command:
 
 `net start "Dynatrace OneAgent"`, where `Dynatrace OneAgent` is the service name for OneAgent.
 
-Learn more about [how Dynatrace interacts with your OS](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows "Learn about Dynatrace OneAgent security and modifications to your Windows-based system").
+Learn more about [how Dynatrace interacts with your OS](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows.md "Learn about Dynatrace OneAgent security and modifications to your Windows-based system").
 
 ---
 
@@ -5016,7 +5016,7 @@ scraped: 2026-03-06T21:19:20.645595
 
 OneAgent installed in full-stack mode has a built-in, configurable auto-update mechanism.
 
-See [OneAgent update](/docs/ingest-from/dynatrace-oneagent/oneagent-update "Learn how to update OneAgent.") for an overview of OneAgent update, including how to monitor updates and how to create update windows.
+See [OneAgent update](ingest-from/dynatrace-oneagent/oneagent-update.md "Learn how to update OneAgent.") for an overview of OneAgent update, including how to monitor updates and how to create update windows.
 
 ## Configure OneAgent updates
 
@@ -5122,7 +5122,7 @@ To control which version of OneAgent is automatically installed on all new hosts
 1. Go to **Settings** > **Updates** > **OneAgent updates**.
 2. In **Update mode**, select **No automatic updates** to disable automatic OneAgent updates.
 
-   For details on how to disable OneAgent automatic updates on Paas/Kubernetes, see [DynaKube parameters for Dynatrace Operator on Kubernetes/OpenShift](/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
+   For details on how to disable OneAgent automatic updates on Paas/Kubernetes, see [DynaKube parameters for Dynatrace Operator on Kubernetes/OpenShift](../ru/ingest-from/setup-on-k8s/reference/dynakube-parameters.md "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
 3. In **Target version**, select the version of OneAgent to install on all new hosts.
 
 The selected OneAgent version is also used for PaaS integrations.
@@ -5164,7 +5164,7 @@ If you select an older version than a currently deployed version, you won't be a
 
 ### Disk space
 
-For details, see [OneAgent files and disk space requirements](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/disk-space-requirements-for-oneagent-installation-and-update-on-windows "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Windows.")
+For details, see [OneAgent files and disk space requirements](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/disk-space-requirements-for-oneagent-installation-and-update-on-windows.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Windows.")
 
 ### Free memory
 
@@ -5178,7 +5178,7 @@ Use one of these methods to check which version of OneAgent you currently have i
 
 ### OneAgent command-line interface
 
-Run `oneagentctl` with the `--version` parameter. For more information, see [OneAgent configuration via command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#display-oneagent-version "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Run `oneagentctl` with the `--version` parameter. For more information, see [OneAgent configuration via command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#display-oneagent-version "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ### Host Overview
 
@@ -5210,35 +5210,35 @@ scraped: 2026-03-06T21:10:48.224480
 * 1-min read
 * Published Sep 19, 2018
 
-You can install OneAgent on Windows using installer provided as a self-extracting EXE fileâfor single-server installationâand also as an MSI package, for Group Policy deployments. For analytical information about the supported OneAgent capabilities for Windows, see the [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). For the supported Windows versions, check the [OneAgent supported technologies and versions](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+You can install OneAgent on Windows using installer provided as a self-extracting EXE fileâfor single-server installationâand also as an MSI package, for Group Policy deployments. For analytical information about the supported OneAgent capabilities for Windows, see the [OneAgent platform and capability support matrix](../ru/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). For the supported Windows versions, check the [OneAgent supported technologies and versions](../ru/ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 ### Installation
 
-[Disk space requirements](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/disk-space-requirements-for-oneagent-installation-and-update-on-windows "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Windows.")
+[Disk space requirements](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/disk-space-requirements-for-oneagent-installation-and-update-on-windows.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Windows.")
 
-[OneAgent security](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows "Learn about Dynatrace OneAgent security and modifications to your Windows-based system")
+[OneAgent security](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows.md "Learn about Dynatrace OneAgent security and modifications to your Windows-based system")
 
-[Install OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows "Learn how to download and install Dynatrace OneAgent on Windows.")
+[Install OneAgent](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows.md "Learn how to download and install Dynatrace OneAgent on Windows.")
 
-[Customize installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows "Learn how to use the OneAgent installer for Windows.")
+[Customize installation](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md "Learn how to use the OneAgent installer for Windows.")
 
-[How to pass a proxy address](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/how-to-pass-a-proxy-address-during-oneagent-installation-on-windows "Find out how to force Dynatrace OneAgent on Windows to use a proxy for communication with your environment.")
+[How to pass a proxy address](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/how-to-pass-a-proxy-address-during-oneagent-installation-on-windows.md "Find out how to force Dynatrace OneAgent on Windows to use a proxy for communication with your environment.")
 
 ### Operation
 
-[OneAgent files and logs](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/disk-space-requirements-for-oneagent-installation-and-update-on-windows "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Windows.")
+[OneAgent files and logs](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/disk-space-requirements-for-oneagent-installation-and-update-on-windows.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Windows.")
 
-[Update OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/update-oneagent-on-windows "Learn about the different ways to update Dynatrace OneAgent on Windows.")
+[Update OneAgent](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/update-oneagent-on-windows.md "Learn about the different ways to update Dynatrace OneAgent on Windows.")
 
-[Stop/restart OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows "Learn how to stop and restart OneAgent on Windows.")
+[Stop/restart OneAgent](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows.md "Learn how to stop and restart OneAgent on Windows.")
 
-[Uninstall OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/uninstall-oneagent-on-windows "Learn how you can remove Dynatrace OneAgent from your system.")
+[Uninstall OneAgent](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/uninstall-oneagent-on-windows.md "Learn how you can remove Dynatrace OneAgent from your system.")
 
 ### See also
 
-[OneAgent configuration via command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
+[OneAgent configuration via command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.")
 
-[Troubleshoot](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation "Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows.")
+[Troubleshoot](../ru/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation.md "Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows.")
 
 ---
 
@@ -5262,11 +5262,11 @@ With the CICS module, you can get observability for your CICS transactions and p
 
 Trace your CICS transactions end-to-end with Dynatrace
 
-Analyze the performance of your transactions end-to-end using the [Service flow](/docs/observe/application-observability/services-classic/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.").
+Analyze the performance of your transactions end-to-end using the [Service flow](../ru/observe/application-observability/services-classic/service-backtrace.md "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.").
 
 ![CICS service flow](https://dt-cdn.net/images/cics-trace-2357-0a7717e199.png)
 
-Use the [PurePath distributed traces](/docs/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") to drill down to the code level and to optimize your programs.
+Use the [PurePath distributed traces](../ru/observe/application-observability/distributed-traces.md "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") to drill down to the code level and to optimize your programs.
 
 ![CICS code-level](https://dt-cdn.net/images/cics-code-level-1984-d6aeff52fb.png)
 
@@ -5290,7 +5290,7 @@ The CICS module includes a PLT program that initiates at CICS startup. This prog
 
 You need to install the CICS module in every CICS region you want to monitor. If Dynatrace is already installed on a CICS and you want to update your CICS module without restarting the CICS region, see [Update the CICS module without region restart](#cics-update).
 
-You need to add the [z/OS Java module](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java#middleware "Set up Java monitoring on z/OS using the Java module.") to each CICS Transaction Gateway you want to monitor.
+You need to add the [z/OS Java module](ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java.md#middleware "Set up Java monitoring on z/OS using the Java module.") to each CICS Transaction Gateway you want to monitor.
 
 ### CTS 6.2 support
 
@@ -5330,7 +5330,7 @@ If you don't want to use the CICS Library definition, you need to add the follow
 // DD DISP=SHR,DSN=<hlq>.SZDTLOAD
 ```
 
-Regardless of which option you decide to use, you need to tailor the DSN by replacing `<hlq>` with the high-level qualifier you set during [Download z/OS product datasets](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets "Download and install the Dynatrace product datasets for z/OS.").
+Regardless of which option you decide to use, you need to tailor the DSN by replacing `<hlq>` with the high-level qualifier you set during [Download z/OS product datasets](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets.md "Download and install the Dynatrace product datasets for z/OS.").
 
 ### Dynatrace CICS programs and transaction
 
@@ -5344,7 +5344,7 @@ While we recommend to use the default transaction ID `DTAX` for `ZDTPLT`, you ca
 
 Add the CICS startup program (`ZDTPLT`) after the `DFHDELIM` entry in your PLTPI source code and assemble the table.
 
-This step is optional for test installations because the [DTAX transaction](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction "Manage the CICS module via DTAX transactions.") can be used instead to enable the module after CICS initialization. We recommend that you place the `ZDTPLT` entry immediately before the `TYPE=FINAL` specification.
+This step is optional for test installations because the [DTAX transaction](ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction.md "Manage the CICS module via DTAX transactions.") can be used instead to enable the module after CICS initialization. We recommend that you place the `ZDTPLT` entry immediately before the `TYPE=FINAL` specification.
 
 The JCL procedure `DFHAUPLE` in `CICSHLQ.SDFHINST(DFHAUPLE)` can be used to build the PLTPI table.
 
@@ -5452,7 +5452,7 @@ INITPARM=(ZDTPLT='MEPC,<option>'),
 
 `<option>` sets the log level for the CICS module; see [Logging](#logging).
 
-To verify the connectivity between the CICS module and the zDC subsystem, [send a ping message](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction#ping "Manage the CICS module via DTAX transactions.").
+To verify the connectivity between the CICS module and the zDC subsystem, [send a ping message](ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction.md#ping "Manage the CICS module via DTAX transactions.").
 
 ## Customization
 
@@ -5465,7 +5465,7 @@ You can group CICS regions belonging to the same CICSPlex into a single process 
 3. Add `MASPLTWAIT(YES)` to your LMAS parameter. It instructs the CICS region to wait for the CICSPlex to become available before proceeding. If the CICSPlex isn't available, the module can't consider it.
 4. Optional The `MASINITTIME(10)` timeout interal defaults to 10 minutes. You can customize it in the range of 5 minutes to 59 minutes.
 
-If you enabled CICSPlex name grouping **after** the CICS region is up, you need to run the [DTAX transaction](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction "Manage the CICS module via DTAX transactions.") `DTAX DISABLE` and `DTAX ENABLE`.
+If you enabled CICSPlex name grouping **after** the CICS region is up, you need to run the [DTAX transaction](ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction.md "Manage the CICS module via DTAX transactions.") `DTAX DISABLE` and `DTAX ENABLE`.
 
 ### CICS web services support
 
@@ -5648,7 +5648,7 @@ DTAX messages will only be written to the ZDTQ TDQueue if the queue is open. If 
 
 ## Logging
 
-You can control the CICS module log level either by using the [DTAX transaction](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction "Manage the CICS module via DTAX transactions.") or by specifying an optional `INITPARM` at CICS region startup.
+You can control the CICS module log level either by using the [DTAX transaction](ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction.md "Manage the CICS module via DTAX transactions.") or by specifying an optional `INITPARM` at CICS region startup.
 
 ```
 INITPARM=(ZDTPLT='MEPC,<Option>'),
@@ -5671,17 +5671,17 @@ INITPARM=(ZDTPLT='MEPC,SEVERE'),
 
 There are two different sets of CICS logs:
 
-* One set of messages occurs when the [DTAX transaction](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction "Manage the CICS module via DTAX transactions.") issues the `DISABLE` and `ENABLE` commands. These messages are written to the CICS CSMT Transient Data Queue(usually written to MSGUSR). View these messages in the CICS job spool. DTAX also writes a set of messages to the CEEOUT SYSOUT statement when errors occur in the connection between the zDC and the DTAX transaction. View these messages in the CICS Job spool. As long as the DTAX transaction can connect to the zDC, it logs its messages to the zRemote.
+* One set of messages occurs when the [DTAX transaction](ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction.md "Manage the CICS module via DTAX transactions.") issues the `DISABLE` and `ENABLE` commands. These messages are written to the CICS CSMT Transient Data Queue(usually written to MSGUSR). View these messages in the CICS job spool. DTAX also writes a set of messages to the CEEOUT SYSOUT statement when errors occur in the connection between the zDC and the DTAX transaction. View these messages in the CICS Job spool. As long as the DTAX transaction can connect to the zDC, it logs its messages to the zRemote.
 * The CICS module monitoring transaction activity routes its log messages to the zDC, and subsequently to the zRemote. The log shows if any corrupted distributed traces, timeouts, or other errors occurred. You may also see some statistical information in these logs.
 
-You can access the CICS logs via the [zRemote logs](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote#logging "Prepare and install the zRemote for z/OS monitoring.").
+You can access the CICS logs via the [zRemote logs](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote.md#logging "Prepare and install the zRemote for z/OS monitoring.").
 
 ## Update without region restart
 
 To update your CICS module to a newer version without restarting the region
 
-1. [Download z/OS product datasets](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets#download-pax "Download and install the Dynatrace product datasets for z/OS.") and [extract them](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets#extract-datasets "Download and install the Dynatrace product datasets for z/OS.").
-2. Use the [DTAX transaction](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction "Manage the CICS module via DTAX transactions.") to disable the CICS module in the CICS region with the `DISABLE` command.
+1. [Download z/OS product datasets](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets.md#download-pax "Download and install the Dynatrace product datasets for z/OS.") and [extract them](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets.md#extract-datasets "Download and install the Dynatrace product datasets for z/OS.").
+2. Use the [DTAX transaction](ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction.md "Manage the CICS module via DTAX transactions.") to disable the CICS module in the CICS region with the `DISABLE` command.
 3. Copy the CICS modules in the `SZDTLOAD` dataset into the Dynatrace `DFHRPL` dataset defined to your CICS region.
 4. Use the CICS command `CEMT I PROG(ZDT*)` to display the CICS modules. Use the `SET PROG(ZDT*) NEWCOPY` command to tell CICS a new version of each program will be used.
 5. Use the DTAX transaction to enable the CICS module with the `ENABLE` command. Verify that the new CICS module version is displayed on the DTAX panel.
@@ -5766,7 +5766,7 @@ Check the job log of the affected CICS regions for the following message, where 
 ZDTP004W zDC yyyy unavailable
 ```
 
-Verify that the zDC with that subsystem ID is started. If so, try to issue the [DTAX transaction](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction "Manage the CICS module via DTAX transactions.") command `ENABLE` to re-enable the connections.
+Verify that the zDC with that subsystem ID is started. If so, try to issue the [DTAX transaction](ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction.md "Manage the CICS module via DTAX transactions.") command `ENABLE` to re-enable the connections.
 
 How can I detect a version incompatibility?
 
@@ -5805,7 +5805,7 @@ To install the Dynatrace IMS module:
 1. Install the IMS module into the Control Region of each IMS DB/DC and DCCTL system that you want to monitor. This is enough to cover all message processing regions associated with the Control Region.
    Note that installing the IMS module into a DBCTL only system is not supported.
 2. You need to add the Dynatrace exit to each IMS Connect that you want to monitor.
-3. You need to add the [z/OS Java module](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java#middleware "Set up Java monitoring on z/OS using the Java module.") to each IMS SOAP Gateway you want to monitor.
+3. You need to add the [z/OS Java module](ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java.md#middleware "Set up Java monitoring on z/OS using the Java module.") to each IMS SOAP Gateway you want to monitor.
 
 IMS restart
 
@@ -5822,7 +5822,7 @@ Add the authorized Dynatrace dataset `<hlq>.SZDTAUTH` to the IMS Connect job STE
 * If you use IMS Connect Extensions, concatenate SZDTAUTH after the IMS Connect Extensions library.
 * If you use a locally developed HWSTECL0 exit, concatenate SZDTAUTH ahead of the dataset that contains the local exit.
 
-The IMS Connect exit can be enabled to create PurePath nodes in a distributed trace. Activate the required [OneAgent feature](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.") **z/OS IMS Connect**.
+The IMS Connect exit can be enabled to create PurePath nodes in a distributed trace. Activate the required [OneAgent feature](../ru/ingest-from/dynatrace-oneagent/oneagent-features.md "Manage OneAgent features globally and per process group.") **z/OS IMS Connect**.
 
 * If the IMS Connect exit is configured to create PurePath nodes, the exit will connect to the default zDC subsystem name. The target zDC subsystem name can be overridden by specifying the following DDNAME and keyword parameter in the IMS Connect startup JCL:
 
@@ -6466,14 +6466,14 @@ There are two sets of IMS module logs.
 * The first set of IMS messages comes from the IMS injection job. These are messages that occur during injection of the module into the IMS control region. These messages only appear in the job spool of the IMS module injection job.
 * The second set of IMS messages comes from the IMS module as it monitors IMS activity. These messages are sent to the zDC and then are routed to the zRemote.
 
-You can access the IMS module logs via the [zRemote logs](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote#logging "Prepare and install the zRemote for z/OS monitoring.").
+You can access the IMS module logs via the [zRemote logs](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote.md#logging "Prepare and install the zRemote for z/OS monitoring.").
 
 ## Update without region restart
 
 To update your IMS module to a newer version without restarting the region
 
-1. [Download z/OS product datasets](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets#download-pax "Download and install the Dynatrace product datasets for z/OS.") and [extract them](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets#extract-datasets "Download and install the Dynatrace product datasets for z/OS.").
-2. Update the injection job to point to the new `<hlq>.SZDTAUTH`. If you have [defined an alias](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets#alias "Download and install the Dynatrace product datasets for z/OS."), redefine the alias. For example:
+1. [Download z/OS product datasets](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets.md#download-pax "Download and install the Dynatrace product datasets for z/OS.") and [extract them](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets.md#extract-datasets "Download and install the Dynatrace product datasets for z/OS.").
+2. Update the injection job to point to the new `<hlq>.SZDTAUTH`. If you have [defined an alias](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets.md#alias "Download and install the Dynatrace product datasets for z/OS."), redefine the alias. For example:
 
    ```
    DELETE 'DT.DYNTRC.SZDTAUTH' NOSCRATCH
@@ -6505,7 +6505,7 @@ ZDTI036W ZDTIII15 0000000 20221103 10.51 VER 1.255.0 ABEND at offset 007874.
 ZDTI033W Successful ABEND recovery, agent disabled.
 ```
 
-Different or additional messages might be issued if abnormal conditions are encountered by the recovery process (for example, when dynamic storage cannot be obtained, retry is not permitted, or no SDWA was passed). All of the messages related to the ABEND recovery process are documented in the [z/OS module messages](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/zos-code-module-messages "Messages that are created by the Dynatrace z/OS modules.") section.
+Different or additional messages might be issued if abnormal conditions are encountered by the recovery process (for example, when dynamic storage cannot be obtained, retry is not permitted, or no SDWA was passed). All of the messages related to the ABEND recovery process are documented in the [z/OS module messages](ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/zos-code-module-messages.md "Messages that are created by the Dynatrace z/OS modules.") section.
 
 A Software (SFT) Error Record further describing the ABEND is usually written to the z/OS system SYS1.LOGREC data set. You should run the z/OS EREP utility program to print the Software (SFT) Error Record associated with the ABEND.
 
@@ -7094,7 +7094,7 @@ scraped: 2026-03-06T21:25:07.541300
 
 The zRemote module processes monitoring data received from the zLocal and routes that data, compressed and encrypted, via its local ActiveGate to Dynatrace. Hence, the zRemote module offloads much of the processing work from the CICS, IMS, and z/OS Java code modules incurred in instrumenting subsystems and applications to an open system.
 
-You can [customize the zRemote module](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote/customize-zremote "Customize the zRemote module for your needs.") to enable optional features like **Host groups** and **Db2 SQL statement fetch**.
+You can [customize the zRemote module](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote/customize-zremote.md "Customize the zRemote module for your needs.") to enable optional features like **Host groups** and **Db2 SQL statement fetch**.
 
 ## Hardware requirements
 
@@ -7105,7 +7105,7 @@ The hardware requirements of the machine where the zRemote module runs depend on
 * For z/OS Java environments: a small or medium-sized machine.
 
 * The hardware requirements are for the case when the zRemote module and its ActiveGate are used for mainframe monitoring only.
-* Multiple [zDC subsystems](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc "Set up the z/OS Data Collection subsystem (zDC).") can be connected to a single zRemote as long as the number of monitored transactions matches the hardware requirements.
+* Multiple [zDC subsystems](ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc.md "Set up the z/OS Data Collection subsystem (zDC).") can be connected to a single zRemote as long as the number of monitored transactions matches the hardware requirements.
 
 ## System requirements
 
@@ -7115,8 +7115,8 @@ We recommend installing the zRemote module on an IBM Z or LinuxONE mainframe, on
 
   + The zRemote will write a warning to its logs after a connection latency of 3 seconds.
   + The zRemote will drop the connection after a connection latency of 10 seconds.
-* The zRemote only supports a [host-based ActiveGate installation](/docs/ingest-from/dynatrace-activegate/capabilities "Learn the capabilities and uses of ActiveGate.") configured for a single environment.
-* Monitoring of the host running the zRemote with OneAgent is only supported in [full-stack monitoring mode](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
+* The zRemote only supports a [host-based ActiveGate installation](../ru/ingest-from/dynatrace-activegate/capabilities.md "Learn the capabilities and uses of ActiveGate.") configured for a single environment.
+* Monitoring of the host running the zRemote with OneAgent is only supported in [full-stack monitoring mode](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.").
 
 ### Supported operating systems
 
@@ -7161,11 +7161,11 @@ Base path: `C:/Program Files/dynatrace/zremote`
 
 All of the following directories are not retained during zRemote update or uninstallation. If you make changes here, they will be overwritten or deleted.
 
-The following directories are retained in case of update or uninstallation. You can make changes here. For more details, see [Customize the zRemote module](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote/customize-zremote "Customize the zRemote module for your needs.").
+The following directories are retained in case of update or uninstallation. You can make changes here. For more details, see [Customize the zRemote module](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote/customize-zremote.md "Customize the zRemote module for your needs.").
 
 ## Installation
 
-The zRemote module is downloaded and installed automatically during the ActiveGate installation procedure on [Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-install-an-environment-activegate "Read the step-by-step procedure for installing an Environment ActiveGate on Linux.") or [Windows](/docs/ingest-from/dynatrace-activegate/installation/windows/windows-install-an-environment-activegate "Read the step-by-step procedure for installing an Environment ActiveGate on Windows.").
+The zRemote module is downloaded and installed automatically during the ActiveGate installation procedure on [Linux](ingest-from/dynatrace-activegate/installation/linux/linux-install-an-environment-activegate.md "Read the step-by-step procedure for installing an Environment ActiveGate on Linux.") or [Windows](ingest-from/dynatrace-activegate/installation/windows/windows-install-an-environment-activegate.md "Read the step-by-step procedure for installing an Environment ActiveGate on Windows.").
 
 1. In Dynatrace Hub, select **ActiveGate** > **Set up**.
 2. On the **Install Environment ActiveGate** page, select **Linux** or **Windows**.
@@ -7175,13 +7175,13 @@ The zRemote module is downloaded and installed automatically during the ActiveGa
 
    By default, the zRemote module listens on port 8898 for connections from the zLocal running as part of the zDC. To listen on a different port, set the `zdclistenerport` parameter to your port in the `zremoteagentuserconfig.conf` file. Make sure this port is not blocked by a firewall.
 
-For details on the default installation settings, see ActiveGate default installation settings for [Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-default-settings "Learn about the default settings with which ActiveGate is installed on Linux") or [Windows](/docs/ingest-from/dynatrace-activegate/installation/windows/windows-default-settings "Learn about the default settings with which ActiveGate is installed on Windows.").
+For details on the default installation settings, see ActiveGate default installation settings for [Linux](ingest-from/dynatrace-activegate/installation/linux/linux-default-settings.md "Learn about the default settings with which ActiveGate is installed on Linux") or [Windows](ingest-from/dynatrace-activegate/installation/windows/windows-default-settings.md "Learn about the default settings with which ActiveGate is installed on Windows.").
 
-For details on customizing the installation, see customize ActiveGate installation on [Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate "Learn about the command-line parameters that you can use with ActiveGate on Linux.") or [Windows](/docs/ingest-from/dynatrace-activegate/installation/windows/windows-customize-installation-for-activegate "Learn about the parameters that you can use with ActiveGate on Windows.").
+For details on customizing the installation, see customize ActiveGate installation on [Linux](ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate.md "Learn about the command-line parameters that you can use with ActiveGate on Linux.") or [Windows](ingest-from/dynatrace-activegate/installation/windows/windows-customize-installation-for-activegate.md "Learn about the parameters that you can use with ActiveGate on Windows.").
 
 ## Logging
 
-The zRemote logs are created on the machine where the zRemote module is installed, in the default directories for [Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-default-settings "Learn about the default settings with which ActiveGate is installed on Linux") and [Windows](/docs/ingest-from/dynatrace-activegate/installation/windows/windows-default-settings "Learn about the default settings with which ActiveGate is installed on Windows."). You can view the zRemote logs either directly on the machine hosting the zRemote or by requesting them from Dynatrace via the [OneAgent diagnostics](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics "Learn how to run OneAgent diagnostics") workflow.
+The zRemote logs are created on the machine where the zRemote module is installed, in the default directories for [Linux](ingest-from/dynatrace-activegate/installation/linux/linux-default-settings.md "Learn about the default settings with which ActiveGate is installed on Linux") and [Windows](ingest-from/dynatrace-activegate/installation/windows/windows-default-settings.md "Learn about the default settings with which ActiveGate is installed on Windows."). You can view the zRemote logs either directly on the machine hosting the zRemote or by requesting them from Dynatrace via the [OneAgent diagnostics](ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics.md "Learn how to run OneAgent diagnostics") workflow.
 
 The actual zRemote log should contain the following messages:
 
@@ -7190,7 +7190,7 @@ The actual zRemote log should contain the following messages:
 
 ## Update and maintenance
 
-To stay current, you can update the zRemote module automatically to a newer version by using the [ActiveGate auto-update procedure](/docs/ingest-from/dynatrace-activegate/operation/update-activegate "Learn how to find out which version of ActiveGate you have installed and how you can download and install the latest version.").
+To stay current, you can update the zRemote module automatically to a newer version by using the [ActiveGate auto-update procedure](ingest-from/dynatrace-activegate/operation/update-activegate.md "Learn how to find out which version of ActiveGate you have installed and how you can download and install the latest version.").
 
 To manually update the zRemote module
 
@@ -7212,7 +7212,7 @@ Windows
 
 1. If you have customized the installation, back up the `zremoteagentuserconfig.conf` file of the zRemote module and the `custom.properties` file of the ActiveGate. The installer should not overwrite these files, but we recommended backing them up for safety.
 2. Uninstall the zRemote module via the Windows Control Panel.
-3. [Install the zRemote module](/docs/ingest-from/dynatrace-activegate/installation/windows/windows-install-an-environment-activegate "Read the step-by-step procedure for installing an Environment ActiveGate on Windows.") by executing the installer.
+3. [Install the zRemote module](ingest-from/dynatrace-activegate/installation/windows/windows-install-an-environment-activegate.md "Read the step-by-step procedure for installing an Environment ActiveGate on Windows.") by executing the installer.
 
 ### Operations
 
@@ -7281,7 +7281,7 @@ Starting with OneAgent release 1.275, the PAX file will no longer be published o
 
 ## Download the PAX file
 
-You can download the latest or a specific PAX file version via web UI or the [Deployment API](/docs/dynatrace-api/environment-api/deployment/oneagent "Download OneAgent installers via Dynatrace API.") of OneAgent.
+You can download the latest or a specific PAX file version via web UI or the [Deployment API](dynatrace-api/environment-api/deployment/oneagent.md "Download OneAgent installers via Dynatrace API.") of OneAgent.
 
 The PAX file version must be less than or equal to the zRemote module version.
 
@@ -7312,8 +7312,8 @@ You can download a specific PAX file version via web UI as follows:
 
 You can download the latest PAX file version via Deployment API as follows:
 
-1. Generate an [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with the scope **PaaS integration - Installer download** (`InstallerDownload`).
-2. Download the latest PAX file via [Deployment API - Download latest OneAgent](/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest "Download the latest OneAgent installer via Dynatrace API."):
+1. Generate an [Access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with the scope **PaaS integration - Installer download** (`InstallerDownload`).
+2. Download the latest PAX file via [Deployment API - Download latest OneAgent](dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest.md "Download the latest OneAgent installer via Dynatrace API."):
 
    Below is a sample `curl` command for a SaaS environment that uses the Deployment API to download the latest PAX file version:
 
@@ -7327,8 +7327,8 @@ You can download the latest PAX file version via Deployment API as follows:
 
 You can download a specific PAX file version via Deployment API as follows:
 
-1. Generate an [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with the scope **PaaS integration - Installer download** (`InstallerDownload`).
-2. List all available PAX file versions via [Deployment API - List available versions of OneAgent](/docs/dynatrace-api/environment-api/deployment/oneagent/get-available-versions "List available versions of OneAgent via Dynatrace API.").
+1. Generate an [Access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with the scope **PaaS integration - Installer download** (`InstallerDownload`).
+2. List all available PAX file versions via [Deployment API - List available versions of OneAgent](dynatrace-api/environment-api/deployment/oneagent/get-available-versions.md "List available versions of OneAgent via Dynatrace API.").
 
    Below is a sample `curl` command for a SaaS environment that uses the Deployment API to list all available PAX file versions:
 
@@ -7337,7 +7337,7 @@ You can download a specific PAX file version via Deployment API as follows:
    ```
 
    Replace `<environment>` with your Dynatrace environment ID and `<accessToken>` with your generated access token.
-3. Download a specific PAX file version via [Deployment API - Download OneAgent of specific version](/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-version "Download the OneAgent installer of the specific version via Dynatrace API."):
+3. Download a specific PAX file version via [Deployment API - Download OneAgent of specific version](dynatrace-api/environment-api/deployment/oneagent/download-oneagent-version.md "Download the OneAgent installer of the specific version via Dynatrace API."):
 
    Below is a sample `curl` command for a SaaS environment that uses the Deployment API to download a specific PAX file version:
 
@@ -7850,7 +7850,7 @@ Depending on your team, a single individual may be able to administer more than 
 
 ## Related topics
 
-* [Technology support](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.")
+* [Technology support](../ru/ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.")
 
 ---
 
@@ -7870,11 +7870,11 @@ scraped: 2026-03-05T21:29:56.255357
 * 1-min read
 * Published Jan 13, 2023
 
-With Dynatrace, you can monitor the VSAM and BDAM file access calls from your CICS applications using the CICS module. Each accessed file in a CICS region is represented as a database service on the [Databases](/docs/observe/infrastructure-observability/databases "Track the database performance and resources to create and maintain a high performing and available application infrastructure.") page, including metrics like response time, failure rate, and throughput.
+With Dynatrace, you can monitor the VSAM and BDAM file access calls from your CICS applications using the CICS module. Each accessed file in a CICS region is represented as a database service on the [Databases](observe/infrastructure-observability/databases.md "Track the database performance and resources to create and maintain a high performing and available application infrastructure.") page, including metrics like response time, failure rate, and throughput.
 
 ![File access on the Database page](https://dt-cdn.net/images/file-sensor-db-3052-6d5ec51cdd.png)
 
-The [Distributed traces](/docs/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") page lists the file operations and logical file names that are being accessed on the [PurePath method-level](/docs/observe/application-observability/distributed-traces/use-cases/segment-request "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces."). The file operations are aggregated per logical file name (for example, in the image below, the `READNEXT` operation was executed 21 times on the file `EXMPCAT`).
+The [Distributed traces](../ru/observe/application-observability/distributed-traces.md "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") page lists the file operations and logical file names that are being accessed on the [PurePath method-level](../ru/observe/application-observability/distributed-traces/use-cases/segment-request.md "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces."). The file operations are aggregated per logical file name (for example, in the image below, the `READNEXT` operation was executed 21 times on the file `EXMPCAT`).
 
 ![File access calls in the Distributed traces page](https://dt-cdn.net/images/file-sensor-pp-3142-684de155b6.png)
 
@@ -7883,8 +7883,8 @@ The [Distributed traces](/docs/observe/application-observability/distributed-tra
 To start monitoring the file access calls from your CICS applications
 
 1. Go to **Settings** > **Preferences** > **OneAgent features**.
-2. Activate the [OneAgent feature](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.") **z/OS CICS file monitoring sensor**.
-3. Restart your CICS region or allow [DTAX transaction](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction "Manage the CICS module via DTAX transactions.") to pick up the new configuration setting in the next 5 minutes interval.
+2. Activate the [OneAgent feature](../ru/ingest-from/dynatrace-oneagent/oneagent-features.md "Manage OneAgent features globally and per process group.") **z/OS CICS file monitoring sensor**.
+3. Restart your CICS region or allow [DTAX transaction](ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction.md "Manage the CICS module via DTAX transactions.") to pick up the new configuration setting in the next 5 minutes interval.
 
 ## Remote files
 
@@ -7918,7 +7918,7 @@ Log analysis is typically one of the first steps in troubleshooting application 
 
 Dynatrace can automatically discover and collect logs from monitored IBM CICS regions and IBM IMS subsystems. All collected logs are enriched with metadata to map them to the entity model of z/OS hosts (logical partitions) and z/OS processes (regions and subsystems). This allows you to extend your root cause analysis for any issue identified by Dynatrace Intelligence causal AI with logs automatically linked to your applications.
 
-To learn more about related use cases, see [Log Management and Analytics](/docs/analyze-explore-automate/logs/lma-use-cases "Explore common Log Management and Analytics use cases in Dynatrace deployments.").
+To learn more about related use cases, see [Log Management and Analytics](../ru/analyze-explore-automate/logs/lma-use-cases.md "Explore common Log Management and Analytics use cases in Dynatrace deployments.").
 
 The following log sources are supported:
 
@@ -7927,20 +7927,20 @@ The following log sources are supported:
 
 Log Management and Analytics requires a license:
 
-* For Dynatrace Platform Subscription, a [Log Management and Analytics](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") capability.
-* For Dynatrace classic licensing, [Davis data units](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
+* For Dynatrace Platform Subscription, a [Log Management and Analytics](../ru/license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") capability.
+* For Dynatrace classic licensing, [Davis data units](license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
 
 ## Get started
 
-Collection of logs from z/OS requires a [Log ingest rule](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis."). You can get started by using one of the existing built-in rules.
+Collection of logs from z/OS requires a [Log ingest rule](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis."). You can get started by using one of the existing built-in rules.
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Activate log ingest rule**](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs#ingest-rules "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")[![Step 2 optional](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Step 2 optional")
+**Activate log ingest rule**](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs.md#ingest-rules "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")[![Step 2 optional](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Step 2 optional")
 
-**Mask sensitive log data**](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs#mask-data "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Mask sensitive log data**](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs.md#mask-data "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Analyze log data**](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs#analyze-logs "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")
+**Analyze log data**](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs.md#analyze-logs "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")
 
 ### Step 1 Activate log ingest rule
 
@@ -7954,21 +7954,21 @@ Activate one of the following built-in rules to ingest discovered logs from your
 
 If necessary, you can limit the scope of a log ingest rule to a specific group of LPARs (hosts group) or LPAR (host) so that logs are ingested only for those.
 
-To do this, define a [Log ingest rule](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis.") with the required [scope](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration#scopes "Include and exclude specific log sources already known to OneAgent for storage and analysis.") (host group or host).
+To do this, define a [Log ingest rule](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.") with the required [scope](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md#scopes "Include and exclude specific log sources already known to OneAgent for storage and analysis.") (host group or host).
 
 #### Control which logs are ingested
 
 If necessary, you can use attributes to precisely control which logs are ingested.
 
-To do this, define a [Log ingest rule](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis.") with specific attributes so that only logs that match those attributes are ingested. For example, you can use the following attributes.
+To do this, define a [Log ingest rule](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.") with specific attributes so that only logs that match those attributes are ingested. For example, you can use the following attributes.
 
 1
 
-Log record level attribute, transformed by OneAgent, is different than the log `status` attribute transformed by the Dynatrace server. Learn more by accessing the [Automatic log enrichment](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") page.
+Log record level attribute, transformed by OneAgent, is different than the log `status` attribute transformed by the Dynatrace server. Learn more by accessing the [Automatic log enrichment](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") page.
 
 ### Step 2 optional Mask sensitive log data
 
-Configure masking of sensitive data as described in [Sensitive data masking in OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking "Mask sensitive information in your log data using Log Management and Analytics.").
+Configure masking of sensitive data as described in [Sensitive data masking in OneAgent](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking.md "Mask sensitive information in your log data using Log Management and Analytics.").
 
 ### Step 3 Analyze log data
 
@@ -8012,14 +8012,14 @@ scraped: 2026-03-05T21:29:53.332272
 
 JMX (Java Management Extensions) is handy for monitoring applications built using Java. With the OneAgent z/OS Java code module, you can monitor any metric in your JVM that is exposed via an MBean.
 
-* Every monitored custom JMX metric consumes Davis data units. The concept of [Included metrics per host unit](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.") isn't applicable for monitored LPARs on z/OS. To learn more about Davis data units, see [DDUs for metrics](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+* Every monitored custom JMX metric consumes Davis data units. The concept of [Included metrics per host unit](license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.") isn't applicable for monitored LPARs on z/OS. To learn more about Davis data units, see [DDUs for metrics](license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 * [PMI (Performance Monitoring Infrastructure)ï»¿](https://www.ibm.com/docs/en/was/9.0.5?topic=health-performance-monitoring-infrastructure-pmi) for the IBM WebSphere Application Server is currently not supported.
 
 ## Definition
 
 The `customJmxMetrics` attribute defines a list of [metrics](#metrics) to be monitored. To get started, add the `customJmxMetrics` attribute to your `dtconfig.json` file as shown in the following example.
 
-Typically, you've created the `dtconfig.json` file during the [z/OS Java code module installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java#download "Set up Java monitoring on z/OS using the Java module.") and have set the attributes `Tenant`, `ClusterID`, and `zdcName` to your environment.
+Typically, you've created the `dtconfig.json` file during the [z/OS Java code module installation](ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java.md#download "Set up Java monitoring on z/OS using the Java module.") and have set the attributes `Tenant`, `ClusterID`, and `zdcName` to your environment.
 
 ```
 {
@@ -8360,18 +8360,18 @@ will result in a single metric in Dynatrace with two dimensions:
 
 ## Monitoring
 
-Go to [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") to analyze and chart your custom JMX metrics. If needed, you can pin your charts to a dashboard. In the following example, you can see the `java.lang.MemoryPoolUsage` metric split by the dimension `memory_type`:
+Go to [Data Explorer](../ru/analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") to analyze and chart your custom JMX metrics. If needed, you can pin your charts to a dashboard. In the following example, you can see the `java.lang.MemoryPoolUsage` metric split by the dimension `memory_type`:
 
 ![Data Explorer with z/OS JMX metrics](https://dt-cdn.net/images/data-explorer-1643-7696285fbf.png)
 
-To get a list of metrics available in your monitoring environment, Go to **Metrics** to open the [Metrics browser](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser."). In the following example, you can see the three metrics that we have created above:
+To get a list of metrics available in your monitoring environment, Go to **Metrics** to open the [Metrics browser](../ru/analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser."). In the following example, you can see the three metrics that we have created above:
 
 ![Metrics browser with z/OS JMX metrics](https://dt-cdn.net/images/metrics-browser-1636-1096adef93.png)
 
 ## Related topics
 
-* [Metrics browser](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.")
-* [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.")
+* [Metrics browser](../ru/analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser.")
+* [Data Explorer](../ru/analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.")
 
 ---
 
@@ -8410,7 +8410,7 @@ OpenTelemetry version 1.0+
 
 Enabling OpenTelemetry interoperability connects the z/OS Java code module to the OpenTelemetry API. When enabled, the code module redirects certain OpenTelemetry API usage (for example, `GlobalOpenTelemetry`) to the internal Dynatrace OpenTelemetry SDK.
 
-The z/OS Java code module forwards the captured [OpenTelemetry Spansï»¿](https://opentelemetry.io/docs/concepts/signals/traces/#spans-in-opentelemetry), via the [zDC subsystem](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java "Set up Java monitoring on z/OS using the Java module.") and [zRemote module](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote "Prepare and install the zRemote for z/OS monitoring."), to your Dynatrace environment.
+The z/OS Java code module forwards the captured [OpenTelemetry Spansï»¿](https://opentelemetry.io/docs/concepts/signals/traces/#spans-in-opentelemetry), via the [zDC subsystem](ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java.md "Set up Java monitoring on z/OS using the Java module.") and [zRemote module](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote.md "Prepare and install the zRemote for z/OS monitoring."), to your Dynatrace environment.
 
 ![z/OS Java OpenTelemetry](https://dt-cdn.net/images/zos-java-otel-1369-e7b35738b0.png)
 
@@ -8420,7 +8420,7 @@ Recommendation: avoid using the OpenTelemetry SDK in your applications together 
 
 OpenTelemetry interoperability is disabled by default. To enable it, add the `OpenTelemetry: EnableIntegration` attribute to your `dtconfig.json` file as shown in the following example.
 
-Typically, you've created the `dtconfig.json` file during the [z/OS Java code module installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java#download "Set up Java monitoring on z/OS using the Java module.") and have set the attributes `Tenant`, `ClusterID`, and `zdcName` to your environment.
+Typically, you've created the `dtconfig.json` file during the [z/OS Java code module installation](ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java.md#download "Set up Java monitoring on z/OS using the Java module.") and have set the attributes `Tenant`, `ClusterID`, and `zdcName` to your environment.
 
 ```
 {
@@ -8896,7 +8896,7 @@ Suppressed spans will not be visible in distributed traces.
 
 ## Define a request attribute for span attributes
 
-You can define a [request attribute](/docs/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") for any captured span attribute. To do so
+You can define a [request attribute](../ru/observe/application-observability/services/request-attributes.md "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") for any captured span attribute. To do so
 
 1. Go to **Settings** > **Server-side service monitoring** > **Request attributes**.
 2. Select **Define a new request attribute** and enter the name and data type of your request attribute.
@@ -8904,11 +8904,11 @@ You can define a [request attribute](/docs/observe/application-observability/ser
 4. Enter your **Attribute key**.
 5. Select **Save**.
 
-To learn more details about span attributes and how to capture them, see [Span settings](/docs/ingest-from/extend-dynatrace/extend-tracing/span-settings "Learn how to configure span settings for OpenTelemetry and OpenTracing.").
+To learn more details about span attributes and how to capture them, see [Span settings](../ru/ingest-from/extend-dynatrace/extend-tracing/span-settings.md "Learn how to configure span settings for OpenTelemetry and OpenTracing.").
 
 ![Use Span attribute as a request attribute](https://dt-cdn.net/images/screenshot-2022-09-30-at-09-24-35-1883-e2f2b63693.png)
 
-You can find the **Attribute key** of your spans on the [Distributed traces](/docs/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") page in the **Code level** tab under **Span attributes**.
+You can find the **Attribute key** of your spans on the [Distributed traces](../ru/observe/application-observability/distributed-traces.md "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") page in the **Code level** tab under **Span attributes**.
 
 ![Span attributes](https://dt-cdn.net/images/span-attributes-1916-1967c4e21e.png)
 
@@ -8932,12 +8932,12 @@ scraped: 2026-03-06T21:37:49.354494
 
 With Dynatrace you can get observability for IBM MQ on z/OS:
 
-* The CICS, IMS, and z/OS Java modules can trace messages in your applications initiated by IBM MQ clients, including their producer and consumer services across tiers. To learn more about messages queues in Dynatrace, see [Queues](/docs/observe/infrastructure-observability/queues "Monitor and analyze your message queues with Dynatrace.").
-* The ActiveGate extension can collect metrics from IBM MQ servers. To learn more about it, see [IBM MQ ActiveGate extension](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.").
+* The CICS, IMS, and z/OS Java modules can trace messages in your applications initiated by IBM MQ clients, including their producer and consumer services across tiers. To learn more about messages queues in Dynatrace, see [Queues](../ru/observe/infrastructure-observability/queues.md "Monitor and analyze your message queues with Dynatrace.").
+* The ActiveGate extension can collect metrics from IBM MQ servers. To learn more about it, see [IBM MQ ActiveGate extension](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.").
 
 ## Tracing
 
-Dynatrace can automatically create a continuous [service flow](/docs/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") for IBM MQ when the producer and consumer services use the same queue or topic name. If the producer and consumer services refer to different queue or topic names, IBM MQ configuration might be required to create a continuous service flow.
+Dynatrace can automatically create a continuous [service flow](../ru/observe/application-observability/services-classic/service-flow.md "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") for IBM MQ when the producer and consumer services use the same queue or topic name. If the producer and consumer services refer to different queue or topic names, IBM MQ configuration might be required to create a continuous service flow.
 
 Without IBM MQ configuration, Dynatrace can still trace all messages, but the service flow will be broken.
 
@@ -8945,7 +8945,7 @@ The table lists the available IBM MQ configuration items for queues and topics.
 
 ## Manage IBM MQ configuration
 
-You can manage an IBM MQ configuration automatically by installing an [IBM MQ extension](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") and activating **Retrieve topology for improved transaction tracing** to retrieve the IBM MQ configuration of your environment and send it to the Settings API. This can also be done manually via the web UI or the Settings API.
+You can manage an IBM MQ configuration automatically by installing an [IBM MQ extension](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.") and activating **Retrieve topology for improved transaction tracing** to retrieve the IBM MQ configuration of your environment and send it to the Settings API. This can also be done manually via the web UI or the Settings API.
 
 ### Manual configuration via web UI
 
@@ -8957,22 +8957,22 @@ To manage the IBM MQ configuration via the Dynatrace web UI, go to **Settings** 
 
 ### Manual configuration via Settings API
 
-You can manage the IBM MQ configuration via the Dynatrace [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.").
+You can manage the IBM MQ configuration via the Dynatrace [Settings API](../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.").
 
-To be able to use the API you need an access token with **Read settings** (`settings.read`) and **Write settings** (`settings.write`) scopes. To learn how to obtain it, see [Create an access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.").
+To be able to use the API you need an access token with **Read settings** (`settings.read`) and **Write settings** (`settings.write`) scopes. To learn how to obtain it, see [Create an access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.").
 
 Settings API for IBM MQ tracing:
 
-* [Create queue manager configuration](/docs/observe/infrastructure-observability/queues/configuration/ibm-mq-tracing#qm-api-create "Configure Dynatrace for IBM MQ tracing.")
-* [Update queue manager configuration](/docs/observe/infrastructure-observability/queues/configuration/ibm-mq-tracing#qm-api-update "Configure Dynatrace for IBM MQ tracing.")
-* [Create queue sharing group configuration](/docs/observe/infrastructure-observability/queues/configuration/ibm-mq-tracing#qsg-api-create "Configure Dynatrace for IBM MQ tracing.")
-* [Update queue sharing group configuration](/docs/observe/infrastructure-observability/queues/configuration/ibm-mq-tracing#qsg-api-update "Configure Dynatrace for IBM MQ tracing.")
-* [Create IMS bridge configuration](/docs/observe/infrastructure-observability/queues/configuration/ibm-mq-tracing#ims-bridge-api-create "Configure Dynatrace for IBM MQ tracing.")
-* [Update IMS bridge configuration](/docs/observe/infrastructure-observability/queues/configuration/ibm-mq-tracing#ims-bridge-api-update "Configure Dynatrace for IBM MQ tracing.")
+* [Create queue manager configuration](../ru/observe/infrastructure-observability/queues/configuration/ibm-mq-tracing.md#qm-api-create "Configure Dynatrace for IBM MQ tracing.")
+* [Update queue manager configuration](../ru/observe/infrastructure-observability/queues/configuration/ibm-mq-tracing.md#qm-api-update "Configure Dynatrace for IBM MQ tracing.")
+* [Create queue sharing group configuration](../ru/observe/infrastructure-observability/queues/configuration/ibm-mq-tracing.md#qsg-api-create "Configure Dynatrace for IBM MQ tracing.")
+* [Update queue sharing group configuration](../ru/observe/infrastructure-observability/queues/configuration/ibm-mq-tracing.md#qsg-api-update "Configure Dynatrace for IBM MQ tracing.")
+* [Create IMS bridge configuration](../ru/observe/infrastructure-observability/queues/configuration/ibm-mq-tracing.md#ims-bridge-api-create "Configure Dynatrace for IBM MQ tracing.")
+* [Update IMS bridge configuration](../ru/observe/infrastructure-observability/queues/configuration/ibm-mq-tracing.md#ims-bridge-api-update "Configure Dynatrace for IBM MQ tracing.")
 
 ## Related topics
 
-* [IBM MQ tracing](/docs/observe/infrastructure-observability/queues/configuration/ibm-mq-tracing "Configure Dynatrace for IBM MQ tracing.")
+* [IBM MQ tracing](../ru/observe/infrastructure-observability/queues/configuration/ibm-mq-tracing.md "Configure Dynatrace for IBM MQ tracing.")
 
 ---
 
@@ -9008,7 +9008,7 @@ All monitored LPARs, regions, and applications are contributing to this fault do
 
 Who is calling the mainframe and how often?
 
-Backtrace transactions using the [Service backtrace](/docs/observe/application-observability/services-classic/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.") to understand your mainframe workloads and benefit from potential IBM discounts (see for example the IBM [mobileï»¿](https://www.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/877/ENUSZP14-0280/index.html&lang=en&request_locale=en) and [public cloudï»¿](https://www.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=897/ENUS216-319&infotype=AN&subtype=CA) workload discounts to lower your monthly peak rolling 4-hour average MSU value).
+Backtrace transactions using the [Service backtrace](../ru/observe/application-observability/services-classic/service-backtrace.md "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.") to understand your mainframe workloads and benefit from potential IBM discounts (see for example the IBM [mobileï»¿](https://www.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/877/ENUSZP14-0280/index.html&lang=en&request_locale=en) and [public cloudï»¿](https://www.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=897/ENUS216-319&infotype=AN&subtype=CA) workload discounts to lower your monthly peak rolling 4-hour average MSU value).
 
 The Service backtrace below shows how a CICS transaction interactions with both a mobile application and a web application. You can clearly see how often these applications call the CICS transaction, and also which of their requests failed.
 
@@ -9016,11 +9016,11 @@ The Service backtrace below shows how a CICS transaction interactions with both 
 
 What transactions are expensive or slow?
 
-Analyze the performance of your transactions using via the [service flow](/docs/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") to verify if they fulfill the defined SLOs with service-level metrics. The request count for example can indicate when a transaction is called too often from an open-system, which could result in additional costs.
+Analyze the performance of your transactions using via the [service flow](../ru/observe/application-observability/services-classic/service-flow.md "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") to verify if they fulfill the defined SLOs with service-level metrics. The request count for example can indicate when a transaction is called too often from an open-system, which could result in additional costs.
 
 ![z/OS use case](https://dt-cdn.net/images/zos-usecase-1-2558-21736786aa.png)
 
-Use the [PurePath distributed traces](/docs/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") code-level insights to optimize your programs.
+Use the [PurePath distributed traces](../ru/observe/application-observability/distributed-traces.md "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") code-level insights to optimize your programs.
 
 ![z/OS use case](https://dt-cdn.net/images/zos-usecase-6-2072-233541ed1b.png)
 
@@ -9034,7 +9034,7 @@ See the end-to-end trace from z/OS Connect EE down to an IMS DL/I database below
 
 ## Set up monitoring
 
-Dynatrace provides code modules for CICS, IMS, and z/OS Java technologies so that you can achieve seamless observability with trace and metric insights. To learn more about the supported technologies, see [Mainframe technology support](/docs/ingest-from/technology-support/mainframe-technology-support "Learn which technologies Dynatrace supports for Mainframe monitoring.").
+Dynatrace provides code modules for CICS, IMS, and z/OS Java technologies so that you can achieve seamless observability with trace and metric insights. To learn more about the supported technologies, see [Mainframe technology support](../ru/ingest-from/technology-support/mainframe-technology-support.md "Learn which technologies Dynatrace supports for Mainframe monitoring.").
 
 ![z/OS monitoring architecture](https://dt-cdn.net/images/zos-architecture-1745-8d165d1510.png)
 
@@ -9044,25 +9044,25 @@ The zLocal, hosted in the z/OS [Unix System Servicesï»¿](https://www.ibm.com/
 
 The zRemote module processes monitoring data received from the zLocal and routes that data, compressed and encrypted, via its local ActiveGate to Dynatrace. Hence, the zRemote module offloads much of the processing work from the modules incurred in instrumenting subsystems and applications to an open system.
 
-To get started, see [z/OS installation overview](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation "Installation overview of Dynatrace z/OS modules.").
+To get started, see [z/OS installation overview](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation.md "Installation overview of Dynatrace z/OS modules.").
 
 ## Licensing
 
 Monitoring of the CICS, IMS, and z/OS Java modules are consumed based on million service units (MSUs).
 
-Dynatrace Platform Subscription, see [Mainframe Monitoring](/docs/license/capabilities/app-infra-observability/mainframe "Learn how your consumption of the Dynatrace Mainframe Monitoring DPS capability is billed and charged.").
+Dynatrace Platform Subscription, see [Mainframe Monitoring](../ru/license/capabilities/app-infra-observability/mainframe.md "Learn how your consumption of the Dynatrace Mainframe Monitoring DPS capability is billed and charged.").
 
-Dynatrace classic licensing, see [Mainframe Monitoring on IBM z/OS](/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring#mainframe-msu "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
+Dynatrace classic licensing, see [Mainframe Monitoring on IBM z/OS](../ru/license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md#mainframe-msu "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
 
 ## FAQ
 
 Who needs to be involved in a typical Dynatrace for z/OS installation?
 
-To find the procedure and the people involved people, see [z/OS installation overview](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation "Installation overview of Dynatrace z/OS modules.").
+To find the procedure and the people involved people, see [z/OS installation overview](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation.md "Installation overview of Dynatrace z/OS modules.").
 
 Can I use host groups to organize multiple LPARs?
 
-Yes, you can organize multiple LPARs using host groups. For more information, see [Define host groups to organize multiple LPARs](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote/customize-zremote#host-groups "Customize the zRemote module for your needs.").
+Yes, you can organize multiple LPARs using host groups. For more information, see [Define host groups to organize multiple LPARs](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote/customize-zremote.md#host-groups "Customize the zRemote module for your needs.").
 
 What does a volatile service mean and how can I solve related problems?
 
@@ -9134,23 +9134,23 @@ Can I merge process groups created by the z/OS Java module into a single process
 
 No, process groups created by the z/OS Java module can't be modified or merged.
 
-As an alternative you can organize your process groups by [defining metadata](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") or [defining tags](/docs/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables.") based on environmental variables. Both concepts apply to z/OS Java as well. Note that you can define environment variables only on the process level, not on the host level.
+As an alternative you can organize your process groups by [defining metadata](observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata.md#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") or [defining tags](../ru/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables.md "Find out how Dynatrace enables you to define tags based on environment variables.") based on environmental variables. Both concepts apply to z/OS Java as well. Note that you can define environment variables only on the process level, not on the host level.
 
 Can I tag processes created by the z/OS Java module?
 
-Yes. You can tag processes created by the z/OS Java module by [defining metadata](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") or [defining tags](/docs/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables.") based on environmental variables. Note that you can define environment variables only on the process level, not on the host level.
+Yes. You can tag processes created by the z/OS Java module by [defining metadata](observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata.md#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") or [defining tags](../ru/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables.md "Find out how Dynatrace enables you to define tags based on environment variables.") based on environmental variables. Note that you can define environment variables only on the process level, not on the host level.
 
 Can I define custom services using the z/OS Java module?
 
-The z/OS Java module does not support custom services purely via configuration. Instead, you can create custom traces using the z/OS Java module's [OpenTelemetry interoperability](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-opentelemetry "Use OpenTelemetry to close observability gaps in your Java applications on z/OS.").
+The z/OS Java module does not support custom services purely via configuration. Instead, you can create custom traces using the z/OS Java module's [OpenTelemetry interoperability](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-opentelemetry.md "Use OpenTelemetry to close observability gaps in your Java applications on z/OS.").
 
 Can I use span attributes captured by the z/OS Java module as a request attribute?
 
-Yes. To learn how to set up a request attribute for any captured span attribute, see [Define a request attribute for span attributes](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-opentelemetry#request-attribute "Use OpenTelemetry to close observability gaps in your Java applications on z/OS.").
+Yes. To learn how to set up a request attribute for any captured span attribute, see [Define a request attribute for span attributes](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-opentelemetry.md#request-attribute "Use OpenTelemetry to close observability gaps in your Java applications on z/OS.").
 
 ## Linux on Z
 
-With Dynatrace, you can get [Full-Stack Monitoring with Host monitoring (DPS)](/docs/license/capabilities/app-infra-observability/full-stack-monitoring "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") for Linux on Z using [OneAgent on Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more."). To learn more about the supported technologies on the s390 architecture, see [Technology support](/docs/ingest-from/technology-support#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+With Dynatrace, you can get [Full-Stack Monitoring with Host monitoring (DPS)](../ru/license/capabilities/app-infra-observability/full-stack-monitoring.md "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") for Linux on Z using [OneAgent on Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Learn how to install OneAgent on Linux, how to customize installation, and more."). To learn more about the supported technologies on the s390 architecture, see [Technology support](../ru/ingest-from/technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 ## Related topics
 
@@ -9186,7 +9186,7 @@ The information on this page is platform-agnostic.
 
 For OS-specific information on OneAgent installation and advanced operation, select your OS for the detailed instructions.
 
-[AIX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix) [Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux) [Solaris](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris) [Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows) [zOS](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos)
+[AIX](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix.md) [Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux.md) [Solaris](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/solaris.md) [Windows](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows.md) [zOS](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos.md)
 
 ## Prerequisites
 
@@ -9242,14 +9242,14 @@ To download and install OneAgent on a host:
 
     ![Infrastructure & Operations view of a newly added OneAgent on host](https://dt-cdn.net/images/screenshot-2025-02-04-at-13-32-36-2598-439524d1f9.png)
 
-OneAgent is now set up and monitoring your host. See [Get started with Dynatrace](/docs/discover-dynatrace/get-started "Learn about Dynatrace monitoring capabilities, concepts, and deployment models and find out how to get started with SaaS and Managed deployments.") to continue your first journey with Dynatrace.
+OneAgent is now set up and monitoring your host. See [Get started with Dynatrace](../ru/discover-dynatrace/get-started.md "Learn about Dynatrace monitoring capabilities, concepts, and deployment models and find out how to get started with SaaS and Managed deployments.") to continue your first journey with Dynatrace.
 
 ## Related topics
 
-* [OneAgent features](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.")
-* [Infrastructure & Operations](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
-* [Host-level settings](/docs/observe/infrastructure-observability/hosts/configuration "Host-level settings")
-* [OneAgent monitoring modes](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.")
+* [OneAgent features](../ru/ingest-from/dynatrace-oneagent/oneagent-features.md "Manage OneAgent features globally and per process group.")
+* [Infrastructure & Operations](../ru/observe/infrastructure-observability/infrastructure-and-operations.md "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
+* [Host-level settings](../ru/observe/infrastructure-observability/hosts/configuration.md "Host-level settings")
+* [OneAgent monitoring modes](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.")
 
 ---
 
@@ -9380,7 +9380,7 @@ The maximum disk space occupied by OneAgent log files is very well managed by th
 
 Unlike log files, large runtime data files such as crash and memory dumps are generated ad hoc and can cause rapid spikes in disk usage. To mitigate this, use the `DATA_STORAGE` installation parameter to specify a custom directory for large runtime data. Locate the custom directory on a resource where tight disk size constraints are not as critical as they are on the disk where OneAgent is installed.
 
-For more information on customizing OneAgent installation, see the OS-specific help: [Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#data-storage "Learn how to use the Linux installer with command line parameters."), [Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#data-storage "Learn how to use the OneAgent installer for Windows."), or [AIX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix#data-storage "Learn how you can use AIX installer with command line parameters.").
+For more information on customizing OneAgent installation, see the OS-specific help: [Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md#data-storage "Learn how to use the Linux installer with command line parameters."), [Windows](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md#data-storage "Learn how to use the OneAgent installer for Windows."), or [AIX](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix.md#data-storage "Learn how you can use AIX installer with command line parameters.").
 
 ## Emergency cleanup
 
@@ -9469,7 +9469,7 @@ The OneAgent file aging mechanism checks the subdirectories starting with `0x`. 
 
 ## Aging mechanism for OneAgent in application-only monitoring mode
 
-If you don't have access to the infrastructure layer, Dynatrace also provides the option of application-only monitoring for [Kubernetes](/docs/ingest-from/setup-on-k8s/deployment/application-observability "Deploy Dynatrace Operator in application monitoring mode to Kubernetes"), [OpenShift](/docs/ingest-from/setup-on-k8s/deployment/application-observability "Deploy Dynatrace Operator in application monitoring mode to Kubernetes"), [CloudFoundry](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring "Install OneAgent on Cloud Foundry.") or [SAP Business Technology Platform](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-sap-cloud-platform-for-application-only-monitoring "Install OneAgent on SAP Business Technology Platform.").
+If you don't have access to the infrastructure layer, Dynatrace also provides the option of application-only monitoring for [Kubernetes](../ru/ingest-from/setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes"), [OpenShift](../ru/ingest-from/setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes"), [CloudFoundry](ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring.md "Install OneAgent on Cloud Foundry.") or [SAP Business Technology Platform](ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-sap-cloud-platform-for-application-only-monitoring.md "Install OneAgent on SAP Business Technology Platform.").
 
 The aging mechanism in application-only monitoring mode manages the logs of the OneAgent modules. All of them are located in the respective subdirectories of the default OneAgent log directory:
 
@@ -9511,7 +9511,7 @@ scraped: 2026-03-06T21:30:54.102654
 
 In addition to the application-side configuration, several Dynatrace-specific settings let you control how OpenTelemetry data is used in Dynatrace.
 
-To learn how to send OpenTelemetry data to a Dynatrace OneAgent, see [Use OneAgent with OpenTelemetry data](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.").
+To learn how to send OpenTelemetry data to a Dynatrace OneAgent, see [Use OneAgent with OpenTelemetry data](../ru/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel.md "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.").
 
 ## Prerequisites
 
@@ -9536,7 +9536,7 @@ Python
 
 1
 
-Supported in [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](../ru/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration.md "AWS Lambda capabilities and integration options").
 
 To enable OpenTelemetry Java
 
@@ -9577,7 +9577,7 @@ OneAgent version 1.217 and earlier The OpenTelemetry Go Sensor propagates Dynatr
 
 1
 
-Supported in [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in [AWS Lambda](../ru/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration.md "AWS Lambda capabilities and integration options")
 
 Opt-in
 
@@ -9689,10 +9689,10 @@ To configure attribute storage and masking settings for your environment
 
    1. On the **Attribute capturing** page, select **Attribute data masking**.
    2. Select **Add item** to add a new key to the masked attributed list.
-   3. Enter a stored value key and select an option from the **Masking** dropdown list. To learn more about masking options, see [OpenTelemetry traces](/docs/manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace#otel-traces "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.").
+   3. Enter a stored value key and select an option from the **Masking** dropdown list. To learn more about masking options, see [OpenTelemetry traces](manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace.md#otel-traces "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.").
    4. Select **Save changes**.
 
-You can then find the attribute key on the **Distributed traces** page on the [**Summary** tab](/docs/observe/application-observability/distributed-traces/use-cases/segment-request#summary-tab "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.").
+You can then find the attribute key on the **Distributed traces** page on the [**Summary** tab](../ru/observe/application-observability/distributed-traces/use-cases/segment-request.md#summary-tab "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.").
 
 ## Trace search limitations
 
@@ -9708,13 +9708,13 @@ Searching by span attribute is limited to the span name: filter by `Request` on 
 
 
 
-For more information about the OneAgent code module's OpenTelemetry Span Sensor, see [Detect OpenTelemetry spans using the OneAgent code module's OpenTelemetry Span Sensor](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel#oneagent-otel-span-sensor "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.").
+For more information about the OneAgent code module's OpenTelemetry Span Sensor, see [Detect OpenTelemetry spans using the OneAgent code module's OpenTelemetry Span Sensor](../ru/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel.md#oneagent-otel-span-sensor "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.").
 
 ### Entry points
 
 To avoid possible conflicts with existing PurePath distributed traces, OneAgent ingests by default only spans with a [span kindï»¿](https://opentelemetry.io/docs/concepts/signals/traces/#span-kind) of `Server` or `Consumer`. This usually is not an issue, as instrumentation libraries typically configure the appropriate span kind, however something to take into account if your application fully uses manual instrumentation.
 
-This behavior can be customized with an [entry point rule](/docs/ingest-from/extend-dynatrace/extend-tracing/span-settings#span-entry-points "Learn how to configure span settings for OpenTelemetry and OpenTracing."). To do that, in Dynatrace go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **OpenTelemetry** > **Span entry points** and create a new rule with the appropriate action and matcher entry.
+This behavior can be customized with an [entry point rule](../ru/ingest-from/extend-dynatrace/extend-tracing/span-settings.md#span-entry-points "Learn how to configure span settings for OpenTelemetry and OpenTracing."). To do that, in Dynatrace go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **OpenTelemetry** > **Span entry points** and create a new rule with the appropriate action and matcher entry.
 
 ### Span hierarchy
 
@@ -9732,7 +9732,7 @@ As OneAgent ingests spans already [upon their creation](#point-of-ingestion), no
 
 When ingesting OpenTelemetry traces automatically with the OneAgent Span Sensor, there is a difference between the context propagation of OpenTelemetry traces and OneAgent traces.
 
-While propagation of OpenTelemetry traces may be already handled properly by your application, it is also important to consolidate them with the OneAgent-specific trace. This can be achieved with a [context propagation rule](/docs/ingest-from/extend-dynatrace/extend-tracing/span-settings#span-context-propagation "Learn how to configure span settings for OpenTelemetry and OpenTracing."). To configure this, in Dynatrace go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **OpenTelemetry** > **Span context propagation** and create a context propagation rule with a `Propagate` action and a matcher entry for the span in question (for example, based on the span name or instrumentation library).
+While propagation of OpenTelemetry traces may be already handled properly by your application, it is also important to consolidate them with the OneAgent-specific trace. This can be achieved with a [context propagation rule](../ru/ingest-from/extend-dynatrace/extend-tracing/span-settings.md#span-context-propagation "Learn how to configure span settings for OpenTelemetry and OpenTracing."). To configure this, in Dynatrace go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **OpenTelemetry** > **Span context propagation** and create a context propagation rule with a `Propagate` action and a matcher entry for the span in question (for example, based on the span name or instrumentation library).
 
 Try to avoid trace consolidation for technologies already covered natively by OneAgent sensors. Merging such OpenTelemetry spans into a OneAgent trace may lead to undefined states.
 
@@ -9792,7 +9792,7 @@ The ID rewrite applies only to newly started traces (not context propagation) an
 ### All languages
 
 * OneAgent captures OpenTelemetry resource attributes only if they are provided via the `OTEL_SERVICE_NAME` and `OTEL_RESOURCE_ATTRIBUTES` environment variables. When using the OpenTelemetry trace ingest API, this limitation doesn't apply.
-* You can't create [request attributes](/docs/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") (commonly used for trace searching and filtering) based on OpenTelemetry resource attributes.
+* You can't create [request attributes](../ru/observe/application-observability/services/request-attributes.md "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") (commonly used for trace searching and filtering) based on OpenTelemetry resource attributes.
 * OneAgent truncates attribute values exceeding 4,096 characters.
 
 ## Prevention of span duplication in Java
@@ -9840,7 +9840,7 @@ scraped: 2026-03-06T21:16:25.986356
 
 There are two ways to use OneAgent with OpenTelemetry:
 
-* Send OpenTelemetry traces to the [Dynatrace OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+* Send OpenTelemetry traces to the [Dynatrace OTLP API endpoints](../ru/ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
 * Detect OpenTelemetry spans from trace data, using the OneAgent code module's OpenTelemetry Span Sensor.
 
 ![OneAgent send data to Dynatrace](https://dt-cdn.net/images/screenshot-2025-09-30-at-12-44-35-2430-bc1bd03d62.png)
@@ -9857,7 +9857,7 @@ This is shown in the figure above, where the application uses the local-only OTL
 
 Content encoding support
 
-OneAgent does not support content compression using the HTTP header [`Content-Encoding`ï»¿](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Encoding) yet. Pay particular attention to that when [instrumenting a Ruby application](/docs/ingest-from/opentelemetry/walkthroughs/ruby "Learn how to instrument your Ruby application using OpenTelemetry and Dynatrace.") as the OpenTelemetry SDK for Ruby uses by default `Content-Encoding: gzip`.
+OneAgent does not support content compression using the HTTP header [`Content-Encoding`ï»¿](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Encoding) yet. Pay particular attention to that when [instrumenting a Ruby application](../ru/ingest-from/opentelemetry/walkthroughs/ruby.md "Learn how to instrument your Ruby application using OpenTelemetry and Dynatrace.") as the OpenTelemetry SDK for Ruby uses by default `Content-Encoding: gzip`.
 
 If you need to use content compression, please export to SaaS, the Collector, or ActiveGate.
 
@@ -9896,11 +9896,11 @@ Enable for a single host
 
 With the EEC enabled, the OneAgent installations on the respective hosts will start accepting OTLP traces on URL `http://localhost:14499/otlp/v1/traces`.
 
-OneAgent uses the TCP port 14499 as default port for this endpoint. You can change the port with [`oneagentctl`](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api#communication-port "Use the Dynatrace API to retrieve the metrics of monitored entities.").
+OneAgent uses the TCP port 14499 as default port for this endpoint. You can change the port with [`oneagentctl`](../ru/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api.md#communication-port "Use the Dynatrace API to retrieve the metrics of monitored entities.").
 
 EEC unavailable on container setups
 
-The EEC ingestion endpoint is only available with [Full-Stack and Infrastructure Monitoring](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.") deployments. It is **not** available with [containerized setups](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes"). Please use [ActiveGate](#export-to-saas-and-activegate) as export endpoint for container applications.
+The EEC ingestion endpoint is only available with [Full-Stack and Infrastructure Monitoring](../ru/platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.") deployments. It is **not** available with [containerized setups](../ru/ingest-from/setup-on-k8s/deployment.md "Deploy Dynatrace Operator on Kubernetes"). Please use [ActiveGate](#export-to-saas-and-activegate) as export endpoint for container applications.
 
 ### Export details
 
@@ -9938,7 +9938,7 @@ The feature described on this page provides the same functionality as the OneAge
 If you enable this feature while also exporting OTLP data, you will create duplicate spans.
 
 OpenTelemetry span data can be captured for Java, Go, Node.js, PHP, and .NET, on all platforms supported by OneAgent.
-For setup and configuration of the OneAgent Span Sensor, see [Enable the OpenTelemetry Span Sensor for OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.").
+For setup and configuration of the OneAgent Span Sensor, see [Enable the OpenTelemetry Span Sensor for OneAgent](../ru/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration.md "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.").
 
 When the OneAgent OpenTelemetry Span Sensor is enabled, API calls like this example are automatically detected and included in the trace waterfall view.
 Since OneAgent captures these spans automatically, exporting them to an OTLP endpoint will create duplicate traces.
@@ -10200,7 +10200,7 @@ Run the following command to adjust OneAgent connection settings:
 
 To define multiple endpoints, separate them by semicolon and add the quotes. For example, `--set-server="https://server1;https://server2"`.
 
-These parameters require restart of OneAgent, as well as restart of all the applications monitored with deep code modules. Add [`--restart-service`](#oneagent-restart) to the command to restart OneAgent automatically (version 1.189+) or stop and start OneAgent process manually. For OS-specific instructions, see [Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux "Learn how to stop and restart OneAgent on Linux."), [Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows "Learn how to stop and restart OneAgent on Windows."), or [AIX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix "Learn how to stop and restart OneAgent on AIX.").
+These parameters require restart of OneAgent, as well as restart of all the applications monitored with deep code modules. Add [`--restart-service`](#oneagent-restart) to the command to restart OneAgent automatically (version 1.189+) or stop and start OneAgent process manually. For OS-specific instructions, see [Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux.md "Learn how to stop and restart OneAgent on Linux."), [Windows](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows.md "Learn how to stop and restart OneAgent on Windows."), or [AIX](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix.md "Learn how to stop and restart OneAgent on AIX.").
 
 This command will immediately change the OS module connection endpoint, but the code modules won't be able to read the new setting until the next restart.
 
@@ -10238,18 +10238,18 @@ For example:
 
 ### Set environment ID
 
-Use the `--set-tenant` parameter to set an [environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments."). By default, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
+Use the `--set-tenant` parameter to set an [environment ID](../ru/discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments."). By default, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
 
 * **Linux** or **AIX**:  
   `./oneagentctl --set-tenant=abc123456`
 * **Windows**:  
   `.\oneagentctl.exe --set-tenant=abc123456`
 
-Always use in combination with `--set-tenant-token`, which defines the [tenant token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token "Learn what a tenant token is and how to change it.") for internal authentication.
+Always use in combination with `--set-tenant-token`, which defines the [tenant token](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token.md "Learn what a tenant token is and how to change it.") for internal authentication.
 
 ### Show environment ID
 
-The Dynatrace [environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") you received with your activation email.
+The Dynatrace [environment ID](../ru/discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.") you received with your activation email.
 
 Use the `--get-tenant` parameter to display the environment ID:
 
@@ -10260,7 +10260,7 @@ Use the `--get-tenant` parameter to display the environment ID:
 
 ### Set tenant token
 
-Use the `--set-tenant-token` parameter to set the [tenant token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token "Learn what a tenant token is and how to change it."), which is used to authenticate communication with the defined endpoint. Always use in combination with `--set-tenant`.
+Use the `--set-tenant-token` parameter to set the [tenant token](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token.md "Learn what a tenant token is and how to change it."), which is used to authenticate communication with the defined endpoint. Always use in combination with `--set-tenant`.
 
 * **Linux** or **AIX**:  
   `./oneagentctl --set-tenant-token=abcdefg123456790`
@@ -10345,10 +10345,10 @@ Starting with OneAgent version 1.301, OneAgent doesn't use the TCP ports for its
 Watchdog is a binary used for starting and monitoring OneAgent monitoring processes:
 
 * `oneagentos`âoperating system monitoring
-* `oneagentplugin`âmonitoring using [OneAgent extensions](/docs/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Develop your own Extensions in Dynatrace.")
-* `oneagentextensions`âmonitoring using local [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
-* `oneagentloganalytics`â[Log Monitoring](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
-* `oneagentnetwork`â[network monitoring](/docs/observe/infrastructure-observability/networks "Learn how to monitor network communications.")
+* `oneagentplugin`âmonitoring using [OneAgent extensions](../ru/ingest-from/extensions/develop-your-extensions.md#oneagent-extensions "Develop your own Extensions in Dynatrace.")
+* `oneagentextensions`âmonitoring using local [Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
+* `oneagentloganalytics`â[Log Monitoring](analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* `oneagentnetwork`â[network monitoring](../ru/observe/infrastructure-observability/networks.md "Learn how to monitor network communications.")
 
 Use the `--set-watchdog-portrange=arg` parameter to change the watchdog listening port range to `<arg>`. The `<arg>` must contain two port numbers separated by a colon (`:`). For example `50000:50100`. The maximum supported port range is from 1024 to 65535. The port range must cover at least 4 ports. The port number starting the range must be lower.
 
@@ -10359,7 +10359,7 @@ Use the `--set-watchdog-portrange=arg` parameter to change the watchdog listenin
 
 ## Automatic updates
 
-For more information, see update OneAgent topics for [Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux "Learn about the different ways to update OneAgent on Linux."), [Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/update-oneagent-on-windows "Learn about the different ways to update Dynatrace OneAgent on Windows."), and [AIX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/update-oneagent-on-aix "Learn how you can update Dynatrace OneAgent on AIX.").
+For more information, see update OneAgent topics for [Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux.md "Learn about the different ways to update OneAgent on Linux."), [Windows](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/update-oneagent-on-windows.md "Learn about the different ways to update Dynatrace OneAgent on Windows."), and [AIX](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/update-oneagent-on-aix.md "Learn how you can update Dynatrace OneAgent on AIX.").
 
 ### Check if auto-update is enabled
 
@@ -10383,7 +10383,7 @@ After you use this command to disable auto-updates, you won't be able to control
 
 ## Log monitoring
 
-For more information, see [Log Monitoring](/docs/analyze-explore-automate/logs "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.").
+For more information, see [Log Monitoring](../ru/analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.").
 
 ### Check if Log Monitoring is enabled
 
@@ -10407,7 +10407,7 @@ Set the `--set-app-log-content-access` parameter to `true` or `false` to disable
 
 OneAgent version 1.225+
 
-If you don't have access to Dynatrace or you would like to script diagnostic data collection, you can use the `oneagentctl` command to collect a [subset](#contents) of the full [OneAgent diagnostics](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics "Learn how to run OneAgent diagnostics") data right on the host where OneAgent is installed. With the diagnostic data collected for OneAgent, you can:
+If you don't have access to Dynatrace or you would like to script diagnostic data collection, you can use the `oneagentctl` command to collect a [subset](#contents) of the full [OneAgent diagnostics](ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics.md "Learn how to run OneAgent diagnostics") data right on the host where OneAgent is installed. With the diagnostic data collected for OneAgent, you can:
 
 * Easily collect the diagnostic data for a specific host
 * Directly provide Dynatrace Support the details they need to diagnose the issue
@@ -10441,7 +10441,7 @@ Archive saved as C:\data\support-archive\support_archive_agent_2021-09-07_121619
 
 ### Contents of diagnostic data
 
-All the collected diagnostic data is compressed into a `support_archive_agent_YYYY-MM-DD_hhmmss.zip` archive that includes the following subset of the full [OneAgent diagnostics](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics "Learn how to run OneAgent diagnostics") data:
+All the collected diagnostic data is compressed into a `support_archive_agent_YYYY-MM-DD_hhmmss.zip` archive that includes the following subset of the full [OneAgent diagnostics](ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics.md "Learn how to run OneAgent diagnostics") data:
 
 Folder or file
 
@@ -10484,7 +10484,7 @@ Disabling system log access limits our ability to diagnose and solve issues proa
 
 ## Host ID
 
-Dynatrace assigns a unique ID to each host monitored in your environment. Host IDs can be used as parameters in Dynatrace API requests, for example [Topology and Smartscape API - Hosts API](/docs/dynatrace-api/environment-api/topology-and-smartscape/hosts-api "Learn how you can use the Dynatrace API to manage monitored hosts."). The host ID also constitutes the URL of the **Host overview** page, for example, `https://environment.org/#newhosts/hostdetails;id=HOST-6E56EE455C84E232`.
+Dynatrace assigns a unique ID to each host monitored in your environment. Host IDs can be used as parameters in Dynatrace API requests, for example [Topology and Smartscape API - Hosts API](dynatrace-api/environment-api/topology-and-smartscape/hosts-api.md "Learn how you can use the Dynatrace API to manage monitored hosts."). The host ID also constitutes the URL of the **Host overview** page, for example, `https://environment.org/#newhosts/hostdetails;id=HOST-6E56EE455C84E232`.
 
 ### Display your host ID
 
@@ -10522,7 +10522,7 @@ For example, to set the host ID source to `ip-addresses` and assign it to a name
 * **Windows**:  
   `.\oneagentctl.exe --set-host-id-source="ip-addresses;namespace=test"`
 
-After you change the host ID source, you must restart all your monitored applications and then restart the OneAgent service to create the new host entity in your environment. You can use the `--restart-service` parameter with `oneagentctl` to restart OneAgent automatically or stop and start OneAgent process manually. For OS-specific instructions, see [Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux "Learn how to stop and restart OneAgent on Linux."), [Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows "Learn how to stop and restart OneAgent on Windows."), or [AIX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix "Learn how to stop and restart OneAgent on AIX.").
+After you change the host ID source, you must restart all your monitored applications and then restart the OneAgent service to create the new host entity in your environment. You can use the `--restart-service` parameter with `oneagentctl` to restart OneAgent automatically or stop and start OneAgent process manually. For OS-specific instructions, see [Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux.md "Learn how to stop and restart OneAgent on Linux."), [Windows](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows.md "Learn how to stop and restart OneAgent on Windows."), or [AIX](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix.md "Learn how to stop and restart OneAgent on AIX.").
 
 To **check the host ID source**, use the `--get-host-id-source` parameter:
 
@@ -10539,9 +10539,9 @@ ip-addresses;namespace=test
 
 ## Host groups
 
-For an overview of how to use host groups, see [Organize your environment using host groups](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
+For an overview of how to use host groups, see [Organize your environment using host groups](../ru/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
 
-Alternatively, to modify host group assignment centrally from the Dynatrace Cluster, you can use [Remote configuration management](/docs/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host group** action).
+Alternatively, to modify host group assignment centrally from the Dynatrace Cluster, you can use [Remote configuration management](ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host group** action).
 
 ### Change host group assignment
 
@@ -10560,9 +10560,9 @@ Host group string requirements:
 * Must not start with `dt.`
 * Maximum length is 100 characters
 
-Using `--set-host-group` requires restart of OneAgent, as well as restart of all the monitored services. Add [`--restart-service`](#oneagent-restart) to the command to restart OneAgent automatically (version 1.189+) or stop and start OneAgent process manually. For OS-specific instructions, see [Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux "Learn how to stop and restart OneAgent on Linux."), [Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows "Learn how to stop and restart OneAgent on Windows."), or [AIX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix "Learn how to stop and restart OneAgent on AIX.").
+Using `--set-host-group` requires restart of OneAgent, as well as restart of all the monitored services. Add [`--restart-service`](#oneagent-restart) to the command to restart OneAgent automatically (version 1.189+) or stop and start OneAgent process manually. For OS-specific instructions, see [Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux.md "Learn how to stop and restart OneAgent on Linux."), [Windows](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows.md "Learn how to stop and restart OneAgent on Windows."), or [AIX](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix.md "Learn how to stop and restart OneAgent on AIX.").
 
-Changing the host group assignments results in recalculation of process group IDs, which impacts data aggregation. To read more about the impact of host group changes on process group detection, see [Organize your environment using host groups](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups#how-host-groups-affect-your-monitoring-environment "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
+Changing the host group assignments results in recalculation of process group IDs, which impacts data aggregation. To read more about the impact of host group changes on process group detection, see [Organize your environment using host groups](../ru/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md#how-host-groups-affect-your-monitoring-environment "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
 
 ### Clear host group assignment
 
@@ -10596,7 +10596,7 @@ By default, the `oneagentos` process automatically detects cloud environments su
 
 Use the `oneagentctl` command-line tool with the `--set-host-name` parameter to override an automatically detected host name. A host name must not contain the `<`, `>`, `&`, `CR` (carriage return), or `LF` (line feed) characters. The maximum length is 256 characters.
 
-This command adds a custom host name to display in the UI, but the detected host name is not changed. For details, see [Set custom host names](/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name.").
+This command adds a custom host name to display in the UI, but the detected host name is not changed. For details, see [Set custom host names](observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments.md "Learn how to change a monitored host name.").
 
 To change the host name:
 
@@ -10614,7 +10614,7 @@ To revert to the auto-detected host name, set the `--set-host-name` parameter to
 
 The change might not be reflected in the Dynatrace web UI for up to 6 minutes.
 
-Using `--set-host-name` requires restart of OneAgent. Add `--restart-service` to the command to restart OneAgent automatically (version 1.189+) or stop and start the OneAgent process manually. For OS-specific instructions, see [Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux "Learn how to stop and restart OneAgent on Linux."), [Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows "Learn how to stop and restart OneAgent on Windows."), or [AIX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix "Learn how to stop and restart OneAgent on AIX.").
+Using `--set-host-name` requires restart of OneAgent. Add `--restart-service` to the command to restart OneAgent automatically (version 1.189+) or stop and start the OneAgent process manually. For OS-specific instructions, see [Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux.md "Learn how to stop and restart OneAgent on Linux."), [Windows](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows.md "Learn how to stop and restart OneAgent on Windows."), or [AIX](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix.md "Learn how to stop and restart OneAgent on AIX.").
 
 To show the host name:
 
@@ -10629,9 +10629,9 @@ To show the host name:
 
 Once configured, custom metadata is displayed as a set of properties at the bottom of the **Properties and tags** section of the host overview page. The property values must not contain an `=` character (unless used as a key-value delimiter) or whitespace characters. The maximum length is 256 characters, including the key-value delimiter. The key name must not start with a `#` character.
 
-Alternatively, to modify host metadata centrally from the Dynatrace Cluster, you can use [Remote configuration management](/docs/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host properties** action).
+Alternatively, to modify host metadata centrally from the Dynatrace Cluster, you can use [Remote configuration management](ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host properties** action).
 
-For versions earlier than 1.189, use a [host metadata configuration file](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#edit-the-host-metadata-configuration-file "Learn how to tag and set additional properties for a monitored host.").
+For versions earlier than 1.189, use a [host metadata configuration file](observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts.md#edit-the-host-metadata-configuration-file "Learn how to tag and set additional properties for a monitored host.").
 
 To **add or change host properties**, run the following command:
 
@@ -10651,8 +10651,8 @@ To set a security context for your host, use the following command:
 * **Windows**  
   `.\oneagentctl.exe --set-host-property=dt.security_context=easytrade_sec`
 
-The `dt.security_context` is utilized by multiple features within Dynatrace, such as [Log security context](/docs/analyze-explore-automate/logs/lma-security-context "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.") and [Business events security context](/docs/observe/business-observability/bo-event-processing/bo-security-context "Use Dynatrace powered by Grail and DQL to reshape incoming business events data for better understanding, analysis, or further processing.").
-Additionally, if you're an account administrator looking to grant access to monitored entities based on their security context, see [Grant access to entities with security context](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context").
+The `dt.security_context` is utilized by multiple features within Dynatrace, such as [Log security context](analyze-explore-automate/logs/lma-security-context.md "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.") and [Business events security context](../ru/observe/business-observability/bo-event-processing/bo-security-context.md "Use Dynatrace powered by Grail and DQL to reshape incoming business events data for better understanding, analysis, or further processing.").
+Additionally, if you're an account administrator looking to grant access to monitored entities based on their security context, see [Grant access to entities with security context](../ru/manage/identity-access-management/use-cases/access-security-context.md "Grant access to entities with security context").
 
 To **remove host properties**, run the following command:
 
@@ -10674,7 +10674,7 @@ To **show all properties** configured for the host, run the following command:
 
 After you configure custom host tags, they are displayed at the top of the **Properties and tags** section of the host overview page. A property value must not contain `=` (unless used as a key-value delimiter) or whitespace characters. The maximum length is 256 characters, including the key-value delimiter. A key name must not start with `#`.
 
-Alternatively, to modify host tags centrally from the Dynatrace Cluster, you can use [Remote configuration management](/docs/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host tags** action).
+Alternatively, to modify host tags centrally from the Dynatrace Cluster, you can use [Remote configuration management](ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host tags** action).
 
 To **add or change host tags**, run the following command:
 
@@ -10721,7 +10721,7 @@ For example:
 --set-monitoring-mode=infra-only
 ```
 
-Use Infrastructure Monitoring mode or Discovery mode in place of Full-Stack Monitoring mode. With this approach, you receive infrastructure health data, with no application or user performance data. For details, see [Monitoring modes](/docs/observe/infrastructure-observability/hosts/monitoring-modes "Find out what's included in Dynatrace Infrastructure Monitoring mode.").
+Use Infrastructure Monitoring mode or Discovery mode in place of Full-Stack Monitoring mode. With this approach, you receive infrastructure health data, with no application or user performance data. For details, see [Monitoring modes](../ru/observe/infrastructure-observability/hosts/monitoring-modes.md "Find out what's included in Dynatrace Infrastructure Monitoring mode.").
 
 ### Check which monitoring mode is enabled
 
@@ -10738,7 +10738,7 @@ The command returns one of the following:
 * `infra-only`: Infrastructure Monitoring mode
 * `discovery`: Discovery mode
 
-Changing the Infrastructure Monitoring mode requires restart of OneAgent, as well as restart of all monitored services. Add [`--restart-service`](#oneagent-restart) to the command to restart OneAgent automatically (version 1.189+) or stop and start the OneAgent process manually. For OS-specific instructions, see [Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux "Learn how to stop and restart OneAgent on Linux."), [Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows "Learn how to stop and restart OneAgent on Windows."), or [AIX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix "Learn how to stop and restart OneAgent on AIX.").
+Changing the Infrastructure Monitoring mode requires restart of OneAgent, as well as restart of all monitored services. Add [`--restart-service`](#oneagent-restart) to the command to restart OneAgent automatically (version 1.189+) or stop and start the OneAgent process manually. For OS-specific instructions, see [Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux.md "Learn how to stop and restart OneAgent on Linux."), [Windows](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows.md "Learn how to stop and restart OneAgent on Windows."), or [AIX](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix.md "Learn how to stop and restart OneAgent on AIX.").
 
 ## Automatic injection for Infrastructure Monitoring mode
 
@@ -10746,7 +10746,7 @@ OneAgent version 1.213
 
 Automatic OneAgent injection is enabled by default in Infrastructure Monitoring mode. It's required to collect JMX/PMI metrics and to handle Application Security in Infrastructure Monitoring mode.
 
-For more information, see [Infrastructure and Discovery monitoring modes](/docs/observe/infrastructure-observability/hosts/monitoring-modes "Find out what's included in Dynatrace Infrastructure Monitoring mode.").
+For more information, see [Infrastructure and Discovery monitoring modes](../ru/observe/infrastructure-observability/hosts/monitoring-modes.md "Find out what's included in Dynatrace Infrastructure Monitoring mode.").
 
 ### Check if auto-injection is enabled
 
@@ -10775,21 +10775,21 @@ To disable auto-injections:
 * **Windows**:  
   `.\oneagentctl.exe --set-auto-injection-enabled=false`
 
-For more information, see [Disable auto-injection](/docs/observe/infrastructure-observability/hosts/monitoring-modes#disable-auto-injection "Find out what's included in Dynatrace Infrastructure Monitoring mode.").
+For more information, see [Disable auto-injection](../ru/observe/infrastructure-observability/hosts/monitoring-modes.md#disable-auto-injection "Find out what's included in Dynatrace Infrastructure Monitoring mode.").
 
 ## Metric ingestion
 
 Local metric ingestion is currently supported only on Windows and Linux.
 
-You can use the `oneagentctl` command to check or change communication ports used for local metric ingestion using the [OneAgent metric API](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities."), [Scripting integration](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe "Learn how to ingest metrics using local scripting integration."), [Telegraf](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf "Ingest Telegraf metrics into Dynatrace."), or [DynatraceStatsd](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd "Ingest metrics into Dynatrace using OneAgent and the ActiveGate StatsD client."). Changing the metric ingestion port requires restart of OneAgent. Add [`--restart-service`](#oneagent-restart) to the command to restart OneAgent automatically.
+You can use the `oneagentctl` command to check or change communication ports used for local metric ingestion using the [OneAgent metric API](../ru/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api.md "Use the Dynatrace API to retrieve the metrics of monitored entities."), [Scripting integration](../ru/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe.md "Learn how to ingest metrics using local scripting integration."), [Telegraf](../ru/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf.md "Ingest Telegraf metrics into Dynatrace."), or [DynatraceStatsd](../ru/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd.md "Ingest metrics into Dynatrace using OneAgent and the ActiveGate StatsD client."). Changing the metric ingestion port requires restart of OneAgent. Add [`--restart-service`](#oneagent-restart) to the command to restart OneAgent automatically.
 
-See [Metrics ingestion](/docs/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.") to learn more.
+See [Metrics ingestion](../ru/ingest-from/extend-dynatrace/extend-metrics.md "Learn how to extend metric observability in Dynatrace.") to learn more.
 
 ### OneAgent API, scripting integration, and Telegraf
 
 
 
-The default metric ingestion port is `14499`. If necessary, you can use the [oneagentctl](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the port. Changing the metric ingestion port requires restart of OneAgent. Add [`--restart-service`](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
+The default metric ingestion port is `14499`. If necessary, you can use the [oneagentctl](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the port. Changing the metric ingestion port requires restart of OneAgent. Add [`--restart-service`](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
 
 ### Check the ingestion port
 
@@ -10817,7 +10817,7 @@ Configure your host proxy to allow localhost traffic going to the metric ingesti
 
 ### OneAgent listener
 
-The default DynatraceStatsD UDP listening port for the OneAgent listener is `18125`. If necessary, you can use the [oneagentctl](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the metric ingestion port. Changing the port requires restart of OneAgent. Add [`--restart-service`](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
+The default DynatraceStatsD UDP listening port for the OneAgent listener is `18125`. If necessary, you can use the [oneagentctl](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the metric ingestion port. Changing the port requires restart of OneAgent. Add [`--restart-service`](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
 
 #### Check the ingestion port
 
@@ -10854,13 +10854,13 @@ StatsdPort=18126
 
 ## Network zones
 
-To learn about network zone naming rules and other reference information, see [Network zones](/docs/manage/network-zones "Find out how network zones work in Dynatrace.").
+To learn about network zone naming rules and other reference information, see [Network zones](../ru/manage/network-zones.md "Find out how network zones work in Dynatrace.").
 
-Alternatively, to modify network zone assignment centrally from the Dynatrace Cluster, you can use [Remote configuration management](/docs/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
+Alternatively, to modify network zone assignment centrally from the Dynatrace Cluster, you can use [Remote configuration management](ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
 
 ### Set a network zone
 
-Use the `--set-network-zone` parameter to instruct OneAgent to communicate via the specified network zone. The name of a network zone is a string of alphanumeric characters. You can also use hyphens (`-`), underscores (`_`), and a dot (`.`) as a seperator. The network zone name must not start with a dot. The length of the string is limited to 256 characters. Network zone names are not case-sensitive. Dynatrace stores these names in lowercase. For more information, see the section on [network zone naming](/docs/manage/network-zones/network-zones-basic-info#naming "Learn network zones basics.")
+Use the `--set-network-zone` parameter to instruct OneAgent to communicate via the specified network zone. The name of a network zone is a string of alphanumeric characters. You can also use hyphens (`-`), underscores (`_`), and a dot (`.`) as a seperator. The network zone name must not start with a dot. The length of the string is limited to 256 characters. Network zone names are not case-sensitive. Dynatrace stores these names in lowercase. For more information, see the section on [network zone naming](manage/network-zones/network-zones-basic-info.md#naming "Learn network zones basics.")
 
 * On **Linux** or **AIX**:  
   `./oneagentctl --set-network-zone=<your.network.zone>`
@@ -10956,7 +10956,7 @@ OneAgent version 1.293+
 
 Enabling `cap_setuid` for OS Agent is required for GPFS monitoring.
 
-Following parameters are only available in [OneAgent non-privileged mode on Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Find out when Dynatrace OneAgent requires root privileges on Linux.").
+Following parameters are only available in [OneAgent non-privileged mode on Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged.md "Find out when Dynatrace OneAgent requires root privileges on Linux.").
 
 * `get-osagent-cap-setuid-enabled`
 * `set-osagent-cap-setuid-enabled`
@@ -10998,7 +10998,7 @@ When you create your environment, OneAgent comes with a big set of features that
 New OneAgent features are fully supported and tested as soon as theyâre available.
 
 * For new environments, you can activate or deactivate OneAgent features (opt-in) based on the specific use case.
-* For existing environments, newly added OneAgent features still require explicit activation from users with **Write settings** (`settings.write`) permission on the [Settings API - OneAgent features schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-oneagent-features "View builtin:oneagent.features settings schema table of your monitoring environment via the Dynatrace API.").
+* For existing environments, newly added OneAgent features still require explicit activation from users with **Write settings** (`settings.write`) permission on the [Settings API - OneAgent features schema table](../ru/dynatrace-api/environment-api/settings/schemas/builtin-oneagent-features.md "View builtin:oneagent.features settings schema table of your monitoring environment via the Dynatrace API.").
 
 ## Scope
 
@@ -11007,12 +11007,12 @@ New OneAgent features typically are enabled globally (for the entire environment
 ## Use cases
 
 * As new features are continuously added to OneAgent, you need to explicitly enable them within your existing monitoring environments to avoid unexpected changes.
-* You may choose to disable certain OneAgent features at a fine-grained level when resolving issues. This can be useful in identifying the root cause of a problem down to a specific feature. To learn more, see [Troubleshooting OneAgent deep-monitoring issues](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-deep-monitoring-issues "Work with the Dynatrace Support team to troubleshoot OneAgent deep-monitoring issues.").
+* You may choose to disable certain OneAgent features at a fine-grained level when resolving issues. This can be useful in identifying the root cause of a problem down to a specific feature. To learn more, see [Troubleshooting OneAgent deep-monitoring issues](../ru/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-deep-monitoring-issues.md "Work with the Dynatrace Support team to troubleshoot OneAgent deep-monitoring issues.").
 
 ## Web UI or API
 
 * You can enable or disable OneAgent features via the Dynatrace web UI on the **OneAgent features** page at the appropriate level (global or process group).
-* You can use the Dynatrace [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") to make the same settings via API calls.
+* You can use the Dynatrace [Settings API](../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") to make the same settings via API calls.
 
 ### Configuration via web UI
 
@@ -11047,17 +11047,17 @@ To enable or disable a OneAgent feature for a process group
 
 ### Configuration via API
 
-Using the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers."), you can:
+Using the [Settings API](../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers."), you can:
 
 * **Enable/disable** your OneAgent feature settings.
 * **Override the scope** of a OneAgent feature to have a different setting for a specific process group or process.
 * **Export** the current configuration from an environment
 
-To be able to use the API you need an access token with **Read settings** (`settings.read`) and **Write settings** (`settings.write`) scopes. To learn how to obtain it, see [Create an access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.").
+To be able to use the API you need an access token with **Read settings** (`settings.read`) and **Write settings** (`settings.write`) scopes. To learn how to obtain it, see [Create an access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.").
 
 To use the Settings API
 
-1. To learn the JSON format required to post your configuration, use the [Get a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") endpoint. The schema ID is `builtin:oneagent.features`.
+1. To learn the JSON format required to post your configuration, use the [Get a schema](../ru/dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") endpoint. The schema ID is `builtin:oneagent.features`.
 
    Example: JSON payload to disable Java log-context enrichment for unstructured logs for a specific process group.
 
@@ -11146,7 +11146,7 @@ To use the Settings API
 
    ]
    ```
-2. To send your configuration, use the [Post an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") endpoint.
+2. To send your configuration, use the [Post an object](../ru/dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") endpoint.
 
 ---
 
@@ -11166,7 +11166,7 @@ scraped: 2026-03-06T21:13:30.839577
 * 4-min read
 * Updated on Jan 15, 2026
 
-The OneAgent health overview empowers you to discover all your deployed [OneAgent modules](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") at scale and detect anomalies before they become problems. With the OneAgent health overview, for example, you can discover:
+The OneAgent health overview empowers you to discover all your deployed [OneAgent modules](../ru/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") at scale and detect anomalies before they become problems. With the OneAgent health overview, for example, you can discover:
 
 * Outdated OneAgent modules that require an update to continue full Dynatrace support.
 * Connectivity issues between OneAgent modules and your Dynatrace Cluster.
@@ -11191,7 +11191,7 @@ The **OneAgent health overview** comprises
 
   Above the data table, the lowest and highest compatible OneAgent versions for this Dynatrace cluster are displayed.
 
-  The environment permission [Install OneAgent](/docs/manage/identity-access-management/permission-management/role-based-permissions#environment "Role-based permissions") is required to visualize data in this table.
+  The environment permission [Install OneAgent](manage/identity-access-management/permission-management/role-based-permissions.md#environment "Role-based permissions") is required to visualize data in this table.
 
 Select a specific data point in the area chart to see the contributing OneAgent modules in the data table.
 
@@ -11228,11 +11228,11 @@ scraped: 2026-03-06T21:23:33.828725
 * 3-min read
 * Published Aug 19, 2025
 
-Dynatrace has a [permission model for Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail."). This applies to all telemetry data, such as metrics, events, spans, and logs.
+Dynatrace has a [permission model for Grail](../ru/platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail."). This applies to all telemetry data, such as metrics, events, spans, and logs.
 
-We recommend setting up permissions along organizational lines and deployment scopes. Suitable concepts include host groups, Kubernetes clusters, and Kubernetes namespaces. These attributes are typically available for all telemetry data ingested via Dynatrace collection methods like OneAgent, OpenTelemetry, or Kubernetes operator. Hence, you can use these attributes to enable [record-level permissions](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.").
+We recommend setting up permissions along organizational lines and deployment scopes. Suitable concepts include host groups, Kubernetes clusters, and Kubernetes namespaces. These attributes are typically available for all telemetry data ingested via Dynatrace collection methods like OneAgent, OpenTelemetry, or Kubernetes operator. Hence, you can use these attributes to enable [record-level permissions](../ru/platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.").
 
-For Kubernetes-based deployments, make sure Dynatrace Operator has [metadata enrichment](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") enabled.
+For Kubernetes-based deployments, make sure Dynatrace Operator has [metadata enrichment](../ru/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment.md "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") enabled.
 
 If you only require a basic permission concept, setting up bucket-level permissions is the best option. You can then route your data to the correct bucket in OpenPipeline by matching one of the mentioned deployment-relevant primary Grail fields.
 
@@ -11241,7 +11241,7 @@ For more control in Dynatrace, you can set up policy boundaries with more granul
 * `dt.host_group.id`
 * `k8s.cluster.name`
 * `k8s.namespace.name`
-* Any other attribute listed in the [permission model](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.")
+* Any other attribute listed in the [permission model](../ru/platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.")
 
 Dynatrace provides a comprehensive permission model for Grail that applies to all telemetry data-including metrics, logs, spans, and events.
 
@@ -11266,7 +11266,7 @@ To set a security context for your host, use the following command:
 
 This adds the security context to all metrics, spans, events, and logs collected by OneAgent on this host.
 
-The `dt.security_context` is utilized by many features in Dynatrace and available for all telemetry data. You can use it for [record-level security](/docs/platform/grail/organize-data/assign-permissions-in-grail#field-permissions "Find out how to assign permissions to buckets and tables in Grail.").
+The `dt.security_context` is utilized by many features in Dynatrace and available for all telemetry data. You can use it for [record-level security](../ru/platform/grail/organize-data/assign-permissions-in-grail.md#field-permissions "Find out how to assign permissions to buckets and tables in Grail.").
 
 ---
 
@@ -11286,7 +11286,7 @@ scraped: 2026-03-06T21:19:36.131208
 * 3-min read
 * Published Jul 16, 2018
 
-Dynatrace OneAgent is supported on many [platforms](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") and offers deep monitoring for many [technologies and frameworks](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks."). The Dynatrace team tests all possible deep-monitoring scenarios, but to streamline our supportability in situations in which deep monitoring might not work as planned, you can leverage the [OneAgent features](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.") page.
+Dynatrace OneAgent is supported on many [platforms](../ru/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") and offers deep monitoring for many [technologies and frameworks](../ru/ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks."). The Dynatrace team tests all possible deep-monitoring scenarios, but to streamline our supportability in situations in which deep monitoring might not work as planned, you can leverage the [OneAgent features](../ru/ingest-from/dynatrace-oneagent/oneagent-features.md "Manage OneAgent features globally and per process group.") page.
 
 ## Use cases
 
@@ -11392,9 +11392,9 @@ Starting with OneAgent version 1.301, OneAgent doesn't use the TCP ports for its
 
 OneAgent consists of different processes that communicate via a TCP port with a watchdog. At startup, OneAgent watchdog attempts to open the first available port between port 50000 and 50100. In some cases you may need this port for your own applications that are started after OneAgent. In such cases, you can change the port range that the OneAgent watchdog uses by calling OneAgent command-line interface.
 
-You can change the watchdog listening port by using `set-watchdog-portrange` via [oneagentctl command-line tool](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") :
+You can change the watchdog listening port by using `set-watchdog-portrange` via [oneagentctl command-line tool](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") :
 
-For example, to change port range to `50005:50105`, go to the [oneagentctl directory](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") and run the following command:
+For example, to change port range to `50005:50105`, go to the [oneagentctl directory](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") and run the following command:
 
 * On **Linux** or **AIX**:  
   `./oneagentctl --set-watchdog-portrange 50005:50105`
@@ -11410,13 +11410,13 @@ OneAgent is shipped with trusted Dynatrace SSL certificates, which are used to v
 
 If your environment uses a proxy (thereby requiring an update to the remote server's SSL certificate) or you have an Environment ActiveGate with its own custom certificate, you might encounter a `Server certificate check failed` message during the initial connection check.
 
-To resolve this issue, see [OneAgent security](/docs/ingest-from/dynatrace-oneagent/oneagent-security#trusted-root-certificates "Manage OneAgent security").
+To resolve this issue, see [OneAgent security](ingest-from/dynatrace-oneagent/oneagent-security.md#trusted-root-certificates "Manage OneAgent security").
 
 Processes not detected?
 
 One of the following may have occurred
 
-* The process isnât supported by our monitoring technology. You can always check which [process types Dynatrace supports](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+* The process isnât supported by our monitoring technology. You can always check which [process types Dynatrace supports](../ru/ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 * The process isnât working on your server. Make sure your servers are running and that the processes are operational.
 * There is delay in communication between Dynatrace and your OneAgent. If this is the case, wait a few moments and try again.
 * Your OneAgent isnât working properly. Go to **Settings** > **Monitoring** > **Monitoring overview** to confirm that monitoring is enabled for the host running your software.
@@ -11482,8 +11482,8 @@ After successfully initializing the SDK, you might still encounter issues, such 
 
   See the following pages for exact locations of log files:
 
-  + [OneAgent security on Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows "Learn about Dynatrace OneAgent security and modifications to your Windows-based system")
-  + [OneAgent security on Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux "Learn about Dynatrace OneAgent security and modifications to your Linux-based system")
+  + [OneAgent security on Windows](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows.md "Learn about Dynatrace OneAgent security and modifications to your Windows-based system")
+  + [OneAgent security on Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux.md "Learn about Dynatrace OneAgent security and modifications to your Linux-based system")
 
   You can increase the OneAgent log level by setting the `DT_LOGLEVELFILE={level}` environment variable or passing the `--dt_loglevelfile={level}` command line argument to the SDK.
 
@@ -11557,7 +11557,7 @@ OneAgent on Linux was reported to be unstable when deployed on poor quality NFS 
 
 #### Custom installation path
 
-Customize OneAgent installation so that it's not located in the NFS directories (the default OneAgent location is `/opt/dynatrace`). Use the OneAgent `INSTALL_PATH` parameter. For more information, see [Customize OneAgent installation on Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#installation-path "Learn how to use the Linux installer with command line parameters.").
+Customize OneAgent installation so that it's not located in the NFS directories (the default OneAgent location is `/opt/dynatrace`). Use the OneAgent `INSTALL_PATH` parameter. For more information, see [Customize OneAgent installation on Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md#installation-path "Learn how to use the Linux installer with command line parameters.").
 
 #### Runtime path
 
@@ -11651,7 +11651,7 @@ Processes not detected?
 
 One of the following may have occurred
 
-* The process isnât supported by our monitoring technology. You can check which [process types Dynatrace supports](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+* The process isnât supported by our monitoring technology. You can check which [process types Dynatrace supports](../ru/ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 * The process isnât working on your server. Make sure your servers are running and that the processes are operational.
 * There is delay in communication between Dynatrace and your OneAgent. If this is the case, wait a few moments and try again.
 * Your OneAgent isnât working properly. Go to **Settings** > **Monitoring** > **Monitoring overview** to confirm that monitoring is enabled for the host running your software.
@@ -11686,14 +11686,14 @@ MSI (s) (C0:54) [09:27:56:489]: Product: Dynatrace OneAgent -- Error 1714. The o
 
 Try the following steps to resolve the issue:
 
-1. Download and unpack the MSI package from the installer of the currently installed version by following the [Get MSI Package](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows#msi "Learn how to download and install Dynatrace OneAgent on Windows.") instructions.
+1. Download and unpack the MSI package from the installer of the currently installed version by following the [Get MSI Package](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows.md#msi "Learn how to download and install Dynatrace OneAgent on Windows.") instructions.
 2. Copy the MSI package to `C:\Windows\Installer`, and rename it to match the name referenced in the log (in this example, `312c0.msi`).
 
 For more information, see [Missing Windows Installer cache requires a computer rebuildï»¿](https://dt-url.net/gs03u5l).
 
 AI\_RecycleBin folder is filling up disk space
 
-This is a known issue with [Advanced Installerï»¿](https://dt-url.net/e303ta4). As a workaround, the OneAgent installer clears the `AI_RecycleBin` at the end of the installation. However, this cleanup might not work if the installation fails in an early stage, such as in the case of a [missing MSI package in Windows Installer Cache](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation#missing-msi "Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows."). For more details, see the discussion on [Advanced Installer forumsï»¿](https://dt-url.net/w503uks).
+This is a known issue with [Advanced Installerï»¿](https://dt-url.net/e303ta4). As a workaround, the OneAgent installer clears the `AI_RecycleBin` at the end of the installation. However, this cleanup might not work if the installation fails in an early stage, such as in the case of a [missing MSI package in Windows Installer Cache](../ru/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation.md#missing-msi "Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows."). For more details, see the discussion on [Advanced Installer forumsï»¿](https://dt-url.net/w503uks).
 
 ### AIX
 
@@ -11757,17 +11757,17 @@ scraped: 2026-03-06T21:12:35.235477
 
 OneAgent is responsible for collecting all monitoring data within your monitored environment. A single OneAgent per host is required to collect all relevant monitoring dataâeven if your hosts are deployed within Docker containers, microservices architectures, or cloud-based infrastructure.
 
-A single instance of OneAgent can handle [monitoring for all types of entities](/docs/platform/oneagent/supported-monitoring-types "Read an overview of all monitoring capabilities offered by OneAgent."), including servers, applications, services, databases, and more. OneAgent gives you all the operational and business performance metrics you need, from the frontend to the backend and everything in betweenâcloud instances, hosts, network health, processes, and services. OneAgent discovers all the processes you have running on your hosts. Based on what it finds, OneAgent automatically activates instrumentation specifically for your unique application stack. It also injects all tags required for user-experience monitoring into the HTML of your application pages. New components are auto-instrumented on the fly.
+A single instance of OneAgent can handle [monitoring for all types of entities](../ru/platform/oneagent/supported-monitoring-types.md "Read an overview of all monitoring capabilities offered by OneAgent."), including servers, applications, services, databases, and more. OneAgent gives you all the operational and business performance metrics you need, from the frontend to the backend and everything in betweenâcloud instances, hosts, network health, processes, and services. OneAgent discovers all the processes you have running on your hosts. Based on what it finds, OneAgent automatically activates instrumentation specifically for your unique application stack. It also injects all tags required for user-experience monitoring into the HTML of your application pages. New components are auto-instrumented on the fly.
 
-OneAgent is comprised of several code modules that enable OneAgent to work for most technologies out-of-the-box. To find out which code modules are supported for each platform, see the [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). To see which versions are supported for each code module, see [OneAgent supported technologies and versions](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+OneAgent is comprised of several code modules that enable OneAgent to work for most technologies out-of-the-box. To find out which code modules are supported for each platform, see the [OneAgent platform and capability support matrix](../ru/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). To see which versions are supported for each code module, see [OneAgent supported technologies and versions](../ru/ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 ### Requirements
 
-[OneAgent requirements](/docs/ingest-from/dynatrace-oneagent/oa-requirements "OneAgent code module requirements")
+[OneAgent requirements](../ru/ingest-from/dynatrace-oneagent/oa-requirements.md "OneAgent code module requirements")
 
 ### See also
 
-[Adaptive Traffic Management](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.")
+[Adaptive Traffic Management](../ru/ingest-from/dynatrace-oneagent/adaptive-traffic-management.md "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.")
 
 ### Installation and operation
 
@@ -11779,12 +11779,12 @@ Other container platforms
 
 Operating systems
 
-[![AWS](https://dt-cdn.net/images/aws-512-eed109b7f1.png "AWS")AWS](/docs/ingest-from/amazon-web-services) [![Azure](https://dt-cdn.net/images/azure-512-a93a37d351.png "Azure")Azure](/docs/ingest-from/microsoft-azure-services) [![Google Cloud](https://dt-cdn.net/images/gcp-512-db85a455ae.webp "Google Cloud")Google Cloud](/docs/ingest-from/google-cloud-platform)
+[![AWS](https://dt-cdn.net/images/aws-512-eed109b7f1.png "AWS")AWS](../ru/ingest-from/amazon-web-services.md) [![Azure](https://dt-cdn.net/images/azure-512-a93a37d351.png "Azure")Azure](../ru/ingest-from/microsoft-azure-services.md) [![Google Cloud](https://dt-cdn.net/images/gcp-512-db85a455ae.webp "Google Cloud")Google Cloud](../ru/ingest-from/google-cloud-platform.md)
 
-[![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")Kubernetes](/docs/ingest-from/setup-on-k8s)
+[![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")Kubernetes](../ru/ingest-from/setup-on-k8s.md)
 
-[![Cloud Foundry](https://dt-cdn.net/images/cloud-foundry-512-d7620ed0ba.png "Cloud Foundry")Cloud Foundry](/docs/ingest-from/setup-on-container-platforms/cloud-foundry) [![Docker](https://dt-cdn.net/images/docker-512-0c0977826e.webp "Docker")Docker](/docs/ingest-from/setup-on-container-platforms/docker) [![Heroku](https://dt-cdn.net/images/heroku-512-984aa81b41.webp "Heroku")Heroku](/docs/ingest-from/setup-on-container-platforms/heroku) [![Mesos](https://dt-cdn.net/images/mesos-512-0c28279189.webp "Mesos")Mesos](/docs/ingest-from/setup-on-container-platforms/deploy-dynatrace-oneagent-on-mesos-marathon)
+[![Cloud Foundry](https://dt-cdn.net/images/cloud-foundry-512-d7620ed0ba.png "Cloud Foundry")Cloud Foundry](../ru/ingest-from/setup-on-container-platforms/cloud-foundry.md) [![Docker](https://dt-cdn.net/images/docker-512-0c0977826e.webp "Docker")Docker](../ru/ingest-from/setup-on-container-platforms/docker.md) [![Heroku](https://dt-cdn.net/images/heroku-512-984aa81b41.webp "Heroku")Heroku](../ru/ingest-from/setup-on-container-platforms/heroku.md) [![Mesos](https://dt-cdn.net/images/mesos-512-0c28279189.webp "Mesos")Mesos](../ru/ingest-from/setup-on-container-platforms/deploy-dynatrace-oneagent-on-mesos-marathon.md)
 
-[AIX](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix) [Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux) [Solaris](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris) [Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows) [zOS](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos)
+[AIX](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/aix.md) [Linux](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/linux.md) [Solaris](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/solaris.md) [Windows](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/windows.md) [zOS](../ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos.md)
 
 ---

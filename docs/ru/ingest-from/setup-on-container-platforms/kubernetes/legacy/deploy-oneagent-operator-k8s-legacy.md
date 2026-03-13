@@ -14,8 +14,8 @@ scraped: 2026-03-06T21:29:44.845264
 
 Эта процедура устарела.
 
-* Если вы выполняете новую установку, вам следует [настроить мониторинг Kubernetes с помощью Dynatrace Operator](/docs/ingest-from/setup-on-k8s/deployment "Развёртывание Dynatrace Operator на Kubernetes").
-* Если у вас уже установлен OneAgent с использованием OneAgent Operator, см. [инструкции по миграции на Dynatrace Operator](/docs/ingest-from/setup-on-k8s/guides/migration/migrate-to-dto "Подробные инструкции по миграции с устаревшего OneAgent Operator на Dynatrace Operator с использованием kubectl/oc").
+* Если вы выполняете новую установку, вам следует [настроить мониторинг Kubernetes с помощью Dynatrace Operator](../../../setup-on-k8s/deployment.md "Развёртывание Dynatrace Operator на Kubernetes").
+* Если у вас уже установлен OneAgent с использованием OneAgent Operator, см. [инструкции по миграции на Dynatrace Operator](../../../setup-on-k8s/guides/migration/migrate-to-dto.md "Подробные инструкции по миграции с устаревшего OneAgent Operator на Dynatrace Operator с использованием kubectl/oc").
 
 ## Установка
 
@@ -27,11 +27,11 @@ scraped: 2026-03-06T21:29:44.845264
 
 Предварительные требования
 
-* Сгенерируйте [API-токен](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Узнайте о концепции токена доступа и его областях действия.") и [PaaS-токен](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Узнайте о концепции токена доступа и его областях действия.") в вашей среде Dynatrace.
+* Сгенерируйте [API-токен](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Узнайте о концепции токена доступа и его областях действия.") и [PaaS-токен](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Узнайте о концепции токена доступа и его областях действия.") в вашей среде Dynatrace.
 
   Убедитесь, что для API-токена включена настройка **Access problem and event feed, metrics, and topology**.
 * Поды должны разрешать исходящий трафик к вашей среде Dynatrace или Environment ActiveGate для корректной маршрутизации метрик.
-* См. [Жизненный цикл поддержки](/docs/ingest-from/technology-support/support-model-and-issues "Как Dynatrace поддерживает версии Kubernetes и Red Hat OpenShift, а также известные проблемы") для поддерживаемых версий Kubernetes.
+* См. [Жизненный цикл поддержки](../../../technology-support/support-model-and-issues.md "Как Dynatrace поддерживает версии Kubernetes и Red Hat OpenShift, а также известные проблемы") для поддерживаемых версий Kubernetes.
 
 1. Создайте необходимые объекты для OneAgent Operator.
 
@@ -80,11 +80,11 @@ scraped: 2026-03-06T21:29:44.845264
    | **Параметр** | **Описание** | **Значение по умолчанию** |
    | --- | --- | --- |
    | `apiUrl` | Обязательно. Для **Dynatrace SaaS**, где OneAgent может подключаться к интернету, замените `ENVIRONMENTID` Dynatrace в `https://ENVIRONMENTID.live.dynatrace.com/api`. Для **Environment ActiveGates** (SaaS или Managed) используйте следующее для загрузки OneAgent, а также для маршрутизации трафика OneAgent через ActiveGate: `https://YourActiveGateIP` или `FQDN:9999/e/<ENVIRONMENTID>/api`. |  |
-   | `useUnprivilegedMode` | Опционально. Установите `false`, если хотите пометить под как привилегированный. По умолчанию используются [Linux capabilities для пода OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Узнайте, когда Dynatrace OneAgent требует привилегий root в Linux.") | `true` |
+   | `useUnprivilegedMode` | Опционально. Установите `false`, если хотите пометить под как привилегированный. По умолчанию используются [Linux capabilities для пода OneAgent](../../../dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged.md "Узнайте, когда Dynatrace OneAgent требует привилегий root в Linux.") | `true` |
    | `tokens` | Опционально. Имя секрета, содержащего API- и PaaS-токены из предыдущего шага. | Имя пользовательского ресурса (`.metadata.name`), если не задано |
    | `useImmutableImage` | Опционально. Установите `true`, если хотите загрузить Docker-образ OneAgent из вашей среды Dynatrace. Используйте этот параметр вместе с параметром `agentVersion` для управления версией OneAgent. | `false` |
    | `agentVersion` | Опционально. Установите это значение на версию OneAgent в формате семантического версионирования (`major.minor.patch`). Пример: `1.203.0` | последняя версия |
-   | `args` | Опционально. Параметры, передаваемые установщику OneAgent. Поддерживаются все [параметры командной строки установщика](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Узнайте, как использовать установщик Linux с параметрами командной строки."), за исключением `INSTALL_PATH`. |  |
+   | `args` | Опционально. Параметры, передаваемые установщику OneAgent. Поддерживаются все [параметры командной строки установщика](../../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Узнайте, как использовать установщик Linux с параметрами командной строки."), за исключением `INSTALL_PATH`. |  |
    | `env` | Опционально. Переменные окружения для контейнера OneAgent. |  |
    | `skipCertCheck` | Опционально. Отключение проверки валидации сертификатов для загрузки установщика и коммуникации с API. Установите `true`, если хотите пропустить все проверки валидации сертификатов. | `false` |
    | `nodeSelector` | Опционально. Оставьте пустое значение по умолчанию. Если вы хотите развернуть OneAgent только на определённых узлах, укажите `nodeSelectors` здесь. Подробнее в [документации Kubernetes](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector). |  |
@@ -336,15 +336,15 @@ scraped: 2026-03-06T21:29:44.845264
    - --set-network-zone=<your.network.zone>
    ```
 
-   Подробнее см. [Сетевые зоны](/docs/manage/network-zones "Узнайте, как работают сетевые зоны в Dynatrace.").
+   Подробнее см. [Сетевые зоны](../../../../manage/network-zones.md "Узнайте, как работают сетевые зоны в Dynatrace.").
 
 Предварительные требования
 
-* Сгенерируйте [API-токен](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Узнайте о концепции токена доступа и его областях действия.") и [PaaS-токен](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Узнайте о концепции токена доступа и его областях действия.") в вашей среде Dynatrace.
+* Сгенерируйте [API-токен](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Узнайте о концепции токена доступа и его областях действия.") и [PaaS-токен](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Узнайте о концепции токена доступа и его областях действия.") в вашей среде Dynatrace.
 
   Убедитесь, что для API-токена включена настройка **Access problem and event feed, metrics, and topology**.
 * Поды должны разрешать исходящий трафик к вашей среде Dynatrace или Environment ActiveGate для корректной маршрутизации метрик.
-* См. [Жизненный цикл поддержки](/docs/ingest-from/technology-support/support-model-and-issues "Как Dynatrace поддерживает версии Kubernetes и Red Hat OpenShift, а также известные проблемы") для поддерживаемых версий Kubernetes.
+* См. [Жизненный цикл поддержки](../../../technology-support/support-model-and-issues.md "Как Dynatrace поддерживает версии Kubernetes и Red Hat OpenShift, а также известные проблемы") для поддерживаемых версий Kubernetes.
 * [Установите Helm версии 3](https://helm.sh/docs/intro/install/).
 
 1. Добавьте Helm-репозиторий Dynatrace OneAgent.
@@ -546,7 +546,7 @@ kubectl apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releas
    - --set-network-zone=<your.network.zone>
    ```
 
-   Подробнее см. [Сетевые зоны](/docs/manage/network-zones "Узнайте, как работают сетевые зоны в Dynatrace.").
+   Подробнее см. [Сетевые зоны](../../../../manage/network-zones.md "Узнайте, как работают сетевые зоны в Dynatrace.").
 6. Для применения параметров YAML выполните следующую команду:
 
    ```
@@ -576,16 +576,16 @@ kubectl apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releas
 
 ## Ограничения
 
-Подробнее см. [Ограничения Docker](/docs/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Установка и обновление Dynatrace OneAgent как Docker-контейнера.").
+Подробнее см. [Ограничения Docker](../../docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Установка и обновление Dynatrace OneAgent как Docker-контейнера.").
 
 ## Устранение неполадок
 
-Узнайте, как [устранить проблемы](/docs/ingest-from/setup-on-k8s/deployment/troubleshooting#deploy "Эта страница поможет вам справиться с трудностями, которые могут возникнуть при работе с Dynatrace Operator и его различными компонентами."), которые могут возникнуть при развёртывании OneAgent на Kubernetes.
+Узнайте, как [устранить проблемы](../../../setup-on-k8s/deployment/troubleshooting.md#deploy "Эта страница поможет вам справиться с трудностями, которые могут возникнуть при работе с Dynatrace Operator и его различными компонентами."), которые могут возникнуть при развёртывании OneAgent на Kubernetes.
 
 ## Развёртывание ActiveGate и подключение Kubernetes API к Dynatrace
 
 Теперь, когда у вас есть OneAgent, работающий на ваших узлах Kubernetes, вы можете мониторить эти узлы и приложения, работающие в Kubernetes. Следующий шаг -- развернуть ActiveGate и подключить Kubernetes API к Dynatrace, чтобы получать нативные метрики Kubernetes, такие как лимиты запросов и разницу между запрошенными и работающими подами.
-Дальнейшие инструкции см. в [Развёртывание ActiveGate в Kubernetes как StatefulSet](/docs/ingest-from/setup-on-k8s/deployment/other/ag-statefulset "Установка и настройка ActiveGate в Kubernetes как StatefulSet.").
+Дальнейшие инструкции см. в [Развёртывание ActiveGate в Kubernetes как StatefulSet](../../../setup-on-k8s/deployment/other/ag-statefulset.md "Установка и настройка ActiveGate в Kubernetes как StatefulSet.").
 
 ## Обновление OneAgent Operator с помощью kubectl
 
@@ -654,7 +654,7 @@ kubectl apply -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releas
    kubectl delete -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/latest/download/kubernetes.yaml
    ```
 2. Опционально. После удаления OneAgent Operator бинарный файл OneAgent остаётся на узле в неактивном состоянии. Чтобы полностью его удалить, запустите скрипт `uninstall.sh` и удалите логи и файлы конфигурации.
-   См. [Информация по Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux "Узнайте, как удалить OneAgent из вашей Linux-системы.").
+   См. [Информация по Linux](../../../dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux.md "Узнайте, как удалить OneAgent из вашей Linux-системы.").
 
 Удалите пользовательские ресурсы OneAgent и очистите все оставшиеся объекты, специфичные для OneAgent Operator:
 
@@ -664,6 +664,6 @@ helm uninstall dynatrace-oneagent-operator -n dynatrace
 
 ## Связанные темы
 
-* [Kubernetes Classic](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring "Мониторинг Kubernetes/OpenShift с помощью Dynatrace.")
-* [Хранение образов Dynatrace в частных реестрах](/docs/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry "Хранение образов Dynatrace в частных реестрах")
-* [Миграция Dynatrace Operator в новую среду](/docs/ingest-from/setup-on-k8s/guides/migration/migrate-dto-to-tenant "Миграция мониторинга в новую среду Dynatrace на кластерах Kubernetes.")
+* [Kubernetes Classic](../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring.md "Мониторинг Kubernetes/OpenShift с помощью Dynatrace.")
+* [Хранение образов Dynatrace в частных реестрах](../../../setup-on-k8s/guides/container-registries/prepare-private-registry.md "Хранение образов Dynatrace в частных реестрах")
+* [Миграция Dynatrace Operator в новую среду](../../../setup-on-k8s/guides/migration/migrate-dto-to-tenant.md "Миграция мониторинга в новую среду Dynatrace на кластерах Kubernetes.")

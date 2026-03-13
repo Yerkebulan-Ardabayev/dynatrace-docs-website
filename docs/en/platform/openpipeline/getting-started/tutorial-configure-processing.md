@@ -27,15 +27,15 @@ In this article, you'll learn how to create a new configuration for data records
 
 Prior knowledge
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Data flow in OpenPipeline](/docs/platform/openpipeline/concepts/data-flow "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
-* [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* [Dynatrace Query Language](../../grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Data flow in OpenPipeline](../concepts/data-flow.md "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
+* [Processing in OpenPipeline](../concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
 
 Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine.
-* You have both `openpipeline:configurations:write` and `openpipeline:configurations:read` permissions. To learn how to set up the permissions, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
-* If you already use the log processing pipeline, ensure the [matching conditions are converted to DQL](/docs/analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion "Convert your current log monitoring rules to DQL.").
+* You have both `openpipeline:configurations:write` and `openpipeline:configurations:read` permissions. To learn how to set up the permissions, see [Permissions in Grail](../../grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+* If you already use the log processing pipeline, ensure the [matching conditions are converted to DQL](../../../analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion.md "Convert your current log monitoring rules to DQL.").
 
 Key terms
 
@@ -58,15 +58,15 @@ Processor
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Configure a pipeline**](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#process "Configure ingest sources, routes, and processing for your data in OpenPipeline.")[![Step 2 optional](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Step 2 optional")
+**Configure a pipeline**](tutorial-configure-processing.md#process "Configure ingest sources, routes, and processing for your data in OpenPipeline.")[![Step 2 optional](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Step 2 optional")
 
-**Configure custom ingest sources**](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#ingest "Configure ingest sources, routes, and processing for your data in OpenPipeline.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Configure custom ingest sources**](tutorial-configure-processing.md#ingest "Configure ingest sources, routes, and processing for your data in OpenPipeline.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Route data to a pipeline**](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#route "Configure ingest sources, routes, and processing for your data in OpenPipeline.")
+**Route data to a pipeline**](tutorial-configure-processing.md#route "Configure ingest sources, routes, and processing for your data in OpenPipeline.")
 
 ### Step 1 Configure a pipeline
 
-OpenPipeline stores data in Grail buckets. If you need a bucket with specific permissions or custom data retention, [create a custom bucket](/docs/platform/grail/organize-data#custom-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
+OpenPipeline stores data in Grail buckets. If you need a bucket with specific permissions or custom data retention, [create a custom bucket](../../grail/organize-data.md#custom-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
 
 **Pipelines** lists built-in and custom pipelines for a configuration scope in your environment. To configure your own pipelines to group processing and extraction by technology or team
 
@@ -110,8 +110,8 @@ Successfully configured routes are displayed in the dynamic routing list. Select
 
 ## Conclusion
 
-You have configured ingest sources, routing, and processing for records of a configuration scope via OpenPipeline. Once you [start ingesting](/docs/platform/openpipeline/getting-started/how-to-ingestion "How to ingest data for a configuration scope in OpenPipeline."), your data is processed as configured, stored in a Grail bucket, and available for analysis via Grail capabilities.
+You have configured ingest sources, routing, and processing for records of a configuration scope via OpenPipeline. Once you [start ingesting](how-to-ingestion.md "How to ingest data for a configuration scope in OpenPipeline."), your data is processed as configured, stored in a Grail bucket, and available for analysis via Grail capabilities.
 
 ## Related topics
 
-* [OpenPipeline processing examples](/docs/platform/openpipeline/use-cases/processing-examples "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")
+* [OpenPipeline processing examples](../use-cases/processing-examples.md "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")

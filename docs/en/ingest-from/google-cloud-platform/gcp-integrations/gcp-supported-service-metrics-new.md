@@ -17,11 +17,11 @@ Dynatrace version 1.230+
 
 This section refers to Google Cloud service metrics that are available with Google Cloud version 1.0 integration.
 
-* For Google Cloud service metrics that are available with earlier versions of the Google Cloud integration, see [Google Cloud supported service metrics (legacy)](/docs/ingest-from/google-cloud-platform/legacy/gcp-supported-service-metrics-legacy "Supported GCP service metrics, metrics configuration, DDU consumption, and preset dashboard availability").
+* For Google Cloud service metrics that are available with earlier versions of the Google Cloud integration, see [Google Cloud supported service metrics (legacy)](../legacy/gcp-supported-service-metrics-legacy.md "Supported GCP service metrics, metrics configuration, DDU consumption, and preset dashboard availability").
 
 ## Prerequisites
 
-[Deploy Dynatrace integration](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
+[Deploy Dynatrace integration](gcp-guide/deploy-k8.md "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
 
 ## Supported services for metrics
 
@@ -31,7 +31,7 @@ Below, see the list of Google Cloud supported services.
 
 1
 
-Services might have one entity, several entities, or none. For each entity, you can see metrics, properties, logs, errors, and many more in Dynatrace [![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app "Monitor all cloud platforms at once.").
+Services might have one entity, several entities, or none. For each entity, you can see metrics, properties, logs, errors, and many more in Dynatrace [![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**](../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md "Monitor all cloud platforms at once.").
 
 ## Check available metrics
 
@@ -46,12 +46,12 @@ To check available metrics for a service, you need to
 
 ### Metric ingestion
 
-All cloud services consume DDUs. The amount of DDU consumption per service instance depends on the number of monitored metrics and their dimensions (each metric dimension results in the ingestion of 1 data point; 1 data point consumes 0.001 DDUs). For details, see [Extending Dynatrace (Davis data units)](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
+All cloud services consume DDUs. The amount of DDU consumption per service instance depends on the number of monitored metrics and their dimensions (each metric dimension results in the ingestion of 1 data point; 1 data point consumes 0.001 DDUs). For details, see [Extending Dynatrace (Davis data units)](../../../license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
 
 ### Log ingestion
 
-DDU consumption applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") for details.
+DDU consumption applies to cloud Log Monitoring. See [DDUs for Log Monitoring](../../../license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") for details.
 
 ## Related topics
 
-* [Google Cloud integrations](/docs/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
+* [Google Cloud integrations](../gcp-integrations.md "Set up and configure Dynatrace on Google Cloud.")

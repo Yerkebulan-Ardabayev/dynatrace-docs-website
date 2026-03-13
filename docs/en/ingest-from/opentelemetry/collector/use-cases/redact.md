@@ -21,13 +21,13 @@ This page shows sample Collector configurations for the redaction of specific se
 
 * One of the following Collector distributions with the [transformï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/transformprocessor) and/or [redactionï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/redactionprocessor) processors:
 
-  + The [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace OTel Collector.")
-  + [OpenTelemetry Contrib](/docs/ingest-from/opentelemetry/collector#collector-contrib "Learn about the Dynatrace OTel Collector.")
-  + A [custom Builder version](/docs/ingest-from/opentelemetry/collector#collector-builder "Learn about the Dynatrace OTel Collector.")
-* The [Dynatrace API endpoint URL](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported
-* An [API token](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the relevant access scope (only required for SaaS and ActiveGate)
+  + The [Dynatrace Collector](../../collector.md#dt-collector-dist "Learn about the Dynatrace OTel Collector.")
+  + [OpenTelemetry Contrib](../../collector.md#collector-contrib "Learn about the Dynatrace OTel Collector.")
+  + A [custom Builder version](../../collector.md#collector-builder "Learn about the Dynatrace OTel Collector.")
+* The [Dynatrace API endpoint URL](../../otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported
+* An [API token](../../otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the relevant access scope (only required for SaaS and ActiveGate)
 
-See [Collector Deployment](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](/docs/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
+See [Collector Deployment](../deployment.md "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](../configuration.md "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
 
 ## Redaction processor versus transform processor
 
@@ -284,7 +284,7 @@ statements: *filter-statements
 
 ### Dynatrace API tokens
 
-Using the redaction processor, we use the regular expression `dt0[a-z]0[1-9]\.[A-Za-z0-9]{24}\.([A-Za-z0-9]{64})` to mask all occurrences of [Dynatrace API tokens](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") in our telemetry data.
+Using the redaction processor, we use the regular expression `dt0[a-z]0[1-9]\.[A-Za-z0-9]{24}\.([A-Za-z0-9]{64})` to mask all occurrences of [Dynatrace API tokens](../../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") in our telemetry data.
 
 ```
 redaction:
@@ -517,7 +517,7 @@ statements:
 
 Configuration validation
 
-[Validate your settings](/docs/ingest-from/opentelemetry/collector/configuration#validate "How to configure the OpenTelemetry Collector.") to avoid any configuration issues.
+[Validate your settings](../configuration.md#validate "How to configure the OpenTelemetry Collector.") to avoid any configuration issues.
 
 ## Components
 
@@ -537,8 +537,8 @@ Under `exporters`, we specify the default [`otlp_http` exporterï»¿](https://g
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 
-* `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](/docs/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
-* `DT_API_TOKEN` contains the [API token](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
+* `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](../../otlp-api.md#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
+* `DT_API_TOKEN` contains the [API token](../../otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
 
 ### Service pipelines
 
@@ -546,4 +546,4 @@ Under `service`, we eventually assemble all the configured objects into pipeline
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific fields](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
+* [Enrich ingested data with Dynatrace-specific fields](../../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")

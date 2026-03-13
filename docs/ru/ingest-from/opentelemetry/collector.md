@@ -28,7 +28,7 @@ Collector -- это сетевое сервисное приложение, ко
 
 Collector является относительно легковесным компонентом, поэтому команды могут развертывать собственные экземпляры, чтобы не использовать одну и ту же конфигурацию.
 
-Collector настраивается в одном YAML-файле. Это избавляет от необходимости просматривать несколько файлов и сокращает объем обслуживания. Подробнее о настройке см. [Настройка OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.").
+Collector настраивается в одном YAML-файле. Это избавляет от необходимости просматривать несколько файлов и сокращает объем обслуживания. Подробнее о настройке см. [Настройка OpenTelemetry Collector](collector/configuration.md "How to configure the OpenTelemetry Collector.").
 
 ## Дистрибутивы
 
@@ -54,12 +54,12 @@ Dynatrace Collector предлагает следующие преимущест
 docker pull ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.44.0
 ```
 
-Дополнительную информацию о других доступных реестрах контейнеров можно найти в разделе [Развертывание Dynatrace OTel Collector](/docs/ingest-from/opentelemetry/collector/deployment#container-image-registries "How to deploy Dynatrace OTel Collector.").
+Дополнительную информацию о других доступных реестрах контейнеров можно найти в разделе [Развертывание Dynatrace OTel Collector](collector/deployment.md#container-image-registries "How to deploy Dynatrace OTel Collector.").
 
 Dynatrace Collector поставляется с определенными компонентами, описанными в репозитории Dynatrace Collector на GitHub.
 Полный список см. в разделе [Components](https://github.com/Dynatrace/dynatrace-otel-collector#components).
 
-Ознакомьтесь с [примерами использования OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases "Configure your Collector instance for different use cases.") для получения конкретных примеров сценариев и конфигураций для отдельных компонентов.
+Ознакомьтесь с [примерами использования OpenTelemetry Collector](collector/use-cases.md "Configure your Collector instance for different use cases.") для получения конкретных примеров сценариев и конфигураций для отдельных компонентов.
 
 ### Дистрибутивы OpenTelemetry
 

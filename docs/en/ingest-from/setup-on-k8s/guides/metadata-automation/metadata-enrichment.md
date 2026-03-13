@@ -290,10 +290,10 @@ k8s.workload.name=<workload-name>
 
 **Please note:** The enrichment files will be used for various enrichments automatically, if there is OneAgent enabled. If there is no OneAgent enabled, the enrichment files and their content have to be used manually.
 
-For more details, see [Enrich ingested data with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+For more details, see [Enrich ingested data with Dynatrace-specific dimensions](../../../extend-dynatrace/extend-data.md#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
 
 ## Learn more
 
-* [Dynatrace documentation: metadata enrichment files](/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
+* [Dynatrace documentation: metadata enrichment files](../../../extend-dynatrace/extend-data.md#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
 
 By following these steps, you can fully leverage metadata enrichment to enhance your Kubernetes monitoring and achieve better insights.

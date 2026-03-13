@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:28:23.371162
 * 2-min read
 * Published Feb 02, 2026
 
-JSON log pre-processing detects escape characters in JSON strings and converts them into structured JSON objects for further processing and deeper analysis. You can then query the unescaped JSON field using the [jsonField](/docs/platform/grail/dynatrace-query-language/functions/string-functions#jsonField "A list of DQL string functions.") and [jsonPath](/docs/platform/grail/dynatrace-query-language/functions/string-functions#jsonPath "A list of DQL string functions.") DQL functions for precise extraction and filtering log attributes.
+JSON log pre-processing detects escape characters in JSON strings and converts them into structured JSON objects for further processing and deeper analysis. You can then query the unescaped JSON field using the [jsonField](../../../../platform/grail/dynatrace-query-language/functions/string-functions.md#jsonField "A list of DQL string functions.") and [jsonPath](../../../../platform/grail/dynatrace-query-language/functions/string-functions.md#jsonPath "A list of DQL string functions.") DQL functions for precise extraction and filtering log attributes.
 
 ## Benefits
 
@@ -121,7 +121,7 @@ JSON log pre-processing performs the following steps.
 
 You can query the unescaped JSON field for precise extraction and filtering log attributes using the following DQL functions.
 
-* [jsonField](/docs/platform/grail/dynatrace-query-language/functions/string-functions#jsonField "A list of DQL string functions.") function for extracting the value by its actual name.
+* [jsonField](../../../../platform/grail/dynatrace-query-language/functions/string-functions.md#jsonField "A list of DQL string functions.") function for extracting the value by its actual name.
 
   This is an example of extracting `loglevel` using `jsonField`.
 
@@ -136,7 +136,7 @@ You can query the unescaped JSON field for precise extraction and filtering log 
 
   | filter logLevel == "ERROR"
   ```
-* [jsonPath](/docs/platform/grail/dynatrace-query-language/functions/string-functions#jsonPath "A list of DQL string functions.") function for extracting value by a `JSONPath` expression.
+* [jsonPath](../../../../platform/grail/dynatrace-query-language/functions/string-functions.md#jsonPath "A list of DQL string functions.") function for extracting value by a `JSONPath` expression.
 
   This is an example of extracting `eventType` using `jsonPath`.
 
@@ -158,4 +158,4 @@ Unescapingâfor example, removing a forward slashâis skipped when the J
 
 ## Related topics
 
-* [Log processing with OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.")
+* [Log processing with OpenPipeline](../lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.")

@@ -15,11 +15,11 @@ scraped: 2026-03-06T21:37:52.324824
 
 Log Monitoring Classic
 
-For the newest Dynatrace version, see [Stream Kubernetes logs with Dynatrace Log Module](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.").
+For the newest Dynatrace version, see [Stream Kubernetes logs with Dynatrace Log Module](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes.md "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.").
 
 Dynatrace Log Monitoring supports collecting logs from Kubernetes container orchestration systems via OneAgent.
 
-As an alternative to OneAgent-based log collection, you can stream logs to Dynatrace via the [logs ingest API](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.") with an integration such as [Fluent Bit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit "Integrate Fluent Bit to stream logs to Dynatrace."), [Fluentd](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace."), [Logstash](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash "Integrate Logstash to stream logs from nodes and pods to Dynatrace."), or [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace OTel Collector.").
+As an alternative to OneAgent-based log collection, you can stream logs to Dynatrace via the [logs ingest API](../../logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.") with an integration such as [Fluent Bit](../../logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit.md "Integrate Fluent Bit to stream logs to Dynatrace."), [Fluentd](../../logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s.md "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace."), [Logstash](../../logs/lma-log-ingestion/lma-stream-logs-with-logstash.md "Integrate Logstash to stream logs from nodes and pods to Dynatrace."), or [Dynatrace Collector](../../../ingest-from/opentelemetry/collector.md#dt-collector-dist "Learn about the Dynatrace OTel Collector.").
 
 ## Supported features
 
@@ -27,7 +27,7 @@ Dynatrace Log Monitoring supports various Kubernetes-based container platforms l
 
 **Docker** isnât compliant with CRI, the Container Runtime Interface. For this reason, Kubernetes setups using **Docker** are only partially supported. Kubernetes deprecated **Docker** as a container runtime after v1.20.
 
-For more details regarding supported versions of Kubernetes, check [Dynatrace Operator support and known issues](/docs/ingest-from/technology-support/support-model-and-issues "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues").
+For more details regarding supported versions of Kubernetes, check [Dynatrace Operator support and known issues](../../../ingest-from/technology-support/support-model-and-issues.md "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues").
 
 ## Auto-discovery of Kubernetes logs
 
@@ -41,12 +41,12 @@ OneAgent Log module decorates the ingested logs with the following Kubernetes me
 
 Also, any pod annotations starting with the `metadata.dynatrace.com/` prefix are added to the log records.
 
-See [metadata enrichment for Kubernetes](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment "Guides for telemetry enrichment on Kubernetes") to learn more.
+See [metadata enrichment for Kubernetes](../../../ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment.md "Guides for telemetry enrichment on Kubernetes") to learn more.
 
 ### Control log ingest with Kubernetes metadata
 
 You can control logs from Kubernetes ingestion with log ingest rules in Dynatrace. You can configure these rules at the Kubernetes cluster level to allow cluster-specific log ingestion. The rules use matchers for Kubernetes metadata and other common log entry attributes to determine which logs are to be ingested.
-Standard log processing features from OneAgent, including [sensitive data masking](/docs/analyze-explore-automate/log-monitoring/methods-of-masking-sensitive-data "Choose the optimal method to mask your sensitive data."), [timestamp configuration](/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-configuration "Define log monitoring rules that control log data timestamps."), and [automatic enrichment](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/lm-log-data-transformation "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") of log records, are also available and enabled here.
+Standard log processing features from OneAgent, including [sensitive data masking](../methods-of-masking-sensitive-data.md "Choose the optimal method to mask your sensitive data."), [timestamp configuration](../log-monitoring-configuration/timestamp-configuration.md "Define log monitoring rules that control log data timestamps."), and [automatic enrichment](lm-log-data-transformation.md "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") of log records, are also available and enabled here.
 
 Use the following recommended matching attributes when configuring log ingestion from Kubernetes.
 
@@ -56,7 +56,7 @@ Subject to change in the future versions of OneAgent. Separate matchers for each
 
 2
 
-Log record level attribute, transformed by OneAgent Log Module, is different than the log `status` attribute transformed by the Dynatrace server. Learn more by accessing the [Automatic log enrichment](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/lm-log-data-transformation#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") page.
+Log record level attribute, transformed by OneAgent Log Module, is different than the log `status` attribute transformed by the Dynatrace server. Learn more by accessing the [Automatic log enrichment](lm-log-data-transformation.md#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") page.
 
 ## Configure log ingest from Kubernetes
 
@@ -66,7 +66,7 @@ Use the following recommended matching attributes when configuring log ingestion
 
 1
 
-Log record level attribute, transformed by OneAgent, is different than the log `status` attribute transformed by the Dynatrace server. Learn more by accessing the [Automatic log enrichment](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") page.
+Log record level attribute, transformed by OneAgent, is different than the log `status` attribute transformed by the Dynatrace server. Learn more by accessing the [Automatic log enrichment](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") page.
 
 2
 
@@ -84,7 +84,7 @@ Log ingest rules can be defined on environment scope but also on host or host gr
 
 Matching occurs in a predefined hierarchy and rules are executed from top to bottom. This means that if a rule above on the list matches certain log data, then the lower ones will be omitted. Items matched in the higher-level configurations are overwritten in the lower-level configurations if they match the same log data. If no rule is matched, the file is not sent.
 
-Consult the [Configuration scopes](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration#configuration-scopes "Include and exclude specific log sources already known to OneAgent for storage and analysis.") for the four scopes of the configuration hierarchy.
+Consult the [Configuration scopes](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md#configuration-scopes "Include and exclude specific log sources already known to OneAgent for storage and analysis.") for the four scopes of the configuration hierarchy.
 
 ## Use cases
 
@@ -151,8 +151,8 @@ Log ingest rule objects can be configured for the following scopes:
 
 To create a log ingest rule using the API:
 
-1. [Create an access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Write settings** (`settings.write`) and **Read settings** (`settings.read`) scopes.
-2. Use the [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration. The log ingest rules schema identifier (`schemaId`) is `builtin:logmonitoring.log-storage-settings`. Here is an example JSON payload with the log ingest rules:
+1. [Create an access token](../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Write settings** (`settings.write`) and **Read settings** (`settings.read`) scopes.
+2. Use the [GET a schema](../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration. The log ingest rules schema identifier (`schemaId`) is `builtin:logmonitoring.log-storage-settings`. Here is an example JSON payload with the log ingest rules:
 
    ```
    {
@@ -645,7 +645,7 @@ What are prerequisites for autodiscovery and ingestion of Kubernetes logs via On
 The requirements for autodiscovery and ingestion of Kubernetes logs are the following:
 
 * The **containerd**, or **CRI-O** container runtime is used;
-* The process running in the container is an [important process](/docs/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes "Display the most important processes for monitoring and process grouping.");
+* The process running in the container is an [important process](../../../observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes.md "Display the most important processes for monitoring and process grouping.");
 * Logs are written to the container's **stdout**/**stderr** streams;
 * The log file on the Kubernetes node exists for a minimum of one minute after container execution is finished.
 
@@ -653,11 +653,11 @@ Is it possible to decorate logs with Kubernetes labels and annotations?
 
 No, OneAgent doesn't offer such a functionality yet, although it is planned in future releases.
 
-For more ingest related FAQ, please consult the [Log ingest rules](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration#faq "Include and exclude specific log sources already known to OneAgent for storage and analysis.") page.
+For more ingest related FAQ, please consult the [Log ingest rules](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md#faq "Include and exclude specific log sources already known to OneAgent for storage and analysis.") page.
 
 ## Troubleshooting
 
-Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Monitoring (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/lmc-troubleshooting "Fix issues related to the setup and configuration of Log Monitoring Classic.").
+Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Monitoring (Logs Classic)](../lmc-troubleshooting.md "Fix issues related to the setup and configuration of Log Monitoring Classic.").
 
 * [Why my logs are not visible in Dynatrace?ï»¿](https://community.dynatrace.com/t5/Troubleshooting/Why-my-logs-are-not-visible-in-Dynatrace/ta-p/242716)
 * [Logs Ingest on K8s with Dynatraceï»¿](https://community.dynatrace.com/t5/Troubleshooting/Logs-Ingest-on-K8s-with-Dynatrace/ta-p/285827)

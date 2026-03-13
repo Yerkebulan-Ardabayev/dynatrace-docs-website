@@ -53,7 +53,7 @@ Any tenant created with Dynatrace version 1.330+ uses these configurable rules. 
 
 1
 
-Rule available with Dynatrace SaaS version 1.330+. See [Configure URL path pattern matching in Service Detection v2](/docs/observe/application-observability/services/service-detection/service-detection-v2/url-pattern-matching-v2 "Find out how to get better endpoint names for frameworks without route templates by setting up URL pattern matching rules.") for details.
+Rule available with Dynatrace SaaS version 1.330+. See [Configure URL path pattern matching in Service Detection v2](url-pattern-matching-v2.md "Find out how to get better endpoint names for frameworks without route templates by setting up URL pattern matching rules.") for details.
 
 ### Legacy default rules
 
@@ -71,7 +71,7 @@ Endpoint detection is customized in ![Settings](https://dt-cdn.net/images/settin
 
    * **Rule name**: Required A user-defined name for the rule.
    * **Description**: Optional A human-readable description of the rule.
-   * **Matching condition**: Required A [DQL matcher](/docs/platform/openpipeline/reference/dql-matcher-in-openpipeline "Examine specific DQL functions and logical operators for log processing.").
+   * **Matching condition**: Required A [DQL matcher](../../../../../platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing.").
      If the matching condition applies, the rule is evaluated.
 
      Keep in mind that the rules are applied on spans with span kind `span.kind == server` or `span.kind == consumer`, as well as on trace root spans (spans without a parent span) regardless of the span kind.
@@ -122,7 +122,7 @@ It's not possible to delete built-in rules, however you can deactivate built-in 
 
 The **Endpoint Cardinality Dashboard** displays services with the most endpoints (SDv1 and SDv2 services).
 
-This dashboard allows you to quickly identify endpoint-heavy services for which you could adjust the [request naming rules (SDv1)](/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer.") or [endpoint detection rules (SDv2)](/docs/observe/application-observability/services/service-detection/service-detection-v2/endpoint-detection-v2 "Find out how to detect endpoints that are entry points into your service.").
+This dashboard allows you to quickly identify endpoint-heavy services for which you could adjust the [request naming rules (SDv1)](../service-detection-v1/set-up-request-naming.md "Adjust request naming and define the operations your services offer.") or [endpoint detection rules (SDv2)](endpoint-detection-v2.md "Find out how to detect endpoints that are entry points into your service.").
 
 To view services with the most endpoints
 
@@ -131,8 +131,8 @@ To view services with the most endpoints
 3. In **Search by name**, enter **Endpoint Cardinality Dashboard**.
 4. Select the dashboard to open it.
 
-To display additional endpoint-heavy services, [duplicate this dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-duplicate "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and edit the DQL query behind the service list (for example, change `100` in `limit 100` to the required value). Alternatively, you can add this query to [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and modify it there.
+To display additional endpoint-heavy services, [duplicate this dashboard](../../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-duplicate "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and edit the DQL query behind the service list (for example, change `100` in `limit 100` to the required value). Alternatively, you can add this query to [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and modify it there.
 
 ## Related topics
 
-* [Service Detection v2](/docs/observe/application-observability/services/service-detection/service-detection-v2 "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.")
+* [Service Detection v2](../service-detection-v2.md "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.")

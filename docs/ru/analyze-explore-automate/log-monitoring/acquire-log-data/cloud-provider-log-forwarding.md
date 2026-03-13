@@ -17,11 +17,11 @@ Log Monitoring Classic
 
 Dynatrace версии 1.230+
 
-Для новейшей версии Dynatrace см. [Пересылка логов от облачных провайдеров](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-cloud-provider-log-forwarding "Настройте пересылку логов AWS, Azure и Google Cloud для потоковой передачи данных логов в Dynatrace с помощью API.").
+Для новейшей версии Dynatrace см. [Пересылка логов от облачных провайдеров](../../logs/lma-log-ingestion/lma-cloud-provider-log-forwarding.md "Настройте пересылку логов AWS, Azure и Google Cloud для потоковой передачи данных логов в Dynatrace с помощью API.").
 
 Потребление DDU для Log Monitoring
 
-Для облачного Log Monitoring применяется ценообразование на основе DDU. Подробности см. в разделе [DDU для Log Monitoring](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Узнайте, как рассчитывается объём потребления DDU для Dynatrace Log Monitoring Classic.").
+Для облачного Log Monitoring применяется ценообразование на основе DDU. Подробности см. в разделе [DDU для Log Monitoring](../../../license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Узнайте, как рассчитывается объём потребления DDU для Dynatrace Log Monitoring Classic.").
 
 ## Amazon Web Services
 
@@ -38,7 +38,7 @@ Dynatrace версии 1.230+
 3. Подключите группы логов CloudWatch, создав фильтр подписки, или отправляйте логи напрямую в Firehose из сервисов, которые это поддерживают (например, VPC Flow Logs).
    Firehose и другие созданные облачные ресурсы влекут за собой расходы AWS в соответствии со стандартной политикой тарификации AWS.
 
-Подробнее см. [Потоковая передача логов через Amazon Data Firehose (Logs Classic)](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lm-stream-logs-with-firehose "Интеграция Amazon Data Firehose позволяет принимать облачные логи напрямую, без дополнительной инфраструктуры и с более высокой пропускной способностью.").
+Подробнее см. [Потоковая передача логов через Amazon Data Firehose (Logs Classic)](../../../ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lm-stream-logs-with-firehose.md "Интеграция Amazon Data Firehose позволяет принимать облачные логи напрямую, без дополнительной инфраструктуры и с более высокой пропускной способностью.").
 
 ### Приём логов из Amazon S3
 
@@ -55,7 +55,7 @@ Dynatrace версии 1.230+
 
 ### Сбор логов AWS Lambda
 
-Вы можете собирать логи непосредственно из функций AWS Lambda и отправлять их в Dynatrace для анализа. Это решение является альтернативой компоненту пересылки логов CloudWatch с преимуществами в плане стоимости и задержки, а также более простой настройкой, особенно если трассировка AWS Lambda уже настроена. В рамках процесса установки OneAgent эта функция предоставляет оптимизированное решение для сбора логов из ваших функций Lambda. Подробнее см. [страницу документации AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector "Сбор логов из функций AWS Lambda").
+Вы можете собирать логи непосредственно из функций AWS Lambda и отправлять их в Dynatrace для анализа. Это решение является альтернативой компоненту пересылки логов CloudWatch с преимуществами в плане стоимости и задержки, а также более простой настройкой, особенно если трассировка AWS Lambda уже настроена. В рамках процесса установки OneAgent эта функция предоставляет оптимизированное решение для сбора логов из ваших функций Lambda. Подробнее см. [страницу документации AWS Lambda](../../../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector.md "Сбор логов из функций AWS Lambda").
 
 ### Мониторинг логов AWS с помощью компонента пересылки Deprecated
 
@@ -63,7 +63,7 @@ Dynatrace версии 1.230+
 
 Чтобы включить пересылку логов AWS, необходимо развернуть специальный стек CloudFormation в вашем аккаунте AWS. Стек состоит из экземпляра Kinesis Firehose и функции Lambda. Эти ресурсы влекут за собой расходы AWS в соответствии со стандартной политикой тарификации AWS. Это же относится к включённым ресурсам самомониторинга (дашборды и метрики CloudWatch).
 
-Подробные инструкции по настройке пересылки логов AWS см. в разделе [Мониторинг логов с помощью компонента пересылки AWS](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/aws-log-forwarder#prereq "Используйте пересылку логов AWS для приёма логов AWS.").
+Подробные инструкции по настройке пересылки логов AWS см. в разделе [Мониторинг логов с помощью компонента пересылки AWS](../../../ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/aws-log-forwarder.md#prereq "Используйте пересылку логов AWS для приёма логов AWS.").
 
 ### Потоковая передача логов через Amazon Data Firehose
 
@@ -88,19 +88,19 @@ Dynatrace версии 1.230+
 
 Подробности о создаваемых ресурсах см. в [файле Azure Resource Manager на GitHub](https://github.com/dynatrace-oss/dynatrace-azure-log-forwarder/blob/master/deployment/dynatrace-azure-forwarder.json)
 
-Подробные инструкции по настройке пересылки логов Azure см. в разделе [Логи Azure](/docs/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure#prereq "Используйте пересылку логов Azure для приёма логов Azure.").
+Подробные инструкции по настройке пересылки логов Azure см. в разделе [Логи Azure](../../../ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure.md#prereq "Используйте пересылку логов Azure для приёма логов Azure.").
 
 ## Google Cloud
 
 Для настройки мониторинга Google Cloud для метрик и логов вам необходимо запустить скрипт развёртывания в Google Cloud Shell. В процессе настройки будет создана новая подписка Pub/Sub. GKE будет запускать два контейнера: компонент пересылки метрик и компонент пересылки логов. После установки вы получите метрики, логи, дашборды и оповещения для настроенных сервисов в Dynatrace. Инструкции зависят от места, где вы хотите запустить скрипт развёртывания:
 
-* [На новом кластере GKE Autopilot, создаваемом автоматически](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Настройте мониторинг логов и метрик для сервисов GCP на новом кластере GKE Autopilot."). Рекомендуется
-* [На существующем стандартном кластере GKE или кластере GKE Autopilot](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-on-existing-cluster "Разверните мониторинг логов и метрик для сервисов Google Cloud на существующем стандартном кластере GKE или кластере GKE Autopilot").
+* [На новом кластере GKE Autopilot, создаваемом автоматически](../../../ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8.md "Настройте мониторинг логов и метрик для сервисов GCP на новом кластере GKE Autopilot."). Рекомендуется
+* [На существующем стандартном кластере GKE или кластере GKE Autopilot](../../../ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-on-existing-cluster.md "Разверните мониторинг логов и метрик для сервисов Google Cloud на существующем стандартном кластере GKE или кластере GKE Autopilot").
 
 В зависимости от того, где вы хотите выполнять приём логов, могут потребоваться дополнительные ресурсы. Например, для управляемых развёртываний существует возможность использования ActiveGate для приёма логов. Однако это необходимо сделать вручную, так как скрипт установки его не развёртывает.
 
-Все варианты приёма логов см. в разделе [Приём логов](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#ingestion "Настройте мониторинг логов и метрик для сервисов GCP на новом кластере GKE Autopilot.").
+Все варианты приёма логов см. в разделе [Приём логов](../../../ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8.md#ingestion "Настройте мониторинг логов и метрик для сервисов GCP на новом кластере GKE Autopilot.").
 
 ## Связанные темы
 
-* [DDU для Log Monitoring Classic](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Узнайте, как рассчитывается объём потребления DDU для Dynatrace Log Monitoring Classic.")
+* [DDU для Log Monitoring Classic](../../../license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Узнайте, как рассчитывается объём потребления DDU для Dynatrace Log Monitoring Classic.")

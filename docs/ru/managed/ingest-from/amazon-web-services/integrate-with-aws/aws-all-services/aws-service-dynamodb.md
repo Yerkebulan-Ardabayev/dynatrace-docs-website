@@ -21,8 +21,8 @@ Dynatrace собирает метрики для нескольких предв
 
 * Любая версия ActiveGate в развёртываниях Dynatrace SaaS и Managed.
 
-  Для доступа на основе ролей (в развёртывании [SaaS](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Интеграция метрик из Amazon CloudWatch.") или [Managed](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment)) необходим ActiveGate, установленный на хосте Amazon EC2.
-* Обновлённая [политика мониторинга AWS](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#aws-policy-and-authentication "Интеграция метрик из Amazon CloudWatch.") для включения дополнительных сервисов AWS.
+  Для доступа на основе ролей (в развёртывании [SaaS](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#role-based-access "Интеграция метрик из Amazon CloudWatch.") или [Managed](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment)) необходим ActiveGate, установленный на хосте Amazon EC2.
+* Обновлённая [политика мониторинга AWS](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#aws-policy-and-authentication "Интеграция метрик из Amazon CloudWatch.") для включения дополнительных сервисов AWS.
   Для [обновления политики AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console) используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех облачных сервисов.
 
 Предопределённая JSON-политика для всех облачных сервисов
@@ -411,7 +411,7 @@ Dynatrace собирает метрики для нескольких предв
 }
 ```
 
-Если вы не хотите добавлять разрешения для всех сервисов и хотите выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. Таблица содержит набор разрешений, необходимых для [всех облачных сервисов AWS](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик."), а для каждого облачного сервиса — список дополнительных разрешений, специфичных для него.
+Если вы не хотите добавлять разрешения для всех сервисов и хотите выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. Таблица содержит набор разрешений, необходимых для [всех облачных сервисов AWS](../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-all-services.md "Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик."), а для каждого облачного сервиса — список дополнительных разрешений, специфичных для него.
 
 Разрешения, необходимые для интеграции мониторинга AWS:
 
@@ -684,7 +684,7 @@ JSON-политика для Amazon API Gateway
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. раздел [Включение мониторинга сервиса](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Включение мониторинга AWS в Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. раздел [Включение мониторинга сервиса](../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring.md "Включение мониторинга AWS в Dynatrace.").
 
 ## Просмотр метрик сервиса
 

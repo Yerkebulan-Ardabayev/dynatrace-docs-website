@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:30:54.102654
 
 In addition to the application-side configuration, several Dynatrace-specific settings let you control how OpenTelemetry data is used in Dynatrace.
 
-To learn how to send OpenTelemetry data to a Dynatrace OneAgent, see [Use OneAgent with OpenTelemetry data](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.").
+To learn how to send OpenTelemetry data to a Dynatrace OneAgent, see [Use OneAgent with OpenTelemetry data](oneagent-otel.md "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.").
 
 ## Prerequisites
 
@@ -40,7 +40,7 @@ Python
 
 1
 
-Supported in [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Supported in [AWS Lambda](../../amazon-web-services/integrate-into-aws/aws-lambda-integration.md "AWS Lambda capabilities and integration options").
 
 To enable OpenTelemetry Java
 
@@ -81,7 +81,7 @@ OneAgent version 1.217 and earlier The OpenTelemetry Go Sensor propagates Dynatr
 
 1
 
-Supported in [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in [AWS Lambda](../../amazon-web-services/integrate-into-aws/aws-lambda-integration.md "AWS Lambda capabilities and integration options")
 
 Opt-in
 
@@ -193,10 +193,10 @@ To configure attribute storage and masking settings for your environment
 
    1. On the **Attribute capturing** page, select **Attribute data masking**.
    2. Select **Add item** to add a new key to the masked attributed list.
-   3. Enter a stored value key and select an option from the **Masking** dropdown list. To learn more about masking options, see [OpenTelemetry traces](/docs/manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace#otel-traces "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.").
+   3. Enter a stored value key and select an option from the **Masking** dropdown list. To learn more about masking options, see [OpenTelemetry traces](../../../manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace.md#otel-traces "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.").
    4. Select **Save changes**.
 
-You can then find the attribute key on the **Distributed traces** page on the [**Summary** tab](/docs/observe/application-observability/distributed-traces/use-cases/segment-request#summary-tab "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.").
+You can then find the attribute key on the **Distributed traces** page on the [**Summary** tab](../../../observe/application-observability/distributed-traces/use-cases/segment-request.md#summary-tab "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.").
 
 ## Trace search limitations
 
@@ -210,13 +210,13 @@ Searching by span attribute is limited to the span name: filter by `Request` on 
 
 ## How the Span Sensor works
 
-For more information about the OneAgent code module's OpenTelemetry Span Sensor, see [Detect OpenTelemetry spans using the OneAgent code module's OpenTelemetry Span Sensor](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel#oneagent-otel-span-sensor "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.").
+For more information about the OneAgent code module's OpenTelemetry Span Sensor, see [Detect OpenTelemetry spans using the OneAgent code module's OpenTelemetry Span Sensor](oneagent-otel.md#oneagent-otel-span-sensor "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.").
 
 ### Entry points
 
 To avoid possible conflicts with existing PurePath distributed traces, OneAgent ingests by default only spans with a [span kindï»¿](https://opentelemetry.io/docs/concepts/signals/traces/#span-kind) of `Server` or `Consumer`. This usually is not an issue, as instrumentation libraries typically configure the appropriate span kind, however something to take into account if your application fully uses manual instrumentation.
 
-This behavior can be customized with an [entry point rule](/docs/ingest-from/extend-dynatrace/extend-tracing/span-settings#span-entry-points "Learn how to configure span settings for OpenTelemetry and OpenTracing."). To do that, in Dynatrace go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **OpenTelemetry** > **Span entry points** and create a new rule with the appropriate action and matcher entry.
+This behavior can be customized with an [entry point rule](../../extend-dynatrace/extend-tracing/span-settings.md#span-entry-points "Learn how to configure span settings for OpenTelemetry and OpenTracing."). To do that, in Dynatrace go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **OpenTelemetry** > **Span entry points** and create a new rule with the appropriate action and matcher entry.
 
 ### Span hierarchy
 
@@ -234,7 +234,7 @@ As OneAgent ingests spans already [upon their creation](#point-of-ingestion), no
 
 When ingesting OpenTelemetry traces automatically with the OneAgent Span Sensor, there is a difference between the context propagation of OpenTelemetry traces and OneAgent traces.
 
-While propagation of OpenTelemetry traces may be already handled properly by your application, it is also important to consolidate them with the OneAgent-specific trace. This can be achieved with a [context propagation rule](/docs/ingest-from/extend-dynatrace/extend-tracing/span-settings#span-context-propagation "Learn how to configure span settings for OpenTelemetry and OpenTracing."). To configure this, in Dynatrace go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **OpenTelemetry** > **Span context propagation** and create a context propagation rule with a `Propagate` action and a matcher entry for the span in question (for example, based on the span name or instrumentation library).
+While propagation of OpenTelemetry traces may be already handled properly by your application, it is also important to consolidate them with the OneAgent-specific trace. This can be achieved with a [context propagation rule](../../extend-dynatrace/extend-tracing/span-settings.md#span-context-propagation "Learn how to configure span settings for OpenTelemetry and OpenTracing."). To configure this, in Dynatrace go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **OpenTelemetry** > **Span context propagation** and create a context propagation rule with a `Propagate` action and a matcher entry for the span in question (for example, based on the span name or instrumentation library).
 
 Try to avoid trace consolidation for technologies already covered natively by OneAgent sensors. Merging such OpenTelemetry spans into a OneAgent trace may lead to undefined states.
 
@@ -294,7 +294,7 @@ The ID rewrite applies only to newly started traces (not context propagation) an
 ### All languages
 
 * OneAgent captures OpenTelemetry resource attributes only if they are provided via the `OTEL_SERVICE_NAME` and `OTEL_RESOURCE_ATTRIBUTES` environment variables. When using the OpenTelemetry trace ingest API, this limitation doesn't apply.
-* You can't create [request attributes](/docs/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") (commonly used for trace searching and filtering) based on OpenTelemetry resource attributes.
+* You can't create [request attributes](../../../observe/application-observability/services/request-attributes.md "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") (commonly used for trace searching and filtering) based on OpenTelemetry resource attributes.
 * OneAgent truncates attribute values exceeding 4,096 characters.
 
 ## Prevention of span duplication in Java

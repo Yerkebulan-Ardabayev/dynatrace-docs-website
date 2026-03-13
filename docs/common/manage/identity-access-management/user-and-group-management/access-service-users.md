@@ -19,7 +19,7 @@ An administrator or a user belonging to a group with `View and manage users and 
 
 A service user is a non-interactive user: it can't sign in to Dynatrace and it isn't related to any real person. It has its own identity and access management permissions assigned directly.
 
-You can select a service user as the actor of a [workflow](/docs/analyze-explore-automate/workflows/security#service-users "Guide on security aspects of workflow automation in Dynatrace Workflows") or [custom alert](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app#service-user "Explore anomaly detection configurations using the Anomaly Detection app.").
+You can select a service user as the actor of a [workflow](../../../../ru/analyze-explore-automate/workflows/security.md#service-users "Guide on security aspects of workflow automation in Dynatrace Workflows") or [custom alert](../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md#service-user "Explore anomaly detection configurations using the Anomaly Detection app.").
 
 ## Use case
 
@@ -67,8 +67,8 @@ A user who wants to use a service user as an actor of a workflow or custom alert
 
 That permission is granted with the following default policies:
 
-* [Dynatrace Pro User](/docs/manage/identity-access-management/permission-management/default-policies#DynatraceAccessProUser "Dynatrace default policies reference")
-* [Dynatrace Admin User](/docs/manage/identity-access-management/permission-management/default-policies#DynatraceAccessAdminUser "Dynatrace default policies reference")
+* [Dynatrace Pro User](../permission-management/default-policies.md#DynatraceAccessProUser "Dynatrace default policies reference")
+* [Dynatrace Admin User](../permission-management/default-policies.md#DynatraceAccessAdminUser "Dynatrace default policies reference")
 
 ## Create policies based on a service user
 

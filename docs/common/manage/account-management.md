@@ -36,7 +36,7 @@ To access Account Management directly from your browser address line, go to [htt
 
 ### Permissions
 
-For information on the permissions needed to access Account Management, see [Account Management permissions](/docs/manage/identity-access-management/permission-management/account-management-permissions "Dynatrace permissions required to access Account Management").
+For information on the permissions needed to access Account Management, see [Account Management permissions](identity-access-management/permission-management/account-management-permissions.md "Dynatrace permissions required to access Account Management").
 
 ## Top-level navigation
 
@@ -61,7 +61,7 @@ Use the **My profile** tab to update your user profile and notification options.
 
 * **My profile**âinformation about you, such as your name, job title, and location.
 
-  The time zone setting here is informational and does not affect any Dynatrace functionality other than report generation for [dashboard subscriptions in Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic/dashboards/subscribe-to-dashboard-reports "Learn how to subscribe to reports generated from Dynatrace dashboards.").
+  The time zone setting here is informational and does not affect any Dynatrace functionality other than report generation for [dashboard subscriptions in Dashboards Classic](../analyze-explore-automate/dashboards-classic/dashboards/subscribe-to-dashboard-reports.md "Learn how to subscribe to reports generated from Dynatrace dashboards.").
 * **Environment notifications**âlists environments for which you can enable email-based notification for outages.
 
 To return to the **My profile** tab later, open  in the upper-right corner and select you account name.
@@ -70,7 +70,7 @@ To return to the **My profile** tab later, open  in the upper-right corner and s
 
 ![Account Management: My platform tokens](https://dt-cdn.net/images/account-management-my-platform-tokens-578-bcbc9af2e1.png)
 
-Platform tokens allow to interact with the Dynatrace platform via API for external integrations or scripting. For details, see [Platform tokens](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+Platform tokens allow to interact with the Dynatrace platform via API for external integrations or scripting. For details, see [Platform tokens](../../ru/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
 
 To return to the **My platform tokens** tab later, open  in the upper-right corner and select **Platform tokens**.
 
@@ -155,7 +155,7 @@ Use **Identity & access management** > **OAuth clients** to configure and manage
 
 The **Lens** feature of Account Management provides you with insights into platform adoption and health, helping you to understand how Dynatrace is used within your organization and recommend areas for optimization.
 
-For details on Lens, see [Lens](/docs/manage/account-management/lens "Get insights Dynatrace adoption and health.").
+For details on Lens, see [Lens](account-management/lens.md "Get insights Dynatrace adoption and health.").
 
 #### Adoption
 
@@ -167,7 +167,7 @@ The **Lens** > **Adoption** page gives you insight into platform adoption and he
 * How many synthetic tests are running
 * How many problem notification integrations are defined
 
-For details, see [Adoption](/docs/manage/account-management/lens#adoption "Get insights Dynatrace adoption and health.").
+For details, see [Adoption](account-management/lens.md#adoption "Get insights Dynatrace adoption and health.").
 
 #### Environments
 
@@ -179,19 +179,19 @@ For details, see [Adoption](/docs/manage/account-management/lens#adoption "Get i
 * A summary of how many public and private synthetic tests have been running across your environments.
 * A high-level summary of how many API tokens are defined, how many problem notification integrations are defined, how many PaaS integrations are in use, and how many session exports are defined.
 
-For details, see [Environments](/docs/manage/account-management/lens#environments "Get insights Dynatrace adoption and health.").
+For details, see [Environments](account-management/lens.md#environments "Get insights Dynatrace adoption and health.").
 
 ### Settings
 
 Use **Settings** to specify general account information.
 
-For details, see [Settings](/docs/manage/account-management/settings "Configure account contact, billing, and shipping information.").
+For details, see [Settings](account-management/settings.md "Configure account contact, billing, and shipping information.").
 
 ### Audit log
 
 The **Settings** > **Audit log** page lets administrators view all changes to group permissions, group memberships, policies, and boundaries.
 
-For details, see [Audit log](/docs/manage/account-management/audit-logs "How to view logs for all changes to Account Management group permissions, memberships, policies, and boundaries.").
+For details, see [Audit log](account-management/audit-logs.md "How to view logs for all changes to Account Management group permissions, memberships, policies, and boundaries.").
 
 ### Contact information
 
@@ -201,7 +201,7 @@ Use **Settings** > **Contact information** to specify account contact, billing, 
 
 Use **Settings** > **Environments** to list environments and, with **Action** > **Edit environment**, change the selected environment's name or time zone.
 
-The time zone setting here is informational and does not affect any Dynatrace functionality other than report generation for [dashboard subscriptions in Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic/dashboards/subscribe-to-dashboard-reports "Learn how to subscribe to reports generated from Dynatrace dashboards.").
+The time zone setting here is informational and does not affect any Dynatrace functionality other than report generation for [dashboard subscriptions in Dashboards Classic](../analyze-explore-automate/dashboards-classic/dashboards/subscribe-to-dashboard-reports.md "Learn how to subscribe to reports generated from Dynatrace dashboards.").
 
 ## Back to Account Settings
 

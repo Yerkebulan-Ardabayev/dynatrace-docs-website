@@ -13,12 +13,12 @@ scraped: 2026-03-05T21:34:00.886805
 * 2-min read
 * Published Mar 05, 2021
 
-[Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic.")
+[Dashboards Classic](../../dashboards-classic.md "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic.")
 
 Эта страница относится к классическим дашбордам, созданным с помощью функциональности ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**, интегрированной с Dynatrace Classic.
 
-* Если вы уже используете приложение ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace, см. [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") для соответствующей документации.
-* Если вы всё ещё используете классические дашборды, рекомендуем [обновить ваши дашборды](/docs/analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest "Обновите классические дашборды, созданные в предыдущей версии Dynatrace, до приложения Dashboards в последней версии Dynatrace.") и воспользоваться всеми новейшими возможностями, доступными в приложении ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace.
+* Если вы уже используете приложение ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace, см. [Dashboards](../../dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") для соответствующей документации.
+* Если вы всё ещё используете классические дашборды, рекомендуем [обновить ваши дашборды](../dashboards-upgrade-classic-to-latest.md "Обновите классические дашборды, созданные в предыдущей версии Dynatrace, до приложения Dashboards в последней версии Dynatrace.") и воспользоваться всеми новейшими возможностями, доступными в приложении ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace.
 
 Используйте страницу **Global dashboard settings** для настройки глобальных параметров дашбордов, а также глобальных параметров общего доступа к дашбордам и предустановленных дашбордов.
 
@@ -40,7 +40,7 @@ scraped: 2026-03-05T21:34:00.886805
 2. Выберите **Configure home dashboard**.
 3. Выберите **User group**.
 4. Выберите предустановленный дашборд из списка **Home dashboard**.
-   Если ваш дашборд не отображается в списке, убедитесь, что он является [предустановленным дашбордом](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-preset "Узнайте о встроенных дашбордах Dynatrace и о том, как создавать собственные предустановленные дашборды.").
+   Если ваш дашборд не отображается в списке, убедитесь, что он является [предустановленным дашбордом](dashboards-preset.md "Узнайте о встроенных дашбордах Dynatrace и о том, как создавать собственные предустановленные дашборды.").
 5. Выберите **Save changes**.
 
 ## Настройки предустановленных дашбордов
@@ -64,7 +64,7 @@ scraped: 2026-03-05T21:34:00.886805
    * Установите **User group** в группу пользователей, которая должна иметь доступ к выбранному предустановленному дашборду.
 3. Выберите **Save changes**.
 
-Подробнее о предустановленных дашбордах см. в разделе [Предустановленные дашборды](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-preset "Узнайте о встроенных дашбордах Dynatrace и о том, как создавать собственные предустановленные дашборды.").
+Подробнее о предустановленных дашбордах см. в разделе [Предустановленные дашборды](dashboards-preset.md "Узнайте о встроенных дашбордах Dynatrace и о том, как создавать собственные предустановленные дашборды.").
 
 ## Правила разрешённых URL-шаблонов
 

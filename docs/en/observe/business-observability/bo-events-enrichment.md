@@ -15,7 +15,7 @@ scraped: 2026-03-03T21:30:52.600686
 
 Dynatrace SaaS version 1.253+
 
-Dynatrace automatically enriches business events with additional context to enhance analysis and facilitate drill-down navigation. Specifically, Dynatrace adds certain properties to your business events, for example, information on geolocation, operating system, application, and more. You can then use [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") to analyze your business events.
+Dynatrace automatically enriches business events with additional context to enhance analysis and facilitate drill-down navigation. Specifically, Dynatrace adds certain properties to your business events, for example, information on geolocation, operating system, application, and more. You can then use [Dynatrace Query Language (DQL)](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") to analyze your business events.
 
 ## OneAgent and external business event enrichment
 
@@ -35,7 +35,7 @@ Set by OneAgent and required by CloudEvents specification, but not enforced by t
 
 ## RUM business event enrichment
 
-Business events [reported via RUM](/docs/observe/business-observability/bo-events-capturing#report-business-event-rum "Capture business events for Dynatrace Business Observability.") are enriched with fields relevant to the device and user, such as geolocation, device, browser, and application. The following fields are added automatically, depending on the application typeâweb or mobile.
+Business events [reported via RUM](bo-events-capturing.md#report-business-event-rum "Capture business events for Dynatrace Business Observability.") are enriched with fields relevant to the device and user, such as geolocation, device, browser, and application. The following fields are added automatically, depending on the application typeâweb or mobile.
 
 ### Top-level fields
 

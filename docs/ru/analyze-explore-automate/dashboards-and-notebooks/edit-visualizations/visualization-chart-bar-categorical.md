@@ -59,7 +59,7 @@ fetch logs
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host** — открытие выбранного элемента в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   В общем, если для выбранного элемента есть рекомендованные приложения, меню предлагает прямые ссылки на эти приложения, а затем опцию **Open with** для выбора другого целевого приложения.
-* **Open with** — подробнее см. [Детализация и навигация](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Детализация из Dashboards и Notebooks с использованием ссылок на основе намерений или URL.").
+* **Open with** — подробнее см. [Детализация и навигация](../drilldowns-and-navigation.md "Детализация из Dashboards и Notebooks с использованием ссылок на основе намерений или URL.").
 
 ## Заголовок
 
@@ -78,7 +78,7 @@ fetch logs
 
 ## Визуализация
 
-Если вы не уверены, что выбрали правильную визуализацию, используйте [селектор визуализации](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Создание, редактирование и просмотр визуализаций на ваших дашбордах и в блокнотах Dynatrace.") для выбора различных визуализаций.
+Если вы не уверены, что выбрали правильную визуализацию, используйте [селектор визуализации](../edit-visualizations.md#select-visualization "Создание, редактирование и просмотр визуализаций на ваших дашбордах и в блокнотах Dynatrace.") для выбора различных визуализаций.
 
 ## Маппинг данных
 

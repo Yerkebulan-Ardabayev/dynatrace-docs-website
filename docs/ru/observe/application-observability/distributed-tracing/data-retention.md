@@ -30,13 +30,13 @@ scraped: 2026-03-06T21:10:05.194209
 Предварительные условия
 
 * Среда Dynatrace SaaS на основе Grail и AppEngine.
-* Подписка Dynatrace Platform Subscription (DPS) с возможностями [Трассировки на основе Grail (DPS)](/docs/license/capabilities/traces "Узнайте, как рассчитывается потребление Dynatrace Traces на основе Grail с использованием модели Dynatrace Platform Subscription (DPS).").
-* Разрешения `openpipeline:configurations:write` и `openpipeline:configurations:read`. Сведения о настройке разрешений см. в разделе [Разрешения в Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Узнайте, как назначать разрешения для корзин и таблиц в Grail.").
+* Подписка Dynatrace Platform Subscription (DPS) с возможностями [Трассировки на основе Grail (DPS)](../../../license/capabilities/traces.md "Узнайте, как рассчитывается потребление Dynatrace Traces на основе Grail с использованием модели Dynatrace Platform Subscription (DPS).").
+* Разрешения `openpipeline:configurations:write` и `openpipeline:configurations:read`. Сведения о настройке разрешений см. в разделе [Разрешения в Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Узнайте, как назначать разрешения для корзин и таблиц в Grail.").
 
 Предварительные знания
 
-* [Организация данных](/docs/platform/grail/organize-data "Сведения о модели данных Grail, состоящей из корзин, таблиц и представлений.")
-* [Сроки хранения данных](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods "Проверьте сроки хранения для различных типов данных.")
+* [Организация данных](../../../platform/grail/organize-data.md "Сведения о модели данных Grail, состоящей из корзин, таблиц и представлений.")
+* [Сроки хранения данных](../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md "Проверьте сроки хранения для различных типов данных.")
 
 Ключевые термины
 
@@ -99,5 +99,5 @@ scraped: 2026-03-06T21:10:05.194209
 
 ## Связанные темы
 
-* [OpenPipeline](/docs/platform/openpipeline "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.")
-* [Сроки хранения данных](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods "Проверьте сроки хранения для различных типов данных.")
+* [OpenPipeline](../../../platform/openpipeline.md "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.")
+* [Сроки хранения данных](../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md "Проверьте сроки хранения для различных типов данных.")

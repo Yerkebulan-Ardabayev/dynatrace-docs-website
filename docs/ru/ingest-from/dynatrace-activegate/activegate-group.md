@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:24:16.455659
 * Чтение займёт 2 минуты
 * Опубликовано 08 июл. 2022 г.
 
-Вы можете использовать группы ActiveGate для выполнения массовых операций над вашими ActiveGate, например для управления [расширениями](/docs/ingest-from/extensions "Узнайте, как создавать расширения Dynatrace и управлять ими."), запущенными на ActiveGate, или для подключения [фундаментов Cloud Foundry](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/connect-your-cloud-foundry-foundations-to-dynatrace "Включите мониторинг для ваших фундаментов Cloud Foundry.").
+Вы можете использовать группы ActiveGate для выполнения массовых операций над вашими ActiveGate, например для управления [расширениями](../extensions.md "Узнайте, как создавать расширения Dynatrace и управлять ими."), запущенными на ActiveGate, или для подключения [фундаментов Cloud Foundry](../setup-on-container-platforms/cloud-foundry/connect-your-cloud-foundry-foundations-to-dynatrace.md "Включите мониторинг для ваших фундаментов Cloud Foundry.").
 
 ## Требования
 
@@ -42,7 +42,7 @@ Dynatrace-ActiveGate-Windows-x86-<version>.exe --set-group=my-group
 
 ### Назначение группе после установки
 
-Для назначения ActiveGate группе можно воспользоваться [удалённым управлением конфигурацией](/docs/ingest-from/bulk-configuration#configure-activegates "Выполняйте настройку OneAgent и ActiveGate на хостах со страницы состояния развёртывания или в масштабе с помощью Dynatrace API.") (выберите действие **modify ActiveGate group**).
+Для назначения ActiveGate группе можно воспользоваться [удалённым управлением конфигурацией](../bulk-configuration.md#configure-activegates "Выполняйте настройку OneAgent и ActiveGate на хостах со страницы состояния развёртывания или в масштабе с помощью Dynatrace API.") (выберите действие **modify ActiveGate group**).
 
 Альтернативно можно использовать свойство конфигурации ActiveGate `group`. Например:
 
@@ -54,7 +54,7 @@ Dynatrace-ActiveGate-Windows-x86-<version>.exe --set-group=my-group
 group = mygroup
 ```
 
-Дополнительные сведения см. в разделе [Основные правила работы с конфигурацией ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#basic-rules "Узнайте, какие свойства ActiveGate можно настроить в зависимости от ваших потребностей и требований.")
+Дополнительные сведения см. в разделе [Основные правила работы с конфигурацией ActiveGate](configuration/configure-activegate.md#basic-rules "Узнайте, какие свойства ActiveGate можно настроить в зависимости от ваших потребностей и требований.")
 
 ## Расширения
 
@@ -64,4 +64,4 @@ ActiveGate, запускающий удалённое расширение, до
 
 ## Фундаменты Cloud Foundry
 
-При подключении Dynatrace к фундаментам Cloud Foundry вы указываете группу ActiveGate, ответственную за запрос данных у Cloud Foundry. Дополнительные сведения см. в разделе [Подключение ваших фундаментов Cloud Foundry к Dynatrace](/docs/ingest-from/setup-on-container-platforms/cloud-foundry/connect-your-cloud-foundry-foundations-to-dynatrace "Включите мониторинг для ваших фундаментов Cloud Foundry.")
+При подключении Dynatrace к фундаментам Cloud Foundry вы указываете группу ActiveGate, ответственную за запрос данных у Cloud Foundry. Дополнительные сведения см. в разделе [Подключение ваших фундаментов Cloud Foundry к Dynatrace](../setup-on-container-platforms/cloud-foundry/connect-your-cloud-foundry-foundations-to-dynatrace.md "Включите мониторинг для ваших фундаментов Cloud Foundry.")

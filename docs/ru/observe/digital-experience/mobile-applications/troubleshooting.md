@@ -28,7 +28,7 @@ scraped: 2026-03-06T21:35:25.181485
 
 ## Передача журналов для устранения неполадок
 
-Для мобильных приложений iOS Dynatrace предоставляет API `shareLogsFile`, который позволяет легко делиться локально сохранёнными файлами журналов через панель общего доступа iOS (`UIActivityViewController`). Дополнительные сведения см. в разделе [Передача журналов](/docs/manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace#log-sharing "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.").
+Для мобильных приложений iOS Dynatrace предоставляет API `shareLogsFile`, который позволяет легко делиться локально сохранёнными файлами журналов через панель общего доступа iOS (`UIActivityViewController`). Дополнительные сведения см. в разделе [Передача журналов](../../../manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace.md#log-sharing "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.").
 
 ## Устранение неполадок для конкретных технологий
 

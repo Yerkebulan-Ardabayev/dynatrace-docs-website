@@ -17,11 +17,11 @@ To view the most important processes running on a specific host, go to ![Hosts](
 
 Within the **Process analysis** section, you can also see various process group instances categorized by technology type.
 
-For more details, refer to [Process analysis](/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring#process-analysis "Monitor hosts with Dynatrace.").
+For more details, refer to [Process analysis](../../hosts/monitoring/host-monitoring.md#process-analysis "Monitor hosts with Dynatrace.").
 
 For processes to be visible in this section, they have to meet at least one of the following criteria:
 
-* Processes that are [supported applications](/docs/ingest-from/technology-support#applications-services-and-databases "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+* Processes that are [supported applications](../../../../ingest-from/technology-support.md#applications-services-and-databases "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 * Processes with an open TCP listening port
 * Processes for which one of the following conditions is met for at least 3 of the last 5 one-minute intervals:
 
@@ -30,7 +30,7 @@ For processes to be visible in this section, they have to meet at least one of t
   + **Network Traffic > 5%**.
 * Processes that have been defined by a user as important, for example, by enabling Log Monitoring for a process.
 
-Dynatrace provides also the option of [monitoring specific processes that fall into neither of these categories](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection").
+Dynatrace provides also the option of [monitoring specific processes that fall into neither of these categories](../configuration/pg-detection.md "Ways to customize process-group detection").
 
 Any processes that do not meet the above criteria, and therefore are not considered important processes, are aggregated and labeled as **Other processes**.
 

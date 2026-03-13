@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:30:43.612602
 * 11-min read
 * Updated on Jan 15, 2026
 
-The [`type` field](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas#type-field "The Monaco configuration YAML file is structure.") in the `configs` YAML file defines the Dynatrace configuration type.
+The [`type` field](yaml-configuration-saas.md#type-field "The Monaco configuration YAML file is structure.") in the `configs` YAML file defines the Dynatrace configuration type.
 
 The list of `type` fields
 
@@ -77,7 +77,7 @@ config:
 [...]
 ```
 
-For more information, see [supported API types](/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling#supported-api-types "This is a list of the Monaco API support and access permission handling.").
+For more information, see [supported API types](../monaco-api-support-and-access-handling.md#supported-api-types "This is a list of the Monaco API support and access permission handling.").
 
 Some of the `api` `type` configuration have a parent-child relationship with another configuration.
 Such a configuration requires a scope field that points to the parent configuration.
@@ -173,7 +173,7 @@ property: id
 
 ## settings type field
 
-The [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") are defined by their `schema`, `scope`, and an optional `schemaVersion`.
+The [Settings API](../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") are defined by their `schema`, `scope`, and an optional `schemaVersion`.
 
 The `type` field `settings` can be defined as follows.
 
@@ -502,7 +502,7 @@ allUsers: read
 ## automation type field
 
 Since Dynatrace Monaco CLI version 2.6.0+, the `automation` type is supported.
-The `automation` type configurations represent [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") related resources.
+The `automation` type configurations represent [Workflows](../../../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") related resources.
 
 The `type` field `automation` can be defined as follows.
 
@@ -519,7 +519,7 @@ resource: workflow # or business-calendar, or scheduling-rule
 ```
 
 The `resource` field specifies the desired automation resource. Each resource requires distinct OAuth permissions.
-For more information, see [Monaco API support and access permission handling](/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling#supported-api-types "This is a list of the Monaco API support and access permission handling.").
+For more information, see [Monaco API support and access permission handling](../monaco-api-support-and-access-handling.md#supported-api-types "This is a list of the Monaco API support and access permission handling.").
 
 An example is shown below.
 
@@ -587,7 +587,7 @@ If it fails, the operation is repeated without the flag, but you can only access
 
 ## bucket type field
 
-Since Dynatrace Monaco CLI version 2.9.0+, the `bucket` type is supported, and it represents the configurations of the [data storage management in Grail with custom Grail buckets](/docs/platform/grail/organize-data#creating-new-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
+Since Dynatrace Monaco CLI version 2.9.0+, the `bucket` type is supported, and it represents the configurations of the [data storage management in Grail with custom Grail buckets](../../../../platform/grail/organize-data.md#creating-new-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
 
 The `type` field `bucket` can be defined as follows.
 
@@ -597,7 +597,7 @@ type: bucket
 
 It does not require any additional fields.
 
-In addition to defining and creating a new storage bucket, you need an additional bucket rule [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") to specify what data is stored in it.
+In addition to defining and creating a new storage bucket, you need an additional bucket rule [Settings API](../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") to specify what data is stored in it.
 
 An example is shown below.
 
@@ -711,7 +711,7 @@ By default, the bucket name is sanitized to ensure compatibility with Dynatrace 
 
 ## document type field
 
-Since Dynatrace Monaco CLI version 2.15.0+, the `document` type is supported, and it represents the [API for Dashboards and Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/document-api "Manage Dynatrace documents (such as dashboards and notebooks) via API.").
+Since Dynatrace Monaco CLI version 2.15.0+, the `document` type is supported, and it represents the [API for Dashboards and Notebooks](../../../../analyze-explore-automate/dashboards-and-notebooks/document-api.md "Manage Dynatrace documents (such as dashboards and notebooks) via API.").
 
 Since Dynatrace Monaco CLI version 2.18.0+, the `document` type also represents the `launchpad`.
 
@@ -744,15 +744,15 @@ If not specified otherwise, the `document` is public by default, which means eve
 
 The optional field `id` allows you to set a custom ID for the document.
 If this field is set, a direct reference via `objectId` is needed
-in the [deletefile](/docs/deliver/configuration-as-code/monaco/configuration#file-structure-for-direct-reference "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest."), should you want to delete the document later.
+in the [deletefile](../configuration.md#file-structure-for-direct-reference "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest."), should you want to delete the document later.
 
 If not specified, Monaco generates a custom ID. In both cases, user-defined and Monaco-generated, the custom ID is used to populate the `id` field on download.
 
-Monaco does not download [Ready-made documents](/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents "Use ready-made documents right out of the box.").
+Monaco does not download [Ready-made documents](../../../../analyze-explore-automate/dashboards-and-notebooks/ready-made-documents.md "Use ready-made documents right out of the box.").
 
 Depending on the userâs credentials, Monaco may not be able to redeploy all downloaded documents in certain situations.
 This situation happens when documents are publicly accessible, but the Monaco user does not have ownership rights. In other words, the Monaco user does not own the document.
-For more information on sharing documents or changing their owner, see [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), or [Launchpads](/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads "Build and manage custom start pages with launchpads.").
+For more information on sharing documents or changing their owner, see [Dashboards](../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), [Notebooks](../../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), or [Launchpads](../../../../discover-dynatrace/get-started/dynatrace-ui/launchpads.md "Build and manage custom start pages with launchpads.").
 
 For more information, see [Configuration as code sample repoï»¿](https://github.com/Dynatrace/dynatrace-configuration-as-code-samples)
 
@@ -780,7 +780,7 @@ kind: bizevents # id of openpipeline configuration (for example, "bizevents", "e
 Deploying an `openpipeline` configuration overwrites the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Monaco or Terraform to be lost.
 To prevent data loss, ensure all configurations are defined within a single Monaco or Terraform configuration.
 
-This resource is deprecated and has been moved to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**. For more information, see [OpenPipeline API](/docs/platform/openpipeline/reference/openpipeline-api "Configure OpenPipeline capabilities of ingest source, routing, and processing via API.").
+This resource is deprecated and has been moved to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**. For more information, see [OpenPipeline API](../../../../platform/openpipeline/reference/openpipeline-api.md "Configure OpenPipeline capabilities of ingest source, routing, and processing via API.").
 
 The `kind` field specifies the `id` of a pre-existing `openpipeline` configuration.
 Monaco can retrieve and update configurations, but can't create or delete new ones.
@@ -788,7 +788,7 @@ Monaco can retrieve and update configurations, but can't create or delete new on
 ## segment type field
 
 Since Dynatrace Monaco CLI version 2.19.0+, the `segment` type is supported.
-[Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") are used to structure and filter data for tailored views in Dynatrace.
+[Segments](../../../../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") are used to structure and filter data for tailored views in Dynatrace.
 
 The `type` field `segment` can be defined as follows.
 
@@ -880,9 +880,9 @@ template: dashboard.json
 
 Since Dynatrace Monaco CLI version 2.22.0+, the `slo-v2` type is supported.
 
-[Configure and monitor service-level objectives with Dynatrace](/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo "Create, configure, and monitor service-level objectives with Dynatrace."), based on Grail and utilizing DQL are managed via the `type` `slo-v2`.
+[Configure and monitor service-level objectives with Dynatrace](../../../service-level-objectives-classic/configure-and-monitor-slo.md "Create, configure, and monitor service-level objectives with Dynatrace."), based on Grail and utilizing DQL are managed via the `type` `slo-v2`.
 
-The `slo-v2` configuration type is distinct from the existing `slo` type and represents SLOs leveraging Grail, as described in the [Configure and monitor service-level objectives with Dynatrace](/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo "Create, configure, and monitor service-level objectives with Dynatrace.") overview.
+The `slo-v2` configuration type is distinct from the existing `slo` type and represents SLOs leveraging Grail, as described in the [Configure and monitor service-level objectives with Dynatrace](../../../service-level-objectives-classic/configure-and-monitor-slo.md "Create, configure, and monitor service-level objectives with Dynatrace.") overview.
 These two configuration types are incompatible, and deploying a `slo` configuration as a `slo-v2` or vice versa results in the API rejecting the request.
 
 The `type` field `slo-v2` can be defined as follows.
@@ -1176,4 +1176,4 @@ While this sample shows users, service users, policies, and groups defined in a 
 
 ## Related topics
 
-* [Monaco configuration YAML file structure](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas "The Monaco configuration YAML file is structure.")
+* [Monaco configuration YAML file structure](yaml-configuration-saas.md "The Monaco configuration YAML file is structure.")

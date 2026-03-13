@@ -38,19 +38,19 @@ This article is intended for development teams managing data ingestion.
 Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine.
-* [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license that includes [Events powered by Grail overview (DPS)](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+* [License Dynatrace](../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license that includes [Events powered by Grail overview (DPS)](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 
 ## Steps
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Authenticate**](/docs/platform/openpipeline/getting-started/how-to-ingestion#authenticate "How to ingest data for a configuration scope in OpenPipeline.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Authenticate**](how-to-ingestion.md#authenticate "How to ingest data for a configuration scope in OpenPipeline.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Copy the endpoint path**](/docs/platform/openpipeline/getting-started/how-to-ingestion#path "How to ingest data for a configuration scope in OpenPipeline.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Copy the endpoint path**](how-to-ingestion.md#path "How to ingest data for a configuration scope in OpenPipeline.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Send an event**](/docs/platform/openpipeline/getting-started/how-to-ingestion#send "How to ingest data for a configuration scope in OpenPipeline.")[![Step 4 optional](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Step 4 optional")
+**Send an event**](how-to-ingestion.md#send "How to ingest data for a configuration scope in OpenPipeline.")[![Step 4 optional](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Step 4 optional")
 
-**Verify ingestion**](/docs/platform/openpipeline/getting-started/how-to-ingestion#verify "How to ingest data for a configuration scope in OpenPipeline.")
+**Verify ingestion**](how-to-ingestion.md#verify "How to ingest data for a configuration scope in OpenPipeline.")
 
 ### Step 1 Authenticate
 
@@ -133,9 +133,9 @@ OpenPipeline is the unified ingestion component for the Dynatrace Platform. You 
 3. Send a record.
 4. Verify ingestion.
 
-For an overview of the available endpoints, refer to [Ingest sources in OpenPipeline](/docs/platform/openpipeline/reference/api-ingestion-reference "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.").
+For an overview of the available endpoints, refer to [Ingest sources in OpenPipeline](../reference/api-ingestion-reference.md "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.").
 
 ## Related topics
 
-* [Data flow in OpenPipeline](/docs/platform/openpipeline/concepts/data-flow "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
-* [Ingest sources in OpenPipeline](/docs/platform/openpipeline/reference/api-ingestion-reference "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.")
+* [Data flow in OpenPipeline](../concepts/data-flow.md "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
+* [Ingest sources in OpenPipeline](../reference/api-ingestion-reference.md "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.")

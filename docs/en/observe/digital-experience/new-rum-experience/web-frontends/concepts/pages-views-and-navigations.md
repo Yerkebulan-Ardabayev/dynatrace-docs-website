@@ -22,11 +22,11 @@ For a traditional website, pages let you analyze each full-page navigation. For 
 
 ### Pages and page instances
 
-Each visit to a website generates a **page instance**. The data captured is aggregated into a [page summary event](/docs/semantic-dictionary/model/rum/user-events/navigation-related#page-summary), which is identifiable by its [`page.instance_id`](/docs/semantic-dictionary/model/rum/user-events#page-attributes "User events provide deep visibility and insights into experience, behavior, performance, and errors of your customers and end-users in real-time.").
+Each visit to a website generates a **page instance**. The data captured is aggregated into a [page summary event](../../../../../semantic-dictionary/model/rum/user-events/navigation-related.md#page-summary), which is identifiable by its [`page.instance_id`](../../../../../semantic-dictionary/model/rum/user-events.md#page-attributes "User events provide deep visibility and insights into experience, behavior, performance, and errors of your customers and end-users in real-time.").
 
 **Pages** group all visits into one aggregated entry. To analyze the same page over all visits, page instances are grouped under `page.name`. The `page.name` attribute is designed to filter out dynamic URL parts for better grouping. It's derived from `page.detected_name`, which the RUM JavaScript bases on the URL.
 
-The **page load** of each new page instance is captured as an event with the following three [characteristics](/docs/semantic-dictionary/model/rum/user-events#user-event-characteristics "User events provide deep visibility and insights into experience, behavior, performance, and errors of your customers and end-users in real-time."):
+The **page load** of each new page instance is captured as an event with the following three [characteristics](../../../../../semantic-dictionary/model/rum/user-events.md#user-event-characteristics "User events provide deep visibility and insights into experience, behavior, performance, and errors of your customers and end-users in real-time."):
 
 * `characteristics.has_request`
 * `characteristics.has_navigation`
@@ -34,7 +34,7 @@ The **page load** of each new page instance is captured as an event with the fol
 
 ### Google Web Vitals
 
-[Google Web Vitalsï»¿](https://web.dev/articles/vitals) are critical for understanding the user experience on a page. These metrics are captured with every page summary event. For details, see [Web vitals attributes](/docs/semantic-dictionary/model/rum/user-events/navigation-related#page-summary-web-vitals-attributes) in the Semantic Dictionary. As Google's official Web Vitals specification is page-based, the built-in Web Vitals metrics in the New RUM Experience are based on the values in page summaries, even though Web Vitals are also captured in [view summary events](#views).
+[Google Web Vitalsï»¿](https://web.dev/articles/vitals) are critical for understanding the user experience on a page. These metrics are captured with every page summary event. For details, see [Web vitals attributes](../../../../../semantic-dictionary/model/rum/user-events/navigation-related.md#page-summary-web-vitals-attributes) in the Semantic Dictionary. As Google's official Web Vitals specification is page-based, the built-in Web Vitals metrics in the New RUM Experience are based on the values in page summaries, even though Web Vitals are also captured in [view summary events](#views).
 
 Built-in metrics for Web Vitals
 
@@ -80,7 +80,7 @@ The New RUM Experience automatically interprets soft navigations (also called ro
 
 Each navigation creates a new **view instance**, whether it's a soft navigation or a hard navigation involving a full-page load. The start of a new page instance always marks the start of a new view instance.
 
-Captured data for a view instance is aggregated into a [view summary event](/docs/semantic-dictionary/model/rum/user-events/navigation-related#view-summary), identified by its [`view.instance_id`](/docs/semantic-dictionary/model/rum/user-events#view-attributes "User events provide deep visibility and insights into experience, behavior, performance, and errors of your customers and end-users in real-time.").
+Captured data for a view instance is aggregated into a [view summary event](../../../../../semantic-dictionary/model/rum/user-events/navigation-related.md#view-summary), identified by its [`view.instance_id`](../../../../../semantic-dictionary/model/rum/user-events.md#view-attributes "User events provide deep visibility and insights into experience, behavior, performance, and errors of your customers and end-users in real-time.").
 
 **Views** group all visits into a single aggregated entry. To analyze the same view across multiple visits, view instances are grouped under the `view.name`. This attribute is designed to filter out dynamic parts of the URL for better grouping. It's derived from `view.detected_name`, which the RUM JavaScript bases on the URL.
 
@@ -159,7 +159,7 @@ percentile(web_vitals.largest_contentful_paint, 75)
 
 ## Navigations
 
-[Navigation events](/docs/semantic-dictionary/model/rum/user-events/navigation-related#navigation) are reported during view changes and/or page changes. How they are reported depends on whether the navigation is hard (full page load) or soft (SPA route change).
+[Navigation events](../../../../../semantic-dictionary/model/rum/user-events/navigation-related.md#navigation) are reported during view changes and/or page changes. How they are reported depends on whether the navigation is hard (full page load) or soft (SPA route change).
 
 ### Hard navigations
 
@@ -206,4 +206,4 @@ fetch user.events
 
 ## Related topics
 
-* [Data model of the New RUM Experience](/docs/observe/digital-experience/new-rum-experience/concepts/data-model "Get familiar with the data model at the heart of the New RUM Experience.")
+* [Data model of the New RUM Experience](../../concepts/data-model.md "Get familiar with the data model at the heart of the New RUM Experience.")

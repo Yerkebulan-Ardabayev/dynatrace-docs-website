@@ -13,21 +13,21 @@ scraped: 2026-03-06T21:33:38.177057
 * 1-min read
 * Updated on Feb 13, 2025
 
-Your Dynatrace environment can integrate with a Jira Cloud or Server instance using Jira Connector ![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows"). With this integration, you can automate creating, commenting, and assigning Jira issues on the events and schedules defined for your [workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+Your Dynatrace environment can integrate with a Jira Cloud or Server instance using Jira Connector ![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows"). With this integration, you can automate creating, commenting, and assigning Jira issues on the events and schedules defined for your [workflows](../../workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 
 [![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows")
 
 ### Jira Connector Get Started
 
-Get started with our Quick Start Guide for Jira Connector.](/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-get-started "Learn how to get started with Jira Connector actions.")[![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows")
+Get started with our Quick Start Guide for Jira Connector.](jira/automation-workflows-jira-get-started.md "Learn how to get started with Jira Connector actions.")[![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows")
 
 ### Set up Jira Connector
 
-Set up and configure Jira Connector.](/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-setup "Learn how to set up Jira Connector.")[![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows")
+Set up and configure Jira Connector.](jira/automation-workflows-jira-setup.md "Learn how to set up Jira Connector.")[![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows")
 
 ### Jira Connector actions
 
-Learn about available actions used by Jira Connector integration for automating issue creation.](/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-actions "Integrate with the Jira instance to utilize a wide range of Jira Connector actions.")
+Learn about available actions used by Jira Connector integration for automating issue creation.](jira/automation-workflows-jira-actions.md "Integrate with the Jira instance to utilize a wide range of Jira Connector actions.")
 
 ## Troubleshooting
 
@@ -39,6 +39,6 @@ The following are solutions to problems some people had with Jira Connector acti
 
 ## Related topics
 
-* [Set up Jira Connector](/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-setup "Learn how to set up Jira Connector.")
-* [Get started with Jira Connector](/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-get-started "Learn how to get started with Jira Connector actions.")
-* [Actions for Jira Connector](/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-actions "Integrate with the Jira instance to utilize a wide range of Jira Connector actions.")
+* [Set up Jira Connector](jira/automation-workflows-jira-setup.md "Learn how to set up Jira Connector.")
+* [Get started with Jira Connector](jira/automation-workflows-jira-get-started.md "Learn how to get started with Jira Connector actions.")
+* [Actions for Jira Connector](jira/automation-workflows-jira-actions.md "Integrate with the Jira instance to utilize a wide range of Jira Connector actions.")

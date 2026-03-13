@@ -153,7 +153,7 @@ These alerts are based purely on metrics and can be adjusted or extended in Dyna
 
 ### Licensing and cost
 
-There is no charge to use the extension. You are only charged for the data that the extension ingests. The license consumption details depend on which licensing model you're using. This can either be [Dynatrace classic licensing](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing.") or the [Dynatrace Platform Subscription (DPS)](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") model.
+There is no charge to use the extension. You are only charged for the data that the extension ingests. The license consumption details depend on which licensing model you're using. This can either be [Dynatrace classic licensing](../../../license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing.") or the [Dynatrace Platform Subscription (DPS)](../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") model.
 
 #### Metrics
 
@@ -197,7 +197,7 @@ License consumption is based on the number of metric data points ingested. A rou
 
 #### Classic licensing
 
-In the Dynatrace classic licensing model, metric ingestion consumes [Davis Data Units (DDUs)](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") at the rate of .001 DDUs per metric data point.
+In the Dynatrace classic licensing model, metric ingestion consumes [Davis Data Units (DDUs)](../../../license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") at the rate of .001 DDUs per metric data point.
 To estimate annual DDU usage, take the result of the above formula for annual data points and multiply it by .001.
 
 ## FAQ

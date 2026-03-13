@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:14:29.180885
 * 9-min read
 * Updated on Oct 30, 2023
 
-Once stored in Grail, you can query your business event data interactively and analyze it using [DQL](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."). DQL is the starting point for analysis, whether you use [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), or the DQL Query API (latest Dynatrace). You can use query results interactively or pin them to a dashboard as charts, tiles, or tables.
+Once stored in Grail, you can query your business event data interactively and analyze it using [DQL](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."). DQL is the starting point for analysis, whether you use [Notebooks](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), [Dashboards](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), or the DQL Query API (latest Dynatrace). You can use query results interactively or pin them to a dashboard as charts, tiles, or tables.
 
 ## Query and analyze your data
 
@@ -51,7 +51,7 @@ fetch bizevents, from:now()-24h, to:now()
 
 ### Total trading dollar volume in time intervals: Line chart
 
-You can create interval-based metrics. This example queries the total trading dollar volume in the last 24 hours in intervals of five minutes. This example uses the DQL [makeTimeseries command](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#makeTimeseries "DQL aggregation commands") to build a time series from a measure (the sum of dollar volume), which you can then use to leverage the power of charting in Notebooks or Dashboards.
+You can create interval-based metrics. This example queries the total trading dollar volume in the last 24 hours in intervals of five minutes. This example uses the DQL [makeTimeseries command](../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#makeTimeseries "DQL aggregation commands") to build a time series from a measure (the sum of dollar volume), which you can then use to leverage the power of charting in Notebooks or Dashboards.
 
 * Assets sold through EasyTrade are captured by the `com.easytrade.nginx.quick-sell` event type.
 * Trading dollar volume is calculated as the number of assets sold multiplied by their price.
@@ -224,7 +224,7 @@ The image below shows query results displayed as a **Table** in Notebooks.
   | filter event.provider == "www.easytrade.com"
   ```
 
-  The [`filter` command](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#filter "DQL filter and search commands") provides the business event records based on the defined [event provider](/docs/observe/business-observability/bo-events-capturing#configure-sources "Capture business events for Dynatrace Business Observability.").
+  The [`filter` command](../../platform/grail/dynatrace-query-language/commands/filtering-commands.md#filter "DQL filter and search commands") provides the business event records based on the defined [event provider](bo-events-capturing.md#configure-sources "Capture business events for Dynatrace Business Observability.").
 * **Line 3**
 
   ```
@@ -245,21 +245,21 @@ The image below shows query results displayed as a **Table** in Notebooks.
   | fieldsAdd deposit_ts = if(event.type == "com.easytrade.deposit", timestamp)
   ```
 
-  The [`fieldsAdd` command](/docs/platform/grail/dynatrace-query-language/commands#fields-add "A list of DQL commands.") creates a new field: a timestamp. This is the deposit timestamp.
+  The [`fieldsAdd` command](../../platform/grail/dynatrace-query-language/commands.md#fields-add "A list of DQL commands.") creates a new field: a timestamp. This is the deposit timestamp.
 * **Line 6**
 
   ```
   | fieldsAdd withdraw_ts = if(event.type == "com.easytrade.withdraw", timestamp)
   ```
 
-  The [`fieldsAdd` command](/docs/platform/grail/dynatrace-query-language/commands#fields-add "A list of DQL commands.") creates a new field: a timestamp. This is the withdrawal timestamp.
+  The [`fieldsAdd` command](../../platform/grail/dynatrace-query-language/commands.md#fields-add "A list of DQL commands.") creates a new field: a timestamp. This is the withdrawal timestamp.
 * **Line 7**
 
   ```
   | summarize {first_deposit_ts = takeFirst(deposit_ts), first_withdraw_ts = takeFirst(withdraw_ts)}, by:{`accountId`}
   ```
 
-  The [`summarize` command](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#summarize "DQL aggregation commands") groups by account:
+  The [`summarize` command](../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#summarize "DQL aggregation commands") groups by account:
 
   + The first timestamp for a deposit event.
   + The first timestamp for a withdrawal event.
@@ -283,7 +283,7 @@ The image below shows query results displayed as a **Table** in Notebooks.
   | fields `accountId`, `Seconds From Deposit To Deposit`= timeDepositToDeposit
   ```
 
-  The [`fields` command](/docs/platform/grail/dynatrace-query-language/commands/selection-and-modification-commands#fields "DQL selection and modification commands") restricts the output to the account ID and the time elapsed between the first deposit and the first withdrawal.
+  The [`fields` command](../../platform/grail/dynatrace-query-language/commands/selection-and-modification-commands.md#fields "DQL selection and modification commands") restricts the output to the account ID and the time elapsed between the first deposit and the first withdrawal.
 
 ### Business events during office hours
 
@@ -415,6 +415,6 @@ Results displayed as a **Table** show which order IDs are not fulfilled (`false`
 
 You can also use Dashboards ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") to easily implement all the [metric examples in Notebooks](#notebooks) described above. The image below shows a dashboard containing tiles for some of the DQL queries explained above and some other queries that are simple modifications or variations of the examples above.
 
-Select any tile and then select [**Open with** ![Open with](https://dt-cdn.net/images/open-with-003fc82dcd.svg "Open with")](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-open-with "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") to reuse content from Dashboards in another app, such as Notebooks.
+Select any tile and then select [**Open with** ![Open with](https://dt-cdn.net/images/open-with-003fc82dcd.svg "Open with")](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-open-with "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") to reuse content from Dashboards in another app, such as Notebooks.
 
 ![Business analytics dashboard for metrics](https://dt-cdn.net/images/ba-dashboard-examples-2393-86077d7d44.webp)

@@ -13,15 +13,15 @@ scraped: 2026-03-06T21:15:20.149749
 * 17-min read
 * Updated on Oct 15, 2025
 
-Log Management and Analytics powered by Grail enables you to pinpoint and retrieve any log data with the help of [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."). After reviewing the [fundamentals of DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts."), use the examples on this page to start getting answers from your log data.
+Log Management and Analytics powered by Grail enables you to pinpoint and retrieve any log data with the help of [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."). After reviewing the [fundamentals of DQL queries](../../platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts."), use the examples on this page to start getting answers from your log data.
 
 To run DQL queries with logs on Grail, go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic** > **Advanced mode**.
 
-* [Example 1](/docs/analyze-explore-automate/logs/logs-on-grail-examples#logexample1 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Get the distribution of HTTP status codes and counts per error type.
-* [Example 2](/docs/analyze-explore-automate/logs/logs-on-grail-examples#logexample2 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Define an average cart size based on logs.
-* [Example 3](/docs/analyze-explore-automate/logs/logs-on-grail-examples#logexample3 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Track user changes with audit logs.
-* [Example 4](/docs/analyze-explore-automate/logs/logs-on-grail-examples#logexample4 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Create a log metric.
-* [Example 5](/docs/analyze-explore-automate/logs/logs-on-grail-examples#logexample5 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Create a log alert.
+* [Example 1](logs-on-grail-examples.md#logexample1 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Get the distribution of HTTP status codes and counts per error type.
+* [Example 2](logs-on-grail-examples.md#logexample2 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Define an average cart size based on logs.
+* [Example 3](logs-on-grail-examples.md#logexample3 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Track user changes with audit logs.
+* [Example 4](logs-on-grail-examples.md#logexample4 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Create a log metric.
+* [Example 5](logs-on-grail-examples.md#logexample5 "Explore basic Log Management and Analytics examples of how to use log data in Dynatrace powered by Grail.") - Create a log alert.
 
 ### Example 1: Status codes and counts
 
@@ -52,11 +52,11 @@ The proxy server logs HTTP response status codes. You need to see the response c
 
    **Results table**
 2. Extract your metric from the content field.  
-   The log content field includes the HTTP\_STATUS codes you need. Now let's use the `parse` command to create a [Dynatrace Pattern Language](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.") pattern with the following elements:
+   The log content field includes the HTTP\_STATUS codes you need. Now let's use the `parse` command to create a [Dynatrace Pattern Language](../../platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.") pattern with the following elements:
 
-   * `LD`: start by matching any [line data](/docs/platform/grail/dynatrace-pattern-language/log-processing-lines-strings#line-data "Explore DPL syntax for handling lines and strings.") at the beginning of the field
-   * `'HTTP_STATUS '`: [literal expression](/docs/platform/grail/dynatrace-pattern-language/log-processing-literal-expression "Explore DPL syntax for handling literal expressions.") that immediately precedes the numerical Http Status, and takes into account a space
-   * `INT:httpstatus`: [integer](/docs/platform/grail/dynatrace-pattern-language/log-processing-numeric#int-integer "Explore DPL syntax for handling numeric data.") that will be parsed out as a new field `httpstatus`
+   * `LD`: start by matching any [line data](../../platform/grail/dynatrace-pattern-language/log-processing-lines-strings.md#line-data "Explore DPL syntax for handling lines and strings.") at the beginning of the field
+   * `'HTTP_STATUS '`: [literal expression](../../platform/grail/dynatrace-pattern-language/log-processing-literal-expression.md "Explore DPL syntax for handling literal expressions.") that immediately precedes the numerical Http Status, and takes into account a space
+   * `INT:httpstatus`: [integer](../../platform/grail/dynatrace-pattern-language/log-processing-numeric.md#int-integer "Explore DPL syntax for handling numeric data.") that will be parsed out as a new field `httpstatus`
 
    ```
    fetch logs
@@ -154,15 +154,15 @@ Your application logs context data that is relevant to your business. You need t
    **Results table**
 3. Extract the products and corresponding quantities.  
    You need to extract the product identifiers and quantities from logs with the `parse` command.  
-   Using the [Dynatrace Pattern Language](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers."), create a pattern and match the following parts of the `content` field:
+   Using the [Dynatrace Pattern Language](../../platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers."), create a pattern and match the following parts of the `content` field:
 
-   * `LD`: start by matching any [line data](/docs/platform/grail/dynatrace-pattern-language/log-processing-lines-strings#line-data "Explore DPL syntax for handling lines and strings.") at the start of the field
-   * `'userId='`: [literal expression](/docs/platform/grail/dynatrace-pattern-language/log-processing-literal-expression "Explore DPL syntax for handling literal expressions.") that immediately precedes user ID
+   * `LD`: start by matching any [line data](../../platform/grail/dynatrace-pattern-language/log-processing-lines-strings.md#line-data "Explore DPL syntax for handling lines and strings.") at the start of the field
+   * `'userId='`: [literal expression](../../platform/grail/dynatrace-pattern-language/log-processing-literal-expression.md "Explore DPL syntax for handling literal expressions.") that immediately precedes user ID
    * `LD:userId`: any line data that will be parsed out as a new field with the `userId` name
    * `', productId='`: literal expression that ends user ID and separates it from product ID
    * `LD:productId`: any line data that will be parsed out as a new field with the `productId` name
    * `', quantity='`: literal expression that ends product ID and separates it from quantity
-   * `INT:productQuantity`: [integer](/docs/platform/grail/dynatrace-pattern-language/log-processing-numeric#int-integer "Explore DPL syntax for handling numeric data.") that will be parsed out as a new field with the `productQuantity` name
+   * `INT:productQuantity`: [integer](../../platform/grail/dynatrace-pattern-language/log-processing-numeric.md#int-integer "Explore DPL syntax for handling numeric data.") that will be parsed out as a new field with the `productQuantity` name
 
    The remaining fields are ignored.
 
@@ -459,20 +459,20 @@ In this example, you track user changes with audit logs. You want to track the t
 
 In this example, you need to count how many refused connections are recorded in your log data. For that, filter the correct logs and turn the number of occurrences into a log metric.
 
-* [Create connections refused metric](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-create-log-metric#lma-uc-create-connections-refused-metric "Explore the Log Management and Analytics use case for creating a log metric.")
+* [Create connections refused metric](lma-use-cases/lma-e2e-create-log-metric.md#lma-uc-create-connections-refused-metric "Explore the Log Management and Analytics use case for creating a log metric.")
 
 In this example, you need to monitor an attribute of your logs, and you need to keep an eye on the error levels reported in your logs from your K8s cluster.
 
-* [Create log attribute metric](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-create-log-metric#lma-uc-create-log-attribute-metric "Explore the Log Management and Analytics use case for creating a log metric.")
+* [Create log attribute metric](lma-use-cases/lma-e2e-create-log-metric.md#lma-uc-create-log-attribute-metric "Explore the Log Management and Analytics use case for creating a log metric.")
 
 ### Example 5: Create a log alert
 
 In this example, you need to set an alert based on the occurrence of log events. See how you can extract data from logs, create a processing rule, build an alert by forming a log event, and check if your alert captures logs that meet predefined criteria.
 
-* [Set up alerts based on events extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events "How to create and configure Davis problems and alerts with events based on logs.")
+* [Set up alerts based on events extracted from logs](lma-use-cases/lma-alert-log-based-events.md "How to create and configure Davis problems and alerts with events based on logs.")
 
 ### Create anomaly detection metric
 
 In this use case, you need to automate anomaly detection. See how you can extract data from logs, create a processing rule, create a metric, and create an alert that generates a notification if an anomaly occurs.
 
-* [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.")
+* [Set up custom alerts based on metrics extracted from logs](lma-use-cases/lma-alert-log-based-metrics.md "How to create and configure Davis problems and custom alerts with metrics based on logs.")

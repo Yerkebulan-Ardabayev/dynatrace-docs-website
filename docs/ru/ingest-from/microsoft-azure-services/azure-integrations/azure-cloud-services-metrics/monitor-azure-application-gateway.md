@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:33:27.529086
 * Чтение: 4 мин.
 * Обновлено 15 ноября 2023 г.
 
-Информацию о различиях между классическими сервисами и другими сервисами см. в [Миграция с классических (ранее «встроенных») сервисов Azure на облачные сервисы](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-migration-guide "Миграция классических сервисов Azure на новые версии.").
+Информацию о различиях между классическими сервисами и другими сервисами см. в [Миграция с классических (ранее «встроенных») сервисов Azure на облачные сервисы](../azure-monitoring-guide/azure-migration-guide.md "Миграция классических сервисов Azure на новые версии.").
 
 Dynatrace принимает метрики из Azure Metrics API для Azure Application Gateway. Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на дашбордах.
 
@@ -24,7 +24,7 @@ Dynatrace принимает метрики из Azure Metrics API для Azure 
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Включение мониторинга Azure в Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](../azure-monitoring-guide/azure-enable-service-monitoring.md "Включение мониторинга Azure в Dynatrace.").
 
 ## Просмотр метрик сервиса
 

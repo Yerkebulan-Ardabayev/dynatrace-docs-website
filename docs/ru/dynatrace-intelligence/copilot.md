@@ -36,13 +36,13 @@ scraped: 2026-03-06T21:14:58.711515
 
 * Пояснение
 
-[Читать пояснение](/docs/dynatrace-intelligence/copilot/copilot-overview)[#### Начало работы с агентным и генеративным ИИ Dynatrace Intelligence
+[Читать пояснение](copilot/copilot-overview.md)[#### Начало работы с агентным и генеративным ИИ Dynatrace Intelligence
 
 Узнайте, как настроить агентный и генеративный ИИ Dynatrace Intelligence.
 
 * Руководство
 
-[Читать руководство](/docs/dynatrace-intelligence/copilot/copilot-getting-started)
+[Читать руководство](copilot/copilot-getting-started.md)
 
 ## Анализ данных с помощью генеративного ИИ
 
@@ -52,25 +52,25 @@ scraped: 2026-03-06T21:14:58.711515
 
 * Обзор
 
-[Смотреть обзор](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql)[#### Агентный и генеративный ИИ Dynatrace Intelligence -- советы по написанию лучших промптов
+[Смотреть обзор](copilot/quick-analysis-copilot-dql.md)[#### Агентный и генеративный ИИ Dynatrace Intelligence -- советы по написанию лучших промптов
 
 Узнайте лучшие практики написания более точных промптов.
 
 * Справочник
 
-[Читать справочник](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips)[#### Примеры быстрого анализа с генеративным ИИ
+[Читать справочник](copilot/quick-analysis-copilot-dql/copilot-tips.md)[#### Примеры быстрого анализа с генеративным ИИ
 
 Узнайте больше о том, какие промпты хорошо работают в агентном и генеративном ИИ Dynatrace Intelligence.
 
 * Справочник
 
-[Читать справочник](/docs/dynatrace-intelligence/use-cases/copilot-examples)[#### Суммирование и пояснение запросов
+[Читать справочник](use-cases/copilot-examples.md)[#### Суммирование и пояснение запросов
 
 Узнайте, как суммировать и пояснять запросы с помощью навыка DQL2NL агентного и генеративного ИИ Dynatrace Intelligence.
 
 * Учебное пособие
 
-[Читать учебное пособие](/docs/dynatrace-intelligence/copilot/explain-queries-with-davis-copilot)
+[Читать учебное пособие](../../common/dynatrace-intelligence/copilot/explain-queries-with-davis-copilot.md)
 
 ## Спросите Dynatrace Assist
 
@@ -80,15 +80,15 @@ scraped: 2026-03-06T21:14:58.711515
 
 * Приложение
 
-[Перейти к приложению](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot)[#### Встроенные начальные фразы для диалога
+[Перейти к приложению](copilot/chat-with-davis-copilot.md)[#### Встроенные начальные фразы для диалога
 
 Узнайте, как запускать предопределённые промпты в различных приложениях Dynatrace.
 
 * Справочник
 
-[Читать справочник](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters)
+[Читать справочник](copilot/chat-with-davis-copilot/copilot-conv-starters.md)
 
-Для получения дополнительной информации о том, какие промпты хорошо работают в **Dynatrace Assist**, смотрите [примеры промптов](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts "Узнайте, какие промпты хорошо работают в Dynatrace Assist.").
+Для получения дополнительной информации о том, какие промпты хорошо работают в **Dynatrace Assist**, смотрите [примеры промптов](copilot/chat-with-davis-copilot/dynatrace-assist-prompts.md "Узнайте, какие промпты хорошо работают в Dynatrace Assist.").
 
 ## Векторный поиск по документам
 
@@ -98,7 +98,7 @@ scraped: 2026-03-06T21:14:58.711515
 
 * Учебное пособие
 
-[Читать учебное пособие](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides)
+[Читать учебное пособие](copilot/copilot-find-relevant-troubleshooting-guides.md)
 
 ## Узнать больше
 
@@ -108,10 +108,10 @@ scraped: 2026-03-06T21:14:58.711515
 
 * Пояснение
 
-[Читать пояснение](/docs/dynatrace-intelligence/copilot/copilot-data-privacy)[#### Часто задаваемые вопросы по агентному и генеративному ИИ Dynatrace Intelligence
+[Читать пояснение](copilot/copilot-data-privacy.md)[#### Часто задаваемые вопросы по агентному и генеративному ИИ Dynatrace Intelligence
 
 Ознакомьтесь с часто задаваемыми вопросами и найдите ответы.
 
 * Устранение неполадок
 
-[Читать руководство по устранению неполадок](/docs/dynatrace-intelligence/copilot/copilot-faq)
+[Читать руководство по устранению неполадок](../../common/dynatrace-intelligence/copilot/copilot-faq.md)

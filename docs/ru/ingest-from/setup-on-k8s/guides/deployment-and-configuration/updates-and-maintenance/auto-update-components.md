@@ -82,7 +82,7 @@ cloudNativeFullStack: {}
 
 ## Настройка автоматического обновления EdgeConnect
 
-Dynatrace Operator можно настроить на отключение автоматических обновлений, установив поле `autoUpdate` в разделе [спецификации EdgeConnect](/docs/ingest-from/setup-on-k8s/reference/edgeconnect-parameters#spec "List of configuration parameters for EdgeConnect.") в значение `false`.
+Dynatrace Operator можно настроить на отключение автоматических обновлений, установив поле `autoUpdate` в разделе [спецификации EdgeConnect](../../../reference/edgeconnect-parameters.md#spec "List of configuration parameters for EdgeConnect.") в значение `false`.
 
 ```
 apiVersion: dynatrace.com/v1alpha2

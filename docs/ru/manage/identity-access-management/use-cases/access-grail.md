@@ -94,4 +94,4 @@ ALLOW storage:system:read;
 ALLOW storage:events:read, storage:logs:read, storage:metrics:read, storage:entities:read, storage:bizevents:read,storage:spans:read;
 ```
 
-Подробнее см. [документацию по разрешениям для бакетов и таблиц Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.").
+Подробнее см. [документацию по разрешениям для бакетов и таблиц Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.").

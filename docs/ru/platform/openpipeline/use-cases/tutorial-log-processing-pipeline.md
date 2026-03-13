@@ -45,25 +45,25 @@ scraped: 2026-03-06T21:13:39.739379
 
 Необходимые знания
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")
-* [Обработка в OpenPipeline](/docs/platform/openpipeline/concepts/processing "Основные концепции обработки в Dynatrace OpenPipeline.")
+* [Dynatrace Query Language](../../grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
+* [Обработка в OpenPipeline](../concepts/processing.md "Основные концепции обработки в Dynatrace OpenPipeline.")
 
 Предварительные условия
 
 * Среда Dynatrace SaaS на базе Grail и AppEngine.
-* Либо лицензия [Dynatrace](/docs/license "О Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace."), включающая возможности [Log Analytics (DPS)](/docs/license/capabilities/log-analytics "Узнайте, как рассчитывается потребление Dynatrace Log Analytics с использованием модели Dynatrace Platform Subscription."), либо [DDU для Log Management and Analytics](/docs/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics "Узнайте, как рассчитывается объём потребления DDU для Dynatrace Log Management and Analytics.").
+* Либо лицензия [Dynatrace](../../../license.md "О Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace."), включающая возможности [Log Analytics (DPS)](../../../license/capabilities/log-analytics.md "Узнайте, как рассчитывается потребление Dynatrace Log Analytics с использованием модели Dynatrace Platform Subscription."), либо [DDU для Log Management and Analytics](../../../license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics.md "Узнайте, как рассчитывается объём потребления DDU для Dynatrace Log Management and Analytics.").
 
 ## Шаги
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Найти релевантные строки логов в Grail**](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline#logs "Настройка обработки OpenPipeline для строк логов.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Найти релевантные строки логов в Grail**](tutorial-log-processing-pipeline.md#logs "Настройка обработки OpenPipeline для строк логов.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Настроить конвейер для разбора и извлечения метрик**](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline#pipeline "Настройка обработки OpenPipeline для строк логов.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Настроить конвейер для разбора и извлечения метрик**](tutorial-log-processing-pipeline.md#pipeline "Настройка обработки OpenPipeline для строк логов.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Направить данные в конвейер**](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline#route "Настройка обработки OpenPipeline для строк логов.")[![Шаг 4 (необязательно)](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Шаг 4 (необязательно)")
+**Направить данные в конвейер**](tutorial-log-processing-pipeline.md#route "Настройка обработки OpenPipeline для строк логов.")[![Шаг 4 (необязательно)](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Шаг 4 (необязательно)")
 
-**Проверить конфигурацию**](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline#verify "Настройка обработки OpenPipeline для строк логов.")
+**Проверить конфигурацию**](tutorial-log-processing-pipeline.md#verify "Настройка обработки OpenPipeline для строк логов.")
 
 ### Шаг 1. Найти релевантные строки логов в Grail
 

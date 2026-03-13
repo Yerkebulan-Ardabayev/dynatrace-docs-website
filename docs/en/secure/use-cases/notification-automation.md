@@ -58,8 +58,8 @@ More concretely, from a total of 400,000 alerts per day, of which just 40,000 ar
 Dynatrace CSPM Notification Automation consists of two stages.
 
 1. (Prerequisite) AWS security findings from [AWS Security Hubï»¿](https://dt-url.net/5l239zz)
-   are ingested into [Grail](/docs/platform/grail "Insights on what and how you can query Dynatrace data.") by means of [Dynatrace log ingestion](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-cloud-provider-log-forwarding#aws-log-forwarding "Configure AWS, Azure and Google Cloud log forwarding to stream log data to Dynatrace using API.").
-2. (Actual automation) A predefined [workflow](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") orchestrates the processes of querying, filtering, and grouping data and converts the resulting findings into Jira tickets for remediation. See [Get started](#start) for the workflow steps.
+   are ingested into [Grail](../../platform/grail.md "Insights on what and how you can query Dynatrace data.") by means of [Dynatrace log ingestion](../../analyze-explore-automate/logs/lma-log-ingestion/lma-cloud-provider-log-forwarding.md#aws-log-forwarding "Configure AWS, Azure and Google Cloud log forwarding to stream log data to Dynatrace using API.").
+2. (Actual automation) A predefined [workflow](../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") orchestrates the processes of querying, filtering, and grouping data and converts the resulting findings into Jira tickets for remediation. See [Get started](#start) for the workflow steps.
 
 ![How CSPM automation works](https://dt-cdn.net/images/2024-01-31-15-04-14-470-834fcfc1a2.png)
 
@@ -75,12 +75,12 @@ See below for the [AWS](#aws) and [Dynatrace](#dt) requirements.
 ### Dynatrace requirements
 
 * Dynatrace version 1.276+
-* [Set up log ingestion](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-cloud-provider-log-forwarding#aws-log-forwarding "Configure AWS, Azure and Google Cloud log forwarding to stream log data to Dynatrace using API.") (ingests AWS security findings into Grail).
-* [Set up Jira Connector](/docs/analyze-explore-automate/workflows/actions/jira#setup "Automate creating, transitioning, commenting, and assigning Jira issues on the events and schedules defined for your workflows.") (allows the workflow to convert resulting findings into Jira tickets).
+* [Set up log ingestion](../../analyze-explore-automate/logs/lma-log-ingestion/lma-cloud-provider-log-forwarding.md#aws-log-forwarding "Configure AWS, Azure and Google Cloud log forwarding to stream log data to Dynatrace using API.") (ingests AWS security findings into Grail).
+* [Set up Jira Connector](../../analyze-explore-automate/workflows/actions/jira.md#setup "Automate creating, transitioning, commenting, and assigning Jira issues on the events and schedules defined for your workflows.") (allows the workflow to convert resulting findings into Jira tickets).
 * Make sure the following permissions are enabled.
 
-  + **Grail**: `storage:logs:read`. For instructions, see [Assign permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
-  + ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**: Permissions to access, view, write, and execute workflows. For details, see [Authorization](/docs/analyze-explore-automate/workflows#authorization "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+  + **Grail**: `storage:logs:read`. For instructions, see [Assign permissions in Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+  + ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**: Permissions to access, view, write, and execute workflows. For details, see [Authorization](../../analyze-explore-automate/workflows.md#authorization "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 
     To access permissions, go to the **Settings** menu in the upper-right corner of ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** and select **Authorization settings**.
 
@@ -1145,7 +1145,7 @@ The workflow consists of several steps you can adapt according to your needs. To
 
 2. Set the time
 
-**Fixed time trigger**: Sets the time when you want the workflow to run (in the current case, the workflow runs every day at 9:00 AM). See [Schedule workflows](/docs/analyze-explore-automate/workflows/trigger/schedules "Guide to creating workflow automation schedule triggers in Dynatrace Workflows.") for more information on scheduling a workflow.
+**Fixed time trigger**: Sets the time when you want the workflow to run (in the current case, the workflow runs every day at 9:00 AM). See [Schedule workflows](../../analyze-explore-automate/workflows/trigger/schedules.md "Guide to creating workflow automation schedule triggers in Dynatrace Workflows.") for more information on scheduling a workflow.
 
 Show me the relevant workflow task
 
@@ -1177,7 +1177,7 @@ By AWS resource
 
 The following task sequence orchestrates grouping and converting the resulting findings into one ticket per AWS account.
 
-1. **Fetch findings by account**: Executes the [DQL query](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.") that fetches the findings. Some of the information fetched for the current case, to be displayed in Jira, includes
+1. **Fetch findings by account**: Executes the [DQL query](../../platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.") that fetches the findings. Some of the information fetched for the current case, to be displayed in Jira, includes
 
    * Number of findings for the respective account
    * Issue title, including the security control IDs and the AWS account name
@@ -1194,7 +1194,7 @@ Show me the relevant workflow task sequence
 
 The following task sequence orchestrates grouping and converting the resulting findings into one ticket per AWS resource.
 
-1. **Fetch findings by resource**: Executes the [DQL query](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.") that fetches the findings. Some of the information fetched for the current case, to be displayed in Jira, includes
+1. **Fetch findings by resource**: Executes the [DQL query](../../platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.") that fetches the findings. Some of the information fetched for the current case, to be displayed in Jira, includes
 
    * Number of findings for the respective resource
    * Issue title, including the security control IDs and the AWS resource name
@@ -1233,9 +1233,9 @@ Show me the relevant workflow task sequences
 
 ![Disable tasks for creating notifications ](https://dt-cdn.net/images/441c8585-ef4b-4272-b62a-872410b504c7-896-ef757cb613.png)
 
-For instructions on disabling a task, see [Disable or enable a task](/docs/analyze-explore-automate/workflows/building#disable-enable "Create and edit workflows in Dynatrace Workflows.").
+For instructions on disabling a task, see [Disable or enable a task](../../analyze-explore-automate/workflows/building.md#disable-enable "Create and edit workflows in Dynatrace Workflows.").
 
-2. Run the workflow or execute individual tasks for which you want to check the output. For instructions, see [Run and monitor workflows](/docs/analyze-explore-automate/workflows/running "Run and monitor workflows created in Dynatrace Workflows.").
+2. Run the workflow or execute individual tasks for which you want to check the output. For instructions, see [Run and monitor workflows](../../analyze-explore-automate/workflows/running.md "Run and monitor workflows created in Dynatrace Workflows.").
 
 ## Smart security
 
@@ -1249,4 +1249,4 @@ CSPM Notification Automation with Dynatrace
 
 ## Related topics
 
-* [Alerting and notifications](/docs/analyze-explore-automate/alerting-and-notifications "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")
+* [Alerting and notifications](../../analyze-explore-automate/alerting-and-notifications.md "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")

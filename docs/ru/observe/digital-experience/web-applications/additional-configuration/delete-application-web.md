@@ -25,9 +25,9 @@ scraped: 2026-03-06T21:29:09.059821
 
 ## Удаление приложения через API
 
-Приложения также можно удалять через Configuration API в Dynatrace. Подробности см. в разделе [Удаление веб-приложения](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/del-web-application "Удаление веб-приложения через Dynatrace API.").
+Приложения также можно удалять через Configuration API в Dynatrace. Подробности см. в разделе [Удаление веб-приложения](../../../../dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/del-web-application.md "Удаление веб-приложения через Dynatrace API.").
 
 ## Связанные темы
 
-* [API конфигурации веб-приложений — DELETE веб-приложения](/docs/dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/del-web-application "Удаление веб-приложения через Dynatrace API.")
-* [Приложения](/docs/observe/digital-experience/rum-concepts/applications "Узнайте о мониторируемых приложениях в Real User Monitoring и различных типах приложений, поддерживаемых Dynatrace.")
+* [API конфигурации веб-приложений — DELETE веб-приложения](../../../../dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/del-web-application.md "Удаление веб-приложения через Dynatrace API.")
+* [Приложения](../../rum-concepts/applications.md "Узнайте о мониторируемых приложениях в Real User Monitoring и различных типах приложений, поддерживаемых Dynatrace.")

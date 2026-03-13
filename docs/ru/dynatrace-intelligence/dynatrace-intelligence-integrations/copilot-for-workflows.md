@@ -27,7 +27,7 @@ scraped: 2026-03-06T21:29:56.714019
 
 * **Conversational recommender** `ALLOW davis-copilot:conversations:execute;`
 
-  Для получения дополнительной информации о назначении разрешения **Conversational recommender** см. [Права пользователей](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Узнайте, как настроить агентный и генеративный ИИ Dynatrace Intelligence.").
+  Для получения дополнительной информации о назначении разрешения **Conversational recommender** см. [Права пользователей](../copilot/copilot-getting-started.md#davis-copilot-user-permissions "Узнайте, как настроить агентный и генеративный ИИ Dynatrace Intelligence.").
 
 Для использования **Dynatrace Intelligence (Preview)** вам необходимо
 
@@ -53,7 +53,7 @@ scraped: 2026-03-06T21:29:56.714019
 
 1. В Dynatrace перейдите в ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
 2. Выберите **Workflow**, чтобы создать новый рабочий процесс.
-3. Выберите [триггер рабочего процесса](/docs/analyze-explore-automate/workflows/trigger "Введение в триггеры автоматизации рабочих процессов."), который запустит выполнение рабочего процесса.
+3. Выберите [триггер рабочего процесса](../../analyze-explore-automate/workflows/trigger.md "Введение в триггеры автоматизации рабочих процессов."), который запустит выполнение рабочего процесса.
 4. Выберите **Add task**.
 5. Введите `Dynatrace Intelligence` в поле поиска или выберите **Dynatrace Intelligence** > **Define prompt**.
 6. Настройте действие:
@@ -70,12 +70,12 @@ scraped: 2026-03-06T21:29:56.714019
 8. Выберите **Save**.
 9. Затем выберите **Run** для выполнения рабочего процесса.
 
-Чтобы узнать о конкретных сценариях использования и о том, как применять действие генеративного ИИ Dynatrace Intelligence в рабочих процессах, см. [Обобщение открытых проблем с помощью Dynatrace Intelligence (Preview)](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples "Используйте Dynatrace Intelligence (Preview) для обобщения открытых проблем и предложения шагов по их устранению.").
+Чтобы узнать о конкретных сценариях использования и о том, как применять действие генеративного ИИ Dynatrace Intelligence в рабочих процессах, см. [Обобщение открытых проблем с помощью Dynatrace Intelligence (Preview)](../use-cases/copilot-in-workflows-examples.md "Используйте Dynatrace Intelligence (Preview) для обобщения открытых проблем и предложения шагов по их устранению.").
 
 ## Связанные темы
 
-* [Workflows](/docs/analyze-explore-automate/workflows "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.")
-* [Обзор агентного и генеративного ИИ Dynatrace Intelligence](/docs/dynatrace-intelligence/copilot/copilot-overview "Узнайте о безопасности данных и других аспектах агентного и генеративного ИИ Dynatrace Intelligence.")
-* [Dynatrace Assist](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot "Задавайте вопросы на естественном языке и получайте быстрые ответы от Dynatrace Assist, вашего генеративного ИИ-помощника.")
-* [Обобщение открытых проблем с помощью Workflows](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples "Используйте Dynatrace Intelligence (Preview) для обобщения открытых проблем и предложения шагов по их устранению.")
-* [Агентные рабочие процессы](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/agentic-workflows "Основные концепции использования агентных рабочих процессов для автоматизации сложных задач, основанных на данных, с использованием генеративного и агентного ИИ.")
+* [Workflows](../../analyze-explore-automate/workflows.md "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.")
+* [Обзор агентного и генеративного ИИ Dynatrace Intelligence](../copilot/copilot-overview.md "Узнайте о безопасности данных и других аспектах агентного и генеративного ИИ Dynatrace Intelligence.")
+* [Dynatrace Assist](../copilot/chat-with-davis-copilot.md "Задавайте вопросы на естественном языке и получайте быстрые ответы от Dynatrace Assist, вашего генеративного ИИ-помощника.")
+* [Обобщение открытых проблем с помощью Workflows](../use-cases/copilot-in-workflows-examples.md "Используйте Dynatrace Intelligence (Preview) для обобщения открытых проблем и предложения шагов по их устранению.")
+* [Агентные рабочие процессы](agentic-workflows.md "Основные концепции использования агентных рабочих процессов для автоматизации сложных задач, основанных на данных, с использованием генеративного и агентного ИИ.")

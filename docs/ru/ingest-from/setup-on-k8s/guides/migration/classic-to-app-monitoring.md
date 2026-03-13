@@ -14,7 +14,7 @@ scraped: 2026-03-05T21:37:20.359464
 
 Dynatrace Operator версии 1.0.0+
 
-В этом руководстве описаны шаги, необходимые для миграции развёртывания Dynatrace с классического полнофункционального мониторинга на [режим мониторинга приложений](/docs/ingest-from/setup-on-k8s/how-it-works#auto "Подробное описание работы развёртывания в Kubernetes.").
+В этом руководстве описаны шаги, необходимые для миграции развёртывания Dynatrace с классического полнофункционального мониторинга на [режим мониторинга приложений](../../how-it-works.md#auto "Подробное описание работы развёртывания в Kubernetes.").
 
 ## Преимущества
 
@@ -26,8 +26,8 @@ Dynatrace Operator версии 1.0.0+
 ### Замечания и последствия
 
 * При переключении на режим мониторинга приложений ранее развёрнутые OneAgent будут деактивированы и глубокий мониторинг приложений прекратится. Следовательно, перезапуск всех подов приложений, требующих глубокого мониторинга, становится обязательным. Перезапуск этих подов обеспечивает повторное внедрение агентов, что позволяет возобновить глубокий мониторинг.
-* В режиме мониторинга приложений правила мониторинга контейнеров игнорируются. Вместо этого для точного управления внедрением OneAgent следует использовать [селекторы меток](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Настройка мониторинга для пространств имён и подов").
-* Мониторинг логов требует [дополнительной настройки](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s "Интеграция Fluent Bit в Kubernetes для потоковой передачи логов в Dynatrace.").
+* В режиме мониторинга приложений правила мониторинга контейнеров игнорируются. Вместо этого для точного управления внедрением OneAgent следует использовать [селекторы меток](../deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Настройка мониторинга для пространств имён и подов").
+* Мониторинг логов требует [дополнительной настройки](../../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s.md "Интеграция Fluent Bit в Kubernetes для потоковой передачи логов в Dynatrace.").
 
 ## Миграция на режим мониторинга приложений
 
@@ -214,7 +214,7 @@ Dynatrace Operator версии 1.0.0+
    - dynatrace-api
    ```
 
-   Дополнительную информацию о настройке DynaKube для режима мониторинга приложений см. в [руководстве по развёртыванию](/docs/ingest-from/setup-on-k8s/deployment "Развёртывание Dynatrace Operator в Kubernetes") или [параметрах DynaKube](/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters#spec-oneagent-applicationmonitoring "Список доступных параметров для настройки Dynatrace Operator в Kubernetes."). Также вы можете загрузить [пример пользовательского ресурса DynaKube](https://dt-url.net/0w036dz) для режима мониторинга приложений с GitHub и адаптировать пользовательский ресурс DynaKube в соответствии с вашими требованиями.
+   Дополнительную информацию о настройке DynaKube для режима мониторинга приложений см. в [руководстве по развёртыванию](../../deployment.md "Развёртывание Dynatrace Operator в Kubernetes") или [параметрах DynaKube](../../reference/dynakube-parameters.md#spec-oneagent-applicationmonitoring "Список доступных параметров для настройки Dynatrace Operator в Kubernetes."). Также вы можете загрузить [пример пользовательского ресурса DynaKube](https://dt-url.net/0w036dz) для режима мониторинга приложений с GitHub и адаптировать пользовательский ресурс DynaKube в соответствии с вашими требованиями.
 3. Примените пользовательский ресурс DynaKube:
 
    Выполните приведённую ниже команду для применения пользовательского ресурса DynaKube. Вебхук валидации предоставит полезные сообщения об ошибках в случае проблемы.
@@ -253,7 +253,7 @@ Dynatrace Operator версии 1.0.0+
 
    Это действие приведёт к удалению OneAgent в классическом полнофункциональном режиме и, следовательно, к прекращению глубокого мониторинга подов приложений вскоре после этого. Кроме того, если мониторинг Kubernetes настроен в пользовательском ресурсе DynaKube, мониторинг Kubernetes мгновенно прекратится с удалением ActiveGate.
 2. Дождитесь завершения работы подов OneAgent.
-3. Следуйте инструкциям в разделе [Очистка узлов](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator#cleanup-nodes "Процедуры обновления и удаления Dynatrace Operator") для удаления хуков Dynatrace CRI-O со всех узлов Linux.
+3. Следуйте инструкциям в разделе [Очистка узлов](../deployment-and-configuration/updates-and-maintenance/update-uninstall-operator.md#cleanup-nodes "Процедуры обновления и удаления Dynatrace Operator") для удаления хуков Dynatrace CRI-O со всех узлов Linux.
 4. Продолжите с шага 1 [стандартной процедуры миграции](#migrate).
 
 ## Изменения в ресурсах Kubernetes

@@ -17,21 +17,21 @@ scraped: 2026-03-06T21:35:32.192927
 
 В этом разделе описаны основные элементы файла `extension.yaml`, применимые к любому типу расширения из фреймворка Dynatrace Extensions. Для элементов, специфичных для конкретных типов источников данных, см.:
 
-* [Расширение SNMP](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions "Узнайте, как создать расширение SNMP с помощью фреймворка Extensions.")
-* [Расширение WMI](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions "Узнайте, как создать расширение WMI с помощью фреймворка Extensions.")
-* [Расширение Prometheus](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Узнайте, как создать расширение Prometheus с помощью фреймворка Extensions.")
-* [Расширение JMX](/docs/ingest-from/extensions/develop-your-extensions/data-sources/jmx "Узнайте, как создать расширение JMX с помощью фреймворка Extensions.")
-* [Расширение SQL](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql "Узнайте, как создать расширение на основе источника данных SQL с помощью фреймворка Extensions.")
+* [Расширение SNMP](data-sources/snmp-extensions.md "Узнайте, как создать расширение SNMP с помощью фреймворка Extensions.")
+* [Расширение WMI](data-sources/wmi-extensions.md "Узнайте, как создать расширение WMI с помощью фреймворка Extensions.")
+* [Расширение Prometheus](data-sources/prometheus-extensions.md "Узнайте, как создать расширение Prometheus с помощью фреймворка Extensions.")
+* [Расширение JMX](data-sources/jmx.md "Узнайте, как создать расширение JMX с помощью фреймворка Extensions.")
+* [Расширение SQL](data-sources/sql.md "Узнайте, как создать расширение на основе источника данных SQL с помощью фреймворка Extensions.")
 
 ## Схемы
 
-При создании файла `extension.yaml` обязательно используйте схемы, предоставляемые через [Extensions API](/docs/dynatrace-api/environment-api/extensions-20 "Узнайте, как управлять расширениями с помощью Dynatrace Extensions 2.0 API."). Мы рекомендуем использовать редактор, поддерживающий валидацию схем и сниппеты, что значительно упрощает редактирование `extension.yaml`.
+При создании файла `extension.yaml` обязательно используйте схемы, предоставляемые через [Extensions API](../../../dynatrace-api/environment-api/extensions-20.md "Узнайте, как управлять расширениями с помощью Dynatrace Extensions 2.0 API."). Мы рекомендуем использовать редактор, поддерживающий валидацию схем и сниппеты, что значительно упрощает редактирование `extension.yaml`.
 
 Мы рекомендуем использовать дополнение Dynatrace Extensions для VS Code, предоставляемое Dynatrace. Подробнее см. [Дополнение для VS Code](https://dt-url.net/tx03uks/).
 
 Для загрузки схем Extensions:
 
-1. Проверьте доступные версии схем с помощью эндпоинта [GET all schemas](/docs/dynatrace-api/environment-api/extensions-20/schemas/get-all-schemas "Просмотр доступных версий схем расширений через Dynatrace Extensions 2.0 API."). Версии схем соответствуют версиям кластера Dynatrace.
+1. Проверьте доступные версии схем с помощью эндпоинта [GET all schemas](../../../dynatrace-api/environment-api/extensions-20/schemas/get-all-schemas.md "Просмотр доступных версий схем расширений через Dynatrace Extensions 2.0 API."). Версии схем соответствуют версиям кластера Dynatrace.
 
    ```
    curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/schemas" \
@@ -70,7 +70,7 @@ scraped: 2026-03-06T21:35:32.192927
 
    }
    ```
-2. Используйте эндпоинт [GET all files](/docs/dynatrace-api/environment-api/extensions-20/schemas/get-all-files "Просмотр доступных файлов схем в версии схемы через Dynatrace Extensions 2.0 API.") для получения списка всех доступных схем для конкретной версии Dynatrace.
+2. Используйте эндпоинт [GET all files](../../../dynatrace-api/environment-api/extensions-20/schemas/get-all-files.md "Просмотр доступных файлов схем в версии схемы через Dynatrace Extensions 2.0 API.") для получения списка всех доступных схем для конкретной версии Dynatrace.
    Например:
 
    ```
@@ -134,7 +134,7 @@ scraped: 2026-03-06T21:35:32.192927
 
    }
    ```
-3. Используйте эндпоинт [GET a file](/docs/dynatrace-api/environment-api/extensions-20/schemas/get-file "Просмотр файла схемы расширения через Dynatrace Extensions 2.0 API.") для загрузки конкретного файла определённой версии. Например, чтобы загрузить `extension.schema.json` версии `1.215`:
+3. Используйте эндпоинт [GET a file](../../../dynatrace-api/environment-api/extensions-20/schemas/get-file.md "Просмотр файла схемы расширения через Dynatrace Extensions 2.0 API.") для загрузки конкретного файла определённой версии. Например, чтобы загрузить `extension.schema.json` версии `1.215`:
 
    ```
    curl -X GET "{env-id}.live.dynatrace.com/api/v2/extensions/schemas/1.215/extension.schema.json" \
@@ -152,9 +152,9 @@ scraped: 2026-03-06T21:35:32.192927
 
 ## Начало YAML-файла расширения
 
-YAML-файл расширения начинается с базовой информации о расширении. Он также содержит необязательные ссылки на [ресурсы](/docs/ingest-from/extensions/concepts#extension-assets "Узнайте больше о концепции расширений Dynatrace."), используемые расширением.
+YAML-файл расширения начинается с базовой информации о расширении. Он также содержит необязательные ссылки на [ресурсы](../concepts.md#extension-assets "Узнайте больше о концепции расширений Dynatrace."), используемые расширением.
 
-* `name` — имя вашего расширения. Имя пользовательского расширения (не разработанного Dynatrace) должно начинаться с `custom:`. Строка должна соответствовать [требованиям протокола приёма](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#dimension-optional "Узнайте, как работает протокол приёма данных для Dynatrace Metrics API.") для измерений.
+* `name` — имя вашего расширения. Имя пользовательского расширения (не разработанного Dynatrace) должно начинаться с `custom:`. Строка должна соответствовать [требованиям протокола приёма](../../extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#dimension-optional "Узнайте, как работает протокол приёма данных для Dynatrace Metrics API.") для измерений.
 * `version` — версия вашего расширения в формате `major`.`minor`.`build`, например `1.0.0`. Ваша среда Dynatrace может хранить 10 версий расширения, но только одна может быть активна в данный момент.
 * `minDynatraceVersion` — самая ранняя версия Dynatrace, поддерживаемая расширением, заключённая в кавычки (`"`), например `"1.213"`.
 * `author` — разработчик расширения или компания.
@@ -163,7 +163,7 @@ YAML-файл расширения начинается с базовой инф
 
 ## Группы и подгруппы
 
-Вы можете организовать метрики в группы и подгруппы, чтобы назначить метрики в группе определённым [измерениям](#dimensions) или [наборам функций](/docs/ingest-from/extensions/concepts#feature-sets "Узнайте больше о концепции расширений Dynatrace."), или управлять [интервалом](#interval), с которым они отправляются на уровне группы.
+Вы можете организовать метрики в группы и подгруппы, чтобы назначить метрики в группе определённым [измерениям](#dimensions) или [наборам функций](../concepts.md#feature-sets "Узнайте больше о концепции расширений Dynatrace."), или управлять [интервалом](#interval), с которым они отправляются на уровне группы.
 
 Для каждого расширения можно определить 10 групп, и каждая группа может содержать 10 подгрупп.
 
@@ -292,8 +292,8 @@ interval: 5m
 Вы можете определять метрики на уровне расширения, группы и подгруппы. Детали извлечения значений метрик зависят от типа источника данных.
 См.:
 
-* [SNMP](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions#dimensions "Узнайте, как создать расширение SNMP с помощью фреймворка Extensions.")
-* [WMI](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions#dimensions "Узнайте, как создать расширение WMI с помощью фреймворка Extensions.")
+* [SNMP](data-sources/snmp-extensions.md#dimensions "Узнайте, как создать расширение SNMP с помощью фреймворка Extensions.")
+* [WMI](data-sources/wmi-extensions.md#dimensions "Узнайте, как создать расширение WMI с помощью фреймворка Extensions.")
 
 ### Лучшие практики для ключей метрик
 
@@ -304,9 +304,9 @@ interval: 5m
 Вы можете определить измерение на уровне метрики, группы и подгруппы. Детали извлечения значений измерений зависят от типа источника данных.
 См.:
 
-* [SNMP](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions#dimensions "Узнайте, как создать расширение SNMP с помощью фреймворка Extensions.")
-* [WMI](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions#dimensions "Узнайте, как создать расширение WMI с помощью фреймворка Extensions.")
-* [Prometheus](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions#dimensions "Узнайте, как создать расширение Prometheus с помощью фреймворка Extensions.")
+* [SNMP](data-sources/snmp-extensions.md#dimensions "Узнайте, как создать расширение SNMP с помощью фреймворка Extensions.")
+* [WMI](data-sources/wmi-extensions.md#dimensions "Узнайте, как создать расширение WMI с помощью фреймворка Extensions.")
+* [Prometheus](data-sources/prometheus-extensions.md#dimensions "Узнайте, как создать расширение Prometheus с помощью фреймворка Extensions.")
 
 ## Переменные
 
@@ -528,4 +528,4 @@ filter: var:ifNameFilter
     filter: const:$not(<expr>)
     ```
 
-Логика фильтрации отличается для расширений WMI, где вы передаёте условие в виде запроса. Подробнее см. [Фильтрация извлечённых измерений](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-schema-reference#filter-extracted-dimensions "Узнайте о расширениях WMI в фреймворке Extensions.").
+Логика фильтрации отличается для расширений WMI, где вы передаёте условие в виде запроса. Подробнее см. [Фильтрация извлечённых измерений](data-sources/wmi-extensions/wmi-schema-reference.md#filter-extracted-dimensions "Узнайте о расширениях WMI в фреймворке Extensions.").

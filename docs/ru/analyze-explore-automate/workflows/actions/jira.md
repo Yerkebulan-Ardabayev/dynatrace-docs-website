@@ -13,21 +13,21 @@ scraped: 2026-03-06T21:33:38.177057
 * 1-min read
 * Updated on Feb 13, 2025
 
-Ваша среда Dynatrace может интегрироваться с экземпляром Jira Cloud или Server с помощью Jira Connector ![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows"). Благодаря этой интеграции вы можете автоматизировать создание задач Jira, добавление комментариев и назначение исполнителей на основе событий и расписаний, заданных для ваших [рабочих процессов](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflows—react to events, schedule tasks, and connect services.").
+Ваша среда Dynatrace может интегрироваться с экземпляром Jira Cloud или Server с помощью Jira Connector ![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows"). Благодаря этой интеграции вы можете автоматизировать создание задач Jira, добавление комментариев и назначение исполнителей на основе событий и расписаний, заданных для ваших [рабочих процессов](../../workflows.md "Automate IT processes with Dynatrace Workflows—react to events, schedule tasks, and connect services.").
 
 [![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows")
 
 ### Начало работы с Jira Connector
 
-Начните работу с помощью нашего краткого руководства по Jira Connector.](/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-get-started "Learn how to get started with Jira Connector actions.")[![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows")
+Начните работу с помощью нашего краткого руководства по Jira Connector.](jira/automation-workflows-jira-get-started.md "Learn how to get started with Jira Connector actions.")[![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows")
 
 ### Настройка Jira Connector
 
-Установите и настройте Jira Connector.](/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-setup "Learn how to set up Jira Connector.")[![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows")
+Установите и настройте Jira Connector.](jira/automation-workflows-jira-setup.md "Learn how to set up Jira Connector.")[![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows")
 
 ### Действия Jira Connector
 
-Узнайте о доступных действиях, используемых интеграцией Jira Connector для автоматизации создания задач.](/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-actions "Integrate with the Jira instance to utilize a wide range of Jira Connector actions.")
+Узнайте о доступных действиях, используемых интеграцией Jira Connector для автоматизации создания задач.](jira/automation-workflows-jira-actions.md "Integrate with the Jira instance to utilize a wide range of Jira Connector actions.")
 
 ## Устранение неполадок
 
@@ -39,6 +39,6 @@ scraped: 2026-03-06T21:33:38.177057
 
 ## Связанные темы
 
-* [Настройка Jira Connector](/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-setup "Learn how to set up Jira Connector.")
-* [Начало работы с Jira Connector](/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-get-started "Learn how to get started with Jira Connector actions.")
-* [Действия для Jira Connector](/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-actions "Integrate with the Jira instance to utilize a wide range of Jira Connector actions.")
+* [Настройка Jira Connector](jira/automation-workflows-jira-setup.md "Learn how to set up Jira Connector.")
+* [Начало работы с Jira Connector](jira/automation-workflows-jira-get-started.md "Learn how to get started with Jira Connector actions.")
+* [Действия для Jira Connector](jira/automation-workflows-jira-actions.md "Integrate with the Jira instance to utilize a wide range of Jira Connector actions.")

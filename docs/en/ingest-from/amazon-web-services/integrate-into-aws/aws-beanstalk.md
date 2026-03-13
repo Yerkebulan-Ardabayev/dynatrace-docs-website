@@ -39,7 +39,7 @@ This is the URL:
 ![OneAgent URL](https://dt-cdn.net/images/oneagent-url-570-2bbd3eb216.png)
 
 * Replace the value of `arch` parameter with `<arch>`. Ignore the `flavor=default` parameter.
-* For the `API-Token` value, you need a [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
+* For the `API-Token` value, you need a [PaaS token](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.").
 
 Your URL should look like this:
 `https://host.domain.com/api/v1/deployment/installer/agent/unix/default/latest?arch=<arch>`
@@ -65,7 +65,7 @@ For configurations where OneAgent is already part of your application deployment
 1. In Dynatrace Hub, select **OneAgent**.
 2. Select **Set up** > **Windows** or **Linux**.
 
-For more information, see the OneAgent installation instructions for [Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows "Learn how to download and install Dynatrace OneAgent on Windows.") or [Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux "Learn how to download and install Dynatrace OneAgent on Linux.").
+For more information, see the OneAgent installation instructions for [Windows](../../dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows.md "Learn how to download and install Dynatrace OneAgent on Windows.") or [Linux](../../dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux.md "Learn how to download and install Dynatrace OneAgent on Linux.").
 
 ## Customize your installation
 
@@ -146,7 +146,7 @@ To install OneAgent, you need two configuration files:
    command: "service httpd restart"
    ```
 
-   If you want to add more parameters, separate them with spaces. To learn more about installation parameters, see [how to customize OneAgent installation on Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").
+   If you want to add more parameters, separate them with spaces. To learn more about installation parameters, see [how to customize OneAgent installation on Linux](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters.").
 
    Do not use the command's `env` property because it overwrites, rather than appends, the existing environment and will cause OneAgent installation to fail.
 4. Optional Extend your configuration.
@@ -284,20 +284,20 @@ To install OneAgent, you need two configuration files:
    command: "C:/OneAgent/Dynatrace-OneAgent-Installer.exe --quiet --set-proxy=172.1.1.128:8080"
    ```
 
-   If you want to add more parameters, separate them with with spaces. To learn more about installation parameters, see [how to customize OneAgent installation on Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows "Learn how to use the OneAgent installer for Windows.").
+   If you want to add more parameters, separate them with with spaces. To learn more about installation parameters, see [how to customize OneAgent installation on Windows](../../dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows.md "Learn how to use the OneAgent installer for Windows.").
 
    You don't need to add extra commands following OneAgent installation. Amazon will restart IIS on its own after you've successfully uploaded all your application files.
 
 ## Configure network zones Optional
 
-To configure network zones, use the following argument: `--set-network-zone=<your.network.zone>`. See [network zones](/docs/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
+To configure network zones, use the following argument: `--set-network-zone=<your.network.zone>`. See [network zones](../../../manage/network-zones.md "Find out how network zones work in Dynatrace.") for more information.
 
 ## Monitoring consumption
 
-For AWS Elastic Beanstalk, monitoring consumption is based on hosts units. See [Application and Infrastructure Monitoring (Host Units)](/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
+For AWS Elastic Beanstalk, monitoring consumption is based on hosts units. See [Application and Infrastructure Monitoring (Host Units)](../../../license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
 
 ## Related topics
 
-* [Dynatrace OneAgent](/docs/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
-* [Limit API calls to AWS using tags](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/limit-api-calls-to-aws-using-tags "Add and configure AWS tags to limit AWS resources.")
-* [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* [Dynatrace OneAgent](../../dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
+* [Limit API calls to AWS using tags](../integrate-with-aws/cloudwatch-metrics/limit-api-calls-to-aws-using-tags.md "Add and configure AWS tags to limit AWS resources.")
+* [OneAgent platform and capability support matrix](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

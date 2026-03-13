@@ -17,17 +17,17 @@ scraped: 2026-03-05T21:36:51.464222
 
 ## Предварительные требования
 
-[Настройка интеграции](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
+[Настройка интеграции](../gcp-guide/deploy-k8.md "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
 
 ## Добавление сервисов и наборов функций Опционально
 
-После интеграции Dynatrace автоматически начинает мониторинг ряда предустановленных сервисов Google Cloud и наборов функций (метрик). Помимо этого, вы можете добавить в мониторинг дополнительные сервисы или наборы функций. Подробности см. в разделе [Добавление и удаление сервисов](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#manage "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
+После интеграции Dynatrace автоматически начинает мониторинг ряда предустановленных сервисов Google Cloud и наборов функций (метрик). Помимо этого, вы можете добавить в мониторинг дополнительные сервисы или наборы функций. Подробности см. в разделе [Добавление и удаление сервисов](../gcp-guide/deploy-k8.md#manage "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
 
 Список наборов функций, доступных для данного сервиса, см. в [таблице метрик](#table).
 
 ## Просмотр метрик
 
-После развёртывания интеграции вы можете просматривать метрики из отслеживаемых сервисов в [Metrics browser](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser."), [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") и плитках дашборда.
+После развёртывания интеграции вы можете просматривать метрики из отслеживаемых сервисов в [Metrics browser](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser."), [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") и плитках дашборда.
 
 ## Таблица метрик
 
@@ -43,4 +43,4 @@ scraped: 2026-03-05T21:36:51.464222
 
 ## Связанные темы
 
-* [Google Cloud integrations](/docs/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
+* [Google Cloud integrations](../../gcp-integrations.md "Set up and configure Dynatrace on Google Cloud.")

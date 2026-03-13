@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:31:42.937574
 
 Уведомление об устаревании
 
-16 сентября 2024 года Azure Database for MySQL будет выведена из эксплуатации. Azure представила новый сервис, см. [Мониторинг Azure Database for MySQL Flexible Servers](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-db-mysql-flexible-servers "Мониторинг Azure DB для MySQL Flexible Servers и просмотр доступных метрик.").
+16 сентября 2024 года Azure Database for MySQL будет выведена из эксплуатации. Azure представила новый сервис, см. [Мониторинг Azure Database for MySQL Flexible Servers](monitor-azure-db-mysql-flexible-servers.md "Мониторинг Azure DB для MySQL Flexible Servers и просмотр доступных метрик.").
 
 Обзорная страница Azure Database for MySQL предоставляет исчерпывающий обзор ваших серверов MySQL и экземпляров баз данных. Отсюда вы можете получить полную видимость и проверить, работает ли база данных нормально, испытывает ли она снижение производительности или есть ли неудачные подключения.
 
@@ -26,9 +26,9 @@ scraped: 2026-03-06T21:31:42.937574
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Включение мониторинга Azure в Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](../azure-monitoring-guide/azure-enable-service-monitoring.md "Включение мониторинга Azure в Dynatrace.").
 
-При необходимости, для интеграции с OneAgent, см. [как отслеживается активность базы данных](/docs/observe/infrastructure-observability/databases/database-services-classic/how-database-activity-is-monitored "Узнайте об автоматическом обнаружении и мониторинге сервисов баз данных в вашей среде приложений.").
+При необходимости, для интеграции с OneAgent, см. [как отслеживается активность базы данных](../../../../observe/infrastructure-observability/databases/database-services-classic/how-database-activity-is-monitored.md "Узнайте об автоматическом обнаружении и мониторинге сервисов баз данных в вашей среде приложений.").
 
 ## Просмотр метрик сервиса
 
@@ -60,7 +60,7 @@ scraped: 2026-03-06T21:31:42.937574
 
 ### Настройка зоны управления
 
-Для импорта дашборда Azure Database for MySQL необходимо [настроить зону управления](/docs/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Создание и назначение прав доступа к зонам управления."), чтобы ограничить отображаемые на дашборде объекты только теми, которые относятся к этому сервису.
+Для импорта дашборда Azure Database for MySQL необходимо [настроить зону управления](../../../../manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Создание и назначение прав доступа к зонам управления."), чтобы ограничить отображаемые на дашборде объекты только теми, которые относятся к этому сервису.
 
 При создании зоны управления для данного дашборда:
 
@@ -74,7 +74,7 @@ scraped: 2026-03-06T21:31:42.937574
 
 ![Azure management zone](https://dt-cdn.net/images/azuredbformysqlmanagementzone-2662-467d58e129.webp)
 
-После создания зоны управления назначьте её своему дашборду (в дашборде выберите **Edit** > **Settings** > **Default management zone**). Дополнительные сведения см. в разделе [Временной период и зона управления дашборда](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Узнайте о настройках временного периода и зоны управления дашборда Dynatrace.").
+После создания зоны управления назначьте её своему дашборду (в дашборде выберите **Edit** > **Settings** > **Default management zone**). Дополнительные сведения см. в разделе [Временной период и зона управления дашборда](../../../../analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe.md "Узнайте о настройках временного периода и зоны управления дашборда Dynatrace.").
 
 ## Доступные метрики
 

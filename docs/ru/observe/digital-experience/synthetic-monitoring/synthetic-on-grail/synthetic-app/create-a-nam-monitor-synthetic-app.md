@@ -15,8 +15,8 @@ scraped: 2026-02-06T16:33:12.512338
 
 С помощью мониторов доступности сети (NAM) вы можете проверять доступность ваших хостов, устройств и сервисов.
 
-Существует три типа мониторов NAM: ICMP, TCP и DNS. Чтобы узнать о них подробнее, см. [Типы NAM](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/network-availability-monitoring#NAM-types "Синтетические мониторы ICMP, TCP и DNS").
-Вы можете создавать мониторы NAM в [![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") Synthetic](#monitor-configuration) в последней версии Dynatrace или через [API](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor#nam-api "Узнайте, как настроить монитор NAM для проверки производительности и доступности вашего сайта.").
+Существует три типа мониторов NAM: ICMP, TCP и DNS. Чтобы узнать о них подробнее, см. [Типы NAM](../../network-availability-monitors/network-availability-monitoring.md#NAM-types "Синтетические мониторы ICMP, TCP и DNS").
+Вы можете создавать мониторы NAM в [![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") Synthetic](#monitor-configuration) в последней версии Dynatrace или через [API](../../network-availability-monitors/create-a-nam-monitor.md#nam-api "Узнайте, как настроить монитор NAM для проверки производительности и доступности вашего сайта.").
 
 ## Настройка NAM
 
@@ -37,7 +37,7 @@ NAM предлагает вам несколько способов решени
 
   Кроме того, фильтры позволяют определять тесты для динамически меняющейся структуры, например если вы хотите определить ICMP-тесты для определённой группы хостов, вам не нужно корректировать тест монитора NAM после изменения конфигурации группы хостов.
 
-Вам необходимо определить ограничения для каждого монитора. Ограничения — это условия, которые должны быть выполнены, чтобы считать выполнение монитора успешным. Обязательно необходимо определить ограничение **Success rate**. Подробнее см. [Ограничения на уровне шага](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor#step-level-constraints "Узнайте, как настроить монитор NAM для проверки производительности и доступности вашего сайта.").
+Вам необходимо определить ограничения для каждого монитора. Ограничения — это условия, которые должны быть выполнены, чтобы считать выполнение монитора успешным. Обязательно необходимо определить ограничение **Success rate**. Подробнее см. [Ограничения на уровне шага](../../network-availability-monitors/create-a-nam-monitor.md#step-level-constraints "Узнайте, как настроить монитор NAM для проверки производительности и доступности вашего сайта.").
 
 ## Создание монитора NAM
 

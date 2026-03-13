@@ -24,7 +24,7 @@ Business Observability offers the Business events API to ingest JSON data into D
 
 To try out this API in the API Explorer
 
-1. From the [user menu](/docs/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Navigate the latest Dynatrace") (previous Dynatrace), select **Environment API v2**.
+1. From the [user menu](../../discover-dynatrace/get-started/dynatrace-ui.md#user-menu-previous-dynatrace "Navigate the latest Dynatrace") (previous Dynatrace), select **Environment API v2**.
 2. Expand **Business events**, then **/bizevents/ingest**.
 
 * **Endpoint URL**â`https://{your-environment-id}.live.dynatrace.com/api/v2/bizevents/ingest`
@@ -482,7 +482,7 @@ Example CloudEvents batch payload
 
 When you report business events, Dynatrace enriches them by adding more context. For example, Dynatrace adds information about your application, geolocation, device, and more. This pertains only to data ingested via the Business events API.
 
-For details, see [Business event enrichment](/docs/observe/business-observability/bo-events-enrichment "Check what properties Dynatrace automatically adds to reported business events.").
+For details, see [Business event enrichment](bo-events-enrichment.md "Check what properties Dynatrace automatically adds to reported business events.").
 
 ### Practice using the Business events API endpoint
 
@@ -1278,7 +1278,7 @@ https://mySampleEnv.apps.dynatrace.com/platform/storage/query/v1/query:poll?requ
 
 ### Access token
 
-To create a new access token for the `/bizevents/ingest` endpoint of the Business events API, follow the procedure described in [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.").
+To create a new access token for the `/bizevents/ingest` endpoint of the Business events API, follow the procedure described in [Dynatrace API - Tokens and authentication](../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.").
 
 You need to select the **Ingest bizevents** token scope.
 
@@ -1294,15 +1294,15 @@ For both the Business events API and the Grail - DQL Query API, you first need a
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Create an OAuth client**](/docs/observe/business-observability/bo-api-ingest#oauth-client "Set up authentication for and ingest business events via API.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Create an OAuth client**](bo-api-ingest.md#oauth-client "Set up authentication for and ingest business events via API.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Create an IAM policy**](/docs/observe/business-observability/bo-api-ingest#iam-policy "Set up authentication for and ingest business events via API.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Create an IAM policy**](bo-api-ingest.md#iam-policy "Set up authentication for and ingest business events via API.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Bind the policy to a group**](/docs/observe/business-observability/bo-api-ingest#bind-policy "Set up authentication for and ingest business events via API.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**Bind the policy to a group**](bo-api-ingest.md#bind-policy "Set up authentication for and ingest business events via API.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**Obtain a bearer token**](/docs/observe/business-observability/bo-api-ingest#obtain-token "Set up authentication for and ingest business events via API.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
+**Obtain a bearer token**](bo-api-ingest.md#obtain-token "Set up authentication for and ingest business events via API.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
 
-**Authenticate**](/docs/observe/business-observability/bo-api-ingest#authenticate "Set up authentication for and ingest business events via API.")
+**Authenticate**](bo-api-ingest.md#authenticate "Set up authentication for and ingest business events via API.")
 
 #### Step 1 Create an OAuth client
 
@@ -1331,7 +1331,7 @@ To set up the policy
 
 1. Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/). If you have more than one account, select the account you want to manage.
 2. From the top menu bar, select **Identity & access management** > **Policy management**.
-3. Select **Create policy** and set up the policy name and description. You'll need this information when you [bind this policy to a user group](#bind-policy) later. Read more about policy management in [Manage IAM policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.").
+3. Select **Create policy** and set up the policy name and description. You'll need this information when you [bind this policy to a user group](#bind-policy) later. Read more about policy management in [Manage IAM policies](../../manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt.md "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.").
 4. Add the following policy statements for writing and querying business events.
 
    ```
@@ -1349,7 +1349,7 @@ To set up the policy
 
 #### Step 3 Bind the policy to a group
 
-You can assign the [policy you created](#iam-policy) to a group that your user belongs to or add your user to a new group. See [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies#add-or-remove "Working with policies") for instructions on binding policies to groups.
+You can assign the [policy you created](#iam-policy) to a group that your user belongs to or add your user to a new group. See [Working with policies](../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md#add-or-remove "Working with policies") for instructions on binding policies to groups.
 
 #### Step 4 Obtain a bearer token
 

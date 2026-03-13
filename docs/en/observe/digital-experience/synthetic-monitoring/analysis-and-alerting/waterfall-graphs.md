@@ -15,11 +15,11 @@ scraped: 2026-03-04T21:33:00.345852
 
 Sometimes it's necessary to analyze individual browser monitor executions to understand the impact of certain locations, local CDN partners, or other variables. Waterfall analysis is a great tool for viewing detailed information about the various resources that comprise a specific load or XHR action in an execution.
 
-A waterfall graph is a graphical display of every request and resource downloaded for an action, which can be an entire page load (load action) or the update of a specific in-page context without navigating to a new URL (XHR action). Resource- and page-level analysis is based on [W3C timings](/docs/observe/digital-experience/rum-concepts/user-action-metrics "Learn what metrics Dynatrace calculates for user actions and find out what each metric indicates.").
+A waterfall graph is a graphical display of every request and resource downloaded for an action, which can be an entire page load (load action) or the update of a specific in-page context without navigating to a new URL (XHR action). Resource- and page-level analysis is based on [W3C timings](../../rum-concepts/user-action-metrics.md "Learn what metrics Dynatrace calculates for user actions and find out what each metric indicates.").
 
-Waterfall graphs are available on the Synthetic [**Multidimensional analysis** page](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors "Learn how to analyze browser-monitor data points.") for every [action](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/number-of-actions-consumed-by-browser-clickpaths "Find out how many actions are consumed by a browser clickpath and how they differ from events.") in events with timings in browser monitor [executions](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors#data-points "Learn how to analyze browser-monitor data points.") (both single URL and clickpaths).
+Waterfall graphs are available on the Synthetic [**Multidimensional analysis** page](multidimensional-analysis-for-browser-monitors.md "Learn how to analyze browser-monitor data points.") for every [action](../browser-monitors/number-of-actions-consumed-by-browser-clickpaths.md "Find out how many actions are consumed by a browser clickpath and how they differ from events.") in events with timings in browser monitor [executions](multidimensional-analysis-for-browser-monitors.md#data-points "Learn how to analyze browser-monitor data points.") (both single URL and clickpaths).
 
-Used in conjunction with the [scatter plot](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors#scatter-plot "Learn how to analyze browser-monitor data points.") and filters on the **Multidimensional analysis** page, waterfall graphs can help you narrow down the specific resources in specific executions that are causing failures or performance violations. [Top findings](#findings) for each waterfall abstract waterfall data into accessible and actionable information.
+Used in conjunction with the [scatter plot](multidimensional-analysis-for-browser-monitors.md#scatter-plot "Learn how to analyze browser-monitor data points.") and filters on the **Multidimensional analysis** page, waterfall graphs can help you narrow down the specific resources in specific executions that are causing failures or performance violations. [Top findings](#findings) for each waterfall abstract waterfall data into accessible and actionable information.
 
 The images below show waterfall graphs for a load and XHR action respectively.
 
@@ -79,11 +79,11 @@ Failed resources are marked in red. Hover over the resource for an explanation. 
 
 ![Failed resource request](https://dt-cdn.net/images/waterfallfailedresource1-589-cca3366f7a.png)
 
-If you have blocked requests to specified domains/URLs/resource types in [monitor settings](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors#advanced-setup "Learn about configuring browser monitors and clickpaths."), resources from such domains are shown without detailed timings.
+If you have blocked requests to specified domains/URLs/resource types in [monitor settings](../browser-monitors/configure-browser-monitors.md#advanced-setup "Learn about configuring browser monitors and clickpaths."), resources from such domains are shown without detailed timings.
 
 ![Blocked request](https://dt-cdn.net/images/waterfallblockedrequest-628-61d68bd691.png)
 
-You can plot the performance (**HTML downloaded** / **Response end**) of any request, including document and XHR requests, across data points in the [scatter plot](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors#scatter-plot "Learn how to analyze browser-monitor data points.") by selecting **Analyze over time**.
+You can plot the performance (**HTML downloaded** / **Response end**) of any request, including document and XHR requests, across data points in the [scatter plot](multidimensional-analysis-for-browser-monitors.md#scatter-plot "Learn how to analyze browser-monitor data points.") by selecting **Analyze over time**.
 
 ![Analyze a request over time](https://dt-cdn.net/images/scatterplotanalyzeovertime-1619-07e12cf69a.png)
 
@@ -119,11 +119,11 @@ To configure waterfall finding thresholds
 
 ### PurePathÂ® distributed traces for visibility into application infrastructure
 
-The **Traces** finding is displayed when your browser monitor runs against a web application with a [OneAgent](/docs/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") instance installed on the server side and that has the relevant server-side monitoring. The finding displays the linked service calls. If the monitor is associated with a web application that doesn't have the relevant server-side monitoring, the **Traces** finding is not displayed, as there are no underlying monitored services.
+The **Traces** finding is displayed when your browser monitor runs against a web application with a [OneAgent](../../../../ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") instance installed on the server side and that has the relevant server-side monitoring. The finding displays the linked service calls. If the monitor is associated with a web application that doesn't have the relevant server-side monitoring, the **Traces** finding is not displayed, as there are no underlying monitored services.
 
 PurePathÂ® technology traces a web request through your application infrastructure so you can see what is driving performance behind the scenes at the application level. If you see that one or two requests are taking the majority of the time on a slow page, you can drill into the distributed trace to see, for example, if there are too many database requests or just one slow request. You can then use this information to drive performance improvements or error analysis.
 
-When you select the finding, the associated requests and resources are highlighted in the waterfall. You can select the link provided in the top finding to access all available distributed traces or hover over an individual request to drill into a specific distributed trace. You'll probably want to analyze distributed traces for your [dynamic requests](/docs/discover-dynatrace/get-started/glossary#request "Get acquainted with Dynatrace terminology."), ([document requests](#document-requests), or [XHRs](#xhr-requests)) rather than individual resources. In the image below, hovering over the document request displays the **View trace** link for that request.
+When you select the finding, the associated requests and resources are highlighted in the waterfall. You can select the link provided in the top finding to access all available distributed traces or hover over an individual request to drill into a specific distributed trace. You'll probably want to analyze distributed traces for your [dynamic requests](../../../../discover-dynatrace/get-started/glossary.md#request "Get acquainted with Dynatrace terminology."), ([document requests](#document-requests), or [XHRs](#xhr-requests)) rather than individual resources. In the image below, hovering over the document request displays the **View trace** link for that request.
 
 ![Traces top finding and single request Purepath trace](https://dt-cdn.net/images/waterfalltracesfinding-1121-556a6c6eed.png)
 
@@ -131,7 +131,7 @@ In the **Distributed traces** list view, select a resource/request and drill dow
 
 ![Traces accessed from Synthetic waterfall](https://dt-cdn.net/images/tracesfromwaterfall-1491-340c596da0.png)
 
-* For processes that are under heavy load, Dynatrace OneAgent automatically adjusts the data sent. Therefore, certain distributed traces may not be available. In such cases, you'll see a message about [Adaptive Traffic Management](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.") in the **Traces** finding.
+* For processes that are under heavy load, Dynatrace OneAgent automatically adjusts the data sent. Therefore, certain distributed traces may not be available. In such cases, you'll see a message about [Adaptive Traffic Management](../../../../ingest-from/dynatrace-oneagent/adaptive-traffic-management.md "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.") in the **Traces** finding.
 
 * Drilling down from an individual resource (based on W3C resource timings) to a distributed trace (captured by OneAgent) is enabled by comparing URLs. If there are any rewrite rules or if parts of the URL arenât identical on the client and server sides, the **View trace** button for the resource wonât be displayed. In such cases, you can get to all your distributed traces from the **Traces** finding.
 
@@ -141,7 +141,7 @@ You can analyze the details of JavaScript errors that are detected during the ex
 
 ![Waterfall JavaScript error](https://dt-cdn.net/images/waterfalljserror-1198-234304aad2.jpg)
 
-When you filter the [scatter plot](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors#scatter-plot "Learn how to analyze browser-monitor data points.") for JavaScript errors, you can click any data point to automatically select the event and load the waterfall where a JavaScript error occurs.
+When you filter the [scatter plot](multidimensional-analysis-for-browser-monitors.md#scatter-plot "Learn how to analyze browser-monitor data points.") for JavaScript errors, you can click any data point to automatically select the event and load the waterfall where a JavaScript error occurs.
 
 The Error details page for each detected JavaScript error includes a complete stack trace that identifies the exact line of code responsible for the error. This insight can dramatically accelerate the time it takes to resolve such errors.
 

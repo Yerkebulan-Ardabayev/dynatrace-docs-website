@@ -34,7 +34,7 @@ There is a set of predefined built-in buckets that cannot be modified, including
 
 ### Built-in buckets with corresponding retention periods
 
-This section has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](/docs/secure/threat-observability/migration "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This section has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../../secure/threat-observability/migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
 
 These are examples of built-in buckets with corresponding retention periods.
 For a full list of available built-in buckets, run this DQL query:
@@ -97,7 +97,7 @@ To manage your custom Grail buckets via REST API
 2. In the **Select a definition** field, select **Grail Storage Management**.
 3. Authenticate with your API token.
 
-   For details, see [Authentication](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+   For details, see [Authentication](../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
 4. Perform one of the following actions.
 
    | To do this | Go to **Bucket Definitions** and select this |
@@ -112,8 +112,8 @@ The delete buckets operation is irreversible. This operation will remove the con
 Status will show **deleting** as long as data will be drained, and finally the bucket will be deleted. Afterwards, the bucket will cease to exist.
 This operation can be executed on all types of buckets, except buckets where **bucketName** starts with `dt_` or `default_`. Before a bucket is deleted, checks are performed to verify that the bucket is not in use. To delete a bucket, you need the `storage:bucket-definitions:delete` permission.
 
-See when to [create custom buckets and how to allow access to them](/docs/platform/upgrade#organize-your-data "Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data.").
+See when to [create custom buckets and how to allow access to them](../upgrade.md#organize-your-data "Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data.").
 
 ## Related topics
 
-* [What is Dynatrace Grail?](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.")
+* [What is Dynatrace Grail?](dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.")

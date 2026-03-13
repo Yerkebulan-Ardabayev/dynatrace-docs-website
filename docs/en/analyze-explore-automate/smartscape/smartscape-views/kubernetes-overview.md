@@ -55,4 +55,4 @@ To use **Kubernetes overview** effectively, we recommend that you:
 
 ## Related topics
 
-* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* [Smartscape](../../smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")

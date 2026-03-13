@@ -270,10 +270,10 @@ monaco download
 
 В качестве входных данных команда `delete` требует два YAML-файла:
 
-* [Файл манифеста](/docs/deliver/configuration-as-code/monaco/configuration#deployment-manifest "Управляйте файлами конфигурации Dynatrace с помощью Monaco, используя набор проектов и манифест развертывания."), определяющий соответствующие среды Dynatrace.
-* [Файл удаления](/docs/deliver/configuration-as-code/monaco/configuration#file-structure-for-direct-reference "Управляйте файлами конфигурации Dynatrace с помощью Monaco, используя набор проектов и манифест развертывания."), определяющий соответствующие конфигурации.
+* [Файл манифеста](../configuration.md#deployment-manifest "Управляйте файлами конфигурации Dynatrace с помощью Monaco, используя набор проектов и манифест развертывания."), определяющий соответствующие среды Dynatrace.
+* [Файл удаления](../configuration.md#file-structure-for-direct-reference "Управляйте файлами конфигурации Dynatrace с помощью Monaco, используя набор проектов и манифест развертывания."), определяющий соответствующие конфигурации.
 
-Файл удаления генерируется с помощью `monaco generate deletefile`, см. [Generate](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#generate-deletefile "Как использовать приложение Monaco CLI, включая аргументы и параметры.").
+Файл удаления генерируется с помощью `monaco generate deletefile`, см. [Generate](commands-saas.md#generate-deletefile "Как использовать приложение Monaco CLI, включая аргументы и параметры.").
 
 ### Использование
 
@@ -359,7 +359,7 @@ type:
 api: app-detection-rule
 ```
 
-**Обходное решение:** Создайте файл удаления вручную или обновите сгенерированный файл, указав имя конфигурации без ссылок. См. [формат файла удаления](/docs/deliver/configuration-as-code/monaco/configuration#file-structure-for-direct-reference "Управляйте файлами конфигурации Dynatrace с помощью Monaco, используя набор проектов и манифест развертывания.") для правильного синтаксиса.
+**Обходное решение:** Создайте файл удаления вручную или обновите сгенерированный файл, указав имя конфигурации без ссылок. См. [формат файла удаления](../configuration.md#file-structure-for-direct-reference "Управляйте файлами конфигурации Dynatrace с помощью Monaco, используя набор проектов и манифест развертывания.") для правильного синтаксиса.
 
 #### graph
 

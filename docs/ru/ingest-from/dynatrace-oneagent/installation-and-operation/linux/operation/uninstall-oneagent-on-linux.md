@@ -30,4 +30,4 @@ OneAgent имеет специальную программу удаления. 
 * Пользователя, от имени которого работал OneAgent, — `dtuser`.
 * Дополнительно: если вы используете нестандартный путь установки, установщик создаёт символическую ссылку в каталоге по умолчанию (`/opt/dynatrace/oneagent`), указывающую на нестандартный путь.
   После удаления OneAgent эту символическую ссылку необходимо удалить вручную.
-  Подробнее см. в разделе [Путь установки](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#installation-path "Узнайте, как использовать установщик Linux с параметрами командной строки.").
+  Подробнее см. в разделе [Путь установки](../installation/customize-oneagent-installation-on-linux.md#installation-path "Узнайте, как использовать установщик Linux с параметрами командной строки.").

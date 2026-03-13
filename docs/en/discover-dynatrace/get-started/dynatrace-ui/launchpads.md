@@ -123,7 +123,7 @@ If you own a launchpad, you can share it with other users in your Dynatrace envi
 
 ![Share launchpad](https://dt-cdn.net/images/share-2226-f40006e092.png)
 
-For details on sharing Dynatrace documents (including launchpads), see [Share documents](/docs/discover-dynatrace/get-started/dynatrace-ui/share "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
+For details on sharing Dynatrace documents (including launchpads), see [Share documents](share.md "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
 
 ## API for launchpads
 

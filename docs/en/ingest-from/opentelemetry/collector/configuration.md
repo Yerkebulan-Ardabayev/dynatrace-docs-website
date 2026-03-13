@@ -19,7 +19,7 @@ Dynatrace Collector
 
 As part of a Dynatrace Collector setup, note that you can only configure the components shipped with Dynatrace Collector.
 
-Find a full list of all supported Collector components at [Dynatrace OTel Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace OTel Collector.").
+Find a full list of all supported Collector components at [Dynatrace OTel Collector](../collector.md#dt-collector-dist "Learn about the Dynatrace OTel Collector.").
 
 ## Configuration example
 
@@ -155,9 +155,9 @@ In this YAML file, we configure the following components:
 * A processor to convert any metrics with cumulative temporality to delta temporality (see [Delta metrics](#delta-metrics) for more details).
 * An OTLP HTTP exporter (`otlp_http`) configured with:
 
-  + The Dynatrace endpoint, see [Base URLs](/docs/ingest-from/opentelemetry/otlp-api#base-url "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+  + The Dynatrace endpoint, see [Base URLs](../otlp-api.md#base-url "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
   + The logs endpoint configured to flatten structured logs, see <#structured-logs>.
-  + An API token, see [Authentication](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+  + An API token, see [Authentication](../otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
 
 In the example configuration above, the Dynatrace token needs to have the **Ingest OpenTelemetry traces** (`openTelemetryTrace.ingest`), the **Ingest metrics** (`metrics.ingest`), and the **Ingest logs** (`logs.ingest`) permissions.
 
@@ -185,7 +185,7 @@ docker run -v $(pwd):$(pwd) -w $(pwd) ghcr.io/dynatrace/dynatrace-otel-collector
 
 ## Delta metrics
 
-Dynatrace requires metrics data to be [sent with delta temporality](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#aggregation-temporality "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.") and **not** cumulative temporality.
+Dynatrace requires metrics data to be [sent with delta temporality](../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md#aggregation-temporality "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.") and **not** cumulative temporality.
 
 If your application doesn't allow you to configure delta temporality, you can use the [`cumulativetodelta` processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/cumulativetodeltaprocessor) to have your Collector instance adjust cumulative values to delta values. The [configuration example](#configuration-example) above shows how to configure and reference the processor in your Collector configuration.
 

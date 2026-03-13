@@ -21,16 +21,16 @@ Dynatrace Intelligence использует специализированные
 
 * Пояснение
 
-[Читать пояснение](/docs/dynatrace-intelligence/reference/ai-models/causal-correlation-analysis)[#### Предиктивный ИИ-анализ Dynatrace Intelligence
+[Читать пояснение](ai-models/causal-correlation-analysis.md)[#### Предиктивный ИИ-анализ Dynatrace Intelligence
 
 Узнайте, как предиктивный ИИ Dynatrace Intelligence формирует прогнозы.
 
 * Пояснение
 
-[Читать пояснение](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis)[#### Сезонная базовая линия
+[Читать пояснение](ai-models/forecast-analysis.md)[#### Сезонная базовая линия
 
 Как Dynatrace Intelligence предлагает пороговые значения сезонной базовой линии для группы сущностей.
 
 * Пояснение
 
-[Читать пояснение](/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline)
+[Читать пояснение](ai-models/seasonal-baseline.md)

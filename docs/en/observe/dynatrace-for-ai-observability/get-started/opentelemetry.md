@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:28:35.685729
 
 OpenTelemetry provides a vendor-neutral standard for collecting traces and metrics from AI applications. With the [GenAI semantic conventionsï»¿](https://opentelemetry.io/docs/specs/semconv/gen-ai/), OpenTelemetry defines a consistent way to capture AI-specific attributes such as model names, token counts, latency, and cost metrics across different LLM providers.
 
-Dynatrace fully supports OpenTelemetry, allowing you to send AI observability data directly to your Dynatrace environment using the [OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). This approach gives you flexibility to use any OpenTelemetry-compatible instrumentation library or build custom instrumentation.
+Dynatrace fully supports OpenTelemetry, allowing you to send AI observability data directly to your Dynatrace environment using the [OTLP API endpoints](../../../ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). This approach gives you flexibility to use any OpenTelemetry-compatible instrumentation library or build custom instrumentation.
 
 ## Who is this for?
 
@@ -43,10 +43,10 @@ By following this guide, you will learn:
 In order for this to work, you need to have:
 
 * A running AI app or AI demo app.
-* Dynatrace SaaS with a [Dynatrace Platform Subscription (DPS)](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license that has [Traces powered by Grail](/docs/license/capabilities/traces "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model."), [Metrics powered by Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model."), and [Log Analytics](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") enabled.
-* OTLP ingestion enabled, see [OpenTelemetry and Dynatrace](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
+* Dynatrace SaaS with a [Dynatrace Platform Subscription (DPS)](../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license that has [Traces powered by Grail](../../../license/capabilities/traces.md "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model."), [Metrics powered by Grail](../../../license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model."), and [Log Analytics](../../../license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") enabled.
+* OTLP ingestion enabled, see [OpenTelemetry and Dynatrace](../../../ingest-from/opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
 * An OpenAPI platform API key.
-* A Dynatrace API token the following scopes, see [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+* A Dynatrace API token the following scopes, see [Dynatrace API - Tokens and authentication](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
 
   + Ingest metrics (`metrics.ingest`)
   + Ingest logs (`logs.ingest`)
@@ -210,7 +210,7 @@ Node.js
 The OpenTelemetry GenAI semantic conventions standardize the attributes captured for generative AI operations.
 To make sure that your telemetry data follows these conventions, add the following code to your application.
 
-For more information about semantic conventions, see [GenAI semantic conventions](/docs/observe/dynatrace-for-ai-observability/terms-and-concepts#semantic-conventions "Learn how to combine Dynatrace and Traceloop OpenLLMetry to observe an AI/ML model through OpenTelemetry.").
+For more information about semantic conventions, see [GenAI semantic conventions](../terms-and-concepts.md#semantic-conventions "Learn how to combine Dynatrace and Traceloop OpenLLMetry to observe an AI/ML model through OpenTelemetry.").
 
 Python
 
@@ -348,5 +348,5 @@ span.end();
 
 Now that you've set up your AI app to send observability data directly to Dynatrace, you can:
 
-* Explore the [AI Observability app](/docs/observe/dynatrace-for-ai-observability/ai-observability-app "Use the new AI Observability app to monitor all your AI workloads.") to visualize your AI workloads.
+* Explore the [AI Observability app](../ai-observability-app.md "Use the new AI Observability app to monitor all your AI workloads.") to visualize your AI workloads.
 * Check out the [sample applicationsï»¿](https://github.com/dynatrace-oss/dynatrace-ai-agent-instrumentation-examples) for more examples.

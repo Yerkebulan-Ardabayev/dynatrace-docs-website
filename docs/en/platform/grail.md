@@ -19,23 +19,23 @@ Grail is the Dynatrace data lakehouse designed explicitly for observability data
 
 ### What is Dynatrace Grail?
 
-Get to know Grail, the Dynatrace data lakehouse designed for observability data.](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.")[![Data](https://dt-cdn.net/images/dashboards-app-dashboard-add-data-f6d2ed4717.svg "Data")
+Get to know Grail, the Dynatrace data lakehouse designed for observability data.](grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.")[![Data](https://dt-cdn.net/images/dashboards-app-dashboard-add-data-f6d2ed4717.svg "Data")
 
 ### Organize data
 
-Insights on the Grail data model consisting of buckets, tables, and views.](/docs/platform/grail/organize-data "Insights on the Grail data model consisting of buckets, tables, and views.")[![Share case](https://dt-cdn.net/images/lock-22963d32e5.svg "Share case")
+Insights on the Grail data model consisting of buckets, tables, and views.](grail/organize-data.md "Insights on the Grail data model consisting of buckets, tables, and views.")[![Share case](https://dt-cdn.net/images/lock-22963d32e5.svg "Share case")
 
 ### Permissions in Grail
 
-See how to assign permissions to buckets and tables in Grail.](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.")[![DQL](https://cdn.bfldr.com/B686QPH3/at/t9h436nzjqq6cww99sqs6z/DQL.svg?auto=webp&width=72&height=72 "DQL")
+See how to assign permissions to buckets and tables in Grail.](grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.")[![DQL](https://cdn.bfldr.com/B686QPH3/at/t9h436nzjqq6cww99sqs6z/DQL.svg?auto=webp&width=72&height=72 "DQL")
 
 ### Dynatrace Query Language (DQL)
 
-See how to use DQL to query data in Grail.](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")[![Code](https://dt-cdn.net/images/code-571afa1aee.svg "Code")
+See how to use DQL to query data in Grail.](grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")[![Code](https://dt-cdn.net/images/code-571afa1aee.svg "Code")
 
 ### Dynatrace Pattern Language (DPL)
 
-See how to use DPL to describe patterns using matchers.](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.")[![Grail](https://cdn.bfldr.com/B686QPH3/at/kc3c7k476pbx2pb8cphzktf/Grail.svg?auto=webp&width=72&height=72 "Grail")
+See how to use DPL to describe patterns using matchers.](grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.")[![Grail](https://cdn.bfldr.com/B686QPH3/at/kc3c7k476pbx2pb8cphzktf/Grail.svg?auto=webp&width=72&height=72 "Grail")
 
 ### Grail service
 

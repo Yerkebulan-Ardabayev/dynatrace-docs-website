@@ -14,13 +14,13 @@ scraped: 2026-03-06T21:26:49.610500
 
 Log Monitoring Classic
 
-Начиная с OneAgent версии 1.243 и Dynatrace Cluster версии 1.252, мы настоятельно рекомендуем перейти на [Log Storage](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-storage "Configure storage of log files that are already known to OneAgent.").
+Начиная с OneAgent версии 1.243 и Dynatrace Cluster версии 1.252, мы настоятельно рекомендуем перейти на [Log Storage](log-storage.md "Configure storage of log files that are already known to OneAgent.").
 
-С выпуском Dynatrace версии 1.285 (март 2024 года) Dynatrace автоматически преобразует ваши конфигурации [источников логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-add-log-files-manually "Learn how to manually add log files for analysis.") и [хранения логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-add-log-file-sources "Learn how to include and exclude log sources for analysis.") до актуальной версии.
+С выпуском Dynatrace версии 1.285 (март 2024 года) Dynatrace автоматически преобразует ваши конфигурации [источников логов](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-add-log-files-manually.md "Learn how to manually add log files for analysis.") и [хранения логов](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-add-log-file-sources.md "Learn how to include and exclude log sources for analysis.") до актуальной версии.
 
 Вы также можете самостоятельно обновить конфигурацию, выбрав **Upgrade configuration**. Все ваши текущие настройки будут полностью перенесены.
 
-Обновлённая конфигурация (см. [Log ingest rules](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis.")), определяемая на страницах **Custom log source configuration** и **Log sources and storage**, предоставит вам:
+Обновлённая конфигурация (см. [Log ingest rules](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.")), определяемая на страницах **Custom log source configuration** и **Log sources and storage**, предоставит вам:
 
 * Большую гибкость при определении источников логов (например, путь к логу, уровень логирования, пространство имён Kubernetes, развёртывание Kubernetes)
 * Гибкость в определении источников логов (с использованием областей окружения, группы хостов и хостов)

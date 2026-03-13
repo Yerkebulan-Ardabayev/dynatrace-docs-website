@@ -47,7 +47,7 @@ scraped: 2026-03-06T21:28:56.990128
 
      ![Show export menu](https://dt-cdn.net/images/show-export-menu-107-2a8a76c9a2.png)
   2. Выберите **Export visible data** или **Export table data**.
-* На графике используются [данные трассировок и запросов](/docs/observe/application-observability/multidimensional-analysis#data-source "Configure a multidimensional analysis view and save it as a calculated metric."), которые имеют разные периоды хранения данных. Для временных интервалов, содержащих данные старше 10 дней, вы можете включить переключатель **Show data retention**, чтобы лучше понять, какие данные доступны за какой период, непосредственно из графика.
+* На графике используются [данные трассировок и запросов](../multidimensional-analysis.md#data-source "Configure a multidimensional analysis view and save it as a calculated metric."), которые имеют разные периоды хранения данных. Для временных интервалов, содержащих данные старше 10 дней, вы можете включить переключатель **Show data retention**, чтобы лучше понять, какие данные доступны за какой период, непосредственно из графика.
 
 ## Анализ отдельных SQL-запросов
 
@@ -87,7 +87,7 @@ scraped: 2026-03-06T21:28:56.990128
 
 ## Пример: анализ SQL для потока сервиса
 
-Хотя анализ SQL доступен в нескольких местах рабочего процесса анализа сервисов, он был добавлен в качестве основного представления анализа для баз данных в представлении [**Service flow**](/docs/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment."). Следующий пример показывает поток сервиса, который уже отфильтрован для фокусировки на определенной цепочке вызовов. Видно, что каждый раз, когда сервис **Customer Frontend** вызывает **JourneyService**, **58%** **вклада во время отклика** может быть отнесено к SQL-сервису **EasyTravel**.
+Хотя анализ SQL доступен в нескольких местах рабочего процесса анализа сервисов, он был добавлен в качестве основного представления анализа для баз данных в представлении [**Service flow**](../services-classic/service-flow.md "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment."). Следующий пример показывает поток сервиса, который уже отфильтрован для фокусировки на определенной цепочке вызовов. Видно, что каждый раз, когда сервис **Customer Frontend** вызывает **JourneyService**, **58%** **вклада во время отклика** может быть отнесено к SQL-сервису **EasyTravel**.
 
 ![От потока сервиса к запросу к БД](https://dt-cdn.net/images/from-service-flow-to-database-statement-1748-bff9188259.png)
 

@@ -13,7 +13,7 @@ scraped: 2026-03-02T21:30:29.843938
 * 4 мин. чтения
 * Обновлено 15 января 2026 г.
 
-Для определения аккаунтов, для которых Monaco будет настраивать ресурсы управления аккаунтами, необходимо создать раздел `accounts` в [файле манифеста](/docs/deliver/configuration-as-code/monaco/configuration#manifest "Управление конфигурационными файлами Dynatrace с помощью Monaco через набор проектов и манифест развёртывания.").
+Для определения аккаунтов, для которых Monaco будет настраивать ресурсы управления аккаунтами, необходимо создать раздел `accounts` в [файле манифеста](../configuration.md#manifest "Управление конфигурационными файлами Dynatrace с помощью Monaco через набор проектов и манифест развёртывания.").
 
 В следующем примере мы определяем один объект аккаунта, содержащий информацию, связанную с аккаунтом. Свойство **name** задаёт имя аккаунта (в данном примере `my-account`), на которое можно ссылаться с помощью флага `--account` команд CLI Monaco.
 
@@ -54,11 +54,11 @@ name: OAUTH_CLIENT_SECRET
 OAuth-клиент должен иметь соответствующие области, настроенные для ресурсов аккаунта, которыми вы хотите управлять.
 Убедитесь, что ваши учётные данные OAuth включают необходимые разрешения для пользователей, групп, политик, границ или сервисных пользователей перед развёртыванием конфигураций.
 
-Помимо раздела `accounts`, файл `manifest.yaml`, определённый для ресурсов аккаунта, аналогичен файлу для конфигураций среды, требуя [`projects`](/docs/deliver/configuration-as-code/monaco/configuration#project-definitions "Управление конфигурационными файлами Dynatrace с помощью Monaco через набор проектов и манифест развёртывания.") конфигурационных файлов ресурсов аккаунта.
+Помимо раздела `accounts`, файл `manifest.yaml`, определённый для ресурсов аккаунта, аналогичен файлу для конфигураций среды, требуя [`projects`](../configuration.md#project-definitions "Управление конфигурационными файлами Dynatrace с помощью Monaco через набор проектов и манифест развёртывания.") конфигурационных файлов ресурсов аккаунта.
 
 ## Ресурсы аккаунта
 
-С помощью Monaco вы можете определять [пользователей](/docs/manage/identity-access-management/user-and-group-management/access-user-management "Управление пользователями"), [сервисных пользователей](/docs/manage/identity-access-management/user-and-group-management/access-service-users "Сервисные пользователи"), [группы](/docs/manage/identity-access-management/user-and-group-management/access-group-management "Управление группами Dynatrace и их разрешениями."), [политики](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Работа с политиками") и [границы](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries "Ограничение политик безопасности с помощью границ политик для предоставления адаптированного доступа пользователям.") как выделенные типы в YAML-файлах конфигурации.
+С помощью Monaco вы можете определять [пользователей](../../../../manage/identity-access-management/user-and-group-management/access-user-management.md "Управление пользователями"), [сервисных пользователей](../../../../manage/identity-access-management/user-and-group-management/access-service-users.md "Сервисные пользователи"), [группы](../../../../manage/identity-access-management/user-and-group-management/access-group-management.md "Управление группами Dynatrace и их разрешениями."), [политики](../../../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Работа с политиками") и [границы](../../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries.md "Ограничение политик безопасности с помощью границ политик для предоставления адаптированного доступа пользователям.") как выделенные типы в YAML-файлах конфигурации.
 
 В отличие от обычных конфигураций уровня среды, файлы JSON-шаблонов не нужны. Monaco создаёт необходимые данные API непосредственно из вашей YAML-конфигурации.
 
@@ -605,4 +605,4 @@ query: automation:workflow-type = "SIMPLE";
 
 Поскольку конфигурация на уровне аккаунта обычно отличается от конфигурации на уровне среды и изменяется реже, существующие команды, такие как `monaco deploy`, игнорируют любую конфигурацию аккаунта, которая может быть определена в файле манифеста.
 
-Для ресурсов аккаунта существуют специальные команды: [Account](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#account "Как использовать приложение CLI Monaco, включая аргументы и параметры.").
+Для ресурсов аккаунта существуют специальные команды: [Account](../reference/commands-saas.md#account "Как использовать приложение CLI Monaco, включая аргументы и параметры.").

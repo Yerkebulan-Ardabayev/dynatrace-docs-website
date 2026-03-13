@@ -14,7 +14,7 @@ scraped: 2026-03-05T21:31:21.874741
 * Опубликовано 5 ноября 2024 г.
 
 С помощью ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives** вы можете настраивать новые цели уровня обслуживания (SLO) на основе шаблонов, предоставляемых Dynatrace.
-Вы также можете определить свои SLO на основе пользовательского запроса [DQL](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.").
+Вы также можете определить свои SLO на основе пользовательского запроса [DQL](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.").
 
 ## Шаги
 
@@ -39,7 +39,7 @@ scraped: 2026-03-05T21:31:21.874741
 
    ![Добавление фильтра сегментов к SLO](https://dt-cdn.net/images/slo-level-segments-1313-399767711c.png)
 
-   Это лишь дополнительный фильтр для необходимых сущностей. Он не применяется к оценке SLO. Чтобы добавить фильтр сегментов к оценке SLO, используйте шаг 5 в разделе [Создание пользовательского SLO](/docs/deliver/service-level-objectives/create-slo#create-a-custom-slo "Create and configure service-level objectives (SLOs).").
+   Это лишь дополнительный фильтр для необходимых сущностей. Он не применяется к оценке SLO. Чтобы добавить фильтр сегментов к оценке SLO, используйте шаг 5 в разделе [Создание пользовательского SLO](create-slo.md#create-a-custom-slo "Create and configure service-level objectives (SLOs).").
 7. Нажмите **Next**.
 8. Определите критерии вашего SLO. Заполните поле **Target** и выберите временной интервал для периода оценки с помощью выпадающего списка в поле **Over the evaluation period**.
 9. Необязательно: включите **Show warning** и введите числовое значение в процентах в поле **Show warning at**.
@@ -54,7 +54,7 @@ scraped: 2026-03-05T21:31:21.874741
 1. В **Dynatrace** найдите ![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**.
 2. В обзоре **Service-Level Objectives** выберите  **Service-level objective**.
 3. Выберите  **Custom SLO**.
-4. Укажите ваш DQL-запрос. Ваш запрос должен включать поле "sli", как в следующем примере, чтобы обеспечить единообразную визуализацию, преобразование и агрегацию для всех ваших SLO. Поле "sli" должно возвращать массив типа `double`. DQL-запрос может быть основан на любом типе данных в Grail, например на событиях или логах. Использование [makeTimeseries](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#makeTimeseries "DQL aggregation commands") позволяет создать временной ряд sli, который можно использовать для расчёта статуса SLO.
+4. Укажите ваш DQL-запрос. Ваш запрос должен включать поле "sli", как в следующем примере, чтобы обеспечить единообразную визуализацию, преобразование и агрегацию для всех ваших SLO. Поле "sli" должно возвращать массив типа `double`. DQL-запрос может быть основан на любом типе данных в Grail, например на событиях или логах. Использование [makeTimeseries](../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#makeTimeseries "DQL aggregation commands") позволяет создать временной ряд sli, который можно использовать для расчёта статуса SLO.
 
 ```
 timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.request.failure_count) }
@@ -89,8 +89,8 @@ timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.reques
 Вы можете создавать, редактировать, просматривать, удалять и оценивать ваши SLO через API.
 
 1. Перейдите в Dynatrace.
-2. В [поиске по платформе](/docs/discover-dynatrace/get-started/dynatrace-ui#search "Navigate the latest Dynatrace") введите `API`. В результатах поиска найдите раздел **Support resources** и пункт **Dynatrace API** под ним.
+2. В [поиске по платформе](../../discover-dynatrace/get-started/dynatrace-ui.md#search "Navigate the latest Dynatrace") введите `API`. В результатах поиска найдите раздел **Support resources** и пункт **Dynatrace API** под ним.
 3. Выберите **Dynatrace API**, чтобы получить доступ к документации Dynatrace API. Откроется новая страница с определениями Dynatrace API.
 4. В правом верхнем углу перейдите к **Select a definition**.
 5. Из выпадающего списка выберите нужный эндпоинт.
-6. Выполните аутентификацию с помощью вашего API-токена. Подробнее см. в разделе [Аутентификация](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+6. Выполните аутентификацию с помощью вашего API-токена. Подробнее см. в разделе [Аутентификация](../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.").

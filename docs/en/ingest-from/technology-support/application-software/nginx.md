@@ -19,7 +19,7 @@ Support on Windows
 
 NGINX deep monitoring is currently not supported on Windows.
 
-See [OneAgent support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix#os-code-modules "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") for more details.
+See [OneAgent support matrix](../oneagent-platform-and-capability-support-matrix.md#os-code-modules "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") for more details.
 
 Which modules of NGINX are supported for outgoing web requests?
 
@@ -46,7 +46,7 @@ The OneAgent build date is part of the OneAgent intaller version, for example 1.
 
 Support for the latest NGINX release is typically included in the next subsequent OneAgent releases.
 
-| NGINX version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/docs/ingest-from/technology-support#support-levels) |
+| NGINX version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](../../technology-support.md#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1.29.5 | 2026-02-04 | - | 1.335 | - | - | Not supported |
 | 1.29.4 | 2025-12-09 | - | 1.331 | - | - | Supported |
@@ -121,7 +121,7 @@ Support for the CPU architecture PPCLE was added with OneAgent version 1.169 and
 
 2
 
-Supported if the used binary is in the list of [supported binaries](/docs/ingest-from/technology-support/application-software/nginx#nginx-supported-binaries "Learn the details of Dynatrace support for NGINX.") or the corresponding debug information is available locally.
+Supported if the used binary is in the list of [supported binaries](nginx.md#nginx-supported-binaries "Learn the details of Dynatrace support for NGINX.") or the corresponding debug information is available locally.
 
 Support details for NGINX versions 1.4 - 1.11.4
 
@@ -6757,7 +6757,7 @@ Supported binaries for which Dynatrace has debug information available
 
 Support for the latest NGINX Plus release may differ from the NGINX support lifecycle, but we aim to stay current.
 
-| NGINX Plus version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/docs/ingest-from/technology-support#support-levels) |
+| NGINX Plus version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](../../technology-support.md#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
 | R36 | 2025-12-01 | 2027-11-30 | 1.329 | - | - | Supported |
 | R35 | 2025-08-13 | 2027-08-13 | 1.321 | - | - | Supported |
@@ -6789,13 +6789,13 @@ Support for the CPU architecture PPCLE was added with OneAgent version 1.169 and
 
 2
 
-Supported if the used binary is either in the list of [supported binaries](/docs/ingest-from/technology-support/application-software/nginx#nginx-supported-binaries "Learn the details of Dynatrace support for NGINX.") or the corresponding debug information is available locally.
+Supported if the used binary is either in the list of [supported binaries](nginx.md#nginx-supported-binaries "Learn the details of Dynatrace support for NGINX.") or the corresponding debug information is available locally.
 
 ### Supported for OpenResty
 
 Support for the latest OpenResty release may differ from the NGINX support lifecycle, but we aim to stay current.
 
-| OpenResty version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/docs/ingest-from/technology-support#support-levels) |
+| OpenResty version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](../../technology-support.md#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1.27.1.2 | 2025-03-14 | - | 1.311 | - | - | Supported |
 | 1.27.1.1 | 2024-10-16 | - | 1.305 | - | - | Supported |
@@ -6813,13 +6813,13 @@ Support for the latest OpenResty release may differ from the NGINX support lifec
 
 1
 
-Supported if the used binary is in the list of [supported binaries](/docs/ingest-from/technology-support/application-software/nginx#nginx-supported-binaries "Learn the details of Dynatrace support for NGINX.").
+Supported if the used binary is in the list of [supported binaries](nginx.md#nginx-supported-binaries "Learn the details of Dynatrace support for NGINX.").
 
 ### Support for Tengine
 
 Support for the latest Tengine release may differ from the NGINX support lifecycle, but we aim to stay current.
 
-| Tengine version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/docs/ingest-from/technology-support#support-levels) |
+| Tengine version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](../../technology-support.md#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
 | 2.4.1 | - | - | 1.269 | - | - | Supported |
 | 2.4.0 | - | - | 1.261 | - | - | Supported |
@@ -6856,4 +6856,4 @@ Parsers help you to improve filtering, troubleshooting, metrics, alerts, and das
 
 ![syslog-bundles](https://dt-cdn.net/images/env-syslogbundles-2589-90e4e38b45.png)
 
-For more information, see [Process logs with technology bundle parsers](/docs/platform/openpipeline/use-cases/tutorial-technology-processor "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.").
+For more information, see [Process logs with technology bundle parsers](../../../platform/openpipeline/use-cases/tutorial-technology-processor.md "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.").

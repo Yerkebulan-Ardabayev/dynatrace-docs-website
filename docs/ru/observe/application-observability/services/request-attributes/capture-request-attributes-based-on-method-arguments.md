@@ -70,7 +70,7 @@ Dynatrace позволяет создавать атрибуты запроса 
 
 Шаг 4 позволяет отфильтровать захваченные значения, не соответствующие заданному критерию.
 
-Шаг 5 позволяет извлечь часть из результирующей строки на основе [регулярного выражения](/docs/manage/tags-and-metadata/reference/regular-expressions-in-dynatrace "Learn how to use regular expressions in the context of Dynatrace.").
+Шаг 5 позволяет извлечь часть из результирующей строки на основе [регулярного выражения](../../../../manage/tags-and-metadata/reference/regular-expressions-in-dynatrace.md "Learn how to use regular expressions in the context of Dynatrace.").
 
 ## Числовые значения и агрегации
 

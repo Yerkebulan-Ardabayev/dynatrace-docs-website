@@ -64,7 +64,7 @@ scraped: 2026-03-03T21:30:58.689094
 
 1. Создайте секрет для токенов доступа.
 
-   Создайте секрет с именем `dynakube` для токена Dynatrace Operator и токена приёма данных, полученных в разделе [Необходимые токены и разрешения](/docs/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
+   Создайте секрет с именем `dynakube` для токена Dynatrace Operator и токена приёма данных, полученных в разделе [Необходимые токены и разрешения](../tokens-permissions.md "Configure tokens and permissions to monitor your Kubernetes cluster").
 
    ```
    kubectl -n dynatrace create secret generic dynakube --from-literal="apiToken=<OPERATOR_TOKEN>" --from-literal="dataIngestToken=<DATA_INGEST_TOKEN>"
@@ -73,7 +73,7 @@ scraped: 2026-03-03T21:30:58.689094
 
    Мониторинг с `cloudNativeFullStack` или `appOnly` (с CSI-драйвером) поддерживается только для Dynatrace Operator версии 0.15.0+.
 
-   Загрузите [образец пользовательского ресурса DynaKube для режима cloud-native full-stack с GitHub](https://dt-url.net/9n636jg). Кроме того, можно ознакомиться с [доступными параметрами](/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") или [практическими руководствами](/docs/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases") и адаптировать пользовательский ресурс DynaKube согласно своим требованиям.
+   Загрузите [образец пользовательского ресурса DynaKube для режима cloud-native full-stack с GitHub](https://dt-url.net/9n636jg). Кроме того, можно ознакомиться с [доступными параметрами](../../reference/dynakube-parameters.md "List the available parameters for setting up Dynatrace Operator on Kubernetes.") или [практическими руководствами](../../guides.md "Detailed description of installation and configuration options for specific use-cases") и адаптировать пользовательский ресурс DynaKube согласно своим требованиям.
 
    Выполните приведённую ниже команду для применения пользовательского ресурса DynaKube, заменив `<your-DynaKube-CR>` на фактическое имя файла вашего пользовательского ресурса DynaKube. Веб-хук валидации предоставит полезные сообщения об ошибках в случае возникновения проблем.
 

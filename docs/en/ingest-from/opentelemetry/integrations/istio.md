@@ -30,7 +30,7 @@ The following prerequisites are necessary to configure Istio OpenTelemetry trace
 Istio version 1.21 and earlier
 
 Istio versions 1.21 and earlier ship with Envoy versions 1.29 and earlier, which is based on OpenTracing.
-To use these Isito releases, enable the Dynatrace Envoy code module as described in [Configure OpenTelemetry tracing with Envoy](/docs/ingest-from/opentelemetry/integrations/envoy#envoy-code-module "Learn how to configure Envoy to send OpenTelemetry traces to Dynatrace.").
+To use these Isito releases, enable the Dynatrace Envoy code module as described in [Configure OpenTelemetry tracing with Envoy](envoy.md#envoy-code-module "Learn how to configure Envoy to send OpenTelemetry traces to Dynatrace.").
 
 ## Licensing impact
 
@@ -38,9 +38,9 @@ In certain deployment setups, tracing with Istio version 1.22+ results in consum
 
 * When using the Dynatrace resource detector and sampler:
 
-  + Classic Full-Stack or cloud-native Full-Stack deployments: Usage is included in [Full-Stack Monitoring (DPS)](/docs/license/capabilities/app-infra-observability/full-stack-monitoring "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") and [Host Units (Dynatrace Classic License)](/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
-  + For Application-Observability-only deployments: Usage incurs consumption of [Custom Traces Classic (DPS)](/docs/license/capabilities/platform-extensions "Learn how consumption of Dynatrace platform extensions is calculated using the Dynatrace Platform Subscription model.") or [DDUs for custom traces (Dynatrace Classic License)](/docs/license/monitoring-consumption-classic/davis-data-units/custom-traces "Understand how DDU consumption is calculated for spans ingested via the Trace API.").
-* Without the Dynatrace resource detector and sampler: Usage incurs consumption of [Custom Traces Classic (DPS)](/docs/license/capabilities/platform-extensions "Learn how consumption of Dynatrace platform extensions is calculated using the Dynatrace Platform Subscription model.") or [DDUs for custom traces (Dynatrace Classic License)](/docs/license/monitoring-consumption-classic/davis-data-units/custom-traces "Understand how DDU consumption is calculated for spans ingested via the Trace API.").
+  + Classic Full-Stack or cloud-native Full-Stack deployments: Usage is included in [Full-Stack Monitoring (DPS)](../../../license/capabilities/app-infra-observability/full-stack-monitoring.md "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") and [Host Units (Dynatrace Classic License)](../../../license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
+  + For Application-Observability-only deployments: Usage incurs consumption of [Custom Traces Classic (DPS)](../../../license/capabilities/platform-extensions.md "Learn how consumption of Dynatrace platform extensions is calculated using the Dynatrace Platform Subscription model.") or [DDUs for custom traces (Dynatrace Classic License)](../../../license/monitoring-consumption-classic/davis-data-units/custom-traces.md "Understand how DDU consumption is calculated for spans ingested via the Trace API.").
+* Without the Dynatrace resource detector and sampler: Usage incurs consumption of [Custom Traces Classic (DPS)](../../../license/capabilities/platform-extensions.md "Learn how consumption of Dynatrace platform extensions is calculated using the Dynatrace Platform Subscription model.") or [DDUs for custom traces (Dynatrace Classic License)](../../../license/monitoring-consumption-classic/davis-data-units/custom-traces.md "Understand how DDU consumption is calculated for spans ingested via the Trace API.").
 
 ## Deployment considerations
 
@@ -48,7 +48,7 @@ It's possible to configure Istio OpenTelemetry tracing in a standalone deploymen
 
 ### Deployment in combination with Dynatrace Operator Recommended
 
-We recommend using the Istio OpenTelemetry integration in combination with a Dynatrace Operator deployment with [metadata enrichment](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") and [telemetry ingest endpoints](/docs/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.") enabled. Other features like OneAgent or ActiveGate are not required.
+We recommend using the Istio OpenTelemetry integration in combination with a Dynatrace Operator deployment with [metadata enrichment](../../setup-on-k8s/guides/metadata-automation/metadata-enrichment.md "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") and [telemetry ingest endpoints](../../setup-on-k8s/extend-observability-k8s/telemetry-ingest.md "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.") enabled. Other features like OneAgent or ActiveGate are not required.
 
 This provides the following benefits compared to standalone usage:
 
@@ -86,10 +86,10 @@ Dynatrace Operator
 
 Standalone
 
-1. Dynatrace Operator is [deployed](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes").
+1. Dynatrace Operator is [deployed](../../setup-on-k8s/deployment.md "Deploy Dynatrace Operator on Kubernetes").
 
-   * For optimal configuration, follow the guide for [deployment alongside Istio](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/istio-deployment "Deployment of Dynatrace Operator alongside Istio in various scenarios").
-2. [Telemetry ingest](/docs/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.") endpoints are enabled.
+   * For optimal configuration, follow the guide for [deployment alongside Istio](../../setup-on-k8s/guides/deployment-and-configuration/istio-deployment.md "Deployment of Dynatrace Operator alongside Istio in various scenarios").
+2. [Telemetry ingest](../../setup-on-k8s/extend-observability-k8s/telemetry-ingest.md "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.") endpoints are enabled.
 
 Either Dynatrace Operator is not deployed, or `enableIstio` is set to `false` in the DynaKube.
 

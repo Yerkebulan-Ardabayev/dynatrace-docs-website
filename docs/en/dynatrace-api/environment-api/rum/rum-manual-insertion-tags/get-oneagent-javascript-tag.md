@@ -11,7 +11,7 @@ scraped: 2026-03-02T21:19:10.698775
 * Reference
 * Updated on Sep 18, 2025
 
-Returns the most recent [OneAgent JavaScript tag](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats#oneagent-js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes configuration and a reference to the monitoring code.
+Returns the most recent [OneAgent JavaScript tag](../../../../observe/digital-experience/web-applications/initial-setup/snippet-formats.md#oneagent-js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes configuration and a reference to the monitoring code.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,7 +22,7 @@ Returns the most recent [OneAgent JavaScript tag](/docs/observe/digital-experien
 
 To execute this request, you need an access token with `rumManualInsertionTags.read` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Parameters
 
@@ -33,4 +33,4 @@ To learn how to obtain and use it, see [Tokens and authentication](/docs/discove
 
 ## Response
 
-The response includes a `text/plain` payload containing the most recent version of the [OneAgent JavaScript tag](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats#oneagent-js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.
+The response includes a `text/plain` payload containing the most recent version of the [OneAgent JavaScript tag](../../../../observe/digital-experience/web-applications/initial-setup/snippet-formats.md#oneagent-js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.

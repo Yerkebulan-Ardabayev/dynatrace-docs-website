@@ -23,7 +23,7 @@ scraped: 2026-03-06T21:14:51.943719
 
 * Практическое руководство
 
-[Читать руководство](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks)
+[Читать руководство](dynatrace-intelligence-integrations/davis-for-notebooks.md)
 
 ## Dynatrace MCP server
 
@@ -35,7 +35,7 @@ scraped: 2026-03-06T21:14:51.943719
 
 * Обзор
 
-[Перейти к обзору](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp)
+[Перейти к обзору](../../common/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp.md)
 
 ## Workflows
 
@@ -47,16 +47,16 @@ scraped: 2026-03-06T21:14:51.943719
 
 * Руководство
 
-[Читать руководство](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-dql)[#### Обобщение открытых проблем с помощью Workflows
+[Читать руководство](use-cases/copilot-in-workflows-dql.md)[#### Обобщение открытых проблем с помощью Workflows
 
 Используйте Dynatrace Intelligence (Preview) для обобщения открытых проблем и предложения шагов по их устранению.
 
 * Руководство
 
-[Читать руководство](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples)[#### ИИ в Workflows - Предиктивное обслуживание облачных дисков
+[Читать руководство](use-cases/copilot-in-workflows-examples.md)[#### ИИ в Workflows - Предиктивное обслуживание облачных дисков
 
 Автоматизируйте предиктивное обслуживание облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.
 
 * Руководство
 
-[Читать руководство](/docs/dynatrace-intelligence/use-cases/davis-for-workflows)
+[Читать руководство](use-cases/davis-for-workflows.md)

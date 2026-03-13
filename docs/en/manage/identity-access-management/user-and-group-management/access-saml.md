@@ -16,7 +16,7 @@ scraped: 2026-03-06T21:34:25.734911
 Dynatrace SaaS enables authentication through your organization's identity provider (IdP). If you want to use your organization's corporate credentials for authentication in Dynatrace, you can set up SAML to delegate authentication to your IdP.
 
 * For definitions of unfamiliar terms, see the [glossary](#glossary).
-* For background information such as an overview of federation types, use cases, and algorithms, see [Federation concepts](/docs/manage/identity-access-management/user-and-group-management/access-saml/federation-concepts "Federation concepts").
+* For background information such as an overview of federation types, use cases, and algorithms, see [Federation concepts](access-saml/federation-concepts.md "Federation concepts").
 
 ## Requirements and specifications
 
@@ -139,7 +139,7 @@ After you [create a fallback user account](#create-fallback) and [verify your ow
 
    Global cross-account federation also federates your user's identity based on the domain part of the email address. Its scope is global: it affects all other accounts in Dynatrace sharing the same domain part of the user's email. If your company has several Dynatrace accounts and you are using the same domain to sign in for all of your accounts, then the other accounts inherit the federation configuration automatically and use your identity provider for authentication.
 
-   For details, see [Federation types](/docs/manage/identity-access-management/user-and-group-management/access-saml/federation-concepts#federation-types "Federation concepts").
+   For details, see [Federation types](access-saml/federation-concepts.md#federation-types "Federation concepts").
 2. **SAML metadata**: configure the SAML metadata and then select **Next**.
 
    * **Name or description for configuration**
@@ -165,10 +165,10 @@ After you [create a fallback user account](#create-fallback) and [verify your ow
      Dynatrace supports all IdPs that support the SAML 2.0 standard. For frequently used IdPs,
      we have IdP-specific instructions for registering the SP data at your IdP and getting the IdP metadata. These examples were correct at the time of writing, but Dynatrace has no control over changes that may be made by your IdP.
 
-     + [AD FS instructions](/docs/manage/identity-access-management/user-and-group-management/access-saml/idp-specific/saml-ad-fs "Learn how to configure Dynatrace SSO in Active Directory Federation Services (AD FS).")
-     + [Azure instructions](/docs/manage/identity-access-management/user-and-group-management/access-saml/idp-specific/saml-azure "Learn how to configure Dynatrace SSO in Azure.")
-     + [Google Workspace instructions](/docs/manage/identity-access-management/user-and-group-management/access-saml/idp-specific/saml-google-workspace "Learn how to configure Dynatrace SSO in Google Workspace.")
-     + [Okta instructions](/docs/manage/identity-access-management/user-and-group-management/access-saml/idp-specific/saml-okta "Learn how to configure Dynatrace SSO in Okta.")
+     + [AD FS instructions](access-saml/idp-specific/saml-ad-fs.md "Learn how to configure Dynatrace SSO in Active Directory Federation Services (AD FS).")
+     + [Azure instructions](access-saml/idp-specific/saml-azure.md "Learn how to configure Dynatrace SSO in Azure.")
+     + [Google Workspace instructions](access-saml/idp-specific/saml-google-workspace.md "Learn how to configure Dynatrace SSO in Google Workspace.")
+     + [Okta instructions](access-saml/idp-specific/saml-okta.md "Learn how to configure Dynatrace SSO in Okta.")
 
      As mentioned in the IdP requirements section of this page, the `X509Certificate` appended to metadata needs to be signed using one of the following algorithms: `SHA256withRSA`, `SHA384withRSA`, or `SHA512withRSA`.
    * **Identity provider metadata**
@@ -427,7 +427,7 @@ In Dynatrace, all user group permissions are joined together. The user will be g
    * **Environment permissions**  
      Environment-related permissions for members of this group.
    * **Management zone permissions**  
-     [Management zone](/docs/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.")ârelated permissions for members of this group.
+     [Management zone](../permission-management/management-zones.md "Learn about management zones concepts, how to define management zones, and how to make the most of them.")ârelated permissions for members of this group.
 3. Select **Save**.  
    **Note**: Don't sign out of Dynatrace yet.
 4. Open a new browser instance and a new incognito window and sign in.

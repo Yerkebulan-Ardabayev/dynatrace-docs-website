@@ -18,11 +18,11 @@ While running, the ActiveGate container writes data to certain directories withi
 
 ### Size requirements
 
-See [ActiveGate directories](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.") for estimated size requirements for each directory.
+See [ActiveGate directories](../configuration/where-can-i-find-activegate-files.md "Find out where ActiveGate files are stored on Windows and Linux systems.") for estimated size requirements for each directory.
 
 ## Hardened security
 
-The ActiveGate [example deployment](/docs/ingest-from/dynatrace-activegate/activegate-in-container#deployment-example "Deploy a containerized ActiveGate.") has been hardened to minimize potential attacks: `securityContext.readOnlyRootFilesystem` is set to `true`.
+The ActiveGate [example deployment](../activegate-in-container.md#deployment-example "Deploy a containerized ActiveGate.") has been hardened to minimize potential attacks: `securityContext.readOnlyRootFilesystem` is set to `true`.
 
 This prevents the container from modifying any image content, so [directories](#directories) need to be set up using volumes.
 
@@ -122,4 +122,4 @@ mountPath: /var/log/dynatrace/gateway
 mountPath: /var/tmp/dynatrace/gateway
 ```
 
-Refer to [ActiveGate storage requirements](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-activegate-hardware-and-system-requirements#space-requirements "Learn what hardware and operating system requirements need to be taken into account before installing ActiveGate on Linux for routing and monitoring purposes.") for volume sizing.
+Refer to [ActiveGate storage requirements](../installation/linux/linux-activegate-hardware-and-system-requirements.md#space-requirements "Learn what hardware and operating system requirements need to be taken into account before installing ActiveGate on Linux for routing and monitoring purposes.") for volume sizing.

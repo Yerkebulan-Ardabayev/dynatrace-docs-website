@@ -16,14 +16,14 @@ Log Monitoring Classic
 
 Dynatrace Log Monitoring gives you the ability not only to view and analyze logs, but also to create metrics based on log data and use them throughout Dynatrace like any other metric. You can add them to your dashboard, include them in an analysis, and even create custom alerts.
 
-Log metric pricing is based on the Davis data units (DDUs) model. Check [DDUs for metrics](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.") to find out how you can estimate and track DDU consumption for log metrics.
+Log metric pricing is based on the Davis data units (DDUs) model. Check [DDUs for metrics](../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.") to find out how you can estimate and track DDU consumption for log metrics.
 
 Depending on the options you select during log metric creation, the new metric value can represent:
 
 * **Occurrence of log records** (available in Dynatrace version 1.206+)  
   The metric value will represent a count of occurrences of log records that match the query.
 * **Attribute value** (available in Dynatrace version 1.229+)  
-  The metric value can represent one of the aggregations that you can specify in [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+  The metric value can represent one of the aggregations that you can specify in [Data Explorer](../../explorer.md "Query for metrics and transform results to gain desired insights.").
 
 When Dynatrace ingests log data, it applies the defined query to the log data and, based on your log metric **Measure** selection, the metric value will therefore represent either a count of the log records that match the query or one of the following values for the specified attribute: `Average`, `Count`, `Maximum`, `Minimum`, `Sum`, `Median`, `Percentile 10th`, `Percentile 75th`, or `Percentile 90th`. The specified attribute must be of numeric type. Dynatrace will attempt to convert string type attributes to numbers as long as they match the following pattern:  
 `123`  
@@ -57,23 +57,23 @@ There are two ways to create a metric based on log data:
 
 1. Go to **Settings** > **Log Monitoring** > **Metrics extraction** and select **Add log metric**.
 2. In **Metric key**, append the metric name to the `log.` metric key.
-3. In **Matcher**, enter the Log Monitoring query to filter the log data for your metric. For details, see [Log viewer](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer#query-syntax "Learn how to use Dynatrace log viewer to analyze log data.").
+3. In **Matcher**, enter the Log Monitoring query to filter the log data for your metric. For details, see [Log viewer](log-viewer.md#query-syntax "Learn how to use Dynatrace log viewer to analyze log data.").
 
    I switched to Grail
 
-   If you switched to [Dynatrace Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), you may begin using the [DQL](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") functions in your Log Monitoring queries. For details, see [Log processing with classic pipeline](/docs/analyze-explore-automate/logs/lma-classic-log-processing#dql-functions "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.").
+   If you switched to [Dynatrace Grail](../../../platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), you may begin using the [DQL](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") functions in your Log Monitoring queries. For details, see [Log processing with classic pipeline](../../logs/lma-classic-log-processing.md#dql-functions "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.").
 4. Select a **Measure**:
 
    * **Occurrence of log records**âa count of occurrences of log records that match the query.
    * **Attribute value**âthe collection of measures for the attribute value of log records that match the query. If you select this option, you need to also set **Attribute** to the attribute whose values will be gauged.
 5. Optional Select **Add dimension** one or more times to add dimensions for your query result.  
-   Adding dimensions allows you to split the log metric occurrences by a specific log data attribute. If the attribute contains more than one value, the first attribute value will act as the metric dimension. For details, see [Log viewer](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer#log-dimensions "Learn how to use Dynatrace log viewer to analyze log data.").
+   Adding dimensions allows you to split the log metric occurrences by a specific log data attribute. If the attribute contains more than one value, the first attribute value will act as the metric dimension. For details, see [Log viewer](log-viewer.md#log-dimensions "Learn how to use Dynatrace log viewer to analyze log data.").
 6. Select **Save changes** to create the log metric.
 
 ### Create metric using log viewer
 
 1. Go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic**.
-2. Create a log viewer query or use log viewer **Available attributes** to extract the log data that interests you. For details, see [Log viewer](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer#query-syntax "Learn how to use Dynatrace log viewer to analyze log data.").
+2. Create a log viewer query or use log viewer **Available attributes** to extract the log data that interests you. For details, see [Log viewer](log-viewer.md#query-syntax "Learn how to use Dynatrace log viewer to analyze log data.").
 
 Advanced query
 
@@ -82,12 +82,12 @@ In the advanced mode, you can specify more complex criteria for log events by us
 3. Select **Create metric**. Your log viewer query is now displayed on the **Log metrics** page.
 4. Optionally, add dimensions for your query result.  
    Adding dimensions allows you to split the log metric occurrences according to specific log data attribute.
-   For details, see [Log viewer](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer#log-dimensions "Learn how to use Dynatrace log viewer to analyze log data.").
+   For details, see [Log viewer](log-viewer.md#log-dimensions "Learn how to use Dynatrace log viewer to analyze log data.").
 5. Append the metric name to the metric key `log.` and save changes to create the log metric.
 
 ### Unique dimensions limits
 
-If you create metrics with high cardinality (a lot of unique dimensions), you can reach your environment's [cardinality limit](/docs/analyze-explore-automate/metrics/limits "Reference of metrics powered by Grail"). To mitigate these limitations, you can:
+If you create metrics with high cardinality (a lot of unique dimensions), you can reach your environment's [cardinality limit](../../metrics/limits.md "Reference of metrics powered by Grail"). To mitigate these limitations, you can:
 
 * Narrow the query to decrease the number of logs in a metric.
 * Lower the cardinality of your dimensions.
@@ -108,14 +108,14 @@ To do that
 
 1. Ingest the log data via OneAgent and API.
 
-   * [Log ingestion via OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
-   * [Log ingestion API](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
+   * [Log ingestion via OneAgent](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
+   * [Log ingestion API](../../logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
 2. Extract the metric from the ingested log data.
 
-   * [Log processing with classic pipeline](/docs/analyze-explore-automate/logs/lma-classic-log-processing "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.")
+   * [Log processing with classic pipeline](../../logs/lma-classic-log-processing.md "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.")
 3. Create the log metric.
 
-   * [Log metrics](/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-metrics#log-metrics-create-rule "Create metrics based on log data and use them throughout Dynatrace like any other metric.")
+   * [Log metrics](../../logs/lma-log-processing/lma-log-metrics.md#log-metrics-create-rule "Create metrics based on log data and use them throughout Dynatrace like any other metric.")
 
 ## Editing log metric
 
@@ -141,5 +141,5 @@ In this example, we create and chart a log metric, save it to a dashboard, and c
 Now that you have defined the metric, you can chart it, pin it to a dashboard, and even create an alert based on it.
 
 * **Chart:** Go to **Data Explorer**, set **Select metricâ¦** to `log.error_PGI`, and select **Run query**.
-* **Dashboard:** After you create a chart, select **Pin to dashboard** to add the chart to one of your classic dashboards. For details, see [Pin tiles to your dashboard](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+* **Dashboard:** After you create a chart, select **Pin to dashboard** to add the chart to one of your classic dashboards. For details, see [Pin tiles to your dashboard](../../dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard.md "Learn to pin tiles to your dashboards.").
 * **Alert:** Go to **Settings** > **Anomaly detection** > **Metric events**, select **Add metric event**, and create a custom event based on `log.error_PGI`.

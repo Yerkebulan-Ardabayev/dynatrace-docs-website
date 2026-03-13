@@ -87,11 +87,11 @@ Page
 
 of 1
 
-User permissions can only be changed by your Dynatrace administrator in **Account Management** > **Identity and Access Management**. To learn more about user groups and assigning permissions, see [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+User permissions can only be changed by your Dynatrace administrator in **Account Management** > **Identity and Access Management**. To learn more about user groups and assigning permissions, see [Working with policies](../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
 
 ## Installation
 
-Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Make sure the app is [installed in your environment](../../manage/hub.md#install "See the information about Dynatrace Hub.").
 
 ## Enable or edit Anomaly Detection authorization settings
 
@@ -114,7 +114,7 @@ Use cases
 
 When you open the app, you can see the information about your existing anomaly detection configurations, such as:
 
-* StatusâIf there's an error, the status is displayed as **Error**, select it to open the detailed report in a [notebook](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
+* StatusâIf there's an error, the status is displayed as **Error**, select it to open the detailed report in a [notebook](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
 * Source
 * Type of anomaly prediction model
 
@@ -127,19 +127,19 @@ Go through the following processes to learn how to use ![Anomaly Detection - new
 [01Anomaly Detection DQL writing guide
 
 * How-to guide
-* Best practices for creating Anomaly Detection custom alert DQL queries.](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice)[02Anomaly Detection DQL optimization guide
+* Best practices for creating Anomaly Detection custom alert DQL queries.](anomaly-detection-app/davis-ad-dql-best-practice.md)[02Anomaly Detection DQL optimization guide
 
 * How-to guide
-* Best practices for optimizing Anomaly Detection DQL queries.](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization)[03Configure a simple custom alert
+* Best practices for optimizing Anomaly Detection DQL queries.](anomaly-detection-app/davis-ad-dql-optimization.md)[03Configure a simple custom alert
 
 * How-to guide
-* Learn how to create and edit simple custom alerts in the Anomaly Detection app.](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad)[04Configure an advanced custom alert
+* Learn how to create and edit simple custom alerts in the Anomaly Detection app.](anomaly-detection-app/configure-a-simple-ad.md)[04Configure an advanced custom alert
 
 * How-to guide
-* Learn how to create and edit advanced custom alerts in the Anomaly Detection app](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-an-advanced-ad)[05Anomaly Detection status types
+* Learn how to create and edit advanced custom alerts in the Anomaly Detection app](anomaly-detection-app/configure-an-advanced-ad.md)[05Anomaly Detection status types
 
 * Explanation
-* An explanation of Anomaly Detection status types](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types)
+* An explanation of Anomaly Detection status types](anomaly-detection-app/anomaly-detection-status-types.md)
 
 ## Custom alert actors
 
@@ -155,7 +155,7 @@ If you edit an existing custom alert created by a different actor, Dynatrace wil
 
 We recommend using service users as actors for custom alerts created for a department or organization use case. This makes the custom alert independent of the status of the user who maintains it.
 
-There are no specific authorization settings for a service user. The permissions granted to a service user should follow the least privilege principle. To learn more about managing service users, see [Service users](/docs/manage/identity-access-management/user-and-group-management/access-service-users "Service users").
+There are no specific authorization settings for a service user. The permissions granted to a service user should follow the least privilege principle. To learn more about managing service users, see [Service users](../../manage/identity-access-management/user-and-group-management/access-service-users.md "Service users").
 
 ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -167,7 +167,7 @@ Detect anomalies in timeseries using ![Anomaly Detection - new](https://dt-cdn.n
 
 ## Related topics
 
-* [Anomaly Detection status types](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types "An explanation of Anomaly Detection status types")
-* [Dynatrace Intelligence limits](/docs/dynatrace-intelligence/reference/davis-ai-limits "Reference limits of Dynatrace Intelligence components.")
+* [Anomaly Detection status types](anomaly-detection-app/anomaly-detection-status-types.md "An explanation of Anomaly Detection status types")
+* [Dynatrace Intelligence limits](../reference/davis-ai-limits.md "Reference limits of Dynatrace Intelligence components.")
 * [[Video] Elevating Security with Anomaly Detectionï»¿](https://www.youtube.com/watch?v=WDZUus-VxCE)
 * [[Video] Anomaly Detection and Data Observabilityï»¿](https://www.youtube.com/watch?v=HPQi63mQg3w)

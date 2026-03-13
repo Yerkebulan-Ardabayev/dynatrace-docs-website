@@ -17,15 +17,15 @@ scraped: 2026-03-06T21:28:16.242622
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Создайте мобильное приложение в Dynatrace**](/docs/observe/digital-experience/mobile-applications/instrument-android-app/get-started-with-android-monitoring#create-app-ui "Узнайте, какие шаги необходимо выполнить для инструментирования вашего Android-приложения для мониторинга с помощью Dynatrace.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Создайте мобильное приложение в Dynatrace**](get-started-with-android-monitoring.md#create-app-ui "Узнайте, какие шаги необходимо выполнить для инструментирования вашего Android-приложения для мониторинга с помощью Dynatrace.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Инструментируйте ваше Android-приложение**](/docs/observe/digital-experience/mobile-applications/instrument-android-app/get-started-with-android-monitoring#instrument-app "Узнайте, какие шаги необходимо выполнить для инструментирования вашего Android-приложения для мониторинга с помощью Dynatrace.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Инструментируйте ваше Android-приложение**](get-started-with-android-monitoring.md#instrument-app "Узнайте, какие шаги необходимо выполнить для инструментирования вашего Android-приложения для мониторинга с помощью Dynatrace.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Точная настройка инструментирования**](/docs/observe/digital-experience/mobile-applications/instrument-android-app/get-started-with-android-monitoring#adjust-instrumentation "Узнайте, какие шаги необходимо выполнить для инструментирования вашего Android-приложения для мониторинга с помощью Dynatrace.")
+**Точная настройка инструментирования**](get-started-with-android-monitoring.md#adjust-instrumentation "Узнайте, какие шаги необходимо выполнить для инструментирования вашего Android-приложения для мониторинга с помощью Dynatrace.")
 
 ## Шаг 1: Создание мобильного приложения в Dynatrace
 
-Перед инструментированием вашего Android-приложения создайте [мобильное приложение](/docs/observe/digital-experience/rum-concepts/applications#mobile "Узнайте о мониторируемых приложениях в Real User Monitoring и различных типах приложений, поддерживаемых Dynatrace.") в Dynatrace. Вы будете использовать это приложение для мониторинга и анализа вашего Android-приложения.
+Перед инструментированием вашего Android-приложения создайте [мобильное приложение](../../rum-concepts/applications.md#mobile "Узнайте о мониторируемых приложениях в Real User Monitoring и различных типах приложений, поддерживаемых Dynatrace.") в Dynatrace. Вы будете использовать это приложение для мониторинга и анализа вашего Android-приложения.
 
 Чтобы создать мобильное приложение в Dynatrace:
 
@@ -39,20 +39,20 @@ scraped: 2026-03-06T21:28:16.242622
 
 [### Плагин Dynatrace Android Gradle
 
-Для автоматического инструментирования вашего Android-проекта используйте плагин Dynatrace Android Gradle. Он интегрирует процесс автоматического инструментирования в сборку вашего Android-проекта.](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin "Узнайте, как плагин Dynatrace Android Gradle может автоматически инструментировать ваш Android-проект.")[### OneAgent SDK для Android
+Для автоматического инструментирования вашего Android-проекта используйте плагин Dynatrace Android Gradle. Он интегрирует процесс автоматического инструментирования в сборку вашего Android-проекта.](instrumentation-via-plugin.md "Узнайте, как плагин Dynatrace Android Gradle может автоматически инструментировать ваш Android-проект.")[### OneAgent SDK для Android
 
-Если вы не можете использовать наш плагин из-за технических ограничений, попробуйте ручное инструментирование с помощью OneAgent SDK.](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/manual-instrumentation "Используйте OneAgent SDK для Android для ручного инструментирования вашего Android-приложения.")
+Если вы не можете использовать наш плагин из-за технических ограничений, попробуйте ручное инструментирование с помощью OneAgent SDK.](instrumentation-via-oneagent-sdk/manual-instrumentation.md "Используйте OneAgent SDK для Android для ручного инструментирования вашего Android-приложения.")
 
 ## Шаг 3: Точная настройка инструментирования
 
 После инструментирования вашего Android-приложения вы можете настроить дополнительные параметры:
 
-* [Настройка связи с OneAgent SDK для Android](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/adjust-oneagent-communication "Настройте связь с OneAgent для передачи данных о пользовательском опыте в Dynatrace.")
-* [Настройка процесса автоматического инструментирования](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin/monitoring-capabilities "Настройте плагин Dynatrace Android Gradle для корректировки возможностей мониторинга OneAgent.")
-* Создавайте пользовательские действия, сообщайте об ошибках, отмечайте конкретных пользователей и многое другое с помощью [OneAgent SDK для Android](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android "Узнайте, как расширить мониторинг мобильного пользовательского опыта на Android с помощью OneAgent SDK.")
-* Включите и настройте [Session Replay при сбоях](/docs/observe/digital-experience/session-replay/session-replay-android "Настройте Session Replay для ваших Android-приложений, чтобы узнать, какие действия выполняют ваши пользователи.")
-* [Настройте параметры конфиденциальности данных](/docs/observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile "Используйте настройки конфиденциальности Dynatrace, чтобы обеспечить соответствие ваших мобильных приложений требованиям защиты данных вашего региона.")
-* Узнайте, какие [данные Dynatrace собирает для вашего Android-приложения](/docs/manage/data-privacy-and-security/data-privacy/user-privacy-for-android "Информация о типах данных, которые собирает OneAgent для Android. Вы можете использовать эту страницу при заполнении формы безопасности данных в Google Play Console."), для заполнения или обновления формы безопасности данных в Google Play Console
+* [Настройка связи с OneAgent SDK для Android](instrumentation-via-oneagent-sdk/adjust-oneagent-communication.md "Настройте связь с OneAgent для передачи данных о пользовательском опыте в Dynatrace.")
+* [Настройка процесса автоматического инструментирования](instrumentation-via-plugin/monitoring-capabilities.md "Настройте плагин Dynatrace Android Gradle для корректировки возможностей мониторинга OneAgent.")
+* Создавайте пользовательские действия, сообщайте об ошибках, отмечайте конкретных пользователей и многое другое с помощью [OneAgent SDK для Android](instrumentation-via-oneagent-sdk/oneagent-sdk-for-android.md "Узнайте, как расширить мониторинг мобильного пользовательского опыта на Android с помощью OneAgent SDK.")
+* Включите и настройте [Session Replay при сбоях](../../session-replay/session-replay-android.md "Настройте Session Replay для ваших Android-приложений, чтобы узнать, какие действия выполняют ваши пользователи.")
+* [Настройте параметры конфиденциальности данных](../additional-configuration/configure-rum-privacy-mobile.md "Используйте настройки конфиденциальности Dynatrace, чтобы обеспечить соответствие ваших мобильных приложений требованиям защиты данных вашего региона.")
+* Узнайте, какие [данные Dynatrace собирает для вашего Android-приложения](../../../../manage/data-privacy-and-security/data-privacy/user-privacy-for-android.md "Информация о типах данных, которые собирает OneAgent для Android. Вы можете использовать эту страницу при заполнении формы безопасности данных в Google Play Console."), для заполнения или обновления формы безопасности данных в Google Play Console
 
 ## Доступ к мастеру мобильного инструментирования
 
@@ -66,5 +66,5 @@ scraped: 2026-03-06T21:28:16.242622
 
 ## Связанные темы
 
-* [Плагин Dynatrace Android Gradle](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin "Узнайте, как плагин Dynatrace Android Gradle может автоматически инструментировать ваш Android-проект.")
-* [Ручное инструментирование приложения с помощью OneAgent SDK для Android](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/manual-instrumentation "Используйте OneAgent SDK для Android для ручного инструментирования вашего Android-приложения.")
+* [Плагин Dynatrace Android Gradle](instrumentation-via-plugin.md "Узнайте, как плагин Dynatrace Android Gradle может автоматически инструментировать ваш Android-проект.")
+* [Ручное инструментирование приложения с помощью OneAgent SDK для Android](instrumentation-via-oneagent-sdk/manual-instrumentation.md "Используйте OneAgent SDK для Android для ручного инструментирования вашего Android-приложения.")

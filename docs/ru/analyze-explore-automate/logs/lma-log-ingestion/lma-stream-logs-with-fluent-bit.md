@@ -25,9 +25,9 @@ scraped: 2026-03-06T21:36:44.146131
 
 Плагин Fluent Bit `http output` позволяет передавать журналы в конечную точку универсального приёма журналов Dynatrace.
 
-1. Получите [токен API Dynatrace](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования API Dynatrace.") с областью `logs.ingest` (Ingest Logs).
+1. Получите [токен API Dynatrace](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования API Dynatrace.") с областью `logs.ingest` (Ingest Logs).
 2. [Разверните Fluent Bit](https://dt-url.net/zd034je).
-3. Для отправки журналов в конечную точку [универсального приёма журналов](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Узнайте, как Dynatrace принимает данные журналов и каковы возможные ограничения такого приёма.") Dynatrace настройте [плагин http output](https://dt-url.net/0z034x4) через файл конфигурации.
+3. Для отправки журналов в конечную точку [универсального приёма журналов](../../log-monitoring/acquire-log-data/logs-classic-ingestion-api.md "Узнайте, как Dynatrace принимает данные журналов и каковы возможные ограничения такого приёма.") Dynatrace настройте [плагин http output](https://dt-url.net/0z034x4) через файл конфигурации.
 4. В основном файле конфигурации Fluent Bit добавьте раздел Output со следующими параметрами:
 
 ```
@@ -88,8 +88,8 @@ tls.verify On
 
 Вы можете разместить токен API в заголовке или в качестве переменной `GET` в URI (см. пример ниже).
 
-* Для Dynatrace SaaS конечная точка [универсального приёма журналов](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Узнайте, как Dynatrace принимает данные журналов и каковы возможные ограничения такого приёма.") доступна в вашей среде.
-* Если [Environment ActiveGate](/docs/ingest-from/dynatrace-activegate#agtypes "Понимание основных понятий, связанных с ActiveGate.") является вашим выбором для конечной точки в локальной среде, установите экземпляр ActiveGate.
+* Для Dynatrace SaaS конечная точка [универсального приёма журналов](../../log-monitoring/acquire-log-data/logs-classic-ingestion-api.md "Узнайте, как Dynatrace принимает данные журналов и каковы возможные ограничения такого приёма.") доступна в вашей среде.
+* Если [Environment ActiveGate](../../../ingest-from/dynatrace-activegate.md#agtypes "Понимание основных понятий, связанных с ActiveGate.") является вашим выбором для конечной точки в локальной среде, установите экземпляр ActiveGate.
 
   В Dynatrace Hub выберите **ActiveGate** > **Set up**.
 * Универсальный API приёма журналов v2 автоматически включается на ActiveGate.
@@ -164,6 +164,6 @@ Json_Date_Key": "timestamp"
 
 ## Устранение неполадок
 
-Посетите Dynatrace Community для получения руководств по устранению неполадок, а также ознакомьтесь с разделом [Устранение неполадок Log Management and Analytics](/docs/analyze-explore-automate/logs/lma-troubleshooting "Устранение проблем, связанных с настройкой и конфигурацией Log Management and Analytics.").
+Посетите Dynatrace Community для получения руководств по устранению неполадок, а также ознакомьтесь с разделом [Устранение неполадок Log Management and Analytics](../lma-troubleshooting.md "Устранение проблем, связанных с настройкой и конфигурацией Log Management and Analytics.").
 
 * [Устранение неполадок с журналами, принятыми через Fluent Bit](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718)

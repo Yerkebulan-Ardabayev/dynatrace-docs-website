@@ -29,4 +29,4 @@ All Dynatrace entities apply to this event.
 
 ## Related topics
 
-* [Davis AI](/docs/semantic-dictionary/model/davis "Get to know the Semantic Dictionary models related to Davis AI.")
+* [Davis AI](../../../../../common/semantic-dictionary/model/davis.md "Get to know the Semantic Dictionary models related to Davis AI.")

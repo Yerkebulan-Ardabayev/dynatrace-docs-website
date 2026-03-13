@@ -56,5 +56,5 @@ scraped: 2026-03-06T21:14:15.056939
 
 ## Связанные темы
 
-* [Dynatrace OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
-* [About OTLP metrics ingest](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
+* [Dynatrace OTLP API endpoints](../../../ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
+* [About OTLP metrics ingest](../../../ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")

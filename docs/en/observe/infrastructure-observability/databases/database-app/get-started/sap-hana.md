@@ -16,11 +16,11 @@ Use Dynatrace Extension framework to extend your application observability into 
 
 ## Prerequisites
 
-Ensure your system meets these [requirements](/docs/observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring#requirements "Monitor SAP HANA databases remotely to analyze SQL performance and database health.") for full feature support.
+Ensure your system meets these [requirements](../../extensions/sap-hana-database-remote-monitoring.md#requirements "Monitor SAP HANA databases remotely to analyze SQL performance and database health.") for full feature support.
 
 ## Set up SAP HANA extension for monitoring
 
-To set up and activate the extension, follow these [detailed activation steps](/docs/observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring#activation-and-setup "Monitor SAP HANA databases remotely to analyze SQL performance and database health.").
+To set up and activate the extension, follow these [detailed activation steps](../../extensions/sap-hana-database-remote-monitoring.md#activation-and-setup "Monitor SAP HANA databases remotely to analyze SQL performance and database health.").
 
 1. Add the database instance.
 2. Select the hosting type.
@@ -30,16 +30,16 @@ To set up and activate the extension, follow these [detailed activation steps](/
 
 ## Use cases
 
-You can benefit from SAP HANA monitoring in these [use cases](/docs/observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring#use-cases "Monitor SAP HANA databases remotely to analyze SQL performance and database health.").
+You can benefit from SAP HANA monitoring in these [use cases](../../extensions/sap-hana-database-remote-monitoring.md#use-cases "Monitor SAP HANA databases remotely to analyze SQL performance and database health.").
 
 ## Feature sets
 
-[Feature sets](/docs/observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring#feature-sets "Monitor SAP HANA databases remotely to analyze SQL performance and database health.") restrict which metrics are collected when you activate the extension.
+[Feature sets](../../extensions/sap-hana-database-remote-monitoring.md#feature-sets "Monitor SAP HANA databases remotely to analyze SQL performance and database health.") restrict which metrics are collected when you activate the extension.
 
 ## FAQ and troubleshooting
 
-For complete details, go to the [FAQ](/docs/observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring#faq "Monitor SAP HANA databases remotely to analyze SQL performance and database health.") section.
+For complete details, go to the [FAQ](../../extensions/sap-hana-database-remote-monitoring.md#faq "Monitor SAP HANA databases remotely to analyze SQL performance and database health.") section.
 
 ## Related topics
 
-* [SAP HANA Database (remote monitoring) extension](/docs/observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring "Monitor SAP HANA databases remotely to analyze SQL performance and database health.")
+* [SAP HANA Database (remote monitoring) extension](../../extensions/sap-hana-database-remote-monitoring.md "Monitor SAP HANA databases remotely to analyze SQL performance and database health.")

@@ -302,7 +302,7 @@ The chart interactions available to you depend on your query and visualization. 
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host**âopens the selection in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   In general, if there are recommended apps to open the selected item, the menu offers direct links to those apps, followed by an **Open with** option to select a different target app.
-* **Open with**âfor details, see [Drilldowns and navigation](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with**âfor details, see [Drilldowns and navigation](../drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Title
 
@@ -322,7 +322,7 @@ The title will be displayed as `Current ð status is Good`.
 
 ## Visualization
 
-If you aren't sure that you chose the right visualization, use the [visualization selector](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
+If you aren't sure that you chose the right visualization, use the [visualization selector](../edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") to try different visualizations.
 
 ## Data mapping
 
@@ -368,7 +368,7 @@ Advantages:
 * Improves transparency and prevents potentially misleading interpretations.
 * No need for multiple visualizations of related results. All data is displayed in a consistent format on a single grid.
 
-If you prefer the previous behavior (without the grid), you can apply a DQL [limit](/docs/platform/grail/dynatrace-query-language/commands/ordering-commands#limit "DQL ordering commands") and a [sort](/docs/platform/grail/dynatrace-query-language/commands/ordering-commands#sort "DQL ordering commands") command using [DQL](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.") or the [Explore interface](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data "Explore your data with our point-and-click interface.").
+If you prefer the previous behavior (without the grid), you can apply a DQL [limit](../../../platform/grail/dynatrace-query-language/commands/ordering-commands.md#limit "DQL ordering commands") and a [sort](../../../platform/grail/dynatrace-query-language/commands/ordering-commands.md#sort "DQL ordering commands") command using [DQL](../../../platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.") or the [Explore interface](../explore-data.md "Explore your data with our point-and-click interface.").
 
 ## Single value options
 

@@ -24,7 +24,7 @@ scraped: 2026-03-06T21:28:53.298305
 
 Для выполнения этого запроса необходим токен доступа с областью действия `rumCookieNames.read`.
 
-Чтобы узнать, как получить и использовать токен, см. раздел [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как получить и использовать токен, см. раздел [Токены и аутентификация](../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 
@@ -182,5 +182,5 @@ scraped: 2026-03-06T21:28:53.298305
 
 ## Связанные темы
 
-* [Real User Monitoring](/docs/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.")
-* [Cookie-файлы](/docs/manage/data-privacy-and-security/data-privacy/cookies "Learn about first-party cookie usage in Dynatrace.")
+* [Real User Monitoring](../../../observe/digital-experience/rum-concepts/rum-overview.md "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.")
+* [Cookie-файлы](../../../manage/data-privacy-and-security/data-privacy/cookies.md "Learn about first-party cookie usage in Dynatrace.")

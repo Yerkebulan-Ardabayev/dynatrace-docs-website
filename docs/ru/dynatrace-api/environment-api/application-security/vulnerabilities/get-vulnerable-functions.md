@@ -24,7 +24,7 @@ scraped: 2026-03-04T21:39:09.965555
 
 Для выполнения этого запроса необходим токен доступа с областью действия `securityProblems.read`.
 
-Подробнее о получении и использовании токена см. в разделе [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Подробнее о получении и использовании токена см. в разделе [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 
@@ -466,5 +466,5 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 
 ## Связанные темы
 
-* [Application Security](/docs/secure/application-security "Доступ к функциям Dynatrace Application Security.")
-* [Davis Security Advisor API](/docs/dynatrace-api/environment-api/application-security/davis-security-advice "Просмотр рекомендаций Davis Security Advisor через Dynatrace API.")
+* [Application Security](../../../../secure/application-security.md "Доступ к функциям Dynatrace Application Security.")
+* [Davis Security Advisor API](../davis-security-advice.md "Просмотр рекомендаций Davis Security Advisor через Dynatrace API.")

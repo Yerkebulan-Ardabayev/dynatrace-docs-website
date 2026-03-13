@@ -23,15 +23,15 @@ Dynatrace поддерживает приём метрик Prometheus типов
 ### Counter
 
 Метрика Prometheus типа Counter[1](#fn-1-1-def) — это монотонно возрастающее значение, обычно используемое для измерений, которые могут только увеличиваться или оставаться постоянными.
-Dynatrace использует тип метрики [`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works."), который применяет **дельта-кодирование**[2](#fn-1-2-def) для снижения избыточности данных при приёме.
+Dynatrace использует тип метрики [`COUNT`](../../../../ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works."), который применяет **дельта-кодирование**[2](#fn-1-2-def) для снижения избыточности данных при приёме.
 Таким образом, значение, отображаемое в Dynatrace, отражает не фактическое значение счётчика, а его изменение (дельту) между наблюдениями.
 
 Этот метод приводит к тому, что метрика типа Counter появляется с задержкой в одну минуту по сравнению с метрикой типа [Gauge](#gauge), если сбор данных для обоих типов начался одновременно.
-Подробнее см. в разделе [справочника по протоколу приёма метрик](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+Подробнее см. в разделе [справочника по протоколу приёма метрик](../../../../ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
 
 Приём метрик типа Counter
 
-**Дельта-кодирование**, используемое типом приёма Dynatrace [`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works."), означает, что принятое значение *не* отражает фактическое значение, а является разностью между измерениями.
+**Дельта-кодирование**, используемое типом приёма Dynatrace [`COUNT`](../../../../ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works."), означает, что принятое значение *не* отражает фактическое значение, а является разностью между измерениями.
 
 1
 
@@ -43,7 +43,7 @@ Dynatrace использует тип метрики [`COUNT`](/docs/ingest-from
 
 ### Gauge
 
-В отличие от [Counter](#counter), метрика типа Gauge[1](#fn-2-1-def) хранит одно числовое значение, которое может увеличиваться и уменьшаться. Обычно используется для измеренных значений, таких как текущее использование памяти или количество пользователей онлайн. В Dynatrace для приёма данных используется тип метрики [`GAUGE`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#gauge-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+В отличие от [Counter](#counter), метрика типа Gauge[1](#fn-2-1-def) хранит одно числовое значение, которое может увеличиваться и уменьшаться. Обычно используется для измеренных значений, таких как текущее использование памяти или количество пользователей онлайн. В Dynatrace для приёма данных используется тип метрики [`GAUGE`](../../../../ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#gauge-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
 
 1
 
@@ -127,7 +127,7 @@ Dynatrace собирает метрики из любых подов, аннот
 Использование символа `*` внутри фильтра, например `redis_*_bytes`, не поддерживается.
 
 Фильтр применяется к исходному ключу метрики, поэтому важно знать, что Dynatrace автоматически добавляет суффиксы к некоторым ключам метрик в зависимости от исходного ключа метрики и её типа.
-Подробнее см. в разделе [Payload](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#payload "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+Подробнее см. в разделе [Payload](../../../../ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#payload "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
 
 Для типов summary и histogram фильтр применяется ко всему семейству метрик, как указано в строке `#TYPE` формата OpenMetrics.
 Например, если семейство метрик типа summary `foo_seconds` отфильтровано, все точки метрик, включая `foo_seconds_count` и `foo_seconds_sum`, также фильтруются.
@@ -721,13 +721,13 @@ image: myregistry/myimage:mytag
 
 ## Просмотр метрик на дашборде
 
-Метрики из экспортёров Prometheus доступны в Data Explorer для создания пользовательских графиков. Выберите **Create custom chart** и нажмите **Try it out** в верхнем баннере. Подробнее см. в разделе [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+Метрики из экспортёров Prometheus доступны в Data Explorer для создания пользовательских графиков. Выберите **Create custom chart** и нажмите **Try it out** в верхнем баннере. Подробнее см. в разделе [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.").
 
 Вы можете просто искать ключи метрик всех доступных метрик и определять способы анализа и построения графиков. После этого можно закрепить графики на дашборде.
 
 ## Оповещения на основе метрик
 
-Вы также можете создавать пользовательские оповещения на основе метрик, собираемых Prometheus. Перейдите в **Settings** > **Anomaly detection** > **Metric events** и выберите **Add metric event**. На странице **Add metric event** найдите метрику Prometheus по её ключу и настройте оповещение. Подробнее см. в разделе [Metric events for alerting](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace").
+Вы также можете создавать пользовательские оповещения на основе метрик, собираемых Prometheus. Перейдите в **Settings** > **Anomaly detection** > **Metric events** и выберите **Add metric event**. На странице **Add metric event** найдите метрику Prometheus по её ключу и настройте оповещение. Подробнее см. в разделе [Metric events for alerting](../../../../dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace").
 
 ## Ограничения
 
@@ -766,14 +766,14 @@ image: myregistry/myimage:mytag
 
 ## Потребление при мониторинге
 
-Если у вас лицензирование DPS, вы можете получить дополнительную информацию о потреблении пользовательских метрик в вашей среде из нашей [документации по лицензированию](/docs/license/capabilities/platform-extensions/custom-metrics-classic "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
+Если у вас лицензирование DPS, вы можете получить дополнительную информацию о потреблении пользовательских метрик в вашей среде из нашей [документации по лицензированию](../../../../license/capabilities/platform-extensions/custom-metrics-classic.md "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
 
-* Full-Stack Monitoring [включает фиксированное количество точек данных пользовательских метрик](/docs/license/capabilities/app-infra-observability/full-stack-monitoring#full-stack-metrics "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") для каждого ГиБ, учитываемого в потреблении ГиБ-часов вашей среды для контейнеров с кодовыми модулями.
+* Full-Stack Monitoring [включает фиксированное количество точек данных пользовательских метрик](../../../../license/capabilities/app-infra-observability/full-stack-monitoring.md#full-stack-metrics "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") для каждого ГиБ, учитываемого в потреблении ГиБ-часов вашей среды для контейнеров с кодовыми модулями.
 
-Если у вас классическое лицензирование Dynatrace, метрики Prometheus в средах Kubernetes подпадают под [потребление DDU](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+Если у вас классическое лицензирование Dynatrace, метрики Prometheus в средах Kubernetes подпадают под [потребление DDU](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 
-* Метрики Prometheus из экспортёров, работающих на хостах, отслеживаемых OneAgent, сначала вычитаются из квоты [включённых метрик на единицу хоста](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."). После превышения этой квоты любые дополнительные метрики потребляют [DDU](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
-* Метрики Prometheus из экспортёров, работающих на хостах, не отслеживаемых OneAgent, всегда потребляют [DDU](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+* Метрики Prometheus из экспортёров, работающих на хостах, отслеживаемых OneAgent, сначала вычитаются из квоты [включённых метрик на единицу хоста](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."). После превышения этой квоты любые дополнительные метрики потребляют [DDU](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+* Метрики Prometheus из экспортёров, работающих на хостах, не отслеживаемых OneAgent, всегда потребляют [DDU](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 
 ## Устранение неполадок
 
@@ -781,5 +781,5 @@ image: myregistry/myimage:mytag
 
 ## Связанные темы
 
-* [Metrics Classic](/docs/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.")
-* [Настройка Dynatrace в Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Metrics Classic](../../../../analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")
+* [Настройка Dynatrace в Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")

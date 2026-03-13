@@ -24,7 +24,7 @@ scraped: 2026-03-06T21:30:19.746089
 
 ## Решение
 
-Dynatrace интегрируется с GitHub, обогащая [оповещения Dependabot](https://docs.github.com/en/code-security/dependabot/dependabot-alerts/about-dependabot-alerts) контекстом выполнения и валидацией [Runtime Vulnerability Analytics (RVA)](/docs/secure/application-security/vulnerability-analytics "Мониторинг, визуализация, анализ и устранение уязвимостей сторонних компонентов и на уровне кода."). Это позволяет GitHub Copilot выполнять целевые действия:
+Dynatrace интегрируется с GitHub, обогащая [оповещения Dependabot](https://docs.github.com/en/code-security/dependabot/dependabot-alerts/about-dependabot-alerts) контекстом выполнения и валидацией [Runtime Vulnerability Analytics (RVA)](../application-security/vulnerability-analytics.md "Мониторинг, визуализация, анализ и устранение уязвимостей сторонних компонентов и на уровне кода."). Это позволяет GitHub Copilot выполнять целевые действия:
 
 * **Подтверждённые уязвимости исправляются автоматически**: GitHub Copilot открывает pull request с безопасным исправлением для каждой уязвимости, подтверждённой Dynatrace.
 
@@ -41,8 +41,8 @@ Dynatrace интегрируется с GitHub, обогащая [оповеще
 
 Вы можете реализовать это решение двумя способами в зависимости от того, где вы хотите проводить сортировку уязвимостей и инициировать устранение:
 
-* [**Рабочий процесс на основе GitHub**](#github-based): использует [Dynatrace MCP Server](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp "Узнайте о сервере Dynatrace MCP и способах подключения к нему."), интегрированный с [агентом GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent) или в качестве пользовательского агента безопасности Dynatrace [custom agent](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents), запускаемого через [рабочие процессы GitHub Actions](https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows).
-* [**Рабочий процесс на основе Dynatrace**](#dynatrace-driven): использует [Dynatrace ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Автоматизация IT-процессов с помощью Dynatrace Workflows.") в качестве триггера и механизма обработки, с [генеративным ИИ](https://docs.github.com/en/copilot) в качестве инструмента анализа на основе ИИ.
+* [**Рабочий процесс на основе GitHub**](#github-based): использует [Dynatrace MCP Server](../../../common/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp.md "Узнайте о сервере Dynatrace MCP и способах подключения к нему."), интегрированный с [агентом GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent) или в качестве пользовательского агента безопасности Dynatrace [custom agent](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents), запускаемого через [рабочие процессы GitHub Actions](https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows).
+* [**Рабочий процесс на основе Dynatrace**](#dynatrace-driven): использует [Dynatrace ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](../../analyze-explore-automate/workflows.md "Автоматизация IT-процессов с помощью Dynatrace Workflows.") в качестве триггера и механизма обработки, с [генеративным ИИ](https://docs.github.com/en/copilot) в качестве инструмента анализа на основе ИИ.
 
 ## Рабочий процесс на основе GitHub
 
@@ -65,9 +65,9 @@ Dynatrace интегрируется с GitHub, обогащая [оповеще
 
 1. Настройка Dynatrace
 
-* Настройте мониторинг с помощью [Dynatrace OneAgent](/docs/platform/oneagent "Узнайте о возможностях мониторинга OneAgent.") для производственных сервисов.
-* [Включите Runtime Vulnerability Analytics](/docs/secure/application-security/vulnerability-analytics#start "Мониторинг, визуализация, анализ и устранение уязвимостей.").
-* [Создайте токен платформы Dynatrace](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Создание персонализированных токенов платформы для доступа к сервисам Dynatrace через API.") с необходимыми разрешениями для доступа к серверу MCP и запросов к различным типам событий.
+* Настройте мониторинг с помощью [Dynatrace OneAgent](../../platform/oneagent.md "Узнайте о возможностях мониторинга OneAgent.") для производственных сервисов.
+* [Включите Runtime Vulnerability Analytics](../application-security/vulnerability-analytics.md#start "Мониторинг, визуализация, анализ и устранение уязвимостей.").
+* [Создайте токен платформы Dynatrace](../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Создание персонализированных токенов платформы для доступа к сервисам Dynatrace через API.") с необходимыми разрешениями для доступа к серверу MCP и запросов к различным типам событий.
 
   1. Список разрешений
 
@@ -82,7 +82,7 @@ Dynatrace интегрируется с GitHub, обогащая [оповеще
   + `storage:buckets:read`
   + `storage:bucket-definitions:read`
   + `storage:security.events:read`
-* [Запросите доступ к Dynatrace MCP Server](/docs/whats-new/preview-releases#mcp-server "Узнайте о Preview-релизах и способах участия в них.").
+* [Запросите доступ к Dynatrace MCP Server](../../../common/whats-new/preview-releases.md#mcp-server "Узнайте о Preview-релизах и способах участия в них.").
 
 2. Подготовка репозитория GitHub
 
@@ -168,8 +168,8 @@ Dynatrace интегрируется с GitHub, обогащая [оповеще
 ![Рабочий процесс на основе Dynatrace — как это работает](https://dt-cdn.net/images/image-61-2188-3661817c05.png)
 
 1. GitHub Advanced Security (GHAS) обнаруживает уязвимости через [Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide).
-2. [Интеграция Dynatrace с GHAS](/docs/secure/threat-observability/security-events-ingest/ingest-github-advanced-security "Приём журналов аудита и событий безопасности GitHub Advanced Security в Dynatrace.") принимает эти оповещения с помощью расширения GitHub Advanced Security и сохраняет их в [Grail](/docs/platform/grail "Информация о том, что и как можно запрашивать в Dynatrace.") для анализа.
-3. Рабочий процесс Dynatrace выполняет сортировку оповещений с использованием контекста выполнения и действия генеративного ИИ Dynatrace Intelligence для валидации. Подробнее см. [Приложение Dynatrace Intelligence (Preview)](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows "Узнайте, как автоматизировать действия и ответы генеративного ИИ Dynatrace Intelligence с помощью рабочих процессов.").
+2. [Интеграция Dynatrace с GHAS](../threat-observability/security-events-ingest/ingest-github-advanced-security.md "Приём журналов аудита и событий безопасности GitHub Advanced Security в Dynatrace.") принимает эти оповещения с помощью расширения GitHub Advanced Security и сохраняет их в [Grail](../../platform/grail.md "Информация о том, что и как можно запрашивать в Dynatrace.") для анализа.
+3. Рабочий процесс Dynatrace выполняет сортировку оповещений с использованием контекста выполнения и действия генеративного ИИ Dynatrace Intelligence для валидации. Подробнее см. [Приложение Dynatrace Intelligence (Preview)](../../dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows.md "Узнайте, как автоматизировать действия и ответы генеративного ИИ Dynatrace Intelligence с помощью рабочих процессов.").
 4. Создаётся GitHub issue и назначается GitHub Copilot, включая как подтверждённые, так и неподтверждённые уязвимости.
 5. Агент GitHub Copilot автоматически подбирает задачу, устраняет подтверждённые уязвимости и отклоняет неподтверждённые.
 6. Разработчики проверяют и сливают pull request с применёнными исправлениями.
@@ -180,10 +180,10 @@ Dynatrace интегрируется с GitHub, обогащая [оповеще
 
 1. Настройка Dynatrace
 
-* [Включите Runtime Vulnerability Analytics](/docs/secure/application-security/vulnerability-analytics#start "Мониторинг, визуализация, анализ и устранение уязвимостей.").
-* [Запросите доступ к Dynatrace MCP Server](/docs/whats-new/preview-releases#mcp-server "Узнайте о Preview-релизах и способах участия в них.").
-* [Создайте токен платформы Dynatrace](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Создание персонализированных токенов платформы для доступа к сервисам Dynatrace через API.") с необходимыми разрешениями для доступа к серверу MCP и запросов к различным типам событий.
-* [Установите и настройте интеграцию с GitHub Advanced Security](/docs/secure/threat-observability/security-events-ingest/ingest-github-advanced-security "Приём журналов аудита и событий безопасности GitHub Advanced Security в Dynatrace.") в Dynatrace.
+* [Включите Runtime Vulnerability Analytics](../application-security/vulnerability-analytics.md#start "Мониторинг, визуализация, анализ и устранение уязвимостей.").
+* [Запросите доступ к Dynatrace MCP Server](../../../common/whats-new/preview-releases.md#mcp-server "Узнайте о Preview-релизах и способах участия в них.").
+* [Создайте токен платформы Dynatrace](../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Создание персонализированных токенов платформы для доступа к сервисам Dynatrace через API.") с необходимыми разрешениями для доступа к серверу MCP и запросов к различным типам событий.
+* [Установите и настройте интеграцию с GitHub Advanced Security](../threat-observability/security-events-ingest/ingest-github-advanced-security.md "Приём журналов аудита и событий безопасности GitHub Advanced Security в Dynatrace.") в Dynatrace.
 
 2. Подготовка репозитория GitHub
 

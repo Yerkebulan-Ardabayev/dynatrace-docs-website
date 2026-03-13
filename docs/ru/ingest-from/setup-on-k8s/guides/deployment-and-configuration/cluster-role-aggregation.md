@@ -24,7 +24,7 @@ Dynatrace Operator версии 1.8.0+
 
 По умолчанию установка Dynatrace Operator создаёт ClusterRole `dynatrace-kubernetes-monitoring-default`, содержащую стандартный набор разрешений, необходимых для мониторинга платформы Kubernetes. Эта ClusterRole автоматически помечается меткой `rbac.dynatrace.com/aggregate-to-monitoring: "true"`, поэтому её разрешения включаются в агрегированную роль.
 
-Разрешения по умолчанию задокументированы в [справочнике по безопасности](/docs/ingest-from/setup-on-k8s/reference/security#activegate "This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require") и охватывают стандартный мониторинг:
+Разрешения по умолчанию задокументированы в [справочнике по безопасности](../../reference/security.md#activegate "This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require") и охватывают стандартный мониторинг:
 
 * подов, развёртываний, StatefulSet и других ресурсов рабочих нагрузок;
 * сервисов и конечных точек;

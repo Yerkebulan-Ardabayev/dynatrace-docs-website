@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:11:50.165388
 * 3-min read
 * Updated on Apr 25, 2024
 
-Для расширенных возможностей и автоматизации рабочих процессов (например, адресных уведомлений и устранения проблем) см. [Workflows Connectors](/docs/analyze-explore-automate/workflows/actions "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
+Для расширенных возможностей и автоматизации рабочих процессов (например, адресных уведомлений и устранения проблем) см. [Workflows Connectors](../../workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
 
 Dynatrace предлагает [готовую интеграцию](#out-of-the-box-integration), которая автоматически передаёт уведомления о проблемах Dynatrace в вашу среду PagerDuty. Эта интеграция предоставляет ответственным сотрудникам PagerDuty ссылку на карточку проблемы в Dynatrace.
 
@@ -60,5 +60,5 @@ Dynatrace предлагает [готовую интеграцию](#out-of-the
 
 ### Дополнительная информация
 
-* Общие сведения о настройке пользовательской интеграции в Dynatrace см. в разделе [Webhook integration](/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration "Learn how to integrate problem-notifications using a custom webhook.").
+* Общие сведения о настройке пользовательской интеграции в Dynatrace см. в разделе [Webhook integration](webhook-integration.md "Learn how to integrate problem-notifications using a custom webhook.").
 * Документацию PagerDuty по интеграции PagerDuty с Dynatrace через пользовательский webhook см. в [Dynatrace Integration Guideï»¿](https://www.pagerduty.com/docs/guides/dynatrace-integration-guide/) на сайте PagerDuty.

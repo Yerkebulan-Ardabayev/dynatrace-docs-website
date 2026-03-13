@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:26:35.434463
 * 12-min read
 * Updated on Apr 07, 2025
 
-The DDU consumption model outlined here for Log Management and Analytics only affects Dynatrace SaaS environments that are activated for Dynatrace Grail for log data management. DDU consumption for all other DDU capability types, including [Log Monitoring for Dynatrace SaaS & Managed](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic."), remains unchanged. For details about activating Log Management and Analytics for your Dynatrace environment, contact a Dynatrace product expert via live chat within your Dynatrace environment.
+The DDU consumption model outlined here for Log Management and Analytics only affects Dynatrace SaaS environments that are activated for Dynatrace Grail for log data management. DDU consumption for all other DDU capability types, including [Log Monitoring for Dynatrace SaaS & Managed](log-monitoring-consumption.md "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic."), remains unchanged. For details about activating Log Management and Analytics for your Dynatrace environment, contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 This page explains how DDUs are consumed by Dynatrace Log Management and Analytics and how you can estimate and track your environmentâs DDU consumption.
 
@@ -147,4 +147,4 @@ If you cancel a query execution, all data read before the cancellation will be f
 ## Related topics
 
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
-* [Log Monitoring Classic](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* [Log Monitoring Classic](../../../analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")

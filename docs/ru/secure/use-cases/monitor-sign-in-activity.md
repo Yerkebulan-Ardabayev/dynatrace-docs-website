@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:15:04.248703
 
 По мере внедрения организациями облачных технологий мониторинг логов входа в систему становится критически важным для обнаружения аномалий, расследования подозрительной активности и обеспечения соответствия нормативным требованиям. Видимость поведения при входе в реальном времени помогает быстро реагировать на риски безопасности, защищать идентификацию пользователей и обеспечивать безопасность критически важных ресурсов. Это также предоставляет практическую информацию о скомпрометированных учётных записях, злоумышленниках внутри организации и паттернах поведения пользователей, помогая принимать стратегические решения по управлению доступом, политикам устройств и использованию приложений.
 
-Хотя следующий сценарий фокусируется на логах Microsoft Entra ID в качестве примера, описанный подход универсально применим к любому облачному провайдеру, провайдеру доступа или идентификации, интегрированному с Dynatrace. Это стало возможным благодаря Semantic Dictionary и стандартизированному отображению данных на определённую [семантическую модель](/docs/semantic-dictionary/model/log "Познакомьтесь с моделями Semantic Dictionary, связанными с анализом логов.").
+Хотя следующий сценарий фокусируется на логах Microsoft Entra ID в качестве примера, описанный подход универсально применим к любому облачному провайдеру, провайдеру доступа или идентификации, интегрированному с Dynatrace. Это стало возможным благодаря Semantic Dictionary и стандартизированному отображению данных на определённую [семантическую модель](../../semantic-dictionary/model/log.md "Познакомьтесь с моделями Semantic Dictionary, связанными с анализом логов.").
 
 При условии, что логи входа от поддерживаемого провайдера идентификации загружены в Dynatrace, вы можете следовать описанным ниже шагам для эффективного мониторинга этих логов.
 
@@ -41,12 +41,12 @@ scraped: 2026-03-06T21:15:04.248703
 
 ## Предварительные требования
 
-* Знание [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.") и [как использовать DQL-запросы](/docs/platform/grail/dynatrace-query-language/dql-guide "Узнайте, как работает DQL и каковы ключевые концепции DQL.").
+* Знание [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.") и [как использовать DQL-запросы](../../platform/grail/dynatrace-query-language/dql-guide.md "Узнайте, как работает DQL и каковы ключевые концепции DQL.").
 * Отправка логов входа Microsoft Entra ID в Dynatrace. Есть два варианта потоковой передачи логов:
 
-  + [Azure Native Dynatrace Service](/docs/ingest-from/microsoft-azure-services/azure-platform/azure-native-integration "Настройте и сконфигурируйте среду Dynatrace SaaS через Azure Marketplace.")
-  + [Azure Log Forwarder](/docs/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Используйте пересылку логов Azure для загрузки логов Azure.")
-* Следуйте инструкциям в разделе [Создание конвейера для обработки](/docs/platform/openpipeline/use-cases/tutorial-technology-processor#pipeline "Настройте конвейер обработки для структурирования технологических логов в соответствии с Dynatrace Semantic Dictionary.") для настройки среды OpenPipeline. Выберите **Azure Entra ID Audit Logs** в качестве встроенного процессора.
+  + [Azure Native Dynatrace Service](../../ingest-from/microsoft-azure-services/azure-platform/azure-native-integration.md "Настройте и сконфигурируйте среду Dynatrace SaaS через Azure Marketplace.")
+  + [Azure Log Forwarder](../../ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure.md "Используйте пересылку логов Azure для загрузки логов Azure.")
+* Следуйте инструкциям в разделе [Создание конвейера для обработки](../../platform/openpipeline/use-cases/tutorial-technology-processor.md#pipeline "Настройте конвейер обработки для структурирования технологических логов в соответствии с Dynatrace Semantic Dictionary.") для настройки среды OpenPipeline. Выберите **Azure Entra ID Audit Logs** в качестве встроенного процессора.
 
 ## Начало работы
 
@@ -55,7 +55,7 @@ scraped: 2026-03-06T21:15:04.248703
 Используйте наш пример дашборда для просмотра активности входа пользователей в ваших облачных средах.
 
 1. Скачайте [пример дашборда с GitHub](https://dt-url.net/ur03wvb).
-2. Откройте [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени."), выберите ![Import](https://dt-cdn.net/images/dashboards-app-dashboards-page-import-6a06e645df.svg "Import") **Upload**, затем выберите скачанный файл.
+2. Откройте [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени."), выберите ![Import](https://dt-cdn.net/images/dashboards-app-dashboards-page-import-6a06e645df.svg "Import") **Upload**, затем выберите скачанный файл.
 
 2. Настройка фильтров
 
@@ -87,7 +87,7 @@ scraped: 2026-03-06T21:15:04.248703
 
 Выполнить запрос
 
-Вы можете воспроизвести график **Sign-in activity outcomes over time** в [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Объедините функциональность Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз.") или [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном, настраиваемом рабочем пространстве.") с помощью следующего фрагмента DQL:
+Вы можете воспроизвести график **Sign-in activity outcomes over time** в [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Объедините функциональность Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз.") или [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном, настраиваемом рабочем пространстве.") с помощью следующего фрагмента DQL:
 
 ```
 fetch logs
@@ -131,7 +131,7 @@ Failure = countIf(audit.result!="Succeeded", default:0)
 
 Топ-10 пользователей по неудачным попыткам входа
 
-Вы можете воспроизвести график **Top 10 sign-in users** в [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Объедините функциональность Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз.") или [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном, настраиваемом рабочем пространстве.") с помощью следующего фрагмента DQL:
+Вы можете воспроизвести график **Top 10 sign-in users** в [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Объедините функциональность Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз.") или [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном, настраиваемом рабочем пространстве.") с помощью следующего фрагмента DQL:
 
 ```
 fetch logs
@@ -165,7 +165,7 @@ Failure = countIf(audit.result!="Succeeded", by:{User=audit.identity
 | limit 10
 ```
 
-Вы можете воспроизвести таблицу **Top 10 users by failed sign-in attempts** в [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Объедините функциональность Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз.") или [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном, настраиваемом рабочем пространстве.") с помощью следующего фрагмента DQL:
+Вы можете воспроизвести таблицу **Top 10 users by failed sign-in attempts** в [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Объедините функциональность Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз.") или [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном, настраиваемом рабочем пространстве.") с помощью следующего фрагмента DQL:
 
 ```
 fetch logs
@@ -220,7 +220,7 @@ Failures = count(),
 
 Топ-10 адресов по неудачным попыткам входа
 
-Вы можете воспроизвести график **Top 10 sign-in IPs** в [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Объедините функциональность Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз.") или [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном, настраиваемом рабочем пространстве.") с помощью следующего фрагмента DQL:
+Вы можете воспроизвести график **Top 10 sign-in IPs** в [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Объедините функциональность Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз.") или [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном, настраиваемом рабочем пространстве.") с помощью следующего фрагмента DQL:
 
 ```
 fetch logs
@@ -254,7 +254,7 @@ Failure = countIf(audit.result!="Succeeded")
 | limit 10
 ```
 
-Вы можете воспроизвести таблицу **Top 10 addresses by failed sign-in attempts** в [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Объедините функциональность Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз.") или [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном, настраиваемом рабочем пространстве.") с помощью следующего фрагмента DQL:
+Вы можете воспроизвести таблицу **Top 10 addresses by failed sign-in attempts** в [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Объедините функциональность Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз.") или [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном, настраиваемом рабочем пространстве.") с помощью следующего фрагмента DQL:
 
 ```
 fetch logs

@@ -35,25 +35,25 @@ Dynatrace помогает вам всесторонне картировать 
 
 ### Discovery & Coverage
 
-[Discovery & Coverage](/docs/ingest-from/discovery-coverage-app "Обнаружение и устранение пробелов в мониторинговом покрытии в масштабе.") ![Discovery & Coverage](https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png "Discovery & Coverage") помогает предотвратить неожиданные сбои, обнаруживая и устраняя пробелы в мониторинговом покрытии по всему предприятию.
+[Discovery & Coverage](../ingest-from/discovery-coverage-app.md "Обнаружение и устранение пробелов в мониторинговом покрытии в масштабе.") ![Discovery & Coverage](https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png "Discovery & Coverage") помогает предотвратить неожиданные сбои, обнаруживая и устраняя пробелы в мониторинговом покрытии по всему предприятию.
 
 ![Discovery & Coverage](https://dt-cdn.net/images/image001-1432-0bb965c934.png)
 
 ### Smartscape
 
-Топология [Smartscape](/docs/analyze-explore-automate/smartscape-classic "Узнайте, как Smartscape Classic визуализирует все сущности и зависимости в вашей среде.") визуализирует связи между приложениями, сервисами, процессами, хостами и центрами обработки данных, выделяя проблемы и уязвимости.
+Топология [Smartscape](smartscape-classic.md "Узнайте, как Smartscape Classic визуализирует все сущности и зависимости в вашей среде.") визуализирует связи между приложениями, сервисами, процессами, хостами и центрами обработки данных, выделяя проблемы и уязвимости.
 
 ![Smartscape](https://dt-cdn.net/images/image002-1432-082bf6d3ac.png)
 
 ### Управление состоянием безопасности
 
-[Управление состоянием безопасности](/docs/secure/application-security/spm "Оценивайте, управляйте и принимайте меры по ошибкам конфигурации и нарушениям рекомендаций по укреплению безопасности и стандартов нормативного соответствия.") помогает обнаруживать, визуализировать, анализировать и устранять результаты оценки состояния безопасности и соответствия, включая ошибки конфигурации и оценки нормативного соответствия.
+[Управление состоянием безопасности](../secure/application-security/spm.md "Оценивайте, управляйте и принимайте меры по ошибкам конфигурации и нарушениям рекомендаций по укреплению безопасности и стандартов нормативного соответствия.") помогает обнаруживать, визуализировать, анализировать и устранять результаты оценки состояния безопасности и соответствия, включая ошибки конфигурации и оценки нормативного соответствия.
 
 ![Security Posture Management](https://dt-cdn.net/images/image003-1432-112de6ebf6.png)
 
 ### Compliance Assistant
 
-[Compliance Assistant](/docs/analyze-explore-automate/compliance-and-resilience/compliance-assistant "Консолидируйте аналитику платформы наблюдаемости и безопасности Dynatrace в единой панели управления.") ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") предоставляет специализированное представление, адаптированное для Закона о цифровой операционной устойчивости Европейского союза (DORA).
+[Compliance Assistant](compliance-and-resilience/compliance-assistant.md "Консолидируйте аналитику платформы наблюдаемости и безопасности Dynatrace в единой панели управления.") ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") предоставляет специализированное представление, адаптированное для Закона о цифровой операционной устойчивости Европейского союза (DORA).
 
 ![Compliance Assistant](https://dt-cdn.net/images/image004-1429-db68e2e050.png)
 
@@ -63,25 +63,25 @@ Dynatrace помогает вам сосредоточиться на предо
 
 ### Проблемы
 
-[Проблемы](/docs/dynatrace-intelligence/davis-problems-app "Используйте приложение Problems для быстрого определения коренной причины инцидентов в вашей среде.") ![Problems](https://dt-cdn.net/images/problems-512-34e46d913e.png "Problems") использует Dynatrace Intelligence для автоматического анализа вашей системы и обнаружения аномального поведения, такого как проблемы производительности или стабильности. Он также исследует влияние инцидента и коренную причину и сокращает среднее время восстановления (MTTR).
+[Проблемы](../dynatrace-intelligence/davis-problems-app.md "Используйте приложение Problems для быстрого определения коренной причины инцидентов в вашей среде.") ![Problems](https://dt-cdn.net/images/problems-512-34e46d913e.png "Problems") использует Dynatrace Intelligence для автоматического анализа вашей системы и обнаружения аномального поведения, такого как проблемы производительности или стабильности. Он также исследует влияние инцидента и коренную причину и сокращает среднее время восстановления (MTTR).
 
 ![Problems](https://dt-cdn.net/images/image005-1432-d25b248ded.png)
 
 ### Уязвимости
 
-[![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Уязвимости**](/docs/secure/vulnerabilities "Приоритизируйте и эффективно управляйте уязвимостями в ваших мониторируемых средах.") — это наша платформа Dynatrace Runtime Vulnerability Analytics для обнаружения, визуализации, анализа, мониторинга и устранения уязвимостей по всему стеку приложений.
+[![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Уязвимости**](../secure/vulnerabilities.md "Приоритизируйте и эффективно управляйте уязвимостями в ваших мониторируемых средах.") — это наша платформа Dynatrace Runtime Vulnerability Analytics для обнаружения, визуализации, анализа, мониторинга и устранения уязвимостей по всему стеку приложений.
 
 ![Vulnerabilities](https://dt-cdn.net/images/image006-1432-e6c3ac31aa.png)
 
 ### Защита приложений во время выполнения
 
-[Защита приложений во время выполнения](/docs/secure/application-security/application-protection "Настройте Dynatrace Runtime Application Protection для мониторинга атак и уязвимостей на уровне кода, генерируемых атаками.") помогает получить обзор всех атак в вашей среде в реальном времени. Используя анализ на уровне кода и анализ транзакций, Dynatrace Runtime Application Protection автоматически обнаруживает атаки на приложения в вашей среде.
+[Защита приложений во время выполнения](../secure/application-security/application-protection.md "Настройте Dynatrace Runtime Application Protection для мониторинга атак и уязвимостей на уровне кода, генерируемых атаками.") помогает получить обзор всех атак в вашей среде в реальном времени. Используя анализ на уровне кода и анализ транзакций, Dynatrace Runtime Application Protection автоматически обнаруживает атаки на приложения в вашей среде.
 
 ![Attacks](https://dt-cdn.net/images/image007-1432-e9d4630b53.png)
 
 ### Site Reliability Guardian
 
-[Site Reliability Guardian](/docs/deliver/site-reliability-guardian "Автоматически проверяйте цели производительности, доступности и ёмкости ваших критических сервисов для принятия правильных решений о релизах.") ![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian") обеспечивает автоматизированный анализ влияния изменений для проверки целей доступности, производительности и ёмкости сервисов в различных системах. Это позволяет инженерам платформы DevOps принимать правильные решения о релизах для новых версий и даёт SRE возможность применять Цели уровня обслуживания (SLO) для их критических сервисов.
+[Site Reliability Guardian](../deliver/site-reliability-guardian.md "Автоматически проверяйте цели производительности, доступности и ёмкости ваших критических сервисов для принятия правильных решений о релизах.") ![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian") обеспечивает автоматизированный анализ влияния изменений для проверки целей доступности, производительности и ёмкости сервисов в различных системах. Это позволяет инженерам платформы DevOps принимать правильные решения о релизах для новых версий и даёт SRE возможность применять Цели уровня обслуживания (SLO) для их критических сервисов.
 
 ![Site Reliability Guardian](https://dt-cdn.net/images/image008-1428-ba22e79c5e.png)
 
@@ -91,7 +91,7 @@ Dynatrace помогает вам сосредоточиться на предо
 
 ### Рабочие процессы
 
-[Рабочие процессы](/docs/analyze-explore-automate/workflows "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.") ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") собирают серию действий для построения процессов в графическом представлении. Рабочие процессы могут запускаться вручную, по расписанию или по событиям в Dynatrace, таким как аномалии, обнаруженные Dynatrace Intelligence.
+[Рабочие процессы](workflows.md "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.") ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") собирают серию действий для построения процессов в графическом представлении. Рабочие процессы могут запускаться вручную, по расписанию или по событиям в Dynatrace, таким как аномалии, обнаруженные Dynatrace Intelligence.
 
 ![Workflows](https://dt-cdn.net/images/image009-1428-01287f82a0.png)
 

@@ -25,13 +25,13 @@ scraped: 2026-03-06T21:12:06.923724
 
 В Dynatrace исключение — это ошибка или непредвиденное состояние, возникающее в процессе выполнения кода. Исключения могут быть вызваны ошибками программирования, некорректными входными данными, проблемами с ресурсами или сбоями внешних сервисов.
 
-Исключения захватываются во время спана либо с помощью OneAgent, либо через OpenTelemetry. Новый анализ исключений использует семантику, определённую в [Семантическом словаре: Трассировки](/docs/semantic-dictionary/model/trace#exception "Get to know the Semantic Dictionary models related to traces."), которая основана на [семантических соглашениях OpenTelemetry](https://opentelemetry.io/docs/specs/semconv/exceptions/exceptions-spans/).
+Исключения захватываются во время спана либо с помощью OneAgent, либо через OpenTelemetry. Новый анализ исключений использует семантику, определённую в [Семантическом словаре: Трассировки](../../../semantic-dictionary/model/trace.md#exception "Get to know the Semantic Dictionary models related to traces."), которая основана на [семантических соглашениях OpenTelemetry](https://opentelemetry.io/docs/specs/semconv/exceptions/exceptions-spans/).
 
 Анализ исключений помогает более эффективно обнаруживать, исследовать и устранять исключения. Он предоставляет ориентированный на пользователя интерфейс с расширенными возможностями как для реактивного, так и для проактивного устранения неполадок.
 
 Чтобы перейти к разделу **Исключения**
 
-1. Перейдите в [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app "Discover the functionalities of the new Distributed Tracing app.").
+1. Перейдите в [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](distributed-tracing-app.md "Discover the functionalities of the new Distributed Tracing app.").
 2. Выберите вкладку **Исключения**.
 
 Эта функция предназначена для SRE-инженеров, разработчиков и DevOps-команд, которым необходим быстрый и действенный анализ паттернов исключений и их влияния на сервисы.
@@ -52,7 +52,7 @@ scraped: 2026-03-06T21:12:06.923724
 
 ### Интеграция с Dynatrace
 
-* Встроен в [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app "Discover the functionalities of the new Distributed Tracing app.") в качестве новой вкладки **Исключения**
+* Встроен в [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](distributed-tracing-app.md "Discover the functionalities of the new Distributed Tracing app.") в качестве новой вкладки **Исключения**
 * Интегрирован в опции детализации по конкретным сервисам Dynatrace
 * Заменяет устаревшую страницу анализа исключений для клиентов DPS
 
@@ -69,14 +69,14 @@ scraped: 2026-03-06T21:12:06.923724
 
 Чтобы перейти к разделу **Исключения** напрямую
 
-1. Перейдите в [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app "Discover the functionalities of the new Distributed Tracing app.").
+1. Перейдите в [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](distributed-tracing-app.md "Discover the functionalities of the new Distributed Tracing app.").
 2. Выберите вкладку **Исключения**.
 
 ### Контекстный доступ
 
 Чтобы анализировать исключения в контексте
 
-1. Перейдите в [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Сервисы**](/docs/observe/application-observability/services/services-app "Maintain centralized control over service health, performance, and resources with the Services app.").
+1. Перейдите в [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Сервисы**](../services/services-app.md "Maintain centralized control over service health, performance, and resources with the Services app.").
 2. Включите параметр **Анализировать детали**.
 3. Выберите вкладку **Исключения**.
 
@@ -84,7 +84,7 @@ scraped: 2026-03-06T21:12:06.923724
 
 Чтобы приступить к диагностике исключений сервиса
 
-1. Перейдите в [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app "Discover the functionalities of the new Distributed Tracing app.") и выберите вкладку **Исключения**.
+1. Перейдите в [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](distributed-tracing-app.md "Discover the functionalities of the new Distributed Tracing app.") и выберите вкладку **Исключения**.
 2. Примените фильтры по сервису, конечной точке и временному диапазону.
 3. Выберите исключение из таблицы, чтобы выделить его тенденцию на диаграмме и получить дополнительные сведения для дальнейшего анализа.
 4. Для выбранного исключения на экране отображаются агрегированные трассировки стека. Эти трассировки стека сгруппированы для отображения общих путей выполнения и их доли, что позволяет легче понять их сходства и различия.

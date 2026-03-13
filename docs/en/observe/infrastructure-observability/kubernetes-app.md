@@ -15,20 +15,20 @@ scraped: 2026-03-06T21:09:44.668198
 
 The latest [Kubernetes experienceï»¿](https://dt-url.net/k1038uw) is optimized for DevOps Platform Engineers and Site Reliability Engineers (SREs), focusing on the health and performance optimization of multicloud Kubernetes environments. The centerpiece of this experience is [![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**ï»¿](https://dt-url.net/mx238j5).
 
-The underlying metrics, events, and logs are all powered by [Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), which supports flexible analytics through the [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") in ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**, ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, and ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
+The underlying metrics, events, and logs are all powered by [Grail](../../platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), which supports flexible analytics through the [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") in ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**, ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, and ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
 
 ## Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine
-* [DPS license](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") with the **Kubernetes Platform Monitoring** capability on your Rate Card
-* [Sufficient permissions](/docs/observe/infrastructure-observability/kubernetes-app/reference/permissions "Overview of user and tailoring permissions.") to use the ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** within your Dynatrace environment
+* [DPS license](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") with the **Kubernetes Platform Monitoring** capability on your Rate Card
+* [Sufficient permissions](kubernetes-app/reference/permissions.md "Overview of user and tailoring permissions.") to use the ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** within your Dynatrace environment
 * ActiveGate version 1.327+ is a prerequisite for [Kubernetes Enhanced Object Visibility](#enhanced-object-visibility).
 
   + Older ActiveGate versions are supported in backward compatibility mode; in that mode, an additional **Explorer (Classic)** tab appears in the UI.
 
-For more details, see [getting started FAQ](/docs/observe/infrastructure-observability/kubernetes-app/enable-k8s-experience#k8s-app-getting-started-faq "Enable Kubernetes experience for existing clusters or start monitoring new clusters.").
+For more details, see [getting started FAQ](kubernetes-app/enable-k8s-experience.md#k8s-app-getting-started-faq "Enable Kubernetes experience for existing clusters or start monitoring new clusters.").
 
-The new Kubernetes experience is not available for Managed or SaaS on non-Grail environmentsâyou can continue to use [**Kubernetes Classic**](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring "Monitor Kubernetes/OpenShift with Dynatrace.") (accessible from the previous Dynatrace via **Kubernetes**).
+The new Kubernetes experience is not available for Managed or SaaS on non-Grail environmentsâyou can continue to use [**Kubernetes Classic**](container-platform-monitoring/kubernetes-monitoring.md "Monitor Kubernetes/OpenShift with Dynatrace.") (accessible from the previous Dynatrace via **Kubernetes**).
 
 ## Get started
 
@@ -52,7 +52,7 @@ Use the following guide to set up and configure Kubernetes monitoring in Dynatra
 [01Enable Kubernetes experience for existing clusters
 
 * How-to guide
-* Enable existing clusters for the new Kubernetes experience.](/docs/observe/infrastructure-observability/kubernetes-app/enable-k8s-experience/existing-clusters)
+* Enable existing clusters for the new Kubernetes experience.](kubernetes-app/enable-k8s-experience/existing-clusters.md)
 
 ## Explorer
 
@@ -138,7 +138,7 @@ In this example, you can see that 8 nodes out of 24 are currently considered unh
 
 Health alerts and warning signals help you monitor your infrastructure by providing clear, actionable insights. These features reduce the noise from infrastructure issues and improve alerting capabilities, so you can focus on what matters most. This is achieved through better categorization of detected malfunctions.
 
-* For critical events, a Health alert is raised, triggering a [Dynatrace Problems](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") investigation.
+* For critical events, a Health alert is raised, triggering a [Dynatrace Problems](../../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.") investigation.
 * For non-critical situations, a Warning signal informs you of a potential challenge.
 
 While they may not always represent active health issues at the moment, frequent **Unhealthy** signals, for instance, might indicate misconfigured readiness probes, inappropriate CPU limits, or unusually high workload.
@@ -170,17 +170,17 @@ There are two types of warning signals. They're organized as follows:
 
 | Column | Content | Examples |
 | --- | --- | --- |
-| Node warning signals | [Combines events emitted by nodes and problematic node conditions](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues#node "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") | `DiskPressure`, `MemoryPressure`, `NodeNotReady` |
-| Pod warning signals | [Combines events emitted by pods and conditions affecting pods](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues#workload "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") | `BackOff`, `PodEviction`, `OOMKilled` |
-| Workload warning signals | [Combines events emitted by namespaces, workloads, and pods, along with workload conditions](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues#workload "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") | `CPUThrottlingHigh`, `ContainerRestarts`, `PodsPending` |
+| Node warning signals | [Combines events emitted by nodes and problematic node conditions](container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues.md#node "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") | `DiskPressure`, `MemoryPressure`, `NodeNotReady` |
+| Pod warning signals | [Combines events emitted by pods and conditions affecting pods](container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues.md#workload "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") | `BackOff`, `PodEviction`, `OOMKilled` |
+| Workload warning signals | [Combines events emitted by namespaces, workloads, and pods, along with workload conditions](container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues.md#workload "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") | `CPUThrottlingHigh`, `ContainerRestarts`, `PodsPending` |
 
 ## Kubernetes Enhanced Object Visibility
 
 ### Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine
-* [DPS license](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") with the **Kubernetes Platform Monitoring** capability on your Rate Card
-* [Sufficient permissions](/docs/observe/infrastructure-observability/kubernetes-app/reference/permissions "Overview of user and tailoring permissions.") to use the ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** within your Dynatrace environment
+* [DPS license](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") with the **Kubernetes Platform Monitoring** capability on your Rate Card
+* [Sufficient permissions](kubernetes-app/reference/permissions.md "Overview of user and tailoring permissions.") to use the ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** within your Dynatrace environment
 * ActiveGate version 1.327+
 
 Starting January 19, 2026, ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** offers insights into more Kubernetes objects and their YAML definitions:

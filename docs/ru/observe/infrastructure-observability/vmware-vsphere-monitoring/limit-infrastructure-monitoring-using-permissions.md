@@ -81,4 +81,4 @@ Example host view
 
 ## Связанные темы
 
-* [Мониторинг VMware vSphere](/docs/observe/infrastructure-observability/vmware-vsphere-monitoring "Отслеживайте VMware vSphere с помощью Dynatrace.")
+* [Мониторинг VMware vSphere](../vmware-vsphere-monitoring.md "Отслеживайте VMware vSphere с помощью Dynatrace.")

@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:29:16.110902
 * Обновлено 6 июня 2025 г.
 * Устарело
 
-Этот API устарел. Используйте схему [Management zones](/docs/dynatrace-api/environment-api/settings/schemas/builtin-management-zones "Просмотр схемы настроек builtin:management-zones вашей среды мониторинга через API Dynatrace.") (`builtin:management-zones`) из Settings API.
+Этот API устарел. Используйте схему [Management zones](../settings/schemas/builtin-management-zones.md "Просмотр схемы настроек builtin:management-zones вашей среды мониторинга через API Dynatrace.") (`builtin:management-zones`) из Settings API.
 
 Создание или удаление контекста безопасности для отслеживаемых сущностей.
 
@@ -20,7 +20,7 @@ scraped: 2026-03-06T21:29:16.110902
 
 Правила зон управления не будут применяться к сущностям с установленным контекстом безопасности. Чтобы снова применять их, необходимо удалить контекст безопасности.
 
-Подробнее о контексте безопасности см. [Предоставление доступа к сущностям с помощью контекста безопасности](/docs/manage/identity-access-management/use-cases/access-security-context "Предоставление доступа к сущностям с помощью контекста безопасности").
+Подробнее о контексте безопасности см. [Предоставление доступа к сущностям с помощью контекста безопасности](../../../manage/identity-access-management/use-cases/access-security-context.md "Предоставление доступа к сущностям с помощью контекста безопасности").
 
 ## Создание контекста безопасности
 
@@ -35,7 +35,7 @@ scraped: 2026-03-06T21:29:16.110902
 
 Для выполнения этого запроса необходим токен доступа с областью `settings.write`.
 
-Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ### Параметры
 
@@ -225,7 +225,7 @@ scraped: 2026-03-06T21:29:16.110902
 
 Для выполнения этого запроса необходим токен доступа с областью `settings.write`.
 
-Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ### Параметры
 

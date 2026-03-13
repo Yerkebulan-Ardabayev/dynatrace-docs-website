@@ -21,8 +21,8 @@ Prerequisites
 * Dynatrace SaaS environment powered by Grail and AppEngine
 
   + There is a very small exception for a few specific tenants that won't be able to access the preview. More information on that will be available within the product.
-* [DPS license](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") with the **Kubernetes Platform Monitoring** capability on your Rate Card
-* [Sufficient permissions](/docs/observe/infrastructure-observability/kubernetes-app/reference/permissions "Overview of user and tailoring permissions.") to use ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** within your Dynatrace environment
+* [DPS license](../../../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") with the **Kubernetes Platform Monitoring** capability on your Rate Card
+* [Sufficient permissions](../reference/permissions.md "Overview of user and tailoring permissions.") to use ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** within your Dynatrace environment
 * Dynatrace version 1.324+
 * ActiveGate version 1.323+
 * Dynatrace Operator version 1.7.0+
@@ -189,7 +189,7 @@ verbs:
 
 ## Does this preview increase my DPS consumption?
 
-The preview builds upon the existing ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** and the corresponding license based on [pod-hours](/docs/license/capabilities/container-monitoring/kubernetes-platform-monitoring "Learn how your consumption of the Dynatrace Kubernetes Platform Monitoring DPS capability is billed and charged."). The consumed pod-hours include insights into all newly added Kubernetes objects, meaning there won't be any increase in DPS consumption specific to this preview.
+The preview builds upon the existing ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** and the corresponding license based on [pod-hours](../../../../license/capabilities/container-monitoring/kubernetes-platform-monitoring.md "Learn how your consumption of the Dynatrace Kubernetes Platform Monitoring DPS capability is billed and charged."). The consumed pod-hours include insights into all newly added Kubernetes objects, meaning there won't be any increase in DPS consumption specific to this preview.
 
 ## What happens technically by joining this preview?
 
@@ -202,7 +202,7 @@ We will continue for some time to offer the entities that powered the former **E
 
 ## What observability option do I need for this preview? Do I need Full-Stack observability?
 
-This preview is based on **Kubernetes platform monitoring**, which is included in all [observability options](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes").
+This preview is based on **Kubernetes platform monitoring**, which is included in all [observability options](../../../../ingest-from/setup-on-k8s/deployment.md "Deploy Dynatrace Operator on Kubernetes").
 
 ## What are top-level workloads?
 
@@ -219,11 +219,11 @@ Please note, that labels and annotation are not part of this field, but are stor
 
 ## How can I fix missing `ClusterRole` permissions?
 
-The newly added Kubernetes object types require additional ActiveGate permissions. These permissions (except for ConfigMaps and Secrets [1](#fn-1-1-def)) are automatically granted when Dynatrace Operator is updated to [version 1.7.0](/docs/whats-new/dynatrace-operator/dto-fix-1-7-0 "Release notes for Dynatrace Operator, version 1.7.0"). Customers using older Dynatrace Operator versions, or those who manually have overwritten the ActiveGate permissions, may lack access to the new Kubernetes endpoints. If permissions are missing, a warning message appears above the table (for example `Missing "ConfigMap" ClusterRole permission for cluster(s): aks-playground-dev.`):
+The newly added Kubernetes object types require additional ActiveGate permissions. These permissions (except for ConfigMaps and Secrets [1](#fn-1-1-def)) are automatically granted when Dynatrace Operator is updated to [version 1.7.0](../../../../whats-new/dynatrace-operator/dto-fix-1-7-0.md "Release notes for Dynatrace Operator, version 1.7.0"). Customers using older Dynatrace Operator versions, or those who manually have overwritten the ActiveGate permissions, may lack access to the new Kubernetes endpoints. If permissions are missing, a warning message appears above the table (for example `Missing "ConfigMap" ClusterRole permission for cluster(s): aks-playground-dev.`):
 
 ![How can I fix missing ClusterRole permissions?](https://dt-cdn.net/images/image-20250909-123859-2305-e1ca79056f.png)
 
-To fix this, [update your Dynatrace Operator](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator#update "Upgrade and uninstallation procedures for Dynatrace Operator") to version 1.7.0+.
+To fix this, [update your Dynatrace Operator](../../../../ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator.md#update "Upgrade and uninstallation procedures for Dynatrace Operator") to version 1.7.0+.
 
 1
 

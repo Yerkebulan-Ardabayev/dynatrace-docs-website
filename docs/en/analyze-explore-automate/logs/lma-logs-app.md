@@ -61,7 +61,7 @@ allow to do joins on the lookup tables
 
 ### Installation
 
-Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Make sure the app is [installed in your environment](../../manage/hub.md#install "See the information about Dynatrace Hub.").
 
 Get started
 
@@ -74,22 +74,22 @@ Concepts
 [01Query and filter logs
 
 * How-to guide
-* Explore logs with DQL queries and filter statements in the Dynatrace Logs app.](/docs/analyze-explore-automate/logs/lma-logs-app/query-and-filter)[02Spot trends with the log distribution chart
+* Explore logs with DQL queries and filter statements in the Dynatrace Logs app.](lma-logs-app/query-and-filter.md)[02Spot trends with the log distribution chart
 
 * How-to guide
-* Get a visual overview of log entries grouped by status to spot trends, identify anomalies, and perform targeted queries without leaving the visualization.](/docs/analyze-explore-automate/logs/lma-logs-app/log-distribution-chart)[03View surrounding logs
+* Get a visual overview of log entries grouped by status to spot trends, identify anomalies, and perform targeted queries without leaving the visualization.](lma-logs-app/log-distribution-chart.md)[03View surrounding logs
 
 * How-to guide
-* Use surrounding logs to understand log data in context in the Dynatrace Logs app.](/docs/analyze-explore-automate/logs/lma-logs-app/surrounding-logs)[04Filter with facets
+* Use surrounding logs to understand log data in context in the Dynatrace Logs app.](lma-logs-app/surrounding-logs.md)[04Filter with facets
 
 * How-to guide
-* Filter with facets in the Dynatrace Logs app.](/docs/analyze-explore-automate/logs/lma-logs-app/facets)[05Adjust the log message
+* Filter with facets in the Dynatrace Logs app.](lma-logs-app/facets.md)[05Adjust the log message
 
 * How-to guide
-* Adjust the log message in the Dynatrace Logs app.](/docs/analyze-explore-automate/logs/lma-logs-app/message)[06Limits in Logs
+* Adjust the log message in the Dynatrace Logs app.](lma-logs-app/message.md)[06Limits in Logs
 
 * Reference
-* Learn about the limits that apply to the Logs app and how to modify these limits.](/docs/analyze-explore-automate/logs/lma-logs-app/limits)
+* Learn about the limits that apply to the Logs app and how to modify these limits.](lma-logs-app/limits.md)
 
 ## About Logs
 
@@ -122,9 +122,9 @@ How are logs licensed?
 Querying logs works based on the same licensing as other Log Management and Analytics feature.
 
 * If you have **Retain** and **Query** as separate rate-card items, you only consume the license for queried log volume in bytes.
-  For more info, see [Calculate your consumption of Log Management & Analytics - Query (DPS)](/docs/license/capabilities/log-analytics/dps-log-query "Learn how your consumption of the Log Management & Analytics - Query DPS capability is billed and charged.").
+  For more info, see [Calculate your consumption of Log Management & Analytics - Query (DPS)](../../license/capabilities/log-analytics/dps-log-query.md "Learn how your consumption of the Log Management & Analytics - Query DPS capability is billed and charged.").
 * If you have **Retain with Included Queries** on your rate card, there is no cost to for included queries.
-  For more info, see [Log Analytics (DPS)](/docs/license/capabilities/log-analytics#log-retain-included-queries "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.").
+  For more info, see [Log Analytics (DPS)](../../license/capabilities/log-analytics.md#log-retain-included-queries "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.").
 
 The following actions are free of charge:
 
@@ -136,7 +136,7 @@ The license is consumed only when you click the **Run query** button or when you
 
 How to configure access to Logs?
 
-The users must have access to the Dynatrace Platform and logs stored in Grail ([see the built-in access policies](/docs/platform/upgrade#built-in-policies "Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data.") for log data). The application replaces the **Logs and Events** screen, so users who accessed logs previously can use ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**.
+The users must have access to the Dynatrace Platform and logs stored in Grail ([see the built-in access policies](../../platform/upgrade.md#built-in-policies "Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data.") for log data). The application replaces the **Logs and Events** screen, so users who accessed logs previously can use ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

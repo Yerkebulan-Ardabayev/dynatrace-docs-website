@@ -12,18 +12,18 @@ scraped: 2026-03-05T21:25:26.027742
 * How-to guide
 * Updated on Jul 01, 2025
 
-Once OneAgent is deployed in full-stack monitoring mode on a host, it by default automatically injects the RUM JavaScript into the HTML of your web applications for the technologies listed in [Technology support - Real User Monitoring - Web servers and applications](/docs/ingest-from/technology-support#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks."). To initiate injection, simply restart your web server processes after installing OneAgent.
+Once OneAgent is deployed in full-stack monitoring mode on a host, it by default automatically injects the RUM JavaScript into the HTML of your web applications for the technologies listed in [Technology support - Real User Monitoring - Web servers and applications](../../../../ingest-from/technology-support.md#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks."). To initiate injection, simply restart your web server processes after installing OneAgent.
 
 By default, injection follows a set of [built-in rules for automatic injection](#where-is-rum-js-injected), but there are scenarios where you may need to define a [custom injection rule](#custom-injection-rule) to achieve injection. Custom injection rules also support the [exclusion of specific pages from injection](#disable-injection), which allows you to set up [manual insertion for the pages of an auto-injected application](#manual-insertion-using-oneagent).
 
-The RUM JavaScript is responsible for collecting RUM data from your customers' web browsers. It sends this data as XHR POST requests to a beacon endpoint, which performs initial validation before forwarding the data to Dynatrace. The default beacon endpoint in automatic injection scenarios is provided by the OneAgent instrumenting your web or application server, but alternative setups are possible, see [Configure beacon endpoint for web applications](/docs/observe/digital-experience/web-applications/additional-configuration/beacon-endpoint "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server.").
+The RUM JavaScript is responsible for collecting RUM data from your customers' web browsers. It sends this data as XHR POST requests to a beacon endpoint, which performs initial validation before forwarding the data to Dynatrace. The default beacon endpoint in automatic injection scenarios is provided by the OneAgent instrumenting your web or application server, but alternative setups are possible, see [Configure beacon endpoint for web applications](../additional-configuration/beacon-endpoint.md "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server.").
 
-The RUM JavaScript snippet injected into your application's HTML can vary in format, each designed to meet specific requirements as outlined in [Select a snippet format](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats "Select a format for the RUM JavaScript snippet that best fits your specific use case").
+The RUM JavaScript snippet injected into your application's HTML can vary in format, each designed to meet specific requirements as outlined in [Select a snippet format](snippet-formats.md "Select a format for the RUM JavaScript snippet that best fits your specific use case").
 To configure the format used for automatic injection, refer to [Configure the snippet format](#configure-snippet-format).
 
 OneAgent injects the RUM JavaScript into each page based on the current configuration whenever the instrumented web or application server delivers the page. However, the pageâs caching policy determines how frequently OneAgent has the opportunity to perform this injection. To address this, OneAgent includes a feature that optimizes cache control headers. For details on how this feature works and its limitations, see [Cache control header optimizations](#cache-header-optimization).
 
-If you don't have access to the web server hosting your application and therefore can't install OneAgent, you can monitor your application using [agentless RUM](/docs/observe/digital-experience/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.").
+If you don't have access to the web server hosting your application and therefore can't install OneAgent, you can monitor your application using [agentless RUM](set-up-agentless-real-user-monitoring.md "Set up agentless monitoring for your web applications.").
 
 ## Built-in rules for automatic injection
 
@@ -63,7 +63,7 @@ To disable injection for one or more pages within your application
 7. Under **Rule**, select **Do not inject**.
 8. Select **Save changes** to create the custom injection rule.
 
-This rule only disables injection and [cache control header optimizations](#cache-header-optimization); it does not fully disable RUM functionality. For instance, cookies may still be set. If you're looking for a way to selectively enable RUM, please refer to the instructions in [Roll out RUM selectively for your applications](/docs/observe/digital-experience/web-applications/initial-setup/selective-rum-rollout "Roll out RUM selectively after installing OneAgent in full-stack monitoring mode on your hosts").
+This rule only disables injection and [cache control header optimizations](#cache-header-optimization); it does not fully disable RUM functionality. For instance, cookies may still be set. If you're looking for a way to selectively enable RUM, please refer to the instructions in [Roll out RUM selectively for your applications](selective-rum-rollout.md "Roll out RUM selectively after installing OneAgent in full-stack monitoring mode on your hosts").
 
 ## Configure the snippet format
 
@@ -75,7 +75,7 @@ To configure the snippet format for automatic injection
 4. From the application settings, select **Injection** > **Automatic injection**.
 5. Under **Snippet format**, select the desired format.
 
-To learn more about the different snippet formats, refer to [Select a snippet format](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats "Select a format for the RUM JavaScript snippet that best fits your specific use case").
+To learn more about the different snippet formats, refer to [Select a snippet format](snippet-formats.md "Select a format for the RUM JavaScript snippet that best fits your specific use case").
 
 ## Cache control header optimizations
 
@@ -163,7 +163,7 @@ First, you need to suppress automatic injection as described in [Disable injecti
 2. Select the application that you want to configure.
 3. In the upper-right corner of the application overview page, select **More** (**â¦**) > **Edit**.
 4. From the application settings, select **Injection** > **Manual insertion**.
-5. Select the required [snippet format](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats "Select a format for the RUM JavaScript snippet that best fits your specific use case"), and copy the provided snippet.
+5. Select the required [snippet format](snippet-formats.md "Select a format for the RUM JavaScript snippet that best fits your specific use case"), and copy the provided snippet.
 6. Insert the snippet in your HTML before any other scripts.
 
-Alternatively, you can also retrieve the snippet via the [API](/docs/dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code "Learn how you can use the Dynatrace API to set up and maintain your manually injected applications using the Real User Monitoring JavaScript API."), which allows you to integrate its insertion into your build process. This ensures that your application consistently operates with the latest configuration.
+Alternatively, you can also retrieve the snippet via the [API](../../../../dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code.md "Learn how you can use the Dynatrace API to set up and maintain your manually injected applications using the Real User Monitoring JavaScript API."), which allows you to integrate its insertion into your build process. This ensures that your application consistently operates with the latest configuration.

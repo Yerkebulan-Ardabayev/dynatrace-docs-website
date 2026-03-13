@@ -12,9 +12,9 @@ scraped: 2026-03-05T21:27:04.307374
 * Updated on Mar 22, 2023
 * Deprecated
 
-Присваивает [пользовательские теги](/docs/manage/tags-and-metadata "Используйте теги и метаданные для организации данных в вашей среде Dynatrace.") указанному приложению. Достаточно указать только значение тега. Контекст `CONTEXTLESS` будет присвоен автоматически.
+Присваивает [пользовательские теги](../../../../../common/manage/tags-and-metadata.md "Используйте теги и метаданные для организации данных в вашей среде Dynatrace.") указанному приложению. Достаточно указать только значение тега. Контекст `CONTEXTLESS` будет присвоен автоматически.
 
-Использование этого API ограничено тегами, содержащими только значение. Чтобы присвоить теги формата ключ:значение, используйте [Custom tags API](/docs/dynatrace-api/environment-api/custom-tags/post-tags "Присвойте пользовательские теги отслеживаемым сущностям через Dynatrace API.").
+Использование этого API ограничено тегами, содержащими только значение. Чтобы присвоить теги формата ключ:значение, используйте [Custom tags API](../../custom-tags/post-tags.md "Присвойте пользовательские теги отслеживаемым сущностям через Dynatrace API.").
 
 Запрос принимает полезную нагрузку типа `application/json`.
 
@@ -27,7 +27,7 @@ scraped: 2026-03-05T21:27:04.307374
 
 Для выполнения этого запроса необходим токен доступа с областью действия `DataExport`.
 
-Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 
@@ -256,4 +256,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/applications/MOBILE_APPLICA
 
 ## Связанные темы
 
-* [Real User Monitoring](/docs/observe/digital-experience/rum-concepts/rum-overview "Узнайте о Real User Monitoring, ключевых метриках производительности, мониторинге мобильных приложений и многом другом.")
+* [Real User Monitoring](../../../../observe/digital-experience/rum-concepts/rum-overview.md "Узнайте о Real User Monitoring, ключевых метриках производительности, мониторинге мобильных приложений и многом другом.")

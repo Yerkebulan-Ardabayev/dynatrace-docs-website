@@ -28,39 +28,39 @@ See below for the mandatory configuration settings to make your ActiveGate conta
 
 This is a comma-separated list of the communication endpoints to be used by ActiveGate to send data to your Dynatrace environment.
 
-To determine the endpoints, use [GET connectivity information for ActiveGate](/docs/dynatrace-api/environment-api/deployment/activegate/get-activegate-connectivity "View the connectivity information for ActiveGate via Dynatrace API.") in the Dynatrace API.
+To determine the endpoints, use [GET connectivity information for ActiveGate](../../../dynatrace-api/environment-api/deployment/activegate/get-activegate-connectivity.md "View the connectivity information for ActiveGate via Dynatrace API.") in the Dynatrace API.
 
 ### Environment ID
 
-The Dynatrace [environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+The Dynatrace [environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
 
 ### Token
 
-The [tenant token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token "Learn what a tenant token is and how to change it.") is used by OneAgents and ActiveGates to report data to Dynatrace. Dynatrace automatically generates the tenant token for your ActiveGate.
+The [tenant token](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token.md "Learn what a tenant token is and how to change it.") is used by OneAgents and ActiveGates to report data to Dynatrace. Dynatrace automatically generates the tenant token for your ActiveGate.
 
-To determine the token, use [GET connectivity information for ActiveGate](/docs/dynatrace-api/environment-api/deployment/activegate/get-activegate-connectivity "View the connectivity information for ActiveGate via Dynatrace API.") in the Dynatrace API.
+To determine the token, use [GET connectivity information for ActiveGate](../../../dynatrace-api/environment-api/deployment/activegate/get-activegate-connectivity.md "View the connectivity information for ActiveGate via Dynatrace API.") in the Dynatrace API.
 
 ### ActiveGate token
 
 ActiveGate requires a unique ActiveGate token to authorize in the Dynatrace Cluster.
 
-For instructions, see [Generate ActiveGate token](/docs/ingest-from/dynatrace-activegate/activegate-security#generate-individual "Secure ActiveGates with dedicated tokens.").
+For instructions, see [Generate ActiveGate token](../activegate-security.md#generate-individual "Secure ActiveGates with dedicated tokens.").
 
 ## Deployment settings
 
 ### Activation group
 
-Defines the ActiveGate group to which the ActiveGate belongs. An ActiveGate can belong to only one group. The name of an ActiveGate group is a string of alphanumeric characters, hyphens (`-`), underscores (`_`), and dots (`.`). Dots are used as separators, so you must not use a dot as the first character of a group name. The length of the string is limited to 256 characters. You can use ActiveGate groups to perform bulk actions on your ActiveGates, such as managing [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") running on ActiveGates. If you want to assign your ActiveGate to a group, see [ActiveGate group](/docs/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.").
+Defines the ActiveGate group to which the ActiveGate belongs. An ActiveGate can belong to only one group. The name of an ActiveGate group is a string of alphanumeric characters, hyphens (`-`), underscores (`_`), and dots (`.`). Dots are used as separators, so you must not use a dot as the first character of a group name. The length of the string is limited to 256 characters. You can use ActiveGate groups to perform bulk actions on your ActiveGates, such as managing [Extensions](../../extensions.md "Learn how to create and manage Dynatrace Extensions.") running on ActiveGates. If you want to assign your ActiveGate to a group, see [ActiveGate group](../activegate-group.md "Understand the basic concepts of ActiveGate groups.").
 
 ### Network zone
 
-Defines the [network zone](/docs/manage/network-zones "Find out how network zones work in Dynatrace.") to which the ActiveGate belongs. An ActiveGate can belong to only one network zone. The name of a network zone is a string of alphanumeric characters, hyphens (`-`), underscores (`_`), and dots (`.`). Dots are used as separators, so you must not use a dot as the first character of a network zone name. The length of the string is limited to 256 characters.
+Defines the [network zone](../../../manage/network-zones.md "Find out how network zones work in Dynatrace.") to which the ActiveGate belongs. An ActiveGate can belong to only one network zone. The name of a network zone is a string of alphanumeric characters, hyphens (`-`), underscores (`_`), and dots (`.`). Dots are used as separators, so you must not use a dot as the first character of a network zone name. The length of the string is limited to 256 characters.
 
 ## Enabled modules
 
 Containerized ActiveGate does not enable any functionalities by default. Enabled modules need to be specified using the `DT_CAPABILITIES` environment variable. Add a comma-separated list of module names as the variable value.
 
-See [ActiveGate modules](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#modules "Learn which ActiveGate properties you can configure based on your needs and requirements.") for a complete list. Generally, you should refer to the `custom.properties` section names as the module names, for example, `cloudfoundry_monitoring`.
+See [ActiveGate modules](../configuration/configure-activegate.md#modules "Learn which ActiveGate properties you can configure based on your needs and requirements.") for a complete list. Generally, you should refer to the `custom.properties` section names as the module names, for example, `cloudfoundry_monitoring`.
 
 The exceptions to this rule are the following modules that are stored in the `[collector]` section.
 
@@ -70,7 +70,7 @@ The exceptions to this rule are the following modules that are stored in the `[c
 
 Not all modules are supported
 
-Not all modules are supported in containerized deployments yet. For more information, see [ActiveGate purposes and functionality](/docs/ingest-from/dynatrace-activegate/capabilities#functional_tbl "Learn the capabilities and uses of ActiveGate.").
+Not all modules are supported in containerized deployments yet. For more information, see [ActiveGate purposes and functionality](../capabilities.md#functional_tbl "Learn the capabilities and uses of ActiveGate.").
 
 ## Network settings
 
@@ -80,7 +80,7 @@ The proxy used for communication with the Dynatrace Cluster to which ActiveGate 
 
 #### Advanced scenarios
 
-For more advanced scenarios where one or more proxies are used for means other than communication with the Dynatrace Cluster, see [Proxy for ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate "Learn how to configure ActiveGate properties to set up a proxy."). Once you have crafted the required configuration, you can provide it to the ActiveGate container as a [custom.properties](#advanced-configuration) file.
+For more advanced scenarios where one or more proxies are used for means other than communication with the Dynatrace Cluster, see [Proxy for ActiveGate](../configuration/set-up-proxy-authentication-for-activegate.md "Learn how to configure ActiveGate properties to set up a proxy."). Once you have crafted the required configuration, you can provide it to the ActiveGate container as a [custom.properties](#advanced-configuration) file.
 
 #### Rules for the proxy password
 
@@ -111,11 +111,11 @@ In this scenario, you need to set the following environment variables.
 
 ### Custom SSL certificate
 
-ActiveGate will serve a custom certificate instead of the default one. To configure this, you need a file in `PKCS#12` format that contains a private key and its corresponding certificate chain. For more information, see [Custom SSL certificate for ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate "Learn how to configure the SSL certificate on your ActiveGate.").
+ActiveGate will serve a custom certificate instead of the default one. To configure this, you need a file in `PKCS#12` format that contains a private key and its corresponding certificate chain. For more information, see [Custom SSL certificate for ActiveGate](../configuration/configure-custom-ssl-certificate-on-activegate.md "Learn how to configure the SSL certificate on your ActiveGate.").
 
 ### Trusted root certificates
 
-Additional trusted root certificates can be used by ActiveGate. To configure this, you need a file in the `PEM` format that contains a list of certificates to be included in the trust store. For more information, see [Trusted root certificates for ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-trusted-root-certificates-on-activegate "Learn how to specify a custom truststore file that is merged with Java's root certificates and used as a default on all connections.").
+Additional trusted root certificates can be used by ActiveGate. To configure this, you need a file in the `PEM` format that contains a list of certificates to be included in the trust store. For more information, see [Trusted root certificates for ActiveGate](../configuration/configure-trusted-root-certificates-on-activegate.md "Learn how to specify a custom truststore file that is merged with Java's root certificates and used as a default on all connections.").
 
 ### HTTP port
 
@@ -123,7 +123,7 @@ An ActiveGate container by default opens HTTPS port `9999`. If you require your 
 
 ## Advanced configuration
 
-In addition to the configuration settings passed via environment variables or files, you can configure all other [configuration settings](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate "Learn which ActiveGate properties you can configure based on your needs and requirements.") by providing the contents of the `custom.properties` file.
+In addition to the configuration settings passed via environment variables or files, you can configure all other [configuration settings](../configuration/configure-activegate.md "Learn which ActiveGate properties you can configure based on your needs and requirements.") by providing the contents of the `custom.properties` file.
 
 1. Define `ConfigMap`.
 

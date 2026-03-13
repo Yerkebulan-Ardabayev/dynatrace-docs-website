@@ -17,16 +17,16 @@ scraped: 2026-03-06T21:18:11.880580
 
 ## Предварительные требования
 
-* Создайте [токен PaaS](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Изучите концепцию токена доступа и его областей применения.").
+* Создайте [токен PaaS](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Изучите концепцию токена доступа и его областей применения.").
 * Кластер ECS с **экземплярами контейнеров на базе Linux**.
-* Ознакомьтесь со списком [поддерживаемых приложений и версий](/docs/ingest-from/technology-support "Технические подробности о поддержке Dynatrace конкретных платформ и фреймворков разработки.").
+* Ознакомьтесь со списком [поддерживаемых приложений и версий](../../technology-support.md "Технические подробности о поддержке Dynatrace конкретных платформ и фреймворков разработки.").
 * Роль IAM для ваших экземпляров контейнеров должна включать управляемую политику `AmazonEC2ContainerServiceforEC2Role`. Инструкции по созданию этой роли с именем `ecsInstanceRole` приведены в [документации AWS](https://dt-url.net/y923usz).
 
 ## Развёртывание OneAgent как службы-демона
 
 Этот подход описывает установку OneAgent как службы-демона в собственном контейнере. ECS оркестрирует выполнение задачи OneAgent на каждом экземпляре контейнера, входящем в кластер.
 
-Привилегированный режим и параметры томов являются обязательными условиями для данного метода развёртывания. В результате это можно сделать только с помощью JSON-ревизий. Рассмотрите возможность использования [внедрения на этапе сборки](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate#buildtime "Установите OneAgent на AWS Fargate.") в качестве альтернативы.
+Привилегированный режим и параметры томов являются обязательными условиями для данного метода развёртывания. В результате это можно сделать только с помощью JSON-ревизий. Рассмотрите возможность использования [внедрения на этапе сборки](aws-fargate.md#buildtime "Установите OneAgent на AWS Fargate.") в качестве альтернативы.
 
 1. В консоли ECS перейдите в **Task Definitions** > **Create new task definition** > **Create new task definition with JSON**.
 2. Отредактируйте JSON определения задачи:
@@ -87,9 +87,9 @@ scraped: 2026-03-06T21:18:11.880580
    Если вы подключаетесь через ActiveGate, вы можете пропустить проверку сертификата, добавив ключ `ONEAGENT_INSTALLER_SKIP_CERT_CHECK` со значением `true`.
 8. Необязательно: добавьте параметры установщика OneAgent.
 
-   Оставаясь в разделе **Environment variables**, вы можете [настроить установку OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Узнайте, как использовать установщик Linux с параметрами командной строки."), добавив несколько параметров установщика OneAgent в текстовое поле команды. Убедитесь, что каждый параметр разделён пробелом. Например, `--set-monitoring-mode=infra-only --set-app-log-content-access=false --set-network-zone=<your.network.zone>`.
+   Оставаясь в разделе **Environment variables**, вы можете [настроить установку OneAgent](../../dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md "Узнайте, как использовать установщик Linux с параметрами командной строки."), добавив несколько параметров установщика OneAgent в текстовое поле команды. Убедитесь, что каждый параметр разделён пробелом. Например, `--set-monitoring-mode=infra-only --set-app-log-content-access=false --set-network-zone=<your.network.zone>`.
 
-   Установите параметр `--set-network-zone=<your.network.zone>`, если вы хотите настроить сетевые зоны. Дополнительную информацию см. в разделе [сетевые зоны](/docs/manage/network-zones "Узнайте, как работают сетевые зоны в Dynatrace.").
+   Установите параметр `--set-network-zone=<your.network.zone>`, если вы хотите настроить сетевые зоны. Дополнительную информацию см. в разделе [сетевые зоны](../../../manage/network-zones.md "Узнайте, как работают сетевые зоны в Dynatrace.").
 9. Прокрутите вниз до **Storage** > **Volume - 1** и установите **Source path** в значение `/`
 10. Перейдите к **Container mount points**, выберите **Add mount point** и введите следующие значения:
 
@@ -115,16 +115,16 @@ scraped: 2026-03-06T21:18:11.880580
 
 ## Последствия для безопасности
 
-Подробности см. в разделе [Последствия безопасности Docker](/docs/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#security "Установка и обновление Dynatrace OneAgent как контейнера Docker.").
+Подробности см. в разделе [Последствия безопасности Docker](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#security "Установка и обновление Dynatrace OneAgent как контейнера Docker.").
 
 ## Ограничения
 
-Подробности см. в разделе [Ограничения Docker](/docs/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Установка и обновление Dynatrace OneAgent как контейнера Docker.").
+Подробности см. в разделе [Ограничения Docker](../../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md#limitations "Установка и обновление Dynatrace OneAgent как контейнера Docker.").
 
 ## Потребление мониторинга
 
-Для Elastic Container Service потребление мониторинга рассчитывается на основе единиц хоста. Подробности см. в разделе [Мониторинг приложений и инфраструктуры (единицы хоста)](/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Узнайте, как рассчитывается потребление мониторинга приложений и инфраструктуры Dynatrace на основе единиц хоста.").
+Для Elastic Container Service потребление мониторинга рассчитывается на основе единиц хоста. Подробности см. в разделе [Мониторинг приложений и инфраструктуры (единицы хоста)](../../../license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Узнайте, как рассчитывается потребление мониторинга приложений и инфраструктуры Dynatrace на основе единиц хоста.").
 
 ## Связанные темы
 
-* [Матрица поддержки платформ и возможностей OneAgent](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Узнайте, какие возможности поддерживаются OneAgent на различных операционных системах и платформах.")
+* [Матрица поддержки платформ и возможностей OneAgent](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Узнайте, какие возможности поддерживаются OneAgent на различных операционных системах и платформах.")

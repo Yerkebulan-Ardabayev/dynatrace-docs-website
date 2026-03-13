@@ -54,7 +54,7 @@ Logical conditions within a single include can of course be more complex than si
 
 ![segments query](https://dt-cdn.net/images/segments-5-1498-f099426644.png)
 
-Conditions of segment includes are evaluated at query time, directly impacting query performance. Make sure to consider [![OpenPipeline](https://cdn.bfldr.com/B686QPH3/at/rp4vgwhpjx5rv6rm53mk88cc/OpenPipeline.svg?auto=webp&width=72&height=72 "OpenPipeline") OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to process fields and simplify complex conditions.
+Conditions of segment includes are evaluated at query time, directly impacting query performance. Make sure to consider [![OpenPipeline](https://cdn.bfldr.com/B686QPH3/at/rp4vgwhpjx5rv6rm53mk88cc/OpenPipeline.svg?auto=webp&width=72&height=72 "OpenPipeline") OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to process fields and simplify complex conditions.
 
 ## Data types
 

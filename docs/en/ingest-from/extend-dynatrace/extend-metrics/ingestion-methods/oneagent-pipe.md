@@ -63,11 +63,11 @@ The tool location depends on whether or not you've customized the OneAgent insta
 
 ## Topology awareness
 
-Using the `dynatrace_ingest` based scripting integration, the host ID and host name context are added to each metric as dimensions automatically. Learn how to [enrich your metrics with other Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") and apply Dynatrace-AI causation details to your ingested data.
+Using the `dynatrace_ingest` based scripting integration, the host ID and host name context are added to each metric as dimensions automatically. Learn how to [enrich your metrics with other Dynatrace-specific dimensions](../../extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") and apply Dynatrace-AI causation details to your ingested data.
 
 ## Metric format
 
-Provided data points must follow the [Metrics ingestion protocol](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+Provided data points must follow the [Metrics ingestion protocol](../reference/metric-ingestion-protocol.md "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
 
 ## Usage
 
@@ -77,7 +77,7 @@ The basic usage is:
 dynatrace_ingest [Options] [Metrics]
 ```
 
-Both `[Options]` and `[Metrics]` are optional. The syntax of metrics passed to the `[Metrics]` arguments must comply with the [Metrics ingestion protocol](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+Both `[Options]` and `[Metrics]` are optional. The syntax of metrics passed to the `[Metrics]` arguments must comply with the [Metrics ingestion protocol](../reference/metric-ingestion-protocol.md "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
 
 There two basic ways to pass metrics with `dynatrace_ingest`: (1) by piping another process output to `dynatrace_ingest`, or (2) using the call arguments.
 
@@ -112,7 +112,7 @@ Prints help message and quit
 
 Starting with OneAgent version 1.267+, AIX systems also support metric ingestion.
 
-The default metric ingestion port is `14499`. If necessary, you can use the [oneagentctl](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the port. Changing the metric ingestion port requires restart of OneAgent. Add [`--restart-service`](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
+The default metric ingestion port is `14499`. If necessary, you can use the [oneagentctl](../../../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the port. Changing the metric ingestion port requires restart of OneAgent. Add [`--restart-service`](../../../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
 
 ### Check the ingestion port
 

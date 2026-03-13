@@ -19,7 +19,7 @@ Session Replay — это мощный инструмент, который мо
 
 Session Replay помогает выявлять ошибки, требующие немедленного исправления, и другие проблемы, такие как некорректно отображающиеся страницы и бесконечные индикаторы загрузки. Вы также можете использовать Session Replay для выявления и анализа проблемных областей в вашем приложении и улучшения его общей удобности использования.
 
-Session Replay в настоящее время доступен для [веб-приложений](/docs/observe/digital-experience/session-replay/configure-session-replay-web "Настройте потребление мониторинга и параметры конфиденциальности данных для Session Replay."), [Android](/docs/observe/digital-experience/session-replay/session-replay-android "Настройте Session Replay для ваших Android-приложений, чтобы узнать, какие действия выполняют ваши пользователи.") и [iOS](/docs/observe/digital-experience/session-replay/session-replay-ios "Предварительные требования и процедура включения Session Replay для ваших iOS-приложений.").
+Session Replay в настоящее время доступен для [веб-приложений](session-replay/configure-session-replay-web.md "Настройте потребление мониторинга и параметры конфиденциальности данных для Session Replay."), [Android](session-replay/session-replay-android.md "Настройте Session Replay для ваших Android-приложений, чтобы узнать, какие действия выполняют ваши пользователи.") и [iOS](session-replay/session-replay-ios.md "Предварительные требования и процедура включения Session Replay для ваших iOS-приложений.").
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -42,11 +42,11 @@ Session Replay не поддерживается на Cordova, React Native, Flu
 
 Разработчики могут использовать Session Replay для просмотра, анализа, воспроизведения и исправления ошибок.
 
-Для детального анализа ошибок не обязательно записывать все сеансы. Вы можете использовать [управление стоимостью и трафиком для веб-приложений](/docs/observe/digital-experience/session-replay/configure-session-replay-web#cost-traffic-control "Настройте потребление мониторинга и параметры конфиденциальности данных для Session Replay."), чтобы записывать только часть сеансов. Если анализируемая ошибка не слишком редкая, её можно обнаружить, даже если записывается только 20% сеансов.
+Для детального анализа ошибок не обязательно записывать все сеансы. Вы можете использовать [управление стоимостью и трафиком для веб-приложений](session-replay/configure-session-replay-web.md#cost-traffic-control "Настройте потребление мониторинга и параметры конфиденциальности данных для Session Replay."), чтобы записывать только часть сеансов. Если анализируемая ошибка не слишком редкая, её можно обнаружить, даже если записывается только 20% сеансов.
 
-К этим сеансам применяется стандартный период [хранения данных](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods "Проверьте сроки хранения для различных типов данных.").
+К этим сеансам применяется стандартный период [хранения данных](../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md "Проверьте сроки хранения для различных типов данных.").
 
-Возможность воспроизведения записанных пользовательских сеансов с настройками [маскирования](/docs/observe/digital-experience/session-replay/configure-session-replay-web#sr-masking "Настройте потребление мониторинга и параметры конфиденциальности данных для Session Replay.") или без них контролируется разрешениями. Разрешения доступны на уровне окружения, а также на уровне зоны управления. Подробнее в разделе [Управление группами пользователей и разрешениями](/docs/manage/identity-access-management/permission-management/role-based-permissions#permissions "Разрешения на основе ролей").
+Возможность воспроизведения записанных пользовательских сеансов с настройками [маскирования](session-replay/configure-session-replay-web.md#sr-masking "Настройте потребление мониторинга и параметры конфиденциальности данных для Session Replay.") или без них контролируется разрешениями. Разрешения доступны на уровне окружения, а также на уровне зоны управления. Подробнее в разделе [Управление группами пользователей и разрешениями](../../manage/identity-access-management/permission-management/role-based-permissions.md#permissions "Разрешения на основе ролей").
 
 ### Разрешение жалоб
 
@@ -68,16 +68,16 @@ Session Replay не поддерживается на Cordova, React Native, Flu
 * Приложение не работает должным образом во всех браузерах или на всех устройствах.
 * Приложение просит пользователя изменить ориентацию устройства, но пользователь не понимает запрос.
 
-К этим сеансам применяется стандартный период [хранения данных](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods "Проверьте сроки хранения для различных типов данных.").
+К этим сеансам применяется стандартный период [хранения данных](../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md "Проверьте сроки хранения для различных типов данных.").
 
 ## Технические ограничения для веб-приложений
 
-Для веб-приложений Session Replay совместим с многостраничными приложениями, одностраничными приложениями и приложениями, использующими iFrame. Однако действуют [определённые ограничения](/docs/observe/digital-experience/session-replay/session-replay-restrictions-web "Узнайте, какие ограничения применяются к Session Replay.").
+Для веб-приложений Session Replay совместим с многостраничными приложениями, одностраничными приложениями и приложениями, использующими iFrame. Однако действуют [определённые ограничения](session-replay/session-replay-restrictions-web.md "Узнайте, какие ограничения применяются к Session Replay.").
 
 ## Связанные темы
 
-* [Включение Session Replay для веб-приложений](/docs/observe/digital-experience/session-replay/enable-session-replay-web "Узнайте предварительные требования и процедуру включения Session Replay.")
-* [Настройка Session Replay для веб-приложений](/docs/observe/digital-experience/session-replay/configure-session-replay-web "Настройте потребление мониторинга и параметры конфиденциальности данных для Session Replay.")
-* [Технические ограничения Session Replay для веб-приложений](/docs/observe/digital-experience/session-replay/session-replay-restrictions-web "Узнайте, какие ограничения применяются к Session Replay.")
-* [Настройка Session Replay для iOS](/docs/observe/digital-experience/session-replay/session-replay-ios "Предварительные требования и процедура включения Session Replay для ваших iOS-приложений.")
-* [Настройка Session Replay для Android](/docs/observe/digital-experience/session-replay/session-replay-android "Настройте Session Replay для ваших Android-приложений, чтобы узнать, какие действия выполняют ваши пользователи.")
+* [Включение Session Replay для веб-приложений](session-replay/enable-session-replay-web.md "Узнайте предварительные требования и процедуру включения Session Replay.")
+* [Настройка Session Replay для веб-приложений](session-replay/configure-session-replay-web.md "Настройте потребление мониторинга и параметры конфиденциальности данных для Session Replay.")
+* [Технические ограничения Session Replay для веб-приложений](session-replay/session-replay-restrictions-web.md "Узнайте, какие ограничения применяются к Session Replay.")
+* [Настройка Session Replay для iOS](session-replay/session-replay-ios.md "Предварительные требования и процедура включения Session Replay для ваших iOS-приложений.")
+* [Настройка Session Replay для Android](session-replay/session-replay-android.md "Настройте Session Replay для ваших Android-приложений, чтобы узнать, какие действия выполняют ваши пользователи.")

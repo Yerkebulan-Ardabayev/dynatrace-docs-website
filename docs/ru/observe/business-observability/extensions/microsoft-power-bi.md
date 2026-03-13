@@ -18,7 +18,7 @@ Preview
 
 Расширение Microsoft Power BI передаёт данные из Grail непосредственно в ваши отчёты и дашборды Microsoft Power BI, предоставляя DQL-запросы.
 
-Стоимость выполнения DQL-запросов в Microsoft Power BI эквивалентна [пользовательскому интерфейсу Dynatrace](/docs/license/subscription-and-license/subscription-and-license-dps "View license and subscription usage and consumption history Dynatrace Platform subscription licenses that were signed prior to April, 2023.").
+Стоимость выполнения DQL-запросов в Microsoft Power BI эквивалентна [пользовательскому интерфейсу Dynatrace](../../../license/subscription-and-license/subscription-and-license-dps.md "View license and subscription usage and consumption history Dynatrace Platform subscription licenses that were signed prior to April, 2023.").
 
 ## Ограничения
 
@@ -28,7 +28,7 @@ Preview
 
 ## Настройка
 
-Для выполнения запросов и просмотра определённых таблиц в Grail необходимы [разрешения в Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
+Для выполнения запросов и просмотра определённых таблиц в Grail необходимы [разрешения в Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
 
 Пример оператора политики для чтения бизнес-событий:
 

@@ -390,11 +390,11 @@ events
 
 ## Связанные темы
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Использование Dynatrace Query Language.")
-* [Использование запросов DQL](/docs/platform/grail/dynatrace-query-language/dql-guide "Узнайте, как работает DQL и каковы ключевые концепции DQL.")
-* [Справочник по языку DQL](/docs/platform/grail/dynatrace-query-language/dql-reference "Справочник по синтаксису Dynatrace Query Language.")
-* [Команды DQL](/docs/platform/grail/dynatrace-query-language/commands "Список команд DQL.")
-* [Функции DQL](/docs/platform/grail/dynatrace-query-language/functions "Список функций DQL.")
-* [Операторы DQL](/docs/platform/grail/dynatrace-query-language/operators "Список операторов DQL.")
-* [Типы данных DQL](/docs/platform/grail/dynatrace-query-language/data-types "Список типов данных DQL.")
-* [Лучшие практики DQL](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Лучшие практики использования Dynatrace Query Language.")
+* [Dynatrace Query Language](../dynatrace-query-language.md "Использование Dynatrace Query Language.")
+* [Использование запросов DQL](dql-guide.md "Узнайте, как работает DQL и каковы ключевые концепции DQL.")
+* [Справочник по языку DQL](dql-reference.md "Справочник по синтаксису Dynatrace Query Language.")
+* [Команды DQL](commands.md "Список команд DQL.")
+* [Функции DQL](functions.md "Список функций DQL.")
+* [Операторы DQL](operators.md "Список операторов DQL.")
+* [Типы данных DQL](data-types.md "Список типов данных DQL.")
+* [Лучшие практики DQL](dql-best-practices.md "Лучшие практики использования Dynatrace Query Language.")

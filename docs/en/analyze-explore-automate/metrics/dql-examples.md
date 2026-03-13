@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:20:38.254143
 * 8-min read
 * Updated on Oct 17, 2025
 
-Metrics on Grail enable you to pinpoint and retrieve any metric data with the help of [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."). After reviewing the [fundamentals of DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide#metrics "Find out how DQL works and what are DQL key concepts.") and the [timeseries command](/docs/platform/grail/dynatrace-query-language/commands/metric-commands "DQL metric commands"), use the examples on this page to start getting answers from your metrics.
+Metrics on Grail enable you to pinpoint and retrieve any metric data with the help of [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."). After reviewing the [fundamentals of DQL queries](../../platform/grail/dynatrace-query-language/dql-guide.md#metrics "Find out how DQL works and what are DQL key concepts.") and the [timeseries command](../../platform/grail/dynatrace-query-language/commands/metric-commands.md "DQL metric commands"), use the examples on this page to start getting answers from your metrics.
 
 ### Example 1: Average CPU usage across all hosts
 
@@ -219,7 +219,7 @@ entityName(dt.entity.kubernetes_node)
 
 ### Example 7: Average host CPU usage by host size
 
-In this example, you'll learn how to use a [`entityAttr` command](/docs/platform/grail/dynatrace-query-language/functions/general-functions#entity-attr "A list of DQL general functions.") to analyze host CPU usage by host size.
+In this example, you'll learn how to use a [`entityAttr` command](../../platform/grail/dynatrace-query-language/functions/general-functions.md#entity-attr "A list of DQL general functions.") to analyze host CPU usage by host size.
 
 OneAgent collects local context from its host: information such as how many CPUs are installed and how much memory it has. You can add this information to your query with the `entityAttr` function.
 
@@ -239,7 +239,7 @@ timeseries usage=avg(dt.host.cpu.usage, scalar:true), by:{dt.entity.host}
 
 ### Example 8: Query multiple CPU usage metrics with a single query
 
-In this example, you'll learn how to use the [`append` command](/docs/platform/grail/dynatrace-query-language/commands/correlation-and-join-commands#append "DQL correlation and join commands") to return multiple CPU metrics with a single query.
+In this example, you'll learn how to use the [`append` command](../../platform/grail/dynatrace-query-language/commands/correlation-and-join-commands.md#append "DQL correlation and join commands") to return multiple CPU metrics with a single query.
 
 Combining queries into one command can be useful for comparing measurements from different contexts, as they will be charted together.
 
@@ -345,7 +345,7 @@ by:{dt.entity.host}
 
 In this example you will monitor the availability of hosts and count those that are currently up.
 
-You can use the timeseries command with the [`nonempty` parameter](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#expand--nonempty-parameter--1 "DQL metric commands") to calculate host availability. This parameter ensures that you get a result even when no data match the filterâsuch as when no hosts are up. This provides a more accurate representation of host availability.
+You can use the timeseries command with the [`nonempty` parameter](../../platform/grail/dynatrace-query-language/commands/metric-commands.md#expand--nonempty-parameter--1 "DQL metric commands") to calculate host availability. This parameter ensures that you get a result even when no data match the filterâsuch as when no hosts are up. This provides a more accurate representation of host availability.
 
 ```
 timeseries availability = sum(dt.host.availability, default:0),
@@ -361,9 +361,9 @@ filter:{availability.state == "up"}
 
 ### Example 11: Readiness probe
 
-In this example you'll query [log metrics](/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-metrics "Create metrics based on log data and use them throughout Dynatrace like any other metric.") to count successful and failed readiness probes by host.
+In this example you'll query [log metrics](../logs/lma-log-processing/lma-log-metrics.md "Create metrics based on log data and use them throughout Dynatrace like any other metric.") to count successful and failed readiness probes by host.
 
-You can use the [`union` parameter](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#union "DQL metric commands") to capture all hosts, including those with no failures or no successes.
+You can use the [`union` parameter](../../platform/grail/dynatrace-query-language/commands/metric-commands.md#union "DQL metric commands") to capture all hosts, including those with no failures or no successes.
 
 ```
 timeseries
@@ -389,7 +389,7 @@ The `union:true` argument captures all hosts, even if they had no failures or no
 
 ### Example 12: Failure rate
 
-In this example, you will query the per-second failure rate for a specific endpoint ("/api/accounts"). By using the [`rate` parameter](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#rate "DQL metric commands"), you can normalize the timeseries data to a specific duration.
+In this example, you will query the per-second failure rate for a specific endpoint ("/api/accounts"). By using the [`rate` parameter](../../platform/grail/dynatrace-query-language/commands/metric-commands.md#rate "DQL metric commands"), you can normalize the timeseries data to a specific duration.
 
 Monitoring request failure rates is crucial for understanding application performance, identifying bottlenecks, and ensuring optimal user experience.
 
@@ -405,7 +405,7 @@ filter:{startsWith(endpoint.name, "/api/accounts")}
 
 ### Example 13: Capacity planning
 
-In this example, you will query current host-disk availability and use the [`shift`](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#shift "DQL metric commands") parameter to compare it to usage 7 days ago.
+In this example, you will query current host-disk availability and use the [`shift`](../../platform/grail/dynatrace-query-language/commands/metric-commands.md#shift "DQL metric commands") parameter to compare it to usage 7 days ago.
 
 Monitoring host-disk availability helps with capacity planning. If today's disk space usage is consistently higher than 7 days ago, it may signal the need for additional storage resources. Conversely, a decrease in usage might allow for resource optimization.
 
@@ -431,7 +431,7 @@ timeseries avail.yesterday=avg(dt.host.disk.avail), by:{dt.entity.host}, shift:-
 
 ### Example 14: Verify host availability and redundance
 
-In this example you'll use the [`count` aggregation](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries-count "DQL metric commands") to track the number of hosts monitored in each AZ of AWS region us-east-1.
+In this example you'll use the [`count` aggregation](../../platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries-count "DQL metric commands") to track the number of hosts monitored in each AZ of AWS region us-east-1.
 
 Applications frequently deploy hosts across multiple availability zones (AZs) to ensure high availability. Counting hosts in each AZ helps verify that the distribution is balanced and, should one AZ experience network disruptions or other issues, the workload can fail over to another AZ.
 
@@ -449,7 +449,7 @@ filter:{startsWith(aws.availability_zone, "us-east-1")}
 
 ### Example 15: Performance optimization
 
-In this example you'll use the [`percentile` aggregation](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries-percentile "DQL metric commands") to track the 90th percentile response time of the contrived /api/accounts endpoint.
+In this example you'll use the [`percentile` aggregation](../../platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries-percentile "DQL metric commands") to track the 90th percentile response time of the contrived /api/accounts endpoint.
 
 Tracking the service response time [percentilesï»¿](https://www.dynatrace.com/news/blog/why-averages-suck-and-percentiles-are-great/) helps identify bottlenecks and areas for improvement. If a specific transaction consistently exceeds this threshold, you can decide if it warrants investigation and additional optimization.
 
@@ -463,7 +463,7 @@ filter:{startsWith(endpoint.name, "/api/accounts")}
 
 ### Example 16: Right-sizing deployments
 
-In this example you'll use the [`if` function](/docs/platform/grail/dynatrace-query-language/functions/conditional-functions#if "A list of DQL conditional functions.") to label underused host-disk pairs.
+In this example you'll use the [`if` function](../../platform/grail/dynatrace-query-language/functions/conditional-functions.md#if "A list of DQL conditional functions.") to label underused host-disk pairs.
 
 Identifying overprovisioned deployments helps reduce operating costs. By removing overprovisioned infrastructure, you can determine the right size deployment for your application.
 
@@ -493,7 +493,7 @@ In this example you'll split CPU usage by kubernetes annotation.
 
 You can use kubernetes annotation `app.kubernetes.io/component` to evaluate the performance of your application components. Annotations are cloud application attributes and aren't typically ingested with a metric. You should split by the cloud application and look up the relevant annotation.
 
-Many [`summarize` command functions](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#summarize "DQL aggregation commands") accept iterative expressions like `cpu_usage[]` to preserve the timeseries.
+Many [`summarize` command functions](../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#summarize "DQL aggregation commands") accept iterative expressions like `cpu_usage[]` to preserve the timeseries.
 
 ```
 timeseries cpu_usage = sum(dt.kubernetes.container.cpu_usage, rollup:max),

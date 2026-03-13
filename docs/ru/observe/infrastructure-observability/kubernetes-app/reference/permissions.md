@@ -27,7 +27,7 @@ scraped: 2026-03-06T21:11:58.626956
 
 Dynatrace IAM позволяет детально и гибко определять и назначать разрешения. Эти разрешения можно группировать в политики и затем назначать пользователям или группам. Кроме того, разрешения можно ограничивать конкретными подмножествами объектов Kubernetes с помощью условий, например для определённых кластеров и/или пространств имён.
 
-Для получения дополнительной информации см. [Identity and access management (IAM)](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+Для получения дополнительной информации см. [Identity and access management (IAM)](../../../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
 
 Пример политики
 

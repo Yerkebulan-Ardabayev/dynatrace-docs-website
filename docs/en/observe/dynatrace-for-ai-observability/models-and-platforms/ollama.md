@@ -40,6 +40,6 @@ The following attributes are available for GenAI Spans.
 
 ## Related topics
 
-* [Dynatrace OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
-* [About OTLP metrics ingest](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
-* [Observability of Retrieval-Augmented Generation pipelines](/docs/observe/dynatrace-for-ai-observability/sample-use-cases/self-service-ai-observability-tutorial "Learn how to use Dynatrace to have deep insights into your RAG pipelines.")
+* [Dynatrace OTLP API endpoints](../../../ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
+* [About OTLP metrics ingest](../../../ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
+* [Observability of Retrieval-Augmented Generation pipelines](../sample-use-cases/self-service-ai-observability-tutorial.md "Learn how to use Dynatrace to have deep insights into your RAG pipelines.")

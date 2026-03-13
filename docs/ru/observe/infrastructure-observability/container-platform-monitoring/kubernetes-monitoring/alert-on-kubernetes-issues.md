@@ -26,7 +26,7 @@ ActiveGate версии 1.253+
 
 Например, включение оповещения о насыщении использования CPU рабочей нагрузкой по-прежнему будет оценивать и создавать проблемы для каждой рабочей нагрузки Kubernetes отдельно, даже если оно было настроено на уровне кластера Kubernetes.
 
-Подробнее об иерархии параметров см. в разделе [Документация по параметрам](/docs/manage/settings/settings-20#scope-and-hierarchy-of-settings "Introduction to the Settings 2.0 framework").
+Подробнее об иерархии параметров см. в разделе [Документация по параметрам](../../../../manage/settings/settings-20.md#scope-and-hierarchy-of-settings "Introduction to the Settings 2.0 framework").
 
 На уровне тенанта
 
@@ -327,4 +327,4 @@ ActiveGate версии 1.253+
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Настройка Dynatrace в Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")

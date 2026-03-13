@@ -22,13 +22,13 @@ When you integrate your Dynatrace environment with Red Hat Ansible Automation co
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Grant permissions to Workflows**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#permissions "Automate running of Ansible jobs based on your monitoring data and events.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Grant permissions to Workflows**](redhat-ansible.md#permissions "Automate running of Ansible jobs based on your monitoring data and events.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Create Red Hat Ansible API key**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#api-key "Automate running of Ansible jobs based on your monitoring data and events.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Create Red Hat Ansible API key**](redhat-ansible.md#api-key "Automate running of Ansible jobs based on your monitoring data and events.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Configure Red Hat Ansible Automation connection**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#connection "Automate running of Ansible jobs based on your monitoring data and events.")[![Step 4 optional](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Step 4 optional")
+**Configure Red Hat Ansible Automation connection**](redhat-ansible.md#connection "Automate running of Ansible jobs based on your monitoring data and events.")[![Step 4 optional](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Step 4 optional")
 
-**Configure Red Hat Ansible Automation connection**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#edgeconnect "Automate running of Ansible jobs based on your monitoring data and events.")
+**Configure Red Hat Ansible Automation connection**](redhat-ansible.md#edgeconnect "Automate running of Ansible jobs based on your monitoring data and events.")
 
 ### Step 1 Grant permissions to Workflows
 
@@ -44,7 +44,7 @@ To fine-tune permissions granted to Workflows
 * `state:app-states:write`
 * `state:app-states:delete`
 
-For more on general Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+For more on general Workflows user permissions, see [User permissions for workflows](../../security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Step 2 Create Red Hat Ansible API key
 
@@ -102,7 +102,7 @@ To create a workflow that launches a job template
 4. On one of the information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add"), search for `Ansible`, and select **Launch job template**.
 5. On each of the remaining information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") and drag the line to the **Launch job template** action.
 6. In the **Launch job template** action, select the [connection](#connection) to your **Red Hat Ansible Automation Controller**.
-7. Configure the input fields as needed. To learn how to use the output of information-extracting notes, see [Expression reference](/docs/analyze-explore-automate/workflows/reference "Get to know the workflows expression").
+7. Configure the input fields as needed. To learn how to use the output of information-extracting notes, see [Expression reference](../../reference.md "Get to know the workflows expression").
 8. To test your workflow, select **Run**.
 
 ## Troubleshooting

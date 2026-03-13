@@ -30,31 +30,31 @@ Learn the basics of Dynatrace network monitoring, including how to analyze netwo
 
 * How-to guide
 
-Read this guide](/docs/observe/infrastructure-observability/networks/how-to-monitor-network-communication)[#### Detect network errors
+Read this guide](networks/how-to-monitor-network-communication.md)[#### Detect network errors
 
 Learn how errors such as dropped packets and retransmissions on the network level can affect the performance and connectivity of your services.
 
 * How-to guide
 
-Read this guide](/docs/observe/infrastructure-observability/networks/detect-network-errors)[#### Extended network monitoring
+Read this guide](networks/detect-network-errors.md)[#### Extended network monitoring
 
 Extend network monitoring with network traffic metrics in containerized Linux hosts using NetTracer.
 
 * How-to guide
 
-Read this guide](/docs/observe/infrastructure-observability/networks/network-monitoring-with-nettracer)[#### Troubleshooting network monitoring
+Read this guide](networks/network-monitoring-with-nettracer.md)[#### Troubleshooting network monitoring
 
 Learn more about troubleshooting network monitoring.
 
 * Troubleshooting
 
-Read this troubleshooting guide](/docs/observe/infrastructure-observability/networks/troubleshoot-network-monitoring)[#### Ingest NetFlow records into Dynatrace
+Read this troubleshooting guide](networks/troubleshoot-network-monitoring.md)[#### Ingest NetFlow records into Dynatrace
 
 Learn how to ingest NetFlow records into Dynatrace.
 
 * How-to guide
 
-Read this guide](/docs/observe/infrastructure-observability/networks/ingest-netflow-records)
+Read this guide](networks/ingest-netflow-records.md)
 
 ## Related topics
 

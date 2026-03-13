@@ -136,4 +136,4 @@ Rotating the OAuth credentials is not immediately reflected in the EdgeConnect d
 
 ## Related topics
 
-* [Configure and deploy EdgeConnect](/docs/ingest-from/edgeconnect "Use EdgeConnect to control how your apps and workflows interact with your internal systems.")
+* [Configure and deploy EdgeConnect](../../../../edgeconnect.md "Use EdgeConnect to control how your apps and workflows interact with your internal systems.")

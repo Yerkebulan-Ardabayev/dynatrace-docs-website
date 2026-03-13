@@ -67,7 +67,7 @@ OneAgent automatically monitors a host and its processes, services, and applicat
 2. Go to **Monitoring** and set **Monitor this host** to turn monitoring on or off for the selected host.
 3. Go to **Monitoring Mode** and set **Full-Stack**, **Infrastructure**, or **Discovery** to turn the selected monitoring mode on or off for the selected host.
 
-   * For details, see [OneAgent monitoring modes](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
+   * For details, see [OneAgent monitoring modes](../../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.").
    * The OneAgent's monitoring mode will automatically overwrite this setting whenever it is changed with oneagentctl or the OneAgent comes online.
 4. Go to **Advanced settings** and set **ProcessAgent injection** or **CodeModule injection** to turn the automatic injection on or off for the selected host.
 5. Select **Save changes**.
@@ -96,7 +96,7 @@ OneAgent automatically detects and monitors all your mount points, but you can c
 
      You can create exception rules to remove disks from monitoring.
 
-     For details, see [Exclude disks and network traffic from host monitoring](/docs/observe/infrastructure-observability/hosts/configuration/exclude-disks-and-network-traffic#disk-options "Learn how to exclude selected disks and network traffic from host monitoring.").
+     For details, see [Exclude disks and network traffic from host monitoring](configuration/exclude-disks-and-network-traffic.md#disk-options "Learn how to exclude selected disks and network traffic from host monitoring.").
 
 ## Disk Analytics Extension
 
@@ -107,9 +107,9 @@ Install the Disk Analytics extension to gain more detailed visibility into local
 1. On the **Host settings** page, select **Disk Analytics Extension**.
 2. Turn **Enable Disk Analytics data collection** on or off to determine whether Disk Analytics data is collected on the selected host.
 
-   If you enable data collection without adding the extension, the data is visible only in [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+   If you enable data collection without adding the extension, the data is visible only in [Data Explorer](../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.").
 
-For details on installing and using the Disk Analytics extension, see [Disk Analytics extension](/docs/observe/infrastructure-observability/extensions/disk-analytics "Gain detailed visibility into Linux host local datastores where OneAgent is installed.").
+For details on installing and using the Disk Analytics extension, see [Disk Analytics extension](../extensions/disk-analytics.md "Gain detailed visibility into Linux host local datastores where OneAgent is installed.").
 
 ## NetTracer traffic
 
@@ -121,7 +121,7 @@ NetTracer is an open-source tool for tracing TCP events and collecting network c
 2. Turn **Enable NetTracer traffic network monitoring** on or off to determine whether NetTracer monitors network traffic on the selected host.
 3. Select **Save changes**.
 
-For details, see [Extended network monitoring](/docs/observe/infrastructure-observability/networks-classic/network-monitoring-with-nettracer "Extend network monitoring with network traffic metrics in containerized Linux hosts using NetTracer.").
+For details, see [Extended network monitoring](../networks-classic/network-monitoring-with-nettracer.md "Extend network monitoring with network traffic metrics in containerized Linux hosts using NetTracer.").
 
 ## Exclude network traffic
 
@@ -143,7 +143,7 @@ OneAgent automatically detects and monitors all of your network traffic, but you
      + To edit an entry, expand ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") **Details**
 2. Select **Save changes**.
 
-For details, see [Exclude disks and network traffic from host monitoring](/docs/observe/infrastructure-observability/hosts/configuration/exclude-disks-and-network-traffic#exclude-network-traffic "Learn how to exclude selected disks and network traffic from host monitoring.").
+For details, see [Exclude disks and network traffic from host monitoring](configuration/exclude-disks-and-network-traffic.md#exclude-network-traffic "Learn how to exclude selected disks and network traffic from host monitoring.").
 
 ## Detected processes
 
@@ -152,7 +152,7 @@ The **Detected processes** page is a read-only table of processes detected on th
 * To manage your process monitoring settings, select the **Process group monitoring** link.
 * To enable or disable deep monitoring for certain process groups on the host, select the **Process group deep monitoring** link.
 
-For details, see [Process deep monitoring](/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring "Ways to customize process-group monitoring").
+For details, see [Process deep monitoring](../process-groups/configuration/pg-monitoring.md "Ways to customize process-group monitoring").
 
 ## Process group monitoring
 
@@ -167,7 +167,7 @@ To enable or disable deep monitoring for a certain process group on a host
    * To edit an entry, expand ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") **Details** and change the settings.
 2. Select **Save changes**.
 
-For details, see [Process deep monitoring](/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring "Ways to customize process-group monitoring").
+For details, see [Process deep monitoring](../process-groups/configuration/pg-monitoring.md "Ways to customize process-group monitoring").
 
 ## Process group detection flags
 
@@ -183,7 +183,7 @@ To enable or disable process group detection flags
    Hover over the information icon for a rule to view rule details.
 3. Select **Save changes**.
 
-For details, see [Process group detection](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection").
+For details, see [Process group detection](../process-groups/configuration/pg-detection.md "Ways to customize process-group detection").
 
 ## Declarative process grouping
 
@@ -199,7 +199,7 @@ To add a declarative process group to the table
 4. Select **Add detection rule** to describe how to detect the process group: property and condition. See the on-screen instructions for help with conditions.
 5. Select **Save changes**.
 
-For details, see [Process group detection](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection#declare "Ways to customize process-group detection").
+For details, see [Process group detection](../process-groups/configuration/pg-detection.md#declare "Ways to customize process-group detection").
 
 ## Process availability
 
@@ -214,7 +214,7 @@ To add a process monitoring rule
 5. Select **Add property** to define additional key-value properties to be attached to the triggered event.
 6. Select **Save changes**.
 
-For details, see [Process availability](/docs/observe/infrastructure-observability/hosts/monitoring/process-availability "Monitor availability and performance of the key processes on your hosts.").
+For details, see [Process availability](monitoring/process-availability.md "Monitor availability and performance of the key processes on your hosts.").
 
 ## Process instance snapshots
 
@@ -238,10 +238,10 @@ To configure a capture rule on the host level
 
 1. On the **Host settings** page, select **Business Observability** > **OneAgent**.
 2. Select **Add new capture rule**.
-3. Define a rule. For details, see [Business event capture](/docs/observe/business-observability/bo-events-capturing "Capture business events for Dynatrace Business Observability.").
+3. Define a rule. For details, see [Business event capture](../../business-observability/bo-events-capturing.md "Capture business events for Dynatrace Business Observability.").
 4. Select **Save changes**.
 
-For details, see [Business event capture](/docs/observe/business-observability/bo-events-capturing#report-business-event-oneagent "Capture business events for Dynatrace Business Observability.").
+For details, see [Business event capture](../../business-observability/bo-events-capturing.md#report-business-event-oneagent "Capture business events for Dynatrace Business Observability.").
 
 ## Anomaly detection
 
@@ -259,7 +259,7 @@ To configure anomaly detection for host disks
 2. Adjust the host-specific thresholds as needed.
 3. Select **Save changes**.
 
-For details, see [Adjust the sensitivity of anomaly detection for infrastructure](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure "Adjust problem detection sensitivity for infrastructure.").
+For details, see [Adjust the sensitivity of anomaly detection for infrastructure](../../../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure.md "Adjust problem detection sensitivity for infrastructure.").
 
 ## OneAgent updates
 
@@ -269,7 +269,7 @@ Use **OneAgent updates** to configure the selected host's OneAgent update behavi
 * Automatic updates during update windows
 * No automatic updates
 
-Manually triggered environment updates override individual host update settings. To learn more about environment updates, see [One Agent Updates](/docs/ingest-from/dynatrace-oneagent/oneagent-update#oneagent-environment-settings "Learn how to update OneAgent.").
+Manually triggered environment updates override individual host update settings. To learn more about environment updates, see [One Agent Updates](../../../ingest-from/dynatrace-oneagent/oneagent-update.md#oneagent-environment-settings "Learn how to update OneAgent.").
 
 To set automatic OneAgent update behavior on the selected host
 
@@ -293,7 +293,7 @@ Use **OS services monitoring** to set up alerts for OS services in undesirable s
 5. Define the alerting conditions.
 6. Select **Save changes**.
 
-For details, see [OS services monitoring](/docs/observe/infrastructure-observability/hosts/monitoring/os-services "Improve the visibility of your infrastructure by monitoring the availability of operating system services.").
+For details, see [OS services monitoring](monitoring/os-services.md "Improve the visibility of your infrastructure by monitoring the availability of operating system services.").
 
 ## Extension Execution Controller
 
@@ -308,7 +308,7 @@ Use **Extension Execution Controller** to configure the Extension Execution Cont
    * Set **Performance profile**. For details, see [Performance profile - resource consumption](#resource-consumption).
 3. Select **Save changes**.
 
-For EEC details, see [About Extensions](/docs/ingest-from/extensions/concepts#eec "Learn more about the concept of Dynatrace Extensions.").
+For EEC details, see [About Extensions](../../../ingest-from/extensions/concepts.md#eec "Learn more about the concept of Dynatrace Extensions.").
 
 ## Log Monitoring
 
@@ -319,10 +319,10 @@ Use the **Log Monitoring** page to configure host-specific settings for log moni
 
    * OneAgent configuration
 
-* Custom log source configurationâfor details, see [Custom log source](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-custom-log-source "Configure custom log sources to manually add log data sources that have not been autodetected.")
-* Log storage configurationâfor details, see [Log ingest rules](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis.")
-* Sensitive data maskingâfor details, see [Sensitive data masking in OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking "Mask sensitive information in your log data using Log Management and Analytics.")
-* Timestamp configurationâfor details, see [Timestamp/splitting configuration](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record.")
+* Custom log source configurationâfor details, see [Custom log source](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-custom-log-source.md "Configure custom log sources to manually add log data sources that have not been autodetected.")
+* Log storage configurationâfor details, see [Log ingest rules](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.")
+* Sensitive data maskingâfor details, see [Sensitive data masking in OneAgent](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking.md "Mask sensitive information in your log data using Log Management and Analytics.")
+* Timestamp configurationâfor details, see [Timestamp/splitting configuration](../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration.md "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record.")
 * Select **Save changes**.
 
 ## Crash dump analytics
@@ -333,4 +333,4 @@ Use **Crash dump analytics** to manage the automatic detection of application cr
 2. Turn on/off **Crash dump analytics** to determine whether Dynatrace automatically detects application crashes on the selected host.
 3. Select **Save changes**.
 
-For details on Linux and Windows core crash dumps, see [Crash analysis](/docs/observe/application-observability/profiling-and-optimization/crash-analysis "Learn how Dynatrace can help you gain insight into process crashes.").
+For details on Linux and Windows core crash dumps, see [Crash analysis](../../application-observability/profiling-and-optimization/crash-analysis.md "Learn how Dynatrace can help you gain insight into process crashes.").

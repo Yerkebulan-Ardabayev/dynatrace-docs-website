@@ -17,15 +17,15 @@ This tutorial explains how to configure an event notification with the latest Dy
 
 The notification consists of
 
-* A [custom alert](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") configuration, which raises an alerting event if a certain conditions is met.
+* A [custom alert](../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.") configuration, which raises an alerting event if a certain conditions is met.
 * A simple workflow that automatically sends an email when the alerting event is active.
 
 ## Prerequisites
 
 * Terraform CLI with the Dynatrace provider installed and available under PATH.
-  For more information, see [Install Terraform CLI and set up Configuration as Code via Terraform](/docs/deliver/configuration-as-code/terraform/terraform-cli "Install the Terraform CLI and set up Dynatrace Configuration as Code via Terraform.").
+  For more information, see [Install Terraform CLI and set up Configuration as Code via Terraform](../terraform-cli.md "Install the Terraform CLI and set up Dynatrace Configuration as Code via Terraform.").
 * OAuth client or platform token with the following permissions.
-  For more information, see [Create API access token](/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling#terraform-api-setup "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.").
+  For more information, see [Create API access token](../terraform-api-support-access-permission-handling.md#terraform-api-setup "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.").
 
   + View settings objects for schema (`settings:objects:read`)
   + Create settings objects for schema (`settings:objects:write`)
@@ -37,7 +37,7 @@ The notification consists of
 
 ## What will you learn
 
-You'll learn how to configure a [custom alert](/docs/dynatrace-intelligence/anomaly-detection "How Dynatrace detects anomalies in your environment.") and a [workflow](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") with an email action.
+You'll learn how to configure a [custom alert](../../../../dynatrace-intelligence/anomaly-detection.md "How Dynatrace detects anomalies in your environment.") and a [workflow](../../../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") with an email action.
 
 ## Steps
 
@@ -538,7 +538,7 @@ To build a configuration for raising an event and a simple workflow for sending 
    If you want to try other resources, consider using the export utility to export existing configurations from your selected environment.
 2. Open a terminal and set the environment variables for your environment URL and authentication credentials.
    The environment variable identifies which tenant you'll be pushing configurations to.
-   For more information, see [Terraform API support and access permission handling](/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.").
+   For more information, see [Terraform API support and access permission handling](../terraform-api-support-access-permission-handling.md "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.").
 3. In your working directory, run the `terraform plan` to generate an execution plan that provides a preview of the changes Terraform intends to make.
 
    Show me preview example

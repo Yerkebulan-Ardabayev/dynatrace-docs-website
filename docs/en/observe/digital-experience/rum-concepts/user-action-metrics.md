@@ -13,7 +13,7 @@ scraped: 2026-03-05T21:27:36.932998
 * 8-min read
 * Updated on Mar 20, 2023
 
-For web applications, Dynatrace calculates a host of [user action](/docs/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.") metrics.
+For web applications, Dynatrace calculates a host of [user action](user-actions.md "Learn what user actions are and how they help you understand what users do with your application.") metrics.
 
 Core web vitals
 
@@ -76,7 +76,7 @@ From the metrics listed above, Dynatrace has specified some as key metrics. Key 
 
 **Cumulative layout shift** is the score measuring the unexpected shifting of visible webpage elements. It is available for [Chromium-based browsersï»¿](https://www.chromium.org/Home) and measured using [Google-provided APIsï»¿](https://web.dev/cls/#measure-cls-in-javascript).
 
-Dynatrace allows you to [choose the right performance metric for each application condition](/docs/observe/digital-experience/web-applications/analyze-and-use/work-with-key-performance-metrics "Learn how to use the right key performance metrics to optimize user experience data for each of your applications.").
+Dynatrace allows you to [choose the right performance metric for each application condition](../web-applications/analyze-and-use/work-with-key-performance-metrics.md "Learn how to use the right key performance metrics to optimize user experience data for each of your applications.").
 
 ## Missing metric measurements
 
@@ -87,7 +87,7 @@ Metric measurements might be missing in the following cases:
 * During a load action, the user selects another link that triggers a new load action before the original page load event is completed. The second load action interrupts the **Visually complete** calculation of the first load action, so no measurement is available.  
   In the earlier version of **Visually complete**, Dynatrace used the user action duration as a fallback measurement. This skewed the timeseries, so such cases are now excluded to ensure more accurate aggregates.
 * A late redirect is triggered immediately following a load action.
-* The [Visually complete time-out](/docs/observe/digital-experience/web-applications/analyze-and-use/how-to-use-visually-complete-and-speed-index-metrics#config-enhanced-vc "Learn how to use 'Visually complete' and 'Speed index' metrics.") is reached during the calculation.
+* The [Visually complete time-out](../web-applications/analyze-and-use/how-to-use-visually-complete-and-speed-index-metrics.md#config-enhanced-vc "Learn how to use 'Visually complete' and 'Speed index' metrics.") is reached during the calculation.
 
 #### Core web vitals
 

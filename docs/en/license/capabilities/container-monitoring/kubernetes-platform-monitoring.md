@@ -16,7 +16,7 @@ scraped: 2026-02-06T16:26:50.506651
 Kubernetes Platform Monitoring feature overview
 
 This page describes how the Kubernetes Platform Monitoring DPS capability is consumed and billed.
-For an overview of the capability, including its main features, see [Kubernetes Platform Monitoring](/docs/license/capabilities/container-monitoring#kubernetes-monitoring "Learn about the different container monitoring modes that are available with a Dynatrace Platform Subscription (DPS) license.").
+For an overview of the capability, including its main features, see [Kubernetes Platform Monitoring](../container-monitoring.md#kubernetes-monitoring "Learn about the different container monitoring modes that are available with a Dynatrace Platform Subscription (DPS) license.").
 
 ## How consumption is calculated: pod-hour
 
@@ -24,7 +24,7 @@ The unit of measure for calculating consumption of Kubernetes Platform Monitorin
 The longer a pod is monitored, the more pod-hours the environment consumes.
 Note that a pod-hour is independent of the size of the pod.
 
-OneAgent version 1.301+ When Kubernetes Platform Monitoring is run in combination with Full-Stack Monitoring, consumption for all pods running on a Full-Stack monitored host is included with [Full-Stack Monitoring](/docs/license/capabilities/app-infra-observability/full-stack-monitoring "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.").
+OneAgent version 1.301+ When Kubernetes Platform Monitoring is run in combination with Full-Stack Monitoring, consumption for all pods running on a Full-Stack monitored host is included with [Full-Stack Monitoring](../app-infra-observability/full-stack-monitoring.md "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.").
 
 Pods on non-Full-Stack hosts, as well as pods stuck in Pending, still contribute to your consumption of pod-hours, as described on this page.
 
@@ -94,4 +94,4 @@ Go to **Cost and usage details** > **Usage summary** > **Kubernetes monitoring**
 
 ### Track your consumption and costs via API
 
-You can query metrics via the [Environment API - Metrics API v2](/docs/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.").
+You can query metrics via the [Environment API - Metrics API v2](../../../dynatrace-api/environment-api/metric-v2.md "Retrieve metric information via Metrics v2 API.").

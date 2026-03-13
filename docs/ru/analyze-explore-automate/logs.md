@@ -13,9 +13,9 @@ scraped: 2026-03-06T21:10:16.285435
 * Чтение: 6 мин
 * Обновлено 28 января 2026 г.
 
-Управление и аналитика логов на основе [Grail](/docs/platform/grail/dynatrace-grail "Grail — это хранилище данных Dynatrace, специально разработанное для данных наблюдаемости и безопасности, выступающее единым унифицированным хранилищем для логов, метрик, трассировок, событий и многого другого.") обеспечивает унифицированный подход к извлечению ценности из данных логов на платформе Dynatrace.
+Управление и аналитика логов на основе [Grail](../platform/grail/dynatrace-grail.md "Grail — это хранилище данных Dynatrace, специально разработанное для данных наблюдаемости и безопасности, выступающее единым унифицированным хранилищем для логов, метрик, трассировок, событий и многого другого.") обеспечивает унифицированный подход к извлечению ценности из данных логов на платформе Dynatrace.
 
-Простое управление данными логов позволяет [загружать](/docs/analyze-explore-automate/logs/lma-log-ingestion "Потоковая передача данных логов в Dynatrace.") петабайты данных без схем, индексации или регидратации. Все эти данные доступны в любое время для любых аналитических задач. Благодаря схеме при чтении и [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.") нет необходимости решать, что вы хотите запрашивать, на этапе загрузки данных. Выберите период хранения данных, соответствующий вашим бизнес-требованиям и требованиям соответствия, будь то для отладки или аудита.
+Простое управление данными логов позволяет [загружать](logs/lma-log-ingestion.md "Потоковая передача данных логов в Dynatrace.") петабайты данных без схем, индексации или регидратации. Все эти данные доступны в любое время для любых аналитических задач. Благодаря схеме при чтении и [Dynatrace Query Language (DQL)](../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.") нет необходимости решать, что вы хотите запрашивать, на этапе загрузки данных. Выберите период хранения данных, соответствующий вашим бизнес-требованиям и требованиям соответствия, будь то для отладки или аудита.
 
 Используйте Dynatrace Log Management and Analytics:
 
@@ -29,27 +29,27 @@ scraped: 2026-03-06T21:10:16.285435
 
 **Краткое руководство по началу работы**
 
-[Сделайте первые шаги для подключения и изучения ваших логов.](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-real-time-observability-logs-dql "Изучите сценарий использования Log Management and Analytics для наблюдаемости логов в реальном времени.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+[Сделайте первые шаги для подключения и изучения ваших логов.](logs/lma-use-cases/lma-e2e-real-time-observability-logs-dql.md "Изучите сценарий использования Log Management and Analytics для наблюдаемости логов в реальном времени.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
 **Загрузка логов**
 
-[Настройте сбор логов для автоматического получения логов из различных источников.](/docs/analyze-explore-automate/logs/lma-log-ingestion "Потоковая передача данных логов в Dynatrace.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+[Настройте сбор логов для автоматического получения логов из различных источников.](logs/lma-log-ingestion.md "Потоковая передача данных логов в Dynatrace.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
 **Настройка бакетов и разрешений**
 
-[Сконфигурируйте хранилище и определите сроки хранения и контроль доступа.](/docs/analyze-explore-automate/logs/lma-bucket-assignment "Данные логов могут храниться в бакетах хранения данных на основе определенных сроков хранения.")[![Шаг 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Шаг 4")
+[Сконфигурируйте хранилище и определите сроки хранения и контроль доступа.](logs/lma-bucket-assignment.md "Данные логов могут храниться в бакетах хранения данных на основе определенных сроков хранения.")[![Шаг 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Шаг 4")
 
 **Настройка обработки в OpenPipeline**
 
-[Определите, как загруженные логи обрабатываются и хранятся.](/docs/analyze-explore-automate/logs/lma-log-processing "Используйте Dynatrace на основе Grail и DQL для преобразования входящих данных логов для лучшего понимания, анализа или дальнейшей обработки.")[![Шаг 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Шаг 5")
+[Определите, как загруженные логи обрабатываются и хранятся.](logs/lma-log-processing.md "Используйте Dynatrace на основе Grail и DQL для преобразования входящих данных логов для лучшего понимания, анализа или дальнейшей обработки.")[![Шаг 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Шаг 5")
 
 ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Приложение** **Logs**
 
-Узнайте, как использовать ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**.](/docs/analyze-explore-automate/logs/lma-logs-app "Поиск, фильтрация и анализ логов с помощью приложения Dynatrace Logs для быстрого исследования и обмена результатами.")[![Шаг 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Шаг 6")
+Узнайте, как использовать ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**.](logs/lma-logs-app.md "Поиск, фильтрация и анализ логов с помощью приложения Dynatrace Logs для быстрого исследования и обмена результатами.")[![Шаг 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Шаг 6")
 
 **Оповещения, проблемы и автоматизация**
 
-[Создавайте обнаружение аномалий и оповещения, а также автоматизируйте процесс обнаружения.](/docs/analyze-explore-automate/logs/alerting-on-logs "Создавайте или позвольте Dynatrace создавать оповещения на основе данных логов в системе мониторинга логов Dynatrace")
+[Создавайте обнаружение аномалий и оповещения, а также автоматизируйте процесс обнаружения.](logs/alerting-on-logs.md "Создавайте или позвольте Dynatrace создавать оповещения на основе данных логов в системе мониторинга логов Dynatrace")
 
 Данные логов могут поступать из различных источников, включая Kubernetes, технологические стеки, облачные сервисы, гиперскейлеры, пользовательские API-интеграции или расширения Dynatrace. Dynatrace использует OneAgent и API как основные методы загрузки логов из этих источников.
 
@@ -63,7 +63,7 @@ scraped: 2026-03-06T21:10:16.285435
 
 ## Модель потребления
 
-Модель потребления для Log Management and Analytics основана на трех измерениях использования данных (загрузка и обработка, хранение и запросы). Единицей измерения потребляемого объема данных являются гибибайты (GiB). Кроме того, доступна опция **Хранение с включенными запросами**, объединяющая измерения запросов и хранения. Подробнее см. в разделе [Log Analytics (DPS)](/docs/license/capabilities/log-analytics "Узнайте, как рассчитывается потребление Dynatrace Log Analytics с использованием модели подписки Dynatrace Platform Subscription.").
+Модель потребления для Log Management and Analytics основана на трех измерениях использования данных (загрузка и обработка, хранение и запросы). Единицей измерения потребляемого объема данных являются гибибайты (GiB). Кроме того, доступна опция **Хранение с включенными запросами**, объединяющая измерения запросов и хранения. Подробнее см. в разделе [Log Analytics (DPS)](../license/capabilities/log-analytics.md "Узнайте, как рассчитывается потребление Dynatrace Log Analytics с использованием модели подписки Dynatrace Platform Subscription.").
 
 ## Доступность и предыдущие версии
 
@@ -77,7 +77,7 @@ Log Management and Analytics — это новейшее предложение 
 
 ## Связанные темы
 
-* [Обновление до Log Management and Analytics](/docs/analyze-explore-automate/log-monitoring/logs-upgrade/lmc-logs-upgrade-to-lma "Log Management and Analytics — это новейшее решение для мониторинга логов Dynatrace. Мы рекомендуем перейти на это последнее предложение мониторинга логов.")
-* [Сценарии использования Log Management and Analytics](/docs/analyze-explore-automate/logs/lma-use-cases "Изучите распространенные сценарии использования Log Management and Analytics в развертываниях Dynatrace.")
-* [Примеры логов на Grail](/docs/analyze-explore-automate/logs/logs-on-grail-examples "Изучите базовые примеры Log Management and Analytics по использованию данных логов в Dynatrace на основе Grail.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")
+* [Обновление до Log Management and Analytics](log-monitoring/logs-upgrade/lmc-logs-upgrade-to-lma.md "Log Management and Analytics — это новейшее решение для мониторинга логов Dynatrace. Мы рекомендуем перейти на это последнее предложение мониторинга логов.")
+* [Сценарии использования Log Management and Analytics](logs/lma-use-cases.md "Изучите распространенные сценарии использования Log Management and Analytics в развертываниях Dynatrace.")
+* [Примеры логов на Grail](logs/logs-on-grail-examples.md "Изучите базовые примеры Log Management and Analytics по использованию данных логов в Dynatrace на основе Grail.")
+* [Dynatrace Query Language](../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")

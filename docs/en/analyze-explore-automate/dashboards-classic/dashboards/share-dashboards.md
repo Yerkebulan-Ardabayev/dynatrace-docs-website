@@ -12,12 +12,12 @@ scraped: 2026-02-27T21:26:39.808422
 * 7-min read
 * Published Jul 19, 2017
 
-[Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+[Dashboards Classic](../../dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
 
 This page refers to classic dashboards created using the ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** functionality integrated with Dynatrace Classic.
 
-* If you're already using the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace, see [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") for related documentation.
-* If you're still using classic dashboards, we encourage you to [upgrade your dashboards](/docs/analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.") and benefit from all the latest dashboarding possibilities made available by the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace.
+* If you're already using the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace, see [Dashboards](../../dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") for related documentation.
+* If you're still using classic dashboards, we encourage you to [upgrade your dashboards](../dashboards-upgrade-classic-to-latest.md "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.") and benefit from all the latest dashboarding possibilities made available by the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace.
 
 You can share your dashboards with anyone, even if they don't have their own accounts within the same Dynatrace environment.
 
@@ -167,7 +167,7 @@ To create a shareable link to your dashboard that can be used by anyone (with no
 
 Repeat this procedure to create multiple anonymous links.
 
-* If a [default timeframe and management zone](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe#default "Learn about Dynatrace dashboard timeframe and management zone settings.") are set for the dashboard, the link is shared with those settings. Otherwise, the link is shared with the timeframe of **last 2 hours** and **All** management zone.
+* If a [default timeframe and management zone](dashboard-timeframe.md#default "Learn about Dynatrace dashboard timeframe and management zone settings.") are set for the dashboard, the link is shared with those settings. Otherwise, the link is shared with the timeframe of **last 2 hours** and **All** management zone.
 * If the dashboard is shared with the **All** management zone, a recipient of the link has access to the management zones that you had access to when you created the link.
 
 ### Revoke a shareable link to your dashboard

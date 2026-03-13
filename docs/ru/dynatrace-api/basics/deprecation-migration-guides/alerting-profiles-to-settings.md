@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:34:32.542628
 * Справочник
 * Опубликовано 20 декабря 2022 г.
 
-[Alerting profiles API](/docs/dynatrace-api/configuration-api/alerting-profiles-api "Узнайте, что предлагает Dynatrace Alerting profiles API.") объявлен устаревшим в [Dynatrace версии 1.249](/docs/whats-new/dynatrace-api/sprint-249 "Список изменений Dynatrace API версии 1.249"). Его заменой является [Settings API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API.") со схемой **Problem alerting profiles** (`builtin:alerting.profile`). Мы рекомендуем выполнить миграцию на новый API при первой возможности.
+[Alerting profiles API](../../configuration-api/alerting-profiles-api.md "Узнайте, что предлагает Dynatrace Alerting profiles API.") объявлен устаревшим в [Dynatrace версии 1.249](../../../whats-new/dynatrace-api/sprint-249.md "Список изменений Dynatrace API версии 1.249"). Его заменой является [Settings API](../../environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.") со схемой **Problem alerting profiles** (`builtin:alerting.profile`). Мы рекомендуем выполнить миграцию на новый API при первой возможности.
 
 Миграция затрагивает URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также область действия токена для аутентификации запросов.
 
@@ -29,9 +29,9 @@ scraped: 2026-03-06T21:34:32.542628
 
 ## Параметры
 
-Чтобы узнать о новых параметрах запросов/тела, см. документацию отдельных запросов в [Settings API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API.").
+Чтобы узнать о новых параметрах запросов/тела, см. документацию отдельных запросов в [Settings API](../../environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.").
 
-В рамках Settings 2.0 каждый профиль оповещений представлен объектом настроек. Объект содержит метаданные (такие как область действия или временная метка создания) и саму конфигурацию, инкапсулированную в объекте **value**. Содержимое **value** по существу совпадает с конфигурацией в устаревшем Alerting profiles API. Чтобы узнать о параметрах конфигурации профиля оповещений, запросите схему **Problem alerting profiles** (`builtin:alerting.profile`) с помощью запроса [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "Просмотрите схему настроек через Dynatrace API.").
+В рамках Settings 2.0 каждый профиль оповещений представлен объектом настроек. Объект содержит метаданные (такие как область действия или временная метка создания) и саму конфигурацию, инкапсулированную в объекте **value**. Содержимое **value** по существу совпадает с конфигурацией в устаревшем Alerting profiles API. Чтобы узнать о параметрах конфигурации профиля оповещений, запросите схему **Problem alerting profiles** (`builtin:alerting.profile`) с помощью запроса [GET a schema](../../environment-api/settings/schemas/get-schema.md "Просмотрите схему настроек через Dynatrace API.").
 
 ## Примеры
 
@@ -43,7 +43,7 @@ Settings 2.0
 
 Alerting profiles
 
-Чтобы получить список всех профилей оповещений, используйте запрос [GET objects](/docs/dynatrace-api/environment-api/settings/objects/get-objects "Просмотрите несколько объектов настроек через Dynatrace API."). В параметрах запроса установите **schemaIds** в значение `builtin:alerting.profile`, а **scope** — в значение `environment`.
+Чтобы получить список всех профилей оповещений, используйте запрос [GET objects](../../environment-api/settings/objects/get-objects.md "Просмотрите несколько объектов настроек через Dynatrace API."). В параметрах запроса установите **schemaIds** в значение `builtin:alerting.profile`, а **scope** — в значение `environment`.
 
 #### URL запроса
 
@@ -375,7 +375,7 @@ Settings 2.0
 
 Alerting profiles
 
-Чтобы создать профиль оповещений, используйте запрос [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Создайте или проверьте объект настроек через Dynatrace API."). В теле запроса установите **schemaId** в значение `builtin:alerting.profile`, а **scope** — в значение `environment`. Укажите конфигурацию профиля оповещений в объекте **value**.
+Чтобы создать профиль оповещений, используйте запрос [POST an object](../../environment-api/settings/objects/post-object.md "Создайте или проверьте объект настроек через Dynatrace API."). В теле запроса установите **schemaId** в значение `builtin:alerting.profile`, а **scope** — в значение `environment`. Укажите конфигурацию профиля оповещений в объекте **value**.
 
 Ответ содержит идентификатор объекта, необходимый для изменения настроек.
 
@@ -559,7 +559,7 @@ Settings 2.0
 
 Alerting profiles
 
-Чтобы отредактировать профиль оповещений, используйте запрос [PUT an object](/docs/dynatrace-api/environment-api/settings/objects/put-object "Отредактируйте объект настроек через Dynatrace API.").
+Чтобы отредактировать профиль оповещений, используйте запрос [PUT an object](../../environment-api/settings/objects/put-object.md "Отредактируйте объект настроек через Dynatrace API.").
 
 #### URL запроса
 
@@ -749,5 +749,5 @@ PUT https://mySampleEnv.live.dynatrace.com/config/v1/alertingProfiles/2640173c-e
 
 ## Связанные темы
 
-* [Settings API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API.")
-* [Alerting profiles API](/docs/dynatrace-api/configuration-api/alerting-profiles-api "Узнайте, что предлагает Dynatrace Alerting profiles API.")
+* [Settings API](../../environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.")
+* [Alerting profiles API](../../configuration-api/alerting-profiles-api.md "Узнайте, что предлагает Dynatrace Alerting profiles API.")

@@ -19,7 +19,7 @@ You can tailor various aspects of Dynatrace to the specifics of data acquired by
 
 The Extensions 2.0 framework enables you to tailor the Dynatrace UI for the specific needs of the data ingested by your extension. You can add customized dashboards or specialized unified analysis pages to your extension.
 
-For more information, see [Extend Dynatrace with domain-specific web UI](/docs/ingest-from/extend-dynatrace/extend-ui "Extend the Dynatrace web UI using entity-tailored unified analysis pages.").
+For more information, see [Extend Dynatrace with domain-specific web UI](../../extend-dynatrace/extend-ui.md "Extend the Dynatrace web UI using entity-tailored unified analysis pages.").
 
 ## Custom metric events
 
@@ -46,13 +46,13 @@ Export custom event for alerting definition
 
    Replace:
 
-   * `{env-id}` with your [Environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
-   * `{api-token}` with an [API token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](/docs/ingest-from/extensions/manage-extensions#permissions "Learn how to manage extensions.").
+   * `{env-id}` with your [Environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
+   * `{api-token}` with an [API token](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](../manage-extensions.md#permissions "Learn how to manage extensions.").
    * `{custom-event-id}` with the custom metric event identifier you determined in the previous step.
 5. The call returns the JSON payload containing a custom metric event definition. Save it as a JSON file.
 6. Declare the exported JSON files in your `extension.yaml` file and add them to your extension package.
 
-For more information, see [Extensions 2.0 hands-on excercise](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial "Learn about WMI extensions in the Extensions framework.").
+For more information, see [Extensions 2.0 hands-on excercise](../develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial.md "Learn about WMI extensions in the Extensions framework.").
 
 After you upload or update an extension containing custom metric events, make sure you enable the events you'd like to use. The extension-imported events are disabled by default after each upload and activation, inluding an update. To enable metric events, go to **Settings** > **Anomaly detection** > **Metric events**.
 
@@ -60,7 +60,7 @@ After you upload or update an extension containing custom metric events, make su
 
 After you start to send in your own data via an extension, you might be interested in extending the built-in topology model by adding your own domain-related entity types and relationships.
 
-For more information, see [Custom topology model](/docs/ingest-from/extend-dynatrace/extend-topology "Ensure that all incoming observations are context-rich and analyzed in the context of the monitored entities they relate to.").
+For more information, see [Custom topology model](../../extend-dynatrace/extend-topology.md "Ensure that all incoming observations are context-rich and analyzed in the context of the monitored entities they relate to.").
 
 ## Custom metric metadata
 
@@ -68,7 +68,7 @@ To add more context to data points and their dimensions ingested by your extensi
 
 You can provide such information via custom metric metadata. Metadata is stored independently from data points and tied together by the metric key. You can push data points and set metadata in any order.
 
-For more information, see [Custom metric metadata](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata "Provide metadata for your custom metric.").
+For more information, see [Custom metric metadata](../../extend-dynatrace/extend-metrics/reference/custom-metric-metadata.md "Provide metadata for your custom metric.").
 
 ### Data filtering
 
@@ -88,23 +88,23 @@ Filters match entity names to include/exclude certain configurations from monito
 
 ## Custom process group detection rules
 
-Dynatrace detects which processes are part of the same [process groups](/docs/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring.") by means of a default set of detection rules. However, you can add your own process detection rules suited to the data retrieved by your extension.
+Dynatrace detects which processes are part of the same [process groups](../../../observe/infrastructure-observability/process-groups.md "Analyze process groups and customize process group naming, detection, and monitoring.") by means of a default set of detection rules. However, you can add your own process detection rules suited to the data retrieved by your extension.
 
-For more information, see [Process group detection](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection").
+For more information, see [Process group detection](../../../observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection").
 
 ## Custom security context attribute
 
 You can add a security context attribute to Dynatrace-provided and custom extensions. You can do this as part of the extension's activation, individually per each configuration, or you can edit the settings later.
 
-You need to have a monitoring configuration for the selected extension. For more details on setting up a monitoring configuration via API, see [Extensions 2.0 API - POST a monitoring configuration](/docs/dynatrace-api/environment-api/extensions-20/monitoring-configurations/post-monitoring-configuration "Create a monitoring configuration of an extension via the Dynatrace Extensions 2.0 API.").
+You need to have a monitoring configuration for the selected extension. For more details on setting up a monitoring configuration via API, see [Extensions 2.0 API - POST a monitoring configuration](../../../dynatrace-api/environment-api/extensions-20/monitoring-configurations/post-monitoring-configuration.md "Create a monitoring configuration of an extension via the Dynatrace Extensions 2.0 API.").
 
 You can add security context from the **Monitoring configurations** tab of the chosen extension by selecting **Edit** from the **Actions** column. Then, select **Next** to go to the **Attributes** page.
 
 The attribute is applied to all metrics, logs, and events produced by the configuration.
 
-An API can also be used to set up a security context. For details, see [Monitored entities API - security context](/docs/dynatrace-api/environment-api/entity-v2/security-context "Create or delete security context via Dynatrace API.").
+An API can also be used to set up a security context. For details, see [Monitored entities API - security context](../../../dynatrace-api/environment-api/entity-v2/security-context.md "Create or delete security context via Dynatrace API.").
 
-To avoid vulnerabilities, such as unauthorized access or data leakage, configure the security context for extensions according to our [recommended practices](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context").
+To avoid vulnerabilities, such as unauthorized access or data leakage, configure the security context for extensions according to our [recommended practices](../../../manage/identity-access-management/use-cases/access-security-context.md "Grant access to entities with security context").
 
 ## Custom cost center and cost product attributes
 
@@ -115,9 +115,9 @@ The fields are based on the following attributes:
 * `dt.cost.costcenter` assigns usage to a specific cost center.
 * `dt.cost.product` assigns usage to a product or application ID.
 
-To learn more about the field syntax, see [Global field reference](/docs/semantic-dictionary/fields#dynatrace "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
+To learn more about the field syntax, see [Global field reference](../../../semantic-dictionary/fields.md#dynatrace "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
 
-To add cost center and cost product attributes to your extension, you need to have a monitoring configuration for the selected extension. For more details on setting up a monitoring configuration via API, see [Extensions 2.0 API - POST a monitoring configuration](/docs/dynatrace-api/environment-api/extensions-20/monitoring-configurations/post-monitoring-configuration "Create a monitoring configuration of an extension via the Dynatrace Extensions 2.0 API.").
+To add cost center and cost product attributes to your extension, you need to have a monitoring configuration for the selected extension. For more details on setting up a monitoring configuration via API, see [Extensions 2.0 API - POST a monitoring configuration](../../../dynatrace-api/environment-api/extensions-20/monitoring-configurations/post-monitoring-configuration.md "Create a monitoring configuration of an extension via the Dynatrace Extensions 2.0 API.").
 
 You can add security context from the **Monitoring configurations** tab of the chosen extension by selecting **Edit** from the **Actions** column. Then, select **Next** to go to the **Attributes** page.
 
@@ -125,19 +125,19 @@ The attributes are applied to all metrics, logs, and events produced by the conf
 
 ## Log metrics, events, and processing rules
 
-After you enable [log ingestion](/docs/analyze-explore-automate/logs "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") into Dynatrace you can define the log metrics, events, and add your own log processing rules to be shipped with your extension.
+After you enable [log ingestion](../../../analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.") into Dynatrace you can define the log metrics, events, and add your own log processing rules to be shipped with your extension.
 
 For general information, on your logs configuration, see
 
-* [Log events](/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-events "Create log events based on log data and use them in problem detection.")
-* [Log metrics](/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-metrics "Create metrics based on log data and use them throughout Dynatrace like any other metric.")
-* [Log processing](/docs/analyze-explore-automate/logs/lma-log-processing "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.")
+* [Log events](../../../analyze-explore-automate/logs/lma-log-processing/lma-log-events.md "Create log events based on log data and use them in problem detection.")
+* [Log metrics](../../../analyze-explore-automate/logs/lma-log-processing/lma-log-metrics.md "Create metrics based on log data and use them throughout Dynatrace like any other metric.")
+* [Log processing](../../../analyze-explore-automate/logs/lma-log-processing.md "Use Dynatrace powered by Grail and DQL to reshape incoming log data for better understanding, analysis, or further processing.")
 
 The Extensions YAML file supports the same fields as the Settings 2.0 schemas:
 
-* [Log metrics](/docs/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-schemaless-log-metric "View builtin:logmonitoring.schemaless-log-metric settings schema table of your monitoring environment via the Dynatrace API.")
-* [Log events](/docs/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-events "View builtin:logmonitoring.log-events settings schema table of your monitoring environment via the Dynatrace API.")
-* [Processing](/docs/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-dpp-rules "View builtin:logmonitoring.log-dpp-rules settings schema table of your monitoring environment via the Dynatrace API.")
+* [Log metrics](../../../dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-schemaless-log-metric.md "View builtin:logmonitoring.schemaless-log-metric settings schema table of your monitoring environment via the Dynatrace API.")
+* [Log events](../../../dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-events.md "View builtin:logmonitoring.log-events settings schema table of your monitoring environment via the Dynatrace API.")
+* [Processing](../../../dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-dpp-rules.md "View builtin:logmonitoring.log-dpp-rules settings schema table of your monitoring environment via the Dynatrace API.")
 
 You define your custom log configuration in the Extensions YAML file, starting with the following nodes in the root of the file
 
@@ -153,7 +153,7 @@ To learn the structure of the definition, check the Extensions schemas:
 * `log.processing.rule.schema.json`
 * `log.processing.rule.schema.lql.json`
 
-See [Extension YAML file](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml#schemas "Learn how to create an extension YAML file using the Extensions framework.") to learn how to get the schema JSON files.
+See [Extension YAML file](../develop-your-extensions/extension-yaml.md#schemas "Learn how to create an extension YAML file using the Extensions framework.") to learn how to get the schema JSON files.
 
 Check the examples below on how to define your log metrics, events, and processing rules in the extension YAML file.
 

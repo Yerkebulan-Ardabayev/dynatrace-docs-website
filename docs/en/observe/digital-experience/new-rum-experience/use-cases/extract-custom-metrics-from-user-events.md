@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:15:59.487993
 * Tutorial
 * Published Dec 19, 2025
 
-OpenPipeline makes it straightforward to turn [user events](/docs/observe/digital-experience/new-rum-experience/concepts/data-model#user-events "Get familiar with the data model at the heart of the New RUM Experience.") into custom metrics, giving you the power to analyze patterns that impact your goals in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") while ensuring your data remains useful for long-term analysis. Its ability to parse data from standard user event attributes into dedicated fields facilitates metric extraction.
+OpenPipeline makes it straightforward to turn [user events](../concepts/data-model.md#user-events "Get familiar with the data model at the heart of the New RUM Experience.") into custom metrics, giving you the power to analyze patterns that impact your goals in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") while ensuring your data remains useful for long-term analysis. Its ability to parse data from standard user event attributes into dedicated fields facilitates metric extraction.
 
 To illustrate the process, this guide uses a travel booking site as an exampleâthe number of views per journey is extracted into a custom metric to help identify trends.
 
@@ -20,7 +20,7 @@ To illustrate the process, this guide uses a travel booking site as an exampleâ
 
 In this tutorial, weâll use the [Dynatrace demo application easyTravelï»¿](https://dt-url.net/rj034fg) as an example. easyTravel lists available journeys, and when a user selects a journey, its details are displayed.
 
-The application is instrumented with the RUM JavaScript, and the captured data is mapped to a [frontend](/docs/observe/digital-experience/new-rum-experience/concepts/frontends "Learn about the frontend concept in the New RUM Experience.") named `easytravel`. Each time a user navigates from one page to anotherâfor example, from the home page to a specific journeyâa [navigation event](/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts/pages-views-and-navigations#navigations "Understand how pages, views, and navigations are defined for web frontends the New RUM Experience.") is captured.
+The application is instrumented with the RUM JavaScript, and the captured data is mapped to a [frontend](../concepts/frontends.md "Learn about the frontend concept in the New RUM Experience.") named `easytravel`. Each time a user navigates from one page to anotherâfor example, from the home page to a specific journeyâa [navigation event](../web-frontends/concepts/pages-views-and-navigations.md#navigations "Understand how pages, views, and navigations are defined for web frontends the New RUM Experience.") is captured.
 
 Navigation events provide the information needed to analyze the number of views per journey. Each journey has a unique ID. When a soft navigation to a specific journey occurs, the URL path updates to include that journey IDâfor example, `/easytravel/journeys/24859438`. This value is captured in the `view.url.path` field of the navigation event.
 
@@ -64,12 +64,12 @@ While this query works well for short-term analysis, itâs not ideal for mon
 
 Prior knowledge
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* [Dynatrace Query Language](../../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Processing in OpenPipeline](../../../../platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
 
 Prerequisites
 
-Ensure you have the permissions described in [New RUM Experience permissions](/docs/observe/digital-experience/new-rum-experience/permissions "See what permissions you need to set up the New RUM Experience.").
+Ensure you have the permissions described in [New RUM Experience permissions](../permissions.md "See what permissions you need to set up the New RUM Experience.").
 
 ## How-to
 
@@ -149,5 +149,5 @@ timeseries count = sum(easytravel.journey_view_count), by: {journey_id}, interva
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* [Dynatrace Query Language](../../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Processing in OpenPipeline](../../../../platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")

@@ -38,7 +38,7 @@ scraped: 2026-03-06T21:13:10.363454
 * Поддерживаются только поля и значения типов `STRING` и `ARRAY_OR_STRINGS`
 * Поддерживаются только операторы `=` и `in()`
 
-  + Можно использовать подстановочные знаки `*` для совпадений `starts-with`, `contains` и `ends-with`. Подробнее см. в разделе [Wildcards](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field#wildcards "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
+  + Можно использовать подстановочные знаки `*` для совпадений `starts-with`, `contains` и `ends-with`. Подробнее см. в разделе [Wildcards](../../../discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md#wildcards "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
   + В условиях для `starts-with` после имён переменных допускаются символы звёздочки (например, `foo = $bar*`)
 
 ### Классические сущности

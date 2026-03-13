@@ -46,11 +46,11 @@ See below for the [AWS](#aws) and [Dynatrace](#dt) requirements.
 
 ### Dynatrace
 
-* [Set up Dynatrace AWS monitoring](/docs/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services.") for the desired AWS environment.
+* [Set up Dynatrace AWS monitoring](../../ingest-from/amazon-web-services.md "Set up and configure monitoring for Amazon Web Services.") for the desired AWS environment.
 
-* [Set up Dynatrace integration with AWS Security Hub](/docs/secure/threat-observability/security-events-ingest/ingest-aws-security-hub "Ingest AWS Security Hub security findings and analyze them in Dynatrace.").
-* [Request access to Dynatrace MCP Server](/docs/whats-new/preview-releases#mcp-server "Learn about our Preview releases and how you can participate in them.").
-* [Create a Dynatrace platform token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.") with the proper permissions to both access the MCP server and to query various event types.
+* [Set up Dynatrace integration with AWS Security Hub](../threat-observability/security-events-ingest/ingest-aws-security-hub.md "Ingest AWS Security Hub security findings and analyze them in Dynatrace.").
+* [Request access to Dynatrace MCP Server](../../../common/whats-new/preview-releases.md#mcp-server "Learn about our Preview releases and how you can participate in them.").
+* [Create a Dynatrace platform token](../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.") with the proper permissions to both access the MCP server and to query various event types.
 
 ## Kiro CLI-based triaging
 

@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:28:44.533912
 * Reference
 * Updated on Aug 20, 2025
 
-This API is intended for use with the AWS Lambda Classic implementation. For details, see [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+This API is intended for use with the AWS Lambda Classic implementation. For details, see [AWS Lambda](../../../../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration.md "AWS Lambda capabilities and integration options").
 
 Get the latest version names of OneAgent code modules for the Java, Node.js, and Python AWS Lambda runtimes, also including names for layers that are combined with the log collector, as well as for the standalone log collector layer.
 
@@ -26,7 +26,7 @@ The request produces an `application/json` payload.
 
 To execute this request, you need an access token with `InstallerDownload` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Parameters
 

@@ -81,6 +81,6 @@ DavisÂ® AI anomaly detection can automatically detect unexpected load scenario
 To automatically detect load drops or load spikes
 
 1. Go to **Settings** > **Anomaly detection** > **Services**.
-2. Find **[Service load drops](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services#load-drops "Learn how to adapt the sensitivity of problem detection for services.")** and/or **[Service load spikes](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services#load-spikes "Learn how to adapt the sensitivity of problem detection for services.")**, turn on the dedicated switch and specify the observed load threshold.
+2. Find **[Service load drops](../../../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services.md#load-drops "Learn how to adapt the sensitivity of problem detection for services.")** and/or **[Service load spikes](../../../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services.md#load-spikes "Learn how to adapt the sensitivity of problem detection for services.")**, turn on the dedicated switch and specify the observed load threshold.
 
 ![Problem for unexpected low load](https://dt-cdn.net/images/producer-issue-1577-b431cc74e8.png)

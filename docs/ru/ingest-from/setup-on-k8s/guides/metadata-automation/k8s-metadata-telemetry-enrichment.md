@@ -16,28 +16,28 @@ scraped: 2026-03-06T21:23:30.344451
 
 * Dynatrace Operator установлен и работает в вашем кластере Kubernetes.
 * В вашем кластере применён действительный DynaKube.
-* Включено [обогащение метаданными](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Обогащение метаданными в Dynatrace Operator добавляет контекст к подам Kubernetes, прикрепляя соответствующие метаданные к сущностям, таким как поды, хосты и процессы, для улучшения наблюдаемости.").
+* Включено [обогащение метаданными](metadata-enrichment.md "Обогащение метаданными в Dynatrace Operator добавляет контекст к подам Kubernetes, прикрепляя соответствующие метаданные к сущностям, таким как поды, хосты и процессы, для улучшения наблюдаемости.").
 
 ## Сценарии использования
 
 * Дополнение ваших метрик, логов, данных трассировки, событий и сущностей дополнительной информацией с помощью аннотаций и меток пространств имён Kubernetes.
 * Дополнение ваших метрик, логов, данных трассировки, событий и сущностей дополнительной информацией с помощью переменных среды OpenTelemetry.
-* Обогащённые данные могут использоваться для [определения управления доступом пользователей](/docs/manage/identity-access-management/use-cases/access-security-context "Предоставление доступа к сущностям с помощью контекста безопасности") или для решения задач [распределения затрат](/docs/license/cost-allocation "Узнайте, как распределять затраты по центрам затрат и продуктам.") в DPS.
+* Обогащённые данные могут использоваться для [определения управления доступом пользователей](../../../../manage/identity-access-management/use-cases/access-security-context.md "Предоставление доступа к сущностям с помощью контекста безопасности") или для решения задач [распределения затрат](../../../../license/cost-allocation.md "Узнайте, как распределять затраты по центрам затрат и продуктам.") в DPS.
 * Обогащённые данные могут использоваться для маршрутизации в пайплайнах, сегментации по бакетам, сегментации и фильтрации.
 
 ## Контекст безопасности и распределение затрат
 
-В Dynatrace вы можете настроить [границы политик](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries "Ограничение политик безопасности с помощью границ политик для предоставления адаптированного доступа вашим пользователям.") для детализированных ограничений на уровне данных. По умолчанию вы можете использовать `k8s.namespace.name` и `k8s.cluster.name`, но иногда этого недостаточно и требуется более детальный способ настройки границ.
+В Dynatrace вы можете настроить [границы политик](../../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries.md "Ограничение политик безопасности с помощью границ политик для предоставления адаптированного доступа вашим пользователям.") для детализированных ограничений на уровне данных. По умолчанию вы можете использовать `k8s.namespace.name` и `k8s.cluster.name`, но иногда этого недостаточно и требуется более детальный способ настройки границ.
 
-Возможно, вы уже определили такие границы для себя и задали их в виде меток или аннотаций Kubernetes. Эта функция позволяет использовать их у источника для вашего [контекста безопасности](/docs/manage/identity-access-management/use-cases/access-security-context "Предоставление доступа к сущностям с помощью контекста безопасности") в Dynatrace. Если вы ещё этого не сделали, мы рекомендуем использовать имя кластера или пространства имён либо настроить специальную аннотацию для рабочих нагрузок Kubernetes, которая будет служить контекстом безопасности.
+Возможно, вы уже определили такие границы для себя и задали их в виде меток или аннотаций Kubernetes. Эта функция позволяет использовать их у источника для вашего [контекста безопасности](../../../../manage/identity-access-management/use-cases/access-security-context.md "Предоставление доступа к сущностям с помощью контекста безопасности") в Dynatrace. Если вы ещё этого не сделали, мы рекомендуем использовать имя кластера или пространства имён либо настроить специальную аннотацию для рабочих нагрузок Kubernetes, которая будет служить контекстом безопасности.
 
-Аналогичным образом Dynatrace предоставляет решение для [распределения затрат](/docs/license/cost-allocation#assign-cost-centers-and-products-in-kubernetes-application-monitoring-deployments "Узнайте, как распределять затраты по центрам затрат и продуктам.") в DPS. Возможно, у вас уже есть необходимые данные, такие как подразделение и продукт, в существующих метках или аннотациях Kubernetes. Даже если нет, вам может быть удобно настроить распределение затрат в виде аннотации или метки Kubernetes, что и рекомендует Dynatrace. Эта функция позволяет использовать эти метки и аннотации для решения задач [распределения затрат](/docs/license/cost-allocation#assign-cost-centers-and-products-in-kubernetes-application-monitoring-deployments "Узнайте, как распределять затраты по центрам затрат и продуктам.") в DPS.
+Аналогичным образом Dynatrace предоставляет решение для [распределения затрат](../../../../license/cost-allocation.md#assign-cost-centers-and-products-in-kubernetes-application-monitoring-deployments "Узнайте, как распределять затраты по центрам затрат и продуктам.") в DPS. Возможно, у вас уже есть необходимые данные, такие как подразделение и продукт, в существующих метках или аннотациях Kubernetes. Даже если нет, вам может быть удобно настроить распределение затрат в виде аннотации или метки Kubernetes, что и рекомендует Dynatrace. Эта функция позволяет использовать эти метки и аннотации для решения задач [распределения затрат](../../../../license/cost-allocation.md#assign-cost-centers-and-products-in-kubernetes-application-monitoring-deployments "Узнайте, как распределять затраты по центрам затрат и продуктам.") в DPS.
 
 Поддерживаются следующие атрибуты:
 
-* [`dt.security_context`](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.")
-* [`dt.cost.costcenter`](/docs/semantic-dictionary/fields#dynatrace "Ознакомьтесь со списком глобальных полей с определённым семантическим значением в Dynatrace.")
-* [`dt.cost.product`](/docs/semantic-dictionary/fields#dynatrace "Ознакомьтесь со списком глобальных полей с определённым семантическим значением в Dynatrace.")
+* [`dt.security_context`](../../../../platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-table-record "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.")
+* [`dt.cost.costcenter`](../../../../semantic-dictionary/fields.md#dynatrace "Ознакомьтесь со списком глобальных полей с определённым семантическим значением в Dynatrace.")
+* [`dt.cost.product`](../../../../semantic-dictionary/fields.md#dynatrace "Ознакомьтесь со списком глобальных полей с определённым семантическим значением в Dynatrace.")
 
 ## Доменные теги
 
@@ -136,11 +136,11 @@ k8s.namespace.label.domain: finance
 
 ### Включение автоматической настройки экспортёра OTLP OpenTelemetry (рекомендуется)
 
-[Автоматическая настройка экспортёра OTLP OpenTelemetry](/docs/ingest-from/setup-on-k8s/extend-observability-k8s/otlp-auto-config "Автоматическая настройка экспортёра OTLP в приложениях, инструментированных с помощью SDK OpenTelemetry, с использованием Dynatrace Operator.") — рекомендуемый вариант для OTLP-конфигураций без инъекции OneAgent, так как он обеспечивает обогащение, сопоставимое с вариантом OneAgent. Включите его в DynaKube для автоматического обогащения телеметрии метаданными Dynatrace. Эта функция доступна для всех языков, поддерживаемых OpenTelemetry.
+[Автоматическая настройка экспортёра OTLP OpenTelemetry](../../extend-observability-k8s/otlp-auto-config.md "Автоматическая настройка экспортёра OTLP в приложениях, инструментированных с помощью SDK OpenTelemetry, с использованием Dynatrace Operator.") — рекомендуемый вариант для OTLP-конфигураций без инъекции OneAgent, так как он обеспечивает обогащение, сопоставимое с вариантом OneAgent. Включите его в DynaKube для автоматического обогащения телеметрии метаданными Dynatrace. Эта функция доступна для всех языков, поддерживаемых OpenTelemetry.
 
 ### Обогащение через изменение кода
 
-Этот вариант подходит для автономных OTLP-конфигураций без инъекции OneAgent. Для оптимальных результатов обогатите OTLP-телеметрию, разбирая файлы метаданных Dynatrace и добавляя метаданные непосредственно в коде, как описано в разделе [Обогащение принимаемых данных специфическими полями Dynatrace](/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Узнайте, как автоматически обогащать телеметрические данные специфическими полями Dynatrace."). Примеры кода можно найти в разделе OpenTelemetry, например, [для Java](/docs/ingest-from/opentelemetry/walkthroughs/java/java-manual#add-telemetry-signals-manually "Узнайте, как инструментировать Java-приложение с помощью OpenTelemetry и Dynatrace.").
+Этот вариант подходит для автономных OTLP-конфигураций без инъекции OneAgent. Для оптимальных результатов обогатите OTLP-телеметрию, разбирая файлы метаданных Dynatrace и добавляя метаданные непосредственно в коде, как описано в разделе [Обогащение принимаемых данных специфическими полями Dynatrace](../../../extend-dynatrace/extend-data.md#operator-enrichment-directory "Узнайте, как автоматически обогащать телеметрические данные специфическими полями Dynatrace."). Примеры кода можно найти в разделе OpenTelemetry, например, [для Java](../../../opentelemetry/walkthroughs/java/java-manual.md#add-telemetry-signals-manually "Узнайте, как инструментировать Java-приложение с помощью OpenTelemetry и Dynatrace.").
 Этот подход обеспечивает обогащение, сопоставимое с вариантом OneAgent.
 
 ### Обогащение через переменную среды
@@ -422,7 +422,7 @@ fieldPath: metadata.annotations['metadata.dynatrace.com/dt.cost.costcenter']
 value: k8s.cluster.name=$(K8S_CLUSTER_NAME),k8s.cluster.uid=$(K8S_CLUSTER_UID),k8s.node.name=$(K8S_NODE_NAME),k8s.workload.name=$(K8S_WORKLOAD_NAME),k8s.workload.kind=$(K8S_WORKLOAD_KIND),k8s.pod.name=$(K8S_POD_NAME),k8s.pod.uid=$(K8S_POD_UID),k8s.namespace.name=$(K8S_POD_NAMESPACE),k8s.container.name=$(K8S_CONTAINER_NAME),dt.entity.kubernetes_cluster=$(DT_ENTITY_KUBERNETES_CLUSTER),dt.security_context=$(DT_SECURITY_CONTEXT),dt.cost.costcenter=$(DT_COST_COSTCENTER),dt.cost.product=$(DT_COST_PRODUCT)
 ```
 
-Чтобы узнать, как обогащать сигналы метаданными релизов с помощью переменной среды `OTEL_RESOURCE_ATTRIBUTES`, обратитесь к [стратегиям обнаружения версий](/docs/deliver/release-monitoring/version-detection-strategies#otel_resource_attributes "Метаданные для обнаружения версий в различных технологиях").
+Чтобы узнать, как обогащать сигналы метаданными релизов с помощью переменной среды `OTEL_RESOURCE_ATTRIBUTES`, обратитесь к [стратегиям обнаружения версий](../../../../deliver/release-monitoring/version-detection-strategies.md#otel_resource_attributes "Метаданные для обнаружения версий в различных технологиях").
 
 ## Ограничения
 
@@ -672,6 +672,6 @@ k8s.namespace.label.domain: finance
 
 ## Связанные темы
 
-* [Обогащение принимаемых данных специфическими полями Dynatrace](/docs/ingest-from/extend-dynatrace/extend-data "Узнайте, как автоматически обогащать телеметрические данные специфическими полями Dynatrace.")
-* [Обогащение OTLP-запросов данными Kubernetes](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Настройка OpenTelemetry Collector для обогащения OTLP-запросов данными Kubernetes.")
-* [Настройка каталога обогащения](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Обогащение метаданными в Dynatrace Operator добавляет контекст к подам Kubernetes.")
+* [Обогащение принимаемых данных специфическими полями Dynatrace](../../../extend-dynatrace/extend-data.md "Узнайте, как автоматически обогащать телеметрические данные специфическими полями Dynatrace.")
+* [Обогащение OTLP-запросов данными Kubernetes](../../../opentelemetry/collector/use-cases/kubernetes/k8s-enrich.md "Настройка OpenTelemetry Collector для обогащения OTLP-запросов данными Kubernetes.")
+* [Настройка каталога обогащения](metadata-enrichment.md "Обогащение метаданными в Dynatrace Operator добавляет контекст к подам Kubernetes.")

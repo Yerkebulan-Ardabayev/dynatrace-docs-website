@@ -31,7 +31,7 @@ When a service or an application in a backtrace hierarchy is selected, you can a
 
 ![Service-level backtrace](https://dt-cdn.net/images/service-level-backtrace-1598-04ecfb12fc.png)
 
-In the first section, in the case of an application, you can view the list of [user actions](/docs/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.") of this specific application that occurred within the [selected timeframe](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings."). In the case of services, you can view the types of requests that were made by that particular service to the next service in the backtrace flow.
+In the first section, in the case of an application, you can view the list of [user actions](../../digital-experience/rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application.") of this specific application that occurred within the [selected timeframe](../../../analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe.md "Learn about Dynatrace dashboard timeframe and management zone settings."). In the case of services, you can view the types of requests that were made by that particular service to the next service in the backtrace flow.
 
 The next section includes analysis data regarding the number of requests and any failures that may have occurred. Further information can be accessed by selecting the tabs:
 
@@ -46,19 +46,19 @@ The next section includes analysis data regarding the number of requests and any
 * **Analyze**  
   Offers various analysis options for both the selected service (in the left-hand column) and the service examined in the backtrace (right-hand column).
 
-  + [View service flow](/docs/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.")
-  + [View details of failure](/docs/observe/application-observability/services-classic/response-time-distribution-and-outlier-analysis#correlate-errors-with-response-times "Gain insights into the distribution of response times across all requests, including those that are either unusually high or unusually low.")
-  + [View distributed traces](/docs/observe/application-observability/distributed-traces/use-cases/segment-request "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.")
-  + [View response time](/docs/observe/application-observability/services-classic/service-response-time-hotspots "Identify the activities that consume the most response time for each service.")
-  + [View outliers](/docs/observe/application-observability/services-classic/response-time-distribution-and-outlier-analysis "Gain insights into the distribution of response times across all requests, including those that are either unusually high or unusually low.")
-  + [View method hotspots](/docs/observe/application-observability/services-classic/service-response-time-hotspots#code-level-visibility "Identify the activities that consume the most response time for each service.")
-  + [View web requests](/docs/observe/application-observability/multidimensional-analysis/top-web-requests "Learn how to analyze all web requests across all of your services using Dynatrace.")
+  + [View service flow](service-flow.md "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.")
+  + [View details of failure](response-time-distribution-and-outlier-analysis.md#correlate-errors-with-response-times "Gain insights into the distribution of response times across all requests, including those that are either unusually high or unusually low.")
+  + [View distributed traces](../distributed-traces/use-cases/segment-request.md "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.")
+  + [View response time](service-response-time-hotspots.md "Identify the activities that consume the most response time for each service.")
+  + [View outliers](response-time-distribution-and-outlier-analysis.md "Gain insights into the distribution of response times across all requests, including those that are either unusually high or unusually low.")
+  + [View method hotspots](service-response-time-hotspots.md#code-level-visibility "Identify the activities that consume the most response time for each service.")
+  + [View web requests](../multidimensional-analysis/top-web-requests.md "Learn how to analyze all web requests across all of your services using Dynatrace.")
 
-Additionally, you have the option of showing only those transactions that contain the current call chain. Just select [Filter service backtrace](/docs/observe/application-observability/services-classic/service-flow/service-flow-filtering "Understand how service filtering works and how it can be exploited.").
+Additionally, you have the option of showing only those transactions that contain the current call chain. Just select [Filter service backtrace](service-flow/service-flow-filtering.md "Understand how service filtering works and how it can be exploited.").
 
 ![Filter service-level backtrace chain](https://dt-cdn.net/images/filter-service-level-backtrace-chain-1589-94fc599a8b.png)
 
-If a clustered service is selected in the backtrace, open the **Instances** tab to view the same analysis for every [service instances](/docs/observe/application-observability/services-classic/analyze-individual-service-instances "Find out how you can perform a service-instance analysis.") (see image above).
+If a clustered service is selected in the backtrace, open the **Instances** tab to view the same analysis for every [service instances](analyze-individual-service-instances.md "Find out how you can perform a service-instance analysis.") (see image above).
 
 ## Backtrace analysis examples
 

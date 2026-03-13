@@ -15,14 +15,14 @@ scraped: 2026-03-02T21:28:59.047980
 
 Dynatrace provides you with a framework that you can use to extend your observability into data acquired directly from your SNMP monitored devices.
 
-We also provide an SNMP traps data source reporting a single metric that counts the number of traps sent by a defined source during a defined interval. For more information, see [SNMP traps data source](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions/snmptraps-extensions "Create an SNMP traps extension using the Dynatrace Extensions framework.").
+We also provide an SNMP traps data source reporting a single metric that counts the number of traps sent by a defined source during a defined interval. For more information, see [SNMP traps data source](snmp-extensions/snmptraps-extensions.md "Create an SNMP traps extension using the Dynatrace Extensions framework.").
 
 We assume the following:
 
 * You possess sufficient SNMP subject matter expertise to create an SNMP extension.
-* You're familiar with [Extensions basic concepts](/docs/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.") and the general structure of the [extension YAML file](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml "Learn how to create an extension YAML file using the Extensions framework.").
+* You're familiar with [Extensions basic concepts](../../concepts.md "Learn more about the concept of Dynatrace Extensions.") and the general structure of the [extension YAML file](../extension-yaml.md "Learn how to create an extension YAML file using the Extensions framework.").
 
-Learn the prerequisites and scope of the supported technologies. For limits applying to your extension, see [Extensions](/docs/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.").
+Learn the prerequisites and scope of the supported technologies. For limits applying to your extension, see [Extensions](../../concepts.md "Learn more about the concept of Dynatrace Extensions.").
 
 ## Supported Dynatrace versions
 
@@ -70,7 +70,7 @@ For SNMP v3, the SNMP data source supports the `NoAuthNoPriv`, `authNoPriv`, and
 
 These encryption algorithms are not officially specified, but they are often supported by network devices. See [SNMPv3 with AES-256ï»¿](https://www.snmp.com/snmpv3/snmpv3_aes256.shtml).
 
-To learn how to define authentication in your monitoring configuration, see [SNMP authentication](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions/snmp-schema-reference#authentication "Learn about SNMP extensions in the Extensions framework.").
+To learn how to define authentication in your monitoring configuration, see [SNMP authentication](snmp-extensions/snmp-schema-reference.md#authentication "Learn about SNMP extensions in the Extensions framework.").
 
 ## Hardware requirements
 
@@ -78,7 +78,7 @@ SNMP monitoring with the Extensions framework is performed by an ActiveGate. The
 
 * Number of polled devices.
 * Number of metric ingestion protocol lines ingested per polling interval (1 minute). A unique metric-dimension combination (tuple) results in a single line.
-* Whether you configured the [EEC](/docs/ingest-from/extensions/concepts#eec "Learn more about the concept of Dynatrace Extensions.") performance profile to high limits.
+* Whether you configured the [EEC](../../concepts.md#eec "Learn more about the concept of Dynatrace Extensions.") performance profile to high limits.
 
 Depending on the number of devices and ingested lines, the ActiveGates performing SNMP monitoring need to meet the following hardware requirements:
 

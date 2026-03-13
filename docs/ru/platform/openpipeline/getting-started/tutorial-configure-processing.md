@@ -27,15 +27,15 @@ scraped: 2026-03-06T21:15:50.770565
 
 Необходимые знания
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Использование Dynatrace Query Language.")
-* [Поток данных в OpenPipeline](/docs/platform/openpipeline/concepts/data-flow "Узнайте, как данные проходят через платформу Dynatrace — от загрузки до хранения — через OpenPipeline.")
-* [Обработка в OpenPipeline](/docs/platform/openpipeline/concepts/processing "Узнайте основные концепции обработки в OpenPipeline.")
+* [Dynatrace Query Language](../../grail/dynatrace-query-language.md "Использование Dynatrace Query Language.")
+* [Поток данных в OpenPipeline](../concepts/data-flow.md "Узнайте, как данные проходят через платформу Dynatrace — от загрузки до хранения — через OpenPipeline.")
+* [Обработка в OpenPipeline](../concepts/processing.md "Узнайте основные концепции обработки в OpenPipeline.")
 
 Предварительные требования
 
 * Среда Dynatrace SaaS на базе Grail и AppEngine.
-* Вы обладаете разрешениями `openpipeline:configurations:write` и `openpipeline:configurations:read`. Информацию о настройке разрешений см. в разделе [Разрешения в Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.").
-* Если вы уже используете конвейер обработки логов, убедитесь, что [условия сопоставления преобразованы в DQL](/docs/analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion "Преобразуйте текущие правила мониторинга логов в DQL.").
+* Вы обладаете разрешениями `openpipeline:configurations:write` и `openpipeline:configurations:read`. Информацию о настройке разрешений см. в разделе [Разрешения в Grail](../../grail/organize-data/assign-permissions-in-grail.md "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.").
+* Если вы уже используете конвейер обработки логов, убедитесь, что [условия сопоставления преобразованы в DQL](../../../analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion.md "Преобразуйте текущие правила мониторинга логов в DQL.").
 
 Ключевые термины
 
@@ -58,15 +58,15 @@ scraped: 2026-03-06T21:15:50.770565
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Настройка конвейера**](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#process "Настройте источники загрузки, маршруты и обработку данных в OpenPipeline.")[![Шаг 2 (необязательный)](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Шаг 2 (необязательный)")
+**Настройка конвейера**](tutorial-configure-processing.md#process "Настройте источники загрузки, маршруты и обработку данных в OpenPipeline.")[![Шаг 2 (необязательный)](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Шаг 2 (необязательный)")
 
-**Настройка пользовательских источников загрузки**](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#ingest "Настройте источники загрузки, маршруты и обработку данных в OpenPipeline.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Настройка пользовательских источников загрузки**](tutorial-configure-processing.md#ingest "Настройте источники загрузки, маршруты и обработку данных в OpenPipeline.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Маршрутизация данных в конвейер**](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#route "Настройте источники загрузки, маршруты и обработку данных в OpenPipeline.")
+**Маршрутизация данных в конвейер**](tutorial-configure-processing.md#route "Настройте источники загрузки, маршруты и обработку данных в OpenPipeline.")
 
 ### Шаг 1. Настройка конвейера
 
-OpenPipeline хранит данные в бакетах Grail. Если вам нужен бакет с определёнными разрешениями или пользовательским сроком хранения данных, [создайте пользовательский бакет](/docs/platform/grail/organize-data#custom-grail-buckets "Информация о модели данных Grail, состоящей из бакетов, таблиц и представлений.").
+OpenPipeline хранит данные в бакетах Grail. Если вам нужен бакет с определёнными разрешениями или пользовательским сроком хранения данных, [создайте пользовательский бакет](../../grail/organize-data.md#custom-grail-buckets "Информация о модели данных Grail, состоящей из бакетов, таблиц и представлений.").
 
 В разделе **Pipelines** отображаются встроенные и пользовательские конвейеры для области конфигурации в вашей среде. Чтобы настроить собственные конвейеры для группировки обработки и извлечения по технологии или команде:
 
@@ -110,8 +110,8 @@ OpenPipeline хранит данные в бакетах Grail. Если вам 
 
 ## Заключение
 
-Вы настроили источники загрузки, маршрутизацию и обработку записей области конфигурации через OpenPipeline. После того как вы [начнёте загрузку данных](/docs/platform/openpipeline/getting-started/how-to-ingestion "Как загружать данные для области конфигурации в OpenPipeline."), ваши данные будут обработаны в соответствии с настройками, сохранены в бакете Grail и доступны для анализа через возможности Grail.
+Вы настроили источники загрузки, маршрутизацию и обработку записей области конфигурации через OpenPipeline. После того как вы [начнёте загрузку данных](how-to-ingestion.md "Как загружать данные для области конфигурации в OpenPipeline."), ваши данные будут обработаны в соответствии с настройками, сохранены в бакете Grail и доступны для анализа через возможности Grail.
 
 ## Связанные темы
 
-* [Примеры обработки в OpenPipeline](/docs/platform/openpipeline/use-cases/processing-examples "Изучите сценарии использования обработки OpenPipeline в Dynatrace на базе Grail.")
+* [Примеры обработки в OpenPipeline](../use-cases/processing-examples.md "Изучите сценарии использования обработки OpenPipeline в Dynatrace на базе Grail.")

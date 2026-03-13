@@ -47,8 +47,8 @@ SDv2 обеспечивает:
 Поведение SDv2 можно настроить через:
 
 * Веб-интерфейс Dynatrace, как описано на страницах данного раздела.
-* [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.").
+* [Settings API](../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.").
 
 ## Связанные темы
 
-* [Service Detection v1](/docs/observe/application-observability/services/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
+* [Service Detection v1](service-detection-v1.md "Find out how Dynatrace Service Detection v1 detects and names different types of services.")

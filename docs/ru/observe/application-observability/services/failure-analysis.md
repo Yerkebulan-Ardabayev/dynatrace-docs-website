@@ -61,7 +61,7 @@ scraped: 2026-03-06T21:10:41.458675
 ### Интеграция с Dynatrace
 
 * Встроен в приложение ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** как новая вкладка **Failures**
-* Интегрирован в **контекстные опции детализации проблем Dynatrace** при обнаружении увеличения частоты сбоев как [основных причин](/docs/dynatrace-intelligence/davis-problems-app#streamline-problem-resolution-with-problems-specific-drill-down-options "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* Интегрирован в **контекстные опции детализации проблем Dynatrace** при обнаружении увеличения частоты сбоев как [основных причин](../../../dynatrace-intelligence/davis-problems-app.md#streamline-problem-resolution-with-problems-specific-drill-down-options "Use the Problems app to quickly get to the root cause of incidents in your environment.")
 * Заменяет устаревшую страницу **Failure Analysis** для клиентов DPS
 
 ## Доступ и навигация
@@ -98,9 +98,9 @@ scraped: 2026-03-06T21:10:41.458675
 
 Чтобы углубить понимание обнаружения сбоев и устранения неполадок в Dynatrace, изучите следующие ресурсы:
 
-* [Настройка обнаружения сбоев сервиса](/docs/observe/application-observability/services/service-detection/service-detection-v1/configure-service-failure-detection "Discover which service error types Dynatrace automatically detects and learn how to adjust failure detection settings to meet your specific requirements.")
-* [Концепции анализа основных причин](/docs/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.")
-* [Сортировка и расследование инцидентов в приложении Problems](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* [Настройка обнаружения сбоев сервиса](service-detection/service-detection-v1/configure-service-failure-detection.md "Discover which service error types Dynatrace automatically detects and learn how to adjust failure detection settings to meet your specific requirements.")
+* [Концепции анализа основных причин](../../../dynatrace-intelligence/root-cause-analysis/concepts.md "Get acquainted with root cause analysis concepts.")
+* [Сортировка и расследование инцидентов в приложении Problems](../../../dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.")
 
 ### Присоединяйтесь к обсуждению
 

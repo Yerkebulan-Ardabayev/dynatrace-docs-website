@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:34:43.002785
 * 7-min read
 * Updated on Nov 15, 2023
 
-Информацию о различиях между классическими сервисами и другими сервисами смотрите в разделе [Миграция с классических сервисов AWS (ранее называвшихся 'встроенными') на облачные сервисы](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-migration-guide "Migrate AWS classic services to their new versions.").
+Информацию о различиях между классическими сервисами и другими сервисами смотрите в разделе [Миграция с классических сервисов AWS (ранее называвшихся 'встроенными') на облачные сервисы](../cloudwatch-metrics/aws-migration-guide.md "Migrate AWS classic services to their new versions.").
 
 Dynatrace собирает метрики для множества предварительно выбранных пространств имен, включая Amazon DynamoDB. Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
 
@@ -25,10 +25,10 @@ Dynatrace собирает метрики для множества предва
 
 * Для развертываний Dynatrace SaaS вам необходим Environment ActiveGate или Multi-environment ActiveGate.
 
-  Для ролевого доступа в развертывании [SaaS](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Integrate metrics from Amazon CloudWatch.") вам необходим [Environment ActiveGate](/docs/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") установленный на хосте Amazon EC2.
+  Для ролевого доступа в развертывании [SaaS](../cloudwatch-metrics.md#role-based-access "Integrate metrics from Amazon CloudWatch.") вам необходим [Environment ActiveGate](../../../dynatrace-activegate/installation.md "Learn how to configure ActiveGate") установленный на хосте Amazon EC2.
 
 * Dynatrace version 1.200+
-* An updated [AWS monitoring policy](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#monitoring-policy "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.
+* An updated [AWS monitoring policy](../cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.
 
 To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), используйте приведенный ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
@@ -418,7 +418,7 @@ To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), использ
 }
 ```
 
-Если вы не хотите добавлять разрешения для всех сервисов и хотите выбрать разрешения только для определенных сервисов, обратитесь к таблице ниже. Таблица содержит набор разрешений, необходимых для [All AWS cloud services](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.") и для каждого поддерживаемого сервиса список необязательных разрешений, специфичных для этого сервиса.
+Если вы не хотите добавлять разрешения для всех сервисов и хотите выбрать разрешения только для определенных сервисов, обратитесь к таблице ниже. Таблица содержит набор разрешений, необходимых для [All AWS cloud services](../aws-all-services.md "Monitor all AWS cloud services with Dynatrace and view available metrics.") и для каждого поддерживаемого сервиса список необязательных разрешений, специфичных для этого сервиса.
 
 Разрешения, необходимые для интеграции мониторинга AWS:
 
@@ -690,7 +690,7 @@ To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), использ
 
 ## Включение мониторинга
 
-Chtoby_uznat [Включение мониторинга_servisa](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Enable AWS monitoring in Dynatrace.").
+Chtoby_uznat [Включение мониторинга_servisa](../aws-metrics-ingest/aws-enable-service-monitoring.md "Enable AWS monitoring in Dynatrace.").
 
 ## Просмотр метрик сервиса
 
@@ -707,7 +707,7 @@ Chtoby_uznat [Включение мониторинга_servisa](/docs/ingest-fr
 
 ### Просмотр метрик на панели мониторинга
 
-You can also view metrics in the Dynatrace web UI on dashboards. There is no preset dashboard available for this service, but you can [create your own dashboard](/docs/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Learn how to create and edit Dynatrace dashboards.").
+You can also view metrics in the Dynatrace web UI on dashboards. There is no preset dashboard available for this service, but you can [create your own dashboard](../../../../analyze-explore-automate/dashboards-classic/dashboards/create-dashboards.md "Learn how to create and edit Dynatrace dashboards.").
 
 Для проверки доступности предустановленных панелей мониторинга для каждого сервиса AWS смотрите список ниже.
 

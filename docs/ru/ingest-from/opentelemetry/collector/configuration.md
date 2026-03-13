@@ -19,7 +19,7 @@ Dynatrace Collector
 
 В рамках настройки Dynatrace Collector обратите внимание, что вы можете настраивать только компоненты, поставляемые с Dynatrace Collector.
 
-Полный список всех поддерживаемых компонентов Collector см. в [Dynatrace OTel Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Узнайте о Dynatrace OTel Collector.").
+Полный список всех поддерживаемых компонентов Collector см. в [Dynatrace OTel Collector](../collector.md#dt-collector-dist "Узнайте о Dynatrace OTel Collector.").
 
 ## Пример конфигурации
 
@@ -155,9 +155,9 @@ exporters: [otlp_http]
 * Процессор для преобразования метрик с кумулятивной временной агрегацией в дельта-временную агрегацию (подробнее см. [Дельта-метрики](#delta-metrics)).
 * OTLP HTTP-экспортер (`otlp_http`), настроенный с:
 
-  + Эндпоинтом Dynatrace, см. [Базовые URL](/docs/ingest-from/opentelemetry/otlp-api#base-url "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.").
+  + Эндпоинтом Dynatrace, см. [Базовые URL](../otlp-api.md#base-url "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.").
   + Эндпоинтом логов, настроенным для выравнивания структурированных логов, см. <#structured-logs>.
-  + API-токеном, см. [Аутентификация](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.").
+  + API-токеном, см. [Аутентификация](../otlp-api.md#authentication-export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.").
 
 В примере конфигурации выше токен Dynatrace должен иметь разрешения **Ingest OpenTelemetry traces** (`openTelemetryTrace.ingest`), **Ingest metrics** (`metrics.ingest`) и **Ingest logs** (`logs.ingest`).
 
@@ -185,7 +185,7 @@ docker run -v $(pwd):$(pwd) -w $(pwd) ghcr.io/dynatrace/dynatrace-otel-collector
 
 ## Дельта-метрики
 
-Dynatrace требует, чтобы данные метрик [отправлялись с дельта-временной агрегацией](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#aggregation-temporality "Узнайте, как Dynatrace загружает метрики OpenTelemetry и какие ограничения применяются."), а **не** с кумулятивной.
+Dynatrace требует, чтобы данные метрик [отправлялись с дельта-временной агрегацией](../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md#aggregation-temporality "Узнайте, как Dynatrace загружает метрики OpenTelemetry и какие ограничения применяются."), а **не** с кумулятивной.
 
 Если ваше приложение не позволяет настроить дельта-временную агрегацию, вы можете использовать [процессор `cumulativetodelta`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/cumulativetodeltaprocessor), чтобы экземпляр Collector преобразовывал кумулятивные значения в дельта-значения. [Пример конфигурации](#configuration-example) выше показывает, как настроить и подключить процессор в конфигурации Collector.
 

@@ -21,7 +21,7 @@ scraped: 2026-03-06T21:29:04.027447
   + Расследование поддерживалось в контексте.
   + Инструменты для таких действий поддерживали быстрое создание запросов и детальный обзор результатов.
 
-Далее мы демонстрируем, как вы можете достичь этих целей с помощью [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Расследований**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.").
+Далее мы демонстрируем, как вы можете достичь этих целей с помощью [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Расследований**](../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.").
 
 ## Целевая аудитория
 
@@ -35,33 +35,33 @@ scraped: 2026-03-06T21:29:04.027447
 
 ## Предварительные требования
 
-* [Настройка наблюдаемости Kubernetes с Dynatrace Operator](/docs/ingest-from/setup-on-k8s/deployment/other/classic-full-stack "Deploy Dynatrace Operator in classic full-stack mode to Kubernetes")
+* [Настройка наблюдаемости Kubernetes с Dynatrace Operator](../../ingest-from/setup-on-k8s/deployment/other/classic-full-stack.md "Deploy Dynatrace Operator in classic full-stack mode to Kubernetes")
 * Настройка логирования AWS в CloudWatch:
 
   + [Настройка логирования кластера EKS](https://dt-url.net/va038gi)
   + [Настройка логирования VPC Flow](https://dt-url.net/ya238ol)
-  + [Настройка логирования K8S DNS](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-eks/k8s-dns-logs "Learn how to ingest Kubernetes-related DNS logs from AWS to Dynatrace.")
-* [Потоковая передача логов через Amazon Data Firehose](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.")
+  + [Настройка логирования K8S DNS](../../ingest-from/amazon-web-services/integrate-into-aws/aws-eks/k8s-dns-logs.md "Learn how to ingest Kubernetes-related DNS logs from AWS to Dynatrace.")
+* [Потоковая передача логов через Amazon Data Firehose](../../ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose.md "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.")
 * Базовые знания
 
-  + [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-  + [Dynatrace Pattern Language (DPL)](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.")
+  + [Dynatrace Query Language (DQL)](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+  + [Dynatrace Pattern Language (DPL)](../../platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.")
   + Как работает разрешение DNS-имён в кластерах Kubernetes
 
 ## Путь расследования 1: Анализ журналов аудита Kubernetes
 
 Сначала вы хотите понять, какие действия вызвали уведомление о большом количестве несанкционированных запросов в журналах аудита Kubernetes.
-Откройте [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Расследования**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") и создайте новое расследование.
+Откройте [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Расследования**](../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") и создайте новое расследование.
 
 1. Установите временной диапазон
 
-В [разделе временного диапазона](/docs/secure/investigations/define-timeframes#selector "Adjust time ranges for data analysis and event correlation in Investigations.") установите период с `2024-02-13 16:00:00` по `2024-02-13 18:59:59`, когда происходили несанкционированные запросы.
+В [разделе временного диапазона](../investigations/define-timeframes.md#selector "Adjust time ranges for data analysis and event correlation in Investigations.") установите период с `2024-02-13 16:00:00` по `2024-02-13 18:59:59`, когда происходили несанкционированные запросы.
 
 ![установка временного диапазона](https://dt-cdn.net/images/2024-03-06-08-15-45-1914-2f0de669a4.png)
 
 2. Получение журналов аудита кластера Kubernetes
 
-1. Журналы аудита Kubernetes перенаправляются в Dynatrace с прикреплёнными значениями `aws.log_group` и `log_stream`. Чтобы получить все уникальные группы логов AWS CloudWatch, загруженные в Dynatrace, скопируйте и вставьте следующий [DQL-запрос](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.") в поле ввода запроса.
+1. Журналы аудита Kubernetes перенаправляются в Dynatrace с прикреплёнными значениями `aws.log_group` и `log_stream`. Чтобы получить все уникальные группы логов AWS CloudWatch, загруженные в Dynatrace, скопируйте и вставьте следующий [DQL-запрос](../../platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.") в поле ввода запроса.
 
    ```
    fetch logs
@@ -74,14 +74,14 @@ scraped: 2026-03-06T21:29:04.027447
 
    ![получение журналов аудита кластера Kubernetes](https://dt-cdn.net/images/2024-03-06-08-45-30-1910-d1342717df.png)
 
-   На этом этапе вы заметите, что в разделе **Query tree** в правом верхнем углу появился круг. Это называется корневым узлом и отмечает начальную точку вашего расследования. С этого момента каждый раз, когда вы изменяете и выполняете запрос, в дереве запросов будет добавляться новый узел, позволяющий перемещаться между запросами, сохраняя историю расследования. Подробности см. в разделе [дерево запросов](/docs/secure/investigations/concepts#query-tree "Key concepts for using Dynatrace Investigations across security, operations, and performance analysis.").
+   На этом этапе вы заметите, что в разделе **Query tree** в правом верхнем углу появился круг. Это называется корневым узлом и отмечает начальную точку вашего расследования. С этого момента каждый раз, когда вы изменяете и выполняете запрос, в дереве запросов будет добавляться новый узел, позволяющий перемещаться между запросами, сохраняя историю расследования. Подробности см. в разделе [дерево запросов](../investigations/concepts.md#query-tree "Key concepts for using Dynatrace Investigations across security, operations, and performance analysis.").
 
 3. Фильтрация по имени группы логов
 
-1. В результатах запроса найдите запись с группой логов, собирающей логи плоскости управления EKS (в нашем примере `/aws/eks/unguard-secla-demo/cluster`), и [добавьте её как фильтр](/docs/secure/investigations#fields "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") к вашему DQL-запросу.
+1. В результатах запроса найдите запись с группой логов, собирающей логи плоскости управления EKS (в нашем примере `/aws/eks/unguard-secla-demo/cluster`), и [добавьте её как фильтр](../investigations.md#fields "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") к вашему DQL-запросу.
 
    ![Добавление фильтра для имени группы логов](https://dt-cdn.net/images/2024-03-06-09-01-16-1530-51987a9960.png)
-2. Чтобы просмотреть только события аудита плоскости управления, измените команду `filter` в поле ввода запроса, добавив [оператор `and`](/docs/platform/grail/dynatrace-query-language/operators#dql-logical-or-equality-operators "A list of DQL Operators.") и [строковую функцию `contains`](/docs/platform/grail/dynatrace-query-language/functions/string-functions#contains "A list of DQL string functions.") следующим образом:
+2. Чтобы просмотреть только события аудита плоскости управления, измените команду `filter` в поле ввода запроса, добавив [оператор `and`](../../platform/grail/dynatrace-query-language/operators.md#dql-logical-or-equality-operators "A list of DQL Operators.") и [строковую функцию `contains`](../../platform/grail/dynatrace-query-language/functions/string-functions.md#contains "A list of DQL string functions.") следующим образом:
 
    ```
    | filter aws.log_group == "/aws/eks/unguard-secla-demo/cluster" and contains(aws.log_stream, "audit")
@@ -92,13 +92,13 @@ scraped: 2026-03-06T21:29:04.027447
 
 4. Проверка содержимого
 
-В таблице результатов запроса щёлкните правой кнопкой мыши на любой ячейке в поле **content** и выберите **View field details**, чтобы просмотреть необработанное содержимое поля. Подробности см. в разделе [Исследование данных в исходном формате](/docs/secure/investigations/enhance-results#view-details "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
+В таблице результатов запроса щёлкните правой кнопкой мыши на любой ячейке в поле **content** и выберите **View field details**, чтобы просмотреть необработанное содержимое поля. Подробности см. в разделе [Исследование данных в исходном формате](../investigations/enhance-results.md#view-details "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
 
 ![Проверка содержимого](https://dt-cdn.net/images/2024-03-07-16-43-25-1546-aa18860a77.png)
 
 5. Извлечение полей из JSON
 
-1. В таблице результатов запроса щёлкните правой кнопкой мыши на любой ячейке в поле **Content** и выберите [**Extract fields**](/docs/secure/investigations/extract-fields#field "Pull specific data points from logs in Investigations.") для перехода в [DPL Architect](/docs/platform/grail/dynatrace-pattern-language/dpl-architect "Extract fields with Dynatrace Pattern Language Architect.").
+1. В таблице результатов запроса щёлкните правой кнопкой мыши на любой ячейке в поле **Content** и выберите [**Extract fields**](../investigations/extract-fields.md#field "Pull specific data points from logs in Investigations.") для перехода в [DPL Architect](../../platform/grail/dynatrace-pattern-language/dpl-architect.md "Extract fields with Dynatrace Pattern Language Architect.").
 2. Выберите **Saved patterns**.
 3. В **Dynatrace patterns** выберите **k8s** > **audit**.
 
@@ -134,7 +134,7 @@ scraped: 2026-03-06T21:29:04.027447
 
    }(flat=true)
    ```
-5. Выберите **Results** для обзора полей, которые будут извлечены из [набора данных предварительного просмотра](/docs/platform/grail/dynatrace-pattern-language/dpl-architect#match-preview "Extract fields with Dynatrace Pattern Language Architect.").
+5. Выберите **Results** для обзора полей, которые будут извлечены из [набора данных предварительного просмотра](../../platform/grail/dynatrace-pattern-language/dpl-architect.md#match-preview "Extract fields with Dynatrace Pattern Language Architect.").
 
    ![отображение результатов](https://dt-cdn.net/images/2024-03-06-14-28-54-816-6ec66c1606.png)
 6. Выберите **Insert pattern**, чтобы добавить шаблон к вашему DQL-запросу.
@@ -146,9 +146,9 @@ scraped: 2026-03-06T21:29:04.027447
 
 Чтобы выяснить, какие IP-адреса имеют несанкционированную активность, вам необходимо
 
-* [Развернуть](/docs/platform/grail/dynatrace-query-language/commands/structuring-commands#expand "DQL structuring commands") массив IP-адресов источника
-* [Суммировать](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#summarize "DQL aggregation commands") результаты с ранее извлечёнными релевантными полями
-* [Отфильтровать](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#filter "DQL filter and search commands") результаты, чтобы видеть только несанкционированные запросы (`401`) и запрещённые запросы (`403`)
+* [Развернуть](../../platform/grail/dynatrace-query-language/commands/structuring-commands.md#expand "DQL structuring commands") массив IP-адресов источника
+* [Суммировать](../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#summarize "DQL aggregation commands") результаты с ранее извлечёнными релевантными полями
+* [Отфильтровать](../../platform/grail/dynatrace-query-language/commands/filtering-commands.md#filter "DQL filter and search commands") результаты, чтобы видеть только несанкционированные запросы (`401`) и запрещённые запросы (`403`)
 
 1. В поле ввода запроса добавьте следующий фрагмент DQL, затем нажмите **Run** для выполнения запроса.
 
@@ -176,7 +176,7 @@ scraped: 2026-03-06T21:29:04.027447
 
 Оба IP-адреса требуют дальнейшего анализа, но тот, у которого ответ `403` и 2090 попыток, является более критическим и требует особого внимания.
 
-Чтобы сохранить IP-адреса как [доказательства](/docs/secure/investigations/manage-evidence "Collect and preserve investigation artifacts in Investigations."), вы можете добавить первый IP (`198.51.100.2`) в предустановленный список доказательств, а второй (`172.31.29.138`) — в новый пользовательский список доказательств:
+Чтобы сохранить IP-адреса как [доказательства](../investigations/manage-evidence.md "Collect and preserve investigation artifacts in Investigations."), вы можете добавить первый IP (`198.51.100.2`) в предустановленный список доказательств, а второй (`172.31.29.138`) — в новый пользовательский список доказательств:
 
 1. Щёлкните правой кнопкой мыши на `198.51.100.2`, затем выберите **Add to evidence list** > **Suspicious IPs**.
 2. Щёлкните правой кнопкой мыши на `172.31.29.138`, выберите **Add to evidence list** > **New evidence list** и введите имя, например, "Suspicious pod".
@@ -189,12 +189,12 @@ scraped: 2026-03-06T21:29:04.027447
 
 1. Получение логов VPC flow
 
-1. Используя [дерево запросов](/docs/secure/investigations/concepts#query-tree "Key concepts for using Dynatrace Investigations across security, operations, and performance analysis."), созданное в ходе расследования, перейдите к шагу [Получение журналов аудита кластера Kubernetes](#fetch-k8s-logs).
+1. Используя [дерево запросов](../investigations/concepts.md#query-tree "Key concepts for using Dynatrace Investigations across security, operations, and performance analysis."), созданное в ходе расследования, перейдите к шагу [Получение журналов аудита кластера Kubernetes](#fetch-k8s-logs).
 2. В результатах запроса найдите запись с группой логов, содержащей логи VPC flow (в нашем примере `/aws/vpc/unguard-secla-demo/vpc-flow-logs`), и добавьте её как фильтр к DQL-запросу.
 
    ![Логи VPC flow](https://dt-cdn.net/images/2024-03-06-16-11-40-1905-ed76689a2c.png)
 
-   Иконка узла в дереве запросов изменилась, что означает, что вы находитесь в процессе редактирования запроса. Вы можете либо вернуться к исходному запросу для обновления таблицы результатов, либо выполнить изменённый запрос. При выполнении изменённого запроса создаётся новый узел с соответствующим запросом и результатами. Вы можете [присвоить узлу отличительное имя и цвет](/docs/secure/investigations/query-tree "Visualize and structure complex queries in Investigations."), чтобы распознать его позже.
+   Иконка узла в дереве запросов изменилась, что означает, что вы находитесь в процессе редактирования запроса. Вы можете либо вернуться к исходному запросу для обновления таблицы результатов, либо выполнить изменённый запрос. При выполнении изменённого запроса создаётся новый узел с соответствующим запросом и результатами. Вы можете [присвоить узлу отличительное имя и цвет](../investigations/query-tree.md "Visualize and structure complex queries in Investigations."), чтобы распознать его позже.
 3. В поле ввода запроса удалите команду `summarize`, затем нажмите **Run** для выполнения изменённого запроса.
 
    ![выполнение изменённого запроса](https://dt-cdn.net/images/2024-03-07-18-21-06-1913-6f988f1771.png)
@@ -310,7 +310,7 @@ scraped: 2026-03-06T21:29:04.027447
 
 Поскольку к этому конкретному домену направлены тысячи DNS-запросов, вы можете агрегировать данные, чтобы определить дальнейшие действия.
 
-1. В результатах запроса выберите заголовок столбца **type**, затем выберите [**Summarize**](/docs/secure/investigations/enhance-results#aggregate "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
+1. В результатах запроса выберите заголовок столбца **type**, затем выберите [**Summarize**](../investigations/enhance-results.md#aggregate "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
 2. Нажмите **Run** для выполнения запроса.
 
    ![Суммирование по типу](https://dt-cdn.net/images/2024-03-07-10-40-41-399-c7c4bf8285.png)
@@ -426,8 +426,8 @@ scraped: 2026-03-06T21:29:04.027447
 
 ## Связанные темы
 
-* [Анализ логов AWS CloudTrail с помощью расследований](/docs/secure/use-cases/analyze-aws-cloudtrail-logs-with-security-investigator "Analyze CloudTrail logs and find potential security issues with Dynatrace.")
-* [Анализ логов доступа Amazon API Gateway с помощью расследований](/docs/secure/use-cases/analyze-aws-api-gateway-access-logs-with-security-investigator "Monitor and identify errors in your Amazon API Gateway access logs with Dynatrace.")
-* [Обнаружение угроз для ваших секретов AWS с помощью расследований](/docs/secure/use-cases/detect-threats-against-aws-secrets-with-security-investigator "Monitor and identify potential threats against your AWS Secrets with Dynatrace.")
-* [Ускорение разрешения инцидентов с помощью шаблонов расследований](/docs/secure/use-cases/resolve-incidents-faster-with-templates "Speed up your log-related investigations with Investigations templates.")
-* [Операционализация результатов DQL-запросов с помощью расследований](/docs/secure/use-cases/operationalize-query-results "Build DQL queries from your query results faster and more conveniently with Dynatrace Investigations.")
+* [Анализ логов AWS CloudTrail с помощью расследований](analyze-aws-cloudtrail-logs-with-security-investigator.md "Analyze CloudTrail logs and find potential security issues with Dynatrace.")
+* [Анализ логов доступа Amazon API Gateway с помощью расследований](analyze-aws-api-gateway-access-logs-with-security-investigator.md "Monitor and identify errors in your Amazon API Gateway access logs with Dynatrace.")
+* [Обнаружение угроз для ваших секретов AWS с помощью расследований](detect-threats-against-aws-secrets-with-security-investigator.md "Monitor and identify potential threats against your AWS Secrets with Dynatrace.")
+* [Ускорение разрешения инцидентов с помощью шаблонов расследований](resolve-incidents-faster-with-templates.md "Speed up your log-related investigations with Investigations templates.")
+* [Операционализация результатов DQL-запросов с помощью расследований](operationalize-query-results.md "Build DQL queries from your query results faster and more conveniently with Dynatrace Investigations.")

@@ -50,7 +50,7 @@ We recommend that you propagate Kubernetes labels to environment variables in th
 
 ![K8s best practice](https://dt-cdn.net/images/k8s-labels-env-1-662-06080041a8.png)
 
-Starting with Dynatrace Operator version 0.10.0+, you can configure release label propagation by setting the `feature.dynatrace.com/label-version-detection=true` feature flag in the DynaKube custom resource. For details, see [Configure build label propagation](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/build-label-propagation "Configure build label propagation").
+Starting with Dynatrace Operator version 0.10.0+, you can configure release label propagation by setting the `feature.dynatrace.com/label-version-detection=true` feature flag in the DynaKube custom resource. For details, see [Configure build label propagation](../../ingest-from/setup-on-k8s/guides/metadata-automation/build-label-propagation.md "Configure build label propagation").
 
 You can use:
 
@@ -68,12 +68,12 @@ Kubernetes recommended labels mapped to release metadata:
 
 ![Recommended labels](https://dt-cdn.net/images/k8s-recommended-labels-1982-5e4ca55659.png)
 
-Dynatrace OneAgent with [viewer permissions on the namespace](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments#viewer "Organize and filter your monitored applications by importing labels and annotations from your Kubernetes/OpenShift environment.") can automatically detect labels attached to the Kubernetes pods.
+Dynatrace OneAgent with [viewer permissions on the namespace](../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments.md#viewer "Organize and filter your monitored applications by importing labels and annotations from your Kubernetes/OpenShift environment.") can automatically detect labels attached to the Kubernetes pods.
 
 * **Version** and **Product** show up in the release inventory.
 * Kubernetes namespaces or configured Dynatrace host-group names show up as **Stages** in the release inventory.
 
-If you need to update version information, update the deployment configuration to include the updated label and redeploy the pods. This ensures that `DT_RELEASE_VERSION` environment variable is correctly set when the pod starts. For more information, see [Configure build label propagation](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/build-label-propagation "Configure build label propagation").
+If you need to update version information, update the deployment configuration to include the updated label and redeploy the pods. This ensures that `DT_RELEASE_VERSION` environment variable is correctly set when the pod starts. For more information, see [Configure build label propagation](../../ingest-from/setup-on-k8s/guides/metadata-automation/build-label-propagation.md "Configure build label propagation").
 
 The command below will not propagate the updated label to the `DT_RELEASE_VERSION` environment variable used by OneAgent.
 
@@ -83,17 +83,17 @@ kubectl label --overwrite pod yourPodId -n yourNamespace app.kubernetes.io/versi
 
 ## Events ingestion
 
-Use the Dynatrace Events API to send [custom deployment events](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories/info-events "Learn more about informational events and the logic behind raising them.") with release metadata.
+Use the Dynatrace Events API to send [custom deployment events](../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories/info-events.md "Learn more about informational events and the logic behind raising them.") with release metadata.
 
 * Version information sent via events can't be used to filter traces or metrics.
   Always set environment variables to reflect the currently deployed version to ensure accurate filtering and analysis.
   Ensure that environment variables always indicate the currently deployed version.
 
   + Because processes are matched using tags, a separate event is emitted for each process.
-    As a result, any [workflow](/docs/analyze-explore-automate/workflows/quickstart "Build and run your first workflow.") subscribed to these events may be triggered multiple times.
+    As a result, any [workflow](../../analyze-explore-automate/workflows/quickstart.md "Build and run your first workflow.") subscribed to these events may be triggered multiple times.
     To avoid redundant executions, we recommend sending a dedicated event to the workflow instead.
 
-The example JSON below shows how to send custom deployment events to the [event ingestion API](/docs/dynatrace-api/environment-api/events-v2/post-event "Ingests an event via the Dynatrace API.").
+The example JSON below shows how to send custom deployment events to the [event ingestion API](../../dynatrace-api/environment-api/events-v2/post-event.md "Ingests an event via the Dynatrace API.").
 
 For a release to be discovered, the following requirements must be fulfilled:
 
@@ -180,9 +180,9 @@ For a release to be discovered, the following requirements must be fulfilled:
 Dynatrace supports ingesting release metadata via OpenTelemetry resource attributes, allowing you to propagate version information through telemetry data.
 
 To use this method, define the `OTEL_RESOURCE_ATTRIBUTES` environment variable in your application and set key-value pairs that represent release metadata.
-Refer to the [Semantic Dictionary](/docs/semantic-dictionary/fields "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") for the complete list of supported [attributes](/docs/semantic-dictionary/fields#deployment-attributes "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types."), called deployment attributes.
+Refer to the [Semantic Dictionary](../../semantic-dictionary/fields.md "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") for the complete list of supported [attributes](../../semantic-dictionary/fields.md#deployment-attributes "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types."), called deployment attributes.
 While Dynatrace enriches telemetry data with these attributes, they're not propagated to process group instance entities.
-As a result, releases defined via OpenTelemetry resource attributes won't appear in the [release inventory](/docs/deliver/release-monitoring/monitor-releases-with-dynatrace#release-inventory "Analyze data related to each release version of your software.").
+As a result, releases defined via OpenTelemetry resource attributes won't appear in the [release inventory](monitor-releases-with-dynatrace.md#release-inventory "Analyze data related to each release version of your software.").
 
 ### Example
 

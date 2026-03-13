@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:30:24.896704
 * 2-min read
 * Updated on Mar 20, 2023
 
-Для [XHR-действий](/docs/observe/digital-experience/rum-concepts/user-actions#xhr-action "Learn what user actions are and how they help you understand what users do with your application.") Real User Monitoring обнаруживает следующие типы взаимодействий:
+Для [XHR-действий](../../rum-concepts/user-actions.md#xhr-action "Learn what user actions are and how they help you understand what users do with your application.") Real User Monitoring обнаруживает следующие типы взаимодействий:
 
 * Click
 * Double click
@@ -51,4 +51,4 @@ scraped: 2026-03-06T21:30:24.896704
 
 ## Связанные темы
 
-* [User actions](/docs/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")
+* [User actions](../../rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application.")

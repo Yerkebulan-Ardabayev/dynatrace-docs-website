@@ -11,7 +11,7 @@ scraped: 2026-03-02T21:21:35.206723
 * How-to guide
 * Published Jul 01, 2025
 
-The RUM JavaScriptâwhether [automatically injected](/docs/observe/digital-experience/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications") or [manually inserted](/docs/observe/digital-experience/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.") into your web applicationâconsists of two key components:
+The RUM JavaScriptâwhether [automatically injected](rum-injection.md "Configure automatic injection of the RUM JavaScript into the pages of your applications") or [manually inserted](set-up-agentless-real-user-monitoring.md "Set up agentless monitoring for your web applications.") into your web applicationâconsists of two key components:
 
 * **Monitoring code**: The JavaScript code that provides RUM capabilities such as capturing user actions.
 * **Configuration**: The application configuration that is initially used by the monitoring code. It is updated later via the RUM beacon response in case of configuration changes.
@@ -45,7 +45,7 @@ Code snippet
 
 **JavaScript tag** links to an external file that includes both the monitoring code and the configuration. JavaScript tag is only available for manual insertion.
 
-[Get JavaScript tag via API](/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag)
+[Get JavaScript tag via API](../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag.md)
 
 ##### Updates
 
@@ -85,7 +85,7 @@ To configure script execution
 5. In the **JavaScript tag** section, set **Script execution attribute** to **async**, **defer**, or **No attribute**.
 6. Copy the snippet and insert it into your page.
 
-When fetching the JavaScript tag via the API, you can control script execution by passing a parameter. For details, see [GET JavaScript tag](/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag "Retrieve the most recent JavaScript tag for manual insertion.").
+When fetching the JavaScript tag via the API, you can control script execution by passing a parameter. For details, see [GET JavaScript tag](../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag.md "Retrieve the most recent JavaScript tag for manual insertion.").
 
 ##### Addition of the `crossorigin="anonymous"` attribute
 
@@ -102,21 +102,21 @@ To enable the addition of the `crossorigin="anonymous"` attribute
 5. In the **JavaScript tag** section, enable **Add the crossorigin=anonymous attribute**.
 6. Copy the snippet and insert it into your page.
 
-When fetching the JavaScript tag via the API, you can control the addition of the `crossorigin="anonymous"` attribute by passing a parameter. For details, see [GET JavaScript tag](/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag "Retrieve the most recent JavaScript tag for manual insertion.").
+When fetching the JavaScript tag via the API, you can control the addition of the `crossorigin="anonymous"` attribute by passing a parameter. For details, see [GET JavaScript tag](../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag.md "Retrieve the most recent JavaScript tag for manual insertion.").
 
 **OneAgent JavaScript tag** includes the configuration and links to an external file containing the monitoring code. It's available for both manual insertion and automatic injection.
 
-[Get OneAgent JavaScript tag via API](/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag)
+[Get OneAgent JavaScript tag via API](../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag.md)
 
 ##### Updates
 
 When inserting the OneAgent JavaScript tag manually, it must also be manually updated whenever configuration changes occur. To ensure it remains current, we recommend using it together with fully automated updates via the API. Using OneAgent JavaScript tag from the web UI is discouraged unless timely configuration updates are not critical.
 
-In case of automatic injection, OneAgent always injects the OneAgent JavaScript tag using the current configuration. Note, however, that the caching policy of your application may influence how often OneAgent gets a chance to inject. For more information, see [Cache control header optimizations](/docs/observe/digital-experience/web-applications/initial-setup/rum-injection#cache-header-optimization "Configure automatic injection of the RUM JavaScript into the pages of your applications").
+In case of automatic injection, OneAgent always injects the OneAgent JavaScript tag using the current configuration. Note, however, that the caching policy of your application may influence how often OneAgent gets a chance to inject. For more information, see [Cache control header optimizations](rum-injection.md#cache-header-optimization "Configure automatic injection of the RUM JavaScript into the pages of your applications").
 
 ##### Monitoring code source
 
-In case of agentless monitoring, the monitoring code is delivered by the Dynatrace CDN. In case of automatic injection or [manual insertion for pages of an auto-injected application](/docs/observe/digital-experience/web-applications/initial-setup/rum-injection#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your applications"), the file is, by default, delivered by the OneAgent that instruments your application. Alternatively, it is also possible to load it from the Dynatrace CDN, see [Request the monitoring code from the Dynatrace CDN](/docs/observe/digital-experience/web-applications/additional-configuration/configure-monitoring-code-source#request-rum-monitoring-code-from-cdn "Configure the Real User Monitoring code source for your specific requirements.").
+In case of agentless monitoring, the monitoring code is delivered by the Dynatrace CDN. In case of automatic injection or [manual insertion for pages of an auto-injected application](rum-injection.md#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your applications"), the file is, by default, delivered by the OneAgent that instruments your application. Alternatively, it is also possible to load it from the Dynatrace CDN, see [Request the monitoring code from the Dynatrace CDN](../additional-configuration/configure-monitoring-code-source.md#request-rum-monitoring-code-from-cdn "Configure the Real User Monitoring code source for your specific requirements.").
 
 ##### Cache duration
 
@@ -149,17 +149,17 @@ To configure script execution for manual insertion
 5. In the **OneAgent JavaScript tag** section, set **Script execution attribute** to **async**, **defer**, or **No attribute**.
 6. Copy the snippet and insert it into your page.
 
-When fetching the OneAgent JavaScript tag via the API, you can control script execution by passing a parameter. For details, see [GET OneAgent JavaScript tag](/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag "Retrieve the most recent OneAgent JavaScript tag for manual insertion.").
+When fetching the OneAgent JavaScript tag via the API, you can control script execution by passing a parameter. For details, see [GET OneAgent JavaScript tag](../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag.md "Retrieve the most recent OneAgent JavaScript tag for manual insertion.").
 
-**OneAgent JavaScript tag with SRI** lets you take advantage of the subresource integrity (SRI) browser feature to ensure that the monitoring code hasn't been altered, see [Use Subresource Integrity (SRI) for Real User Monitoring code](/docs/observe/digital-experience/web-applications/initial-setup/subresource-integrity "Use the Subresource Integrity (SRI) browser feature to ensure the integrity of Real User Monitoring code."). It includes configuration, a reference to an external file containing the monitoring code, and an integrity hash for this monitoring code. It is supported for both automatic injection and manual insertion.
+**OneAgent JavaScript tag with SRI** lets you take advantage of the subresource integrity (SRI) browser feature to ensure that the monitoring code hasn't been altered, see [Use Subresource Integrity (SRI) for Real User Monitoring code](subresource-integrity.md "Use the Subresource Integrity (SRI) browser feature to ensure the integrity of Real User Monitoring code."). It includes configuration, a reference to an external file containing the monitoring code, and an integrity hash for this monitoring code. It is supported for both automatic injection and manual insertion.
 
-[Get OneAgent JavaScript tag with SRI via API](/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag-with-sri)
+[Get OneAgent JavaScript tag with SRI via API](../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag-with-sri.md)
 
 ##### Updates
 
 When inserting the OneAgent JavaScript tag with SRI manually, it must also be manually updated whenever configuration changes occur. To ensure it remains current, we recommend using it together with fully automated updates via the API. Using OneAgent JavaScript tag with SRI from the web UI is discouraged unless timely configuration updates are not critical.
 
-In case of automatic injection, OneAgent always injects the OneAgent JavaScript tag with SRI using the current configuration. Note, however, that the caching policy of your application may influence how often OneAgent gets a chance to inject. For more information, see [Cache control header optimizations](/docs/observe/digital-experience/web-applications/initial-setup/rum-injection#cache-header-optimization "Configure automatic injection of the RUM JavaScript into the pages of your applications").
+In case of automatic injection, OneAgent always injects the OneAgent JavaScript tag with SRI using the current configuration. Note, however, that the caching policy of your application may influence how often OneAgent gets a chance to inject. For more information, see [Cache control header optimizations](rum-injection.md#cache-header-optimization "Configure automatic injection of the RUM JavaScript into the pages of your applications").
 
 ##### Monitoring code source
 
@@ -196,21 +196,21 @@ To configure script execution for manual insertion
 5. In the **OneAgent JavaScript tag with SRI** section, set **Script execution attribute** to **async**, **defer** or **No attribute**.
 6. Copy the snippet and insert it into your page.
 
-When fetching the OneAgent JavaScript tag with SRI via the API, you can control script execution by passing a parameter. For details, see [GET OneAgent JavaScript tag with SRI](/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag-with-sri "Retrieve the most recent OneAgent JavaScript tag with SRI for manual insertion.").
+When fetching the OneAgent JavaScript tag with SRI via the API, you can control script execution by passing a parameter. For details, see [GET OneAgent JavaScript tag with SRI](../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag-with-sri.md "Retrieve the most recent OneAgent JavaScript tag with SRI for manual insertion.").
 
 **Inline code** contains both the configuration and the RUM monitoring code, keeping the number of web requests at a minimum. Note that the Session Replay monitoring code is not inlined, so there will still be an additional request if you use Session Replay. If your website consists of many individual pages, using inline code may not be beneficial, as it increases the size of each document. However, it can be a suitable choice for single-page applications (SPAs).
 
-[Get inline code via API](/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-inline-code)
+[Get inline code via API](../../../../dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-inline-code.md)
 
 ##### Updates
 
 When inserting the inline code manually, it must also be manually updated whenever configuration changes occur. To ensure it remains current, we recommend using it together with fully automated updates via the API. Using inline code from the web UI is discouraged unless timely configuration updates are not critical.
 
-In case of automatic injection, OneAgent always injects the inline code using the current configuration. Note, however, that the caching policy of your application may influence how often OneAgent gets a chance to inject. For more information, see [Cache control header optimizations](/docs/observe/digital-experience/web-applications/initial-setup/rum-injection#cache-header-optimization "Configure automatic injection of the RUM JavaScript into the pages of your applications").
+In case of automatic injection, OneAgent always injects the inline code using the current configuration. Note, however, that the caching policy of your application may influence how often OneAgent gets a chance to inject. For more information, see [Cache control header optimizations](rum-injection.md#cache-header-optimization "Configure automatic injection of the RUM JavaScript into the pages of your applications").
 
 ##### Monitoring code source
 
-In case of agentless monitoring, the Session Replay monitoring code is delivered by the Dynatrace CDN. In case of automatic injection or [manual insertion for pages of an auto-injected application](/docs/observe/digital-experience/web-applications/initial-setup/rum-injection#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your applications"), the Session Replay monitoring code is, by default, delivered by the OneAgent that instruments your application. Alternatively, it is also possible to load it from the Dynatrace CDN, see [Request the monitoring code from the Dynatrace CDN](/docs/observe/digital-experience/web-applications/additional-configuration/configure-monitoring-code-source#request-rum-monitoring-code-from-cdn "Configure the Real User Monitoring code source for your specific requirements.").
+In case of agentless monitoring, the Session Replay monitoring code is delivered by the Dynatrace CDN. In case of automatic injection or [manual insertion for pages of an auto-injected application](rum-injection.md#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your applications"), the Session Replay monitoring code is, by default, delivered by the OneAgent that instruments your application. Alternatively, it is also possible to load it from the Dynatrace CDN, see [Request the monitoring code from the Dynatrace CDN](../additional-configuration/configure-monitoring-code-source.md#request-rum-monitoring-code-from-cdn "Configure the Real User Monitoring code source for your specific requirements.").
 
 ##### Cache duration
 
@@ -227,19 +227,19 @@ The monitoring code is loaded and evaluated synchronously by the browser.
 
 The external file containing the full functionality of the monitoring code can be configured to load either synchronously or asynchronously using the `defer` attribute, see [Script execution](#code-snippet-script-execution).
 
-[Get code snippet via API](/docs/dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code/get-snippet-sync)
+[Get code snippet via API](../../../../dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code/get-snippet-sync.md)
 
-[Get code snippet in deferred mode via API](/docs/dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code/get-snippet-async)
+[Get code snippet in deferred mode via API](../../../../dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code/get-snippet-async.md)
 
 ##### Updates
 
 In case of manual insertion, monitoring code and configuration updates are available after the page has reloaded for the first time. To have the current configuration available from the start, the code snippet needs to be updated regularly. This is also necessary to guarantee the compatibility between the code snippet and the external file, which we test for one year.
 
-In case of automatic injection, OneAgent always injects code snippet using the current configuration. Note, however, that the caching policy of your application may influence how often OneAgent gets a chance to inject. For more information, see [Cache control header optimizations](/docs/observe/digital-experience/web-applications/initial-setup/rum-injection#cache-header-optimization "Configure automatic injection of the RUM JavaScript into the pages of your applications").
+In case of automatic injection, OneAgent always injects code snippet using the current configuration. Note, however, that the caching policy of your application may influence how often OneAgent gets a chance to inject. For more information, see [Cache control header optimizations](rum-injection.md#cache-header-optimization "Configure automatic injection of the RUM JavaScript into the pages of your applications").
 
 ##### Monitoring code source
 
-In case of agentless monitoring, the external file containing the full functionality of the monitoring code is delivered by the Dynatrace CDN. In case of automatic injection or [manual insertion for pages of an auto-injected application](/docs/observe/digital-experience/web-applications/initial-setup/rum-injection#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your applications"), it is, by default, delivered by the OneAgent that instruments your application. Alternatively, it is also possible to load it from the Dynatrace CDN, see [Request the monitoring code from the Dynatrace CDN](/docs/observe/digital-experience/web-applications/additional-configuration/configure-monitoring-code-source#request-rum-monitoring-code-from-cdn "Configure the Real User Monitoring code source for your specific requirements.").
+In case of agentless monitoring, the external file containing the full functionality of the monitoring code is delivered by the Dynatrace CDN. In case of automatic injection or [manual insertion for pages of an auto-injected application](rum-injection.md#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your applications"), it is, by default, delivered by the OneAgent that instruments your application. Alternatively, it is also possible to load it from the Dynatrace CDN, see [Request the monitoring code from the Dynatrace CDN](../additional-configuration/configure-monitoring-code-source.md#request-rum-monitoring-code-from-cdn "Configure the Real User Monitoring code source for your specific requirements.").
 
 ##### Cache duration
 

@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:25:31.373291
 * 4-min read
 * Updated on Jul 12, 2023
 
-You can filter metric data by [management zone](/docs/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.") in two ways.
+You can filter metric data by [management zone](../../manage/identity-access-management/permission-management/management-zones.md "Learn about management zones concepts, how to define management zones, and how to make the most of them.") in two ways.
 
 * First, you can set up [entity-based rules](#entity-based-rules) for a management zone to match metrics with an associated entity type.
 * Second, you can set up [dimensional rules](#dimensional-rules) for a management zone to match metric series by metric or dimension keys.
@@ -21,19 +21,19 @@ The following sections discuss each method and any [security considerations](#se
 
 ## Entity-based rules to filter metric data
 
-You can define [UI-based](/docs/manage/identity-access-management/permission-management/management-zones/management-zone-rules#ui "Define rules to limit the entities accessible within a management zone.") or [text-based rules](/docs/manage/identity-access-management/permission-management/management-zones/management-zone-rules#text "Define rules to limit the entities accessible within a management zone.") to provide access to entities within a management zone. Management-zone users automatically get access to the metrics whose **entity type** matches the entities scoped within the management zone. Note that the entity type of a metric is the primary entity associated with that metric. While a metric can have several **entity-based dimensions**, these are not the same thing as the entity type.
+You can define [UI-based](../../manage/identity-access-management/permission-management/management-zones/management-zone-rules.md#ui "Define rules to limit the entities accessible within a management zone.") or [text-based rules](../../manage/identity-access-management/permission-management/management-zones/management-zone-rules.md#text "Define rules to limit the entities accessible within a management zone.") to provide access to entities within a management zone. Management-zone users automatically get access to the metrics whose **entity type** matches the entities scoped within the management zone. Note that the entity type of a metric is the primary entity associated with that metric. While a metric can have several **entity-based dimensions**, these are not the same thing as the entity type.
 
 ### Metric entity type
 
 You can check the entity type of a metric using:
 
-* The metric information side panel in [Data Explorer](/docs/analyze-explore-automate/explorer#metric-name "Query for metrics and transform results to gain desired insights.").
+* The metric information side panel in [Data Explorer](../explorer.md#metric-name "Query for metrics and transform results to gain desired insights.").
 
   ![Metric entity type in Data Explorer](https://dt-cdn.net/images/data-explorer-entity-type-1122-6a93ade8f2.png)
-* The [Metric browser](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.").
-* The [GET metric descriptor endpoint of the Metrics API](/docs/dynatrace-api/environment-api/metric-v2/get-descriptor "View the descriptor of a metric via Metrics v2 API."); check the [`entityType` element](/docs/dynatrace-api/environment-api/metric-v2/get-descriptor#response "View the descriptor of a metric via Metrics v2 API.").
+* The [Metric browser](../dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser.").
+* The [GET metric descriptor endpoint of the Metrics API](../../dynatrace-api/environment-api/metric-v2/get-descriptor.md "View the descriptor of a metric via Metrics v2 API."); check the [`entityType` element](../../dynatrace-api/environment-api/metric-v2/get-descriptor.md#response "View the descriptor of a metric via Metrics v2 API.").
 
-Alternatively, you can explicitly configure the entity type for **ingested custom metrics** by setting the **Source entity type** on the [**Metric metadata** page](/docs/analyze-explore-automate/dashboards-classic/metrics-browser#configuration-ui "Browse metrics with the Dynatrace metrics browser.").
+Alternatively, you can explicitly configure the entity type for **ingested custom metrics** by setting the **Source entity type** on the [**Metric metadata** page](../dashboards-classic/metrics-browser.md#configuration-ui "Browse metrics with the Dynatrace metrics browser.").
 
 ![Metric metadata modal with completed 'Source entity type' field.](https://dt-cdn.net/images/sourceentitytype-metricmetadata-1270-b154365f51.png)
 
@@ -72,7 +72,7 @@ Due to this limitation, users who shouldn't have access to these metric series c
 
 ### Metric-selector transformations
 
-The [metric-selector transformations](/docs/dynatrace-api/environment-api/metric-v2/metric-selector "Configure the metric selector for the Metric v2 API.") `parents` and `names` add information to metric data queries, which can expose the ID of the parent monitored entity (such as the ID of a host that is parent to a process) or the display name of the entity in the case of the `names` transformation.
+The [metric-selector transformations](../../dynatrace-api/environment-api/metric-v2/metric-selector.md "Configure the metric selector for the Metric v2 API.") `parents` and `names` add information to metric data queries, which can expose the ID of the parent monitored entity (such as the ID of a host that is parent to a process) or the display name of the entity in the case of the `names` transformation.
 
 ### Impact
 
@@ -82,4 +82,4 @@ We recommend special care in deciding which dimensions are sent as part of the d
 
 ## Related topics
 
-* [Management zones](/docs/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.")
+* [Management zones](../../manage/identity-access-management/permission-management/management-zones.md "Learn about management zones concepts, how to define management zones, and how to make the most of them.")

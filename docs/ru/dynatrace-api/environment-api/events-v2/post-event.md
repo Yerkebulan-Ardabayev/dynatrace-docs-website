@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:28:21.680541
 
 Запрос принимает полезную нагрузку `application/json`.
 
-Загрузка пользовательских событий потребляет [Davis Data Units (DDUs)](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") из пула событий.
+Загрузка пользовательских событий потребляет [Davis Data Units (DDUs)](../../../license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") из пула событий.
 
 |  |  |  |
 | --- | --- | --- |
@@ -26,7 +26,7 @@ scraped: 2026-03-06T21:28:21.680541
 
 Для выполнения этого запроса вам необходим токен доступа с областью действия `events.ingest`.
 
-Чтобы узнать, как его получить и использовать, см. [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как его получить и использовать, см. [Tokens and authentication](../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 
@@ -364,5 +364,5 @@ https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest
 
 ## Связанные темы
 
-* [Event categories](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.")
-* [Event analysis and correlation](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation "Gain an understanding of the Events section on each host, process, and service overview page.")
+* [Event categories](../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories.md "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.")
+* [Event analysis and correlation](../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation.md "Gain an understanding of the Events section on each host, process, and service overview page.")

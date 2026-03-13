@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:18:29.143198
 * 9-min read
 * Updated on Oct 01, 2025
 
-Dynatrace failure detection automatically detects the vast majority of error conditions in your environment, including the underlying [root causes](/docs/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts."). With this approach, Dynatrace is able to provide you with answers when problems occur or when your application performance drops.
+Dynatrace failure detection automatically detects the vast majority of error conditions in your environment, including the underlying [root causes](../../../../../dynatrace-intelligence/root-cause-analysis/concepts.md "Get acquainted with root cause analysis concepts."). With this approach, Dynatrace is able to provide you with answers when problems occur or when your application performance drops.
 
 When Dynatrace detects a service error, it doesn't necessarily mean that you want to label a request as failed. If the default service-error detection settings don't meet your needs, you can configure failure detection settings as explained in this page.
 
@@ -43,7 +43,7 @@ The following failure detection rules don't apply to the service types:
 * Span service
 * Unified service
 
-  To learn more about unified service failure detection, see [Unified services](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/unified-service "Define services on observability signals ingested via Trace ingest APIs.").
+  To learn more about unified service failure detection, see [Unified services](service-types/unified-service.md "Define services on observability signals ingested via Trace ingest APIs.").
 
 Global settings
 
@@ -103,20 +103,20 @@ Parameters for failure detection include HTTP-specific parameters and general pa
 
   You can remedy such situations by specifying an exception class that should result in a failed request. Optionally, you can define a string that must be found in the exception message. If this string isn't found, the exception won't lead to a failed request.  
   If Dynatrace finds the defined exception (and the optionally-defined exception message) on a request, Dynatrace marks the request as failed.  
-  Note that this doesn't work if you exclude the exception class from capture in [Deep process monitoring settings](/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring#deep-monitoring "Ways to customize process-group monitoring").
+  Note that this doesn't work if you exclude the exception class from capture in [Deep process monitoring settings](../../../../infrastructure-observability/process-groups/configuration/pg-monitoring.md#deep-monitoring "Ways to customize process-group monitoring").
 * **Ignore all exceptions**
 
   When **Ignore all exceptions** is enabled, Dynatrace ignores **Success forcing exceptions**, **Ignored Exceptions** and **Custom handled exceptions** for the services to which the parameters applyâthe specific service if the switch is enabled on the service-level or the services that match the global rule.
   Because exceptions are still tracked, they appear in distributed traces, but you don't receive alerts for them and requests aren't labeled as failed.
 * **Custom errors via request attributes**
 
-  Custom error situations might be triggered by exceptions, but some are detectable only via a return value or other means. To support such cases, you can define a [request attribute](/docs/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") that captures the required data. You can then define a custom error rule based on the request attribute that checks the value of the request attribute to determine if the request has failed or not.
+  Custom error situations might be triggered by exceptions, but some are detectable only via a return value or other means. To support such cases, you can define a [request attribute](../../request-attributes.md "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.") that captures the required data. You can then define a custom error rule based on the request attribute that checks the value of the request attribute to determine if the request has failed or not.
 
   Example: Use request attributes to detect business logic-related errors
 
   Requests might fail for reasons related to business logic. These situations often arenât detectable via exceptions or HTTP response codes. Nevertheless, they are indicative of problems and might be even more important than situations detected via exceptions and response codes. For example, you might have a business function in your Java code that indicates an error via a return value or you might have your own error-handling functionality that, when called, indicates a functional business error.
 
-  Such situations can be captured via [request attributes](/docs/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."), which you can use as indicators for error situations.
+  Such situations can be captured via [request attributes](../../request-attributes.md "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."), which you can use as indicators for error situations.
 
   To create a custom error rule
 
@@ -141,6 +141,6 @@ On the service level, you can visualize the **Schema ID** by selecting **More** 
 
 ## Related topics
 
-* [Request attributes](/docs/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.")
-* [Root cause analysis concepts](/docs/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.")
-* [Failure detection API](/docs/dynatrace-api/configuration-api/service-api/failure-detection "Learn what the Dynatrace failure detection config API offers.")
+* [Request attributes](../../request-attributes.md "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.")
+* [Root cause analysis concepts](../../../../../dynatrace-intelligence/root-cause-analysis/concepts.md "Get acquainted with root cause analysis concepts.")
+* [Failure detection API](../../../../../dynatrace-api/configuration-api/service-api/failure-detection.md "Learn what the Dynatrace failure detection config API offers.")

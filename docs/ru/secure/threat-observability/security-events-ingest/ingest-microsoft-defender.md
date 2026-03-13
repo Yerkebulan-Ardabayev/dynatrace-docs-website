@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:24:00.859946
 * Практическое руководство
 * Обновлено 7 октября 2025 г.
 
-Эта страница была обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и действий, необходимых для выполнения миграции, см. в [руководстве по миграции таблицы безопасности Grail](/docs/secure/threat-observability/migration "Ознакомьтесь с изменениями в новой таблице безопасности Grail и узнайте, как выполнить миграцию.").
+Эта страница была обновлена в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и действий, необходимых для выполнения миграции, см. в [руководстве по миграции таблицы безопасности Grail](../migration.md "Ознакомьтесь с изменениями в новой таблице безопасности Grail и узнайте, как выполнить миграцию.").
 
 Принимайте события безопасности Microsoft Defender for Cloud и анализируйте их в Dynatrace.
 
@@ -26,10 +26,10 @@ scraped: 2026-03-06T21:24:00.859946
 
 ### Варианты использования
 
-* Визуализация и отчётность о текущем состоянии безопасности и тенденциях результатов безопасности в различных средах с помощью [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.").
-* Анализ и приоритизация результатов безопасности из нескольких инструментов и продуктов единообразно с помощью [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.").
-* Создание уведомлений и заявок для критических результатов безопасности с помощью [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.").
-* Использование результатов безопасности как дополнительного измерения для поиска угроз и анализа инцидентов с помощью [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Сочетайте возможности Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз.").
+* Визуализация и отчётность о текущем состоянии безопасности и тенденциях результатов безопасности в различных средах с помощью [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.").
+* Анализ и приоритизация результатов безопасности из нескольких инструментов и продуктов единообразно с помощью [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.").
+* Создание уведомлений и заявок для критических результатов безопасности с помощью [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](../../../analyze-explore-automate/workflows.md "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.").
+* Использование результатов безопасности как дополнительного измерения для поиска угроз и анализа инцидентов с помощью [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../investigations.md "Сочетайте возможности Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз.").
 
 ### Требования
 
@@ -47,11 +47,11 @@ scraped: 2026-03-06T21:24:00.859946
   + Для запроса принятых данных: `storage:security.events:read`.
 * Токены:
 
-  + Сгенерируйте токен доступа с областью действия `openpipeline.events_security` и сохраните его. Подробнее см. в разделе [API Dynatrace — токены и аутентификация](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования API Dynatrace.").
+  + Сгенерируйте токен доступа с областью действия `openpipeline.events_security` и сохраните его. Подробнее см. в разделе [API Dynatrace — токены и аутентификация](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования API Dynatrace.").
 
 ## Активация и настройка
 
-1. В Dynatrace откройте  [**Hub**](/docs/manage/hub "Информация о Dynatrace Hub.").
+1. В Dynatrace откройте  [**Hub**](../../../manage/hub.md "Информация о Dynatrace Hub.").
 2. Найдите **Microsoft Defender for Cloud** и выберите **Install**.
 3. Выберите **Set up**, затем выберите  **Configure new connection**.
 4. Следуйте инструкциям на экране для настройки приёма данных.
@@ -65,12 +65,12 @@ scraped: 2026-03-06T21:24:00.859946
 1. События принимаются в Dynatrace
 
 1. Microsoft Defender for Cloud [непрерывно экспортирует](https://dt-url.net/lla3wnv) результаты безопасности в [Azure Event Hubs](https://dt-url.net/zmc3wv9).
-2. Приложение [Azure Function](https://dt-url.net/b643w2v) предварительно обрабатывает события и отправляет их в Dynatrace, используя [OpenPipeline](/docs/platform/openpipeline "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.") и специальную [конечную точку приёма событий безопасности](/docs/secure/threat-observability/security-events-ingest/ingest-custom-data#default "Принимайте события безопасности из пользовательских сторонних продуктов через API.").
+2. Приложение [Azure Function](https://dt-url.net/b643w2v) предварительно обрабатывает события и отправляет их в Dynatrace, используя [OpenPipeline](../../../platform/openpipeline.md "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.") и специальную [конечную точку приёма событий безопасности](ingest-custom-data.md#default "Принимайте события безопасности из пользовательских сторонних продуктов через API.").
 
 2. Результаты безопасности обрабатываются и сохраняются в Grail
 
-1. Полученные данные сопоставляются с [Dynatrace Semantic Dictionary](/docs/semantic-dictionary/model/security-events#vulnerability-finding-events "Познакомьтесь с моделями Semantic Dictionary, связанными с событиями безопасности.").
-2. Данные хранятся в [Grail](/docs/platform/grail "Информация о том, какие данные и как вы можете запрашивать в Dynatrace.") в унифицированном формате, в корзине по умолчанию `default_securityevents`. Подробнее см. в разделе [Встроенные корзины Grail](/docs/platform/grail/organize-data#built-in-grail-buckets "Информация о модели данных Grail, состоящей из корзин, таблиц и представлений.").
+1. Полученные данные сопоставляются с [Dynatrace Semantic Dictionary](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Познакомьтесь с моделями Semantic Dictionary, связанными с событиями безопасности.").
+2. Данные хранятся в [Grail](../../../platform/grail.md "Информация о том, какие данные и как вы можете запрашивать в Dynatrace.") в унифицированном формате, в корзине по умолчанию `default_securityevents`. Подробнее см. в разделе [Встроенные корзины Grail](../../../platform/grail/organize-data.md#built-in-grail-buckets "Информация о модели данных Grail, состоящей из корзин, таблиц и представлений.").
 
 ### Мониторинг данных
 
@@ -89,21 +89,21 @@ scraped: 2026-03-06T21:24:00.859946
 
 ### Визуализация и анализ результатов
 
-Вы можете создавать собственные [дашборды](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") или использовать наши шаблоны для визуализации и анализа результатов обнаружения уязвимостей контейнеров.
+Вы можете создавать собственные [дашборды](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") или использовать наши шаблоны для визуализации и анализа результатов обнаружения уязвимостей контейнеров.
 
 1. В **Settings** откройте **Microsoft Defender for Cloud**.
 2. В разделе **Try our templates** выберите нужный шаблон дашборда.
 
 ### Автоматизация и оркестрация результатов
 
-Вы можете создавать собственные [рабочие процессы](/docs/analyze-explore-automate/workflows "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.") или использовать наши шаблоны для автоматизации и оркестрации результатов обнаружения уязвимостей контейнеров.
+Вы можете создавать собственные [рабочие процессы](../../../analyze-explore-automate/workflows.md "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.") или использовать наши шаблоны для автоматизации и оркестрации результатов обнаружения уязвимостей контейнеров.
 
 1. В **Settings** откройте **Microsoft Defender for Cloud**.
 2. В разделе **Try our templates** выберите нужный шаблон рабочего процесса.
 
 ### Запрос принятых данных
 
-Вы можете запрашивать принятые данные в [**![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks****](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.") или [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Сочетайте возможности Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз."), используя формат данных из [Semantic Dictionary](https://dt-url.net/3q03pb0).
+Вы можете запрашивать принятые данные в [**![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks****](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь информацией из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.") или [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../investigations.md "Сочетайте возможности Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз."), используя формат данных из [Semantic Dictionary](https://dt-url.net/3q03pb0).
 
 1. В **Settings** откройте **Microsoft Defender for Cloud**.
 2. Выберите **Open with** .
@@ -111,7 +111,7 @@ scraped: 2026-03-06T21:24:00.859946
 
 ### Оценка, сортировка и расследование результатов обнаружения
 
-Вы можете оценивать, сортировать и расследовать результаты обнаружения с помощью [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Понимание, сортировка и расследование результатов обнаружения и оповещений.").
+Вы можете оценивать, сортировать и расследовать результаты обнаружения с помощью [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](../../threats-and-exploits.md "Понимание, сортировка и расследование результатов обнаружения и оповещений.").
 
 1. Откройте ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**.
 2. Отфильтруйте по **Provider** > **Microsoft Defender for Cloud**.
@@ -128,14 +128,14 @@ scraped: 2026-03-06T21:24:00.859946
 
 ### Лицензирование и стоимость
 
-Информацию о тарификации см. в разделе [События на базе Grail](/docs/license/capabilities/events "Узнайте, как рассчитывается потребление событий Dynatrace на базе Grail с использованием модели подписки Dynatrace Platform.").
+Информацию о тарификации см. в разделе [События на базе Grail](../../../license/capabilities/events.md "Узнайте, как рассчитывается потребление событий Dynatrace на базе Grail с использованием модели подписки Dynatrace Platform.").
 
 ## Часто задаваемые вопросы
 
 ### Какая модель данных используется для логов и событий безопасности, поступающих из Microsoft Defender for Cloud?
 
-* [События обнаружения уязвимостей](/docs/semantic-dictionary/model/security-events#vulnerability-finding-events "Познакомьтесь с моделями Semantic Dictionary, связанными с событиями безопасности.") хранят отдельные результаты обнаружения уязвимостей, о которых сообщает Microsoft Defender for Cloud для каждого образа контейнера и компонента.
-* [**События сканирования уязвимостей**](/docs/semantic-dictionary/model/security-events#vulnerability-scan-events "Познакомьтесь с моделями Semantic Dictionary, связанными с событиями безопасности.") указывают охват сканирований для отдельных образов контейнеров.
+* [События обнаружения уязвимостей](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Познакомьтесь с моделями Semantic Dictionary, связанными с событиями безопасности.") хранят отдельные результаты обнаружения уязвимостей, о которых сообщает Microsoft Defender for Cloud для каждого образа контейнера и компонента.
+* [**События сканирования уязвимостей**](../../../semantic-dictionary/model/security-events.md#vulnerability-scan-events "Познакомьтесь с моделями Semantic Dictionary, связанными с событиями безопасности.") указывают охват сканирований для отдельных образов контейнеров.
 
 ### Какие поля расширений добавляются к событиям, принятым из Microsoft Defender for Cloud?
 
@@ -153,7 +153,7 @@ scraped: 2026-03-06T21:24:00.859946
 ### Как мы нормализуем оценку рисков для результатов Microsoft Defender for Cloud?
 
 Dynatrace нормализует уровни серьёзности и оценки рисков для всех результатов, принятых через текущую интеграцию. Это помогает вам приоритизировать результаты единообразно, независимо от их источника.
-Подробнее о работе нормализации см. в разделе [Нормализация серьёзности и оценки](/docs/secure/threat-observability/concepts#normalization "Основные концепции, связанные с наблюдаемостью угроз").
+Подробнее о работе нормализации см. в разделе [Нормализация серьёзности и оценки](../concepts.md#normalization "Основные концепции, связанные с наблюдаемостью угроз").
 
 * `dt.security.risk.level` сопоставляется непосредственно из уровня серьёзности, установленного Microsoft Defender for Cloud.
 * `dt.security.risk.score` сопоставляется непосредственно из оценки серьёзности, установленной Microsoft Defender for Cloud.
@@ -174,6 +174,6 @@ Dynatrace нормализует уровни серьёзности и оцен
 
 ## Связанные темы
 
-* [OpenPipeline](/docs/platform/openpipeline "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")
-* [События безопасности](/docs/semantic-dictionary/model/security-events "Познакомьтесь с моделями Semantic Dictionary, связанными с событиями безопасности.")
+* [OpenPipeline](../../../platform/openpipeline.md "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.")
+* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
+* [События безопасности](../../../semantic-dictionary/model/security-events.md "Познакомьтесь с моделями Semantic Dictionary, связанными с событиями безопасности.")

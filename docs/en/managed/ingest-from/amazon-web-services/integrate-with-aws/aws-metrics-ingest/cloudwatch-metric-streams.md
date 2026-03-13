@@ -17,7 +17,7 @@ Dynatrace integration with Amazon CloudWatch Metric Streams provides a simple an
 
 ### AWS default integration vs AWS Metric Streams
 
-Differences between [AWS default integration](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.") and AWS Metric Streams.
+Differences between [AWS default integration](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md "Integrate metrics from Amazon CloudWatch.") and AWS Metric Streams.
 
 |  | AWS Default integration | AWS Metric Streams |
 | --- | --- | --- |
@@ -36,12 +36,12 @@ Differences between [AWS default integration](/docs/ingest-from/amazon-web-servi
 
 1
 
-The `ext:` prefix is used by metrics from [OneAgent extensions](/docs/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.") and [ActiveGate extensions](/docs/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace."), and also by [classic metrics for AWS integration](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.").
+The `ext:` prefix is used by metrics from [OneAgent extensions](../../../../../ingest-from/extensions/develop-your-extensions.md "Develop your own Extensions in Dynatrace.") and [ActiveGate extensions](../../../../../ingest-from/extensions/develop-your-extensions.md "Develop your own Extensions in Dynatrace."), and also by [classic metrics for AWS integration](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md "Integrate metrics from Amazon CloudWatch.").
 Despite the naming similarities, AWS integration metrics are **not** based on extensions.
 
 ## Prerequisites
 
-* Create an [API token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") in your Dynatrace environment and enable the **Ingest metrics** permission.
+* Create an [API token](../../../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") in your Dynatrace environment and enable the **Ingest metrics** permission.
 * Determine the API URL for your environment:
 
   + **For Dynatrace SaaS**  
@@ -51,7 +51,7 @@ Despite the naming similarities, AWS integration metrics are **not** based on ex
   + **For ActiveGate**  
     `https://<your_active_gate_IP_or_hostname>:9999/e/<your_environment_ID>`
 
-To determine `<your_environment_ID>`, see [environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+To determine `<your_environment_ID>`, see [environment ID](../../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
 
 To receive the AWS metrics, the previously selected endpoint needs to be open to incoming Internet traffic. Restrictive firewalls might block the streaming service.
 
@@ -170,9 +170,9 @@ If you don't have access to the CloudFormation template, you can manually set up
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Create a Data Firehose stream**](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams#step-1 "Ingest metrics from your AWS accounts using Amazon CloudWatch Metric Streams.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Create a Data Firehose stream**](../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams.md#step-1 "Ingest metrics from your AWS accounts using Amazon CloudWatch Metric Streams.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Create a CloudWatch Metric Stream**](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams#step-2 "Ingest metrics from your AWS accounts using Amazon CloudWatch Metric Streams.")
+**Create a CloudWatch Metric Stream**](../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams.md#step-2 "Ingest metrics from your AWS accounts using Amazon CloudWatch Metric Streams.")
 
 For each region that you want to monitor, you need to repeat the entire procedure: create a Data Firehose stream and create a CloudWatch Metric Stream.
 
@@ -244,7 +244,7 @@ Once you deploy the Metric Streams client, you can use the [predefined dashboard
 Prerequisites
 
 * Install [Python 3ï»¿](https://www.python.org/downloads/) (no additional libraries are required)
-* Enable the **Read configuration** and **Write configuration** permissions for your [API token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.")
+* Enable the **Read configuration** and **Write configuration** permissions for your [API token](../../../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.")
 
 To upload preset dashboards from GitHub
 

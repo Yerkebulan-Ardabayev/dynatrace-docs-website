@@ -15,11 +15,11 @@ scraped: 2026-03-05T21:31:32.532091
 
 OneAgent version 1.229+
 
-OpenTelemetry interoperability connects the [Dynatrace AWS Lambda extension](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java.") to the OpenTelemetry Node.js instrumentation to use the instrumentation packages and extensions. You can then monitor technologies like databases or messaging frameworks that aren't supported by Dynatrace AWS Lambda extension out of the box.
+OpenTelemetry interoperability connects the [Dynatrace AWS Lambda extension](../aws-lambda-extension.md "Monitor Lambda functions written in Python, Node.js, and Java.") to the OpenTelemetry Node.js instrumentation to use the instrumentation packages and extensions. You can then monitor technologies like databases or messaging frameworks that aren't supported by Dynatrace AWS Lambda extension out of the box.
 
 ## Before you start
 
-* Ensure that [OpenTelemetry interoperability is enabled](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#enable "Enable and use OpenTelemetry interoperability in AWS Lambda.").
+* Ensure that [OpenTelemetry interoperability is enabled](../opentelemetry-interoperability.md#enable "Enable and use OpenTelemetry interoperability in AWS Lambda.").
 * Verify that the installed JavaScript OpenTelemetry API is compatible with the Dynatrace AWS Lambda extension. The following table lists the compatible versions:
 
   | OneAgent version | Maximum OpenTelemetry API version |
@@ -368,7 +368,7 @@ const AWS = require('aws-sdk');
 
 * Via Node.js HTTP server:
 
-  When you make a request to the HTTP server, a message is sent to an SQS queue or SNS topic. If you send a message before the trace root span exists, make sure to create the trace root span manually. For details on the span manual creation with OpenTelemetry, see [Use OneAgent with OpenTelemetry data](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.").
+  When you make a request to the HTTP server, a message is sent to an SQS queue or SNS topic. If you send a message before the trace root span exists, make sure to create the trace root span manually. For details on the span manual creation with OpenTelemetry, see [Use OneAgent with OpenTelemetry data](../../../../../dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel.md "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.").
 
   Example
 
@@ -737,7 +737,7 @@ You can trace SQS messages forwarded from
 
   The Dynatrace AWS Lambda extension automatically extracts the parent and creates a Lambda span when an AWS Lambda function is triggered by AWS SQS. However, when a batch of multiple messages is received, only the last message is considered and used for parent propagation. To propagate parents from the batch of multiple incoming messages you can, for example, manually create spans with the parent from each message.
 
-  To [configure the Dynatrace AWS Lambda extension](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension#lambda-cfg-method "Monitor Lambda functions written in Python, Node.js, and Java.") to allow setting parent spans manually:
+  To [configure the Dynatrace AWS Lambda extension](../aws-lambda-extension.md#lambda-cfg-method "Monitor Lambda functions written in Python, Node.js, and Java.") to allow setting parent spans manually:
 
   + For the environment variables configuration method, set the `DT_OPEN_TELEMETRY_ALLOW_EXPLICIT_PARENT` environment variable to `true`:
 
@@ -1051,5 +1051,5 @@ For details, see how to [receive an SQS message](#receive-sqs-node).
 
 ## Related topics
 
-* [OpenTelemetry interoperability](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability "Enable and use OpenTelemetry interoperability in AWS Lambda.")
-* [Trace Python, Node.js, and Java Lambda functions](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java.")
+* [OpenTelemetry interoperability](../opentelemetry-interoperability.md "Enable and use OpenTelemetry interoperability in AWS Lambda.")
+* [Trace Python, Node.js, and Java Lambda functions](../aws-lambda-extension.md "Monitor Lambda functions written in Python, Node.js, and Java.")

@@ -85,7 +85,7 @@ Page
 
 of 1
 
-For more information, see [Getting started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.").
+For more information, see [Getting started with Dynatrace Intelligence generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence generative AI.").
 
 Get started
 
@@ -103,7 +103,7 @@ After enabling Dynatrace Intelligence generative AI on your environment and sett
 
 1. In Dynatrace, select  **Dynatrace Assist**.
 2. A new window opens with the chat interface.
-3. Type your question. See [examples](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot#prompt-examples "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.") for inspiration.
+3. Type your question. See [examples](chat-with-davis-copilot.md#prompt-examples "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.") for inspiration.
 4. Select **Run** ![Run](https://dt-cdn.net/images/run-c2f8c2f63c.svg "Run") and wait for the response to be generated.
 
    * You can ask follow-up questions.
@@ -131,7 +131,7 @@ Go through the following process to learn using  **Dynatrace Assist**
 [01Embedded conversation starters
 
 * Reference
-* Learn how to trigger predefined prompts in various Dynatrace applications.](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters)
+* Learn how to trigger predefined prompts in various Dynatrace applications.](chat-with-davis-copilot/copilot-conv-starters.md)
 
 **Dynatrace Assist** enriches its answers based on the official Dynatrace sources, such as Dynatrace Documentation and Dynatrace Community. For details, see below.
 
@@ -174,6 +174,6 @@ We recommend that you start a new conversation for a new topic to improve Dynatr
 
 ## Related topics
 
-* [Get started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.")
-* [Embedded conversation starters](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters "Learn how to trigger predefined prompts in various Dynatrace applications.")
-* [Dynatrace Intelligence generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
+* [Get started with Dynatrace Intelligence generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence generative AI.")
+* [Embedded conversation starters](chat-with-davis-copilot/copilot-conv-starters.md "Learn how to trigger predefined prompts in various Dynatrace applications.")
+* [Dynatrace Intelligence generative AI FAQ](copilot-faq.md "Learn about frequently asked questions and find your answers.")

@@ -17,28 +17,28 @@ These examples illustrate how to build powerful and flexible health dashboards b
 
 Davis problems represent results that originate from the Dynatrace Intelligence root-cause analysis runs. In Grail, Davis problems and their updates are stored as Grail events.
 
-* [Problem example 1](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample1 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Problem example 1](davis-dql-examples.md#lpproblemexample1 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Count the total number of problems in the last 24 hours.
-* [Problem example 2](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample2 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Problem example 2](davis-dql-examples.md#lpproblemexample2 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Count the current number of active problems.
-* [Problem example 3](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample3 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Problem example 3](davis-dql-examples.md#lpproblemexample3 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Chart the number of problems in the last 7 days to identify a trend within your environment stability.
-* [Problem example 4](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample4 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Problem example 4](davis-dql-examples.md#lpproblemexample4 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Identify the top 10 problem-affected entities within your environment.
-* [Problem example 5](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample5 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Problem example 5](davis-dql-examples.md#lpproblemexample5 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Join entity attributes with detected problems and apply a name filter.
-* [Problem example 6](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample6 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Problem example 6](davis-dql-examples.md#lpproblemexample6 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Load the last state of a given problem.
-* [Problem example 7](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample7 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Problem example 7](davis-dql-examples.md#lpproblemexample7 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Load all active problems and exclude all those that are marked as duplicates.
-* [Problem example 8](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample8 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Problem example 8](davis-dql-examples.md#lpproblemexample8 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Calculate the mean time to resolve for problems over time.
-* [Problem example 9](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample9 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Problem example 9](davis-dql-examples.md#lpproblemexample9 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Show a chart of the concurrently open problems over time.
 
 Davis events represent raw events that originate from various custom alerts within Dynatrace or within the OneAgent. Examples here are OneAgent-detected CPU saturation events or high garbage collection time events.
 
-* [Davis event example 1](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpdaviseventexample1 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Davis event example 1](davis-dql-examples.md#lpdaviseventexample1 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Chart the number of process restart events in the last 7 days.
 
 ## Count the total number of problems in the last 24 hours

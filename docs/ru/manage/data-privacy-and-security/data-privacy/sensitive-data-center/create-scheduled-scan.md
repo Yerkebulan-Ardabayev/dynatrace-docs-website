@@ -25,7 +25,7 @@ scraped: 2026-03-04T21:28:24.209852
 3. Выберите один или несколько **типов конфиденциальных данных** из списка, например адреса электронной почты, номера кредитных карт или IP-адреса.
 4. Задайте интервал сканирования, выбрав периодичность в соответствии с вашими требованиями к соответствию нормативным требованиям.
 5. Выберите **область бакета журналов (Log bucket scope)**, указав конкретные бакеты из списка или всю среду.
-6. Необязательно: применяйте политики сканирования для уточнения области сканирования — например, для исключения известных ложноположительных результатов. Подробнее см. в разделе [Create a policy in Sensitive Data Center](/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/create-policy "Create a policy to enrich or filter request results with Sensitive Data Center.").
+6. Необязательно: применяйте политики сканирования для уточнения области сканирования — например, для исключения известных ложноположительных результатов. Подробнее см. в разделе [Create a policy in Sensitive Data Center](create-policy.md "Create a policy to enrich or filter request results with Sensitive Data Center.").
 7. Введите понятное имя для сканирования.
 8. Нажмите **Create scan** для сохранения конфигурации.
 
@@ -43,7 +43,7 @@ scraped: 2026-03-04T21:28:24.209852
 
 На основе результатов сканирования вы можете предпринять немедленные действия:
 
-* [Настроить или скорректировать правила маскирования](/docs/manage/data-privacy-and-security/configuration/configure-global-privacy-settings "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names."), чтобы предотвратить приём аналогичных данных.
+* [Настроить или скорректировать правила маскирования](../../configuration/configure-global-privacy-settings.md "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names."), чтобы предотвратить приём аналогичных данных.
 * Изменить права доступа к хранимым данным.
-* Обновить [периоды хранения данных](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods "Check retention times for various data types.").
-* Использовать [функцию очистки](/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/cleanup-data "Clean up data with Sensitive Data Center cleanup requests.") для удаления конфиденциальных данных при необходимости.
+* Обновить [периоды хранения данных](../data-retention-periods.md "Check retention times for various data types.").
+* Использовать [функцию очистки](cleanup-data.md "Clean up data with Sensitive Data Center cleanup requests.") для удаления конфиденциальных данных при необходимости.

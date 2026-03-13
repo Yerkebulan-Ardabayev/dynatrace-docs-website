@@ -12,11 +12,11 @@ scraped: 2026-03-06T21:31:33.010747
 * 1-min read
 * Updated on Jan 29, 2024
 
-Для информации о различиях между классическими сервисами и другими сервисами, см. [Migrate from Azure classic (formerly 'built-in') services to cloud services](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-migration-guide "Migrate Azure classic services to their new versions.").
+Для информации о различиях между классическими сервисами и другими сервисами, см. [Migrate from Azure classic (formerly 'built-in') services to cloud services](azure-migration-guide.md "Migrate Azure classic services to their new versions.").
 
-В таблице ниже перечислены все Azure метрики, которые Dynatrace собирает по умолчанию при включении мониторинга [Microsoft Azure](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide "Настройте и сконфигурируйте мониторинг Azure в Dynatrace.").
+В таблице ниже перечислены все Azure метрики, которые Dynatrace собирает по умолчанию при включении мониторинга [Microsoft Azure](../azure-monitoring-guide.md "Настройте и сконфигурируйте мониторинг Azure в Dynatrace.").
 
-Для всех остальных метрик, собираемых Dynatrace для настраиваемых Azure сервисов, см. страницы [cloud services](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics "Мониторинг Azure сервисов с помощью Dynatrace и просмотр доступных метрик.").
+Для всех остальных метрик, собираемых Dynatrace для настраиваемых Azure сервисов, см. страницы [cloud services](../azure-cloud-services-metrics.md "Мониторинг Azure сервисов с помощью Dynatrace и просмотр доступных метрик.").
 
 | Metric key | Name | Unit | Aggregations |
 | --- | --- | --- | --- |

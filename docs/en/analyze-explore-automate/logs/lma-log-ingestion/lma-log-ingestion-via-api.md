@@ -19,13 +19,13 @@ When unable to install OneAgent, use the Log ingestion API. For example, in serv
 
 ![log-api](https://dt-cdn.net/images/log-api-1980-03664b6a2d.png)
 
-You can configure Log ingestion API integration for any log shippers that integrate with Dynatrace REST API, e.g. [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector."), [Fluentbit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit "Integrate Fluent Bit to stream logs to Dynatrace."), [Fluentd](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace."), [Logstash](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash "Integrate Logstash to stream logs from nodes and pods to Dynatrace.").
+You can configure Log ingestion API integration for any log shippers that integrate with Dynatrace REST API, e.g. [OpenTelemetry Collector](../../../ingest-from/opentelemetry/collector.md "Learn about the Dynatrace OTel Collector."), [Fluentbit](lma-stream-logs-with-fluent-bit.md "Integrate Fluent Bit to stream logs to Dynatrace."), [Fluentd](lma-stream-logs-fluentd-k8s.md "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace."), [Logstash](lma-stream-logs-with-logstash.md "Integrate Logstash to stream logs from nodes and pods to Dynatrace.").
 
 Dynatrace automatically collects log and event data from a vast array of technologies. With the Log ingestion API, you can stream log records to a system and have Dynatrace transform the stream into meaningful log messages.
 
 ![LMA - Generic log ingestion API](https://dt-cdn.net/images/lma-generic-log-ingestion-api-2500-090a5b5c43.png)
 
-The Log ingestion API allows you to stream log records to the system. It is available via [Ingest JSON and TXT logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.") or via [Ingest OTLP logs](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
+The Log ingestion API allows you to stream log records to the system. It is available via [Ingest JSON and TXT logs](lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.") or via [Ingest OTLP logs](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
 
 * For Dynatrace SaaS, the logs ingestion endpoint is available in your environment.
 * If the Environment ActiveGate is your choice for an endpoint in your local environment, install an ActiveGate instance: In Dynatrace Hub, select **ActiveGate** > **Set up**. The Log ingestion API v2 is automatically enabled on ActiveGate.
@@ -39,7 +39,7 @@ The Log ingestion API allows you to stream log records to the system. It is avai
 
   + `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/logs/ingest`
   + `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/otlp/v1/logs`
-* For Kubernetes environments, you can use [Fluentd](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace.") or [Fluent Bit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s "Integrate Fluent Bit in Kubernetes to stream logs to Dynatrace.") to forward logs to Dynatrace.
+* For Kubernetes environments, you can use [Fluentd](lma-stream-logs-fluentd-k8s.md "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace.") or [Fluent Bit](lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s.md "Integrate Fluent Bit in Kubernetes to stream logs to Dynatrace.") to forward logs to Dynatrace.
 
 ActiveGate will collect and attempt to automatically transform any log data containing the following elements:
 
@@ -57,7 +57,7 @@ Each API endpoint documentation specifies which response codes are retryable. Wh
 
 ## Log data queue
 
-You can customize the log data queue properties by editing the `custom.properties` file (see [Configuration properties and parameters of ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#generic-ingest "Learn which ActiveGate properties you can configure based on your needs and requirements.")) on your ActiveGate to set the following values:
+You can customize the log data queue properties by editing the `custom.properties` file (see [Configuration properties and parameters of ActiveGate](../../../ingest-from/dynatrace-activegate/configuration/configure-activegate.md#generic-ingest "Learn which ActiveGate properties you can configure based on your needs and requirements.")) on your ActiveGate to set the following values:
 
 ```
 [generic_ingest]
@@ -151,14 +151,14 @@ Success
 
 ## Troubleshooting
 
-Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Management and Analytics](/docs/analyze-explore-automate/logs/lma-troubleshooting "Fix issues related to the setup and configuration of Log Management and Analytics.").
+Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Management and Analytics](../lma-troubleshooting.md "Fix issues related to the setup and configuration of Log Management and Analytics.").
 
 * [Troubleshooting log Ingestion via API - POST ingest logsï»¿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608)
 
 ## Related topics
 
-* [Ingest JSON and TXT logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.")
-* [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.")
-* [Ingest OTLP logs](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")
-* [OpenTelemetry logs ingest API](/docs/dynatrace-api/environment-api/opentelemetry/post-logs "Send OpenTelemetry logs to Dynatrace via API.")
-* [Automatic log enrichment](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation "Log ingestion API automatically transforms log data into output values for the loglevel attribute.")
+* [Ingest JSON and TXT logs](lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.")
+* [Log Monitoring API v2 - POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.")
+* [Ingest OTLP logs](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.")
+* [OpenTelemetry logs ingest API](../../../dynatrace-api/environment-api/opentelemetry/post-logs.md "Send OpenTelemetry logs to Dynatrace via API.")
+* [Automatic log enrichment](lma-log-ingestion-via-api/lma-log-data-transformation.md "Log ingestion API automatically transforms log data into output values for the loglevel attribute.")

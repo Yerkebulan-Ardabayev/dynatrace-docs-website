@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:14:29.180885
 * 9 мин. чтения
 * Обновлено 30 окт. 2023
 
-После сохранения в Grail вы можете интерактивно запрашивать данные бизнес-событий и анализировать их с помощью [DQL](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language."). DQL является отправной точкой для анализа, независимо от того, используете ли вы [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь аналитическими данными наблюдаемости --- в едином совместном настраиваемом рабочем пространстве."), [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") или DQL Query API (latest Dynatrace). Вы можете использовать результаты запросов интерактивно или закрепить их на дашборде в виде графиков, плиток или таблиц.
+После сохранения в Grail вы можете интерактивно запрашивать данные бизнес-событий и анализировать их с помощью [DQL](../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language."). DQL является отправной точкой для анализа, независимо от того, используете ли вы [Notebooks](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь аналитическими данными наблюдаемости --- в едином совместном настраиваемом рабочем пространстве."), [Dashboards](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") или DQL Query API (latest Dynatrace). Вы можете использовать результаты запросов интерактивно или закрепить их на дашборде в виде графиков, плиток или таблиц.
 
 ## Запрос и анализ ваших данных
 
@@ -51,7 +51,7 @@ fetch bizevents, from:now()-24h, to:now()
 
 ### Общий объем торговых операций в долларах по временным интервалам: Линейный график
 
-Вы можете создавать метрики на основе интервалов. Этот пример запрашивает общий объем торговых операций в долларах за последние 24 часа с интервалом в пять минут. В этом примере используется команда DQL [makeTimeseries](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#makeTimeseries "Команды агрегации DQL") для построения временного ряда из меры (суммы объема в долларах), который затем можно использовать для визуализации в Notebooks или Dashboards.
+Вы можете создавать метрики на основе интервалов. Этот пример запрашивает общий объем торговых операций в долларах за последние 24 часа с интервалом в пять минут. В этом примере используется команда DQL [makeTimeseries](../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#makeTimeseries "Команды агрегации DQL") для построения временного ряда из меры (суммы объема в долларах), который затем можно использовать для визуализации в Notebooks или Dashboards.
 
 * Продажи активов через EasyTrade фиксируются типом события `com.easytrade.nginx.quick-sell`.
 * Объем торговых операций в долларах рассчитывается как количество проданных активов, умноженное на их цену.
@@ -224,7 +224,7 @@ fetch bizevents, from:now()-30d, to:now()
   | filter event.provider == "www.easytrade.com"
   ```
 
-  Команда [`filter`](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#filter "Команды фильтрации и поиска DQL") предоставляет записи бизнес-событий на основе определенного [провайдера событий](/docs/observe/business-observability/bo-events-capturing#configure-sources "Сбор бизнес-событий для Dynatrace Business Observability.").
+  Команда [`filter`](../../platform/grail/dynatrace-query-language/commands/filtering-commands.md#filter "Команды фильтрации и поиска DQL") предоставляет записи бизнес-событий на основе определенного [провайдера событий](bo-events-capturing.md#configure-sources "Сбор бизнес-событий для Dynatrace Business Observability.").
 * **Строка 3**
 
   ```
@@ -245,21 +245,21 @@ fetch bizevents, from:now()-30d, to:now()
   | fieldsAdd deposit_ts = if(event.type == "com.easytrade.deposit", timestamp)
   ```
 
-  Команда [`fieldsAdd`](/docs/platform/grail/dynatrace-query-language/commands#fields-add "Список команд DQL.") создает новое поле: временную метку. Это временная метка депозита.
+  Команда [`fieldsAdd`](../../platform/grail/dynatrace-query-language/commands.md#fields-add "Список команд DQL.") создает новое поле: временную метку. Это временная метка депозита.
 * **Строка 6**
 
   ```
   | fieldsAdd withdraw_ts = if(event.type == "com.easytrade.withdraw", timestamp)
   ```
 
-  Команда [`fieldsAdd`](/docs/platform/grail/dynatrace-query-language/commands#fields-add "Список команд DQL.") создает новое поле: временную метку. Это временная метка вывода средств.
+  Команда [`fieldsAdd`](../../platform/grail/dynatrace-query-language/commands.md#fields-add "Список команд DQL.") создает новое поле: временную метку. Это временная метка вывода средств.
 * **Строка 7**
 
   ```
   | summarize {first_deposit_ts = takeFirst(deposit_ts), first_withdraw_ts = takeFirst(withdraw_ts)}, by:{`accountId`}
   ```
 
-  Команда [`summarize`](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#summarize "Команды агрегации DQL") группирует по аккаунту:
+  Команда [`summarize`](../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#summarize "Команды агрегации DQL") группирует по аккаунту:
 
   + Первую временную метку события депозита.
   + Первую временную метку события вывода средств.
@@ -283,7 +283,7 @@ fetch bizevents, from:now()-30d, to:now()
   | fields `accountId`, `Seconds From Deposit To Deposit`= timeDepositToDeposit
   ```
 
-  Команда [`fields`](/docs/platform/grail/dynatrace-query-language/commands/selection-and-modification-commands#fields "Команды выборки и модификации DQL") ограничивает вывод идентификатором аккаунта и временем между первым депозитом и первым выводом средств.
+  Команда [`fields`](../../platform/grail/dynatrace-query-language/commands/selection-and-modification-commands.md#fields "Команды выборки и модификации DQL") ограничивает вывод идентификатором аккаунта и временем между первым депозитом и первым выводом средств.
 
 ### Бизнес-события в рабочие часы
 
@@ -415,6 +415,6 @@ fetch bizevents, from:now()-1d, to:now()
 
 Вы также можете использовать Dashboards ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") для простой реализации всех [примеров метрик в Notebooks](#notebooks), описанных выше. На изображении ниже показан дашборд, содержащий плитки для некоторых DQL-запросов, описанных выше, и некоторых других запросов, которые являются простыми модификациями или вариациями приведенных примеров.
 
-Выберите любую плитку, а затем выберите [**Open with** ![Open with](https://dt-cdn.net/images/open-with-003fc82dcd.svg "Open with")](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-open-with "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени."), чтобы повторно использовать содержимое из Dashboards в другом приложении, например в Notebooks.
+Выберите любую плитку, а затем выберите [**Open with** ![Open with](https://dt-cdn.net/images/open-with-003fc82dcd.svg "Open with")](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-open-with "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени."), чтобы повторно использовать содержимое из Dashboards в другом приложении, например в Notebooks.
 
 ![Дашборд бизнес-аналитики для метрик](https://dt-cdn.net/images/ba-dashboard-examples-2393-86077d7d44.webp)

@@ -47,9 +47,9 @@ scraped: 2026-03-06T21:18:46.855136
 
 OneAgent состоит из различных процессов, которые взаимодействуют через TCP-порт со сторожевым процессом (watchdog). При запуске сторожевой процесс OneAgent пытается открыть первый доступный порт в диапазоне от 50000 до 50100. В некоторых случаях этот порт может потребоваться для ваших собственных приложений, запускаемых после OneAgent. В таких случаях вы можете изменить диапазон портов, используемый сторожевым процессом OneAgent, вызвав интерфейс командной строки OneAgent.
 
-Вы можете изменить порт прослушивания сторожевого процесса с помощью `set-watchdog-portrange` через [инструмент командной строки oneagentctl](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнайте, как выполнять некоторые задачи настройки OneAgent без необходимости переустановки OneAgent."):
+Вы можете изменить порт прослушивания сторожевого процесса с помощью `set-watchdog-portrange` через [инструмент командной строки oneagentctl](../oneagent-configuration-via-command-line-interface.md "Узнайте, как выполнять некоторые задачи настройки OneAgent без необходимости переустановки OneAgent."):
 
-Например, чтобы изменить диапазон портов на `50005:50105`, перейдите в [каталог oneagentctl](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнайте, как выполнять некоторые задачи настройки OneAgent без необходимости переустановки OneAgent.") и выполните следующую команду:
+Например, чтобы изменить диапазон портов на `50005:50105`, перейдите в [каталог oneagentctl](../oneagent-configuration-via-command-line-interface.md "Узнайте, как выполнять некоторые задачи настройки OneAgent без необходимости переустановки OneAgent.") и выполните следующую команду:
 
 * На **Linux** или **AIX**:
   `./oneagentctl --set-watchdog-portrange 50005:50105`
@@ -65,13 +65,13 @@ OneAgent поставляется с доверенными SSL-сертифик
 
 Если ваша среда использует прокси-сервер (что требует обновления SSL-сертификата удаленного сервера) или у вас есть Environment ActiveGate с собственным пользовательским сертификатом, вы можете столкнуться с сообщением `Server certificate check failed` при первоначальной проверке соединения.
 
-Для решения этой проблемы см. [Безопасность OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-security#trusted-root-certificates "Управление безопасностью OneAgent").
+Для решения этой проблемы см. [Безопасность OneAgent](../oneagent-security.md#trusted-root-certificates "Управление безопасностью OneAgent").
 
 Процессы не обнаружены?
 
 Возможно, произошло одно из следующего:
 
-* Процесс не поддерживается нашей технологией мониторинга. Вы всегда можете проверить, какие [типы процессов поддерживает Dynatrace](/docs/ingest-from/technology-support "Найдите технические подробности, связанные с поддержкой Dynatrace для конкретных платформ и фреймворков разработки.").
+* Процесс не поддерживается нашей технологией мониторинга. Вы всегда можете проверить, какие [типы процессов поддерживает Dynatrace](../../technology-support.md "Найдите технические подробности, связанные с поддержкой Dynatrace для конкретных платформ и фреймворков разработки.").
 * Процесс не работает на вашем сервере. Убедитесь, что ваши серверы запущены и процессы работают.
 * Произошла задержка связи между Dynatrace и вашим OneAgent. В этом случае подождите некоторое время и повторите попытку.
 * Ваш OneAgent работает неправильно. Перейдите в **Settings** > **Monitoring** > **Monitoring overview**, чтобы убедиться, что мониторинг включен для хоста, на котором работает ваше программное обеспечение.
@@ -137,8 +137,8 @@ OneAgent поставляется с доверенными SSL-сертифик
 
   Точное расположение файлов журналов см. на следующих страницах:
 
-  + [Безопасность OneAgent в Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows "Узнайте о безопасности Dynatrace OneAgent и модификациях вашей системы на базе Windows")
-  + [Безопасность OneAgent в Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux "Узнайте о безопасности Dynatrace OneAgent и модификациях вашей системы на базе Linux")
+  + [Безопасность OneAgent в Windows](../installation-and-operation/windows/installation/oneagent-security-windows.md "Узнайте о безопасности Dynatrace OneAgent и модификациях вашей системы на базе Windows")
+  + [Безопасность OneAgent в Linux](../installation-and-operation/linux/installation/oneagent-security-linux.md "Узнайте о безопасности Dynatrace OneAgent и модификациях вашей системы на базе Linux")
 
   Вы можете повысить уровень логирования OneAgent, установив переменную окружения `DT_LOGLEVELFILE={level}` или передав аргумент командной строки `--dt_loglevelfile={level}` в SDK.
 
@@ -210,7 +210,7 @@ OneAgent на дисках NFS
 
 #### Пользовательский путь установки
 
-Настройте установку OneAgent так, чтобы он не располагался в каталогах NFS (по умолчанию OneAgent устанавливается в `/opt/dynatrace`). Используйте параметр `INSTALL_PATH` OneAgent. Подробнее см. [Настройка установки OneAgent на Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#installation-path "Узнайте, как использовать установщик Linux с параметрами командной строки.").
+Настройте установку OneAgent так, чтобы он не располагался в каталогах NFS (по умолчанию OneAgent устанавливается в `/opt/dynatrace`). Используйте параметр `INSTALL_PATH` OneAgent. Подробнее см. [Настройка установки OneAgent на Linux](../installation-and-operation/linux/installation/customize-oneagent-installation-on-linux.md#installation-path "Узнайте, как использовать установщик Linux с параметрами командной строки.").
 
 #### Путь выполнения
 
@@ -302,7 +302,7 @@ Oracle Database Server 19c не отвечает
 
 Возможно, произошло одно из следующего:
 
-* Процесс не поддерживается нашей технологией мониторинга. Вы можете проверить, какие [типы процессов поддерживает Dynatrace](/docs/ingest-from/technology-support "Найдите технические подробности, связанные с поддержкой Dynatrace для конкретных платформ и фреймворков разработки.").
+* Процесс не поддерживается нашей технологией мониторинга. Вы можете проверить, какие [типы процессов поддерживает Dynatrace](../../technology-support.md "Найдите технические подробности, связанные с поддержкой Dynatrace для конкретных платформ и фреймворков разработки.").
 * Процесс не работает на вашем сервере. Убедитесь, что ваши серверы запущены и процессы работают.
 * Произошла задержка связи между Dynatrace и вашим OneAgent. В этом случае подождите некоторое время и повторите попытку.
 * Ваш OneAgent работает неправильно. Перейдите в **Settings** > **Monitoring** > **Monitoring overview**, чтобы убедиться, что мониторинг включен для хоста, на котором работает ваше программное обеспечение.
@@ -337,14 +337,14 @@ MSI (s) (C0:54) [09:27:56:489]: Product: Dynatrace OneAgent -- Error 1714. The o
 
 Попробуйте следующие шаги для решения проблемы:
 
-1. Скачайте и распакуйте MSI-пакет из установщика текущей установленной версии, следуя инструкциям в разделе [Получение MSI-пакета](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows#msi "Узнайте, как скачать и установить Dynatrace OneAgent на Windows.").
+1. Скачайте и распакуйте MSI-пакет из установщика текущей установленной версии, следуя инструкциям в разделе [Получение MSI-пакета](../installation-and-operation/windows/installation/install-oneagent-on-windows.md#msi "Узнайте, как скачать и установить Dynatrace OneAgent на Windows.").
 2. Скопируйте MSI-пакет в `C:\Windows\Installer` и переименуйте его в соответствии с именем, указанным в журнале (в данном примере -- `312c0.msi`).
 
 Подробнее см. [Отсутствие кэша установщика Windows требует пересборки компьютера](https://dt-url.net/gs03u5l).
 
 Папка AI\_RecycleBin заполняет дисковое пространство
 
-Это известная проблема с [Advanced Installer](https://dt-url.net/e303ta4). В качестве обходного решения установщик OneAgent очищает `AI_RecycleBin` в конце установки. Однако эта очистка может не сработать, если установка завершилась неудачей на ранней стадии, например в случае [отсутствующего MSI-пакета в кэше установщика Windows](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation#missing-msi "Узнайте, как устранять неполадки при установке OneAgent на AIX, Linux и Windows."). Подробнее см. обсуждение на [форумах Advanced Installer](https://dt-url.net/w503uks).
+Это известная проблема с [Advanced Installer](https://dt-url.net/e303ta4). В качестве обходного решения установщик OneAgent очищает `AI_RecycleBin` в конце установки. Однако эта очистка может не сработать, если установка завершилась неудачей на ранней стадии, например в случае [отсутствующего MSI-пакета в кэше установщика Windows](troubleshoot-oneagent-installation.md#missing-msi "Узнайте, как устранять неполадки при установке OneAgent на AIX, Linux и Windows."). Подробнее см. обсуждение на [форумах Advanced Installer](https://dt-url.net/w503uks).
 
 ### AIX
 

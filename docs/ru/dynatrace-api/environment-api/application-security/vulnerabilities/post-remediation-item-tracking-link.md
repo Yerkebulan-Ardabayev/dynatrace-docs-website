@@ -11,7 +11,7 @@ scraped: 2026-03-02T21:24:04.456847
 * Справочник
 * Обновлено 25 сентября 2024
 
-Добавляет, редактирует или удаляет ссылки отслеживания групп процессов [отслеживания исправлений](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.") для уязвимости сторонних компонентов (или, в случае уязвимостей Kubernetes, узлов Kubernetes для отслеживания исправлений).
+Добавляет, редактирует или удаляет ссылки отслеживания групп процессов [отслеживания исправлений](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Track the remediation progress of vulnerabilities.") для уязвимости сторонних компонентов (или, в случае уязвимостей Kubernetes, узлов Kubernetes для отслеживания исправлений).
 
 Запрос создаёт полезную нагрузку `application/json`.
 
@@ -24,7 +24,7 @@ scraped: 2026-03-02T21:24:04.456847
 
 Для выполнения этого запроса вам необходим токен доступа с областью действия `securityProblems.write`.
 
-Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 
@@ -377,5 +377,5 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 
 ## Связанные темы
 
-* [Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.")
-* [Отслеживание исправлений](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")
+* [Application Security](../../../../secure/application-security.md "Access the Dynatrace Application Security functionalities.")
+* [Отслеживание исправлений](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Track the remediation progress of vulnerabilities.")

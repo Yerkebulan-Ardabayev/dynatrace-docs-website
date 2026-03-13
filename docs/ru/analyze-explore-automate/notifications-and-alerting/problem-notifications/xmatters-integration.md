@@ -33,7 +33,7 @@ xMatters — это платформа обеспечения доступнос
    * Необязательно: включите параметр **Accept any SSL certificate**. Мы рекомендуем использовать действительный SSL-сертификат (даже для внутренних установок), однако для удобства можно пропустить проверку сертификата.
    * Необязательно: **Additional HTTP headers** — пользовательские поля HTTP-заголовка, например `Content-Type` или `Authorization`, которые можно использовать, если целевой конечной точке требуется токен аутентификации в HTTP-заголовке или если вы хотите отправить другой тип содержимого, например `text/plain` или `application/xml`.
    * **Custom payload** — после обнаружения или устранения проблемы этот настраиваемый пейлоад отправляется через **HTTP POST** в целевую систему. Используйте специальные заполнители для динамического заполнения пейлоада информацией о проблеме, такой как состояние или название проблемы.
-   * Назначьте [Alerting profile](/docs/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.").
+   * Назначьте [Alerting profile](../alerting-profiles.md "Learn how to create and manage alerting profiles.").
 5. Выберите **Send test notification**, чтобы убедиться в работоспособности интеграции с xMatters.
 6. Выберите **Save changes**.
 

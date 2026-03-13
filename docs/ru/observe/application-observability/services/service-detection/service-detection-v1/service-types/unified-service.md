@@ -29,9 +29,9 @@ Dynatrace version 1.274
 
 Термин «унифицированные сервисы» был введён ещё до появления SDv2. Правила обнаружения сервисов, конечных точек, сбоев и разделения были введены одновременно, однако изначально были жёстко запрограммированы. SDv2 делает эти правила настраиваемыми. Хотя в свойствах по-прежнему отображается **Unified service**, SDv2 ориентирован на правила обнаружения, а не на типы сервисов.
 
-Метрики Grail `dt.service.request.response_time`, `dt.service.request.failure_count` и `dt.service.request.count` тарифицируются. Подробнее см. в разделе [Метрики на основе Grail (DPS)](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+Метрики Grail `dt.service.request.response_time`, `dt.service.request.failure_count` и `dt.service.request.count` тарифицируются. Подробнее см. в разделе [Метрики на основе Grail (DPS)](../../../../../../license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 
-Сведения о текущих правилах обнаружения и параметрах настройки см. в разделе [Service Detection v2](/docs/observe/application-observability/services/service-detection/service-detection-v2 "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.").
+Сведения о текущих правилах обнаружения и параметрах настройки см. в разделе [Service Detection v2](../../service-detection-v2.md "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.").
 
 ## Устаревший span:service
 

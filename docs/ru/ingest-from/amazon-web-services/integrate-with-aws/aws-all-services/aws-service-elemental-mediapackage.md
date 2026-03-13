@@ -22,7 +22,7 @@ Dynatrace собирает метрики для нескольких предв
 * Environment или Cluster ActiveGate версии 1.197+
 * Для AWS Elemental MediaPackage Live — Dynatrace версии 1.203+
 * Для AWS Elemental MediaPackage Video on Demand — Dynatrace версии 1.204+
-* Обновлённая [политика мониторинга AWS](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#monitoring-policy "Интеграция метрик из Amazon CloudWatch.") для включения дополнительных AWS сервисов.
+* Обновлённая [политика мониторинга AWS](../cloudwatch-metrics.md#monitoring-policy "Интеграция метрик из Amazon CloudWatch.") для включения дополнительных AWS сервисов.
   Для [обновления политики AWS IAMï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console) используйте JSON ниже.
 
 Предопределённая политика в формате JSON
@@ -472,7 +472,7 @@ Dynatrace собирает метрики для нескольких предв
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. раздел [Включение мониторинга сервиса](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Включение мониторинга AWS в Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. раздел [Включение мониторинга сервиса](../aws-metrics-ingest/aws-enable-service-monitoring.md "Включение мониторинга AWS в Dynatrace.").
 
 ## Просмотр метрик сервиса
 

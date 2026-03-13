@@ -16,16 +16,16 @@ Dynatrace поддерживает установку ActiveGate на Windows.
 
 ### Требования
 
-[Аппаратные и системные требования ActiveGate для Windows](/docs/ingest-from/dynatrace-activegate/installation/windows/windows-activegate-hardware-and-system-requirements "Узнайте, какие аппаратные и операционные системные требования необходимо учитывать перед установкой ActiveGate на Windows для маршрутизации и мониторинга.")
+[Аппаратные и системные требования ActiveGate для Windows](windows/windows-activegate-hardware-and-system-requirements.md "Узнайте, какие аппаратные и операционные системные требования необходимо учитывать перед установкой ActiveGate на Windows для маршрутизации и мониторинга.")
 
 ### Настройки по умолчанию
 
-[Настройки установки по умолчанию](/docs/ingest-from/dynatrace-activegate/installation/windows/windows-default-settings "Узнайте о настройках по умолчанию, с которыми ActiveGate устанавливается на Windows.")
+[Настройки установки по умолчанию](windows/windows-default-settings.md "Узнайте о настройках по умолчанию, с которыми ActiveGate устанавливается на Windows.")
 
 ### Установка
 
-[Установить Environment ActiveGate на Windows](/docs/ingest-from/dynatrace-activegate/installation/windows/windows-install-an-environment-activegate "Ознакомьтесь с пошаговой процедурой установки Environment ActiveGate на Windows.")
+[Установить Environment ActiveGate на Windows](windows/windows-install-an-environment-activegate.md "Ознакомьтесь с пошаговой процедурой установки Environment ActiveGate на Windows.")
 
 ### Настройка установки
 
-[Настроить установку ActiveGate на Windows](/docs/ingest-from/dynatrace-activegate/installation/windows/windows-customize-installation-for-activegate "Узнайте о параметрах, которые можно использовать с ActiveGate на Windows.")
+[Настроить установку ActiveGate на Windows](windows/windows-customize-installation-for-activegate.md "Узнайте о параметрах, которые можно использовать с ActiveGate на Windows.")

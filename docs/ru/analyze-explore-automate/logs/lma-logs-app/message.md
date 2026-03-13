@@ -59,7 +59,7 @@ scraped: 2026-03-06T21:11:28.183710
 
 Для источников журналов, поступающих в Dynatrace через API, для получения наилучших результатов записывайте сообщение журнала в любой из перечисленных атрибутов во время ведения журнала.
 
-В качестве альтернативы извлеките читаемую информацию в атрибут первого уровня за несколько шагов с помощью процессора OpenPipeline. Подробнее см. в разделе [Обработка журналов с помощью OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.").
+В качестве альтернативы извлеките читаемую информацию в атрибут первого уровня за несколько шагов с помощью процессора OpenPipeline. Подробнее см. в разделе [Обработка журналов с помощью OpenPipeline](../lma-log-processing/lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.").
 
 ### Структурированные JSON-журналы
 

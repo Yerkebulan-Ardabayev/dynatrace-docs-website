@@ -26,7 +26,7 @@ We strictly advise against providing any static Authorization header and therefo
 * **Method**: the HTTP request method to use.
 * **ULR**: the url the request should target.
 * **Authentication**: the HTTP Request action supports to use credentials of the credential vault for Basic and Token authentication.
-  Make sure the credential configuration [allows access](/docs/manage/credential-vault#access-cv "Store and manage credentials in the credential vault.") for the workflow actor (credential scope: `AppEngine`, app access: `Workflows app`, Owner access or actor as selected user).
+  Make sure the credential configuration [allows access](../../../../common/manage/credential-vault.md#access-cv "Store and manage credentials in the credential vault.") for the workflow actor (credential scope: `AppEngine`, app access: `Workflows app`, Owner access or actor as selected user).
 * **Payload**: the payload of the HTTP request.
   Set an appropriate content-type header.
 * **Headers**: the HTTP request headers with their name and value.

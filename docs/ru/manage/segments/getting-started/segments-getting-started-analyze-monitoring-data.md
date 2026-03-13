@@ -27,16 +27,16 @@ scraped: 2026-03-06T21:11:02.038055
 
 Необходимые знания
 
-* [Включение данных в сегменты](/docs/manage/segments/concepts/segments-concepts-includes "Узнайте, как данные различных типов могут быть включены в сегменты.")
-* [Переменные в сегментах](/docs/manage/segments/concepts/segments-concepts-variables "Узнайте, как переменные помогают формировать динамические сегменты и снижать затраты на настройку и обслуживание.")
+* [Включение данных в сегменты](../concepts/segments-concepts-includes.md "Узнайте, как данные различных типов могут быть включены в сегменты.")
+* [Переменные в сегментах](../concepts/segments-concepts-variables.md "Узнайте, как переменные помогают формировать динамические сегменты и снижать затраты на настройку и обслуживание.")
 
 Приложения Dynatrace, поддерживающие сегменты:
 
-* [Dashboards ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards")](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.")
-* [Notebooks ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks")](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь инсайтами из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.")
-* [Problems ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new")](/docs/dynatrace-intelligence/davis-problems-app "Используйте приложение Problems для быстрого определения корневой причины инцидентов в вашей среде.")
-* [Workflows ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")](/docs/analyze-explore-automate/workflows "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.")
-* [Distributed Tracing ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing")](/docs/observe/application-observability/distributed-tracing "Отслеживайте и анализируйте в реальном времени высокораспределённые системы с помощью Grail.")
+* [Dashboards ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards")](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.")
+* [Notebooks ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks")](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь инсайтами из данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.")
+* [Problems ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new")](../../../dynatrace-intelligence/davis-problems-app.md "Используйте приложение Problems для быстрого определения корневой причины инцидентов в вашей среде.")
+* [Workflows ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")](../../../analyze-explore-automate/workflows.md "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.")
+* [Distributed Tracing ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing")](../../../observe/application-observability/distributed-tracing.md "Отслеживайте и анализируйте в реальном времени высокораспределённые системы с помощью Grail.")
 * Discovery & Coverage
 
 Поддержка сегментов в других приложениях будет добавлена. Следите за обновлениями.
@@ -44,17 +44,17 @@ scraped: 2026-03-06T21:11:02.038055
 Предварительные требования
 
 * Среда Dynatrace SaaS на базе Grail и AppEngine.
-* У вас есть разрешение `storage:filter-segments:read`. Чтобы узнать, как настроить разрешения, см. [Разрешения в Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.").
+* У вас есть разрешение `storage:filter-segments:read`. Чтобы узнать, как настроить разрешения, см. [Разрешения в Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.").
 
 ## Шаги
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Примените сегмент для фильтрации данных на дашборде**](/docs/manage/segments/getting-started/segments-getting-started-analyze-monitoring-data#apply-segment "Узнайте, как эффективнее анализировать данные мониторинга, используя сегменты в Dashboards.")[![Шаг 2 (необязательно)](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Шаг 2 (необязательно)")
+**Примените сегмент для фильтрации данных на дашборде**](segments-getting-started-analyze-monitoring-data.md#apply-segment "Узнайте, как эффективнее анализировать данные мониторинга, используя сегменты в Dashboards.")[![Шаг 2 (необязательно)](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Шаг 2 (необязательно)")
 
-**Выберите несколько значений для более гибкой фильтрации**](/docs/manage/segments/getting-started/segments-getting-started-analyze-monitoring-data#multi-select "Узнайте, как эффективнее анализировать данные мониторинга, используя сегменты в Dashboards.")[![Шаг 3 (необязательно)](https://dt-cdn.net/images/dotted-step-3-e2082c1921.svg "Шаг 3 (необязательно)")
+**Выберите несколько значений для более гибкой фильтрации**](segments-getting-started-analyze-monitoring-data.md#multi-select "Узнайте, как эффективнее анализировать данные мониторинга, используя сегменты в Dashboards.")[![Шаг 3 (необязательно)](https://dt-cdn.net/images/dotted-step-3-e2082c1921.svg "Шаг 3 (необязательно)")
 
-**Закрепите недавние выборки для быстрого доступа**](/docs/manage/segments/getting-started/segments-getting-started-analyze-monitoring-data#pinning "Узнайте, как эффективнее анализировать данные мониторинга, используя сегменты в Dashboards.")
+**Закрепите недавние выборки для быстрого доступа**](segments-getting-started-analyze-monitoring-data.md#pinning "Узнайте, как эффективнее анализировать данные мониторинга, используя сегменты в Dashboards.")
 
 ### Шаг 1. Применение сегмента для фильтрации данных на дашборде
 

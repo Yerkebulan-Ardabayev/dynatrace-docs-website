@@ -42,7 +42,7 @@ In the sample, you:
 2. Point `api_endpoint` to your Dynatrace OTLP endpoint.
 3. Authenticate with a Dynatrace API token (the sample reads it from `/etc/secrets/dynatrace_otel`).
 
-For more configuration options, see the [Get started with AI Observability](/docs/observe/dynatrace-for-ai-observability/get-started "Get started with OpenLLMetry and OpenTelemetry for AI Observability.") guide.
+For more configuration options, see the [Get started with AI Observability](../get-started.md "Get started with OpenLLMetry and OpenTelemetry for AI Observability.") guide.
 
 ### Run the sample
 

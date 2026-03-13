@@ -34,8 +34,8 @@ API equivalents
 
 The procedures that follow use the Dynatrace web UI. To carry out the equivalent tasks via API, see:
 
-* [Access tokens API](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens "Manage Dynatrace API authentication tokens.")âto create a token in the remote environment
-* [Remote environments API](/docs/dynatrace-api/configuration-api/remote-environments "Manage configurations of remote Dynatrace environments via the Dynatrace configuration API.")âto create a link to the remote environment from the local environment
+* [Access tokens API](../../../../dynatrace-api/environment-api/tokens-v2/api-tokens.md "Manage Dynatrace API authentication tokens.")âto create a token in the remote environment
+* [Remote environments API](../../../../dynatrace-api/configuration-api/remote-environments.md "Manage configurations of remote Dynatrace environments via the Dynatrace configuration API.")âto create a link to the remote environment from the local environment
 
 ### Steps
 
@@ -155,12 +155,12 @@ Dynatrace detects requests to connected Dynatrace environments and uses the avai
 
 Once Dynatrace creates the remote environment service, problems and events are correlated to the affected remote environment service.
 
-You can use [Davis AI](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.") capabilities to understand which requests are failing and discover the root cause of problems in the remote environment.
+You can use [Davis AI](../../../../dynatrace-intelligence.md "Get familiar with the capabilities of Dynatrace Intelligence.") capabilities to understand which requests are failing and discover the root cause of problems in the remote environment.
 
 ![ Davis AI problem analysis of remote environment service](https://dt-cdn.net/images/cross-environment-3-1600-8b1ae112a1.jpeg)
 
 ## Related topics
 
-* [What is a monitoring environment?](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.")
-* [Create remote/multi-environment Dynatrace dashboards](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment "Create dashboards that display data from multiple Dynatrace environments.")
-* [Remote environments API](/docs/dynatrace-api/configuration-api/remote-environments "Manage configurations of remote Dynatrace environments via the Dynatrace configuration API.")
+* [What is a monitoring environment?](../../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.")
+* [Create remote/multi-environment Dynatrace dashboards](../../../../analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment.md "Create dashboards that display data from multiple Dynatrace environments.")
+* [Remote environments API](../../../../dynatrace-api/configuration-api/remote-environments.md "Manage configurations of remote Dynatrace environments via the Dynatrace configuration API.")

@@ -26,7 +26,7 @@ To monitor the SQL Databases user kind, check Azure SQL Servers and the **Databa
 
 ## Enable monitoring
 
-To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+To learn how to enable service monitoring, see [Enable service monitoring](../azure-monitoring-guide/azure-enable-service-monitoring.md "Enable Azure monitoring in Dynatrace.").
 
 ## View service metrics
 

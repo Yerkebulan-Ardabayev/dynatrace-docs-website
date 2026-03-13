@@ -12,7 +12,7 @@ scraped: 2026-03-05T21:40:37.061485
 * 3-min read
 * Updated on Feb 05, 2026
 
-Вы можете автоматизировать отправку готовых электронных писем с помощью Email ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") на основе событий и расписаний, определённых вашими [рабочими процессами](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+Вы можете автоматизировать отправку готовых электронных писем с помощью Email ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") на основе событий и расписаний, определённых вашими [рабочими процессами](../../workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 
 ## Предоставление разрешений для Workflows
 
@@ -27,7 +27,7 @@ Workflows требуют определённых разрешений для в
 
      + `email:emails:send`
 
-Подробнее об общих пользовательских разрешениях Workflows см. в разделе [Справочник по выражениям](/docs/analyze-explore-automate/workflows/reference#user-permission "Get to know the workflows expression").
+Подробнее об общих пользовательских разрешениях Workflows см. в разделе [Справочник по выражениям](../reference.md#user-permission "Get to know the workflows expression").
 
 Пробные среды не имеют права отправлять электронные письма с помощью **Email**.
 
@@ -189,7 +189,7 @@ Here's a link to the [Dynatrace website](www.dynatrace.com).
 | **Content** | Содержание письма. | Обязательно |
 
 Необходимо указать как минимум одного и максимум десять получателей в одном из полей (to, cc, bcc).
-Если вы используете [выражения](/docs/analyze-explore-automate/workflows/reference "Get to know the workflows expression") для получателей, выражения должны возвращать список адресов электронной почты, например: `["user1@domain.com", "user2@domain.com"]`.
+Если вы используете [выражения](../reference.md "Get to know the workflows expression") для получателей, выражения должны возвращать список адресов электронной почты, например: `["user1@domain.com", "user2@domain.com"]`.
 
 ## Результат действия
 
@@ -210,10 +210,10 @@ Failed to send email. Status code 403.
 {{ result("run_javascript_1") | to_json }}
 ```
 
-Этот подход обеспечивает правильное форматирование данных для передачи. Дополнительную информацию см. в разделе [Справочник по выражениям](/docs/analyze-explore-automate/workflows/reference#any-object "Get to know the workflows expression").
+Этот подход обеспечивает правильное форматирование данных для передачи. Дополнительную информацию см. в разделе [Справочник по выражениям](../reference.md#any-object "Get to know the workflows expression").
 
 Размер сообщения ограничен 256 КиБ. Более крупные данные приведут к ошибке выполнения действия.
 
 ## Связанные темы
 
-* [Отправка уведомлений по электронной почте при возникновении проблем](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")
+* [Отправка уведомлений по электронной почте при возникновении проблем](../../alerting-and-notifications/workflows-tutorial-problems-email.md "Learn how to send email notifications for problems using a simple workflow.")

@@ -23,9 +23,9 @@ To enable monitoring for this service, you need
   + For Dynatrace SaaS deployments, you need an Environment ActiveGate or a Multi-environment ActiveGate.
   + For Dynatrace Managed deployments, you can use any kind of ActiveGate.
 
-    For role-based access (whether in a [SaaS](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Integrate metrics from Amazon CloudWatch.") or [Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) deployment), you need an [Environment ActiveGate](/docs/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") installed on an Amazon EC2 host.
+    For role-based access (whether in a [SaaS](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#role-based-access "Integrate metrics from Amazon CloudWatch.") or [Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) deployment), you need an [Environment ActiveGate](../../../../../ingest-from/dynatrace-activegate/installation.md "Learn how to configure ActiveGate") installed on an Amazon EC2 host.
 * Dynatrace version 1.182+
-* An updated [AWS monitoring policy](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#aws-policy-and-authentication "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.  
+* An updated [AWS monitoring policy](../../../../../ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md#aws-policy-and-authentication "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.  
   To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all supporting services.
 
 JSON predefined policy for all supporting services
@@ -414,7 +414,7 @@ JSON predefined policy for all supporting services
 }
 ```
 
-If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for [All AWS cloud services](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.") and, for each supporting service, a list of optional permissions specific to that service.
+If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for [All AWS cloud services](../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-all-services.md "Monitor all AWS cloud services with Dynatrace and view available metrics.") and, for each supporting service, a list of optional permissions specific to that service.
 
 Permissions required for AWS monitoring integration:
 
@@ -629,7 +629,7 @@ In this example, from the complete list of permissions you need to select
 
 ## Enable monitoring
 
-To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Enable AWS monitoring in Dynatrace.").
+To learn how to enable service monitoring, see [Enable service monitoring](../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring.md "Enable AWS monitoring in Dynatrace.").
 
 ## View service metrics
 
@@ -646,7 +646,7 @@ To access the custom device overview page
 
 ### View metrics on your dashboard
 
-You can also view metrics in the Dynatrace web UI on dashboards. There is no preset dashboard available for this service, but you can [create your own dashboard](/docs/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Learn how to create and edit Dynatrace dashboards.").
+You can also view metrics in the Dynatrace web UI on dashboards. There is no preset dashboard available for this service, but you can [create your own dashboard](../../../../../analyze-explore-automate/dashboards-classic/dashboards/create-dashboards.md "Learn how to create and edit Dynatrace dashboards.").
 
 To check the availability of preset dashboards for each AWS service, see the list below.
 

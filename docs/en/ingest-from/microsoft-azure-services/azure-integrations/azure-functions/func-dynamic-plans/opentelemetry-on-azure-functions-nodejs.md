@@ -17,7 +17,7 @@ The [`@dynatrace/opentelemetry-azure-functions` moduleï»¿](https://dt-url.net
 
 ## Prerequisites
 
-Ensure that you have followed the **initial configuration** steps described in [Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.") before using the packages below.
+Ensure that you have followed the **initial configuration** steps described in [Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan](opentelemetry-on-azure-functions.md "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.") before using the packages below.
 
 * @dynatrace/opentelemetry-azure-functions version 1.243+
 
@@ -600,4 +600,4 @@ Supported [Azure Functions programming modelï»¿](https://learn.microsoft.com/
 
 ## Related topics
 
-* [Set up Dynatrace on Microsoft Azure](/docs/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
+* [Set up Dynatrace on Microsoft Azure](../../../../microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")

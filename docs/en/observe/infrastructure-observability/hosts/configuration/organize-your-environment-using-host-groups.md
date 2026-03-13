@@ -38,7 +38,7 @@ To list all hosts in a host group
 
 ## Assign a host to a host group
 
-You can assign a host to a host group during or after [OneAgent installation](/docs/ingest-from "Learn how to install and configure ActiveGate and OneAgent on various platforms.").
+You can assign a host to a host group during or after [OneAgent installation](../../../../ingest-from.md "Learn how to install and configure ActiveGate and OneAgent on various platforms.").
 
 * **During** OneAgent installation
 
@@ -55,7 +55,7 @@ You can assign a host to a host group during or after [OneAgent installation](/d
 
   Dynatrace UI
 
-  Use the [oneagentctl](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#host-groups "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command-line tool.
+  Use the [oneagentctl](../../../../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#host-groups "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command-line tool.
 
   1. Go to **Deployment Status** and check the box next to the desired host.
   2. Select **modify host group** at the bottom of the page.
@@ -72,7 +72,7 @@ Host group string requirements
 * Must not start with `dt.`.
 * Maximum length is 100 characters.
 
-The host group is statically assigned to the host. Each host belongs to at most one host group and the host group can be changed by using the 'oneagentctl' command, [remote configuration management](/docs/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API."), or by re-installing OneAgent. Host groups are displayed, for example, on the **Hosts** page from the [**Infrastructure & Operations**](/docs/observe/infrastructure-observability/infrastructure-and-operations#hosts "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.") app, and on the **Monitoring overview** page, where you can select the **Host group** link to edit the settings for all hosts in a host group.
+The host group is statically assigned to the host. Each host belongs to at most one host group and the host group can be changed by using the 'oneagentctl' command, [remote configuration management](../../../../ingest-from/bulk-configuration.md#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API."), or by re-installing OneAgent. Host groups are displayed, for example, on the **Hosts** page from the [**Infrastructure & Operations**](../../infrastructure-and-operations.md#hosts "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.") app, and on the **Monitoring overview** page, where you can select the **Host group** link to edit the settings for all hosts in a host group.
 
 ![Host groups](https://dt-cdn.net/images/host-groups-1200-d314d1729f.png)
 
@@ -88,6 +88,6 @@ You can also define the OneAgent update settings and trigger the update for all 
 
 Additionally, host groups affect how process groups are detected. When the same process is running in two different host groups, Dynatrace will create one process group for each host group. This means you can also configure process groups differently depending on which host group they run in. Consequently, services are also grouped per host group. So you can configure services differently per host group.
 
-Host groups can also be used in [tagging rules](/docs/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.") and for defining [management zones](/docs/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.") so you can apply additional context information to the different entities in Dynatrace, based on host groups. As shown in the example below, you can tag entities based on the host group they belong to.
+Host groups can also be used in [tagging rules](../../../../manage/tags-and-metadata/setup/how-to-define-tags.md "Find out how to define and apply tags manually and automatically.") and for defining [management zones](../../../../manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Create and assign access rights to management zones.") so you can apply additional context information to the different entities in Dynatrace, based on host groups. As shown in the example below, you can tag entities based on the host group they belong to.
 
 ![Host groups](https://dt-cdn.net/images/host-groups4-1414-8039d74ee9.png)

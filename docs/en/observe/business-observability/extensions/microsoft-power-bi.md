@@ -18,7 +18,7 @@ Preview
 
 The Microsoft Power BI extension brings data from Grail directly into your Microsoft Power BI reports and dashboards by providing DQL queries.
 
-The cost of executing DQL queries within Microsoft Power BI is equivalent to [the Dynatrace UI](/docs/license/subscription-and-license/subscription-and-license-dps "View license and subscription usage and consumption history Dynatrace Platform subscription licenses that were signed prior to April, 2023.").
+The cost of executing DQL queries within Microsoft Power BI is equivalent to [the Dynatrace UI](../../../license/subscription-and-license/subscription-and-license-dps.md "View license and subscription usage and consumption history Dynatrace Platform subscription licenses that were signed prior to April, 2023.").
 
 ## Limitations
 
@@ -28,7 +28,7 @@ The cost of executing DQL queries within Microsoft Power BI is equivalent to [th
 
 ## Setup
 
-You need to have [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.") to execute queries and to view
+You need to have [Permissions in Grail](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.") to execute queries and to view
 certain tables in Grail.
 
 Example for a policy statement to read Business Events:

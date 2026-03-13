@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:10:43.059904
 * 1-min read
 * Published Jul 19, 2017
 
-Dynatrace поддерживает полную установку OneAgent на IBM AIX. Аналитическую информацию о поддерживаемых возможностях OneAgent для AIX см. в [матрице поддержки платформ и возможностей OneAgent](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). Сведения о поддерживаемых версиях AIX приведены в разделе [OneAgent supported technologies and versions](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+Dynatrace поддерживает полную установку OneAgent на IBM AIX. Аналитическую информацию о поддерживаемых возможностях OneAgent для AIX см. в [матрице поддержки платформ и возможностей OneAgent](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms."). Сведения о поддерживаемых версиях AIX приведены в разделе [OneAgent supported technologies and versions](../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 ### Установка
 
@@ -23,13 +23,13 @@ Dynatrace поддерживает полную установку OneAgent на
 
 * Reference
 
-Read this reference](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix)[#### Безопасность OneAgent на AIX
+Read this reference](aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix.md)[#### Безопасность OneAgent на AIX
 
 Узнайте о безопасности Dynatrace OneAgent и изменениях в вашей системе на базе AIX.
 
 * Reference
 
-Read this reference](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix)
+Read this reference](aix/installation/oneagent-security-aix.md)
 
 [#### Установка OneAgent на AIX
 
@@ -37,13 +37,13 @@ Read this reference](/docs/ingest-from/dynatrace-oneagent/installation-and-opera
 
 * How-to guide
 
-Read this guide](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix)[#### Настройка установки OneAgent на AIX
+Read this guide](aix/installation/install-oneagent-on-aix.md)[#### Настройка установки OneAgent на AIX
 
 Узнайте, как использовать установщик AIX с параметрами командной строки.
 
 * How-to guide
 
-Read this guide](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix)
+Read this guide](aix/installation/customize-oneagent-installation-on-aix.md)
 
 ### Эксплуатация
 
@@ -53,13 +53,13 @@ Read this guide](/docs/ingest-from/dynatrace-oneagent/installation-and-operation
 
 * How-to guide
 
-Read this guide](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/enable-auto-injection)[#### Обновление Dynatrace OneAgent на AIX
+Read this guide](aix/operation/enable-auto-injection.md)[#### Обновление Dynatrace OneAgent на AIX
 
 Узнайте, как обновить Dynatrace OneAgent на AIX.
 
 * How-to guide
 
-Read this guide](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/update-oneagent-on-aix)
+Read this guide](aix/operation/update-oneagent-on-aix.md)
 
 [#### Остановка/перезапуск OneAgent на AIX
 
@@ -67,13 +67,13 @@ Read this guide](/docs/ingest-from/dynatrace-oneagent/installation-and-operation
 
 * How-to guide
 
-Read this guide](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix)[#### Удаление OneAgent на AIX
+Read this guide](aix/operation/stop-restart-oneagent-on-aix.md)[#### Удаление OneAgent на AIX
 
 Узнайте, как удалить OneAgent из системы на базе AIX.
 
 * How-to guide
 
-Read this guide](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/uninstall-oneagent-on-aix)
+Read this guide](aix/operation/uninstall-oneagent-on-aix.md)
 
 ### См. также
 
@@ -83,10 +83,10 @@ Read this guide](/docs/ingest-from/dynatrace-oneagent/installation-and-operation
 
 * Reference
 
-Read this reference](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface)[#### Устранение неполадок при установке OneAgent
+Read this reference](../oneagent-configuration-via-command-line-interface.md)[#### Устранение неполадок при установке OneAgent
 
 Узнайте, как устранять неполадки при установке OneAgent на AIX, Linux и Windows.
 
 * Troubleshooting
 
-Read this troubleshooting guide](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation)
+Read this troubleshooting guide](../oneagent-troubleshooting/troubleshoot-oneagent-installation.md)

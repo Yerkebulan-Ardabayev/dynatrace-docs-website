@@ -46,7 +46,7 @@ timeseries response_time = avg(dt.service.request.response_time), by: { dt.entit
 
 Приведённая выше тепловая карта основана на следующем запросе.
 
-Приведённый ниже запрос был обновлён в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и необходимых действий для миграции см. в [руководстве по миграции таблиц безопасности Grail](/docs/secure/threat-observability/migration "Описание изменений в новой таблице безопасности Grail и инструкции по миграции.").
+Приведённый ниже запрос был обновлён в соответствии с новой таблицей событий безопасности Grail. Полный список обновлений и необходимых действий для миграции см. в [руководстве по миграции таблиц безопасности Grail](../../../secure/threat-observability/migration.md "Описание изменений в новой таблице безопасности Grail и инструкции по миграции.").
 
 ```
 fetch security.events
@@ -77,7 +77,7 @@ fetch security.events
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host** -- открывает выбранный элемент в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   Как правило, если есть рекомендуемые приложения для открытия выбранного элемента, меню предлагает прямые ссылки на эти приложения, а затем опцию **Open with** для выбора другого целевого приложения.
-* **Open with** -- подробнее см. [Детализация и навигация](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Детализация из Dashboards и Notebooks с помощью ссылок на основе интентов или URL.").
+* **Open with** -- подробнее см. [Детализация и навигация](../drilldowns-and-navigation.md "Детализация из Dashboards и Notebooks с помощью ссылок на основе интентов или URL.").
 
 ## Заголовок
 
@@ -97,7 +97,7 @@ fetch security.events
 
 ## Визуализация
 
-Если вы не уверены, что выбрали правильную визуализацию, используйте [селектор визуализации](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Создание, редактирование и просмотр визуализаций в дашбордах и ноутбуках Dynatrace."), чтобы попробовать различные варианты.
+Если вы не уверены, что выбрали правильную визуализацию, используйте [селектор визуализации](../edit-visualizations.md#select-visualization "Создание, редактирование и просмотр визуализаций в дашбордах и ноутбуках Dynatrace."), чтобы попробовать различные варианты.
 
 Чтобы быстро изучить параметры и решить, что подходит лучше всего, включайте и выключайте опции и сразу наблюдайте эффект на диаграмме. Например, выглядит ли лучше с подписью или без? Включите и выключите эту опцию и убедитесь сами.
 

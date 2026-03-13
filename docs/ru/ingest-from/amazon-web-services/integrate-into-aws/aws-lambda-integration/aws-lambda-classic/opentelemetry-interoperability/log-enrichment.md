@@ -17,15 +17,15 @@ scraped: 2026-03-06T21:22:43.535336
 
 ## Предварительные требования
 
-* Настройте [сбор логов AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector "Сбор логов из функций AWS Lambda") или [потоковую передачу логов через Amazon Data Firehose](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose "Интеграция Amazon Data Firehose позволяет получать облачные логи напрямую, без дополнительной инфраструктуры и с более высокой пропускной способностью.").
-* [Включите совместимость с OpenTelemetry](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#enable-otel-interoperability "Включение и использование совместимости с OpenTelemetry в AWS Lambda.") для функции Lambda.
+* Настройте [сбор логов AWS Lambda](../../collector.md "Сбор логов из функций AWS Lambda") или [потоковую передачу логов через Amazon Data Firehose](../../../../integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose.md "Интеграция Amazon Data Firehose позволяет получать облачные логи напрямую, без дополнительной инфраструктуры и с более высокой пропускной способностью.").
+* [Включите совместимость с OpenTelemetry](../opentelemetry-interoperability.md#enable-otel-interoperability "Включение и использование совместимости с OpenTelemetry в AWS Lambda.") для функции Lambda.
 * Вывод логов, генерируемый функцией AWS Lambda, должен быть отформатирован таким образом, чтобы информация о `TraceId` и `SpanId` могла быть извлечена. Ожидаемый формат обогащённых полей в неструктурированном логе:
 
   + Заключены в квадратные скобки `[]` с префиксом `!dt`
   + `dt.trace_id` и `dt.span_id` должны быть строками в шестнадцатеричной кодировке
     **Пример:** `[!dt dt.trace_id=0af7651916cd43dd8448eb211c80319c,dt.span_id=00f067aa0ba902b7]`
 
-Ознакомьтесь с разделом [Сбор логов AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector#limitations "Сбор логов из функций AWS Lambda"), чтобы узнать больше об ограничениях, поскольку обогащение логов Lambda **не** выполняется автоматически.
+Ознакомьтесь с разделом [Сбор логов AWS Lambda](../../collector.md#limitations "Сбор логов из функций AWS Lambda"), чтобы узнать больше об ограничениях, поскольку обогащение логов Lambda **не** выполняется автоматически.
 
 ## OpenTelemetry Python
 

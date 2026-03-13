@@ -17,9 +17,9 @@ This is a step-by-step tutorial for building a WMI data source-based extension. 
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Generate a developer certificate and key**](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial#generate-certificate-and-key "Learn about WMI extensions in the Extensions framework.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Generate a developer certificate and key**](wmi-tutorial.md#generate-certificate-and-key "Learn about WMI extensions in the Extensions framework.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Distribute the root certificate to Dynatrace components**](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial#distribute-root-certificate "Learn about WMI extensions in the Extensions framework.")
+**Distribute the root certificate to Dynatrace components**](wmi-tutorial.md#distribute-root-certificate "Learn about WMI extensions in the Extensions framework.")
 
 ## Before you begin
 
@@ -38,7 +38,7 @@ To successfully develop an Extensions extension and be able to complete this tut
     pip install dt-cli
     ```
 
-    For more information, see [Sign extensions](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
+    For more information, see [Sign extensions](../../sign-extensions.md "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
 * Your root certificate uploaded to Dynatrace and on the OneAgent host
 
 ## Step 1 Generate a developer certificate and key
@@ -80,4 +80,4 @@ The command generates the following files:
 
 Your Dynatrace environment is ready to start creating your WMI extension.
 
-**Next step**: [Extension package](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial/wmi-tutorial-01 "Learn about WMI extensions in the Extensions framework.")
+**Next step**: [Extension package](wmi-tutorial/wmi-tutorial-01.md "Learn about WMI extensions in the Extensions framework.")

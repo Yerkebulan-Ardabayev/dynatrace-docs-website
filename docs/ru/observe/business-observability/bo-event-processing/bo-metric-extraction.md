@@ -26,7 +26,7 @@ scraped: 2026-03-03T21:28:39.896650
 
 1. Перейдите в **Settings** > **Business Observability** > **Metric extraction**.
 2. Выберите **Add business event metric** и назовите свою метрику, добавив **Key** метрики с префиксом `bizevents.` (например, `bizevents.EasyTrade.TradingVolume`).
-3. Добавьте **Matcher** к вашему правилу, вставив ваш [DQL-запрос для сопоставления](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher "Examine specific DQL functions and logical operators for log processing."). В приведенном выше примере, чтобы рассчитать метрику объема торгов, необходимо извлечь только транзакции покупки, поэтому запрос сопоставления выглядит следующим образом.
+3. Добавьте **Matcher** к вашему правилу, вставив ваш [DQL-запрос для сопоставления](../../../analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher.md "Examine specific DQL functions and logical operators for log processing."). В приведенном выше примере, чтобы рассчитать метрику объема торгов, необходимо извлечь только транзакции покупки, поэтому запрос сопоставления выглядит следующим образом.
 
    ```
    matchesValue(event.type, "com.easytrade.buy-assets")
@@ -64,13 +64,13 @@ scraped: 2026-03-03T21:28:39.896650
 
 ### Отображение метрик в Notebooks
 
-Вы также можете исследовать пользовательские метрики на основе бизнес-событий в Grail, например, с помощью DQL-команды [`timeseries`](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands"). Ниже приведен пример DQL-запроса `timeseries` для метрики `bizevents.easyTrade.TradingVolume`.
+Вы также можете исследовать пользовательские метрики на основе бизнес-событий в Grail, например, с помощью DQL-команды [`timeseries`](../../../platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries "DQL metric commands"). Ниже приведен пример DQL-запроса `timeseries` для метрики `bizevents.easyTrade.TradingVolume`.
 
 ```
 timeseries avg(bizevents.easyTrade.TradingVolume), alias:avgTradingVolume, interval:1d, from:now()-30d, to:now()
 ```
 
-Выполните этот запрос в [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (**Query Grail** > **Run query**) и просмотрите результаты с помощью рекомендуемого варианта визуализации **Line chart**.
+Выполните этот запрос в [Notebooks](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") (**Query Grail** > **Run query**) и просмотрите результаты с помощью рекомендуемого варианта визуализации **Line chart**.
 
 ![Query Business Observability custom metrics through DQL with timeseries in Notebooks](https://dt-cdn.net/images/ba-event-metric-query-notebooks-2122-6c3ead0aef.webp)
 
@@ -81,12 +81,12 @@ timeseries avg(bizevents.easyTrade.TradingVolume), alias:avgTradingVolume, inter
 1. Перейдите в **Settings** > **Anomaly detection** > **Metric events**.
 2. Выберите **Add metric event** и создайте пользовательское событие, где **Type** — **Metric selector**. Это [ключ метрики, определенный ранее](#configure), например, `bizevents.EasyTrade.TradingVolume`.
 
-   Метрические события на основе бизнес-событий поддерживаются только с запросами селектора метрик. Дополнительную информацию см. в разделе [Metric selector events](/docs/dynatrace-intelligence/anomaly-detection/metric-events/metric-selector-events#metricselectorevent "Learn about metric events based on a metric selector.").
+   Метрические события на основе бизнес-событий поддерживаются только с запросами селектора метрик. Дополнительную информацию см. в разделе [Metric selector events](../../../dynatrace-intelligence/anomaly-detection/metric-events/metric-selector-events.md#metricselectorevent "Learn about metric events based on a metric selector.").
 
 ### Обработка нераспознанных временных меток
 
-Если временная метка события не попадает в допустимый [диапазон](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#payload "Learn how the data ingestion protocol for Dynatrace Metrics API works."), ваша метрика заменяется в Grail метрикой с суффиксом `.failed`, добавленным к ключу метрики. Эта новая метрика будет иметь актуальную временную метку `(now())` и измерение, которое было бы прикреплено к метрике, которую вы хотели извлечь. Вы также можете визуализировать эту метрику в [Data Explorer](#data-explorer) или [Notebooks](#notebooks).
+Если временная метка события не попадает в допустимый [диапазон](../../../ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#payload "Learn how the data ingestion protocol for Dynatrace Metrics API works."), ваша метрика заменяется в Grail метрикой с суффиксом `.failed`, добавленным к ключу метрики. Эта новая метрика будет иметь актуальную временную метку `(now())` и измерение, которое было бы прикреплено к метрике, которую вы хотели извлечь. Вы также можете визуализировать эту метрику в [Data Explorer](#data-explorer) или [Notebooks](#notebooks).
 
 ## Связанные темы
 
-* [Протокол приема метрик](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
+* [Протокол приема метрик](../../../ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md "Learn how the data ingestion protocol for Dynatrace Metrics API works.")

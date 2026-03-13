@@ -166,7 +166,7 @@ path: <path-to-dynakube-dir>
 * Напрямую через *kubectl*
 * С помощью [паттерна App of Apps](#applying-the-app-of-apps-pattern)
 
-Подробности о настройке CR DynaKube см. в документации по [режимам развертывания](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes").
+Подробности о настройке CR DynaKube см. в документации по [режимам развертывания](../../deployment.md "Deploy Dynatrace Operator on Kubernetes").
 
 ### Применение паттерна App of Apps
 
@@ -383,8 +383,8 @@ limit: 5
 
 ## Автоматическое обновление Dynatrace Operator
 
-Для настройки автоматических обновлений Dynatrace Operator см. [Автоматическое обновление Dynatrace Operator](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/dto-auto-update "Enable automatic updates of Dynatrace Operator following a GitOps approach."), где описана интеграция GitOps с инструментами автоматизации зависимостей.
+Для настройки автоматических обновлений Dynatrace Operator см. [Автоматическое обновление Dynatrace Operator](updates-and-maintenance/dto-auto-update.md "Enable automatic updates of Dynatrace Operator following a GitOps approach."), где описана интеграция GitOps с инструментами автоматизации зависимостей.
 
 ## Связанные темы
 
-* [Автоматическое обновление Dynatrace Operator](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/dto-auto-update "Enable automatic updates of Dynatrace Operator following a GitOps approach.")
+* [Автоматическое обновление Dynatrace Operator](updates-and-maintenance/dto-auto-update.md "Enable automatic updates of Dynatrace Operator following a GitOps approach.")

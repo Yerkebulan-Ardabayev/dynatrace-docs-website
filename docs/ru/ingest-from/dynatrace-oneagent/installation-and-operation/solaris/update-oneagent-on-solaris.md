@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:20:19.993240
 
 Чтобы обновить установленный экземпляр OneAgent на Solaris (x86 и SPARC), выполните следующие инструкции:
 
-1. Повторите все шаги [первоначальной установки](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris "Find out how to configure Dynatrace to monitor applications of different technologies that run on Solaris (x86 and SPARC)."), но установите OneAgent в новый каталог.
+1. Повторите все шаги [первоначальной установки](install-oneagent-on-solaris.md "Find out how to configure Dynatrace to monitor applications of different technologies that run on Solaris (x86 and SPARC)."), но установите OneAgent в новый каталог.
 2. Остановите все отслеживаемые процессы.
 3. Переименуйте текущий каталог установки OneAgent (например, `/opt/dynatrace/oneagent-old`) с помощью следующей команды:
 

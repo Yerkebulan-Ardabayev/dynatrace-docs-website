@@ -162,7 +162,7 @@ While Dynatrace permissions adhere to the principle of least privilege, make sur
     - Used to aggregate all ClusterRoles with the label `rbac.dynatrace.com/aggregate-to-monitoring: "true"`
   + `dynatrace-kubernetes-monitoring-default`
 
-    - Aggregated by `dynatrace-kubernetes-monitoring`, more details can be found in the [ClusterRole aggregation documentation](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation "Understanding how the Dynatrace Operator uses ClusterRole aggregation to manage permissions for Kubernetes monitoring.")
+    - Aggregated by `dynatrace-kubernetes-monitoring`, more details can be found in the [ClusterRole aggregation documentation](../guides/deployment-and-configuration/cluster-role-aggregation.md "Understanding how the Dynatrace Operator uses ClusterRole aggregation to manage permissions for Kubernetes monitoring.")
 
 ##### Cluster-wide permissions
 
@@ -197,7 +197,7 @@ While Dynatrace permissions adhere to the principle of least privilege, make sur
 
 #### Dynatrace Kubernetes Security Posture Management (KSPM)
 
-**Purposes**: [Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes.") detects, analyzes, and continuously watches for
+**Purposes**: [Kubernetes Security Posture Management](../deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes.") detects, analyzes, and continuously watches for
 misconfigurations, security hardening guidelines, and potential compliance violations in Kubernetes.
 
 **Default configuration**: `1-replica-per-node` (deployed via a DaemonSet)
@@ -207,7 +207,7 @@ misconfigurations, security hardening guidelines, and potential compliance viola
 * Service Account `dynatrace-node-config-collector`
 * Cluster-Role `dynatrace-kubernetes-monitoring-kspm`
 
-  + Aggregated by the `dynatrace-kubernetes-monitoring` ClusterRole, more details can be found in the [ClusterRole aggregation documentation](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation "Understanding how the Dynatrace Operator uses ClusterRole aggregation to manage permissions for Kubernetes monitoring.")
+  + Aggregated by the `dynatrace-kubernetes-monitoring` ClusterRole, more details can be found in the [ClusterRole aggregation documentation](../guides/deployment-and-configuration/cluster-role-aggregation.md "Understanding how the Dynatrace Operator uses ClusterRole aggregation to manage permissions for Kubernetes monitoring.")
 
 ##### Cluster-wide permissions
 
@@ -279,7 +279,7 @@ Log monitoring requires [the same cluster-wide permissions as OneAgent](#oneagen
 
 **Purposes**:
 
-* Enable [Dynatrace telemetry endpoints](/docs/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.") in Kubernetes for cluster-local data ingest
+* Enable [Dynatrace telemetry endpoints](../extend-observability-k8s/telemetry-ingest.md "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.") in Kubernetes for cluster-local data ingest
 
   + Ingest data via [OTLPï»¿](https://opentelemetry.io/docs/specs/otel/protocol/), [Jaegerï»¿](https://www.jaegertracing.io/), [StatsDï»¿](https://github.com/statsd/statsd) or [Zipkinï»¿](https://zipkin.io/) endpoints
 * Analyze context-rich data with built-in apps, DQL, Notebooks and Dashboards
@@ -307,7 +307,7 @@ Log monitoring requires [the same cluster-wide permissions as OneAgent](#oneagen
 
 **Purposes**:
 
-* Extensions extend Dynatrace analytics capabilities by ingesting data from various sources, such as third-party applications, services, and custom metrics. See [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") for more information.
+* Extensions extend Dynatrace analytics capabilities by ingesting data from various sources, such as third-party applications, services, and custom metrics. See [Extensions](../../extensions.md "Learn how to create and manage Dynatrace Extensions.") for more information.
 
 **Default configuration**:
 
@@ -407,7 +407,7 @@ Depending on the used extension, the following RBAC objects are required.
 
 **Purposes**:
 
-* Allow Dynatrace Operator to execute [the support-archive command](/docs/ingest-from/setup-on-k8s/deployment/troubleshooting#support-archive "This page will assist you in navigating any challenges you may encounter while working with the Dynatrace Operator and its various components."). Necessary for troubleshooting Operator related issues.
+* Allow Dynatrace Operator to execute [the support-archive command](../deployment/troubleshooting.md#support-archive "This page will assist you in navigating any challenges you may encounter while working with the Dynatrace Operator and its various components."). Necessary for troubleshooting Operator related issues.
 
 **RBAC objects**:
 
@@ -512,7 +512,7 @@ Component needs to communicate with the Kubernetes API.
 
 5
 
-CSI driver requires elevated permissions to create and manage mounts on the host system. For more details, see [CSI driver privileges](/docs/ingest-from/setup-on-k8s/how-it-works/components/dynatrace-operator#csidriver-privileges "Components of Dynatrace Operator").
+CSI driver requires elevated permissions to create and manage mounts on the host system. For more details, see [CSI driver privileges](../how-it-works/components/dynatrace-operator.md#csidriver-privileges "Components of Dynatrace Operator").
 
 6
 
@@ -528,7 +528,7 @@ CSI driver needs seLinux level s0 for the application pods to see files from the
 
 9
 
-CSI driver provisioner has no resources limits by default in order to provide the best [performance during provisioning](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/dto-resource-limits#customize-resource-limits "Set resource limits for Dynatrace Operator components."); limits can be set via Helm chart values.
+CSI driver provisioner has no resources limits by default in order to provide the best [performance during provisioning](../guides/deployment-and-configuration/resource-management/dto-resource-limits.md#customize-resource-limits "Set resource limits for Dynatrace Operator components."); limits can be set via Helm chart values.
 
 **OneAgent**:
 
@@ -598,7 +598,7 @@ KSPM requires specific Linux capabilities to scan and collect system configurati
 
 ## Security Controls of components managed by Dynatrace Operator
 
-The following table presents a detailed analysis of the security controls for Kubernetes components managed by Dynatrace Operator: ActiveGate, [OneAgent (CloudNative)](/docs/ingest-from/setup-on-k8s/how-it-works/cloud-native-fullstack "In-depth description of full-stack observability using Dynatrace Operator."), LogAgent. This report is based on:
+The following table presents a detailed analysis of the security controls for Kubernetes components managed by Dynatrace Operator: ActiveGate, [OneAgent (CloudNative)](../how-it-works/cloud-native-fullstack.md "In-depth description of full-stack observability using Dynatrace Operator."), LogAgent. This report is based on:
 
 * [CIS Benchmarkï»¿](https://dt-url.net/zd0368p), a globally recognized standard for securing Kubernetes deployments.
 * [POD Security Standard policiesï»¿](https://dt-url.net/mp0345l).
@@ -659,7 +659,7 @@ Privilege escalation is needed for processes inside OneAgent container to get Li
 
 7
 
-[Monitoring actions](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux#operation "Learn about Dynatrace OneAgent security and modifications to your Linux-based system") executed by OneAgent processes need the following [capabilities](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged#linux-system-capabilities "Find out when Dynatrace OneAgent requires root privileges on Linux.").
+[Monitoring actions](../../dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux.md#operation "Learn about Dynatrace OneAgent security and modifications to your Linux-based system") executed by OneAgent processes need the following [capabilities](../../dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged.md#linux-system-capabilities "Find out when Dynatrace OneAgent requires root privileges on Linux.").
 
 8
 

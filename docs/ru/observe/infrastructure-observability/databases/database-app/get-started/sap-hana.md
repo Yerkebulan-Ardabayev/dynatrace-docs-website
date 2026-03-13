@@ -16,11 +16,11 @@ scraped: 2026-03-06T21:35:07.028567
 
 ## Предварительные требования
 
-Убедитесь, что ваша система соответствует [требованиям](/docs/observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring#requirements "Удалённый мониторинг баз данных SAP HANA для анализа производительности SQL и состояния базы данных.") для полной поддержки функций.
+Убедитесь, что ваша система соответствует [требованиям](../../extensions/sap-hana-database-remote-monitoring.md#requirements "Удалённый мониторинг баз данных SAP HANA для анализа производительности SQL и состояния базы данных.") для полной поддержки функций.
 
 ## Настройка расширения SAP HANA для мониторинга
 
-Чтобы настроить и активировать расширение, следуйте [подробным шагам активации](/docs/observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring#activation-and-setup "Удалённый мониторинг баз данных SAP HANA для анализа производительности SQL и состояния базы данных.").
+Чтобы настроить и активировать расширение, следуйте [подробным шагам активации](../../extensions/sap-hana-database-remote-monitoring.md#activation-and-setup "Удалённый мониторинг баз данных SAP HANA для анализа производительности SQL и состояния базы данных.").
 
 1. Добавьте экземпляр базы данных.
 2. Выберите тип хостинга.
@@ -30,16 +30,16 @@ scraped: 2026-03-06T21:35:07.028567
 
 ## Сценарии использования
 
-Вы можете воспользоваться мониторингом SAP HANA в следующих [сценариях использования](/docs/observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring#use-cases "Удалённый мониторинг баз данных SAP HANA для анализа производительности SQL и состояния базы данных.").
+Вы можете воспользоваться мониторингом SAP HANA в следующих [сценариях использования](../../extensions/sap-hana-database-remote-monitoring.md#use-cases "Удалённый мониторинг баз данных SAP HANA для анализа производительности SQL и состояния базы данных.").
 
 ## Наборы функций
 
-[Наборы функций](/docs/observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring#feature-sets "Удалённый мониторинг баз данных SAP HANA для анализа производительности SQL и состояния базы данных.") определяют, какие метрики собираются при активации расширения.
+[Наборы функций](../../extensions/sap-hana-database-remote-monitoring.md#feature-sets "Удалённый мониторинг баз данных SAP HANA для анализа производительности SQL и состояния базы данных.") определяют, какие метрики собираются при активации расширения.
 
 ## Часто задаваемые вопросы и устранение неполадок
 
-Полные сведения см. в разделе [FAQ](/docs/observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring#faq "Удалённый мониторинг баз данных SAP HANA для анализа производительности SQL и состояния базы данных.").
+Полные сведения см. в разделе [FAQ](../../extensions/sap-hana-database-remote-monitoring.md#faq "Удалённый мониторинг баз данных SAP HANA для анализа производительности SQL и состояния базы данных.").
 
 ## Связанные темы
 
-* [Расширение SAP HANA Database (удалённый мониторинг)](/docs/observe/infrastructure-observability/databases/extensions/sap-hana-database-remote-monitoring "Удалённый мониторинг баз данных SAP HANA для анализа производительности SQL и состояния базы данных.")
+* [Расширение SAP HANA Database (удалённый мониторинг)](../../extensions/sap-hana-database-remote-monitoring.md "Удалённый мониторинг баз данных SAP HANA для анализа производительности SQL и состояния базы данных.")

@@ -25,7 +25,7 @@ To create a recurring scan for continuous monitoring
 3. Choose one or more **Sensitive data types** from the list, such as email address, credit card numbers, or IP addresses.
 4. Define the scan interval by selecting the cadence depending on your compliance needs.
 5. Select the **Log bucket scope** by either choosing specific buckets from the list or the entire environment.
-6. Optional Apply scan policies to refine the scope of the scanâfor example, to exclude known false positives. For details, see [Create a policy in Sensitive Data Center](/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/create-policy "Create a policy to enrich or filter request results with Sensitive Data Center.").
+6. Optional Apply scan policies to refine the scope of the scanâfor example, to exclude known false positives. For details, see [Create a policy in Sensitive Data Center](create-policy.md "Create a policy to enrich or filter request results with Sensitive Data Center.").
 7. Provide a meaningful name for the scan.
 8. Select **Create scan** to save the configuration.
 
@@ -43,7 +43,7 @@ For environments with high log ingest volume, scan results may be sampled. Sampl
 
 Based on scan results, you can take immediate action:
 
-* [Configure or adjust masking rules](/docs/manage/data-privacy-and-security/configuration/configure-global-privacy-settings "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names.") to prevent similar data ingestion.
+* [Configure or adjust masking rules](../../configuration/configure-global-privacy-settings.md "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names.") to prevent similar data ingestion.
 * Change access permissions for stored data.
-* Update [data retention periods](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods "Check retention times for various data types.").
-* Use [cleanup functionality](/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center/cleanup-data "Clean up data with Sensitive Data Center cleanup requests.") to delete sensitive data as needed.
+* Update [data retention periods](../data-retention-periods.md "Check retention times for various data types.").
+* Use [cleanup functionality](cleanup-data.md "Clean up data with Sensitive Data Center cleanup requests.") to delete sensitive data as needed.

@@ -23,7 +23,7 @@ scraped: 2026-03-05T21:29:49.679843
 1. Установите модуль IMS в Control Region каждой системы IMS DB/DC и DCCTL, которую вы хотите мониторить. Этого достаточно для охвата всех регионов обработки сообщений, связанных с Control Region.
    Обратите внимание, что установка модуля IMS в систему, работающую только как DBCTL, не поддерживается.
 2. Необходимо добавить exit Dynatrace в каждый IMS Connect, который вы хотите мониторить.
-3. Необходимо добавить [модуль z/OS Java](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java#middleware "Настройка мониторинга Java на z/OS с помощью модуля Java.") в каждый IMS SOAP Gateway, который вы хотите мониторить.
+3. Необходимо добавить [модуль z/OS Java](install-zos-java.md#middleware "Настройка мониторинга Java на z/OS с помощью модуля Java.") в каждый IMS SOAP Gateway, который вы хотите мониторить.
 
 Перезапуск IMS
 
@@ -40,7 +40,7 @@ scraped: 2026-03-05T21:29:49.679843
 * Если вы используете IMS Connect Extensions, расположите SZDTAUTH после библиотеки IMS Connect Extensions.
 * Если вы используете локально разработанный exit HWSTECL0, расположите SZDTAUTH перед набором данных, содержащим локальный exit.
 
-Exit IMS Connect может быть настроен для создания узлов PurePath в распределённой трассировке. Активируйте необходимую [функцию OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Управление функциями OneAgent глобально и по группам процессов.") **z/OS IMS Connect**.
+Exit IMS Connect может быть настроен для создания узлов PurePath в распределённой трассировке. Активируйте необходимую [функцию OneAgent](../../../oneagent-features.md "Управление функциями OneAgent глобально и по группам процессов.") **z/OS IMS Connect**.
 
 * Если exit IMS Connect настроен для создания узлов PurePath, exit будет подключаться к имени подсистемы zDC по умолчанию. Целевое имя подсистемы zDC можно переопределить, указав следующее DDNAME и ключевой параметр в JCL запуска IMS Connect:
 
@@ -682,14 +682,14 @@ BMP=N
 * Первый набор сообщений IMS поступает из задания инъекции IMS. Это сообщения, возникающие во время инъекции модуля в control region IMS. Эти сообщения появляются только в spool задания инъекции модуля IMS.
 * Второй набор сообщений IMS поступает от модуля IMS по мере мониторинга активности IMS. Эти сообщения отправляются в zDC, а затем перенаправляются в zRemote.
 
-Вы можете получить доступ к журналам модуля IMS через [журналы zRemote](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote#logging "Подготовка и установка zRemote для мониторинга z/OS.").
+Вы можете получить доступ к журналам модуля IMS через [журналы zRemote](install-zremote.md#logging "Подготовка и установка zRemote для мониторинга z/OS.").
 
 ## Обновление без перезапуска региона
 
 Для обновления модуля IMS до более новой версии без перезапуска региона:
 
-1. [Загрузите наборы данных продукта z/OS](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets#download-pax "Загрузка и установка наборов данных продукта Dynatrace для z/OS.") и [извлеките их](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets#extract-datasets "Загрузка и установка наборов данных продукта Dynatrace для z/OS.").
-2. Обновите задание инъекции, чтобы оно указывало на новый `<hlq>.SZDTAUTH`. Если вы [определили псевдоним](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets#alias "Загрузка и установка наборов данных продукта Dynatrace для z/OS."), переопределите псевдоним. Например:
+1. [Загрузите наборы данных продукта z/OS](zosmf-installer/download-zos-datasets.md#download-pax "Загрузка и установка наборов данных продукта Dynatrace для z/OS.") и [извлеките их](zosmf-installer/download-zos-datasets.md#extract-datasets "Загрузка и установка наборов данных продукта Dynatrace для z/OS.").
+2. Обновите задание инъекции, чтобы оно указывало на новый `<hlq>.SZDTAUTH`. Если вы [определили псевдоним](zosmf-installer/download-zos-datasets.md#alias "Загрузка и установка наборов данных продукта Dynatrace для z/OS."), переопределите псевдоним. Например:
 
    ```
    DELETE 'DT.DYNTRC.SZDTAUTH' NOSCRATCH
@@ -719,7 +719,7 @@ ZDTI036W ZDTIII15 0000000 20221103 10.51 VER 1.255.0 ABEND at offset 007874.
 ZDTI033W Successful ABEND recovery, agent disabled.
 ```
 
-Другие или дополнительные сообщения могут быть выданы, если процесс восстановления сталкивается с аномальными условиями (например, невозможность получить динамическое хранилище, повторная попытка не разрешена или SDWA не был передан). Все сообщения, связанные с процессом восстановления после ABEND, задокументированы в разделе [Сообщения модулей z/OS](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/zos-code-module-messages "Сообщения, создаваемые модулями Dynatrace z/OS.").
+Другие или дополнительные сообщения могут быть выданы, если процесс восстановления сталкивается с аномальными условиями (например, невозможность получить динамическое хранилище, повторная попытка не разрешена или SDWA не был передан). Все сообщения, связанные с процессом восстановления после ABEND, задокументированы в разделе [Сообщения модулей z/OS](../operation/zos-code-module-messages.md "Сообщения, создаваемые модулями Dynatrace z/OS.").
 
 Запись Software (SFT) Error Record с дополнительным описанием ABEND обычно записывается в набор данных z/OS SYS1.LOGREC. Необходимо запустить утилиту z/OS EREP для печати Software (SFT) Error Record, связанной с ABEND.
 

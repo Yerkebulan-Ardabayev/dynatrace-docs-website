@@ -302,7 +302,7 @@ timeseries sparkline=avg(dt.host.cpu.usage), value=avg(dt.host.cpu.usage, scalar
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host** — открывает выбранный элемент в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   В общем случае, если есть рекомендуемые приложения для открытия выбранного элемента, меню предлагает прямые ссылки на эти приложения, а затем опцию **Open with** для выбора другого целевого приложения.
-* **Open with** — подробности см. в разделе [Детализация и навигация](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with** — подробности см. в разделе [Детализация и навигация](../drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Заголовок
 
@@ -322,7 +322,7 @@ timeseries sparkline=avg(dt.host.cpu.usage), value=avg(dt.host.cpu.usage, scalar
 
 ## Визуализация
 
-Если вы не уверены, что выбрали правильную визуализацию, используйте [селектор визуализации](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks."), чтобы попробовать различные визуализации.
+Если вы не уверены, что выбрали правильную визуализацию, используйте [селектор визуализации](../edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks."), чтобы попробовать различные визуализации.
 
 ## Отображение данных
 
@@ -368,7 +368,7 @@ timeseries sparkline=avg(dt.host.cpu.usage), value=avg(dt.host.cpu.usage, scalar
 * Повышает прозрачность и предотвращает потенциально вводящие в заблуждение интерпретации.
 * Нет необходимости в нескольких визуализациях связанных результатов. Все данные отображаются в едином формате на одной сетке.
 
-Если вы предпочитаете предыдущее поведение (без сетки), вы можете применить команды DQL [limit](/docs/platform/grail/dynatrace-query-language/commands/ordering-commands#limit "DQL ordering commands") и [sort](/docs/platform/grail/dynatrace-query-language/commands/ordering-commands#sort "DQL ordering commands"), используя [DQL](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.") или [интерфейс Explore](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data "Explore your data with our point-and-click interface.").
+Если вы предпочитаете предыдущее поведение (без сетки), вы можете применить команды DQL [limit](../../../platform/grail/dynatrace-query-language/commands/ordering-commands.md#limit "DQL ordering commands") и [sort](../../../platform/grail/dynatrace-query-language/commands/ordering-commands.md#sort "DQL ordering commands"), используя [DQL](../../../platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.") или [интерфейс Explore](../explore-data.md "Explore your data with our point-and-click interface.").
 
 ## Параметры одиночного значения
 

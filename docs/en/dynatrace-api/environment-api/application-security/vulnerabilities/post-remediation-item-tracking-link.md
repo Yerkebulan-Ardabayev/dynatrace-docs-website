@@ -11,7 +11,7 @@ scraped: 2026-03-02T21:24:04.456847
 * Reference
 * Updated on Sep 25, 2024
 
-Adds, edits, or deletes the tracking links of [remediation tracking](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.") process groups of a third-party vulnerability (or, in the case of Kubernetes vulnerabilities, of remediation tracking Kubernetes nodes).
+Adds, edits, or deletes the tracking links of [remediation tracking](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Track the remediation progress of vulnerabilities.") process groups of a third-party vulnerability (or, in the case of Kubernetes vulnerabilities, of remediation tracking Kubernetes nodes).
 
 The request produces an `application/json` payload.
 
@@ -24,7 +24,7 @@ The request produces an `application/json` payload.
 
 To execute this request, you need an access token with `securityProblems.write` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Parameters
 
@@ -377,5 +377,5 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 
 ## Related topics
 
-* [Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.")
-* [Remediation tracking](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")
+* [Application Security](../../../../secure/application-security.md "Access the Dynatrace Application Security functionalities.")
+* [Remediation tracking](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Track the remediation progress of vulnerabilities.")

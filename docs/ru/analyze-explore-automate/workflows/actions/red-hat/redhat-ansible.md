@@ -22,13 +22,13 @@ scraped: 2026-03-06T21:27:29.962658
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Предоставление разрешений для Workflows**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#permissions "Автоматизация запуска заданий Ansible на основе данных мониторинга и событий.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Предоставление разрешений для Workflows**](redhat-ansible.md#permissions "Автоматизация запуска заданий Ansible на основе данных мониторинга и событий.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Создание API-ключа Red Hat Ansible**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#api-key "Автоматизация запуска заданий Ansible на основе данных мониторинга и событий.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Создание API-ключа Red Hat Ansible**](redhat-ansible.md#api-key "Автоматизация запуска заданий Ansible на основе данных мониторинга и событий.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Настройка подключения Red Hat Ansible Automation**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#connection "Автоматизация запуска заданий Ansible на основе данных мониторинга и событий.")[![Шаг 4 (необязательно)](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Шаг 4 (необязательно)")
+**Настройка подключения Red Hat Ansible Automation**](redhat-ansible.md#connection "Автоматизация запуска заданий Ansible на основе данных мониторинга и событий.")[![Шаг 4 (необязательно)](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Шаг 4 (необязательно)")
 
-**Настройка подключения EdgeConnect**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#edgeconnect "Автоматизация запуска заданий Ansible на основе данных мониторинга и событий.")
+**Настройка подключения EdgeConnect**](redhat-ansible.md#edgeconnect "Автоматизация запуска заданий Ansible на основе данных мониторинга и событий.")
 
 ### Шаг 1: Предоставление разрешений для Workflows
 
@@ -44,7 +44,7 @@ scraped: 2026-03-06T21:27:29.962658
 * `state:app-states:write`
 * `state:app-states:delete`
 
-Подробнее об общих пользовательских разрешениях Workflows см. в разделе [Пользовательские разрешения для рабочих процессов](/docs/analyze-explore-automate/workflows/security#user-permission "Руководство по аспектам безопасности автоматизации рабочих процессов в Dynatrace Workflows").
+Подробнее об общих пользовательских разрешениях Workflows см. в разделе [Пользовательские разрешения для рабочих процессов](../../security.md#user-permission "Руководство по аспектам безопасности автоматизации рабочих процессов в Dynatrace Workflows").
 
 ### Шаг 2: Создание API-ключа Red Hat Ansible
 
@@ -102,7 +102,7 @@ scraped: 2026-03-06T21:27:29.962658
 4. На одном из узлов извлечения информации выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить"), найдите `Ansible` и выберите **Launch job template**.
 5. На каждом из оставшихся узлов извлечения информации выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") и перетащите линию к действию **Launch job template**.
 6. В действии **Launch job template** выберите [подключение](#connection) к вашему **Red Hat Ansible Automation Controller**.
-7. Настройте поля ввода по необходимости. Чтобы узнать, как использовать выходные данные узлов извлечения информации, см. [Справочник по выражениям](/docs/analyze-explore-automate/workflows/reference "Познакомьтесь с выражениями рабочих процессов").
+7. Настройте поля ввода по необходимости. Чтобы узнать, как использовать выходные данные узлов извлечения информации, см. [Справочник по выражениям](../../reference.md "Познакомьтесь с выражениями рабочих процессов").
 8. Для тестирования вашего рабочего процесса выберите **Run**.
 
 ## Устранение неполадок

@@ -15,9 +15,9 @@ scraped: 2026-03-04T21:31:54.309034
 
 Log Monitoring Classic
 
-For the newest Dynatrace version, see [Stream logs to Dynatrace with Logstash](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash "Integrate Logstash to stream logs from nodes and pods to Dynatrace.").
+For the newest Dynatrace version, see [Stream logs to Dynatrace with Logstash](../../logs/lma-log-ingestion/lma-stream-logs-with-logstash.md "Integrate Logstash to stream logs from nodes and pods to Dynatrace.").
 
-[Dynatrace Log Monitoring](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") uses OneAgent DaemonSet, which includes a log module. This is the recommended way of streaming logs from nodes and pods to Dynatrace.
+[Dynatrace Log Monitoring](../../log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") uses OneAgent DaemonSet, which includes a log module. This is the recommended way of streaming logs from nodes and pods to Dynatrace.
 
 Alternatively, you can use the [Dynatrace Logstash output pluginï»¿](https://github.com/dynatrace-oss/logstash-output-dynatrace), which is an open-source module, to stream logs.
 
@@ -25,7 +25,7 @@ Alternatively, you can use the [Dynatrace Logstash output pluginï»¿](https://
 
 ## Capabilities
 
-Supports sending logs to [Dynatrace log ingest API v2](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.").
+Supports sending logs to [Dynatrace log ingest API v2](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.").
 
 The Dynatrace Logstash output plugin also provides the following capabilities:
 

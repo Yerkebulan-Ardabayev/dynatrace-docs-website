@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:33:08.142213
 
 Log Monitoring Classic
 
-For the newest Dynatrace version, see [Automatic log enrichment](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.").
+For the newest Dynatrace version, see [Automatic log enrichment](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.").
 
 Dynatrace enables you to transform logs ingested both via OneAgent and API.
 
@@ -90,5 +90,5 @@ During the log ingestion via OneAgent, the following attributes are added automa
 
 ## Related topics
 
-* [Log ingestion API](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
-* [Log ingestion via OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
+* [Log ingestion API](../../logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
+* [Log ingestion via OneAgent](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")

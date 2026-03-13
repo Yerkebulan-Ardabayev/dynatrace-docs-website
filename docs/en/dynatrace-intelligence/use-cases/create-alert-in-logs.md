@@ -27,7 +27,7 @@ In this tutorial, you will learn how to
 
 For the [Create a log alert on a summary of log data using DQL](#create-log-custom-alert-with-dql) use case, you will also need the following:
 
-* [Configured ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** permissions](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.")
+* [Configured ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** permissions](../anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.")
 
 ## Raise a log alert based on a specific log event
 
@@ -69,7 +69,7 @@ fetch logs
 | sort timestamp desc
 ```
 
-Creating a log alert doesn't require you to have access to ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**. You only need **Logs** ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events"). To learn more about creating alerts through **Logs** ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events"), see [Set up a log alert](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events "How to create and configure Davis problems and alerts with events based on logs.").
+Creating a log alert doesn't require you to have access to ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**. You only need **Logs** ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events"). To learn more about creating alerts through **Logs** ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events"), see [Set up a log alert](../../analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events.md "How to create and configure Davis problems and alerts with events based on logs.").
 
 ## Raise a log alert on a summary of log data over a time period
 
@@ -82,7 +82,7 @@ If you want to get an overview of the log data over a specific period, for examp
 
 Creating a dedicated log metric allows you to reuse the log metric across apps like **Dashboards** ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") and **Notebooks** ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") and create alerts without incurring additional costs.
 
-To learn how to create log metrics, see [Log metrics](/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-metrics "Create metrics based on log data and use them throughout Dynatrace like any other metric.").
+To learn how to create log metrics, see [Log metrics](../../analyze-explore-automate/logs/lma-log-processing/lma-log-metrics.md "Create metrics based on log data and use them throughout Dynatrace like any other metric.").
 
 Suppose you created a log metric, `log.conn_refused_count`, which collects every log entry with a `Connection refused` error.
 
@@ -118,18 +118,18 @@ To create a log alert on a summary of log data
 4. Optional Select  **Run** to test and ensure that your command works properly.
 5. Select  **Options** and select  **Analyze and alert**.
 6. Turn on the Dynatrace Intelligence data analyzer if it's not active.
-7. Select the required analyzer and configure it. For details, see [Anomaly detection configuration](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration "How to set up an alert for missing measurements.").
+7. Select the required analyzer and configure it. For details, see [Anomaly detection configuration](../anomaly-detection/anomaly-detection-configuration.md "How to set up an alert for missing measurements.").
 8. Select **Run analysis**.
 9. Once you're satisfied with the result, select ![More actions](https://dt-cdn.net/images/dashboards-app-menu-kebab-c39eda426b.svg "More actions") > ![Open with](https://dt-cdn.net/images/open-with-003fc82dcd.svg "Open with") **Open with** and select **Anomaly Detection**.  
    This action takes you to ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
-10. Expand **Create an event template** and configure the event triggered by the configuration. For details, see [Event template](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#event-template "How to set up an alert for missing measurements.").
+10. Expand **Create an event template** and configure the event triggered by the configuration. For details, see [Event template](../anomaly-detection/anomaly-detection-configuration.md#event-template "How to set up an alert for missing measurements.").
 11. Select **Create**.
 
 ![An example of the Analyze and alert settings for a bucket log metric graph, with anomaly detection selected, in the Notebooks app.](https://dt-cdn.net/images/notebooks-bucket-log-metric-analyze-and-alert-1744-cef4fa6326.png)
 
 Extracting data from the `default_logs` bucket might induce additional costs. If your logs are available in a specific bucket, we recommend using `filter dt.system.bucket == "{your bucket}"` to increase efficiency.
 
-If you don't have access to your team's or department's bucket, you can create a private one following the [bucket assignment](/docs/analyze-explore-automate/logs/lma-bucket-assignment "Your log data can be stored in data retention buckets based on specific retention periods.") documentation.
+If you don't have access to your team's or department's bucket, you can create a private one following the [bucket assignment](../../analyze-explore-automate/logs/lma-bucket-assignment.md "Your log data can be stored in data retention buckets based on specific retention periods.") documentation.
 
 ## Conclusion
 
@@ -142,6 +142,6 @@ If you followed these steps, now you know how to create log alerts for specific 
 
 ## Related topics
 
-* [Anomaly Detection app](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.")
+* [Anomaly Detection app](../anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.")
 * [[Video] Elevating Security with Anomaly Detectionï»¿](https://www.youtube.com/watch?v=WDZUus-VxCE)
 * [[Video] Anomaly Detection and Data Observabilityï»¿](https://www.youtube.com/watch?v=HPQi63mQg3w)

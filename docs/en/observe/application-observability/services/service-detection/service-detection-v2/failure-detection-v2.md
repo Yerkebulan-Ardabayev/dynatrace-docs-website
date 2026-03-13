@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:25:53.313434
 * Updated on Nov 24, 2025
 
 Service Detection v2 (SDv2) allows you to detect failures based on the attributes of a span that is relevant to failure detection.
-These relevant spans include, for example, [request](/docs/semantic-dictionary/fields#request "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") root spans.
+These relevant spans include, for example, [request](../../../../../semantic-dictionary/fields.md#request "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") root spans.
 You can use the default Dynatrace detection rules and also define your own custom rules.
 
 ## Aim and context
@@ -38,7 +38,7 @@ Failure detection consists of:
 ### Default failure detection rulesets and rules
 
 Dynatrace provides default failure detection rulesets and rules.
-Additionally, you can add custom rulesets and rules as described in [Create new ruleset](/docs/observe/application-observability/services/service-detection/service-detection-v2/failure-detection-v2#create-new-ruleset "Find out how to detect failed requests within services.").
+Additionally, you can add custom rulesets and rules as described in [Create new ruleset](failure-detection-v2.md#create-new-ruleset "Find out how to detect failed requests within services.").
 
 A request is considered successful if no failure detection rule matches.
 
@@ -61,7 +61,7 @@ To configure failure detection:
 
    * **Ruleset name**: Required A user-defined name for the ruleset.
    * **Description**: Optional A human-readable description of the rule.
-   * **Matching condition**: Required A [DQL matcher](/docs/platform/openpipeline/reference/dql-matcher-in-openpipeline "Examine specific DQL functions and logical operators for log processing."), which specifies the span and resource attributes that the ruleset applies to.
+   * **Matching condition**: Required A [DQL matcher](../../../../../platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing."), which specifies the span and resource attributes that the ruleset applies to.
      If the matching condition applies, the ruleset is evaluated.
 3. To save, select **Save changes**.
 
@@ -111,13 +111,13 @@ They are defined with any key/value pair using DQL matchers.
 2. Fill in the following required fields.
 
    * **Rule name**: A descriptive name.
-   * **DQL condition**: A [DQL matcher](/docs/platform/openpipeline/reference/dql-matcher-in-openpipeline "Examine specific DQL functions and logical operators for log processing.") that consists of one or more DQL functions.
+   * **DQL condition**: A [DQL matcher](../../../../../platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing.") that consists of one or more DQL functions.
      If the matching condition applies, the rule is triggered.
      If the matching condition does not apply, the rule is not triggered.
 
      Whether or not the condition applies, the span is evaluated against subsequent rules.
 
-When a rule is triggered, a corresponding entry in the [`dt.failure\_detection.results array](/docs/semantic-dictionary/model/trace#failure-detection-result "Get to know the Semantic Dictionary models related to traces.") is created.
+When a rule is triggered, a corresponding entry in the [`dt.failure\_detection.results array](../../../../../semantic-dictionary/model/trace.md#failure-detection-result "Get to know the Semantic Dictionary models related to traces.") is created.
 
 Example custom rule
 
@@ -177,4 +177,4 @@ You can delete only custom rulesets and rules, not the built-in ones.
 
 ## Related topics
 
-* [Service Detection v2](/docs/observe/application-observability/services/service-detection/service-detection-v2 "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.")
+* [Service Detection v2](../service-detection-v2.md "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.")

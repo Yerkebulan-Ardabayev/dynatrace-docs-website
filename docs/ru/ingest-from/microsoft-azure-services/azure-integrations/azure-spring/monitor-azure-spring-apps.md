@@ -22,11 +22,11 @@ Dynatrace собирает метрики для нескольких предв
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Включение мониторинга Azure в Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](../azure-monitoring-guide/azure-enable-service-monitoring.md "Включение мониторинга Azure в Dynatrace.").
 
 ## Активация OneAgent (рекомендуется)
 
-Для получения сквозного представления о ваших рабочих нагрузках Spring Apps вы можете [настроить интеграцию OneAgent с Azure Spring Apps](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-spring "Узнайте, как настроить OneAgent для мониторинга Azure Spring Apps.").
+Для получения сквозного представления о ваших рабочих нагрузках Spring Apps вы можете [настроить интеграцию OneAgent с Azure Spring Apps](../azure-spring.md "Узнайте, как настроить OneAgent для мониторинга Azure Spring Apps.").
 
 ## Просмотр метрик сервиса
 
@@ -89,4 +89,4 @@ Dynatrace собирает метрики для нескольких предв
 
 ## Связанные темы
 
-* [Мониторинг Azure Spring Apps](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-spring "Узнайте, как настроить OneAgent для мониторинга Azure Spring Apps.")
+* [Мониторинг Azure Spring Apps](../azure-spring.md "Узнайте, как настроить OneAgent для мониторинга Azure Spring Apps.")

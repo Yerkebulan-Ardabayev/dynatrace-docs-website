@@ -67,6 +67,6 @@ Once OneAgent is installed, Dynatrace automatically discovers and monitors:
 
 ## Need Help?
 
-- 🤖 [Ask the AI Assistant](../ai/gemini.md)
+- 🤖 [Ask the AI Assistant](../ai/groq.md)
 - 📚 [Browse full documentation](index.md)
 - 🔬 [Deep dive with NotebookLM](../ai/notebooklm.md)

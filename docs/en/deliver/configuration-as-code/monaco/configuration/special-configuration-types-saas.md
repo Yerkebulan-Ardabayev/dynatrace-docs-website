@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:33:46.968318
 * Published Sep 14, 2025
 
 This section describes how only one, single configuration end point should be present. It also describes the configuration types with non-standard behavior and specific constraints when working with the related APIs.
-For more information, see [supported Configuration API types](/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling#supported-api-types "This is a list of the Monaco API support and access permission handling.").
+For more information, see [supported Configuration API types](../monaco-api-support-and-access-handling.md#supported-api-types "This is a list of the Monaco API support and access permission handling.").
 
 ## Single configuration endpoint
 
@@ -46,9 +46,9 @@ Otherwise, Monaco may return `duplicate config name` errors.
 Generally, calculated metrics behave as non-unique name types but use a `metricKey` that you can define as an identifier, so the automated handling described above is impossible.
 
 While the API and web UI allow you to create several configurations with the same `name`, the Dynatrace Monaco CLI can't uniquely identify these configurations.
-After a [download](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#download "How to use the Monaco CLI application, including arguments and options."), you may see `duplicate config name` errors for calculated metric types.
+After a [download](../reference/commands-saas.md#download "How to use the Monaco CLI application, including arguments and options."), you may see `duplicate config name` errors for calculated metric types.
 
-The `calculated-metrics-log` type, which allows configuring the metrics for the deprecated Logs v1, needs further special handling. For more information, see [calculated log metrics JSON](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#log-metrics-json "This is a list of Monaco special configuration types.") below.
+The `calculated-metrics-log` type, which allows configuring the metrics for the deprecated Logs v1, needs further special handling. For more information, see [calculated log metrics JSON](special-configuration-types-saas.md#log-metrics-json "This is a list of Monaco special configuration types.") below.
 
 ## Settings 2.0 objects
 
@@ -60,7 +60,7 @@ The `externalId` consists of the prefix `monaco:` followed by an identifier gene
 
 To ensure that the existing Settings 2.0 objects are reliably updated, the Dynatrace Monaco CLI records the original Dynatrace object IDs when downloading and includes them in the YAML configuration field `originObjectId`.
 
-Settings objects also have special requirements for their JSON templates. For more details, see [Settings JSON](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#settings-json "This is a list of Monaco special configuration types.") below.
+Settings objects also have special requirements for their JSON templates. For more details, see [Settings JSON](special-configuration-types-saas.md#settings-json "This is a list of Monaco special configuration types.") below.
 
 ## Special requirements for JSON templates
 
@@ -138,7 +138,7 @@ This configuration does the following:
 
 * References the name of the dashboard as a [variable](#configuration-yaml-structure)
 * Shares the dashboard with other users
-* Sets a management zone filter on the entire dashboard, again as a variable, typically [referenced from another configuration](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas#reference "The Monaco configuration YAML file is structure.") TODO
+* Sets a management zone filter on the entire dashboard, again as a variable, typically [referenced from another configuration](yaml-configuration-saas.md#reference "The Monaco configuration YAML file is structure.") TODO
 
 Filtering the whole dashboard by management zone ensures that only data that is meant to be displayed is picked up by the dashboard tiles, and it eliminates the possible need to define filters for individual tiles.
 
@@ -285,7 +285,7 @@ The `SERVICE` type:
 
 ### Settings 2.0 JSON
 
-The [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") has additional properties unrelated to the specific schemas.
+The [Settings API](../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") has additional properties unrelated to the specific schemas.
 This requires Dynatrace Monaco CLI to set further parameters.
 
 The JSON templates for Settings should only include the actual configuration `value`.
@@ -830,4 +830,4 @@ The Dynatrace Monaco JSON template only requires the `value` content:
 }
 ```
 
-When using the [download command](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#download "How to use the Monaco CLI application, including arguments and options."), this happens automatically.
+When using the [download command](../reference/commands-saas.md#download "How to use the Monaco CLI application, including arguments and options."), this happens automatically.

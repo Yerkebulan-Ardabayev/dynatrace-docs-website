@@ -25,12 +25,12 @@ To get started, log in to your Dynatrace SaaS environment via the [Dynatrace.com
 
 ### Resources
 
-All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
+All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](../../../dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.").
 
 ### Limitations
 
 * OneAgent installation isn't supported on networked storage mount points that are managed by standards such as NFS or iSCSI.
-* [Infrastructure Monitoring](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.") mode isn't supported on Solaris hosts.
+* [Infrastructure Monitoring](../../../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.") mode isn't supported on Solaris hosts.
 
 ### Allow connections through firewall
 
@@ -42,7 +42,7 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 1. In Dynatrace Hub, select **OneAgent**.
 2. Select **Set up** > **Solaris**.
 3. Choose the CPU architecture of your environment.
-4. Provide a [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes."). This token is required to download the OneAgent installer from your environment. If you don't have a PaaS token, you can generate one right in the UI. The token is automatically appended to the download command you'll use later.
+4. Provide a [PaaS token](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes."). This token is required to download the OneAgent installer from your environment. If you don't have a PaaS token, you can generate one right in the UI. The token is automatically appended to the download command you'll use later.
 5. Click **Copy** to copy the `wget` command.
 6. Log into your Solaris host and execute the `wget` command.
 
@@ -257,7 +257,7 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 
    `LD_PRELOAD` will not carry over into `sudo` or `su` calls. Moreover, calling `sudo` in an execution context that has `LD_PRELOAD` set will lead to an error message that the library is in a non-secure location. This has no negative impact. This message can be ignored.
 
-If you use the WebLogic admin server to restart managed nodes on Solaris, see [Troubleshoot OneAgent installation on Solaris](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/troubleshoot-oneagent-installation-on-solaris#weblogic-admin "Find out how to solve problems related to installing OneAgent on Solaris.") to learn how to modify the startup script.
+If you use the WebLogic admin server to restart managed nodes on Solaris, see [Troubleshoot OneAgent installation on Solaris](troubleshoot-oneagent-installation-on-solaris.md#weblogic-admin "Find out how to solve problems related to installing OneAgent on Solaris.") to learn how to modify the startup script.
 
 ## OneAgent versions older than v1.137 and fallback
 

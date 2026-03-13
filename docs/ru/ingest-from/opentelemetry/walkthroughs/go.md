@@ -34,13 +34,13 @@ scraped: 2026-03-06T21:30:47.260842
 
 ### Определите базовый URL API
 
-Подробнее о том, как составить базовый URL конечной точки OTLP, см. в разделе [Конечные точки OTLP API Dynatrace](/docs/ingest-from/opentelemetry/otlp-api#export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."). URL должен заканчиваться на `/api/v2/otlp`.
+Подробнее о том, как составить базовый URL конечной точки OTLP, см. в разделе [Конечные точки OTLP API Dynatrace](../otlp-api.md#export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."). URL должен заканчиваться на `/api/v2/otlp`.
 
 ### Получите токен доступа к API
 
 Чтобы сгенерировать токен доступа, в Dynatrace перейдите в ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
 
-[Конечные точки OTLP API Dynatrace](/docs/ingest-from/opentelemetry/otlp-api#authentication "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") содержат подробную информацию о формате и необходимых областях доступа.
+[Конечные точки OTLP API Dynatrace](../otlp-api.md#authentication "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") содержат подробную информацию о формате и необходимых областях доступа.
 
 ## Шаг 2. Выберите способ инструментирования приложения
 
@@ -675,7 +675,7 @@ client.Do(req) // Your call goes here
 
 Хотя Dynatrace автоматически захватывает все атрибуты OpenTelemetry, в веб-интерфейсе Dynatrace хранятся и отображаются только значения атрибутов, указанные в списке разрешённых. Это предотвращает случайное хранение персональных данных, позволяя соблюдать требования конфиденциальности и контролировать объём хранимых данных мониторинга.
 
-Для просмотра пользовательских атрибутов необходимо сначала разрешить их в веб-интерфейсе Dynatrace. Чтобы узнать, как настроить хранение и маскирование атрибутов, см. [Редактирование атрибутов](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration#attribute-redaction "Узнайте, как включить и настроить OneAgent Span Sensor для данных OpenTelemetry.").
+Для просмотра пользовательских атрибутов необходимо сначала разрешить их в веб-интерфейсе Dynatrace. Чтобы узнать, как настроить хранение и маскирование атрибутов, см. [Редактирование атрибутов](../../dynatrace-oneagent/oneagent-and-opentelemetry/configuration.md#attribute-redaction "Узнайте, как включить и настроить OneAgent Span Sensor для данных OpenTelemetry.").
 
 ## Шаг 7. Проверьте приём данных в Dynatrace
 
@@ -687,4 +687,4 @@ client.Do(req) // Your call goes here
 
 ## Связанные темы
 
-* [Обогащение принятых данных полями, специфичными для Dynatrace](/docs/ingest-from/extend-dynatrace/extend-data "Узнайте, как автоматически обогащать данные телеметрии полями, специфичными для Dynatrace.")
+* [Обогащение принятых данных полями, специфичными для Dynatrace](../../extend-dynatrace/extend-data.md "Узнайте, как автоматически обогащать данные телеметрии полями, специфичными для Dynatrace.")

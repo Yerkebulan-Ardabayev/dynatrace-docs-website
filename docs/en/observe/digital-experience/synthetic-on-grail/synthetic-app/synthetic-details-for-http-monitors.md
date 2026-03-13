@@ -32,7 +32,7 @@ The top panel shows overall monitor [availability](#availability) and [performan
 
 Use the  filter bar at the top of the page to filter all HTTP details by one or more locations.
 
-In the upper-right corner of the page, you can access [**Analyze executions**](#analyze-executions), [**On-demand execution**](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/on-demand-executions "Learn about how to perform on-demand executions."), and more HTTP monitor settings:
+In the upper-right corner of the page, you can access [**Analyze executions**](#analyze-executions), [**On-demand execution**](on-demand-executions.md "Learn about how to perform on-demand executions."), and more HTTP monitor settings:
 
 * **Edit**
 * for more options ( **Disable** and  **Delete**)
@@ -41,7 +41,7 @@ In the upper-right corner of the page, you can access [**Analyze executions**](#
 
 DPS License
 
-If you're a non-DPS user, see [HTTP monitors reporting results](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic#analyze-last-execution "Learn about the Synthetic details page for HTTP monitors.").
+If you're a non-DPS user, see [HTTP monitors reporting results](../../synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic.md#analyze-last-execution "Learn about the Synthetic details page for HTTP monitors.").
 
 When you access **Analyze executions** functionality, you're presented with the **Select execution** section with the scatter plot chart on which you can move the view window to the next or previous 50 executions. For readability, the whole chart is limited to 100 points. The content of the scatter plot chart might be divided into results (success/failure), locations, or all of those dimensions. Therefore, you can analyze your executions in three ways:
 
@@ -68,7 +68,7 @@ Not only can you see the details of the last failed or successful execution, but
 
 On-demand executions
 
-You can trigger an execution on-demand. For details, see [On-demand monitor executions](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/on-demand-executions "Learn about how to perform on-demand executions.").
+You can trigger an execution on-demand. For details, see [On-demand monitor executions](on-demand-executions.md "Learn about how to perform on-demand executions.").
 
 ## Availability
 
@@ -76,7 +76,7 @@ The Availability section displays the monitor's availability for the selected ti
 
 Also, the panel shows reasons for discarded tests. The bar above the time frame indicates when a downtime occurred. Hover over the bar to see why the tests were discarded. The possible reasons can be:
 
-* **Maintenance window** - the monitor execution was deliberately [made inactive](/docs/analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window#disable-synthetic "Create maintenance windows and define their scope.") due to maintenance. For details, see the maintenance window.
+* **Maintenance window** - the monitor execution was deliberately [made inactive](../../../../analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window.md#disable-synthetic "Create maintenance windows and define their scope.") due to maintenance. For details, see the maintenance window.
 
   How to see the maintenance window, and what happens if the monitor execution is on/off
 
@@ -88,7 +88,7 @@ Also, the panel shows reasons for discarded tests. The bar above the time frame 
   4. Select **Settings Classic**.
 
   + When the **Disable synthetic monitor execution** option is on in the maintenance window, the tests are suppressed during the maintenance period so there are no tests results for this period.
-  + When the **Disable synthetic monitor execution** option is on in the maintenance window, the scheduled automatic tests are suppressed during the maintenance period, but the [on-demand](/docs/observe/digital-experience/synthetic-monitoring/general-information/on-demand-executions "Execute synthetic monitors on demand from public or private locations") tests are not suppressed.
+  + When the **Disable synthetic monitor execution** option is on in the maintenance window, the scheduled automatic tests are suppressed during the maintenance period, but the [on-demand](../../synthetic-monitoring/general-information/on-demand-executions.md "Execute synthetic monitors on demand from public or private locations") tests are not suppressed.
   + When the **Disable synthetic monitor execution** option is off in the maintenance window, the tests are executed during the maintenance period, but, due to maintenance, the test results may differ from those observed under the normal conditions.
 
 * **No result** - the execution started but the results were not delivered. Reach out to the Dynatrace support team.
@@ -110,7 +110,7 @@ Also, the panel shows reasons for discarded tests. The bar above the time frame 
      + **Problems** in the problems app
      + **Problems** in the current app to view problem details.
 
-A monitor can be down at one or all locations even if no [outage thresholds (global or local)](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor#outage-and-performance "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.") have been set up. The outage duration is the sum of all downtimes in the selected timeframe, not counting overlapping downtimes.
+A monitor can be down at one or all locations even if no [outage thresholds (global or local)](create-and-configure-an-http-monitor.md#outage-and-performance "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.") have been set up. The outage duration is the sum of all downtimes in the selected timeframe, not counting overlapping downtimes.
 
 The **Availability** card shows overall availability across all monitor locations, with annotations for global/local outages and global/local missing data (as when the monitor is inactive).
 
@@ -136,7 +136,7 @@ Suppose we have 5 down executions within a 35-minute timeframe.
 
 #### Exclude maintenance period executions from metrics calculations
 
-You can set up a [maintenance window](/docs/analyze-explore-automate/notifications-and-alerting/maintenance-windows "Understand when to use a maintenance window. Read about the supported maintenance window types.") so [test executions are not suppressed](/docs/analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window#disable-synthetic "Create maintenance windows and define their scope.") during maintenance periods. Then, if outages happen during the maintenance period, down executions are included in the metrics calculations.
+You can set up a [maintenance window](../../../../analyze-explore-automate/notifications-and-alerting/maintenance-windows.md "Understand when to use a maintenance window. Read about the supported maintenance window types.") so [test executions are not suppressed](../../../../analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window.md#disable-synthetic "Create maintenance windows and define their scope.") during maintenance periods. Then, if outages happen during the maintenance period, down executions are included in the metrics calculations.
 
 In the example below, the availability is less than 100% because the down executions are included in the metric calculation by default.
 
@@ -224,7 +224,7 @@ Optional You can view trend lines for the HTTP monitor's performance.
 
 Availability and other problems are not marked in this section.
 
-If the monitor violates a [performance threshold](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor#outage-and-performance "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site."), whether for the sum of all requests or an individual request, a solid red line appears above the performance graph for the problem duration. Select the solid red bar to display a link to the problem overview page.
+If the monitor violates a [performance threshold](create-and-configure-an-http-monitor.md#outage-and-performance "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site."), whether for the sum of all requests or an individual request, a solid red line appears above the performance graph for the problem duration. Select the solid red bar to display a link to the problem overview page.
 
 View problem details
 
@@ -234,9 +234,9 @@ View problem details
 
 ## Problems
 
-The **Problems** card shows performance (threshold violation) and availability (local or global outage) problems when you enable the respective thresholds in [monitor settings](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor#outage-and-performance "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.").
+The **Problems** card shows performance (threshold violation) and availability (local or global outage) problems when you enable the respective thresholds in [monitor settings](create-and-configure-an-http-monitor.md#outage-and-performance "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.").
 
-See [Create and configure an HTTP monitor](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.") for information on defining performance and thresholds availability outage rules. See the [Synthetic alerting overview](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-alerting-overview "Learn about synthetic alerting concepts and workflow.") for alerting workflow and concepts, including setting up notification profiles and templates.
+See [Create and configure an HTTP monitor](create-and-configure-an-http-monitor.md "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.") for information on defining performance and thresholds availability outage rules. See the [Synthetic alerting overview](../../synthetic-monitoring/analysis-and-alerting/synthetic-alerting-overview.md "Learn about synthetic alerting concepts and workflow.") for alerting workflow and concepts, including setting up notification profiles and templates.
 
 There are three main problem types for HTTP monitors:
 
@@ -255,7 +255,7 @@ Problems, along with their constituent [events](#events) and any corresponding [
 
 ## HTTP requests
 
-An HTTP monitor can consist of one or multiple HTTP requests. The **HTTP requests** card overviews all executed requests, their order, name, request URL, and the HTTP method used. For each request, the **HTTP requests** card splits performance (**Response time**) by the following metrics (see more in [HTTP monitor metrics](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/http-monitor-metrics-classic "Learn about the performance metrics collected for HTTP monitors.")):
+An HTTP monitor can consist of one or multiple HTTP requests. The **HTTP requests** card overviews all executed requests, their order, name, request URL, and the HTTP method used. For each request, the **HTTP requests** card splits performance (**Response time**) by the following metrics (see more in [HTTP monitor metrics](../../synthetic-monitoring/http-monitors-classic/http-monitor-metrics-classic.md "Learn about the performance metrics collected for HTTP monitors.")):
 
 * **DNS lookup time**
 * **TCP connect time**
@@ -269,7 +269,7 @@ Expand a request from the list to view all performance metrics in one chart. Sel
 
 The **Status codes** tab shows the timeline of returned HTTP status codes for a particular request. (The [HTTP status codes card](#status-codes) shows the returned HTTP status codes for your HTTP monitor as a whole.)
 
-When a request violates its [event-specific performance threshold](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor#outage-and-performance "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site."), it is highlighted in red. Expand the request to see the performance timings and the threshold violated. A solid red line for the problem duration appears above the stacked graph; the request threshold appears as a dotted red line. Select the solid red bar to display a link to the problem overview page.
+When a request violates its [event-specific performance threshold](create-and-configure-an-http-monitor.md#outage-and-performance "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site."), it is highlighted in red. Expand the request to see the performance timings and the threshold violated. A solid red line for the problem duration appears above the stacked graph; the request threshold appears as a dotted red line. Select the solid red bar to display a link to the problem overview page.
 
 ## Response size
 
@@ -285,7 +285,7 @@ Hover over a time slot in the event timeline to see the type and number of event
 
 Select an event type, for example, **HTTP monitor location slowdown**, to see the list of events. One slowdown event is always created per location where your monitor violates request- or monitor-level performance thresholds. Select an individual event to see details.
 
-The [`api.fail()` method](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#end "Learn how to apply pre and post scripts to your requests") can be used to define a custom **Failure message** that appears in the Events card in case of failure. Custom log messages also appear in the `customLogs` attribute in [HTTP monitor execution details](#analyze-last-execution).
+The [`api.fail()` method](../../synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic.md#end "Learn how to apply pre and post scripts to your requests") can be used to define a custom **Failure message** that appears in the Events card in case of failure. Custom log messages also appear in the `customLogs` attribute in [HTTP monitor execution details](#analyze-last-execution).
 
 ## Changes
 

@@ -74,7 +74,7 @@ scraped: 2026-03-06T21:31:24.011274
 
 Для правил со статусом `Manual`, где автоматическая оценка невозможна, предоставляются подсказки о том, какая информация необходима для завершения оценки.
 
-Подробнее о правилах `manual` см. [Результаты](/docs/secure/xspm/concepts#concept-results "Концепции, специфичные для приложения Dynatrace Security Posture Management.").
+Подробнее о правилах `manual` см. [Результаты](concepts.md#concept-results "Концепции, специфичные для приложения Dynatrace Security Posture Management.").
 
 * **Пример**: Правило со статусом `Manual` `The Kubernetes kubelet staticPodPath must not enable static pods` сообщает, что Dynatrace не может проверить конфигурацию, поскольку отсутствует Kubernetes Node Configuration Collector.
 
@@ -84,14 +84,14 @@ scraped: 2026-03-06T21:31:24.011274
 
 Для использования этой функции генеративного ИИ убедитесь, что:
 
-* Генеративный ИИ Dynatrace Intelligence включён для вашей среды. См. [Включение генеративного ИИ Dynatrace Intelligence](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Узнайте, как настроить агентный и генеративный ИИ Dynatrace Intelligence.").
-* У вас есть разрешение на его использование. См. [Права пользователя](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Узнайте, как настроить агентный и генеративный ИИ Dynatrace Intelligence.").
+* Генеративный ИИ Dynatrace Intelligence включён для вашей среды. См. [Включение генеративного ИИ Dynatrace Intelligence](../../dynatrace-intelligence/copilot/copilot-getting-started.md#enable-davis-copilot "Узнайте, как настроить агентный и генеративный ИИ Dynatrace Intelligence.").
+* У вас есть разрешение на его использование. См. [Права пользователя](../../dynatrace-intelligence/copilot/copilot-getting-started.md#davis-copilot-user-permissions "Узнайте, как настроить агентный и генеративный ИИ Dynatrace Intelligence.").
 
 Генеративный ИИ Dynatrace Intelligence может предоставлять контекстные объяснения оценок правил на понятном языке для ускорения понимания и устранения проблем.
 
 Для доступа к функциональности:
 
-1. В [![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**](/docs/secure/xspm "Обнаружение, управление и принятие мер по результатам оценки безопасности и соответствия.") на странице **Assessment results** выберите правило.
+1. В [![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**](../xspm.md "Обнаружение, управление и принятие мер по результатам оценки безопасности и соответствия.") на странице **Assessment results** выберите правило.
 2. На вкладке **Assessed resources** выберите **Explain assessment**.
 
 При выборе генеративный ИИ Dynatrace Intelligence анализирует технические детали оценки правила и генерирует структурированную сводку, которая может включать:
@@ -106,4 +106,4 @@ scraped: 2026-03-06T21:31:24.011274
 
 ## Связанные темы
 
-* [Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Настройка и включение Security Posture Management в Kubernetes.")
+* [Kubernetes Security Posture Management](../../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Настройка и включение Security Posture Management в Kubernetes.")

@@ -17,7 +17,7 @@ scraped: 2026-03-06T21:37:47.614506
 
 ## Предварительные требования
 
-Убедитесь, что вы выполнили шаги **начальной настройки**, описанные в разделе [Настройка мониторинга OpenTelemetry для Azure Functions на плане потребления](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions "Мониторинг Azure Functions на плане потребления с помощью OpenTelemetry и Dynatrace."), прежде чем использовать указанные ниже пакеты.
+Убедитесь, что вы выполнили шаги **начальной настройки**, описанные в разделе [Настройка мониторинга OpenTelemetry для Azure Functions на плане потребления](opentelemetry-on-azure-functions.md "Мониторинг Azure Functions на плане потребления с помощью OpenTelemetry и Dynatrace."), прежде чем использовать указанные ниже пакеты.
 
 * @dynatrace/opentelemetry-azure-functions версии 1.243+
 
@@ -600,4 +600,4 @@ Dynatrace версии 1.327+ Модуль `@dynatrace/opentelemetry-azure-funct
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Microsoft Azure](/docs/ingest-from/microsoft-azure-services "Настройка и конфигурация мониторинга для Microsoft Azure.")
+* [Настройка Dynatrace в Microsoft Azure](../../../../microsoft-azure-services.md "Настройка и конфигурация мониторинга для Microsoft Azure.")

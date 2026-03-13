@@ -21,16 +21,16 @@ Learn how Dynatrace Intelligence causal correlation analysis finds related metri
 
 * Explanation
 
-Read this explanation](/docs/dynatrace-intelligence/reference/ai-models/causal-correlation-analysis)[#### Dynatrace Intelligence predictive AI analysis
+Read this explanation](ai-models/causal-correlation-analysis.md)[#### Dynatrace Intelligence predictive AI analysis
 
 Learn how Dynatrace Intelligence predictive AI generates forecasts.
 
 * Explanation
 
-Read this explanation](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis)[#### Seasonal baseline
+Read this explanation](../../../ru/dynatrace-intelligence/reference/ai-models/forecast-analysis.md)[#### Seasonal baseline
 
 How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.
 
 * Explanation
 
-Read this explanation](/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline)
+Read this explanation](../../../ru/dynatrace-intelligence/reference/ai-models/seasonal-baseline.md)

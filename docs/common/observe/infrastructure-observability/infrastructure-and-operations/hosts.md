@@ -38,7 +38,7 @@ Here's what each column in the  **Hosts** view stands for.
   Analyze and compare CPU, memory, disk, and network usage metrics across hosts to optimize resource allocation.
 * Organize environments
 
-  Use [host groups](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to configure hosts per group, roll out OneAgent versions selectively, and track service metrics differently depending on the platform they run on.
+  Use [host groups](../../../../ru/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to configure hosts per group, roll out OneAgent versions selectively, and track service metrics differently depending on the platform they run on.
 * Drill down into host details
 
   Select a host name to view detailed graphs, processes, logs, events, and connected services for troubleshooting.
@@ -51,10 +51,10 @@ Find out more about the available monitoring modes when using OneAgent.
 
 * Explanation
 
-Read this explanation](/docs/platform/oneagent/monitoring-modes/monitoring-modes)[#### Enable OneAgent monitoring modes
+Read this explanation](../../../../ru/platform/oneagent/monitoring-modes/monitoring-modes.md)[#### Enable OneAgent monitoring modes
 
 Learn how to enable monitoring modes when using OneAgent.
 
 * How-to guide
 
-Read this guide](/docs/platform/oneagent/monitoring-modes/enable-monitoring-modes)
+Read this guide](../../../../ru/platform/oneagent/monitoring-modes/enable-monitoring-modes.md)

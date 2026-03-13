@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:22:38.429363
 * 4-min read
 * Published Oct 04, 2017
 
-Dynatrace [automatically detects and names your applicationsâ server-side services](/docs/observe/application-observability/services/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.") based on basic properties of your application deployment and configuration. Built-in rules define these names. These properties and the resulting service names should be intuitive to you because they reflect your service landscape. Still, you might want to customize these names. Custom service naming rules enable you to enhance automated service naming.
+Dynatrace [automatically detects and names your applicationsâ server-side services](../service-detection-v1.md "Find out how Dynatrace Service Detection v1 detects and names different types of services.") based on basic properties of your application deployment and configuration. Built-in rules define these names. These properties and the resulting service names should be intuitive to you because they reflect your service landscape. Still, you might want to customize these names. Custom service naming rules enable you to enhance automated service naming.
 
 ## Built-in rules
 
@@ -41,8 +41,8 @@ To define a custom service naming rule
 
 Service name format enable you to build complex naming standards for the services in your environment. You can use placeholders to build a name based on service properties. Placeholders will be replaced with actual values in the service name. In case the provided value is missing, the placeholder will resolve to an empty string. Place your cursor in the **Service name format** input field to see the list of available placeholders.
 
-You can use [regular expressions](/docs/manage/tags-and-metadata/reference/regular-expressions-in-dynatrace "Learn how to use regular expressions in the context of Dynatrace.") to extract portions of the service name, created by a built-in rule. Add the regex before the closing curly bracket `}` of the placeholder. For example, for `{ProcessGroup:DetectedName}` use `{ProcessGroup:DetectedName/REGEX}`.
+You can use [regular expressions](../../../../../manage/tags-and-metadata/reference/regular-expressions-in-dynatrace.md "Learn how to use regular expressions in the context of Dynatrace.") to extract portions of the service name, created by a built-in rule. Add the regex before the closing curly bracket `}` of the placeholder. For example, for `{ProcessGroup:DetectedName}` use `{ProcessGroup:DetectedName/REGEX}`.
 
 ## Related topics
 
-* [Conditional naming API](/docs/dynatrace-api/configuration-api/conditional-naming "Learn what the Dynatrace configuration API for conditional naming offers.")
+* [Conditional naming API](../../../../../dynatrace-api/configuration-api/conditional-naming.md "Learn what the Dynatrace configuration API for conditional naming offers.")

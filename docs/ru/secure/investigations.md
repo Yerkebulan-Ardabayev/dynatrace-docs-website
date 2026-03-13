@@ -23,10 +23,10 @@ scraped: 2026-03-06T21:38:04.563947
 * Отслеживание пути, навигация к предыдущим шагам, просмотр истории расследования.
 * Определение временного диапазона для запросов данных.
 * Прикрепление релевантных находок в качестве доказательств с сохранением контекста расследования.
-* Добавление репутационного контекста к IP-адресам с помощью [обогащения IP](/docs/secure/investigations/enhance-results#enrich "Организуйте и интерпретируйте результаты запросов в рамках расследований --- от анализа производительности до обнаружения угроз.") на основе сторонних источников разведки угроз.
+* Добавление репутационного контекста к IP-адресам с помощью [обогащения IP](investigations/enhance-results.md#enrich "Организуйте и интерпретируйте результаты запросов в рамках расследований --- от анализа производительности до обнаружения угроз.") на основе сторонних источников разведки угроз.
 * Совместная работа с коллегами над расследованиями с контролируемым доступом.
 * Взаимодействие с совместимыми приложениями для получения дополнительных аналитических данных.
-* Создание и использование [таблиц подстановки](/docs/secure/investigations/enhance-results#lookup "Организуйте и интерпретируйте результаты запросов в рамках расследований --- от анализа производительности до обнаружения угроз.") для обогащения расследований контекстными данными.
+* Создание и использование [таблиц подстановки](investigations/enhance-results.md#lookup "Организуйте и интерпретируйте результаты запросов в рамках расследований --- от анализа производительности до обнаружения угроз.") для обогащения расследований контекстными данными.
 
 ### Целевая аудитория
 
@@ -44,12 +44,12 @@ scraped: 2026-03-06T21:38:04.563947
 
 Предварительные требования
 
-* Для расследования загруженных логов необходимо [настроить загрузку логов](/docs/analyze-explore-automate/logs "Log Management and Analytics обеспечивает единый подход к управлению и изучению данных логов в Dynatrace.").
+* Для расследования загруженных логов необходимо [настроить загрузку логов](../analyze-explore-automate/logs.md "Log Management and Analytics обеспечивает единый подход к управлению и изучению данных логов в Dynatrace.").
 * Разрешения: Список необходимых разрешений доступен в **Hub**, выберите ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations** и отобразите **Technical information**.
 * Базовые знания
 
-  + [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")
-  + [Dynatrace Pattern Language (DPL)](/docs/platform/grail/dynatrace-pattern-language "Используйте Dynatrace Pattern Language для описания паттернов с помощью матчеров.")
+  + [Dynatrace Query Language (DQL)](../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
+  + [Dynatrace Pattern Language (DPL)](../platform/grail/dynatrace-pattern-language.md "Используйте Dynatrace Pattern Language для описания паттернов с помощью матчеров.")
 
 Начало работы
 
@@ -57,7 +57,7 @@ scraped: 2026-03-06T21:38:04.563947
 
 Дополнительные ресурсы
 
-![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations** предназначено для оптимизации расследований на основе доказательств по данным в [Grail](/docs/platform/grail "Информация о том, что и как можно запрашивать в данных Dynatrace.") --- будь то разрешение инцидентов, анализ первопричин или расследование угроз и мошенничества, благодаря
+![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations** предназначено для оптимизации расследований на основе доказательств по данным в [Grail](../platform/grail.md "Информация о том, что и как можно запрашивать в данных Dynatrace.") --- будь то разрешение инцидентов, анализ первопричин или расследование угроз и мошенничества, благодаря
 
 * Устранению ручных, повторяющихся задач
 * Предоставлению контекстного обогащения без переключения между инструментами
@@ -72,86 +72,86 @@ scraped: 2026-03-06T21:38:04.563947
 
 Чтобы начать работу и создать первый сценарий расследования, откройте ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations** и выберите ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Investigation**.
 
-Попробуйте [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Комбинируйте функциональные возможности Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз.") и [поделитесь обратной связью](https://dt-url.net/qt23w3u), чтобы помочь нам улучшить продукт.
+Попробуйте [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](investigations.md "Комбинируйте функциональные возможности Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз.") и [поделитесь обратной связью](https://dt-url.net/qt23w3u), чтобы помочь нам улучшить продукт.
 
 ## Учебные модули
 
 [01Выполнение запросов
 
 * Практическое руководство
-* Запускайте расследования с использованием Dynatrace Query Language в Investigations.](/docs/secure/investigations/execute-queries)[02Фильтрация логов
+* Запускайте расследования с использованием Dynatrace Query Language в Investigations.](investigations/execute-queries.md)[02Фильтрация логов
 
 * Практическое руководство
-* Сужайте данные до релевантных записей в Investigations.](/docs/secure/investigations/filter-logs)[03Извлечение полей с помощью DPL Architect
+* Сужайте данные до релевантных записей в Investigations.](investigations/filter-logs.md)[03Извлечение полей с помощью DPL Architect
 
 * Практическое руководство
-* Извлекайте определенные точки данных из логов в Investigations.](/docs/secure/investigations/extract-fields)[04Управление временем
+* Извлекайте определенные точки данных из логов в Investigations.](investigations/extract-fields.md)[04Управление временем
 
 * Практическое руководство
-* Настраивайте временные диапазоны для анализа данных и корреляции событий в Investigations.](/docs/secure/investigations/define-timeframes)[05Управление результатами
+* Настраивайте временные диапазоны для анализа данных и корреляции событий в Investigations.](investigations/define-timeframes.md)[05Управление результатами
 
 * Практическое руководство
-* Организуйте и интерпретируйте результаты запросов в рамках расследований --- от анализа производительности до обнаружения угроз.](/docs/secure/investigations/enhance-results)[06Управление деревом запросов
+* Организуйте и интерпретируйте результаты запросов в рамках расследований --- от анализа производительности до обнаружения угроз.](investigations/enhance-results.md)[06Управление деревом запросов
 
 * Практическое руководство
-* Визуализируйте и структурируйте сложные запросы в Investigations.](/docs/secure/investigations/query-tree)[07Управление доказательствами
+* Визуализируйте и структурируйте сложные запросы в Investigations.](investigations/query-tree.md)[07Управление доказательствами
 
 * Практическое руководство
-* Собирайте и сохраняйте артефакты расследования в Investigations.](/docs/secure/investigations/manage-evidence)[08Управление расследованиями
+* Собирайте и сохраняйте артефакты расследования в Investigations.](investigations/manage-evidence.md)[08Управление расследованиями
 
 * Практическое руководство
-* Делитесь, дублируйте и контролируйте доступ к расследованиям между командами в Dynatrace Investigations.](/docs/secure/investigations/case-sharing)[09Управление шаблонами
+* Делитесь, дублируйте и контролируйте доступ к расследованиям между командами в Dynatrace Investigations.](investigations/case-sharing.md)[09Управление шаблонами
 
 * Практическое руководство
-* Повторно используйте типовые запросы и рабочие процессы в Investigations.](/docs/secure/investigations/manage-templates)[10Ускорение анализа первопричин
+* Повторно используйте типовые запросы и рабочие процессы в Investigations.](investigations/manage-templates.md)[10Ускорение анализа первопричин
 
 * Практическое руководство
-* Выявляйте причины быстрее и эффективнее в Investigations.](/docs/secure/investigations/accelerate-root-cause-analysis)[11Совместная работа с другими приложениями
+* Выявляйте причины быстрее и эффективнее в Investigations.](investigations/accelerate-root-cause-analysis.md)[11Совместная работа с другими приложениями
 
 * Практическое руководство
-* Делитесь аналитическими данными и интегрируйте Investigations с другими приложениями и инструментами Dynatrace для более глубокого анализа.](/docs/secure/investigations/collaborate-with-apps)
+* Делитесь аналитическими данными и интегрируйте Investigations с другими приложениями и инструментами Dynatrace для более глубокого анализа.](investigations/collaborate-with-apps.md)
 
 ### Поиск угроз и криминалистика
 
 Поиск индикаторов компрометации (IoC) и проведение криминалистических расследований и мероприятий по поиску угроз.
 
-* [Поиск угроз и криминалистика](/docs/secure/use-cases/threat-hunting "Сценарий использования для поиска угроз и криминалистики с Investigations.")
+* [Поиск угроз и криминалистика](use-cases/threat-hunting.md "Сценарий использования для поиска угроз и криминалистики с Investigations.")
 
 ### Быстрое разрешение инцидентов с помощью шаблонов
 
 Ускорьте расследования, связанные с логами, с помощью шаблонов ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**.
 
-* [Быстрое разрешение инцидентов с помощью шаблонов Investigations](/docs/secure/use-cases/resolve-incidents-faster-with-templates "Ускорьте расследования, связанные с логами, с помощью шаблонов Investigations.")
+* [Быстрое разрешение инцидентов с помощью шаблонов Investigations](use-cases/resolve-incidents-faster-with-templates.md "Ускорьте расследования, связанные с логами, с помощью шаблонов Investigations.")
 
 ### Ускорение реагирования на инциденты с помощью опорного времени
 
 Улучшите расследования, связанные с логами, с помощью опорного времени ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**.
 
-* [Ускорение реагирования на инциденты с помощью опорного времени Dynatrace Investigations](/docs/secure/use-cases/speed-up-incident-response-with-reference-time "Улучшите расследования, связанные с логами, с помощью опорного времени Dynatrace Investigations.")
+* [Ускорение реагирования на инциденты с помощью опорного времени Dynatrace Investigations](use-cases/speed-up-incident-response-with-reference-time.md "Улучшите расследования, связанные с логами, с помощью опорного времени Dynatrace Investigations.")
 
 ### Операционализация результатов DQL-запросов
 
 Создавайте DQL-запросы на основе результатов ваших запросов быстрее и удобнее с помощью ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**.
 
-* [Операционализация результатов DQL-запросов с помощью Investigations](/docs/secure/use-cases/operationalize-query-results "Создавайте DQL-запросы на основе результатов ваших запросов быстрее и удобнее с помощью Dynatrace Investigations.")
+* [Операционализация результатов DQL-запросов с помощью Investigations](use-cases/operationalize-query-results.md "Создавайте DQL-запросы на основе результатов ваших запросов быстрее и удобнее с помощью Dynatrace Investigations.")
 
 ### Анализ логов AWS CloudTrail
 
 Анализируйте логи CloudTrail и находите потенциальные проблемы безопасности с помощью ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**.
 
-* [Анализ логов AWS CloudTrail с помощью Investigations](/docs/secure/use-cases/analyze-aws-cloudtrail-logs-with-security-investigator "Анализируйте логи CloudTrail и находите потенциальные проблемы безопасности с помощью Dynatrace.")
+* [Анализ логов AWS CloudTrail с помощью Investigations](use-cases/analyze-aws-cloudtrail-logs-with-security-investigator.md "Анализируйте логи CloudTrail и находите потенциальные проблемы безопасности с помощью Dynatrace.")
 
 ### Анализ логов доступа Amazon API Gateway
 
 Мониторинг и выявление ошибок в логах доступа Amazon API Gateway с помощью ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**.
 
-* [Анализ логов доступа Amazon API Gateway с помощью Investigations](/docs/secure/use-cases/analyze-aws-api-gateway-access-logs-with-security-investigator "Мониторинг и выявление ошибок в логах доступа Amazon API Gateway с помощью Dynatrace.")
+* [Анализ логов доступа Amazon API Gateway с помощью Investigations](use-cases/analyze-aws-api-gateway-access-logs-with-security-investigator.md "Мониторинг и выявление ошибок в логах доступа Amazon API Gateway с помощью Dynatrace.")
 
 ### Обнаружение угроз для ваших AWS Secrets
 
 Мониторинг и выявление потенциальных угроз для ваших AWS Secrets с помощью ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**.
 
-* [Обнаружение угроз для ваших AWS Secrets с помощью Investigations](/docs/secure/use-cases/detect-threats-against-aws-secrets-with-security-investigator "Мониторинг и выявление потенциальных угроз для ваших AWS Secrets с помощью Dynatrace.")
+* [Обнаружение угроз для ваших AWS Secrets с помощью Investigations](use-cases/detect-threats-against-aws-secrets-with-security-investigator.md "Мониторинг и выявление потенциальных угроз для ваших AWS Secrets с помощью Dynatrace.")
 
 Ознакомьтесь с наиболее релевантными темами для начала работы с ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**.
 
@@ -210,14 +210,14 @@ scraped: 2026-03-06T21:38:04.563947
 
 ## Связанные темы
 
-* [Поиск угроз и криминалистика](/docs/secure/use-cases/threat-hunting "Сценарий использования для поиска угроз и криминалистики с Investigations.")
-* [DPL Architect](/docs/platform/grail/dynatrace-pattern-language/dpl-architect "Извлечение полей с помощью Dynatrace Pattern Language Architect.")
-* [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь аналитическими данными наблюдаемости --- в едином совместном настраиваемом рабочем пространстве.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")
-* [Использование DQL-запросов](/docs/platform/grail/dynatrace-query-language/dql-guide "Узнайте, как работает DQL и каковы ключевые концепции DQL.")
-* [Команды DQL](/docs/platform/grail/dynatrace-query-language/commands "Список команд DQL.")
-* [Функции DQL](/docs/platform/grail/dynatrace-query-language/functions "Список функций DQL.")
-* [Операторы DQL](/docs/platform/grail/dynatrace-query-language/operators "Список операторов DQL.")
-* [Типы данных DQL](/docs/platform/grail/dynatrace-query-language/data-types "Список типов данных DQL.")
-* [Функции преобразования и приведения типов](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions "Список функций преобразования и приведения типов DQL.")
-* [Команды выборки и модификации DQL](/docs/platform/grail/dynatrace-query-language/commands/selection-and-modification-commands "Команды выборки и модификации DQL")
+* [Поиск угроз и криминалистика](use-cases/threat-hunting.md "Сценарий использования для поиска угроз и криминалистики с Investigations.")
+* [DPL Architect](../platform/grail/dynatrace-pattern-language/dpl-architect.md "Извлечение полей с помощью Dynatrace Pattern Language Architect.")
+* [Notebooks](../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь аналитическими данными наблюдаемости --- в едином совместном настраиваемом рабочем пространстве.")
+* [Dynatrace Query Language](../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
+* [Использование DQL-запросов](../platform/grail/dynatrace-query-language/dql-guide.md "Узнайте, как работает DQL и каковы ключевые концепции DQL.")
+* [Команды DQL](../platform/grail/dynatrace-query-language/commands.md "Список команд DQL.")
+* [Функции DQL](../platform/grail/dynatrace-query-language/functions.md "Список функций DQL.")
+* [Операторы DQL](../platform/grail/dynatrace-query-language/operators.md "Список операторов DQL.")
+* [Типы данных DQL](../platform/grail/dynatrace-query-language/data-types.md "Список типов данных DQL.")
+* [Функции преобразования и приведения типов](../platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions.md "Список функций преобразования и приведения типов DQL.")
+* [Команды выборки и модификации DQL](../platform/grail/dynatrace-query-language/commands/selection-and-modification-commands.md "Команды выборки и модификации DQL")

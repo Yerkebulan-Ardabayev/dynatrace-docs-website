@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:38:02.748633
 
 В современном цифровом мире защита криптографических секретов в облачной среде важна как никогда. Секреты, такие как API-ключи, пароли и ключи шифрования, используемые в ваших приложениях, являются жизненно важными компонентами, утечка которых может поставить под угрозу весь бизнес. Вот почему анализ угроз для секретов необходим для обеспечения целостности, конфиденциальности и доступности ваших данных.
 
-Далее вы узнаете, как [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Объединение возможностей Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз.") может помочь вам:
+Далее вы узнаете, как [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Объединение возможностей Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз.") может помочь вам:
 
 * [Обнаружить внешне сгенерированные ключи в AWS KMS](#keys)
 * [Обнаружить непривилегированные запросы на чтение секретов](#requests)
@@ -30,11 +30,11 @@ scraped: 2026-03-06T21:38:02.748633
 * Отправляйте логи CloudTrail в Dynatrace. Есть два варианта потоковой передачи логов:
 
   + [Amazon S3](https://dt-url.net/c703wc8) Рекомендуется
-  + [Amazon Data Firehose](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose "Интеграция Amazon Data Firehose позволяет принимать облачные логи напрямую, без дополнительной инфраструктуры, с более высокой пропускной способностью.")
+  + [Amazon Data Firehose](../../ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose.md "Интеграция Amazon Data Firehose позволяет принимать облачные логи напрямую, без дополнительной инфраструктуры, с более высокой пропускной способностью.")
 * Знание:
 
-  + [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.") и [работы с DQL-запросами](/docs/platform/grail/dynatrace-query-language/dql-guide "Узнайте, как работает DQL и каковы ключевые концепции DQL.")
-  + [Dynatrace Pattern Language](/docs/platform/grail/dynatrace-pattern-language "Использование Dynatrace Pattern Language для описания шаблонов с помощью сопоставителей.")
+  + [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.") и [работы с DQL-запросами](../../platform/grail/dynatrace-query-language/dql-guide.md "Узнайте, как работает DQL и каковы ключевые концепции DQL.")
+  + [Dynatrace Pattern Language](../../platform/grail/dynatrace-pattern-language.md "Использование Dynatrace Pattern Language для описания шаблонов с помощью сопоставителей.")
 
 ## Перед началом
 
@@ -44,7 +44,7 @@ scraped: 2026-03-06T21:38:02.748633
 
 После приёма логов CloudTrail в Dynatrace выполните следующие шаги для их получения.
 
-1. Откройте [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Объединение возможностей Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз.").
+1. Откройте [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Объединение возможностей Grail для расследований на основе доказательств, включая разрешение инцидентов, анализ первопричин и поиск угроз.").
 2. Выберите ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Investigation**, чтобы создать сценарий расследования.
 3. В поле ввода запроса вставьте следующий DQL-запрос.
 
@@ -73,7 +73,7 @@ scraped: 2026-03-06T21:38:02.748633
    | filter aws.service == "cloudtrail"
    ```
 
-   Подробнее см. [Лучшие практики DQL](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Лучшие практики использования Dynatrace Query Language.").
+   Подробнее см. [Лучшие практики DQL](../../platform/grail/dynatrace-query-language/dql-best-practices.md "Лучшие практики использования Dynatrace Query Language.").
 
    Таблица результатов будет заполнена событиями в формате JSON.
 5. Щёлкните правой кнопкой мыши по событию и выберите **View field details**, чтобы увидеть событие в формате JSON в структурированном виде. Это позволяет следователям быстрее понять содержание события.
@@ -87,8 +87,8 @@ scraped: 2026-03-06T21:38:02.748633
 
 Выполните приведённые ниже шаги, чтобы упростить анализ логов, ускорить расследования и сохранить необходимую точность для аналитических задач.
 
-1. Добавьте к DQL-запросу [команду parse](/docs/platform/grail/dynatrace-query-language/commands/extraction-and-parsing-commands "Команды извлечения DQL") для извлечения необходимых данных из записей логов в отдельные поля.
-2. Добавьте [JSON-сопоставитель](/docs/platform/grail/dynatrace-pattern-language/log-processing-json-object "Изучите синтаксис DPL для работы с JSON-объектами."), чтобы извлечь содержимое лога в формате JSON как JSON-объект в отдельное поле `event`.
+1. Добавьте к DQL-запросу [команду parse](../../platform/grail/dynatrace-query-language/commands/extraction-and-parsing-commands.md "Команды извлечения DQL") для извлечения необходимых данных из записей логов в отдельные поля.
+2. Добавьте [JSON-сопоставитель](../../platform/grail/dynatrace-pattern-language/log-processing-json-object.md "Изучите синтаксис DPL для работы с JSON-объектами."), чтобы извлечь содержимое лога в формате JSON как JSON-объект в отдельное поле `event`.
 
    Ваш DQL-запрос должен выглядеть так:
 
@@ -420,8 +420,8 @@ scraped: 2026-03-06T21:38:02.748633
 
 ## Связанные темы
 
-* [Поиск угроз и криминалистика](/docs/secure/use-cases/threat-hunting "Сценарий использования для поиска угроз и криминалистики с помощью Investigations.")
-* [Анализ логов AWS CloudTrail с помощью Investigations](/docs/secure/use-cases/analyze-aws-cloudtrail-logs-with-security-investigator "Анализ логов CloudTrail и поиск потенциальных проблем безопасности с помощью Dynatrace.")
-* [Анализ логов доступа Amazon API Gateway с помощью Investigations](/docs/secure/use-cases/analyze-aws-api-gateway-access-logs-with-security-investigator "Мониторинг и выявление ошибок в логах доступа Amazon API Gateway с помощью Dynatrace.")
-* [Ускорение разрешения инцидентов с помощью шаблонов Investigations](/docs/secure/use-cases/resolve-incidents-faster-with-templates "Ускорьте расследования, связанные с логами, с помощью шаблонов Investigations.")
-* [Операционализация результатов DQL-запросов с помощью Investigations](/docs/secure/use-cases/operationalize-query-results "Быстрее и удобнее создавайте DQL-запросы из результатов запросов с помощью Dynatrace Investigations.")
+* [Поиск угроз и криминалистика](threat-hunting.md "Сценарий использования для поиска угроз и криминалистики с помощью Investigations.")
+* [Анализ логов AWS CloudTrail с помощью Investigations](analyze-aws-cloudtrail-logs-with-security-investigator.md "Анализ логов CloudTrail и поиск потенциальных проблем безопасности с помощью Dynatrace.")
+* [Анализ логов доступа Amazon API Gateway с помощью Investigations](analyze-aws-api-gateway-access-logs-with-security-investigator.md "Мониторинг и выявление ошибок в логах доступа Amazon API Gateway с помощью Dynatrace.")
+* [Ускорение разрешения инцидентов с помощью шаблонов Investigations](resolve-incidents-faster-with-templates.md "Ускорьте расследования, связанные с логами, с помощью шаблонов Investigations.")
+* [Операционализация результатов DQL-запросов с помощью Investigations](operationalize-query-results.md "Быстрее и удобнее создавайте DQL-запросы из результатов запросов с помощью Dynatrace Investigations.")

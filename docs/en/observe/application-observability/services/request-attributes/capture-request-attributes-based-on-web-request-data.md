@@ -20,7 +20,7 @@ To define a request attribute based on web request data:
 4. Indicate **Data type**.  
    You can't change **Data type** following request attribute setup.
 5. If multiple values exist in a single request, specify what should be stored in the request attribute for every request, and choose how to normalize the text.
-6. Check whether this rule should access unmasked data, and whether the request attribute contains [confidential data](/docs/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#restrict-view-access "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names.").
+6. Check whether this rule should access unmasked data, and whether the request attribute contains [confidential data](../../../../manage/data-privacy-and-security/configuration/configure-global-privacy-settings.md#restrict-view-access "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names.").
 
    This will potentially access personal data.
 7. Add a data source. You can define one or more rules to specify how your attribute should be fetched.  
@@ -52,7 +52,7 @@ Request attribute data sources for web requests include
 * Technology-independent sources, such as:
 
   + HTTP POST parameters
-  + [Client IP addresses](/docs/observe/digital-experience/rum-concepts/detection-of-ip-addresses-locations-and-user-agents#ip-addresses "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.")  
+  + [Client IP addresses](../../../digital-experience/rum-concepts/detection-of-ip-addresses-locations-and-user-agents.md#ip-addresses "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.")  
     The value of the first matching header is reported.
   + HTTP request and response headers
   + Web request URL or one of its constituents, like the path or a query parameter
@@ -92,4 +92,4 @@ Step 3 removes whitespaces.
 
 Step 4 enables you to filter out captured values that don't fit the provided criterion.
 
-Step 5 enables you to extract something from the resulting string based a [regular expression](/docs/manage/tags-and-metadata/reference/regular-expressions-in-dynatrace "Learn how to use regular expressions in the context of Dynatrace.").
+Step 5 enables you to extract something from the resulting string based a [regular expression](../../../../manage/tags-and-metadata/reference/regular-expressions-in-dynatrace.md "Learn how to use regular expressions in the context of Dynatrace.").

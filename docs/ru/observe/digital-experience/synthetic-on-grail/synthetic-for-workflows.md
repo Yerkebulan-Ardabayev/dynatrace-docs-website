@@ -21,13 +21,13 @@ Synthetic for Workflows позволяет выполнять синтетиче
 * Мониторы, помеченные определёнными идентификаторами.
 * Мониторы, назначенные определённым фронтенд-приложениям.
 
-Также возможно использовать [выражения рабочих процессов](/docs/analyze-explore-automate/workflows/reference#expressions "Познакомьтесь с выражениями рабочих процессов") для извлечения списка мониторов и локаций из входящих событий, что позволяет создавать повторно используемые рабочие процессы.
+Также возможно использовать [выражения рабочих процессов](../../../analyze-explore-automate/workflows/reference.md#expressions "Познакомьтесь с выражениями рабочих процессов") для извлечения списка мониторов и локаций из входящих событий, что позволяет создавать повторно используемые рабочие процессы.
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Установите Synthetic for Workflows**](/docs/observe/digital-experience/synthetic-on-grail/synthetic-for-workflows#install "Расширьте возможности автоматизации с помощью синтетического мониторинга.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Установите Synthetic for Workflows**](synthetic-for-workflows.md#install "Расширьте возможности автоматизации с помощью синтетического мониторинга.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Предоставьте разрешения для Workflows**](/docs/observe/digital-experience/synthetic-on-grail/synthetic-for-workflows#permissions "Расширьте возможности автоматизации с помощью синтетического мониторинга.")
+**Предоставьте разрешения для Workflows**](synthetic-for-workflows.md#permissions "Расширьте возможности автоматизации с помощью синтетического мониторинга.")
 
 ### Шаг 1: Установка Synthetic for Workflows
 
@@ -36,12 +36,12 @@ Synthetic for Workflows позволяет выполнять синтетиче
 1. В Dynatrace Hub ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub") найдите **Synthetic for Workflows**.
 2. Выберите **Synthetic for Workflows** и нажмите **Install**.
 
-После установки действия `synthetic_for_workflows` автоматически появятся в разделе **Choose action** в [**Workflows**](/docs/analyze-explore-automate/workflows "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows -- реагируйте на события, планируйте задачи и подключайте сервисы.").
+После установки действия `synthetic_for_workflows` автоматически появятся в разделе **Choose action** в [**Workflows**](../../../analyze-explore-automate/workflows.md "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows -- реагируйте на события, планируйте задачи и подключайте сервисы.").
 Перед началом работы убедитесь, что ваши мониторы правильно настроены. Чтобы создать новый монитор, найдите **Synthetic** в Dynatrace Hub ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub").
 
 ### Шаг 2: Предоставление разрешений для Workflows
 
-Необходимые разрешения перечислены в [Workflows](/docs/analyze-explore-automate/workflows#authorization "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows -- реагируйте на события, планируйте задачи и подключайте сервисы."). Кроме того, для выполнения **Synthetic for Workflows** вам потребуются следующие разрешения
+Необходимые разрешения перечислены в [Workflows](../../../analyze-explore-automate/workflows.md#authorization "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows -- реагируйте на события, планируйте задачи и подключайте сервисы."). Кроме того, для выполнения **Synthetic for Workflows** вам потребуются следующие разрешения
 
 ```
 environment:roles:manage-settings,
@@ -111,7 +111,7 @@ storage:events:read;
 
 1. Выберите **Visual** или **From event**.
 2. Для **Visual** выберите синтетическую локацию из выпадающего списка.
-3. Для **From event** вы можете определить список синтетических мониторов, которые хотите запускать в рабочем процессе, на основе входящего события. Для этого необходимо создать [выражение](/docs/analyze-explore-automate/workflows/reference#expressions "Познакомьтесь с выражениями рабочих процессов"), которое позволит рабочему процессу извлечь эту информацию из события и запустить выбранные мониторы.
+3. Для **From event** вы можете определить список синтетических мониторов, которые хотите запускать в рабочем процессе, на основе входящего события. Для этого необходимо создать [выражение](../../../analyze-explore-automate/workflows/reference.md#expressions "Познакомьтесь с выражениями рабочих процессов"), которое позволит рабочему процессу извлечь эту информацию из события и запустить выбранные мониторы.
 
 Если вы не выберете локацию, монитор будет запущен в локации, определённой в конфигурации монитора.
 
@@ -122,7 +122,7 @@ storage:events:read;
 Чтобы добавить метаданные
 
 1. Нажмите ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add")**Add metadata**.
-2. Заполните поля **Key** и **Value**. В этих полях можно использовать [выражения рабочих процессов](/docs/analyze-explore-automate/workflows/reference#expressions "Познакомьтесь с выражениями рабочих процессов").
+2. Заполните поля **Key** и **Value**. В этих полях можно использовать [выражения рабочих процессов](../../../analyze-explore-automate/workflows/reference.md#expressions "Познакомьтесь с выражениями рабочих процессов").
 3. Ваши метаданные сохраняются автоматически.
 
 ### Настройка выполнения монитора
@@ -146,13 +146,13 @@ storage:events:read;
 * Включено (  ): Если выполнение монитора завершается неудачей, задача завершается с ошибкой.
   Это можно комбинировать с другими параметрами конфигурации, такими как переключатель **Retry on error**, чтобы управлять поведением рабочего процесса в зависимости от неудавшейся задачи.
 * Отключено (  ): Если выполнение монитора завершается неудачей, задача завершается успешно.
-  Действие Synthetic for Workflows генерирует результаты, которые могут быть использованы следующей задачей, например [Site Reliability Guardian](/docs/observe/digital-experience/synthetic-on-grail/synthetic-for-workflows#synthetic-srg "Расширьте возможности автоматизации с помощью синтетического мониторинга.").
+  Действие Synthetic for Workflows генерирует результаты, которые могут быть использованы следующей задачей, например [Site Reliability Guardian](synthetic-for-workflows.md#synthetic-srg "Расширьте возможности автоматизации с помощью синтетического мониторинга.").
 
 По умолчанию этот переключатель отключён.
 
 ## Результаты синтетического тестирования в Grail
 
-Обратите внимание, что Synthetic **не** генерирует события Grail для тенантов без DPS. Вся обработка будет основываться исключительно на данных API. Чтобы узнать больше о лицензировании DPS, см. [Лицензирование Dynatrace](/docs/license "О Dynatrace Platform Subscription (DPS), модели лицензирования для всех возможностей Dynatrace.").
+Обратите внимание, что Synthetic **не** генерирует события Grail для тенантов без DPS. Вся обработка будет основываться исключительно на данных API. Чтобы узнать больше о лицензировании DPS, см. [Лицензирование Dynatrace](../../../license.md "О Dynatrace Platform Subscription (DPS), модели лицензирования для всех возможностей Dynatrace.").
 
 Результаты синтетических мониторов, запущенных по запросу, хранятся как события в Grail.
 
@@ -164,7 +164,7 @@ storage:events:read;
 
 ## Интеграция Synthetic for Workflows с Site Reliability Guardian
 
-Если вы хотите оценивать цели на основе результатов синтетических мониторов, вы можете интегрировать [Site Reliability Guardian (SRG)](/docs/deliver/site-reliability-guardian "Автоматическая проверка целей производительности, доступности и ёмкости ваших критически важных сервисов для принятия правильного решения о релизе.") в качестве следующего действия в вашем рабочем процессе.
+Если вы хотите оценивать цели на основе результатов синтетических мониторов, вы можете интегрировать [Site Reliability Guardian (SRG)](../../../deliver/site-reliability-guardian.md "Автоматическая проверка целей производительности, доступности и ёмкости ваших критически важных сервисов для принятия правильного решения о релизе.") в качестве следующего действия в вашем рабочем процессе.
 
 Для этого
 
@@ -176,7 +176,7 @@ storage:events:read;
 6. Нажмите ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add variable**.
 7. Введите `batchId` в поле **Name**. В поле **Value** укажите значение по умолчанию. Нажмите кнопку **Add**, чтобы сохранить изменения.
 8. В правой части заполните **Guardian name**.
-9. Нажмите ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add new objective** и укажите один из следующих запросов [DQL](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.").
+9. Нажмите ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add new objective** и укажите один из следующих запросов [DQL](../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.").
 
 Обратите внимание, что запросы для синтетических событий, выполняемые за пределами приложения Synthetic, например из Notebooks, Dashboards и SRG, **не** тарифицируются.
 
@@ -214,4 +214,4 @@ fetch dt.synthetic.events
 
 ## Связанные темы
 
-* [Обновления имён атрибутов Synthetic](/docs/observe/digital-experience/synthetic-on-grail/synthetic-for-workflows/synthetic-event-formats "Необходимые обновления имён атрибутов синтетических событий в Workflows.")
+* [Обновления имён атрибутов Synthetic](synthetic-for-workflows/synthetic-event-formats.md "Необходимые обновления имён атрибутов синтетических событий в Workflows.")

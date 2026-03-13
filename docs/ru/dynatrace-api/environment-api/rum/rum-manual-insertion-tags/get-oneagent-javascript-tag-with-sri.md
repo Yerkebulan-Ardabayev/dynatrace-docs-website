@@ -11,7 +11,7 @@ scraped: 2026-03-01T21:25:54.381923
 * Справочник
 * Обновлено 18 сентября 2025 г.
 
-Возвращает самую актуальную версию [тега OneAgent JavaScript с SRI](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats#oneagent-js-tag-sri "Выберите формат фрагмента RUM JavaScript, который наилучшим образом соответствует вашему конкретному варианту использования") для ручного встраивания в код вашего веб-приложения. Он включает конфигурацию, ссылку на код мониторинга и хэш целостности. Дополнительные сведения о поддержке SRI для RUM см. в разделе [Использование Subresource Integrity (SRI) для кода мониторинга реальных пользователей](/docs/observe/digital-experience/web-applications/initial-setup/subresource-integrity "Используйте функцию браузера Subresource Integrity (SRI), чтобы обеспечить целостность кода мониторинга реальных пользователей.").
+Возвращает самую актуальную версию [тега OneAgent JavaScript с SRI](../../../../observe/digital-experience/web-applications/initial-setup/snippet-formats.md#oneagent-js-tag-sri "Выберите формат фрагмента RUM JavaScript, который наилучшим образом соответствует вашему конкретному варианту использования") для ручного встраивания в код вашего веб-приложения. Он включает конфигурацию, ссылку на код мониторинга и хэш целостности. Дополнительные сведения о поддержке SRI для RUM см. в разделе [Использование Subresource Integrity (SRI) для кода мониторинга реальных пользователей](../../../../observe/digital-experience/web-applications/initial-setup/subresource-integrity.md "Используйте функцию браузера Subresource Integrity (SRI), чтобы обеспечить целостность кода мониторинга реальных пользователей.").
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,7 +22,7 @@ scraped: 2026-03-01T21:25:54.381923
 
 Для выполнения этого запроса необходим токен доступа с областью действия `rumManualInsertionTags.read`.
 
-Сведения о том, как получить и использовать токен, см. в разделе [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Сведения о том, как получить и использовать токен, см. в разделе [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 
@@ -33,4 +33,4 @@ scraped: 2026-03-01T21:25:54.381923
 
 ## Ответ
 
-Ответ содержит полезную нагрузку `text/plain` с самой актуальной версией [тега OneAgent JavaScript с SRI](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats#oneagent-js-tag-sri "Выберите формат фрагмента RUM JavaScript, который наилучшим образом соответствует вашему конкретному варианту использования") для указанного приложения.
+Ответ содержит полезную нагрузку `text/plain` с самой актуальной версией [тега OneAgent JavaScript с SRI](../../../../observe/digital-experience/web-applications/initial-setup/snippet-formats.md#oneagent-js-tag-sri "Выберите формат фрагмента RUM JavaScript, который наилучшим образом соответствует вашему конкретному варианту использования") для указанного приложения.

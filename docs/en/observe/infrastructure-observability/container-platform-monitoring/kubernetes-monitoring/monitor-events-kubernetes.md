@@ -16,7 +16,7 @@ scraped: 2026-03-06T21:21:56.612300
 
 * ActiveGate version 1.265+
 * In Dynatrace, go to **Monitoring settings** > **Kubernetes** and make sure that **Monitor Kubernetes namespaces, services, workloads, and pods** is turned on.
-* [Enable the latest version of Dynatrace log monitoring](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* [Enable the latest version of Dynatrace log monitoring](../../../../analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
 
 ## Kubernetes events monitoring for analysis and alerting
 
@@ -63,7 +63,7 @@ Kubernetes events are associated with Kubernetes entities. An event is displayed
 
 You can also view events on the **Log viewer** page (in Dynatrace, go to ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic**), which allows for advanced search and filtering.
 
-If the environment is platform enabled the events are stored in Grail. The following DQL query can be used as a template to query for specific events in [**Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [**Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
+If the environment is platform enabled the events are stored in Grail. The following DQL query can be used as a template to query for specific events in [**Notebooks**](../../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [**Dashboards**](../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
 
 ```
 fetch events
@@ -140,7 +140,7 @@ Example command:
 kubectl get events --all-namespaces --field-selector involvedObject.namespace=hipster-shop,type=Warning
 ```
 
-You can define the event field selectors via [Dynatrace API](/docs/dynatrace-api/configuration-api/k8s-credentials-api-api "Manage Kubernetes credentials via the Dynatrace configuration API.").
+You can define the event field selectors via [Dynatrace API](../../../../dynatrace-api/configuration-api/k8s-credentials-api-api.md "Manage Kubernetes credentials via the Dynatrace configuration API.").
 
 You can create a maximum of 20 event filter rules per Kubernetes cluster.
 
@@ -177,8 +177,8 @@ To enable monitoring of important events, when event filtering is turned on
 
 Kubernetes events are made available in the **Kubernetes: Event count** (`builtin:kubernetes.events`) metric. To filter the events count metric for the relevant events, use the `k8s.event.reason` and `k8s.event.type` dimensions.
 
-* To help you understand the distribution and development of Kubernetes events over time, use [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") to create charts. You can use the charts to compare different timeframes, different entities, event filters, and the use of complex expressions.
-* To trigger alerts whenever Kubernetes events occur (for example, always alert in case of an `Evicted` event), define [Metric events](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace") based on the **Kubernetes: Event count** metric.
+* To help you understand the distribution and development of Kubernetes events over time, use [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") to create charts. You can use the charts to compare different timeframes, different entities, event filters, and the use of complex expressions.
+* To trigger alerts whenever Kubernetes events occur (for example, always alert in case of an `Evicted` event), define [Metric events](../../../../dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace") based on the **Kubernetes: Event count** metric.
 
 ## Licensing
 
@@ -188,8 +188,8 @@ Example query for a 24-hour timeframe:
 
 `dsfm:active_gate.kubernetes.events.processed:splitBy("dt.entity.kubernetes_cluster"):sum:auto:sort(value(sum,descending)):limit(10)`
 
-DDU consumption applies to Kubernetes event monitoring. For details, see [DDUs for custom Davis events](/docs/license/monitoring-consumption-classic/davis-data-units/ddu-events "Understand how to calculate Davis data unit consumption and costs related to custom-configured and custom-ingested events.").
+DDU consumption applies to Kubernetes event monitoring. For details, see [DDUs for custom Davis events](../../../../license/monitoring-consumption-classic/davis-data-units/ddu-events.md "Understand how to calculate Davis data unit consumption and costs related to custom-configured and custom-ingested events.").
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Set up Dynatrace on Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")

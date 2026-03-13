@@ -83,14 +83,14 @@ The first step to ensuring complete coverage for your environment is to confirm 
    This page displays public and private cloud providers: AWS, Azure, GCP, Oracle, VMware, Nutanix, and Hyper-V.
 
    ![Host coverage page](https://dt-cdn.net/images/dnc-host-coverage-3022-fa8b7ee939.png)
-3. **Discovery & Coverage** uses data from [Smartscape](/docs/analyze-explore-automate/smartscape-classic "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") to recommend actions. Based on what is currently monitored, the **Recommended action** column will suggest an action.
+3. **Discovery & Coverage** uses data from [Smartscape](../analyze-explore-automate/smartscape-classic.md "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") to recommend actions. Based on what is currently monitored, the **Recommended action** column will suggest an action.
 
    * **No action**
    * **Connect cloud**
 
      For example, if OneAgent is installed on a host in a cloud that is not currently monitored, this is shown in the **Hosts on undiscovered clouds** column, and the recommended action is **Connect cloud**. This action is **Critical** because the size of the observability gap can't be known until all clouds are connected.
 
-     **Connect cloud** takes you to the appropriate place to connect the specific cloud, such as [![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app "Monitor all cloud platforms at once.") or Hub.
+     **Connect cloud** takes you to the appropriate place to connect the specific cloud, such as [![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**](../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md "Monitor all cloud platforms at once.") or Hub.
    * **Install OneAgents**
 
      For example, if cloud monitoring is in place and unmonitored hosts are identified, the recommended action is **Install OneAgents**, with the priority determined by the size of the observability gap.
@@ -99,13 +99,13 @@ The first step to ensuring complete coverage for your environment is to confirm 
 
      + To install OneAgent for a subset of unmonitored hosts, expand the row of the cloud provider and use the filters to narrow down the target hosts, for example, by cloud tag.
      + These filters can also be used if your hosts have multiple IP addresses; for example, you can filter for private IP addresses only. When filters are applied, the text of the **Recommended action** button changes to indicate how many OneAgents will be installed.
-     + You can also use the  [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") selector in the upper-right corner of the page to apply global filters.
+     + You can also use the  [Segments](../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") selector in the upper-right corner of the page to apply global filters.
 
      ![Animated gif of install OneAgents modal](https://dt-cdn.net/images/install-oneagents-5559188c74.gif)
 
 As additional clouds and hosts are added, the **OneAgent Coverage** bar at the top shows your progress toward complete coverage.
 
-If you're unsure what the correct monitoring mode of a host is, you can start with [Foundation & Discovery mode](/docs/license/capabilities/app-infra-observability/foundation-and-discovery "Learn how your consumption of the Dynatrace Foundation & Discovery DPS capability is billed and charged.") to gain insights into what applications or infrastructure might be on the host and what interdependencies might exist.
+If you're unsure what the correct monitoring mode of a host is, you can start with [Foundation & Discovery mode](../license/capabilities/app-infra-observability/foundation-and-discovery.md "Learn how your consumption of the Dynatrace Foundation & Discovery DPS capability is billed and charged.") to gain insights into what applications or infrastructure might be on the host and what interdependencies might exist.
 
 ### Discovery findings
 
@@ -116,7 +116,7 @@ OneAgent populates Smartscape with a wealth of knowledge about the applications 
 * The table in the lower part of the page displays best practice rules for each technology.
 * The charts in the upper part of the page summarize the data from these rules.
 
-For example, if a database is detected on a host, a best practice rule recommends setting OneAgent to at least [Infrastructure Monitoring](/docs/license/capabilities/app-infra-observability/infrastructure-monitoring "Learn how your consumption of the Dynatrace Infrastructure Monitoring DPS capability is billed and charged.") mode and configuring the appropriate database [extension](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.").
+For example, if a database is detected on a host, a best practice rule recommends setting OneAgent to at least [Infrastructure Monitoring](../license/capabilities/app-infra-observability/infrastructure-monitoring.md "Learn how your consumption of the Dynatrace Infrastructure Monitoring DPS capability is billed and charged.") mode and configuring the appropriate database [extension](extensions.md "Learn how to create and manage Dynatrace Extensions.").
 
 ![Discovery findings page](https://dt-cdn.net/images/dnc-discovery-findings-3020-6443d44fb1.png)
 
@@ -143,7 +143,7 @@ Selecting **Configure scanning** guides you through the installation and configu
 
 Discovered devices are displayed according to the extension's configuration.
 
-* Select  in a table row to expand that row and display all discovered devices. Coverage is based on the best practice of pinging each device using [Network Availability Monitoring](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/network-availability-monitoring "ICMP, TCP, and DNS synthetic monitors") and polling the device using the correct SNMP extension.
+* Select  in a table row to expand that row and display all discovered devices. Coverage is based on the best practice of pinging each device using [Network Availability Monitoring](../observe/digital-experience/synthetic-monitoring/network-availability-monitors/network-availability-monitoring.md "ICMP, TCP, and DNS synthetic monitors") and polling the device using the correct SNMP extension.
 * Select **Ping all** to configure Network Availability Monitoring and **Poll all** to configure the appropriate SNMP extension.
 
 ![Network coverage page](https://dt-cdn.net/images/dnc-network-coverage-3024-2051311781.png)
@@ -158,13 +158,13 @@ You can switch OneAgents on the discovered hosts to Full-Stack monitoring mode i
 
 ### Install OneAgent
 
-In addition to the host coverage page, you can install a OneAgent by selecting  > **Install OneAgent** in the upper-right corner. For details, see [Install OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation "Install OneAgent on a server for the very first time.").
+In addition to the host coverage page, you can install a OneAgent by selecting  > **Install OneAgent** in the upper-right corner. For details, see [Install OneAgent](dynatrace-oneagent/installation-and-operation.md "Install OneAgent on a server for the very first time.").
 
 ![Animated gif of Install menu](https://dt-cdn.net/images/install-oneagent-85ea6f5038.gif)
 
 ### Install ActiveGate
 
-To install an ActiveGate, select  > **Install ActiveGate** in the upper-right corner. For details, see [Install ActiveGate](/docs/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate").
+To install an ActiveGate, select  > **Install ActiveGate** in the upper-right corner. For details, see [Install ActiveGate](dynatrace-activegate/installation.md "Learn how to configure ActiveGate").
 
 ## Use cases
 

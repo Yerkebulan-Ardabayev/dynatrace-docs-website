@@ -1362,7 +1362,7 @@ Allows modifying vulnerability related information
 
 ## Related topics
 
-* [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies")
-* [IAM policy statement syntax and examples](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax "IAM policy statement syntax.")
-* [Grant access to Settings](/docs/manage/identity-access-management/use-cases/access-settings "Grant access to Settings")
-* [Account Management API](/docs/dynatrace-api/account-management-api "Explore endpoints of the Account Management API.")
+* [Working with policies](../../manage-user-permissions-policies.md "Working with policies")
+* [IAM policy statement syntax and examples](../iam-policystatement-syntax.md "IAM policy statement syntax.")
+* [Grant access to Settings](../../../use-cases/access-settings.md "Grant access to Settings")
+* [Account Management API](../../../../../dynatrace-api/account-management-api.md "Explore endpoints of the Account Management API.")

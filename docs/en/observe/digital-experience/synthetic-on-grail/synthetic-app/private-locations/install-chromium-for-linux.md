@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:31:26.009069
 * How-to guide
 * Updated on Feb 11, 2026
 
-If the [web UIâguided installation](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/active-gate-for-private-locations-install#ui-guided-browser-installation "Learn how to install Synthetic-enabled ActiveGates.") fails or you prefer to prepare the host for the Synthetic engine yourself, you can install Chromium and other dependencies [manually](#manual) or from a [custom repository](#custom-repo).
+If the [web UIâguided installation](active-gate-for-private-locations-install.md#ui-guided-browser-installation "Learn how to install Synthetic-enabled ActiveGates.") fails or you prefer to prepare the host for the Synthetic engine yourself, you can install Chromium and other dependencies [manually](#manual) or from a [custom repository](#custom-repo).
 
 ## Install the browser and dependencies manually from S3
 
@@ -26,7 +26,7 @@ Ensure that you can connect to `https://synthetic-packages.s3.amazonaws.com` to 
 
 Also see [Install the browser from a custom repository](#custom-repo) below.
 
-See [how to update the browser manually](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#browser-manual "Analyze and manage capacity usage at your private Synthetic locations.") in [Manage private Synthetic locations](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations "Analyze and manage capacity usage at your private Synthetic locations."). We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and browser versions updatedâDynatrace supports browser versions that are no more than two versions behind the [latest Dynatrace-supported version](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic#browser-linux "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") for a specific ActiveGate release.
+See [how to update the browser manually](../../../synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations.md#browser-manual "Analyze and manage capacity usage at your private Synthetic locations.") in [Manage private Synthetic locations](../../../synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations.md "Analyze and manage capacity usage at your private Synthetic locations."). We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and browser versions updatedâDynatrace supports browser versions that are no more than two versions behind the [latest Dynatrace-supported version](../../../synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic.md#browser-linux "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") for a specific ActiveGate release.
 
 ### Ubuntu Server 20.04 and 22.04
 
@@ -160,7 +160,7 @@ This section is only relevant for releases 1.329 and earlier.
    /bin/bash ./Dynatrace-ActiveGate-Linux.sh --enable-synthetic=manual
    ```
 
-You can [verify the authenticity of the packages](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#verify "Learn how to manage private locations in the Synthetic app.") using the signature files stored together with the package archives.
+You can [verify the authenticity of the packages](../private-locations.md#verify "Learn how to manage private locations in the Synthetic app.") using the signature files stored together with the package archives.
 
 ### Red Hat Enterprise Linux, Oracle Linux 8, and Rocky Linux
 
@@ -560,7 +560,7 @@ You can [verify the authenticity of the packages](/docs/observe/digital-experien
    /bin/bash ./Dynatrace-ActiveGate-Linux.sh --enable-synthetic=manual
    ```
 
-You can [verify the authenticity of the packages](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#verify "Learn how to manage private locations in the Synthetic app.") using the signature files stored together with the package archives.
+You can [verify the authenticity of the packages](../private-locations.md#verify "Learn how to manage private locations in the Synthetic app.") using the signature files stored together with the package archives.
 
 ### Amazon Linux 2023, Ubuntu, and Oracle Linux 9 (Chrome for Testing)
 
@@ -672,7 +672,7 @@ On Ubuntu Server 20.04 and 22.04 Chrome for Testing is supported since 1.331
 
 * Custom Chrome for Testing directory: If you want to use a different directory than the default `/usr/lib/chrome_for_testing`, specify it by setting the `synthetic_chrome_for_testing_path` property in the `custom.properties` file after installation. The new directory will be used after the upgrade of Synthetic module.
 * Chrome for Testing files are preserved during ActiveGate uninstallation. If you uninstall the ActiveGate, the Chrome for Testing directory and its contents will remain on the system and can be reused during reinstallation.
-* You can [verify the authenticity of the packages](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#verify "Learn how to manage private locations in the Synthetic app.") using the signature files stored together with the package archives.
+* You can [verify the authenticity of the packages](../private-locations.md#verify "Learn how to manage private locations in the Synthetic app.") using the signature files stored together with the package archives.
 
 ## Update the browser manually from S3
 
@@ -682,13 +682,13 @@ You need to update the browser manually per ActiveGate, and the process varies s
 
 Prerequisites:
 
-* Ensure that [**Enable Chrome(-ium) auto-update**](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#browser-autoupdate "Learn how to manage private locations in the Synthetic app.") is turned off for your private location. If you disable autoupdate for a location, you need to update the browser manually on every ActiveGate assigned to that location.
+* Ensure that [**Enable Chrome(-ium) auto-update**](../private-locations.md#browser-autoupdate "Learn how to manage private locations in the Synthetic app.") is turned off for your private location. If you disable autoupdate for a location, you need to update the browser manually on every ActiveGate assigned to that location.
 * Ensure that you can connect to `https://synthetic-packages.s3.amazonaws.com` to access the browser packages.
 
 * The Synthetic engine will use the new browser version after the update is completeânote that the status is updated once every hour, so it may take up to an hour to refresh the browser version displayed for your ActiveGate in **Deployment Status**.
-* We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and browser versions updatedâDynatrace supports browser versions that are no more than two versions behind the [latest Dynatrace-supported version](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/requirements-for-private-synthetic#browser-linux "Check system and hardware requirements for private Synthetic locations.") for a specific ActiveGate release.
+* We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and browser versions updatedâDynatrace supports browser versions that are no more than two versions behind the [latest Dynatrace-supported version](requirements-for-private-synthetic.md#browser-linux "Check system and hardware requirements for private Synthetic locations.") for a specific ActiveGate release.
 * We strongly recommend updating all ActiveGates per location to the same version.
-* See also [Browser autoupdate from a custom repository](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#autoupdate-custom-repo "Learn how to install Chromium for Linux manually and from custom repositories.").
+* See also [Browser autoupdate from a custom repository](install-chromium-for-linux.md#autoupdate-custom-repo "Learn how to install Chromium for Linux manually and from custom repositories.").
 
 Since ActiveGate 1.331, on Ubuntu Server 20.04 and 22.04 we use Chrome for Testing. Chromium snap distribution is no longer supported.
 If you are using any automation for updating the browser, convert it to use Chrome for Testing. Please refer to [community guideï»¿](https://dt-url.net/il0363p) for details.
@@ -701,9 +701,9 @@ Amazon Linux 2023, Ubuntu, and Oracle Linux 9 (Chrome for Testing)
 
 This section is only relevant for releases 1.329 and earlier for Ubuntu Server 20.04 and 22.04.
 
-1. If your ActiveGate and Chromium versions are out of support or have not been updated for several releases, review the Synthetic Engine and Chromium dependencies, and reinstall them if necessary. See the [manual installation instructions for Ubuntu Server](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#ubuntu "Learn how to install Chromium for Linux manually and from custom repositories.").
-2. Download the snap (Ubuntu Server 20.04 and 22.04) package archive. This is a safe and verified archive hosted by Dynatrace at `https://synthetic-packages.s3.amazonaws.com`. Be sure to use the specific command provided for your ActiveGate and Ubuntu Server versions in the [manual installation instructions for Ubuntu Server](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#ubuntu "Learn how to install Chromium for Linux manually and from custom repositories.").
-3. Extract and install the downloaded packages. Be sure to use the correct installation command for your Ubuntu Server version (check the [manual installation instructions for Ubuntu Server](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#ubuntu "Learn how to install Chromium for Linux manually and from custom repositories.")).
+1. If your ActiveGate and Chromium versions are out of support or have not been updated for several releases, review the Synthetic Engine and Chromium dependencies, and reinstall them if necessary. See the [manual installation instructions for Ubuntu Server](install-chromium-for-linux.md#ubuntu "Learn how to install Chromium for Linux manually and from custom repositories.").
+2. Download the snap (Ubuntu Server 20.04 and 22.04) package archive. This is a safe and verified archive hosted by Dynatrace at `https://synthetic-packages.s3.amazonaws.com`. Be sure to use the specific command provided for your ActiveGate and Ubuntu Server versions in the [manual installation instructions for Ubuntu Server](install-chromium-for-linux.md#ubuntu "Learn how to install Chromium for Linux manually and from custom repositories.").
+3. Extract and install the downloaded packages. Be sure to use the correct installation command for your Ubuntu Server version (check the [manual installation instructions for Ubuntu Server](install-chromium-for-linux.md#ubuntu "Learn how to install Chromium for Linux manually and from custom repositories.")).
 4. Verify Chromium update by running the following command from the default installation directory. Command output should match the Chromium version you installed.
 
    ```
@@ -771,7 +771,7 @@ When migrating from Chromium snap, first update the ActiveGate, then install Chr
 
 ## Install the browser from a custom repository
 
-ActiveGate version 1.243+ In addition to [web UI-guided ActiveGate installation](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/active-gate-for-private-locations-install "Learn how to install Synthetic-enabled ActiveGates.") and [manual installation of the browser and dependencies](#manual), you can also **install ActiveGate by pointing to a custom, local repository for browser components**. As this repository is an HTTP server that you set up within your network, the advantage of this method is that it can be used in environments with intranet-only or limited network access.
+ActiveGate version 1.243+ In addition to [web UI-guided ActiveGate installation](active-gate-for-private-locations-install.md "Learn how to install Synthetic-enabled ActiveGates.") and [manual installation of the browser and dependencies](#manual), you can also **install ActiveGate by pointing to a custom, local repository for browser components**. As this repository is an HTTP server that you set up within your network, the advantage of this method is that it can be used in environments with intranet-only or limited network access.
 
 This method of installing the browser broadly consists of:
 
@@ -780,9 +780,9 @@ This method of installing the browser broadly consists of:
 * Downloading and running the ActiveGate installer on the target host with an environment variable pointing to the location of the custom repository on the HTTP server.
 
 * A custom browser repository can be used only for browser components, not their dependencies. Installing the browser from a custom repository will only work if all dependencies have been resolved before installation.
-* Custom repositories can only be used for **browser installation and autoupdate**âsee [Browser autoupdate from a custom repository](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#autoupdate-custom-repo "Learn how to install Chromium for Linux manually and from custom repositories.") for details.
+* Custom repositories can only be used for **browser installation and autoupdate**âsee [Browser autoupdate from a custom repository](install-chromium-for-linux.md#autoupdate-custom-repo "Learn how to install Chromium for Linux manually and from custom repositories.") for details.
 
-1. Download the browser componentsâthe package archive and signature fileâfrom the safe and verified archive hosted by Dynatrace. See [Requirements for private Synthetic locations](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/requirements-for-private-synthetic "Check system and hardware requirements for private Synthetic locations.") for links to the latest supported and provided browser versions.
+1. Download the browser componentsâthe package archive and signature fileâfrom the safe and verified archive hosted by Dynatrace. See [Requirements for private Synthetic locations](requirements-for-private-synthetic.md "Check system and hardware requirements for private Synthetic locations.") for links to the latest supported and provided browser versions.
 
    We recommend keeping your Linux-based Synthetic-enabled ActiveGates and browser versions up to date; choose the latest provided browser version for ActiveGate.
 
@@ -811,13 +811,13 @@ This method of installing the browser broadly consists of:
 
    You can use the hostname of the HTTP server instead of the IP address so long as the ActiveGate host can resolve the hostname.
 
-Once you've installed the browser in this way from a custom repository, it can only be autoupdated. See [Browser autoupdate from a custom repository in Manage private Synthetic locations](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#autoupdate-custom-repo "Analyze and manage capacity usage at your private Synthetic locations.") for details and update alternatives.
+Once you've installed the browser in this way from a custom repository, it can only be autoupdated. See [Browser autoupdate from a custom repository in Manage private Synthetic locations](../../../synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations.md#autoupdate-custom-repo "Analyze and manage capacity usage at your private Synthetic locations.") for details and update alternatives.
 
 ## Browser autoupdate from a custom repository
 
 If you've enabled a [custom, local repository for the browser installation](#custom-repo), the browser can only be autoupdated. Follow this procedure to autoupdate the browser via the same custom repository.
 
-1. After ActiveGate installation, specify the custom repository of the ActiveGate in the [`[synthetic]` section of the `custom.properties` file](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#synth_mod "Learn which ActiveGate properties you can configure based on your needs and requirements.") in the `/var/lib/dynatrace/gateway/config` directory. This allows for automatic browser updates from the custom repository during manual or automatic Synthetic engine updates.
+1. After ActiveGate installation, specify the custom repository of the ActiveGate in the [`[synthetic]` section of the `custom.properties` file](../../../../../ingest-from/dynatrace-activegate/configuration/configure-activegate.md#synth_mod "Learn which ActiveGate properties you can configure based on your needs and requirements.") in the `/var/lib/dynatrace/gateway/config` directory. This allows for automatic browser updates from the custom repository during manual or automatic Synthetic engine updates.
 
    ```
    [synthetic]
@@ -826,7 +826,7 @@ If you've enabled a [custom, local repository for the browser installation](#cus
 
    chromium_repo = https://172.18.0.100/chromium-repo
    ```
-2. Turn on [**Enable Chrome(-ium) auto-update**](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#browser-autoupdate "Learn how to manage private locations in the Synthetic app.") for your private location.
+2. Turn on [**Enable Chrome(-ium) auto-update**](../private-locations.md#browser-autoupdate "Learn how to manage private locations in the Synthetic app.") for your private location.
 
    Note that the browser autoupdate UI setting applies to all ActiveGates assigned to your private location.
 3. Ensure that the browser components required for update are available at the custom repository location. The browser is then automatically updated from the custom repository during ActiveGate and Synthetic engine updates.

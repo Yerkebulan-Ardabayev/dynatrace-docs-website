@@ -14,7 +14,7 @@ scraped: 2026-03-05T21:26:07.681929
 
 Classic Full-Stack monitoring интегрирует мониторинг хостов и приложений для сред Kubernetes. Инструментированные поды сохраняют свою связь с хостами, что позволяет собирать метрики хостов.
 
-Дополнительную информацию см. в разделе [`.spec.oneAgent.classicFullStack`](/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") документации DynaKube.
+Дополнительную информацию см. в разделе [`.spec.oneAgent.classicFullStack`](../../reference/dynakube-parameters.md "List the available parameters for setting up Dynatrace Operator on Kubernetes.") документации DynaKube.
 
 ## Возможности
 
@@ -31,15 +31,15 @@ Classic Full-Stack monitoring интегрирует мониторинг хос
 
 Следующие компоненты развёртываются через Helm/манифесты в рамках базовой установки. Подробную информацию см. в соответствующих разделах:
 
-* [Dynatrace Operator](/docs/ingest-from/setup-on-k8s/how-it-works/components/dynatrace-operator#operator "Components of Dynatrace Operator") управляет автоматическим развёртыванием, конфигурацией и жизненным циклом компонентов Dynatrace в вашей среде Kubernetes.
-* [Веб-хук Dynatrace Operator](/docs/ingest-from/setup-on-k8s/how-it-works/components/dynatrace-operator#webhook "Components of Dynatrace Operator") проверяет определения DynaKube, конвертирует определения со старыми версиями API и внедряет конфигурации в поды.
+* [Dynatrace Operator](../components/dynatrace-operator.md#operator "Components of Dynatrace Operator") управляет автоматическим развёртыванием, конфигурацией и жизненным циклом компонентов Dynatrace в вашей среде Kubernetes.
+* [Веб-хук Dynatrace Operator](../components/dynatrace-operator.md#webhook "Components of Dynatrace Operator") проверяет определения DynaKube, конвертирует определения со старыми версиями API и внедряет конфигурации в поды.
 
 ### Компоненты, управляемые оператором
 
 Следующие компоненты развёртываются путём применения DynaKube с наблюдаемостью полного стека:
 
-* [Dynatrace OneAgent](/docs/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") собирает метрики хостов с узлов Kubernetes.
-* [Dynatrace ActiveGate](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.") маршрутизирует данные наблюдаемости в кластер Dynatrace и осуществляет мониторинг Kubernetes API.
+* [Dynatrace OneAgent](../../../dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") собирает метрики хостов с узлов Kubernetes.
+* [Dynatrace ActiveGate](../../../dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.") маршрутизирует данные наблюдаемости в кластер Dynatrace и осуществляет мониторинг Kubernetes API.
 
 ![classic-full-stack](https://dt-cdn.net/images/screenshot-2024-01-31-at-2-37-54-pm-2354-6d55b949e0.png)
 

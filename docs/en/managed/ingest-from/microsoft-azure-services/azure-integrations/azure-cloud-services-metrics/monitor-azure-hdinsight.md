@@ -23,7 +23,7 @@ On the Azure HDInsights dashboard, you get holistic insights into your Hadoop, S
 
 ## Enable monitoring
 
-To learn how to enable service monitoring, see [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+To learn how to enable service monitoring, see [Enable service monitoring](../../../../../ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring.md "Enable Azure monitoring in Dynatrace.").
 
 ## Install OneAgent Optional
 
@@ -35,11 +35,11 @@ Follow the steps below to install OneAgent on Azure HDInsight cluster (Linux).
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Create an install script**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight#step-1 "Monitor Azure HDInsight and view available metrics.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Create an install script**](../../../../../ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight.md#step-1 "Monitor Azure HDInsight and view available metrics.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Create an HDInsight cluster**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight#step-2 "Monitor Azure HDInsight and view available metrics.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Create an HDInsight cluster**](../../../../../ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight.md#step-2 "Monitor Azure HDInsight and view available metrics.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Restart the processes**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight#step-3 "Monitor Azure HDInsight and view available metrics.")
+**Restart the processes**](../../../../../ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight.md#step-3 "Monitor Azure HDInsight and view available metrics.")
 
 ### Step 1 Create an install script
 
@@ -112,7 +112,7 @@ Hiding a dashboard doesn't affect other users.
 
 ### Set up a management zone
 
-To import a dashboard for Azure HDInsight, you need to [set up a management zone](/docs/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.") to limit the entities displayed on the dashboard to cluster nodes only and exclude other hosts not relevant to the service.
+To import a dashboard for Azure HDInsight, you need to [set up a management zone](../../../../../manage/identity-access-management/permission-management/management-zones/set-up-management-zones.md "Create and assign access rights to management zones.") to limit the entities displayed on the dashboard to cluster nodes only and exclude other hosts not relevant to the service.
 
 When you create a management zone for this dashboard:
 
@@ -132,7 +132,7 @@ Example
 
 ![Azure management zone](https://dt-cdn.net/images/hdinsightmanagementzone-2629-26e6039169.webp)
 
-After you create the management zone, assign it to your dashboard (from the dashboard, select **Edit** > **Settings** > **Default management zone**). For more information, see [Dashboard timeframe and management zone](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings.").
+After you create the management zone, assign it to your dashboard (from the dashboard, select **Edit** > **Settings** > **Default management zone**). For more information, see [Dashboard timeframe and management zone](../../../../../analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe.md "Learn about Dynatrace dashboard timeframe and management zone settings.").
 
 ## Available metrics
 

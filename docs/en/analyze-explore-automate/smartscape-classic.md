@@ -85,8 +85,8 @@ Each node represents a different service with a symbol that signifies the underl
 
 | Icon | Meaning |
 | --- | --- |
-| see example above | Commercial logos such as the MySQL dolphin, Apache feather, and Tomcat cat indicate [service technologies supported by Dynatrace](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks."). |
-| Smartscape symbol 3 | Services of unrecognized technologies are depicted using a generic service symbol. These are typically [opaque services](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/opaque-services "Understand what opaque services are."). |
+| see example above | Commercial logos such as the MySQL dolphin, Apache feather, and Tomcat cat indicate [service technologies supported by Dynatrace](../ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks."). |
+| Smartscape symbol 3 | Services of unrecognized technologies are depicted using a generic service symbol. These are typically [opaque services](../observe/application-observability/services/service-detection/service-detection-v1/service-types/opaque-services.md "Understand what opaque services are."). |
 
 **Connections**
 
@@ -106,7 +106,7 @@ Note that you might observe a difference in the number of services presented in 
 
 The **Processes** tab provides a visualization within which each node corresponds to a process and each connection represents a TCP/IP request.
 
-* Not all processes running in your environment are shown because the number of running processes is often quite high. For clarity, only the [most important processes](/docs/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes "Display the most important processes for monitoring and process grouping.") are shown.
+* Not all processes running in your environment are shown because the number of running processes is often quite high. For clarity, only the [most important processes](../observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes.md "Display the most important processes for monitoring and process grouping.") are shown.
 * Dashed lines show connections between processes that are inactive or have timed out.
 
 ![Smartscape processes](https://dt-cdn.net/images/smartscape-processes-1623-2321abf3d3.png)
@@ -167,12 +167,12 @@ To see vulnerabilities for affected entities, switch to the **Processes** or **H
 * To view the name of an entity, hover your cursor over the entity's symbol. While the name is displayed, you can select the arrow next to the entity name to go to that entity's overview page.
 * To view cross-tier connections, select any entity. The panel on the left expands to display the vertical dependencies of the entity.
 
-For more information on managing third-party vulnerabilities, see [Third-party vulnerabilities](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.").
+For more information on managing third-party vulnerabilities, see [Third-party vulnerabilities](../secure/application-security/vulnerability-analytics/third-party-vulnerabilities.md "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.").
 
 ## Related topics
 
-* [What is a monitoring environment?](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.")
-* [Topology and Smartscape API](/docs/dynatrace-api/environment-api/topology-and-smartscape "Learn about the Dynatrace Topology and Smartscape API.")
-* [Performance analysis](/docs/observe/digital-experience/web-applications/analyze-and-use/performance-analysis "Understand the available types of performance analysis that are provided by Dynatrace.")
-* [Root cause analysis concepts](/docs/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.")
-* [Third-party vulnerabilities](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.")
+* [What is a monitoring environment?](../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.")
+* [Topology and Smartscape API](../dynatrace-api/environment-api/topology-and-smartscape.md "Learn about the Dynatrace Topology and Smartscape API.")
+* [Performance analysis](../observe/digital-experience/web-applications/analyze-and-use/performance-analysis.md "Understand the available types of performance analysis that are provided by Dynatrace.")
+* [Root cause analysis concepts](../dynatrace-intelligence/root-cause-analysis/concepts.md "Get acquainted with root cause analysis concepts.")
+* [Third-party vulnerabilities](../secure/application-security/vulnerability-analytics/third-party-vulnerabilities.md "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.")

@@ -126,4 +126,4 @@ elevated_privileges_extensions=[com.dynatrace.filesystem:*, com.dynatrace.ibm-mq
 
 ## Связанные темы
 
-* [Разработка собственных Extensions](/docs/ingest-from/extensions/develop-your-extensions "Разрабатывайте собственные Extensions в Dynatrace.")
+* [Разработка собственных Extensions](../develop-your-extensions.md "Разрабатывайте собственные Extensions в Dynatrace.")

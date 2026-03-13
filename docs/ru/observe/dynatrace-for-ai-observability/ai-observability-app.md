@@ -25,11 +25,11 @@ scraped: 2026-03-02T21:23:22.538566
 Предварительные требования
 
 * ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") **AI Observability** необходимо установить из платформенного HUB. Установите его прямо сейчас!
-* Для использования ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") **AI Observability** вам нужна [лицензия DPS](/docs/license "О Dynatrace Platform Subscription (DPS), модели лицензирования для всех возможностей Dynatrace.") со следующими возможностями в вашем [прайс-листе](https://www.dynatrace.com/pricing/):
+* Для использования ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png "AI Observability") **AI Observability** вам нужна [лицензия DPS](../../license.md "О Dynatrace Platform Subscription (DPS), модели лицензирования для всех возможностей Dynatrace.") со следующими возможностями в вашем [прайс-листе](https://www.dynatrace.com/pricing/):
 
-  + [Metrics powered by Grail](/docs/license/capabilities/metrics "Узнайте, как рассчитывается потребление Dynatrace Metrics powered by Grail в модели Dynatrace Platform Subscription.")
-  + [Traces powered by Grail](/docs/license/capabilities/traces "Узнайте, как рассчитывается потребление Dynatrace Traces powered by Grail в модели Dynatrace Platform Subscription (DPS).")
-  + [Logs powered by Grail](/docs/license/capabilities/log-analytics "Узнайте, как рассчитывается потребление Dynatrace Log Analytics в модели Dynatrace Platform Subscription.")
+  + [Metrics powered by Grail](../../license/capabilities/metrics.md "Узнайте, как рассчитывается потребление Dynatrace Metrics powered by Grail в модели Dynatrace Platform Subscription.")
+  + [Traces powered by Grail](../../license/capabilities/traces.md "Узнайте, как рассчитывается потребление Dynatrace Traces powered by Grail в модели Dynatrace Platform Subscription (DPS).")
+  + [Logs powered by Grail](../../license/capabilities/log-analytics.md "Узнайте, как рассчитывается потребление Dynatrace Log Analytics в модели Dynatrace Platform Subscription.")
 
 Стоимость запросов и семплирования для дашбордов AI Observability
 
@@ -108,7 +108,7 @@ hub:catalog:read
 Фильтрация результатов:
 
 * На боковой панели слева вы можете выбрать конкретную категорию сервиса (например, **Containers** или **Functions**) или анализировать все сервисы. Кроме того, вы можете быстро фильтровать по предопределённым атрибутам, релевантным для выбранной категории. Выберите любой атрибут в панели фасетов и нажмите **Update** для получения результатов. Поле фильтра обновляется вашим выбором. Это позволяет сохранять один и тот же контекст при переключении между вкладками (**Overview**, **Errors**, **Traffic and Latency**, **Cost**, **Guardrails**).
-* Альтернативно выберите поле фильтра вверху для просмотра предложений и ввода параметров фильтрации. Добавьте дополнительные условия для сужения результатов. Критерии одного типа объединяются логикой ИЛИ. Критерии разных типов объединяются логикой И. Вы можете фильтровать сервисы по тегам, статусу оповещений и атрибутам, таким как имя или регион. Это помогает сфокусироваться на определённых подмножествах сервисов. Подробнее о синтаксисе поля фильтра см. [Поле фильтра](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "Поле фильтра — мощный инструмент, позволяющий быстро находить нужную информацию или сужать результаты в приложениях.").
+* Альтернативно выберите поле фильтра вверху для просмотра предложений и ввода параметров фильтрации. Добавьте дополнительные условия для сужения результатов. Критерии одного типа объединяются логикой ИЛИ. Критерии разных типов объединяются логикой И. Вы можете фильтровать сервисы по тегам, статусу оповещений и атрибутам, таким как имя или регион. Это помогает сфокусироваться на определённых подмножествах сервисов. Подробнее о синтаксисе поля фильтра см. [Поле фильтра](../../discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md "Поле фильтра — мощный инструмент, позволяющий быстро находить нужную информацию или сужать результаты в приложениях.").
 * Вкладка **Overview**: отображает количество сервисов, моделей и агентов, а также запросы к моделям, использование токенов, среднюю длительность запросов и общую стоимость. Каждая плитка поддерживает детализацию и создание оповещений.
 * Вкладка **Errors**: отслеживайте показатель успешности/неудач, количество проблем, количество ошибок вызовов, частоту ошибок во времени, типы HTTP-ошибок (4xx/5xx) и тренд ошибок с прогнозом. Используйте временную кисть для увеличения пика и перехода к трассировкам.
 * **Traffic and Latency**: отслеживайте время отклика (AVG, p50, p90, p95), время отклика по модели, количество запросов, время до первого токена и задержку вызова. Создавайте оповещения о регрессиях задержки.
@@ -122,9 +122,9 @@ hub:catalog:read
 ### Создание и управление оповещениями
 
 * Создание новых оповещений: выберите **New alert** на плитках на основе метрик (например, Invocation error count, Invocation latency, Token count, Token usage forecast, Overall guardrail activation). Мастер оповещений предварительно заполнен текущим контекстом (временной диапазон, фильтры по провайдеру/модели/сервису/агенту), чтобы вы могли точно настроить пороги и уведомления. Оповещения появляются в **Manage all alerts** для просмотра и отключения.
-* Управление всеми оповещениями: используйте действие **Manage all alerts** на любой вкладке для просмотра, редактирования или отключения [пользовательских оповещений](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection."), созданных из карточек и диаграмм Service Health. Вы также можете создать новое оповещение непосредственно с большинства плиток.
+* Управление всеми оповещениями: используйте действие **Manage all alerts** на любой вкладке для просмотра, редактирования или отключения [пользовательских оповещений](../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection."), созданных из карточек и диаграмм Service Health. Вы также можете создать новое оповещение непосредственно с большинства плиток.
 
-Все пользовательские оповещения и дополнительную информацию о возможностях и ограничениях можно найти в [![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection.").
+Все пользовательские оповещения и дополнительную информацию о возможностях и ограничениях можно найти в [![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**](../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection.").
 
 ### Отладка промптов и трассировок
 

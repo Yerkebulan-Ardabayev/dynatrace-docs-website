@@ -12,10 +12,10 @@ scraped: 2026-03-02T21:20:36.386068
 * Практическое руководство
 * Опубликовано 11 сентября 2025 г.
 
-Вы можете использовать [прокси, балансировщики нагрузки и обратные прокси в вашем развёртывании Dynatrace](/docs/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates#proxies "Узнайте о приоритетах подключения между типами ActiveGate, а также о приоритетах между ActiveGate и OneAgent."). В частности, конфигурация ActiveGate позволяет определить один или несколько прокси для исходящих соединений.
+Вы можете использовать [прокси, балансировщики нагрузки и обратные прокси в вашем развёртывании Dynatrace](../../../../../ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates.md#proxies "Узнайте о приоритетах подключения между типами ActiveGate, а также о приоритетах между ActiveGate и OneAgent."). В частности, конфигурация ActiveGate позволяет определить один или несколько прокси для исходящих соединений.
 
-* Для настройки прокси для связи с тестируемым ресурсом отредактируйте файл [`custom.properties`](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate "Узнайте, какие свойства ActiveGate вы можете настроить в соответствии с вашими потребностями и требованиями.") и задайте свойства в разделе `[synthetic]`.
-* Для настройки прокси только для внутренней связи с кластером Dynatrace см. [настройки только для связи с кластером Dynatrace](/docs/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate#internal "Узнайте, как настроить свойства ActiveGate для настройки прокси.").
+* Для настройки прокси для связи с тестируемым ресурсом отредактируйте файл [`custom.properties`](../../../../../ingest-from/dynatrace-activegate/configuration/configure-activegate.md "Узнайте, какие свойства ActiveGate вы можете настроить в соответствии с вашими потребностями и требованиями.") и задайте свойства в разделе `[synthetic]`.
+* Для настройки прокси только для внутренней связи с кластером Dynatrace см. [настройки только для связи с кластером Dynatrace](../../../../../ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate.md#internal "Узнайте, как настроить свойства ActiveGate для настройки прокси.").
 * Для настройки одного прокси как для тестируемого ресурса, так и для кластера Dynatrace задайте свойства в разделе `[http.client]`.
 
 ## Свойства конфигурации прокси
@@ -191,7 +191,7 @@ proxy-non-proxy-hosts=my.corp.org|*.gdansk.dynatrace.com
 4. Нажмите **Edit** в правом верхнем углу панели предварительного просмотра.
 
    С этого момента вы будете перенаправлены в предыдущую версию Dynatrace, где можете указать URL PAC-файла.
-5. Переключитесь в [режим скрипта](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/script-mode-for-browser-monitor-configuration "Создание или редактирование браузерных мониторов в формате JSON.").
+5. Переключитесь в [режим скрипта](../../../synthetic-monitoring/browser-monitors/script-mode-for-browser-monitor-configuration.md "Создание или редактирование браузерных мониторов в формате JSON.").
 
    * Для сценария clickpath выберите **Recorded clickpath** > **Script**.
    * Для монитора с одним URL выберите **Monitor script**.
@@ -213,7 +213,7 @@ proxy-non-proxy-hosts=my.corp.org|*.gdansk.dynatrace.com
 
    ![Добавление PAC-файла к браузерному монитору.](https://dt-cdn.net/images/screenshot-2025-09-18-145741-826-11ee737f0f.png)
 
-   Дополнительную информацию о режиме скрипта см. в разделе [Режим скрипта для настройки браузерного монитора](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/script-mode-for-browser-monitor-configuration "Создание или редактирование браузерных мониторов в формате JSON.").
+   Дополнительную информацию о режиме скрипта см. в разделе [Режим скрипта для настройки браузерного монитора](../../../synthetic-monitoring/browser-monitors/script-mode-for-browser-monitor-configuration.md "Создание или редактирование браузерных мониторов в формате JSON.").
 
 ### Совместимость конфигурации PAC-файлов
 

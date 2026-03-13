@@ -14,11 +14,11 @@ scraped: 2026-02-06T16:28:21.884183
 
 Log Monitoring Classic
 
-For the newest Dynatrace version, see [Log ingestion API](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.").
+For the newest Dynatrace version, see [Log ingestion API](../../logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.").
 
 Dynatrace automatically collects log and event data from a vast array of technologies. With generic log ingestion, you can stream log records to a system and have Dynatrace transform the stream into meaningful log messages.
 
-The Log ingestion API allows you to stream log records to the system. It is available via [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.") for JSON and text format or the [OTLP endpoint](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") for OTLP binary protobuf format.
+The Log ingestion API allows you to stream log records to the system. It is available via [Log Monitoring API v2 - POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.") for JSON and text format or the [OTLP endpoint](../../../ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") for OTLP binary protobuf format.
 
 * For Dynatrace SaaS, the Log ingestion endpoint is available in your environment.
 
@@ -42,11 +42,11 @@ Ingest endpoint will collect and attempt to automatically transform any log data
 * Timestamp
 * Key-Values attributes
 
-To view all predefined key-value attributes, such as the supported semantic attribute keys, check [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.").
+To view all predefined key-value attributes, such as the supported semantic attribute keys, check [Log Monitoring API v2 - POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.").
 
 ## Log data queue on Environment ActiveGate
 
-You can customize the log data queue properties by editing the `custom.properties` file (see [Configuration properties and parameters of ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#generic-ingest "Learn which ActiveGate properties you can configure based on your needs and requirements.")) on your ActiveGate to set the following values:
+You can customize the log data queue properties by editing the `custom.properties` file (see [Configuration properties and parameters of ActiveGate](../../../ingest-from/dynatrace-activegate/configuration/configure-activegate.md#generic-ingest "Learn which ActiveGate properties you can configure based on your needs and requirements.")) on your ActiveGate to set the following values:
 
 ```
 [generic_ingest]
@@ -140,10 +140,10 @@ Success
 
 ## Troubleshooting
 
-Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Monitoring (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/lmc-troubleshooting "Fix issues related to the setup and configuration of Log Monitoring Classic.").
+Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Monitoring (Logs Classic)](../lmc-troubleshooting.md "Fix issues related to the setup and configuration of Log Monitoring Classic.").
 
 * [Troubleshooting log Ingestion via API - POST ingest logsï»¿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608)
 
 ## Related topics
 
-* [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.")
+* [Log Monitoring API v2 - POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.")

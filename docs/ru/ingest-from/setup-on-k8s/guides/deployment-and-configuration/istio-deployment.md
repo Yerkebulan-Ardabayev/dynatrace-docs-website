@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:18:03.469401
 
 Это руководство объясняет, как компоненты Dynatrace могут быть развёрнуты совместно с Istio. Развёртывание Dynatrace в Kubernetes включает несколько компонентов, которым необходимо взаимодействовать друг с другом, с кластером Dynatrace и другими внешними ресурсами.
 
-Для получения дополнительной информации о сетевом взаимодействии Dynatrace Operator и его управляемых компонентов см. справочную страницу [сетевой трафик](/docs/ingest-from/setup-on-k8s/reference/network "Требования к сетевому трафику для компонентов Dynatrace Operator в кластере Kubernetes.").
+Для получения дополнительной информации о сетевом взаимодействии Dynatrace Operator и его управляемых компонентов см. справочную страницу [сетевой трафик](../../reference/network.md "Требования к сетевому трафику для компонентов Dynatrace Operator в кластере Kubernetes.").
 
 ## Ограничения
 
@@ -113,7 +113,7 @@ ENABLE_NATIVE_SIDECARS: false
 
 ## Руководство по настройке для конфигурации Istio по умолчанию
 
-Поскольку Dynatrace поддерживает Istio в конфигурации по умолчанию, вам нужно только включить параметр `enableIstio` в [DynaKube](/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters "Список доступных параметров для настройки Dynatrace Operator в Kubernetes."). Однако устанавливать этот параметр не нужно, если вы не планируете использовать ограничительную `outboundTrafficPolicy`.
+Поскольку Dynatrace поддерживает Istio в конфигурации по умолчанию, вам нужно только включить параметр `enableIstio` в [DynaKube](../../reference/dynakube-parameters.md "Список доступных параметров для настройки Dynatrace Operator в Kubernetes."). Однако устанавливать этот параметр не нужно, если вы не планируете использовать ограничительную `outboundTrafficPolicy`.
 
 Когда этот параметр включён, Dynatrace Operator развернёт `ServiceEntries` и `VirtualServices` для обеспечения связи изнутри mesh со всеми необходимыми компонентами Dynatrace и окружением Dynatrace. `ServiceEntries` и `VirtualServices` работают независимо от того, является ли пространство имён Dynatrace Operator частью mesh (если в Istio не установлен `discoveryfilter`).
 
@@ -121,7 +121,7 @@ ENABLE_NATIVE_SIDECARS: false
 
 `ServiceEntries` приводят к дополнительным DNS-запросам, выполняемым каждым sidecar-прокси. Это может создать дополнительную нагрузку на ваш DNS-сервер.
 
-Для минимизации количества URL-адресов и, соответственно, DNS-запросов убедитесь, что сетевые зоны в вашем окружении Dynatrace настроены правильно. Подробное описание настройки см. в [документации по сетевым зонам Kubernetes](/docs/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations/network-zones#kubernetes-cluster-with-restricted-egress "Настройка и использование сетевых зон в окружениях Kubernetes с Dynatrace Operator.").
+Для минимизации количества URL-адресов и, соответственно, DNS-запросов убедитесь, что сетевые зоны в вашем окружении Dynatrace настроены правильно. Подробное описание настройки см. в [документации по сетевым зонам Kubernetes](../networking-security-compliance/network-configurations/network-zones.md#kubernetes-cluster-with-restricted-egress "Настройка и использование сетевых зон в окружениях Kubernetes с Dynatrace Operator.").
 
 Если это невозможно или недостаточно в вашем окружении, см. [проксирование DNS Istio](https://dt-url.net/ab23uvy) для другого возможного решения.
 
@@ -395,7 +395,7 @@ ENABLE_NATIVE_SIDECARS: false
 
 ## Сбор метрик с использованием слияния метрик Istio
 
-[Сбор метрик Dynatrace](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Приём метрик из конечных точек Prometheus в Kubernetes, оповещения по метрикам и мониторинг потребления.") выполняется через ActiveGate и настраивается с помощью аннотаций. Это приводит к тому, что ActiveGate подключается напрямую к подам на настроенной конечной точке для сбора метрик. Как отмечалось ранее, это прямое подключение не работает со строгим mTLS.
+[Сбор метрик Dynatrace](../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics.md "Приём метрик из конечных точек Prometheus в Kubernetes, оповещения по метрикам и мониторинг потребления.") выполняется через ActiveGate и настраивается с помощью аннотаций. Это приводит к тому, что ActiveGate подключается напрямую к подам на настроенной конечной точке для сбора метрик. Как отмечалось ранее, это прямое подключение не работает со строгим mTLS.
 
 Режим ambient Istio не поддерживает слияние метрик, так как для этого требуется sidecar-прокси. Однако в режиме ambient ActiveGate может напрямую подключаться к IP-адресам подов и собирать метрики с настроенных целей. В зависимости от вашей политики mTLS это может быть возможно только для подов внутри mesh, если ActiveGate также является частью mesh.
 
@@ -473,4 +473,4 @@ curl localhost:8080/debug/registryz
 
 ## Связанные темы
 
-* [Настройка трассировки OpenTelemetry с Istio](/docs/ingest-from/opentelemetry/integrations/istio "Узнайте, как настроить Istio в Kubernetes для развёртывания предварительно настроенных прокси-сервисов для трассировки OpenTelemetry.")
+* [Настройка трассировки OpenTelemetry с Istio](../../../opentelemetry/integrations/istio.md "Узнайте, как настроить Istio в Kubernetes для развёртывания предварительно настроенных прокси-сервисов для трассировки OpenTelemetry.")

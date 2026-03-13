@@ -17,15 +17,15 @@ scraped: 2026-03-06T21:17:37.851510
 
 * Full-stack monitoring powered OneAgent
 * [Extensions for easy deployment of OneAgent](#installation)
-* [Integration with Azure Monitor](/docs/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
+* [Integration with Azure Monitor](../../microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")
 * Enhanced support for Azure VM Metadata such as Azure regions, AutoScale detection, and more
 
 Dynatrace provides a VM extension to install OneAgent on Azure Virtual Machine Scale Set (VMSS). The extension doesn't include the OneAgent installer. Instead, it uses the Dynatrace REST API to download the latest version from the cluster, unless a [default OneAgent versionï»¿](https://www.dynatrace.com/news/blog/define-default-version-oneagent-new-installations/) is configured. OneAgent updates are provided automatically.
 
 ## Prerequisites
 
-* Create a [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
-* Determine your [environment ID](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+* Create a [PaaS token](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.").
+* Determine your [environment ID](../../../discover-dynatrace/get-started/monitoring-environment.md "Understand and learn how to work with monitoring environments.").
 * Determine your server URL if required.
 
   The server URL is required only if you use an ActiveGate for a Dynatrace SaaS endpoint. The URL is automatically generated from the environment ID.
@@ -84,7 +84,7 @@ PowerShell
    | token | Required | The PaaS token as described in [Prerequisites](#prerequisites). |
    | server | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
    | enableLogAnalytics | Optional | Set to `yes` if you want to enable Log Monitoring. |
-   | hostGroup | Optional | Define the [host group](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
+   | hostGroup | Optional | Define the [host group](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
 2. Update the VMSS virtual machines.
 
    ```
@@ -137,7 +137,7 @@ PowerShell
    | token | Required | The PaaS token as described in [Prerequisites](#prerequisites). |
    | server | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
    | enableLogAnalytics | Optional | Set to `yes` if you want to enable Log Monitoring. |
-   | hostGroup | Optional | Define the [host group](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
+   | hostGroup | Optional | Define the [host group](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
 2. Update the VMSS virtual machines with the new definition.
 
    ```
@@ -379,7 +379,7 @@ Alternatively to the main installation methods, you can make the Dynatrace site 
    | Extension-Version | Optional | Required version[1](#fn-1-1-def) of the extension. |
    | server | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
    | enableLogAnalytics | Optional | Set to `yes` if you want to enable Log Monitoring. |
-   | hostGroup | Optional | Define the [host group](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
+   | hostGroup | Optional | Define the [host group](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
 
    1
 
@@ -409,5 +409,5 @@ Restart-AzureRmVmss -ResourceGroupName "<Resource-Group>" -VMScaleSetName "<VMSS
 
 ## Related topics
 
-* [Set up Dynatrace on Microsoft Azure](/docs/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
-* [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* [Set up Dynatrace on Microsoft Azure](../../microsoft-azure-services.md "Set up and configure monitoring for Microsoft Azure.")
+* [OneAgent platform and capability support matrix](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

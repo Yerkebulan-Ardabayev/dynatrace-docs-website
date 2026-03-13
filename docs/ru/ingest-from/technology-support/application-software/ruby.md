@@ -17,4 +17,4 @@ scraped: 2026-03-05T21:26:27.945131
 
 * [Поддержка OpenTelemetry](https://github.com/open-telemetry/opentelemetry-ruby/) для захвата трасс.
 
-  + [Инструментирование вашего приложения Ruby с помощью OpenTelemetry](/docs/ingest-from/opentelemetry/walkthroughs/ruby "Узнайте, как инструментировать ваше приложение Ruby с помощью OpenTelemetry и Dynatrace.")
+  + [Инструментирование вашего приложения Ruby с помощью OpenTelemetry](../../opentelemetry/walkthroughs/ruby.md "Узнайте, как инструментировать ваше приложение Ruby с помощью OpenTelemetry и Dynatrace.")

@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:12:54.357617
 
 Откройте для себя новые технологии, которые можно отслеживать с помощью Dynatrace, и узнайте, как начать работу. Включены операционные системы и кодовые модули OneAgent, мейнфреймы, интеграции с serverless и расширения платформы.
 
-Поддержка новых технологий может потребовать подключения через [функции OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Управляйте функциями OneAgent глобально и для каждой группы процессов.").
+Поддержка новых технологий может потребовать подключения через [функции OneAgent](../ingest-from/dynatrace-oneagent/oneagent-features.md "Управляйте функциями OneAgent глобально и для каждой группы процессов.").
 
 [Дорожная карта поддержки технологий](https://community.dynatrace.com/t5/Feedback-channel/Dynatrace-technology-support-roadmap/td-p/183451) доступна в сообществе Dynatrace.
 
@@ -151,7 +151,7 @@ scraped: 2026-03-06T21:12:54.357617
 
 * Go toolchain с FIPS 1.23.6 (openssl-fips)
 * NGINX 1.28.0 (модуль NGINX)
-* IBM AIX 7.3 TL3 (модуль OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix "Узнайте, как установить OneAgent на AIX.")
+* IBM AIX 7.3 TL3 (модуль OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/aix.md "Узнайте, как установить OneAgent на AIX.")
 * Redis-Py 3.4+ (модуль Python). Функция OneAgent: Python Redis
 * Confluent Golang 2.10 Client (модуль Go). Функции OneAgent: Go Kafka Consumer; Go Kafka Producer
 * Amazon SNS v1-2 для Java. Функция OneAgent: Java Amazon SNS
@@ -240,9 +240,9 @@ scraped: 2026-03-06T21:12:54.357617
 * Node.js 23 (модуль Node.js)
 * NGINX 1.27.2 (модуль NGINX)
 * NGINX Plus R33
-* Red Hat Enterprise Linux 9.5 (модуль OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Узнайте, как установить OneAgent на Linux.")
-* Oracle Linux 9.5 (модуль OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Узнайте, как установить OneAgent на Linux.")
-* Rocky Linux 9.5 (модуль OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Узнайте, как установить OneAgent на Linux.")
+* Red Hat Enterprise Linux 9.5 (модуль OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Узнайте, как установить OneAgent на Linux.")
+* Oracle Linux 9.5 (модуль OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Узнайте, как установить OneAgent на Linux.")
+* Rocky Linux 9.5 (модуль OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Узнайте, как установить OneAgent на Linux.")
 
 ## 1.303 OneAgent
 
@@ -272,7 +272,7 @@ scraped: 2026-03-06T21:12:54.357617
 * Eclipse Temurin (a.k.a. 'Adoptium') 23 (модуль Java)
 * Kafka (IBM/sarama) 1.40+ (модуль Go)
 * Kafka (Shopify/sarama) 1.18–1.39 (модуль Go)
-* SUSE Linux Enterprise Server 15.6 (модуль OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux "Узнайте, как загрузить и установить Dynatrace OneAgent на Linux.")
+* SUSE Linux Enterprise Server 15.6 (модуль OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux.md "Узнайте, как загрузить и установить Dynatrace OneAgent на Linux.")
 * Fedora 39, 40 (модуль OS)
 * openSUSE 15.6 (модуль OS)
 * Ubuntu 24.04 (модуль OS)
@@ -282,14 +282,14 @@ scraped: 2026-03-06T21:12:54.357617
 Развёртывание начинается 13 августа 2024 г. для OneAgent
 
 * Обогащение журналов доступа Apache Tomcat (модуль Java). Функция OneAgent: Java - Обогащение контекстом трассировки/спана для неструктурированных журналов доступа Apache Tomcat
-* Мониторинг журналов для регионов IBM CICS и подсистем IBM IMS. [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs "Мониторинг журналов z/OS с помощью Dynatrace.")
+* Мониторинг журналов для регионов IBM CICS и подсистем IBM IMS. [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs.md "Мониторинг журналов z/OS с помощью Dynatrace.")
 * NGINX 1.26.1, 1.27 (модуль NGINX)
 
 ## 1.295 OneAgent
 
 Развёртывание начинается 16 июля 2024 г. для OneAgent
 
-* GraalVM Native Image для проектов Maven и Gradle (модуль Java Native Image). [Начало работы](/docs/ingest-from/technology-support/application-software/java/graalvm-native-image "Установка, настройка и управление модулем Dynatrace GraalVM Native Image.")
+* GraalVM Native Image для проектов Maven и Gradle (модуль Java Native Image). [Начало работы](../ingest-from/technology-support/application-software/java/graalvm-native-image.md "Установка, настройка и управление модулем Dynatrace GraalVM Native Image.")
 * Go toolchain с FIPS (openssl-fips) (модуль Go). Функция OneAgent: Go FIPS
 * RxJava 3 (модуль Java). Функция OneAgent: Java RxJava v3+ tracing
 
@@ -297,7 +297,7 @@ scraped: 2026-03-06T21:12:54.357617
 
 Выпущено 24 июня 2024 г.
 
-* Полная поддержка наблюдаемости OpenShift на архитектуре s390x. [Начало работы с Full-Stack observability](/docs/ingest-from/setup-on-k8s/deployment "Развёртывание Dynatrace Operator на Kubernetes")
+* Полная поддержка наблюдаемости OpenShift на архитектуре s390x. [Начало работы с Full-Stack observability](../ingest-from/setup-on-k8s/deployment.md "Развёртывание Dynatrace Operator на Kubernetes")
 
 ## 1.293 OneAgent
 
@@ -323,7 +323,7 @@ scraped: 2026-03-06T21:12:54.357617
 * Входящие сообщения Amazon SQS (модуль Java). Функция OneAgent: Java Amazon SQS
 * Kafka Batch Listener (модуль Java). Функция OneAgent: Java Spring Kafka Batch Listener
 * NGINX 1.25.4 (модуль NGINX)
-* redis-py (интеграция AWS Lambda). [Начало работы](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Мониторинг Lambda-функций, написанных на Python, Node.js и Java.")
+* redis-py (интеграция AWS Lambda). [Начало работы](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension.md "Мониторинг Lambda-функций, написанных на Python, Node.js и Java.")
 
 ## 1.287 OneAgent
 
@@ -381,8 +381,8 @@ scraped: 2026-03-06T21:12:54.357617
 
 Развёртывание начинается 4 октября 2023 г. для OneAgent
 
-* Amazon SNS для .NET (интеграция AWS Lambda). [Начало работы](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration#sqs-sns-out "Трассировка AWS Lambda-функций с использованием среды выполнения .NET")
-* Amazon SQS для .NET (интеграция AWS Lambda). [Начало работы](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration#sqs-sns-out "Трассировка AWS Lambda-функций с использованием среды выполнения .NET")
+* Amazon SNS для .NET (интеграция AWS Lambda). [Начало работы](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration.md#sqs-sns-out "Трассировка AWS Lambda-функций с использованием среды выполнения .NET")
+* Amazon SQS для .NET (интеграция AWS Lambda). [Начало работы](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration.md#sqs-sns-out "Трассировка AWS Lambda-функций с использованием среды выполнения .NET")
 * OpenJDK 21 LTS (модуль Java)
 * Rancher Kubernetes Engine 2 (модуль OS)
 
@@ -390,7 +390,7 @@ scraped: 2026-03-06T21:12:54.357617
 
 Развёртывание начинается 5 сентября 2023 г. для OneAgent
 
-* .NET (интеграция GCP). [Начало работы](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet "Мониторинг Google Cloud Functions с OpenTelemetry для .NET и Dynatrace.")
+* .NET (интеграция GCP). [Начало работы](../ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet.md "Мониторинг Google Cloud Functions с OpenTelemetry для .NET и Dynatrace.")
 * go-redis 7, 8, 9 (модуль Go). Функция OneAgent: Go Redis (go-redis/redis)
 * Java ForkJoin (модуль Java). Функция OneAgent: Java/Scala ForkJoinPool
 * JBoss LogManager 1.1+, 2, 3 (модуль Java)
@@ -400,8 +400,8 @@ scraped: 2026-03-06T21:12:54.357617
 Развёртывание начинается 7 августа 2023 г. для OneAgent
 
 * AlmaLinux 9.0, 9.1, 9.2 (модуль OS)
-* Amazon SNS для Java (интеграция AWS Lambda). [Начало работы](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-java "Подключение расширения Dynatrace AWS Lambda к Java API OpenTelemetry.")
-* Amazon SQS для Java (интеграция AWS Lambda). [Начало работы](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-java "Подключение расширения Dynatrace AWS Lambda к Java API OpenTelemetry.")
+* Amazon SNS для Java (интеграция AWS Lambda). [Начало работы](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-java.md "Подключение расширения Dynatrace AWS Lambda к Java API OpenTelemetry.")
+* Amazon SQS для Java (интеграция AWS Lambda). [Начало работы](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-java.md "Подключение расширения Dynatrace AWS Lambda к Java API OpenTelemetry.")
 * Fedora 37, 38 (модуль OS)
 * NGINX 1.25.0, 1.25.1 (модуль NGINX)
 * NGINX Plus R30 (модуль NGINX)
@@ -436,7 +436,7 @@ scraped: 2026-03-06T21:12:54.357617
 
 Развёртывание начинается 12 мая 2023 г. для OneAgent
 
-* CBL-Mariner 2 (модуль OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Узнайте, как установить OneAgent на Linux.")
+* CBL-Mariner 2 (модуль OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Узнайте, как установить OneAgent на Linux.")
 * DataStax client для Apache Cassandra 4 (модуль Java)
 * Fujitsu Interstage 13 (модуль Java)
 * Jakarta RESTful Web Services 2.1+ (модуль Java). Функция OneAgent: Java Servlet 5.0
@@ -455,9 +455,9 @@ scraped: 2026-03-06T21:12:54.357617
 * Azul Platform Core (Zulu) 20 (модуль Java)
 * Bellsoft Liberica 20 (модуль Java)
 * Eclipse Temurin (a.k.a. 'Adoptium') 20 (модуль Java)
-* Flatcar Container Linux 3033 LTS (модуль OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Узнайте, как установить OneAgent на Linux.")
+* Flatcar Container Linux 3033 LTS (модуль OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Узнайте, как установить OneAgent на Linux.")
 * Go 1.20 (модуль Go)
-* IBM IMS terminal transactions (модуль IMS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring#ims-terminal-transactions "Настройка мониторинга CICS и IMS на z/OS."). Функция OneAgent: z/OS IMS terminal transaction sensor
+* IBM IMS terminal transactions (модуль IMS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring.md#ims-terminal-transactions "Настройка мониторинга CICS и IMS на z/OS."). Функция OneAgent: z/OS IMS terminal transaction sensor
 * log4net 2.0.6+ (модуль .NET). Функция OneAgent: .NET - Обогащение контекстом трассировки/спана Framework log4net
 * OpenJDK 20 (модуль Java)
 * OpenTelemetry 1.11.1–1.14 (модуль Go)
@@ -477,8 +477,8 @@ scraped: 2026-03-06T21:12:54.357617
 
 * Apache Tomcat 10 (модуль Java). [Начало работы](https://www.dynatrace.com/hub/detail/apache-tomcat/#get-started), Функция OneAgent: Java Servlet 5.0
 * Cassandra client (gocql/gocql) 1.0–1.3 (модуль Go). [Начало работы](https://www.dynatrace.com/hub/detail/cassandra/#get-started), Функция OneAgent: Go CQL (gocql/gocql)
-* IBM CICS file access methods VSAM и BDAM (модуль IBM CICS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-cics-file-access "Мониторинг доступа к файлам CICS."), Функция OneAgent: z/OS CICS file monitoring sensor
-* IBM IMS [transaction-oriented BMPs](https://www.ibm.com/docs/en/ims/15.1.0?topic=bmps-batch-message-processing-transaction-oriented) (модуль IBM IMS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims#bmp-tracing "Установка модуля Dynatrace IMS.")
+* IBM CICS file access methods VSAM и BDAM (модуль IBM CICS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-cics-file-access.md "Мониторинг доступа к файлам CICS."), Функция OneAgent: z/OS CICS file monitoring sensor
+* IBM IMS [transaction-oriented BMPs](https://www.ibm.com/docs/en/ims/15.1.0?topic=bmps-batch-message-processing-transaction-oriented) (модуль IBM IMS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims.md#bmp-tracing "Установка модуля Dynatrace IMS.")
 * Jakarta Servlet 5, 6 (модуль Java). [Начало работы](https://www.dynatrace.com/hub/detail/jakarta-servlet/#get-started), Функция OneAgent: Java Servlet 5.0
 * Jersey 3 (модуль Java). Функция OneAgent: Java Servlet 5.0
 * Jetty HTTP server 11 (модуль Java). [Начало работы](https://www.dynatrace.com/hub/detail/eclipse-jetty/#get-started), Функция OneAgent: Java Servlet 5.0
@@ -491,14 +491,14 @@ scraped: 2026-03-06T21:12:54.357617
 
 Развёртывание начинается 24 января 2023 г. для OneAgent
 
-* Amazon SNS для Python (интеграция AWS Lambda). [Начало работы](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#python-sqs-sns "Включение и использование взаимодействия OpenTelemetry в AWS Lambda.")
-* Amazon SNS для Node.js (интеграция AWS Lambda). [Начало работы](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#nodejs-sqs-sns "Включение и использование взаимодействия OpenTelemetry в AWS Lambda.")
+* Amazon SNS для Python (интеграция AWS Lambda). [Начало работы](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability.md#python-sqs-sns "Включение и использование взаимодействия OpenTelemetry в AWS Lambda.")
+* Amazon SNS для Node.js (интеграция AWS Lambda). [Начало работы](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability.md#nodejs-sqs-sns "Включение и использование взаимодействия OpenTelemetry в AWS Lambda.")
 * Apache HttpClient 5.2 (модуль Java)
-* Google Cloud Run managed execution environment generation 1, 2 (модуль Java). [Начало работы](/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun "Мониторинг Java-приложений, развёрнутых на Google Cloud Run managed.")
+* Google Cloud Run managed execution environment generation 1, 2 (модуль Java). [Начало работы](../ingest-from/google-cloud-platform/gcp-integrations/cloudrun.md "Мониторинг Java-приложений, развёрнутых на Google Cloud Run managed.")
 * IBM App Connect Enterprise Callable nodes (модуль IBM IIB/ACE)
-* IBM CICS Transaction Server JSON requests (модуль IBM CICS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics#web-services "Установка модуля Dynatrace CICS.")
+* IBM CICS Transaction Server JSON requests (модуль IBM CICS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics.md#web-services "Установка модуля Dynatrace CICS.")
 * Node.js 19 (модуль Node.js)
-* SUSE Linux Enterprise Server 15.4 (модуль OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux "Узнайте, как загрузить и установить Dynatrace OneAgent на Linux.")
+* SUSE Linux Enterprise Server 15.4 (модуль OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux.md "Узнайте, как загрузить и установить Dynatrace OneAgent на Linux.")
 
 ## 1.255 OneAgent
 
@@ -512,8 +512,8 @@ scraped: 2026-03-06T21:12:54.357617
 
 Развёртывание начинается 14 ноября 2022 г. для OneAgent
 
-* Amazon SQS для Node.js (интеграция AWS Lambda). [Начало работы](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability "Включение и использование взаимодействия OpenTelemetry в AWS Lambda.")
-* Amazon SQS для Python (интеграция AWS Lambda). [Начало работы](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability "Включение и использование взаимодействия OpenTelemetry в AWS Lambda.")
+* Amazon SQS для Node.js (интеграция AWS Lambda). [Начало работы](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability.md "Включение и использование взаимодействия OpenTelemetry в AWS Lambda.")
+* Amazon SQS для Python (интеграция AWS Lambda). [Начало работы](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability.md "Включение и использование взаимодействия OpenTelemetry в AWS Lambda.")
 * PostgreSQL (jackc/pgx) 4.7–4.17 (модуль Go). [Начало работы](https://www.dynatrace.com/hub/detail/postgresql/#get-started)
 * SQLite3 5.1+ (модуль Node.js)
 
@@ -527,8 +527,8 @@ scraped: 2026-03-06T21:12:54.357617
 * Azul Platform Core (Zulu) 19 (модуль Java)
 * Bellsoft Liberica 19 (модуль Java)
 * Eclipse Temurin (a.k.a. 'Adoptium') 19 (модуль Java)
-* Go 1.16+ (интеграция GCP). [Начало работы](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-go "Инструментирование Google Cloud Functions в Go с OpenTelemetry.")
-* IBM z/OS Connect EE MQ service provider (модуль Java z/OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java "Настройка мониторинга Java на z/OS.")
+* Go 1.16+ (интеграция GCP). [Начало работы](../ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-go.md "Инструментирование Google Cloud Functions в Go с OpenTelemetry.")
+* IBM z/OS Connect EE MQ service provider (модуль Java z/OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java.md "Настройка мониторинга Java на z/OS.")
 * Jetty HTTP server 10 (модуль Java)
 * Oracle HotSpot VM 19 (модуль Java)
 * OpenJDK 19 (модуль Java)
@@ -541,20 +541,20 @@ scraped: 2026-03-06T21:12:54.357617
 
 Развёртывание начинается 15 сентября 2022 г. для OneAgent
 
-* Amazon Linux 2022 (модуль OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Узнайте, как установить OneAgent на Linux.")
-* Go 1.19 (модуль Go). [Начало работы](/docs/ingest-from/technology-support/application-software/go "Обзор поддержки Go в Dynatrace.")
-* OpenTelemetry 1.8, 1.9 (модуль Go). [Начало работы](/docs/ingest-from/technology-support/application-software/go "Обзор поддержки Go в Dynatrace.")
-* Rocky Linux 9 (модуль OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Узнайте, как установить OneAgent на Linux.")
+* Amazon Linux 2022 (модуль OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Узнайте, как установить OneAgent на Linux.")
+* Go 1.19 (модуль Go). [Начало работы](../ingest-from/technology-support/application-software/go.md "Обзор поддержки Go в Dynatrace.")
+* OpenTelemetry 1.8, 1.9 (модуль Go). [Начало работы](../ingest-from/technology-support/application-software/go.md "Обзор поддержки Go в Dynatrace.")
+* Rocky Linux 9 (модуль OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Узнайте, как установить OneAgent на Linux.")
 
 ## 1.247 OneAgent
 
 Развёртывание начинается 25 августа 2022 г. для OneAgent
 
 * Apache Camel 2.21+ (модуль Java). [Начало работы](https://www.dynatrace.com/hub/detail/apache-camel/)
-* IBM Semeru для z/OS 11 (модуль Java z/OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java "Настройка мониторинга Java на z/OS.")
-* JMX 1.0+ (модуль Java z/OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics "Настройка мониторинга JMX-метрик для Java-приложений на z/OS.")
+* IBM Semeru для z/OS 11 (модуль Java z/OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java.md "Настройка мониторинга Java на z/OS.")
+* JMX 1.0+ (модуль Java z/OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics.md "Настройка мониторинга JMX-метрик для Java-приложений на z/OS.")
 * Monolog 3.0 (модуль PHP)
-* Python (интеграция GCP). [Начало работы](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-python "Мониторинг Google Cloud Functions с OpenTelemetry для Python и Dynatrace.")
+* Python (интеграция GCP). [Начало работы](../ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-python.md "Мониторинг Google Cloud Functions с OpenTelemetry для Python и Dynatrace.")
 * Red Hat Fuse на OpenShift 7.0+ (модуль Java). [Начало работы](https://www.dynatrace.com/hub/detail/red-hat-fuse/)
 * Red Hat Fuse Standalone 7.0+ (модуль Java). [Начало работы](https://www.dynatrace.com/hub/detail/red-hat-fuse/)
 
@@ -562,72 +562,72 @@ scraped: 2026-03-06T21:12:54.357617
 
 Развёртывание начинается 25 июля 2022 г. для SaaS и 1 августа 2022 г. для Managed
 
-* DynamoDB client SDK для Node.js (интеграция AWS Lambda). [Начало работы](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#nodejs-instrumentation "Включение и использование взаимодействия OpenTelemetry в AWS Lambda.")
+* DynamoDB client SDK для Node.js (интеграция AWS Lambda). [Начало работы](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability.md#nodejs-instrumentation "Включение и использование взаимодействия OpenTelemetry в AWS Lambda.")
 
 ## 1.245 SaaS
 
 Развёртывание начинается 6 июля 2022 г. для SaaS
 
-* DynamoDB client SDK для .NET (интеграция AWS Lambda). [Начало работы](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration#dynamo-db "Трассировка AWS Lambda-функций с использованием среды выполнения .NET")
+* DynamoDB client SDK для .NET (интеграция AWS Lambda). [Начало работы](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration.md#dynamo-db "Трассировка AWS Lambda-функций с использованием среды выполнения .NET")
 
 ## 1.245 OneAgent
 
 Развёртывание начинается 19 июля 2022 г. для OneAgent
 
-* AlmaLinux 8.6+ (модуль OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Узнайте, как установить OneAgent на Linux.")
-* Fedora 35, 36 (модуль OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Узнайте, как установить OneAgent на Linux.")
-* IBM CICS Transaction Server 6.1 (модуль CICS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics "Установка модуля Dynatrace CICS.")
-* IBM Virtual I/O Server (AIX) 3.1 (модуль OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix#vios-installation "Узнайте, как загрузить и установить Dynatrace OneAgent на AIX.")
-* Kong API Gateway (модуль NGINX). [Начало работы](/docs/ingest-from/technology-support/application-software/nginx/manual-runtime-instrumentation#howto "Узнайте, как принудительно инструментировать NGINX во время выполнения.")
+* AlmaLinux 8.6+ (модуль OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Узнайте, как установить OneAgent на Linux.")
+* Fedora 35, 36 (модуль OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Узнайте, как установить OneAgent на Linux.")
+* IBM CICS Transaction Server 6.1 (модуль CICS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics.md "Установка модуля Dynatrace CICS.")
+* IBM Virtual I/O Server (AIX) 3.1 (модуль OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix.md#vios-installation "Узнайте, как загрузить и установить Dynatrace OneAgent на AIX.")
+* Kong API Gateway (модуль NGINX). [Начало работы](../ingest-from/technology-support/application-software/nginx/manual-runtime-instrumentation.md#howto "Узнайте, как принудительно инструментировать NGINX во время выполнения.")
 * OpenTelemetry 0.0.10, 0.0.11 (модуль PHP)
-* Python consumption plan (интеграция Azure). [Начало работы](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-python "Мониторинг Azure Functions с OpenTelemetry для Python и Dynatrace.")
+* Python consumption plan (интеграция Azure). [Начало работы](../ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-python.md "Мониторинг Azure Functions с OpenTelemetry для Python и Dynatrace.")
 * [RabbitMQ](https://www.npmjs.com/package/amqplib) client 0.9 (модуль Node.js). [Начало работы](https://www.dynatrace.com/hub/detail/net-rabbitmq/#get-started)
 
 ## 1.244 SaaS/Managed
 
 Развёртывание начинается 27 июня 2022 г. для SaaS и 5 июля 2022 г. для Managed
 
-* DynamoDB client SDK для Python (интеграция AWS Lambda). [Начало работы](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#python-instrumentation "Включение и использование взаимодействия OpenTelemetry в AWS Lambda.")
+* DynamoDB client SDK для Python (интеграция AWS Lambda). [Начало работы](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability.md#python-instrumentation "Включение и использование взаимодействия OpenTelemetry в AWS Lambda.")
 
 ## 1.243 OneAgent
 
 Развёртывание начинается 29 июня 2022 г. для OneAgent
 
 * Apache Log4j2 2.17.2–2.18 (модуль Java)
-* JDBC 3, 4 (модуль Java z/OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java#jdbc "Настройка мониторинга Java на z/OS.")
+* JDBC 3, 4 (модуль Java z/OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java.md#jdbc "Настройка мониторинга Java на z/OS.")
 * Node.js 18 (модуль Node.js)
-* Node.js consumption plan (интеграция Azure). [Начало работы](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-nodejs "Мониторинг Azure Functions с OpenTelemetry для Node.js и Dynatrace.")
+* Node.js consumption plan (интеграция Azure). [Начало работы](../ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-nodejs.md "Мониторинг Azure Functions с OpenTelemetry для Node.js и Dynatrace.")
 * Microsoft OpenJDK 11 LTS, 17 LTS (модуль Java)
 * [oracledb](https://www.npmjs.com/package/oracledb) 5 (модуль Node.js). [Начало работы](https://www.dynatrace.com/hub/detail/oracle-database/)
-* Red Hat Enterprise Linux 9 (модуль OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Узнайте, как установить OneAgent на Linux.")
-* Ubuntu 22.04 LTS (модуль OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Узнайте, как установить OneAgent на Linux.")
+* Red Hat Enterprise Linux 9 (модуль OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Узнайте, как установить OneAgent на Linux.")
+* Ubuntu 22.04 LTS (модуль OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Узнайте, как установить OneAgent на Linux.")
 
 ## 1.241 OneAgent
 
 Развёртывание начинается 8 июня 2022 г. для OneAgent
 
-* .NET / .NET Core (интеграция AWS Lambda). [Начало работы](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration "Трассировка AWS Lambda-функций с использованием среды выполнения .NET")
-* .NET / .NET Core consumption plan (интеграция Azure). [Начало работы](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet "Мониторинг Azure Functions с OpenTelemetry для .NET и Dynatrace.")
+* .NET / .NET Core (интеграция AWS Lambda). [Начало работы](../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration.md "Трассировка AWS Lambda-функций с использованием среды выполнения .NET")
+* .NET / .NET Core consumption plan (интеграция Azure). [Начало работы](../ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet.md "Мониторинг Azure Functions с OpenTelemetry для .NET и Dynatrace.")
 * Apache HttpClient 5.x (модуль Java)
 * Azul Platform Core (Zulu) 18 (модуль Java)
 * Bellsoft Liberica 18 (модуль Java)
-* JMS 1.1 (модуль Java z/OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java "Настройка мониторинга Java на z/OS.")
-* Node.js (интеграция GCP). [Начало работы](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-nodejs "Мониторинг Google Cloud Functions с OpenTelemetry для Node.js и Dynatrace.")
+* JMS 1.1 (модуль Java z/OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java.md "Настройка мониторинга Java на z/OS.")
+* Node.js (интеграция GCP). [Начало работы](../ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-nodejs.md "Мониторинг Google Cloud Functions с OpenTelemetry для Node.js и Dynatrace.")
 * OpenJDK 18 (модуль Java)
 * OpenTelemetry 0.0.9 (модуль PHP)
 * Oracle HotSpot VM 18 (модуль Java)
-* Rocky Linux 8 (модуль OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Узнайте, как установить OneAgent на Linux.")
+* Rocky Linux 8 (модуль OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Узнайте, как установить OneAgent на Linux.")
 * SAP JVM 18 (модуль Java)
 
 ## 1.239 OneAgent
 
 Развёртывание начинается 27 апреля 2022 г. для OneAgent
 
-* CentOS Stream 9 (модуль OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Узнайте, как установить OneAgent на Linux.")
+* CentOS Stream 9 (модуль OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Узнайте, как установить OneAgent на Linux.")
 * Go 18 (модуль Go)
-* IBM AIX 7.3 TL0 (модуль OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix "Узнайте, как установить OneAgent на AIX.")
+* IBM AIX 7.3 TL0 (модуль OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/aix.md "Узнайте, как установить OneAgent на AIX.")
 * Kestrel (ASP.NET Core applications), Real User Monitoring (RUM JavaScript и модуль .NET)
-* Ubuntu 21.10 (модуль OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Узнайте, как установить OneAgent на Linux.")
+* Ubuntu 21.10 (модуль OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/linux.md "Узнайте, как установить OneAgent на Linux.")
 
 ## 1.237 OneAgent
 
@@ -643,8 +643,8 @@ scraped: 2026-03-06T21:12:54.357617
 
 * .NET / .NET Core 5.0, 6.0 на Linux ARM64 (модуль .NET). [Начало работы](https://www.dynatrace.com/hub/detail/net/)
 * IBM App Connect Enterprise JavaCompute node (модуль ACE)
-* IBM CICS terminal transactions (модуль CICS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring#transaction-start-filters "Настройка мониторинга CICS и IMS на z/OS.")
-* IBM z/OS Connect EE IMS service provider (модуль Java z/OS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java "Настройка мониторинга Java на z/OS.")
+* IBM CICS terminal transactions (модуль CICS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring.md#transaction-start-filters "Настройка мониторинга CICS и IMS на z/OS.")
+* IBM z/OS Connect EE IMS service provider (модуль Java z/OS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java.md "Настройка мониторинга Java на z/OS.")
 * TIBCO ActiveMatrix BusinessWorks 6.6–6.8 (модуль Java)
 
 ## 1.233 OneAgent
@@ -652,7 +652,7 @@ scraped: 2026-03-06T21:12:54.357617
 Развёртывание начинается 7 февраля 2022 г. для OneAgent
 
 * Go 17 (модуль Go)
-* IBM IMS Fast Path (модуль IMS). [Начало работы](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims "Установка модуля Dynatrace IMS.")
+* IBM IMS Fast Path (модуль IMS). [Начало работы](../ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims.md "Установка модуля Dynatrace IMS.")
 * Jedis Redis 4 (модуль Java)
 * reactor-core 3 (модуль Java). [Начало работы](https://www.dynatrace.com/hub/detail/reactor-core/)
 

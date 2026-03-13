@@ -26,9 +26,9 @@ scraped: 2026-03-02T21:30:16.892113
 ## Концепции
 
 События жизненного цикла разработки ПО (SDLC events)
-:   [SDLC-события](/docs/deliver/pipeline-observability-sdlc-events#sdlc-events "Получая данные о ваших пайплайнах и процессах, вы можете наблюдать и анализировать практики разработки ПО в организации.") в рамках жизненного цикла разработки программного обеспечения (SDLC) играют ключевую роль в достижении эффективной наблюдаемости пайплайнов.
+:   [SDLC-события](../../pipeline-observability-sdlc-events.md#sdlc-events "Получая данные о ваших пайплайнах и процессах, вы можете наблюдать и анализировать практики разработки ПО в организации.") в рамках жизненного цикла разработки программного обеспечения (SDLC) играют ключевую роль в достижении эффективной наблюдаемости пайплайнов.
     Они представляют ключевые действия, происходящие на протяжении жизненного цикла, такие как выпуск новой версии ПО, развёртывание этой версии или успешное прохождение нагрузочного теста.
-    Подробнее см. [Семантический словарь SDLC-событий](/docs/semantic-dictionary/model/sdlc-events "Ознакомьтесь с моделями Семантического словаря, связанными с событиями жизненного цикла разработки ПО (SDLC).")
+    Подробнее см. [Семантический словарь SDLC-событий](../../../semantic-dictionary/model/sdlc-events.md "Ознакомьтесь с моделями Семантического словаря, связанными с событиями жизненного цикла разработки ПО (SDLC).")
 
 ## Целевая аудитория
 
@@ -40,7 +40,7 @@ scraped: 2026-03-02T21:30:16.892113
 ## Предварительные требования
 
 * Доступ к экземпляру Jira Cloud.
-* У вас есть [токен доступа](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Узнайте о концепции токена доступа и его областях действия.") с областью действия `OpenPipeline - Ingest Software Development Lifecycle Events (Built-in)`.
+* У вас есть [токен доступа](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Узнайте о концепции токена доступа и его областях действия.") с областью действия `OpenPipeline - Ingest Software Development Lifecycle Events (Built-in)`.
 
 ## Инструкция
 
@@ -82,7 +82,7 @@ scraped: 2026-03-02T21:30:16.892113
 
 Данные хранятся как события в Dynatrace.
 Соответственно, данные тарифицируются как Events powered by Grail.
-Подробнее о стоимости Events powered by Grail см. [Обзор Events powered by Grail (DPS)](/docs/license/capabilities/events "Узнайте, как рассчитывается потребление Dynatrace Events powered by Grail по модели подписки Dynatrace Platform.").
+Подробнее о стоимости Events powered by Grail см. [Обзор Events powered by Grail (DPS)](../../../license/capabilities/events.md "Узнайте, как рассчитывается потребление Dynatrace Events powered by Grail по модели подписки Dynatrace Platform.").
 
 Чтобы заполнить Dynatrace данными из Jira, настройте автоматизацию Jira.
 
@@ -112,7 +112,7 @@ scraped: 2026-03-02T21:30:16.892113
 Это действие отправляет HTTP-запрос на указанный URL.
 
 1. Добавьте [действие **Send web request**](https://confluence.atlassian.com/automation074/actions-1141481289.html#Actions-sendwebrequest).
-2. Введите **Web request URL** из шага [Dynatrace: Скопируйте путь эндпоинта](/docs/deliver/pipeline-observability-sdlc-events/tutorials/pipeline-observability-tutorial-jira#copy "Стабилизируйте систему доставки ценности, принимая решения на основе данных для улучшения фокуса, предсказуемости и времени доставки ценности.").
+2. Введите **Web request URL** из шага [Dynatrace: Скопируйте путь эндпоинта](pipeline-observability-tutorial-jira.md#copy "Стабилизируйте систему доставки ценности, принимая решения на основе данных для улучшения фокуса, предсказуемости и времени доставки ценности.").
    Шаблон: `https://{your-environment-id}.live.dynatrace.com/platform/ingest/v1/events.sdlc`.
 3. В поле **HTTP method** выберите **POST**.
 4. В поле **Web request body** выберите **Custom data**.
@@ -354,7 +354,7 @@ scraped: 2026-03-02T21:30:16.892113
 
 7. Организация данных
 
-Для организации данных в Dynatrace настройте [пользовательский бакет Grail](/docs/platform/grail/organize-data#custom-grail-buckets "Информация о модели данных Grail, состоящей из бакетов, таблиц и представлений.").
+Для организации данных в Dynatrace настройте [пользовательский бакет Grail](../../../platform/grail/organize-data.md#custom-grail-buckets "Информация о модели данных Grail, состоящей из бакетов, таблиц и представлений.").
 
 1. В Dynatrace перейдите в **Settings** > **Storage management** > **Bucket storage management**.
 2. Выберите **Bucket**.
@@ -363,7 +363,7 @@ scraped: 2026-03-02T21:30:16.892113
 5. Установите **Retention period** на три года в днях, то есть `1095` дней.
 6. Выберите **Create**.
 
-Если данные должны быть ограничены, настройте [разрешения бакета](/docs/platform/grail/organize-data/assign-permissions-in-grail "Узнайте, как назначить разрешения бакетам и таблицам в Grail.").
+Если данные должны быть ограничены, настройте [разрешения бакета](../../../platform/grail/organize-data/assign-permissions-in-grail.md "Узнайте, как назначить разрешения бакетам и таблицам в Grail.").
 
 8. Маршрутизация данных
 
@@ -388,7 +388,7 @@ scraped: 2026-03-02T21:30:16.892113
 17. Выберите **Save**.
 
 Все события, созданные автоматизацией Jira, добавляются в бакет.
-Подробнее см. [Настройка пайплайна обработки](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#process "Настройте источники приёма, маршруты и обработку ваших данных в OpenPipeline.").
+Подробнее см. [Настройка пайплайна обработки](../../../platform/openpipeline/getting-started/tutorial-configure-processing.md#process "Настройте источники приёма, маршруты и обработку ваших данных в OpenPipeline.").
 
 9. Проверка настройки
 
@@ -419,8 +419,8 @@ scraped: 2026-03-02T21:30:16.892113
 Чтобы найти и использовать дашборд:
 
 1. Перейдите к [дашборду Engineering Flow Metrics на Playground](https://dt-url.net/e0032zt).
-2. [Скачайте](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-download "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") дашборд.
-3. [Загрузите](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-upload "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") дашборд в вашу среду.
+2. [Скачайте](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-download "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") дашборд.
+3. [Загрузите](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-upload "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") дашборд в вашу среду.
 
    Вам потребуется скорректировать начальную дату определённых запросов в соответствии с началом загрузки ваших данных, что подробно описано в разделе **Hard-Coded Dates** дашборда.
 
@@ -469,8 +469,8 @@ scraped: 2026-03-02T21:30:16.892113
 
 ## Связанные темы
 
-* [События жизненного цикла разработки ПО (SDLC)](/docs/semantic-dictionary/model/sdlc-events "Ознакомьтесь с моделями Семантического словаря, связанными с событиями жизненного цикла разработки ПО (SDLC).")
-* [Загрузка SDLC-событий](/docs/deliver/pipeline-observability-sdlc-events/sdlc-events "Вы можете наблюдать за вашим пайплайном через события жизненного цикла разработки ПО (SDLC), которые затем можно загрузить для генерации аналитики.")
-* [Поток данных в OpenPipeline](/docs/platform/openpipeline/concepts/data-flow "Узнайте, как данные проходят через Dynatrace Platform, от приёма до хранения, через Dynatrace OpenPipeline.")
-* [Источники приёма в OpenPipeline](/docs/platform/openpipeline/reference/api-ingestion-reference "Справочник по источникам приёма и API для областей конфигурации, поддерживаемых в OpenPipeline.")
-* [Анализ SDLC-событий из вашего пайплайна](/docs/deliver/pipeline-observability-sdlc-events/pipeline-observability-analyze "Анализируйте ваш пайплайн, используя данные из событий жизненного цикла разработки ПО (SDLC) на наших примерах.")
+* [События жизненного цикла разработки ПО (SDLC)](../../../semantic-dictionary/model/sdlc-events.md "Ознакомьтесь с моделями Семантического словаря, связанными с событиями жизненного цикла разработки ПО (SDLC).")
+* [Загрузка SDLC-событий](../sdlc-events.md "Вы можете наблюдать за вашим пайплайном через события жизненного цикла разработки ПО (SDLC), которые затем можно загрузить для генерации аналитики.")
+* [Поток данных в OpenPipeline](../../../platform/openpipeline/concepts/data-flow.md "Узнайте, как данные проходят через Dynatrace Platform, от приёма до хранения, через Dynatrace OpenPipeline.")
+* [Источники приёма в OpenPipeline](../../../platform/openpipeline/reference/api-ingestion-reference.md "Справочник по источникам приёма и API для областей конфигурации, поддерживаемых в OpenPipeline.")
+* [Анализ SDLC-событий из вашего пайплайна](../pipeline-observability-analyze.md "Анализируйте ваш пайплайн, используя данные из событий жизненного цикла разработки ПО (SDLC) на наших примерах.")

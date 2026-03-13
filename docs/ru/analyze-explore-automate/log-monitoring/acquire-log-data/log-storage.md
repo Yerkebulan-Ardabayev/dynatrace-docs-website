@@ -17,11 +17,11 @@ Log Monitoring Classic
 
 Dynatrace версия 1.252+ OneAgent версия 1.243+
 
-Для новейшей версии Dynatrace см. [Правила приема логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Включение и исключение определенных источников логов, уже известных OneAgent, для хранения и анализа.").
+Для новейшей версии Dynatrace см. [Правила приема логов](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Включение и исключение определенных источников логов, уже известных OneAgent, для хранения и анализа.").
 
-Если вы используете версию OneAgent ниже 1.243 и версию Dynatrace Cluster ниже 1.252, перейдите к [Источники и хранилище логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-add-log-file-sources "Узнайте, как включать и исключать источники логов для анализа.").
+Если вы используете версию OneAgent ниже 1.243 и версию Dynatrace Cluster ниже 1.252, перейдите к [Источники и хранилище логов](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-add-log-file-sources.md "Узнайте, как включать и исключать источники логов для анализа.").
 
-Dynatrace позволяет включать и исключать определенные источники логов для вашего анализа. Используя [фреймворк управления идентификацией и доступом (IAM) Dynatrace](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Работа с политиками"), вы можете контролировать, какой пользователь может изменять конфигурации и в каком объеме.
+Dynatrace позволяет включать и исключать определенные источники логов для вашего анализа. Используя [фреймворк управления идентификацией и доступом (IAM) Dynatrace](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Работа с политиками"), вы можете контролировать, какой пользователь может изменять конфигурации и в каком объеме.
 
 Конфигурация основана на правилах, которые используют сопоставители (matchers) для иерархии, пути к логам и групп процессов. Эти правила определяют, какие лог-файлы среди обнаруженных OneAgent (автоматически или определенных как пользовательские источники логов) принимаются.
 
@@ -54,7 +54,7 @@ OneAgent версия 1.309+
 
 5
 
-[Вручную или автоматически примененные теги](/docs/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Узнайте, как определять и применять теги вручную и автоматически.") не видны для OneAgent.
+[Вручную или автоматически примененные теги](../../../manage/tags-and-metadata/setup/how-to-define-tags.md#automatic "Узнайте, как определять и применять теги вручную и автоматически.") не видны для OneAgent.
 
 6
 
@@ -192,8 +192,8 @@ OneAgent версия 1.305+
 
 Чтобы создать правило приема логов с помощью API:
 
-1. [Создайте токен доступа](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с разрешениями **Write settings** (`settings.write`) и **Read settings** (`settings.read`).
-2. Используйте эндпоинт [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "Просмотр схемы настроек через Dynatrace API."), чтобы узнать формат JSON, необходимый для отправки вашей конфигурации. Идентификатор схемы конфигурации хранения логов (`schemaId`) -- `builtin:logmonitoring.log-storage-settings`. Вот пример JSON-полезной нагрузки с конфигурацией хранения логов:
+1. [Создайте токен доступа](../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с разрешениями **Write settings** (`settings.write`) и **Read settings** (`settings.read`).
+2. Используйте эндпоинт [GET a schema](../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "Просмотр схемы настроек через Dynatrace API."), чтобы узнать формат JSON, необходимый для отправки вашей конфигурации. Идентификатор схемы конфигурации хранения логов (`schemaId`) -- `builtin:logmonitoring.log-storage-settings`. Вот пример JSON-полезной нагрузки с конфигурацией хранения логов:
 
    ```
    [
@@ -310,7 +310,7 @@ OneAgent версия 1.305+
 
    ]
    ```
-3. Используйте эндпоинт [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Создание или валидация объекта настроек через Dynatrace API.") для отправки вашей конфигурации.
+3. Используйте эндпоинт [POST an object](../../../dynatrace-api/environment-api/settings/objects/post-object.md "Создание или валидация объекта настроек через Dynatrace API.") для отправки вашей конфигурации.
 
 ## Примеры
 
@@ -1100,7 +1100,7 @@ OneAgent версия 1.305+
 
 Являются ли правила приема логов частью процесса автообнаружения?
 
-Нет. Автообнаружение -- это механизм OneAgent, который обнаруживает логи, но это не означает, что лог-файлы автоматически отправляются в хранилище. Страница конфигурации для автообнаружения запланирована для будущего релиза. Чтобы узнать больше об автообнаружении, см. [Автообнаружение содержимого логов (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-content-auto-discovery-v2 "Узнайте об автообнаружении содержимого логов и требованиях для автообнаружения.")
+Нет. Автообнаружение -- это механизм OneAgent, который обнаруживает логи, но это не означает, что лог-файлы автоматически отправляются в хранилище. Страница конфигурации для автообнаружения запланирована для будущего релиза. Чтобы узнать больше об автообнаружении, см. [Автообнаружение содержимого логов (Logs Classic)](log-content-auto-discovery-v2.md "Узнайте об автообнаружении содержимого логов и требованиях для автообнаружения.")
 
 Важен ли порядок элементов конфигурации?
 
@@ -1123,6 +1123,6 @@ OneAgent версия 1.305+
 
 Да. Фильтрация содержимого, выполняемая на OneAgent, снижает как затраты на DDU, так и использование сети. Вы можете рассчитать снижение затрат и использования сети, определив общее потребление данных и вычтя размер в ГБ отфильтрованных данных. Подробнее о расчете затрат DDU см.:
 
-* [Расчет DDU для Log Monitoring](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Узнайте, как рассчитывается объем потребления DDU для Dynatrace Log Monitoring Classic.")
+* [Расчет DDU для Log Monitoring](../../../license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Узнайте, как рассчитывается объем потребления DDU для Dynatrace Log Monitoring Classic.")
 
-* [Расчет DDU для Log Management and Analytics на базе Grail](/docs/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics "Узнайте, как рассчитывается объем потребления DDU для Dynatrace Log Management and Analytics.")
+* [Расчет DDU для Log Management and Analytics на базе Grail](../../../license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics.md "Узнайте, как рассчитывается объем потребления DDU для Dynatrace Log Management and Analytics.")

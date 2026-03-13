@@ -16,11 +16,11 @@ With the CICS module, you can get observability for your CICS transactions and p
 
 Trace your CICS transactions end-to-end with Dynatrace
 
-Analyze the performance of your transactions end-to-end using the [Service flow](/docs/observe/application-observability/services-classic/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.").
+Analyze the performance of your transactions end-to-end using the [Service flow](../../../../../observe/application-observability/services-classic/service-backtrace.md "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.").
 
 ![CICS service flow](https://dt-cdn.net/images/cics-trace-2357-0a7717e199.png)
 
-Use the [PurePath distributed traces](/docs/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") to drill down to the code level and to optimize your programs.
+Use the [PurePath distributed traces](../../../../../observe/application-observability/distributed-traces.md "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.") to drill down to the code level and to optimize your programs.
 
 ![CICS code-level](https://dt-cdn.net/images/cics-code-level-1984-d6aeff52fb.png)
 
@@ -44,7 +44,7 @@ The CICS module includes a PLT program that initiates at CICS startup. This prog
 
 You need to install the CICS module in every CICS region you want to monitor. If Dynatrace is already installed on a CICS and you want to update your CICS module without restarting the CICS region, see [Update the CICS module without region restart](#cics-update).
 
-You need to add the [z/OS Java module](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java#middleware "Set up Java monitoring on z/OS using the Java module.") to each CICS Transaction Gateway you want to monitor.
+You need to add the [z/OS Java module](install-zos-java.md#middleware "Set up Java monitoring on z/OS using the Java module.") to each CICS Transaction Gateway you want to monitor.
 
 ### CTS 6.2 support
 
@@ -84,7 +84,7 @@ If you don't want to use the CICS Library definition, you need to add the follow
 // DD DISP=SHR,DSN=<hlq>.SZDTLOAD
 ```
 
-Regardless of which option you decide to use, you need to tailor the DSN by replacing `<hlq>` with the high-level qualifier you set during [Download z/OS product datasets](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets "Download and install the Dynatrace product datasets for z/OS.").
+Regardless of which option you decide to use, you need to tailor the DSN by replacing `<hlq>` with the high-level qualifier you set during [Download z/OS product datasets](zosmf-installer/download-zos-datasets.md "Download and install the Dynatrace product datasets for z/OS.").
 
 ### Dynatrace CICS programs and transaction
 
@@ -98,7 +98,7 @@ While we recommend to use the default transaction ID `DTAX` for `ZDTPLT`, you ca
 
 Add the CICS startup program (`ZDTPLT`) after the `DFHDELIM` entry in your PLTPI source code and assemble the table.
 
-This step is optional for test installations because the [DTAX transaction](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction "Manage the CICS module via DTAX transactions.") can be used instead to enable the module after CICS initialization. We recommend that you place the `ZDTPLT` entry immediately before the `TYPE=FINAL` specification.
+This step is optional for test installations because the [DTAX transaction](../operation/dtax-transaction.md "Manage the CICS module via DTAX transactions.") can be used instead to enable the module after CICS initialization. We recommend that you place the `ZDTPLT` entry immediately before the `TYPE=FINAL` specification.
 
 The JCL procedure `DFHAUPLE` in `CICSHLQ.SDFHINST(DFHAUPLE)` can be used to build the PLTPI table.
 
@@ -206,7 +206,7 @@ INITPARM=(ZDTPLT='MEPC,<option>'),
 
 `<option>` sets the log level for the CICS module; see [Logging](#logging).
 
-To verify the connectivity between the CICS module and the zDC subsystem, [send a ping message](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction#ping "Manage the CICS module via DTAX transactions.").
+To verify the connectivity between the CICS module and the zDC subsystem, [send a ping message](../operation/dtax-transaction.md#ping "Manage the CICS module via DTAX transactions.").
 
 ## Customization
 
@@ -219,7 +219,7 @@ You can group CICS regions belonging to the same CICSPlex into a single process 
 3. Add `MASPLTWAIT(YES)` to your LMAS parameter. It instructs the CICS region to wait for the CICSPlex to become available before proceeding. If the CICSPlex isn't available, the module can't consider it.
 4. Optional The `MASINITTIME(10)` timeout interal defaults to 10 minutes. You can customize it in the range of 5 minutes to 59 minutes.
 
-If you enabled CICSPlex name grouping **after** the CICS region is up, you need to run the [DTAX transaction](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction "Manage the CICS module via DTAX transactions.") `DTAX DISABLE` and `DTAX ENABLE`.
+If you enabled CICSPlex name grouping **after** the CICS region is up, you need to run the [DTAX transaction](../operation/dtax-transaction.md "Manage the CICS module via DTAX transactions.") `DTAX DISABLE` and `DTAX ENABLE`.
 
 ### CICS web services support
 
@@ -400,7 +400,7 @@ DTAX messages will only be written to the ZDTQ TDQueue if the queue is open. If 
 
 ## Logging
 
-You can control the CICS module log level either by using the [DTAX transaction](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction "Manage the CICS module via DTAX transactions.") or by specifying an optional `INITPARM` at CICS region startup.
+You can control the CICS module log level either by using the [DTAX transaction](../operation/dtax-transaction.md "Manage the CICS module via DTAX transactions.") or by specifying an optional `INITPARM` at CICS region startup.
 
 ```
 INITPARM=(ZDTPLT='MEPC,<Option>'),
@@ -423,17 +423,17 @@ INITPARM=(ZDTPLT='MEPC,SEVERE'),
 
 There are two different sets of CICS logs:
 
-* One set of messages occurs when the [DTAX transaction](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction "Manage the CICS module via DTAX transactions.") issues the `DISABLE` and `ENABLE` commands. These messages are written to the CICS CSMT Transient Data Queue(usually written to MSGUSR). View these messages in the CICS job spool. DTAX also writes a set of messages to the CEEOUT SYSOUT statement when errors occur in the connection between the zDC and the DTAX transaction. View these messages in the CICS Job spool. As long as the DTAX transaction can connect to the zDC, it logs its messages to the zRemote.
+* One set of messages occurs when the [DTAX transaction](../operation/dtax-transaction.md "Manage the CICS module via DTAX transactions.") issues the `DISABLE` and `ENABLE` commands. These messages are written to the CICS CSMT Transient Data Queue(usually written to MSGUSR). View these messages in the CICS job spool. DTAX also writes a set of messages to the CEEOUT SYSOUT statement when errors occur in the connection between the zDC and the DTAX transaction. View these messages in the CICS Job spool. As long as the DTAX transaction can connect to the zDC, it logs its messages to the zRemote.
 * The CICS module monitoring transaction activity routes its log messages to the zDC, and subsequently to the zRemote. The log shows if any corrupted distributed traces, timeouts, or other errors occurred. You may also see some statistical information in these logs.
 
-You can access the CICS logs via the [zRemote logs](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote#logging "Prepare and install the zRemote for z/OS monitoring.").
+You can access the CICS logs via the [zRemote logs](install-zremote.md#logging "Prepare and install the zRemote for z/OS monitoring.").
 
 ## Update without region restart
 
 To update your CICS module to a newer version without restarting the region
 
-1. [Download z/OS product datasets](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets#download-pax "Download and install the Dynatrace product datasets for z/OS.") and [extract them](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets#extract-datasets "Download and install the Dynatrace product datasets for z/OS.").
-2. Use the [DTAX transaction](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction "Manage the CICS module via DTAX transactions.") to disable the CICS module in the CICS region with the `DISABLE` command.
+1. [Download z/OS product datasets](zosmf-installer/download-zos-datasets.md#download-pax "Download and install the Dynatrace product datasets for z/OS.") and [extract them](zosmf-installer/download-zos-datasets.md#extract-datasets "Download and install the Dynatrace product datasets for z/OS.").
+2. Use the [DTAX transaction](../operation/dtax-transaction.md "Manage the CICS module via DTAX transactions.") to disable the CICS module in the CICS region with the `DISABLE` command.
 3. Copy the CICS modules in the `SZDTLOAD` dataset into the Dynatrace `DFHRPL` dataset defined to your CICS region.
 4. Use the CICS command `CEMT I PROG(ZDT*)` to display the CICS modules. Use the `SET PROG(ZDT*) NEWCOPY` command to tell CICS a new version of each program will be used.
 5. Use the DTAX transaction to enable the CICS module with the `ENABLE` command. Verify that the new CICS module version is displayed on the DTAX panel.
@@ -516,7 +516,7 @@ Check the job log of the affected CICS regions for the following message, where 
 ZDTP004W zDC yyyy unavailable
 ```
 
-Verify that the zDC with that subsystem ID is started. If so, try to issue the [DTAX transaction](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction "Manage the CICS module via DTAX transactions.") command `ENABLE` to re-enable the connections.
+Verify that the zDC with that subsystem ID is started. If so, try to issue the [DTAX transaction](../operation/dtax-transaction.md "Manage the CICS module via DTAX transactions.") command `ENABLE` to re-enable the connections.
 
 How can I detect a version incompatibility?
 

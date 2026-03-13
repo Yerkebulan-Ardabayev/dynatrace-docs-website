@@ -47,11 +47,11 @@ Dynatrace сопоставляет отдельные инструменты Ope
 
 При загрузке метрик OpenTelemetry применяются лимиты и валидации, описанные в таблицах ниже.
 
-* Когда [Метрики на базе Grail (DPS)](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") указаны в вашей тарифной карте:
+* Когда [Метрики на базе Grail (DPS)](../../../../license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") указаны в вашей тарифной карте:
 
   + Latest Dynatrace Если настроен параметр **Advanced OTLP metric dimensions**, применяются лимиты из раздела **Advanced OTLP Metric dimensions limits**.
   + Если параметр **Advanced OTLP metric dimensions** не настроен, применяются лимиты из раздела **Default limits**.
-* Когда [Custom Metrics Classic (DPS)](/docs/license/capabilities/platform-extensions/custom-metrics-classic "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.") указан в вашей тарифной карте, применяются лимиты из раздела **Default limits**.
+* Когда [Custom Metrics Classic (DPS)](../../../../license/capabilities/platform-extensions/custom-metrics-classic.md "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.") указан в вашей тарифной карте, применяются лимиты из раздела **Default limits**.
 
 Для получения дополнительной информации о расширенных измерениях метрик OTLP см. [Важно: изменения измерений метрик OTLP](https://community.dynatrace.com/t5/Product-news/Important-OTLP-Metric-Dimensions-Changes/ba-p/293109) в сообществе Dynatrace.
 
@@ -78,7 +78,7 @@ OpenTelemetry поддерживает атрибуты на разных уро
 Бэкенд Dynatrace работает исключительно с дельта-значениями и требует соответствующей темпоральности агрегации.
 Убедитесь, что ваш экспортёр метрик настроен соответствующим образом, или установите переменную окружения [`OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE`](https://opentelemetry.io/docs/specs/otel/metrics/sdk_exporters/otlp/) в значение `DELTA`.
 
-Примеры настройки темпоральности для каждого отдельного языка см. в [пошаговых руководствах по интеграции](/docs/ingest-from/opentelemetry/walkthroughs "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
+Примеры настройки темпоральности для каждого отдельного языка см. в [пошаговых руководствах по интеграции](../../walkthroughs.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
 
 ### Ключи метрик
 

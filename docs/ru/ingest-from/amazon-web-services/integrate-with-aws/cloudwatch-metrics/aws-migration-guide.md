@@ -29,7 +29,7 @@ scraped: 2026-03-06T21:27:57.370633
 
 AWS Lambda
 
-Если вы используете интеграцию OneAgent для ваших функций Lambda, рекомендуем выполнить миграцию Lambda. Начиная с версии Dynatrace 1.283, данные нового сервиса Lambda отображаются вместе с данными OneAgent на [странице сервиса Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Мониторинг функций Lambda, написанных на Python, Node.js и Java.").
+Если вы используете интеграцию OneAgent для ваших функций Lambda, рекомендуем выполнить миграцию Lambda. Начиная с версии Dynatrace 1.283, данные нового сервиса Lambda отображаются вместе с данными OneAgent на [странице сервиса Lambda](../../integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension.md "Мониторинг функций Lambda, написанных на Python, Node.js и Java.").
 
 ## Влияние миграции
 
@@ -49,12 +49,12 @@ AWS Lambda
 
   + Сущностями, содержащими исторические и новые данные.
   + Данными облачного сервиса и данными OneAgent для непрозрачного **Amazon RDS** — не связан со страницей нового облачного сервиса с метриками CloudWatch.
-* Журналы из [Amazon Data Firehose](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose "Интеграция Amazon Data Firehose позволяет принимать облачные журналы напрямую, без дополнительной инфраструктуры и с более высокой пропускной способностью.") в **Amazon RDS** по-прежнему привязываются к историческим данным и сущности `RELATIONAL_DATABASE_SERVICE`.
+* Журналы из [Amazon Data Firehose](../aws-logs-ingest/lma-stream-logs-with-firehose.md "Интеграция Amazon Data Firehose позволяет принимать облачные журналы напрямую, без дополнительной инфраструктуры и с более высокой пропускной способностью.") в **Amazon RDS** по-прежнему привязываются к историческим данным и сущности `RELATIONAL_DATABASE_SERVICE`.
 * События или проблемы, которые могли бы автоматически обнаруживаться в исторических (классических) данных, могут не генерироваться автоматически. Правила оповещений не предусмотрены для следующих облачных сервисов:
 
   + **Amazon RDS**
   + **Amazon EBS**
-  + **AWS Lambda** — предусмотрена [предустановленная конфигурация событий метрик](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-set-up-metric-events-for-alerting "Настройка и конфигурация событий метрик для оповещений."), но её необходимо включить вручную.
+  + **AWS Lambda** — предусмотрена [предустановленная конфигурация событий метрик](aws-set-up-metric-events-for-alerting.md "Настройка и конфигурация событий метрик для оповещений."), но её необходимо включить вручную.
 
 Для мониторинга облачных сервисов необходимо настроить [Environment ActiveGate](https://dt-url.net/sc0396g).
 
@@ -83,19 +83,19 @@ AWS Lambda
 
 | Новый облачный сервис | Старый классический сервис |
 | --- | --- |
-| [Amazon EC2 Auto Scaling](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-auto-scaling "Мониторинг Amazon EC2 Auto Scaling и просмотр доступных метрик.") | [Amazon EC2 Auto Scaling (classic)](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-auto-scaling-builltin "Мониторинг Amazon EC2 Auto Scaling и просмотр доступных метрик.") |
-| [Amazon DynamoDB](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-dynamodb-new "Мониторинг Amazon DynamoDB и просмотр доступных метрик.") | [Amazon DynamoDB (classic)](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-dynamo-db-builtin "Мониторинг Amazon DynamoDB и просмотр доступных метрик.") |
-| [Amazon EBS](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-ebs-new "Мониторинг Amazon EBS и просмотр доступных метрик.") | [Amazon EBS (classic)](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elastic-block-store-ebs-builtin "Мониторинг Amazon Elastic Block Store и просмотр доступных метрик.") |
-| [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-lambda-new "Мониторинг AWS Lambda и просмотр доступных метрик.") | [AWS Lambda (classic)](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-lambda-cloudwatch-metrics/lambda-builtin "Мониторинг AWS Lambda (встроенный) и просмотр доступных метрик.") |
-| [Amazon RDS](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-relational-database-service-rds-new "Мониторинг Amazon RDS и просмотр доступных метрик.") | [Amazon RDS (classic)](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-relational-database-service-rds-builtin "Мониторинг Amazon RDS и просмотр доступных метрик.") |
+| [Amazon EC2 Auto Scaling](cloudwatch-ec2/ec2-auto-scaling.md "Мониторинг Amazon EC2 Auto Scaling и просмотр доступных метрик.") | [Amazon EC2 Auto Scaling (classic)](cloudwatch-ec2/ec2-auto-scaling-builltin.md "Мониторинг Amazon EC2 Auto Scaling и просмотр доступных метрик.") |
+| [Amazon DynamoDB](../aws-all-services/aws-service-dynamodb-new.md "Мониторинг Amazon DynamoDB и просмотр доступных метрик.") | [Amazon DynamoDB (classic)](../aws-all-services/aws-service-dynamo-db-builtin.md "Мониторинг Amazon DynamoDB и просмотр доступных метрик.") |
+| [Amazon EBS](../aws-all-services/aws-service-ebs-new.md "Мониторинг Amazon EBS и просмотр доступных метрик.") | [Amazon EBS (classic)](../aws-all-services/aws-service-elastic-block-store-ebs-builtin.md "Мониторинг Amazon Elastic Block Store и просмотр доступных метрик.") |
+| [AWS Lambda](../aws-all-services/aws-service-lambda-new.md "Мониторинг AWS Lambda и просмотр доступных метрик.") | [AWS Lambda (classic)](aws-lambda-cloudwatch-metrics/lambda-builtin.md "Мониторинг AWS Lambda (встроенный) и просмотр доступных метрик.") |
+| [Amazon RDS](../aws-all-services/aws-service-relational-database-service-rds-new.md "Мониторинг Amazon RDS и просмотр доступных метрик.") | [Amazon RDS (classic)](../aws-all-services/aws-service-relational-database-service-rds-builtin.md "Мониторинг Amazon RDS и просмотр доступных метрик.") |
 
 ## Миграция метрик
 
 Ниже приведены таблицы с метриками классических сервисов и соответствующими метриками облачных сервисов. Пустые ячейки указывают на отсутствие идентичной соответствующей метрики.
 
-Подробнее о доступе к ним в Grail можно узнать на этой [странице](/docs/analyze-explore-automate/metrics/built-in-metrics-on-grail "Ознакомьтесь с аналогами классических встроенных метрик, поддерживаемых на Grail.").
+Подробнее о доступе к ним в Grail можно узнать на этой [странице](../../../../analyze-explore-automate/metrics/built-in-metrics-on-grail.md "Ознакомьтесь с аналогами классических встроенных метрик, поддерживаемых на Grail.").
 
-Префикс `ext:` используется метриками из [расширений OneAgent](/docs/ingest-from/extensions/develop-your-extensions "Разработка собственных расширений в Dynatrace.") и [расширений ActiveGate](/docs/ingest-from/extensions/develop-your-extensions "Разработка собственных расширений в Dynatrace."), а также [классическими метриками для интеграции AWS](/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics "Интеграция метрик из Amazon CloudWatch.").
+Префикс `ext:` используется метриками из [расширений OneAgent](../../../extensions/develop-your-extensions.md "Разработка собственных расширений в Dynatrace.") и [расширений ActiveGate](../../../extensions/develop-your-extensions.md "Разработка собственных расширений в Dynatrace."), а также [классическими метриками для интеграции AWS](../cloudwatch-metrics.md "Интеграция метрик из Amazon CloudWatch.").
 
 Несмотря на схожесть наименований, метрики интеграции AWS **не** основаны на расширениях.
 

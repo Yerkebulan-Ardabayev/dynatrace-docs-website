@@ -27,23 +27,23 @@ scraped: 2026-03-06T21:15:57.758999
 
 Необходимые знания
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")
-* [Обработка в OpenPipeline](/docs/platform/openpipeline/concepts/processing "Узнайте основные концепции обработки Dynatrace OpenPipeline.")
+* [Dynatrace Query Language](../../grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
+* [Обработка в OpenPipeline](../concepts/processing.md "Узнайте основные концепции обработки Dynatrace OpenPipeline.")
 
 Предварительные требования
 
 * Среда Dynatrace SaaS на базе Grail и AppEngine.
-* Подписка Dynatrace Platform Subscription (DPS) с возможностями [Traces powered by Grail (DPS)](/docs/license/capabilities/traces "Узнайте, как рассчитывается потребление Dynatrace Traces powered by Grail в модели Dynatrace Platform Subscription (DPS).").
-* Разрешения OpenPipeline: `settings:objects:read` и `settings:objects:write`. Чтобы узнать, как настроить разрешения, см. [Разрешения в Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Узнайте, как назначать разрешения бакетам и таблицам в Grail.").
-* [Разрешения Distributed Tracing](/docs/observe/application-observability/distributed-tracing/permissions#user-permissions-for-distributed-tracing "Управление разрешениями для Distributed Tracing powered by Grail.")
+* Подписка Dynatrace Platform Subscription (DPS) с возможностями [Traces powered by Grail (DPS)](../../../license/capabilities/traces.md "Узнайте, как рассчитывается потребление Dynatrace Traces powered by Grail в модели Dynatrace Platform Subscription (DPS).").
+* Разрешения OpenPipeline: `settings:objects:read` и `settings:objects:write`. Чтобы узнать, как настроить разрешения, см. [Разрешения в Grail](../../grail/organize-data/assign-permissions-in-grail.md "Узнайте, как назначать разрешения бакетам и таблицам в Grail.").
+* [Разрешения Distributed Tracing](../../../observe/application-observability/distributed-tracing/permissions.md#user-permissions-for-distributed-tracing "Управление разрешениями для Distributed Tracing powered by Grail.")
 
 ## Примеры
 
 ### Запросы к рабочей нагрузке с разделением по Pod Kubernetes
 
-Этот пример показывает новый рекомендуемый способ получения [аналитики на уровне экземпляра сервиса](/docs/observe/application-observability/services-classic/analyze-individual-service-instances "Узнайте, как выполнять анализ экземпляров сервиса.") — концепция, которая уходит в прошлое. Извлекайте метрики из спанов и разделяйте по реальным измерениям развёртывания, таким как рабочая нагрузка Kubernetes, pod, хост и др.
+Этот пример показывает новый рекомендуемый способ получения [аналитики на уровне экземпляра сервиса](../../../observe/application-observability/services-classic/analyze-individual-service-instances.md "Узнайте, как выполнять анализ экземпляров сервиса.") — концепция, которая уходит в прошлое. Извлекайте метрики из спанов и разделяйте по реальным измерениям развёртывания, таким как рабочая нагрузка Kubernetes, pod, хост и др.
 
-Для типичных разделений, таких как пространство имён, кластер или регион облака, используйте готовые [основные поля Grail](/docs/semantic-dictionary/tags/primary-fields), уже доступные в метриках сервисов; новая метрика не требуется.
+Для типичных разделений, таких как пространство имён, кластер или регион облака, используйте готовые [основные поля Grail](../../../semantic-dictionary/tags/primary-fields.md), уже доступные в метриках сервисов; новая метрика не требуется.
 
 1. Найдите условие для соответствующих спанов в Notebooks
 
@@ -89,7 +89,7 @@ scraped: 2026-03-06T21:15:57.758999
    * Ключ новой метрики — например, `span.my-otel-demo-frontend.requests_by_pod.count`
    * Измерения метрики:
 
-     1. Выберите **Pre-defined** и выберите `k8s.pod.name` и `k8s.pod.uid` из [предопределённых измерений](/docs/semantic-dictionary/model/dt-system-events#audit-event "Познакомьтесь с моделями Semantic Dictionary, связанными с системными событиями."). Эти измерения идентифицируют pods, на которых работает рабочая нагрузка. Другие измерения также были предварительно выбраны, например `dt.entity.service`.
+     1. Выберите **Pre-defined** и выберите `k8s.pod.name` и `k8s.pod.uid` из [предопределённых измерений](../../../semantic-dictionary/model/dt-system-events.md#audit-event "Познакомьтесь с моделями Semantic Dictionary, связанными с системными событиями."). Эти измерения идентифицируют pods, на которых работает рабочая нагрузка. Другие измерения также были предварительно выбраны, например `dt.entity.service`.
      2. Выберите **Save**.
 
 Вы успешно создали новый пайплайн для извлечения метрики, содержащей информацию о количестве запросов к рабочей нагрузке `my-otel-demo-frontend`, и, поскольку метрика содержит pod в качестве измерения, вы сможете разделять запросы по pods. Новый пайплайн виден в списке пайплайнов.
@@ -133,7 +133,7 @@ scraped: 2026-03-06T21:15:57.758999
 
 Допущения для примера
 
-Количество проданных книг фиксируется как [атрибут запроса](/docs/observe/application-observability/services/request-attributes "Узнайте, что такое атрибуты запросов и как использовать их на всех уровнях представлений анализа сервисов."), например `request_attribute.book_orders_count`. Атрибуты запросов доступны под [`request_attribute.__attribute_name__`](/docs/semantic-dictionary/fields#request-attributes "Познакомьтесь со списком глобальных полей, имеющих определённое семантическое значение в Dynatrace и доступных для различных типов мониторинга.").
+Количество проданных книг фиксируется как [атрибут запроса](../../../observe/application-observability/services/request-attributes.md "Узнайте, что такое атрибуты запросов и как использовать их на всех уровнях представлений анализа сервисов."), например `request_attribute.book_orders_count`. Атрибуты запросов доступны под [`request_attribute.__attribute_name__`](../../../semantic-dictionary/fields.md#request-attributes "Познакомьтесь со списком глобальных полей, имеющих определённое семантическое значение в Dynatrace и доступных для различных типов мониторинга.").
 
 1. Перейдите в ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Process and contextualize** > **OpenPipeline** > **System events** > **Pipelines**.
 2. Выберите существующий пайплайн или создайте новый. Для создания нового пайплайна выберите  **Pipeline** и введите имя — например, `TeamA Span metrics from Services`.
@@ -162,7 +162,7 @@ scraped: 2026-03-06T21:15:57.758999
 
 Мы не создаём метрику для фактического `db.query.text` (например, `SELECT * FROM user_table`), так как это привело бы к метрике с очень высокой кардинальностью.
 
-Чтобы увидеть список фактических запросов, выполняемых вашими сервисами, используйте [анализ производительности запросов к базе данных в приложении Services](/docs/observe/application-observability/services/services-app#database-query-performance-analysis "Обеспечьте централизованный контроль над здоровьем, производительностью и ресурсами сервисов с помощью приложения Services.").
+Чтобы увидеть список фактических запросов, выполняемых вашими сервисами, используйте [анализ производительности запросов к базе данных в приложении Services](../../../observe/application-observability/services/services-app.md#database-query-performance-analysis "Обеспечьте централизованный контроль над здоровьем, производительностью и ресурсами сервисов с помощью приложения Services.").
 
 1. Добавьте новый атрибут группы запросов к спанам базы данных
 
@@ -256,11 +256,11 @@ scraped: 2026-03-06T21:15:57.758999
 
 3. Запросите топ-10 значений
 
-В ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** или ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** используйте [интерфейс Explore для метрик](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-metrics "Исследуйте данные с помощью нашего интерфейса point-and-click.") для построения графика `span.service.db_calls_by_group.count`:
+В ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** или ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** используйте [интерфейс Explore для метрик](../../../analyze-explore-automate/dashboards-and-notebooks/explore-data.md#explore-metrics "Исследуйте данные с помощью нашего интерфейса point-and-click.") для построения графика `span.service.db_calls_by_group.count`:
 
 * Разделение по `db.query.group` и `dt.entity.service`
 * Сортировка по метрике `value.A` в порядке `DESC`
-* Используйте [**Limit**](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#metric-limit "Исследуйте данные с помощью нашего интерфейса point-and-click.") `10` для отображения топ-10 результатов
+* Используйте [**Limit**](../../../analyze-explore-automate/dashboards-and-notebooks/explore-data.md#metric-limit "Исследуйте данные с помощью нашего интерфейса point-and-click.") `10` для отображения топ-10 результатов
 
 ![Explore metrics - Топ-10 запросов](https://dt-cdn.net/images/screenshot-2025-12-23-at-18-23-49-2414-9876a1a980.png)
 
@@ -286,7 +286,7 @@ scraped: 2026-03-06T21:15:57.758999
    * Ключ новой метрики — например, `span.request.cpu_time`.
    * Измерения метрики:
 
-     1. Выберите **Pre-defined** и выберите `endpoint.name` из [предопределённых измерений](/docs/semantic-dictionary/model/dt-system-events#audit-event "Познакомьтесь с моделями Semantic Dictionary, связанными с системными событиями."). Другие измерения также предварительно выбраны, например `dt.entity.service`.
+     1. Выберите **Pre-defined** и выберите `endpoint.name` из [предопределённых измерений](../../../semantic-dictionary/model/dt-system-events.md#audit-event "Познакомьтесь с моделями Semantic Dictionary, связанными с системными событиями."). Другие измерения также предварительно выбраны, например `dt.entity.service`.
      2. Выберите **Save**.
 
 Вы успешно создали новый процессор для извлечения метрики, содержащей информацию о времени CPU, затраченном на каждый эндпоинт. Поле CPU-time измеряется в наносекундах.
@@ -297,7 +297,7 @@ scraped: 2026-03-06T21:15:57.758999
 
 Поддержка извлечения метрик гистограмм появится в ближайшее время.
 
-Позднее в 2026 году Dynatrace предоставит готовые метрики для сторонних вызовов в рамках модернизации [Мониторинга сторонних сервисов](/docs/observe/application-observability/services/service-detection/service-detection-v1/monitor-3rd-party-services "Настройте, как Dynatrace должен отслеживать сторонние сервисы.").
+Позднее в 2026 году Dynatrace предоставит готовые метрики для сторонних вызовов в рамках модернизации [Мониторинга сторонних сервисов](../../../observe/application-observability/services/service-detection/service-detection-v1/monitor-3rd-party-services.md "Настройте, как Dynatrace должен отслеживать сторонние сервисы.").
 
 В этом примере мы описываем создание пайплайна и процессора извлечения метрик. Для подробных шагов следуйте подходу [примера с разделением рабочей нагрузки по Pod Kubernetes](#workload-requests-pod), но адаптируйте запросы фильтрации и маршрутизацию.
 

@@ -27,13 +27,13 @@ Dynatrace генерирует системные события для сист
 
 Необходимые знания
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")
-* [Обработка в OpenPipeline](/docs/platform/openpipeline/concepts/processing "Изучите основные концепции обработки в Dynatrace OpenPipeline.")
+* [Dynatrace Query Language](../../grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
+* [Обработка в OpenPipeline](../concepts/processing.md "Изучите основные концепции обработки в Dynatrace OpenPipeline.")
 
 Предварительные требования
 
-* Среда [Latest Dynatrace](/docs/platform "Dynatrace — это универсальная платформа, созданная для широкого спектра вариантов использования.")
-* [Лицензия Dynatrace](/docs/license "О Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace.") с возможностями [Обзор метрик на основе Grail (DPS)](/docs/license/capabilities/metrics "Узнайте, как рассчитывается потребление метрик Dynatrace на основе Grail в модели Dynatrace Platform Subscription.")
+* Среда [Latest Dynatrace](../../../platform.md "Dynatrace — это универсальная платформа, созданная для широкого спектра вариантов использования.")
+* [Лицензия Dynatrace](../../../license.md "О Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace.") с возможностями [Обзор метрик на основе Grail (DPS)](../../../license/capabilities/metrics.md "Узнайте, как рассчитывается потребление метрик Dynatrace на основе Grail в модели Dynatrace Platform Subscription.")
 * Разрешение пользователя `storage:system:read`
 
 ## Шаги
@@ -74,7 +74,7 @@ Dynatrace генерирует системные события для сист
    * Ключ новой метрики — например, `apps.updates`
    * Измерения метрики:
 
-     1. Выберите **Pre-defined** и выберите `resource` из [предопределённых измерений](/docs/semantic-dictionary/model/dt-system-events#audit-event "Познакомьтесь с моделями семантического словаря, связанными с системными событиями."). Это измерение идентифицирует ID приложения, из которого поступает обновление.
+     1. Выберите **Pre-defined** и выберите `resource` из [предопределённых измерений](../../../semantic-dictionary/model/dt-system-events.md#audit-event "Познакомьтесь с моделями семантического словаря, связанными с системными событиями."). Это измерение идентифицирует ID приложения, из которого поступает обновление.
      2. Выберите **Custom** и введите:
 
         + **Field name on record**: Пользовательское измерение, которое дополнительно определяет вашу метрику — например, `details.app.type`.
@@ -113,4 +113,4 @@ Dynatrace генерирует системные события для сист
 
 ## Связанные темы
 
-* [Модели системных событий](/docs/semantic-dictionary/model/dt-system-events "Познакомьтесь с моделями семантического словаря, связанными с системными событиями.")
+* [Модели системных событий](../../../semantic-dictionary/model/dt-system-events.md "Познакомьтесь с моделями семантического словаря, связанными с системными событиями.")

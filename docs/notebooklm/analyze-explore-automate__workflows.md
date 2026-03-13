@@ -20,7 +20,7 @@ scraped: 2026-03-05T21:40:37.061485
 * 3-min read
 * Updated on Feb 05, 2026
 
-You can automate sending out-of-the-box emails using Email ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") based on the events and schedules defined by your [workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+You can automate sending out-of-the-box emails using Email ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") based on the events and schedules defined by your [workflows](../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 
 ## Grant permissions to Workflows
 
@@ -35,7 +35,7 @@ To fine-tune permissions granted to Workflows
 
      + `email:emails:send`
 
-For more on general Workflows user permissions, see [Expression reference](/docs/analyze-explore-automate/workflows/reference#user-permission "Get to know the workflows expression").
+For more on general Workflows user permissions, see [Expression reference](analyze-explore-automate/workflows/reference.md#user-permission "Get to know the workflows expression").
 
 Trial environments are prohibited to send emails with **Email**.
 
@@ -197,7 +197,7 @@ Email formatting is disabled for messages with a size greater than or equal to 2
 | **Content** | The content of the email. | Required |
 
 You must enter at least one and a maximum of ten recipients in one of the fields (to, cc, bcc).
-If you are using [expressions](/docs/analyze-explore-automate/workflows/reference "Get to know the workflows expression") for the recipients, the expressions must be evaluated as a list of email addresses, for example, `["user1@domain.com", "user2@domain.com"]`.
+If you are using [expressions](analyze-explore-automate/workflows/reference.md "Get to know the workflows expression") for the recipients, the expressions must be evaluated as a list of email addresses, for example, `["user1@domain.com", "user2@domain.com"]`.
 
 ## Action result
 
@@ -218,13 +218,13 @@ The recommended approach is to wrap your input in an expression and convert it t
 {{ result("run_javascript_1") | to_json }}
 ```
 
-This approach ensures your data is properly formatted for transmission. For more information, see [Expression reference](/docs/analyze-explore-automate/workflows/reference#any-object "Get to know the workflows expression").
+This approach ensures your data is properly formatted for transmission. For more information, see [Expression reference](analyze-explore-automate/workflows/reference.md#any-object "Get to know the workflows expression").
 
 The message size is limited to 256 KiB. Larger payloads will result in an action failure.
 
 ## Related topics
 
-* [Send email notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")
+* [Send email notifications for problems](../ru/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-email.md "Learn how to send email notifications for problems using a simple workflow.")
 
 ---
 
@@ -257,7 +257,7 @@ The **Get content** action returns the content of an existing file in the reposi
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **File path** | The file path to a single, existing file. A directory path is not supported. | Required |
@@ -277,7 +277,7 @@ The **Create or replace file** action creates a new file with the specified cont
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **Create new branch** | Select this option if you want the change to be made in a new branch. | Optional |
@@ -302,7 +302,7 @@ The **Delete file** action deletes an existing file in the repository and commit
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **Create new branch** | Select this option if you want the file deletion to be made in a new branch. | Optional |
@@ -326,7 +326,7 @@ The **Create pull request** action creates a pull request for an existing branch
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the .git extension. The name is not case-sensitive. | Required |
 | **Source branch** | The source branch where the changes are implemented. | Required |
@@ -348,7 +348,7 @@ The **Get pull request** action returns details about the specified pull request
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **Pull request number** | The number that identifies the pull request. | Required |
@@ -367,7 +367,7 @@ The **List pull requests** action returns a list of pull requests that match the
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **State** | The state of pull requests you're interested in (open, closed, all). | Optional |
@@ -386,7 +386,7 @@ The **Merge pull request** action merges the specified pull request.
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **Pull request number** | The number that identifies the pull request. | Required |
@@ -406,7 +406,7 @@ The **Create issue** action creates a new issue in a specified repository.
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **Issue Title** | The title of the issue to be created. | Required |
@@ -430,7 +430,7 @@ The **Update issue** action updates an existing issue in a specified repository.
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **Issue Number** | The number of the issue to be updated. | Required |
@@ -454,7 +454,7 @@ The **Create comment** action creates a new comment on an issue or pull request 
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **Issue or pull request ID** | The ID of the issue or pull request to which the comment will be added. | Required |
@@ -474,7 +474,7 @@ The **Trigger workflow run** action triggers a workflow in a specified repositor
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **Workflow** | The ID of the workflow or the workflow file name including the `.yml` or `.yaml` extension. | Required |
@@ -495,7 +495,7 @@ The **Get latest workflow run** action retrieves data from the latest run workfl
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **Workflow** | The ID of the workflow or the workflow file name including the `.yml` or `.yaml` extension. | Required |
@@ -509,7 +509,7 @@ The action returns the `workflowRun` property that contains the full response of
 
 ## Related topics
 
-* [Set up GitHub Connector](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup "Learn how to set up GitHub Connector.")
+* [Set up GitHub Connector](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-setup.md "Learn how to set up GitHub Connector.")
 
 ---
 
@@ -562,7 +562,7 @@ To fine-tune permissions granted to Workflows
 
    * `app-settings:objects:read`
 
-For more information on general Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+For more information on general Workflows user permissions, see [User permissions for workflows](../ru/analyze-explore-automate/workflows/security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Step 3 Authorize connection to GitHub
 
@@ -582,11 +582,11 @@ To configure a connection
 
 Limit your personal access token permissions
 
-We strongly recommend that you limit the permissions of your personal access tokens to the necessary minimum. The necessary permissions for each action can be found on the [GitHub Actions page](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-actions "Integrate Workflows with GitHub services to utilize GitHub Connector actions."). For more information, see [Managing your personal access tokensï»¿](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) for information about limiting the access to a certain repository or permissions/scopes. This ensures that your personal access token can be used for accessing and changing only the permitted repositories.
+We strongly recommend that you limit the permissions of your personal access tokens to the necessary minimum. The necessary permissions for each action can be found on the [GitHub Actions page](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-actions.md "Integrate Workflows with GitHub services to utilize GitHub Connector actions."). For more information, see [Managing your personal access tokensï»¿](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) for information about limiting the access to a certain repository or permissions/scopes. This ensures that your personal access token can be used for accessing and changing only the permitted repositories.
 
 ## Related topics
 
-* [Actions for GitHub Connector](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-actions "Integrate Workflows with GitHub services to utilize GitHub Connector actions.")
+* [Actions for GitHub Connector](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-actions.md "Integrate Workflows with GitHub services to utilize GitHub Connector actions.")
 
 ---
 
@@ -607,22 +607,22 @@ scraped: 2026-03-04T21:32:31.513544
 * 1-min read
 * Updated on Feb 13, 2025
 
-GitHub Connector ![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub") enables your Dynatrace environment to integrate with GitHub repositories. With this integration, you can automate issues and pull requests based on monitoring data and events within a dedicated [workflow](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+GitHub Connector ![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub") enables your Dynatrace environment to integrate with GitHub repositories. With this integration, you can automate issues and pull requests based on monitoring data and events within a dedicated [workflow](../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 
 [![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub")
 
 ### Set up GitHub Connector
 
-Set up and configure GitHub Connector.](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup "Learn how to set up GitHub Connector.")[![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub")
+Set up and configure GitHub Connector.](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-setup.md "Learn how to set up GitHub Connector.")[![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub")
 
 ### GitHub Connector actions
 
-Learn about available actions used by GitHub Connector integration for automating issues and pull requests on your monitoring data and events.](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-actions "Integrate Workflows with GitHub services to utilize GitHub Connector actions.")
+Learn about available actions used by GitHub Connector integration for automating issues and pull requests on your monitoring data and events.](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-actions.md "Integrate Workflows with GitHub services to utilize GitHub Connector actions.")
 
 ## Related topics
 
-* [Actions for GitHub Connector](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-actions "Integrate Workflows with GitHub services to utilize GitHub Connector actions.")
-* [Set up GitHub Connector](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup "Learn how to set up GitHub Connector.")
+* [Actions for GitHub Connector](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-actions.md "Integrate Workflows with GitHub services to utilize GitHub Connector actions.")
+* [Set up GitHub Connector](../ru/analyze-explore-automate/workflows/actions/github/github-workflows-setup.md "Learn how to set up GitHub Connector.")
 
 ---
 
@@ -645,7 +645,7 @@ scraped: 2026-03-05T21:32:08.754245
 
 The following workflow actions are available for the GitLab Connector ![GitLab for Workflows](https://dt-cdn.net/images/gitlab-for-workflows-3a1edba03e.svg "GitLab for Workflows") integration. Each action corresponds to an endpoint of the GitLab Connector API.
 
-For details on creating workflows, refer to [Create workflows in Dynatrace Workflows](/docs/analyze-explore-automate/workflows/building#create "Create and edit workflows in Dynatrace Workflows.").
+For details on creating workflows, refer to [Create workflows in Dynatrace Workflows](analyze-explore-automate/workflows/building.md#create "Create and edit workflows in Dynatrace Workflows.").
 
 The actions are listed under the following categories:
 
@@ -919,8 +919,8 @@ Returns fields as described in the [Jobs API - Run a jobï»¿](https://dt-url.n
 
 ## Related topics
 
-* [GitLab Connector](/docs/analyze-explore-automate/workflows/actions/gitlab "Integrate Workflows with GitLab.")
-* [Set up GitLab Connector](/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-setup "Set up GitLab Connector.")
+* [GitLab Connector](../ru/analyze-explore-automate/workflows/actions/gitlab.md "Integrate Workflows with GitLab.")
+* [Set up GitLab Connector](../ru/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-setup.md "Set up GitLab Connector.")
 
 ---
 
@@ -969,7 +969,7 @@ To fine-tune permissions granted to Workflows
 
 * `app-settings:objects:read`
 
-To learn more about Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+To learn more about Workflows user permissions, see [User permissions for workflows](../ru/analyze-explore-automate/workflows/security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Step 3 Authorize connection to GitLab
 
@@ -992,8 +992,8 @@ Refer to the GitLab documentation for details on which scope is needed for which
 
 ## Related topics
 
-* [Actions for GitLab Connector](/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions "List of available actions in GitLab Connector.")
-* [GitLab Connector](/docs/analyze-explore-automate/workflows/actions/gitlab "Integrate Workflows with GitLab.")
+* [Actions for GitLab Connector](../ru/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions.md "List of available actions in GitLab Connector.")
+* [GitLab Connector](../ru/analyze-explore-automate/workflows/actions/gitlab.md "Integrate Workflows with GitLab.")
 
 ---
 
@@ -1014,17 +1014,17 @@ scraped: 2026-03-02T21:21:04.457505
 * 1-min read
 * Published Aug 23, 2024
 
-GitLab Connector ![GitLab for Workflows](https://dt-cdn.net/images/gitlab-for-workflows-3a1edba03e.svg "GitLab for Workflows") enables your Dynatrace environment to integrate with GitLab projects. With this integration, you can automate issues and merge requests based on monitoring data and events defined in a dedicated [workflow](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+GitLab Connector ![GitLab for Workflows](https://dt-cdn.net/images/gitlab-for-workflows-3a1edba03e.svg "GitLab for Workflows") enables your Dynatrace environment to integrate with GitLab projects. With this integration, you can automate issues and merge requests based on monitoring data and events defined in a dedicated [workflow](../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 
 [![GitLab for Workflows](https://dt-cdn.net/images/gitlab-for-workflows-3a1edba03e.svg "GitLab for Workflows")
 
 ### Set up GitLab Connector
 
-Set up and configure GitLab.](/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-setup "Set up GitLab Connector.")[![GitLab for Workflows](https://dt-cdn.net/images/gitlab-for-workflows-3a1edba03e.svg "GitLab for Workflows")
+Set up and configure GitLab.](../ru/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-setup.md "Set up GitLab Connector.")[![GitLab for Workflows](https://dt-cdn.net/images/gitlab-for-workflows-3a1edba03e.svg "GitLab for Workflows")
 
 ### Actions in GitLab Connector
 
-Learn about available actions used by GitLab Connector integration for automating issues and merge requests on your monitoring data and events.](/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions "List of available actions in GitLab Connector.")
+Learn about available actions used by GitLab Connector integration for automating issues and merge requests on your monitoring data and events.](../ru/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions.md "List of available actions in GitLab Connector.")
 
 ---
 
@@ -1070,7 +1070,7 @@ To fine-tune permissions granted to Workflows
 
   + `app-settings:objects:read`
 
-For more on general Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+For more on general Workflows user permissions, see [User permissions for workflows](../ru/analyze-explore-automate/workflows/security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Step 3 Configure Jenkins connection
 
@@ -1107,21 +1107,21 @@ scraped: 2026-03-06T21:33:38.177057
 * 1-min read
 * Updated on Feb 13, 2025
 
-Your Dynatrace environment can integrate with a Jira Cloud or Server instance using Jira Connector ![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows"). With this integration, you can automate creating, commenting, and assigning Jira issues on the events and schedules defined for your [workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+Your Dynatrace environment can integrate with a Jira Cloud or Server instance using Jira Connector ![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows"). With this integration, you can automate creating, commenting, and assigning Jira issues on the events and schedules defined for your [workflows](../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 
 [![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows")
 
 ### Jira Connector Get Started
 
-Get started with our Quick Start Guide for Jira Connector.](/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-get-started "Learn how to get started with Jira Connector actions.")[![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows")
+Get started with our Quick Start Guide for Jira Connector.](analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-get-started.md "Learn how to get started with Jira Connector actions.")[![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows")
 
 ### Set up Jira Connector
 
-Set up and configure Jira Connector.](/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-setup "Learn how to set up Jira Connector.")[![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows")
+Set up and configure Jira Connector.](analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-setup.md "Learn how to set up Jira Connector.")[![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows")
 
 ### Jira Connector actions
 
-Learn about available actions used by Jira Connector integration for automating issue creation.](/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-actions "Integrate with the Jira instance to utilize a wide range of Jira Connector actions.")
+Learn about available actions used by Jira Connector integration for automating issue creation.](analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-actions.md "Integrate with the Jira instance to utilize a wide range of Jira Connector actions.")
 
 ## Troubleshooting
 
@@ -1133,9 +1133,9 @@ The following are solutions to problems some people had with Jira Connector acti
 
 ## Related topics
 
-* [Set up Jira Connector](/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-setup "Learn how to set up Jira Connector.")
-* [Get started with Jira Connector](/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-get-started "Learn how to get started with Jira Connector actions.")
-* [Actions for Jira Connector](/docs/analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-actions "Integrate with the Jira instance to utilize a wide range of Jira Connector actions.")
+* [Set up Jira Connector](analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-setup.md "Learn how to set up Jira Connector.")
+* [Get started with Jira Connector](analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-get-started.md "Learn how to get started with Jira Connector actions.")
+* [Actions for Jira Connector](analyze-explore-automate/workflows/actions/jira/automation-workflows-jira-actions.md "Integrate with the Jira instance to utilize a wide range of Jira Connector actions.")
 
 ---
 
@@ -1155,7 +1155,7 @@ scraped: 2026-03-05T21:39:12.282254
 * 5-min read
 * Updated on Jun 18, 2025
 
-Your Dynatrace environment can integrate with Microsoft Entra ID (formerly Azure Active Directory) in automation [workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+Your Dynatrace environment can integrate with Microsoft Entra ID (formerly Azure Active Directory) in automation [workflows](../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 Microsoft Entra ID Connector ![Microsoft Entra ID Connector](https://dt-cdn.net/hub/app_icon_entra_id_new.png "Microsoft Entra ID Connector") enables you to use prebuilt actions in Workflows ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") to automate importing teams from Entra ID (based on various triggers) for defining entity ownership and other use cases in Dynatrace.
 Microsoft Entra ID Connector connects to the Azure Cloud via the [Microsoft Graph APIï»¿](https://developer.microsoft.com/en-us/graph).
 
@@ -1185,7 +1185,7 @@ To fine-tune permissions granted to Workflows
 
    * `app-settings:objects:read`
 
-For more on general Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+For more on general Workflows user permissions, see [User permissions for workflows](../ru/analyze-explore-automate/workflows/security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 3. Set up integration with Dynatrace
 
@@ -1230,7 +1230,7 @@ Microsoft Entra ID Connector requires a client secret from Microsoft Azure for a
   ALLOW settings:objects:read, settings:objects:write, settings:schemas:read WHERE settings:schemaId = "app:dynatrace.azure.connector:microsoft-entra-identity-developer-connection"
   ```
 
-  For details, see [Permissions and access](/docs/manage/settings/settings-20#permissions-and-access "Introduction to the Settings 2.0 framework").
+  For details, see [Permissions and access](../ru/manage/settings/settings-20.md#permissions-and-access "Introduction to the Settings 2.0 framework").
 
 ## Get groups from Entra ID in automation workflows
 
@@ -1240,7 +1240,7 @@ Microsoft Entra ID Connector requires a client secret from Microsoft Azure for a
 4. In the **Choose action** side panel, search for **Microsoft Entra ID** and select **Get groups**.
 5. In the action **Input**, you can target specific groups in **$filter** if you wish to filter your results. Likewise, in **$select**, specify which fields you wish to get from Entra ID. The syntax is based on [Entra ID API documentationï»¿](https://dt-url.net/azure-api-docs).
 
-   Important for importing Entra ID groups as [ownership teams](/docs/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership."):
+   Important for importing Entra ID groups as [ownership teams](../ru/deliver/ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership."):
 
    * You always need to include `id` and `displayName` in `$select`; these fields are mapped to the imported ownership team's **Team identifier** and **Team name**, respectively.
    * We recommend that you always include the `mailNickname` parameter in `get_groups`. This field has unique values in Entra ID and is set as a unique, human-readable **Supplementary Identifier** for your imported ownership team within Dynatrace.
@@ -1248,7 +1248,7 @@ Microsoft Entra ID Connector requires a client secret from Microsoft Azure for a
    * The `mail` parameter is set as the **Email** of the imported ownership team.
 
    ![Get groups input fields](https://dt-cdn.net/images/azure-connector-get-groups-input-698-0609c7d9dc.webp)
-6. Optionally, insert the **Import teams** action (provided by the [Ownership app](/docs/deliver/ownership-app#import-teams "It provides custom actions to define workflows integrating entity owners and their contact information.") ![Ownership](https://dt-cdn.net/images/ownership-w-background-512-99cc966544.webp "Ownership")) to store Entra ID group information as [ownership teams](/docs/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") within Dynatrace **Settings**. You can then [assign these imported teams as owners](/docs/deliver/ownership/assign-ownership "Assign owners to entities using entity metadata like labels, environment variables, and tags.") to any monitored entity in Dynatrace.
+6. Optionally, insert the **Import teams** action (provided by the [Ownership app](../ru/deliver/ownership-app.md#import-teams "It provides custom actions to define workflows integrating entity owners and their contact information.") ![Ownership](https://dt-cdn.net/images/ownership-w-background-512-99cc966544.webp "Ownership")) to store Entra ID group information as [ownership teams](../ru/deliver/ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") within Dynatrace **Settings**. You can then [assign these imported teams as owners](../ru/deliver/ownership/assign-ownership.md "Assign owners to entities using entity metadata like labels, environment variables, and tags.") to any monitored entity in Dynatrace.
 7. To test your workflow, select **Run**.
 
 ### Action result
@@ -1299,11 +1299,11 @@ Your Dynatrace environment can integrate with a PagerDuty environment using Page
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Grant permissions to Workflows**](/docs/analyze-explore-automate/workflows/actions/pagerduty#permissions "Automate creation of incidents in PagerDuty based on your monitoring data and events.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Grant permissions to Workflows**](../ru/analyze-explore-automate/workflows/actions/pagerduty.md#permissions "Automate creation of incidents in PagerDuty based on your monitoring data and events.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Create PagerDuty API key**](/docs/analyze-explore-automate/workflows/actions/pagerduty#api-key "Automate creation of incidents in PagerDuty based on your monitoring data and events.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Create PagerDuty API key**](../ru/analyze-explore-automate/workflows/actions/pagerduty.md#api-key "Automate creation of incidents in PagerDuty based on your monitoring data and events.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Configure PagerDuty connection**](/docs/analyze-explore-automate/workflows/actions/pagerduty#connection "Automate creation of incidents in PagerDuty based on your monitoring data and events.")
+**Configure PagerDuty connection**](../ru/analyze-explore-automate/workflows/actions/pagerduty.md#connection "Automate creation of incidents in PagerDuty based on your monitoring data and events.")
 
 ### Step 1 Grant permissions to Workflows
 
@@ -1319,7 +1319,7 @@ To fine-tune permissions granted to Workflows
    * `state:app-states:write`
    * `state:app-states:delete`
 
-For more on general Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+For more on general Workflows user permissions, see [User permissions for workflows](../ru/analyze-explore-automate/workflows/security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Step 2 Create PagerDuty API key
 
@@ -1371,7 +1371,7 @@ To create a workflow that raises a PagerDuty incident
 6. On one of the information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add"), search for `PagerDuty`, and select **Create an incident**.
 7. On each of the remaining information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") and drag the line to the **Create an incident** action.
 8. In the **Create an incident** action, select the [connection](#connection) to your PagerDuty environment.
-9. Configure the input fields as needed. To learn how to use the output of information-extracting notes, see [Expression reference](/docs/analyze-explore-automate/workflows/reference "Get to know the workflows expression").
+9. Configure the input fields as needed. To learn how to use the output of information-extracting notes, see [Expression reference](analyze-explore-automate/workflows/reference.md "Get to know the workflows expression").
 10. To test your workflow, select **Run**.
 
 ## Troubleshooting
@@ -1409,13 +1409,13 @@ When you integrate your Dynatrace environment with Red Hat Ansible Automation co
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Grant permissions to Workflows**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#permissions "Automate running of Ansible jobs based on your monitoring data and events.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Grant permissions to Workflows**](../ru/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible.md#permissions "Automate running of Ansible jobs based on your monitoring data and events.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Create Red Hat Ansible API key**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#api-key "Automate running of Ansible jobs based on your monitoring data and events.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Create Red Hat Ansible API key**](../ru/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible.md#api-key "Automate running of Ansible jobs based on your monitoring data and events.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Configure Red Hat Ansible Automation connection**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#connection "Automate running of Ansible jobs based on your monitoring data and events.")[![Step 4 optional](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Step 4 optional")
+**Configure Red Hat Ansible Automation connection**](../ru/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible.md#connection "Automate running of Ansible jobs based on your monitoring data and events.")[![Step 4 optional](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Step 4 optional")
 
-**Configure Red Hat Ansible Automation connection**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible#edgeconnect "Automate running of Ansible jobs based on your monitoring data and events.")
+**Configure Red Hat Ansible Automation connection**](../ru/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible.md#edgeconnect "Automate running of Ansible jobs based on your monitoring data and events.")
 
 ### Step 1 Grant permissions to Workflows
 
@@ -1431,7 +1431,7 @@ To fine-tune permissions granted to Workflows
 * `state:app-states:write`
 * `state:app-states:delete`
 
-For more on general Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+For more on general Workflows user permissions, see [User permissions for workflows](../ru/analyze-explore-automate/workflows/security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Step 2 Create Red Hat Ansible API key
 
@@ -1489,7 +1489,7 @@ To create a workflow that launches a job template
 4. On one of the information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add"), search for `Ansible`, and select **Launch job template**.
 5. On each of the remaining information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") and drag the line to the **Launch job template** action.
 6. In the **Launch job template** action, select the [connection](#connection) to your **Red Hat Ansible Automation Controller**.
-7. Configure the input fields as needed. To learn how to use the output of information-extracting notes, see [Expression reference](/docs/analyze-explore-automate/workflows/reference "Get to know the workflows expression").
+7. Configure the input fields as needed. To learn how to use the output of information-extracting notes, see [Expression reference](analyze-explore-automate/workflows/reference.md "Get to know the workflows expression").
 8. To test your workflow, select **Run**.
 
 ## Troubleshooting
@@ -1533,11 +1533,11 @@ To use Red Hat Ansible workflow actions, you first need to install Red Hat Ansib
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Set up Event-Driven Ansible controller for integration with Dynatrace**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible#setup-eda "Send events to Red Hat Event-Driven Ansible")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Set up Event-Driven Ansible controller for integration with Dynatrace**](../ru/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible.md#setup-eda "Send events to Red Hat Event-Driven Ansible")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Grant permissions to Workflows**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible#permissions "Send events to Red Hat Event-Driven Ansible")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Grant permissions to Workflows**](../ru/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible.md#permissions "Send events to Red Hat Event-Driven Ansible")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Configure Red Hat Event-Driven Ansible connection**](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible#connection "Send events to Red Hat Event-Driven Ansible")
+**Configure Red Hat Event-Driven Ansible connection**](../ru/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible.md#connection "Send events to Red Hat Event-Driven Ansible")
 
 ### Step 1 Configuration of Event-Driven Ansible controller
 
@@ -1726,7 +1726,7 @@ To fine-tune permissions granted to Workflows
 * `state:app-states:write`
 * `state:app-states:delete`
 
-For more on general Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+For more on general Workflows user permissions, see [User permissions for workflows](../ru/analyze-explore-automate/workflows/security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Step 3 Configure Red Hat Ansible connection
 
@@ -1771,7 +1771,7 @@ To create a workflow that sends an event to Event-Driven Ansible
 4. On one of the information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add"), search for `Ansible`, and select **Send event to Event-Driven Ansible**.
 5. On each of the remaining information-extracting nodes, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") and drag the line to the **Send event to Event-Driven Ansible** action.
 6. In the **Send event to Event-Driven Ansible** action, select the [connection](#connection) to your **Red Hat Event-Driven Ansible Controller**.
-7. Configure the event data field as needed. To learn how to use the output of information-extracting notes, see [Expression reference](/docs/analyze-explore-automate/workflows/reference "Get to know the workflows expression").
+7. Configure the event data field as needed. To learn how to use the output of information-extracting notes, see [Expression reference](analyze-explore-automate/workflows/reference.md "Get to know the workflows expression").
 
    The event data must be valid JSON.
 8. To test your workflow, select **Run**.
@@ -1795,17 +1795,17 @@ scraped: 2026-03-06T21:21:42.823422
 * Updated on Nov 18, 2025
 
 Your Dynatrace environment can integrate with a ServiceNow environment using ServiceNow Connector ![ServiceNow for Workflows](https://dt-cdn.net/images/servicenow-for-workflows-257-9349ea0329.png "ServiceNow for Workflows"), enabling you to create incidents based on your monitoring data and events automatically.
-Furthermore, you can retrieve groups from ServiceNow and import them as [Ownership teams](/docs/deliver/ownership/ownership-teams#import-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.").
+Furthermore, you can retrieve groups from ServiceNow and import them as [Ownership teams](../ru/deliver/ownership/ownership-teams.md#import-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.").
 
 ## Configure the integration
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Grant permissions to Workflows**](/docs/analyze-explore-automate/workflows/actions/service-now#permissions "Automate creation of incidents in ServiceNow based on your monitoring data and events.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Grant permissions to Workflows**](../ru/analyze-explore-automate/workflows/actions/service-now.md#permissions "Automate creation of incidents in ServiceNow based on your monitoring data and events.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Create ServiceNow authentication credentials**](/docs/analyze-explore-automate/workflows/actions/service-now#authentication "Automate creation of incidents in ServiceNow based on your monitoring data and events.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Create ServiceNow authentication credentials**](../ru/analyze-explore-automate/workflows/actions/service-now.md#authentication "Automate creation of incidents in ServiceNow based on your monitoring data and events.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Configure ServiceNow connection**](/docs/analyze-explore-automate/workflows/actions/service-now#connection "Automate creation of incidents in ServiceNow based on your monitoring data and events.")
+**Configure ServiceNow connection**](../ru/analyze-explore-automate/workflows/actions/service-now.md#connection "Automate creation of incidents in ServiceNow based on your monitoring data and events.")
 
 ### Step 1 Grant permissions to Workflows
 
@@ -1820,7 +1820,7 @@ To fine-tune permissions granted to Workflows
 
      + `app-settings:objects:read`
 
-For more on general Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+For more on general Workflows user permissions, see [User permissions for workflows](../ru/analyze-explore-automate/workflows/security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Step 2 Create ServiceNow authentication credentials
 
@@ -2058,7 +2058,7 @@ scraped: 2026-03-03T21:22:08.797257
 * 5-min read
 * Updated on Jan 23, 2026
 
-Your Dynatrace environment can integrate with a Slack workspace using Slack Connector ![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector"). You can automate sending messages to Slack based on the events and schedules defined for your [workflow](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+Your Dynatrace environment can integrate with a Slack workspace using Slack Connector ![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector"). You can automate sending messages to Slack based on the events and schedules defined for your [workflow](../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 
 ## Set up Slack integration
 
@@ -2091,7 +2091,7 @@ To fine-tune permissions granted to Workflows
    * `state:user-app-states:write`
    * `state:user-app-states:delete`
 
-For more on general Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+For more on general Workflows user permissions, see [User permissions for workflows](../ru/analyze-explore-automate/workflows/security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Step 3 Create Slack app
 
@@ -2492,7 +2492,7 @@ in Dynatrace Workflows using workflow expressions.
 
 Slack doesn't have a built-in templating language.
 Use our templating functionality.
-For more information, see [Dynatrace expressions](/docs/analyze-explore-automate/workflows/reference "Get to know the workflows expression").
+For more information, see [Dynatrace expressions](analyze-explore-automate/workflows/reference.md "Get to know the workflows expression").
 Expressions will be resolved at execution time, creating a static card payload that will be sent.
 
 #### Example 2: Dynamic messages with Expressions
@@ -2898,7 +2898,7 @@ To replicate this behavior, you can use expressions instead. The same example ab
 * `{% if condition %}` - Conditional blocks.
 * `{% for item in data %}` - Iterate over arrays.
 
-For more expression capabilities, see [Expression reference](/docs/analyze-explore-automate/workflows/reference "Get to know the workflows expression").
+For more expression capabilities, see [Expression reference](analyze-explore-automate/workflows/reference.md "Get to know the workflows expression").
 
 ## Use Workflows with Slack
 
@@ -2915,7 +2915,7 @@ For more expression capabilities, see [Expression reference](/docs/analyze-explo
 
    We recommend using the Slack channel ID. You can also use a Slack channel name or Slack channel ID; however, not all features of the **Send Message** action will be available.
 7. Provide a message body.
-   Format your message using [Slack Markdownï»¿](https://api.slack.com/reference/surfaces/formatting#basics). It is also possible to use [workflow expressions](/docs/analyze-explore-automate/workflows/reference "Get to know the workflows expression") as input.
+   Format your message using [Slack Markdownï»¿](https://api.slack.com/reference/surfaces/formatting#basics). It is also possible to use [workflow expressions](analyze-explore-automate/workflows/reference.md "Get to know the workflows expression") as input.
 8. To test your workflow, select **Run**.
 
 ## Troubleshooting
@@ -2930,7 +2930,7 @@ The following are solutions to problems some people had with Slack integration.
 
 ## Related topics
 
-* [Send Slack notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")
+* [Send Slack notifications for problems](../ru/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-slack.md "Learn how to send Slack notifications for problems using a simple workflow.")
 
 ---
 
@@ -2964,10 +2964,10 @@ Below is a list of workflow actions available for Text Processing.
 
 You may encounter double curly braces templating syntax when dealing with JSON or YAML files.
 
-[workflow expressions](/docs/analyze-explore-automate/workflows/reference "Get to know the workflows expression") also use double curly bracket notation.
+[workflow expressions](analyze-explore-automate/workflows/reference.md "Get to know the workflows expression") also use double curly bracket notation.
 
 It is possible to escape `{{` and `}}` with `{{ '{{' }}` and `{{ '}}' }}` respectively, however; actions provided by Text Processing only support valid JSON or YAML syntax.
-Should the expression evaluation result yield an action input that is not considered valid in respect to [JSONï»¿](https://www.json.org/json-en.html) or [YAMLï»¿](https://yaml.org/spec/1.2.2/), the workflow execution state is [`Error`](/docs/analyze-explore-automate/workflows/running#workflow-execution-states "Run and monitor workflows created in Dynatrace Workflows.").
+Should the expression evaluation result yield an action input that is not considered valid in respect to [JSONï»¿](https://www.json.org/json-en.html) or [YAMLï»¿](https://yaml.org/spec/1.2.2/), the workflow execution state is [`Error`](analyze-explore-automate/workflows/running.md#workflow-execution-states "Run and monitor workflows created in Dynatrace Workflows.").
 
 In the official Jinja documentation, read more about [escape mechanismsï»¿](https://jinja.palletsprojects.com/en/stable/templates/#escaping).
 
@@ -3305,14 +3305,14 @@ scraped: 2026-03-06T21:36:02.786540
 Text Processing provides `set` and `get` actions, which you can use to create, modify, or retrieve properties from JSON or YAML content.
 The YAML actions support multi-document YAML files through an optional document index parameter.
 
-You can combine the Text Processing actions with other Connector actions, for example, with [GitHub Connector action](/docs/analyze-explore-automate/workflows/actions/github "Integrate Workflows with GitHub for handling common developer tasks.") or [GitLab Connector action](/docs/analyze-explore-automate/workflows/actions/gitlab "Integrate Workflows with GitLab.") to fetch JSON or YAML files from a repository/project, manipulate them with the Text Processing Connector actions, and update them via a pull request or merge request.
+You can combine the Text Processing actions with other Connector actions, for example, with [GitHub Connector action](../ru/analyze-explore-automate/workflows/actions/github.md "Integrate Workflows with GitHub for handling common developer tasks.") or [GitLab Connector action](../ru/analyze-explore-automate/workflows/actions/gitlab.md "Integrate Workflows with GitLab.") to fetch JSON or YAML files from a repository/project, manipulate them with the Text Processing Connector actions, and update them via a pull request or merge request.
 
-For more information on how to start a workflow to use Text Processing, see [Workflows quick start guide](/docs/analyze-explore-automate/workflows/quickstart "Build and run your first workflow.").
+For more information on how to start a workflow to use Text Processing, see [Workflows quick start guide](analyze-explore-automate/workflows/quickstart.md "Build and run your first workflow.").
 
 ## Related topics
 
-* [Actions for Text Processing Connector](/docs/analyze-explore-automate/workflows/actions/text-processing/automation-workflows-text-processing-actions "Learn about the type of actions you use as part of a workflow for text processing a JSON or YAML file.")
-* [Workflows Connectors](/docs/analyze-explore-automate/workflows/actions "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.")
+* [Actions for Text Processing Connector](../ru/analyze-explore-automate/workflows/actions/text-processing/automation-workflows-text-processing-actions.md "Learn about the type of actions you use as part of a workflow for text processing a JSON or YAML file.")
+* [Workflows Connectors](../ru/analyze-explore-automate/workflows/actions.md "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.")
 
 ---
 
@@ -3341,63 +3341,63 @@ You can select Workflows Connectors from the Dynatrace Platform catalog. The Wor
 
 ### Kubernetes Connector
 
-Query and manipulate any Kubernetes resources such as pods, deployments, and services.](/docs/analyze-explore-automate/workflows/actions/kubernetes-automation "Integrate with Kubernetes for controlling your cluster.")[![AWS Connector](https://dt-cdn.net/images/aws-for-workflows3-256-5f6d52e0fa.png "AWS Connector")
+Query and manipulate any Kubernetes resources such as pods, deployments, and services.](analyze-explore-automate/workflows/actions/kubernetes-automation.md "Integrate with Kubernetes for controlling your cluster.")[![AWS Connector](https://dt-cdn.net/images/aws-for-workflows3-256-5f6d52e0fa.png "AWS Connector")
 
 ### AWS Connector
 
-The **AWS** Connector actions enable your Dynatrace environment to integrate with an AWS environment.](/docs/analyze-explore-automate/workflows/actions/aws "The AWS Connector integration provides powerful actions for various Amazon Web Services such as EC2, Autoscaling and S3.")[![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector")
+The **AWS** Connector actions enable your Dynatrace environment to integrate with an AWS environment.](analyze-explore-automate/workflows/actions/aws.md "The AWS Connector integration provides powerful actions for various Amazon Web Services such as EC2, Autoscaling and S3.")[![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector")
 
 ### Slack Connector
 
-Slack workflow actions come bundled with **Slack** Connector, which you can install in your environment through Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/slack "Send messages to Slack Workspaces")[![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub")
+Slack workflow actions come bundled with **Slack** Connector, which you can install in your environment through Dynatrace Hub.](../ru/analyze-explore-automate/workflows/actions/slack.md "Send messages to Slack Workspaces")[![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub")
 
 ### GitHub Connector
 
-GitHub workflow actions come bundled with **GitHub Connector**, which you can install in your environment through Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/github "Integrate Workflows with GitHub for handling common developer tasks.")[![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows")
+GitHub workflow actions come bundled with **GitHub Connector**, which you can install in your environment through Dynatrace Hub.](../ru/analyze-explore-automate/workflows/actions/github.md "Integrate Workflows with GitHub for handling common developer tasks.")[![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows")
 
 ### Jira Connector
 
-Jira workflow actions come bundled with **Jira Connector**, which you can install in your environment through Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/jira "Automate creating, transitioning, commenting, and assigning Jira issues on the events and schedules defined for your workflows.")[![Microsoft 365 for Workflows](https://dt-cdn.net/images/microsoft-365-for-workflows-sztyvk4-257-484266710c.png "Microsoft 365 for Workflows")
+Jira workflow actions come bundled with **Jira Connector**, which you can install in your environment through Dynatrace Hub.](../ru/analyze-explore-automate/workflows/actions/jira.md "Automate creating, transitioning, commenting, and assigning Jira issues on the events and schedules defined for your workflows.")[![Microsoft 365 for Workflows](https://dt-cdn.net/images/microsoft-365-for-workflows-sztyvk4-257-484266710c.png "Microsoft 365 for Workflows")
 
 ### Microsoft 365 Connector
 
-Microsoft 365 workflow actions come bundled with **Microsoft 365 Connector**, which you can install in your environment through Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/microsoft365 "Automate sending emails via Microsoft 365 based on the events and schedules defined for your workflows.")[![Microsoft Teams Connector](https://dt-cdn.net/images/ms-teams-for-workflows1-ybzab76-257-b1a35402d5.png "Microsoft Teams Connector")
+Microsoft 365 workflow actions come bundled with **Microsoft 365 Connector**, which you can install in your environment through Dynatrace Hub.](analyze-explore-automate/workflows/actions/microsoft365.md "Automate sending emails via Microsoft 365 based on the events and schedules defined for your workflows.")[![Microsoft Teams Connector](https://dt-cdn.net/images/ms-teams-for-workflows1-ybzab76-257-b1a35402d5.png "Microsoft Teams Connector")
 
 ### Microsoft Teams Connector
 
-Microsoft Teams workflow actions come bundled with **Microsoft Teams** Connector, which you can install in your environment through Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/microsoft-teams "Send messages to Microsoft Teams")[![PagerDuty](https://dt-cdn.net/images/pagerduty-for-workflows-257-0cd4ce0d3a.png "PagerDuty")
+Microsoft Teams workflow actions come bundled with **Microsoft Teams** Connector, which you can install in your environment through Dynatrace Hub.](analyze-explore-automate/workflows/actions/microsoft-teams.md "Send messages to Microsoft Teams")[![PagerDuty](https://dt-cdn.net/images/pagerduty-for-workflows-257-0cd4ce0d3a.png "PagerDuty")
 
 ### PagerDuty Connector
 
-PagerDuty workflow actions come bundled with **PagerDuty** Connector, which you can install in your environment through Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/pagerduty "Automate creation of incidents in PagerDuty based on your monitoring data and events.")[![Red Hat Ansible for Workflows](https://dt-cdn.net/images/red-hat-ansible-for-workflows-257-cfabd1452d.png "Red Hat Ansible for Workflows")
+PagerDuty workflow actions come bundled with **PagerDuty** Connector, which you can install in your environment through Dynatrace Hub.](../ru/analyze-explore-automate/workflows/actions/pagerduty.md "Automate creation of incidents in PagerDuty based on your monitoring data and events.")[![Red Hat Ansible for Workflows](https://dt-cdn.net/images/red-hat-ansible-for-workflows-257-cfabd1452d.png "Red Hat Ansible for Workflows")
 
 ### Red Hat Ansible Connector
 
-Red Hat Ansible workflow actions come bundled with **Red Hat Ansible** Connector, which you can install in your environment through Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible "Automate running of Ansible jobs based on your monitoring data and events.")[![Microsoft Entra ID Connector](https://dt-cdn.net/hub/app_icon_entra_id_new.png "Microsoft Entra ID Connector")
+Red Hat Ansible workflow actions come bundled with **Red Hat Ansible** Connector, which you can install in your environment through Dynatrace Hub.](../ru/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible.md "Automate running of Ansible jobs based on your monitoring data and events.")[![Microsoft Entra ID Connector](https://dt-cdn.net/hub/app_icon_entra_id_new.png "Microsoft Entra ID Connector")
 
 ### Microsoft Entra ID Connector
 
-Microsoft Entra ID workflow actions come bundled with **Microsoft Entra ID** Connector, which you can install in your environment via Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/microsoft-entra-id "Set up Microsoft Entra ID Connector to automate importing teams from Microsoft Entra ID via Workflows.")[![Microsoft Azure Connector](https://dt-cdn.net/images/azure-for-workflows-lcgzeur-256-0e765fdb69.png "Microsoft Azure Connector")
+Microsoft Entra ID workflow actions come bundled with **Microsoft Entra ID** Connector, which you can install in your environment via Dynatrace Hub.](../ru/analyze-explore-automate/workflows/actions/microsoft-entra-id.md "Set up Microsoft Entra ID Connector to automate importing teams from Microsoft Entra ID via Workflows.")[![Microsoft Azure Connector](https://dt-cdn.net/images/azure-for-workflows-lcgzeur-256-0e765fdb69.png "Microsoft Azure Connector")
 
 ### Microsoft Azure Connector
 
-Microsoft Azure workflow actions come bundled with **Microsoft Azure** Connector, which you can install in your environment via Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/azure "The Microsoft Azure Connector integration provides powerful actions for various Azure Services, for example, virtual machines and storage.")[![ServiceNow for Workflows](https://dt-cdn.net/images/servicenow-for-workflows-257-9349ea0329.png "ServiceNow for Workflows")
+Microsoft Azure workflow actions come bundled with **Microsoft Azure** Connector, which you can install in your environment via Dynatrace Hub.](analyze-explore-automate/workflows/actions/azure.md "The Microsoft Azure Connector integration provides powerful actions for various Azure Services, for example, virtual machines and storage.")[![ServiceNow for Workflows](https://dt-cdn.net/images/servicenow-for-workflows-257-9349ea0329.png "ServiceNow for Workflows")
 
 ### ServiceNow Connector
 
-Automate the creation of incidents in ServiceNow based on your monitoring data and events.](/docs/analyze-explore-automate/workflows/actions/service-now "Automate creation of incidents in ServiceNow based on your monitoring data and events.")[![GitLab for Workflows](https://dt-cdn.net/images/gitlab-for-workflows-3a1edba03e.svg "GitLab for Workflows")
+Automate the creation of incidents in ServiceNow based on your monitoring data and events.](../ru/analyze-explore-automate/workflows/actions/service-now.md "Automate creation of incidents in ServiceNow based on your monitoring data and events.")[![GitLab for Workflows](https://dt-cdn.net/images/gitlab-for-workflows-3a1edba03e.svg "GitLab for Workflows")
 
 ### GitLab Connector
 
-GitLab workflow actions can be bundled with **GitLab** Connector, which you can install in your environment through Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/gitlab "Integrate Workflows with GitLab.")[![Snowflake](https://dt-cdn.net/images/snowflake-for-workflows-256-3d9ba2057b.png "Snowflake")
+GitLab workflow actions can be bundled with **GitLab** Connector, which you can install in your environment through Dynatrace Hub.](../ru/analyze-explore-automate/workflows/actions/gitlab.md "Integrate Workflows with GitLab.")[![Snowflake](https://dt-cdn.net/images/snowflake-for-workflows-256-3d9ba2057b.png "Snowflake")
 
 ### Snowflake for Workflows
 
-Query and ingest data from Snowflake for Workflows.](/docs/analyze-explore-automate/workflows/actions/snowflake "Query and ingest data from Snowflake for Workflows.")[![Jenkins for Workflows](https://dt-cdn.net/images/jenkins-for-workflows-257-799b6950a2.png "Jenkins for Workflows")
+Query and ingest data from Snowflake for Workflows.](analyze-explore-automate/workflows/actions/snowflake.md "Query and ingest data from Snowflake for Workflows.")[![Jenkins for Workflows](https://dt-cdn.net/images/jenkins-for-workflows-257-799b6950a2.png "Jenkins for Workflows")
 
 ### Jenkins Connector
 
-Integrate with Jenkins to trigger builds and query the status of build jobs.](/docs/analyze-explore-automate/workflows/actions/jenkins "Automate pipelines in Jenkins.")
+Integrate with Jenkins to trigger builds and query the status of build jobs.](analyze-explore-automate/workflows/actions/jenkins.md "Automate pipelines in Jenkins.")
 
 ## Dynatrace integrations
 
@@ -3405,27 +3405,27 @@ Integrate with Jenkins to trigger builds and query the status of build jobs.](/d
 
 ### Email
 
-Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.](/docs/analyze-explore-automate/workflows/actions/email "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.")[![Ownership](https://dt-cdn.net/images/ownership-w-background-512-99cc966544.webp "Ownership")
+Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.](../ru/analyze-explore-automate/workflows/actions/email.md "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.")[![Ownership](https://dt-cdn.net/images/ownership-w-background-512-99cc966544.webp "Ownership")
 
 ### Ownership
 
-Ownership workflow actions are available directly within Workflows after you install the **Ownership** app. Ownership actions enable you to extract entity ownership contact information and use it in workflows for notifications and task assignments.](/docs/deliver/ownership-app "It provides custom actions to define workflows integrating entity owners and their contact information.")[![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian")
+Ownership workflow actions are available directly within Workflows after you install the **Ownership** app. Ownership actions enable you to extract entity ownership contact information and use it in workflows for notifications and task assignments.](../ru/deliver/ownership-app.md "It provides custom actions to define workflows integrating entity owners and their contact information.")[![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian")
 
 ### Site Reliability Guardian
 
-Site Reliability Guardian workflow action is available directly within Workflows after you install the **Site Reliability Guardian** app. It enables you to execute a guardian directly in workflows.](/docs/deliver/site-reliability-guardian#automation "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision.")[### Dynatrace Intelligence (Preview)
+Site Reliability Guardian workflow action is available directly within Workflows after you install the **Site Reliability Guardian** app. It enables you to execute a guardian directly in workflows.](../ru/deliver/site-reliability-guardian.md#automation "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision.")[### Dynatrace Intelligence (Preview)
 
-Automate AI analysis such as to forecast and remediate capacity shortages.](/docs/dynatrace-intelligence/use-cases/davis-for-workflows "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Synthetic Classic](https://dt-cdn.net/images/synthetic-512-83ec796e54.png "Synthetic Classic")
+Automate AI analysis such as to forecast and remediate capacity shortages.](../ru/dynatrace-intelligence/use-cases/davis-for-workflows.md "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Synthetic Classic](https://dt-cdn.net/images/synthetic-512-83ec796e54.png "Synthetic Classic")
 
 ### Synthetic for Workflows
 
-Enhance your automation capabilities with Synthetic Monitoring. **Synthetic for Workflows** allows you to execute synthetic monitors on demand at selected locations within your workflows.](/docs/observe/digital-experience/synthetic-on-grail/synthetic-for-workflows "Enhance your automation capabilities with Synthetic Monitoring.")[### Business Observability
+Enhance your automation capabilities with Synthetic Monitoring. **Synthetic for Workflows** allows you to execute synthetic monitors on demand at selected locations within your workflows.](../ru/observe/digital-experience/synthetic-on-grail/synthetic-for-workflows.md "Enhance your automation capabilities with Synthetic Monitoring.")[### Business Observability
 
-Generate business events from automated tasks to connect monitoring and observability data with business information.](/docs/observe/business-observability/bo-events-capturing "Capture business events for Dynatrace Business Observability.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
+Generate business events from automated tasks to connect monitoring and observability data with business information.](../ru/observe/business-observability/bo-events-capturing.md "Capture business events for Dynatrace Business Observability.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
 ### Text Processing
 
-Text Processing provides a set of `set` and `get` actions for manipulating content in JSON and YAML file types.](/docs/analyze-explore-automate/workflows/actions/text-processing "Automate text processing in JSON and YAML files for your workflows.")
+Text Processing provides a set of `set` and `get` actions for manipulating content in JSON and YAML file types.](../ru/analyze-explore-automate/workflows/actions/text-processing.md "Automate text processing in JSON and YAML files for your workflows.")
 
 ---
 
@@ -3446,13 +3446,13 @@ scraped: 2026-03-02T21:31:44.785730
 * 1-min read
 * Published Apr 02, 2024
 
-The **Execute DQL Query** action for Workflows enables you to use DQL queries in a workflow. In **DQL query**, enter your [DQL query](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."). In **Segment**, you can optionally select a filter segment.
+The **Execute DQL Query** action for Workflows enables you to use DQL queries in a workflow. In **DQL query**, enter your [DQL query](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."). In **Segment**, you can optionally select a filter segment.
 
 You can find the results in the **Result** tab of the **Execution** that you could use in subsequent tasks.
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
 
 ---
 
@@ -3486,7 +3486,7 @@ We strictly advise against providing any static Authorization header and therefo
 * **Method**: the HTTP request method to use.
 * **ULR**: the url the request should target.
 * **Authentication**: the HTTP Request action supports to use credentials of the credential vault for Basic and Token authentication.
-  Make sure the credential configuration [allows access](/docs/manage/credential-vault#access-cv "Store and manage credentials in the credential vault.") for the workflow actor (credential scope: `AppEngine`, app access: `Workflows app`, Owner access or actor as selected user).
+  Make sure the credential configuration [allows access](../common/manage/credential-vault.md#access-cv "Store and manage credentials in the credential vault.") for the workflow actor (credential scope: `AppEngine`, app access: `Workflows app`, Owner access or actor as selected user).
 * **Payload**: the payload of the HTTP request.
   Set an appropriate content-type header.
 * **Headers**: the HTTP request headers with their name and value.
@@ -3537,9 +3537,9 @@ Executing the Run JavaScript for Workflows action is similar to running the code
 
 ## Run JavaScript action security
 
-* The **Run JavaScript** action does not support [expressions](/docs/analyze-explore-automate/workflows/reference "Get to know the workflows expression") in its input to avoid the possibility of code injection.
+* The **Run JavaScript** action does not support [expressions](analyze-explore-automate/workflows/reference.md "Get to know the workflows expression") in its input to avoid the possibility of code injection.
 * All HTTP calls are validated against the global allowlist.
-* If you import [third-party libraries](#third-party) for your JavaScript action, the allowlisted CDN domains provide access to the entire package portfolio. Dynatrace JavaScript runtime is robust against certain attack vectors, but you might accidentally allow malicious code. Make sure to mirror dependencies that you rely on in your internal infrastructure and monitor their security implications with [Dynatrace Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.") or third-party tools like Snyk.
+* If you import [third-party libraries](#third-party) for your JavaScript action, the allowlisted CDN domains provide access to the entire package portfolio. Dynatrace JavaScript runtime is robust against certain attack vectors, but you might accidentally allow malicious code. Make sure to mirror dependencies that you rely on in your internal infrastructure and monitor their security implications with [Dynatrace Application Security](../ru/secure/application-security.md "Access the Dynatrace Application Security functionalities.") or third-party tools like Snyk.
 
 We strictly advise against returning any secret as part of the result. Every result is accessible in the executions to anyone with read access to the workflow.
 
@@ -3862,7 +3862,7 @@ scraped: 2026-03-06T21:30:16.176752
 * 1-min read
 * Published Apr 02, 2024
 
-An action is a generic, reusable function configured and triggered by a [task](/docs/analyze-explore-automate/workflows#concept-task "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."). For example, an action could be **Run JavaScript**, while a task would execute the action with a specific configuration to `get problem details` project. Actions are the tools to be assembled in your workflow to fit your custom process. Actions are provided out of the box by Dynatrace and can be installed via Dynatrace Hub.
+An action is a generic, reusable function configured and triggered by a [task](../ru/analyze-explore-automate/workflows.md#concept-task "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."). For example, an action could be **Run JavaScript**, while a task would execute the action with a specific configuration to `get problem details` project. Actions are the tools to be assembled in your workflow to fit your custom process. Actions are provided out of the box by Dynatrace and can be installed via Dynatrace Hub.
 
 ## Workflows actions
 
@@ -3870,27 +3870,27 @@ An action is a generic, reusable function configured and triggered by a [task](/
 
 ### Run JavaScript
 
-Use the **Run JavaScript** action to run JavaScript code.](/docs/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action "Execute JavaScript action for your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
+Use the **Run JavaScript** action to run JavaScript code.](../ru/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action.md "Execute JavaScript action for your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
 ### Execute DQL Query action
 
-Use the **Execute DQL Query** action for executing DQL queries.](/docs/analyze-explore-automate/workflows/default-workflow-actions/dql-query-workflow-action "Execute DQL query action for your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
+Use the **Execute DQL Query** action for executing DQL queries.](../ru/analyze-explore-automate/workflows/default-workflow-actions/dql-query-workflow-action.md "Execute DQL query action for your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
 ### HTTP Request action
 
-Use the **HTTP Request** action for executing HTTP requests.](/docs/analyze-explore-automate/workflows/default-workflow-actions/http-request-workflow-action "Execute HTTP request action for your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
+Use the **HTTP Request** action for executing HTTP requests.](../ru/analyze-explore-automate/workflows/default-workflow-actions/http-request-workflow-action.md "Execute HTTP request action for your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
 ### Request approval
 
-Use the **Request approval** action to add an approval step for manual confirmation.](/docs/analyze-explore-automate/workflows/default-workflow-actions/approval-request-workflow-action "Add an approval step to your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
+Use the **Request approval** action to add an approval step for manual confirmation.](analyze-explore-automate/workflows/default-workflow-actions/approval-request-workflow-action.md "Add an approval step to your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
 ### Run Workflow action
 
-Use the **Run Workflow** action to modularize workflow usage.](/docs/analyze-explore-automate/workflows/default-workflow-actions/run-workflow-action "Run a workflow as a task in another workflow.")
+Use the **Run Workflow** action to modularize workflow usage.](analyze-explore-automate/workflows/default-workflow-actions/run-workflow-action.md "Run a workflow as a task in another workflow.")
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
 
 ---
 
@@ -3916,26 +3916,26 @@ To access various workflow management commands:
 1. Find the workflow and select .
 2. Select a command. The list of commands available to you depends on your permissions.
 
-   * **Edit workflow**âsee [Create workflows in Dynatrace Workflows](/docs/analyze-explore-automate/workflows/building "Create and edit workflows in Dynatrace Workflows.")
-   * **Run workflow**âsee [Run and monitor workflows created in Dynatrace Workflows](/docs/analyze-explore-automate/workflows/running "Run and monitor workflows created in Dynatrace Workflows.")
+   * **Edit workflow**âsee [Create workflows in Dynatrace Workflows](analyze-explore-automate/workflows/building.md "Create and edit workflows in Dynatrace Workflows.")
+   * **Run workflow**âsee [Run and monitor workflows created in Dynatrace Workflows](analyze-explore-automate/workflows/running.md "Run and monitor workflows created in Dynatrace Workflows.")
    * **View execution history**âlists executions of the workflow
    * **Duplicate workflow**âmakes a copy of the selected workflow
    * **Make public** and  **Make private**âtoggle sharing on and off. Any user with permissions can access a public workflow.
-   * **Transfer ownership**âsee [Change ownership of a workflow](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-change-owner "Change ownership of your workflow.")
-   * **Version history**âsee [Compare and restore versions of a workflow](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-versioning "Compare and restore every version of your workflow.")
-   * **Workflow**âsee [Download a workflow or template](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-download#download-workflow "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.")
-   * **Template**âsee [Download a workflow or template](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-download#download-workflow-template "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.")
+   * **Transfer ownership**âsee [Change ownership of a workflow](analyze-explore-automate/workflows/manage-workflows/workflows-change-owner.md "Change ownership of your workflow.")
+   * **Version history**âsee [Compare and restore versions of a workflow](analyze-explore-automate/workflows/manage-workflows/workflows-versioning.md "Compare and restore every version of your workflow.")
+   * **Workflow**âsee [Download a workflow or template](analyze-explore-automate/workflows/manage-workflows/workflows-download.md#download-workflow "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.")
+   * **Template**âsee [Download a workflow or template](analyze-explore-automate/workflows/manage-workflows/workflows-download.md#download-workflow-template "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.")
    * **Delete workflow**âdeletes the selected workflow and any **Draft** available.
-   * **Delete draft**âsee [deletes only the workflow draft](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-manage-live-mode "Undeploy your workflow or download as Workflow or as a template.").
+   * **Delete draft**âsee [deletes only the workflow draft](../ru/analyze-explore-automate/workflows/manage-workflows/workflows-manage-live-mode.md "Undeploy your workflow or download as Workflow or as a template.").
 
 ## Related topics
 
-* [Upload a workflow or a workflow template](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-upload "Upload your workflow or your template.")
-* [Download a workflow or template](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-download "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.")
-* [Change ownership of a workflow](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-change-owner "Change ownership of your workflow.")
-* [Manage live or draft workflows](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-manage-live-mode "Undeploy your workflow or download as Workflow or as a template.")
-* [Get notified about workflow changes](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-notifications "Get workflow notifications about changes to your workflow, such as edits, deletions, and failures.")
-* [Compare and restore versions of a workflow](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-versioning "Compare and restore every version of your workflow.")
+* [Upload a workflow or a workflow template](analyze-explore-automate/workflows/manage-workflows/workflows-upload.md "Upload your workflow or your template.")
+* [Download a workflow or template](analyze-explore-automate/workflows/manage-workflows/workflows-download.md "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.")
+* [Change ownership of a workflow](analyze-explore-automate/workflows/manage-workflows/workflows-change-owner.md "Change ownership of your workflow.")
+* [Manage live or draft workflows](../ru/analyze-explore-automate/workflows/manage-workflows/workflows-manage-live-mode.md "Undeploy your workflow or download as Workflow or as a template.")
+* [Get notified about workflow changes](../ru/analyze-explore-automate/workflows/manage-workflows/workflows-notifications.md "Get workflow notifications about changes to your workflow, such as edits, deletions, and failures.")
+* [Compare and restore versions of a workflow](analyze-explore-automate/workflows/manage-workflows/workflows-versioning.md "Compare and restore every version of your workflow.")
 
 ---
 
@@ -3964,16 +3964,16 @@ To access various **Live** or **Draft** workflow management commands
 4. Next to the **Switch to live** button, open to the  menu.
 5. Select a command.
 
-   * **Workflow**âsee [Download a workflow or template](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-download#download-workflow "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.")
-   * **Template**âsee [Download a workflow or template](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-download#download-workflow-template "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.")
+   * **Workflow**âsee [Download a workflow or template](analyze-explore-automate/workflows/manage-workflows/workflows-download.md#download-workflow "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.")
+   * **Template**âsee [Download a workflow or template](analyze-explore-automate/workflows/manage-workflows/workflows-download.md#download-workflow-template "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.")
    * **Compare draft changes**âcompare the **Draft**to any the **Live** version of the workflow.
    * **Undeploy workflow**âthe workflow becomes draft only, any existing **Draft** will be replaced. It won't be triggered automatically anymore.
    * **Delete draft**âdeletes only the **Draft** of the workflow.
 
 ## Related topics
 
-* [Download a workflow or template](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-download "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.")
-* [Manage workflows](/docs/analyze-explore-automate/workflows/manage-workflows "Manage your workflows")
+* [Download a workflow or template](analyze-explore-automate/workflows/manage-workflows/workflows-download.md "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.")
+* [Manage workflows](analyze-explore-automate/workflows/manage-workflows.md "Manage your workflows")
 
 ---
 
@@ -4039,14 +4039,14 @@ To turn off notifications for workflow, select  > **Turn off notifications**.
 
 ## Related topics
 
-* [Workflows quick start guide](/docs/analyze-explore-automate/workflows/quickstart "Build and run your first workflow.")
-* [Create workflows in Dynatrace Workflows](/docs/analyze-explore-automate/workflows/building "Create and edit workflows in Dynatrace Workflows.")
-* [Manage workflows](/docs/analyze-explore-automate/workflows/manage-workflows "Manage your workflows")
-* [Upload a workflow or a workflow template](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-upload "Upload your workflow or your template.")
-* [Download a workflow or template](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-download "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.")
-* [Change ownership of a workflow](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-change-owner "Change ownership of your workflow.")
-* [Manage live or draft workflows](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-manage-live-mode "Undeploy your workflow or download as Workflow or as a template.")
-* [Compare and restore versions of a workflow](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-versioning "Compare and restore every version of your workflow.")
+* [Workflows quick start guide](analyze-explore-automate/workflows/quickstart.md "Build and run your first workflow.")
+* [Create workflows in Dynatrace Workflows](analyze-explore-automate/workflows/building.md "Create and edit workflows in Dynatrace Workflows.")
+* [Manage workflows](analyze-explore-automate/workflows/manage-workflows.md "Manage your workflows")
+* [Upload a workflow or a workflow template](analyze-explore-automate/workflows/manage-workflows/workflows-upload.md "Upload your workflow or your template.")
+* [Download a workflow or template](analyze-explore-automate/workflows/manage-workflows/workflows-download.md "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.")
+* [Change ownership of a workflow](analyze-explore-automate/workflows/manage-workflows/workflows-change-owner.md "Change ownership of your workflow.")
+* [Manage live or draft workflows](../ru/analyze-explore-automate/workflows/manage-workflows/workflows-manage-live-mode.md "Undeploy your workflow or download as Workflow or as a template.")
+* [Compare and restore versions of a workflow](analyze-explore-automate/workflows/manage-workflows/workflows-versioning.md "Compare and restore every version of your workflow.")
 
 ---
 
@@ -4080,32 +4080,32 @@ Here's what you can do with templates:
 ### Create a workflow from template
 
 You can create a workflow based on a template.
-For more information, see [Create workflow from pre-made template](/docs/analyze-explore-automate/workflows/building#pre-made-template "Create and edit workflows in Dynatrace Workflows.") or [Create workflow from YAML template](/docs/analyze-explore-automate/workflows/building#yaml-template "Create and edit workflows in Dynatrace Workflows.").
+For more information, see [Create workflow from pre-made template](analyze-explore-automate/workflows/building.md#pre-made-template "Create and edit workflows in Dynatrace Workflows.") or [Create workflow from YAML template](analyze-explore-automate/workflows/building.md#yaml-template "Create and edit workflows in Dynatrace Workflows.").
 
 ### Create a template
 
 You can create your own workflow template.
 To do so, create or modify a workflow and then export it as a template.
-For more information, see [Download a template](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-download#download-workflow-template "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.").
+For more information, see [Download a template](analyze-explore-automate/workflows/manage-workflows/workflows-download.md#download-workflow-template "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.").
 
 ### Create a workflow guide
 
 When you create a new workflow or template, you can include a guide that explains prerequisites and configuration steps.
 The guide will then be visible for anybody who uses the workflow or template.
-For more information, see [Workflow guide](/docs/analyze-explore-automate/workflows/building#workflow-guide "Create and edit workflows in Dynatrace Workflows.").
+For more information, see [Workflow guide](analyze-explore-automate/workflows/building.md#workflow-guide "Create and edit workflows in Dynatrace Workflows.").
 
 ## Next steps
 
 Now that you know how to use workflow templates:
 
-* Explore the  [**Hub**](/docs/manage/hub "See the information about Dynatrace Hub.") to find apps that come with pre-made templates.
-* Use and modify workflow templates for your [use cases](/docs/analyze-explore-automate/workflows/use-cases "Explore common Workflows use cases in Dynatrace deployments.").
+* Explore the  [**Hub**](../ru/manage/hub.md "See the information about Dynatrace Hub.") to find apps that come with pre-made templates.
+* Use and modify workflow templates for your [use cases](../ru/analyze-explore-automate/workflows/use-cases.md "Explore common Workflows use cases in Dynatrace deployments.").
 
 ## Related topics
 
-* [Workflows quick start guide](/docs/analyze-explore-automate/workflows/quickstart "Build and run your first workflow.")
-* [Create workflows in Dynatrace Workflows](/docs/analyze-explore-automate/workflows/building "Create and edit workflows in Dynatrace Workflows.")
-* [Manage workflows](/docs/analyze-explore-automate/workflows/manage-workflows "Manage your workflows")
+* [Workflows quick start guide](analyze-explore-automate/workflows/quickstart.md "Build and run your first workflow.")
+* [Create workflows in Dynatrace Workflows](analyze-explore-automate/workflows/building.md "Create and edit workflows in Dynatrace Workflows.")
+* [Manage workflows](analyze-explore-automate/workflows/manage-workflows.md "Manage your workflows")
 
 ---
 
@@ -4142,7 +4142,7 @@ If the required permission for a workflow task is missing, an attempt to execute
 
 Always make sure:
 
-* You have the required permissions granted in [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.").
+* You have the required permissions granted in [Account Management](../ru/manage/account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health.").
 * You granted all required permissions for the workflows to run in the authorization settings.
 
 To enable or edit the AutomationEngine authorization settings
@@ -4201,7 +4201,7 @@ The initial owner of a workflow is the user who creates it. Right after a workfl
 To let others access a workflow, the owner has the following options:
 
 * Make the workflow public. A public workflow is visible to every user with `automation:workflows:*` permissions.
-* Transfer ownership to another user. For details, see [Change ownership of a workflow](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-change-owner "Change ownership of your workflow.").
+* Transfer ownership to another user. For details, see [Change ownership of a workflow](analyze-explore-automate/workflows/manage-workflows/workflows-change-owner.md "Change ownership of your workflow.").
 * Transfer ownership to a group, in which case all members of the group can access the workflow, depending on their permissions.
 
 ### Execution access and ownership
@@ -4250,7 +4250,7 @@ By default, the workflow actor is the user who created the workflow. However, th
 
 We highly recommend using service users as actors for all workflows that are worked on collaboratively and serve a production grade use case.
 
-Service users and their permissions are managed by admins through [Identity and Access Management](/docs/manage/identity-access-management/user-and-group-management/access-service-users "Service users"). We highly recommend granting a service user only the permissions that are required for the intended usage scenario.
+Service users and their permissions are managed by admins through [Identity and Access Management](../ru/manage/identity-access-management/user-and-group-management/access-service-users.md "Service users"). We highly recommend granting a service user only the permissions that are required for the intended usage scenario.
 
 To set the workflow actor to a service user
 
@@ -4269,7 +4269,7 @@ ALLOW iam:service-users:use
 WHERE iam:service-user-email IN ("<SERVICE_USER_1_EMAIL>", "<SERVICE_USER_2_EMAIL>");
 ```
 
-For more information, see [Service users](/docs/manage/identity-access-management/user-and-group-management/access-service-users "Service users")
+For more information, see [Service users](../ru/manage/identity-access-management/user-and-group-management/access-service-users.md "Service users")
 
 ---
 
@@ -4300,17 +4300,17 @@ There are three event trigger types
 
 ## Event trigger
 
-The **Event trigger** allows you to specify a custom event filter with the help of a [DQL matcher](/docs/observe/business-observability/bo-event-processing/bo-events-processing-matcher "This is the DQL matcher in events in the classic pipeline .") expression to define which events will trigger a workflow execution.
+The **Event trigger** allows you to specify a custom event filter with the help of a [DQL matcher](observe/business-observability/bo-event-processing/bo-events-processing-matcher.md "This is the DQL matcher in events in the classic pipeline .") expression to define which events will trigger a workflow execution.
 
 The following configuration parameters are available to define the triggering behavior of the **Event trigger**.
 
 * **Event type**
 
   + **events** are created by Dynatrace and your monitoring and platform configuration.
-  + **bizevents** are business events. An external application sends the **bizevents**. For more information, see the [`/bizevents/ingest` endpoint](/docs/observe/business-observability/bo-api-ingest "Set up authentication for and ingest business events via API.").
+  + **bizevents** are business events. An external application sends the **bizevents**. For more information, see the [`/bizevents/ingest` endpoint](../ru/observe/business-observability/bo-api-ingest.md "Set up authentication for and ingest business events via API.").
   + **dt.system.events** are generated by Dynatrace system services. Not all system events are eligible to trigger workflows. To find the events that can be used, look for those with the `dt.openpipeline.pipelines` property set using filter `isNotNull(dt.openpipeline.pipelines)` in a notebook.
-  + **security.events** are generated by Dynatrace Application Security, ingested via the [`v1/security.events` endpoint](/docs/platform/openpipeline/reference/openpipeline-ingest-api/security-events/security-events-builtin "Ingest security events from built-in endpoints via OpenPipeline Ingest API.") or ingested via [`custom/security.events/<custom-endpoint-name>` endpoints](/docs/platform/openpipeline/reference/openpipeline-ingest-api/security-events/security-events-custom-endpoint "Configure a custom security event endpoint via OpenPipeline Ingest API."). For more information, see [security events](/docs/semantic-dictionary/model/security-events "Get to know the Semantic Dictionary models related to security events.") in the Semantic Dictionary.
-* In **Filter query**, you can define how to narrow down the events. The filter definition is provided in [DQL matcher](/docs/platform/openpipeline/reference/dql-matcher-in-openpipeline "Examine specific DQL functions and logical operators for log processing.") syntax.
+  + **security.events** are generated by Dynatrace Application Security, ingested via the [`v1/security.events` endpoint](platform/openpipeline/reference/openpipeline-ingest-api/security-events/security-events-builtin.md "Ingest security events from built-in endpoints via OpenPipeline Ingest API.") or ingested via [`custom/security.events/<custom-endpoint-name>` endpoints](platform/openpipeline/reference/openpipeline-ingest-api/security-events/security-events-custom-endpoint.md "Configure a custom security event endpoint via OpenPipeline Ingest API."). For more information, see [security events](semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.") in the Semantic Dictionary.
+* In **Filter query**, you can define how to narrow down the events. The filter definition is provided in [DQL matcher](../ru/platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing.") syntax.
 
 Optional Select **Query past events** to estimate the volume of matching events in your environment.
 
@@ -4320,7 +4320,7 @@ All events are evaluated in the ingest pipeline against the DQL matcher expressi
 
 ## Davis problem trigger
 
-Davis problems are created by [Dynatrace Intelligence](/docs/dynatrace-intelligence/root-cause-analysis "How Dynatrace analyzes problems to determine their root cause.") based on monitoring data. The **Davis problem trigger** allows selectively triggering a workflow in response. The trigger will happen once, when a Davis problem becomes active (on open and re-open), and optionally once when a problem is closed.
+Davis problems are created by [Dynatrace Intelligence](../ru/dynatrace-intelligence/root-cause-analysis.md "How Dynatrace analyzes problems to determine their root cause.") based on monitoring data. The **Davis problem trigger** allows selectively triggering a workflow in response. The trigger will happen once, when a Davis problem becomes active (on open and re-open), and optionally once when a problem is closed.
 
 The following configuration parameters are available to define the triggering behavior of the **Davis problem trigger**.
 
@@ -4328,17 +4328,17 @@ The following configuration parameters are available to define the triggering be
 
   + **active** means that the Davis problem is not closed yet.
   + **active or closed** means that the Davis problem can be both active or closed.
-* **Event category** definitions are in [Event categories](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.").
-* Select **Affected entities** based on their tags. For more information on tags, see [Define and apply tags](/docs/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.").
+* **Event category** definitions are in [Event categories](dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories.md "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.").
+* Select **Affected entities** based on their tags. For more information on tags, see [Define and apply tags](manage/tags-and-metadata/setup/how-to-define-tags.md "Find out how to define and apply tags manually and automatically.").
 
   + **Include all entities**
   + **Include entities with all defined tags below**
   + **Include entities with any defined tag below**
-* Define **Additional custom filter query** by adding any [DQL matcher](/docs/platform/openpipeline/reference/dql-matcher-in-openpipeline "Examine specific DQL functions and logical operators for log processing.") expression to the above definition.
+* Define **Additional custom filter query** by adding any [DQL matcher](../ru/platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing.") expression to the above definition.
 
 ## Davis event trigger
 
-Davis events are created by [Dynatrace Intelligence](/docs/dynatrace-intelligence/root-cause-analysis "How Dynatrace analyzes problems to determine their root cause.") based on monitoring data. The **Davis event trigger** allows selectively triggering a workflow in response.
+Davis events are created by [Dynatrace Intelligence](../ru/dynatrace-intelligence/root-cause-analysis.md "How Dynatrace analyzes problems to determine their root cause.") based on monitoring data. The **Davis event trigger** allows selectively triggering a workflow in response.
 
 The following configuration parameters are available to define the triggering behavior on Davis problem events
 
@@ -4350,22 +4350,22 @@ The following configuration parameters are available to define the triggering be
 
   + **equals** means there's a match if the Davis event name exactly matches the event name string.
   + **contains** means there's a match if the Davis event name contains the event name string.
-* Select the **Affected entities** based on their tags. For more information on tags, see [Define and apply tags](/docs/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.").
+* Select the **Affected entities** based on their tags. For more information on tags, see [Define and apply tags](manage/tags-and-metadata/setup/how-to-define-tags.md "Find out how to define and apply tags manually and automatically.").
 
   + **Include all entities**
   + **Include entities with all defined tags below**
   + **Include entities with any defined tag below**
-* Define **Additional custom filter query** by adding any [DQL matcher](/docs/platform/openpipeline/reference/dql-matcher-in-openpipeline "Examine specific DQL functions and logical operators for log processing.") expression to the above definition.
+* Define **Additional custom filter query** by adding any [DQL matcher](../ru/platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing.") expression to the above definition.
 
 ## Permissions
 
 The actor on a workflow with event trigger requires access to the event, thus the following permissions must be granted accordingly.
 
-* [storage:events:read](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#storage-events-read "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") - in case of generic event trigger of type events, as well as Davis problem or event trigger
-* [storage:security.events:read](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#storage-security-events-read "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") - in case of event trigger of type security.events
-* [storage:bizevents:read](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#storage-bizevents-read "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") - in case of generic event trigger of type bizevents
-* [storage:system:read](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#storage-system-read "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") - in case of generic event trigger of type dt.system.events
-* [storage:buckets:read](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#storage-buckets-read "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") - its recommended to restrict the permission to the bucket related to the event only
+* [storage:events:read](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#storage-events-read "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") - in case of generic event trigger of type events, as well as Davis problem or event trigger
+* [storage:security.events:read](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#storage-security-events-read "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") - in case of event trigger of type security.events
+* [storage:bizevents:read](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#storage-bizevents-read "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") - in case of generic event trigger of type bizevents
+* [storage:system:read](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#storage-system-read "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") - in case of generic event trigger of type dt.system.events
+* [storage:buckets:read](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#storage-buckets-read "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") - its recommended to restrict the permission to the bucket related to the event only
 
 These permissions must be granted for any kind of user selected as an actor. In the case of an interactive user (nonsystem user), make sure that these permissions are also chosen in the authorization settings by this user. For more details, see (permission documentation for Workflows](workflows-security).
 
@@ -4384,11 +4384,11 @@ To remedy this situation, we recommend adjusting the event trigger configuration
 
 
 
-* To access the event payload to parameterize tasks in your workflow, use the `event()` [expression](/docs/analyze-explore-automate/workflows/reference#event "Get to know the workflows expression").
+* To access the event payload to parameterize tasks in your workflow, use the `event()` [expression](analyze-explore-automate/workflows/reference.md#event "Get to know the workflows expression").
 * For an event trigger, Workflows will prompt the event context of the last successful execution for manually triggered workflow runs. The Workflows prompt allows you to adjust the event context for manual runs during workflow development iterations.
 * With **Query past events** in the event trigger definition, you can quickly see how many matching events were observed in the past in your environment.
-* Use [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") to explore the events in your environment and determine which events you want to leverage.
-* Be aware that event filter expressions only support [DQL matcher](/docs/platform/openpipeline/reference/dql-matcher-in-openpipeline "Examine specific DQL functions and logical operators for log processing.") syntax, which is a subset of DQL.
+* Use [Notebooks](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") to explore the events in your environment and determine which events you want to leverage.
+* Be aware that event filter expressions only support [DQL matcher](../ru/platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing.") syntax, which is a subset of DQL.
 
 ---
 
@@ -4421,43 +4421,43 @@ In this tutorial, you'll learn how to alert your team in real time by emailing t
 
 At a short glance, you will:
 
-1. [Create a simple workflow](/docs/analyze-explore-automate/workflows/simple-workflow#create-simple-workflow "Build and run a simple workflow.").
-2. Add an [event trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") for  [Davis problems](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
-3. Add an [email notification](/docs/analyze-explore-automate/workflows/actions/email "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.").
+1. [Create a simple workflow](analyze-explore-automate/workflows/simple-workflow.md#create-simple-workflow "Build and run a simple workflow.").
+2. Add an [event trigger](../ru/analyze-explore-automate/workflows/trigger/event-trigger.md "Guide to creating workflow automation event triggers in Dynatrace Workflows.") for  [Davis problems](../ru/analyze-explore-automate/workflows/trigger/event-trigger.md#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
+3. Add an [email notification](../ru/analyze-explore-automate/workflows/actions/email.md "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.").
 4. Save and run the  workflow to get email notifications.
 5. Verify your  workflow is working as expected.
 
 ## Prerequisites
 
 * You should have permission to configure and run a  simple workflow.
-  For example, the permission granted with the default policy is for a [standard user](/docs/manage/identity-access-management/permission-management/default-policies "Dynatrace default policies reference").
-* You should select the necessary permissions in [authorization settings](/docs/analyze-explore-automate/workflows/security#authorization-settings "Guide on security aspects of workflow automation in Dynatrace Workflows").
+  For example, the permission granted with the default policy is for a [standard user](manage/identity-access-management/permission-management/default-policies.md "Dynatrace default policies reference").
+* You should select the necessary permissions in [authorization settings](../ru/analyze-explore-automate/workflows/security.md#authorization-settings "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
   + You should allow the required permissions to
 
     - Access ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
     - Write and execute a workflow.
-      For more information, see [authorization settings](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+      For more information, see [authorization settings](../ru/analyze-explore-automate/workflows/security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ## Steps
 
-1. [Create a simple workflow](/docs/analyze-explore-automate/workflows/simple-workflow#create-simple-workflow "Build and run a simple workflow.").
+1. [Create a simple workflow](analyze-explore-automate/workflows/simple-workflow.md#create-simple-workflow "Build and run a simple workflow.").
 
    1. Go to ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
    2. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Workflow** in the upper-right corner of the page.
    3. Select the workflow title.
       By default, it is `Untitled workflow`, and enter a meaningful name.
       The workflow type is set to  simple workflow by default.
-2. Add an [event trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") for  [Davis problems](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
+2. Add an [event trigger](../ru/analyze-explore-automate/workflows/trigger/event-trigger.md "Guide to creating workflow automation event triggers in Dynatrace Workflows.") for  [Davis problems](../ru/analyze-explore-automate/workflows/trigger/event-trigger.md#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
 
-   1. In the **Select trigger** section, select a  [Davis problem trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
+   1. In the **Select trigger** section, select a  [Davis problem trigger](../ru/analyze-explore-automate/workflows/trigger/event-trigger.md#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
    2. Set the **Problem state** to **active or closed**.
       This option means that the problem can be both active or closed.
       This setting causes the workflow to trigger twice, once when the problem becomes active and again when it is closed.
    3. In the **Event category** drop-down list, select **Select all**.
    4. Optional Select **Query past events** to see the most recent problem events that would have triggered this workflow.
    5. Optional Enter **Entity tags** or **Additional custom filter query** to only trigger the workflow on the relevant problems.
-3. Add an [email notification](/docs/analyze-explore-automate/workflows/actions/email "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.").
+3. Add an [email notification](../ru/analyze-explore-automate/workflows/actions/email.md "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.").
 
    1. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add task** on the trigger node.
    2. In the **Choose action** section, select **Send email** action type.
@@ -4513,9 +4513,9 @@ This workflow is a great starting point for automating incident response and imp
 
 ## Related topics
 
-* [Create a simple workflow in Dynatrace Workflows](/docs/analyze-explore-automate/workflows/simple-workflow "Build and run a simple workflow.")
-* [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
-* [Email](/docs/analyze-explore-automate/workflows/actions/email "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.")
+* [Create a simple workflow in Dynatrace Workflows](analyze-explore-automate/workflows/simple-workflow.md "Build and run a simple workflow.")
+* [Problems app](../ru/dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* [Email](../ru/analyze-explore-automate/workflows/actions/email.md "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.")
 
 ---
 
@@ -4546,44 +4546,44 @@ In this tutorial, you'll learn how to alert your team in real time by automatica
 
 At a short glance, you will:
 
-1. [Create a simple workflow](/docs/analyze-explore-automate/workflows/simple-workflow#create-simple-workflow "Build and run a simple workflow.").
-2. Add an [event trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") for  [Davis problems](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
-3. Configure a [Slack message](/docs/analyze-explore-automate/workflows/actions/slack "Send messages to Slack Workspaces").
+1. [Create a simple workflow](analyze-explore-automate/workflows/simple-workflow.md#create-simple-workflow "Build and run a simple workflow.").
+2. Add an [event trigger](../ru/analyze-explore-automate/workflows/trigger/event-trigger.md "Guide to creating workflow automation event triggers in Dynatrace Workflows.") for  [Davis problems](../ru/analyze-explore-automate/workflows/trigger/event-trigger.md#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
+3. Configure a [Slack message](../ru/analyze-explore-automate/workflows/actions/slack.md "Send messages to Slack Workspaces").
 4. Save and run the  workflow to get email notifications.
 5. Verify your  workflow is working as expected.
 
 ## Prerequisites
 
 * You should have permission to configure and run a  simple workflow.
-  For example, the permission granted with the default policy is for a [standard user](/docs/manage/identity-access-management/permission-management/default-policies "Dynatrace default policies reference").
-* You should select the necessary permissions in [authorization settings](/docs/analyze-explore-automate/workflows/security#authorization-settings "Guide on security aspects of workflow automation in Dynatrace Workflows").
+  For example, the permission granted with the default policy is for a [standard user](manage/identity-access-management/permission-management/default-policies.md "Dynatrace default policies reference").
+* You should select the necessary permissions in [authorization settings](../ru/analyze-explore-automate/workflows/security.md#authorization-settings "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
   + You should allow the required permissions to
 
     - Access ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
     - Write and execute a workflow.
-      For more information, see [authorization settings](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
-* You have [set up Slack integration](/docs/analyze-explore-automate/workflows/actions/slack#setup-slack-integration "Send messages to Slack Workspaces").
+      For more information, see [authorization settings](../ru/analyze-explore-automate/workflows/security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+* You have [set up Slack integration](../ru/analyze-explore-automate/workflows/actions/slack.md#setup-slack-integration "Send messages to Slack Workspaces").
 
 ## Steps
 
-1. [Create a simple workflow](/docs/analyze-explore-automate/workflows/simple-workflow#create-simple-workflow "Build and run a simple workflow.").
+1. [Create a simple workflow](analyze-explore-automate/workflows/simple-workflow.md#create-simple-workflow "Build and run a simple workflow.").
 
    1. Go to ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
    2. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Workflow** in the upper-right corner of the page.
    3. Select the workflow title.
       By default, it is `Untitled workflow`, and enter a meaningful name.
       The workflow type is set to  simple workflow by default.
-2. Add an [event trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") for  [Davis problems](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
+2. Add an [event trigger](../ru/analyze-explore-automate/workflows/trigger/event-trigger.md "Guide to creating workflow automation event triggers in Dynatrace Workflows.") for  [Davis problems](../ru/analyze-explore-automate/workflows/trigger/event-trigger.md#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
 
-   1. In the **Select trigger** section, select a  [Davis problem trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
+   1. In the **Select trigger** section, select a  [Davis problem trigger](../ru/analyze-explore-automate/workflows/trigger/event-trigger.md#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
    2. Set the **Problem state** to **active or closed**.
       This option means that the problem can be both active or closed.
       This setting causes the workflow to trigger twice, once when the problem becomes active and again when it is closed.
    3. In the **Event category** drop-down list, select **Select all**.
    4. Optional Select **Query past events** to see the most recent problem events that would have triggered this workflow.
    5. Optional Enter **Entity tags** or **Additional custom filter query** to only trigger the workflow on the relevant problems.
-3. Configure a [Slack message](/docs/analyze-explore-automate/workflows/actions/slack "Send messages to Slack Workspaces").
+3. Configure a [Slack message](../ru/analyze-explore-automate/workflows/actions/slack.md "Send messages to Slack Workspaces").
 
    1. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add task** on the trigger node.
    2. In the **Choose action** section, select ![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector") **Send message** action type.
@@ -4769,9 +4769,9 @@ This workflow is a great starting point for automating incident response and imp
 
 ## Related topics
 
-* [Create a simple workflow in Dynatrace Workflows](/docs/analyze-explore-automate/workflows/simple-workflow "Build and run a simple workflow.")
-* [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
-* [Slack Connector](/docs/analyze-explore-automate/workflows/actions/slack "Send messages to Slack Workspaces")
+* [Create a simple workflow in Dynatrace Workflows](analyze-explore-automate/workflows/simple-workflow.md "Build and run a simple workflow.")
+* [Problems app](../ru/dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* [Slack Connector](../ru/analyze-explore-automate/workflows/actions/slack.md "Send messages to Slack Workspaces")
 
 ---
 
@@ -4800,7 +4800,7 @@ Workflows Email Problems
 
 In this use case, you set up a  workflow to alert your team in real time by emailing the details of a new problem to a specific ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") email recipient.
 
-* [Send email notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")
+* [Send email notifications for problems](../ru/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-email.md "Learn how to send email notifications for problems using a simple workflow.")
 
 ### Send Slack messages for problems using simple workflow
 
@@ -4808,7 +4808,7 @@ Workflows Slack Connector Problems
 
 In this use case, you set up a  workflow to alert your team in real time by messaging the details of a new problem to a specific ![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector") Slack channel.
 
-* [Send Slack notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")
+* [Send Slack notifications for problems](../ru/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-slack.md "Learn how to send Slack notifications for problems using a simple workflow.")
 
 ### Detect threats in cloud-native environments
 
@@ -4816,7 +4816,7 @@ Threat Observability
 
 Set up a workflow to detect and respond to threats across dynamic cloud workloads. Automatically ingest security events, correlate them with runtime context, and trigger targeted actions based on severityâensuring fast, precise responses in cloud-native environments.
 
-* [Detect threats in cloud-native environments using workflows](/docs/secure/use-cases/detect-threats-cloud-native-workflows "Monitor and identify threats in your cloud-native environments with Dynatrace.")
+* [Detect threats in cloud-native environments using workflows](../ru/secure/use-cases/detect-threats-cloud-native-workflows.md "Monitor and identify threats in your cloud-native environments with Dynatrace.")
 
 ### Automate and orchestrate security findings
 
@@ -4824,7 +4824,7 @@ Threat Observability
 
 Build a workflow that processes security findings from multiple sources. Filter, enrich, and route findings based on severity, type, or impacted entitiesâstreamlining how your team handles incoming data and enabling faster decision-making across the security pipeline.
 
-* [Automate and orchestrate security findings](/docs/secure/use-cases/automate-and-orchestrate-security-findings "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* [Automate and orchestrate security findings](../ru/secure/use-cases/automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
 
 ### Automated threat-alert triaging
 
@@ -4832,7 +4832,7 @@ Threat Observability
 
 Create a workflow that intelligently triages threat alerts. Prioritize and enrich incoming alerts to surface the most critical issues, reduce noise, and ensure your security team focuses on what truly demands attention.
 
-* [Automated threat-alert triaging](/docs/secure/use-cases/automated-threat-alert-triaging "Use case scenario for automating threat-alert triaging with Dynatrace.")
+* [Automated threat-alert triaging](../ru/secure/use-cases/automated-threat-alert-triaging.md "Use case scenario for automating threat-alert triaging with Dynatrace.")
 
 ### Reduce security event storm
 
@@ -4840,7 +4840,7 @@ Threat Observability
 
 Design a workflow to manage high-volume AWS alerts by filtering out noise and surfacing only the critical events from relevant accounts. This helps your team stay focused, avoid alert fatigue, and act quickly on what matters most.
 
-* [CSPM Notification Automation](/docs/secure/use-cases/notification-automation "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.")
+* [CSPM Notification Automation](../ru/secure/use-cases/notification-automation.md "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.")
 
 ---
 
@@ -4863,9 +4863,9 @@ scraped: 2026-03-06T21:15:26.954952
 
 ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** is a powerful tool that lets you automatically act on monitoring data.
 
-A workflow is not intended for mass data ingestion or mass data export. For large-scale data processing, consider using [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") or building custom solutions with [Dynatrace Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.").
+A workflow is not intended for mass data ingestion or mass data export. For large-scale data processing, consider using [OpenPipeline](../ru/platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") or building custom solutions with [Dynatrace Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.").
 
-For more information, see the [quickstart example](/docs/analyze-explore-automate/workflows/quickstart "Build and run your first workflow.").
+For more information, see the [quickstart example](analyze-explore-automate/workflows/quickstart.md "Build and run your first workflow.").
 
 Prerequisites
 
@@ -4917,11 +4917,11 @@ You might need additional permissions to run certain tasks in ![Workflows](https
 
 For a complete list of permissions needed to use ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, go to **Hub**, find and select **Workflows**, and go to the **Technical information** tab.
 
-For more information about ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** security, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security "Guide on security aspects of workflow automation in Dynatrace Workflows").
+For more information about ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** security, see [User permissions for workflows](../ru/analyze-explore-automate/workflows/security.md "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Installation
 
-Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Make sure the app is [installed in your environment](../ru/manage/hub.md#install "See the information about Dynatrace Hub.").
 
 Concepts
 
@@ -4984,7 +4984,7 @@ To list executions of the workflow you are editing, select **Executions** in the
 
 EdgeConnect allows you to reach your non-public services in workflow tasks. HTTP requests happening within any type of action or platform function can be proxied via EdgeConnect into the target network.
 
-Any HTTP request (from your custom app, workflow, or an ad-hoc JavaScript code) that matches a defined host pattern is handled by an EdgeConnect instance you specify in the platform configuration. For more information, see [Configure and deploy EdgeConnect](/docs/ingest-from/edgeconnect "Use EdgeConnect to control how your apps and workflows interact with your internal systems.").
+Any HTTP request (from your custom app, workflow, or an ad-hoc JavaScript code) that matches a defined host pattern is handled by an EdgeConnect instance you specify in the platform configuration. For more information, see [Configure and deploy EdgeConnect](../ru/ingest-from/edgeconnect.md "Use EdgeConnect to control how your apps and workflows interact with your internal systems.").
 
 ## Use cases
 
@@ -5007,37 +5007,37 @@ The following learning modules show how you can use ![Workflows](https://dt-cdn.
 [01Workflows quick start guide
 
 * How-to guide
-* Build and run your first workflow.](/docs/analyze-explore-automate/workflows/quickstart)[02Create workflows in Dynatrace Workflows
+* Build and run your first workflow.](analyze-explore-automate/workflows/quickstart.md)[02Create workflows in Dynatrace Workflows
 
 * How-to guide
-* Create and edit workflows in Dynatrace Workflows.](/docs/analyze-explore-automate/workflows/building)[03Create a simple workflow in Dynatrace Workflows
+* Create and edit workflows in Dynatrace Workflows.](analyze-explore-automate/workflows/building.md)[03Create a simple workflow in Dynatrace Workflows
 
 * How-to guide
-* Build and run a simple workflow.](/docs/analyze-explore-automate/workflows/simple-workflow)[04Workflow triggers
+* Build and run a simple workflow.](analyze-explore-automate/workflows/simple-workflow.md)[04Workflow triggers
 
 * Overview
-* Introduction to workflow automation triggers for workflows.](/docs/analyze-explore-automate/workflows/trigger)[05Run and monitor workflows created in Dynatrace Workflows
+* Introduction to workflow automation triggers for workflows.](analyze-explore-automate/workflows/trigger.md)[05Run and monitor workflows created in Dynatrace Workflows
 
 * How-to guide
-* Run and monitor workflows created in Dynatrace Workflows.](/docs/analyze-explore-automate/workflows/running)[06User permissions for workflows
+* Run and monitor workflows created in Dynatrace Workflows.](analyze-explore-automate/workflows/running.md)[06User permissions for workflows
 
 * Reference
-* Guide on security aspects of workflow automation in Dynatrace Workflows](/docs/analyze-explore-automate/workflows/security)[07Workflows actions
+* Guide on security aspects of workflow automation in Dynatrace Workflows](../ru/analyze-explore-automate/workflows/security.md)[07Workflows actions
 
 * Overview
-* Use Dynatrace ready-made actions for your workflows.](/docs/analyze-explore-automate/workflows/default-workflow-actions)[08Workflows Connectors
+* Use Dynatrace ready-made actions for your workflows.](../ru/analyze-explore-automate/workflows/default-workflow-actions.md)[08Workflows Connectors
 
 * Overview
-* Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.](/docs/analyze-explore-automate/workflows/actions)[09Manage workflows
+* Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.](../ru/analyze-explore-automate/workflows/actions.md)[09Manage workflows
 
 * Overview
-* Manage your workflows](/docs/analyze-explore-automate/workflows/manage-workflows)[10Expression reference
+* Manage your workflows](analyze-explore-automate/workflows/manage-workflows.md)[10Expression reference
 
 * Reference
-* Get to know the workflows expression](/docs/analyze-explore-automate/workflows/reference)[11Workflows use cases
+* Get to know the workflows expression](analyze-explore-automate/workflows/reference.md)[11Workflows use cases
 
 * Overview
-* Explore common Workflows use cases in Dynatrace deployments.](/docs/analyze-explore-automate/workflows/use-cases)
+* Explore common Workflows use cases in Dynatrace deployments.](../ru/analyze-explore-automate/workflows/use-cases.md)
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

@@ -17,7 +17,7 @@ scraped: 2026-03-03T21:22:34.358051
 
 ## Dashboards **Dashboards**
 
-Если вы используете [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени."), следуйте этим процедурам.
+Если вы используете [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени."), следуйте этим процедурам.
 
 Вы можете экспортировать определение дашборда через веб-интерфейс Dynatrace.
 
@@ -42,7 +42,7 @@ scraped: 2026-03-03T21:22:34.358051
 После создания дашборда, использующего данные вашего расширения, и экспорта JSON дашборда, как описано выше, вы можете добавить дашборд в пакет расширения.
 
 1. Переименуйте JSON-файл дашборда в соответствии с шаблоном `<string>.dashboard.json`. Например, `device-health.dashboard.json`.
-2. Добавьте JSON в [пакет расширения](/docs/ingest-from/extensions/concepts#package "Узнайте больше о концепции расширений Dynatrace.").
+2. Добавьте JSON в [пакет расширения](../concepts.md#package "Узнайте больше о концепции расширений Dynatrace.").
 
    Например,
 
@@ -65,7 +65,7 @@ scraped: 2026-03-03T21:22:34.358051
 
    |   device-health.dashboard.json
    ```
-3. Объявите JSON в [YAML-файле расширения](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml "Узнайте, как создать YAML-файл расширения с помощью фреймворка расширений.").
+3. Объявите JSON в [YAML-файле расширения](../develop-your-extensions/extension-yaml.md "Узнайте, как создать YAML-файл расширения с помощью фреймворка расширений.").
 
    Например,
 
@@ -99,22 +99,22 @@ scraped: 2026-03-03T21:22:34.358051
 
 ## Dashboards Classic
 
-Если вы используете [Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic."), следуйте этим процедурам.
+Если вы используете [Dashboards Classic](../../../analyze-explore-automate/dashboards-classic.md "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic."), следуйте этим процедурам.
 
-После того как ваше расширение начнёт отправлять данные в Dynatrace, вы можете [создать пользовательский дашборд](/docs/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Узнайте, как создавать и редактировать дашборды Dynatrace."), а затем экспортировать его определение в JSON-файл и добавить в архив расширения. Вы можете экспортировать определение дашборда через веб-интерфейс Dynatrace или Dynatrace API.
+После того как ваше расширение начнёт отправлять данные в Dynatrace, вы можете [создать пользовательский дашборд](../../../analyze-explore-automate/dashboards-classic/dashboards/create-dashboards.md "Узнайте, как создавать и редактировать дашборды Dynatrace."), а затем экспортировать его определение в JSON-файл и добавить в архив расширения. Вы можете экспортировать определение дашборда через веб-интерфейс Dynatrace или Dynatrace API.
 
 ### Экспорт JSON дашборда через веб-интерфейс
 
 1. Перейдите в ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**.
 2. В строке дашборда, который хотите экспортировать, выберите **More** (**...**) > **Export**.
    JSON-файл с именем дашборда будет загружен на ваш компьютер.
-   Для получения дополнительной информации см. [Редактирование JSON дашборда Dynatrace](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json "Узнайте, как экспортировать, редактировать и импортировать JSON дашборда Dynatrace.").
+   Для получения дополнительной информации см. [Редактирование JSON дашборда Dynatrace](../../../analyze-explore-automate/dashboards-classic/dashboards/dashboard-json.md "Узнайте, как экспортировать, редактировать и импортировать JSON дашборда Dynatrace.").
 
 ### Экспорт JSON дашборда через API
 
 1. Перейдите в ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** и откройте дашборд.
 2. В URL дашборда найдите параметр `id` (например, `id=d996b25e-593c-4213-8ad3-c87319a8830a`) и сохраните значение параметра.
-3. Используйте конечную точку [Get a dashboard](/docs/dynatrace-api/configuration-api/dashboards-api/get-dashboard "Просмотр дашборда через Dynatrace Classic API.") API для получения JSON-определения дашборда.
+3. Используйте конечную точку [Get a dashboard](../../../dynatrace-api/configuration-api/dashboards-api/get-dashboard.md "Просмотр дашборда через Dynatrace Classic API.") API для получения JSON-определения дашборда.
    Выполните следующую команду для получения определения дашборда. В этом примере мы используем URL Dynatrace SaaS:
 
    ```
@@ -131,8 +131,8 @@ scraped: 2026-03-03T21:22:34.358051
 
    Замените:
 
-   * `{env-id}` на ваш [идентификатор среды](/docs/discover-dynatrace/get-started/monitoring-environment "Понимание и работа со средами мониторинга.").
-   * `{api-token}` на [API-токен](/docs/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с необходимыми [разрешениями](/docs/ingest-from/extensions/manage-extensions#permissions "Узнайте, как управлять расширениями.").
+   * `{env-id}` на ваш [идентификатор среды](../../../discover-dynatrace/get-started/monitoring-environment.md "Понимание и работа со средами мониторинга.").
+   * `{api-token}` на [API-токен](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как пройти аутентификацию для использования Dynatrace API.") с необходимыми [разрешениями](../manage-extensions.md#permissions "Узнайте, как управлять расширениями.").
    * `{dashboard-id}` на идентификатор дашборда, определённый на предыдущем шаге.
 4. Вызов вернёт JSON-полезную нагрузку с определением дашборда. Сохраните её как JSON-файл.
 
@@ -174,7 +174,7 @@ extension.zip
 |   dashboard.json
 ```
 
-Используйте следующую ссылку на верхнем уровне вашего [YAML-файла](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml "Узнайте, как создать YAML-файл расширения с помощью фреймворка расширений."):
+Используйте следующую ссылку на верхнем уровне вашего [YAML-файла](../develop-your-extensions/extension-yaml.md "Узнайте, как создать YAML-файл расширения с помощью фреймворка расширений."):
 
 ```
 dashboards:

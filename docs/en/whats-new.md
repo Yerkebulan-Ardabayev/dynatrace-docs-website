@@ -50,16 +50,16 @@ Every second sprint is publicly released. To guarantee maximum reliability, we f
 
 Other Dynatrace components have their own release cycles, independent of Dynatrace bi-weekly releases.
 
-* [EdgeConnect](/docs/whats-new/edgeconnect "Release notes for EdgeConnect")
+* [EdgeConnect](whats-new/edgeconnect.md "Release notes for EdgeConnect")
 
-* [Dynatrace Operator](/docs/whats-new/dynatrace-operator "Release notes for Dynatrace Operator")
+* [Dynatrace Operator](whats-new/dynatrace-operator.md "Release notes for Dynatrace Operator")
 
 ## Other news
 
 [### New technology support
 
-Discover new technologies that can be monitored with Dynatrace, and how to get started.](/docs/whats-new/technology "Discover new technologies that can be monitored with Dynatrace.")[### End-of-support news
+Discover new technologies that can be monitored with Dynatrace, and how to get started.](whats-new/technology.md "Discover new technologies that can be monitored with Dynatrace.")[### End-of-support news
 
-End of support announcements for technologies supported by Dynatrace.](/docs/whats-new/technology/end-of-support-news "End of support announcements for technologies supported by Dynatrace.")[### New Documentation topics
+End of support announcements for technologies supported by Dynatrace.](whats-new/technology/end-of-support-news.md "End of support announcements for technologies supported by Dynatrace.")[### New Documentation topics
 
-List of all new or significantly changed Dynatrace Documentation topics, sorted by week of publication.](/docs/whats-new/documentation "See what Documentation topics have been added recently.")
+List of all new or significantly changed Dynatrace Documentation topics, sorted by week of publication.](whats-new/documentation.md "See what Documentation topics have been added recently.")

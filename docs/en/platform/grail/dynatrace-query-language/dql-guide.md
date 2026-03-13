@@ -161,7 +161,7 @@ fetch bizevents
 
 ## Aggregations over time
 
-DQL provides dedicated commands such as [makeTimeseries](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#makeTimeseries "DQL aggregation commands") to aggregate a list of raw event records into a chartable timeseries. Let's observe the logs grouped by the log level and a 5-minute aggregation interval:
+DQL provides dedicated commands such as [makeTimeseries](commands/aggregation-commands.md#makeTimeseries "DQL aggregation commands") to aggregate a list of raw event records into a chartable timeseries. Let's observe the logs grouped by the log level and a 5-minute aggregation interval:
 
 ```
 fetch logs
@@ -181,11 +181,11 @@ You can learn DQL through hands-on experience with interactive tutorials in the 
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [DQL compared to SQL and more](/docs/platform/grail/dynatrace-query-language/dql-comparison "See how DQL compares to other query languages.")
-* [DQL language reference](/docs/platform/grail/dynatrace-query-language/dql-reference "Dynatrace Query Language syntax reference.")
-* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [DQL functions](/docs/platform/grail/dynatrace-query-language/functions "A list of DQL functions.")
-* [DQL operators](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.")
-* [DQL data types](/docs/platform/grail/dynatrace-query-language/data-types "A list of DQL data types.")
-* [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.")
+* [Dynatrace Query Language](../dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [DQL compared to SQL and more](dql-comparison.md "See how DQL compares to other query languages.")
+* [DQL language reference](dql-reference.md "Dynatrace Query Language syntax reference.")
+* [DQL commands](commands.md "A list of DQL commands.")
+* [DQL functions](functions.md "A list of DQL functions.")
+* [DQL operators](operators.md "A list of DQL Operators.")
+* [DQL data types](data-types.md "A list of DQL data types.")
+* [DQL best practices](dql-best-practices.md "Best practices for using Dynatrace Query Language.")

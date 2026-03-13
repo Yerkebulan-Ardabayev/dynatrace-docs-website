@@ -38,7 +38,7 @@ For classic entities, various limits apply. These limits don't apply to Smartsca
 * Only fields and values of type `STRING`, and `ARRAY_OR_STRINGS` are supported
 * Only operators `=`, and `in()` are supported
 
-  + You can use wildcards `*` for `starts-with`, `contains`, and `ends-with` matches. For details, see [Wildcards](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field#wildcards "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
+  + You can use wildcards `*` for `starts-with`, `contains`, and `ends-with` matches. For details, see [Wildcards](../../../discover-dynatrace/get-started/dynatrace-ui/ui-filter-field.md#wildcards "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.").
   + Asterisks are allowed to follow variable names in conditions for `starts-with` (for example, `foo = $bar*`)
 
 ### Classic entities

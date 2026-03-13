@@ -36,13 +36,13 @@ Learn about data security and other aspects of Dynatrace Intelligence agentic an
 
 * Explanation
 
-Read this explanation](/docs/dynatrace-intelligence/copilot/copilot-overview)[#### Get started with Dynatrace Intelligence agentic and generative AI
+Read this explanation](copilot/copilot-overview.md)[#### Get started with Dynatrace Intelligence agentic and generative AI
 
 Learn how to set up Dynatrace Intelligence agentic and generative AI.
 
 * How-to guide
 
-Read this guide](/docs/dynatrace-intelligence/copilot/copilot-getting-started)
+Read this guide](copilot/copilot-getting-started.md)
 
 ## Analyze data with generative AI
 
@@ -52,25 +52,25 @@ Use Dynatrace Intelligence generative AI to translate your natural language ques
 
 * Overview
 
-See the overview](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql)[#### Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts
+See the overview](copilot/quick-analysis-copilot-dql.md)[#### Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts
 
 Learn best practices for writing more accurate prompts.
 
 * Reference
 
-Read this reference](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips)[#### Generative AI quick analysis examples
+Read this reference](copilot/quick-analysis-copilot-dql/copilot-tips.md)[#### Generative AI quick analysis examples
 
 Learn more about what kind of prompts work well in Dynatrace Intelligence agentic and generative AI.
 
 * Reference
 
-Read this reference](/docs/dynatrace-intelligence/use-cases/copilot-examples)[#### Summarize and explain queries
+Read this reference](use-cases/copilot-examples.md)[#### Summarize and explain queries
 
 Learn how to summarize and explain queries using Dynatrace Intelligence agentic and generative AI DQL2NL skill.
 
 * Tutorial
 
-Read this tutorial](/docs/dynatrace-intelligence/copilot/explain-queries-with-davis-copilot)
+Read this tutorial](../../common/dynatrace-intelligence/copilot/explain-queries-with-davis-copilot.md)
 
 ## Ask Dynatrace Assist
 
@@ -80,15 +80,15 @@ Ask questions using natural language and get quick answers from Dynatrace Assist
 
 * App
 
-Explore this app](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot)[#### Embedded conversation starters
+Explore this app](copilot/chat-with-davis-copilot.md)[#### Embedded conversation starters
 
 Learn how to trigger predefined prompts in various Dynatrace applications.
 
 * Reference
 
-Read this reference](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters)
+Read this reference](copilot/chat-with-davis-copilot/copilot-conv-starters.md)
 
-For more information about what kind of prompts work well in  **Dynatrace Assist**, see [prompt examples](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts "Learn what kind of prompts work well in Dynatrace Assist.").
+For more information about what kind of prompts work well in  **Dynatrace Assist**, see [prompt examples](copilot/chat-with-davis-copilot/dynatrace-assist-prompts.md "Learn what kind of prompts work well in Dynatrace Assist.").
 
 ## Vector-based document matching
 
@@ -98,7 +98,7 @@ Learn how Dynatrace Intelligence agentic and generative AI can suggest troublesh
 
 * Tutorial
 
-Read this tutorial](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides)
+Read this tutorial](copilot/copilot-find-relevant-troubleshooting-guides.md)
 
 ## Learn more
 
@@ -108,10 +108,10 @@ Learn about Dynatrace Intelligence agentic and generative AI data privacy and se
 
 * Explanation
 
-Read this explanation](/docs/dynatrace-intelligence/copilot/copilot-data-privacy)[#### Dynatrace Intelligence agentic and generative AI FAQ
+Read this explanation](copilot/copilot-data-privacy.md)[#### Dynatrace Intelligence agentic and generative AI FAQ
 
 Learn about frequently asked questions and find your answers.
 
 * Troubleshooting
 
-Read this troubleshooting guide](/docs/dynatrace-intelligence/copilot/copilot-faq)
+Read this troubleshooting guide](../../common/dynatrace-intelligence/copilot/copilot-faq.md)

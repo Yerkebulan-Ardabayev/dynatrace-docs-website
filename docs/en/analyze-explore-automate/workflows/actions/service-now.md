@@ -13,17 +13,17 @@ scraped: 2026-03-06T21:21:42.823422
 * Updated on Nov 18, 2025
 
 Your Dynatrace environment can integrate with a ServiceNow environment using ServiceNow Connector ![ServiceNow for Workflows](https://dt-cdn.net/images/servicenow-for-workflows-257-9349ea0329.png "ServiceNow for Workflows"), enabling you to create incidents based on your monitoring data and events automatically.
-Furthermore, you can retrieve groups from ServiceNow and import them as [Ownership teams](/docs/deliver/ownership/ownership-teams#import-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.").
+Furthermore, you can retrieve groups from ServiceNow and import them as [Ownership teams](../../../deliver/ownership/ownership-teams.md#import-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.").
 
 ## Configure the integration
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Grant permissions to Workflows**](/docs/analyze-explore-automate/workflows/actions/service-now#permissions "Automate creation of incidents in ServiceNow based on your monitoring data and events.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Grant permissions to Workflows**](service-now.md#permissions "Automate creation of incidents in ServiceNow based on your monitoring data and events.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Create ServiceNow authentication credentials**](/docs/analyze-explore-automate/workflows/actions/service-now#authentication "Automate creation of incidents in ServiceNow based on your monitoring data and events.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Create ServiceNow authentication credentials**](service-now.md#authentication "Automate creation of incidents in ServiceNow based on your monitoring data and events.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Configure ServiceNow connection**](/docs/analyze-explore-automate/workflows/actions/service-now#connection "Automate creation of incidents in ServiceNow based on your monitoring data and events.")
+**Configure ServiceNow connection**](service-now.md#connection "Automate creation of incidents in ServiceNow based on your monitoring data and events.")
 
 ### Step 1 Grant permissions to Workflows
 
@@ -38,7 +38,7 @@ To fine-tune permissions granted to Workflows
 
      + `app-settings:objects:read`
 
-For more on general Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+For more on general Workflows user permissions, see [User permissions for workflows](../security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Step 2 Create ServiceNow authentication credentials
 

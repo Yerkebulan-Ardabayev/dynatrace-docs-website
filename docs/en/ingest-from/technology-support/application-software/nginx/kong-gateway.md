@@ -34,12 +34,12 @@ The required installation depends on your application:
 
 | If your application is running | See the instruction for |
 | --- | --- |
-| on a virtual machine or bare-metal | [OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation "Install OneAgent on a server for the very first time.") |
-| as workload in Kubernetes or OpenShift | [Dynatrace Operator](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes") |
+| on a virtual machine or bare-metal | [OneAgent](../../../dynatrace-oneagent/installation-and-operation.md "Install OneAgent on a server for the very first time.") |
+| as workload in Kubernetes or OpenShift | [Dynatrace Operator](../../../setup-on-k8s/deployment.md "Deploy Dynatrace Operator on Kubernetes") |
 
 ## Application traces
 
-In addition to process and logs, OneAgent also provides Kong Gateway application traces. See [Manual runtime instrumentation](/docs/ingest-from/technology-support/application-software/nginx/manual-runtime-instrumentation "Learn how to force instrumenting patched/non-standard NGINX binaries during runtime.") for NGINX.
+In addition to process and logs, OneAgent also provides Kong Gateway application traces. See [Manual runtime instrumentation](manual-runtime-instrumentation.md "Learn how to force instrumenting patched/non-standard NGINX binaries during runtime.") for NGINX.
 
 ## Step 1 Configure Kong Gateway
 
@@ -393,10 +393,10 @@ OpenTelemetry Collector
 
 In Kubernetes, Dynatrace supports scraping of Prometheus endpoints using special annotations.
 
-To learn how to collect Prometheus metrics in Kubernetes, see [Monitor Prometheus metrics](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.").
+To learn how to collect Prometheus metrics in Kubernetes, see [Monitor Prometheus metrics](../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics.md "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.").
 
 ### Scrape metrics using OpenTelemetry Collector
 
-You can also use the OpenTelemetry Collectorâs Prometheus receiver to collect metrics from the Kong Gateway. To learn how to scrape Prometheus data using an OpenTelemetry collector, see [Scrape Promethus metrics with the OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/prometheus "Configure the OpenTelemetry Collector to scrape your Prometheus data.").
+You can also use the OpenTelemetry Collectorâs Prometheus receiver to collect metrics from the Kong Gateway. To learn how to scrape Prometheus data using an OpenTelemetry collector, see [Scrape Promethus metrics with the OpenTelemetry Collector](../../../opentelemetry/collector/use-cases/prometheus.md "Configure the OpenTelemetry Collector to scrape your Prometheus data.").
 
-If you're running on Kubernetes, you can enrich traces, metrics, and logs using the Collector's Kubernetes attribute processor. This allows Dynatrace to map the telemetry data to the correct toplogy. To learn how to enable enrichment in the OpenTelemetry Collector, see [Enrich OTLP requests with Kubernetes data](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.").
+If you're running on Kubernetes, you can enrich traces, metrics, and logs using the Collector's Kubernetes attribute processor. This allows Dynatrace to map the telemetry data to the correct toplogy. To learn how to enable enrichment in the OpenTelemetry Collector, see [Enrich OTLP requests with Kubernetes data](../../../opentelemetry/collector/use-cases/kubernetes/k8s-enrich.md "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.").

@@ -25,7 +25,7 @@ If you're interested in starting a POC for a specific DPS feature, contact your 
   POCs are not available for trial environments.
 * The capability that you want to trial is already available on your rate card.
   Your rate card is visible at **Subscription** > **Pricing**.
-* To view POC costs and usage, you need access to the [**Subscription history**](/docs/license/subscription-history "View the subscription history of your Dynatrace environment, including usage and cumulative costs for each subscription.") page in Account Management.
+* To view POC costs and usage, you need access to the [**Subscription history**](subscription-history.md "View the subscription history of your Dynatrace environment, including usage and cumulative costs for each subscription.") page in Account Management.
 
 ## About
 
@@ -37,10 +37,10 @@ During a POC, you can use the specific features as if they are part of your norm
 
 ## View usage details
 
-All consumption and costs related to POCs are available on the [**Subscription history**](/docs/license/subscription-history "View the subscription history of your Dynatrace environment, including usage and cumulative costs for each subscription.") page.
+All consumption and costs related to POCs are available on the [**Subscription history**](subscription-history.md "View the subscription history of your Dynatrace environment, including usage and cumulative costs for each subscription.") page.
 
 ## Related topics
 
-* [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
-* [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
-* [View your previous DPS periods via subscription history](/docs/license/subscription-history "View the subscription history of your Dynatrace environment, including usage and cumulative costs for each subscription.")
+* [License Dynatrace](../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* [Account Management](../manage/account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
+* [View your previous DPS periods via subscription history](subscription-history.md "View the subscription history of your Dynatrace environment, including usage and cumulative costs for each subscription.")

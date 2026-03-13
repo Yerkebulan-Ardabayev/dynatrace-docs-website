@@ -24,7 +24,7 @@ In Dynatrace Operator versions < 1.4, deprecated `v1beta1` and `v1beta2` were au
 
 1. Helm hook for CRD cleanup
 
-   During upgrade, a Helm hook starts a Kubernetes Job that erases obsolete API versions from the DynaKube CRD's `status.storedVersions` field. The job only keeps the latest API version that is available in the Dynatrace Operator version installed **before** the upgrade. This step ensures a smooth upgrade to the new CRD during the Helm upgrade process. See [Dynatrace Operator security](/docs/ingest-from/setup-on-k8s/reference/security#upgrade-support "This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require") for information regarding required permissions.
+   During upgrade, a Helm hook starts a Kubernetes Job that erases obsolete API versions from the DynaKube CRD's `status.storedVersions` field. The job only keeps the latest API version that is available in the Dynatrace Operator version installed **before** the upgrade. This step ensures a smooth upgrade to the new CRD during the Helm upgrade process. See [Dynatrace Operator security](../../ingest-from/setup-on-k8s/reference/security.md#upgrade-support "This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require") for information regarding required permissions.
 2. Dynatrace Operator startup migration
 
    **After** the upgrade was successful and the new Dynatrace Operator version 1.7.3 is operational, it migrates all existing DynaKubes to the latest supported API version `v1beta5`. After the DynaKube migration, the `status.storedVersions` field in the DynaKube CRD is updated to hold only the latest API version `v1beta5` to ensure consistency.
@@ -75,7 +75,7 @@ ArgoCD may display resources that are still using an old API version as "out-of-
 
 ## Known issues
 
-We have identified the following known issues with Dynatrace Operator versions 1.7.0â1.7.3. For other known issues, see [Dynatrace Operator support and known issues](/docs/ingest-from/technology-support/support-model-and-issues#well-known-issues "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues").
+We have identified the following known issues with Dynatrace Operator versions 1.7.0â1.7.3. For other known issues, see [Dynatrace Operator support and known issues](../../ingest-from/technology-support/support-model-and-issues.md#well-known-issues "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues").
 
 * Due to optimization of the injected mounts (combining them under `/var/lib/dynatrace`), Dynatrace components can no longer be injected with the OneAgent.
 
@@ -83,7 +83,7 @@ We have identified the following known issues with Dynatrace Operator versions 1
 
 ## Removal and deprecation notices
 
-* The deprecated Dynatrace OneAgent Operator has been removed from the operatorhub.io catalog. Please use our [Dynatrace Operator](/docs/ingest-from/setup-on-k8s/quickstart#deploy-dynatrace-operator "Deploy Dynatrace Operator on Kubernetes") instead.
+* The deprecated Dynatrace OneAgent Operator has been removed from the operatorhub.io catalog. Please use our [Dynatrace Operator](../../ingest-from/setup-on-k8s/quickstart.md#deploy-dynatrace-operator "Deploy Dynatrace Operator on Kubernetes") instead.
 
 * The Helm repository located in `dynatrace/helm-charts` is deprecated and will stop receiving updates in a future release! If you are still using it,
   please update the URL to `dynatrace/dynatrace-operator` or switch to the OCI registry-based approach. Update the Helm repository URL with the following commands:
@@ -106,7 +106,7 @@ We have identified the following known issues with Dynatrace Operator versions 1
 
 * To prevent potential disruptions, we strongly advise keeping your DynaKube API version up to date. Once a version is deprecated and removed, updates may become significantly more complex and time-sensitive.
 
-  + More information about the deprecation process of the DynaKube API versions can be found in the [migration guide](/docs/ingest-from/setup-on-k8s/guides/migration/dynakube#deprecation "Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.").
+  + More information about the deprecation process of the DynaKube API versions can be found in the [migration guide](../../ingest-from/setup-on-k8s/guides/migration/dynakube.md#deprecation "Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.").
 
 * The DynaKube field `.spec.oneagent.(cloudNativeFullStack|classicFullStack|hostMonitoring).autoUpdate` is deprecated and should no longer be used. The flag will be removed in a future version of the Dynatrace Operator. Do one of the following:
 
@@ -114,8 +114,8 @@ We have identified the following known issues with Dynatrace Operator versions 1
   + Use the `.spec.oneagent.(cloudNativeFullStack|classicFullStack|hostMonitoring).version` field to pin the version on a per-DynaKube basis.
 
 * CSI sidecar binaries, located in `/usr/local/bin/csi-node-driver-registrar` and `/usr/local/bin/livenessprobe`, are now deprecated and will be removed in a future version of Dynatrace Operator.
-* [Support for OpenShift 4.10 and 4.11](/docs/ingest-from/technology-support/support-model-and-issues "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues") ended in March 2025. As a result, Dynatrace Operator 1.7.0 will no longer support these versions.
+* [Support for OpenShift 4.10 and 4.11](../../ingest-from/technology-support/support-model-and-issues.md "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues") ended in March 2025. As a result, Dynatrace Operator 1.7.0 will no longer support these versions.
 
 ## Upgrade from Dynatrace Operator version 1.6
 
-In Dynatrace Operator version 1.7, the DynaKube API versions `v1beta1` and `v1beta2` are no longer served. Applying DynaKube resources using these versions will fail. Update your DynaKube manifests to `v1beta5` before upgrading the Dynatrace Operator. For more information, see [Migration guide for DynaKube API versions](/docs/ingest-from/setup-on-k8s/guides/migration/dynakube "Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.").
+In Dynatrace Operator version 1.7, the DynaKube API versions `v1beta1` and `v1beta2` are no longer served. Applying DynaKube resources using these versions will fail. Update your DynaKube manifests to `v1beta5` before upgrading the Dynatrace Operator. For more information, see [Migration guide for DynaKube API versions](../../ingest-from/setup-on-k8s/guides/migration/dynakube.md "Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.").

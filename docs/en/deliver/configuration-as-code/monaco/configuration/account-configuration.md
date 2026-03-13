@@ -13,7 +13,7 @@ scraped: 2026-03-02T21:30:29.843938
 * 4-min read
 * Updated on Jan 15, 2026
 
-To define the accounts for which Monaco will configure the account management resources, you need to create an `accounts` section in a [manifest file](/docs/deliver/configuration-as-code/monaco/configuration#manifest "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.").
+To define the accounts for which Monaco will configure the account management resources, you need to create an `accounts` section in a [manifest file](../configuration.md#manifest "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.").
 
 In the following example, we define a single account object containing account-related information. The **name** property specifies the account name (in this example, `my-account`) that can be referenced using the Monaco CLI commands `--account` flag.
 
@@ -54,11 +54,11 @@ Platform tokens and API tokens are not supported.
 The OAuth client must have the appropriate scopes configured for the account resources you want to manage.
 Ensure your OAuth credentials include the required permissions for users, groups, policies, boundaries, or service users before deploying configurations.
 
-Other than the `accounts` section, a `manifest.yaml` defined for account resources is the same as for environment configurations, requiring [`projects`](/docs/deliver/configuration-as-code/monaco/configuration#project-definitions "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.") of account resource configuration files.
+Other than the `accounts` section, a `manifest.yaml` defined for account resources is the same as for environment configurations, requiring [`projects`](../configuration.md#project-definitions "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.") of account resource configuration files.
 
 ## Account resources
 
-Using Monaco, you can define [users](/docs/manage/identity-access-management/user-and-group-management/access-user-management "User management"), [service users](/docs/manage/identity-access-management/user-and-group-management/access-service-users "Service users"), [groups](/docs/manage/identity-access-management/user-and-group-management/access-group-management "Manage Dynatrace groups and their permissions."), [policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies"), and [boundaries](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries "Restrict security policies with policy boundaries to provide tailored access to your users.") as dedicated types in YAML configuration files.
+Using Monaco, you can define [users](../../../../manage/identity-access-management/user-and-group-management/access-user-management.md "User management"), [service users](../../../../manage/identity-access-management/user-and-group-management/access-service-users.md "Service users"), [groups](../../../../manage/identity-access-management/user-and-group-management/access-group-management.md "Manage Dynatrace groups and their permissions."), [policies](../../../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies"), and [boundaries](../../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries.md "Restrict security policies with policy boundaries to provide tailored access to your users.") as dedicated types in YAML configuration files.
 
 Unlike the usual environment-level configurations, no JSON template files are needed. Monaco builds the required API data directly from your YAML configuration.
 
@@ -605,4 +605,4 @@ In this example, we define these objects.
 
 Because account-level configuration is usually distinct from environment-level configuration and changes less frequently, existing commands like `monaco deploy` ignore any account configuration that may be defined in a manifest file.
 
-Dedicated commands exist for account resources: [Account](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#account "How to use the Monaco CLI application, including arguments and options.").
+Dedicated commands exist for account resources: [Account](../reference/commands-saas.md#account "How to use the Monaco CLI application, including arguments and options.").

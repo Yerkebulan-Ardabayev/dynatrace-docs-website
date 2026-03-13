@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:24:04.309763
 * Extension
 * Updated on Oct 07, 2025
 
-This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](/docs/secure/threat-observability/migration "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
 
 Ingest GitHub Advanced Security audit logs and security events into Dynatrace as security events.
 
@@ -30,9 +30,9 @@ The first version of this integration ingests and contextualizes [Dependabot ale
 
 With the ingested data, you can accomplish various use cases, such as
 
-* [Visualize and analyze security findings](/docs/secure/use-cases/visualize-and-analyze-security-findings "Visualize, prioritize, and analyze ingested security findings.")
-* [Automate and orchestrate security findings](/docs/secure/use-cases/automate-and-orchestrate-security-findings "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
-* [Discover coverage gaps in security findings](/docs/secure/use-cases/discover-coverage-gaps-in-security-scans "Unveil blind spots in your Software Development Lifecycle (SDLC).")
+* [Visualize and analyze security findings](../../use-cases/visualize-and-analyze-security-findings.md "Visualize, prioritize, and analyze ingested security findings.")
+* [Automate and orchestrate security findings](../../use-cases/automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* [Discover coverage gaps in security findings](../../use-cases/discover-coverage-gaps-in-security-scans.md "Unveil blind spots in your Software Development Lifecycle (SDLC).")
 
 ### Requirements
 
@@ -118,13 +118,13 @@ To generate a Personal Access Token, follow the instructions at [Managing your p
 
   + To run ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**: Go to  **Hub**, select ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**, and display **Technical information**.
   + To query ingested data: `storage:security.events:read`.
-* Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+* Generate an access token with the `openpipeline.events_security` scope and save it for later. For details, see [Dynatrace API - Tokens and authentication](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
 
 ## Activation and setup
 
 1. In Dynatrace, search for **GitHub Advanced Security** and select **Install**.
 2. Follow the on-screen instructions to configure the extension.
-3. Verify configuration by running the following queries in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."):
+3. Verify configuration by running the following queries in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."):
 
    * For audit logs:
 
@@ -169,7 +169,7 @@ To generate a Personal Access Token, follow the instructions at [Managing your p
 
      AND event.type=="VULNERABILITY_SCAN"
      ```
-4. Once the extension is installed and working, you can access and manage it in Dynatrace via ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**. For details, see [About Extensions](/docs/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.").
+4. Once the extension is installed and working, you can access and manage it in Dynatrace via ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions**. For details, see [About Extensions](../../../ingest-from/extensions/concepts.md "Learn more about the concept of Dynatrace Extensions.").
 
 ## Details
 
@@ -179,23 +179,23 @@ To generate a Personal Access Token, follow the instructions at [Managing your p
 
 1. Events and logs are collected from GHAS products
 
-The Dynatrace GHAS integration is an extension deployed in a [Dynatrace ActiveGate](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.") that periodically collects security findings and audit logs using the [GitHub REST APIï»¿](https://docs.github.com/en/rest?apiVersion=2022-11-28).
+The Dynatrace GHAS integration is an extension deployed in a [Dynatrace ActiveGate](../../../ingest-from/dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.") that periodically collects security findings and audit logs using the [GitHub REST APIï»¿](https://docs.github.com/en/rest?apiVersion=2022-11-28).
 
 2. Security findings and logs are ingested into Dynatrace
 
-Security findings are ingested into the Dynatrace platform via a dedicated [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") security ingest endpoint.
+Security findings are ingested into the Dynatrace platform via a dedicated [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") security ingest endpoint.
 
 3. Security findings and logs are processed and stored in Grail
 
 The OpenPipeline ingest endpoint processes and maps the security findings according to the [Semantic Dictionary conventionsï»¿](https://dt-url.net/3q03pb0).
 
-These are stored in a bucket called `default_securityevents` (for details, see: [Built-in Grail buckets](/docs/platform/grail/organize-data#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.")).
+These are stored in a bucket called `default_securityevents` (for details, see: [Built-in Grail buckets](../../../platform/grail/organize-data.md#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.")).
 
-Optionally, the collected audit logs are ingested via a dedicated [extensions log ingest pipeline](/docs/analyze-explore-automate/logs/lma-log-ingestion#ingest-extensions "Stream log data to Dynatrace.") and stored in the appropriate [semantic format](/docs/semantic-dictionary/model/log "Get to know the Semantic Dictionary models related to Log Analytics.").
+Optionally, the collected audit logs are ingested via a dedicated [extensions log ingest pipeline](../../../analyze-explore-automate/logs/lma-log-ingestion.md#ingest-extensions "Stream log data to Dynatrace.") and stored in the appropriate [semantic format](../../../semantic-dictionary/model/log.md "Get to know the Semantic Dictionary models related to Log Analytics.").
 
 ### Licensing and cost
 
-For billing information, see [Events powered by Grail](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For billing information, see [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 
 ## Feature sets
 
@@ -211,9 +211,9 @@ A metric inherits the feature set of a subgroup, which in turn inherits the feat
 
 ### Which data model is used for the security logs and events coming from GHAS integration?
 
-* [**Vulnerability finding events**](/docs/semantic-dictionary/model/security-events#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.") store the individual vulnerability findings reported by various GHAS products per affected artifacts and component.
-* [**Vulnerability scan events**](/docs/semantic-dictionary/model/security-events#vulnerability-scan-events "Get to know the Semantic Dictionary models related to security events.") indicate coverage of scans for individual artifacts.
-* [**Audit logs**](/docs/semantic-dictionary/model/log#audit-logs "Get to know the Semantic Dictionary models related to Log Analytics.") represent the user activity logs in the GHAS products.
+* [**Vulnerability finding events**](../../../semantic-dictionary/model/security-events.md#vulnerability-finding-events "Get to know the Semantic Dictionary models related to security events.") store the individual vulnerability findings reported by various GHAS products per affected artifacts and component.
+* [**Vulnerability scan events**](../../../semantic-dictionary/model/security-events.md#vulnerability-scan-events "Get to know the Semantic Dictionary models related to security events.") indicate coverage of scans for individual artifacts.
+* [**Audit logs**](../../../semantic-dictionary/model/log.md#audit-logs "Get to know the Semantic Dictionary models related to Log Analytics.") represent the user activity logs in the GHAS products.
 
 ### Which GHAS security findings are imported into Dynatrace?
 
@@ -247,7 +247,7 @@ The `github` namespace is added for extracting several GHAS-specific attributes 
 ### How is the risk score for GHAS findings normalized?
 
 Dynatrace normalizes severity and risk scores for all findings ingested through the current integration. This helps you to prioritize findings consistently, regardless of their source.  
-For details on how normalization works, see [Severity and score normalization](/docs/secure/threat-observability/concepts#normalization "Basic concepts related to Threat Observability").
+For details on how normalization works, see [Severity and score normalization](../concepts.md#normalization "Basic concepts related to Threat Observability").
 
 The Dynatrace risk levels and scores are mapped from the original [GHAS severity and scoreï»¿](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide).
 
@@ -271,6 +271,6 @@ Ingest GitHub Advanced Security (GHAS) security events and audit logs.](https://
 
 ## Related topics
 
-* [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Security events](/docs/semantic-dictionary/model/security-events "Get to know the Semantic Dictionary models related to security events.")
+* [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
+* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Security events](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")

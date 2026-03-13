@@ -14,7 +14,7 @@ scraped: 2026-03-05T21:37:20.359464
 
 Dynatrace Operator version 1.0.0+
 
-This guide describes the steps required to migrate your Dynatrace deployment from classic full-stack monitoring to [application monitoring mode](/docs/ingest-from/setup-on-k8s/how-it-works#auto "In-depth description on how the deployment on Kubernetes works.").
+This guide describes the steps required to migrate your Dynatrace deployment from classic full-stack monitoring to [application monitoring mode](../../how-it-works.md#auto "In-depth description on how the deployment on Kubernetes works.").
 
 ## Advantages
 
@@ -26,8 +26,8 @@ To only monitor selected applications on Kubernetes, application monitoring offe
 ### Considerations and implications
 
 * When switching to application monitoring, previously deployed OneAgents will get deactivated and deep monitoring of applications will stop. Consequently, restarting all application pods that require deep monitoring becomes mandatory. Restarting these pods ensures that applications are reinjected, allowing deep monitoring to resume.
-* In application monitoring mode, container monitoring rules are ignored. Instead, [label selectors](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods") should be employed to precisely manage OneAgent injection.
-* Log monitoring requires [additional setup](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s "Integrate Fluent Bit in Kubernetes to stream logs to Dynatrace.").
+* In application monitoring mode, container monitoring rules are ignored. Instead, [label selectors](../deployment-and-configuration/monitoring-and-instrumentation/annotate.md "Configure monitoring for namespaces and pods") should be employed to precisely manage OneAgent injection.
+* Log monitoring requires [additional setup](../../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s.md "Integrate Fluent Bit in Kubernetes to stream logs to Dynatrace.").
 
 ## Migrate to application monitoring mode
 
@@ -214,7 +214,7 @@ If that upgrade cannot be performed, follow the [Running CRI-O with OneAgent ver
    - dynatrace-api
    ```
 
-   For further information on how to configure DynaKube for application monitoring mode, visit the [deployment guide](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes") or [DynaKube parameters](/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters#spec-oneagent-applicationmonitoring "List the available parameters for setting up Dynatrace Operator on Kubernetes."). Alternatively, download the [DynaKube custom resource sampleï»¿](https://dt-url.net/0w036dz) for application monitoring from GitHub and adapt the DynaKube custom resource according to your requirements.
+   For further information on how to configure DynaKube for application monitoring mode, visit the [deployment guide](../../deployment.md "Deploy Dynatrace Operator on Kubernetes") or [DynaKube parameters](../../reference/dynakube-parameters.md#spec-oneagent-applicationmonitoring "List the available parameters for setting up Dynatrace Operator on Kubernetes."). Alternatively, download the [DynaKube custom resource sampleï»¿](https://dt-url.net/0w036dz) for application monitoring from GitHub and adapt the DynaKube custom resource according to your requirements.
 3. Apply the DynaKube custom resource:
 
    Run the command below to apply the DynaKube custom resource. A validation webhook will provide helpful error messages if there's a problem.
@@ -253,7 +253,7 @@ Follow these instructions to successfully migrate from classic full-stack mode:
 
    This action will lead to the removal of OneAgents in classic full-stack mode and subsequently result in the termination of deep monitoring for application pods shortly thereafter. Additionally, if Kubernetes monitoring is configured in the DynaKube custom resource, Kubernetes monitoring will stop instantly with the removal of the ActiveGate.
 2. Wait for the OneAgent pods to terminate.
-3. Follow the instructions in the [Cleanup nodes](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator#cleanup-nodes "Upgrade and uninstallation procedures for Dynatrace Operator") section to remove Dynatrace CRI-O hooks from all Linux nodes.
+3. Follow the instructions in the [Cleanup nodes](../deployment-and-configuration/updates-and-maintenance/update-uninstall-operator.md#cleanup-nodes "Upgrade and uninstallation procedures for Dynatrace Operator") section to remove Dynatrace CRI-O hooks from all Linux nodes.
 4. Continue with step 1 of the [standard migration procedure](#migrate).
 
 ## Changes in Kubernetes resources

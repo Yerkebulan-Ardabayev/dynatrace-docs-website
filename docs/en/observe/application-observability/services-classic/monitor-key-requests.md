@@ -17,11 +17,11 @@ Switch to Enhanced endpoints for SDv1
 
 Setting up key requests is not available for environments created in Dynatrace version 1.330+.
 
-Instead of defining key requests as described on this page, we strongly recommend enabling the [**Enhanced endpoints for SDv1** feature](/docs/observe/application-observability/services/service-detection/service-detection-v1/enhanced-endpoints-sdv1 "Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions.") that allows showing all endpoints in [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](/docs/observe/application-observability/services/services-app "Maintain centralized control over service health, performance, and resources with the Services app."), not just key requests.
+Instead of defining key requests as described on this page, we strongly recommend enabling the [**Enhanced endpoints for SDv1** feature](../services/service-detection/service-detection-v1/enhanced-endpoints-sdv1.md "Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions.") that allows showing all endpoints in [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](../services/services-app.md "Maintain centralized control over service health, performance, and resources with the Services app."), not just key requests.
 
 *Key requests* are requests that need special attention, either because they're a critical measure of the success of your business (for example, a login request or a shopping-cart checkout request) or because they provide vital technical functionality that your application relies on.
 
-* Key requests feature [dedicated metrics](/docs/analyze-explore-automate/metrics-classic/built-in-metrics#key-requests "Explore the complete list of built-in Dynatrace metrics.") that you can manage via the web UI or [API](#manage-api). You can create dedicated dashboard tiles for charting key requests, with direct access from your dashboard, and analyze key request long-term metric history in [request charts](/docs/observe/application-observability/services-classic#request-charting "Learn about Dynatrace's classic service monitoring").
+* Key requests feature [dedicated metrics](../../../analyze-explore-automate/metrics-classic/built-in-metrics.md#key-requests "Explore the complete list of built-in Dynatrace metrics.") that you can manage via the web UI or [API](#manage-api). You can create dedicated dashboard tiles for charting key requests, with direct access from your dashboard, and analyze key request long-term metric history in [request charts](../services-classic.md#request-charting "Learn about Dynatrace's classic service monitoring").
 * Alerting is always enabled for key requests, even when they contribute less than 1% of throughput. They also provide custom thresholds.
 * Data retention periods of key requests are maintained as follows:
 
@@ -32,7 +32,7 @@ The number of key requests is limited:
 * 500 key requests per environment across all services.
 * 100 key requests per service.
 
-When you reach that limit, consider using [calculated service metrics](/docs/observe/application-observability/services/calculated-service-metric "Learn how to create a calculated metric based on web requests."), which offer you a more flexible approach.
+When you reach that limit, consider using [calculated service metrics](../services/calculated-service-metric.md "Learn how to create a calculated metric based on web requests."), which offer you a more flexible approach.
 
 ## Create a key request (via web UI)
 
@@ -63,7 +63,7 @@ Dashboard tiles include only data collected after the request has been marked as
 
 ## Rename key requests
 
-Key request detection is name-based. When you apply a [request naming rule](/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer."), it can affect key requests. If you want Dynatrace to continue detecting renamed requests as key requests, you need to add the new name to the list of key request names.
+Key request detection is name-based. When you apply a [request naming rule](../services/service-detection/service-detection-v1/set-up-request-naming.md "Adjust request naming and define the operations your services offer."), it can affect key requests. If you want Dynatrace to continue detecting renamed requests as key requests, you need to add the new name to the list of key request names.
 
 1. Go to ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic** and select the service you want to configure.
 2. Select **More** (**â¦**) > **Settings**.
@@ -75,25 +75,25 @@ Dynatrace assumes that low-volume requests are of less importance than high-volu
 
 ### Request-specific alerting thresholds
 
-Because certain requests may have specific response-time and failure-rate patterns, while others may have strict SLA thresholds, Dynatrace enables you to define custom alerting thresholds when anomalies are detected related to the performance of key requests. If set, key-request-level thresholds override service-level thresholds. To learn how to set request-level thresholds, see [**Thresholds for a specific web request**](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services#key-request "Learn how to adapt the sensitivity of problem detection for services.").
+Because certain requests may have specific response-time and failure-rate patterns, while others may have strict SLA thresholds, Dynatrace enables you to define custom alerting thresholds when anomalies are detected related to the performance of key requests. If set, key-request-level thresholds override service-level thresholds. To learn how to set request-level thresholds, see [**Thresholds for a specific web request**](../../../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services.md#key-request "Learn how to adapt the sensitivity of problem detection for services.").
 
 ## Calculated service metric
 
-As an alternative way to focus on particular requests, you can create a [calculated service metric](/docs/observe/application-observability/services/calculated-service-metric "Learn how to create a calculated metric based on web requests."), based on the requests you need. This approach provides you more flexibility with alertingâyou can use the calculated metric just like any built-in metric provided by Dynatrace.
+As an alternative way to focus on particular requests, you can create a [calculated service metric](../services/calculated-service-metric.md "Learn how to create a calculated metric based on web requests."), based on the requests you need. This approach provides you more flexibility with alertingâyou can use the calculated metric just like any built-in metric provided by Dynatrace.
 
 ## Manage key requests via Settings API
 
-You can manage key request configurations via the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.").
+You can manage key request configurations via the [Settings API](../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.").
 
-To be able to use the API you need an access token with **Read settings** (`settings.read`) and **Write settings** (`settings.write`) scopes. To learn how to obtain it, see [Create an access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.").
+To be able to use the API you need an access token with **Read settings** (`settings.read`) and **Write settings** (`settings.write`) scopes. To learn how to obtain it, see [Create an access token](../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.").
 
 ### Create key request configuration
 
 Follow the steps below to create a new key request configuration. Note that this procedure overwrites any existing configuration. If you want to modify an existing configuration, see the [**Update key request configuration**](#update-api) section below.
 
-1. To learn the format of the settings object, query its schema via the [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") call. The ID of key request schema is `builtin:settings.subscriptions.service`.
+1. To learn the format of the settings object, query its schema via the [GET a schema](../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") call. The ID of key request schema is `builtin:settings.subscriptions.service`.
 2. Create the JSON object for your settings.  
-   Note that the scope of a key request is always a service. You must specify the service by its Dynatrace entity ID. To find out the entity ID of your service, use the [GET entities list](/docs/dynatrace-api/environment-api/entity-v2/get-entities-list "View a list of monitored entities via Dynatrace API.") request.
+   Note that the scope of a key request is always a service. You must specify the service by its Dynatrace entity ID. To find out the entity ID of your service, use the [GET entities list](../../../dynatrace-api/environment-api/entity-v2/get-entities-list.md "View a list of monitored entities via Dynatrace API.") request.
    Example JSON
 
    ```
@@ -139,13 +139,13 @@ Follow the steps below to create a new key request configuration. Note that this
 
    ]
    ```
-3. Use the [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
+3. Use the [POST an object](../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
 
 ### Update key request configuration
 
-1. To learn the format of the settings object, query its schema via the [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") call. The ID of key request schema is `builtin:settings.subscriptions.service`.  
-   Note that the scope of a key request is always a service. You must specify the service by its Dynatrace entity ID. To find out the entity ID of your service, use the [GET entities list](/docs/dynatrace-api/environment-api/entity-v2/get-entities-list "View a list of monitored entities via Dynatrace API.") request.
-2. Query the current configuration via the [GET objects](/docs/dynatrace-api/environment-api/settings/objects/get-objects "View multiple settings objects via the Dynatrace API.") call.
+1. To learn the format of the settings object, query its schema via the [GET a schema](../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") call. The ID of key request schema is `builtin:settings.subscriptions.service`.  
+   Note that the scope of a key request is always a service. You must specify the service by its Dynatrace entity ID. To find out the entity ID of your service, use the [GET entities list](../../../dynatrace-api/environment-api/entity-v2/get-entities-list.md "View a list of monitored entities via Dynatrace API.") request.
+2. Query the current configuration via the [GET objects](../../../dynatrace-api/environment-api/settings/objects/get-objects.md "View multiple settings objects via the Dynatrace API.") call.
 3. Create the JSON for your update.
 
    1. Use the **updateToken** value from the previous step.
@@ -187,10 +187,10 @@ Follow the steps below to create a new key request configuration. Note that this
 
       }
       ```
-4. Use the [PUT an object](/docs/dynatrace-api/environment-api/settings/objects/put-object "Edit a settings object via the Dynatrace API.") endpoint to send your configuration.
+4. Use the [PUT an object](../../../dynatrace-api/environment-api/settings/objects/put-object.md "Edit a settings object via the Dynatrace API.") endpoint to send your configuration.
 
 ## Related topics
 
-* [Service analysis timings](/docs/observe/application-observability/services-classic/service-analysis-timing "Find out what each time in service analysis means.")
-* [Calculated metrics for services](/docs/observe/application-observability/services/calculated-service-metric "Learn how to create a calculated metric based on web requests.")
-* [Mute monitoring of service requests](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-monitoring-mute "Mute the monitoring of certain service requests so that you can focus on the performance of requests that affect your customers.")
+* [Service analysis timings](service-analysis-timing.md "Find out what each time in service analysis means.")
+* [Calculated metrics for services](../services/calculated-service-metric.md "Learn how to create a calculated metric based on web requests.")
+* [Mute monitoring of service requests](../services/service-detection/service-detection-v1/service-monitoring-mute.md "Mute the monitoring of certain service requests so that you can focus on the performance of requests that affect your customers.")

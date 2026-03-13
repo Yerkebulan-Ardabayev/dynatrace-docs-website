@@ -12,7 +12,7 @@ scraped: 2026-03-06T21:24:06.065359
 * How-to guide
 * Updated on Nov 06, 2025
 
-This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](/docs/secure/threat-observability/migration "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
 
 Ingest vulnerability findings in OCSF format from any provider and analyze them on the Dynatrace platform.
 
@@ -20,14 +20,14 @@ Ingest vulnerability findings in OCSF format from any provider and analyze them 
 
 ### Overview
 
-In the following, you'll learn how to ingest vulnerability findings from any source or provider in a standard format ([Open Cybersecurity Schema Framework (OCSF)ï»¿](https://dt-url.net/bf03qi3)) into [Grail](/docs/platform/grail "Insights on what and how you can query Dynatrace data.") and analyze them on the Dynatrace platform, so you can get Dynatrace insights for vulnerability findings from any source or provider, and easily work with your data on the Dynatrace platform in a unified format.
+In the following, you'll learn how to ingest vulnerability findings from any source or provider in a standard format ([Open Cybersecurity Schema Framework (OCSF)ï»¿](https://dt-url.net/bf03qi3)) into [Grail](../../../platform/grail.md "Insights on what and how you can query Dynatrace data.") and analyze them on the Dynatrace platform, so you can get Dynatrace insights for vulnerability findings from any source or provider, and easily work with your data on the Dynatrace platform in a unified format.
 
 ### Use cases
 
 With the ingested data, you can accomplish various use cases, such as
 
-* [Visualize and analyze security findings](/docs/secure/use-cases/visualize-and-analyze-security-findings "Visualize, prioritize, and analyze ingested security findings.")
-* [Automate and orchestrate security findings](/docs/secure/use-cases/automate-and-orchestrate-security-findings "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* [Visualize and analyze security findings](../../use-cases/visualize-and-analyze-security-findings.md "Visualize, prioritize, and analyze ingested security findings.")
+* [Automate and orchestrate security findings](../../use-cases/automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
 
 ### Requirements
 
@@ -37,7 +37,7 @@ With the ingested data, you can accomplish various use cases, such as
 
 ## Activation and setup
 
-1. In Dynatrace, open  [**Hub**](/docs/manage/hub "See the information about Dynatrace Hub.").
+1. In Dynatrace, open  [**Hub**](../../../manage/hub.md "See the information about Dynatrace Hub.").
 2. Look for **OCSF** and select **Install**.
 3. Select **Set up**, then select  **Configure new connection**.
 4. Follow the on-screen instructions to set up the ingestion.
@@ -50,14 +50,14 @@ With the ingested data, you can accomplish various use cases, such as
 
 1. Feed OCSF-formatted data into Grail
 
-You feed the OCSF-formatted data into Grail via our built-in security events [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") endpoint.
+You feed the OCSF-formatted data into Grail via our built-in security events [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") endpoint.
 
 For instructions, see [Get started](#start).
 
 2. Data is mapped to the Semantic Dictionary
 
 The OpenPipe ingest endpoint receives the vulnerability findings and maps them according to the [Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0).  
-They are stored in the `default_securityevents` bucket (see [Built-in Grail buckets](/docs/platform/grail/organize-data#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.")).
+They are stored in the `default_securityevents` bucket (see [Built-in Grail buckets](../../../platform/grail/organize-data.md#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.")).
 
 Ingested data is mapped to Dynatrace Semantic Dictionary. Original vendor data is also preserved alongside the mapped data.
 
@@ -80,7 +80,7 @@ You can view:
 
 ### Visualize and analyze findings
 
-You can create your own [dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or use our templates to visualize and analyze container vulnerability findings.
+You can create your own [dashboards](../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or use our templates to visualize and analyze container vulnerability findings.
 
 To use a dashboard template:
 
@@ -89,7 +89,7 @@ To use a dashboard template:
 
 ### Automate and orchestrate findings
 
-You can create your own [workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") or use our templates to automate and orchestrate container vulnerability findings.
+You can create your own [workflows](../../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") or use our templates to automate and orchestrate container vulnerability findings.
 
 To use a workflow template:
 
@@ -98,7 +98,7 @@ To use a workflow template:
 
 ### Query ingested data
 
-You can query ingested data in [**![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks****](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), using the data format in [Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0).
+You can query ingested data in [**![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks****](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), using the data format in [Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0).
 
 To query ingested data:
 
@@ -122,7 +122,7 @@ This removes the Dynatrace resources created for this integration.
 
 ### Licensing and cost
 
-For billing information, see [Events powered by Grail](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+For billing information, see [Events powered by Grail](../../../license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -132,6 +132,6 @@ Ingest security findings in Open Cybersecurity Schema Framework (OCSF) format.](
 
 ## Related topics
 
-* [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Security events](/docs/semantic-dictionary/model/security-events "Get to know the Semantic Dictionary models related to security events.")
+* [OpenPipeline](../../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
+* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Security events](../../../semantic-dictionary/model/security-events.md "Get to know the Semantic Dictionary models related to security events.")

@@ -12,9 +12,9 @@ scraped: 2026-03-05T21:27:04.307374
 * Updated on Mar 22, 2023
 * Deprecated
 
-Assigns [custom tags](/docs/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.") to the specified application. You only need to provide a tag value. The `CONTEXTLESS` context will be assigned automatically.
+Assigns [custom tags](../../../../../common/manage/tags-and-metadata.md "Use tags and metadata to organize data in your Dynatrace environment.") to the specified application. You only need to provide a tag value. The `CONTEXTLESS` context will be assigned automatically.
 
-The usage of this API is limited to value-only tags. To assign key:value tags, use the [Custom tags API](/docs/dynatrace-api/environment-api/custom-tags/post-tags "Assign custom tags to monitored entities via Dynatrace API.").
+The usage of this API is limited to value-only tags. To assign key:value tags, use the [Custom tags API](../../custom-tags/post-tags.md "Assign custom tags to monitored entities via Dynatrace API.").
 
 The request consumes an `application/json` payload.
 
@@ -27,7 +27,7 @@ The request consumes an `application/json` payload.
 
 To execute this request, you need an access token with `DataExport` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Parameters
 
@@ -256,4 +256,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/applications/MOBILE_APPLICA
 
 ## Related topics
 
-* [Real User Monitoring](/docs/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.")
+* [Real User Monitoring](../../../../observe/digital-experience/rum-concepts/rum-overview.md "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.")

@@ -16,8 +16,8 @@ Log Monitoring Classic
 
 Dynatrace monitors rotation patterns for log files. This functionality ensures the completeness of the file reading process, even if OneAgent is temporarily switched off or the application crashes. The monitoring process has two dimensions:
 
-* [Rotation tracking based on the file name](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-rotation-patterns#filenametracking "Learn about supported log rotation patterns")
-* [Rotation tracking based on log generation type](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-rotation-patterns#gennametracking "Learn about supported log rotation patterns")
+* [Rotation tracking based on the file name](log-rotation-patterns.md#filenametracking "Learn about supported log rotation patterns")
+* [Rotation tracking based on log generation type](log-rotation-patterns.md#gennametracking "Learn about supported log rotation patterns")
 
 ## Rotation tracking based on the file name
 

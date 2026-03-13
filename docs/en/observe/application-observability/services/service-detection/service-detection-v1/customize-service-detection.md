@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:22:34.909415
 
 When monitoring with OneAgent, your deployed applications and related microservices are automatically detected by Dynatrace, based on specific properties of your application deployment and configuration, such as the application identifier, part of the URL, or the server name.
 
-Attributes used for detection are marked with an asterisk â± on the [service](/docs/observe/application-observability/services-classic/service-analysis-new "Learn about all the service monitoring details that Dynatrace can provide.") overview page, under **Properties and tags**.
+Attributes used for detection are marked with an asterisk â± on the [service](../../../services-classic/service-analysis-new.md "Learn about all the service monitoring details that Dynatrace can provide.") overview page, under **Properties and tags**.
 
 In certain cases, the quality of data available to Dynatrace might be insufficient for high-precision service detection. To tailor out-of-the-box detection to your environment, you can create new rules or setup improvements.
 
@@ -36,8 +36,8 @@ Detection rules are evaluated from top to bottom, and the first matching rule ap
 
 ### Prerequisites
 
-* Familiarize yourself with the notion of a [full and external (opaque) request](/docs/discover-dynatrace/get-started/glossary#request "Get acquainted with Dynatrace terminology.").
-* API onlyRequired To be able to configure rule-based service detection via the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers."), you need an access token with **Read settings** (`settings.read`) and **Write settings** (`settings.write`) scopes. To learn how to obtain it, see [Create an access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.").
+* Familiarize yourself with the notion of a [full and external (opaque) request](../../../../../discover-dynatrace/get-started/glossary.md#request "Get acquainted with Dynatrace terminology.").
+* API onlyRequired To be able to configure rule-based service detection via the [Settings API](../../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers."), you need an access token with **Read settings** (`settings.read`) and **Write settings** (`settings.write`) scopes. To learn how to obtain it, see [Create an access token](../../../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.").
 
 ### Create a rule
 
@@ -62,7 +62,7 @@ This procedure overwrites any existing configuration. If you want to modify an e
 
 To define a new service detection rule via API
 
-1. Query the settings schema via the [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") callâit contains the information about parameters included in the settings object.
+1. Query the settings schema via the [GET a schema](../../../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") callâit contains the information about parameters included in the settings object.
 
    The ID of schema depends on the request type, as summarized in the following table.
 2. Create a JSON object for your settings.
@@ -232,7 +232,7 @@ To define a new service detection rule via API
 
    ]
    ```
-3. Use the [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") call to send your configuration.
+3. Use the [POST an object](../../../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") call to send your configuration.
 
 ### Modify a rule
 
@@ -252,10 +252,10 @@ To edit an existing rule via the web UI
 
 To update an existing rule via API
 
-1. Query the settings schema via the [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") callâit contains the information about parameters included in the settings object.
+1. Query the settings schema via the [GET a schema](../../../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") callâit contains the information about parameters included in the settings object.
 
    The ID of schema depends on the request type, as summarized in the following table.
-2. Query the current configuration via the [GET objects](/docs/dynatrace-api/environment-api/settings/objects/get-objects "View multiple settings objects via the Dynatrace API.") call.
+2. Query the current configuration via the [GET objects](../../../../../dynatrace-api/environment-api/settings/objects/get-objects.md "View multiple settings objects via the Dynatrace API.") call.
 3. Create a JSON object for your update. We recommend to use **updateToken** from previous objectâit ensures proper versioning of your settings.
 
    Example JSON for a full web request rule
@@ -423,7 +423,7 @@ To update an existing rule via API
 
    ]
    ```
-4. Use the [PUT an object](/docs/dynatrace-api/environment-api/settings/objects/put-object "Edit a settings object via the Dynatrace API.") call to send your configuration.
+4. Use the [PUT an object](../../../../../dynatrace-api/environment-api/settings/objects/put-object.md "Edit a settings object via the Dynatrace API.") call to send your configuration.
 
 ### Delete a rule
 
@@ -441,10 +441,10 @@ To delete a service detection rule
 
 To delete a rule via API
 
-1. Query the list of existing rules via the [GET objects](/docs/dynatrace-api/environment-api/settings/objects/get-objects "View multiple settings objects via the Dynatrace API.") call. Specify the schema of your request type in the **schemaIds** query parameter.
+1. Query the list of existing rules via the [GET objects](../../../../../dynatrace-api/environment-api/settings/objects/get-objects.md "View multiple settings objects via the Dynatrace API.") call. Specify the schema of your request type in the **schemaIds** query parameter.
    The ID of schema depends on the request type, as summarized in the following table.
 2. Find the rule you want to delete, and copy its **objectId**.
-3. Delete the rule via the [DELETE an object](/docs/dynatrace-api/environment-api/settings/objects/del-object "Delete a settings object via the Dynatrace API.") call. Use the object ID obtained in the previous step.
+3. Delete the rule via the [DELETE an object](../../../../../dynatrace-api/environment-api/settings/objects/del-object.md "Delete a settings object via the Dynatrace API.") call. Use the object ID obtained in the previous step.
 
 ### Examples
 
@@ -1014,7 +1014,7 @@ via API
 
 ### Web server naming issues
 
-* In some cases, web servers don't have well-defined virtual hosts, server names, or sites. A web server might simply be named `localhost`. This can result in multiple similar services that contain multiple website instances. To remedy such issues, adjust [process-group detection settings](/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring#rules "Ways to customize process-group monitoring").
+* In some cases, web servers don't have well-defined virtual hosts, server names, or sites. A web server might simply be named `localhost`. This can result in multiple similar services that contain multiple website instances. To remedy such issues, adjust [process-group detection settings](../../../../infrastructure-observability/process-groups/configuration/pg-monitoring.md#rules "Ways to customize process-group monitoring").
 * When there is no virtual host configured on an Apache HTTP server, the web server name defaults to the name of the physical host. In cloud environments, this leads to one virtual host for each physical host instance and thus one service instance. If the cloud environment starts and stops the hosts, these services will be temporary.
 
   To remedy such localhost scenarios, use an environment variable to define virtual host names: set `DT_LOCALTOVIRTUALHOSTNAME` for each web server process to any value. Dynatrace will pick up the names and use them in place of the existing localhost virtual host names. With this approach, you ensure that multiple physical hosts report the same virtual host and thus get one service with multiple instances, one instance per physical host.
@@ -1037,7 +1037,7 @@ When you create, edit, or delete a rule, data monitored after the change in serv
 
 ## Related topics
 
-* [Merged services](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/merged-services "Consolidate multiple web-request services of the same process group into one service.")
-* [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.")
-* [Service detection API](/docs/dynatrace-api/configuration-api/service-api/detection-rules "Learn what the Dynatrace service detection rules config API offers.")
+* [Merged services](service-types/merged-services.md "Consolidate multiple web-request services of the same process group into one service.")
+* [Settings API](../../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.")
+* [Service detection API](../../../../../dynatrace-api/configuration-api/service-api/detection-rules.md "Learn what the Dynatrace service detection rules config API offers.")
 * [[Blog] New Dynatrace API enhances automatic service detection - with concrete examplesï»¿](https://www.dynatrace.com/news/blog/new-dynatrace-api-enhances-automatic-service-detection/#how-to-use-the-new-api)

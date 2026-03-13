@@ -61,7 +61,7 @@ scraped: 2026-03-06T21:13:24.120446
 ALLOW storage:buckets:read WHERE storage:bucket-name MATCH ("default_*", "common_logs");
 ```
 
-Подробнее см. в [Справочнике политик IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#storage "Полный справочник по политикам IAM и соответствующим условиям для всех сервисов Dynatrace.").
+Подробнее см. в [Справочнике политик IAM](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#storage "Полный справочник по политикам IAM и соответствующим условиям для всех сервисов Dynatrace.").
 
 ### Включённые запросы
 
@@ -71,7 +71,7 @@ ALLOW storage:buckets:read WHERE storage:bucket-name MATCH ("default_*", "common
 
 Включённые запросы
 
-Подробнее о сохранённых данных логов и данных логов включённых запросов см. в [Retain with Included Queries](/docs/license/capabilities/log-analytics#log-retain-included-queries "Узнайте, как рассчитывается потребление Dynatrace Log Analytics.").
+Подробнее о сохранённых данных логов и данных логов включённых запросов см. в [Retain with Included Queries](../../../license/capabilities/log-analytics.md#log-retain-included-queries "Узнайте, как рассчитывается потребление Dynatrace Log Analytics.").
 
 Разрешения для бакетов позволяют определить доступ групп пользователей к:
 
@@ -128,7 +128,7 @@ ALLOW storage:buckets:read WHERE storage:bucket-name MATCH ("default_*", "common
 
 Помимо предоставления доступа к бакетам, необходимо также настроить разрешения для таблиц.
 
-Подробнее см. в [Справочнике политик IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#storage "Полный справочник по политикам IAM и соответствующим условиям для всех сервисов Dynatrace.").
+Подробнее см. в [Справочнике политик IAM](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#storage "Полный справочник по политикам IAM и соответствующим условиям для всех сервисов Dynatrace.").
 
 ### Разрешения на уровне бакета
 
@@ -266,7 +266,7 @@ ALLOW storage:system:read WHERE storage:event.kind="BILLING_EVENT"
 
 В отличие от данных мониторинга, разрешения для сущностей поддерживают фильтрацию только по полю `dt.security_context`.
 
-Подробнее см. в [Предоставление доступа к сущностям с помощью контекста безопасности](/docs/manage/identity-access-management/use-cases/access-security-context "Предоставление доступа к сущностям с помощью контекста безопасности").
+Подробнее см. в [Предоставление доступа к сущностям с помощью контекста безопасности](../../../manage/identity-access-management/use-cases/access-security-context.md "Предоставление доступа к сущностям с помощью контекста безопасности").
 
 ## Разрешения для полей
 
@@ -296,7 +296,7 @@ ALLOW storage:fieldsets:read WHERE storage:fieldset-name="builtin-sensitive-span
 1. В Dynatrace найдите и выберите **Dynatrace API**.
 2. В поле **Select a definition** выберите **Grail - Fieldsets**.
 3. Пройдите аутентификацию с помощью API-токена.
-   Подробности см. в [Аутентификация](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Создание персонализированных токенов платформы для доступа к сервисам Dynatrace через API.").
+   Подробности см. в [Аутентификация](../../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Создание персонализированных токенов платформы для доступа к сервисам Dynatrace через API.").
 4. Выполните одно из следующих действий.
 
 #### Пример
@@ -375,7 +375,7 @@ ALLOW storage:files:read WHERE storage:file-path startsWith "/lookups/public/";
 ALLOW storage:files:read WHERE storage:file-path startsWith "/lookups/http_status_codes";
 ```
 
-Подробнее см. в [Справочнике политик IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#storage "Полный справочник по политикам IAM и соответствующим условиям для всех сервисов Dynatrace.").
+Подробнее см. в [Справочнике политик IAM](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#storage "Полный справочник по политикам IAM и соответствующим условиям для всех сервисов Dynatrace.").
 
 ## Предопределённые глобальные политики
 
@@ -501,10 +501,10 @@ ALLOW storage:system:read;
 * Если в любой другой доступной пользователю политике существует безусловное разрешение для таблицы, оператор `WHERE` не имеет значения и пользователь всегда сможет просматривать все записи из этой таблицы.
 * Используйте оператор `MATCH` для упрощения выражений вместо комбинации `=`, `IN` и `STARTSWITH`, так как существует ограничение в 100 выражений на политику.
 * При использовании оператора `MATCH` с подстановочными символами (`*`) в фильтрах записей рекомендуется размещать подстановочные символы перед или после разделителей слов, таких как: `-`, `_`, `.` или `/`. Это связано с тем, что `matchesValue`, используемый в DQL-запросах, работает лучше при наличии разделителей слов. Например, `... WHERE storage:dt.host_group.id MATCH ("db-tech-*")` более эффективен, чем `... WHERE storage:dt.host_group.id MATCH ("db-tech*")`.
-* Объединяйте logs, events и metrics, где это применимо (для экономии в рамках ограничения в 100 выражений на политику — [синтаксис и примеры выражений политик IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax#iam-example-statements-combined "Синтаксис выражений политик IAM."))
+* Объединяйте logs, events и metrics, где это применимо (для экономии в рамках ограничения в 100 выражений на политику — [синтаксис и примеры выражений политик IAM](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax.md#iam-example-statements-combined "Синтаксис выражений политик IAM."))
 * При создании пользовательских наборов полей избегайте включения в набор необходимых полей (таких как `timestamp`, `id`, `content`).
 
 ## Связанные темы
 
-* [Работа с политиками](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Работа с политиками")
-* [Лучшие практики DQL](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Лучшие практики использования Dynatrace Query Language.")
+* [Работа с политиками](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Работа с политиками")
+* [Лучшие практики DQL](../dynatrace-query-language/dql-best-practices.md "Лучшие практики использования Dynatrace Query Language.")

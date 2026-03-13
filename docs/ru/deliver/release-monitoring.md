@@ -28,9 +28,9 @@ Dynatrace предлагает встроенное решение для ана
 
 ## Настройка
 
-* Узнайте, как [настроить переменные окружения для определения версий](/docs/deliver/release-monitoring/version-detection-strategies "Metadata for version detection in different technologies").
-* При необходимости вы можете [интегрировать системы отслеживания задач и настроить динамические запросы](/docs/deliver/release-monitoring/issue-tracking-integration "Integrate your issue tracker into Dynatrace to pull statistics for monitored entities.").
+* Узнайте, как [настроить переменные окружения для определения версий](release-monitoring/version-detection-strategies.md "Metadata for version detection in different technologies").
+* При необходимости вы можете [интегрировать системы отслеживания задач и настроить динамические запросы](release-monitoring/issue-tracking-integration.md "Integrate your issue tracker into Dynatrace to pull statistics for monitored entities.").
 
 ## Анализ
 
-После настройки вашего программного обеспечения/системы отслеживания задач вы можете [анализировать жизненный цикл программного продукта ваших релизов](/docs/deliver/release-monitoring/monitor-releases-with-dynatrace "Analyze data related to each release version of your software.").
+После настройки вашего программного обеспечения/системы отслеживания задач вы можете [анализировать жизненный цикл программного продукта ваших релизов](release-monitoring/monitor-releases-with-dynatrace.md "Analyze data related to each release version of your software.").

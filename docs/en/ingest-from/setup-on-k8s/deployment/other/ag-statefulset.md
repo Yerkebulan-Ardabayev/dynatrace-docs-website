@@ -16,8 +16,8 @@ Dynatrace Operator manages the lifecycle of several Dynatrace components, includ
 
 ## Prerequisites
 
-* [Create an access token with `PaaS Integration - InstallerDownload`](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.") scope
-* [Create an authentication token](/docs/ingest-from/dynatrace-activegate/activegate-security#generate-individual "Secure ActiveGates with dedicated tokens.")
+* [Create an access token with `PaaS Integration - InstallerDownload`](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.") scope
+* [Create an authentication token](../../../dynatrace-activegate/activegate-security.md#generate-individual "Secure ActiveGates with dedicated tokens.")
 * Get your kube-system namespace UUID
 
   How to extract the kube-system namespace UUID
@@ -937,7 +937,7 @@ To deploy ActiveGate, follow the steps below.
    type: RollingUpdate
    ```
 
-   For more information about containerized ActiveGate configuration, see [Containerized ActiveGate configuration](/docs/ingest-from/dynatrace-activegate/activegate-in-container/configuration "Learn how to configure containerized ActiveGate.").
+   For more information about containerized ActiveGate configuration, see [Containerized ActiveGate configuration](../../../dynatrace-activegate/activegate-in-container/configuration.md "Learn how to configure containerized ActiveGate.").
 
    ActiveGate limit sizing hints
 
@@ -954,10 +954,10 @@ To deploy ActiveGate, follow the steps below.
 
    Actual figures depend on your environment.
 
-   These limits should be taken as a guideline. They're designed to prevent ActiveGate startup process slowdown and excessive node resource usage. The default values cover a large range of different cluster sizes; you can modify them according to your needs, based on the ActiveGate [self-monitoring metrics](/docs/analyze-explore-automate/metrics-classic/self-monitoring-metrics#activegate-insights "Explore the complete list of self-monitoring Dynatrace metrics.").
-   For more information with regards to sizing guidelines refer to [Sizing guide for Dynatrace ActiveGate components](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Set resource limits for Dynatrace ActiveGates")
+   These limits should be taken as a guideline. They're designed to prevent ActiveGate startup process slowdown and excessive node resource usage. The default values cover a large range of different cluster sizes; you can modify them according to your needs, based on the ActiveGate [self-monitoring metrics](../../../../analyze-explore-automate/metrics-classic/self-monitoring-metrics.md#activegate-insights "Explore the complete list of self-monitoring Dynatrace metrics.").
+   For more information with regards to sizing guidelines refer to [Sizing guide for Dynatrace ActiveGate components](../../guides/deployment-and-configuration/resource-management/ag-resource-limits.md "Set resource limits for Dynatrace ActiveGates")
 
-   For PPC64le architecture, additional configuration is required. For details, see [ActiveGate container image](/docs/ingest-from/dynatrace-activegate/activegate-in-container#additional-configuration "Deploy a containerized ActiveGate.").
+   For PPC64le architecture, additional configuration is required. For details, see [ActiveGate container image](../../../dynatrace-activegate/activegate-in-container.md#additional-configuration "Deploy a containerized ActiveGate.").
 6. Deploy ActiveGate.
 
    Kubernetes
@@ -974,7 +974,7 @@ To deploy ActiveGate, follow the steps below.
 
 ## Connect ActiveGate with Kubernetes API
 
-Continue with step 3 from the [guide for enabling Kubernetes API monitoring](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring#connect-ag-k8s-api "Monitor the Kubernetes API using Dynatrace")
+Continue with step 3 from the [guide for enabling Kubernetes API monitoring](../../guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring.md#connect-ag-k8s-api "Monitor the Kubernetes API using Dynatrace")
 
 ## ActiveGate update behavior
 

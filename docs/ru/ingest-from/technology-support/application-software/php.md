@@ -28,16 +28,16 @@ Dynatrace предоставляет широкие возможности мо�
 * Автоматически собираемые метрики PHP-FPM
 * Определение горячих точек на уровне кода
 * Анализ запросов к внешним сервисам через CURL, интерфейсы SOAP и другие удалённые интерфейсы, такие как `fopen` или `get_file_contents`
-* [OneAgent SDK](/docs/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") для пользовательской трассировки
+* [OneAgent SDK](../../extend-dynatrace/extend-tracing/oneagent-sdk.md "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") для пользовательской трассировки
 
-См. [среды и версии, поддерживаемые Dynatrace](/docs/ingest-from/technology-support#php "Find technical details related to Dynatrace support for specific platforms and development frameworks.") в сочетании с PHP.
+См. [среды и версии, поддерживаемые Dynatrace](../../technology-support.md#php "Find technical details related to Dynatrace support for specific platforms and development frameworks.") в сочетании с PHP.
 
 ### Темы
 
-* [Поддерживаемые версии PHP](/docs/ingest-from/technology-support/application-software/php/php-supported-versions "Find out the support timeline for all PHP versions.")
-* [Мониторинг полного стека PHP](/docs/ingest-from/technology-support/application-software/php/full-stack-monitoring "Find out how Dynatrace supports full-stack monitoring for PHP.")
-* [Видимость на уровне кода для PHP](/docs/ingest-from/technology-support/application-software/php/code-level-visibility "Learn how Dynatrace offers code-level visibility for its PHP deep-monitoring support.")
-* [Мониторинг PHP-FPM](/docs/ingest-from/technology-support/application-software/php/php-fpm "Learn how Dynatrace PHP-FPM monitoring provides information about connections, slow requests, and processes.")
+* [Поддерживаемые версии PHP](php/php-supported-versions.md "Find out the support timeline for all PHP versions.")
+* [Мониторинг полного стека PHP](php/full-stack-monitoring.md "Find out how Dynatrace supports full-stack monitoring for PHP.")
+* [Видимость на уровне кода для PHP](php/code-level-visibility.md "Learn how Dynatrace offers code-level visibility for its PHP deep-monitoring support.")
+* [Мониторинг PHP-FPM](php/php-fpm.md "Learn how Dynatrace PHP-FPM monitoring provides information about connections, slow requests, and processes.")
 
 ### См. также
 

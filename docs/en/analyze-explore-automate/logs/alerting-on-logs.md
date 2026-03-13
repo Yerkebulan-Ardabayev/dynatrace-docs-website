@@ -23,7 +23,7 @@ Understanding these approaches will help you choose the most suitable alerting m
 
 ### Use alerting with metrics based on logs
 
-Use [custom alerts](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") with metrics based on logs when you need to:
+Use [custom alerts](../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.") with metrics based on logs when you need to:
 
 * Set thresholds.
 * Employ statistical analyzers to trigger alerts.
@@ -32,7 +32,7 @@ Metrics based on logs are particularly useful for detecting anomalies in the num
 
 Keep in mind that metric analyzers are triggered every minute, which means they are not suitable for real-time alerting.
 
-For detailed instructions, see [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.").
+For detailed instructions, see [Set up custom alerts based on metrics extracted from logs](lma-use-cases/lma-alert-log-based-metrics.md "How to create and configure Davis problems and custom alerts with metrics based on logs.").
 
 ### Use alerting with events based on logs
 
@@ -43,11 +43,11 @@ It also provides near real-time alerting and instant notifications without the n
 
 It is particularly useful when you require prompt responses to specific log events without the complexity of statistical analysis.
 
-For detailed instructions, see [Set up alerts based on events extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events "How to create and configure Davis problems and alerts with events based on logs.").
+For detailed instructions, see [Set up alerts based on events extracted from logs](lma-use-cases/lma-alert-log-based-events.md "How to create and configure Davis problems and alerts with events based on logs.").
 
 ### Use DQL queries in custom alerts
 
-Use DQL queries in [custom alerts](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") when you need to define custom alert conditions based on specific log data patterns, and metric or event extraction is not possible.
+Use DQL queries in [custom alerts](../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.") when you need to define custom alert conditions based on specific log data patterns, and metric or event extraction is not possible.
 This approach allows for flexible and precise querying to identify events or trends within your logs.
 
 Keep in mind that these queries are executed every minute, which can increase license consumption.
@@ -56,7 +56,7 @@ Therefore, make sure you use only optimized queries.
 This method is not typically recommended as the primary alerting strategy.
 However, it can serve as a fallback when alerting with metrics or events is not possible.
 
-For detailed instructions, see [Create log alerts for a log event or summary of log data](/docs/dynatrace-intelligence/use-cases/create-alert-in-logs "Create log alerts for a specific log event or summary of log data").
+For detailed instructions, see [Create log alerts for a log event or summary of log data](../../dynatrace-intelligence/use-cases/create-alert-in-logs.md "Create log alerts for a specific log event or summary of log data").
 
 ## Comparison of Alerting Methods
 
@@ -71,8 +71,8 @@ For detailed instructions, see [Create log alerts for a log event or summary of 
 
 ## Related topics
 
-* [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
-* [Anomaly detection](/docs/dynatrace-intelligence/anomaly-detection "How Dynatrace detects anomalies in your environment.")
-* [Event analysis and correlation](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation "Gain an understanding of the Events section on each host, process, and service overview page.")
-* [Anomaly detection configuration](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration "How to set up an alert for missing measurements.")
-* [Detect problems with Logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs "Use the Problems app and Logs to quickly detect and analyze arising problems.")
+* [OpenPipeline](../../platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.")
+* [Anomaly detection](../../dynatrace-intelligence/anomaly-detection.md "How Dynatrace detects anomalies in your environment.")
+* [Event analysis and correlation](../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation.md "Gain an understanding of the Events section on each host, process, and service overview page.")
+* [Anomaly detection configuration](../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md "How to set up an alert for missing measurements.")
+* [Detect problems with Logs](lma-use-cases/lma-detect-problems-with-logs.md "Use the Problems app and Logs to quickly detect and analyze arising problems.")

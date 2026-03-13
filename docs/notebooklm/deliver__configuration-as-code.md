@@ -21,7 +21,7 @@ scraped: 2026-03-02T21:30:29.843938
 * 4-min read
 * Updated on Jan 15, 2026
 
-To define the accounts for which Monaco will configure the account management resources, you need to create an `accounts` section in a [manifest file](/docs/deliver/configuration-as-code/monaco/configuration#manifest "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.").
+To define the accounts for which Monaco will configure the account management resources, you need to create an `accounts` section in a [manifest file](deliver/configuration-as-code/monaco/configuration.md#manifest "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.").
 
 In the following example, we define a single account object containing account-related information. The **name** property specifies the account name (in this example, `my-account`) that can be referenced using the Monaco CLI commands `--account` flag.
 
@@ -62,11 +62,11 @@ Platform tokens and API tokens are not supported.
 The OAuth client must have the appropriate scopes configured for the account resources you want to manage.
 Ensure your OAuth credentials include the required permissions for users, groups, policies, boundaries, or service users before deploying configurations.
 
-Other than the `accounts` section, a `manifest.yaml` defined for account resources is the same as for environment configurations, requiring [`projects`](/docs/deliver/configuration-as-code/monaco/configuration#project-definitions "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.") of account resource configuration files.
+Other than the `accounts` section, a `manifest.yaml` defined for account resources is the same as for environment configurations, requiring [`projects`](deliver/configuration-as-code/monaco/configuration.md#project-definitions "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.") of account resource configuration files.
 
 ## Account resources
 
-Using Monaco, you can define [users](/docs/manage/identity-access-management/user-and-group-management/access-user-management "User management"), [service users](/docs/manage/identity-access-management/user-and-group-management/access-service-users "Service users"), [groups](/docs/manage/identity-access-management/user-and-group-management/access-group-management "Manage Dynatrace groups and their permissions."), [policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies"), and [boundaries](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries "Restrict security policies with policy boundaries to provide tailored access to your users.") as dedicated types in YAML configuration files.
+Using Monaco, you can define [users](manage/identity-access-management/user-and-group-management/access-user-management.md "User management"), [service users](../ru/manage/identity-access-management/user-and-group-management/access-service-users.md "Service users"), [groups](manage/identity-access-management/user-and-group-management/access-group-management.md "Manage Dynatrace groups and their permissions."), [policies](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies"), and [boundaries](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries.md "Restrict security policies with policy boundaries to provide tailored access to your users.") as dedicated types in YAML configuration files.
 
 Unlike the usual environment-level configurations, no JSON template files are needed. Monaco builds the required API data directly from your YAML configuration.
 
@@ -615,7 +615,7 @@ In this example, we define these objects.
 
 Because account-level configuration is usually distinct from environment-level configuration and changes less frequently, existing commands like `monaco deploy` ignore any account configuration that may be defined in a manifest file.
 
-Dedicated commands exist for account resources: [Account](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#account "How to use the Monaco CLI application, including arguments and options.").
+Dedicated commands exist for account resources: [Account](../ru/deliver/configuration-as-code/monaco/reference/commands-saas.md#account "How to use the Monaco CLI application, including arguments and options.").
 
 ---
 
@@ -636,11 +636,11 @@ scraped: 2026-03-01T21:24:34.545844
 * 8-min read
 * Published Jul 22, 2025
 
-To run Monaco, you need to define the [deployment manifest](/docs/deliver/configuration-as-code/monaco/monaco-concepts#deploy-manifest "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration."), [project directories](/docs/deliver/configuration-as-code/monaco/monaco-concepts#projects "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration."), and [resource configuration](/docs/deliver/configuration-as-code/monaco/monaco-concepts#resource-configuration "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration.") so that you can manage the resources.
+To run Monaco, you need to define the [deployment manifest](../ru/deliver/configuration-as-code/monaco/monaco-concepts.md#deploy-manifest "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration."), [project directories](../ru/deliver/configuration-as-code/monaco/monaco-concepts.md#projects "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration."), and [resource configuration](../ru/deliver/configuration-as-code/monaco/monaco-concepts.md#resource-configuration "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration.") so that you can manage the resources.
 
 ## Deployment manifest
 
-The [deployment manifest](/docs/deliver/configuration-as-code/monaco/monaco-concepts#deploy-manifest "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration.") file has three top-level keys: `manifestVersion`, `projects`, and `environmentGroups`.
+The [deployment manifest](../ru/deliver/configuration-as-code/monaco/monaco-concepts.md#deploy-manifest "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration.") file has three top-level keys: `manifestVersion`, `projects`, and `environmentGroups`.
 
 ### Sample manifest.yaml
 
@@ -840,7 +840,7 @@ The release notes will contain details if the manifest is extended, of if newer 
 
 ### projects
 
-All entries under [`projects`](/docs/deliver/configuration-as-code/monaco/monaco-concepts#projects "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration.") specify the projects to deploy by Monaco.
+All entries under [`projects`](../ru/deliver/configuration-as-code/monaco/monaco-concepts.md#projects "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration.") specify the projects to deploy by Monaco.
 To specify a project's:
 
 * Name, provide the `name` key.
@@ -928,7 +928,7 @@ Always define a `token` specifying the access token for general configuration an
 
 Access tokens for the Dynatrace Monaco CLI always require at least the "Access problem and event feed, metrics, and topology (`DataExport`)âAPI v1" permission to query general information about your environment.
 
-You need to configure each available configuration type with specific permissions. For more detailed information, see [Monaco API support and access permission handling](/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling "This is a list of the Monaco API support and access permission handling.").
+You need to configure each available configuration type with specific permissions. For more detailed information, see [Monaco API support and access permission handling](../ru/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling.md "This is a list of the Monaco API support and access permission handling.").
 
 In most cases, you require a token with at least these permissions:
 
@@ -938,7 +938,7 @@ In most cases, you require a token with at least these permissions:
 * "Read settings (`settings.read`)âAPI v2"
 * "Write settings (`settings.write`)âAPI v2"
 
-For general information on access token authentication, see [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+For general information on access token authentication, see [Dynatrace API - Tokens and authentication](../ru/dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
 
 You need an OAuth section specifying the OAuth client credentials.
 
@@ -951,7 +951,7 @@ Generally, OAuth client credentials for the Dynatrace Monaco CLI should have at 
 
 #### projects
 
-The [`projects`](/docs/deliver/configuration-as-code/monaco/monaco-concepts#projects "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration.") are directories used to logically group API configurations together.
+The [`projects`](../ru/deliver/configuration-as-code/monaco/monaco-concepts.md#projects "This is a list of Monaco concepts such as deployment manifest, projects, and resource configuration.") are directories used to logically group API configurations together.
 An example of a project could be a service where all configurations regarding this service are present in the folder.
 Projects can consist of multiple files and directories.
 
@@ -963,7 +963,7 @@ The configuration folders finally contain the YAML files specifying what resourc
 
 The configuration files consist of
 
-* [configs YAML file](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas "The Monaco configuration YAML file is structure."), defining parameters, dependencies, name, and template
+* [configs YAML file](../ru/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas.md "The Monaco configuration YAML file is structure."), defining parameters, dependencies, name, and template
 * JSON template file
 
 The Dynatrace Monaco CLI uses Go templates, which allow you to define more complex templates. Still, we recommend keeping templates simpleâreferencing variables via `{{ .PARAMETER_NAME }}` should be sufficient.
@@ -1007,7 +1007,7 @@ scraped: 2026-03-06T21:33:46.968318
 * Published Sep 14, 2025
 
 This section describes how only one, single configuration end point should be present. It also describes the configuration types with non-standard behavior and specific constraints when working with the related APIs.
-For more information, see [supported Configuration API types](/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling#supported-api-types "This is a list of the Monaco API support and access permission handling.").
+For more information, see [supported Configuration API types](../ru/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling.md#supported-api-types "This is a list of the Monaco API support and access permission handling.").
 
 ## Single configuration endpoint
 
@@ -1039,9 +1039,9 @@ Otherwise, Monaco may return `duplicate config name` errors.
 Generally, calculated metrics behave as non-unique name types but use a `metricKey` that you can define as an identifier, so the automated handling described above is impossible.
 
 While the API and web UI allow you to create several configurations with the same `name`, the Dynatrace Monaco CLI can't uniquely identify these configurations.
-After a [download](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#download "How to use the Monaco CLI application, including arguments and options."), you may see `duplicate config name` errors for calculated metric types.
+After a [download](../ru/deliver/configuration-as-code/monaco/reference/commands-saas.md#download "How to use the Monaco CLI application, including arguments and options."), you may see `duplicate config name` errors for calculated metric types.
 
-The `calculated-metrics-log` type, which allows configuring the metrics for the deprecated Logs v1, needs further special handling. For more information, see [calculated log metrics JSON](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#log-metrics-json "This is a list of Monaco special configuration types.") below.
+The `calculated-metrics-log` type, which allows configuring the metrics for the deprecated Logs v1, needs further special handling. For more information, see [calculated log metrics JSON](../ru/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas.md#log-metrics-json "This is a list of Monaco special configuration types.") below.
 
 ## Settings 2.0 objects
 
@@ -1053,7 +1053,7 @@ The `externalId` consists of the prefix `monaco:` followed by an identifier gene
 
 To ensure that the existing Settings 2.0 objects are reliably updated, the Dynatrace Monaco CLI records the original Dynatrace object IDs when downloading and includes them in the YAML configuration field `originObjectId`.
 
-Settings objects also have special requirements for their JSON templates. For more details, see [Settings JSON](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#settings-json "This is a list of Monaco special configuration types.") below.
+Settings objects also have special requirements for their JSON templates. For more details, see [Settings JSON](../ru/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas.md#settings-json "This is a list of Monaco special configuration types.") below.
 
 ## Special requirements for JSON templates
 
@@ -1131,7 +1131,7 @@ This configuration does the following:
 
 * References the name of the dashboard as a [variable](#configuration-yaml-structure)
 * Shares the dashboard with other users
-* Sets a management zone filter on the entire dashboard, again as a variable, typically [referenced from another configuration](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas#reference "The Monaco configuration YAML file is structure.") TODO
+* Sets a management zone filter on the entire dashboard, again as a variable, typically [referenced from another configuration](../ru/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas.md#reference "The Monaco configuration YAML file is structure.") TODO
 
 Filtering the whole dashboard by management zone ensures that only data that is meant to be displayed is picked up by the dashboard tiles, and it eliminates the possible need to define filters for individual tiles.
 
@@ -1280,7 +1280,7 @@ The `SERVICE` type:
 
 
 
-The [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") has additional properties unrelated to the specific schemas.
+The [Settings API](../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") has additional properties unrelated to the specific schemas.
 This requires Dynatrace Monaco CLI to set further parameters.
 
 The JSON templates for Settings should only include the actual configuration `value`.
@@ -1825,7 +1825,7 @@ The Dynatrace Monaco JSON template only requires the `value` content:
 }
 ```
 
-When using the [download command](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#download "How to use the Monaco CLI application, including arguments and options."), this happens automatically.
+When using the [download command](../ru/deliver/configuration-as-code/monaco/reference/commands-saas.md#download "How to use the Monaco CLI application, including arguments and options."), this happens automatically.
 
 ---
 
@@ -1846,7 +1846,7 @@ scraped: 2026-03-06T21:30:43.612602
 * 11-min read
 * Updated on Jan 15, 2026
 
-The [`type` field](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas#type-field "The Monaco configuration YAML file is structure.") in the `configs` YAML file defines the Dynatrace configuration type.
+The [`type` field](../ru/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas.md#type-field "The Monaco configuration YAML file is structure.") in the `configs` YAML file defines the Dynatrace configuration type.
 
 The list of `type` fields
 
@@ -1910,7 +1910,7 @@ config:
 [...]
 ```
 
-For more information, see [supported API types](/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling#supported-api-types "This is a list of the Monaco API support and access permission handling.").
+For more information, see [supported API types](../ru/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling.md#supported-api-types "This is a list of the Monaco API support and access permission handling.").
 
 Some of the `api` `type` configuration have a parent-child relationship with another configuration.
 Such a configuration requires a scope field that points to the parent configuration.
@@ -2006,7 +2006,7 @@ property: id
 
 ## settings type field
 
-The [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") are defined by their `schema`, `scope`, and an optional `schemaVersion`.
+The [Settings API](../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") are defined by their `schema`, `scope`, and an optional `schemaVersion`.
 
 The `type` field `settings` can be defined as follows.
 
@@ -2335,7 +2335,7 @@ allUsers: read
 ## automation type field
 
 Since Dynatrace Monaco CLI version 2.6.0+, the `automation` type is supported.
-The `automation` type configurations represent [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") related resources.
+The `automation` type configurations represent [Workflows](../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") related resources.
 
 The `type` field `automation` can be defined as follows.
 
@@ -2352,7 +2352,7 @@ resource: workflow # or business-calendar, or scheduling-rule
 ```
 
 The `resource` field specifies the desired automation resource. Each resource requires distinct OAuth permissions.
-For more information, see [Monaco API support and access permission handling](/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling#supported-api-types "This is a list of the Monaco API support and access permission handling.").
+For more information, see [Monaco API support and access permission handling](../ru/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling.md#supported-api-types "This is a list of the Monaco API support and access permission handling.").
 
 An example is shown below.
 
@@ -2420,7 +2420,7 @@ If it fails, the operation is repeated without the flag, but you can only access
 
 ## bucket type field
 
-Since Dynatrace Monaco CLI version 2.9.0+, the `bucket` type is supported, and it represents the configurations of the [data storage management in Grail with custom Grail buckets](/docs/platform/grail/organize-data#creating-new-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
+Since Dynatrace Monaco CLI version 2.9.0+, the `bucket` type is supported, and it represents the configurations of the [data storage management in Grail with custom Grail buckets](../ru/platform/grail/organize-data.md#creating-new-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
 
 The `type` field `bucket` can be defined as follows.
 
@@ -2430,7 +2430,7 @@ type: bucket
 
 It does not require any additional fields.
 
-In addition to defining and creating a new storage bucket, you need an additional bucket rule [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") to specify what data is stored in it.
+In addition to defining and creating a new storage bucket, you need an additional bucket rule [Settings API](../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") to specify what data is stored in it.
 
 An example is shown below.
 
@@ -2546,7 +2546,7 @@ By default, the bucket name is sanitized to ensure compatibility with Dynatrace 
 
 ## document type field
 
-Since Dynatrace Monaco CLI version 2.15.0+, the `document` type is supported, and it represents the [API for Dashboards and Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/document-api "Manage Dynatrace documents (such as dashboards and notebooks) via API.").
+Since Dynatrace Monaco CLI version 2.15.0+, the `document` type is supported, and it represents the [API for Dashboards and Notebooks](../ru/analyze-explore-automate/dashboards-and-notebooks/document-api.md "Manage Dynatrace documents (such as dashboards and notebooks) via API.").
 
 Since Dynatrace Monaco CLI version 2.18.0+, the `document` type also represents the `launchpad`.
 
@@ -2579,15 +2579,15 @@ If not specified otherwise, the `document` is public by default, which means eve
 
 The optional field `id` allows you to set a custom ID for the document.
 If this field is set, a direct reference via `objectId` is needed
-in the [deletefile](/docs/deliver/configuration-as-code/monaco/configuration#file-structure-for-direct-reference "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest."), should you want to delete the document later.
+in the [deletefile](deliver/configuration-as-code/monaco/configuration.md#file-structure-for-direct-reference "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest."), should you want to delete the document later.
 
 If not specified, Monaco generates a custom ID. In both cases, user-defined and Monaco-generated, the custom ID is used to populate the `id` field on download.
 
-Monaco does not download [Ready-made documents](/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents "Use ready-made documents right out of the box.").
+Monaco does not download [Ready-made documents](../ru/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents.md "Use ready-made documents right out of the box.").
 
 Depending on the userâs credentials, Monaco may not be able to redeploy all downloaded documents in certain situations.
 This situation happens when documents are publicly accessible, but the Monaco user does not have ownership rights. In other words, the Monaco user does not own the document.
-For more information on sharing documents or changing their owner, see [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), or [Launchpads](/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads "Build and manage custom start pages with launchpads.").
+For more information on sharing documents or changing their owner, see [Dashboards](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), [Notebooks](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), or [Launchpads](../ru/discover-dynatrace/get-started/dynatrace-ui/launchpads.md "Build and manage custom start pages with launchpads.").
 
 For more information, see [Configuration as code sample repoï»¿](https://github.com/Dynatrace/dynatrace-configuration-as-code-samples)
 
@@ -2615,7 +2615,7 @@ kind: bizevents # id of openpipeline configuration (for example, "bizevents", "e
 Deploying an `openpipeline` configuration overwrites the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Monaco or Terraform to be lost.
 To prevent data loss, ensure all configurations are defined within a single Monaco or Terraform configuration.
 
-This resource is deprecated and has been moved to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**. For more information, see [OpenPipeline API](/docs/platform/openpipeline/reference/openpipeline-api "Configure OpenPipeline capabilities of ingest source, routing, and processing via API.").
+This resource is deprecated and has been moved to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**. For more information, see [OpenPipeline API](../ru/platform/openpipeline/reference/openpipeline-api.md "Configure OpenPipeline capabilities of ingest source, routing, and processing via API.").
 
 The `kind` field specifies the `id` of a pre-existing `openpipeline` configuration.
 Monaco can retrieve and update configurations, but can't create or delete new ones.
@@ -2623,7 +2623,7 @@ Monaco can retrieve and update configurations, but can't create or delete new on
 ## segment type field
 
 Since Dynatrace Monaco CLI version 2.19.0+, the `segment` type is supported.
-[Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") are used to structure and filter data for tailored views in Dynatrace.
+[Segments](../ru/manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") are used to structure and filter data for tailored views in Dynatrace.
 
 The `type` field `segment` can be defined as follows.
 
@@ -2715,9 +2715,9 @@ template: dashboard.json
 
 Since Dynatrace Monaco CLI version 2.22.0+, the `slo-v2` type is supported.
 
-[Configure and monitor service-level objectives with Dynatrace](/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo "Create, configure, and monitor service-level objectives with Dynatrace."), based on Grail and utilizing DQL are managed via the `type` `slo-v2`.
+[Configure and monitor service-level objectives with Dynatrace](deliver/service-level-objectives-classic/configure-and-monitor-slo.md "Create, configure, and monitor service-level objectives with Dynatrace."), based on Grail and utilizing DQL are managed via the `type` `slo-v2`.
 
-The `slo-v2` configuration type is distinct from the existing `slo` type and represents SLOs leveraging Grail, as described in the [Configure and monitor service-level objectives with Dynatrace](/docs/deliver/service-level-objectives-classic/configure-and-monitor-slo "Create, configure, and monitor service-level objectives with Dynatrace.") overview.
+The `slo-v2` configuration type is distinct from the existing `slo` type and represents SLOs leveraging Grail, as described in the [Configure and monitor service-level objectives with Dynatrace](deliver/service-level-objectives-classic/configure-and-monitor-slo.md "Create, configure, and monitor service-level objectives with Dynatrace.") overview.
 These two configuration types are incompatible, and deploying a `slo` configuration as a `slo-v2` or vice versa results in the API rejecting the request.
 
 The `type` field `slo-v2` can be defined as follows.
@@ -3013,7 +3013,7 @@ While this sample shows users, service users, policies, and groups defined in a 
 
 ## Related topics
 
-* [Monaco configuration YAML file structure](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas "The Monaco configuration YAML file is structure.")
+* [Monaco configuration YAML file structure](../ru/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas.md "The Monaco configuration YAML file is structure.")
 
 ---
 
@@ -3162,8 +3162,8 @@ The optional `groupOverrides` and `environmentOverrides` fields allow for this.
 ## `id` field
 
 The `id` field identifies a `config` within the configurations.
-It must be unique for the same [configType](/docs/deliver/configuration-as-code/monaco/reference/commands-saas "How to use the Monaco CLI application, including arguments and options.") and [project](/docs/deliver/configuration-as-code/monaco/configuration/monaco-manage-resources#projects "This a list of Monaco resources.").
-This field is needed to reference the [parameters](/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling#supported-api-types "This is a list of the Monaco API support and access permission handling.") and describe dependencies between single configs.
+It must be unique for the same [configType](../ru/deliver/configuration-as-code/monaco/reference/commands-saas.md "How to use the Monaco CLI application, including arguments and options.") and [project](../ru/deliver/configuration-as-code/monaco/configuration/monaco-manage-resources.md#projects "This a list of Monaco resources.").
+This field is needed to reference the [parameters](../ru/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling.md#supported-api-types "This is a list of the Monaco API support and access permission handling.") and describe dependencies between single configs.
 
 It is possible to have, for example, two dashboards with the same `id` but in two different projects.
 
@@ -3173,12 +3173,12 @@ The `id` field is only local to the Dynatrace Monaco CLI and does not correspond
 
 The `type` field defines the type of Dynatrace configuration.
 
-For a detailed list, see [Monaco configuration YAML file - list of type fields](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields "This is a list of type fields in the Monaco configuration YAML file.").
+For a detailed list, see [Monaco configuration YAML file - list of type fields](../ru/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields.md "This is a list of type fields in the Monaco configuration YAML file.").
 
 The types and subcategories
 
 * `API`: selected Dynatrace APIs.
-  For more information, see [Monaco API support and access permission handling](/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling#supported-api-types "This is a list of the Monaco API support and access permission handling.").
+  For more information, see [Monaco API support and access permission handling](../ru/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling.md#supported-api-types "This is a list of the Monaco API support and access permission handling.").
 
   + `scope`
 * `Settings API`
@@ -3189,11 +3189,11 @@ The types and subcategories
   + Optional `insertAfter`
 
     Not all **Settings** schemas support permission. Only applicable for objects based on schemas with ordered objects. Schema's ordered parameter is set to `true`.
-    For more information, see [SettingsObjectUpdate object](/docs/dynatrace-api/environment-api/settings/objects/put-object#openapi-parameter-body-objects-openapienv2 "Edit a settings object via the Dynatrace API.").
+    For more information, see [SettingsObjectUpdate object](dynatrace-api/environment-api/settings/objects/put-object.md#openapi-parameter-body-objects-openapienv2 "Edit a settings object via the Dynatrace API.").
   + Optional `permission`
 
     Not all **Settings** schemas support permission. Only applicable for objects based on schemas with ordered objects. Schema's ordered parameter is set to `true`.
-    For more information, see [SettingsObjectUpdate object](/docs/dynatrace-api/environment-api/settings/objects/put-object#openapi-parameter-body-objects-openapienv2 "Edit a settings object via the Dynatrace API.").
+    For more information, see [SettingsObjectUpdate object](dynatrace-api/environment-api/settings/objects/put-object.md#openapi-parameter-body-objects-openapienv2 "Edit a settings object via the Dynatrace API.").
 * `Automation` defines a workflow.
 
   + `resource`
@@ -3207,7 +3207,7 @@ The types and subcategories
 
   + `kind`
 
-Dynatrace version 1.323+ OpenPipeline Configurations API is replaced by dedicated Settings API schemas. To avoid the following limitations, migrate to the new format, see [Migrate OpenPipeline configurations to Settings API](/docs/platform/openpipeline/migration-settings "Understand how to migrate your OpenPipeline configurations to new Settings API."). If you already use the new Settings API schemas, refer to [Type - Settings](#type-setting) instead.
+Dynatrace version 1.323+ OpenPipeline Configurations API is replaced by dedicated Settings API schemas. To avoid the following limitations, migrate to the new format, see [Migrate OpenPipeline configurations to Settings API](platform/openpipeline/migration-settings.md "Understand how to migrate your OpenPipeline configurations to new Settings API."). If you already use the new Settings API schemas, refer to [Type - Settings](#type-setting) instead.
 
 * `Segment` defines the data segments and filter masks.
 * `Service-level objectives (SLOs)` sets up a Dynatrace slo.
@@ -3223,7 +3223,7 @@ Configuration `type` fields
 * `scope`: applicable for the types `api` and `settings`.
   It allows for specifying dependencies and relationships.
 * `schema` and `schemaVersion`: applicable for the `settings` type.
-  It defines the specific settings schema, such as [custom alerts](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.").
+  It defines the specific settings schema, such as [custom alerts](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.").
 * `permission`: applicable for the type `settings`.
   It allows fine-grained access control to settings objects, based on IAM permissions.
 * `insertAfter`: applicable for the type `settings`.
@@ -3236,7 +3236,7 @@ Configuration `type` fields
   It specifies the accessibility/visibility of the document in the environment, for example, public versus private.
 * `id`: applicable for the type `document`.
   It specifies a user-defined ID for the document.
-  If it's specified, it also needs to be directly referenced in the [deletefile](/docs/deliver/configuration-as-code/monaco/configuration#file-structure-for-direct-reference "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest."), if you wish to delete the document later.
+  If it's specified, it also needs to be directly referenced in the [deletefile](deliver/configuration-as-code/monaco/configuration.md#file-structure-for-direct-reference "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest."), if you wish to delete the document later.
   For document creation, if this field is not set, Monaco generates a custom ID.
   On download, the `id` field is populated, if a custom ID was used to create the document.
 
@@ -3299,13 +3299,13 @@ Dynatrace Monaco CLI version 2.7.0+âThe `name` property is required only fo
 
 #### Configurations of type `api`
 
-If the specified configuration is an [api type](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#type-field "This is a list of type fields in the Monaco configuration YAML file."), the `name` is used to identify configurations in a Dynatrace environment and ensure that they're updated when they already exist.
+If the specified configuration is an [api type](../ru/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields.md#type-field "This is a list of type fields in the Monaco configuration YAML file."), the `name` is used to identify configurations in a Dynatrace environment and ensure that they're updated when they already exist.
 
 For this, the `name` needs to be used in the JSON template to fill the configuration's specific `name` property.
 Usually, this is also just a `name`, but for some configurations, this may differ.
-For more information, see the exceptional cases described for JSON templates [Work with Dynatrace Monaco CLI commands for Latest Dynatrace](/docs/deliver/configuration-as-code/monaco/reference/commands-saas "How to use the Monaco CLI application, including arguments and options.") and refer to the API documentation if in doubt.
+For more information, see the exceptional cases described for JSON templates [Work with Dynatrace Monaco CLI commands for Latest Dynatrace](../ru/deliver/configuration-as-code/monaco/reference/commands-saas.md "How to use the Monaco CLI application, including arguments and options.") and refer to the API documentation if in doubt.
 
-When [downloading](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#download "How to use the Monaco CLI application, including arguments and options."), the names are automatically extracted and placed in the YAML for you.
+When [downloading](../ru/deliver/configuration-as-code/monaco/reference/commands-saas.md#download "How to use the Monaco CLI application, including arguments and options."), the names are automatically extracted and placed in the YAML for you.
 
 When referencing the name in a JSON template, it needs to be used as it is, with no additional text or characters around it.
 
@@ -3320,14 +3320,14 @@ If you encounter issues with the configurations not being created several times 
 The `name` property isn't used to identify Dynatrace objects.
 Instead, the configuration's coordinate, a combination of project, type, and configuration ID, or originObjectId, if present, is used.
 
-The `name` property can still be used and, for some types, is automatically extracted when [downloading](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#download "How to use the Monaco CLI application, including arguments and options.").
+The `name` property can still be used and, for some types, is automatically extracted when [downloading](../ru/deliver/configuration-as-code/monaco/reference/commands-saas.md#download "How to use the Monaco CLI application, including arguments and options.").
 
 ### `skip` field
 
 The `skip` field allows you to omit or skip the deployment of a specific configuration.
 If `skip` is set to true, the Dynatrace Monaco CLI won't deploy the configuration.
 
-The `skip` field behaves like [parameters](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#parameters "This is a list of type fields in the Monaco configuration YAML file.") and you can define it as a value or an environment parameter.
+The `skip` field behaves like [parameters](../ru/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields.md#parameters "This is a list of type fields in the Monaco configuration YAML file.") and you can define it as a value or an environment parameter.
 Typically, it's defined directly as a shorthand value.
 
 It's most useful with environment overrides, where you want to deploy a configuration to one environment but exclude it from another.
@@ -3865,7 +3865,7 @@ property: status
 
 #### `list` parameter
 
-The type `list` parameter allows you to define lists of [value parameters](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#value "This is a list of type fields in the Monaco configuration YAML file.").
+The type `list` parameter allows you to define lists of [value parameters](../ru/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields.md#value "This is a list of type fields in the Monaco configuration YAML file.").
 When these are in a template, they're written as a JSON list surrounded by square brackets and separated by commas.
 This parameter type generally applies when you require a simple list of things, such as emails or identifiers, that can be filled with any value parameter.
 
@@ -4049,7 +4049,7 @@ In the given example, you can reference the additional parameter called `comment
 
 ### `originObjectId`
 
-When using the Dynatrace Monaco CLI to [download](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#download "How to use the Monaco CLI application, including arguments and options.") existing configurations from Dynatrace, the created YAML files contain an `originObjectId` for some configuration types.
+When using the Dynatrace Monaco CLI to [download](../ru/deliver/configuration-as-code/monaco/reference/commands-saas.md#download "How to use the Monaco CLI application, including arguments and options.") existing configurations from Dynatrace, the created YAML files contain an `originObjectId` for some configuration types.
 
 The `originObjectId` holds the ID of the downloaded Dynatrace object.
 Use `originObjectId` when you're planning on deploying again to the same Dynatrace environment to ensure that the existing object is correctly updated with the downloaded configuration.
@@ -4176,7 +4176,7 @@ skip: true
 
 ## Related topics
 
-* [Monaco configuration YAML file - list of type fields](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields "This is a list of type fields in the Monaco configuration YAML file.")
+* [Monaco configuration YAML file - list of type fields](../ru/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields.md "This is a list of type fields in the Monaco configuration YAML file.")
 
 ---
 
@@ -4202,18 +4202,18 @@ Dynatrace offers different options to authenticate API calls. Dynatrace Monaco s
 * Platform tokens
 * OAuth clients
 
-For details about Dynatrace Identity and Access Management (including platform tokens,API tokens, and OAuth clients), see [Tokens and OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients "Tokens and OAuth clients").
+For details about Dynatrace Identity and Access Management (including platform tokens,API tokens, and OAuth clients), see [Tokens and OAuth clients](manage/identity-access-management/access-tokens-and-oauth-clients.md "Tokens and OAuth clients").
 
 ## Create a platform token for the Dynatrace Monaco CLI
 
-To create a platform token, follow the steps described in [Create a platform token for the Dynatrace Monaco CLI](/docs/deliver/configuration-as-code/monaco/guides/create-platform-token "Create a platform token for Dynatrace Configuration as Code via Monaco.").
-Each available type of platform configuration requires specific [OAuth scopes](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+To create a platform token, follow the steps described in [Create a platform token for the Dynatrace Monaco CLI](deliver/configuration-as-code/monaco/guides/create-platform-token.md "Create a platform token for Dynatrace Configuration as Code via Monaco.").
+Each available type of platform configuration requires specific [OAuth scopes](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
 ## Create an OAuth client for the Dynatrace Monaco CLI
 
-To create an OAuth client, follow the steps described in [Create an OAuth2 client](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients#create-an-oauth2-client "Manage authentication and user permissions using OAuth clients.").
+To create an OAuth client, follow the steps described in [Create an OAuth2 client](manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md#create-an-oauth2-client "Manage authentication and user permissions using OAuth clients.").
 
-Each available type of platform configuration requires specific [OAuth scopes](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+Each available type of platform configuration requires specific [OAuth scopes](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
 To use the `automation:workflows:admin` scope, you need to do the following before creating the OAuth client.
 
@@ -4221,7 +4221,7 @@ To use the `automation:workflows:admin` scope, you need to do the following befo
 2. Bind a group to it.
 3. Assign your user to that group.
 
-For detailed information on managing policies, see [IAM policy reference](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+For detailed information on managing policies, see [IAM policy reference](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
 To manage OpenPipeline configurations, ensure that the user belongs to a group with the policy **Data Processing and Storage** assigned to it.
 Do this before creating the OAuth client.
@@ -4229,7 +4229,7 @@ Do this before creating the OAuth client.
 In addition to the scopes available to the OAuth client, permissions can be further limited via policies applied to the user's groups.
 
 When working with a service user, ensure the service user's permissions match the OAuth scopes for all environments.
-For details on how permissions can be controlled, see [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+For details on how permissions can be controlled, see [Working with policies](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
 
 To use your OAuth client:
 
@@ -4252,7 +4252,7 @@ The specific configuration types are defined in the Monaco configuration YAML fi
 Settings 2.0 resources require a classic Dynatrace API access token or OAuth credentials.
 
 The Dynatrace Monaco CLI provides general support for any Settings 2.0 schema available in your environment.
-For information about schemas, see [Settings 2.0 - Available schemas](/docs/dynatrace-api/environment-api/settings/schemas "View the entire settings schemas table of your monitoring environment via the Dynatrace API.").
+For information about schemas, see [Settings 2.0 - Available schemas](dynatrace-api/environment-api/settings/schemas.md "View the entire settings schemas table of your monitoring environment via the Dynatrace API.").
 
 For latest Dynatrace, you will need the following OAuth scopes.
 
@@ -4292,7 +4292,7 @@ To manage account resources, such as user management or policy handling, OAuth c
 
 ### Supported Configuration API types
 
-Configuration via the [Configuration API](/docs/dynatrace-api/configuration-api "Find out what you need to use the configuration section of the Dynatrace API.") requires an API access token.
+Configuration via the [Configuration API](dynatrace-api/configuration-api.md "Find out what you need to use the configuration section of the Dynatrace API.") requires an API access token.
 Dynatrace Monaco CLI provides support for most Configuration APIs, as described in the table below.
 This table provides:
 
@@ -4300,11 +4300,11 @@ This table provides:
 * Their API endpoints.
 * The access token permissions that are required to interact with any endpoint.
 
-Note that most Configuration APIs are deprecated in favor of Settings 2.0, see [Settings 2.0](/docs/dynatrace-api/configuration-api "Find out what you need to use the configuration section of the Dynatrace API.").
+Note that most Configuration APIs are deprecated in favor of Settings 2.0, see [Settings 2.0](dynatrace-api/configuration-api.md "Find out what you need to use the configuration section of the Dynatrace API.").
 
 ## Related topics
 
-* [Monaco configuration YAML file - list of special configuration types](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas "This is a list of Monaco special configuration types.")
+* [Monaco configuration YAML file - list of special configuration types](../ru/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas.md "This is a list of Monaco special configuration types.")
 
 ---
 
@@ -4347,7 +4347,7 @@ Deployment manifest
     The manifest is saved as a YAML file.
 
 Projects
-:   Monaco projects are directories (folders) that logically group API configurations. An example of a project could be a service where all configurations regarding this service are present in the folder. Projects can consist of multiple files and directories. For more information, see [Manage a Monaco project](/docs/deliver/configuration-as-code/monaco/configuration/projects "Manage a project folder with Dynatrace Configuration as Code via Monaco.").
+:   Monaco projects are directories (folders) that logically group API configurations. An example of a project could be a service where all configurations regarding this service are present in the folder. Projects can consist of multiple files and directories. For more information, see [Manage a Monaco project](deliver/configuration-as-code/monaco/configuration/projects.md "Manage a project folder with Dynatrace Configuration as Code via Monaco.").
 
     The projects directories group configuration files that are deployed to the same target environment.
 
@@ -4387,11 +4387,11 @@ To get you started with managing configurations, this section will guide you thr
 
 ## Prerequisites
 
-* [Install Monaco](/docs/deliver/configuration-as-code/monaco/installation "Download and install Dynatrace Configuration as Code via Monaco.") and make the executable available in your `PATH`.
-* Create a [platform token or OAuth client](/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling "This is a list of the Monaco API support and access permission handling.") with the correct access permissions.
+* [Install Monaco](deliver/configuration-as-code/monaco/installation.md "Download and install Dynatrace Configuration as Code via Monaco.") and make the executable available in your `PATH`.
+* Create a [platform token or OAuth client](../ru/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling.md "This is a list of the Monaco API support and access permission handling.") with the correct access permissions.
   The correct permissions depend on which APIs you use.
 
-  For more info, see the API documentation or [IAM policy reference](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+  For more info, see the API documentation or [IAM policy reference](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
 In this example, we will make use of the SLO configuration, which requires the following permissions:
 
@@ -4869,8 +4869,8 @@ Verify that your Dynatrace config has been deleted from your Dynatrace environme
 
 ## Related topics
 
-* [Install Dynatrace Configuration as Code via Monaco](/docs/deliver/configuration-as-code/monaco/installation "Download and install Dynatrace Configuration as Code via Monaco.")
-* [Monaco API support and access permission handling](/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling "This is a list of the Monaco API support and access permission handling.")
+* [Install Dynatrace Configuration as Code via Monaco](deliver/configuration-as-code/monaco/installation.md "Download and install Dynatrace Configuration as Code via Monaco.")
+* [Monaco API support and access permission handling](../ru/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling.md "This is a list of the Monaco API support and access permission handling.")
 
 ---
 
@@ -5148,10 +5148,10 @@ The `delete` command is a convenient way to remove configurations from Dynatrace
 
 As input, the `delete` command requires two YAML files:
 
-* The [manifest file](/docs/deliver/configuration-as-code/monaco/configuration#deployment-manifest "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.") that specifies the relevant Dynatrace environments.
-* The [deletefile](/docs/deliver/configuration-as-code/monaco/configuration#file-structure-for-direct-reference "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.") that specifies the relevant configurations.
+* The [manifest file](deliver/configuration-as-code/monaco/configuration.md#deployment-manifest "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.") that specifies the relevant Dynatrace environments.
+* The [deletefile](deliver/configuration-as-code/monaco/configuration.md#file-structure-for-direct-reference "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.") that specifies the relevant configurations.
 
-The deletefile itself is generated with `monaco generate deletefile`, see [Generate](/docs/deliver/configuration-as-code/monaco/reference/commands-saas#generate-deletefile "How to use the Monaco CLI application, including arguments and options.").
+The deletefile itself is generated with `monaco generate deletefile`, see [Generate](../ru/deliver/configuration-as-code/monaco/reference/commands-saas.md#generate-deletefile "How to use the Monaco CLI application, including arguments and options.").
 
 ### Usage
 
@@ -5237,7 +5237,7 @@ type:
 api: app-detection-rule
 ```
 
-**Workaround:** Create the delete file manually or update the generated file to set the configuration name without references. See the [delete file format](/docs/deliver/configuration-as-code/monaco/configuration#file-structure-for-direct-reference "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.") for the correct syntax.
+**Workaround:** Create the delete file manually or update the generated file to set the configuration name without references. See the [delete file format](deliver/configuration-as-code/monaco/configuration.md#file-structure-for-direct-reference "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.") for the correct syntax.
 
 #### graph
 
@@ -5375,13 +5375,13 @@ Dynatrace offers different options to authenticate API calls. The Dynatrace Terr
 * OAuth clients
 * Access tokens (classic)
 
-For more information about Identity and Access Management (IAM), including platform tokens, OAuth clients, and API tokens / access tokens classic, see [Tokens and OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients "Tokens and OAuth clients").
+For more information about Identity and Access Management (IAM), including platform tokens, OAuth clients, and API tokens / access tokens classic, see [Tokens and OAuth clients](manage/identity-access-management/access-tokens-and-oauth-clients.md "Tokens and OAuth clients").
 
 ## Create platform tokens
 
-[Platform tokens](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.") can be used to authenticate API calls against Dynatrace.
+[Platform tokens](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.") can be used to authenticate API calls against Dynatrace.
 These platform tokens are long-lived access tokens.
-For the full list of supported platform token services, see [Available services for platform tokens](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens#available-services "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+For the full list of supported platform token services, see [Available services for platform tokens](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md#available-services "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
 
 The following code blocks show you how to define environment variables for your environment URL and platform token for Windows and Linux.
 
@@ -5407,10 +5407,10 @@ export DYNATRACE_PLATFORM_TOKEN=<YOUR_PLATFORM_TOKEN>
 
 ## Create OAuth client
 
-To create an OAuth client, follow the steps described in [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients#create-oauth-client "Manage authentication and user permissions using OAuth clients.").
+To create an OAuth client, follow the steps described in [OAuth clients](manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md#create-oauth-client "Manage authentication and user permissions using OAuth clients.").
 
 To ensure the OAuth client works as intended, verify that the service user's groups grant the same scopes as the OAuth client you have created for all environments you want to use it with.
-For more details on controlling permissions, see [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+For more details on controlling permissions, see [Working with policies](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
 
 The Dynatrace Terraform Provider requests OAuth access tokens using your client credentials to make authenticated API calls.
 
@@ -5447,7 +5447,7 @@ export DYNATRACE_CLIENT_SECRET=<YOUR_CLIENT_SECRET>
 ## Create API access token
 
 Use access tokens to authenticate Dynatrace Classic API calls.
-For more information on how to use a Dynatrace API token, see [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+For more information on how to use a Dynatrace API token, see [Dynatrace API - Tokens and authentication](../ru/dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
 
 The following code blocks show you how to define environment variables for your environment URL and API token for Windows and Linux.
 
@@ -5476,7 +5476,7 @@ export DYNATRACE_API_TOKEN=<YOUR_API_TOKEN>
 The Dynatrace Terraform Provider contains most Dynatrace APIs. All supported resources are listed in the Dynatrace Terraform Provider documentation in the [Terraform Registryï»¿](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/latest/docs).
 
 Always consider the correct permission scopes that are needed for the selected API resources.
-Information can be found at [IAM policy reference](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") and [the Dynatrace Terraform provider GitHub repositoryï»¿](https://github.com/dynatrace-oss/terraform-provider-dynatrace/blob/main/documentation/supported-resources.md).
+Information can be found at [IAM policy reference](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") and [the Dynatrace Terraform provider GitHub repositoryï»¿](https://github.com/dynatrace-oss/terraform-provider-dynatrace/blob/main/documentation/supported-resources.md).
 
 ---
 
@@ -5512,7 +5512,7 @@ You can use the following native commands with the Dynatrace Terraform provider:
 Additionally, Dynatrace implements the following command specifically for the Dynatrace Terraform provider:
 
 * `export`: Exports the existing Dynatrace resources from a given Dynatrace environment.
-  [Terraform CLI examples](/docs/deliver/configuration-as-code/terraform/terraform-cli-commands#terraform-cli-examples "This is a list of Terraform CLI commands.") provides examples of how to use the `export` command.
+  [Terraform CLI examples](../ru/deliver/configuration-as-code/terraform/terraform-cli-commands.md#terraform-cli-examples "This is a list of Terraform CLI commands.") provides examples of how to use the `export` command.
 
 ## Export configuration from a Dynatrace environment using the Dynatrace Terraform Provider
 
@@ -5522,14 +5522,14 @@ When exporting resources, consider appropriate permission scopes for fetching th
 
 ### Prerequisites
 
-* [Install Terraform CLI and set up Configuration as Code via Terraform](/docs/deliver/configuration-as-code/terraform/terraform-cli "Install the Terraform CLI and set up Dynatrace Configuration as Code via Terraform.") and make it available in your `PATH`.
-* Create a [platform token or OAuth client](/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.") with the correct access permissions.
+* [Install Terraform CLI and set up Configuration as Code via Terraform](deliver/configuration-as-code/terraform/terraform-cli.md "Install the Terraform CLI and set up Dynatrace Configuration as Code via Terraform.") and make it available in your `PATH`.
+* Create a [platform token or OAuth client](../ru/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling.md "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.") with the correct access permissions.
   The correct permissions depends on which APIs you use.
-  For more info, see the API documentation or [IAM policy reference](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+  For more info, see the API documentation or [IAM policy reference](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
 ### Using the export utility
 
-1. Define the environment variables to identify the Dynatrace tenant for configuration retrieval, according to the [API support and access permission handling](/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.").
+1. Define the environment variables to identify the Dynatrace tenant for configuration retrieval, according to the [API support and access permission handling](../ru/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling.md "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.").
 
    Optionally, set the environment variable `DYNATRACE_TARGET_FOLDER` to designate an output directory (export folder). If not set, the default directory `.configuration` is used.
 2. Go to the Terraform Dynatrace Provider executable in the terminal. This executable isn't generic, such as `terraform.exe` or `./terraform`.
@@ -5586,7 +5586,7 @@ For simplicity, only Linux examples are provided.
 ## Additional information
 
 During a Terraform export, it's possible that certain files cannot be processed correctly.
-These files are moved to the following directories in the export folder, see [Using the export utility](/docs/deliver/configuration-as-code/terraform/terraform-cli-commands#export "This is a list of Terraform CLI commands.").
+These files are moved to the following directories in the export folder, see [Using the export utility](../ru/deliver/configuration-as-code/terraform/terraform-cli-commands.md#export "This is a list of Terraform CLI commands.").
 The reasons are added as comments at the beginning of each file.
 
 * `.flawed`: The files in this directory are either deprecated or require modifications.
@@ -5617,15 +5617,15 @@ This tutorial explains how to configure an event notification with the latest Dy
 
 The notification consists of
 
-* A [custom alert](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") configuration, which raises an alerting event if a certain conditions is met.
+* A [custom alert](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.") configuration, which raises an alerting event if a certain conditions is met.
 * A simple workflow that automatically sends an email when the alerting event is active.
 
 ## Prerequisites
 
 * Terraform CLI with the Dynatrace provider installed and available under PATH.
-  For more information, see [Install Terraform CLI and set up Configuration as Code via Terraform](/docs/deliver/configuration-as-code/terraform/terraform-cli "Install the Terraform CLI and set up Dynatrace Configuration as Code via Terraform.").
+  For more information, see [Install Terraform CLI and set up Configuration as Code via Terraform](deliver/configuration-as-code/terraform/terraform-cli.md "Install the Terraform CLI and set up Dynatrace Configuration as Code via Terraform.").
 * OAuth client or platform token with the following permissions.
-  For more information, see [Create API access token](/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling#terraform-api-setup "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.").
+  For more information, see [Create API access token](../ru/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling.md#terraform-api-setup "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.").
 
   + View settings objects for schema (`settings:objects:read`)
   + Create settings objects for schema (`settings:objects:write`)
@@ -5637,7 +5637,7 @@ The notification consists of
 
 ## What will you learn
 
-You'll learn how to configure a [custom alert](/docs/dynatrace-intelligence/anomaly-detection "How Dynatrace detects anomalies in your environment.") and a [workflow](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") with an email action.
+You'll learn how to configure a [custom alert](../ru/dynatrace-intelligence/anomaly-detection.md "How Dynatrace detects anomalies in your environment.") and a [workflow](../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") with an email action.
 
 ## Steps
 
@@ -6138,7 +6138,7 @@ To build a configuration for raising an event and a simple workflow for sending 
    If you want to try other resources, consider using the export utility to export existing configurations from your selected environment.
 2. Open a terminal and set the environment variables for your environment URL and authentication credentials.
    The environment variable identifies which tenant you'll be pushing configurations to.
-   For more information, see [Terraform API support and access permission handling](/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.").
+   For more information, see [Terraform API support and access permission handling](../ru/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling.md "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.").
 3. In your working directory, run the `terraform plan` to generate an execution plan that provides a preview of the changes Terraform intends to make.
 
    Show me preview example
@@ -6843,7 +6843,7 @@ scraped: 2026-03-05T21:40:31.962704
 
 Terraform is an extensive tool that you can combine with Configuration as Code to achieve great results.
 
-We provide a tutorial to help you [Configure automated notifications using Terraform and Configuration as Code](/docs/deliver/configuration-as-code/terraform/tutorials/terraform-tutorial-set-up-automated-notification "Configure automated notifications using Terraform and Configuration as Code.").
+We provide a tutorial to help you [Configure automated notifications using Terraform and Configuration as Code](../ru/deliver/configuration-as-code/terraform/tutorials/terraform-tutorial-set-up-automated-notification.md "Configure automated notifications using Terraform and Configuration as Code.").
 
 ---
 
@@ -6957,14 +6957,14 @@ Applying CaC allows
 * Reduce deployment time by integrating CaC to streamline your application onboarding process via Golden Paths.
 * Introduce observability and security standards in your environment by integrating them into your CI/CD pipelines, for example, via container images, and ensuring consistency in all your stages.
 * Provide self-service possibilities, integrating observability, automation, and quality gates into your SDLC.
-  For more information, see [Platform Engineering](/docs/discover-dynatrace/get-started/platform-engineering "Use observability and security to drive analytics and automation at scale.").
+  For more information, see [Platform Engineering](../ru/discover-dynatrace/get-started/platform-engineering.md "Use observability and security to drive analytics and automation at scale.").
 
 ## Tools
 
 To set up and manage Dynatrace with CaC you have two tool options:
 
-* [Terraform](/docs/deliver/configuration-as-code/terraform "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform."), the industry-standard CaC software tool.
-* [Monaco](/docs/deliver/configuration-as-code/monaco "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco."), the Dynatrace-proprietary CaC CLI tool.
+* [Terraform](deliver/configuration-as-code/terraform.md "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform."), the industry-standard CaC software tool.
+* [Monaco](deliver/configuration-as-code/monaco.md "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco."), the Dynatrace-proprietary CaC CLI tool.
 
 Deciding what to use depends on the tool stack and requirements.
 
@@ -6980,8 +6980,8 @@ Monaco provides a third-party independent solution, operating in standalone mode
 
 ## Related topics
 
-* [Configuration as Code via Terraform overview](/docs/deliver/configuration-as-code/terraform "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform.")
-* [Configuration as Code via Monaco overview](/docs/deliver/configuration-as-code/monaco "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco.")
+* [Configuration as Code via Terraform overview](deliver/configuration-as-code/terraform.md "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform.")
+* [Configuration as Code via Monaco overview](deliver/configuration-as-code/monaco.md "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco.")
 * [[Blog] Automated observability, security, and reliability at scaleï»¿](https://www.dynatrace.com/news/blog/automated-observability-security-and-reliability-at-scale/)
 
 ---

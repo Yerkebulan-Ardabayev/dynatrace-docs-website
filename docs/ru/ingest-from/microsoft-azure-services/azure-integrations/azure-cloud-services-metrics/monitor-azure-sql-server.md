@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:32:22.392494
 * Чтение: 1 мин
 * Обновлено 15 ноя 2023
 
-Информацию о различиях между классическими и другими сервисами см. в разделе [Migrate from Azure classic (formerly 'built-in') services to cloud services](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-migration-guide "Перенос классических сервисов Azure в их новые версии.").
+Информацию о различиях между классическими и другими сервисами см. в разделе [Migrate from Azure classic (formerly 'built-in') services to cloud services](../azure-monitoring-guide/azure-migration-guide.md "Перенос классических сервисов Azure в их новые версии.").
 
 ## Предварительные требования
 
@@ -22,4 +22,4 @@ scraped: 2026-03-06T21:32:22.392494
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. раздел [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Включение мониторинга Azure в Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. раздел [Enable service monitoring](../azure-monitoring-guide/azure-enable-service-monitoring.md "Включение мониторинга Azure в Dynatrace.").

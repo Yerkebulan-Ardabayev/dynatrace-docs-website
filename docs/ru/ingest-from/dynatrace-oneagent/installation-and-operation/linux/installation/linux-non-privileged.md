@@ -25,7 +25,7 @@ scraped: 2026-03-06T21:18:58.872793
 * Файловая система не должна быть смонтирована с параметрами `noexec` или `nosuid`.
 * Должны быть включены возможности файловой системы Linux (Linux Filesystem Capabilities). Например, в SUSE Linux Enterprise Server 11 возможности файловой системы Linux отключены по умолчанию. Подробнее см. раздел [Непривилегированный режим и возможности файловой системы Linux](#cap) ниже.
 
-См. [Безопасность OneAgent на Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux#permissions "Узнайте о безопасности Dynatrace OneAgent и изменениях в вашей системе на базе Linux"), чтобы узнать о действиях мониторинга, выполняемых OneAgent, которые требуют привилегированного доступа.
+См. [Безопасность OneAgent на Linux](oneagent-security-linux.md#permissions "Узнайте о безопасности Dynatrace OneAgent и изменениях в вашей системе на базе Linux"), чтобы узнать о действиях мониторинга, выполняемых OneAgent, которые требуют привилегированного доступа.
 
 ## Привилегии при установке
 
@@ -71,7 +71,7 @@ Dynatrace OneAgent Watchdog запускает и выполняет все ос
 
 2
 
-Не используется, если отключены [автоматические обновления](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#enable-or-disable-auto-update "Узнайте, как выполнять задачи настройки OneAgent без переустановки.") и [автоматическая инструментация](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#injection-toggle "Узнайте, как выполнять задачи настройки OneAgent без переустановки.").
+Не используется, если отключены [автоматические обновления](../../../oneagent-configuration-via-command-line-interface.md#enable-or-disable-auto-update "Узнайте, как выполнять задачи настройки OneAgent без переустановки.") и [автоматическая инструментация](../../../oneagent-configuration-via-command-line-interface.md#injection-toggle "Узнайте, как выполнять задачи настройки OneAgent без переустановки.").
 
 3
 
@@ -83,7 +83,7 @@ Dynatrace OneAgent Watchdog запускает и выполняет все ос
 
 5
 
-Не используется, если отключены [автоматические обновления](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#enable-or-disable-auto-update "Узнайте, как выполнять задачи настройки OneAgent без переустановки.").
+Не используется, если отключены [автоматические обновления](../../../oneagent-configuration-via-command-line-interface.md#enable-or-disable-auto-update "Узнайте, как выполнять задачи настройки OneAgent без переустановки.").
 
 6
 
@@ -99,7 +99,7 @@ Dynatrace OneAgent Watchdog запускает и выполняет все ос
 
 9
 
-Не запускается, если отключена [автоматическая инструментация](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#injection-toggle "Узнайте, как выполнять задачи настройки OneAgent без переустановки.").
+Не запускается, если отключена [автоматическая инструментация](../../../oneagent-configuration-via-command-line-interface.md#injection-toggle "Узнайте, как выполнять задачи настройки OneAgent без переустановки.").
 
 Включение возможностей файловой системы Linux
 
@@ -142,7 +142,7 @@ OneAgent будет работать под непривилегированны
 
 `sudo /bin/sh Dynatrace-OneAgent-Linux-1.0.0.sh NON_ROOT_MODE=1 DISABLE_ROOT_FALLBACK=1`
 
-В таких случаях вы должны выполнять [обновления вручную на отдельных хостах](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux#manual-update "Узнайте о различных способах обновления OneAgent на Linux."). Мы не рекомендуем использовать параметр `DISABLE_ROOT_FALLBACK=1` для OneAgent на Azure или контейнерах Docker.
+В таких случаях вы должны выполнять [обновления вручную на отдельных хостах](../operation/update-oneagent-on-linux.md#manual-update "Узнайте о различных способах обновления OneAgent на Linux."). Мы не рекомендуем использовать параметр `DISABLE_ROOT_FALLBACK=1` для OneAgent на Azure или контейнерах Docker.
 
 ## Как узнать, работает ли OneAgent в непривилегированном режиме?
 

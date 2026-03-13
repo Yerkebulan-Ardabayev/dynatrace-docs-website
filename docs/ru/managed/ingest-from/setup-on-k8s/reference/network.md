@@ -14,7 +14,7 @@ scraped: 2026-02-23T21:31:13.154982
 
 Для корректной работы компонентов Dynatrace Operator в кластере Kubernetes они должны иметь возможность обмениваться данными как с кластером Dynatrace, так и с кластером Kubernetes.
 
-Компоненты Dynatrace Operator доступны через определённые порты и обращаются к различным ресурсам внутри и за пределами кластера Kubernetes. Подробнее о ресурсах, к которым происходит обращение внутри кластера Kubernetes, см. на справочной странице [Разрешения RBAC оператора](/docs/ingest-from/setup-on-k8s/reference/security "На этой странице представлен обзор компонентов Dynatrace, их конфигураций по умолчанию и требуемых разрешений").
+Компоненты Dynatrace Operator доступны через определённые порты и обращаются к различным ресурсам внутри и за пределами кластера Kubernetes. Подробнее о ресурсах, к которым происходит обращение внутри кластера Kubernetes, см. на справочной странице [Разрешения RBAC оператора](../../../../ingest-from/setup-on-k8s/reference/security.md "На этой странице представлен обзор компонентов Dynatrace, их конфигураций по умолчанию и требуемых разрешений").
 
 ## Входящий трафик
 
@@ -134,9 +134,9 @@ ActiveGate `/*`
 
 Dynatrace Collector
 
-[Порты приёма телеметрии](/docs/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest#port-list "Включение конечных точек приёма телеметрии Dynatrace в Kubernetes для локального приёма данных в кластере.")
+[Порты приёма телеметрии](../../../../ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest.md#port-list "Включение конечных точек приёма телеметрии Dynatrace в Kubernetes для локального приёма данных в кластере.")
 
-[Приём данных телеметрии](/docs/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest "Включение конечных точек приёма телеметрии Dynatrace в Kubernetes для локального приёма данных в кластере.")
+[Приём данных телеметрии](../../../../ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest.md "Включение конечных точек приёма телеметрии Dynatrace в Kubernetes для локального приёма данных в кластере.")
 
 kubelet
 
@@ -300,7 +300,7 @@ ActiveGate
 
 2
 
-Связь с хостами должна быть разрешена в соответствии с конфигурацией в [DynaKube](/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters "Перечень доступных параметров для настройки Dynatrace Operator в Kubernetes.") (`apiUrl`) или [EdgeConnect](/docs/ingest-from/setup-on-k8s/reference/edgeconnect-parameters "Перечень параметров конфигурации EdgeConnect.") (`apiServer`) пользовательских ресурсов. Различные конечные точки связи могут использоваться в качестве резервных для обеспечения корректного подключения.
+Связь с хостами должна быть разрешена в соответствии с конфигурацией в [DynaKube](../../../../ingest-from/setup-on-k8s/reference/dynakube-parameters.md "Перечень доступных параметров для настройки Dynatrace Operator в Kubernetes.") (`apiUrl`) или [EdgeConnect](../../../../ingest-from/setup-on-k8s/reference/edgeconnect-parameters.md "Перечень параметров конфигурации EdgeConnect.") (`apiServer`) пользовательских ресурсов. Различные конечные точки связи могут использоваться в качестве резервных для обеспечения корректного подключения.
 
 3
 
@@ -308,7 +308,7 @@ ActiveGate
 
 4
 
-[Поддерживаемые схемы подключения для ActiveGate](/docs/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates "Узнайте о приоритетах подключения между типами ActiveGate, а также о приоритетах между ActiveGate и OneAgent.")
+[Поддерживаемые схемы подключения для ActiveGate](../../../../ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates.md "Узнайте о приоритетах подключения между типами ActiveGate, а также о приоритетах между ActiveGate и OneAgent.")
 
 5
 

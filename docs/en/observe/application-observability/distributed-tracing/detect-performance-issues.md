@@ -40,10 +40,10 @@ In this tutorial, youâll learn how to use the Distributed Tracing app speci
 
 ## Prerequisites
 
-* You're familiar with the [concepts of distributed tracing](/docs/observe/application-observability/distributed-traces/concepts "Learn more about distributed tracing core concepts and terminology.").
+* You're familiar with the [concepts of distributed tracing](../distributed-traces/concepts.md "Learn more about distributed tracing core concepts and terminology.").
 * You have Dynatrace Platform Subscription (DPS).
-* You're ingesting trace data via [Dynatrace OneAgent](/docs/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") or [OpenTelemetry](/docs/ingest-from/opentelemetry/getting-started "How to get your OpenTelemetry data into Dynatrace."). To get started ingesting trace data, go to the **Distributed Tracing** >  **Traces** > choose a source and follow the in-product guidance.
-* Make sure that your traces are available in the [Distributed Tracing ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing")](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app "Discover the functionalities of the new Distributed Tracing app.") app.
+* You're ingesting trace data via [Dynatrace OneAgent](../../../ingest-from/dynatrace-oneagent.md "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") or [OpenTelemetry](../../../ingest-from/opentelemetry/getting-started.md "How to get your OpenTelemetry data into Dynatrace."). To get started ingesting trace data, go to the **Distributed Tracing** >  **Traces** > choose a source and follow the in-product guidance.
+* Make sure that your traces are available in the [Distributed Tracing ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing")](distributed-tracing-app.md "Discover the functionalities of the new Distributed Tracing app.") app.
 
 ## Analyze and troubleshoot performance issues
 

@@ -101,4 +101,4 @@ Dynatrace рассчитывает, сколько запросов необхо
 
 ## Связанные темы
 
-* [Мониторинг Microsoft Azure](/docs/observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring "Мониторинг Azure с помощью Dynatrace")
+* [Мониторинг Microsoft Azure](../../../../observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring.md "Мониторинг Azure с помощью Dynatrace")

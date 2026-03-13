@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:28:44.533912
 * Reference
 * Updated on Aug 20, 2025
 
-Этот API предназначен для использования с реализацией AWS Lambda Classic. Подробности см. в разделе [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
+Этот API предназначен для использования с реализацией AWS Lambda Classic. Подробности см. в разделе [AWS Lambda](../../../../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration.md "AWS Lambda capabilities and integration options").
 
 Получает названия последних версий кодовых модулей OneAgent для сред выполнения AWS Lambda Java, Node.js и Python, включая названия слоёв в комбинации с коллектором логов, а также названия автономного слоя коллектора логов.
 
@@ -26,7 +26,7 @@ scraped: 2026-03-06T21:28:44.533912
 
 Для выполнения этого запроса необходим токен доступа с областью действия `InstallerDownload`.
 
-Чтобы узнать, как получить и использовать его, см. [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как получить и использовать его, см. [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 

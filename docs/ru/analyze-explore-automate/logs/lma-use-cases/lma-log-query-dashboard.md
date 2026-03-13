@@ -92,7 +92,7 @@ scraped: 2026-03-06T21:37:57.469012
 
 ### Преобразование запросов в метрики на основе логов
 
-Когда вас интересуют агрегированные значения, такие как суммы или подсчёты, разделённые по измерению с низкой кардинальностью, следуйте руководству [Парсинг строк логов и извлечение метрики](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Настройка обработки OpenPipeline для строк логов.").
+Когда вас интересуют агрегированные значения, такие как суммы или подсчёты, разделённые по измерению с низкой кардинальностью, следуйте руководству [Парсинг строк логов и извлечение метрики](../../../platform/openpipeline/use-cases/tutorial-log-processing-pipeline.md "Настройка обработки OpenPipeline для строк логов.").
 
 В нашем примере требуемая конфигурация для извлечения метрики:
 
@@ -108,7 +108,7 @@ timeseries count = count(log.obslab.errors)
 ```
 
 После корректировки двух плиток генерация стоимости запросов при отрисовке этих двух плиток прекратится.
-Метрики на основе логов лицензируются так же, как и любые другие [пользовательские метрики на базе Grail](/docs/license/capabilities/metrics "Узнайте, как рассчитывается потребление метрик Dynatrace на базе Grail в модели подписки Dynatrace Platform.").
+Метрики на основе логов лицензируются так же, как и любые другие [пользовательские метрики на базе Grail](../../../license/capabilities/metrics.md "Узнайте, как рассчитывается потребление метрик Dynatrace на базе Grail в модели подписки Dynatrace Platform.").
 
 Не всегда возможно извлечь метрики из любого DQL-запроса.
 Учитывайте кардинальность измерений и специфические команды, такие как `dedup` или `join`.
@@ -131,7 +131,7 @@ timeseries count = count(log.obslab.errors)
   | filter dt.system.bucket == "default_logs"
   ```
 
-Дополнительные лучшие практики DQL для оптимизации запросов см. в [Лучшие практики DQL](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Лучшие практики использования Dynatrace Query Language.").
+Дополнительные лучшие практики DQL для оптимизации запросов см. в [Лучшие практики DQL](../../../platform/grail/dynatrace-query-language/dql-best-practices.md "Лучшие практики использования Dynatrace Query Language.").
 
 ### Оптимизация порядка команд запроса
 
@@ -181,9 +181,9 @@ fetch logs
 
 ### Настройка бакета для использования Retain with Included Queries
 
-Если многие пользователи часто открывают дашборд и запрашивают короткие временные диапазоны (данные менее 35 дней), рассмотрите использование ценовой модели [Retain with Included Queries](/docs/license/capabilities/log-analytics#log-retain-included-queries "Узнайте, как рассчитывается потребление Dynatrace Log Analytics в модели подписки Dynatrace Platform.") и установите соответствующие [разрешения IAM](/docs/platform/grail/organize-data/assign-permissions-in-grail#included-queries "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.").
+Если многие пользователи часто открывают дашборд и запрашивают короткие временные диапазоны (данные менее 35 дней), рассмотрите использование ценовой модели [Retain with Included Queries](../../../license/capabilities/log-analytics.md#log-retain-included-queries "Узнайте, как рассчитывается потребление Dynatrace Log Analytics в модели подписки Dynatrace Platform.") и установите соответствующие [разрешения IAM](../../../platform/grail/organize-data/assign-permissions-in-grail.md#included-queries "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.").
 
-Подробные инструкции по настройке бакета см. в [Управление стоимостью запросов логов с помощью Retain with Included Queries](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-included-log-queries "Как использовать возможность Retain with Included Queries для контроля и прогнозирования потребления логов.").
+Подробные инструкции по настройке бакета см. в [Управление стоимостью запросов логов с помощью Retain with Included Queries](lma-e2e-included-log-queries.md "Как использовать возможность Retain with Included Queries для контроля и прогнозирования потребления логов.").
 
 ### Отключение автообновления
 
@@ -199,23 +199,23 @@ fetch logs
 
 Лучшие практики:
 
-* По возможности используйте метрики на основе логов, как описано в [Настройка пользовательских оповещений на основе метрик, извлечённых из логов](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "Как создавать и настраивать проблемы Davis и пользовательские оповещения с метриками на основе логов.").
+* По возможности используйте метрики на основе логов, как описано в [Настройка пользовательских оповещений на основе метрик, извлечённых из логов](lma-alert-log-based-metrics.md "Как создавать и настраивать проблемы Davis и пользовательские оповещения с метриками на основе логов.").
   Метрики быстрее, имеют более длительное и дешёвое хранение, запросы для метрик не тарифицируются, вы можете удалять записи логов, формирующие метрику, и экономить на стоимости хранения, метрики можно использовать для оповещений.
 
-  Для извлечения метрик [парсите строки логов и извлекайте метрику](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Настройка обработки OpenPipeline для строк логов.") с помощью OpenPipeline.
+  Для извлечения метрик [парсите строки логов и извлекайте метрику](../../../platform/openpipeline/use-cases/tutorial-log-processing-pipeline.md "Настройка обработки OpenPipeline для строк логов.") с помощью OpenPipeline.
 * Если ваш сценарий требует представления содержимого логов (или других данных с высокой кардинальностью) через дашборды, оптимизируйте DQL-запросы, устанавливая временной диапазон, сегменты, бакеты, ограничения запросов и отключая автообновление.
 
 ## Узнать больше
 
-* [Сценарий использования логов: Наблюдение за сетевым трафиком облака с помощью логов](/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-observability "Наблюдаемость с использованием логов, метрик и дашбордов.")
+* [Сценарий использования логов: Наблюдение за сетевым трафиком облака с помощью логов](lma-e2e-observability.md "Наблюдаемость с использованием логов, метрик и дашбордов.")
 * [Start exploration journey with Dashboards](https://www.dynatrace.com/news/blog/start-your-exploration-journey-with-dashboards/)
 * [Transform data into insights with Dynatrace Dashboards and Notebooks](https://www.dynatrace.com/news/blog/transform-data-into-insights-with-dynatrace-dashboards-and-notebooks/)
-* [Dynatrace Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.")
-* [Узнать больше о лучших практиках DQL](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Лучшие практики использования Dynatrace Query Language.")
-* [Использование OpenPipeline для извлечения метрик из записей логов](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Настройка обработки OpenPipeline для строк логов.")
+* [Dynatrace Dashboards](../../dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.")
+* [Узнать больше о лучших практиках DQL](../../../platform/grail/dynatrace-query-language/dql-best-practices.md "Лучшие практики использования Dynatrace Query Language.")
+* [Использование OpenPipeline для извлечения метрик из записей логов](../../../platform/openpipeline/use-cases/tutorial-log-processing-pipeline.md "Настройка обработки OpenPipeline для строк логов.")
 
 ## Связанные темы
 
-* [Настройка пользовательских оповещений на основе метрик, извлечённых из логов](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "Как создавать и настраивать проблемы Davis и пользовательские оповещения с метриками на основе логов.")
-* [Метрики логов (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Узнайте, как создавать и использовать метрики логов Dynatrace для анализа данных логов.")
-* [События логов (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-events "Узнайте, как создавать и использовать события логов Dynatrace для анализа данных логов.")
+* [Настройка пользовательских оповещений на основе метрик, извлечённых из логов](lma-alert-log-based-metrics.md "Как создавать и настраивать проблемы Davis и пользовательские оповещения с метриками на основе логов.")
+* [Метрики логов (Logs Classic)](../../log-monitoring/analyze-log-data/log-metrics.md "Узнайте, как создавать и использовать метрики логов Dynatrace для анализа данных логов.")
+* [События логов (Logs Classic)](../../log-monitoring/analyze-log-data/log-events.md "Узнайте, как создавать и использовать события логов Dynatrace для анализа данных логов.")

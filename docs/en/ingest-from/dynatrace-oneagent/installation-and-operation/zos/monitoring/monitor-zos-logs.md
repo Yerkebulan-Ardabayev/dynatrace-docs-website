@@ -18,7 +18,7 @@ Log analysis is typically one of the first steps in troubleshooting application 
 
 Dynatrace can automatically discover and collect logs from monitored IBM CICS regions and IBM IMS subsystems. All collected logs are enriched with metadata to map them to the entity model of z/OS hosts (logical partitions) and z/OS processes (regions and subsystems). This allows you to extend your root cause analysis for any issue identified by Dynatrace Intelligence causal AI with logs automatically linked to your applications.
 
-To learn more about related use cases, see [Log Management and Analytics](/docs/analyze-explore-automate/logs/lma-use-cases "Explore common Log Management and Analytics use cases in Dynatrace deployments.").
+To learn more about related use cases, see [Log Management and Analytics](../../../../../analyze-explore-automate/logs/lma-use-cases.md "Explore common Log Management and Analytics use cases in Dynatrace deployments.").
 
 The following log sources are supported:
 
@@ -27,20 +27,20 @@ The following log sources are supported:
 
 Log Management and Analytics requires a license:
 
-* For Dynatrace Platform Subscription, a [Log Management and Analytics](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") capability.
-* For Dynatrace classic licensing, [Davis data units](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
+* For Dynatrace Platform Subscription, a [Log Management and Analytics](../../../../../license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") capability.
+* For Dynatrace classic licensing, [Davis data units](../../../../../license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
 
 ## Get started
 
-Collection of logs from z/OS requires a [Log ingest rule](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis."). You can get started by using one of the existing built-in rules.
+Collection of logs from z/OS requires a [Log ingest rule](../../../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis."). You can get started by using one of the existing built-in rules.
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Activate log ingest rule**](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs#ingest-rules "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")[![Step 2 optional](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Step 2 optional")
+**Activate log ingest rule**](monitor-zos-logs.md#ingest-rules "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")[![Step 2 optional](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Step 2 optional")
 
-**Mask sensitive log data**](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs#mask-data "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Mask sensitive log data**](monitor-zos-logs.md#mask-data "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Analyze log data**](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs#analyze-logs "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")
+**Analyze log data**](monitor-zos-logs.md#analyze-logs "Monitor your z/OS logs with Dynatrace, including logs from CICS regions and IMS subsystems.")
 
 ### Step 1 Activate log ingest rule
 
@@ -54,21 +54,21 @@ Activate one of the following built-in rules to ingest discovered logs from your
 
 If necessary, you can limit the scope of a log ingest rule to a specific group of LPARs (hosts group) or LPAR (host) so that logs are ingested only for those.
 
-To do this, define a [Log ingest rule](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis.") with the required [scope](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration#scopes "Include and exclude specific log sources already known to OneAgent for storage and analysis.") (host group or host).
+To do this, define a [Log ingest rule](../../../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.") with the required [scope](../../../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md#scopes "Include and exclude specific log sources already known to OneAgent for storage and analysis.") (host group or host).
 
 #### Control which logs are ingested
 
 If necessary, you can use attributes to precisely control which logs are ingested.
 
-To do this, define a [Log ingest rule](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis.") with specific attributes so that only logs that match those attributes are ingested. For example, you can use the following attributes.
+To do this, define a [Log ingest rule](../../../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration.md "Include and exclude specific log sources already known to OneAgent for storage and analysis.") with specific attributes so that only logs that match those attributes are ingested. For example, you can use the following attributes.
 
 1
 
-Log record level attribute, transformed by OneAgent, is different than the log `status` attribute transformed by the Dynatrace server. Learn more by accessing the [Automatic log enrichment](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") page.
+Log record level attribute, transformed by OneAgent, is different than the log `status` attribute transformed by the Dynatrace server. Learn more by accessing the [Automatic log enrichment](../../../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") page.
 
 ### Step 2 optional Mask sensitive log data
 
-Configure masking of sensitive data as described in [Sensitive data masking in OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking "Mask sensitive information in your log data using Log Management and Analytics.").
+Configure masking of sensitive data as described in [Sensitive data masking in OneAgent](../../../../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking.md "Mask sensitive information in your log data using Log Management and Analytics.").
 
 ### Step 3 Analyze log data
 

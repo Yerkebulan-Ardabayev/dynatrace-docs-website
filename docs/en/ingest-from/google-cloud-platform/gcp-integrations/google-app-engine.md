@@ -17,8 +17,8 @@ The Google App Engine standard environment type supports applications that run o
 
 ## Prerequisites
 
-* Create a [PaaS Token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
-* Review the list of [supported applications and versions](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+* Create a [PaaS Token](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.").
+* Review the list of [supported applications and versions](../../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 ## Integrate OneAgent into the application image
 
@@ -86,5 +86,5 @@ Every time you want to update your version of Dynatrace OneAgent, you must redep
 
 ## Related topics
 
-* [Set up Dynatrace on Google Cloud](/docs/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
-* [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* [Set up Dynatrace on Google Cloud](../../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
+* [OneAgent platform and capability support matrix](../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

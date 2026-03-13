@@ -16,7 +16,7 @@ Log Monitoring Classic
 
 Dynatrace can enrich your ingested log data with additional information that helps Dynatrace to recognize, correlate, and evaluate the data. Log enrichment results in a more refined analysis of your logs.
 
-For the newest Dynatrace version, see [Connect log data to traces](/docs/analyze-explore-automate/logs/lma-log-enrichment "Connect your incoming log data to traces for more precise Dynatrace analysis.").
+For the newest Dynatrace version, see [Connect log data to traces](../../logs/lma-log-enrichment.md "Connect your incoming log data to traces for more precise Dynatrace analysis.").
 
 Log enrichment enables you to:
 
@@ -70,7 +70,7 @@ Log enrichment modifies your ingested log data and adds the following informatio
 
 ## Supported frameworks
 
-To see the supported frameworks for trace/span log context enrichment, go to [Technology support](/docs/ingest-from/technology-support#web-servers "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+To see the supported frameworks for trace/span log context enrichment, go to [Technology support](../../../ingest-from/technology-support.md#web-servers "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 ## Structured log data
 
@@ -210,7 +210,7 @@ Log data in raw text is enriched with an additional `[!dt dt.trace_id=$trace_id,
 
 OneAgent version 1.239+
 
-You can manually enrich your Dynatrace ingested log data by defining a log pattern to include the `dt.span_id`, `dt.trace_id`, `dt.trace_sampled`, and `dt.entity.process_group_instance` fields. You can enable manual log enrichment for a specific technology by following the [Log enrichment steps](/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment#enableenr "Learn how you can connect your incoming log data to traces for more precise Dynatrace analysis.").
+You can manually enrich your Dynatrace ingested log data by defining a log pattern to include the `dt.span_id`, `dt.trace_id`, `dt.trace_sampled`, and `dt.entity.process_group_instance` fields. You can enable manual log enrichment for a specific technology by following the [Log enrichment steps](log-enrichment.md#enableenr "Learn how you can connect your incoming log data to traces for more precise Dynatrace analysis.").
 
 Be sure to follow these rules for the format of the enriched fields in an unstructured log:
 
@@ -428,7 +428,7 @@ The following is an example of manual enrichment using the Logstash encoder. Not
 
 ### Example of manually enriching log data for winston (Node.js)
 
-To enable log enrichment for winston, turn on the [OneAgent feature](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.") **Node.js - Trace/span context enrichment for unstructured logs**. You can adapt the winston transport to control the exact location where the enrichment should be added, as in the code example below.
+To enable log enrichment for winston, turn on the [OneAgent feature](../../../ingest-from/dynatrace-oneagent/oneagent-features.md "Manage OneAgent features globally and per process group.") **Node.js - Trace/span context enrichment for unstructured logs**. You can adapt the winston transport to control the exact location where the enrichment should be added, as in the code example below.
 
 ```
 const winston = require("winston");
@@ -530,7 +530,7 @@ format: winston.format.simple()
 
 You can enrich your logs using NGINX ingress with Kubernetes in two steps:
 
-1. Execute the [ingress-nginx on Kubernetes](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/instrument-nginx "Instrument ingress-nginx on Kubernetes") instrumentation instructions.
+1. Execute the [ingress-nginx on Kubernetes](../../../ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/instrument-nginx.md "Instrument ingress-nginx on Kubernetes") instrumentation instructions.
 2. Add the command below to the `configmap.yaml` file for NGINX ingress.
 
    Adding the `main-snippet` line enables OneAgent ingestion and is optional if you have followed the manual instrumentation instructions already.
@@ -1035,7 +1035,7 @@ log.Fatal(http.ListenAndServe(":8080", nil))
 }
 ```
 
-For details on configuration, see [AWS Lambda logs in context of traces](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/log-enrichment "Configure log message enrichment with OpenTelemetry on AWS Lambda.").
+For details on configuration, see [AWS Lambda logs in context of traces](../../../ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/log-enrichment.md "Configure log message enrichment with OpenTelemetry on AWS Lambda.").
 
 For instructions on how to source these attributes via OneAgent SDK:
 
@@ -1168,12 +1168,12 @@ endpoint="http://localhost:14499/otlp/v1/traces"
 )))
 ```
 
-When using OneAgent, make sure to enable the public [Extension Execution Controller](/docs/ingest-from/extensions/concepts#eec "Learn more about the concept of Dynatrace Extensions.") in your Dynatrace Settings, otherwise no data will be sent.
+When using OneAgent, make sure to enable the public [Extension Execution Controller](../../../ingest-from/extensions/concepts.md#eec "Learn more about the concept of Dynatrace Extensions.") in your Dynatrace Settings, otherwise no data will be sent.
 
 Go to **Settings** > **Preferences** > **Extension Execution Controller**. The toggles **Enable Extension Execution Controller** and **Enable local PIPE/HTTP metric and Log Ingest API** should be active.
 
-For details on configuration, see [Instrument your Python application with OpenTelemetry](/docs/ingest-from/opentelemetry/walkthroughs/python "Learn how to instrument your Python application using OpenTelemetry and Dynatrace.")
+For details on configuration, see [Instrument your Python application with OpenTelemetry](../../../ingest-from/opentelemetry/walkthroughs/python.md "Learn how to instrument your Python application using OpenTelemetry and Dynatrace.")
 
 ## Related topics
 
-* [Leverage log enrichment for traces to resolve problems](/docs/observe/application-observability/distributed-traces/use-cases/problems-logs-traces "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.")
+* [Leverage log enrichment for traces to resolve problems](../../../observe/application-observability/distributed-traces/use-cases/problems-logs-traces.md "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.")

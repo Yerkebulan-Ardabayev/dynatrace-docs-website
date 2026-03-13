@@ -28,7 +28,7 @@ Terraform CLI предлагает широкий набор команд для
 Кроме того, Dynatrace реализует следующую команду специально для Dynatrace Terraform провайдера:
 
 * `export`: Экспортирует существующие ресурсы Dynatrace из заданного окружения Dynatrace.
-  [Примеры Terraform CLI](/docs/deliver/configuration-as-code/terraform/terraform-cli-commands#terraform-cli-examples "This is a list of Terraform CLI commands.") содержат примеры использования команды `export`.
+  [Примеры Terraform CLI](terraform-cli-commands.md#terraform-cli-examples "This is a list of Terraform CLI commands.") содержат примеры использования команды `export`.
 
 ## Экспорт конфигурации из окружения Dynatrace с помощью Dynatrace Terraform Provider
 
@@ -38,14 +38,14 @@ Terraform CLI предлагает широкий набор команд для
 
 ### Предварительные требования
 
-* [Установите Terraform CLI и настройте Configuration as Code через Terraform](/docs/deliver/configuration-as-code/terraform/terraform-cli "Install the Terraform CLI and set up Dynatrace Configuration as Code via Terraform."), а также убедитесь, что он доступен в вашем `PATH`.
-* Создайте [токен платформы или OAuth-клиент](/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.") с необходимыми правами доступа.
+* [Установите Terraform CLI и настройте Configuration as Code через Terraform](terraform-cli.md "Install the Terraform CLI and set up Dynatrace Configuration as Code via Terraform."), а также убедитесь, что он доступен в вашем `PATH`.
+* Создайте [токен платформы или OAuth-клиент](terraform-api-support-access-permission-handling.md "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.") с необходимыми правами доступа.
   Необходимые разрешения зависят от того, какие API вы используете.
-  Для получения дополнительной информации ознакомьтесь с документацией по API или [справочником политик IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+  Для получения дополнительной информации ознакомьтесь с документацией по API или [справочником политик IAM](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
 ### Использование утилиты экспорта
 
-1. Определите переменные окружения для идентификации тенанта Dynatrace, из которого будет извлечена конфигурация, в соответствии с разделом [Поддержка API и управление правами доступа](/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.").
+1. Определите переменные окружения для идентификации тенанта Dynatrace, из которого будет извлечена конфигурация, в соответствии с разделом [Поддержка API и управление правами доступа](terraform-api-support-access-permission-handling.md "Outlines the different options the Terraform provider can use to authenticate Dynatrace API calls.").
 
    При необходимости задайте переменную окружения `DYNATRACE_TARGET_FOLDER` для указания выходного каталога (папки экспорта). Если переменная не задана, используется каталог по умолчанию `.configuration`.
 2. Перейдите к исполняемому файлу Dynatrace Terraform Provider в терминале. Этот исполняемый файл не является универсальным, таким как `terraform.exe` или `./terraform`.
@@ -102,7 +102,7 @@ terraform-provider-dynatrace.exe -export -list-exclusions
 ## Дополнительная информация
 
 Во время экспорта Terraform возможны ситуации, когда некоторые файлы не могут быть обработаны корректно.
-Такие файлы перемещаются в следующие каталоги в папке экспорта, см. [Использование утилиты экспорта](/docs/deliver/configuration-as-code/terraform/terraform-cli-commands#export "This is a list of Terraform CLI commands.").
+Такие файлы перемещаются в следующие каталоги в папке экспорта, см. [Использование утилиты экспорта](terraform-cli-commands.md#export "This is a list of Terraform CLI commands.").
 Причины добавляются в виде комментариев в начале каждого файла.
 
 * `.flawed`: Файлы в этом каталоге либо устарели, либо требуют модификации.

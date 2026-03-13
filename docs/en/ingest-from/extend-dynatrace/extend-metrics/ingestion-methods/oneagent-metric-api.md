@@ -55,15 +55,15 @@ Enable for a host group
 5. In the host group settings, select **Extension Execution Controller**.
 6. Turn on **Enable Extension Execution Controller**.
 
-If you want to change your limits for EEC resource consumption, see [Performance profile](/docs/ingest-from/extensions/concepts#performance-profile "Learn more about the concept of Dynatrace Extensions.").
+If you want to change your limits for EEC resource consumption, see [Performance profile](../../../extensions/concepts.md#performance-profile "Learn more about the concept of Dynatrace Extensions.").
 
 ## Topology awareness
 
-Using the local API endpoint, the host ID and host name context are automatically added to each metric as dimensions. Learn how to [enrich your metrics with other Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") and apply Dynatrace-AI causation details to your ingested data.
+Using the local API endpoint, the host ID and host name context are automatically added to each metric as dimensions. Learn how to [enrich your metrics with other Dynatrace-specific dimensions](../../extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") and apply Dynatrace-AI causation details to your ingested data.
 
 ## Metric format
 
-Provided data points must follow the [Metrics ingestion protocol](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+Provided data points must follow the [Metrics ingestion protocol](../reference/metric-ingestion-protocol.md "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
 
 The request consumes a `text/plain` payload with the `charset=utf-8` character set. The payload is limited to `1,000` lines.
 
@@ -105,7 +105,7 @@ Successful response:
 
 Starting with OneAgent version 1.267+, AIX systems also support metric ingestion.
 
-The default metric ingestion port is `14499`. If necessary, you can use the [oneagentctl](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the port. Changing the metric ingestion port requires restart of OneAgent. Add [`--restart-service`](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
+The default metric ingestion port is `14499`. If necessary, you can use the [oneagentctl](../../../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#metrics "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") command to check or change the port. Changing the metric ingestion port requires restart of OneAgent. Add [`--restart-service`](../../../dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md#oneagent-restart "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") to the command to restart OneAgent automatically.
 
 ### Check the ingestion port
 
@@ -133,10 +133,10 @@ Note that changing the port for the OneAgent metric API also affects scripting i
 
 ## Metrics API v2
 
-Unlike the local ingestion interface, which adds the topology context automatically (each metric is assigned to a respective host), metrics pushed through the public [Metrics API](/docs/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.") v2 are flat by default. This is especially beneficial for business-related metrics that don't have any relation to the topology entities in your environment.
+Unlike the local ingestion interface, which adds the topology context automatically (each metric is assigned to a respective host), metrics pushed through the public [Metrics API](../../../../dynatrace-api/environment-api/metric-v2.md "Retrieve metric information via Metrics v2 API.") v2 are flat by default. This is especially beneficial for business-related metrics that don't have any relation to the topology entities in your environment.
 
-However, to have events raised for a selected host and have Dynatrace Intelligence perform causation analysis based on your metrics, you can configure your app to add the `dt.entity.host` dimension. To automatically enrich process group identifier with the metric, provide `dt.process.pid` dimension. For more information, see [Metrics API - POST ingest data points](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ingest custom metrics to Dynatrace via Metrics v2 API.").
+However, to have events raised for a selected host and have Dynatrace Intelligence perform causation analysis based on your metrics, you can configure your app to add the `dt.entity.host` dimension. To automatically enrich process group identifier with the metric, provide `dt.process.pid` dimension. For more information, see [Metrics API - POST ingest data points](../../../../dynatrace-api/environment-api/metric-v2/post-ingest-metrics.md "Ingest custom metrics to Dynatrace via Metrics v2 API.").
 
 ## Related topics
 
-* [OneAgent platform and capability support matrix](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* [OneAgent platform and capability support matrix](../../../technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

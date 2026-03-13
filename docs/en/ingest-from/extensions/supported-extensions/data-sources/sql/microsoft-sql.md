@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:16:10.453218
 
 Dynatrace provides you with a framework that you can use to extend your application observability into data acquired directly from your Microsoft SQL Database layer, so that you can monitor how database server tasks impact your app.
 
-Start by checking [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=microsoft+sql) to see if the Dynatrace-provided Microsoft SQL Server extension satisfies your requirements. If you need something different, you can build your own [Microsoft SQL Server extension](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql#microsoft-sql-monitoring "Learn how to create an SQL data source-based extension using the Extensions framework.").
+Start by checking [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=microsoft+sql) to see if the Dynatrace-provided Microsoft SQL Server extension satisfies your requirements. If you need something different, you can build your own [Microsoft SQL Server extension](../../../develop-your-extensions/data-sources/sql.md#microsoft-sql-monitoring "Learn how to create an SQL data source-based extension using the Extensions framework.").
 
 ## Before you begin
 
@@ -45,11 +45,11 @@ Required permission: **Change monitoring settings**
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-Define endpoints](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from Microsoft SQL Server.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+Define endpoints](microsoft-sql.md#define-endpoints "Extend observability in Dynatrace with declarative metrics ingested from Microsoft SQL Server.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-Select ActiveGates](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from Microsoft SQL Server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+Select ActiveGates](microsoft-sql.md#activegate-group "Extend observability in Dynatrace with declarative metrics ingested from Microsoft SQL Server.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-Activate the extension](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from Microsoft SQL Server.")
+Activate the extension](microsoft-sql.md#activate-extension "Extend observability in Dynatrace with declarative metrics ingested from Microsoft SQL Server.")
 
 ### Step 1 Define endpoints
 
@@ -59,13 +59,13 @@ Activate the extension](/docs/ingest-from/extensions/supported-extensions/data-s
    * Optional Port
    * Optional Instance name
    * Optional Database name
-   * Authentication scheme. You can choose from the following [authentication schemes](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring#authentication "Microsoft SQL extensions in the Extensions framework."):
+   * Authentication scheme. You can choose from the following [authentication schemes](../../../develop-your-extensions/data-sources/sql/microsoft-sql-monitoring.md#authentication "Microsoft SQL extensions in the Extensions framework."):
 
      + Basic authentication
      + Kerberos authentication
      + NTLM authentication
-   * You can [enable SSL](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring#ssl "Microsoft SQL extensions in the Extensions framework.") to establish a secure connection for your configuration.
-   * You can [use credential vault](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring#credential-vault "Microsoft SQL extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
+   * You can [enable SSL](../../../develop-your-extensions/data-sources/sql/microsoft-sql-monitoring.md#ssl "Microsoft SQL extensions in the Extensions framework.") to establish a secure connection for your configuration.
+   * You can [use credential vault](../../../develop-your-extensions/data-sources/sql/microsoft-sql-monitoring.md#credential-vault "Microsoft SQL extensions in the Extensions framework.") to provide a more secure approach of storing and managing user credentials.
 2. Select **Next step**.
 
 ### Step 2 Select ActiveGates
@@ -80,7 +80,7 @@ Activate the extension](/docs/ingest-from/extensions/supported-extensions/data-s
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. To learn how to use it to activate an extension using the Dynatrace API, see [Manage Extensions](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.").
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. To learn how to use it to activate an extension using the Dynatrace API, see [Manage Extensions](../../../manage-extensions.md "Learn how to manage extensions.").
 
 ## Related topics
 

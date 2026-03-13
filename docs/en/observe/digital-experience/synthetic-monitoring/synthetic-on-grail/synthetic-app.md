@@ -77,7 +77,7 @@ of 1
 
 ## Installation
 
-Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Make sure the app is [installed in your environment](../../../../manage/hub.md#install "See the information about Dynatrace Hub.").
 
 Get started
 
@@ -92,7 +92,7 @@ Use cases
 The synthetic monitors page is the landing page of the ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic** app and is the control center for your synthetic monitors. By default, the page displays all monitors in your environment, active or inactive, in a [table](#table) with key availability and performance results, so you can check the health of your monitors at a glance.
 Powerful and flexible [filters](#filters) enable you to narrow your search for synthetic monitors.
 
-To find out how to create a new monitor, see [Create monitors](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app#create-monitors "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.").
+To find out how to create a new monitor, see [Create monitors](synthetic-app.md#create-monitors "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.").
 
 ### Monitors table
 
@@ -151,9 +151,9 @@ The following filter categories (each with multiple options) allow you to search
 
 * **Type**âmonitor type
 * **Ongoing issues**âmonitors with and without availability or performance problems
-* **Frontend application**âassociated [RUM](/docs/observe/digital-experience "Optimize end-user experience with Digital Experience Monitoring to ensure application performance and availability across all channels.") application
+* **Frontend application**âassociated [RUM](../../../digital-experience.md "Optimize end-user experience with Digital Experience Monitoring to ensure application performance and availability across all channels.") application
 * **Status**âwhether monitors are active or inactive (disabled)
-* **Locations**â[public](/docs/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring locations.") and [private](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.") monitoring locations
+* **Locations**â[public](../general-information/public-synthetic-locations.md "Learn about all currently available public Synthetic Monitoring locations.") and [private](../private-synthetic-locations/create-a-private-synthetic-location.md "Learn how to create a private location for synthetic monitoring.") monitoring locations
 * **Device profile**âfor example, `desktop`, `Apple iPhone 8`
 * **Last editor**âID of the user who last edited a monitor
 * **Tags**âvalues or key-value pairs applied to monitors; you can choose tags to include or exclude from your search.
@@ -192,18 +192,18 @@ To create a monitor:
 1. Select **+New monitor** in the upper-right corner of ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**.
 2. Choose one of the following:
 
-* Browserâchoosing this option will allow you to create a browser monitor in **Synthetic Classic**. Learn how to [Create a single-URL browser monitor](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/create-a-single-url-browser-monitor "Learn how to set up a single-URL browser monitor to check the availability of your site.").
-* HTTPâchoosing this option will allow you to create an HTTP monitor in ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**. Learn how to [Create and configure an HTTP monitor](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.").
-* Network availabilityâchoosing this option will allow you to create a NAM monitor in ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**. Learn how to [Configure a NAM monitor](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor "Learn how to set up a NAM monitor to check the performance and availability of your site.").
+* Browserâchoosing this option will allow you to create a browser monitor in **Synthetic Classic**. Learn how to [Create a single-URL browser monitor](../browser-monitors/create-a-single-url-browser-monitor.md "Learn how to set up a single-URL browser monitor to check the availability of your site.").
+* HTTPâchoosing this option will allow you to create an HTTP monitor in ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**. Learn how to [Create and configure an HTTP monitor](synthetic-app/create-and-configure-an-http-monitor.md "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.").
+* Network availabilityâchoosing this option will allow you to create a NAM monitor in ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") **Synthetic**. Learn how to [Configure a NAM monitor](../network-availability-monitors/create-a-nam-monitor.md "Learn how to set up a NAM monitor to check the performance and availability of your site.").
 
 ### Reporting
 
 For each monitor type, you can display a reporting page. See
 
-* NAM monitor [reporting](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/network-availability-monitoring#reporting "ICMP, TCP, and DNS synthetic monitors") in **Synthetic**.
-* HTTP monitor [reporting](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/synthetic-details-for-http-monitors "Learn about the Synthetic details page for HTTP monitors.") in **Synthetic**.
-* HTTP monitor [reporting](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic "Learn about the Synthetic details page for HTTP monitors (classic).") in **Synthetic Classic**.
-* Browser monitor [reporting](/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors "Analyze browser monitor and clickpath results on the Synthetic details page.") in **Synthetic Classic**.
+* NAM monitor [reporting](../network-availability-monitors/network-availability-monitoring.md#reporting "ICMP, TCP, and DNS synthetic monitors") in **Synthetic**.
+* HTTP monitor [reporting](synthetic-app/synthetic-details-for-http-monitors.md "Learn about the Synthetic details page for HTTP monitors.") in **Synthetic**.
+* HTTP monitor [reporting](../analysis-and-alerting/synthetic-details-for-http-monitors-classic.md "Learn about the Synthetic details page for HTTP monitors (classic).") in **Synthetic Classic**.
+* Browser monitor [reporting](../analysis-and-alerting/synthetic-details-for-browser-monitors.md "Analyze browser monitor and clickpath results on the Synthetic details page.") in **Synthetic Classic**.
 
 ### Total downtime calculation for synthetic monitors
 
@@ -226,28 +226,28 @@ Go through the following process to learn using the ![Synthetic](https://dt-cdn.
 [01HTTP monitors reporting results
 
 * Reference
-* Learn about the Synthetic details page for HTTP monitors.](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/synthetic-details-for-http-monitors)[02Browser monitors reporting results
+* Learn about the Synthetic details page for HTTP monitors.](synthetic-app/synthetic-details-for-http-monitors.md)[02Browser monitors reporting results
 
 * Reference
-* Learn about the Browser details page for Browser monitors.](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/browser-monitors-results-reporting)[03Create and configure a browser monitor
+* Learn about the Browser details page for Browser monitors.](synthetic-app/browser-monitors-results-reporting.md)[03Create and configure a browser monitor
 
 * How-to guide
-* Learn how to create and configure a browser monitor to check the performance and availability of your site.](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/create-configure-browser-monitors)[04NAM monitors results reporting
+* Learn how to create and configure a browser monitor to check the performance and availability of your site.](synthetic-app/create-configure-browser-monitors.md)[04NAM monitors results reporting
 
 * Reference
-* View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/nam-monitors-results-reporting-synthetic-app)[05On-demand monitor executions
+* View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.](synthetic-app/nam-monitors-results-reporting-synthetic-app.md)[05On-demand monitor executions
 
 * How-to guide
-* Learn about how to perform on-demand executions.](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/on-demand-executions)[06Private synthetic locations
+* Learn about how to perform on-demand executions.](synthetic-app/on-demand-executions.md)[06Private synthetic locations
 
 * How-to guide
-* Learn how to manage private locations in the Synthetic app.](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/private-locations)[07Create and configure an HTTP monitor
+* Learn how to manage private locations in the Synthetic app.](synthetic-app/private-locations.md)[07Create and configure an HTTP monitor
 
 * How-to guide
-* Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor)[08Create a NAM monitor
+* Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.](synthetic-app/create-and-configure-an-http-monitor.md)[08Create a NAM monitor
 
 * How-to guide
-* Learn how to set up a NAM monitor to check the performance and availability of your site.](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/create-a-nam-monitor-synthetic-app)
+* Learn how to set up a NAM monitor to check the performance and availability of your site.](synthetic-app/create-a-nam-monitor-synthetic-app.md)
 
 ## Use cases
 

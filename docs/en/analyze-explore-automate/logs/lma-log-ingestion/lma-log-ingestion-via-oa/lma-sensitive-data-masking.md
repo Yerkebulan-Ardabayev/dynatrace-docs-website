@@ -51,7 +51,7 @@ You can configure sensitive data masking on the host, host group or environment 
 
    2
 
-   [Manually or automatically applied tags](/docs/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically.") are not visible to OneAgent.
+   [Manually or automatically applied tags](../../../../manage/tags-and-metadata/setup/how-to-define-tags.md#automatic "Find out how to define and apply tags manually and automatically.") are not visible to OneAgent.
 
    3
 
@@ -132,8 +132,8 @@ To check the current schema version for sensitive data masking configuration, li
 
 To create a sensitive data masking configuration using the API
 
-1. [Create an access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Write settings** (`settings.write`) and **Read settings** (`settings.read`) permissions.
-2. Use the [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration. The sensitive data masking configuration schema identifier (`schemaId`) is `builtin:sensitive-data-masking-settings`. Here is an example JSON payload with the sensitive data masking configuration:
+1. [Create an access token](../../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Write settings** (`settings.write`) and **Read settings** (`settings.read`) permissions.
+2. Use the [GET a schema](../../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration. The sensitive data masking configuration schema identifier (`schemaId`) is `builtin:sensitive-data-masking-settings`. Here is an example JSON payload with the sensitive data masking configuration:
 
 ```
 [
@@ -978,7 +978,7 @@ Data masking occurs within the entire expression or a capturing group. An expres
 
 Where does sensitive data masking happen?
 
-You can execute sensitive data masking in your environment so that the confidential data does not leave your infrastructure unprotected. If you import your data to Dynatrace via generic ingest, you need to mask the sensitive data on the source level, before ingestion. Alternatively, you can mask sensitive data during [Log Processing](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample13 "Example log processing scenarios."). However, if you choose to mask your data during Log processing, your data will leave your environment as log processing occurs on the Dynatrace side. Therefore, it is safer to mask it within your environment.
+You can execute sensitive data masking in your environment so that the confidential data does not leave your infrastructure unprotected. If you import your data to Dynatrace via generic ingest, you need to mask the sensitive data on the source level, before ingestion. Alternatively, you can mask sensitive data during [Log Processing](../../../log-monitoring/log-processing/log-processing-examples.md#lpexample13 "Example log processing scenarios."). However, if you choose to mask your data during Log processing, your data will leave your environment as log processing occurs on the Dynatrace side. Therefore, it is safer to mask it within your environment.
 
 How many capturing groups are supported?
 
@@ -992,5 +992,5 @@ Be aware of the following limitations to sensitive data masking:
 
 ## Related topics
 
-* [Data privacy and security](/docs/manage/data-privacy-and-security "Learn how Dynatrace applies various security measures required to protect private data.")
-* [Log Management and Analytics default limits](/docs/analyze-explore-automate/logs/lma-limits "Default limits for the latest version of Dynatrace Log Management and Analytics.")
+* [Data privacy and security](../../../../../common/manage/data-privacy-and-security.md "Learn how Dynatrace applies various security measures required to protect private data.")
+* [Log Management and Analytics default limits](../../lma-limits.md "Default limits for the latest version of Dynatrace Log Management and Analytics.")

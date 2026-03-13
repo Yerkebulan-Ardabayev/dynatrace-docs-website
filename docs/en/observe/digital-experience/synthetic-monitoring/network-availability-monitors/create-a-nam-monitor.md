@@ -15,8 +15,8 @@ scraped: 2026-03-06T21:19:14.372926
 
 With network availability monitors (NAM), you can check the availability of your hosts, devices, and services.
 
-There are three types of NAM monitors: ICMP, TCP, and DNS. To learn more about them, see [NAM types](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/network-availability-monitoring#NAM-types "ICMP, TCP, and DNS synthetic monitors").
-You can create NAM monitors in [![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") Synthetic](#monitor-configuration) in latest Dynatrace or through [API](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor#nam-api "Learn how to set up a NAM monitor to check the performance and availability of your site.").
+There are three types of NAM monitors: ICMP, TCP, and DNS. To learn more about them, see [NAM types](network-availability-monitoring.md#NAM-types "ICMP, TCP, and DNS synthetic monitors").
+You can create NAM monitors in [![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") Synthetic](#monitor-configuration) in latest Dynatrace or through [API](create-a-nam-monitor.md#nam-api "Learn how to set up a NAM monitor to check the performance and availability of your site.").
 
 ## NAM setup
 
@@ -37,7 +37,7 @@ NAM offers you the possibility of addressing this in multiple ways:
 
   Finally, filters offer defining tests against dynamically changing structure, for example if you want to define ICMP tests against a given host group, you don't need to adjust the NAM monitor test after the host group configuration change.
 
-You need to define constraints for each monitor. Constraints are conditions that need to be met to consider the monitorâs execution successful. It is obligatory to define the **Success rate** constraint. See [step-level constraints](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor#step-level-constraints "Learn how to set up a NAM monitor to check the performance and availability of your site.") to learn more.
+You need to define constraints for each monitor. Constraints are conditions that need to be met to consider the monitorâs execution successful. It is obligatory to define the **Success rate** constraint. See [step-level constraints](create-a-nam-monitor.md#step-level-constraints "Learn how to set up a NAM monitor to check the performance and availability of your site.") to learn more.
 
 ## Create a NAM monitor
 
@@ -201,7 +201,7 @@ To manage your NAM monitors via REST API
 2. In the **Select a definition** field, select **Synthetic - Network availability monitors**.
 3. Authenticate with your API token.
 
-   For details, see [Authentication](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.").
+   For details, see [Authentication](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md "Learn the concept of an access token and its scopes.").
 4. Perform one of the following actions.
 
    | To do this | Go to **Synthetic - Network availability monitors** and select this |
@@ -212,7 +212,7 @@ To manage your NAM monitors via REST API
    | Get all synthetic monitor definition for the given monitor ID | **GET /synthetic/monitors/{monitorId}** |
    | Update a synthetic monitor definition for the given monitor ID. | **PUT /synthetic/monitors/{monitorId}** |
 
-See [Synthetic monitors API v2](/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-network-availability-monitors "Create, read, update and delete synthetic monitors. Currently network availability monitors only.") for more details.
+See [Synthetic monitors API v2](../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-network-availability-monitors.md "Create, read, update and delete synthetic monitors. Currently network availability monitors only.") for more details.
 
 ## Available script configuration properties
 
@@ -709,4 +709,4 @@ Constraints process all records in a response, regardless of the section to whic
 
 ## Related topics
 
-* [Synthetic Monitors API](/docs/dynatrace-api/environment-api/synthetic/synthetic-monitors "Manage synthetic monitors via the Synthetic v1 API.")
+* [Synthetic Monitors API](../../../../dynatrace-api/environment-api/synthetic/synthetic-monitors.md "Manage synthetic monitors via the Synthetic v1 API.")

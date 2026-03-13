@@ -19,11 +19,11 @@ Action and session properties are metadata key-value pairs that are derived from
 
 See the sections below to learn where you can find the values that are captured as custom user action and session properties and how you can take full advantage of these properties.
 
-Before you can leverage user action and session properties, you need to define these properties in your application settings. For details, see [Define user action and user session properties for web applications](/docs/observe/digital-experience/web-applications/additional-configuration/define-user-action-and-session-properties "Define custom string, numeric, and date properties for your monitored web applications.").
+Before you can leverage user action and session properties, you need to define these properties in your application settings. For details, see [Define user action and user session properties for web applications](../additional-configuration/define-user-action-and-session-properties.md "Define custom string, numeric, and date properties for your monitored web applications.").
 
 ## User session analysis
 
-The **[User sessions](/docs/observe/digital-experience/session-segmentation/new-user-sessions "Learn about user session segmentation and filtering attributes.")** page offers the option to filter user sessions by action and session properties. For example, if you're running a loyalty program, you can add a `loyalty_status` property to learn whether a user in a monitored user session is a `Silver`, `Gold`, or `Platinum` member. You can then filter for `Platinum` or `Gold` customers on the **User sessions** page.
+The **[User sessions](../../session-segmentation/new-user-sessions.md "Learn about user session segmentation and filtering attributes.")** page offers the option to filter user sessions by action and session properties. For example, if you're running a loyalty program, you can add a `loyalty_status` property to learn whether a user in a monitored user session is a `Silver`, `Gold`, or `Platinum` member. You can then filter for `Platinum` or `Gold` customers on the **User sessions** page.
 
 1. Go to ![Session Segmentation](https://dt-cdn.net/images/session-segmentation-512-5278e8fa16.png "Session Segmentation") **Session Segmentation**.
 2. In **Filter by**, select one of the property types, for example, **Session date properties** or **User action string properties**, and then choose the required property.
@@ -36,7 +36,7 @@ The **[User sessions](/docs/observe/digital-experience/session-segmentation/new-
 
 ## Additional insights with USQL
 
-User action and session properties can greatly improve your analytics capabilities when using the [Dynatrace User Sessions Query Language (USQL)](/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") for analytics that require advanced filtering or persistent filtering across analysis views. Also, when you want to keep track of the monetary values and conversion goals that are key to the success of your business, you can construct queries based on the unique values of the individual user action or session properties that have been defined for your environment.
+User action and session properties can greatly improve your analytics capabilities when using the [Dynatrace User Sessions Query Language (USQL)](../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") for analytics that require advanced filtering or persistent filtering across analysis views. Also, when you want to keep track of the monetary values and conversion goals that are key to the success of your business, you can construct queries based on the unique values of the individual user action or session properties that have been defined for your environment.
 
 To use action and session properties in USQL
 
@@ -70,7 +70,7 @@ SELECT stringProperties.loyalty_status AS "Loyalty status", COUNT(useraction.req
 
 ## Integration via User session API
 
-The [User sessions API](/docs/dynatrace-api/environment-api/rum/user-sessions "Learn what the Dynatrace User Sessions Query language API offers."), in combination with our [User Sessions Query Language (USQL)](/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more."), enables you to access all user action and session data, including properties and values.
+The [User sessions API](../../../../dynatrace-api/environment-api/rum/user-sessions.md "Learn what the Dynatrace User Sessions Query language API offers."), in combination with our [User Sessions Query Language (USQL)](../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md "Learn how you can access and query user session data based on keywords, syntax, functions, and more."), enables you to access all user action and session data, including properties and values.
 
 Extending the loyalty program example above, you can leverage the problem information and loyalty status information via the User session API by querying the user sessions that were impacted by the problem after the problem was closed. This allows you to use the information to, for example, set up personalized marketing campaigns.
 
@@ -91,7 +91,7 @@ Here are some sample queries you may want to leverage:
 
 For web, mobile, and custom applications, you can [create a query](#usql) with action and session properties and then pin the resulting chart to one of your dashboards.
 
-For web applications, you can additionally create calculated metrics based on custom properties, use these metrics to create a chart and then pin this chart to your dashboards. This can be done in [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+For web applications, you can additionally create calculated metrics based on custom properties, use these metrics to create a chart and then pin this chart to your dashboards. This can be done in [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.").
 
 The generic **Web property pack** is used in the following example to track the marketing campaigns on [Dynatrace.comï»¿](https://www.dynatrace.com/) to view the following:
 
@@ -105,11 +105,11 @@ The generic **Web property pack** is used in the following example to track the 
 
 You can export captured user session properties, along with all other user session data, within user session export streams.
 
-For more details, see [Export user sessions](/docs/observe/digital-experience/session-segmentation/export-session-data "Set up Dynatrace to export user session data to a provided webhook endpoint.").
+For more details, see [Export user sessions](../../session-segmentation/export-session-data.md "Set up Dynatrace to export user session data to a provided webhook endpoint.").
 
 ## Multidimensional analysis
 
-You can also leverage custom properties in [Multidimensional analysis](/docs/observe/digital-experience/web-applications/analyze-and-use/multi-dimensional-analysis "Find out how Dynatrace Real User Monitoring enables you to dig deep into your user actions and perform analysis across numerous dimensions."). For instance, you can analyze user actions based on your custom properties or you can filter data by property values.
+You can also leverage custom properties in [Multidimensional analysis](multi-dimensional-analysis.md "Find out how Dynatrace Real User Monitoring enables you to dig deep into your user actions and perform analysis across numerous dimensions."). For instance, you can analyze user actions based on your custom properties or you can filter data by property values.
 
 To use custom properties on the **Multidimensional analysis** page
 
@@ -125,7 +125,7 @@ To use custom properties on the **Multidimensional analysis** page
 
 ## Calculated metrics, charts, and alerts
 
-To extend usefulness, create a [calculated metric](/docs/observe/digital-experience/web-applications/additional-configuration/rum-calculated-metrics-web "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.") with your user action properties. You can create a metric either from the [**Multidimensional analysis** page](#mda) or from your application settings. After you add a metric, you can use it to create custom charts and alerts.
+To extend usefulness, create a [calculated metric](../additional-configuration/rum-calculated-metrics-web.md "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.") with your user action properties. You can create a metric either from the [**Multidimensional analysis** page](#mda) or from your application settings. After you add a metric, you can use it to create custom charts and alerts.
 
 To create a metric from the **Multidimensional analysis** page
 
@@ -135,7 +135,7 @@ To create a metric from the **Multidimensional analysis** page
 
    ![Creating a calculated metric with data filtered by action property](https://dt-cdn.net/images/creating-calculated-metric-with-data-filtered-by-action-property-2134-e9027de910.png)
 4. Select **Create metric** to save the metric.
-5. Optional Select **Create a chart** or **Create alert**. For details, see [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") and [Metric events](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace").
+5. Optional Select **Create a chart** or **Create alert**. For details, see [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") and [Metric events](../../../../dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace").
 
 To create a metric from your web application settings
 
@@ -146,9 +146,9 @@ To create a metric from your web application settings
 5. Select the required metric, and specify a **Metric name** and **Metric key for API usage**.
 6. Optional In **Filter by**, set the required filters. For example, you can filter by user action properties.
 7. Select **Create metric**.
-8. Optional From the list of metrics, expand the created metric, and select **Create a chart** or **Create alert**. For details, see [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") and [Metric events](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace").
+8. Optional From the list of metrics, expand the created metric, and select **Create a chart** or **Create alert**. For details, see [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.") and [Metric events](../../../../dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace").
 
 ## Related topics
 
-* [Define user action and user session properties for web applications](/docs/observe/digital-experience/web-applications/additional-configuration/define-user-action-and-session-properties "Define custom string, numeric, and date properties for your monitored web applications.")
+* [Define user action and user session properties for web applications](../additional-configuration/define-user-action-and-session-properties.md "Define custom string, numeric, and date properties for your monitored web applications.")
 * [Mastering session and user action properties for enhanced analyticsï»¿](https://www.youtube.com/watch?v=b8Vj0EoaDeM)

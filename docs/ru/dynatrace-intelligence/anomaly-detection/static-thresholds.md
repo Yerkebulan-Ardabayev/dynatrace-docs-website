@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:20:53.079076
 
 Статическое пороговое значение представляет собой жёсткий предел, который метрика не должна нарушать. Поскольку статические пороговые значения не меняются со временем, они являются важным инструментом мониторинга для определения критических границ нормальной работы.
 
-Важно выбрать между статическим и [адаптивным пороговым значением](/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration.") в зависимости от вашего сценария использования.
+Важно выбрать между статическим и [адаптивным пороговым значением](auto-adaptive-threshold.md "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration.") в зависимости от вашего сценария использования.
 
 Например, вы можете использовать статическое пороговое значение для установки предела общего потребления памяти известным процессом. В этом случае статическое пороговое значение превосходит адаптивное, поскольку если потребление памяти медленно растёт со временем, адаптивное пороговое значение просто изменяется вместе с ним, не сигнализируя о проблемах и в конечном итоге приводя к скрытой утечке памяти.
 
@@ -31,4 +31,4 @@ scraped: 2026-03-06T21:20:53.079076
 
 ## Связанные темы
 
-* [Metrics Classic](/docs/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.")
+* [Metrics Classic](../../analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.")

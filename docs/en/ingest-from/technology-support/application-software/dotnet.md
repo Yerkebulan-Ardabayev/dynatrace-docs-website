@@ -15,24 +15,24 @@ scraped: 2026-03-05T21:25:55.098253
 
 Dynatrace OneAgent instruments your .NET applications by placing trace statements at strategic locations in your code for code tracing, performance metrics, error detection, dependency tracking, and more.
 
-Not every detected .NET application is instrumented by default. Dynatrace maintains a set of rules to instrument specific processes (for example, IIS application-pools, which you can extend with our own rules). To learn the basics about process group monitoring setup (automatic deep monitoring, custom monitoring rules, and built-in monitoring rules), see [Set up process group monitoring](/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring "Ways to customize process-group monitoring").
+Not every detected .NET application is instrumented by default. Dynatrace maintains a set of rules to instrument specific processes (for example, IIS application-pools, which you can extend with our own rules). To learn the basics about process group monitoring setup (automatic deep monitoring, custom monitoring rules, and built-in monitoring rules), see [Set up process group monitoring](../../../observe/infrastructure-observability/process-groups/configuration/pg-monitoring.md "Ways to customize process-group monitoring").
 
 ## Capabilities
 
 Dynatrace provides extensive .NET monitoring capabilities:
 
 * [OpenTelemetry supportï»¿](https://github.com/open-telemetry/opentelemetry-dotnet) for capturing traces and ingesting metrics.  
-  For more information, see [Instrument your .NET application with OpenTelemetry](/docs/ingest-from/opentelemetry/walkthroughs/dotnet "Learn how to instrument your .NET application using OpenTelemetry and Dynatrace.")
-* End-to-end transaction tracing of requests to web services, remoting services, queues, and databases. [Learn more about services](/docs/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.")
-* [OneAgent SDK](/docs/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing
+  For more information, see [Instrument your .NET application with OpenTelemetry](../../opentelemetry/walkthroughs/dotnet.md "Learn how to instrument your .NET application using OpenTelemetry and Dynatrace.")
+* End-to-end transaction tracing of requests to web services, remoting services, queues, and databases. [Learn more about services](../../../observe/application-observability/services.md "Learn how to monitor and analyze your services, define and use request attributes, and more.")
+* [OneAgent SDK](../../extend-dynatrace/extend-tracing/oneagent-sdk.md "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing
 * Garbage collection, process metrics, and much more
 * [Always-on 24x7 production grade CPU profilingï»¿](https://www.dynatrace.com/news/blog/analyze-cpu-consumption-background-threads/)
 
-See our [supported technologies matrix](/docs/ingest-from/technology-support#net "Find technical details related to Dynatrace support for specific platforms and development frameworks.") for details on supported frameworks.
+See our [supported technologies matrix](../../technology-support.md#net "Find technical details related to Dynatrace support for specific platforms and development frameworks.") for details on supported frameworks.
 
 ## Supported .NET versions
 
-| Version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/docs/ingest-from/technology-support#support-levels) |
+| Version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](../../technology-support.md#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
 | 10 | 2025-11-11 | - | 1.325 | - | - | Supported |
 | 9 | 2024-11-12 | - | 1.305 | - | - | Supported |
@@ -54,7 +54,7 @@ Limited support: Dynatrace can only solve problems that can be reproduced on sup
 
 ## Supported .NET Framework versions
 
-| Version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/docs/ingest-from/technology-support#support-levels) |
+| Version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](../../technology-support.md#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
 | 4.5.2 - 4.8 | - | - | - | - | - | Supported |
 | 4.5.1 | - | 2016-01-12 | - | - | - | Limited[1](#fn-net-framework-1-def) |
@@ -74,7 +74,7 @@ Parsers help you to improve filtering, troubleshooting, metrics, alerts, and das
 
 ![syslog-bundles](https://dt-cdn.net/images/env-syslogbundles-2589-90e4e38b45.png)
 
-For more information, see [Process logs with technology bundle parsers](/docs/platform/openpipeline/use-cases/tutorial-technology-processor "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.").
+For more information, see [Process logs with technology bundle parsers](../../../platform/openpipeline/use-cases/tutorial-technology-processor.md "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.").
 
 ## Support lifecycle
 

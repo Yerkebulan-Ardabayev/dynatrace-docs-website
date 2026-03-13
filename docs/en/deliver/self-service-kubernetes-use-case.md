@@ -38,13 +38,13 @@ Alternatively, follow our [Observability Lab: Predictive Auto-Scaling for Kubern
 
 ### Prerequisites
 
-* Installed [AI in Workflows - Predictive maintenance of cloud disks](/docs/dynatrace-intelligence/use-cases/davis-for-workflows "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.").
-* [Set up Kubernetes Connector](/docs/analyze-explore-automate/workflows/actions/kubernetes-automation/kubernetes-workflows-setup "Learn how to set up Kubernetes Connector").
+* Installed [AI in Workflows - Predictive maintenance of cloud disks](../dynatrace-intelligence/use-cases/davis-for-workflows.md "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.").
+* [Set up Kubernetes Connector](../analyze-explore-automate/workflows/actions/kubernetes-automation/kubernetes-workflows-setup.md "Learn how to set up Kubernetes Connector").
 * Access to your GitHub account, a GitHub Repository, and a GitHub Personal Access Token (PAT).
 * Access to your Kubernetes environment that is monitored with Dynatrace.
 * A Kubernetes Deployment that you can annotate to enable predictive scaling pull requests.
 * A Dynatrace Platform API token to execute Dynatrace Intelligence.
-* [Set up GitHub Connector](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup "Learn how to set up GitHub Connector.")
+* [Set up GitHub Connector](../analyze-explore-automate/workflows/actions/github/github-workflows-setup.md "Learn how to set up GitHub Connector.")
 
 ### Annotate your Kubernetes Deployments
 
@@ -1720,7 +1720,7 @@ This workflow is triggered every time the first workflow detects a Kubernetes wo
 
 #### Prerequisite
 
-In this workflow a task uses JavaScript to call the GitHub API to create the pull request. While some of the GitHub Connector actions use the connection you set up when you followed the [Set up GitHub Connector](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup "Learn how to set up GitHub Connector."), your custom steps need to use the same Personal Access Token (PAT) that you query from the credential vault. Another token you need is a Dynatrace Platform API token to interact with the Dynatrace Intelligence agentic and generative AI API.
+In this workflow a task uses JavaScript to call the GitHub API to create the pull request. While some of the GitHub Connector actions use the connection you set up when you followed the [Set up GitHub Connector](../analyze-explore-automate/workflows/actions/github/github-workflows-setup.md "Learn how to set up GitHub Connector."), your custom steps need to use the same Personal Access Token (PAT) that you query from the credential vault. Another token you need is a Dynatrace Platform API token to interact with the Dynatrace Intelligence agentic and generative AI API.
 
 As a prerequisite, you need to create new credential vault entries in Dynatrace that store the GitHub PAT and the Dynatrace Platform API token. You'll need the credential vault IDs, and you should replace the placeholders in the code snippets with your credential vault ID.
 

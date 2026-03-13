@@ -28,7 +28,7 @@ You should use the Collector if:
 
 The Collector is a relatively lightweight component, so teams can deploy their own to avoid sharing the same configuration.
 
-The Collector is configured in a single YAML file. This eliminates the need to browse through multiple files and reduces maintenance. You can find more information on the configuration at [Configure the OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.").
+The Collector is configured in a single YAML file. This eliminates the need to browse through multiple files and reduces maintenance. You can find more information on the configuration at [Configure the OpenTelemetry Collector](collector/configuration.md "How to configure the OpenTelemetry Collector.").
 
 ## Distributions
 
@@ -54,12 +54,12 @@ It is also available as a container image at [Github Packagesï»¿](https://git
 docker pull ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.44.0
 ```
 
-More information about further available container repositories can be found under [Deploy Dynatrace OTel Collector](/docs/ingest-from/opentelemetry/collector/deployment#container-image-registries "How to deploy Dynatrace OTel Collector.").
+More information about further available container repositories can be found under [Deploy Dynatrace OTel Collector](collector/deployment.md#container-image-registries "How to deploy Dynatrace OTel Collector.").
 
 Dynatrace Collector ships with specific components as described in the Dynatrace Collector's GitHub repo.
 For the full list, see [Componentsï»¿](https://github.com/Dynatrace/dynatrace-otel-collector#components).
 
-Take a look at [OpenTelemetry Collector use cases](/docs/ingest-from/opentelemetry/collector/use-cases "Configure your Collector instance for different use cases.") for concrete use-case and configuration examples for the individual components.
+Take a look at [OpenTelemetry Collector use cases](collector/use-cases.md "Configure your Collector instance for different use cases.") for concrete use-case and configuration examples for the individual components.
 
 ### OpenTelemetry Distributions
 

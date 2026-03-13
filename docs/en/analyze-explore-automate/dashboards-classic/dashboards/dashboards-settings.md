@@ -13,12 +13,12 @@ scraped: 2026-03-05T21:34:00.886805
 * 2-min read
 * Published Mar 05, 2021
 
-[Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+[Dashboards Classic](../../dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
 
 This page refers to classic dashboards created using the ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** functionality integrated with Dynatrace Classic.
 
-* If you're already using the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace, see [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") for related documentation.
-* If you're still using classic dashboards, we encourage you to [upgrade your dashboards](/docs/analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.") and benefit from all the latest dashboarding possibilities made available by the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace.
+* If you're already using the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace, see [Dashboards](../../dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") for related documentation.
+* If you're still using classic dashboards, we encourage you to [upgrade your dashboards](../dashboards-upgrade-classic-to-latest.md "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.") and benefit from all the latest dashboarding possibilities made available by the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace.
 
 Use the **Global dashboard settings** page to configure dashboard global settings and global settings for dashboard sharing and preset dashboards.
 
@@ -40,7 +40,7 @@ You can assign a preset dashboard as the home dashboard for any user group. The 
 2. Select **Configure home dashboard**.
 3. Select **User group**.
 4. Select a preset dashboard from the **Home dashboard** list.  
-   If your dashboard isn't listed, make sure it's a [preset dashboard](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-preset "Learn about out-of-the-box Dynatrace dashboards and how to create your own preset dashboards.").
+   If your dashboard isn't listed, make sure it's a [preset dashboard](dashboards-preset.md "Learn about out-of-the-box Dynatrace dashboards and how to create your own preset dashboards.").
 5. Select **Save changes**.
 
 ## Preset settings
@@ -64,7 +64,7 @@ Use preset rules to ensure that specific preset dashboards are visible only to s
    * Set **User group** to the user group that should have access to the selected preset dashboard.
 3. Select **Save changes**.
 
-For more on preset dashboards, see [Preset dashboards](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboards-preset "Learn about out-of-the-box Dynatrace dashboards and how to create your own preset dashboards.").
+For more on preset dashboards, see [Preset dashboards](dashboards-preset.md "Learn about out-of-the-box Dynatrace dashboards and how to create your own preset dashboards.").
 
 ## Allowed URL pattern rules
 

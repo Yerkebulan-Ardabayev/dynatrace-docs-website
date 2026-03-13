@@ -17,10 +17,10 @@ This page describes log observability capabilities and the features that they pr
 
 For information about how usage of a specific capability translates to consumption of your DPS license commit, see
 
-* [Log - Ingest & Process](/docs/license/capabilities/log-analytics/dps-log-ingest "Learn how your consumption of the Log Management & Analytics - Ingest & Process DPS capability is billed and charged.")
-* [Log - Retain](/docs/license/capabilities/log-analytics/dps-log-retain "Learn how your consumption of the Log Management & Analytics - Retain DPS capability is billed and charged.")
-* [Log - Query](/docs/license/capabilities/log-analytics/dps-log-query "Learn how your consumption of the Log Management & Analytics - Query DPS capability is billed and charged.")
-* [Log - Retain with Included Queries](/docs/license/capabilities/log-analytics/dps-log-retain-included "Learn how your consumption of the Log Management & Analytics - Retain with Included Queries DPS capability is billed and charged.")
+* [Log - Ingest & Process](log-analytics/dps-log-ingest.md "Learn how your consumption of the Log Management & Analytics - Ingest & Process DPS capability is billed and charged.")
+* [Log - Retain](log-analytics/dps-log-retain.md "Learn how your consumption of the Log Management & Analytics - Retain DPS capability is billed and charged.")
+* [Log - Query](log-analytics/dps-log-query.md "Learn how your consumption of the Log Management & Analytics - Query DPS capability is billed and charged.")
+* [Log - Retain with Included Queries](log-analytics/dps-log-retain-included.md "Learn how your consumption of the Log Management & Analytics - Retain with Included Queries DPS capability is billed and charged.")
 
 Dynatrace offers
 
@@ -109,7 +109,7 @@ Alternatively, if the Retain with Included Query option does not meet your use c
 
 ## Related topics
 
-* [Log Analytics](/docs/analyze-explore-automate/logs "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")
-* [What is Dynatrace Grail?](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.")
-* [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* [Log Analytics](../../analyze-explore-automate/logs.md "Log Management and Analytics provides a unified approach to controlling and studying your log data in Dynatrace.")
+* [What is Dynatrace Grail?](../../platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.")
+* [License Dynatrace](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)

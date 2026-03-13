@@ -20,10 +20,10 @@ scraped: 2026-03-06T21:17:25.680314
 
 ## Предварительные требования
 
-* Среда Dynatrace SaaS с подпиской Dynatrace Platform Subscription (DPS), включающей [Code Monitoring](/docs/license/capabilities/container-monitoring#code-monitoring "Узнайте о различных режимах мониторинга контейнеров, доступных с лицензией Dynatrace Platform Subscription (DPS).")
-* OneAgent версии 1.309+ с включёнными функциями [OneAgent features](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Управление функциями OneAgent глобально и для каждой группы процессов."): **Java Live-Debugger** и **Node.js Live-Debugger**
-* [Режимы мониторинга](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Узнайте больше о доступных режимах мониторинга при использовании OneAgent."): Full-Stack, Infrastructure или Discovery (с внедрением модуля кода контейнера)
-* [Модули кода](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix#other-modules "Узнайте, какие возможности поддерживаются OneAgent на различных операционных системах и платформах."): Java и Node.js
+* Среда Dynatrace SaaS с подпиской Dynatrace Platform Subscription (DPS), включающей [Code Monitoring](../../license/capabilities/container-monitoring.md#code-monitoring "Узнайте о различных режимах мониторинга контейнеров, доступных с лицензией Dynatrace Platform Subscription (DPS).")
+* OneAgent версии 1.309+ с включёнными функциями [OneAgent features](../../ingest-from/dynatrace-oneagent/oneagent-features.md "Управление функциями OneAgent глобально и для каждой группы процессов."): **Java Live-Debugger** и **Node.js Live-Debugger**
+* [Режимы мониторинга](../../platform/oneagent/monitoring-modes/monitoring-modes.md "Узнайте больше о доступных режимах мониторинга при использовании OneAgent."): Full-Stack, Infrastructure или Discovery (с внедрением модуля кода контейнера)
+* [Модули кода](../../ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md#other-modules "Узнайте, какие возможности поддерживаются OneAgent на различных операционных системах и платформах."): Java и Node.js
 
 ## Начало работы
 
@@ -95,7 +95,7 @@ ActiveGate не является строго необходимым для ра
    - debugging
    ```
 
-Если вы используете прокси-сервер, настройте его в Environment ActiveGate, как описано в разделе [Прокси для ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate "Узнайте, как настроить свойства ActiveGate для использования прокси-сервера.").
+Если вы используете прокси-сервер, настройте его в Environment ActiveGate, как описано в разделе [Прокси для ActiveGate](../../ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate.md "Узнайте, как настроить свойства ActiveGate для использования прокси-сервера.").
 
 ### Начало отладки приложения в реальном времени
 
@@ -123,7 +123,7 @@ ActiveGate не является строго необходимым для ра
 
 Ваш репозиторий может быть автоматически получен для выбранного экземпляра на основе ваших Git-разрешений, если ваш администратор уже настроил это.
 
-Чтобы узнать больше об автоматическом получении, см. [Интеграция с системой контроля версий](/docs/observe/application-observability/live-debugger/additional-settings#integrate-with-your-version-control "Управление разрешениями точек останова, настройка параметров OneAgent, настройка интеграции с системой контроля версий и применение правил маскирования данных.").
+Чтобы узнать больше об автоматическом получении, см. [Интеграция с системой контроля версий](live-debugger/additional-settings.md#integrate-with-your-version-control "Управление разрешениями точек останова, настройка параметров OneAgent, настройка интеграции с системой контроля версий и применение правил маскирования данных.").
 
 #### Ручное получение
 
@@ -168,7 +168,7 @@ ActiveGate не является строго необходимым для ра
 2. Перейдите к файловой системе.
 3. Установите неблокирующую точку останова на строке кода, которую вы хотите отладить.
 
-[Неблокирующие точки останова](/docs/observe/application-observability/live-debugger/breakpoints "Узнайте, как добавлять точки останова, просматривать доступные статусы, устанавливать уровни точек останова и многое другое.") -- это контрольные точки для строк кода, из которых вы хотите собирать отладочные данные. Эти точки останова не останавливают выполнение вашего кода. Вместо этого они содержат запрос на сбор отладочных данных. Установка этих точек останова и получение полученных снимков не влияют на ваше приложение или его пользователей.
+[Неблокирующие точки останова](live-debugger/breakpoints.md "Узнайте, как добавлять точки останова, просматривать доступные статусы, устанавливать уровни точек останова и многое другое.") -- это контрольные точки для строк кода, из которых вы хотите собирать отладочные данные. Эти точки останова не останавливают выполнение вашего кода. Вместо этого они содержат запрос на сбор отладочных данных. Установка этих точек останова и получение полученных снимков не влияют на ваше приложение или его пользователей.
 
 После установки неблокирующей точки останова убедитесь, что ваш код был вызван, чтобы данные были собраны и сразу отобразились в ![Live Debugger](https://dt-cdn.net/images/live-debugger-256-b934a2bad5.png "Live Debugger") **Live Debugger**.
 

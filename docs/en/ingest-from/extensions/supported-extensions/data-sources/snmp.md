@@ -17,13 +17,13 @@ Dynatrace provides you with a framework that you can use to extend your observab
 
 You can also extend your insights into data related to SNMP traps issued in your infrastructure.
 
-First, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=snmp) to see if your device is covered by an existing extension. If it isn't, you can build your own [Dynatrace SNMP extension](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions "Learn how to create an SNMP extension using the Extensions framework.") to cover your SNMP device.
+First, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=snmp) to see if your device is covered by an existing extension. If it isn't, you can build your own [Dynatrace SNMP extension](../../develop-your-extensions/data-sources/snmp-extensions.md "Learn how to create an SNMP extension using the Extensions framework.") to cover your SNMP device.
 
 ## Before you begin
 
 1. Decide which SNMP will provide data for the extension. Dynatrace Extensions framework supports SNMP v2c and v3. Depending on the SNMP version, prepare the necessary authentication details.
 2. Designate an ActiveGate group or groups that will remotely connect to your SNMP devices to pull data. All ActiveGates in each designated group need to be able to connect to your SNMP devices.
-3. Learn [hardware requirements](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions#hw "Learn how to create an SNMP extension using the Extensions framework.") for an ActiveGate performing SNMP monitoring.
+3. Learn [hardware requirements](../../develop-your-extensions/data-sources/snmp-extensions.md#hw "Learn how to create an SNMP extension using the Extensions framework.") for an ActiveGate performing SNMP monitoring.
 
 ## Manage SNMP extensions
 
@@ -52,13 +52,13 @@ Next, perform the following steps.
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**ActiveGate group**](/docs/ingest-from/extensions/supported-extensions/data-sources/snmp#step-1 "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**ActiveGate group**](snmp.md#step-1 "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Define devices**](/docs/ingest-from/extensions/supported-extensions/data-sources/snmp#step-2 "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")[![Step 3 optional](https://dt-cdn.net/images/dotted-step-3-e2082c1921.svg "Step 3 optional")
+**Define devices**](snmp.md#step-2 "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")[![Step 3 optional](https://dt-cdn.net/images/dotted-step-3-e2082c1921.svg "Step 3 optional")
 
-**Advanced properties**](/docs/ingest-from/extensions/supported-extensions/data-sources/snmp#step-3 "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**Advanced properties**](snmp.md#step-3 "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**Activate extension**](/docs/ingest-from/extensions/supported-extensions/data-sources/snmp#step-4 "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")
+**Activate extension**](snmp.md#step-4 "Learn how to extend observability in Dynatrace with declarative SNMP metrics and event ingestion.")
 
 ### Step 1 ActiveGate group
 
@@ -115,7 +115,7 @@ When done, select **Activate**.
 
 ## Monitoring configuration as JSON
 
-The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
+The extension activation wizard contains a dynamically updated JSON payload with your monitoring configuration. See [Manage Extensions](../../manage-extensions.md "Learn how to manage extensions.") to learn how to use it to activate an extension using the Dynatrace API.
 
 ## Custom MIB files
 

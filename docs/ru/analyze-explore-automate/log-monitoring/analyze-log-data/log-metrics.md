@@ -16,14 +16,14 @@ Log Monitoring Classic
 
 Мониторинг логов Dynatrace позволяет вам не только просматривать и анализировать логи, но и создавать метрики на основе данных логов и использовать их в Dynatrace, как любую другую метрику. Вы можете добавить их на дашборд, включить в анализ и даже создать пользовательские оповещения.
 
-Ценообразование метрик на основе логов основано на модели Davis data units (DDU). Ознакомьтесь с [DDU для метрик](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."), чтобы узнать, как оценить и отслеживать потребление DDU для метрик на основе логов.
+Ценообразование метрик на основе логов основано на модели Davis data units (DDU). Ознакомьтесь с [DDU для метрик](../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."), чтобы узнать, как оценить и отслеживать потребление DDU для метрик на основе логов.
 
 В зависимости от параметров, выбранных при создании метрики на основе логов, значение новой метрики может представлять:
 
 * **Количество записей логов** (доступно в Dynatrace версии 1.206+)
   Значение метрики будет представлять количество вхождений записей логов, соответствующих запросу.
 * **Значение атрибута** (доступно в Dynatrace версии 1.229+)
-  Значение метрики может представлять одну из агрегаций, которые можно указать в [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+  Значение метрики может представлять одну из агрегаций, которые можно указать в [Data Explorer](../../explorer.md "Query for metrics and transform results to gain desired insights.").
 
 Когда Dynatrace принимает данные логов, он применяет определённый запрос к данным логов и, в зависимости от выбора параметра **Measure** метрики на основе логов, значение метрики будет представлять либо количество записей логов, соответствующих запросу, либо одно из следующих значений для указанного атрибута: `Average`, `Count`, `Maximum`, `Minimum`, `Sum`, `Median`, `Percentile 10th`, `Percentile 75th` или `Percentile 90th`. Указанный атрибут должен быть числового типа. Dynatrace попытается преобразовать атрибуты строкового типа в числа, если они соответствуют следующему шаблону:
 `123`
@@ -57,23 +57,23 @@ Log Monitoring Classic
 
 1. Перейдите в **Settings** > **Log Monitoring** > **Metrics extraction** и нажмите **Add log metric**.
 2. В поле **Metric key** добавьте имя метрики к ключу метрики `log.`.
-3. В поле **Matcher** введите запрос мониторинга логов для фильтрации данных логов для вашей метрики. Подробности см. в [Просмотрщик логов](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer#query-syntax "Learn how to use Dynatrace log viewer to analyze log data.").
+3. В поле **Matcher** введите запрос мониторинга логов для фильтрации данных логов для вашей метрики. Подробности см. в [Просмотрщик логов](log-viewer.md#query-syntax "Learn how to use Dynatrace log viewer to analyze log data.").
 
    Я перешёл на Grail
 
-   Если вы перешли на [Dynatrace Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), вы можете начать использовать функции [DQL](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") в ваших запросах мониторинга логов. Подробности см. в [Обработка логов с помощью классического конвейера](/docs/analyze-explore-automate/logs/lma-classic-log-processing#dql-functions "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.").
+   Если вы перешли на [Dynatrace Grail](../../../platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), вы можете начать использовать функции [DQL](../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") в ваших запросах мониторинга логов. Подробности см. в [Обработка логов с помощью классического конвейера](../../logs/lma-classic-log-processing.md#dql-functions "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.").
 4. Выберите **Measure**:
 
    * **Occurrence of log records** — количество вхождений записей логов, соответствующих запросу.
    * **Attribute value** — набор мер для значения атрибута записей логов, соответствующих запросу. Если вы выберете этот вариант, вам также нужно указать **Attribute** — атрибут, значения которого будут измеряться.
 5. Необязательно Нажмите **Add dimension** один или несколько раз, чтобы добавить измерения для результата запроса.
-   Добавление измерений позволяет разделить вхождения метрики на основе логов по определённому атрибуту данных логов. Если атрибут содержит более одного значения, первое значение атрибута будет выступать в качестве измерения метрики. Подробности см. в [Просмотрщик логов](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer#log-dimensions "Learn how to use Dynatrace log viewer to analyze log data.").
+   Добавление измерений позволяет разделить вхождения метрики на основе логов по определённому атрибуту данных логов. Если атрибут содержит более одного значения, первое значение атрибута будет выступать в качестве измерения метрики. Подробности см. в [Просмотрщик логов](log-viewer.md#log-dimensions "Learn how to use Dynatrace log viewer to analyze log data.").
 6. Нажмите **Save changes**, чтобы создать метрику на основе логов.
 
 ### Создание метрики через просмотрщик логов
 
 1. Перейдите в ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events") **Logs & Events Classic**.
-2. Создайте запрос в просмотрщике логов или используйте **Available attributes** для извлечения интересующих вас данных логов. Подробности см. в [Просмотрщик логов](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer#query-syntax "Learn how to use Dynatrace log viewer to analyze log data.").
+2. Создайте запрос в просмотрщике логов или используйте **Available attributes** для извлечения интересующих вас данных логов. Подробности см. в [Просмотрщик логов](log-viewer.md#query-syntax "Learn how to use Dynatrace log viewer to analyze log data.").
 
 Расширенный запрос
 
@@ -82,12 +82,12 @@ Log Monitoring Classic
 3. Нажмите **Create metric**. Ваш запрос просмотрщика логов теперь отображается на странице **Log metrics**.
 4. Необязательно добавьте измерения для результата запроса.
    Добавление измерений позволяет разделить вхождения метрики на основе логов по определённому атрибуту данных логов.
-   Подробности см. в [Просмотрщик логов](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer#log-dimensions "Learn how to use Dynatrace log viewer to analyze log data.").
+   Подробности см. в [Просмотрщик логов](log-viewer.md#log-dimensions "Learn how to use Dynatrace log viewer to analyze log data.").
 5. Добавьте имя метрики к ключу метрики `log.` и сохраните изменения для создания метрики на основе логов.
 
 ### Ограничения уникальных измерений
 
-Если вы создаёте метрики с высокой кардинальностью (большим количеством уникальных измерений), вы можете достичь [ограничения кардинальности](/docs/analyze-explore-automate/metrics/limits "Reference of metrics powered by Grail") вашей среды. Для смягчения этих ограничений вы можете:
+Если вы создаёте метрики с высокой кардинальностью (большим количеством уникальных измерений), вы можете достичь [ограничения кардинальности](../../metrics/limits.md "Reference of metrics powered by Grail") вашей среды. Для смягчения этих ограничений вы можете:
 
 * Сузить запрос для уменьшения количества логов в метрике.
 * Снизить кардинальность ваших измерений.
@@ -108,14 +108,14 @@ Log Monitoring Classic
 
 1. Примите данные логов через OneAgent и API.
 
-   * [Приём логов через OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
-   * [API приёма логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
+   * [Приём логов через OneAgent](../../logs/lma-log-ingestion/lma-log-ingestion-via-oa.md "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
+   * [API приёма логов](../../logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
 2. Извлеките метрику из принятых данных логов.
 
-   * [Обработка логов с помощью классического конвейера](/docs/analyze-explore-automate/logs/lma-classic-log-processing "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.")
+   * [Обработка логов с помощью классического конвейера](../../logs/lma-classic-log-processing.md "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.")
 3. Создайте метрику на основе логов.
 
-   * [Метрики на основе логов](/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-metrics#log-metrics-create-rule "Create metrics based on log data and use them throughout Dynatrace like any other metric.")
+   * [Метрики на основе логов](../../logs/lma-log-processing/lma-log-metrics.md#log-metrics-create-rule "Create metrics based on log data and use them throughout Dynatrace like any other metric.")
 
 ## Редактирование метрики на основе логов
 
@@ -141,5 +141,5 @@ Log Monitoring Classic
 Теперь, когда вы определили метрику, вы можете отобразить её на графике, закрепить на дашборде и даже создать оповещение на её основе.
 
 * **График:** Перейдите в **Data Explorer**, установите **Select metric...** в `log.error_PGI` и нажмите **Run query**.
-* **Дашборд:** После создания графика нажмите **Pin to dashboard**, чтобы добавить график на один из ваших классических дашбордов. Подробности см. в [Закрепление плиток на дашборде](/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+* **Дашборд:** После создания графика нажмите **Pin to dashboard**, чтобы добавить график на один из ваших классических дашбордов. Подробности см. в [Закрепление плиток на дашборде](../../dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard.md "Learn to pin tiles to your dashboards.").
 * **Оповещение:** Перейдите в **Settings** > **Anomaly detection** > **Metric events**, нажмите **Add metric event** и создайте пользовательское событие на основе `log.error_PGI`.

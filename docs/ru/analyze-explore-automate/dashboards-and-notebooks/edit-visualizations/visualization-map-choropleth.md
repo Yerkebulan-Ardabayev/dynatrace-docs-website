@@ -149,7 +149,7 @@ record(geo.country.iso_code = "BR", apdex = "Fair" )
 * ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Go to host** — открывает выделение в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**.
 
   В целом, если есть рекомендованные приложения для открытия выбранного элемента, меню предлагает прямые ссылки на эти приложения, за которыми следует опция **Open with** для выбора другого целевого приложения.
-* **Open with** — подробности см. в разделе [Переходы и навигация](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+* **Open with** — подробности см. в разделе [Переходы и навигация](../drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ## Заголовок
 
@@ -169,7 +169,7 @@ record(geo.country.iso_code = "BR", apdex = "Fair" )
 
 ## Визуализация
 
-Если вы не уверены, что выбрали правильную визуализацию, используйте [селектор визуализации](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") для выбора различных визуализаций.
+Если вы не уверены, что выбрали правильную визуализацию, используйте [селектор визуализации](../edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") для выбора различных визуализаций.
 
 ## Вид
 

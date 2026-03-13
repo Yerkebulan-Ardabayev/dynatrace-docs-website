@@ -18,26 +18,26 @@ The following procedureâof directly uploading an SSL certificate to an Acti
 Do not attempt to configure SSL certificates directly on a Cluster ActiveGate. If you do this, the certificate will be overwritten by automatic management performed by Dynatrace.
 For Cluster ActiveGates, you must upload your certificates using [the Cluster Management Consoleï»¿](https://docs.dynatrace.com/managed/shortlink/managed-ssl-cluster-ag) or [the Cluster REST API v1ï»¿](https://docs.dynatrace.com/managed/shortlink/api-cluster-post-ssl-cert-store).
 
-Connection to ActiveGate, from OneAgents or REST API, takes place over an encrypted HTTPS channel. ActiveGate presents a self-signed authentication certificate to all connecting clients. While OneAgent instances may ignore the validity of ActiveGate certificates (depending on configuration), connections from browser clients (such as the [RUM JavaScript](/docs/observe/digital-experience/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications")) do verify that the hostname listed in the certificate is correct, before they send data.
+Connection to ActiveGate, from OneAgents or REST API, takes place over an encrypted HTTPS channel. ActiveGate presents a self-signed authentication certificate to all connecting clients. While OneAgent instances may ignore the validity of ActiveGate certificates (depending on configuration), connections from browser clients (such as the [RUM JavaScript](../../../../observe/digital-experience/web-applications/initial-setup/rum-injection.md "Configure automatic injection of the RUM JavaScript into the pages of your applications")) do verify that the hostname listed in the certificate is correct, before they send data.
 
 **ActiveGate can serve a custom certificate instead of the default one. To configure this, you need a file in `PKCS#12` format that contains a private key and its corresponding certificate chain.**
 
-Depending on root CA that signed custom ActiveGate certificate, additional configuration for OneAgent may be required. See [OneAgent security](/docs/ingest-from/dynatrace-oneagent/oneagent-security#trusted-root-certificates "Manage OneAgent security").
+Depending on root CA that signed custom ActiveGate certificate, additional configuration for OneAgent may be required. See [OneAgent security](../../../../ingest-from/dynatrace-oneagent/oneagent-security.md#trusted-root-certificates "Manage OneAgent security").
 
 ### Option to configure during installation
 
-This configuration can also be applied during ActiveGate installation, by specifying installation parameters for [Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#custom-ssl-certificate "Learn about the command-line parameters that you can use with ActiveGate on Linux.") or [Windows](/docs/ingest-from/dynatrace-activegate/installation/windows/windows-customize-installation-for-activegate#custom-ssl-certificate "Learn about the parameters that you can use with ActiveGate on Windows.") installations.
+This configuration can also be applied during ActiveGate installation, by specifying installation parameters for [Linux](../../../../ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate.md#custom-ssl-certificate "Learn about the command-line parameters that you can use with ActiveGate on Linux.") or [Windows](../../../../ingest-from/dynatrace-activegate/installation/windows/windows-customize-installation-for-activegate.md#custom-ssl-certificate "Learn about the parameters that you can use with ActiveGate on Windows.") installations.
 
 ## Configure a custom certificate
 
 To configure ActiveGate to use a custom certificate
 
-1. Copy the certificate file to the [ssl directory](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.") and set correct permissions.
+1. Copy the certificate file to the [ssl directory](../../../../ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files.md "Find out where ActiveGate files are stored on Windows and Linux systems.") and set correct permissions.
 
    On Linux, make sure that permissions of the copied certificate file include the ActiveGate user you designated to run the ActiveGate service. If you didn't specify a custom user during installation, the default user is `dtuserag`.
 
    On Windows, make sure that the `LocalService` account has permissions to access the copied certificate file.
-2. Add the following entries to the `custom.properties` file in the [ActiveGate configuration directory](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.").
+2. Add the following entries to the `custom.properties` file in the [ActiveGate configuration directory](../../../../ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files.md "Find out where ActiveGate files are stored on Windows and Linux systems.").
 
    ```
    [com.compuware.apm.webserver]
@@ -57,7 +57,7 @@ To configure ActiveGate to use a custom certificate
 
    You need to add the above entries in the `[com.compuware.apm.webserver]` section. If there already is such a section in your `custom.properties` file, then just add the properties to the section. If the section doesn't exist, then create the section heading as well.
 
-   The certificate password, which you provide in the `certificate-password` property, will be obfuscated, following the [restart of ActiveGate main service](/docs/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux."). The obfuscated password is stored in the `certificate-password-encr` property, while the original property is deleted.
+   The certificate password, which you provide in the `certificate-password` property, will be obfuscated, following the [restart of ActiveGate main service](../../../../ingest-from/dynatrace-activegate/operation/stop-restart-activegate.md "Learn how you can start, stop and restart ActiveGate on Windows or Linux."). The obfuscated password is stored in the `certificate-password-encr` property, while the original property is deleted.
 
    **The value of `certificate-alias` must be specified in lower case.** If the certificate doesn't have a friendly name, you can omit the `certificate-alias` property.
 
@@ -67,7 +67,7 @@ The certificates can be managed remotely via REST API. Prepare a `PKCS#12` certi
 
 Authorization token
 
-The API token is required for authorization. API tokens can be provided via HTTP headers or other means. See [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.")
+The API token is required for authorization. API tokens can be provided via HTTP headers or other means. See [Dynatrace API - Tokens and authentication](../../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.")
 
 API token used for the following actions must have `ActiveGate certificate management` permission.
 

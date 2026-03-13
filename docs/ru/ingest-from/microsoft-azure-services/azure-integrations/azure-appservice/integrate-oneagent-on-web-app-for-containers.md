@@ -159,7 +159,7 @@ wget -O /tmp/installer-wrapper.sh -q https://raw.githubusercontent.com/dynatrace
 
 Для приложений, работающих на стеке среды выполнения Java в Azure App Service, этот метод установки может работать не так, как ожидается, в некоторых случаях. Например, пользователи сообщали о проблемах с образами на основе Alpine, где указанная выше команда интерпретировалась как единая строка, а не выполнялась как команда оболочки. Это приводило к тому, что оператор `&&` обрабатывался как часть ввода `wget`, а не как связующий элемент команд.
 
-Если вы столкнулись с таким поведением, рассмотрите альтернативный подход к выполнению скрипта (например, пользовательский стартовый скрипт или модификация [пользовательского образа](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers#install--custom-image "Узнайте, как устанавливать, настраивать, обновлять и удалять OneAgent в контейнеризированных приложениях на Linux.")).
+Если вы столкнулись с таким поведением, рассмотрите альтернативный подход к выполнению скрипта (например, пользовательский стартовый скрипт или модификация [пользовательского образа](integrate-oneagent-on-web-app-for-containers.md#install--custom-image "Узнайте, как устанавливать, настраивать, обновлять и удалять OneAgent в контейнеризированных приложениях на Linux.")).
 
 В качестве альтернативы вы можете использовать приведённый ниже скрипт вызова, который работает для всех образов Linux.
 
@@ -219,9 +219,9 @@ DT_ENDPOINT=$DT_ENDPOINT DT_API_TOKEN=$DT_API_TOKEN DT_INCLUDE=$DT_INCLUDE START
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Настройте стартовую команду**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers#step-1 "Узнайте, как устанавливать, настраивать, обновлять и удалять OneAgent в контейнеризированных приложениях на Linux.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Настройте стартовую команду**](integrate-oneagent-on-web-app-for-containers.md#step-1 "Узнайте, как устанавливать, настраивать, обновлять и удалять OneAgent в контейнеризированных приложениях на Linux.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Перезапустите веб-приложение дважды**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers#step-2 "Узнайте, как устанавливать, настраивать, обновлять и удалять OneAgent в контейнеризированных приложениях на Linux.")
+**Перезапустите веб-приложение дважды**](integrate-oneagent-on-web-app-for-containers.md#step-2 "Узнайте, как устанавливать, настраивать, обновлять и удалять OneAgent в контейнеризированных приложениях на Linux.")
 
 #### Шаг 1 Настройте стартовую команду
 
@@ -356,7 +356,7 @@ Custom image
 
 Каждый раз, когда вы хотите использовать новую версию Dynatrace OneAgent, необходимо пересобрать локальные модули кода OneAgent и образ приложения. Все вновь запущенные поды из этого образа приложения будут мониториться с последней версией OneAgent.
 
-Если вы указали версию OneAgent по умолчанию для установки на новых хостах и в приложениях с помощью [настроек обновления OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux "Узнайте о различных способах обновления OneAgent на Linux."), ваши веб-приложения будут автоматически мониториться указанной версией OneAgent по умолчанию.
+Если вы указали версию OneAgent по умолчанию для установки на новых хостах и в приложениях с помощью [настроек обновления OneAgent](../../../dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux.md "Узнайте о различных способах обновления OneAgent на Linux."), ваши веб-приложения будут автоматически мониториться указанной версией OneAgent по умолчанию.
 
 ## Удаление OneAgent
 
@@ -378,5 +378,5 @@ OneAgent может конфликтовать с агентами Azure Applica
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Microsoft Azure](/docs/ingest-from/microsoft-azure-services "Настройка и конфигурация мониторинга для Microsoft Azure.")
-* [Матрица поддержки платформ и возможностей OneAgent](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Узнайте, какие возможности поддерживаются OneAgent на различных операционных системах и платформах.")
+* [Настройка Dynatrace в Microsoft Azure](../../../microsoft-azure-services.md "Настройка и конфигурация мониторинга для Microsoft Azure.")
+* [Матрица поддержки платформ и возможностей OneAgent](../../../technology-support/oneagent-platform-and-capability-support-matrix.md "Узнайте, какие возможности поддерживаются OneAgent на различных операционных системах и платформах.")

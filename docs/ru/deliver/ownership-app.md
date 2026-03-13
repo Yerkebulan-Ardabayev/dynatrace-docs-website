@@ -36,7 +36,7 @@ settings:objects:write
 
 ### Установка
 
-Убедитесь, что приложение [установлено в вашей среде](/docs/manage/hub#install "Смотрите информацию о Dynatrace Hub.").
+Убедитесь, что приложение [установлено в вашей среде](../manage/hub.md#install "Смотрите информацию о Dynatrace Hub.").
 
 Начало работы
 
@@ -44,13 +44,13 @@ settings:objects:write
 
 ![Ownership](https://dt-cdn.net/images/ownership-w-background-512-99cc966544.webp "Ownership") **Ownership** предоставляет действия для построения рабочего процесса, запрашивающего команду-владельца сущности и соответствующую контактную информацию. С помощью этих действий вы можете извлекать данные о владении сущностью и интегрировать их с другими приложениями, например, для отправки уведомлений в Slack или обновлений в Jira владельцам сущностей на основе различных триггеров.
 
-Кроме того, ![Ownership](https://dt-cdn.net/images/ownership-w-background-512-99cc966544.webp "Ownership") **Ownership** позволяет импортировать команды из следующих источников с помощью [рабочих процессов автоматизации](/docs/analyze-explore-automate/workflows "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы."):
+Кроме того, ![Ownership](https://dt-cdn.net/images/ownership-w-background-512-99cc966544.webp "Ownership") **Ownership** позволяет импортировать команды из следующих источников с помощью [рабочих процессов автоматизации](../analyze-explore-automate/workflows.md "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы."):
 
-* Группы из [Microsoft Entra ID](/docs/analyze-explore-automate/workflows/actions/microsoft-entra-id "Настройте коннектор Microsoft Entra ID для автоматизации импорта команд из Microsoft Entra ID через Workflows.")
-* Группы из [ServiceNow](/docs/analyze-explore-automate/workflows/actions/service-now "Автоматизируйте создание инцидентов в ServiceNow на основе данных мониторинга и событий.")
+* Группы из [Microsoft Entra ID](../analyze-explore-automate/workflows/actions/microsoft-entra-id.md "Настройте коннектор Microsoft Entra ID для автоматизации импорта команд из Microsoft Entra ID через Workflows.")
+* Группы из [ServiceNow](../analyze-explore-automate/workflows/actions/service-now.md "Автоматизируйте создание инцидентов в ServiceNow на основе данных мониторинга и событий.")
 * Любой источник данных в формате JSON
 
-Подробнее см. в разделе [Действия для Ownership](/docs/deliver/ownership-app/ownership-actions "Комбинируйте действия Ownership с другими задачами и действиями для создания рабочих процессов импорта команд, уведомлений, назначения задач и других сценариев использования.").
+Подробнее см. в разделе [Действия для Ownership](ownership-app/ownership-actions.md "Комбинируйте действия Ownership с другими задачами и действиями для создания рабочих процессов импорта команд, уведомлений, назначения задач и других сценариев использования.").
 
 ![Получение информации о команде-владельце выбранных сущностей выполняется с помощью действия рабочего процесса "get_owners".
 Один идентификатор сущности или список идентификаторов сущностей можно использовать напрямую или через выражение для получения результата ранее выполненного действия рабочего процесса для извлечения информации о команде-владельце.
@@ -69,5 +69,5 @@ settings:objects:write
 
 ## Связанные темы
 
-* [Действия для Ownership](/docs/deliver/ownership-app/ownership-actions "Комбинируйте действия Ownership с другими задачами и действиями для создания рабочих процессов импорта команд, уведомлений, назначения задач и других сценариев использования.")
-* [Workflows](/docs/analyze-explore-automate/workflows "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.")
+* [Действия для Ownership](ownership-app/ownership-actions.md "Комбинируйте действия Ownership с другими задачами и действиями для создания рабочих процессов импорта команд, уведомлений, назначения задач и других сценариев использования.")
+* [Workflows](../analyze-explore-automate/workflows.md "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.")

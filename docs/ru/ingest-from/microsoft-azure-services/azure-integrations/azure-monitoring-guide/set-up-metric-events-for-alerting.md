@@ -13,7 +13,7 @@ scraped: 2026-03-04T21:34:17.030619
 * Чтение: 10 мин
 * Опубликовано 8 января 2021
 
-После [настройки интеграции Azure Monitor](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide "Настройте и сконфигурируйте мониторинг Azure в Dynatrace.") вы можете начать настройку и конфигурацию событий метрик для оповещений.
+После [настройки интеграции Azure Monitor](../azure-monitoring-guide.md "Настройте и сконфигурируйте мониторинг Azure в Dynatrace.") вы можете начать настройку и конфигурацию событий метрик для оповещений.
 
 Для настройки событий метрик для оповещений перейдите в **Settings** > **Cloud and virtualization** > **Azure** > **Metric events for alerting** > **Manage alerting rules**. На странице **Metric events for alerting** вы можете создавать, включать/отключать и настраивать рекомендуемые правила оповещений.
 Обзор всех рекомендуемых правил оповещений для всех облачных сервисов приведён в списке ниже.
@@ -135,4 +135,4 @@ scraped: 2026-03-04T21:34:17.030619
 
 ## Связанные темы
 
-* [Интеграции Microsoft Azure](/docs/ingest-from/microsoft-azure-services/azure-integrations "Настройте глубокий мониторинг кода Dynatrace в Azure с помощью OneAgent или OpenTelemetry.")
+* [Интеграции Microsoft Azure](../../azure-integrations.md "Настройте глубокий мониторинг кода Dynatrace в Azure с помощью OneAgent или OpenTelemetry.")

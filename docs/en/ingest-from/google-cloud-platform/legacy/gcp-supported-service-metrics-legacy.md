@@ -15,17 +15,17 @@ scraped: 2026-03-06T21:37:42.319279
 * Deprecated
 
 This page refers to the GCP supported service metrics for version 0.1 of the GCP integration, which is scheduled for deprecation.
-For a list of supported services and their metrics for version 1.0 of the GCP integration, see [Google Cloud service metrics (new)](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new "Monitor Google Cloud services with Dynatrace and view available metrics.").
+For a list of supported services and their metrics for version 1.0 of the GCP integration, see [Google Cloud service metrics (new)](../gcp-integrations/gcp-supported-service-metrics-new.md "Monitor Google Cloud services with Dynatrace and view available metrics.").
 
 Dynatrace supports all metrics available in the Google Operations API.
 
 ## Prerequisites
 
-Deploy Dynatrace integration [as a GCP function](/docs/ingest-from/google-cloud-platform/legacy/deploy-with-google-cloud-function-legacy "Set up monitoring for Google Cloud services using a Google Cloud Function.") or [in a Kubernetes container](/docs/ingest-from/google-cloud-platform/legacy/deployment-k8s-container-legacy "Set up log and metric monitoring for GCP services in a Kubernetes container.").
+Deploy Dynatrace integration [as a GCP function](deploy-with-google-cloud-function-legacy.md "Set up monitoring for Google Cloud services using a Google Cloud Function.") or [in a Kubernetes container](deployment-k8s-container-legacy.md "Set up log and metric monitoring for GCP services in a Kubernetes container.").
 
 ## Supported services
 
-After deploying the Dynatrace integration, you can start monitoring the GCP supported services. The table below shows available metrics configurations[1](#fn-1-1-def) per service, including [Davis data units (DDUs)](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") consumption[2](#fn-1-2-def) per instance per minute.
+After deploying the Dynatrace integration, you can start monitoring the GCP supported services. The table below shows available metrics configurations[1](#fn-1-1-def) per service, including [Davis data units (DDUs)](../../../license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") consumption[2](#fn-1-2-def) per instance per minute.
 
 1
 
@@ -132,4 +132,4 @@ After deploying the Dynatrace integration, you can view these preset dashboards 
 
 ## Related topics
 
-* [Google Cloud integrations](/docs/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")
+* [Google Cloud integrations](../gcp-integrations.md "Set up and configure Dynatrace on Google Cloud.")

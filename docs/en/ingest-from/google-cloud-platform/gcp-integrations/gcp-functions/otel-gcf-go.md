@@ -13,9 +13,9 @@ scraped: 2026-03-06T21:30:26.919461
 * 9-min read
 * Updated on Nov 13, 2023
 
-This guide shows how to instrument Google Cloud Functions in Go with OpenTelemetry and export the traces to Dynatrace. To learn more about how Dynatrace works with OpenTelemetry, see [OpenTelemetry and Dynatrace](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
+This guide shows how to instrument Google Cloud Functions in Go with OpenTelemetry and export the traces to Dynatrace. To learn more about how Dynatrace works with OpenTelemetry, see [OpenTelemetry and Dynatrace](../../../opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
 
-To learn about how to monitor Google Cloud Functions with Dynatrace-enhanced OpenTelemetry traces, see [Integrate on Google Cloud Functions GoLang](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-go "Monitor Google Cloud Functions with OpenTelemetry for Go and Dynatrace.").
+To learn about how to monitor Google Cloud Functions with Dynatrace-enhanced OpenTelemetry traces, see [Integrate on Google Cloud Functions GoLang](opentelemetry-on-gcf-go.md "Monitor Google Cloud Functions with OpenTelemetry for Go and Dynatrace.").
 
 ## Prerequisites
 
@@ -36,13 +36,13 @@ To instrument your Google Cloud Functions
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Add OpenTelemetry dependencies**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-go#otel-dependencies "Learn how to instrument Google Cloud Functions in Go with OpenTelemetry and export the traces to Dynatrace.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Add OpenTelemetry dependencies**](otel-gcf-go.md#otel-dependencies "Learn how to instrument Google Cloud Functions in Go with OpenTelemetry and export the traces to Dynatrace.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Set up OpenTelemetry**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-go#otel-setup "Learn how to instrument Google Cloud Functions in Go with OpenTelemetry and export the traces to Dynatrace.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Set up OpenTelemetry**](otel-gcf-go.md#otel-setup "Learn how to instrument Google Cloud Functions in Go with OpenTelemetry and export the traces to Dynatrace.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Instrument the function entry point**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-go#instrument-handler "Learn how to instrument Google Cloud Functions in Go with OpenTelemetry and export the traces to Dynatrace.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+**Instrument the function entry point**](otel-gcf-go.md#instrument-handler "Learn how to instrument Google Cloud Functions in Go with OpenTelemetry and export the traces to Dynatrace.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-**Instrument outgoing requests**](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-go#outgoing-instrument "Learn how to instrument Google Cloud Functions in Go with OpenTelemetry and export the traces to Dynatrace.")
+**Instrument outgoing requests**](otel-gcf-go.md#outgoing-instrument "Learn how to instrument Google Cloud Functions in Go with OpenTelemetry and export the traces to Dynatrace.")
 
 ### Step 1 Add OpenTelemetry dependencies
 
@@ -1123,4 +1123,4 @@ If your Google Cloud Function is not getting any traffic, there will be no trace
 
 While Dynatrace automatically captures all OpenTelemetry attributes, only attribute values specified in the allowlist are stored and displayed in the Dynatrace web UI. This prevents accidental storage of personal data, so you can meet your privacy requirements and control the amount of monitoring data stored.
 
-To view your custom attributes, you need to allow them in the Dynatrace web UI first. To learn how to configure attribute storage and masking, see [Attribute redaction](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration#attribute-redaction "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.").
+To view your custom attributes, you need to allow them in the Dynatrace web UI first. To learn how to configure attribute storage and masking, see [Attribute redaction](../../../dynatrace-oneagent/oneagent-and-opentelemetry/configuration.md#attribute-redaction "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.").

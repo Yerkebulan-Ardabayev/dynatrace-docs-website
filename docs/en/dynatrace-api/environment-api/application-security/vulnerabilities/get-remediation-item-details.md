@@ -11,7 +11,7 @@ scraped: 2026-03-06T21:35:17.504404
 * Reference
 * Updated on Sep 25, 2024
 
-Lists the details of a [remediation tracking](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.") process group of a third-party vulnerability (or, in the case of Kubernetes vulnerabilities, the parameters of a remediation tracking Kubernetes node).
+Lists the details of a [remediation tracking](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Track the remediation progress of vulnerabilities.") process group of a third-party vulnerability (or, in the case of Kubernetes vulnerabilities, the parameters of a remediation tracking Kubernetes node).
 
 The request produces an `application/json` payload.
 
@@ -24,7 +24,7 @@ The request produces an `application/json` payload.
 
 To execute this request, you need an access token with `securityProblems.read` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Parameters
 
@@ -728,6 +728,6 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/74125257674335543
 
 ## Related topics
 
-* [Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.")
-* [Davis Security Advisor API](/docs/dynatrace-api/environment-api/application-security/davis-security-advice "View the Davis Security Advisor recommendations via Dynatrace API.")
-* [Remediation tracking](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")
+* [Application Security](../../../../secure/application-security.md "Access the Dynatrace Application Security functionalities.")
+* [Davis Security Advisor API](../davis-security-advice.md "View the Davis Security Advisor recommendations via Dynatrace API.")
+* [Remediation tracking](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Track the remediation progress of vulnerabilities.")

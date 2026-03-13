@@ -28,7 +28,7 @@ The Disk Analytics extension enables you to inspect and analyze physical and log
 ### Requirements
 
 * OneAgent 1.233+
-* Linux hosts only; see [OneAgent Linux supported technologies](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.")
+* Linux hosts only; see [OneAgent Linux supported technologies](../../../ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.")
 * Local disks only (network disks are not supported)
 * Full-stack OneAgent deployments only. PaaS OneAgent deployments do not support the Disk Analytics extension
 

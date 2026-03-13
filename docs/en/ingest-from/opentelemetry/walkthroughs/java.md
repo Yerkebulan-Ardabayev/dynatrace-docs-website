@@ -15,8 +15,8 @@ scraped: 2026-03-05T21:40:35.333679
 
 These walkthroughs show how to add observability to your Java application using the OpenTelemetry Java libraries and tools.
 
-* [Automatically instrument your Java application with OpenTelemetry](/docs/ingest-from/opentelemetry/walkthroughs/java/java-auto "Learn how to instrument your Java application using OpenTelemetry and Dynatrace.")
-* [Manually instrument your Java application with OpenTelemetry](/docs/ingest-from/opentelemetry/walkthroughs/java/java-manual "Learn how to instrument your Java application using OpenTelemetry and Dynatrace.")
+* [Automatically instrument your Java application with OpenTelemetry](java/java-auto.md "Learn how to instrument your Java application using OpenTelemetry and Dynatrace.")
+* [Manually instrument your Java application with OpenTelemetry](java/java-manual.md "Learn how to instrument your Java application using OpenTelemetry and Dynatrace.")
 
 The following features are currently supported by OpenTelemetry Java.
 
@@ -29,4 +29,4 @@ The following features are currently supported by OpenTelemetry Java.
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific fields](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
+* [Enrich ingested data with Dynatrace-specific fields](../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")

@@ -16,16 +16,16 @@ Dynatrace supports ActiveGate installation on Linux.
 
 ### Requirements
 
-[ActiveGate hardware and system requirements for Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-activegate-hardware-and-system-requirements "Learn what hardware and operating system requirements need to be taken into account before installing ActiveGate on Linux for routing and monitoring purposes.")
+[ActiveGate hardware and system requirements for Linux](linux/linux-activegate-hardware-and-system-requirements.md "Learn what hardware and operating system requirements need to be taken into account before installing ActiveGate on Linux for routing and monitoring purposes.")
 
 ### Defaults
 
-[Default installation settings](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-default-settings "Learn about the default settings with which ActiveGate is installed on Linux")
+[Default installation settings](linux/linux-default-settings.md "Learn about the default settings with which ActiveGate is installed on Linux")
 
 ### Installation
 
-[Install an Environment ActiveGate on Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-install-an-environment-activegate "Read the step-by-step procedure for installing an Environment ActiveGate on Linux.")
+[Install an Environment ActiveGate on Linux](linux/linux-install-an-environment-activegate.md "Read the step-by-step procedure for installing an Environment ActiveGate on Linux.")
 
 ### Customization of installation
 
-[Customize ActiveGate installation on Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate "Learn about the command-line parameters that you can use with ActiveGate on Linux.")
+[Customize ActiveGate installation on Linux](linux/linux-customize-installation-for-activegate.md "Learn about the command-line parameters that you can use with ActiveGate on Linux.")

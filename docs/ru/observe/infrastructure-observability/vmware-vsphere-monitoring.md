@@ -34,12 +34,12 @@ Dynatrace собирает информацию об использовании 
 
 ## Установка и настройка ActiveGate
 
-[Установите Environment ActiveGate](/docs/ingest-from/dynatrace-activegate/installation "Узнайте, как настроить ActiveGate") в вашем центре обработки данных перед подключением Dynatrace к вашей платформе VMware.
+[Установите Environment ActiveGate](../../ingest-from/dynatrace-activegate/installation.md "Узнайте, как настроить ActiveGate") в вашем центре обработки данных перед подключением Dynatrace к вашей платформе VMware.
 Для **Dynatrace Managed** вы можете использовать встроенный ActiveGate, работающий на узле кластера. Однако Cluster ActiveGate обычно используется для пересылки данных мониторинга RUM и/или Synthetic в кластер Dynatrace. Мы рекомендуем не перегружать этот ActiveGate другим типом данных мониторинга. В зависимости от размера VMware вы можете рассмотреть использование выделенного ActiveGate для каждой среды.
 
 Для мониторинга виртуализации свойство `vmware_monitoring_enabled` в `custom.properties` должно быть установлено в значение `true` (значение по умолчанию).
 
-Подробности см. в разделе [Настройка свойств ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#vmware "Узнайте, какие свойства ActiveGate вы можете настроить в соответствии с вашими потребностями и требованиями.").
+Подробности см. в разделе [Настройка свойств ActiveGate](../../ingest-from/dynatrace-activegate/configuration/configure-activegate.md#vmware "Узнайте, какие свойства ActiveGate вы можете настроить в соответствии с вашими потребностями и требованиями.").
 
 ## Подключение Dynatrace к вашей платформе VMware
 
@@ -50,7 +50,7 @@ Dynatrace собирает информацию об использовании 
 3. Проверьте сетевые/прокси-настройки.
    Если вы получаете ошибку связи, даже если предоставленные данные верны, это может быть связано с вашими сетевыми/прокси-настройками. Мы рекомендуем пересмотреть сетевые/прокси-настройки при добавлении новой интеграции VMware.
 
-   Также при необходимости вы можете обойти прокси для подключения к vCenter или ESXi при настройке интеграции VMware. Измените [конфигурацию ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate#exclude-hosts "Узнайте, как настроить свойства ActiveGate для настройки прокси."), чтобы исключить определённый хост из прокси.
+   Также при необходимости вы можете обойти прокси для подключения к vCenter или ESXi при настройке интеграции VMware. Измените [конфигурацию ActiveGate](../../ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate.md#exclude-hosts "Узнайте, как настроить свойства ActiveGate для настройки прокси."), чтобы исключить определённый хост из прокси.
 4. Введите соответствующие учётные данные пользователя, чтобы ActiveGate мог выполнить вход и собирать данные мониторинга. Необходимые привилегии для этого пользователя — **просмотр и доступ только для чтения**. Доступ уровня администратора не требуется для включения мониторинга (изменения в настройках VMware не требуются).
 
    Вам не нужно добавлять хосты ESXi по отдельности, если они управляются сервером vCenter.
@@ -77,7 +77,7 @@ Dynatrace собирает информацию об использовании 
 
 ## Ограничение мониторинга инфраструктуры VMware
 
-После настройки мониторинга VMware вы можете захотеть ограничить, какие элементы инфраструктуры (например, хосты и ВМ) должны фактически отслеживаться Dynatrace. Для этого вы можете использовать механизм разрешений, доступный в VMware. Для получения дополнительной информации см. [Ограничение мониторинга инфраструктуры VMware с помощью разрешений](/docs/observe/infrastructure-observability/vmware-vsphere-monitoring/limit-infrastructure-monitoring-using-permissions "Ограничьте размер отслеживаемой инфраструктуры VMware с помощью механизма разрешений VMware.").
+После настройки мониторинга VMware вы можете захотеть ограничить, какие элементы инфраструктуры (например, хосты и ВМ) должны фактически отслеживаться Dynatrace. Для этого вы можете использовать механизм разрешений, доступный в VMware. Для получения дополнительной информации см. [Ограничение мониторинга инфраструктуры VMware с помощью разрешений](vmware-vsphere-monitoring/limit-infrastructure-monitoring-using-permissions.md "Ограничьте размер отслеживаемой инфраструктуры VMware с помощью механизма разрешений VMware.").
 
 ## Устранение неполадок подключения VMware
 
@@ -87,8 +87,8 @@ Dynatrace собирает информацию об использовании 
 
 ## Настройка мониторинга vSphere с помощью Settings API
 
-Вы можете использовать [Settings API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API.") для настройки мониторинга VMware vSphere.
+Вы можете использовать [Settings API](../../dynatrace-api/environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.") для настройки мониторинга VMware vSphere.
 
-1. Чтобы изучить схему, используйте [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "Просмотр схемы настроек через Dynatrace API.") с `builtin:virtualization.vmware` в качестве schemaId.
+1. Чтобы изучить схему, используйте [GET a schema](../../dynatrace-api/environment-api/settings/schemas/get-schema.md "Просмотр схемы настроек через Dynatrace API.") с `builtin:virtualization.vmware` в качестве schemaId.
 2. На основе схемы `builtin:virtualization.vmware` создайте объект конфигурации.
-3. Для создания конфигурации используйте [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Создание или валидация объекта настроек через Dynatrace API.").
+3. Для создания конфигурации используйте [POST an object](../../dynatrace-api/environment-api/settings/objects/post-object.md "Создание или валидация объекта настроек через Dynatrace API.").

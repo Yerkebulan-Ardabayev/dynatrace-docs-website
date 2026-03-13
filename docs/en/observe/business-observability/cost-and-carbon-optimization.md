@@ -69,7 +69,7 @@ Read Cost & Carbon Optimization events from GRAIL
 
 ### Grant permissions to Workflows
 
-Check if [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") has the required permissions to run automations: open ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, select **Settings** > **Authorization settings** in the upper-right corner, and ensure that the following settings are enabled.
+Check if [Workflows](../../analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") has the required permissions to run automations: open ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, select **Settings** > **Authorization settings** in the upper-right corner, and ensure that the following settings are enabled.
 
 * `app-engine:apps:run`
 * `app-engine:functions:run`
@@ -88,11 +88,11 @@ Check if [Workflows](/docs/analyze-explore-automate/workflows "Automate IT proce
 * `storage:events:write`
 * `storage:metrics:read`
 
-For more information, see [Manage user permissions with IAM policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies") and [Workflow authorization settings](/docs/analyze-explore-automate/workflows/running "Run and monitor workflows created in Dynatrace Workflows.").
+For more information, see [Manage user permissions with IAM policies](../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies") and [Workflow authorization settings](../../analyze-explore-automate/workflows/running.md "Run and monitor workflows created in Dynatrace Workflows.").
 
 ### Installation
 
-Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Make sure the app is [installed in your environment](../../manage/hub.md#install "See the information about Dynatrace Hub.").
 
 For carbon emissions calculation
 
@@ -105,7 +105,7 @@ For public pricing costs calculations
 
 * The data generation of carbon emissions must be active to allow generating public pricing cloud costs. You can activate it in the app's  settings.
 * You need instrumented hosts with OneAgent and cloud vendor monitoring configured.
-  The calculation of public price list costs requires the collection of metadata from a host as the cloud provider, cloud region, and the type of instance configured in the cloud vendor. This information is provided by configuring the cloud vendor monitoring for the hosts to be monitored with OneAgent. For more information, see [Ingest data](/docs/ingest-from "Learn how to install and configure ActiveGate and OneAgent on various platforms.").
+  The calculation of public price list costs requires the collection of metadata from a host as the cloud provider, cloud region, and the type of instance configured in the cloud vendor. This information is provided by configuring the cloud vendor monitoring for the hosts to be monitored with OneAgent. For more information, see [Ingest data](../../ingest-from.md "Learn how to install and configure ActiveGate and OneAgent on various platforms.").
 * Enable **External requests** to the cloud vendors where the hosts are running to collect public price lists into Grail.
 
   External requests enable outbound network connections from your Dynatrace environment to external services. They allow you to control access to public endpoints from the AppEngine with app functions and functions in Dashboards, Notebooks, and Automations.
@@ -244,10 +244,10 @@ Go through the following process to learn using ![Cost & Carbon Optimization](ht
 [01Set up Cost & Carbon Optimization
 
 * How-to guide
-* Install and set up Cost & Carbon Optimization.](/docs/observe/business-observability/cost-and-carbon-optimization/install-cost-and-carbon-optimization)[02Advanced analytics with Notebooks
+* Install and set up Cost & Carbon Optimization.](cost-and-carbon-optimization/install-cost-and-carbon-optimization.md)[02Advanced analytics with Notebooks
 
 * Reference
-* Use Notebooks to analyze your carbon footprint data.](/docs/observe/business-observability/cost-and-carbon-optimization/advanced-analytics-with-notebooks)
+* Use Notebooks to analyze your carbon footprint data.](cost-and-carbon-optimization/advanced-analytics-with-notebooks.md)
 
 ### Methodology to estimate electricity consumption
 
@@ -340,15 +340,15 @@ The **Data center emissions** table on the landing page shows costs, energy, and
 
 The **Hosts** tab details cost, energy, and CO2e consumption per host. You can narrow your search using filters. For example, you can view underutilized hosts in a specific data center or top CO2e emitters.
 
-Expand a hostname to see key infrastructure metrics: **CPU in use**, **Memory in use**, and **Receiving network traffic**. Select a host name to view the host details page in [![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.").
+Expand a hostname to see key infrastructure metrics: **CPU in use**, **Memory in use**, and **Receiving network traffic**. Select a host name to view the host details page in [![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**](../infrastructure-observability/infrastructure-and-operations.md "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.").
 
-![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization") **Cost & Carbon Optimization** is automatically connected to Dynatrace SmartscapeÂ® topology modeling, so it's easy to see the host details or use [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") for ad hoc analysis with DQL.
+![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization") **Cost & Carbon Optimization** is automatically connected to Dynatrace SmartscapeÂ® topology modeling, so it's easy to see the host details or use [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") for ad hoc analysis with DQL.
 
 ### Measure the energy of Dynatrace Kubernetes platform monitoring
 
 Use ![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization") **Cost & Carbon Optimization** to measure energy and carbon emissions of your Kubernetes infrastructure.
 
-![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization") **Cost & Carbon Optimization** calculates the energy consumed (in Watt-hours) and carbon emissions (in grams of carbon dioxide emissions) of Kubernetes clusters and namespaces, and nodes, monitored by Dynatrace. All Dynatrace Kubernetes monitoring modes are supported, and data is calculated hourly and stored as [carbon Kubernetes events](/docs/semantic-dictionary/model/business-analytics#carbon-kubernetes-cluster-events "Get to know the Semantic Dictionary models related to Business Observability.").
+![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization") **Cost & Carbon Optimization** calculates the energy consumed (in Watt-hours) and carbon emissions (in grams of carbon dioxide emissions) of Kubernetes clusters and namespaces, and nodes, monitored by Dynatrace. All Dynatrace Kubernetes monitoring modes are supported, and data is calculated hourly and stored as [carbon Kubernetes events](../../semantic-dictionary/model/business-analytics.md#carbon-kubernetes-cluster-events "Get to know the Semantic Dictionary models related to Business Observability.").
 
 Organizations using Kubernetes today, or looking to migrate workloads to Kubernetes, should consider using ![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization") **Cost & Carbon Optimization** in addition to the Dynatrace Kubernetes monitoring for the following reasons:
 

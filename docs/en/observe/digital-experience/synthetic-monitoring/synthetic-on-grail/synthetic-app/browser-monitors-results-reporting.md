@@ -43,7 +43,7 @@ Under the filter bar, you can see tiles for important information:
 * Total downtimeâthe total outage time for all locations in a specific timeframe.
 * Durationâthe average response time for all locations in a specific timeframe.
 
-In the upper-right corner of the page, you can access [**Analyze executions**](#analyze-executions), [**On-demand execution**](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/on-demand-executions "Learn about how to perform on-demand executions."), and more browser monitor settings:
+In the upper-right corner of the page, you can access [**Analyze executions**](#analyze-executions), [**On-demand execution**](on-demand-executions.md "Learn about how to perform on-demand executions."), and more browser monitor settings:
 
 * **Edit**
 * for more options ( **Disable** and  **Delete**)
@@ -52,7 +52,7 @@ In the upper-right corner of the page, you can access [**Analyze executions**](#
 
 The **Availability** card displays the monitor's availability for the selected timeframe, either aggregated for all locations or for each location separately. It contains information about all availability problems related to the given monitor, maintenance windows, and unfinished executions. The problems are displayed as bar-shaped [notifications over the availability chart](#notifications_over_availability_charts). They provide the problem details and mark the period when the problem occurred.
 
-Also, if the monitor is down (unavailable) at one or more locations, the outage (downtime) duration and affected locations are displayed in the [metric visualizations](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/browser-monitors-results-reporting#metric-visualizations "Learn about the Browser details page for Browser monitors.") above the **Availability** card.
+Also, if the monitor is down (unavailable) at one or more locations, the outage (downtime) duration and affected locations are displayed in the [metric visualizations](browser-monitors-results-reporting.md#metric-visualizations "Learn about the Browser details page for Browser monitors.") above the **Availability** card.
 
 A monitor can be down at one or all locations. Several downtimes may occur in a given timeframe. Their durations are summarized to calculate the total outage (downtime) duration. Overlapping downtimes are not counted.
 
@@ -174,7 +174,7 @@ Also, the **Availability** card displays notifications over the availability cha
   3. Select **View maintenance window settings**.
   4. Select **Settings Classic**.
 
-  + When the **Disable synthetic monitor execution** option is on in the maintenance window, the scheduled automatic tests are suppressed during the maintenance period so there are no tests results for this period. Only [on-demand](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/on-demand-executions "Learn about how to perform on-demand executions.") tests are not suppressed.
+  + When the **Disable synthetic monitor execution** option is on in the maintenance window, the scheduled automatic tests are suppressed during the maintenance period so there are no tests results for this period. Only [on-demand](on-demand-executions.md "Learn about how to perform on-demand executions.") tests are not suppressed.
   + When the **Disable synthetic monitor execution** option is off in the maintenance window, the tests are executed during the maintenance period, but, due to maintenance, the test results may differ from those observed under the normal conditions.
 
 #### Not executed or finished tests
@@ -316,7 +316,7 @@ To analyze monitor executions via Waterfall chart
 1. Select **Analyze executions** in the upper-right of the monitor details page.
 2. Find the needed execution in the **Executions** table. Each row of the table is an execution record. You can use a filter  to narrow down the list of executions. You can filter by location or timeframe.
 
-   If [automatic retry on error](/docs/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/create-configure-browser-monitors#outage-and-performance "Learn how to create and configure a browser monitor to check the performance and availability of your site.") is switched on, the monitor performs a second execution attempt in case the first attempt fails. In the **Executions** table, the second attempt is displayed by default, and a  icon appears in the execution recordâselect  to see the first attempt as well.
+   If [automatic retry on error](create-configure-browser-monitors.md#outage-and-performance "Learn how to create and configure a browser monitor to check the performance and availability of your site.") is switched on, the monitor performs a second execution attempt in case the first attempt fails. In the **Executions** table, the second attempt is displayed by default, and a  icon appears in the execution recordâselect  to see the first attempt as well.
 3. Select the execution.
 
    The **Pages** table with the execution details appears. In the **Steps** row, you can see all steps performed during the monitor execution. The timeframe when a step was performed is highlighted with a blue bar displayed in the row. Hover over the bar for the step details, such as the step duration, step type, and the UI element the step is performed to. You can filter  a specific step. In this case, only the bar associated with the filtered step remains blue. All other bars turn gray.

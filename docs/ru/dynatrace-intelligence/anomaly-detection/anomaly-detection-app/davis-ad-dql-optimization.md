@@ -15,7 +15,7 @@ scraped: 2026-03-05T21:38:33.126042
 
 На этой странице описаны лучшие практики оптимизации ваших DQL-запросов для пользовательских оповещений ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** для обеспечения стабильной производительности и минимизации потребления ресурсов и времени.
 
-[![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection.") использует мощь Grail для поддержки широкого спектра сценариев через гибкие возможности DQL. Эта универсальность позволяет применять несколько подходов к решению в зависимости от конкретного сценария. Для обеспечения эффективного использования это руководство предоставляет примеры лучших практик, демонстрирующие, как извлечь максимум из ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
+[![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**](../anomaly-detection-app.md "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection.") использует мощь Grail для поддержки широкого спектра сценариев через гибкие возможности DQL. Эта универсальность позволяет применять несколько подходов к решению в зависимости от конкретного сценария. Для обеспечения эффективного использования это руководство предоставляет примеры лучших практик, демонстрирующие, как извлечь максимум из ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
 
 ## Минимизация объёма сканируемых данных
 
@@ -23,7 +23,7 @@ scraped: 2026-03-05T21:38:33.126042
 
 ## Правильное управление хранилищем
 
-Хорошо спланированная стратегия управления хранилищем является основой для оптимальной производительности вашей среды. Мы рекомендуем организовывать ваши [бакеты хранилища Dynatrace](/docs/platform/grail/organize-data#built-in-grail-buckets "Информация о модели данных Grail, состоящей из бакетов, таблиц и представлений.") на основе паттернов использования и доступа ваших команд, чтобы предотвратить избыточное сканирование по нескольким командам или организационным подразделениям. Мы также рекомендуем планировать структуру хранилища заранее для упрощения управления политиками разрешений доступа и обеспечения более эффективной и безопасной настройки.
+Хорошо спланированная стратегия управления хранилищем является основой для оптимальной производительности вашей среды. Мы рекомендуем организовывать ваши [бакеты хранилища Dynatrace](../../../platform/grail/organize-data.md#built-in-grail-buckets "Информация о модели данных Grail, состоящей из бакетов, таблиц и представлений.") на основе паттернов использования и доступа ваших команд, чтобы предотвратить избыточное сканирование по нескольким командам или организационным подразделениям. Мы также рекомендуем планировать структуру хранилища заранее для упрощения управления политиками разрешений доступа и обеспечения более эффективной и безопасной настройки.
 
 ## Улучшение оптимизации запросов через фильтры DQL
 
@@ -200,6 +200,6 @@ fetch spans| filter span.events~"err"
 
 ## Связанные темы
 
-* [Приложение Anomaly Detection](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")
-* [Руководство по написанию DQL для обнаружения аномалий](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice "Лучшие практики создания DQL-запросов для пользовательских оповещений Anomaly Detection.")
+* [Приложение Anomaly Detection](../anomaly-detection-app.md "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection.")
+* [Dynatrace Query Language](../../../platform/grail/dynatrace-query-language.md "Как использовать Dynatrace Query Language.")
+* [Руководство по написанию DQL для обнаружения аномалий](davis-ad-dql-best-practice.md "Лучшие практики создания DQL-запросов для пользовательских оповещений Anomaly Detection.")

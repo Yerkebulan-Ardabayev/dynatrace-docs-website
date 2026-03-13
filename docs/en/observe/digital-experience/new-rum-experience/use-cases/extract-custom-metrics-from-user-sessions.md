@@ -12,15 +12,15 @@ scraped: 2026-03-06T21:15:52.450536
 * Tutorial
 * Updated on Mar 05, 2026
 
-OpenPipeline lets you extract custom metrics from [user sessions](/docs/observe/digital-experience/new-rum-experience/concepts/data-model#user-sessions "Get familiar with the data model at the heart of the New RUM Experience."), enabling long-term analyses in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** that go far beyond standard performance monitoring. By combining these metrics with [user session properties](/docs/observe/digital-experience/new-rum-experience/concepts/data-model#event-and-session-properties "Get familiar with the data model at the heart of the New RUM Experience."), you gain the flexibility to uncover insights that are highly tailored to your business objectives.
+OpenPipeline lets you extract custom metrics from [user sessions](../concepts/data-model.md#user-sessions "Get familiar with the data model at the heart of the New RUM Experience."), enabling long-term analyses in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** that go far beyond standard performance monitoring. By combining these metrics with [user session properties](../concepts/data-model.md#event-and-session-properties "Get familiar with the data model at the heart of the New RUM Experience."), you gain the flexibility to uncover insights that are highly tailored to your business objectives.
 
 To illustrate this process, this guide walks you through extracting a customer conversion metric from user sessions, showing the number of sessions that resulted in a customer conversion versus those that did not.
 
 ## Example scenario
 
-In this tutorial, weâll use a web shop as our example. The shop is instrumented with the RUM JavaScript, and the captured data is mapped to a [frontend](/docs/observe/digital-experience/new-rum-experience/concepts/frontends "Learn about the frontend concept in the New RUM Experience.") named `webshop`.
+In this tutorial, weâll use a web shop as our example. The shop is instrumented with the RUM JavaScript, and the captured data is mapped to a [frontend](../concepts/frontends.md "Learn about the frontend concept in the New RUM Experience.") named `webshop`.
 
-Instrumentation was customized to send a user session property `successful_checkout` whenever a customer successfully completes the checkout process. The property was configured as described in [Capture event and session properties for web frontends](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/event-and-session-properties "Learn how to capture event and session properties for web frontends.") and then sent via JavaScript API using [`sendSessionPropertyEvent`ï»¿](https://docs.dynatrace.com/javascriptapi/doc-latest/functions/Types.dynatrace.sendSessionPropertyEvent.html):
+Instrumentation was customized to send a user session property `successful_checkout` whenever a customer successfully completes the checkout process. The property was configured as described in [Capture event and session properties for web frontends](../web-frontends/additional-configuration/event-and-session-properties.md "Learn how to capture event and session properties for web frontends.") and then sent via JavaScript API using [`sendSessionPropertyEvent`ï»¿](https://docs.dynatrace.com/javascriptapi/doc-latest/functions/Types.dynatrace.sendSessionPropertyEvent.html):
 
 ```
 dynatrace.sendSessionPropertyEvent({
@@ -50,12 +50,12 @@ While this query works well for short-term analysis, itâs not ideal for unc
 
 Prior knowledge
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* [Dynatrace Query Language](../../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Processing in OpenPipeline](../../../../platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
 
 Prerequisites
 
-Ensure you have the permissions described in [New RUM Experience permissions](/docs/observe/digital-experience/new-rum-experience/permissions "See what permissions you need to set up the New RUM Experience.").
+Ensure you have the permissions described in [New RUM Experience permissions](../permissions.md "See what permissions you need to set up the New RUM Experience.").
 
 ## How-to
 
@@ -107,7 +107,7 @@ timeseries sum(easytravel.checkout_statistics), by: { successful_checkout }, int
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.")
-* [Capture event and session properties for web frontends](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/event-and-session-properties "Learn how to capture event and session properties for web frontends.")
-* [Capture event and session properties for mobile frontends](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/additional-configuration/event-and-session-properties "Learn how to capture event and session properties for mobile frontends.")
+* [Dynatrace Query Language](../../../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Processing in OpenPipeline](../../../../platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* [Capture event and session properties for web frontends](../web-frontends/additional-configuration/event-and-session-properties.md "Learn how to capture event and session properties for web frontends.")
+* [Capture event and session properties for mobile frontends](../mobile-frontends/additional-configuration/event-and-session-properties.md "Learn how to capture event and session properties for mobile frontends.")

@@ -45,7 +45,7 @@ Latest Dynatrace
 Отклоненные метрики содержат измерение `reason`, которое предоставляет дополнительные сведения о причине отклонения точки данных.
 В Dynatrace вы можете фильтровать, сортировать и разделять по этому измерению.
 
-Типичная причина -- отправка метрик с кумулятивной временной агрегацией (Dynatrace [требует дельта-временную агрегацию](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#aggregation-temporality "Узнайте, как Dynatrace загружает метрики OpenTelemetry и какие ограничения применяются.")), в этом случае `reason` указывает `UNSUPPORTED_METRIC_TYPE_MONOTONIC_CUMULATIVE_SUM`.
+Типичная причина -- отправка метрик с кумулятивной временной агрегацией (Dynatrace [требует дельта-временную агрегацию](otlp-api/ingest-otlp-metrics/about-metrics-ingest.md#aggregation-temporality "Узнайте, как Dynatrace загружает метрики OpenTelemetry и какие ограничения применяются.")), в этом случае `reason` указывает `UNSUPPORTED_METRIC_TYPE_MONOTONIC_CUMULATIVE_SUM`.
 
 ### Метрики для загрузки трассировок
 
@@ -92,7 +92,7 @@ Latest Dynatrace
 ### Проблемы с загрузкой
 
 * [Почему мой OTLP-экспорт не работает?](https://dt-url.net/sb238k5)
-* [Эндпоинты Dynatrace OTLP API](/docs/ingest-from/opentelemetry/otlp-api "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.")
+* [Эндпоинты Dynatrace OTLP API](otlp-api.md "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.")
 
 ### Вертикальная топология
 
@@ -102,9 +102,9 @@ Latest Dynatrace
 
 Информация о загрузке каждого типа сигнала доступна по ссылкам:
 
-* [Загрузка логов OTLP](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Узнайте, как Dynatrace загружает записи логов OpenTelemetry и какие ограничения применяются.")
-* [О загрузке метрик OTLP](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest "Узнайте, как Dynatrace загружает метрики OpenTelemetry и какие ограничения применяются.")
-* [Загрузка трассировок OTLP](/docs/ingest-from/opentelemetry/otlp-api/ingest-traces "Узнайте, как Dynatrace загружает трассировки OpenTelemetry и какие ограничения применяются.")
+* [Загрузка логов OTLP](otlp-api/ingest-logs.md "Узнайте, как Dynatrace загружает записи логов OpenTelemetry и какие ограничения применяются.")
+* [О загрузке метрик OTLP](otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Узнайте, как Dynatrace загружает метрики OpenTelemetry и какие ограничения применяются.")
+* [Загрузка трассировок OTLP](otlp-api/ingest-traces.md "Узнайте, как Dynatrace загружает трассировки OpenTelemetry и какие ограничения применяются.")
 
 ### Трассировки
 

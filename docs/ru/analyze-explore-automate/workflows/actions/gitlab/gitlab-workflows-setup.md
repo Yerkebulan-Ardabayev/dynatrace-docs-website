@@ -41,7 +41,7 @@ scraped: 2026-03-06T21:36:42.472660
 
 * `app-settings:objects:read`
 
-Для получения дополнительной информации о разрешениях пользователей Workflows см. раздел [Разрешения пользователей для рабочих процессов](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+Для получения дополнительной информации о разрешениях пользователей Workflows см. раздел [Разрешения пользователей для рабочих процессов](../../security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Шаг 3. Авторизация подключения к GitLab
 
@@ -64,5 +64,5 @@ scraped: 2026-03-06T21:36:42.472660
 
 ## Связанные темы
 
-* [Действия для GitLab Connector](/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions "List of available actions in GitLab Connector.")
-* [GitLab Connector](/docs/analyze-explore-automate/workflows/actions/gitlab "Integrate Workflows with GitLab.")
+* [Действия для GitLab Connector](gitlab-workflows-actions.md "List of available actions in GitLab Connector.")
+* [GitLab Connector](../gitlab.md "Integrate Workflows with GitLab.")

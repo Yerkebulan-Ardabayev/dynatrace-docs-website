@@ -16,21 +16,21 @@ Log Monitoring Classic
 
 В зависимости от создаваемых вами правил вы можете настроить входящие лог-данные в соответствии с вашими потребностями. Ниже приведены примеры сценариев обработки данных.
 
-* [Пример 1](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample1 "Примеры сценариев обработки логов.") -- Исправление нераспознанной метки времени и уровня логирования, отображаемых в просмотрщике логов, на основе сопоставленного источника лога.
-* [Пример 2](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample2 "Примеры сценариев обработки логов.") -- Определение доступного для поиска пользовательского атрибута с использованием извлеченного идентификатора из сопоставленной фразы в содержимом лога.
-* [Пример 3](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample3 "Примеры сценариев обработки логов.") -- Создание метрики тарифицированной длительности для сервиса AWS с использованием лог-данных.
-* [Пример 4](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample4 "Примеры сценариев обработки логов.") -- Извлечение определенных полей из содержимого JSON.
-* [Пример 5](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample5 "Примеры сценариев обработки логов.") -- Извлечение атрибутов из различных форматов в рамках одного выражения шаблона.
-* [Пример 6](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample6 "Примеры сценариев обработки логов.") -- Несколько команд PARSE в одном правиле обработки.
-* [Пример 7](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample7 "Примеры сценариев обработки логов.") -- Использование специализированных сопоставителей.
-* [Пример 8](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample8 "Примеры сценариев обработки логов.") -- Манипулирование любым атрибутом лога (не только содержимым).
-* [Пример 9](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample9 "Примеры сценариев обработки логов.") -- Добавление нового атрибута в текущую структуру лог-события.
-* [Пример 10](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample10 "Примеры сценариев обработки логов.") -- Базовая математика с атрибутами.
-* [Пример 11](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample11 "Примеры сценариев обработки логов.") -- Удаление определенного атрибута из сообщения лога.
-* [Пример 12](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample12 "Примеры сценариев обработки логов.") -- Удаление всего лог-события.
-* [Пример 13](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample13 "Примеры сценариев обработки логов.") -- Маскировка любого атрибута.
-* [Пример 14](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample14 "Примеры сценариев обработки логов.") -- Переименование атрибутов.
-* [Пример 15](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample15 "Примеры сценариев обработки логов.") -- Типы данных входных полей.
+* [Пример 1](log-processing-examples.md#lpexample1 "Примеры сценариев обработки логов.") -- Исправление нераспознанной метки времени и уровня логирования, отображаемых в просмотрщике логов, на основе сопоставленного источника лога.
+* [Пример 2](log-processing-examples.md#lpexample2 "Примеры сценариев обработки логов.") -- Определение доступного для поиска пользовательского атрибута с использованием извлеченного идентификатора из сопоставленной фразы в содержимом лога.
+* [Пример 3](log-processing-examples.md#lpexample3 "Примеры сценариев обработки логов.") -- Создание метрики тарифицированной длительности для сервиса AWS с использованием лог-данных.
+* [Пример 4](log-processing-examples.md#lpexample4 "Примеры сценариев обработки логов.") -- Извлечение определенных полей из содержимого JSON.
+* [Пример 5](log-processing-examples.md#lpexample5 "Примеры сценариев обработки логов.") -- Извлечение атрибутов из различных форматов в рамках одного выражения шаблона.
+* [Пример 6](log-processing-examples.md#lpexample6 "Примеры сценариев обработки логов.") -- Несколько команд PARSE в одном правиле обработки.
+* [Пример 7](log-processing-examples.md#lpexample7 "Примеры сценариев обработки логов.") -- Использование специализированных сопоставителей.
+* [Пример 8](log-processing-examples.md#lpexample8 "Примеры сценариев обработки логов.") -- Манипулирование любым атрибутом лога (не только содержимым).
+* [Пример 9](log-processing-examples.md#lpexample9 "Примеры сценариев обработки логов.") -- Добавление нового атрибута в текущую структуру лог-события.
+* [Пример 10](log-processing-examples.md#lpexample10 "Примеры сценариев обработки логов.") -- Базовая математика с атрибутами.
+* [Пример 11](log-processing-examples.md#lpexample11 "Примеры сценариев обработки логов.") -- Удаление определенного атрибута из сообщения лога.
+* [Пример 12](log-processing-examples.md#lpexample12 "Примеры сценариев обработки логов.") -- Удаление всего лог-события.
+* [Пример 13](log-processing-examples.md#lpexample13 "Примеры сценариев обработки логов.") -- Маскировка любого атрибута.
+* [Пример 14](log-processing-examples.md#lpexample14 "Примеры сценариев обработки логов.") -- Переименование атрибутов.
+* [Пример 15](log-processing-examples.md#lpexample15 "Примеры сценариев обработки логов.") -- Типы данных входных полей.
 
 ### Пример 1: Исправление нераспознанной метки времени и уровня логирования
 
@@ -189,7 +189,7 @@ Log Monitoring Classic
 7. Перейдите в **Settings** > **Log Monitoring** > **Custom attributes** и выберите **Add custom attribute**.
 8. Создайте пользовательский атрибут на основе извлеченного идентификатора продукта (`my.product.id`).
    **Key**: `my.product.id`
-   Подробнее см. [Пользовательские атрибуты логов (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-custom-attributes "Узнайте, как создавать и использовать пользовательские атрибуты при приеме лог-данных.").
+   Подробнее см. [Пользовательские атрибуты логов (Logs Classic)](../analyze-log-data/log-custom-attributes.md "Узнайте, как создавать и использовать пользовательские атрибуты при приеме лог-данных.").
 9. Сохраните пользовательский атрибут.
 10. Теперь вы можете искать и фильтровать лог-данные по атрибуту `my.product.id` в просмотрщике логов.
 
@@ -367,7 +367,7 @@ Log Monitoring Classic
    **Query**: `cloud.provider="aws" and content="Billed Duration"`
    **Measure**: `Attribute value`
    **Attribute**: `aws.billed.duration`
-   Подробнее см. [Метрики логов (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Узнайте, как создавать и использовать метрики логов Dynatrace для анализа лог-данных.").
+   Подробнее см. [Метрики логов (Logs Classic)](../analyze-log-data/log-metrics.md "Узнайте, как создавать и использовать метрики логов Dynatrace для анализа лог-данных.").
 9. Сохраните метрику лога.
 10. Метрика `log.aws.billed.duration` видна в Data Explorer, и вы можете использовать ее в Dynatrace как любую другую метрику. Вы можете добавить ее на панель мониторинга, включить в анализ и даже использовать для создания оповещений.
 

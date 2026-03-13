@@ -642,7 +642,7 @@ Sample input for security findings - Trivy JSON scan report
 
 ## Prerequisites
 
-* Your [containers are deployed in Kubernetes and monitored by Dynatrace](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes")
+* Your [containers are deployed in Kubernetes and monitored by Dynatrace](../../ingest-from/setup-on-k8s/deployment.md "Deploy Dynatrace Operator on Kubernetes")
 * Corresponding container images are scanned by a third-party tool (in this case, Trivy)
 
 ### Permissions
@@ -652,11 +652,11 @@ To add new sources and pipeline processing to OpenPipeline, you need both permis
 * `openpipeline:configurations:read`
 * `openpipeline:configurations:write`
 
-To learn how to set up the permissions, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
+To learn how to set up the permissions, see [Permissions in Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
 
 ## Get started
 
-For instructions on ingesting any type of event, see [How to ingest data (events)](/docs/platform/openpipeline/getting-started/how-to-ingestion "How to ingest data for a configuration scope in OpenPipeline.").
+For instructions on ingesting any type of event, see [How to ingest data (events)](../../platform/openpipeline/getting-started/how-to-ingestion.md "How to ingest data for a configuration scope in OpenPipeline.").
 
 1. Configure endpoint in Dynatrace
 
@@ -667,12 +667,12 @@ For instructions on ingesting any type of event, see [How to ingest data (events
    * Recommended Option 1 - Use the builtin security events endpoint Copy the URL of the builtin security events endpoint.
 
      ![copy URL of builtin security events endpoint](https://dt-cdn.net/images/2024-08-28-19-48-19-1855-96c02de135.png)
-   * Option 2 - Create a custom endpoint Select  **Source** to [create a custom ingest source](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#ingest "Configure ingest sources, routes, and processing for your data in OpenPipeline."), then copy its URL.
+   * Option 2 - Create a custom endpoint Select  **Source** to [create a custom ingest source](../../platform/openpipeline/getting-started/tutorial-configure-processing.md#ingest "Configure ingest sources, routes, and processing for your data in OpenPipeline."), then copy its URL.
 
-   For more information about the ingest options, see [Security events ingest](/docs/secure/threat-observability/security-events-ingest "Ingest external security data into Grail.").
-4. Generate an [access token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token "Learn the concept of a personal access token and its scopes.") with the required scope according to your ingest option selected in step 3.
+   For more information about the ingest options, see [Security events ingest](../threat-observability/security-events-ingest.md "Ingest external security data into Grail.").
+4. Generate an [access token](../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token.md "Learn the concept of a personal access token and its scopes.") with the required scope according to your ingest option selected in step 3.
 
-   For details on the required scopes, see [Get started](/docs/secure/threat-observability/security-events-ingest/ingest-custom-data#start "Ingest security events from custom third-party products via API.").
+   For details on the required scopes, see [Get started](../threat-observability/security-events-ingest/ingest-custom-data.md#start "Ingest security events from custom third-party products via API.").
 
 2. Feed data into Grail
 
@@ -1110,11 +1110,11 @@ Sample ingested event with a single vulnerability finding
 
 3. Validate data in Notebooks
 
-To validate data, open [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and query the security events.
+To validate data, open [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and query the security events.
 
 Sample DQL query:
 
-This query has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](/docs/secure/threat-observability/migration "Understand the changes in the new Grail security table and learn how to migrate to it.").
+This query has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](../threat-observability/migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
 
 ```
 fetch security.events
@@ -1208,8 +1208,8 @@ In simple cases, you can work with ingested events in their original format. How
 
 In such complex cases, you need to manually map the ingested data to the Dynatrace Semantic Dictionary. When data is mapped, the original data persists alongside the mapped one, which allows you to benefit from the vendor-specific data in your analysis and automation or as an additional context.
 
-1. In **OpenPipeline**, select **Pipelines** >  **Pipeline** to [create a custom pipeline](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#process "Configure ingest sources, routes, and processing for your data in OpenPipeline."), and name it, for example, "Custom security findings".
-2. Add a [processor](/docs/platform/openpipeline/concepts/processing#processor "Learn the core concepts of Dynatrace OpenPipeline processing.") of type **DQL** to your pipeline and configure it to parse the fields required by the [Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0) (in our case, we want to map the vulnerability findings' basic fields and, as an extension, container image details). Enter the following data:
+1. In **OpenPipeline**, select **Pipelines** >  **Pipeline** to [create a custom pipeline](../../platform/openpipeline/getting-started/tutorial-configure-processing.md#process "Configure ingest sources, routes, and processing for your data in OpenPipeline."), and name it, for example, "Custom security findings".
+2. Add a [processor](../../platform/openpipeline/concepts/processing.md#processor "Learn the core concepts of Dynatrace OpenPipeline processing.") of type **DQL** to your pipeline and configure it to parse the fields required by the [Semantic Dictionaryï»¿](https://dt-url.net/3q03pb0) (in our case, we want to map the vulnerability findings' basic fields and, as an extension, container image details). Enter the following data:
 
    * Processor name: For example, "Map Trivy fields"
    * Matching condition: `SchemaVersion == 2 AND ArtifactType == "container_image"` (this way, the mapping will be attempted only for the relevant events)
@@ -1464,7 +1464,7 @@ In such complex cases, you need to manually map the ingested data to the Dynatra
 
    "ArtifactType": "container_image"
    ```
-3. Select **Dynamic routing** >  **Dynamic route** to [add a dynamic routing](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#route "Configure ingest sources, routes, and processing for your data in OpenPipeline.") to the new pipeline. Enter the following data:
+3. Select **Dynamic routing** >  **Dynamic route** to [add a dynamic routing](../../platform/openpipeline/getting-started/tutorial-configure-processing.md#route "Configure ingest sources, routes, and processing for your data in OpenPipeline.") to the new pipeline. Enter the following data:
 
    * Dynamic route name: For example, "Custom event"
    * Matching condition: `SchemaVersion == 2 AND ArtifactType == "container_image"`
@@ -1472,11 +1472,11 @@ In such complex cases, you need to manually map the ingested data to the Dynatra
 
    ![add dynamic routing](https://dt-cdn.net/images/2024-08-28-23-04-46-576-9e042f6845.png)
 
-   For details on dynamic routing, see [Routing](/docs/platform/openpipeline/concepts/data-flow#routing "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.").
+   For details on dynamic routing, see [Routing](../../platform/openpipeline/concepts/data-flow.md#routing "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.").
 
 ## Next steps
 
 Now you can use the data to
 
-* [Visualize container vulnerability findings with a sample dashboard](/docs/secure/use-cases/visualize-and-analyze-security-findings "Visualize, prioritize, and analyze ingested security findings.")
-* [Automate Jira ticket creation and Slack notifications with sample workflows](/docs/secure/use-cases/automate-and-orchestrate-security-findings "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
+* [Visualize container vulnerability findings with a sample dashboard](visualize-and-analyze-security-findings.md "Visualize, prioritize, and analyze ingested security findings.")
+* [Automate Jira ticket creation and Slack notifications with sample workflows](automate-and-orchestrate-security-findings.md "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")

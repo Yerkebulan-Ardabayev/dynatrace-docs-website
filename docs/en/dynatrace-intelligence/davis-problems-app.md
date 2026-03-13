@@ -65,7 +65,7 @@ Read settings objects from Environment API
 
 ### Installation
 
-Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Make sure the app is [installed in your environment](../manage/hub.md#install "See the information about Dynatrace Hub.").
 
 Get started
 
@@ -178,7 +178,7 @@ Screenshot example of defining a segment for Problems filtering
 
 Segment filters are directly applied to the problem Grail records. Consequently, no entity filters are applied to the problem unless the entity ID is chosen as a primary field of the filtered problem.
 
-For more information on segments and how they work, see [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") ![Segments](https://dt-cdn.net/images/segments-256-8e66310720.webp "Segments").
+For more information on segments and how they work, see [Segments](../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") ![Segments](https://dt-cdn.net/images/segments-256-8e66310720.webp "Segments").
 
 ### Activate auto refresh
 
@@ -233,7 +233,7 @@ Examples of powerful event properties include:
 * Related entities (`dt.entity.*`) allow you to directly navigate to entities through the `dt.entity.*` properties.
 * Link to a settings object (`dt.settings.object_id`) and settings schema (`dt.settings.schema_id`).
 
-To learn more about the semantics and syntax of event properties and how they can be used across Dynatrace, see [Semantic Dictionary](/docs/semantic-dictionary/fields "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
+To learn more about the semantics and syntax of event properties and how they can be used across Dynatrace, see [Semantic Dictionary](../semantic-dictionary/fields.md "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
 
 ### Analyze problems with your own tools by exporting CSV
 
@@ -314,7 +314,7 @@ Dynatrace Intelligence causal AI root-cause detection identifies and reports iss
 
 The problem record includes an array of event IDs (`dt.davis.event_ids`) that represents all the events collected and merged during the root-cause analysis. Event-related **Problems** table fields such as category, name, description, status, start, and end are derived from these events, which allows you to efficiently filter and sort all incoming problem records.
 
-By default, Dynatrace propagates a set of built-in problem fields along with record-level permission fields, such as `dt.host_group.id`, `k8s.namespace.name`, `k8s.cluster.name`, onto problems. For the full list of built-in problem fields, see [Record level permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.").
+By default, Dynatrace propagates a set of built-in problem fields along with record-level permission fields, such as `dt.host_group.id`, `k8s.namespace.name`, `k8s.cluster.name`, onto problems. For the full list of built-in problem fields, see [Record level permissions in Grail](../platform/grail/organize-data/assign-permissions-in-grail.md#grail-permissions-table-record "Find out how to assign permissions to buckets and tables in Grail.").
 
 Other built-in and custom event fields are not automatically propagated to avoid an excessive number of problem records.
 
@@ -322,7 +322,7 @@ In Davis events, permission policies based on Grail record-level permissions wor
 
 This behavior differs from the DQL filter functionality, where array filters on array fields are fully supported. While this limitation may impact the flexibility of permission filters, itâs important to consider when you're managing permission policies.
 
-* Dynatrace doesn't allow you to define problem field names that repeat existing [Semantic Dictionary](/docs/semantic-dictionary/model/davis#davis-ai-events "Get to know the Semantic Dictionary models related to Davis AI.") event field names.
+* Dynatrace doesn't allow you to define problem field names that repeat existing [Semantic Dictionary](../../common/semantic-dictionary/model/davis.md#davis-ai-events "Get to know the Semantic Dictionary models related to Davis AI.") event field names.
 * You can only define problem fields for source fields with values of type `string`. Fields that contain values of other types aren't supported.
 
 #### Custom problem fields modification
@@ -335,7 +335,7 @@ To view or change the fields automatically propagated from events to problems, g
 
 Renaming existing problem fields and removing problem fields changes current and future Grail problem records and may break your DQL queries.
 
-To learn more about custom problem fields use cases, see [Dynatrace Intelligence Problems use cases](/docs/dynatrace-intelligence/davis-problems-app/problems-app-custom-problem-field-examples "Explore scenarios of how you can use custom problem fields in Problems.").
+To learn more about custom problem fields use cases, see [Dynatrace Intelligence Problems use cases](davis-problems-app/problems-app-custom-problem-field-examples.md "Explore scenarios of how you can use custom problem fields in Problems.").
 
 ### Create a troubleshooting guide
 
@@ -354,7 +354,7 @@ To create a troubleshooting guide
    * Select  **Dashboards** to create a new document in ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
 4. Follow the instructions in the template to document the details for your troubleshooting guide.
 
-If you share a troubleshooting guide with all users in your environment, and you have enabled document suggestions based on vector similarity, Dynatrace Intelligence agentic and generative AI will index your document and proactively suggest it to your team to help them remediate similar problems faster. To learn more about Dynatrace Intelligence agentic and generative AI document suggestions, see [Find relevant documents with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides "Learn how Dynatrace Intelligence agentic and generative AI can suggest troubleshooting guides for problem remediation.").
+If you share a troubleshooting guide with all users in your environment, and you have enabled document suggestions based on vector similarity, Dynatrace Intelligence agentic and generative AI will index your document and proactively suggest it to your team to help them remediate similar problems faster. To learn more about Dynatrace Intelligence agentic and generative AI document suggestions, see [Find relevant documents with Dynatrace Intelligence agentic and generative AI](copilot/copilot-find-relevant-troubleshooting-guides.md "Learn how Dynatrace Intelligence agentic and generative AI can suggest troubleshooting guides for problem remediation.").
 
 The ability to create and share troubleshooting guides allows DevOps teams to:
 
@@ -366,9 +366,9 @@ The ability to create and share troubleshooting guides allows DevOps teams to:
 
 Dynatrace offers a wide range of tools suited for your needs, such as configuring user group permissions, Dynatrace Intelligence alerting rules, or OpenPipeline ingestion rules. Due to the rich customization options, however, there are cases that might lead to events not being visible in ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** and differences in the number of affected entities in the available tabs. The most common reasons for events "missing" from ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** are:
 
-* Difference in bucket retention period: you can configure your bucket retention period for the monitored data to last longer, so that the events related to the problem will be visible regardless of how long the problem has been in the open state. To learn more about configuring bucket retention period for monitored data, see [Retain trace data for long periods](/docs/observe/application-observability/distributed-tracing/data-retention "Create and assign buckets with custom data retention for your trace data in Grail.").
+* Difference in bucket retention period: you can configure your bucket retention period for the monitored data to last longer, so that the events related to the problem will be visible regardless of how long the problem has been in the open state. To learn more about configuring bucket retention period for monitored data, see [Retain trace data for long periods](../observe/application-observability/distributed-tracing/data-retention.md "Create and assign buckets with custom data retention for your trace data in Grail.").
 * Missing permissions necessary for viewing the event: check with your Dynatrace support group and ensure that you have necessary permissions. Ask the administrator to adjust permissions, so the event becomes visible to you.
-* OpenPipeline ingestion rules dropping records: you can adjust OpenPipeline ingestion rules to prevent it from dropping any records or broaden the rules to keep records that might be connected to the alerted problem. To learn more about configuring OpenPipeline ingestion rules, see [Log processing with OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.").
+* OpenPipeline ingestion rules dropping records: you can adjust OpenPipeline ingestion rules to prevent it from dropping any records or broaden the rules to keep records that might be connected to the alerted problem. To learn more about configuring OpenPipeline ingestion rules, see [Log processing with OpenPipeline](../analyze-explore-automate/logs/lma-log-processing/lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.").
 
 ### Streamline problem resolution with problems-specific drill-down options
 
@@ -391,7 +391,7 @@ To access drill-down options
 4. From the affected entity details on the right, select the preferred option for further investigation.
 
    * Select  > **View related logs** to continue the investigation without leaving ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**.
-   * Select  > **View failed traces** to continue the investigation in the [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](/docs/observe/application-observability/distributed-tracing "Trace and analyze in real time highly distributed systems with Grail.").
+   * Select  > **View failed traces** to continue the investigation in the [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](../observe/application-observability/distributed-tracing.md "Trace and analyze in real time highly distributed systems with Grail.").
    * Select  > **View** `app` to continue the investigation in one of the available Dynatrace apps.
    * Select  > **Open with** to see all available investigation options.
 
@@ -423,7 +423,7 @@ These changes are saved per user. Your layout changes don't affect how others se
 
 ### Impact
 
-The **Impact** section displays all impacted [Smartscape](/docs/analyze-explore-automate/smartscape-classic "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") entities (for example, services, processes, and hosts) along with brief issue details for each entity.
+The **Impact** section displays all impacted [Smartscape](../analyze-explore-automate/smartscape-classic.md "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") entities (for example, services, processes, and hosts) along with brief issue details for each entity.
 
 The **Impact** section is categorized by:
 
@@ -446,7 +446,7 @@ To ensure consistency, the root-cause entity is also listed in the **Impact** ta
 
 The **Visual resolution path** section graphically illustrates the relationships between frontends, services, and backends involved in the issue.
 
-* Each node represents a [Smartscape](/docs/analyze-explore-automate/smartscape-classic "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") entity (frontend, service, or backend) where a health issue was detected.
+* Each node represents a [Smartscape](../analyze-explore-automate/smartscape-classic.md "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") entity (frontend, service, or backend) where a health issue was detected.
 * Gray nodes indicate related entities used in the analysis but not directly impacted.
 
 This graph helps explain how Dynatrace AI identified the root-cause backend service.
@@ -466,7 +466,7 @@ The table provides key details for each workflow, including:
 * The last trigger time (as workflows may run multiple times during problem updates).
 * The execution state (for example, success or failure).
 
-Workflow execution details are based on standard workflow execution events, which can also be queried using DQL in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
+Workflow execution details are based on standard workflow execution events, which can also be queried using DQL in [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
 
 **Note**:
 

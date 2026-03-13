@@ -30,4 +30,4 @@ scraped: 2026-03-06T21:13:12.081320
 
 Независимо от настроенной видимости, доступ к любому сегменту можно получить с разрешением `storage:filter-segments:read`. Это гарантирует, что даже скрытые сегменты, на которые могут ссылаться в общей записной книжке, смогут использоваться любым пользователем, имеющим доступ к этой записной книжке.
 
-Дополнительные сведения о разрешениях для сегментов см. в разделе [Выражения политик IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#storage-filter-segments-read "Полный справочник политик IAM и соответствующих условий для всех сервисов Dynatrace.").
+Дополнительные сведения о разрешениях для сегментов см. в разделе [Выражения политик IAM](../../identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#storage-filter-segments-read "Полный справочник политик IAM и соответствующих условий для всех сервисов Dynatrace.").

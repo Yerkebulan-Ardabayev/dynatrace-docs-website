@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:22:46.951929
 
 Приведённые ниже инструкции применимы только к [официальной реализации контроллера Kubernetes ingress от Google](https://dt-url.net/xr03xh3).
 
-* Производные от официального проекта, например [контроллер ingress от Bitnami](https://dt-url.net/ns03xjt), не поддерживаются. Однако их можно инструментировать вручную с помощью [Manual runtime instrumentation](/docs/ingest-from/technology-support/application-software/nginx/manual-runtime-instrumentation "Learn how to force instrumenting patched/non-standard NGINX binaries during runtime.") для NGINX.
+* Производные от официального проекта, например [контроллер ingress от Bitnami](https://dt-url.net/ns03xjt), не поддерживаются. Однако их можно инструментировать вручную с помощью [Manual runtime instrumentation](../../../../technology-support/application-software/nginx/manual-runtime-instrumentation.md "Learn how to force instrumenting patched/non-standard NGINX binaries during runtime.") для NGINX.
 * [Реализация контроллера ingress от F5 NGINX](https://dt-url.net/ph43xrd) может быть инструментирована автоматически; никаких ручных действий не требуется.
 
 Процесс NGINX официального образа контейнера контроллера Kubernetes ingress-nginx не может быть инструментирован автоматически. Для ручного инструментирования ingress-nginx в Kubernetes следуйте приведённым ниже инструкциям.

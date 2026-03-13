@@ -27,8 +27,8 @@ scraped: 2026-03-03T21:28:43.872463
 
 ## Предварительные требования
 
-* Настройте прием журналов аудита Kubernetes, например, через [Amazon Firehose](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput."). Firehose можно использовать для отправки логов из Amazon Elastic Kubernetes Service (EKS), но предоставленный шаблон совместим с любым дистрибутивом Kubernetes.
-* Сгенерируйте токен доступа с областью `openpipeline.events_security`, чтобы разрешить прием результатов обнаружения. Для последующего безопасного доступа к токену из рабочего процесса сохраните токен в [хранилище учетных данных](/docs/manage/credential-vault "Store and manage credentials in the credential vault."). Подробности см. в [Dynatrace API — токены и аутентификация](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+* Настройте прием журналов аудита Kubernetes, например, через [Amazon Firehose](../../ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose.md "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput."). Firehose можно использовать для отправки логов из Amazon Elastic Kubernetes Service (EKS), но предоставленный шаблон совместим с любым дистрибутивом Kubernetes.
+* Сгенерируйте токен доступа с областью `openpipeline.events_security`, чтобы разрешить прием результатов обнаружения. Для последующего безопасного доступа к токену из рабочего процесса сохраните токен в [хранилище учетных данных](../../../common/manage/credential-vault.md "Store and manage credentials in the credential vault."). Подробности см. в [Dynatrace API — токены и аутентификация](../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
 
 ## Начало работы
 
@@ -73,7 +73,7 @@ scraped: 2026-03-03T21:28:43.872463
 
 4. Сортировка и расследование
 
-Используйте [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts.") для изучения и приоритизации созданных результатов обнаружения. Богатый контекст наблюдаемости, предоставляемый в результатах обнаружения, обеспечивает быстрый анализ и уверенную оценку ситуации.
+Используйте [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](../threats-and-exploits.md "Understand, triage, and investigate detection findings and alerts.") для изучения и приоритизации созданных результатов обнаружения. Богатый контекст наблюдаемости, предоставляемый в результатах обнаружения, обеспечивает быстрый анализ и уверенную оценку ситуации.
 
 **Пример результата**
 
@@ -81,13 +81,13 @@ scraped: 2026-03-03T21:28:43.872463
 
 ## Примеры рабочих процессов для реагирования на угрозы
 
-Dynatrace предоставляет готовые шаблоны рабочих процессов, которые автоматически запускаются при появлении новых результатов обнаружения угроз Kubernetes и отправляют уведомления через [Slack](/docs/analyze-explore-automate/workflows/actions/slack#workflow "Send messages to Slack Workspaces"), [Microsoft Teams](/docs/analyze-explore-automate/workflows/actions/microsoft-teams#use "Send messages to Microsoft Teams") или [электронную почту](/docs/analyze-explore-automate/workflows/actions/email "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.").
+Dynatrace предоставляет готовые шаблоны рабочих процессов, которые автоматически запускаются при появлении новых результатов обнаружения угроз Kubernetes и отправляют уведомления через [Slack](../../analyze-explore-automate/workflows/actions/slack.md#workflow "Send messages to Slack Workspaces"), [Microsoft Teams](../../analyze-explore-automate/workflows/actions/microsoft-teams.md#use "Send messages to Microsoft Teams") или [электронную почту](../../analyze-explore-automate/workflows/actions/email.md "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.").
 Используйте их как отправные точки для создания собственных автоматизированных рабочих процессов реагирования:
 
 * [Мгновенное уведомление о критических результатах обнаружения Kubernetes](https://dt-url.net/l9430ds): срабатывает при обнаружениях высокой или критической важности и оповещает ответственную команду.
 * [Отправитель уведомлений об обнаружении угроз](https://dt-url.net/hs2301e): многоразовый подпроцесс для централизованной доставки уведомлений.
 
-Эти шаблоны демонстрируют, как обогащать результаты обнаружения контекстом [ответственности](/docs/deliver/ownership "Map team ownership to monitored entities for better collaboration, task assignment, incident and vulnerability response, and service-level management.") и интегрировать оповещения в реальном времени в ваши рабочие процессы реагирования.
+Эти шаблоны демонстрируют, как обогащать результаты обнаружения контекстом [ответственности](../../deliver/ownership.md "Map team ownership to monitored entities for better collaboration, task assignment, incident and vulnerability response, and service-level management.") и интегрировать оповещения в реальном времени в ваши рабочие процессы реагирования.
 
 ## Заключение
 

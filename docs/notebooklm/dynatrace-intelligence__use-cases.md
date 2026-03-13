@@ -43,9 +43,9 @@ See the selected pairs to understand what kind of DQL output you can expect from
 
 ## Related topics
 
-* [Dynatrace Intelligence generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
-* [Query with natural language](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
-* [Dynatrace Intelligence generative AI - Tips for writing better prompts](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips "Learn best practices for writing more accurate prompts.")
+* [Dynatrace Intelligence generative AI FAQ](../common/dynatrace-intelligence/copilot/copilot-faq.md "Learn about frequently asked questions and find your answers.")
+* [Query with natural language](../ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql.md "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
+* [Dynatrace Intelligence generative AI - Tips for writing better prompts](../ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips.md "Learn best practices for writing more accurate prompts.")
 
 ---
 
@@ -67,7 +67,7 @@ scraped: 2026-03-06T21:33:02.783409
 * Updated on Feb 05, 2026
 * Preview
 
-With [Dynatrace Intelligence (Preview)](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows."), you can automate problem summarization and ask Dynatrace Intelligence generative AI to suggest remediation steps that can be sent to your email.
+With [Dynatrace Intelligence (Preview)](../ru/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows.md "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows."), you can automate problem summarization and ask Dynatrace Intelligence generative AI to suggest remediation steps that can be sent to your email.
 
 ## Overview
 
@@ -189,7 +189,7 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
 4. Send Dynatrace Intelligence generative AI results to user's emails
 
 1. Select **+ Add task**.
-2. In the search field, enter **Send email**, or select **Send email** from the list of the Workflow actions. For more information about the Email workflow actions, see [Email](/docs/analyze-explore-automate/workflows/actions/email "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.").
+2. In the search field, enter **Send email**, or select **Send email** from the list of the Workflow actions. For more information about the Email workflow actions, see [Email](../ru/analyze-explore-automate/workflows/actions/email.md "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.").
 3. Enter the workflow task name.
 4. Configure the fields:
 
@@ -264,10 +264,10 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
 
 ## Related topics
 
-* [Dynatrace Assist](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.")
-* [Dynatrace Intelligence (Preview) app](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.")
-* [Dynatrace Intelligence agentic and generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
-* [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
+* [Dynatrace Assist](../ru/dynatrace-intelligence/copilot/chat-with-davis-copilot.md "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.")
+* [Dynatrace Intelligence (Preview) app](../ru/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows.md "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.")
+* [Dynatrace Intelligence agentic and generative AI overview](../ru/dynatrace-intelligence/copilot/copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
+* [Workflows](../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
 
 ---
 
@@ -289,7 +289,7 @@ scraped: 2026-03-03T21:26:45.029733
 * Updated on Feb 05, 2026
 * Preview
 
-With [Dynatrace Intelligence (Preview)](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows."), you can automate problem summarization and ask Dynatrace Intelligence generative AI to suggest remediation steps that can be sent to your email.
+With [Dynatrace Intelligence (Preview)](../ru/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows.md "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows."), you can automate problem summarization and ask Dynatrace Intelligence generative AI to suggest remediation steps that can be sent to your email.
 
 ## Target audience
 
@@ -344,7 +344,7 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
 2. Extract problem details
 
 1. Select  Add task.
-2. In the  search field, enter `Run JavaScript`, or select **Run JavaScript** from the list of the ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflow** actions. For more information about the JavaScript workflow action, see [Run JavaScript action for Workflows](/docs/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action "Execute JavaScript action for your workflows.").
+2. In the  search field, enter `Run JavaScript`, or select **Run JavaScript** from the list of the ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflow** actions. For more information about the JavaScript workflow action, see [Run JavaScript action for Workflows](../ru/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action.md "Execute JavaScript action for your workflows.").
 3. Enter the workflow task name.
 4. In the **Input** tab, enter the following **Source code**:
 
@@ -430,7 +430,7 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
 4. Send Dynatrace Intelligence generative AI results to your email
 
 1. Select  Add task.
-2. In the  search field, enter `Send email`, or select ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") **Send email** from the list of the ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflow** actions. For more information about the Email workflow actions, see [Email](/docs/analyze-explore-automate/workflows/actions/email "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.").
+2. In the  search field, enter `Send email`, or select ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") **Send email** from the list of the ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflow** actions. For more information about the Email workflow actions, see [Email](../ru/analyze-explore-automate/workflows/actions/email.md "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.").
 3. Enter the workflow task name.
 4. Configure the fields:
 
@@ -469,11 +469,11 @@ Once a new problem appears, you should receive an email from `no-reply@dev.apps.
 
 ## Related topics
 
-* [Dynatrace Assist](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.")
-* [Dynatrace Intelligence (Preview) app](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.")
-* [Dynatrace Intelligence generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
-* [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
-* [Dynatrace Intelligence (Preview) app](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.")
+* [Dynatrace Assist](../ru/dynatrace-intelligence/copilot/chat-with-davis-copilot.md "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.")
+* [Dynatrace Intelligence (Preview) app](../ru/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows.md "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.")
+* [Dynatrace Intelligence generative AI overview](../ru/dynatrace-intelligence/copilot/copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
+* [Workflows](../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
+* [Dynatrace Intelligence (Preview) app](../ru/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows.md "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.")
 
 ---
 
@@ -508,7 +508,7 @@ In this tutorial, you will learn how to
 
 For the [Create a log alert on a summary of log data using DQL](#create-log-custom-alert-with-dql) use case, you will also need the following:
 
-* [Configured ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** permissions](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.")
+* [Configured ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** permissions](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.")
 
 ## Raise a log alert based on a specific log event
 
@@ -550,7 +550,7 @@ fetch logs
 | sort timestamp desc
 ```
 
-Creating a log alert doesn't require you to have access to ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**. You only need **Logs** ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events"). To learn more about creating alerts through **Logs** ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events"), see [Set up a log alert](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events "How to create and configure Davis problems and alerts with events based on logs.").
+Creating a log alert doesn't require you to have access to ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**. You only need **Logs** ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events"). To learn more about creating alerts through **Logs** ![Logs and Events](https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png "Logs and Events"), see [Set up a log alert](../ru/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events.md "How to create and configure Davis problems and alerts with events based on logs.").
 
 ## Raise a log alert on a summary of log data over a time period
 
@@ -563,7 +563,7 @@ If you want to get an overview of the log data over a specific period, for examp
 
 Creating a dedicated log metric allows you to reuse the log metric across apps like **Dashboards** ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") and **Notebooks** ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") and create alerts without incurring additional costs.
 
-To learn how to create log metrics, see [Log metrics](/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-metrics "Create metrics based on log data and use them throughout Dynatrace like any other metric.").
+To learn how to create log metrics, see [Log metrics](analyze-explore-automate/logs/lma-log-processing/lma-log-metrics.md "Create metrics based on log data and use them throughout Dynatrace like any other metric.").
 
 Suppose you created a log metric, `log.conn_refused_count`, which collects every log entry with a `Connection refused` error.
 
@@ -599,18 +599,18 @@ To create a log alert on a summary of log data
 4. Optional Select  **Run** to test and ensure that your command works properly.
 5. Select  **Options** and select  **Analyze and alert**.
 6. Turn on the Dynatrace Intelligence data analyzer if it's not active.
-7. Select the required analyzer and configure it. For details, see [Anomaly detection configuration](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration "How to set up an alert for missing measurements.").
+7. Select the required analyzer and configure it. For details, see [Anomaly detection configuration](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md "How to set up an alert for missing measurements.").
 8. Select **Run analysis**.
 9. Once you're satisfied with the result, select ![More actions](https://dt-cdn.net/images/dashboards-app-menu-kebab-c39eda426b.svg "More actions") > ![Open with](https://dt-cdn.net/images/open-with-003fc82dcd.svg "Open with") **Open with** and select **Anomaly Detection**.  
    This action takes you to ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
-10. Expand **Create an event template** and configure the event triggered by the configuration. For details, see [Event template](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#event-template "How to set up an alert for missing measurements.").
+10. Expand **Create an event template** and configure the event triggered by the configuration. For details, see [Event template](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#event-template "How to set up an alert for missing measurements.").
 11. Select **Create**.
 
 ![An example of the Analyze and alert settings for a bucket log metric graph, with anomaly detection selected, in the Notebooks app.](https://dt-cdn.net/images/notebooks-bucket-log-metric-analyze-and-alert-1744-cef4fa6326.png)
 
 Extracting data from the `default_logs` bucket might induce additional costs. If your logs are available in a specific bucket, we recommend using `filter dt.system.bucket == "{your bucket}"` to increase efficiency.
 
-If you don't have access to your team's or department's bucket, you can create a private one following the [bucket assignment](/docs/analyze-explore-automate/logs/lma-bucket-assignment "Your log data can be stored in data retention buckets based on specific retention periods.") documentation.
+If you don't have access to your team's or department's bucket, you can create a private one following the [bucket assignment](../ru/analyze-explore-automate/logs/lma-bucket-assignment.md "Your log data can be stored in data retention buckets based on specific retention periods.") documentation.
 
 ## Conclusion
 
@@ -623,7 +623,7 @@ If you followed these steps, now you know how to create log alerts for specific 
 
 ## Related topics
 
-* [Anomaly Detection app](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.")
+* [Anomaly Detection app](../ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md "Explore anomaly detection configurations using the Anomaly Detection app.")
 * [[Video] Elevating Security with Anomaly Detectionï»¿](https://www.youtube.com/watch?v=WDZUus-VxCE)
 * [[Video] Anomaly Detection and Data Observabilityï»¿](https://www.youtube.com/watch?v=HPQi63mQg3w)
 
@@ -650,28 +650,28 @@ These examples illustrate how to build powerful and flexible health dashboards b
 
 Davis problems represent results that originate from the Dynatrace Intelligence root-cause analysis runs. In Grail, Davis problems and their updates are stored as Grail events.
 
-* [Problem example 1](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample1 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Problem example 1](../ru/dynatrace-intelligence/use-cases/davis-dql-examples.md#lpproblemexample1 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Count the total number of problems in the last 24 hours.
-* [Problem example 2](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample2 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Problem example 2](../ru/dynatrace-intelligence/use-cases/davis-dql-examples.md#lpproblemexample2 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Count the current number of active problems.
-* [Problem example 3](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample3 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Problem example 3](../ru/dynatrace-intelligence/use-cases/davis-dql-examples.md#lpproblemexample3 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Chart the number of problems in the last 7 days to identify a trend within your environment stability.
-* [Problem example 4](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample4 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Problem example 4](../ru/dynatrace-intelligence/use-cases/davis-dql-examples.md#lpproblemexample4 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Identify the top 10 problem-affected entities within your environment.
-* [Problem example 5](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample5 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Problem example 5](../ru/dynatrace-intelligence/use-cases/davis-dql-examples.md#lpproblemexample5 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Join entity attributes with detected problems and apply a name filter.
-* [Problem example 6](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample6 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Problem example 6](../ru/dynatrace-intelligence/use-cases/davis-dql-examples.md#lpproblemexample6 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Load the last state of a given problem.
-* [Problem example 7](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample7 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Problem example 7](../ru/dynatrace-intelligence/use-cases/davis-dql-examples.md#lpproblemexample7 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Load all active problems and exclude all those that are marked as duplicates.
-* [Problem example 8](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample8 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Problem example 8](../ru/dynatrace-intelligence/use-cases/davis-dql-examples.md#lpproblemexample8 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Calculate the mean time to resolve for problems over time.
-* [Problem example 9](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpproblemexample9 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Problem example 9](../ru/dynatrace-intelligence/use-cases/davis-dql-examples.md#lpproblemexample9 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Show a chart of the concurrently open problems over time.
 
 Davis events represent raw events that originate from various custom alerts within Dynatrace or within the OneAgent. Examples here are OneAgent-detected CPU saturation events or high garbage collection time events.
 
-* [Davis event example 1](/docs/dynatrace-intelligence/use-cases/davis-dql-examples#lpdaviseventexample1 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
+* [Davis event example 1](../ru/dynatrace-intelligence/use-cases/davis-dql-examples.md#lpdaviseventexample1 "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")  
   Chart the number of process restart events in the last 7 days.
 
 ## Count the total number of problems in the last 24 hours
@@ -916,7 +916,7 @@ To use Dynatrace Intelligence actions, you first need to install **Dynatrace Int
 1. In Dynatrace Hub ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub"), search for **Dynatrace Intelligence (Preview)**.
 2. Select **Dynatrace Intelligence (Preview)** and select **Install**.
 
-After installation, Dynatrace Intelligence actions appear automatically in the **Choose action** section of [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+After installation, Dynatrace Intelligence actions appear automatically in the **Choose action** section of [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 
 ## Example use case
 
@@ -924,19 +924,19 @@ This use case shows how you can leverage the Dynatrace Intelligence predictive A
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-Grant necessary permissions](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#permissions "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+Grant necessary permissions](../ru/dynatrace-intelligence/use-cases/davis-for-workflows.md#permissions "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-Explore capacity measurements](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#explore "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+Explore capacity measurements](../ru/dynatrace-intelligence/use-cases/davis-for-workflows.md#explore "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-Define a trigger schedule](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#schedule "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
+Define a trigger schedule](../ru/dynatrace-intelligence/use-cases/davis-for-workflows.md#schedule "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Step 4")
 
-Configure the forecast](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#forecast "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
+Configure the forecast](../ru/dynatrace-intelligence/use-cases/davis-for-workflows.md#forecast "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Step 5")
 
-Evaluate the result](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#evaluate "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Step 6")
+Evaluate the result](../ru/dynatrace-intelligence/use-cases/davis-for-workflows.md#evaluate "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Step 6")
 
-Remediate before it happens](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#remediate "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 7](https://dt-cdn.net/images/step-7-35139ef2d6.svg "Step 7")
+Remediate before it happens](../ru/dynatrace-intelligence/use-cases/davis-for-workflows.md#remediate "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")[![Step 7](https://dt-cdn.net/images/step-7-35139ef2d6.svg "Step 7")
 
-Review raised problems](/docs/dynatrace-intelligence/use-cases/davis-for-workflows#problems "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")
+Review raised problems](../ru/dynatrace-intelligence/use-cases/davis-for-workflows.md#problems "Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.")
 
 ### Step 1 Grant necessary permissions
 
@@ -989,7 +989,7 @@ A successful Dynatrace Intelligence analysis requires proper access rights.
 
 ### Step 2 Explore capacity measurements in a notebook
 
-Predictive capacity management starts within [**Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") where you need to configure your capacity indicators. The image below shows an example of the free disk percentage indicator for an operations team.
+Predictive capacity management starts within [**Notebooks**](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") where you need to configure your capacity indicators. The image below shows an example of the free disk percentage indicator for an operations team.
 
 ![An example of an AI data analysis forecast.](https://dt-cdn.net/images/notebooks-data-analyzer-forecast-1891-28bee08431.png)
 
@@ -997,7 +997,7 @@ Once you have the required indicators, it's time to build the workflow that trig
 
 ### Step 3 Define a trigger schedule
 
-In ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, configure the required schedule to trigger the forecast. To learn how, see [Workflow schedule trigger](/docs/analyze-explore-automate/workflows/trigger/schedules "Guide to creating workflow automation schedule triggers in Dynatrace Workflows."). The image below shows the workflow that runs at 8:00 AM to trigger the forecast of all the disks that are likely to run out of space in the next week.
+In ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, configure the required schedule to trigger the forecast. To learn how, see [Workflow schedule trigger](analyze-explore-automate/workflows/trigger/schedules.md "Guide to creating workflow automation schedule triggers in Dynatrace Workflows."). The image below shows the workflow that runs at 8:00 AM to trigger the forecast of all the disks that are likely to run out of space in the next week.
 
 ![Example of a Dynatrace Intelligence trigger in the Workflows app.](https://dt-cdn.net/images/workflows-forecast-trigger-1920-652d16e024.png)
 
@@ -1181,7 +1181,7 @@ To send a message
 
 1. Add a new **Send message** action.
 2. Set the name of the action as `send_message`.
-3. Configure the message. To learn how, see [Slack Connector](/docs/analyze-explore-automate/workflows/actions/slack "Send messages to Slack Workspaces").
+3. Configure the message. To learn how, see [Slack Connector](../ru/analyze-explore-automate/workflows/actions/slack.md "Send messages to Slack Workspaces").
 4. Open the **Conditions** tab.
 5. Select the `success` condition for the **check\_prediction** action.
 6. Add the following custom condition:
@@ -1293,7 +1293,7 @@ Raising a problem is an optional remediation step that you can skip completely, 
 
 ## Related topics
 
-* [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
-* [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+* [Workflows](../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
+* [Notebooks](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
 
 ---

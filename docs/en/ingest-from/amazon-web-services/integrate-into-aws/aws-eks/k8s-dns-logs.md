@@ -305,7 +305,7 @@ To find an infected process that is getting its commands from an external server
 
 ## Stream logs to Dynatrace
 
-The easiest way to ingest logs into Dynatrace is via [Amazon Data Firehose integration](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.").
+The easiest way to ingest logs into Dynatrace is via [Amazon Data Firehose integration](../../integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose.md "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.").
 
 To configure it in AWS CloudShell, perform the following actions:
 

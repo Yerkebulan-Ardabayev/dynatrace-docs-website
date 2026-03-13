@@ -246,7 +246,7 @@ fetch       logs
   Также вы можете заключать строки в тройные кавычки, например """someString""".
 
   + Внутри тройных кавычек экранирование не требуется.
-  + Тройные кавычки не допускаются как часть строки. В таком случае вы можете использовать стандартные строки или функцию [concat](/docs/platform/grail/dynatrace-query-language/functions/string-functions#concat "A list of DQL string functions.").
+  + Тройные кавычки не допускаются как часть строки. В таком случае вы можете использовать стандартные строки или функцию [concat](functions/string-functions.md#concat "A list of DQL string functions.").
 * **Преобразование в String**
   Все типы данных DQL могут быть преобразованы в строку:
 
@@ -268,9 +268,9 @@ fetch       logs
 
 Вы можете использовать следующие функции DQL для создания данных типа `UID`:
 
-* [uid64](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#uid64 "A list of DQL conversion and casting functions.")
-* [uid128](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#uid128 "A list of DQL conversion and casting functions.")
-* [toUid](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toUid "A list of DQL conversion and casting functions.")
+* [uid64](functions/conversion-and-casting-functions.md#uid64 "A list of DQL conversion and casting functions.")
+* [uid128](functions/conversion-and-casting-functions.md#uid128 "A list of DQL conversion and casting functions.")
+* [toUid](functions/conversion-and-casting-functions.md#toUid "A list of DQL conversion and casting functions.")
 
 ## Составные типы
 
@@ -310,7 +310,7 @@ fetch       logs
   | fields a == b, arraySize(b) > arraySize(c)
   ```
 
-Полный список [функций DQL для работы с массивами](/docs/platform/grail/dynatrace-query-language/functions#array-functions "A list of DQL functions.") см. для получения дополнительной информации.
+Полный список [функций DQL для работы с массивами](functions.md#array-functions "A list of DQL functions.") см. для получения дополнительной информации.
 
 ### Record
 
@@ -397,11 +397,11 @@ fetch       logs
 
 ## Связанные темы
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Использование запросов DQL](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.")
-* [Сравнение DQL с SQL и другими языками](/docs/platform/grail/dynatrace-query-language/dql-comparison "See how DQL compares to other query languages.")
-* [Справочник по языку DQL](/docs/platform/grail/dynatrace-query-language/dql-reference "Dynatrace Query Language syntax reference.")
-* [Команды DQL](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [Функции DQL](/docs/platform/grail/dynatrace-query-language/functions "A list of DQL functions.")
-* [Операторы DQL](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.")
-* [Лучшие практики DQL](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.")
+* [Dynatrace Query Language](../dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Использование запросов DQL](dql-guide.md "Find out how DQL works and what are DQL key concepts.")
+* [Сравнение DQL с SQL и другими языками](dql-comparison.md "See how DQL compares to other query languages.")
+* [Справочник по языку DQL](dql-reference.md "Dynatrace Query Language syntax reference.")
+* [Команды DQL](commands.md "A list of DQL commands.")
+* [Функции DQL](functions.md "A list of DQL functions.")
+* [Операторы DQL](operators.md "A list of DQL Operators.")
+* [Лучшие практики DQL](dql-best-practices.md "Best practices for using Dynatrace Query Language.")

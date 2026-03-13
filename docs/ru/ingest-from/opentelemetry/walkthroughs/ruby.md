@@ -34,13 +34,13 @@ scraped: 2026-03-05T21:25:37.194989
 
 ### Определение базового URL API
 
-Подробности о том, как собрать базовый URL конечной точки OTLP, см. в [Конечные точки OTLP API Dynatrace](/docs/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). URL должен заканчиваться на `/api/v2/otlp`.
+Подробности о том, как собрать базовый URL конечной точки OTLP, см. в [Конечные точки OTLP API Dynatrace](../otlp-api.md#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). URL должен заканчиваться на `/api/v2/otlp`.
 
 ### Получение токена доступа к API
 
 Для генерации токена доступа в Dynatrace перейдите в ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
 
-[Конечные точки OTLP API Dynatrace](/docs/ingest-from/opentelemetry/otlp-api#authentication "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") содержат дополнительные сведения о формате и необходимых областях доступа.
+[Конечные точки OTLP API Dynatrace](../otlp-api.md#authentication "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") содержат дополнительные сведения о формате и необходимых областях доступа.
 
 ## Шаг 2 Выбор способа инструментирования приложения
 
@@ -172,13 +172,13 @@ OpenTelemetry поддерживает для Ruby автоматическое 
    end
    ```
 
-   Операции чтения файлов, выполняющие разбор файлов `dt_metadata` в примере кода, пытаются прочитать [файлы данных OneAgent](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") для обогащения запроса OTLP и обеспечения доступности всей релевантной топологической информации в Dynatrace.
+   Операции чтения файлов, выполняющие разбор файлов `dt_metadata` в примере кода, пытаются прочитать [файлы данных OneAgent](../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") для обогащения запроса OTLP и обеспечения доступности всей релевантной топологической информации в Dynatrace.
 
    Экспорт в OneAgent
 
    Ruby SDK по умолчанию использует сжатие содержимого, которое пока не поддерживается OneAgent.
 
-   При экспорте в OneAgent добавьте `compression: "none"` в вызов `Exporter.new()`, чтобы отключить эту функцию. В противном случае [экспортируйте в ActiveGate](/docs/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+   При экспорте в OneAgent добавьте `compression: "none"` в вызов `Exporter.new()`, чтобы отключить эту функцию. В противном случае [экспортируйте в ActiveGate](../otlp-api.md#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
 4. Вызовите `init_opentelemetry` как можно раньше при запуске вашего приложения, чтобы обеспечить инициализацию OpenTelemetry с самого начала.
 
 ## Шаг 3 (необязательно) Автоматическое инструментирование приложения (необязательно)
@@ -273,7 +273,7 @@ OpenTelemetry поддерживает для Ruby автоматическое 
 
 ![syslog-bundles](https://dt-cdn.net/images/env-syslogbundles-2589-90e4e38b45.png)
 
-Для получения дополнительной информации см. [Обработка логов с помощью парсеров технологических пакетов](/docs/platform/openpipeline/use-cases/tutorial-technology-processor "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.").
+Для получения дополнительной информации см. [Обработка логов с помощью парсеров технологических пакетов](../../../platform/openpipeline/use-cases/tutorial-technology-processor.md "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.").
 
 ### Сбор метрик
 
@@ -363,7 +363,7 @@ response = http.request(request)
 
 Хотя Dynatrace автоматически захватывает все атрибуты OpenTelemetry, в веб-интерфейсе Dynatrace хранятся и отображаются только значения атрибутов, указанные в списке разрешённых. Это предотвращает случайное сохранение персональных данных, что позволяет соблюдать требования конфиденциальности и контролировать объём хранимых данных мониторинга.
 
-Чтобы просматривать пользовательские атрибуты, вам сначала нужно разрешить их в веб-интерфейсе Dynatrace. Чтобы узнать, как настроить хранение и маскирование атрибутов, см. [Редактирование атрибутов](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration#attribute-redaction "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.").
+Чтобы просматривать пользовательские атрибуты, вам сначала нужно разрешить их в веб-интерфейсе Dynatrace. Чтобы узнать, как настроить хранение и маскирование атрибутов, см. [Редактирование атрибутов](../../dynatrace-oneagent/oneagent-and-opentelemetry/configuration.md#attribute-redaction "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.").
 
 ## Шаг 6 Проверка приёма данных в Dynatrace
 
@@ -375,4 +375,4 @@ response = http.request(request)
 
 ## Связанные темы
 
-* [Обогащение принятых данных специфичными для Dynatrace полями](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
+* [Обогащение принятых данных специфичными для Dynatrace полями](../../extend-dynatrace/extend-data.md "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")

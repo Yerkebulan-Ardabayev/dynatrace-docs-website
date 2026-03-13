@@ -20,7 +20,7 @@ About the app
 * Prioritize vulnerabilities based on Dynatrace Security Score, Dynatrace Assessment, affected and related entities, historical context, CISA KEV catalog.
 * Apply fixes, track remediation, drill down to the source of vulnerabilities, change the mute status of affected entities.
 * Interact with other apps and download results to share with others.
-* Gain insights into monitoring coverage and exposure trends with the [**Vulnerability coverage** dashboard](/docs/secure/vulnerabilities/assess-coverage "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").
+* Gain insights into monitoring coverage and exposure trends with the [**Vulnerability coverage** dashboard](vulnerabilities/assess-coverage.md "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").
 
 ### Target audience
 
@@ -28,16 +28,16 @@ About the app
 
 Prerequisites
 
-* Review the [supported technologies](/docs/secure/application-security#rva-tech "Access the Dynatrace Application Security functionalities.").
-* [Set up Dynatrace Runtime Vulnerability Analytics](/docs/secure/application-security/vulnerability-analytics#start "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.").
+* Review the [supported technologies](application-security.md#rva-tech "Access the Dynatrace Application Security functionalities.").
+* [Set up Dynatrace Runtime Vulnerability Analytics](application-security/vulnerability-analytics.md#start "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.").
 
 Permissions
 
-An [admin user](/docs/manage/identity-access-management/permission-management/default-policies#access "Dynatrace default policies reference") needs to assign the following IAM policies to the group of users that will access the [`vulnerability-service`](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#vulnerability-service "Complete reference of IAM policies and corresponding conditions across all Dynatrace services."):
+An [admin user](../manage/identity-access-management/permission-management/default-policies.md#access "Dynatrace default policies reference") needs to assign the following IAM policies to the group of users that will access the [`vulnerability-service`](../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md#vulnerability-service "Complete reference of IAM policies and corresponding conditions across all Dynatrace services."):
 
 * `Read Entities`
 * `Read Security Events`
-* One of the following user policies: `Admin User`, `Pro User`, `Standard User` (for details, see [Default policies](/docs/manage/identity-access-management/permission-management/default-policies#default-policies "Dynatrace default policies reference")).
+* One of the following user policies: `Admin User`, `Pro User`, `Standard User` (for details, see [Default policies](../manage/identity-access-management/permission-management/default-policies.md#default-policies "Dynatrace default policies reference")).
 
 See below for instructions.
 
@@ -67,7 +67,7 @@ Once added, the three policies should be displayed in your list of permissions.
 1. In **Account Management**, select **Identity & access management** > **People**.
 2. Select **Invite user** to invite users to the newly created group.
 
-For details on IAM policies, see [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+For details on IAM policies, see [Working with policies](../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
 
 Get started
 
@@ -75,7 +75,7 @@ Related blogs
 
 ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities** detects if the applications in your Dynatrace environment use vulnerable libraries at runtime or vulnerable runtime to execute your code. It helps you prioritize based on context and impact, efficiently addressing remediation actions.
 
-For additional visibility into monitoring coverage and exposure, see [Assess coverage](/docs/secure/vulnerabilities/assess-coverage "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").
+For additional visibility into monitoring coverage and exposure, see [Assess coverage](vulnerabilities/assess-coverage.md "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").
 
 ![Vulnerability results table on the Prioritization page](https://dt-cdn.net/images/one-1920-3b90d3d40b.png)![Vulnerability details](https://dt-cdn.net/images/two-1920-2dec9771f5.png)![Process group overview related to a vulnerability](https://dt-cdn.net/images/three-1920-6b45726007.png)![Details of an affected process group](https://dt-cdn.net/images/four-1920-f0bf314049.png)![Findings overview page](https://dt-cdn.net/images/2025-12-17-14-29-30-1920-06cddbfea0.png)![Finding details](https://dt-cdn.net/images/2025-12-17-14-37-49-1920-1ecd920899.png)
 
@@ -88,25 +88,25 @@ Try ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-
 [01Vulnerabilities concepts
 
 * Explanation
-* Concepts that are specific to the Dynatrace Vulnerabilities app.](/docs/secure/vulnerabilities/concepts)[02Manage results
+* Concepts that are specific to the Dynatrace Vulnerabilities app.](vulnerabilities/concepts.md)[02Manage results
 
 * How-to guide
-* Filter, format, and sort to find relevant vulnerability information.](/docs/secure/vulnerabilities/manage-results)[03Address remediation
+* Filter, format, and sort to find relevant vulnerability information.](vulnerabilities/manage-results.md)[03Address remediation
 
 * How-to guide
-* Address remediation and optimize remediation activities.](/docs/secure/vulnerabilities/address-remediation)[04Prioritize vulnerabilities
+* Address remediation and optimize remediation activities.](vulnerabilities/address-remediation.md)[04Prioritize vulnerabilities
 
 * How-to guide
-* Prioritize third-party, code-level, and runtime vulnerabilities.](/docs/secure/vulnerabilities/prioritize)[05Explore findings
+* Prioritize third-party, code-level, and runtime vulnerabilities.](vulnerabilities/prioritize.md)[05Explore findings
 
 * How-to guide
-* View, filter, and analyze vulnerability findings from Dynatrace and external security tools.](/docs/secure/vulnerabilities/explore-findings)[06Assess coverage
+* View, filter, and analyze vulnerability findings from Dynatrace and external security tools.](vulnerabilities/explore-findings.md)[06Assess coverage
 
 * Explanation
-* Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.](/docs/secure/vulnerabilities/assess-coverage)[07Integrate vulnerability insights across Dynatrace and external apps
+* Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.](vulnerabilities/assess-coverage.md)[07Integrate vulnerability insights across Dynatrace and external apps
 
 * How-to guide
-* Navigate between Dynatrace apps, share vulnerability data externally, and automate remediation workflows.](/docs/secure/vulnerabilities/collaborate-with-apps)
+* Navigate between Dynatrace apps, share vulnerability data externally, and automate remediation workflows.](vulnerabilities/collaborate-with-apps.md)
 
 * [Introducing the Dynatrace Vulnerability feed: Accurate, transparent, and threat-awareï»¿](https://www.dynatrace.com/news/blog/introducing-the-dynatrace-vulnerability-feed-accurate-transparent-and-threat-aware/)
 * [Introducing findings in the Vulnerabilities app: Unified, granular insights for smarter securityï»¿](https://www.dynatrace.com/news/blog/introducing-findings-in-the-vulnerabilities-app-unified-granular-insights-for-smarter-security/)

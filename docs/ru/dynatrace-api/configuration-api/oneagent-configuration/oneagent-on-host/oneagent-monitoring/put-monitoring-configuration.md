@@ -12,7 +12,7 @@ scraped: 2026-02-06T16:31:13.607418
 * Обновлено 23 июня 2022 г.
 * Устарело
 
-Этот API устарел. Вместо него используйте [Settings API](/docs/dynatrace-api/environment-api/settings "Узнайте о возможностях API настроек Dynatrace.") со схемой **Monitoring** (`builtin:host.monitoring`).
+Этот API устарел. Вместо него используйте [Settings API](../../../../environment-api/settings.md "Узнайте о возможностях API настроек Dynatrace.") со схемой **Monitoring** (`builtin:host.monitoring`).
 
 Обновляет конфигурацию мониторинга OneAgent на указанном хосте.
 
@@ -27,7 +27,7 @@ scraped: 2026-02-06T16:31:13.607418
 
 Для выполнения этого запроса вам необходим токен доступа с областью действия `WriteConfig`.
 
-Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 
@@ -241,7 +241,7 @@ scraped: 2026-02-06T16:31:13.607418
 
 Для выполнения этого запроса вам необходим токен доступа с областью действия `WriteConfig`.
 
-Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ### Ответ
 

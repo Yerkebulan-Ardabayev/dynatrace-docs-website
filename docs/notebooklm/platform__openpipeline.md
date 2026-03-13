@@ -98,7 +98,7 @@ Administrators can:
 
 ## Related topics
 
-* [Set access control in OpenPipeline](/docs/platform/openpipeline/getting-started/set-access-control "Distribute OpenPipeline ingest source and pipeline management via owner-based access control.")
+* [Set access control in OpenPipeline](../ru/platform/openpipeline/getting-started/set-access-control.md "Distribute OpenPipeline ingest source and pipeline management via owner-based access control.")
 
 ---
 
@@ -165,7 +165,7 @@ Data reaches the Dynatrace platform via different ingestion sources, such as API
 
 Once the records reach your Dynatrace SaaS environment via ingest sources, you can route it to a pipeline.
 
-To learn the ingest sources available in OpenPipeline, see [Ingest sources in OpenPipeline](/docs/platform/openpipeline/reference/api-ingestion-reference "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.").
+To learn the ingest sources available in OpenPipeline, see [Ingest sources in OpenPipeline](../ru/platform/openpipeline/reference/api-ingestion-reference.md "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.").
 
 ### Types
 
@@ -186,7 +186,7 @@ Builtâin ingest sources represent the primary data entry points provided by
 
 #### Ready-made ingest source
 
-A readyâmade ingest source is automatically created when an [extension](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") is installed. In addition to the ingest source, the installation may also generate a pipeline and an active route. Readyâmade ingest sources are owned by the installing extension and are viewâonly for all users with `settings:read` permissions. They remain unchanged through extension reactivations and are removed only when the extension is uninstalled. This type is available for the event, log, and metric configuration scopes. Typically, a ready-made ingest source routes records to the generated pipeline via static routing, however dynamic routing is supported as well.
+A readyâmade ingest source is automatically created when an [extension](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.") is installed. In addition to the ingest source, the installation may also generate a pipeline and an active route. Readyâmade ingest sources are owned by the installing extension and are viewâonly for all users with `settings:read` permissions. They remain unchanged through extension reactivations and are removed only when the extension is uninstalled. This type is available for the event, log, and metric configuration scopes. Typically, a ready-made ingest source routes records to the generated pipeline via static routing, however dynamic routing is supported as well.
 
 #### Custom ingest source
 
@@ -229,16 +229,16 @@ Routing is defined according to the following:
 
 ### Best practices
 
-* Route as much data as feasible to [custom pipelines](/docs/platform/openpipeline/concepts/processing#custom-pipeline "Learn the core concepts of Dynatrace OpenPipeline processing.") using explicit matching conditions.
+* Route as much data as feasible to [custom pipelines](../ru/platform/openpipeline/concepts/processing.md#custom-pipeline "Learn the core concepts of Dynatrace OpenPipeline processing.") using explicit matching conditions.
 * When multiple routing options are available, choose according to the data set dimension. For example, large data sets benefit more from dynamic routing.
 
 ## Processing
 
-OpenPipeline processing occurs in pipelines containing instructions on how to structure, separate, and store your data. To learn more, see [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.").
+OpenPipeline processing occurs in pipelines containing instructions on how to structure, separate, and store your data. To learn more, see [Processing in OpenPipeline](../ru/platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.").
 
 ## Storage
 
-Dynatrace Grail database provides a single unified storage solution for all your configuration scopes. OpenPipeline target storage are [Grail buckets](/docs/platform/grail/organize-data "Insights on the Grail data model consisting of buckets, tables, and views."). You can leverage built-in buckets and, if available for the configuration scope, create new buckets with custom retention periods. Each bucket is assigned to a DQL database table. [Assign permissions](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.") to user groups or single users to provide them with access to specific buckets and tables.
+Dynatrace Grail database provides a single unified storage solution for all your configuration scopes. OpenPipeline target storage are [Grail buckets](../ru/platform/grail/organize-data.md "Insights on the Grail data model consisting of buckets, tables, and views."). You can leverage built-in buckets and, if available for the configuration scope, create new buckets with custom retention periods. Each bucket is assigned to a DQL database table. [Assign permissions](../ru/platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.") to user groups or single users to provide them with access to specific buckets and tables.
 
 By default, OpenPipeline routes data into a built-in pipeline with target storage built-in Grail bucket of the configuration scope. You can configure storage assignment
 
@@ -306,7 +306,7 @@ Route as much data as feasible to custom pipelines using explicit matching condi
 
 ##### Classic pipeline
 
-The **Classic pipeline** is a built-in pipeline specific to the log and business event configuration scopes. It represents and serves as an entry point to the rules you set in **Settings Classic** for [log](/docs/analyze-explore-automate/logs/lma-classic-log-processing "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.") or [business event](/docs/observe/business-observability/bo-event-processing "Utilize business event processing rules to reshape incoming business event data for better understanding, analysis, or further transformation.") processing via the classic pipeline.
+The **Classic pipeline** is a built-in pipeline specific to the log and business event configuration scopes. It represents and serves as an entry point to the rules you set in **Settings Classic** for [log](../ru/analyze-explore-automate/logs/lma-classic-log-processing.md "Utilize log processing rules to reshape incoming log data for better understanding, analysis, or further transformation.") or [business event](../ru/observe/business-observability/bo-event-processing.md "Utilize business event processing rules to reshape incoming business event data for better understanding, analysis, or further transformation.") processing via the classic pipeline.
 
 If you use log processing via the classic pipeline, migrate your rules to OpenPipeline custom pipelines.
 
@@ -327,7 +327,7 @@ Processing via OpenPipeline offers higher limits and flexibility. The following 
 
 1
 
-If logs are ingested via [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2."), the field names are automatically lowercased after data is routed to the **Classic pipeline**.
+If logs are ingested via [Log Monitoring API v2 - POST ingest logs](../ru/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2."), the field names are automatically lowercased after data is routed to the **Classic pipeline**.
 
 2
 
@@ -335,7 +335,7 @@ The enrichment is done automatically, without requiring any user interaction.
 
 3
 
-See also [Conversion to DQL for Logs](/docs/analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion "Convert your current log monitoring rules to DQL.").
+See also [Conversion to DQL for Logs](analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion.md "Convert your current log monitoring rules to DQL.").
 
 ### Use cases
 
@@ -350,7 +350,7 @@ A stage is a phase in a pipeline sequence that focuses on a task, such as maskin
 
 The following table is a comprehensive list of stages, ordered in the pipeline sequence of execution, specifying which processors are available and executed for each stage, for the supported configuration scopes.
 
-Specific fields are excluded from matching and processing or restricted. To learn more, see [Limits specific to fields](/docs/platform/openpipeline/reference/limits#fields "Reference limits of Dynatrace OpenPipeline.").
+Specific fields are excluded from matching and processing or restricted. To learn more, see [Limits specific to fields](../ru/platform/openpipeline/reference/limits.md#fields "Reference limits of Dynatrace OpenPipeline.").
 
 1
 
@@ -373,8 +373,8 @@ The following table lists alphabetically all available processors in a pipeline.
 
 ## Related topics
 
-* [DQL Functions in OpenPipeline](/docs/platform/openpipeline/reference/openpipeline-dql-functions "A list of DQL functions available in OpenPipeline.")
-* [DQL Commands](/docs/platform/openpipeline/reference/openpipeline-dql-commands "A list of DQL commands available in OpenPipeline.")
+* [DQL Functions in OpenPipeline](platform/openpipeline/reference/openpipeline-dql-functions.md "A list of DQL functions available in OpenPipeline.")
+* [DQL Commands](platform/openpipeline/reference/openpipeline-dql-commands.md "A list of DQL commands available in OpenPipeline.")
 
 ---
 
@@ -420,19 +420,19 @@ This article is intended for development teams managing data ingestion.
 Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine.
-* [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license that includes [Events powered by Grail overview (DPS)](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
+* [License Dynatrace](license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license that includes [Events powered by Grail overview (DPS)](../ru/license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 
 ## Steps
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Authenticate**](/docs/platform/openpipeline/getting-started/how-to-ingestion#authenticate "How to ingest data for a configuration scope in OpenPipeline.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Authenticate**](../ru/platform/openpipeline/getting-started/how-to-ingestion.md#authenticate "How to ingest data for a configuration scope in OpenPipeline.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Copy the endpoint path**](/docs/platform/openpipeline/getting-started/how-to-ingestion#path "How to ingest data for a configuration scope in OpenPipeline.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Copy the endpoint path**](../ru/platform/openpipeline/getting-started/how-to-ingestion.md#path "How to ingest data for a configuration scope in OpenPipeline.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Send an event**](/docs/platform/openpipeline/getting-started/how-to-ingestion#send "How to ingest data for a configuration scope in OpenPipeline.")[![Step 4 optional](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Step 4 optional")
+**Send an event**](../ru/platform/openpipeline/getting-started/how-to-ingestion.md#send "How to ingest data for a configuration scope in OpenPipeline.")[![Step 4 optional](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Step 4 optional")
 
-**Verify ingestion**](/docs/platform/openpipeline/getting-started/how-to-ingestion#verify "How to ingest data for a configuration scope in OpenPipeline.")
+**Verify ingestion**](../ru/platform/openpipeline/getting-started/how-to-ingestion.md#verify "How to ingest data for a configuration scope in OpenPipeline.")
 
 ### Step 1 Authenticate
 
@@ -515,12 +515,12 @@ OpenPipeline is the unified ingestion component for the Dynatrace Platform. You 
 3. Send a record.
 4. Verify ingestion.
 
-For an overview of the available endpoints, refer to [Ingest sources in OpenPipeline](/docs/platform/openpipeline/reference/api-ingestion-reference "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.").
+For an overview of the available endpoints, refer to [Ingest sources in OpenPipeline](../ru/platform/openpipeline/reference/api-ingestion-reference.md "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.").
 
 ## Related topics
 
-* [Data flow in OpenPipeline](/docs/platform/openpipeline/concepts/data-flow "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
-* [Ingest sources in OpenPipeline](/docs/platform/openpipeline/reference/api-ingestion-reference "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.")
+* [Data flow in OpenPipeline](../ru/platform/openpipeline/concepts/data-flow.md "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
+* [Ingest sources in OpenPipeline](../ru/platform/openpipeline/reference/api-ingestion-reference.md "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.")
 
 ---
 
@@ -622,7 +622,7 @@ To change how logs are processed, you can modify the matching condition to exclu
 
 ## Related topics
 
-* [Data flow in OpenPipeline](/docs/platform/openpipeline/concepts/data-flow "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
+* [Data flow in OpenPipeline](../ru/platform/openpipeline/concepts/data-flow.md "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
 
 ---
 
@@ -647,7 +647,7 @@ This guide explains how pipeline and custom ingest source owners, as well as adm
 
 ## Prerequistes
 
-* Dynatrace version 1.322 and earlierYou [migrated your OpenPipeline configurations to the Settings API](/docs/platform/openpipeline/migration-settings "Understand how to migrate your OpenPipeline configurations to new Settings API.").
+* Dynatrace version 1.322 and earlierYou [migrated your OpenPipeline configurations to the Settings API](platform/openpipeline/migration-settings.md "Understand how to migrate your OpenPipeline configurations to new Settings API.").
 * Verify that the user or user group permissions are sufficient for the access type you want to grant.
 * To carry out the procedures via API, ensure `ownerBasedAccessControl` property is set to `true` for the OpenPipeline Settings API schema you intend to use.
 
@@ -662,45 +662,45 @@ This guide explains how pipeline and custom ingest source owners, as well as adm
 
   Available Settings API schemas
 
-  + [builtin:openpipeline.bizevents.ingest-sources](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-ingest-sources "View builtin:openpipeline.bizevents.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.bizevents.pipelines](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-pipelines "View builtin:openpipeline.bizevents.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.bizevents.routing](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-routing "View builtin:openpipeline.bizevents.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.davis.events.ingest-sources](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-ingest-sources "View builtin:openpipeline.davis.events.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.davis.events.pipelines](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-pipelines "View builtin:openpipeline.davis.events.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.davis.events.routing](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-routing "View builtin:openpipeline.davis.events.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.davis.problems.ingest-sources](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-ingest-sources "View builtin:openpipeline.davis.problems.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.davis.problems.pipelines](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-pipelines "View builtin:openpipeline.davis.problems.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.davis.problems.routing](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-routing "View builtin:openpipeline.davis.problems.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.events.ingest-sources](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-ingest-sources "View builtin:openpipeline.events.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.events.pipelines](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-pipelines "View builtin:openpipeline.events.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.events.routing](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-routing "View builtin:openpipeline.events.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.events.sdlc.ingest-sources](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-ingest-sources "View builtin:openpipeline.events.sdlc.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.events.sdlc.pipelines](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-pipelines "View builtin:openpipeline.events.sdlc.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.events.sdlc.routing](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-routing "View builtin:openpipeline.events.sdlc.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.events.security.ingest-sources](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-ingest-sources "View builtin:openpipeline.events.security.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.events.security.pipelines](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-pipelines "View builtin:openpipeline.events.security.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.events.security.routing](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-routing "View builtin:openpipeline.events.security.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.logs.ingest-sources](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-ingest-sources "View builtin:openpipeline.logs.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.logs.pipelines](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipelines "View builtin:openpipeline.logs.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.logs.routing](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-routing "View builtin:openpipeline.logs.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.metrics.ingest-sources](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-ingest-sources "View builtin:openpipeline.metrics.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.metrics.pipelines](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-pipelines "View builtin:openpipeline.metrics.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.metrics.routing](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-routing "View builtin:openpipeline.metrics.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.security.events.ingest-sources](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-ingest-sources "View builtin:openpipeline.security.events.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.security.events.pipelines](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-pipelines "View builtin:openpipeline.security.events.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.security.events.routing](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-routing "View builtin:openpipeline.security.events.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.spans.ingest-sources](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-ingest-sources "View builtin:openpipeline.spans.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.spans.pipelines](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-pipelines "View builtin:openpipeline.spans.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.spans.routing](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-routing "View builtin:openpipeline.spans.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.system.events.ingest-sources](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-ingest-sources "View builtin:openpipeline.system.events.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.system.events.pipelines](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-pipelines "View builtin:openpipeline.system.events.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.system.events.routing](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-routing "View builtin:openpipeline.system.events.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.user.events.ingest-sources](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-ingest-sources "View builtin:openpipeline.user.events.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.user.events.pipelines](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-pipelines "View builtin:openpipeline.user.events.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.user.events.routing](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-routing "View builtin:openpipeline.user.events.routing settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.user.sessions.ingest-sources](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-ingest-sources "View builtin:openpipeline.usersessions.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.user.sessions.pipelines](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-pipelines "View builtin:openpipeline.usersessions.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
-  + [builtin:openpipeline.user.sessions.routing](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-routing "View builtin:openpipeline.usersessions.routing settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.bizevents.ingest-sources](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-ingest-sources.md "View builtin:openpipeline.bizevents.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.bizevents.pipelines](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-pipelines.md "View builtin:openpipeline.bizevents.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.bizevents.routing](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-routing.md "View builtin:openpipeline.bizevents.routing settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.davis.events.ingest-sources](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-ingest-sources.md "View builtin:openpipeline.davis.events.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.davis.events.pipelines](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-pipelines.md "View builtin:openpipeline.davis.events.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.davis.events.routing](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-routing.md "View builtin:openpipeline.davis.events.routing settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.davis.problems.ingest-sources](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-ingest-sources.md "View builtin:openpipeline.davis.problems.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.davis.problems.pipelines](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-pipelines.md "View builtin:openpipeline.davis.problems.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.davis.problems.routing](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-routing.md "View builtin:openpipeline.davis.problems.routing settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.events.ingest-sources](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-ingest-sources.md "View builtin:openpipeline.events.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.events.pipelines](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-pipelines.md "View builtin:openpipeline.events.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.events.routing](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-routing.md "View builtin:openpipeline.events.routing settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.events.sdlc.ingest-sources](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-ingest-sources.md "View builtin:openpipeline.events.sdlc.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.events.sdlc.pipelines](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-pipelines.md "View builtin:openpipeline.events.sdlc.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.events.sdlc.routing](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-routing.md "View builtin:openpipeline.events.sdlc.routing settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.events.security.ingest-sources](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-ingest-sources.md "View builtin:openpipeline.events.security.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.events.security.pipelines](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-pipelines.md "View builtin:openpipeline.events.security.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.events.security.routing](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-routing.md "View builtin:openpipeline.events.security.routing settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.logs.ingest-sources](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-ingest-sources.md "View builtin:openpipeline.logs.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.logs.pipelines](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipelines.md "View builtin:openpipeline.logs.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.logs.routing](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-routing.md "View builtin:openpipeline.logs.routing settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.metrics.ingest-sources](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-ingest-sources.md "View builtin:openpipeline.metrics.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.metrics.pipelines](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-pipelines.md "View builtin:openpipeline.metrics.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.metrics.routing](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-routing.md "View builtin:openpipeline.metrics.routing settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.security.events.ingest-sources](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-ingest-sources.md "View builtin:openpipeline.security.events.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.security.events.pipelines](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-pipelines.md "View builtin:openpipeline.security.events.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.security.events.routing](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-routing.md "View builtin:openpipeline.security.events.routing settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.spans.ingest-sources](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-ingest-sources.md "View builtin:openpipeline.spans.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.spans.pipelines](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-pipelines.md "View builtin:openpipeline.spans.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.spans.routing](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-routing.md "View builtin:openpipeline.spans.routing settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.system.events.ingest-sources](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-ingest-sources.md "View builtin:openpipeline.system.events.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.system.events.pipelines](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-pipelines.md "View builtin:openpipeline.system.events.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.system.events.routing](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-routing.md "View builtin:openpipeline.system.events.routing settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.user.events.ingest-sources](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-ingest-sources.md "View builtin:openpipeline.user.events.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.user.events.pipelines](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-pipelines.md "View builtin:openpipeline.user.events.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.user.events.routing](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-routing.md "View builtin:openpipeline.user.events.routing settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.user.sessions.ingest-sources](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-ingest-sources.md "View builtin:openpipeline.usersessions.ingest-sources settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.user.sessions.pipelines](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-pipelines.md "View builtin:openpipeline.usersessions.pipelines settings schema table of your monitoring environment via the Dynatrace API.")
+  + [builtin:openpipeline.user.sessions.routing](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-routing.md "View builtin:openpipeline.usersessions.routing settings schema table of your monitoring environment via the Dynatrace API.")
 
 ## Share access
 
@@ -767,7 +767,7 @@ Be aware that you will lose all access unless the new owner gives you permission
 
 ## Next steps
 
-Once administrators set permissions and owners set access, users can manage and access items accordingly. Development teams can start configuring processing for their use cases. To learn more about processing, see [Configure a processing pipeline](/docs/platform/openpipeline/getting-started/tutorial-configure-processing "Configure ingest sources, routes, and processing for your data in OpenPipeline.").
+Once administrators set permissions and owners set access, users can manage and access items accordingly. Development teams can start configuring processing for their use cases. To learn more about processing, see [Configure a processing pipeline](../ru/platform/openpipeline/getting-started/tutorial-configure-processing.md "Configure ingest sources, routes, and processing for your data in OpenPipeline.").
 
 ## Related topics
 
@@ -806,15 +806,15 @@ In this article, you'll learn how to create a new configuration for data records
 
 Prior knowledge
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Data flow in OpenPipeline](/docs/platform/openpipeline/concepts/data-flow "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
-* [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Data flow in OpenPipeline](../ru/platform/openpipeline/concepts/data-flow.md "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
+* [Processing in OpenPipeline](../ru/platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
 
 Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine.
-* You have both `openpipeline:configurations:write` and `openpipeline:configurations:read` permissions. To learn how to set up the permissions, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
-* If you already use the log processing pipeline, ensure the [matching conditions are converted to DQL](/docs/analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion "Convert your current log monitoring rules to DQL.").
+* You have both `openpipeline:configurations:write` and `openpipeline:configurations:read` permissions. To learn how to set up the permissions, see [Permissions in Grail](../ru/platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+* If you already use the log processing pipeline, ensure the [matching conditions are converted to DQL](analyze-explore-automate/logs/logs-upgrade/lma-dql-conversion.md "Convert your current log monitoring rules to DQL.").
 
 Key terms
 
@@ -837,15 +837,15 @@ Processor
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Configure a pipeline**](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#process "Configure ingest sources, routes, and processing for your data in OpenPipeline.")[![Step 2 optional](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Step 2 optional")
+**Configure a pipeline**](../ru/platform/openpipeline/getting-started/tutorial-configure-processing.md#process "Configure ingest sources, routes, and processing for your data in OpenPipeline.")[![Step 2 optional](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Step 2 optional")
 
-**Configure custom ingest sources**](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#ingest "Configure ingest sources, routes, and processing for your data in OpenPipeline.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Configure custom ingest sources**](../ru/platform/openpipeline/getting-started/tutorial-configure-processing.md#ingest "Configure ingest sources, routes, and processing for your data in OpenPipeline.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Route data to a pipeline**](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#route "Configure ingest sources, routes, and processing for your data in OpenPipeline.")
+**Route data to a pipeline**](../ru/platform/openpipeline/getting-started/tutorial-configure-processing.md#route "Configure ingest sources, routes, and processing for your data in OpenPipeline.")
 
 ### Step 1 Configure a pipeline
 
-OpenPipeline stores data in Grail buckets. If you need a bucket with specific permissions or custom data retention, [create a custom bucket](/docs/platform/grail/organize-data#custom-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
+OpenPipeline stores data in Grail buckets. If you need a bucket with specific permissions or custom data retention, [create a custom bucket](../ru/platform/grail/organize-data.md#custom-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.").
 
 **Pipelines** lists built-in and custom pipelines for a configuration scope in your environment. To configure your own pipelines to group processing and extraction by technology or team
 
@@ -889,11 +889,11 @@ Successfully configured routes are displayed in the dynamic routing list. Select
 
 ## Conclusion
 
-You have configured ingest sources, routing, and processing for records of a configuration scope via OpenPipeline. Once you [start ingesting](/docs/platform/openpipeline/getting-started/how-to-ingestion "How to ingest data for a configuration scope in OpenPipeline."), your data is processed as configured, stored in a Grail bucket, and available for analysis via Grail capabilities.
+You have configured ingest sources, routing, and processing for records of a configuration scope via OpenPipeline. Once you [start ingesting](../ru/platform/openpipeline/getting-started/how-to-ingestion.md "How to ingest data for a configuration scope in OpenPipeline."), your data is processed as configured, stored in a Grail bucket, and available for analysis via Grail capabilities.
 
 ## Related topics
 
-* [OpenPipeline processing examples](/docs/platform/openpipeline/use-cases/processing-examples "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")
+* [OpenPipeline processing examples](../ru/platform/openpipeline/use-cases/processing-examples.md "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")
 
 ---
 
@@ -928,9 +928,9 @@ Business events
 
 ### Prior knowledge
 
-* [How to capture business events](/docs/observe/business-observability/bo-events-capturing "Capture business events for Dynatrace Business Observability.")
-* [OpenPipeline Data extraction stage](/docs/platform/openpipeline/concepts/processing#stage "Learn the core concepts of Dynatrace OpenPipeline processing.")
-* [DDUs for business events](/docs/license/monitoring-consumption-classic/davis-data-units/ddus-for-business-events "Understand how the volume of DDU consumption is calculated for business events.")
+* [How to capture business events](../ru/observe/business-observability/bo-events-capturing.md "Capture business events for Dynatrace Business Observability.")
+* [OpenPipeline Data extraction stage](../ru/platform/openpipeline/concepts/processing.md#stage "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* [DDUs for business events](license/monitoring-consumption-classic/davis-data-units/ddus-for-business-events.md "Understand how the volume of DDU consumption is calculated for business events.")
 
 ### Ingest sources
 
@@ -949,18 +949,18 @@ Captures business events in Dynatrace.
 | --- | --- |
 | Endpoint URL | `https://{your-environment-id}.live.dynatrace.com/api/v2/bizevents/ingest` |
 | Method | POST |
-| Authentication | [OAuth](/docs/observe/business-observability/bo-api-ingest#oauth "Set up authentication for and ingest business events via API.") [Access token](/docs/observe/business-observability/bo-api-ingest#access-token "Set up authentication for and ingest business events via API.") with **Ingest bizevents** (`bizevents.ingest`) token scope |
+| Authentication | [OAuth](../ru/observe/business-observability/bo-api-ingest.md#oauth "Set up authentication for and ingest business events via API.") [Access token](../ru/observe/business-observability/bo-api-ingest.md#access-token "Set up authentication for and ingest business events via API.") with **Ingest bizevents** (`bizevents.ingest`) token scope |
 | Payload | `application/json` `application/cloudevent+json` `application/cloudevent-batch+json` |
 
-To learn more, see [Ingest business events via API](/docs/observe/business-observability/bo-api-ingest "Set up authentication for and ingest business events via API.").
+To learn more, see [Ingest business events via API](../ru/observe/business-observability/bo-api-ingest.md "Set up authentication for and ingest business events via API.").
 
 Logs
 
 ### Prior knowledge
 
-* [How to ingest logs](/docs/analyze-explore-automate/logs/lma-log-ingestion "Stream log data to Dynatrace.")
-* [Stream logs via Amazon Data Firehose](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.")
-* [DDUs for Log Management and Analytics](/docs/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.") or [Log Analytics (DPS)](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.")
+* [How to ingest logs](../ru/analyze-explore-automate/logs/lma-log-ingestion.md "Stream log data to Dynatrace.")
+* [Stream logs via Amazon Data Firehose](ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose.md "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.")
+* [DDUs for Log Management and Analytics](../ru/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics.md "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.") or [Log Analytics (DPS)](../ru/license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.")
 
 ### Ingest sources
 
@@ -980,10 +980,10 @@ Pushes custom logs to Dynatrace.
 | --- | --- |
 | Endpoint URL | `https://{your-environment-id}.live.dynatrace.com/api/v2/logs/ingest` `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/logs/ingest` |
 | Method | POST |
-| Authentication | [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Ingest logs** (`logs.ingest`) scope |
+| Authentication | [Access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Ingest logs** (`logs.ingest`) scope |
 | Payload | `text/plain` `application/json` |
 
-To learn more, see [Log Monitoring API v2 - POST ingest logs](/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2.").
+To learn more, see [Log Monitoring API v2 - POST ingest logs](../ru/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.").
 
 #### OpenTelemetry
 
@@ -993,16 +993,16 @@ Pushes custom logs to Dynatrace.
 | --- | --- |
 | Endpoint URL | `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp/v1/logs` |
 | Method | POST |
-| Authentication | [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with **Ingest logs** (`logs.ingest`) token scope |
+| Authentication | [Access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with **Ingest logs** (`logs.ingest`) token scope |
 | Payload | `application/x-protobuf` |
 
-To learn more, see [Ingest OTLP logs](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
+To learn more, see [Ingest OTLP logs](../ru/ingest-from/opentelemetry/otlp-api/ingest-logs.md "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
 
 Events (generic events)
 
 ### Prior knowledge
 
-* [Events powered by Grail overview (DPS)](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+* [Events powered by Grail overview (DPS)](../ru/license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
 
 ### Ingest sources
 
@@ -1019,10 +1019,10 @@ Ingests generic events from built-in endpoints.
 | --- | --- |
 | Endpoint URL | `https://{your-environment-id}.live.dynatrace.com/platform/ingest/v1/events` |
 | Method | POST |
-| Authentication | [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with **OpenPipeline - Ingest Events** (`openpipeline.events`) token scope |
+| Authentication | [Access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with **OpenPipeline - Ingest Events** (`openpipeline.events`) token scope |
 | Payload | `application/json` |
 
-To learn more, see [OpenPipeline Ingest API - POST Built-in generic events](/docs/platform/openpipeline/reference/openpipeline-ingest-api/generic-events/events-generic-builtin "Ingest generic events from built-in endpoints via OpenPipeline Ingest API.").
+To learn more, see [OpenPipeline Ingest API - POST Built-in generic events](platform/openpipeline/reference/openpipeline-ingest-api/generic-events/events-generic-builtin.md "Ingest generic events from built-in endpoints via OpenPipeline Ingest API.").
 
 #### Custom API
 
@@ -1032,18 +1032,18 @@ Configures custom endpoints to ingest generic events.
 | --- | --- |
 | Endpoint URL | `https://{your-environment-id}.live.dynatrace.com/platform/ingest/custom/events` |
 | Method | POST |
-| Authentication | [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with **OpenPipeline - Ingest Events (Custom)** (`openpipeline.events.custom`) token scope |
+| Authentication | [Access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with **OpenPipeline - Ingest Events (Custom)** (`openpipeline.events.custom`) token scope |
 | Payload | `application/json` |
 
-To learn more, see [OpenPipeline Ingest API - POST Custom generic event endpoint](/docs/platform/openpipeline/reference/openpipeline-ingest-api/generic-events/events-generic-custom-endpoint "Configure a custom generic event endpoint via OpenPipeline Ingest API.").
+To learn more, see [OpenPipeline Ingest API - POST Custom generic event endpoint](platform/openpipeline/reference/openpipeline-ingest-api/generic-events/events-generic-custom-endpoint.md "Configure a custom generic event endpoint via OpenPipeline Ingest API.").
 
 Events-Davis events
 
 ### Prior knowledge
 
-* [Davis events](/docs/semantic-dictionary/model/davis "Get to know the Semantic Dictionary models related to Davis AI.")
-* [OpenPipeline Data extraction stage](/docs/platform/openpipeline/concepts/processing#stage "Learn the core concepts of Dynatrace OpenPipeline processing.")
-* [Events powered by Grail overview (DPS)](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+* [Davis events](../common/semantic-dictionary/model/davis.md "Get to know the Semantic Dictionary models related to Davis AI.")
+* [OpenPipeline Data extraction stage](../ru/platform/openpipeline/concepts/processing.md#stage "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* [Events powered by Grail overview (DPS)](../ru/license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
 
 ### Ingest sources
 
@@ -1061,18 +1061,18 @@ Ingests a custom event to Dynatrace.
 | --- | --- |
 | Endpoint URL | `https://{your-environment-id}.live.dynatrace.com/api/v2/events/ingest` |
 | Method | POST |
-| Authentication | [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with **Ingest Events** (`events.ingest`) token scope |
+| Authentication | [Access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with **Ingest Events** (`events.ingest`) token scope |
 | Payload | `application/json` |
 
-To learn more, see [Events API v2 - POST an event](/docs/dynatrace-api/environment-api/events-v2/post-event "Ingests an event via the Dynatrace API.").
+To learn more, see [Events API v2 - POST an event](../ru/dynatrace-api/environment-api/events-v2/post-event.md "Ingests an event via the Dynatrace API.").
 
 Events-Davis problems
 
 ### Prior knowledge
 
-* [Davis problems](/docs/semantic-dictionary/model/davis "Get to know the Semantic Dictionary models related to Davis AI.")
-* [Classic root cause analysis](/docs/dynatrace-intelligence/root-cause-analysis/concepts#root-cause-analysis "Get acquainted with root cause analysis concepts.")
-* [Events powered by Grail overview (DPS)](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+* [Davis problems](../common/semantic-dictionary/model/davis.md "Get to know the Semantic Dictionary models related to Davis AI.")
+* [Classic root cause analysis](../ru/dynatrace-intelligence/root-cause-analysis/concepts.md#root-cause-analysis "Get acquainted with root cause analysis concepts.")
+* [Events powered by Grail overview (DPS)](../ru/license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
 
 ### Ingest sources
 
@@ -1084,8 +1084,8 @@ Events-SDLC events
 
 ### Prior knowledge
 
-* [How to ingest SDLC events](/docs/deliver/pipeline-observability-sdlc-events/sdlc-events "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.")
-* [Events powered by Grail overview (DPS)](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+* [How to ingest SDLC events](deliver/pipeline-observability-sdlc-events/sdlc-events.md "You can observe your pipeline through software development lifecycle (SDLC) events which you can then ingest to use to generate analytics.")
+* [Events powered by Grail overview (DPS)](../ru/license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
 
 ### Ingest sources
 
@@ -1104,10 +1104,10 @@ Ingests SDLC events from built-in endpoints.
 | --- | --- |
 | Endpoint URL | `https://{your-environment-id}.live.dynatrace.com/platform/ingest/v1/events.sdlc` |
 | Method | POST |
-| Authentication | [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with **OpenPipeline - Ingest Events, Security Development Lifecycle** (`openpipeline.sdlc`) token scope |
+| Authentication | [Access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with **OpenPipeline - Ingest Events, Security Development Lifecycle** (`openpipeline.sdlc`) token scope |
 | Payload | `application/json` |
 
-To learn more, see [OpenPipeline Ingest API - POST Built-in SDLC events](/docs/platform/openpipeline/reference/openpipeline-ingest-api/sdlc-events/events-sdlc-builtin "Ingest SDLC events from built-in endpoints via OpenPipeline Ingest API.").
+To learn more, see [OpenPipeline Ingest API - POST Built-in SDLC events](platform/openpipeline/reference/openpipeline-ingest-api/sdlc-events/events-sdlc-builtin.md "Ingest SDLC events from built-in endpoints via OpenPipeline Ingest API.").
 
 #### Custom endpoint for Software Development Lifecycle events
 
@@ -1117,10 +1117,10 @@ Configures custom endpoints to ingest SDLC events.
 | --- | --- |
 | Endpoint URL | `https://{your-environment-id}.live.dynatrace.com/platform/ingest/custom/events.sdlc` |
 | Method | POST |
-| Authentication | [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with **OpenPipeline - Ingest Events, Security Development Lifecycle (Custom)** (`openpipeline.sdlc.custom`) token scope |
+| Authentication | [Access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with **OpenPipeline - Ingest Events, Security Development Lifecycle (Custom)** (`openpipeline.sdlc.custom`) token scope |
 | Payload | `application/json` |
 
-To learn more, see [OpenPipeline Ingest API - POST Custom SDLC event endpoint](/docs/platform/openpipeline/reference/openpipeline-ingest-api/sdlc-events/events-sdlc-custom-endpoint "Configure a custom SDLC event endpoint via OpenPipeline Ingest API.").
+To learn more, see [OpenPipeline Ingest API - POST Custom SDLC event endpoint](platform/openpipeline/reference/openpipeline-ingest-api/sdlc-events/events-sdlc-custom-endpoint.md "Configure a custom SDLC event endpoint via OpenPipeline Ingest API.").
 
 Events-Security events
 
@@ -1128,12 +1128,12 @@ Migrate by December 2025
 
 The endpoints `events.security` are planned to be deprecated. Migrate your configurations to `security.events` endpoints by **end of December 2025**. The previous endpoints will remain available **until the migration is complete**.
 
-For a full overview of what's changing and step-by-step guidance on how to migrate, follow the instructions in the [Grail security table migration guide](/docs/secure/threat-observability/migration "Understand the changes in the new Grail security table and learn how to migrate to it.").
+For a full overview of what's changing and step-by-step guidance on how to migrate, follow the instructions in the [Grail security table migration guide](../ru/secure/threat-observability/migration.md "Understand the changes in the new Grail security table and learn how to migrate to it.").
 
 ### Prior knowledge
 
-* [How to ingest security events](/docs/secure/threat-observability/security-events-ingest#ingest "Ingest external security data into Grail.")
-* [Events powered by Grail overview (DPS)](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+* [How to ingest security events](../ru/secure/threat-observability/security-events-ingest.md#ingest "Ingest external security data into Grail.")
+* [Events powered by Grail overview (DPS)](../ru/license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
 
 | Ingest source | dt.openpipeline.source | Type |
 | --- | --- | --- |
@@ -1148,30 +1148,30 @@ Ingests security events from built-in endpoints.
 | --- | --- |
 | Endpoint URL | `https://{your-environment-id}.live.dynatrace.com/platform/ingest/v1/events.security` |
 | Method | POST |
-| Authentication | [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with **OpenPipeline - Ingest Security Events (Built-in)** (`openpipeline.events_security`) token scope |
+| Authentication | [Access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with **OpenPipeline - Ingest Security Events (Built-in)** (`openpipeline.events_security`) token scope |
 | Payload | `application/json` |
 
-To learn more, see [OpenPipeline Ingest API - POST Built-in security events (legacy)](/docs/platform/openpipeline/reference/openpipeline-ingest-api/security-events/events-security-builtin "Ingest security events from built-in endpoints via OpenPipeline Ingest API.").
+To learn more, see [OpenPipeline Ingest API - POST Built-in security events (legacy)](platform/openpipeline/reference/openpipeline-ingest-api/security-events/events-security-builtin.md "Ingest security events from built-in endpoints via OpenPipeline Ingest API.").
 
 #### Custom security events API (legacy)
 
-Configures custom endpoints to ingest security events. For details, see [Ingest custom security events via API](/docs/secure/threat-observability/security-events-ingest/ingest-custom-data "Ingest security events from custom third-party products via API.").
+Configures custom endpoints to ingest security events. For details, see [Ingest custom security events via API](../ru/secure/threat-observability/security-events-ingest/ingest-custom-data.md "Ingest security events from custom third-party products via API.").
 
 | Property | Specification |
 | --- | --- |
 | Endpoint URL | `https://{your-environment-id}.live.dynatrace.com/platform/ingest/custom/events.security` |
 | Method | POST |
-| Authentication | [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with **OpenPipeline - Ingest Security Events (Custom)** (`openpipeline.events_security.custom`) token scope |
+| Authentication | [Access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with **OpenPipeline - Ingest Security Events (Custom)** (`openpipeline.events_security.custom`) token scope |
 | Payload | `application/json` |
 
-To learn more, see [OpenPipeline Ingest API - POST Custom security event endpoint (legacy)](/docs/platform/openpipeline/reference/openpipeline-ingest-api/security-events/events-security-custom-endpoint "Configure a custom security event endpoint via OpenPipeline Ingest API.").
+To learn more, see [OpenPipeline Ingest API - POST Custom security event endpoint (legacy)](platform/openpipeline/reference/openpipeline-ingest-api/security-events/events-security-custom-endpoint.md "Configure a custom security event endpoint via OpenPipeline Ingest API.").
 
 Metrics
 
 ### Prior knowledge
 
-* [How to ingest metrics](/docs/analyze-explore-automate/metrics "Metrics powered by Grail offer a comprehensive solution to manage your metrics data, in integration with logs, spans, and events, providing a unified approach to data analysis.")
-* [Metrics powered by Grail overview (DPS)](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+* [How to ingest metrics](analyze-explore-automate/metrics.md "Metrics powered by Grail offer a comprehensive solution to manage your metrics data, in integration with logs, spans, and events, providing a unified approach to data analysis.")
+* [Metrics powered by Grail overview (DPS)](../ru/license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
 
 ### Ingest sources
 
@@ -1187,10 +1187,10 @@ Metrics
 | --- | --- |
 | Endpoint URL | `https://{your-environment-id}.live.dynatrace.com/api/v2/metrics/ingest` |
 | Method | POST |
-| Authentication | [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with **Ingest metrics** (`metrics.ingest`) token scope |
+| Authentication | [Access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with **Ingest metrics** (`metrics.ingest`) token scope |
 | Payload | `text/plain` |
 
-To learn more, see [Metrics API - POST ingest data points](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ingest custom metrics to Dynatrace via Metrics v2 API.").
+To learn more, see [Metrics API - POST ingest data points](../ru/dynatrace-api/environment-api/metric-v2/post-ingest-metrics.md "Ingest custom metrics to Dynatrace via Metrics v2 API.").
 
 #### OpenTelemetry
 
@@ -1200,17 +1200,17 @@ Ingests OpenTelemetry metrics into Dynatrace.
 | --- | --- |
 | Endpoint URL | `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp/v1/metrics` |
 | Method | POST |
-| Authentication | [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with **Ingest metrics** (`metrics.ingest`) token scope |
+| Authentication | [Access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with **Ingest metrics** (`metrics.ingest`) token scope |
 | Payload | `application/x-protobuf` |
 
-To learn more, see [OpenTelemetry metrics ingest API](/docs/dynatrace-api/environment-api/opentelemetry/post-metrics "Send OpenTelemetry metrics to Dynatrace via API.").
+To learn more, see [OpenTelemetry metrics ingest API](dynatrace-api/environment-api/opentelemetry/post-metrics.md "Send OpenTelemetry metrics to Dynatrace via API.").
 
 Security events (new)
 
 ### Prior knowledge
 
-* [How to ingest security events](/docs/secure/threat-observability/security-events-ingest#ingest "Ingest external security data into Grail.")
-* [Events powered by Grail overview (DPS)](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
+* [How to ingest security events](../ru/secure/threat-observability/security-events-ingest.md#ingest "Ingest external security data into Grail.")
+* [Events powered by Grail overview (DPS)](../ru/license/capabilities/events.md "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
 
 ### Ingest sources
 
@@ -1227,10 +1227,10 @@ Ingests security events from built-in endpoints.
 | --- | --- |
 | Endpoint URL | `https://{your-environment-id}.live.dynatrace.com/platform/ingest/v1/security.events` |
 | Method | POST |
-| Authentication | [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with **OpenPipeline - Ingest Security Events (Built-in)** (`openpipeline.events_security`) token scope |
+| Authentication | [Access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with **OpenPipeline - Ingest Security Events (Built-in)** (`openpipeline.events_security`) token scope |
 | Payload | `application/json` |
 
-To learn more, see [OpenPipeline Ingest API - POST Built-in security events (new)](/docs/platform/openpipeline/reference/openpipeline-ingest-api/security-events/security-events-builtin "Ingest security events from built-in endpoints via OpenPipeline Ingest API.").
+To learn more, see [OpenPipeline Ingest API - POST Built-in security events (new)](platform/openpipeline/reference/openpipeline-ingest-api/security-events/security-events-builtin.md "Ingest security events from built-in endpoints via OpenPipeline Ingest API.").
 
 #### Custom security events API (new)
 
@@ -1240,17 +1240,17 @@ Configures custom endpoints to ingest security events.
 | --- | --- |
 | Endpoint URL | `https://{your-environment-id}.live.dynatrace.com/platform/ingest/custom/security.events` |
 | Method | POST |
-| Authentication | [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with **OpenPipeline - Ingest Security Events (Custom)** (`openpipeline.events_security.custom`) token scope |
+| Authentication | [Access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with **OpenPipeline - Ingest Security Events (Custom)** (`openpipeline.events_security.custom`) token scope |
 | Payload | `application/json` |
 
-To learn more, see [OpenPipeline Ingest API - POST Custom security event endpoint (new)](/docs/platform/openpipeline/reference/openpipeline-ingest-api/security-events/security-events-custom-endpoint "Configure a custom security event endpoint via OpenPipeline Ingest API.").
+To learn more, see [OpenPipeline Ingest API - POST Custom security event endpoint (new)](platform/openpipeline/reference/openpipeline-ingest-api/security-events/security-events-custom-endpoint.md "Configure a custom security event endpoint via OpenPipeline Ingest API.").
 
 Spans
 
 ### Prior knowledge
 
-* [How to ingest traces](/docs/observe/application-observability/distributed-tracing/ingest-traces "Instrument your applications with OneAgent or OpenTelemetry to start ingesting trace data into Dynatrace.")
-* [Traces powered by Grail overview (DPS)](/docs/license/capabilities/traces "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.")
+* [How to ingest traces](../ru/observe/application-observability/distributed-tracing/ingest-traces.md "Instrument your applications with OneAgent or OpenTelemetry to start ingesting trace data into Dynatrace.")
+* [Traces powered by Grail overview (DPS)](../ru/license/capabilities/traces.md "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.")
 
 ### Ingest sources
 
@@ -1269,17 +1269,17 @@ Ingests OpenTelemetry traces to Dynatrace.
 | --- | --- |
 | Endpoint URL | `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp/v1/traces` |
 | Method | POST |
-| Authentication | [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with **Ingest OpenTelemetry traces** (`openTelemetryTrace.ingest`) token scope |
+| Authentication | [Access token](../ru/dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with **Ingest OpenTelemetry traces** (`openTelemetryTrace.ingest`) token scope |
 | Payload | `application/x-protobuf` |
 
-To learn more, see [OpenTelemetry trace ingest API](/docs/dynatrace-api/environment-api/opentelemetry/post-traces "Send OpenTelemetry traces to Dynatrace via API..").
+To learn more, see [OpenTelemetry trace ingest API](dynatrace-api/environment-api/opentelemetry/post-traces.md "Send OpenTelemetry traces to Dynatrace via API..").
 
 System events
 
 ### Prior knowledge
 
-* [System event models](/docs/semantic-dictionary/model/dt-system-events "Get to know the Semantic Dictionary models related to system events.")
-* [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+* [System event models](semantic-dictionary/model/dt-system-events.md "Get to know the Semantic Dictionary models related to system events.")
+* [Extensions](../ru/ingest-from/extensions.md "Learn how to create and manage Dynatrace Extensions.")
 * Supported system events in OpenPipeline are limited to
 
   + App Lifecycle Notifications
@@ -1321,10 +1321,10 @@ User events & sessions
 
 ### Prior knowledge
 
-* [User events](/docs/observe/digital-experience/rum-concepts/user-and-error-events "Learn about user and error events and the types of user and error events captured by Dynatrace.")
-* [User sessions](/docs/observe/digital-experience/rum-concepts/user-session "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.")
-* How to capture user events and sessions on [Android](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/android/id-09-user-and-session "Identify users across sessions and devices, manage session lifecycle, and attach properties that apply to all events in a session."), [iOS](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/ios/id-09-user-and-session "Identify users, manage sessions, and report session properties in your iOS application."), [Flutter](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/flutter/id-09-user-and-session "Learn how to identify users, manage sessions, and report session properties in your Flutter application.") or [React Native](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/react-native/id-09-user-and-session "Learn how to identify users, manage sessions, and report session properties in your React Native application.")
-* [Digital Experience Monitoring (DEM) overview (DPS)](/docs/license/capabilities/digital-experience-monitoring "Learn how Dynatrace Digital Experience Monitoring (DEM) consumption is calculated using the Dynatrace Platform Subscription model.")
+* [User events](../ru/observe/digital-experience/rum-concepts/user-and-error-events.md "Learn about user and error events and the types of user and error events captured by Dynatrace.")
+* [User sessions](observe/digital-experience/rum-concepts/user-session.md "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.")
+* How to capture user events and sessions on [Android](observe/digital-experience/new-rum-experience/mobile-frontends/android/id-09-user-and-session.md "Identify users across sessions and devices, manage session lifecycle, and attach properties that apply to all events in a session."), [iOS](observe/digital-experience/new-rum-experience/mobile-frontends/ios/id-09-user-and-session.md "Identify users, manage sessions, and report session properties in your iOS application."), [Flutter](observe/digital-experience/new-rum-experience/mobile-frontends/flutter/id-09-user-and-session.md "Learn how to identify users, manage sessions, and report session properties in your Flutter application.") or [React Native](observe/digital-experience/new-rum-experience/mobile-frontends/react-native/id-09-user-and-session.md "Learn how to identify users, manage sessions, and report session properties in your React Native application.")
+* [Digital Experience Monitoring (DEM) overview (DPS)](../ru/license/capabilities/digital-experience-monitoring.md "Learn how Dynatrace Digital Experience Monitoring (DEM) consumption is calculated using the Dynatrace Platform Subscription model.")
 
 ### Ingest sources
 
@@ -1334,8 +1334,8 @@ User events & sessions
 
 ## Related topics
 
-* [Data flow in OpenPipeline](/docs/platform/openpipeline/concepts/data-flow "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
-* [How to ingest data (events)](/docs/platform/openpipeline/getting-started/how-to-ingestion "How to ingest data for a configuration scope in OpenPipeline.")
+* [Data flow in OpenPipeline](../ru/platform/openpipeline/concepts/data-flow.md "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
+* [How to ingest data (events)](../ru/platform/openpipeline/getting-started/how-to-ingestion.md "How to ingest data for a configuration scope in OpenPipeline.")
 
 ---
 
@@ -1356,9 +1356,9 @@ scraped: 2026-03-06T21:13:46.603842
 * 8-min read
 * Updated on Dec 15, 2025
 
-With [Dynatrace powered by Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), you can use [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") (DQL) functions and logical operators in matchers.
+With [Dynatrace powered by Grail](../ru/platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more."), you can use [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") (DQL) functions and logical operators in matchers.
 
-The matcher filters the ingested data and reduces the scope of data processed by the processor that you create. You can use the matcher in [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to:
+The matcher filters the ingested data and reduces the scope of data processed by the processor that you create. You can use the matcher in [OpenPipeline](../ru/platform/openpipeline.md "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to:
 
 * Filter records containing a specified phrase.
 * Search data for a specific value in a given attribute.
@@ -1366,7 +1366,7 @@ The matcher filters the ingested data and reduces the scope of data processed by
 * Use logical operators to connect two or more expressions.
 * Request logs that show duration for requests longer than `1s`.
 
-To learn about the use of logical operators in DQL, see [Logical or equality operators](/docs/platform/grail/dynatrace-query-language/operators#dql-logical-or-equality-operators "A list of DQL Operators.").
+To learn about the use of logical operators in DQL, see [Logical or equality operators](../ru/platform/grail/dynatrace-query-language/operators.md#dql-logical-or-equality-operators "A list of DQL Operators.").
 
 ## Functions
 
@@ -1376,7 +1376,7 @@ Filters records containing a specified phrase. Returns only matching records. Th
 
 ##### Validation
 
-The `matchesPhrase` function performs case-insensitive [contains](/docs/platform/grail/dynatrace-query-language/functions#contains "A list of DQL functions.") for the whole query string and doesn't support mid-string wildcards.
+The `matchesPhrase` function performs case-insensitive [contains](../ru/platform/grail/dynatrace-query-language/functions.md#contains "A list of DQL functions.") for the whole query string and doesn't support mid-string wildcards.
 For found results, additional validation takes place:
 
 * If the query starts with a word character, the preceding character must be a non-word character.
@@ -1458,7 +1458,7 @@ filter isNull(`host.name`)
 
 ## Operators
 
-Logical operators can be used to connect two or more expressions. Check out [Logical or equality operators](/docs/platform/grail/dynatrace-query-language/operators#dql-logical-or-equality-operators "A list of DQL Operators.") to find out more about the behavior of logical operators in DQL.
+Logical operators can be used to connect two or more expressions. Check out [Logical or equality operators](../ru/platform/grail/dynatrace-query-language/operators.md#dql-logical-or-equality-operators "A list of DQL Operators.") to find out more about the behavior of logical operators in DQL.
 
 ### OR
 
@@ -1541,7 +1541,7 @@ With DQL matcher in OpenPipeline, you can use the following numerical operators:
 
 #### Strict equality
 
-[Logical operator](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.") (`==`) indicating an exact match.
+[Logical operator](../ru/platform/grail/dynatrace-query-language/operators.md "A list of DQL Operators.") (`==`) indicating an exact match.
 
 Configuration scopes need to be identical. However, if the decimal value is `0`, floating numbers can be compared with integer data. For example, `1==1.0`.
 For strings, the search is case-sensitive.
@@ -1554,9 +1554,9 @@ Contrary to `matchesValue` function, `strict equality` operator performs case-se
 
 ## Related topics
 
-* [DQL Functions in OpenPipeline](/docs/platform/openpipeline/reference/openpipeline-dql-functions "A list of DQL functions available in OpenPipeline.")
-* [DQL Commands](/docs/platform/openpipeline/reference/openpipeline-dql-commands "A list of DQL commands available in OpenPipeline.")
-* [DQL Operators in OpenPipeline DQL processor](/docs/platform/openpipeline/reference/openpipeline-dql-operators "A list of DQL operators available in OpenPipeline DQL processor.")
+* [DQL Functions in OpenPipeline](platform/openpipeline/reference/openpipeline-dql-functions.md "A list of DQL functions available in OpenPipeline.")
+* [DQL Commands](platform/openpipeline/reference/openpipeline-dql-commands.md "A list of DQL commands available in OpenPipeline.")
+* [DQL Operators in OpenPipeline DQL processor](platform/openpipeline/reference/openpipeline-dql-operators.md "A list of DQL operators available in OpenPipeline DQL processor.")
 
 ---
 
@@ -1583,7 +1583,7 @@ The following page lists the default limits of Dynatrace OpenPipeline.
 
 Limitations specific to configuration scopes might override OpenPipeline generic limits. For limits specific to the configuration scope, see
 
-* [Log Management and Analytics default limits](/docs/analyze-explore-automate/logs/lma-limits "Default limits for the latest version of Dynatrace Log Management and Analytics.") and [Schema validation for logs](#schema-validation-logs)
+* [Log Management and Analytics default limits](../ru/analyze-explore-automate/logs/lma-limits.md "Default limits for the latest version of Dynatrace Log Management and Analytics.") and [Schema validation for logs](#schema-validation-logs)
 * [Fields with limits for metrics](#fields-metrics)
 * [Fields with limits for spans](#fields-spans)
 
@@ -1623,7 +1623,7 @@ Limitations specific to configuration scopes might override OpenPipeline generic
 
   2
 
-  OneAgent version 1.309Dynatrace Operator version 1.4.2+The field is available before the Processing stage if [OneAgent Log module](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.") is running in standalone mode.
+  OneAgent version 1.309Dynatrace Operator version 1.4.2+The field is available before the Processing stage if [OneAgent Log module](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes.md "Dynatrace supports collecting log data from Kubernetes container orchestration systems via OneAgent Log Module or Kubernetes Log Module.") is running in standalone mode.
 
 ### Fields with limits for metrics
 
@@ -1728,7 +1728,7 @@ If the schema is not valid the log is dropped.
 
 The Smartscape ID calculation supports `string` only. The ID components must be of type `string`.
 
-[Pre-process](/docs/platform/openpipeline/concepts/data-flow#pre-processing "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.") records to convert the values you need to the `string` data type.
+[Pre-process](../ru/platform/openpipeline/concepts/data-flow.md#pre-processing "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.") records to convert the values you need to the `string` data type.
 
 ## Configuration
 
@@ -1773,29 +1773,29 @@ scraped: 2026-03-06T21:16:08.786250
 
 Replaced by Settings API
 
-* [OpenPipeline API - GET all configurations](/docs/platform/openpipeline/reference/openpipeline-api/configurations-api/get-all "View all OpenPipeline configurations of your environment via the Dynatrace API.")
-* [OpenPipeline API - GET a configuration](/docs/platform/openpipeline/reference/openpipeline-api/configurations-api/get-configuration "View an OpenPipeline configuration of your environment via the Dynatrace API.")
-* [OpenPipeline API - PUT a configuration](/docs/platform/openpipeline/reference/openpipeline-api/configurations-api/put-configuration "Edit an OpenPipeline configuration of your environment via the Dynatrace API.")
+* [OpenPipeline API - GET all configurations](platform/openpipeline/reference/openpipeline-api/configurations-api/get-all.md "View all OpenPipeline configurations of your environment via the Dynatrace API.")
+* [OpenPipeline API - GET a configuration](platform/openpipeline/reference/openpipeline-api/configurations-api/get-configuration.md "View an OpenPipeline configuration of your environment via the Dynatrace API.")
+* [OpenPipeline API - PUT a configuration](platform/openpipeline/reference/openpipeline-api/configurations-api/put-configuration.md "Edit an OpenPipeline configuration of your environment via the Dynatrace API.")
 
 ### Preview API
 
-* [OpenPipeline API - POST a processor preview](/docs/platform/openpipeline/reference/openpipeline-api/preview-api/post-processor "Create a preview of an OpenPipeline processor of your environment via the Dynatrace API.")
+* [OpenPipeline API - POST a processor preview](platform/openpipeline/reference/openpipeline-api/preview-api/post-processor.md "Create a preview of an OpenPipeline processor of your environment via the Dynatrace API.")
 
 ### Matcher API
 
-* [OpenPipeline API - POST verify a matcher](/docs/platform/openpipeline/reference/openpipeline-api/matcher-api/post-verify "Verify an OpenPipeline matcher validity via the Dynatrace API.")
-* [OpenPipeline API - POST autocomplete suggestions for a matcher](/docs/platform/openpipeline/reference/openpipeline-api/matcher-api/post-autocomplete "Create autocompletion suggestions for an OpenPipeline matcher via the Dynatrace API.")
-* [OpenPipeline API - POST a DQL matcher from a LQL matcher](/docs/platform/openpipeline/reference/openpipeline-api/matcher-api/post-lqltodql "Transform a LQL matcher into a OpenPipeline DQL matcher via the Dynatrace API.")
+* [OpenPipeline API - POST verify a matcher](platform/openpipeline/reference/openpipeline-api/matcher-api/post-verify.md "Verify an OpenPipeline matcher validity via the Dynatrace API.")
+* [OpenPipeline API - POST autocomplete suggestions for a matcher](platform/openpipeline/reference/openpipeline-api/matcher-api/post-autocomplete.md "Create autocompletion suggestions for an OpenPipeline matcher via the Dynatrace API.")
+* [OpenPipeline API - POST a DQL matcher from a LQL matcher](platform/openpipeline/reference/openpipeline-api/matcher-api/post-lqltodql.md "Transform a LQL matcher into a OpenPipeline DQL matcher via the Dynatrace API.")
 
 ### DQL Processor API
 
-* [OpenPipeline API - POST verify a DQL processor](/docs/platform/openpipeline/reference/openpipeline-api/dql-processor-api/post-verify "Verify an OpenPipeline DQL processor script validity via the Dynatrace API.")
-* [OpenPipeline API - POST autocomplete suggestions for a DQL processor](/docs/platform/openpipeline/reference/openpipeline-api/dql-processor-api/post-autocomplete "Create autocompletion suggestions for an OpenPipeline DQL processor via the Dynatrace API.")
+* [OpenPipeline API - POST verify a DQL processor](platform/openpipeline/reference/openpipeline-api/dql-processor-api/post-verify.md "Verify an OpenPipeline DQL processor script validity via the Dynatrace API.")
+* [OpenPipeline API - POST autocomplete suggestions for a DQL processor](platform/openpipeline/reference/openpipeline-api/dql-processor-api/post-autocomplete.md "Create autocompletion suggestions for an OpenPipeline DQL processor via the Dynatrace API.")
 
 ### Technology API
 
-* [OpenPipeline API - GET all technology bundles](/docs/platform/openpipeline/reference/openpipeline-api/technology-api/get-all "View all technology bundles for OpenPipeline configuration via the Dynatrace API.")
-* [OpenPipeline API - GET technology processors](/docs/platform/openpipeline/reference/openpipeline-api/technology-api/get-technology "View the processors of a technology bundle for OpenPipeline configuration via the Dynatrace API.")
+* [OpenPipeline API - GET all technology bundles](platform/openpipeline/reference/openpipeline-api/technology-api/get-all.md "View all technology bundles for OpenPipeline configuration via the Dynatrace API.")
+* [OpenPipeline API - GET technology processors](platform/openpipeline/reference/openpipeline-api/technology-api/get-technology.md "View the processors of a technology bundle for OpenPipeline configuration via the Dynatrace API.")
 
 ---
 
@@ -1844,25 +1844,25 @@ Required permissions: `settings:objects:read` and `settings:objects:write` with 
 
 Show Settings API schemas
 
-* [Settings API - Pipeline Groups configuration (events) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-pipeline-groups "View builtin:openpipeline.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (bizevents) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-pipeline-groups "View builtin:openpipeline.bizevents.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (spans) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-pipeline-groups "View builtin:openpipeline.spans.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (logs) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipeline-groups "View builtin:openpipeline.logs.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (davis.problems) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-pipeline-groups "View builtin:openpipeline.davis.problems.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (metrics) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-pipeline-groups "View builtin:openpipeline.metrics.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (security.events) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-pipeline-groups "View builtin:openpipeline.security.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (events.security) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-pipeline-groups "View builtin:openpipeline.events.security.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (davis.events) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-pipeline-groups "View builtin:openpipeline.davis.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (events.sdlc) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-pipeline-groups "View builtin:openpipeline.events.sdlc.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (system.events) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-pipeline-groups "View builtin:openpipeline.system.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (usersessions) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-pipeline-groups "View builtin:openpipeline.usersessions.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (user.events) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-pipeline-groups "View builtin:openpipeline.user.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (events) schema table](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-pipeline-groups.md "View builtin:openpipeline.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (bizevents) schema table](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-pipeline-groups.md "View builtin:openpipeline.bizevents.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (spans) schema table](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-pipeline-groups.md "View builtin:openpipeline.spans.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (logs) schema table](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipeline-groups.md "View builtin:openpipeline.logs.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (davis.problems) schema table](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-pipeline-groups.md "View builtin:openpipeline.davis.problems.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (metrics) schema table](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-pipeline-groups.md "View builtin:openpipeline.metrics.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (security.events) schema table](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-pipeline-groups.md "View builtin:openpipeline.security.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (events.security) schema table](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-pipeline-groups.md "View builtin:openpipeline.events.security.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (davis.events) schema table](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-pipeline-groups.md "View builtin:openpipeline.davis.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (events.sdlc) schema table](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-pipeline-groups.md "View builtin:openpipeline.events.sdlc.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (system.events) schema table](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-pipeline-groups.md "View builtin:openpipeline.system.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (usersessions) schema table](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-pipeline-groups.md "View builtin:openpipeline.usersessions.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (user.events) schema table](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-pipeline-groups.md "View builtin:openpipeline.user.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
 
 ### Prior knowledge
 
-* You know how to create pipelines via the [Settings API](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipelines "View builtin:openpipeline.logs.pipelines settings schema table of your monitoring environment via the Dynatrace API.").
-* You know how to [set access control in OpenPipeline](/docs/platform/openpipeline/getting-started/set-access-control "Distribute OpenPipeline ingest source and pipeline management via owner-based access control.").
-* You are familiar with [pipeline groups](/docs/platform/openpipeline/concepts/pipeline-groups "Understand how restricting and mandating configurations for pipeline groups via Settings API works.") and [pipeline group limits](/docs/platform/openpipeline/reference/limits#pipeline-groups "Reference limits of Dynatrace OpenPipeline.").
+* You know how to create pipelines via the [Settings API](dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipelines.md "View builtin:openpipeline.logs.pipelines settings schema table of your monitoring environment via the Dynatrace API.").
+* You know how to [set access control in OpenPipeline](../ru/platform/openpipeline/getting-started/set-access-control.md "Distribute OpenPipeline ingest source and pipeline management via owner-based access control.").
+* You are familiar with [pipeline groups](platform/openpipeline/concepts/pipeline-groups.md "Understand how restricting and mandating configurations for pipeline groups via Settings API works.") and [pipeline group limits](../ru/platform/openpipeline/reference/limits.md#pipeline-groups "Reference limits of Dynatrace OpenPipeline.").
 
 ## Configure pipeline groups
 
@@ -3620,13 +3620,13 @@ In this tutorial, we'll create two pipeline groups, one per cloud provider, each
 
   }
   ```
-* Use the [`POST /api/v2/settings/objects`](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") request with the pipeline schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.pipelines`).
+* Use the [`POST /api/v2/settings/objects`](../ru/dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") request with the pipeline schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.pipelines`).
 
 
 
 ### 2. Create member pipelines
 
-1. To create a member pipeline, create a custom pipeline with the member role (`"groupRole": "memberPipeline"` and `"routing": "routable"`). Use the OpenPipeline settings Web UI or the [`POST /api/v2/settings/objects`](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") request with the pipeline schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.pipelines`).
+1. To create a member pipeline, create a custom pipeline with the member role (`"groupRole": "memberPipeline"` and `"routing": "routable"`). Use the OpenPipeline settings Web UI or the [`POST /api/v2/settings/objects`](../ru/dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") request with the pipeline schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.pipelines`).
 
    JSON example
 
@@ -3807,7 +3807,7 @@ In this tutorial, we'll create two pipeline groups, one per cloud provider, each
 
    }
    ```
-2. Create the associated route. Use the OpenPipeline settings Web UI or the [`POST /api/v2/settings/objects`](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") request with the route schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.routing`).
+2. Create the associated route. Use the OpenPipeline settings Web UI or the [`POST /api/v2/settings/objects`](../ru/dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") request with the route schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.routing`).
 
    JSON example
 
@@ -4349,19 +4349,19 @@ Azure
 
    }
    ```
-2. Use the [`POST /api/v2/settings/objects`](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") request with the pipeline group schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.pipeline-groups`).
+2. Use the [`POST /api/v2/settings/objects`](../ru/dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") request with the pipeline group schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.pipeline-groups`).
 
 ## Congratulations!
 
 You now have a complete API-based workflow to manage pipeline groups, enforce global governance, and scale pipeline operations across AWS and Azure environments.
 
-You can create new member pipelines and then add them to the group any time. Use the [`PUT /api/v2/settings/objects/{objectId}`](/docs/dynatrace-api/environment-api/settings/objects/put-object "Edit a settings object via the Dynatrace API.") request with the pipeline group schema of the configuration scope (`builtin:openpipeline.<configuration-scope>.pipeline-groups`).
+You can create new member pipelines and then add them to the group any time. Use the [`PUT /api/v2/settings/objects/{objectId}`](dynatrace-api/environment-api/settings/objects/put-object.md "Edit a settings object via the Dynatrace API.") request with the pipeline group schema of the configuration scope (`builtin:openpipeline.<configuration-scope>.pipeline-groups`).
 
 Once the request is successfull, the `memberPipelines` field of the pipeline group lists the member pipeline IDs.
 
 ## Related topics
 
-* [OpenPipeline pipeline groups](/docs/platform/openpipeline/concepts/pipeline-groups "Understand how restricting and mandating configurations for pipeline groups via Settings API works.")
+* [OpenPipeline pipeline groups](platform/openpipeline/concepts/pipeline-groups.md "Understand how restricting and mandating configurations for pipeline groups via Settings API works.")
 
 ---
 
@@ -4906,7 +4906,7 @@ With a single definition, you've extracted the user identifier from different lo
 
 
 
-A JSON file contains information that you want to parse out and create new dedicate fields for it, based on the format. You can use [Dynatrace Pattern Language (DPL) matchers](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.") for easier pattern building.
+A JSON file contains information that you want to parse out and create new dedicate fields for it, based on the format. You can use [Dynatrace Pattern Language (DPL) matchers](../ru/platform/grail/dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.") for easier pattern building.
 
 ### Steps
 
@@ -5243,7 +5243,7 @@ Repetitive patterns
 
 Part of a field
 
-The following example uses the [`ipMask`](/docs/platform/grail/dynatrace-query-language/functions/network-functions#ipMask "A list of DQL array functions.") function to set the last octet to the value `0`.
+The following example uses the [`ipMask`](platform/grail/dynatrace-query-language/functions/network-functions.md#ipMask "A list of DQL array functions.") function to set the last octet to the value `0`.
 
 ```
 fieldsAdd ip = ipMask(ip, 24)
@@ -5279,7 +5279,7 @@ Conclusion
 }
 ```
 
-The following example uses the [`replacePattern`](/docs/platform/grail/dynatrace-query-language/functions/string-functions#replacePattern "A list of DQL string functions.") function together with DPL matchers and the [`Lookaround` behind modifier](/docs/platform/grail/dynatrace-pattern-language/log-processing-modifiers#lookaround "Explore DPL syntax for optional controlling elements (modifiers).")(`<<`) to match a specific part (the last octet) of an IP address and set it to `xxx`.
+The following example uses the [`replacePattern`](../ru/platform/grail/dynatrace-query-language/functions/string-functions.md#replacePattern "A list of DQL string functions.") function together with DPL matchers and the [`Lookaround` behind modifier](platform/grail/dynatrace-pattern-language/log-processing-modifiers.md#lookaround "Explore DPL syntax for optional controlling elements (modifiers).")(`<<`) to match a specific part (the last octet) of an IP address and set it to `xxx`.
 
 ```
 fieldsAdd ip = replacePattern(ip, "<< (INT'.'INT'.'INT'.') INT", "xxx")
@@ -5315,7 +5315,7 @@ Conclusion
 }
 ```
 
-The following example uses the [`replacePattern`](/docs/platform/grail/dynatrace-query-language/functions/string-functions#replacePattern "A list of DQL string functions.") function to mask all IP addresses within a single field.
+The following example uses the [`replacePattern`](../ru/platform/grail/dynatrace-query-language/functions/string-functions.md#replacePattern "A list of DQL string functions.") function to mask all IP addresses within a single field.
 
 ```
 fieldsAdd content=replacePattern(content, "IPADDR", "xxx.xxx.xxx.xxx")
@@ -5351,7 +5351,7 @@ Conclusion
 }
 ```
 
-The following example parses out the username of an email address and uses the [`replaceString`](/docs/platform/grail/dynatrace-query-language/functions/string-functions#replaceString "A list of DQL string functions.") function to replace it with a static value.
+The following example parses out the username of an email address and uses the [`replaceString`](../ru/platform/grail/dynatrace-query-language/functions/string-functions.md#replaceString "A list of DQL string functions.") function to replace it with a static value.
 
 ```
 parse content, "LD 'email: ' LD:user '@'"
@@ -5397,8 +5397,8 @@ Conclusion
 
 ## Related topics
 
-* [Configure a processing pipeline](/docs/platform/openpipeline/getting-started/tutorial-configure-processing "Configure ingest sources, routes, and processing for your data in OpenPipeline.")
-* [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* [Configure a processing pipeline](../ru/platform/openpipeline/getting-started/tutorial-configure-processing.md "Configure ingest sources, routes, and processing for your data in OpenPipeline.")
+* [Processing in OpenPipeline](../ru/platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
 
 ---
 
@@ -5421,11 +5421,11 @@ scraped: 2026-03-06T21:10:39.754758
 
 OpenPipeline processing allows you to normalize span and metric data to prevent high-cardinality issues that can make aggregations and analysis unusable.
 
-The following use cases show how to reduce cardinality in three different views in [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](/docs/observe/application-observability/services/services-app "Maintain centralized control over service health, performance, and resources with the Services app."):
+The following use cases show how to reduce cardinality in three different views in [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](../ru/observe/application-observability/services/services-app.md "Maintain centralized control over service health, performance, and resources with the Services app."):
 
 * [Outbound calls](#outbound-calls)
 * [Database queries](#database-queries): This tab shows aggregated metrics for database calls made by your service.
-* [Message processing](/docs/observe/application-observability/services/monitor-service-message-processing "Monitor service message processing")
+* [Message processing](../ru/observe/application-observability/services/monitor-service-message-processing.md "Monitor service message processing")
 
 ## Outbound calls
 
@@ -5489,7 +5489,7 @@ Now that we have defined and saved a processor, we can enable the processor by c
 
 ## Database queries
 
-Redis statements often include unique identifiers or values, for example, `GET user:12345`, `GET user:12346`, and `GET user:12347` or `SET order:123`, `SET order:124`, and `SET order:125`. This high cardinality results in thousands of distinct entries shown in the [**Database queries** view](/docs/observe/application-observability/services/services-app#database-queries "Maintain centralized control over service health, performance, and resources with the Services app.") in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**.
+Redis statements often include unique identifiers or values, for example, `GET user:12345`, `GET user:12346`, and `GET user:12347` or `SET order:123`, `SET order:124`, and `SET order:125`. This high cardinality results in thousands of distinct entries shown in the [**Database queries** view](../ru/observe/application-observability/services/services-app.md#database-queries "Maintain centralized control over service health, performance, and resources with the Services app.") in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**.
 
 Unlike parameterized SQL databases, where OneAgent or OpenTelemetry automatically handles normalization, Redis commands require manual cardinality handling via an OpenPipeline pipeline. In this section, we'll utilize a processing rule to transform these commands into normalized patterns such as `GET` or `SET`, making your Redis query data more actionable.
 
@@ -5919,23 +5919,23 @@ How to set up OpenPipeline to extract a metric from a captured span via five exa
 
 Prior knowledge
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Processing in OpenPipeline](../ru/platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
 
 Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine.
-* Dynatrace Platform Subscription (DPS) with [Traces powered by Grail (DPS)](/docs/license/capabilities/traces "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.") capabilities.
-* OpenPipeline permissions: `settings:objects:read` and `settings:objects:write`. To learn how to set up the permissions, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
-* [Distributed Tracing permissions](/docs/observe/application-observability/distributed-tracing/permissions#user-permissions-for-distributed-tracing "Manage permissions for Distributed Tracing powered by Grail.")
+* Dynatrace Platform Subscription (DPS) with [Traces powered by Grail (DPS)](../ru/license/capabilities/traces.md "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.") capabilities.
+* OpenPipeline permissions: `settings:objects:read` and `settings:objects:write`. To learn how to set up the permissions, see [Permissions in Grail](../ru/platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+* [Distributed Tracing permissions](../ru/observe/application-observability/distributed-tracing/permissions.md#user-permissions-for-distributed-tracing "Manage permissions for Distributed Tracing powered by Grail.")
 
 ## Examples
 
 ### Requests to a workload split by Kubernetes pod
 
-This example shows the new, recommended way to get [service instance-level insights](/docs/observe/application-observability/services-classic/analyze-individual-service-instances "Find out how you can perform a service-instance analysis."), a concept that is going away. Extract metrics from spans and split by real deployment dimensions like Kubernetes workload, pod, host, and more.
+This example shows the new, recommended way to get [service instance-level insights](observe/application-observability/services-classic/analyze-individual-service-instances.md "Find out how you can perform a service-instance analysis."), a concept that is going away. Extract metrics from spans and split by real deployment dimensions like Kubernetes workload, pod, host, and more.
 
-For common splits such as namespace, cluster or cloud region, use the out-of-the-box [primary Grail fields](/docs/semantic-dictionary/tags/primary-fields) already available in service metrics; you don't need a new metric.
+For common splits such as namespace, cluster or cloud region, use the out-of-the-box [primary Grail fields](semantic-dictionary/tags/primary-fields.md) already available in service metrics; you don't need a new metric.
 
 1. Find the condition for the relevant spans in Notebooks
 
@@ -5981,7 +5981,7 @@ Understanding the filter conditions
    * The new metric keyâfor example, `span.my-otel-demo-frontend.requests_by_pod.count`
    * The metric dimensions:
 
-     1. Select **Pre-defined** and choose `k8s.pod.name` and `k8s.pod.uid` from the [pre-defined dimensions](/docs/semantic-dictionary/model/dt-system-events#audit-event "Get to know the Semantic Dictionary models related to system events."). These dimensions identify the pods where the workload is running. Other dimensions have also been pre-selected, such as `dt.entity.service`.
+     1. Select **Pre-defined** and choose `k8s.pod.name` and `k8s.pod.uid` from the [pre-defined dimensions](semantic-dictionary/model/dt-system-events.md#audit-event "Get to know the Semantic Dictionary models related to system events."). These dimensions identify the pods where the workload is running. Other dimensions have also been pre-selected, such as `dt.entity.service`.
      2. Select **Save**.
 
 You successfully created a new pipeline to extract a metric containing information about how many requests there were for the `my-otel-demo-frontend` workload and, because the metric has the pod as a dimension, you'll be able to split the requests by pod. The new pipeline is visible in the pipelines list.
@@ -6027,7 +6027,7 @@ In this example, we describe the creation of the pipeline and the metric-extract
 
 Assumptions for the example
 
-The number of books sold is captured as a [request attribute](/docs/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."), for example, `request_attribute.book_orders_count`. Request attributes are exposed under [`request_attribute.__attribute_name__`](/docs/semantic-dictionary/fields#request-attributes "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
+The number of books sold is captured as a [request attribute](../ru/observe/application-observability/services/request-attributes.md "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."), for example, `request_attribute.book_orders_count`. Request attributes are exposed under [`request_attribute.__attribute_name__`](../ru/semantic-dictionary/fields.md#request-attributes "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
 
 1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Process and contextualize** > **OpenPipeline** > **System events** > **Pipelines**.
 2. Select an existing pipeline or create a new one. To create a new pipeline, select  **Pipeline** and enter a nameâfor example, `TeamA Span metrics from Services`.
@@ -6056,7 +6056,7 @@ For this example metric, we want to know the top database operations or commands
 
 We're not creating a metric for the actual `db.query.text` being executed (for example, `SELECT * FROM user_table`), as that would result in a metric with a very high cardinality.
 
-To see a list of the actual queries being executed by your services, use the [database query performance analysis in the Services app](/docs/observe/application-observability/services/services-app#database-query-performance-analysis "Maintain centralized control over service health, performance, and resources with the Services app.").
+To see a list of the actual queries being executed by your services, use the [database query performance analysis in the Services app](../ru/observe/application-observability/services/services-app.md#database-query-performance-analysis "Maintain centralized control over service health, performance, and resources with the Services app.").
 
 1. Add a new query group attribute to database spans
 
@@ -6150,11 +6150,11 @@ You successfully created a new processor to extract a metric containing informat
 
 3. Query the top 10 values
 
-In ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** or ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, use [Explore interface for Metrics](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-metrics "Explore your data with our point-and-click interface.") to plot the `span.service.db_calls_by_group.count`:
+In ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** or ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, use [Explore interface for Metrics](../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md#explore-metrics "Explore your data with our point-and-click interface.") to plot the `span.service.db_calls_by_group.count`:
 
 * Split by `db.query.group` and `dt.entity.service`
 * Sort by the `value.A` metric in a `DESC` order
-* Use [**Limit**](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#metric-limit "Explore your data with our point-and-click interface.") `10` to display the top 10 results
+* Use [**Limit**](../ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md#metric-limit "Explore your data with our point-and-click interface.") `10` to display the top 10 results
 
 ![Explore metrics - Top 10 queries](https://dt-cdn.net/images/screenshot-2025-12-23-at-18-23-49-2414-9876a1a980.png)
 
@@ -6180,7 +6180,7 @@ In this example, we describe the creation of the pipeline and the metric-extract
    * The new metric keyâfor example, `span.request.cpu_time`.
    * The metric dimensions:
 
-     1. Select **Pre-defined** and choose `endpoint.name` from the [pre-defined dimensions](/docs/semantic-dictionary/model/dt-system-events#audit-event "Get to know the Semantic Dictionary models related to system events."). Other dimensions also get pre-selected, such as `dt.entity.service`.
+     1. Select **Pre-defined** and choose `endpoint.name` from the [pre-defined dimensions](semantic-dictionary/model/dt-system-events.md#audit-event "Get to know the Semantic Dictionary models related to system events."). Other dimensions also get pre-selected, such as `dt.entity.service`.
      2. Select **Save**.
 
 You successfully created a new processor to extract a metric containing information about the CPU time consumed per endpoint. The CPU-time field is measured in nanoseconds.
@@ -6193,7 +6193,7 @@ Upcoming features
 
 Histogram metric extraction support is coming soon.
 
-Later in 2026, Dynatrace will provide out-of-the-box metrics for third-party calls, as part of the modernization of [Monitor third-party services](/docs/observe/application-observability/services/service-detection/service-detection-v1/monitor-3rd-party-services "Configure how Dynatrace should monitor third-party services.").
+Later in 2026, Dynatrace will provide out-of-the-box metrics for third-party calls, as part of the modernization of [Monitor third-party services](observe/application-observability/services/service-detection/service-detection-v1/monitor-3rd-party-services.md "Configure how Dynatrace should monitor third-party services.").
 
 In this example, we describe the creation of the pipeline and the metric-extraction processor. For detailed steps, follow the approach of the [workload split by Kubernetes pod example](#workload-requests-pod), but adapt the filter queries and routing.
 
@@ -6265,25 +6265,25 @@ The following log line is an example of the raw data this article focuses on.
 
 Prior knowledge
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Processing in OpenPipeline](../ru/platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
 
 Prerequisites
 
 * Dynatrace SaaS environment powered by Grail and AppEngine.
-* Either [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license that includes [Log Analytics (DPS)](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") capabilities or [DDUs for Log Management and Analytics](/docs/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.").
+* Either [License Dynatrace](license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license that includes [Log Analytics (DPS)](../ru/license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") capabilities or [DDUs for Log Management and Analytics](../ru/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics.md "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.").
 
 ## Steps
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Find the relevant log lines in Grail**](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline#logs "Configure OpenPipeline processing for log lines.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Find the relevant log lines in Grail**](../ru/platform/openpipeline/use-cases/tutorial-log-processing-pipeline.md#logs "Configure OpenPipeline processing for log lines.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Configure a pipeline for parsing and metric extraction**](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline#pipeline "Configure OpenPipeline processing for log lines.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Configure a pipeline for parsing and metric extraction**](../ru/platform/openpipeline/use-cases/tutorial-log-processing-pipeline.md#pipeline "Configure OpenPipeline processing for log lines.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Route data to the pipeline**](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline#route "Configure OpenPipeline processing for log lines.")[![Step 4 optional](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Step 4 optional")
+**Route data to the pipeline**](../ru/platform/openpipeline/use-cases/tutorial-log-processing-pipeline.md#route "Configure OpenPipeline processing for log lines.")[![Step 4 optional](https://dt-cdn.net/images/dotted-step-4-2b9147df5b.svg "Step 4 optional")
 
-**Verify the configuration**](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline#verify "Configure OpenPipeline processing for log lines.")
+**Verify the configuration**](../ru/platform/openpipeline/use-cases/tutorial-log-processing-pipeline.md#verify "Configure OpenPipeline processing for log lines.")
 
 ### Step 1 Find the relevant log lines in Grail
 
@@ -6554,13 +6554,13 @@ In this article, you'll learn how to set up OpenPipeline to extract a metric to 
 
 Prior knowledge
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Processing in OpenPipeline](../ru/platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
 
 Prerequisites
 
-* [Latest Dynatrace](/docs/platform "Dynatrace is an all-in-one platform that's purpose-built for a wide range of use cases.") environment
-* [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license with [Metrics powered by Grail overview (DPS)](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") capabilities
+* [Latest Dynatrace](platform.md "Dynatrace is an all-in-one platform that's purpose-built for a wide range of use cases.") environment
+* [License Dynatrace](license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license with [Metrics powered by Grail overview (DPS)](../ru/license/capabilities/metrics.md "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") capabilities
 * `storage:system:read` user permission
 
 ## Steps
@@ -6601,7 +6601,7 @@ You found the condition that identifies app updates (`event.kind == "AUDIT_EVENT
    * The new metric keyâfor example, `apps.updates`
    * The metric dimensions:
 
-     1. Select **Pre-defined** and choose `resource` from the [pre-defined dimensions](/docs/semantic-dictionary/model/dt-system-events#audit-event "Get to know the Semantic Dictionary models related to system events."). This dimension identifies the ID of the app from which the update originates.
+     1. Select **Pre-defined** and choose `resource` from the [pre-defined dimensions](semantic-dictionary/model/dt-system-events.md#audit-event "Get to know the Semantic Dictionary models related to system events."). This dimension identifies the ID of the app from which the update originates.
      2. Select **Custom** and enter:
 
         + **Field name on record**: A custom dimension that further defines your metricâfor example, `details.app.type`.
@@ -6640,7 +6640,7 @@ You successfully extracted a metric to track app update frequency. All new app l
 
 ## Related topics
 
-* [System event models](/docs/semantic-dictionary/model/dt-system-events "Get to know the Semantic Dictionary models related to system events.")
+* [System event models](semantic-dictionary/model/dt-system-events.md "Get to know the Semantic Dictionary models related to system events.")
 
 ---
 
@@ -6677,14 +6677,14 @@ In this article, you will learn how to parse logs with technology bundle in Open
 
 Prior knowledge
 
-* [Syslog ingestion with ActiveGate](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog "Ingest syslog log data to Dynatrace using ActiveGate and have Dynatrace transform it into meaningful log messages.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Processing in OpenPipeline](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.")
+* [Syslog ingestion with ActiveGate](../ru/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog.md "Ingest syslog log data to Dynatrace using ActiveGate and have Dynatrace transform it into meaningful log messages.")
+* [Dynatrace Query Language](../ru/platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Processing in OpenPipeline](../ru/platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
 
 Prerequisites
 
-* [Latest Dynatrace](/docs/platform "Dynatrace is an all-in-one platform that's purpose-built for a wide range of use cases.") environment
-* [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license with [Log Analytics (DPS)](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") capabilities
+* [Latest Dynatrace](platform.md "Dynatrace is an all-in-one platform that's purpose-built for a wide range of use cases.") environment
+* [License Dynatrace](license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license with [Log Analytics (DPS)](../ru/license/capabilities/log-analytics.md "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") capabilities
 
 ## Steps
 
@@ -6697,7 +6697,7 @@ Prerequisites
    You can add multiple technology bundles on one pipeline, so you don't have to create a pipeline and a dynamic routing each time.
 4. Copy the technology matching condition.
 
-   You can customize the technology matching condition to match your needs through OpenPipeline. See [Configure a processing pipeline](/docs/platform/openpipeline/getting-started/tutorial-configure-processing#route "Configure ingest sources, routes, and processing for your data in OpenPipeline.").
+   You can customize the technology matching condition to match your needs through OpenPipeline. See [Configure a processing pipeline](../ru/platform/openpipeline/getting-started/tutorial-configure-processing.md#route "Configure ingest sources, routes, and processing for your data in OpenPipeline.").
 5. Select **Save**.
 
 You successfully configured a new pipeline with a processor to structure syslog logs according to pre-defined rules that match Dynatrace Semantic Dictionary. The new pipeline is in the pipeline list.
@@ -6716,11 +6716,11 @@ You successfully configured a new pipeline with a processor to structure syslog 
 
 You successfully configured a new route. All syslog logs are routed to the pipeline for processing. The new route is in the route list.
 
-To learn more about dynamic routing, see [Route data](/docs/platform/openpipeline/getting-started/how-to-routing "Learn how to route data to an OpenPipeline processing pipeline.").
+To learn more about dynamic routing, see [Route data](../ru/platform/openpipeline/getting-started/how-to-routing.md "Learn how to route data to an OpenPipeline processing pipeline.").
 
 3. Analyze structured logs
 
-Once logs are processed according to the technology bundle, several attributes are extracted from the log content into new fields that match Dynatrace Semantic Dictionary. On top of that, technology bundles extract other attributes from logs so you can build your own [Custom alerts](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories/custom-alerts "Learn more about custom alerts and the logic behind raising them."), [Metrics](/docs/analyze-explore-automate/metrics "Metrics powered by Grail offer a comprehensive solution to manage your metrics data, in integration with logs, spans, and events, providing a unified approach to data analysis."), and [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
+Once logs are processed according to the technology bundle, several attributes are extracted from the log content into new fields that match Dynatrace Semantic Dictionary. On top of that, technology bundles extract other attributes from logs so you can build your own [Custom alerts](dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories/custom-alerts.md "Learn more about custom alerts and the logic behind raising them."), [Metrics](analyze-explore-automate/metrics.md "Metrics powered by Grail offer a comprehensive solution to manage your metrics data, in integration with logs, spans, and events, providing a unified approach to data analysis."), and [Dashboards](../ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
 
 Log enrichment
 
@@ -6893,9 +6893,9 @@ You successfully structured syslog logs according to pre-defined processing rule
 
 ## Related topics
 
-* [Semantic Dictionary](/docs/semantic-dictionary "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.")
-* [Filter logs](/docs/secure/investigations/filter-logs "Narrow down data to relevant entries in Investigations.")
-* [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+* [Semantic Dictionary](semantic-dictionary.md "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.")
+* [Filter logs](secure/investigations/filter-logs.md "Narrow down data to relevant entries in Investigations.")
+* [Notebooks](../ru/analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
 
 ---
 
@@ -6932,38 +6932,38 @@ OpenPipeline is the Dynatrace data handling solution to seamlessly ingest and pr
 
 [### Data flow
 
-Learn how data flows from ingestion to storage via Dynatrace OpenPipeline.](/docs/platform/openpipeline/concepts/data-flow "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")[### Processing
+Learn how data flows from ingestion to storage via Dynatrace OpenPipeline.](../ru/platform/openpipeline/concepts/data-flow.md "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")[### Processing
 
-Learn the core concepts of Dynatrace OpenPipeline processing.](/docs/platform/openpipeline/concepts/processing "Learn the core concepts of Dynatrace OpenPipeline processing.")
+Learn the core concepts of Dynatrace OpenPipeline processing.](../ru/platform/openpipeline/concepts/processing.md "Learn the core concepts of Dynatrace OpenPipeline processing.")
 
 ## Getting started
 
 [### How to ingest data (events)
 
-How to ingest data for a configuration scope in OpenPipeline.](/docs/platform/openpipeline/getting-started/how-to-ingestion "How to ingest data for a configuration scope in OpenPipeline.")[### Configure processing
+How to ingest data for a configuration scope in OpenPipeline.](../ru/platform/openpipeline/getting-started/how-to-ingestion.md "How to ingest data for a configuration scope in OpenPipeline.")[### Configure processing
 
-Configure ingest sources, routes, and processing for your data via OpenPipeline.](/docs/platform/openpipeline/getting-started/tutorial-configure-processing "Configure ingest sources, routes, and processing for your data in OpenPipeline.")
+Configure ingest sources, routes, and processing for your data via OpenPipeline.](../ru/platform/openpipeline/getting-started/tutorial-configure-processing.md "Configure ingest sources, routes, and processing for your data in OpenPipeline.")
 
 ### Processing examples
 
-* [Reduce span-based and metric-based cardinality](/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality "Leverage three different views in the Services app to normalize span and metric data, ensuring aggregations and analysis remain reliable and usable.")
-* [OpenPipeline processing examples](/docs/platform/openpipeline/use-cases/processing-examples "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")
-* [Parse log lines and extract a metric](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Configure OpenPipeline processing for log lines.")
-* [Extract metrics from spans and distributed traces](/docs/platform/openpipeline/use-cases/tutorial-extract-metrics-from-spans "Extract metrics directly from your spans and distributed traces via OpenPipeline.")
-* [Process logs with technology bundle parsers](/docs/platform/openpipeline/use-cases/tutorial-technology-processor "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.")
-* [Extract a metric to track system events](/docs/platform/openpipeline/use-cases/tutorial-system-events "Learn how to extract a metric to track system events with OpenPipeline.")
-* [Configure multi-cloud ingest governance with pipeline groups](/docs/platform/openpipeline/use-cases/pipeline-groups-multicloud "Configure pipeline groups via the Settings API to ensure consistent governance across multiâcloud deployments, restrict sensitive stages, and structure team responsibilities through mandatory and restricted pipelines.")
-* [Extract a metric from user events](/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-events "Turn user events into actionable insights by extracting custom metrics for long-term analysis.")
-* [Extract a metric from user sessions](/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-sessions "Discover how to build custom metrics from user sessions, illustrated by a customer conversion metric.")
+* [Reduce span-based and metric-based cardinality](../ru/platform/openpipeline/use-cases/reduce-span-metric-cardinality.md "Leverage three different views in the Services app to normalize span and metric data, ensuring aggregations and analysis remain reliable and usable.")
+* [OpenPipeline processing examples](../ru/platform/openpipeline/use-cases/processing-examples.md "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")
+* [Parse log lines and extract a metric](../ru/platform/openpipeline/use-cases/tutorial-log-processing-pipeline.md "Configure OpenPipeline processing for log lines.")
+* [Extract metrics from spans and distributed traces](../ru/platform/openpipeline/use-cases/tutorial-extract-metrics-from-spans.md "Extract metrics directly from your spans and distributed traces via OpenPipeline.")
+* [Process logs with technology bundle parsers](../ru/platform/openpipeline/use-cases/tutorial-technology-processor.md "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.")
+* [Extract a metric to track system events](../ru/platform/openpipeline/use-cases/tutorial-system-events.md "Learn how to extract a metric to track system events with OpenPipeline.")
+* [Configure multi-cloud ingest governance with pipeline groups](../ru/platform/openpipeline/use-cases/pipeline-groups-multicloud.md "Configure pipeline groups via the Settings API to ensure consistent governance across multiâcloud deployments, restrict sensitive stages, and structure team responsibilities through mandatory and restricted pipelines.")
+* [Extract a metric from user events](../ru/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-events.md "Turn user events into actionable insights by extracting custom metrics for long-term analysis.")
+* [Extract a metric from user sessions](../ru/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-sessions.md "Discover how to build custom metrics from user sessions, illustrated by a customer conversion metric.")
 
 ## Reference
 
 [### Ingest API
 
-Reference material on ingestion APIs for the configuration scopes supported by OpenPipeline.](/docs/platform/openpipeline/reference/api-ingestion-reference "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.")[### OpenPipeline API
+Reference material on ingestion APIs for the configuration scopes supported by OpenPipeline.](../ru/platform/openpipeline/reference/api-ingestion-reference.md "Reference ingest sources and APIs for the configuration scopes supported in OpenPipeline.")[### OpenPipeline API
 
-Reference material for configurations via OpenPipeline API.](/docs/platform/openpipeline/reference/openpipeline-api "Configure OpenPipeline capabilities of ingest source, routing, and processing via API.")[### Limits
+Reference material for configurations via OpenPipeline API.](../ru/platform/openpipeline/reference/openpipeline-api.md "Configure OpenPipeline capabilities of ingest source, routing, and processing via API.")[### Limits
 
-Reference material on OpenPipeline limits.](/docs/platform/openpipeline/reference/limits "Reference limits of Dynatrace OpenPipeline.")
+Reference material on OpenPipeline limits.](../ru/platform/openpipeline/reference/limits.md "Reference limits of Dynatrace OpenPipeline.")
 
 ---

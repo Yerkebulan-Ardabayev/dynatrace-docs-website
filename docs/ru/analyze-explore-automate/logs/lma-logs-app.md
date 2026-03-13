@@ -61,7 +61,7 @@ storage:files:read
 
 ### Установка
 
-Убедитесь, что приложение [установлено в вашей среде](/docs/manage/hub#install "Информация о Dynatrace Hub.").
+Убедитесь, что приложение [установлено в вашей среде](../../manage/hub.md#install "Информация о Dynatrace Hub.").
 
 Начало работы
 
@@ -74,22 +74,22 @@ storage:files:read
 [01Запросы и фильтрация логов
 
 * Практическое руководство
-* Исследуйте логи с помощью DQL-запросов и операторов фильтрации в приложении Dynatrace Logs.](/docs/analyze-explore-automate/logs/lma-logs-app/query-and-filter)[02Выявление трендов с помощью диаграммы распределения логов
+* Исследуйте логи с помощью DQL-запросов и операторов фильтрации в приложении Dynatrace Logs.](lma-logs-app/query-and-filter.md)[02Выявление трендов с помощью диаграммы распределения логов
 
 * Практическое руководство
-* Получите наглядный обзор записей логов, сгруппированных по статусу, чтобы выявлять тренды, обнаруживать аномалии и выполнять целевые запросы, не покидая визуализацию.](/docs/analyze-explore-automate/logs/lma-logs-app/log-distribution-chart)[03Просмотр окружающих логов
+* Получите наглядный обзор записей логов, сгруппированных по статусу, чтобы выявлять тренды, обнаруживать аномалии и выполнять целевые запросы, не покидая визуализацию.](lma-logs-app/log-distribution-chart.md)[03Просмотр окружающих логов
 
 * Практическое руководство
-* Используйте окружающие логи для понимания данных в контексте в приложении Dynatrace Logs.](/docs/analyze-explore-automate/logs/lma-logs-app/surrounding-logs)[04Фильтрация с помощью фасетов
+* Используйте окружающие логи для понимания данных в контексте в приложении Dynatrace Logs.](lma-logs-app/surrounding-logs.md)[04Фильтрация с помощью фасетов
 
 * Практическое руководство
-* Фильтрация с помощью фасетов в приложении Dynatrace Logs.](/docs/analyze-explore-automate/logs/lma-logs-app/facets)[05Настройка сообщения лога
+* Фильтрация с помощью фасетов в приложении Dynatrace Logs.](lma-logs-app/facets.md)[05Настройка сообщения лога
 
 * Практическое руководство
-* Настройка сообщения лога в приложении Dynatrace Logs.](/docs/analyze-explore-automate/logs/lma-logs-app/message)[06Ограничения в Logs
+* Настройка сообщения лога в приложении Dynatrace Logs.](lma-logs-app/message.md)[06Ограничения в Logs
 
 * Справочник
-* Узнайте об ограничениях, применяемых в приложении Logs, и о том, как их изменить.](/docs/analyze-explore-automate/logs/lma-logs-app/limits)
+* Узнайте об ограничениях, применяемых в приложении Logs, и о том, как их изменить.](lma-logs-app/limits.md)
 
 ## О приложении Logs
 
@@ -122,9 +122,9 @@ storage:files:read
 Запросы к логам работают на основе того же лицензирования, что и другие функции Log Management and Analytics.
 
 * Если в вашем тарифе **Retain** и **Query** являются отдельными позициями, вы потребляете лицензию только за объём запрошенных логов в байтах.
-  Подробнее см. в разделе [Calculate your consumption of Log Management & Analytics - Query (DPS)](/docs/license/capabilities/log-analytics/dps-log-query "Узнайте, как рассчитывается потребление ресурсов Log Management & Analytics - Query DPS.").
+  Подробнее см. в разделе [Calculate your consumption of Log Management & Analytics - Query (DPS)](../../license/capabilities/log-analytics/dps-log-query.md "Узнайте, как рассчитывается потребление ресурсов Log Management & Analytics - Query DPS.").
 * Если в вашем тарифе указано **Retain with Included Queries**, включённые запросы не тарифицируются.
-  Подробнее см. в разделе [Log Analytics (DPS)](/docs/license/capabilities/log-analytics#log-retain-included-queries "Узнайте, как рассчитывается потребление Dynatrace Log Analytics в модели Dynatrace Platform Subscription.").
+  Подробнее см. в разделе [Log Analytics (DPS)](../../license/capabilities/log-analytics.md#log-retain-included-queries "Узнайте, как рассчитывается потребление Dynatrace Log Analytics в модели Dynatrace Platform Subscription.").
 
 Следующие действия бесплатны:
 
@@ -136,7 +136,7 @@ storage:files:read
 
 Как настроить доступ к Logs?
 
-Пользователи должны иметь доступ к Dynatrace Platform и логам, хранящимся в Grail ([см. встроенные политики доступа](/docs/platform/upgrade#built-in-policies "Используйте возможности Grail, AppEngine и AutomationEngine для улучшения хранения и анализа данных наблюдаемости и безопасности.")). Приложение заменяет экран **Logs and Events**, поэтому пользователи, которые ранее работали с логами, могут использовать ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**.
+Пользователи должны иметь доступ к Dynatrace Platform и логам, хранящимся в Grail ([см. встроенные политики доступа](../../platform/upgrade.md#built-in-policies "Используйте возможности Grail, AppEngine и AutomationEngine для улучшения хранения и анализа данных наблюдаемости и безопасности.")). Приложение заменяет экран **Logs and Events**, поэтому пользователи, которые ранее работали с логами, могут использовать ![Logs](https://dt-cdn.net/images/logs-256-ae0a9ca67f.png "Logs") **Logs**.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

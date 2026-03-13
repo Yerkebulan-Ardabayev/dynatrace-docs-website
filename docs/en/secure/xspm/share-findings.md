@@ -21,7 +21,7 @@ See below for details.
 
 ## Convert results into DQL queries
 
-You can convert app results into [DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.") and open them in other Dynatrace apps to continue investigation from there.
+You can convert app results into [DQL queries](../../platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.") and open them in other Dynatrace apps to continue investigation from there.
 
 1. On the **Assessment results** page, select a rule.
 2. In **Assessed resources**, you have two options:
@@ -33,17 +33,17 @@ You can convert app results into [DQL queries](/docs/platform/grail/dynatrace-qu
 
 ## Run DQL queries for compliance events
 
-You can run [DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.") for [compliance events](/docs/secure/threat-observability/dql-examples#compliance "DQL examples for security data powered by Grail.") in [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") or [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") for further insights or to share results with others.
+You can run [DQL queries](../../platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.") for [compliance events](../threat-observability/dql-examples.md#compliance "DQL examples for security data powered by Grail.") in [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") or [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") for further insights or to share results with others.
 
-* For guidance on how to use DQL, see [How to use DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.").
-* For a list of DQL query examples based on compliance events, see [DQL examples for security data](/docs/secure/threat-observability/dql-examples#compliance "DQL examples for security data powered by Grail.").
-* For a list of compliance event fields mapped to Grail, see [Dynatrace Semantic Dictionary](/docs/semantic-dictionary/model/security-events#compliance-finding-events "Get to know the Semantic Dictionary models related to security events.").
+* For guidance on how to use DQL, see [How to use DQL queries](../../platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.").
+* For a list of DQL query examples based on compliance events, see [DQL examples for security data](../threat-observability/dql-examples.md#compliance "DQL examples for security data powered by Grail.").
+* For a list of compliance event fields mapped to Grail, see [Dynatrace Semantic Dictionary](../../semantic-dictionary/model/security-events.md#compliance-finding-events "Get to know the Semantic Dictionary models related to security events.").
 
 ## Share URL
 
 You can forward the URL of your filtered results or specific rules to team members.
 
-To view results, users need to have the required permissions enabled. For details, see [Prerequisites](/docs/secure/xspm#prereq "Detect, manage, and take action on security and compliance findings.").
+To view results, users need to have the required permissions enabled. For details, see [Prerequisites](../xspm.md#prereq "Detect, manage, and take action on security and compliance findings.").
 
 ## Download as CSV
 
@@ -56,4 +56,4 @@ You can download results as a CSV file to share it with others.
 
 ## Related topics
 
-* [Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes.")
+* [Kubernetes Security Posture Management](../../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes.")

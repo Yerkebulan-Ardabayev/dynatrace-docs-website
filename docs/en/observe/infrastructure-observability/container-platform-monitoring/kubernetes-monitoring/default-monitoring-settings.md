@@ -39,7 +39,7 @@ To see which clusters are currently overriding these settings
 1. On the environment-level **Monitoring settings** page, select **More** (**â¦**) > **Hierarchy and overrides** in the upper-right corner.
 2. Review the **Hierarchy and overrides** table.
 
-For details on the settings hierarchy, see [Settings documentation](/docs/manage/settings/settings-20#scope-and-hierarchy-of-settings "Introduction to the Settings 2.0 framework").
+For details on the settings hierarchy, see [Settings documentation](../../../../manage/settings/settings-20.md#scope-and-hierarchy-of-settings "Introduction to the Settings 2.0 framework").
 
 ![Kubernetes monitoring settings overrides](https://dt-cdn.net/images/tenant-monitoring-settings-overrides-2058-db713cf077.png)
 
@@ -56,12 +56,12 @@ If you want to remove an override from a specific cluster
 
 ## Configuration via API
 
-You can also configure monitoring settings via the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") using the [Monitoring settings schema](/docs/dynatrace-api/environment-api/settings/schemas/builtin-cloud-kubernetes-monitoring "View builtin:cloud.kubernetes.monitoring settings schema table of your monitoring environment via the Dynatrace API.").
+You can also configure monitoring settings via the [Settings API](../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") using the [Monitoring settings schema](../../../../dynatrace-api/environment-api/settings/schemas/builtin-cloud-kubernetes-monitoring.md "View builtin:cloud.kubernetes.monitoring settings schema table of your monitoring environment via the Dynatrace API.").
 
 To change the default values for the environment, set the `scope` property in the request to `environment`.
 
-To use the default settings when connecting a cluster, the [Connection settings schema](/docs/dynatrace-api/environment-api/settings/schemas/builtin-cloud-kubernetes "View builtin:cloud.kubernetes settings schema table of your monitoring environment via the Dynatrace API.") should be version `3.0.0` or higher. Using older versions will automatically override the default monitoring settings for this cluster.
+To use the default settings when connecting a cluster, the [Connection settings schema](../../../../dynatrace-api/environment-api/settings/schemas/builtin-cloud-kubernetes.md "View builtin:cloud.kubernetes settings schema table of your monitoring environment via the Dynatrace API.") should be version `3.0.0` or higher. Using older versions will automatically override the default monitoring settings for this cluster.
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Set up Dynatrace on Kubernetes](../../../../ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")

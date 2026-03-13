@@ -13,7 +13,7 @@ scraped: 2026-03-04T21:39:13.305924
 * Чтение: 9 мин
 * Обновлено 15 ноября 2023 г.
 
-Информацию о различиях между классическими сервисами и другими сервисами см. в разделе [Миграция с классических (ранее «встроенных») сервисов Azure на облачные сервисы](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-migration-guide "Миграция классических сервисов Azure на их новые версии.").
+Информацию о различиях между классическими сервисами и другими сервисами см. в разделе [Миграция с классических (ранее «встроенных») сервисов Azure на облачные сервисы](../azure-monitoring-guide/azure-migration-guide.md "Миграция классических сервисов Azure на их новые версии.").
 
 Dynatrace получает метрики из Azure Metrics API для Azure Cosmos DB Account (GlobalDocumentDB). Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
 
@@ -24,7 +24,7 @@ Dynatrace получает метрики из Azure Metrics API для Azure Co
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервисов, см. [Включение мониторинга сервисов](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Включение мониторинга Azure в Dynatrace.").
+Чтобы узнать, как включить мониторинг сервисов, см. [Включение мониторинга сервисов](../azure-monitoring-guide/azure-enable-service-monitoring.md "Включение мониторинга Azure в Dynatrace.").
 
 ## Просмотр метрик сервиса
 

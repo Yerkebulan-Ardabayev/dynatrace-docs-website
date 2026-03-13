@@ -31,7 +31,7 @@ on the OpenTelemetry website.
 You will want to consider scaling when you begin to approach the limits of the
 resources that have been allotted to your Collector. Self-monitoring metrics
 available through the Collector and metrics available from the host environment
-(e.g. Kubernetes) will be helpful to track this. See our page on [Collector self-monitoring](/docs/ingest-from/opentelemetry/collector/self-monitoring "How to monitor OpenTelemetry Collectors with Dynatrace dashboards.")
+(e.g. Kubernetes) will be helpful to track this. See our page on [Collector self-monitoring](self-monitoring.md "How to monitor OpenTelemetry Collectors with Dynatrace dashboards.")
 for more information on collecting this data.
 The following are a few metrics worth paying attention to:
 
@@ -62,7 +62,7 @@ Kubernetes comes with multiple object types capable of scaling the Collector
 based on the needs of specific scenarios. For simple scaling, Deployments or
 ReplicaSets can be used to create a pool of Collectors that can be scheduled by
 Kubernetes without too much forethought. For more general information on
-Collector deployment architectures, see our guide on [Deploy Dynatrace OTel Collector](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.").
+Collector deployment architectures, see our guide on [Deploy Dynatrace OTel Collector](deployment.md "How to deploy Dynatrace OTel Collector.").
 
 Most of the advice in this document applies to horizontally scaling the
 Collector by creating more Collector instances or spreading instances across
@@ -475,7 +475,7 @@ exporters:
 
 Configuration validation
 
-[Validate your settings](/docs/ingest-from/opentelemetry/collector/configuration#validate "How to configure the OpenTelemetry Collector.") to avoid any configuration issues.
+[Validate your settings](configuration.md#validate "How to configure the OpenTelemetry Collector.") to avoid any configuration issues.
 
 ## Components
 
@@ -506,5 +506,5 @@ do as little processing as possible so it can handle as much data as possible.
 
 ## Related topics
 
-* [Batch OTLP requests with the OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/batch "Configure the OpenTelemetry Collector to send data in batches to the Dynatrace backend.")
-* [Apply memory limits to the OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/memory "Configure the OpenTelemetry Collector to respect memory limits and not use excessive system resources.")
+* [Batch OTLP requests with the OpenTelemetry Collector](use-cases/batch.md "Configure the OpenTelemetry Collector to send data in batches to the Dynatrace backend.")
+* [Apply memory limits to the OpenTelemetry Collector](use-cases/memory.md "Configure the OpenTelemetry Collector to respect memory limits and not use excessive system resources.")

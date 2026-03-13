@@ -26,7 +26,7 @@ EdgeConnect facilitates secure interactions between applications, workflows, and
 
 ## Step 1 Create EdgeConnect
 
-To create EdgeConnect, follow the instruction provided in [Create a new EdgeConnect configuration](/docs/ingest-from/edgeconnect#createconfiguration "Use EdgeConnect to control how your apps and workflows interact with your internal systems.").
+To create EdgeConnect, follow the instruction provided in [Create a new EdgeConnect configuration](../../../../edgeconnect.md#createconfiguration "Use EdgeConnect to control how your apps and workflows interact with your internal systems.").
 
 ## Step 2 Create OAuth credentials secret
 
@@ -71,7 +71,7 @@ To create EdgeConnect, follow the instruction provided in [Create a new EdgeConn
 
 ## Step 3 Configure EdgeConnect
 
-1. Before applying the configuration, ensure you have all the necessary details. See the configuration fields in [EdgeConnect parameters for Dynatrace Operator](/docs/ingest-from/setup-on-k8s/reference/edgeconnect-parameters "List of configuration parameters for EdgeConnect.").
+1. Before applying the configuration, ensure you have all the necessary details. See the configuration fields in [EdgeConnect parameters for Dynatrace Operator](../../../reference/edgeconnect-parameters.md "List of configuration parameters for EdgeConnect.").
 2. Create the EdgeConnect custom resource file. Ensure the value for `metadata.name` matches the name you used when creating the EdgeConnect configuration in step 1.
 
    ```
@@ -147,4 +147,4 @@ sample-edge-connect-name   <environment-id>.apps.dynatrace.com   Running   16m
 
 ## Related topics
 
-* [Configure and deploy EdgeConnect](/docs/ingest-from/edgeconnect "Use EdgeConnect to control how your apps and workflows interact with your internal systems.")
+* [Configure and deploy EdgeConnect](../../../../edgeconnect.md "Use EdgeConnect to control how your apps and workflows interact with your internal systems.")

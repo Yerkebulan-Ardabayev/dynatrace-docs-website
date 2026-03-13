@@ -70,7 +70,7 @@ Step 3 removes whitespaces.
 
 Step 4 enables you to filter out captured values that don't fit the provided criterion.
 
-Step 5 enables you to extract something from the resulting string based a [regular expression](/docs/manage/tags-and-metadata/reference/regular-expressions-in-dynatrace "Learn how to use regular expressions in the context of Dynatrace.").
+Step 5 enables you to extract something from the resulting string based a [regular expression](../../../../manage/tags-and-metadata/reference/regular-expressions-in-dynatrace.md "Learn how to use regular expressions in the context of Dynatrace.").
 
 ## Numerical values and aggregations
 

@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:22:13.621808
 * Опубликовано 1 февраля 2022 г.
 
 Эта документация актуальна для лицензий Dynatrace Platform Subscription, заключённых до 26 апреля 2023 г.
-Информацию обо всех прочих лицензиях Dynatrace Platform Subscription см. в разделе [Лицензирование Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+Информацию обо всех прочих лицензиях Dynatrace Platform Subscription см. в разделе [Лицензирование Dynatrace](../../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
 
 Эта страница предоставляется исключительно в информационных целях.
 К любому использованию продуктов или сервисов Dynatrace применяются условия бесплатного пробного предложения Dynatrace и/или вашей лицензии Dynatrace.
@@ -36,7 +36,7 @@ scraped: 2026-03-06T21:22:13.621808
 1
 
 Размер хоста для целей лицензирования (определяется объёмом ОЗУ, предоставленного хостом).
-Подробная информация приведена в разделе [Application and Infrastructure Monitoring (Host Units)](/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
+Подробная информация приведена в разделе [Application and Infrastructure Monitoring (Host Units)](../monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
 
 2
 
@@ -58,8 +58,8 @@ scraped: 2026-03-06T21:22:13.621808
 
 Вы можете просматривать потребление лицензии в:
 
-* Account Management — см. [Обзор подписки (Dynatrace Platform Subscription до 2023 г.)](/docs/manage/account-management/license-subscription/subscription-overview-dps-la "View your Dynatrace Platform Subscription budget summary and cost analysis.").
-* API управления учётными записями — см. [API Dynatrace Platform Subscription](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api "Query the data about your Dynatrace Platform Subscription via the Account Management API.").
+* Account Management — см. [Обзор подписки (Dynatrace Platform Subscription до 2023 г.)](../../manage/account-management/license-subscription/subscription-overview-dps-la.md "View your Dynatrace Platform Subscription budget summary and cost analysis.").
+* API управления учётными записями — см. [API Dynatrace Platform Subscription](../../dynatrace-api/account-management-api/dynatrace-platform-subscription-api.md "Query the data about your Dynatrace Platform Subscription via the Account Management API.").
 
 Доступная информация включает:
 

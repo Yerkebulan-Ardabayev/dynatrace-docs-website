@@ -117,7 +117,7 @@ scraped: 2026-03-06T21:11:09.059757
 
 Запрос Grail из дашборда в рабочий процесс
 
-Чтобы скопировать запрос Grail из дашборда в [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") как задачу рабочего процесса
+Чтобы скопировать запрос Grail из дашборда в [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](../workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") как задачу рабочего процесса
 
 1. В дашборде выберите плитку с запросом, которую вы хотите скопировать в рабочий процесс.
 2. Выберите  >  **Открыть в**.
@@ -246,10 +246,10 @@ fetch logs
   + Ссылки видны для каждого столбца, что позволяет взаимодействовать с отдельными точками данных, используя другие. Например, выбор ссылки в столбце `Status` может использовать значение другого поля при навигации.
 * **Неподдерживаемые визуализации**
 
-  + Визуализации карт, такие как [Хороплет](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-choropleth "Create and edit choropleth map visualizations on your Dynatrace dashboards and notebooks."), [Точки](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-dot "Create and edit dot map visualizations on your Dynatrace dashboards and notebooks."), [Соединения](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-connection "Create and edit connection map visualizations on your Dynatrace dashboards and notebooks.") и [Пузырьки](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-bubble "Create and edit bubble map visualizations on your Dynatrace dashboards and notebooks.")
-  + [Одиночное значение](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value "Create and edit single value visualizations on your Dynatrace dashboards and notebooks.")
-  + [Индикаторный график](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-gauge "Create and edit gauge visualizations on your Dynatrace dashboards and notebooks.")
-  + [Столбчатый индикатор](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-meterbar "Create and edit meter bar visualizations on your Dynatrace dashboards and notebooks.")
+  + Визуализации карт, такие как [Хороплет](edit-visualizations/visualization-map-choropleth.md "Create and edit choropleth map visualizations on your Dynatrace dashboards and notebooks."), [Точки](edit-visualizations/visualization-map-dot.md "Create and edit dot map visualizations on your Dynatrace dashboards and notebooks."), [Соединения](edit-visualizations/visualization-map-connection.md "Create and edit connection map visualizations on your Dynatrace dashboards and notebooks.") и [Пузырьки](edit-visualizations/visualization-map-bubble.md "Create and edit bubble map visualizations on your Dynatrace dashboards and notebooks.")
+  + [Одиночное значение](edit-visualizations/visualization-chart-single-value.md "Create and edit single value visualizations on your Dynatrace dashboards and notebooks.")
+  + [Индикаторный график](edit-visualizations/visualization-gauge.md "Create and edit gauge visualizations on your Dynatrace dashboards and notebooks.")
+  + [Столбчатый индикатор](edit-visualizations/visualization-meterbar.md "Create and edit meter bar visualizations on your Dynatrace dashboards and notebooks.")
 * **Все остальные визуализации**
 
   + Для визуализаций с разделением данных (например, линейные графики по хостам) ссылки динамически настраиваются на основе серии данных. Например, использование заполнителя `{{:name}}` в линейном графике, сегментированном по хостам, заменит заполнитель соответствующим именем хоста для каждой серии (линии).

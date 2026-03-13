@@ -14,7 +14,7 @@ scraped: 2026-03-04T21:30:25.620961
 
 Для многих компаний обеспечение конфиденциальности персональных данных клиентов является важным компонентом успеха цифрового бизнеса. Dynatrace предоставляет множество улучшений в области конфиденциальности, которые вы можете использовать для настройки параметров конфиденциальности данных ваших приложений. При правильной настройке этих параметров вы сможете защитить персональные данные своих клиентов и обеспечить соответствие вашей организации Общему регламенту по защите данных (GDPR), требованиям к раскрытию данных в магазинах приложений и другим законам и нормативным актам в области защиты данных.
 
-Хотя Dynatrace предлагает множество настроек конфиденциальности данных, которые можно конфигурировать как на уровне [окружения](/docs/manage/data-privacy-and-security/configuration/configure-global-privacy-settings "Узнайте, как настроить маскирование конфиденциальных данных для IP-адресов конечных пользователей, геолокации и имён действий пользователей."), так и на уровне приложения, ответственность за правильную настройку этих параметров и принятие мер по защите персональных данных ваших клиентов лежит исключительно на вас.
+Хотя Dynatrace предлагает множество настроек конфиденциальности данных, которые можно конфигурировать как на уровне [окружения](../../../../manage/data-privacy-and-security/configuration/configure-global-privacy-settings.md "Узнайте, как настроить маскирование конфиденциальных данных для IP-адресов конечных пользователей, геолокации и имён действий пользователей."), так и на уровне приложения, ответственность за правильную настройку этих параметров и принятие мер по защите персональных данных ваших клиентов лежит исключительно на вас.
 
 ## Режим согласия пользователя (opt-in)
 
@@ -50,18 +50,18 @@ scraped: 2026-03-04T21:30:25.620961
 3. Выберите фронтенд, который хотите настроить.
 4. На вкладке **Settings** выберите **Data privacy**.
 5. Включите **Enable user opt-in mode**.
-6. Обновите конфигурационный файл вашего приложения (файл сборки для Android, [`Info.plist`](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Файл Info.plist хранит идентификацию вашего приложения и ключи конфигурации. Используйте его для точной настройки конфигурации инструментации.") для iOS и `dynatrace.config.<extension>` для кроссплатформенных фреймворков), добавив специальный флаг или ключ, включающий режим opt-in.
+6. Обновите конфигурационный файл вашего приложения (файл сборки для Android, [`Info.plist`](../../mobile-applications/instrument-ios-app/instrumentation/info-plist-file.md "Файл Info.plist хранит идентификацию вашего приложения и ключи конфигурации. Используйте его для точной настройки конфигурации инструментации.") для iOS и `dynatrace.config.<extension>` для кроссплатформенных фреймворков), добавив специальный флаг или ключ, включающий режим opt-in.
 
    Проверьте мастер инструментации для получения обновлённого фрагмента кода конфигурации.
 7. Пересоберите приложение, чтобы новая конфигурация вступила в силу.
 
 Ознакомьтесь с разделами ниже для получения подробных инструкций по настройке режима opt-in для мобильных пользователей ваших приложений.
 
-[Android SDK](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android#data-privacy) [iOS SDK](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios#privacy) [Cordova](https://www.npmjs.com/package/@dynatrace/cordova-plugin#user-privacy-options) [Flutter](https://pub.dev/packages/dynatrace_flutter_plugin#useroptin) [React Native](https://www.npmjs.com/package/@dynatrace/react-native-plugin#user-opt-in-mode) [Xamarin](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/xamarin-nuget#useroptin) [![.NET MAUI](https://dt-cdn.net/images/dotnetmaui-aea483621e.svg ".NET MAUI").NET MAUI](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/maui#useroptin)
+[Android SDK](../../mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android.md#data-privacy) [iOS SDK](../../mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios.md#privacy) [Cordova](https://www.npmjs.com/package/@dynatrace/cordova-plugin#user-privacy-options) [Flutter](https://pub.dev/packages/dynatrace_flutter_plugin#useroptin) [React Native](https://www.npmjs.com/package/@dynatrace/react-native-plugin#user-opt-in-mode) [Xamarin](../../mobile-applications/cross-platform-frameworks/xamarin-nuget.md#useroptin) [![.NET MAUI](https://dt-cdn.net/images/dotnetmaui-aea483621e.svg ".NET MAUI").NET MAUI](../../mobile-applications/cross-platform-frameworks/maui.md#useroptin)
 
 ### Уровни сбора данных
 
-В таблице ниже описаны доступные уровни сбора данных и указано, отправляются ли [теги пользователей](/docs/observe/digital-experience/rum-concepts/user-and-error-events#user-tagging "Узнайте о событиях пользователей и ошибках, а также о типах событий пользователей и ошибок, захватываемых Dynatrace.") и пользовательские действия, события, значения и ошибки для каждого уровня.
+В таблице ниже описаны доступные уровни сбора данных и указано, отправляются ли [теги пользователей](../../rum-concepts/user-and-error-events.md#user-tagging "Узнайте о событиях пользователей и ошибках, а также о типах событий пользователей и ошибок, захватываемых Dynatrace.") и пользовательские действия, события, значения и ошибки для каждого уровня.
 
 1
 
@@ -79,7 +79,7 @@ scraped: 2026-03-04T21:30:25.620961
 
 ## Маскирование действий пользователя
 
-Если вы хотите избежать сбора персональной информации для всех действий пользователя в вашем мобильном приложении, ознакомьтесь с соответствующими разделами о маскировании действий пользователя для [Android](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin/monitoring-capabilities#mask-user-actions "Настройте плагин Dynatrace Android Gradle для изменения возможностей мониторинга OneAgent.") или [iOS](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios#mask-user-actions "Расширьте мониторинг мобильного пользовательского опыта с помощью OneAgent SDK для iOS.").
+Если вы хотите избежать сбора персональной информации для всех действий пользователя в вашем мобильном приложении, ознакомьтесь с соответствующими разделами о маскировании действий пользователя для [Android](../../mobile-applications/instrument-android-app/instrumentation-via-plugin/monitoring-capabilities.md#mask-user-actions "Настройте плагин Dynatrace Android Gradle для изменения возможностей мониторинга OneAgent.") или [iOS](../../mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios.md#mask-user-actions "Расширьте мониторинг мобильного пользовательского опыта с помощью OneAgent SDK для iOS.").
 
 После включения маскирования действий пользователя для вашего мобильного приложения OneAgent заменяет все имена действий `Touch on <заголовок элемента>` на имя класса или тип элемента, к которому прикоснулся пользователь. Например, `Touch on Account 123456` заменяется на `Touch on Button`.
 
@@ -87,5 +87,5 @@ scraped: 2026-03-04T21:30:25.620961
 
 Чтобы узнать, какие данные собирает OneAgent, и заполнить анкету конфиденциальности данных в Google Play Console или App Store Connect, обратитесь к следующим страницам:
 
-* [Руководство по безопасности данных для Android](/docs/manage/data-privacy-and-security/data-privacy/user-privacy-for-android "Информация о типах данных, которые собирает OneAgent для Android. Эту страницу можно использовать при заполнении формы безопасности данных в Google Play Console.")
-* [Конфиденциальность пользователей для iOS](/docs/manage/data-privacy-and-security/data-privacy/user-privacy-for-ios "Узнайте, какие данные собирает OneAgent, если вам необходимо сообщить Apple о конфиденциальности вашего приложения.")
+* [Руководство по безопасности данных для Android](../../../../manage/data-privacy-and-security/data-privacy/user-privacy-for-android.md "Информация о типах данных, которые собирает OneAgent для Android. Эту страницу можно использовать при заполнении формы безопасности данных в Google Play Console.")
+* [Конфиденциальность пользователей для iOS](../../../../manage/data-privacy-and-security/data-privacy/user-privacy-for-ios.md "Узнайте, какие данные собирает OneAgent, если вам необходимо сообщить Apple о конфиденциальности вашего приложения.")

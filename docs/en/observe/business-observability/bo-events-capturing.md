@@ -25,7 +25,7 @@ There are five sources for business events.
   Obtain RUM business events by leveraging a dedicated method of the RUM JavaScript API, OneAgent for Mobile, or OpenKit.
 * **External sources**
 
-  Configure external business or IT systems to send business events in JSON format to the [business events API (REST endpoint)](/docs/observe/business-observability/bo-api-ingest "Set up authentication for and ingest business events via API.").
+  Configure external business or IT systems to send business events in JSON format to the [business events API (REST endpoint)](bo-api-ingest.md "Set up authentication for and ingest business events via API.").
 * [**Logs**](#logs)
 
   Leverage logs as an additional source for business events via OpenPipeline.
@@ -452,13 +452,13 @@ Business events are available for all Dynatrace RUM technologies (web RUM, mobil
 
 Check the sections below for instructions on how to report business events for different platforms.
 
-[#### RUM JavaScript](/docs/observe/business-observability/bo-events-capturing#send-business-event-rum-js "Capture business events for Dynatrace Business Observability.")[#### Android](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android#report-business-event "Learn how to enrich mobile user experience monitoring in Android using OneAgent SDK.")[#### iOS](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios#report-business-event "Enrich mobile user experience monitoring using OneAgent SDK for iOS.")
+[#### RUM JavaScript](bo-events-capturing.md#send-business-event-rum-js "Capture business events for Dynatrace Business Observability.")[#### Android](../digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android.md#report-business-event "Learn how to enrich mobile user experience monitoring in Android using OneAgent SDK.")[#### iOS](../digital-experience/mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios.md#report-business-event "Enrich mobile user experience monitoring using OneAgent SDK for iOS.")
 
 #### Cordova[1](#fn-2-1-def)
 
-[#### Xamarin](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/xamarin-nuget#report-business-event "Monitor Xamarin apps with Dynatrace OneAgent.")[#### Flutter](https://pub.dev/packages/dynatrace_flutter_plugin#businessevent)[![.NET MAUI](https://dt-cdn.net/images/dotnetmaui-aea483621e.svg ".NET MAUI")
+[#### Xamarin](../digital-experience/mobile-applications/cross-platform-frameworks/xamarin-nuget.md#report-business-event "Monitor Xamarin apps with Dynatrace OneAgent.")[#### Flutter](https://pub.dev/packages/dynatrace_flutter_plugin#businessevent)[![.NET MAUI](https://dt-cdn.net/images/dotnetmaui-aea483621e.svg ".NET MAUI")
 
-#### .NET MAUI](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/maui#report-business-event "Monitor .NET MAUI applications with Dynatrace OneAgent.")[#### React Native](https://www.npmjs.com/package/@dynatrace/react-native-plugin#business-event-capturing)[#### OpenKit](/docs/ingest-from/extend-dynatrace/openkit/dynatrace-openkit-api-methods#report-business-event "Read how Dynatrace OpenKit can be used from the developer's point of view.")
+#### .NET MAUI](../digital-experience/mobile-applications/cross-platform-frameworks/maui.md#report-business-event "Monitor .NET MAUI applications with Dynatrace OneAgent.")[#### React Native](https://www.npmjs.com/package/@dynatrace/react-native-plugin#business-event-capturing)[#### OpenKit](../../ingest-from/extend-dynatrace/openkit/dynatrace-openkit-api-methods.md#report-business-event "Read how Dynatrace OpenKit can be used from the developer's point of view.")
 
 1
 
@@ -522,7 +522,7 @@ let attributes = {
 dynatrace.sendBizEvent('com.easytravel.funnel.booking-finished', attributes);
 ```
 
-Business events are only captured for monitored sessions. When the RUM JavaScript is disabled either through a special method or due to [cost and traffic control](/docs/observe/digital-experience/web-applications/additional-configuration/configure-cost-and-traffic-control-web "Leverage the cost and traffic control setting in Dynatrace to reduce session usage for web applications."), business events are not reported for such sessions. Note that this behavior might be subject to change in the future, potentially allowing business events to be sent to Dynatrace regardless of session monitoring.
+Business events are only captured for monitored sessions. When the RUM JavaScript is disabled either through a special method or due to [cost and traffic control](../digital-experience/web-applications/additional-configuration/configure-cost-and-traffic-control-web.md "Leverage the cost and traffic control setting in Dynatrace to reduce session usage for web applications."), business events are not reported for such sessions. Note that this behavior might be subject to change in the future, potentially allowing business events to be sent to Dynatrace regardless of session monitoring.
 
 ## Log to Business events
 
@@ -673,7 +673,7 @@ Use of DQL
 
 Workflow steps have a limited execution time window. We recommend using a separate **Execute DQL Query** workflow step for long-running complex DQL queries. Then, you can use the returned data in the **Ingest business event** using the parameterization support (`{{ result(âstepnameâ }}`).
 
-This action requires the `storage:events:write` permission defined in the Workflow authorization settings. For more information, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security "Guide on security aspects of workflow automation in Dynatrace Workflows")
+This action requires the `storage:events:write` permission defined in the Workflow authorization settings. For more information, see [User permissions for workflows](../../analyze-explore-automate/workflows/security.md "Guide on security aspects of workflow automation in Dynatrace Workflows")
 
 If you're using DQL, your workflow actor needs permissions to run the DQL statement against necessary buckets.
 

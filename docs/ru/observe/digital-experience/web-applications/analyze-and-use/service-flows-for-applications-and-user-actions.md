@@ -13,7 +13,7 @@ scraped: 2026-03-05T21:27:38.698380
 * 1-min read
 * Published Oct 04, 2017
 
-Dynatrace позволяет легко понять цепочку сервисного потока в контексте вашего приложения и даже в контексте отдельных пользовательских действий. [**Сервисный поток**](/docs/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") показывает, какие сервисы вызываются каждым приложением или отдельным пользовательским действием, и помогает понять, как эти сервисы взаимодействуют друг с другом.
+Dynatrace позволяет легко понять цепочку сервисного потока в контексте вашего приложения и даже в контексте отдельных пользовательских действий. [**Сервисный поток**](../../../application-observability/services-classic/service-flow.md "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.") показывает, какие сервисы вызываются каждым приложением или отдельным пользовательским действием, и помогает понять, как эти сервисы взаимодействуют друг с другом.
 
 ## Доступ к сервисному потоку приложения
 

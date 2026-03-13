@@ -21,7 +21,7 @@ Information can be logged in a very wide variety of formats depending on the app
 
 For example, you can extract numerical values from log line via log processing, turn these into metrics on Dynatrace Platform, and include them in dashboards and problem detection.
 
-Log processing does not affect [DDU](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") consumption of log ingest.
+Log processing does not affect [DDU](../../license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption.md "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") consumption of log ingest.
 
 ## Log processing rules
 
@@ -49,7 +49,7 @@ To create a log processing rule
 2. Select **Add rule**.
 3. Provide the name for the log processing rule.
 4. Provide a log query in the **Matcher** section.  
-   A log search query narrows down the available log data for executing this specific rule. This is the same search query that you have been using in the [log viewer search query](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer#query-syntax "Learn how to use Dynatrace log viewer to analyze log data.").
+   A log search query narrows down the available log data for executing this specific rule. This is the same search query that you have been using in the [log viewer search query](analyze-log-data/log-viewer.md#query-syntax "Learn how to use Dynatrace log viewer to analyze log data.").
 
    Matching based on previous rules is not supported
 
@@ -57,7 +57,7 @@ To create a log processing rule
 5. Provide the processing rule definition.  
    The processing rule definition is a log processing instruction about how Dynatrace should transform or modify your log data narrowed down by the **Log query**.
 
-   The rule definition is created using log processing [commands](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-commands "Use log processing commands that reshape your incoming log data for better analysis or further processing."), [functions](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-functions "Use log processing data types that reshape your incoming log data for better analysis or further processing."), and pattern matching that allows you to add, transform, or remove incoming log records. This gives you total control over how your log data is presented to Dynatrace Log Monitoring.
+   The rule definition is created using log processing [commands](log-processing/log-processing-commands.md "Use log processing commands that reshape your incoming log data for better analysis or further processing."), [functions](log-processing/log-processing-functions.md "Use log processing data types that reshape your incoming log data for better analysis or further processing."), and pattern matching that allows you to add, transform, or remove incoming log records. This gives you total control over how your log data is presented to Dynatrace Log Monitoring.
 6. Test the log processing rule.  
    You can test the rule definition by either downloading the sample log or providing a fragment of the sample log manually in the **Log sample** text box.
 

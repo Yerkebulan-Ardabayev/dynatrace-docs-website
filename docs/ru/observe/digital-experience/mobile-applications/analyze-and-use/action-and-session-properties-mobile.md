@@ -19,11 +19,11 @@ scraped: 2026-03-06T21:25:38.421195
 
 Ознакомьтесь с разделами ниже, чтобы узнать, где можно найти значения, захваченные в качестве свойств действий пользователя и сеансов, и как полностью использовать эти свойства.
 
-Прежде чем использовать свойства действий и сеансов пользователя, необходимо определить эти свойства в настройках вашего приложения. Подробнее см. [Define user action and user session properties for mobile applications](/docs/observe/digital-experience/mobile-applications/additional-configuration/define-mobile-action-and-session-properties "Send metadata to Dynatrace and define action and session properties for your monitored mobile applications.").
+Прежде чем использовать свойства действий и сеансов пользователя, необходимо определить эти свойства в настройках вашего приложения. Подробнее см. [Define user action and user session properties for mobile applications](../additional-configuration/define-mobile-action-and-session-properties.md "Send metadata to Dynatrace and define action and session properties for your monitored mobile applications.").
 
 ## Анализ сеансов пользователей
 
-Страница **[User sessions](/docs/observe/digital-experience/session-segmentation/new-user-sessions "Learn about user session segmentation and filtering attributes.")** предоставляет возможность фильтрации сеансов пользователей по свойствам действий и сеансов. Например, если вы используете программу лояльности, вы можете добавить свойство `loyalty_status`, чтобы определить, является ли пользователь в отслеживаемом сеансе участником уровня `Silver`, `Gold` или `Platinum`. Затем вы можете фильтровать клиентов уровня `Platinum` или `Gold` на странице **User sessions**.
+Страница **[User sessions](../../session-segmentation/new-user-sessions.md "Learn about user session segmentation and filtering attributes.")** предоставляет возможность фильтрации сеансов пользователей по свойствам действий и сеансов. Например, если вы используете программу лояльности, вы можете добавить свойство `loyalty_status`, чтобы определить, является ли пользователь в отслеживаемом сеансе участником уровня `Silver`, `Gold` или `Platinum`. Затем вы можете фильтровать клиентов уровня `Platinum` или `Gold` на странице **User sessions**.
 
 1. Перейдите в ![Session Segmentation](https://dt-cdn.net/images/session-segmentation-512-5278e8fa16.png "Session Segmentation") **Session Segmentation**.
 2. В поле **Filter by** выберите один из типов свойств, например **Session date properties** или **User action string properties**, а затем выберите нужное свойство.
@@ -36,7 +36,7 @@ scraped: 2026-03-06T21:25:38.421195
 
 ## Дополнительные возможности с USQL
 
-Свойства действий и сеансов пользователя могут значительно улучшить ваши аналитические возможности при использовании [Dynatrace User Sessions Query Language (USQL)](/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") для аналитики, требующей расширенной фильтрации или постоянной фильтрации между представлениями анализа. Кроме того, когда вам нужно отслеживать денежные показатели и цели конверсии, ключевые для успеха вашего бизнеса, вы можете строить запросы на основе уникальных значений индивидуальных свойств действий или сеансов пользователя, определённых для вашей среды.
+Свойства действий и сеансов пользователя могут значительно улучшить ваши аналитические возможности при использовании [Dynatrace User Sessions Query Language (USQL)](../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") для аналитики, требующей расширенной фильтрации или постоянной фильтрации между представлениями анализа. Кроме того, когда вам нужно отслеживать денежные показатели и цели конверсии, ключевые для успеха вашего бизнеса, вы можете строить запросы на основе уникальных значений индивидуальных свойств действий или сеансов пользователя, определённых для вашей среды.
 
 Использование свойств действий и сеансов в USQL
 
@@ -70,7 +70,7 @@ SELECT stringProperties.loyalty_status AS "Loyalty status", COUNT(useraction.req
 
 ## Интеграция через User session API
 
-[User sessions API](/docs/dynatrace-api/environment-api/rum/user-sessions "Learn what the Dynatrace User Sessions Query language API offers.") в сочетании с [User Sessions Query Language (USQL)](/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") позволяет получить доступ ко всем данным действий и сеансов пользователя, включая свойства и значения.
+[User sessions API](../../../../dynatrace-api/environment-api/rum/user-sessions.md "Learn what the Dynatrace User Sessions Query language API offers.") в сочетании с [User Sessions Query Language (USQL)](../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") позволяет получить доступ ко всем данным действий и сеансов пользователя, включая свойства и значения.
 
 Расширяя приведённый выше пример программы лояльности, вы можете использовать информацию о проблемах и статусе лояльности через User session API, запрашивая сеансы пользователей, затронутые проблемой, после её закрытия. Это позволяет использовать полученную информацию, например, для настройки персонализированных маркетинговых кампаний.
 
@@ -91,7 +91,7 @@ SELECT stringProperties.loyalty_status AS "Loyalty status", COUNT(useraction.req
 
 Для веб-, мобильных и пользовательских приложений вы можете [создать запрос](#usql) со свойствами действий и сеансов, а затем закрепить полученный график на одном из ваших дашбордов.
 
-Для веб-приложений вы можете дополнительно создавать вычисляемые метрики на основе пользовательских свойств, использовать эти метрики для построения графиков и закреплять графики на дашбордах. Это можно сделать в [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+Для веб-приложений вы можете дополнительно создавать вычисляемые метрики на основе пользовательских свойств, использовать эти метрики для построения графиков и закреплять графики на дашбордах. Это можно сделать в [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.").
 
 В следующем примере используется универсальный **Web property pack** для отслеживания маркетинговых кампаний на [Dynatrace.com](https://www.dynatrace.com/) и отображения следующей информации:
 
@@ -105,9 +105,9 @@ SELECT stringProperties.loyalty_status AS "Loyalty status", COUNT(useraction.req
 
 Вы можете экспортировать захваченные свойства сеансов пользователя вместе со всеми другими данными сеанса в потоках экспорта сеансов пользователя.
 
-Подробнее см. [Export user sessions](/docs/observe/digital-experience/session-segmentation/export-session-data "Set up Dynatrace to export user session data to a provided webhook endpoint.").
+Подробнее см. [Export user sessions](../../session-segmentation/export-session-data.md "Set up Dynatrace to export user session data to a provided webhook endpoint.").
 
 ## Связанные темы
 
-* [Define user action and user session properties for mobile applications](/docs/observe/digital-experience/mobile-applications/additional-configuration/define-mobile-action-and-session-properties "Send metadata to Dynatrace and define action and session properties for your monitored mobile applications.")
+* [Define user action and user session properties for mobile applications](../additional-configuration/define-mobile-action-and-session-properties.md "Send metadata to Dynatrace and define action and session properties for your monitored mobile applications.")
 * [Mastering session and user action properties for enhanced analytics](https://www.youtube.com/watch?v=b8Vj0EoaDeM)

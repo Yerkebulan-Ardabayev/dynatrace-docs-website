@@ -12,7 +12,7 @@ scraped: 2026-03-05T21:34:18.947110
 * How-to guide
 * Updated on Sep 23, 2025
 
-Dynatrace introduces a new `security.events` table in [Grail](/docs/platform/grail "Insights on what and how you can query Dynatrace data."), improving how security event data is consumed, stored, and queried. This guide explains the benefits, access control adjustments, ingestion and query changes, and required user actions.
+Dynatrace introduces a new `security.events` table in [Grail](../../platform/grail.md "Insights on what and how you can query Dynatrace data."), improving how security event data is consumed, stored, and queried. This guide explains the benefits, access control adjustments, ingestion and query changes, and required user actions.
 
 The migration to the new `security.events` table is expected to be completed by the end of December 2025. To prevent any disruptions in your workflows, please ensure your migration is finalized before this deadline.
 
@@ -22,9 +22,9 @@ Refer to this guide for detailed instructions on completing the transition.
 
 The new `security.events` table enhances security data management with:
 
-* **Simpler security event queries** â You can directly retrieve security events with the `fetch security.events` command (see [DQL examples for security data](/docs/secure/threat-observability/dql-examples "DQL examples for security data powered by Grail.")).
-* **No-code query support** â Dashboards and notebooks enable security event analysis via user-friendly filters, requiring no previous DQL knowledge (see [Explore security events](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data#explore-security-events "Explore your data with our point-and-click interface.")).
-* **Stronger access control** â Separate permissions ensure table-level and record-level security without impacting other event tables (see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.")).
+* **Simpler security event queries** â You can directly retrieve security events with the `fetch security.events` command (see [DQL examples for security data](dql-examples.md "DQL examples for security data powered by Grail.")).
+* **No-code query support** â Dashboards and notebooks enable security event analysis via user-friendly filters, requiring no previous DQL knowledge (see [Explore security events](../../analyze-explore-automate/dashboards-and-notebooks/explore-data.md#explore-security-events "Explore your data with our point-and-click interface.")).
+* **Stronger access control** â Separate permissions ensure table-level and record-level security without impacting other event tables (see [Permissions in Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.")).
 * **Improved query performance** â Queries only scan security events, reducing complexity and improving efficiency.
 * **Enhanced data ingestion** â Supports native nested JSON and introduces dedicated fields for raw event data access.
 
@@ -45,7 +45,7 @@ With the introduction of the `security.events` table, some updates take place au
 * **Third-party product ingest URLs** â Change the ingest endpoint from `/events.security` to `/security.events` (see [Data ingestion updates](#data)).
 * **Custom processing pipelines** â Manually migrate sources via ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Process and contextualize** > **OpenPipeline** > **Security events** (see [Data ingestion updates](#data)).
 * **Custom queries** â Modify DQL queries to reference `security.events` instead of `events` (see [DQL query updates](#query)).
-* **Migrating the connections for the integration apps/extensions** - If you've already installed and configured [security integrations](/docs/secure/threat-observability/security-events-ingest#ingest "Ingest external security data into Grail."), you need to do one of the following:
+* **Migrating the connections for the integration apps/extensions** - If you've already installed and configured [security integrations](security-events-ingest.md#ingest "Ingest external security data into Grail."), you need to do one of the following:
 
   + Reconfigure the third-party URL to point to `/security.events`. This allows existing connections to continue working and display data from the new table.
   + Recreate the connections and follow the on-screen setup instructions, which already include the updated endpoint.
@@ -106,7 +106,7 @@ With the introduction of the `security.events` table, some updates take place au
 
 ## Data ingestion updates
 
-Dynatrace-generated events are stored in both the legacy and new tables until migration is complete. However, [Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes.")-related events are no longer duplicated and are now available exclusively in the new `security.events` table. All other Dynatrace-generated events continue to be written to both tables during the migration period.
+Dynatrace-generated events are stored in both the legacy and new tables until migration is complete. However, [Kubernetes Security Posture Management](../../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes.")-related events are no longer duplicated and are now available exclusively in the new `security.events` table. All other Dynatrace-generated events continue to be written to both tables during the migration period.
 
 * (Automatic) Dynatrace-provided processors and pipelines work seamlessly with the new ingestion scope.
 * (Manual) Update third-party product ingest URLs:

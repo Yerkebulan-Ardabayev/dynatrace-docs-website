@@ -33,11 +33,11 @@ To instrument your Azure Functions
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Set up export**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/otel-native-dotnet-azure#export "Learn how to use OpenTelemetry .NET to trace Azure Functions.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Set up export**](otel-native-dotnet-azure.md#export "Learn how to use OpenTelemetry .NET to trace Azure Functions.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Add dependencies**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/otel-native-dotnet-azure#dependencies "Learn how to use OpenTelemetry .NET to trace Azure Functions.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Add dependencies**](otel-native-dotnet-azure.md#dependencies "Learn how to use OpenTelemetry .NET to trace Azure Functions.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Instrument code**](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/otel-native-dotnet-azure#instrument "Learn how to use OpenTelemetry .NET to trace Azure Functions.")
+**Instrument code**](otel-native-dotnet-azure.md#instrument "Learn how to use OpenTelemetry .NET to trace Azure Functions.")
 
 ### Step 1 Set up export
 
@@ -112,7 +112,7 @@ receivers: [otlp]
 exporters: [otlp_http]
 ```
 
-For further details on configuration, see [OpenTelemetry and Dynatrace](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
+For further details on configuration, see [OpenTelemetry and Dynatrace](../../../../opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
 
 To ingest **HTTP** via the Dynatrace Trace API, you need to [configure the exporterï»¿](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md#configuration-options). The exporter will then directly send traces to the configured endpoint.
 

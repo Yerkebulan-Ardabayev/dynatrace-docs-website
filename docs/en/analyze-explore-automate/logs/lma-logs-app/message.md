@@ -59,7 +59,7 @@ For certain technologies, or as a result of your parsing rules, the field with t
 
 For your log sources ingested to Dynatrace over the API, write the log message to any of the previous attributes during logging for best results.
 
-As an alternative, extract that readable information to a first-level attribute with just a few steps in an OpenPipeline processor. For details, see [Log processing with OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.").
+As an alternative, extract that readable information to a first-level attribute with just a few steps in an OpenPipeline processor. For details, see [Log processing with OpenPipeline](../lma-log-processing/lma-openpipeline.md "Process logs using Dynatrace OpenPipeline.").
 
 ### Structured JSON logs
 

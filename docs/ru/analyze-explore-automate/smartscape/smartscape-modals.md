@@ -17,10 +17,10 @@ scraped: 2026-03-05T21:34:12.624189
 
 [### Visual Resolution Path
 
-Используйте дополнение Visual Resolution Path (VRP) для доступа к пути разрешения проблемы непосредственно из любого приложения Dynatrace и получения информации о проблеме и временной шкале связанных событий без выхода из текущего контекста.](/docs/analyze-explore-automate/smartscape/smartscape-modals/visual-resolution-path "Access the problem resolution path directly from any Dynatrace app to gain insights into a problem and event timeline without leaving the current context.")[### View Topology
+Используйте дополнение Visual Resolution Path (VRP) для доступа к пути разрешения проблемы непосредственно из любого приложения Dynatrace и получения информации о проблеме и временной шкале связанных событий без выхода из текущего контекста.](smartscape-modals/visual-resolution-path.md "Access the problem resolution path directly from any Dynatrace app to gain insights into a problem and event timeline without leaving the current context.")[### View Topology
 
-Визуализируйте топологию вокруг любой выбранной сущности для получения мгновенной информации о взаимосвязях с другими сущностями в вашей цифровой системе.](/docs/analyze-explore-automate/smartscape/smartscape-modals/smartscape-view-topology "Visualize the topology around the selected entity to gain insights on service dependencies and relationships between the nodes.")
+Визуализируйте топологию вокруг любой выбранной сущности для получения мгновенной информации о взаимосвязях с другими сущностями в вашей цифровой системе.](smartscape-modals/smartscape-view-topology.md "Visualize the topology around the selected entity to gain insights on service dependencies and relationships between the nodes.")
 
 ## Связанные темы
 
-* [Smartscape](/docs/analyze-explore-automate/smartscape "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")
+* [Smartscape](../smartscape.md "Visualize the structure of your environments and understand relationships and dependencies between your service entities.")

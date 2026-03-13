@@ -20,13 +20,13 @@ scraped: 2026-03-05T21:40:09.842786
 * Экземпляр Prometheus, работающий на порту 8888
 * Один из следующих дистрибутивов Collector с [Prometheus receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/receiver/prometheusreceiver), [metric start time processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/metricstarttimeprocessor) и [cumulative-to-delta processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/cumulativetodeltaprocessor):
 
-  + [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Узнайте о Dynatrace OTel Collector.")
-  + OpenTelemetry [Contrib](/docs/ingest-from/opentelemetry/collector#collector-contrib "Узнайте о Dynatrace OTel Collector.")
-  + [Пользовательская версия Builder](/docs/ingest-from/opentelemetry/collector#collector-builder "Узнайте о Dynatrace OTel Collector.")
-* [URL эндпоинта Dynatrace API](/docs/ingest-from/opentelemetry/otlp-api "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."), на который должны экспортироваться данные
-* [API-токен](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с соответствующей областью доступа (требуется только для SaaS и ActiveGate)
+  + [Dynatrace Collector](../../collector.md#dt-collector-dist "Узнайте о Dynatrace OTel Collector.")
+  + OpenTelemetry [Contrib](../../collector.md#collector-contrib "Узнайте о Dynatrace OTel Collector.")
+  + [Пользовательская версия Builder](../../collector.md#collector-builder "Узнайте о Dynatrace OTel Collector.")
+* [URL эндпоинта Dynatrace API](../../otlp-api.md "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."), на который должны экспортироваться данные
+* [API-токен](../../otlp-api.md#authentication-export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с соответствующей областью доступа (требуется только для SaaS и ActiveGate)
 
-См. [Развёртывание Collector](/docs/ingest-from/opentelemetry/collector/deployment "Как развернуть Dynatrace OTel Collector.") и [Конфигурация Collector](/docs/ingest-from/opentelemetry/collector/configuration "Как настроить OpenTelemetry Collector.") для информации о настройке вашего Collector с приведённой ниже конфигурацией.
+См. [Развёртывание Collector](../deployment.md "Как развернуть Dynatrace OTel Collector.") и [Конфигурация Collector](../configuration.md "Как настроить OpenTelemetry Collector.") для информации о настройке вашего Collector с приведённой ниже конфигурацией.
 
 ## Демонстрационная конфигурация
 
@@ -266,7 +266,7 @@ exporters: [otlp_http]
 
 Валидация конфигурации
 
-[Проверьте ваши настройки](/docs/ingest-from/opentelemetry/collector/configuration#validate "Как настроить OpenTelemetry Collector."), чтобы избежать проблем с конфигурацией.
+[Проверьте ваши настройки](../configuration.md#validate "Как настроить OpenTelemetry Collector."), чтобы избежать проблем с конфигурацией.
 
 Рекомендация по cumulativetodelta processor
 
@@ -284,7 +284,7 @@ exporters: [otlp_http]
 
 ### Processors
 
-В секции `processors` мы указываем процессор [`cumulativetodelta`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/cumulativetodeltaprocessor) для преобразования метрик, генерируемых Prometheus receiver, в их [дельта-формат агрегации](/docs/ingest-from/opentelemetry/collector/configuration#delta-metrics "Как настроить OpenTelemetry Collector.").
+В секции `processors` мы указываем процессор [`cumulativetodelta`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/cumulativetodeltaprocessor) для преобразования метрик, генерируемых Prometheus receiver, в их [дельта-формат агрегации](../configuration.md#delta-metrics "Как настроить OpenTelemetry Collector.").
 
 В Dynatrace Collector v0.41.0+ мы указываем процессор
 [`metricstarttime`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/metricstarttimeprocessor)
@@ -296,8 +296,8 @@ exporters: [otlp_http]
 
 Для этого мы устанавливаем следующие две переменные окружения и ссылаемся на них в значениях конфигурации для `endpoint` и `Authorization`.
 
-* `DT_ENDPOINT` содержит [базовый URL эндпоинта Dynatrace API](/docs/ingest-from/opentelemetry/otlp-api#export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") (например, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
-* `DT_API_TOKEN` содержит [API-токен](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.")
+* `DT_ENDPOINT` содержит [базовый URL эндпоинта Dynatrace API](../../otlp-api.md#export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") (например, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
+* `DT_API_TOKEN` содержит [API-токен](../../otlp-api.md#authentication-export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.")
 
 ### Конвейер сервиса
 
@@ -305,11 +305,11 @@ exporters: [otlp_http]
 
 ## Ограничения
 
-Метрики принимаются по протоколу OpenTelemetry (OTLP) через [Dynatrace OTLP API](/docs/ingest-from/opentelemetry/otlp-api "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") и подчиняются ограничениям API.
+Метрики принимаются по протоколу OpenTelemetry (OTLP) через [Dynatrace OTLP API](../../otlp-api.md "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") и подчиняются ограничениям API.
 Дополнительную информацию см. в:
 
-* [Ограничения метрик OpenTelemetry](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest "Узнайте, как Dynatrace принимает метрики OpenTelemetry и какие ограничения применяются.")
-* [Маппинг метрик Dynatrace](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#dynatrace-mapping "Узнайте, как Dynatrace принимает метрики OpenTelemetry и какие ограничения применяются.")
+* [Ограничения метрик OpenTelemetry](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md "Узнайте, как Dynatrace принимает метрики OpenTelemetry и какие ограничения применяются.")
+* [Маппинг метрик Dynatrace](../../otlp-api/ingest-otlp-metrics/about-metrics-ingest.md#dynatrace-mapping "Узнайте, как Dynatrace принимает метрики OpenTelemetry и какие ограничения применяются.")
 
 Чтобы избежать дублирования данных, убедитесь, что только один OpenTelemetry Collector собирает данные с заданного целевого объекта (например, брокера Kafka или эндпоинта Prometheus).
 
@@ -319,5 +319,5 @@ exporters: [otlp_http]
 
 ## Связанные темы
 
-* [Обогащение принятых данных полями Dynatrace](/docs/ingest-from/extend-dynatrace/extend-data "Узнайте, как автоматически обогащать ваши телеметрические данные полями, специфичными для Dynatrace.")
-* [Обогащение OTLP-запросов данными Kubernetes](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Настройте OpenTelemetry Collector для обогащения OTLP-запросов данными Kubernetes.")
+* [Обогащение принятых данных полями Dynatrace](../../../extend-dynatrace/extend-data.md "Узнайте, как автоматически обогащать ваши телеметрические данные полями, специфичными для Dynatrace.")
+* [Обогащение OTLP-запросов данными Kubernetes](kubernetes/k8s-enrich.md "Настройте OpenTelemetry Collector для обогащения OTLP-запросов данными Kubernetes.")

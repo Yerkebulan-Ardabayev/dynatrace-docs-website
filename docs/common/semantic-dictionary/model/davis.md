@@ -39,7 +39,7 @@ This section contains general event information that can be set on an event repo
 | Attribute | Type | Description | Examples |
 | --- | --- | --- | --- |
 | `dt.analysis.offset` | duration | experimental A time duration that defines one end of the analysis window relative to `event.start`. If positive, the analysis window spans from the `event.start` to `event.start` plus the offset. If negative, the window spans from `event.start` minus the offset up to `event.start`. If missing, no analysis window was required for event creation, or no information about the analysis window is provided. | `5m`; `-5m` |
-| `dt.query` | string | experimental A DQL query associated with the event, see [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."). If the query returns time series data, the time series is charted in the event details in the Problems app. | `timeseries avg(dt.host.cpu.idle)` |
+| `dt.query` | string | experimental A DQL query associated with the event, see [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."). If the query returns time series data, the time series is charted in the event details in the Problems app. | `timeseries avg(dt.host.cpu.idle)` |
 | `dt.smartscape.__type__` | smartscapeId | resource stable A Smartscape ID that can be used to query entities from the Smartscape storage. `__type__` is a placeholder for any Smartscape type. Tags: `smartscape-id` | `K8S_CLUSTER-E0D8F94D9065F24F` |
 | `dt.smartscape_source.id` | smartscapeId | resource experimental The ID of the entity considered the source of the signal. The string represents an entity ID of an entity that is stored in the Smartscape storage. [1](#fn-1-1-def) Tags: `smartscape-id` | `K8S_CLUSTER-E0D8F94D9065F24F`; `AWS_LAMBDA_FUNCTION-E0D8F94D9065F24F` |
 | `dt.smartscape_source.type` | string | resource stable The entity type of the entity whose identifier is held in dt.smartscape\_source.id. | `K8S_CLUSTER`; `AWS_LAMBDA_FUNCTION` |
@@ -101,7 +101,7 @@ This section contains general event information.
 
 | Attribute | Type | Description | Examples |
 | --- | --- | --- | --- |
-| `dt.query` | string | experimental A DQL query associated with the event, see [Dynatrace Query Langauge](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."). | `timeseries avg(dt.host.cpu.idle)` |
+| `dt.query` | string | experimental A DQL query associated with the event, see [Dynatrace Query Langauge](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."). | `timeseries avg(dt.host.cpu.idle)` |
 | `dt.smartscape_source.id` | smartscapeId | resource experimental The ID of the entity considered the source of the signal. The string represents an entity ID of an entity that is stored in the Smartscape storage. [1](#fn-2-1-def) Tags: `smartscape-id` | `K8S_CLUSTER-E0D8F94D9065F24F`; `AWS_LAMBDA_FUNCTION-E0D8F94D9065F24F` |
 | `dt.smartscape_source.type` | string | resource stable The entity type of the entity whose identifier is held in dt.smartscape\_source.id. | `K8S_CLUSTER`; `AWS_LAMBDA_FUNCTION` |
 | `dt.source_entity` | string[] | resource stable The IDs of the entities considered as the sources of the signal. The strings represent the entity IDs of entities that are stored in the classic entity storage. [2](#fn-2-2-def) Tags: `entity-id` | `['HOST-E0D8F94D9065F24F', 'PROCESS_GROUP_INSTANCE-E0D8F94D9065F24F']` |

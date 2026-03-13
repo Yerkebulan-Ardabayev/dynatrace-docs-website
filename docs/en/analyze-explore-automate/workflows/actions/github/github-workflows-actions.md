@@ -25,7 +25,7 @@ The **Get content** action returns the content of an existing file in the reposi
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **File path** | The file path to a single, existing file. A directory path is not supported. | Required |
@@ -45,7 +45,7 @@ The **Create or replace file** action creates a new file with the specified cont
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **Create new branch** | Select this option if you want the change to be made in a new branch. | Optional |
@@ -70,7 +70,7 @@ The **Delete file** action deletes an existing file in the repository and commit
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **Create new branch** | Select this option if you want the file deletion to be made in a new branch. | Optional |
@@ -94,7 +94,7 @@ The **Create pull request** action creates a pull request for an existing branch
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the .git extension. The name is not case-sensitive. | Required |
 | **Source branch** | The source branch where the changes are implemented. | Required |
@@ -116,7 +116,7 @@ The **Get pull request** action returns details about the specified pull request
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **Pull request number** | The number that identifies the pull request. | Required |
@@ -135,7 +135,7 @@ The **List pull requests** action returns a list of pull requests that match the
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **State** | The state of pull requests you're interested in (open, closed, all). | Optional |
@@ -154,7 +154,7 @@ The **Merge pull request** action merges the specified pull request.
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **Pull request number** | The number that identifies the pull request. | Required |
@@ -174,7 +174,7 @@ The **Create issue** action creates a new issue in a specified repository.
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **Issue Title** | The title of the issue to be created. | Required |
@@ -196,7 +196,7 @@ The **Update issue** action updates an existing issue in a specified repository.
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **Issue Number** | The number of the issue to be updated. | Required |
@@ -220,7 +220,7 @@ The **Create comment** action creates a new comment on an issue or pull request 
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **Issue or pull request ID** | The ID of the issue or pull request to which the comment will be added. | Required |
@@ -240,7 +240,7 @@ The **Trigger workflow run** action triggers a workflow in a specified repositor
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **Workflow** | The ID of the workflow or the workflow file name including the `.yml` or `.yaml` extension. | Required |
@@ -261,7 +261,7 @@ The **Get latest workflow run** action retrieves data from the latest run workfl
 
 | Field | Description | Required |
 | --- | --- | --- |
-| **Connection** | [Connection](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
+| **Connection** | [Connection](github-workflows-setup.md#connection "Learn how to set up GitHub Connector.") to your GitHub environment. | Required |
 | **Owner** | Account owner of the repository (private user or organization). | Required |
 | **Repository** | The name of the repository without the `.git` extension. The name is not case-sensitive. | Required |
 | **Workflow** | The ID of the workflow or the workflow file name including the `.yml` or `.yaml` extension. | Required |
@@ -275,4 +275,4 @@ The action returns the `workflowRun` property that contains the full response of
 
 ## Related topics
 
-* [Set up GitHub Connector](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup "Learn how to set up GitHub Connector.")
+* [Set up GitHub Connector](github-workflows-setup.md "Learn how to set up GitHub Connector.")

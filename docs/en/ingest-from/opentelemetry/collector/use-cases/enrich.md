@@ -25,14 +25,14 @@ Enrichment is specific to non-container OneAgent environments. Configuring a con
 
 * One of the following Collector distributions with the [Resource Detection processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/processor/resourcedetectionprocessor):
 
-  + The [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector#dt-collector-dist "Learn about the Dynatrace OTel Collector.")
-  + OpenTelemetry [Contrib](/docs/ingest-from/opentelemetry/collector#collector-contrib "Learn about the Dynatrace OTel Collector.")
-  + A [custom Builder version](/docs/ingest-from/opentelemetry/collector#collector-builder "Learn about the Dynatrace OTel Collector.")
+  + The [Dynatrace Collector](../../collector.md#dt-collector-dist "Learn about the Dynatrace OTel Collector.")
+  + OpenTelemetry [Contrib](../../collector.md#collector-contrib "Learn about the Dynatrace OTel Collector.")
+  + A [custom Builder version](../../collector.md#collector-builder "Learn about the Dynatrace OTel Collector.")
 * A OneAgent running on the same host as the Collector, where the OneAgent monitors in either Full-Stack, Infrastructure, or Foundation & Discovery mode.
-* The [Dynatrace API endpoint URL](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported, configured as system environment variable
-* An [API token](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the relevant access scope (only required for SaaS and ActiveGate), configured as system environment variable
+* The [Dynatrace API endpoint URL](../../otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported, configured as system environment variable
+* An [API token](../../otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the relevant access scope (only required for SaaS and ActiveGate), configured as system environment variable
 
-See [Collector Deployment](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](/docs/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
+See [Collector Deployment](../deployment.md "How to deploy Dynatrace OTel Collector.") and [Collector Configuration](../configuration.md "How to configure the OpenTelemetry Collector.") on how to set up your Collector with the configuration below.
 
 ## Demo configuration
 
@@ -158,7 +158,7 @@ exporters: [otlp_http]
 
 Configuration validation
 
-[Validate your settings](/docs/ingest-from/opentelemetry/collector/configuration#validate "How to configure the OpenTelemetry Collector.") to avoid any configuration issues.
+[Validate your settings](../configuration.md#validate "How to configure the OpenTelemetry Collector.") to avoid any configuration issues.
 
 ## Components
 
@@ -174,7 +174,7 @@ This is mainly for demonstration purposes. You can specify any other valid recei
 
 Under `processors`, we specify the [`resourcedetection` processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/processor/resourcedetectionprocessor) and configure it with the [Dynatrace-specific detector `dynatrace`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/processor/resourcedetectionprocessor/README.md#dynatrace).
 
-With this configuration, the resource detector processor will attempt to load the following three attributes from the [OneAgent enrichment file](/docs/ingest-from/extend-dynatrace/extend-data#dynatrace-oneagent "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields."):
+With this configuration, the resource detector processor will attempt to load the following three attributes from the [OneAgent enrichment file](../../../extend-dynatrace/extend-data.md#dynatrace-oneagent "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields."):
 
 * `dt.entity.host`
 * `host.name`
@@ -188,8 +188,8 @@ Under `exporters`, we specify the default [`otlp_http` exporterï»¿](https://g
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `headers`.
 
-* `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](/docs/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
-* `DT_API_TOKEN` contains the [API token](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
+* `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](../../otlp-api.md#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
+* `DT_API_TOKEN` contains the [API token](../../otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
 
 ### Service pipeline
 

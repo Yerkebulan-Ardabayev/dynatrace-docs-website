@@ -17,11 +17,11 @@ scraped: 2026-03-06T21:17:49.528383
 
 ## Предварительные требования
 
-* [Создайте API-токен](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") в вашей среде Dynatrace и включите следующие разрешения:
+* [Создайте API-токен](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#create-api-token "Learn the concept of an access token and its scopes.") в вашей среде Dynatrace и включите следующие разрешения:
 
   + **Access problem and event feed, metrics, and topology** (`DataExport`) (API v1)
   + **PaaS integration - Installer download** (`InstallerDownload`)
-* Ознакомьтесь со списком [поддерживаемых приложений и версий](/docs/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+* Ознакомьтесь со списком [поддерживаемых приложений и версий](../../../../ingest-from/technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 ## Интеграция OneAgent в образ приложения
 
@@ -184,11 +184,11 @@ ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
 
 * `DT_NETWORK_ZONE`: соответствует `your.network.zone`
 
-Подробнее см. [сетевые зоны](/docs/manage/network-zones "Find out how network zones work in Dynatrace.").
+Подробнее см. [сетевые зоны](../../../../manage/network-zones.md "Find out how network zones work in Dynatrace.").
 
 ## Потребление мониторинга
 
-Для AWS App Runner потребление мониторинга основано на хост-единицах. Подробнее см. [Мониторинг приложений и инфраструктуры (хост-единицы)](/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
+Для AWS App Runner потребление мониторинга основано на хост-единицах. Подробнее см. [Мониторинг приложений и инфраструктуры (хост-единицы)](../../../../license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
 
 ## Устранение неполадок
 
@@ -196,4 +196,4 @@ ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
 
 ## Связанные темы
 
-* [Матрица поддержки платформ и возможностей OneAgent](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
+* [Матрица поддержки платформ и возможностей OneAgent](../../../../ingest-from/technology-support/oneagent-platform-and-capability-support-matrix.md "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

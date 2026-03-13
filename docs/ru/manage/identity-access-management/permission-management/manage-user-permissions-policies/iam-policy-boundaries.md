@@ -22,7 +22,7 @@ scraped: 2026-03-05T21:40:49.400146
 
 Когда граница выбрана в сочетании с политикой безопасности, она дополнительно ограничивает существующую политику, что также может привести к отсутствию доступа для пользователя.
 
-Границы политик поддерживают все условия, доступные в [справочнике IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+Границы политик поддерживают все условия, доступные в [справочнике IAM](advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
 ## Границы и политики по умолчанию
 
@@ -54,7 +54,7 @@ scraped: 2026-03-05T21:40:49.400146
 * **Что** — это часть разрешений политики, определяющая, какие API вам разрешено использовать
 * **Где** — это детальные разрешения на уровне записей/ресурсов, связанные с сервисом, выраженные условиями политики.
 
-Этот механизм чрезвычайно полезен в сочетании с [политиками по умолчанию](/docs/manage/identity-access-management/permission-management/default-policies#default-policies "Dynatrace default policies reference").
+Этот механизм чрезвычайно полезен в сочетании с [политиками по умолчанию](../default-policies.md#default-policies "Dynatrace default policies reference").
 
 Политики по умолчанию определяют набор разрешений для доступа к функциям и данным. Поскольку они являются общими, они не ограничивают доступ к конкретным записям и ресурсам.
 
@@ -117,10 +117,10 @@ ALLOW storage:metrics:read WHERE storage:k8s.namespace.name IN ("DEV","PREPROD")
 
 ### Назначение границ политик при назначении разрешений
 
-1. Для назначения границы настройте разрешения группы, как описано в [Управление группами](/docs/manage/identity-access-management/user-and-group-management/access-group-management#manage-group-permissions "Manage Dynatrace groups and their permissions.").
+1. Для назначения границы настройте разрешения группы, как описано в [Управление группами](../../user-and-group-management/access-group-management.md#manage-group-permissions "Manage Dynatrace groups and their permissions.").
 2. Выберите одну или несколько границ, которые должны быть применены к вашему назначению разрешений.
 
-   * Чтобы узнать, как границы применяются к разрешениям вашей политики, см. раздел [Как применяются границы политик?](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries#apply-boundary "Restrict security policies with policy boundaries to provide tailored access to your users.") ниже.
+   * Чтобы узнать, как границы применяются к разрешениям вашей политики, см. раздел [Как применяются границы политик?](iam-policy-boundaries.md#apply-boundary "Restrict security policies with policy boundaries to provide tailored access to your users.") ниже.
 
 Назначение границ
 
@@ -128,7 +128,7 @@ ALLOW storage:metrics:read WHERE storage:k8s.namespace.name IN ("DEV","PREPROD")
 
 ## Как применяются границы политик?
 
-Границы работают для всех сервисов, охваченных политиками безопасности и задокументированных в [справочнике политик IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+Границы работают для всех сервисов, охваченных политиками безопасности и задокументированных в [справочнике политик IAM](advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
 Когда привязка политики содержит границы, эффективная политика вычисляется по следующим правилам:
 
@@ -196,12 +196,12 @@ storage:k8s.namespace.name IN ("DEV","PREPROD");
 
 Учтите, что зоны управления, указанные в ваших границах, применяются только к операторам политик, поддерживающим зоны управления.
 
-Grail не поддерживает зоны управления, а использует поля `storage:` для контроля доступа на уровне записей. Подробнее см. [В чём разница между зонами управления и новыми политиками IAM?](/docs/platform/upgrade#access-control "Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data.")
+Grail не поддерживает зоны управления, а использует поля `storage:` для контроля доступа на уровне записей. Подробнее см. [В чём разница между зонами управления и новыми политиками IAM?](../../../../platform/upgrade.md#access-control "Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data.")
 
 ## Ограничения и лимиты границ политик
 
-* Не более 10 ограничений на границу для удобства управления. Если вам нужно больше ограничений, создайте дополнительные границы и [назначьте несколько границ](/docs/manage/identity-access-management/iam-limits "IAM limits for Dynatrace SaaS") политике.
+* Не более 10 ограничений на границу для удобства управления. Если вам нужно больше ограничений, создайте дополнительные границы и [назначьте несколько границ](../../iam-limits.md "IAM limits for Dynatrace SaaS") политике.
 * Границы совместимы только с политиками безопасности. Поддержка на основе ролей отсутствует.
 * Границы не поддерживают оператор AND — каждая строка границы может содержать только одно условие.
 
-  + Если вам нужны логические операторы и при этом вы хотите повторно использовать определения политик, обратите внимание на [шаблонизацию политик](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policy-templating "Policy templating").
+  + Если вам нужны логические операторы и при этом вы хотите повторно использовать определения политик, обратите внимание на [шаблонизацию политик](advanced/iam-policy-templating.md "Policy templating").

@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:15:38.957990
 * 8 мин. чтения
 * Опубликовано 26 ноября 2025
 
-По умолчанию [OneAgent](/docs/ingest-from/dynatrace-oneagent "Узнайте основные концепции OneAgent и как устанавливать и эксплуатировать OneAgent на различных платформах.") работает в режиме Full-Stack мониторинга, обеспечивая полную видимость хостов, процессов и сервисов. Если вы предпочитаете более лёгкий подход, вы можете переключиться на один из двух альтернативных режимов, которые сосредоточены на основных метриках инфраструктуры:
+По умолчанию [OneAgent](../../../ingest-from/dynatrace-oneagent.md "Узнайте основные концепции OneAgent и как устанавливать и эксплуатировать OneAgent на различных платформах.") работает в режиме Full-Stack мониторинга, обеспечивая полную видимость хостов, процессов и сервисов. Если вы предпочитаете более лёгкий подход, вы можете переключиться на один из двух альтернативных режимов, которые сосредоточены на основных метриках инфраструктуры:
 
 * Режим мониторинга инфраструктуры (Infrastructure monitoring mode)
 * Режим обнаружения (Discovery mode)
@@ -38,7 +38,7 @@ scraped: 2026-03-06T21:15:38.957990
 
 Чтобы включить режим мониторинга инфраструктуры во время установки OneAgent, используйте параметр `--set-monitoring-mode=infra-only`.
 
-Дополнительную информацию см. в документации по [установке OneAgent](/docs/ingest-from/dynatrace-oneagent "Узнайте основные концепции OneAgent и как устанавливать и эксплуатировать OneAgent на различных платформах.") для вашей конкретной среды.
+Дополнительную информацию см. в документации по [установке OneAgent](../../../ingest-from/dynatrace-oneagent.md "Узнайте основные концепции OneAgent и как устанавливать и эксплуатировать OneAgent на различных платформах.") для вашей конкретной среды.
 
 После установки OneAgent
 
@@ -51,9 +51,9 @@ scraped: 2026-03-06T21:15:38.957990
   3. Выберите **Host monitoring**.
   4. Перейдите к **Monitoring Mode** и в выпадающем меню выберите **Infrastructure**.
   5. Выберите **Save changes**.
-* Используйте [интерфейс командной строки OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнайте, как выполнять некоторые задачи конфигурации OneAgent без необходимости переустановки OneAgent.") для установки параметра `--set-monitoring-mode=infra-only`.
-* Используйте [Settings API](/docs/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API.") для включения режима мониторинга инфраструктуры в масштабе.
-* Для загрузки схемы используйте [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "Просмотрите схему настроек через Dynatrace API.") с `builtin:host.monitoring` в качестве schemaId и создайте объект конфигурации с помощью [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Создайте или проверьте объект настроек через Dynatrace API.").
+* Используйте [интерфейс командной строки OneAgent](../../../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Узнайте, как выполнять некоторые задачи конфигурации OneAgent без необходимости переустановки OneAgent.") для установки параметра `--set-monitoring-mode=infra-only`.
+* Используйте [Settings API](../../../dynatrace-api/environment-api/settings.md "Узнайте, что предлагает Dynatrace Settings API.") для включения режима мониторинга инфраструктуры в масштабе.
+* Для загрузки схемы используйте [GET a schema](../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "Просмотрите схему настроек через Dynatrace API.") с `builtin:host.monitoring` в качестве schemaId и создайте объект конфигурации с помощью [POST an object](../../../dynatrace-api/environment-api/settings/objects/post-object.md "Создайте или проверьте объект настроек через Dynatrace API.").
 
 ### Внедрение в процессы
 
@@ -61,7 +61,7 @@ scraped: 2026-03-06T21:15:38.957990
 
 Если вы запускаете OneAgent как контейнер с включённым режимом мониторинга инфраструктуры, внедрение в процессы не будет выполняться.
 
-Режим мониторинга инфраструктуры позволяет мониторить любой компонент инфраструктуры и вспомогательный сервис, написанный на Java. Вы можете мониторить вспомогательные сервисы, поддерживаемые по умолчанию (например, Kafka или ActiveMQ), а также можете создавать собственные [расширения JMX и PMI](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions "Узнайте, как расширить мониторинг Dynatrace для включения приложений, инструментированных с помощью JMX.") для компонентов инфраструктуры и использовать их в режиме мониторинга инфраструктуры.
+Режим мониторинга инфраструктуры позволяет мониторить любой компонент инфраструктуры и вспомогательный сервис, написанный на Java. Вы можете мониторить вспомогательные сервисы, поддерживаемые по умолчанию (например, Kafka или ActiveMQ), а также можете создавать собственные [расширения JMX и PMI](../../../ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions.md "Узнайте, как расширить мониторинг Dynatrace для включения приложений, инструментированных с помощью JMX.") для компонентов инфраструктуры и использовать их в режиме мониторинга инфраструктуры.
 
 Кроме того, с внедрением в процессы режим мониторинга инфраструктуры предоставляет метрики времени выполнения для:
 
@@ -74,7 +74,7 @@ scraped: 2026-03-06T21:15:38.957990
 
 ### Отключение автоматического внедрения в процессы
 
-Мы не рекомендуем отключать автоматическое внедрение, но если вам это необходимо из-за строгих требований безопасности, вы можете выбрать один из нескольких вариантов. Отключение автоматического внедрения также предотвращает обнаружение Dynatrace уязвимостей и отладку в реальном времени в вашей среде, даже если вы включите [Application Security](/docs/secure/application-security "Доступ к функциональности Dynatrace Application Security.") или [Live Debugger](/docs/observe/application-observability/live-debugger "Познакомьтесь с возможностями Live Debugger в Dynatrace."). Вы можете отключить автоматическое внедрение на уровне хоста или среды.
+Мы не рекомендуем отключать автоматическое внедрение, но если вам это необходимо из-за строгих требований безопасности, вы можете выбрать один из нескольких вариантов. Отключение автоматического внедрения также предотвращает обнаружение Dynatrace уязвимостей и отладку в реальном времени в вашей среде, даже если вы включите [Application Security](../../../secure/application-security.md "Доступ к функциональности Dynatrace Application Security.") или [Live Debugger](../../../observe/application-observability/live-debugger.md "Познакомьтесь с возможностями Live Debugger в Dynatrace."). Вы можете отключить автоматическое внедрение на уровне хоста или среды.
 
 #### Отключение автоматического внедрения для отдельного хоста
 
@@ -89,9 +89,9 @@ scraped: 2026-03-06T21:15:38.957990
 
 После установки OneAgent через командную строку
 
-Используйте [интерфейс командной строки OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнайте, как выполнять некоторые задачи конфигурации OneAgent без необходимости переустановки OneAgent.") для установки параметра `--set-auto-injection-enabled=false`.
+Используйте [интерфейс командной строки OneAgent](../../../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Узнайте, как выполнять некоторые задачи конфигурации OneAgent без необходимости переустановки OneAgent.") для установки параметра `--set-auto-injection-enabled=false`.
 
-Если вы используете oneagentctl для отключения автоматического внедрения, вы не сможете управлять автоматическим внедрением в режиме мониторинга инфраструктуры через веб-интерфейс Dynatrace в разделе **Settings > Monitoring > Monitored technologies** или через [API конфигурации мониторинга OneAgent](/docs/dynatrace-api/configuration-api/oneagent-configuration/oneagent-on-host/oneagent-monitoring/put-monitoring-configuration "Обновите конфигурацию мониторинга экземпляра OneAgent через Dynatrace API.").
+Если вы используете oneagentctl для отключения автоматического внедрения, вы не сможете управлять автоматическим внедрением в режиме мониторинга инфраструктуры через веб-интерфейс Dynatrace в разделе **Settings > Monitoring > Monitored technologies** или через [API конфигурации мониторинга OneAgent](../../../dynatrace-api/configuration-api/oneagent-configuration/oneagent-on-host/oneagent-monitoring/put-monitoring-configuration.md "Обновите конфигурацию мониторинга экземпляра OneAgent через Dynatrace API.").
 
 #### Отключение автоматического внедрения для среды
 
@@ -101,7 +101,7 @@ scraped: 2026-03-06T21:15:38.957990
 
 Пользовательские правила мониторинга процессов дают вам детальный контроль над тем, в какие процессы OneAgent выполняет внедрение, с подходом, который легко масштабируется в больших средах. Вам не нужно изменять конфигурацию системы, и несколько правил могут охватить тысячи процессов.
 
-Дополнительные сведения см. в разделе [Глубокий мониторинг процессов](/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring#rules "Способы настройки мониторинга групп процессов").
+Дополнительные сведения см. в разделе [Глубокий мониторинг процессов](../../../observe/infrastructure-observability/process-groups/configuration/pg-monitoring.md#rules "Способы настройки мониторинга групп процессов").
 
 Отключение метрик времени выполнения
 
@@ -139,7 +139,7 @@ scraped: 2026-03-06T21:15:38.957990
 
 ### Фильтрация хостов по статусу внедрения
 
-Когда вы отключаете автоматическое внедрение, вы можете найти такие хосты с помощью фильтра **Auto-injection** на странице **Deployment Status** или через [OneAgent on a host — GET a list of hosts with OneAgent details](/docs/dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents "Проверьте конфигурацию экземпляров OneAgent на ваших хостах через Dynatrace API.").
+Когда вы отключаете автоматическое внедрение, вы можете найти такие хосты с помощью фильтра **Auto-injection** на странице **Deployment Status** или через [OneAgent on a host — GET a list of hosts with OneAgent details](../../../dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents.md "Проверьте конфигурацию экземпляров OneAgent на ваших хостах через Dynatrace API.").
 
 Использование веб-интерфейса Dynatrace
 
@@ -159,7 +159,7 @@ scraped: 2026-03-06T21:15:38.957990
 
 Использование Dynatrace API
 
-Выполните вызов [OneAgent on a host — GET a list of hosts with OneAgent details](/docs/dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents "Проверьте конфигурацию экземпляров OneAgent на ваших хостах через Dynatrace API.") с параметром `autoInjection`, установленным в `DISABLED_MANUAL`. Возвращаемая полезная нагрузка содержит список экземпляров OneAgent с автоматическим внедрением, отключённым [после установки OneAgent](#after-install) через веб-интерфейс Dynatrace или `oneagentctl`.
+Выполните вызов [OneAgent on a host — GET a list of hosts with OneAgent details](../../../dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents.md "Проверьте конфигурацию экземпляров OneAgent на ваших хостах через Dynatrace API.") с параметром `autoInjection`, установленным в `DISABLED_MANUAL`. Возвращаемая полезная нагрузка содержит список экземпляров OneAgent с автоматическим внедрением, отключённым [после установки OneAgent](#after-install) через веб-интерфейс Dynatrace или `oneagentctl`.
 
 ## Включение режима обнаружения (Discovery)
 
@@ -169,7 +169,7 @@ scraped: 2026-03-06T21:15:38.957990
 
 Чтобы включить режим обнаружения во время установки OneAgent, используйте параметр `--set-monitoring-mode=discovery`.
 
-Дополнительную информацию см. в документации по [установке OneAgent](/docs/ingest-from/dynatrace-oneagent "Узнайте основные концепции OneAgent и как устанавливать и эксплуатировать OneAgent на различных платформах.") для вашей конкретной среды.
+Дополнительную информацию см. в документации по [установке OneAgent](../../../ingest-from/dynatrace-oneagent.md "Узнайте основные концепции OneAgent и как устанавливать и эксплуатировать OneAgent на различных платформах.") для вашей конкретной среды.
 
 После установки OneAgent
 
@@ -182,11 +182,11 @@ scraped: 2026-03-06T21:15:38.957990
   3. Выберите **Host monitoring**.
   4. Перейдите к **Monitoring Mode** и в выпадающем меню выберите **Discovery**.
   5. Выберите **Save changes**.
-* Используйте [интерфейс командной строки OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнайте, как выполнять некоторые задачи конфигурации OneAgent без необходимости переустановки OneAgent.") для установки параметра `--set-monitoring-mode=discovery`.
+* Используйте [интерфейс командной строки OneAgent](../../../ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Узнайте, как выполнять некоторые задачи конфигурации OneAgent без необходимости переустановки OneAgent.") для установки параметра `--set-monitoring-mode=discovery`.
 
 ### Внедрение модуля кода
 
-Для работы [Application Security](/docs/secure/application-security "Доступ к функциональности Dynatrace Application Security.") и [Live Debugger](/docs/observe/application-observability/live-debugger "Познакомьтесь с возможностями Live Debugger в Dynatrace.") в режиме обнаружения требуется внедрение модуля кода. Внедрение модуля кода отключено по умолчанию.
+Для работы [Application Security](../../../secure/application-security.md "Доступ к функциональности Dynatrace Application Security.") и [Live Debugger](../../../observe/application-observability/live-debugger.md "Познакомьтесь с возможностями Live Debugger в Dynatrace.") в режиме обнаружения требуется внедрение модуля кода. Внедрение модуля кода отключено по умолчанию.
 
 После [включения режима обнаружения](#enable-discovery-mode) вы можете включить внедрение модуля кода для отдельного хоста.
 
@@ -195,4 +195,4 @@ scraped: 2026-03-06T21:15:38.957990
 3. Включите **CodeModule Injection**, затем выберите **Save changes**.
 4. Перезапустите мониторируемые процессы на хосте.
 
-Подробную информацию о работе Application Security в режиме обнаружения см. в разделе [Application Security: режим обнаружения](/docs/secure/application-security#discovery "Доступ к функциональности Dynatrace Application Security.").
+Подробную информацию о работе Application Security в режиме обнаружения см. в разделе [Application Security: режим обнаружения](../../../secure/application-security.md#discovery "Доступ к функциональности Dynatrace Application Security.").

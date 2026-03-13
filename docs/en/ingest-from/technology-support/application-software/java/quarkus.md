@@ -18,7 +18,7 @@ Learn how Dynatrace can trace native Java applications and monitor metrics and l
 
 ## Prerequisites
 
-* Your GraalVM version is [supported by Dynatrace](/docs/ingest-from/technology-support#java-native-image "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+* Your GraalVM version is [supported by Dynatrace](../../../technology-support.md#java-native-image "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 * GraalVM is configured to build native images. For details, see the [Building a native executableï»¿](https://quarkus.io/guides/building-native-image) Quarkus guide.
 * OneAgent or Dynatrace Operator is installed on the machine where the application is about to be executed.
 
@@ -26,33 +26,33 @@ Learn how Dynatrace can trace native Java applications and monitor metrics and l
 
   | If your application is running | See the instruction for |
   | --- | --- |
-  | on a virtual machine or bare-metal | [OneAgent](/docs/ingest-from/dynatrace-oneagent/installation-and-operation "Install OneAgent on a server for the very first time.") |
-  | as workload in Kubernetes or OpenShift | [Dynatrace Operator](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes") |
+  | on a virtual machine or bare-metal | [OneAgent](../../../dynatrace-oneagent/installation-and-operation.md "Install OneAgent on a server for the very first time.") |
+  | as workload in Kubernetes or OpenShift | [Dynatrace Operator](../../../setup-on-k8s/deployment.md "Deploy Dynatrace Operator on Kubernetes") |
 
 ## Traces
 
 Dynatrace can automatically trace just-in-time (JIT) compiled Quarkus applications executed on OpenJDK HotSpot JVM and GraalVM.
 
-For ahead-of-time (AOT) compiled Quarkus applications executed on GraalVM, see [GraalVM Native Image](/docs/ingest-from/technology-support/application-software/java/graalvm-native-image "Install, configure, and manage Dynatrace GraalVM Native Image module.") to get started.
+For ahead-of-time (AOT) compiled Quarkus applications executed on GraalVM, see [GraalVM Native Image](graalvm-native-image.md "Install, configure, and manage Dynatrace GraalVM Native Image module.") to get started.
 
 #### OpenTelemetry
 
-You can export Quarkus tracing information using [OpenTelemetry](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
+You can export Quarkus tracing information using [OpenTelemetry](../../../opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
 
 Simplified setup options when monitored by OneAgent
 
 If your environment is monitored by OneAgent, you have those simplified configuration options available:
 
-* **[OneAgent OpenTelemetry Span Sensor](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel#oneagent-otel-span-sensor "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.")** Recommended: Automatically captures OpenTelemetry API calls and stitches them into OneAgent traces without requiring manual OTLP export configuration. To use this approach, [enable the OpenTelemetry Span Sensor](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.") and **don't** configure manual OTLP export.
-* **[Local OTLP endpoint via EEC](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel#send-opentelemetry-traces-to-the-otlp-endpoint-exposed-by-oneagent "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.")**: For non-containerized environments, you can send traces to the local OTLP endpoint at `http://localhost:14499/otlp/v1/traces` after [enabling the Extension Execution Controller](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel#send-opentelemetry-traces-to-the-otlp-endpoint-exposed-by-oneagent "Learn how to send OpenTelemetry data to a Dynatrace OneAgent."). This eliminates the need for API tokens and external endpoints.
+* **[OneAgent OpenTelemetry Span Sensor](../../../dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel.md#oneagent-otel-span-sensor "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.")** Recommended: Automatically captures OpenTelemetry API calls and stitches them into OneAgent traces without requiring manual OTLP export configuration. To use this approach, [enable the OpenTelemetry Span Sensor](../../../dynatrace-oneagent/oneagent-and-opentelemetry/configuration.md "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.") and **don't** configure manual OTLP export.
+* **[Local OTLP endpoint via EEC](../../../dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel.md#send-opentelemetry-traces-to-the-otlp-endpoint-exposed-by-oneagent "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.")**: For non-containerized environments, you can send traces to the local OTLP endpoint at `http://localhost:14499/otlp/v1/traces` after [enabling the Extension Execution Controller](../../../dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel.md#send-opentelemetry-traces-to-the-otlp-endpoint-exposed-by-oneagent "Learn how to send OpenTelemetry data to a Dynatrace OneAgent."). This eliminates the need for API tokens and external endpoints.
 
 If you prefer a OneAgent-based method, skip the manual configuration below.
 
 If you prefer manual configuration or donât use OneAgent, follow the steps below.
 
-To manually configure OpenTelemetry export, use the [Quarkus-specific configuration parametersï»¿](https://dt-url.net/3g039zt) to configure the exporter to send trace data to one of the two available endpoints, [ActiveGate or OneAgent](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+To manually configure OpenTelemetry export, use the [Quarkus-specific configuration parametersï»¿](https://dt-url.net/3g039zt) to configure the exporter to send trace data to one of the two available endpoints, [ActiveGate or OneAgent](../../../opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
 
-The following example shows how to configure `application.properties` to export to a Dynatrace SaaS endpoint. It specifies the API URL and the necessary, percent-encoded [`Authorization` header](/docs/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the API token.
+The following example shows how to configure `application.properties` to export to a Dynatrace SaaS endpoint. It specifies the API URL and the necessary, percent-encoded [`Authorization` header](../../../opentelemetry/otlp-api.md#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the API token.
 
 ```
 quarkus.application.name=myservice
@@ -82,13 +82,13 @@ Dynatrace offers two approaches for obtaining Micrometer metrics from Prometheus
 
 Use the Dynatrace API to ingest metrics obtained from the `quarkus-micrometer-registry-prometheus` library.
 
-To learn more about the ingestion procedure, see [Send Micrometer metrics to Dynatrace](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer "Learn how to send Micrometer metrics to Dynatrace.").
+To learn more about the ingestion procedure, see [Send Micrometer metrics to Dynatrace](../../../extend-dynatrace/extend-metrics/ingestion-methods/micrometer.md "Learn how to send Micrometer metrics to Dynatrace.").
 
-For natively built applications, be sure to follow the [Directly in Micrometer](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer#properties-direct "Learn how to send Micrometer metrics to Dynatrace.") approach.
+For natively built applications, be sure to follow the [Directly in Micrometer](../../../extend-dynatrace/extend-metrics/ingestion-methods/micrometer.md#properties-direct "Learn how to send Micrometer metrics to Dynatrace.") approach.
 
 ### Ingest Micrometer metrics via an extension
 
-Use the Dynatrace [Extension 2.0 Framework](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") to ingest Micrometer metrics obtained from the [Prometheus data source](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Learn how to create a Prometheus extension using the Extensions framework.")âyou need to create a custom extension for that.
+Use the Dynatrace [Extension 2.0 Framework](../../../extensions.md "Learn how to create and manage Dynatrace Extensions.") to ingest Micrometer metrics obtained from the [Prometheus data source](../../../extensions/develop-your-extensions/data-sources/prometheus-extensions.md "Learn how to create a Prometheus extension using the Extensions framework.")âyou need to create a custom extension for that.
 
 As a starting point, you can use the custom extension example below. It's tailored to the `quarkus-micrometer-registry-prometheus` library. Be sure to use the correct metrics endpoint in your configuration. The default endpoint is `localhost:8080/q/metrics`.
 
@@ -744,7 +744,7 @@ featureSet: global
 
 ## Logs
 
-Dynatrace offers [various options](/docs/ingest-from/extend-dynatrace/extend-logs "Learn how to extend log observability in Dynatrace.") for collecting logs from your applications and environments.
+Dynatrace offers [various options](../../../extend-dynatrace/extend-logs.md "Learn how to extend log observability in Dynatrace.") for collecting logs from your applications and environments.
 
 To learn how to set up logging in your Quarkus application, see the [Configuring loggingï»¿](https://quarkus.io/guides/logging) Quarkus guide.
 
@@ -755,13 +755,13 @@ For the procedure below, we assume your application writes logs to the `/var/log
 3. Scroll down to the **Process analysis** section and, in the list of processes, select the process of your Quarkus native application.
 4. On the right side of the **Process** panel, select ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More") > **Settings**.
 5. In the process group settings, select **Log monitoring** > **Add new log for monitoring**.
-6. Enter the full path of your log file. Be sure to follow the [log path requirements](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/add-log-files-manually-v2#considerations-for-adding-text-log-files-manually "Learn how to manually add log files for analysis.").
+6. Enter the full path of your log file. Be sure to follow the [log path requirements](../../../../analyze-explore-automate/log-monitoring/acquire-log-data/add-log-files-manually-v2.md#considerations-for-adding-text-log-files-manually "Learn how to manually add log files for analysis.").
 7. Select **Save changes**.
-8. [Include the added log files](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/add-log-files-sources-v2 "Learn how to include and exclude log sources for analysis.") in your log storage.
+8. [Include the added log files](../../../../analyze-explore-automate/log-monitoring/acquire-log-data/add-log-files-sources-v2.md "Learn how to include and exclude log sources for analysis.") in your log storage.
 
 ## Related topics
 
-* [Send Micrometer metrics to Dynatrace](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer "Learn how to send Micrometer metrics to Dynatrace.")
-* [Manage Prometheus extensions](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions "Learn how to extend observability in Dynatrace with declarative Prometheus metrics ingestion.")
-* [Prometheus data source](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Learn how to create a Prometheus extension using the Extensions framework.")
-* [Dynatrace OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
+* [Send Micrometer metrics to Dynatrace](../../../extend-dynatrace/extend-metrics/ingestion-methods/micrometer.md "Learn how to send Micrometer metrics to Dynatrace.")
+* [Manage Prometheus extensions](../../../extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions.md "Learn how to extend observability in Dynatrace with declarative Prometheus metrics ingestion.")
+* [Prometheus data source](../../../extensions/develop-your-extensions/data-sources/prometheus-extensions.md "Learn how to create a Prometheus extension using the Extensions framework.")
+* [Dynatrace OTLP API endpoints](../../../opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")

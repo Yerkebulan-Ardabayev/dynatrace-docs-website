@@ -539,7 +539,7 @@ OneAgent может агрегировать спаны с одним родит
 
 Например, если OneAgent выполняет выборку с вероятностью 25%, спаны будут содержать атрибуты `sampling.threshold=54043195528445952` и `supportability.atm_sampling_ratio=4`.
 
-Подробности об адаптивном управлении трафиком для распределённой трассировки можно найти в [документации](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.").
+Подробности об адаптивном управлении трафиком для распределённой трассировки можно найти в [документации](../../ingest-from/dynatrace-oneagent/adaptive-traffic-management.md "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.").
 
 ### Атрибуты кода
 

@@ -21,9 +21,9 @@ scraped: 2026-03-05T21:31:36.084206
 * 9-min read
 * Updated on Sep 16, 2025
 
-You can assign [team owners](/docs/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") to **any monitored entity** in Dynatrace using the main team identifier or supplementary identifiers (defined when [setting up a team](/docs/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.")). This makes it easier to find the responsible team instantly and contact them if any issue arises with an entity, for example, if the entity is affected by a vulnerability.
+You can assign [team owners](../ru/deliver/ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") to **any monitored entity** in Dynatrace using the main team identifier or supplementary identifiers (defined when [setting up a team](../ru/deliver/ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.")). This makes it easier to find the responsible team instantly and contact them if any issue arises with an entity, for example, if the entity is affected by a vulnerability.
 
-You can apply ownership using several methods such as Kubernetes labels and annotations, host metadata, environment variables, and tags (including via the Dynatrace [Custom tags API](/docs/dynatrace-api/environment-api/custom-tags "Manage custom tags of the monitored entities via the Dynatrace API.")).
+You can apply ownership using several methods such as Kubernetes labels and annotations, host metadata, environment variables, and tags (including via the Dynatrace [Custom tags API](dynatrace-api/environment-api/custom-tags.md "Manage custom tags of the monitored entities via the Dynatrace API.")).
 
 ## Supported methods of applying ownership
 
@@ -45,13 +45,13 @@ We highly recommend that you use the preferred method for applying ownership bas
 * [Environment variables for processes](#process-env-variables)
 * [Tags (manual, automated, and via API) for all other entities](#tags)
 
-Our recommendations are based on the most efficient methods to ensure that entities have adequate ownership coverage. See [Best practices for entity ownership](/docs/deliver/ownership/best-practices "Tips and best practices to ensure that entities have adequate ownership coverage") for more information.
+Our recommendations are based on the most efficient methods to ensure that entities have adequate ownership coverage. See [Best practices for entity ownership](../ru/deliver/ownership/best-practices.md "Tips and best practices to ensure that entities have adequate ownership coverage") for more information.
 
 ## Format for applying ownership information
 
 Regardless of the method used, ownership information is applied to entities in **key-value pairs**. The default keys `owner` and `dt.owner` are available in every monitoring environmentâsee **Settings** > **Ownership** > **Configuration**. You can, however, change or delete the default keys and [define your own](#custom-keys).
 
-The value is always the unique team identifier specified when creating a team. You can also use supplementary identifiers. (See [Create and manage teams for entity ownership](/docs/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") for more information on defining these values.)
+The value is always the unique team identifier specified when creating a team. You can also use supplementary identifiers. (See [Create and manage teams for entity ownership](../ru/deliver/ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") for more information on defining these values.)
 
 An entity can have more than one ownership team. You can effect this by applying multiple key-value pairs, as shown in the sections that follow.
 
@@ -77,7 +77,7 @@ When you **disable or delete a key**, entities assigned to teams via such keys w
 
 You can specify team ownership for different Kubernetes objects such as Deployments, Pods, Services, or namespaces. To ensure that Kubernetes objects have adequate ownership coverage, which is especially important for short-lived entities like Pods, provide ownership information as Kubernetes labels or annotations with [key-value pairs](#format) in the deployment specification file, for example, `deployment.yaml`.
 
-We recommend defining ownership for the Deployment and all other objects for which you want ownership coverage. See also [Best practices for entity ownership](/docs/deliver/ownership/best-practices "Tips and best practices to ensure that entities have adequate ownership coverage").
+We recommend defining ownership for the Deployment and all other objects for which you want ownership coverage. See also [Best practices for entity ownership](../ru/deliver/ownership/best-practices.md "Tips and best practices to ensure that entities have adequate ownership coverage").
 
 * Setting a team identifier as a label or annotation for the Deployment, CronJob, Job, DaemonSet, or StatefulSet provides team ownership information for the respective `CLOUD_APPLICATION` entities. Note that this ownership is not propagated to the `CLOUD_APPLICATION_INSTANCE`.
 
@@ -407,9 +407,9 @@ We recommend defining ownership for the Deployment and all other objects for whi
 
 ## Host metadata
 
-For hosts, we recommend using [host metadata](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#host-metadata "Learn how to tag and set additional properties for a monitored host.") as the primary method of applying ownership.
+For hosts, we recommend using [host metadata](observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts.md#host-metadata "Learn how to tag and set additional properties for a monitored host.") as the primary method of applying ownership.
 
-Read more about [defining tags and metadata for hosts](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.") and the [OneAgent `oneagentctl` command-line interface](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+Read more about [defining tags and metadata for hosts](observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts.md "Learn how to tag and set additional properties for a monitored host.") and the [OneAgent `oneagentctl` command-line interface](../ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface.md "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 You can also apply ownership to hosts using [tags](#tags).
 
@@ -420,7 +420,7 @@ OneAgent version 1.189+ For hosts with OneAgent version 1.189+, use the `oneagen
 * Windows: `%PROGRAMFILES%\dynatrace\oneagent\agent\tools`
 * All Unix-like systems: `/opt/dynatrace/oneagent/agent/tools`
 
-This example for Unix-like systems uses `--set-host-property` to set ownership with the [key-value pair](#format) `owner-1=team-automation`, where `team-automation` is the [main team identifier or a supplementary identifier](/docs/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.").
+This example for Unix-like systems uses `--set-host-property` to set ownership with the [key-value pair](#format) `owner-1=team-automation`, where `team-automation` is the [main team identifier or a supplementary identifier](../ru/deliver/ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.").
 
 ```
 ./oneagentctl --set-host-property owner-1=team-automation
@@ -435,7 +435,7 @@ OneAgent version 1.187 and earlier For hosts on OneAgent 1.187 and earlier, crea
 * Windows: `%PROGRAMDATA%\dynatrace\oneagent\agent\config`
 * All Unix-like systems: `/var/lib/dynatrace/oneagent/agent/config`
 
-This example for Unix-like systems sets host ownership with the [key-value pair](#format) `dt.owner-1=team-automation`, where `team-automation` is the [main team identifier or a supplementary identifier](/docs/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.").
+This example for Unix-like systems sets host ownership with the [key-value pair](#format) `dt.owner-1=team-automation`, where `team-automation` is the [main team identifier or a supplementary identifier](../ru/deliver/ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.").
 
 ```
 cat hostcustomproperties.conf dt.owner-1=team-automation
@@ -447,7 +447,7 @@ For processes, we recommend specifying ownership in key-value pairs via the `DT_
 
 We **do not recommend** using tags to apply ownership to processes or process groups.
 
-Read more about [defining process group metadata](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata "Configure your own process-related metadata based on the unique needs of your organization or environment."), for example, setting up the `DT_CUSTOM_PROP` environment variable for [IIS](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#iis "Configure your own process-related metadata based on the unique needs of your organization or environment.") and [Windows](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#windows "Configure your own process-related metadata based on the unique needs of your organization or environment.").
+Read more about [defining process group metadata](observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata.md "Configure your own process-related metadata based on the unique needs of your organization or environment."), for example, setting up the `DT_CUSTOM_PROP` environment variable for [IIS](observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata.md#iis "Configure your own process-related metadata based on the unique needs of your organization or environment.") and [Windows](observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata.md#windows "Configure your own process-related metadata based on the unique needs of your organization or environment.").
 
 ```
 export DT_CUSTOM_PROP dt.owner=DemoTeam
@@ -461,34 +461,34 @@ See [Format for applying ownership information](#format) on all existing key-val
 
 ### Tagging methods
 
-You can use tags to apply ownership in [key-value pairs](#format) to any monitored entityâread more about [tagging](/docs/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.").
+You can use tags to apply ownership in [key-value pairs](#format) to any monitored entityâread more about [tagging](../common/manage/tags-and-metadata.md "Use tags and metadata to organize data in your Dynatrace environment.").
 
 ![Ownership via a manual tag](https://dt-cdn.net/images/ownership-manual-tag-1004-f7c90a9b42.png)
 
-* [Manual tags](/docs/manage/tags-and-metadata/setup/how-to-define-tags#manual "Find out how to define and apply tags manually and automatically.") using the defined keys or key prefixes (like `owner` and `dt.owner`) are simple to apply via the web UI.
-* You can also set up [automatic tagging rules](/docs/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically.") via the web UI.
-* We recommend using the [Custom tags API](/docs/dynatrace-api/environment-api/custom-tags "Manage custom tags of the monitored entities via the Dynatrace API.") over automatic tagging rules to apply ownership to entities. The Custom tags API enables you to conveniently apply tags to a large group of entities within a single API call, executed immediately.
+* [Manual tags](manage/tags-and-metadata/setup/how-to-define-tags.md#manual "Find out how to define and apply tags manually and automatically.") using the defined keys or key prefixes (like `owner` and `dt.owner`) are simple to apply via the web UI.
+* You can also set up [automatic tagging rules](manage/tags-and-metadata/setup/how-to-define-tags.md#automatic "Find out how to define and apply tags manually and automatically.") via the web UI.
+* We recommend using the [Custom tags API](dynatrace-api/environment-api/custom-tags.md "Manage custom tags of the monitored entities via the Dynatrace API.") over automatic tagging rules to apply ownership to entities. The Custom tags API enables you to conveniently apply tags to a large group of entities within a single API call, executed immediately.
 
 Note that manually applied tags can be removed manually. Automatically applied tags canât be removed manually from individual services, process groups, process group instances, applications, or hosts.
 
-See [Best practices for entity ownership](/docs/deliver/ownership/best-practices "Tips and best practices to ensure that entities have adequate ownership coverage") for more information on the benefits and limitations of tagging for assigning owners to entities. See also [Best practices for scaling tagging and management-zone rules](/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.").
+See [Best practices for entity ownership](../ru/deliver/ownership/best-practices.md "Tips and best practices to ensure that entities have adequate ownership coverage") for more information on the benefits and limitations of tagging for assigning owners to entities. See also [Best practices for scaling tagging and management-zone rules](../ru/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale.md "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.").
 
 ### Permissions
 
 You require **all** the following permissions to add, change, or remove ownership via the Custom tags API.
 
-* The `entities.write` [token permission](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.")
-* The `settings.read` token permission or the [IAM policy](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies") `ALLOW settings:objects:read WHERE settings:schemaId = "builtin:ownership.teams";`
+* The `entities.write` [token permission](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md "Learn the concept of an access token and its scopes.")
+* The `settings.read` token permission or the [IAM policy](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies") `ALLOW settings:objects:read WHERE settings:schemaId = "builtin:ownership.teams";`
 
-For adding, changing, or deleting tags via the web UI, you need the **Manage monitoring settings** [permission](/docs/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions") at the environment or management-zone level.
+For adding, changing, or deleting tags via the web UI, you need the **Manage monitoring settings** [permission](manage/identity-access-management/permission-management/role-based-permissions.md "Role-based permissions") at the environment or management-zone level.
 
 ## View ownership information in the web UI
 
-Ownership information is only available for [unified analysis pages](/docs/ingest-from/extend-dynatrace/extend-ui/unified-analysis "Extend the Dynatrace web UI using entity-tailored unified analysis pages.").
+Ownership information is only available for [unified analysis pages](../ru/ingest-from/extend-dynatrace/extend-ui/unified-analysis.md "Extend the Dynatrace web UI using entity-tailored unified analysis pages.").
 
 For hosts and all Kubernetes entities, select **Owners** on the entity details page to view ownership information.
 
-This example shows a Kubernetes workload mapping to the `CLOUD_APPLICATION` entity. Expand a team name to view its details. Select ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") in the **Ownership** card to [edit team details](/docs/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") in **Settings**.
+This example shows a Kubernetes workload mapping to the `CLOUD_APPLICATION` entity. Expand a team name to view its details. Select ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") in the **Ownership** card to [edit team details](../ru/deliver/ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") in **Settings**.
 
 ![Owner of a Kubernetes workload](https://dt-cdn.net/images/ownership-k8s-workload-2213-2217e57297.png)
 
@@ -512,15 +512,15 @@ Select ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "E
 
 ## Related topics
 
-* [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
-* [Define tags and metadata for hosts](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.")
-* [Define your own process group metadata](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata "Configure your own process-related metadata based on the unique needs of your organization or environment.")
-* [Tags and metadata](/docs/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.")
-* [Custom tags API](/docs/dynatrace-api/environment-api/custom-tags "Manage custom tags of the monitored entities via the Dynatrace API.")
-* [Best practices for scaling tagging and management-zone rules](/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.")
+* [Set up Dynatrace on Kubernetes](../ru/ingest-from/setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes")
+* [Define tags and metadata for hosts](observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts.md "Learn how to tag and set additional properties for a monitored host.")
+* [Define your own process group metadata](observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata.md "Configure your own process-related metadata based on the unique needs of your organization or environment.")
+* [Tags and metadata](../common/manage/tags-and-metadata.md "Use tags and metadata to organize data in your Dynatrace environment.")
+* [Custom tags API](dynatrace-api/environment-api/custom-tags.md "Manage custom tags of the monitored entities via the Dynatrace API.")
+* [Best practices for scaling tagging and management-zone rules](../ru/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale.md "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.")
 * [Kubernetes labelsï»¿](https://dt-url.net/g442yn5 "Official Kubernetes documentation on labels")
 * [Kubernetes annotationsï»¿](https://dt-url.net/bz62yto "Official Kubernetes documentation on annotations")
-* [Unified analysis pages](/docs/ingest-from/extend-dynatrace/extend-ui/unified-analysis "Extend the Dynatrace web UI using entity-tailored unified analysis pages.")
+* [Unified analysis pages](../ru/ingest-from/extend-dynatrace/extend-ui/unified-analysis.md "Extend the Dynatrace web UI using entity-tailored unified analysis pages.")
 
 ---
 
@@ -554,18 +554,18 @@ We recommend that you **assign owners to critical entities**. These are entities
 
 **Use these recommended methods for applying ownership based on entity type**; while you can use tags to apply ownership to any monitored entity, these recommended methods are the most efficient ways to assign entities to owners.
 
-* [Kubernetes labels for Kubernetes objects](/docs/deliver/ownership/assign-ownership#kubernetes "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
-* [Metadata for hosts](/docs/deliver/ownership/assign-ownership#host-metadata "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
-* [Environment variables for processes](/docs/deliver/ownership/assign-ownership#process-env-variables "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
-* [Tags (manual, automated, and via API) for all other entities](/docs/deliver/ownership/assign-ownership#tags "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
+* [Kubernetes labels for Kubernetes objects](../ru/deliver/ownership/assign-ownership.md#kubernetes "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
+* [Metadata for hosts](../ru/deliver/ownership/assign-ownership.md#host-metadata "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
+* [Environment variables for processes](../ru/deliver/ownership/assign-ownership.md#process-env-variables "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
+* [Tags (manual, automated, and via API) for all other entities](../ru/deliver/ownership/assign-ownership.md#tags "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
 
 ### Kubernetes
 
-For [Kubernetes objects](/docs/deliver/ownership/assign-ownership#kubernetes "Assign owners to entities using entity metadata like labels, environment variables, and tags."), **define ownership simultaneously for all desired Kubernetes objects**. This ensures that all your Kubernetes objects have adequate ownership coverage at the time of deployment.
+For [Kubernetes objects](../ru/deliver/ownership/assign-ownership.md#kubernetes "Assign owners to entities using entity metadata like labels, environment variables, and tags."), **define ownership simultaneously for all desired Kubernetes objects**. This ensures that all your Kubernetes objects have adequate ownership coverage at the time of deployment.
 
 * Always apply labels for the **Deployment**.
 * We recommend specifying ownership for at least the `CLOUD_APPLICATION` (for example, the Deployment, Job, CronJob, or DaemonSet) and the `CLOUD_APPLICATION_INSTANCE` (Pods) entities.
-* Unique keys are a requirement in [key-value pairs](/docs/deliver/ownership/assign-ownership#format "Assign owners to entities using entity metadata like labels, environment variables, and tags.") in Kubernetes labels. Keys must begin with the [custom key names you define for ownership information](/docs/deliver/ownership/assign-ownership#custom-keys "Assign owners to entities using entity metadata like labels, environment variables, and tags."). For example, you can use `owner` and `dt.owner` as prefixes to create unique keys.
+* Unique keys are a requirement in [key-value pairs](../ru/deliver/ownership/assign-ownership.md#format "Assign owners to entities using entity metadata like labels, environment variables, and tags.") in Kubernetes labels. Keys must begin with the [custom key names you define for ownership information](../ru/deliver/ownership/assign-ownership.md#custom-keys "Assign owners to entities using entity metadata like labels, environment variables, and tags."). For example, you can use `owner` and `dt.owner` as prefixes to create unique keys.
 
 Sample Kubernetes deployment file with ownership defined for Deployment, Pod, and process
 
@@ -675,27 +675,27 @@ value: 'dt.owner-1=my-team-1' # Ownership defined for the process
 
 ### Tags
 
-**Use [tags to apply ownership](/docs/deliver/ownership/assign-ownership#tags "Assign owners to entities using entity metadata like labels, environment variables, and tags.") only for entities that aren't covered by other methods**.
+**Use [tags to apply ownership](../ru/deliver/ownership/assign-ownership.md#tags "Assign owners to entities using entity metadata like labels, environment variables, and tags.") only for entities that aren't covered by other methods**.
 
 #### Advantages and uses of tags
 
 * Tags are appropriate for assigning a **few stable entities** (for example, an application and the synthetic monitors running against it) to specific ownership teams.
-* [Manual tagging](/docs/manage/tags-and-metadata/setup/how-to-define-tags#manual "Find out how to define and apply tags manually and automatically.") or the [Custom tags API](/docs/dynatrace-api/environment-api/custom-tags "Manage custom tags of the monitored entities via the Dynatrace API.") are effective in applying ownership to **existing (already deployed) entities**.
-* [Automatic tagging rules](/docs/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically.") have the advantage of capturing **new entities** that match your tagging rules. Automatically applied tags also can't be removed manually from individual services, process groups, process group instances, applications, or hosts.
-* While the Custom tags API and automatic tagging rules both use the powerful and flexible [**entity selector**](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") for selecting entities, the **Custom tags API call is executed immediately**. This is a [major advantage over automatic tagging rules](/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale#custom-tags-api "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.") that are scheduled via the Dynatrace tagging process. This helps you speed up execution time when complex tagging rules are necessary.
+* [Manual tagging](manage/tags-and-metadata/setup/how-to-define-tags.md#manual "Find out how to define and apply tags manually and automatically.") or the [Custom tags API](dynatrace-api/environment-api/custom-tags.md "Manage custom tags of the monitored entities via the Dynatrace API.") are effective in applying ownership to **existing (already deployed) entities**.
+* [Automatic tagging rules](manage/tags-and-metadata/setup/how-to-define-tags.md#automatic "Find out how to define and apply tags manually and automatically.") have the advantage of capturing **new entities** that match your tagging rules. Automatically applied tags also can't be removed manually from individual services, process groups, process group instances, applications, or hosts.
+* While the Custom tags API and automatic tagging rules both use the powerful and flexible [**entity selector**](../ru/dynatrace-api/environment-api/entity-v2/entity-selector.md "Configure the entity selector for Environment API endpoints.") for selecting entities, the **Custom tags API call is executed immediately**. This is a [major advantage over automatic tagging rules](../ru/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale.md#custom-tags-api "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.") that are scheduled via the Dynatrace tagging process. This helps you speed up execution time when complex tagging rules are necessary.
 
 #### Important considerations when using tags for ownership
 
 * **Manual tagging** doesn't **scale** adequately for assigning ownership in large, dynamic monitoring environments. Manual tags can also be removed manually.
-* While (web UIâbased) **automatic tagging rules** are designed for complexity, automatic tagging runs can take a **long time** to be completed, depending on the complexity of your rules and the size of your environment. Meanwhile, a critical entity experiencing an issue could miss being tagged with ownership. Read more about optimizing tagging in [Best practices for scaling tagging and management-zone rules](/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.").
+* While (web UIâbased) **automatic tagging rules** are designed for complexity, automatic tagging runs can take a **long time** to be completed, depending on the complexity of your rules and the size of your environment. Meanwhile, a critical entity experiencing an issue could miss being tagged with ownership. Read more about optimizing tagging in [Best practices for scaling tagging and management-zone rules](../ru/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale.md "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.").
 * While the **Custom tags API call** is executed immediately, the tradeoff is that it's a **one-time operation**. Depending on the frequency of your tagging runs, new or short-lived entities could miss being tagged with ownership information entirely, making it difficult to find owners in case of vulnerabilities or outages.
 * We **do not recommend** using tags to apply ownership to processes or process groups.
 
 ## Team information
 
-While only the **Team name** and **Team identifier** fields are required for creating an [ownership team](/docs/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership."), here are some suggestions and best uses of other fields.
+While only the **Team name** and **Team identifier** fields are required for creating an [ownership team](../ru/deliver/ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership."), here are some suggestions and best uses of other fields.
 
-* When defining [custom keys](/docs/deliver/ownership/assign-ownership#custom-keys "Assign owners to entities using entity metadata like labels, environment variables, and tags.") for ownership identifiers, use specific, easily understandable names that are not likely to be used for other tagging needs.
+* When defining [custom keys](../ru/deliver/ownership/assign-ownership.md#custom-keys "Assign owners to entities using entity metadata like labels, environment variables, and tags.") for ownership identifiers, use specific, easily understandable names that are not likely to be used for other tagging needs.
 * Always add a team **Description**âthis is displayed along with the team name on the **Ownership teams** settings page and helps to differentiate teams at a glance. Teams with no description or a poor name (team 1) offer no clues as to their role in your organization. Teams with descriptions (2 and 3) are more identifiable.
 
   ![Team definitions](https://dt-cdn.net/images/ownership-team-definitions-1888-78e12327f8.png)
@@ -719,7 +719,7 @@ While only the **Team name** and **Team identifier** fields are required for cre
 
 
 
-* [Best practices for scaling tagging and management-zone rules](/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.")
+* [Best practices for scaling tagging and management-zone rules](../ru/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale.md "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.")
 
 ---
 
@@ -740,9 +740,9 @@ scraped: 2026-03-06T21:37:33.831582
 * 8-min read
 * Updated on Nov 07, 2023
 
-Ownership for monitored entities is defined within **teams**. You can set up ownership teams in the web UI, via API, and using [Configuration as Code](/docs/deliver/configuration-as-code "Use Dynatrace configuration as code via Monaco or Terraform."). Each team has a **unique identifier** that is the basis for [applying ownership to entities](/docs/deliver/ownership/assign-ownership "Assign owners to entities using entity metadata like labels, environment variables, and tags.") by different methods (Kubernetes labels and annotations, host metadata, environment variables, or tags). Additionally, team definitions consist of names, descriptions, important routing information for notifications (via Microsoft Teams, Slack, Jira, and email), responsibilities (such as operations or security), and additional helpful links.
+Ownership for monitored entities is defined within **teams**. You can set up ownership teams in the web UI, via API, and using [Configuration as Code](../ru/deliver/configuration-as-code.md "Use Dynatrace configuration as code via Monaco or Terraform."). Each team has a **unique identifier** that is the basis for [applying ownership to entities](../ru/deliver/ownership/assign-ownership.md "Assign owners to entities using entity metadata like labels, environment variables, and tags.") by different methods (Kubernetes labels and annotations, host metadata, environment variables, or tags). Additionally, team definitions consist of names, descriptions, important routing information for notifications (via Microsoft Teams, Slack, Jira, and email), responsibilities (such as operations or security), and additional helpful links.
 
-Team settings are based on the [Settings 2.0 framework](/docs/manage/settings/settings-20 "Introduction to the Settings 2.0 framework"), which defines each team configuration as a settings object based on the ownership schema, whether you use API, Configuration as Code, imported data from third-party databases, or the web UI at **Settings** > **Ownership**.
+Team settings are based on the [Settings 2.0 framework](../ru/manage/settings/settings-20.md "Introduction to the Settings 2.0 framework"), which defines each team configuration as a settings object based on the ownership schema, whether you use API, Configuration as Code, imported data from third-party databases, or the web UI at **Settings** > **Ownership**.
 
 Ownership information attached to monitored entities aids in mapping your Dynatrace environment to the right teams for collaboration, issue resolution, and vulnerability escalation.
 
@@ -750,10 +750,10 @@ Ownership information attached to monitored entities aids in mapping your Dynatr
 
 You need **any** of the following permissions to create, edit, or delete a team via API.
 
-* The `settings.write` [token permission](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.")
-* The [IAM policy](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies") `ALLOW settings:objects:write, settings:schemas:read WHERE settings:schemaId = "builtin:ownership.teams";`
+* The `settings.write` [token permission](../ru/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md "Learn the concept of an access token and its scopes.")
+* The [IAM policy](../ru/manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies") `ALLOW settings:objects:write, settings:schemas:read WHERE settings:schemaId = "builtin:ownership.teams";`
 
-You need the **Manage monitoring settings** [permission](/docs/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions") at the environment or management-zone level to create teams via the web UI.
+You need the **Manage monitoring settings** [permission](manage/identity-access-management/permission-management/role-based-permissions.md "Role-based permissions") at the environment or management-zone level to create teams via the web UI.
 
 ## Create a team via web UI
 
@@ -765,13 +765,13 @@ To create a team via the Dynatrace web UI
 2. Select **Add team**.
 3. Required Start by providing a **Team name**.
 
-In ownership team data [imported from Microsoft Entra ID](/docs/deliver/ownership-app#import-teams "It provides custom actions to define workflows integrating entity owners and their contact information."), the `displayName` import parameter from `get_groups` is set as the **Team name**.
+In ownership team data [imported from Microsoft Entra ID](../ru/deliver/ownership-app.md#import-teams "It provides custom actions to define workflows integrating entity owners and their contact information."), the `displayName` import parameter from `get_groups` is set as the **Team name**.
 
 4. Required The **Team identifier** is auto-populated based on the team name. Use the default identifier or provide your own.
 
    **Requirements**
 
-   Team identifiers are the basis of [applying ownership to entities](/docs/deliver/ownership/assign-ownership "Assign owners to entities using entity metadata like labels, environment variables, and tags."), regardless of the method. Main team identifiers must be unique across your environment. However, you may reuse the identifier of a previously deleted team.
+   Team identifiers are the basis of [applying ownership to entities](../ru/deliver/ownership/assign-ownership.md "Assign owners to entities using entity metadata like labels, environment variables, and tags."), regardless of the method. Main team identifiers must be unique across your environment. However, you may reuse the identifier of a previously deleted team.
 
    * Identifiers must be unique; no two main team identifiers can be the same.
    * Identifiers must be between 1 and 100 characters long.
@@ -779,7 +779,7 @@ In ownership team data [imported from Microsoft Entra ID](/docs/deliver/ownershi
    * They can contain hyphens (`-`), underscores (`_`), and alphanumerics between the opening and closing characters. Blank spaces and other special characters are not supported.
    * Once created, a main **team identifier cannot be edited or changed**.
 
-   In team information [imported from Microsoft Entra ID](/docs/deliver/ownership-app#import-teams "It provides custom actions to define workflows integrating entity owners and their contact information."), this field is set to the corresponding group's **Object Id** in Entra ID and cannot be edited. The **External ID** of the imported ownership team in Dynatrace is also set to this value.
+   In team information [imported from Microsoft Entra ID](../ru/deliver/ownership-app.md#import-teams "It provides custom actions to define workflows integrating entity owners and their contact information."), this field is set to the corresponding group's **Object Id** in Entra ID and cannot be edited. The **External ID** of the imported ownership team in Dynatrace is also set to this value.
 5. Add a **Description** that aids in differentiating the team, for example, by entities managed or by responsibility. This description is appended to the team name for display on the **Ownership teams** page.
 6. Optionally, specify **Supplementary identifiers**. Select **Add supplementary identifier** to provide up to three additional identifiers, for example, to identify sub-teams. When assigning ownership to entities, you can use the main team identifier or any of the supplementary identifiers to assign an entity to the named team.
 
@@ -789,7 +789,7 @@ In ownership team data [imported from Microsoft Entra ID](/docs/deliver/ownershi
    * A supplementary identifier can be the same as the main or supplementary identifier of another team.
    * Unlike the main team identifier, supplementary identifiers **may be edited and deleted**.
 
-   In ownership team data [imported from Microsoft Entra ID](/docs/deliver/ownership-app#import-teams "It provides custom actions to define workflows integrating entity owners and their contact information."), the `mailNickname` import parameter from `get_groups` is set as a unique, human-readable **Supplementary Identifier**.
+   In ownership team data [imported from Microsoft Entra ID](../ru/deliver/ownership-app.md#import-teams "It provides custom actions to define workflows integrating entity owners and their contact information."), the `mailNickname` import parameter from `get_groups` is set as a unique, human-readable **Supplementary Identifier**.
 7. Select all **Responsibilities** that apply to the team. Although optional, these toggles provide critical metadata at a glance and help you specify the appropriate contact details.
 
    * **Development**âTeams responsible for developing and maintaining the underlying software code
@@ -829,27 +829,27 @@ In ownership team data [imported from Microsoft Entra ID](/docs/deliver/ownershi
 
     * External IDs cannot be used to apply ownership information to entities in key-value pairs; use the main team ID and supplementary IDs to assign entities to team owners.
 
-    * In team information [imported from Microsoft Entra ID](/docs/deliver/ownership-app#import-teams "It provides custom actions to define workflows integrating entity owners and their contact information."), this field is set to the corresponding group's **Object Id** from Entra ID and cannot be edited. The **Team identifier** of the imported ownership team is also set to this value.
+    * In team information [imported from Microsoft Entra ID](../ru/deliver/ownership-app.md#import-teams "It provides custom actions to define workflows integrating entity owners and their contact information."), this field is set to the corresponding group's **Object Id** from Entra ID and cannot be edited. The **Team identifier** of the imported ownership team is also set to this value.
 15. **Save changes**.
 
-See [Best practices for entity ownership](/docs/deliver/ownership/best-practices "Tips and best practices to ensure that entities have adequate ownership coverage") for more information about setting up teams optimally.
+See [Best practices for entity ownership](../ru/deliver/ownership/best-practices.md "Tips and best practices to ensure that entities have adequate ownership coverage") for more information about setting up teams optimally.
 
 ## Create a team via API and Configuration as Code
 
-Team creation via the [**Settings API**](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") requires the ownership configuration [JSON schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") (`builtin:ownership.config`) provided by Dynatrace. You can retrieve the schema using the Settings API. Provide team configuration as a JSON payload.
+Team creation via the [**Settings API**](../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") requires the ownership configuration [JSON schema](../ru/dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") (`builtin:ownership.config`) provided by Dynatrace. You can retrieve the schema using the Settings API. Provide team configuration as a JSON payload.
 
-[Configuration as Code](/docs/deliver/configuration-as-code "Use Dynatrace configuration as code via Monaco or Terraform.") enables you to use JSON templates and YAML files for team creation for one or multiple teams at the same time.
+[Configuration as Code](../ru/deliver/configuration-as-code.md "Use Dynatrace configuration as code via Monaco or Terraform.") enables you to use JSON templates and YAML files for team creation for one or multiple teams at the same time.
 
 ## Import teams via Workflows Workflows
 
 
 
 You can import user groups from **Microsoft Entra ID** and **ServiceNow** as ownership teams within Dynatrace.
-Therefore, see how to use the [`import_teams`](/docs/deliver/ownership-app#import-teams "It provides custom actions to define workflows integrating entity owners and their contact information.") action and workflows for importing teams.
+Therefore, see how to use the [`import_teams`](../ru/deliver/ownership-app.md#import-teams "It provides custom actions to define workflows integrating entity owners and their contact information.") action and workflows for importing teams.
 
 ## Manage teams
 
-You can manage (create, delete, edit) ownership teams via **Settings** > **Ownership** > **Teams** as well as the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.").
+You can manage (create, delete, edit) ownership teams via **Settings** > **Ownership** > **Teams** as well as the [Settings API](../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.").
 
 The **Ownership teams** settings page lists all teams (and their descriptions) in your environment, whether created via web UI or the API. Use the **Filter** field  to narrow this list by any string in a team name or description.
 
@@ -886,9 +886,9 @@ The API snippets for reading, creating, updating, and deleting teams are availab
 
 ## Related topics
 
-* [Dynatrace settings framework](/docs/manage/settings/settings-20 "Introduction to the Settings 2.0 framework")
-* [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.")
-* [Configuration as Code overview](/docs/deliver/configuration-as-code "Use Dynatrace configuration as code via Monaco or Terraform.")
+* [Dynatrace settings framework](../ru/manage/settings/settings-20.md "Introduction to the Settings 2.0 framework")
+* [Settings API](../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.")
+* [Configuration as Code overview](../ru/deliver/configuration-as-code.md "Use Dynatrace configuration as code via Monaco or Terraform.")
 
 ---
 
@@ -920,36 +920,36 @@ Knowledge about the ownership of an entity enables additional automation, such a
 * Assignment of vulnerabilities to the responsible team members.
 * Provision of information to all relevant stakeholders.
 
-You can [create ownership](/docs/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") information in the web UI, via API, and using [Configuration as Code](/docs/deliver/configuration-as-code "Use Dynatrace configuration as code via Monaco or Terraform."). You can also import ownership teams from third-party directory services ([Microsoft Entra ID](/docs/analyze-explore-automate/workflows/actions/microsoft-entra-id "Set up Microsoft Entra ID Connector to automate importing teams from Microsoft Entra ID via Workflows.")) via [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."). For scalability and complete coverage, [assign ownership](/docs/deliver/ownership/assign-ownership "Assign owners to entities using entity metadata like labels, environment variables, and tags.") as part of deployment metadata. You can also use the settings and entity web interfaces for these purposes.
+You can [create ownership](../ru/deliver/ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") information in the web UI, via API, and using [Configuration as Code](../ru/deliver/configuration-as-code.md "Use Dynatrace configuration as code via Monaco or Terraform."). You can also import ownership teams from third-party directory services ([Microsoft Entra ID](../ru/analyze-explore-automate/workflows/actions/microsoft-entra-id.md "Set up Microsoft Entra ID Connector to automate importing teams from Microsoft Entra ID via Workflows.")) via [Workflows](../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."). For scalability and complete coverage, [assign ownership](../ru/deliver/ownership/assign-ownership.md "Assign owners to entities using entity metadata like labels, environment variables, and tags.") as part of deployment metadata. You can also use the settings and entity web interfaces for these purposes.
 
-1. [Create and maintain ownership teams](/docs/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") with unique IDs and associated contact information to make problem routing easier. See also [Best practices for entity ownership](/docs/deliver/ownership/best-practices "Tips and best practices to ensure that entities have adequate ownership coverage").
+1. [Create and maintain ownership teams](../ru/deliver/ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") with unique IDs and associated contact information to make problem routing easier. See also [Best practices for entity ownership](../ru/deliver/ownership/best-practices.md "Tips and best practices to ensure that entities have adequate ownership coverage").
 
    ![Ownership teams settings page](https://dt-cdn.net/images/ownership-teams-page-2212-be3abe3c7d.png)
-2. [Assign teams to Dynatrace-monitored entities](/docs/deliver/ownership/assign-ownership "Assign owners to entities using entity metadata like labels, environment variables, and tags.") via host metadata, Kubernetes labels and annotations, environment variables, and tags. See also [Best practices for entity ownership](/docs/deliver/ownership/best-practices "Tips and best practices to ensure that entities have adequate ownership coverage").
+2. [Assign teams to Dynatrace-monitored entities](../ru/deliver/ownership/assign-ownership.md "Assign owners to entities using entity metadata like labels, environment variables, and tags.") via host metadata, Kubernetes labels and annotations, environment variables, and tags. See also [Best practices for entity ownership](../ru/deliver/ownership/best-practices.md "Tips and best practices to ensure that entities have adequate ownership coverage").
 3. View ownership information with routing details as part of Dynatrace entity details pages.
 
    ![Owner of a Kubernetes workload](https://dt-cdn.net/images/ownership-k8s-workload-2213-2217e57297.png)
 
 ### Basics
 
-* [Create and manage teams for entity ownership](/docs/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.")
-* [Assign ownership teams to monitored entities](/docs/deliver/ownership/assign-ownership "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
-* [Best practices for entity ownership](/docs/deliver/ownership/best-practices "Tips and best practices to ensure that entities have adequate ownership coverage")
+* [Create and manage teams for entity ownership](../ru/deliver/ownership/ownership-teams.md "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.")
+* [Assign ownership teams to monitored entities](../ru/deliver/ownership/assign-ownership.md "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
+* [Best practices for entity ownership](../ru/deliver/ownership/best-practices.md "Tips and best practices to ensure that entities have adequate ownership coverage")
 
 ### Additional
 
-[Define tags and metadata for hosts](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.")
+[Define tags and metadata for hosts](observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts.md "Learn how to tag and set additional properties for a monitored host.")
 
-[Define your own process group metadata](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata "Configure your own process-related metadata based on the unique needs of your organization or environment.")
+[Define your own process group metadata](observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata.md "Configure your own process-related metadata based on the unique needs of your organization or environment.")
 
-[Configuration as Code overview](/docs/deliver/configuration-as-code "Use Dynatrace configuration as code via Monaco or Terraform.")
+[Configuration as Code overview](../ru/deliver/configuration-as-code.md "Use Dynatrace configuration as code via Monaco or Terraform.")
 
-[Microsoft Entra ID Connector](/docs/analyze-explore-automate/workflows/actions/microsoft-entra-id "Set up Microsoft Entra ID Connector to automate importing teams from Microsoft Entra ID via Workflows.")
+[Microsoft Entra ID Connector](../ru/analyze-explore-automate/workflows/actions/microsoft-entra-id.md "Set up Microsoft Entra ID Connector to automate importing teams from Microsoft Entra ID via Workflows.")
 
 ### API
 
-[Settings API (retrieve schema and create teams)](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.")
+[Settings API (retrieve schema and create teams)](../ru/dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.")
 
-[Monitored entities - Custom tags API](/docs/dynatrace-api/environment-api/custom-tags "Manage custom tags of the monitored entities via the Dynatrace API.")
+[Monitored entities - Custom tags API](dynatrace-api/environment-api/custom-tags.md "Manage custom tags of the monitored entities via the Dynatrace API.")
 
 ---

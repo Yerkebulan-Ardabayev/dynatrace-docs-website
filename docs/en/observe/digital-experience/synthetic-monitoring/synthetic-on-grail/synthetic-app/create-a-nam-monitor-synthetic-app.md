@@ -15,8 +15,8 @@ scraped: 2026-02-06T16:33:12.512338
 
 With network availability monitors (NAM), you can check the availability of your hosts, devices, and services.
 
-There are three types of NAM monitors: ICMP, TCP, and DNS. To learn more about them, see [NAM types](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/network-availability-monitoring#NAM-types "ICMP, TCP, and DNS synthetic monitors").
-You can create NAM monitors in [![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") Synthetic](#monitor-configuration) in latest Dynatrace or through [API](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor#nam-api "Learn how to set up a NAM monitor to check the performance and availability of your site.").
+There are three types of NAM monitors: ICMP, TCP, and DNS. To learn more about them, see [NAM types](../../network-availability-monitors/network-availability-monitoring.md#NAM-types "ICMP, TCP, and DNS synthetic monitors").
+You can create NAM monitors in [![Synthetic](https://dt-cdn.net/images/synthetic-new-256-1ddb35ac79.png "Synthetic") Synthetic](#monitor-configuration) in latest Dynatrace or through [API](../../network-availability-monitors/create-a-nam-monitor.md#nam-api "Learn how to set up a NAM monitor to check the performance and availability of your site.").
 
 ## NAM setup
 
@@ -37,7 +37,7 @@ NAM offers you the possibility of addressing this in multiple ways:
 
   Finally, filters offer defining tests against dynamically changing structure, for example if you want to define ICMP tests against a given host group, you don't need to adjust the NAM monitor test after the host group configuration change.
 
-You need to define constraints for each monitor. Constraints are conditions that need to be met to consider the monitorâs execution successful. It is obligatory to define the **Success rate** constraint. See [step-level constraints](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor#step-level-constraints "Learn how to set up a NAM monitor to check the performance and availability of your site.") to learn more.
+You need to define constraints for each monitor. Constraints are conditions that need to be met to consider the monitorâs execution successful. It is obligatory to define the **Success rate** constraint. See [step-level constraints](../../network-availability-monitors/create-a-nam-monitor.md#step-level-constraints "Learn how to set up a NAM monitor to check the performance and availability of your site.") to learn more.
 
 ## Create a NAM monitor
 

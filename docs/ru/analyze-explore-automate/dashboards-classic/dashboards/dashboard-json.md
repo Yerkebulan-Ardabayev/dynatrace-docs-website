@@ -13,18 +13,18 @@ scraped: 2026-03-06T21:31:52.995561
 * Чтение: 3 мин
 * Опубликовано 24 сент. 2020
 
-[Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic.")
+[Dashboards Classic](../../dashboards-classic.md "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic.")
 
 Эта страница относится к классическим дашбордам, созданным с использованием функциональности ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**, интегрированной с Dynatrace Classic.
 
-* Если вы уже используете приложение ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace, см. [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") для соответствующей документации.
-* Если вы все ещё используете классические дашборды, мы рекомендуем вам [обновить ваши дашборды](/docs/analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest "Обновите классические дашборды, созданные в предыдущей версии Dynatrace, до приложения Dashboards в последней версии Dynatrace.") и воспользоваться всеми новейшими возможностями, предоставляемыми приложением ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace.
+* Если вы уже используете приложение ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace, см. [Dashboards](../../dashboards-and-notebooks/dashboards-new.md "Создавайте интерактивные настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.") для соответствующей документации.
+* Если вы все ещё используете классические дашборды, мы рекомендуем вам [обновить ваши дашборды](../dashboards-upgrade-classic-to-latest.md "Обновите классические дашборды, созданные в предыдущей версии Dynatrace, до приложения Dashboards в последней версии Dynatrace.") и воспользоваться всеми новейшими возможностями, предоставляемыми приложением ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace.
 
 Вы можете редактировать JSON-определение вашего дашборда в автономном режиме или, для небольших изменений, редактировать JSON непосредственно в Dynatrace.
 
 Альтернатива через API
 
-Для управления JSON дашбордов в масштабе вам потребуется [Dashboards API](/docs/dynatrace-api/configuration-api/dashboards-api "Узнайте, как управлять конфигурацией дашбордов через API конфигурации Dynatrace Classic.").
+Для управления JSON дашбордов в масштабе вам потребуется [Dashboards API](../../../dynatrace-api/configuration-api/dashboards-api.md "Узнайте, как управлять конфигурацией дашбордов через API конфигурации Dynatrace Classic.").
 
 ## Автономное редактирование
 
@@ -39,7 +39,7 @@ scraped: 2026-03-06T21:31:52.995561
 5. На странице **Dashboard JSON** выберите **Download**.
    JSON-файл с названием дашборда будет загружен на ваш компьютер.
 6. Отредактируйте JSON в предпочтительной среде разработки.
-   Подробности синтаксиса JSON см. в документации [Dashboards API](/docs/dynatrace-api/configuration-api/dashboards-api "Узнайте, как управлять конфигурацией дашбордов через API конфигурации Dynatrace Classic.").
+   Подробности синтаксиса JSON см. в документации [Dashboards API](../../../dynatrace-api/configuration-api/dashboards-api.md "Узнайте, как управлять конфигурацией дашбордов через API конфигурации Dynatrace Classic.").
 7. На странице **Dashboard JSON** выберите **Upload**, найдите отредактированный JSON-файл и загрузите его в Dynatrace.
    Загруженный JSON отобразится на странице **Dashboard JSON**.
 8. Выберите **Save changes**, чтобы заменить старый JSON на отредактированный.
@@ -57,7 +57,7 @@ scraped: 2026-03-06T21:31:52.995561
    * Вы можете работать непосредственно в окне редактирования или копировать и вставлять данные из другого редактора.
    * Сообщение **You have unsaved changes** в нижнем левом углу страницы напомнит вам о незавершённой работе. Обязательно сохраните изменения перед переходом на другую страницу.
    * Синтаксис проверяется при каждом сохранении. Вы можете работать поэтапно и использовать **Save changes** для проверки корректности парсинга.
-   * Подробности синтаксиса JSON см. в документации [Dashboards API](/docs/dynatrace-api/configuration-api/dashboards-api "Узнайте, как управлять конфигурацией дашбордов через API конфигурации Dynatrace Classic.").
+   * Подробности синтаксиса JSON см. в документации [Dashboards API](../../../dynatrace-api/configuration-api/dashboards-api.md "Узнайте, как управлять конфигурацией дашбордов через API конфигурации Dynatrace Classic.").
 7. По завершении отобразите дашборд для проверки ваших изменений.
 
 ## Импорт дашборда
@@ -66,11 +66,11 @@ scraped: 2026-03-06T21:31:52.995561
 
 [![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Экспорт дашборда**](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json#step-1 "Узнайте, как экспортировать, редактировать и импортировать JSON дашборда Dynatrace.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Экспорт дашборда**](dashboard-json.md#step-1 "Узнайте, как экспортировать, редактировать и импортировать JSON дашборда Dynatrace.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Редактирование JSON-файла дашборда**](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json#step-2 "Узнайте, как экспортировать, редактировать и импортировать JSON дашборда Dynatrace.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Редактирование JSON-файла дашборда**](dashboard-json.md#step-2 "Узнайте, как экспортировать, редактировать и импортировать JSON дашборда Dynatrace.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Импорт дашборда**](/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json#step-3 "Узнайте, как экспортировать, редактировать и импортировать JSON дашборда Dynatrace.")
+**Импорт дашборда**](dashboard-json.md#step-3 "Узнайте, как экспортировать, редактировать и импортировать JSON дашборда Dynatrace.")
 
 При импорте дашборда с помощью этой процедуры вы добавляете новый дашборд в Dynatrace. Если вы хотите перезаписать существующий дашборд, см. раздел [Автономное редактирование](#edit-offline) выше.
 
@@ -84,7 +84,7 @@ scraped: 2026-03-06T21:31:52.995561
 
 ### Шаг 2: Редактирование JSON-файла дашборда
 
-Отредактируйте JSON дашборда в предпочтительной среде разработки. Подробности синтаксиса JSON см. в документации [Dashboards API](/docs/dynatrace-api/configuration-api/dashboards-api "Узнайте, как управлять конфигурацией дашбордов через API конфигурации Dynatrace Classic.").
+Отредактируйте JSON дашборда в предпочтительной среде разработки. Подробности синтаксиса JSON см. в документации [Dashboards API](../../../dynatrace-api/configuration-api/dashboards-api.md "Узнайте, как управлять конфигурацией дашбордов через API конфигурации Dynatrace Classic.").
 
 ### Шаг 3: Импорт дашборда
 

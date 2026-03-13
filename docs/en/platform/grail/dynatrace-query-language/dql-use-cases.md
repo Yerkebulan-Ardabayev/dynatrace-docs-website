@@ -68,7 +68,7 @@ The content field for every record looks as below:
 }
 ```
 
-You can use the `parse` command in combination with the [Dynatrace Pattern Language](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.") for parsing JSON objects. The query parses the `payment_provider` field from the JSON data and groups the number of transactions by each provider using the `summarize` command, as well as calculates the total count of transactions. The share is calculated in a separate column, next to each provider's number of transactions.
+You can use the `parse` command in combination with the [Dynatrace Pattern Language](../dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.") for parsing JSON objects. The query parses the `payment_provider` field from the JSON data and groups the number of transactions by each provider using the `summarize` command, as well as calculates the total count of transactions. The share is calculated in a separate column, next to each provider's number of transactions.
 
 ```
 fetch logs
@@ -208,7 +208,7 @@ The XML field for every record looks as below:
 </log-entry>
 ```
 
-In the DQL query, you need to use the [DPL matcher](/docs/platform/grail/dynatrace-pattern-language/dpl-xml "Find out how to use XML matchers with DPL.") to extract the whole XML element:
+In the DQL query, you need to use the [DPL matcher](../dynatrace-pattern-language/dpl-xml.md "Find out how to use XML matchers with DPL.") to extract the whole XML element:
 
 ```
 ...
@@ -244,17 +244,17 @@ Results:
 
 Application Security
 
-In this use case, you perform queries using [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to analyze unauthorized requests in your Kubernetes audit logs. Follow different investigation paths, navigate between executed queries, and get a detailed overview of your results in the original format.
+In this use case, you perform queries using [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../../secure/investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to analyze unauthorized requests in your Kubernetes audit logs. Follow different investigation paths, navigate between executed queries, and get a detailed overview of your results in the original format.
 
-* [Threat hunting and forensics](/docs/secure/use-cases/threat-hunting "Use case scenario for threat hunting and forensics with Investigations.")
+* [Threat hunting and forensics](../../../secure/use-cases/threat-hunting.md "Use case scenario for threat hunting and forensics with Investigations.")
 
 ## Related topics
 
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Use DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.")
-* [DQL compared to SQL and more](/docs/platform/grail/dynatrace-query-language/dql-comparison "See how DQL compares to other query languages.")
-* [DQL language reference](/docs/platform/grail/dynatrace-query-language/dql-reference "Dynatrace Query Language syntax reference.")
-* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [DQL functions](/docs/platform/grail/dynatrace-query-language/functions "A list of DQL functions.")
-* [DQL operators](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.")
-* [DQL data types](/docs/platform/grail/dynatrace-query-language/data-types "A list of DQL data types.")
+* [Dynatrace Query Language](../dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Use DQL queries](dql-guide.md "Find out how DQL works and what are DQL key concepts.")
+* [DQL compared to SQL and more](dql-comparison.md "See how DQL compares to other query languages.")
+* [DQL language reference](dql-reference.md "Dynatrace Query Language syntax reference.")
+* [DQL commands](commands.md "A list of DQL commands.")
+* [DQL functions](functions.md "A list of DQL functions.")
+* [DQL operators](operators.md "A list of DQL Operators.")
+* [DQL data types](data-types.md "A list of DQL data types.")

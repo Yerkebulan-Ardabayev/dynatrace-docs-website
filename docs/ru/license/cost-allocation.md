@@ -41,11 +41,11 @@ Cost center
 
 Host tag
 :   The parameter that assigns a host to a specific cost center or product.
-    For more information, see [Define tags and metadata for hosts](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.").
+    For more information, see [Define tags and metadata for hosts](../observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts.md "Learn how to tag and set additional properties for a monitored host.").
 
 Host property
 :   Sometimes used as a synonym for "host tag."
-    For more information, see [Define tags and metadata for hosts](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.").
+    For more information, see [Define tags and metadata for hosts](../observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts.md "Learn how to tag and set additional properties for a monitored host.").
 
 Product
 :   A single product, or group of products, offered by your organization.
@@ -57,7 +57,7 @@ Telemetry data
 ## Required permissions
 
 To view or edit Cost Allocation information, your Dynatrace account needs at least one of the permissions as indicated in the table below.
-More information about these permissions is available at [Role-based permissions](/docs/manage/identity-access-management/permission-management/role-based-permissions#permissions-account "Role-based permissions").
+More information about these permissions is available at [Role-based permissions](../manage/identity-access-management/permission-management/role-based-permissions.md#permissions-account "Role-based permissions").
 
 ### Account Management permissions
 
@@ -84,7 +84,7 @@ ALLOW storage:buckets:read WHERE storage:table-name = "dt.system.events";
 ALLOW storage:system:read;
 ```
 
-If you will be using lookup tables to access Grail data, you will additionally need the permissions described in [Lookup data in Grail](/docs/platform/grail/lookup-data#permissions "Learn about lookup data in Grail.").
+If you will be using lookup tables to access Grail data, you will additionally need the permissions described in [Lookup data in Grail](../platform/grail/lookup-data.md#permissions "Learn about lookup data in Grail.").
 
 ## Supported capabilities
 
@@ -94,7 +94,7 @@ In the case that Cost Allocation isn't available for the given capability, an al
 
 We're continuously extending Cost Allocation support to cover additional Dynatrace capabilities.
 For complete details regarding your licensing agreement, please contact your Dynatrace account manager.
-For more details about specific capabilities, see [Monitoring consumption per capability](/docs/license#monitoring-consumption-per-dynatrace-capability "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+For more details about specific capabilities, see [Monitoring consumption per capability](../license.md#monitoring-consumption-per-dynatrace-capability "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
 
 ## Set up Cost Allocation
 
@@ -124,35 +124,35 @@ To add a new cost center or product, select  **Cost center** and follow the step
 
 #### Via the API
 
-Both the cost center and product allow lists can be configured via the Account Management API as described in [Dynatrace Platform Subscription API - manage cost allocation](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation/manage-cost-allocation "Manage Dynatrace Platform Subscription cost and usage are allocated to product and cost centers.").
+Both the cost center and product allow lists can be configured via the Account Management API as described in [Dynatrace Platform Subscription API - manage cost allocation](../dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation/manage-cost-allocation.md "Manage Dynatrace Platform Subscription cost and usage are allocated to product and cost centers.").
 
 ### Configure Cost Allocation for host-based deployments
 
-To set up Cost Allocation in a host-based deployment, configure OneAgent according to the steps in [Set up Cost Allocation for OneAgent deployments](/docs/ingest-from/dynatrace-oneagent/oneagent-cost-allocation "Learn how to allocate costs from OneAgent to cost centers and products.").
+To set up Cost Allocation in a host-based deployment, configure OneAgent according to the steps in [Set up Cost Allocation for OneAgent deployments](../ingest-from/dynatrace-oneagent/oneagent-cost-allocation.md "Learn how to allocate costs from OneAgent to cost centers and products.").
 
 Cost Allocation is configured at the host level.
 One host can be allocated to a maximum of one cost center and one product.
 
 ### Configure Cost Allocation for Kubernetes deployments
 
-To set up Cost Allocation in a Kubernetes-based deployment, configure Kubernetes according to the steps in [Set up Cost Allocation for Kubernetes deployments](/docs/ingest-from/setup-on-k8s/kubernetes-cost-allocation "Learn how to allocate costs from Kubernetes deployments to cost centers and products.").
+To set up Cost Allocation in a Kubernetes-based deployment, configure Kubernetes according to the steps in [Set up Cost Allocation for Kubernetes deployments](../ingest-from/setup-on-k8s/kubernetes-cost-allocation.md "Learn how to allocate costs from Kubernetes deployments to cost centers and products.").
 
-Cost Allocation is supported for different [Kubernetes deployment models](/docs/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes").
+Cost Allocation is supported for different [Kubernetes deployment models](../ingest-from/setup-on-k8s/deployment.md "Deploy Dynatrace Operator on Kubernetes").
 
 ### Configure Cost Allocation for telemetry ingest
 
 With Dynatrace, you can enrich telemetry data with Cost Allocation attributes (`dt.cost.costcenter`, `dt.cost.product`) as metadata.
 Telemetry enrichment with Cost Allocation attributes is possible for all supported ingest methodsâwhether logs, traces, metrics, or events.
 
-For ingested logs, Cost Allocation is also available for retained data ([Log - Retain](/docs/license/capabilities/log-analytics/dps-log-retain "Learn how your consumption of the Log Management & Analytics - Retain DPS capability is billed and charged.") and [Log - Retain with Included Queries](/docs/license/capabilities/log-analytics/dps-log-retain-included "Learn how your consumption of the Log Management & Analytics - Retain with Included Queries DPS capability is billed and charged.")).
+For ingested logs, Cost Allocation is also available for retained data ([Log - Retain](capabilities/log-analytics/dps-log-retain.md "Learn how your consumption of the Log Management & Analytics - Retain DPS capability is billed and charged.") and [Log - Retain with Included Queries](capabilities/log-analytics/dps-log-retain-included.md "Learn how your consumption of the Log Management & Analytics - Retain with Included Queries DPS capability is billed and charged.")).
 Both retain models use the settings that you already set up for ingest, so you don't need to do any additional configuration.
 
 You can use these attributes to allocate usage to your user-defined products and cost centers.
 
-* They're stored in Grail and are available through ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, **Account Management**, and the [Dynatrace API](/docs/dynatrace-api "Find out what you need to use the Dynatrace API.").
-* They're defined in the Dynatrace [Semantic Dictionary](/docs/semantic-dictionary/fields#dynatrace "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
+* They're stored in Grail and are available through ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, **Account Management**, and the [Dynatrace API](../dynatrace-api.md "Find out what you need to use the Dynatrace API.").
+* They're defined in the Dynatrace [Semantic Dictionary](../semantic-dictionary/fields.md#dynatrace "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
 
-For more information on how to enrich telemetry data according to your use case, see [Ingest data](/docs/ingest-from "Learn how to install and configure ActiveGate and OneAgent on various platforms.").
+For more information on how to enrich telemetry data according to your use case, see [Ingest data](../ingest-from.md "Learn how to install and configure ActiveGate and OneAgent on various platforms.").
 
 #### How to get started
 
@@ -193,11 +193,11 @@ Our available dashboard [Cost Allocation pre-made dashboard](#cost-allocation-da
 This section describes how to configure Cost Allocation for queries, workflows, and functions.
 The relevant rate card categories are
 
-* [Log Analytics - Query](/docs/license/capabilities/log-analytics/dps-log-query "Learn how your consumption of the Log Management & Analytics - Query DPS capability is billed and charged.")
-* [Traces - Query](/docs/license/capabilities/traces/dps-traces-query "Learn how your consumption of the Traces - Query DPS capability is billed and charged.")
-* [Events - Query](/docs/license/capabilities/events/dps-events-query "Learn how your consumption of the Events powered by Grail - Query DPS capability is billed and charged.")
-* [Automation Workflow](/docs/license/capabilities/automation "Learn how Dynatrace Automation Workflow consumption is calculated using the Dynatrace Platform Subscription model.")
-* [AppEngine Functions](/docs/license/capabilities/appengine-functions "Learn how AppEngine Function consumption is calculated using the Dynatrace Platform Subscription model.")
+* [Log Analytics - Query](capabilities/log-analytics/dps-log-query.md "Learn how your consumption of the Log Management & Analytics - Query DPS capability is billed and charged.")
+* [Traces - Query](capabilities/traces/dps-traces-query.md "Learn how your consumption of the Traces - Query DPS capability is billed and charged.")
+* [Events - Query](capabilities/events/dps-events-query.md "Learn how your consumption of the Events powered by Grail - Query DPS capability is billed and charged.")
+* [Automation Workflow](capabilities/automation.md "Learn how Dynatrace Automation Workflow consumption is calculated using the Dynatrace Platform Subscription model.")
+* [AppEngine Functions](capabilities/appengine-functions.md "Learn how AppEngine Function consumption is calculated using the Dynatrace Platform Subscription model.")
 
 Cost Allocation for queries, workflows, and functions is currently only supported at the environment level.
 Because of this, related data isn't included in [exported data](#cost-allocation-export).
@@ -211,7 +211,7 @@ To do this, follow the steps below.
 Make sure that you have the following permissions:
 
 * To set up this configuration: You need read, write, and delete permissions for Grail lookup tables.
-  For more information, see [Lookup data in Grail](/docs/platform/grail/lookup-data#permissions "Learn about lookup data in Grail.").
+  For more information, see [Lookup data in Grail](../platform/grail/lookup-data.md#permissions "Learn about lookup data in Grail.").
 * To use the dashboard: You need read permissions for Grail lookup tables.
 
 2. Get the notebook and dashboard
@@ -220,7 +220,7 @@ Upload the following notebook and dashboard to your Dynatrace environment.
 
 1. Copy the JSON contents from the code blocks below.
 2. Save them as individual files in a text editor.
-3. Import/upload the files to your environment, see [Import a notebook](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#notebook-import "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and [Upload a dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboard-upload "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
+3. Import/upload the files to your environment, see [Import a notebook](../analyze-explore-automate/dashboards-and-notebooks/notebooks.md#notebook-import "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and [Upload a dashboard](../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboard-upload "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
 
 Cost Allocation with extended lookup tables notebook: JSON contents
 
@@ -5442,13 +5442,13 @@ To analyze Cost Allocation data, you can
 
 ### Analyze in Dynatrace
 
-Cost Allocation data is stored in [Dynatrace Grail](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.") as billing usage events.
+Cost Allocation data is stored in [Dynatrace Grail](../platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.") as billing usage events.
 These events can be analyzed
 
 * In ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** and ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**.
   Dynatrace provides a built-in Dashboard, **DPS Cost Allocation usage & costs**.
   Examples from this dashboard are provided below.
-* Via [DQL](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") queries.
+* Via [DQL](../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") queries.
   Example DQL queries are provided below.
 
 Visit the [Dynatrace DPS Cost Allocation communityï»¿](https://dt-url.net/30a0fb7) to see how other Dynatracers analyze their Cost Allocation data.
@@ -5462,7 +5462,7 @@ Please adapt the dashboard to fit to your needs and use-case scenarios.
 
 Known limitations
 
-The dashboard does not automatically account for [included trace amounts](/docs/license/capabilities/app-infra-observability "Learn about the different Application & Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.").
+The dashboard does not automatically account for [included trace amounts](capabilities/app-infra-observability.md "Learn about the different Application & Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.").
 Therefore, the costs shown are actually higher than what you will be billed for.
 
 This will be updated in a future release of the dashboard.
@@ -5470,7 +5470,7 @@ This will be updated in a future release of the dashboard.
 The dashboard is available:
 
 * In the built-in environment.
-* As a JSON file, which you can upload to any other Dynatrace environment (see [Upload a dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-upload "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")).
+* As a JSON file, which you can upload to any other Dynatrace environment (see [Upload a dashboard](../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboards-upload "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")).
 
   1. Copy the JSON contents from the code block below and save them to a file on your computer.
 
@@ -7485,11 +7485,11 @@ In Account Management, you can download some or all Cost Allocation data from yo
 
 All Cost Allocation data can be retrieved via the API.
 
-Before using the API, you need to generate an Account Management API Token as described in [Authentication for the Account Management API](/docs/manage/account-management/identity-access-management/oauth "Manage authentication and user permissions for the Account Management API.").
+Before using the API, you need to generate an Account Management API Token as described in [Authentication for the Account Management API](../manage/account-management/identity-access-management/oauth.md "Manage authentication and user permissions for the Account Management API.").
 Additionally, your user will need the permission **View usage and consumption: account-uac-read**.
 
 Use the following API call to retrieve Cost Allocation data.
-Parameters are described in [Dynatrace Platform Subscription API - GET cost allocation](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation/get-cost-allocation "See how Dynatrace Platform Subscription cost and usage are allocated to product and cost centers.").
+Parameters are described in [Dynatrace Platform Subscription API - GET cost allocation](../dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation/get-cost-allocation.md "See how Dynatrace Platform Subscription cost and usage are allocated to product and cost centers.").
 
 `GET /v1/subscriptions/{subscription-uuid}/cost-allocation?field={field}\&environment-id={environment-id}`
 
@@ -7594,7 +7594,7 @@ If you can't find Cost Allocation data:
 
 ## Related topics
 
-* [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
-* [Set up Cost Allocation for OneAgent deployments](/docs/ingest-from/dynatrace-oneagent/oneagent-cost-allocation "Learn how to allocate costs from OneAgent to cost centers and products.")
-* [Set up Cost Allocation for Kubernetes deployments](/docs/ingest-from/setup-on-k8s/kubernetes-cost-allocation "Learn how to allocate costs from Kubernetes deployments to cost centers and products.")
+* [Account Management](../manage/account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
+* [Set up Cost Allocation for OneAgent deployments](../ingest-from/dynatrace-oneagent/oneagent-cost-allocation.md "Learn how to allocate costs from OneAgent to cost centers and products.")
+* [Set up Cost Allocation for Kubernetes deployments](../ingest-from/setup-on-k8s/kubernetes-cost-allocation.md "Learn how to allocate costs from Kubernetes deployments to cost centers and products.")
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)

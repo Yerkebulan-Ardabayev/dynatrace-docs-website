@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:18:03.469401
 
 This guide explains how Dynatrace components can be deployed alongside Istio. A Dynatrace deployment on Kubernetes contains several components that need to communicate with each other, with the Dynatrace cluster and other external resources.
 
-For more information on communication of Dynatrace Operator and its managed components, see the [network traffic](/docs/ingest-from/setup-on-k8s/reference/network "Network traffic requirements for the Dynatrace Operator components in a Kubernetes cluster.") reference page.
+For more information on communication of Dynatrace Operator and its managed components, see the [network traffic](../../reference/network.md "Network traffic requirements for the Dynatrace Operator components in a Kubernetes cluster.") reference page.
 
 ## Limitations
 
@@ -113,7 +113,7 @@ ENABLE_NATIVE_SIDECARS: false
 
 ## Setup guide for default Istio configuration
 
-Because Dynatrace supports Istio in the default configuration, you only need to enable the `enableIstio` parameter in the [DynaKube](/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes."). However, you don't need to set this parameter if you don't plan to use a restrictive `outboundTrafficPolicy`.
+Because Dynatrace supports Istio in the default configuration, you only need to enable the `enableIstio` parameter in the [DynaKube](../../reference/dynakube-parameters.md "List the available parameters for setting up Dynatrace Operator on Kubernetes."). However, you don't need to set this parameter if you don't plan to use a restrictive `outboundTrafficPolicy`.
 
 When this parameter is enabled, Dynatrace Operator will deploy `ServiceEntries` and `VirtualServices` to enable communication from inside the mesh to all relevant Dynatrace components and the Dynatrace environment. The `ServiceEntries` and `VirtualServices` work regardless of whether Dynatrace Operator's namespace itself is part of the mesh (if no `discoveryfilter` is set in Istio).
 
@@ -121,7 +121,7 @@ This enables all workloads and OneAgents to connect to the ActiveGate instance a
 
 `ServiceEntries` result in additional DNS queries executed by each sidecar proxy. This can put additional load on your DNS server.
 
-To minimize the number of URLs, and therefore DNS queries, make sure the network zones in your Dynatrace environment are configured correctly. For a detailed setup description, see [Kubernetes network zone docs](/docs/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations/network-zones#kubernetes-cluster-with-restricted-egress "Set up and use network zones in Kubernetes environments with the Dynatrace Operator.").
+To minimize the number of URLs, and therefore DNS queries, make sure the network zones in your Dynatrace environment are configured correctly. For a detailed setup description, see [Kubernetes network zone docs](../networking-security-compliance/network-configurations/network-zones.md#kubernetes-cluster-with-restricted-egress "Set up and use network zones in Kubernetes environments with the Dynatrace Operator.").
 
 If this is not possible or sufficient in your environment, see [Istio DNS proxyingï»¿](https://dt-url.net/ab23uvy) for another possible mitigation.
 
@@ -395,7 +395,7 @@ When using Istio configured to `REGISTRY_ONLY` mode with the `codeModulesImage` 
 
 ## Metric scraping using Istio metric merging
 
-[Dynatrace metric scraping](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.") is done via the ActiveGate and configured via annotations. This results in the ActiveGate connecting directly to the pods on the configured endpoint to scrape the metrics. As stated earlier, this direct connection does not work with strict mTLS.
+[Dynatrace metric scraping](../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics.md "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.") is done via the ActiveGate and configured via annotations. This results in the ActiveGate connecting directly to the pods on the configured endpoint to scrape the metrics. As stated earlier, this direct connection does not work with strict mTLS.
 
 Istio ambient mode does not support metric merging as it requires a sidecar proxy. However, in ambient mode it's possible for the ActiveGate to directly connect to the pod IPs and scrape the configured targets. Depending on your mTLS policy, this might only be possible for pods inside the mesh if the ActiveGate is also part of the mesh.
 
@@ -473,4 +473,4 @@ If not, check if `enableIstio` is set to `true` in the DynaKube.
 
 ## Related topics
 
-* [Configure OpenTelemetry tracing with Istio](/docs/ingest-from/opentelemetry/integrations/istio "Learn how to configure Istio on Kubernetes to deploy pre-configured proxy services for OpenTelemetry tracing.")
+* [Configure OpenTelemetry tracing with Istio](../../../opentelemetry/integrations/istio.md "Learn how to configure Istio on Kubernetes to deploy pre-configured proxy services for OpenTelemetry tracing.")

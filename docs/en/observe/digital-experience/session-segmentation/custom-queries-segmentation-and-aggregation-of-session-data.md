@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:23:09.934912
 * 37-min read
 * Updated on Apr 23, 2024
 
-Dynatrace captures detailed [user session data](/docs/observe/digital-experience/session-segmentation/new-user-sessions "Learn about user session segmentation and filtering attributes.") each time a user interacts with your monitored application. This data includes all user actions and high level performance data. Using either the Dynatrace API or Dynatrace User Sessions Query Language (USQL), you can easily run powerful queries, segmentations, and aggregations on this captured data. To assist you, this topic provides detail about keywords and functions, syntax, working with Real User Monitoring tables, automated queries, and more.
+Dynatrace captures detailed [user session data](new-user-sessions.md "Learn about user session segmentation and filtering attributes.") each time a user interacts with your monitored application. This data includes all user actions and high level performance data. Using either the Dynatrace API or Dynatrace User Sessions Query Language (USQL), you can easily run powerful queries, segmentations, and aggregations on this captured data. To assist you, this topic provides detail about keywords and functions, syntax, working with Real User Monitoring tables, automated queries, and more.
 
 User Sessions Query Language isn't [SQLï»¿](https://en.wikipedia.org/wiki/SQL), and Dynatrace doesn't store user session data in a relational database. User Sessions Query Language is a Dynatrace-specific query language, though it does rely on some SQL concepts and the syntax is similar, which makes it easy to get started.
 
@@ -66,9 +66,9 @@ Field-values are only suggested for enumeration based fields. No actual query to
 
 Dynatrace Environment API
 
-You can execute API calls using your preferred client. Find the related API documentation in [User sessions API](/docs/dynatrace-api/environment-api/rum/user-sessions "Learn what the Dynatrace User Sessions Query language API offers.").
+You can execute API calls using your preferred client. Find the related API documentation in [User sessions API](../../../dynatrace-api/environment-api/rum/user-sessions.md "Learn what the Dynatrace User Sessions Query language API offers.").
 
-To execute these calls, you need the **User sessions** (`DTAQLAccess`) permission assigned to your API token. To learn how to obtain and use your token, see [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+To execute these calls, you need the **User sessions** (`DTAQLAccess`) permission assigned to your API token. To learn how to obtain and use your token, see [Dynatrace API - Tokens and authentication](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
 
 ### Timeframes in Environment API
 
@@ -188,10 +188,10 @@ FROM usersession
 
 You can only specify one table. Tables for user session data are as follows.
 
-* `usersession` contains information on [user sessions](/docs/observe/digital-experience/rum-concepts/user-session "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.").
-* `useraction` stores data on [user actions](/docs/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.").
-* `userevent` provides information on [user events](/docs/observe/digital-experience/rum-concepts/user-and-error-events#user-events "Learn about user and error events and the types of user and error events captured by Dynatrace."), such as page changes or rage events.
-* `usererror` contains more data on [error events](/docs/observe/digital-experience/rum-concepts/user-and-error-events#error-events "Learn about user and error events and the types of user and error events captured by Dynatrace."), which are errors and crashes.
+* `usersession` contains information on [user sessions](../rum-concepts/user-session.md "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.").
+* `useraction` stores data on [user actions](../rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application.").
+* `userevent` provides information on [user events](../rum-concepts/user-and-error-events.md#user-events "Learn about user and error events and the types of user and error events captured by Dynatrace."), such as page changes or rage events.
+* `usererror` contains more data on [error events](../rum-concepts/user-and-error-events.md#error-events "Learn about user and error events and the types of user and error events captured by Dynatrace."), which are errors and crashes.
 
 Example
 
@@ -820,7 +820,7 @@ ORDER BY usersession.continent
 
 #### KEYS(customProperty)
 
-Returns keys of [user action or user session properties](/docs/observe/digital-experience/web-applications/analyze-and-use/action-and-session-properties "User action and session properties, which are metadata key-value pairs, provide added visibility and deeper analysis of your end users' experience. Using these properties for your web applications, you can filter user sessions, add calculated metrics, create charts, and more.") according to the property data type defined in the argument.
+Returns keys of [user action or user session properties](../web-applications/analyze-and-use/action-and-session-properties.md "User action and session properties, which are metadata key-value pairs, provide added visibility and deeper analysis of your end users' experience. Using these properties for your web applications, you can filter user sessions, add calculated metrics, create charts, and more.") according to the property data type defined in the argument.
 
 Check the table below to understand whether keys of user action properties or keys of user session properties are returned.
 
@@ -1426,7 +1426,7 @@ SELECT name, duration, JSON
 FROM useraction LIMIT 5
 ```
 
-See also [Export user sessions](/docs/observe/digital-experience/session-segmentation/export-session-data "Set up Dynatrace to export user session data to a provided webhook endpoint.").
+See also [Export user sessions](export-session-data.md "Set up Dynatrace to export user session data to a provided webhook endpoint.").
 
 ### Escaping strings
 
@@ -1510,20 +1510,20 @@ WHERE stringProperties.memberstatus="GOLD"
 
 For user session data, the following tables are available.
 
-* `usersession` contains information on [user sessions](/docs/observe/digital-experience/rum-concepts/user-session "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.").
-* `useraction` stores data on [user actions](/docs/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.").
-* `userevent` provides information on [user events](/docs/observe/digital-experience/rum-concepts/user-and-error-events#user-events "Learn about user and error events and the types of user and error events captured by Dynatrace."), such as page changes or rage events.
-* `usererror` contains more data on [error events](/docs/observe/digital-experience/rum-concepts/user-and-error-events#error-events "Learn about user and error events and the types of user and error events captured by Dynatrace."), which are errors and crashes.
+* `usersession` contains information on [user sessions](../rum-concepts/user-session.md "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.").
+* `useraction` stores data on [user actions](../rum-concepts/user-actions.md "Learn what user actions are and how they help you understand what users do with your application.").
+* `userevent` provides information on [user events](../rum-concepts/user-and-error-events.md#user-events "Learn about user and error events and the types of user and error events captured by Dynatrace."), such as page changes or rage events.
+* `usererror` contains more data on [error events](../rum-concepts/user-and-error-events.md#error-events "Learn about user and error events and the types of user and error events captured by Dynatrace."), which are errors and crashes.
 
 [Secondary tables for `usersession`, `useraction`, `userevent`, and `usererror`](#usql-secondarytables) include a description of how data in one of those tables is available in the other.
 
-The fields are described in [User sessions API - User session structure](/docs/dynatrace-api/environment-api/rum/user-sessions/user-session-structure "Learn the structure of a user session in the Dynatrace User Session Query language API.").
+The fields are described in [User sessions API - User session structure](../../../dynatrace-api/environment-api/rum/user-sessions/user-session-structure.md "Learn the structure of a user session in the Dynatrace User Session Query language API.").
 
-You can also check the **UserSession** object in the [API Explorer](/docs/dynatrace-api#api-explorer "Find out what you need to use the Dynatrace API.").
+You can also check the **UserSession** object in the [API Explorer](../../../dynatrace-api.md#api-explorer "Find out what you need to use the Dynatrace API.").
 
 ## Run USQL queries for custom reports
 
-A REST interface allows you to get results for your custom queries. All you need is to create a unique [API token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") with the **User session query language** privilege. The ability to query user session data this way is useful in automated testing, data verification, and other automated functions. It includes the following endpoints:
+A REST interface allows you to get results for your custom queries. All you need is to create a unique [API token](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.") with the **User session query language** privilege. The ability to query user session data this way is useful in automated testing, data verification, and other automated functions. It includes the following endpoints:
 
 `/table`: Returns the data as a flat table, even when grouping by various items and performing hierarchical aggregations against the user session data.
 
@@ -1644,24 +1644,24 @@ provides the following result:
 }
 ```
 
-Learn more about [user sessions API](/docs/dynatrace-api/environment-api/rum/user-sessions "Learn what the Dynatrace User Sessions Query language API offers.").
+Learn more about [user sessions API](../../../dynatrace-api/environment-api/rum/user-sessions.md "Learn what the Dynatrace User Sessions Query language API offers.").
 
 ## Convert queries into USQL custom metrics
 
-You can convert some queries into USQL custom metrics for your [web](/docs/observe/digital-experience/web-applications/additional-configuration/custom-metrics-from-user-sessions "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for web applications."), [mobile](/docs/observe/digital-experience/mobile-applications/additional-configuration/custom-metrics-from-user-sessions-mobile-apps "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for mobile applications."), and [custom applications](/docs/observe/digital-experience/custom-applications/additional-configuration/custom-metrics-from-user-sessions-custom-apps "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for custom applications.").
+You can convert some queries into USQL custom metrics for your [web](../web-applications/additional-configuration/custom-metrics-from-user-sessions.md "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for web applications."), [mobile](../mobile-applications/additional-configuration/custom-metrics-from-user-sessions-mobile-apps.md "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for mobile applications."), and [custom applications](../custom-applications/additional-configuration/custom-metrics-from-user-sessions-custom-apps.md "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for custom applications.").
 
 USQL custom metrics are available as
 user session custom metrics (USCMs) and user action custom metrics (UACMs). User action custom metrics are supported since Dynatrace version 1.260.
 
 1. Go to ![Query user sessions](https://dt-cdn.net/images/query-user-sessions-512-77c5a8da9f.png "Query user sessions") **Query User Sessions**.
 2. Enter the query, and then select **Run query**.  
-   For a list of supported fields, see the detailed guides for your [web](/docs/observe/digital-experience/web-applications/additional-configuration/custom-metrics-from-user-sessions#properties-and-supported-values "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for web applications."), [mobile](/docs/observe/digital-experience/mobile-applications/additional-configuration/custom-metrics-from-user-sessions-mobile-apps#properties-and-supported-values "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for mobile applications."), and [custom applications](/docs/observe/digital-experience/custom-applications/additional-configuration/custom-metrics-from-user-sessions-custom-apps#properties-and-supported-values "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for custom applications.").
+   For a list of supported fields, see the detailed guides for your [web](../web-applications/additional-configuration/custom-metrics-from-user-sessions.md#properties-and-supported-values "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for web applications."), [mobile](../mobile-applications/additional-configuration/custom-metrics-from-user-sessions-mobile-apps.md#properties-and-supported-values "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for mobile applications."), and [custom applications](../custom-applications/additional-configuration/custom-metrics-from-user-sessions-custom-apps.md#properties-and-supported-values "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for custom applications.").
 3. Select **Create custom metric**.
 4. Enter the metric name, and then review the proposed settings.
 
 ## Limitations
 
-* Dynatrace stores and retains Real User Monitoring (user actions and user sessions) for a limited period of time. See [Data retention periods](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods "Check retention times for various data types.") for details.
+* Dynatrace stores and retains Real User Monitoring (user actions and user sessions) for a limited period of time. See [Data retention periods](../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md "Check retention times for various data types.") for details.
 * The default result set is 50 but the number of results can be increased to a maximum of 5000 by using the `LIMIT` keyword.
 * The number of potential maximum bucketed results is limited to a maximum of 100,000. The default is 10,000.  
   This affects how `TOP()` is applied when `DISTINCT` or `GROUP BY` is used. If no `TOP()` is specified, 10,000 possible results are spread evenly across the specified columns. These default values can be overwritten by specifying a `TOP()` for each column. The multiplied `TOP()-` values can't exceed 100,000 results.

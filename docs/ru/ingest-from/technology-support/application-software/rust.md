@@ -17,4 +17,4 @@ scraped: 2026-03-05T21:25:43.380678
 
 * [Поддержка OpenTelemetry](https://github.com/open-telemetry/opentelemetry-rust) для захвата трасс.
 
-  + [Инструментирование вашего приложения Rust с помощью OpenTelemetry](/docs/ingest-from/opentelemetry/walkthroughs/rust "Узнайте, как инструментировать ваше приложение Rust с помощью OpenTelemetry и Dynatrace.")
+  + [Инструментирование вашего приложения Rust с помощью OpenTelemetry](../../opentelemetry/walkthroughs/rust.md "Узнайте, как инструментировать ваше приложение Rust с помощью OpenTelemetry и Dynatrace.")

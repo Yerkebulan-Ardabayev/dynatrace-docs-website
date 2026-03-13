@@ -94,4 +94,4 @@ To change how logs are processed, you can modify the matching condition to exclu
 
 ## Related topics
 
-* [Data flow in OpenPipeline](/docs/platform/openpipeline/concepts/data-flow "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")
+* [Data flow in OpenPipeline](../concepts/data-flow.md "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.")

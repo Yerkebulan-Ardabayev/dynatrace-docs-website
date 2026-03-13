@@ -23,15 +23,15 @@ scraped: 2026-03-06T21:31:44.586811
 
 ### Концепции
 
-Ознакомьтесь с типами пользователей IAM, федерацией удостоверений и репозиториями пользователей.](/docs/manage/identity-access-management/user-and-group-management/identity-concepts "Понимание ключевых концепций идентификации в Dynatrace IAM")[### Локальные пользователи
+Ознакомьтесь с типами пользователей IAM, федерацией удостоверений и репозиториями пользователей.](user-and-group-management/identity-concepts.md "Понимание ключевых концепций идентификации в Dynatrace IAM")[### Локальные пользователи
 
-Dynatrace выступает в качестве вашего хранилища удостоверений.](/docs/manage/identity-access-management/user-and-group-management/identity-concepts#users "Понимание ключевых концепций идентификации в Dynatrace IAM")[### Сервисные пользователи
+Dynatrace выступает в качестве вашего хранилища удостоверений.](user-and-group-management/identity-concepts.md#users "Понимание ключевых концепций идентификации в Dynatrace IAM")[### Сервисные пользователи
 
-Нечеловеческие удостоверения, взаимодействующие с сервисами и ресурсами.](/docs/manage/identity-access-management/user-and-group-management/identity-concepts#service-users "Понимание ключевых концепций идентификации в Dynatrace IAM")[### Федерация SAML
+Нечеловеческие удостоверения, взаимодействующие с сервисами и ресурсами.](user-and-group-management/identity-concepts.md#service-users "Понимание ключевых концепций идентификации в Dynatrace IAM")[### Федерация SAML
 
-Делегирование аутентификации через ваш IdP.](/docs/manage/identity-access-management/user-and-group-management/access-saml "SAML")[### SCIM
+Делегирование аутентификации через ваш IdP.](user-and-group-management/access-saml.md "SAML")[### SCIM
 
-Синхронизация репозиториев удостоверений.](/docs/manage/identity-access-management/user-and-group-management/access-scim "SCIM")
+Синхронизация репозиториев удостоверений.](user-and-group-management/access-scim.md "SCIM")
 
 ## Управление доступом
 
@@ -41,19 +41,19 @@ Dynatrace выступает в качестве вашего хранилища
 
 ### Концепции
 
-Ознакомьтесь с тем, как Dynatrace управляет группами и политиками.](/docs/manage/identity-access-management/permission-management/access-concepts "Понимание ключевых концепций доступа в Dynatrace IAM")[### Группы
+Ознакомьтесь с тем, как Dynatrace управляет группами и политиками.](permission-management/access-concepts.md "Понимание ключевых концепций доступа в Dynatrace IAM")[### Группы
 
-Централизованное управление конфигурациями доступа.](/docs/manage/identity-access-management/permission-management/access-concepts#groups "Понимание ключевых концепций доступа в Dynatrace IAM")[### Политики
+Централизованное управление конфигурациями доступа.](permission-management/access-concepts.md#groups "Понимание ключевых концепций доступа в Dynatrace IAM")[### Политики
 
-Определение настраиваемых разрешений для доступа к ресурсам.](/docs/manage/identity-access-management/permission-management/access-concepts#policies "Понимание ключевых концепций доступа в Dynatrace IAM")[### Границы политик
+Определение настраиваемых разрешений для доступа к ресурсам.](permission-management/access-concepts.md#policies "Понимание ключевых концепций доступа в Dynatrace IAM")[### Границы политик
 
-Масштабирование, уточнение и упрощение разрешений доступа.](/docs/manage/identity-access-management/permission-management/access-concepts#policy-boundaries "Понимание ключевых концепций доступа в Dynatrace IAM")[### Шаблоны политик
+Масштабирование, уточнение и упрощение разрешений доступа.](permission-management/access-concepts.md#policy-boundaries "Понимание ключевых концепций доступа в Dynatrace IAM")[### Шаблоны политик
 
-Многократно используемые политики для регулирования управления доступом.](/docs/manage/identity-access-management/permission-management/access-concepts#policy-templates "Понимание ключевых концепций доступа в Dynatrace IAM")[### Политики по умолчанию
+Многократно используемые политики для регулирования управления доступом.](permission-management/access-concepts.md#policy-templates "Понимание ключевых концепций доступа в Dynatrace IAM")[### Политики по умолчанию
 
-Начните работу с политиками Dynatrace по умолчанию.](/docs/manage/identity-access-management/permission-management/default-policies "Справочник по политикам Dynatrace по умолчанию")[### Группы по умолчанию
+Начните работу с политиками Dynatrace по умолчанию.](permission-management/default-policies.md "Справочник по политикам Dynatrace по умолчанию")[### Группы по умолчанию
 
-Начните работу с группами Dynatrace по умолчанию.](/docs/manage/identity-access-management/user-and-group-management/default-groups "Справочник по группам Dynatrace по умолчанию")
+Начните работу с группами Dynatrace по умолчанию.](user-and-group-management/default-groups.md "Справочник по группам Dynatrace по умолчанию")
 
 ## Токены и OAuth-клиенты
 
@@ -63,8 +63,8 @@ Dynatrace выступает в качестве вашего хранилища
 
 ### Концепции
 
-Ознакомьтесь с тем, как Dynatrace обрабатывает API-токены и автоматизацию доступа.](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/token-concepts "Понимание ключевых аспектов доступа к API и автоматизации в Dynatrace IAM")[### Токены платформы
+Ознакомьтесь с тем, как Dynatrace обрабатывает API-токены и автоматизацию доступа.](access-tokens-and-oauth-clients/token-concepts.md "Понимание ключевых аспектов доступа к API и автоматизации в Dynatrace IAM")[### Токены платформы
 
-Разрешение взаимодействия с платформой Dynatrace.](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Создание персональных токенов платформы для доступа к сервисам Dynatrace через API в контексте вашего пользователя.")[### OAuth-токены
+Разрешение взаимодействия с платформой Dynatrace.](access-tokens-and-oauth-clients/platform-tokens.md "Создание персональных токенов платформы для доступа к сервисам Dynatrace через API в контексте вашего пользователя.")[### OAuth-токены
 
-Доступ к Dynatrace через OAuth-клиенты.](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Управление аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.")
+Доступ к Dynatrace через OAuth-клиенты.](access-tokens-and-oauth-clients/oauth-clients.md "Управление аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.")

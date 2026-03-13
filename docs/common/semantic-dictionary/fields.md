@@ -946,7 +946,7 @@ Metadata with ActiveGate realated information.
 
 ## Dynatrace OneAgent Metadata
 
-Metadata of the OneAgent module that reported a signal. These attributes are what one would also see in [OneAgent Health](/docs/ingest-from/dynatrace-oneagent/oneagent-health "Discover deployed OneAgent modules at scale and detect anomalies before they turn into problems.").
+Metadata of the OneAgent module that reported a signal. These attributes are what one would also see in [OneAgent Health](../../ru/ingest-from/dynatrace-oneagent/oneagent-health.md "Discover deployed OneAgent modules at scale and detect anomalies before they turn into problems.").
 
 ### Fields
 
@@ -1109,7 +1109,7 @@ data primarily addressed through ME IDs coming from other channels.
 
 The structure for keys that signify entity IDs is `dt.entity.{type of entity}`.
 The value associated with such a key must be valid Dynatrace entity identifier
-(see [Monitored entities API](/docs/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API.")).
+(see [Monitored entities API](../../ru/dynatrace-api/environment-api/entity-v2.md "Learn about the Dynatrace Monitored entities API.")).
 
 To allow linking Entity IDs across various different monitoring artifacts (logs, metrics, etc.), all string representations of Entity IDs are required to follow a canonical form, which for all current entities is defined as `PREFIX-0123456789ABCDEF`.
 
@@ -1123,7 +1123,7 @@ Current entity IDs in cannonical form can be represented structurally with the f
 
 Additional characters or changes in the format may happen in the future but will not invalidate existing IDs or ID generation rules.
 
-When adding a name to an entity ID via the Grail function [entityName](/docs/platform/grail/dynatrace-query-language/functions/general-functions#entityName "A list of DQL general functions."), by default, the name of the respective entity will be represented as `dt.entity.{type of entity}.name`. Similarly, further entity attributes can be added via the Grail function [entityAttr](/docs/platform/grail/dynatrace-query-language/functions/general-functions#entityAttr "A list of DQL general functions."), resulting in additional field(s) following the naming convention `dt.entity.{type of entity}.{name of attribute}`.
+When adding a name to an entity ID via the Grail function [entityName](../platform/grail/dynatrace-query-language/functions/general-functions.md#entityName "A list of DQL general functions."), by default, the name of the respective entity will be represented as `dt.entity.{type of entity}.name`. Similarly, further entity attributes can be added via the Grail function [entityAttr](../platform/grail/dynatrace-query-language/functions/general-functions.md#entityAttr "A list of DQL general functions."), resulting in additional field(s) following the naming convention `dt.entity.{type of entity}.{name of attribute}`.
 
 ### Fields
 
@@ -1268,17 +1268,17 @@ Attributes defined in this namespace are used by Dynatrace to describe different
 | --- | --- | --- | --- |
 | `dt.cost.costcenter` | string | resource stable Can be used to assign usage to a Cost Center. | `Team A` |
 | `dt.cost.product` | string | resource stable Can be used to assign usage to a Product or Application ID. | `Product A` |
-| `dt.host_group.id` | string | resource stable See [Organize your environment using host groups](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups."). Note that host groups are identified by their name, not by the entity ID of the host group entity. For details on the entity ID, see `dt.entity.host_group`. Tags: `permission` `primary-field` | `myHostGroup` |
+| `dt.host_group.id` | string | resource stable See [Organize your environment using host groups](../../ru/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups."). Note that host groups are identified by their name, not by the entity ID of the host group entity. For details on the entity ID, see `dt.entity.host_group`. Tags: `permission` `primary-field` | `myHostGroup` |
 | `dt.metrics.source` | string | resource experimental The source from which metrics are ingested. [1](#fn-7-1-def) | `telegraf`; `com.dynatrace.extension.sql-oracle` |
-| `dt.network_zone.id` | string | resource experimental The ID of the network zone. See [Dynatrace Documentation](/docs/dynatrace-api/environment-api/network-zones/get-network-zone "View the configuration of a network zone via the Dynatrace API.") | `vpc-123` |
-| `dt.pg_detection.cluster.id` | string | resource experimental `DT_CLUSTER_ID` environment variable; also see [Process group detection](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection") |  |
-| `dt.pg_detection.custom_entry` | string | resource experimental also see [Define metadata via environment variables](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") |  |
+| `dt.network_zone.id` | string | resource experimental The ID of the network zone. See [Dynatrace Documentation](../../ru/dynatrace-api/environment-api/network-zones/get-network-zone.md "View the configuration of a network zone via the Dynatrace API.") | `vpc-123` |
+| `dt.pg_detection.cluster.id` | string | resource experimental `DT_CLUSTER_ID` environment variable; also see [Process group detection](../../ru/observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection") |  |
+| `dt.pg_detection.custom_entry` | string | resource experimental also see [Define metadata via environment variables](../observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata.md#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") |  |
 | `dt.pg_detection.declarative.id` | string | resource experimental |  |
 | `dt.pg_detection.environment.id` | string | resource experimental `DT_ENVIRONMENT_ID` environment variable |  |
-| `dt.pg_detection.node.id` | string | resource experimental `DT_NODE_ID` environment variable; also see [Process group detection](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection") |  |
+| `dt.pg_detection.node.id` | string | resource experimental `DT_NODE_ID` environment variable; also see [Process group detection](../../ru/observe/infrastructure-observability/process-groups/configuration/pg-detection.md "Ways to customize process-group detection") |  |
 | `dt.process_group.detected_name` | string | resource stable The name of the process group as it was detect by the agent. | `Apache Web Server httpd`; `Redis unguard-redis-* redis`; `Linux System` |
 | `dt.process_group.id` | string | resource experimental The identifier shared by all entities belonging to a given process group. | `PROCESS_GROUP-1234` |
-| `dt.security_context` | string | resource stable The security context is used in access permissions to limit the visibility. Learn more about the [Dynatrace permission model](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.") Tags: `permission` |  |
+| `dt.security_context` | string | resource stable The security context is used in access permissions to limit the visibility. Learn more about the [Dynatrace permission model](../platform/grail/dynatrace-grail.md "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.") Tags: `permission` |  |
 | `dt.smartscape_source.id` | smartscapeId | resource experimental The ID of the entity considered the source of the signal. The string represents an entity ID of an entity that is stored in the Smartscape storage. [2](#fn-7-2-def) Tags: `smartscape-id` | `K8S_CLUSTER-E0D8F94D9065F24F`; `AWS_LAMBDA_FUNCTION-E0D8F94D9065F24F` |
 | `dt.smartscape_source.type` | string | resource stable The entity type of the entity whose identifier is held in dt.smartscape\_source.id. | `K8S_CLUSTER`; `AWS_LAMBDA_FUNCTION` |
 | `dt.source_entity` | string[] | resource stable The IDs of the entities considered as the sources of the signal. The strings represent the entity IDs of entities that are stored in the classic entity storage. [3](#fn-7-3-def) Tags: `entity-id` | `['HOST-E0D8F94D9065F24F', 'PROCESS_GROUP_INSTANCE-E0D8F94D9065F24F']` |
@@ -1313,7 +1313,7 @@ The value of this field will be based on one of the `dt.entity.<type>` fields va
 | --- | --- | --- | --- |
 | `dt.has_container_application_monitoring` | boolean | experimental Indicates that the underlying container of the data point should be considered in Container Application Monitoring license. Set to `true` for the opt-in of Container Application Monitoring. Setting to `false` is not supported by the backend and has no effect. | `true`; `false` |
 | `dt.maintenance_window_ids` | array | experimental UUIDs of maintenance windows. | `c715d677-eb1b-3e1b-8dbc-db06cad5b8eb` |
-| `dt.query` | string | experimental A query in the DQL format, see [Dynatrace Query Langauge](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."). | `timeseries avg(dt.host.cpu.idle)`; `fetch logs` |
+| `dt.query` | string | experimental A query in the DQL format, see [Dynatrace Query Langauge](../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language."). | `timeseries avg(dt.host.cpu.idle)`; `fetch logs` |
 | `dt.raw_data` | string | experimental The complete content of the record as it was originally accepted by Dynatrace, stored as a string in JSON format. This field captures the unaltered data for reference, debugging, or auditing purposes | `{"content": "example record content"}` |
 
 ## Dynatrace OpenPipeline fields
@@ -2115,8 +2115,8 @@ Dynatrace aims to use the best fitting name for the field `host.name`. See below
 
 Dynatrace supports customizing the `host.name` property. A custom set host name takes precedence over the auto detection mechanisms described further down.
 
-* Place a configuration file containing the desired name in a specific directory as described in this [Documentation](/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments#config-file "Learn how to change a monitored host name.")
-* Alternatively, the `oneagentctl` tool can be used to set a custom host name. See [Documentation](/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments#oneagentctl "Learn how to change a monitored host name.") for details.
+* Place a configuration file containing the desired name in a specific directory as described in this [Documentation](../observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments.md#config-file "Learn how to change a monitored host name.")
+* Alternatively, the `oneagentctl` tool can be used to set a custom host name. See [Documentation](../observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments.md#oneagentctl "Learn how to change a monitored host name.") for details.
 
 #### 2. Kubernetes node name
 

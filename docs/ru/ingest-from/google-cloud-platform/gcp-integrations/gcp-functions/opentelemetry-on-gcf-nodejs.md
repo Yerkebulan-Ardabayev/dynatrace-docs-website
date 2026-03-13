@@ -17,7 +17,7 @@ scraped: 2026-03-05T21:29:51.504437
 
 ## Предварительные требования
 
-Убедитесь, что вы выполнили инструкции по [интеграции OpenTelemetry с Google Cloud Functions](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf "Monitor Google Cloud Functions with OpenTelemetry and Dynatrace.").
+Убедитесь, что вы выполнили инструкции по [интеграции OpenTelemetry с Google Cloud Functions](opentelemetry-on-gcf.md "Monitor Google Cloud Functions with OpenTelemetry and Dynatrace.").
 
 * На данный момент поддерживаются только [HTTP-триггеры](https://dt-url.net/os23yfz).
 * Версия продукта Cloud Function: 1-е поколение, 2-е поколение
@@ -484,5 +484,5 @@ Dynatrace версии 1.327+ Модуль `@dynatrace/opentelemetry-gcf` под
 
 ## Связанные темы
 
-* [Настройка Dynatrace в Google Cloud](/docs/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
+* [Настройка Dynatrace в Google Cloud](../../../google-cloud-platform.md "Monitor Google Cloud with Dynatrace.")
 * [Мониторинг Google Cloud](https://www.dynatrace.com/technologies/google-cloud-monitoring/)

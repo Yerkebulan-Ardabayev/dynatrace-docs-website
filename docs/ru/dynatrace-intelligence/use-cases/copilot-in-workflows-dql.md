@@ -14,7 +14,7 @@ scraped: 2026-03-06T21:33:02.783409
 * Обновлено 5 февраля 2026 г.
 * Preview
 
-С помощью [Dynatrace Intelligence (Preview)](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows "Узнайте, как автоматизировать действия и ответы генеративного ИИ Dynatrace Intelligence с помощью Workflows.") вы можете автоматизировать обобщение проблем и попросить генеративный ИИ Dynatrace Intelligence предложить шаги по устранению, которые могут быть отправлены на вашу электронную почту.
+С помощью [Dynatrace Intelligence (Preview)](../dynatrace-intelligence-integrations/copilot-for-workflows.md "Узнайте, как автоматизировать действия и ответы генеративного ИИ Dynatrace Intelligence с помощью Workflows.") вы можете автоматизировать обобщение проблем и попросить генеративный ИИ Dynatrace Intelligence предложить шаги по устранению, которые могут быть отправлены на вашу электронную почту.
 
 ## Обзор
 
@@ -136,7 +136,7 @@ scraped: 2026-03-06T21:33:02.783409
 4. Отправка результатов генеративного ИИ Dynatrace Intelligence на электронную почту пользователей
 
 1. Нажмите **+ Add task**.
-2. В поле поиска введите **Send email** или выберите **Send email** из списка действий Workflow. Дополнительную информацию о действиях электронной почты в Workflow см. в разделе [Email](/docs/analyze-explore-automate/workflows/actions/email "Автоматизируйте отправку готовых электронных писем на основе событий и расписаний, определённых для ваших рабочих процессов.").
+2. В поле поиска введите **Send email** или выберите **Send email** из списка действий Workflow. Дополнительную информацию о действиях электронной почты в Workflow см. в разделе [Email](../../analyze-explore-automate/workflows/actions/email.md "Автоматизируйте отправку готовых электронных писем на основе событий и расписаний, определённых для ваших рабочих процессов.").
 3. Введите имя задачи рабочего процесса.
 4. Настройте поля:
 
@@ -211,7 +211,7 @@ scraped: 2026-03-06T21:33:02.783409
 
 ## Связанные темы
 
-* [Dynatrace Assist](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot "Задавайте вопросы на естественном языке и получайте быстрые ответы от Dynatrace Assist — вашего генеративного ИИ-помощника.")
-* [Приложение Dynatrace Intelligence (Preview)](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows "Узнайте, как автоматизировать действия и ответы генеративного ИИ Dynatrace Intelligence с помощью Workflows.")
-* [Обзор агентного и генеративного ИИ Dynatrace Intelligence](/docs/dynatrace-intelligence/copilot/copilot-overview "Узнайте о безопасности данных и других аспектах агентного и генеративного ИИ Dynatrace Intelligence.")
-* [Workflows](/docs/analyze-explore-automate/workflows "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.")
+* [Dynatrace Assist](../copilot/chat-with-davis-copilot.md "Задавайте вопросы на естественном языке и получайте быстрые ответы от Dynatrace Assist — вашего генеративного ИИ-помощника.")
+* [Приложение Dynatrace Intelligence (Preview)](../dynatrace-intelligence-integrations/copilot-for-workflows.md "Узнайте, как автоматизировать действия и ответы генеративного ИИ Dynatrace Intelligence с помощью Workflows.")
+* [Обзор агентного и генеративного ИИ Dynatrace Intelligence](../copilot/copilot-overview.md "Узнайте о безопасности данных и других аспектах агентного и генеративного ИИ Dynatrace Intelligence.")
+* [Workflows](../../analyze-explore-automate/workflows.md "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.")

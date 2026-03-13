@@ -13,7 +13,7 @@ scraped: 2026-03-06T21:16:24.238689
 * Чтение займёт 1 минуту
 * Опубликовано 02 декабря 2021 г.
 
-[Управление журналами и аналитика Dynatrace](/docs/analyze-explore-automate/logs "Log Management and Analytics обеспечивает единый подход к управлению и изучению данных журналов в Dynatrace.") использует DaemonSet OneAgent, включающий модуль журналов. Это рекомендуемый способ потоковой передачи журналов с узлов и подов в Dynatrace.
+[Управление журналами и аналитика Dynatrace](../../logs.md "Log Management and Analytics обеспечивает единый подход к управлению и изучению данных журналов в Dynatrace.") использует DaemonSet OneAgent, включающий модуль журналов. Это рекомендуемый способ потоковой передачи журналов с узлов и подов в Dynatrace.
 
 В качестве альтернативы вы можете использовать [плагин Dynatrace Fluentd](https://dt-url.net/gb23475) — модуль с открытым исходным кодом — для потоковой передачи журналов.
 
@@ -24,7 +24,7 @@ scraped: 2026-03-06T21:16:24.238689
 ## Возможности
 
 * Поддерживает потоковую передачу журналов в разные среды Dynatrace из одного кластера Kubernetes. Например, можно отправлять журналы подов приложений в среду, отличную от среды для журналов узлов Kubernetes.
-* Поддерживает потоковую передачу журналов для [интеграций только с приложениями](/docs/ingest-from/setup-on-k8s/deployment/application-observability "Разверните Dynatrace Operator в режиме мониторинга приложений на Kubernetes").
+* Поддерживает потоковую передачу журналов для [интеграций только с приложениями](../../../ingest-from/setup-on-k8s/deployment/application-observability.md "Разверните Dynatrace Operator в режиме мониторинга приложений на Kubernetes").
 * Можно настроить для прямой потоковой передачи журналов в Dynatrace.
 
 ## Ограничения
@@ -37,4 +37,4 @@ scraped: 2026-03-06T21:16:24.238689
 
 ## Связанные темы
 
-* [Kubernetes Classic](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring "Мониторинг Kubernetes/OpenShift с помощью Dynatrace.")
+* [Kubernetes Classic](../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring.md "Мониторинг Kubernetes/OpenShift с помощью Dynatrace.")

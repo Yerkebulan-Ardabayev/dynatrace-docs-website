@@ -11,7 +11,7 @@ scraped: 2026-03-05T21:32:40.132058
 * Reference
 * Updated on Sep 18, 2025
 
-Returns the most recent [JavaScript tag](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats#js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes a reference to an external file that contains both the monitoring code and its configuration.
+Returns the most recent [JavaScript tag](../../../../observe/digital-experience/web-applications/initial-setup/snippet-formats.md#js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes a reference to an external file that contains both the monitoring code and its configuration.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,7 +22,7 @@ Returns the most recent [JavaScript tag](/docs/observe/digital-experience/web-ap
 
 To execute this request, you need an access token with `rumManualInsertionTags.read` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Parameters
 
@@ -34,4 +34,4 @@ To learn how to obtain and use it, see [Tokens and authentication](/docs/discove
 
 ## Response
 
-The response includes a `text/plain` payload containing the most recent version of the [JavaScript tag](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats#js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.
+The response includes a `text/plain` payload containing the most recent version of the [JavaScript tag](../../../../observe/digital-experience/web-applications/initial-setup/snippet-formats.md#js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.

@@ -35,7 +35,7 @@ You can opt-in to receive notifications about graceful shutdowns as well.
 
 Server-side disk alerting for new tenants
 
-Starting with SaaS version 1.308, server-side disk alerting is disabled for new tenants by default. We recommend using [Disk Edge alerting](/docs/observe/infrastructure-observability/hosts/configuration/anomaly-detection#disk-edge-alerting "Configure host anomaly detection, including problem and event thresholds.") instead. Disk Edge alerting allows you to create more complex and specific rules using:
+Starting with SaaS version 1.308, server-side disk alerting is disabled for new tenants by default. We recommend using [Disk Edge alerting](../../../observe/infrastructure-observability/hosts/configuration/anomaly-detection.md#disk-edge-alerting "Configure host anomaly detection, including problem and event thresholds.") instead. Disk Edge alerting allows you to create more complex and specific rules using:
 
 * Metrics to alert on (available disk space, is read-only file system, read time, write time, and available inodes)
 * Operating system to which the policy should be applied
@@ -96,8 +96,8 @@ To change threshold settings for a specific host
 
 ## Related topics
 
-* [Host anomaly detection](/docs/observe/infrastructure-observability/hosts/configuration/anomaly-detection "Configure host anomaly detection, including problem and event thresholds.")
-* [Anomaly detection API - Hosts](/docs/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-hosts "Learn what the Dynatrace Anomaly detection API for hosts offers.")
-* [Anomaly detection API - AWS](/docs/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-aws "Learn what the Dynatrace Anomaly detection API for AWS offers.")
-* [Anomaly detection API - VMware](/docs/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-vmware "Learn what the Dynatrace Anomaly detection API for VMware offers.")
-* [Anomaly detection API - Disk events](/docs/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-disk-events "Learn what the Dynatrace Anomaly detection API for disk events offers.")
+* [Host anomaly detection](../../../observe/infrastructure-observability/hosts/configuration/anomaly-detection.md "Configure host anomaly detection, including problem and event thresholds.")
+* [Anomaly detection API - Hosts](../../../dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-hosts.md "Learn what the Dynatrace Anomaly detection API for hosts offers.")
+* [Anomaly detection API - AWS](../../../dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-aws.md "Learn what the Dynatrace Anomaly detection API for AWS offers.")
+* [Anomaly detection API - VMware](../../../dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-vmware.md "Learn what the Dynatrace Anomaly detection API for VMware offers.")
+* [Anomaly detection API - Disk events](../../../dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-disk-events.md "Learn what the Dynatrace Anomaly detection API for disk events offers.")

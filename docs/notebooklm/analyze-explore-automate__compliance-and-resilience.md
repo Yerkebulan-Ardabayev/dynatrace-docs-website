@@ -32,14 +32,14 @@ Prerequisites
 
 ## Set up sources and applications
 
-* To take full advantage of ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**, see [Prerequisites](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management#prereq "Configure and enable Security Posture Management in Kubernetes.") and how to [Get started](/docs/secure/xspm#start "Detect, manage, and take action on security and compliance findings.").
-* Set up [Dynatrace Runtime Vulnerability Analytics](/docs/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
-* Set up [Dynatrace Runtime Application Protection](/docs/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
-* [Install](/docs/manage/hub#install "See the information about Dynatrace Hub.") ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**
+* To take full advantage of ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**, see [Prerequisites](ingest-from/setup-on-k8s/deployment/security-posture-management.md#prereq "Configure and enable Security Posture Management in Kubernetes.") and how to [Get started](../ru/secure/xspm.md#start "Detect, manage, and take action on security and compliance findings.").
+* Set up [Dynatrace Runtime Vulnerability Analytics](../ru/secure/application-security/vulnerability-analytics.md "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
+* Set up [Dynatrace Runtime Application Protection](../ru/secure/application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
+* [Install](../ru/manage/hub.md#install "See the information about Dynatrace Hub.") ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**
 
 ## Installation
 
-Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Make sure the app is [installed in your environment](../ru/manage/hub.md#install "See the information about Dynatrace Hub.").
 
 Get started
 
@@ -60,7 +60,7 @@ Use cases
 * Open reporting template
   Select  **ICT incident reporting notebook** in the upper-right corner of the page to access an incident reporting template in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**.
 
-  Note that this is a [ready-made document](/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents "Use ready-made documents right out of the box.").
+  Note that this is a [ready-made document](../ru/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents.md "Use ready-made documents right out of the box.").
 * Open DORA regulation
 
   Within each widget, you can find a chapter from DORA regulation to which it refers.
@@ -97,7 +97,7 @@ Incidents ICT critical services widget gathers information from:
 
 * **Attacks** ![Attacks](https://dt-cdn.net/images/attacks-512-b922840b12.png "Attacks")âif there's a security incident, helps detect and classify an attack on your environment in real time.
 * **Problems** ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new")âif there's a resilience incident, analyzes abnormal system behavior and performance problems detected by Dynatrace Intelligence.
-* Use [segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") to conveniently filter observability and security incidents impacting a critical service under DORA.
+* Use [segments](../ru/manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") to conveniently filter observability and security incidents impacting a critical service under DORA.
 
 **ICT vulnerabilities** widget shows you most recent resilience and security incidents, but you can view all ICT Observability in **Problems** ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") and view all ICT Security incidents in **Attacks** ![Attacks](https://dt-cdn.net/images/attacks-512-b922840b12.png "Attacks").
 
@@ -157,25 +157,25 @@ Dynatrace helps you comprehensively map the entire IT environment in real time. 
 
 ### Discovery & Coverage
 
-[Discovery & Coverage](/docs/ingest-from/discovery-coverage-app "Discover and remediate monitoring coverage gaps at scale.") ![Discovery & Coverage](https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png "Discovery & Coverage") helps prevent unexpected outages by detecting and remediating monitoring coverage gaps across your entire enterprise.
+[Discovery & Coverage](../ru/ingest-from/discovery-coverage-app.md "Discover and remediate monitoring coverage gaps at scale.") ![Discovery & Coverage](https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png "Discovery & Coverage") helps prevent unexpected outages by detecting and remediating monitoring coverage gaps across your entire enterprise.
 
 ![Discovery & COverage](https://dt-cdn.net/images/image001-1432-0bb965c934.png)
 
 ### Smartscape
 
-[Smartscape](/docs/analyze-explore-automate/smartscape-classic "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") topology visualizes the relationships between applications, services, processes, hosts, and data centers, highlighting problems and vulnerabilities.
+[Smartscape](../ru/analyze-explore-automate/smartscape-classic.md "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") topology visualizes the relationships between applications, services, processes, hosts, and data centers, highlighting problems and vulnerabilities.
 
 ![Smartscape](https://dt-cdn.net/images/image002-1432-082bf6d3ac.png)
 
 ### Security Posture Management
 
-[Security Posture Management](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") helps detect, visualize, analyze, and remediate security posture and compliance findings, including misconfigurations and regulatory compliance assessments.
+[Security Posture Management](../ru/secure/application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") helps detect, visualize, analyze, and remediate security posture and compliance findings, including misconfigurations and regulatory compliance assessments.
 
 ![Security Posture Management](https://dt-cdn.net/images/image003-1432-112de6ebf6.png)
 
 ### Compliance Assistant
 
-[Compliance Assistant](/docs/analyze-explore-automate/compliance-and-resilience/compliance-assistant "Consolidate insights from the Dynatrace observability and security platform in a unified dashboard.") ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") provides a dedicated view tailored for the European Union's Digital Operational Resilience Act (DORA).
+[Compliance Assistant](../ru/analyze-explore-automate/compliance-and-resilience/compliance-assistant.md "Consolidate insights from the Dynatrace observability and security platform in a unified dashboard.") ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") provides a dedicated view tailored for the European Union's Digital Operational Resilience Act (DORA).
 
 ![Compliance Assistant](https://dt-cdn.net/images/image004-1429-db68e2e050.png)
 
@@ -185,25 +185,25 @@ Dynatrace helps you focus on preventing incidents before they occur, managing ri
 
 ### Problems
 
-[Problems](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") ![Problems](https://dt-cdn.net/images/problems-512-34e46d913e.png "Problems") uses Dynatrace Intelligence to automatically analyze your system and detect abnormal behavior, such as performance or stability issues. It also investigates an incident's impact and root cause and reduces the mean time to repair (MTTR).
+[Problems](../ru/dynatrace-intelligence/davis-problems-app.md "Use the Problems app to quickly get to the root cause of incidents in your environment.") ![Problems](https://dt-cdn.net/images/problems-512-34e46d913e.png "Problems") uses Dynatrace Intelligence to automatically analyze your system and detect abnormal behavior, such as performance or stability issues. It also investigates an incident's impact and root cause and reduces the mean time to repair (MTTR).
 
 ![Problems](https://dt-cdn.net/images/image005-1432-d25b248ded.png)
 
 ### Vulnerabilities
 
-[![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**](/docs/secure/vulnerabilities "Prioritize and efficiently manage vulnerabilities in your monitored environments.") is our Dynatrace Runtime Vulnerability Analytics platform experience for detecting, visualizing, analyzing, monitoring, and remediating vulnerabilities across your application stack.
+[![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**](../ru/secure/vulnerabilities.md "Prioritize and efficiently manage vulnerabilities in your monitored environments.") is our Dynatrace Runtime Vulnerability Analytics platform experience for detecting, visualizing, analyzing, monitoring, and remediating vulnerabilities across your application stack.
 
 ![Vulnerabilities](https://dt-cdn.net/images/image006-1432-e6c3ac31aa.png)
 
 ### Runtime Application Protection
 
-[Runtime Application Protection](/docs/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.") helps you get a real-time overview of all the attacks in your environment. Leveraging code-level insights and transaction analysis, Dynatrace Runtime Application Protection automatically detects attacks on applications in your environment.
+[Runtime Application Protection](../ru/secure/application-security/application-protection.md "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.") helps you get a real-time overview of all the attacks in your environment. Leveraging code-level insights and transaction analysis, Dynatrace Runtime Application Protection automatically detects attacks on applications in your environment.
 
 ![Attacks](https://dt-cdn.net/images/image007-1432-e9d4630b53.png)
 
 ### Site Reliability Guardian
 
-[Site Reliability Guardian](/docs/deliver/site-reliability-guardian "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision.") ![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian") provides an automated change impact analysis to validate service availability, performance, and capacity objectives across various systems. This enables DevOps platform engineers to make the right release decisions for new versions and empowers SREs to apply Service-Level Objectives (SLOs) for their critical services.
+[Site Reliability Guardian](../ru/deliver/site-reliability-guardian.md "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision.") ![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian") provides an automated change impact analysis to validate service availability, performance, and capacity objectives across various systems. This enables DevOps platform engineers to make the right release decisions for new versions and empowers SREs to apply Service-Level Objectives (SLOs) for their critical services.
 
 ![Site Reliability Guardian](https://dt-cdn.net/images/image008-1428-ba22e79c5e.png)
 
@@ -213,7 +213,7 @@ Automation in Dynatrace allows you to automate tasks in your IT landscape, remed
 
 ### Workflows
 
-[Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") assembles a series of actions to build processes in graphical representations. Workflows can be triggered manually, on a schedule, or by events in Dynatrace, such as anomalies detected by Dynatrace Intelligence.
+[Workflows](../ru/analyze-explore-automate/workflows.md "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") assembles a series of actions to build processes in graphical representations. Workflows can be triggered manually, on a schedule, or by events in Dynatrace, such as anomalies detected by Dynatrace Intelligence.
 
 ![Workflows](https://dt-cdn.net/images/image009-1428-01287f82a0.png)
 

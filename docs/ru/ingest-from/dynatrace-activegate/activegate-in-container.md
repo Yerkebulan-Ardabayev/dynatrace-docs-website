@@ -16,9 +16,9 @@ Dynatrace поддерживает запуск ActiveGate в контейнер
 
 ## Предварительные требования
 
-1. [Создайте токен доступа с областью действия `InstallerDownload`](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Узнайте о концепции токена доступа и его областях действия.")
-2. [Создайте токен аутентификации](/docs/ingest-from/dynatrace-activegate/activegate-security#generate-individual "Защитите ActiveGate с помощью выделенных токенов.")
-3. Определите конечные точки связи ActiveGate и аутентификацию. Используйте API [GET информация о подключении для ActiveGate](/docs/dynatrace-api/environment-api/deployment/activegate/get-activegate-connectivity "Просмотрите информацию о подключении для ActiveGate через Dynatrace API.").
+1. [Создайте токен доступа с областью действия `InstallerDownload`](../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Узнайте о концепции токена доступа и его областях действия.")
+2. [Создайте токен аутентификации](activegate-security.md#generate-individual "Защитите ActiveGate с помощью выделенных токенов.")
+3. Определите конечные точки связи ActiveGate и аутентификацию. Используйте API [GET информация о подключении для ActiveGate](../../dynatrace-api/environment-api/deployment/activegate/get-activegate-connectivity.md "Просмотрите информацию о подключении для ActiveGate через Dynatrace API.").
 4. Получите UUID пространства имен kube-system
    Как извлечь UUID пространства имен kube-system
 
@@ -38,7 +38,7 @@ Dynatrace поддерживает запуск ActiveGate в контейнер
 
 ## Системные требования
 
-Образ Dynatrace ActiveGate поддерживается на различных версиях Kubernetes и OpenShift. Полный список см. в разделе [Поддержка технологий - Kubernetes](/docs/ingest-from/technology-support/support-model-and-issues "Как Dynatrace поддерживает версии Kubernetes и Red Hat OpenShift, а также известные проблемы").
+Образ Dynatrace ActiveGate поддерживается на различных версиях Kubernetes и OpenShift. Полный список см. в разделе [Поддержка технологий - Kubernetes](../technology-support/support-model-and-issues.md "Как Dynatrace поддерживает версии Kubernetes и Red Hat OpenShift, а также известные проблемы").
 
 Образы доступны для следующих архитектур:
 
@@ -51,17 +51,17 @@ Dynatrace поддерживает запуск ActiveGate в контейнер
 
 Для обеспечения бесшовной интеграции с вашими инструментами и адаптации к вашим потребностям мы предлагаем контейнерные образы различными способами для максимальной гибкости:
 
-* [Встроенный реестр Dynatrace](/docs/ingest-from/setup-on-k8s/guides/container-registries#default "Управление реестрами контейнеров в Dynatrace") по умолчанию
-* [Публичные реестры](/docs/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Использование публичного реестра")
-* [Собственный приватный реестр](/docs/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry "Хранение образов Dynatrace в приватных реестрах") Рекомендуется
+* [Встроенный реестр Dynatrace](../setup-on-k8s/guides/container-registries.md#default "Управление реестрами контейнеров в Dynatrace") по умолчанию
+* [Публичные реестры](../setup-on-k8s/guides/container-registries/use-public-registry.md#supported-public-registries "Использование публичного реестра")
+* [Собственный приватный реестр](../setup-on-k8s/guides/container-registries/prepare-private-registry.md "Хранение образов Dynatrace в приватных реестрах") Рекомендуется
 
-Обратите внимание, что мультиархитектурные контейнерные образы Dynatrace, обеспечивающие совместимость с различными платформами, доступны только из [публичных реестров](/docs/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Использование публичного реестра"). Встроенный реестр Dynatrace предоставляет только образы для x86-64.
+Обратите внимание, что мультиархитектурные контейнерные образы Dynatrace, обеспечивающие совместимость с различными платформами, доступны только из [публичных реестров](../setup-on-k8s/guides/container-registries/use-public-registry.md#supported-public-registries "Использование публичного реестра"). Встроенный реестр Dynatrace предоставляет только образы для x86-64.
 
 ## Развертывание
 
 Dynatrace предоставляет подписанные контейнерные образы для обеспечения подлинности и целостности, а также SBOM, содержащие список всех включенных программных компонентов.
 Проверка подписей и просмотр SBOM позволяют эффективно управлять уязвимостями и снижать риски.
-Подробности о проверке см. в разделе [Проверка аттестации Software Bill of Materials (SBOM)](/docs/ingest-from/setup-on-k8s/guides/container-registries/verify-image-signature#sbom-attestation-verification "Проверка подписей образов Dynatrace").
+Подробности о проверке см. в разделе [Проверка аттестации Software Bill of Materials (SBOM)](../setup-on-k8s/guides/container-registries/verify-image-signature.md#sbom-attestation-verification "Проверка подписей образов Dynatrace").
 
 Приватный или публичный реестр
 
@@ -750,8 +750,8 @@ Dynatrace предоставляет подписанные контейнерн
    Добавьте данные конфигурации окружения в файл `ag-deployment-example.yaml`, обязательно заменив:
 
    * `CPU_ARCHITECTURE` на вашу архитектуру процессора. Допустимые значения: `amd64`, `arm64`, `s390x` и `ppcle64`
-   * `<REPOSITORY_URL>` на один из [поддерживаемых реестров](/docs/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Использование публичного реестра")
-   * `<IMAGE_TAG>` на правильный тег образа ([примеры](/docs/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry#image-tags "Хранение образов Dynatrace в приватных реестрах"))
+   * `<REPOSITORY_URL>` на один из [поддерживаемых реестров](../setup-on-k8s/guides/container-registries/use-public-registry.md#supported-public-registries "Использование публичного реестра")
+   * `<IMAGE_TAG>` на правильный тег образа ([примеры](../setup-on-k8s/guides/container-registries/prepare-private-registry.md#image-tags "Хранение образов Dynatrace в приватных реестрах"))
    * `<YOUR_ENVIRONMENT_ID>` на идентификатор вашего окружения
 
      Для определения идентификатора окружения используйте следующий синтаксис:
@@ -763,7 +763,7 @@ Dynatrace предоставляет подписанные контейнерн
      Список конечных точек связи сервера (`communicationEndpoints`) может изменяться со временем.
    * `<YOUR_KUBE-SYSTEM_NAMESPACE_UUID>` UUID пространства имен kube-system, полученным в разделе [Предварительные требования](#prereq)
 
-     Для архитектуры PPC64le требуется дополнительная настройка. Подробности см. в разделе [Контейнерный образ ActiveGate](/docs/ingest-from/dynatrace-activegate/activegate-in-container#additional-configuration "Развертывание контейнерного ActiveGate.").
+     Для архитектуры PPC64le требуется дополнительная настройка. Подробности см. в разделе [Контейнерный образ ActiveGate](activegate-in-container.md#additional-configuration "Развертывание контейнерного ActiveGate.").
 
    Опции:
 
@@ -809,9 +809,9 @@ Dynatrace предоставляет подписанные контейнерн
 
      Фактические значения зависят от вашего окружения.
 
-     Эти ограничения следует рассматривать как руководство. Они предназначены для предотвращения замедления процесса запуска ActiveGate и чрезмерного использования ресурсов узла. Значения по умолчанию покрывают широкий спектр различных размеров кластеров; вы можете изменить их в соответствии с вашими потребностями на основе [метрик самодиагностики](/docs/analyze-explore-automate/metrics-classic/self-monitoring-metrics#activegate-insights "Изучите полный список метрик самодиагностики Dynatrace.") ActiveGate.
+     Эти ограничения следует рассматривать как руководство. Они предназначены для предотвращения замедления процесса запуска ActiveGate и чрезмерного использования ресурсов узла. Значения по умолчанию покрывают широкий спектр различных размеров кластеров; вы можете изменить их в соответствии с вашими потребностями на основе [метрик самодиагностики](../../analyze-explore-automate/metrics-classic/self-monitoring-metrics.md#activegate-insights "Изучите полный список метрик самодиагностики Dynatrace.") ActiveGate.
 
-   Дополнительные параметры конфигурации см. в разделе [Конфигурация контейнерного ActiveGate](/docs/ingest-from/dynatrace-activegate/activegate-in-container/configuration "Узнайте, как настроить контейнерный ActiveGate.").
+   Дополнительные параметры конфигурации см. в разделе [Конфигурация контейнерного ActiveGate](activegate-in-container/configuration.md "Узнайте, как настроить контейнерный ActiveGate.").
 5. Разверните ActiveGate.
 
    Kubernetes
@@ -1627,9 +1627,9 @@ Dynatrace предоставляет подписанные контейнерн
 
      Фактические значения зависят от вашего окружения.
 
-     Эти ограничения следует рассматривать как руководство. Они предназначены для предотвращения замедления процесса запуска ActiveGate и чрезмерного использования ресурсов узла. Значения по умолчанию покрывают широкий спектр различных размеров кластеров; вы можете изменить их в соответствии с вашими потребностями на основе [метрик самодиагностики](/docs/analyze-explore-automate/metrics-classic/self-monitoring-metrics#activegate-insights "Изучите полный список метрик самодиагностики Dynatrace.") ActiveGate.
+     Эти ограничения следует рассматривать как руководство. Они предназначены для предотвращения замедления процесса запуска ActiveGate и чрезмерного использования ресурсов узла. Значения по умолчанию покрывают широкий спектр различных размеров кластеров; вы можете изменить их в соответствии с вашими потребностями на основе [метрик самодиагностики](../../analyze-explore-automate/metrics-classic/self-monitoring-metrics.md#activegate-insights "Изучите полный список метрик самодиагностики Dynatrace.") ActiveGate.
 
-   Дополнительные параметры конфигурации см. в разделе [Конфигурация контейнерного ActiveGate](/docs/ingest-from/dynatrace-activegate/activegate-in-container/configuration "Узнайте, как настроить контейнерный ActiveGate.").
+   Дополнительные параметры конфигурации см. в разделе [Конфигурация контейнерного ActiveGate](activegate-in-container/configuration.md "Узнайте, как настроить контейнерный ActiveGate.").
 6. Разверните ActiveGate.
 
    Kubernetes
@@ -1652,7 +1652,7 @@ Dynatrace предоставляет подписанные контейнерн
 1. Увеличьте количество ядер CPU: чтобы соответствовать производительности архитектуры x86-64, количество ядер CPU следует увеличить в четыре раза.
 2. Уменьшите количество потоков ActiveGate:
 
-   * Создайте пользовательские свойства, как описано в разделе [Расширенная конфигурация](/docs/ingest-from/dynatrace-activegate/activegate-in-container/configuration#advanced-configuration "Узнайте, как настроить контейнерный ActiveGate.")
+   * Создайте пользовательские свойства, как описано в разделе [Расширенная конфигурация](activegate-in-container/configuration.md#advanced-configuration "Узнайте, как настроить контейнерный ActiveGate.")
    * Добавьте следующие строки в custom.properties:
 
      ```
@@ -1673,12 +1673,12 @@ Dynatrace предоставляет подписанные контейнерн
 
 * Для мониторинга Kubernetes/OpenShift выберите один из следующих вариантов:
 
-  + Используйте [Dynatrace Operator](/docs/ingest-from/setup-on-k8s/deployment "Развертывание Dynatrace Operator в Kubernetes")
-  + Разверните [ActiveGate непосредственно как StatefulSet](/docs/ingest-from/setup-on-k8s/deployment/other/ag-statefulset "Установка и настройка ActiveGate в Kubernetes как StatefulSet.")
-* Для сбора логов из Kubernetes используйте [Log Monitoring](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes "Dynatrace поддерживает сбор данных логов из систем оркестрации контейнеров Kubernetes через модуль логов OneAgent или модуль логов Kubernetes.").
+  + Используйте [Dynatrace Operator](../setup-on-k8s/deployment.md "Развертывание Dynatrace Operator в Kubernetes")
+  + Разверните [ActiveGate непосредственно как StatefulSet](../setup-on-k8s/deployment/other/ag-statefulset.md "Установка и настройка ActiveGate в Kubernetes как StatefulSet.")
+* Для сбора логов из Kubernetes используйте [Log Monitoring](../../analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes.md "Dynatrace поддерживает сбор данных логов из систем оркестрации контейнеров Kubernetes через модуль логов OneAgent или модуль логов Kubernetes.").
 
 ## Образы, совместимые с FIPS
 
 ActiveGate версии 1.315+
 
-Доступен специальный образ ActiveGate, совместимый с FIPS. См. [Совместимость ActiveGate с FIPS](/docs/ingest-from/dynatrace-activegate/activegate-fips-compliance "Узнайте о совместимости ActiveGate с FIPS") для получения информации о требованиях, ограничениях, где получить образ и как проверить развертывание.
+Доступен специальный образ ActiveGate, совместимый с FIPS. См. [Совместимость ActiveGate с FIPS](activegate-fips-compliance.md "Узнайте о совместимости ActiveGate с FIPS") для получения информации о требованиях, ограничениях, где получить образ и как проверить развертывание.

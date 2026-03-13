@@ -50,7 +50,7 @@ Dynatrace Log Management and Analytics даёт возможность не то
 1. Перейдите в **Settings** > **Log Monitoring** > **Metrics extraction** и нажмите **Add log metric**.
 2. В поле **Key** добавьте имя метрики к ключу метрики `log.`: `log.conn_refused_count`.
 3. Добавьте **Matcher**.
-   Используйте [функцию DQL](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher#lp-dql-matchesPhrase "Ознакомьтесь с конкретными функциями DQL и логическими операторами для обработки журналов.") для сопоставления фраз, которая является частью [Dynatrace Query Language (DQL)](#matchesPhrase):
+   Используйте [функцию DQL](../lma-classic-log-processing/lma-log-processing-matcher.md#lp-dql-matchesPhrase "Ознакомьтесь с конкретными функциями DQL и логическими операторами для обработки журналов.") для сопоставления фраз, которая является частью [Dynatrace Query Language (DQL)](#matchesPhrase):
 
    ```
    matchesPhrase(content, "Connection refused")
@@ -104,7 +104,7 @@ Dynatrace Log Management and Analytics даёт возможность не то
 1. Перейдите в **Settings** > **Log Monitoring** > **Metrics extraction** и нажмите **Add log metric**.
 2. В поле **Key** добавьте имя метрики к ключу метрики `log.`: `K8-92233333`.
 3. Добавьте **Matcher**.
-   Используйте [функцию DQL](/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher#lp-dql-matchesPhrase "Ознакомьтесь с конкретными функциями DQL и логическими операторами для обработки журналов.") для сопоставления фраз, которая является частью [Dynatrace Query Language (DQL)](#matchesPhrase):
+   Используйте [функцию DQL](../lma-classic-log-processing/lma-log-processing-matcher.md#lp-dql-matchesPhrase "Ознакомьтесь с конкретными функциями DQL и логическими операторами для обработки журналов.") для сопоставления фраз, которая является частью [Dynatrace Query Language (DQL)](#matchesPhrase):
 
    ```
    matchesValue(dt.entity.kubernetes_cluster, "KUBERNETES_CLUSTER-92233333")

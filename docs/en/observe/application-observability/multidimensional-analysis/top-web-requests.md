@@ -28,7 +28,7 @@ The **Top web requests** page lists all web requests that occurred during the se
 
 Once the view is configured, you can save it for quick access in the future. Just select **Save view** and provide a name.
 
-You can also save the configuration as a calculated service metric and use it as any other metric in Dynatrace (for example, for [alerting](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace")).
+You can also save the configuration as a calculated service metric and use it as any other metric in Dynatrace (for example, for [alerting](../../../dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace")).
 
 You can export the table data in a comma-separated values (CSV) file.
 
@@ -40,11 +40,11 @@ You can export the table data in a comma-separated values (CSV) file.
 ## View
 
 * The chart on the **Top web requests** page shows the top 15 dimensions (all other dimensions are aggregated into a single dimension), and the table beneath contains up to 85 more dimensions, bringing the total number of chartable dimensions to 100. The view instantly adapts to the changes you make in the **Configure view** pane.
-* The chart uses [trace and request data](/docs/observe/application-observability/multidimensional-analysis#data-source "Configure a multidimensional analysis view and save it as a calculated metric."), which has different data retention periods. For timeframes containing data older than 10 days, you can turn on the **Show data retention** toggle to better understand which data is available for which period directly from the chart.
+* The chart uses [trace and request data](../multidimensional-analysis.md#data-source "Configure a multidimensional analysis view and save it as a calculated metric."), which has different data retention periods. For timeframes containing data older than 10 days, you can turn on the **Show data retention** toggle to better understand which data is available for which period directly from the chart.
 * In the **Actions** column of the table, you can select:
 
   + **Filter** ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") to filter the view for the specified dimension.
-  + **More** (**â¦**) to access further analysis options from the [**Analyze** menu](/docs/observe/application-observability/services-classic/context-specific-drill-down#analyze-menu "Learn about easy navigation and filtering for services analysis.").
+  + **More** (**â¦**) to access further analysis options from the [**Analyze** menu](../services-classic/context-specific-drill-down.md#analyze-menu "Learn about easy navigation and filtering for services analysis.").
 
 ## Example use cases
 
@@ -75,4 +75,4 @@ In this case, all non-POST requests are filtered out, so you can focus your anal
 
 ## Related topics
 
-* [Service metrics API](/docs/dynatrace-api/configuration-api/calculated-metrics/service-metrics "Manage calculated service metrics via the Dynatrace configuration API.")
+* [Service metrics API](../../../dynatrace-api/configuration-api/calculated-metrics/service-metrics.md "Manage calculated service metrics via the Dynatrace configuration API.")

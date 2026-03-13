@@ -17,12 +17,12 @@ Dynatrace version 1.296+ ActiveGate version 1.295+
 
 Network availability monitoring (NAM) allows you to monitor the availability of remote hosts or services over the network when an HTTP/HTTPS endpoint isn't available.
 
-You can use NAM for infrastructure-related use cases or to deepen the root cause analysis for [HTTP](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic "Learn about HTTP monitors.") and [browser](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors "Learn about browser monitors.") monitors.
+You can use NAM for infrastructure-related use cases or to deepen the root cause analysis for [HTTP](../http-monitors-classic.md "Learn about HTTP monitors.") and [browser](../browser-monitors.md "Learn about browser monitors.") monitors.
 
-You can create synthetic network availability monitors of **ICMP**, **TCP**, or **DNS** [type](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/network-availability-monitoring#nam-types "ICMP, TCP, and DNS synthetic monitors").
+You can create synthetic network availability monitors of **ICMP**, **TCP**, or **DNS** [type](network-availability-monitoring.md#nam-types "ICMP, TCP, and DNS synthetic monitors").
 
-You can configure NAM monitors and access their performance results in [Synthetic](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.") in latest Dynatrace.
-See [create a NAM monitor](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor "Learn how to set up a NAM monitor to check the performance and availability of your site.") to learn how to set up your monitor in [Synthetic](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.") or via [API](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor#nam-api "Learn how to set up a NAM monitor to check the performance and availability of your site.").
+You can configure NAM monitors and access their performance results in [Synthetic](../../synthetic-on-grail/synthetic-app.md "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.") in latest Dynatrace.
+See [create a NAM monitor](create-a-nam-monitor.md "Learn how to set up a NAM monitor to check the performance and availability of your site.") to learn how to set up your monitor in [Synthetic](../../synthetic-on-grail/synthetic-app.md "View the synthetic monitors in your environment, search for monitors, and get a quick overview of a selected monitor.") or via [API](create-a-nam-monitor.md#nam-api "Learn how to set up a NAM monitor to check the performance and availability of your site.").
 
 ## NAM types
 
@@ -32,7 +32,7 @@ There are three types of network availability monitors.
 * TCPâEstablishes a TCP connection to a particular port. It validates if a port is open and if it accepts TCP connections. It also checks if a host is available through the network.
 * DNSâValidates if a hostname can be resolved to an IP address.
 
-To find out more about NAM types, see [available script configuration properties](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor#script-properties "Learn how to set up a NAM monitor to check the performance and availability of your site.").
+To find out more about NAM types, see [available script configuration properties](create-a-nam-monitor.md#script-properties "Learn how to set up a NAM monitor to check the performance and availability of your site.").
 
 ## Problems
 
@@ -41,7 +41,7 @@ Problems are created on the monitor level.
 To receive alerts when problems are generated
 
 1. Edit the monitor.
-2. Go to [Outage and Performance](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor#monitor-configuration "Learn how to set up a NAM monitor to check the performance and availability of your site.").
+2. Go to [Outage and Performance](create-a-nam-monitor.md#monitor-configuration "Learn how to set up a NAM monitor to check the performance and availability of your site.").
 3. Configure the problems and alerts you want to generate.
 
 To analyze a problem
@@ -62,7 +62,7 @@ There are certain limitations when using network availability monitors. You can 
 
 The maximum number of network activities executed per network availability monitor is 1,000. Network activity is a single DNS request, single TCP request, or single ICMP packet. Dynatrace may use multiple packets within a single ICMP request, if configured.
 
-If a monitor uses a [target filter](/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor#target-filter "Learn how to set up a NAM monitor to check the performance and availability of your site."), it might not be possible to precisely predict the number of requests in advance of execution (for example, when monitoring an entire host group or a subnet with a wide IP range). In such cases, the limit is applied when the target filter is resolved before the monitor's execution into the actual list of addresses.
+If a monitor uses a [target filter](create-a-nam-monitor.md#target-filter "Learn how to set up a NAM monitor to check the performance and availability of your site."), it might not be possible to precisely predict the number of requests in advance of execution (for example, when monitoring an entire host group or a subnet with a wide IP range). In such cases, the limit is applied when the target filter is resolved before the monitor's execution into the actual list of addresses.
 
 The number of requests depends on the number of hosts matching the filter. For example, when monitoring an entire host group or **filtering the monitored hosts** using a subnet with a wide IP range.
 
@@ -72,11 +72,11 @@ You can have up to 5,000 NAM monitors per environment. Other types of monitors d
 
 ### Deployment type
 
-Network availability monitors are supported only on [private Synthetic locations](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.").
+Network availability monitors are supported only on [private Synthetic locations](../private-synthetic-locations/create-a-private-synthetic-location.md "Learn how to create a private location for synthetic monitoring.").
 
 Containerized locations
 
-Network availability monitors are supported on [containerized](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations#nam-monitors-on-containerized-locations "Deploy and manage containerized, auto-scalable private Synthetic locations on Kubernetes/RedHat OpenShift.") Synthetic-enabled ActiveGate deployments, but additional permissions are required for ICMP tests.
+Network availability monitors are supported on [containerized](../private-synthetic-locations/containerized-locations.md#nam-monitors-on-containerized-locations "Deploy and manage containerized, auto-scalable private Synthetic locations on Kubernetes/RedHat OpenShift.") Synthetic-enabled ActiveGate deployments, but additional permissions are required for ICMP tests.
 
 To enable ICMP request type for NAM execution
 
@@ -124,4 +124,4 @@ add: ["NET_RAW"]
 
 ### Use of proxy
 
-Network availability monitors do not support the use of [proxy servers](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic#proxy-connection-scenarios "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring."). Ensure that your network configuration allows direct access to the monitored endpoints without routing through a proxy.
+Network availability monitors do not support the use of [proxy servers](../private-synthetic-locations/setting-up-proxy-for-private-synthetic.md#proxy-connection-scenarios "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring."). Ensure that your network configuration allows direct access to the monitored endpoints without routing through a proxy.

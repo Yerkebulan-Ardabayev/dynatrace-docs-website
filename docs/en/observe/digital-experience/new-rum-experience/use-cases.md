@@ -21,16 +21,16 @@ Analyze and explore RUM data in depth by leveraging DQL.
 
 * Reference
 
-Read this reference](/docs/observe/digital-experience/new-rum-experience/use-cases/dql-examples)[#### Extract a metric from user events
+Read this reference](use-cases/dql-examples.md)[#### Extract a metric from user events
 
 Turn user events into actionable insights by extracting custom metrics for long-term analysis.
 
 * Tutorial
 
-Read this tutorial](/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-events)[#### Extract a metric from user sessions
+Read this tutorial](use-cases/extract-custom-metrics-from-user-events.md)[#### Extract a metric from user sessions
 
 Discover how to build custom metrics from user sessions, illustrated by a customer conversion metric.
 
 * Tutorial
 
-Read this tutorial](/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-sessions)
+Read this tutorial](use-cases/extract-custom-metrics-from-user-sessions.md)

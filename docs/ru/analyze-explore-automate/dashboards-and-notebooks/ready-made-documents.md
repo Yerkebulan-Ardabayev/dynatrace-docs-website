@@ -23,9 +23,9 @@ scraped: 2026-03-06T21:13:50.344696
 
 [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards")
 
-## Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards "Use ready-made dashboards to visualize your data right out of the box.")[![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks")
+## Dashboards](ready-made-documents/ready-made-dashboards.md "Use ready-made dashboards to visualize your data right out of the box.")[![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks")
 
-## Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-notebooks "Use ready-made notebooks right out of the box.")
+## Notebooks](ready-made-documents/ready-made-notebooks.md "Use ready-made notebooks right out of the box.")
 
 ## Использование документов только для чтения
 

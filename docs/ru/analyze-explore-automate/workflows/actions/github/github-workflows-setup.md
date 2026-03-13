@@ -45,7 +45,7 @@ scraped: 2026-03-05T21:36:46.023049
 
    * `app-settings:objects:read`
 
-Для получения дополнительной информации об общих разрешениях пользователей Workflows см. [Разрешения пользователей для рабочих процессов](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
+Для получения дополнительной информации об общих разрешениях пользователей Workflows см. [Разрешения пользователей для рабочих процессов](../../security.md#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
 ### Шаг 3. Авторизация подключения к GitHub
 
@@ -65,8 +65,8 @@ scraped: 2026-03-05T21:36:46.023049
 
 Ограничьте разрешения персонального токена доступа
 
-Мы настоятельно рекомендуем ограничить разрешения персональных токенов доступа до необходимого минимума. Необходимые разрешения для каждого действия можно найти на [странице GitHub Actions](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-actions "Integrate Workflows with GitHub services to utilize GitHub Connector actions."). Дополнительную информацию об ограничении доступа к определённому репозиторию или разрешений/областей видимости см. в разделе [Управление персональными токенами доступа](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). Это гарантирует, что ваш персональный токен доступа может использоваться только для доступа и изменения разрешённых репозиториев.
+Мы настоятельно рекомендуем ограничить разрешения персональных токенов доступа до необходимого минимума. Необходимые разрешения для каждого действия можно найти на [странице GitHub Actions](github-workflows-actions.md "Integrate Workflows with GitHub services to utilize GitHub Connector actions."). Дополнительную информацию об ограничении доступа к определённому репозиторию или разрешений/областей видимости см. в разделе [Управление персональными токенами доступа](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). Это гарантирует, что ваш персональный токен доступа может использоваться только для доступа и изменения разрешённых репозиториев.
 
 ## Связанные темы
 
-* [Действия для GitHub Connector](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-actions "Integrate Workflows with GitHub services to utilize GitHub Connector actions.")
+* [Действия для GitHub Connector](github-workflows-actions.md "Integrate Workflows with GitHub services to utilize GitHub Connector actions.")

@@ -15,14 +15,14 @@ scraped: 2026-03-04T21:37:13.983043
 
 Dynatrace provides you with a framework that you can use to extend your application and services observability into data acquired directly from Prometheus. The Dynatrace extensions framework can pull Prometheus metrics from the `/metrics` endpoint, a Prometheus API endpoint, or a data exporter (Prometheus target).
 
-Note that Dynatrace provides out-of-the-box support for ingesting metrics from [Prometheus exporters in Kubernetes](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.").
+Note that Dynatrace provides out-of-the-box support for ingesting metrics from [Prometheus exporters in Kubernetes](../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics.md "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.").
 
 You can run Prometheus extensions right on the Prometheus host where you installed OneAgent, so your metrics are automatically enriched with host-specific dimensions. If, however, you can't install OneAgent on the Prometheus host, you can run extensions remotely and execute them on an ActiveGate group of your choice.
 
 We assume the following:
 
 * You possess sufficient [Prometheusï»¿](https://prometheus.io/) subject matter expertise to create an extension.
-* You're familiar with [Extensions basic concepts](/docs/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.") and the general structure of the [extension YAML file](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml "Learn how to create an extension YAML file using the Extensions framework.").
+* You're familiar with [Extensions basic concepts](../../concepts.md "Learn more about the concept of Dynatrace Extensions.") and the general structure of the [extension YAML file](../extension-yaml.md "Learn how to create an extension YAML file using the Extensions framework.").
 
 Be sure to review all prerequisites and limits.
 
@@ -34,7 +34,7 @@ Be sure to review all prerequisites and limits.
 
 ## Limits
 
-For limits applying to your extension, see [Extensions limits](/docs/ingest-from/extensions/extension-limits "Learn about extensions limits.") and the following Prometheus-specific limits:
+For limits applying to your extension, see [Extensions limits](../../extension-limits.md "Learn about extensions limits.") and the following Prometheus-specific limits:
 
 * Maximum 1,000 `metrics` definitions
 * Maximum 50 dimensions per metric
@@ -46,4 +46,4 @@ Note that a large number of dimensions can exceed the limits and impact your Dyn
 * Prometheus labels automatically become Dynatrace dimensions.
 * Certain metrics can be assigned to dimensions with a constantly increasing set of values, each of them becoming a new dimension.
 
-See [Prometheus data source reference](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference "Learn about Prometheus extensions in the Extensions framework.") to learn about the structure of the Prometheus extension YAML file and monitoring configuration format.
+See [Prometheus data source reference](prometheus-extensions/prometheus-schema-reference.md "Learn about Prometheus extensions in the Extensions framework.") to learn about the structure of the Prometheus extension YAML file and monitoring configuration format.

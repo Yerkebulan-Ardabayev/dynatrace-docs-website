@@ -25,6 +25,6 @@ scraped: 2026-03-06T21:14:22.129372
 
 [### OpenLLMetry
 
-Инструментируйте своё AI-приложение с помощью OpenLLMetry.](/docs/observe/dynatrace-for-ai-observability/get-started/openllmetry "Use OpenLLMetry to collect observability data from AI applications.")[### OpenTelemetry
+Инструментируйте своё AI-приложение с помощью OpenLLMetry.](get-started/openllmetry.md "Use OpenLLMetry to collect observability data from AI applications.")[### OpenTelemetry
 
-Инструментируйте своё AI-приложение с помощью OpenTelemetry.](/docs/observe/dynatrace-for-ai-observability/get-started/opentelemetry "Use OpenTelemetry and the GenAI semantic conventions to collect observability data from AI applications.")
+Инструментируйте своё AI-приложение с помощью OpenTelemetry.](get-started/opentelemetry.md "Use OpenTelemetry and the GenAI semantic conventions to collect observability data from AI applications.")

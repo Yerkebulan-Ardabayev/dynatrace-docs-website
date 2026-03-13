@@ -33,7 +33,7 @@ An SLO tile showing the SLO status, error budget, and target is available on you
 
 Add and edit your SLO directly from ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
 
-1. Go to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** and create a [new dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#create-dashboard "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or select an [existing dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboard-display "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
+1. Go to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** and create a [new dashboard](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#create-dashboard "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or select an [existing dashboard](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md#dashboard-display "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
 2. You can add an SLO using the Shift+S keyboard shortcut, or in the upper-right corner of the dashboard, select the plus sign .
 
    ![Add an SLO tile from your dashboard](https://dt-cdn.net/images/chrome-ftp3kxoqkt-736-3ea4751a06.png)
@@ -51,7 +51,7 @@ The SLO name is used as the title of your dashboard tile. You can edit the tile 
 
    ![Screenshot of Service-level objective panel with the Visual tab](https://dt-cdn.net/images/wtp95711-dev-apps-dynatracelabs-com-ui-apps-dynatrace-dashboards-dashboard-f8f0ee42-e4a3-4b63-a3af-ca753060d7f7-3-2400-a36ac46dc8.png)
 
-The tile won't be functional until you select an SLO. For more information, see [Edit a service-level objective (SLO) tile in a dashboard](/docs/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard "Edit your service-level objective tiles directly in your dashboard.").
+The tile won't be functional until you select an SLO. For more information, see [Edit a service-level objective (SLO) tile in a dashboard](service-level-objective-tile-edit-in-dashboard.md "Edit your service-level objective tiles directly in your dashboard.").
 
 You added your new SLO tile to your dashboard.
 
@@ -59,7 +59,7 @@ Changing the dashboard's timeframe does not affect the SLO evaluation timeframe;
 
 ### Add segment filter to SLO in Dashboards
 
-1. Add an SLO to the Dashboard according to the [Add an SLO from your dashboard](/docs/deliver/service-level-objectives/service-level-objective-tile-add-to-dashboard#tiles-add-from-dashboard "Visualize your service-level objectives by adding them to a dashboard.") section.
+1. Add an SLO to the Dashboard according to the [Add an SLO from your dashboard](service-level-objective-tile-add-to-dashboard.md#tiles-add-from-dashboard "Visualize your service-level objectives by adding them to a dashboard.") section.
 2. Select segments , choose the required segment(s), and select **Apply**.
 
    ![Add segments filter to Dashboard-level SLO](https://dt-cdn.net/images/dashboard-level-slo-segments-1971-8ef61073f5.png)

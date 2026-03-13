@@ -15,7 +15,7 @@ scraped: 2026-03-06T21:36:35.777912
 
 Dynatrace предоставляет фреймворк для создания метрик из [JMX MBeans](https://en.wikipedia.org/wiki/Java_Management_Extensions). Каждый процесс, отслеживаемый модулем кода Java для OneAgent, способен обрабатывать расширения JMX 2.0.
 
-Необходимо включить [функцию OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.") **Java Metric Extensions (JMX)**.
+Необходимо включить [функцию OneAgent](../../../dynatrace-oneagent/oneagent-features.md "Manage OneAgent features globally and per process group.") **Java Metric Extensions (JMX)**.
 
 ## Общие сведения
 
@@ -32,7 +32,7 @@ JMX определяет стандартизированный синтакси
 Предполагается следующее:
 
 * Вы обладаете достаточными знаниями в области JMX для создания расширения.
-* Вы знакомы с [базовыми концепциями расширений](/docs/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.") и общей структурой [YAML-файла расширения](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml "Learn how to create an extension YAML file using the Extensions framework.").
+* Вы знакомы с [базовыми концепциями расширений](../../concepts.md "Learn more about the concept of Dynatrace Extensions.") и общей структурой [YAML-файла расширения](../extension-yaml.md "Learn how to create an extension YAML file using the Extensions framework.").
 
 ## Поддерживаемые версии Dynatrace
 
@@ -160,4 +160,4 @@ OneAgent автоматически добавляет следующие изм
 * `dt.metrics.source`
 * `dt.extension.config.id`
 
-Дополнительные сведения см. в [справочнике по источнику данных JMX](/docs/ingest-from/extensions/develop-your-extensions/data-sources/jmx/jmx-schema-reference "Learn about JMX extensions in the Extensions framework.").
+Дополнительные сведения см. в [справочнике по источнику данных JMX](jmx/jmx-schema-reference.md "Learn about JMX extensions in the Extensions framework.").

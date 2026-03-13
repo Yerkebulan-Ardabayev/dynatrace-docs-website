@@ -32,7 +32,7 @@ scraped: 2026-03-06T21:11:31.603365
 * `ERROR`
 * `NONE`
 
-Эти статусы соответствуют атрибуту `status`, который создаётся в процессе приёма логов. Подробности см. в информации об автоматическом обогащении логов для логов, принятых через [OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") или [API](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation#transform-all-types-of-logs "Log ingestion API automatically transforms log data into output values for the loglevel attribute.").
+Эти статусы соответствуют атрибуту `status`, который создаётся в процессе приёма логов. Подробности см. в информации об автоматическом обогащении логов для логов, принятых через [OneAgent](../lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa.md#transform-all-types-of-logs "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") или [API](../lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation.md#transform-all-types-of-logs "Log ingestion API automatically transforms log data into output values for the loglevel attribute.").
 
 ## Взаимодействие с графиком распределения логов
 

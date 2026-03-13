@@ -15,11 +15,11 @@ scraped: 2026-03-05T21:29:34.371827
 
 OneAgent версии 1.225+
 
-Совместимость с OpenTelemetry связывает [расширение Dynatrace AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Мониторинг Lambda-функций, написанных на Python, Node.js и Java.") с OpenTelemetry Java API для использования пакетов инструментирования и расширений. Это позволяет отслеживать технологии, такие как базы данных или фреймворки обмена сообщениями, которые не поддерживаются расширением Dynatrace AWS Lambda по умолчанию.
+Совместимость с OpenTelemetry связывает [расширение Dynatrace AWS Lambda](../aws-lambda-extension.md "Мониторинг Lambda-функций, написанных на Python, Node.js и Java.") с OpenTelemetry Java API для использования пакетов инструментирования и расширений. Это позволяет отслеживать технологии, такие как базы данных или фреймворки обмена сообщениями, которые не поддерживаются расширением Dynatrace AWS Lambda по умолчанию.
 
 ## Прежде чем начать
 
-Убедитесь, что [совместимость с OpenTelemetry включена](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability#enable "Включение и использование совместимости с OpenTelemetry в AWS Lambda.").
+Убедитесь, что [совместимость с OpenTelemetry включена](../opentelemetry-interoperability.md#enable "Включение и использование совместимости с OpenTelemetry в AWS Lambda.").
 
 ## Использование инструментирования OpenTelemetry Java
 
@@ -354,7 +354,7 @@ OpenTelemetry API, а OneAgent автоматически перехватыва
 * Если этого достаточно, или у вас настроен максимальный размер пакета равный одному, или вы отправляете сообщения редко, дополнительный код или конфигурация не требуются.
 * Если вы хотите получить больше информации в сценарии пакетной обработки с несколькими сообщениями, сначала необходимо применить определённую конфигурацию, позволяющую переопределить родительский спан.
 
-  Чтобы [настроить расширение Dynatrace AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension#lambda-cfg-method "Мониторинг Lambda-функций, написанных на Python, Node.js и Java.") для ручной установки родительских спанов:
+  Чтобы [настроить расширение Dynatrace AWS Lambda](../aws-lambda-extension.md#lambda-cfg-method "Мониторинг Lambda-функций, написанных на Python, Node.js и Java.") для ручной установки родительских спанов:
 
   + Для метода конфигурации через переменные окружения установите переменную окружения `DT_OPEN_TELEMETRY_ALLOW_EXPLICIT_PARENT` в значение `true`:
 
@@ -631,5 +631,5 @@ return messageAttribute == null ? null : messageAttribute.getStringValue();
 
 ## Связанные темы
 
-* [Совместимость с OpenTelemetry](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability "Включение и использование совместимости с OpenTelemetry в AWS Lambda.")
-* [Трассировка Lambda-функций на Python, Node.js и Java](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Мониторинг Lambda-функций, написанных на Python, Node.js и Java.")
+* [Совместимость с OpenTelemetry](../opentelemetry-interoperability.md "Включение и использование совместимости с OpenTelemetry в AWS Lambda.")
+* [Трассировка Lambda-функций на Python, Node.js и Java](../aws-lambda-extension.md "Мониторинг Lambda-функций, написанных на Python, Node.js и Java.")

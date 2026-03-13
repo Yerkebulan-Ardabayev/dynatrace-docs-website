@@ -25,7 +25,7 @@ Capabilities and limitations
 
 * **Unified billing:** Get a single bill for all the resources you consume on Azure, including all Dynatrace SaaS consumption.
 * **Single sign-on:** You don't need separate credentials for the Dynatrace portal. Sign in once on the Azure portal and seamlessly transition to Dynatrace when needed.
-* **Log monitoring:** Enables forwarding of subscription activity and resource logs to Dynatrace. For details, see [Log Monitoring Classic](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
+* **Log monitoring:** Enables forwarding of subscription activity and resource logs to Dynatrace. For details, see [Log Monitoring Classic](../../../analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
 
 * **OneAgent deployment:** You get a unified management experience of Dynatrace OneAgents. You can install and uninstall Dynatrace OneAgents as extensions on Azure Virtual Machines and Azure App Services.
 
@@ -75,7 +75,7 @@ The first user creating the first Dynatrace resource and environment in a subscr
 
 If you use Microsoft Entra ID as your identity provider, you can establish single sign-on (SSO) from the Azure portal to Dynatrace. If you use a different identity provider or you don't want to establish SSO, you can skip this section.
 
-To enable single sign-on authentication for your Dynatrace resource, you need to [set up SSO in Microsoft Entra ID](/docs/manage/identity-access-management/user-and-group-management/access-saml/idp-specific/saml-azure#configuration "Learn how to configure Dynatrace SSO in Azure.").
+To enable single sign-on authentication for your Dynatrace resource, you need to [set up SSO in Microsoft Entra ID](../../../manage/identity-access-management/user-and-group-management/access-saml/idp-specific/saml-azure.md#configuration "Learn how to configure Dynatrace SSO in Azure.").
 
 After setting up SSO in Active Directory, you can enable SSO during or after the Azure integration deployment.
 
@@ -86,8 +86,8 @@ When you first deploy the Azure Native Dynatrace Service, a new Dynatrace enviro
 * The Dynatrace resource is created in the Azure subscription and resource group that you select during the installation deployment. You can configure, manage, and troubleshoot issues on your Dynatrace resource from the Azure Portal.
 * The Dynatrace environment is created in the same Azure region in which you create the Dynatrace resource. In this new environment:
 
-  + After you [install OneAgent](#oa), you can start monitoring [metrics](/docs/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.") from your Azure resources. You can also collect metrics from the [default services](/docs/ingest-from/microsoft-azure-services/azure-platform/azure-native-integration#default "Set and configure your Dynatrace SaaS environment using Azure Marketplace.")
-  + You can collect [logs](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") from your Azure resources
+  + After you [install OneAgent](#oa), you can start monitoring [metrics](../../../analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.") from your Azure resources. You can also collect metrics from the [default services](azure-native-integration.md#default "Set and configure your Dynatrace SaaS environment using Azure Marketplace.")
+  + You can collect [logs](../../../analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") from your Azure resources
   + You do not need an environment ActiveGate for this integration.
 
 To set up the integration
@@ -129,14 +129,14 @@ Ensure that your Azure account has access to the Dynatrace account with the foll
 * Install OneAgent
 * Manage Monitoring Settings
 
-For more details, see [Environment permissions](/docs/manage/identity-access-management/permission-management/role-based-permissions#environment "Role-based permissions").
+For more details, see [Environment permissions](../../../manage/identity-access-management/permission-management/role-based-permissions.md#environment "Role-based permissions").
 
 After deploying the Azure integration, you can:
 
 * Link more Azure subscriptions to your newly created Dynatrace environment.
 * Link more Dynatrace environments to a single Azure subscription.
 
-  When linking multiple Azure subscriptions and creating the resource, you must have Dynatrace Account privileges `tenant-manage-settings` and `tenant-agent-install` permissions. For more information on how to configure these permissions, see [Role-based permissions](/docs/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions").
+  When linking multiple Azure subscriptions and creating the resource, you must have Dynatrace Account privileges `tenant-manage-settings` and `tenant-agent-install` permissions. For more information on how to configure these permissions, see [Role-based permissions](../../../manage/identity-access-management/permission-management/role-based-permissions.md "Role-based permissions").
 
 Follow the steps below, making sure to repeat the procedure for every subscription that you want to link.
 
@@ -167,15 +167,15 @@ After you set up the integration, you can access your Dynatrace environment dire
 
 In Azure Portal, go to your Dynatrace resource and select **Overview**. All details of your Dynatrace environment will appear there, including direct links to the following web UI pages:
 
-* **Dashboards** - For details, see [Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
-* **Log Viewer** - For details, see [Log viewer (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.").
-* **Smartscape topology** - For details, see [Visualize your environment through Smartscape Classic](/docs/analyze-explore-automate/smartscape-classic "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.").
+* **Dashboards** - For details, see [Dashboards Classic](../../../analyze-explore-automate/dashboards-classic.md "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
+* **Log Viewer** - For details, see [Log viewer (Logs Classic)](../../../analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer.md "Learn how to use Dynatrace log viewer to analyze log data.").
+* **Smartscape topology** - For details, see [Visualize your environment through Smartscape Classic](../../../analyze-explore-automate/smartscape-classic.md "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.").
 
 ## Configure metrics and logs
 
 ### Metrics
 
-* You can activate [metrics](/docs/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.") after the Azure integration deployment.
+* You can activate [metrics](../../../analyze-explore-automate/metrics-classic.md "Learn about metrics classic that Dynatrace offers.") after the Azure integration deployment.
 
 Collect metrics from Virtual Machines and App Services
 
@@ -184,7 +184,7 @@ To start collecting metrics from your Virtual Machines and App Services, you nee
 Collect metrics from cloud services
 
 All services and metrics are enabled by default. You can disable them if needed by selecting the delete button from the list of services.
-After Dynatrace connects to your Azure environment, it immediately starts monitoring Azure's built-in services for the service principal you have defined. [Classic (formerly 'built-in') Azure metrics](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/default-azure-metrics "The list of classic metrics Dynatrace collects by default for Azure monitoring.") lists the metrics of Azure cloud services monitored by default.
+After Dynatrace connects to your Azure environment, it immediately starts monitoring Azure's built-in services for the service principal you have defined. [Classic (formerly 'built-in') Azure metrics](../azure-integrations/azure-monitoring-guide/default-azure-metrics.md "The list of classic metrics Dynatrace collects by default for Azure monitoring.") lists the metrics of Azure cloud services monitored by default.
 
 ### Manage cloud services
 
@@ -211,7 +211,7 @@ Apart from the recommended metrics, most services offer the possibility of enabl
 
 List of Azure cloud services and collected metrics
 
-To see the complete list of Azure cloud services and learn about the metrics collected for each of them, see [All Azure cloud services](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics "Monitor Azure services with Dynatrace and view available metrics.").
+To see the complete list of Azure cloud services and learn about the metrics collected for each of them, see [All Azure cloud services](../azure-integrations/azure-cloud-services-metrics.md "Monitor Azure services with Dynatrace and view available metrics.").
 
 Alternatively, you can check the list of supported Azure services within in-product Dynatrace Hub (search for **Azure**) or in the [web version of Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=azure).
 
@@ -230,7 +230,7 @@ After you select the cloud services and save your changes, monitoring of the new
 
 ### Logs
 
-* You can activate [logs](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") either [during the Azure integration deployment](#setup) or [after deployment](#how-to-logs).
+* You can activate [logs](../../../analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") either [during the Azure integration deployment](#setup) or [after deployment](#how-to-logs).
 
 You can set up two types of logs from Azure to Dynatrace: [subscription activity logs](#activity) and [Azure resource logs](#resource).
 
@@ -273,7 +273,7 @@ Azure Native Dynatrace Service uses Dynatrace access token called `azure-native-
 
 ## Create tags
 
-* You can create [tags](/docs/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.") either [during the Azure integration deployment](#setup) or [after deployment](#how-to-tags).
+* You can create [tags](../../../manage/tags-and-metadata/setup/how-to-define-tags.md "Find out how to define and apply tags manually and automatically.") either [during the Azure integration deployment](#setup) or [after deployment](#how-to-tags).
 
 You can apply tags to your Azure resources, resource groups, and subscriptions to logically organize them into a taxonomy. You can specify tags for the new Dynatrace resource in Azure by adding custom key/value pairs:
 
@@ -306,7 +306,7 @@ Install OneAgent on App Service
 2. Select a Virtual Machine from the list, on which you want to install the OneAgent extension.
 3. Select **Install extension**.
 4. Optional Select whether to enable log analytics.
-5. Optional Provide a [host group](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") for OneAgent.
+5. Optional Provide a [host group](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") for OneAgent.
 6. Select **OK** to start the installation process.
 7. When the installation is complete, the **OneAgent status** for the selected Virtual Machine displays **Installed**.
 
@@ -317,7 +317,7 @@ Install OneAgent on App Service
 2. From the list, select the App Service on which you want to install the OneAgent extension.
 3. Select **Install extension**.
 4. Optional Select whether to enable log analytics.
-5. Optional Provide a [host group](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") for OneAgent.
+5. Optional Provide a [host group](../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") for OneAgent.
 6. Select **OK** to start the installation process.
 7. When the installation is complete, the **OneAgent status** for the selected Virtual Machine displays **Installed**.
 
@@ -326,7 +326,7 @@ Install OneAgent on App Service
 
 If you cannot see the App Service in Dynatrace after enabling the integration, restart your App Service plan.
 
-To run OneAgent on Virtual Machine Scale Sets with Dynatrace Azure integration, use the [Dynatrace OneAgent extension for Virtual Machines](#vm) and create a [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
+To run OneAgent on Virtual Machine Scale Sets with Dynatrace Azure integration, use the [Dynatrace OneAgent extension for Virtual Machines](#vm) and create a [PaaS token](../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.").
 
 ## Uninstall the Azure Native Dynatrace Service
 
@@ -357,4 +357,4 @@ If you have a feature request, use the [Microsoft Developer Communityï»¿](htt
 
 ## Related topics
 
-* [Microsoft Azure Integrations](/docs/ingest-from/microsoft-azure-services/azure-integrations "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")
+* [Microsoft Azure Integrations](../azure-integrations.md "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")

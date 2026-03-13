@@ -19,23 +19,23 @@ To get started, log in to your Dynatrace SaaS environment via the [Dynatrace.com
 
 ## Requirements
 
-You can install OneAgent on any Linux system that's [supported by Dynatrace](/docs/ingest-from/technology-support#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks."), regardless of the packaging system your distribution depends on.
+You can install OneAgent on any Linux system that's [supported by Dynatrace](../../../../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks."), regardless of the packaging system your distribution depends on.
 
 ### Permissions
 
-* You need [Download/install OneAgent](/docs/manage/identity-access-management/permission-management/role-based-permissions#environment "Role-based permissions") permissions to download and install OneAgent.
-* You only need [root rights](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Find out when Dynatrace OneAgent requires root privileges on Linux.") to start OneAgent installation. This requires that your system meets [specific requirements](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged#system-req "Find out when Dynatrace OneAgent requires root privileges on Linux."). Otherwise, add the `NON_ROOT_MODE=0` parameter to the installation command to disable OneAgent non-privileged mode.
+* You need [Download/install OneAgent](../../../../../manage/identity-access-management/permission-management/role-based-permissions.md#environment "Role-based permissions") permissions to download and install OneAgent.
+* You only need [root rights](linux-non-privileged.md "Find out when Dynatrace OneAgent requires root privileges on Linux.") to start OneAgent installation. This requires that your system meets [specific requirements](linux-non-privileged.md#system-req "Find out when Dynatrace OneAgent requires root privileges on Linux."). Otherwise, add the `NON_ROOT_MODE=0` parameter to the installation command to disable OneAgent non-privileged mode.
 * You need permissions and credentials for restarting all your application services.
 
 ### Resources
 
-* Check the [disk space requirements](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.").
+* Check the [disk space requirements](disk-space-requirements-for-oneagent-installation-and-update-on-linux.md "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.").
 * Your host requires 200 MB free memory to run OneAgent installation and update.
-* All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
+* All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](../../../../dynatrace-activegate.md "Understand the basic concepts related to ActiveGate.").
 
 ### Limitations
 
-There are certain limitations when deploying OneAgent on a Linux host Oracle Database Server 19c and/or with mounted NFS drives. See [Troubleshoot OneAgent installation](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation#oracle-database-server-19c "Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows.").
+There are certain limitations when deploying OneAgent on a Linux host Oracle Database Server 19c and/or with mounted NFS drives. See [Troubleshoot OneAgent installation](../../../oneagent-troubleshooting/troubleshoot-oneagent-installation.md#oracle-database-server-19c "Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows.").
 
 ### Allow connections through firewall
 
@@ -46,14 +46,14 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 
 1. In Dynatrace Hub, select **OneAgent**.
 2. Select **Set up** > **Linux**.
-3. Paste a [PaaS token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.") into **Installer download token** or select **Generate token** to generate a token now and automatically paste it into **Installer download token**. This token is required to download the OneAgent installer from your environment. The token is automatically appended to the download and installation commands you'll use later.
+3. Paste a [PaaS token](../../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Learn the concept of an access token and its scopes.") into **Installer download token** or select **Generate token** to generate a token now and automatically paste it into **Installer download token**. This token is required to download the OneAgent installer from your environment. The token is automatically appended to the download and installation commands you'll use later.
 4. **Select installer type**
    OneAgent supports the following CPU architectures:
 
    * `Linux ARM` - ARM64 (AARch64) including [AWS Graviton processorsï»¿](https://aws.amazon.com/ec2/graviton/)
-   * `PowerPC (BE)` - 64-bit PowerPC (ppc64be) [Learn more](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-ppc-be-linux "Learn how to download and install Dynatrace OneAgent on PPC BE Linux.")
+   * `PowerPC (BE)` - 64-bit PowerPC (ppc64be) [Learn more](install-oneagent-on-ppc-be-linux.md "Learn how to download and install Dynatrace OneAgent on PPC BE Linux.")
    * `PowerPC (LE)` - 64-bit PowerPC (ppc64le)
-   * `s390` - 64-bit IBM Z mainframe (s390) [Learn more](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos "Install, configure, and manage Dynatrace modules on z/OS.")
+   * `s390` - 64-bit IBM Z mainframe (s390) [Learn more](../../zos.md "Install, configure, and manage Dynatrace modules on z/OS.")
    * `x86-64` - 64-bit Intel/AMD
 5. **Download the installer**  
    Paste the provided command into your terminal window and execute it.
@@ -61,14 +61,14 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
    After the download is complete, select  **Copy** in the **Verify signature** box to copy the `wget` command to the clipboard, then paste the provided command into your terminal window and execute it. Make sure your system is up to date, especially SSL and related certificate libraries.
 7. Optional **Set customized options**
 
-   * Set a [network zone](/docs/manage/network-zones#deploy-network-zones "Find out how network zones work in Dynatrace.") for this host.
-   * If your environment is segmented (for example, into development and production), consider [organizing your hosts into host groups](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
-   * You can override automatically detected [host name](/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name."). This is useful in large and dynamic environments, where defined host names can be unintuitive or can change frequently.
-   * You can also apply [tags](/docs/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.") to the host to organize your monitored environments in a meaningful way.
-   * Change the OneAgent mode to Infrastructure Monitoring or Discovery in place of Full-Stack Monitoring. For more information, see [OneAgent monitoring modes](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
-   * Disable [Log Monitoring](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
+   * Set a [network zone](../../../../../manage/network-zones.md#deploy-network-zones "Find out how network zones work in Dynatrace.") for this host.
+   * If your environment is segmented (for example, into development and production), consider [organizing your hosts into host groups](../../../../../observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
+   * You can override automatically detected [host name](../../../../../observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments.md "Learn how to change a monitored host name."). This is useful in large and dynamic environments, where defined host names can be unintuitive or can change frequently.
+   * You can also apply [tags](../../../../../../common/manage/tags-and-metadata.md "Use tags and metadata to organize data in your Dynatrace environment.") to the host to organize your monitored environments in a meaningful way.
+   * Change the OneAgent mode to Infrastructure Monitoring or Discovery in place of Full-Stack Monitoring. For more information, see [OneAgent monitoring modes](../../../../../platform/oneagent/monitoring-modes/monitoring-modes.md "Find out more about the available monitoring modes when using OneAgent.").
+   * Disable [Log Monitoring](../../../../../analyze-explore-automate/log-monitoring.md "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.").
 
-   OneAgent command-line installer provides more options to [customize your installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").
+   OneAgent command-line installer provides more options to [customize your installation](customize-oneagent-installation-on-linux.md "Learn how to use the Linux installer with command line parameters.").
 8. **Run the installer**  
    Paste the command into your terminal window and execute it. You'll need root access only to start OneAgent installation. Elevated privileges are dropped as soon as Dynatrace OneAgent is deployed.
 
@@ -107,7 +107,7 @@ During the installation process, the installer:
 * Allows Dynatrace OneAgent to inject its own libraries into monitored processes.
 * Modifies the core pattern configuration so that OneAgent can detect and report process crashes. The original core\_pattern configuration will still work following installation and will be preserved in `/opt/dynatrace/oneagent/agent/conf/original_core_pattern`, where you can define your own core settings using the format as specified in [Linux Programmer's Manualï»¿](https://man7.org/linux/man-pages/man5/core.5.html).
 
-For a summary of the changes made to your system by OneAgent installation, see [OneAgent security on Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").
+For a summary of the changes made to your system by OneAgent installation, see [OneAgent security on Linux](oneagent-security-linux.md "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").
 
 ## You've arrived!
 

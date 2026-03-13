@@ -28,18 +28,18 @@ Dynatrace Intelligence generative AI explanations are session-based and may vary
 
 ### Prior knowledge
 
-* [Dynatrace Intelligence generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
-* [Getting started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.").
+* [Dynatrace Intelligence generative AI overview](copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
+* [Getting started with Dynatrace Intelligence generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence generative AI.").
 
 ### Prerequisites
 
 * Dynatrace SaaS environment.
-* You have the `ALLOW davis-copilot:dql2nl:execute;` permission. To learn how to set up the permissions, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
-* You have completed the Dynatrace Intelligence generative AI setup described in [Getting started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.").
+* You have the `ALLOW davis-copilot:dql2nl:execute;` permission. To learn how to set up the permissions, see [Permissions in Grail](../../platform/grail/organize-data/assign-permissions-in-grail.md "Find out how to assign permissions to buckets and tables in Grail.").
+* You have completed the Dynatrace Intelligence generative AI setup described in [Getting started with Dynatrace Intelligence generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence generative AI.").
 
 ## Explain queries with generative AI in Notebooks
 
-1. Go to [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and open a notebook you can edit.
+1. Go to [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and open a notebook you can edit.
 2. Select a notebook section that contains a query you want to summarize or explain.
 3. Open the  menu and select  **Explain query**. A summary followed by a detailed explanation is generated under the query input field.
 
@@ -47,7 +47,7 @@ Dynatrace Intelligence generative AI explanations are session-based and may vary
 
 ## Explain queries with generative AI in Dashboards
 
-1. Go to [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and open a dashboard you can edit.
+1. Go to [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and open a dashboard you can edit.
 2. Select a dashboard that contains a DQL query you want to summarize or explain.
 3. Select  **Edit** to open the edit menu on the right.
 4. In the  **DQL** section of the edit menu, select  **Explain query**. A summary followed by a detailed explanation is generated under  **Run**.
@@ -65,7 +65,7 @@ Do not share personal or confidential information in your feedback.
 
 ## Related topics
 
-* [Dynatrace Intelligence generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
-* [Get started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.")
-* [Query with natural language](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
-* [Dynatrace Intelligence generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
+* [Dynatrace Intelligence generative AI overview](copilot-overview.md "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
+* [Get started with Dynatrace Intelligence generative AI](copilot-getting-started.md "Learn how to set up Dynatrace Intelligence generative AI.")
+* [Query with natural language](quick-analysis-copilot-dql.md "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
+* [Dynatrace Intelligence generative AI FAQ](copilot-faq.md "Learn about frequently asked questions and find your answers.")

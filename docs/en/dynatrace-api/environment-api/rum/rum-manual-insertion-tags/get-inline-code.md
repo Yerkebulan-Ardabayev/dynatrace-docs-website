@@ -11,7 +11,7 @@ scraped: 2026-03-04T21:33:10.946309
 * Reference
 * Updated on Sep 18, 2025
 
-Returns the most recent [inline code](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats#inline-code "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes both the configuration and the RUM monitoring code.
+Returns the most recent [inline code](../../../../observe/digital-experience/web-applications/initial-setup/snippet-formats.md#inline-code "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes both the configuration and the RUM monitoring code.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,7 +22,7 @@ Returns the most recent [inline code](/docs/observe/digital-experience/web-appli
 
 To execute this request, you need an access token with `rumManualInsertionTags.read` scope.
 
-To learn how to obtain and use it, see [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Parameters
 
@@ -32,4 +32,4 @@ To learn how to obtain and use it, see [Tokens and authentication](/docs/discove
 
 ## Response
 
-The response includes a `text/plain` payload containing the most recent version of the [inline code](/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats#inline-code "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.
+The response includes a `text/plain` payload containing the most recent version of the [inline code](../../../../observe/digital-experience/web-applications/initial-setup/snippet-formats.md#inline-code "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.

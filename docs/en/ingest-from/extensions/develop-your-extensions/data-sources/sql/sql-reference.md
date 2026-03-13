@@ -31,7 +31,7 @@ We recommend the following when developing custom SQL extensions:
 * Only one query can be executed at a time
 * Queries containing comments are rejected
 * To prevent data integrity violations (manipulating, changing, or deleting data), the SQL data source executes the queries in rolled-back transactions. For this reason, databases that don't support transactions are not supported as a SQL data source.
-* Make sure that the connection string used in the JDBC monitoring configuration doesn't expose any sensitive data. For more information, see [JDBC monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring "JDBC extensions in the Extensions framework.").
+* Make sure that the connection string used in the JDBC monitoring configuration doesn't expose any sensitive data. For more information, see [JDBC monitoring configuration](jdbc-monitoring.md "JDBC extensions in the Extensions framework.").
 
 ## Data scope
 
@@ -203,7 +203,7 @@ value: col:host_cpu_usage
 type: gauge
 ```
 
-Depending on the provider, your SQL monitoring scope definition starts with a dedicated YAML node. For Oracle Database, it's `sqloracle`. All the settings under the node pertain to the declared [data source type](/docs/ingest-from/extensions/concepts#data-source-type "Learn more about the concept of Dynatrace Extensions.") (in this case, SQL).
+Depending on the provider, your SQL monitoring scope definition starts with a dedicated YAML node. For Oracle Database, it's `sqloracle`. All the settings under the node pertain to the declared [data source type](../../../concepts.md#data-source-type "Learn more about the concept of Dynatrace Extensions.") (in this case, SQL).
 
 ## JDBC connector
 
@@ -236,7 +236,7 @@ connectionStringPatternErrorMessage: âThis isn't a correct connection strin
 validationQuery: âSELECT 1â
 ```
 
-Users running your extension will also need to upload a related JDBC driver to an ActiveGate belonging to the group designated to run your extension. For more information, see [JDBC monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring#upload "JDBC extensions in the Extensions framework.").
+Users running your extension will also need to upload a related JDBC driver to an ActiveGate belonging to the group designated to run your extension. For more information, see [JDBC monitoring configuration](jdbc-monitoring.md#upload "JDBC extensions in the Extensions framework.").
 
 ## SQL queries
 
@@ -551,13 +551,13 @@ For example, to let user control the interval:
    type: gauge
    ```
 
-   For more information on using variables, see [Extension YAML file](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml#variables "Learn how to create an extension YAML file using the Extensions framework.")
+   For more information on using variables, see [Extension YAML file](../../extension-yaml.md#variables "Learn how to create an extension YAML file using the Extensions framework.")
 
 ## Timeouts
 
 When developing an extension, a timeout value can be specified for a given query at both group and subgroup levels. Timeouts are specified in seconds; the default value is `10`. The provided value must be a string, for example: `20`, `60`, `120`, and so on.
 
-You can also use a reference to a variable to specify the timeout. For more information on using variables, see [Extension YAML file](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml#variables "Learn how to create an extension YAML file using the Extensions framework.").
+You can also use a reference to a variable to specify the timeout. For more information on using variables, see [Extension YAML file](../../extension-yaml.md#variables "Learn how to create an extension YAML file using the Extensions framework.").
 
 ```
 sqlOracle:
@@ -619,7 +619,7 @@ A subgroup inherits the dimensions of its parent group. To ensure data propagati
 
 ### Dimension key
 
-The dimension key string must conform to the [metrics ingestion protocol](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#dimension-optional "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+The dimension key string must conform to the [metrics ingestion protocol](../../../../extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#dimension-optional "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
 
 ### Dimension value
 
@@ -672,7 +672,7 @@ ActiveGate version 1.311+
 You can add filtering logic at the dimension level. This will result in reporting only the metric whose dimension's value matches the filtering criteria.
 If filters are set on more than one dimension, all filters have to match for a metric line to be created. Filtering logic does not modify the executed query.
 
-Filters can be set as a constant value or as a [variable](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml#variables "Learn how to create an extension YAML file using the Extensions framework.").
+Filters can be set as a constant value or as a [variable](../../extension-yaml.md#variables "Learn how to create an extension YAML file using the Extensions framework.").
 
 ```
 dimensions:
@@ -803,7 +803,7 @@ type: gauge
 
 ### Metric key
 
-The metric key string must conform to the [metrics ingestion protocol](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#metric-key-required "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
+The metric key string must conform to the [metrics ingestion protocol](../../../../extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#metric-key-required "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
 
 For Dynatrace versions 1.215 and 1.217, a metric node requires the `id` parameter in place of `key`. Starting with Dynatrace version 1.219, you should use the `key` parameter, as `id` will be considered deprecated.
 
@@ -817,11 +817,11 @@ The column value queried from your database.
 
 ### Type
 
-The Dynatrace Extensions framework supports metric payloads in the gauge (`gauge`) or count value (`count`) formats. For details, see [Metric payload](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#payload-required "Learn how the data ingestion protocol for Dynatrace Metrics API works."). To indicate the metric type, use the `type` attribute.
+The Dynatrace Extensions framework supports metric payloads in the gauge (`gauge`) or count value (`count`) formats. For details, see [Metric payload](../../../../extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol.md#payload-required "Learn how the data ingestion protocol for Dynatrace Metrics API works."). To indicate the metric type, use the `type` attribute.
 
 ## Metric metadata
 
-An Extension can define metadata for each metric available in Dynatrace. For example, you might want to add the metric display name and the unit, both of which can be used for filtering in the [Metrics browser](/docs/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.").
+An Extension can define metadata for each metric available in Dynatrace. For example, you might want to add the metric display name and the unit, both of which can be used for filtering in the [Metrics browser](../../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Browse metrics with the Dynatrace metrics browser.").
 
 Define all metric metadata in the `metrics` section of the extension's YAML file to ensure it's correctly associated with the metric configuration.
 
@@ -985,4 +985,4 @@ A metric inherits the feature set of a subgroup, which in turn inherits the feat
 
 After you define the scope of your configuration, you need to identify the network devices you'd like to collect data from and identify the ActiveGates that will execute the extension and connect to your devices.
 
-The monitoring configuration format depends on the database provider. For more information, see [Oracle Database monitoring configuration](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.").
+The monitoring configuration format depends on the database provider. For more information, see [Oracle Database monitoring configuration](oracle-monitoring.md "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.").

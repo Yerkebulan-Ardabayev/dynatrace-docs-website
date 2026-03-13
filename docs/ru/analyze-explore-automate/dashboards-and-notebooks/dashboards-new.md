@@ -84,11 +84,11 @@ davis:analyzers:execute
 
 Вы можете использовать возможности Explore для исследования логов, метрик, бизнес-событий и многого другого с помощью нашего интерфейса «укажи и щёлкни». Без знания DQL или программирования вы можете создавать и начинать использовать плитки дашборда за считанные минуты.
 
-Для получения дополнительной информации у нас есть отдельная страница [Исследование данных](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data "Explore your data with our point-and-click interface."), которая показывает, как создавать плитки Explore.
+Для получения дополнительной информации у нас есть отдельная страница [Исследование данных](explore-data.md "Explore your data with our point-and-click interface."), которая показывает, как создавать плитки Explore.
 
 ### Плитка запроса
 
-Плитки запросов позволяют легко запрашивать данные из Grail и [визуализировать](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") результаты различными способами.
+Плитки запросов позволяют легко запрашивать данные из Grail и [визуализировать](edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") результаты различными способами.
 
 Плитка запроса состоит из поля ввода запроса, в котором вы можете написать DQL-запрос. В поле ввода запроса используйте **Ctrl**+**Space** для вызова автодополнения в любой момент.
 
@@ -340,7 +340,7 @@ Dashboards позволяет вам:
       Отобразится панель **Settings**.
    3. Выберите **Variables**.
 
-   Подробнее о переменных дашборда см. в разделе [Добавление переменной в дашборд](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable "Add variables to your Dynatrace dashboards.").
+   Подробнее о переменных дашборда см. в разделе [Добавление переменной в дашборд](dashboards-new/components/dashboard-component-variable.md "Add variables to your Dynatrace dashboards.").
 
 Временной интервал описывает *когда* были получены данные, отображаемые на дашборде.
 
@@ -401,7 +401,7 @@ fetch [recordtype], from:now() - 2h
 | ....
 ```
 
-Подробнее об указании временного интервала в DQL см. раздел [Указание временного интервала](/docs/platform/grail/dynatrace-query-language/dql-guide#specifytimeframe "Find out how DQL works and what are DQL key concepts.") в документации DQL.
+Подробнее об указании временного интервала в DQL см. раздел [Указание временного интервала](../../platform/grail/dynatrace-query-language/dql-guide.md#specifytimeframe "Find out how DQL works and what are DQL key concepts.") в документации DQL.
 
 ### Выбор сегментов
 
@@ -420,8 +420,8 @@ fetch [recordtype], from:now() - 2h
 * Переменные позволяют полностью контролировать базовый запрос или раздел Explore, определяя, где и как они применяются. Например, вы можете указать, как они связаны с другими применёнными фильтрами (**AND**, **OR**), и можете контролировать, какой оператор используется для вашего фильтра (например, `equals`, `contains`, `startsWith` и `endsWith`).
 * Кроме того, используйте переменные, когда вам нужен детальный контроль над взаимозависимостью фильтров.
 
-* Подробнее о сегментах см. [Сегменты](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.")
-* Для сценария использования сегментов в ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** см. [Анализ данных мониторинга с помощью сегментов](/docs/manage/segments/getting-started/segments-getting-started-analyze-monitoring-data "Learn how to analyze monitoring data more efficiently by using segments in Dashboards.")
+* Подробнее о сегментах см. [Сегменты](../../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.")
+* Для сценария использования сегментов в ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** см. [Анализ данных мониторинга с помощью сегментов](../../manage/segments/getting-started/segments-getting-started-analyze-monitoring-data.md "Learn how to analyze monitoring data more efficiently by using segments in Dashboards.")
 
 #### Сегменты на уровне дашборда
 
@@ -499,7 +499,7 @@ fetch [recordtype], from:now() - 2h
       Отобразится панель **Settings**.
    3. Выберите **Variables**.
 
-   Подробнее о переменных дашборда см. в разделе [Добавление переменной в дашборд](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable "Add variables to your Dynatrace dashboards.").
+   Подробнее о переменных дашборда см. в разделе [Добавление переменной в дашборд](dashboards-new/components/dashboard-component-variable.md "Add variables to your Dynatrace dashboards.").
 
 ### Запуск плитки с кодом
 
@@ -598,7 +598,7 @@ fetch [recordtype], from:now() - 2h
 
 В любом случае вы контролируете, могут ли люди редактировать документ или только просматривать его.
 
-Подробнее о совместном доступе к документам см. [Совместный доступ к документам](/docs/discover-dynatrace/get-started/dynatrace-ui/share "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
+Подробнее о совместном доступе к документам см. [Совместный доступ к документам](../../discover-dynatrace/get-started/dynatrace-ui/share.md "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
 
 ### Управление версиями дашборда
 
@@ -627,7 +627,7 @@ fetch [recordtype], from:now() - 2h
    * **Delete this version** удаляет выбранную версию.
 4. Чтобы вывести список всех версий дашборда и управлять ими в отдельном окне, перейдите в нижнюю часть меню **Versions** и выберите **Show all**.
 
-Подробнее см. [Управление версиями документов](/docs/analyze-explore-automate/dashboards-and-notebooks/document-version "View and manage versions of documents created in Dynatrace Notebooks and Dashboards.").
+Подробнее см. [Управление версиями документов](document-version.md "View and manage versions of documents created in Dynatrace Notebooks and Dashboards.").
 
 ### Изменение владельца дашборда
 
@@ -679,7 +679,7 @@ fetch [recordtype], from:now() - 2h
 
 * Открывается в Dynatrace.
 
-  Если при загрузке дашборда вы видите сообщение о запуске пользовательского кода, см. [Предупреждения о запуске кода](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code#run-code-warnings "Add code to your Dynatrace dashboards.") для получения дополнительной информации.
+  Если при загрузке дашборда вы видите сообщение о запуске пользовательского кода, см. [Предупреждения о запуске кода](dashboards-new/components/dashboard-component-code.md#run-code-warnings "Add code to your Dynatrace dashboards.") для получения дополнительной информации.
 * Добавляется в ваш список **Last opened by you**.
 * Добавляется на страницу **Dashboards** с датой и временем загрузки в поле **Last modified**.
 
@@ -707,7 +707,7 @@ fetch [recordtype], from:now() - 2h
 
 ### Создание дашборда
 
-Самый быстрый и простой способ исследовать ваши данные — это наши новые плитки и разделы [Explore](/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data "Explore your data with our point-and-click interface."). За несколько секунд вы можете найти и проанализировать ваши логи, метрики или бизнес-события. DQL не требуется!
+Самый быстрый и простой способ исследовать ваши данные — это наши новые плитки и разделы [Explore](explore-data.md "Explore your data with our point-and-click interface."). За несколько секунд вы можете найти и проанализировать ваши логи, метрики или бизнес-события. DQL не требуется!
 
 Чтобы создать новый дашборд
 
@@ -736,9 +736,9 @@ fetch [recordtype], from:now() - 2h
 
    * **Data**
    * **Visual**
-2. На вкладке **Data** используйте [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.") для определения вашего запроса.
+2. На вкладке **Data** используйте [Dynatrace Query Language (DQL)](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.") для определения вашего запроса.
 3. Выберите **Run** для выполнения запроса.
-4. На вкладке **Visual** выберите формат [визуализации](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") для ваших результатов.
+4. На вкладке **Visual** выберите формат [визуализации](edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") для ваших результатов.
 
    * означает, что тип визуализации недоступен для вашего запроса.
 5. Под селектором **Visualization** разверните разделы настроек для корректировки параметров визуализации по мере необходимости.
@@ -746,7 +746,7 @@ fetch [recordtype], from:now() - 2h
 
    Если вы захотите вернуться к этим настройкам, выберите вашу плитку для их отображения.
 
-Подробнее см. [Добавление данных в дашборд](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-data "Add data to your Dynatrace dashboards.").
+Подробнее см. [Добавление данных в дашборд](dashboards-new/components/dashboard-component-data.md "Add data to your Dynatrace dashboards.").
 
 ### Добавление кода
 
@@ -775,7 +775,7 @@ fetch [recordtype], from:now() - 2h
 
    Не включайте префикс адреса. Например, если адрес `https://some.service.org`, просто добавьте `some.service.org`.
 
-Подробнее см. [Добавление кода в дашборд](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code "Add code to your Dynatrace dashboards.").
+Подробнее см. [Добавление кода в дашборд](dashboards-new/components/dashboard-component-code.md "Add code to your Dynatrace dashboards.").
 
 ### Добавление Markdown
 
@@ -795,7 +795,7 @@ fetch [recordtype], from:now() - 2h
    * Во время редактирования текста нажмите Ctrl+Space, чтобы увидеть доступные варианты.
 3. Закройте боковую панель **Options**, когда закончите.
 
-Подробнее см. [Добавление Markdown в дашборд](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-markdown "Add Markdown-formatted annotations to your Dynatrace dashboards.").
+Подробнее см. [Добавление Markdown в дашборд](dashboards-new/components/dashboard-component-markdown.md "Add Markdown-formatted annotations to your Dynatrace dashboards.").
 
 ### Добавление переменной
 
@@ -848,7 +848,7 @@ fetch [recordtype], from:now() - 2h
 
   Например, если значение переменной A зависит от значения переменной B, значение переменной B не может зависеть от значения переменной A.
 
-Подробнее см. [Добавление переменной в дашборд](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable "Add variables to your Dynatrace dashboards.").
+Подробнее см. [Добавление переменной в дашборд](dashboards-new/components/dashboard-component-variable.md "Add variables to your Dynatrace dashboards.").
 
 ### Добавление сниппета
 
@@ -869,7 +869,7 @@ fetch [recordtype], from:now() - 2h
 5. Выберите **Run** для просмотра результатов.
 6. Закройте боковую панель, когда закончите.
 
-Подробнее см. [Добавление сниппета в дашборд](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-snippet "Start with a snippet").
+Подробнее см. [Добавление сниппета в дашборд](dashboards-new/components/dashboard-component-snippet.md "Start with a snippet").
 
 ### Анализ данных с помощью ИИ
 
@@ -905,24 +905,24 @@ fetch [recordtype], from:now() - 2h
    ![Начальная панель настроек анализа и оповещений в приложении Dashboards.](https://dt-cdn.net/images/dashboards-analyze-and-alert-details-746-8d503491c8.png)
 4. На панели **Davis AI** установите **Analyzers** на анализатор, который хотите использовать, и настройте его.
 
-   * Обзор обнаружения аномалий см. в разделе [Обнаружение аномалий](/docs/dynatrace-intelligence/anomaly-detection "How Dynatrace detects anomalies in your environment.")
-   * Подробнее о настройках обнаружения аномалий см. [Конфигурация обнаружения аномалий](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "How to set up an alert for missing measurements.")
+   * Обзор обнаружения аномалий см. в разделе [Обнаружение аномалий](../../dynatrace-intelligence/anomaly-detection.md "How Dynatrace detects anomalies in your environment.")
+   * Подробнее о настройках обнаружения аномалий см. [Конфигурация обнаружения аномалий](../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#analyzer "How to set up an alert for missing measurements.")
 
-   * Подробнее о настройках анализатора прогнозов см. [Прогнозный ИИ-анализ Dynatrace Intelligence](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis "Learn how Dynatrace Intelligence predictive AI generates forecasts.")
+   * Подробнее о настройках анализатора прогнозов см. [Прогнозный ИИ-анализ Dynatrace Intelligence](../../dynatrace-intelligence/reference/ai-models/forecast-analysis.md "Learn how Dynatrace Intelligence predictive AI generates forecasts.")
 
    Обнаружение аномалий: автоадаптивное пороговое обнаружение аномалий
 
    * **Number of signal fluctuations** — сколько раз флуктуация сигнала добавляется к базовой линии для формирования фактического порога оповещения.
    * **Alert condition** — ваш выбор зависит от того, хотите ли вы получать уведомления, когда метрика выше, ниже или за пределами (выше или ниже) нормального диапазона.
 
-   Подробнее см. [Конфигурация обнаружения аномалий](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "How to set up an alert for missing measurements.").
+   Подробнее см. [Конфигурация обнаружения аномалий](../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#analyzer "How to set up an alert for missing measurements.").
 
    Обнаружение аномалий: сезонное базовое обнаружение аномалий
 
    * **Tolerance** — чем выше допуск, тем шире полоса доверия, что приводит к меньшему количеству срабатываний.
    * **Alert condition** — ваш выбор зависит от того, хотите ли вы получать уведомления, когда метрика выше, ниже или за пределами (выше или ниже) нормального диапазона.
 
-   Подробнее см. [Конфигурация обнаружения аномалий](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "How to set up an alert for missing measurements.").
+   Подробнее см. [Конфигурация обнаружения аномалий](../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#analyzer "How to set up an alert for missing measurements.").
 
    Обнаружение аномалий: обнаружение аномалий по статическому порогу
 
@@ -931,14 +931,14 @@ fetch [recordtype], from:now() - 2h
    * **Alert condition** — ваш выбор зависит от того, хотите ли вы получать уведомления, когда метрика выше или ниже порогового значения.
    * **Suggest threshold** — Davis AI может помочь вам найти подходящий порог на основе исторических данных.
 
-   Подробнее см. [Конфигурация обнаружения аномалий](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "How to set up an alert for missing measurements.").
+   Подробнее см. [Конфигурация обнаружения аномалий](../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md#analyzer "How to set up an alert for missing measurements.").
 
    Прогнозирование: Прогноз
 
    * **Data points to predict** — общее количество шагов, на которое прогнозируется временной ряд. Большее количество шагов обычно приводит к менее надёжным прогнозам и более длительному времени работы анализатора.
    * **Forecast offset** — смещение начала прогноза. Например, если смещение установлено в `2`, последние две точки данных игнорируются, и для них также возвращается прогноз.
 
-   Подробнее см. [Прогнозный ИИ-анализ Dynatrace Intelligence](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis "Learn how Dynatrace Intelligence predictive AI generates forecasts.").
+   Подробнее см. [Прогнозный ИИ-анализ Dynatrace Intelligence](../../dynatrace-intelligence/reference/ai-models/forecast-analysis.md "Learn how Dynatrace Intelligence predictive AI generates forecasts.").
 
    Расширенные настройки (для обнаружения аномалий)
 
@@ -1052,7 +1052,7 @@ fetch [recordtype], from:now() - 2h
 
 Чтобы скопировать плитку дашборда в другое приложение (не ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**), откройте меню  и выберите  **Open with**, затем выберите целевое приложение.
 
-Подробнее см. [Детализация и навигация](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
+Подробнее см. [Детализация и навигация](drilldowns-and-navigation.md "Drill down from Dashboards and Notebooks using links based on intents or URLs.").
 
 ### Редактирование плитки
 
@@ -1082,7 +1082,7 @@ fetch [recordtype], from:now() - 2h
 
    **Пример:**
 
-   1. В вашем дашборде определите [переменные](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable "Add variables to your Dynatrace dashboards.") с именами `Status` и `Emoji`.
+   1. В вашем дашборде определите [переменные](dashboards-new/components/dashboard-component-variable.md "Add variables to your Dynatrace dashboards.") с именами `Status` и `Emoji`.
    2. Установите заголовок `Current $Emoji status is $Status`.
    3. Установите переменную `Status` в значение `Good`.
    4. Установите переменную `Emoji` в значение эмодзи.
@@ -1095,7 +1095,7 @@ fetch [recordtype], from:now() - 2h
 
 Каждая визуализация имеет свои собственные настройки.
 
-Для редактирования визуализации плитки см. [инструкции по визуализации](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.").
+Для редактирования визуализации плитки см. [инструкции по визуализации](edit-visualizations.md "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.").
 
 ## Макет
 

@@ -42,7 +42,7 @@ The match preview dataset consists of records displayed in DPL Architect. When y
 
 You can currently access DPL Architect from
 
-* [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks")
+* [Notebooks](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks")
 
   Show me how
 
@@ -51,11 +51,11 @@ You can currently access DPL Architect from
   3. In the results section, select a cell and then select **Extract fields** from the pop-up menu.
 
   ![Extract fields](https://dt-cdn.net/images/extract-fields-793-11d23cd027.png)
-* [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.")
+* [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../../secure/investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.")
 
   Show me how
 
-  While using [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), there are several ways to access DPL Architect. For instructions, see [Extract](/docs/secure/investigations/extract-fields "Pull specific data points from logs in Investigations.").
+  While using [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../../secure/investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."), there are several ways to access DPL Architect. For instructions, see [Extract](../../../secure/investigations/extract-fields.md "Pull specific data points from logs in Investigations.").
 
 ## Use DPL Architect
 
@@ -156,9 +156,9 @@ See below for the list of preset patterns.
 
 Application Security
 
-In this use case, you work with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to analyze unauthorized requests in your Kubernetes audit logs. See how you can get a precise extraction of fields from complex data and instant feedback on your patterns about their effectiveness and coverage, without the need to re-execute queries, to find the origin of your unauthorized requests and get accurate results about what happened.
+In this use case, you work with [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**](../../../secure/investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.") to analyze unauthorized requests in your Kubernetes audit logs. See how you can get a precise extraction of fields from complex data and instant feedback on your patterns about their effectiveness and coverage, without the need to re-execute queries, to find the origin of your unauthorized requests and get accurate results about what happened.
 
-* [Threat hunting and forensics](/docs/secure/use-cases/threat-hunting "Use case scenario for threat hunting and forensics with Investigations.")
+* [Threat hunting and forensics](../../../secure/use-cases/threat-hunting.md "Use case scenario for threat hunting and forensics with Investigations.")
 
 ## Further resources
 
@@ -171,7 +171,7 @@ For additional insights into DPL Architect, see
 
 ## Related topics
 
-* [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
-* [Dynatrace Pattern Language](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.")
-* [Investigations](/docs/secure/investigations "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.")
-* [Threat hunting and forensics](/docs/secure/use-cases/threat-hunting "Use case scenario for threat hunting and forensics with Investigations.")
+* [Notebooks](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+* [Dynatrace Pattern Language](../dynatrace-pattern-language.md "Use Dynatrace Pattern Language to describe patterns using matchers.")
+* [Investigations](../../../secure/investigations.md "Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting.")
+* [Threat hunting and forensics](../../../secure/use-cases/threat-hunting.md "Use case scenario for threat hunting and forensics with Investigations.")

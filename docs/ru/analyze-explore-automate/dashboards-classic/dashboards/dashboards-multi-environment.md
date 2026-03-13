@@ -13,12 +13,12 @@ scraped: 2026-03-05T21:27:54.848020
 * 8 мин. чтения
 * Обновлено 4 июня 2024 г.
 
-[Классические панели](/docs/analyze-explore-automate/dashboards-classic "Узнайте, как создавать, управлять и использовать классические панели Dynatrace.")
+[Классические панели](../../dashboards-classic.md "Узнайте, как создавать, управлять и использовать классические панели Dynatrace.")
 
 Эта страница относится к классическим панелям, созданным с помощью функциональности ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**, интегрированной с Dynatrace Classic.
 
-* Если вы уже используете приложение ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace, см. документацию [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создание интерактивных настраиваемых представлений для визуализации, анализа и обмена данными наблюдаемости в реальном времени.").
-* Если вы всё ещё используете классические панели, мы рекомендуем [обновить ваши панели](/docs/analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest "Обновление классических панелей до приложения Dashboards в последней версии Dynatrace.") и воспользоваться всеми новейшими возможностями, предоставляемыми приложением ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace.
+* Если вы уже используете приложение ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace, см. документацию [Dashboards](../../dashboards-and-notebooks/dashboards-new.md "Создание интерактивных настраиваемых представлений для визуализации, анализа и обмена данными наблюдаемости в реальном времени.").
+* Если вы всё ещё используете классические панели, мы рекомендуем [обновить ваши панели](../dashboards-upgrade-classic-to-latest.md "Обновление классических панелей до приложения Dashboards в последней версии Dynatrace.") и воспользоваться всеми новейшими возможностями, предоставляемыми приложением ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** в последней версии Dynatrace.
 
 Панель Dynatrace может включать артефакты мониторинга (такие как метрики, логи, события, пользовательские сессии и серверные трассировки) из нескольких сред Dynatrace и даже поддерживать удалённые зоны управления (для плиток, поддерживающих пользовательские зоны управления).
 
@@ -68,9 +68,9 @@ scraped: 2026-03-05T21:27:54.848020
 
 Нижеописанные процедуры используют веб-интерфейс Dynatrace. Для выполнения аналогичных задач через API см.:
 
-* [API токенов доступа](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens "Управление токенами аутентификации Dynatrace API.") — для создания токена в удалённой среде
-* [API удалённых сред](/docs/dynatrace-api/configuration-api/remote-environments "Управление конфигурациями удалённых сред Dynatrace через Dynatrace configuration API.") — для создания ссылки на удалённую среду из локальной среды
-* [API Dashboards Classic](/docs/dynatrace-api/configuration-api/dashboards-api "Узнайте, как управлять конфигурацией панелей через Dynatrace Classic configuration API.") — для настройки панели с плитками, запрашивающими удалённую среду
+* [API токенов доступа](../../../dynatrace-api/environment-api/tokens-v2/api-tokens.md "Управление токенами аутентификации Dynatrace API.") — для создания токена в удалённой среде
+* [API удалённых сред](../../../dynatrace-api/configuration-api/remote-environments.md "Управление конфигурациями удалённых сред Dynatrace через Dynatrace configuration API.") — для создания ссылки на удалённую среду из локальной среды
+* [API Dashboards Classic](../../../dynatrace-api/configuration-api/dashboards-api.md "Узнайте, как управлять конфигурацией панелей через Dynatrace Classic configuration API.") — для настройки панели с плитками, запрашивающими удалённую среду
 
 ### Создание токена доступа
 
@@ -183,6 +183,6 @@ scraped: 2026-03-05T21:27:54.848020
 
 ## Связанные темы
 
-* [API Dashboards Classic](/docs/dynatrace-api/configuration-api/dashboards-api "Узнайте, как управлять конфигурацией панелей через Dynatrace Classic configuration API.")
-* [API удалённых сред](/docs/dynatrace-api/configuration-api/remote-environments "Управление конфигурациями удалённых сред Dynatrace через Dynatrace configuration API.")
-* [Что такое среда мониторинга?](/docs/discover-dynatrace/get-started/monitoring-environment "Понимание и работа со средами мониторинга.")
+* [API Dashboards Classic](../../../dynatrace-api/configuration-api/dashboards-api.md "Узнайте, как управлять конфигурацией панелей через Dynatrace Classic configuration API.")
+* [API удалённых сред](../../../dynatrace-api/configuration-api/remote-environments.md "Управление конфигурациями удалённых сред Dynatrace через Dynatrace configuration API.")
+* [Что такое среда мониторинга?](../../../discover-dynatrace/get-started/monitoring-environment.md "Понимание и работа со средами мониторинга.")

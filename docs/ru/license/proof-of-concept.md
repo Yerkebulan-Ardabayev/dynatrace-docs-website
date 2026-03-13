@@ -25,7 +25,7 @@ Proof of Concept (POC) — это ограниченная пробная вер
   POC недоступны для пробных сред.
 * Возможность, которую вы хотите протестировать, уже доступна в вашем прайс-листе.
   Ваш прайс-лист можно просмотреть в разделе **Subscription** > **Pricing**.
-* Для просмотра затрат и использования POC вам необходим доступ к странице [**Subscription history**](/docs/license/subscription-history "View the subscription history of your Dynatrace environment, including usage and cumulative costs for each subscription.") в разделе управления аккаунтом.
+* Для просмотра затрат и использования POC вам необходим доступ к странице [**Subscription history**](subscription-history.md "View the subscription history of your Dynatrace environment, including usage and cumulative costs for each subscription.") в разделе управления аккаунтом.
 
 ## О Proof of Concept
 
@@ -37,10 +37,10 @@ Proof of Concept выполняется поверх действующей по
 
 ## Просмотр деталей использования
 
-Все данные о потреблении и затратах, связанных с POC, доступны на странице [**Subscription history**](/docs/license/subscription-history "View the subscription history of your Dynatrace environment, including usage and cumulative costs for each subscription.").
+Все данные о потреблении и затратах, связанных с POC, доступны на странице [**Subscription history**](subscription-history.md "View the subscription history of your Dynatrace environment, including usage and cumulative costs for each subscription.").
 
 ## Связанные темы
 
-* [Лицензирование Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
-* [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
-* [Просмотр предыдущих периодов DPS через историю подписок](/docs/license/subscription-history "View the subscription history of your Dynatrace environment, including usage and cumulative costs for each subscription.")
+* [Лицензирование Dynatrace](../license.md "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* [Account Management](../manage/account-management.md "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
+* [Просмотр предыдущих периодов DPS через историю подписок](subscription-history.md "View the subscription history of your Dynatrace environment, including usage and cumulative costs for each subscription.")

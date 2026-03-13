@@ -16,8 +16,8 @@ scraped: 2026-03-06T21:25:03.912818
 
 Требования к оборудованию и системе для ActiveGate с другими целями см.:
 
-* [Требования к оборудованию и системе для ActiveGate с поддержкой Synthetic](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Поддерживаемые операционные системы, версии Chromium и требования к оборудованию для запуска синтетических мониторов из частных местоположений"), которые поддерживают подмножество операционных систем и более требовательны к оборудованию и системе, чем ActiveGate, используемые для маршрутизации и мониторинга.
-* [Требования к оборудованию и системе для модуля zRemote для мониторинга z/OS](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote#sizing "Подготовка и установка zRemote для мониторинга z/OS."). ActiveGate с модулем zRemote более требовательны к оборудованию и системе, чем ActiveGate, используемые для маршрутизации и мониторинга.
+* [Требования к оборудованию и системе для ActiveGate с поддержкой Synthetic](../../../../observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic.md "Поддерживаемые операционные системы, версии Chromium и требования к оборудованию для запуска синтетических мониторов из частных местоположений"), которые поддерживают подмножество операционных систем и более требовательны к оборудованию и системе, чем ActiveGate, используемые для маршрутизации и мониторинга.
+* [Требования к оборудованию и системе для модуля zRemote для мониторинга z/OS](../../../dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote.md#sizing "Подготовка и установка zRemote для мониторинга z/OS."). ActiveGate с модулем zRemote более требовательны к оборудованию и системе, чем ActiveGate, используемые для маршрутизации и мониторинга.
 
 Запуск ActiveGate на выделенной системе
 
@@ -30,7 +30,7 @@ scraped: 2026-03-06T21:25:03.912818
 
 * 4 ГБ свободного дискового пространства для установки, конфигурации и логов ActiveGate и расширений для целей автоматического обновления.
 * 4 ГБ для кэшированных установщиков ActiveGate и OneAgent и образов контейнеров — если их потребуется хранить.
-* Пространство для файлов дампов — если их потребуется хранить. Эта функция по умолчанию отключена, но может быть включена в конфигурации ActiveGate. Максимальный размер пространства хранения [настраивается](/docs/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Узнайте, как включить хранение дампов памяти на ActiveGate.") — 100 ГБ по умолчанию.
+* Пространство для файлов дампов — если их потребуется хранить. Эта функция по умолчанию отключена, но может быть включена в конфигурации ActiveGate. Максимальный размер пространства хранения [настраивается](../../../../observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage.md "Узнайте, как включить хранение дампов памяти на ActiveGate.") — 100 ГБ по умолчанию.
 * 600 МБ + 1,5 ГБ (буфер) свободного дискового пространства для файла персистентности повторной передачи логов Extension Execution Controller.
 * Пространство для загрузок расширений — в зависимости от используемых расширений.
 * 2 ГБ оперативной памяти (рекомендуется 4 ГБ).
@@ -41,10 +41,10 @@ scraped: 2026-03-06T21:25:03.912818
 ## Требования к пространству по директориям
 
 **Выделение пространства по директориям для целей установки:**
-**(для более подробного распределения обратитесь к разделу [Директории ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux."))**
+**(для более подробного распределения обратитесь к разделу [Директории ActiveGate](../../configuration/where-can-i-find-activegate-files.md "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux."))**
 
 **Выделение пространства по директориям для работы ActiveGate:**
-**(для более подробного распределения обратитесь к разделу [Директории ActiveGate](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux."))**
+**(для более подробного распределения обратитесь к разделу [Директории ActiveGate](../../configuration/where-can-i-find-activegate-files.md "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux."))**
 
 1
 
@@ -82,7 +82,7 @@ scraped: 2026-03-06T21:25:03.912818
 ## Системные требования
 
 * ActiveGate поддерживает только операционные системы, работающие на архитектуре x86-64 (64-разрядная Intel/AMD).
-* Убедитесь, что у вас правильная [конфигурация сетевых портов](/docs/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates "Узнайте о приоритетах подключения между типами ActiveGate, а также о приоритетах между ActiveGate и OneAgent.").
+* Убедитесь, что у вас правильная [конфигурация сетевых портов](../../supported-connectivity-schemes-for-activegates.md "Узнайте о приоритетах подключения между типами ActiveGate, а также о приоритетах между ActiveGate и OneAgent.").
 * Установка ActiveGate не поддерживается на Windows с отключённой учётной записью `NT AUTHORITY\LocalService`.
 
 ## Руководство по выбору размера для AWS

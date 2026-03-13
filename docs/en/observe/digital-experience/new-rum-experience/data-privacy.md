@@ -36,10 +36,10 @@ Learn about the available settings that help you ensure your web frontends compl
 
 * How-to guide
 
-Read this guide](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/data-privacy-web)[#### Configure data privacy settings for mobile frontends
+Read this guide](web-frontends/additional-configuration/data-privacy-web.md)[#### Configure data privacy settings for mobile frontends
 
 Learn about the available settings that help you ensure your mobile frontends comply with data privacy regulations.
 
 * How-to guide
 
-Read this guide](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/data-privacy)
+Read this guide](mobile-frontends/data-privacy.md)

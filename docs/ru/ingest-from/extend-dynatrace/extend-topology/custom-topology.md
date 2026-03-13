@@ -12,9 +12,9 @@ scraped: 2026-03-06T21:36:40.825058
 * 5 мин. чтения
 * Опубликовано 9 апреля 2021 г.
 
-Мы продолжаем наш [пример логистики Easy Shipping LTD](/docs/ingest-from/extend-dynatrace/extend-topology#custom-topology-model-in-action "Убедитесь, что все поступающие наблюдения обогащены контекстом и анализируются в контексте отслеживаемых сущностей, к которым они относятся."), в котором грузовики и контейнеры, установленные на грузовиках, отправляют данные телеметрии в Dynatrace.
+Мы продолжаем наш [пример логистики Easy Shipping LTD](../extend-topology.md#custom-topology-model-in-action "Убедитесь, что все поступающие наблюдения обогащены контекстом и анализируются в контексте отслеживаемых сущностей, к которым они относятся."), в котором грузовики и контейнеры, установленные на грузовиках, отправляют данные телеметрии в Dynatrace.
 
-Пример потока данных соответствует [формату протокола метрик Dynatrace](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol "Узнайте, как работает протокол приёма данных для Dynatrace Metrics API.").
+Пример потока данных соответствует [формату протокола метрик Dynatrace](../extend-metrics/reference/metric-ingestion-protocol.md "Узнайте, как работает протокол приёма данных для Dynatrace Metrics API.").
 
 ```
 truck.fuel.total,trucknr=99,model=mac-granite 10234

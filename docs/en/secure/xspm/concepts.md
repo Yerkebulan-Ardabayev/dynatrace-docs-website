@@ -14,7 +14,7 @@ scraped: 2026-03-04T21:32:43.387274
 
 ## Results
 
-**Results** are findings from Dynatrace in relation to your security and compliance posture, based on the rules of the [supported compliance standards](/docs/secure/application-security/spm#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
+**Results** are findings from Dynatrace in relation to your security and compliance posture, based on the rules of the [supported compliance standards](../application-security/spm.md#support "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.").
 
 **Rules** are specific configuration and other process requirements defined in the compliance standards.
 
@@ -27,7 +27,7 @@ Learn below about each result type.
 
 | **Result type** | **Definition** |
 | --- | --- |
-| Failed | The assessed resource doesn't follow the recommendations specified in the rule. In this case, a reason for failure is provided, based on which you can fix the issue. For details, see [Gain insights](/docs/secure/xspm/gain-insights "Drill into results that can help you fix misconfigurations and noncompliance."). |
+| Failed | The assessed resource doesn't follow the recommendations specified in the rule. In this case, a reason for failure is provided, based on which you can fix the issue. For details, see [Gain insights](gain-insights.md "Drill into results that can help you fix misconfigurations and noncompliance."). |
 | Passed | The assessed resource follows the recommendations specified in the rule (there are no misconfigurations violating the specified recommendations). |
 | Manual[1](#fn-1-1-def) | The resource cannot be automatically assessed, as Dynatrace can't determine whether the resource is compliant (for example, when, due to physical security, Dynatrace can't get the configuration data from the clusters and nodes). |
 | Not relevant | The assessed resource doesn't meet a specific criteria for assessment, such as a specific version. These results can be skipped. |
@@ -36,11 +36,11 @@ Learn below about each result type.
 
 Manual results aren't currently actionable.
 
-To increase the number of results based on automatic assessment, we recommend that you [deploy Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes.").
+To increase the number of results based on automatic assessment, we recommend that you [deploy Kubernetes Security Posture Management](../../ingest-from/setup-on-k8s/deployment/security-posture-management.md "Configure and enable Security Posture Management in Kubernetes.").
 
 ### View
 
-Results are displayed for all your monitored systems on which [Security Posture Management](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") is enabled.
+Results are displayed for all your monitored systems on which [Security Posture Management](../application-security/spm.md "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") is enabled.
 
 * The **Overview** page shows the total number of failed, manual, and passed rules per monitored system.
 * The **Assessment results** page shows a table with all results, sorted automatically in descending order, starting from the ones deserving the most attention (failed rules with critical severity) to those less important (not relevant rules with low severity).
@@ -56,7 +56,7 @@ See below the result calculation based on the aggregation of finding events into
 
 ### Categorize assessment results
 
-You can filter and sort results based on different criteria of interest. For details, see [Review findings](/docs/secure/xspm/review-findings "Search for relevant information to analyze security and compliance findings efficiently.").
+You can filter and sort results based on different criteria of interest. For details, see [Review findings](review-findings.md "Search for relevant information to analyze security and compliance findings efficiently.").
 
 ### Explore
 
@@ -65,7 +65,7 @@ To view result details
 1. Go to the **Assessment results** page.
 2. Select a rule.
 
-   This opens a side window with more information that can help you understand the context and fix potential issues. For details, see [Gain insights](/docs/secure/xspm/gain-insights "Drill into results that can help you fix misconfigurations and noncompliance.").
+   This opens a side window with more information that can help you understand the context and fix potential issues. For details, see [Gain insights](gain-insights.md "Drill into results that can help you fix misconfigurations and noncompliance.").
 
 ## Severity
 
@@ -81,4 +81,4 @@ Information regarding severity is provided by the compliance standards and mappe
 
 ### Categorize assessment results
 
-You can filter and sort results based on severity. For details, see [Review findings](/docs/secure/xspm/review-findings "Search for relevant information to analyze security and compliance findings efficiently.").
+You can filter and sort results based on severity. For details, see [Review findings](review-findings.md "Search for relevant information to analyze security and compliance findings efficiently.").

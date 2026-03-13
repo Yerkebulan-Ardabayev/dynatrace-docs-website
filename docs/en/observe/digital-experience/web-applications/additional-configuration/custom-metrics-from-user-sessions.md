@@ -13,7 +13,7 @@ scraped: 2026-03-04T21:28:06.966694
 * 1-min read
 * Updated on Feb 21, 2023
 
-With USQL metric events, you can extract business-level KPI metrics from your user session and user action data and store these metrics as time series. You can then use the stored metrics in [custom charts](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."), [alerting mechanisms](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace"), or [Metrics API](/docs/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.").
+With USQL metric events, you can extract business-level KPI metrics from your user session and user action data and store these metrics as time series. You can then use the stored metrics in [custom charts](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights."), [alerting mechanisms](../../../../dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace"), or [Metrics API](../../../../dynatrace-api/environment-api/metric-v2.md "Retrieve metric information via Metrics v2 API.").
 
 USQL metric events are available as:
 
@@ -41,7 +41,7 @@ You can create and manage USQL metric events using the Dynatrace web UI.
 
 1. Go to **Settings** > **Web and mobile monitoring** > **User session metric events** or **User action metric events**.
 2. Select **Add item**.
-3. Enter the **Metric key** that should be used when ingesting the metric. You'll use this key when requesting the metric data via [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+3. Enter the **Metric key** that should be used when ingesting the metric. You'll use this key when requesting the metric data via [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights.").
 
    * For user session metric events, start the metric key with the `uscm.` prefix.
    * For user action metric events, start the metric key with the `uacm.` prefix.
@@ -49,11 +49,11 @@ You can create and manage USQL metric events using the Dynatrace web UI.
 
    * For user session metric events:
 
-     + **User session counter** to count the number of user sessions, which is similar to `COUNT(*)` when using [USQL](/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.").
+     + **User session counter** to count the number of user sessions, which is similar to `COUNT(*)` when using [USQL](../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md "Learn how you can access and query user session data based on keywords, syntax, functions, and more.").
      + **User session field value** to extract a value of a user session field. Also, specify the **Field name**. For possible values, see [Values for user session metric events](#values-uscm).
    * For user action metric events:
 
-     + **User action counter** to count the number of user actions, which is similar to `COUNT(*)` when using [USQL](/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.").
+     + **User action counter** to count the number of user actions, which is similar to `COUNT(*)` when using [USQL](../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md "Learn how you can access and query user session data based on keywords, syntax, functions, and more.").
      + **User action field value** to extract a value of a user action field. Also, specify the **Field name**. For possible values, see [Values for user action metric events](#values-uacm).
 5. Under **Add a dimension**, specify fields that should be used as dimensions. For possible values, see [Dimensions for user session metric events](#dimensions-uscm) and [Dimensions for user action metric events](#dimensions-uacm).
 6. Under **Add a filter**, include the required filters.
@@ -64,14 +64,14 @@ You can create and manage USQL metric events using the Dynatrace web UI.
 
 ![Creating a user session custom metric](https://dt-cdn.net/images/creating-user-session-custom-metric-1359-e1cdae0345.png)
 
-Alternatively, you can use [USQL](/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data#convert-usql-into-custom-metrics "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") to create USQL metric events.
+Alternatively, you can use [USQL](../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md#convert-usql-into-custom-metrics "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") to create USQL metric events.
 
 ## Configure metrics via API
 
-You can also use the [Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") to configure USQL metric events.
+You can also use the [Settings API](../../../../dynatrace-api/environment-api/settings.md "Find out what the Dynatrace Settings API offers.") to configure USQL metric events.
 
-1. [Create an access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Write settings** (`settings.write`) and **Read settings** (`settings.read`) permissions.
-2. Use the [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration.
+1. [Create an access token](../../../../dynatrace-api/basics/dynatrace-api-authentication.md#create-token "Find out how to get authenticated to use the Dynatrace API.") with the **Write settings** (`settings.write`) and **Read settings** (`settings.read`) permissions.
+2. Use the [GET a schema](../../../../dynatrace-api/environment-api/settings/schemas/get-schema.md "View a settings schema via the Dynatrace API.") endpoint to learn the JSON format required to post your configuration.
 
    User session custom metric
 
@@ -324,7 +324,7 @@ You can also use the [Settings API](/docs/dynatrace-api/environment-api/settings
 
    ]
    ```
-3. Use the [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
+3. Use the [POST an object](../../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
 
 The table below explains all configuration properties required to create or update a USQL custom metric via API.
 
@@ -750,7 +750,7 @@ We've identified the following limitations for USQL metric events:
 
 * Synthetic user session data is not factored into values of USQL metric events; only real-user data is included.
 * Dynatrace updates USQL metric events each time a session closes. This means that live session data is not factored into USQL custom metric values; only closed session data is included.
-* The `DISTINCT` keyword used in [USQL](/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") is not supported. If you have a query like `SELECT COUNT(DISTINCT country) from usersession`, it is not possible to create an equivalent USQL custom metric.
+* The `DISTINCT` keyword used in [USQL](../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data.md "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") is not supported. If you have a query like `SELECT COUNT(DISTINCT country) from usersession`, it is not possible to create an equivalent USQL custom metric.
 
 ## Tutorial
 
@@ -797,7 +797,7 @@ Now let's create a chart based on the `uscm.average_duration_of_sessions_by_brow
 2. Select the `uscm.average_duration_of_sessions_by_browser_family_and_version` metric, and select **Run query**.
 
    ![Creating a chart in Data Explorer based on user sessions metric](https://dt-cdn.net/images/data-explorer-custom-metric-1221-7d8891ede4.png)
-3. Using [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."), split the collected data to see the user session data partitioned based on `browserMajorVersion`, `browserFamily`, or both.
+3. Using [Data Explorer](../../../../analyze-explore-automate/explorer.md "Query for metrics and transform results to gain desired insights."), split the collected data to see the user session data partitioned based on `browserMajorVersion`, `browserFamily`, or both.
 4. Filter user session data based on `browserMajorVersion` or `browserFamily` to focus on the user session data that interests you.
 5. Once you create a chart presenting your data, you can pin the chart to a classic dashboard: select **Pin to dashboard**, select one of your dashboards, and enter the tile name.
 
@@ -811,7 +811,7 @@ To create an alert
 
 1. Go to **Settings** > **Anomaly detection** > **Metric events**.
 2. Select **Add metric event**.
-3. Create a metric event based on `uscm.average_duration_of_sessions_by_browser_family_and_version` metric. For details, see [Metric events](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace").
+3. Create a metric event based on `uscm.average_duration_of_sessions_by_browser_family_and_version` metric. For details, see [Metric events](../../../../dynatrace-intelligence/anomaly-detection/metric-events.md "Learn about metric events in Dynatrace").
 
 ![Creating a custom event for alerting based on a user sessions metric](https://dt-cdn.net/images/create-custom-events-for-alerting-2092-9b1d66309a.png)
 
@@ -833,16 +833,16 @@ Exclude synthetic sessions from your query. Also, check that the same timeframe 
 
 How are USQL metric events billed?
 
-Starting with Dynatrace 1.232, USQL metric events are subject to the [Davis data unit (DDU) licensing](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU)."). These metrics are billed as regular schemaless metrics.
+Starting with Dynatrace 1.232, USQL metric events are subject to the [Davis data unit (DDU) licensing](../../../../license/monitoring-consumption-classic/davis-data-units.md "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU)."). These metrics are billed as regular schemaless metrics.
 
-To estimate the cost per metric, the sessions for the last 7 days are evaluated and the cost in DDUs per metric is calculated according to the expected ingestion per minute. For details, see [How do we calculate DDU consumption for metric events?](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation#calculation-details "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+To estimate the cost per metric, the sessions for the last 7 days are evaluated and the cost in DDUs per metric is calculated according to the expected ingestion per minute. For details, see [How do we calculate DDU consumption for metric events?](../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation.md#calculation-details "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 
 What's the interval granularity for USQL metric events?
 
 The Dynatrace metric-data persistence follows a data-retention strategy that aggregates metrics over time. The data-retention strategy applied to USQL metric events is identical to the data-retention strategy used for built-in time series metrics.
 
-For details, see [Data retention periods > Metrics](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods#metrics-classic "Check retention times for various data types.")
+For details, see [Data retention periods > Metrics](../../../../manage/data-privacy-and-security/data-privacy/data-retention-periods.md#metrics-classic "Check retention times for various data types.")
 
 ## Related topics
 
-* [Metrics API v2](/docs/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.")
+* [Metrics API v2](../../../../dynatrace-api/environment-api/metric-v2.md "Retrieve metric information via Metrics v2 API.")

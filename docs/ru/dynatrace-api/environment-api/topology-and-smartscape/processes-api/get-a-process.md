@@ -12,9 +12,9 @@ scraped: 2026-03-05T21:27:00.159340
 * Обновлено 22 марта 2023 г.
 * Устаревший
 
-Этот API устарел. Используйте вместо него [API мониторинга сущностей](/docs/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API."). Дополнительную информацию о переходе на новый API можно найти в [руководстве по миграции](/docs/dynatrace-api/basics/deprecation-migration-guides/topology-v1-to-entity-v2 "Migrate your automation to the Monitored entities API.").
+Этот API устарел. Используйте вместо него [API мониторинга сущностей](../../entity-v2.md "Learn about the Dynatrace Monitored entities API."). Дополнительную информацию о переходе на новый API можно найти в [руководстве по миграции](../../../basics/deprecation-migration-guides/topology-v1-to-entity-v2.md "Migrate your automation to the Monitored entities API.").
 
-Получает параметры указанного [процесса](/docs/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring.").
+Получает параметры указанного [процесса](../../../../observe/infrastructure-observability/process-groups.md "Analyze process groups and customize process group naming, detection, and monitoring.").
 
 Запрос возвращает данные в формате `application/json`.
 
@@ -27,7 +27,7 @@ scraped: 2026-03-05T21:27:00.159340
 
 Для выполнения этого запроса вам необходим токен доступа с областью действия `DataExport`.
 
-Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 
@@ -2708,4 +2708,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/processes/PR
 
 ## Связанные темы
 
-* [Группы процессов](/docs/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring.")
+* [Группы процессов](../../../../observe/infrastructure-observability/process-groups.md "Analyze process groups and customize process group naming, detection, and monitoring.")

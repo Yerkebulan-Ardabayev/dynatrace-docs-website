@@ -15,8 +15,8 @@ scraped: 2026-03-05T21:26:29.720687
 
 The RUM JavaScript sends RUM beacons to report the captured data to Dynatrace. By default, the beacon endpoint depends on the injection method used for your application.
 
-* **Auto-injected applications:** When the [RUM JavaScript is injected automatically](/docs/observe/digital-experience/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications"), beacons are sent back to your web or application server using a root-relative URL where the last path segment has the `rb_` prefix (for example, `/rb_xxxxxxxxxx` or `/myapplication/rb_xxxxxxxxxx`). The beacon endpoint is provided by OneAgent, which intercepts and forwards RUM beacons.
-* **Agentless applications:** If you opted for [agentless monitoring](/docs/observe/digital-experience/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications."), data is sent to a beacon endpoint that is part of the Dynatrace SaaS infrastructure.
+* **Auto-injected applications:** When the [RUM JavaScript is injected automatically](../initial-setup/rum-injection.md "Configure automatic injection of the RUM JavaScript into the pages of your applications"), beacons are sent back to your web or application server using a root-relative URL where the last path segment has the `rb_` prefix (for example, `/rb_xxxxxxxxxx` or `/myapplication/rb_xxxxxxxxxx`). The beacon endpoint is provided by OneAgent, which intercepts and forwards RUM beacons.
+* **Agentless applications:** If you opted for [agentless monitoring](../initial-setup/set-up-agentless-real-user-monitoring.md "Set up agentless monitoring for your web applications."), data is sent to a beacon endpoint that is part of the Dynatrace SaaS infrastructure.
 
 You usually don't need to change the default beacon endpoint, but there are certain scenarios where you might need to use an alternative beacon endpoint configuration. For example:
 
@@ -26,7 +26,7 @@ You usually don't need to change the default beacon endpoint, but there are cert
 
 The following sections describe alternative beacon endpoint configurations that allow you to accommodate these and similar constraints.
 
-The beacon endpoint configurations explained on this page don't affect the correlation between user actions and distributed traces. However, check [Technology support](/docs/ingest-from/technology-support#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks.") to see if Real User Monitoring is supported for your technology.
+The beacon endpoint configurations explained on this page don't affect the correlation between user actions and distributed traces. However, check [Technology support](../../../../ingest-from/technology-support.md#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks.") to see if Real User Monitoring is supported for your technology.
 
 ## Auto-injected app Modify the beacon endpoint URL
 
@@ -63,11 +63,11 @@ If you want the RUM beacons of an auto-injected application to be handled by the
 4. From the application settings, select **General settings** > **Beacon endpoint**.
 5. In the **Type** dropdown list, select **Cluster ActiveGate**.
 
-For this configuration, Dynatrace applies the [beacon origin allowlist](/docs/observe/digital-experience/web-applications/additional-configuration/configure-beacon-domain-allowlist "Specify the origins from which cross-origin RUM beacons should be accepted.") to the RUM beacons of your application.
+For this configuration, Dynatrace applies the [beacon origin allowlist](configure-beacon-domain-allowlist.md "Specify the origins from which cross-origin RUM beacons should be accepted.") to the RUM beacons of your application.
 
 ## Auto-injected app Send beacons to a different web server
 
-By default, the RUM beacons of an auto-injected application are handled by one of the process groups that hosts your application. Alternatively, beacons can be handled on any other instrumented web or application server of a technology listed in [Technology support - Real User Monitoring - Web servers and applications](/docs/ingest-from/technology-support#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+By default, the RUM beacons of an auto-injected application are handled by one of the process groups that hosts your application. Alternatively, beacons can be handled on any other instrumented web or application server of a technology listed in [Technology support - Real User Monitoring - Web servers and applications](../../../../ingest-from/technology-support.md#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 To send beacons of an auto-injected application to a different instrumented server
 
@@ -83,18 +83,18 @@ To send beacons of an auto-injected application to a different instrumented serv
 8. In **URL**, enter the beacon endpoint that you determined in step 2.
 9. Turn on **Send beacon data via CORS**.
 
-For this configuration, Dynatrace applies the [beacon origin allowlist](/docs/observe/digital-experience/web-applications/additional-configuration/configure-beacon-domain-allowlist "Specify the origins from which cross-origin RUM beacons should be accepted.") to the RUM beacons of your application.
+For this configuration, Dynatrace applies the [beacon origin allowlist](configure-beacon-domain-allowlist.md "Specify the origins from which cross-origin RUM beacons should be accepted.") to the RUM beacons of your application.
 
 ## Agentless app Send beacons to a web server
 
-Instead of using the Dynatrace SaaS infrastructure as a beacon endpoint for your agentless application, you can use any instrumented web or application server of a technology listed in [Technology support - Real User Monitoring - Web servers and applications](/docs/ingest-from/technology-support#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+Instead of using the Dynatrace SaaS infrastructure as a beacon endpoint for your agentless application, you can use any instrumented web or application server of a technology listed in [Technology support - Real User Monitoring - Web servers and applications](../../../../ingest-from/technology-support.md#rum-auto-injection "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 To send beacons of an agentless application to an instrumented server
 
 1. Go to **Web**.
 2. Select any **auto-injected** application that doesn't use one of the custom beacon endpoint configurations described on this page.
 
-   In this step, you should select not the agentless application that you're configuring but another **auto-injected** application that has the default beacon endpoint configuration. If you don't have an auto-injected application, temporarily create one as described in [Define applications for Real User Monitoring | Application detection rules approach](/docs/observe/digital-experience/web-applications/initial-setup/define-your-applications-via-the-my-web-application-placeholder#application-detection-rules "Learn how to define your applications following the suggested, manual, or application detection rules approach."). You can then [delete](/docs/observe/digital-experience/web-applications/additional-configuration/delete-application-web "Delete your web applications via the Dynatrace web UI or API.") this temporary application.
+   In this step, you should select not the agentless application that you're configuring but another **auto-injected** application that has the default beacon endpoint configuration. If you don't have an auto-injected application, temporarily create one as described in [Define applications for Real User Monitoring | Application detection rules approach](../initial-setup/define-your-applications-via-the-my-web-application-placeholder.md#application-detection-rules "Learn how to define your applications following the suggested, manual, or application detection rules approach."). You can then [delete](delete-application-web.md "Delete your web applications via the Dynatrace web UI or API.") this temporary application.
 3. In the upper-right corner of the application overview page, select **More** (**â¦**) > **Edit**.
 4. From the application settings, select **Injection** > **Manual insertion**.
 5. Under **OneAgent JavaScript tag**, find `reportUrl` in the provided snippet, and copy its value.
@@ -109,4 +109,4 @@ To send beacons of an agentless application to an instrumented server
 12. In **URL**, enter the beacon endpoint that you determined in step 6.
 13. Turn on **Send beacon data via CORS**.
 
-For this configuration, Dynatrace applies the [beacon origin allowlist](/docs/observe/digital-experience/web-applications/additional-configuration/configure-beacon-domain-allowlist "Specify the origins from which cross-origin RUM beacons should be accepted.") to the RUM beacons of your application (the same is done for the default beacon endpoint configuration for all agentless applications).
+For this configuration, Dynatrace applies the [beacon origin allowlist](configure-beacon-domain-allowlist.md "Specify the origins from which cross-origin RUM beacons should be accepted.") to the RUM beacons of your application (the same is done for the default beacon endpoint configuration for all agentless applications).

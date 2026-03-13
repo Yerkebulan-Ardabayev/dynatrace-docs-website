@@ -22,7 +22,7 @@ Once you create an investigation (in ![Investigations](https://dt-cdn.net/images
 
 You can create an unlimited number of investigation scenarios.
 
-* **Example scenario**: [Threat hunting and forensics](/docs/secure/use-cases/threat-hunting "Use case scenario for threat hunting and forensics with Investigations.")
+* **Example scenario**: [Threat hunting and forensics](../use-cases/threat-hunting.md "Use case scenario for threat hunting and forensics with Investigations.")
 
 You can create a maximum of 100 nodes per investigation.
 
@@ -64,7 +64,7 @@ Despite any modification in the query tree, the following elements are always pr
 
 If you modify your query to a point where no further analysis is possible, you can navigate back in the tree to your last working query and continue your investigation from there. This creates a new branch in the query tree.
 
-For details about how to use the query tree, see [Manage the query tree](/docs/secure/investigations/query-tree "Visualize and structure complex queries in Investigations.").
+For details about how to use the query tree, see [Manage the query tree](query-tree.md "Visualize and structure complex queries in Investigations.").
 
 ## Evidence list
 
@@ -72,27 +72,27 @@ Evidence lists are relevant fragments from logs and IP addresses saved for later
 
 ![evidence lists](https://dt-cdn.net/images/evidence-lists-555-ce5508ed64.png)
 
-Once you add evidence to the evidence lists, you can [build filters for your query](/docs/secure/investigations/filter-logs#evidence "Narrow down data to relevant entries in Investigations.").
+Once you add evidence to the evidence lists, you can [build filters for your query](filter-logs.md#evidence "Narrow down data to relevant entries in Investigations.").
 
-For details about how to manage evidence, see [Manage evidence](/docs/secure/investigations/manage-evidence "Collect and preserve investigation artifacts in Investigations.").
+For details about how to manage evidence, see [Manage evidence](manage-evidence.md "Collect and preserve investigation artifacts in Investigations.").
 
 ## Reference time
 
 Reference time adds the time perspective to keep track of the relative time between events youâre analyzing and the time when an incident occurred.
 
-For details, see [Define reference time](/docs/secure/investigations/define-timeframes#reference "Adjust time ranges for data analysis and event correlation in Investigations.").
+For details, see [Define reference time](define-timeframes.md#reference "Adjust time ranges for data analysis and event correlation in Investigations.").
 
 ## Log pivoting
 
 Log pivoting enables instant navigation and analysis of interconnected log data from any record across available dimensions, saving time on manual query creation and accelerating investigations.
 
-For details, see [Pivot results](/docs/secure/investigations/enhance-results#pivot "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
+For details, see [Pivot results](enhance-results.md#pivot "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
 
 ## IP enrichment
 
 IP enrichment adds external reputation data to IP addresses using trusted threat intelligence sources such as AbuseIPDB or VirusTotal. This provides additional context for faster triage and helps assess the relevance of IPs during investigations.
 
-For details, see [Enrich IP addresses](/docs/secure/investigations/enhance-results#enrich "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
+For details, see [Enrich IP addresses](enhance-results.md#enrich "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
 
 ## Lookup tables for contextual enrichment
 
@@ -100,24 +100,24 @@ Lookup tables are structured datasets stored in Grail that enrich your investiga
 
 For example, a successful login might seem typical for a user. But when compared against a lookup table showing the user's usual login location or time of access, it could reveal suspicious behavior.
 
-You can create lookup tables by uploading files or saving query results, and then manage and use them to enrich your queries directly within ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**. For instructions, see [Create and use lookup tables](/docs/secure/investigations/enhance-results#lookup "Organize and interpret query outputs across investigations --- from performance analysis to threat detection."). For details on how lookup data works, see [Lookup data in Grail](/docs/platform/grail/lookup-data "Learn about lookup data in Grail.").
+You can create lookup tables by uploading files or saving query results, and then manage and use them to enrich your queries directly within ![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations") **Investigations**. For instructions, see [Create and use lookup tables](enhance-results.md#lookup "Organize and interpret query outputs across investigations --- from performance analysis to threat detection."). For details on how lookup data works, see [Lookup data in Grail](../../platform/grail/lookup-data.md "Learn about lookup data in Grail.").
 
 ## Performance metrics correlation
 
 Performance metrics correlation enables investigators to view system-level indicatorsâsuch as CPU, memory, or network usageâalongside log data. This helps identify whether performance anomalies align with other events in your investigation and supports more precise root cause analysis.
 
-For details, see [Correlate logs with performance metrics](/docs/secure/investigations/enhance-results#metrics "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
+For details, see [Correlate logs with performance metrics](enhance-results.md#metrics "Organize and interpret query outputs across investigations --- from performance analysis to threat detection.").
 
 ## Related topics
 
-* [Threat hunting and forensics](/docs/secure/use-cases/threat-hunting "Use case scenario for threat hunting and forensics with Investigations.")
-* [DPL Architect](/docs/platform/grail/dynatrace-pattern-language/dpl-architect "Extract fields with Dynatrace Pattern Language Architect.")
-* [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Use DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.")
-* [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
-* [DQL functions](/docs/platform/grail/dynatrace-query-language/functions "A list of DQL functions.")
-* [DQL operators](/docs/platform/grail/dynatrace-query-language/operators "A list of DQL Operators.")
-* [DQL data types](/docs/platform/grail/dynatrace-query-language/data-types "A list of DQL data types.")
-* [Conversion and casting functions](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions "A list of DQL conversion and casting functions.")
-* [DQL selection and modification commands](/docs/platform/grail/dynatrace-query-language/commands/selection-and-modification-commands "DQL selection and modification commands")
+* [Threat hunting and forensics](../use-cases/threat-hunting.md "Use case scenario for threat hunting and forensics with Investigations.")
+* [DPL Architect](../../platform/grail/dynatrace-pattern-language/dpl-architect.md "Extract fields with Dynatrace Pattern Language Architect.")
+* [Notebooks](../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
+* [Dynatrace Query Language](../../platform/grail/dynatrace-query-language.md "How to use Dynatrace Query Language.")
+* [Use DQL queries](../../platform/grail/dynatrace-query-language/dql-guide.md "Find out how DQL works and what are DQL key concepts.")
+* [DQL commands](../../platform/grail/dynatrace-query-language/commands.md "A list of DQL commands.")
+* [DQL functions](../../platform/grail/dynatrace-query-language/functions.md "A list of DQL functions.")
+* [DQL operators](../../platform/grail/dynatrace-query-language/operators.md "A list of DQL Operators.")
+* [DQL data types](../../platform/grail/dynatrace-query-language/data-types.md "A list of DQL data types.")
+* [Conversion and casting functions](../../platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions.md "A list of DQL conversion and casting functions.")
+* [DQL selection and modification commands](../../platform/grail/dynatrace-query-language/commands/selection-and-modification-commands.md "DQL selection and modification commands")

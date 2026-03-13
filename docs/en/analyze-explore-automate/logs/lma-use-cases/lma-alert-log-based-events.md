@@ -19,14 +19,14 @@ Using Davis events based on logs you will get immediate alerts once the log reco
 
 Follow this guide to learn more about extracting events from logs.
 
-If you need to set thresholds for your alerts, you should follow the instructions in [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.").
+If you need to set thresholds for your alerts, you should follow the instructions in [Set up custom alerts based on metrics extracted from logs](lma-alert-log-based-metrics.md "How to create and configure Davis problems and custom alerts with metrics based on logs.").
 
 ## Prerequisites
 
 Optional
 
-* You have set up [log ingestion](/docs/analyze-explore-automate/logs/lma-log-ingestion "Stream log data to Dynatrace.").
-* You have the necessary permissions to configure OpenPipeline. For example, the permissions granted with the default policy: [Data Processing and Storage](/docs/manage/identity-access-management/permission-management/default-policies#data-access "Dynatrace default policies reference").
+* You have set up [log ingestion](../lma-log-ingestion.md "Stream log data to Dynatrace.").
+* You have the necessary permissions to configure OpenPipeline. For example, the permissions granted with the default policy: [Data Processing and Storage](../../../manage/identity-access-management/permission-management/default-policies.md#data-access "Dynatrace default policies reference").
 
 ## Steps
 
@@ -61,7 +61,7 @@ If your DQL query uses `parse`, `fieldAdd`, or other transformations, you should
    3. Select  >  **Edit**.
       The pipeline configuration page appears.
    4. Select **Data extraction** tab and add a **Davis event** processor.
-2. Set the [DQL matcher](/docs/platform/openpipeline/reference/dql-matcher-in-openpipeline "Examine specific DQL functions and logical operators for log processing.").
+2. Set the [DQL matcher](../../../platform/openpipeline/reference/dql-matcher-in-openpipeline.md "Examine specific DQL functions and logical operators for log processing.").
    A matcher sets the condition for the event that is to be extracted.
    It is a subset of filtering conditions in a single DQL statement.
 
@@ -74,13 +74,13 @@ If your DQL query uses `parse`, `fieldAdd`, or other transformations, you should
    If you use segments or your permissions are set at the record level, you should include those conditions in the matcher.
 
    There are situations when a matcher can't be easily extracted from a DQL statement.
-   In these cases, you can [create log alerts for a log event or summary of log data](/docs/dynatrace-intelligence/use-cases/create-alert-in-logs "Create log alerts for a specific log event or summary of log data").
+   In these cases, you can [create log alerts for a log event or summary of log data](../../../dynatrace-intelligence/use-cases/create-alert-in-logs.md "Create log alerts for a specific log event or summary of log data").
 3. Set event properties.
 
    Event properties are metadata that your event will contain when it is triggered.
    You can remap any field from the log record.
 
-   In our example, we will remap the `dt.source_entity` field to have the alerts connected to entities for [Dynatrace Intelligence root cause analysis](/docs/dynatrace-intelligence/root-cause-analysis "How Dynatrace analyzes problems to determine their root cause.").
+   In our example, we will remap the `dt.source_entity` field to have the alerts connected to entities for [Dynatrace Intelligence root cause analysis](../../../dynatrace-intelligence/root-cause-analysis.md "How Dynatrace analyzes problems to determine their root cause.").
 
    In **Event template**, set the following key/value pairs.
 
@@ -107,18 +107,18 @@ Extracting Davis events from logs is ideal for simple alerting when thresholds a
 * It provides immediate/real-time alerting.
 * Additional overview of matching data overtime is not required.
 
-Once you're extracting events, you can use these to trigger automations using simple workflows as described in [Create a simple workflow in Dynatrace Workflows](/docs/analyze-explore-automate/workflows/simple-workflow "Build and run a simple workflow.").
+Once you're extracting events, you can use these to trigger automations using simple workflows as described in [Create a simple workflow in Dynatrace Workflows](../../workflows/simple-workflow.md "Build and run a simple workflow.").
 
 ## Further reading
 
 More information about event properties is available at:
 
-* [Davis Event Reports](/docs/semantic-dictionary/model/davis#event "Get to know the Semantic Dictionary models related to Davis AI.")
-* [Custom-defined event correlation](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation#custom-defined-event-correlation "Gain an understanding of the Events section on each host, process, and service overview page.")
+* [Davis Event Reports](../../../../common/semantic-dictionary/model/davis.md#event "Get to know the Semantic Dictionary models related to Davis AI.")
+* [Custom-defined event correlation](../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation.md#custom-defined-event-correlation "Gain an understanding of the Events section on each host, process, and service overview page.")
 
 ## Related topics
 
-* [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.")
-* [Log metrics (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
-* [Log events (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-events "Learn how to create and use Dynatrace log events to analyze log data.")
-* [Alerting and notifications](/docs/analyze-explore-automate/alerting-and-notifications "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")
+* [Set up custom alerts based on metrics extracted from logs](lma-alert-log-based-metrics.md "How to create and configure Davis problems and custom alerts with metrics based on logs.")
+* [Log metrics (Logs Classic)](../../log-monitoring/analyze-log-data/log-metrics.md "Learn how to create and use Dynatrace log metrics to analyze log data.")
+* [Log events (Logs Classic)](../../log-monitoring/analyze-log-data/log-events.md "Learn how to create and use Dynatrace log events to analyze log data.")
+* [Alerting and notifications](../../alerting-and-notifications.md "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")

@@ -26,7 +26,7 @@ scraped: 2026-03-05T21:38:12.122586
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Включите мониторинг Azure в Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](../azure-monitoring-guide/azure-enable-service-monitoring.md "Включите мониторинг Azure в Dynatrace.").
 
 ## Просмотр метрик сервиса
 

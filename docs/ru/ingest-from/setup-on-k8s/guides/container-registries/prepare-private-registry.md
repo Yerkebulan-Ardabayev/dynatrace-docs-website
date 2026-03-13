@@ -31,7 +31,7 @@ scraped: 2026-03-06T21:31:22.301535
 
 ## Контейнерные образы Dynatrace
 
-Неизменяемые и подписанные контейнерные образы Dynatrace доступны в различных реестрах контейнеров. Для получения дополнительной информации о репозиториях и тегах см. [поддерживаемые публичные реестры](/docs/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Использование публичного реестра").
+Неизменяемые и подписанные контейнерные образы Dynatrace доступны в различных реестрах контейнеров. Для получения дополнительной информации о репозиториях и тегах см. [поддерживаемые публичные реестры](use-public-registry.md#supported-public-registries "Использование публичного реестра").
 
 Мы настоятельно рекомендуем выбирать один из наших поддерживаемых публичных реестров для копирования контейнерных образов.
 
@@ -41,7 +41,7 @@ scraped: 2026-03-06T21:31:22.301535
 
 ### Варианты наблюдаемости
 
-В зависимости от выбранных [вариантов наблюдаемости](/docs/ingest-from/setup-on-k8s/deployment#observability-options-for-kubernetes "Развёртывание Dynatrace Operator в Kubernetes"), вам может потребоваться скопировать только необходимые образы. Следующая таблица описывает связи между образами Dynatrace и вариантами наблюдаемости.
+В зависимости от выбранных [вариантов наблюдаемости](../../deployment.md#observability-options-for-kubernetes "Развёртывание Dynatrace Operator в Kubernetes"), вам может потребоваться скопировать только необходимые образы. Следующая таблица описывает связи между образами Dynatrace и вариантами наблюдаемости.
 
 1
 
@@ -57,7 +57,7 @@ scraped: 2026-03-06T21:31:22.301535
 
 ### Проверка подписей образов
 
-Все наши неизменяемые и подписанные контейнерные образы соответствуют лучшим практикам, повышая безопасность и защищая от атак на цепочку поставок. Чтобы узнать, как проверять подписи и гарантировать целостность программного обеспечения, см. [Проверка подписей образов Dynatrace](/docs/ingest-from/setup-on-k8s/guides/container-registries/verify-image-signature "Проверка подписей образов Dynatrace").
+Все наши неизменяемые и подписанные контейнерные образы соответствуют лучшим практикам, повышая безопасность и защищая от атак на цепочку поставок. Чтобы узнать, как проверять подписи и гарантировать целостность программного обеспечения, см. [Проверка подписей образов Dynatrace](verify-image-signature.md "Проверка подписей образов Dynatrace").
 
 ## Копирование контейнерных образов Dynatrace
 
@@ -73,7 +73,7 @@ Docker CLI
 
 Благодаря поддержке удобного копирования мультиархитектурных образов и подписей[1](#fn-2-1-def), мы настоятельно рекомендуем использовать CLI Skopeo для копирования контейнерных образов. Подробнее о CLI Skopeo см. [репозиторий Skopeo на GitHub](https://github.com/containers/skopeo).
 
-В следующих инструкциях обязательно заменяйте `<tag>` на доступную версию (см. раздел [Поддерживаемые публичные реестры](/docs/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Использование публичного реестра")).
+В следующих инструкциях обязательно заменяйте `<tag>` на доступную версию (см. раздел [Поддерживаемые публичные реестры](use-public-registry.md#supported-public-registries "Использование публичного реестра")).
 
 #### Копирование образа Dynatrace Operator
 
@@ -145,7 +145,7 @@ docker://registry.my-company.com/dynatrace-k8s-node-config-collector:<tag>
 
 ### Поддержка мониторинга Classic Full-Stack
 
-[Мониторинг Classic Full-Stack](/docs/ingest-from/setup-on-k8s/how-it-works#classic "Подробное описание работы развёртывания в Kubernetes") требует предварительно настроенный образ Dynatrace OneAgent, который доступен **только** через встроенный реестр Dynatrace.
+[Мониторинг Classic Full-Stack](../../how-it-works.md#classic "Подробное описание работы развёртывания в Kubernetes") требует предварительно настроенный образ Dynatrace OneAgent, который доступен **только** через встроенный реестр Dynatrace.
 
 Следовательно, образ OneAgent должен быть реплицирован через встроенный реестр Dynatrace, как описано ниже.
 
@@ -162,8 +162,8 @@ docker://registry.my-company.com/dynatrace-k8s-node-config-collector:<tag>
 
 Поскольку встроенный реестр Dynatrace требует аутентификации, вам необходимо знать идентификатор вашей среды мониторинга и предоставить PaaS-токен для входа:
 
-* Чтобы определить `<your-environment-id>`, см. [идентификатор среды](/docs/discover-dynatrace/get-started/monitoring-environment "Описание работы со средами мониторинга.").
-* Чтобы определить `<your-paas-token>`, см. [PaaS-токен](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Описание концепции токена доступа и его областей действия.").
+* Чтобы определить `<your-environment-id>`, см. [идентификатор среды](../../../../discover-dynatrace/get-started/monitoring-environment.md "Описание работы со средами мониторинга.").
+* Чтобы определить `<your-paas-token>`, см. [PaaS-токен](../../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens.md#paas-token "Описание концепции токена доступа и его областей действия.").
 
 Пример входа с использованием CLI *Skopeo*:
 
@@ -190,8 +190,8 @@ skopeo login -u <your-environment-id> -p <your-paas-token> <your-environment-url
 
 Чтобы узнать, какие версии OneAgent доступны для репликации, вы можете использовать следующие API развёртывания:
 
-* [Список доступных версий OneAgent](/docs/dynatrace-api/environment-api/deployment/oneagent/get-available-versions "Список доступных версий OneAgent через API Dynatrace.") для получения обзора доступных версий OneAgent.
-* [Просмотр последней версии OneAgent](/docs/dynatrace-api/environment-api/deployment/oneagent/get-version-latest "Просмотр последней версии OneAgent через API Dynatrace."), если вы хотите узнать версию OneAgent, стоящую за тегом `latest`, или автоматизировать репликацию образа OneAgent.
+* [Список доступных версий OneAgent](../../../../dynatrace-api/environment-api/deployment/oneagent/get-available-versions.md "Список доступных версий OneAgent через API Dynatrace.") для получения обзора доступных версий OneAgent.
+* [Просмотр последней версии OneAgent](../../../../dynatrace-api/environment-api/deployment/oneagent/get-version-latest.md "Просмотр последней версии OneAgent через API Dynatrace."), если вы хотите узнать версию OneAgent, стоящую за тегом `latest`, или автоматизировать репликацию образа OneAgent.
 
 В следующих примерах показано, как версии OneAgent соответствуют тегам образов, доступным во встроенном реестре Dynatrace:
 
@@ -209,9 +209,9 @@ docker://<your_environment_domain_name>/linux/oneagent:<tag-with-raw-suffix> \
 docker://registry.my-company.com/dynatrace-oneagent-classic:<tag-with-raw-suffix>
 ```
 
-Для получения дополнительной информации о настройке пользовательского ресурса DynaKube см. наши примеры [использования приватных реестров](/docs/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Использование приватного реестра").
+Для получения дополнительной информации о настройке пользовательского ресурса DynaKube см. наши примеры [использования приватных реестров](use-private-registry.md "Использование приватного реестра").
 
 ## Связанные темы
 
-* [Использование приватного реестра](/docs/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Использование приватного реестра")
-* [Проверка подписей образов Dynatrace](/docs/ingest-from/setup-on-k8s/guides/container-registries/verify-image-signature "Проверка подписей образов Dynatrace")
+* [Использование приватного реестра](use-private-registry.md "Использование приватного реестра")
+* [Проверка подписей образов Dynatrace](verify-image-signature.md "Проверка подписей образов Dynatrace")

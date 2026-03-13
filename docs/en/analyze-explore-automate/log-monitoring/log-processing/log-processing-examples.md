@@ -16,21 +16,21 @@ Log Monitoring Classic
 
 Depending on the rules that you create, you can customize incoming log data according to your needs. See below for example data processing scenarios.
 
-* [Example 1](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample1 "Example log processing scenarios.") - Fix unrecognized timestamp and loglevel visible in the log viewer based on matched log source.
-* [Example 2](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample2 "Example log processing scenarios.") - Define searchable custom attribute using the extracted identifier from a matched phrase in the log content.
-* [Example 3](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample3 "Example log processing scenarios.") - Create billed duration metric for AWS service using log data.
-* [Example 4](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample4 "Example log processing scenarios.") - Parse out specific fields from JSON content.
-* [Example 5](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample5 "Example log processing scenarios.") - Parse out attributes from different formats within a single pattern expression.
-* [Example 6](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample6 "Example log processing scenarios.") - Multiple PARSE commands within a single processing rule.
-* [Example 7](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample7 "Example log processing scenarios.") - Use specialized matchers.
-* [Example 8](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample8 "Example log processing scenarios.") - Manipulate any attribute from log (not only content).
-* [Example 9](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample9 "Example log processing scenarios.") - Add a new attribute to the current log event structure.
-* [Example 10](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample10 "Example log processing scenarios.") - Basic math on attributes.
-* [Example 11](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample11 "Example log processing scenarios.") - Drop a specific attribute from log message.
-* [Example 12](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample12 "Example log processing scenarios.") - Drop the whole log event.
-* [Example 13](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample13 "Example log processing scenarios.") - Mask any attribute.
-* [Example 14](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample14 "Example log processing scenarios.") - Rename attributes.
-* [Example 15](/docs/analyze-explore-automate/log-monitoring/log-processing/log-processing-examples#lpexample15 "Example log processing scenarios.") - Input field data types.
+* [Example 1](log-processing-examples.md#lpexample1 "Example log processing scenarios.") - Fix unrecognized timestamp and loglevel visible in the log viewer based on matched log source.
+* [Example 2](log-processing-examples.md#lpexample2 "Example log processing scenarios.") - Define searchable custom attribute using the extracted identifier from a matched phrase in the log content.
+* [Example 3](log-processing-examples.md#lpexample3 "Example log processing scenarios.") - Create billed duration metric for AWS service using log data.
+* [Example 4](log-processing-examples.md#lpexample4 "Example log processing scenarios.") - Parse out specific fields from JSON content.
+* [Example 5](log-processing-examples.md#lpexample5 "Example log processing scenarios.") - Parse out attributes from different formats within a single pattern expression.
+* [Example 6](log-processing-examples.md#lpexample6 "Example log processing scenarios.") - Multiple PARSE commands within a single processing rule.
+* [Example 7](log-processing-examples.md#lpexample7 "Example log processing scenarios.") - Use specialized matchers.
+* [Example 8](log-processing-examples.md#lpexample8 "Example log processing scenarios.") - Manipulate any attribute from log (not only content).
+* [Example 9](log-processing-examples.md#lpexample9 "Example log processing scenarios.") - Add a new attribute to the current log event structure.
+* [Example 10](log-processing-examples.md#lpexample10 "Example log processing scenarios.") - Basic math on attributes.
+* [Example 11](log-processing-examples.md#lpexample11 "Example log processing scenarios.") - Drop a specific attribute from log message.
+* [Example 12](log-processing-examples.md#lpexample12 "Example log processing scenarios.") - Drop the whole log event.
+* [Example 13](log-processing-examples.md#lpexample13 "Example log processing scenarios.") - Mask any attribute.
+* [Example 14](log-processing-examples.md#lpexample14 "Example log processing scenarios.") - Rename attributes.
+* [Example 15](log-processing-examples.md#lpexample15 "Example log processing scenarios.") - Input field data types.
 
 ### Example 1: Fix unrecognized timestamp and loglevel
 
@@ -189,7 +189,7 @@ In this example, you see the following log line in the log file (not stored in D
 7. Go to **Settings** > **Log Monitoring** > **Custom attributes** and select **Add custom attribute**.
 8. Create a custom attribute based on a parsed-out product identifier (`my.product.id`).  
    **Key**: `my.product.id`  
-   For details see, [Log custom attributes (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-custom-attributes "Learn how to create and use custom attributes during log data ingestion.").
+   For details see, [Log custom attributes (Logs Classic)](../analyze-log-data/log-custom-attributes.md "Learn how to create and use custom attributes during log data ingestion.").
 9. Save your custom attribute.
 10. Now you can search and filter the log data by the `my.product.id` attribute in the log viewer.
 
@@ -367,7 +367,7 @@ Additionally, that log record contains the `cloud.provider` attribute with the `
    **Query**: `cloud.provider="aws" and content="Billed Duration"`  
    **Measure**: `Attribute value`  
    **Attribute**: `aws.billed.duration`  
-   For details see, [Log metrics (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.").
+   For details see, [Log metrics (Logs Classic)](../analyze-log-data/log-metrics.md "Learn how to create and use Dynatrace log metrics to analyze log data.").
 9. Save your log metric.
 10. The `log.aws.billed.duration` metric is visible in Data Explorer, and you can use it throughout Dynatrace like any other metric. You can add it to your dashboard, include it in analysis, and even use it to create alerts.
 

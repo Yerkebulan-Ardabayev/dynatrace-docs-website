@@ -21,7 +21,7 @@ scraped: 2026-03-06T21:10:37.879847
 
 ## Доступ и навигация
 
-Новый анализ времени отклика доступен в виде отдельной вкладки **Response Time** в [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](/docs/observe/application-observability/services/services-app "Maintain centralized control over service health, performance, and resources with the Services app."). Он разработан для поддержки как контекстных, так и исследовательских рабочих процессов.
+Новый анализ времени отклика доступен в виде отдельной вкладки **Response Time** в [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](services-app.md "Maintain centralized control over service health, performance, and resources with the Services app."). Он разработан для поддержки как контекстных, так и исследовательских рабочих процессов.
 
 ### Анализ времени отклика для конкретного сервиса
 
@@ -33,7 +33,7 @@ scraped: 2026-03-06T21:10:37.879847
 
 ### Исследовательский доступ
 
-Чтобы изучить сервисы и определить наиболее медленные из них, вручную перейдите на вкладку **Response Time** в [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](/docs/observe/application-observability/services/services-app "Maintain centralized control over service health, performance, and resources with the Services app.").
+Чтобы изучить сервисы и определить наиболее медленные из них, вручную перейдите на вкладку **Response Time** в [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](services-app.md "Maintain centralized control over service health, performance, and resources with the Services app.").
 
 * Настройте фильтры для исследования сбоев по сервисам, конечным точкам и временным периодам.
 * Сравните с другими временными периодами.
@@ -42,8 +42,8 @@ scraped: 2026-03-06T21:10:37.879847
 
 Чтобы выяснить, что работает медленно
 
-1. Перейдите в [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](/docs/observe/application-observability/services/services-app "Maintain centralized control over service health, performance, and resources with the Services app.") и выберите вкладку **Response Time**.
-2. Примените [сегменты](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") и фильтры для фокусировки на нужных сервисах и конечных точках.
+1. Перейдите в [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](services-app.md "Maintain centralized control over service health, performance, and resources with the Services app.") и выберите вкладку **Response Time**.
+2. Примените [сегменты](../../../manage/segments.md "Use segments to logically structure and conveniently filter observability data across apps.") и фильтры для фокусировки на нужных сервисах и конечных точках.
 
    Для анализа отдельного сервиса вы также получаете разбивку вклада с классификацией вызовов по:
 

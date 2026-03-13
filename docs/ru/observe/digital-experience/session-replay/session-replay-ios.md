@@ -19,11 +19,11 @@ scraped: 2026-03-05T21:37:06.750651
 
 ## Полный Session Replay
 
-[Session Replay](/docs/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") на iOS позволяет записывать взаимодействия ваших клиентов с мобильным приложением и воспроизводить каждое нажатие, свайп, поворот экрана в формате, похожем на видео.
+[Session Replay](../session-replay.md "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") на iOS позволяет записывать взаимодействия ваших клиентов с мобильным приложением и воспроизводить каждое нажатие, свайп, поворот экрана в формате, похожем на видео.
 
 ## Session Replay при сбоях
 
-Кроме того, вы можете использовать его для получения дополнительного контекста при анализе сбоев в виде видеоподобных записей экрана, воспроизводящих действия пользователя перед обнаруженным [сбоем](/docs/observe/digital-experience/rum-concepts/user-and-error-events#crash "Learn about user and error events and the types of user and error events captured by Dynatrace.").
+Кроме того, вы можете использовать его для получения дополнительного контекста при анализе сбоев в виде видеоподобных записей экрана, воспроизводящих действия пользователя перед обнаруженным [сбоем](../rum-concepts/user-and-error-events.md#crash "Learn about user and error events and the types of user and error events captured by Dynatrace.").
 
 ## Предварительные требования
 
@@ -48,10 +48,10 @@ scraped: 2026-03-05T21:37:06.750651
 * Для гибридных приложений Session Replay поддерживается только для нативной части приложения. Для браузерной части Session Replay поддерживает только события загрузки веб-страниц.
 * Мы рекомендуем не использовать другие инструменты отчётности о сбоях совместно с Dynatrace Session Replay.
 * Session Replay может записывать только определённые события. Однако если вам нужно отслеживать конкретное представление или событие, не поддерживаемое по умолчанию, вы можете [записать пользовательское событие](#capture-custom-events).
-* Воспроизводить пользовательские сессии, записанные с помощью Session Replay, можно только в [определённых браузерах](/docs/discover-dynatrace/get-started/dynatrace-ui/dynatrace-web-ui-requirements#session-replay "Find out which browsers Dynatrace applications can run on.").
+* Воспроизводить пользовательские сессии, записанные с помощью Session Replay, можно только в [определённых браузерах](../../../discover-dynatrace/get-started/dynatrace-ui/dynatrace-web-ui-requirements.md#session-replay "Find out which browsers Dynatrace applications can run on.").
 * Для приложений iOS 26, созданных с помощью Xcode 26, функциональность маскирования доступна только с OneAgent для iOS версии 8.323+.
 
-Подробнее см. в разделе [Технические ограничения Session Replay для веб-приложений](/docs/observe/digital-experience/session-replay/session-replay-restrictions-web "Learn which restrictions apply to Session Replay.").
+Подробнее см. в разделе [Технические ограничения Session Replay для веб-приложений](session-replay-restrictions-web.md "Learn which restrictions apply to Session Replay.").
 
 Session Replay — это видеоподобная реконструкция взаимодействий пользователя с мобильными приложениями, использующая записанные события и данные. Из-за такого подхода воспроизведённые сессии могут отличаться от фактического пользовательского опыта. Known issues
 
@@ -153,7 +153,7 @@ try? maskingConfiguration.removeNonMaskedView(viewIds: \["nonMasked_view_id"\])
 
 ## Включение журналов Session Replay
 
-Вы можете включить журналы Session Replay так же, как и для OneAgent. Подробнее см. в разделе [Отладочное журналирование OneAgent для iOS](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/logging-for-ios "Turn on debug logging for OneAgent.").
+Вы можете включить журналы Session Replay так же, как и для OneAgent. Подробнее см. в разделе [Отладочное журналирование OneAgent для iOS](../mobile-applications/instrument-ios-app/customization/logging-for-ios.md "Turn on debug logging for OneAgent.").
 
 ## Запись пользовательских событий
 
@@ -241,5 +241,5 @@ AgentManager.setTransmissionMode(.wifi) // .data by default
 
 ## Связанные темы
 
-* [Session Replay](/docs/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.")
-* [Просмотр отчётов о сбоях мобильных приложений](/docs/observe/digital-experience/mobile-applications/analyze-and-use/crash-reports-mobile "Check the latest crash reports for your mobile applications.")
+* [Session Replay](../session-replay.md "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.")
+* [Просмотр отчётов о сбоях мобильных приложений](../mobile-applications/analyze-and-use/crash-reports-mobile.md "Check the latest crash reports for your mobile applications.")

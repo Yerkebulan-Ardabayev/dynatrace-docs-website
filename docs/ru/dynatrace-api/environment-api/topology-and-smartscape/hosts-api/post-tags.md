@@ -12,9 +12,9 @@ scraped: 2026-03-05T21:26:49.944416
 * Updated on Mar 22, 2023
 * Deprecated
 
-Назначает [пользовательские теги](/docs/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.") указанному хосту. Необходимо указать только значение тега. Контекст `CONTEXTLESS` будет назначен автоматически.
+Назначает [пользовательские теги](../../../../../common/manage/tags-and-metadata.md "Use tags and metadata to organize data in your Dynatrace environment.") указанному хосту. Необходимо указать только значение тега. Контекст `CONTEXTLESS` будет назначен автоматически.
 
-Использование данного API ограничено тегами, содержащими только значение. Для назначения тегов формата «ключ:значение» используйте [Custom tags API](/docs/dynatrace-api/environment-api/custom-tags/post-tags "Assign custom tags to monitored entities via Dynatrace API.").
+Использование данного API ограничено тегами, содержащими только значение. Для назначения тегов формата «ключ:значение» используйте [Custom tags API](../../custom-tags/post-tags.md "Assign custom tags to monitored entities via Dynatrace API.").
 
 Запрос принимает полезную нагрузку `application/json`.
 
@@ -27,7 +27,7 @@ scraped: 2026-03-05T21:26:49.944416
 
 Для выполнения этого запроса необходим токен доступа с областью действия `DataExport`.
 
-Сведения о получении и использовании токена см. в разделе [Tokens and authentication](/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Сведения о получении и использовании токена см. в разделе [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
 ## Параметры
 
@@ -256,4 +256,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts/HOST-B
 
 ## Связанные темы
 
-* [Hosts Classic](/docs/observe/infrastructure-observability/hosts "Learn how to get started with host monitoring, understand which measures contribute to host health, how to set up custom host names, and more.")
+* [Hosts Classic](../../../../observe/infrastructure-observability/hosts.md "Learn how to get started with host monitoring, understand which measures contribute to host health, how to set up custom host names, and more.")

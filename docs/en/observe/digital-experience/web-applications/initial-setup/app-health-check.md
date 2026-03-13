@@ -25,7 +25,7 @@ To access the **Application health check** page
 
 The following sections are available on the **Application health check** page:
 
-[**RUM JavaScript version distribution**](/docs/observe/digital-experience/web-applications/initial-setup/app-health-check#rum-js-version "The Application health check page allows you to analyze the health of your application, see which RUM JavaScript versions are currently in use, or confirm that the RUM JavaScript is injected correctly.")[**RUM status**](/docs/observe/digital-experience/web-applications/initial-setup/app-health-check#rum-status "The Application health check page allows you to analyze the health of your application, see which RUM JavaScript versions are currently in use, or confirm that the RUM JavaScript is injected correctly.")[**RUM JavaScript injection diagnostic**s](/docs/observe/digital-experience/web-applications/initial-setup/app-health-check#injection-diagnostics "The Application health check page allows you to analyze the health of your application, see which RUM JavaScript versions are currently in use, or confirm that the RUM JavaScript is injected correctly.")
+[**RUM JavaScript version distribution**](app-health-check.md#rum-js-version "The Application health check page allows you to analyze the health of your application, see which RUM JavaScript versions are currently in use, or confirm that the RUM JavaScript is injected correctly.")[**RUM status**](app-health-check.md#rum-status "The Application health check page allows you to analyze the health of your application, see which RUM JavaScript versions are currently in use, or confirm that the RUM JavaScript is injected correctly.")[**RUM JavaScript injection diagnostic**s](app-health-check.md#injection-diagnostics "The Application health check page allows you to analyze the health of your application, see which RUM JavaScript versions are currently in use, or confirm that the RUM JavaScript is injected correctly.")
 
 ![Application health check page](https://dt-cdn.net/images/app-health-check-3030-5a500c4f25.png)
 
@@ -58,4 +58,4 @@ When a diagnostics run is finished, the following information is available:
 
 Select **Show more** to view the injection failure reasons and the top five URLs for each issue.
 
-You won't see the **RUM JavaScript injection diagnostics** section if your application is not an automatically injected applicationâspecifically, if you [manually inserted the RUM JavaScript](/docs/observe/digital-experience/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.") into your application's pages.
+You won't see the **RUM JavaScript injection diagnostics** section if your application is not an automatically injected applicationâspecifically, if you [manually inserted the RUM JavaScript](set-up-agentless-real-user-monitoring.md "Set up agentless monitoring for your web applications.") into your application's pages.

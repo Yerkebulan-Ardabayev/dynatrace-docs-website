@@ -250,7 +250,7 @@ record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, La
 * ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Инфраструктура и операции") **Перейти к хосту** — открывает выбор в ![Инфраструктура и операции](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Инфраструктура и операции") **Инфраструктура и операции**.
 
   В целом, если есть рекомендуемые приложения для открытия выбранного элемента, меню предлагает прямые ссылки на эти приложения, за которыми следует вариант **Открыть с** для выбора другой целевой приложения.
-* **Открыть с** — для подробностей см. [Переходы и навигация](/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation "Перейти из панелей управления и блокнотов, используя ссылки на основе намерений или URL-адресов.").
+* **Открыть с** — для подробностей см. [Переходы и навигация](../drilldowns-and-navigation.md "Перейти из панелей управления и блокнотов, используя ссылки на основе намерений или URL-адресов.").
 ## Заголовок
 
 Используйте поле заголовка в верхней части панели опций (первоначально `Untitled tile` или `Untitled section`) для добавления заголовка к вашей плитке на панели или разделу тетради.
@@ -269,7 +269,7 @@ record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, La
 
 ## Визуализация
 
-Если вы не уверены, что выбрали правильную визуализацию, используйте [селектор визуализаций](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") для попытки разных визуализаций.
+Если вы не уверены, что выбрали правильную визуализацию, используйте [селектор визуализаций](../edit-visualizations.md#select-visualization "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") для попытки разных визуализаций.
 
 ## Вид
 

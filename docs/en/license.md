@@ -25,7 +25,7 @@ The Dynatrace Platform Subscription (DPS) is more than a licensing modelâit
 DPS empowers organizations to consume any Dynatrace capability, at any volume, at any time, under a single, transparent commitment.
 Itâs designed to eliminate friction, simplify operations, and scale effortlessly with your business.
 
-DPS is the licensing foundation for Dynatraceâs latest platform innovations, including [AI observability](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes generative AI (LLM) models and AI SaaS services, and much more."), [Grail](/docs/platform/grail "Insights on what and how you can query Dynatrace data."), [AppEngine](/docs/platform/appengine "Develop feature-rich Dynatrace apps for you and the world!"), and [AutomationEngine](/docs/platform/automationengine "Combine observability, security, and business data with causal AI to easily automate BizDevSecOps workflows at enterprise scale.").
+DPS is the licensing foundation for Dynatraceâs latest platform innovations, including [AI observability](observe/dynatrace-for-ai-observability.md "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes generative AI (LLM) models and AI SaaS services, and much more."), [Grail](platform/grail.md "Insights on what and how you can query Dynatrace data."), [AppEngine](platform/appengine.md "Develop feature-rich Dynatrace apps for you and the world!"), and [AutomationEngine](platform/automationengine.md "Combine observability, security, and business data with causal AI to easily automate BizDevSecOps workflows at enterprise scale.").
 
 Dynatrace meters usage based on Coordinated Universal Time (UTC).
 All references to time and date are therefore to be understood as UTC+00:00.
@@ -34,10 +34,10 @@ Prerequisites
 
 * Unless otherwise stated, the consumption details explained here apply to the current Dynatrace Platform Subscription.
 
-  + If you had early access to DPS licensing (prior to April 2023), please refer to the [earlier version of DPS documentation](/docs/license/subscription-and-license/subscription-and-license-dps "View license and subscription usage and consumption history Dynatrace Platform subscription licenses that were signed prior to April, 2023.").
-  + If you have a Dynatrace classic licensing agreement, please refer to [classic licensing documentation](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing.").
+  + If you had early access to DPS licensing (prior to April 2023), please refer to the [earlier version of DPS documentation](license/subscription-and-license/subscription-and-license-dps.md "View license and subscription usage and consumption history Dynatrace Platform subscription licenses that were signed prior to April, 2023.").
+  + If you have a Dynatrace classic licensing agreement, please refer to [classic licensing documentation](license/monitoring-consumption-classic.md "Understand how Dynatrace monitoring consumption is calculated for classic licensing.").
 
-* Certain features of DPS, especially those related to **Account Management**, require specific [DPS permissions](/docs/license/dps-permissions "How permissions are set with the Dynatrace Platform Subscription.").
+* Certain features of DPS, especially those related to **Account Management**, require specific [DPS permissions](license/dps-permissions.md "How permissions are set with the Dynatrace Platform Subscription.").
 
 Get started
 
@@ -48,28 +48,28 @@ The following pages give you an overview of how to get started with DPS, from pl
 [01Understanding DPS capabilities
 
 * Explanation
-* How different DPS capabilities work and how consumption is calculated and billed.](/docs/license/capabilities)[02Your license lifecycle
+* How different DPS capabilities work and how consumption is calculated and billed.](license/capabilities.md)[02Your license lifecycle
 
 * Explanation
-* Understand your Dynatrace DPS or Classic license lifecycle, and how it affects your consumption of Dynatrace services.](/docs/license/license-lifecycle)[03Access your DPS cost overview
+* Understand your Dynatrace DPS or Classic license lifecycle, and how it affects your consumption of Dynatrace services.](license/license-lifecycle.md)[03Access your DPS cost overview
 
 * How-to guide
-* View license and subscription usage and consumption history for Dynatrace SaaS, Dynatrace Managed, and the Dynatrace platform subscription model.](/docs/license/cost-overview)[04Allocate your DPS costs
+* View license and subscription usage and consumption history for Dynatrace SaaS, Dynatrace Managed, and the Dynatrace platform subscription model.](license/cost-overview.md)[04Allocate your DPS costs
 
 * How-to guide
-* Learn how to allocate costs to cost centers and products.](/docs/license/cost-allocation)[05Set budget alerts
+* Learn how to allocate costs to cost centers and products.](license/cost-allocation.md)[05Set budget alerts
 
 * How-to guide
-* Learn how to configure budgets in Dynatrace.](/docs/license/budget-alerts)[06Customize cost alerts
+* Learn how to configure budgets in Dynatrace.](license/budget-alerts.md)[06Customize cost alerts
 
 * How-to guide
-* Learn how to use the Cost Monitors feature to make forecasts and cost events.](/docs/license/cost-monitors)[07Billing report
+* Learn how to use the Cost Monitors feature to make forecasts and cost events.](license/cost-monitors.md)[07Billing report
 
 * Explanation
-* View your billing to see details about accrued costs per booking date. Use this view to determine which Dynatrace monitoring costs were recognized and booked on which day.](/docs/license/billing-reports)[08Dynatrace Platform Subscription for hybrid setups (DPS for Hybrid)
+* View your billing to see details about accrued costs per booking date. Use this view to determine which Dynatrace monitoring costs were recognized and booked on which day.](license/billing-reports.md)[08Dynatrace Platform Subscription for hybrid setups (DPS for Hybrid)
 
 * Explanation
-* DPS for Hybrid lets you share one subscription across multiple accounts.](/docs/license/dps-for-hybrid)
+* DPS for Hybrid lets you share one subscription across multiple accounts.](license/dps-for-hybrid.md)
 
 Account Management
 :   Account Management provides forecasting, alerting, drill-downs and real-time insights into your usage patterns. You can also manage Dynatrace license and subscriptions, Dynatrace users, SSO access, and monitor Dynatrace platform adoption and environment health.
