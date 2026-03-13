@@ -24,136 +24,13 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # ===== STAGE 1: Scrape =====
-  scrape:
-    if: ${{ !inputs.skip_scrape }}
+  # ===== UNIFIED PIPELINE =====
+  # All stages run in a single job to share the filesystem.
+  # This fixes the critical bug where scraped files were lost
+  # between separate jobs (each job = fresh runner).
+  pipeline:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-    permissions:
-      contents: write
-
-    outputs:
-      has_changes: ${{ steps.check.outputs.has_changes }}
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-          cache: 'pip'
-
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Scrape documentation
-        id: scrape
-        run: |
-          echo "=== Scraping Dynatrace documentation ==="
-          cd scripts
-          python scrape_docs.py --max-pages ${{ inputs.max_pages || 1000 }} 2>&1 | tail -20
-          echo "scrape_done=true" >> $GITHUB_OUTPUT
-
-      - name: Organize files
-        if: steps.scrape.outputs.scrape_done == 'true'
-        run: |
-          if [ -f scripts/organize_docs.py ]; then
-            python scripts/organize_docs.py
-          fi
-
-      - name: Check for changes
-        id: check
-        run: |
-          if git diff --quiet docs/en/ 2>/dev/null; then
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-            echo "No new content found"
-          else
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-            echo "New content detected"
-          fi
-
-  # ===== STAGE 2: Translate =====
-  translate:
-    needs: scrape
-    if: always() && (needs.scrape.outputs.has_changes == 'true' || inputs.skip_scrape || inputs.force_retranslate)
-    runs-on: ubuntu-latest
-    timeout-minutes: 45
-    permissions:
-      contents: write
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-          cache: 'pip'
-
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Translate to Russian
-        id: translate
-        run: |
-          echo "=== Translating documentation ==="
-          python -c "
-          import sys
-          sys.path.insert(0, 'scripts')
-          from pipeline.translator import TranslationPipeline
-          from pipeline.config import DOCS_EN, DOCS_RU, CACHE_DIR, TERMINOLOGY_FILE
-
-          pipeline = TranslationPipeline(CACHE_DIR, TERMINOLOGY_FILE)
-          if not pipeline.providers:
-              print('WARNING: No translation providers. Set API keys.')
-              sys.exit(0)
-
-          stats = pipeline.translate_directory(DOCS_EN, DOCS_RU, 'ru')
-          print(f'Translated: {stats[\"translated\"]}, Failed: {stats[\"failed\"]}, Skipped: {stats[\"skipped\"]}')
-          " 2>&1 || echo "Translation completed with warnings"
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-        timeout-minutes: 40
-
-      - name: Validate translations
-        run: |
-          python -c "
-          import sys, json
-          sys.path.insert(0, 'scripts')
-          from pipeline.validator import DocumentValidator
-          from pipeline.config import DOCS_DIR
-
-          v = DocumentValidator(DOCS_DIR)
-          issues = v.validate_all()
-          errors = [i for i in issues if i.severity == 'error']
-          print(f'Validation: {len(errors)} errors, {len(issues) - len(errors)} warnings')
-          for e in errors[:10]:
-              print(f'  {e}')
-          "
-
-      - name: Sanitize secrets
-        run: |
-          if [ -f scripts/sanitize_secrets.py ]; then
-            python scripts/sanitize_secrets.py
-          fi
-
-      - name: Run documentation tests
-        run: python scripts/quality/test_docs.py || true
-
-  # ===== STAGE 3: Commit & Deploy =====
-  deploy:
-    needs: translate
-    if: always() && needs.translate.result == 'success'
-    runs-on: ubuntu-latest
+    timeout-minutes: 60
     permissions:
       contents: write
       pages: write
@@ -174,24 +51,99 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install mkdocs-material>=9.5.0 pymdown-extensions>=10.7
+          pip install -r requirements.txt
 
+      # ---------- STAGE 1: Scrape ----------
+      - name: Scrape documentation
+        id: scrape
+        if: ${{ !inputs.skip_scrape }}
+        run: |
+          echo "=== Stage 1: Scraping Dynatrace documentation ==="
+          cd scripts
+          python scrape_docs.py --max-pages ${{ inputs.max_pages || 1000 }} 2>&1 | tail -30
+          echo "scrape_done=true" >> $GITHUB_OUTPUT
+
+      - name: Organize files
+        if: steps.scrape.outputs.scrape_done == 'true'
+        run: |
+          if [ -f scripts/organize_docs.py ]; then
+            python scripts/organize_docs.py
+          fi
+
+      - name: Check for changes
+        id: check
+        run: |
+          if git diff --quiet docs/en/ 2>/dev/null && [ "${{ inputs.force_retranslate }}" != "true" ] && [ "${{ inputs.skip_scrape }}" != "true" ]; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No new content found"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            CHANGED=$(git diff --name-only docs/en/ 2>/dev/null | wc -l)
+            echo "changed_files=$CHANGED" >> $GITHUB_OUTPUT
+            echo "New/changed content detected: $CHANGED files"
+          fi
+
+      # ---------- STAGE 2: Translate ----------
+      - name: Translate to Russian
+        id: translate
+        if: steps.check.outputs.has_changes == 'true' || inputs.force_retranslate
+        run: |
+          echo "=== Stage 2: Translating documentation ==="
+          python scripts/pipeline/run_pipeline.py translate --target-lang ru
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        timeout-minutes: 40
+
+      # ---------- STAGE 3: Nav Update ----------
+      - name: Update navigation (en -> ru)
+        if: steps.check.outputs.has_changes == 'true' || inputs.force_retranslate
+        run: |
+          echo "=== Stage 3: Updating navigation ==="
+          python scripts/pipeline/run_pipeline.py nav-upgrade --apply
+
+      # ---------- STAGE 4: Validate ----------
+      - name: Validate translations
+        if: steps.check.outputs.has_changes == 'true' || inputs.force_retranslate
+        run: |
+          echo "=== Stage 4: Validation ==="
+          python scripts/pipeline/run_pipeline.py validate
+
+      - name: Sanitize secrets
+        run: |
+          if [ -f scripts/sanitize_secrets.py ]; then
+            python scripts/sanitize_secrets.py
+          fi
+
+      - name: Clean expired cache
+        run: python scripts/pipeline/run_pipeline.py cache-clean
+
+      # ---------- STAGE 5: Commit & Deploy ----------
       - name: Commit changes
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/ scripts/.translation_cache/ mkdocs.yml
           if git diff --staged --quiet; then
+            echo "committed=false" >> $GITHUB_OUTPUT
             echo "No changes to commit"
           else
-            git commit -m "docs: auto-update $(date +%Y-%m-%d)"
+            CHANGED=$(git diff --staged --stat | tail -1)
+            git commit -m "docs: auto-update $(date +%Y-%m-%d)
+
+          $CHANGED"
             git push
+            echo "committed=true" >> $GITHUB_OUTPUT
           fi
 
       - name: Build MkDocs
+        if: steps.commit.outputs.committed == 'true'
         run: mkdocs build
 
       - name: Deploy to GitHub Pages
+        if: steps.commit.outputs.committed == 'true'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -201,9 +153,18 @@ jobs:
           user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_message: 'deploy: auto-update documentation'
 
-      - name: Summary
+      # ---------- Summary ----------
+      - name: Pipeline summary
         if: always()
         run: |
-          echo "# Documentation Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "# Documentation Pipeline Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Stage | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Scrape | ${{ steps.scrape.outcome || 'skipped' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Changes detected | ${{ steps.check.outputs.has_changes }} (${{ steps.check.outputs.changed_files || 0 }} files) |" >> $GITHUB_STEP_SUMMARY
+          echo "| Translate | ${{ steps.translate.outcome || 'skipped' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Committed | ${{ steps.commit.outputs.committed || 'false' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Date:** $(date -u)" >> $GITHUB_STEP_SUMMARY
           echo "**Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
