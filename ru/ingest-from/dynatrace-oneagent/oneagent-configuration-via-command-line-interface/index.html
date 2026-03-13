@@ -1,0 +1,5939 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace с AI-помощником (Managed + SaaS)">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/ru/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Настройка OneAgent через интерфейс командной строки - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#oneagent" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Настройка OneAgent через интерфейс командной строки
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+  Начало работы
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../platform/grail/dynatrace-grail/" class="md-tabs__link">
+          
+  
+  
+  Платформа
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../observe/infrastructure-observability/" class="md-tabs__link">
+          
+  
+  
+  Наблюдаемость
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../dynatrace-intelligence/anomaly-detection/" class="md-tabs__link">
+          
+  
+  
+  Dynatrace Intelligence
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-tabs__link">
+          
+  
+  
+  Анализ и автоматизация
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Источники данных
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../deliver/configuration-as-code/" class="md-tabs__link">
+          
+  
+  
+  Deliver
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../secure/threat-observability/" class="md-tabs__link">
+          
+  
+  
+  Безопасность
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../manage/hub/" class="md-tabs__link">
+          
+  
+  
+  Управление
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../dynatrace-api/" class="md-tabs__link">
+          
+  
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../whats-new/" class="md-tabs__link">
+          
+  
+  
+  Что нового
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI Помощник
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Начало работы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документация Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discover-dynatrace/what-is-dynatrace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что такое Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discover-dynatrace/dynatrace-apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложения Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../semantic-dictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Семантический словарь
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Резервное копирование
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Платформа
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grail
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Grail
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/grail/dynatrace-grail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что такое Grail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/grail/dynatrace-query-language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Язык запросов DQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/appengine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AppEngine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/openpipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenPipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Наблюдаемость
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инфраструктура
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Инфраструктура
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/infrastructure-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/infrastructure-observability/infrastructure-and-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Хосты и операции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Облачный мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/infrastructure-observability/databases/database-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Базы данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложения
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Приложения
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/application-observability/distributed-tracing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Распределённая трассировка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/application-observability/services/services-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сервисы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Цифровой опыт
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Цифровой опыт
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/digital-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Синтетическое приложение
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/dynatrace-for-ai-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI и LLM мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Intelligence
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Intelligence
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обнаружение аномалий
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Обнаружение аномалий
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка чувствительности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложение Anomaly Detection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфигурация
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Адаптивные пороги
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Многомерный бейзлайн
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/anomaly-detection/metric-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    События метрик
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/anomaly-detection/static-thresholds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статические пороги
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Оптимизация DQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis Copilot
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Davis Copilot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/copilot/chat-with-davis-copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Assist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/copilot/copilot-getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/copilot/copilot-data-privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфиденциальность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/copilot/quick-analysis-copilot-dql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запросы на естественном языке
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/davis-problems-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проблемы Davis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ первопричин
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Анализ первопричин
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/root-cause-analysis/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ событий
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/dynatrace-intelligence-integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Справочник
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Справочник
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI модели
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/reference/davis-ai-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лимиты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ и автоматизация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Анализ и автоматизация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды и ноутбуки
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Дашборды и ноутбуки
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../analyze-explore-automate/dashboards-and-notebooks/document-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../analyze-explore-automate/dashboards-and-notebooks/document-version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Версии документов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Визуализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../analyze-explore-automate/dashboards-and-notebooks/explore-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Логи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Логи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../analyze-explore-automate/logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../analyze-explore-automate/logs/lma-logs-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложение журналов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../analyze-explore-automate/logs/lma-logs-app/facets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Фильтры
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../analyze-explore-automate/logs/lma-logs-app/query-and-filter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запросы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../analyze-explore-automate/explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обозреватель данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../analyze-explore-automate/smartscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Smartscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../analyze-explore-automate/workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../analyze-explore-automate/notifications-and-alerting/problem-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Уведомления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../analyze-explore-automate/compliance-and-resilience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Соответствие требованиям
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Источники данных
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation-and-operation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent — установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deliver
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration as Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration as Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/configuration-as-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monaco
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monaco
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API и разрешения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/configuration-as-code/monaco/monaco-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/configuration-as-code/monaco/monaco-getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_3" id="__nav_9_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terraform
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Terraform
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API и разрешения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/configuration-as-code/terraform/terraform-cli-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI команды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SLO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/service-level-objectives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/service-level-objectives/create-slo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Создание SLO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Reliability Guardian
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Site Reliability Guardian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/site-reliability-guardian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/site-reliability-guardian/event-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Структура событий
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/ownership-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ownership
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг релизов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Мониторинг релизов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/release-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/release-monitoring/monitor-releases-with-dynatrace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг релизов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/quality-gates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Валидация релизов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Безопасность
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../secure/threat-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость угроз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../secure/threat-observability/security-events-ingest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграция
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Управление
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../manage/hub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензирование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лицензирование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/capabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Возможности DPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/billing-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Биллинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/budget-alerts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бюджетные оповещения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/license-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Жизненный цикл
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/dps-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Разрешения DPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Intelligence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Что нового
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/saas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/activegate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="oneagent">Настройка OneAgent через интерфейс командной строки<a class="headerlink" href="#oneagent" title="Permanent link">&para;</a></h1>
+<h1 id="oneagent_1">Настройка OneAgent через интерфейс командной строки<a class="headerlink" href="#oneagent_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Последняя версия Dynatrace</li>
+<li>Справочник</li>
+<li>20 минут чтения</li>
+<li>Обновлено 17 сентября 2025 г.</li>
+</ul>
+<p>Используйте интерфейс командной строки <code>oneagentctl</code> для выполнения некоторых задач по настройке OneAgent после установки на уровне отдельного хоста.</p>
+<h2 id="_1">Расположение<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Расположение инструмента зависит от того, настраивали ли вы установку OneAgent с помощью параметра <code>&lt;INSTALL_PATH&gt;</code>:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>&lt;INSTALL_PATH&gt;/agent/tools</code>, по умолчанию <code>/opt/dynatrace/oneagent/agent/tools</code>
+  Требуются права root.</li>
+<li><strong>Развёртывание на основе Docker</strong>
+  <code>&lt;INSTALL_PATH&gt;/agent/tools</code>, по умолчанию <code>/opt/dynatrace/oneagent/agent/tools</code>
+  Обратите внимание, что для развёртывания на основе тома этот путь будет отличаться.</li>
+<li><strong>Windows</strong>:
+  <code>&lt;INSTALL_PATH&gt;\agent\tools</code>, по умолчанию <code>%PROGRAMFILES%\dynatrace\oneagent\agent\tools</code>
+  Требуются права администратора. Если вы попытаетесь запустить <code>oneagentctl</code> в консоли Windows без прав администратора, Windows отобразит всплывающее окно контроля учётных записей пользователей и завершит работу с ошибкой.</li>
+</ul>
+<h2 id="_2">Типы параметров<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Команда <code>oneagentctl</code> принимает параметр <code>get</code> для проверки состояния или значения параметра и параметр <code>set</code> для изменения параметра. Обратите внимание, что в одной команде можно использовать несколько параметров <code>set</code>.</p>
+<h2 id="oneagent_2">Перезапуск OneAgent<a class="headerlink" href="#oneagent_2" title="Permanent link">&para;</a></h2>
+<p>При использовании параметров <code>set</code> необходимо перезапустить службу OneAgent для применения изменений. Параметр <code>--restart-service</code> можно использовать с командой, которая вызывает перезапуск автоматически. В некоторых случаях также потребуется перезапустить отслеживаемые приложения. Параметр перезапуска можно также использовать отдельно, без других параметров. Пример команды ниже.</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --set-proxy=my-proxy.com --restart-service</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-proxy=my-proxy.com --restart-service</code></li>
+</ul>
+<h2 id="_3">Отображение справки<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Используйте параметр <code>--help</code> для отображения всех поддерживаемых параметров.</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --help</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --help</code></li>
+</ul>
+<h2 id="oneagent_3">Отображение версии OneAgent<a class="headerlink" href="#oneagent_3" title="Permanent link">&para;</a></h2>
+<p>Используйте параметр <code>--version</code> для отображения версии OneAgent.</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --version</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --version</code></li>
+</ul>
+<h2 id="oneagent_4">Связь OneAgent<a class="headerlink" href="#oneagent_4" title="Permanent link">&para;</a></h2>
+<h3 id="oneagent_5">Задание параметров связи OneAgent<a class="headerlink" href="#oneagent_5" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--set-server</code> для задания конечной точки связи OneAgent. Используйте IP-адрес или имя в сочетании с суффиксом <code>/communication</code>. В зависимости от вашего развёртывания это может быть Dynatrace Server, Dynatrace Managed Cluster или ActiveGate.</p>
+<p>Выполните следующую команду для настройки параметров подключения OneAgent:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --set-server=https://my-server.com:9999/communication --set-tenant=abc123456 --set-tenant-token=abcdefg123456790 --set-proxy=my-proxy.com</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-server=https://my-server.com:9999/communication --set-tenant=abc123456 --set-tenant-token=abcdefg123456790 --set-proxy=my-proxy.com</code></li>
+</ul>
+<p>Чтобы задать несколько конечных точек, разделите их точкой с запятой и заключите в кавычки. Например: <code>--set-server="https://server1;https://server2"</code>.</p>
+<p>Для этих параметров требуется перезапуск OneAgent, а также перезапуск всех приложений, отслеживаемых с помощью глубоких кодовых модулей. Добавьте <a href="#oneagent-restart"><code>--restart-service</code></a> к команде для автоматического перезапуска OneAgent (версия 1.189+) или остановите и запустите процесс OneAgent вручную. Инструкции для конкретных ОС см. в разделах <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux" title="Узнайте, как остановить и перезапустить OneAgent на Linux.">Linux</a>, <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows" title="Узнайте, как остановить и перезапустить OneAgent на Windows.">Windows</a> или <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix" title="Узнайте, как остановить и перезапустить OneAgent на AIX.">AIX</a>.</p>
+<p>Эта команда немедленно изменит конечную точку подключения модуля ОС, но кодовые модули не смогут прочитать новый параметр до следующего перезапуска.</p>
+<p>OneAgent и Dynatrace Cluster автоматически поддерживают рабочее соединение. Если данные конечной точки изменятся, кластер уведомит OneAgent об изменении, и OneAgent автоматически обновит конечную точку, заданную с помощью <code>--set-server</code>, до нового рабочего значения.</p>
+<p>Направление трафика OneAgent через ActiveGate</p>
+<p>Маршрутизация трафика OneAgent через ActiveGate может повысить безопасность ваших данных, обеспечив их передачу по контролируемым сетевым путям в зашифрованном виде.</p>
+<ol>
+<li>Определите IP-адрес или имя хоста ActiveGate, который будет обрабатывать трафик.</li>
+<li><a href="#set-oneagent-communication-settings">Задайте конечную точку связи</a>.</li>
+</ol>
+<p>Настройте OneAgent, указав ActiveGate в качестве новой конечной точки. Например:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>.\oneagentctl.exe --set-server=https://&lt;activegate-endpoint&gt;:9999/communication --restart-service
+</code></pre></div>
+3. <a href="#check-if-auto-update-is-enabled">Проверьте, включено ли автоматическое обновление</a>.</p>
+<h3 id="_4">Отображение текущих конечных точек связи<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--get-server</code> для отображения конечных точек, на которые OneAgent отправляет данные. Это могут быть Dynatrace Server, Dynatrace Managed Cluster или ActiveGate.</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --get-server</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-server</code></li>
+</ul>
+<p>Начиная с OneAgent версии 1.207, конечные точки отображаются в формате, в котором конечные точки одинакового приоритета сгруппированы в фигурные скобки (<code>{...}</code>) и отсортированы согласно приоритету подключения. Звёздочка (<code>*</code>) обозначает конечную точку, на которую OneAgent в настоящее время отправляет данные. Конечные точки разделяются точкой с запятой (<code>;</code>).
+Например:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{https://endpoint1.com/communication;https:/10.0.0.0/communication;*https://endpoint3.com/communication}{https://endpoint4.com:9999/communication}
+</code></pre></div>
+<h3 id="_5">Задание идентификатора среды<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--set-tenant</code> для задания <a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Поймите и научитесь работать со средами мониторинга.">идентификатора среды</a>. По умолчанию это значение уже установлено правильно. Если вы предоставляете услуги на базе Dynatrace, используйте этот параметр для установки идентификаторов ваших клиентов из пула идентификаторов, приобретённых у Dynatrace.</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --set-tenant=abc123456</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-tenant=abc123456</code></li>
+</ul>
+<p>Всегда используйте в сочетании с <code>--set-tenant-token</code>, который определяет <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token" title="Узнайте, что такое токен tenant и как его изменить.">токен tenant</a> для внутренней аутентификации.</p>
+<h3 id="_6">Отображение идентификатора среды<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Поймите и научитесь работать со средами мониторинга.">Идентификатор среды</a> Dynatrace, полученный в письме об активации.</p>
+<p>Используйте параметр <code>--get-tenant</code> для отображения идентификатора среды:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --get-tenant</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-tenant</code></li>
+</ul>
+<h3 id="tenant">Задание токена tenant<a class="headerlink" href="#tenant" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--set-tenant-token</code> для задания <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token" title="Узнайте, что такое токен tenant и как его изменить.">токена tenant</a>, который используется для аутентификации связи с определённой конечной точкой. Всегда используйте в сочетании с <code>--set-tenant</code>.</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --set-tenant-token=abcdefg123456790</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-tenant-token=abcdefg123456790</code></li>
+</ul>
+<h3 id="tenant_1">Отображение токена tenant<a class="headerlink" href="#tenant_1" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--get-tenant-token</code> для отображения текущего определённого токена:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --get-tenant-token</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-tenant-token</code></li>
+</ul>
+<h3 id="_7">Задание конфигурации прокси<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--set-proxy</code> для задания прокси-сервера:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --set-proxy=my-proxy.com</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-proxy=my-proxy.com</code></li>
+</ul>
+<h3 id="_8">Очистка конфигурации прокси<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--set-proxy</code> со значением пустой строки для очистки конфигурации прокси:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --set-proxy=</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-proxy=</code></li>
+</ul>
+<p>Перезапустите службу OneAgent для применения изменений.</p>
+<h3 id="_9">Отображение текущего прокси<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--get-proxy</code> для отображения текущего определённого прокси, через который подключается OneAgent:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --get-proxy</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-proxy</code></li>
+</ul>
+<h3 id="ip-">Исключение определённых IP-адресов из прокси<a class="headerlink" href="#ip-" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--set-no-proxy</code> для исключения определённых доменов или IP-адресов из использования прокси:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --set-no-proxy=my-proxy.com</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-no-proxy=my-proxy.com</code></li>
+</ul>
+<h3 id="no-proxy">Отображение текущих параметров no-proxy<a class="headerlink" href="#no-proxy" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--get-no-proxy</code> для просмотра текущих настроек доменов и диапазонов IP-адресов, исключённых из использования прокси:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --get-no-proxy</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-no-proxy</code></li>
+</ul>
+<h3 id="_10">Проверка текущего диапазона портов<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>OneAgent состоит из различных процессов, взаимодействующих с watchdog через TCP-порт. При запуске watchdog OneAgent пытается открыть первый доступный порт в диапазоне от 50000 до 50100. В некоторых случаях этот порт может потребоваться для ваших собственных приложений, запускаемых после OneAgent.</p>
+<p>Используйте параметр <code>--get-watchdog-portrange</code> для проверки текущего диапазона портов, определённого для watchdog.</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --get-watchdog-portrange</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-watchdog-portrange</code></li>
+</ul>
+<h3 id="_11">Задание нового диапазона портов<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>Устарело</p>
+<p>Начиная с версии OneAgent 1.301, OneAgent не использует порты TCP для собственного межпроцессного взаимодействия. Если OneAgent занимает порты ваших приложений, обновите OneAgent до версии 1.301+.</p>
+<p>Watchdog — это двоичный файл, используемый для запуска и мониторинга процессов мониторинга OneAgent:</p>
+<ul>
+<li><code>oneagentos</code> — мониторинг операционной системы</li>
+<li><code>oneagentplugin</code> — мониторинг с использованием <a href="/docs/ingest-from/extensions/develop-your-extensions#oneagent-extensions" title="Разработайте собственные расширения в Dynatrace.">расширений OneAgent</a></li>
+<li><code>oneagentextensions</code> — мониторинг с использованием локальных <a href="/docs/ingest-from/extensions" title="Узнайте, как создавать расширения Dynatrace и управлять ими.">расширений</a></li>
+<li><code>oneagentloganalytics</code> — <a href="/docs/analyze-explore-automate/log-monitoring" title="Узнайте, как включить мониторинг журналов, какие аналитические данные он предоставляет и многое другое.">мониторинг журналов</a></li>
+<li><code>oneagentnetwork</code> — <a href="/docs/observe/infrastructure-observability/networks" title="Узнайте, как осуществлять мониторинг сетевых взаимодействий.">мониторинг сети</a></li>
+</ul>
+<p>Используйте параметр <code>--set-watchdog-portrange=arg</code> для изменения диапазона прослушиваемых портов watchdog на <code>&lt;arg&gt;</code>. Аргумент <code>&lt;arg&gt;</code> должен содержать два номера портов, разделённых двоеточием (<code>:</code>). Например, <code>50000:50100</code>. Максимально поддерживаемый диапазон портов — от 1024 до 65535. Диапазон портов должен охватывать не менее 4 портов. Начальный номер порта диапазона должен быть меньше.</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --set-watchdog-portrange=50000:50100</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-watchdog-portrange=50000:50100</code></li>
+</ul>
+<h2 id="_12">Автоматические обновления<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>Дополнительные сведения см. в разделах об обновлении OneAgent для <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux" title="Узнайте о различных способах обновления OneAgent на Linux.">Linux</a>, <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/update-oneagent-on-windows" title="Узнайте о различных способах обновления Dynatrace OneAgent на Windows.">Windows</a> и <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/update-oneagent-on-aix" title="Узнайте, как обновить Dynatrace OneAgent на AIX.">AIX</a>.</p>
+<h3 id="_13">Проверка состояния автообновления<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>get-auto-update-enabled</code> для проверки, включено ли автоматическое обновление OneAgent:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --get-auto-update-enabled</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-auto-update-enabled</code></li>
+</ul>
+<h3 id="_14">Включение или отключение автообновления<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>Задайте параметр <code>--set-auto-update-enabled</code> значением <code>true</code> или <code>false</code> для отключения или включения автоматического обновления OneAgent:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --set-auto-update-enabled=true</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-auto-update-enabled=true</code></li>
+</ul>
+<p>После использования этой команды для отключения автоматических обновлений вы не сможете управлять автоматическими обновлениями OneAgent через Dynatrace в разделе <strong>Настройки</strong> &gt; <strong>Обновления</strong> &gt; <strong>Обновления OneAgent</strong>.</p>
+<h2 id="_15">Мониторинг журналов<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<p>Дополнительные сведения см. в разделе <a href="/docs/analyze-explore-automate/logs" title="Управление журналами и аналитика предоставляет унифицированный подход к контролю и изучению данных журналов в Dynatrace.">Мониторинг журналов</a>.</p>
+<h3 id="_16">Проверка состояния мониторинга журналов<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--get-app-log-content-access</code> для проверки, включён ли мониторинг журналов:</p>
+<ul>
+<li><strong>Linux</strong>:
+  <code>./oneagentctl --get-app-log-content-access</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-app-log-content-access</code></li>
+</ul>
+<h3 id="_17">Включение или отключение мониторинга журналов<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>Задайте параметр <code>--set-app-log-content-access</code> значением <code>true</code> или <code>false</code> для отключения или включения мониторинга журналов:</p>
+<ul>
+<li><strong>Linux</strong>:
+  <code>./oneagentctl --set-app-log-content-access=true</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-app-log-content-access=true</code></li>
+</ul>
+<h2 id="_18">Создание архива поддержки<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<p>OneAgent версии 1.225+</p>
+<p>Если у вас нет доступа к Dynatrace или вы хотите автоматизировать сбор диагностических данных, можно использовать команду <code>oneagentctl</code> для сбора <a href="#contents">подмножества</a> полных данных <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics" title="Узнайте, как запустить диагностику OneAgent">диагностики OneAgent</a> непосредственно на хосте, где установлен OneAgent. С диагностическими данными, собранными для OneAgent, вы можете:</p>
+<ul>
+<li>Легко собирать диагностические данные для конкретного хоста</li>
+<li>Напрямую предоставлять службе поддержки Dynatrace сведения, необходимые для диагностики проблемы</li>
+</ul>
+<p>Для выполнения команды требуется, чтобы служба OneAgent была запущена.</p>
+<p>Для создания архива поддержки с диагностическими данными запустите <code>oneagentctl</code> с параметром <code>--create-support-archive</code>. По умолчанию архив поддержки содержит данные за 7-дневный период и создаётся в текущем рабочем каталоге. Дополнительно можно задать пользовательский каталог и период с помощью параметров <code>directory</code> и <code>days</code>. Обратите внимание, что <code>oneagentctl</code> не создаёт каталог; необходимо указать ему существующий каталог с относительным или абсолютным путём. Например:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --create-support-archive directory=/data/support-archive days=30</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --create-support-archive directory=C:\data\support-archive days=30</code></li>
+</ul>
+<p>Команда сохраняет архив в файл <code>support_archive_agent_YYYY-MM-DD_hhmmss.zip</code>. Например:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Creating support archive from last 30 days in C:\data\support-archive
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Waiting 30s for archive request to be processed
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Processing archive, waiting up to 15m 0s
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>Archive saved as C:\data\support-archive\support_archive_agent_2021-09-07_121619.zip
+</code></pre></div>
+<h3 id="_19">Содержимое диагностических данных<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p>Все собранные диагностические данные сжимаются в архив <code>support_archive_agent_YYYY-MM-DD_hhmmss.zip</code>, который включает следующее подмножество полных данных <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics" title="Узнайте, как запустить диагностику OneAgent">диагностики OneAgent</a>:</p>
+<p>Папка или файл</p>
+<p>Описание</p>
+<p><code>support_archive</code> (ZIP)</p>
+<p>Содержит локальную конфигурацию OneAgent, установленного на хосте или процессе, где была выполнена диагностика, а также файлы журналов, связанные с OneAgent.</p>
+<p><code>diagnostic_files</code> (ZIP)</p>
+<p>Содержит информацию об обнаружении групп процессов, проблемах с автоматическим внедрением и конфигурации расширений.</p>
+<h2 id="_20">Доступ к системным журналам для проактивной поддержки<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<p>OneAgent скачивает определённые системные журналы, чтобы Dynatrace мог диагностировать проблемы, которые могут быть вызваны условиями в вашей среде. Журналы также сохраняются в архиве поддержки. Чаще всего такие проблемы связаны с глубоким мониторингом или установками с автоматическим обновлением.</p>
+<h3 id="_21">Проверка доступа к системным журналам<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--get-system-logs-access-enabled</code> для проверки, включён ли доступ к системным журналам:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --get-system-logs-access-enabled</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-system-logs-access-enabled</code></li>
+</ul>
+<h3 id="_22">Включение или отключение доступа к системным журналам<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<p>Задайте параметр <code>--set-system-logs-access-enabled</code> значением <code>true</code> или <code>false</code> для отключения или включения доступа к системным журналам:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --set-system-logs-access-enabled=true</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-system-logs-access-enabled=true</code>
+  Перезапустите службу OneAgent для применения изменений.</li>
+</ul>
+<p>Обратите внимание, что параметры <code>--set-system-logs-access-enabled</code> и <code>--get-system-logs-access-enabled</code> относятся к параметру самодиагностики и не связаны с <a href="#log-monitoring">мониторингом журналов</a>.</p>
+<p>Отключение доступа к системным журналам ограничивает нашу возможность проактивно диагностировать и решать проблемы. При отозванном доступе к системным журналам вам может потребоваться вручную предоставить Dynatrace содержимое системных журналов для помощи в диагностике проблем в вашей среде.</p>
+<h2 id="_23">Идентификатор хоста<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h2>
+<p>Dynatrace присваивает уникальный идентификатор каждому хосту, отслеживаемому в вашей среде. Идентификаторы хостов можно использовать в качестве параметров в запросах Dynatrace API, например <a href="/docs/dynatrace-api/environment-api/topology-and-smartscape/hosts-api" title="Узнайте, как использовать Dynatrace API для управления отслеживаемыми хостами.">API топологии и Smartscape — API хостов</a>. Идентификатор хоста также составляет URL-адрес страницы <strong>Обзор хоста</strong>, например <code>https://environment.org/#newhosts/hostdetails;id=HOST-6E56EE455C84E232</code>.</p>
+<h3 id="_24">Отображение идентификатора хоста<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p>Для нахождения идентификатора хоста используйте параметр <code>--get-host-id</code>. Например:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --get-host-id</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-host-id</code></li>
+</ul>
+<h3 id="_25">Определение источника идентификатора хоста<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<p>Доступно на всех поддерживаемых платформах для OneAgent версии 1.223+. Для OneAgent версии 1.221 и более ранних эта функция поддерживается только для Citrix Virtual Apps and Desktops.</p>
+<p>Особенно важно сохранять статичность идентификатора хоста в динамических виртуальных средах, где хосты воссоздаются ежедневно.</p>
+<p>Чтобы <strong>определить источник для генерации идентификатора хоста</strong>, используйте <code>--set-host-id-source</code> и задайте одно из предопределённых значений:</p>
+<ul>
+<li><code>auto</code> — позволить Dynatrace генерировать идентификатор хоста автоматически</li>
+<li><code>ip-addresses</code> — генерировать идентификатор хоста на основе IP-адреса хоста</li>
+<li><code>mac-addresses</code> — генерировать идентификатор хоста на основе MAC-адреса сетевого адаптера хоста</li>
+<li><code>fqdn</code> — генерировать идентификатор хоста на основе полного доменного имени (FQDN) хоста в формате <code>host.domain</code>. Если FQDN не содержит символа точки, вместо него используется MAC-адрес сетевого адаптера.</li>
+<li>
+<p>Если вы отслеживаете несколько сред, можно разделить хосты с одинаковыми IP-адресами, MAC-адресами или FQDN, используя разные пространства имён для каждой среды. Пространство имён может содержать только буквенно-цифровые символы, дефисы, символы подчёркивания и точки; максимальная длина составляет 256 символов.</p>
+</li>
+<li>
+<p><code>ip-addresses;namespace=&lt;namespace&gt;</code></p>
+</li>
+<li><code>mac-addresses;namespace=&lt;namespace&gt;</code></li>
+<li><code>fqdn;namespace=&lt;namespace&gt;</code></li>
+</ul>
+<p>Например, чтобы задать источник идентификатора хоста <code>ip-addresses</code> и назначить его пространству имён <code>test</code>, запустите <code>oneagentctl</code> со следующим параметром:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --set-host-id-source="ip-addresses;namespace=test"</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-host-id-source="ip-addresses;namespace=test"</code></li>
+</ul>
+<p>После изменения источника идентификатора хоста необходимо перезапустить все отслеживаемые приложения, а затем перезапустить службу OneAgent для создания новой сущности хоста в вашей среде. Параметр <code>--restart-service</code> можно использовать с <code>oneagentctl</code> для автоматического перезапуска OneAgent или остановить и запустить процесс OneAgent вручную. Инструкции для конкретных ОС см. в разделах <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux" title="Узнайте, как остановить и перезапустить OneAgent на Linux.">Linux</a>, <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows" title="Узнайте, как остановить и перезапустить OneAgent на Windows.">Windows</a> или <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix" title="Узнайте, как остановить и перезапустить OneAgent на AIX.">AIX</a>.</p>
+<p>Чтобы <strong>проверить источник идентификатора хоста</strong>, используйте параметр <code>--get-host-id-source</code>:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --get-host-id-source</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-host-id-source</code></li>
+</ul>
+<p>Для источника идентификатора хоста, установленного в <code>ip-addresses</code> и пространства имён <code>test</code>, команда вернёт следующий результат:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ip-addresses;namespace=test
+</code></pre></div>
+<h2 id="_26">Группы хостов<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h2>
+<p>Обзор использования групп хостов см. в разделе <a href="/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups" title="Узнайте, как Dynatrace позволяет организовать хосты, процессы и сервисы с помощью групп хостов.">Организация среды с помощью групп хостов</a>.</p>
+<p>Кроме того, для централизованного изменения назначения группы хостов из Dynatrace Cluster можно использовать <a href="/docs/ingest-from/bulk-configuration#configure-oneagents" title="Выполняйте настройку OneAgent и ActiveGate на хостах со страницы состояния развёртывания или в большом масштабе с помощью Dynatrace API.">удалённое управление конфигурацией</a> (выберите действие <strong>изменить группу хостов</strong>).</p>
+<h3 id="_27">Изменение назначения группы хостов<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--set-host-group</code> для изменения назначения группы хостов.</p>
+<p>Для включения хоста в <code>MyHostGroup</code>:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --set-host-group=MyHostGroup</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-host-group=MyHostGroup</code></li>
+</ul>
+<p>Требования к строке группы хостов:</p>
+<ul>
+<li>Может содержать только буквенно-цифровые символы, дефисы, символы подчёркивания и точки</li>
+<li>Не должна начинаться с <code>dt.</code></li>
+<li>Максимальная длина — 100 символов</li>
+</ul>
+<p>Использование <code>--set-host-group</code> требует перезапуска OneAgent, а также перезапуска всех отслеживаемых сервисов. Добавьте <a href="#oneagent-restart"><code>--restart-service</code></a> к команде для автоматического перезапуска OneAgent (версия 1.189+) или остановите и запустите процесс OneAgent вручную. Инструкции для конкретных ОС см. в разделах <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux" title="Узнайте, как остановить и перезапустить OneAgent на Linux.">Linux</a>, <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows" title="Узнайте, как остановить и перезапустить OneAgent на Windows.">Windows</a> или <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix" title="Узнайте, как остановить и перезапустить OneAgent на AIX.">AIX</a>.</p>
+<p>Изменение назначений групп хостов приводит к пересчёту идентификаторов групп процессов, что влияет на агрегацию данных. Дополнительные сведения о влиянии изменений группы хостов на обнаружение групп процессов см. в разделе <a href="/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups#how-host-groups-affect-your-monitoring-environment" title="Узнайте, как Dynatrace позволяет организовать хосты, процессы и сервисы с помощью групп хостов.">Организация среды с помощью групп хостов</a>.</p>
+<h3 id="_28">Очистка назначения группы хостов<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--set-host-group</code> с пустым значением для очистки назначения группы хостов:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --set-host-group=</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-host-group=</code></li>
+</ul>
+<h3 id="_29">Отображение назначения группы хостов<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--get-host-group</code> для отображения текущего назначения группы хостов:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --get-host-group</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-host-group</code></li>
+</ul>
+<h2 id="_30">Теги и метаданные хостов<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h2>
+<p>В динамических или крупных средах ручная разметка хостов тегами может быть непрактичной. Для динамических развёртываний, включающих часто изменяющиеся экземпляры и имена хостов (например, AWS или MS Azure), можно использовать специальные параметры <code>oneagentctl</code> для применения пользовательских тегов, имён и метаданных к хостам.</p>
+<p>Методы <code>oneagentctl</code>, перечисленные ниже, позволяют редактировать только метаданные, добавленные с помощью самого <code>oneagentctl</code> или ранее с помощью файлов конфигурации. Теги и метаданные, добавленные с помощью Dynatrace, а также полученные из отслеживаемой среды (например, теги AWS), не редактируются с помощью <code>oneagentctl</code> и не будут отображаться при использовании параметров <code>--get-host-tags</code> и <code>--get-host-properties</code>.</p>
+<h3 id="_31">Обнаружение облачных метаданных<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
+<p>По умолчанию процесс <code>oneagentos</code> автоматически обнаруживает облачные среды, такие как AWS, Azure и Google Compute Engine. Он отправляет запросы в специальный Metadata API по внутреннему IP-адресу <code>169.254.169.254</code>. OneAgent использует полученные метаданные для предоставления дополнительного контекста об отслеживаемых ресурсах в этих средах.</p>
+<h3 id="_32">Пользовательское имя хоста<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
+<p>Используйте инструмент командной строки <code>oneagentctl</code> с параметром <code>--set-host-name</code> для переопределения автоматически определённого имени хоста. Имя хоста не должно содержать символы <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, <code>CR</code> (возврат каретки) или <code>LF</code> (перевод строки). Максимальная длина составляет 256 символов.</p>
+<p>Эта команда добавляет пользовательское имя хоста для отображения в интерфейсе, но определённое имя хоста не изменяется. Подробнее см. в разделе <a href="/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments" title="Узнайте, как изменить имя отслеживаемого хоста.">Задание пользовательских имён хостов</a>.</p>
+<p>Для изменения имени хоста:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --set-host-name=myhostname</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-host-name=myhostname</code></li>
+</ul>
+<p>Для возврата к автоматически определённому имени хоста задайте параметр <code>--set-host-name</code> пустым значением, например <code>--set-host-name=""</code>. Например:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --set-host-name=""</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-host-name=""</code></li>
+</ul>
+<p>Изменение может не отразиться в веб-интерфейсе Dynatrace в течение до 6 минут.</p>
+<p>Использование <code>--set-host-name</code> требует перезапуска OneAgent. Добавьте <code>--restart-service</code> к команде для автоматического перезапуска OneAgent (версия 1.189+) или остановите и запустите процесс OneAgent вручную. Инструкции для конкретных ОС см. в разделах <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux" title="Узнайте, как остановить и перезапустить OneAgent на Linux.">Linux</a>, <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows" title="Узнайте, как остановить и перезапустить OneAgent на Windows.">Windows</a> или <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix" title="Узнайте, как остановить и перезапустить OneAgent на AIX.">AIX</a>.</p>
+<p>Для отображения имени хоста:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --get-host-name</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-host-name</code></li>
+</ul>
+<h3 id="_33">Пользовательские метаданные хоста<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
+<p>После настройки пользовательские метаданные отображаются как набор свойств в нижней части раздела <strong>Свойства и теги</strong> на странице обзора хоста. Значения свойств не должны содержать символ <code>=</code> (если только он не используется как разделитель ключ-значение) или пробельные символы. Максимальная длина составляет 256 символов, включая разделитель ключ-значение. Имя ключа не должно начинаться с символа <code>#</code>.</p>
+<p>Кроме того, для централизованного изменения метаданных хоста из Dynatrace Cluster можно использовать <a href="/docs/ingest-from/bulk-configuration#configure-oneagents" title="Выполняйте настройку OneAgent и ActiveGate на хостах со страницы состояния развёртывания или в большом масштабе с помощью Dynatrace API.">удалённое управление конфигурацией</a> (выберите действие <strong>изменить свойства хоста</strong>).</p>
+<p>Для версий ранее 1.189 используйте <a href="/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#edit-the-host-metadata-configuration-file" title="Узнайте, как пометить тегами и задать дополнительные свойства для отслеживаемого хоста.">файл конфигурации метаданных хоста</a>.</p>
+<p>Чтобы <strong>добавить или изменить свойства хоста</strong>, выполните следующую команду:</p>
+<ul>
+<li><strong>Linux</strong> и <strong>AIX</strong>
+  <code>./oneagentctl --set-host-property=AppName --set-host-property=Environment=Dev</code></li>
+<li><strong>Windows</strong>
+  <code>.\oneagentctl.exe --set-host-property=AppName --set-host-property Environment=Dev</code></li>
+</ul>
+<p>В одной команде можно добавить или изменить несколько свойств.</p>
+<p>Задание контекста безопасности для хоста</p>
+<p>Для задания контекста безопасности для вашего хоста используйте следующую команду:</p>
+<ul>
+<li><strong>Linux</strong> и <strong>AIX</strong>
+  <code>./oneagentctl --set-host-property=dt.security_context=easytrade_sec</code></li>
+<li><strong>Windows</strong>
+  <code>.\oneagentctl.exe --set-host-property=dt.security_context=easytrade_sec</code></li>
+</ul>
+<p><code>dt.security_context</code> используется несколькими функциями в Dynatrace, такими как <a href="/docs/analyze-explore-automate/logs/lma-security-context" title="Используйте Dynatrace на базе Grail и DQL для преобразования входящих данных журналов для лучшего понимания, анализа или дальнейшей обработки.">контекст безопасности журналов</a> и <a href="/docs/observe/business-observability/bo-event-processing/bo-security-context" title="Используйте Dynatrace на базе Grail и DQL для преобразования входящих данных бизнес-событий для лучшего понимания, анализа или дальнейшей обработки.">контекст безопасности бизнес-событий</a>.
+Кроме того, если вы являетесь администратором учётной записи и хотите предоставить доступ к отслеживаемым сущностям на основе их контекста безопасности, см. раздел <a href="/docs/manage/identity-access-management/use-cases/access-security-context" title="Предоставьте доступ к сущностям с контекстом безопасности">Предоставление доступа к сущностям с контекстом безопасности</a>.</p>
+<p>Чтобы <strong>удалить свойства хоста</strong>, выполните следующую команду:</p>
+<ul>
+<li><strong>Linux</strong> и <strong>AIX</strong>
+  <code>./oneagentctl --remove-host-property=AppName --remove-host-property=Environment=Dev</code></li>
+<li><strong>Windows</strong>
+  <code>.\oneagentctl.exe --remove-host-property=AppName --remove-host-property=Environment=Dev</code></li>
+</ul>
+<p>Одной командой можно удалить несколько свойств. Если ключ свойства, переданный в команде, не существует, будет возвращён ненулевой код выхода, но все существующие свойства, переданные в команде, будут удалены. После удаления свойств хоста они остаются видимыми в Dynatrace до 7 часов.</p>
+<p>Чтобы <strong>отобразить все свойства</strong>, настроенные для хоста, выполните следующую команду:</p>
+<ul>
+<li><strong>Linux</strong> и <strong>AIX</strong>
+  <code>./oneagentctl --get-host-properties</code></li>
+<li><strong>Windows</strong>
+  <code>.\oneagentctl.exe --get-host-properties</code></li>
+</ul>
+<h3 id="_34">Пользовательские теги хоста<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
+<p>После настройки пользовательских тегов хоста они отображаются в верхней части раздела <strong>Свойства и теги</strong> на странице обзора хоста. Значение свойства не должно содержать символ <code>=</code> (если только он не используется как разделитель ключ-значение) или пробельные символы. Максимальная длина составляет 256 символов, включая разделитель ключ-значение. Имя ключа не должно начинаться с <code>#</code>.</p>
+<p>Кроме того, для централизованного изменения тегов хоста из Dynatrace Cluster можно использовать <a href="/docs/ingest-from/bulk-configuration#configure-oneagents" title="Выполняйте настройку OneAgent и ActiveGate на хостах со страницы состояния развёртывания или в большом масштабе с помощью Dynatrace API.">удалённое управление конфигурацией</a> (выберите действие <strong>изменить теги хоста</strong>).</p>
+<p>Чтобы <strong>добавить или изменить теги хоста</strong>, выполните следующую команду:</p>
+<ul>
+<li><strong>Linux</strong> и <strong>AIX</strong>
+  <code>./oneagentctl --set-host-tag=TestHost --set-host-tag=role=fallback --set-host-tag=Gdansk</code></li>
+<li><strong>Windows</strong>
+  <code>.\oneagentctl.exe --set-host-tag=TestHost --set-host-tag=role=fallback --set-host-tag=Gdansk</code></li>
+</ul>
+<p>В одной команде можно добавить или изменить несколько тегов. Допускается определение тегов с одинаковым ключом, но разными значениями.</p>
+<p>Чтобы <strong>удалить теги</strong>, выполните следующую команду:</p>
+<ul>
+<li><strong>Linux</strong> и <strong>AIX</strong>
+  <code>./oneagentctl --remove-host-tag=role=fallback --remove-host-tag=Gdansk</code></li>
+<li><strong>Windows</strong>
+  <code>.\oneagentctl.exe --remove-host-tag=role=fallback --remove-host-tag=Gdansk</code></li>
+</ul>
+<p>Одной командой можно удалить несколько тегов. Если тег, переданный в команде, не существует, возвращается ненулевой код выхода, но все существующие теги, переданные в команде, удаляются. После удаления тегов они остаются видимыми в Dynatrace до 6 часов.</p>
+<p>Чтобы <strong>отобразить все теги</strong>, настроенные для хоста, выполните следующую команду:</p>
+<ul>
+<li><strong>Linux</strong> и <strong>AIX</strong>
+  <code>./oneagentctl --get-host-tags</code></li>
+<li><strong>Windows</strong>
+  <code>.\oneagentctl.exe --get-host-tags</code></li>
+</ul>
+<h2 id="_35">Режимы мониторинга<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h2>
+<p>Активирует один из режимов мониторинга OneAgent:</p>
+<ul>
+<li><code>fullstack</code>: Мониторинг полного стека</li>
+<li><code>infra-only</code>: Мониторинг инфраструктуры</li>
+<li><code>discovery</code>: Обнаружение</li>
+</ul>
+<p>Чтобы включить определённый режим мониторинга, задайте параметр <code>--set-monitoring-mode</code> в одно из следующих значений:</p>
+<ul>
+<li><code>fullstack</code></li>
+<li><code>infra-only</code></li>
+<li><code>discovery</code></li>
+</ul>
+<p>Например:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>--set-monitoring-mode=infra-only
+</code></pre></div>
+<p>Используйте режим мониторинга инфраструктуры или режим обнаружения вместо режима мониторинга полного стека. При таком подходе вы получаете данные о работоспособности инфраструктуры без данных о производительности приложений или пользователей. Подробнее см. в разделе <a href="/docs/observe/infrastructure-observability/hosts/monitoring-modes" title="Узнайте, что входит в режим мониторинга инфраструктуры Dynatrace.">Режимы мониторинга</a>.</p>
+<h3 id="_36">Проверка включённого режима мониторинга<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--get-monitoring-mode</code> для проверки включённого режима мониторинга:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --get-monitoring-mode</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-monitoring-mode</code></li>
+</ul>
+<p>Команда возвращает одно из следующих значений:</p>
+<ul>
+<li><code>fullstack</code>: режим мониторинга полного стека</li>
+<li><code>infra-only</code>: режим мониторинга инфраструктуры</li>
+<li><code>discovery</code>: режим обнаружения</li>
+</ul>
+<p>Изменение режима мониторинга инфраструктуры требует перезапуска OneAgent, а также перезапуска всех отслеживаемых сервисов. Добавьте <a href="#oneagent-restart"><code>--restart-service</code></a> к команде для автоматического перезапуска OneAgent (версия 1.189+) или остановите и запустите процесс OneAgent вручную. Инструкции для конкретных ОС см. в разделах <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux" title="Узнайте, как остановить и перезапустить OneAgent на Linux.">Linux</a>, <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows" title="Узнайте, как остановить и перезапустить OneAgent на Windows.">Windows</a> или <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix" title="Узнайте, как остановить и перезапустить OneAgent на AIX.">AIX</a>.</p>
+<h2 id="_37">Автоматическое внедрение для режима мониторинга инфраструктуры<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h2>
+<p>OneAgent версии 1.213</p>
+<p>Автоматическое внедрение OneAgent включено по умолчанию в режиме мониторинга инфраструктуры. Оно необходимо для сбора метрик JMX/PMI и обработки Application Security в режиме мониторинга инфраструктуры.</p>
+<p>Дополнительные сведения см. в разделе <a href="/docs/observe/infrastructure-observability/hosts/monitoring-modes" title="Узнайте, что входит в режим мониторинга инфраструктуры Dynatrace.">Режимы мониторинга инфраструктуры и обнаружения</a>.</p>
+<h3 id="_38">Проверка состояния автоматического внедрения<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>get-auto-injection-enabled</code> для проверки, включено ли автоматическое внедрение OneAgent:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --get-auto-injection-enabled</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-auto-injection-enabled</code></li>
+</ul>
+<h3 id="_39">Включение или отключение автоматического внедрения<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h3>
+<p>Задайте параметр <code>--set-auto-injection-enabled</code> значением <code>true</code> или <code>false</code> для включения или отключения автоматического внедрения OneAgent:</p>
+<p>Для включения автоматического внедрения:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --set-auto-injection-enabled=true</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-auto-injection-enabled=true</code></li>
+</ul>
+<p>Для отключения автоматического внедрения:</p>
+<ul>
+<li><strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --set-auto-injection-enabled=false</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-auto-injection-enabled=false</code></li>
+</ul>
+<p>Дополнительные сведения см. в разделе <a href="/docs/observe/infrastructure-observability/hosts/monitoring-modes#disable-auto-injection" title="Узнайте, что входит в режим мониторинга инфраструктуры Dynatrace.">Отключение автоматического внедрения</a>.</p>
+<h2 id="_40">Приём метрик<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h2>
+<p>Локальный приём метрик в настоящее время поддерживается только на Windows и Linux.</p>
+<p>Команда <code>oneagentctl</code> позволяет проверять или изменять порты связи, используемые для локального приёма метрик через <a href="/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api" title="Используйте Dynatrace API для получения метрик отслеживаемых объектов.">OneAgent metric API</a>, <a href="/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe" title="Узнайте, как принимать метрики с помощью локальной интеграции со скриптами.">интеграцию со скриптами</a>, <a href="/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf" title="Принимайте метрики Telegraf в Dynatrace.">Telegraf</a> или <a href="/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd" title="Принимайте метрики в Dynatrace с помощью клиента OneAgent и ActiveGate StatsD.">DynatraceStatsd</a>. Изменение порта приёма метрик требует перезапуска OneAgent. Добавьте <a href="#oneagent-restart"><code>--restart-service</code></a> к команде для автоматического перезапуска OneAgent.</p>
+<p>Дополнительные сведения см. в разделе <a href="/docs/ingest-from/extend-dynatrace/extend-metrics" title="Узнайте, как расширить наблюдаемость метрик в Dynatrace.">Приём метрик</a>.</p>
+<h3 id="oneagent-api-telegraf">OneAgent API, интеграция со скриптами и Telegraf<a class="headerlink" href="#oneagent-api-telegraf" title="Permanent link">&para;</a></h3>
+<p>Порт приёма метрик по умолчанию — <code>14499</code>. При необходимости можно использовать команду <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#metrics" title="Узнайте, как выполнять некоторые задачи по настройке OneAgent без необходимости его переустановки.">oneagentctl</a> для проверки или изменения порта. Изменение порта приёма метрик требует перезапуска OneAgent. Добавьте <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart" title="Узнайте, как выполнять некоторые задачи по настройке OneAgent без необходимости его переустановки."><code>--restart-service</code></a> к команде для автоматического перезапуска OneAgent.</p>
+<h3 id="_41">Проверка порта приёма<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--get-extensions-ingest-port</code> для отображения текущего локального порта приёма (по умолчанию <code>14499</code>).</p>
+<ul>
+<li><strong>Linux</strong>, <strong>AIX</strong>:
+  <code>./oneagentctl --get-extensions-ingest-port</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-extensions-ingest-port</code></li>
+</ul>
+<h3 id="_42">Задание пользовательского порта приёма<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--set-extensions-ingest-port=&lt;arg&gt;</code> для задания пользовательского локального порта приёма.</p>
+<ul>
+<li><strong>Linux</strong>, <strong>AIX</strong>:
+  <code>./oneagentctl --set-extensions-ingest-port=14499 --restart-service</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-extensions-ingest-port=14499 --restart-service</code></li>
+</ul>
+<h3 id="_43">Настройка прокси<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h3>
+<p>Настройте прокси вашего хоста для разрешения трафика localhost, направляемого на порт приёма метрик (по умолчанию <code>14499</code>).</p>
+<h3 id="statsd">StatsD<a class="headerlink" href="#statsd" title="Permanent link">&para;</a></h3>
+<h3 id="oneagent_6">Прослушиватель OneAgent<a class="headerlink" href="#oneagent_6" title="Permanent link">&para;</a></h3>
+<p>Порт UDP-прослушивания DynatraceStatsD для прослушивателя OneAgent по умолчанию — <code>18125</code>. При необходимости можно использовать команду <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#metrics" title="Узнайте, как выполнять некоторые задачи по настройке OneAgent без необходимости его переустановки.">oneagentctl</a> для проверки или изменения порта приёма метрик. Изменение порта требует перезапуска OneAgent. Добавьте <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#oneagent-restart" title="Узнайте, как выполнять некоторые задачи по настройке OneAgent без необходимости его переустановки."><code>--restart-service</code></a> к команде для автоматического перезапуска OneAgent.</p>
+<h4 id="_44">Проверка порта приёма<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h4>
+<p>Используйте параметр <code>--get-extensions-statsd-port</code> для отображения текущего UDP-порта прослушивания DynatraceStatsd (по умолчанию <code>18125</code>).</p>
+<ul>
+<li><strong>Linux</strong>:
+  <code>./oneagentctl --get-extensions-statsd-port</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-extensions-statsd-port</code></li>
+</ul>
+<h4 id="_45">Задание пользовательского порта приёма<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h4>
+<p>Используйте параметр <code>--set-extensions-statsd-port=&lt;arg&gt;</code> для задания пользовательского UDP-порта прослушивания DynatraceStatsd.</p>
+<ul>
+<li><strong>Linux</strong>:
+  <code>./oneagentctl --set-extensions-statsd-port=18125 --restart-service</code></li>
+<li><strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-extensions-statsd-port=18125 --restart-service</code></li>
+</ul>
+<h3 id="statsd_1">Удалённый StatsD<a class="headerlink" href="#statsd_1" title="Permanent link">&para;</a></h3>
+<p>Порт UDP-прослушивания DynatraceStatsD для удалённого прослушивателя по умолчанию — <code>18126</code>.</p>
+<p>Для изменения порта прослушивания по умолчанию <code>18126</code> измените параметр <code>StatsdPort</code> в файле <code>extensionsuser.conf</code> ActiveGate:</p>
+<ul>
+<li>Linux
+  <code>/var/lib/dynatrace/remotepluginmodule/agent/conf/extensionsuser.conf</code></li>
+<li>Windows
+  <code>C:\ProgramData\dynatrace\remotepluginmodule\agent\conf\extensionsuser.conf</code>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>StatsdPort=18126
+</code></pre></div>
+<h2 id="_46">Сетевые зоны<a class="headerlink" href="#_46" title="Permanent link">&para;</a></h2>
+<p>Сведения о правилах именования сетевых зон и другую справочную информацию см. в разделе <a href="/docs/manage/network-zones" title="Узнайте, как работают сетевые зоны в Dynatrace.">Сетевые зоны</a>.</p>
+<p>Кроме того, для централизованного изменения назначения сетевой зоны из Dynatrace Cluster можно использовать <a href="/docs/ingest-from/bulk-configuration#configure-oneagents" title="Выполняйте настройку OneAgent и ActiveGate на хостах со страницы состояния развёртывания или в большом масштабе с помощью Dynatrace API.">удалённое управление конфигурацией</a> (выберите действие <strong>изменить сетевую зону</strong>).</p>
+<h3 id="_47">Задание сетевой зоны<a class="headerlink" href="#_47" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--set-network-zone</code> для указания OneAgent осуществлять связь через указанную сетевую зону. Имя сетевой зоны — это строка буквенно-цифровых символов. Можно также использовать дефисы (<code>-</code>), символы подчёркивания (<code>_</code>) и точку (<code>.</code>) в качестве разделителя. Имя сетевой зоны не должно начинаться с точки. Длина строки ограничена 256 символами. Имена сетевых зон нечувствительны к регистру. Dynatrace хранит эти имена в нижнем регистре. Дополнительные сведения см. в разделе <a href="/docs/manage/network-zones/network-zones-basic-info#naming" title="Узнайте основы сетевых зон.">именование сетевых зон</a>.</p>
+<ul>
+<li>На <strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --set-network-zone=&lt;your.network.zone&gt;</code></li>
+<li>На <strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-network-zone=&lt;your.network.zone&gt;</code></li>
+</ul>
+<h4 id="_48">Сброс сетевой зоны<a class="headerlink" href="#_48" title="Permanent link">&para;</a></h4>
+<p>Можно сбросить параметр сетевой зоны, передав пустое имя сетевой зоны:</p>
+<ul>
+<li>На <strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --set-network-zone=""</code></li>
+<li>На <strong>Windows</strong>:
+  <code>.\oneagentctl.exe --set-network-zone=""</code></li>
+</ul>
+<h3 id="_49">Отображение параметра сетевой зоны<a class="headerlink" href="#_49" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--get-network-zone</code> для отображения текущей конфигурации сетевой зоны:</p>
+<ul>
+<li>На <strong>Linux</strong> или <strong>AIX</strong>:
+  <code>./oneagentctl --get-network-zone</code></li>
+<li>На <strong>Windows</strong>:
+  <code>.\oneagentctl.exe --get-network-zone</code></li>
+</ul>
+<h2 id="_50">Передача параметров конфигурации при установке<a class="headerlink" href="#_50" title="Permanent link">&para;</a></h2>
+<p>Параметры <code>--set-*</code> можно передавать во время установки. Параметры конфигурации применяются непосредственно перед запуском службы OneAgent, и для применения конфигурации не требуется её перезапускать.</p>
+<p>Linux и AIX</p>
+<p>Windows</p>
+<p>Для передачи параметров конфигурации просто добавьте параметр и предварите значение знаком равенства (<code>=</code>). Например:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>/bin/sh Dynatrace-OneAgent-Linux.sh --set-host-group=test_group
+</code></pre></div>
+<h3 id="exe-">EXE-установщик<a class="headerlink" href="#exe-" title="Permanent link">&para;</a></h3>
+<p>Для передачи параметров конфигурации через EXE-установщик просто добавьте параметр и предварите значение знаком равенства (<code>=</code>). Например:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Dynatrace-OneAgent-Windows.exe --set-host-group=test_group
+</code></pre></div>
+<h3 id="msi">Пакет MSI<a class="headerlink" href="#msi" title="Permanent link">&para;</a></h3>
+<p>Параметры конфигурации также можно передавать через пакет MSI. Однако на этот раз необходимо использовать дополнительный параметр <code>ADDITIONAL_CONFIGURATION</code>. Например:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Dynatrace-OneAgent-Windows.msi ADDITIONAL_CONFIGURATION=&quot;--set-host-group=test_group&quot;
+</code></pre></div>
+<h2 id="fips-140">Криптографические алгоритмы FIPS 140<a class="headerlink" href="#fips-140" title="Permanent link">&para;</a></h2>
+<p>OneAgent версии 1.245+</p>
+<p>OneAgent использует режим FIPS для соответствия стандарту компьютерной безопасности FIPS 140-3.</p>
+<h3 id="fips-140_1">Проверка состояния FIPS 140<a class="headerlink" href="#fips-140_1" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>--get-fips-enabled</code> для проверки, использует ли OneAgent криптографические алгоритмы, соответствующие FIPS 140.</p>
+<ul>
+<li>На <strong>Linux</strong> или <strong>AIX</strong>
+  <code>./oneagentctl --get-fips-enabled</code></li>
+<li>На <strong>Windows</strong>
+  <code>.\oneagentctl.exe --get-fips-enabled</code></li>
+</ul>
+<h3 id="fips-140_2">Включение или отключение FIPS 140<a class="headerlink" href="#fips-140_2" title="Permanent link">&para;</a></h3>
+<p>Включение или отключение криптографических алгоритмов, соответствующих FIPS 140, можно выполнить только во время установки.</p>
+<p>Задайте параметр <code>--set-fips-enabled</code> значением <code>true</code> или <code>false</code> для включения или отключения криптографических алгоритмов FIPS 140 в OneAgent. Значение по умолчанию для первой установки — <code>false</code>.</p>
+<p>Для включения режима FIPS:</p>
+<ul>
+<li>На <strong>Linux</strong>, <strong>AIX</strong> или <strong>Windows</strong>:
+  Запустите установщик с <code>--set-fips-enabled=true</code></li>
+</ul>
+<p>Для отключения режима FIPS:</p>
+<ul>
+<li>На <strong>Linux</strong>, <strong>AIX</strong> или <strong>Windows</strong>:
+  Запустите установщик с <code>--set-fips-enabled==false</code></li>
+</ul>
+<p>Если вы хотите включить режим FIPS для развёртывания только приложения, перейдите в <code>/paas/package/agent</code> и удалите <code>dt_fips_disabled.flag</code>.</p>
+<h2 id="cap_setuid">cap_setuid для агента ОС<a class="headerlink" href="#cap_setuid" title="Permanent link">&para;</a></h2>
+<p>Мониторинг GPFS</p>
+<p>OneAgent версии 1.293+</p>
+<p>Включение <code>cap_setuid</code> для агента ОС требуется для мониторинга GPFS.</p>
+<p>Следующие параметры доступны только в <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged" title="Узнайте, когда Dynatrace OneAgent требует привилегий root на Linux.">непривилегированном режиме OneAgent на Linux</a>.</p>
+<ul>
+<li><code>get-osagent-cap-setuid-enabled</code></li>
+<li><code>set-osagent-cap-setuid-enabled</code></li>
+</ul>
+<p>Включить <code>cap_setuid</code> для агента ОС можно начиная с OneAgent версии 1.293+, но использовать мониторинг GPFS можно только начиная с OneAgent версии 1.295+.</p>
+<h3 id="cap_setuid_1">Проверка состояния cap_setuid для агента ОС<a class="headerlink" href="#cap_setuid_1" title="Permanent link">&para;</a></h3>
+<p>Используйте параметр <code>get-osagent-cap-setuid-enabled</code> для проверки, включён ли cap_setuid для агента ОС:</p>
+<p><code>./oneagentctl --get-osagent-cap-setuid-enabled</code></p>
+<h3 id="cap_setuid_2">Включение или отключение cap_setuid для агента ОС<a class="headerlink" href="#cap_setuid_2" title="Permanent link">&para;</a></h3>
+<p>Задайте параметр <code>--set-osagent-cap-setuid-enabled</code> значением <code>true</code> или <code>false</code> для отключения или включения cap_setuid для агента ОС:</p>
+<p><code>./oneagentctl --set-osagent-cap-setuid-enabled=true</code></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.path", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

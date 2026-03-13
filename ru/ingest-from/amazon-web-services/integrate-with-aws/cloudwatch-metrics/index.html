@@ -1,0 +1,6760 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace с AI-помощником (Managed + SaaS)">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/ru/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Мониторинг Amazon Web Services с метриками CloudWatch - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#amazon-web-services-cloudwatch" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Мониторинг Amazon Web Services с метриками CloudWatch
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+  
+  Начало работы
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../platform/grail/dynatrace-grail/" class="md-tabs__link">
+          
+  
+  
+  Платформа
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../observe/infrastructure-observability/" class="md-tabs__link">
+          
+  
+  
+  Наблюдаемость
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../dynatrace-intelligence/anomaly-detection/" class="md-tabs__link">
+          
+  
+  
+  Dynatrace Intelligence
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-tabs__link">
+          
+  
+  
+  Анализ и автоматизация
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+  Источники данных
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../deliver/configuration-as-code/" class="md-tabs__link">
+          
+  
+  
+  Deliver
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../secure/threat-observability/" class="md-tabs__link">
+          
+  
+  
+  Безопасность
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../manage/hub/" class="md-tabs__link">
+          
+  
+  
+  Управление
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../dynatrace-api/" class="md-tabs__link">
+          
+  
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../whats-new/" class="md-tabs__link">
+          
+  
+  
+  Что нового
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI Помощник
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Начало работы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документация Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../discover-dynatrace/what-is-dynatrace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что такое Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../discover-dynatrace/dynatrace-apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложения Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../semantic-dictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Семантический словарь
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Резервное копирование
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Платформа
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grail
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Grail
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../platform/grail/dynatrace-grail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что такое Grail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../platform/grail/dynatrace-query-language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Язык запросов DQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../platform/oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../platform/appengine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AppEngine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../platform/openpipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenPipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Наблюдаемость
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инфраструктура
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Инфраструктура
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observe/infrastructure-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observe/infrastructure-observability/infrastructure-and-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Хосты и операции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Облачный мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observe/infrastructure-observability/databases/database-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Базы данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложения
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Приложения
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observe/application-observability/distributed-tracing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Распределённая трассировка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observe/application-observability/services/services-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сервисы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Цифровой опыт
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Цифровой опыт
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observe/digital-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Синтетическое приложение
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observe/dynatrace-for-ai-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI и LLM мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Intelligence
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Intelligence
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обнаружение аномалий
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Обнаружение аномалий
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка чувствительности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложение Anomaly Detection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфигурация
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Адаптивные пороги
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Многомерный бейзлайн
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/anomaly-detection/metric-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    События метрик
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/anomaly-detection/static-thresholds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статические пороги
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Оптимизация DQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis Copilot
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Davis Copilot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/copilot/chat-with-davis-copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Assist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/copilot/copilot-getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/copilot/copilot-data-privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфиденциальность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/copilot/quick-analysis-copilot-dql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запросы на естественном языке
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/davis-problems-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проблемы Davis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ первопричин
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Анализ первопричин
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/root-cause-analysis/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ событий
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/dynatrace-intelligence-integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Справочник
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Справочник
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI модели
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/reference/davis-ai-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лимиты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ и автоматизация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Анализ и автоматизация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды и ноутбуки
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Дашборды и ноутбуки
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/document-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/document-version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Версии документов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Визуализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../analyze-explore-automate/dashboards-and-notebooks/explore-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Логи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Логи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../analyze-explore-automate/logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../analyze-explore-automate/logs/lma-logs-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложение журналов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../analyze-explore-automate/logs/lma-logs-app/facets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Фильтры
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../analyze-explore-automate/logs/lma-logs-app/query-and-filter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запросы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../analyze-explore-automate/explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обозреватель данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../analyze-explore-automate/smartscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Smartscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../analyze-explore-automate/workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../analyze-explore-automate/notifications-and-alerting/problem-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Уведомления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../analyze-explore-automate/compliance-and-resilience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Соответствие требованиям
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Источники данных
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-oneagent/installation-and-operation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent — установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deliver
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration as Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration as Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deliver/configuration-as-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monaco
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monaco
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API и разрешения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deliver/configuration-as-code/monaco/monaco-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deliver/configuration-as-code/monaco/monaco-getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_3" id="__nav_9_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terraform
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Terraform
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API и разрешения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deliver/configuration-as-code/terraform/terraform-cli-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI команды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SLO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deliver/service-level-objectives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deliver/service-level-objectives/create-slo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Создание SLO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Reliability Guardian
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Site Reliability Guardian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deliver/site-reliability-guardian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deliver/site-reliability-guardian/event-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Структура событий
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deliver/ownership-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ownership
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг релизов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Мониторинг релизов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deliver/release-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deliver/release-monitoring/monitor-releases-with-dynatrace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг релизов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deliver/quality-gates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Валидация релизов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Безопасность
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../secure/threat-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость угроз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../secure/threat-observability/security-events-ingest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграция
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Управление
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../manage/hub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензирование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лицензирование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/capabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Возможности DPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/billing-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Биллинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/budget-alerts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бюджетные оповещения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/license-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Жизненный цикл
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license/dps-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Разрешения DPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Intelligence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Что нового
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../whats-new/saas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../whats-new/oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../whats-new/activegate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="amazon-web-services-cloudwatch">Мониторинг Amazon Web Services с метриками CloudWatch<a class="headerlink" href="#amazon-web-services-cloudwatch" title="Permanent link">&para;</a></h1>
+<h1 id="amazon-web-services-cloudwatch_1">Мониторинг Amazon Web Services с метриками CloudWatch<a class="headerlink" href="#amazon-web-services-cloudwatch_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Classic</li>
+<li>Практическое руководство</li>
+<li>23 минуты чтения</li>
+<li>Обновлено 04 марта 2026 г.</li>
+</ul>
+<p>Следуйте этому руководству, чтобы начать удалённый приём данных из Amazon CloudWatch.</p>
+<p>Основное внимание уделяется мониторингу инфраструктуры сервисов AWS: Dynatrace осуществляет мониторинг сервисов AWS через CloudWatch.</p>
+<p>Информацию о мониторинге полного стека и журналов для ваших сервисов AWS см. в разделе <a href="#next">Что дальше?</a>.</p>
+<p>После установки первоначального мониторинга вы можете добавлять, удалять или изменять мониторинг сервисов с помощью веб-интерфейса Dynatrace, в масштабе или через Dynatrace API.</p>
+<p>Подробности о собираемых метриках</p>
+<p>Для ознакомления с метриками, собираемыми для каждого из сервисов AWS, см.:</p>
+<ul>
+<li><a href="/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/default-aws-metrics" title="Список классических (ранее «встроенных») метрик, которые Dynatrace собирает по умолчанию для мониторинга AWS.">Сервисы AWS с включённым мониторингом по умолчанию и их метрики</a></li>
+<li><a href="/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services" title="Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик.">Облачные сервисы AWS</a></li>
+</ul>
+<p>Мониторинг инфраструктуры Amazon Web Services предоставляет метрики из CloudWatch, данные об инфраструктуре, доступные через публичный AWS API, и конкретные события. Данные собираются с пятиминутными интервалами.</p>
+<h2 id="_1">Стоимость мониторинга<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Каждый сервис, отслеживаемый Dynatrace через CloudWatch, а также обработка и анализ журналов потребляют <a href="/docs/license/monitoring-consumption-classic/davis-data-units" title="Понять, как рассчитывается потребление мониторинга Dynatrace на основе единиц данных Davis (DDU).">DDU</a>.</li>
+<li>Amazon может взимать дополнительную плату за запросы метрик CloudWatch. Подробности о дополнительных расходах см. в <a href="https://aws.amazon.com/cloudwatch/pricing/">онлайн-документации по ценообразованию Amazon CloudWatch</a>.</li>
+</ul>
+<h2 id="_2">Предварительные требования для мониторинга<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Для настройки мониторинга AWS необходимо выполнить три предварительных условия:</p>
+<ol>
+<li>Права администратора Dynatrace</li>
+</ol>
+<p>Для управления конфигурацией мониторинга AWS необходимы права на чтение и изменение схемы <code>builtin:cloud.aws</code>.</p>
+<ul>
+<li>Требуются как <code>settings:objects:read</code>, так и <code>settings:objects:write</code>.</li>
+<li>Они входят в разрешения <strong>Change monitoring settings</strong>.</li>
+<li>Доступ только для чтения не поддерживается.</li>
+</ul>
+<p>Подробности об управлении и настройке разрешений см. в разделе <a href="/docs/manage/identity-access-management/permission-management/role-based-permissions" title="Разрешения на основе ролей">Управление разрешениями пользователей с помощью ролей</a>.</p>
+<ol>
+<li>Разрешение ActiveGate на доступ к URL</li>
+</ol>
+<p>Для мониторинга Amazon Web Services Dynatrace должен иметь возможность подключаться к API Amazon CloudWatch и периодически запрашивать его. По крайней мере один ActiveGate должен иметь возможность подключаться к Amazon CloudWatch для выполнения задач мониторинга. ActiveGate должен быть развёрнут на экземпляре EC2 и иметь возможность подключаться к конечным точкам, перечисленным ниже.</p>
+<p>Начиная с версии Dynatrace 1.267+, может использоваться только доступ на основе ролей. Аутентификация на основе ключей больше недоступна для новых учётных данных. Для существующих учётных данных на основе ключей вы можете продолжать использовать ключи бессрочно. Мы рекомендуем перейти на аутентификацию на основе ролей с помощью специальной кнопки на странице конфигурации. Dynatrace автоматически проверяет конфигурацию для обеспечения правильной настройки ролей.</p>
+<p><a href="#key-based-authentication">Аутентификация на основе ключей</a> разрешена только для разделов AWS GovCloud и China.</p>
+<p>ActiveGate, способный осуществлять мониторинг вашей учётной записи AWS для классических (встроенных) поддерживаемых сервисов, уже предоставлен и доступен в учётной записи Dynatrace AWS (только для сред SaaS, размещённых в AWS).</p>
+<p>Однако для мониторинга конкретных нестандартных облачных сервисов AWS или если ваша учётная запись AWS превышает 2000 ресурсов AWS, необходимо установить и настроить Environment ActiveGate. Следуйте <a href="/docs/ingest-from/dynatrace-activegate/installation" title="Узнайте, как настроить ActiveGate">руководству по установке ActiveGate</a> и продолжите выполнение этого руководства после завершения.</p>
+<p>Необходимо установить и настроить Environment ActiveGate, если вы хотите отслеживать одно из следующего или оба:</p>
+<ul>
+<li>Более 2000 ресурсов AWS (экземпляров сервисов AWS)</li>
+<li><a href="/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services#aws-non-default" title="Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик.">Нестандартные облачные сервисы AWS</a></li>
+</ul>
+<h4 id="activegate-url-aws">Разрешение ActiveGate на доступ к URL AWS<a class="headerlink" href="#activegate-url-aws" title="Permanent link">&para;</a></h4>
+<p>Интеграция обращается к следующим конечным точкам AWS API, поэтому они должны быть доступны из вашего ActiveGate:</p>
+<ul>
+<li>AWS Security Token Service (AWS STS)</li>
+</ul>
+<p>Environment ActiveGate версии 1.329+</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://sts.&lt;REGION&gt;.amazonaws.com/
+</code></pre></div>
+<p>Environment ActiveGate версии 1.328 и ниже</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>https://sts.amazonaws.com/
+</code></pre></div>
+<p>Начиная с версии Dynatrace 1.329, глобальная конечная точка AWS STS не поддерживается. Убедитесь, что <code>sts.&lt;REGION&gt;.amazonaws.com</code> доступен для регионов, которые вы хотите отслеживать.</p>
+<p>Регион <code>us-west-2</code> теперь является регионом по умолчанию для ActiveGate. В случае проблем с подключением убедитесь, что конечная точка <code>sts.us-west-2.amazonaws.com</code> включена.</p>
+<p>Подробности см. в <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-sts-regionalized-endpoints.html">региональных конечных точках AWS STS</a>.</p>
+<ul>
+<li>AWS Resource Groups Tagging</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>https://tagging.&lt;REGION&gt;.amazonaws.com/
+</code></pre></div>
+* Amazon CloudWatch</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>https://monitoring.&lt;REGION&gt;.amazonaws.com/
+</code></pre></div>
+* Amazon EC2</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ec2.&lt;REGION&gt;.amazonaws.com
+</code></pre></div>
+<p>Другие конечные точки могут потребоваться в зависимости от сервисов, которые вам необходимо отслеживать.</p>
+<p>Для получения конечных точек, специфичных для каждого сервиса, который вы хотите отслеживать, а также регионов AWS, поддерживаемых Dynatrace AWS Monitoring, обратитесь к таблицам ниже.</p>
+<h3 id="aws-activegate-aws">Конечные точки AWS, которые должны быть доступны из ActiveGate, с соответствующими сервисами AWS<a class="headerlink" href="#aws-activegate-aws" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Конечная точка</th>
+<th>Сервис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>autoscaling.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon EC2 Auto Scaling (встроенный), Amazon EC2 Auto Scaling</td>
+</tr>
+<tr>
+<td><code>lambda.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>AWS Lambda (встроенный), AWS Lambda</td>
+</tr>
+<tr>
+<td><code>elasticloadbalancing.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon Application and Network Load Balancer (встроенный), Amazon Elastic Load Balancer (ELB) (встроенный)</td>
+</tr>
+<tr>
+<td><code>dynamodb.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon DynamoDB (встроенный), Amazon DynamoDB</td>
+</tr>
+<tr>
+<td><code>ec2.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon EBS (встроенный), Amazon EC2 (встроенный), Amazon EBS, Amazon EC2 Spot Fleet, Amazon VPC NAT Gateways, AWS Transit Gateway, AWS Site-to-Site VPN</td>
+</tr>
+<tr>
+<td><code>rds.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon RDS (встроенный), Amazon Aurora, Amazon DocumentDB, Amazon Neptune, Amazon RDS</td>
+</tr>
+<tr>
+<td><code>s3.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon S3 (встроенный)</td>
+</tr>
+<tr>
+<td><code>acm-pca.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>AWS Certificate Manager Private Certificate Authority</td>
+</tr>
+<tr>
+<td><code>apigateway.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon API Gateway</td>
+</tr>
+<tr>
+<td><code>apprunner.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>AWS App Runner</td>
+</tr>
+<tr>
+<td><code>appstream2.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon AppStream</td>
+</tr>
+<tr>
+<td><code>appsync.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>AWS AppSync</td>
+</tr>
+<tr>
+<td><code>athena.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon Athena</td>
+</tr>
+<tr>
+<td><code>cloudfront.amazonaws.com</code></td>
+<td>Amazon CloudFront</td>
+</tr>
+<tr>
+<td><code>cloudhsmv2.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>AWS CloudHSM</td>
+</tr>
+<tr>
+<td><code>cloudsearch.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon CloudSearch</td>
+</tr>
+<tr>
+<td><code>codebuild.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>AWS CodeBuild</td>
+</tr>
+<tr>
+<td><code>datasync.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>AWS DataSync</td>
+</tr>
+<tr>
+<td><code>dax.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon DynamoDB Accelerator (DAX)</td>
+</tr>
+<tr>
+<td><code>dms.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>AWS Database Migration Service (AWS DMS)</td>
+</tr>
+<tr>
+<td><code>directconnect.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>AWS Direct Connect</td>
+</tr>
+<tr>
+<td><code>ecs.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon Elastic Container Service (ECS), Amazon ECS Container Insights</td>
+</tr>
+<tr>
+<td><code>elasticfilesystem.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon Elastic File System (EFS)</td>
+</tr>
+<tr>
+<td><code>eks.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon Elastic Kubernetes Service (EKS)</td>
+</tr>
+<tr>
+<td><code>elasticache.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon ElastiCache (EC)</td>
+</tr>
+<tr>
+<td><code>elasticbeanstalk.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>AWS Elastic Beanstalk</td>
+</tr>
+<tr>
+<td><code>elastictranscoder.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon Elastic Transcoder</td>
+</tr>
+<tr>
+<td><code>es.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon Elasticsearch Service (ES)</td>
+</tr>
+<tr>
+<td><code>events.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon EventBridge</td>
+</tr>
+<tr>
+<td><code>fsx.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon FSx</td>
+</tr>
+<tr>
+<td><code>gamelift.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon GameLift</td>
+</tr>
+<tr>
+<td><code>glue.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>AWS Glue</td>
+</tr>
+<tr>
+<td><code>inspector.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon Inspector</td>
+</tr>
+<tr>
+<td><code>kafka.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon Managed Streaming for Kafka</td>
+</tr>
+<tr>
+<td><code>models.lex.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon Lex</td>
+</tr>
+<tr>
+<td><code>logs.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon CloudWatch Logs</td>
+</tr>
+<tr>
+<td><code>api.mediatailor.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>AWS Elemental MediaTailor</td>
+</tr>
+<tr>
+<td><code>mediaconnect.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>AWS Elemental MediaConnect</td>
+</tr>
+<tr>
+<td><code>mediapackage.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>AWS Elemental MediaPackage Live</td>
+</tr>
+<tr>
+<td><code>mediapackage-vod.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>AWS Elemental MediaPackage Video on Demand</td>
+</tr>
+<tr>
+<td><code>opsworks.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>AWS OpsWorks</td>
+</tr>
+<tr>
+<td><code>qldb.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon QLDB</td>
+</tr>
+<tr>
+<td><code>redshift.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon Redshift</td>
+</tr>
+<tr>
+<td><code>robomaker.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>AWS RoboMaker</td>
+</tr>
+<tr>
+<td><code>route53.amazonaws.com</code></td>
+<td>Amazon Route 53</td>
+</tr>
+<tr>
+<td><code>route53resolver.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon Route 53 Resolver</td>
+</tr>
+<tr>
+<td><code>api.sagemaker.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon SageMaker Endpoints, Amazon SageMaker Endpoint Instances</td>
+</tr>
+<tr>
+<td><code>sns.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon Simple Notification Service (SNS)</td>
+</tr>
+<tr>
+<td><code>sqs.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon Simple Queue Service (SQS)</td>
+</tr>
+<tr>
+<td><code>storagegateway.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>AWS Storage Gateway</td>
+</tr>
+<tr>
+<td><code>swf.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon SWF</td>
+</tr>
+<tr>
+<td><code>transfer.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>AWS Transfer Family</td>
+</tr>
+<tr>
+<td><code>workmail.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon WorkMail</td>
+</tr>
+<tr>
+<td><code>workspaces.&lt;REGION&gt;.amazonaws.com</code></td>
+<td>Amazon WorkSpaces</td>
+</tr>
+</tbody>
+</table>
+<h3 id="aws-dynatrace-aws-monitoring">Регионы AWS, поддерживаемые Dynatrace AWS Monitoring<a class="headerlink" href="#aws-dynatrace-aws-monitoring" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>us-gov-west-1</code>: AWS GovCloud (US)</li>
+<li><code>us-gov-east-1</code>: AWS GovCloud (US-East)</li>
+<li><code>us-east-1</code>: US East (N. Virginia)</li>
+<li><code>us-east-2</code>: US East (Ohio)</li>
+<li><code>us-west-1</code>: US West (N. California)</li>
+<li><code>us-west-2</code>: US West (Oregon)</li>
+<li><code>eu-west-1</code>: EU (Ireland)</li>
+<li><code>eu-west-2</code>: EU (London)</li>
+<li><code>eu-west-3</code>: EU (Paris)</li>
+<li><code>eu-central-1</code>: EU (Frankfurt)</li>
+<li><code>eu-central-2</code>: EU (Zurich)</li>
+<li><code>eu-north-1</code>: EU (Stockholm)</li>
+<li><code>eu-south-1</code>: EU (Milan)</li>
+<li><code>eu-south-2</code>: EU (Spain)</li>
+<li><code>ap-east-1</code>: Asia Pacific (Hong Kong)</li>
+<li><code>ap-east-2</code>: Asia Pacific (Taipei)</li>
+<li><code>ap-south-1</code>: Asia Pacific (Mumbai)</li>
+<li><code>ap-south-2</code>: Asia Pacific (Hyderabad)</li>
+<li><code>ap-southeast-1</code>: Asia Pacific (Singapore)</li>
+<li><code>ap-southeast-2</code>: Asia Pacific (Sydney)</li>
+<li><code>ap-southeast-3</code>: Asia Pacific (Jakarta)</li>
+<li><code>ap-southeast-4</code>: Asia Pacific (Melbourne)</li>
+<li><code>ap-southeast-5</code>: Asia Pacific (Malaysia)</li>
+<li><code>ap-southeast-6</code>: Asia Pacific (New Zealand)</li>
+<li><code>ap-southeast-7</code>: Asia Pacific (Thailand)</li>
+<li><code>ap-northeast-1</code>: Asia Pacific (Tokyo)</li>
+<li><code>ap-northeast-2</code>: Asia Pacific (Seoul)</li>
+<li><code>ap-northeast-3</code>: Asia Pacific (Osaka)</li>
+<li><code>sa-east-1</code>: South America (Sao Paulo)</li>
+<li><code>cn-north-1</code>: China (Beijing)</li>
+<li><code>cn-northwest-1</code>: China (Ningxia)</li>
+<li><code>ca-central-1</code>: Canada (Central)</li>
+<li><code>ca-west-1</code>: Canada West (Calgary)</li>
+<li><code>il-central-1</code>: Israel (Tel Aviv)</li>
+<li><code>me-central-1</code>: Middle East (UAE)</li>
+<li><code>me-south-1</code>: Middle East (Bahrain)</li>
+<li><code>mx-central-1</code>: Mexico (Central)</li>
+<li><code>af-south-1</code>: Africa (Cape Town)</li>
+<li><code>us-iso-east-1</code>: US ISO East</li>
+<li><code>us-isob-east-1</code>: US ISOB East (Ohio)</li>
+<li><code>us-iso-west-1</code>: US ISO West</li>
+</ul>
+<p>Прокси</p>
+<p>Наиболее частой причиной проблем с сертификатами при использовании прокси с перехватом TLS является отсутствие CA-сертификата прокси в хранилище доверия ActiveGate.</p>
+<p>Если проблемы с прокси сохраняются, см.:</p>
+<ul>
+<li><a href="/docs/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate" title="Узнайте, как настроить свойства ActiveGate для работы с прокси.">Прокси для ActiveGate</a></li>
+<li><a href="/docs/ingest-from/dynatrace-activegate/configuration/configure-trusted-root-certificates-on-activegate" title="Узнайте, как указать пользовательский файл хранилища доверия, объединяемый с корневыми сертификатами Java и используемый по умолчанию для всех соединений.">Доверенные корневые сертификаты для ActiveGate</a></li>
+<li><a href="/docs/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate" title="Узнайте, как настроить SSL-сертификат в ActiveGate.">Пользовательский SSL-сертификат для ActiveGate</a></li>
+</ul>
+<p>«Ошибка связи.»</p>
+<p>Убедитесь, что URL-адреса занесены в белый список. В противном случае могут возникать ошибки связи или истечения времени ожидания.</p>
+<ol>
+<li>Политика мониторинга AWS и аутентификация на основе ролей</li>
+</ol>
+<p>Для выполнения этих шагов необходимы права администратора AWS.</p>
+<p>Политика мониторинга AWS определяет минимальный набор разрешений, который необходимо предоставить Dynatrace для мониторинга сервисов, работающих в вашей учётной записи AWS. Создайте её один раз и используйте каждый раз при предоставлении Dynatrace доступа к вашей учётной записи AWS.
+Если вы не хотите добавлять разрешения для всех сервисов, а хотите выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. Таблица содержит набор разрешений, необходимых для <a href="/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services" title="Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик.">всех облачных сервисов AWS</a>, а также список дополнительных разрешений, специфичных для каждого сервиса.</p>
+<p>Разрешения, необходимые для интеграции мониторинга AWS:</p>
+<ul>
+<li><code>"cloudwatch:GetMetricData"</code></li>
+<li><code>"cloudwatch:GetMetricStatistics"</code></li>
+<li><code>"cloudwatch:ListMetrics"</code></li>
+<li><code>"sts:GetCallerIdentity"</code></li>
+<li><code>"tag:GetResources"</code></li>
+<li><code>"tag:GetTagKeys"</code></li>
+<li><code>"ec2:DescribeAvailabilityZones"</code></li>
+</ul>
+<h3 id="_3">Полный список разрешений для облачных сервисов<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Разрешения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Все отслеживаемые сервисы Amazon Обязательно</td>
+<td><code>cloudwatch:GetMetricData</code>, <code>cloudwatch:GetMetricStatistics</code>, <code>cloudwatch:ListMetrics</code>, <code>sts:GetCallerIdentity</code>, <code>tag:GetResources</code>, <code>tag:GetTagKeys</code>, <code>ec2:DescribeAvailabilityZones</code></td>
+</tr>
+<tr>
+<td>AWS Certificate Manager Private Certificate Authority</td>
+<td><code>acm-pca:ListCertificateAuthorities</code></td>
+</tr>
+<tr>
+<td>Amazon MQ</td>
+<td></td>
+</tr>
+<tr>
+<td>Amazon API Gateway</td>
+<td><code>apigateway:GET</code></td>
+</tr>
+<tr>
+<td>AWS App Runner</td>
+<td><code>apprunner:ListServices</code></td>
+</tr>
+<tr>
+<td>Amazon AppStream</td>
+<td><code>appstream:DescribeFleets</code></td>
+</tr>
+<tr>
+<td>AWS AppSync</td>
+<td><code>appsync:ListGraphqlApis</code></td>
+</tr>
+<tr>
+<td>Amazon Athena</td>
+<td><code>athena:ListWorkGroups</code></td>
+</tr>
+<tr>
+<td>Amazon Aurora</td>
+<td><code>rds:DescribeDBClusters</code></td>
+</tr>
+<tr>
+<td>Amazon EC2 Auto Scaling</td>
+<td><code>autoscaling:DescribeAutoScalingGroups</code></td>
+</tr>
+<tr>
+<td>Amazon EC2 Auto Scaling (встроенный)</td>
+<td><code>autoscaling:DescribeAutoScalingGroups</code></td>
+</tr>
+<tr>
+<td>AWS Billing</td>
+<td></td>
+</tr>
+<tr>
+<td>Amazon Keyspaces</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS Chatbot</td>
+<td></td>
+</tr>
+<tr>
+<td>Amazon CloudFront</td>
+<td><code>cloudfront:ListDistributions</code></td>
+</tr>
+<tr>
+<td>AWS CloudHSM</td>
+<td><code>cloudhsm:DescribeClusters</code></td>
+</tr>
+<tr>
+<td>Amazon CloudSearch</td>
+<td><code>cloudsearch:DescribeDomains</code></td>
+</tr>
+<tr>
+<td>AWS CodeBuild</td>
+<td><code>codebuild:ListProjects</code></td>
+</tr>
+<tr>
+<td>Amazon Cognito</td>
+<td></td>
+</tr>
+<tr>
+<td>Amazon Connect</td>
+<td></td>
+</tr>
+<tr>
+<td>Amazon Elastic Kubernetes Service (EKS)</td>
+<td><code>eks:ListClusters</code></td>
+</tr>
+<tr>
+<td>AWS DataSync</td>
+<td><code>datasync:ListTasks</code></td>
+</tr>
+<tr>
+<td>Amazon DynamoDB Accelerator (DAX)</td>
+<td><code>dax:DescribeClusters</code></td>
+</tr>
+<tr>
+<td>AWS Database Migration Service (AWS DMS)</td>
+<td><code>dms:DescribeReplicationInstances</code></td>
+</tr>
+<tr>
+<td>Amazon DocumentDB</td>
+<td><code>rds:DescribeDBClusters</code></td>
+</tr>
+<tr>
+<td>AWS Direct Connect</td>
+<td><code>directconnect:DescribeConnections</code></td>
+</tr>
+<tr>
+<td>Amazon DynamoDB</td>
+<td><code>dynamodb:ListTables</code></td>
+</tr>
+<tr>
+<td>Amazon DynamoDB (встроенный)</td>
+<td><code>dynamodb:ListTables</code>, <code>dynamodb:ListTagsOfResource</code></td>
+</tr>
+<tr>
+<td>Amazon EBS</td>
+<td><code>ec2:DescribeVolumes</code></td>
+</tr>
+<tr>
+<td>Amazon EBS (встроенный)</td>
+<td><code>ec2:DescribeVolumes</code></td>
+</tr>
+<tr>
+<td>Amazon EC2 API</td>
+<td></td>
+</tr>
+<tr>
+<td>Amazon EC2 (встроенный)</td>
+<td><code>ec2:DescribeInstances</code></td>
+</tr>
+<tr>
+<td>Amazon EC2 Spot Fleet</td>
+<td><code>ec2:DescribeSpotFleetRequests</code></td>
+</tr>
+<tr>
+<td>Amazon Elastic Container Service (ECS)</td>
+<td><code>ecs:ListClusters</code></td>
+</tr>
+<tr>
+<td>Amazon ECS Container Insights</td>
+<td><code>ecs:ListClusters</code></td>
+</tr>
+<tr>
+<td>Amazon ElastiCache (EC)</td>
+<td><code>elasticache:DescribeCacheClusters</code></td>
+</tr>
+<tr>
+<td>AWS Elastic Beanstalk</td>
+<td><code>elasticbeanstalk:DescribeEnvironments</code></td>
+</tr>
+<tr>
+<td>Amazon Elastic File System (EFS)</td>
+<td><code>elasticfilesystem:DescribeFileSystems</code></td>
+</tr>
+<tr>
+<td>Amazon Elastic Inference</td>
+<td></td>
+</tr>
+<tr>
+<td>Amazon Elastic Map Reduce (EMR)</td>
+<td><code>elasticmapreduce:ListClusters</code></td>
+</tr>
+<tr>
+<td>Amazon Elasticsearch Service (ES)</td>
+<td><code>es:ListDomainNames</code></td>
+</tr>
+<tr>
+<td>Amazon Elastic Transcoder</td>
+<td><code>elastictranscoder:ListPipelines</code></td>
+</tr>
+<tr>
+<td>Amazon Elastic Load Balancer (ELB) (встроенный)</td>
+<td><code>elasticloadbalancing:DescribeInstanceHealth</code>, <code>elasticloadbalancing:DescribeListeners</code>, <code>elasticloadbalancing:DescribeLoadBalancers</code>, <code>elasticloadbalancing:DescribeRules</code>, <code>elasticloadbalancing:DescribeTags</code>, <code>elasticloadbalancing:DescribeTargetHealth</code></td>
+</tr>
+<tr>
+<td>Amazon EventBridge</td>
+<td><code>events:ListEventBuses</code></td>
+</tr>
+<tr>
+<td>Amazon FSx</td>
+<td><code>fsx:DescribeFileSystems</code></td>
+</tr>
+<tr>
+<td>Amazon GameLift</td>
+<td><code>gamelift:ListFleets</code></td>
+</tr>
+<tr>
+<td>AWS Glue</td>
+<td><code>glue:GetJobs</code></td>
+</tr>
+<tr>
+<td>Amazon Inspector</td>
+<td><code>inspector:ListAssessmentTemplates</code></td>
+</tr>
+<tr>
+<td>AWS Internet of Things (IoT)</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS IoT Analytics</td>
+<td></td>
+</tr>
+<tr>
+<td>Amazon Managed Streaming for Kafka</td>
+<td><code>kafka:ListClusters</code></td>
+</tr>
+<tr>
+<td>Amazon Kinesis Data Analytics</td>
+<td><code>kinesisanalytics:ListApplications</code></td>
+</tr>
+<tr>
+<td>Amazon Data Firehose</td>
+<td><code>firehose:ListDeliveryStreams</code></td>
+</tr>
+<tr>
+<td>Amazon Kinesis Data Streams</td>
+<td><code>kinesis:ListStreams</code></td>
+</tr>
+<tr>
+<td>Amazon Kinesis Video Streams</td>
+<td><code>kinesisvideo:ListStreams</code></td>
+</tr>
+<tr>
+<td>AWS Lambda</td>
+<td><code>lambda:ListFunctions</code></td>
+</tr>
+<tr>
+<td>AWS Lambda (встроенный)</td>
+<td><code>lambda:ListFunctions</code>, <code>lambda:ListTags</code></td>
+</tr>
+<tr>
+<td>Amazon Lex</td>
+<td><code>lex:GetBots</code></td>
+</tr>
+<tr>
+<td>Amazon Application and Network Load Balancer (встроенный)</td>
+<td><code>elasticloadbalancing:DescribeInstanceHealth</code>, <code>elasticloadbalancing:DescribeListeners</code>, <code>elasticloadbalancing:DescribeLoadBalancers</code>, <code>elasticloadbalancing:DescribeRules</code>, <code>elasticloadbalancing:DescribeTags</code>, <code>elasticloadbalancing:DescribeTargetHealth</code></td>
+</tr>
+<tr>
+<td>Amazon CloudWatch Logs</td>
+<td><code>logs:DescribeLogGroups</code></td>
+</tr>
+<tr>
+<td>AWS Elemental MediaConnect</td>
+<td><code>mediaconnect:ListFlows</code></td>
+</tr>
+<tr>
+<td>AWS Elemental MediaConvert</td>
+<td><code>mediaconvert:DescribeEndpoints</code></td>
+</tr>
+<tr>
+<td>AWS Elemental MediaPackage Live</td>
+<td><code>mediapackage:ListChannels</code></td>
+</tr>
+<tr>
+<td>AWS Elemental MediaPackage Video on Demand</td>
+<td><code>mediapackage-vod:ListPackagingConfigurations</code></td>
+</tr>
+<tr>
+<td>AWS Elemental MediaTailor</td>
+<td><code>mediatailor:ListPlaybackConfigurations</code></td>
+</tr>
+<tr>
+<td>Amazon VPC NAT Gateways</td>
+<td><code>ec2:DescribeNatGateways</code></td>
+</tr>
+<tr>
+<td>Amazon Neptune</td>
+<td><code>rds:DescribeDBClusters</code></td>
+</tr>
+<tr>
+<td>AWS OpsWorks</td>
+<td><code>opsworks:DescribeStacks</code></td>
+</tr>
+<tr>
+<td>Amazon Polly</td>
+<td></td>
+</tr>
+<tr>
+<td>Amazon QLDB</td>
+<td><code>qldb:ListLedgers</code></td>
+</tr>
+<tr>
+<td>Amazon RDS</td>
+<td><code>rds:DescribeDBInstances</code></td>
+</tr>
+<tr>
+<td>Amazon RDS (встроенный)</td>
+<td><code>rds:DescribeDBInstances</code>, <code>rds:DescribeEvents</code>, <code>rds:ListTagsForResource</code></td>
+</tr>
+<tr>
+<td>Amazon Redshift</td>
+<td><code>redshift:DescribeClusters</code></td>
+</tr>
+<tr>
+<td>Amazon Rekognition</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS RoboMaker</td>
+<td><code>robomaker:ListSimulationJobs</code></td>
+</tr>
+<tr>
+<td>Amazon Route 53</td>
+<td><code>route53:ListHostedZones</code></td>
+</tr>
+<tr>
+<td>Amazon Route 53 Resolver</td>
+<td><code>route53resolver:ListResolverEndpoints</code></td>
+</tr>
+<tr>
+<td>Amazon S3</td>
+<td><code>s3:ListAllMyBuckets</code></td>
+</tr>
+<tr>
+<td>Amazon S3 (встроенный)</td>
+<td><code>s3:ListAllMyBuckets</code></td>
+</tr>
+<tr>
+<td>Amazon SageMaker Batch Transform Jobs</td>
+<td></td>
+</tr>
+<tr>
+<td>Amazon SageMaker Endpoint Instances</td>
+<td><code>sagemaker:ListEndpoints</code></td>
+</tr>
+<tr>
+<td>Amazon SageMaker Endpoints</td>
+<td><code>sagemaker:ListEndpoints</code></td>
+</tr>
+<tr>
+<td>Amazon SageMaker Ground Truth</td>
+<td></td>
+</tr>
+<tr>
+<td>Amazon SageMaker Processing Jobs</td>
+<td></td>
+</tr>
+<tr>
+<td>Amazon SageMaker Training Jobs</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS Service Catalog</td>
+<td></td>
+</tr>
+<tr>
+<td>Amazon Simple Email Service (SES)</td>
+<td></td>
+</tr>
+<tr>
+<td>Amazon Simple Notification Service (SNS)</td>
+<td><code>sns:ListTopics</code></td>
+</tr>
+<tr>
+<td>Amazon Simple Queue Service (SQS)</td>
+<td><code>sqs:ListQueues</code></td>
+</tr>
+<tr>
+<td>AWS Systems Manager - Run Command</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS Step Functions</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS Storage Gateway</td>
+<td><code>storagegateway:ListGateways</code></td>
+</tr>
+<tr>
+<td>Amazon SWF</td>
+<td><code>swf:ListDomains</code></td>
+</tr>
+<tr>
+<td>Amazon Textract</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS IoT Things Graph</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS Transfer Family</td>
+<td><code>transfer:ListServers</code></td>
+</tr>
+<tr>
+<td>AWS Transit Gateway</td>
+<td><code>ec2:DescribeTransitGateways</code></td>
+</tr>
+<tr>
+<td>Amazon Translate</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS Trusted Advisor</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS API Usage</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS Site-to-Site VPN</td>
+<td><code>ec2:DescribeVpnConnections</code></td>
+</tr>
+<tr>
+<td>AWS WAF Classic</td>
+<td></td>
+</tr>
+<tr>
+<td>AWS WAF</td>
+<td></td>
+</tr>
+<tr>
+<td>Amazon WorkMail</td>
+<td><code>workmail:ListOrganizations</code></td>
+</tr>
+<tr>
+<td>Amazon WorkSpaces</td>
+<td><code>workspaces:DescribeWorkspaces</code></td>
+</tr>
+</tbody>
+</table>
+<p>Для получения информации, необходимой для комплексного мониторинга облачных вычислений AWS, необходимо авторизовать Dynatrace для доступа к вашим метрикам Amazon. Dynatrace определит все виртуализированные компоненты инфраструктуры в вашей среде AWS и соберёт метрики производительности, связанные с этими компонентами.</p>
+<p>Далее выберите модель развёртывания, наилучшим образом описывающую вашу среду, и следуйте соответствующей процедуре.</p>
+<p>Развёртывание без ActiveGate</p>
+<p>Развёртывание с существующим ActiveGate</p>
+<p>Dynatrace SaaS требует доступа к вашей учётной записи AWS на основе ролей.</p>
+<p>Без Environment ActiveGate, размещённого в AWS, мониторинг нестандартных облачных сервисов AWS будет недоступен.</p>
+<p>Вам понадобятся:</p>
+<ul>
+<li>Идентификатор учётной записи AWS</li>
+<li>Права на назначение ролевого доступа к вашей учётной записи AWS</li>
+<li>
+<p><strong>External ID</strong>, который можно получить следующим образом.</p>
+</li>
+<li>
+<p>Перейдите в <strong>Settings</strong> &gt; <strong>Cloud and virtualization</strong> &gt; <strong>AWS</strong>.</p>
+</li>
+<li>Нажмите <strong>Connect new Instance</strong>.</li>
+<li>В разделе <strong>Authentication method</strong> выберите <strong>Role-based authentication</strong>.</li>
+<li>В разделе <strong>Your Amazon account ID</strong> нажмите <strong>Copy</strong> для копирования токена (External ID).</li>
+</ul>
+<p>Для создания доступа на основе ролей</p>
+<ol>
+<li>Загрузите файл YAML с шаблоном CloudFormation из <a href="https://dt-url.net/8b23yuo">cloud-snippets/role_based_access_no_AG_template.yml</a>.</li>
+<li>
+<p>Создайте стек в вашей консоли Amazon:</p>
+</li>
+<li>
+<p>В консоли Amazon перейдите в CloudFormation.</p>
+</li>
+<li>Перейдите в <strong>Stacks</strong> и создайте новый стек с новыми ресурсами.</li>
+<li>Выберите <strong>Template is ready</strong>, загрузите созданный выше шаблон и нажмите <strong>Next</strong>.</li>
+<li>В разделе <strong>Parameters</strong> введите <strong>External ID</strong>.</li>
+<li>Введите имя для вашего стека и дважды нажмите <strong>Next</strong>.</li>
+<li>Проверьте конфигурацию и примите условия политики.</li>
+<li>Нажмите <strong>Create stack</strong>.</li>
+</ol>
+<p>Альтернатива: создание стека через CLI</p>
+<p>Для создания стека с помощью CLI выполните команду ниже, заменив значения параметров своими фактическими значениями.</p>
+<p>Также необходимо удалить угловые скобки (<code>&lt;</code> и <code>&gt;</code>).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>aws cloudformation create-stack \
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>--capabilities CAPABILITY_NAMED_IAM \
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>--stack-name &lt;stack_name&gt; \
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>--template-body &lt;file:///home/user/template_file.yaml&gt; \
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>--parameters ParameterKey=ExternalID,ParameterValue=&lt;external_id&gt; ParameterKey=RoleName,ParameterValue=&lt;role_name&gt; ParameterKey=PolicyName,ParameterValue=&lt;policy_name&gt;
+</code></pre></div>
+<p>Приведённые ниже инструкции применимы независимо от того, совпадает ли учётная запись, в которой размещён ваш ActiveGate, с отслеживаемой учётной записью. В типичной установке необходимо создать два стека CloudFormation с использованием шаблонов CloudFormation:</p>
+<ul>
+<li>
+<p>Стек CloudFormation из учётной записи, в которой размещён ваш ActiveGate, содержащий следующие ресурсы:</p>
+</li>
+<li>
+<p><a href="#create-role-ag">Роль для вашего Environment ActiveGate</a>, размещённого в вашей инфраструктуре AWS, на хосте Amazon EC2.</p>
+</li>
+<li>Прикреплённая политика, определяющая разрешения отслеживаемой учётной записи.</li>
+<li>
+<p>Стек CloudFormation из отслеживаемой учётной записи, содержащий следующие ресурсы:</p>
+</li>
+<li>
+<p>Специальная <a href="#create-role-dt">роль мониторинга</a> для Dynatrace в вашей учётной записи AWS.</p>
+</li>
+<li>Прикреплённая политика, определяющая разрешения аутентификации Dynatrace в вашей среде AWS.</li>
+</ul>
+<p>Для мониторинга нескольких учётных записей используйте <code>role_based_access_AG_account_multiple_monitoring_roles_template.yml</code> и повторяйте шаги <a href="/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#create-role-dt" title="Интеграция метрик из Amazon CloudWatch.">Создание роли для ActiveGate в учётной записи, в которой размещён ActiveGate</a> для каждой отслеживаемой учётной записи.</p>
+<p>Вам понадобятся:</p>
+<ul>
+<li>ActiveGate, установленный на хосте Amazon EC2. Он должен иметь возможность принимать роль в вашей учётной записи AWS, позволяющую ему читать данные мониторинга Dynatrace.</li>
+<li>Идентификатор учётной записи AWS, в которой размещён ActiveGate (учётная запись, в которой размещены ваши компоненты Dynatrace, в данном случае — та, в которой размещён Environment ActiveGate).</li>
+<li>Идентификатор отслеживаемой учётной записи Amazon Web Services (учётная запись, которую вы хотите отслеживать).</li>
+<li>Имя роли, с которой был запущен ваш Environment ActiveGate.</li>
+<li>
+<p><strong>External ID</strong>, который можно получить следующим образом.</p>
+</li>
+<li>
+<p>Перейдите в <strong>Settings</strong> &gt; <strong>Cloud and virtualization</strong> &gt; <strong>AWS</strong>.</p>
+</li>
+<li>Нажмите <strong>Connect new instance</strong>.</li>
+<li>В разделе <strong>Authentication method</strong> выберите <strong>Role-based authentication</strong>.</li>
+<li>В разделе <strong>Token</strong> нажмите <strong>Copy</strong> для копирования токена (External ID) в буфер обмена.</li>
+</ul>
+<p>Создание роли для ActiveGate в учётной записи, в которой размещён ActiveGate</p>
+<ol>
+<li>Загрузите <a href="https://dt-url.net/pv0306t">role_based_access_AG_account_template.yml</a>.</li>
+<li>
+<p>Создайте стек в вашей консоли Amazon:</p>
+</li>
+<li>
+<p>В консоли Amazon перейдите в CloudFormation.</p>
+</li>
+<li>Перейдите в <strong>Stacks</strong> и создайте новый стек с новыми ресурсами.</li>
+<li>Выберите <strong>Template is ready</strong>, загрузите созданный выше шаблон и нажмите <strong>Next</strong>.</li>
+<li>В разделе <strong>Parameters</strong> для <strong>Monitored Account ID</strong> введите идентификатор учётной записи, которую Dynatrace будет отслеживать. При необходимости скорректируйте другие параметры.</li>
+<li>Введите имя для вашего стека, затем дважды нажмите <strong>Next</strong>.</li>
+<li>Проверьте конфигурацию, установите флажок <strong>I acknowledge that AWS CloudFormation might create IAM resources with custom names</strong> и нажмите <strong>Submit</strong>.</li>
+</ol>
+<p>Также можно создать стек через CLI с помощью команды ниже:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>aws cloudformation create-stack \
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>--capabilities CAPABILITY_NAMED_IAM \
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>--stack-name &lt;stack_name&gt; \
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>--template-body &lt;file:///home/user/template_file.yaml&gt; \
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>--parameters ParameterKey=ActiveGateRoleName,ParameterValue=&lt;role_name&gt; ParameterKey=AssumePolicyName,ParameterValue=&lt;policy_name&gt; ParameterKey=MonitoringRoleName,ParameterValue=&lt;monitoring_role_name&gt; ParameterKey=MonitoredAccountID,ParameterValue=&lt;monitored_account_id&gt;
+</code></pre></div>
+<ol>
+<li>Перейдите в консоль Amazon EC2, щёлкните правой кнопкой мыши на экземпляре с вашим Environment ActiveGate и выберите <strong>Security</strong> &gt; <strong>Modify IAM role</strong>.</li>
+<li>Выберите созданную роль и нажмите <strong>Update IAM role</strong>.</li>
+</ol>
+<p>Создание роли мониторинга для Dynatrace в отслеживаемой учётной записи</p>
+<p>После создания <code>Dynatrace_ActiveGate_role</code> в учётной записи, в которой размещён ActiveGate, создайте роль для отслеживаемой учётной записи.</p>
+<ol>
+<li>Загрузите файл YAML с шаблоном CloudFormation из <a href="https://dt-url.net/f30301j">role_based_access_monitored_account_template.yml</a>.</li>
+<li>
+<p>Создайте стек в вашей консоли Amazon:</p>
+</li>
+<li>
+<p>В консоли Amazon перейдите в CloudFormation.</p>
+</li>
+<li>Перейдите в <strong>Stacks</strong> и создайте новый стек с новыми ресурсами.</li>
+<li>Выберите <strong>Template is ready</strong>, загрузите созданный выше шаблон и нажмите <strong>Next</strong>.</li>
+<li>В разделе <strong>Parameters</strong> введите <strong>External ID</strong>, <strong>ActiveGateRoleName</strong> и <strong>ActiveGateAccountID</strong> из созданного вами стека. При необходимости скорректируйте другие параметры.</li>
+<li>Введите имя для вашего стека, затем дважды нажмите <strong>Next</strong>.</li>
+<li>Проверьте конфигурацию, включите <strong>I acknowledge that AWS CloudFormation might create IAM resources with custom names</strong> и нажмите <strong>Submit</strong>.</li>
+</ol>
+<p>Также можно создать стек через CLI с помощью команды ниже:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>aws cloudformation create-stack \
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>--capabilities CAPABILITY_NAMED_IAM \
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>--stack-name &lt;stack_name&gt; \
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>--template-body &lt;file:///home/user/template_file.yaml&gt; \
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>--parameters ParameterKey=ExternalID,ParameterValue=&lt;external_id&gt; ParameterKey=ActiveGateRoleName,ParameterValue=&lt;activegate_role_name&gt; ParameterKey=ActiveGateAccountID,ParameterValue=&lt;activegate_account_id&gt;
+</code></pre></div>
+<p>Изменение конфигурации ActiveGate</p>
+<p>Начиная с ActiveGate версии 1.217, мониторинг AWS включён по умолчанию. Подробности конфигурации см. в разделе «Настройка свойств ActiveGate». Следующие параметры конфигурации относятся к более ранним версиям ActiveGate.</p>
+<ol>
+<li>Отредактируйте файл <code>custom.properties</code> вашего Environment ActiveGate.</li>
+<li>Задайте следующие параметры:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>[aws_monitoring]
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>use_aws_proxy_role = false
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>aws_monitoring_enabled = true
+</code></pre></div>
+<p>Если ActiveGate предназначен исключительно для мониторинга AWS, также необходимо задать свойство MSGrouter следующим образом:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>[collector]
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>MSGrouter = false
+</code></pre></div>
+3. Сохраните файл и перезапустите основной сервис ActiveGate.</p>
+<p>Аутентификация на основе ключей (только для AWS GovCloud и AWS China)</p>
+<p>Аутентификация на основе ключей разрешена только для разделов AWS GovCloud и China.</p>
+<p>В этом сценарии необходимо создать политику мониторинга AWS и сгенерировать пару ключей с этой политикой.</p>
+<p>Граничные условия разрешений AWS Identity and Access Management (IAM) могут запрещать действия AWS, необходимые для Dynatrace. Если вы используете граничные условия разрешений IAM в своей учётной записи AWS, убедитесь, что действия из политики разрешены во всех регионах AWS в рамках граничных условий разрешений.</p>
+<p>Для создания политики мониторинга AWS</p>
+<ol>
+<li>В консоли Amazon перейдите в <strong>Identity and Access Management</strong>.</li>
+<li>Перейдите в <strong>Policies</strong> и нажмите <strong>Create policy</strong>.</li>
+<li>Выберите вкладку JSON и вставьте предустановленную политику из блока ниже.</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>{
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>&quot;Version&quot;: &quot;2012-10-17&quot;,
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>&quot;Statement&quot;: [
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>{
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>&quot;Sid&quot;: &quot;VisualEditor0&quot;,
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>&quot;Effect&quot;: &quot;Allow&quot;,
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>&quot;Action&quot;: [
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>&quot;acm-pca:ListCertificateAuthorities&quot;,
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>&quot;apigateway:GET&quot;,
+<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>
+<a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>
+<a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a>
+<a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a>&quot;apprunner:ListServices&quot;,
+<a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a>
+<a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a>
+<a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a>
+<a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a>&quot;appstream:DescribeFleets&quot;,
+<a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a>
+<a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a>
+<a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a>
+<a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a>&quot;appsync:ListGraphqlApis&quot;,
+<a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a>
+<a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a>
+<a id="__codelineno-10-48" name="__codelineno-10-48" href="#__codelineno-10-48"></a>
+<a id="__codelineno-10-49" name="__codelineno-10-49" href="#__codelineno-10-49"></a>&quot;athena:ListWorkGroups&quot;,
+<a id="__codelineno-10-50" name="__codelineno-10-50" href="#__codelineno-10-50"></a>
+<a id="__codelineno-10-51" name="__codelineno-10-51" href="#__codelineno-10-51"></a>
+<a id="__codelineno-10-52" name="__codelineno-10-52" href="#__codelineno-10-52"></a>
+<a id="__codelineno-10-53" name="__codelineno-10-53" href="#__codelineno-10-53"></a>&quot;autoscaling:DescribeAutoScalingGroups&quot;,
+<a id="__codelineno-10-54" name="__codelineno-10-54" href="#__codelineno-10-54"></a>
+<a id="__codelineno-10-55" name="__codelineno-10-55" href="#__codelineno-10-55"></a>
+<a id="__codelineno-10-56" name="__codelineno-10-56" href="#__codelineno-10-56"></a>
+<a id="__codelineno-10-57" name="__codelineno-10-57" href="#__codelineno-10-57"></a>&quot;cloudformation:ListStackResources&quot;,
+<a id="__codelineno-10-58" name="__codelineno-10-58" href="#__codelineno-10-58"></a>
+<a id="__codelineno-10-59" name="__codelineno-10-59" href="#__codelineno-10-59"></a>
+<a id="__codelineno-10-60" name="__codelineno-10-60" href="#__codelineno-10-60"></a>
+<a id="__codelineno-10-61" name="__codelineno-10-61" href="#__codelineno-10-61"></a>&quot;cloudfront:ListDistributions&quot;,
+<a id="__codelineno-10-62" name="__codelineno-10-62" href="#__codelineno-10-62"></a>
+<a id="__codelineno-10-63" name="__codelineno-10-63" href="#__codelineno-10-63"></a>
+<a id="__codelineno-10-64" name="__codelineno-10-64" href="#__codelineno-10-64"></a>
+<a id="__codelineno-10-65" name="__codelineno-10-65" href="#__codelineno-10-65"></a>&quot;cloudhsm:DescribeClusters&quot;,
+<a id="__codelineno-10-66" name="__codelineno-10-66" href="#__codelineno-10-66"></a>
+<a id="__codelineno-10-67" name="__codelineno-10-67" href="#__codelineno-10-67"></a>
+<a id="__codelineno-10-68" name="__codelineno-10-68" href="#__codelineno-10-68"></a>
+<a id="__codelineno-10-69" name="__codelineno-10-69" href="#__codelineno-10-69"></a>&quot;cloudsearch:DescribeDomains&quot;,
+<a id="__codelineno-10-70" name="__codelineno-10-70" href="#__codelineno-10-70"></a>
+<a id="__codelineno-10-71" name="__codelineno-10-71" href="#__codelineno-10-71"></a>
+<a id="__codelineno-10-72" name="__codelineno-10-72" href="#__codelineno-10-72"></a>
+<a id="__codelineno-10-73" name="__codelineno-10-73" href="#__codelineno-10-73"></a>&quot;cloudwatch:GetMetricData&quot;,
+<a id="__codelineno-10-74" name="__codelineno-10-74" href="#__codelineno-10-74"></a>
+<a id="__codelineno-10-75" name="__codelineno-10-75" href="#__codelineno-10-75"></a>
+<a id="__codelineno-10-76" name="__codelineno-10-76" href="#__codelineno-10-76"></a>
+<a id="__codelineno-10-77" name="__codelineno-10-77" href="#__codelineno-10-77"></a>&quot;cloudwatch:GetMetricStatistics&quot;,
+<a id="__codelineno-10-78" name="__codelineno-10-78" href="#__codelineno-10-78"></a>
+<a id="__codelineno-10-79" name="__codelineno-10-79" href="#__codelineno-10-79"></a>
+<a id="__codelineno-10-80" name="__codelineno-10-80" href="#__codelineno-10-80"></a>
+<a id="__codelineno-10-81" name="__codelineno-10-81" href="#__codelineno-10-81"></a>&quot;cloudwatch:ListMetrics&quot;,
+<a id="__codelineno-10-82" name="__codelineno-10-82" href="#__codelineno-10-82"></a>
+<a id="__codelineno-10-83" name="__codelineno-10-83" href="#__codelineno-10-83"></a>
+<a id="__codelineno-10-84" name="__codelineno-10-84" href="#__codelineno-10-84"></a>
+<a id="__codelineno-10-85" name="__codelineno-10-85" href="#__codelineno-10-85"></a>&quot;codebuild:ListProjects&quot;,
+<a id="__codelineno-10-86" name="__codelineno-10-86" href="#__codelineno-10-86"></a>
+<a id="__codelineno-10-87" name="__codelineno-10-87" href="#__codelineno-10-87"></a>
+<a id="__codelineno-10-88" name="__codelineno-10-88" href="#__codelineno-10-88"></a>
+<a id="__codelineno-10-89" name="__codelineno-10-89" href="#__codelineno-10-89"></a>&quot;datasync:ListTasks&quot;,
+<a id="__codelineno-10-90" name="__codelineno-10-90" href="#__codelineno-10-90"></a>
+<a id="__codelineno-10-91" name="__codelineno-10-91" href="#__codelineno-10-91"></a>
+<a id="__codelineno-10-92" name="__codelineno-10-92" href="#__codelineno-10-92"></a>
+<a id="__codelineno-10-93" name="__codelineno-10-93" href="#__codelineno-10-93"></a>&quot;dax:DescribeClusters&quot;,
+<a id="__codelineno-10-94" name="__codelineno-10-94" href="#__codelineno-10-94"></a>
+<a id="__codelineno-10-95" name="__codelineno-10-95" href="#__codelineno-10-95"></a>
+<a id="__codelineno-10-96" name="__codelineno-10-96" href="#__codelineno-10-96"></a>
+<a id="__codelineno-10-97" name="__codelineno-10-97" href="#__codelineno-10-97"></a>&quot;directconnect:DescribeConnections&quot;,
+<a id="__codelineno-10-98" name="__codelineno-10-98" href="#__codelineno-10-98"></a>
+<a id="__codelineno-10-99" name="__codelineno-10-99" href="#__codelineno-10-99"></a>
+<a id="__codelineno-10-100" name="__codelineno-10-100" href="#__codelineno-10-100"></a>
+<a id="__codelineno-10-101" name="__codelineno-10-101" href="#__codelineno-10-101"></a>&quot;dms:DescribeReplicationInstances&quot;,
+<a id="__codelineno-10-102" name="__codelineno-10-102" href="#__codelineno-10-102"></a>
+<a id="__codelineno-10-103" name="__codelineno-10-103" href="#__codelineno-10-103"></a>
+<a id="__codelineno-10-104" name="__codelineno-10-104" href="#__codelineno-10-104"></a>
+<a id="__codelineno-10-105" name="__codelineno-10-105" href="#__codelineno-10-105"></a>&quot;dynamodb:ListTables&quot;,
+<a id="__codelineno-10-106" name="__codelineno-10-106" href="#__codelineno-10-106"></a>
+<a id="__codelineno-10-107" name="__codelineno-10-107" href="#__codelineno-10-107"></a>
+<a id="__codelineno-10-108" name="__codelineno-10-108" href="#__codelineno-10-108"></a>
+<a id="__codelineno-10-109" name="__codelineno-10-109" href="#__codelineno-10-109"></a>&quot;dynamodb:ListTagsOfResource&quot;,
+<a id="__codelineno-10-110" name="__codelineno-10-110" href="#__codelineno-10-110"></a>
+<a id="__codelineno-10-111" name="__codelineno-10-111" href="#__codelineno-10-111"></a>
+<a id="__codelineno-10-112" name="__codelineno-10-112" href="#__codelineno-10-112"></a>
+<a id="__codelineno-10-113" name="__codelineno-10-113" href="#__codelineno-10-113"></a>&quot;ec2:DescribeAvailabilityZones&quot;,
+<a id="__codelineno-10-114" name="__codelineno-10-114" href="#__codelineno-10-114"></a>
+<a id="__codelineno-10-115" name="__codelineno-10-115" href="#__codelineno-10-115"></a>
+<a id="__codelineno-10-116" name="__codelineno-10-116" href="#__codelineno-10-116"></a>
+<a id="__codelineno-10-117" name="__codelineno-10-117" href="#__codelineno-10-117"></a>&quot;ec2:DescribeInstances&quot;,
+<a id="__codelineno-10-118" name="__codelineno-10-118" href="#__codelineno-10-118"></a>
+<a id="__codelineno-10-119" name="__codelineno-10-119" href="#__codelineno-10-119"></a>
+<a id="__codelineno-10-120" name="__codelineno-10-120" href="#__codelineno-10-120"></a>
+<a id="__codelineno-10-121" name="__codelineno-10-121" href="#__codelineno-10-121"></a>&quot;ec2:DescribeNatGateways&quot;,
+<a id="__codelineno-10-122" name="__codelineno-10-122" href="#__codelineno-10-122"></a>
+<a id="__codelineno-10-123" name="__codelineno-10-123" href="#__codelineno-10-123"></a>
+<a id="__codelineno-10-124" name="__codelineno-10-124" href="#__codelineno-10-124"></a>
+<a id="__codelineno-10-125" name="__codelineno-10-125" href="#__codelineno-10-125"></a>&quot;ec2:DescribeSpotFleetRequests&quot;,
+<a id="__codelineno-10-126" name="__codelineno-10-126" href="#__codelineno-10-126"></a>
+<a id="__codelineno-10-127" name="__codelineno-10-127" href="#__codelineno-10-127"></a>
+<a id="__codelineno-10-128" name="__codelineno-10-128" href="#__codelineno-10-128"></a>
+<a id="__codelineno-10-129" name="__codelineno-10-129" href="#__codelineno-10-129"></a>&quot;ec2:DescribeTransitGateways&quot;,
+<a id="__codelineno-10-130" name="__codelineno-10-130" href="#__codelineno-10-130"></a>
+<a id="__codelineno-10-131" name="__codelineno-10-131" href="#__codelineno-10-131"></a>
+<a id="__codelineno-10-132" name="__codelineno-10-132" href="#__codelineno-10-132"></a>
+<a id="__codelineno-10-133" name="__codelineno-10-133" href="#__codelineno-10-133"></a>&quot;ec2:DescribeVolumes&quot;,
+<a id="__codelineno-10-134" name="__codelineno-10-134" href="#__codelineno-10-134"></a>
+<a id="__codelineno-10-135" name="__codelineno-10-135" href="#__codelineno-10-135"></a>
+<a id="__codelineno-10-136" name="__codelineno-10-136" href="#__codelineno-10-136"></a>
+<a id="__codelineno-10-137" name="__codelineno-10-137" href="#__codelineno-10-137"></a>&quot;ec2:DescribeVpnConnections&quot;,
+<a id="__codelineno-10-138" name="__codelineno-10-138" href="#__codelineno-10-138"></a>
+<a id="__codelineno-10-139" name="__codelineno-10-139" href="#__codelineno-10-139"></a>
+<a id="__codelineno-10-140" name="__codelineno-10-140" href="#__codelineno-10-140"></a>
+<a id="__codelineno-10-141" name="__codelineno-10-141" href="#__codelineno-10-141"></a>&quot;ecs:ListClusters&quot;,
+<a id="__codelineno-10-142" name="__codelineno-10-142" href="#__codelineno-10-142"></a>
+<a id="__codelineno-10-143" name="__codelineno-10-143" href="#__codelineno-10-143"></a>
+<a id="__codelineno-10-144" name="__codelineno-10-144" href="#__codelineno-10-144"></a>
+<a id="__codelineno-10-145" name="__codelineno-10-145" href="#__codelineno-10-145"></a>&quot;eks:ListClusters&quot;,
+<a id="__codelineno-10-146" name="__codelineno-10-146" href="#__codelineno-10-146"></a>
+<a id="__codelineno-10-147" name="__codelineno-10-147" href="#__codelineno-10-147"></a>
+<a id="__codelineno-10-148" name="__codelineno-10-148" href="#__codelineno-10-148"></a>
+<a id="__codelineno-10-149" name="__codelineno-10-149" href="#__codelineno-10-149"></a>&quot;elasticache:DescribeCacheClusters&quot;,
+<a id="__codelineno-10-150" name="__codelineno-10-150" href="#__codelineno-10-150"></a>
+<a id="__codelineno-10-151" name="__codelineno-10-151" href="#__codelineno-10-151"></a>
+<a id="__codelineno-10-152" name="__codelineno-10-152" href="#__codelineno-10-152"></a>
+<a id="__codelineno-10-153" name="__codelineno-10-153" href="#__codelineno-10-153"></a>&quot;elasticbeanstalk:DescribeEnvironmentResources&quot;,
+<a id="__codelineno-10-154" name="__codelineno-10-154" href="#__codelineno-10-154"></a>
+<a id="__codelineno-10-155" name="__codelineno-10-155" href="#__codelineno-10-155"></a>
+<a id="__codelineno-10-156" name="__codelineno-10-156" href="#__codelineno-10-156"></a>
+<a id="__codelineno-10-157" name="__codelineno-10-157" href="#__codelineno-10-157"></a>&quot;elasticbeanstalk:DescribeEnvironments&quot;,
+<a id="__codelineno-10-158" name="__codelineno-10-158" href="#__codelineno-10-158"></a>
+<a id="__codelineno-10-159" name="__codelineno-10-159" href="#__codelineno-10-159"></a>
+<a id="__codelineno-10-160" name="__codelineno-10-160" href="#__codelineno-10-160"></a>
+<a id="__codelineno-10-161" name="__codelineno-10-161" href="#__codelineno-10-161"></a>&quot;elasticfilesystem:DescribeFileSystems&quot;,
+<a id="__codelineno-10-162" name="__codelineno-10-162" href="#__codelineno-10-162"></a>
+<a id="__codelineno-10-163" name="__codelineno-10-163" href="#__codelineno-10-163"></a>
+<a id="__codelineno-10-164" name="__codelineno-10-164" href="#__codelineno-10-164"></a>
+<a id="__codelineno-10-165" name="__codelineno-10-165" href="#__codelineno-10-165"></a>&quot;elasticloadbalancing:DescribeInstanceHealth&quot;,
+<a id="__codelineno-10-166" name="__codelineno-10-166" href="#__codelineno-10-166"></a>
+<a id="__codelineno-10-167" name="__codelineno-10-167" href="#__codelineno-10-167"></a>
+<a id="__codelineno-10-168" name="__codelineno-10-168" href="#__codelineno-10-168"></a>
+<a id="__codelineno-10-169" name="__codelineno-10-169" href="#__codelineno-10-169"></a>&quot;elasticloadbalancing:DescribeListeners&quot;,
+<a id="__codelineno-10-170" name="__codelineno-10-170" href="#__codelineno-10-170"></a>
+<a id="__codelineno-10-171" name="__codelineno-10-171" href="#__codelineno-10-171"></a>
+<a id="__codelineno-10-172" name="__codelineno-10-172" href="#__codelineno-10-172"></a>
+<a id="__codelineno-10-173" name="__codelineno-10-173" href="#__codelineno-10-173"></a>&quot;elasticloadbalancing:DescribeLoadBalancers&quot;,
+<a id="__codelineno-10-174" name="__codelineno-10-174" href="#__codelineno-10-174"></a>
+<a id="__codelineno-10-175" name="__codelineno-10-175" href="#__codelineno-10-175"></a>
+<a id="__codelineno-10-176" name="__codelineno-10-176" href="#__codelineno-10-176"></a>
+<a id="__codelineno-10-177" name="__codelineno-10-177" href="#__codelineno-10-177"></a>&quot;elasticloadbalancing:DescribeRules&quot;,
+<a id="__codelineno-10-178" name="__codelineno-10-178" href="#__codelineno-10-178"></a>
+<a id="__codelineno-10-179" name="__codelineno-10-179" href="#__codelineno-10-179"></a>
+<a id="__codelineno-10-180" name="__codelineno-10-180" href="#__codelineno-10-180"></a>
+<a id="__codelineno-10-181" name="__codelineno-10-181" href="#__codelineno-10-181"></a>&quot;elasticloadbalancing:DescribeTags&quot;,
+<a id="__codelineno-10-182" name="__codelineno-10-182" href="#__codelineno-10-182"></a>
+<a id="__codelineno-10-183" name="__codelineno-10-183" href="#__codelineno-10-183"></a>
+<a id="__codelineno-10-184" name="__codelineno-10-184" href="#__codelineno-10-184"></a>
+<a id="__codelineno-10-185" name="__codelineno-10-185" href="#__codelineno-10-185"></a>&quot;elasticloadbalancing:DescribeTargetHealth&quot;,
+<a id="__codelineno-10-186" name="__codelineno-10-186" href="#__codelineno-10-186"></a>
+<a id="__codelineno-10-187" name="__codelineno-10-187" href="#__codelineno-10-187"></a>
+<a id="__codelineno-10-188" name="__codelineno-10-188" href="#__codelineno-10-188"></a>
+<a id="__codelineno-10-189" name="__codelineno-10-189" href="#__codelineno-10-189"></a>&quot;elasticmapreduce:ListClusters&quot;,
+<a id="__codelineno-10-190" name="__codelineno-10-190" href="#__codelineno-10-190"></a>
+<a id="__codelineno-10-191" name="__codelineno-10-191" href="#__codelineno-10-191"></a>
+<a id="__codelineno-10-192" name="__codelineno-10-192" href="#__codelineno-10-192"></a>
+<a id="__codelineno-10-193" name="__codelineno-10-193" href="#__codelineno-10-193"></a>&quot;elastictranscoder:ListPipelines&quot;,
+<a id="__codelineno-10-194" name="__codelineno-10-194" href="#__codelineno-10-194"></a>
+<a id="__codelineno-10-195" name="__codelineno-10-195" href="#__codelineno-10-195"></a>
+<a id="__codelineno-10-196" name="__codelineno-10-196" href="#__codelineno-10-196"></a>
+<a id="__codelineno-10-197" name="__codelineno-10-197" href="#__codelineno-10-197"></a>&quot;es:ListDomainNames&quot;,
+<a id="__codelineno-10-198" name="__codelineno-10-198" href="#__codelineno-10-198"></a>
+<a id="__codelineno-10-199" name="__codelineno-10-199" href="#__codelineno-10-199"></a>
+<a id="__codelineno-10-200" name="__codelineno-10-200" href="#__codelineno-10-200"></a>
+<a id="__codelineno-10-201" name="__codelineno-10-201" href="#__codelineno-10-201"></a>&quot;events:ListEventBuses&quot;,
+<a id="__codelineno-10-202" name="__codelineno-10-202" href="#__codelineno-10-202"></a>
+<a id="__codelineno-10-203" name="__codelineno-10-203" href="#__codelineno-10-203"></a>
+<a id="__codelineno-10-204" name="__codelineno-10-204" href="#__codelineno-10-204"></a>
+<a id="__codelineno-10-205" name="__codelineno-10-205" href="#__codelineno-10-205"></a>&quot;firehose:ListDeliveryStreams&quot;,
+<a id="__codelineno-10-206" name="__codelineno-10-206" href="#__codelineno-10-206"></a>
+<a id="__codelineno-10-207" name="__codelineno-10-207" href="#__codelineno-10-207"></a>
+<a id="__codelineno-10-208" name="__codelineno-10-208" href="#__codelineno-10-208"></a>
+<a id="__codelineno-10-209" name="__codelineno-10-209" href="#__codelineno-10-209"></a>&quot;fsx:DescribeFileSystems&quot;,
+<a id="__codelineno-10-210" name="__codelineno-10-210" href="#__codelineno-10-210"></a>
+<a id="__codelineno-10-211" name="__codelineno-10-211" href="#__codelineno-10-211"></a>
+<a id="__codelineno-10-212" name="__codelineno-10-212" href="#__codelineno-10-212"></a>
+<a id="__codelineno-10-213" name="__codelineno-10-213" href="#__codelineno-10-213"></a>&quot;gamelift:ListFleets&quot;,
+<a id="__codelineno-10-214" name="__codelineno-10-214" href="#__codelineno-10-214"></a>
+<a id="__codelineno-10-215" name="__codelineno-10-215" href="#__codelineno-10-215"></a>
+<a id="__codelineno-10-216" name="__codelineno-10-216" href="#__codelineno-10-216"></a>
+<a id="__codelineno-10-217" name="__codelineno-10-217" href="#__codelineno-10-217"></a>&quot;glue:GetJobs&quot;,
+<a id="__codelineno-10-218" name="__codelineno-10-218" href="#__codelineno-10-218"></a>
+<a id="__codelineno-10-219" name="__codelineno-10-219" href="#__codelineno-10-219"></a>
+<a id="__codelineno-10-220" name="__codelineno-10-220" href="#__codelineno-10-220"></a>
+<a id="__codelineno-10-221" name="__codelineno-10-221" href="#__codelineno-10-221"></a>&quot;inspector:ListAssessmentTemplates&quot;,
+<a id="__codelineno-10-222" name="__codelineno-10-222" href="#__codelineno-10-222"></a>
+<a id="__codelineno-10-223" name="__codelineno-10-223" href="#__codelineno-10-223"></a>
+<a id="__codelineno-10-224" name="__codelineno-10-224" href="#__codelineno-10-224"></a>
+<a id="__codelineno-10-225" name="__codelineno-10-225" href="#__codelineno-10-225"></a>&quot;kafka:ListClusters&quot;,
+<a id="__codelineno-10-226" name="__codelineno-10-226" href="#__codelineno-10-226"></a>
+<a id="__codelineno-10-227" name="__codelineno-10-227" href="#__codelineno-10-227"></a>
+<a id="__codelineno-10-228" name="__codelineno-10-228" href="#__codelineno-10-228"></a>
+<a id="__codelineno-10-229" name="__codelineno-10-229" href="#__codelineno-10-229"></a>&quot;kinesis:ListStreams&quot;,
+<a id="__codelineno-10-230" name="__codelineno-10-230" href="#__codelineno-10-230"></a>
+<a id="__codelineno-10-231" name="__codelineno-10-231" href="#__codelineno-10-231"></a>
+<a id="__codelineno-10-232" name="__codelineno-10-232" href="#__codelineno-10-232"></a>
+<a id="__codelineno-10-233" name="__codelineno-10-233" href="#__codelineno-10-233"></a>&quot;kinesisanalytics:ListApplications&quot;,
+<a id="__codelineno-10-234" name="__codelineno-10-234" href="#__codelineno-10-234"></a>
+<a id="__codelineno-10-235" name="__codelineno-10-235" href="#__codelineno-10-235"></a>
+<a id="__codelineno-10-236" name="__codelineno-10-236" href="#__codelineno-10-236"></a>
+<a id="__codelineno-10-237" name="__codelineno-10-237" href="#__codelineno-10-237"></a>&quot;kinesisvideo:ListStreams&quot;,
+<a id="__codelineno-10-238" name="__codelineno-10-238" href="#__codelineno-10-238"></a>
+<a id="__codelineno-10-239" name="__codelineno-10-239" href="#__codelineno-10-239"></a>
+<a id="__codelineno-10-240" name="__codelineno-10-240" href="#__codelineno-10-240"></a>
+<a id="__codelineno-10-241" name="__codelineno-10-241" href="#__codelineno-10-241"></a>&quot;lambda:ListFunctions&quot;,
+<a id="__codelineno-10-242" name="__codelineno-10-242" href="#__codelineno-10-242"></a>
+<a id="__codelineno-10-243" name="__codelineno-10-243" href="#__codelineno-10-243"></a>
+<a id="__codelineno-10-244" name="__codelineno-10-244" href="#__codelineno-10-244"></a>
+<a id="__codelineno-10-245" name="__codelineno-10-245" href="#__codelineno-10-245"></a>&quot;lambda:ListTags&quot;,
+<a id="__codelineno-10-246" name="__codelineno-10-246" href="#__codelineno-10-246"></a>
+<a id="__codelineno-10-247" name="__codelineno-10-247" href="#__codelineno-10-247"></a>
+<a id="__codelineno-10-248" name="__codelineno-10-248" href="#__codelineno-10-248"></a>
+<a id="__codelineno-10-249" name="__codelineno-10-249" href="#__codelineno-10-249"></a>&quot;lex:GetBots&quot;,
+<a id="__codelineno-10-250" name="__codelineno-10-250" href="#__codelineno-10-250"></a>
+<a id="__codelineno-10-251" name="__codelineno-10-251" href="#__codelineno-10-251"></a>
+<a id="__codelineno-10-252" name="__codelineno-10-252" href="#__codelineno-10-252"></a>
+<a id="__codelineno-10-253" name="__codelineno-10-253" href="#__codelineno-10-253"></a>&quot;logs:DescribeLogGroups&quot;,
+<a id="__codelineno-10-254" name="__codelineno-10-254" href="#__codelineno-10-254"></a>
+<a id="__codelineno-10-255" name="__codelineno-10-255" href="#__codelineno-10-255"></a>
+<a id="__codelineno-10-256" name="__codelineno-10-256" href="#__codelineno-10-256"></a>
+<a id="__codelineno-10-257" name="__codelineno-10-257" href="#__codelineno-10-257"></a>&quot;mediaconnect:ListFlows&quot;,
+<a id="__codelineno-10-258" name="__codelineno-10-258" href="#__codelineno-10-258"></a>
+<a id="__codelineno-10-259" name="__codelineno-10-259" href="#__codelineno-10-259"></a>
+<a id="__codelineno-10-260" name="__codelineno-10-260" href="#__codelineno-10-260"></a>
+<a id="__codelineno-10-261" name="__codelineno-10-261" href="#__codelineno-10-261"></a>&quot;mediaconvert:DescribeEndpoints&quot;,
+<a id="__codelineno-10-262" name="__codelineno-10-262" href="#__codelineno-10-262"></a>
+<a id="__codelineno-10-263" name="__codelineno-10-263" href="#__codelineno-10-263"></a>
+<a id="__codelineno-10-264" name="__codelineno-10-264" href="#__codelineno-10-264"></a>
+<a id="__codelineno-10-265" name="__codelineno-10-265" href="#__codelineno-10-265"></a>&quot;mediapackage-vod:ListPackagingConfigurations&quot;,
+<a id="__codelineno-10-266" name="__codelineno-10-266" href="#__codelineno-10-266"></a>
+<a id="__codelineno-10-267" name="__codelineno-10-267" href="#__codelineno-10-267"></a>
+<a id="__codelineno-10-268" name="__codelineno-10-268" href="#__codelineno-10-268"></a>
+<a id="__codelineno-10-269" name="__codelineno-10-269" href="#__codelineno-10-269"></a>&quot;mediapackage:ListChannels&quot;,
+<a id="__codelineno-10-270" name="__codelineno-10-270" href="#__codelineno-10-270"></a>
+<a id="__codelineno-10-271" name="__codelineno-10-271" href="#__codelineno-10-271"></a>
+<a id="__codelineno-10-272" name="__codelineno-10-272" href="#__codelineno-10-272"></a>
+<a id="__codelineno-10-273" name="__codelineno-10-273" href="#__codelineno-10-273"></a>&quot;mediatailor:ListPlaybackConfigurations&quot;,
+<a id="__codelineno-10-274" name="__codelineno-10-274" href="#__codelineno-10-274"></a>
+<a id="__codelineno-10-275" name="__codelineno-10-275" href="#__codelineno-10-275"></a>
+<a id="__codelineno-10-276" name="__codelineno-10-276" href="#__codelineno-10-276"></a>
+<a id="__codelineno-10-277" name="__codelineno-10-277" href="#__codelineno-10-277"></a>&quot;opsworks:DescribeStacks&quot;,
+<a id="__codelineno-10-278" name="__codelineno-10-278" href="#__codelineno-10-278"></a>
+<a id="__codelineno-10-279" name="__codelineno-10-279" href="#__codelineno-10-279"></a>
+<a id="__codelineno-10-280" name="__codelineno-10-280" href="#__codelineno-10-280"></a>
+<a id="__codelineno-10-281" name="__codelineno-10-281" href="#__codelineno-10-281"></a>&quot;qldb:ListLedgers&quot;,
+<a id="__codelineno-10-282" name="__codelineno-10-282" href="#__codelineno-10-282"></a>
+<a id="__codelineno-10-283" name="__codelineno-10-283" href="#__codelineno-10-283"></a>
+<a id="__codelineno-10-284" name="__codelineno-10-284" href="#__codelineno-10-284"></a>
+<a id="__codelineno-10-285" name="__codelineno-10-285" href="#__codelineno-10-285"></a>&quot;rds:DescribeDBClusters&quot;,
+<a id="__codelineno-10-286" name="__codelineno-10-286" href="#__codelineno-10-286"></a>
+<a id="__codelineno-10-287" name="__codelineno-10-287" href="#__codelineno-10-287"></a>
+<a id="__codelineno-10-288" name="__codelineno-10-288" href="#__codelineno-10-288"></a>
+<a id="__codelineno-10-289" name="__codelineno-10-289" href="#__codelineno-10-289"></a>&quot;rds:DescribeDBInstances&quot;,
+<a id="__codelineno-10-290" name="__codelineno-10-290" href="#__codelineno-10-290"></a>
+<a id="__codelineno-10-291" name="__codelineno-10-291" href="#__codelineno-10-291"></a>
+<a id="__codelineno-10-292" name="__codelineno-10-292" href="#__codelineno-10-292"></a>
+<a id="__codelineno-10-293" name="__codelineno-10-293" href="#__codelineno-10-293"></a>&quot;rds:DescribeEvents&quot;,
+<a id="__codelineno-10-294" name="__codelineno-10-294" href="#__codelineno-10-294"></a>
+<a id="__codelineno-10-295" name="__codelineno-10-295" href="#__codelineno-10-295"></a>
+<a id="__codelineno-10-296" name="__codelineno-10-296" href="#__codelineno-10-296"></a>
+<a id="__codelineno-10-297" name="__codelineno-10-297" href="#__codelineno-10-297"></a>&quot;rds:ListTagsForResource&quot;,
+<a id="__codelineno-10-298" name="__codelineno-10-298" href="#__codelineno-10-298"></a>
+<a id="__codelineno-10-299" name="__codelineno-10-299" href="#__codelineno-10-299"></a>
+<a id="__codelineno-10-300" name="__codelineno-10-300" href="#__codelineno-10-300"></a>
+<a id="__codelineno-10-301" name="__codelineno-10-301" href="#__codelineno-10-301"></a>&quot;redshift:DescribeClusters&quot;,
+<a id="__codelineno-10-302" name="__codelineno-10-302" href="#__codelineno-10-302"></a>
+<a id="__codelineno-10-303" name="__codelineno-10-303" href="#__codelineno-10-303"></a>
+<a id="__codelineno-10-304" name="__codelineno-10-304" href="#__codelineno-10-304"></a>
+<a id="__codelineno-10-305" name="__codelineno-10-305" href="#__codelineno-10-305"></a>&quot;robomaker:ListSimulationJobs&quot;,
+<a id="__codelineno-10-306" name="__codelineno-10-306" href="#__codelineno-10-306"></a>
+<a id="__codelineno-10-307" name="__codelineno-10-307" href="#__codelineno-10-307"></a>
+<a id="__codelineno-10-308" name="__codelineno-10-308" href="#__codelineno-10-308"></a>
+<a id="__codelineno-10-309" name="__codelineno-10-309" href="#__codelineno-10-309"></a>&quot;route53:ListHostedZones&quot;,
+<a id="__codelineno-10-310" name="__codelineno-10-310" href="#__codelineno-10-310"></a>
+<a id="__codelineno-10-311" name="__codelineno-10-311" href="#__codelineno-10-311"></a>
+<a id="__codelineno-10-312" name="__codelineno-10-312" href="#__codelineno-10-312"></a>
+<a id="__codelineno-10-313" name="__codelineno-10-313" href="#__codelineno-10-313"></a>&quot;route53resolver:ListResolverEndpoints&quot;,
+<a id="__codelineno-10-314" name="__codelineno-10-314" href="#__codelineno-10-314"></a>
+<a id="__codelineno-10-315" name="__codelineno-10-315" href="#__codelineno-10-315"></a>
+<a id="__codelineno-10-316" name="__codelineno-10-316" href="#__codelineno-10-316"></a>
+<a id="__codelineno-10-317" name="__codelineno-10-317" href="#__codelineno-10-317"></a>&quot;s3:ListAllMyBuckets&quot;,
+<a id="__codelineno-10-318" name="__codelineno-10-318" href="#__codelineno-10-318"></a>
+<a id="__codelineno-10-319" name="__codelineno-10-319" href="#__codelineno-10-319"></a>
+<a id="__codelineno-10-320" name="__codelineno-10-320" href="#__codelineno-10-320"></a>
+<a id="__codelineno-10-321" name="__codelineno-10-321" href="#__codelineno-10-321"></a>&quot;sagemaker:ListEndpoints&quot;,
+<a id="__codelineno-10-322" name="__codelineno-10-322" href="#__codelineno-10-322"></a>
+<a id="__codelineno-10-323" name="__codelineno-10-323" href="#__codelineno-10-323"></a>
+<a id="__codelineno-10-324" name="__codelineno-10-324" href="#__codelineno-10-324"></a>
+<a id="__codelineno-10-325" name="__codelineno-10-325" href="#__codelineno-10-325"></a>&quot;sns:ListTopics&quot;,
+<a id="__codelineno-10-326" name="__codelineno-10-326" href="#__codelineno-10-326"></a>
+<a id="__codelineno-10-327" name="__codelineno-10-327" href="#__codelineno-10-327"></a>
+<a id="__codelineno-10-328" name="__codelineno-10-328" href="#__codelineno-10-328"></a>
+<a id="__codelineno-10-329" name="__codelineno-10-329" href="#__codelineno-10-329"></a>&quot;sqs:ListQueues&quot;,
+<a id="__codelineno-10-330" name="__codelineno-10-330" href="#__codelineno-10-330"></a>
+<a id="__codelineno-10-331" name="__codelineno-10-331" href="#__codelineno-10-331"></a>
+<a id="__codelineno-10-332" name="__codelineno-10-332" href="#__codelineno-10-332"></a>
+<a id="__codelineno-10-333" name="__codelineno-10-333" href="#__codelineno-10-333"></a>&quot;storagegateway:ListGateways&quot;,
+<a id="__codelineno-10-334" name="__codelineno-10-334" href="#__codelineno-10-334"></a>
+<a id="__codelineno-10-335" name="__codelineno-10-335" href="#__codelineno-10-335"></a>
+<a id="__codelineno-10-336" name="__codelineno-10-336" href="#__codelineno-10-336"></a>
+<a id="__codelineno-10-337" name="__codelineno-10-337" href="#__codelineno-10-337"></a>&quot;sts:GetCallerIdentity&quot;,
+<a id="__codelineno-10-338" name="__codelineno-10-338" href="#__codelineno-10-338"></a>
+<a id="__codelineno-10-339" name="__codelineno-10-339" href="#__codelineno-10-339"></a>
+<a id="__codelineno-10-340" name="__codelineno-10-340" href="#__codelineno-10-340"></a>
+<a id="__codelineno-10-341" name="__codelineno-10-341" href="#__codelineno-10-341"></a>&quot;swf:ListDomains&quot;,
+<a id="__codelineno-10-342" name="__codelineno-10-342" href="#__codelineno-10-342"></a>
+<a id="__codelineno-10-343" name="__codelineno-10-343" href="#__codelineno-10-343"></a>
+<a id="__codelineno-10-344" name="__codelineno-10-344" href="#__codelineno-10-344"></a>
+<a id="__codelineno-10-345" name="__codelineno-10-345" href="#__codelineno-10-345"></a>&quot;tag:GetResources&quot;,
+<a id="__codelineno-10-346" name="__codelineno-10-346" href="#__codelineno-10-346"></a>
+<a id="__codelineno-10-347" name="__codelineno-10-347" href="#__codelineno-10-347"></a>
+<a id="__codelineno-10-348" name="__codelineno-10-348" href="#__codelineno-10-348"></a>
+<a id="__codelineno-10-349" name="__codelineno-10-349" href="#__codelineno-10-349"></a>&quot;tag:GetTagKeys&quot;,
+<a id="__codelineno-10-350" name="__codelineno-10-350" href="#__codelineno-10-350"></a>
+<a id="__codelineno-10-351" name="__codelineno-10-351" href="#__codelineno-10-351"></a>
+<a id="__codelineno-10-352" name="__codelineno-10-352" href="#__codelineno-10-352"></a>
+<a id="__codelineno-10-353" name="__codelineno-10-353" href="#__codelineno-10-353"></a>&quot;transfer:ListServers&quot;,
+<a id="__codelineno-10-354" name="__codelineno-10-354" href="#__codelineno-10-354"></a>
+<a id="__codelineno-10-355" name="__codelineno-10-355" href="#__codelineno-10-355"></a>
+<a id="__codelineno-10-356" name="__codelineno-10-356" href="#__codelineno-10-356"></a>
+<a id="__codelineno-10-357" name="__codelineno-10-357" href="#__codelineno-10-357"></a>&quot;workmail:ListOrganizations&quot;,
+<a id="__codelineno-10-358" name="__codelineno-10-358" href="#__codelineno-10-358"></a>
+<a id="__codelineno-10-359" name="__codelineno-10-359" href="#__codelineno-10-359"></a>
+<a id="__codelineno-10-360" name="__codelineno-10-360" href="#__codelineno-10-360"></a>
+<a id="__codelineno-10-361" name="__codelineno-10-361" href="#__codelineno-10-361"></a>&quot;workspaces:DescribeWorkspaces&quot;
+<a id="__codelineno-10-362" name="__codelineno-10-362" href="#__codelineno-10-362"></a>
+<a id="__codelineno-10-363" name="__codelineno-10-363" href="#__codelineno-10-363"></a>
+<a id="__codelineno-10-364" name="__codelineno-10-364" href="#__codelineno-10-364"></a>
+<a id="__codelineno-10-365" name="__codelineno-10-365" href="#__codelineno-10-365"></a>],
+<a id="__codelineno-10-366" name="__codelineno-10-366" href="#__codelineno-10-366"></a>
+<a id="__codelineno-10-367" name="__codelineno-10-367" href="#__codelineno-10-367"></a>
+<a id="__codelineno-10-368" name="__codelineno-10-368" href="#__codelineno-10-368"></a>
+<a id="__codelineno-10-369" name="__codelineno-10-369" href="#__codelineno-10-369"></a>&quot;Resource&quot;: &quot;*&quot;
+<a id="__codelineno-10-370" name="__codelineno-10-370" href="#__codelineno-10-370"></a>
+<a id="__codelineno-10-371" name="__codelineno-10-371" href="#__codelineno-10-371"></a>
+<a id="__codelineno-10-372" name="__codelineno-10-372" href="#__codelineno-10-372"></a>
+<a id="__codelineno-10-373" name="__codelineno-10-373" href="#__codelineno-10-373"></a>}
+<a id="__codelineno-10-374" name="__codelineno-10-374" href="#__codelineno-10-374"></a>
+<a id="__codelineno-10-375" name="__codelineno-10-375" href="#__codelineno-10-375"></a>
+<a id="__codelineno-10-376" name="__codelineno-10-376" href="#__codelineno-10-376"></a>
+<a id="__codelineno-10-377" name="__codelineno-10-377" href="#__codelineno-10-377"></a>]
+<a id="__codelineno-10-378" name="__codelineno-10-378" href="#__codelineno-10-378"></a>
+<a id="__codelineno-10-379" name="__codelineno-10-379" href="#__codelineno-10-379"></a>
+<a id="__codelineno-10-380" name="__codelineno-10-380" href="#__codelineno-10-380"></a>
+<a id="__codelineno-10-381" name="__codelineno-10-381" href="#__codelineno-10-381"></a>}
+</code></pre></div>
+4. Задайте имя политики.
+5. Нажмите <strong>Create policy</strong>.</p>
+<p>Вам необходимо сгенерировать <strong>Access key</strong> и <strong>Secret access key</strong>, которые Dynatrace сможет использовать для получения метрик из Amazon Web Services.</p>
+<ol>
+<li>В консоли Amazon перейдите в <strong>Users</strong> и нажмите <strong>Add Users</strong>.</li>
+<li>Введите <strong>User name</strong>.</li>
+<li>На следующем экране выберите <strong>Attach policies directly</strong> и прикрепите созданную ранее политику.</li>
+<li>Проверьте данные пользователя и нажмите <strong>Create user</strong>.</li>
+<li>В списке пользователей выберите имя только что созданного пользователя и перейдите в <strong>Security credentials</strong>, затем нажмите <strong>Create access key</strong>.</li>
+<li>В разделе <strong>Access key best practices &amp; alternatives</strong> выберите <strong>Third-party service</strong>, затем нажмите <strong>Next</strong>.</li>
+<li>В разделе <strong>Retrieve access keys</strong> сохраните значения <strong>Access Key ID</strong> (AKID) и <strong>Secret access key</strong>.</li>
+<li>Вы можете либо скачать учётные данные пользователя, либо скопировать учётные данные, отображаемые онлайн (нажмите <strong>Show</strong>).</li>
+</ol>
+<p>Альтернатива: создание ролей AWS с помощью Terraform</p>
+<p>Шаблоны Terraform — это альтернативный способ создания и настройки ролей AWS. Подробные инструкции по созданию ролей AWS с помощью Terraform см. в <a href="https://github.com/dynatrace-oss/cloud-snippets/tree/main/aws/role-based-access/terraform-templates">настройке доступа AWS на основе ролей с помощью Terraform</a></p>
+<h2 id="_4">Создание конфигурации мониторинга<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Вы можете создавать, активировать и управлять несколькими подключениями мониторинга. Каждое подключение определяется учётными данными и/или токенами доступа, необходимыми Dynatrace для получения данных.</p>
+<p>Почему конфигурация выполняется на уровне подключения</p>
+<p>Поддержка нескольких подключений и конфигураций позволяет отслеживать даже крайне сложные среды. При таком подходе не нужно настраивать всё сразу. Вместо этого можно постепенно добавлять конфигурации мониторинга к существующей установке. Такая архитектура также упрощает реагирование на динамические изменения в отслеживаемой среде без необходимости перенастраивать незатронутые элементы.</p>
+<ol>
+<li>Добавление нового подключения AWS</li>
+</ol>
+<p>Если вы выполнили все предыдущие шаги, вы готовы к настройке мониторинга Amazon Web Services.</p>
+<p>Для добавления нового подключения AWS</p>
+<ol>
+<li>Откройте раздел <img alt="Clouds" src="https://dt-cdn.net/images/clouds-1025-170946931c.png" title="Clouds" /> <strong>Clouds</strong>.</li>
+<li>Выберите вкладку <strong>Integration manager</strong>.</li>
+<li>
+<p>Узнайте, как перемещаться и подключить новый экземпляр через <a href="/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app#integration-manager" title="Мониторинг всех облачных платформ одновременно.">Integration manager</a>.</p>
+</li>
+<li>
+<p>Облачные сервисы AWS, отслеживаемые по умолчанию</p>
+</li>
+</ol>
+<p>После подключения Dynatrace к вашей среде AWS он немедленно начинает отслеживать <a href="/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services#aws-default" title="Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик.">выбранные сервисы AWS</a>. В разделе <a href="/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/default-aws-metrics" title="Список классических (ранее «встроенных») метрик, которые Dynatrace собирает по умолчанию для мониторинга AWS.">Классические (ранее «встроенные») метрики AWS</a> перечислены метрики облачных сервисов AWS, отслеживаемых по умолчанию.</p>
+<ol>
+<li>Мониторинг других сервисов AWS</li>
+</ol>
+<p>Помимо стандартных сервисов AWS, можно также отслеживать все остальные облачные сервисы AWS. Облачные сервисы AWS включаются для мониторинга на уровне подключения AWS.</p>
+<p>Для добавления сервиса в мониторинг:</p>
+<ol>
+<li>Перейдите в <strong>Settings</strong> &gt; <strong>Cloud and virtualization</strong> &gt; <strong>AWS</strong>.</li>
+<li>На странице обзора AWS найдите нужное подключение и нажмите <strong>Edit</strong> <img alt="Edit" src="https://dt-cdn.net/images/edit-icon-a083c62c49.svg" title="Edit" /> в этой строке.</li>
+<li>В разделе <strong>Services</strong> нажмите <strong>Manage services</strong>.</li>
+<li>Нажмите <strong>Add service</strong>.</li>
+<li>Выберите сервис из списка и нажмите <strong>Add service</strong>.</li>
+<li>Нажмите <strong>Save changes</strong> для сохранения конфигурации.</li>
+</ol>
+<p>Вы можете добавить несколько облачных сервисов, повторив шаги выше.</p>
+<p>Конфигурация собираемых метрик для каждого сервиса</p>
+<p>После добавления сервиса Dynatrace автоматически начинает собирать набор метрик для этого конкретного сервиса.</p>
+<p>Рекомендуемые метрики:</p>
+<ul>
+<li>Включены по умолчанию</li>
+<li>Не могут быть отключены</li>
+<li>Могут поставляться с рекомендуемыми измерениями (включены по умолчанию, не могут быть отключены)</li>
+<li>Могут поставляться с необязательными измерениями (отключены по умолчанию, могут быть включены)</li>
+</ul>
+<p>Помимо рекомендуемых метрик, для большинства сервисов есть возможность включить дополнительные необязательные метрики, которые можно добавить и настроить вручную.</p>
+<p>Список облачных сервисов AWS и собираемых метрик</p>
+<p>Полный список облачных сервисов AWS и метрик, собираемых для каждого из них, см. в разделе <a href="/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services" title="Мониторинг всех облачных сервисов AWS с помощью Dynatrace и просмотр доступных метрик.">Все облачные сервисы AWS</a>.</p>
+<p>Также можно просмотреть список поддерживаемых сервисов AWS в Dynatrace Hub прямо в продукте (поиск <strong>AWS</strong>) или в <a href="https://www.dynatrace.com/hub/?query=aws">веб-версии Dynatrace Hub</a>.</p>
+<p>Для добавления и настройки метрик</p>
+<ol>
+<li>Перейдите в <strong>Settings</strong> &gt; <strong>Cloud and virtualization</strong> &gt; <strong>AWS</strong>.</li>
+<li>На странице обзора AWS найдите нужное подключение и нажмите значок редактирования рядом с его именем.</li>
+<li>Перейдите в <strong>Services</strong> и нажмите <strong>Manage services</strong>.</li>
+<li>Для добавления метрики выберите сервис, для которого вы хотите добавить метрики, и нажмите <strong>Add new metric</strong>.</li>
+<li>В меню нажмите <strong>Add metric</strong> для метрики, которую вы хотите отслеживать.</li>
+<li>Нажмите <strong>Edit</strong> для настройки метрики.</li>
+<li>Нажмите <strong>Apply</strong> для сохранения конфигурации.</li>
+</ol>
+<p>После выбора облачных сервисов и сохранения изменений мониторинг вновь добавленных сервисов запускается автоматически.</p>
+<h2 id="_5">Что дальше?<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>В течение нескольких минут вы увидите данные на своих дашбордах.</p>
+<p>Для просмотра основных метрик по каждому из подключений AWS</p>
+<ol>
+<li>Перейдите в раздел <img alt="AWS" src="https://dt-cdn.net/images/aws-512-eed109b7f1.png" title="AWS" /> <strong>AWS Classic</strong>.</li>
+<li>Выберите подключение, для которого хотите просмотреть обзор инфраструктуры AWS.</li>
+</ol>
+<p>Вы также можете создать собственный дашборд на основе метрик, собранных для ваших экземпляров AWS. Подробности о создании дашбордов см. в разделе <a href="/docs/analyze-explore-automate/dashboards-classic" title="Узнайте, как создавать дашборды Dynatrace Classic, управлять ими и использовать их.">Dashboards Classic</a>.</p>
+<p>Виртуальные машины, контейнеры и глубокий мониторинг кода с Dynatrace OneAgent</p>
+<p>Dynatrace OneAgent предлагает непревзойдённую глубину анализа хостов, контейнеров и кода. Подробности см. в разделе <a href="/docs/ingest-from/amazon-web-services" title="Настройка и конфигурация мониторинга для Amazon Web Services.">Настройка Dynatrace на Amazon Web Services</a>.</p>
+<p>Дополнительная настройка уведомлений и оповещений</p>
+<p>После настройки мониторинга AWS вы можете:</p>
+<ul>
+<li><a href="/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-set-up-metric-events-for-alerting" title="Настройка и конфигурация событий метрик для оповещений.">Настроить события метрик для оповещений</a>. Это позволяет создавать, включать, отключать и настраивать рекомендуемые правила оповещений.</li>
+<li><a href="/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/limit-api-calls-to-aws-using-tags" title="Добавление и настройка тегов AWS для ограничения ресурсов AWS.">Ограничить вызовы API к AWS с помощью тегов</a>. По умолчанию Dynatrace отслеживает все сервисы Amazon Web Services, указанные в вашей политике разрешений. Дополнительно можно использовать теги для ограничения ресурсов AWS, отслеживаемых Dynatrace.</li>
+</ul>
+<p>Интеграция CloudWatch Metric Streams</p>
+<p>Этот метод мониторинга не требует ActiveGate. Интеграция Dynatrace с Amazon CloudWatch Metric Streams обеспечивает простой и безопасный способ приёма метрик AWS. Amazon CloudWatch Metric Streams позволяет передавать все метрики, формируемые в заданном регионе AWS, через Kinesis Firehose в Dynatrace API. Подробности см. в разделе <a href="/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams" title="Приём метрик из ваших учётных записей AWS с помощью Amazon CloudWatch Metric Streams.">Amazon CloudWatch Metric Streams</a>.</p>
+<p>OpenTelemetry и распределённая трассировка</p>
+<p>Также возможна <a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration/lambda-otel-native" title="Узнайте, как использовать OpenTelemetry для трассировки функций AWS Lambda .NET Core.">трассировка функций AWS Lambda .NET Core с помощью OpenTelemetry .NET</a>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.path", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

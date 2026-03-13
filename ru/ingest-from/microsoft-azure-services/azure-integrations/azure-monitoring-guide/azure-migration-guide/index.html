@@ -1,0 +1,6366 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace с AI-помощником (Managed + SaaS)">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/ru/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-migration-guide/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Миграция с классических сервисов Azure (ранее «встроенных») на облачные сервисы - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#azure" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Миграция с классических сервисов Azure (ранее «встроенных») на облачные сервисы
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../" class="md-tabs__link">
+          
+  
+  
+  Начало работы
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../platform/grail/dynatrace-grail/" class="md-tabs__link">
+          
+  
+  
+  Платформа
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../observe/infrastructure-observability/" class="md-tabs__link">
+          
+  
+  
+  Наблюдаемость
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../dynatrace-intelligence/anomaly-detection/" class="md-tabs__link">
+          
+  
+  
+  Dynatrace Intelligence
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-tabs__link">
+          
+  
+  
+  Анализ и автоматизация
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+  
+  Источники данных
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../deliver/configuration-as-code/" class="md-tabs__link">
+          
+  
+  
+  Deliver
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../secure/threat-observability/" class="md-tabs__link">
+          
+  
+  
+  Безопасность
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../manage/hub/" class="md-tabs__link">
+          
+  
+  
+  Управление
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../dynatrace-api/" class="md-tabs__link">
+          
+  
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../whats-new/" class="md-tabs__link">
+          
+  
+  
+  Что нового
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI Помощник
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Начало работы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документация Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../discover-dynatrace/what-is-dynatrace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что такое Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../discover-dynatrace/dynatrace-apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложения Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../semantic-dictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Семантический словарь
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Резервное копирование
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Платформа
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grail
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Grail
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../platform/grail/dynatrace-grail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что такое Grail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../platform/grail/dynatrace-query-language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Язык запросов DQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../platform/oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../platform/appengine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AppEngine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../platform/openpipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenPipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Наблюдаемость
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инфраструктура
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Инфраструктура
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../observe/infrastructure-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../observe/infrastructure-observability/infrastructure-and-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Хосты и операции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Облачный мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../observe/infrastructure-observability/databases/database-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Базы данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложения
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Приложения
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../observe/application-observability/distributed-tracing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Распределённая трассировка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../observe/application-observability/services/services-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сервисы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Цифровой опыт
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Цифровой опыт
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../observe/digital-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Синтетическое приложение
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../observe/dynatrace-for-ai-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI и LLM мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Intelligence
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Intelligence
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обнаружение аномалий
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Обнаружение аномалий
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка чувствительности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложение Anomaly Detection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфигурация
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Адаптивные пороги
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Многомерный бейзлайн
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/metric-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    События метрик
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/static-thresholds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статические пороги
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Оптимизация DQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis Copilot
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Davis Copilot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/copilot/chat-with-davis-copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Assist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/copilot/copilot-getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/copilot/copilot-data-privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфиденциальность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/copilot/quick-analysis-copilot-dql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запросы на естественном языке
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/davis-problems-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проблемы Davis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ первопричин
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Анализ первопричин
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/root-cause-analysis/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ событий
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/dynatrace-intelligence-integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Справочник
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Справочник
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI модели
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/reference/davis-ai-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лимиты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ и автоматизация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Анализ и автоматизация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды и ноутбуки
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Дашборды и ноутбуки
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/dashboards-and-notebooks/document-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/dashboards-and-notebooks/document-version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Версии документов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Визуализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/dashboards-and-notebooks/explore-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Логи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Логи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/logs/lma-logs-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложение журналов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/logs/lma-logs-app/facets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Фильтры
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/logs/lma-logs-app/query-and-filter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запросы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обозреватель данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/smartscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Smartscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/notifications-and-alerting/problem-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Уведомления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/compliance-and-resilience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Соответствие требованиям
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Источники данных
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-oneagent/installation-and-operation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent — установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deliver
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration as Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration as Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/configuration-as-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monaco
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monaco
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API и разрешения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/configuration-as-code/monaco/monaco-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/configuration-as-code/monaco/monaco-getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_3" id="__nav_9_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terraform
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Terraform
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API и разрешения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/configuration-as-code/terraform/terraform-cli-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI команды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SLO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/service-level-objectives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/service-level-objectives/create-slo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Создание SLO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Reliability Guardian
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Site Reliability Guardian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/site-reliability-guardian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/site-reliability-guardian/event-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Структура событий
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/ownership-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ownership
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг релизов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Мониторинг релизов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/release-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/release-monitoring/monitor-releases-with-dynatrace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг релизов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/quality-gates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Валидация релизов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Безопасность
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../secure/threat-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость угроз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../secure/threat-observability/security-events-ingest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграция
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Управление
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../manage/hub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензирование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лицензирование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../license/capabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Возможности DPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../license/billing-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Биллинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../license/budget-alerts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бюджетные оповещения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../license/license-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Жизненный цикл
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../license/dps-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Разрешения DPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Intelligence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Что нового
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../whats-new/saas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../whats-new/oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../whats-new/activegate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="azure">Миграция с классических сервисов Azure (ранее «встроенных») на облачные сервисы<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h1>
+<h1 id="azure_1">Миграция с классических сервисов Azure (ранее «встроенных») на облачные сервисы<a class="headerlink" href="#azure_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Последняя версия Dynatrace</li>
+<li>Практическое руководство</li>
+<li>15 минут чтения</li>
+<li>Обновлено 27 июня 2024 г.</li>
+</ul>
+<p>На странице обзора Azure вы можете получить доступ к классическим сервисам Dynatrace и облачным сервисам для мониторинга Azure. Оба типа сервисов используют одни и те же ресурсы Azure. Однако классические сервисы используют предопределённый набор метрик, поэтому настройка отслеживаемых метрик или определение уже отслеживаемых не поддерживается.</p>
+<h2 id="_1">Классические сервисы против облачных сервисов<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Как уже упоминалось, классические сервисы и облачные сервисы используют одни и те же ресурсы Azure. Однако облачные сервисы поддерживают более широкий спектр параметров конфигурации, таких как новые метрики и настраиваемые отслеживаемые метрики. Чтобы предоставить вам больше возможностей настройки, мы начали следующее:</p>
+<ul>
+<li>Добавление дополнительных сервисов в раздел <strong>Облачные сервисы</strong>, чтобы вы могли настраивать, какие метрики и измерения хотите отслеживать.</li>
+<li>Добавление дополнительных метрик для облачных сервисов; теперь они не только настраиваемые, но и позволяют отслеживать значительно больше, чем раньше.</li>
+<li>Замена классических сервисов облачными с расширенными параметрами конфигурации для метрик и измерений.</li>
+</ul>
+<p><img alt="public-cloud-services-section-infographic" src="https://dt-cdn.net/images/public-cloud-services-section-infographic-950-ccb7323d99.png" /></p>
+<p>Если вы используете классические сервисы, мы рекомендуем мигрировать на облачные сервисы, чтобы воспользоваться расширенным набором настраиваемых параметров конфигурации.</p>
+<h2 id="_2">Влияние миграции<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Несмотря на то что классические и облачные сервисы отслеживают одни и те же ресурсы Azure на стороне Dynatrace, они отслеживаются как две разные сущности.</p>
+<ul>
+<li>У них разные идентификаторы сущностей и ключи метрик.</li>
+<li>Данные для каждого типа сущности Dynatrace собираются и хранятся отдельно.</li>
+<li><img alt="Предупреждение" src="https://dt-cdn.net/images/warning-16-56c09ccf83.png" title="Предупреждение" /> Критическое изменение. Вам необходимо адаптировать конфигурацию дашбордов, оповещений и Management Zone на основе идентификатора сущности или <a href="#metrics">ключей метрик с типом отслеживаемого сервиса</a>.</li>
+</ul>
+<p>У вас есть возможность выбрать классический или облачный сервис для сохранения исторических данных на данный момент. Однако следует учитывать следующее:</p>
+<ul>
+<li>Исторические данные хранятся в классических сервисах. Если вы переключитесь обратно, в отслеживаемых данных будут пробелы за период, когда ресурсы отслеживались через облачный сервис.</li>
+<li>Вы не можете включить оба варианта одновременно. Несмотря на то что на стороне Dynatrace это два разных сервиса, устаревшая и новая версии отслеживают один и тот же ресурс Azure. Если бы обе версии были включены одновременно, вам пришлось бы платить двойную цену за опрос одних и тех же данных дважды.</li>
+<li>При включении новой версии классическая версия отключается автоматически, и наоборот.</li>
+<li>Прямой связи между сущностями, содержащими исторические и новые данные, нет.</li>
+<li>Логи от <a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure" title="Используйте перенаправление логов Azure для приёма логов Azure.">инструмента перенаправления логов Azure</a> по-прежнему связаны с историческими данными и сущностями.</li>
+</ul>
+<p>Для мониторинга облачных сервисов необходимо настроить <a href="https://dt-url.net/sc0396g">Environment ActiveGate</a>.</p>
+<h2 id="_3">Изменения в пользовательском интерфейсе<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Страница обзора Azure изменяется после настройки новой версии сервиса.</p>
+<p>Например, рассмотрим <strong>Учётную запись хранения Azure</strong>.</p>
+<ul>
+<li>Если настроен устаревший сервис <strong>Учётные записи хранения Azure</strong>, раздел <strong>Учётные записи хранения</strong> на обзорной странице Azure выглядит следующим образом.</li>
+</ul>
+<p><img alt="azure-public-cloud-vct-dev1-storage" src="https://dt-cdn.net/images/azure-public-cloud-vct-dev1-storage-1449-46980fd72d.png" /></p>
+<ul>
+<li>Выберите <strong>Облачные сервисы</strong>, чтобы найти новые обзорные страницы сервисов.</li>
+</ul>
+<p><img alt="azure-public-cloud-vct-dev1-services" src="https://dt-cdn.net/images/azure-public-cloud-vct-dev1-services-1112-707a41c03e.png" /></p>
+<ul>
+<li>После настройки сервисов <strong>Учётная запись хранения Azure</strong>, <strong>BLOB-объекты хранилища Azure</strong>, <strong>Файлы хранилища Azure</strong>, <strong>Очереди хранилища Azure</strong> и <strong>Таблицы хранилища Azure</strong> раздел <strong>Учётные записи хранения</strong> на обзорной странице Azure выглядит следующим образом.</li>
+</ul>
+<p><img alt="azure-public-cloud-vct-dev1-storage" src="https://dt-cdn.net/images/azure-public-cloud-vct-dev1-storage-1452-a16425bb86.png" /></p>
+<ul>
+<li>Кроме того, вы можете настраивать метрики для облачных сервисов через пользовательский интерфейс.</li>
+</ul>
+<p><img alt="azure-settings-manage-services" src="https://dt-cdn.net/images/azure-settings-manage-services-1297-d00845930c.png" /></p>
+<p><img alt="azure-settings-storage-blob-services" src="https://dt-cdn.net/images/azure-settings-storage-blob-services-1311-5b78cf0ab1.png" /></p>
+<h2 id="_4">Облачные сервисы и соответствующие им классические сервисы<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Новый облачный сервис</th>
+<th>Старый классический сервис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-api-management-service" title="Мониторинг службы управления API Azure и просмотр доступных метрик.">Служба управления API Azure</a></td>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-api-management-services-builtin" title="Мониторинг служб управления API Azure и просмотр доступных метрик.">Службы управления API Azure (классические)</a> Устаревший</td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-application-gateway" title="Мониторинг шлюза приложений Azure и просмотр доступных метрик.">Шлюз приложений Azure</a></td>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-app-gateways-builtin" title="Мониторинг шлюзов приложений Azure и просмотр доступных метрик.">Шлюз приложений Azure (классический)</a></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-basic-load-balancer" title="Мониторинг базового балансировщика нагрузки Azure и просмотр доступных метрик.">Базовый балансировщик нагрузки Azure</a></td>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-load-balancers-builtin" title="Мониторинг балансировщиков нагрузки Azure и просмотр доступных метрик.">Балансировщик нагрузки Azure (классический)</a></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-gateway-load-balancer" title="Мониторинг шлюзового балансировщика нагрузки Azure и просмотр доступных метрик.">Шлюзовой балансировщик нагрузки Azure</a></td>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-load-balancers-builtin" title="Мониторинг балансировщиков нагрузки Azure и просмотр доступных метрик.">Балансировщик нагрузки Azure (классический)</a></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-standard-load-balancer" title="Мониторинг стандартного балансировщика нагрузки Azure и просмотр доступных метрик.">Стандартный балансировщик нагрузки Azure</a></td>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-load-balancers-builtin" title="Мониторинг балансировщиков нагрузки Azure и просмотр доступных метрик.">Балансировщик нагрузки Azure (классический)</a></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-cache-for-redis" title="Мониторинг кэша Azure для Redis и просмотр доступных метрик.">Кэш Azure для Redis</a></td>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-redis-cache-builtin" title="Мониторинг кэша Azure Redis и просмотр доступных метрик.">Azure Redis (классический)</a></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-cosmos-db-account-globaldocumentdb" title="Мониторинг учётной записи Azure Cosmos DB (GlobalDocumentDB) и просмотр доступных метрик.">Учётная запись Azure Cosmos DB (GlobalDocumentDB)</a></td>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-cosmos-db-builtin" title="Мониторинг Azure Cosmos DB и просмотр доступных метрик.">Azure Cosmos DB (классическая)</a></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-cosmos-db-account-mongodb" title="Мониторинг учётной записи Azure Cosmos DB (MongoDB) и просмотр доступных метрик.">Учётная запись Azure Cosmos DB (MongoDB)</a></td>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-cosmos-db-builtin" title="Мониторинг Azure Cosmos DB и просмотр доступных метрик.">Azure Cosmos DB (классическая)</a></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-iot-hub" title="Мониторинг Azure IoT Hub и просмотр доступных метрик.">Azure IoT Hub</a></td>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-iot-hub-builtin" title="Мониторинг Azure IoT Hub и просмотр доступных метрик.">Azure IoT Hubs (классические)</a></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-server" title="Мониторинг SQL Server Azure и просмотр доступных метрик.">SQL Server Azure</a></td>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-servers-builtin" title="Мониторинг SQL Server Azure и просмотр доступных метрик.">SQL Azure (классический)</a></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-database-dtu" title="Мониторинг базы данных SQL Azure (DTU) и просмотр доступных метрик.">База данных SQL Azure (DTU)</a></td>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-servers-builtin" title="Мониторинг SQL Server Azure и просмотр доступных метрик.">SQL Azure (классический)</a></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-database-vcore" title="Мониторинг базы данных SQL Azure (vCore) и просмотр доступных метрик.">База данных SQL Azure (vCore)</a></td>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-servers-builtin" title="Мониторинг SQL Server Azure и просмотр доступных метрик.">SQL Azure (классический)</a></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-elastic-pool-dtu" title="Мониторинг эластичного пула SQL Azure (DTU) и просмотр доступных метрик.">Эластичный пул SQL Azure (DTU)</a></td>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-servers-builtin" title="Мониторинг SQL Server Azure и просмотр доступных метрик.">SQL Azure (классический)</a></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-elastic-pool-vcore" title="Мониторинг эластичного пула SQL Azure (vCore) и просмотр доступных метрик.">Эластичный пул SQL Azure (vCore)</a></td>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-servers-builtin" title="Мониторинг SQL Server Azure и просмотр доступных метрик.">SQL Azure (классический)</a></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-storage-account" title="Мониторинг учётной записи хранения Azure и просмотр доступных метрик.">Учётная запись хранения Azure</a></td>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-storage-account-builtin" title="Мониторинг учётных записей хранения Azure и просмотр доступных метрик.">Учётные записи хранения Azure (классические)</a></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-storage-account" title="Мониторинг учётной записи хранения Azure и просмотр доступных метрик.">Служба BLOB-объектов хранилища Azure</a></td>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-storage-account-builtin" title="Мониторинг учётных записей хранения Azure и просмотр доступных метрик.">Учётные записи хранения Azure (классические)</a></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-storage-account" title="Мониторинг учётной записи хранения Azure и просмотр доступных метрик.">Файловая служба хранилища Azure</a></td>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-storage-account-builtin" title="Мониторинг учётных записей хранения Azure и просмотр доступных метрик.">Учётные записи хранения Azure (классические)</a></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-storage-account" title="Мониторинг учётной записи хранения Azure и просмотр доступных метрик.">Служба очередей хранилища Azure</a></td>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-storage-account-builtin" title="Мониторинг учётных записей хранения Azure и просмотр доступных метрик.">Учётные записи хранения Azure (классические)</a></td>
+</tr>
+<tr>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-storage-account" title="Мониторинг учётной записи хранения Azure и просмотр доступных метрик.">Служба таблиц хранилища Azure</a></td>
+<td><a href="/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-storage-account-builtin" title="Мониторинг учётных записей хранения Azure и просмотр доступных метрик.">Учётные записи хранения Azure (классические)</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_5">Миграция метрик<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>Ниже представлены таблицы с метриками классических сервисов и соответствующими им метриками облачных сервисов. Пустые ячейки указывают на отсутствие идентичной соответствующей метрики.</p>
+<h3 id="api-azure">Служба управления API Azure<a class="headerlink" href="#api-azure" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Название метрики классического сервиса</th>
+<th>Ключ метрики классического сервиса</th>
+<th>Название метрики облачного сервиса</th>
+<th>Ключ метрики облачного сервиса</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Неудачные запросы</td>
+<td>builtin:cloud.azure.apiMgmt.requests.failed</td>
+<td>Запросы</td>
+<td>ext:cloud.azure.microsoft_apimanagement.service.requests:filter(or(eq("Gateway response code", "400"), eq("Gateway response code category", "5xx")))</td>
+</tr>
+<tr>
+<td>Прочие запросы</td>
+<td>builtin:cloud.azure.apiMgmt.requests.other</td>
+<td>Запросы</td>
+<td>ext:cloud.azure.microsoft_apimanagement.service.requests:filter(and(ne("Gateway response code category", "1xx"), ne("Gateway response code category", "2xx"), ne("Gateway response code", "300"), ne("Gateway response code", "301"), ne("Gateway response code", "304"), ne("Gateway response code", "307"), ne("Gateway response code", "400"), ne("Gateway response code", "401"), ne("Gateway response code", "403"), ne("Gateway response code", "429"), ne("Gateway response code category", "5xx")))</td>
+</tr>
+<tr>
+<td>Успешные запросы</td>
+<td>builtin:cloud.azure.apiMgmt.requests.successful</td>
+<td>Запросы</td>
+<td>ext:cloud.azure.microsoft_apimanagement.service.requests:filter(or(eq("Gateway response code category", "1xx"), eq("Gateway response code category", "2xx"), eq("Gateway response code", "300"), eq("Gateway response code", "301"), eq("Gateway response code", "304"), eq("Gateway response code", "307")))</td>
+</tr>
+<tr>
+<td>Всего запросов</td>
+<td>builtin:cloud.azure.apiMgmt.requests.total</td>
+<td>Запросы</td>
+<td>ext:cloud.azure.microsoft_apimanagement.service.requests</td>
+</tr>
+<tr>
+<td>Несанкционированные запросы</td>
+<td>builtin:cloud.azure.apiMgmt.requests.unauth</td>
+<td>Запросы</td>
+<td>ext:cloud.azure.microsoft_apimanagement.service.requests:filter(or(eq("Gateway response code", "401"), eq("Gateway response code", "403"), eq("Gateway response code", "429")))</td>
+</tr>
+<tr>
+<td>Ёмкость</td>
+<td>builtin:cloud.azure.apiMgmt.capacity</td>
+<td>Ёмкость</td>
+<td>ext:cloud.azure.microsoft_apimanagement.service.capacity</td>
+</tr>
+<tr>
+<td>Длительность</td>
+<td>builtin:cloud.azure.apiMgmt.duration</td>
+<td>Общая длительность запросов шлюза</td>
+<td>ext:cloud.azure.microsoft_apimanagement.service.duration</td>
+</tr>
+</tbody>
+</table>
+<h3 id="azure_2">Шлюз приложений Azure<a class="headerlink" href="#azure_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Название метрики классического сервиса</th>
+<th>Ключ метрики классического сервиса</th>
+<th>Название метрики облачного сервиса</th>
+<th>Ключ метрики облачного сервиса</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Количество работоспособных узлов</td>
+<td>builtin:cloud.azure.appGateway.backend.settings.pool.host.healthy</td>
+<td>Количество работоспособных узлов</td>
+<td>ext:cloud.azure.microsoft_network.applicationgateways.healthyhostcount</td>
+</tr>
+<tr>
+<td>Количество неработоспособных узлов</td>
+<td>builtin:cloud.azure.appGateway.backend.settings.pool.host.unhealthy</td>
+<td>Количество неработоспособных узлов</td>
+<td>ext:cloud.azure.microsoft_network.applicationgateways.unhealthyhostcount</td>
+</tr>
+<tr>
+<td>Неудачные запросы</td>
+<td>builtin:cloud.azure.appGateway.backend.settings.traffic.requests.failed</td>
+<td>Неудачные запросы</td>
+<td>ext:cloud.azure.microsoft_network.applicationgateways.failedrequests</td>
+</tr>
+<tr>
+<td>Всего запросов</td>
+<td>builtin:cloud.azure.appGateway.backend.settings.traffic.requests.total</td>
+<td>Всего запросов</td>
+<td>ext:cloud.azure.microsoft_network.applicationgateways.totalrequests</td>
+</tr>
+<tr>
+<td>Статус ответа</td>
+<td>builtin:cloud.azure.appGateway.http.status.response</td>
+<td>Статус ответа</td>
+<td>ext:cloud.azure.microsoft_network.applicationgateways.responsestatus</td>
+</tr>
+<tr>
+<td>Количество текущих соединений</td>
+<td>builtin:cloud.azure.appGateway.network.connections.count</td>
+<td>Текущие соединения</td>
+<td>ext:cloud.azure.microsoft_network.applicationgateways.currentconnections</td>
+</tr>
+<tr>
+<td>Пропускная способность сети</td>
+<td>builtin:cloud.azure.appGateway.network.throughput</td>
+<td>Пропускная способность</td>
+<td>ext:cloud.azure.microsoft_network.applicationgateways.throughput</td>
+</tr>
+</tbody>
+</table>
+<h3 id="azure_3">Балансировщики нагрузки Azure<a class="headerlink" href="#azure_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Название метрики классического сервиса</th>
+<th>Ключ метрики классического сервиса</th>
+<th>Название метрики облачного сервиса</th>
+<th>Ключ метрики облачного сервиса</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Доступность TCP для DIP балансировщика нагрузки</td>
+<td>builtin:cloud.azure.loadbalancer.availability.dipTcp</td>
+<td>Статус проверки работоспособности</td>
+<td>ext:cloud.azure.microsoft_network.loadbalancers.dipavailability:filter(eq("ProtocolType", "Tcp")) / 100</td>
+</tr>
+<tr>
+<td>Доступность UDP для DIP балансировщика нагрузки</td>
+<td>builtin:cloud.azure.loadbalancer.availability.dipUdp</td>
+<td>Статус проверки работоспособности</td>
+<td>ext:cloud.azure.microsoft_network.loadbalancers.dipavailability:filter(eq("ProtocolType", "Udp")) / 100</td>
+</tr>
+<tr>
+<td>Доступность VIP балансировщика нагрузки</td>
+<td>builtin:cloud.azure.loadbalancer.availability.vip</td>
+<td>Доступность пути данных</td>
+<td>ext:cloud.azure.microsoft_network.loadbalancers.vipavailability / 100</td>
+</tr>
+<tr>
+<td>Успешные соединения SNAT</td>
+<td>builtin:cloud.azure.loadbalancer.snatConnection.est</td>
+<td>Количество соединений SNAT</td>
+<td>ext:cloud.azure.microsoft_network.loadbalancers.snatconnectioncount:filter(eq("ConnectionState" ,"Successful"))</td>
+</tr>
+<tr>
+<td>Ожидающие соединения SNAT</td>
+<td>builtin:cloud.azure.loadbalancer.snatConnection.pending</td>
+<td>Количество соединений SNAT</td>
+<td>ext:cloud.azure.microsoft_network.loadbalancers.snatconnectioncount:filter(eq("ConnectionState" ,"Pending"))</td>
+</tr>
+<tr>
+<td>Неудачные соединения SNAT</td>
+<td>builtin:cloud.azure.loadbalancer.snatConnection.rej</td>
+<td>Количество соединений SNAT</td>
+<td>ext:cloud.azure.microsoft_network.loadbalancers.snatconnectioncount:filter(eq("ConnectionState" ,"Failed"))</td>
+</tr>
+<tr>
+<td>Полученные байты</td>
+<td>builtin:cloud.azure.loadbalancer.traffic.byteIn</td>
+<td>Количество байт</td>
+<td>ext:cloud.azure.microsoft_network.loadbalancers.bytecount:filter(eq("Direction", "In"))</td>
+</tr>
+<tr>
+<td>Отправленные байты</td>
+<td>builtin:cloud.azure.loadbalancer.traffic.byteOut</td>
+<td>Количество байт</td>
+<td>ext:cloud.azure.microsoft_network.loadbalancers.bytecount:filter(eq("Direction", "Out"))</td>
+</tr>
+<tr>
+<td>Полученные пакеты</td>
+<td>builtin:cloud.azure.loadbalancer.traffic.packetIn</td>
+<td>Количество пакетов</td>
+<td>ext:cloud.azure.microsoft_network.loadbalancers.packetcount:filter(eq("Direction", "In"))</td>
+</tr>
+<tr>
+<td>Отправленные пакеты</td>
+<td>builtin:cloud.azure.loadbalancer.traffic.packetOut</td>
+<td>Количество пакетов</td>
+<td>ext:cloud.azure.microsoft_network.loadbalancers.packetcount:filter(eq("Direction", "Out"))</td>
+</tr>
+<tr>
+<td>Полученные пакеты SYN</td>
+<td>builtin:cloud.azure.loadbalancer.traffic.packetSynIn</td>
+<td>Количество SYN</td>
+<td>ext:cloud.azure.microsoft_network.loadbalancers.syncount:filter(eq("Direction", "In"))</td>
+</tr>
+<tr>
+<td>Отправленные пакеты SYN</td>
+<td>builtin:cloud.azure.loadbalancer.traffic.packetSynOut</td>
+<td>Количество SYN</td>
+<td>ext:cloud.azure.microsoft_network.loadbalancers.syncount:filter(eq("Direction", "Out"))</td>
+</tr>
+</tbody>
+</table>
+<h3 id="azure-redis">Кэш Azure для Redis<a class="headerlink" href="#azure-redis" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Название метрики классического сервиса</th>
+<th>Ключ метрики классического сервиса</th>
+<th>Название метрики облачного сервиса</th>
+<th>Ключ метрики облачного сервиса</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Попадания в кэш</td>
+<td>builtin:cloud.azure.redis.cache.hits</td>
+<td>Попадания в кэш</td>
+<td>ext:cloud.azure.microsoft_cache.redis.cachehits</td>
+</tr>
+<tr>
+<td>Промахи кэша</td>
+<td>builtin:cloud.azure.redis.cache.misses</td>
+<td>Промахи кэша</td>
+<td>ext:cloud.azure.microsoft_cache.redis.cachemisses</td>
+</tr>
+<tr>
+<td>Чтение байт/с</td>
+<td>builtin:cloud.azure.redis.cache.read</td>
+<td>Чтение из кэша</td>
+<td>ext:cloud.azure.microsoft_cache.redis.cacheread</td>
+</tr>
+<tr>
+<td>Запись байт/с</td>
+<td>builtin:cloud.azure.redis.cache.write</td>
+<td>Запись в кэш</td>
+<td>ext:cloud.azure.microsoft_cache.redis.cachewrite</td>
+</tr>
+<tr>
+<td>Команды get</td>
+<td>builtin:cloud.azure.redis.commands.get</td>
+<td>Gets</td>
+<td>ext:cloud.azure.microsoft_cache.redis.getcommands</td>
+</tr>
+<tr>
+<td>Команды set</td>
+<td>builtin:cloud.azure.redis.commands.set</td>
+<td>Sets</td>
+<td>ext:cloud.azure.microsoft_cache.redis.setcommands</td>
+</tr>
+<tr>
+<td>Общее количество обработанных команд</td>
+<td>builtin:cloud.azure.redis.commands.total</td>
+<td>Всего операций</td>
+<td>ext:cloud.azure.microsoft_cache.redis.totalcommandsprocessed</td>
+</tr>
+<tr>
+<td>Количество вытесненных ключей</td>
+<td>builtin:cloud.azure.redis.keys.evicted</td>
+<td>Вытесненные ключи</td>
+<td>ext:cloud.azure.microsoft_cache.redis.evictedkeys</td>
+</tr>
+<tr>
+<td>Количество истёкших ключей</td>
+<td>builtin:cloud.azure.redis.keys.expired</td>
+<td>Истёкшие ключи</td>
+<td>ext:cloud.azure.microsoft_cache.redis.expiredkeys</td>
+</tr>
+<tr>
+<td>Общее количество ключей</td>
+<td>builtin:cloud.azure.redis.keys.total</td>
+<td>Всего ключей</td>
+<td>ext:cloud.azure.microsoft_cache.redis.totalkeys</td>
+</tr>
+<tr>
+<td>Используемая память</td>
+<td>builtin:cloud.azure.redis.memory.used</td>
+<td>Используемая память</td>
+<td>ext:cloud.azure.microsoft_cache.redis.usedmemory</td>
+</tr>
+<tr>
+<td>Используемая память RSS</td>
+<td>builtin:cloud.azure.redis.memory.usedRss</td>
+<td>Используемая память RSS</td>
+<td>ext:cloud.azure.microsoft_cache.redis.usedmemoryrss</td>
+</tr>
+<tr>
+<td>Подключённые клиенты</td>
+<td>builtin:cloud.azure.redis.connected</td>
+<td>Подключённые клиенты</td>
+<td>ext:cloud.azure.microsoft_cache.redis.connectedclients</td>
+</tr>
+<tr>
+<td>Нагрузка на сервер</td>
+<td>builtin:cloud.azure.redis.load</td>
+<td>Нагрузка на сервер</td>
+<td>ext:cloud.azure.microsoft_cache.redis.serverload</td>
+</tr>
+<tr>
+<td>Время процессора</td>
+<td>builtin:cloud.azure.redis.processorTime</td>
+<td>CPU</td>
+<td>ext:cloud.azure.microsoft_cache.redis.percentprocessortime</td>
+</tr>
+</tbody>
+</table>
+<h3 id="azure-cosmos-database">Azure Cosmos Database<a class="headerlink" href="#azure-cosmos-database" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Название метрики классического сервиса</th>
+<th>Ключ метрики классического сервиса</th>
+<th>Название метрики облачного сервиса</th>
+<th>Ключ метрики облачного сервиса</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Доступное хранилище</td>
+<td>builtin:cloud.azure.cosmos.availableStorage</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Использование данных</td>
+<td>builtin:cloud.azure.cosmos.dataUsage</td>
+<td>Использование данных</td>
+<td>ext:cloud.azure.microsoft_documentdb.databaseaccounts.datausage</td>
+</tr>
+<tr>
+<td>Количество документов</td>
+<td>builtin:cloud.azure.cosmos.documentCount</td>
+<td>Количество документов</td>
+<td>ext:cloud.azure.microsoft_documentdb.databaseaccounts.documentcount</td>
+</tr>
+<tr>
+<td>Квота документов</td>
+<td>builtin:cloud.azure.cosmos.documentQuota</td>
+<td>Квота документов</td>
+<td>ext:cloud.azure.microsoft_documentdb.databaseaccounts.documentquota</td>
+</tr>
+<tr>
+<td>Использование индекса</td>
+<td>builtin:cloud.azure.cosmos.indexUsage</td>
+<td>Использование индекса</td>
+<td>ext:cloud.azure.microsoft_documentdb.databaseaccounts.indexusage</td>
+</tr>
+<tr>
+<td>Запросы метаданных</td>
+<td>builtin:cloud.azure.cosmos.metadataRequests</td>
+<td>Запросы метаданных</td>
+<td>ext:cloud.azure.microsoft_documentdb.databaseaccounts.metadatarequests</td>
+</tr>
+<tr>
+<td>Нормализованное потребление единиц запроса</td>
+<td>builtin:cloud.azure.cosmos.normalizedRUConsumption</td>
+<td>Нормализованное потребление RU</td>
+<td>ext:cloud.azure.microsoft_documentdb.databaseaccounts.normalizedruconsumption</td>
+</tr>
+<tr>
+<td>Подготовленная пропускная способность</td>
+<td>builtin:cloud.azure.cosmos.provisionedThroughput</td>
+<td>Подготовленная пропускная способность</td>
+<td>ext:cloud.azure.microsoft_documentdb.databaseaccounts.provisionedthroughput</td>
+</tr>
+<tr>
+<td>Задержка репликации</td>
+<td>builtin:cloud.azure.cosmos.replicationLatency</td>
+<td>Задержка репликации P99</td>
+<td>ext:cloud.azure.microsoft_documentdb.databaseaccounts.replicationlatency</td>
+</tr>
+<tr>
+<td>Общее количество единиц запроса</td>
+<td>builtin:cloud.azure.cosmos.requestUnits</td>
+<td>Всего единиц запроса</td>
+<td>ext:cloud.azure.microsoft_documentdb.databaseaccounts.totalrequestunits</td>
+</tr>
+<tr>
+<td>Общее количество запросов</td>
+<td>builtin:cloud.azure.cosmos.requests</td>
+<td>Всего запросов</td>
+<td>ext:cloud.azure.microsoft_documentdb.databaseaccounts.totalrequests</td>
+</tr>
+<tr>
+<td>Доступность сервиса</td>
+<td>builtin:cloud.azure.cosmos.serviceAvailability</td>
+<td>Доступность сервиса</td>
+<td>ext:cloud.azure.microsoft_documentdb.databaseaccounts.serviceavailability</td>
+</tr>
+</tbody>
+</table>
+<h3 id="azure-iot-hub">Azure IoT Hub<a class="headerlink" href="#azure-iot-hub" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Название метрики классического сервиса</th>
+<th>Ключ метрики классического сервиса</th>
+<th>Название метрики облачного сервиса</th>
+<th>Ключ метрики облачного сервиса</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Отклонённые команды</td>
+<td>builtin:cloud.azure.iotHub.command.abandoned</td>
+<td>Отклонённые сообщения C2D</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.c2d_commands_egress_abandon_success</td>
+</tr>
+<tr>
+<td>Выполненные команды</td>
+<td>builtin:cloud.azure.iotHub.command.completed</td>
+<td>Доставка сообщений C2D завершена</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.c2d_commands_egress_complete_success</td>
+</tr>
+<tr>
+<td>Отклонённые команды</td>
+<td>builtin:cloud.azure.iotHub.command.rejected</td>
+<td>Отклонённые сообщения C2D</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.c2d_commands_egress_reject_success</td>
+</tr>
+<tr>
+<td>Подключённые устройства</td>
+<td>builtin:cloud.azure.iotHub.device.connected</td>
+<td>Подключённые устройства</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.connecteddevicecount</td>
+</tr>
+<tr>
+<td>Количество ошибок регулирования</td>
+<td>builtin:cloud.azure.iotHub.device.dailyThroughputThrottling</td>
+<td>Количество ошибок регулирования</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.d2c_telemetry_ingress_sendthrottle</td>
+</tr>
+<tr>
+<td>Общее использование данных устройствами</td>
+<td>builtin:cloud.azure.iotHub.device.dataUsage</td>
+<td>Общее использование данных устройствами / Общее использование данных устройствами (предварительная версия)</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.devicedatausage ext:cloud.azure.microsoft_devices.iothubs.devicedatausagev2</td>
+</tr>
+<tr>
+<td>Всего устройств</td>
+<td>builtin:cloud.azure.iotHub.device.registered</td>
+<td>Всего устройств</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.totaldevicecount</td>
+</tr>
+<tr>
+<td>Сообщения, доставленные во встроенную конечную точку (сообщения/события)</td>
+<td>builtin:cloud.azure.iotHub.eventHub.builtInEventHub.messages.delivered</td>
+<td>Маршрутизация — сообщения, доставленные в messages/events</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.d2c_endpoints_egress_builtin_events</td>
+</tr>
+<tr>
+<td>Задержка сообщений для встроенной конечной точки (сообщения/события)</td>
+<td>builtin:cloud.azure.iotHub.eventHub.builtInEventHub.averageLatencyMs</td>
+<td>Маршрутизация — задержка сообщений для messages/events</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.d2c_endpoints_latency_builtin_events</td>
+</tr>
+<tr>
+<td>Сообщения, доставленные в конечные точки концентратора событий</td>
+<td>builtin:cloud.azure.iotHub.eventHub.messages.delivered</td>
+<td>Маршрутизация — сообщения, доставленные в концентратор событий</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.d2c_endpoints_egress_eventhubs</td>
+</tr>
+<tr>
+<td>Задержка сообщений для конечных точек концентратора событий</td>
+<td>builtin:cloud.azure.iotHub.eventHub.averageLatencyMs</td>
+<td>Маршрутизация — задержка сообщений для концентратора событий</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.d2c_endpoints_latency_eventhubs</td>
+</tr>
+<tr>
+<td>Отброшенные сообщения</td>
+<td>builtin:cloud.azure.iotHub.messages.dropped</td>
+<td>Маршрутизация — отброшенные телеметрические сообщения</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.d2c_telemetry_egress_dropped</td>
+</tr>
+<tr>
+<td>Недопустимые сообщения</td>
+<td>builtin:cloud.azure.iotHub.messages.invalidForAllEndpoints</td>
+<td>Маршрутизация — несовместимые телеметрические сообщения</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.d2c_telemetry_egress_invalid</td>
+</tr>
+<tr>
+<td>Потерянные сообщения</td>
+<td>builtin:cloud.azure.iotHub.messages.orphaned</td>
+<td>Маршрутизация — потерянные телеметрические сообщения</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.d2c_telemetry_egress_orphaned</td>
+</tr>
+<tr>
+<td>Попытки отправки телеметрических сообщений</td>
+<td>builtin:cloud.azure.iotHub.messages.sendAttempts</td>
+<td>Попытки отправки телеметрических сообщений</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.d2c_telemetry_ingress_allprotocol</td>
+</tr>
+<tr>
+<td>Отправленные телеметрические сообщения</td>
+<td>builtin:cloud.azure.iotHub.messages.sent</td>
+<td>Отправленные телеметрические сообщения</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.d2c_telemetry_ingress_success</td>
+</tr>
+<tr>
+<td>Сообщения, соответствующие условию резервного маршрута</td>
+<td>builtin:cloud.azure.iotHub.messages.sentToFallback</td>
+<td>Маршрутизация — сообщения, доставленные в резервный маршрут</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.d2c_telemetry_egress_fallback</td>
+</tr>
+<tr>
+<td>Задержка сообщений для конечных точек очереди служебной шины</td>
+<td>builtin:cloud.azure.iotHub.serviceBus.queues.averageLatencyMs</td>
+<td>Маршрутизация — задержка сообщений для очереди служебной шины</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.d2c_endpoints_latency_servicebusqueues</td>
+</tr>
+<tr>
+<td>Сообщения, доставленные в конечные точки очереди служебной шины</td>
+<td>builtin:cloud.azure.iotHub.serviceBus.queues.messagesDelivered</td>
+<td>Маршрутизация — сообщения, доставленные в очередь служебной шины</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.d2c_endpoints_egress_servicebusqueues</td>
+</tr>
+<tr>
+<td>Задержка сообщений для конечных точек темы служебной шины</td>
+<td>builtin:cloud.azure.iotHub.serviceBus.topics.averageLatencyMs</td>
+<td>Маршрутизация — задержка сообщений для темы служебной шины</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.d2c_endpoints_latency_servicebustopics</td>
+</tr>
+<tr>
+<td>Сообщения, доставленные в конечные точки темы служебной шины</td>
+<td>builtin:cloud.azure.iotHub.serviceBus.topics.messagesDelivered</td>
+<td>Маршрутизация — сообщения, доставленные в тему служебной шины</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.d2c_endpoints_egress_servicebustopics</td>
+</tr>
+<tr>
+<td>Задержка сообщений для конечных точек хранилища</td>
+<td>builtin:cloud.azure.iotHub.storageEndpoints.avgLatencyMs</td>
+<td>Маршрутизация — задержка сообщений для хранилища</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.d2c_endpoints_latency_storage</td>
+</tr>
+<tr>
+<td>Записанные в хранилище BLOB-объекты</td>
+<td>builtin:cloud.azure.iotHub.storageEndpoints.blobsWritten</td>
+<td>Маршрутизация — BLOB-объекты, доставленные в хранилище</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.d2c_endpoints_egress_storage_blobs</td>
+</tr>
+<tr>
+<td>Данные, записанные в хранилище</td>
+<td>builtin:cloud.azure.iotHub.storageEndpoints.bytesWritten</td>
+<td>Маршрутизация — данные, доставленные в хранилище</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.d2c_endpoints_egress_storage_bytes</td>
+</tr>
+<tr>
+<td>Сообщения, доставленные в конечные точки хранилища</td>
+<td>builtin:cloud.azure.iotHub.storageEndpoints.messageDelivered</td>
+<td>Маршрутизация — сообщения, доставленные в хранилище</td>
+<td>ext:cloud.azure.microsoft_devices.iothubs.d2c_endpoints_egress_storage</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sql-server-azure">SQL Server Azure<a class="headerlink" href="#sql-server-azure" title="Permanent link">&para;</a></h3>
+<h4 id="sql-azure">Базы данных SQL Azure<a class="headerlink" href="#sql-azure" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Название метрики классического сервиса</th>
+<th>Ключ метрики классического сервиса</th>
+<th>Название метрики облачного сервиса</th>
+<th>Метрика облачного сервиса</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Заблокировано брандмауэром</td>
+<td>builtin:cloud.azure.sqlDatabase.connections.blockedByFirewall</td>
+<td>Заблокировано брандмауэром</td>
+<td>ext:cloud.azure.microsoft_sql.servers.databases.blocked_by_firewall</td>
+</tr>
+<tr>
+<td>Неудачные соединения</td>
+<td>builtin:cloud.azure.sqlDatabase.connections.failed</td>
+<td>Неудачные соединения — системные ошибки / Неудачные соединения — ошибки пользователя</td>
+<td>ext:cloud.azure.microsoft_sql.servers.databases.connection_failed ext:cloud.azure.microsoft_sql.servers.databases.connection_failed_user_error</td>
+</tr>
+<tr>
+<td>Успешные соединения</td>
+<td>builtin:cloud.azure.sqlDatabase.connections.successful</td>
+<td>Успешные соединения</td>
+<td>ext:cloud.azure.microsoft_sql.servers.databases.connection_successful</td>
+</tr>
+<tr>
+<td>Лимит DTU</td>
+<td>builtin:cloud.azure.sqlDatabase.dtu.limit.count</td>
+<td>Лимит DTU</td>
+<td>ext:cloud.azure.microsoft_sql.servers.databases.dtu_limit</td>
+</tr>
+<tr>
+<td>Использовано DTU</td>
+<td>builtin:cloud.azure.sqlDatabase.dtu.limit.used</td>
+<td>Использовано DTU</td>
+<td>ext:cloud.azure.microsoft_sql.servers.databases.dtu_used</td>
+</tr>
+<tr>
+<td>Процент DTU</td>
+<td>builtin:cloud.azure.sqlDatabase.dtu.consumptionPerc</td>
+<td>Процент DTU</td>
+<td>ext:cloud.azure.microsoft_sql.servers.databases.dtu_consumption_percent</td>
+</tr>
+<tr>
+<td>Процент ввода/вывода данных</td>
+<td>builtin:cloud.azure.sqlDatabase.io.dataRead</td>
+<td>Процент ввода/вывода данных</td>
+<td>ext:cloud.azure.microsoft_sql.servers.databases.physical_data_read_percent</td>
+</tr>
+<tr>
+<td>Процент ввода/вывода журнала</td>
+<td>builtin:cloud.azure.sqlDatabase.io.logWrite</td>
+<td>Процент ввода/вывода журнала</td>
+<td>ext:cloud.azure.microsoft_sql.servers.databases.log_write_percent</td>
+</tr>
+<tr>
+<td>Процент размера базы данных</td>
+<td>builtin:cloud.azure.sqlDatabase.storage.percent</td>
+<td>Процент используемого пространства данных</td>
+<td>ext:cloud.azure.microsoft_sql.servers.databases.storage_percent</td>
+</tr>
+<tr>
+<td>Общий размер базы данных</td>
+<td>builtin:cloud.azure.sqlDatabase.storage.totalBytes</td>
+<td>Используемое пространство данных</td>
+<td>ext:cloud.azure.microsoft_sql.servers.databases.storage</td>
+</tr>
+<tr>
+<td>Процент использования In-Memory OLTP</td>
+<td>builtin:cloud.azure.sqlDatabase.storage.xtpPercent</td>
+<td>ext:cloud.azure.microsoft_sql.servers.databases.xtp_storage_percent</td>
+<td>ext:cloud.azure.microsoft_sql.servers.databases.xtp_storage_percent</td>
+</tr>
+<tr>
+<td>Процент использования CPU</td>
+<td>builtin:cloud.azure.sqlDatabase.cpuPercent</td>
+<td>Процент использования CPU</td>
+<td>ext:cloud.azure.microsoft_sql.servers.databases.cpu_percent</td>
+</tr>
+<tr>
+<td>Взаимные блокировки</td>
+<td>builtin:cloud.azure.sqlDatabase.deadlocks</td>
+<td>Взаимные блокировки</td>
+<td>ext:cloud.azure.microsoft_sql.servers.databases.deadlock</td>
+</tr>
+<tr>
+<td>Процент сессий</td>
+<td>builtin:cloud.azure.sqlDatabase.sessions</td>
+<td>Процент сессий</td>
+<td>ext:cloud.azure.microsoft_sql.servers.databases.sessions_percent</td>
+</tr>
+<tr>
+<td>Процент рабочих процессов</td>
+<td>builtin:cloud.azure.sqlDatabase.workers</td>
+<td>Процент рабочих процессов</td>
+<td>ext:cloud.azure.microsoft_sql.servers.databases.workers_percent</td>
+</tr>
+</tbody>
+</table>
+<h4 id="sql-azure_1">Эластичные пулы баз данных SQL Azure<a class="headerlink" href="#sql-azure_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Название метрики классического сервиса</th>
+<th>Ключ метрики классического сервиса</th>
+<th>Название метрики облачного сервиса</th>
+<th>Ключ метрики облачного сервиса</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Лимит хранилища</td>
+<td>builtin:cloud.azure.sqlElasticPool.dtu.storage.limitBytes</td>
+<td>Максимальный размер данных</td>
+<td>ext:cloud.azure.microsoft_sql.servers.elasticpools.storage_limit</td>
+</tr>
+<tr>
+<td>Процент размера базы данных</td>
+<td>builtin:cloud.azure.sqlElasticPool.dtu.storage.percent</td>
+<td>Процент используемого пространства данных</td>
+<td>ext:cloud.azure.microsoft_sql.servers.elasticpools.storage_percent</td>
+</tr>
+<tr>
+<td>Используемое хранилище</td>
+<td>builtin:cloud.azure.sqlElasticPool.dtu.storage.usedBytes</td>
+<td>Используемое пространство данных</td>
+<td>ext:cloud.azure.microsoft_sql.servers.elasticpools.storage_used</td>
+</tr>
+<tr>
+<td>Процент использования In-Memory OLTP</td>
+<td>builtin:cloud.azure.sqlElasticPool.dtu.storage.xtpPercent</td>
+<td>Процент использования In-Memory OLTP</td>
+<td>ext:cloud.azure.microsoft_sql.servers.elasticpools.xtp_storage_percent</td>
+</tr>
+<tr>
+<td>Процент DTU</td>
+<td>builtin:cloud.azure.sqlElasticPool.dtu.consumption</td>
+<td>Процент DTU</td>
+<td>ext:cloud.azure.microsoft_sql.servers.elasticpools.dtu_consumption_percent</td>
+</tr>
+<tr>
+<td>Лимит eDTU</td>
+<td>builtin:cloud.azure.sqlElasticPool.edtu.limit</td>
+<td>Лимит EDTU</td>
+<td>ext:cloud.azure.microsoft_sql.servers.elasticpools.edtu_limit</td>
+</tr>
+<tr>
+<td>Использовано eDTU</td>
+<td>builtin:cloud.azure.sqlElasticPool.edtu.used</td>
+<td>Использовано EDTU</td>
+<td>ext:cloud.azure.microsoft_sql.servers.elasticpools.edtu_used</td>
+</tr>
+<tr>
+<td>Процент ввода/вывода данных</td>
+<td>builtin:cloud.azure.sqlElasticPool.io.dataRead</td>
+<td>Процент ввода/вывода данных</td>
+<td>ext:cloud.azure.microsoft_sql.servers.elasticpools.physical_data_read_percent</td>
+</tr>
+<tr>
+<td>Процент ввода/вывода журнала</td>
+<td>builtin:cloud.azure.sqlElasticPool.io.logWrite</td>
+<td>Процент ввода/вывода журнала</td>
+<td>ext:cloud.azure.microsoft_sql.servers.elasticpools.log_write_percent</td>
+</tr>
+<tr>
+<td>Процент использования CPU</td>
+<td>builtin:cloud.azure.sqlElasticPool.cpuPercent</td>
+<td>Процент использования CPU</td>
+<td>ext:cloud.azure.microsoft_sql.servers.elasticpools.cpu_percent</td>
+</tr>
+<tr>
+<td>Процент сессий</td>
+<td>builtin:cloud.azure.sqlElasticPool.sessions</td>
+<td>Процент сессий</td>
+<td>ext:cloud.azure.microsoft_sql.servers.elasticpools.sessions_percent</td>
+</tr>
+<tr>
+<td>Процент рабочих процессов</td>
+<td>builtin:cloud.azure.sqlElasticPool.workers</td>
+<td>Процент рабочих процессов</td>
+<td>ext:cloud.azure.microsoft_sql.servers.elasticpools.workers_percent</td>
+</tr>
+</tbody>
+</table>
+<h3 id="azure_4">Учётная запись хранения Azure<a class="headerlink" href="#azure_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Название метрики классического сервиса</th>
+<th>Ключ метрики классического сервиса</th>
+<th>Название метрики облачного сервиса</th>
+<th>Ключ метрики облачного сервиса</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Количество транзакций</td>
+<td>builtin:cloud.azure.storage.blob.transactions</td>
+<td>Транзакции</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.blobservices.transactions</td>
+</tr>
+<tr>
+<td>Сквозная задержка успешных запросов (E2E)</td>
+<td>builtin:cloud.azure.storage.blob.transactions.network.latency.success.e2e</td>
+<td>Задержка E2E для успешных запросов</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.blobservices.transactions</td>
+</tr>
+<tr>
+<td>Задержка успешных запросов на сервере</td>
+<td>builtin:cloud.azure.storage.blob.transactions.network.latency.success.server</td>
+<td>Задержка сервера для успешных запросов</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.blobservices.successserverlatency</td>
+</tr>
+<tr>
+<td>Исходящие байты</td>
+<td>builtin:cloud.azure.storage.blob.transactions.network.egress</td>
+<td>Исходящий трафик</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.blobservices.egress</td>
+</tr>
+<tr>
+<td>Входящие байты</td>
+<td>builtin:cloud.azure.storage.blob.transactions.network.ingress</td>
+<td>Входящий трафик</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.blobservices.ingress</td>
+</tr>
+<tr>
+<td>Ёмкость BLOB-объектов</td>
+<td>builtin:cloud.azure.storage.blob.capacity</td>
+<td>Ёмкость BLOB-объектов</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.blobservices.blobcapacity</td>
+</tr>
+<tr>
+<td>Количество контейнеров BLOB-объектов</td>
+<td>builtin:cloud.azure.storage.blob.containers</td>
+<td>Количество контейнеров BLOB-объектов</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.blobservices.containercount</td>
+</tr>
+<tr>
+<td>Количество BLOB-объектов</td>
+<td>builtin:cloud.azure.storage.blob.entities</td>
+<td>Количество BLOB-объектов</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.blobservices.blobcount</td>
+</tr>
+<tr>
+<td>Количество транзакций</td>
+<td>builtin:cloud.azure.storage.file.transactions</td>
+<td>Транзакции</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.fileservices.transactions</td>
+</tr>
+<tr>
+<td>Сквозная задержка успешных запросов (E2E)</td>
+<td>builtin:cloud.azure.storage.file.transactions.network.latency.success.e2e</td>
+<td>Задержка E2E для успешных запросов</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.fileservices.successe2elatency</td>
+</tr>
+<tr>
+<td>Задержка успешных запросов на сервере</td>
+<td>builtin:cloud.azure.storage.file.transactions.network.latency.success.server</td>
+<td>Задержка сервера для успешных запросов</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.fileservices.successserverlatency</td>
+</tr>
+<tr>
+<td>Исходящие байты</td>
+<td>builtin:cloud.azure.storage.file.transactions.network.egress</td>
+<td>Исходящий трафик</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.fileservices.egress</td>
+</tr>
+<tr>
+<td>Входящие байты</td>
+<td>builtin:cloud.azure.storage.file.transactions.network.ingress</td>
+<td>Входящий трафик</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.fileservices.ingress</td>
+</tr>
+<tr>
+<td>Ёмкость файлового хранилища</td>
+<td>builtin:cloud.azure.storage.file.capacity</td>
+<td>Ёмкость файлового хранилища</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.fileservices.filecapacity</td>
+</tr>
+<tr>
+<td>Количество файловых ресурсов</td>
+<td>builtin:cloud.azure.storage.file.containers</td>
+<td>Количество файловых ресурсов</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.fileservices.filesharecount</td>
+</tr>
+<tr>
+<td>Количество файлов</td>
+<td>builtin:cloud.azure.storage.file.entities</td>
+<td>Количество файлов</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.fileservices.filecount</td>
+</tr>
+<tr>
+<td>Количество транзакций</td>
+<td>builtin:cloud.azure.storage.queue.transactions</td>
+<td>Транзакции</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.queueservices.transactions</td>
+</tr>
+<tr>
+<td>Сквозная задержка успешных запросов (E2E)</td>
+<td>builtin:cloud.azure.storage.queue.transactions.network.latency.success.e2e</td>
+<td>Задержка E2E для успешных запросов</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.queueservices.successe2elatency</td>
+</tr>
+<tr>
+<td>Задержка успешных запросов на сервере</td>
+<td>builtin:cloud.azure.storage.queue.transactions.network.latency.success.server</td>
+<td>Задержка сервера для успешных запросов</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.queueservices.successserverlatency</td>
+</tr>
+<tr>
+<td>Исходящие байты</td>
+<td>builtin:cloud.azure.storage.queue.transactions.network.egress</td>
+<td>Исходящий трафик</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.queueservices.egress</td>
+</tr>
+<tr>
+<td>Входящие байты</td>
+<td>builtin:cloud.azure.storage.queue.transactions.network.ingress</td>
+<td>Входящий трафик</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.queueservices.ingress</td>
+</tr>
+<tr>
+<td>Ёмкость очереди</td>
+<td>builtin:cloud.azure.storage.queue.capacity</td>
+<td>Ёмкость очереди</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.queueservices.queuecapacity</td>
+</tr>
+<tr>
+<td>Количество очередей</td>
+<td>builtin:cloud.azure.storage.queue.containers</td>
+<td>Количество очередей</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.queueservices.queuecount</td>
+</tr>
+<tr>
+<td>Количество сообщений в очереди</td>
+<td>builtin:cloud.azure.storage.queue.entities</td>
+<td>Количество сообщений в очереди</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.queueservices.queuemessagecount</td>
+</tr>
+<tr>
+<td>Количество транзакций</td>
+<td>builtin:cloud.azure.storage.table.transactions</td>
+<td>Транзакции</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.tableservices.transactions</td>
+</tr>
+<tr>
+<td>Задержка успешных запросов на сервере</td>
+<td>builtin:cloud.azure.storage.table.transactions.network.latency.success.server</td>
+<td>Задержка сервера для успешных запросов</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.tableservices.successserverlatency</td>
+</tr>
+<tr>
+<td>Сквозная задержка успешных запросов (E2E)</td>
+<td>builtin:cloud.azure.storage.table.transactions.network.latency.success.server.e2e</td>
+<td>Задержка E2E для успешных запросов</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.tableservices.successe2elatency</td>
+</tr>
+<tr>
+<td>Исходящие байты</td>
+<td>builtin:cloud.azure.storage.table.transactions.network.egress</td>
+<td>Исходящий трафик</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.tableservices.egress</td>
+</tr>
+<tr>
+<td>Входящие байты</td>
+<td>builtin:cloud.azure.storage.table.transactions.network.ingress</td>
+<td>Входящий трафик</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.tableservices.ingress</td>
+</tr>
+<tr>
+<td>Ёмкость таблиц</td>
+<td>builtin:cloud.azure.storage.table.capacity</td>
+<td>Ёмкость таблиц</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.tableservices.tablecapacity</td>
+</tr>
+<tr>
+<td>Количество таблиц</td>
+<td>builtin:cloud.azure.storage.table.containers</td>
+<td>Количество таблиц</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.tableservices.tablecount</td>
+</tr>
+<tr>
+<td>Количество сущностей таблиц</td>
+<td>builtin:cloud.azure.storage.table.entities</td>
+<td>Количество сущностей таблиц</td>
+<td>ext:cloud.azure.microsoft_storage.storageaccounts.tableservices.tableentitycount</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.path", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

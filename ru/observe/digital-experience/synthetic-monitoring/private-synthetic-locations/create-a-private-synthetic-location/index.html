@@ -1,0 +1,6010 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace с AI-помощником (Managed + SaaS)">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/ru/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Создание частной Synthetic-локации - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#synthetic-" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Создание частной Synthetic-локации
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../" class="md-tabs__link">
+          
+  
+  
+  Начало работы
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../platform/grail/dynatrace-grail/" class="md-tabs__link">
+          
+  
+  
+  Платформа
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../infrastructure-observability/" class="md-tabs__link">
+          
+  
+  
+  Наблюдаемость
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../dynatrace-intelligence/anomaly-detection/" class="md-tabs__link">
+          
+  
+  
+  Dynatrace Intelligence
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-tabs__link">
+          
+  
+  
+  Анализ и автоматизация
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../ingest-from/" class="md-tabs__link">
+          
+  
+  
+  Источники данных
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../deliver/configuration-as-code/" class="md-tabs__link">
+          
+  
+  
+  Deliver
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../secure/threat-observability/" class="md-tabs__link">
+          
+  
+  
+  Безопасность
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../manage/hub/" class="md-tabs__link">
+          
+  
+  
+  Управление
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../dynatrace-api/" class="md-tabs__link">
+          
+  
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../whats-new/" class="md-tabs__link">
+          
+  
+  
+  Что нового
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI Помощник
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Начало работы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документация Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../discover-dynatrace/what-is-dynatrace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что такое Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../discover-dynatrace/dynatrace-apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложения Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../semantic-dictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Семантический словарь
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Резервное копирование
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Платформа
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grail
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Grail
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../platform/grail/dynatrace-grail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что такое Grail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../platform/grail/dynatrace-query-language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Язык запросов DQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../platform/oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../platform/appengine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AppEngine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../platform/openpipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenPipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Наблюдаемость
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инфраструктура
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Инфраструктура
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../infrastructure-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../infrastructure-observability/infrastructure-and-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Хосты и операции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../infrastructure-observability/cloud-platform-monitoring/clouds-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Облачный мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../infrastructure-observability/container-platform-monitoring/kubernetes-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../infrastructure-observability/databases/database-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Базы данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложения
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Приложения
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../application-observability/distributed-tracing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Распределённая трассировка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../application-observability/services/services-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сервисы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Цифровой опыт
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Цифровой опыт
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synthetic-on-grail/synthetic-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Синтетическое приложение
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-for-ai-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI и LLM мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Intelligence
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Intelligence
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обнаружение аномалий
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Обнаружение аномалий
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка чувствительности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложение Anomaly Detection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфигурация
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Адаптивные пороги
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Многомерный бейзлайн
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/metric-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    События метрик
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/static-thresholds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статические пороги
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Оптимизация DQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis Copilot
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Davis Copilot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/copilot/chat-with-davis-copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Assist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/copilot/copilot-getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/copilot/copilot-data-privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфиденциальность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/copilot/quick-analysis-copilot-dql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запросы на естественном языке
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/davis-problems-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проблемы Davis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ первопричин
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Анализ первопричин
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/root-cause-analysis/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ событий
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/dynatrace-intelligence-integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Справочник
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Справочник
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI модели
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/reference/davis-ai-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лимиты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ и автоматизация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Анализ и автоматизация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды и ноутбуки
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Дашборды и ноутбуки
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/dashboards-and-notebooks/document-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/dashboards-and-notebooks/document-version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Версии документов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Визуализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/dashboards-and-notebooks/explore-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Логи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Логи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/logs/lma-logs-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложение журналов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/logs/lma-logs-app/facets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Фильтры
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/logs/lma-logs-app/query-and-filter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запросы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обозреватель данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/smartscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Smartscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/notifications-and-alerting/problem-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Уведомления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/compliance-and-resilience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Соответствие требованиям
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Источники данных
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ingest-from/extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ingest-from/dynatrace-oneagent/installation-and-operation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent — установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deliver
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration as Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration as Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/configuration-as-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monaco
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monaco
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API и разрешения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/configuration-as-code/monaco/monaco-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/configuration-as-code/monaco/monaco-getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_3" id="__nav_9_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terraform
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Terraform
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API и разрешения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/configuration-as-code/terraform/terraform-cli-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI команды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SLO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/service-level-objectives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/service-level-objectives/create-slo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Создание SLO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Reliability Guardian
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Site Reliability Guardian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/site-reliability-guardian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/site-reliability-guardian/event-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Структура событий
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/ownership-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ownership
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг релизов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Мониторинг релизов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/release-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/release-monitoring/monitor-releases-with-dynatrace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг релизов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/quality-gates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Валидация релизов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Безопасность
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../secure/threat-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость угроз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../secure/threat-observability/security-events-ingest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграция
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Управление
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../manage/hub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензирование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лицензирование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../license/capabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Возможности DPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../license/billing-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Биллинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../license/budget-alerts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бюджетные оповещения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../license/license-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Жизненный цикл
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../license/dps-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Разрешения DPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Intelligence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Что нового
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../whats-new/saas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../whats-new/oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../whats-new/activegate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="synthetic-">Создание частной Synthetic-локации<a class="headerlink" href="#synthetic-" title="Permanent link">&para;</a></h1>
+<h1 id="synthetic-_1">Создание частной Synthetic-локации<a class="headerlink" href="#synthetic-_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Classic</li>
+<li>Практическое руководство</li>
+<li>Чтение: 24 мин</li>
+<li>Обновлено 11 февраля 2026 г.</li>
+</ul>
+<p>Вы можете запускать синтетические мониторы Dynatrace из частной Synthetic-локации — локации в вашей частной сетевой инфраструктуре, где устанавливается один или несколько экземпляров Synthetic-совместимого ActiveGate.</p>
+<p>С мониторами, запускаемыми из частной локации, вы можете перенести возможности тестирования, доступные в публичных локациях, прямо в вашу среду. С частными локациями вы можете:</p>
+<ul>
+<li>Измерять производительность и доступность внутренних веб-страниц.</li>
+<li>Измерять сложные внутренние приложения с помощью браузерных clickpath-сценариев.</li>
+<li>Измерять внешние ресурсы с помощью синтетических мониторов, запускаемых из внутренних локаций.</li>
+<li>Отслеживать API — как внутренние, так и внешние.</li>
+</ul>
+<p>Частные Synthetic-локации поддерживают все <a href="/docs/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors" title="Узнайте о типах синтетических мониторов Dynatrace.">типы синтетических мониторов Dynatrace</a>.</p>
+<h2 id="_1">Системные и аппаратные требования для частных локаций<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Убедитесь, что целевой хост, который вы планируете использовать для запуска синтетических мониторов, соответствует <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic" title="Поддерживаемые операционные системы, версии Chromium и аппаратные требования для запуска синтетических мониторов из частных локаций">системным и аппаратным требованиям для частных Synthetic-локаций</a>. Обратите внимание, что Synthetic-совместимые ActiveGate предъявляют более высокие требования к оборудованию и системе, чем обычный Environment или Cluster ActiveGate.</p>
+<p>Информация об окончании поддержки</p>
+<ul>
+<li>Для Red Hat/Oracle Linux/Rocky Linux 8 нет новых версий Chromium после версии 133.
+  По важным соображениям безопасности и стабильности было принято решение прекратить поддержку установки <strong>Synthetic-совместимого</strong> ActiveGate на Red Hat/Oracle Linux/Rocky Linux 8 после версии ActiveGate 1.325.
+  ActiveGate версии 1.325 — <strong>последний Synthetic-совместимый</strong> ActiveGate с поддержкой Red Hat/Oracle Linux/Rocky Linux 8.
+  Кроме того, начиная с Dynatrace версии 1.326, планируется ввести механизмы, предотвращающие обновление Synthetic-совместимых ActiveGate на Red Hat/Oracle Linux/Rocky Linux 8 после версии 1.325.</li>
+<li>Разработка Chromium для Amazon Linux 2 остановилась на версии 126.
+  По важным соображениям безопасности и стабильности было принято решение прекратить поддержку установки Synthetic-совместимого ActiveGate на Amazon Linux 2 после версии ActiveGate 1.307.
+  ActiveGate версии 1.307 — последний Synthetic-совместимый ActiveGate с поддержкой Amazon Linux 2.
+  Кроме того, начиная с Dynatrace версии 1.308, введены механизмы, предотвращающие обновление Synthetic-совместимых ActiveGate на Amazon Linux 2 после версии 1.307.</li>
+<li>
+<p>Разработка Chromium для Red Hat/CentOS 7 остановилась на версии 126.
+  По важным соображениям безопасности и стабильности было принято решение прекратить поддержку установки Synthetic-совместимого ActiveGate на Red Hat/CentOS 7 после версии ActiveGate 1.305.
+  ActiveGate версии 1.305 — последний Synthetic-совместимый ActiveGate с поддержкой Red Hat/CentOS 7.
+  Кроме того, начиная с Dynatrace версии 1.306, введены механизмы, предотвращающие обновление Synthetic-совместимых ActiveGate на Red Hat/CentOS 7 после версии 1.305.</p>
+</li>
+<li>
+<p>Поскольку Red Hat Enterprise Linux 7 достиг <a href="https://dt-url.net/af03uea">окончания поддержки обслуживания</a> 30 июня 2024 года, все его пакеты были заархивированы. Это означает, что найти необходимые зависимости для обновления может быть невозможно. Подробнее см. <a href="https://dt-url.net/e623zr1">статус Red Hat Enterprise Linux 7</a>.</p>
+</li>
+<li>До версии 1.329 Synthetic-совместимые ActiveGate на Ubuntu 20 и Ubuntu 22 используют Chromium snap. При настройке <a href="/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files#default-activegate-directories--linux" title="Узнайте, где хранятся файлы ActiveGate на Windows и Linux.">временного каталога по умолчанию для частных Synthetic-файлов</a> — <code>/var/tmp/dynatrace/synthetic</code>, путь должен начинаться с <code>/var/tmp</code>, например <code>TEMP=/var/tmp/syn</code>. Dynatrace требует доступ на запись к <code>/var/tmp</code> для установки пакетов Chromium snap.
+  Начиная с версии 1.331 эти ограничения больше не действуют. Последняя версия ActiveGate на Ubuntu 20 и Ubuntu 22 использует Chrome for Testing, как и Ubuntu 24.</li>
+</ul>
+<h3 id="_2">Подготовка<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Нельзя выполнять синтетические мониторы с помощью Environment ActiveGate, настроенного для <a href="/docs/ingest-from/dynatrace-activegate/configuration/configure-an-environment-activegate-for-multi-environment-support" title="Прочитайте пошаговую инструкцию по настройке одного Environment ActiveGate для поддержки нескольких сред.">поддержки нескольких сред</a>.</li>
+<li>Вы можете создать частную локацию, используя чистую установку Synthetic-совместимого Environment ActiveGate версии 1.169+ или Cluster ActiveGate с Dynatrace Managed версии 1.176+. Если вы хотите использовать существующий хост ActiveGate, сначала <a href="/docs/ingest-from/dynatrace-activegate/operation/uninstall-activegate" title="Узнайте, как удалить ActiveGate из систем на Windows или Linux.">удалите ActiveGate</a>.</li>
+<li>Synthetic-совместимый ActiveGate используется исключительно для запуска синтетических мониторов. Чистая установка ActiveGate для синтетического мониторинга отключает все остальные функции ActiveGate, включая взаимодействие с OneAgent.</li>
+<li>Убедитесь, что ActiveGate может подключаться к другим <a href="/docs/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates" title="Узнайте о приоритетах подключения между типами ActiveGate, а также между ActiveGate и OneAgent.">компонентам Dynatrace</a>, а также к ресурсу, который вы хотите тестировать. См. <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic" title="Узнайте, как настроить свойства ActiveGate для использования прокси при частном синтетическом мониторинге.">Настройка прокси для частного синтетического мониторинга</a>.</li>
+<li>Для сетевой конфигурации поддерживаются только IPv4 и DNS UDP.</li>
+<li>Synthetic-совместимому ActiveGate необходим доступ к сервису Amazon S3 для загрузки и доступа к снимкам экрана браузерных мониторов из частных локаций. Убедитесь, что конфигурация брандмауэра разрешает соединения с <code>*.s3-accelerate.amazonaws.com</code> по порту <code>443</code>. Также можно <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic" title="Узнайте, как настроить свойства ActiveGate для использования прокси при частном синтетическом мониторинге.">настроить прокси</a> для подключения к сервису Amazon S3. (Снимки экрана хранятся в разных папках для каждой среды мониторинга, но S3-бакет одинаков — <code>ruxit-synth-screencap</code>. Данные шифруются с помощью <a href="https://dt-url.net/4a02xvx">ключей, управляемых Amazon S3</a>.)</li>
+<li>Как ручное, так и автоматическое обновление браузера требует доступа к <code>https://synthetic-packages.s3.amazonaws.com</code>. В целях безопасности публичный доступ к S3-бакету включён только для определённых файлов; попытка доступа к другим файлам приведёт к ошибке 403.</li>
+</ul>
+<h2 id="synthetic-activegate">Установка Synthetic-совместимого ActiveGate<a class="headerlink" href="#synthetic-activegate" title="Permanent link">&para;</a></h2>
+<p>Установка ActiveGate в последней версии Dynatrace</p>
+<p>Приведённые ниже инструкции описывают установку ActiveGate в предыдущей версии Dynatrace. Чтобы узнать, как установить ActiveGate в последней версии Dynatrace, см. <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#create-a-private-location" title="Узнайте, как управлять частными локациями в приложении Synthetic.">Частные Synthetic-локации на Grail</a>.</p>
+<p>Synthetic-совместимый ActiveGate используется исключительно для запуска синтетических мониторов. Чистая установка ActiveGate для синтетического мониторинга отключает все остальные функции ActiveGate, включая взаимодействие с OneAgent. Убедитесь, что хост, на котором устанавливается ActiveGate, имеет доступ к интернету.</p>
+<p>Ручная установка</p>
+<p>Если эта установка через веб-интерфейс завершится ошибкой, или если вы предпочитаете самостоятельно подготовить хост для Synthetic-движка, вы можете <a href="#manual">вручную установить браузер и другие зависимости через S3</a>. Также можно <a href="#custom-repo">установить браузер из пользовательского локального репозитория</a>.</p>
+<ol>
+<li>Для Environment ActiveGate: в Dynatrace Hub выберите <strong>ActiveGate</strong> &gt; <strong>Настройка</strong>.</li>
+</ol>
+<p>Для Cluster ActiveGate: перейдите в консоль управления кластером Dynatrace и выберите <strong>Ещё</strong> <img alt="Ещё" src="https://dt-cdn.net/images/more-icon-01c8b008ca.svg" title="Ещё" /> &gt; <strong>Добавить новый Cluster ActiveGate</strong>.
+2. Выберите операционную систему для просмотра инструкций.
+3. Создайте <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens" title="Ознакомьтесь с концепцией токена доступа и его областями."><strong>PaaS-токен</strong></a> или введите существующий. Этот токен имеет область <code>InstallerDownload</code> <strong>Загрузка установщиков OneAgent и ActiveGate</strong>, что позволяет загрузить установщик ActiveGate. После ввода токен автоматически добавляется к командам загрузки и установки, которые затем отображаются в интерфейсе.</p>
+<p>Существующие токены перечислены на странице <strong>Токены доступа</strong>. Обратите внимание, что PaaS-токен отображается только один раз при создании, после чего хранится в зашифрованном виде и не может быть раскрыт. Рекомендуем хранить PaaS-токен после создания в менеджере паролей, чтобы можно было повторно использовать его по мере необходимости.
+4. Только для Linux. В поле <strong>Выберите тип установщика</strong> оставьте выбор по умолчанию: <code>x86/64</code>.
+5. В поле <strong>Для чего предназначен этот ActiveGate</strong> выберите <strong>Запуск синтетических мониторов из частной локации</strong>.
+6. Необязательно. Назначьте ActiveGate в частную Synthetic-локацию — выберите локацию из выпадающего списка. Также можно <a href="#add">назначить ActiveGate в локацию</a> после установки.
+7. Необязательно. Можно отключить поддержку браузерных мониторов. В таком случае Synthetic ActiveGate будет рассматриваться как <a href="#browserless">без браузера</a>.</p>
+<p><img alt="Отключение поддержки браузерных мониторов" src="https://dt-cdn.net/images/browserless-deploy-415-1d20a6159c.png" />
+8. Необязательно. <strong>Задайте настройки</strong> для назначения ActiveGate в <a href="/docs/manage/network-zones" title="Узнайте, как работают сетевые зоны в Dynatrace."><strong>Зону сети</strong></a> и <a href="/docs/ingest-from/dynatrace-activegate/activegate-group" title="Ознакомьтесь с базовыми концепциями групп ActiveGate."><strong>Группу ActiveGate</strong></a>.
+9. Загрузите установщик на целевой хост.
+10. Только для Linux. Рекомендуется <strong>Проверить подпись</strong> — выполните отображаемую команду на целевом хосте для загрузки файла сертификата и проверки установщика.
+11. Только для Linux. Выберите дистрибутив Linux.
+12. Запустите установщик и другие команды — убедитесь, что используете именно те команды, которые отображаются в интерфейсе.</p>
+<div class="highlight"><pre><span></span><code>Только для Linux. Установщик автоматически загружает браузер и зависимости, необходимые для Synthetic-движка. На Red Hat, Oracle Linux и Rocky Linux также необходимо включить репозитории, из которых установщик загружает зависимости. В качестве предварительного условия для включения проприетарных репозиториев на Red Hat необходимо зарегистрировать экземпляр Red Hat. Веб-интерфейс предоставляет все необходимые команды, как показано в примере ниже.
+
+![Команды для установки ActiveGate на Red Hat 9](https://dt-cdn.net/images/synth-ag-commands-red-hat-9-2025-11-17-723-eef29810b5.png)
+</code></pre></div>
+<ol>
+<li>Проверьте установку ActiveGate (<strong>Показать статус развёртывания</strong>).</li>
+</ol>
+<h2 id="_3">Добавление частной локации<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Добавление частной локации в последней версии Dynatrace</p>
+<p>Приведённые ниже инструкции описывают добавление частной локации в предыдущей версии Dynatrace. Чтобы узнать, как добавить частную локацию в последней версии Dynatrace, см. <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#create-a-private-location" title="Узнайте, как управлять частными локациями в приложении Synthetic.">Частные Synthetic-локации на Grail</a>.</p>
+<ol>
+<li>Найдите и выберите <strong>Настройки</strong>. Затем выберите <strong>Мониторинг веб и мобильных приложений</strong> &gt; <strong>Частные Synthetic-локации</strong>.</li>
+<li>Выберите <strong>Создать локацию</strong>.</li>
+<li>Дайте вашей локации пользовательское <strong>Имя</strong>, например <code>Офис в Бостоне, 3-й этаж</code>.</li>
+<li>Нанесите её на существующее географическое расположение или добавьте пользовательское географическое расположение, определив <strong>Страну</strong>, <strong>Регион</strong>, <strong>Город</strong> и <strong>Географические координаты</strong>.</li>
+<li>Добавьте Synthetic-совместимый ActiveGate в локацию. Обратите внимание, что ActiveGate можно назначить только в одну локацию.</li>
+</ol>
+<p>Также можно временно оставить локацию без назначения и назначить её в процессе <a href="#install">установки ActiveGate</a>.
+6. Выберите <strong>Добавить</strong>.
+7. Выберите <strong>Сохранить</strong>.</p>
+<h2 id="_4">Создание синтетического монитора<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Теперь, когда вы создаёте свой HTTP- или браузерный монитор, выберите только что созданную локацию из списка всех доступных локаций. Подробнее см. <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic" title="Узнайте, как настроить HTTP-монитор для проверки производительности и доступности вашего сайта.">Создание HTTP-монитора</a>, <a href="/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/create-a-single-url-browser-monitor" title="Узнайте, как настроить браузерный монитор с одним URL для проверки доступности вашего сайта.">Создание браузерного монитора с одним URL</a> или <a href="/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/record-a-browser-clickpath" title="Узнайте, как записать браузерный clickpath-сценарий для мониторинга доступности и производительности приложения.">Запись браузерного clickpath-сценария</a>.</p>
+<h2 id="linux-s3">Только для Linux. Ручная установка браузера и зависимостей из S3<a class="headerlink" href="#linux-s3" title="Permanent link">&para;</a></h2>
+<p>Этот раздел не актуален для локаций без браузера.</p>
+<p>Amazon Linux 2023, Ubuntu и Oracle Linux 9</p>
+<p>Amazon Linux 2023, Ubuntu и Oracle Linux 9 используют Chrome for Testing вместо Chromium. Для ручной установки Chrome for Testing в этих операционных системах см. <a href="#chrome-for-testing">Amazon Linux 2023, Ubuntu и Oracle Linux 9 (Chrome for Testing)</a>.</p>
+<p>Если <a href="#install">установка через веб-интерфейс</a> завершается ошибкой или вы предпочитаете самостоятельно подготовить хост для Synthetic-движка, установите браузер и другие зависимости, используя описанную ниже процедуру. Убедитесь, что вы можете подключиться к <code>https://synthetic-packages.s3.amazonaws.com</code> для доступа к браузеру и зависимостям. В целях безопасности публичный доступ к S3-бакету включён только для определённых файлов; попытка доступа к другим файлам приведёт к ошибке 403.</p>
+<p>Также см. <a href="#custom-repo">Установка браузера из пользовательского репозитория</a> ниже.</p>
+<p>См. <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#browser-manual" title="Анализируйте и управляйте использованием ёмкости в ваших частных Synthetic-локациях.">как вручную обновить браузер</a> в <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations" title="Анализируйте и управляйте использованием ёмкости в ваших частных Synthetic-локациях.">Управление частными Synthetic-локациями</a>. Настоятельно рекомендуется поддерживать актуальность версий Linux-совместимых Synthetic-совместимых ActiveGate и браузеров — Dynatrace поддерживает версии браузеров не более чем на две версии позади <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic#browser-linux" title="Поддерживаемые операционные системы, версии Chromium и аппаратные требования для запуска синтетических мониторов из частных локаций">последней поддерживаемой Dynatrace версии</a> для конкретного выпуска ActiveGate.</p>
+<h3 id="ubuntu-server-2004-2204">Ubuntu Server 20.04 и 22.04<a class="headerlink" href="#ubuntu-server-2004-2204" title="Permanent link">&para;</a></h3>
+<p>Этот раздел актуален только для версий 1.329 и более ранних.</p>
+<ol>
+<li>Установите зависимости Synthetic-движка:</li>
+</ol>
+<p>Зависимости Synthetic-движка:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo apt-get update &amp;&amp; sudo apt-get -y install xvfb x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable libnss3-tools auditd
+</code></pre></div>
+<p>Зависимости Chromium:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo apt-get -y install fonts-dejavu-core
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo snap install gnome-3-38-2004 gtk-common-themes
+</code></pre></div>
+2. Загрузите и установите Chromium.</p>
+<ul>
+<li>
+<p>Загрузите архив snap-пакета (Ubuntu Server 20.04 и 22.04). Это безопасный проверенный архив, размещённый Dynatrace.</p>
+<p>ActiveGate версии 1.329</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-142.0.7444.175-3313.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.327</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-141.0.7390.122-3285.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.325</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-140.0.7339.185-3251.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.323</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-139.0.7258.138-3235.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.321</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.157-3203.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.319</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.100-3199.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.317</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-137.0.7151.103-3169.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.315</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-136.0.7103.59-3121.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.313</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-135.0.7049.95-3110.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.311</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-134.0.6998.35-3060.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.309</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-132.0.6834.159-3036.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.307</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-131.0.6778.85-3002.tgz
+</code></pre></div>
+<p>Вы можете <a href="#verify">проверить подлинность пакетов</a> с помощью файлов подписей, хранящихся вместе с архивами пакетов.
+   * Извлеките установочные пакеты. Перейдите в директорию, куда вы сохранили архив, и выполните следующую команду:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>mkdir /tmp/chromium ; tar xzf chromium.tgz -C /tmp/chromium
+</code></pre></div>
+<p>Это создаёт директорию <code>/tmp/chromium</code> и извлекает пакеты в неё.
+   * Установите извлечённые пакеты.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo chown -R root:root /tmp/snap-private-tmp
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>sudo snap ack /tmp/chromium/chromium.assert
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>sudo snap install --devmode /tmp/chromium/chromium.snap
+</code></pre></div>
+<p>Замените <code>dtuserag</code> именами пользователя и группы службы ActiveGate, если они отличаются от значений по умолчанию.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>sudo chown -R dtuserag:dtuserag /tmp/snap-private-tmp
+</code></pre></div>
+<p>Это устанавливает все пакеты, извлечённые в директорию <code>/tmp/chromium/</code>. После успешной установки Chromium директорию <code>/tmp/chromium/</code> и загруженный архив <code>chromium.tgz</code> можно удалить.
+3. После выполнения всех зависимостей запустите установщик ActiveGate с правами root с параметром <code>--enable-synthetic</code>, установленным в значение <code>manual</code>. Например:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>/bin/bash ./Dynatrace-ActiveGate-Linux.sh --enable-synthetic=manual
+</code></pre></div>
+<p>Вы можете <a href="#verify">проверить подлинность пакетов</a> с помощью файлов подписей, хранящихся вместе с архивами пакетов.</p>
+<h3 id="red-hat-enterprise-linux-oracle-linux-8-rocky-linux">Red Hat Enterprise Linux, Oracle Linux 8 и Rocky Linux<a class="headerlink" href="#red-hat-enterprise-linux-oracle-linux-8-rocky-linux" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Разработка Chromium для Red Hat/CentOS 7 и Amazon Linux 2 остановилась на версии 126.</p>
+</li>
+<li>
+<p>Поскольку Red Hat Enterprise Linux 7 достиг <a href="https://dt-url.net/af03uea">окончания поддержки обслуживания</a> 30 июня 2024 года, все его пакеты были заархивированы. Это означает, что найти необходимые зависимости для обновления может быть невозможно. Подробнее см. <a href="https://dt-url.net/e623zr1">статус Red Hat Enterprise Linux 7</a>.</p>
+</li>
+<li>
+<p>Установка Chromium при необходимости использования прокси для доступа к интернету.</p>
+</li>
+<li>
+<p>Если вам нужно загрузить и установить Chromium, а ваша система требует прокси для доступа к интернету, следует настроить <code>curl</code> на использование правильного прокси. Укажите данные вашего прокси и порта, выполнив команды, как в этом примере:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>vi /root/.curlrc
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>proxy=http://proxy.example.com:8080
+</code></pre></div>
+</li>
+<li>
+<p>Настройте репозитории и установите зависимости.</p>
+</li>
+</ul>
+<p>Red Hat 7</p>
+<p>Red Hat 8</p>
+<p>Red Hat 9</p>
+<p>CentOS</p>
+<p>Oracle Linux 8</p>
+<p>Amazon Linux 2</p>
+<p>Rocky Linux 8</p>
+<p>Rocky Linux 9</p>
+<p>Устаревшая операционная система</p>
+<p>ActiveGate версии 1.305 — последний Synthetic-совместимый ActiveGate с поддержкой Red Hat 7.</p>
+<ul>
+<li>
+<p>Зарегистрируйте экземпляр Red Hat.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>sudo subscription-manager register --auto-attach
+</code></pre></div>
+   * Включите репозитории <code>Extras</code> и <code>Optional</code> Red Hat, а также <code>EPEL</code> (Extra Packages for Enterprise Linux).</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>sudo subscription-manager repos --enable rhel-7-server-extras-rpms
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>sudo subscription-manager repos --enable rhel-7-server-optional-rpms
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+</code></pre></div>
+   * Установите зависимости Synthetic-движка.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
+</code></pre></div>
+</li>
+</ul>
+<p>Устаревшая операционная система</p>
+<p>ActiveGate версии 1.325 — последний Synthetic-совместимый ActiveGate с поддержкой Red Hat 8.</p>
+<ul>
+<li>
+<p>Зарегистрируйте экземпляр Red Hat.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>sudo subscription-manager register --auto-attach
+</code></pre></div>
+   * Включите репозитории <code>Extras</code> и <code>Optional</code> Red Hat, а также <code>EPEL</code> (Extra Packages for Enterprise Linux).</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>sudo subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>sudo subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+</code></pre></div>
+   * Установите зависимости Synthetic-движка.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
+</code></pre></div>
+</li>
+<li>
+<p>Зарегистрируйте экземпляр Red Hat.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>sudo subscription-manager register --auto-attach
+</code></pre></div>
+   * Включите репозитории <code>Extras</code> и <code>Optional</code> Red Hat, а также <code>EPEL</code> (Extra Packages for Enterprise Linux).</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>sudo subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>sudo subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+</code></pre></div>
+   * Установите зависимости Synthetic-движка.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>sudo yum install -y xorg-x11-server-Xvfb xkbcomp xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
+</code></pre></div>
+</li>
+</ul>
+<p>Устаревшая операционная система</p>
+<p>ActiveGate версии 1.305 — последний Synthetic-совместимый ActiveGate с поддержкой CentOS.</p>
+<ul>
+<li>
+<p>Включите <code>EPEL</code> (Extra Packages for Enterprise Linux).</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>sudo yum install epel-release
+</code></pre></div>
+   * Установите зависимости Synthetic-движка.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
+</code></pre></div>
+</li>
+</ul>
+<p>Устаревшая операционная система</p>
+<p>ActiveGate версии 1.325 — последний Synthetic-совместимый ActiveGate с поддержкой Oracle Linux 8.</p>
+<ul>
+<li>
+<p>Включите <code>EPEL</code> (Extra Packages for Enterprise Linux).</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>sudo yum install -y oracle-epel-release-el8
+</code></pre></div>
+   * Установите зависимости Synthetic-движка.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
+</code></pre></div>
+</li>
+</ul>
+<p>Устаревшая операционная система</p>
+<p>ActiveGate версии 1.307 — последний Synthetic-совместимый ActiveGate с поддержкой Amazon Linux 2.</p>
+<ul>
+<li>
+<p>Включите <code>EPEL</code> (Extra Packages for Enterprise Linux).</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>sudo amazon-linux-extras install epel
+</code></pre></div>
+   * Установите зависимости Synthetic-движка.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
+</code></pre></div>
+</li>
+</ul>
+<p>Устаревшая операционная система</p>
+<p>ActiveGate версии 1.325 — последний Synthetic-совместимый ActiveGate с поддержкой Rocky Linux 8.</p>
+<ul>
+<li>
+<p>Включите <code>EPEL</code> (Extra Packages for Enterprise Linux).</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>sudo yum install epel-release
+</code></pre></div>
+   * Установите зависимости Synthetic-движка.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
+</code></pre></div>
+</li>
+<li>
+<p>Включите <code>EPEL</code> (Extra Packages for Enterprise Linux).</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>sudo yum install epel-release
+</code></pre></div>
+   * Установите зависимости Synthetic-движка.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>sudo yum install -y xorg-x11-server-Xvfb xkbcomp xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
+</code></pre></div>
+2. Загрузите и установите Chromium.</p>
+</li>
+<li>
+<p>Загрузите архив rpm-пакета. Это безопасный проверенный архив, размещённый Dynatrace.</p>
+<p>ActiveGate версии 1.331</p>
+<p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-143.0.7499.192-1.el9.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.329</p>
+<p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-142.0.7444.175-2.el9.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.327</p>
+<p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-141.0.7390.122-1.el9.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.325</p>
+<p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
+</code></pre></div>
+<p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-140.0.7339.185-1.el9.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.323</p>
+<p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
+</code></pre></div>
+<p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-139.0.7258.138-1.el9.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.321</p>
+<p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
+</code></pre></div>
+<p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-138.0.7204.157-1.el9.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.319</p>
+<p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
+</code></pre></div>
+<p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-138.0.7204.100-1.el9.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.317</p>
+<p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
+</code></pre></div>
+<p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-137.0.7151.103-1.el9.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.315</p>
+<p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
+</code></pre></div>
+<p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-136.0.7103.59-1.el9.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.313</p>
+<p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
+</code></pre></div>
+<p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-135.0.7049.95-1.el9.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.311</p>
+<p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
+</code></pre></div>
+<p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-134.0.6998.35-1.el9.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.309</p>
+<p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-132.0.6834.159-1.el8.tgz
+</code></pre></div>
+<p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-132.0.6834.159-1.el9.tgz
+</code></pre></div>
+<p>ActiveGate версии 1.307</p>
+<p>##### Amazon Linux 2</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-126.0.6478.114-1.el7.tgz
+</code></pre></div>
+<p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-131.0.6778.204-1.el8.tgz
+</code></pre></div>
+<p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-131.0.6778.204-1.el9.tgz
+</code></pre></div>
+<p>Вы можете <a href="#verify">проверить подлинность пакетов</a> с помощью файлов подписей, хранящихся вместе с архивами пакетов.
+   * Извлеките установочные пакеты. Перейдите в директорию, куда вы сохранили архив, и выполните следующую команду:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>mkdir /tmp/chromium ; tar xzf chromium.tgz -C /tmp/chromium
+</code></pre></div>
+<p>Это создаёт директорию <code>/tmp/chromium</code> и извлекает пакеты в неё.
+   * Установите извлечённые пакеты.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>sudo yum install -y /tmp/chromium/*.rpm
+</code></pre></div>
+<p>Это устанавливает все пакеты, извлечённые в директорию <code>/tmp/chromium/</code>. После успешной установки Chromium директорию <code>/tmp/chromium/</code> и загруженный архив <code>chromium.tgz</code> можно удалить.
+3. Отключите автоматическое обновление пакетов Chromium:</p>
+</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>sudo yum -y install yum-plugin-versionlock
+<a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a>
+<a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a>
+<a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a>
+<a id="__codelineno-67-5" name="__codelineno-67-5" href="#__codelineno-67-5"></a>sudo yum versionlock chromium
+<a id="__codelineno-67-6" name="__codelineno-67-6" href="#__codelineno-67-6"></a>
+<a id="__codelineno-67-7" name="__codelineno-67-7" href="#__codelineno-67-7"></a>
+<a id="__codelineno-67-8" name="__codelineno-67-8" href="#__codelineno-67-8"></a>
+<a id="__codelineno-67-9" name="__codelineno-67-9" href="#__codelineno-67-9"></a>sudo yum versionlock chromium-common
+</code></pre></div>
+4. Необязательно. Установите нелатинские шрифты TrueType:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>sudo yum install dejavu-fonts-common.noarch dejavu-sans-fonts.noarch
+</code></pre></div>
+5. После выполнения всех зависимостей запустите установщик ActiveGate с правами root с параметром <code>--enable-synthetic</code>, установленным в значение <code>manual</code>. Например:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>/bin/bash ./Dynatrace-ActiveGate-Linux.sh --enable-synthetic=manual
+</code></pre></div>
+<p>Вы можете <a href="#verify">проверить подлинность пакетов</a> с помощью файлов подписей, хранящихся вместе с архивами пакетов.</p>
+<h3 id="amazon-linux-2023-ubuntu-oracle-linux-9-chrome-for-testing">Amazon Linux 2023, Ubuntu и Oracle Linux 9 (Chrome for Testing)<a class="headerlink" href="#amazon-linux-2023-ubuntu-oracle-linux-9-chrome-for-testing" title="Permanent link">&para;</a></h3>
+<p>См. <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#browser-manual" title="Анализируйте и управляйте использованием ёмкости в ваших частных Synthetic-локациях.">как вручную обновить Chrome for Testing</a> в <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations" title="Анализируйте и управляйте использованием ёмкости в ваших частных Synthetic-локациях.">Управление частными Synthetic-локациями</a>. Настоятельно рекомендуется поддерживать актуальность версий Linux-совместимых Synthetic-совместимых ActiveGate и Chrome for Testing — Dynatrace поддерживает версии Chrome for Testing не более чем на две версии позади <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic#browser-linux" title="Поддерживаемые операционные системы, версии Chromium и аппаратные требования для запуска синтетических мониторов из частных локаций">последней поддерживаемой Dynatrace версии</a> для конкретного выпуска ActiveGate.</p>
+<p>В отличие от Chromium на других дистрибутивах, обновления Chrome for Testing не используют менеджеры пакетов. Двоичные файлы Chrome управляются вручную, а зависимости — системным менеджером пакетов.</p>
+<p>Chrome for Testing на Ubuntu Server 20.04 и 22.04 поддерживается начиная с версии 1.331</p>
+<ol>
+<li>Настройте репозитории и установите зависимости.</li>
+</ol>
+<p>Ubuntu</p>
+<p>Amazon Linux 2023</p>
+<p>Oracle Linux 9</p>
+<ul>
+<li>
+<p>Установите зависимости Synthetic-движка:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>sudo apt-get update &amp;&amp; sudo apt-get -y install xvfb x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable libnss3-tools auditd unzip
+</code></pre></div>
+   * Установите зависимости Chrome for Testing:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>sudo apt-get -y install libasound2t64 libatk-bridge2.0-0t64 libatk1.0-0t64 libcairo2 libcups2t64 libgbm1 libnspr4 libnss3 libpango-1.0-0 libxcomposite1 libxdamage1 libxfixes3 libxkbcommon0 libxrandr2
+</code></pre></div>
+</li>
+<li>
+<p>Включите <code>EPEL</code> (Extra Packages for Enterprise Linux):</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>sudo yum install -y epel-release
+</code></pre></div>
+   * Установите зависимости Synthetic-движка:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools unzip
+</code></pre></div>
+   * Установите зависимости Chrome for Testing:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>sudo yum install -y alsa-lib at-spi2-atk atk cairo cups-libs dbus-libs libXcomposite libXdamage libXrandr libxkbcommon mesa-libgbm nspr nss pango
+</code></pre></div>
+</li>
+<li>
+<p>Включите <code>EPEL</code> (Extra Packages for Enterprise Linux):</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>sudo yum install -y oracle-epel-release-el9
+</code></pre></div>
+   * Установите зависимости Synthetic-движка:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>sudo yum install -y xorg-x11-server-Xvfb xkbcomp xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools unzip
+</code></pre></div>
+   * Установите зависимости Chrome for Testing:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>sudo yum install -y alsa-lib at-spi2-atk atk cairo cups-libs libXcomposite libXdamage libXrandr libxkbcommon mesa-libgbm nspr nss pango
+</code></pre></div>
+2. Загрузите и настройте Chrome for Testing.</p>
+</li>
+<li>
+<p>Создайте директорию Chrome for Testing:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>sudo mkdir -p /usr/lib/chrome_for_testing
+</code></pre></div>
+   * Загрузите архив пакета Chrome for Testing во временное расположение. Это безопасный проверенный архив, размещённый Dynatrace.</p>
+<p>ActiveGate версии 1.331</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>curl --output /tmp/chrome.zip https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip
+</code></pre></div>
+<p>ActiveGate версии 1.329</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>curl --output /tmp/chrome.zip https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-142.0.7444.175.zip
+</code></pre></div>
+<p>ActiveGate версии 1.327</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a>curl --output /tmp/chrome.zip https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-141.0.7390.122.zip
+</code></pre></div>
+<p>Вы можете <a href="#verify">проверить подлинность пакетов</a> с помощью файлов подписей, хранящихся вместе с архивами пакетов.
+   * Извлеките установочный пакет и удалите временные файлы:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a>sudo unzip /tmp/chrome.zip -d /usr/lib/chrome_for_testing
+<a id="__codelineno-82-2" name="__codelineno-82-2" href="#__codelineno-82-2"></a>
+<a id="__codelineno-82-3" name="__codelineno-82-3" href="#__codelineno-82-3"></a>
+<a id="__codelineno-82-4" name="__codelineno-82-4" href="#__codelineno-82-4"></a>
+<a id="__codelineno-82-5" name="__codelineno-82-5" href="#__codelineno-82-5"></a>rm /tmp/chrome.zip
+</code></pre></div>
+<p>Это создаёт директорию <code>chrome-linux64</code> внутри <code>/usr/lib/chrome_for_testing</code> и извлекает двоичный файл Chrome и вспомогательные файлы в неё.
+   * Проверьте Chrome for Testing, проверив версию:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a>/usr/lib/chrome_for_testing/chrome-linux64/chrome --version
+</code></pre></div>
+<p>Вывод команды должен показать загруженную версию Chrome.
+3. После выполнения всех зависимостей запустите установщик ActiveGate с правами root. Установщик автоматически обнаружит и проверит Chrome for Testing. Например:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a>/bin/bash ./Dynatrace-ActiveGate-Linux.sh --enable-synthetic=manual
+</code></pre></div>
+<ul>
+<li>Пользовательская директория Chrome for Testing: если вы хотите использовать директорию, отличную от <code>/usr/lib/chrome_for_testing</code> по умолчанию, укажите её, установив свойство <code>synthetic_chrome_for_testing_path</code> в файле <code>custom.properties</code> после установки. Новая директория будет использоваться после обновления модуля Synthetic.</li>
+<li>Файлы Chrome for Testing сохраняются при удалении ActiveGate. При удалении ActiveGate директория Chrome for Testing и её содержимое остаются в системе и могут быть повторно использованы при переустановке.</li>
+<li>Вы можете <a href="#verify">проверить подлинность пакетов</a> с помощью файлов подписей, хранящихся вместе с архивами пакетов.</li>
+</ul>
+<h2 id="linux">Только для Linux. Установка браузера из пользовательского репозитория<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
+<p>ActiveGate версии 1.243+ В дополнение к <a href="#install">установке ActiveGate через веб-интерфейс</a> и <a href="#manual">ручной установке браузера и зависимостей</a>, вы также можете <strong>установить ActiveGate, указав пользовательский локальный репозиторий для компонентов браузера</strong>. Поскольку этот репозиторий является HTTP-сервером, который вы настраиваете в своей сети, преимущество этого метода в том, что он может использоваться в средах с доступом только к интранету или ограниченным доступом к сети.</p>
+<p>Этот метод установки браузера в целом состоит из:</p>
+<ul>
+<li>Загрузки необходимых архивов пакетов deb, snap или rpm, размещённых Dynatrace, и соответствующих файлов подписей.</li>
+<li>Установки и запуска локально размещённого веб-сервера, где находятся загруженные компоненты браузера.</li>
+<li>
+<p>Загрузки и запуска установщика ActiveGate на целевом хосте с переменной окружения, указывающей на расположение пользовательского репозитория на HTTP-сервере.</p>
+</li>
+<li>
+<p>Пользовательский репозиторий браузера может использоваться только для компонентов браузера, но не для их зависимостей. Установка браузера из пользовательского репозитория будет работать только при условии, что все зависимости были разрешены до установки.</p>
+</li>
+<li>
+<p>Пользовательские репозитории можно использовать только для <strong>установки и автообновления браузера</strong> — подробнее см. <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#autoupdate-custom-repo" title="Анализируйте и управляйте использованием ёмкости в ваших частных Synthetic-локациях.">Автообновление браузера из пользовательского репозитория в разделе «Управление частными Synthetic-локациями»</a>.</p>
+</li>
+<li>
+<p>Загрузите компоненты браузера — архив пакета и файл подписи — из безопасного проверенного архива, размещённого Dynatrace. Ссылки на последние поддерживаемые и предоставляемые версии браузера см. в <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic" title="Поддерживаемые операционные системы, версии Chromium и аппаратные требования для запуска синтетических мониторов из частных локаций">Требованиях для частных Synthetic-локаций</a>.</p>
+</li>
+</ul>
+<p>Рекомендуется поддерживать актуальность версий Linux-совместимых Synthetic-совместимых ActiveGate и браузеров; выбирайте последнюю предоставляемую версию браузера для ActiveGate.</p>
+<p>Например, для ActiveGate версии 1.331 на Ubuntu 24 необходимы следующие файлы:</p>
+<ul>
+<li>Архив пакета — <code>https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip</code></li>
+<li>Файл подписи — <code>https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip.sig</code></li>
+</ul>
+<p>Соответствующие команды загрузки:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a>curl -o chrome-for-testing-linux64-143.0.7499.192.zip https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a>curl -o chrome-for-testing-linux64-143.0.7499.192.zip.sig https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip.sig
+</code></pre></div>
+2. Установите веб-сервер по своему выбору и создайте директорию, например <code>chromium-repo</code>, для передачи компонентов браузера на хост ActiveGate. Скопируйте загруженные компоненты браузера в эту директорию.
+3. Загрузите установщик ActiveGate из Dynatrace Hub.
+4. Разрешите все зависимости и включите репозитории, как показано в разделе <a href="#manual">Ручная установка браузера и зависимостей из S3</a> выше. Пользовательский репозиторий можно использовать только для пакетов браузера, но не для их зависимостей.
+5. Установите ActiveGate с включённым модулем Synthetic (<code>--enable-synthetic</code>) и переменной окружения <code>DYNATRACE_SYNTHETIC_CUSTOM_CHROMIUM_REPO</code>, указывающей на расположение пользовательского репозитория (в данном примере <code>https://172.18.0.100/chromium-repo</code>).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a>sudo DYNATRACE_SYNTHETIC_CUSTOM_CHROMIUM_REPO=http://172.18.0.100:8000/chromium-repo  /bin/bash Dynatrace-ActiveGate-Linux-x86-*.sh --enable-synthetic
+</code></pre></div>
+<p>Вместо IP-адреса можно использовать имя хоста HTTP-сервера, при условии, что хост ActiveGate может разрешить это имя хоста.</p>
+<p>После установки браузера из пользовательского репозитория его можно только автоматически обновлять. Подробнее см. <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#autoupdate-custom-repo" title="Анализируйте и управляйте использованием ёмкости в ваших частных Synthetic-локациях.">Автообновление браузера из пользовательского репозитория в разделе «Управление частными Synthetic-локациями»</a> для получения сведений и альтернативных вариантов обновления.</p>
+<h2 id="_5">Пользовательская версия браузера<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>Вы можете установить пользовательскую версию браузера, то есть переопределить версию, которую ищет установщик ActiveGate. Это применимо к ручной установке ActiveGate, как описано в разделах <a href="#manual">Установка браузера через S3</a> или через <a href="#custom-repo">пользовательский репозиторий</a>.</p>
+<p>В этой команде для ручной установки ActiveGate через S3 переменная окружения указывает на явный номер версии браузера <code>143.0.7499.192</code>, который является частью архива пакета Chrome for Testing.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a>sudo /bin/bash -c &quot;export DYNATRACE_SYNTHETIC_EXPLICIT_CHROMIUM_VERSION=143.0.7499.192; /bin/bash Dynatrace-ActiveGate-Linux-x86-*.sh --enable-synthetic&quot;
+</code></pre></div>
+<p>Эта команда выполняет поиск версии браузера <code>143.0.7499.192</code> в пользовательском репозитории <code>https://172.18.0.100/chromium-repo</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a>sudo DYNATRACE_SYNTHETIC_EXPLICIT_CHROMIUM_VERSION=143.0.7499.192 DYNATRACE_SYNTHETIC_CUSTOM_CHROMIUM_REPO=http://172.18.0.100:8000/chromium-repo  /bin/bash Dynatrace-ActiveGate-Linux-x86-*.sh --enable-synthetic
+</code></pre></div>
+<h2 id="synthetic-activegate_1">Synthetic-совместимый ActiveGate без браузера<a class="headerlink" href="#synthetic-activegate_1" title="Permanent link">&para;</a></h2>
+<p>В целом рекомендуется развёртывать Synthetic-совместимый ActiveGate для поддержки выполнения всех типов синтетических мониторов (HTTP, браузер, NAM).</p>
+<p>Если вам не нужно запускать браузерные мониторы, рассмотрите возможность развёртывания узла в режиме без браузера. В этом режиме узел развёртывается без браузера, что снижает требования к оборудованию. Однако браузерные мониторы не могут работать на узле без браузера.</p>
+<p>Рассматривайте узлы без браузера как альтернативу узлам с поддержкой браузерных мониторов, когда вы сосредоточены исключительно на:</p>
+<ul>
+<li>Сетевых и инфраструктурных задачах (с использованием мониторов NAM)</li>
+<li>Мониторинге API (с использованием HTTP-мониторов)</li>
+</ul>
+<h2 id="kerberos">Настройка клиента Kerberos<a class="headerlink" href="#kerberos" title="Permanent link">&para;</a></h2>
+<p>Если вы хотите запускать браузерные мониторы с аутентификацией Kerberos, частная локация должна быть настроена так, чтобы иметь возможность получать билет от Kerberos Key Distribution Center.</p>
+<p>Windows</p>
+<p>Linux</p>
+<ol>
+<li>Каждая машина Windows, использующая Kerberos, должна быть правильно настроена с Active Directory.</li>
+<li>Если аутентификация Kerberos на Windows не работает, используйте следующую команду для регистрации машины.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a>ksetup /addkdc DOMAIN.TO.ADD address.of.kerberos.server
+</code></pre></div>
+<p><code>DOMAIN.TO.ADD</code> — ваше доменное имя, а <code>address.of.kerberos.server</code> — Kerberos Key Distribution Center (Active Directory Controller, если вы используете решение Microsoft). Обратите внимание, что в используемых учётных данных имя домена должно быть в верхнем регистре (например, user@EXAMPLE.COM).</p>
+<p>Synthetic использует аутентификацию Kerberos путём выполнения команды <code>kinit</code>. Подробнее см. <a href="https://dt-url.net/pr43wj6">Документация MIT Kerberos — kinit</a>.</p>
+<p>Частная локация Linux должна быть правильно настроена для получения билета от Kerberos Key Distribution Center. Убедитесь, что в локации выполнены следующие условия:</p>
+<ul>
+<li>Установлены пакеты для клиента Kerberos (рабочая станция).</li>
+<li>Правильно настроен файл <code>/etc/krb5.conf</code> (или файл конфигурации, указанный переменной окружения <code>KRB5_CONFIG</code>).</li>
+</ul>
+<p>Конфигурация зависит от дистрибутива Linux. Дополнительную информацию можно найти в официальной документации.</p>
+<ul>
+<li>
+<p>Ubuntu:</p>
+</li>
+<li>
+<p><code>sudo apt install krb5-user</code></p>
+</li>
+<li>Дополнительная информация: <a href="https://dt-url.net/3g03w9p">Документация Ubuntu Server — Как настроить базовую аутентификацию рабочей станции</a></li>
+<li>
+<p>Red Hat/Rocky:</p>
+</li>
+<li>
+<p><code>yum install krb5-workstation krb5-libs</code></p>
+</li>
+<li>Дополнительная информация: <a href="https://dt-url.net/1u23wq7">Документация Red Hat — Настройка клиента Kerberos</a></li>
+</ul>
+<h2 id="synthetic-fips">Соответствие Synthetic требованиям FIPS<a class="headerlink" href="#synthetic-fips" title="Permanent link">&para;</a></h2>
+<p>ActiveGate версии 1.315+</p>
+<h3 id="_6">Установка<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>Для установки Synthetic-совместимого ActiveGate в режиме соответствия FIPS необходимо добавить флаг <code>--fips-mode</code>, также см. <a href="/docs/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#fips-compliant-mode" title="Узнайте о параметрах командной строки, которые можно использовать с ActiveGate на Linux.">настройку установки ActiveGate для соответствия FIPS</a>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a>/bin/bash ./Dynatrace-ActiveGate-Linux.sh --enable-synthetic --fips-mode
+</code></pre></div>
+<p>Обратите внимание, что режим соответствия FIPS нельзя изменить после установки. Для изменения режима необходимо удалить ActiveGate и переустановить его с нужными настройками.
+Кроме того, если вы намерены выполнять браузерные мониторы, потребуется дополнительная настройка, описанная в разделах <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic#fips-proxy" title="Узнайте, как настроить свойства ActiveGate для использования прокси при частном синтетическом мониторинге.">Настройка прокси для режима FIPS</a> и <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic#fips-corporate-proxy" title="Узнайте, как настроить свойства ActiveGate для использования прокси при частном синтетическом мониторинге.">Настройка прокси для режима FIPS с корпоративным прокси</a>.</p>
+<h3 id="_7">Требования и ограничения<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Требуется операционная система с включённым режимом соответствия FIPS, также см. <a href="/docs/ingest-from/dynatrace-activegate/activegate-fips-compliance" title="Узнайте о соответствии ActiveGate требованиям FIPS">Соответствие ActiveGate требованиям FIPS</a>.</li>
+<li>
+<p>В настоящее время поддерживаются следующие операционные системы:</p>
+</li>
+<li>
+<p>Ubuntu Pro 22.04</p>
+</li>
+<li>Red Hat Enterprise Linux 9</li>
+<li>Частные Synthetic-локации на Kubernetes в настоящее время не поддерживаются.</li>
+</ul>
+<h3 id="_8">Обеспечение соответствия<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>Для обеспечения соответствия трафика браузерных мониторов требованиям FIPS он должен маршрутизироваться через локальный перехватывающий прокси, который шифрует трафик с помощью криптографической библиотеки, сертифицированной FIPS. Подробнее см. <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic#fips-proxy" title="Узнайте, как настроить свойства ActiveGate для использования прокси при частном синтетическом мониторинге.">Настройка прокси для режима FIPS</a>.</p>
+<p>Для HTTP-мониторов используется <a href="https://github.com/corretto/amazon-corretto-crypto-provider/">Amazon Corretto Crypto Provider</a> — криптографическая библиотека, сертифицированная FIPS, которая использует AWS-LC-FIPS 2.x в качестве криптографического модуля. См. <a href="https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4816">Сертификат №4816</a>.</p>
+<p>Synthetic-совместимый ActiveGate в режиме соответствия FIPS поддерживает тот же набор шифровальных наборов, что и <a href="/docs/ingest-from/dynatrace-activegate/activegate-fips-compliance#supported-cipher-suites" title="Узнайте о соответствии ActiveGate требованиям FIPS">обычный ActiveGate</a>.</p>
+<h2 id="_9">Часто задаваемые вопросы<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>Как проверить подлинность загруженных пакетов Chrome(-ium)?</p>
+<p>Chromium</p>
+<p>Chrome for Testing</p>
+<p>Каждый архив пакета <code>tgz</code> хранится в S3-бакете вместе с файлом подписи <code>*.tgz.sig</code>. Для проверки подлинности пакетов на вашем диске:</p>
+<ol>
+<li>Загрузите файл подписи. Имя файла идентично архиву пакета, но с расширением <code>sig</code>. Например, для Chromium 140 команда будет:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a>curl --output chromium.tgz.sig https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-140.0.7339.185-1.el9.tgz.sig
+</code></pre></div>
+2. Проверьте пакет:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a>wget https://ca.dynatrace.com/dt-root.cert.pem ; openssl cms
+<a id="__codelineno-93-2" name="__codelineno-93-2" href="#__codelineno-93-2"></a>
+<a id="__codelineno-93-3" name="__codelineno-93-3" href="#__codelineno-93-3"></a>
+<a id="__codelineno-93-4" name="__codelineno-93-4" href="#__codelineno-93-4"></a>
+<a id="__codelineno-93-5" name="__codelineno-93-5" href="#__codelineno-93-5"></a>-verify
+<a id="__codelineno-93-6" name="__codelineno-93-6" href="#__codelineno-93-6"></a>
+<a id="__codelineno-93-7" name="__codelineno-93-7" href="#__codelineno-93-7"></a>
+<a id="__codelineno-93-8" name="__codelineno-93-8" href="#__codelineno-93-8"></a>
+<a id="__codelineno-93-9" name="__codelineno-93-9" href="#__codelineno-93-9"></a>-in chromium.tgz.sig
+<a id="__codelineno-93-10" name="__codelineno-93-10" href="#__codelineno-93-10"></a>
+<a id="__codelineno-93-11" name="__codelineno-93-11" href="#__codelineno-93-11"></a>
+<a id="__codelineno-93-12" name="__codelineno-93-12" href="#__codelineno-93-12"></a>
+<a id="__codelineno-93-13" name="__codelineno-93-13" href="#__codelineno-93-13"></a>-inform PEM
+<a id="__codelineno-93-14" name="__codelineno-93-14" href="#__codelineno-93-14"></a>
+<a id="__codelineno-93-15" name="__codelineno-93-15" href="#__codelineno-93-15"></a>
+<a id="__codelineno-93-16" name="__codelineno-93-16" href="#__codelineno-93-16"></a>
+<a id="__codelineno-93-17" name="__codelineno-93-17" href="#__codelineno-93-17"></a>-content chromium.tgz
+<a id="__codelineno-93-18" name="__codelineno-93-18" href="#__codelineno-93-18"></a>
+<a id="__codelineno-93-19" name="__codelineno-93-19" href="#__codelineno-93-19"></a>
+<a id="__codelineno-93-20" name="__codelineno-93-20" href="#__codelineno-93-20"></a>
+<a id="__codelineno-93-21" name="__codelineno-93-21" href="#__codelineno-93-21"></a>-binary
+<a id="__codelineno-93-22" name="__codelineno-93-22" href="#__codelineno-93-22"></a>
+<a id="__codelineno-93-23" name="__codelineno-93-23" href="#__codelineno-93-23"></a>
+<a id="__codelineno-93-24" name="__codelineno-93-24" href="#__codelineno-93-24"></a>
+<a id="__codelineno-93-25" name="__codelineno-93-25" href="#__codelineno-93-25"></a>-CAfile dt-root.cert.pem &gt; /dev/null
+</code></pre></div>
+3. Проверьте временную метку подписи.</p>
+<p>Также можно получить точную временную метку подписи. Загрузите файл <code>*.tgz.sig.tsr</code> из того же расположения, что и установочные пакеты и подпись, и выполните следующую команду:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-94-1" name="__codelineno-94-1" href="#__codelineno-94-1"></a>openssl ts -reply -in chromium.tgz.sig.tsr -text
+</code></pre></div>
+<p>Каждый архив пакета <code>zip</code> хранится в S3-бакете вместе с файлом подписи <code>*.zip.sig</code>. Для проверки подлинности пакетов на вашем диске:</p>
+<ol>
+<li>Загрузите файл подписи. Имя файла идентично архиву пакета, но с расширением <code>sig</code>. Например, для Chrome for Testing 141.0.7390.122 команда будет:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-95-1" name="__codelineno-95-1" href="#__codelineno-95-1"></a>curl --output chrome.zip.sig https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-141.0.7390.122.zip.sig
+</code></pre></div>
+2. Проверьте пакет:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-96-1" name="__codelineno-96-1" href="#__codelineno-96-1"></a>wget https://ca.dynatrace.com/dt-root.cert.pem ; openssl cms
+<a id="__codelineno-96-2" name="__codelineno-96-2" href="#__codelineno-96-2"></a>
+<a id="__codelineno-96-3" name="__codelineno-96-3" href="#__codelineno-96-3"></a>
+<a id="__codelineno-96-4" name="__codelineno-96-4" href="#__codelineno-96-4"></a>
+<a id="__codelineno-96-5" name="__codelineno-96-5" href="#__codelineno-96-5"></a>-verify
+<a id="__codelineno-96-6" name="__codelineno-96-6" href="#__codelineno-96-6"></a>
+<a id="__codelineno-96-7" name="__codelineno-96-7" href="#__codelineno-96-7"></a>
+<a id="__codelineno-96-8" name="__codelineno-96-8" href="#__codelineno-96-8"></a>
+<a id="__codelineno-96-9" name="__codelineno-96-9" href="#__codelineno-96-9"></a>-in chrome.zip.sig
+<a id="__codelineno-96-10" name="__codelineno-96-10" href="#__codelineno-96-10"></a>
+<a id="__codelineno-96-11" name="__codelineno-96-11" href="#__codelineno-96-11"></a>
+<a id="__codelineno-96-12" name="__codelineno-96-12" href="#__codelineno-96-12"></a>
+<a id="__codelineno-96-13" name="__codelineno-96-13" href="#__codelineno-96-13"></a>-inform PEM
+<a id="__codelineno-96-14" name="__codelineno-96-14" href="#__codelineno-96-14"></a>
+<a id="__codelineno-96-15" name="__codelineno-96-15" href="#__codelineno-96-15"></a>
+<a id="__codelineno-96-16" name="__codelineno-96-16" href="#__codelineno-96-16"></a>
+<a id="__codelineno-96-17" name="__codelineno-96-17" href="#__codelineno-96-17"></a>-content chrome.zip
+<a id="__codelineno-96-18" name="__codelineno-96-18" href="#__codelineno-96-18"></a>
+<a id="__codelineno-96-19" name="__codelineno-96-19" href="#__codelineno-96-19"></a>
+<a id="__codelineno-96-20" name="__codelineno-96-20" href="#__codelineno-96-20"></a>
+<a id="__codelineno-96-21" name="__codelineno-96-21" href="#__codelineno-96-21"></a>-binary
+<a id="__codelineno-96-22" name="__codelineno-96-22" href="#__codelineno-96-22"></a>
+<a id="__codelineno-96-23" name="__codelineno-96-23" href="#__codelineno-96-23"></a>
+<a id="__codelineno-96-24" name="__codelineno-96-24" href="#__codelineno-96-24"></a>
+<a id="__codelineno-96-25" name="__codelineno-96-25" href="#__codelineno-96-25"></a>-CAfile dt-root.cert.pem &gt; /dev/null
+</code></pre></div>
+3. Проверьте временную метку подписи.</p>
+<p>Также можно получить точную временную метку подписи. Загрузите файл <code>*.zip.sig.tsr</code> из того же расположения, что и установочные пакеты и подпись, и выполните следующую команду:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-97-1" name="__codelineno-97-1" href="#__codelineno-97-1"></a>openssl ts -reply -in chrome.zip.sig.tsr -text
+</code></pre></div>
+<p>Можно ли использовать прокси с Synthetic-совместимым ActiveGate?</p>
+<p>Начиная с ActiveGate версии 1.175+, ActiveGate, выполняющий синтетические мониторы, может подключаться через прокси как к кластеру Dynatrace, так и к тестируемому ресурсу. Подробнее см. <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic" title="Узнайте, как настроить свойства ActiveGate для использования прокси при частном синтетическом мониторинге.">Настройка прокси для частного синтетического мониторинга</a>.</p>
+<p>Можно ли обновить более ранний ActiveGate до версии 1.169+ и настроить его для использования с частными синтетическими мониторами?</p>
+<p>Нет, для работы мониторов из частных локаций требуется чистая установка специально для синтетического мониторинга.</p>
+<p>Можно ли включить Synthetic на существующей установке ActiveGate?</p>
+<p>Частные Synthetic-локации требуют чистой установки ActiveGate специально для синтетического мониторинга.</p>
+<p>Ручного редактирования файла <code>custom.properties</code> недостаточно для включения в ActiveGate возможности выполнения синтетических мониторов.</p>
+<h2 id="_10">Устранение неполадок<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p><a href="https://dt-url.net/mfw2xmb">Не отображаются снимки экрана в результатах браузерного монитора</a></p>
+<p>Посетите <a href="https://dt-url.net/dy122xtf">форум по устранению неполадок в сообществе Dynatrace</a> для получения дополнительной информации по устранению неполадок.</p>
+<h2 id="_11">Связанные темы<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.path", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

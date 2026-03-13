@@ -1,0 +1,6522 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace с AI-помощником (Managed + SaaS)">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/ru/observe/infrastructure-observability/databases/extensions/varnish-cache-1/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Расширение Varnish Cache - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#varnish-cache" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Расширение Varnish Cache
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../" class="md-tabs__link">
+          
+  
+  
+  Начало работы
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../platform/grail/dynatrace-grail/" class="md-tabs__link">
+          
+  
+  
+  Платформа
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+  Наблюдаемость
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../dynatrace-intelligence/anomaly-detection/" class="md-tabs__link">
+          
+  
+  
+  Dynatrace Intelligence
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-tabs__link">
+          
+  
+  
+  Анализ и автоматизация
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../ingest-from/" class="md-tabs__link">
+          
+  
+  
+  Источники данных
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../deliver/configuration-as-code/" class="md-tabs__link">
+          
+  
+  
+  Deliver
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../secure/threat-observability/" class="md-tabs__link">
+          
+  
+  
+  Безопасность
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../manage/hub/" class="md-tabs__link">
+          
+  
+  
+  Управление
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../dynatrace-api/" class="md-tabs__link">
+          
+  
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../whats-new/" class="md-tabs__link">
+          
+  
+  
+  Что нового
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI Помощник
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Начало работы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документация Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../discover-dynatrace/what-is-dynatrace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что такое Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../discover-dynatrace/dynatrace-apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложения Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../semantic-dictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Семантический словарь
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Резервное копирование
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Платформа
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grail
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Grail
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../platform/grail/dynatrace-grail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что такое Grail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../platform/grail/dynatrace-query-language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Язык запросов DQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../platform/oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../platform/appengine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AppEngine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../platform/openpipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenPipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Наблюдаемость
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инфраструктура
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Инфраструктура
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../infrastructure-and-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Хосты и операции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cloud-platform-monitoring/clouds-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Облачный мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../container-platform-monitoring/kubernetes-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../container-platform-monitoring/kubernetes-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Базы данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложения
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Приложения
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../application-observability/distributed-tracing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Распределённая трассировка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../application-observability/services/services-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сервисы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Цифровой опыт
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Цифровой опыт
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../digital-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Синтетическое приложение
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dynatrace-for-ai-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI и LLM мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Intelligence
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Intelligence
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обнаружение аномалий
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Обнаружение аномалий
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка чувствительности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложение Anomaly Detection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфигурация
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Адаптивные пороги
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Многомерный бейзлайн
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/metric-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    События метрик
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/static-thresholds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статические пороги
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Оптимизация DQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis Copilot
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Davis Copilot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/copilot/chat-with-davis-copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Assist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/copilot/copilot-getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/copilot/copilot-data-privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфиденциальность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/copilot/quick-analysis-copilot-dql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запросы на естественном языке
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/davis-problems-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проблемы Davis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ первопричин
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Анализ первопричин
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/root-cause-analysis/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ событий
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/dynatrace-intelligence-integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Справочник
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Справочник
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI модели
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/reference/davis-ai-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лимиты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ и автоматизация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Анализ и автоматизация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды и ноутбуки
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Дашборды и ноутбуки
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/dashboards-and-notebooks/document-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/dashboards-and-notebooks/document-version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Версии документов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Визуализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/dashboards-and-notebooks/explore-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Логи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Логи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/logs/lma-logs-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложение журналов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/logs/lma-logs-app/facets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Фильтры
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/logs/lma-logs-app/query-and-filter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запросы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обозреватель данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/smartscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Smartscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/notifications-and-alerting/problem-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Уведомления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analyze-explore-automate/compliance-and-resilience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Соответствие требованиям
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Источники данных
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ingest-from/extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ingest-from/dynatrace-oneagent/installation-and-operation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent — установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deliver
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration as Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration as Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/configuration-as-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monaco
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monaco
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API и разрешения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/configuration-as-code/monaco/monaco-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/configuration-as-code/monaco/monaco-getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_3" id="__nav_9_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terraform
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Terraform
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API и разрешения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/configuration-as-code/terraform/terraform-cli-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI команды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SLO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/service-level-objectives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/service-level-objectives/create-slo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Создание SLO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Reliability Guardian
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Site Reliability Guardian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/site-reliability-guardian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/site-reliability-guardian/event-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Структура событий
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/ownership-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ownership
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг релизов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Мониторинг релизов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/release-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/release-monitoring/monitor-releases-with-dynatrace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг релизов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deliver/quality-gates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Валидация релизов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Безопасность
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../secure/threat-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость угроз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../secure/threat-observability/security-events-ingest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграция
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Управление
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../manage/hub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензирование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лицензирование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../license/capabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Возможности DPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../license/billing-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Биллинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../license/budget-alerts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бюджетные оповещения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../license/license-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Жизненный цикл
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../license/dps-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Разрешения DPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../dynatrace-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Intelligence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Что нового
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../whats-new/saas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../whats-new/oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../whats-new/activegate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="varnish-cache">Расширение Varnish Cache<a class="headerlink" href="#varnish-cache" title="Permanent link">&para;</a></h1>
+<h1 id="varnish-cache_1">Расширение Varnish Cache<a class="headerlink" href="#varnish-cache_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Последняя версия Dynatrace</li>
+<li>Расширение</li>
+<li>Обновлено 04 дек. 2025 г.</li>
+</ul>
+<p>Мониторинг производительности Varnish Cache для оптимизации доставки контента и сокращения времени отклика.</p>
+<h2 id="_1">Начало работы<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">Обзор<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Мониторинг статистики экземпляров Varnish Cache.</p>
+<h3 id="_3">Сценарии использования<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Мониторинг состояния экземпляров Varnish Cache.</li>
+<li>Обнаружение аномального поведения и оповещение о нём.</li>
+<li>Анализ нагрузки и операционной производительности кэша.</li>
+</ul>
+<h3 id="_4">Требования<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>OneAgent должен быть установлен на хосте с экземпляром Varnish Cache, подлежащим мониторингу.</li>
+<li>На хосте должен присутствовать бинарный файл <code>varnishstat</code>.</li>
+<li>Пользователь OneAgent должен иметь возможность выполнять этот бинарный файл на хосте.</li>
+<li>Перед выполнением команды <code>sudo varnishstat</code> убедитесь, что <code>dtuser</code> имеет права sudo и настроен для доступа без пароля в файле <code>sudoers</code>.</li>
+</ul>
+<h3 id="_5">Информация о совместимости<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Varnish версии 6.2.1+.</p>
+<h2 id="_6">Подробности<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Метрики из коробки</li>
+</ul>
+<p>Системные метрики производительности Varnish Cache (CPU, память и другое) доступны без дополнительной настройки при использовании OneAgent на сервере с Dynatrace OneAgent.</p>
+<p>Вы также получаете информацию о сетевом трафике, TCP-запросах и подключении, а также метрики качества, такие как повторные передачи, время приёма-передачи (RTT) и пропускная способность.</p>
+<ul>
+<li>
+<p>Расширенные метрики сервера Varnish Cache, такие как</p>
+</li>
+<li>
+<p>Производительность кэша</p>
+</li>
+<li>Метрики бэкенда</li>
+<li>Метрики клиента</li>
+<li>Метрики потоков, <strong>недоступны</strong> в Dynatrace из коробки.</li>
+</ul>
+<p>Это расширение собирает вышеуказанные расширенные метрики сервера Varnish Cache путём выполнения команды <code>varnishstat</code> и последующей отправки результирующего вывода обратно в Dynatrace.</p>
+<h3 id="_7">Лицензирование и стоимость<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>DPS:</li>
+</ul>
+<p><code>((20 * #_of_backends) + (7 * #_of_malloc_stevedores) + (7 * #_of_umem_stevedores) + (10 * #_of_file_stevedores) + 198)</code></p>
+<ul>
+<li>DDU:</li>
+</ul>
+<p><code>((20 * #_of_backends) + (7 * #_of_malloc_stevedores) + (7 * #_of_umem_stevedores) + (10 * #_of_file_stevedores) + 198) * 0.001</code></p>
+<h2 id="_8">Наборы функций<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>При активации расширения с помощью <a href="#monitoring-configuration">конфигурации мониторинга</a> можно ограничить мониторинг одним из наборов функций. Для корректной работы расширение должно собирать хотя бы одну метрику после активации.</p>
+<p>В сильно сегментированных сетях наборы функций могут отражать сегменты вашей среды. Тогда при создании конфигурации мониторинга можно выбрать набор функций и соответствующую группу ActiveGate, которая может подключаться к этому конкретному сегменту.</p>
+<p>Все метрики, не отнесённые ни к одному набору функций, считаются набором по умолчанию и всегда отображаются.</p>
+<p>Метрика наследует набор функций подгруппы, которая, в свою очередь, наследует набор функций группы. Кроме того, набор функций, определённый на уровне метрики, имеет приоритет над набором функций, определённым на уровне подгруппы, который, в свою очередь, имеет приоритет над набором функций, определённым на уровне группы.</p>
+<p>main</p>
+<table>
+<thead>
+<tr>
+<th>Название метрики</th>
+<th>Ключ метрики</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stat summ operations</td>
+<td>varnish.cache.main.summs.count</td>
+<td>Количество раз, когда статистика по потокам суммировалась в глобальные счётчики.</td>
+</tr>
+<tr>
+<td>Child process uptime</td>
+<td>varnish.cache.main.uptime.count</td>
+<td>Время работы дочернего процесса.</td>
+</tr>
+<tr>
+<td>Sessions accepted</td>
+<td>varnish.cache.main.sess_conn.count</td>
+<td>Количество успешно принятых сессий.</td>
+</tr>
+<tr>
+<td>Session accept failures</td>
+<td>varnish.cache.main.sess_fail.count</td>
+<td>Количество неудачных попыток принять TCP-соединение. Этот счётчик является суммой счётчиков sess_fail_*, которые дают более подробную информацию.</td>
+</tr>
+<tr>
+<td>Session accept failures: connection aborted</td>
+<td>varnish.cache.main.sess_fail_econnaborted.count</td>
+<td>Подробная причина sess_fail: соединение прервано клиентом, обычно безвредно.</td>
+</tr>
+<tr>
+<td>Session accept failures: interrupted system call</td>
+<td>varnish.cache.main.sess_fail_eintr.count</td>
+<td>Подробная причина sess_fail: вызов accept() был прерван, обычно безвредно.</td>
+</tr>
+<tr>
+<td>Session accept failures: too many open files</td>
+<td>varnish.cache.main.sess_fail_emfile.count</td>
+<td>Подробная причина sess_fail: файловый дескриптор недоступен. Рассмотрите возможность увеличения RLIMIT_NOFILE (см. ulimit -n).</td>
+</tr>
+<tr>
+<td>Session accept failures: bad file descriptor</td>
+<td>varnish.cache.main.sess_fail_ebadf.count</td>
+<td>Подробная причина sess_fail: файловый дескриптор прослушивающего сокета недействителен. Не должно происходить никогда.</td>
+</tr>
+<tr>
+<td>Session accept failures: not enough memory</td>
+<td>varnish.cache.main.sess_fail_enomem.count</td>
+<td>Подробная причина sess_fail: скорее всего, недостаточно памяти буфера сокета. Не должно происходить никогда.</td>
+</tr>
+<tr>
+<td>Session accept failures: other</td>
+<td>varnish.cache.main.sess_fail_other.count</td>
+<td>Подробная причина sess_fail: ни одна из вышеуказанных, см. лог SessError (varnishlog -g raw -i SessError).</td>
+</tr>
+<tr>
+<td>Client requests received, subject to 400 errors</td>
+<td>varnish.cache.main.client_req_400.count</td>
+<td>400 означает, что не удалось разобрать запрос — он был сформирован неправильно.</td>
+</tr>
+<tr>
+<td>Client requests received, subject to 417 errors</td>
+<td>varnish.cache.main.client_req_417.count</td>
+<td>417 означает, что произошла ошибка с заголовком Expect.</td>
+</tr>
+<tr>
+<td>Good client requests received</td>
+<td>varnish.cache.main.client_req.count</td>
+<td>Количество разобранных клиентских запросов.</td>
+</tr>
+<tr>
+<td>ESI subrequests</td>
+<td>varnish.cache.main.esi_req.count</td>
+<td>Количество сделанных ESI-подзапросов.</td>
+</tr>
+<tr>
+<td>Cache hits</td>
+<td>varnish.cache.main.cache_hit.count</td>
+<td>Количество попаданий в кэш. Попадание в кэш означает, что объект был доставлен клиенту без обращения к бэкенд-серверу.</td>
+</tr>
+<tr>
+<td>Cache grace hits</td>
+<td>varnish.cache.main.cache_hit_grace.count</td>
+<td>Количество попаданий в кэш с отсрочкой. Попадание в кэш с отсрочкой — это попадание в кэш, при котором срок действия объекта истёк. Такие попадания также включаются в счётчик cache_hit.</td>
+</tr>
+<tr>
+<td>Cache hits for pass.</td>
+<td>varnish.cache.main.cache_hitpass.count</td>
+<td>Количество попаданий для pass. Попадание для pass означает, что Varnish передаст запрос бэкенду, и это решение было закэшировано само по себе. Считает, сколько раз используется закэшированное решение.</td>
+</tr>
+<tr>
+<td>Cache hits for miss.</td>
+<td>varnish.cache.main.cache_hitmiss.count</td>
+<td>Количество попаданий для miss. Попадание для miss означает, что Varnish обработает запрос как промах кэша без объединения запросов, и это решение было закэшировано. Считает, сколько раз используется закэшированное решение.</td>
+</tr>
+<tr>
+<td>Cache misses</td>
+<td>varnish.cache.main.cache_miss.count</td>
+<td>Количество промахов кэша. Промах кэша означает, что объект был получен с бэкенда перед доставкой клиенту.</td>
+</tr>
+<tr>
+<td>Uncacheable backend responses</td>
+<td>varnish.cache.main.beresp_uncacheable.count</td>
+<td>Количество ответов бэкенда, признанных некэшируемыми.</td>
+</tr>
+<tr>
+<td>Shortlived objects</td>
+<td>varnish.cache.main.beresp_shortlived.count</td>
+<td>Количество объектов, созданных с ttl+grace+keep меньше параметра выполнения 'shortlived'.</td>
+</tr>
+<tr>
+<td>Backend conn. success</td>
+<td>varnish.cache.main.backend_conn.count</td>
+<td>Количество успешно установленных соединений с бэкендом.</td>
+</tr>
+<tr>
+<td>Backend conn. not attempted</td>
+<td>varnish.cache.main.backend_unhealthy.count</td>
+<td>Соединение с бэкендом не предпринималось.</td>
+</tr>
+<tr>
+<td>Backend conn. too many</td>
+<td>varnish.cache.main.backend_busy.count</td>
+<td>Слишком много соединений с бэкендом.</td>
+</tr>
+<tr>
+<td>Backend conn. failures</td>
+<td>varnish.cache.main.backend_fail.count</td>
+<td>Сбои соединений с бэкендом.</td>
+</tr>
+<tr>
+<td>Backend conn. reuses</td>
+<td>varnish.cache.main.backend_reuse.count</td>
+<td>Количество повторных использований соединений с бэкендом. Счётчик увеличивается при каждом повторном использовании переработанного соединения.</td>
+</tr>
+<tr>
+<td>Backend conn. recycles</td>
+<td>varnish.cache.main.backend_recycle.count</td>
+<td>Количество переработанных соединений с бэкендом. Счётчик увеличивается при каждом возврате keep-alive-соединения в пул соединений. Соединение ещё не использовалось, но может быть использовано, если бэкенд его не закроет.</td>
+</tr>
+<tr>
+<td>Backend conn. retry</td>
+<td>varnish.cache.main.backend_retry.count</td>
+<td>Повторная попытка соединения с бэкендом.</td>
+</tr>
+<tr>
+<td>Fetch no body (HEAD)</td>
+<td>varnish.cache.main.fetch_head.count</td>
+<td>beresp без тела, так как запрос является HEAD.</td>
+</tr>
+<tr>
+<td>Fetch with Length</td>
+<td>varnish.cache.main.fetch_length.count</td>
+<td>beresp.body с Content-Length.</td>
+</tr>
+<tr>
+<td>Fetch chunked</td>
+<td>varnish.cache.main.fetch_chunked.count</td>
+<td>beresp.body с Chunked.</td>
+</tr>
+<tr>
+<td>Fetch EOF</td>
+<td>varnish.cache.main.fetch_eof.count</td>
+<td>beresp.body с EOF.</td>
+</tr>
+<tr>
+<td>Fetch bad T-E</td>
+<td>varnish.cache.main.fetch_bad.count</td>
+<td>Длина/выборка beresp.body не могла быть определена.</td>
+</tr>
+<tr>
+<td>Fetch no body</td>
+<td>varnish.cache.main.fetch_none.count</td>
+<td>beresp.body пустой.</td>
+</tr>
+<tr>
+<td>Fetch no body (1xx)</td>
+<td>varnish.cache.main.fetch_1xx.count</td>
+<td>beresp без тела из-за ответа 1XX.</td>
+</tr>
+<tr>
+<td>Fetch no body (204)</td>
+<td>varnish.cache.main.fetch_204.count</td>
+<td>beresp без тела из-за ответа 204.</td>
+</tr>
+<tr>
+<td>Fetch no body (304)</td>
+<td>varnish.cache.main.fetch_304.count</td>
+<td>beresp без тела из-за ответа 304.</td>
+</tr>
+<tr>
+<td>Fetch failed (all causes)</td>
+<td>varnish.cache.main.fetch_failed.count</td>
+<td>Сбой выборки beresp.</td>
+</tr>
+<tr>
+<td>Background fetch failed (no thread)</td>
+<td>varnish.cache.main.bgfetch_no_thread.count</td>
+<td>Фоновая выборка, инициированная попаданием с отсрочкой, завершилась неудачей — нет доступного потока.</td>
+</tr>
+<tr>
+<td>Number of thread pools</td>
+<td>varnish.cache.main.pools</td>
+<td>Количество пулов потоков. См. также параметр thread_pools. Примечание: в настоящее время пулы не могут быть удалены после создания.</td>
+</tr>
+<tr>
+<td>Total number of threads</td>
+<td>varnish.cache.main.threads</td>
+<td>Количество потоков во всех пулах. См. также параметры thread_pools, thread_pool_min и thread_pool_max.</td>
+</tr>
+<tr>
+<td>Threads hit max</td>
+<td>varnish.cache.main.threads_limited.count</td>
+<td>Количество раз, когда требовалось больше потоков, но был достигнут лимит в пуле потоков. См. также параметр thread_pool_max.</td>
+</tr>
+<tr>
+<td>Threads created</td>
+<td>varnish.cache.main.threads_created.count</td>
+<td>Общее количество созданных потоков во всех пулах.</td>
+</tr>
+<tr>
+<td>Threads destroyed</td>
+<td>varnish.cache.main.threads_destroyed.count</td>
+<td>Общее количество уничтоженных потоков во всех пулах.</td>
+</tr>
+<tr>
+<td>Thread creation failed</td>
+<td>varnish.cache.main.threads_failed.count</td>
+<td>Количество неудачных попыток создания потока. См. VSL::Debug для диагностики. См. также параметр thread_fail_delay.</td>
+</tr>
+<tr>
+<td>Length of session queue</td>
+<td>varnish.cache.main.thread_queue_len</td>
+<td>Длина очереди сессий, ожидающих потоков. Примечание: обновляется только раз в секунду. См. также параметр thread_queue_limit.</td>
+</tr>
+<tr>
+<td>Number of requests sent to sleep on busy objhdr</td>
+<td>varnish.cache.main.busy_sleep.count</td>
+<td>Количество запросов, отправленных в режим ожидания без рабочего потока из-за обнаружения занятого объекта.</td>
+</tr>
+<tr>
+<td>Number of requests woken after sleep on busy objhdr</td>
+<td>varnish.cache.main.busy_wakeup.count</td>
+<td>Количество запросов, снятых со списка ожидания занятого объекта и перепланированных.</td>
+</tr>
+<tr>
+<td>Number of requests killed after sleep on busy objhdr</td>
+<td>varnish.cache.main.busy_killed.count</td>
+<td>Количество запросов, удалённых из списка ожидания занятого объекта из-за нехватки ресурсов.</td>
+</tr>
+<tr>
+<td>Sessions queued for thread</td>
+<td>varnish.cache.main.sess_queued.count</td>
+<td>Количество раз, когда сессия ставилась в очередь в ожидании потока. См. также параметр thread_queue_limit.</td>
+</tr>
+<tr>
+<td>Sessions dropped for thread</td>
+<td>varnish.cache.main.sess_dropped.count</td>
+<td>Количество раз, когда HTTP/1-сессия была отброшена из-за слишком длинной очереди. См. также параметр thread_queue_limit.</td>
+</tr>
+<tr>
+<td>Requests dropped</td>
+<td>varnish.cache.main.req_dropped.count</td>
+<td>Количество раз, когда HTTP/2-поток был отклонён из-за слишком длинной очереди. См. также параметр thread_queue_limit.</td>
+</tr>
+<tr>
+<td>object structs made</td>
+<td>varnish.cache.main.n_object</td>
+<td>Приблизительное количество HTTP-объектов (заголовки + тело, при наличии) в кэше.</td>
+</tr>
+<tr>
+<td>unresurrected objects</td>
+<td>varnish.cache.main.n_vampireobject</td>
+<td>Количество невосстановленных объектов.</td>
+</tr>
+<tr>
+<td>objectcore structs made</td>
+<td>varnish.cache.main.n_objectcore</td>
+<td>Приблизительное количество элементов метаданных объектов в кэше. Каждый объект требует objectcore; дополнительные objectcore используются для hit-for-miss, hit-for-pass и занятых объектов.</td>
+</tr>
+<tr>
+<td>objecthead structs made</td>
+<td>varnish.cache.main.n_objecthead</td>
+<td>Приблизительное количество различных хэш-записей в кэше.</td>
+</tr>
+<tr>
+<td>Number of backends</td>
+<td>varnish.cache.main.n_backend</td>
+<td>Количество известных нам бэкендов.</td>
+</tr>
+<tr>
+<td>Number of expired objects</td>
+<td>varnish.cache.main.n_expired.count</td>
+<td>Количество объектов, удалённых из кэша по истечении срока действия.</td>
+</tr>
+<tr>
+<td>Number of LRU nuked objects</td>
+<td>varnish.cache.main.n_lru_nuked.count</td>
+<td>Количество объектов, принудительно удалённых из хранилища для освобождения места под новый объект.</td>
+</tr>
+<tr>
+<td>Number of LRU moved objects</td>
+<td>varnish.cache.main.n_lru_moved.count</td>
+<td>Количество операций перемещения в списке LRU.</td>
+</tr>
+<tr>
+<td>Reached nuke_limit</td>
+<td>varnish.cache.main.n_lru_limited.count</td>
+<td>Количество раз, когда требовалось больше дискового пространства, но был достигнут лимит nuke_limit. См. также параметр nuke_limit.</td>
+</tr>
+<tr>
+<td>HTTP header overflows</td>
+<td>varnish.cache.main.losthdr.count</td>
+<td>Переполнения HTTP-заголовков.</td>
+</tr>
+<tr>
+<td>Total sessions seen</td>
+<td>varnish.cache.main.s_sess.count</td>
+<td>Всего обработанных сессий.</td>
+</tr>
+<tr>
+<td>Number of ongoing pipe sessions</td>
+<td>varnish.cache.main.n_pipe</td>
+<td>Количество текущих pipe-сессий.</td>
+</tr>
+<tr>
+<td>Pipes hit pipe_sess_max</td>
+<td>varnish.cache.main.pipe_limited.count</td>
+<td>Количество раз, когда требовалось больше pipe, но был достигнут лимит. См. также параметр pipe_sess_max.</td>
+</tr>
+<tr>
+<td>Total pipe sessions seen</td>
+<td>varnish.cache.main.s_pipe.count</td>
+<td>Всего обработанных pipe-сессий.</td>
+</tr>
+<tr>
+<td>Total pass-ed requests seen</td>
+<td>varnish.cache.main.s_pass.count</td>
+<td>Всего обработанных pass-запросов.</td>
+</tr>
+<tr>
+<td>Total backend fetches initiated</td>
+<td>varnish.cache.main.s_fetch.count</td>
+<td>Всего инициированных выборок бэкенда, включая фоновые выборки.</td>
+</tr>
+<tr>
+<td>Total backend background fetches initiated</td>
+<td>varnish.cache.main.s_bgfetch.count</td>
+<td>Всего инициированных фоновых выборок бэкенда.</td>
+</tr>
+<tr>
+<td>Total synthetic responses made</td>
+<td>varnish.cache.main.s_synth.count</td>
+<td>Всего созданных синтетических ответов.</td>
+</tr>
+<tr>
+<td>Request header bytes</td>
+<td>varnish.cache.main.s_req_hdrbytes.count</td>
+<td>Всего получено байт заголовков запросов.</td>
+</tr>
+<tr>
+<td>Request body bytes</td>
+<td>varnish.cache.main.s_req_bodybytes.count</td>
+<td>Всего получено байт тела запросов.</td>
+</tr>
+<tr>
+<td>Response header bytes</td>
+<td>varnish.cache.main.s_resp_hdrbytes.count</td>
+<td>Всего передано байт заголовков ответов.</td>
+</tr>
+<tr>
+<td>Response body bytes</td>
+<td>varnish.cache.main.s_resp_bodybytes.count</td>
+<td>Всего передано байт тела ответов.</td>
+</tr>
+<tr>
+<td>Pipe request header bytes</td>
+<td>varnish.cache.main.s_pipe_hdrbytes.count</td>
+<td>Всего получено байт запросов для pipe-сессий.</td>
+</tr>
+<tr>
+<td>Piped bytes from client</td>
+<td>varnish.cache.main.s_pipe_in.count</td>
+<td>Всего перенаправлено байт от клиентов в pipe-сессиях.</td>
+</tr>
+<tr>
+<td>Piped bytes to client</td>
+<td>varnish.cache.main.s_pipe_out.count</td>
+<td>Всего перенаправлено байт клиентам в pipe-сессиях.</td>
+</tr>
+<tr>
+<td>Session Closed</td>
+<td>varnish.cache.main.sess_closed.count</td>
+<td>Закрытых сессий.</td>
+</tr>
+<tr>
+<td>Session Closed with error</td>
+<td>varnish.cache.main.sess_closed_err.count</td>
+<td>Всего сессий, закрытых с ошибками. См. счётчики диагностики sc_* для подробной разбивки.</td>
+</tr>
+<tr>
+<td>Session Read Ahead</td>
+<td>varnish.cache.main.sess_readahead.count</td>
+<td>Опережающее чтение сессии.</td>
+</tr>
+<tr>
+<td>Session herd</td>
+<td>varnish.cache.main.sess_herd.count</td>
+<td>Количество срабатываний timeout_linger.</td>
+</tr>
+<tr>
+<td>Session OK REM_CLOSE</td>
+<td>varnish.cache.main.sc_rem_close.count</td>
+<td>Количество закрытий сессий с REM_CLOSE (клиент закрыл соединение).</td>
+</tr>
+<tr>
+<td>Session OK REQ_CLOSE</td>
+<td>varnish.cache.main.sc_req_close.count</td>
+<td>Количество закрытий сессий с REQ_CLOSE (клиент запросил закрытие).</td>
+</tr>
+<tr>
+<td>Session Err REQ_HTTP10</td>
+<td>varnish.cache.main.sc_req_http10.count</td>
+<td>Количество закрытий сессий с ошибкой REQ_HTTP10 (Proto &lt; HTTP/1.1).</td>
+</tr>
+<tr>
+<td>Session Err RX_BAD</td>
+<td>varnish.cache.main.sc_rx_bad.count</td>
+<td>Количество закрытий сессий с ошибкой RX_BAD (получен плохой запрос/ответ).</td>
+</tr>
+<tr>
+<td>Session Err RX_BODY</td>
+<td>varnish.cache.main.sc_rx_body.count</td>
+<td>Количество закрытий сессий с ошибкой RX_BODY (ошибка получения тела запроса).</td>
+</tr>
+<tr>
+<td>Session Err RX_JUNK</td>
+<td>varnish.cache.main.sc_rx_junk.count</td>
+<td>Количество закрытий сессий с ошибкой RX_JUNK (получены мусорные данные).</td>
+</tr>
+<tr>
+<td>Session Err RX_OVERFLOW</td>
+<td>varnish.cache.main.sc_rx_overflow.count</td>
+<td>Количество закрытий сессий с ошибкой RX_OVERFLOW (переполнение буфера приёма).</td>
+</tr>
+<tr>
+<td>Session Err RX_TIMEOUT</td>
+<td>varnish.cache.main.sc_rx_timeout.count</td>
+<td>Количество закрытий сессий с ошибкой RX_TIMEOUT (таймаут приёма).</td>
+</tr>
+<tr>
+<td>Session Err RX_CLOSE_IDLE</td>
+<td>varnish.cache.main.sc_rx_close_idle.count</td>
+<td>Количество закрытий сессий с ошибкой RX_CLOSE_IDLE: превышено время ожидания timeout_idle при ожидании запроса от клиента.</td>
+</tr>
+<tr>
+<td>Session OK TX_PIPE</td>
+<td>varnish.cache.main.sc_tx_pipe.count</td>
+<td>Количество закрытий сессий с TX_PIPE (транзакция через pipe).</td>
+</tr>
+<tr>
+<td>Session Err TX_ERROR</td>
+<td>varnish.cache.main.sc_tx_error.count</td>
+<td>Количество закрытий сессий с ошибкой TX_ERROR (ошибочная транзакция).</td>
+</tr>
+<tr>
+<td>Session OK TX_EOF</td>
+<td>varnish.cache.main.sc_tx_eof.count</td>
+<td>Количество закрытий сессий с TX_EOF (передача с EOF).</td>
+</tr>
+<tr>
+<td>Session OK RESP_CLOSE</td>
+<td>varnish.cache.main.sc_resp_close.count</td>
+<td>Количество закрытий сессий с RESP_CLOSE (бэкенд/VCL запросил закрытие).</td>
+</tr>
+<tr>
+<td>Session Err OVERLOAD</td>
+<td>varnish.cache.main.sc_overload.count</td>
+<td>Количество закрытий сессий с ошибкой OVERLOAD (нехватка какого-либо ресурса).</td>
+</tr>
+<tr>
+<td>Session Err PIPE_OVERFLOW</td>
+<td>varnish.cache.main.sc_pipe_overflow.count</td>
+<td>Количество закрытий сессий с ошибкой PIPE_OVERFLOW (переполнение pipe сессии).</td>
+</tr>
+<tr>
+<td>Session Err RANGE_SHORT</td>
+<td>varnish.cache.main.sc_range_short.count</td>
+<td>Количество закрытий сессий с ошибкой RANGE_SHORT (недостаточно данных для диапазона).</td>
+</tr>
+<tr>
+<td>Session Err REQ_HTTP20</td>
+<td>varnish.cache.main.sc_req_http20.count</td>
+<td>Количество закрытий сессий с ошибкой REQ_HTTP20 (HTTP2 не принят).</td>
+</tr>
+<tr>
+<td>Session Err VCL_FAILURE</td>
+<td>varnish.cache.main.sc_vcl_failure.count</td>
+<td>Количество закрытий сессий с ошибкой VCL_FAILURE (сбой VCL).</td>
+</tr>
+<tr>
+<td>Delivery failed due to insufficient workspace.</td>
+<td>varnish.cache.main.client_resp_500.count</td>
+<td>Количество раз, когда не удалось отправить ответ из-за нехватки памяти рабочего пространства во время доставки.</td>
+</tr>
+<tr>
+<td>workspace_backend overflows</td>
+<td>varnish.cache.main.ws_backend_overflow.count</td>
+<td>Количество раз, когда заканчивалось место в workspace_backend.</td>
+</tr>
+<tr>
+<td>workspace_client overflows</td>
+<td>varnish.cache.main.ws_client_overflow.count</td>
+<td>Количество раз, когда заканчивалось место в workspace_client.</td>
+</tr>
+<tr>
+<td>workspace_thread overflows</td>
+<td>varnish.cache.main.ws_thread_overflow.count</td>
+<td>Количество раз, когда заканчивалось место в workspace_thread.</td>
+</tr>
+<tr>
+<td>workspace_session overflows</td>
+<td>varnish.cache.main.ws_session_overflow.count</td>
+<td>Количество раз, когда заканчивалось место в workspace_session.</td>
+</tr>
+<tr>
+<td>SHM records</td>
+<td>varnish.cache.main.shm_records.count</td>
+<td>Количество записей лога, записанных в лог разделяемой памяти.</td>
+</tr>
+<tr>
+<td>SHM writes</td>
+<td>varnish.cache.main.shm_writes.count</td>
+<td>Количество отдельных операций записи в лог разделяемой памяти. Одна операция записи может объединять несколько записей для буферизованных задач.</td>
+</tr>
+<tr>
+<td>SHM flushes due to overflow</td>
+<td>varnish.cache.main.shm_flushes.count</td>
+<td>Количество операций записи, выполненных до завершения буферизованной задачи, поскольку добавление записи в пакет превысило бы vsl_buffer.</td>
+</tr>
+<tr>
+<td>SHM lock contention</td>
+<td>varnish.cache.main.shm_cont.count</td>
+<td>Количество раз, когда операции записи приходилось ждать блокировки.</td>
+</tr>
+<tr>
+<td>SHM cycles through VSL space</td>
+<td>varnish.cache.main.shm_cycles.count</td>
+<td>Количество раз, когда запись записей лога достигала конца лога разделяемой памяти, возвращаясь к началу.</td>
+</tr>
+<tr>
+<td>SHM bytes</td>
+<td>varnish.cache.main.shm_bytes.count</td>
+<td>Количество байт, записанных в лог разделяемой памяти.</td>
+</tr>
+<tr>
+<td>Backend requests made</td>
+<td>varnish.cache.main.backend_req.count</td>
+<td>Выполнено запросов к бэкенду.</td>
+</tr>
+<tr>
+<td>Number of loaded VCLs in total</td>
+<td>varnish.cache.main.n_vcl</td>
+<td>Общее количество загруженных VCL.</td>
+</tr>
+<tr>
+<td>Number of VCLs available</td>
+<td>varnish.cache.main.n_vcl_avail</td>
+<td>Количество доступных VCL.</td>
+</tr>
+<tr>
+<td>Number of discarded VCLs</td>
+<td>varnish.cache.main.n_vcl_discard</td>
+<td>Количество отброшенных VCL.</td>
+</tr>
+<tr>
+<td>VCL failures</td>
+<td>varnish.cache.main.vcl_fail.count</td>
+<td>Количество сбоев, препятствовавших завершению VCL.</td>
+</tr>
+<tr>
+<td>Count of bans</td>
+<td>varnish.cache.main.bans</td>
+<td>Количество всех блокировок в системе, включая блокировки, замещённые более новыми, и блокировки, уже проверенные ban-lurker.</td>
+</tr>
+<tr>
+<td>Number of bans marked 'completed'</td>
+<td>varnish.cache.main.bans_completed</td>
+<td>Количество блокировок, которые больше не активны: либо проверены ban-lurker, либо замещены идентичными более новыми блокировками.</td>
+</tr>
+<tr>
+<td>Number of bans using obj.*</td>
+<td>varnish.cache.main.bans_obj</td>
+<td>Количество блокировок, использующих переменные obj.*. Эти блокировки могут быть обработаны ban-lurker.</td>
+</tr>
+<tr>
+<td>Number of bans using req.*</td>
+<td>varnish.cache.main.bans_req</td>
+<td>Количество блокировок, использующих переменные req.*. Эти блокировки не могут быть обработаны ban-lurker.</td>
+</tr>
+<tr>
+<td>Bans added</td>
+<td>varnish.cache.main.bans_added.count</td>
+<td>Счётчик блокировок, добавленных в список блокировок.</td>
+</tr>
+<tr>
+<td>Bans deleted</td>
+<td>varnish.cache.main.bans_deleted.count</td>
+<td>Счётчик блокировок, удалённых из списка блокировок.</td>
+</tr>
+<tr>
+<td>Bans tested against objects (lookup)</td>
+<td>varnish.cache.main.bans_tested.count</td>
+<td>Количество проверок блокировок и объектов друг против друга при поиске по хэшу.</td>
+</tr>
+<tr>
+<td>Objects killed by bans (lookup)</td>
+<td>varnish.cache.main.bans_obj_killed.count</td>
+<td>Количество объектов, уничтоженных блокировками при поиске объектов.</td>
+</tr>
+<tr>
+<td>Bans tested against objects (lurker)</td>
+<td>varnish.cache.main.bans_lurker_tested.count</td>
+<td>Количество проверок блокировок и объектов друг против друга ban-lurker.</td>
+</tr>
+<tr>
+<td>Ban tests tested against objects (lookup)</td>
+<td>varnish.cache.main.bans_tests_tested.count</td>
+<td>Количество проверок тестов и объектов друг против друга при поиске. 'ban req.url == foo &amp;&amp; req.http.host == bar' считается одним в 'bans_tested' и двумя в 'bans_tests_tested'.</td>
+</tr>
+<tr>
+<td>Ban tests tested against objects (lurker)</td>
+<td>varnish.cache.main.bans_lurker_tests_tested.count</td>
+<td>Количество проверок тестов и объектов друг против друга ban-lurker. 'ban req.url == foo &amp;&amp; req.http.host == bar' считается одним в 'bans_tested' и двумя в 'bans_tests_tested'.</td>
+</tr>
+<tr>
+<td>Objects killed by bans (lurker)</td>
+<td>varnish.cache.main.bans_lurker_obj_killed.count</td>
+<td>Количество объектов, уничтоженных ban-lurker.</td>
+</tr>
+<tr>
+<td>Objects killed by bans for cutoff (lurker)</td>
+<td>varnish.cache.main.bans_lurker_obj_killed_cutoff.count</td>
+<td>Количество объектов, уничтоженных ban-lurker для поддержания количества блокировок ниже ban_cutoff.</td>
+</tr>
+<tr>
+<td>Bans superseded by other bans</td>
+<td>varnish.cache.main.bans_dups.count</td>
+<td>Количество блокировок, замещённых более поздними идентичными блокировками.</td>
+</tr>
+<tr>
+<td>Lurker gave way for lookup</td>
+<td>varnish.cache.main.bans_lurker_contention.count</td>
+<td>Количество раз, когда ban-lurker приходилось ждать операций поиска.</td>
+</tr>
+<tr>
+<td>Bytes used by the persisted ban lists</td>
+<td>varnish.cache.main.bans_persisted_bytes</td>
+<td>Количество байт, использованных постоянными списками блокировок.</td>
+</tr>
+<tr>
+<td>Extra bytes in persisted ban lists due to fragmentation</td>
+<td>varnish.cache.main.bans_persisted_fragmentation</td>
+<td>Количество дополнительных байт, накопленных из-за отброшенных и завершённых блокировок в постоянных списках блокировок.</td>
+</tr>
+<tr>
+<td>Number of purge operations executed</td>
+<td>varnish.cache.main.n_purges.count</td>
+<td>Количество выполненных операций очистки.</td>
+</tr>
+<tr>
+<td>Number of purged objects</td>
+<td>varnish.cache.main.n_obj_purged.count</td>
+<td>Количество очищенных объектов.</td>
+</tr>
+<tr>
+<td>Number of objects mailed to expiry thread</td>
+<td>varnish.cache.main.exp_mailed.count</td>
+<td>Количество объектов, переданных потоку истечения срока действия для обработки.</td>
+</tr>
+<tr>
+<td>Number of objects received by expiry thread</td>
+<td>varnish.cache.main.exp_received.count</td>
+<td>Количество объектов, полученных потоком истечения срока действия для обработки.</td>
+</tr>
+<tr>
+<td>HCB Lookups without lock</td>
+<td>varnish.cache.main.hcb_nolock.count</td>
+<td>Поиск в HCB без блокировки.</td>
+</tr>
+<tr>
+<td>HCB Lookups with lock</td>
+<td>varnish.cache.main.hcb_lock.count</td>
+<td>Поиск в HCB с блокировкой.</td>
+</tr>
+<tr>
+<td>HCB Inserts</td>
+<td>varnish.cache.main.hcb_insert.count</td>
+<td>Вставки в HCB.</td>
+</tr>
+<tr>
+<td>ESI parse errors (unlock)</td>
+<td>varnish.cache.main.esi_errors.count</td>
+<td>Ошибки разбора ESI (разблокировка).</td>
+</tr>
+<tr>
+<td>ESI parse warnings (unlock)</td>
+<td>varnish.cache.main.esi_warnings.count</td>
+<td>Предупреждения разбора ESI (разблокировка).</td>
+</tr>
+<tr>
+<td>Loaded VMODs</td>
+<td>varnish.cache.main.vmods</td>
+<td>Загруженные VMOD.</td>
+</tr>
+<tr>
+<td>Gzip operations</td>
+<td>varnish.cache.main.n_gzip.count</td>
+<td>Операции gzip.</td>
+</tr>
+<tr>
+<td>Gunzip operations</td>
+<td>varnish.cache.main.n_gunzip.count</td>
+<td>Операции gunzip.</td>
+</tr>
+<tr>
+<td>Test gunzip operations</td>
+<td>varnish.cache.main.n_test_gunzip.count</td>
+<td>Эти операции происходят, когда Varnish получает сжатый объект от бэкенда. Они выполняются для проверки потока gzip при его добавлении в хранилище.</td>
+</tr>
+<tr>
+<td>Premature iovec flushes</td>
+<td>varnish.cache.main.http1_iovs_flush.count</td>
+<td>Количество дополнительных операций записи, выполненных для HTTP1-соединений, поскольку количество IO-векторов было слишком мало для передачи всего возможного IO за один раз. Этот параметр настраивается через параметр http1_iovs для клиентских соединений и неявно определяется количеством свободного рабочего пространства для бэкенд-соединений.</td>
+</tr>
+</tbody>
+</table>
+<p>mempool</p>
+<table>
+<thead>
+<tr>
+<th>Название метрики</th>
+<th>Ключ метрики</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>In use</td>
+<td>varnish.cache.mempool.live</td>
+<td>Используется.</td>
+</tr>
+<tr>
+<td>In Pool</td>
+<td>varnish.cache.mempool.pool</td>
+<td>В пуле.</td>
+</tr>
+<tr>
+<td>Size requested</td>
+<td>varnish.cache.mempool.sz_wanted</td>
+<td>Запрошенный размер.</td>
+</tr>
+<tr>
+<td>Size allocated</td>
+<td>varnish.cache.mempool.sz_actual</td>
+<td>Выделенный размер.</td>
+</tr>
+<tr>
+<td>Allocations</td>
+<td>varnish.cache.mempool.allocs.count</td>
+<td>Выделения памяти.</td>
+</tr>
+<tr>
+<td>Frees</td>
+<td>varnish.cache.mempool.frees.count</td>
+<td>Освобождения памяти.</td>
+</tr>
+<tr>
+<td>Recycled from pool</td>
+<td>varnish.cache.mempool.recycle.count</td>
+<td>Переработано из пула.</td>
+</tr>
+<tr>
+<td>Timed out from pool</td>
+<td>varnish.cache.mempool.timeout.count</td>
+<td>Таймаут из пула.</td>
+</tr>
+<tr>
+<td>Too small to recycle</td>
+<td>varnish.cache.mempool.toosmall.count</td>
+<td>Слишком мало для переработки.</td>
+</tr>
+<tr>
+<td>Too many for pool</td>
+<td>varnish.cache.mempool.surplus.count</td>
+<td>Слишком много для пула.</td>
+</tr>
+<tr>
+<td>Pool ran dry</td>
+<td>varnish.cache.mempool.randry.count</td>
+<td>Пул исчерпан.</td>
+</tr>
+</tbody>
+</table>
+<p>lck</p>
+<table>
+<thead>
+<tr>
+<th>Название метрики</th>
+<th>Ключ метрики</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Created locks</td>
+<td>varnish.cache.lck.creat.count</td>
+<td>Созданные блокировки.</td>
+</tr>
+<tr>
+<td>Destroyed locks</td>
+<td>varnish.cache.lck.destroy.count</td>
+<td>Уничтоженные блокировки.</td>
+</tr>
+<tr>
+<td>Lock Operations</td>
+<td>varnish.cache.lck.locks.count</td>
+<td>Операции блокировки.</td>
+</tr>
+<tr>
+<td>Contended lock operations</td>
+<td>varnish.cache.lck.dbg_busy.count</td>
+<td>Если установлен бит отладки lck: операции блокировки, вернувшие EBUSY при первой попытке. Если бит отладки lck не установлен, этот счётчик никогда не будет увеличиваться, даже если операции блокировки конкурируют.</td>
+</tr>
+<tr>
+<td>Contended trylock operations</td>
+<td>varnish.cache.lck.dbg_try_fail.count</td>
+<td>Если установлен бит отладки lck: операции trylock, вернувшие EBUSY. Если бит отладки lck не установлен, этот счётчик никогда не будет увеличиваться, даже если операции блокировки конкурируют.</td>
+</tr>
+</tbody>
+</table>
+<p>vbe</p>
+<table>
+<thead>
+<tr>
+<th>Название метрики</th>
+<th>Ключ метрики</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Happy health probes</td>
+<td>varnish.cache.vbe.happy</td>
+<td>Представляет последние результаты проб в виде битовой маски. Успешные пробы — биты, установленные в 1, неуспешные — в 0. Старшие биты представляют старейшие пробы.</td>
+</tr>
+<tr>
+<td>Request header bytes</td>
+<td>varnish.cache.vbe.bereq_hdrbytes.count</td>
+<td>Всего отправлено байт заголовков запросов бэкенда.</td>
+</tr>
+<tr>
+<td>Request body bytes</td>
+<td>varnish.cache.vbe.bereq_bodybytes.count</td>
+<td>Всего отправлено байт тела запросов бэкенда.</td>
+</tr>
+<tr>
+<td>Response header bytes</td>
+<td>varnish.cache.vbe.beresp_hdrbytes.count</td>
+<td>Всего получено байт заголовков ответов бэкенда.</td>
+</tr>
+<tr>
+<td>Response body bytes</td>
+<td>varnish.cache.vbe.beresp_bodybytes.count</td>
+<td>Всего получено байт тела ответов бэкенда.</td>
+</tr>
+<tr>
+<td>Pipe request header bytes</td>
+<td>varnish.cache.vbe.pipe_hdrbytes.count</td>
+<td>Всего отправлено байт запросов для pipe-сессий.</td>
+</tr>
+<tr>
+<td>Piped bytes to backend</td>
+<td>varnish.cache.vbe.pipe_out.count</td>
+<td>Всего перенаправлено байт к бэкенду в pipe-сессиях.</td>
+</tr>
+<tr>
+<td>Piped bytes from backend</td>
+<td>varnish.cache.vbe.pipe_in.count</td>
+<td>Всего перенаправлено байт от бэкенда в pipe-сессиях.</td>
+</tr>
+<tr>
+<td>Concurrent connections used</td>
+<td>varnish.cache.vbe.conn</td>
+<td>Количество текущих используемых соединений с бэкендом. Это число всегда меньше или равно количеству соединений с бэкендом (например, отображаемых как ESTABLISHED для TCP-соединений в netstat) из-за пула соединений.</td>
+</tr>
+<tr>
+<td>Backend requests sent</td>
+<td>varnish.cache.vbe.req.count</td>
+<td>Отправлено запросов к бэкенду.</td>
+</tr>
+<tr>
+<td>Fetches not attempted due to backend being unhealthy</td>
+<td>varnish.cache.vbe.unhealthy.count</td>
+<td>Выборки не предпринимались из-за нездорового бэкенда.</td>
+</tr>
+<tr>
+<td>Fetches not attempted due to backend being busy</td>
+<td>varnish.cache.vbe.busy.count</td>
+<td>Количество раз, когда был достигнут лимит max_connections.</td>
+</tr>
+<tr>
+<td>Connections failed</td>
+<td>varnish.cache.vbe.fail.count</td>
+<td>Счётчик неудачных открытий. Подробные причины указаны в счётчиках fail_* (уровень DIAG) и в логе под тегом FetchError. Этот счётчик является суммой всех счётчиков fail_*. Все счётчики fail_* могут быть слегка неточными из соображений эффективности.</td>
+</tr>
+<tr>
+<td>Connections failed with EACCES or EPERM</td>
+<td>varnish.cache.vbe.fail_eacces.count</td>
+<td>Сбои соединений с EACCES или EPERM.</td>
+</tr>
+<tr>
+<td>Connections failed with EADDRNOTAVAIL</td>
+<td>varnish.cache.vbe.fail_eaddrnotavail.count</td>
+<td>Сбои соединений с EADDRNOTAVAIL.</td>
+</tr>
+<tr>
+<td>Connections failed with ECONNREFUSED</td>
+<td>varnish.cache.vbe.fail_econnrefused.count</td>
+<td>Сбои соединений с ECONNREFUSED.</td>
+</tr>
+<tr>
+<td>Connections failed with ENETUNREACH</td>
+<td>varnish.cache.vbe.fail_enetunreach.count</td>
+<td>Сбои соединений с ENETUNREACH.</td>
+</tr>
+<tr>
+<td>Connections failed ETIMEDOUT</td>
+<td>varnish.cache.vbe.fail_etimedout.count</td>
+<td>Сбои соединений с ETIMEDOUT.</td>
+</tr>
+<tr>
+<td>Connections failed for other reason</td>
+<td>varnish.cache.vbe.fail_other.count</td>
+<td>Сбои соединений по другой причине.</td>
+</tr>
+<tr>
+<td>Connection opens not attempted</td>
+<td>varnish.cache.vbe.helddown.count</td>
+<td>Соединения не предпринимались в течение интервала backend_local_error_holddown или backend_remote_error_holddown после фундаментальной проблемы соединения.</td>
+</tr>
+</tbody>
+</table>
+<p>mgt</p>
+<table>
+<thead>
+<tr>
+<th>Название метрики</th>
+<th>Ключ метрики</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Management process uptime</td>
+<td>varnish.cache.mgt.uptime.count</td>
+<td>Время работы процесса управления в секундах.</td>
+</tr>
+<tr>
+<td>Child process started</td>
+<td>varnish.cache.mgt.child_start.count</td>
+<td>Количество запусков дочернего процесса.</td>
+</tr>
+<tr>
+<td>Child process normal exit</td>
+<td>varnish.cache.mgt.child_exit.count</td>
+<td>Количество чистых остановок дочернего процесса.</td>
+</tr>
+<tr>
+<td>Child process unexpected exit</td>
+<td>varnish.cache.mgt.child_stop.count</td>
+<td>Количество завершений дочернего процесса с неожиданным кодом возврата.</td>
+</tr>
+<tr>
+<td>Child process died (signal)</td>
+<td>varnish.cache.mgt.child_died.count</td>
+<td>Количество смертей дочернего процесса из-за сигналов.</td>
+</tr>
+<tr>
+<td>Child process core dumped</td>
+<td>varnish.cache.mgt.child_dump.count</td>
+<td>Количество дамп-файлов ядра, созданных дочерним процессом.</td>
+</tr>
+<tr>
+<td>Child process panic</td>
+<td>varnish.cache.mgt.child_panic.count</td>
+<td>Количество раз, когда процесс управления перехватывал панику дочернего процесса.</td>
+</tr>
+</tbody>
+</table>
+<p>default</p>
+<table>
+<thead>
+<tr>
+<th>Название метрики</th>
+<th>Ключ метрики</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Return code</td>
+<td>varnish.cache.returncode</td>
+<td>Код возврата команды varnishstat.</td>
+</tr>
+</tbody>
+</table>
+<p>smf</p>
+<table>
+<thead>
+<tr>
+<th>Название метрики</th>
+<th>Ключ метрики</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allocator requests</td>
+<td>varnish.cache.smf.c_req.count</td>
+<td>Количество обращений к хранилищу для предоставления сегмента.</td>
+</tr>
+<tr>
+<td>Allocator failures</td>
+<td>varnish.cache.smf.c_fail.count</td>
+<td>Количество отказов хранилища в предоставлении сегмента.</td>
+</tr>
+<tr>
+<td>Bytes allocated</td>
+<td>varnish.cache.smf.c_bytes.count</td>
+<td>Всего байт, выделенных этим хранилищем.</td>
+</tr>
+<tr>
+<td>Bytes freed</td>
+<td>varnish.cache.smf.c_freed.count</td>
+<td>Всего байт, возвращённых этому хранилищу.</td>
+</tr>
+<tr>
+<td>Allocations outstanding</td>
+<td>varnish.cache.smf.g_alloc</td>
+<td>Количество незавершённых выделений хранилища.</td>
+</tr>
+<tr>
+<td>Bytes outstanding</td>
+<td>varnish.cache.smf.g_bytes</td>
+<td>Количество байт, выделенных из хранилища.</td>
+</tr>
+<tr>
+<td>Bytes available</td>
+<td>varnish.cache.smf.g_space</td>
+<td>Количество байт, оставшихся в хранилище.</td>
+</tr>
+<tr>
+<td>N struct smf</td>
+<td>varnish.cache.smf.g_smf</td>
+<td>N структур smf.</td>
+</tr>
+<tr>
+<td>N small free smf</td>
+<td>varnish.cache.smf.g_smf_frag</td>
+<td>N небольших свободных smf.</td>
+</tr>
+<tr>
+<td>N large free smf</td>
+<td>varnish.cache.smf.g_smf_large</td>
+<td>N больших свободных smf.</td>
+</tr>
+</tbody>
+</table>
+<p>smu</p>
+<table>
+<thead>
+<tr>
+<th>Название метрики</th>
+<th>Ключ метрики</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allocator requests</td>
+<td>varnish.cache.smu.c_req.count</td>
+<td>Количество обращений к хранилищу для предоставления сегмента.</td>
+</tr>
+<tr>
+<td>Allocator failures</td>
+<td>varnish.cache.smu.c_fail.count</td>
+<td>Количество отказов хранилища в предоставлении сегмента.</td>
+</tr>
+<tr>
+<td>Bytes allocated</td>
+<td>varnish.cache.smu.c_bytes.count</td>
+<td>Всего байт, выделенных этим хранилищем.</td>
+</tr>
+<tr>
+<td>Bytes freed</td>
+<td>varnish.cache.smu.c_freed.count</td>
+<td>Всего байт, возвращённых этому хранилищу.</td>
+</tr>
+<tr>
+<td>Allocations outstanding</td>
+<td>varnish.cache.smu.g_alloc</td>
+<td>Количество незавершённых выделений хранилища.</td>
+</tr>
+<tr>
+<td>Bytes outstanding</td>
+<td>varnish.cache.smu.g_bytes</td>
+<td>Количество байт, выделенных из хранилища.</td>
+</tr>
+<tr>
+<td>Bytes available</td>
+<td>varnish.cache.smu.g_space</td>
+<td>Количество байт, оставшихся в хранилище.</td>
+</tr>
+</tbody>
+</table>
+<p>sma</p>
+<table>
+<thead>
+<tr>
+<th>Название метрики</th>
+<th>Ключ метрики</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allocator requests</td>
+<td>varnish.cache.sma.c_req.count</td>
+<td>Количество обращений к хранилищу для предоставления сегмента.</td>
+</tr>
+<tr>
+<td>Allocator failures</td>
+<td>varnish.cache.sma.c_fail.count</td>
+<td>Количество отказов хранилища в предоставлении сегмента.</td>
+</tr>
+<tr>
+<td>Bytes allocated</td>
+<td>varnish.cache.sma.c_bytes.count</td>
+<td>Всего байт, выделенных этим хранилищем.</td>
+</tr>
+<tr>
+<td>Bytes freed</td>
+<td>varnish.cache.sma.c_freed.count</td>
+<td>Всего байт, возвращённых этому хранилищу.</td>
+</tr>
+<tr>
+<td>Allocations outstanding</td>
+<td>varnish.cache.sma.g_alloc</td>
+<td>Количество незавершённых выделений хранилища.</td>
+</tr>
+<tr>
+<td>Bytes outstanding</td>
+<td>varnish.cache.sma.g_bytes</td>
+<td>Количество байт, выделенных из хранилища.</td>
+</tr>
+<tr>
+<td>Bytes available</td>
+<td>varnish.cache.sma.g_space</td>
+<td>Количество байт, оставшихся в хранилище.</td>
+</tr>
+</tbody>
+</table>
+<p>[<img alt="Hub" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
+<h3 id="dynatrace-hub">Изучить в Dynatrace Hub<a class="headerlink" href="#dynatrace-hub" title="Permanent link">&para;</a></h3>
+<p>Мониторинг статистики экземпляров Varnish Cache.](https://www.dynatrace.com/hub/detail/varnish-cache-1/)</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.path", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

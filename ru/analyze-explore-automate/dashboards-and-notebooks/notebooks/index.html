@@ -1,0 +1,6291 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace с AI-помощником (Managed + SaaS)">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/ru/analyze-explore-automate/dashboards-and-notebooks/notebooks/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Notebooks - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#notebooks" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Notebooks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+  Начало работы
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../platform/grail/dynatrace-grail/" class="md-tabs__link">
+          
+  
+  
+  Платформа
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../observe/infrastructure-observability/" class="md-tabs__link">
+          
+  
+  
+  Наблюдаемость
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../dynatrace-intelligence/anomaly-detection/" class="md-tabs__link">
+          
+  
+  
+  Dynatrace Intelligence
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../dashboards-new/" class="md-tabs__link">
+          
+  
+  
+  Анализ и автоматизация
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ingest-from/" class="md-tabs__link">
+          
+  
+  
+  Источники данных
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../deliver/configuration-as-code/" class="md-tabs__link">
+          
+  
+  
+  Deliver
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../secure/threat-observability/" class="md-tabs__link">
+          
+  
+  
+  Безопасность
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../manage/hub/" class="md-tabs__link">
+          
+  
+  
+  Управление
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../dynatrace-api/" class="md-tabs__link">
+          
+  
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../whats-new/" class="md-tabs__link">
+          
+  
+  
+  Что нового
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI Помощник
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Начало работы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документация Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discover-dynatrace/what-is-dynatrace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что такое Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discover-dynatrace/dynatrace-apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложения Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../semantic-dictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Семантический словарь
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Резервное копирование
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Платформа
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grail
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Grail
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/grail/dynatrace-grail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что такое Grail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/grail/dynatrace-query-language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Язык запросов DQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/appengine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AppEngine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../platform/openpipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenPipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Наблюдаемость
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инфраструктура
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Инфраструктура
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/infrastructure-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/infrastructure-observability/infrastructure-and-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Хосты и операции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Облачный мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/infrastructure-observability/databases/database-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Базы данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложения
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Приложения
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/application-observability/distributed-tracing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Распределённая трассировка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/application-observability/services/services-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сервисы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Цифровой опыт
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Цифровой опыт
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/digital-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Синтетическое приложение
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observe/dynatrace-for-ai-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI и LLM мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Intelligence
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Intelligence
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обнаружение аномалий
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Обнаружение аномалий
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка чувствительности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложение Anomaly Detection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфигурация
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Адаптивные пороги
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Многомерный бейзлайн
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/anomaly-detection/metric-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    События метрик
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/anomaly-detection/static-thresholds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статические пороги
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Оптимизация DQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis Copilot
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Davis Copilot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/copilot/chat-with-davis-copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Assist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/copilot/copilot-getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/copilot/copilot-data-privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфиденциальность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/copilot/quick-analysis-copilot-dql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запросы на естественном языке
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/davis-problems-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проблемы Davis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ первопричин
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Анализ первопричин
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/root-cause-analysis/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ событий
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/dynatrace-intelligence-integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Справочник
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Справочник
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI модели
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/reference/davis-ai-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лимиты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ и автоматизация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Анализ и автоматизация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды и ноутбуки
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Дашборды и ноутбуки
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboards-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../document-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../document-version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Версии документов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../edit-visualizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Визуализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explore-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Логи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Логи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logs/lma-logs-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложение журналов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logs/lma-logs-app/facets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Фильтры
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logs/lma-logs-app/query-and-filter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запросы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обозреватель данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smartscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Smartscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notifications-and-alerting/problem-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Уведомления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compliance-and-resilience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Соответствие требованиям
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Источники данных
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ingest-from/extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ingest-from/dynatrace-oneagent/installation-and-operation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent — установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deliver
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration as Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration as Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/configuration-as-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monaco
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monaco
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API и разрешения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/configuration-as-code/monaco/monaco-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/configuration-as-code/monaco/monaco-getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_3" id="__nav_9_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terraform
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Terraform
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API и разрешения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/configuration-as-code/terraform/terraform-cli-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI команды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SLO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/service-level-objectives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/service-level-objectives/create-slo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Создание SLO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Reliability Guardian
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Site Reliability Guardian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/site-reliability-guardian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/site-reliability-guardian/event-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Структура событий
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/ownership-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ownership
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг релизов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Мониторинг релизов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/release-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/release-monitoring/monitor-releases-with-dynatrace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг релизов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deliver/quality-gates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Валидация релизов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Безопасность
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../secure/threat-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость угроз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../secure/threat-observability/security-events-ingest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграция
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Управление
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../manage/hub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензирование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лицензирование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/capabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Возможности DPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/billing-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Биллинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/budget-alerts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бюджетные оповещения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/license-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Жизненный цикл
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/dps-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Разрешения DPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynatrace-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Intelligence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Что нового
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/saas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/activegate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="notebooks">Notebooks<a class="headerlink" href="#notebooks" title="Permanent link">&para;</a></h1>
+<h1 id="notebooks_1">Notebooks<a class="headerlink" href="#notebooks_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Последняя версия Dynatrace</li>
+<li>Приложение</li>
+<li>Чтение: 11 мин</li>
+<li>Обновлено 28 янв 2026</li>
+</ul>
+<p>Предварительные требования</p>
+<h3 id="_1">Разрешения<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>В следующей таблице описаны необходимые разрешения.</p>
+<p>app-engine:apps:run</p>
+<p>Позволяет пользователю запускать функции</p>
+<p>app-engine:functions:run</p>
+<p>Позволяет пользователю запускать функции</p>
+<p>document:documents:read</p>
+<p>Позволяет пользователю получать доступ к notebooks</p>
+<p>document:documents:write</p>
+<p>Позволяет пользователю создавать и обновлять notebooks</p>
+<p>document:documents:delete</p>
+<p>Позволяет пользователю удалять notebooks</p>
+<p>document:trash.documents:read</p>
+<p>Позволяет пользователю получать доступ к удалённым notebooks</p>
+<p>document:trash.documents:delete</p>
+<p>Позволяет пользователю безвозвратно удалять notebooks</p>
+<p>document:trash.documents:restore</p>
+<p>Позволяет пользователю восстанавливать удалённые notebooks</p>
+<p>document:environment-shares:read</p>
+<p>Позволяет пользователю получать доступ к общим notebooks</p>
+<p>document:direct-shares:read</p>
+<p>Позволяет пользователю получать доступ к общим notebooks</p>
+<p>Начало работы</p>
+<p>Концепции</p>
+<p>Варианты использования</p>
+<p>С помощью <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> вы можете создавать мощные документы на основе данных для пользовательской аналитики.</p>
+<p><img alt="Создавайте мощные документы на основе данных." src="https://dt-cdn.net/hub/01_General_xWZn5HR.png" /><img alt="Исследуйте, анализируйте и напрямую взаимодействуйте со всеми вашими данными." src="https://dt-cdn.net/hub/02_Explore_and__interact_paewzqz.png" /><img alt="Преобразуйте данные в понимание и раскройте историю за цифрами." src="https://dt-cdn.net/hub/Tell_the_story.png" /><img alt="Создавайте и делитесь красивыми отчётами с сохранёнными данными." src="https://dt-cdn.net/hub/04_Reporting_pV4hDMB.png" /><img alt="Включайте обнаружение аномалий и прогнозирование на базе Davis AI." src="https://dt-cdn.net/hub/05_AI_e1KD03b.png" /></p>
+<p>1 из 5. Создавайте мощные документы на основе данных.</p>
+<h2 id="notebook">Разделы Notebook<a class="headerlink" href="#notebook" title="Permanent link">&para;</a></h2>
+<p>Notebook может состоять из нескольких разделов:</p>
+<ul>
+<li><a href="#explore">Explore</a>: исследуйте данные, такие как журналы, метрики и бизнес-события, с помощью интерфейса «укажи и нажми».</li>
+<li><a href="#query">Query</a>: отображает данные, запрошенные через Grail.</li>
+<li><a href="#code">Code</a>: отображает данные, возвращённые кодом, выполненным через функции Dynatrace.</li>
+<li><a href="#markdown">Markdown</a>: статическое содержимое, редактируемое в markdown.</li>
+</ul>
+<h3 id="explore">Разделы Explore<a class="headerlink" href="#explore" title="Permanent link">&para;</a></h3>
+<p>Вы можете использовать параметры Explore для изучения журналов, метрик, бизнес-событий и многого другого с помощью интерфейса «укажи и нажми». Без каких-либо знаний DQL или программирования вы можете создавать и начинать использовать разделы notebook за считанные минуты.</p>
+<p>Подробнее см. на специальной странице <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data" title="Исследуйте данные с помощью интерфейса «укажи и нажми».">Explore data</a>, где показано, как создавать разделы Explore.</p>
+<h3 id="query">Раздел Query<a class="headerlink" href="#query" title="Permanent link">&para;</a></h3>
+<p>Разделы запросов позволяют легко запрашивать данные из Grail и <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations" title="Создание, редактирование и просмотр визуализаций на дашбордах и в notebooks Dynatrace.">визуализировать</a> результат различными способами.</p>
+<p><img alt="Раздел Query" src="https://dt-cdn.net/images/notebooks-query-section-select-685-01cd3782b4.png" /></p>
+<p>Раздел запроса состоит из поля ввода запроса, где можно написать DQL-запрос. В поле ввода запроса используйте <strong>Ctrl</strong>+<strong>Space</strong> для вызова автодополнения в любое время.</p>
+<p>Вы можете управлять временным диапазоном для запроса через раскрывающийся список временного диапазона. Если временной диапазон определён в самом запросе, раскрывающийся список недоступен.</p>
+<h3 id="code">Раздел Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h3>
+<p>Раздел кода позволяет получать данные для вашего notebook с помощью функций Dynatrace.</p>
+<p><img alt="Раздел Code" src="https://dt-cdn.net/images/notebooks-code-section-select-694-e39f69d7ee.png" /></p>
+<h3 id="markdown">Раздел Markdown<a class="headerlink" href="#markdown" title="Permanent link">&para;</a></h3>
+<p>Раздел Markdown может быть чем угодно: от небольшой заметки о чём-то в notebook до целой страницы отформатированной информации со ссылками и изображениями.</p>
+<p>Легко редактировать:</p>
+<p><img alt="Раздел Markdown: редактирование" src="https://dt-cdn.net/images/notebooks-markdown-section-edit-841-8301eddf20.png" /></p>
+<p>Привлекательно выглядит:</p>
+<p><img alt="Раздел Markdown: отображение" src="https://dt-cdn.net/images/notebooks-markdown-section-display-836-030ea62933.png" /></p>
+<p>Для вставки запросов из вашего notebook с автодополнением используйте <strong>Ctrl</strong>+<strong>Space</strong>.</p>
+<h4 id="_2">Добавление ссылок<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>Вы можете ссылаться на другие места в вашем notebook и за его пределами.</p>
+<p>Ссылка в Markdown имеет форму <code>[метка](адрес)</code>, где:</p>
+<ul>
+<li><code>метка</code> — произвольный текст для отображения на ссылке в вашем Markdown-блоке или разделе</li>
+<li><code>адрес</code> указывает, что нужно открыть при выборе ссылки, например веб-сайт или приложение Dynatrace</li>
+</ul>
+<h2 id="_3">Варианты использования<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Notebooks позволяет:</p>
+<ul>
+<li>Запрашивать, анализировать и визуализировать все данные безопасности, наблюдаемости и бизнес-данные, такие как журналы, метрики и события на базе Grail.</li>
+<li>Прогнозировать будущие тренды с помощью встроенных возможностей прогнозирования Davis.</li>
+<li>Создавать интерактивные, основанные на данных, сохраняемые документы и совместно работать над ними.</li>
+<li>Получать и встраивать внешние данные, запуская функции Dynatrace.</li>
+<li>Взаимодействовать с данными: начинать детализацию с помощью сортировки, фильтрации и агрегации или даже запускать рабочие процессы.</li>
+<li>Аннотировать и добавлять контекст с помощью markdown.</li>
+</ul>
+<p>Следующие процедуры описывают основы использования <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> и помогут вам начать настройку и создание собственных дашбордов.</p>
+<h2 id="_4">Советы по обучению<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Быстрый способ изучить notebooks — открыть готовый notebook, сделать его копию и начать экспериментировать. При необходимости можно отменять и повторять действия.</p>
+<h3 id="notebook_1">Открытие готового notebook<a class="headerlink" href="#notebook_1" title="Permanent link">&para;</a></h3>
+<p>Чтобы открыть готовый notebook:</p>
+<ol>
+<li>Перейдите в <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>.</li>
+<li>На панели <strong>Notebooks</strong> выберите <strong>Ready-made notebooks</strong>.</li>
+</ol>
+<p><img alt="Выберите &quot;Ready-made notebooks&quot;" src="https://dt-cdn.net/images/ready-made-notebooks-list1-476-aa735fed50.png" /></p>
+<p>Альтернативно выберите <strong>All notebooks</strong> и затем измените вкладку в верхней части таблицы с <strong>All</strong> на <strong>Ready-made</strong>.</p>
+<p><img alt="Notebooks: выбор вкладки &quot;Ready-made&quot;" src="https://dt-cdn.net/images/notebooks-select-ready-made-tab-466-f52a4b69b3.png" />
+3. Выберите notebook для его открытия.</p>
+<h3 id="_5">Создание копии<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Чтобы создать копию текущего notebook:</p>
+<ol>
+<li>В верхней части notebook откройте меню рядом с именем notebook.</li>
+<li>Выберите <strong>Duplicate</strong> из меню.</li>
+</ol>
+<p>Альтернативно перейдите в раздел <strong>Last opened by you</strong> на боковой панели, наведите курсор на notebook, который хотите скопировать, и выберите &gt; <strong>Duplicate</strong>.</p>
+<h3 id="_6">Отмена и повтор действий<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>Вы можете быстро отменять или повторять редактирование notebook.</p>
+<ul>
+<li>Элементы управления (<strong>Undo</strong>) и (<strong>Redo</strong>) отображаются в верхнем левом углу вашего notebook после внесения изменений.</li>
+<li>При желании можно использовать сочетания клавиш.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Отменить</strong></th>
+<th><strong>Повторить</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td><strong>Ctrl+Z</strong></td>
+<td><strong>Ctrl+Shift+Z</strong></td>
+</tr>
+<tr>
+<td>Mac</td>
+<td><strong>Cmd+Z</strong></td>
+<td><strong>Cmd+Shift+Z</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Количество отменяемых действий может быть ограничено в зависимости от размера вашего notebook.</p>
+<h2 id="notebooks_2">Использование notebooks<a class="headerlink" href="#notebooks_2" title="Permanent link">&para;</a></h2>
+<h3 id="_7">Использование сочетаний клавиш<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>Сочетания клавиш помогают быстрее работать в <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>.</p>
+<p>Чтобы просмотреть список сочетаний клавиш, в <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> откройте меню и выберите <strong>Keyboard shortcuts</strong> или используйте сочетание клавиш <strong>Shift</strong>+<strong>?</strong></p>
+<table>
+<thead>
+<tr>
+<th>Действие</th>
+<th>Сочетание клавиш</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Общие</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Закрыть раздел</td>
+<td><strong>Esc</strong></td>
+</tr>
+<tr>
+<td>Добавить раздел</td>
+<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Shift</strong>+<strong>Enter</strong></td>
+</tr>
+<tr>
+<td>Переместить раздел вниз</td>
+<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Alt</strong>+</td>
+</tr>
+<tr>
+<td>Переместить раздел вверх</td>
+<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Alt</strong>+</td>
+</tr>
+<tr>
+<td>Удалить выбранные разделы</td>
+<td><strong>Del</strong></td>
+</tr>
+<tr>
+<td>Дублировать выбранные разделы</td>
+<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Shift</strong>+<strong>D</strong></td>
+</tr>
+<tr>
+<td>Выбрать всё</td>
+<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>A</strong></td>
+</tr>
+<tr>
+<td>Отменить</td>
+<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Z</strong></td>
+</tr>
+<tr>
+<td>Повторить</td>
+<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Shift</strong>+<strong>Z</strong></td>
+</tr>
+<tr>
+<td>Открыть с помощью…</td>
+<td><strong>O</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Разделы Data</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Добавить раздел</td>
+<td><strong>Shift</strong>+<strong>D</strong></td>
+</tr>
+<tr>
+<td>Выполнить запрос</td>
+<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Enter</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Разделы Code</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Добавить раздел</td>
+<td><strong>Shift</strong>+<strong>C</strong></td>
+</tr>
+<tr>
+<td>Выполнить код</td>
+<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Enter</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Разделы Markdown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Добавить раздел</td>
+<td><strong>Shift</strong>+<strong>M</strong></td>
+</tr>
+<tr>
+<td>Переключить между режимом просмотра и редактирования</td>
+<td><strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Enter</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="notebooks_3">Список notebooks<a class="headerlink" href="#notebooks_3" title="Permanent link">&para;</a></h3>
+<h4 id="_8">Все<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p>Чтобы просмотреть все notebooks:</p>
+<ol>
+<li>Перейдите в <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>.</li>
+<li>На панели <strong>Notebooks</strong> выберите <strong>Owned by anyone</strong>.</li>
+</ol>
+<h4 id="notebooks_4">Мои notebooks<a class="headerlink" href="#notebooks_4" title="Permanent link">&para;</a></h4>
+<p>Чтобы просмотреть все notebooks, которыми вы владеете:</p>
+<ol>
+<li>Перейдите в <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>.</li>
+<li>На панели <strong>Notebooks</strong> выберите <strong>All</strong>.</li>
+<li>В верхней части таблицы <strong>Notebooks</strong> выберите <strong>Owned by me</strong>.</li>
+</ol>
+<h4 id="notebooks_5">Notebooks, доступные мне<a class="headerlink" href="#notebooks_5" title="Permanent link">&para;</a></h4>
+<p>Чтобы просмотреть все notebooks, которые доступны вам:</p>
+<ol>
+<li>Перейдите в <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>.</li>
+<li>На панели <strong>Notebooks</strong> выберите <strong>All</strong>.</li>
+<li>В верхней части таблицы <strong>Notebooks</strong> выберите <strong>Shared with me</strong>.</li>
+</ol>
+<h4 id="notebooks_6">Список готовых notebooks<a class="headerlink" href="#notebooks_6" title="Permanent link">&para;</a></h4>
+<p>Особенности готовых документов</p>
+<ul>
+<li>Создаются и автоматически распространяются Dynatrace в качестве примеров и шаблонов.</li>
+<li>Только для чтения: вы можете редактировать их в ходе сессии и сохранять копию с изменениями, но не можете сохранять изменения в исходном документе.</li>
+<li>Значок в таблице документов указывает на то, что это готовый документ.</li>
+</ul>
+<p>Чтобы просмотреть все готовые notebooks:</p>
+<ol>
+<li>Перейдите в <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>.</li>
+<li>На панели <strong>Notebooks</strong> выберите <strong>Ready-made notebooks</strong>.</li>
+</ol>
+<p><img alt="Выберите &quot;Ready-made notebooks&quot;" src="https://dt-cdn.net/images/ready-made-notebooks-list1-476-aa735fed50.png" /></p>
+<p>Альтернативно выберите <strong>All notebooks</strong> и затем измените вкладку в верхней части таблицы с <strong>All</strong> на <strong>Ready-made</strong>.</p>
+<p><img alt="Notebooks: выбор вкладки &quot;Ready-made&quot;" src="https://dt-cdn.net/images/notebooks-select-ready-made-tab-466-f52a4b69b3.png" /></p>
+<p>Подробнее о готовых документах см. в разделе <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents" title="Используйте готовые документы сразу из коробки.">Готовые документы</a>.</p>
+<h3 id="notebook_2">Поиск notebook<a class="headerlink" href="#notebook_2" title="Permanent link">&para;</a></h3>
+<p>Самый простой способ найти notebook — через <a href="/docs/discover-dynatrace/get-started/dynatrace-ui#search" title="Навигация по последней версии Dynatrace">глобальный поиск</a>.</p>
+<p>Поиск можно активировать из любого контекста с помощью сочетания клавиш <strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>K</strong>. Notebooks с совпадающими заголовками будут отображены в результатах.</p>
+<p>Альтернативно выберите <strong>All notebooks</strong> на боковой панели. Введите поисковый запрос для отображения только совпадающих notebooks.</p>
+<h3 id="notebook_3">Создание notebook<a class="headerlink" href="#notebook_3" title="Permanent link">&para;</a></h3>
+<p>Чтобы создать новый notebook:</p>
+<ol>
+<li>Перейдите в <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>.</li>
+<li>В заголовке приложения выберите <strong>Notebook</strong>.</li>
+</ol>
+<p>Теперь вам нужно создать один или несколько разделов в вашем notebook. Подробнее см. в разделе <a href="#section-create">Создание раздела</a>.</p>
+<h3 id="notebook_4">Дублирование notebook<a class="headerlink" href="#notebook_4" title="Permanent link">&para;</a></h3>
+<p>Чтобы создать копию текущего notebook:</p>
+<ol>
+<li>В верхней части notebook откройте меню рядом с именем notebook.</li>
+<li>Выберите <strong>Duplicate</strong> из меню.</li>
+</ol>
+<p>Альтернативно перейдите в раздел <strong>Last opened by you</strong> на боковой панели, наведите курсор на notebook, который хотите скопировать, и выберите &gt; <strong>Duplicate</strong>.</p>
+<h3 id="notebook-dock">Закрепление notebook в Dock<a class="headerlink" href="#notebook-dock" title="Permanent link">&para;</a></h3>
+<p>Чтобы добавить notebook в Dock для быстрого доступа:</p>
+<ol>
+<li>Откройте notebook.</li>
+<li>Откройте меню рядом с именем notebook (в верхнем левом углу notebook).</li>
+<li>Выберите <strong>Add to dock</strong>.</li>
+</ol>
+<p>При изменении имени notebook оно автоматически обновляется в Dock.</p>
+<p>Чтобы удалить notebook из Dock:</p>
+<ol>
+<li>Наведите курсор на имя notebook в Dock.</li>
+<li>Выберите <strong>Unpin from dock</strong>.</li>
+</ol>
+<h3 id="notebook_5">Удаление notebook<a class="headerlink" href="#notebook_5" title="Permanent link">&para;</a></h3>
+<p>Чтобы удалить notebook:</p>
+<ol>
+<li>В верхней части notebook откройте меню рядом с именем notebook.</li>
+<li>Выберите <strong>Delete</strong> из меню.</li>
+</ol>
+<p>Альтернативно можно выполнить то же действие в разделе <strong>Last opened by you</strong> на боковой панели. Выберите &gt; <strong>Delete</strong>.</p>
+<p>Чтобы удалить несколько notebooks, выберите <strong>All notebooks</strong> и используйте кнопки в таблице.</p>
+<h2 id="_9">Создание раздела<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>Каждый notebook нуждается в одном или нескольких разделах.</p>
+<h3 id="prompt">Создание раздела Prompt<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h3>
+<p>Чтобы создать раздел notebook с помощью <a href="/docs/dynatrace-intelligence/copilot/copilot-overview" title="Узнайте о безопасности данных и других аспектах агентного и генеративного ИИ Dynatrace Intelligence.">агентного и генеративного ИИ Dynatrace Intelligence</a> для перевода вопросов на естественном языке в DQL-запросы:</p>
+<ol>
+<li>Перейдите в <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> и откройте или создайте notebook, который можно редактировать.</li>
+<li>Откройте меню <strong>Add</strong> и выберите <strong>Prompt</strong>. Создаётся новый раздел Generative AI notebook с пустым полем подсказки.</li>
+<li>В поле подсказки введите запрос. Попробуйте <code>average cpu usage percentage by host</code> или посмотрите примеры, отображаемые в веб-интерфейсе для вдохновения.</li>
+<li>Необязательно Если ваша подсказка не указывает временной диапазон, вы всё равно можете указать его в заголовке раздела. По умолчанию — <strong>Last 2 hours</strong>.</li>
+<li>Выберите <strong>Run</strong>. Генеративный ИИ создаёт и выполняет запрос за вас.</li>
+</ol>
+<p>Необязательно Если вы хотите увидеть сгенерированный запрос перед его выполнением, откройте меню рядом с кнопкой <strong>Run</strong> и выберите <strong>Generate DQL only</strong>.
+6. Проверьте результаты.</p>
+<ul>
+<li>Вы можете просмотреть запрос, развернув <strong>DQL</strong> справа.</li>
+<li>
+<p>Необязательно Вы не можете напрямую редактировать запрос в генеративном ИИ Dynatrace Intelligence, но у вас есть два варианта повторного использования:</p>
+<ul>
+<li>Скопируйте запрос и вставьте его в другое место вручную.</li>
+<li>Откройте меню в заголовке раздела и выберите <strong>Create DQL section</strong>, чтобы создать раздел DQL из этого запроса.</li>
+<li>
+<p>Вы можете редактировать исходную подсказку, повторно генерировать запрос и запускать его для обновления результатов.
+ Если вы выберете <strong>Rerun sections</strong>, приложение Notebooks сначала проверит, были ли изменены какие-либо подсказки.</p>
+</li>
+<li>
+<p>Если подсказка была изменена, DQL сначала будет повторно сгенерирован, а затем выполнен.</p>
+</li>
+<li>Если ни одна подсказка не была изменена, существующий сгенерированный DQL будет просто запущен.</li>
+<li>Необязательно Выберите <strong>Options</strong> в заголовке раздела, чтобы изменить визуализацию (см. <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations" title="Создание, редактирование и просмотр визуализаций на дашбордах и в notebooks Dynatrace.">документацию по конкретной визуализации</a>).</li>
+</ul>
+</li>
+</ul>
+<p>Автоматический выбор визуализации</p>
+<p>Чтобы Dynatrace автоматически выбирал визуализацию для вашего запроса, включите <strong>Auto select</strong> в правом верхнем углу панели настроек визуализации.</p>
+<ul>
+<li>Если вы вручную выберете другую визуализацию, переключатель <strong>Auto select</strong> отключится.</li>
+<li>Чтобы Dynatrace снова автоматически выбирал визуализацию, снова включите <strong>Auto select</strong>.</li>
+</ul>
+<h3 id="explore_1">Создание раздела Explore<a class="headerlink" href="#explore_1" title="Permanent link">&para;</a></h3>
+<p>Разделы Explore предлагают самый простой способ начала работы.</p>
+<ul>
+<li>Чтобы сначала узнать больше о разделах Explore, см. <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data" title="Исследуйте данные с помощью интерфейса «укажи и нажми».">Explore data</a>.</li>
+<li>Чтобы начать немедленно, просто откройте notebook, откройте меню <strong>Add</strong> и выберите параметр Explore, например <strong>Logs</strong>, <strong>Metrics</strong>, <strong>Events</strong>, <strong>Problems</strong> или <strong>Business Events</strong>.</li>
+</ul>
+<h3 id="grail-query">Создание раздела Grail query<a class="headerlink" href="#grail-query" title="Permanent link">&para;</a></h3>
+<p>Самый быстрый и простой способ изучить данные — раздел <a href="#section-create-explore-data">Explore</a>. За несколько секунд вы можете найти и проанализировать журналы, метрики или бизнес-события. DQL не требуется!</p>
+<p>Устарело: поля <code>dt.entity.*</code></p>
+<p>Если вы видите следующее сообщение:</p>
+<p><code>The dt.entity.* fields are deprecated. Please use dt.smartscape.* fields instead.</code></p>
+<p>рекомендуем использовать эквивалентное поле <code>dt.smartscape.*</code>.</p>
+<p>Устаревшие поля <code>dt.entity.*</code> в конечном итоге будут удалены.</p>
+<p>Чтобы добавить данные в notebook:</p>
+<ol>
+<li>Откройте меню <strong>Add</strong> и выберите <strong>DQL</strong>.</li>
+</ol>
+<p>Сочетание клавиш: <strong>Shift</strong>+<strong>D</strong></p>
+<p>В notebook добавляется пустой раздел и открывается боковая панель <strong>Options</strong> справа.
+2. В поле редактирования раздела используйте <a href="https://dt-url.net/bv03yk8">Dynatrace Query Language (DQL)</a> для определения запроса.
+3. Выберите <strong>Run</strong> для выполнения DQL-запроса.</p>
+<p>Сочетание клавиш: <strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Enter</strong></p>
+<p><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> автоматически визуализирует результат.
+4. Выберите <strong>Add title</strong>, чтобы добавить заголовок к этому разделу notebook.
+5. Выберите <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations" title="Создание, редактирование и просмотр визуализаций на дашбордах и в notebooks Dynatrace.">визуализацию</a> для отображения результатов в предпочтительном формате. При необходимости настройте параметры визуализации.</p>
+<p>Автоматический выбор визуализации</p>
+<p>Чтобы Dynatrace автоматически выбирал визуализацию для вашего запроса, включите <strong>Auto select</strong> в правом верхнем углу панели настроек визуализации.</p>
+<ul>
+<li>Если вы вручную выберете другую визуализацию, переключатель <strong>Auto select</strong> отключится.</li>
+<li>Чтобы Dynatrace снова автоматически выбирал визуализацию, снова включите <strong>Auto select</strong>.</li>
+</ul>
+<h3 id="code_1">Создание раздела Code<a class="headerlink" href="#code_1" title="Permanent link">&para;</a></h3>
+<p>Чтобы добавить код для получения данных в ваш notebook с помощью функций Dynatrace:</p>
+<ol>
+<li>Откройте меню <strong>Add</strong> и выберите <strong>Code</strong>.</li>
+</ol>
+<p>Сочетание клавиш: <strong>Shift</strong>+<strong>C</strong></p>
+<p><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> создаёт раздел кода с образцом кода JavaScript в поле редактирования.
+2. Выберите <strong>Run</strong> для выполнения кода.</p>
+<p>Сочетание клавиш: <strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Enter</strong></p>
+<p><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> запускает образец кода и отображает результат: «Hello, world!»
+3. Отредактируйте раздел по необходимости.</p>
+<ul>
+<li>Для изменения кода отредактируйте его непосредственно в поле редактирования над результатом. Подробнее см. в разделе <a href="https://dt-url.net/functions-help">App functions</a>.</li>
+<li>Для настройки визуализации выберите <strong>Options</strong>. Подробнее см. в разделе <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations" title="Создание, редактирование и просмотр визуализаций на дашбордах и в notebooks Dynatrace.">Редактирование визуализаций для Notebooks и Dashboards</a>.</li>
+</ul>
+<p>Чтобы попробовать пример раздела кода:</p>
+<ol>
+<li>В вашем notebook откройте меню <strong>Add</strong>, прокрутите вниз до раздела <strong>Library</strong> и выберите любой из примеров раздела кода.</li>
+</ol>
+<p>Выбранный пример раздела кода будет добавлен в ваш notebook.
+2. Прочитайте комментарии в примере кода для получения важных подробностей.</p>
+<h3 id="markdown_1">Создание раздела Markdown<a class="headerlink" href="#markdown_1" title="Permanent link">&para;</a></h3>
+<p>Чтобы добавить аннотацию в формате Markdown в notebook:</p>
+<ol>
+<li>Откройте меню <strong>Add</strong> и выберите <strong>Markdown</strong>.</li>
+</ol>
+<p>Сочетание клавиш: <strong>Shift</strong>+<strong>M</strong>
+2. Введите текст. Используйте Markdown для форматирования текста, добавления ссылок и изображений.</p>
+<ul>
+<li>Пока вы вводите текст в поле редактирования, ваш Markdown отображается в разделе.</li>
+<li>Нажмите Ctrl+Space на пустой строке, чтобы открыть список доступных элементов Markdown.</li>
+</ul>
+<p>Вы можете использовать панель инструментов для вставки распространённых элементов, например заголовка, жирного текста или ссылки:</p>
+<p><img alt="Пример: Notebooks: редактирование раздела Markdown" src="https://dt-cdn.net/images/notebooks-markdown-edit-969-a08f9afae1.png" /></p>
+<ul>
+<li><strong>Курсив</strong>: заключите текст в одиночные звёздочки (<code>*вот так*</code>) для получения курсива <em>вот так</em>.</li>
+<li><strong>Жирный</strong>: заключите текст в двойные звёздочки (<code>**вот так**</code>) для получения жирного текста <strong>вот так</strong>.</li>
+<li><strong>Зачёркнутый</strong>: заключите текст в двойные тильды (~~вот так~~) для получения зачёркнутого текста ~~вот так~~.</li>
+<li><strong>Цитата</strong>: начните строку с <code>&gt;</code> для получения цитат, где всё до нажатия Enter будет процитировано.</li>
+<li>
+<p><strong>Код</strong>:</p>
+</li>
+<li>
+<p>Заключите текст в обратные апострофы (<code>`вот так`</code>) для получения встроенного кода <code>вот так</code>.</p>
+</li>
+<li>Заключите текст в тройные обратные апострофы (<code>```вот так```</code>) для отображения блока кода (несколько строк <code>кода</code>).</li>
+<li><strong>Заголовки</strong>: начните строку с одного или нескольких символов <code>#</code> для создания заголовков.</li>
+<li><strong>Горизонтальная линия</strong>: для визуального разделения разделов аннотации добавьте горизонтальную линию с помощью трёх дефисов (<code>---</code>).</li>
+<li><strong>Списки</strong>: каждая строка неупорядоченного (маркированного) списка начинается со звёздочки (<code>*</code>):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>* Строка 1
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>* Строка 2
+</code></pre></div>
+<p>Альтернативно можно использовать дефис (<code>-</code>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>- Строка 1
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>- Строка 2
+</code></pre></div>
+<p>Упорядоченный (нумерованный) список начинается с числа и точки (<code>1.</code>), за которыми следует пробел и текст:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>1. Первая строка моей процедуры.
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>2. Вторая строка моей процедуры.
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>3. Третья строка моей процедуры.
+</code></pre></div>
+<p>Если использовать <code>1.</code> для каждого номера строки, строки будут автоматически пронумерованы при отображении notebook.
+* <strong>Таблицы</strong>: для добавления таблицы определите заголовки, строку форматирования столбцов и затем строки данных для отображения:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>| Заголовок 1 | Заголовок 2
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>--- | ---
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>содержимое1 | содержимое2
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Заголовок 1</th>
+<th>Заголовок 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>содержимое1</td>
+<td>содержимое2</td>
+</tr>
+<tr>
+<td>* <strong>Специальные символы</strong>: вы можете использовать любые печатаемые символы, включая эмодзи.</td>
+<td></td>
+</tr>
+<tr>
+<td>* <strong>Ссылки</strong>: вы можете ссылаться на другие места в вашем notebook и за его пределами.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Ссылка в Markdown имеет форму <code>[метка](адрес)</code>, где:</p>
+<ul>
+<li><code>метка</code> — произвольный текст для отображения на ссылке в вашем Markdown-блоке или разделе</li>
+<li><code>адрес</code> указывает, что нужно открыть при выборе ссылки, например веб-сайт или приложение Dynatrace</li>
+<li><strong>Изображения</strong>: для ссылки на изображение используйте следующий формат:</li>
+</ul>
+<p><code>![альтернативный текст](https://www.example.com/имя-файла.jpg)</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Вот некоторые из людей, основавших [Dynatrace](https://www.dynatrace.com).
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>![Основатели Dynatrace](https://dt-cdn.net/images/original-dynatrace-team-1500-7334dbe9a8.jpg)
+</code></pre></div>
+<h3 id="_10">Начало с фрагмента<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>Несколько фрагментов данных и кода доступны из коробки. Используйте предопределённые DQL или фрагменты кода для быстрого начала аналитики данных.</p>
+<p>Чтобы начать работу на основе фрагмента:</p>
+<ol>
+<li>В notebook выберите <strong>Add</strong>.</li>
+</ol>
+<p>Сочетание клавиш: <strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Shift</strong>+<strong>Enter</strong>
+2. Прокрутите вниз до раздела <strong>Start with a snippet</strong> и выберите один из фрагментов. Например, выберите фрагмент <strong>Fetch logs</strong>, который отображается на панели предварительного просмотра.
+3. При выборе фрагмента создаётся раздел notebook для этого фрагмента.
+4. Отредактируйте запрос или код (в зависимости от выбранного типа фрагмента) и настройки визуализации по необходимости.
+5. Выберите <strong>Run</strong> для просмотра результатов.</p>
+<p>Сочетание клавиш: <strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Enter</strong></p>
+<p>Список доступных фрагментов велик и постоянно растёт. Создайте новый notebook и попробуйте их.</p>
+<p>Когда вы найдёте что-то интересное:</p>
+<ul>
+<li>Изучите это, чтобы понять, как это работает</li>
+<li>Посмотрите, можно ли адаптировать это для ваших целей</li>
+</ul>
+<h2 id="_11">Редактирование раздела<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="_12">Отмена и повтор действий<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>Вы можете быстро отменять или повторять редактирование notebook.</p>
+<ul>
+<li>Элементы управления (<strong>Undo</strong>) и (<strong>Redo</strong>) отображаются в верхнем левом углу вашего notebook после внесения изменений.</li>
+<li>При желании можно использовать сочетания клавиш.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Отменить</strong></th>
+<th><strong>Повторить</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td><strong>Ctrl+Z</strong></td>
+<td><strong>Ctrl+Shift+Z</strong></td>
+</tr>
+<tr>
+<td>Mac</td>
+<td><strong>Cmd+Z</strong></td>
+<td><strong>Cmd+Shift+Z</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Количество отменяемых действий может быть ограничено в зависимости от размера вашего notebook.</p>
+<h3 id="_13">Элементы управления редактированием раздела<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>Чтобы увидеть команды редактирования раздела, выберите раздел. Если у вас есть разрешение на редактирование, команды редактирования отображаются.</p>
+<ul>
+<li>Здесь нажимают для перетаскивания выбранного раздела на другую позицию.</li>
+<li><strong>Run</strong> запускает ваш запрос. Сочетание клавиш: <strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Enter</strong></li>
+<li>задаёт сегмент.</li>
+<li>отображает параметры временного диапазона.</li>
+<li>и уменьшают и увеличивают временной диапазон.</li>
+<li>и скрывают и показывают ввод.</li>
+<li>открывает панель параметров, где можно выбрать и настроить <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations" title="Создание, редактирование и просмотр визуализаций на дашбордах и в notebooks Dynatrace.">визуализацию</a>.</li>
+<li>
+<p>открывает меню дополнительных параметров:</p>
+</li>
+<li>
+<p><strong>Copy section</strong> копирует выбранный раздел в буфер обмена.</p>
+</li>
+<li><strong>Duplicate section</strong> создаёт копию выбранного раздела.</li>
+<li><strong>Create DQL section</strong> создаёт раздел DQL из выбранного раздела <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data" title="Исследуйте данные с помощью интерфейса «укажи и нажми».">Explore</a>.</li>
+<li><strong>Move section up</strong> и <strong>Move section down</strong> перемещают раздел вверх или вниз на одну строку.
+    Альтернатива: используйте для перетаскивания раздела на новую позицию.</li>
+<li><strong>Clear result</strong> очищает результат. Выберите <strong>Run</strong> (или Ctrl+Enter) снова для получения новых результатов.</li>
+<li><strong>Delete section</strong> удаляет раздел из notebook.</li>
+<li><strong>Explain query</strong> отображает сгенерированное ИИ резюме запроса.</li>
+<li><strong>Dynatrace Query Language</strong> открывает документацию DQL.</li>
+<li><strong>Copy query link</strong> копирует ссылку в буфер обмена. Если открыть ссылку в браузере, запрос будет открыт в новом или существующем notebook.</li>
+<li><strong>Download result</strong> загружает (экспортирует) результат текущего раздела notebook.</li>
+<li><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Add to dashboard</strong> открывает выбранный раздел в дашборде.</li>
+<li><strong>Open with</strong> открывает раздел в другом документе. Подробнее см. в разделе <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation" title="Детализация из Dashboards и Notebooks с помощью ссылок на основе намерений или URL.">Детализация и навигация</a>.</li>
+</ul>
+<p>Вы можете выбрать несколько разделов и затем применить одну команду ко всем сразу. Подробнее см. в разделе <a href="#edit-manage-multiple-sections">Управление несколькими разделами</a>.</p>
+<h3 id="_14">Панели редактирования разделов<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>Доступные параметры редактирования зависят от типа редактируемого раздела.</p>
+<ul>
+<li>Раздел Prompt: введите подсказку в поле редактирования и выберите <strong>Run</strong> (или Ctrl+Enter) для получения ответа.</li>
+</ul>
+<p><img alt="Редактирование раздела генеративного ИИ в приложении Notebooks." src="https://dt-cdn.net/images/notebooks-dynatrace-intelligence-prompt-edit-2262-06425469c6.png" />
+* Раздел Explore data: эти разделы — отличный способ быстро получить результаты. Подробнее о разделах Explore см. в разделе <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data" title="Исследуйте данные с помощью интерфейса «укажи и нажми».">Explore data</a>.
+* Раздел DQL</p>
+<p><img alt="Пример: Notebooks: редактирование раздела DQL" src="https://dt-cdn.net/images/notebooks-dql-edit-1156-a4d71cda36.png" />
+* Раздел Code</p>
+<p><img alt="Пример: Notebooks: редактирование раздела Code" src="https://dt-cdn.net/images/notebooks-code-edit-1151-83a2b34c65.png" />
+* Раздел Markdown</p>
+<p><img alt="Пример: Notebooks: редактирование раздела Markdown" src="https://dt-cdn.net/images/notebooks-markdown-edit-969-a08f9afae1.png" /></p>
+<h3 id="_15">Выбор сегментов раздела<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>Для фильтрации данных раздела можно указать <a href="/docs/manage/segments" title="Используйте сегменты для логической структуризации и удобной фильтрации данных наблюдаемости в приложениях.">сегменты</a> для раздела.</p>
+<ol>
+<li>В панели действий для этого раздела выберите и в <strong>Filter by segments</strong> выберите сегмент.</li>
+<li>Если сегмент требует дополнительного выбора значения, выберите его сейчас.</li>
+<li>Чтобы добавить другой сегмент, выберите <strong>Segment</strong>. Повторите этот шаг для каждого сегмента, который вы хотите добавить для выбранного раздела notebook.</li>
+<li>
+<p>Выберите <strong>Apply</strong> для применения выбора.</p>
+</li>
+<li>
+<p>Селектор сегментов для этого раздела теперь отображает имя выбранного сегмента или, если выбрано несколько сегментов, их количество.</p>
+</li>
+<li>Чтобы изменить выбор сегмента, снова выберите, внесите изменения и выберите <strong>Apply</strong>.</li>
+<li>Для управления сегментами в целом (просмотр списка, создание, просмотр, редактирование, удаление) выберите и затем выберите ссылку <strong>Manage segments</strong>.</li>
+</ol>
+<h3 id="_16">Настройка параметров раздела<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>Чтобы открыть панель <strong>Options</strong> (где можно выбрать и настроить <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations" title="Создание, редактирование и просмотр визуализаций на дашбордах и в notebooks Dynatrace.">визуализацию</a> для вашего раздела):</p>
+<ol>
+<li>Выберите раздел.</li>
+<li>Выберите <strong>Options</strong>.</li>
+</ol>
+<h2 id="_17">Управление разделами<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<h3 id="_18">Отмена и повтор действий<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p>Вы можете быстро отменять или повторять редактирование notebook.</p>
+<ul>
+<li>Элементы управления (<strong>Undo</strong>) и (<strong>Redo</strong>) отображаются в верхнем левом углу вашего notebook после внесения изменений.</li>
+<li>При желании можно использовать сочетания клавиш.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Отменить</strong></th>
+<th><strong>Повторить</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td><strong>Ctrl+Z</strong></td>
+<td><strong>Ctrl+Shift+Z</strong></td>
+</tr>
+<tr>
+<td>Mac</td>
+<td><strong>Cmd+Z</strong></td>
+<td><strong>Cmd+Shift+Z</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Количество отменяемых действий может быть ограничено в зависимости от размера вашего notebook.</p>
+<h3 id="_19">Перемещение раздела<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p>Чтобы переместить раздел вверх или вниз в вашем notebook:</p>
+<ol>
+<li>Выберите раздел.</li>
+<li>Выберите и перетащите раздел на новое место в notebook.</li>
+</ol>
+<p>Альтернативный метод:</p>
+<ol>
+<li>Выберите раздел.</li>
+<li>Выберите &gt; <strong>Move section up</strong> или <strong>Move section down</strong>.</li>
+</ol>
+<p>Сочетание клавиш: <strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Alt</strong>+ или <strong>Ctrl</strong>/<strong>Cmd</strong>+<strong>Alt</strong>+</p>
+<h3 id="_20">Копирование и вставка разделов<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<p>Вы можете копировать и вставлять разделы в тот же notebook или другой notebook.</p>
+<p>Простой способ начать новый notebook — скопировать многократно используемые разделы из существующих notebooks в новый notebook, а затем редактировать скопированные разделы.</p>
+<p>Чтобы скопировать и вставить один или несколько разделов:</p>
+<ol>
+<li>Щёлкните на разделе для его выбора.</li>
+<li>
+<p>Вы можете выбрать несколько разделов и скопировать их все сразу.</p>
+</li>
+<li>
+<p><strong>Shift</strong>+<strong>Click</strong> — выбирает один или несколько последовательных разделов</p>
+</li>
+<li><strong>Ctrl/Cmd</strong>+<strong>Click</strong> — выбирает один или несколько непоследовательных разделов</li>
+<li><strong>Ctrl/Cmd</strong>+<strong>A</strong> — выбирает все разделы</li>
+</ol>
+<p>Каждый выбранный раздел выделяется.
+3. Нажмите <strong>Ctrl/Cmd</strong>+<strong>C</strong> для копирования выбранных разделов в буфер обмена.</p>
+<p>Альтернатива через меню: на панели команд раздела выберите <strong>Copy section</strong>.
+4. Нажмите <strong>Ctrl/Cmd</strong>+<strong>V</strong> для вставки скопированных разделов.</p>
+<ul>
+<li>Вставка скопированных разделов в текущий notebook равнозначна команде меню &gt; <strong>Duplicate section</strong>.</li>
+<li>Для вставки скопированных разделов в другой notebook переключитесь на другой notebook (или выберите <strong>Notebook</strong> для создания пустого notebook), а затем вставьте (<strong>Ctrl/Cmd</strong>+<strong>V</strong>) туда скопированные разделы.</li>
+<li>Для перемещения скопированных разделов на новые позиции выберите и перетащите их по необходимости.</li>
+</ul>
+<p>Вы можете выбрать и перетащить один или несколько разделов одновременно.</p>
+<ul>
+<li><strong>Shift</strong>+<strong>Click</strong> — выбирает один или несколько последовательных разделов</li>
+<li><strong>Ctrl/Cmd</strong>+<strong>Click</strong> — выбирает один или несколько непоследовательных разделов</li>
+<li>Элемент управления отображается на последнем выбранном разделе</li>
+</ul>
+<h3 id="_21">Удаление раздела<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<p>Чтобы удалить раздел из вашего notebook:</p>
+<ol>
+<li>Выберите раздел.</li>
+<li>Выберите &gt; <strong>Delete section</strong>.</li>
+</ol>
+<p>Сочетание клавиш: <strong>Del</strong></p>
+<h3 id="_22">Копирование ссылки на раздел<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<p>Чтобы скопировать ссылку на раздел:</p>
+<ol>
+<li>Выберите раздел.</li>
+<li>Выберите &gt; <strong>Copy [тип раздела] link</strong>.</li>
+</ol>
+<h3 id="_23">Загрузка результатов раздела<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<p>Чтобы загрузить (экспортировать) результат текущего плитки дашборда или раздела notebook в локальный файл:</p>
+<ol>
+<li>Выберите плитку или раздел.</li>
+<li>На панели команд откройте меню и выберите <strong>Download result</strong> &gt; [формат].</li>
+</ol>
+<p>Доступные форматы зависят от визуализации.</p>
+<ul>
+<li><strong>CSV</strong>: результат загружается в локальный файл с разделителями-запятыми (*.csv). Этот вариант включает форматирование таблиц, например видимые столбцы и форматирование единиц измерения.</li>
+<li><strong>CSV (raw)</strong>: результат загружается в локальный файл с разделителями-запятыми (*.csv). Этот вариант включает полные неформатированные данные.</li>
+<li><strong>JSON</strong>: результат загружается в локальный JSON-файл (*.json).</li>
+</ul>
+<p>Некоторые визуализации не предлагают возможности загрузки результата.</p>
+<h4 id="csv-excel">Возможная проблема при импорте CSV в Excel<a class="headerlink" href="#csv-excel" title="Permanent link">&para;</a></h4>
+<p>При экспорте результатов в CSV-файл — будь то <strong>CSV</strong> или <strong>CSV (raw)</strong> — с разрывами строк в любом столбце/поле результата, и последующем открытии файла в Microsoft Excel или попытке преобразовать файл в таблицу с помощью параметра Excel <strong>Data</strong> &gt; <strong>Text to Columns</strong>, вы можете столкнуться с проблемой некорректного отображения разрывов строк в Excel. Это вызвано ограничением Excel.</p>
+<p>Чтобы избежать этой проблемы, используйте параметр Excel <strong>Data</strong> &gt; <strong>From Text/CSV</strong>.</p>
+<h3 id="notebook_6">Редактирование notebook только для чтения<a class="headerlink" href="#notebook_6" title="Permanent link">&para;</a></h3>
+<p>Когда вы открываете документ (дашборд или notebook), для которого у вас нет разрешения на запись, вы всё равно можете редактировать документ в течение сессии. По окончании у вас есть два варианта:</p>
+<ul>
+<li>Сохранить изменения в новом документе</li>
+<li>Отменить изменения</li>
+</ul>
+<p>Пример:</p>
+<ol>
+<li>Перейдите в <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>, откройте список готовых notebooks и выберите notebook <strong>Getting started</strong>.</li>
+</ol>
+<p>В верхнем левом углу рядом с именем документа указано <strong>Ready-made</strong>.
+2. Выберите раздел с линейным графиком, а затем выберите <strong>Options</strong>.
+3. Измените визуализацию с Line на Area.</p>
+<p>Теперь вам предлагаются две кнопки: <strong>Save as new</strong> и <strong>Discard changes</strong>.
+4. Используйте обновлённый notebook по необходимости. У вас есть полный доступ для редактирования в течение этой сессии.
+5. По окончании выберите действие с вашими изменениями:</p>
+<ul>
+<li><strong>Save as new</strong> — сохраняет ваши изменения в новой копии отредактированного notebook.</li>
+<li><strong>Discard changes</strong> — отменяет ваши изменения и возвращает вас к неотредактированному notebook только для чтения.</li>
+</ul>
+<h3 id="_24">Управление несколькими разделами<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p>Вы можете выбрать несколько разделов и затем применить одну команду ко всем сразу.</p>
+<ul>
+<li><strong>Shift</strong>+<strong>Click</strong> — выбирает один или несколько последовательных разделов</li>
+<li><strong>Ctrl/Cmd</strong>+<strong>Click</strong> — выбирает один или несколько непоследовательных разделов</li>
+<li><strong>Ctrl/Cmd</strong>+<strong>A</strong> — выбирает все разделы</li>
+</ul>
+<p>Меню <strong>x разделов</strong> в правом верхнем углу notebook предлагает команды, применяемые ко всем разделам:</p>
+<ul>
+<li><strong>Select all</strong> выбирает все разделы в notebook.</li>
+<li><strong>Run all</strong> запускает все разделы в notebook.</li>
+</ul>
+<p>При выборе нескольких разделов доступные команды включают:</p>
+<ul>
+<li>Здесь нажимают для перетаскивания выбранных разделов на другую позицию.</li>
+<li><strong>Run x</strong> запускает все выбранные разделы.</li>
+<li>устанавливают сегменты для всех выбранных разделов.</li>
+<li>задаёт временной диапазон для всех выбранных разделов.</li>
+<li>и скрывают и показывают ввод для всех выбранных разделов.</li>
+<li>
+<p>открывает меню дополнительных параметров:</p>
+</li>
+<li>
+<p><strong>Duplicate sections</strong> создаёт копию выбранных разделов.</p>
+</li>
+<li><strong>Clear results</strong> очищает результаты выбранных разделов. Выберите <strong>Run</strong> снова для получения новых результатов.</li>
+<li><strong>Delete sections</strong> удаляет выбранные разделы из notebook.</li>
+<li><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Add to dashboard</strong> открывает выбранные разделы в дашборде.</li>
+<li><strong>Open with</strong> открывает выбранные разделы в другом документе. Подробнее см. в разделе <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation" title="Детализация из Dashboards и Notebooks с помощью ссылок на основе намерений или URL.">Детализация и навигация</a>.</li>
+</ul>
+<h2 id="_25">Запуск раздела<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h2>
+<h3 id="_26">Запуск кода<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<p>Чтобы запустить раздел кода:</p>
+<ol>
+<li>Выберите раздел.</li>
+<li>Выберите <strong>Run</strong>.</li>
+</ol>
+<p>После запуска раздела кода вы можете очистить результаты кода:</p>
+<ol>
+<li>Выберите раздел.</li>
+<li>Выберите &gt; <strong>Clear result</strong>.</li>
+</ol>
+<h3 id="_27">Показать/скрыть код<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<p>Чтобы отобразить код в разделе кода:</p>
+<ol>
+<li>Выберите раздел.</li>
+<li>Выберите <strong>Show code</strong>.</li>
+</ol>
+<p>Код отображается на панели над разделом.</p>
+<p>Чтобы снова скрыть панель кода, выберите <strong>Hide code</strong>.</p>
+<h3 id="_28">Запуск запроса<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<p>Чтобы запустить раздел запроса:</p>
+<ol>
+<li>Выберите раздел.</li>
+<li>Выберите <strong>Run</strong>.</li>
+</ol>
+<p>После запуска раздела запроса вы можете очистить результаты запроса:</p>
+<ol>
+<li>Выберите раздел.</li>
+<li>Выберите &gt; <strong>Clear result</strong>.</li>
+</ol>
+<h3 id="_29">Показать/скрыть запрос<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h3>
+<p>Чтобы отобразить запрос в разделе запроса:</p>
+<ol>
+<li>Выберите раздел.</li>
+<li>Выберите <strong>Show query</strong>.</li>
+</ol>
+<p>Запрос отображается на панели над разделом.</p>
+<p>Чтобы снова скрыть панель запроса, выберите <strong>Hide query</strong>.</p>
+<h2 id="_30">Совместный доступ<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h2>
+<h3 id="notebook_7">Предоставление доступа к notebook<a class="headerlink" href="#notebook_7" title="Permanent link">&para;</a></h3>
+<p>Если вы владеете дашбордом или notebook, вы можете предоставить к нему доступ.</p>
+<p>Существует три способа поделиться документом с другими пользователями Dynatrace в вашей компании:</p>
+<ul>
+<li><strong>Доступ для всех (только для просмотра)</strong>: предоставить доступ только для просмотра всем пользователям в вашей среде Dynatrace.</li>
+<li><strong>Совместный доступ</strong>: создать и поддерживать список пользователей и групп пользователей с доступом к документу.</li>
+<li><strong>Ссылки для совместного доступа</strong>: создать ссылки (URL), указывающие на ваш документ, и распространять их по выбранным каналам (например, по электронной почте).</li>
+</ul>
+<p>Эти методы не являются взаимоисключающими. Например, вы можете поддерживать целевой список пользователей для постоянного доступа к документу (возможно, все в определённой группе регулярно редактируют документ) и создавать и распространять ссылки только для просмотра для более широкой аудитории по мере необходимости.</p>
+<p>В любом случае вы контролируете, могут ли люди редактировать документ или только просматривать его.</p>
+<p>Подробнее о совместном использовании документов см. в разделе <a href="/docs/discover-dynatrace/get-started/dynatrace-ui/share" title="Делитесь документами Dynatrace (дашбордами, notebooks и панелями запуска) с другими пользователями Dynatrace в вашей компании.">Совместное использование документов</a>.</p>
+<p>Вы также можете экспортировать notebook в JSON-файл и отправить JSON другим пользователям, которые смогут его импортировать.</p>
+<h3 id="notebook_8">Экспорт notebook<a class="headerlink" href="#notebook_8" title="Permanent link">&para;</a></h3>
+<p>Чтобы экспортировать notebook:</p>
+<ol>
+<li>В верхней части notebook откройте меню рядом с именем notebook.</li>
+<li>Выберите <strong>Download</strong> из меню.</li>
+</ol>
+<p>Альтернативно можно выполнить то же действие в разделе <strong>Last opened by you</strong> на боковой панели. Выберите &gt; <strong>Export as JSON</strong>.</p>
+<h3 id="notebook_9">Импорт notebook<a class="headerlink" href="#notebook_9" title="Permanent link">&para;</a></h3>
+<p>Чтобы импортировать notebook из JSON-файла:</p>
+<ol>
+<li>Выберите <strong>All notebooks</strong> в боковой панели документов.</li>
+<li>В верхнем левом углу страницы выберите <strong>Upload</strong>.
+   Открывается окно браузера файлов.</li>
+<li>Найдите и откройте JSON-файл определения notebook.</li>
+</ol>
+<p>Определение импортируется как новый notebook и отображается на странице <strong>Notebooks</strong> с датой и временем импорта в поле <strong>Last modified</strong>.</p>
+<h3 id="notebook_10">Изменение владельца notebook<a class="headerlink" href="#notebook_10" title="Permanent link">&para;</a></h3>
+<p>Когда вы создаёте документ (дашборд или notebook), вы являетесь его владельцем. Чтобы передать владение документом другому пользователю Dynatrace:</p>
+<ol>
+<li>Откройте меню документа и выберите <strong>Change owner</strong>.</li>
+<li>Найдите и выберите нового владельца, а затем выберите <strong>Change owner</strong>.</li>
+</ol>
+<p>При изменении владельца документа вы немедленно теряете к нему доступ.</p>
+<ul>
+<li>Убедитесь, что готовы передать владение, прежде чем выбирать эту команду.</li>
+<li>Вы сможете снова получить доступ к документу только если новый владелец предоставит вам разрешение.</li>
+<li>После завершения передачи новый владелец получит электронное письмо о передаче владения документом.</li>
+</ul>
+<h3 id="pdf">Печать или экспорт в PDF<a class="headerlink" href="#pdf" title="Permanent link">&para;</a></h3>
+<p>Чтобы распечатать notebook или экспортировать его в PDF:</p>
+<ol>
+<li>Откройте ваш notebook.</li>
+<li>Необязательно Подготовьте разделы notebook к печати.</li>
+</ol>
+<p>Например:</p>
+<ul>
+<li>Выберите <strong>Run</strong> для получения последних результатов перед печатью</li>
+<li>Выберите <strong>Hide input</strong> для скрытия запроса раздела и отображения только результата</li>
+<li>Задайте <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations" title="Создание, редактирование и просмотр визуализаций на дашбордах и в notebooks Dynatrace.">параметры визуализации</a>, например скрытие конфиденциальных или нерелевантных столбцов таблицы, которые не нужно печатать и распространять</li>
+<li>В меню notebook выберите <strong>Print view</strong>.</li>
+</ul>
+<p><img alt="Открыть меню notebook из текущего notebook" src="https://dt-cdn.net/images/notebook-menu-from-notebook-411-119580207f.png" /></p>
+<p>Отображается версия notebook для печати на странице <strong>Print preview</strong> с настройками печати вверху.
+4. Выберите размер страницы (<code>A4</code> или <code>US Letter</code>) и ориентацию (<code>Portrait</code> или <code>Landscape</code>), а затем выберите <strong>Print</strong>.</p>
+<p>Notebook отображается в окне параметров печати. Каждый раздел notebook печатается на новой странице.
+5. При необходимости задайте дополнительные параметры печати, а затем выберите <strong>Save</strong> или <strong>Print</strong> (в зависимости от назначения печати) для завершения.</p>
+<h4 id="_31">Известные ограничения печати<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h4>
+<ul>
+<li>При печати в режиме <code>Landscape</code> таблица может перекрывать следующий раздел.</li>
+<li>Когда Dynatrace находится в тёмном режиме, при печати notebook используются цветовые схемы тёмного режима. Чтобы избежать этого, вы можете временно переключить Dynatrace в светлый режим: в пользовательском меню Dynatrace (в нижнем левом углу) выберите <strong>Appearance</strong> &gt; <strong>Light</strong>.</li>
+</ul>
+<h2 id="_32">Анализ данных<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h2>
+<h3 id="_33">Анализ данных с помощью ИИ<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
+<p>Чтобы анализировать данные с помощью Data Analyzers Dynatrace Intelligence:</p>
+<ol>
+<li>Исследуйте временной ряд.</li>
+</ol>
+<p>Пример</p>
+<p>В вашем документе (дашборде или notebook):</p>
+<ol>
+<li>
+<p>Выберите для добавления нового раздела или плитки, а затем выберите <strong>Metrics</strong> для изучения метрик.</p>
+<p><img alt="Пример: выбор Add &gt; Metrics" src="https://dt-cdn.net/images/example-select-explore-metrics-637-025cadac69.png" />
+   2. В поле <strong>Select metric</strong> выберите <strong>Infrastructure</strong> &gt; <strong>CPU</strong> &gt; <strong>CPU usage %</strong>.</p>
+<p><img alt="Пример: выбор метрики &quot;CPU usage %&quot;" src="https://dt-cdn.net/images/example-select-metric-cpu-usage-percent-771-a672aa20e2.png" />
+   3. Задайте <strong>Split by</strong> равным <code>host.name</code>.</p>
+<p><img alt="Пример: задать &quot;Split by&quot; равным host.name" src="https://dt-cdn.net/images/example-select-host-name-743-5bd89ea6a3.png" />
+   4. Задайте <strong>Limit</strong> равным максимальному количеству рядов для анализа. Data Analyzer Dynatrace Intelligence в настоящее время поддерживает анализ до 1000 рядов.</p>
+</li>
+</ol>
+<p>Вы должны получить что-то подобное:</p>
+<p><img alt="Пример: полный запрос" src="https://dt-cdn.net/images/example-complete-query-737-dfa24f730d.png" />
+2. Запустите запрос.
+3. На панели параметров справа прокрутите вниз и разверните <strong>Davis AI</strong>.</p>
+<p>Показать</p>
+<p><img alt="Пример выбора настроек Analyze and alert в приложении Dashboards." src="https://dt-cdn.net/images/dashboards-select-analyze-and-alert-settings-746-7155ef9415.png" /></p>
+<p><img alt="Начальная панель настроек Analyze and alert в приложении Dashboards." src="https://dt-cdn.net/images/dashboards-analyze-and-alert-details-746-8d503491c8.png" />
+4. На панели <strong>Davis AI</strong> задайте <strong>Analyzers</strong> для используемого анализатора и настройте его.</p>
+<ul>
+<li>Обзор обнаружения аномалий см. в разделе <a href="/docs/dynatrace-intelligence/anomaly-detection" title="Как Dynatrace обнаруживает аномалии в вашей среде.">Обнаружение аномалий</a></li>
+<li>
+<p>Подробности о настройках обнаружения аномалий см. в разделе <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer" title="Как настроить оповещение об отсутствующих измерениях.">Конфигурация обнаружения аномалий</a></p>
+</li>
+<li>
+<p>Подробности о настройках анализатора прогнозирования см. в разделе <a href="/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis" title="Узнайте, как предсказательный ИИ Dynatrace Intelligence генерирует прогнозы.">Предсказательный ИИ-анализ Dynatrace Intelligence</a></p>
+</li>
+</ul>
+<p>Обнаружение аномалий: обнаружение аномалий с автоадаптивным порогом</p>
+<ul>
+<li><strong>Number of signal fluctuations</strong> — количество добавлений колебания сигнала к базовой линии для формирования фактического порога для оповещения.</li>
+<li><strong>Alert condition</strong> — зависит от того, хотите ли вы знать, когда метрика превышает, опускается ниже или выходит за пределы (выше или ниже) нормального диапазона.</li>
+</ul>
+<p>Подробности см. в разделе <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer" title="Как настроить оповещение об отсутствующих измерениях.">Конфигурация обнаружения аномалий</a>.</p>
+<p>Обнаружение аномалий: обнаружение аномалий с сезонной базовой линией</p>
+<ul>
+<li><strong>Tolerance</strong> — чем выше допуск, тем шире полоса доверия, что приводит к меньшему количеству вызванных событий.</li>
+<li><strong>Alert condition</strong> — зависит от того, хотите ли вы знать, когда метрика превышает, опускается ниже или выходит за пределы (выше или ниже) нормального диапазона.</li>
+</ul>
+<p>Подробности см. в разделе <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer" title="Как настроить оповещение об отсутствующих измерениях.">Конфигурация обнаружения аномалий</a>.</p>
+<p>Обнаружение аномалий: обнаружение аномалий со статическим порогом</p>
+<ul>
+<li><strong>Threshold</strong> — жёсткий предел, который метрика не должна нарушать.</li>
+<li><strong>Unit</strong> — единица измерения значения.</li>
+<li><strong>Alert condition</strong> — зависит от того, хотите ли вы знать, когда метрика превышает или опускается ниже порогового значения.</li>
+<li><strong>Suggest threshold</strong> — Davis AI может помочь вам найти правильный порог на основе исторических данных.</li>
+</ul>
+<p>Подробности см. в разделе <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer" title="Как настроить оповещение об отсутствующих измерениях.">Конфигурация обнаружения аномалий</a>.</p>
+<p>Прогнозирование: Forecast</p>
+<ul>
+<li><strong>Data points to predict</strong> — общее количество шагов прогнозирования временного ряда. Большее число шагов обычно приводит к менее надёжным прогнозам и более длительному времени работы анализатора.</li>
+<li><strong>Forecast offset</strong> — смещение для начала прогноза. Например, если смещение установлено равным <code>2</code>, последние две точки данных игнорируются, и для них также возвращается прогноз.</li>
+</ul>
+<p>Подробности см. в разделе <a href="/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis" title="Узнайте, как предсказательный ИИ Dynatrace Intelligence генерирует прогнозы.">Предсказательный ИИ-анализ Dynatrace Intelligence</a>.</p>
+<p>Расширенные настройки (для обнаружения аномалий)</p>
+<p>Вы можете использовать значения по умолчанию или включить <strong>Show advanced properties</strong> для тонкой настройки этих параметров.</p>
+<ul>
+<li><strong>Alert on missing data</strong> — оповещать, если данные не обнаружены в скользящем окне.</li>
+<li><strong>Violating samples</strong> — количество выборок в скользящем окне, которые должны нарушить условие для срабатывания события.</li>
+<li><strong>Sliding window</strong> — количество выборок, образующих скользящее окно.</li>
+<li><strong>Dealerting samples</strong> — количество выборок в скользящем окне, которые должны вернуться к норме для закрытия события.</li>
+<li>По умолчанию анализатор не включён. Чтобы включить его, переключите переключатель в верхней части панели редактирования (с <strong>AI data analysis is not active</strong> на <strong>AI data analysis is active</strong>).</li>
+<li>Для просмотра результатов выберите визуализацию <strong>Davis AI analysis</strong> и разверните раздел <strong>Davis AI analysis chart</strong> для просмотра или изменения настроек визуализации:</li>
+</ul>
+<p>Показать</p>
+<p><img alt="Пример выбора визуализации &quot;AI analysis&quot; и отображения настроек визуализации в приложении Notebooks." src="https://dt-cdn.net/images/notebooks-ai-analysis-visualizations-757-4cf3f48b3c.png" /></p>
+<p>Визуализация <strong>Davis AI analysis</strong> состоит из двух разделов: диаграммы и визуализации. Вы можете использовать настройку <strong>Visible sections</strong> для отображения одного или обоих из них.</p>
+<ul>
+<li><strong>All</strong> — показать диаграмму и таблицу. Диаграмма отражает выбор в таблице.</li>
+<li><strong>Table</strong> — показать только таблицу. Вы можете сортировать столбцы, отображающие значок сортировки в заголовке. Выберите заголовок столбца для переключения порядка сортировки вверх или вниз.</li>
+<li><strong>Chart</strong> — показать только диаграмму. Используйте таблицу для выбора записей, которые хотите отобразить на диаграмме.</li>
+</ul>
+<h4 id="cpu">Пример: аномальное использование CPU в процентах<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h4>
+<p>Чтобы обнаружить превышение 70% использования CPU в вашем документе (дашборде или notebook):</p>
+<ol>
+<li>Выберите для добавления нового раздела или плитки, а затем выберите <strong>Metrics</strong> для изучения метрик.</li>
+</ol>
+<p>Показать</p>
+<p><img alt="Пример: выбор Add &gt; Metrics" src="https://dt-cdn.net/images/example-select-explore-metrics-637-025cadac69.png" />
+2. В поле <strong>Select metric</strong> выберите <strong>Infrastructure</strong> &gt; <strong>CPU</strong> &gt; <strong>CPU usage %</strong>.</p>
+<p>Показать</p>
+<p><img alt="Пример: выбор метрики &quot;CPU usage %&quot;" src="https://dt-cdn.net/images/example-select-metric-cpu-usage-percent-771-a672aa20e2.png" />
+3. Задайте <strong>Split by</strong> равным <code>host.name</code>.</p>
+<p>Показать</p>
+<p><img alt="Пример: задать &quot;Split by&quot; равным host.name" src="https://dt-cdn.net/images/example-select-host-name-743-5bd89ea6a3.png" />
+4. Задайте <strong>Limit</strong> равным максимальному количеству рядов для анализа. Анализатор Davis в настоящее время поддерживает анализ до 1000 рядов.</p>
+<p>Показать</p>
+<p><img alt="Пример: полный запрос" src="https://dt-cdn.net/images/example-complete-query-737-dfa24f730d.png" />
+5. Выберите <strong>Run</strong>.
+6. На панели редактирования разверните <strong>Davis AI</strong>.</p>
+<p>Показать</p>
+<p><img alt="Пример выбора настроек Analyze and alert в приложении Dashboards." src="https://dt-cdn.net/images/dashboards-select-analyze-and-alert-settings-746-7155ef9415.png" /></p>
+<p><img alt="Начальная панель настроек Analyze and alert в приложении Dashboards." src="https://dt-cdn.net/images/dashboards-analyze-and-alert-details-746-8d503491c8.png" />
+7. В списке <strong>Analyzers</strong> выберите <strong>Static threshold anomaly detection</strong>.</p>
+<p>Показать</p>
+<p><img alt="Выбор анализатора &quot;Static threshold anomaly detection&quot; в настройках Analyze and alert приложения Dashboards." src="https://dt-cdn.net/images/dashboards-analyze-and-alert-select-static-threshold-anomaly-detection-752-45026264f0.png" />
+8. Задайте <strong>Threshold</strong> равным <code>70</code> (введите значение) и <strong>Alert condition</strong> равным <strong>Alert if metric is above</strong> (по умолчанию).</p>
+<p>Показать</p>
+<p><img alt="Настройка параметров анализатора &quot;Static threshold anomaly detection&quot; в приложении Dashboards." src="https://dt-cdn.net/images/dashboards-static-threshold-anomaly-detection-settings-748-4d20c8220e.png" />
+9. Активируйте анализатор: в верхней части панели редактирования переключите с <strong>AI data analysis is not active</strong> на <strong>AI data analysis is active</strong>.
+10. Для просмотра результатов выберите визуализацию <strong>Davis AI analysis</strong>. Разверните раздел <strong>Davis AI analysis chart</strong> для просмотра настроек визуализации.</p>
+<div class="highlight"><pre><span></span><code>Показать
+
+![Пример выбора визуализации &quot;AI analysis&quot; и отображения настроек визуализации в приложении Notebooks.](https://dt-cdn.net/images/notebooks-ai-analysis-visualizations-757-4cf3f48b3c.png)
+</code></pre></div>
+<ol>
+<li>В разделе <strong>Davis AI analysis chart</strong> задайте <strong>Visible sections</strong> равным <strong>All</strong>.</li>
+<li>
+<p>Проверьте результаты.</p>
+<p>В этом примере мы выбрали хосты, превысившие порог.</p>
+<ul>
+<li>Диаграмма показывает линию для выбранной метрики (<code>CPU usage %</code>) для каждого выбранного хоста.</li>
+<li>Красная полоса в верхней части визуализации показывает, где порог для этой метрики был превышен.</li>
+<li>В таблице под диаграммой выбраны эти хосты.</li>
+</ul>
+<p><img alt="Пример результатов анализатора с визуализацией &quot;AI analysis&quot; в приложении Notebooks." src="https://dt-cdn.net/images/notebooks-ai-analysis-chart-1920-5ac0e1f854.png" /></p>
+</li>
+</ol>
+<h3 id="_34">Запуск прогнозного анализа<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
+<p>Из вашего notebook вы можете запустить прогнозный анализ ряда на базе Dynatrace Intelligence.</p>
+<p>В этом примере выполняется следующий запрос:</p>
+<p><code>timeseries avg(dt.host.cpu.usage), by:{ dt.entity.host }</code></p>
+<p>и затем запускается прогноз для временного ряда, выбранного в результатах.</p>
+<ol>
+<li>В notebook выберите &gt; <strong>DQL</strong>.</li>
+<li>Введите запрос, например <code>timeseries avg(dt.host.cpu.usage), by:{ dt.entity.host }</code> для построения графика временных рядов.</li>
+<li>Выберите <strong>Run query</strong>.</li>
+<li>Наведите курсор на нужный временной ряд на боковой панели и выберите &gt; <strong>Filter and forecast</strong>.</li>
+</ol>
+<p><img alt="Filter and forecast: выбор" src="https://dt-cdn.net/images/filter-and-forecase-select2-1183-5f9b6cae74.png" />
+5. Запрос автоматически обновляется для фильтрации по выбранному временному ряду, и диаграмма расширяется для отображения прогноза для выбранного ряда.</p>
+<p><img alt="Filter and forecast: результаты" src="https://dt-cdn.net/images/filter-and-forecase-results-1117-910a185d8a.png" /></p>
+<p>Подробности см. в разделе <a href="/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis" title="Узнайте, как предсказательный ИИ Dynatrace Intelligence генерирует прогнозы.">Предсказательный ИИ-анализ Dynatrace Intelligence</a>.</p>
+<p>[<img alt="Hub" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
+<h3 id="dynatrace-hub">Изучить в Dynatrace Hub<a class="headerlink" href="#dynatrace-hub" title="Permanent link">&para;</a></h3>
+<p>Создавайте мощные документы на основе данных для пользовательской аналитики и совместной работы.](https://www.dynatrace.com/hub/detail/notebooks/?internal_source=doc&amp;internal_medium=link&amp;internal_campaign=cross)</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.path", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

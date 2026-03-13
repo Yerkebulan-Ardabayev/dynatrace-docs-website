@@ -1,0 +1,5717 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace с AI-помощником (Managed + SaaS)">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/ru/dynatrace-intelligence/davis-problems-app/">
+      
+      
+        <link rel="prev" href="../copilot/quick-analysis-copilot-dql/">
+      
+      
+        <link rel="next" href="../root-cause-analysis/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Problems app - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#problems-app" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Problems app
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Начало работы
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../managed/" class="md-tabs__link">
+          
+  
+  
+  Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../platform/grail/dynatrace-grail/" class="md-tabs__link">
+          
+  
+  
+  Платформа
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../observe/infrastructure-observability/" class="md-tabs__link">
+          
+  
+  
+  Наблюдаемость
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../anomaly-detection/" class="md-tabs__link">
+          
+  
+  
+  Dynatrace Intelligence
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-tabs__link">
+          
+  
+  
+  Анализ и автоматизация
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ingest-from/" class="md-tabs__link">
+          
+  
+  
+  Источники данных
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../deliver/configuration-as-code/" class="md-tabs__link">
+          
+  
+  
+  Deliver
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../secure/threat-observability/" class="md-tabs__link">
+          
+  
+  
+  Безопасность
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../manage/hub/" class="md-tabs__link">
+          
+  
+  
+  Управление
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dynatrace-api/" class="md-tabs__link">
+          
+  
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../whats-new/" class="md-tabs__link">
+          
+  
+  
+  Что нового
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI Помощник
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Начало работы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документация Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discover-dynatrace/what-is-dynatrace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что такое Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discover-dynatrace/dynatrace-apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложения Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-dictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Семантический словарь
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Резервное копирование
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Платформа
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grail
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Grail
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/grail/dynatrace-grail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что такое Grail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/grail/dynatrace-query-language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Язык запросов DQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/appengine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AppEngine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/openpipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenPipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Наблюдаемость
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инфраструктура
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Инфраструктура
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observe/infrastructure-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observe/infrastructure-observability/infrastructure-and-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Хосты и операции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Облачный мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observe/infrastructure-observability/databases/database-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Базы данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложения
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Приложения
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observe/application-observability/distributed-tracing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Распределённая трассировка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observe/application-observability/services/services-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сервисы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Цифровой опыт
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Цифровой опыт
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observe/digital-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Синтетическое приложение
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observe/dynatrace-for-ai-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI и LLM мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Intelligence
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Intelligence
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обнаружение аномалий
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Обнаружение аномалий
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anomaly-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anomaly-detection/adjust-sensitivity-anomaly-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка чувствительности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anomaly-detection/anomaly-detection-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложение Anomaly Detection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anomaly-detection/anomaly-detection-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфигурация
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anomaly-detection/auto-adaptive-threshold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Адаптивные пороги
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anomaly-detection/automated-multidimensional-baselining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Многомерный бейзлайн
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anomaly-detection/metric-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    События метрик
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anomaly-detection/static-thresholds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статические пороги
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Оптимизация DQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis Copilot
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Davis Copilot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../copilot/chat-with-davis-copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Assist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../copilot/copilot-getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../copilot/copilot-data-privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфиденциальность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../copilot/quick-analysis-copilot-dql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запросы на естественном языке
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проблемы Davis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ первопричин
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Анализ первопричин
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../root-cause-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../root-cause-analysis/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../root-cause-analysis/event-analysis-and-correlation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ событий
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynatrace-intelligence-integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Справочник
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Справочник
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/ai-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI модели
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/davis-ai-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лимиты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ и автоматизация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Анализ и автоматизация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды и ноутбуки
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Дашборды и ноутбуки
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyze-explore-automate/dashboards-and-notebooks/document-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyze-explore-automate/dashboards-and-notebooks/document-version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Версии документов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Визуализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyze-explore-automate/dashboards-and-notebooks/explore-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Логи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Логи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyze-explore-automate/logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyze-explore-automate/logs/lma-logs-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложение журналов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyze-explore-automate/logs/lma-logs-app/facets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Фильтры
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyze-explore-automate/logs/lma-logs-app/query-and-filter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запросы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyze-explore-automate/explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обозреватель данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyze-explore-automate/smartscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Smartscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyze-explore-automate/workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyze-explore-automate/notifications-and-alerting/problem-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Уведомления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyze-explore-automate/compliance-and-resilience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Соответствие требованиям
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Источники данных
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ingest-from/extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ingest-from/dynatrace-oneagent/installation-and-operation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent — установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deliver
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration as Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration as Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deliver/configuration-as-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monaco
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monaco
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API и разрешения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deliver/configuration-as-code/monaco/monaco-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deliver/configuration-as-code/monaco/monaco-getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_3" id="__nav_9_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terraform
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Terraform
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API и разрешения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deliver/configuration-as-code/terraform/terraform-cli-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI команды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SLO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deliver/service-level-objectives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deliver/service-level-objectives/create-slo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Создание SLO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Reliability Guardian
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Site Reliability Guardian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deliver/site-reliability-guardian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deliver/site-reliability-guardian/event-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Структура событий
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deliver/ownership-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ownership
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг релизов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Мониторинг релизов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deliver/release-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deliver/release-monitoring/monitor-releases-with-dynatrace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг релизов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deliver/quality-gates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Валидация релизов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Безопасность
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../secure/threat-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость угроз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../secure/threat-observability/security-events-ingest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграция
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Управление
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manage/hub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензирование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лицензирование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/capabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Возможности DPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/billing-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Биллинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/budget-alerts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бюджетные оповещения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/license-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Жизненный цикл
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/dps-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Разрешения DPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Intelligence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Что нового
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../whats-new/saas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../whats-new/oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../whats-new/activegate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../anomaly-detection/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Dynatrace Intelligence
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="problems-app">Problems app<a class="headerlink" href="#problems-app" title="Permanent link">&para;</a></h1>
+<h1 id="problems-app_1">Problems app<a class="headerlink" href="#problems-app_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>App</li>
+<li>15 минут чтения</li>
+<li>Обновлено 17 февраля 2026 г.</li>
+</ul>
+<p>Быстрая сортировка, расследование и устранение поступающих инцидентов -- ключевая задача операционных команд. <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> помогает им, автоматически анализируя сложные инциденты, собирая весь контекст и представляя первопричину и область воздействия в едином представлении.</p>
+<p><img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong>, опираясь на данные из Grail и анализ Dynatrace Intelligence, помогает операционным командам и командам обеспечения надежности сайтов сократить среднее время восстановления (MTTR), представляя каждый аспект инцидента.</p>
+<p>Предварительные требования</p>
+<h3 id="_1">Разрешения<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>В следующей таблице описаны необходимые разрешения.</p>
+<p>business-analytics:business-flows:read</p>
+<p>Чтение оценки затронутых бизнес-потоков</p>
+<p>davis-copilot:conversations:execute</p>
+<p>Выполнение диалогов с помощником</p>
+<p>davis-copilot:document-search:execute</p>
+<p>Выполнение поиска документов помощником</p>
+<p>davis:analyzers:execute</p>
+<p>Выполнение анализатора деталей проблемы</p>
+<p>document:documents:read</p>
+<p>Чтение документов из рабочего процесса Doc</p>
+<p>document:documents:write</p>
+<p>Запись документов в рабочий процесс Doc</p>
+<p>document:documents:delete</p>
+<p>Удаление документов из рабочего процесса Doc</p>
+<p>notification:notifications:read</p>
+<p>Чтение уведомлений для оповещений по сохраненным фильтрам</p>
+<p>notification:notifications:write</p>
+<p>Сохранение уведомлений для оповещений по сохраненным фильтрам</p>
+<p>settings:objects:read</p>
+<p>Чтение объектов настроек из Environment API</p>
+<h3 id="_2">Установка<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Убедитесь, что приложение <a href="/docs/manage/hub#install" title="См. информацию о Dynatrace Hub.">установлено в вашей среде</a>.</p>
+<p>Начало работы</p>
+<p>Сценарии использования</p>
+<h2 id="_3">Цель и контекст<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>На этой странице показано, как использовать <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> для сортировки обнаруженных проблем и исследования их первопричины и области воздействия.</p>
+<h2 id="_4">Целевая аудитория<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Эта страница написана для:</p>
+<ul>
+<li>Инженеров по эксплуатации</li>
+<li>Инженеров по конвейерам</li>
+<li>Системных инженеров</li>
+<li>Инженеров по надежности сайтов (SRE)</li>
+<li>Инженеров по автоматизации сборки</li>
+</ul>
+<h2 id="_5">Краткое описание<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p><strong>Problems</strong> <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> упрощает сортировку, анализ и устранение активных инцидентов за счет сокращения MTTR. Приложение позволяет сосредоточиться на проблемах, обнаруженных ИИ, и быстро перейти к их первопричине.</p>
+<ul>
+<li>Данные, предоставляемые Grail и DQL, позволяют гибко анализировать всю информацию, связанную с проблемами, для огромного количества проблем и событий.</li>
+<li>Интеграция с контекстно-зависимыми приложениями Dynatrace позволяет анализировать проблемы без необходимости переключения контекста.</li>
+</ul>
+<h2 id="_6">Расследование и устранение активных проблем<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">Установка фокуса и сортировка<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>По умолчанию <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> отображает:</p>
+<ul>
+<li>Ленту всех проблем за последние 2 часа. Чтобы помочь операционным командам замечать открытые проблемы независимо от установленного фильтра, открытые проблемы остаются вверху ленты, как бы долго они ни были открыты.</li>
+<li>Диаграмму проблем вверху, визуализирующую любые аномалии с большим количеством проблем в прошлом. Выберите пик на диаграмме, чтобы углубиться в него и провести дальнейшее исследование.</li>
+</ul>
+<p><img alt="Пример представления ленты проблем в приложении Problems" src="https://dt-cdn.net/images/problems-app-problem-feed-view-1920-f7f665e813.png" /></p>
+<h4 id="_8">Фильтрация<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p>Чтобы сфокусироваться на вашем домене и отсортировать проблемы, которые его затрагивают, установите фильтры. Три наиболее распространенных фильтра -- <strong>Status</strong>, <strong>Category</strong> и <strong>Impact</strong> -- имеют выбираемые настройки слева от таблицы для быстрого доступа. Ваш выбор там автоматически добавляет соответствующие фильтры в панель фильтров над таблицей.</p>
+<p>Чтобы задать другие фильтры, введите их непосредственно в панель фильтров.</p>
+<ul>
+<li>
+<p><strong>Status</strong> -- Может быть <code>Active</code> или <code>Closed</code>.</p>
+</li>
+<li>
+<p>Если это значение не задано, отображаются все проблемы (активные или закрытые).</p>
+</li>
+<li>Если вы выбираете статус в элементах управления слева, соответствующий фильтр также отображается в панели фильтров.</li>
+<li>
+<p><strong>Category</strong> -- Указывает на характер инцидента, например замедления, ошибки, проблемы с ресурсами или инциденты доступности.</p>
+</li>
+<li>
+<p>Если вы выбираете одну или несколько категорий в элементах управления слева, соответствующие фильтры также отображаются в панели фильтров.</p>
+</li>
+<li>
+<p><strong>Impact</strong> -- Указывает тип затронутой области, например фронтенды, сервисы, инфраструктура или среды.</p>
+</li>
+<li>
+<p>Если вы выбираете одну или несколько областей воздействия в элементах управления слева, соответствующие фильтры также отображаются в панели фильтров.</p>
+</li>
+</ul>
+<p>Фильтрация с помощью панели фильтров позволяет сфокусировать ленту на проблемах по нескольким критериям, таким как статус, количество затронутых сущностей, сущность первопричины и многое другое. Поместите курсор в поле ввода, чтобы увидеть все доступные варианты. По умолчанию критерии фильтрации объединяются логикой <strong>AND</strong>. Для каждого критерия Dynatrace Intelligence предоставляет список предлагаемых значений на основе вашей ленты проблем.</p>
+<p>Например, чтобы увидеть проблемы, вызванные увеличением количества ошибок JavaScript и продолжающиеся более 1 часа, используйте следующие критерии фильтрации:</p>
+<ul>
+<li><code>Status=ACTIVE</code></li>
+<li><code>Duration&gt;1h</code></li>
+<li><code>Category=Error</code></li>
+<li><code>Name=JavaScript error rate increase</code></li>
+</ul>
+<p>Используя панель фильтров, вы также можете сузить ленту, чтобы сфокусироваться на определенных областях воздействия (таких как <code>Frontend</code>, <code>Service</code> или <code>Infrastructure</code>) с помощью параметра <code>Impact</code>, или использовать текстовый поиск для поиска проблем, содержащих определенную строку. Для использования поиска вы можете:</p>
+<ul>
+<li>Ввести любой текст в панель фильтров и выбрать <strong>Search in all data</strong>.</li>
+<li>Ввести <code>* ~ &lt;ваш_текст&gt;</code> в панель фильтров и выбрать <strong>Update</strong>.</li>
+</ul>
+<p>Поля, учитываемые при текстовом поиске</p>
+<p>Следующие поля в записи проблемы учитываются при текстовом поиске:</p>
+<ul>
+<li><code>event.id</code></li>
+<li><code>event.name</code></li>
+<li><code>event.description</code></li>
+<li><code>event.status</code></li>
+<li><code>display_id</code></li>
+<li><code>labels.alerting_profile</code></li>
+<li><code>entity_tags</code></li>
+<li><code>root_cause_entity_name</code></li>
+</ul>
+<p>Панель фильтров проблем поддерживает фильтры с булевой логикой. Это позволяет комбинировать критерии <strong>AND</strong> и <strong>OR</strong> и создавать сложные фильтры с использованием скобок для группировки булевых выражений. Пример оператора фильтра с булевой логикой в приложении <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> показан ниже.</p>
+<p><img alt="Мощные булевы фильтры в панели фильтров Problems." src="https://dt-cdn.net/images/complex-problem-filters-1920-db9346a85b.png" /></p>
+<h4 id="_9">Использование предопределенных командных сегментов для повышения операционной продуктивности<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>Сегменты -- это предопределенные фильтры, используемые для быстрой фильтрации данных, чтобы включить только релевантные записи. В контексте <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> вы или ваша команда можете использовать предопределенный набор командных сегментов для фильтрации таблиц проблем вместо создания собственных фильтров проблем.</p>
+<p>Следующий пример показывает, как использовать сегменты для фильтрации проблем, связанных с easyTravel.</p>
+<p><img alt="Фильтрация по сегментам в приложении Problems." src="https://dt-cdn.net/images/problems-filter-by-segments-1920-c5610b610e.png" /></p>
+<p>Кроме того, использование сегментов в <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> позволяет вам:</p>
+<ul>
+<li>Создавать наборы фильтров, которые можно использовать повторно и делиться ими со всей командой.</li>
+<li>Экономить время на воссоздание фильтров, примененных во время предыдущих сессий.</li>
+<li>Повышать продуктивность за счет быстрой фильтрации релевантных проблем.</li>
+<li>Быстро проверять состояние вашего сервиса, создавая и применяя сегменты, специфичные для сервиса.</li>
+</ul>
+<p>Поскольку проблемы хранятся как события в Grail, сегменты, созданные для фильтрации проблем, должны определять фильтр событий. Например, если вы хотите отфильтровать проблемы, возникшие в определенном облачном регионе, вы можете создать сегмент со следующим фильтром событий:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cloud.region = &quot;us-east-1c&quot; AND event.kind = &quot;DAVIS_PROBLEM&quot;
+</code></pre></div>
+<p>Пример скриншота определения сегмента для фильтрации проблем</p>
+<p><img alt="Пример определения сегмента для фильтрации проблем в приложении Problems." src="https://dt-cdn.net/images/problems-segment-definition-1512-4649153a97.png" /></p>
+<p>Фильтры сегментов применяются непосредственно к записям проблем в Grail. Следовательно, фильтры сущностей не применяются к проблеме, если идентификатор сущности не выбран в качестве основного поля фильтруемой проблемы.</p>
+<p>Для получения дополнительной информации о сегментах и их работе см. <a href="/docs/manage/segments" title="Используйте сегменты для логической структуризации и удобной фильтрации данных наблюдаемости в различных приложениях.">Segments</a> <img alt="Segments" src="https://dt-cdn.net/images/segments-256-8e66310720.webp" title="Segments" />.</p>
+<h3 id="_10">Активация автообновления<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>Чтобы не пропустить поступающие проблемы, используйте настройки обновления <img alt="Refresh" src="https://dt-cdn.net/images/dashboards-app-refresh-33a794c2f1.svg" title="Refresh" /> <img alt="Expand menu" src="https://dt-cdn.net/images/dashboards-app-menu-expand-3398af0cdf.svg" title="Expand menu" /> в правом верхнем углу <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong>.</p>
+<ul>
+<li>Чтобы автоматически обновлять ленту проблем, выберите <img alt="Expand menu" src="https://dt-cdn.net/images/dashboards-app-menu-expand-3398af0cdf.svg" title="Expand menu" /> и укажите частоту обновления (или выберите <code>Off</code>, чтобы отключить автоматическое обновление)</li>
+<li>Чтобы вручную обновить ленту проблем в любое время, независимо от настройки автоматического обновления, выберите <img alt="Refresh" src="https://dt-cdn.net/images/dashboards-app-refresh-33a794c2f1.svg" title="Refresh" /></li>
+</ul>
+<h3 id="_11">Исследование и сравнение проблем<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>Чтобы просмотреть подробности проблемы</p>
+<ol>
+<li>В таблице выберите идентификатор проблемы в столбце <strong>ID</strong>.</li>
+<li>Просмотрите страницу подробностей.</li>
+</ol>
+<p>Страница подробностей проблемы предоставляет всю доступную информацию о проблеме, выделяя сущность первопричины красной меткой, чтобы направить ваше внимание на нужные элементы. Пример ниже показывает подробности проблемы с деградацией пользовательских действий, включая сущность первопричины (сервис <code>easyTravelBusiness</code>) и диаграмму аномального времени отклика этого сервиса.</p>
+<p><img alt="Пример представления деталей проблемы в приложении Problems." src="https://dt-cdn.net/images/problems-details-view-page-1920-3d5f2bb781.png" /></p>
+<p>Все сущности, затронутые проблемой, перечислены в разделе <strong>Affected entities</strong>, вместе с информацией о типе сущности и количестве событий, обнаруженных в ходе анализа.</p>
+<ul>
+<li>В качестве предложения для начальной точки расследования Dynatrace Intelligence помечает сущность, которую он определил как первопричину проблемы.</li>
+<li>Чтобы просмотреть подробности о затронутой сущности, выберите ее в таблице.</li>
+</ul>
+<h4 id="_12">Сравнение нескольких проблем<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<p>Если все фильтры применены, но у вас все еще есть несколько проблем для исследования, вы можете выбрать и сравнить подробности нескольких проблем.</p>
+<ol>
+<li>В таблице используйте флажки для выбора двух или более проблем.</li>
+<li>Выберите <strong>Show details</strong>.</li>
+</ol>
+<p>Это предварительно загружает подробности всех выбранных проблем и добавляет элементы управления в правый верхний угол страницы подробностей проблемы, чтобы вы могли быстро переключаться между каждой выбранной проблемой.</p>
+<h3 id="_13">Чтение свойств событий для получения дополнительной информации<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>Dynatrace получает события из нескольких источников событий, таких как OneAgent, Synthetic, расширения и API приема данных. Dynatrace принимает и понимает различные свойства (также называемые полями) этих событий, которые предоставляют дополнительную информацию о событии.</p>
+<p>Источники событий могут быть настроены для предоставления необходимой информации для анализа и устранения проблем, вызванных событиями. Например, ссылка на конфигурацию, обнаружившую событие (<code>dt.settings.schema_id</code> и <code>dt.settings.object_id</code>), помогает быстро адаптировать порог или базовую линию, если такое действие необходимо.</p>
+<p>Другой пример -- настройка чувствительности пользовательского оповещения, вызвавшего событие, путем изменения конфигурации детектора в настройках.</p>
+<p>Поскольку доступные свойства событий зависят от источника события, события, не сгенерированные пользовательскими оповещениями, не содержат ссылок на соответствующие настройки событий. Если вы хотите, чтобы событие ссылалось на объект настроек, вы можете сделать это, прикрепив свойство <code>dt.settings.object_id</code> к событиям, принимаемым через API и/или расширения.</p>
+<p><img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> отображает все свойства событий для каждого собранного события в таблице и предоставляет ссылки, такие как прямая навигация к конфигурации пользовательского оповещения, как показано ниже.</p>
+<p><img alt="Приложение Problems предоставляет прямую ссылку на объект настроек." src="https://dt-cdn.net/images/problems-app-settings-direct-link-1920-b7ded7d7d3.png" /></p>
+<p>Примеры полезных свойств событий включают:</p>
+<ul>
+<li>Описание события (<code>event.description</code>). Описание события поддерживает текст в формате Markdown, что позволяет включать ссылки на ресурсы, которые могут помочь в устранении проблемы.</li>
+<li>DQL-запрос (<code>dt.query</code>) позволяет воссоздать диаграмму события в блокноте или на дашборде, а также скопировать необработанное значение свойства.</li>
+<li>Связанные сущности (<code>dt.entity.*</code>) позволяют напрямую переходить к сущностям через свойства <code>dt.entity.*</code>.</li>
+<li>Ссылка на объект настроек (<code>dt.settings.object_id</code>) и схему настроек (<code>dt.settings.schema_id</code>).</li>
+</ul>
+<p>Чтобы узнать больше о семантике и синтаксисе свойств событий и их использовании в Dynatrace, см. <a href="/docs/semantic-dictionary/fields" title="Ознакомьтесь со списком глобальных полей с четко определенным семантическим значением в Dynatrace, которые можно использовать в различных типах мониторинга.">Semantic Dictionary</a>.</p>
+<h3 id="csv">Анализ проблем с помощью собственных инструментов путем экспорта в CSV<a class="headerlink" href="#csv" title="Permanent link">&para;</a></h3>
+<p>В случаях, когда ваши программные инструменты создают пробелы в интеграции, препятствующие эффективному использованию данных Dynatrace, мы предоставляем возможность экспорта данных ленты проблем в формате CSV. Вы можете впоследствии использовать эти данные в различных инструментах, включая электронные таблицы, базы данных и инструменты анализа данных.</p>
+<p>Как показано ниже, вы можете экспортировать данные, связанные с проблемами, из таблицы ленты проблем. Вы также можете экспортировать их из <strong>Notebooks</strong> и <strong>Dashboards</strong> во всех табличных визуализациях.</p>
+<p><img alt="Экспорт выбранных проблем в CSV-файл." src="https://dt-cdn.net/images/problems-app-csv-export-1920-c5d456c07a.png" /></p>
+<p>Вы можете экспортировать все загруженные проблемы (до 1000) или использовать функцию множественного выбора для выбора конкретных проблем. Кроме того, панель фильтров над таблицей позволяет фильтровать более крупные подмножества проблем. Флажок <strong>Select all</strong> помогает экспортировать все проблемы в отфильтрованном наборе записей.</p>
+<h3 id="_14">Проверка первопричины без переключения контекста<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>В зависимости от зоны ответственности вашей команды вы можете сосредоточить внимание на кластерах Kubernetes, облачных ресурсах и рабочих нагрузках критически важных сервисов. Чтобы минимизировать переключение контекста, Dynatrace предлагает согласованную информацию о первопричине в нескольких приложениях. Независимо от того, где начинается ваше расследование, вам не нужно переключаться на <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong>, чтобы увидеть первопричину.</p>
+<p>В примере ниже приложение <strong>Kubernetes</strong> отображает информацию о проблеме, затрагивающей рабочую нагрузку.</p>
+<p><img alt="Информация о проблеме, интегрированная в приложение Kubernetes." src="https://dt-cdn.net/images/dynatrace-intelligence-in-k8s-app-1920-2da55950a8.png" /></p>
+<h3 id="_15">Исследование всех логов, связанных с проблемой<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>Проблема, проанализированная Dynatrace Intelligence, выделяет первопричину инцидента и показывает все связанные с инцидентом строки логов по нескольким сущностям в подробностях проблемы.</p>
+<p>Чтобы получить доступ к строкам логов, собранным во время инцидента, выберите вкладку <strong>Logs</strong>. Кроме того, вы можете видеть их уровень логирования по всем сущностям, затронутым проблемой, что позволяет сэкономить время на ручных расследованиях и фильтрации логов соответствующих сущностей по отдельности.</p>
+<p>Вкладка <strong>Logs</strong> также включает ссылки на затронутые сущности и информацию обо всех связанных сущностях, таких как родительские хосты. Чтобы проверить, какие сущности затронуты событием проблемы, вы можете обратиться ко всем свойствам событий, начинающимся с префикса <code>dt.entity.</code>.</p>
+<p>Посмотрите, как вкладка <strong>Logs</strong> обобщает все связанные с проблемой логи на изображении ниже.</p>
+<p><img alt="Количество логов в приложении Problems Dynatrace Intelligence." src="https://dt-cdn.net/images/problems-log-count-1920-330dd46337.png" /></p>
+<p>Изображение ниже иллюстрирует дальнейшую сортировку строк логов с помощью DQL-запроса.</p>
+<p><img alt="Строки логов ошибок в приложении Problems Dynatrace Intelligence." src="https://dt-cdn.net/images/problems-error-log-lines-1920-cb4599df02.png" /></p>
+<h3 id="_16">Визуальное уведомление и автоматизация для ускорения устранения проблем<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p><img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> имеет глобальный индикатор проблем, который показывает количество активных проблем в среде и всегда виден в доке. Когда док свернут, вместо числа рядом с иконкой приложения отображается красная точка.</p>
+<p>Чтобы персонализировать индикатор и количество отображаемых активных проблем, выберите фильтры в <strong>Category</strong> и сохраните конфигурацию фильтра, нажав значок . Сохраненный фильтр будет автоматически применен к глобальному индикатору проблем, уменьшая количество проблем, учитываемых для пользователя, как показано ниже. Нажатие кнопки <strong>Default filter</strong> восстанавливает последнюю сохраненную конфигурацию.</p>
+<p><img alt="Сохранение конфигурации фильтра в приложении Problems." src="https://dt-cdn.net/images/problems-app-notifications-config-save-1920-af4147c3c1.png" /></p>
+<p>Пока фильтр проблем активен, число индикатора будет показывать только активные проблемы из выбранных вами категорий. Индикатор обновляется по расписанию раз в минуту, что означает, что после обновления фильтра может потребоваться некоторое время для адаптации индикатора.</p>
+<p>Вы также можете настроить уведомления по электронной почте для отфильтрованных проблем, используя ваш адрес электронной почты, нажав значок , как показано ниже:</p>
+<p><img alt="Включение уведомлений по электронной почте для фильтров, примененных в приложении Problems." src="https://dt-cdn.net/images/problems-app-turn-on-notifications-1920-6806895778.png" /></p>
+<p>Уведомление по электронной почте -- это ваша личная настройка, поэтому вы можете включить ее без необходимости разрешений на конфигурацию и без риска повлиять на других пользователей в той же среде.</p>
+<p>Уведомление по электронной почте запускается непосредственно в OpenPipeline, что означает возможность применения только простых фильтров. Рабочие процессы, которые запрашивают <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> через DQL, могут использовать полный набор функций запросов Grail, такой как объединение таблиц.</p>
+<p>Если вам нужно отправлять настроенные сообщения электронной почты или у вас более сложные потребности в автоматизации и интеграции, вам следует применить полноценный рабочий процесс вместе с триггером проблемы.</p>
+<h3 id="_17">Визуализация затронутых развертываний для получения дополнительной информации<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>Представление <strong>Deployment</strong> предоставляет операционным командам более глубокое понимание инфраструктуры и облачных ресурсов, затронутых крупномасштабными инцидентами. Функция анализа первопричины автоматически собирает и визуализирует затронутые развертывания и связанные ресурсы.</p>
+<p>Дополнительный контекст, предоставляемый связанными ресурсами, позволяет вам:</p>
+<ul>
+<li>Быстро понять, где находится затронутый ресурс, например, в определенном облачном регионе или кластере Kubernetes.</li>
+<li>Получить дополнительную информацию для мультиоблачных развертываний, показывая развертывание приложения по облакам, регионам и технологическим границам.</li>
+</ul>
+<p>Представление <strong>Deployment</strong> использует диаграмму, подобную диаграмме развертывания унифицированного языка моделирования (UML), и следует подходу сверху вниз, начиная с наибольшего контейнерного элемента вверху и становясь более детальным по мере углубления. Структура развертывания визуализируется как сворачиваемые карточки с горизонтально перекрывающимися элементами, например, сервисы, работающие в нескольких регионах. В этом случае карточки, представляющие такие сервисы, дублируются и отображаются в нескольких стеках развертывания.</p>
+<p>Развертывание, содержащее первопричину, автоматически разворачивается и помечается красным значком первопричины, в то время как все остальные развертывания по умолчанию свернуты. Иерархия развертывания фокусируется максимум на 5 уровнях, начиная с листовых узлов иерархии в нижней части диаграммы и поднимаясь вверх, как показано в примере ниже:</p>
+<p><img alt="Представление развертывания Dynatrace Intelligence Problems с выделенной первопричиной." src="https://dt-cdn.net/images/problem-deployment-view-1920-e646972d40.png" /></p>
+<p>Интерактивность -- ключевая функция представления развертывания. Справа вы можете нажать на любой элемент, чтобы визуализировать результаты, такие как события, связанные с проблемой, вместе с прямой ссылкой на выбранную сущность. Этот структурированный подход позволяет вам и вашей операционной команде сократить время, необходимое для реагирования на инциденты, путем навигации по знакомому визуальному представлению.</p>
+<p>Не все связанные с инцидентом элементы могут отображать информацию справа. Некоторые элементы, такие как облачный регион, отображаются для лучшего контекста, но не обязательно показывают события, связанные с проблемой.</p>
+<h3 id="_18">Определение пользовательских полей проблем<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p>Каузальный ИИ Dynatrace Intelligence для обнаружения первопричин идентифицирует и сообщает о проблемах, вызванных одним или несколькими событиями в среде Dynatrace, и сохраняет результаты в виде записи проблемы в Grail.</p>
+<p>Запись проблемы включает массив идентификаторов событий (<code>dt.davis.event_ids</code>), который представляет все события, собранные и объединенные в ходе анализа первопричины. Поля таблицы <strong>Problems</strong>, связанные с событиями, такие как категория, имя, описание, статус, начало и конец, выводятся из этих событий, что позволяет вам эффективно фильтровать и сортировать все поступающие записи проблем.</p>
+<p>По умолчанию Dynatrace распространяет набор встроенных полей проблем вместе с полями разрешений на уровне записи, такими как <code>dt.host_group.id</code>, <code>k8s.namespace.name</code>, <code>k8s.cluster.name</code>, на проблемы. Полный список встроенных полей проблем см. в разделе <a href="/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record" title="Узнайте, как назначать разрешения для бакетов и таблиц в Grail.">Record level permissions in Grail</a>.</p>
+<p>Другие встроенные и пользовательские поля событий не распространяются автоматически, чтобы избежать чрезмерного количества записей проблем.</p>
+<p>В событиях Davis политики разрешений на основе разрешений на уровне записей Grail работают как ожидается, поскольку поля содержат одиночные значения. Однако когда несколько событий агрегируются в проблему, значения одного и того же поля объединяются в массив. Из-за текущей реализации фильтров разрешений на уровне записей Grail только <code>dt.security_context</code> поддерживает фильтрацию значений массива. Другие поля разрешений не могут использоваться с фильтрами на основе массивов в политиках разрешений.</p>
+<p>Это поведение отличается от функциональности фильтров DQL, где фильтры массивов для полей массивов полностью поддерживаются. Хотя это ограничение может влиять на гибкость фильтров разрешений, его важно учитывать при управлении политиками разрешений.</p>
+<ul>
+<li>Dynatrace не позволяет определять имена полей проблем, которые повторяют существующие имена полей событий <a href="/docs/semantic-dictionary/model/davis#davis-ai-events" title="Ознакомьтесь с моделями Semantic Dictionary, связанными с Davis AI.">Semantic Dictionary</a>.</li>
+<li>Вы можете определять поля проблем только для исходных полей со значениями типа <code>string</code>. Поля, содержащие значения других типов, не поддерживаются.</li>
+</ul>
+<h4 id="_19">Изменение пользовательских полей проблем<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
+<p>Чтобы просмотреть или изменить поля, автоматически распространяемые от событий к проблемам, перейдите в <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt; <strong>Dynatrace Intelligence</strong> &gt; <strong>Root cause analysis</strong> &gt; <strong>Problem fields</strong>. Изменяя эти поля проблем, вы можете:</p>
+<ul>
+<li>Подписаться на пользовательские поля записей для автоматического распространения от всех отдельных событий к любой обнаруженной проблеме.</li>
+<li>Переименовать существующие поля проблем.</li>
+<li>Удалить поля проблем.</li>
+</ul>
+<p>Переименование существующих полей проблем и удаление полей проблем изменяет текущие и будущие записи проблем в Grail и может нарушить ваши DQL-запросы.</p>
+<p>Чтобы узнать больше о сценариях использования пользовательских полей проблем, см. <a href="/docs/dynatrace-intelligence/davis-problems-app/problems-app-custom-problem-field-examples" title="Ознакомьтесь со сценариями использования пользовательских полей проблем в Problems.">Dynatrace Intelligence Problems use cases</a>.</p>
+<h3 id="_20">Создание руководства по устранению неполадок<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<p><img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> позволяет создавать руководства по устранению неполадок с использованием <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> или <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> для документирования вашего расследования и шагов, предпринятых для решения проблемы. Руководство основано на предопределенном шаблоне и содержит два типа разделов:</p>
+<ul>
+<li>Разделы с информацией, извлеченной непосредственно из проблемы.</li>
+<li>Разделы шаблона (такие как <code>Initial Response &amp; Detection</code>, <code>Troubleshooting</code> и <code>Remediation steps</code>), которые вы можете редактировать для описания процесса и шагов, предпринятых для решения проблемы.</li>
+</ul>
+<p>Чтобы создать руководство по устранению неполадок</p>
+<ol>
+<li>Перейдите в <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> и откройте проблему, которую нужно решить.</li>
+<li>На странице подробностей проблемы выберите <strong>Troubleshooting</strong>.</li>
+<li>
+<p>Выберите  <strong>New</strong>.</p>
+</li>
+<li>
+<p>Выберите  <strong>Notebooks</strong>, чтобы создать новый документ в <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong>.</p>
+</li>
+<li>Выберите  <strong>Dashboards</strong>, чтобы создать новый документ в <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
+<li>Следуйте инструкциям в шаблоне для документирования деталей вашего руководства по устранению неполадок.</li>
+</ol>
+<p>Если вы поделитесь руководством по устранению неполадок со всеми пользователями в вашей среде и включите предложения документов на основе векторного сходства, агентный и генеративный ИИ Dynatrace Intelligence проиндексирует ваш документ и проактивно предложит его вашей команде, чтобы помочь быстрее устранять аналогичные проблемы. Чтобы узнать больше о предложениях документов агентного и генеративного ИИ Dynatrace Intelligence, см. <a href="/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides" title="Узнайте, как агентный и генеративный ИИ Dynatrace Intelligence может предлагать руководства по устранению неполадок для устранения проблем.">Find relevant documents with Dynatrace Intelligence agentic and generative AI</a>.</p>
+<p>Возможность создавать и делиться руководствами по устранению неполадок позволяет DevOps-командам:</p>
+<ul>
+<li>Делиться и распространять свои доменные знания о конкретной бизнес-логике, реализации программного обеспечения и инфраструктуре.</li>
+<li>Обогащать ИИ Dynatrace в своей среде общими знаниями для более оптимизированного и адаптированного опыта при расследовании и устранении проблем.</li>
+<li>Обогащать ИИ Dynatrace в своей среде.</li>
+</ul>
+<h3 id="_21">Решение случаев отсутствующих событий<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<p>Dynatrace предлагает широкий спектр инструментов, подходящих для ваших нужд, таких как настройка разрешений групп пользователей, правила оповещений Dynatrace Intelligence или правила приема данных OpenPipeline. Однако из-за богатых возможностей настройки существуют случаи, которые могут привести к тому, что события не будут видны в <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong>, и к различиям в количестве затронутых сущностей на доступных вкладках. Наиболее распространенные причины «отсутствия» событий в <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong>:</p>
+<ul>
+<li>Различие в периоде хранения бакета: вы можете настроить период хранения бакета для мониторируемых данных на более длительный срок, чтобы события, связанные с проблемой, были видны независимо от того, как долго проблема находилась в открытом состоянии. Чтобы узнать больше о настройке периода хранения бакета для мониторируемых данных, см. <a href="/docs/observe/application-observability/distributed-tracing/data-retention" title="Создавайте и назначайте бакеты с пользовательским периодом хранения данных для трассировок в Grail.">Retain trace data for long periods</a>.</li>
+<li>Отсутствие разрешений, необходимых для просмотра события: обратитесь в группу поддержки Dynatrace и убедитесь, что у вас есть необходимые разрешения. Попросите администратора настроить разрешения, чтобы событие стало вам доступно.</li>
+<li>Правила приема данных OpenPipeline, удаляющие записи: вы можете настроить правила приема данных OpenPipeline, чтобы предотвратить удаление записей, или расширить правила для сохранения записей, которые могут быть связаны с проблемой, по которой было выдано оповещение. Чтобы узнать больше о настройке правил приема данных OpenPipeline, см. <a href="/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline" title="Обработка логов с помощью Dynatrace OpenPipeline.">Log processing with OpenPipeline</a>.</li>
+</ul>
+<h3 id="_22">Оптимизация решения проблем с помощью специализированных вариантов углубленного анализа<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<p><img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> предоставляет варианты углубленного анализа, разработанные для направления вас к наиболее релевантным действиям по решению обнаруженных проблем и помощи в оптимизации процесса решения проблем.</p>
+<p>Доступные вам варианты углубленного анализа отображаются в представлении деталей проблемы и зависят от типа затронутой сущности (такой как сервис, рабочая нагрузка Kubernetes, хост или зона доступности AWS).</p>
+<p>Некоторые из доступных вариантов углубленного анализа:</p>
+<ul>
+<li>Анализ сбоев: выполнение целенаправленного анализа сбоев для определения первопричины частоты отказов, паттернов ошибок или проблем с производительностью.</li>
+<li>Просмотр связанных логов: исследование релевантных записей логов непосредственно в <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong>.</li>
+<li>Просмотр неуспешных трассировок: анализ неуспешных трассировок в <img alt="Distributed Tracing" src="https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg" title="Distributed Tracing" /> <strong>Distributed Tracing</strong> для понимания первопричины сбоев.</li>
+<li>Просмотр <code>app</code>: переход на страницу деталей связанного приложения. Точное название зависит от затронутой сущности (например, View service, View Kubernetes workload или View host).</li>
+</ul>
+<p>Чтобы получить доступ к вариантам углубленного анализа</p>
+<ol>
+<li>В <strong>Dynatrace</strong> перейдите в <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong>.</li>
+<li>Выберите проблему, которую вы хотите исследовать, из обзора <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong>. Это откроет страницу деталей проблемы.</li>
+<li>Опционально: на левой стороне страницы деталей проблемы выберите затронутую сущность или инфраструктуру, которую вы хотите исследовать дальше. Обычно, когда вы открываете страницу деталей проблемы, затронутая сущность уже предварительно выбрана для вас.</li>
+<li>
+<p>В деталях затронутой сущности справа выберите предпочтительный вариант для дальнейшего исследования.</p>
+</li>
+<li>
+<p>Выберите  &gt; <strong>View related logs</strong>, чтобы продолжить исследование, не покидая <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong>.</p>
+</li>
+<li>Выберите  &gt; <strong>View failed traces</strong>, чтобы продолжить исследование в <a href="/docs/observe/application-observability/distributed-tracing" title="Отслеживайте и анализируйте в реальном времени высокораспределенные системы с Grail."><img alt="Distributed Tracing" src="https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg" title="Distributed Tracing" /> <strong>Distributed Tracing</strong></a>.</li>
+<li>Выберите  &gt; <strong>View</strong> <code>app</code>, чтобы продолжить исследование в одном из доступных приложений Dynatrace.</li>
+<li>Выберите  &gt; <strong>Open with</strong>, чтобы увидеть все доступные варианты исследования.</li>
+</ol>
+<p>Варианты углубленного анализа обеспечивают плавную навигацию между <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> и другими приложениями Dynatrace для обеспечения фокуса и непрерывности в процессе решения проблем.</p>
+<h3 id="_23">Обзор проблемы<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<p><strong>Overview</strong> -- это краткое резюме обнаруженной проблемы для руководства.</p>
+<p>Чтобы просмотреть обзор проблемы</p>
+<ol>
+<li>Перейдите в <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> и откройте проблему, которую нужно решить.</li>
+<li>На странице деталей проблемы выберите <strong>Overview</strong>.</li>
+</ol>
+<p><strong>Пример</strong>:</p>
+<p><img alt="Пример вкладки Overview в деталях проблемы" src="https://dt-cdn.net/images/problems-screenshot-with-overview-1920-6c68de3f34.png" /></p>
+<p><strong>Overview</strong> содержит четыре раздела:</p>
+<p>Настройка макета</p>
+<p>Вы можете перемещать эти разделы для персонализации вашего представления <strong>Overview</strong>.</p>
+<ol>
+<li>В заголовке раздела, который вы хотите переместить, выберите  и перетащите раздел.</li>
+<li>Отпустите раздел там, где вы хотите, чтобы он отображался в макете.</li>
+</ol>
+<p>Эти изменения сохраняются для каждого пользователя. Ваши изменения макета не влияют на то, как другие видят обзор.</p>
+<h3 id="impact">Impact<a class="headerlink" href="#impact" title="Permanent link">&para;</a></h3>
+<p>Раздел <strong>Impact</strong> отображает все затронутые сущности <a href="/docs/analyze-explore-automate/smartscape-classic" title="Узнайте, как Smartscape Classic визуализирует все сущности и зависимости в вашей среде.">Smartscape</a> (например, сервисы, процессы и хосты) вместе с краткой информацией о проблеме для каждой сущности.</p>
+<p>Раздел <strong>Impact</strong> категоризируется по:</p>
+<ul>
+<li><strong>Frontends</strong></li>
+<li><strong>Services</strong></li>
+<li><strong>Infrastructure</strong></li>
+<li><strong>Synthetic monitoring</strong></li>
+<li><strong>Environment</strong></li>
+</ul>
+<h3 id="root-cause">Root cause<a class="headerlink" href="#root-cause" title="Permanent link">&para;</a></h3>
+<p>Раздел <strong>Root cause</strong> фокусируется на первопричине проблемы, включая подробную информацию о затронутом стеке развертывания. Это может включать:</p>
+<ul>
+<li>Процесс и хост, на котором работает сервис-первопричина.</li>
+<li>Рабочую нагрузку Kubernetes, обслуживающую затронутый сервис.</li>
+</ul>
+<p>Для обеспечения согласованности сущность-первопричина также указана в таблице <strong>Impact</strong>.</p>
+<h3 id="_24">Визуальный путь решения<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p>Раздел <strong>Visual resolution path</strong> графически иллюстрирует взаимосвязи между фронтендами, сервисами и бэкендами, вовлеченными в проблему.</p>
+<ul>
+<li>Каждый узел представляет сущность <a href="/docs/analyze-explore-automate/smartscape-classic" title="Узнайте, как Smartscape Classic визуализирует все сущности и зависимости в вашей среде.">Smartscape</a> (фронтенд, сервис или бэкенд), где была обнаружена проблема со здоровьем.</li>
+<li>Серые узлы обозначают связанные сущности, использованные в анализе, но не затронутые напрямую.</li>
+</ul>
+<p>Этот граф помогает объяснить, как ИИ Dynatrace определил бэкенд-сервис, являющийся первопричиной.</p>
+<p>Чтобы развернуть граф на весь экран, выберите  <strong>Maximize</strong>.</p>
+<h3 id="_25">Автоматизация и устранение<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<p>Раздел <strong>Automation and remediation</strong> перечисляет все рабочие процессы автоматизации, запущенные проблемой. Эти рабочие процессы могут включать:</p>
+<ul>
+<li>Уведомления об оповещениях, отправленные командам реагирования.</li>
+<li>Потоки устранения и руководства по автоматическому устранению.</li>
+<li>Внешние триггеры ИИ-агентов, такие как агенты SRE облачных платформ, для сбора дополнительной информации или решения проблем в инфраструктуре облачного провайдера.</li>
+</ul>
+<p>Таблица содержит ключевые детали для каждого рабочего процесса, включая:</p>
+<ul>
+<li>Время последнего запуска (поскольку рабочие процессы могут запускаться несколько раз при обновлении проблемы).</li>
+<li>Состояние выполнения (например, успех или неудача).</li>
+</ul>
+<p>Детали выполнения рабочих процессов основаны на стандартных событиях выполнения рабочих процессов, которые также могут быть запрошены с помощью DQL в <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks" title="Анализируйте, визуализируйте и делитесь аналитикой из ваших данных наблюдаемости -- все в одном совместном настраиваемом рабочем пространстве."><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong></a> и <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Создавайте интерактивные настраиваемые представления для визуализации, анализа и совместного использования ваших данных наблюдаемости в реальном времени."><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong></a>.</p>
+<p><strong>Примечание</strong>:</p>
+<ul>
+<li>Только пользователи с разрешениями на чтение системных событий могут просматривать выполнения рабочих процессов. Без этих разрешений таблица пуста и отображается сообщение об отсутствии доступа.</li>
+<li>Рабочие процессы, не предоставленные вашему пользователю, перечислены, но отображаются серым цветом без прямых ссылок, что указывает на ограниченный доступ.</li>
+</ul>
+<p>[<img alt="Hub" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
+<h2 id="dynatrace-hub">Попробуйте в Dynatrace Hub<a class="headerlink" href="#dynatrace-hub" title="Permanent link">&para;</a></h2>
+<p>Сортируйте, исследуйте и устраняйте инциденты непосредственно в <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong>.](https://www.dynatrace.com/hub/detail/problems/)</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.path", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>

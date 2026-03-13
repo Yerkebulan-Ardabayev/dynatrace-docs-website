@@ -1,0 +1,6255 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace с AI-помощником (Managed + SaaS)">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/ru/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Справочник политик IAM - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#iam" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Справочник политик IAM
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../" class="md-tabs__link">
+          
+  
+  
+  Начало работы
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../managed/" class="md-tabs__link">
+          
+  
+  
+  Managed
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../platform/grail/dynatrace-grail/" class="md-tabs__link">
+          
+  
+  
+  Платформа
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../observe/infrastructure-observability/" class="md-tabs__link">
+          
+  
+  
+  Наблюдаемость
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../dynatrace-intelligence/anomaly-detection/" class="md-tabs__link">
+          
+  
+  
+  Dynatrace Intelligence
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-tabs__link">
+          
+  
+  
+  Анализ и автоматизация
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../ingest-from/" class="md-tabs__link">
+          
+  
+  
+  Источники данных
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../deliver/configuration-as-code/" class="md-tabs__link">
+          
+  
+  
+  Deliver
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../secure/threat-observability/" class="md-tabs__link">
+          
+  
+  
+  Безопасность
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../hub/" class="md-tabs__link">
+          
+  
+  
+  Управление
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../dynatrace-api/" class="md-tabs__link">
+          
+  
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../whats-new/" class="md-tabs__link">
+          
+  
+  
+  Что нового
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../../ai/groq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI Помощник
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Начало работы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документация Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../discover-dynatrace/what-is-dynatrace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что такое Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../discover-dynatrace/dynatrace-apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложения Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../semantic-dictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Семантический словарь
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Резервное копирование
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../managed/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Платформа
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grail
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Grail
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../platform/grail/dynatrace-grail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что такое Grail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../platform/grail/dynatrace-query-language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Язык запросов DQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../platform/oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../platform/appengine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AppEngine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../platform/openpipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenPipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Наблюдаемость
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инфраструктура
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Инфраструктура
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../observe/infrastructure-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../observe/infrastructure-observability/infrastructure-and-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Хосты и операции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Облачный мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../observe/infrastructure-observability/databases/database-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Базы данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложения
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Приложения
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../observe/application-observability/distributed-tracing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Распределённая трассировка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../observe/application-observability/services/services-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сервисы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Цифровой опыт
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Цифровой опыт
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../observe/digital-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Синтетическое приложение
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../observe/dynatrace-for-ai-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI и LLM мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Intelligence
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace Intelligence
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обнаружение аномалий
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Обнаружение аномалий
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/anomaly-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка чувствительности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложение Anomaly Detection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфигурация
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Адаптивные пороги
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Многомерный бейзлайн
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/anomaly-detection/metric-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    События метрик
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/anomaly-detection/static-thresholds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статические пороги
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Оптимизация DQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis Copilot
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Davis Copilot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/copilot/chat-with-davis-copilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Assist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/copilot/copilot-getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/copilot/copilot-data-privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфиденциальность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/copilot/quick-analysis-copilot-dql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запросы на естественном языке
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/davis-problems-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проблемы Davis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ первопричин
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Анализ первопричин
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/root-cause-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/root-cause-analysis/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ событий
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/dynatrace-intelligence-integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Справочник
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Справочник
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/reference/ai-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI модели
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/reference/davis-ai-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лимиты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ и автоматизация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Анализ и автоматизация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды и ноутбуки
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Дашборды и ноутбуки
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../analyze-explore-automate/dashboards-and-notebooks/dashboards-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../analyze-explore-automate/dashboards-and-notebooks/document-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../analyze-explore-automate/dashboards-and-notebooks/document-version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Версии документов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Визуализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../analyze-explore-automate/dashboards-and-notebooks/explore-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Логи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Логи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../analyze-explore-automate/logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../analyze-explore-automate/logs/lma-logs-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приложение журналов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../analyze-explore-automate/logs/lma-logs-app/facets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Фильтры
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../analyze-explore-automate/logs/lma-logs-app/query-and-filter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запросы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../analyze-explore-automate/explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обозреватель данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../analyze-explore-automate/smartscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Smartscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../analyze-explore-automate/workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../analyze-explore-automate/notifications-and-alerting/problem-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Уведомления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../analyze-explore-automate/compliance-and-resilience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Соответствие требованиям
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Источники данных
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ingest-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ingest-from/extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ingest-from/dynatrace-oneagent/installation-and-operation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent — установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deliver
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration as Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration as Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../deliver/configuration-as-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monaco
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monaco
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API и разрешения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../deliver/configuration-as-code/monaco/monaco-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../deliver/configuration-as-code/monaco/monaco-getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_3" id="__nav_9_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terraform
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Terraform
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API и разрешения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../deliver/configuration-as-code/terraform/terraform-cli-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI команды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SLO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../deliver/service-level-objectives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../deliver/service-level-objectives/create-slo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Создание SLO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Reliability Guardian
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Site Reliability Guardian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../deliver/site-reliability-guardian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../deliver/site-reliability-guardian/event-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Структура событий
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../deliver/ownership-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ownership
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг релизов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Мониторинг релизов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../deliver/release-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../deliver/release-monitoring/monitor-releases-with-dynatrace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг релизов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../deliver/quality-gates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Валидация релизов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Безопасность
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../secure/threat-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость угроз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../secure/threat-observability/security-events-ingest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграция
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Управление
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензирование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лицензирование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../license/capabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Возможности DPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../license/billing-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Биллинг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../license/budget-alerts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бюджетные оповещения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../license/license-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Жизненный цикл
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../license/dps-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Разрешения DPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../dynatrace-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Intelligence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Что нового
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../whats-new/saas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SaaS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../whats-new/oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../whats-new/activegate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="iam">Справочник политик IAM<a class="headerlink" href="#iam" title="Permanent link">&para;</a></h1>
+<h1 id="iam_1">Справочник политик IAM<a class="headerlink" href="#iam_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Последняя версия Dynatrace</li>
+<li>Справочник</li>
+<li>Чтение 1 мин</li>
+<li>Опубликовано 25 марта 2021</li>
+</ul>
+<p>Ниже приведен полный справочник разрешений IAM и соответствующих условий, применимых к сервисам Dynatrace. Используйте его, когда вам нужно определить политики доступа на основе детализированного набора разрешений и условий, которые могут быть применены для каждого сервиса.</p>
+<h2 id="ai">ai<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h2>
+<p>AI предоставляет возможности генеративного ИИ в Dynatrace</p>
+<h3 id="aioperatorexecute">ai:operator:execute<a class="headerlink" href="#aioperatorexecute" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на взаимодействие с диалоговым интерфейсом ИИ</p>
+<h2 id="app-engine">app-engine<a class="headerlink" href="#app-engine" title="Permanent link">&para;</a></h2>
+<p>AppEngine</p>
+<h3 id="app-engineappsinstall">app-engine:apps:install<a class="headerlink" href="#app-engineappsinstall" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на установку и обновление приложений</p>
+<h4 id="conditions">conditions:<a class="headerlink" href="#conditions" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - Идентификатор приложения.
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>app-engine:app-installer</code> - Идентификатор пользователя, установившего приложение.
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+</ul>
+<h3 id="app-engineappsrun">app-engine:apps:run<a class="headerlink" href="#app-engineappsrun" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на просмотр списка и запуск приложений, а также базовый доступ к Launcher</p>
+<h4 id="conditions_1">conditions:<a class="headerlink" href="#conditions_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - Идентификатор приложения.
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>app-engine:app-installer</code> - Идентификатор пользователя, установившего приложение.
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+</ul>
+<h3 id="app-engineappsdelete">app-engine:apps:delete<a class="headerlink" href="#app-engineappsdelete" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на удаление приложений</p>
+<h4 id="conditions_2">conditions:<a class="headerlink" href="#conditions_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - Идентификатор приложения.
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>app-engine:app-installer</code> - Идентификатор пользователя, установившего приложение.
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+</ul>
+<h3 id="app-enginefunctionsrun">app-engine:functions:run<a class="headerlink" href="#app-enginefunctionsrun" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на использование исполнителя функций</p>
+<h3 id="app-engineedge-connectsread">app-engine:edge-connects:read<a class="headerlink" href="#app-engineedge-connectsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение EdgeConnects</p>
+<h3 id="app-engineedge-connectswrite">app-engine:edge-connects:write<a class="headerlink" href="#app-engineedge-connectswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись EdgeConnects</p>
+<h3 id="app-engineedge-connectsdelete">app-engine:edge-connects:delete<a class="headerlink" href="#app-engineedge-connectsdelete" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на удаление EdgeConnects</p>
+<h3 id="app-enginecertificatescreate">app-engine:certificates:create<a class="headerlink" href="#app-enginecertificatescreate" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на создание краткосрочных сертификатов для релизов приложений</p>
+<h4 id="conditions_3">conditions:<a class="headerlink" href="#conditions_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - Идентификатор приложения.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code></li>
+</ul>
+<h2 id="app-settings">app-settings<a class="headerlink" href="#app-settings" title="Permanent link">&para;</a></h2>
+<p>Сервис настроек приложений</p>
+<h3 id="app-settingsobjectsread">app-settings:objects:read<a class="headerlink" href="#app-settingsobjectsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение объектов настроек приложений, принадлежащих схеме</p>
+<h4 id="conditions_4">conditions:<a class="headerlink" href="#conditions_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>settings:schemaId</code> - Строка, уникально идентифицирующая одну схему настроек приложений. Идентификатор схемы можно найти в информационном блоке экрана настроек. Условие сработает, если свойство schemaId объекта совпадает.
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT startsWith</code></li>
+<li><code>shared:app-id</code> - Строка, соответствующая идентификатору приложения. Применимо только к объектам схем, добавленных через приложения. Условие сработает, если свойство app-id объекта совпадает.
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h3 id="app-settingsobjectswrite">app-settings:objects:write<a class="headerlink" href="#app-settingsobjectswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись объектов настроек, принадлежащих схеме</p>
+<h4 id="conditions_5">conditions:<a class="headerlink" href="#conditions_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>settings:schemaId</code> - Строка, уникально идентифицирующая одну схему настроек. Идентификатор схемы можно найти в информационном блоке экрана настроек. Условие сработает, если свойство schemaId объекта совпадает.
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT startsWith</code></li>
+<li><code>shared:app-id</code> - Строка, соответствующая идентификатору приложения. Применимо только к объектам схем, добавленных через приложения. Условие сработает, если свойство app-id объекта совпадает.
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h3 id="app-settingsobjectsadmin">app-settings:objects:admin<a class="headerlink" href="#app-settingsobjectsadmin" title="Permanent link">&para;</a></h3>
+<p>Позволяет использовать режим администратора для доступа, изменения владельца и разрешений на общий доступ к любому объекту. Режим администратора обходит только проверку владельца, поэтому для выполнения полезных действий также необходимы разрешения app-settings:objects:read и/или app-settings:objects:write.</p>
+<h4 id="conditions_6">conditions:<a class="headerlink" href="#conditions_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>settings:schemaId</code> - Строка, уникально идентифицирующая одну схему настроек приложений. Идентификатор схемы можно найти в информационном блоке экрана настроек. Условие сработает, если свойство schemaId объекта совпадает.
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT startsWith</code></li>
+<li><code>shared:app-id</code> - Строка, соответствующая идентификатору приложения. Применимо только к объектам схем, добавленных через приложения. Условие сработает, если свойство app-id объекта совпадает.
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h2 id="automation">automation<a class="headerlink" href="#automation" title="Permanent link">&para;</a></h2>
+<p>Сервер автоматизации</p>
+<h3 id="automationworkflowsread">automation:workflows:read<a class="headerlink" href="#automationworkflowsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение рабочих процессов</p>
+<h3 id="automationworkflowswrite">automation:workflows:write<a class="headerlink" href="#automationworkflowswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись рабочих процессов</p>
+<h4 id="conditions_7">conditions:<a class="headerlink" href="#conditions_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>automation:workflow-type</code> - Строка, идентифицирующая тип рабочего процесса: SIMPLE или STANDARD
+  operators: <code>IN</code>, <code>=</code></li>
+</ul>
+<h3 id="automationworkflowsrun">automation:workflows:run<a class="headerlink" href="#automationworkflowsrun" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на выполнение рабочих процессов</p>
+<h3 id="automationworkflowsadmin">automation:workflows:admin<a class="headerlink" href="#automationworkflowsadmin" title="Permanent link">&para;</a></h3>
+<p>Предоставляет административные разрешения для рабочих процессов.</p>
+<h3 id="automationrulesread">automation:rules:read<a class="headerlink" href="#automationrulesread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение правил планирования</p>
+<h3 id="automationruleswrite">automation:rules:write<a class="headerlink" href="#automationruleswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись правил планирования</p>
+<h3 id="automationcalendarsread">automation:calendars:read<a class="headerlink" href="#automationcalendarsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение бизнес-календарей</p>
+<h3 id="automationcalendarswrite">automation:calendars:write<a class="headerlink" href="#automationcalendarswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись бизнес-календарей</p>
+<h2 id="business-analytics">business-analytics<a class="headerlink" href="#business-analytics" title="Permanent link">&para;</a></h2>
+<p>Сервис бизнес-аналитики платформы</p>
+<h3 id="business-analyticsbusiness-flowswrite">business-analytics:business-flows:write<a class="headerlink" href="#business-analyticsbusiness-flowswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись бизнес-потоков</p>
+<h3 id="business-analyticsbusiness-flowsread">business-analytics:business-flows:read<a class="headerlink" href="#business-analyticsbusiness-flowsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение бизнес-потоков</p>
+<h2 id="data-acquisition">data-acquisition<a class="headerlink" href="#data-acquisition" title="Permanent link">&para;</a></h2>
+<p>Прием данных</p>
+<h3 id="data-acquisitionlogsingest">data-acquisition:logs:ingest<a class="headerlink" href="#data-acquisitionlogsingest" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на прием логов из поддерживаемых источников Data Acquisition</p>
+<h3 id="data-acquisitionmetricsingest">data-acquisition:metrics:ingest<a class="headerlink" href="#data-acquisitionmetricsingest" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на прием метрик из поддерживаемых источников Data Acquisition</p>
+<h3 id="data-acquisitioneventsingest">data-acquisition:events:ingest<a class="headerlink" href="#data-acquisitioneventsingest" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на прием событий из поддерживаемых источников Data Acquisition</p>
+<h2 id="davis">davis<a class="headerlink" href="#davis" title="Permanent link">&para;</a></h2>
+<p>Сервис Davis</p>
+<h3 id="davisanalyzersread">davis:analyzers:read<a class="headerlink" href="#davisanalyzersread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на просмотр анализаторов Davis</p>
+<h3 id="davisanalyzersexecute">davis:analyzers:execute<a class="headerlink" href="#davisanalyzersexecute" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на выполнение анализаторов Davis</p>
+<h2 id="davis-copilot">davis-copilot<a class="headerlink" href="#davis-copilot" title="Permanent link">&para;</a></h2>
+<p>Davis CoPilot предоставляет возможности генеративного ИИ в Dynatrace</p>
+<h3 id="davis-copilotconversationsexecute">davis-copilot:conversations:execute<a class="headerlink" href="#davis-copilotconversationsexecute" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на взаимодействие с диалоговым интерфейсом Davis CoPilot</p>
+<h3 id="davis-copilotnl2dqlexecute">davis-copilot:nl2dql:execute<a class="headerlink" href="#davis-copilotnl2dqlexecute" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на выполнение возможности генеративного ИИ для преобразования естественного языка в DQL</p>
+<h3 id="davis-copilotdql2nlexecute">davis-copilot:dql2nl:execute<a class="headerlink" href="#davis-copilotdql2nlexecute" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на выполнение навыка CoPilot «Суммаризация DQL»</p>
+<h3 id="davis-copilotdocument-searchexecute">davis-copilot:document-search:execute<a class="headerlink" href="#davis-copilotdocument-searchexecute" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на выполнение навыка CoPilot «Поиск документов»</p>
+<h2 id="deployment">deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
+<p>Сервис развертывания</p>
+<h3 id="deploymentactivegatesnetwork-zoneswrite">deployment:activegates.network-zones:write<a class="headerlink" href="#deploymentactivegatesnetwork-zoneswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись сетевых зон ActiveGate</p>
+<h3 id="deploymentactivegatesgroupswrite">deployment:activegates.groups:write<a class="headerlink" href="#deploymentactivegatesgroupswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись групп ActiveGate</p>
+<h3 id="deploymentoneagentsnetwork-zoneswrite">deployment:oneagents.network-zones:write<a class="headerlink" href="#deploymentoneagentsnetwork-zoneswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись сетевых зон OneAgent</p>
+<h3 id="deploymentoneagentshost-groupswrite">deployment:oneagents.host-groups:write<a class="headerlink" href="#deploymentoneagentshost-groupswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись групп хостов OneAgent</p>
+<h3 id="deploymentoneagentshost-tagswrite">deployment:oneagents.host-tags:write<a class="headerlink" href="#deploymentoneagentshost-tagswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись тегов хостов OneAgent</p>
+<h3 id="deploymentoneagentshost-propertieswrite">deployment:oneagents.host-properties:write<a class="headerlink" href="#deploymentoneagentshost-propertieswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись свойств хостов OneAgent</p>
+<h3 id="deploymentoneagentscommunication-settingswrite">deployment:oneagents.communication-settings:write<a class="headerlink" href="#deploymentoneagentscommunication-settingswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись настроек коммуникации OneAgent</p>
+<h2 id="dev-obs">dev-obs<a class="headerlink" href="#dev-obs" title="Permanent link">&para;</a></h2>
+<p>Наблюдаемость разработчиков</p>
+<h3 id="dev-obsbreakpointset">dev-obs:breakpoint:set<a class="headerlink" href="#dev-obsbreakpointset" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на установку точек останова с помощью live-отладчика DevObs</p>
+<h4 id="conditions_8">conditions:<a class="headerlink" href="#conditions_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>dev-obs:k8s.namespace.name</code> - Пространства имен Kubernetes для агентов, в которых пользователю разрешено устанавливать точки останова
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:dt.entity.process_group</code> - Группа процессов сущностей Dynatrace для агентов, в которых пользователю разрешено устанавливать точки останова
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:dt.process_group.detected_name</code> - Обнаруженное имя группы процессов Dynatrace для агентов, в которых пользователю разрешено устанавливать точки останова
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:k8s.cluster.name</code> - Имя кластера агентов, в которых пользователю разрешено устанавливать точки останова
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:host.group</code> - Группа хостов агентов, в которых пользователю разрешено устанавливать точки останова
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:host.name</code> - Имя хоста агентов, в которых пользователю разрешено устанавливать точки останова
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+</ul>
+<h3 id="dev-obsbreakpointsset">dev-obs:breakpoints:set<a class="headerlink" href="#dev-obsbreakpointsset" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на установку точек останова с помощью live-отладчика DevObs</p>
+<h4 id="conditions_9">conditions:<a class="headerlink" href="#conditions_9" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>dev-obs:k8s.namespace.name</code> - Пространства имен Kubernetes для агентов, в которых пользователю разрешено устанавливать точки останова
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:dt.entity.process_group</code> - Группа процессов сущностей Dynatrace для агентов, в которых пользователю разрешено устанавливать точки останова
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:dt.process_group.detected_name</code> - Обнаруженное имя группы процессов Dynatrace для агентов, в которых пользователю разрешено устанавливать точки останова
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:k8s.cluster.name</code> - Имя кластера агентов, в которых пользователю разрешено устанавливать точки останова
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:host.group</code> - Группа хостов агентов, в которых пользователю разрешено устанавливать точки останова
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+<li><code>dev-obs:host.name</code> - Имя хоста агентов, в которых пользователю разрешено устанавливать точки останова
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>!=</code>, <code>NOT IN</code>, <code>NOT startsWith</code></li>
+</ul>
+<h3 id="dev-obsbreakpointmanage">dev-obs:breakpoint:manage<a class="headerlink" href="#dev-obsbreakpointmanage" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на управление точками останова, установленными в live-отладчике DevObs</p>
+<h3 id="dev-obsbreakpointsmanage">dev-obs:breakpoints:manage<a class="headerlink" href="#dev-obsbreakpointsmanage" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на управление точками останова, установленными в live-отладчике DevObs</p>
+<h2 id="document">document<a class="headerlink" href="#document" title="Permanent link">&para;</a></h2>
+<p>Сервис документов</p>
+<h3 id="documentdocumentswrite">document:documents:write<a class="headerlink" href="#documentdocumentswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на создание и обновление документов сервиса документов</p>
+<h3 id="documentdocumentsread">document:documents:read<a class="headerlink" href="#documentdocumentsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение документов сервиса документов</p>
+<h3 id="documentdocumentsdelete">document:documents:delete<a class="headerlink" href="#documentdocumentsdelete" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на удаление документов сервиса документов</p>
+<h3 id="documentdocumentsadmin">document:documents:admin<a class="headerlink" href="#documentdocumentsadmin" title="Permanent link">&para;</a></h3>
+<p>Предоставляет административные разрешения для документов сервиса документов</p>
+<h3 id="documentenvironment-sharesread">document:environment-shares:read<a class="headerlink" href="#documentenvironment-sharesread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение общих ресурсов среды сервиса документов</p>
+<h3 id="documentenvironment-shareswrite">document:environment-shares:write<a class="headerlink" href="#documentenvironment-shareswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на создание и обновление общих ресурсов среды сервиса документов</p>
+<h3 id="documentenvironment-sharesclaim">document:environment-shares:claim<a class="headerlink" href="#documentenvironment-sharesclaim" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на получение общих ресурсов среды сервиса документов</p>
+<h3 id="documentenvironment-sharesdelete">document:environment-shares:delete<a class="headerlink" href="#documentenvironment-sharesdelete" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на удаление общих ресурсов среды сервиса документов</p>
+<h3 id="documentdirect-sharesdelete">document:direct-shares:delete<a class="headerlink" href="#documentdirect-sharesdelete" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на удаление прямых общих ресурсов сервиса документов</p>
+<h3 id="documentdirect-sharesread">document:direct-shares:read<a class="headerlink" href="#documentdirect-sharesread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение прямых общих ресурсов сервиса документов</p>
+<h3 id="documentdirect-shareswrite">document:direct-shares:write<a class="headerlink" href="#documentdirect-shareswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на создание и обновление прямых общих ресурсов сервиса документов</p>
+<h3 id="documenttrashdocumentsread">document:trash.documents:read<a class="headerlink" href="#documenttrashdocumentsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение удаленных документов сервиса документов</p>
+<h3 id="documenttrashdocumentsdelete">document:trash.documents:delete<a class="headerlink" href="#documenttrashdocumentsdelete" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на удаление документов из корзины сервиса документов</p>
+<h3 id="documenttrashdocumentsrestore">document:trash.documents:restore<a class="headerlink" href="#documenttrashdocumentsrestore" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на восстановление удаленных документов из корзины сервиса документов</p>
+<h2 id="email">email<a class="headerlink" href="#email" title="Permanent link">&para;</a></h2>
+<p>API для отправки электронной почты</p>
+<h3 id="emailemailssend">email:emails:send<a class="headerlink" href="#emailemailssend" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на отправку электронной почты с адреса @apps.dynatrace.com через API отправки</p>
+<h2 id="environment">environment<a class="headerlink" href="#environment" title="Permanent link">&para;</a></h2>
+<p>Разрешения пользователей среды и зоны управления. См. <a href="https://dt-url.net/3s23539">Миграция разрешений на основе ролей в Dynatrace IAM</a> для получения дополнительной информации.</p>
+<p>Разрешения IAM ролей работают так же, как и классические роли, что означает, что разрешение <code>environment:roles:viewer</code> является частью любого другого разрешения роли. Например, политика, предоставляющая разрешение <code>environment:roles:manage-settings</code>, также позволяет пользователю получить доступ к веб-интерфейсу.</p>
+<h3 id="environmentrolesviewer">environment:roles:viewer<a class="headerlink" href="#environmentrolesviewer" title="Permanent link">&para;</a></h3>
+<p>Предоставляет пользователю разрешение <strong>Доступ к среде</strong>.</p>
+<h4 id="conditions_10">conditions:<a class="headerlink" href="#conditions_10" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>environment:management-zone</code> - Строка, уникально идентифицирующая зону управления. Применяет разрешение на уровне зоны управления для указанной зоны управления.
+  operators: <code>IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="environmentrolesmanage-settings">environment:roles:manage-settings<a class="headerlink" href="#environmentrolesmanage-settings" title="Permanent link">&para;</a></h3>
+<p>Предоставляет пользователю разрешение <strong>Изменение настроек мониторинга</strong>.</p>
+<h4 id="conditions_11">conditions:<a class="headerlink" href="#conditions_11" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>environment:management-zone</code> - Строка, уникально идентифицирующая зону управления. Применяет разрешение на уровне зоны управления для указанной зоны управления.
+  operators: <code>IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="environmentrolesagent-install">environment:roles:agent-install<a class="headerlink" href="#environmentrolesagent-install" title="Permanent link">&para;</a></h3>
+<p>Предоставляет пользователю разрешение <strong>Загрузка/установка OneAgent</strong>. Пользователи с этим разрешением также могут просматривать данные мониторинга для всех зон управления.</p>
+<h3 id="environmentrolesview-sensitive-request-data">environment:roles:view-sensitive-request-data<a class="headerlink" href="#environmentrolesview-sensitive-request-data" title="Permanent link">&para;</a></h3>
+<p>Предоставляет пользователю разрешение <strong>Просмотр конфиденциальных данных запросов</strong>.</p>
+<h4 id="conditions_12">conditions:<a class="headerlink" href="#conditions_12" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>environment:management-zone</code> - Строка, уникально идентифицирующая зону управления. Применяет разрешение на уровне зоны управления для указанной зоны управления.
+  operators: <code>IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="environmentrolesconfigure-request-capture-data">environment:roles:configure-request-capture-data<a class="headerlink" href="#environmentrolesconfigure-request-capture-data" title="Permanent link">&para;</a></h3>
+<p>Предоставляет пользователю разрешение <strong>Настройка захвата конфиденциальных данных</strong>. Пользователи с этим разрешением также могут просматривать данные мониторинга для всех зон управления.</p>
+<h3 id="environmentrolesreplay-sessions-without-masking">environment:roles:replay-sessions-without-masking<a class="headerlink" href="#environmentrolesreplay-sessions-without-masking" title="Permanent link">&para;</a></h3>
+<p>Предоставляет пользователю разрешение <strong>Воспроизведение данных сессий без маскировки</strong>.</p>
+<h4 id="conditions_13">conditions:<a class="headerlink" href="#conditions_13" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>environment:management-zone</code> - Строка, уникально идентифицирующая зону управления. Применяет разрешение на уровне зоны управления для указанной зоны управления.
+  operators: <code>IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="environmentrolesreplay-sessions-with-masking">environment:roles:replay-sessions-with-masking<a class="headerlink" href="#environmentrolesreplay-sessions-with-masking" title="Permanent link">&para;</a></h3>
+<p>Предоставляет пользователю разрешение <strong>Воспроизведение данных сессий</strong>.</p>
+<h4 id="conditions_14">conditions:<a class="headerlink" href="#conditions_14" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>environment:management-zone</code> - Строка, уникально идентифицирующая зону управления. Применяет разрешение на уровне зоны управления для указанной зоны управления.
+  operators: <code>IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="environmentrolesmanage-security-problems">environment:roles:manage-security-problems<a class="headerlink" href="#environmentrolesmanage-security-problems" title="Permanent link">&para;</a></h3>
+<p>Предоставляет пользователю разрешение <strong>Управление проблемами безопасности</strong>.</p>
+<h4 id="conditions_15">conditions:<a class="headerlink" href="#conditions_15" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>environment:management-zone</code> - Строка, уникально идентифицирующая зону управления. Применяет разрешение на уровне зоны управления для указанной зоны управления.
+  operators: <code>IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="environmentrolesview-security-problems">environment:roles:view-security-problems<a class="headerlink" href="#environmentrolesview-security-problems" title="Permanent link">&para;</a></h3>
+<p>Предоставляет пользователю разрешение <strong>Просмотр проблем безопасности</strong>.</p>
+<h4 id="conditions_16">conditions:<a class="headerlink" href="#conditions_16" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>environment:management-zone</code> - Строка, уникально идентифицирующая зону управления. Применяет разрешение на уровне зоны управления для указанной зоны управления.
+  operators: <code>IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="environmentroleslogviewer">environment:roles:logviewer<a class="headerlink" href="#environmentroleslogviewer" title="Permanent link">&para;</a></h3>
+<p>Предоставляет пользователю разрешение <strong>Просмотр логов</strong>.</p>
+<h4 id="conditions_17">conditions:<a class="headerlink" href="#conditions_17" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>environment:management-zone</code> - Строка, уникально идентифицирующая зону управления. Применяет разрешение на уровне зоны управления для указанной зоны управления.
+  operators: <code>IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code>, <code>MATCH</code></li>
+</ul>
+<h2 id="extensions">extensions<a class="headerlink" href="#extensions" title="Permanent link">&para;</a></h2>
+<p>Сервис расширений</p>
+<h3 id="extensionsdefinitionsread">extensions:definitions:read<a class="headerlink" href="#extensionsdefinitionsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение конфигураций расширений и среды</p>
+<h4 id="conditions_18">conditions:<a class="headerlink" href="#conditions_18" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>extensions:extension-name</code> - Строка, уникально идентифицирующая одно расширение
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>!=</code>, <code>=</code></li>
+</ul>
+<h3 id="extensionsdefinitionswrite">extensions:definitions:write<a class="headerlink" href="#extensionsdefinitionswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись (обновление/создание/удаление) конфигураций расширений и среды</p>
+<h4 id="conditions_19">conditions:<a class="headerlink" href="#conditions_19" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>extensions:extension-name</code> - Строка, уникально идентифицирующая одно расширение
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>!=</code>, <code>=</code></li>
+</ul>
+<h3 id="extensionsconfigurationsread">extensions:configurations:read<a class="headerlink" href="#extensionsconfigurationsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение конфигураций мониторинга расширений</p>
+<h4 id="conditions_20">conditions:<a class="headerlink" href="#conditions_20" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>extensions:host</code> - Строка, уникально идентифицирующая один хост для назначения конфигурации мониторинга
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:host-group</code> - Строка, уникально идентифицирующая одну группу хостов для назначения конфигурации мониторинга
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:ag-group</code> - Строка, уникально идентифицирующая одну группу ActiveGate для назначения конфигурации мониторинга
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:management-zone</code> - Строка, уникально идентифицирующая одну зону управления для назначения конфигурации мониторинга
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:extension-name</code> - Строка, уникально идентифицирующая одно расширение
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>!=</code>, <code>=</code></li>
+</ul>
+<h3 id="extensionsconfigurationswrite">extensions:configurations:write<a class="headerlink" href="#extensionsconfigurationswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись (обновление/создание/удаление) конфигураций мониторинга расширений</p>
+<h4 id="conditions_21">conditions:<a class="headerlink" href="#conditions_21" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>extensions:host</code> - Строка, уникально идентифицирующая один хост для назначения конфигурации мониторинга
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:host-group</code> - Строка, уникально идентифицирующая одну группу хостов для назначения конфигурации мониторинга
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:ag-group</code> - Строка, уникально идентифицирующая одну группу ActiveGate для назначения конфигурации мониторинга
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:management-zone</code> - Строка, уникально идентифицирующая одну зону управления для назначения конфигурации мониторинга
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:extension-name</code> - Строка, уникально идентифицирующая одно расширение
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>!=</code>, <code>=</code></li>
+</ul>
+<h3 id="extensionsconfigurationactionswrite">extensions:configuration.actions:write<a class="headerlink" href="#extensionsconfigurationactionswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на выполнение действий для расширения</p>
+<h4 id="conditions_22">conditions:<a class="headerlink" href="#conditions_22" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>extensions:host</code> - Строка, уникально идентифицирующая один хост для назначения конфигурации мониторинга
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:host-group</code> - Строка, уникально идентифицирующая одну группу хостов для назначения конфигурации мониторинга
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:ag-group</code> - Строка, уникально идентифицирующая одну группу ActiveGate для назначения конфигурации мониторинга
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:management-zone</code> - Строка, уникально идентифицирующая одну зону управления для назначения конфигурации мониторинга
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>extensions:extension-name</code> - Строка, уникально идентифицирующая одно расширение
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>!=</code>, <code>=</code></li>
+</ul>
+<h3 id="extensionsdiscoveryjmxread">extensions:discovery.jmx:read<a class="headerlink" href="#extensionsdiscoveryjmxread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на обнаружение запущенных Java-процессов через JMX и чтение их данных через расширения</p>
+<h2 id="geolocation">geolocation<a class="headerlink" href="#geolocation" title="Permanent link">&para;</a></h2>
+<p>Сервис геолокации</p>
+<h3 id="geolocationlocationslookup">geolocation:locations:lookup<a class="headerlink" href="#geolocationlocationslookup" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на поиск геолокаций для IP-адресов.</p>
+<h2 id="hub">hub<a class="headerlink" href="#hub" title="Permanent link">&para;</a></h2>
+<p>Hub предоставляет каталогизированный контент, такой как приложения Dynatrace, расширения и технологии, в контексте среды.</p>
+<h3 id="hubcatalogread">hub:catalog:read<a class="headerlink" href="#hubcatalogread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение каталогизированного контента Hub.</p>
+<h2 id="hyperscaler-authentication">hyperscaler-authentication<a class="headerlink" href="#hyperscaler-authentication" title="Permanent link">&para;</a></h2>
+<p>Сервис аутентификации гиперскейлеров</p>
+<h3 id="hyperscaler-authenticationawsauthenticate">hyperscaler-authentication:aws:authenticate<a class="headerlink" href="#hyperscaler-authenticationawsauthenticate" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на аутентификацию в AWS.</p>
+<h3 id="hyperscaler-authenticationazureauthenticate">hyperscaler-authentication:azure:authenticate<a class="headerlink" href="#hyperscaler-authenticationazureauthenticate" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на аутентификацию в Azure.</p>
+<h2 id="iam_2">iam<a class="headerlink" href="#iam_2" title="Permanent link">&para;</a></h2>
+<p>Фреймворк управления идентификацией и доступом.</p>
+<h3 id="iamservice-usersuse">iam:service-users:use<a class="headerlink" href="#iamservice-usersuse" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на использование всех или указанных сервисных пользователей</p>
+<h4 id="conditions_23">conditions:<a class="headerlink" href="#conditions_23" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>iam:service-user-email</code> - Адреса электронной почты сервисных пользователей
+  operators: <code>IN</code>, <code>=</code></li>
+</ul>
+<h3 id="iamservice-userscreate">iam:service-users:create<a class="headerlink" href="#iamservice-userscreate" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на создание сервисного пользователя в среде</p>
+<h3 id="iambindingsread">iam:bindings:read<a class="headerlink" href="#iambindingsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение привязок</p>
+<h4 id="conditions_24">conditions:<a class="headerlink" href="#conditions_24" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>iam:policyUuid</code> - UUID политики в URI.
+  operators: <code>=</code>, <code>IN</code></li>
+<li><code>iam:levelType</code> - Тип уровня в URI.
+  operators: <code>=</code>, <code>IN</code></li>
+<li><code>iam:boundGroup</code> - UUID группы в URI.
+  operators: <code>=</code>, <code>IN</code></li>
+</ul>
+<h3 id="iambindingswrite">iam:bindings:write<a class="headerlink" href="#iambindingswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на создание привязок</p>
+<h4 id="conditions_25">conditions:<a class="headerlink" href="#conditions_25" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>iam:policyUuid</code> - UUID политики в URI.
+  operators: <code>=</code>, <code>IN</code></li>
+<li><code>iam:levelType</code> - Тип уровня в URI.
+  operators: <code>=</code>, <code>IN</code></li>
+<li><code>iam:boundGroup</code> - UUID группы в URI.
+  operators: <code>=</code>, <code>IN</code></li>
+</ul>
+<h3 id="iampoliciesread">iam:policies:read<a class="headerlink" href="#iampoliciesread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение политик</p>
+<h3 id="iampolicieswrite">iam:policies:write<a class="headerlink" href="#iampolicieswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на создание политик</p>
+<h3 id="iamboundariesread">iam:boundaries:read<a class="headerlink" href="#iamboundariesread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение границ</p>
+<h3 id="iamboundarieswrite">iam:boundaries:write<a class="headerlink" href="#iamboundarieswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на создание границ</p>
+<h3 id="iameffective-permissionsread">iam:effective-permissions:read<a class="headerlink" href="#iameffective-permissionsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение действующих разрешений</p>
+<h4 id="conditions_26">conditions:<a class="headerlink" href="#conditions_26" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>iam-param:entity-type</code> - Тип сущности в параметрах запроса. Допустимые значения: <code>group</code>, <code>user</code>.
+  operators: <code>=</code></li>
+<li><code>iam-param:entity-id</code> - Идентификатор сущности указанного типа в параметрах запроса.
+  operators: <code>=</code>, <code>IN</code></li>
+</ul>
+<h3 id="iamlimitsread">iam:limits:read<a class="headerlink" href="#iamlimitsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение лимитов</p>
+<h2 id="insights">insights<a class="headerlink" href="#insights" title="Permanent link">&para;</a></h2>
+<p>Сервис бизнес-аналитики</p>
+<h3 id="insightsopportunitiesread">insights:opportunities:read<a class="headerlink" href="#insightsopportunitiesread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение данных из API Opportunity Insights</p>
+<h3 id="insightsmomentsread">insights:moments:read<a class="headerlink" href="#insightsmomentsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запрос моментов ценности и связанных данных</p>
+<h2 id="mcp-gateway">mcp-gateway<a class="headerlink" href="#mcp-gateway" title="Permanent link">&para;</a></h2>
+<p>MCP Gateway предоставляет возможности MCP-сервера в Dynatrace</p>
+<h3 id="mcp-gatewayserversinvoke">mcp-gateway:servers:invoke<a class="headerlink" href="#mcp-gatewayserversinvoke" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на вызов API MCP Gateway</p>
+<h3 id="mcp-gatewayserversread">mcp-gateway:servers:read<a class="headerlink" href="#mcp-gatewayserversread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на просмотр списка доступных MCP-серверов</p>
+<h2 id="notification">notification<a class="headerlink" href="#notification" title="Permanent link">&para;</a></h2>
+<p>API для отправки уведомлений</p>
+<h3 id="notificationself-notificationsread">notification:self-notifications:read<a class="headerlink" href="#notificationself-notificationsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение собственных уведомлений.</p>
+<h3 id="notificationself-notificationswrite">notification:self-notifications:write<a class="headerlink" href="#notificationself-notificationswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись собственных уведомлений.</p>
+<h3 id="notificationnotificationsread">notification:notifications:read<a class="headerlink" href="#notificationnotificationsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение конфигураций уведомлений.</p>
+<h3 id="notificationnotificationswrite">notification:notifications:write<a class="headerlink" href="#notificationnotificationswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись конфигураций уведомлений.</p>
+<h2 id="oauth2">oauth2<a class="headerlink" href="#oauth2" title="Permanent link">&para;</a></h2>
+<p>Авторизация действий по выпуску токенов OAuth (обмен токенами)</p>
+<h3 id="oauth2clientsmanage">oauth2:clients:manage<a class="headerlink" href="#oauth2clientsmanage" title="Permanent link">&para;</a></h3>
+<p>Позволяет управлять легковесными клиентами OAuth</p>
+<h4 id="conditions_27">conditions:<a class="headerlink" href="#conditions_27" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>oauth2:scopes</code> - Запрашиваемые области доступа для генерируемых клиентов OAuth
+  operators: <code>=</code>, <code>NOT IN</code></li>
+</ul>
+<h2 id="openpipeline">openpipeline<a class="headerlink" href="#openpipeline" title="Permanent link">&para;</a></h2>
+<p>OpenPipeline</p>
+<h3 id="openpipelineconfigurationsread">openpipeline:configurations:read<a class="headerlink" href="#openpipelineconfigurationsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение конфигурации OpenPipeline</p>
+<h3 id="openpipelineconfigurationswrite">openpipeline:configurations:write<a class="headerlink" href="#openpipelineconfigurationswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись конфигурации OpenPipeline</p>
+<h3 id="openpipelineeventsingest">openpipeline:events:ingest<a class="headerlink" href="#openpipelineeventsingest" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на прием событий в OpenPipeline</p>
+<h3 id="openpipelineeventscustomingest">openpipeline:events.custom:ingest<a class="headerlink" href="#openpipelineeventscustomingest" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на прием событий в пользовательские конечные точки OpenPipeline</p>
+<h3 id="openpipelinesecurityeventsingest">openpipeline:security.events:ingest<a class="headerlink" href="#openpipelinesecurityeventsingest" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на прием событий безопасности в OpenPipeline</p>
+<h3 id="openpipelinesecurityeventscustomingest">openpipeline:security.events.custom:ingest<a class="headerlink" href="#openpipelinesecurityeventscustomingest" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на прием событий безопасности в пользовательские конечные точки OpenPipeline</p>
+<h3 id="openpipelineeventssdlcingest">openpipeline:events.sdlc:ingest<a class="headerlink" href="#openpipelineeventssdlcingest" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на прием событий жизненного цикла разработки ПО в OpenPipeline</p>
+<h3 id="openpipelineeventssdlccustomingest">openpipeline:events.sdlc.custom:ingest<a class="headerlink" href="#openpipelineeventssdlccustomingest" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на прием событий жизненного цикла разработки ПО в пользовательские конечные точки OpenPipeline</p>
+<h2 id="platform-token">platform-token<a class="headerlink" href="#platform-token" title="Permanent link">&para;</a></h2>
+<p>Разрешения для токенов платформы</p>
+<h3 id="platform-tokentokenswrite">platform-token:tokens:write<a class="headerlink" href="#platform-tokentokenswrite" title="Permanent link">&para;</a></h3>
+<p>Позволяет записывать токены платформы пользователя.</p>
+<h2 id="security-intelligence">security-intelligence<a class="headerlink" href="#security-intelligence" title="Permanent link">&para;</a></h2>
+<p>Предоставляет API для анализа безопасности (обогащение и контекстуализация)</p>
+<h3 id="security-intelligenceenrichmentsrun">security-intelligence:enrichments:run<a class="headerlink" href="#security-intelligenceenrichmentsrun" title="Permanent link">&para;</a></h3>
+<p>Позволяет выполнять обогащение и обнаружение интеграционных приложений.</p>
+<h2 id="session-replay">session-replay<a class="headerlink" href="#session-replay" title="Permanent link">&para;</a></h2>
+<p>Воспроизведение сессий</p>
+<h3 id="session-replayresourcesread">session-replay:resources:read<a class="headerlink" href="#session-replayresourcesread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на получение ресурса воспроизведения сессии</p>
+<h2 id="settings">settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
+<p>Сервис настроек</p>
+<h3 id="settingsobjectsread">settings:objects:read<a class="headerlink" href="#settingsobjectsread" title="Permanent link">&para;</a></h3>
+<p>Позволяет читать объекты настроек, принадлежащие схеме</p>
+<h4 id="conditions_28">conditions:<a class="headerlink" href="#conditions_28" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>settings:schemaId</code> - Строка, уникально идентифицирующая одну схему настроек. Идентификатор схемы можно найти через выделенную конечную точку схемы в Dynatrace Environment API или в информационном блоке экрана настроек. Условие сработает, если свойство schemaId объекта совпадает.
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT startsWith</code></li>
+<li><code>shared:app-id</code> - Строка, соответствующая идентификатору приложения. Применимо только к объектам схем, добавленных через приложения. Условие сработает, если свойство app-id объекта совпадает.
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+<li><code>settings:schemaGroup</code> - Группа схем, позволяющая обращаться к нескольким отдельным схемам одновременно. Группу схемы можно найти через выделенную конечную точку схемы в Dynatrace Environment API или в информационном блоке экрана настроек. Условие сработает, если у схемы объекта есть совпадающее свойство schemaGroup.
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>settings:entity.hostGroup</code> - Атрибут группы хостов сущности, для которой хранится настройка. Это полезно, например, для предоставления доступа к областям настроек всех хостов, принадлежащих одной группе хостов.
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code></li>
+<li><code>settings:scope</code> - Точный идентификатор области, которую имеет или будет иметь объект настроек. Это условие позволяет предоставить доступ к области, например, отдельного хоста. В этом случае область равна идентификатору сущности, например, HOST-48B8F52F33098830.
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT startsWith</code></li>
+<li><code>environment:management-zone</code> - Имя зоны управления. Это условие применимо к: любому объекту настроек, допустимому в области сущности, которая может быть сопоставлена с зоной управления, или к объектам настроек схем builtin:alerting.maintenance-window, builtin:alerting.profile, builtin:anomaly-detection.metric-events, builtin:monitoring.slo и builtin:problem.notifications.
+  operators: <code>IN</code>, <code>=</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>settings:dt.security_context</code> - Имя контекста безопасности. Это условие применимо к любому объекту настроек, допустимому в области сущности, которой может быть назначен контекст безопасности.
+  operators: <code>IN</code>, <code>=</code>, <code>startsWith</code></li>
+</ul>
+<h3 id="settingsobjectswrite">settings:objects:write<a class="headerlink" href="#settingsobjectswrite" title="Permanent link">&para;</a></h3>
+<p>Позволяет записывать объекты настроек, принадлежащие схеме</p>
+<h4 id="conditions_29">conditions:<a class="headerlink" href="#conditions_29" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>settings:schemaId</code> - Строка, уникально идентифицирующая одну схему настроек. Идентификатор схемы можно найти через выделенную конечную точку схемы в Dynatrace Environment API или в информационном блоке экрана настроек. Условие сработает, если свойство schemaId объекта совпадает.
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT startsWith</code></li>
+<li><code>shared:app-id</code> - Строка, соответствующая идентификатору приложения. Применимо только к объектам схем, добавленных через приложения. Условие сработает, если свойство app-id объекта совпадает.
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+<li><code>settings:schemaGroup</code> - Группа схем, позволяющая обращаться к нескольким отдельным схемам одновременно. Группу схемы можно найти через выделенную конечную точку схемы в Dynatrace Environment API или в информационном блоке экрана настроек. Условие сработает, если у схемы объекта есть совпадающее свойство schemaGroup.
+  operators: <code>IN</code>, <code>=</code></li>
+<li><code>settings:entity.hostGroup</code> - Атрибут группы хостов сущности, для которой хранится настройка. Это полезно, например, для предоставления доступа к областям настроек всех хостов, принадлежащих одной группе хостов.
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code></li>
+<li><code>settings:scope</code> - Точный идентификатор области, которую имеет или будет иметь объект настроек. Это условие позволяет предоставить доступ к области, например, отдельного хоста. В этом случае область равна идентификатору сущности, например, HOST-48B8F52F33098830.
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT startsWith</code></li>
+<li><code>environment:management-zone</code> - Имя зоны управления. Это условие применимо к: любому объекту настроек, допустимому в области сущности, которая может быть сопоставлена с зоной управления, или к объектам настроек схем builtin:alerting.maintenance-window, builtin:alerting.profile, builtin:anomaly-detection.metric-events, builtin:monitoring.slo и builtin:problem.notifications.
+  operators: <code>IN</code>, <code>=</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>settings:dt.security_context</code> - Имя контекста безопасности. Это условие применимо к любому объекту настроек, допустимому в области сущности, которой может быть назначен контекст безопасности.
+  operators: <code>IN</code>, <code>=</code>, <code>startsWith</code></li>
+</ul>
+<h3 id="settingsschemasread">settings:schemas:read<a class="headerlink" href="#settingsschemasread" title="Permanent link">&para;</a></h3>
+<p>Позволяет читать схемы настроек</p>
+<h4 id="conditions_30">conditions:<a class="headerlink" href="#conditions_30" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>settings:schemaId</code> - Строка, уникально идентифицирующая одну схему настроек. Идентификатор схемы можно найти через выделенную конечную точку схемы в Dynatrace Environment API или в информационном блоке экрана настроек. Условие сработает, если свойство schemaId схемы совпадает.
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT startsWith</code></li>
+<li><code>shared:app-id</code> - Строка, соответствующая идентификатору приложения. Применимо только к объектам схем, добавленных через приложения. Условие сработает, если свойство app-id объекта совпадает.
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+<li><code>settings:schemaGroup</code> - Группа схем, позволяющая обращаться к нескольким отдельным схемам одновременно. Группу схемы можно найти через выделенную конечную точку схемы в Dynatrace Environment API или в информационном блоке экрана настроек. Условие сработает, если свойство schemaId схемы совпадает.
+  operators: <code>IN</code>, <code>=</code></li>
+</ul>
+<h3 id="settingsobjectsadmin">settings:objects:admin<a class="headerlink" href="#settingsobjectsadmin" title="Permanent link">&para;</a></h3>
+<p>Позволяет использовать режим администратора для доступа, изменения владельца и разрешений на общий доступ к любому объекту. Режим администратора обходит только проверку владельца, поэтому для выполнения полезных действий также необходимы разрешения settings:objects:read и/или settings:objects:write.</p>
+<h4 id="conditions_31">conditions:<a class="headerlink" href="#conditions_31" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>settings:schemaId</code> - Строка, уникально идентифицирующая одну схему настроек. Идентификатор схемы можно найти через выделенную конечную точку схемы в Dynatrace Environment API или в информационном блоке экрана настроек. Условие сработает, если свойство schemaId объекта совпадает.
+  operators: <code>IN</code>, <code>=</code>, <code>!=</code>, <code>startsWith</code>, <code>NOT startsWith</code></li>
+<li><code>shared:app-id</code> - Строка, соответствующая идентификатору приложения. Применимо только к объектам схем, добавленных через приложения. Условие сработает, если свойство app-id объекта совпадает.
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+<li><code>settings:schemaGroup</code> - Группа схем, позволяющая обращаться к нескольким отдельным схемам одновременно. Группу схемы можно найти через выделенную конечную точку схемы в Dynatrace Environment API или в информационном блоке экрана настроек. Условие сработает, если у схемы объекта есть совпадающее свойство schemaGroup.
+  operators: <code>IN</code>, <code>=</code></li>
+</ul>
+<h2 id="slo">slo<a class="headerlink" href="#slo" title="Permanent link">&para;</a></h2>
+<p>Сервис SLO</p>
+<h3 id="sloslosread">slo:slos:read<a class="headerlink" href="#sloslosread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение целей уровня обслуживания</p>
+<h3 id="slosloswrite">slo:slos:write<a class="headerlink" href="#slosloswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись целей уровня обслуживания</p>
+<h3 id="sloobjective-templatesread">slo:objective-templates:read<a class="headerlink" href="#sloobjective-templatesread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение шаблонов целей уровня обслуживания</p>
+<h2 id="state">state<a class="headerlink" href="#state" title="Permanent link">&para;</a></h2>
+<p>Сервис состояния платформы</p>
+<h3 id="stateapp-statesread">state:app-states:read<a class="headerlink" href="#stateapp-statesread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение состояний приложений</p>
+<h4 id="conditions_32">conditions:<a class="headerlink" href="#conditions_32" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - Идентификатор приложения.
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h3 id="stateapp-stateswrite">state:app-states:write<a class="headerlink" href="#stateapp-stateswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись состояний приложений</p>
+<h4 id="conditions_33">conditions:<a class="headerlink" href="#conditions_33" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - Идентификатор приложения.
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h3 id="stateapp-statesdelete">state:app-states:delete<a class="headerlink" href="#stateapp-statesdelete" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на удаление состояний приложений</p>
+<h4 id="conditions_34">conditions:<a class="headerlink" href="#conditions_34" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - Идентификатор приложения.
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h3 id="stateuser-app-statesread">state:user-app-states:read<a class="headerlink" href="#stateuser-app-statesread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение состояний приложений пользователя</p>
+<h4 id="conditions_35">conditions:<a class="headerlink" href="#conditions_35" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - Идентификатор приложения.
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h3 id="stateuser-app-stateswrite">state:user-app-states:write<a class="headerlink" href="#stateuser-app-stateswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись состояний приложений пользователя</p>
+<h4 id="conditions_36">conditions:<a class="headerlink" href="#conditions_36" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - Идентификатор приложения.
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h3 id="stateuser-app-statesdelete">state:user-app-states:delete<a class="headerlink" href="#stateuser-app-statesdelete" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на удаление состояний приложений пользователя</p>
+<h4 id="conditions_37">conditions:<a class="headerlink" href="#conditions_37" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - Идентификатор приложения.
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h2 id="state-management">state-management<a class="headerlink" href="#state-management" title="Permanent link">&para;</a></h2>
+<p>Управление состоянием - Удаление состояний приложений и состояний приложений пользователей для определенных приложений.</p>
+<h3 id="state-managementapp-statesdelete">state-management:app-states:delete<a class="headerlink" href="#state-managementapp-statesdelete" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на удаление всех состояний приложений</p>
+<h4 id="conditions_38">conditions:<a class="headerlink" href="#conditions_38" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - Идентификатор приложения.
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h3 id="state-managementuser-app-statesdelete">state-management:user-app-states:delete<a class="headerlink" href="#state-managementuser-app-statesdelete" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на удаление состояний приложений текущего пользователя</p>
+<h4 id="conditions_39">conditions:<a class="headerlink" href="#conditions_39" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - Идентификатор приложения.
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h3 id="state-managementuser-app-statesdelete-all">state-management:user-app-states:delete-all<a class="headerlink" href="#state-managementuser-app-statesdelete-all" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на удаление состояний приложений всех пользователей</p>
+<h4 id="conditions_40">conditions:<a class="headerlink" href="#conditions_40" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>shared:app-id</code> - Идентификатор приложения.
+  operators: <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>=</code>, <code>!=</code></li>
+</ul>
+<h2 id="storage">storage<a class="headerlink" href="#storage" title="Permanent link">&para;</a></h2>
+<p>Grail</p>
+<h3 id="storageeventsread">storage:events:read<a class="headerlink" href="#storageeventsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение записей из таблицы событий</p>
+<h4 id="conditions_41">conditions:<a class="headerlink" href="#conditions_41" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - Это условие ограничивает действие разрешения на уровне записей определенным списком бакетов.
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.kind</code> - Предоставляет высокоуровневую информацию о типе данных события без привязки к конкретному содержимому. Помогает определить тип записи необработанного события.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.type</code> - Уникальный идентификатор типа данного события.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.provider</code> - Источник события, например имя компонента или системы, сгенерировавшей событие.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.namespace.name</code> - Имя пространства имен.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.cluster.name</code> - Имя кластера.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:host.name</code> - Имя хоста.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.host_group.id</code> - Идентификатор группы хостов.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Пользовательское поле для контекста безопасности.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:gcp.project.id</code> - Идентификатор проекта Google Cloud Platform.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:aws.account.id</code> - Идентификатор учетной записи Amazon Web Services.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.subscription</code> - Подписка Azure.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.resource.group</code> - Группа ресурсов Azure.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storageeventswrite">storage:events:write<a class="headerlink" href="#storageeventswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись событий в Grail</p>
+<h3 id="storagemetricsread">storage:metrics:read<a class="headerlink" href="#storagemetricsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение временных рядов из таблицы метрик</p>
+<h4 id="conditions_42">conditions:<a class="headerlink" href="#conditions_42" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - Это условие ограничивает действие разрешения на уровне записей определенным списком бакетов.
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.namespace.name</code> - Имя пространства имен, в котором работает под.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.cluster.name</code> - Имя кластера, в котором работает под.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:host.name</code> - Имя хоста.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.host_group.id</code> - Идентификатор группы хостов.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:metric.key</code> - Идентификатор метрики, группирующий числовые измерения с одинаковой семантикой измерения (т.е. измеренные «одинаковым образом»).
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Пользовательское поле для контекста безопасности.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:gcp.project.id</code> - Идентификатор проекта Google Cloud Platform.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:aws.account.id</code> - Идентификатор учетной записи Amazon Web Services.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.subscription</code> - Подписка Azure.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.resource.group</code> - Группа ресурсов Azure.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storagemetricswrite">storage:metrics:write<a class="headerlink" href="#storagemetricswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешения на запись метрик из классического Dynatrace в последнюю версию Dynatrace и наоборот</p>
+<h3 id="storagelogsread">storage:logs:read<a class="headerlink" href="#storagelogsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение записей из таблицы логов</p>
+<h4 id="conditions_43">conditions:<a class="headerlink" href="#conditions_43" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - Это условие ограничивает действие разрешения на уровне записей определенным списком бакетов.
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.namespace.name</code> - Имя пространства имен, в котором работает под.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.cluster.name</code> - Имя кластера, в котором работает под.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:host.name</code> - Имя хоста.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.host_group.id</code> - Идентификатор группы хостов.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:log.source</code> - Местоположение, откуда поступает лог.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Пользовательское поле для контекста безопасности.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:gcp.project.id</code> - Идентификатор проекта Google Cloud Platform.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:aws.account.id</code> - Идентификатор учетной записи Amazon Web Services.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.subscription</code> - Подписка Azure.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.resource.group</code> - Группа ресурсов Azure.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storagelogswrite">storage:logs:write<a class="headerlink" href="#storagelogswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись логов в Grail</p>
+<h3 id="storageentitiesread">storage:entities:read<a class="headerlink" href="#storageentitiesread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение записей из сущностей</p>
+<h4 id="conditions_44">conditions:<a class="headerlink" href="#conditions_44" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:entity.type</code> - Тип сущности.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code></li>
+<li><code>storage:dt.security_context</code> - Пользовательское поле для контекста безопасности.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code></li>
+</ul>
+<h3 id="storagespansread">storage:spans:read<a class="headerlink" href="#storagespansread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение записей из таблицы спанов</p>
+<h4 id="conditions_45">conditions:<a class="headerlink" href="#conditions_45" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - Это условие ограничивает действие разрешения на уровне записей определенным списком бакетов.
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.namespace.name</code> - Имя пространства имен, в котором работает под.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.cluster.name</code> - Имя кластера, в котором работает под.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:host.name</code> - Имя хоста.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.host_group.id</code> - Идентификатор группы хостов.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Пользовательское поле для контекста безопасности.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:gcp.project.id</code> - Идентификатор проекта Google Cloud Platform.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:aws.account.id</code> - Идентификатор учетной записи Amazon Web Services.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.subscription</code> - Подписка Azure.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.resource.group</code> - Группа ресурсов Azure.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storagebizeventsread">storage:bizevents:read<a class="headerlink" href="#storagebizeventsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение записей из таблицы бизнес-событий</p>
+<h4 id="conditions_46">conditions:<a class="headerlink" href="#conditions_46" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - Это условие ограничивает действие разрешения на уровне записей определенным списком бакетов.
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.kind</code> - Предоставляет высокоуровневую информацию о типе данных события без привязки к конкретному содержимому. Помогает определить тип записи необработанного события.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.type</code> - Уникальный идентификатор типа данного события.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.provider</code> - Источник события, например имя компонента или системы, сгенерировавшей событие.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.namespace.name</code> - Имя пространства имен, в котором работает под.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.cluster.name</code> - Имя кластера, в котором работает под.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:host.name</code> - Имя хоста.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.host_group.id</code> - Идентификатор группы хостов.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Пользовательское поле для контекста безопасности.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:gcp.project.id</code> - Идентификатор проекта Google Cloud Platform.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:aws.account.id</code> - Идентификатор учетной записи Amazon Web Services.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.subscription</code> - Подписка Azure.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.resource.group</code> - Группа ресурсов Azure.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storagesmartscaperead">storage:smartscape:read<a class="headerlink" href="#storagesmartscaperead" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение узлов и ребер Smartscape из Grail</p>
+<h4 id="conditions_47">conditions:<a class="headerlink" href="#conditions_47" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:dt.security_context</code> - Пользовательское поле для контекста безопасности.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.namespace.name</code> - Имя пространства имен, в котором работает под.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.cluster.name</code> - Имя кластера, в котором работает под.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:host.name</code> - Имя хоста.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.host_group.id</code> - Идентификатор группы хостов.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:gcp.project.id</code> - Идентификатор проекта Google Cloud Platform.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:aws.account.id</code> - Идентификатор учетной записи Amazon Web Services.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.subscription</code> - Подписка Azure.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.resource.group</code> - Группа ресурсов Azure.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storagesystemread">storage:system:read<a class="headerlink" href="#storagesystemread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение записей из всех системных таблиц (например, <code>dt.system.events</code>).</p>
+<h4 id="conditions_48">conditions:<a class="headerlink" href="#conditions_48" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - Это условие ограничивает действие разрешения на уровне записей определенным списком бакетов.
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.kind</code> - Предоставляет высокоуровневую информацию о типе данных события без привязки к конкретному содержимому. Помогает определить тип записи необработанного события.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.type</code> - Уникальный идентификатор типа данного события.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.provider</code> - Источник события, например имя компонента или системы, сгенерировавшей событие.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Пользовательское поле для контекста безопасности.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storagebucketsread">storage:buckets:read<a class="headerlink" href="#storagebucketsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение записей из бакетов Grail. Требуется дополнительно к разрешению на таблицу.</p>
+<h4 id="conditions_49">conditions:<a class="headerlink" href="#conditions_49" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:table-name</code> - Имя таблицы бакета, к которому можно получить доступ.
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:bucket-name</code> - Имя бакета, к которому можно получить доступ.
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:query-consumption</code> - Если установлено значение <code>INCLUDED</code>, запрос возвращает данные только из настроенного включенного временного диапазона бакетов. Если установлено значение <code>ON_DEMAND</code>, возвращаются данные за весь временной диапазон. Для любого другого значения оператор IAM игнорируется. Включенный временной диапазон должен быть настроен для каждого бакета через Storage Management API.
+  operators: <code>=</code></li>
+</ul>
+<h3 id="storagefieldsetsread">storage:fieldsets:read<a class="headerlink" href="#storagefieldsetsread" title="Permanent link">&para;</a></h3>
+<p>Чтение данных из наборов полей</p>
+<h4 id="conditions_50">conditions:<a class="headerlink" href="#conditions_50" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:table-name</code> - Имя таблицы, из которой можно получить доступ к набору(ам) полей.
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:bucket-name</code> - Имя бакета, из которого можно получить доступ к набору(ам) полей.
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:fieldset-name</code> - Имя набора(ов) полей, к которым можно получить доступ.
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storagebucket-definitionsread">storage:bucket-definitions:read<a class="headerlink" href="#storagebucket-definitionsread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение определений бакетов из Grail</p>
+<h3 id="storagebucket-definitionswrite">storage:bucket-definitions:write<a class="headerlink" href="#storagebucket-definitionswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на запись определений бакетов в Grail</p>
+<h3 id="storagebucket-definitionsdelete">storage:bucket-definitions:delete<a class="headerlink" href="#storagebucket-definitionsdelete" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на удаление определений бакетов из Grail</p>
+<h3 id="storagebucket-definitionstruncate">storage:bucket-definitions:truncate<a class="headerlink" href="#storagebucket-definitionstruncate" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на удаление всех записей из бакета (но не самого бакета) в Grail.</p>
+<h3 id="storagerecordsdelete">storage:records:delete<a class="headerlink" href="#storagerecordsdelete" title="Permanent link">&para;</a></h3>
+<p>Удаление записей в Grail</p>
+<h3 id="storagefilesread">storage:files:read<a class="headerlink" href="#storagefilesread" title="Permanent link">&para;</a></h3>
+<p>Чтение данных из файлов.</p>
+<h4 id="conditions_51">conditions:<a class="headerlink" href="#conditions_51" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:file-path</code> - Путь к файлу, к которому можно получить доступ.
+  operators: <code>=</code>, <code>startsWith</code>, <code>IN</code></li>
+</ul>
+<h3 id="storagefileswrite">storage:files:write<a class="headerlink" href="#storagefileswrite" title="Permanent link">&para;</a></h3>
+<p>Прием данных через REST API</p>
+<h4 id="conditions_52">conditions:<a class="headerlink" href="#conditions_52" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:file-path</code> - Путь к файлу, к которому можно получить доступ.
+  operators: <code>=</code>, <code>startsWith</code>, <code>IN</code></li>
+</ul>
+<h3 id="storagefilesdelete">storage:files:delete<a class="headerlink" href="#storagefilesdelete" title="Permanent link">&para;</a></h3>
+<p>Удаление данных через REST API</p>
+<h4 id="conditions_53">conditions:<a class="headerlink" href="#conditions_53" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:file-path</code> - Путь к файлу, к которому можно получить доступ.
+  operators: <code>=</code>, <code>startsWith</code>, <code>IN</code></li>
+</ul>
+<h3 id="storagefilter-segmentsread">storage:filter-segments:read<a class="headerlink" href="#storagefilter-segmentsread" title="Permanent link">&para;</a></h3>
+<p>Чтение сегментов фильтрации из Grail</p>
+<h3 id="storagefilter-segmentswrite">storage:filter-segments:write<a class="headerlink" href="#storagefilter-segmentswrite" title="Permanent link">&para;</a></h3>
+<p>Запись сегментов фильтрации в Grail</p>
+<h3 id="storagefilter-segmentsshare">storage:filter-segments:share<a class="headerlink" href="#storagefilter-segmentsshare" title="Permanent link">&para;</a></h3>
+<p>Общий доступ к сегментам фильтрации в Grail</p>
+<h3 id="storagefilter-segmentsdelete">storage:filter-segments:delete<a class="headerlink" href="#storagefilter-segmentsdelete" title="Permanent link">&para;</a></h3>
+<p>Удаление собственных сегментов фильтрации в Grail</p>
+<h3 id="storagefilter-segmentsadmin">storage:filter-segments:admin<a class="headerlink" href="#storagefilter-segmentsadmin" title="Permanent link">&para;</a></h3>
+<p>Запись и удаление всех сегментов фильтрации в Grail</p>
+<h3 id="storagefieldset-definitionsread">storage:fieldset-definitions:read<a class="headerlink" href="#storagefieldset-definitionsread" title="Permanent link">&para;</a></h3>
+<p>Чтение определений наборов полей из Grail</p>
+<h3 id="storagefieldset-definitionswrite">storage:fieldset-definitions:write<a class="headerlink" href="#storagefieldset-definitionswrite" title="Permanent link">&para;</a></h3>
+<p>Запись и удаление определений наборов полей в Grail</p>
+<h3 id="storageapplicationsnapshotsread">storage:application.snapshots:read<a class="headerlink" href="#storageapplicationsnapshotsread" title="Permanent link">&para;</a></h3>
+<p>Чтение снимков приложений из Grail</p>
+<h4 id="conditions_54">conditions:<a class="headerlink" href="#conditions_54" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - Это условие ограничивает действие разрешения на уровне записей определенным списком бакетов.
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storageusereventsread">storage:user.events:read<a class="headerlink" href="#storageusereventsread" title="Permanent link">&para;</a></h3>
+<p>Чтение событий пользователей из Grail</p>
+<h4 id="conditions_55">conditions:<a class="headerlink" href="#conditions_55" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - Это условие ограничивает действие разрешения на уровне записей определенным списком бакетов.
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Пользовательское поле для контекста безопасности.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:frontend.name</code> - Имя фронтенда.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storageusersessionsread">storage:user.sessions:read<a class="headerlink" href="#storageusersessionsread" title="Permanent link">&para;</a></h3>
+<p>Чтение сессий пользователей из Grail</p>
+<h4 id="conditions_56">conditions:<a class="headerlink" href="#conditions_56" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - Это условие ограничивает действие разрешения на уровне записей определенным списком бакетов.
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Пользовательское поле для контекста безопасности.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:frontend.name</code> - Имя фронтенда.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storageuserreplaysread">storage:user.replays:read<a class="headerlink" href="#storageuserreplaysread" title="Permanent link">&para;</a></h3>
+<p>Чтение воспроизведений пользователей из Grail</p>
+<h4 id="conditions_57">conditions:<a class="headerlink" href="#conditions_57" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - Это условие ограничивает действие разрешения на уровне записей определенным списком бакетов.
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Пользовательское поле для контекста безопасности.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h3 id="storagesecurityeventsread">storage:security.events:read<a class="headerlink" href="#storagesecurityeventsread" title="Permanent link">&para;</a></h3>
+<p>Чтение событий безопасности из Grail</p>
+<h4 id="conditions_58">conditions:<a class="headerlink" href="#conditions_58" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>storage:bucket-name</code> - Это условие ограничивает действие разрешения на уровне записей определенным списком бакетов.
+  operators: <code>=</code>, <code>!=</code>, <code>IN</code>, <code>NOT IN</code>, <code>startsWith</code>, <code>NOT startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.kind</code> - Предоставляет высокоуровневую информацию о типе данных события без привязки к конкретному содержимому. Помогает определить тип записи необработанного события.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.type</code> - Уникальный идентификатор типа данного события.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:event.provider</code> - Источник события, например имя компонента или системы, сгенерировавшей событие.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.namespace.name</code> - Имя пространства имен, в котором работает под.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:k8s.cluster.name</code> - Имя кластера, в котором работает под.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:host.name</code> - Имя хоста.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.host_group.id</code> - Идентификатор группы хостов.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:dt.security_context</code> - Пользовательское поле для контекста безопасности.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:gcp.project.id</code> - Идентификатор проекта Google Cloud Platform.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:aws.account.id</code> - Идентификатор учетной записи Amazon Web Services.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.subscription</code> - Подписка Azure.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+<li><code>storage:azure.resource.group</code> - Группа ресурсов Azure.
+  operators: <code>=</code>, <code>IN</code>, <code>startsWith</code>, <code>MATCH</code></li>
+</ul>
+<h2 id="unified-analysis">unified-analysis<a class="headerlink" href="#unified-analysis" title="Permanent link">&para;</a></h2>
+<p>Унифицированный анализ</p>
+<h3 id="unified-analysisscreen-definitionread">unified-analysis:screen-definition:read<a class="headerlink" href="#unified-analysisscreen-definitionread" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на чтение определения экрана унифицированного анализа</p>
+<h2 id="upgrade-assistant">upgrade-assistant<a class="headerlink" href="#upgrade-assistant" title="Permanent link">&para;</a></h2>
+<p>Сервис помощника по обновлению SaaS</p>
+<h3 id="upgrade-assistantenvironmentswrite">upgrade-assistant:environments:write<a class="headerlink" href="#upgrade-assistantenvironmentswrite" title="Permanent link">&para;</a></h3>
+<p>Предоставляет разрешение на использование приложения помощника по обновлению SaaS</p>
+<h2 id="vulnerability-service">vulnerability-service<a class="headerlink" href="#vulnerability-service" title="Permanent link">&para;</a></h2>
+<p>Предоставляет API для доступа к уязвимостям, затрагивающим клиентские среды</p>
+<h3 id="vulnerability-servicevulnerabilitiesread">vulnerability-service:vulnerabilities:read<a class="headerlink" href="#vulnerability-servicevulnerabilitiesread" title="Permanent link">&para;</a></h3>
+<p>Позволяет просматривать уязвимости</p>
+<h3 id="vulnerability-servicevulnerabilitieswrite">vulnerability-service:vulnerabilities:write<a class="headerlink" href="#vulnerability-servicevulnerabilitieswrite" title="Permanent link">&para;</a></h3>
+<p>Позволяет изменять информацию, связанную с уязвимостями</p>
+<h2 id="_1">Связанные темы<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies" title="Working with policies">Работа с политиками</a></li>
+<li><a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax" title="IAM policy statement syntax.">Синтаксис и примеры операторов политик IAM</a></li>
+<li><a href="/docs/manage/identity-access-management/use-cases/access-settings" title="Grant access to Settings">Предоставление доступа к настройкам</a></li>
+<li><a href="/docs/dynatrace-api/account-management-api" title="Explore endpoints of the Account Management API.">API управления учетной записью</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.path", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../../../assets/javascripts/groq-chat.js"></script>
+      
+    
+  </body>
+</html>
