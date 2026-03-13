@@ -89,7 +89,10 @@ jobs:
         if: steps.check.outputs.has_changes == 'true' || inputs.force_retranslate
         run: |
           echo "=== Stage 2: Translating documentation ==="
-          python scripts/pipeline/run_pipeline.py translate --target-lang ru
+          # Pipeline exits 0 even on quota exhaustion — translates what it can,
+          # remaining files will be picked up on the next run.
+          python scripts/pipeline/run_pipeline.py translate --target-lang ru || true
+          echo "translate_done=true" >> $GITHUB_OUTPUT
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}

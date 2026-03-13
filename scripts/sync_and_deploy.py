@@ -136,14 +136,14 @@ class PipelineOrchestrator:
         return changed
 
     def _stage_translate(self, changed_files: list):
-        """Stage 3: Translate only changed files."""
+        """Stage 3: Translate only changed files. Stops gracefully on quota exhaustion."""
         if not changed_files:
             print("\n[3/5] Translate: nothing to translate")
             return
 
         print(f"\n[3/5] Translating {len(changed_files)} files...")
 
-        from pipeline.translator import TranslationPipeline
+        from pipeline.translator import TranslationPipeline, QuotaExhaustedError
         pipeline = TranslationPipeline(CACHE_DIR, TERMINOLOGY_FILE)
 
         if not pipeline.providers:
@@ -153,26 +153,37 @@ class PipelineOrchestrator:
 
         translated = 0
         failed = 0
+        quota_stopped = False
+        remaining = 0
 
-        for source_file in changed_files:
+        for i, source_file in enumerate(changed_files):
             relative = source_file.relative_to(DOCS_EN)
             target_file = DOCS_RU / relative
 
             print(f"  -> {relative}")
-            if pipeline.translate_file(source_file, target_file, "ru"):
-                translated += 1
-                # Store content hash to avoid re-translation
-                self._store_hash(source_file, relative)
-            else:
-                failed += 1
+            try:
+                if pipeline.translate_file(source_file, target_file, "ru"):
+                    translated += 1
+                    self._store_hash(source_file, relative)
+                else:
+                    failed += 1
+            except QuotaExhaustedError:
+                quota_stopped = True
+                remaining = len(changed_files) - i - 1
+                print(f"\n  [QUOTA] All providers exhausted after {translated} translations.")
+                print(f"  [QUOTA] {remaining} files postponed to next pipeline run.")
+                break
 
+        status = "quota_partial" if quota_stopped else "success"
         self.stats["translate"] = {
-            "status": "success",
+            "status": status,
             "translated": translated,
             "failed": failed,
             "total": len(changed_files),
+            "remaining": remaining,
         }
-        print(f"  Done: {translated} translated, {failed} failed")
+        print(f"  Done: {translated} translated, {failed} failed" +
+              (f", {remaining} postponed (quota)" if quota_stopped else ""))
 
     def _stage_nav_update(self):
         """Stage 4: Update mkdocs.yml navigation en/ -> ru/."""

@@ -23,8 +23,16 @@ from .terminology import TerminologyEngine
 from .cache_manager import CacheManager
 
 
+class QuotaExhaustedError(Exception):
+    """Raised when all providers have exhausted their API quotas."""
+    pass
+
+
 class TranslationProvider:
     """Base class for translation API providers."""
+
+    # HTTP status codes that indicate quota/rate limit exhaustion
+    QUOTA_STATUS_CODES = {429, 402, 403}
 
     def __init__(self, name: str, api_key: str, model: str, endpoint: str, rate_limit: int):
         self.name = name
@@ -33,6 +41,7 @@ class TranslationProvider:
         self.endpoint = endpoint
         self.rate_limit = rate_limit
         self._last_request_time = 0
+        self.exhausted = False  # True when quota is used up
 
     def _rate_limit_wait(self):
         """Wait to respect rate limits."""
@@ -41,6 +50,13 @@ class TranslationProvider:
         if elapsed < min_interval:
             time.sleep(min_interval - elapsed)
         self._last_request_time = time.time()
+
+    def _check_quota_error(self, status_code: int, response_text: str) -> bool:
+        """Check if error indicates quota exhaustion."""
+        if status_code in self.QUOTA_STATUS_CODES:
+            return True
+        quota_keywords = ["quota", "limit", "exceeded", "rate_limit", "too many requests", "insufficient"]
+        return any(kw in response_text.lower() for kw in quota_keywords)
 
     def translate(self, text: str, source_lang: str = "en", target_lang: str = "ru") -> Optional[str]:
         """Translate text. Returns translated text or None on failure."""
@@ -51,6 +67,9 @@ class GeminiProvider(TranslationProvider):
     """Google Gemini Flash translation provider."""
 
     def translate(self, text: str, source_lang: str = "en", target_lang: str = "ru") -> Optional[str]:
+        if self.exhausted:
+            return None
+
         self._rate_limit_wait()
 
         prompt = self._build_prompt(text, source_lang, target_lang)
@@ -70,7 +89,11 @@ class GeminiProvider(TranslationProvider):
                 if candidates:
                     return candidates[0]["content"]["parts"][0]["text"]
             else:
-                print(f"[Gemini] Error {response.status_code}: {response.text[:200]}")
+                if self._check_quota_error(response.status_code, response.text):
+                    print(f"[Gemini] QUOTA EXHAUSTED (HTTP {response.status_code})")
+                    self.exhausted = True
+                else:
+                    print(f"[Gemini] Error {response.status_code}: {response.text[:200]}")
                 return None
         except Exception as e:
             print(f"[Gemini] Exception: {e}")
@@ -96,6 +119,9 @@ class GroqProvider(TranslationProvider):
     """Groq (Llama) translation provider."""
 
     def translate(self, text: str, source_lang: str = "en", target_lang: str = "ru") -> Optional[str]:
+        if self.exhausted:
+            return None
+
         self._rate_limit_wait()
 
         prompt = f"""Translate this technical documentation from {source_lang} to {target_lang}.
@@ -124,7 +150,11 @@ Output ONLY the translation.
                 data = response.json()
                 return data["choices"][0]["message"]["content"]
             else:
-                print(f"[Groq] Error {response.status_code}: {response.text[:200]}")
+                if self._check_quota_error(response.status_code, response.text):
+                    print(f"[Groq] QUOTA EXHAUSTED (HTTP {response.status_code})")
+                    self.exhausted = True
+                else:
+                    print(f"[Groq] Error {response.status_code}: {response.text[:200]}")
                 return None
         except Exception as e:
             print(f"[Groq] Exception: {e}")
@@ -135,6 +165,9 @@ class OpenRouterProvider(TranslationProvider):
     """OpenRouter translation provider (free models)."""
 
     def translate(self, text: str, source_lang: str = "en", target_lang: str = "ru") -> Optional[str]:
+        if self.exhausted:
+            return None
+
         self._rate_limit_wait()
 
         prompt = f"""Translate this technical documentation from {source_lang} to {target_lang}.
@@ -162,7 +195,11 @@ Output ONLY the translation.
                 data = response.json()
                 return data["choices"][0]["message"]["content"]
             else:
-                print(f"[OpenRouter] Error {response.status_code}")
+                if self._check_quota_error(response.status_code, response.text):
+                    print(f"[OpenRouter] QUOTA EXHAUSTED (HTTP {response.status_code})")
+                    self.exhausted = True
+                else:
+                    print(f"[OpenRouter] Error {response.status_code}")
                 return None
         except Exception as e:
             print(f"[OpenRouter] Exception: {e}")
@@ -259,6 +296,10 @@ class TranslationPipeline:
                     break
 
             if translated is None:
+                # Check if ALL providers are exhausted (quota)
+                if all(p.exhausted for p in self.providers):
+                    print(f"[QUOTA] All providers exhausted. Stopping translation.")
+                    raise QuotaExhaustedError("All translation providers exhausted their quotas")
                 print(f"[ERROR] All providers failed for chunk in {source_path}")
                 return False
 
@@ -330,14 +371,18 @@ class TranslationPipeline:
     ) -> Dict[str, int]:
         """
         Translate all Markdown files in a directory.
+        Gracefully stops on quota exhaustion — already translated files are kept.
         Returns stats dict.
         """
-        stats = {"total": 0, "translated": 0, "cached": 0, "failed": 0, "skipped": 0}
+        stats = {
+            "total": 0, "translated": 0, "cached": 0, "failed": 0,
+            "skipped": 0, "quota_stopped": False, "remaining": 0,
+        }
 
         md_files = list(source_dir.rglob("*.md"))
         stats["total"] = len(md_files)
 
-        for source_file in md_files:
+        for i, source_file in enumerate(md_files):
             relative = source_file.relative_to(source_dir)
             target_file = target_dir / relative
 
@@ -348,9 +393,16 @@ class TranslationPipeline:
                     continue
 
             print(f"  Translating: {relative}")
-            if self.translate_file(source_file, target_file, target_lang):
-                stats["translated"] += 1
-            else:
-                stats["failed"] += 1
+            try:
+                if self.translate_file(source_file, target_file, target_lang):
+                    stats["translated"] += 1
+                else:
+                    stats["failed"] += 1
+            except QuotaExhaustedError:
+                stats["quota_stopped"] = True
+                stats["remaining"] = len(md_files) - i - 1
+                print(f"\n  [QUOTA] Stopping gracefully. {stats['translated']} files translated successfully.")
+                print(f"  [QUOTA] {stats['remaining']} files will be translated on the next run.")
+                break
 
         return stats
