@@ -4,9 +4,12 @@ Centralizes all settings, paths, and API configuration.
 """
 import os
 from pathlib import Path
-from dotenv import load_dotenv
 
-load_dotenv()
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass  # dotenv not required in CI validation
 
 # === Paths ===
 PROJECT_ROOT = Path(__file__).parent.parent.parent
