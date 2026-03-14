@@ -1,5 +1,5 @@
 ---
-title: Capture event and session properties for mobile frontends
+title: Захват свойств событий и сеансов для мобильных фронтендов
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/mobile-frontends/additional-configuration/event-and-session-properties
 scraped: 2026-03-06T21:28:07.516797
 ---

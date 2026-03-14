@@ -1,5 +1,5 @@
 ---
-title: Migration guides
+title: Руководства по миграции
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration
 scraped: 2026-03-02T21:23:33.445267
 ---

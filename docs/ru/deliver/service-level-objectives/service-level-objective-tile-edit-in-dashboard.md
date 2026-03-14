@@ -1,5 +1,5 @@
 ---
-title: Edit a service-level objective (SLO) tile in a dashboard
+title: Редактирование плитки целевого показателя обслуживания (SLO) на панели мониторинга
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard
 scraped: 2026-03-06T21:33:11.531334
 ---

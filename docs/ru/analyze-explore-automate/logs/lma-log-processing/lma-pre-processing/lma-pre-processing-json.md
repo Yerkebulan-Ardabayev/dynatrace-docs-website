@@ -1,5 +1,5 @@
 ---
-title: JSON log processing with unescaped nested JSON strings
+title: JSON обработка журналов с неэкранированными вложенными JSON строками
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-pre-processing/lma-pre-processing-json
 scraped: 2026-03-06T21:28:23.371162
 ---

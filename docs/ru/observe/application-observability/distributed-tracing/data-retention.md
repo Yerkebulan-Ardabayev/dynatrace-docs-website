@@ -1,5 +1,5 @@
 ---
-title: Retain trace data for long periods
+title: Хранение данных трассировок в течение длительного времени
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/data-retention
 scraped: 2026-03-06T21:10:05.194209
 ---

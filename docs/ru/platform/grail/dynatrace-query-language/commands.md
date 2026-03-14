@@ -1,5 +1,5 @@
 ---
-title: DQL commands
+title: Команды DQL
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/commands
 scraped: 2026-03-06T21:20:34.787797
 ---

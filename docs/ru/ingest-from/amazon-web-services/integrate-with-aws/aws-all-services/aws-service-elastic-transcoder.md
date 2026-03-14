@@ -26,8 +26,8 @@ Dynatrace собирает метрики для множества предва
   Для ролевого доступа в развертывании [SaaS](../cloudwatch-metrics.md#role-based-access "Integrate metrics from Amazon CloudWatch.") вам необходим [Environment ActiveGate](../../../dynatrace-activegate/installation.md "Learn how to configure ActiveGate") установленный на хосте Amazon EC2.
 
 * Dynatrace version 1.199+
-* An updated [AWS monitoring policy](../cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.  
-  To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведенный ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+* Обновлённая [политика мониторинга AWS](../cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.  
+  Чтобы [обновить политику AWS IAMï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведенный ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
 Предопределенная политика JSON для всех поддерживаемых сервисов
 
@@ -687,7 +687,7 @@ Dynatrace собирает метрики для множества предва
 
 ## Включение мониторинга
 
-Chtoby_uznat [Включение мониторинга_servisa](../aws-metrics-ingest/aws-enable-service-monitoring.md "Enable AWS monitoring in Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, смотрите [Включение мониторинга сервиса](../aws-metrics-ingest/aws-enable-service-monitoring.md "Enable AWS monitoring in Dynatrace.").
 
 ## Просмотр метрик сервиса
 
@@ -697,7 +697,7 @@ Chtoby_uznat [Включение мониторинга_servisa](../aws-metrics-
 
 Для доступа к странице обзора пользовательского устройства
 
-1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
 2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
 3. После выбора группы пользовательских устройств вы окажетесь на **странице обзора группы пользовательских устройств**.
 4. **Страница обзора группы пользовательских устройств** отображает все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
@@ -710,9 +710,9 @@ Chtoby_uznat [Включение мониторинга_servisa](../aws-metrics-
 
 Для существующих мониторируемых сервисов может потребоваться повторное сохранение ваших учетных данных, чтобы предустановленная панель мониторинга появилась на странице **Dashboards**. Для повторного сохранения учетных данных перейдите в **Settings** > **Cloud and virtualization** > **AWS**, выберите нужный экземпляр AWS и нажмите **Save**.
 
-You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.
+Вы не можете вносить изменения в предустановленную панель мониторинга напрямую, но можете клонировать и отредактировать её. Чтобы клонировать панель мониторинга, откройте меню (**...**) и выберите **Clone**.
 
-To remove a dashboard from the dashboards page, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+Чтобы убрать панель мониторинга со страницы панелей мониторинга, вы можете скрыть её. Чтобы скрыть панель мониторинга, откройте меню (**...**) и выберите **Hide**.
 
 Скрытие панели мониторинга не влияет на других пользователей.
 
@@ -838,18 +838,18 @@ To remove a dashboard from the dashboards page, you can hide it. To hide a dashb
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуется |
 | --- | --- | --- | --- | --- | --- |
-| BilledAudioOutput | The number of billable seconds of audio output for a pipeline | Seconds | Multi | PipelineId |  |
-| BilledAudioOutput | The number of billable seconds of HD output for a pipeline | Seconds | Sum | PipelineId | Применимо |
-| BilledHDOutput | The number of billable seconds of SD output for a pipeline | Seconds | Multi | PipelineId |  |
+| BilledAudioOutput | Количество тарифицируемых секунд аудиовыхода для конвейера | Seconds | Multi | PipelineId |  |
+| BilledAudioOutput | Количество тарифицируемых секунд HD-выхода для конвейера | Seconds | Sum | PipelineId | Применимо |
+| BilledHDOutput | Количество тарифицируемых секунд SD-выхода для конвейера | Seconds | Multi | PipelineId |  |
 | BilledHDOutput |  | Seconds | Sum | PipelineId | Применимо |
-| BilledSDOutput | The number of billable seconds of SD output for a pipeline. | Seconds | Multi | PipelineId |  |
+| BilledSDOutput | Количество тарифицируемых секунд SD-выхода для конвейера. | Seconds | Multi | PipelineId |  |
 | BilledSDOutput |  | Seconds | Sum | PipelineId | Применимо |
-| Errors | The number of errors caused by invalid operation parameters, such as a request for a job status that does not include the job ID | Count | Sum | Region, Operation | Применимо |
-| JobsCompleted | The number of jobs completed by this pipeline | Count | Sum | PipelineId | Применимо |
-| JobsErrored | The number of jobs that failed because of invalid inputs, such as a request to transcode a file that is not in the given input bucket | Count | Sum | PipelineId | Применимо |
-| OutputsPerJob | The number of outputs Elastic Transcoder created for a job | Count | Sum | PipelineId | Применимо |
-| StandbyTime | The number of seconds before Elastic Transcoder started transcoding a job | Seconds | Multi | PipelineId | Применимо |
-| Throttles | The number of times that Elastic Transcoder automatically throttled an operation | Count | Sum | Region, Operation | Применимо |
+| Errors | Количество ошибок, вызванных недопустимыми параметрами операции, например запросом статуса задания без указания ID задания | Count | Sum | Region, Operation | Применимо |
+| JobsCompleted | Количество заданий, завершённых этим конвейером | Count | Sum | PipelineId | Применимо |
+| JobsErrored | Количество заданий, завершившихся ошибкой из-за недопустимых входных данных, например запроса на транскодирование файла, отсутствующего в указанном входном бакете | Count | Sum | PipelineId | Применимо |
+| OutputsPerJob | Количество выходных файлов, созданных Elastic Transcoder для задания | Count | Sum | PipelineId | Применимо |
+| StandbyTime | Количество секунд до начала транскодирования задания Elastic Transcoder | Seconds | Multi | PipelineId | Применимо |
+| Throttles | Количество раз, когда Elastic Transcoder автоматически ограничивал операцию | Count | Sum | Region, Operation | Применимо |
 
 ## Ограничения
 

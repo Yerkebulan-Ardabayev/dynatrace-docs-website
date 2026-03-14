@@ -1,33 +1,33 @@
 ---
-title: Terraform API support and access permission handling
+title: Поддержка Terraform API и обработка разрешений доступа
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling
 scraped: 2026-03-05T21:37:34.807717
 ---
 
-# Поддержка Terraform API и управление правами доступа
+# Поддержка Terraform API и обработка разрешений доступа
 
-# Поддержка Terraform API и управление правами доступа
+# Поддержка Terraform API и обработка разрешений доступа
 
-* Последняя версия Dynatrace
-* Справочник
-* Чтение: 3 мин
+* Последнее Dynatrace
+* Справка
+* 3-минутное чтение
 * Обновлено 20 ноября 2025 г.
 
-Dynatrace предлагает различные варианты аутентификации вызовов API. Провайдер Dynatrace Terraform поддерживает следующие варианты аутентификации.
+Dynatrace предлагает различные варианты аутентификации вызовов API. Поставщик Terraform Dynatrace поддерживает следующие варианты аутентификации.
 
-* Платформенные токены
-* OAuth-клиенты
+* Токены платформы
+* Клиенты OAuth
 * Токены доступа (классические)
 
-Дополнительную информацию об управлении идентификацией и доступом (IAM), включая платформенные токены, OAuth-клиенты и API-токены / классические токены доступа, см. в разделе [Токены и OAuth-клиенты](../../../manage/identity-access-management/access-tokens-and-oauth-clients.md "Tokens and OAuth clients").
+Для получения более подробной информации об управлении идентификацией и доступом (IAM), включая токены платформы, клиенты OAuth и токены API/токены доступа классического типа, см. [Токены и клиенты OAuth](../../../manage/identity-access-management/access-tokens-and-oauth-clients.md "Токены и клиенты OAuth").
 
-## Создание платформенных токенов
+## Создание токенов платформы
 
-[Платформенные токены](../../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Create personalised platform tokens to access Dynatrace services via the API in your user context.") можно использовать для аутентификации вызовов API к Dynatrace.
-Эти платформенные токены являются долгоживущими токенами доступа.
-Полный список поддерживаемых сервисов платформенных токенов см. в разделе [Доступные сервисы для платформенных токенов](../../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md#available-services "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+[Токены платформы](../../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md "Создайте персонализированные токены платформы для доступа к сервисам Dynatrace через API в вашем контексте пользователя.") можно использовать для аутентификации вызовов API против Dynatrace.
+Эти токены платформы являются долгосрочными токенами доступа.
+Для полного списка поддерживаемых сервисов токенов платформы см. [Доступные сервисы для токенов платформы](../../../manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens.md#available-services "Создайте персонализированные токены платформы для доступа к сервисам Dynatrace через API в вашем контексте пользователя.").
 
-Следующие блоки кода показывают, как определить переменные окружения для URL вашей среды и платформенного токена для Windows и Linux.
+Следующие блоки кода показывают, как определить переменные среды для URL-адреса вашей среды и токена платформы для Windows и Linux.
 
 Windows
 
@@ -49,16 +49,16 @@ export DYNATRACE_ENV_URL=https://<YOUR-DT-ENV-ID>.apps.dynatrace.com
 export DYNATRACE_PLATFORM_TOKEN=<YOUR_PLATFORM_TOKEN>
 ```
 
-## Создание OAuth-клиента
+## Создание клиента OAuth
 
-Чтобы создать OAuth-клиент, выполните шаги, описанные в разделе [OAuth-клиенты](../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md#create-oauth-client "Manage authentication and user permissions using OAuth clients.").
+Чтобы создать клиента OAuth, следуйте шагам, описанным в [Клиентах OAuth](../../../manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients.md#create-oauth-client "Управляйте аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
 
-Чтобы убедиться, что OAuth-клиент работает должным образом, проверьте, что группы сервисного пользователя предоставляют те же области действия (scopes), что и созданный вами OAuth-клиент, для всех сред, в которых вы планируете его использовать.
-Дополнительную информацию об управлении разрешениями см. в разделе [Работа с политиками](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Working with policies").
+Чтобы убедиться, что клиент OAuth работает как ожидается, проверьте, что группы сервисного пользователя предоставляют те же области, что и клиент OAuth, который вы создали для всех сред, с которыми вы хотите использовать его.
+Для получения более подробной информации о контроле разрешений см. [Работа с политиками](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies.md "Работа с политиками").
 
-Провайдер Dynatrace Terraform запрашивает токены доступа OAuth, используя ваши учетные данные клиента, для выполнения аутентифицированных вызовов API.
+Поставщик Terraform Dynatrace запрашивает токены доступа OAuth с помощью ваших учетных данных клиента для аутентификации вызовов API.
 
-Следующие блоки кода показывают, как определить переменные окружения для URL вашей среды, клиента аутентификации и секрета для Windows и Linux.
+Следующие блоки кода показывают, как определить переменные среды для URL-адреса вашей среды, клиента аутентификации и секрета для Windows и Linux.
 
 Windows
 
@@ -88,12 +88,12 @@ export DYNATRACE_CLIENT_ID=<YOUR_CLIENT_ID>
 export DYNATRACE_CLIENT_SECRET=<YOUR_CLIENT_SECRET>
 ```
 
-## Создание токена доступа к API
+## Создание токена доступа API
 
-Используйте токены доступа для аутентификации вызовов классического API Dynatrace.
-Дополнительную информацию об использовании API-токена Dynatrace см. в разделе [Dynatrace API — токены и аутентификация](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Find out how to get authenticated to use the Dynatrace API.").
+Используйте токены доступа для аутентификации вызовов API классического типа Dynatrace.
+Для получения более подробной информации о том, как использовать токен Dynatrace API, см. [Dynatrace API - Токены и аутентификация](../../../dynatrace-api/basics/dynatrace-api-authentication.md "Узнайте, как аутентифицироваться для использования Dynatrace API.").
 
-Следующие блоки кода показывают, как определить переменные окружения для URL вашей среды и API-токена для Windows и Linux.
+Следующие блоки кода показывают, как определить переменные среды для URL-адреса вашей среды и токена API для Windows и Linux.
 
 Windows SaaS Classic Dynatrace
 
@@ -117,7 +117,8 @@ export DYNATRACE_API_TOKEN=<YOUR_API_TOKEN>
 
 ## Покрытие API
 
-Провайдер Dynatrace Terraform содержит большинство API Dynatrace. Все поддерживаемые ресурсы перечислены в документации провайдера Dynatrace Terraform в [Terraform Registry](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/latest/docs).
+Поставщик Terraform Dynatrace содержит большинство Dynatrace API.
+Все поддерживаемые ресурсы перечислены в документации поставщика Terraform Dynatrace в [Реестре Terraform](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/latest/docs).
 
-Всегда учитывайте правильные области разрешений (permission scopes), необходимые для выбранных ресурсов API.
-Информацию можно найти в разделе [Справочник политик IAM](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.") и в [репозитории GitHub провайдера Dynatrace Terraform](https://github.com/dynatrace-oss/terraform-provider-dynatrace/blob/main/documentation/supported-resources.md).
+Всегда учитывайте правильные области разрешений, необходимые для выбранных ресурсов API.
+Информацию можно найти в [Справке по политикам IAM](../../../manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements.md "Полная справка по политикам IAM и соответствующим условиям для всех сервисов Dynatrace.") и [репозитории Git Hub поставщика Terraform Dynatrace](https://github.com/dynatrace-oss/terraform-provider-dynatrace/blob/main/documentation/supported-resources.md).

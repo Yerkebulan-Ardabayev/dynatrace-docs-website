@@ -1,5 +1,5 @@
 ---
-title: Update OneAgent on Solaris
+title: Обновление OneAgent на Solaris
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/update-oneagent-on-solaris
 scraped: 2026-03-06T21:20:19.993240
 ---

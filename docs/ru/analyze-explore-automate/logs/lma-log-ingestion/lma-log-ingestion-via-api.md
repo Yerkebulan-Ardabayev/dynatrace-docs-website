@@ -1,36 +1,34 @@
 ---
-title: Log ingestion API
+title: Прием журналов API
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api
 scraped: 2026-03-06T21:28:26.746272
 ---
 
-# API приёма логов
+# Прием журналов API
 
-# API приёма логов
+* Последние Dynatrace
+* Обзор
+* 3 мин. на чтение
+* Обновлено 08 октября 2025 г.
 
-* Latest Dynatrace
-* Overview
-* 3-min read
-* Updated on Oct 08, 2025
+## Прием через Прием журналов API
 
-## Приём через API приёма логов
-
-Когда установка OneAgent невозможна, используйте API приёма логов. Например, в бессерверных средах, таких как AWS Fargate, где ведение логов опирается на встроенный маршрутизатор логов, такой как Fluent Bit, который легко интегрируется с API приёма логов Dynatrace. API приёма логов позволяет передавать записи логов в хранилище данных Grail и преобразовывать поток в осмысленные сообщения логов с помощью Dynatrace. Вы можете настроить интеграцию API приёма логов для широкого спектра сценариев использования, включая пользовательские интеграции. Вы можете использовать наши поддерживаемые интеграции для облаков или средств доставки логов, а также для ваших пользовательских сценариев.
+Если невозможно установить OneAgent, используйте Прием журналов API. Например, в бессерверных средах, таких как AWS Fargate, где ведение журналов полагается на встроенный маршрутизатор журналов, такой как Fluent Bit, который можно легко интегрировать с Dynatrace Приемом журналов API. Прием журналов API позволяет передавать записи журналов в озеро данных Grail, и Dynatrace преобразует поток в значимые сообщения журналов. Вы можете настроить интеграцию Приема журналов API для широкого спектра вариантов использования, а также включать пользовательские интеграции. Вы можете использовать наши поддерживаемые интеграции для облаков или сборщиков журналов, а также для ваших пользовательских сценариев.
 
 ![log-api](https://dt-cdn.net/images/log-api-1980-03664b6a2d.png)
 
-Вы можете настроить интеграцию API приёма логов для любых средств доставки логов, которые интегрируются с Dynatrace REST API, например, [OpenTelemetry Collector](../../../ingest-from/opentelemetry/collector.md "Узнайте об OpenTelemetry Collector от Dynatrace."), [Fluentbit](lma-stream-logs-with-fluent-bit.md "Интеграция Fluent Bit для потоковой передачи логов в Dynatrace."), [Fluentd](lma-stream-logs-fluentd-k8s.md "Интеграция Fluentd с Dynatrace для потоковой передачи логов с узлов и подов в Dynatrace."), [Logstash](lma-stream-logs-with-logstash.md "Интеграция Logstash для потоковой передачи логов с узлов и подов в Dynatrace.").
+Вы можете настроить интеграцию Приема журналов API для любых сборщиков журналов, которые интегрируются с Dynatrace REST API, например, [OpenTelemetry Collector](../../../ingest-from/opentelemetry/collector.md "Узнайте о Dynatrace OTel Collector."), [Fluentbit](lma-stream-logs-with-fluent-bit.md "Интегрируйте Fluent Bit для потоковой передачи журналов в Dynatrace."), [Fluentd](lma-stream-logs-fluentd-k8s.md "Интегрируйте Fluentd с Dynatrace для потоковой передачи журналов с узлов и подов в Dynatrace."), [Logstash](lma-stream-logs-with-logstash.md "Интегрируйте Logstash для потоковой передачи журналов с узлов и подов в Dynatrace.").
 
-Dynatrace автоматически собирает данные логов и событий из широкого спектра технологий. С помощью API приёма логов вы можете передавать записи логов в систему и позволить Dynatrace преобразовать поток в осмысленные сообщения логов.
+Dynatrace автоматически собирает данные журналов и событий из широкого спектра технологий. С помощью Приема журналов API вы можете передавать записи журналов в систему и позволить Dynatrace преобразовать поток в значимые сообщения журналов.
 
 ![LMA - Generic log ingestion API](https://dt-cdn.net/images/lma-generic-log-ingestion-api-2500-090a5b5c43.png)
 
-API приёма логов позволяет передавать записи логов в систему. Он доступен через [Приём JSON и TXT логов](lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md "Узнайте, как обрабатываются JSON и TXT логи в сглаженном или необработанном режиме.") или через [Приём OTLP логов](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.").
+Прием журналов API позволяет передавать записи журналов в систему. Он доступен через [Ingest JSON и TXT logs](lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md "Узнайте, как обрабатываются JSON и TXT logs, в сжатом или необработанном режиме.") или через [Ingest OTLP logs](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Узнайте, как Dynatrace принимает записи журналов OpenTelemetry и какие ограничения применяются.").
 
-* Для Dynatrace SaaS конечная точка приёма логов доступна в вашей среде.
-* Если в качестве конечной точки в вашей локальной среде вы выбрали Environment ActiveGate, установите экземпляр ActiveGate: в Dynatrace Hub выберите **ActiveGate** > **Set up**. API приёма логов v2 автоматически включается на ActiveGate.
-* Конечная точка включена по умолчанию на всех ваших ActiveGate.
-* ActiveGate отвечает за обслуживание конечной точки, сбор данных и пересылку их в Dynatrace пакетами.
+* Для Dynatrace SaaS конечная точка приема журналов доступна в вашей среде.
+* Если Environment ActiveGate является вашим выбором для конечной точки в вашей локальной среде, установите экземпляр ActiveGate: В Dynatrace Hub, выберите **ActiveGate** > **Настройка**. Прием журналов API v2 автоматически включен на ActiveGate.
+* Конечная точка включена по умолчанию на всех ваших ActiveGates.
+* ActiveGate отвечает за обслуживание конечной точки, сбор данных и их пересылку в Dynatrace пакетами.
 * Конечные точки SaaS:
 
   + `https://{your-environment-id}.live.dynatrace.com/api/v2/logs/ingest`
@@ -39,47 +37,43 @@ API приёма логов позволяет передавать записи
 
   + `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/logs/ingest`
   + `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/otlp/v1/logs`
-* Для сред Kubernetes вы можете использовать [Fluentd](lma-stream-logs-fluentd-k8s.md "Интеграция Fluentd с Dynatrace для потоковой передачи логов с узлов и подов в Dynatrace.") или [Fluent Bit](lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s.md "Интеграция Fluent Bit в Kubernetes для потоковой передачи логов в Dynatrace.") для пересылки логов в Dynatrace.
+* Для Kubernetes сред вы можете использовать [Fluentd](lma-stream-logs-fluentd-k8s.md "Интегрируйте Fluentd с Dynatrace для потоковой передачи журналов с узлов и подов в Dynatrace.") или [Fluent Bit](lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s.md "Интегрируйте Fluent Bit в Kubernetes для потоковой передачи журналов в Dynatrace.") для пересылки журналов в Dynatrace.
 
-ActiveGate будет собирать и пытаться автоматически преобразовать любые данные логов, содержащие следующие элементы:
+ActiveGate будет собирать и пытаться автоматически преобразовать любые данные журналов, содержащие следующие элементы:
 
-* Содержимое лога
+* Содержимое журнала
 * Временная метка
-* Атрибуты ключ-значение
+* Атрибуты "Ключ-Значение"
 
-При использовании обработки логов с пользовательским конвейером обработки (OpenPipeline) приём поддерживает все типы данных JSON для значений атрибутов. Для этого требуется версия SaaS 1.295+ при использовании конечной точки SaaS API или версия ActiveGate 1.295+ при использовании конечной точки ActiveGate API. Во всех остальных случаях все принятые значения преобразуются в строковый тип.
+При использовании обработки журналов с пользовательским конвейером обработки (OpenPipeline), прием поддерживает все типы данных JSON для значений атрибутов. Это требует версии SaaS 1.295+ при использовании конечной точки SaaS API или версии ActiveGate 1.295+ при использовании конечной точки ActiveGate API. Во всех остальных случаях все принятые значения преобразуются в строковый тип.
 
-### Повторная отправка неудачных запросов
+### Повторные попытки неудачных запросов
 
-API-клиенты должны повторно выполнять запросы приёма логов, завершившиеся с повторяемыми ошибками.
+Клиенты API должны повторно выполнять запросы на прием журналов, которые не удались из-за ошибок, подлежащих повторной попытке.
 
-В документации каждой конечной точки API указано, какие коды ответов допускают повторную попытку. При повторной отправке клиент должен реализовать стратегию экспоненциальной задержки.
+Документация к каждой конечной точке API указывает, какие коды ответа подлежат повторной попытке. При повторной попытке клиент реализует стратегию экспоненциальной отсрочки.
 
-## Очередь данных логов
+## Очередь данных журналов
 
-Вы можете настроить свойства очереди данных логов, отредактировав файл `custom.properties` (см. [Свойства и параметры конфигурации ActiveGate](../../../ingest-from/dynatrace-activegate/configuration/configure-activegate.md#generic-ingest "Узнайте, какие свойства ActiveGate вы можете настроить в соответствии с вашими потребностями и требованиями.")) на вашем ActiveGate для установки следующих значений:
+Вы можете настроить свойства очереди данных журналов, отредактировав файл `custom.properties` (см. [Свойства и параметры конфигурации ActiveGate](../../../ingest-from/dynatrace-activegate/configuration/configure-activegate.md#generic-ingest "Узнайте, какие свойства ActiveGate вы можете настроить в соответствии с вашими потребностями и требованиями.")) на вашем ActiveGate, чтобы установить следующие значения:
 
 ```
 [generic_ingest]
 
+#disk_queue_path=<custom_path> # по умолчанию папка temp
 
-
-#disk_queue_path=<custom_path> # defaults to temp folder
-
-
-
-#disk_queue_max_size_mb=<limit> # defaults to 300 MB
+#disk_queue_max_size_mb=<limit> # по умолчанию 300 МБ
 ```
 
-503 Usable space limit reached
+503 Достигнут предел доступного дискового пространства
 
-API приёма данных логов возвращает ошибку `503 Usable space limit reached`, когда принятые данные логов превышают настроенный размер очереди. Обычно это временная ситуация, возникающая только при пиковых нагрузках. Если эта ошибка сохраняется, увеличьте значение `disk_queue_max_size_mb` в `custom.properties`, чтобы позволить буферизацию пиковых нагрузок приёма логов.
+Прием журналов API возвращает ошибку `503 Достигнут предел доступного дискового пространства`, когда принятые данные журналов превышают настроенный размер очереди. Обычно это временная ситуация, которая возникает только во время пиков. Если эта ошибка сохраняется, увеличьте значение `disk_queue_max_size_mb` в `custom.properties`, чтобы разрешить пики приема журналов быть помещенными в очередь.
 
 ## Пример
 
-В этом примере API-запрос принимает данные логов в формате JSON, которые создадут событие лога с определёнными атрибутами `content`, `status`, `service.name` и `service.namespace`.
+В этом примере запрос API принимает данные журналов JSON, которые создадут событие журнала с определенными атрибутами журнала `content`, `status`, `service.name` и `service.namespace`.
 
-API-токен передаётся в заголовке Authorization.
+Токен API передается в заголовке Authorization.
 
 Ответ содержит код ответа `204`.
 
@@ -88,47 +82,25 @@ API-токен передаётся в заголовке Authorization.
 ```
 curl -X POST \
 
-
-
 https://environment.activegate.domain.com:9999/e/abc123a/api/v2/logs/ingest \
-
-
 
 -H 'Content-Type: application/json; charset=utf-8' \
 
-
-
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
-
-
 
 -d '[
 
-
-
 {
-
-
 
 "content": "Exception: Custom error log sent via Log ingestion API",
 
-
-
 "status": "error",
-
-
 
 "service.name": "log-monitoring-tenant",
 
-
-
 "service.namespace": "dev-stage-cluster"
 
-
-
 }
-
-
 
 ]'
 ```
@@ -151,14 +123,14 @@ Success
 
 ## Устранение неполадок
 
-Посетите Dynatrace Community для ознакомления с руководствами по устранению неполадок, а также см. [Устранение неполадок Log Management and Analytics](../lma-troubleshooting.md "Исправление проблем, связанных с настройкой и конфигурацией Log Management and Analytics.").
+Посетите Сообщество Dynatrace для получения руководств по устранению неполадок, а также ознакомьтесь с [Устранение неполадок управления журналами и аналитики](../lma-troubleshooting.md "Устранение проблем, связанных с настройкой и конфигурацией управления журналами и аналитики.").
 
-* [Устранение неполадок приёма логов через API - POST ingest logs](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608)
+* [Устранение неполадок приема журналов через API - POST ingest logsï»¿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608)
 
 ## Связанные темы
 
-* [Приём JSON и TXT логов](lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md "Узнайте, как обрабатываются JSON и TXT логи в сглаженном или необработанном режиме.")
-* [Log Monitoring API v2 - POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Отправляйте пользовательские логи в Dynatrace через Log Monitoring API v2.")
-* [Приём OTLP логов](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.")
-* [API приёма логов OpenTelemetry](../../../dynatrace-api/environment-api/opentelemetry/post-logs.md "Отправляйте логи OpenTelemetry в Dynatrace через API.")
-* [Автоматическое обогащение логов](lma-log-ingestion-via-api/lma-log-data-transformation.md "API приёма логов автоматически преобразует данные логов в выходные значения для атрибута loglevel.")
+* [Ingest JSON и TXT logs](lma-log-ingestion-via-api/lma-ingest-json-txt-logs.md "Узнайте, как обрабатываются JSON и TXT logs, в сжатом или необработанном режиме.")
+* [Log Monitoring API v2 - POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Отправляйте пользовательские журналы в Dynatrace через Log Monitoring API v2.")
+* [Ingest OTLP logs](../../../ingest-from/opentelemetry/otlp-api/ingest-logs.md "Узнайте, как Dynatrace принимает записи журналов OpenTelemetry и какие ограничения применяются.")
+* [OpenTelemetry logs ingest API](../../../dynatrace-api/environment-api/opentelemetry/post-logs.md "Отправляйте журналы OpenTelemetry в Dynatrace через API.")
+* [Автоматическое обогащение журналов](lma-log-ingestion-via-api/lma-log-data-transformation.md "Прием журналов API автоматически преобразует данные журналов в выходные значения для атрибута loglevel.")

@@ -1,30 +1,30 @@
 ---
-title: Log ingestion API (Logs Classic)
+title: Ввод журналов API (Классические журналы)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-data-ingest
 scraped: 2026-02-06T16:28:21.884183
 ---
 
-# API загрузки журналов (Logs Classic)
+# Ввод журналов API (Классические журналы)
 
-# API загрузки журналов (Logs Classic)
+# Ввод журналов API (Классические журналы)
 
-* Overview
-* 3-min read
-* Updated on Jan 22, 2026
+* Обзор
+* 3-минутное чтение
+* Обновлено 22 января 2026 г.
 
-Log Monitoring Classic
+Мониторинг журналов Classic
 
-Для последней версии Dynatrace см. [API загрузки журналов](../../logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.").
+Для самой новой версии Dynatrace см. [Ввод журналов API](../../logs/lma-log-ingestion/lma-log-ingestion-via-api.md "Передайте журнальные данные в Dynatrace с помощью API и позвольте Dynatrace преобразовать их в осмысленные сообщения журнала.").
 
-Dynatrace автоматически собирает данные журналов и событий из широкого спектра технологий. С помощью универсальной загрузки журналов вы можете передавать записи журналов в систему, а Dynatrace преобразует поток в понятные сообщения журналов.
+Dynatrace автоматически собирает журнальные и событийные данные из широкого спектра технологий. С помощью общего ввода журналов вы можете передавать журнальные записи в систему и позволять Dynatrace преобразовывать поток в осмысленные сообщения журнала.
 
-API загрузки журналов позволяет передавать записи журналов в систему. Он доступен через [Log Monitoring API v2 — POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.") для форматов JSON и text или через [конечную точку OTLP](../../../ingest-from/opentelemetry/otlp-api.md "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") для формата OTLP binary protobuf.
+Ввод журналов API позволяет передавать журнальные записи в систему. Он доступен через [Мониторинг журналов API v2 - POST ввод журналов](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Передайте пользовательские журналы в Dynatrace через Мониторинг журналов API v2.") для JSON и текстового формата или через [OTLP-конечную точку](../../../ingest-from/opentelemetry/otlp-api.md "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") для бинарного формата protobuf OTLP.
 
-* Для Dynatrace SaaS конечная точка загрузки журналов доступна в вашей среде.
+* Для Dynatrace SaaS конечная точка ввода журналов доступна в вашей среде.
 
-* Если вы выбираете Environment ActiveGate в качестве конечной точки в локальной среде, установите экземпляр ActiveGate:
+* Если Environment ActiveGate является вашим выбором в качестве конечной точки в вашей локальной среде, установите экземпляр ActiveGate:
 
-  В Dynatrace Hub выберите **ActiveGate** > **Set up**. Log ingestion API v2 автоматически включается на ActiveGate, который отвечает за обслуживание конечной точки, сбор данных и их пакетную пересылку в Dynatrace.
+  В Dynatrace Hub выберите **ActiveGate** > **Настройка**. Ввод журналов API v2 автоматически активируется на ActiveGate, который отвечает за обслуживание конечной точки, сбор данных и их передачу в Dynatrace пакетами.
 
 * Конечные точки SaaS:
 
@@ -36,39 +36,39 @@ API загрузки журналов позволяет передавать з
   + `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/logs/ingest`
   + `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/otlp/v1/logs`
 
-Конечная точка загрузки собирает и пытается автоматически преобразовать любые данные журналов, содержащие следующие элементы JSON:
+Конечная точка ввода будет собирать и пытаться автоматически преобразовать любые журнальные данные, содержащие следующие элементы JSON:
 
 * Содержимое журнала
 * Метка времени
-* Атрибуты в формате ключ-значение
+* Атрибуты Key-Values
 
-Для просмотра всех предопределённых атрибутов ключ-значение, включая поддерживаемые семантические ключи атрибутов, обратитесь к [Log Monitoring API v2 — POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.").
+Чтобы просмотреть все предопределенные атрибуты Key-Values, такие как поддерживаемые семантические ключи атрибутов, проверьте [Мониторинг журналов API v2 - POST ввод журналов](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Передайте пользовательские журналы в Dynatrace через Мониторинг журналов API v2.").
 
-## Очередь данных журналов на Environment ActiveGate
+## Очередь журнальных данных на Environment ActiveGate
 
-Вы можете настроить свойства очереди данных журналов, отредактировав файл `custom.properties` (см. [Свойства конфигурации и параметры ActiveGate](../../../ingest-from/dynatrace-activegate/configuration/configure-activegate.md#generic-ingest "Learn which ActiveGate properties you can configure based on your needs and requirements.")) на вашем ActiveGate, задав следующие значения:
+Вы можете настроить свойства очереди журнальных данных, редактируя файл `custom.properties` (см. [Свойства и параметры конфигурации ActiveGate](../../../ingest-from/dynatrace-activegate/configuration/configure-activegate.md#generic-ingest "Узнайте, какие свойства ActiveGate можно настроить в соответствии с вашими потребностями и требованиями.")) на вашем ActiveGate, чтобы задать следующие значения:
 
 ```
 [generic_ingest]
 
 
 
-#disk_queue_path=<custom_path> # по умолчанию используется временная папка
+#disk_queue_path=<custom_path> # по умолчанию временная папка
 
 
 
 #disk_queue_max_size_mb=<limit> # по умолчанию 300 МБ
 ```
 
-503 Достигнут лимит используемого пространства
+503 Достигнут предел использования пространства
 
-API загрузки данных журналов возвращает ошибку `503 Usable space limit reached`, когда загружаемые данные журналов превышают настроенный размер очереди. Как правило, это временная ситуация, возникающая только во время пиковых нагрузок. Если эта ошибка сохраняется, увеличьте значение `disk_queue_max_size_mb` в `custom.properties`, чтобы позволить пиковым загрузкам журналов помещаться в очередь.
+Конечная точка ввода журнальных данных API возвращает ошибку `503 Достигнут предел использования пространства`, когда принятые журнальные данные превышают настроенный размер очереди. Обычно это временная ситуация, которая возникает только во время пиков. Если эта ошибка сохраняется, увеличьте значение `disk_queue_max_size_mb` в `custom.properties`, чтобы позволить очереди журнальных данных обрабатывать пики.
 
 ## Пример
 
-В этом примере API-запрос загружает данные журнала, в результате чего будет создано событие журнала с заданными атрибутами `content`, `status`, `service.name` и `service.namespace`.
+В этом примере запрос API передает журнальные данные, которые создадут событие журнала с определенными атрибутами журнала `content`, `status`, `service.name` и `service.namespace`.
 
-Токен API передаётся в заголовке Authorization.
+Токен API передается в заголовке Authorization.
 
 Ответ содержит код ответа `204`.
 
@@ -99,11 +99,11 @@ https://environment.activegate.domain.com:9999/e/abc123a/api/v2/logs/ingest \
 
 
 
-"content": "Exception: Custom error log sent via Log ingestion API",
+"content": "Исключение: Пользовательский журнал ошибок, переданный через Ввод журналов API",
 
 
 
-"status": "error",
+"status": "ошибка",
 
 
 
@@ -131,7 +131,7 @@ https://environment.activegate.domain.com:9999/e/abc123a/api/v2/logs/ingest
 #### Содержимое ответа
 
 ```
-Success
+Успех
 ```
 
 #### Код ответа
@@ -140,10 +140,10 @@ Success
 
 ## Устранение неполадок
 
-Посетите сообщество Dynatrace для получения руководств по устранению неполадок, а также см. [Устранение неполадок Log Monitoring (Logs Classic)](../lmc-troubleshooting.md "Fix issues related to the setup and configuration of Log Monitoring Classic.").
+Посетите сообщество Dynatrace для руководств по устранению неполадок, а также см. [Устранение неполадок Мониторинга журналов (Классические журналы)](../lmc-troubleshooting.md "Исправьте проблемы, связанные с настройкой и конфигурацией Мониторинга журналов Classic.").
 
-* [Устранение неполадок при загрузке журналов через API — POST ingest logs](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608)
+* [Устранение неполадок ввода журналов через API - POST ввод журналов](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-log-Ingestion-via-API-POST-ingest-logs/ta-p/286608)
 
 ## Связанные темы
 
-* [Log Monitoring API v2 — POST ingest logs](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Push custom logs to Dynatrace via the Log Monitoring API v2.")
+* [Мониторинг журналов API v2 - POST ввод журналов](../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs.md "Передайте пользовательские журналы в Dynatrace через Мониторинг журналов API v2.")

@@ -27,9 +27,9 @@ Dynatrace собирает метрики для множества предва
   Для ролевого доступа в развертывании [SaaS](../cloudwatch-metrics.md#role-based-access "Integrate metrics from Amazon CloudWatch.") вам необходим [Environment ActiveGate](../../../dynatrace-activegate/installation.md "Learn how to configure ActiveGate") установленный на хосте Amazon EC2.
 
 * Dynatrace version 1.200+
-* An updated [AWS monitoring policy](../cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.
+* Обновлённая [политика мониторинга AWS](../cloudwatch-metrics.md#monitoring-policy "Integrate metrics from Amazon CloudWatch.") для включения дополнительных сервисов AWS.
 
-To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), используйте приведенный ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+Чтобы [обновить политику AWS IAMï»¿](https://dt-url.net/8q038eb), используйте приведенный ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
 Предопределенная политика JSON для всех поддерживаемых сервисов
 
@@ -689,7 +689,7 @@ To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), использ
 
 ## Включение мониторинга
 
-Chtoby_uznat [Включение мониторинга_servisa](../aws-metrics-ingest/aws-enable-service-monitoring.md "Enable AWS monitoring in Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, смотрите [Включение мониторинга сервиса](../aws-metrics-ingest/aws-enable-service-monitoring.md "Enable AWS monitoring in Dynatrace.").
 
 ## Просмотр метрик сервиса
 
@@ -699,14 +699,14 @@ Chtoby_uznat [Включение мониторинга_servisa](../aws-metrics-
 
 Для доступа к странице обзора пользовательского устройства
 
-1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
 2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
 3. После выбора группы пользовательских устройств вы окажетесь на **странице обзора группы пользовательских устройств**.
 4. **Страница обзора группы пользовательских устройств** отображает все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
 
 ### Просмотр метрик на панели мониторинга
 
-You can also view metrics in the Dynatrace web UI on dashboards. There is no preset dashboard available for this service, but you can [create your own dashboard](../../../../analyze-explore-automate/dashboards-classic/dashboards/create-dashboards.md "Learn how to create and edit Dynatrace dashboards.").
+Вы также можете просматривать метрики в веб-интерфейсе Dynatrace на панелях мониторинга. Для этого сервиса предустановленная панель мониторинга недоступна, но вы можете [создать собственную панель мониторинга](../../../../analyze-explore-automate/dashboards-classic/dashboards/create-dashboards.md "Learn how to create and edit Dynatrace dashboards.").
 
 Для проверки доступности предустановленных панелей мониторинга для каждого сервиса AWS смотрите список ниже.
 
@@ -822,32 +822,32 @@ You can also view metrics in the Dynatrace web UI on dashboards. There is no pre
 
 ## Доступные метрики
 
-This service monitors a part of Amazon EBS (AWS/EBS). While you have this service configured, you can't have Amazon EBS (built-in) service turned on.
+Этот сервис мониторит часть Amazon EBS (AWS/EBS). При активном использовании этого сервиса нельзя одновременно включить сервис Amazon EBS (встроенный).
 
 `VolumeId` является основным измерением.
 
 | Название | Описание | Единица | Статистика | Измерения | Рекомендуется |
 | --- | --- | --- | --- | --- | --- |
-| BurstBalance | Provides information about the percentage of I/O credits (for `gp2`) or throughput credits (for `st1` and `sc1`) remaining in the burst bucket. | Percent | Multi | VolumeId |  |
-| EBSByteBalance% | Provides information about the percentage of throughput credits remaining in the burst bucket. | Percent | Multi | VolumeId |  |
-| EBSIOBalance% | Provides information about the percentage of I/O credits remaining in the burst bucket. | Percent | Multi | VolumeId |  |
-| EBSReadBytes | Bytes read from all EBS volumes attached to the instance in a specified period of time. | Bytes | Multi | VolumeId |  |
-| EBSReadOps | Completed read operations from all Amazon EBS volumes attached to the instance in a specified period of time. | Count | Sum | VolumeId |  |
-| EBSWriteBytes | Bytes written to all EBS volumes attached to the instance in a specified period of time. | Bytes | Multi | VolumeId |  |
-| EBSWriteOps | Completed write operations to all EBS volumes attached to the instance in a specified period of time. | Count | Sum | VolumeId |  |
-| FastSnapshotRestoreCreditsBalance | The number of volume create credits available. This metric is reported per snapshot per Availability Zone. | None | Multi | AvailabilityZone, SnapshotId |  |
-| FastSnapshotRestoreCreditsBucketSize | The maximum number of volume create credits that can be accumulated. This metric is reported per snapshot per Availability Zone. | None | Multi | AvailabilityZone, SnapshotId |  |
-| VolumeConsumedReadWriteOps | The total amount of read and write operations (normalized to 256K capacity units) consumed in a specified period of time. | Count | Sum | VolumeId |  |
-| VolumeIdleTime | The total number of seconds in a specified period of time when no read or write operations were submitted. | Seconds | Multi | VolumeId | Применимо |
-| VolumeQueueLength | The number of read and write operation requests waiting to be completed in a specified period of time. | Count | Sum | VolumeId | Применимо |
-| VolumeReadBytes | Provides information on the read operations in a specified period of time. | Bytes | Count | VolumeId |  |
+| BurstBalance | Информация о проценте кредитов ввода-вывода (для `gp2`) или кредитов пропускной способности (для `st1` и `sc1`), оставшихся в пакете кредитов. | Percent | Multi | VolumeId |  |
+| EBSByteBalance% | Информация о проценте кредитов пропускной способности, оставшихся в пакете кредитов. | Percent | Multi | VolumeId |  |
+| EBSIOBalance% | Информация о проценте кредитов ввода-вывода, оставшихся в пакете кредитов. | Percent | Multi | VolumeId |  |
+| EBSReadBytes | Байты, прочитанные со всех томов EBS, подключённых к экземпляру, за указанный период времени. | Bytes | Multi | VolumeId |  |
+| EBSReadOps | Завершённые операции чтения со всех томов Amazon EBS, подключённых к экземпляру, за указанный период времени. | Count | Sum | VolumeId |  |
+| EBSWriteBytes | Байты, записанные на все тома EBS, подключённые к экземпляру, за указанный период времени. | Bytes | Multi | VolumeId |  |
+| EBSWriteOps | Завершённые операции записи на все тома EBS, подключённые к экземпляру, за указанный период времени. | Count | Sum | VolumeId |  |
+| FastSnapshotRestoreCreditsBalance | Количество доступных кредитов на создание томов. Эта метрика предоставляется для каждого снимка в каждой зоне доступности. | None | Multi | AvailabilityZone, SnapshotId |  |
+| FastSnapshotRestoreCreditsBucketSize | Максимальное количество кредитов на создание томов, которое может быть накоплено. Эта метрика предоставляется для каждого снимка в каждой зоне доступности. | None | Multi | AvailabilityZone, SnapshotId |  |
+| VolumeConsumedReadWriteOps | Общее количество операций чтения и записи (нормализованных до единиц ёмкости 256 КБ), потреблённых за указанный период времени. | Count | Sum | VolumeId |  |
+| VolumeIdleTime | Общее количество секунд за указанный период времени, в течение которых не было отправлено операций чтения или записи. | Seconds | Multi | VolumeId | Применимо |
+| VolumeQueueLength | Количество запросов на операции чтения и записи, ожидающих завершения, за указанный период времени. | Count | Sum | VolumeId | Применимо |
+| VolumeReadBytes | Информация об операциях чтения за указанный период времени. | Bytes | Count | VolumeId |  |
 | VolumeReadBytes |  | Bytes | Multi | VolumeId |  |
 | VolumeReadBytes |  | Bytes | Sum | VolumeId | Применимо |
-| VolumeReadOps | The total number of read operations in a specified period of time. | Count | Sum | VolumeId | Применимо |
-| VolumeThroughputPercentage | The percentage of I/O operations per second (IOPS) delivered of the total IOPS provisioned for an Amazon EBS volume. | Percent | Multi | VolumeId |  |
-| VolumeTotalReadTime | The total number of seconds spent by all read operations that completed in a specified period of time. | Seconds | Multi | VolumeId |  |
-| VolumeTotalWriteTime | The total number of seconds spent by all write operations that completed in a specified period of time. | Seconds | Multi | VolumeId |  |
-| VolumeWriteBytes | Provides information on the write operations in a specified period of time. | Bytes | Count | VolumeId |  |
+| VolumeReadOps | Общее количество операций чтения за указанный период времени. | Count | Sum | VolumeId | Применимо |
+| VolumeThroughputPercentage | Процент операций ввода-вывода в секунду (IOPS), доставленных от общего количества IOPS, выделенных для тома Amazon EBS. | Percent | Multi | VolumeId |  |
+| VolumeTotalReadTime | Общее количество секунд, затраченных всеми завершёнными операциями чтения за указанный период времени. | Seconds | Multi | VolumeId |  |
+| VolumeTotalWriteTime | Общее количество секунд, затраченных всеми завершёнными операциями записи за указанный период времени. | Seconds | Multi | VolumeId |  |
+| VolumeWriteBytes | Информация об операциях записи за указанный период времени. | Bytes | Count | VolumeId |  |
 | VolumeWriteBytes |  | Bytes | Multi | VolumeId |  |
 | VolumeWriteBytes |  | Bytes | Sum | VolumeId | Применимо |
-| VolumeWriteOps | The total number of write operations in a specified period of time. | Count | Sum | VolumeId | Применимо |
+| VolumeWriteOps | Общее количество операций записи за указанный период времени. | Count | Sum | VolumeId | Применимо |

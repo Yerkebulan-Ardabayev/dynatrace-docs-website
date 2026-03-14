@@ -1,5 +1,5 @@
 ---
-title: Agentic and generative AI
+title: Агентный и генеративный ИИ
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot
 scraped: 2026-03-06T21:14:58.711515
 ---

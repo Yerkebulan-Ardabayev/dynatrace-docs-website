@@ -1,5 +1,5 @@
 ---
-title: Synthetic app
+title: Приложение Synthetic
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app
 scraped: 2026-03-06T21:12:42.033714
 ---

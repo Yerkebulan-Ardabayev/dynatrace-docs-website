@@ -1,5 +1,5 @@
 ---
-title: Business Observability
+title: Наблюдаемость бизнеса
 source: https://www.dynatrace.com/docs/observe/business-observability
 scraped: 2026-03-06T21:10:11.811730
 ---

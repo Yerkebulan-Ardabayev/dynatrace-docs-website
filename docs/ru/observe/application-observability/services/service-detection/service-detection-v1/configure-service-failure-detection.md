@@ -1,5 +1,5 @@
 ---
-title: Configure service failure detection
+title: Настройка обнаружения сбоев сервиса
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/configure-service-failure-detection
 scraped: 2026-03-06T21:18:29.143198
 ---

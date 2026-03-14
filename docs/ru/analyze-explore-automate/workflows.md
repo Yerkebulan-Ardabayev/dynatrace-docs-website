@@ -1,5 +1,5 @@
 ---
-title: Workflows
+title: Рабочие процессы
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows
 scraped: 2026-03-06T21:15:26.954952
 ---

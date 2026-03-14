@@ -1,5 +1,5 @@
 ---
-title: Control the RUM JavaScript version
+title: Управление версией RUM JavaScript
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/rum-javascript-version
 scraped: 2026-03-03T21:29:57.852417
 ---

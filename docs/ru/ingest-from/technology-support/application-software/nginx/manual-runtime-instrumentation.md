@@ -1,5 +1,5 @@
 ---
-title: Runtime instrumentation
+title: Инструментирование во время выполнения
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/nginx/manual-runtime-instrumentation
 scraped: 2026-03-05T21:26:40.159355
 ---

@@ -1,5 +1,5 @@
 ---
-title: Response time distribution and outlier analysis
+title: Распределение времени ответа и анализ выбросов
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/response-time-distribution-and-outlier-analysis
 scraped: 2026-03-06T21:22:59.023258
 ---

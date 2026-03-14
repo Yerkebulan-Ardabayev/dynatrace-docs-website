@@ -1,5 +1,5 @@
 ---
-title: Opaque services
+title: Непрозрачные сервисы
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/opaque-services
 scraped: 2026-03-06T21:13:00.325403
 ---

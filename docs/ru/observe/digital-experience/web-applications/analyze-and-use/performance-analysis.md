@@ -1,5 +1,5 @@
 ---
-title: Performance analysis
+title: Анализ производительности
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/analyze-and-use/performance-analysis
 scraped: 2026-03-06T21:13:06.981371
 ---

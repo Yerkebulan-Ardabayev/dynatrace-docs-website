@@ -1,5 +1,5 @@
 ---
-title: Extend Dynatrace
+title: Расширение Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace
 scraped: 2026-03-06T21:10:28.052302
 ---

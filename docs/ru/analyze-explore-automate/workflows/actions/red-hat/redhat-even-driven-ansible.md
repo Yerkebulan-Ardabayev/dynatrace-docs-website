@@ -1,5 +1,5 @@
 ---
-title: Red Hat Event-Driven Ansible
+title: Red Hat Событийно-ориентированное Ansible
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible
 scraped: 2026-03-03T21:30:53.933975
 ---

@@ -1,5 +1,5 @@
 ---
-title: Ingest Runecast Analyzer compliance findings
+title: Прием результатов проверки соответствия Runecast Analyzer
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-runecast-analyzer
 scraped: 2026-03-06T21:23:45.187175
 ---

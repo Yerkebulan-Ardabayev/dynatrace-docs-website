@@ -1,5 +1,5 @@
 ---
-title: Service response time hotspots
+title: Точки замедления времени ответа сервиса
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-response-time-hotspots
 scraped: 2026-03-06T21:23:00.695154
 ---

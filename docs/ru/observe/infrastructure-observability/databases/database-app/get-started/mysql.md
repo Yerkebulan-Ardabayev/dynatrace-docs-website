@@ -1,5 +1,5 @@
 ---
-title: Monitor MySQL database
+title: Мониторинг базы данных MySQL
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/mysql
 scraped: 2026-03-06T21:32:05.181395
 ---

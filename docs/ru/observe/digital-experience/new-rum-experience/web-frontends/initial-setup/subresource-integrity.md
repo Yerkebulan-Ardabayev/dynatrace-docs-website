@@ -1,5 +1,5 @@
 ---
-title: Use Subresource Integrity (SRI) in the New RUM Experience
+title: Использование Subresource Integrity (SRI) в новом опыте RUM
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/subresource-integrity
 scraped: 2026-03-03T21:25:12.585695
 ---

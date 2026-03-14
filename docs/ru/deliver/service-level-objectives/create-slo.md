@@ -1,5 +1,5 @@
 ---
-title: Create service-level objectives
+title: Создание целей уровня обслуживания
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/create-slo
 scraped: 2026-03-05T21:31:21.874741
 ---

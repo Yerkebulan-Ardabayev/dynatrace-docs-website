@@ -1,5 +1,5 @@
 ---
-title: Google Cloud Run monitoring
+title: Мониторинг Google Cloud Run
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun/cloud-run-monitoring
 scraped: 2026-03-06T21:26:21.208747
 ---
@@ -10,24 +10,24 @@ scraped: 2026-03-06T21:26:21.208747
 
 * Последняя версия Dynatrace
 * Практическое руководство
-* Чтение займёт 1 минуту
+* 1 мин. чтения
 * Опубликовано 17 янв. 2022 г.
 
-Интеграция Dynatrace с Google Cloud использует данные, собранные из Google Operation API, для постоянного мониторинга работоспособности и производительности сервисов Google Cloud. Объединяя все релевантные данные в дашбордах, она также обеспечивает оповещение и отслеживание событий.
+Интеграция Dynatrace с Google Cloud использует данные, собранные из Google Operations API, для непрерывного мониторинга работоспособности и производительности сервисов Google Cloud. Помимо объединения всех релевантных данных в дашборды, она также обеспечивает оповещения и отслеживание событий.
 
 ## Предварительные требования
 
-[Настройка интеграции](../gcp-guide/deploy-k8.md "Настройте мониторинг логов и метрик для сервисов GCP на новом кластере GKE Autopilot.")
+[Настройка интеграции](../gcp-guide/deploy-k8.md "Настройка мониторинга логов и метрик для сервисов GCP в новом кластере GKE Autopilot.")
 
 ## Добавление сервисов и наборов функций Необязательно
 
-После интеграции Dynatrace автоматически отслеживает ряд предустановленных сервисов и наборов функций Google Cloud (метрики). Помимо этого, вы можете добавить в мониторинг дополнительные сервисы или наборы функций. Подробнее см. в разделе [Добавление или удаление сервисов](../gcp-guide/deploy-k8.md#manage "Настройте мониторинг логов и метрик для сервисов GCP на новом кластере GKE Autopilot.").
+После интеграции Dynatrace автоматически начинает мониторинг ряда предустановленных сервисов Google Cloud и наборов функций (метрик). Помимо них, вы можете добавить дополнительные сервисы или наборы функций для мониторинга. Подробнее см. в разделе [Добавление и удаление сервисов](../gcp-guide/deploy-k8.md#manage "Настройка мониторинга логов и метрик для сервисов GCP в новом кластере GKE Autopilot.").
 
-Список наборов функций, доступных для этого сервиса, см. в разделе [Таблица метрик](#table).
+Список наборов функций, доступных для данного сервиса, см. в разделе [Таблица метрик](#table).
 
 ## Просмотр метрик
 
-После развёртывания интеграции вы можете просматривать метрики отслеживаемых сервисов в [Metrics browser](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Просматривайте метрики с помощью браузера метрик Dynatrace."), [Data Explorer](../../../../analyze-explore-automate/explorer.md "Запрашивайте метрики и преобразовывайте результаты для получения нужной информации.") и плитках дашборда.
+После развёртывания интеграции вы можете просматривать метрики отслеживаемых сервисов в [браузере метрик](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Просмотр метрик с помощью браузера метрик Dynatrace."), [Data Explorer](../../../../analyze-explore-automate/explorer.md "Запрашивайте метрики и преобразуйте результаты для получения нужных данных."), а также в плитках дашбордов.
 
 ## Таблица метрик
 
@@ -35,18 +35,18 @@ scraped: 2026-03-06T21:26:21.208747
 
 | Набор функций | Название | Единица | Идентификатор метрики GCP |
 | --- | --- | --- | --- |
-| cloud\_run\_revision/default\_metrics | Billable Instance Time | Second | run.googleapis.com/container/billable\_instance\_time |
-| cloud\_run\_revision/default\_metrics | Container CPU Allocation | Second | run.googleapis.com/container/cpu/allocation\_time |
-| cloud\_run\_revision/default\_metrics | Container CPU Utilization | Percent | run.googleapis.com/container/cpu/utilizations |
-| cloud\_run\_revision/default\_metrics | Instance Count | Count | run.googleapis.com/container/instance\_count |
-| cloud\_run\_revision/default\_metrics | Max Concurrent Requests | Count | run.googleapis.com/container/max\_request\_concurrencies |
-| cloud\_run\_revision/default\_metrics | Container Memory Allocation | GibiByte | run.googleapis.com/container/memory/allocation\_time |
-| cloud\_run\_revision/default\_metrics | Container Memory Utilization | Percent | run.googleapis.com/container/memory/utilizations |
-| cloud\_run\_revision/default\_metrics | Received Bytes | Byte | run.googleapis.com/container/network/received\_bytes\_count |
-| cloud\_run\_revision/default\_metrics | Sent Bytes | Byte | run.googleapis.com/container/network/sent\_bytes\_count |
-| cloud\_run\_revision/default\_metrics | Request Count | Count | run.googleapis.com/request\_count |
-| cloud\_run\_revision/default\_metrics | Request Latency | MilliSecond | run.googleapis.com/request\_latencies |
+| cloud\_run\_revision/default\_metrics | Оплачиваемое время экземпляра | Second | run.googleapis.com/container/billable\_instance\_time |
+| cloud\_run\_revision/default\_metrics | Выделение CPU контейнера | Second | run.googleapis.com/container/cpu/allocation\_time |
+| cloud\_run\_revision/default\_metrics | Утилизация CPU контейнера | Percent | run.googleapis.com/container/cpu/utilizations |
+| cloud\_run\_revision/default\_metrics | Количество экземпляров | Count | run.googleapis.com/container/instance\_count |
+| cloud\_run\_revision/default\_metrics | Максимальное количество одновременных запросов | Count | run.googleapis.com/container/max\_request\_concurrencies |
+| cloud\_run\_revision/default\_metrics | Выделение памяти контейнера | GibiByte | run.googleapis.com/container/memory/allocation\_time |
+| cloud\_run\_revision/default\_metrics | Утилизация памяти контейнера | Percent | run.googleapis.com/container/memory/utilizations |
+| cloud\_run\_revision/default\_metrics | Полученные байты | Byte | run.googleapis.com/container/network/received\_bytes\_count |
+| cloud\_run\_revision/default\_metrics | Отправленные байты | Byte | run.googleapis.com/container/network/sent\_bytes\_count |
+| cloud\_run\_revision/default\_metrics | Количество запросов | Count | run.googleapis.com/request\_count |
+| cloud\_run\_revision/default\_metrics | Задержка запроса | MilliSecond | run.googleapis.com/request\_latencies |
 
 ## Связанные темы
 
-* [Интеграции Google Cloud](../../gcp-integrations.md "Настройте и сконфигурируйте Dynatrace в Google Cloud.")
+* [Интеграции Google Cloud](../../gcp-integrations.md "Настройка и конфигурирование Dynatrace на Google Cloud.")

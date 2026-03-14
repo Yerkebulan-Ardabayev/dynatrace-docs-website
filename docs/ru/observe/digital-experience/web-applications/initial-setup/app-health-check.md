@@ -1,5 +1,5 @@
 ---
-title: Check your application health
+title: Проверка работоспособности вашего приложения
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/initial-setup/app-health-check
 scraped: 2026-03-05T21:38:54.552227
 ---

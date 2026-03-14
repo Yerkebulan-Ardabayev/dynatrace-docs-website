@@ -1,5 +1,5 @@
 ---
-title: Notebooks
+title: Тетради
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks
 scraped: 2026-03-06T21:10:03.486902
 ---

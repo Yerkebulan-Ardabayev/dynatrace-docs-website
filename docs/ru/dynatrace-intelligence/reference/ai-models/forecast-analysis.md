@@ -1,147 +1,147 @@
 ---
-title: Dynatrace Intelligence predictive AI analysis
+title: Предиктивный ИИ-анализ Dynatrace Intelligence
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis
 scraped: 2026-03-06T21:11:12.668111
 ---
 
-# Dynatrace Intelligence predictive AI analysis
+# Предиктивный ИИ-анализ Dynatrace Intelligence
 
-# Dynatrace Intelligence predictive AI analysis
+# Предиктивный ИИ-анализ Dynatrace Intelligence
 
-* Latest Dynatrace
-* Explanation
-* 14-min read
-* Updated on Jan 28, 2026
+* Последняя версия Dynatrace
+* Описание
+* Время чтения: 14 мин
+* Обновлено 28 янв. 2026
 
-The forecast analysis predicts future values of any time series of numeric values. The forecast analyzer is not limited to stored metric dataâyou can bring your own data, use a metric query, or run a data query that results in a time series of numeric values.
+Анализ прогнозирования предсказывает будущие значения любого временного ряда числовых значений. Анализатор прогнозирования не ограничен хранимыми данными метрик — вы можете использовать собственные данные, запрос метрик или запрос данных, который возвращает временной ряд числовых значений.
 
-The analysis is agnostic to the distribution of the input data. The forecast is calculated without any assumption about specific data distribution and works for both symmetric and non-symmetric distributions.
+Анализ не зависит от распределения входных данных. Прогноз рассчитывается без каких-либо предположений о конкретном распределении данных и работает как для симметричных, так и для несимметричных распределений.
 
-You can trigger a forecast analysis from your [notebook](../../dynatrace-intelligence-integrations/davis-for-notebooks.md "Run AI analysis in Dynatrace Notebooks.").
+Вы можете запустить анализ прогнозирования из вашего [ноутбука](../../dynatrace-intelligence-integrations/davis-for-notebooks.md "Запуск ИИ-анализа в Dynatrace Notebooks.").
 
-## Analyzer input
+## Входные данные анализатора
 
-## Analysis methodology
+## Методология анализа
 
-When you trigger a forecast analysis, the time series is sent to an appropriate forecaster that produces the forecast. Then the [forecast quality](#quality) is evaluated, and the forecast and evaluation are returned as analysis results.
+Когда вы запускаете анализ прогнозирования, временной ряд отправляется соответствующему прогнозатору, который создаёт прогноз. Затем оценивается [качество прогноза](#quality), и прогноз вместе с оценкой возвращаются в качестве результатов анализа.
 
-![Analysis methodology](https://dt-cdn.net/images/analyser-methodology-1132-7fef138e18.png)
+![Методология анализа](https://dt-cdn.net/images/analyser-methodology-1132-7fef138e18.png)
 
-### Algorithm selection
+### Выбор алгоритма
 
-The analysis uses one of the two forecasters:
+Анализ использует один из двух прогнозаторов:
 
-* [Sampling forecaster](#sampling)
-* [Linear extrapolation forecaster](#linear-extrapolation)
+* [Прогнозатор на основе выборки](#sampling)
+* [Прогнозатор линейной экстраполяции](#linear-extrapolation)
 
-The sampling forecaster is used if the variance of the **linear history timeframe** is larger than the maximum value of the `0.1` and `0.001 Ã input time series variance` pair. The linear history timeframe is the X most recent data points, with X being in the range from `14` to `20`.
+Прогнозатор на основе выборки используется, если дисперсия **линейного исторического временного окна** больше максимального значения из пары `0.1` и `0.001 * дисперсия входного временного ряда`. Линейное историческое временное окно — это X последних точек данных, где X находится в диапазоне от `14` до `20`.
 
-In any other case (including the case when training of the sampling forecaster fails), the linear extrapolation forecaster is used.
+Во всех остальных случаях (включая случай, когда обучение прогнозатора на основе выборки завершается неудачей) используется прогнозатор линейной экстраполяции.
 
-## Sampling forecaster
+## Прогнозатор на основе выборки
 
-The sampling forecaster provides multi-step forecasts based on seasonal patterns. Its architecture is shown in the image below.
+Прогнозатор на основе выборки обеспечивает многошаговое прогнозирование на основе сезонных паттернов. Его архитектура показана на изображении ниже.
 
-![General forecaster algorithm](https://dt-cdn.net/images/generic-forecaster-analyser-940-f6f15f47fc.png)
+![Алгоритм общего прогнозатора](https://dt-cdn.net/images/generic-forecaster-analyser-940-f6f15f47fc.png)
 
-First, the path transformer is applied to the input time series, and then the forecaster is trained on it. If the resulting model is invalid, the linear extrapolation forecaster is used instead. If the model is valid, sampling paths are created by the seasonal forecaster. Those paths are then inverse transformed before applying the quantiles on each time step.
+Сначала к входному временному ряду применяется преобразователь пути, а затем на нём обучается прогнозатор. Если полученная модель недействительна, вместо неё используется прогнозатор линейной экстраполяции. Если модель действительна, сезонный прогнозатор создаёт пути выборки. Затем эти пути подвергаются обратному преобразованию перед применением квантилей на каждом временном шаге.
 
-### Seasonal patterns
+### Сезонные паттерны
 
-The forecaster always looks for various seasonal patterns in the input time series. The input time series must contain enough data to detect seasonality reliably.
+Прогнозатор всегда ищет различные сезонные паттерны во входном временном ряде. Входной временной ряд должен содержать достаточно данных для надёжного обнаружения сезонности.
 
-| Seasonal pattern | Required time series duration |
+| Сезонный паттерн | Требуемая длительность временного ряда |
 | --- | --- |
-| 1 hour | 2+ hours |
-| 1 day (24 hours) | 7+ days |
-| 1 week (7 days) | 14+ days |
-| Day of week | 7+ days |
-| Time of day | 2+ days |
-| Minute of hour | 2+ hours |
+| 1 час | 2+ часов |
+| 1 день (24 часа) | 7+ дней |
+| 1 неделя (7 дней) | 14+ дней |
+| День недели | 7+ дней |
+| Время суток | 2+ дней |
+| Минута часа | 2+ часов |
 
-Apart from those natural patterns, the forecaster looks for any repetitive patterns in the time series by breaking them based on a certain time window.
+Помимо этих естественных паттернов, прогнозатор ищет любые повторяющиеся паттерны во временном ряде, разбивая их на основе определённого временного окна.
 
-### Forecast step-by-step
+### Пошаговый прогноз
 
-1. The seasonal forecaster estimates quartiles of the time series distribution at the time stamp of the next data point.
+1. Сезонный прогнозатор оценивает квартили распределения временного ряда в момент времени следующей точки данных.
 
-   ![Multi-step prediction algorithm - step 1](https://dt-cdn.net/images/multi-step-prediction-1-547-f8edff4ed6.png)
-2. The distribution for the value at the next time step is estimated from the quartiles. The bell curve in the image is for illustrative purposes and doesn't represent the distribution used in the sampling forecaster.
+   ![Алгоритм многошагового предсказания - шаг 1](https://dt-cdn.net/images/multi-step-prediction-1-547-f8edff4ed6.png)
+2. Распределение значения на следующем временном шаге оценивается по квартилям. Колокольная кривая на изображении приведена для наглядности и не представляет распределение, используемое в прогнозаторе на основе выборки.
 
-   ![Multi-step prediction algorithm - step 2](https://dt-cdn.net/images/multi-step-prediction-2-553-d30631c97f.png)
-3. The value for the next time step is sampled from the distribution obtained in step 2.
+   ![Алгоритм многошагового предсказания - шаг 2](https://dt-cdn.net/images/multi-step-prediction-2-553-d30631c97f.png)
+3. Значение для следующего временного шага выбирается из распределения, полученного на шаге 2.
 
-   ![Multi-step prediction algorithm - step 3](https://dt-cdn.net/images/multi-step-prediction-3-565-fe5b638654.png)
-4. The value obtained in step 3 is now considered a part of the time series, and the forecaster repeats steps 1 to 4 until it reaches the forecast horizon.
+   ![Алгоритм многошагового предсказания - шаг 3](https://dt-cdn.net/images/multi-step-prediction-3-565-fe5b638654.png)
+4. Значение, полученное на шаге 3, теперь считается частью временного ряда, и прогнозатор повторяет шаги 1-4, пока не достигнет горизонта прогнозирования.
 
-   ![Multi-step prediction algorithm - step 4](https://dt-cdn.net/images/multi-step-prediction-4-559-33e251190f.png)
-5. The predicted data points form a single sampling path (shown in red in the image below).
+   ![Алгоритм многошагового предсказания - шаг 4](https://dt-cdn.net/images/multi-step-prediction-4-559-33e251190f.png)
+5. Предсказанные точки данных формируют один путь выборки (показан красным на изображении ниже).
 
-   ![Multi-step prediction algorithm - step 5](https://dt-cdn.net/images/multi-step-prediction-5-1051-f971c5a471.png)
-6. The forecaster repeats this process N times, creating multiple sampling paths.
+   ![Алгоритм многошагового предсказания - шаг 5](https://dt-cdn.net/images/multi-step-prediction-5-1051-f971c5a471.png)
+6. Прогнозатор повторяет этот процесс N раз, создавая несколько путей выборки.
 
-   ![Multi-step prediction algorithm - step 6](https://dt-cdn.net/images/multi-step-prediction-6-1049-931db96b7b.png)
-7. The forecaster takes the sought-after quantile at each time step, forming the prediction interval (shown in light purple in the image below).
+   ![Алгоритм многошагового предсказания - шаг 6](https://dt-cdn.net/images/multi-step-prediction-6-1049-931db96b7b.png)
+7. Прогнозатор берёт искомый квантиль на каждом временном шаге, формируя интервал предсказания (показан светло-фиолетовым на изображении ниже).
 
-   ![Multi-step prediction algorithm - step 7](https://dt-cdn.net/images/multi-step-prediction-7-1049-68f5d98212.png)
+   ![Алгоритм многошагового предсказания - шаг 7](https://dt-cdn.net/images/multi-step-prediction-7-1049-68f5d98212.png)
 
-## Linear extrapolation forecaster
+## Прогнозатор линейной экстраполяции
 
-The linear extrapolation forecaster is an algorithm that uses [simple linear regressionï»¿](https://en.wikipedia.org/wiki/Simple_linear_regression) to find the best-fitting line through a number of data points and extend this line into the future. The number of data points used to train the forecaster is determined as follows
+Прогнозатор линейной экстраполяции — это алгоритм, который использует [простую линейную регрессию](https://en.wikipedia.org/wiki/Simple_linear_regression) для нахождения наилучшей подходящей линии через набор точек данных и продления этой линии в будущее. Количество точек данных, используемых для обучения прогнозатора, определяется следующим образом
 
-![Historical data points formula](https://dt-cdn.net/images/nhistory-286-b4c31416bc.webp)
+![Формула исторических точек данных](https://dt-cdn.net/images/nhistory-286-b4c31416bc.webp)
 
-where `n` is the length of the input time series.
+где `n` — длина входного временного ряда.
 
-To train the linear extrapolation forecaster, `nHistory` must contain **at least 14** non-null data points.
+Для обучения прогнозатора линейной экстраполяции `nHistory` должен содержать **не менее 14** ненулевых точек данных.
 
-For the sake of simplicity, we calculate the confidence interval under the assumption that the residuals are normally distributed as follows:
+Для простоты мы рассчитываем доверительный интервал, предполагая, что остатки нормально распределены, следующим образом:
 
-![Residuals distribution](https://dt-cdn.net/images/formula-1-280-ecc49db59c.png)
+![Распределение остатков](https://dt-cdn.net/images/formula-1-280-ecc49db59c.png)
 
-where tcrit is the 95th percentile of the [Student's *t*-distributionï»¿](https://en.wikipedia.org/wiki/Student's_t-distribution). The standard error is
+где tcrit — это 95-й процентиль [t-распределения Стьюдента](https://en.wikipedia.org/wiki/Student's_t-distribution). Стандартная ошибка равна
 
-![Standard error](https://dt-cdn.net/images/formula-2-540-88b340f223.png)
+![Стандартная ошибка](https://dt-cdn.net/images/formula-2-540-88b340f223.png)
 
-where `XÌ` is the mean value of x, the sums taken over the training data, and `s` is the sample standard error of the last `nHistory` points of the input time series.
+где `X̄` — среднее значение x, суммы берутся по обучающим данным, а `s` — выборочная стандартная ошибка последних `nHistory` точек входного временного ряда.
 
-![Linear extrapolation forecast](https://dt-cdn.net/images/linear-extrapolation-forecaster-976-e7c59a3803.png)
+![Прогноз линейной экстраполяции](https://dt-cdn.net/images/linear-extrapolation-forecaster-976-e7c59a3803.png)
 
-## Forecast quality assessment
+## Оценка качества прогноза
 
-After the predictions are generated, we assess their quality to spot potential numerical problems. To assess the forecast quality, the analyzer compares the standard deviation of the prediction to the standard deviation of the input time series (SDinput).
+После генерации предсказаний мы оцениваем их качество для выявления потенциальных числовых проблем. Для оценки качества прогноза анализатор сравнивает стандартное отклонение предсказания со стандартным отклонением входного временного ряда (SDinput).
 
-The standard deviation of the predictions (SDprediction) is calculated as the maximum standard deviation of the lower and upper bounds of the prediction interval as well as the standard deviation of the point prediction.
+Стандартное отклонение предсказаний (SDprediction) рассчитывается как максимальное стандартное отклонение нижней и верхней границ интервала предсказания, а также стандартное отклонение точечного предсказания.
 
-To account for acceptable trends in the predictions, the analyzer uses a scaling factor (SCF). When the length of the prediction data (Nprediction) is large compared to the input time series (Ninput), we allow a larger standard deviation of the prediction than for a small prediction.
+Для учёта допустимых трендов в предсказаниях анализатор использует коэффициент масштабирования (SCF). Когда длина данных предсказания (Nprediction) велика по сравнению с входным временным рядом (Ninput), мы допускаем большее стандартное отклонение предсказания, чем для малого предсказания.
 
-Additional input into the scale factor is the **Standard deviation factor** (SDfactor), with a default value of `100`. The scale factor is calculated as follows:
+Дополнительным входным параметром для коэффициента масштабирования является **Фактор стандартного отклонения** (SDfactor) со значением по умолчанию `100`. Коэффициент масштабирования рассчитывается следующим образом:
 
-![Scale factor](https://dt-cdn.net/images/formula-4-341-b9b7afb192.png)
+![Коэффициент масштабирования](https://dt-cdn.net/images/formula-4-341-b9b7afb192.png)
 
-The forecast is evaluated by the following condition:
+Прогноз оценивается по следующему условию:
 
-![Assessment criterion](https://dt-cdn.net/images/formula-5-298-ca5993874c.png)
+![Критерий оценки](https://dt-cdn.net/images/formula-5-298-ca5993874c.png)
 
-If the condition is satisfied, the forecast is assessed as valid. Otherwise, the forecast is invalid.
+Если условие выполняется, прогноз оценивается как действительный. В противном случае прогноз недействителен.
 
-## Write DQL queries for forecasting
+## Написание DQL-запросов для прогнозирования
 
-When using the forecast analysis in one of your [notebooks](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), you can write any DQL query that returns time series data in the [time series record format](#time-series-record-format).
+При использовании анализа прогнозирования в одном из ваших [ноутбуков](../../../analyze-explore-automate/dashboards-and-notebooks/notebooks.md "Анализируйте, визуализируйте и делитесь инсайтами из ваших данных наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.") вы можете написать любой DQL-запрос, который возвращает данные временного ряда в [формате записи временного ряда](#time-series-record-format).
 
-* If the data does not comply with one of the above formats, the forecast analysis fails.
-* Every numerical value in a data array must have at least one decimal point (for example, `1.0`).
+* Если данные не соответствуют одному из вышеуказанных форматов, анализ прогнозирования завершится с ошибкой.
+* Каждое числовое значение в массиве данных должно иметь хотя бы одну десятичную точку (например, `1.0`).
 
-### Example queries
+### Примеры запросов
 
-The example DQL queries below yield valid responses.
+Приведённые ниже примеры DQL-запросов возвращают корректные ответы.
 
-* The [`timeseries`](../../../platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries "DQL metric commands") DQL command always returns a response in the time series record format.
-* You can also write queries using the [`fetch`](../../../platform/grail/dynatrace-query-language/commands/data-source-commands.md#fetch "DQL data source commands") command together with the [`summarize`](../../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#summarize "DQL aggregation commands") command. Those queries will return data in the [single value format](#single-value-format). All records must have the same distance (interval) between them. This is guaranteed when using the `summarize` command, as it will aggregate and group values for the defined time bins. Every record needs to have a field named `value` of type double (see [Single value format](#single-value-format) for more info).
+* Команда DQL [`timeseries`](../../../platform/grail/dynatrace-query-language/commands/metric-commands.md#timeseries "Команды метрик DQL") всегда возвращает ответ в формате записи временного ряда.
+* Вы также можете писать запросы, используя команду [`fetch`](../../../platform/grail/dynatrace-query-language/commands/data-source-commands.md#fetch "Команды источников данных DQL") вместе с командой [`summarize`](../../../platform/grail/dynatrace-query-language/commands/aggregation-commands.md#summarize "Команды агрегации DQL"). Эти запросы возвращают данные в [формате единичного значения](#single-value-format). Все записи должны иметь одинаковое расстояние (интервал) между ними. Это гарантируется при использовании команды `summarize`, так как она агрегирует и группирует значения для определённых временных корзин. Каждая запись должна иметь поле с именем `value` типа double (подробнее см. [Формат единичного значения](#single-value-format)).
 
-#### DQL timeseries command
+#### Команда DQL timeseries
 
-The DQL `timeseries` command returns a result in the [time series record format](#time-series-record-format).
+Команда DQL `timeseries` возвращает результат в [формате записи временного ряда](#time-series-record-format).
 
 ```
 timeseries avg(dt.cloud.aws.rds.cpu.usage)
@@ -155,9 +155,9 @@ timeseries avg(dt.host.cpu.usage), interval: 1h, by: {dt.entity.host}, from: -3d
 timeseries avg(dt.host.disk.used), interval: 15m, by: {dt.entity.disk}, from: now()-2d, to: now()
 ```
 
-#### DQL fetch and summarize query
+#### Запрос DQL fetch и summarize
 
-A DQL query using `fetch` and `summarize` commands returns a result in the [single value format](#single-value-format).
+DQL-запрос с использованием команд `fetch` и `summarize` возвращает результат в [формате единичного значения](#single-value-format).
 
 ```
 fetch logs
@@ -183,11 +183,11 @@ fetch events, from: -3d
 | fieldsRename value=`count()`
 ```
 
-#### DQL data command
+#### Команда DQL data
 
-You can use the DQL [`data`](../../../platform/grail/dynatrace-query-language/commands/data-source-commands.md#data "DQL data source commands") command to generate a forecast for your own data. Any data can be used, as long as it conforms to one of the two formats.
+Вы можете использовать команду DQL [`data`](../../../platform/grail/dynatrace-query-language/commands/data-source-commands.md#data "Команды источников данных DQL") для создания прогноза на основе собственных данных. Можно использовать любые данные, при условии что они соответствуют одному из двух форматов.
 
-The following DQL `data` command returns a result in the [time series record format](#time-series-record-format).
+Следующая команда DQL `data` возвращает результат в [формате записи временного ряда](#time-series-record-format).
 
 ```
 data record(
@@ -357,28 +357,28 @@ data=array(
 )
 ```
 
-### Time series record format
+### Формат записи временного ряда
 
-In the time series record format, time series are defined as **simple double arrays**.
+В формате записи временного ряда временные ряды определяются как **простые массивы double**.
 
-* There can be multiple arrays per record entry and multiple separate record entries.
-* A valid time series response contains only time series records.
+* В одной записи может быть несколько массивов и несколько отдельных записей.
+* Корректный ответ временного ряда содержит только записи временных рядов.
 
-A time series record must contain:
+Запись временного ряда должна содержать:
 
-* Exactly one field of type timeframe that contains a start and end [timestamp](../../../platform/grail/dynatrace-query-language/data-types.md#timestamp "A list of DQL data types.")
-* Exactly one field of type [duration](../../../platform/grail/dynatrace-query-language/data-types.md#duration "A list of DQL data types.")
-* One or more fields of type `array` that contain only [double](../../../platform/grail/dynatrace-query-language/data-types.md#double "A list of DQL data types.") or [long](../../../platform/grail/dynatrace-query-language/data-types.md#long "A list of DQL data types.") values and null
+* Ровно одно поле типа timeframe, содержащее начальную и конечную [временную метку](../../../platform/grail/dynatrace-query-language/data-types.md#timestamp "Список типов данных DQL.")
+* Ровно одно поле типа [duration](../../../platform/grail/dynatrace-query-language/data-types.md#duration "Список типов данных DQL.")
+* Одно или более полей типа `array`, содержащих только значения [double](../../../platform/grail/dynatrace-query-language/data-types.md#double "Список типов данных DQL.") или [long](../../../platform/grail/dynatrace-query-language/data-types.md#long "Список типов данных DQL.") и null
 
-  + All numeric arrays must have as many values as there are time steps of width duration between the start and end of the timeframe `(end-start)/duration`
-* Fields in a time series record other than the timeframe, duration, and numeric data arrays are considered to be dimensions
+  + Все числовые массивы должны содержать столько значений, сколько временных шагов шириной duration помещается между началом и концом временного окна `(end-start)/duration`
+* Поля в записи временного ряда, отличные от timeframe, duration и числовых массивов данных, считаются измерениями
 
-DQL response in the time series record format
+Ответ DQL в формате записи временного ряда
 
-The following JSON describes the structure of the record format.
+Следующий JSON описывает структуру формата записи.
 
-* The types of the record fields are specified in the `types` section.
-* The actual value of a field of type [duration](../../../platform/grail/dynatrace-query-language/data-types.md#duration "A list of DQL data types.") is given in nanoseconds.
+* Типы полей записи указаны в разделе `types`.
+* Фактическое значение поля типа [duration](../../../platform/grail/dynatrace-query-language/data-types.md#duration "Список типов данных DQL.") задаётся в наносекундах.
 
 ```
 {
@@ -568,40 +568,40 @@ The following JSON describes the structure of the record format.
 }
 ```
 
-### Single value format
+### Формат единичного значения
 
-In the single value format, each record entry specifies a single value in the time series. Exactly one numeric field is allowed per record.
+В формате единичного значения каждая запись определяет одно значение во временном ряде. Допускается ровно одно числовое поле на запись.
 
-A record in a valid single value format response must contain:
+Запись в корректном ответе формата единичного значения должна содержать:
 
-* Exactly one field named `value` of type [double](../../../platform/grail/dynatrace-query-language/data-types.md#double "A list of DQL data types.")
-  values or [long](../../../platform/grail/dynatrace-query-language/data-types.md#long "A list of DQL data types.")
-* Time information as either:
+* Ровно одно поле с именем `value` типа [double](../../../platform/grail/dynatrace-query-language/data-types.md#double "Список типов данных DQL.")
+  или [long](../../../platform/grail/dynatrace-query-language/data-types.md#long "Список типов данных DQL.")
+* Информацию о времени в одном из форматов:
 
-  + a field named `timestamp` of type [timestamp](../../../platform/grail/dynatrace-query-language/data-types.md#timestamp "A list of DQL data types.")
-  + a field named `timeframe` of type `timeframe` that contains a start and end [timestamp](../../../platform/grail/dynatrace-query-language/data-types.md#timestamp "A list of DQL data types.")
+  + поле с именем `timestamp` типа [timestamp](../../../platform/grail/dynatrace-query-language/data-types.md#timestamp "Список типов данных DQL.")
+  + поле с именем `timeframe` типа `timeframe`, содержащее начальную и конечную [временную метку](../../../platform/grail/dynatrace-query-language/data-types.md#timestamp "Список типов данных DQL.")
 
-#### Interval
+#### Интервал
 
-The smallest allowed interval (time difference between two records) is one minute.
+Минимально допустимый интервал (разница во времени между двумя записями) составляет одну минуту.
 
-* An interval can be specified by adding a field `interval` of type [duration](../../../platform/grail/dynatrace-query-language/data-types.md#duration "A list of DQL data types.").
-* This field can be named `frequency` as well, although `interval` takes precedence if both are specified.
-* If `interval`/`frequency` is set, it must have the same value in each entry.
+* Интервал можно указать, добавив поле `interval` типа [duration](../../../platform/grail/dynatrace-query-language/data-types.md#duration "Список типов данных DQL.").
+* Это поле также может называться `frequency`, хотя `interval` имеет приоритет, если указаны оба.
+* Если `interval`/`frequency` задан, он должен иметь одинаковое значение в каждой записи.
 
-#### Dimensions
+#### Измерения
 
-Dimensions can be added as additional properties.
+Измерения могут быть добавлены как дополнительные свойства.
 
-* Additional properties can have only string values.
-* A series is defined based on the distinct values for each dimension. Record entries with the same dimensions (string properties) are considered to belong to the same time series.
+* Дополнительные свойства могут иметь только строковые значения.
+* Ряд определяется на основе уникальных значений для каждого измерения. Записи с одинаковыми измерениями (строковыми свойствами) считаются принадлежащими одному временному ряду.
 
-DQL response in the single value format
+Ответ DQL в формате единичного значения
 
-The following JSON describes the structure of the single value format.
+Следующий JSON описывает структуру формата единичного значения.
 
-* The types of the record fields are specified in the `types` section.
-* The actual value of a field of type [duration](../../../platform/grail/dynatrace-query-language/data-types.md#duration "A list of DQL data types.") is given in nanoseconds.
+* Типы полей записи указаны в разделе `types`.
+* Фактическое значение поля типа [duration](../../../platform/grail/dynatrace-query-language/data-types.md#duration "Список типов данных DQL.") задаётся в наносекундах.
 
 ```
 {
@@ -879,24 +879,24 @@ The following JSON describes the structure of the single value format.
 }
 ```
 
-## Example forecasts
+## Примеры прогнозов
 
-The quality of the forecast depends on the quality of data you're feeding to the analyzer and the width of the timeframe you want to predict. The best results are derived for a short timeframe from data without noise and with clear seasonal patterns. Here are some examples of forecasts for various types of data.
+Качество прогноза зависит от качества данных, подаваемых анализатору, и ширины временного окна, которое вы хотите предсказать. Лучшие результаты получаются для короткого временного окна из данных без шума и с чёткими сезонными паттернами. Ниже приведены примеры прогнозов для различных типов данных.
 
-No seasonality, downward trend
+Без сезонности, нисходящий тренд
 
-This example shows the forecast for an available disk metric. There's no seasonal pattern in the data, and there's a downward trend. Here, the [linear extrapolation forecaster](#linear-extrapolation) is used, producing a wide forecasted interval.
+Этот пример показывает прогноз для метрики доступного дискового пространства. В данных нет сезонного паттерна, и присутствует нисходящий тренд. Здесь используется [прогнозатор линейной экстраполяции](#linear-extrapolation), создающий широкий прогнозируемый интервал.
 
-![Forecast - Disk capacity](https://dt-cdn.net/images/disk-capacity-notebook-forecast-result-1541-792e2fa2cf.png)
+![Прогноз - Ёмкость диска](https://dt-cdn.net/images/disk-capacity-notebook-forecast-result-1541-792e2fa2cf.png)
 
-Seasonal data with noise
+Сезонные данные с шумом
 
-This example shows the forecast for a 1.5-hour timeframe. Notice that the forecasted interval is not smooth, reflecting the noise in input data.
+Этот пример показывает прогноз для временного окна в 1,5 часа. Обратите внимание, что прогнозируемый интервал не является гладким, что отражает шум во входных данных.
 
-![Seasonal forecast with noise](https://dt-cdn.net/images/seasonal-forecast-with-noise-result-1731-9d50baa8e5.png)
+![Сезонный прогноз с шумом](https://dt-cdn.net/images/seasonal-forecast-with-noise-result-1731-9d50baa8e5.png)
 
-Seasonal data with noise on an extended timeframe
+Сезонные данные с шумом на расширенном временном окне
 
-This example shows the forecast for a 6-hours timeframe. Apart from an extensive forecast timeframe, the data itself has some noise and a downward trend that affect forecast qualityâthe forecasted interval widens more and more as it goes into the future.
+Этот пример показывает прогноз для 6-часового временного окна. Помимо обширного временного окна прогноза, сами данные содержат некоторый шум и нисходящий тренд, которые влияют на качество прогноза — прогнозируемый интервал расширяется всё больше по мере продвижения в будущее.
 
-![Seasonal forecast with noise over 6-hour timeframe](https://dt-cdn.net/images/seasonal-forecast-with-noise-result-6h-1730-75d0e7ceb1.png)
+![Сезонный прогноз с шумом на 6-часовом временном окне](https://dt-cdn.net/images/seasonal-forecast-with-noise-result-6h-1730-75d0e7ceb1.png)

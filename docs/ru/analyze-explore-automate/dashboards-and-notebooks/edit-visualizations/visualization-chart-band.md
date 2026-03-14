@@ -1,5 +1,5 @@
 ---
-title: Band chart visualization
+title: Визуализация диаграммы группировки
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-band
 scraped: 2026-03-06T21:21:22.938820
 ---

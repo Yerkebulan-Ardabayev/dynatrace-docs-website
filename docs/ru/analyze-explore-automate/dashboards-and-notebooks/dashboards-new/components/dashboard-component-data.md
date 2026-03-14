@@ -1,5 +1,5 @@
 ---
-title: Add data to a dashboard
+title: Добавление данных на панель управления
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-data
 scraped: 2026-03-06T21:11:21.483222
 ---

@@ -1,5 +1,5 @@
 ---
-title: How OneAgent works
+title: Принцип работы OneAgent
 source: https://www.dynatrace.com/docs/platform/oneagent/how-one-agent-works
 scraped: 2026-03-06T21:15:37.246688
 ---

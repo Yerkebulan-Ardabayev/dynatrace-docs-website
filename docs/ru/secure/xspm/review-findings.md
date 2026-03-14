@@ -1,5 +1,5 @@
 ---
-title: Review findings
+title: Обзор результатов
 source: https://www.dynatrace.com/docs/secure/xspm/review-findings
 scraped: 2026-03-06T21:29:51.619326
 ---

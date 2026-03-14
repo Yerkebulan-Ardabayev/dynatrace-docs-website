@@ -1,5 +1,5 @@
 ---
-title: Cloud provider log forwarding (Logs Classic)
+title: Пересылка журналов провайдера облака (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/cloud-provider-log-forwarding
 scraped: 2026-03-06T21:30:55.800554
 ---

@@ -1,5 +1,5 @@
 ---
-title: What's new in Dynatrace
+title: Что нового в Dynatrace
 source: https://www.dynatrace.com/docs/whats-new
 scraped: 2026-03-06T21:09:49.978758
 ---

@@ -1,5 +1,5 @@
 ---
-title: Heatmap visualization
+title: Визуализация тепловой карты
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-heatmap
 scraped: 2026-03-06T21:21:33.800510
 ---

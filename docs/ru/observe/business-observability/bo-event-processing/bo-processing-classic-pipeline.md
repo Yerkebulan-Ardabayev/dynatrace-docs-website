@@ -1,5 +1,5 @@
 ---
-title: Business event processing via classic pipeline
+title: Обработка бизнес-событий через классический конвейер
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-processing/bo-processing-classic-pipeline
 scraped: 2026-03-06T21:14:37.436435
 ---

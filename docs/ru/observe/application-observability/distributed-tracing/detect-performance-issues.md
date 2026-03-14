@@ -1,5 +1,5 @@
 ---
-title: Detect performance issues
+title: Обнаружение проблем с производительностью
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/detect-performance-issues
 scraped: 2026-03-06T21:12:30.239053
 ---

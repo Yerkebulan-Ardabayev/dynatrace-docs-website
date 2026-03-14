@@ -1,5 +1,5 @@
 ---
-title: Record list
+title: Список записей
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-record-list
 scraped: 2026-03-06T21:21:30.034479
 ---

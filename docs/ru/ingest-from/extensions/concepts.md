@@ -1,5 +1,5 @@
 ---
-title: About Extensions
+title: О расширениях
 source: https://www.dynatrace.com/docs/ingest-from/extensions/concepts
 scraped: 2026-03-04T21:33:06.167215
 ---

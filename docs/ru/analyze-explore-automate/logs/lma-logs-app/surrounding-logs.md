@@ -1,5 +1,5 @@
 ---
-title: View surrounding logs
+title: Просмотр окружающих журналов
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/surrounding-logs
 scraped: 2026-03-06T21:11:23.170852
 ---

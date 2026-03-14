@@ -1,5 +1,5 @@
 ---
-title: Custom metric metadata
+title: Пользовательские метаданные метрик
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata
 scraped: 2026-03-06T21:33:32.965519
 ---

@@ -1,5 +1,5 @@
 ---
-title: Migrate from classic full-stack to application monitoring mode
+title: Миграция с classic full-stack на режим мониторинга приложений
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/classic-to-app-monitoring
 scraped: 2026-03-05T21:37:20.359464
 ---

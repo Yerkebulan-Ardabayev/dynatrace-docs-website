@@ -1,5 +1,5 @@
 ---
-title: Heroku monitoring
+title: Мониторинг Heroku
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/heroku
 scraped: 2026-02-06T16:28:55.999404
 ---

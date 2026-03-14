@@ -1,5 +1,5 @@
 ---
-title: Log ingest & process (Logs Classic)
+title: Журнал ингест и процесс (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data
 scraped: 2026-03-06T21:37:45.649064
 ---

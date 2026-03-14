@@ -1,5 +1,5 @@
 ---
-title: Network configurations
+title: Сетевые конфигурации
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations
 scraped: 2026-03-05T21:38:19.578189
 ---

@@ -1,5 +1,5 @@
 ---
-title: Custom SSL certificate for ActiveGate
+title: Пользовательский SSL-сертификат для ActiveGate
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate
 scraped: 2026-03-06T21:27:26.606529
 ---

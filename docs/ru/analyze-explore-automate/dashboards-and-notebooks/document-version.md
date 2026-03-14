@@ -1,5 +1,5 @@
 ---
-title: Manage document versions
+title: Управление версиями документов
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/document-version
 scraped: 2026-03-06T21:11:19.739905
 ---

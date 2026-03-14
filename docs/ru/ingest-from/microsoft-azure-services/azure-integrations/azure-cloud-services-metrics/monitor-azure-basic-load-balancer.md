@@ -1,5 +1,5 @@
 ---
-title: Azure Basic Load Balancer monitoring
+title: Мониторинг Azure Basic Load Balancer
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-basic-load-balancer
 scraped: 2026-03-05T21:40:04.660813
 ---

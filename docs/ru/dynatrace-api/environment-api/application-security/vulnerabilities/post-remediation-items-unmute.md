@@ -1,28 +1,28 @@
 ---
-title: Vulnerabilities API - POST unmute remediation items
+title: Уязвимости API - POST снятие ограничений с элементов исправления
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/post-remediation-items-unmute
 scraped: 2026-03-06T21:35:54.405045
 ---
 
-# Vulnerabilities API — POST снятие отключения элементов устранения
+# Уязвимости API - POST снятие ограничений с элементов исправления
 
-# Vulnerabilities API — POST снятие отключения элементов устранения
+# Уязвимости API - POST снятие ограничений с элементов исправления
 
-* Справочник
-* Обновлено 25 сент. 2024
+* Ссылка
+* Обновлено 25 сентября 2024 г.
 
-Снимает отключение (unmute) для нескольких групп процессов [отслеживания устранения](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Отслеживание прогресса устранения уязвимостей.") или, в случае уязвимостей Kubernetes, для нескольких узлов Kubernetes отслеживания устранения.
+Снимает ограничения с нескольких групп процессов отслеживания исправления или, в случае уязвимостей Kubernetes, нескольких узлов отслеживания исправления Kubernetes.
 
-Запрос принимает полезную нагрузку `application/json`.
+Запрос использует полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
 | POST | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/securityProblems/{id}/remediationItems/unmute` |
-| POST | Environment ActiveGateCluster ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/securityProblems/{id}/remediationItems/unmute` |
+| POST | Environment ActiveGateКластер ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/securityProblems/{id}/remediationItems/unmute` |
 
 ## Аутентификация
 
-Для выполнения этого запроса вам необходим токен доступа с областью `securityProblems.write`.
+Чтобы выполнить этот запрос, вам нужен токен доступа с областью `securityProblems.write`.
 
 Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
@@ -30,31 +30,31 @@ scraped: 2026-03-06T21:35:54.405045
 
 | Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| id | string | Идентификатор запрашиваемой сторонней проблемы безопасности. | path | Обязательный |
-| body | [RemediationItemsBulkUnmute](#openapi-definition-RemediationItemsBulkUnmute) | JSON-тело запроса. Содержит информацию о снятии отключения. | body | Необязательный |
+| id | строка | Идентификатор запрошенной проблемы безопасности третьих сторон. | путь | Обязательный |
+| body | [RemediationItemsBulkUnmute](#openapi-definition-RemediationItemsBulkUnmute) | JSON тело запроса. Содержит информацию о снятии ограничений. | тело | Необязательный |
 
 ### Объекты тела запроса
 
 #### Объект `RemediationItemsBulkUnmute`
 
-Информация о снятии отключения для нескольких элементов устранения.
+Информация о снятии ограничений с нескольких элементов исправления.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| comment | string | Комментарий о причине снятия отключения. | Необязательный |
-| reason | string | Причина снятия отключения элементов устранения. Элемент может содержать следующие значения: * `AFFECTED` | Обязательный |
-| remediationItemIds | string[] | Идентификаторы элементов устранения, для которых снимается отключение. | Обязательный |
+| comment | строка | Комментарий о причине снятия ограничений. | Необязательный |
+| reason | строка | Причина снятия ограничений с элементов исправления. Элемент может содержать следующие значения * `AFFECTED` | Обязательный |
+| remediationItemIds | строковый массив | Идентификаторы элементов исправления, которые необходимо снять с ограничений. | Обязательный |
 
-### JSON-модель тела запроса
+### Модель тела запроса JSON
 
-Это модель тела запроса, показывающая возможные элементы. Её необходимо адаптировать для использования в реальном запросе.
+Это модель тела запроса, показывающая возможные элементы. Ее необходимо скорректировать для использования в фактическом запросе.
 
 ```
 {
 
 
 
-"comment": "string",
+"comment": "строка",
 
 
 
@@ -66,7 +66,7 @@ scraped: 2026-03-06T21:35:54.405045
 
 
 
-"string"
+"строка"
 
 
 
@@ -79,11 +79,11 @@ scraped: 2026-03-06T21:35:54.405045
 
 ## Ответ
 
-### Коды ответа
+### Код ответа
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **200** | [RemediationItemsBulkUnmuteResponse](#openapi-definition-RemediationItemsBulkUnmuteResponse) | Успех. Отключение элемента(ов) устранения снято. |
+| **200** | [RemediationItemsBulkUnmuteResponse](#openapi-definition-RemediationItemsBulkUnmuteResponse) | Успех. Элемент(ы) исправления сняты с ограничений. |
 | **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне клиента. |
 | **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне сервера. |
 
@@ -91,21 +91,21 @@ scraped: 2026-03-06T21:35:54.405045
 
 #### Объект `RemediationItemsBulkUnmuteResponse`
 
-Ответ на снятие отключения нескольких элементов устранения.
+Ответ на снятие ограничений с нескольких элементов исправления.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| summary | [RemediationItemMutingSummary[]](#openapi-definition-RemediationItemMutingSummary) | Сводка о том, для каких элементов устранения было снято отключение, а для каких оно уже было снято ранее. |
+| summary | [RemediationItemMutingSummary[]](#openapi-definition-RemediationItemMutingSummary) | Сводка того, какие элементы исправления были сняты с ограничений и какие ранее уже были сняты с ограничений. |
 
 #### Объект `RemediationItemMutingSummary`
 
-Сводка по отключению/снятию отключения элемента устранения.
+Сводка снятия ограничений с элемента исправления.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| muteStateChangeTriggered | boolean | Было ли изменение состояния отключения для данного элемента устранения инициировано этим запросом. |
-| reason | string | Содержит причину, если запрошенная операция не была выполнена. Элемент может содержать следующие значения: * `ALREADY_MUTED` * `ALREADY_UNMUTED` * `REMEDIATION_ITEM_NOT_AFFECTED_BY_GIVEN_SECURITY_PROBLEM` |
-| remediationItemId | string | Идентификатор элемента устранения, для которого будет выполнено отключение/снятие отключения. |
+| muteStateChangeTriggered | логический | Было ли событие смены состояния ограничения для данного элемента исправления вызвано этим запросом. |
+| reason | строка | Содержит причину, если запрошенная операция не была выполнена. Элемент может содержать следующие значения * `ALREADY_MUTED` * `ALREADY_UNMUTED` * `REMEDIATION_ITEM_NOT_AFFECTED_BY_GIVEN_SECURITY_PROBLEM` |
+| remediationItemId | строка | Идентификатор элемента исправления, который будет снят с ограничений. |
 
 #### Объект `ErrorEnvelope`
 
@@ -117,9 +117,9 @@ scraped: 2026-03-06T21:35:54.405045
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | Код состояния HTTP |
+| code | целое число | Код состояния HTTP |
 | constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
-| message | string | Сообщение об ошибке |
+| message | строка | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
 
@@ -127,12 +127,12 @@ scraped: 2026-03-06T21:35:54.405045
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| location | string | - |
-| message | string | - |
-| parameterLocation | string | - Элемент может содержать следующие значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
-| path | string | - |
+| location | строка | - |
+| message | строка | - |
+| parameterLocation | строка | -Элемент может содержать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| path | строка | - |
 
-### JSON-модели тела ответа
+### Модели тела ответа JSON
 
 ```
 {
@@ -155,7 +155,7 @@ scraped: 2026-03-06T21:35:54.405045
 
 
 
-"remediationItemId": "string"
+"remediationItemId": "строка"
 
 
 
@@ -191,11 +191,11 @@ scraped: 2026-03-06T21:35:54.405045
 
 
 
-"location": "string",
+"location": "строка",
 
 
 
-"message": "string",
+"message": "строка",
 
 
 
@@ -203,11 +203,11 @@ scraped: 2026-03-06T21:35:54.405045
 
 
 
-"path": "string"
+"path": "строка"
 
 
 
-}
+?
 
 
 
@@ -215,7 +215,11 @@ scraped: 2026-03-06T21:35:54.405045
 
 
 
-"message": "string"
+"message": "строка"
+
+
+
+?
 
 
 
@@ -228,32 +232,24 @@ scraped: 2026-03-06T21:35:54.405045
 
 ## Пример
 
-Снятие отключения для двух сущностей: `PROCESS_GROUP-46C0E12D9B0EF2D9` и `PROCESS_GROUP-549E6AD75BD598EC`.
+Снять ограничения с двух сущностей, `PROCESS_GROUP-46C0E12D9B0EF2D9` и `PROCESS_GROUP-549E6AD75BD598EC`.
 
 #### Curl
 
 ```
 curl -X 'POST' 'https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/2919200225913269102/remediationItems/unmute' \
-
-
-
+\
 -H 'accept: application/json; charset=utf-8' \
-
-
-
+\
 -H 'Authorization: Api-Token [your_token]' \
-
-
-
+\
 -H 'Content-Type: application/json; charset=utf-8' \
-
-
-
+\
 -d '{
 
 
 
-"comment": "Example unmute multiple",
+"comment": "Пример снятия ограничений с нескольких элементов",
 
 
 
@@ -281,7 +277,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 
 
 
-"comment": "Example unmute multiple",
+"comment": "Пример снятия ограничений с нескольких элементов",
 
 
 
@@ -319,7 +315,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 
 
 
-},
+?),
 
 
 
@@ -335,7 +331,11 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 
 
 
-}
+?
+
+
+
+?
 
 
 
@@ -348,6 +348,6 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/29192002259132691
 
 ## Связанные темы
 
-* [Application Security](../../../../secure/application-security.md "Доступ к функциям Application Security Dynatrace.")
-* [Davis Security Advisor API](../davis-security-advice.md "Просмотр рекомендаций Davis Security Advisor через Dynatrace API.")
-* [Отслеживание устранения](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Отслеживание прогресса устранения уязвимостей.")
+* [Безопасность приложений](../../../../secure/application-security.md "Доступ к функциям безопасности приложений Dynatrace.")
+* [Советник по безопасности Davis API](../davis-security-advice.md "Просмотр рекомендаций советника по безопасности Davis через Dynatrace API. ")
+* [Отслеживание исправления](../../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking.md "Отслеживание прогресса исправления уязвимостей.")

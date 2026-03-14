@@ -1,5 +1,5 @@
 ---
-title: End-of-life announcements
+title: Объявления об окончании поддержки
 source: https://www.dynatrace.com/docs/whats-new/technology/end-of-life-announcements
 scraped: 2026-03-06T21:30:34.295751
 ---

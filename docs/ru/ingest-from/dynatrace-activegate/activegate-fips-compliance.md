@@ -1,5 +1,5 @@
 ---
-title: ActiveGate FIPS compliance
+title: Соответствие FIPS для ActiveGate
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-fips-compliance
 scraped: 2026-03-05T21:34:05.450636
 ---

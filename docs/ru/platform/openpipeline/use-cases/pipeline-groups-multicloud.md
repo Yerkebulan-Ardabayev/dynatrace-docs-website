@@ -1,79 +1,79 @@
 ---
-title: Configure multi-cloud ingest governance with pipeline groups
+title: Настройка управления приёмом данных в мультиоблачной среде с помощью групп конвейеров
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/pipeline-groups-multicloud
 scraped: 2026-03-06T21:16:05.385634
 ---
 
-# Configure multi-cloud ingest governance with pipeline groups
+# Настройка управления приёмом данных в мультиоблачной среде с помощью групп конвейеров
 
-# Configure multi-cloud ingest governance with pipeline groups
+# Настройка управления приёмом данных в мультиоблачной среде с помощью групп конвейеров
 
-* Latest Dynatrace
-* Tutorial
-* 18-min read
-* Published Feb 26, 2026
+* Актуальная версия Dynatrace
+* Руководство
+* Чтение: 18 мин
+* Опубликовано 26 февраля 2026 г.
 
-This tutorial explains how to create and manage pipeline groups using the Settings API, enabling consistent ingest governance in multiâcloud environments. It demonstrates how to enforce global and cloudâspecific processing logic, restrict sensitive stagesâsuch as permissionsâand ensure that each team operates within clearly defined responsibilities.
+В этом руководстве объясняется, как создавать и управлять группами конвейеров с помощью Settings API, обеспечивая согласованное управление приёмом данных в мультиоблачных средах. Оно демонстрирует, как применять глобальную и облачно-специфичную логику обработки, ограничивать чувствительные этапы — такие как разрешения — и гарантировать, что каждая команда работает в рамках чётко определённых обязанностей.
 
-By structuring pipelines through mandatory and restrited stages, pipeline groups provide a scalable, centralized approach to managing large sets of pipelines across multiâcloud environments.
+Структурируя конвейеры через обязательные и ограниченные этапы, группы конвейеров обеспечивают масштабируемый и централизованный подход к управлению большими наборами конвейеров в мультиоблачных средах.
 
-![Example pipeline groups for Aws and Azure log processing](https://dt-cdn.net/images/pipeline-group-tutorial-aws-azure-75a041547a.svg)
+![Пример групп конвейеров для обработки логов AWS и Azure](https://dt-cdn.net/images/pipeline-group-tutorial-aws-azure-75a041547a.svg)
 
-## Who is this for?
+## Для кого это руководство?
 
-Administrators, SREs, and engineers automating ingest governance at scale.
+Администраторы, SRE-инженеры и инженеры, автоматизирующие управление приёмом данных в масштабе.
 
-## What will you learn?
+## Чему вы научитесь?
 
-In this tutorial, you'll learn how to:
+В этом руководстве вы узнаете, как:
 
-* Create pipeline groups via the Settings API to manage over 30 pipelines for AWS and Azure log processing.
-* Add member pipelines for cloudâ and team-specific workloads.
-* Configure composition pipelines that enforce the responsibilities of admin, midâlevel, and dev teams.
-* Restrict sensitive stagesâsuch as cost allocation, permissions, and storageâwhich are centrally governed by the admin and midâlevel teams.
-* Apply pipeline groups to multiâcloud deployments where consistent ingest governance is required across AWS and Azure, while enabling teams to manage their respective processing and extraction stages.
+* Создавать группы конвейеров через Settings API для управления более чем 30 конвейерами для обработки логов AWS и Azure.
+* Добавлять участвующие конвейеры для облачно- и командно-специфичных рабочих нагрузок.
+* Настраивать композиционные конвейеры, которые определяют обязанности команд администраторов, среднего уровня и разработчиков.
+* Ограничивать чувствительные этапы — такие как распределение затрат, разрешения и хранение — которые централизованно управляются командами администраторов и среднего уровня.
+* Применять группы конвейеров к мультиоблачным развёртываниям, где требуется согласованное управление приёмом данных в AWS и Azure, позволяя командам управлять собственными этапами обработки и извлечения.
 
-## Before you begin
+## Перед началом
 
-### Prerequisites
+### Необходимые условия
 
-Required permissions: `settings:objects:read` and `settings:objects:write` with `builtin:openpipeline.<configuration-scope>.pipeline-groups` scope.
+Необходимые разрешения: `settings:objects:read` и `settings:objects:write` с областью `builtin:openpipeline.<configuration-scope>.pipeline-groups`.
 
-Show Settings API schemas
+Показать схемы Settings API
 
-* [Settings API - Pipeline Groups configuration (events) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-pipeline-groups.md "View builtin:openpipeline.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (bizevents) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-pipeline-groups.md "View builtin:openpipeline.bizevents.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (spans) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-pipeline-groups.md "View builtin:openpipeline.spans.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (logs) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipeline-groups.md "View builtin:openpipeline.logs.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (davis.problems) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-pipeline-groups.md "View builtin:openpipeline.davis.problems.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (metrics) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-pipeline-groups.md "View builtin:openpipeline.metrics.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (security.events) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-pipeline-groups.md "View builtin:openpipeline.security.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (events.security) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-pipeline-groups.md "View builtin:openpipeline.events.security.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (davis.events) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-pipeline-groups.md "View builtin:openpipeline.davis.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (events.sdlc) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-pipeline-groups.md "View builtin:openpipeline.events.sdlc.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (system.events) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-pipeline-groups.md "View builtin:openpipeline.system.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (usersessions) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-pipeline-groups.md "View builtin:openpipeline.usersessions.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
-* [Settings API - Pipeline Groups configuration (user.events) schema table](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-pipeline-groups.md "View builtin:openpipeline.user.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API — таблица схемы конфигурации Pipeline Groups (events)](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-pipeline-groups.md "Просмотр таблицы схемы настроек builtin:openpipeline.events.pipeline-groups вашей среды мониторинга через Dynatrace API.")
+* [Settings API — таблица схемы конфигурации Pipeline Groups (bizevents)](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-pipeline-groups.md "Просмотр таблицы схемы настроек builtin:openpipeline.bizevents.pipeline-groups вашей среды мониторинга через Dynatrace API.")
+* [Settings API — таблица схемы конфигурации Pipeline Groups (spans)](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-pipeline-groups.md "Просмотр таблицы схемы настроек builtin:openpipeline.spans.pipeline-groups вашей среды мониторинга через Dynatrace API.")
+* [Settings API — таблица схемы конфигурации Pipeline Groups (logs)](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipeline-groups.md "Просмотр таблицы схемы настроек builtin:openpipeline.logs.pipeline-groups вашей среды мониторинга через Dynatrace API.")
+* [Settings API — таблица схемы конфигурации Pipeline Groups (davis.problems)](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-pipeline-groups.md "Просмотр таблицы схемы настроек builtin:openpipeline.davis.problems.pipeline-groups вашей среды мониторинга через Dynatrace API.")
+* [Settings API — таблица схемы конфигурации Pipeline Groups (metrics)](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-pipeline-groups.md "Просмотр таблицы схемы настроек builtin:openpipeline.metrics.pipeline-groups вашей среды мониторинга через Dynatrace API.")
+* [Settings API — таблица схемы конфигурации Pipeline Groups (security.events)](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-pipeline-groups.md "Просмотр таблицы схемы настроек builtin:openpipeline.security.events.pipeline-groups вашей среды мониторинга через Dynatrace API.")
+* [Settings API — таблица схемы конфигурации Pipeline Groups (events.security)](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-pipeline-groups.md "Просмотр таблицы схемы настроек builtin:openpipeline.events.security.pipeline-groups вашей среды мониторинга через Dynatrace API.")
+* [Settings API — таблица схемы конфигурации Pipeline Groups (davis.events)](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-pipeline-groups.md "Просмотр таблицы схемы настроек builtin:openpipeline.davis.events.pipeline-groups вашей среды мониторинга через Dynatrace API.")
+* [Settings API — таблица схемы конфигурации Pipeline Groups (events.sdlc)](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-pipeline-groups.md "Просмотр таблицы схемы настроек builtin:openpipeline.events.sdlc.pipeline-groups вашей среды мониторинга через Dynatrace API.")
+* [Settings API — таблица схемы конфигурации Pipeline Groups (system.events)](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-pipeline-groups.md "Просмотр таблицы схемы настроек builtin:openpipeline.system.events.pipeline-groups вашей среды мониторинга через Dynatrace API.")
+* [Settings API — таблица схемы конфигурации Pipeline Groups (usersessions)](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-pipeline-groups.md "Просмотр таблицы схемы настроек builtin:openpipeline.usersessions.pipeline-groups вашей среды мониторинга через Dynatrace API.")
+* [Settings API — таблица схемы конфигурации Pipeline Groups (user.events)](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-pipeline-groups.md "Просмотр таблицы схемы настроек builtin:openpipeline.user.events.pipeline-groups вашей среды мониторинга через Dynatrace API.")
 
-### Prior knowledge
+### Предварительные знания
 
-* You know how to create pipelines via the [Settings API](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipelines.md "View builtin:openpipeline.logs.pipelines settings schema table of your monitoring environment via the Dynatrace API.").
-* You know how to [set access control in OpenPipeline](../getting-started/set-access-control.md "Distribute OpenPipeline ingest source and pipeline management via owner-based access control.").
-* You are familiar with [pipeline groups](../concepts/pipeline-groups.md "Understand how restricting and mandating configurations for pipeline groups via Settings API works.") and [pipeline group limits](../reference/limits.md#pipeline-groups "Reference limits of Dynatrace OpenPipeline.").
+* Вы знаете, как создавать конвейеры через [Settings API](../../../dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipelines.md "Просмотр таблицы схемы настроек builtin:openpipeline.logs.pipelines вашей среды мониторинга через Dynatrace API.").
+* Вы знаете, как [настроить контроль доступа в OpenPipeline](../getting-started/set-access-control.md "Распределение управления источниками приёма и конвейерами OpenPipeline через контроль доступа на основе владельцев.").
+* Вы знакомы с [группами конвейеров](../concepts/pipeline-groups.md "Понимание того, как работает ограничение и обязательное назначение конфигураций для групп конвейеров через Settings API.") и [лимитами групп конвейеров](../reference/limits.md#pipeline-groups "Справочные лимиты Dynatrace OpenPipeline.").
 
-## Configure pipeline groups
+## Настройка групп конвейеров
 
-In this tutorial, we'll create two pipeline groups, one per cloud provider, each executing a series of composition pipelines and member pipelines. The following table illustrates the scenario that the tutorial aims to achieve.
+В этом руководстве мы создадим две группы конвейеров, по одной на облачного провайдера, каждая из которых выполняет серию композиционных конвейеров и участвующих конвейеров. Следующая таблица иллюстрирует сценарий, который данное руководство стремится реализовать.
 
-### 1. Create composition pipelines
+### 1. Создание композиционных конвейеров
 
-1. Define a custom pipeline with the composition role (`"groupRole": "compositionPipeline"` and `"routing": "notRoutable"`) via JSON.
+1. Определите пользовательский конвейер с ролью composition (`"groupRole": "compositionPipeline"` и `"routing": "notRoutable"`) через JSON.
 
-   The composition pipelines in this tutorial are five custom pipelines, defined as follows.
+   Композиционные конвейеры в этом руководстве — это пять пользовательских конвейеров, определённых следующим образом.
 
-   * A global pipeline called **Global cost center and bucket assignment** that will be used by both groups (AWS pipelines and Azure pipelines) to assign buckets and `dt.cost.cost_center`. It's owned and accessed by the admin team only.
+   * Глобальный конвейер под названием **Global cost center and bucket assignment**, который будет использоваться обеими группами (конвейеры AWS и конвейеры Azure) для назначения бакетов и `dt.cost.cost_center`. Он принадлежит и доступен только команде администраторов.
 
-     JSON example
+     Пример JSON
 
      ```
      {
@@ -282,9 +282,9 @@ In this tutorial, we'll create two pipeline groups, one per cloud provider, each
 
      }
      ```
-   * Two cloud-specific processing pipelines called **AWS processing** and **Azure processing** to normalize incoming logs from the respective cloud provide and extract metrics, Davis events, and business events. They're managed by several people within the business unit; specificically, they're owned by the mid-level team and accessed by some senior dev team leads.
+   * Два облачно-специфичных конвейера обработки под названиями **AWS processing** и **Azure processing** для нормализации входящих логов от соответствующего облачного провайдера и извлечения метрик, событий Davis и бизнес-событий. Ими управляют несколько человек в бизнес-подразделении; в частности, они принадлежат команде среднего уровня и доступны некоторым старшим руководителям команд разработчиков.
 
-     JSON example
+     Пример JSON
 
      AWS
 
@@ -1458,9 +1458,9 @@ In this tutorial, we'll create two pipeline groups, one per cloud provider, each
      }
      ```
 
-* Two cloud-specific cost and permission assignment pipelines called **AWS cost and permission assignment** and **Azure cost and permission assignment** to set `dt.cost.product` and security context for the respective cloud provider. They're owned and accessed by the mid-level team only.
+* Два облачно-специфичных конвейера назначения затрат и разрешений под названиями **AWS cost and permission assignment** и **Azure cost and permission assignment** для установки `dt.cost.product` и контекста безопасности для соответствующего облачного провайдера. Они принадлежат и доступны только команде среднего уровня.
 
-  JSON example
+  Пример JSON
 
   AWS
 
@@ -1817,17 +1817,17 @@ In this tutorial, we'll create two pipeline groups, one per cloud provider, each
 
   }
   ```
-* Use the [`POST /api/v2/settings/objects`](../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") request with the pipeline schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.pipelines`).
+* Используйте запрос [`POST /api/v2/settings/objects`](../../../dynatrace-api/environment-api/settings/objects/post-object.md "Создание или валидация объекта настроек через Dynatrace API.") со схемой конвейера для области конфигурации (`builtin:openpipeline.<configuration.scope>.pipelines`).
 
 
 
-### 2. Create member pipelines
+### 2. Создание участвующих конвейеров
 
-1. To create a member pipeline, create a custom pipeline with the member role (`"groupRole": "memberPipeline"` and `"routing": "routable"`). Use the OpenPipeline settings Web UI or the [`POST /api/v2/settings/objects`](../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") request with the pipeline schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.pipelines`).
+1. Чтобы создать участвующий конвейер, создайте пользовательский конвейер с ролью member (`"groupRole": "memberPipeline"` и `"routing": "routable"`). Используйте веб-интерфейс настроек OpenPipeline или запрос [`POST /api/v2/settings/objects`](../../../dynatrace-api/environment-api/settings/objects/post-object.md "Создание или валидация объекта настроек через Dynatrace API.") со схемой конвейера для области конфигурации (`builtin:openpipeline.<configuration.scope>.pipelines`).
 
-   JSON example
+   Пример JSON
 
-   The following JSON contains an example of the member pipeline structure.
+   Следующий JSON содержит пример структуры участвующего конвейера.
 
    ```
    {
@@ -2004,11 +2004,11 @@ In this tutorial, we'll create two pipeline groups, one per cloud provider, each
 
    }
    ```
-2. Create the associated route. Use the OpenPipeline settings Web UI or the [`POST /api/v2/settings/objects`](../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") request with the route schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.routing`).
+2. Создайте связанный маршрут. Используйте веб-интерфейс настроек OpenPipeline или запрос [`POST /api/v2/settings/objects`](../../../dynatrace-api/environment-api/settings/objects/post-object.md "Создание или валидация объекта настроек через Dynatrace API.") со схемой маршрута для области конфигурации (`builtin:openpipeline.<configuration.scope>.routing`).
 
-   JSON example
+   Пример JSON
 
-   The following JSON contains an example of a route structure.
+   Следующий JSON содержит пример структуры маршрута.
 
    ```
    {
@@ -2066,26 +2066,26 @@ In this tutorial, we'll create two pipeline groups, one per cloud provider, each
    }
    ```
 
-In this tutorial, the following member pipelines exist.
+В этом руководстве существуют следующие участвующие конвейеры.
 
 AWS
 
 Azure
 
-### 3. Create pipeline groups
+### 3. Создание групп конвейеров
 
-1. Define two pipeline groups, one for AWS (`AWS pipelines`) and one for Azure (`Azure pipelines`).
+1. Определите две группы конвейеров: одну для AWS (`AWS pipelines`) и одну для Azure (`Azure pipelines`).
 
-   The groups process logs of the respective cloud provider following the same structure. Each group references the following pipelines:
+   Группы обрабатывают логи соответствующего облачного провайдера по одной и той же структуре. Каждая группа ссылается на следующие конвейеры:
 
-   1. **Global cost and bucket** pipeline: Defines Cost allocation and Storage stages.
-   2. **AWS processing** and **Azure processing** pipelines: Define Processing, Metric Extraction, Dynatrace Intelligence, and Data Extraction stages.
-   3. **AWS cost and permission assignment** and **Azure cost and permission assignment** pipelines: Define Product allocation and Security context stages.
-   4. Member pipeline (placeholder): Defines Processing stage.
+   1. Конвейер **Global cost and bucket**: Определяет этапы Cost allocation и Storage.
+   2. Конвейеры **AWS processing** и **Azure processing**: Определяют этапы Processing, Metric Extraction, Dynatrace Intelligence и Data Extraction.
+   3. Конвейеры **AWS cost and permission assignment** и **Azure cost and permission assignment**: Определяют этапы Product allocation и Security context.
+   4. Участвующий конвейер (заполнитель): Определяет этап Processing.
 
-   The groups execute first the composition pipelines (1, 2, 3). They mandate the Cost allocation, Storage, Processing, Metric Extraction, Dynatrace Intelligence, Data Extraction, Product allocation, and Security context stages in this order. Then, the member pipelines add transformations in the Processing stage.
+   Группы сначала выполняют композиционные конвейеры (1, 2, 3). Они обязывают выполнять этапы Cost allocation, Storage, Processing, Metric Extraction, Dynatrace Intelligence, Data Extraction, Product allocation и Security context в указанном порядке. Затем участвующие конвейеры добавляют преобразования на этапе Processing.
 
-   JSON example
+   Пример JSON
 
    AWS
 
@@ -2546,16 +2546,16 @@ Azure
 
    }
    ```
-2. Use the [`POST /api/v2/settings/objects`](../../../dynatrace-api/environment-api/settings/objects/post-object.md "Create or validate a settings object via the Dynatrace API.") request with the pipeline group schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.pipeline-groups`).
+2. Используйте запрос [`POST /api/v2/settings/objects`](../../../dynatrace-api/environment-api/settings/objects/post-object.md "Создание или валидация объекта настроек через Dynatrace API.") со схемой группы конвейеров для области конфигурации (`builtin:openpipeline.<configuration.scope>.pipeline-groups`).
 
-## Congratulations!
+## Поздравляем!
 
-You now have a complete API-based workflow to manage pipeline groups, enforce global governance, and scale pipeline operations across AWS and Azure environments.
+Теперь у вас есть полный рабочий процесс на основе API для управления группами конвейеров, обеспечения глобального управления и масштабирования операций конвейеров в средах AWS и Azure.
 
-You can create new member pipelines and then add them to the group any time. Use the [`PUT /api/v2/settings/objects/{objectId}`](../../../dynatrace-api/environment-api/settings/objects/put-object.md "Edit a settings object via the Dynatrace API.") request with the pipeline group schema of the configuration scope (`builtin:openpipeline.<configuration-scope>.pipeline-groups`).
+Вы можете создавать новые участвующие конвейеры и затем добавлять их в группу в любое время. Используйте запрос [`PUT /api/v2/settings/objects/{objectId}`](../../../dynatrace-api/environment-api/settings/objects/put-object.md "Редактирование объекта настроек через Dynatrace API.") со схемой группы конвейеров для области конфигурации (`builtin:openpipeline.<configuration-scope>.pipeline-groups`).
 
-Once the request is successfull, the `memberPipelines` field of the pipeline group lists the member pipeline IDs.
+После успешного выполнения запроса поле `memberPipelines` группы конвейеров будет содержать идентификаторы участвующих конвейеров.
 
-## Related topics
+## Связанные темы
 
-* [OpenPipeline pipeline groups](../concepts/pipeline-groups.md "Understand how restricting and mandating configurations for pipeline groups via Settings API works.")
+* [Группы конвейеров OpenPipeline](../concepts/pipeline-groups.md "Понимание того, как работает ограничение и обязательное назначение конфигураций для групп конвейеров через Settings API.")

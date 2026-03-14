@@ -1,5 +1,5 @@
 ---
-title: Stay compliant with Security Posture Management
+title: Соответствие требованиям с Security Posture Management
 source: https://www.dynatrace.com/docs/secure/use-cases/stay-compliant
 scraped: 2026-03-05T21:35:27.364176
 ---

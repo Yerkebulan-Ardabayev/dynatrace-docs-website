@@ -1,5 +1,5 @@
 ---
-title: Monitor Microsoft SQL database
+title: Мониторинг базы данных Microsoft SQL
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/microsoft-sql
 scraped: 2026-03-03T21:22:02.020530
 ---

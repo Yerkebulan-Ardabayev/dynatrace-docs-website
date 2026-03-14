@@ -1,5 +1,5 @@
 ---
-title: Manage PostgreSQL extensions
+title: Управление расширениями PostgreSQL
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/postgresql
 scraped: 2026-03-04T21:32:21.031267
 ---

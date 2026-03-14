@@ -1,5 +1,5 @@
 ---
-title: How it works
+title: Принцип работы
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works
 scraped: 2026-03-06T21:25:36.661384
 ---

@@ -1,5 +1,5 @@
 ---
-title: Monitor Azure Virtual Machines (classic)
+title: Мониторинг Azure Virtual Machines (classic)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-vm/monitor-azure-virtual-machines-classic
 scraped: 2026-03-03T21:27:32.027669
 ---

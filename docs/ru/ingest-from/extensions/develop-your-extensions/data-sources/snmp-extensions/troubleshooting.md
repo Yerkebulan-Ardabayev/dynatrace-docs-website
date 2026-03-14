@@ -1,5 +1,5 @@
 ---
-title: Troubleshooting
+title: Устранение неполадок
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions/troubleshooting
 scraped: 2026-03-05T21:30:19.842360
 ---

@@ -1,5 +1,5 @@
 ---
-title: User action metrics
+title: Метрики действий пользователя
 source: https://www.dynatrace.com/docs/observe/digital-experience/rum-concepts/user-action-metrics
 scraped: 2026-03-05T21:27:36.932998
 ---

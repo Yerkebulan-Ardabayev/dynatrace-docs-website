@@ -1,5 +1,5 @@
 ---
-title: Threat Observability concepts
+title: Концепции Threat Observability
 source: https://www.dynatrace.com/docs/secure/threat-observability/concepts
 scraped: 2026-03-06T21:38:10.774019
 ---

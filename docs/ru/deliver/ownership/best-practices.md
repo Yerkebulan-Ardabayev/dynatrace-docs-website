@@ -1,5 +1,5 @@
 ---
-title: Best practices for entity ownership
+title: Лучшие практики для владения сущностью
 source: https://www.dynatrace.com/docs/deliver/ownership/best-practices
 scraped: 2026-03-06T21:37:01.750284
 ---

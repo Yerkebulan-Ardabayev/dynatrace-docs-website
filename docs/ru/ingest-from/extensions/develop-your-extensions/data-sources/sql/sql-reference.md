@@ -1,5 +1,5 @@
 ---
-title: SQL data source reference
+title: Справочник источника данных SQL
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sql-reference
 scraped: 2026-03-01T21:14:57.566228
 ---

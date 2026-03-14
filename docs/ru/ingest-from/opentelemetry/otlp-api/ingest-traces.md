@@ -1,5 +1,5 @@
 ---
-title: Ingest OTLP traces
+title: Прием OTLP-трассировок
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api/ingest-traces
 scraped: 2026-03-06T21:36:21.949719
 ---

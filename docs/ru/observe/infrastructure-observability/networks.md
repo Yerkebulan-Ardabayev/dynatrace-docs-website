@@ -1,5 +1,5 @@
 ---
-title: Networks
+title: Сети
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks
 scraped: 2026-02-06T16:29:04.150090
 ---

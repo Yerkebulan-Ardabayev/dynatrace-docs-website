@@ -1,246 +1,246 @@
 ---
-title: Hosts API - GET all hosts
+title: Hosts API - Получение всех хостов (GET)
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/hosts-api/get-all
 scraped: 2026-03-05T21:26:52.254636
 ---
 
-# Hosts API - GET all hosts
+# Hosts API - Получение всех хостов (GET)
 
-# Hosts API - GET all hosts
+# Hosts API - Получение всех хостов (GET)
 
-* Reference
-* Updated on Mar 22, 2023
-* Deprecated
+* Справочник
+* Обновлено 22 мар. 2023
+* Устаревший
 
-This API is deprecated. Use the [Monitored entities API](../../entity-v2.md "Learn about the Dynatrace Monitored entities API.") instead. You can find more information about switching to the new API in the [migration guide](../../../basics/deprecation-migration-guides/topology-v1-to-entity-v2.md "Migrate your automation to the Monitored entities API.").
+Этот API устарел. Используйте [Monitored entities API](../../entity-v2.md "Узнайте о Dynatrace Monitored entities API.") вместо него. Дополнительную информацию о переходе на новый API можно найти в [руководстве по миграции](../../../basics/deprecation-migration-guides/topology-v1-to-entity-v2.md "Перенесите вашу автоматизацию на Monitored entities API.").
 
-Gets the list of all hosts in your Dynatrace environment, along with their parameters.
+Получает список всех хостов в вашей среде Dynatrace вместе с их параметрами.
 
-The full list can be lengthy, so you can narrow it down by specifying filter parameters, like tags. See the **Parameters** section for more details.
+Полный список может быть обширным, поэтому его можно сузить, указав параметры фильтрации, например, теги. Подробнее см. в разделе **Параметры**.
 
-You can additionally limit the output by using the pagination:
+Вы также можете ограничить вывод с помощью пагинации:
 
-1. Specify the number of results per page in the **pageSize** query parameter.
-2. Then use the cursor from the **Next-Page-Key** response header in the **nextPageKey** query parameter to obtain subsequent pages.
+1. Укажите количество результатов на странице в параметре запроса **pageSize**.
+2. Затем используйте курсор из заголовка ответа **Next-Page-Key** в параметре запроса **nextPageKey** для получения последующих страниц.
 
-The request produces an `application/json` payload.
+Запрос возвращает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
 | GET | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v1/entity/infrastructure/hosts` |
 | GET | Environment ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v1/entity/infrastructure/hosts` |
 
-## Authentication
+## Аутентификация
 
-To execute this request, you need an access token with `DataExport` scope.
+Для выполнения этого запроса необходим токен доступа с областью действия `DataExport`.
 
-To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
+Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
-## Parameters
+## Параметры
 
-The timeframe is restricted to a **maximum period of 3 days**.
+Временной диапазон ограничен **максимальным периодом в 3 дня**.
 
-| Parameter | Type | Description | In | Required |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| startTimestamp | integer | The start timestamp of the requested timeframe, in milliseconds (UTC).  If not set, then 72 hours behind from now is used. | query | Optional |
-| endTimestamp | integer | The end timestamp of the requested timeframe, in milliseconds (UTC).  If not set, then the current timestamp is used.  The timeframe must not exceed 3 days. | query | Optional |
-| relativeTime | string | The relative timeframe, back from now. The element can hold these values * `min` * `5mins` * `10mins` * `15mins` * `30mins` * `hour` * `2hours` * `6hours` * `day` * `3days` | query | Optional |
-| tag | string[] | Filters the resulting set of hosts by the specified tag. You can specify several tags in the following format: `tag=tag1&tag=tag2`. The host has to match **all** the specified tags.  In case of key-value tags, such as imported AWS or CloudFoundry tags, use the following format: `tag=[context]key:value`. For custom key-value tags, omit the context: `tag=key:value`. | query | Optional |
-| showMonitoringCandidates | boolean | Includes (`true`) or excludes (`false`) a monitoring candidate in the response.  Monitoring candidates are network entities that are detected but not monitored. | query | Optional |
-| entity | string[] | Filters result to the specified hosts only.  To specify several hosts use the following format: `entity=ID1&entity=ID2`. | query | Optional |
-| managementZone | integer | Only return hosts that are part of the specified management zone. | query | Optional |
-| hostGroupId | string | Filters the resulting set of hosts by the specified host group.  Specify the Dynatrace IDs of the host group you're interested in. | query | Optional |
-| hostGroupName | string | Filters the resulting set of hosts by the specified host group.  Specify the name of the host group you're interested in. | query | Optional |
-| includeDetails | boolean | Includes (`true`) or excludes (`false`) details which are queried from related entities.  Excluding details may make queries faster.  If not set, then `true` is used. | query | Optional |
-| pageSize | integer | The number of hosts per result page.  If not set, pagination is not used and the result contains all hosts fitting the specified filtering criteria. | query | Optional |
-| nextPageKey | string | The cursor for the next page of results. You can find it in the **Next-Page-Key** header of the previous response.  If you're using pagination, the first page is always returned without this cursor.  You must keep all other query parameters as they were in the first request to obtain subsequent pages. | query | Optional |
+| startTimestamp | integer | Начальная временная метка запрашиваемого временного диапазона в миллисекундах (UTC). Если не задана, используется значение 72 часа назад от текущего момента. | query | Необязательный |
+| endTimestamp | integer | Конечная временная метка запрашиваемого временного диапазона в миллисекундах (UTC). Если не задана, используется текущая временная метка. Временной диапазон не должен превышать 3 дня. | query | Необязательный |
+| relativeTime | string | Относительный временной диапазон, отсчитываемый назад от текущего момента. Элемент может содержать следующие значения * `min` * `5mins` * `10mins` * `15mins` * `30mins` * `hour` * `2hours` * `6hours` * `day` * `3days` | query | Необязательный |
+| tag | string[] | Фильтрует результирующий набор хостов по указанному тегу. Можно указать несколько тегов в следующем формате: `tag=tag1&tag=tag2`. Хост должен соответствовать **всем** указанным тегам. Для тегов типа ключ-значение, таких как импортированные теги AWS или CloudFoundry, используйте следующий формат: `tag=[context]key:value`. Для пользовательских тегов типа ключ-значение опустите контекст: `tag=key:value`. | query | Необязательный |
+| showMonitoringCandidates | boolean | Включает (`true`) или исключает (`false`) кандидатов на мониторинг в ответе. Кандидаты на мониторинг — это сетевые сущности, которые обнаружены, но не мониторятся. | query | Необязательный |
+| entity | string[] | Фильтрует результат только по указанным хостам. Для указания нескольких хостов используйте следующий формат: `entity=ID1&entity=ID2`. | query | Необязательный |
+| managementZone | integer | Возвращать только хосты, которые являются частью указанной зоны управления. | query | Необязательный |
+| hostGroupId | string | Фильтрует результирующий набор хостов по указанной группе хостов. Укажите идентификатор Dynatrace группы хостов, которая вас интересует. | query | Необязательный |
+| hostGroupName | string | Фильтрует результирующий набор хостов по указанной группе хостов. Укажите имя группы хостов, которая вас интересует. | query | Необязательный |
+| includeDetails | boolean | Включает (`true`) или исключает (`false`) детали, запрашиваемые из связанных сущностей. Исключение деталей может ускорить запросы. Если не задано, используется `true`. | query | Необязательный |
+| pageSize | integer | Количество хостов на странице результатов. Если не задано, пагинация не используется и результат содержит все хосты, соответствующие указанным критериям фильтрации. | query | Необязательный |
+| nextPageKey | string | Курсор для следующей страницы результатов. Вы можете найти его в заголовке **Next-Page-Key** предыдущего ответа. При использовании пагинации первая страница всегда возвращается без этого курсора. Все остальные параметры запроса должны оставаться такими же, как в первом запросе, для получения последующих страниц. | query | Необязательный |
 
-## Response
+## Ответ
 
-### Response codes
+### Коды ответов
 
-| Code | Type | Description |
+| Код | Тип | Описание |
 | --- | --- | --- |
-| **200** | [Host[]](#openapi-definition-Host) | Success |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Failed. The input is invalid. |
-| **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Client side error. |
-| **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Server side error. |
+| **200** | [Host[]](#openapi-definition-Host) | Успех |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные недопустимы. |
+| **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне клиента. |
+| **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне сервера. |
 
-### Response body objects
+### Объекты тела ответа
 
-#### The `ResponseBody` object
+#### Объект `ResponseBody`
 
-#### The `Host` object
+#### Объект `Host`
 
-Information about the host.
+Информация о хосте.
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| agentVersion | [AgentVersion](#openapi-definition-AgentVersion) | Defines the version of the agent currently running on the entity. |
+| agentVersion | [AgentVersion](#openapi-definition-AgentVersion) | Определяет версию агента, работающего в данный момент на сущности. |
 | amiId | string | - |
-| autoInjection | string | Status of auto-injection The element can hold these values * `DISABLED_MANUALLY` * `DISABLED_ON_INSTALLATION` * `DISABLED_ON_SANITY_CHECK` * `ENABLED` * `FAILED_ON_INSTALLATION` |
+| autoInjection | string | Статус автоинъекции. Элемент может содержать следующие значения * `DISABLED_MANUALLY` * `DISABLED_ON_INSTALLATION` * `DISABLED_ON_SANITY_CHECK` * `ENABLED` * `FAILED_ON_INSTALLATION` |
 | autoScalingGroup | string | - |
 | awsInstanceId | string | - |
 | awsInstanceType | string | - |
-| awsNameTag | string | The name inherited from AWS. |
+| awsNameTag | string | Имя, унаследованное от AWS. |
 | awsSecurityGroup | string[] | - |
-| azureComputeModeName | string | -The element can hold these values * `DEDICATED` * `SHARED` |
+| azureComputeModeName | string | -Элемент может содержать следующие значения * `DEDICATED` * `SHARED` |
 | azureEnvironment | string | - |
 | azureHostNames | string[] | - |
 | azureResourceGroupName | string | - |
 | azureResourceId | string | - |
 | azureSiteNames | string[] | - |
-| azureSku | string | -The element can hold these values * `BASIC` * `DYNAMIC` * `FREE` * `PREMIUM` * `SHARED` * `STANDARD` |
+| azureSku | string | -Элемент может содержать следующие значения * `BASIC` * `DYNAMIC` * `FREE` * `PREMIUM` * `SHARED` * `STANDARD` |
 | azureVmName | string | - |
 | azureVmScaleSetName | string | - |
 | azureVmSizeLabel | string | - |
 | azureZone | string | - |
 | beanstalkEnvironmentName | string | - |
-| bitness | string | -The element can hold these values * `32bit` * `64bit` |
-| boshAvailabilityZone | string | The Cloud Foundry BOSH availability zone. |
-| boshDeploymentId | string | The Cloud Foundry BOSH deployment ID. |
-| boshInstanceId | string | The Cloud Foundry BOSH instance ID. |
-| boshInstanceName | string | The Cloud Foundry BOSH instance name. |
-| boshName | string | The Cloud Foundry BOSH name. |
-| boshStemcellVersion | string | The Cloud Foundry BOSH stemcell version. |
-| cloudPlatformVendorVersion | string | Defines the cloud platform vendor version. |
-| cloudType | string | -The element can hold these values * `AZURE` * `EC2` * `GOOGLE_CLOUD_PLATFORM` * `OPENSTACK` * `ORACLE` * `UNRECOGNIZED` |
-| consumedHostUnits | string | Consumed Host Units. Applicable only for [Dynatrace classic licensingï»¿](https://www.dynatrace.com/support/help/shortlink/application-and-infrastructure-host-units) |
+| bitness | string | -Элемент может содержать следующие значения * `32bit` * `64bit` |
+| boshAvailabilityZone | string | Зона доступности Cloud Foundry BOSH. |
+| boshDeploymentId | string | Идентификатор развёртывания Cloud Foundry BOSH. |
+| boshInstanceId | string | Идентификатор экземпляра Cloud Foundry BOSH. |
+| boshInstanceName | string | Имя экземпляра Cloud Foundry BOSH. |
+| boshName | string | Имя Cloud Foundry BOSH. |
+| boshStemcellVersion | string | Версия stemcell Cloud Foundry BOSH. |
+| cloudPlatformVendorVersion | string | Определяет версию поставщика облачной платформы. |
+| cloudType | string | -Элемент может содержать следующие значения * `AZURE` * `EC2` * `GOOGLE_CLOUD_PLATFORM` * `OPENSTACK` * `ORACLE` * `UNRECOGNIZED` |
+| consumedHostUnits | string | Потреблённые единицы хостов. Применимо только для [классического лицензирования Dynatrace](https://www.dynatrace.com/support/help/shortlink/application-and-infrastructure-host-units) |
 | cpuCores | integer | - |
-| customizedName | string | The customized name of the entity |
-| discoveredName | string | The discovered name of the entity |
-| displayName | string | The name of the Dynatrace entity as displayed in the UI. |
-| entityId | string | The Dynatrace entity ID of the required entity. |
+| customizedName | string | Пользовательское имя сущности |
+| discoveredName | string | Обнаруженное имя сущности |
+| displayName | string | Имя сущности Dynatrace, отображаемое в пользовательском интерфейсе. |
+| entityId | string | Идентификатор сущности Dynatrace требуемой сущности. |
 | esxiHostName | string | - |
-| firstSeenTimestamp | integer | The timestamp of when the entity was first detected, in UTC milliseconds |
+| firstSeenTimestamp | integer | Временная метка первого обнаружения сущности в миллисекундах UTC |
 | fromRelationships | object | - |
-| gceInstanceId | string | The Google Compute Engine instance ID. |
-| gceInstanceName | string | The Google Compute Engine instance name. |
-| gceMachineType | string | The Google Compute Engine machine type. |
-| gceProject | string | The Google Compute Engine project. |
-| gceProjectId | string | The Google Compute Engine numeric project ID. |
-| gcePublicIpAddresses | string[] | The public IP addresses of the Google Compute Engine. |
-| gcpZone | string | The Google Cloud Platform Zone. |
+| gceInstanceId | string | Идентификатор экземпляра Google Compute Engine. |
+| gceInstanceName | string | Имя экземпляра Google Compute Engine. |
+| gceMachineType | string | Тип машины Google Compute Engine. |
+| gceProject | string | Проект Google Compute Engine. |
+| gceProjectId | string | Числовой идентификатор проекта Google Compute Engine. |
+| gcePublicIpAddresses | string[] | Публичные IP-адреса Google Compute Engine. |
+| gcpZone | string | Зона Google Cloud Platform. |
 | hostGroup | [HostGroup](#openapi-definition-HostGroup) | - |
-| hypervisorType | string | -The element can hold these values * `AHV` * `AWS_NITRO` * `GVISOR` * `HYPERV` * `KVM` * `LPAR` * `QEMU` * `UNRECOGNIZED` * `VIRTUALBOX` * `VMWARE` * `WPAR` * `XEN` |
+| hypervisorType | string | -Элемент может содержать следующие значения * `AHV` * `AWS_NITRO` * `GVISOR` * `HYPERV` * `KVM` * `LPAR` * `QEMU` * `UNRECOGNIZED` * `VIRTUALBOX` * `VMWARE` * `WPAR` * `XEN` |
 | ipAddresses | string[] | - |
 | isMonitoringCandidate | boolean | - |
-| kubernetesCluster | string | The kubernetes cluster the entity is in. |
-| kubernetesLabels | object | The kubernetes labels defined on the entity. |
-| kubernetesNode | string | The kubernetes node the entity is in. |
-| lastSeenTimestamp | integer | The timestamp of when the entity was last detected, in UTC milliseconds |
+| kubernetesCluster | string | Кластер Kubernetes, в котором находится сущность. |
+| kubernetesLabels | object | Метки Kubernetes, определённые на сущности. |
+| kubernetesNode | string | Узел Kubernetes, на котором находится сущность. |
+| lastSeenTimestamp | integer | Временная метка последнего обнаружения сущности в миллисекундах UTC |
 | localHostName | string | - |
 | localIp | string | - |
 | logicalCpuCores | integer | - |
-| logicalCpus | integer | The AIX instance logical CPU count. |
-| managementZones | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | The management zones that the entity is part of. |
-| monitoringMode | string | -The element can hold these values * `FULL_STACK` * `INFRASTRUCTURE` * `OFF` |
-| networkZoneId | string | The ID of network zone the entity is in. |
-| oneAgentCustomHostName | string | The custom name defined in OneAgent config. |
+| logicalCpus | integer | Количество логических процессоров экземпляра AIX. |
+| managementZones | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | Зоны управления, частью которых является сущность. |
+| monitoringMode | string | -Элемент может содержать следующие значения * `FULL_STACK` * `INFRASTRUCTURE` * `OFF` |
+| networkZoneId | string | Идентификатор сетевой зоны, в которой находится сущность. |
+| oneAgentCustomHostName | string | Пользовательское имя, определённое в конфигурации OneAgent. |
 | openStackInstaceType | string | - |
 | openstackAvZone | string | - |
 | openstackComputeNodeName | string | - |
 | openstackProjectName | string | - |
 | openstackSecurityGroups | string[] | - |
 | openstackVmName | string | - |
-| osArchitecture | string | -The element can hold these values * `ARM` * `IA64` * `PARISC` * `PPC` * `PPCLE` * `S390` * `SPARC` * `X86` * `ZOS` |
-| osType | string | -The element can hold these values * `AIX` * `DARWIN` * `HPUX` * `LINUX` * `SOLARIS` * `WINDOWS` * `ZOS` |
+| osArchitecture | string | -Элемент может содержать следующие значения * `ARM` * `IA64` * `PARISC` * `PPC` * `PPCLE` * `S390` * `SPARC` * `X86` * `ZOS` |
+| osType | string | -Элемент может содержать следующие значения * `AIX` * `DARWIN` * `HPUX` * `LINUX` * `SOLARIS` * `WINDOWS` * `ZOS` |
 | osVersion | string | - |
-| paasAgentVersions | [AgentVersion[]](#openapi-definition-AgentVersion) | The versions of the PaaS agents currently running on the entity. |
+| paasAgentVersions | [AgentVersion[]](#openapi-definition-AgentVersion) | Версии PaaS-агентов, работающих в данный момент на сущности. |
 | paasMemoryLimit | integer | - |
-| paasType | string | -The element can hold these values * `AWS_ECS_EC2` * `AWS_ECS_FARGATE` * `AWS_LAMBDA` * `AZURE_FUNCTIONS` * `AZURE_WEBSITES` * `CLOUD_FOUNDRY` * `GOOGLE_APP_ENGINE` * `GOOGLE_CLOUD_RUN` * `HEROKU` * `KUBERNETES` * `OPENSHIFT` |
+| paasType | string | -Элемент может содержать следующие значения * `AWS_ECS_EC2` * `AWS_ECS_FARGATE` * `AWS_LAMBDA` * `AZURE_FUNCTIONS` * `AZURE_WEBSITES` * `CLOUD_FOUNDRY` * `GOOGLE_APP_ENGINE` * `GOOGLE_CLOUD_RUN` * `HEROKU` * `KUBERNETES` * `OPENSHIFT` |
 | publicHostName | string | - |
 | publicIp | string | - |
 | scaleSetName | string | - |
-| simultaneousMultithreading | integer | The AIX instance simultaneous threads count. |
+| simultaneousMultithreading | integer | Количество одновременных потоков экземпляра AIX. |
 | softwareTechnologies | [TechnologyInfo[]](#openapi-definition-TechnologyInfo) | - |
-| tags | [TagInfo[]](#openapi-definition-TagInfo) | The list of entity tags. |
+| tags | [TagInfo[]](#openapi-definition-TagInfo) | Список тегов сущности. |
 | toRelationships | object | - |
-| userLevel | string | -The element can hold these values * `NON_SUPERUSER` * `NON_SUPERUSER_STRICT` * `SUPERUSER` |
-| virtualCpus | integer | The AIX instance virtual CPU count. |
+| userLevel | string | -Элемент может содержать следующие значения * `NON_SUPERUSER` * `NON_SUPERUSER_STRICT` * `SUPERUSER` |
+| virtualCpus | integer | Количество виртуальных процессоров экземпляра AIX. |
 | vmwareName | string | - |
-| zosCPUModelNumber | string | The CPU model number. |
-| zosCPUSerialNumber | string | The CPU serial number. |
-| zosLpaName | string | Name of the LPAR. |
-| zosSystemName | string | Name of the system. |
-| zosTotalGeneralPurposeProcessors | integer | Number of assigned processors for this LPAR. |
-| zosTotalPhysicalMemory | integer | Memory assigned to the host (Terabyte). |
-| zosTotalZiipProcessors | integer | Number of assigned support processors for this LPAR. |
-| zosVirtualization | string | Type of virtualization on the mainframe. |
+| zosCPUModelNumber | string | Номер модели процессора. |
+| zosCPUSerialNumber | string | Серийный номер процессора. |
+| zosLpaName | string | Имя LPAR. |
+| zosSystemName | string | Имя системы. |
+| zosTotalGeneralPurposeProcessors | integer | Количество назначенных процессоров для этого LPAR. |
+| zosTotalPhysicalMemory | integer | Память, назначенная хосту (терабайт). |
+| zosTotalZiipProcessors | integer | Количество назначенных вспомогательных процессоров для этого LPAR. |
+| zosVirtualization | string | Тип виртуализации на мейнфрейме. |
 
-#### The `AgentVersion` object
+#### Объект `AgentVersion`
 
-Defines the version of the agent currently running on the entity.
+Определяет версию агента, работающего в данный момент на сущности.
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| major | integer | The major version number. |
-| minor | integer | The minor version number. |
-| revision | integer | The revision number. |
-| sourceRevision | string | A string representation of the SVN revision number. |
-| timestamp | string | A timestamp string: format "yyyymmdd-hhmmss |
+| major | integer | Номер мажорной версии. |
+| minor | integer | Номер минорной версии. |
+| revision | integer | Номер ревизии. |
+| sourceRevision | string | Строковое представление номера ревизии SVN. |
+| timestamp | string | Строка временной метки: формат "yyyymmdd-hhmmss |
 
-#### The `HostGroup` object
+#### Объект `HostGroup`
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| meId | string | The Dynatrace entity ID of the host group. |
-| name | string | The name of the Dynatrace entity, displayed in the UI. |
+| meId | string | Идентификатор сущности Dynatrace для группы хостов. |
+| name | string | Имя сущности Dynatrace, отображаемое в пользовательском интерфейсе. |
 
-#### The `EntityShortRepresentation` object
+#### Объект `EntityShortRepresentation`
 
-The short representation of a Dynatrace entity.
+Краткое представление сущности Dynatrace.
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| description | string | A short description of the Dynatrace entity. |
-| id | string | The ID of the Dynatrace entity. |
-| name | string | The name of the Dynatrace entity. |
+| description | string | Краткое описание сущности Dynatrace. |
+| id | string | Идентификатор сущности Dynatrace. |
+| name | string | Имя сущности Dynatrace. |
 
-#### The `TechnologyInfo` object
+#### Объект `TechnologyInfo`
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
 | edition | string | - |
 | type | string | - |
 | version | string | - |
 
-#### The `TagInfo` object
+#### Объект `TagInfo`
 
-Tag of a Dynatrace entity.
+Тег сущности Dynatrace.
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| context | string | The origin of the tag, such as AWS or Cloud Foundry.  Custom tags use the `CONTEXTLESS` value. The element can hold these values * `AWS` * `AWS_GENERIC` * `AZURE` * `CLOUD_FOUNDRY` * `CONTEXTLESS` * `ENVIRONMENT` * `GOOGLE_CLOUD` * `KUBERNETES` |
-| key | string | The key of the tag.  Custom tags have the tag value here. |
-| value | string | The value of the tag.  Not applicable to custom tags. |
+| context | string | Источник тега, например AWS или Cloud Foundry. Пользовательские теги используют значение `CONTEXTLESS`. Элемент может содержать следующие значения * `AWS` * `AWS_GENERIC` * `AZURE` * `CLOUD_FOUNDRY` * `CONTEXTLESS` * `ENVIRONMENT` * `GOOGLE_CLOUD` * `KUBERNETES` |
+| key | string | Ключ тега. Пользовательские теги содержат здесь значение тега. |
+| value | string | Значение тега. Не применимо к пользовательским тегам. |
 
-#### The `ErrorEnvelope` object
+#### Объект `ErrorEnvelope`
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
 | error | [Error](#openapi-definition-Error) | - |
 
-#### The `Error` object
+#### Объект `Error`
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
-| message | string | The error message |
+| code | integer | Код состояния HTTP |
+| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| message | string | Сообщение об ошибке |
 
-#### The `ConstraintViolation` object
+#### Объект `ConstraintViolation`
 
-A list of constraint violations
+Список нарушений ограничений
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -The element can hold these values * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может содержать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### Response body JSON models
+### JSON-модели тела ответа
 
 ```
 [
@@ -910,21 +910,21 @@ A list of constraint violations
 }
 ```
 
-## Response headers
+## Заголовки ответа
 
-| Header | Type | Description |
+| Заголовок | Тип | Описание |
 | --- | --- | --- |
-| Total-Count | integer | The estimated number of results. |
-| Next-Page-Key | string | The cursor for the next page of results. Without it you'll get the first page again. |
-| Page-Size | string | The maximum number of results per page. |
+| Total-Count | integer | Приблизительное количество результатов. |
+| Next-Page-Key | string | Курсор для следующей страницы результатов. Без него вы получите первую страницу снова. |
+| Page-Size | string | Максимальное количество результатов на странице. |
 
-## Example
+## Пример
 
-In this example, the request lists all hosts in the environment.
+В этом примере запрос перечисляет все хосты в среде.
 
-The API token is passed in the **Authorization** header.
+API-токен передаётся в заголовке **Authorization**.
 
-The result is truncated to two entries.
+Результат сокращён до двух записей.
 
 #### Curl
 
@@ -940,13 +940,13 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts \
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
 ```
 
-#### Request URL
+#### URL запроса
 
 ```
 https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts
 ```
 
-#### Response body
+#### Тело ответа
 
 ```
 [
@@ -1412,10 +1412,10 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts
 ]
 ```
 
-#### Response code
+#### Код ответа
 
 200
 
-## Related topics
+## Связанные темы
 
-* [Hosts Classic](../../../../observe/infrastructure-observability/hosts.md "Learn how to get started with host monitoring, understand which measures contribute to host health, how to set up custom host names, and more.")
+* [Hosts Classic](../../../../observe/infrastructure-observability/hosts.md "Узнайте, как начать работу с мониторингом хостов, какие показатели влияют на состояние хоста, как настроить пользовательские имена хостов и многое другое.")

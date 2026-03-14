@@ -1,5 +1,5 @@
 ---
-title: DQL matcher in logs
+title: DQL совпадатель в журналах
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher
 scraped: 2026-03-05T21:30:59.143327
 ---

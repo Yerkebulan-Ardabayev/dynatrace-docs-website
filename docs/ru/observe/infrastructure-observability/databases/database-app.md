@@ -1,5 +1,5 @@
 ---
-title: Databases app
+title: Приложение Databases
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app
 scraped: 2026-03-06T21:12:38.609532
 ---

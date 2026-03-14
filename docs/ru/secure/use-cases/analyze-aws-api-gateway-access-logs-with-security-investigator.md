@@ -1,5 +1,5 @@
 ---
-title: Analyze Amazon API Gateway access logs with Investigations
+title: Анализ журналов доступа Amazon API Gateway с помощью Investigations
 source: https://www.dynatrace.com/docs/secure/use-cases/analyze-aws-api-gateway-access-logs-with-security-investigator
 scraped: 2026-03-06T21:29:02.173566
 ---

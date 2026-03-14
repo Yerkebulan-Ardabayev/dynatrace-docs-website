@@ -1,5 +1,5 @@
 ---
-title: Data Explorer
+title: Данные Explorer
 source: https://www.dynatrace.com/docs/analyze-explore-automate/explorer
 scraped: 2026-03-06T21:19:57.272076
 ---

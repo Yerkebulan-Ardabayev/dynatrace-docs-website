@@ -1,5 +1,5 @@
 ---
-title: Customize failure detection in Service Detection v2
+title: Настройка обнаружения сбоев в Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/failure-detection-v2
 scraped: 2026-03-06T21:25:53.313434
 ---

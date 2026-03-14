@@ -1,5 +1,5 @@
 ---
-title: OneAgent files and disk space requirements on Windows
+title: Требования OneAgent к файлам и дисковому пространству на Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/disk-space-requirements-for-oneagent-installation-and-update-on-windows
 scraped: 2026-03-06T21:19:31.029614
 ---

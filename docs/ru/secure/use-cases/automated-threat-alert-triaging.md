@@ -1,5 +1,5 @@
 ---
-title: Automated threat-alert triaging
+title: Автоматизированный триаж оповещений об угрозах
 source: https://www.dynatrace.com/docs/secure/use-cases/automated-threat-alert-triaging
 scraped: 2026-03-06T21:32:55.922343
 ---

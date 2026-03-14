@@ -1,5 +1,5 @@
 ---
-title: Upgrade to Log Management and Analytics
+title: Обновление до Log Management и Analytics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/logs-upgrade/lmc-logs-upgrade-to-lma
 scraped: 2026-03-06T21:14:27.302891
 ---

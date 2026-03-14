@@ -1,5 +1,5 @@
 ---
-title: Proxy for private locations
+title: Прокси для частных локаций
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/proxy-for-private-locations
 scraped: 2026-03-02T21:20:36.386068
 ---

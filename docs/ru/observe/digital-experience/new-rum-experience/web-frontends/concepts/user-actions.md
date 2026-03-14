@@ -1,5 +1,5 @@
 ---
-title: User actions in web frontends
+title: Действия пользователя в веб-фронтендах
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts/user-actions
 scraped: 2026-03-06T21:34:15.038712
 ---

@@ -1,5 +1,5 @@
 ---
-title: Spot trends with the log distribution chart
+title: Определение тенденций с помощью диаграммы распределения логов
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/log-distribution-chart
 scraped: 2026-03-06T21:11:31.603365
 ---

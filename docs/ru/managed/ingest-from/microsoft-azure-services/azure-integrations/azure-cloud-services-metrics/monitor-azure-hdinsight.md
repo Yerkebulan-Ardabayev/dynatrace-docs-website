@@ -1,5 +1,5 @@
 ---
-title: Azure HDInsight monitoring
+title: Мониторинг Azure HDInsight
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight
 scraped: 2026-03-05T21:37:08.478436
 ---

@@ -1,5 +1,5 @@
 ---
-title: Dynatrace Operator release notes
+title: Примечания к выпускам Dynatrace Operator
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator
 scraped: 2026-03-06T21:12:49.260404
 ---
@@ -8,9 +8,9 @@ scraped: 2026-03-06T21:12:49.260404
 
 # Примечания к выпускам Dynatrace Operator
 
-* Latest Dynatrace
-* Release notes
-* Updated on Jan 27, 2026
+* Последняя версия Dynatrace
+* Примечания к выпускам
+* Обновлено 27 января 2026 г.
 
 Ознакомьтесь с изменениями в выпусках [Dynatrace Operator&#xfeff;](https://github.com/Dynatrace/dynatrace-operator).
 

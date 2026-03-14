@@ -1,5 +1,5 @@
 ---
-title: Mainframe technology support
+title: Поддержка технологий мэйнфрейма
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/mainframe-technology-support
 scraped: 2026-03-06T21:19:51.815419
 ---

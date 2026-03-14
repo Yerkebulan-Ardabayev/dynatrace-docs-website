@@ -1,5 +1,5 @@
 ---
-title: Calculate your consumption of Kubernetes Platform Monitoring (DPS)
+title: Расчет потребления Kubernetes Platform Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/container-monitoring/kubernetes-platform-monitoring
 scraped: 2026-02-06T16:26:50.506651
 ---

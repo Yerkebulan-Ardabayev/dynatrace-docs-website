@@ -1,5 +1,5 @@
 ---
-title: Configure key user actions for mobile applications
+title: Настройка ключевых действий пользователя для мобильных приложений
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/additional-configuration/configure-key-user-actions-mobile
 scraped: 2026-03-05T21:34:25.987547
 ---

@@ -1,57 +1,57 @@
 ---
-title: OneAgent platform and capability support matrix
+title: Матрица поддержки платформ и возможностей OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix
 scraped: 2026-03-06T21:18:36.260903
 ---
 
-# OneAgent platform and capability support matrix
+# Матрица поддержки платформ и возможностей OneAgent
 
-# OneAgent platform and capability support matrix
+# Матрица поддержки платформ и возможностей OneAgent
 
-* Latest Dynatrace
-* 13-min read
-* Updated on Oct 15, 2025
+* Актуальная версия Dynatrace
+* Чтение: 13 мин
+* Обновлено 15 октября 2025 г.
 
-This page describes which capabilities are supported by OneAgent on different operating systems and platforms.
+На этой странице описаны возможности, поддерживаемые OneAgent на различных операционных системах и платформах.
 
 |  |  |
 | --- | --- |
-| **GA** | Generally available and fully supported. |
-| **Preview** | These features are in the final stages of development and are ready to be previewed. Preview features aren't production-ready and they aren't officially supported. |
-| **Future** | A feature or technology support that is either on the roadmap or may be considered on-demand. |
-| **Not planned** | A feature or technology support that Dynatrace does not currently plan to pursue. |
-| n/a | Not applicable |
+| **GA** | Общедоступная и полностью поддерживаемая функция. |
+| **Preview** | Функции находятся на завершающей стадии разработки и доступны для предварительного ознакомления. Функции в режиме Preview не готовы к использованию в продуктивной среде и официально не поддерживаются. |
+| **Future** | Функция или поддержка технологии, которая находится в дорожной карте или может быть рассмотрена по запросу. |
+| **Not planned** | Функция или поддержка технологии, реализация которой в настоящее время не планируется Dynatrace. |
+| n/a | Неприменимо |
 
-## Operating systems
+## Операционные системы
 
-The tables below contain information about the supported OneAgent capabilities for various supported operating systems. Note that Alpine Linux is supported in containers only, see [Alpine Linux (musl libc) based containers](#musl).
+Таблицы ниже содержат информацию о поддерживаемых возможностях OneAgent для различных поддерживаемых операционных систем. Обратите внимание, что Alpine Linux поддерживается только в контейнерах, см. [Alpine Linux (musl libc) контейнеры](#musl).
 
-### Code modules
+### Модули кода
 
-| Code module | [Windows](../technology-support.md#windows "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Linux x64](../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Alpine Linux x64](#musl) | [Linux ARM64 (AArch64)](../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [AIX PPC](../technology-support.md#unix "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Solaris SPARC/x86](../technology-support.md#unix "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Linux PPC-LE (64bit)](../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Linux s390x](../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [z/OS](mainframe-technology-support.md "Learn which technologies Dynatrace supports for Mainframe monitoring.") |
+| Модуль кода | [Windows](../technology-support.md#windows "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Linux x64](../technology-support.md#linux "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Alpine Linux x64](#musl) | [Linux ARM64 (AArch64)](../technology-support.md#linux "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [AIX PPC](../technology-support.md#unix "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Solaris SPARC/x86](../technology-support.md#unix "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Linux PPC-LE (64bit)](../technology-support.md#linux "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Linux s390x](../technology-support.md#linux "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [z/OS](mainframe-technology-support.md "Узнайте, какие технологии поддерживает Dynatrace для мониторинга мейнфреймов.") |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [Java](application-software/java.md "Learn about all aspects of Dynatrace support for Java application monitoring.") |  |  |  | [1](#fn-1-1-def) |  |  | [2](#fn-1-2-def) |  |  |
-| [.NET and .NET Core](application-software/dotnet.md "Learn about all aspects of Dynatrace support for .NET application monitoring.") |  |  |  | [1](#fn-1-1-def) | n/a | n/a | n/a | n/a | n/a |
-| [.NET Framework](application-software/dotnet.md "Learn about all aspects of Dynatrace support for .NET application monitoring.") |  | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
-| [Node.js](application-software/nodejs.md "Read about Dynatrace support for Node.js applications.") |  |  |  | [1](#fn-1-1-def) |  |  | [2](#fn-1-2-def) |  | n/a |
+| [Java](application-software/java.md "Узнайте обо всех аспектах поддержки Dynatrace для мониторинга Java-приложений.") |  |  |  | [1](#fn-1-1-def) |  |  | [2](#fn-1-2-def) |  |  |
+| [.NET и .NET Core](application-software/dotnet.md "Узнайте обо всех аспектах поддержки Dynatrace для мониторинга .NET-приложений.") |  |  |  | [1](#fn-1-1-def) | n/a | n/a | n/a | n/a | n/a |
+| [.NET Framework](application-software/dotnet.md "Узнайте обо всех аспектах поддержки Dynatrace для мониторинга .NET-приложений.") |  | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
+| [Node.js](application-software/nodejs.md "Узнайте о поддержке Dynatrace для Node.js-приложений.") |  |  |  | [1](#fn-1-1-def) |  |  | [2](#fn-1-2-def) |  | n/a |
 | Python | n/a |  |  | [1](#fn-1-1-def) | n/a | n/a | n/a | n/a | n/a |
 | PHP |  |  |  | [1](#fn-1-1-def) | n/a | n/a | n/a | n/a | n/a |
-| [Go](application-software/go.md "Read an overview of Dynatrace support for Go applications.") |  |  |  | [1](#fn-1-1-def) | n/a | n/a |  | n/a | n/a |
+| [Go](application-software/go.md "Обзор поддержки Dynatrace для Go-приложений.") |  |  |  | [1](#fn-1-1-def) | n/a | n/a |  | n/a | n/a |
 | Apache, IHS |  |  |  | [1](#fn-1-1-def) |  |  | [2](#fn-1-2-def) |  | n/a |
 | NGINX |  |  |  | [1](#fn-1-1-def) | n/a | n/a |  | n/a | n/a |
 | Microsoft IIS |  | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
 
 1
 
-[Classic full-stack mode](../setup-on-k8s/how-it-works.md#classic "In-depth description on how the deployment on Kubernetes works.") is not supported for [Alpine Linux (musl libc) based containers](#musl). Please [migrate](../setup-on-k8s/guides/migration/classic-to-cloud-native.md "Migrate your Dynatrace deployment from classic full-stack to cloud-native full-stack mode.") to the [Cloud-native full-stack](../setup-on-k8s/how-it-works.md#cloud-native "In-depth description on how the deployment on Kubernetes works.").
+Режим [Classic full-stack](../setup-on-k8s/how-it-works.md#classic "Подробное описание работы развёртывания на Kubernetes.") не поддерживается для [контейнеров на базе Alpine Linux (musl libc)](#musl). Пожалуйста, [выполните миграцию](../setup-on-k8s/guides/migration/classic-to-cloud-native.md "Миграция развёртывания Dynatrace с classic full-stack на cloud-native full-stack.") на режим [Cloud-native full-stack](../setup-on-k8s/how-it-works.md#cloud-native "Подробное описание работы развёртывания на Kubernetes.").
 
 2
 
-[Alpine Linux (musl libc) based containers](#musl) are not supported.
+[Контейнеры на базе Alpine Linux (musl libc)](#musl) не поддерживаются.
 
-### IBM technologies
+### Технологии IBM
 
-| Code module | [Windows](../technology-support.md#windows "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Linux x64](../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Alpine Linux x64](#musl) | Linux ARM64 (AArch64) | [AIX PPC](../technology-support.md#unix "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Solaris SPARC/x86](../technology-support.md#unix "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Linux PPC-LE (64bit)](../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Linux s390x](../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [z/OS](mainframe-technology-support.md "Learn which technologies Dynatrace supports for Mainframe monitoring.") |
+| Модуль кода | [Windows](../technology-support.md#windows "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Linux x64](../technology-support.md#linux "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Alpine Linux x64](#musl) | Linux ARM64 (AArch64) | [AIX PPC](../technology-support.md#unix "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Solaris SPARC/x86](../technology-support.md#unix "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Linux PPC-LE (64bit)](../technology-support.md#linux "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Linux s390x](../technology-support.md#linux "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [z/OS](mainframe-technology-support.md "Узнайте, какие технологии поддерживает Dynatrace для мониторинга мейнфреймов.") |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | IBM App Connect Enterprise |  |  | n/a | n/a |  |  |  |  |  |
 | IBM Integration Bus |  |  | n/a | n/a |  |  |  |  |  |
@@ -60,188 +60,188 @@ The tables below contain information about the supported OneAgent capabilities f
 
 ### OneAgent SDK
 
-| OneAgent SDK | [Windows](../technology-support.md#windows "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Linux x64](../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Alpine Linux x64](#musl) | [Linux ARM64 (AArch64)](../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [AIX PPC](../technology-support.md#unix "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Solaris SPARC/x86](../technology-support.md#unix "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Linux PPC-LE (64bit)](../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Linux s390x](../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [z/OS](mainframe-technology-support.md "Learn which technologies Dynatrace supports for Mainframe monitoring.") |
+| OneAgent SDK | [Windows](../technology-support.md#windows "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Linux x64](../technology-support.md#linux "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Alpine Linux x64](#musl) | [Linux ARM64 (AArch64)](../technology-support.md#linux "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [AIX PPC](../technology-support.md#unix "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Solaris SPARC/x86](../technology-support.md#unix "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Linux PPC-LE (64bit)](../technology-support.md#linux "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Linux s390x](../technology-support.md#linux "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [z/OS](mainframe-technology-support.md "Узнайте, какие технологии поддерживает Dynatrace для мониторинга мейнфреймов.") |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| OneAgent SDK for C/C++ |  |  |  | [1](#fn-2-1-def) | [1](#fn-2-1-def) |  |  |  |  |
-| OneAgent SDK for Java |  |  |  |  |  |  |  |  |  |
-| OneAgent SDK for .NET |  |  |  |  | n/a | n/a | n/a | n/a | n/a |
-| OneAgent SDK for Node.js |  |  |  |  |  |  |  | n/a | n/a |
-| OneAgent SDK for Python |  |  | [1](#fn-2-1-def) | [1](#fn-2-1-def) | [1](#fn-2-1-def) | [1](#fn-2-1-def) | [1](#fn-2-1-def) | n/a | n/a |
+| OneAgent SDK для C/C++ |  |  |  | [1](#fn-2-1-def) | [1](#fn-2-1-def) |  |  |  |  |
+| OneAgent SDK для Java |  |  |  |  |  |  |  |  |  |
+| OneAgent SDK для .NET |  |  |  |  | n/a | n/a | n/a | n/a | n/a |
+| OneAgent SDK для Node.js |  |  |  |  |  |  |  | n/a | n/a |
+| OneAgent SDK для Python |  |  | [1](#fn-2-1-def) | [1](#fn-2-1-def) | [1](#fn-2-1-def) | [1](#fn-2-1-def) | [1](#fn-2-1-def) | n/a | n/a |
 
 1
 
-We added support for Python, C++, and other runtimes via [OpenTelemetry](../opentelemetry.md "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.") instead of the Dynatrace SDK (which is Dynatrace-proprietary). This is available on any platform.
+Мы добавили поддержку Python, C++ и других сред выполнения через [OpenTelemetry](../opentelemetry.md "Узнайте, как интегрировать и принимать данные OpenTelemetry (трассировки, метрики и логи) в Dynatrace.") вместо Dynatrace SDK (который является проприетарным продуктом Dynatrace). Это доступно на любой платформе.
 
-### Other modules
+### Другие модули
 
-| Module | [Windows](../technology-support.md#windows "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Linux x64](../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Alpine Linux x64](#musl) | [Linux ARM64 (AArch64)](../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [AIX PPC](../technology-support.md#unix "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Solaris SPARC/x86](../technology-support.md#unix "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Linux PPC-LE (64bit)](../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Linux s390x](../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [z/OS](mainframe-technology-support.md "Learn which technologies Dynatrace supports for Mainframe monitoring.") |
+| Модуль | [Windows](../technology-support.md#windows "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Linux x64](../technology-support.md#linux "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Alpine Linux x64](#musl) | [Linux ARM64 (AArch64)](../technology-support.md#linux "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [AIX PPC](../technology-support.md#unix "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Solaris SPARC/x86](../technology-support.md#unix "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Linux PPC-LE (64bit)](../technology-support.md#linux "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Linux s390x](../technology-support.md#linux "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [z/OS](mainframe-technology-support.md "Узнайте, какие технологии поддерживает Dynatrace для мониторинга мейнфреймов.") |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| OS module[1](#fn-3-1-def) |  |  | n/a |  |  |  |  |  |  |
-| Network module |  |  | n/a |  |  |  |  |  |  |
-| Log module |  |  | n/a |  | [2](#fn-3-2-def) |  |  |  |  |
-| JMX extensions |  |  |  |  |  |  |  |  |  |
-| Extensions |  |  |  |  |  |  |  |  |  |
+| Модуль ОС[1](#fn-3-1-def) |  |  | n/a |  |  |  |  |  |  |
+| Сетевой модуль |  |  | n/a |  |  |  |  |  |  |
+| Модуль логов |  |  | n/a |  | [2](#fn-3-2-def) |  |  |  |  |
+| JMX-расширения |  |  |  |  |  |  |  |  |  |
+| Расширения |  |  |  |  |  |  |  |  |  |
 | Live Debugger [3](#fn-3-3-def) |  |  |  |  |  |  |  |  | n/a |
 
 1
 
-OS module is required for out-of-the-box infrastructure alerting capabilities.
+Модуль ОС необходим для встроенных возможностей оповещения об инфраструктуре.
 
 2
 
-Log module support is limited to custom log sources, no log auto-detection is performed.
+Поддержка модуля логов ограничена пользовательскими источниками логов, автоматическое обнаружение логов не выполняется.
 
 3
 
-Supported for Java versions 8-23. Node.js version 22 is supported starting OneAgent version 1.313+.
+Поддерживается для Java версий 8-23. Node.js версия 22 поддерживается начиная с OneAgent версии 1.313+.
 
-### Features
+### Функции
 
-| Feature | [Windows](../technology-support.md#windows "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Linux x64](../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Alpine Linux x64](#musl) | Linux ARM64 (AArch64) | [AIX PPC](../technology-support.md#unix "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Solaris SPARC/x86](../technology-support.md#unix "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Linux PPC-LE (64bit)](../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [Linux s390x](../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.") | [z/OS](mainframe-technology-support.md "Learn which technologies Dynatrace supports for Mainframe monitoring.") |
+| Функция | [Windows](../technology-support.md#windows "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Linux x64](../technology-support.md#linux "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Alpine Linux x64](#musl) | Linux ARM64 (AArch64) | [AIX PPC](../technology-support.md#unix "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Solaris SPARC/x86](../technology-support.md#unix "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Linux PPC-LE (64bit)](../technology-support.md#linux "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [Linux s390x](../technology-support.md#linux "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") | [z/OS](mainframe-technology-support.md "Узнайте, какие технологии поддерживает Dynatrace для мониторинга мейнфреймов.") |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Auto-update of all modules |  |  | n/a |  |  |  |  |  |  |
-| [Auto-injection](#auto-injection) of code modules |  |  |  |  | n/a[1](#fn-4-1-def) |  |  |  |  |
-| [Universal injection](#universal-injection) of code modules |  |  |  |  |  |  |  |  |  |
-| [Auto-injection](#auto-injection) for containers |  |  | n/a |  |  |  |  |  |  |
-| Non-privileged |  |  | n/a |  |  |  |  |  | n/a |
+| Автообновление всех модулей |  |  | n/a |  |  |  |  |  |  |
+| [Автоинъекция](#auto-injection) модулей кода |  |  |  |  | n/a[1](#fn-4-1-def) |  |  |  |  |
+| [Универсальная инъекция](#universal-injection) модулей кода |  |  |  |  |  |  |  |  |  |
+| [Автоинъекция](#auto-injection) для контейнеров |  |  | n/a |  |  |  |  |  |  |
+| Без привилегий |  |  | n/a |  |  |  |  |  | n/a |
 
 1
 
-Global auto-injection isn't possible for AIX. Instead, use the [universal injection](#universal-injection) approach, as described on the [AIX OneAgent installation page](../dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix.md "Learn how to download and install Dynatrace OneAgent on AIX.").
+Глобальная автоинъекция невозможна для AIX. Вместо этого используйте подход [универсальной инъекции](#universal-injection), как описано на [странице установки OneAgent для AIX](../dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix.md "Узнайте, как загрузить и установить Dynatrace OneAgent на AIX.").
 
-## Enterprise cloud platforms
+## Корпоративные облачные платформы
 
-The tables below contain information about the supported OneAgent capabilities for various supported Cloud platforms.
+Таблицы ниже содержат информацию о поддерживаемых возможностях OneAgent для различных поддерживаемых облачных платформ.
 
-Cloud Foundry application-only also applies to [SAP Cloud](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-sap-cloud-platform-for-application-only-monitoring.md "Install OneAgent on SAP Business Technology Platform.").
+Cloud Foundry application-only также применяется к [SAP Cloud](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-sap-cloud-platform-for-application-only-monitoring.md "Установка OneAgent на SAP Business Technology Platform.").
 
-OneAgent deployment via container (OneAgent Operator) on OpenShift and Kubernetes has some [limitations](#agent-container) compared to standard OneAgent installation.
+Развёртывание OneAgent через контейнер (OneAgent Operator) на OpenShift и Kubernetes имеет некоторые [ограничения](#agent-container) по сравнению со стандартной установкой OneAgent.
 
-### Code modules
+### Модули кода
 
-| Code module[1](#fn-5-1-def) | [Cloud Foundry](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry.md "Install OneAgent on Cloud Foundry with BOSH.") | [Cloud Foundry application-only](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring.md "Install OneAgent on Cloud Foundry.") | [OpenShift](../setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes") | [OpenShift application-only](../setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") | [Kubernetes](../setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes") | [Kubernetes application-only](../setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") | Azure ServiceFabric |
+| Модуль кода[1](#fn-5-1-def) | [Cloud Foundry](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry.md "Установка OneAgent на Cloud Foundry с BOSH.") | [Cloud Foundry application-only](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring.md "Установка OneAgent на Cloud Foundry.") | [OpenShift](../setup-on-k8s.md "Способы развёртывания и настройки Dynatrace на Kubernetes") | [OpenShift application-only](../setup-on-k8s/deployment/application-observability.md "Развёртывание Dynatrace Operator в режиме мониторинга приложений на Kubernetes") | [Kubernetes](../setup-on-k8s.md "Способы развёртывания и настройки Dynatrace на Kubernetes") | [Kubernetes application-only](../setup-on-k8s/deployment/application-observability.md "Развёртывание Dynatrace Operator в режиме мониторинга приложений на Kubernetes") | Azure ServiceFabric |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [Java](application-software/java.md "Learn about all aspects of Dynatrace support for Java application monitoring.") |  |  |  |  |  |  |  |
-| [.NET and .NET Core](application-software/dotnet.md "Learn about all aspects of Dynatrace support for .NET application monitoring.") |  |  |  | [1](#fn-5-1-def) |  | [1](#fn-5-1-def) | [1](#fn-5-1-def) |
-| [.NET Framework](application-software/dotnet.md "Learn about all aspects of Dynatrace support for .NET application monitoring.") |  | n/a | n/a | n/a | n/a | n/a |  |
-| [Node.js](application-software/nodejs.md "Read about Dynatrace support for Node.js applications.") |  |  |  |  |  |  |  |
-| [Python](application-software/python.md "Learn how to instrument your Python application with OpenTelemetry as a data source for Dynatrace.") | n/a | n/a |  |  |  |  | n/a |
+| [Java](application-software/java.md "Узнайте обо всех аспектах поддержки Dynatrace для мониторинга Java-приложений.") |  |  |  |  |  |  |  |
+| [.NET и .NET Core](application-software/dotnet.md "Узнайте обо всех аспектах поддержки Dynatrace для мониторинга .NET-приложений.") |  |  |  | [1](#fn-5-1-def) |  | [1](#fn-5-1-def) | [1](#fn-5-1-def) |
+| [.NET Framework](application-software/dotnet.md "Узнайте обо всех аспектах поддержки Dynatrace для мониторинга .NET-приложений.") |  | n/a | n/a | n/a | n/a | n/a |  |
+| [Node.js](application-software/nodejs.md "Узнайте о поддержке Dynatrace для Node.js-приложений.") |  |  |  |  |  |  |  |
+| [Python](application-software/python.md "Узнайте, как инструментировать Python-приложение с помощью OpenTelemetry как источника данных для Dynatrace.") | n/a | n/a |  |  |  |  | n/a |
 | PHP |  |  |  |  |  |  |  |
-| [Go](application-software/go.md "Read an overview of Dynatrace support for Go applications.") |  |  |  | [1](#fn-5-1-def) |  | [1](#fn-5-1-def) |  |
+| [Go](application-software/go.md "Обзор поддержки Dynatrace для Go-приложений.") |  |  |  | [1](#fn-5-1-def) |  | [1](#fn-5-1-def) |  |
 | Apache, IHS |  |  |  |  |  |  | [2](#fn-5-2-def) |
 | NGINX |  |  |  |  |  |  | [2](#fn-5-2-def) |
 
 1
 
-Out-of-the-box infrastructure alerting capabilities are not supported for application-only code modules.
+Встроенные возможности оповещения об инфраструктуре не поддерживаются для модулей кода application-only.
 
 2
 
-[Alpine Linux (musl libc) based containers](#musl) are not supported.
+[Контейнеры на базе Alpine Linux (musl libc)](#musl) не поддерживаются.
 
 ### OneAgent SDK
 
-| OneAgent SDK | [Cloud Foundry](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry.md "Install OneAgent on Cloud Foundry with BOSH.") | [Cloud Foundry application-only](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring.md "Install OneAgent on Cloud Foundry.") | [OpenShift](../setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes") | [OpenShift application-only](../setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") | [Kubernetes](../setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes") | [Kubernetes application-only](../setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") | Azure ServiceFabric |
+| OneAgent SDK | [Cloud Foundry](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry.md "Установка OneAgent на Cloud Foundry с BOSH.") | [Cloud Foundry application-only](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring.md "Установка OneAgent на Cloud Foundry.") | [OpenShift](../setup-on-k8s.md "Способы развёртывания и настройки Dynatrace на Kubernetes") | [OpenShift application-only](../setup-on-k8s/deployment/application-observability.md "Развёртывание Dynatrace Operator в режиме мониторинга приложений на Kubernetes") | [Kubernetes](../setup-on-k8s.md "Способы развёртывания и настройки Dynatrace на Kubernetes") | [Kubernetes application-only](../setup-on-k8s/deployment/application-observability.md "Развёртывание Dynatrace Operator в режиме мониторинга приложений на Kubernetes") | Azure ServiceFabric |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| OneAgent SDK for C/C++ |  |  |  |  |  |  |  |
-| OneAgent SDK for Python |  |  |  |  |  |  |  |
+| OneAgent SDK для C/C++ |  |  |  |  |  |  |  |
+| OneAgent SDK для Python |  |  |  |  |  |  |  |
 
-### Other modules
+### Другие модули
 
-| Module | [Cloud Foundry](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry.md "Install OneAgent on Cloud Foundry with BOSH.") | [Cloud Foundry application-only](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring.md "Install OneAgent on Cloud Foundry.") | [OpenShift](../setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes") | [OpenShift application-only](../setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") | [Kubernetes](../setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes") | [Kubernetes application-only](../setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") | Azure ServiceFabric |
+| Модуль | [Cloud Foundry](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry.md "Установка OneAgent на Cloud Foundry с BOSH.") | [Cloud Foundry application-only](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring.md "Установка OneAgent на Cloud Foundry.") | [OpenShift](../setup-on-k8s.md "Способы развёртывания и настройки Dynatrace на Kubernetes") | [OpenShift application-only](../setup-on-k8s/deployment/application-observability.md "Развёртывание Dynatrace Operator в режиме мониторинга приложений на Kubernetes") | [Kubernetes](../setup-on-k8s.md "Способы развёртывания и настройки Dynatrace на Kubernetes") | [Kubernetes application-only](../setup-on-k8s/deployment/application-observability.md "Развёртывание Dynatrace Operator в режиме мониторинга приложений на Kubernetes") | Azure ServiceFabric |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| OS module |  | n/a |  | n/a |  | n/a |  |
-| Network module |  | n/a |  | n/a |  | n/a |  |
-| Log module |  | [1](#fn-6-1-def) |  | [1](#fn-6-1-def) |  | [1](#fn-6-1-def) |  |
-| Extension module |  | n/a | n/a | n/a | n/a | n/a |  |
+| Модуль ОС |  | n/a |  | n/a |  | n/a |  |
+| Сетевой модуль |  | n/a |  | n/a |  | n/a |  |
+| Модуль логов |  | [1](#fn-6-1-def) |  | [1](#fn-6-1-def) |  | [1](#fn-6-1-def) |  |
+| Модуль расширений |  | n/a | n/a | n/a | n/a | n/a |  |
 | Live Debugger |  |  |  |  |  |  |  |
 
 1
 
-This is supported via the [FluentD integration](../../analyze-explore-automate/log-monitoring/acquire-log-data.md "Learn how to acquire log data in Dynatrace Log Monitoring.") available in Dynatrace
+Поддерживается через [интеграцию FluentD](../../analyze-explore-automate/log-monitoring/acquire-log-data.md "Узнайте, как получать данные логов в Dynatrace Log Monitoring."), доступную в Dynatrace
 
-### Features
+### Функции
 
-| Feature | [Cloud Foundry](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry.md "Install OneAgent on Cloud Foundry with BOSH.") | [Cloud Foundry application-only](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring.md "Install OneAgent on Cloud Foundry.") | [OpenShift](../setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes") | [OpenShift application-only](../setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") | [Kubernetes](../setup-on-k8s.md "Ways to deploy and configure Dynatrace on Kubernetes") | [Kubernetes application-only](../setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") | Azure ServiceFabric |
+| Функция | [Cloud Foundry](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry.md "Установка OneAgent на Cloud Foundry с BOSH.") | [Cloud Foundry application-only](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring.md "Установка OneAgent на Cloud Foundry.") | [OpenShift](../setup-on-k8s.md "Способы развёртывания и настройки Dynatrace на Kubernetes") | [OpenShift application-only](../setup-on-k8s/deployment/application-observability.md "Развёртывание Dynatrace Operator в режиме мониторинга приложений на Kubernetes") | [Kubernetes](../setup-on-k8s.md "Способы развёртывания и настройки Dynatrace на Kubernetes") | [Kubernetes application-only](../setup-on-k8s/deployment/application-observability.md "Развёртывание Dynatrace Operator в режиме мониторинга приложений на Kubernetes") | Azure ServiceFabric |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Auto-update of all modules |  | n/a |  | n/a |  | n/a |  |
-| [Auto-injection](#auto-injection) of code modules |  | n/a |  | n/a |  | n/a |  |
-| [Universal injection](#universal-injection) of code modules |  |  |  |  |  |  |  |
-| [Auto-injection](#auto-injection) for containers |  | n/a |  | n/a |  | n/a |  |
-| Non-privileged | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
+| Автообновление всех модулей |  | n/a |  | n/a |  | n/a |  |
+| [Автоинъекция](#auto-injection) модулей кода |  | n/a |  | n/a |  | n/a |  |
+| [Универсальная инъекция](#universal-injection) модулей кода |  |  |  |  |  |  |  |
+| [Автоинъекция](#auto-injection) для контейнеров |  | n/a |  | n/a |  | n/a |  |
+| Без привилегий | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
 
-## Cloud application platforms
+## Облачные платформы приложений
 
-The tables below contain information about the supported OneAgent capabilities for supported Cloud application platforms.
+Таблицы ниже содержат информацию о поддерживаемых возможностях OneAgent для поддерживаемых облачных платформ приложений.
 
-### Code modules
+### Модули кода
 
-| Code module | AWS Lambda | [Azure Functions](../microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions.md "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.") | [Azure Spring Apps](../microsoft-azure-services/azure-integrations/azure-spring.md "Learn how to configure OneAgent for monitoring Azure Spring Apps.") | [Azure App services](../../observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring.md "Monitor Azure with Dynatrace") | [Heroku](../setup-on-container-platforms/heroku.md "Install OneAgent to monitor applications running on Heroku.") | [Google App Engine](../google-cloud-platform/gcp-integrations/google-app-engine.md "Install OneAgent on Google App Engine clusters for application-only monitoring.") | [AWS Fargate](../amazon-web-services/integrate-into-aws/aws-fargate.md "Install OneAgent on AWS Fargate.") | [Google Cloud Run Managed](../google-cloud-platform/gcp-integrations/cloudrun.md "Monitor Java application deployed on Google Cloud Run managed.") |
+| Модуль кода | AWS Lambda | [Azure Functions](../microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions.md "Узнайте, как установить, настроить, обновить и удалить OneAgent для мониторинга Azure Functions с помощью расширения сайта Azure.") | [Azure Spring Apps](../microsoft-azure-services/azure-integrations/azure-spring.md "Узнайте, как настроить OneAgent для мониторинга Azure Spring Apps.") | [Azure App services](../../observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring.md "Мониторинг Azure с помощью Dynatrace") | [Heroku](../setup-on-container-platforms/heroku.md "Установка OneAgent для мониторинга приложений, работающих на Heroku.") | [Google App Engine](../google-cloud-platform/gcp-integrations/google-app-engine.md "Установка OneAgent на кластеры Google App Engine для мониторинга только приложений.") | [AWS Fargate](../amazon-web-services/integrate-into-aws/aws-fargate.md "Установка OneAgent на AWS Fargate.") | [Google Cloud Run Managed](../google-cloud-platform/gcp-integrations/cloudrun.md "Мониторинг Java-приложений, развёрнутых на Google Cloud Run managed.") |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [Java](application-software/java.md "Learn about all aspects of Dynatrace support for Java application monitoring.") | [1](#fn-7-1-def) |  |  |  |  |  |  | [2](#fn-7-2-def) |
-| [.NET and .NET Core](application-software/dotnet.md "Learn about all aspects of Dynatrace support for .NET application monitoring.") |  |  |  |  |  | [3](#fn-7-3-def) | [3](#fn-7-3-def) |  |
-| [.NET Framework](application-software/dotnet.md "Learn about all aspects of Dynatrace support for .NET application monitoring.") | n/a |  |  |  | n/a | n/a | n/a |  |
-| [Node.js](application-software/nodejs.md "Read about Dynatrace support for Node.js applications.") | [1](#fn-7-1-def) |  |  |  |  |  |  | [2](#fn-7-2-def) |
+| [Java](application-software/java.md "Узнайте обо всех аспектах поддержки Dynatrace для мониторинга Java-приложений.") | [1](#fn-7-1-def) |  |  |  |  |  |  | [2](#fn-7-2-def) |
+| [.NET и .NET Core](application-software/dotnet.md "Узнайте обо всех аспектах поддержки Dynatrace для мониторинга .NET-приложений.") |  |  |  |  |  | [3](#fn-7-3-def) | [3](#fn-7-3-def) |  |
+| [.NET Framework](application-software/dotnet.md "Узнайте обо всех аспектах поддержки Dynatrace для мониторинга .NET-приложений.") | n/a |  |  |  | n/a | n/a | n/a |  |
+| [Node.js](application-software/nodejs.md "Узнайте о поддержке Dynatrace для Node.js-приложений.") | [1](#fn-7-1-def) |  |  |  |  |  |  | [2](#fn-7-2-def) |
 | Python | [1](#fn-7-1-def) |  |  |  |  |  |  |  |
 | PHP |  |  |  |  |  |  |  |  |
-| [Go](application-software/go.md "Read an overview of Dynatrace support for Go applications.") |  | n/a |  | n/a | [3](#fn-7-3-def) | [3](#fn-7-3-def) | [3](#fn-7-3-def) |  |
+| [Go](application-software/go.md "Обзор поддержки Dynatrace для Go-приложений.") |  | n/a |  | n/a | [3](#fn-7-3-def) | [3](#fn-7-3-def) | [3](#fn-7-3-def) |  |
 | Microsoft IIS | n/a | n/a |  |  |  |  |  |  |
 
 1
 
-Both 64-bit ARM ([AWS Graviton2 processorsï»¿](https://aws.amazon.com/ec2/graviton/)) and 64-bit x86 architectures are supported.
+Поддерживаются обе архитектуры: 64-битная ARM ([процессоры AWS Graviton2](https://aws.amazon.com/ec2/graviton/)) и 64-битная x86.
 
 2
 
-Both Google Cloud Run execution environments are supported, with some restrictions.
+Поддерживаются обе среды выполнения Google Cloud Run с некоторыми ограничениями.
 
 3
 
-[Alpine Linux (musl libc) based containers](#musl) are not supported.
+[Контейнеры на базе Alpine Linux (musl libc)](#musl) не поддерживаются.
 
-### Features
+### Функции
 
-| Feature | AWS Lambda | [Azure Functions](../microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions.md "Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.") | [Azure Spring Apps](../microsoft-azure-services/azure-integrations/azure-spring.md "Learn how to configure OneAgent for monitoring Azure Spring Apps.") | [Azure App services](../../observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring.md "Monitor Azure with Dynatrace") | [Heroku](../setup-on-container-platforms/heroku.md "Install OneAgent to monitor applications running on Heroku.") | [Google App Engine](../google-cloud-platform/gcp-integrations/google-app-engine.md "Install OneAgent on Google App Engine clusters for application-only monitoring.") | [AWS Fargate](../amazon-web-services/integrate-into-aws/aws-fargate.md "Install OneAgent on AWS Fargate.") |
+| Функция | AWS Lambda | [Azure Functions](../microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions.md "Узнайте, как установить, настроить, обновить и удалить OneAgent для мониторинга Azure Functions с помощью расширения сайта Azure.") | [Azure Spring Apps](../microsoft-azure-services/azure-integrations/azure-spring.md "Узнайте, как настроить OneAgent для мониторинга Azure Spring Apps.") | [Azure App services](../../observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring.md "Мониторинг Azure с помощью Dynatrace") | [Heroku](../setup-on-container-platforms/heroku.md "Установка OneAgent для мониторинга приложений, работающих на Heroku.") | [Google App Engine](../google-cloud-platform/gcp-integrations/google-app-engine.md "Установка OneAgent на кластеры Google App Engine для мониторинга только приложений.") | [AWS Fargate](../amazon-web-services/integrate-into-aws/aws-fargate.md "Установка OneAgent на AWS Fargate.") |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [Universal injection](#universal-injection) of code modules | n/a |  | n/a |  |  |  |  |
+| [Универсальная инъекция](#universal-injection) модулей кода | n/a |  | n/a |  |  |  |  |
 
-## Auto-injection of code modules
+## Автоинъекция модулей кода
 
-Auto-injection automatically injects code modules into monitored applications in a completely transparent and automatic fashion that requires no manual configuration or intervention. This approach to deep monitoring is supported for Windows (Docker only) and Linux. Among other things, auto-injection also automatically injects code modules into Docker, containerd, CRI-O, and Cloud Foundry Garden containers. This means that you don't have to change any container images on monitored platforms to gain full insights.
+Автоинъекция автоматически внедряет модули кода в отслеживаемые приложения полностью прозрачным и автоматическим способом, не требующим ручной настройки или вмешательства. Этот подход к глубокому мониторингу поддерживается для Windows (только Docker) и Linux. Среди прочего, автоинъекция также автоматически внедряет модули кода в контейнеры Docker, containerd, CRI-O и Cloud Foundry Garden. Это означает, что вам не нужно изменять образы контейнеров на отслеживаемых платформах для получения полной информации.
 
-## Universal injection of code modules
+## Универсальная инъекция модулей кода
 
-Universal injection allows Dynatrace to inject code modules into applications in a unified way across multiple platforms, in situations where auto-injection isn't available. This applies to AIX and Solaris as well as to Cloud Foundry application-only, OpenShift application-only, Kubernetes application-only, Heroku, Google App Engine, AWS Fargate, and AWS App Runner.
+Универсальная инъекция позволяет Dynatrace внедрять модули кода в приложения единообразным способом на различных платформах в ситуациях, когда автоинъекция недоступна. Это применимо к AIX и Solaris, а также к Cloud Foundry application-only, OpenShift application-only, Kubernetes application-only, Heroku, Google App Engine, AWS Fargate и AWS App Runner.
 
-The feature is described on the [AIX](../dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix.md "Learn how to download and install Dynatrace OneAgent on AIX.")/[Solaris](../dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris.md "Find out how to configure Dynatrace to monitor applications of different technologies that run on Solaris (x86 and SPARC).") OneAgent installation page. It is also part of the [OpenShift application-only](../setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes")/[Kubernetes application-only](../setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") integration and the container platforms [Google App Engine](../google-cloud-platform/gcp-integrations/google-app-engine.md "Install OneAgent on Google App Engine clusters for application-only monitoring.") and [AWS Fargate](../amazon-web-services/integrate-into-aws/aws-fargate.md "Install OneAgent on AWS Fargate.").
+Эта функция описана на странице установки OneAgent для [AIX](../dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix.md "Узнайте, как загрузить и установить Dynatrace OneAgent на AIX.")/[Solaris](../dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris.md "Узнайте, как настроить Dynatrace для мониторинга приложений различных технологий, работающих на Solaris (x86 и SPARC)."). Она также является частью интеграции [OpenShift application-only](../setup-on-k8s/deployment/application-observability.md "Развёртывание Dynatrace Operator в режиме мониторинга приложений на Kubernetes")/[Kubernetes application-only](../setup-on-k8s/deployment/application-observability.md "Развёртывание Dynatrace Operator в режиме мониторинга приложений на Kubernetes") и контейнерных платформ [Google App Engine](../google-cloud-platform/gcp-integrations/google-app-engine.md "Установка OneAgent на кластеры Google App Engine для мониторинга только приложений.") и [AWS Fargate](../amazon-web-services/integrate-into-aws/aws-fargate.md "Установка OneAgent на AWS Fargate.").
 
-Outside of these specific use cases, this feature isn't to be used directly!
+За пределами этих конкретных сценариев использования эту функцию не следует использовать напрямую!
 
-The [Cloud Foundry buildpack](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring.md "Install OneAgent on Cloud Foundry.") integrations and [Dynatrace Heroku](../setup-on-container-platforms/heroku.md "Install OneAgent to monitor applications running on Heroku.") buildpack use this transparently under the hood without any need for manual intervention or configuration.
+Интеграции [Cloud Foundry buildpack](../setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring.md "Установка OneAgent на Cloud Foundry.") и [Dynatrace Heroku](../setup-on-container-platforms/heroku.md "Установка OneAgent для мониторинга приложений, работающих на Heroku.") buildpack используют эту функцию прозрачно без необходимости ручного вмешательства или настройки.
 
-Any form of undocumented injection (for example, older forms of manual injection) aren't supported.
+Любые формы недокументированной инъекции (например, более старые формы ручной инъекции) не поддерживаются.
 
-## Alpine Linux (musl libc) based containers
+## Контейнеры на базе Alpine Linux (musl libc)
 
-Dynatrace supports [Alpine Linux (musl libc) based containers](../technology-support.md#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.") on monitored Linux x86\_64 hosts. This includes OpenShift, Kubernetes and Cloud Foundry installations and all forms of Docker environments. In these environments Dynatrace OneAgent [automatically injects](#auto-injection) the code modules into the applications running inside the container.
+Dynatrace поддерживает [контейнеры на базе Alpine Linux (musl libc)](../technology-support.md#linux "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.") на отслеживаемых хостах Linux x86\_64. Это включает установки OpenShift, Kubernetes и Cloud Foundry, а также все виды сред Docker. В этих средах Dynatrace OneAgent [автоматически внедряет](#auto-injection) модули кода в приложения, работающие внутри контейнера.
 
-Alpine Linux is also supported in [OpenShift application only](../setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") and [Kubernetes application only](../setup-on-k8s/deployment/application-observability.md "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") integrations as well as when pushing Docker images to Cloud Foundry and Heroku. This happens via the [universal injection](#universal-injection).
+Alpine Linux также поддерживается в интеграциях [OpenShift application only](../setup-on-k8s/deployment/application-observability.md "Развёртывание Dynatrace Operator в режиме мониторинга приложений на Kubernetes") и [Kubernetes application only](../setup-on-k8s/deployment/application-observability.md "Развёртывание Dynatrace Operator в режиме мониторинга приложений на Kubernetes"), а также при отправке образов Docker в Cloud Foundry и Heroku. Это происходит через [универсальную инъекцию](#universal-injection).
 
-Dynatrace OneAgent doesn't support direct installation in Alpine based Linux systems.
+Dynatrace OneAgent не поддерживает прямую установку в системах на базе Alpine Linux.
 
-Dynatrace OneAgent doesn't support monitoring binaries built against GNU C Library (glibc) running on Alpine based Linux systems using a GNU C Library (glibc) compatibility package like gcompat (GNU C Library compatibility layer for musl) or libc6-compat (compatibility libraries for glibc).
+Dynatrace OneAgent не поддерживает мониторинг бинарных файлов, собранных с использованием GNU C Library (glibc), работающих в системах на базе Alpine Linux с использованием пакета совместимости GNU C Library (glibc), такого как gcompat (слой совместимости GNU C Library для musl) или libc6-compat (библиотеки совместимости для glibc).
 
-## OneAgent deployment via Dynatrace Operator
+## Развёртывание OneAgent через Dynatrace Operator
 
-Dynatrace Operator deploys the OneAgent to Kubernetes or OpenShift clusters through a containerized approach. There are some [limitations](../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md "Install and update Dynatrace OneAgent as a Docker container.") associated with deploying OneAgent via Dynatrace Operator. These include:
+Dynatrace Operator разворачивает OneAgent на кластеры Kubernetes или OpenShift с использованием контейнерного подхода. Существуют некоторые [ограничения](../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md "Установка и обновление Dynatrace OneAgent как Docker-контейнера."), связанные с развёртыванием OneAgent через Dynatrace Operator. К ним относятся:
 
-* The auto-update mechanism of modules is disabled for container rollouts. However, Dynatrace Operator ensures the restart of OneAgent pods to receive OneAgent updates.
-* Auto-injection of code-modules is disabled for native (i.e., non-containerized) processes.
-* JMX extensions aren't supported for technologies outside of containers
+* Механизм автообновления модулей отключён для контейнерных развёртываний. Однако Dynatrace Operator обеспечивает перезапуск подов OneAgent для получения обновлений OneAgent.
+* Автоинъекция модулей кода отключена для нативных (т.е. неконтейнеризованных) процессов.
+* JMX-расширения не поддерживаются для технологий за пределами контейнеров
 
-For a detailed overview of limitations, see [Set up Dynatrace OneAgent as a Docker container](../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md "Install and update Dynatrace OneAgent as a Docker container.").
+Подробный обзор ограничений см. в разделе [Настройка Dynatrace OneAgent как Docker-контейнера](../setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container.md "Установка и обновление Dynatrace OneAgent как Docker-контейнера.").
 
-## Related topics
+## Связанные темы
 
-* [Technology support](../technology-support.md "Find technical details related to Dynatrace support for specific platforms and development frameworks.")
-* [Known solutions and workarounds](known-solutions-and-workarounds.md "Check the solutions for reported problems regarding various technologies.")
+* [Поддержка технологий](../technology-support.md "Технические детали поддержки Dynatrace для конкретных платформ и фреймворков разработки.")
+* [Известные решения и обходные пути](known-solutions-and-workarounds.md "Ознакомьтесь с решениями для известных проблем, связанных с различными технологиями.")

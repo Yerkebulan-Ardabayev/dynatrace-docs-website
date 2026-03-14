@@ -1,5 +1,5 @@
 ---
-title: Log on Grail examples
+title: Вход на Grail примеры
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/logs-on-grail-examples
 scraped: 2026-03-06T21:15:20.149749
 ---

@@ -1,5 +1,5 @@
 ---
-title: Delete a web application
+title: Удаление веб-приложения
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/delete-application-web
 scraped: 2026-03-06T21:29:09.059821
 ---

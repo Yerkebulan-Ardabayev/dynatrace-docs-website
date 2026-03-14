@@ -1,5 +1,5 @@
 ---
-title: Log ingestion via OneAgent
+title: Ввод журналов через OneAgent
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa
 scraped: 2026-03-06T21:32:33.082076
 ---

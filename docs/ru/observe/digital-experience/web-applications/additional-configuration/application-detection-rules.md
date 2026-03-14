@@ -1,5 +1,5 @@
 ---
-title: Check application detection rules
+title: Проверка правил обнаружения приложений
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/application-detection-rules
 scraped: 2026-03-05T21:36:03.524929
 ---

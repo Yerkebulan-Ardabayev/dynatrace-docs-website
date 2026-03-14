@@ -1,5 +1,5 @@
 ---
-title: Trace .NET Lambda functions
+title: Трассировка функций .NET Lambda
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration
 scraped: 2026-03-05T21:29:40.064891
 ---

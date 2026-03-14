@@ -1,5 +1,5 @@
 ---
-title: Access your DPS cost overview
+title: Доступ к обзору расходов DPS
 source: https://www.dynatrace.com/docs/license/cost-overview
 scraped: 2026-03-06T21:22:22.047906
 ---

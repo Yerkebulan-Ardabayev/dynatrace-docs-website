@@ -1,5 +1,5 @@
 ---
-title: Exception analysis
+title: Анализ исключений
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/exception-analysis
 scraped: 2026-03-06T21:12:06.923724
 ---

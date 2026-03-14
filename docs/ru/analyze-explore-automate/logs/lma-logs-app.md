@@ -1,5 +1,5 @@
 ---
-title: Logs app
+title: Приложение журналов
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app
 scraped: 2026-03-06T21:09:41.161992
 ---

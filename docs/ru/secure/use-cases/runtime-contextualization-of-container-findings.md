@@ -1,5 +1,5 @@
 ---
-title: Runtime contextualization of container findings
+title: Контекстуализация во время выполнения результатов контейнеров
 source: https://www.dynatrace.com/docs/secure/use-cases/runtime-contextualization-of-container-findings
 scraped: 2026-03-06T21:15:09.804438
 ---

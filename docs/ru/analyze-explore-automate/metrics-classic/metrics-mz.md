@@ -1,5 +1,5 @@
 ---
-title: Filter classic metrics by management zone
+title: Фильтрация классических метрик по зоне управления
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics-classic/metrics-mz
 scraped: 2026-03-06T21:25:31.373291
 ---

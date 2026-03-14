@@ -1,5 +1,5 @@
 ---
-title: Ingest Microsoft Defender for Cloud security events
+title: Прием событий безопасности Microsoft Defender for Cloud
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-microsoft-defender
 scraped: 2026-03-06T21:24:00.859946
 ---

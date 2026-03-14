@@ -623,8 +623,8 @@ Dynatrace собирает метрики для множества предва
 
 В этом примере из полного списка разрешений необходимо выбрать
 
-* `"apigateway:GET"` for **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
+* `"apigateway:GET"` для **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
 
 ### Конечные точки AWS, которые должны быть доступны из ActiveGate с соответствующими сервисами AWS
 
@@ -829,25 +829,25 @@ Dynatrace собирает метрики для множества предва
 
 | Название | Описание | Статистика | Единица | Измерения | Рекомендуемая |
 | --- | --- | --- | --- | --- | --- |
-| glue.driver.aggregate.bytesRead | The number of bytes read from all data sources by all completed Spark tasks running in all executors | Sum | Bytes | JobName, JobRunId, Type |  |
-| glue.driver.aggregate.elapsedTime | The ETL elapsed time in milliseconds (doesn't include the job bootstrap times) | Sum | Milliseconds | JobName, JobRunId, Type |  |
-| glue.driver.aggregate.numCompletedStages | The number of completed stages in a job | Sum | Count | JobName, JobRunId, Type |  |
-| glue.driver.aggregate.numCompletedTasks | The number of completed tasks in a job | Sum | Count | JobName, JobRunId, Type |  |
-| glue.driver.aggregate.numFailedTasks | The number of failed tasks in a job | Sum | Count | JobName, JobRunId, Type |  |
-| glue.driver.aggregate.numKilledTasks | The number of tasks killed in a job | Sum | Count | JobName, JobRunId, Type |  |
-| glue.driver.aggregate.recordsRead | The number of records read from all data sources by all completed Spark tasks running in all executors | Sum | Count | JobName, JobRunId, Type |  |
-| glue.driver.aggregate.shuffleBytesWritten | The number of bytes written by all executors to shuffle data between them since the previous report (aggregated by the AWS Glue metrics dashboard as the number of bytes written for this purpose during the previous minute) | Sum | Bytes | JobName, JobRunId, Type |  |
-| glue.driver.aggregate.shuffleLocalBytesRead | The number of bytes read by all executors to shuffle data between them since the previous report (aggregated by the AWS Glue metrics dashboard as the number of bytes read for this purpose during the previous minute) | Sum | Bytes | JobName, JobRunId, Type |  |
-| glue.driver.BlockManager.disk.diskSpaceUsed\_MB | The number of megabytes of disk space used across all executors | Average | Megabytes | JobName, JobRunId, Type |  |
-| glue.driver.ExecutorAllocationManager.executors.numberAllExecutors | The number of actively running job executors | Average | Count | JobName, JobRunId, Type |  |
-| glue.driver.ExecutorAllocationManager.executors.numberMaxNeededExecutors | The number of maximum (actively running and pending) job executors needed to satisfy the current load | Maximum | Count | JobName, JobRunId, Type |  |
-| glue.driver.jvm.heap.usage | The fraction of memory used by the JVM heap (scale: `0`-`1`) for this driver | Average | Percent | JobName, JobRunId, Type | Доступна |
-| glue.ALL.jvm.heap.usage | The fraction of memory used by the JVM heap (scale: `0`-`1`) for all executors | Average | Percent | JobName, JobRunId, Type | Доступна |
-| glue.driver.jvm.heap.used | The number of memory bytes used by the JVM heap for the driver | Average | Bytes | JobName, JobRunId, Type |  |
-| glue.ALL.jvm.heap.used | The number of memory bytes used by the JVM heap for all executors | Average | Bytes | JobName, JobRunId, Type |  |
-| glue.driver.s3.filesystem.read\_bytes | The number of bytes read from Amazon S3 by the driver since the previous report (aggregated by the AWS Glue metrics dashboard as the number of bytes read during the previous minute) | Sum | Bytes | JobName, JobRunId, Type |  |
-| glue.ALL.s3.filesystem.read\_bytes | The number of bytes read from Amazon S3 by all executors since the previous report (aggregated by the AWS Glue metrics dashboard as the number of bytes read during the previous minute) | Sum | Bytes | JobName, JobRunId, Type | Доступна |
-| glue.driver.s3.filesystem.write\_bytes | The number of bytes written to Amazon S3 by the driver since the previous report (aggregated by the AWS Glue metrics dashboard as the number of bytes written during the previous minute) | Sum | Bytes | JobName, JobRunId, Type |  |
-| glue.ALL.s3.filesystem.write\_bytes | The number of bytes written to Amazon S3 by all executors since the previous report (aggregated by the AWS Glue metrics dashboard as the number of bytes written during the previous minute) | Sum | Bytes | JobName, JobRunId, Type | Доступна |
-| glue.driver.system.cpuSystemLoad | The fraction of CPU system load used (scale: `0`-`1`) by the driver | Average | Percent | JobName, JobRunId, Type |  |
-| glue.ALL.system.cpuSystemLoad | The fraction of CPU system load used (scale: `0`-`1`) by all executors | Average | Percent | JobName, JobRunId, Type |  |
+| glue.driver.aggregate.bytesRead | Количество байт, прочитанных из всех источников данных всеми завершёнными задачами Spark, выполняющимися во всех исполнителях | Sum | Bytes | JobName, JobRunId, Type |  |
+| glue.driver.aggregate.elapsedTime | Затраченное время ETL в миллисекундах (не включает время начальной загрузки задания) | Sum | Milliseconds | JobName, JobRunId, Type |  |
+| glue.driver.aggregate.numCompletedStages | Количество завершённых этапов в задании | Sum | Count | JobName, JobRunId, Type |  |
+| glue.driver.aggregate.numCompletedTasks | Количество завершённых задач в задании | Sum | Count | JobName, JobRunId, Type |  |
+| glue.driver.aggregate.numFailedTasks | Количество неудачных задач в задании | Sum | Count | JobName, JobRunId, Type |  |
+| glue.driver.aggregate.numKilledTasks | Количество принудительно завершённых задач в задании | Sum | Count | JobName, JobRunId, Type |  |
+| glue.driver.aggregate.recordsRead | Количество записей, прочитанных из всех источников данных всеми завершёнными задачами Spark, выполняющимися во всех исполнителях | Sum | Count | JobName, JobRunId, Type |  |
+| glue.driver.aggregate.shuffleBytesWritten | Количество байт, записанных всеми исполнителями для перемешивания данных между ними с момента предыдущего отчёта (агрегируется панелью метрик AWS Glue как количество байт, записанных для этой цели за предыдущую минуту) | Sum | Bytes | JobName, JobRunId, Type |  |
+| glue.driver.aggregate.shuffleLocalBytesRead | Количество байт, прочитанных всеми исполнителями для перемешивания данных между ними с момента предыдущего отчёта (агрегируется панелью метрик AWS Glue как количество байт, прочитанных для этой цели за предыдущую минуту) | Sum | Bytes | JobName, JobRunId, Type |  |
+| glue.driver.BlockManager.disk.diskSpaceUsed\_MB | Количество мегабайт дискового пространства, используемого всеми исполнителями | Average | Megabytes | JobName, JobRunId, Type |  |
+| glue.driver.ExecutorAllocationManager.executors.numberAllExecutors | Количество активно работающих исполнителей задания | Average | Count | JobName, JobRunId, Type |  |
+| glue.driver.ExecutorAllocationManager.executors.numberMaxNeededExecutors | Максимальное количество исполнителей задания (активно работающих и ожидающих), необходимых для удовлетворения текущей нагрузки | Maximum | Count | JobName, JobRunId, Type |  |
+| glue.driver.jvm.heap.usage | Доля памяти, используемой кучей JVM (шкала: `0`-`1`) для данного драйвера | Average | Percent | JobName, JobRunId, Type | Доступна |
+| glue.ALL.jvm.heap.usage | Доля памяти, используемой кучей JVM (шкала: `0`-`1`) для всех исполнителей | Average | Percent | JobName, JobRunId, Type | Доступна |
+| glue.driver.jvm.heap.used | Количество байт памяти, используемых кучей JVM для драйвера | Average | Bytes | JobName, JobRunId, Type |  |
+| glue.ALL.jvm.heap.used | Количество байт памяти, используемых кучей JVM для всех исполнителей | Average | Bytes | JobName, JobRunId, Type |  |
+| glue.driver.s3.filesystem.read\_bytes | Количество байт, прочитанных из Amazon S3 драйвером с момента предыдущего отчёта (агрегируется панелью метрик AWS Glue как количество байт, прочитанных за предыдущую минуту) | Sum | Bytes | JobName, JobRunId, Type |  |
+| glue.ALL.s3.filesystem.read\_bytes | Количество байт, прочитанных из Amazon S3 всеми исполнителями с момента предыдущего отчёта (агрегируется панелью метрик AWS Glue как количество байт, прочитанных за предыдущую минуту) | Sum | Bytes | JobName, JobRunId, Type | Доступна |
+| glue.driver.s3.filesystem.write\_bytes | Количество байт, записанных в Amazon S3 драйвером с момента предыдущего отчёта (агрегируется панелью метрик AWS Glue как количество байт, записанных за предыдущую минуту) | Sum | Bytes | JobName, JobRunId, Type |  |
+| glue.ALL.s3.filesystem.write\_bytes | Количество байт, записанных в Amazon S3 всеми исполнителями с момента предыдущего отчёта (агрегируется панелью метрик AWS Glue как количество байт, записанных за предыдущую минуту) | Sum | Bytes | JobName, JobRunId, Type | Доступна |
+| glue.driver.system.cpuSystemLoad | Доля системной нагрузки ЦПУ (шкала: `0`-`1`), используемая драйвером | Average | Percent | JobName, JobRunId, Type |  |
+| glue.ALL.system.cpuSystemLoad | Доля системной нагрузки ЦПУ (шкала: `0`-`1`), используемая всеми исполнителями | Average | Percent | JobName, JobRunId, Type |  |

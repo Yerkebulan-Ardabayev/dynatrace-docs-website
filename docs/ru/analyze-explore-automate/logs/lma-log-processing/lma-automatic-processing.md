@@ -1,5 +1,5 @@
 ---
-title: Automatic log processing at ingestion
+title: Автоматическая обработка журналов при получении
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-automatic-processing
 scraped: 2026-03-05T21:33:12.923279
 ---

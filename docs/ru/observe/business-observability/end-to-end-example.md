@@ -1,5 +1,5 @@
 ---
-title: Business events end-to-end example
+title: Сквозной пример бизнес-событий
 source: https://www.dynatrace.com/docs/observe/business-observability/end-to-end-example
 scraped: 2026-03-06T21:14:48.552772
 ---

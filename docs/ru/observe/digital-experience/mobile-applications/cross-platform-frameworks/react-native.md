@@ -1,5 +1,5 @@
 ---
-title: Instrument mobile apps with Dynatrace React Native plugin
+title: Инструментирование мобильных приложений с помощью плагина Dynatrace React Native
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/react-native
 scraped: 2026-03-05T21:25:22.621291
 ---

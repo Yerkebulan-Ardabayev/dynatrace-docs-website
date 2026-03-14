@@ -1,5 +1,5 @@
 ---
-title: Organize data
+title: Организация данных
 source: https://www.dynatrace.com/docs/platform/grail/organize-data
 scraped: 2026-03-06T21:13:55.366845
 ---

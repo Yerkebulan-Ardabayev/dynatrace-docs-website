@@ -1,5 +1,5 @@
 ---
-title: Finalize the initial setup for your agentless frontend
+title: Завершение начальной настройки для безагентного фронтенда
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/finalize-initial-setup-agentless
 scraped: 2026-03-06T21:26:15.702725
 ---

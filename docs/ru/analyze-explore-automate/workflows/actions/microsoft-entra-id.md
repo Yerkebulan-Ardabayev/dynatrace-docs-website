@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra ID Connector
+title: Microsoft Entra ID Коннектор
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/microsoft-entra-id
 scraped: 2026-03-05T21:39:12.282254
 ---

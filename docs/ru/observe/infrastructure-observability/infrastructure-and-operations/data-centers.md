@@ -1,5 +1,5 @@
 ---
-title: Data centers
+title: Центры обработки данных
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/data-centers
 scraped: 2026-03-06T21:16:58.775446
 ---

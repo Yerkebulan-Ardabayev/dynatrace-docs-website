@@ -1,5 +1,5 @@
 ---
-title: AWS EC2 ecosystem overview
+title: AWS Обзор экосистемы EC2
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/aws-ec2-ecosystem-overview
 scraped: 2026-03-06T21:37:14.407570
 ---

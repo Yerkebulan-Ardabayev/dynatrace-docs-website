@@ -1,5 +1,5 @@
 ---
-title: Automated multi-dimensional baselining
+title: Автоматическое многомерное построение базовых показателей
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining
 scraped: 2026-03-06T21:20:49.775801
 ---

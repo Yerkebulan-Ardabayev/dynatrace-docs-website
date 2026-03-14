@@ -1,5 +1,5 @@
 ---
-title: Create and manage teams for entity ownership
+title: Создание и управление командами для владения сущностями
 source: https://www.dynatrace.com/docs/deliver/ownership/ownership-teams
 scraped: 2026-03-06T21:37:33.831582
 ---

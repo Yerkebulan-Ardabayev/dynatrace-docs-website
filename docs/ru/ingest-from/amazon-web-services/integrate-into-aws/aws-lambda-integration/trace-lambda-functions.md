@@ -1,5 +1,5 @@
 ---
-title: Trace Lambda functions
+title: Трассировка функций Lambda
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/trace-lambda-functions
 scraped: 2026-03-05T21:26:33.193087
 ---

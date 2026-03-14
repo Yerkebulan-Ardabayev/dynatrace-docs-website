@@ -1,5 +1,5 @@
 ---
-title: Request attributes
+title: Атрибуты запроса
 source: https://www.dynatrace.com/docs/observe/application-observability/services/request-attributes
 scraped: 2026-03-06T21:12:20.029265
 ---

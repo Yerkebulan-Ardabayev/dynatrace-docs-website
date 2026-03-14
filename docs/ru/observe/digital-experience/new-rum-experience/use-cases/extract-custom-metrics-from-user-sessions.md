@@ -1,5 +1,5 @@
 ---
-title: Extract a metric from user sessions
+title: Извлечение метрики из пользовательских сеансов
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-sessions
 scraped: 2026-03-06T21:15:52.450536
 ---

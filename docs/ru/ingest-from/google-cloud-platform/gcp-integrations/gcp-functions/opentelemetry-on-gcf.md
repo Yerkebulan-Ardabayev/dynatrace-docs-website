@@ -1,5 +1,5 @@
 ---
-title: Set up OpenTelemetry monitoring for Google Cloud Functions
+title: Настройка мониторинга OpenTelemetry для Google Cloud Functions
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf
 scraped: 2026-03-06T21:29:42.968498
 ---

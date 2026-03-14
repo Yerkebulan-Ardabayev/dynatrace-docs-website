@@ -1,5 +1,5 @@
 ---
-title: Monitor Azure SignalR
+title: Мониторинг Azure SignalR
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-signalr
 scraped: 2026-03-05T21:34:40.449334
 ---

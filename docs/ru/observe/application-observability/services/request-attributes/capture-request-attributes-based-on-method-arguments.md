@@ -1,5 +1,5 @@
 ---
-title: Capture request attributes based on method arguments
+title: Захват атрибутов запроса на основе аргументов метода
 source: https://www.dynatrace.com/docs/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-method-arguments
 scraped: 2026-03-06T21:23:04.069896
 ---

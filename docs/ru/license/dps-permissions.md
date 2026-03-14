@@ -1,5 +1,5 @@
 ---
-title: DPS permissions
+title: Права доступа DPS
 source: https://www.dynatrace.com/docs/license/dps-permissions
 scraped: 2026-03-06T21:22:20.349191
 ---

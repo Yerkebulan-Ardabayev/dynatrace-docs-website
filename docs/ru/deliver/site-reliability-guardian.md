@@ -1,5 +1,5 @@
 ---
-title: Site Reliability Guardian
+title: Хранитель надежности сайта
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian
 scraped: 2026-03-06T21:15:28.801417
 ---

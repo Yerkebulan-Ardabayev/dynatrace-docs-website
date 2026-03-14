@@ -1,5 +1,5 @@
 ---
-title: Mask sensitive data with the OpenTelemetry Collector
+title: Маскирование конфиденциальных данных с помощью OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/redact
 scraped: 2026-03-06T21:32:24.265515
 ---

@@ -1,5 +1,5 @@
 ---
-title: Text Processing
+title: Обработка текста
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing
 scraped: 2026-03-06T21:36:02.786540
 ---

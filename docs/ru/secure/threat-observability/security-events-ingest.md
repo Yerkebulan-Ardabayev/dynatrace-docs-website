@@ -1,5 +1,5 @@
 ---
-title: Security integrations
+title: Интеграции безопасности
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest
 scraped: 2026-03-06T21:12:36.899894
 ---

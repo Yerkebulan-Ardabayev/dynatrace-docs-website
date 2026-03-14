@@ -1,5 +1,5 @@
 ---
-title: Guides
+title: Руководства
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides
 scraped: 2026-03-06T21:34:51.653745
 ---

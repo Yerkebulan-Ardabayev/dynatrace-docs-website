@@ -1,5 +1,5 @@
 ---
-title: Use cases for the New RUM Experience
+title: Варианты использования нового опыта RUM
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/use-cases
 scraped: 2026-03-06T21:28:05.793494
 ---

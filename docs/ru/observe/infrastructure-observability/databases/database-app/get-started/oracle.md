@@ -1,5 +1,5 @@
 ---
-title: Monitor Oracle database
+title: Мониторинг базы данных Oracle
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/oracle
 scraped: 2026-03-03T21:30:38.216751
 ---

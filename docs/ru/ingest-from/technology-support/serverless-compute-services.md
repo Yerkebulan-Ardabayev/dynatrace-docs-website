@@ -1,5 +1,5 @@
 ---
-title: Serverless compute support matrix
+title: Матрица поддержки серверных вычислений
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/serverless-compute-services
 scraped: 2026-03-06T21:29:10.840259
 ---

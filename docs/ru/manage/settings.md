@@ -1,5 +1,5 @@
 ---
-title: Settings app
+title: Приложение Settings
 source: https://www.dynatrace.com/docs/manage/settings
 scraped: 2026-03-06T21:30:39.602496
 ---

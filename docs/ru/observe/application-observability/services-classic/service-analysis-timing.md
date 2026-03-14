@@ -1,5 +1,5 @@
 ---
-title: Service analysis timings
+title: Временные показатели анализа сервисов
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-analysis-timing
 scraped: 2026-03-06T21:12:16.263242
 ---

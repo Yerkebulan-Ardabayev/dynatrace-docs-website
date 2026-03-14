@@ -1,5 +1,5 @@
 ---
-title: Treat diagnostic messages
+title: Обработка диагностических сообщений
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/analysis/diagnostic-messages
 scraped: 2026-03-04T21:38:08.883099
 ---

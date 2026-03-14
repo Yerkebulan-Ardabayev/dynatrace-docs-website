@@ -1,5 +1,5 @@
 ---
-title: Clouds app
+title: Приложение Clouds
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app
 scraped: 2026-03-06T21:12:43.905190
 ---

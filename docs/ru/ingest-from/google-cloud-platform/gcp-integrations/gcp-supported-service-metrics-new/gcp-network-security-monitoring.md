@@ -1,5 +1,5 @@
 ---
-title: Google Cloud Network Security monitoring
+title: Мониторинг Google Cloud Network Security
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-network-security-monitoring
 scraped: 2026-03-06T21:37:40.541970
 ---

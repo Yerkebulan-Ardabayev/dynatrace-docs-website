@@ -1,5 +1,5 @@
 ---
-title: Log processing
+title: Обработка логов
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing
 scraped: 2026-03-06T21:15:13.168025
 ---

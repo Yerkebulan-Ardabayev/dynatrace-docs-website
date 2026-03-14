@@ -1,5 +1,5 @@
 ---
-title: Jira Connector
+title: Коннектор Jira
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jira
 scraped: 2026-03-06T21:33:38.177057
 ---
@@ -8,10 +8,10 @@ scraped: 2026-03-06T21:33:38.177057
 
 # Jira Connector
 
-* Latest Dynatrace
-* Overview
-* 1-min read
-* Updated on Feb 13, 2025
+* Последняя версия Dynatrace
+* Обзор
+* 1 мин. чтения
+* Обновлено 13 февраля 2025 г.
 
 Ваша среда Dynatrace может интегрироваться с экземпляром Jira Cloud или Server с помощью Jira Connector ![Jira for Workflows](https://dt-cdn.net/images/jira-for-workflows-lm8hkkp-257-bfed74a746.png "Jira for Workflows"). Благодаря этой интеграции вы можете автоматизировать создание задач Jira, добавление комментариев и назначение исполнителей на основе событий и расписаний, заданных для ваших [рабочих процессов](../../workflows.md "Automate IT processes with Dynatrace Workflows—react to events, schedule tasks, and connect services.").
 

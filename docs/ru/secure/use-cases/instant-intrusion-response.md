@@ -1,5 +1,5 @@
 ---
-title: Instant Intrusion Response
+title: Мгновенное реагирование на вторжения
 source: https://www.dynatrace.com/docs/secure/use-cases/instant-intrusion-response
 scraped: 2026-02-23T21:25:08.031293
 ---

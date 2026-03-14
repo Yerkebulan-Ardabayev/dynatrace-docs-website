@@ -622,8 +622,8 @@ Dynatrace собирает метрики для множества предва
 
 В этом примере из полного списка разрешений необходимо выбрать
 
-* `"apigateway:GET"` for **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
+* `"apigateway:GET"` для **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
 
 ## Включение мониторинга
 

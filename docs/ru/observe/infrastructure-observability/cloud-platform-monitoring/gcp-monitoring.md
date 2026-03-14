@@ -1,5 +1,5 @@
 ---
-title: Google Cloud monitoring
+title: Мониторинг Google Cloud
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/gcp-monitoring
 scraped: 2026-02-06T16:29:02.800414
 ---

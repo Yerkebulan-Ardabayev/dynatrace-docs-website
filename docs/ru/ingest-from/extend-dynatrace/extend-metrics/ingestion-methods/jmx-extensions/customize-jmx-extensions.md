@@ -1,5 +1,5 @@
 ---
-title: Customize JMX extensions
+title: Настройка расширений JMX
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions/customize-jmx-extensions
 scraped: 2026-03-03T21:25:03.690347
 ---

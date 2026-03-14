@@ -1,5 +1,5 @@
 ---
-title: Service backtrace
+title: Обратная трассировка сервиса
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-backtrace
 scraped: 2026-03-06T21:17:34.259019
 ---

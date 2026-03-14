@@ -1,5 +1,5 @@
 ---
-title: Google App Engine with Operations suite metrics monitoring
+title: Мониторинг Google App Engine с метриками Operations suite
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine/app-engine-monitoring
 scraped: 2026-03-06T21:34:13.395203
 ---
@@ -10,72 +10,72 @@ scraped: 2026-03-06T21:34:13.395203
 
 * Последняя версия Dynatrace
 * Практическое руководство
-* Чтение: 3 мин
-* Опубликовано 17 янв. 2022
+* 3 мин. чтения
+* Опубликовано 17 янв. 2022 г.
 
-Интеграция Dynatrace с Google Cloud использует данные, собранные через Google Operation API, для постоянного мониторинга работоспособности и производительности сервисов Google Cloud. Объединяя все соответствующие данные в дашборды, она также обеспечивает оповещение и отслеживание событий.
+Интеграция Dynatrace с Google Cloud использует данные, собранные из Google Operations API, для непрерывного мониторинга работоспособности и производительности сервисов Google Cloud. Помимо объединения всех релевантных данных в дашборды, она также обеспечивает оповещения и отслеживание событий.
 
 ## Предварительные требования
 
-[Настройка интеграции](../gcp-guide/deploy-k8.md "Настройте мониторинг логов и метрик для сервисов GCP на новом кластере GKE Autopilot.")
+[Настройка интеграции](../gcp-guide/deploy-k8.md "Настройка мониторинга логов и метрик для сервисов GCP в новом кластере GKE Autopilot.")
 
-## Добавление сервисов и наборов функций (необязательно)
+## Добавление сервисов и наборов функций Необязательно
 
-После интеграции Dynatrace автоматически отслеживает ряд предустановленных сервисов Google Cloud и наборов функций (метрик). Помимо них, вы можете добавить дополнительные сервисы или наборы функций для мониторинга. Подробности см. в разделе [Добавление или удаление сервисов](../gcp-guide/deploy-k8.md#manage "Настройте мониторинг логов и метрик для сервисов GCP на новом кластере GKE Autopilot.").
+После интеграции Dynatrace автоматически начинает мониторинг ряда предустановленных сервисов Google Cloud и наборов функций (метрик). Помимо них, вы можете добавить дополнительные сервисы или наборы функций для мониторинга. Подробнее см. в разделе [Добавление и удаление сервисов](../gcp-guide/deploy-k8.md#manage "Настройка мониторинга логов и метрик для сервисов GCP в новом кластере GKE Autopilot.").
 
-Список наборов функций, доступных для этого сервиса, см. в [Таблице метрик](#table).
+Список наборов функций, доступных для данного сервиса, см. в разделе [Таблица метрик](#table).
 
 ## Просмотр метрик
 
-После развёртывания интеграции вы можете просматривать метрики от отслеживаемых сервисов в [обозревателе метрик](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Просматривайте метрики с помощью обозревателя метрик Dynatrace."), [Data Explorer](../../../../analyze-explore-automate/explorer.md "Выполняйте запросы по метрикам и преобразуйте результаты для получения нужных данных.") и на плитках дашбордов.
+После развёртывания интеграции вы можете просматривать метрики отслеживаемых сервисов в [браузере метрик](../../../../analyze-explore-automate/dashboards-classic/metrics-browser.md "Просмотр метрик с помощью браузера метрик Dynatrace."), [Data Explorer](../../../../analyze-explore-automate/explorer.md "Запрашивайте метрики и преобразуйте результаты для получения нужных данных."), а также в плитках дашбордов.
 
 ## Таблица метрик
 
 Для Google App Engine доступны следующие наборы функций.
 
-| Набор функций | Название | Единица измерения | Идентификатор метрики GCP |
+| Набор функций | Название | Единица | Идентификатор метрики GCP |
 | --- | --- | --- | --- |
-| gae\_app/default\_metrics | Monitoring Agent API Request Count | Count | agent.googleapis.com/agent/api\_request\_count |
-| gae\_app/default\_metrics | Logging Agent Log Entry Count | Count | agent.googleapis.com/agent/log\_entry\_count |
-| gae\_app/default\_metrics | Logging Agent Retried Log Entry Writes Count | Count | agent.googleapis.com/agent/log\_entry\_retry\_count |
-| gae\_app/default\_metrics | Monitoring Agent Memory Usage | Byte | agent.googleapis.com/agent/memory\_usage |
-| gae\_app/default\_metrics | Monitoring Agent Metric Point Count | Count | agent.googleapis.com/agent/monitoring/point\_count |
-| gae\_app/default\_metrics | Logging Agent API Request Count | Count | agent.googleapis.com/agent/request\_count |
-| gae\_app/default\_metrics | Monitoring Agent Process Labels Size | Byte | agent.googleapis.com/agent/streamspace\_size |
-| gae\_app/default\_metrics | Monitoring Agent is Throttling Processes | Count | agent.googleapis.com/agent/streamspace\_size\_throttling |
-| gae\_app/default\_metrics | Monitoring/Logging Agent Uptime | Second | agent.googleapis.com/agent/uptime |
-| gae\_app/default\_metrics | Autoscaling Metrics Utilization Capacity | Count | appengine.googleapis.com/flex/autoscaler/capacity |
-| gae\_app/default\_metrics | Autoscaling Metrics Current Utilization | Count | appengine.googleapis.com/flex/autoscaler/current\_utilization |
-| gae\_app/default\_metrics | Connections | Count | appengine.googleapis.com/flex/connections/current |
-| gae\_app/default\_metrics | Reserved cores | Count | appengine.googleapis.com/flex/cpu/reserved\_cores |
-| gae\_app/default\_metrics | CPU utilization | Percent | appengine.googleapis.com/flex/cpu/utilization |
-| gae\_app/default\_metrics | Disk bytes read | Byte | appengine.googleapis.com/flex/disk/read\_bytes\_count |
-| gae\_app/default\_metrics | Disk bytes written | Byte | appengine.googleapis.com/flex/disk/write\_bytes\_count |
-| gae\_app/default\_metrics | Network bytes received. | Byte | appengine.googleapis.com/flex/network/received\_bytes\_count |
-| gae\_app/default\_metrics | Network bytes sent. | Byte | appengine.googleapis.com/flex/network/sent\_bytes\_count |
-| gae\_app/default\_metrics | Interception count | Count | appengine.googleapis.com/http/server/dos\_intercept\_count |
-| gae\_app/default\_metrics | Quota denial count | Count | appengine.googleapis.com/http/server/quota\_denial\_count |
-| gae\_app/default\_metrics | Response count | Count | appengine.googleapis.com/http/server/response\_count |
-| gae\_app/default\_metrics | Response latency | MilliSecond | appengine.googleapis.com/http/server/response\_latencies |
-| gae\_app/default\_metrics | Response count by style | Count | appengine.googleapis.com/http/server/response\_style\_count |
-| gae\_app/default\_metrics | Memcache utilization | Count | appengine.googleapis.com/memcache/centi\_mcu\_count |
-| gae\_app/default\_metrics | Hit ratio | Count | appengine.googleapis.com/memcache/hit\_ratio |
-| gae\_app/default\_metrics | Memcache operations | Count | appengine.googleapis.com/memcache/operation\_count |
-| gae\_app/default\_metrics | Memcache received bytes | Byte | appengine.googleapis.com/memcache/received\_bytes\_count |
-| gae\_app/default\_metrics | Memcache sent bytes | Byte | appengine.googleapis.com/memcache/sent\_bytes\_count |
-| gae\_app/default\_metrics | Used Cache Size | Byte | appengine.googleapis.com/memcache/used\_cache\_size |
-| gae\_app/default\_metrics | Estimated instance count | Count | appengine.googleapis.com/system/billed\_instance\_estimate\_count |
-| gae\_app/default\_metrics | CPU megacycles | Count | appengine.googleapis.com/system/cpu/usage |
-| gae\_app/default\_metrics | Instance count | Count | appengine.googleapis.com/system/instance\_count |
-| gae\_app/default\_metrics | Memory usage | Byte | appengine.googleapis.com/system/memory/usage |
-| gae\_app/default\_metrics | Received bytes | Byte | appengine.googleapis.com/system/network/received\_bytes\_count |
-| gae\_app/default\_metrics | Sent bytes | Byte | appengine.googleapis.com/system/network/sent\_bytes\_count |
-| gae\_instance/default\_metrics | Connections | Count | appengine.googleapis.com/flex/instance/connections/current |
-| gae\_instance/default\_metrics | CPU Utilization | Percent | appengine.googleapis.com/flex/instance/cpu/utilization |
-| gae\_instance/default\_metrics | Network bytes received | Byte | appengine.googleapis.com/flex/instance/network/received\_bytes\_count |
-| gae\_instance/default\_metrics | Network bytes sent | Byte | appengine.googleapis.com/flex/instance/network/sent\_bytes\_count |
-| gae\_instance/default\_metrics | Websocket average duration | Second | appengine.googleapis.com/flex/instance/ws/avg\_duration |
+| gae\_app/default\_metrics | Количество API-запросов агента мониторинга | Count | agent.googleapis.com/agent/api\_request\_count |
+| gae\_app/default\_metrics | Количество записей лога агента логирования | Count | agent.googleapis.com/agent/log\_entry\_count |
+| gae\_app/default\_metrics | Количество повторных записей лога агента логирования | Count | agent.googleapis.com/agent/log\_entry\_retry\_count |
+| gae\_app/default\_metrics | Использование памяти агентом мониторинга | Byte | agent.googleapis.com/agent/memory\_usage |
+| gae\_app/default\_metrics | Количество точек метрик агента мониторинга | Count | agent.googleapis.com/agent/monitoring/point\_count |
+| gae\_app/default\_metrics | Количество API-запросов агента логирования | Count | agent.googleapis.com/agent/request\_count |
+| gae\_app/default\_metrics | Размер меток процессов агента мониторинга | Byte | agent.googleapis.com/agent/streamspace\_size |
+| gae\_app/default\_metrics | Агент мониторинга ограничивает процессы | Count | agent.googleapis.com/agent/streamspace\_size\_throttling |
+| gae\_app/default\_metrics | Время работы агента мониторинга/логирования | Second | agent.googleapis.com/agent/uptime |
+| gae\_app/default\_metrics | Ёмкость утилизации метрик автомасштабирования | Count | appengine.googleapis.com/flex/autoscaler/capacity |
+| gae\_app/default\_metrics | Текущая утилизация метрик автомасштабирования | Count | appengine.googleapis.com/flex/autoscaler/current\_utilization |
+| gae\_app/default\_metrics | Подключения | Count | appengine.googleapis.com/flex/connections/current |
+| gae\_app/default\_metrics | Зарезервированные ядра | Count | appengine.googleapis.com/flex/cpu/reserved\_cores |
+| gae\_app/default\_metrics | Утилизация CPU | Percent | appengine.googleapis.com/flex/cpu/utilization |
+| gae\_app/default\_metrics | Прочитано байт с диска | Byte | appengine.googleapis.com/flex/disk/read\_bytes\_count |
+| gae\_app/default\_metrics | Записано байт на диск | Byte | appengine.googleapis.com/flex/disk/write\_bytes\_count |
+| gae\_app/default\_metrics | Получено сетевых байт | Byte | appengine.googleapis.com/flex/network/received\_bytes\_count |
+| gae\_app/default\_metrics | Отправлено сетевых байт | Byte | appengine.googleapis.com/flex/network/sent\_bytes\_count |
+| gae\_app/default\_metrics | Количество перехватов | Count | appengine.googleapis.com/http/server/dos\_intercept\_count |
+| gae\_app/default\_metrics | Количество отказов по квоте | Count | appengine.googleapis.com/http/server/quota\_denial\_count |
+| gae\_app/default\_metrics | Количество ответов | Count | appengine.googleapis.com/http/server/response\_count |
+| gae\_app/default\_metrics | Задержка ответов | MilliSecond | appengine.googleapis.com/http/server/response\_latencies |
+| gae\_app/default\_metrics | Количество ответов по типу | Count | appengine.googleapis.com/http/server/response\_style\_count |
+| gae\_app/default\_metrics | Утилизация Memcache | Count | appengine.googleapis.com/memcache/centi\_mcu\_count |
+| gae\_app/default\_metrics | Коэффициент попаданий | Count | appengine.googleapis.com/memcache/hit\_ratio |
+| gae\_app/default\_metrics | Операции Memcache | Count | appengine.googleapis.com/memcache/operation\_count |
+| gae\_app/default\_metrics | Получено байт Memcache | Byte | appengine.googleapis.com/memcache/received\_bytes\_count |
+| gae\_app/default\_metrics | Отправлено байт Memcache | Byte | appengine.googleapis.com/memcache/sent\_bytes\_count |
+| gae\_app/default\_metrics | Используемый размер кэша | Byte | appengine.googleapis.com/memcache/used\_cache\_size |
+| gae\_app/default\_metrics | Оценочное количество оплачиваемых экземпляров | Count | appengine.googleapis.com/system/billed\_instance\_estimate\_count |
+| gae\_app/default\_metrics | Мегациклы CPU | Count | appengine.googleapis.com/system/cpu/usage |
+| gae\_app/default\_metrics | Количество экземпляров | Count | appengine.googleapis.com/system/instance\_count |
+| gae\_app/default\_metrics | Использование памяти | Byte | appengine.googleapis.com/system/memory/usage |
+| gae\_app/default\_metrics | Полученные байты | Byte | appengine.googleapis.com/system/network/received\_bytes\_count |
+| gae\_app/default\_metrics | Отправленные байты | Byte | appengine.googleapis.com/system/network/sent\_bytes\_count |
+| gae\_instance/default\_metrics | Подключения | Count | appengine.googleapis.com/flex/instance/connections/current |
+| gae\_instance/default\_metrics | Утилизация CPU | Percent | appengine.googleapis.com/flex/instance/cpu/utilization |
+| gae\_instance/default\_metrics | Получено сетевых байт | Byte | appengine.googleapis.com/flex/instance/network/received\_bytes\_count |
+| gae\_instance/default\_metrics | Отправлено сетевых байт | Byte | appengine.googleapis.com/flex/instance/network/sent\_bytes\_count |
+| gae\_instance/default\_metrics | Средняя длительность Websocket | Second | appengine.googleapis.com/flex/instance/ws/avg\_duration |
 
 ## Связанные темы
 
-* [Интеграции с Google Cloud](../../gcp-integrations.md "Настройте и сконфигурируйте Dynatrace в Google Cloud.")
+* [Интеграции Google Cloud](../../gcp-integrations.md "Настройка и конфигурирование Dynatrace на Google Cloud.")

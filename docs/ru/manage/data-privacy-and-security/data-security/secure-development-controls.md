@@ -1,5 +1,5 @@
 ---
-title: Secure development controls
+title: Средства контроля безопасной разработки
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-security/secure-development-controls
 scraped: 2026-03-02T21:23:36.094069
 ---

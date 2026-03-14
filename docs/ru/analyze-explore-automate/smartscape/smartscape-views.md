@@ -1,5 +1,5 @@
 ---
-title: Smartscape views
+title: Smartscape представления
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views
 scraped: 2026-03-03T21:21:58.309883
 ---

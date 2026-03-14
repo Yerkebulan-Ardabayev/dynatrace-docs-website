@@ -1,5 +1,5 @@
 ---
-title: Launchpads
+title: Запуски
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads
 scraped: 2026-03-06T21:20:58.151502
 ---

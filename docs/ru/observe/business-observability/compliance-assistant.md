@@ -1,5 +1,5 @@
 ---
-title: Compliance Assistant
+title: Помощник соответствия
 source: https://www.dynatrace.com/docs/observe/business-observability/compliance-assistant
 scraped: 2026-03-06T21:14:30.942740
 ---

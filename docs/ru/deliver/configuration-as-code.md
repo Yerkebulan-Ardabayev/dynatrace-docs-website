@@ -1,5 +1,5 @@
 ---
-title: Configuration as Code overview
+title: Обзор конфигурации как кода
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code
 scraped: 2026-03-05T21:37:41.264166
 ---

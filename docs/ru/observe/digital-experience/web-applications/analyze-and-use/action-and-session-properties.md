@@ -1,5 +1,5 @@
 ---
-title: Leverage user action and user session properties for web applications
+title: Использование свойств действий пользователя и пользовательских сессий для веб-приложений
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/analyze-and-use/action-and-session-properties
 scraped: 2026-03-06T21:28:12.602325
 ---

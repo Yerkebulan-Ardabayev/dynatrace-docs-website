@@ -1,5 +1,5 @@
 ---
-title: OpenTelemetry to Dynatrace semantic mapping
+title: Семантическое сопоставление OpenTelemetry и Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api/otel-semantic-mapping
 scraped: 2026-03-06T21:35:37.469462
 ---

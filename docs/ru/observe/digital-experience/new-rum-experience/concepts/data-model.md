@@ -1,5 +1,5 @@
 ---
-title: Data model of the New RUM Experience
+title: Модель данных нового опыта RUM
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/concepts/data-model
 scraped: 2026-03-05T21:35:37.839352
 ---

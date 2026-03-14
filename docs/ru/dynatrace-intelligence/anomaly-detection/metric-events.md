@@ -1,5 +1,5 @@
 ---
-title: Metric events
+title: События метрик
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events
 scraped: 2026-03-06T21:20:48.129795
 ---

@@ -1,401 +1,401 @@
 ---
-title: Settings API - GET a schema
+title: Settings API - Получение схемы (GET)
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/schemas/get-schema
 scraped: 2026-03-06T21:19:38.146283
 ---
 
-# Settings API - GET a schema
+# Settings API - Получение схемы (GET)
 
-# Settings API - GET a schema
+# Settings API - Получение схемы (GET)
 
-* Reference
-* Published Feb 24, 2021
+* Справочник
+* Опубликовано 24 фев. 2021
 
-Gets parameters of the specified settings schema.
+Получает параметры указанной схемы настроек.
 
-The request produces an `application/json` payload.
+Запрос возвращает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
 | GET | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/settings/schemas/{schemaId}` |
 | GET | Environment ActiveGateCluster ActiveGate | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/settings/schemas/{schemaId}` |
 
-## Authentication
+## Аутентификация
 
-To execute this request, you need an access token with `settings.read` scope.
+Для выполнения этого запроса необходим токен доступа с областью действия `settings.read`.
 
-To learn how to obtain and use it, see [Tokens and authentication](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
+Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](../../../../discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication.md).
 
-## Parameters
+## Параметры
 
-| Parameter | Type | Description | In | Required |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| schemaId | string | The ID of the required schema. | path | Required |
-| schemaVersion | string | The version of the required schema.  If not set, the most recent version is returned. | query | Optional |
+| schemaId | string | Идентификатор требуемой схемы. | path | Обязательный |
+| schemaVersion | string | Версия требуемой схемы. Если не задана, возвращается самая последняя версия. | query | Необязательный |
 
-## Response
+## Ответ
 
-### Response codes
+### Коды ответов
 
-| Code | Type | Description |
+| Код | Тип | Описание |
 | --- | --- | --- |
-| **200** | [SchemaDefinitionRestDto](#openapi-definition-SchemaDefinitionRestDto) | Success |
-| **403** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Failed. Forbidden. |
-| **404** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Failed. The specified schema doesn't exist. |
-| **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Client side error. |
-| **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Server side error. |
+| **200** | [SchemaDefinitionRestDto](#openapi-definition-SchemaDefinitionRestDto) | Успех |
+| **403** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Доступ запрещён. |
+| **404** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Указанная схема не существует. |
+| **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне клиента. |
+| **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне сервера. |
 
-### Response body objects
+### Объекты тела ответа
 
-#### The `SchemaDefinitionRestDto` object
+#### Объект `SchemaDefinitionRestDto`
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| allowedScopes | string[] | A list of scopes where the schema can be used. |
-| constraints | [ComplexConstraint[]](#openapi-definition-ComplexConstraint) | A list of constrains limiting the values to be accepted by the schema. |
-| deletionConstraints | [DeletionConstraint[]](#openapi-definition-DeletionConstraint) | Constraints limiting the values to be deleted. |
-| description | string | A short description of the schema. |
-| displayName | string | The display name of the schema. |
-| documentation | string | An extended description of the schema and/or links to documentation. |
-| dynatrace | string | The version of the data format. |
-| enums | object | A list of definitions of enum properties. |
-| keyProperty | string | Name of the key property in this schema. |
-| maturity | string | The maturity of the schema. Possible values:  * PREVIEW: Preview features are not generally available, but might be available in specific environments as part of early-access programs. These are the most likely to change in incompatible ways. * EARLY\_ADOPTER: Features marked "early adopter" are available in all environments, but are not mature enough to warrant the "general availability" designation. We don't expect incompatible changes for these, but please be aware, that these are not fully stable yet and incompatible changes may be necessary in rare cases. * GENERAL\_AVAILABILITY: Features marked "general availability" are the most stable. While the schemas will still evolve over time, care will be taken to only do so in a backward-compatible manner.  In any case, automations should make use of the `schemaVersion` field when writing settings objects. The element can hold these values * `EARLY_ADOPTER` * `GENERAL_AVAILABILITY` * `PREVIEW` |
-| maxObjects | integer | The maximum amount of objects per scope.  Only applicable when **multiObject** is set to `true`. |
-| metadata | object | Metadata of the setting. |
-| multiObject | boolean | Multiple (`true`) objects per scope are permitted or a single (`false`) object per scope is permitted. |
-| ordered | boolean | If `true` the order of objects has semantic significance.  Only applicable when **multiObject** is set to `true`. |
-| properties | object | A list of schema's properties. |
-| schemaConstraints | [SchemaConstraintRestDto[]](#openapi-definition-SchemaConstraintRestDto) | Constraints limiting the values as a whole to be accepted in this configuration element. |
-| schemaGroups | string[] | Names of the groups, which the schema belongs to. |
-| schemaId | string | The ID of the schema. |
-| tableColumns | object | Table column definitions for use in the ui. |
-| types | object | A list of definitions of types.  A type is a complex property that contains its own set of subproperties. |
-| uiCustomization | [UiCustomization](#openapi-definition-UiCustomization) | Customization for UI elements |
-| version | string | The version of the schema. |
+| allowedScopes | string[] | Список областей, в которых может использоваться схема. |
+| constraints | [ComplexConstraint[]](#openapi-definition-ComplexConstraint) | Список ограничений, определяющих допустимые значения для схемы. |
+| deletionConstraints | [DeletionConstraint[]](#openapi-definition-DeletionConstraint) | Ограничения, определяющие допустимые значения для удаления. |
+| description | string | Краткое описание схемы. |
+| displayName | string | Отображаемое имя схемы. |
+| documentation | string | Расширенное описание схемы и/или ссылки на документацию. |
+| dynatrace | string | Версия формата данных. |
+| enums | object | Список определений свойств перечислений. |
+| keyProperty | string | Имя ключевого свойства в этой схеме. |
+| maturity | string | Уровень зрелости схемы. Возможные значения:  * PREVIEW: Функции предварительного просмотра не являются общедоступными, но могут быть доступны в определённых средах в рамках программ раннего доступа. Они с наибольшей вероятностью могут быть изменены несовместимым образом. * EARLY\_ADOPTER: Функции, отмеченные как «ранний последователь», доступны во всех средах, но недостаточно зрелые для обозначения «общая доступность». Мы не ожидаем несовместимых изменений, но учтите, что они ещё не полностью стабильны, и несовместимые изменения могут потребоваться в редких случаях. * GENERAL\_AVAILABILITY: Функции, отмеченные как «общая доступность», являются наиболее стабильными. Хотя схемы будут продолжать развиваться, будет приложено максимум усилий для обеспечения обратной совместимости.  В любом случае автоматизация должна использовать поле `schemaVersion` при записи объектов настроек. Элемент может содержать следующие значения * `EARLY_ADOPTER` * `GENERAL_AVAILABILITY` * `PREVIEW` |
+| maxObjects | integer | Максимальное количество объектов на область. Применимо только если **multiObject** установлено в `true`. |
+| metadata | object | Метаданные настройки. |
+| multiObject | boolean | Допускается несколько (`true`) объектов на область или один (`false`) объект на область. |
+| ordered | boolean | Если `true`, порядок объектов имеет семантическое значение. Применимо только если **multiObject** установлено в `true`. |
+| properties | object | Список свойств схемы. |
+| schemaConstraints | [SchemaConstraintRestDto[]](#openapi-definition-SchemaConstraintRestDto) | Ограничения, определяющие допустимые значения конфигурационного элемента в целом. |
+| schemaGroups | string[] | Имена групп, к которым принадлежит схема. |
+| schemaId | string | Идентификатор схемы. |
+| tableColumns | object | Определения столбцов таблицы для использования в пользовательском интерфейсе. |
+| types | object | Список определений типов. Тип — это сложное свойство, содержащее собственный набор подсвойств. |
+| uiCustomization | [UiCustomization](#openapi-definition-UiCustomization) | Настройка элементов пользовательского интерфейса |
+| version | string | Версия схемы. |
 
-#### The `ComplexConstraint` object
+#### Объект `ComplexConstraint`
 
-A constraint on the values accepted for a complex settings property.
+Ограничение на значения, допустимые для сложного свойства настроек.
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| checkAllProperties | boolean | Defines if modification of any property triggers secret resubmission check. |
-| customMessage | string | A custom message for invalid values. |
-| customValidatorId | string | The ID of a custom validator. |
-| maximumPropertyCount | integer | The maximum number of properties that can be set. |
-| minimumPropertyCount | integer | The minimum number of properties that must be set. |
-| properties | string[] | A list of properties (defined by IDs) that are used to check the constraint. |
-| skipAsyncValidation | boolean | Whether to skip validation on a change made from the UI. |
-| timeout | integer | The maximum time in seconds the custom validator is allowed to run. |
-| type | string | The type of the constraint. The element can hold these values * `CUSTOM_VALIDATOR_REF` * `GREATER_THAN` * `GREATER_THAN_OR_EQUAL` * `LESS_THAN` * `LESS_THAN_OR_EQUAL` * `PROPERTY_COUNT_RANGE` * `SECRET_RESUBMISSION` * `UNKNOWN` |
+| checkAllProperties | boolean | Определяет, вызывает ли изменение любого свойства проверку повторной отправки секрета. |
+| customMessage | string | Пользовательское сообщение для недопустимых значений. |
+| customValidatorId | string | Идентификатор пользовательского валидатора. |
+| maximumPropertyCount | integer | Максимальное количество свойств, которые могут быть установлены. |
+| minimumPropertyCount | integer | Минимальное количество свойств, которые должны быть установлены. |
+| properties | string[] | Список свойств (определённых по идентификаторам), используемых для проверки ограничения. |
+| skipAsyncValidation | boolean | Пропускать ли валидацию при изменении через пользовательский интерфейс. |
+| timeout | integer | Максимальное время в секундах, в течение которого пользовательский валидатор может выполняться. |
+| type | string | Тип ограничения. Элемент может содержать следующие значения * `CUSTOM_VALIDATOR_REF` * `GREATER_THAN` * `GREATER_THAN_OR_EQUAL` * `LESS_THAN` * `LESS_THAN_OR_EQUAL` * `PROPERTY_COUNT_RANGE` * `SECRET_RESUBMISSION` * `UNKNOWN` |
 
-#### The `DeletionConstraint` object
+#### Объект `DeletionConstraint`
 
-A constraint on the values that are going to be deleted.
+Ограничение на значения, которые будут удалены.
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| customMessage | string | A custom message for invalid values. |
-| customValidatorId | string | The ID of a custom validator. |
-| schemaIds | string[] | The IDs of schemas that should be checked for references to this schema. |
-| timeout | integer | The maximum time in seconds the custom validator is allowed to run. |
-| type | string | The type of the deletion constraint. The element can hold these values * `CUSTOM_VALIDATOR_REF` * `REFERENTIAL_INTEGRITY` * `UNKNOWN` |
+| customMessage | string | Пользовательское сообщение для недопустимых значений. |
+| customValidatorId | string | Идентификатор пользовательского валидатора. |
+| schemaIds | string[] | Идентификаторы схем, которые должны быть проверены на наличие ссылок на данную схему. |
+| timeout | integer | Максимальное время в секундах, в течение которого пользовательский валидатор может выполняться. |
+| type | string | Тип ограничения удаления. Элемент может содержать следующие значения * `CUSTOM_VALIDATOR_REF` * `REFERENTIAL_INTEGRITY` * `UNKNOWN` |
 
-#### The `EnumType` object
+#### Объект `EnumType`
 
-Definition of an enum property.
+Определение свойства перечисления.
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| description | string | A short description of the property. |
-| displayName | string | The display name of the property. |
-| documentation | string | An extended description and/or links to documentation. |
-| enumClass | string | An existing Java enum class that holds the allowed values of the enum. |
-| items | [EnumValue[]](#openapi-definition-EnumValue) | A list of allowed values of the enum. |
-| type | string | The type of the property. The element can hold these values * `enum` |
+| description | string | Краткое описание свойства. |
+| displayName | string | Отображаемое имя свойства. |
+| documentation | string | Расширенное описание и/или ссылки на документацию. |
+| enumClass | string | Существующий Java-класс перечисления, содержащий допустимые значения. |
+| items | [EnumValue[]](#openapi-definition-EnumValue) | Список допустимых значений перечисления. |
+| type | string | Тип свойства. Элемент может содержать следующие значения * `enum` |
 
-#### The `EnumValue` object
+#### Объект `EnumValue`
 
-An allowed value for an enum property.
+Допустимое значение для свойства перечисления.
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| description | string | A short description of the value. |
-| displayName | string | The display name of the value. |
-| enumInstance | string | The name of the value in an existing Java enum class. |
-| icon | string | The icon of the value. |
-| value | string | The allowed value of the enum. |
+| description | string | Краткое описание значения. |
+| displayName | string | Отображаемое имя значения. |
+| enumInstance | string | Имя значения в существующем Java-классе перечисления. |
+| icon | string | Иконка значения. |
+| value | string | Допустимое значение перечисления. |
 
-#### The `AnyValue` object
+#### Объект `AnyValue`
 
-A schema representing an arbitrary value type.
+Схема, представляющая произвольный тип значения.
 
-#### The `PropertyDefinition` object
+#### Объект `PropertyDefinition`
 
-Configuration of a property in a settings schema.
+Конфигурация свойства в схеме настроек.
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| constraints | [Constraint[]](#openapi-definition-Constraint) | A list of constraints limiting the values to be accepted. |
-| datasource | [DatasourceDefinition](#openapi-definition-DatasourceDefinition) | Configuration of a datasource for a property. |
-| default | string | The default value to be used when no value is provided.  If a non-singleton has the value of `null`, it means an empty collection. |
-| description | string | A short description of the property. |
-| displayName | string | The display name of the property. |
-| documentation | string | An extended description and/or links to documentation. |
-| forceSecretResubmission | boolean | Defines if value is allowed to be modified when secret properties are not |
-| items | [Item](#openapi-definition-Item) | An item of a collection property. |
-| maxObjects | integer | The maximum number of **objects** in a collection property.  Has the value of `1` for singletons. |
-| metadata | object | Metadata of the property. |
-| migrationPattern | string | Pattern with references to properties to create a new value. |
-| minObjects | integer | The minimum number of **objects** in a collection property. |
-| modificationPolicy | string | Modification policy of the property. The element can hold these values * `ALWAYS` * `DEFAULT` * `NEVER` |
-| nullable | boolean | The value can (`true`) or can't (`false`) be `null`. |
-| precondition | [Precondition](#openapi-definition-Precondition) | A precondition for visibility of a property. |
-| referencedType | string | The type referenced by the property value |
-| subType | string | The subtype of the property's value. |
-| type | string | The type of the property's value. |
-| uiCustomization | [UiCustomization](#openapi-definition-UiCustomization) | Customization for UI elements |
+| constraints | [Constraint[]](#openapi-definition-Constraint) | Список ограничений, определяющих допустимые значения. |
+| datasource | [DatasourceDefinition](#openapi-definition-DatasourceDefinition) | Конфигурация источника данных для свойства. |
+| default | string | Значение по умолчанию, используемое при отсутствии указанного значения. Если не-синглтон имеет значение `null`, это означает пустую коллекцию. |
+| description | string | Краткое описание свойства. |
+| displayName | string | Отображаемое имя свойства. |
+| documentation | string | Расширенное описание и/или ссылки на документацию. |
+| forceSecretResubmission | boolean | Определяет, разрешено ли изменение значения, когда секретные свойства не |
+| items | [Item](#openapi-definition-Item) | Элемент свойства коллекции. |
+| maxObjects | integer | Максимальное количество **объектов** в свойстве коллекции. Для синглтонов имеет значение `1`. |
+| metadata | object | Метаданные свойства. |
+| migrationPattern | string | Шаблон со ссылками на свойства для создания нового значения. |
+| minObjects | integer | Минимальное количество **объектов** в свойстве коллекции. |
+| modificationPolicy | string | Политика модификации свойства. Элемент может содержать следующие значения * `ALWAYS` * `DEFAULT` * `NEVER` |
+| nullable | boolean | Значение может (`true`) или не может (`false`) быть `null`. |
+| precondition | [Precondition](#openapi-definition-Precondition) | Предусловие для видимости свойства. |
+| referencedType | string | Тип, на который ссылается значение свойства |
+| subType | string | Подтип значения свойства. |
+| type | string | Тип значения свойства. |
+| uiCustomization | [UiCustomization](#openapi-definition-UiCustomization) | Настройка элементов пользовательского интерфейса |
 
-#### The `Constraint` object
+#### Объект `Constraint`
 
-A constraint on the values accepted for a settings property.
+Ограничение на значения, допустимые для свойства настроек.
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| customMessage | string | A custom message for invalid values. |
-| customValidatorId | string | The ID of a custom validator. |
-| disallowDangerousRegex | boolean | Whether to disallow usage of dangerous regexes |
-| maxLength | integer | The maximum allowed length of string values. |
-| maximum | number | The maximum allowed value. |
-| minLength | integer | The minimum required length of string values. |
-| minimum | number | The minimum allowed value. |
-| pattern | string | The regular expression pattern for valid string values. |
-| skipAsyncValidation | boolean | Whether to skip validation on a change made from the UI. |
-| timeout | integer | The maximum time in seconds the custom validator is allowed to run. |
-| type | string | The type of the constraint. The element can hold these values * `CUSTOM_VALIDATOR_REF` * `LENGTH` * `NOT_BLANK` * `NOT_EMPTY` * `NO_WHITESPACE` * `PATTERN` * `RANGE` * `REGEX` * `TRIMMED` * `UNIQUE` * `UNKNOWN` |
-| uniqueProperties | string[] | A list of properties for which the combination of values must be unique. |
+| customMessage | string | Пользовательское сообщение для недопустимых значений. |
+| customValidatorId | string | Идентификатор пользовательского валидатора. |
+| disallowDangerousRegex | boolean | Запрещать ли использование опасных регулярных выражений |
+| maxLength | integer | Максимально допустимая длина строковых значений. |
+| maximum | number | Максимально допустимое значение. |
+| minLength | integer | Минимально требуемая длина строковых значений. |
+| minimum | number | Минимально допустимое значение. |
+| pattern | string | Шаблон регулярного выражения для допустимых строковых значений. |
+| skipAsyncValidation | boolean | Пропускать ли валидацию при изменении через пользовательский интерфейс. |
+| timeout | integer | Максимальное время в секундах, в течение которого пользовательский валидатор может выполняться. |
+| type | string | Тип ограничения. Элемент может содержать следующие значения * `CUSTOM_VALIDATOR_REF` * `LENGTH` * `NOT_BLANK` * `NOT_EMPTY` * `NO_WHITESPACE` * `PATTERN` * `RANGE` * `REGEX` * `TRIMMED` * `UNIQUE` * `UNKNOWN` |
+| uniqueProperties | string[] | Список свойств, для которых комбинация значений должна быть уникальной. |
 
-#### The `DatasourceDefinition` object
+#### Объект `DatasourceDefinition`
 
-Configuration of a datasource for a property.
+Конфигурация источника данных для свойства.
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| filterProperties | string[] | The properties to filter the datasource options on. |
-| fullContext | boolean | Whether this datasource expects full setting payload as the context. |
-| identifier | string | The identifier of a custom data source of the property's value. |
-| resetValue | string | When to reset datasource value in the UI on filter change. The element can hold these values * `ALWAYS` * `INVALID_ONLY` * `NEVER` |
-| useApiSearch | boolean | If true, the datasource should use the api to filter the results instead of client-side filtering. |
-| validate | boolean | Whether to validate input to only allow values returned by the datasource. |
+| filterProperties | string[] | Свойства для фильтрации параметров источника данных. |
+| fullContext | boolean | Ожидает ли этот источник данных полную полезную нагрузку настройки в качестве контекста. |
+| identifier | string | Идентификатор пользовательского источника данных значения свойства. |
+| resetValue | string | Когда сбрасывать значение источника данных в пользовательском интерфейсе при изменении фильтра. Элемент может содержать следующие значения * `ALWAYS` * `INVALID_ONLY` * `NEVER` |
+| useApiSearch | boolean | Если true, источник данных должен использовать API для фильтрации результатов вместо фильтрации на стороне клиента. |
+| validate | boolean | Валидировать ли ввод, разрешая только значения, возвращённые источником данных. |
 
-#### The `Item` object
+#### Объект `Item`
 
-An item of a collection property.
+Элемент свойства коллекции.
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| constraints | [Constraint[]](#openapi-definition-Constraint) | A list of constraints limiting the values to be accepted. |
-| datasource | [DatasourceDefinition](#openapi-definition-DatasourceDefinition) | Configuration of a datasource for a property. |
-| description | string | A short description of the item. |
-| displayName | string | The display name of the item. |
-| documentation | string | An extended description and/or links to documentation. |
-| metadata | object | Metadata of the items. |
-| referencedType | string | The type referenced by the item's value. |
-| subType | string | The subtype of the item's value. |
-| type | string | The type of the item's value. |
-| uiCustomization | [UiCustomization](#openapi-definition-UiCustomization) | Customization for UI elements |
+| constraints | [Constraint[]](#openapi-definition-Constraint) | Список ограничений, определяющих допустимые значения. |
+| datasource | [DatasourceDefinition](#openapi-definition-DatasourceDefinition) | Конфигурация источника данных для свойства. |
+| description | string | Краткое описание элемента. |
+| displayName | string | Отображаемое имя элемента. |
+| documentation | string | Расширенное описание и/или ссылки на документацию. |
+| metadata | object | Метаданные элементов. |
+| referencedType | string | Тип, на который ссылается значение элемента. |
+| subType | string | Подтип значения элемента. |
+| type | string | Тип значения элемента. |
+| uiCustomization | [UiCustomization](#openapi-definition-UiCustomization) | Настройка элементов пользовательского интерфейса |
 
-#### The `UiCustomization` object
+#### Объект `UiCustomization`
 
-Customization for UI elements
+Настройка элементов пользовательского интерфейса
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| callback | [UiCallbackCustomization](#openapi-definition-UiCallbackCustomization) | UI customization options for defining custom callbacks |
-| expandable | [UiExpandableCustomization](#openapi-definition-UiExpandableCustomization) | UI customization for expandable section |
-| table | [UiTableCustomization](#openapi-definition-UiTableCustomization) | Customization for UI tables |
-| tabs | [UiTabsCustomization](#openapi-definition-UiTabsCustomization) | UI customization for tabs |
+| callback | [UiCallbackCustomization](#openapi-definition-UiCallbackCustomization) | Параметры настройки пользовательского интерфейса для определения пользовательских обратных вызовов |
+| expandable | [UiExpandableCustomization](#openapi-definition-UiExpandableCustomization) | Настройка пользовательского интерфейса для раскрываемой секции |
+| table | [UiTableCustomization](#openapi-definition-UiTableCustomization) | Настройка таблиц пользовательского интерфейса |
+| tabs | [UiTabsCustomization](#openapi-definition-UiTabsCustomization) | Настройка пользовательского интерфейса для вкладок |
 
-#### The `UiCallbackCustomization` object
+#### Объект `UiCallbackCustomization`
 
-UI customization options for defining custom callbacks
+Параметры настройки пользовательского интерфейса для определения пользовательских обратных вызовов
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| buttons | [UiButtonCustomization[]](#openapi-definition-UiButtonCustomization) | UI customization for defining buttons that call functions when pressed |
+| buttons | [UiButtonCustomization[]](#openapi-definition-UiButtonCustomization) | Настройка пользовательского интерфейса для определения кнопок, вызывающих функции при нажатии |
 
-#### The `UiButtonCustomization` object
+#### Объект `UiButtonCustomization`
 
-UI customization for defining a button that calls a function when pressed
+Настройка пользовательского интерфейса для определения кнопки, вызывающей функцию при нажатии
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| description | string | The description to be shown in a tooltip when hovering over the button |
-| displayName | string | The label of the button |
-| identifier | string | The identifier of the function to be called when the button is pressed |
-| insert | string | The position where the button should be shown in the UI The element can hold these values * `FIRST` * `LAST` |
+| description | string | Описание, отображаемое во всплывающей подсказке при наведении на кнопку |
+| displayName | string | Метка кнопки |
+| identifier | string | Идентификатор функции, вызываемой при нажатии кнопки |
+| insert | string | Позиция, в которой кнопка должна отображаться в пользовательском интерфейсе. Элемент может содержать следующие значения * `FIRST` * `LAST` |
 
-#### The `UiExpandableCustomization` object
+#### Объект `UiExpandableCustomization`
 
-UI customization for expandable section
+Настройка пользовательского интерфейса для раскрываемой секции
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| displayName | string | The display name |
-| expanded | boolean | Defines if the item should be expanded by default |
-| sections | [UiExpandableSectionCustomization[]](#openapi-definition-UiExpandableSectionCustomization) | A list of sections |
+| displayName | string | Отображаемое имя |
+| expanded | boolean | Определяет, должен ли элемент быть развёрнут по умолчанию |
+| sections | [UiExpandableSectionCustomization[]](#openapi-definition-UiExpandableSectionCustomization) | Список секций |
 
-#### The `UiExpandableSectionCustomization` object
+#### Объект `UiExpandableSectionCustomization`
 
-Expandable section customization for UI
+Настройка раскрываемой секции для пользовательского интерфейса
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| description | string | The description |
-| displayName | string | The display name |
-| expanded | boolean | Defines if the section should be expanded by default |
-| properties | string[] | A list of properties |
+| description | string | Описание |
+| displayName | string | Отображаемое имя |
+| expanded | boolean | Определяет, должна ли секция быть развёрнута по умолчанию |
+| properties | string[] | Список свойств |
 
-#### The `UiTableCustomization` object
+#### Объект `UiTableCustomization`
 
-Customization for UI tables
+Настройка таблиц пользовательского интерфейса
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| columns | [UiTableColumnCustomization[]](#openapi-definition-UiTableColumnCustomization) | A list of columns for the UI table |
-| emptyState | [UiEmptyStateCustomization](#openapi-definition-UiEmptyStateCustomization) | UI customization for empty state in a table |
+| columns | [UiTableColumnCustomization[]](#openapi-definition-UiTableColumnCustomization) | Список столбцов для таблицы пользовательского интерфейса |
+| emptyState | [UiEmptyStateCustomization](#openapi-definition-UiEmptyStateCustomization) | Настройка пользовательского интерфейса для пустого состояния таблицы |
 
-#### The `UiTableColumnCustomization` object
+#### Объект `UiTableColumnCustomization`
 
-Customization for UI table columns
+Настройка столбцов таблицы пользовательского интерфейса
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| builtinColumnRef | string | The ui specific builtin column-implementation for this column. |
-| columnRef | string | The referenced column from the 'tableColumns' property of the schema for this column. |
-| displayName | string | The display name for this column. |
-| id | string | The id for this column used for filtering. Required for conflicting or pathed columns - otherwise the ref is used. |
-| items | [UiTableColumnItemCustomization[]](#openapi-definition-UiTableColumnItemCustomization) | The possible items of this column. |
-| propertyRef | string | The referenced property for this column. |
-| type | string | The ui specific type for this column. |
-| width | string | The width this column should take up on the table. |
+| builtinColumnRef | string | Встроенная реализация столбца для пользовательского интерфейса. |
+| columnRef | string | Ссылка на столбец из свойства 'tableColumns' схемы для этого столбца. |
+| displayName | string | Отображаемое имя для этого столбца. |
+| id | string | Идентификатор этого столбца, используемый для фильтрации. Обязателен для конфликтующих или составных столбцов — в остальных случаях используется ref. |
+| items | [UiTableColumnItemCustomization[]](#openapi-definition-UiTableColumnItemCustomization) | Возможные элементы этого столбца. |
+| propertyRef | string | Ссылка на свойство для этого столбца. |
+| type | string | Тип этого столбца для пользовательского интерфейса. |
+| width | string | Ширина, которую этот столбец должен занимать в таблице. |
 
-#### The `UiTableColumnItemCustomization` object
+#### Объект `UiTableColumnItemCustomization`
 
-Customization for UI table column items
+Настройка элементов столбца таблицы пользовательского интерфейса
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| displayName | string | The display name of this item. |
-| icon | string | The icon of this item. |
-| value | string | The value of this item. |
+| displayName | string | Отображаемое имя этого элемента. |
+| icon | string | Иконка этого элемента. |
+| value | string | Значение этого элемента. |
 
-#### The `UiEmptyStateCustomization` object
+#### Объект `UiEmptyStateCustomization`
 
-UI customization for empty state in a table
+Настройка пользовательского интерфейса для пустого состояния таблицы
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| text | string | The text to be shown in the empty state |
+| text | string | Текст, отображаемый в пустом состоянии |
 
-#### The `UiTabsCustomization` object
+#### Объект `UiTabsCustomization`
 
-UI customization for tabs
+Настройка пользовательского интерфейса для вкладок
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| groups | [UiTabGroupCustomization[]](#openapi-definition-UiTabGroupCustomization) | A list of groups |
+| groups | [UiTabGroupCustomization[]](#openapi-definition-UiTabGroupCustomization) | Список групп |
 
-#### The `UiTabGroupCustomization` object
+#### Объект `UiTabGroupCustomization`
 
-Tab group customization for UI
+Настройка группы вкладок для пользовательского интерфейса
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| description | string | The description |
-| displayName | string | The display name |
-| properties | string[] | A list of properties |
+| description | string | Описание |
+| displayName | string | Отображаемое имя |
+| properties | string[] | Список свойств |
 
-#### The `Precondition` object
+#### Объект `Precondition`
 
-A precondition for visibility of a property.
+Предусловие для видимости свойства.
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| expectedValue | string | The expected value of the property.  Only applicable to properties of the `EQUALS` type. |
-| expectedValues | - | A list of valid values of the property.  Only applicable to properties of the `IN` type. |
-| pattern | string | The Regular expression which is matched against the property.  Only applicable to properties of the `REGEX_MATCH` type. |
-| precondition | [Precondition](#openapi-definition-Precondition) | A precondition for visibility of a property. |
-| preconditions | [Precondition[]](#openapi-definition-Precondition) | A list of child preconditions to be evaluated.  Only applicable to properties of the `AND` and `OR` types. |
-| property | string | The property to be evaluated. |
-| type | string | The type of the precondition. The element can hold these values * `AND` * `EQUALS` * `IN` * `NOT` * `NULL` * `OR` * `REGEX_MATCH` |
+| expectedValue | string | Ожидаемое значение свойства. Применимо только к свойствам типа `EQUALS`. |
+| expectedValues | - | Список допустимых значений свойства. Применимо только к свойствам типа `IN`. |
+| pattern | string | Регулярное выражение, сопоставляемое со свойством. Применимо только к свойствам типа `REGEX_MATCH`. |
+| precondition | [Precondition](#openapi-definition-Precondition) | Предусловие для видимости свойства. |
+| preconditions | [Precondition[]](#openapi-definition-Precondition) | Список дочерних предусловий для оценки. Применимо только к свойствам типов `AND` и `OR`. |
+| property | string | Свойство для оценки. |
+| type | string | Тип предусловия. Элемент может содержать следующие значения * `AND` * `EQUALS` * `IN` * `NOT` * `NULL` * `OR` * `REGEX_MATCH` |
 
-#### The `SchemaConstraintRestDto` object
+#### Объект `SchemaConstraintRestDto`
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| byteLimit | integer | The maximum allowed size in bytes for the sum over all persisted values for the schema |
-| customMessage | string | A custom message for invalid values. |
-| customValidatorId | string | The ID of a custom validator. |
-| flattenCollections | boolean | Whether to flatten collection properties when checking for uniqueness, so only disjoint collections are considered unique |
-| skipAsyncValidation | boolean | Whether to skip validation on a change made from the UI. |
-| type | string | The type of the schema constraint. The element can hold these values * `BYTE_SIZE_LIMIT` * `CUSTOM_VALIDATOR_REF` * `MULTI_SCOPE_CUSTOM_VALIDATOR_REF` * `MULTI_SCOPE_UNIQUE` * `UNIQUE` * `UNKNOWN` |
-| uniqueProperties | string[] | The list of properties for which the combination of values needs to be unique |
+| byteLimit | integer | Максимально допустимый размер в байтах для суммы всех сохранённых значений схемы |
+| customMessage | string | Пользовательское сообщение для недопустимых значений. |
+| customValidatorId | string | Идентификатор пользовательского валидатора. |
+| flattenCollections | boolean | Следует ли разворачивать свойства коллекций при проверке уникальности, чтобы только непересекающиеся коллекции считались уникальными |
+| skipAsyncValidation | boolean | Пропускать ли валидацию при изменении через пользовательский интерфейс. |
+| type | string | Тип ограничения схемы. Элемент может содержать следующие значения * `BYTE_SIZE_LIMIT` * `CUSTOM_VALIDATOR_REF` * `MULTI_SCOPE_CUSTOM_VALIDATOR_REF` * `MULTI_SCOPE_UNIQUE` * `UNIQUE` * `UNKNOWN` |
+| uniqueProperties | string[] | Список свойств, для которых комбинация значений должна быть уникальной |
 
-#### The `TableColumn` object
+#### Объект `TableColumn`
 
-The definition of a table column to be used in the ui.
+Определение столбца таблицы для использования в пользовательском интерфейсе.
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| pattern | string | Pattern with references to properties to create a single value for the column. |
+| pattern | string | Шаблон со ссылками на свойства для создания одного значения для столбца. |
 
-#### The `SchemaType` object
+#### Объект `SchemaType`
 
-A list of definitions of types.
+Список определений типов.
 
-A type is a complex property that contains its own set of subproperties.
+Тип — это сложное свойство, содержащее собственный набор подсвойств.
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| constraints | [ComplexConstraint[]](#openapi-definition-ComplexConstraint) | A list of constraints limiting the values to be accepted. |
-| description | string | A short description of the property. |
-| displayName | string | The display name of the property. |
-| documentation | string | An extended description and/or links to documentation. |
-| properties | object | Definition of properties that can be persisted. |
-| searchPattern | string | The pattern for the summary search(for example, "Alert after *X* minutes.") of the configuration in the UI. |
-| summaryPattern | string | The pattern for the summary (for example, "Alert after *X* minutes.") of the configuration in the UI. |
-| type | string | Type of the reference type. The element can hold these values * `object` |
-| version | string | The version of the type. |
-| versionInfo | string | A short description of the version. |
+| constraints | [ComplexConstraint[]](#openapi-definition-ComplexConstraint) | Список ограничений, определяющих допустимые значения. |
+| description | string | Краткое описание свойства. |
+| displayName | string | Отображаемое имя свойства. |
+| documentation | string | Расширенное описание и/или ссылки на документацию. |
+| properties | object | Определение свойств, которые могут быть сохранены. |
+| searchPattern | string | Шаблон для поиска сводки (например, "Оповещение через *X* минут.") конфигурации в пользовательском интерфейсе. |
+| summaryPattern | string | Шаблон для сводки (например, "Оповещение через *X* минут.") конфигурации в пользовательском интерфейсе. |
+| type | string | Тип ссылочного типа. Элемент может содержать следующие значения * `object` |
+| version | string | Версия типа. |
+| versionInfo | string | Краткое описание версии. |
 
-#### The `ErrorEnvelope` object
+#### Объект `ErrorEnvelope`
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
 | error | [Error](#openapi-definition-Error) | - |
 
-#### The `Error` object
+#### Объект `Error`
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
-| message | string | The error message |
+| code | integer | Код состояния HTTP |
+| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| message | string | Сообщение об ошибке |
 
-#### The `ConstraintViolation` object
+#### Объект `ConstraintViolation`
 
-A list of constraint violations
+Список нарушений ограничений
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -The element can hold these values * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может содержать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### Response body JSON models
+### JSON-модели тела ответа
 
 ```
 {

@@ -1,5 +1,5 @@
 ---
-title: Dynatrace tutorials
+title: Руководства по Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/use-cases
 scraped: 2026-03-05T21:39:50.652820
 ---

@@ -1,5 +1,5 @@
 ---
-title: Root cause analysis concepts
+title: Концепции анализа первопричин
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/root-cause-analysis/concepts
 scraped: 2026-03-06T21:12:21.689286
 ---

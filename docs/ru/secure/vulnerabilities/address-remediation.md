@@ -1,5 +1,5 @@
 ---
-title: Address remediation
+title: Устранение проблем
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/address-remediation
 scraped: 2026-03-06T21:29:07.421169
 ---
