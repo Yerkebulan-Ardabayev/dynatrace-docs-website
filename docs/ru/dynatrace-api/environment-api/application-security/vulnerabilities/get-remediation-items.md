@@ -1,5 +1,5 @@
 ---
-title: Vulnerabilities API - GET remediation items
+title: Уязвимости API - Получение элементов исправления
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/get-remediation-items
 scraped: 2026-03-05T21:33:07.529890
 ---

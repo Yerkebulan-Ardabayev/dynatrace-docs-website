@@ -1,5 +1,5 @@
 ---
-title: Security Posture Management
+title: Управление безопасностью позicíи
 source: https://www.dynatrace.com/docs/secure/xspm
 scraped: 2026-03-06T21:29:55.059316
 ---

@@ -1,6 +1,6 @@
-# Dynatrace Documentation - Русская версия с AI-переводом
+# Dynatrace Documentation - Русская версия
 
-Автоматизированная документация Dynatrace с переводом на русский через AI (Gemini, Groq, OpenRouter) и ежедневной синхронизацией.
+Документация Dynatrace на русском языке с автоматическим переводом и ежедневной синхронизацией.
 
 [![Deploy](https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website/actions/workflows/deploy.yml/badge.svg)](https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website/actions/workflows/deploy.yml)
 [![Update](https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website/actions/workflows/update-docs.yml/badge.svg)](https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website/actions/workflows/update-docs.yml)
@@ -10,7 +10,7 @@
 ## Что делает проект
 
 - Скрейпит документацию с docs.dynatrace.com
-- Переводит на русский через AI (3 провайдера с fallback)
+- Переводит на русский язык через AI
 - Публикует на GitHub Pages автоматически
 - Обновляется каждый день в 02:00 (Алматы)
 
@@ -21,13 +21,12 @@ Scrape -> Diff -> Translate -> Nav Update -> Validate -> Deploy
   |         |        |             |            |          |
   v         v        v             v            v          v
 docs/en/  хеши    docs/ru/     mkdocs.yml   ссылки    gh-pages
-          контента  Gemini ->    en/ -> ru/   CJK
-                    Groq ->                   markdown
-                    OpenRouter
+          контента  AI-перевод   en/ -> ru/   CJK
+                    с fallback               markdown
 ```
 
 Все этапы работают в одном CI job (файлы не теряются между этапами).
-При исчерпании квоты API перевод останавливается gracefully - то что переведено деплоится, остальное переводится на следующий день.
+При исчерпании квоты API перевод останавливается gracefully — переведённое деплоится, остальное переводится на следующий день.
 
 ## Быстрый старт
 
@@ -45,7 +44,7 @@ mkdocs serve
 # Открыть http://127.0.0.1:8000
 ```
 
-### Тонкий клон (экономия места на ноутбуке)
+### Тонкий клон (экономия места)
 
 ```bash
 bash scripts/setup_thin_clone.sh \
@@ -62,36 +61,23 @@ Sparse checkout загружает только `scripts/`, `docs/ru/`, конф
 ### Fork (своя копия с автообновлением)
 
 1. Fork репозитория на GitHub
-2. Settings -> Secrets -> добавить `GEMINI_API_KEY`
+2. Settings -> Secrets -> добавить API ключ для AI-перевода
 3. Settings -> Pages -> Source: `gh-pages` branch
 4. CI будет автоматически обновлять вашу копию
 
-## API ключи
+## AI-перевод
 
-Для перевода нужен хотя бы один ключ (все бесплатные):
-
-| Провайдер | Лимит | Где получить |
-|-----------|-------|-------------|
-| **Gemini** (основной) | 1500 req/day | https://aistudio.google.com/apikey |
-| **Groq** (резервный) | ~100K tokens/day | https://console.groq.com |
-| **OpenRouter** (запасной) | 50 req/day (free tier) | https://openrouter.ai/keys |
-
-### Настройка локально
+Для автоматического перевода можно использовать любой совместимый AI API. Настройте ключ в переменных окружения:
 
 ```bash
 cp .env.example .env
-# Отредактировать .env:
-# GEMINI_API_KEY=your_key
-# GROQ_API_KEY=your_key
+# Отредактировать .env — указать свой API ключ
 ```
 
-### Настройка в GitHub Actions
+В GitHub Actions:
 
 ```
-Repo -> Settings -> Secrets and variables -> Actions -> New repository secret:
-  GEMINI_API_KEY
-  GROQ_API_KEY
-  OPENROUTER_API_KEY  (опционально)
+Repo -> Settings -> Secrets and variables -> Actions -> New repository secret
 ```
 
 ## Запуск пайплайна
@@ -156,24 +142,23 @@ dynatrace-docs-website/
 │   └── deploy.yml             # Deploy на push в main
 ├── mkdocs.yml                 # Конфигурация MkDocs Material
 ├── requirements.txt           # Python зависимости
-├── .gitattributes             # Git LFS для изображений
 └── .env.example               # Шаблон переменных окружения
 ```
 
 ## Как работает перевод
 
-1. **Diff по хешам** - переводятся только изменённые файлы
-2. **Fallback chain** - Gemini -> Groq -> OpenRouter (автоматическое переключение)
-3. **Graceful quota** - при исчерпании токенов: переведённое деплоится, остальное ждёт следующий день
-4. **Кэш** - SHA256 хеш контента, TTL 30 дней, повторный перевод не нужен
-5. **Терминология** - 100+ записей: Dynatrace, OneAgent, Davis остаются без перевода
-6. **Валидация** - проверка CJK-символов, битых ссылок, структуры markdown
+1. **Diff по хешам** — переводятся только изменённые файлы
+2. **Fallback chain** — автоматическое переключение при ошибках
+3. **Graceful quota** — при исчерпании токенов: переведённое деплоится, остальное ждёт следующий день
+4. **Кэш** — SHA256 хеш контента, TTL 30 дней, повторный перевод не нужен
+5. **Терминология** — 100+ записей: Dynatrace, OneAgent, Davis остаются без перевода
+6. **Валидация** — проверка CJK-символов, битых ссылок, структуры markdown
 
 ## Требования
 
 - Python 3.8+
-- Git (с LFS для изображений)
-- Хотя бы один API ключ (Gemini / Groq / OpenRouter)
+- Git
+- API ключ для AI-перевода
 
 ```bash
 pip install -r requirements.txt
@@ -181,7 +166,7 @@ pip install -r requirements.txt
 
 ## Автор
 
-**Yerkebulan Ardabayev** - [@Yerkebulan-Ardabayev](https://github.com/Yerkebulan-Ardabayev)
+**Yerkebulan Ardabayev** — [@Yerkebulan-Ardabayev](https://github.com/Yerkebulan-Ardabayev)
 
 ## Лицензия
 
